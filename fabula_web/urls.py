@@ -7,10 +7,13 @@ from django.conf.urls.static import static
 from django.contrib import admin
 from django.urls import path, include
 from django.http import JsonResponse
+import os
+from pathlib import Path
 
 from wagtail.admin import urls as wagtailadmin_urls
 from wagtail import urls as wagtail_urls
 from wagtail.documents import urls as wagtaildocs_urls
+from wagtail.models import Page, Site
 
 
 def health_check(request):
@@ -18,8 +21,37 @@ def health_check(request):
     return JsonResponse({'status': 'ok'})
 
 
+def diagnostics(request):
+    """Diagnostic endpoint to check data import status."""
+    data_dir = Path('fabula_export')
+
+    # Check data directory
+    data_exists = data_dir.exists()
+    data_files = list(data_dir.glob('*.yaml')) if data_exists else []
+    events_dir = data_dir / 'events'
+    event_files = list(events_dir.glob('*.yaml')) if events_dir.exists() else []
+
+    # Check database content
+    page_count = Page.objects.count()
+    pages = list(Page.objects.values_list('title', 'depth', 'path')[:20])
+
+    # Check site configuration
+    sites = list(Site.objects.values('hostname', 'root_page_id', 'is_default_site', 'site_name'))
+
+    return JsonResponse({
+        'cwd': os.getcwd(),
+        'data_dir_exists': data_exists,
+        'data_files': [str(f) for f in data_files],
+        'event_files_count': len(event_files),
+        'page_count': page_count,
+        'pages': pages,
+        'sites': sites,
+    })
+
+
 urlpatterns = [
     path('health/', health_check, name='health_check'),
+    path('diagnostics/', diagnostics, name='diagnostics'),
     path('django-admin/', admin.site.urls),
     path('admin/', include(wagtailadmin_urls)),
     path('documents/', include(wagtaildocs_urls)),
