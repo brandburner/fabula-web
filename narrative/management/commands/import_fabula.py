@@ -233,6 +233,41 @@ class Command(BaseCommand):
         self.log_progress("Phase 6: Creating narrative connections")
         self.import_connections(connections_data)
 
+        self.log_progress("Phase 7: Configuring Wagtail Site")
+        self.configure_site(main_series_page)
+
+    def configure_site(self, root_page):
+        """Configure the default Wagtail Site to use our content root."""
+        if not root_page:
+            self.log_info("  No root page available, skipping site configuration")
+            return
+
+        if self.dry_run:
+            self.log_info(f"  Would update default site to use root: {root_page.title}")
+            return
+
+        try:
+            # Get or create the default site
+            site = Site.objects.filter(is_default_site=True).first()
+            if site:
+                site.root_page = root_page
+                site.site_name = root_page.title
+                site.save()
+                self.log_info(f"  Updated default site to use root: {root_page.title}")
+                self.stats.record_updated('Site')
+            else:
+                Site.objects.create(
+                    hostname='*',
+                    root_page=root_page,
+                    is_default_site=True,
+                    site_name=root_page.title
+                )
+                self.log_info(f"  Created default site with root: {root_page.title}")
+                self.stats.record_created('Site')
+        except Exception as e:
+            self.stats.record_error(f"Site configuration failed: {e}")
+            self.log_info(f"  Warning: Could not configure site: {e}")
+
     # =========================================================================
     # YAML Loading
     # =========================================================================
