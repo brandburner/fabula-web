@@ -1,0 +1,141 @@
+{% load wagtailcore_tags %}
+{# 
+Participation Card Component
+
+Displays a character's participation in an event, including:
+- Emotional state
+- Goals
+- What happened
+- Observable traits
+
+Uses Alpine.js for expand/collapse functionality.
+#}
+
+<div class="bg-slate-900/50 border border-slate-800 rounded-lg overflow-hidden hover:border-emerald-500/30 transition-colors"
+     x-data="{ isOpen: false }">
+    
+    <div class="p-4">
+        {# Header with character name and expand toggle #}
+        <div class="flex items-start justify-between gap-4 mb-3">
+            <a href="{% pageurl participation.character %}" 
+               class="flex-1 group">
+                <div class="font-semibold text-slate-100 group-hover:text-emerald-400 transition-colors">
+                    {{ participation.character.canonical_name }}
+                </div>
+                {% if participation.character.title_role %}
+                <div class="text-sm text-slate-500">{{ participation.character.title_role }}</div>
+                {% endif %}
+            </a>
+            
+            {# Importance badge #}
+            {% if participation.importance %}
+            <span class="px-2 py-0.5 text-xs rounded
+                {% if participation.importance == 'primary' %}
+                    bg-emerald-500/10 text-emerald-400
+                {% elif participation.importance == 'secondary' %}
+                    bg-slate-700 text-slate-400
+                {% else %}
+                    bg-slate-800 text-slate-500
+                {% endif %}">
+                {{ participation.importance }}
+            </span>
+            {% endif %}
+            
+            <button @click="isOpen = !isOpen" 
+                    class="p-1.5 rounded-md hover:bg-slate-800 transition-colors">
+                <i data-lucide="chevron-down" 
+                   class="w-4 h-4 text-slate-400 transition-transform duration-200"
+                   :class="{ 'rotate-180': isOpen }"></i>
+            </button>
+        </div>
+
+        {# Emotional state - always visible #}
+        {% if participation.emotional_state %}
+        <div class="flex items-start gap-2 mb-3">
+            <i data-lucide="heart" class="w-4 h-4 text-pink-400 mt-0.5 shrink-0"></i>
+            <p class="text-sm text-slate-300 leading-relaxed">
+                {{ participation.emotional_state }}
+            </p>
+        </div>
+        {% endif %}
+
+        {# What happened - always visible #}
+        {% if participation.what_happened %}
+        <p class="text-sm text-slate-400 leading-relaxed">
+            {{ participation.what_happened }}
+        </p>
+        {% endif %}
+    </div>
+
+    {# Expandable section #}
+    <div x-show="isOpen" 
+         x-collapse
+         class="px-4 pb-4 space-y-4 border-t border-slate-800/50">
+        
+        {# Goals #}
+        {% if participation.goals %}
+        <div class="pt-4">
+            <div class="flex items-center gap-2 mb-2">
+                <i data-lucide="target" class="w-4 h-4 text-amber-400"></i>
+                <span class="text-xs font-medium text-slate-500 uppercase tracking-wide">Goals in this moment</span>
+            </div>
+            <ul class="space-y-1.5">
+                {% for goal in participation.goals %}
+                <li class="text-sm text-slate-300 flex items-start gap-2">
+                    <span class="text-slate-600 mt-1">•</span>
+                    <span>{{ goal }}</span>
+                </li>
+                {% endfor %}
+            </ul>
+        </div>
+        {% endif %}
+
+        {# Beliefs (if present) #}
+        {% if participation.beliefs %}
+        <div>
+            <div class="flex items-center gap-2 mb-2">
+                <i data-lucide="brain" class="w-4 h-4 text-blue-400"></i>
+                <span class="text-xs font-medium text-slate-500 uppercase tracking-wide">Active beliefs</span>
+            </div>
+            <ul class="space-y-1.5">
+                {% for belief in participation.beliefs %}
+                <li class="text-sm text-slate-300 flex items-start gap-2">
+                    <span class="text-slate-600 mt-1">•</span>
+                    <span>{{ belief }}</span>
+                </li>
+                {% endfor %}
+            </ul>
+        </div>
+        {% endif %}
+
+        {# Character traits observed #}
+        {% if participation.observed_traits or participation.character.traits %}
+        <div>
+            <div class="flex items-center gap-2 mb-2">
+                <i data-lucide="user" class="w-4 h-4 text-emerald-400"></i>
+                <span class="text-xs font-medium text-slate-500 uppercase tracking-wide">Character traits</span>
+            </div>
+            <div class="flex flex-wrap gap-1.5">
+                {% for trait in participation.observed_traits %}
+                <span class="px-2 py-0.5 text-xs bg-emerald-500/10 text-emerald-400 rounded">
+                    {{ trait }}
+                </span>
+                {% empty %}
+                    {% for trait in participation.character.traits %}
+                    <span class="px-2 py-0.5 text-xs bg-slate-800 text-slate-400 rounded">
+                        {{ trait }}
+                    </span>
+                    {% endfor %}
+                {% endfor %}
+            </div>
+        </div>
+        {% endif %}
+
+        {# Link to character page #}
+        <a href="{% pageurl participation.character %}"
+           class="inline-flex items-center gap-1 text-sm text-emerald-400 hover:text-emerald-300 transition-colors">
+            Follow {{ participation.character.canonical_name|truncatewords:2 }}'s journey
+            <i data-lucide="arrow-right" class="w-4 h-4"></i>
+        </a>
+    </div>
+</div>

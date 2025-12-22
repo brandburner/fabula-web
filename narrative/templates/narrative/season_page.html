@@ -1,0 +1,79 @@
+{% extends "base.html" %}
+{% load wagtailcore_tags %}
+
+{% block title %}Season {{ page.season_number }} | {{ page.get_parent.title }}{% endblock %}
+
+{% block content %}
+<article class="min-h-screen pb-16">
+    <div class="relative overflow-hidden">
+        <div class="absolute inset-0 bg-gradient-to-b from-blue-950/20 via-slate-950 to-slate-950"></div>
+        <div class="absolute inset-0 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-blue-900/10 via-transparent to-transparent"></div>
+
+        <div class="relative max-w-4xl mx-auto px-6 pt-12 pb-8">
+            <nav class="text-sm text-slate-500 mb-6">
+                <a href="{% pageurl page.get_parent %}" class="hover:text-slate-300 transition-colors">
+                    {{ page.get_parent.title }}
+                </a>
+                <span class="mx-2">/</span>
+                <span class="text-slate-300">Season {{ page.season_number }}</span>
+            </nav>
+
+            <div class="flex items-center gap-4">
+                <div class="flex-shrink-0 w-16 h-16 bg-blue-500/20 rounded-xl flex items-center justify-center">
+                    <i data-lucide="film" class="w-8 h-8 text-blue-400"></i>
+                </div>
+                <div>
+                    <h1 class="text-3xl md:text-4xl font-bold text-white leading-tight tracking-tight">
+                        Season {{ page.season_number }}
+                    </h1>
+                    <p class="text-slate-400">{{ page.get_children.live.count }} episodes</p>
+                </div>
+            </div>
+
+            {% if page.description %}
+            <div class="mt-6 text-lg text-slate-400 leading-relaxed prose prose-invert max-w-none">
+                {{ page.description|richtext }}
+            </div>
+            {% endif %}
+        </div>
+    </div>
+
+    <div class="max-w-4xl mx-auto px-6 mt-8">
+        <section>
+            <h2 class="text-lg font-semibold text-white mb-6 flex items-center gap-2">
+                <i data-lucide="play-circle" class="w-5 h-5 text-blue-400"></i>
+                Episodes
+            </h2>
+
+            <div class="space-y-3">
+                {% for episode in page.get_children.live.specific %}
+                <a href="{% pageurl episode %}"
+                   class="block p-4 bg-slate-900/50 border border-slate-800 rounded-lg hover:border-blue-500/30 transition-all group">
+                    <div class="flex items-center gap-4">
+                        <div class="flex-shrink-0 w-12 h-12 bg-blue-500/20 rounded-lg flex items-center justify-center">
+                            <span class="text-lg font-mono text-blue-400">{{ episode.episode_number }}</span>
+                        </div>
+                        <div class="flex-1 min-w-0">
+                            <h3 class="text-base font-medium text-slate-200 group-hover:text-blue-300 transition-colors">
+                                {{ episode.title }}
+                            </h3>
+                            {% if episode.air_date %}
+                            <p class="text-sm text-slate-500">{{ episode.air_date|date:"F j, Y" }}</p>
+                            {% endif %}
+                        </div>
+                        <div class="flex-shrink-0 text-slate-600 group-hover:text-blue-400 transition-colors">
+                            <i data-lucide="chevron-right" class="w-5 h-5"></i>
+                        </div>
+                    </div>
+                </a>
+                {% empty %}
+                <div class="text-slate-500 text-sm p-8 bg-slate-900/30 rounded-lg border border-slate-800/50 text-center">
+                    <i data-lucide="inbox" class="w-8 h-8 mx-auto mb-2 opacity-50"></i>
+                    <p>No episodes found</p>
+                </div>
+                {% endfor %}
+            </div>
+        </section>
+    </div>
+</article>
+{% endblock %}

@@ -1,0 +1,363 @@
+{% extends "base.html" %}
+{% load narrative_tags %}
+
+{% block title %}Narrative Graph{% endblock %}
+
+{% block extra_css %}
+<style>
+    #graph-container {
+        position: fixed;
+        top: 56px;
+        left: 0;
+        right: 0;
+        bottom: 0;
+    }
+    
+    #graph-canvas {
+        width: 100%;
+        height: 100%;
+        cursor: grab;
+    }
+    
+    #graph-canvas:active {
+        cursor: grabbing;
+    }
+    
+    .graph-legend {
+        position: absolute;
+        bottom: 24px;
+        left: 24px;
+        background: rgba(15, 23, 42, 0.9);
+        border: 1px solid rgb(51, 65, 85);
+        border-radius: 8px;
+        padding: 16px;
+        backdrop-filter: blur(8px);
+    }
+    
+    .graph-tooltip {
+        position: absolute;
+        bottom: 24px;
+        right: 24px;
+        background: rgba(15, 23, 42, 0.9);
+        border: 1px solid rgb(51, 65, 85);
+        border-radius: 8px;
+        padding: 16px;
+        backdrop-filter: blur(8px);
+        max-width: 300px;
+        display: none;
+    }
+    
+    .graph-tooltip.visible {
+        display: block;
+    }
+    
+    .graph-controls {
+        position: absolute;
+        top: 80px;
+        right: 24px;
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+    }
+    
+    .graph-control-btn {
+        width: 40px;
+        height: 40px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: rgba(15, 23, 42, 0.9);
+        border: 1px solid rgb(51, 65, 85);
+        border-radius: 8px;
+        color: rgb(148, 163, 184);
+        cursor: pointer;
+        transition: all 0.2s;
+    }
+    
+    .graph-control-btn:hover {
+        background: rgb(51, 65, 85);
+        color: white;
+    }
+</style>
+{% endblock %}
+
+{% block header_actions %}
+<a href="{% url 'wagtail_serve' '' %}" 
+   class="px-4 py-2 text-sm font-medium rounded-lg bg-amber-500/20 text-amber-400 border border-amber-500/40 shadow-lg shadow-amber-500/10 transition-all duration-200">
+    <span class="flex items-center gap-2">
+        <i data-lucide="x" class="w-4 h-4"></i>
+        Close Graph
+    </span>
+</a>
+{% endblock %}
+
+{% block content %}
+<div id="graph-container">
+    <canvas id="graph-canvas"></canvas>
+    
+    {# Controls #}
+    <div class="graph-controls">
+        <button class="graph-control-btn" onclick="zoomIn()" title="Zoom in">
+            <i data-lucide="zoom-in" class="w-5 h-5"></i>
+        </button>
+        <button class="graph-control-btn" onclick="zoomOut()" title="Zoom out">
+            <i data-lucide="zoom-out" class="w-5 h-5"></i>
+        </button>
+        <button class="graph-control-btn" onclick="resetView()" title="Reset view">
+            <i data-lucide="maximize" class="w-5 h-5"></i>
+        </button>
+    </div>
+    
+    {# Legend #}
+    <div class="graph-legend">
+        <div class="text-xs font-medium text-slate-500 uppercase tracking-wide mb-3">Connection Types</div>
+        <div class="grid grid-cols-2 gap-x-6 gap-y-2">
+            <div class="flex items-center gap-2">
+                <div class="w-4 h-0.5" style="background-color: #22d3ee;"></div>
+                <span class="text-xs text-slate-400">Causal</span>
+            </div>
+            <div class="flex items-center gap-2">
+                <div class="w-4 h-0.5" style="background-color: #a855f7;"></div>
+                <span class="text-xs text-slate-400">Foreshadowing</span>
+            </div>
+            <div class="flex items-center gap-2">
+                <div class="w-4 h-0.5" style="background-color: #f59e0b;"></div>
+                <span class="text-xs text-slate-400">Thematic Parallel</span>
+            </div>
+            <div class="flex items-center gap-2">
+                <div class="w-4 h-0.5" style="background-color: #10b981;"></div>
+                <span class="text-xs text-slate-400">Character Continuity</span>
+            </div>
+            <div class="flex items-center gap-2">
+                <div class="w-4 h-0.5" style="background-color: #ef4444;"></div>
+                <span class="text-xs text-slate-400">Escalation</span>
+            </div>
+            <div class="flex items-center gap-2">
+                <div class="w-4 h-0.5" style="background-color: #3b82f6;"></div>
+                <span class="text-xs text-slate-400">Callback</span>
+            </div>
+        </div>
+    </div>
+    
+    {# Tooltip #}
+    <div id="graph-tooltip" class="graph-tooltip">
+        <div id="tooltip-title" class="font-medium text-white mb-1"></div>
+        <div id="tooltip-episode" class="text-sm text-slate-400 mb-2"></div>
+        <div class="text-xs text-slate-500">Click to view this event</div>
+    </div>
+</div>
+{% endblock %}
+
+{% block extra_js %}
+<script>
+// Graph data from Django
+const graphData = {{ graph_data|safe }};
+
+// Canvas setup
+const canvas = document.getElementById('graph-canvas');
+const ctx = canvas.getContext('2d');
+const tooltip = document.getElementById('graph-tooltip');
+const tooltipTitle = document.getElementById('tooltip-title');
+const tooltipEpisode = document.getElementById('tooltip-episode');
+
+// State
+let zoom = 1;
+let offsetX = 0;
+let offsetY = 0;
+let isDragging = false;
+let dragStartX = 0;
+let dragStartY = 0;
+let hoveredNode = null;
+
+// Colors
+const connectionColors = {
+    'CAUSAL': '#22d3ee',
+    'FORESHADOWING': '#a855f7',
+    'THEMATIC_PARALLEL': '#f59e0b',
+    'CHARACTER_CONTINUITY': '#10b981',
+    'ESCALATION': '#ef4444',
+    'CALLBACK': '#3b82f6',
+    'EMOTIONAL_ECHO': '#ec4899'
+};
+
+// Position nodes in a circle
+const nodes = graphData.nodes.map((node, i) => {
+    const angle = (i / graphData.nodes.length) * 2 * Math.PI;
+    const radius = Math.min(window.innerWidth, window.innerHeight) * 0.35;
+    return {
+        ...node,
+        x: window.innerWidth / 2 + Math.cos(angle) * radius,
+        y: window.innerHeight / 2 + Math.sin(angle) * radius
+    };
+});
+
+const edges = graphData.edges;
+
+// Resize canvas
+function resize() {
+    canvas.width = window.innerWidth * 2;
+    canvas.height = (window.innerHeight - 56) * 2;
+    canvas.style.width = window.innerWidth + 'px';
+    canvas.style.height = (window.innerHeight - 56) + 'px';
+    ctx.scale(2, 2);
+    draw();
+}
+
+// Draw the graph
+function draw() {
+    ctx.fillStyle = '#0a0a0f';
+    ctx.fillRect(0, 0, canvas.width, canvas.height);
+    
+    ctx.save();
+    ctx.translate(offsetX, offsetY);
+    ctx.scale(zoom, zoom);
+    
+    // Draw edges
+    edges.forEach(edge => {
+        const fromNode = nodes.find(n => n.id === edge.from);
+        const toNode = nodes.find(n => n.id === edge.to);
+        if (!fromNode || !toNode) return;
+        
+        ctx.beginPath();
+        ctx.strokeStyle = connectionColors[edge.type] || '#666';
+        ctx.lineWidth = 1.5;
+        ctx.globalAlpha = 0.4;
+        
+        const midX = (fromNode.x + toNode.x) / 2;
+        const midY = (fromNode.y + toNode.y) / 2 - 20;
+        ctx.moveTo(fromNode.x, fromNode.y);
+        ctx.quadraticCurveTo(midX, midY, toNode.x, toNode.y);
+        ctx.stroke();
+        
+        // Arrowhead
+        const angle = Math.atan2(toNode.y - midY, toNode.x - midX);
+        ctx.beginPath();
+        ctx.globalAlpha = 0.6;
+        ctx.moveTo(toNode.x, toNode.y);
+        ctx.lineTo(toNode.x - 8 * Math.cos(angle - Math.PI / 6), toNode.y - 8 * Math.sin(angle - Math.PI / 6));
+        ctx.moveTo(toNode.x, toNode.y);
+        ctx.lineTo(toNode.x - 8 * Math.cos(angle + Math.PI / 6), toNode.y - 8 * Math.sin(angle + Math.PI / 6));
+        ctx.stroke();
+    });
+    
+    ctx.globalAlpha = 1;
+    
+    // Draw nodes
+    nodes.forEach(node => {
+        const isHovered = hoveredNode && hoveredNode.id === node.id;
+        const radius = isHovered ? 10 : 6;
+        
+        // Glow
+        if (isHovered) {
+            ctx.beginPath();
+            ctx.arc(node.x, node.y, 16, 0, 2 * Math.PI);
+            const gradient = ctx.createRadialGradient(node.x, node.y, 0, node.x, node.y, 16);
+            gradient.addColorStop(0, 'rgba(245, 158, 11, 0.3)');
+            gradient.addColorStop(1, 'rgba(245, 158, 11, 0)');
+            ctx.fillStyle = gradient;
+            ctx.fill();
+        }
+        
+        // Node
+        ctx.beginPath();
+        ctx.arc(node.x, node.y, radius, 0, 2 * Math.PI);
+        ctx.fillStyle = isHovered ? '#f59e0b' : '#64748b';
+        ctx.fill();
+        
+        // Label
+        ctx.font = `${isHovered ? 11 : 9}px system-ui, sans-serif`;
+        ctx.fillStyle = isHovered ? '#fbbf24' : '#94a3b8';
+        ctx.textAlign = 'center';
+        ctx.fillText(node.label, node.x, node.y + radius + 12);
+    });
+    
+    ctx.restore();
+}
+
+// Find node at position
+function getNodeAt(x, y) {
+    const canvasX = (x - offsetX) / zoom;
+    const canvasY = (y - offsetY) / zoom;
+    
+    return nodes.find(node => {
+        const dx = node.x - canvasX;
+        const dy = node.y - canvasY;
+        return Math.sqrt(dx * dx + dy * dy) < 15;
+    });
+}
+
+// Event handlers
+canvas.addEventListener('mousedown', e => {
+    isDragging = true;
+    dragStartX = e.clientX - offsetX;
+    dragStartY = e.clientY - offsetY;
+});
+
+canvas.addEventListener('mousemove', e => {
+    const rect = canvas.getBoundingClientRect();
+    const x = e.clientX - rect.left;
+    const y = e.clientY - rect.top;
+    
+    hoveredNode = getNodeAt(x, y);
+    
+    if (hoveredNode) {
+        tooltipTitle.textContent = hoveredNode.label;
+        tooltipEpisode.textContent = hoveredNode.episode;
+        tooltip.classList.add('visible');
+    } else {
+        tooltip.classList.remove('visible');
+    }
+    
+    if (isDragging) {
+        offsetX = e.clientX - dragStartX;
+        offsetY = e.clientY - dragStartY;
+    }
+    
+    draw();
+});
+
+canvas.addEventListener('mouseup', () => {
+    isDragging = false;
+});
+
+canvas.addEventListener('mouseleave', () => {
+    isDragging = false;
+    tooltip.classList.remove('visible');
+});
+
+canvas.addEventListener('click', () => {
+    if (hoveredNode && hoveredNode.url) {
+        window.location.href = hoveredNode.url;
+    }
+});
+
+canvas.addEventListener('wheel', e => {
+    e.preventDefault();
+    const delta = e.deltaY > 0 ? 0.9 : 1.1;
+    zoom = Math.max(0.3, Math.min(3, zoom * delta));
+    draw();
+});
+
+// Control functions
+function zoomIn() {
+    zoom = Math.min(3, zoom * 1.2);
+    draw();
+}
+
+function zoomOut() {
+    zoom = Math.max(0.3, zoom * 0.8);
+    draw();
+}
+
+function resetView() {
+    zoom = 1;
+    offsetX = 0;
+    offsetY = 0;
+    draw();
+}
+
+// Initialize
+window.addEventListener('resize', resize);
+resize();
+</script>
+{% endblock %}

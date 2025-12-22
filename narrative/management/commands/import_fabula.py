@@ -1,0 +1,876 @@
+"""
+Django management command to import Fabula YAML data into Wagtail.
+
+This command reads YAML files exported from a Fabula narrative graph and creates
+corresponding Wagtail pages and models. It handles dependencies correctly and is
+idempotent using fabula_uuid as the lookup key.
+
+Usage:
+    python manage.py import_fabula ./fabula_export
+    python manage.py import_fabula ./fabula_export --dry-run
+"""
+
+import os
+import sys
+from pathlib import Path
+from typing import Dict, List, Any, Optional, Tuple
+
+import yaml
+from django.core.management.base import BaseCommand, CommandError
+from django.db import transaction
+from django.utils.text import slugify
+from wagtail.models import Page, Site
+
+from narrative.models import (
+    # Snippets
+    Theme,
+    ConflictArc,
+    Location,
+    # Pages
+    SeriesIndexPage,
+    SeasonPage,
+    EpisodePage,
+    CharacterIndexPage,
+    CharacterPage,
+    OrganizationIndexPage,
+    OrganizationPage,
+    EventIndexPage,
+    EventPage,
+    # Related models
+    NarrativeConnection,
+    EventParticipation,
+    CharacterEpisodeProfile,
+)
+
+
+class ImportStats:
+    """Track import statistics for reporting."""
+
+    def __init__(self):
+        self.created = {}
+        self.updated = {}
+        self.errors = []
+
+    def record_created(self, model_name: str):
+        self.created[model_name] = self.created.get(model_name, 0) + 1
+
+    def record_updated(self, model_name: str):
+        self.updated[model_name] = self.updated.get(model_name, 0) + 1
+
+    def record_error(self, message: str):
+        self.errors.append(message)
+
+    def summary(self) -> str:
+        """Generate a summary report."""
+        lines = []
+        lines.append("\n=== Import Summary ===")
+
+        if self.created:
+            lines.append("\nCreated:")
+            for model, count in sorted(self.created.items()):
+                lines.append(f"  {model}: {count}")
+
+        if self.updated:
+            lines.append("\nUpdated:")
+            for model, count in sorted(self.updated.items()):
+                lines.append(f"  {model}: {count}")
+
+        if self.errors:
+            lines.append(f"\nErrors: {len(self.errors)}")
+            for error in self.errors[:10]:  # Show first 10 errors
+                lines.append(f"  - {error}")
+            if len(self.errors) > 10:
+                lines.append(f"  ... and {len(self.errors) - 10} more")
+
+        return "\n".join(lines)
+
+
+class Command(BaseCommand):
+    help = 'Import Fabula YAML data into Wagtail'
+
+    def __init__(self):
+        super().__init__()
+        self.stats = ImportStats()
+        self.dry_run = False
+        self.verbose = False
+
+        # Caches for lookups
+        self.themes_cache: Dict[str, Theme] = {}
+        self.arcs_cache: Dict[str, ConflictArc] = {}
+        self.locations_cache: Dict[str, Location] = {}
+        self.characters_cache: Dict[str, CharacterPage] = {}
+        self.organizations_cache: Dict[str, OrganizationPage] = {}
+        self.episodes_cache: Dict[str, EpisodePage] = {}
+        self.events_cache: Dict[str, EventPage] = {}
+
+    def add_arguments(self, parser):
+        parser.add_argument(
+            'data_dir',
+            type=str,
+            help='Directory containing exported YAML files'
+        )
+        parser.add_argument(
+            '--dry-run',
+            action='store_true',
+            help='Validate data without saving to database'
+        )
+        parser.add_argument(
+            '--verbose',
+            action='store_true',
+            help='Show detailed progress information'
+        )
+
+    def handle(self, *args, **options):
+        self.dry_run = options['dry_run']
+        self.verbose = options['verbose']
+        data_dir = Path(options['data_dir'])
+
+        if not data_dir.exists():
+            raise CommandError(f"Data directory does not exist: {data_dir}")
+
+        self.stdout.write(self.style.SUCCESS(
+            f"{'[DRY RUN] ' if self.dry_run else ''}Starting Fabula import from {data_dir}"
+        ))
+
+        try:
+            # Load all YAML files
+            manifest = self.load_yaml(data_dir / 'manifest.yaml')
+            series_data = self.load_yaml(data_dir / 'series.yaml')
+            themes_data = self.load_yaml(data_dir / 'themes.yaml')
+            arcs_data = self.load_yaml(data_dir / 'arcs.yaml')
+            locations_data = self.load_yaml(data_dir / 'locations.yaml')
+            characters_data = self.load_yaml(data_dir / 'characters.yaml')
+            organizations_data = self.load_yaml(data_dir / 'organizations.yaml', required=False)
+            connections_data = self.load_yaml(data_dir / 'connections.yaml')
+
+            # Load event files
+            events_dir = data_dir / 'events'
+            events_data = self.load_events(events_dir)
+
+            self.log_info(f"Loaded {len(events_data)} event files")
+
+            # Run import in transaction (unless dry run)
+            if self.dry_run:
+                self.run_import(
+                    manifest, series_data, themes_data, arcs_data, locations_data,
+                    characters_data, organizations_data, events_data, connections_data
+                )
+            else:
+                with transaction.atomic():
+                    self.run_import(
+                        manifest, series_data, themes_data, arcs_data, locations_data,
+                        characters_data, organizations_data, events_data, connections_data
+                    )
+
+            # Print summary
+            self.stdout.write(self.style.SUCCESS(self.stats.summary()))
+
+            if self.stats.errors:
+                self.stdout.write(self.style.ERROR(
+                    f"\nImport completed with {len(self.stats.errors)} errors"
+                ))
+            else:
+                self.stdout.write(self.style.SUCCESS(
+                    f"\n{'[DRY RUN] ' if self.dry_run else ''}Import completed successfully!"
+                ))
+
+        except Exception as e:
+            self.stdout.write(self.style.ERROR(f"\nImport failed: {str(e)}"))
+            if self.verbose:
+                import traceback
+                traceback.print_exc()
+            raise
+
+    def run_import(
+        self,
+        manifest: Dict,
+        series_data,  # Can be Dict or List[Dict]
+        themes_data: List[Dict],
+        arcs_data: List[Dict],
+        locations_data: List[Dict],
+        characters_data: List[Dict],
+        organizations_data: Optional[List[Dict]],
+        events_data: List[Dict],
+        connections_data: List[Dict]
+    ):
+        """Execute the import in dependency order."""
+
+        self.log_progress("Phase 1: Importing snippets (themes, arcs, locations)")
+        self.import_themes(themes_data)
+        self.import_arcs(arcs_data)
+        self.import_locations(locations_data)
+
+        self.log_progress("Phase 2: Creating page tree structure")
+        # Handle series_data as either a list or a single dict
+        series_list = series_data if isinstance(series_data, list) else [series_data]
+
+        # Import all series, use "The West Wing" as primary (or first series if not found)
+        main_series_page = None
+        character_index = None
+        org_index = None
+        event_index = None
+
+        for single_series in series_list:
+            series_page, char_idx, org_idx, event_idx = self.import_series_structure(single_series)
+            # Use The West Wing as primary, otherwise use first series
+            if single_series.get('title') == 'The West Wing' or main_series_page is None:
+                main_series_page = series_page
+                character_index = char_idx
+                org_index = org_idx
+                event_index = event_idx
+
+        self.log_progress("Phase 3: Importing organizations and characters")
+        if organizations_data:
+            self.import_organizations(organizations_data, org_index)
+        self.import_characters(characters_data, character_index)
+
+        self.log_progress("Phase 4: Importing events")
+        self.import_events(events_data, event_index)
+
+        self.log_progress("Phase 5: Creating event participations")
+        self.import_event_participations(events_data)
+
+        self.log_progress("Phase 6: Creating narrative connections")
+        self.import_connections(connections_data)
+
+    # =========================================================================
+    # YAML Loading
+    # =========================================================================
+
+    def load_yaml(self, path: Path, required: bool = True) -> Any:
+        """Load a YAML file."""
+        if not path.exists():
+            if required:
+                raise CommandError(f"Required file not found: {path}")
+            return None
+
+        try:
+            with open(path, 'r', encoding='utf-8') as f:
+                return yaml.safe_load(f)
+        except Exception as e:
+            raise CommandError(f"Error loading {path}: {e}")
+
+    def load_events(self, events_dir: Path) -> List[Dict]:
+        """Load all event YAML files from the events directory."""
+        if not events_dir.exists():
+            raise CommandError(f"Events directory not found: {events_dir}")
+
+        events = []
+        for event_file in sorted(events_dir.glob('*.yaml')):
+            event_data = self.load_yaml(event_file)
+            if event_data:
+                events.append(event_data)
+
+        return events
+
+    def make_unique_slug(self, base_slug: str, uuid: str) -> str:
+        """Create a unique slug by appending full UUID for guaranteed uniqueness."""
+        # Use full UUID to handle duplicate entries with same suffix
+        uuid_slug = slugify(uuid) if uuid else ''
+        return f"{base_slug}-{uuid_slug}" if uuid_slug else base_slug
+
+    def normalize_character_type(self, char_type: str) -> str:
+        """Normalize character type to model-compatible value."""
+        type_map = {
+            'main': 'main',
+            'main character': 'main',
+            'recurring': 'recurring',
+            'recurring character': 'recurring',
+            'guest': 'guest',
+            'guest character': 'guest',
+            'mentioned': 'mentioned',
+            'mentioned only': 'mentioned',
+        }
+        return type_map.get(char_type.lower(), 'recurring') if char_type else 'recurring'
+
+    # =========================================================================
+    # Phase 1: Snippets
+    # =========================================================================
+
+    def import_themes(self, themes_data: List[Dict]):
+        """Import Theme snippets."""
+        self.log_progress(f"  Importing {len(themes_data)} themes...")
+
+        for theme_data in themes_data:
+            fabula_uuid = theme_data.get('fabula_uuid') or theme_data.get('theme_uuid', '')
+
+            theme, created = Theme.objects.get_or_create(
+                fabula_uuid=fabula_uuid,
+                defaults={
+                    'name': theme_data['name'],
+                    'description': theme_data.get('description', ''),
+                }
+            )
+
+            if not created:
+                # Update existing
+                theme.name = theme_data['name']
+                theme.description = theme_data.get('description', '')
+                if not self.dry_run:
+                    theme.save()
+                self.stats.record_updated('Theme')
+            else:
+                if not self.dry_run:
+                    theme.save()
+                self.stats.record_created('Theme')
+
+            self.themes_cache[fabula_uuid] = theme
+            self.log_detail(f"    {'Created' if created else 'Updated'} theme: {theme.name}")
+
+    def import_arcs(self, arcs_data: List[Dict]):
+        """Import ConflictArc snippets."""
+        self.log_progress(f"  Importing {len(arcs_data)} conflict arcs...")
+
+        for arc_data in arcs_data:
+            fabula_uuid = arc_data.get('fabula_uuid') or arc_data.get('arc_uuid', '')
+
+            arc, created = ConflictArc.objects.get_or_create(
+                fabula_uuid=fabula_uuid,
+                defaults={
+                    'title': arc_data['title'],
+                    'description': arc_data.get('description', ''),
+                    'arc_type': arc_data.get('arc_type', 'INTERPERSONAL'),
+                }
+            )
+
+            if not created:
+                arc.title = arc_data['title']
+                arc.description = arc_data.get('description', '')
+                arc.arc_type = arc_data.get('arc_type', 'INTERPERSONAL')
+                if not self.dry_run:
+                    arc.save()
+                self.stats.record_updated('ConflictArc')
+            else:
+                if not self.dry_run:
+                    arc.save()
+                self.stats.record_created('ConflictArc')
+
+            self.arcs_cache[fabula_uuid] = arc
+            self.log_detail(f"    {'Created' if created else 'Updated'} arc: {arc.title}")
+
+    def import_locations(self, locations_data: List[Dict]):
+        """Import Location snippets."""
+        self.log_progress(f"  Importing {len(locations_data)} locations...")
+
+        # First pass: create all locations without parent relationships
+        for loc_data in locations_data:
+            fabula_uuid = loc_data.get('fabula_uuid') or loc_data.get('location_uuid', '')
+
+            location, created = Location.objects.get_or_create(
+                fabula_uuid=fabula_uuid,
+                defaults={
+                    'canonical_name': loc_data['canonical_name'],
+                    'description': loc_data.get('description', ''),
+                    'location_type': loc_data.get('location_type', ''),
+                }
+            )
+
+            if not created:
+                location.canonical_name = loc_data['canonical_name']
+                location.description = loc_data.get('description', '')
+                location.location_type = loc_data.get('location_type', '')
+                if not self.dry_run:
+                    location.save()
+                self.stats.record_updated('Location')
+            else:
+                if not self.dry_run:
+                    location.save()
+                self.stats.record_created('Location')
+
+            self.locations_cache[fabula_uuid] = location
+            self.log_detail(f"    {'Created' if created else 'Updated'} location: {location.canonical_name}")
+
+        # Second pass: set parent relationships
+        for loc_data in locations_data:
+            if parent_uuid := loc_data.get('parent_location_uuid'):
+                location = self.locations_cache[loc_data['location_uuid']]
+                parent = self.locations_cache.get(parent_uuid)
+                if parent:
+                    location.parent_location = parent
+                    if not self.dry_run:
+                        location.save()
+
+    # =========================================================================
+    # Phase 2: Page Tree Structure
+    # =========================================================================
+
+    def import_series_structure(self, series_data: Dict) -> Tuple[SeriesIndexPage, CharacterIndexPage, OrganizationIndexPage, EventIndexPage]:
+        """Create the series page tree structure."""
+
+        # Get or create series root page
+        series_uuid = series_data.get('fabula_uuid') or series_data.get('series_uuid', '')
+        series_title = series_data['title']
+
+        root_page = Page.objects.get(depth=1)  # Wagtail root page
+
+        # Check if series already exists
+        series_page = SeriesIndexPage.objects.filter(fabula_uuid=series_uuid).first()
+
+        if series_page:
+            self.log_detail(f"  Using existing series: {series_page.title}")
+            series_page.description = series_data.get('description', '')
+            if not self.dry_run:
+                series_page.save_revision().publish()
+            self.stats.record_updated('SeriesIndexPage')
+        else:
+            series_page = SeriesIndexPage(
+                title=series_title,
+                slug=slugify(series_title),
+                fabula_uuid=series_uuid,
+                description=series_data.get('description', ''),
+            )
+            if not self.dry_run:
+                root_page.add_child(instance=series_page)
+                series_page.save_revision().publish()
+            self.stats.record_created('SeriesIndexPage')
+            self.log_detail(f"  Created series page: {series_title}")
+
+        # Create seasons
+        for season_data in series_data.get('seasons', []):
+            self.import_season(season_data, series_page)
+
+        # Create index pages
+        character_index = self.get_or_create_index_page(
+            CharacterIndexPage,
+            'Characters',
+            series_page,
+            'characters'
+        )
+
+        org_index = self.get_or_create_index_page(
+            OrganizationIndexPage,
+            'Organizations',
+            series_page,
+            'organizations'
+        )
+
+        event_index = self.get_or_create_index_page(
+            EventIndexPage,
+            'Events',
+            series_page,
+            'events'
+        )
+
+        return series_page, character_index, org_index, event_index
+
+    def import_season(self, season_data: Dict, series_page: SeriesIndexPage):
+        """Import a season and its episodes."""
+        season_uuid = season_data.get('fabula_uuid') or season_data.get('season_uuid', '')
+        season_number = season_data['season_number']
+
+        season_page = SeasonPage.objects.filter(fabula_uuid=season_uuid).first()
+
+        if season_page:
+            season_page.season_number = season_number
+            season_page.description = season_data.get('description', '')
+            if not self.dry_run:
+                season_page.save_revision().publish()
+            self.stats.record_updated('SeasonPage')
+        else:
+            season_page = SeasonPage(
+                title=f"Season {season_number}",
+                slug=f"season-{season_number}",
+                fabula_uuid=season_uuid,
+                season_number=season_number,
+                description=season_data.get('description', ''),
+            )
+            if not self.dry_run:
+                series_page.add_child(instance=season_page)
+                season_page.save_revision().publish()
+            self.stats.record_created('SeasonPage')
+
+        self.log_detail(f"    Season {season_number}")
+
+        # Create episodes
+        for episode_data in season_data.get('episodes', []):
+            self.import_episode(episode_data, season_page)
+
+    def import_episode(self, episode_data: Dict, season_page: SeasonPage):
+        """Import an episode."""
+        episode_uuid = episode_data.get('fabula_uuid') or episode_data.get('episode_uuid', '')
+        episode_number = episode_data['episode_number']
+        title = episode_data['title']
+
+        episode_page = EpisodePage.objects.filter(fabula_uuid=episode_uuid).first()
+
+        if episode_page:
+            episode_page.title = title
+            episode_page.episode_number = episode_number
+            episode_page.logline = episode_data.get('logline', '')
+            episode_page.high_level_summary = episode_data.get('high_level_summary', '')
+            episode_page.dominant_tone = episode_data.get('dominant_tone', '')
+            if not self.dry_run:
+                episode_page.save_revision().publish()
+            self.stats.record_updated('EpisodePage')
+        else:
+            episode_page = EpisodePage(
+                title=title,
+                slug=slugify(f"s{season_page.season_number}e{episode_number}-{title}"),
+                fabula_uuid=episode_uuid,
+                episode_number=episode_number,
+                logline=episode_data.get('logline', ''),
+                high_level_summary=episode_data.get('high_level_summary', ''),
+                dominant_tone=episode_data.get('dominant_tone', ''),
+            )
+            if not self.dry_run:
+                season_page.add_child(instance=episode_page)
+                episode_page.save_revision().publish()
+            self.stats.record_created('EpisodePage')
+
+        self.episodes_cache[episode_uuid] = episode_page
+        self.log_detail(f"      Episode {episode_number}: {title}")
+
+    def get_or_create_index_page(
+        self,
+        page_class,
+        title: str,
+        parent: Page,
+        slug: str
+    ):
+        """Get or create an index page."""
+        existing = page_class.objects.child_of(parent).first()
+
+        if existing:
+            self.log_detail(f"  Using existing {page_class.__name__}: {existing.title}")
+            self.stats.record_updated(page_class.__name__)
+            return existing
+
+        page = page_class(
+            title=title,
+            slug=slug,
+            introduction='',
+        )
+
+        if not self.dry_run:
+            parent.add_child(instance=page)
+            page.save_revision().publish()
+
+        self.stats.record_created(page_class.__name__)
+        self.log_detail(f"  Created {page_class.__name__}: {title}")
+        return page
+
+    # =========================================================================
+    # Phase 3: Characters and Organizations
+    # =========================================================================
+
+    def import_organizations(self, orgs_data: List[Dict], org_index: OrganizationIndexPage):
+        """Import organizations."""
+        self.log_progress(f"  Importing {len(orgs_data)} organizations...")
+
+        for org_data in orgs_data:
+            org_uuid = org_data.get('fabula_uuid') or org_data.get('org_uuid', '')
+
+            org_page = OrganizationPage.objects.filter(fabula_uuid=org_uuid).first()
+
+            if org_page:
+                org_page.canonical_name = org_data['canonical_name']
+                org_page.description = org_data.get('description', '')
+                org_page.sphere_of_influence = org_data.get('sphere_of_influence', '')
+                if not self.dry_run:
+                    org_page.save_revision().publish()
+                self.stats.record_updated('OrganizationPage')
+            else:
+                base_slug = slugify(org_data['canonical_name'])
+                unique_slug = self.make_unique_slug(base_slug, org_uuid)
+                org_page = OrganizationPage(
+                    title=org_data['canonical_name'],
+                    slug=unique_slug,
+                    fabula_uuid=org_uuid,
+                    canonical_name=org_data['canonical_name'],
+                    description=org_data.get('description', ''),
+                    sphere_of_influence=org_data.get('sphere_of_influence', ''),
+                )
+                if not self.dry_run:
+                    org_index.add_child(instance=org_page)
+                    org_page.save_revision().publish()
+                self.stats.record_created('OrganizationPage')
+
+            self.organizations_cache[org_uuid] = org_page
+            self.log_detail(f"    {'Updated' if org_page.pk else 'Created'} organization: {org_page.canonical_name}")
+
+    def import_characters(self, characters_data: List[Dict], char_index: CharacterIndexPage):
+        """Import characters."""
+        self.log_progress(f"  Importing {len(characters_data)} characters...")
+
+        for char_data in characters_data:
+            char_uuid = char_data.get('fabula_uuid') or char_data.get('agent_uuid', '')
+
+            char_page = CharacterPage.objects.filter(fabula_uuid=char_uuid).first()
+
+            # Get organization if specified
+            org = None
+            if org_uuid := char_data.get('affiliated_organization_uuid'):
+                org = self.organizations_cache.get(org_uuid)
+
+            if char_page:
+                char_page.canonical_name = char_data['canonical_name']
+                char_page.title_role = char_data.get('title_role') or ''
+                char_page.description = char_data.get('description') or ''
+                char_page.traits = char_data.get('traits') or []
+                char_page.nicknames = char_data.get('aliases') or char_data.get('nicknames') or []
+                char_page.character_type = self.normalize_character_type(char_data.get('character_type', 'recurring'))
+                char_page.sphere_of_influence = char_data.get('sphere_of_influence') or ''
+                char_page.appearance_count = char_data.get('appearance_count', 0)
+                char_page.affiliated_organization = org
+                if not self.dry_run:
+                    char_page.save_revision().publish()
+                self.stats.record_updated('CharacterPage')
+            else:
+                base_slug = slugify(char_data['canonical_name'])
+                unique_slug = self.make_unique_slug(base_slug, char_uuid)
+                char_page = CharacterPage(
+                    title=char_data['canonical_name'],
+                    slug=unique_slug,
+                    fabula_uuid=char_uuid,
+                    canonical_name=char_data['canonical_name'],
+                    title_role=char_data.get('title_role') or '',
+                    description=char_data.get('description') or '',
+                    traits=char_data.get('traits') or [],
+                    nicknames=char_data.get('aliases') or char_data.get('nicknames') or [],
+                    character_type=self.normalize_character_type(char_data.get('character_type', 'recurring')),
+                    sphere_of_influence=char_data.get('sphere_of_influence') or '',
+                    appearance_count=char_data.get('appearance_count', 0),
+                    affiliated_organization=org,
+                )
+                if not self.dry_run:
+                    char_index.add_child(instance=char_page)
+                    char_page.save_revision().publish()
+                self.stats.record_created('CharacterPage')
+
+            self.characters_cache[char_uuid] = char_page
+            self.log_detail(f"    {'Updated' if char_page.pk else 'Created'} character: {char_page.canonical_name}")
+
+    # =========================================================================
+    # Phase 4: Events
+    # =========================================================================
+
+    def import_events(self, events_data: List[Dict], event_index: EventIndexPage):
+        """Import events from episode files (each file contains an events list)."""
+        # Count total events
+        total_events = sum(len(ep_data.get('events', [])) for ep_data in events_data)
+        self.log_progress(f"  Importing {total_events} events from {len(events_data)} episode files...")
+
+        for episode_file_data in events_data:
+            # Get default episode UUID from file header
+            default_episode_uuid = episode_file_data.get('episode_uuid', '')
+
+            # Iterate over events in this episode file
+            for event_data in episode_file_data.get('events', []):
+                event_uuid = event_data.get('fabula_uuid') or event_data.get('event_uuid', '')
+
+                # Get episode (use event's episode_uuid or fall back to file's default)
+                episode_uuid = event_data.get('episode_uuid', '') or default_episode_uuid
+                episode = self.episodes_cache.get(episode_uuid)
+                if not episode:
+                    self.stats.record_error(f"Episode not found for event {event_uuid}")
+                    continue
+
+                # Get location
+                location = None
+                if loc_uuid := event_data.get('location_uuid'):
+                    location = self.locations_cache.get(loc_uuid)
+
+                event_page = EventPage.objects.filter(fabula_uuid=event_uuid).first()
+
+                # Generate title from description or use a default
+                title = event_data.get('title') or f"Event {event_data.get('scene_sequence', 0)}.{event_data.get('sequence_in_scene', 0)}"
+
+                if event_page:
+                    event_page.title = title
+                    event_page.episode = episode
+                    event_page.scene_sequence = event_data.get('scene_sequence', 0)
+                    event_page.sequence_in_scene = event_data.get('sequence_in_scene', 0)
+                    event_page.description = event_data.get('description') or ''
+                    event_page.key_dialogue = event_data.get('key_dialogue') or []
+                    event_page.is_flashback = event_data.get('is_flashback', False)
+                    event_page.location = location
+
+                    if not self.dry_run:
+                        event_page.save_revision().publish()
+
+                        # Update themes and arcs (ManyToMany)
+                        theme_uuids = event_data.get('theme_uuids') or []
+                        themes = [self.themes_cache[uuid] for uuid in theme_uuids if uuid in self.themes_cache]
+                        event_page.themes.set(themes)
+
+                        arc_uuids = event_data.get('arc_uuids') or []
+                        arcs = [self.arcs_cache[uuid] for uuid in arc_uuids if uuid in self.arcs_cache]
+                        event_page.arcs.set(arcs)
+
+                    self.stats.record_updated('EventPage')
+                else:
+                    base_slug = slugify(f"{episode.slug}-{event_data.get('scene_sequence', 0)}-{event_data.get('sequence_in_scene', 0)}")
+                    unique_slug = self.make_unique_slug(base_slug, event_uuid)
+                    event_page = EventPage(
+                        title=title,
+                        slug=unique_slug,
+                        fabula_uuid=event_uuid,
+                        episode=episode,
+                        scene_sequence=event_data.get('scene_sequence', 0),
+                        sequence_in_scene=event_data.get('sequence_in_scene', 0),
+                        description=event_data.get('description') or '',
+                        key_dialogue=event_data.get('key_dialogue') or [],
+                        is_flashback=event_data.get('is_flashback', False),
+                        location=location,
+                    )
+
+                    if not self.dry_run:
+                        event_index.add_child(instance=event_page)
+                        event_page.save_revision().publish()
+
+                        # Set themes and arcs (ManyToMany)
+                        theme_uuids = event_data.get('theme_uuids') or []
+                        themes = [self.themes_cache[uuid] for uuid in theme_uuids if uuid in self.themes_cache]
+                        event_page.themes.set(themes)
+
+                        arc_uuids = event_data.get('arc_uuids') or []
+                        arcs = [self.arcs_cache[uuid] for uuid in arc_uuids if uuid in self.arcs_cache]
+                        event_page.arcs.set(arcs)
+
+                    self.stats.record_created('EventPage')
+
+                self.events_cache[event_uuid] = event_page
+                self.log_detail(f"    {'Updated' if event_page.pk else 'Created'} event: {title}")
+
+    # =========================================================================
+    # Phase 5: Event Participations
+    # =========================================================================
+
+    def import_event_participations(self, events_data: List[Dict]):
+        """Import event participations from episode files (each file contains an events list)."""
+        self.log_progress(f"  Importing event participations...")
+
+        total = 0
+        for episode_file_data in events_data:
+            for event_data in episode_file_data.get('events', []):
+                event_uuid = event_data.get('fabula_uuid') or event_data.get('event_uuid', '')
+                event = self.events_cache.get(event_uuid)
+
+                if not event:
+                    continue
+
+                participations = event_data.get('participations') or []
+
+                for part_data in participations:
+                    char_uuid = part_data.get('character_uuid') or part_data.get('agent_uuid', '')
+                    character = self.characters_cache.get(char_uuid)
+
+                    if not character:
+                        self.stats.record_error(f"Character {char_uuid} not found for participation")
+                        continue
+
+                    # Check if participation already exists
+                    participation = EventParticipation.objects.filter(
+                        event=event,
+                        character=character
+                    ).first()
+
+                    if participation:
+                        # Update existing
+                        participation.emotional_state = part_data.get('emotional_state') or ''
+                        participation.goals = part_data.get('goals') or []
+                        participation.what_happened = part_data.get('what_happened') or ''
+                        participation.observed_status = part_data.get('observed_status') or ''
+                        participation.beliefs = part_data.get('beliefs') or []
+                        participation.observed_traits = part_data.get('observed_traits') or []
+                        participation.importance = part_data.get('importance') or ''
+
+                        if not self.dry_run:
+                            participation.save()
+                        self.stats.record_updated('EventParticipation')
+                    else:
+                        # Create new
+                        participation = EventParticipation(
+                            event=event,
+                            character=character,
+                            emotional_state=part_data.get('emotional_state') or '',
+                            goals=part_data.get('goals') or [],
+                            what_happened=part_data.get('what_happened') or '',
+                            observed_status=part_data.get('observed_status') or '',
+                            beliefs=part_data.get('beliefs') or [],
+                            observed_traits=part_data.get('observed_traits') or [],
+                            importance=part_data.get('importance') or '',
+                        )
+
+                        if not self.dry_run:
+                            participation.save()
+                        self.stats.record_created('EventParticipation')
+
+                    total += 1
+
+        self.log_detail(f"    Processed {total} participations")
+
+    # =========================================================================
+    # Phase 6: Narrative Connections
+    # =========================================================================
+
+    def import_connections(self, connections_data: List[Dict]):
+        """Import narrative connections."""
+        self.log_progress(f"  Importing {len(connections_data)} narrative connections...")
+
+        for conn_data in connections_data:
+            from_uuid = conn_data['from_event_uuid']
+            to_uuid = conn_data['to_event_uuid']
+
+            from_event = self.events_cache.get(from_uuid)
+            to_event = self.events_cache.get(to_uuid)
+
+            if not from_event or not to_event:
+                self.stats.record_error(
+                    f"Events not found for connection: {from_uuid} -> {to_uuid}"
+                )
+                continue
+
+            conn_type = conn_data['connection_type']
+
+            # Check if connection exists
+            connection = NarrativeConnection.objects.filter(
+                from_event=from_event,
+                to_event=to_event,
+                connection_type=conn_type
+            ).first()
+
+            if connection:
+                # Update existing
+                connection.strength = conn_data.get('strength', 'medium')
+                connection.description = conn_data.get('description', '')
+                if fabula_uuid := conn_data.get('fabula_uuid') or conn_data.get('connection_uuid'):
+                    connection.fabula_uuid = fabula_uuid
+
+                if not self.dry_run:
+                    connection.save()
+                self.stats.record_updated('NarrativeConnection')
+            else:
+                # Create new
+                connection = NarrativeConnection(
+                    fabula_uuid=conn_data.get('fabula_uuid') or conn_data.get('connection_uuid', ''),
+                    from_event=from_event,
+                    to_event=to_event,
+                    connection_type=conn_type,
+                    strength=conn_data.get('strength', 'medium'),
+                    description=conn_data.get('description', ''),
+                )
+
+                if not self.dry_run:
+                    connection.save()
+                self.stats.record_created('NarrativeConnection')
+
+            self.log_detail(f"    {'Updated' if connection.pk else 'Created'} {conn_type} connection")
+
+    # =========================================================================
+    # Utilities
+    # =========================================================================
+
+    def log_progress(self, message: str):
+        """Log a progress message with emoji."""
+        icon = "🔍" if self.dry_run else "⚙️"
+        self.stdout.write(f"{icon} {message}")
+
+    def log_info(self, message: str):
+        """Log an informational message."""
+        self.stdout.write(f"ℹ️  {message}")
+
+    def log_detail(self, message: str):
+        """Log a detailed message (only in verbose mode)."""
+        if self.verbose:
+            self.stdout.write(f"  {message}")

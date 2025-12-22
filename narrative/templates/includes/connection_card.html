@@ -1,0 +1,72 @@
+{% load narrative_tags %}
+{#
+Connection Card Component
+
+Displays a narrative connection between events, showing:
+- Connection type (CAUSAL, FORESHADOWING, etc.)
+- Strength
+- The narrative assertion (description)
+- Link to the connected event
+
+Variables:
+- connection: NarrativeConnection instance
+- direction: "incoming" or "outgoing"
+#}
+
+{% with conn_type=connection.connection_type|lower|slugify %}
+<div class="group relative p-5 rounded-xl border-2 transition-all duration-300 cursor-pointer
+            conn-{{ conn_type }} conn-card hover:shadow-2xl"
+     onclick="window.location='{% if direction == 'incoming' %}{% pageurl connection.from_event %}{% else %}{% pageurl connection.to_event %}{% endif %}'">
+
+    {# Background accent line #}
+    <div class="absolute top-0 left-0 right-0 h-1 rounded-t-xl opacity-50 group-hover:opacity-100 transition-opacity"
+         style="background: linear-gradient(to right, transparent, var(--conn-color), transparent);"></div>
+
+    {# Connection type badge #}
+    <div class="flex items-center gap-3 mb-3">
+        <span class="conn-badge inline-flex items-center gap-2 px-3 py-1.5 text-xs font-semibold border-2 rounded-lg capitalize hover:scale-105 transition-transform"
+              onclick="event.stopPropagation(); window.location='{% url 'connection_detail' connection.pk %}'">
+            {% include "includes/connection_icon.html" with conn_type=connection.connection_type %}
+            {{ connection.connection_type|lower|replace:"_":" " }}
+        </span>
+
+        {% if connection.strength != 'strong' %}
+        <span class="text-xs text-slate-500 font-medium px-2 py-1 bg-slate-800/50 rounded">{{ connection.strength }}</span>
+        {% endif %}
+    </div>
+
+    {# Description - the narrative assertion #}
+    <p class="text-sm text-slate-200 mb-4 leading-relaxed font-medium italic">
+        "{{ connection.description }}"
+    </p>
+
+    {# Target event link #}
+    <div class="flex items-center gap-2 text-sm mb-2">
+        {% if direction == "incoming" %}
+            <i data-lucide="arrow-left" class="w-4 h-4 shrink-0" style="color: var(--conn-color)"></i>
+            <span class="font-semibold text-slate-200 group-hover:text-white transition-colors">
+                {{ connection.from_event.title }}
+            </span>
+        {% else %}
+            <i data-lucide="arrow-right" class="w-4 h-4 shrink-0" style="color: var(--conn-color)"></i>
+            <span class="font-semibold text-slate-200 group-hover:text-white transition-colors">
+                {{ connection.to_event.title }}
+            </span>
+        {% endif %}
+    </div>
+
+    {# Episode context #}
+    <div class="text-xs text-slate-500 font-mono">
+        {% if direction == "incoming" %}
+            S{{ connection.from_event.episode.get_parent.specific.season_number }}E{{ connection.from_event.episode.episode_number }} · {{ connection.from_event.episode.title|truncatewords:5 }}
+        {% else %}
+            S{{ connection.to_event.episode.get_parent.specific.season_number }}E{{ connection.to_event.episode.episode_number }} · {{ connection.to_event.episode.title|truncatewords:5 }}
+        {% endif %}
+    </div>
+
+    {# Hover indicator #}
+    <div class="absolute right-5 top-1/2 -translate-y-1/2 opacity-0 group-hover:opacity-100 transition-all duration-300 group-hover:translate-x-1">
+        <i data-lucide="arrow-right" class="w-6 h-6" style="color: var(--conn-color)"></i>
+    </div>
+</div>
+{% endwith %}

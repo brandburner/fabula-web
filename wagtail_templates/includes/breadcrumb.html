@@ -1,0 +1,46 @@
+{% load wagtailcore_tags narrative_tags %}
+{# Breadcrumb navigation showing current location in the narrative web #}
+
+<div class="flex items-center gap-3">
+    {# Back button if we have history (via JS or referrer) #}
+    <button onclick="history.back()" 
+            class="flex items-center gap-1.5 px-3 py-1.5 text-sm text-slate-400 hover:text-slate-200 bg-slate-800/50 hover:bg-slate-800 rounded-lg transition-colors"
+            title="Go back">
+        <i data-lucide="chevron-left" class="w-4 h-4"></i>
+        <span class="hidden sm:inline">Back</span>
+    </button>
+
+    {# Current page indicator #}
+    <div class="flex items-center gap-2 px-3 py-1.5 bg-slate-800/30 rounded-lg">
+        {# Icon based on page type #}
+        {% if page.specific_class_name == 'EventPage' %}
+            <i data-lucide="zap" class="w-4 h-4 text-amber-400"></i>
+        {% elif page.specific_class_name == 'CharacterPage' %}
+            <i data-lucide="user" class="w-4 h-4 text-emerald-400"></i>
+        {% elif page.specific_class_name == 'EpisodePage' %}
+            <i data-lucide="film" class="w-4 h-4 text-blue-400"></i>
+        {% elif page.specific_class_name == 'ThemeIndexPage' %}
+            <i data-lucide="sparkles" class="w-4 h-4 text-violet-400"></i>
+        {% else %}
+            <i data-lucide="file-text" class="w-4 h-4 text-slate-400"></i>
+        {% endif %}
+        
+        <span class="text-sm text-slate-300 font-medium max-w-[200px] truncate">
+            {{ page.title }}
+        </span>
+    </div>
+
+    {# Ancestors for context #}
+    {% if page.get_ancestors|length > 2 %}
+    <div class="hidden md:flex items-center text-xs text-slate-600">
+        {% for ancestor in page.get_ancestors %}
+            {% if ancestor.depth > 1 %}
+                <span class="mx-1">/</span>
+                <a href="{% pageurl ancestor %}" class="hover:text-slate-400 transition-colors">
+                    {{ ancestor.title|truncatechars:15 }}
+                </a>
+            {% endif %}
+        {% endfor %}
+    </div>
+    {% endif %}
+</div>

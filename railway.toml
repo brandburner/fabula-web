@@ -1,0 +1,8 @@
+[build]
+builder = "NIXPACKS"
+
+[deploy]
+startCommand = "python manage.py migrate --noinput && python manage.py collectstatic --noinput && gunicorn fabula_web.wsgi"
+healthcheckPath = "/admin/"
+healthcheckTimeout = 300
+restartPolicyType = "ON_FAILURE"

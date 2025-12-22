@@ -1,0 +1,216 @@
+{% load static wagtailcore_tags narrative_tags %}
+<!DOCTYPE html>
+<html lang="en" class="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}{{ page.title }}{% endblock %} | Fabula</title>
+    
+    {# Tailwind CSS via CDN - replace with compiled CSS in production #}
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        slate: {
+                            950: '#0a0a0f',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    
+    {# Lucide Icons #}
+    <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
+    
+    <style>
+        /* Custom scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+            height: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #0f172a;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #334155;
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #475569;
+        }
+
+        /* Smooth scroll behavior */
+        html {
+            scroll-behavior: smooth;
+        }
+
+        /* Smooth transitions */
+        .transition-base {
+            transition: all 0.2s ease-out;
+        }
+
+        /* Connection type colors */
+        .conn-causal { --conn-color: #22d3ee; }
+        .conn-foreshadowing { --conn-color: #a855f7; }
+        .conn-thematic-parallel { --conn-color: #f59e0b; }
+        .conn-character-continuity { --conn-color: #10b981; }
+        .conn-escalation { --conn-color: #ef4444; }
+        .conn-callback { --conn-color: #3b82f6; }
+        .conn-emotional-echo { --conn-color: #ec4899; }
+        .conn-symbolic-parallel { --conn-color: #8b5cf6; }
+        .conn-temporal { --conn-color: #6366f1; }
+
+        .conn-badge {
+            background-color: color-mix(in srgb, var(--conn-color) 15%, transparent);
+            border-color: color-mix(in srgb, var(--conn-color) 40%, transparent);
+            color: var(--conn-color);
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .conn-badge:hover {
+            background-color: color-mix(in srgb, var(--conn-color) 25%, transparent);
+            border-color: color-mix(in srgb, var(--conn-color) 60%, transparent);
+            transform: translateY(-1px);
+            box-shadow: 0 4px 12px color-mix(in srgb, var(--conn-color) 20%, transparent);
+        }
+
+        .conn-card {
+            border-color: color-mix(in srgb, var(--conn-color) 30%, transparent);
+            background-color: color-mix(in srgb, var(--conn-color) 5%, transparent);
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .conn-card:hover {
+            background-color: color-mix(in srgb, var(--conn-color) 12%, transparent);
+            border-color: color-mix(in srgb, var(--conn-color) 50%, transparent);
+            transform: translateY(-2px);
+            box-shadow: 0 8px 24px color-mix(in srgb, var(--conn-color) 15%, transparent);
+        }
+
+        /* Animated gradient backgrounds */
+        @keyframes gradient-shift {
+            0%, 100% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+        }
+
+        .animate-gradient {
+            background-size: 200% 200%;
+            animation: gradient-shift 15s ease infinite;
+        }
+
+        /* Fade in animation */
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .fade-in {
+            animation: fadeIn 0.6s ease-out forwards;
+        }
+
+        /* Stagger children animations */
+        .stagger-children > * {
+            opacity: 0;
+            animation: fadeIn 0.5s ease-out forwards;
+        }
+
+        .stagger-children > *:nth-child(1) { animation-delay: 0.05s; }
+        .stagger-children > *:nth-child(2) { animation-delay: 0.1s; }
+        .stagger-children > *:nth-child(3) { animation-delay: 0.15s; }
+        .stagger-children > *:nth-child(4) { animation-delay: 0.2s; }
+        .stagger-children > *:nth-child(5) { animation-delay: 0.25s; }
+        .stagger-children > *:nth-child(6) { animation-delay: 0.3s; }
+
+        /* Glass morphism effect */
+        .glass {
+            background: rgba(15, 23, 42, 0.8);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+        }
+
+        /* Glow effect for interactive elements */
+        .glow-on-hover:hover {
+            box-shadow: 0 0 20px currentColor;
+        }
+    </style>
+    
+    {% block extra_css %}{% endblock %}
+</head>
+<body class="min-h-screen bg-slate-950 text-slate-100 antialiased">
+    {# Header #}
+    <header class="fixed top-0 left-0 right-0 z-50 glass border-b border-slate-800/50">
+        <div class="flex items-center justify-between px-6 h-16">
+            {# Logo and series title #}
+            <div class="flex items-center gap-4">
+                <a href="{% url 'wagtail_serve' '' %}" class="flex items-center gap-3 group transition-all duration-300">
+                    <div class="w-9 h-9 rounded-lg bg-gradient-to-br from-amber-500 via-orange-500 to-amber-600 animate-gradient flex items-center justify-center shadow-lg shadow-amber-500/25 group-hover:shadow-amber-500/40 group-hover:scale-105 transition-all duration-300">
+                        <i data-lucide="zap" class="w-5 h-5 text-white"></i>
+                    </div>
+                    <div class="flex items-baseline gap-2">
+                        <span class="font-bold tracking-tight text-white text-lg group-hover:text-amber-400 transition-colors">FABULA</span>
+                        {% block series_context %}
+                        <span class="text-slate-500 text-sm font-medium hidden sm:inline">{{ request.site.site_name|default:"Narrative Web" }}</span>
+                        {% endblock %}
+                    </div>
+                </a>
+            </div>
+
+            {# Navigation breadcrumb #}
+            <nav class="flex items-center gap-3 flex-1 justify-center">
+                {% block navigation %}
+                {% include "includes/breadcrumb.html" %}
+                {% endblock %}
+            </nav>
+
+            {# Actions #}
+            <div class="flex items-center gap-3">
+                {% block header_actions %}
+                <a href="{% url 'graph_view' %}"
+                   class="group px-4 py-2 text-sm font-medium rounded-lg bg-gradient-to-r from-slate-800/80 to-slate-700/80 text-slate-300 hover:text-white border border-slate-700/50 hover:border-slate-600 transition-all duration-300 hover:shadow-lg hover:shadow-slate-900/50 hover:scale-105">
+                    <span class="flex items-center gap-2">
+                        <i data-lucide="git-branch" class="w-4 h-4 group-hover:rotate-12 transition-transform duration-300"></i>
+                        <span class="hidden sm:inline">Graph View</span>
+                    </span>
+                </a>
+                {% endblock %}
+            </div>
+        </div>
+    </header>
+
+    {# Main content #}
+    <main class="pt-16">
+        {% block content %}{% endblock %}
+    </main>
+
+    {# Footer #}
+    <footer class="border-t border-slate-800/50 mt-20 py-10 relative overflow-hidden">
+        <div class="absolute inset-0 bg-gradient-to-b from-transparent to-slate-950/50"></div>
+        <div class="relative max-w-4xl mx-auto px-6 text-center">
+            <p class="text-sm text-slate-500 mb-4">
+                Narrative analysis powered by <a href="#" class="text-amber-500 hover:text-amber-400 transition-colors font-medium">Fabula</a>
+            </p>
+            <div class="flex items-center justify-center gap-2 text-xs text-slate-600">
+                <span>Mapping the narrative web of</span>
+                <span class="text-amber-500/70">The West Wing</span>
+            </div>
+        </div>
+    </footer>
+
+    {# Initialize Lucide icons #}
+    <script>
+        lucide.createIcons();
+    </script>
+    
+    {% block extra_js %}{% endblock %}
+</body>
+</html>

@@ -1,0 +1,54 @@
+{% extends "base.html" %}
+{% load wagtailcore_tags %}
+
+{% block title %}{{ page.title }}{% endblock %}
+
+{% block content %}
+<article class="min-h-screen pb-16">
+    <div class="relative overflow-hidden">
+        <div class="absolute inset-0 bg-gradient-to-b from-violet-950/20 via-slate-950 to-slate-950"></div>
+        <div class="absolute inset-0 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-violet-900/10 via-transparent to-transparent"></div>
+
+        <div class="relative max-w-4xl mx-auto px-6 pt-12 pb-8 text-center">
+            <i data-lucide="building-2" class="w-12 h-12 mx-auto text-violet-400 mb-4"></i>
+            <h1 class="text-4xl md:text-5xl font-bold text-white mb-4 leading-tight tracking-tight">
+                {{ page.title }}
+            </h1>
+
+            {% if page.introduction %}
+            <div class="text-lg text-slate-400 leading-relaxed max-w-2xl mx-auto prose prose-invert">
+                {{ page.introduction|richtext }}
+            </div>
+            {% endif %}
+        </div>
+    </div>
+
+    <div class="max-w-6xl mx-auto px-6 mt-8">
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
+            {% for org in page.get_children.live.specific %}
+            <a href="{% pageurl org %}"
+               class="block p-4 bg-slate-900/50 border border-slate-800 rounded-lg hover:border-violet-500/30 transition-all group">
+                <div class="flex items-start gap-3">
+                    <div class="flex-shrink-0 w-10 h-10 bg-violet-500/20 rounded-lg flex items-center justify-center">
+                        <i data-lucide="building-2" class="w-5 h-5 text-violet-400"></i>
+                    </div>
+                    <div class="flex-1 min-w-0">
+                        <h3 class="text-base font-medium text-slate-200 group-hover:text-violet-300 transition-colors truncate">
+                            {{ org.title }}
+                        </h3>
+                        {% if org.org_type %}
+                        <span class="text-xs text-slate-500">{{ org.org_type }}</span>
+                        {% endif %}
+                    </div>
+                </div>
+            </a>
+            {% empty %}
+            <div class="col-span-full text-slate-500 text-sm p-8 bg-slate-900/30 rounded-lg border border-slate-800/50 text-center">
+                <i data-lucide="inbox" class="w-8 h-8 mx-auto mb-2 opacity-50"></i>
+                <p>No organizations found</p>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</article>
+{% endblock %}

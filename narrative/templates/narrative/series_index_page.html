@@ -1,0 +1,105 @@
+{% extends "base.html" %}
+{% load wagtailcore_tags %}
+
+{% block title %}{{ page.title }}{% endblock %}
+
+{% block content %}
+<article class="min-h-screen pb-16">
+    {# Hero section #}
+    <div class="relative overflow-hidden">
+        <div class="absolute inset-0 bg-gradient-to-b from-amber-950/20 via-slate-950 to-slate-950"></div>
+        <div class="absolute inset-0 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-amber-900/10 via-transparent to-transparent"></div>
+
+        <div class="relative max-w-4xl mx-auto px-6 pt-12 pb-8 text-center">
+            <h1 class="text-4xl md:text-5xl font-bold text-white mb-4 leading-tight tracking-tight">
+                {{ page.title }}
+            </h1>
+
+            {% if page.description %}
+            <div class="text-lg text-slate-400 leading-relaxed max-w-2xl mx-auto prose prose-invert">
+                {{ page.description|richtext }}
+            </div>
+            {% endif %}
+        </div>
+    </div>
+
+    <div class="max-w-4xl mx-auto px-6">
+        {# ============================================================= #}
+        {# QUICK NAVIGATION #}
+        {# ============================================================= #}
+        <div class="grid grid-cols-2 md:grid-cols-3 gap-4 mb-12">
+            {% if events_index %}
+            <a href="{{ events_index.url }}"
+               class="p-4 bg-slate-900/50 border border-slate-800 rounded-lg hover:border-amber-500/30 transition-colors group text-center">
+                <i data-lucide="zap" class="w-8 h-8 mx-auto text-amber-400 mb-2"></i>
+                <div class="font-medium text-slate-200 group-hover:text-amber-300">Events</div>
+                <div class="text-xs text-slate-500">Story moments</div>
+            </a>
+            {% endif %}
+
+            {% if characters_index %}
+            <a href="{{ characters_index.url }}"
+               class="p-4 bg-slate-900/50 border border-slate-800 rounded-lg hover:border-emerald-500/30 transition-colors group text-center">
+                <i data-lucide="users" class="w-8 h-8 mx-auto text-emerald-400 mb-2"></i>
+                <div class="font-medium text-slate-200 group-hover:text-emerald-300">Characters</div>
+                <div class="text-xs text-slate-500">Who's who</div>
+            </a>
+            {% endif %}
+
+            {% if organizations_index %}
+            <a href="{{ organizations_index.url }}"
+               class="p-4 bg-slate-900/50 border border-slate-800 rounded-lg hover:border-violet-500/30 transition-colors group text-center">
+                <i data-lucide="building-2" class="w-8 h-8 mx-auto text-violet-400 mb-2"></i>
+                <div class="font-medium text-slate-200 group-hover:text-violet-300">Organizations</div>
+                <div class="text-xs text-slate-500">Power structures</div>
+            </a>
+            {% endif %}
+        </div>
+
+        <hr class="border-slate-800 mb-8">
+
+        {# ============================================================= #}
+        {# SEASONS #}
+        {# ============================================================= #}
+        <section>
+            <div class="flex items-center gap-2 mb-6">
+                <i data-lucide="film" class="w-5 h-5 text-blue-400"></i>
+                <h2 class="text-lg font-semibold text-white">Seasons</h2>
+            </div>
+
+            <div class="space-y-4">
+                {% for season in seasons %}
+                <div class="p-4 bg-slate-900/50 border border-slate-800 rounded-lg">
+                    <a href="{% pageurl season %}"
+                       class="text-lg font-semibold text-slate-200 hover:text-white transition-colors">
+                        Season {{ season.season_number }}
+                    </a>
+
+                    {% if season.description %}
+                    <p class="text-sm text-slate-400 mt-2">
+                        {{ season.description|striptags|truncatewords:20 }}
+                    </p>
+                    {% endif %}
+
+                    {# Episode list #}
+                    <div class="mt-4 grid grid-cols-2 md:grid-cols-4 gap-2">
+                        {% for episode in season.get_children.specific %}
+                        <a href="{% pageurl episode %}"
+                           class="p-2 text-sm bg-slate-800/50 rounded hover:bg-slate-800 transition-colors">
+                            <span class="text-slate-500 font-mono">E{{ episode.episode_number }}</span>
+                            <span class="text-slate-300 ml-1">{{ episode.title|truncatewords:3 }}</span>
+                        </a>
+                        {% endfor %}
+                    </div>
+                </div>
+                {% empty %}
+                <div class="text-slate-500 text-sm p-4 bg-slate-900/30 rounded-lg border border-slate-800/50">
+                    No seasons found
+                </div>
+                {% endfor %}
+            </div>
+        </section>
+
+    </div>
+</article>
+{% endblock %}
