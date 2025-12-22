@@ -13,7 +13,6 @@ from pathlib import Path
 from wagtail.admin import urls as wagtailadmin_urls
 from wagtail import urls as wagtail_urls
 from wagtail.documents import urls as wagtaildocs_urls
-from wagtail.models import Page, Site
 
 
 def health_check(request):
@@ -23,6 +22,8 @@ def health_check(request):
 
 def diagnostics(request):
     """Diagnostic endpoint to check data import status."""
+    from wagtail.models import Page, Site
+
     data_dir = Path('fabula_export')
 
     # Check data directory
@@ -52,6 +53,7 @@ def diagnostics(request):
 def trigger_import(request):
     """Trigger data import (one-time use endpoint)."""
     from django.core.management import call_command
+    from wagtail.models import Page
     from io import StringIO
 
     # Check if already imported
