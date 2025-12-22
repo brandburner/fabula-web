@@ -1,0 +1,8 @@
+[phases.build]
+cmds = ["pip install -r requirements.txt"]
+
+[phases.setup]
+nixPkgs = ["python311", "gcc"]
+
+[start]
+cmd = "python manage.py migrate --noinput && python manage.py collectstatic --noinput && gunicorn fabula_web.wsgi"
