@@ -49,9 +49,42 @@ def diagnostics(request):
     })
 
 
+def trigger_import(request):
+    """Trigger data import (one-time use endpoint)."""
+    from django.core.management import call_command
+    from io import StringIO
+
+    # Check if already imported
+    if Page.objects.count() > 10:
+        return JsonResponse({
+            'status': 'skipped',
+            'message': 'Data already imported',
+            'page_count': Page.objects.count()
+        })
+
+    try:
+        out = StringIO()
+        call_command('import_fabula', 'fabula_export/', stdout=out, stderr=out)
+        output = out.getvalue()
+
+        return JsonResponse({
+            'status': 'success',
+            'output': output,
+            'page_count': Page.objects.count()
+        })
+    except Exception as e:
+        import traceback
+        return JsonResponse({
+            'status': 'error',
+            'error': str(e),
+            'traceback': traceback.format_exc()
+        }, status=500)
+
+
 urlpatterns = [
     path('health/', health_check, name='health_check'),
     path('diagnostics/', diagnostics, name='diagnostics'),
+    path('trigger-import/', trigger_import, name='trigger_import'),
     path('django-admin/', admin.site.urls),
     path('admin/', include(wagtailadmin_urls)),
     path('documents/', include(wagtaildocs_urls)),

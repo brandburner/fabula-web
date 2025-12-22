@@ -1,0 +1,1113 @@
+# Wagtail CMS Project Structure Documentation
+
+## Overview
+
+Wagtail is a Django-based content management system (CMS) built on the solid foundation of Django models, with extensions for page hierarchies, rich content, and a powerful admin interface. Version 7.3.0 (alpha) is a comprehensive, production-ready CMS used by organizations including NASA, Google, Mozilla, and the US government.
+
+**Key Statistics:**
+- Language: Python 3.10+ with Django 4.2 / 5.2
+- Database: PostgreSQL, MySQL, MariaDB, SQLite (with JSON1)
+- Architecture: Hierarchical page trees, StreamField for flexible content, REST API, search integration
+- License: BSD 3-Clause
+
+---
+
+## 1. Main Modules and Packages
+
+### Core Directory Structure
+
+```
+/tmp/context7-isolated-idxyz5/repo/wagtail/
+├── models/          # Core data models (Page, Site, MediaWiki, etc)
+├── admin/           # Admin interface and views
+├── api/v2/          # REST API v2 endpoints
+├── blocks/          # Block definitions for StreamField
+├── fields.py        # StreamField and RichTextField
+├── hooks.py         # Hook registration system
+├── query.py         # QuerySet extensions
+├── contrib/         # Optional features (forms, redirects, routable pages, etc)
+├── snippets/        # Reusable content fragments
+├── search/          # Search indexing and backends
+├── images/          # Image handling
+├── documents/       # Document handling
+├── users/           # User management
+└── tags/            # Tagging support
+```
+
+### Key Modules Overview
+
+| Module | Purpose | Files |
+|--------|---------|-------|
+| **models/** | Core data layer with Page hierarchy, Sites, Locales, Collections, Workflows | pages.py (102KB), workflows.py (48KB), i18n.py (16KB) |
+| **admin/** | Admin interface, panels, forms, views | views/ (6 subdirs), panels/, widgets/, forms/ |
+| **api/v2/** | REST API for headless CMS | views.py (21KB), serializers.py (12KB), filters.py (11KB) |
+| **blocks/** | Block system for StreamField content | base.py (34KB), stream_block.py (33KB), field_block.py (33KB) |
+| **snippets/** | Register and manage reusable content models | models.py (5.9KB), views/snippets.py |
+| **search/** | Search indexing (Elasticsearch/PostgreSQL) | backends/, queryset mixins |
+| **images/** | Image upload, processing, renditions | models.py, api fields |
+| **contrib/forms/** | Form builder integration | AbstractForm, AbstractFormField |
+
+---
+
+## 2. Key API Endpoints and Views
+
+### REST API v2 Structure
+
+**Location:** `/tmp/context7-isolated-idxyz5/repo/wagtail/api/v2/`
+
+#### API ViewSet Hierarchy
+
+```python
+# Base class for all API endpoints
+class BaseAPIViewSet(GenericViewSet):
+    known_query_parameters = frozenset([
+        "limit", "offset", "fields", "order", "search", 
+        "search_operator", "_", "format"
+    ])
+    
+    # Standard methods
+    def listing_view(self, request)           # GET /resource/
+    def detail_view(self, request, pk)        # GET /resource/{id}/
+    def find_view(self, request)              # GET /resource/?id=X (redirect to detail)
+```
+
+#### API View Features
+
+- **Pagination:** `WagtailPagination` (limit/offset based)
+- **Filtering:** `SearchFilter`, `OrderingFilter`, `FieldsFilter`, `LocaleFilter`, `AncestorOfFilter`, `ChildOfFilter`
+- **Serializers:** `BaseSerializer`, `PageSerializer` with custom `APIField` support
+- **Renderers:** `JSONRenderer`, `BrowsableAPIRenderer` (when Django REST framework installed)
+
+### Key Views Example
+
+**File:** `/tmp/context7-isolated-idxyz5/repo/wagtail/api/v2/views.py`
+
+```python
+class BaseAPIViewSet(GenericViewSet):
+    """Base viewset for API endpoints with filtering, pagination, serialization"""
+    
+    pagination_class = WagtailPagination
+    base_serializer_class = BaseSerializer
+    filter_backends = []
+    model = None  # Set on subclass
+    
+    listing_default_fields = ["id", "type", "detail_url"]
+    nested_default_fields = ["id", "type", "detail_url"]
+    
+    def listing_view(self, request):
+        """List resources with filtering and pagination"""
+        queryset = self.get_queryset()
+        self.check_query_parameters(queryset)
+        queryset = self.filter_queryset(queryset)
+        queryset = self.paginate_queryset(queryset)
+        serializer = self.get_serializer(queryset, many=True)
+        return self.get_paginated_response(serializer.data)
+    
+    def detail_view(self, request, pk):
+        """Retrieve single resource"""
+        instance = self.get_object()
+        serializer = self.get_serializer(instance)
+        return Response(serializer.data)
+```
+
+---
+
+## 3. Important Models and Relationships
+
+### Core Page Model
+
+**File:** `/tmp/context7-isolated-idxyz5/repo/wagtail/models/pages.py` (102KB)
+
+#### Page Class Hierarchy
+
+```
+MP_Node (from treebeard - materialized path tree)
+  └─ PageBase (metaclass)
+       └─ Page (AbstractPage, index.Indexed, ClusterableModel)
+```
+
+#### Page Model Definition
+
+```python
+class Page(AbstractPage, index.Indexed, ClusterableModel, metaclass=PageBase):
+    """
+    Core page model with hierarchical tree structure using materialized path (treebeard).
+    """
+    
+    # Materialized Path Tree fields (inherited from MP_Node)
+    path = models.CharField(max_length=255, unique=True, db_index=True)
+    depth = models.PositiveIntegerField()
+    numchild = models.PositiveIntegerField(default=0)
+    
+    # Core fields
+    title = models.CharField(max_length=255)
+    slug = models.SlugField(max_length=255)
+    content_type = models.ForeignKey(ContentType, on_delete=models.PROTECT)
+    
+    # Publishing
+    live = models.BooleanField(default=True, db_index=True)
+    has_unpublished_changes = models.BooleanField(default=False)
+    url_path = models.TextField(blank=True, db_index=True)
+    
+    # Template & rendering
+    template = models.CharField(max_length=255)
+    ajax_template = models.CharField(max_length=255, null=True, blank=True)
+    context_object_name = models.CharField(max_length=255, null=True, blank=True)
+    
+    # Revisions & workflows
+    latest_revision = models.ForeignKey('Revision', null=True, on_delete=models.SET_NULL)
+    latest_revision_created_at = models.DateTimeField(null=True)
+    
+    # Translations (multi-language support)
+    locale = models.ForeignKey(Locale, on_delete=models.PROTECT)
+    translation_key = models.UUIDField()
+    
+    # Collections & permissions
+    collection = models.ForeignKey(Collection, on_delete=models.PROTECT)
+    
+    # Search indexing
+    search_fields = [
+        index.SearchField("title", partial_match=True),
+        index.AutocompleteField("title"),
+        index.FilterField("live"),
+        index.FilterField("content_type"),
+    ]
+    
+    objects = PageManager()
+```
+
+#### Page Tree Operations
+
+```python
+# Tree navigation
+page.get_parent()              # Parent page
+page.get_children()            # Direct children (QuerySet)
+page.get_descendants()         # All descendants (QuerySet)
+page.get_ancestors()           # All ancestors (QuerySet)
+page.get_siblings()            # Pages at same level
+
+# Tree operations
+page.add_child(instance=new_page)      # Add child page
+page.move(new_parent, pos='last-child') # Move page in tree
+parent.add_sibling('right', new_page)   # Add sibling
+
+# URL routing
+page.get_url_parts()           # (site, root_path, page_path)
+page.get_absolute_url()        # Full URL
+page.get_site()                # Site object
+
+# Publishing
+page.publish(revision)         # Publish revision
+page.unpublish()               # Unpublish page
+page.get_revisions()           # All revisions
+page.save_revision(changed=True, user=None)
+```
+
+#### Page Rendering (serve method)
+
+```python
+def serve(self, request, *args, **kwargs):
+    """
+    Handle HTTP requests for this page.
+    Returns TemplateResponse with template + context.
+    """
+    request.is_preview = False
+    
+    return TemplateResponse(
+        request,
+        self.get_template(request, *args, **kwargs),
+        self.get_context(request, *args, **kwargs),
+    )
+
+def get_template(self, request, *args, **kwargs):
+    """Determine which template to render"""
+    if request.headers.get("x-requested-with") == "XMLHttpRequest":
+        return self.ajax_template or self.template
+    else:
+        return self.template
+
+def get_context(self, request, *args, **kwargs):
+    """Build template context"""
+    context = {
+        PAGE_TEMPLATE_VAR: self,
+        "self": self,
+        "request": request,
+    }
+    
+    if self.context_object_name:
+        context[self.context_object_name] = self
+    
+    return context
+```
+
+### Related Models
+
+#### Site Model
+**File:** `/tmp/context7-isolated-idxyz5/repo/wagtail/models/sites.py`
+
+```python
+class Site(models.Model):
+    """
+    Represents a website within Wagtail.
+    Each site has a root page and hostname configuration.
+    """
+    hostname = models.CharField(max_length=255, unique=True)
+    port = models.IntegerField(default=80)
+    site_name = models.CharField(max_length=255)
+    is_default_site = models.BooleanField(default=False)
+    root_page = models.OneToOneField(Page, on_delete=models.CASCADE)
+```
+
+#### Collection Model
+**File:** `/tmp/context7-isolated-idxyz5/repo/wagtail/models/media.py`
+
+```python
+class Collection(models.Model):
+    """
+    Organizes documents and images into a hierarchical structure.
+    Used for permission scoping.
+    """
+    name = models.CharField(max_length=255)
+    path = models.CharField(unique=True, max_length=255)
+    depth = models.PositiveIntegerField()
+    numchild = models.PositiveIntegerField(default=0)
+```
+
+#### Revision Model
+**File:** `/tmp/context7-isolated-idxyz5/repo/wagtail/models/revisions.py`
+
+```python
+class Revision(models.Model):
+    """
+    Tracks all changes to pages with full version history.
+    """
+    content_type = models.ForeignKey(ContentType, on_delete=models.CASCADE)
+    object_id = models.PositiveIntegerField()
+    content_json = models.JSONField()
+    created_at = models.DateTimeField(auto_now_add=True)
+    user = models.ForeignKey(User, null=True, on_delete=models.SET_NULL)
+    submitted_for_moderation = models.BooleanField(default=False)
+```
+
+### Workflow Models
+
+```python
+class Workflow(models.Model):
+    """Define content approval workflows"""
+    name = models.CharField(max_length=255)
+    active = models.BooleanField(default=True)
+    content_types = models.ManyToManyField(ContentType, through=WorkflowContentType)
+
+class WorkflowTask(models.Model):
+    """Individual tasks in a workflow"""
+    workflow = models.ForeignKey(Workflow, on_delete=models.CASCADE)
+    content_type = models.ForeignKey(ContentType, on_delete=models.CASCADE)
+    order = models.PositiveIntegerField()
+
+class GroupApprovalTask(WorkflowTask):
+    """Task requiring group approval"""
+    groups = models.ManyToManyField(Group)
+```
+
+---
+
+## 4. Main Functions and Utilities Developers Use
+
+### Model Imports
+
+**File:** `/tmp/context7-isolated-idxyz5/repo/wagtail/models/__init__.py`
+
+```python
+# Core models
+from wagtail.models import (
+    Page,                      # Main page class
+    Site,                      # Multi-site support
+    Collection,                # Permission scoping
+    Locale,                    # Multi-language
+    Revision,                  # Version history
+    Workflow, WorkflowTask,    # Approval workflows
+    PageLogEntry,              # Audit logging
+    Comment, CommentReply,     # Page comments
+    PageViewRestriction,       # View permissions
+)
+
+# Mixins for custom models
+from wagtail.models import (
+    DraftStateMixin,      # Draft/publish state
+    LockableMixin,        # Locking support
+    TranslatableMixin,    # Translation support
+    RevisionMixin,        # Version history
+    PreviewableMixin,     # Preview functionality
+    WorkflowMixin,        # Workflow support
+)
+
+# Query utilities
+from wagtail.models import (
+    PageQuerySet,         # Extended QuerySet
+    get_page_models,      # All page model classes
+    get_translatable_models,  # Translatable models
+    Orderable,            # For ordered relationships
+)
+
+# Field & form utilities
+from wagtail.fields import StreamField, RichTextField
+from wagtail.admin.panels import (
+    FieldPanel, InlinePanel, MultiFieldPanel,
+    TabbedInterface, ObjectList, PublishingPanel
+)
+```
+
+### Hook System
+
+**File:** `/tmp/context7-isolated-idxyz5/repo/wagtail/hooks.py`
+
+```python
+from wagtail import hooks
+
+# Register a hook
+@hooks.register('hook_name')
+def my_hook_handler(some_arg):
+    pass
+
+# Or use function call style
+def my_hook_handler(some_arg):
+    pass
+hooks.register('hook_name', my_hook_handler)
+
+# Retrieve all hooks for an event
+handlers = hooks.get_hooks('hook_name')
+for handler in handlers:
+    handler()
+
+# Common hooks
+hooks.register('before_serve_page')           # Before page served
+hooks.register('on_serve_page')               # Wrap page serving
+hooks.register('register_rich_text_features') # Rich text features
+hooks.register('register_permissions')        # Custom permissions
+hooks.register('register_admin_viewset')      # Admin views
+hooks.register('insert_global_admin_css')     # Admin CSS
+hooks.register('insert_editor_js')            # Editor JavaScript
+```
+
+### Query Utilities
+
+**File:** `/tmp/context7-isolated-idxyz5/repo/wagtail/query.py`
+
+```python
+from wagtail.models import Page
+
+# Tree navigation queries
+Page.objects.descendant_of(page)              # All descendants
+Page.objects.child_of(page)                   # Direct children
+Page.objects.ancestor_of(page)                # All ancestors
+Page.objects.parent_of(page)                  # Direct parent
+
+# Inclusive variants
+Page.objects.descendant_of(page, inclusive=True)  # Include self
+
+# Exclusion queries
+Page.objects.not_descendant_of(page)
+Page.objects.not_child_of(page)
+
+# Filtering
+Page.objects.live()                           # Published pages
+Page.objects.in_menu()                        # Show in menus
+Page.objects.filter(content_type__model='blogpage')  # Specific type
+
+# Optimization
+Page.objects.select_related('site', 'collection')
+Page.objects.prefetch_related('revisions')
+```
+
+### Core Utilities
+
+**File:** `/tmp/context7-isolated-idxyz5/repo/wagtail/coreutils.py`
+
+```python
+from wagtail.coreutils import (
+    resolve_model_string,      # 'app.Model' -> Model class
+    get_model_string,          # Model class -> 'app.Model'
+    cautious_slugify,          # URL-safe slugs
+    get_dummy_request,         # Create fake request
+)
+
+# Example usage
+Model = resolve_model_string('myapp.MyModel')
+model_str = get_model_string(MyModel)  # 'myapp.MyModel'
+
+slug = cautious_slugify('My Content')  # 'my-content'
+```
+
+### Search Indexing
+
+**File:** `/tmp/context7-isolated-idxyz5/repo/wagtail/search/index.py`
+
+```python
+from wagtail.search import index
+
+class MyPage(Page):
+    body = RichTextField()
+    
+    search_fields = Page.search_fields + [
+        index.SearchField('body'),           # Full-text search
+        index.AutocompleteField('title'),    # Auto-complete
+        index.FilterField('live'),           # Filtering
+        index.RelatedFields('author', [
+            index.SearchField('name'),       # Nested field search
+        ]),
+    ]
+```
+
+---
+
+## 5. Configuration Patterns and Setup Examples
+
+### Django Settings Configuration
+
+**Key Settings:**
+
+```python
+# settings.py
+
+INSTALLED_APPS = [
+    # Django apps
+    'django.contrib.auth',
+    'django.contrib.contenttypes',
+    'django.contrib.sessions',
+    'django.contrib.messages',
+    'django.contrib.staticfiles',
+    
+    # Wagtail apps
+    'wagtail',
+    'wagtail.admin',
+    'wagtail.api.v2',
+    'wagtail.core',
+    'wagtail.search',
+    'wagtail.images',
+    'wagtail.documents',
+    'wagtail.snippets',
+    'wagtail.users',
+    'wagtail.sites',
+    'wagtail.embeds',
+    'wagtail.contrib.redirects',
+    'wagtail.contrib.forms',
+    'wagtail.contrib.table_block',
+    'wagtail.contrib.routable_page',
+    
+    # Third-party
+    'rest_framework',
+    'taggit',
+    'modelcluster',
+    'treebeard',
+]
+
+# Search backend
+WAGTAILSEARCH_BACKENDS = {
+    'default': {
+        'BACKEND': 'wagtail.search.backends.database',
+    }
+}
+
+# Or with Elasticsearch:
+# 'BACKEND': 'wagtail.search.backends.elasticsearch7',
+# 'URLS': ['http://localhost:9200'],
+
+# Multi-site support
+WAGTAIL_SITE_NAME = "My Site"
+
+# Workflow
+WAGTAIL_WORKFLOW_ENABLED = True  # Enable content workflows
+
+# Frontend login (for view restrictions)
+WAGTAIL_FRONTEND_LOGIN_URL = '/accounts/login/'
+
+# Comments
+WAGTAIL_COMMENTS_ENABLED = True
+WAGTAIL_COMMENTS_RELATION_NAME = 'wagtail_admin_comments'
+
+# Admin settings
+WAGTAILADMIN_BASE_URL = 'https://example.com'
+
+# API
+WAGTAILAPI_BASE_URL = '/api/v2/'
+```
+
+### Page Model Definition Example
+
+**File:** `/tmp/context7-isolated-idxyz5/repo/wagtail/test/demosite/models.py`
+
+```python
+from django.db import models
+from modelcluster.fields import ParentalKey
+from wagtail.models import Page, Orderable
+from wagtail.fields import RichTextField
+from wagtail.admin.panels import (
+    FieldPanel, InlinePanel, MultiFieldPanel, TabbedInterface
+)
+from wagtail.search import index
+from wagtail.images.models import Image
+
+# Define abstract mixin
+class AbstractLinkFields(models.Model):
+    link_external = models.URLField(blank=True)
+    link_page = models.ForeignKey(
+        'wagtailcore.Page',
+        null=True, blank=True,
+        related_name='+',
+        on_delete=models.CASCADE
+    )
+    
+    @property
+    def link(self):
+        if self.link_page:
+            return self.link_page.url
+        return self.link_external
+    
+    class Meta:
+        abstract = True
+
+# Define concrete page
+class HomePage(Page):
+    page_ptr = models.OneToOneField(
+        Page, parent_link=True,
+        related_name='+',
+        on_delete=models.CASCADE
+    )
+    
+    # Fields
+    body = RichTextField(blank=True)
+    feed_image = models.ForeignKey(
+        Image,
+        null=True, blank=True,
+        related_name='+',
+        on_delete=models.SET_NULL
+    )
+    
+    # Admin config
+    content_panels = Page.content_panels + [
+        FieldPanel('body'),
+        FieldPanel('feed_image'),
+        InlinePanel('carousel_items', label='Carousel Item'),
+    ]
+    
+    promote_panels = [
+        MultiFieldPanel(Page.promote_panels, 'Common page configuration'),
+        FieldPanel('feed_image'),
+    ]
+    
+    # Search config
+    search_fields = Page.search_fields + [
+        index.SearchField('body'),
+    ]
+    
+    # API config
+    api_fields = ('body', 'feed_image', 'carousel_items')
+    
+    class Meta:
+        verbose_name = 'homepage'
+
+# Child model for inline editing
+class HomePageCarouselItem(Orderable, AbstractLinkFields):
+    page = ParentalKey(
+        'HomePage',
+        related_name='carousel_items',
+        on_delete=models.CASCADE
+    )
+    title = models.CharField(max_length=255)
+    image = models.ForeignKey(
+        Image,
+        null=True, blank=True,
+        related_name='+',
+        on_delete=models.SET_NULL
+    )
+    
+    panels = [
+        FieldPanel('title'),
+        FieldPanel('image'),
+    ]
+
+# Override panels after class definition if needed
+HomePage.content_panels = HomePage.content_panels + [
+    InlinePanel('carousel_items', label='Carousel Item'),
+]
+```
+
+---
+
+## 6. Core Features: StreamField, Page Models, Snippets
+
+### StreamField for Flexible Content
+
+**File:** `/tmp/context7-isolated-idxyz5/repo/wagtail/fields.py`
+
+#### StreamField Definition
+
+```python
+from wagtail.fields import StreamField
+from wagtail.blocks import (
+    StreamBlock, StructBlock, ListBlock,
+    CharBlock, TextBlock, IntegerBlock,
+    RichTextBlock, ImageBlock, ChoiceBlock
+)
+
+# Define block structure
+class ContentBlock(StreamBlock):
+    """Top-level block containing all content types"""
+    
+    heading = CharBlock(max_length=255, label="Heading")
+    paragraph = RichTextBlock(label="Paragraph")
+    image = ImageBlock(label="Image")
+    
+    video_url = CharBlock(max_length=255, label="Video URL")
+    
+    # Structured data
+    card = StructBlock([
+        ('title', CharBlock(max_length=255)),
+        ('description', RichTextBlock()),
+        ('image', ImageBlock()),
+        ('link_url', CharBlock(max_length=255, required=False)),
+    ], label="Card")
+    
+    # Lists
+    quote_list = ListBlock(
+        StructBlock([
+            ('quote', TextBlock()),
+            ('author', CharBlock(max_length=255)),
+        ]),
+        label="Quotes"
+    )
+    
+    class Meta:
+        icon = 'edit'
+        label = 'Content'
+
+# Use in page model
+class StandardPage(Page):
+    body = StreamField(ContentBlock(), blank=True)
+    
+    content_panels = Page.content_panels + [
+        FieldPanel('body'),
+    ]
+```
+
+#### StreamBlock Class Hierarchy
+
+**File:** `/tmp/context7-isolated-idxyz5/repo/wagtail/blocks/stream_block.py`
+
+```python
+from wagtail.blocks import StreamBlock, StructBlock, ListBlock
+
+# Basic structure
+class ContentBlock(StreamBlock):
+    char_block = CharBlock()
+    text_block = TextBlock()
+    rich_text = RichTextBlock()
+    
+    class Meta:
+        label = 'Content'
+        icon = 'edit'
+
+# Nested structure
+class CardBlock(StructBlock):
+    title = CharBlock(max_length=100)
+    description = RichTextBlock()
+    image = ImageBlock()
+    
+    class Meta:
+        icon = 'doc-full'
+        label = 'Card'
+
+# List of items
+class BlogBlock(ListBlock):
+    CardBlock()
+
+# Complex nesting
+class PageBlock(StreamBlock):
+    paragraph = RichTextBlock()
+    image = ImageBlock()
+    cards = ListBlock(CardBlock())
+    quote = StructBlock([
+        ('text', TextBlock()),
+        ('author', CharBlock()),
+    ])
+```
+
+#### StreamField in Template
+
+```django
+{% load wagtailcore_tags %}
+
+<div class="page-content">
+    {% for block in page.body %}
+        {% if block.block_type == 'heading' %}
+            <h2>{{ block.value }}</h2>
+        {% elif block.block_type == 'paragraph' %}
+            <p>{{ block.value|safe }}</p>
+        {% elif block.block_type == 'image' %}
+            {% image block.value width-600 as img %}
+                <img src="{{ img.url }}" alt="{{ img.title }}">
+            {% endimage %}
+        {% elif block.block_type == 'card' %}
+            <div class="card">
+                <h3>{{ block.value.title }}</h3>
+                <p>{{ block.value.description|safe }}</p>
+            </div>
+        {% endif %}
+    {% endfor %}
+</div>
+```
+
+### Snippet Registration and Management
+
+**File:** `/tmp/context7-isolated-idxyz5/repo/wagtail/snippets/models.py`
+
+#### Register Snippet Models
+
+```python
+from wagtail.snippets.models import register_snippet
+from django.db import models
+
+# Method 1: Decorator style
+@register_snippet
+class TestimonialSnippet(models.Model):
+    text = models.TextField()
+    author = models.CharField(max_length=255)
+    
+    def __str__(self):
+        return self.author
+
+# Method 2: Function call style
+class NewsAlert(models.Model):
+    title = models.CharField(max_length=255)
+    content = RichTextField()
+    alert_type = models.CharField(
+        max_length=20,
+        choices=[('info', 'Info'), ('warning', 'Warning')],
+        default='info'
+    )
+
+register_snippet(NewsAlert)
+
+# Method 3: Custom ViewSet
+from wagtail.snippets.views.snippets import SnippetViewSet
+
+class CustomSnippetViewSet(SnippetViewSet):
+    model = MySnippet
+    icon = 'doc-full'
+    add_to_admin_menu = True
+
+register_snippet(CustomSnippetViewSet)
+```
+
+#### Snippet Utility Functions
+
+```python
+from wagtail.snippets.models import (
+    get_snippet_models,
+    get_editable_models,
+    get_workflow_enabled_models,
+)
+
+# Get all registered snippets
+snippets = get_snippet_models()
+
+# Get snippets user can edit
+user_snippets = get_editable_models(request.user)
+
+# Get snippets with workflow support
+workflow_snippets = get_workflow_enabled_models()
+```
+
+### Admin Panels Configuration
+
+**File:** `/tmp/context7-isolated-idxyz5/repo/wagtail/admin/panels/`
+
+```python
+from wagtail.admin.panels import (
+    FieldPanel,              # Single field editor
+    InlinePanel,             # Related model inline
+    MultiFieldPanel,         # Grouped fields
+    TabbedInterface,         # Tab navigation
+    ObjectList,              # Custom panel container
+    PublishingPanel,         # Publishing status
+    HelpPanel,               # Help text
+    PageChooserPanel,        # Page selection
+    ImageChooserPanel,       # Image selection
+)
+
+class FlexiblePage(Page):
+    title = models.CharField(max_length=255)
+    intro = RichTextField()
+    featured_image = models.ForeignKey(Image, on_delete=models.SET_NULL, null=True)
+    body = StreamField(ContentBlock())
+    
+    # Tab-based organization
+    content_panels = [
+        FieldPanel('title'),
+        InlinePanel('related_articles', label='Related Articles'),
+    ]
+    
+    promote_panels = [
+        MultiFieldPanel([
+            FieldPanel('slug'),
+            FieldPanel('seo_title'),
+        ], heading='SEO'),
+        FieldPanel('featured_image'),
+    ]
+    
+    settings_panels = [
+        PublishingPanel(),
+        MultiFieldPanel([
+            FieldPanel('show_in_menus'),
+        ], 'Display settings'),
+    ]
+    
+    edit_handler = TabbedInterface([
+        ObjectList(content_panels, heading='Content'),
+        ObjectList(promote_panels, heading='Promote'),
+        ObjectList(settings_panels, heading='Settings'),
+    ])
+```
+
+### API Configuration
+
+**File:** `/tmp/context7-isolated-idxyz5/repo/wagtail/api/v2/`
+
+```python
+# urls.py
+from wagtail.api.v2.views import PagesAPIViewSet
+from rest_framework.routers import DefaultRouter
+
+router = DefaultRouter()
+router.register(r'pages', PagesAPIViewSet, basename='pages')
+
+urlpatterns = router.urls
+
+# In page model - expose fields via API
+from wagtail.api import APIField
+
+class BlogPage(Page):
+    body = StreamField(ContentBlock())
+    author = models.CharField(max_length=255)
+    
+    # These fields are exposed in the API
+    api_fields = [
+        APIField('body'),
+        APIField('author'),
+    ]
+```
+
+---
+
+## 7. Real Usage Patterns and Code Examples
+
+### Example 1: Creating a Blog Post Page
+
+```python
+# models.py
+from django.db import models
+from wagtail.models import Page
+from wagtail.fields import StreamField, RichTextField
+from wagtail.blocks import CharBlock, RichTextBlock, ImageBlock, StreamBlock
+from wagtail.admin.panels import FieldPanel, MultiFieldPanel
+from wagtail.search import index
+from datetime import datetime
+
+class BlogBlock(StreamBlock):
+    heading = CharBlock(max_length=255)
+    paragraph = RichTextBlock()
+    image = ImageBlock()
+
+class BlogPage(Page):
+    subtitle = models.CharField(max_length=500, blank=True)
+    author = models.CharField(max_length=255)
+    date = models.DateField(default=datetime.today)
+    body = StreamField(BlogBlock())
+    
+    search_fields = Page.search_fields + [
+        index.SearchField('subtitle'),
+        index.SearchField('author'),
+        index.SearchField('body'),
+    ]
+    
+    content_panels = Page.content_panels + [
+        FieldPanel('subtitle'),
+        FieldPanel('author'),
+        FieldPanel('date'),
+        FieldPanel('body'),
+    ]
+    
+    api_fields = ['subtitle', 'author', 'date', 'body']
+```
+
+### Example 2: Custom Hook for Page Publishing
+
+```python
+# wagtail_hooks.py
+from wagtail import hooks
+from django.core.mail import send_mail
+
+@hooks.register('after_publish_page')
+def send_notification_on_publish(sender, instance, **kwargs):
+    """Send email when page is published"""
+    send_mail(
+        subject=f'Page Published: {instance.title}',
+        message=f'The page "{instance.title}" has been published.',
+        from_email='noreply@example.com',
+        recipient_list=['admin@example.com'],
+    )
+```
+
+### Example 3: Custom Admin Menu Item
+
+```python
+# wagtail_hooks.py
+from wagtail import hooks
+from wagtail.admin.menu import MenuItem
+from django.urls import reverse
+
+@hooks.register('register_admin_menu_item')
+def register_reports_menu_item():
+    return MenuItem(
+        'Reports',
+        reverse('reports_dashboard'),
+        icon='doc-full',
+        order=100
+    )
+```
+
+### Example 4: API Filtering
+
+```python
+# Django admin usage
+from wagtail.models import Page
+
+# Get all published blog pages under news section
+from tests.testapp.models import BlogPage, NewsIndex
+
+news = Page.objects.get(slug='news')
+blog_posts = (
+    BlogPage.objects
+    .descendant_of(news)
+    .live()
+    .order_by('-date')
+)
+
+# API consumption
+# GET /api/v2/pages/?type=blog.BlogPage&live=true&search=django&limit=10
+```
+
+### Example 5: StreamField Template Rendering
+
+```django
+<!-- blog_page.html -->
+{% extends "base.html" %}
+{% load wagtailcore_tags %}
+
+{% block content %}
+<article class="blog-post">
+    <header>
+        <h1>{{ page.title }}</h1>
+        <p class="meta">By {{ page.author }} on {{ page.date|date:"F j, Y" }}</p>
+    </header>
+    
+    <div class="body">
+        {% for block in page.body %}
+            {% if block.block_type == 'heading' %}
+                <h2>{{ block.value }}</h2>
+            {% elif block.block_type == 'paragraph' %}
+                {{ block.value|safe }}
+            {% elif block.block_type == 'image' %}
+                {% image block.value width-800 as img %}
+                    <figure>
+                        <img src="{{ img.url }}" alt="{{ img.title }}">
+                        <figcaption>{{ block.value.title }}</figcaption>
+                    </figure>
+                {% endimage %}
+            {% endif %}
+        {% endfor %}
+    </div>
+</article>
+{% endblock %}
+```
+
+---
+
+## 8. Key Files Reference
+
+| File | Lines | Purpose |
+|------|-------|---------|
+| `wagtail/models/pages.py` | 2,750+ | Core Page model with all hierarchical operations |
+| `wagtail/fields.py` | 317 | StreamField and RichTextField implementations |
+| `wagtail/blocks/stream_block.py` | 850+ | StreamBlock and StreamValue classes |
+| `wagtail/blocks/base.py` | 1,100+ | Base Block class and block infrastructure |
+| `wagtail/admin/panels/__init__.py` | 20+ | Admin panel types (Field, Inline, Tabbed, etc) |
+| `wagtail/api/v2/views.py` | 400+ | REST API ViewSet implementations |
+| `wagtail/snippets/models.py` | 171 | Snippet registration and management |
+| `wagtail/query.py` | 600+ | PageQuerySet with tree navigation |
+| `wagtail/hooks.py` | 116 | Hook registration and retrieval system |
+| `wagtail/coreutils.py` | 750+ | Core utility functions |
+
+---
+
+## 9. Architecture Highlights
+
+### Hierarchical Page Trees
+- **Technology:** Treebeard materialized path (MP_Node)
+- **Benefits:** Efficient tree queries, easy ancestors/descendants
+- **Operations:** O(1) ancestors, O(n) descendants, flexible tree structure
+
+### StreamField Flexibility
+- **Technology:** JSON-based block system with rich type support
+- **Benefits:** Non-destructive migrations, flexible content structure
+- **Use Cases:** Blog articles, landing pages, mixed content types
+
+### Multi-Site Support
+- **Technology:** Django Site framework extended for Wagtail
+- **Benefits:** Single installation, multiple sites/domains
+- **Operations:** Each site has independent page tree
+
+### Revisions & Workflows
+- **Technology:** Full revision tracking with approval workflows
+- **Benefits:** Complete audit trail, collaborative editing
+- **Operations:** Draft -> Review -> Publish state machine
+
+### Search Integration
+- **Technology:** Pluggable backends (Database, Elasticsearch)
+- **Benefits:** Full-text search, faceting, analytics
+- **Operations:** Automatic indexing on publish
+
+---
+
+## 10. Extension Points
+
+### Custom Block Types
+Create reusable content blocks by extending `StreamBlock` or `StructBlock`
+
+### Hooks System
+Over 50 hooks for admin UI, publishing, permissions, search, forms
+
+### ViewSets
+Custom admin interfaces via `ModelViewSet` registration
+
+### Permission Policies
+Fine-grained permission control via `ModelPermissionPolicy`
+
+### Template Tags
+`{% wagtail_tags %}` for URL routing, image processing, menu rendering
+
+---
+
+## Summary
+
+Wagtail is a production-ready Django CMS with:
+- **Hierarchical page structures** for site organization
+- **StreamField** for flexible, non-destructive content
+- **REST API v2** for headless CMS usage
+- **Snippets** for reusable content fragments
+- **Revision tracking** and **approval workflows** for teams
+- **Multi-site and multi-language** support
+- **Extensible admin UI** with custom panels and viewsets
+- **Powerful query API** for tree navigation and filtering
+
+The architecture emphasizes **flexibility**, **extensibility**, and **user experience** while maintaining Django best practices.
