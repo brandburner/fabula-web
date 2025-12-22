@@ -318,6 +318,12 @@ class Command(BaseCommand):
         }
         return type_map.get(char_type.lower(), 'recurring') if char_type else 'recurring'
 
+    def truncate_field(self, value: str, max_length: int) -> str:
+        """Truncate a string to fit within a max length, adding ellipsis if needed."""
+        if not value or len(value) <= max_length:
+            return value
+        return value[:max_length - 3] + '...'
+
     # =========================================================================
     # Phase 1: Snippets
     # =========================================================================
@@ -332,14 +338,14 @@ class Command(BaseCommand):
             theme, created = Theme.objects.get_or_create(
                 fabula_uuid=fabula_uuid,
                 defaults={
-                    'name': theme_data['name'],
+                    'name': self.truncate_field(theme_data['name'], 255),
                     'description': theme_data.get('description', ''),
                 }
             )
 
             if not created:
                 # Update existing
-                theme.name = theme_data['name']
+                theme.name = self.truncate_field(theme_data['name'], 255)
                 theme.description = theme_data.get('description', '')
                 if not self.dry_run:
                     theme.save()
@@ -358,18 +364,19 @@ class Command(BaseCommand):
 
         for arc_data in arcs_data:
             fabula_uuid = arc_data.get('fabula_uuid') or arc_data.get('arc_uuid', '')
+            title = self.truncate_field(arc_data['title'], 255)
 
             arc, created = ConflictArc.objects.get_or_create(
                 fabula_uuid=fabula_uuid,
                 defaults={
-                    'title': arc_data['title'],
+                    'title': title,
                     'description': arc_data.get('description', ''),
                     'arc_type': arc_data.get('arc_type', 'INTERPERSONAL'),
                 }
             )
 
             if not created:
-                arc.title = arc_data['title']
+                arc.title = title
                 arc.description = arc_data.get('description', '')
                 arc.arc_type = arc_data.get('arc_type', 'INTERPERSONAL')
                 if not self.dry_run:
@@ -394,16 +401,16 @@ class Command(BaseCommand):
             location, created = Location.objects.get_or_create(
                 fabula_uuid=fabula_uuid,
                 defaults={
-                    'canonical_name': loc_data['canonical_name'],
+                    'canonical_name': self.truncate_field(loc_data['canonical_name'], 255),
                     'description': loc_data.get('description', ''),
-                    'location_type': loc_data.get('location_type', ''),
+                    'location_type': self.truncate_field(loc_data.get('location_type', ''), 100),
                 }
             )
 
             if not created:
-                location.canonical_name = loc_data['canonical_name']
+                location.canonical_name = self.truncate_field(loc_data['canonical_name'], 255)
                 location.description = loc_data.get('description', '')
-                location.location_type = loc_data.get('location_type', '')
+                location.location_type = self.truncate_field(loc_data.get('location_type', ''), 100)
                 if not self.dry_run:
                     location.save()
                 self.stats.record_updated('Location')
@@ -598,9 +605,9 @@ class Command(BaseCommand):
             org_page = OrganizationPage.objects.filter(fabula_uuid=org_uuid).first()
 
             if org_page:
-                org_page.canonical_name = org_data['canonical_name']
+                org_page.canonical_name = self.truncate_field(org_data['canonical_name'], 255)
                 org_page.description = org_data.get('description', '')
-                org_page.sphere_of_influence = org_data.get('sphere_of_influence', '')
+                org_page.sphere_of_influence = self.truncate_field(org_data.get('sphere_of_influence', ''), 255)
                 if not self.dry_run:
                     org_page.save_revision().publish()
                 self.stats.record_updated('OrganizationPage')
@@ -611,9 +618,9 @@ class Command(BaseCommand):
                     title=org_data['canonical_name'],
                     slug=unique_slug,
                     fabula_uuid=org_uuid,
-                    canonical_name=org_data['canonical_name'],
+                    canonical_name=self.truncate_field(org_data['canonical_name'], 255),
                     description=org_data.get('description', ''),
-                    sphere_of_influence=org_data.get('sphere_of_influence', ''),
+                    sphere_of_influence=self.truncate_field(org_data.get('sphere_of_influence', ''), 255),
                 )
                 if not self.dry_run:
                     org_index.add_child(instance=org_page)
@@ -638,13 +645,13 @@ class Command(BaseCommand):
                 org = self.organizations_cache.get(org_uuid)
 
             if char_page:
-                char_page.canonical_name = char_data['canonical_name']
-                char_page.title_role = char_data.get('title_role') or ''
+                char_page.canonical_name = self.truncate_field(char_data['canonical_name'], 255)
+                char_page.title_role = self.truncate_field(char_data.get('title_role') or '', 255)
                 char_page.description = char_data.get('description') or ''
                 char_page.traits = char_data.get('traits') or []
                 char_page.nicknames = char_data.get('aliases') or char_data.get('nicknames') or []
                 char_page.character_type = self.normalize_character_type(char_data.get('character_type', 'recurring'))
-                char_page.sphere_of_influence = char_data.get('sphere_of_influence') or ''
+                char_page.sphere_of_influence = self.truncate_field(char_data.get('sphere_of_influence') or '', 255)
                 char_page.appearance_count = char_data.get('appearance_count', 0)
                 char_page.affiliated_organization = org
                 if not self.dry_run:
@@ -654,16 +661,16 @@ class Command(BaseCommand):
                 base_slug = slugify(char_data['canonical_name'])
                 unique_slug = self.make_unique_slug(base_slug, char_uuid)
                 char_page = CharacterPage(
-                    title=char_data['canonical_name'],
+                    title=self.truncate_field(char_data['canonical_name'], 255),
                     slug=unique_slug,
                     fabula_uuid=char_uuid,
-                    canonical_name=char_data['canonical_name'],
-                    title_role=char_data.get('title_role') or '',
+                    canonical_name=self.truncate_field(char_data['canonical_name'], 255),
+                    title_role=self.truncate_field(char_data.get('title_role') or '', 255),
                     description=char_data.get('description') or '',
                     traits=char_data.get('traits') or [],
                     nicknames=char_data.get('aliases') or char_data.get('nicknames') or [],
                     character_type=self.normalize_character_type(char_data.get('character_type', 'recurring')),
-                    sphere_of_influence=char_data.get('sphere_of_influence') or '',
+                    sphere_of_influence=self.truncate_field(char_data.get('sphere_of_influence') or '', 255),
                     appearance_count=char_data.get('appearance_count', 0),
                     affiliated_organization=org,
                 )
