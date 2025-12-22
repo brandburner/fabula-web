@@ -132,6 +132,13 @@ class Command(BaseCommand):
             f"{'[DRY RUN] ' if self.dry_run else ''}Starting Fabula import from {data_dir}"
         ))
 
+        # Disable Wagtail's automatic reference index updates during bulk import
+        # This dramatically speeds up imports by preventing per-save indexing
+        from django.conf import settings
+        original_autoupdate = getattr(settings, 'WAGTAIL_REFERENCE_INDEX_AUTOUPDATE', True)
+        settings.WAGTAIL_REFERENCE_INDEX_AUTOUPDATE = False
+        self.stdout.write("Disabled automatic reference index updates for bulk import")
+
         try:
             # Load all YAML files
             manifest = self.load_yaml(data_dir / 'manifest.yaml')
@@ -180,6 +187,10 @@ class Command(BaseCommand):
                 import traceback
                 traceback.print_exc()
             raise
+        finally:
+            # Restore original setting
+            settings.WAGTAIL_REFERENCE_INDEX_AUTOUPDATE = original_autoupdate
+            self.stdout.write("Restored automatic reference index updates")
 
     def run_import(
         self,
