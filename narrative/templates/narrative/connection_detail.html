@@ -1,14 +1,5 @@
 {% extends "base.html" %}
 {% load narrative_tags %}
-{#
-Connection Detail Template
-
-This is rendered via a custom view (not a Wagtail Page) since
-NarrativeConnection is a Django model, not a Page.
-
-Context variables:
-- connection: NarrativeConnection instance
-#}
 
 {% block title %}{{ connection.get_connection_type_display }} Connection{% endblock %}
 

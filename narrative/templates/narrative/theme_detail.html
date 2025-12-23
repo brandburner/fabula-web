@@ -1,14 +1,5 @@
 {% extends "base.html" %}
 {% load narrative_tags %}
-{#
-Theme Detail Template
-
-Rendered via a custom view since Theme is a snippet, not a Page.
-
-Context variables:
-- theme: Theme snippet instance
-- events: QuerySet of events exemplifying this theme
-#}
 
 {% block title %}{{ theme.name }}{% endblock %}
 

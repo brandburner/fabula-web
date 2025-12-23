@@ -1,18 +1,4 @@
 {% load wagtailcore_tags narrative_tags %}
-{#
-Connection Card Component
-
-Displays a narrative connection between events, showing:
-- Connection type (CAUSAL, FORESHADOWING, etc.)
-- Strength
-- The narrative assertion (description)
-- Link to the connected event
-
-Variables:
-- connection: NarrativeConnection instance
-- direction: "incoming" or "outgoing"
-#}
-
 {% with conn_type=connection.connection_type|lower|slugify %}
 <div class="group relative p-5 rounded-xl border-2 transition-all duration-300 cursor-pointer
             conn-{{ conn_type }} conn-card hover:shadow-2xl"
