@@ -26,9 +26,9 @@
                     <h1 class="text-3xl md:text-4xl font-bold text-white mb-2 leading-tight tracking-tight">
                         {{ page.title }}
                     </h1>
-                    {% if page.org_type %}
+                    {% if page.sphere_of_influence %}
                     <span class="inline-block px-3 py-1 bg-violet-500/20 border border-violet-500/30 rounded-full text-sm text-violet-300">
-                        {{ page.org_type }}
+                        {{ page.sphere_of_influence }}
                     </span>
                     {% endif %}
                 </div>
@@ -49,17 +49,20 @@
         </section>
         {% endif %}
 
-        {% if page.influence_areas %}
+        {% if page.affiliated_characters.exists %}
         <section class="mb-8">
             <h2 class="text-lg font-semibold text-white mb-4 flex items-center gap-2">
-                <i data-lucide="target" class="w-5 h-5 text-slate-500"></i>
-                Areas of Influence
+                <i data-lucide="users" class="w-5 h-5 text-slate-500"></i>
+                Affiliated Characters
             </h2>
-            <div class="flex flex-wrap gap-2">
-                {% for area in page.influence_areas %}
-                <span class="px-3 py-1 bg-slate-800/50 border border-slate-700 rounded-full text-sm text-slate-300">
-                    {{ area }}
-                </span>
+            <div class="grid sm:grid-cols-2 gap-3">
+                {% for character in page.affiliated_characters.all %}
+                <a href="{% pageurl character %}" class="p-3 bg-slate-800/50 border border-slate-700 rounded-lg hover:border-violet-500/30 transition-colors group">
+                    <div class="font-medium text-slate-200 group-hover:text-violet-300">{{ character.canonical_name }}</div>
+                    {% if character.title_role %}
+                    <div class="text-sm text-slate-500">{{ character.title_role }}</div>
+                    {% endif %}
+                </a>
                 {% endfor %}
             </div>
         </section>

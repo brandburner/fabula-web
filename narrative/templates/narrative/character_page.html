@@ -65,10 +65,10 @@
             </div>
 
             {# Aliases #}
-            {% if page.aliases %}
+            {% if page.nicknames %}
             <div class="text-sm text-slate-500 italic">
                 <span class="text-slate-600 font-medium">Also known as:</span>
-                {% for alias in page.aliases %}
+                {% for alias in page.nicknames %}
                     {{ alias }}{% if not forloop.last %}, {% endif %}
                 {% endfor %}
             </div>
