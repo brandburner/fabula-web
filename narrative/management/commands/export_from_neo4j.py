@@ -251,6 +251,7 @@ class Neo4jExporter:
 
         query = """
         MATCH (a:Agent)
+        WHERE a.status = 'canonical'
         OPTIONAL MATCH (a)-[:AFFILIATED_WITH]->(org:Organization)
         RETURN a, org.uuid as org_uuid
         ORDER BY a.canonical_name
@@ -305,6 +306,7 @@ class Neo4jExporter:
 
         query = """
         MATCH (loc:Location)
+        WHERE loc.status = 'canonical'
         RETURN loc
         ORDER BY loc.canonical_name
         """
@@ -343,6 +345,7 @@ class Neo4jExporter:
 
         query = """
         MATCH (org:Organization)
+        WHERE org.status = 'canonical'
         RETURN org
         ORDER BY org.canonical_name
         """
@@ -464,8 +467,9 @@ class Neo4jExporter:
         // Get arcs
         OPTIONAL MATCH (e)-[:PART_OF_ARC]->(arc:ConflictArc)
 
-        // Get participations with edge properties
+        // Get participations with edge properties (only canonical agents)
         OPTIONAL MATCH (agent:Agent)-[p:PARTICIPATED_AS]->(e)
+        WHERE agent.status = 'canonical'
 
         RETURN e,
                loc.location_uuid as location_uuid,
