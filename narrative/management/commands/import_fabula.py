@@ -119,10 +119,16 @@ class Command(BaseCommand):
             action='store_true',
             help='Show detailed progress information'
         )
+        parser.add_argument(
+            '--cleanup',
+            action='store_true',
+            help='Delete entities not in the export (removes deprecated items)'
+        )
 
     def handle(self, *args, **options):
         self.dry_run = options['dry_run']
         self.verbose = options['verbose']
+        self.cleanup = options.get('cleanup', False)
         data_dir = Path(options['data_dir'])
 
         if not data_dir.exists():
@@ -180,6 +186,14 @@ class Command(BaseCommand):
                 self.stdout.write(self.style.SUCCESS(
                     f"\n{'[DRY RUN] ' if self.dry_run else ''}Import completed successfully!"
                 ))
+
+            # Run cleanup if requested (delete entities not in export)
+            if self.cleanup and not self.dry_run:
+                self.run_cleanup(
+                    characters_data,
+                    organizations_data or [],
+                    locations_data
+                )
 
         except Exception as e:
             self.stdout.write(self.style.ERROR(f"\nImport failed: {str(e)}"))
@@ -927,3 +941,77 @@ class Command(BaseCommand):
         """Log a detailed message (only in verbose mode)."""
         if self.verbose:
             self.stdout.write(f"  {message}")
+
+    # =========================================================================
+    # Cleanup (remove deprecated entities not in export)
+    # =========================================================================
+
+    def run_cleanup(
+        self,
+        characters_data: List[Dict],
+        organizations_data: List[Dict],
+        locations_data: List[Dict]
+    ):
+        """
+        Delete entities from the database that are not in the export.
+
+        This removes deprecated entities that were previously imported
+        but are no longer in the canonical export.
+        """
+        self.stdout.write("\n" + "=" * 60)
+        self.stdout.write("Cleanup Phase: Removing deprecated entities")
+        self.stdout.write("=" * 60)
+
+        total_deleted = 0
+
+        # Cleanup Characters
+        char_uuids = {c.get('fabula_uuid') for c in characters_data if c.get('fabula_uuid')}
+        deleted = self._cleanup_model(CharacterPage, 'fabula_uuid', char_uuids, 'characters')
+        total_deleted += deleted
+
+        # Cleanup Organizations
+        org_uuids = {o.get('fabula_uuid') for o in organizations_data if o.get('fabula_uuid')}
+        deleted = self._cleanup_model(OrganizationPage, 'fabula_uuid', org_uuids, 'organizations')
+        total_deleted += deleted
+
+        # Cleanup Locations
+        loc_uuids = {l.get('fabula_uuid') for l in locations_data if l.get('fabula_uuid')}
+        deleted = self._cleanup_model(Location, 'fabula_uuid', loc_uuids, 'locations')
+        total_deleted += deleted
+
+        self.stdout.write("=" * 60)
+        self.stdout.write(self.style.SUCCESS(f"Cleanup complete: deleted {total_deleted} deprecated entities"))
+
+    def _cleanup_model(self, model_class, uuid_field: str, canonical_uuids: set, label: str) -> int:
+        """Delete objects whose UUID is not in the canonical set."""
+        model_name = model_class.__name__
+
+        all_objects = model_class.objects.all()
+        total_count = all_objects.count()
+
+        deprecated = []
+        for obj in all_objects:
+            obj_uuid = getattr(obj, uuid_field, None)
+            if obj_uuid and obj_uuid not in canonical_uuids:
+                deprecated.append(obj)
+
+        self.stdout.write(f"\n{model_name}:")
+        self.stdout.write(f"  Canonical in export: {len(canonical_uuids)}")
+        self.stdout.write(f"  Total in database: {total_count}")
+        self.stdout.write(f"  Deprecated (deleting): {len(deprecated)}")
+
+        if deprecated:
+            # Show first few
+            for obj in deprecated[:3]:
+                name = getattr(obj, 'canonical_name', None) or getattr(obj, 'name', None) or getattr(obj, 'title', str(obj))
+                self.stdout.write(f"    - {name}")
+            if len(deprecated) > 3:
+                self.stdout.write(f"    ... and {len(deprecated) - 3} more")
+
+            # Delete them
+            for obj in deprecated:
+                obj.delete()
+
+            self.stdout.write(self.style.SUCCESS(f"  Deleted {len(deprecated)} {label}"))
+
+        return len(deprecated)
