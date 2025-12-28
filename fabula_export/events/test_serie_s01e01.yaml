@@ -1,5 +1,5 @@
 # Events for Harmonization Test
-# Generated: 2025-12-26T12:46:37.145174
+# Generated: 2025-12-28T17:25:31.305329
 
 episode_uuid: ep_sea_ser_test_series_s01_e01
 episode_title: Harmonization Test
@@ -28,32 +28,41 @@ events:
   - arc_4476355656a7
   - arc_d5c0f7bbdc03
   participations:
-  - goals: []
+  - goals:
+    - Reassert professional authority
+    - Perform ritualized status-maintenance
+    - Prepare socially for upcoming public presentation
     beliefs: []
     importance: primary
-    emotional_state: ''
+    emotional_state: confident, authoritative
     observed_traits: []
     observed_status: Enters the office, delivers a broad greeting ('Good morning everyone.')
       and acknowledges the coffee ('Thanks.').
-    what_happened: ''
+    what_happened: Enters the office, delivers a broad greeting ('Good morning everyone.')
+      and acknowledges the coffee ('Thanks.').
     character_uuid: agent_cde1e9a779e7
-  - goals: []
+  - goals:
+    - Acknowledge and socially anchor John
+    - Serve as a validator within the office ritual
     beliefs: []
     importance: primary
-    emotional_state: ''
+    emotional_state: cordial, attentive
     observed_traits: []
     observed_status: Sits at her desk and responds to John's greeting with 'Morning,
       John.'
-    what_happened: ''
+    what_happened: Sits at her desk and responds to John's greeting with 'Morning,
+      John.'
     character_uuid: agent_03177a433bb9
-  - goals: []
+  - goals:
+    - Perform the ritual service of delivering coffee
+    - Reinforce John's status through ceremony
     beliefs: []
     importance: primary
-    emotional_state: ''
+    emotional_state: dutiful, formal
     observed_traits: []
     observed_status: Brings coffee to John and offers it ('Here's your coffee, Mr.
       Smith.').
-    what_happened: ''
+    what_happened: Brings coffee to John and offers it ('Here's your coffee, Mr. Smith.').
     character_uuid: agent_eb93aba521d4
 - fabula_uuid: cand_evt_scene_67fdfaedddb15e3b_1
   title: 'Threshold: The Quiet Exit'
@@ -75,29 +84,36 @@ events:
   arc_uuids:
   - arc_9595dd1d336b
   participations:
-  - goals: []
+  - goals:
+    - Leave the office and get to the downtown meeting
+    - Maintain composure and control how others perceive him before the presentation
     beliefs: []
     importance: primary
-    emotional_state: ''
+    emotional_state: controlled, under pressure
     observed_traits: []
     observed_status: Walks to his car; states he has a meeting downtown.
-    what_happened: ''
+    what_happened: Walks to his car; states he has a meeting downtown.
     character_uuid: agent_cde1e9a779e7
-  - goals: []
+  - goals:
+    - Perform a ritual farewell that marks John's transition from office to public
+      presentation
+    - Reinforce John's status within the office through a small ceremonial gesture
     beliefs: []
     importance: primary
-    emotional_state: ''
+    emotional_state: quiet, ritualistic
     observed_traits: []
     observed_status: Waves from the window as John prepares to leave.
-    what_happened: ''
+    what_happened: Waves from the window as John prepares to leave.
     character_uuid: agent_eb93aba521d4
-  - goals: []
+  - goals:
+    - Confirm where John is headed
+    - Anchor John in workplace ties and elicit information about his plans
     beliefs: []
     importance: primary
-    emotional_state: ''
+    emotional_state: curious, gently probing
     observed_traits: []
     observed_status: Confronts/addresses John with a question about leaving.
-    what_happened: ''
+    what_happened: Confronts/addresses John with a question about leaving.
     character_uuid: agent_4f9c81e25d0b
 - fabula_uuid: cand_evt_scene_7909197b01ab3569_1
   title: 'Boardroom Triumph: John''s Quarterly Presentation'
@@ -122,21 +138,28 @@ events:
   - arc_d5c0f7bbdc03
   - arc_9595dd1d336b
   participations:
-  - goals: []
+  - goals:
+    - Present quarterly results persuasively
+    - Secure standing and approval from the board
+    - Assert professional authority
     beliefs: []
     importance: primary
-    emotional_state: ''
+    emotional_state: confident, authoritative
     observed_traits: []
     observed_status: Addresses the board and announces/presents the quarterly results;
       delivers the primary spoken line.
-    what_happened: ''
+    what_happened: Addresses the board and announces/presents the quarterly results;
+      delivers the primary spoken line.
     character_uuid: agent_cde1e9a779e7
-  - goals: []
+  - goals:
+    - Record the presented figures accurately
+    - Validate and endorse John's performance
     beliefs: []
     importance: primary
-    emotional_state: ''
+    emotional_state: attentive, approving
     observed_traits: []
     observed_status: Takes notes during the presentation and speaks a validating line
       ('Impressive numbers, John').
-    what_happened: ''
+    what_happened: Takes notes during the presentation and speaks a validating line
+      ('Impressive numbers, John').
     character_uuid: agent_03177a433bb9

@@ -334,10 +334,10 @@ class FabulaExporter:
                     'emotional_state': p_row['emotional_state'] or '',
                     'goals': p_row['goals'] or [],
                     'what_happened': p_row['what_happened'] or '',
-                    'observed_status': '',
+                    'observed_status': p_row['what_happened'] or '',
                     'beliefs': p_row['beliefs'] or [],
                     'observed_traits': p_row['observed_traits'] or [],
-                    'importance': p_row['importance'] or 'secondary'
+                    'importance': p_row['importance'] or 'primary'
                 }
                 participations.append(participation)
             

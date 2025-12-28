@@ -1,5 +1,5 @@
 # Character/Agent Data
-# Generated: 2025-12-26T12:46:35.901023
+# Generated: 2025-12-28T17:25:30.159991
 
 - fabula_uuid: agent_88a219f670a6
   canonical_name: 16th Special Operations Unit
@@ -1275,11 +1275,6 @@
   - Bartlet supporters
   - supporters
   - very happy Bartlet Supporters
-  - Jed Bartlet
-  - Josiah 'Jed' Bartlet
-  - President Bartlet
-  - Dr. Bartlet
-  - Jed
   character_type: Speaking Character
   sphere_of_influence: Political public support / media optics
   appearance_count: 20
@@ -6530,9 +6525,6 @@
   - escalatory
   aliases:
   - Gov. of Connecticut
-  - the Governor
-  - the governor
-  - governor
   character_type: Non-speaking Character
   sphere_of_influence: State executive authority / Intergovernmental relations
   appearance_count: 1
@@ -6574,9 +6566,6 @@
   - institutionally authoritative
   - remote/influential from off-stage
   aliases:
-  - the governor
-  - governor
-  - the Governor
   - Gov. of Michigan
   character_type: Non-speaking Character
   sphere_of_influence: State Executive Authority / Intergovernmental Relations
@@ -15522,12 +15511,8 @@
   - presidential detail agent
   - presidential detail
   - SECRET SERVICE AGENTS
-  - agent outside
-  - agent
-  - Secret Service agent
   - Agents (in conference room)
   - Service Agents
-  - Protective Detail
   - protective detail agent
   - Secret Service Agent (catwalk)
   - another Secret Service Agent
@@ -15649,6 +15634,47 @@
   character_type: Non-speaking Character
   sphere_of_influence: Office Administration
   appearance_count: 2
+  affiliated_organization_uuid: null
+- fabula_uuid: agent_17600a2a125a
+  canonical_name: Senator Stadler
+  title_role: null
+  description: 'Stadler operates as a Republican senator with standing on the Senate
+    Judiciary Committee whose objections carry real consequences for judicial nominations.
+    Previously indexed in series material as a weighty oversight/regulatory presence,
+    the current episode foregrounds his legislative muscle: staff identify him as
+    openly unhappy with Jeff Breckenridge''s public support for reparations, marking
+    him as a likely dissenting vote. He functions as a procedural gatekeeper and political
+    litmus test whose displeasure forces the White House into persuasion, mitigation,
+    and tactical calculation to protect confirmations.'
+  traits: &id059
+  - procedural
+  - influential
+  - oppositional
+  - politically attuned
+  aliases: &id060
+  - Senator Stadler
+  - Stadler (Senator)
+  - Senator S. Stadler
+  character_type: Non-speaking Character
+  sphere_of_influence: Senate Judiciary Committee / judicial confirmation politics
+  appearance_count: 4
+  affiliated_organization_uuid: null
+- fabula_uuid: agent_17600a2a125a
+  canonical_name: Senator Stadler
+  title_role: null
+  description: 'Stadler operates as a Republican senator with standing on the Senate
+    Judiciary Committee whose objections carry real consequences for judicial nominations.
+    Previously indexed in series material as a weighty oversight/regulatory presence,
+    the current episode foregrounds his legislative muscle: staff identify him as
+    openly unhappy with Jeff Breckenridge''s public support for reparations, marking
+    him as a likely dissenting vote. He functions as a procedural gatekeeper and political
+    litmus test whose displeasure forces the White House into persuasion, mitigation,
+    and tactical calculation to protect confirmations.'
+  traits: *id059
+  aliases: *id060
+  character_type: Non-speaking Character
+  sphere_of_influence: Senate Judiciary Committee / judicial confirmation politics
+  appearance_count: 4
   affiliated_organization_uuid: null
 - fabula_uuid: agent_aa2240d986f1
   canonical_name: Senator Wachtel
@@ -16265,49 +16291,8 @@
   sphere_of_influence: Campus social circle
   appearance_count: 3
   affiliated_organization_uuid: null
-- fabula_uuid: agent_17600a2a125a
-  canonical_name: Stadler
-  title_role: null
-  description: 'Stadler operates as a Republican senator with standing on the Senate
-    Judiciary Committee whose objections carry real consequences for judicial nominations.
-    Previously indexed in series material as a weighty oversight/regulatory presence,
-    the current episode foregrounds his legislative muscle: staff identify him as
-    openly unhappy with Jeff Breckenridge''s public support for reparations, marking
-    him as a likely dissenting vote. He functions as a procedural gatekeeper and political
-    litmus test whose displeasure forces the White House into persuasion, mitigation,
-    and tactical calculation to protect confirmations.'
-  traits: &id059
-  - procedural
-  - influential
-  - oppositional
-  - politically attuned
-  aliases: &id060
-  - Senator Stadler
-  - Stadler (Senator)
-  - Senator S. Stadler
-  character_type: Non-speaking Character
-  sphere_of_influence: Senate Judiciary Committee / judicial confirmation politics
-  appearance_count: 4
-  affiliated_organization_uuid: null
-- fabula_uuid: agent_17600a2a125a
-  canonical_name: Stadler
-  title_role: null
-  description: 'Stadler operates as a Republican senator with standing on the Senate
-    Judiciary Committee whose objections carry real consequences for judicial nominations.
-    Previously indexed in series material as a weighty oversight/regulatory presence,
-    the current episode foregrounds his legislative muscle: staff identify him as
-    openly unhappy with Jeff Breckenridge''s public support for reparations, marking
-    him as a likely dissenting vote. He functions as a procedural gatekeeper and political
-    litmus test whose displeasure forces the White House into persuasion, mitigation,
-    and tactical calculation to protect confirmations.'
-  traits: *id059
-  aliases: *id060
-  character_type: Non-speaking Character
-  sphere_of_influence: Senate Judiciary Committee / judicial confirmation politics
-  appearance_count: 4
-  affiliated_organization_uuid: null
 - fabula_uuid: agent_a74c01e2abe5
-  canonical_name: Stadler
+  canonical_name: Stadler (FEC Contact)
   title_role: null
   description: Stadler functions as a quietly influential Washington contact invoked
     when the White House expects regulatory or campaign‑finance matters to require
@@ -16322,7 +16307,8 @@
   - discreet
   - procedurally savvy
   - instrumental (behind-the-scenes)
-  aliases: []
+  aliases:
+  - Stadler
   character_type: Mentioned Only
   sphere_of_influence: Campaign finance and regulatory relations
   appearance_count: 0

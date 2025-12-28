@@ -477,13 +477,13 @@ class Neo4jExporter:
                collect(DISTINCT arc.arc_uuid) as arc_uuids,
                collect(DISTINCT {
                    character_uuid: agent.agent_uuid,
-                   emotional_state: p.emotional_state,
-                   goals: p.goals,
-                   what_happened: p.what_happened,
+                   emotional_state: p.emotional_state_at_event,
+                   goals: p.goals_at_event,
+                   what_happened: p.observed_status,
                    observed_status: p.observed_status,
-                   beliefs: p.beliefs,
-                   observed_traits: p.observed_traits,
-                   importance: p.importance
+                   beliefs: p.beliefs_at_event,
+                   observed_traits: p.observed_traits_at_event,
+                   importance: coalesce(p.importance_to_event, 'primary')
                }) as participations
         ORDER BY e.sequence_in_scene
         """
