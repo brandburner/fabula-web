@@ -529,29 +529,59 @@ class FabulaExporter:
 
         return events
     
-    def export_connections(self) -> List[dict]:
-        """Export all narrative connections between events."""
-        query = """
-        MATCH (pb1:PlotBeat)-[r]->(pb2:PlotBeat)
-        WHERE type(r) IN ['CAUSAL', 'FORESHADOWING', 'THEMATIC_PARALLEL', 
-                          'CHARACTER_CONTINUITY', 'ESCALATION', 'CALLBACK',
-                          'EMOTIONAL_ECHO', 'SYMBOLIC_PARALLEL', 'TEMPORAL']
-        
-        // Get the events these beats belong to
-        MATCH (e1:Event)
-        WHERE pb1.beat_uuid IN e1.derived_from_beat_uuids
-        MATCH (e2:Event)  
-        WHERE pb2.beat_uuid IN e2.derived_from_beat_uuids
-        
-        RETURN DISTINCT
-            r.connection_uuid as fabula_uuid,
-            e1.event_uuid as from_event_uuid,
-            e2.event_uuid as to_event_uuid,
-            type(r) as connection_type,
-            r.strength as strength,
-            r.description as description
-        """
-        results = self._run_query(query)
+    def export_connections(self, series_title: str = None) -> List[dict]:
+        """Export narrative connections between events, optionally filtered by series."""
+        if series_title:
+            # Filter to only include events from the specified series
+            query = """
+            MATCH (pb1:PlotBeat)-[r]->(pb2:PlotBeat)
+            WHERE type(r) IN ['CAUSAL', 'FORESHADOWING', 'THEMATIC_PARALLEL',
+                              'CHARACTER_CONTINUITY', 'ESCALATION', 'CALLBACK',
+                              'EMOTIONAL_ECHO', 'SYMBOLIC_PARALLEL', 'TEMPORAL']
+
+            // Get the events these beats belong to
+            MATCH (e1:Event)
+            WHERE pb1.beat_uuid IN e1.derived_from_beat_uuids
+            MATCH (e2:Event)
+            WHERE pb2.beat_uuid IN e2.derived_from_beat_uuids
+
+            // Filter to events in the target series only
+            MATCH (e1)-[:PART_OF_EPISODE]->(ep1:Episode)-[:BELONGS_TO_SEASON]->(s1:Season)-[:BELONGS_TO_SERIES]->(series1:Series)
+            WHERE series1.title = $series_title
+            MATCH (e2)-[:PART_OF_EPISODE]->(ep2:Episode)-[:BELONGS_TO_SEASON]->(s2:Season)-[:BELONGS_TO_SERIES]->(series2:Series)
+            WHERE series2.title = $series_title
+
+            RETURN DISTINCT
+                r.connection_uuid as fabula_uuid,
+                e1.event_uuid as from_event_uuid,
+                e2.event_uuid as to_event_uuid,
+                type(r) as connection_type,
+                r.strength as strength,
+                r.description as description
+            """
+            results = self._run_query(query, {'series_title': series_title})
+        else:
+            query = """
+            MATCH (pb1:PlotBeat)-[r]->(pb2:PlotBeat)
+            WHERE type(r) IN ['CAUSAL', 'FORESHADOWING', 'THEMATIC_PARALLEL',
+                              'CHARACTER_CONTINUITY', 'ESCALATION', 'CALLBACK',
+                              'EMOTIONAL_ECHO', 'SYMBOLIC_PARALLEL', 'TEMPORAL']
+
+            // Get the events these beats belong to
+            MATCH (e1:Event)
+            WHERE pb1.beat_uuid IN e1.derived_from_beat_uuids
+            MATCH (e2:Event)
+            WHERE pb2.beat_uuid IN e2.derived_from_beat_uuids
+
+            RETURN DISTINCT
+                r.connection_uuid as fabula_uuid,
+                e1.event_uuid as from_event_uuid,
+                e2.event_uuid as to_event_uuid,
+                type(r) as connection_type,
+                r.strength as strength,
+                r.description as description
+            """
+            results = self._run_query(query)
         
         connections = []
         seen = set()  # Deduplicate
@@ -653,9 +683,9 @@ def export_fabula_to_yaml(
                     'events': events
                 }, os.path.join(events_dir, filename))
         
-        # Export connections
+        # Export connections (filtered by series to avoid cross-series references)
         print("🔗 Exporting narrative connections...")
-        connections = exporter.export_connections()
+        connections = exporter.export_connections(series_title=series_title)
         write_yaml({'connections': connections}, os.path.join(output_dir, 'connections.yaml'))
         
         # Write manifest
