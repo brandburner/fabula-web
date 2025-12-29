@@ -26,7 +26,7 @@
 
             <p class="text-lg text-slate-300 leading-relaxed max-w-3xl">
                 The narrative graph contains {{ event_count }} events and {{ connection_count }} connections.
-                Choose a focused view below for the best experience.
+                Select a focused view below for the best experience.
             </p>
         </div>
     </div>
@@ -34,88 +34,134 @@
     <div class="max-w-4xl mx-auto px-6">
         <hr class="border-slate-800 mb-8">
 
-        {# Graph options #}
-        <section class="grid md:grid-cols-2 gap-6">
+        {# Graph options with sample items #}
+        <div class="space-y-8">
+
             {# Episode graphs #}
-            <div class="bg-slate-900/50 border border-slate-800 rounded-xl p-6">
+            <section class="bg-slate-900/50 border border-slate-800 rounded-xl p-6">
                 <div class="flex items-center gap-3 mb-4">
                     <div class="w-10 h-10 rounded-lg bg-blue-500/10 flex items-center justify-center">
                         <i data-lucide="tv" class="w-5 h-5 text-blue-400"></i>
                     </div>
                     <div>
                         <h3 class="font-semibold text-white">Episode Graphs</h3>
-                        <p class="text-sm text-slate-400">Events within a single episode</p>
+                        <p class="text-sm text-slate-400">Events within a single episode (20-40 nodes)</p>
                     </div>
                 </div>
-                <p class="text-slate-400 text-sm mb-4">
-                    See how events connect within each episode. Typically 20-40 nodes per graph.
-                </p>
+
+                {% if sample_episodes %}
+                <div class="flex flex-wrap gap-2 mb-4">
+                    {% for episode in sample_episodes %}
+                    <a href="{% url 'episode_graph' episode.pk %}"
+                       class="inline-flex items-center gap-2 px-3 py-1.5 bg-blue-500/10 border border-blue-500/20 rounded-lg hover:bg-blue-500/20 transition-colors text-sm">
+                        <i data-lucide="git-branch" class="w-3.5 h-3.5 text-blue-400"></i>
+                        <span class="text-blue-300">{{ episode.title|truncatewords:4 }}</span>
+                        <span class="text-blue-400/60 text-xs">({{ episode.event_count }})</span>
+                    </a>
+                    {% endfor %}
+                </div>
+                {% endif %}
+
                 <a href="{% url 'wagtail_serve' '' %}"
                    class="text-blue-400 text-sm hover:text-blue-300 flex items-center gap-1">
-                    Browse episodes <i data-lucide="arrow-right" class="w-4 h-4"></i>
+                    Browse all episodes <i data-lucide="arrow-right" class="w-4 h-4"></i>
                 </a>
-            </div>
+            </section>
 
             {# Character journeys #}
-            <div class="bg-slate-900/50 border border-slate-800 rounded-xl p-6">
+            <section class="bg-slate-900/50 border border-slate-800 rounded-xl p-6">
                 <div class="flex items-center gap-3 mb-4">
                     <div class="w-10 h-10 rounded-lg bg-emerald-500/10 flex items-center justify-center">
                         <i data-lucide="user" class="w-5 h-5 text-emerald-400"></i>
                     </div>
                     <div>
                         <h3 class="font-semibold text-white">Character Journeys</h3>
-                        <p class="text-sm text-slate-400">Events a character appears in</p>
+                        <p class="text-sm text-slate-400">Follow a character's path through events</p>
                     </div>
                 </div>
-                <p class="text-slate-400 text-sm mb-4">
-                    Follow a character's path through the narrative. Shows all events they participate in.
-                </p>
+
+                {% if sample_characters %}
+                <div class="flex flex-wrap gap-2 mb-4">
+                    {% for character in sample_characters %}
+                    <a href="{% url 'character_graph' character.pk %}"
+                       class="inline-flex items-center gap-2 px-3 py-1.5 bg-emerald-500/10 border border-emerald-500/20 rounded-lg hover:bg-emerald-500/20 transition-colors text-sm">
+                        <i data-lucide="git-branch" class="w-3.5 h-3.5 text-emerald-400"></i>
+                        <span class="text-emerald-300">{{ character.title }}</span>
+                        <span class="text-emerald-400/60 text-xs">({{ character.event_count }})</span>
+                    </a>
+                    {% endfor %}
+                </div>
+                {% endif %}
+
                 <a href="{% url 'wagtail_serve' 'characters/' %}"
                    class="text-emerald-400 text-sm hover:text-emerald-300 flex items-center gap-1">
-                    Browse characters <i data-lucide="arrow-right" class="w-4 h-4"></i>
+                    Browse all characters <i data-lucide="arrow-right" class="w-4 h-4"></i>
                 </a>
-            </div>
+            </section>
 
             {# Theme graphs #}
-            <div class="bg-slate-900/50 border border-slate-800 rounded-xl p-6">
+            <section class="bg-slate-900/50 border border-slate-800 rounded-xl p-6">
                 <div class="flex items-center gap-3 mb-4">
                     <div class="w-10 h-10 rounded-lg bg-violet-500/10 flex items-center justify-center">
                         <i data-lucide="sparkles" class="w-5 h-5 text-violet-400"></i>
                     </div>
                     <div>
                         <h3 class="font-semibold text-white">Theme Graphs</h3>
-                        <p class="text-sm text-slate-400">Events sharing a theme</p>
+                        <p class="text-sm text-slate-400">Events connected by thematic threads</p>
                     </div>
                 </div>
-                <p class="text-slate-400 text-sm mb-4">
-                    Explore thematic connections across the narrative. See how themes weave through events.
-                </p>
+
+                {% if sample_themes %}
+                <div class="flex flex-wrap gap-2 mb-4">
+                    {% for theme in sample_themes %}
+                    <a href="{% url 'theme_graph' theme.pk %}"
+                       class="inline-flex items-center gap-2 px-3 py-1.5 bg-violet-500/10 border border-violet-500/20 rounded-lg hover:bg-violet-500/20 transition-colors text-sm">
+                        <i data-lucide="git-branch" class="w-3.5 h-3.5 text-violet-400"></i>
+                        <span class="text-violet-300">{{ theme.name|truncatewords:3 }}</span>
+                        <span class="text-violet-400/60 text-xs">({{ theme.event_count }})</span>
+                    </a>
+                    {% endfor %}
+                </div>
+                {% endif %}
+
                 <a href="{% url 'theme_index' %}"
                    class="text-violet-400 text-sm hover:text-violet-300 flex items-center gap-1">
-                    Browse themes <i data-lucide="arrow-right" class="w-4 h-4"></i>
+                    Browse all themes <i data-lucide="arrow-right" class="w-4 h-4"></i>
                 </a>
-            </div>
+            </section>
 
             {# Arc graphs #}
-            <div class="bg-slate-900/50 border border-slate-800 rounded-xl p-6">
+            <section class="bg-slate-900/50 border border-slate-800 rounded-xl p-6">
                 <div class="flex items-center gap-3 mb-4">
                     <div class="w-10 h-10 rounded-lg bg-amber-500/10 flex items-center justify-center">
                         <i data-lucide="trending-up" class="w-5 h-5 text-amber-400"></i>
                     </div>
                     <div>
                         <h3 class="font-semibold text-white">Conflict Arc Graphs</h3>
-                        <p class="text-sm text-slate-400">Events in a story arc</p>
+                        <p class="text-sm text-slate-400">Track conflicts across episodes</p>
                     </div>
                 </div>
-                <p class="text-slate-400 text-sm mb-4">
-                    Track conflict arcs across episodes. Follow the escalation and resolution of tensions.
-                </p>
+
+                {% if sample_arcs %}
+                <div class="flex flex-wrap gap-2 mb-4">
+                    {% for arc in sample_arcs %}
+                    <a href="{% url 'arc_graph' arc.pk %}"
+                       class="inline-flex items-center gap-2 px-3 py-1.5 bg-amber-500/10 border border-amber-500/20 rounded-lg hover:bg-amber-500/20 transition-colors text-sm">
+                        <i data-lucide="git-branch" class="w-3.5 h-3.5 text-amber-400"></i>
+                        <span class="text-amber-300">{{ arc.title|truncatewords:3 }}</span>
+                        <span class="text-amber-400/60 text-xs">({{ arc.event_count }})</span>
+                    </a>
+                    {% endfor %}
+                </div>
+                {% endif %}
+
                 <a href="{% url 'arc_index' %}"
                    class="text-amber-400 text-sm hover:text-amber-300 flex items-center gap-1">
-                    Browse arcs <i data-lucide="arrow-right" class="w-4 h-4"></i>
+                    Browse all arcs <i data-lucide="arrow-right" class="w-4 h-4"></i>
                 </a>
-            </div>
-        </section>
+            </section>
+
+        </div>
     </div>
 </article>
 {% endblock %}

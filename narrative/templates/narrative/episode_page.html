@@ -52,8 +52,8 @@
 
             {# High-level summary #}
             {% if page.high_level_summary %}
-            <div class="text-lg text-slate-400 leading-relaxed max-w-3xl prose prose-invert">
-                {{ page.high_level_summary|richtext }}
+            <div class="text-lg text-slate-400 leading-relaxed max-w-3xl prose prose-invert prose-p:my-4">
+                {{ page.high_level_summary|linebreaks }}
             </div>
             {% endif %}
         </div>

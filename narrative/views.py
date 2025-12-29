@@ -315,17 +315,40 @@ class ArcGraphView(ScopedGraphMixin, DetailView):
 
 class GraphView(ListView):
     """
-    DEPRECATED: Full graph visualization crashes browsers with large datasets.
-    Redirects to a landing page with links to scoped views.
+    Graph landing page with links to scoped graph views.
+    Shows sample items from each category for direct graph access.
     """
     model = EventPage
     template_name = 'narrative/graph_landing.html'
 
     def get_context_data(self, **kwargs):
+        from django.db.models import Count
+
         context = super().get_context_data(**kwargs)
         # Provide stats for the landing page
         context['event_count'] = EventPage.objects.live().count()
         context['connection_count'] = NarrativeConnection.objects.count()
+
+        # Sample episodes (most recent with events)
+        context['sample_episodes'] = EpisodePage.objects.live().annotate(
+            event_count=Count('events')
+        ).filter(event_count__gt=0).order_by('-event_count')[:5]
+
+        # Sample characters (most connected)
+        context['sample_characters'] = CharacterPage.objects.live().annotate(
+            event_count=Count('participations')
+        ).filter(event_count__gt=0).order_by('-event_count')[:5]
+
+        # Sample themes (most events)
+        context['sample_themes'] = Theme.objects.annotate(
+            event_count=Count('events')
+        ).filter(event_count__gt=0).order_by('-event_count')[:5]
+
+        # Sample arcs (most events)
+        context['sample_arcs'] = ConflictArc.objects.annotate(
+            event_count=Count('events')
+        ).filter(event_count__gt=0).order_by('-event_count')[:5]
+
         return context
 
 

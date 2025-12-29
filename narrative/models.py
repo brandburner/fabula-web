@@ -431,10 +431,13 @@ class CharacterPage(Page):
     subpage_types = []
 
     def get_participations(self):
-        """Get all event participations for this character."""
+        """Get all event participations for this character, ordered chronologically."""
         return EventParticipation.objects.filter(
             character=self
-        ).select_related('event').order_by(
+        ).select_related(
+            'event', 'event__episode'
+        ).order_by(
+            'event__episode__path',  # Season ordering via page tree path
             'event__episode__episode_number',
             'event__scene_sequence'
         )

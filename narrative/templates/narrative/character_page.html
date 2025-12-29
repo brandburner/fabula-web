@@ -109,7 +109,7 @@
                 <div class="absolute left-[15px] top-4 bottom-4 w-0.5 bg-gradient-to-b from-emerald-500/60 via-emerald-500/30 to-transparent"></div>
 
                 <div class="space-y-8">
-                    {% for participation in page.event_participations.all %}
+                    {% for participation in page.get_participations %}
                     <div class="relative pl-12 group">
                         {# Timeline dot with animation #}
                         <div class="absolute left-0 top-3 w-8 h-8 rounded-full flex items-center justify-center transition-all duration-300
