@@ -1,6 +1,4 @@
-# Narrative Connections Between Events
-# Generated: 2025-12-28T17:25:34.072409
-
+connections:
 - fabula_uuid: conn_c4d1c4631725
   from_event_uuid: cand_evt_scene_94cd142922802e30_1
   to_event_uuid: cand_evt_scene_94cd142922802e30_1
@@ -36,13 +34,6 @@
   strength: strong
   description: Mary's question about John's departure leads directly to his confirmation
     of the downtown meeting, heightening the stakes.
-- fabula_uuid: conn_14f882cc7607
-  from_event_uuid: cand_evt_scene_67fdfaedddb15e3b_1
-  to_event_uuid: cand_evt_scene_7909197b01ab3569_1
-  connection_type: NARRATIVELY_FOLLOWS
-  strength: strong
-  description: John's mention of the downtown meeting sets up his subsequent presentation
-    to the board.
 - fabula_uuid: conn_c8cfa9dd4df6
   from_event_uuid: cand_evt_scene_67fdfaedddb15e3b_1
   to_event_uuid: cand_evt_scene_7909197b01ab3569_1
@@ -189,14 +180,6 @@
   strength: medium
   description: Laurie's assertion of her autonomy and professional success challenges
     Sam's assumptions and deepens their personal conflict.
-- fabula_uuid: conn_931cb39175cc
-  from_event_uuid: cand_evt_scene_86d923f69de77610_1
-  to_event_uuid: cand_evt_scene_dccfff453cbd1992_1
-  connection_type: NARRATIVELY_FOLLOWS
-  strength: strong
-  description: Donna revealing Sam's entanglement with a mystery woman (in beat_a55391cc8049e2b6)
-    leads directly to CJ confronting Sam about it (in beat_a87303be426f0e50), advancing
-    the scandal subplot.
 - fabula_uuid: conn_17967b0a0f44
   from_event_uuid: cand_evt_scene_dccfff453cbd1992_1
   to_event_uuid: cand_evt_scene_dccfff453cbd1992_1
@@ -252,13 +235,6 @@
   strength: strong
   description: Leo's distracted arrival home and the tension with Jenny foreshadow
     the eventual marital collapse when Jenny packs her bags and leaves.
-- fabula_uuid: conn_6d654fc4d537
-  from_event_uuid: cand_evt_scene_7c595c8facf25ef0_1
-  to_event_uuid: cand_evt_scene_693d7409ced00bb1_01
-  connection_type: NARRATIVELY_FOLLOWS
-  strength: medium
-  description: Leela's confrontation with Toby about his stock investment leads directly
-    to Sam's discussion with Toby about the legal and PR implications of the situation.
 - fabula_uuid: conn_fa79a9f1d83d
   from_event_uuid: cand_evt_scene_ba41b235ef6ffac1_1
   to_event_uuid: cand_evt_scene_397af9ee2c984eb6_2
@@ -357,12 +333,6 @@
   strength: medium
   description: Pluie’s death and C.J.’s emotional connection to it later influence
     her defense of wildlife.
-- fabula_uuid: conn_bbaf6fb15206
-  from_event_uuid: cand_evt_scene_6908c3ea5bc8b9cb_1
-  to_event_uuid: cand_evt_scene_4238e7183bf8469f_4
-  connection_type: NARRATIVELY_FOLLOWS
-  strength: strong
-  description: Toby’s insecurity leads to his confrontation with Bartlet.
 - fabula_uuid: conn_bc61d4430623
   from_event_uuid: cand_evt_scene_00da59686cec903d_2
   to_event_uuid: cand_evt_scene_541a453ff7e2727a_2
@@ -442,13 +412,6 @@
   strength: strong
   description: Toby's forceful presentation of the 'three-fifths' clause directly
     influences Willis's decision to drop the census amendment.
-- fabula_uuid: conn_96513a3e529f
-  from_event_uuid: cand_evt_scene_191f821420585451_2
-  to_event_uuid: cand_evt_scene_cdf3ad5f9d6fbf06_2
-  connection_type: NARRATIVELY_FOLLOWS
-  strength: strong
-  description: Willis's decision to drop the amendment culminates in the final roll
-    call vote where he votes 'yea,' resolving the legislative conflict.
 - fabula_uuid: conn_c4fa7458cdff
   from_event_uuid: cand_evt_scene_8d8a0bae81f4a996_2
   to_event_uuid: cand_evt_scene_7bfd5340a5a21502_1
@@ -470,13 +433,6 @@
   strength: strong
   description: The initial report of Hurricane Sarah's threat in Act 1 leads to its
     unexpected shift back to the Atlantic in Act 4, causing the naval crisis.
-- fabula_uuid: conn_ee468fe106ec
-  from_event_uuid: cand_evt_scene_974822901cfb9651_2
-  to_event_uuid: cand_evt_scene_cc3412cf37c65f2d_1
-  connection_type: NARRATIVELY_FOLLOWS
-  strength: strong
-  description: The Teamsters' strike announcement in Act 1 escalates to Bartlet's
-    dramatic intervention threatening nationalization in Act 5.
 - fabula_uuid: conn_3c4b30794a75
   from_event_uuid: cand_evt_scene_974822901cfb9651_2
   to_event_uuid: cand_evt_scene_38ea6581396d2589_1
@@ -614,13 +570,6 @@
   strength: strong
   description: Bartlet's assertiveness in the cabinet meeting is echoed in his later
     confrontation with Hoynes about past resentments.
-- fabula_uuid: conn_234e0ce1edd9
-  from_event_uuid: cand_evt_scene_5d60c47b6ecc917c_1
-  to_event_uuid: cand_evt_scene_c59eac31b143a230_1
-  connection_type: NARRATIVELY_FOLLOWS
-  strength: medium
-  description: Danny's initial confrontation with C.J. about the leak leads to her
-    offering him a presidential interview to quash the story.
 - fabula_uuid: conn_16c0632ac443
   from_event_uuid: cand_evt_scene_64173d3863447a89_2
   to_event_uuid: cand_evt_scene_28c56768298b7ec9_2
@@ -692,13 +641,6 @@
   strength: medium
   description: Josh's principled stance against drug tests foreshadows his fierce
     loyalty to Leo when Lillienfield's true target is revealed.
-- fabula_uuid: conn_f79c21efdd96
-  from_event_uuid: cand_evt_scene_71a8e4091a7f5a70_1
-  to_event_uuid: cand_evt_scene_7569d8e3284d4dbe_1
-  connection_type: NARRATIVELY_FOLLOWS
-  strength: strong
-  description: The introduction of the 'unsigned note' sets up Bartlet's confrontation
-    with Harrison about his judicial philosophy.
 - fabula_uuid: conn_f20b18ddfd5b
   from_event_uuid: cand_evt_scene_7569d8e3284d4dbe_1
   to_event_uuid: cand_evt_scene_f7dcec98127b068b_1
@@ -748,13 +690,6 @@
   strength: weak
   description: The goldfish misunderstanding provides a moment of levity amidst the
     high-stakes drama, reflecting the episode's balance of tension and relief.
-- fabula_uuid: conn_d81cc11dc132
-  from_event_uuid: cand_evt_scene_a4987ebb5e9ea3d2_2
-  to_event_uuid: cand_evt_scene_552e82cb36f6e1f6_1
-  connection_type: NARRATIVELY_FOLLOWS
-  strength: strong
-  description: Toby's suggestion to meet Mendoza leads directly to Bartlet's official
-    nomination of Mendoza.
 - fabula_uuid: conn_cef93cad1b38
   from_event_uuid: cand_evt_scene_55f56fda86001083_2
   to_event_uuid: cand_evt_scene_55f56fda86001083_2
@@ -762,13 +697,6 @@
   strength: medium
   description: Bartlet's support for Leo echoes throughout the episode, reinforcing
     the theme of loyalty and trust.
-- fabula_uuid: conn_9759da33bc80
-  from_event_uuid: cand_evt_scene_552e82cb36f6e1f6_1
-  to_event_uuid: cand_evt_scene_2287a379b5b1da9d_1
-  connection_type: NARRATIVELY_FOLLOWS
-  strength: strong
-  description: Bartlet's nomination of Mendoza culminates in the public introduction
-    and staff applause.
 - fabula_uuid: conn_86af73a2b9bc
   from_event_uuid: cand_evt_scene_a3a321355115eae6_1
   to_event_uuid: cand_evt_scene_d3078542cdca47bc_2
@@ -817,14 +745,6 @@
   description: Mrs. Landingham's personal grief over her sons in Vietnam resonates
     with Toby's mission to honor Walter Hufnagle, both highlighting themes of loss,
     memory, and the cost of service.
-- fabula_uuid: conn_e536cc73dc02
-  from_event_uuid: cand_evt_scene_83c1c1532501e174_2
-  to_event_uuid: cand_evt_scene_455ccc93fa6956b6_1
-  connection_type: NARRATIVELY_FOLLOWS
-  strength: medium
-  description: Bartlet's casual invitation for Josh to join him shopping leads to
-    the revelation of Leo's need for an exit strategy, showing how personal moments
-    can quickly turn to serious political discourse.
 - fabula_uuid: conn_7ddad1d872f9
   from_event_uuid: cand_evt_scene_7de2aba4ca661c1e_1
   to_event_uuid: cand_evt_scene_0869f7dc40bd4217_2
@@ -840,14 +760,6 @@
   strength: strong
   description: The radar officer's discovery of unusual military activity directly
     leads to the Situation Room's briefing about India's full-scale invasion of Kashmir.
-- fabula_uuid: conn_a568a9576171
-  from_event_uuid: cand_evt_scene_17df05d88fe7de7e_2
-  to_event_uuid: cand_evt_scene_17df05d88fe7de7e_2
-  connection_type: NARRATIVELY_FOLLOWS
-  strength: medium
-  description: The Pentagon's decision to brief the COs immediately narratively follows
-    the confirmation of India's military actions and leads to the White House being
-    contacted.
 - fabula_uuid: conn_8210eddcfccd
   from_event_uuid: cand_evt_scene_86102ad85fe5f259_01
   to_event_uuid: cand_evt_scene_46ae706512e71f69_1
@@ -943,13 +855,6 @@
   strength: medium
   description: Bartlet's use of humor to mask his exhaustion parallels his later collapse,
     reinforcing the theme of concealed vulnerability.
-- fabula_uuid: conn_680a9c4d31a2
-  from_event_uuid: cand_evt_scene_cfeb7c17c4daad30_3
-  to_event_uuid: cand_evt_scene_6e86ae3afbeead7d_2
-  connection_type: NARRATIVELY_FOLLOWS
-  strength: medium
-  description: The initial clash over speech rhetoric between Josh and Toby sets the
-    stage for their later, more substantive debate about the role of government.
 - fabula_uuid: conn_917004bbf498
   from_event_uuid: cand_evt_scene_cfeb7c17c4daad30_1
   to_event_uuid: cand_evt_scene_4f20072b4f1de453_1
@@ -1022,13 +927,6 @@
   strength: strong
   description: Leo's instruction to Margaret to remind Josh to 'pick a guy' directly
     leads to Josh selecting Roger Tribby as the designated survivor.
-- fabula_uuid: conn_153bb25f1e61
-  from_event_uuid: cand_evt_scene_9e363592e3637d1c_2
-  to_event_uuid: cand_evt_scene_c3ea368ead91969e_2
-  connection_type: NARRATIVELY_FOLLOWS
-  strength: medium
-  description: C.J.'s arrival to discuss Leo's press crisis transitions into Abbey
-    praising Leo's actions, showing the shifting focus of the narrative.
 - fabula_uuid: conn_3986fb97553b
   from_event_uuid: cand_evt_scene_4e382630ed6bfb0c_1
   to_event_uuid: cand_evt_scene_b89a42434ebe1877_1
@@ -1091,13 +989,6 @@
   strength: medium
   description: Both confront Toby's need to manage controversies versus his ideological
     stance.
-- fabula_uuid: conn_188e7f690337
-  from_event_uuid: cand_evt_scene_755ecb69ecbb60cc_2
-  to_event_uuid: cand_evt_scene_761808f0e83e6ef6_1
-  connection_type: NARRATIVELY_FOLLOWS
-  strength: strong
-  description: Josh's preparation for negotiations leads directly to Bruno's political
-    ultimatum.
 - fabula_uuid: conn_57d23b9b9f54
   from_event_uuid: cand_evt_scene_755ecb69ecbb60cc_2
   to_event_uuid: cand_evt_scene_86ada7cafa4b1e2d_1
@@ -1173,13 +1064,6 @@
   strength: strong
   description: Rabbi Glassman's sermon on vengeance not being Jewish directly influences
     Toby's later argument to Bartlet about the moral impossibility of capital punishment.
-- fabula_uuid: conn_28dce6870d15
-  from_event_uuid: cand_evt_scene_15b174e8db03359f_1
-  to_event_uuid: cand_evt_scene_6167b3c019f24edd_2
-  connection_type: NARRATIVELY_FOLLOWS
-  strength: strong
-  description: Leo's briefing to Bartlet about the Supreme Court's decision directly
-    leads to Bartlet's later confession of his failed search for legal loopholes.
 - fabula_uuid: conn_d081b0e4360c
   from_event_uuid: cand_evt_scene_15b174e8db03359f_2
   to_event_uuid: cand_evt_scene_6167b3c019f24edd_2
@@ -1237,13 +1121,6 @@
   strength: strong
   description: Sam and C.J.'s preparation for the press briefing is interrupted by
     Josh pulling Toby away, signaling the start of another crisis.
-- fabula_uuid: conn_c3bd10dea49b
-  from_event_uuid: cand_evt_scene_a7384620cb647611_1
-  to_event_uuid: cand_evt_scene_a7384620cb647611_1
-  connection_type: NARRATIVELY_FOLLOWS
-  strength: medium
-  description: Josh's interruption leads to Sam and C.J. strategizing to reschedule
-    the briefing, showing the ripple effect of crises.
 - fabula_uuid: conn_c8c2c678d4f7
   from_event_uuid: cand_evt_scene_a7384620cb647611_1
   to_event_uuid: cand_evt_scene_a7384620cb647611_1
@@ -1335,13 +1212,6 @@
   strength: medium
   description: Sam's reassurance about Toby's involvement reinforces the dynamic of
     their rescue mission.
-- fabula_uuid: conn_62945addca59
-  from_event_uuid: cand_evt_scene_b800e5648c461098_1
-  to_event_uuid: cand_evt_scene_288c74f5b55b3448_1
-  connection_type: NARRATIVELY_FOLLOWS
-  strength: medium
-  description: Sam's update leads directly to the physical confrontation between Toby
-    and Mendoza.
 - fabula_uuid: conn_e8f8473e43ac
   from_event_uuid: cand_evt_scene_288c74f5b55b3448_1
   to_event_uuid: cand_evt_scene_288c74f5b55b3448_1
@@ -1356,13 +1226,6 @@
   strength: medium
   description: Toby's terse greeting underscores the gravity of the situation and
     his protective role towards Mendoza.
-- fabula_uuid: conn_4e6dec23a26c
-  from_event_uuid: cand_evt_scene_288c74f5b55b3448_1
-  to_event_uuid: cand_evt_scene_87e72b0dc315e785_1
-  connection_type: NARRATIVELY_FOLLOWS
-  strength: medium
-  description: Toby's physical entry into the cell transitions to his interrogation
-    of Mendoza about the Breathalyzer refusal.
 - fabula_uuid: conn_13320f82dd20
   from_event_uuid: cand_evt_scene_87e72b0dc315e785_1
   to_event_uuid: cand_evt_scene_87e72b0dc315e785_1
@@ -1414,13 +1277,6 @@
   description: Sam's insistence on making last-minute calls to sway the ethanol vote
     foreshadows his later passionate argument for releasing pressured senators and
     taking Hoynes off the hook.
-- fabula_uuid: conn_e4afb2c64ed6
-  from_event_uuid: cand_evt_scene_d9a8bad60e3f1324_1
-  to_event_uuid: cand_evt_scene_a80da8ce804bf371_2
-  connection_type: NARRATIVELY_FOLLOWS
-  strength: medium
-  description: Josh and Toby's anxiety about the Al Kiefer meeting sets up Kiefer's
-    aggressive pitch about the flag-burning amendment during lunch.
 - fabula_uuid: conn_e25cd29b1a4b
   from_event_uuid: cand_evt_scene_0f0a86e9125275c0_1
   to_event_uuid: cand_evt_scene_1f7d4352e9a15b54_1
@@ -1641,13 +1497,6 @@
   strength: strong
   description: Fitzwallace's blunt reality check about Presidential resolve echoes
     Leo's later confrontation with Bartlet about reclaiming his voice.
-- fabula_uuid: conn_80a6c98e9120
-  from_event_uuid: cand_evt_scene_247f8b51411ce26f_1
-  to_event_uuid: cand_evt_scene_760e75b0c749f2fb_2
-  connection_type: NARRATIVELY_FOLLOWS
-  strength: medium
-  description: Danny's confirmation of the memo's publication is followed by C.J.
-    informing Leo about the impending crisis.
 - fabula_uuid: conn_f15d5f74d6f7
   from_event_uuid: cand_evt_scene_760e75b0c749f2fb_2
   to_event_uuid: cand_evt_scene_760e75b0c749f2fb_3
@@ -1784,14 +1633,6 @@
   strength: medium
   description: Bartlet's unease about appearing 'soft on drugs' immediately precedes
     C.J.'s defense of the White House stance in the press briefing.
-- fabula_uuid: conn_0b404751c325
-  from_event_uuid: cand_evt_scene_b3a8dff600485729_1
-  to_event_uuid: cand_evt_scene_b3a8dff600485729_1
-  connection_type: NARRATIVELY_FOLLOWS
-  strength: medium
-  description: C.J.'s defense of the White House's stance on drug policy is followed
-    by her dismissal of accusations from Steve Onorato, maintaining a consistent narrative
-    thread.
 - fabula_uuid: conn_97c3dd976221
   from_event_uuid: cand_evt_scene_4e1d7d2b2543ba34_2
   to_event_uuid: cand_evt_scene_c54829320ae4d651_2
@@ -1866,13 +1707,6 @@
   strength: medium
   description: Leo's rebuke of Josh's political calculus echoes his earlier confrontation
     about the human cost of the rescue mission, reinforcing their moral tension.
-- fabula_uuid: conn_3cf789f79a04
-  from_event_uuid: cand_evt_scene_3ca65a6941389b0e_1
-  to_event_uuid: cand_evt_scene_3ca65a6941389b0e_2
-  connection_type: NARRATIVELY_FOLLOWS
-  strength: medium
-  description: Bartlet's update on the shuttle's situation directly precedes Toby's
-    expressed skepticism, driving the scene's tension.
 - fabula_uuid: conn_06a14195e3ae
   from_event_uuid: cand_evt_scene_40320803021c5002_1
   to_event_uuid: cand_evt_scene_40320803021c5002_2

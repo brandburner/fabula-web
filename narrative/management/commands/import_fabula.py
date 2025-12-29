@@ -149,12 +149,13 @@ class Command(BaseCommand):
             # Load all YAML files
             manifest = self.load_yaml(data_dir / 'manifest.yaml')
             series_data = self.load_yaml(data_dir / 'series.yaml')
-            themes_data = self.load_yaml(data_dir / 'themes.yaml')
-            arcs_data = self.load_yaml(data_dir / 'arcs.yaml')
-            locations_data = self.load_yaml(data_dir / 'locations.yaml')
-            characters_data = self.load_yaml(data_dir / 'characters.yaml')
-            organizations_data = self.load_yaml(data_dir / 'organizations.yaml', required=False)
-            connections_data = self.load_yaml(data_dir / 'connections.yaml')
+            themes_data = self.unwrap_data(self.load_yaml(data_dir / 'themes.yaml'), 'themes')
+            arcs_data = self.unwrap_data(self.load_yaml(data_dir / 'arcs.yaml'), 'arcs')
+            locations_data = self.unwrap_data(self.load_yaml(data_dir / 'locations.yaml'), 'locations')
+            characters_data = self.unwrap_data(self.load_yaml(data_dir / 'characters.yaml'), 'characters')
+            organizations_data_raw = self.load_yaml(data_dir / 'organizations.yaml', required=False)
+            organizations_data = self.unwrap_data(organizations_data_raw, 'organizations') if organizations_data_raw else None
+            connections_data = self.unwrap_data(self.load_yaml(data_dir / 'connections.yaml'), 'connections')
 
             # Load event files
             events_dir = data_dir / 'events'
@@ -310,6 +311,19 @@ class Command(BaseCommand):
         except Exception as e:
             raise CommandError(f"Error loading {path}: {e}")
 
+    def unwrap_data(self, data: Any, key: str) -> List[Dict]:
+        """Unwrap data from a wrapper dict if present, otherwise return as-is.
+
+        Handles both formats:
+        - Wrapped: {'themes': [...]} -> returns [...]
+        - Bare: [...] -> returns [...]
+        """
+        if isinstance(data, dict) and key in data:
+            return data[key]
+        if isinstance(data, list):
+            return data
+        return data or []
+
     def load_events(self, events_dir: Path) -> List[Dict]:
         """Load all event YAML files from the events directory."""
         if not events_dir.exists():
@@ -450,7 +464,8 @@ class Command(BaseCommand):
         # Second pass: set parent relationships
         for loc_data in locations_data:
             if parent_uuid := loc_data.get('parent_location_uuid'):
-                location = self.locations_cache[loc_data['location_uuid']]
+                loc_uuid = loc_data.get('fabula_uuid') or loc_data.get('location_uuid', '')
+                location = self.locations_cache[loc_uuid]
                 parent = self.locations_cache.get(parent_uuid)
                 if parent:
                     location.parent_location = parent
