@@ -67,6 +67,103 @@
             </div>
         </section>
         {% endif %}
+
+        {# ============================================================= #}
+        {# ORGANIZATION'S INVOLVEMENT TIMELINE #}
+        {# ============================================================= #}
+        {% if page.event_involvements.exists %}
+        <section class="mb-8">
+            <div class="flex items-center gap-3 mb-8">
+                <div class="p-2 bg-indigo-500/10 rounded-lg">
+                    <i data-lucide="route" class="w-6 h-6 text-indigo-400"></i>
+                </div>
+                <div class="flex-1">
+                    <h2 class="text-2xl font-bold text-white">
+                        Involvement in Events
+                    </h2>
+                    <p class="text-sm text-slate-500 mt-0.5">When this organization influences the narrative</p>
+                </div>
+                <span class="px-3 py-1.5 text-sm font-semibold bg-indigo-500/10 text-indigo-400 border border-indigo-500/20 rounded-lg">
+                    {{ page.event_involvements.count }} events
+                </span>
+            </div>
+
+            {# Timeline #}
+            <div class="relative">
+                {# Vertical line with gradient #}
+                <div class="absolute left-[15px] top-4 bottom-4 w-0.5 bg-gradient-to-b from-indigo-500/60 via-indigo-500/30 to-transparent"></div>
+
+                <div class="space-y-8">
+                    {% for involvement in page.event_involvements.all %}
+                    <div class="relative pl-12 group">
+                        {# Timeline dot #}
+                        <div class="absolute left-0 top-3 w-8 h-8 rounded-full flex items-center justify-center transition-all duration-300
+                                    {% if forloop.first %}
+                                        bg-indigo-500 shadow-lg shadow-indigo-500/50 group-hover:shadow-indigo-500/70
+                                    {% else %}
+                                        bg-slate-800/80 border-2 border-indigo-500/40 group-hover:bg-indigo-500/20 group-hover:border-indigo-500/60
+                                    {% endif %}">
+                            <div class="w-2.5 h-2.5 rounded-full {% if forloop.first %}bg-white{% else %}bg-indigo-400/60 group-hover:bg-indigo-400{% endif %} transition-colors"></div>
+                        </div>
+
+                        {# Event card #}
+                        <a href="{% pageurl involvement.event %}"
+                           class="block p-5 bg-gradient-to-br from-slate-900/60 to-slate-900/40 border border-slate-800 rounded-xl hover:border-indigo-500/40 hover:bg-indigo-500/5 transition-all duration-300 hover:shadow-lg hover:shadow-indigo-500/10 hover:-translate-y-0.5">
+
+                            {# Episode context #}
+                            <div class="flex items-center gap-2 text-xs text-slate-500 font-mono mb-2">
+                                <span class="px-2 py-0.5 bg-slate-800/50 rounded">
+                                    S{{ involvement.event.episode.get_parent.specific.season_number }}E{{ involvement.event.episode.episode_number }}
+                                </span>
+                                <span class="text-slate-600">·</span>
+                                <span class="line-clamp-1">{{ involvement.event.episode.title }}</span>
+                            </div>
+
+                            {# Event title #}
+                            <div class="font-semibold text-slate-200 group-hover:text-indigo-300 transition-colors mb-3 text-lg leading-snug">
+                                {{ involvement.event.title }}
+                            </div>
+
+                            {# Description of involvement #}
+                            {% if involvement.description_of_involvement %}
+                            <div class="flex items-start gap-2 mb-3 p-3 bg-indigo-500/5 border border-indigo-500/10 rounded-lg">
+                                <i data-lucide="building-2" class="w-4 h-4 text-indigo-400 mt-0.5 shrink-0"></i>
+                                <p class="text-sm text-slate-300 leading-relaxed">
+                                    {{ involvement.description_of_involvement }}
+                                </p>
+                            </div>
+                            {% endif %}
+
+                            {# Rich details #}
+                            {% if involvement.power_dynamics or involvement.institutional_impact %}
+                            <div class="flex flex-wrap gap-3 text-xs">
+                                {% if involvement.power_dynamics %}
+                                <div class="flex items-center gap-1 text-orange-400/70">
+                                    <i data-lucide="scale" class="w-3 h-3"></i>
+                                    <span>{{ involvement.power_dynamics|truncatewords:8 }}</span>
+                                </div>
+                                {% endif %}
+                                {% if involvement.institutional_impact %}
+                                <div class="flex items-center gap-1 text-yellow-400/70">
+                                    <i data-lucide="zap" class="w-3 h-3"></i>
+                                    <span>{{ involvement.institutional_impact|truncatewords:8 }}</span>
+                                </div>
+                                {% endif %}
+                            </div>
+                            {% endif %}
+
+                            {# View more indicator #}
+                            <div class="flex items-center gap-1 text-indigo-400 text-xs mt-3 opacity-0 group-hover:opacity-100 transition-opacity">
+                                <span>View full event</span>
+                                <i data-lucide="arrow-right" class="w-3 h-3"></i>
+                            </div>
+                        </a>
+                    </div>
+                    {% endfor %}
+                </div>
+            </div>
+        </section>
+        {% endif %}
     </div>
 </article>
 {% endblock %}

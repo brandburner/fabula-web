@@ -15,9 +15,9 @@ from django.views.generic import ListView, DetailView
 from django.db.models import Q
 
 from .models import (
-    NarrativeConnection, Theme, ConflictArc,
+    NarrativeConnection, Theme, ConflictArc, Location,
     EventPage, CharacterPage, EpisodePage, EventParticipation,
-    ConnectionType
+    ConnectionType, LocationInvolvement
 )
 
 
@@ -155,14 +155,83 @@ class ArcDetailView(DetailView):
     model = ConflictArc
     template_name = 'narrative/arc_detail.html'
     context_object_name = 'arc'
-    
+
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
-        
+
         context['events'] = self.object.events.all().select_related(
             'episode', 'location'
         ).order_by('episode__episode_number', 'scene_sequence')
-        
+
+        return context
+
+
+# =============================================================================
+# LOCATIONS
+# =============================================================================
+
+class LocationIndexView(ListView):
+    """
+    Browse all locations, organized by type.
+    """
+    model = Location
+    template_name = 'narrative/location_index.html'
+    context_object_name = 'locations'
+
+    def get_queryset(self):
+        from django.db.models import Count
+        return Location.objects.annotate(
+            event_count=Count('events')
+        ).order_by('-event_count')
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+
+        # Group locations by type
+        locations_by_type = {}
+        for location in self.get_queryset():
+            loc_type = location.location_type or 'Other'
+            if loc_type not in locations_by_type:
+                locations_by_type[loc_type] = []
+            locations_by_type[loc_type].append(location)
+
+        context['locations_by_type'] = locations_by_type
+        context['total_count'] = Location.objects.count()
+        return context
+
+
+class LocationDetailView(DetailView):
+    """
+    View a single location with all events that occur there.
+    Shows both simple FK events and rich involvement events.
+    """
+    model = Location
+    template_name = 'narrative/location_detail.html'
+    context_object_name = 'location'
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+
+        # Get events with simple location FK
+        context['events'] = EventPage.objects.live().filter(
+            location=self.object
+        ).select_related('episode').order_by(
+            'episode__episode_number', 'scene_sequence'
+        )
+
+        # Get rich location involvements
+        context['involvements'] = LocationInvolvement.objects.filter(
+            location=self.object
+        ).select_related('event', 'event__episode').order_by(
+            'event__episode__episode_number',
+            'event__scene_sequence'
+        )
+
+        # Get child locations
+        context['child_locations'] = Location.objects.filter(
+            parent_location=self.object
+        )
+
         return context
 
 

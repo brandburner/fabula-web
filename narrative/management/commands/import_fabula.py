@@ -34,12 +34,17 @@ from narrative.models import (
     CharacterPage,
     OrganizationIndexPage,
     OrganizationPage,
+    ObjectIndexPage,
+    ObjectPage,
     EventIndexPage,
     EventPage,
     # Related models
     NarrativeConnection,
     EventParticipation,
     CharacterEpisodeProfile,
+    ObjectInvolvement,
+    LocationInvolvement,
+    OrganizationInvolvement,
 )
 
 
@@ -100,6 +105,7 @@ class Command(BaseCommand):
         self.locations_cache: Dict[str, Location] = {}
         self.characters_cache: Dict[str, CharacterPage] = {}
         self.organizations_cache: Dict[str, OrganizationPage] = {}
+        self.objects_cache: Dict[str, ObjectPage] = {}
         self.episodes_cache: Dict[str, EpisodePage] = {}
         self.events_cache: Dict[str, EventPage] = {}
 
@@ -155,6 +161,8 @@ class Command(BaseCommand):
             characters_data = self.unwrap_data(self.load_yaml(data_dir / 'characters.yaml'), 'characters')
             organizations_data_raw = self.load_yaml(data_dir / 'organizations.yaml', required=False)
             organizations_data = self.unwrap_data(organizations_data_raw, 'organizations') if organizations_data_raw else None
+            objects_data_raw = self.load_yaml(data_dir / 'objects.yaml', required=False)
+            objects_data = self.unwrap_data(objects_data_raw, 'objects') if objects_data_raw else []
             connections_data = self.unwrap_data(self.load_yaml(data_dir / 'connections.yaml'), 'connections')
 
             # Load event files
@@ -167,13 +175,13 @@ class Command(BaseCommand):
             if self.dry_run:
                 self.run_import(
                     manifest, series_data, themes_data, arcs_data, locations_data,
-                    characters_data, organizations_data, events_data, connections_data
+                    characters_data, organizations_data, objects_data, events_data, connections_data
                 )
             else:
                 with transaction.atomic():
                     self.run_import(
                         manifest, series_data, themes_data, arcs_data, locations_data,
-                        characters_data, organizations_data, events_data, connections_data
+                        characters_data, organizations_data, objects_data, events_data, connections_data
                     )
 
             # Print summary
@@ -216,6 +224,7 @@ class Command(BaseCommand):
         locations_data: List[Dict],
         characters_data: List[Dict],
         organizations_data: Optional[List[Dict]],
+        objects_data: List[Dict],
         events_data: List[Dict],
         connections_data: List[Dict]
     ):
@@ -234,20 +243,24 @@ class Command(BaseCommand):
         main_series_page = None
         character_index = None
         org_index = None
+        object_index = None
         event_index = None
 
         for single_series in series_list:
-            series_page, char_idx, org_idx, event_idx = self.import_series_structure(single_series)
+            series_page, char_idx, org_idx, obj_idx, event_idx = self.import_series_structure(single_series)
             # Use The West Wing as primary, otherwise use first series
             if single_series.get('title') == 'The West Wing' or main_series_page is None:
                 main_series_page = series_page
                 character_index = char_idx
                 org_index = org_idx
+                object_index = obj_idx
                 event_index = event_idx
 
-        self.log_progress("Phase 3: Importing organizations and characters")
+        self.log_progress("Phase 3: Importing organizations, objects, and characters")
         if organizations_data:
             self.import_organizations(organizations_data, org_index)
+        if objects_data:
+            self.import_objects(objects_data, object_index)
         self.import_characters(characters_data, character_index)
 
         self.log_progress("Phase 4: Importing events")
@@ -256,10 +269,15 @@ class Command(BaseCommand):
         self.log_progress("Phase 5: Creating event participations")
         self.import_event_participations(events_data)
 
-        self.log_progress("Phase 6: Creating narrative connections")
+        self.log_progress("Phase 6: Creating entity involvements")
+        self.import_object_involvements(events_data)
+        self.import_location_involvements(events_data)
+        self.import_organization_involvements(events_data)
+
+        self.log_progress("Phase 7: Creating narrative connections")
         self.import_connections(connections_data)
 
-        self.log_progress("Phase 7: Configuring Wagtail Site")
+        self.log_progress("Phase 8: Configuring Wagtail Site")
         self.configure_site(main_series_page)
 
     def configure_site(self, root_page):
@@ -476,7 +494,7 @@ class Command(BaseCommand):
     # Phase 2: Page Tree Structure
     # =========================================================================
 
-    def import_series_structure(self, series_data: Dict) -> Tuple[SeriesIndexPage, CharacterIndexPage, OrganizationIndexPage, EventIndexPage]:
+    def import_series_structure(self, series_data: Dict) -> Tuple[SeriesIndexPage, CharacterIndexPage, OrganizationIndexPage, ObjectIndexPage, EventIndexPage]:
         """Create the series page tree structure."""
 
         # Get or create series root page
@@ -526,6 +544,13 @@ class Command(BaseCommand):
             'organizations'
         )
 
+        object_index = self.get_or_create_index_page(
+            ObjectIndexPage,
+            'Objects',
+            series_page,
+            'objects'
+        )
+
         event_index = self.get_or_create_index_page(
             EventIndexPage,
             'Events',
@@ -533,7 +558,7 @@ class Command(BaseCommand):
             'events'
         )
 
-        return series_page, character_index, org_index, event_index
+        return series_page, character_index, org_index, object_index, event_index
 
     def import_season(self, season_data: Dict, series_page: SeriesIndexPage):
         """Import a season and its episodes."""
@@ -722,6 +747,50 @@ class Command(BaseCommand):
             self.characters_cache[char_uuid] = char_page
             self.log_detail(f"    {'Updated' if char_page.pk else 'Created'} character: {char_page.canonical_name}")
 
+    def import_objects(self, objects_data: List[Dict], object_index: ObjectIndexPage):
+        """Import objects."""
+        self.log_progress(f"  Importing {len(objects_data)} objects...")
+
+        for obj_data in objects_data:
+            obj_uuid = obj_data.get('fabula_uuid') or obj_data.get('object_uuid', '')
+
+            obj_page = ObjectPage.objects.filter(fabula_uuid=obj_uuid).first()
+
+            # Get potential owner if specified
+            owner = None
+            if owner_uuid := obj_data.get('potential_owner_uuid'):
+                owner = self.characters_cache.get(owner_uuid)
+
+            if obj_page:
+                obj_page.canonical_name = self.truncate_field(obj_data['canonical_name'], 255)
+                obj_page.description = obj_data.get('description', '')
+                obj_page.purpose = obj_data.get('purpose', '')
+                obj_page.significance = obj_data.get('significance', '')
+                obj_page.potential_owner = owner
+                if not self.dry_run:
+                    obj_page.save_revision().publish()
+                self.stats.record_updated('ObjectPage')
+            else:
+                base_slug = slugify(obj_data['canonical_name'])
+                unique_slug = self.make_unique_slug(base_slug, obj_uuid)
+                obj_page = ObjectPage(
+                    title=obj_data['canonical_name'],
+                    slug=unique_slug,
+                    fabula_uuid=obj_uuid,
+                    canonical_name=self.truncate_field(obj_data['canonical_name'], 255),
+                    description=obj_data.get('description', ''),
+                    purpose=obj_data.get('purpose', ''),
+                    significance=obj_data.get('significance', ''),
+                    potential_owner=owner,
+                )
+                if not self.dry_run:
+                    object_index.add_child(instance=obj_page)
+                    obj_page.save_revision().publish()
+                self.stats.record_created('ObjectPage')
+
+            self.objects_cache[obj_uuid] = obj_page
+            self.log_detail(f"    {'Updated' if obj_page.pk else 'Created'} object: {obj_page.canonical_name}")
+
     # =========================================================================
     # Phase 4: Events
     # =========================================================================
@@ -883,7 +952,187 @@ class Command(BaseCommand):
         self.log_detail(f"    Processed {total} participations")
 
     # =========================================================================
-    # Phase 6: Narrative Connections
+    # Phase 6: Entity Involvements
+    # =========================================================================
+
+    def import_object_involvements(self, events_data: List[Dict]):
+        """Import object involvements from event files."""
+        self.log_progress(f"  Importing object involvements...")
+
+        total = 0
+        for episode_file_data in events_data:
+            for event_data in episode_file_data.get('events', []):
+                event_uuid = event_data.get('fabula_uuid') or event_data.get('event_uuid', '')
+                event = self.events_cache.get(event_uuid)
+
+                if not event:
+                    continue
+
+                involvements = event_data.get('object_involvements') or []
+
+                for inv_data in involvements:
+                    obj_uuid = inv_data.get('object_uuid', '')
+                    obj = self.objects_cache.get(obj_uuid)
+
+                    if not obj:
+                        self.stats.record_error(f"Object {obj_uuid} not found for involvement")
+                        continue
+
+                    # Check if involvement already exists
+                    involvement = ObjectInvolvement.objects.filter(
+                        event=event,
+                        object=obj
+                    ).first()
+
+                    if involvement:
+                        involvement.description_of_involvement = inv_data.get('description_of_involvement') or ''
+                        involvement.status_before_event = inv_data.get('status_before_event') or ''
+                        involvement.status_after_event = inv_data.get('status_after_event') or ''
+
+                        if not self.dry_run:
+                            involvement.save()
+                        self.stats.record_updated('ObjectInvolvement')
+                    else:
+                        involvement = ObjectInvolvement(
+                            event=event,
+                            object=obj,
+                            description_of_involvement=inv_data.get('description_of_involvement') or '',
+                            status_before_event=inv_data.get('status_before_event') or '',
+                            status_after_event=inv_data.get('status_after_event') or '',
+                        )
+
+                        if not self.dry_run:
+                            involvement.save()
+                        self.stats.record_created('ObjectInvolvement')
+
+                    total += 1
+
+        self.log_detail(f"    Processed {total} object involvements")
+
+    def import_location_involvements(self, events_data: List[Dict]):
+        """Import location involvements from event files."""
+        self.log_progress(f"  Importing location involvements...")
+
+        total = 0
+        for episode_file_data in events_data:
+            for event_data in episode_file_data.get('events', []):
+                event_uuid = event_data.get('fabula_uuid') or event_data.get('event_uuid', '')
+                event = self.events_cache.get(event_uuid)
+
+                if not event:
+                    continue
+
+                involvements = event_data.get('location_involvements') or []
+
+                for inv_data in involvements:
+                    loc_uuid = inv_data.get('location_uuid', '')
+                    location = self.locations_cache.get(loc_uuid)
+
+                    if not location:
+                        self.stats.record_error(f"Location {loc_uuid} not found for involvement")
+                        continue
+
+                    # Check if involvement already exists
+                    involvement = LocationInvolvement.objects.filter(
+                        event=event,
+                        location=location
+                    ).first()
+
+                    if involvement:
+                        involvement.description_of_involvement = inv_data.get('description_of_involvement') or ''
+                        involvement.observed_atmosphere = inv_data.get('observed_atmosphere') or ''
+                        involvement.functional_role = inv_data.get('functional_role') or ''
+                        involvement.symbolic_significance = inv_data.get('symbolic_significance') or ''
+                        involvement.access_restrictions = inv_data.get('access_restrictions') or ''
+                        involvement.key_environmental_details = inv_data.get('key_environmental_details') or []
+
+                        if not self.dry_run:
+                            involvement.save()
+                        self.stats.record_updated('LocationInvolvement')
+                    else:
+                        involvement = LocationInvolvement(
+                            event=event,
+                            location=location,
+                            description_of_involvement=inv_data.get('description_of_involvement') or '',
+                            observed_atmosphere=inv_data.get('observed_atmosphere') or '',
+                            functional_role=inv_data.get('functional_role') or '',
+                            symbolic_significance=inv_data.get('symbolic_significance') or '',
+                            access_restrictions=inv_data.get('access_restrictions') or '',
+                            key_environmental_details=inv_data.get('key_environmental_details') or [],
+                        )
+
+                        if not self.dry_run:
+                            involvement.save()
+                        self.stats.record_created('LocationInvolvement')
+
+                    total += 1
+
+        self.log_detail(f"    Processed {total} location involvements")
+
+    def import_organization_involvements(self, events_data: List[Dict]):
+        """Import organization involvements from event files."""
+        self.log_progress(f"  Importing organization involvements...")
+
+        total = 0
+        for episode_file_data in events_data:
+            for event_data in episode_file_data.get('events', []):
+                event_uuid = event_data.get('fabula_uuid') or event_data.get('event_uuid', '')
+                event = self.events_cache.get(event_uuid)
+
+                if not event:
+                    continue
+
+                involvements = event_data.get('organization_involvements') or []
+
+                for inv_data in involvements:
+                    org_uuid = inv_data.get('organization_uuid', '')
+                    organization = self.organizations_cache.get(org_uuid)
+
+                    if not organization:
+                        self.stats.record_error(f"Organization {org_uuid} not found for involvement")
+                        continue
+
+                    # Check if involvement already exists
+                    involvement = OrganizationInvolvement.objects.filter(
+                        event=event,
+                        organization=organization
+                    ).first()
+
+                    if involvement:
+                        involvement.description_of_involvement = inv_data.get('description_of_involvement') or ''
+                        involvement.active_representation = inv_data.get('active_representation') or ''
+                        involvement.power_dynamics = inv_data.get('power_dynamics') or ''
+                        involvement.organizational_goals = inv_data.get('organizational_goals') or []
+                        involvement.influence_mechanisms = inv_data.get('influence_mechanisms') or []
+                        involvement.institutional_impact = inv_data.get('institutional_impact') or ''
+                        involvement.internal_dynamics = inv_data.get('internal_dynamics') or ''
+
+                        if not self.dry_run:
+                            involvement.save()
+                        self.stats.record_updated('OrganizationInvolvement')
+                    else:
+                        involvement = OrganizationInvolvement(
+                            event=event,
+                            organization=organization,
+                            description_of_involvement=inv_data.get('description_of_involvement') or '',
+                            active_representation=inv_data.get('active_representation') or '',
+                            power_dynamics=inv_data.get('power_dynamics') or '',
+                            organizational_goals=inv_data.get('organizational_goals') or [],
+                            influence_mechanisms=inv_data.get('influence_mechanisms') or [],
+                            institutional_impact=inv_data.get('institutional_impact') or '',
+                            internal_dynamics=inv_data.get('internal_dynamics') or '',
+                        )
+
+                        if not self.dry_run:
+                            involvement.save()
+                        self.stats.record_created('OrganizationInvolvement')
+
+                    total += 1
+
+        self.log_detail(f"    Processed {total} organization involvements")
+
+    # =========================================================================
+    # Phase 7: Narrative Connections
     # =========================================================================
 
     def import_connections(self, connections_data: List[Dict]):

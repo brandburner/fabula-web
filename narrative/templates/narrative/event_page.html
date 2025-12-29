@@ -100,6 +100,84 @@
             </div>
         </section>
 
+        {# ============================================================= #}
+        {# OBJECT INVOLVEMENTS SECTION #}
+        {# ============================================================= #}
+        {% if page.object_involvements.exists %}
+        <section class="mb-12">
+            <div class="flex items-center gap-3 mb-8">
+                <div class="p-2 bg-amber-500/10 rounded-lg">
+                    <i data-lucide="box" class="w-6 h-6 text-amber-400"></i>
+                </div>
+                <div class="flex-1">
+                    <h2 class="text-2xl font-bold text-white">Objects Involved</h2>
+                    <p class="text-sm text-slate-500 mt-0.5">Significant items in this scene</p>
+                </div>
+                <span class="px-3 py-1.5 text-sm font-semibold bg-amber-500/10 text-amber-400 border border-amber-500/20 rounded-lg">
+                    {{ page.object_involvements.count }}
+                </span>
+            </div>
+
+            <div class="space-y-4">
+                {% for involvement in page.object_involvements.all %}
+                    {% include "includes/object_involvement_card.html" with involvement=involvement %}
+                {% endfor %}
+            </div>
+        </section>
+        {% endif %}
+
+        {# ============================================================= #}
+        {# LOCATION INVOLVEMENTS SECTION #}
+        {# ============================================================= #}
+        {% if page.location_involvements.exists %}
+        <section class="mb-12">
+            <div class="flex items-center gap-3 mb-8">
+                <div class="p-2 bg-blue-500/10 rounded-lg">
+                    <i data-lucide="map-pin" class="w-6 h-6 text-blue-400"></i>
+                </div>
+                <div class="flex-1">
+                    <h2 class="text-2xl font-bold text-white">Location Details</h2>
+                    <p class="text-sm text-slate-500 mt-0.5">Places and their significance in this event</p>
+                </div>
+                <span class="px-3 py-1.5 text-sm font-semibold bg-blue-500/10 text-blue-400 border border-blue-500/20 rounded-lg">
+                    {{ page.location_involvements.count }}
+                </span>
+            </div>
+
+            <div class="space-y-4">
+                {% for involvement in page.location_involvements.all %}
+                    {% include "includes/location_involvement_card.html" with involvement=involvement %}
+                {% endfor %}
+            </div>
+        </section>
+        {% endif %}
+
+        {# ============================================================= #}
+        {# ORGANIZATION INVOLVEMENTS SECTION #}
+        {# ============================================================= #}
+        {% if page.organization_involvements.exists %}
+        <section class="mb-12">
+            <div class="flex items-center gap-3 mb-8">
+                <div class="p-2 bg-indigo-500/10 rounded-lg">
+                    <i data-lucide="building-2" class="w-6 h-6 text-indigo-400"></i>
+                </div>
+                <div class="flex-1">
+                    <h2 class="text-2xl font-bold text-white">Organizations Involved</h2>
+                    <p class="text-sm text-slate-500 mt-0.5">Institutional presence and influence</p>
+                </div>
+                <span class="px-3 py-1.5 text-sm font-semibold bg-indigo-500/10 text-indigo-400 border border-indigo-500/20 rounded-lg">
+                    {{ page.organization_involvements.count }}
+                </span>
+            </div>
+
+            <div class="space-y-4">
+                {% for involvement in page.organization_involvements.all %}
+                    {% include "includes/organization_involvement_card.html" with involvement=involvement %}
+                {% endfor %}
+            </div>
+        </section>
+        {% endif %}
+
         <hr class="border-slate-800/50 mb-10">
 
         {# ============================================================= #}

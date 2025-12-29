@@ -1,0 +1,93 @@
+{% extends "base.html" %}
+{% load narrative_tags %}
+
+{% block title %}Locations{% endblock %}
+
+{% block series_context %}
+<span class="text-slate-500 text-sm font-medium">Story Locations</span>
+{% endblock %}
+
+{% block content %}
+<article class="min-h-screen pb-16">
+    {# Hero section #}
+    <div class="relative overflow-hidden">
+        <div class="absolute inset-0 bg-gradient-to-b from-blue-950/20 via-slate-950 to-slate-950"></div>
+        <div class="absolute inset-0 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-blue-900/10 via-transparent to-transparent"></div>
+
+        <div class="relative max-w-4xl mx-auto px-6 pt-12 pb-8">
+            <div class="flex items-center gap-2 text-sm text-slate-400 mb-4">
+                <i data-lucide="map-pin" class="w-4 h-4 text-blue-500"></i>
+                <span class="text-blue-500/80 font-medium">Story Geography</span>
+            </div>
+
+            <h1 class="text-3xl md:text-4xl font-bold text-white mb-4 leading-tight tracking-tight">
+                Locations
+            </h1>
+
+            <p class="text-lg text-slate-300 leading-relaxed max-w-3xl">
+                The places where the narrative unfolds. Each location carries its own
+                atmosphere, history, and narrative significance.
+            </p>
+
+            <div class="flex items-center gap-4 mt-6 text-sm text-slate-400">
+                <span class="px-3 py-1.5 bg-blue-500/10 border border-blue-500/20 rounded-lg text-blue-400">
+                    {{ total_count }} locations
+                </span>
+            </div>
+        </div>
+    </div>
+
+    <div class="max-w-4xl mx-auto px-6">
+        <hr class="border-slate-800 mb-8">
+
+        {# Locations grouped by type #}
+        {% for loc_type, locs in locations_by_type.items %}
+        <section class="mb-10">
+            <div class="flex items-center gap-2 mb-6">
+                <i data-lucide="folder" class="w-5 h-5 text-blue-400"></i>
+                <h2 class="text-lg font-semibold text-white">{{ loc_type }}</h2>
+                <span class="px-2 py-0.5 text-xs bg-slate-800 text-slate-400 rounded">{{ locs|length }}</span>
+            </div>
+
+            <div class="space-y-3">
+                {% for location in locs %}
+                <a href="{% url 'location_detail' location.pk %}"
+                   class="block p-4 bg-slate-900/50 border border-slate-800 rounded-lg hover:border-blue-500/30 hover:bg-blue-500/5 transition-all group">
+                    <div class="flex items-start justify-between gap-4">
+                        <div class="flex-1">
+                            <div class="flex items-center gap-2 mb-1">
+                                <div class="font-semibold text-slate-200 group-hover:text-blue-300 transition-colors">
+                                    {{ location.canonical_name }}
+                                </div>
+                                {% if location.parent_location %}
+                                <span class="text-xs text-slate-500">
+                                    in {{ location.parent_location.canonical_name }}
+                                </span>
+                                {% endif %}
+                            </div>
+                            {% if location.description %}
+                            <p class="text-sm text-slate-400 line-clamp-2">
+                                {{ location.description|truncatewords:25 }}
+                            </p>
+                            {% endif %}
+                        </div>
+                        <div class="flex items-center gap-2 shrink-0">
+                            <span class="px-2 py-1 text-xs bg-blue-500/10 text-blue-400 rounded">
+                                {{ location.event_count }} events
+                            </span>
+                        </div>
+                    </div>
+                </a>
+                {% endfor %}
+            </div>
+        </section>
+        {% empty %}
+        <div class="text-slate-500 text-sm p-8 bg-slate-900/30 rounded-lg border border-slate-800/50 text-center">
+            <i data-lucide="map-pin-off" class="w-10 h-10 mx-auto mb-3 text-slate-700"></i>
+            <p class="font-medium">No locations found</p>
+        </div>
+        {% endfor %}
+
+    </div>
+</article>
+{% endblock %}

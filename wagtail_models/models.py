@@ -233,13 +233,13 @@ class SeriesIndexPage(Page):
         help_text="UUID from Fabula graph (series_uuid)"
     )
     description = RichTextField(blank=True)
-    
+
     content_panels = Page.content_panels + [
         FieldPanel('description'),
         FieldPanel('fabula_uuid'),
     ]
 
-    subpage_types = ['narrative.SeasonPage']
+    subpage_types = ['narrative.SeasonPage', 'narrative.ObjectIndexPage']
     parent_page_types = ['wagtailcore.Page']
 
 
@@ -471,6 +471,81 @@ class OrganizationIndexPage(Page):
     subpage_types = ['narrative.OrganizationPage']
 
 
+class ObjectIndexPage(Page):
+    """Index page listing all objects."""
+    introduction = RichTextField(blank=True)
+
+    content_panels = Page.content_panels + [
+        FieldPanel('introduction'),
+    ]
+
+    subpage_types = ['narrative.ObjectPage']
+    parent_page_types = ['narrative.SeriesIndexPage']
+
+    def get_objects(self):
+        return ObjectPage.objects.live().child_of(self).order_by('canonical_name')
+
+
+class ObjectPage(Page):
+    """
+    A significant object in the narrative.
+
+    From Fabula: Object nodes with foundational_description, purpose, etc.
+    """
+    fabula_uuid = models.CharField(
+        max_length=100,
+        blank=True,
+        help_text="UUID from Fabula graph (object_uuid)"
+    )
+    canonical_name = models.CharField(max_length=255)
+    description = RichTextField(
+        help_text="Description of the object and its appearance"
+    )
+    purpose = models.TextField(
+        blank=True,
+        help_text="The foundational purpose of this object in the narrative"
+    )
+    significance = models.TextField(
+        blank=True,
+        help_text="The narrative significance of this object"
+    )
+    potential_owner = models.ForeignKey(
+        'narrative.CharacterPage',
+        null=True,
+        blank=True,
+        on_delete=models.SET_NULL,
+        related_name='owned_objects',
+        help_text="Character who typically owns or possesses this object"
+    )
+
+    content_panels = Page.content_panels + [
+        FieldPanel('canonical_name'),
+        FieldPanel('description'),
+        FieldPanel('purpose'),
+        FieldPanel('significance'),
+        FieldPanel('potential_owner'),
+        FieldPanel('fabula_uuid'),
+    ]
+
+    search_fields = Page.search_fields + [
+        index.SearchField('canonical_name', boost=10),
+        index.SearchField('description'),
+        index.SearchField('purpose'),
+    ]
+
+    parent_page_types = ['narrative.ObjectIndexPage']
+    subpage_types = []
+
+    def get_involvements(self):
+        """Get all event involvements for this object."""
+        return ObjectInvolvement.objects.filter(
+            object=self
+        ).select_related('event', 'event__episode').order_by(
+            'event__episode__episode_number',
+            'event__scene_sequence'
+        )
+
+
 class EventPage(Page):
     """
     A narrative event - the atomic unit of the story.
@@ -551,7 +626,12 @@ class EventPage(Page):
             FieldPanel('themes'),
             FieldPanel('arcs'),
         ], heading="Thematic Connections"),
-        InlinePanel('participations', label="Character Participations"),
+        MultiFieldPanel([
+            InlinePanel('participations', label="Characters"),
+            InlinePanel('object_involvements', label="Objects"),
+            InlinePanel('location_involvements', label="Locations"),
+            InlinePanel('organization_involvements', label="Organizations"),
+        ], heading="Entity Involvement", classname="collapsible"),
         FieldPanel('fabula_uuid'),
     ]
 
@@ -676,6 +756,178 @@ class EventParticipation(Orderable):
 
     def __str__(self):
         return f"{self.character} in {self.event}"
+
+
+class ObjectInvolvement(Orderable):
+    """
+    How an object is involved in an event.
+
+    From Fabula: Object INVOLVED_WITH Event relationship properties.
+    """
+    event = ParentalKey(
+        EventPage,
+        on_delete=models.CASCADE,
+        related_name='object_involvements'
+    )
+    object = models.ForeignKey(
+        ObjectPage,
+        on_delete=models.CASCADE,
+        related_name='event_involvements'
+    )
+
+    description_of_involvement = models.TextField(
+        blank=True,
+        help_text="How this object is used or relevant in this event"
+    )
+    status_before_event = models.TextField(
+        blank=True,
+        help_text="State of the object before this event"
+    )
+    status_after_event = models.TextField(
+        blank=True,
+        help_text="State of the object after this event"
+    )
+
+    panels = [
+        FieldPanel('object'),
+        FieldPanel('description_of_involvement'),
+        FieldPanel('status_before_event'),
+        FieldPanel('status_after_event'),
+    ]
+
+    class Meta:
+        unique_together = ['event', 'object']
+        ordering = ['sort_order']
+
+    def __str__(self):
+        return f"{self.object} in {self.event}"
+
+
+class LocationInvolvement(Orderable):
+    """
+    Rich involvement data for a location in an event.
+
+    From Fabula: Location IN_EVENT relationship with atmosphere, role, etc.
+    Note: EventPage retains simple location FK for primary location.
+    This model adds rich atmospheric/contextual data.
+    """
+    event = ParentalKey(
+        EventPage,
+        on_delete=models.CASCADE,
+        related_name='location_involvements'
+    )
+    location = models.ForeignKey(
+        Location,
+        on_delete=models.CASCADE,
+        related_name='event_involvements'
+    )
+
+    description_of_involvement = models.TextField(
+        blank=True,
+        help_text="How this location features in this event"
+    )
+    observed_atmosphere = models.TextField(
+        blank=True,
+        help_text="The mood and atmosphere of the location during this event"
+    )
+    functional_role = models.TextField(
+        blank=True,
+        help_text="The functional role the location plays (meeting place, sanctuary, etc.)"
+    )
+    symbolic_significance = models.TextField(
+        blank=True,
+        help_text="Any symbolic meaning the location carries in this context"
+    )
+    access_restrictions = models.TextField(
+        blank=True,
+        help_text="Who can access this location during the event"
+    )
+    key_environmental_details = models.JSONField(
+        default=list,
+        help_text="Notable environmental details (lighting, sounds, etc.)"
+    )
+
+    panels = [
+        FieldPanel('location'),
+        FieldPanel('description_of_involvement'),
+        FieldPanel('observed_atmosphere'),
+        FieldPanel('functional_role'),
+        FieldPanel('symbolic_significance'),
+        FieldPanel('access_restrictions'),
+        FieldPanel('key_environmental_details'),
+    ]
+
+    class Meta:
+        unique_together = ['event', 'location']
+        ordering = ['sort_order']
+
+    def __str__(self):
+        return f"{self.location} in {self.event}"
+
+
+class OrganizationInvolvement(Orderable):
+    """
+    How an organization is involved in an event.
+
+    From Fabula: Organization INVOLVED_WITH Event relationship properties.
+    """
+    event = ParentalKey(
+        EventPage,
+        on_delete=models.CASCADE,
+        related_name='organization_involvements'
+    )
+    organization = models.ForeignKey(
+        OrganizationPage,
+        on_delete=models.CASCADE,
+        related_name='event_involvements'
+    )
+
+    description_of_involvement = models.TextField(
+        blank=True,
+        help_text="How this organization is involved in this event"
+    )
+    active_representation = models.TextField(
+        blank=True,
+        help_text="Who or what represents the organization in this event"
+    )
+    power_dynamics = models.TextField(
+        blank=True,
+        help_text="The power dynamics the organization displays"
+    )
+    organizational_goals = models.JSONField(
+        default=list,
+        help_text="Goals the organization pursues in this event"
+    )
+    influence_mechanisms = models.JSONField(
+        default=list,
+        help_text="How the organization exerts influence"
+    )
+    institutional_impact = models.TextField(
+        blank=True,
+        help_text="Impact on the institution/organization"
+    )
+    internal_dynamics = models.TextField(
+        blank=True,
+        help_text="Internal organizational dynamics revealed"
+    )
+
+    panels = [
+        FieldPanel('organization'),
+        FieldPanel('description_of_involvement'),
+        FieldPanel('active_representation'),
+        FieldPanel('power_dynamics'),
+        FieldPanel('organizational_goals'),
+        FieldPanel('influence_mechanisms'),
+        FieldPanel('institutional_impact'),
+        FieldPanel('internal_dynamics'),
+    ]
+
+    class Meta:
+        unique_together = ['event', 'organization']
+        ordering = ['sort_order']
+
+    def __str__(self):
+        return f"{self.organization} in {self.event}"
 
 
 class NarrativeConnection(models.Model):

@@ -37,13 +37,21 @@ urlpatterns = [
          name='theme_detail'),
     
     # Conflict Arcs
-    path('arcs/', 
-         views.ArcIndexView.as_view(), 
+    path('arcs/',
+         views.ArcIndexView.as_view(),
          name='arc_index'),
-    path('arcs/<int:pk>/', 
-         views.ArcDetailView.as_view(), 
+    path('arcs/<int:pk>/',
+         views.ArcDetailView.as_view(),
          name='arc_detail'),
-    
+
+    # Locations
+    path('locations/',
+         views.LocationIndexView.as_view(),
+         name='location_index'),
+    path('locations/<int:pk>/',
+         views.LocationDetailView.as_view(),
+         name='location_detail'),
+
     # Graph visualization - scoped views (fast, focused)
     path('graph/episode/<int:pk>/',
          views.EpisodeGraphView.as_view(),

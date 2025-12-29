@@ -73,6 +73,8 @@ class FabulaExporter:
             'locations': 0,
             'themes': 0,
             'connections': 0,
+            'objects': 0,
+            'organizations': 0,
         }
     
     def close(self):
@@ -238,9 +240,69 @@ class FabulaExporter:
             }
             locations.append(loc)
             self.stats['locations'] += 1
-        
+
         return locations
-    
+
+    def export_objects(self) -> List[dict]:
+        """Export all canonical objects."""
+        query = """
+        MATCH (o:Object)
+        WHERE o.status = 'canonical' AND o.canonical_name IS NOT NULL
+        OPTIONAL MATCH (a:Agent)-[:OWNS]->(o)
+        WHERE a.status = 'canonical'
+        RETURN
+            o.object_uuid as fabula_uuid,
+            o.canonical_name as canonical_name,
+            o.foundational_description as description,
+            o.foundational_purpose as purpose,
+            o.foundational_significance as significance,
+            a.agent_uuid as potential_owner_uuid
+        ORDER BY o.canonical_name
+        """
+        results = self._run_query(query)
+
+        objects = []
+        for row in results:
+            obj = {
+                'fabula_uuid': row['fabula_uuid'],
+                'canonical_name': row['canonical_name'],
+                'description': row['description'] or '',
+                'purpose': row['purpose'] or '',
+                'significance': row['significance'] or '',
+                'potential_owner_uuid': row['potential_owner_uuid']
+            }
+            objects.append(obj)
+            self.stats['objects'] += 1
+
+        return objects
+
+    def export_organizations(self) -> List[dict]:
+        """Export all canonical organizations."""
+        query = """
+        MATCH (org:Organization)
+        WHERE org.status = 'canonical' AND org.canonical_name IS NOT NULL
+        RETURN
+            org.org_uuid as fabula_uuid,
+            org.canonical_name as canonical_name,
+            org.foundational_description as description,
+            org.sphere_of_influence as sphere_of_influence
+        ORDER BY org.canonical_name
+        """
+        results = self._run_query(query)
+
+        organizations = []
+        for row in results:
+            org = {
+                'fabula_uuid': row['fabula_uuid'],
+                'canonical_name': row['canonical_name'],
+                'description': row['description'] or '',
+                'sphere_of_influence': row['sphere_of_influence'] or ''
+            }
+            organizations.append(org)
+            self.stats['organizations'] += 1
+
+        return organizations
+
     def export_themes(self) -> List[dict]:
         """Export all themes."""
         query = """
@@ -294,7 +356,7 @@ class FabulaExporter:
         return arcs
     
     def export_events_for_episode(self, episode_uuid: str) -> List[dict]:
-        """Export all events for a specific episode with participations."""
+        """Export all events for a specific episode with participations and involvements."""
         # Get events
         event_query = """
         MATCH (e:Event)-[:PART_OF_EPISODE]->(ep:Episode {episode_uuid: $episode_uuid})
@@ -302,11 +364,11 @@ class FabulaExporter:
         OPTIONAL MATCH (e)-[:EXEMPLIFIES_THEME]->(t:Theme)
         OPTIONAL MATCH (e)-[:PART_OF_ARC]->(arc:ConflictArc)
         OPTIONAL MATCH (l:Location)-[:IN_EVENT]->(e)
-        WITH e, scene, 
+        WITH e, scene,
              collect(DISTINCT t.theme_uuid) as theme_uuids,
              collect(DISTINCT arc.arc_uuid) as arc_uuids,
              collect(DISTINCT l.location_uuid)[0] as location_uuid
-        RETURN 
+        RETURN
             e.event_uuid as fabula_uuid,
             e.title as title,
             e.description as description,
@@ -320,22 +382,24 @@ class FabulaExporter:
         ORDER BY e.sequence_in_scene
         """
         event_results = self._run_query(event_query, {'episode_uuid': episode_uuid})
-        
+
         events = []
         scene_sequence = 0
         last_scene = None
-        
+
         for row in event_results:
             # Track scene sequence
             if row['scene_uuid'] != last_scene:
                 scene_sequence += 1
                 last_scene = row['scene_uuid']
-            
+
+            event_uuid = row['fabula_uuid']
+
             # Get participations for this event
             participation_query = """
             MATCH (a:Agent)-[p:PARTICIPATED_AS]->(e:Event {event_uuid: $event_uuid})
             WHERE a.status = 'canonical'
-            RETURN 
+            RETURN
                 a.agent_uuid as character_uuid,
                 p.emotional_state_at_event as emotional_state,
                 p.goals_at_event as goals,
@@ -345,10 +409,10 @@ class FabulaExporter:
                 p.importance_to_event as importance
             """
             participation_results = self._run_query(
-                participation_query, 
-                {'event_uuid': row['fabula_uuid']}
+                participation_query,
+                {'event_uuid': event_uuid}
             )
-            
+
             participations = []
             for p_row in participation_results:
                 participation = {
@@ -362,7 +426,87 @@ class FabulaExporter:
                     'importance': p_row['importance'] or 'primary'
                 }
                 participations.append(participation)
-            
+
+            # Get object involvements
+            object_query = """
+            MATCH (obj:Object)-[oi:INVOLVED_WITH]->(e:Event {event_uuid: $event_uuid})
+            WHERE obj.status = 'canonical'
+            RETURN
+                obj.object_uuid as object_uuid,
+                oi.description_of_involvement as description_of_involvement,
+                oi.status_before_event as status_before_event,
+                oi.status_after_event as status_after_event
+            """
+            object_results = self._run_query(object_query, {'event_uuid': event_uuid})
+
+            object_involvements = []
+            for o_row in object_results:
+                involvement = {
+                    'object_uuid': o_row['object_uuid'],
+                    'description_of_involvement': o_row['description_of_involvement'] or '',
+                    'status_before_event': o_row['status_before_event'] or '',
+                    'status_after_event': o_row['status_after_event'] or ''
+                }
+                object_involvements.append(involvement)
+
+            # Get location involvements (rich data beyond simple FK)
+            location_query = """
+            MATCH (loc:Location)-[li:IN_EVENT]->(e:Event {event_uuid: $event_uuid})
+            WHERE loc.status = 'canonical'
+            RETURN
+                loc.location_uuid as location_uuid,
+                li.description_of_involvement as description_of_involvement,
+                li.observed_atmosphere as observed_atmosphere,
+                li.functional_role as functional_role,
+                li.symbolic_significance as symbolic_significance,
+                li.access_restrictions as access_restrictions,
+                li.key_environmental_details as key_environmental_details
+            """
+            location_results = self._run_query(location_query, {'event_uuid': event_uuid})
+
+            location_involvements = []
+            for l_row in location_results:
+                involvement = {
+                    'location_uuid': l_row['location_uuid'],
+                    'description_of_involvement': l_row['description_of_involvement'] or '',
+                    'observed_atmosphere': l_row['observed_atmosphere'] or '',
+                    'functional_role': l_row['functional_role'] or '',
+                    'symbolic_significance': l_row['symbolic_significance'] or '',
+                    'access_restrictions': l_row['access_restrictions'] or '',
+                    'key_environmental_details': l_row['key_environmental_details'] or []
+                }
+                location_involvements.append(involvement)
+
+            # Get organization involvements
+            org_query = """
+            MATCH (org:Organization)-[orgi:INVOLVED_WITH]->(e:Event {event_uuid: $event_uuid})
+            WHERE org.status = 'canonical'
+            RETURN
+                org.org_uuid as organization_uuid,
+                orgi.description_of_involvement as description_of_involvement,
+                orgi.active_representation as active_representation,
+                orgi.power_dynamics as power_dynamics,
+                orgi.organizational_goals_at_event as organizational_goals,
+                orgi.influence_mechanisms as influence_mechanisms,
+                orgi.institutional_impact as institutional_impact,
+                orgi.internal_dynamics as internal_dynamics
+            """
+            org_results = self._run_query(org_query, {'event_uuid': event_uuid})
+
+            organization_involvements = []
+            for org_row in org_results:
+                involvement = {
+                    'organization_uuid': org_row['organization_uuid'],
+                    'description_of_involvement': org_row['description_of_involvement'] or '',
+                    'active_representation': org_row['active_representation'] or '',
+                    'power_dynamics': org_row['power_dynamics'] or '',
+                    'organizational_goals': org_row['organizational_goals'] or [],
+                    'influence_mechanisms': org_row['influence_mechanisms'] or [],
+                    'institutional_impact': org_row['institutional_impact'] or '',
+                    'internal_dynamics': org_row['internal_dynamics'] or ''
+                }
+                organization_involvements.append(involvement)
+
             event = {
                 'fabula_uuid': row['fabula_uuid'],
                 'title': row['title'] or 'Untitled Event',
@@ -375,11 +519,14 @@ class FabulaExporter:
                 'location_uuid': row['location_uuid'],
                 'theme_uuids': row['theme_uuids'] or [],
                 'arc_uuids': row['arc_uuids'] or [],
-                'participations': participations
+                'participations': participations,
+                'object_involvements': object_involvements,
+                'location_involvements': location_involvements,
+                'organization_involvements': organization_involvements
             }
             events.append(event)
             self.stats['events'] += 1
-        
+
         return events
     
     def export_connections(self) -> List[dict]:
@@ -467,7 +614,17 @@ def export_fabula_to_yaml(
         print("📍 Exporting locations...")
         locations = exporter.export_locations()
         write_yaml({'locations': locations}, os.path.join(output_dir, 'locations.yaml'))
-        
+
+        # Export objects
+        print("📦 Exporting objects...")
+        objects = exporter.export_objects()
+        write_yaml({'objects': objects}, os.path.join(output_dir, 'objects.yaml'))
+
+        # Export organizations
+        print("🏛️  Exporting organizations...")
+        organizations = exporter.export_organizations()
+        write_yaml({'organizations': organizations}, os.path.join(output_dir, 'organizations.yaml'))
+
         # Export themes
         print("💡 Exporting themes...")
         themes = exporter.export_themes()
@@ -504,7 +661,7 @@ def export_fabula_to_yaml(
         # Write manifest
         print("📋 Writing manifest...")
         manifest = {
-            'fabula_version': '2.0.0',
+            'fabula_version': '2.1.0',
             'export_date': datetime.utcnow().isoformat() + 'Z',
             'source_graph': neo4j_uri,
             'series_title': series_data['title'] if series_data else 'Unknown',
@@ -512,18 +669,23 @@ def export_fabula_to_yaml(
             'episode_count': exporter.stats['episodes'],
             'event_count': exporter.stats['events'],
             'character_count': exporter.stats['characters'],
+            'location_count': exporter.stats['locations'],
+            'object_count': exporter.stats['objects'],
+            'organization_count': exporter.stats['organizations'],
             'connection_count': exporter.stats['connections'],
         }
         write_yaml(manifest, os.path.join(output_dir, 'manifest.yaml'))
-        
+
         print()
         print("✅ Export complete!")
-        print(f"   Episodes:    {exporter.stats['episodes']}")
-        print(f"   Events:      {exporter.stats['events']}")
-        print(f"   Characters:  {exporter.stats['characters']}")
-        print(f"   Locations:   {exporter.stats['locations']}")
-        print(f"   Themes:      {exporter.stats['themes']}")
-        print(f"   Connections: {exporter.stats['connections']}")
+        print(f"   Episodes:      {exporter.stats['episodes']}")
+        print(f"   Events:        {exporter.stats['events']}")
+        print(f"   Characters:    {exporter.stats['characters']}")
+        print(f"   Locations:     {exporter.stats['locations']}")
+        print(f"   Objects:       {exporter.stats['objects']}")
+        print(f"   Organizations: {exporter.stats['organizations']}")
+        print(f"   Themes:        {exporter.stats['themes']}")
+        print(f"   Connections:   {exporter.stats['connections']}")
         
     finally:
         exporter.close()
