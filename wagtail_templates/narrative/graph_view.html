@@ -1,7 +1,7 @@
 {% extends "base.html" %}
 {% load narrative_tags %}
 
-{% block title %}Narrative Graph{% endblock %}
+{% block title %}{{ graph_title|default:"Narrative Graph" }}{% endblock %}
 
 {% block extra_css %}
 <style>
@@ -82,11 +82,11 @@
 {% endblock %}
 
 {% block header_actions %}
-<a href="{% url 'wagtail_serve' '' %}" 
+<a href="{{ back_url|default:'/' }}"
    class="px-4 py-2 text-sm font-medium rounded-lg bg-amber-500/20 text-amber-400 border border-amber-500/40 shadow-lg shadow-amber-500/10 transition-all duration-200">
     <span class="flex items-center gap-2">
-        <i data-lucide="x" class="w-4 h-4"></i>
-        Close Graph
+        <i data-lucide="arrow-left" class="w-4 h-4"></i>
+        Back
     </span>
 </a>
 {% endblock %}
@@ -191,7 +191,14 @@ const nodes = graphData.nodes.map((node, i) => {
     };
 });
 
+// Build node lookup map for O(1) access (fixes O(n) lookup per edge)
+const nodeMap = new Map(nodes.map(n => [n.id, n]));
+
 const edges = graphData.edges;
+
+// Dirty flag for efficient redraws
+let needsRedraw = true;
+let animationFrameId = null;
 
 // Resize canvas
 function resize() {
@@ -200,7 +207,21 @@ function resize() {
     canvas.style.width = window.innerWidth + 'px';
     canvas.style.height = (window.innerHeight - 56) + 'px';
     ctx.scale(2, 2);
-    draw();
+    scheduleRedraw();
+}
+
+// Schedule redraw using requestAnimationFrame (prevents constant redraws)
+function scheduleRedraw() {
+    needsRedraw = true;
+    if (!animationFrameId) {
+        animationFrameId = requestAnimationFrame(() => {
+            animationFrameId = null;
+            if (needsRedraw) {
+                needsRedraw = false;
+                draw();
+            }
+        });
+    }
 }
 
 // Draw the graph
@@ -212,10 +233,10 @@ function draw() {
     ctx.translate(offsetX, offsetY);
     ctx.scale(zoom, zoom);
     
-    // Draw edges
+    // Draw edges (using nodeMap for O(1) lookup instead of O(n))
     edges.forEach(edge => {
-        const fromNode = nodes.find(n => n.id === edge.from);
-        const toNode = nodes.find(n => n.id === edge.to);
+        const fromNode = nodeMap.get(edge.from);
+        const toNode = nodeMap.get(edge.to);
         if (!fromNode || !toNode) return;
         
         ctx.beginPath();
@@ -287,6 +308,8 @@ function getNodeAt(x, y) {
 }
 
 // Event handlers
+let prevHoveredId = null;
+
 canvas.addEventListener('mousedown', e => {
     isDragging = true;
     dragStartX = e.clientX - offsetX;
@@ -297,9 +320,10 @@ canvas.addEventListener('mousemove', e => {
     const rect = canvas.getBoundingClientRect();
     const x = e.clientX - rect.left;
     const y = e.clientY - rect.top;
-    
+
+    const newHoveredId = hoveredNode?.id;
     hoveredNode = getNodeAt(x, y);
-    
+
     if (hoveredNode) {
         tooltipTitle.textContent = hoveredNode.label;
         tooltipEpisode.textContent = hoveredNode.episode;
@@ -307,13 +331,15 @@ canvas.addEventListener('mousemove', e => {
     } else {
         tooltip.classList.remove('visible');
     }
-    
+
     if (isDragging) {
         offsetX = e.clientX - dragStartX;
         offsetY = e.clientY - dragStartY;
+        scheduleRedraw();
+    } else if (hoveredNode?.id !== newHoveredId) {
+        scheduleRedraw();
     }
-    
-    draw();
+    prevHoveredId = hoveredNode?.id;
 });
 
 canvas.addEventListener('mouseup', () => {
@@ -335,25 +361,25 @@ canvas.addEventListener('wheel', e => {
     e.preventDefault();
     const delta = e.deltaY > 0 ? 0.9 : 1.1;
     zoom = Math.max(0.3, Math.min(3, zoom * delta));
-    draw();
+    scheduleRedraw();
 });
 
 // Control functions
 function zoomIn() {
     zoom = Math.min(3, zoom * 1.2);
-    draw();
+    scheduleRedraw();
 }
 
 function zoomOut() {
     zoom = Math.max(0.3, zoom * 0.8);
-    draw();
+    scheduleRedraw();
 }
 
 function resetView() {
     zoom = 1;
     offsetX = 0;
     offsetY = 0;
-    draw();
+    scheduleRedraw();
 }
 
 // Initialize

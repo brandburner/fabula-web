@@ -44,9 +44,23 @@ urlpatterns = [
          views.ArcDetailView.as_view(), 
          name='arc_detail'),
     
-    # Graph visualization
-    path('graph/', 
-         views.GraphView.as_view(), 
+    # Graph visualization - scoped views (fast, focused)
+    path('graph/episode/<int:pk>/',
+         views.EpisodeGraphView.as_view(),
+         name='episode_graph'),
+    path('graph/character/<int:pk>/',
+         views.CharacterGraphView.as_view(),
+         name='character_graph'),
+    path('graph/theme/<int:pk>/',
+         views.ThemeGraphView.as_view(),
+         name='theme_graph'),
+    path('graph/arc/<int:pk>/',
+         views.ArcGraphView.as_view(),
+         name='arc_graph'),
+
+    # Graph landing page (replaces broken full graph)
+    path('graph/',
+         views.GraphView.as_view(),
          name='graph_view'),
     
     # Search

@@ -12,9 +12,11 @@ URL patterns should be added to urls.py.
 from django.shortcuts import render, get_object_or_404
 from django.views.generic import ListView, DetailView
 
+from django.db.models import Q
+
 from .models import (
-    NarrativeConnection, Theme, ConflictArc, 
-    EventPage, CharacterPage,
+    NarrativeConnection, Theme, ConflictArc,
+    EventPage, CharacterPage, EpisodePage, EventParticipation,
     ConnectionType
 )
 
@@ -168,33 +170,50 @@ class ArcDetailView(DetailView):
 # GRAPH VIEW (Interactive visualization)
 # =============================================================================
 
-class GraphView(ListView):
+class ScopedGraphMixin:
     """
-    Interactive graph visualization of narrative connections.
-    Returns JSON data for the graph when requested via AJAX.
+    Mixin for scoped graph views that limits nodes/edges to a manageable set.
+    Provides common graph data formatting logic.
     """
-    model = EventPage
     template_name = 'narrative/graph_view.html'
-    
-    def get_context_data(self, **kwargs):
-        context = super().get_context_data(**kwargs)
-        
-        # Get all events and connections for the graph
-        events = EventPage.objects.live().select_related('episode')
-        connections = NarrativeConnection.objects.all().select_related(
-            'from_event', 'to_event'
-        )
-        
-        # Prepare graph data
+
+    def get_graph_title(self):
+        """Override in subclasses to provide a descriptive title."""
+        return "Narrative Graph"
+
+    def get_back_url(self):
+        """Override to provide a back link to the source page."""
+        return None
+
+    def get_events_queryset(self):
+        """Override to return the filtered events for this scope."""
+        raise NotImplementedError
+
+    def build_graph_data(self, events):
+        """Build graph nodes and edges from a queryset of events."""
+        event_ids = set(events.values_list('pk', flat=True))
+
         nodes = []
-        for event in events:
+        for event in events.select_related('episode'):
+            try:
+                season = event.episode.get_parent().specific
+                ep_label = f"S{season.season_number}E{event.episode.episode_number}"
+            except (AttributeError, TypeError):
+                ep_label = f"E{event.episode.episode_number}"
+
             nodes.append({
                 'id': str(event.pk),
                 'label': event.title[:30] + '...' if len(event.title) > 30 else event.title,
                 'url': event.url,
-                'episode': f"S{event.episode.get_parent().specific.season_number}E{event.episode.episode_number}",
+                'episode': ep_label,
             })
-        
+
+        # Only include connections where BOTH events are in scope
+        connections = NarrativeConnection.objects.filter(
+            from_event_id__in=event_ids,
+            to_event_id__in=event_ids
+        ).select_related('from_event', 'to_event')
+
         edges = []
         for conn in connections:
             edges.append({
@@ -204,12 +223,109 @@ class GraphView(ListView):
                 'label': conn.get_connection_type_display(),
                 'strength': conn.strength,
             })
-        
-        context['graph_data'] = {
-            'nodes': nodes,
-            'edges': edges,
-        }
-        
+
+        return {'nodes': nodes, 'edges': edges}
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        events = self.get_events_queryset()
+        context['graph_data'] = self.build_graph_data(events)
+        context['graph_title'] = self.get_graph_title()
+        context['back_url'] = self.get_back_url()
+        return context
+
+
+class EpisodeGraphView(ScopedGraphMixin, DetailView):
+    """
+    Graph of events within a single episode.
+    Typically ~20-40 nodes, very fast.
+    """
+    model = EpisodePage
+
+    def get_graph_title(self):
+        episode = self.get_object()
+        try:
+            season = episode.get_parent().specific
+            return f"S{season.season_number}E{episode.episode_number}: {episode.title}"
+        except (AttributeError, TypeError):
+            return f"Episode: {episode.title}"
+
+    def get_back_url(self):
+        return self.get_object().url
+
+    def get_events_queryset(self):
+        episode = self.get_object()
+        return EventPage.objects.live().filter(episode=episode)
+
+
+class CharacterGraphView(ScopedGraphMixin, DetailView):
+    """
+    Graph of events a character participates in.
+    Shows the character's journey through the narrative.
+    """
+    model = CharacterPage
+
+    def get_graph_title(self):
+        return f"{self.get_object().title}'s Journey"
+
+    def get_back_url(self):
+        return self.get_object().url
+
+    def get_events_queryset(self):
+        character = self.get_object()
+        event_ids = EventParticipation.objects.filter(
+            character=character
+        ).values_list('event_id', flat=True)
+        return EventPage.objects.live().filter(pk__in=event_ids)
+
+
+class ThemeGraphView(ScopedGraphMixin, DetailView):
+    """
+    Graph of events tagged with a specific theme.
+    """
+    model = Theme
+
+    def get_graph_title(self):
+        return f"Theme: {self.get_object().name}"
+
+    def get_back_url(self):
+        return f"/themes/{self.get_object().pk}/"
+
+    def get_events_queryset(self):
+        theme = self.get_object()
+        return EventPage.objects.live().filter(themes=theme)
+
+
+class ArcGraphView(ScopedGraphMixin, DetailView):
+    """
+    Graph of events in a conflict arc.
+    """
+    model = ConflictArc
+
+    def get_graph_title(self):
+        return f"Arc: {self.get_object().title}"
+
+    def get_back_url(self):
+        return f"/arcs/{self.get_object().pk}/"
+
+    def get_events_queryset(self):
+        arc = self.get_object()
+        return EventPage.objects.live().filter(arcs=arc)
+
+
+class GraphView(ListView):
+    """
+    DEPRECATED: Full graph visualization crashes browsers with large datasets.
+    Redirects to a landing page with links to scoped views.
+    """
+    model = EventPage
+    template_name = 'narrative/graph_landing.html'
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        # Provide stats for the landing page
+        context['event_count'] = EventPage.objects.live().count()
+        context['connection_count'] = NarrativeConnection.objects.count()
         return context
 
 

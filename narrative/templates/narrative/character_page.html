@@ -27,6 +27,11 @@
                     <span class="text-slate-300 text-sm font-medium">{{ page.title_role }}</span>
                 </div>
                 {% endif %}
+                <a href="{% url 'character_graph' page.pk %}"
+                   class="flex items-center gap-2 px-3 py-1.5 bg-cyan-500/10 border border-cyan-500/20 rounded-lg hover:bg-cyan-500/20 transition-colors">
+                    <i data-lucide="git-branch" class="w-4 h-4 text-cyan-400"></i>
+                    <span class="text-cyan-400 text-sm font-medium">View Journey</span>
+                </a>
             </div>
 
             {# Name #}
