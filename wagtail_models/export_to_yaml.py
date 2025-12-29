@@ -88,27 +88,49 @@ class FabulaExporter:
     # Export methods
     # -------------------------------------------------------------------------
     
-    def export_series(self) -> dict:
+    def export_series(self, series_title: str = None) -> dict:
         """Export series, seasons, and episodes."""
-        query = """
-        MATCH (series:Series)-[:BELONGS_TO_UNIVERSE]->(u:Universe)
-        OPTIONAL MATCH (season:Season)-[:BELONGS_TO_SERIES]->(series)
-        OPTIONAL MATCH (ep:Episode)-[:BELONGS_TO_SEASON]->(season)
-        RETURN 
-            series.series_uuid as series_uuid,
-            series.title as series_title,
-            u.name as universe_name,
-            season.season_uuid as season_uuid,
-            season.number as season_number,
-            ep.episode_uuid as episode_uuid,
-            ep.number as episode_number,
-            ep.title as episode_title,
-            ep.logline as logline,
-            ep.high_level_summary as summary,
-            ep.final_dominant_tone as tone
-        ORDER BY season.number, ep.number
-        """
-        results = self._run_query(query)
+        if series_title:
+            query = """
+            MATCH (series:Series)-[:BELONGS_TO_UNIVERSE]->(u:Universe)
+            WHERE series.title = $series_title
+            OPTIONAL MATCH (season:Season)-[:BELONGS_TO_SERIES]->(series)
+            OPTIONAL MATCH (ep:Episode)-[:BELONGS_TO_SEASON]->(season)
+            RETURN
+                series.series_uuid as series_uuid,
+                series.title as series_title,
+                u.name as universe_name,
+                season.season_uuid as season_uuid,
+                season.number as season_number,
+                ep.episode_uuid as episode_uuid,
+                ep.number as episode_number,
+                ep.title as episode_title,
+                ep.logline as logline,
+                ep.high_level_summary as summary,
+                ep.final_dominant_tone as tone
+            ORDER BY season.number, ep.number
+            """
+            results = self._run_query(query, {'series_title': series_title})
+        else:
+            query = """
+            MATCH (series:Series)-[:BELONGS_TO_UNIVERSE]->(u:Universe)
+            OPTIONAL MATCH (season:Season)-[:BELONGS_TO_SERIES]->(series)
+            OPTIONAL MATCH (ep:Episode)-[:BELONGS_TO_SEASON]->(season)
+            RETURN
+                series.series_uuid as series_uuid,
+                series.title as series_title,
+                u.name as universe_name,
+                season.season_uuid as season_uuid,
+                season.number as season_number,
+                ep.episode_uuid as episode_uuid,
+                ep.number as episode_number,
+                ep.title as episode_title,
+                ep.logline as logline,
+                ep.high_level_summary as summary,
+                ep.final_dominant_tone as tone
+            ORDER BY season.number, ep.number
+            """
+            results = self._run_query(query)
         
         # Organize into hierarchy
         series_data = None
@@ -415,7 +437,8 @@ def export_fabula_to_yaml(
     output_dir: str,
     neo4j_uri: str = DEFAULT_NEO4J_URI,
     neo4j_user: str = DEFAULT_NEO4J_USER,
-    neo4j_password: str = DEFAULT_NEO4J_PASSWORD
+    neo4j_password: str = DEFAULT_NEO4J_PASSWORD,
+    series_title: str = None
 ):
     """
     Export entire Fabula graph to YAML files.
@@ -423,14 +446,16 @@ def export_fabula_to_yaml(
     print(f"\n🚀 Fabula → YAML Export")
     print(f"   Output: {output_dir}")
     print(f"   Neo4j:  {neo4j_uri}")
+    if series_title:
+        print(f"   Series: {series_title}")
     print()
-    
+
     exporter = FabulaExporter(neo4j_uri, neo4j_user, neo4j_password)
     
     try:
         # Export series structure
         print("📺 Exporting series structure...")
-        series_data = exporter.export_series()
+        series_data = exporter.export_series(series_title=series_title)
         write_yaml(series_data, os.path.join(output_dir, 'series.yaml'))
         
         # Export characters
@@ -532,12 +557,18 @@ if __name__ == '__main__':
         default=DEFAULT_NEO4J_PASSWORD,
         help='Neo4j password'
     )
-    
+    parser.add_argument(
+        '--series',
+        default=None,
+        help='Series title to export (if not specified, exports first series found)'
+    )
+
     args = parser.parse_args()
-    
+
     export_fabula_to_yaml(
         output_dir=args.output,
         neo4j_uri=args.neo4j_uri,
         neo4j_user=args.neo4j_user,
-        neo4j_password=args.neo4j_password
+        neo4j_password=args.neo4j_password,
+        series_title=args.series
     )
