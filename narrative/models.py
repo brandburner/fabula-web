@@ -509,6 +509,12 @@ class OrganizationIndexPage(Page):
 
     subpage_types = ['narrative.OrganizationPage']
 
+    def get_organizations(self):
+        from django.db.models import Count
+        return OrganizationPage.objects.live().child_of(self).annotate(
+            involvement_count=Count('event_involvements')
+        ).order_by('-involvement_count', 'canonical_name')
+
 
 class ObjectIndexPage(Page):
     """Index page listing all objects."""
@@ -522,7 +528,10 @@ class ObjectIndexPage(Page):
     parent_page_types = ['narrative.SeriesIndexPage']
 
     def get_objects(self):
-        return ObjectPage.objects.live().child_of(self).order_by('canonical_name')
+        from django.db.models import Count
+        return ObjectPage.objects.live().child_of(self).annotate(
+            involvement_count=Count('event_involvements')
+        ).order_by('-involvement_count', 'canonical_name')
 
 
 class ObjectPage(Page):

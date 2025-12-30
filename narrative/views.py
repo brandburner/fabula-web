@@ -180,8 +180,9 @@ class LocationIndexView(ListView):
 
     def get_queryset(self):
         from django.db.models import Count
+        # Count events via LocationInvolvement (rich involvement data)
         return Location.objects.annotate(
-            event_count=Count('events')
+            event_count=Count('location_involvements')
         ).order_by('-event_count')
 
     def get_context_data(self, **kwargs):
@@ -212,19 +213,21 @@ class LocationDetailView(DetailView):
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
 
-        # Get events with simple location FK
-        context['events'] = EventPage.objects.live().filter(
-            location=self.object
-        ).select_related('episode').order_by(
-            'episode__episode_number', 'scene_sequence'
-        )
-
         # Get rich location involvements
-        context['involvements'] = LocationInvolvement.objects.filter(
+        involvements = LocationInvolvement.objects.filter(
             location=self.object
         ).select_related('event', 'event__episode').order_by(
             'event__episode__episode_number',
             'event__scene_sequence'
+        )
+        context['involvements'] = involvements
+
+        # Get ALL events at this location (from both FK and involvements)
+        involvement_event_ids = involvements.values_list('event_id', flat=True)
+        context['events'] = EventPage.objects.live().filter(
+            Q(location=self.object) | Q(pk__in=involvement_event_ids)
+        ).distinct().select_related('episode').order_by(
+            'episode__episode_number', 'scene_sequence'
         )
 
         # Get child locations
