@@ -458,6 +458,9 @@ class Neo4jExporter:
         query = """
         MATCH (e:Event)-[:PART_OF_EPISODE]->(ep:Episode {episode_uuid: $episode_uuid})
 
+        // Get scene boundary
+        OPTIONAL MATCH (e)-[:PART_OF_SCENE]->(sb:SceneBoundary)
+
         // Get location
         OPTIONAL MATCH (e)-[:OCCURS_IN]->(loc:Location)
 
@@ -472,6 +475,7 @@ class Neo4jExporter:
         WHERE agent.status = 'canonical'
 
         RETURN e,
+               sb.scene_uuid as scene_uuid,
                loc.location_uuid as location_uuid,
                collect(DISTINCT theme.theme_uuid) as theme_uuids,
                collect(DISTINCT arc.arc_uuid) as arc_uuids,
@@ -485,14 +489,24 @@ class Neo4jExporter:
                    observed_traits: p.observed_traits_at_event,
                    importance: coalesce(p.importance_to_event, 'primary')
                }) as participations
-        ORDER BY e.sequence_in_scene
+        ORDER BY sb.scene_uuid, e.sequence_in_scene
         """
 
         results = self.execute_query(query, {'episode_uuid': episode_uuid})
         events = []
 
+        # Track scene sequence by scene_uuid
+        scene_sequence = 0
+        last_scene_uuid = None
+
         for record in results:
             event = record['e']
+
+            # Compute scene_sequence: increment when scene_uuid changes
+            current_scene_uuid = record.get('scene_uuid')
+            if current_scene_uuid != last_scene_uuid:
+                scene_sequence += 1
+                last_scene_uuid = current_scene_uuid
 
             # Parse key_dialogue (may be string or list)
             key_dialogue = self.safe_get(event, 'key_dialogue', [])
@@ -538,7 +552,7 @@ class Neo4jExporter:
                 'title': self.safe_get(event, 'title', 'Untitled Event'),
                 'description': self.safe_get(event, 'description', ''),
                 'episode_uuid': episode_uuid,
-                'scene_sequence': self.safe_get(event, 'scene_sequence', 0),
+                'scene_sequence': scene_sequence,
                 'sequence_in_scene': self.safe_get(event, 'sequence_in_scene', 0),
                 'key_dialogue': key_dialogue,
                 'is_flashback': self.safe_get(event, 'is_flashback', False),
