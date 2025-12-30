@@ -182,7 +182,7 @@ class LocationIndexView(ListView):
         from django.db.models import Count
         # Count events via LocationInvolvement (rich involvement data)
         return Location.objects.annotate(
-            event_count=Count('location_involvements')
+            event_count=Count('event_involvements')
         ).order_by('-event_count')
 
     def get_context_data(self, **kwargs):
