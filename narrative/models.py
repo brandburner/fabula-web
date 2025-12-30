@@ -553,14 +553,13 @@ class OrganizationIndexPage(Page):
     subpage_types = ['narrative.OrganizationPage']
 
     def get_organizations(self):
-        """Get organizations ordered by derived relationship count."""
-        orgs = list(OrganizationPage.objects.live().child_of(self))
-        # Calculate derived connection counts for sorting
-        for org in orgs:
-            org.related_event_count = org.get_related_events(limit=100).count()
-        # Sort by related event count descending, then alphabetically
-        orgs.sort(key=lambda o: (-o.related_event_count, o.canonical_name))
-        return orgs
+        """Get organizations ordered alphabetically.
+
+        Note: Related event counts are computed on-demand in the template
+        for display purposes, but sorting by count is disabled for performance
+        (would require N queries where N = number of orgs).
+        """
+        return OrganizationPage.objects.live().child_of(self).order_by('canonical_name')
 
 
 class ObjectIndexPage(Page):

@@ -65,12 +65,6 @@
                 </p>
                 {% endif %}
 
-                {% if org.related_event_count %}
-                <div class="flex items-center gap-2 mt-3 text-xs text-slate-500">
-                    <i data-lucide="zap" class="w-3 h-3"></i>
-                    {{ org.related_event_count }} related events
-                </div>
-                {% endif %}
             </a>
             {% empty %}
             <div class="col-span-2 text-slate-500 text-sm p-4 bg-slate-900/30 rounded-lg border border-slate-800/50">
