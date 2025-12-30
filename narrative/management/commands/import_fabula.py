@@ -199,6 +199,8 @@ class Command(BaseCommand):
             # Run cleanup if requested (delete entities not in export)
             if self.cleanup and not self.dry_run:
                 self.run_cleanup(
+                    series_data,
+                    events_data,
                     characters_data,
                     organizations_data or [],
                     locations_data
@@ -1212,6 +1214,8 @@ class Command(BaseCommand):
 
     def run_cleanup(
         self,
+        series_data,  # Can be Dict or List[Dict]
+        events_data: List[Dict],
         characters_data: List[Dict],
         organizations_data: List[Dict],
         locations_data: List[Dict]
@@ -1227,6 +1231,45 @@ class Command(BaseCommand):
         self.stdout.write("=" * 60)
 
         total_deleted = 0
+
+        # Extract UUIDs from series hierarchy
+        series_list = series_data if isinstance(series_data, list) else [series_data]
+        series_uuids = set()
+        season_uuids = set()
+        episode_uuids = set()
+
+        for series in series_list:
+            if series.get('fabula_uuid'):
+                series_uuids.add(series['fabula_uuid'])
+            for season in series.get('seasons', []):
+                if season.get('fabula_uuid'):
+                    season_uuids.add(season['fabula_uuid'])
+                for episode in season.get('episodes', []):
+                    if episode.get('fabula_uuid'):
+                        episode_uuids.add(episode['fabula_uuid'])
+
+        # Extract event UUIDs from events data (list of episode event files)
+        event_uuids = set()
+        for episode_events in events_data:
+            for event in episode_events.get('events', []):
+                if event.get('fabula_uuid'):
+                    event_uuids.add(event['fabula_uuid'])
+
+        # Cleanup Events first (they reference Episodes)
+        deleted = self._cleanup_model(EventPage, 'fabula_uuid', event_uuids, 'events')
+        total_deleted += deleted
+
+        # Cleanup Episodes (they reference Seasons)
+        deleted = self._cleanup_model(EpisodePage, 'fabula_uuid', episode_uuids, 'episodes')
+        total_deleted += deleted
+
+        # Cleanup Seasons (they reference Series)
+        deleted = self._cleanup_model(SeasonPage, 'fabula_uuid', season_uuids, 'seasons')
+        total_deleted += deleted
+
+        # Cleanup Series
+        deleted = self._cleanup_model(SeriesIndexPage, 'fabula_uuid', series_uuids, 'series')
+        total_deleted += deleted
 
         # Cleanup Characters
         char_uuids = {c.get('fabula_uuid') for c in characters_data if c.get('fabula_uuid')}
