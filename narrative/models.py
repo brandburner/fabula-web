@@ -498,6 +498,49 @@ class OrganizationPage(Page):
     parent_page_types = ['narrative.OrganizationIndexPage']
     subpage_types = []
 
+    def get_search_terms(self):
+        """Get search terms for finding related content."""
+        terms = []
+        name = self.canonical_name
+
+        # Add full name
+        terms.append(name)
+
+        # Extract base name before parenthetical
+        if '(' in name:
+            base_name = name.split('(')[0].strip()
+            if len(base_name) > 3:
+                terms.append(base_name)
+
+        # Extract key words for common organization types
+        # e.g., "White House Senior Staff..." -> also search "White House"
+        key_phrases = ['White House', 'Congress', 'Senate', 'House of Representatives',
+                       'State Department', 'Pentagon', 'FBI', 'CIA', 'NSA', 'NSC',
+                       'Supreme Court', 'Department of', 'Office of', 'Committee']
+        for phrase in key_phrases:
+            if phrase in name and phrase not in terms:
+                terms.append(phrase)
+
+        return terms
+
+    def get_related_characters(self, limit=20):
+        """Find characters whose description or sphere mentions this organization."""
+        from django.db.models import Q
+        terms = self.get_search_terms()
+        q = Q()
+        for term in terms:
+            q |= Q(description__icontains=term) | Q(sphere_of_influence__icontains=term)
+        return CharacterPage.objects.live().filter(q).distinct()[:limit]
+
+    def get_related_events(self, limit=30):
+        """Find events whose description mentions this organization."""
+        from django.db.models import Q
+        terms = self.get_search_terms()
+        q = Q()
+        for term in terms:
+            q |= Q(description__icontains=term)
+        return EventPage.objects.live().filter(q).select_related('episode').distinct()[:limit]
+
 
 class OrganizationIndexPage(Page):
     """Index page listing all organizations."""
@@ -510,10 +553,14 @@ class OrganizationIndexPage(Page):
     subpage_types = ['narrative.OrganizationPage']
 
     def get_organizations(self):
-        from django.db.models import Count
-        return OrganizationPage.objects.live().child_of(self).annotate(
-            involvement_count=Count('event_involvements')
-        ).order_by('-involvement_count', 'canonical_name')
+        """Get organizations ordered by derived relationship count."""
+        orgs = list(OrganizationPage.objects.live().child_of(self))
+        # Calculate derived connection counts for sorting
+        for org in orgs:
+            org.related_event_count = org.get_related_events(limit=100).count()
+        # Sort by related event count descending, then alphabetically
+        orgs.sort(key=lambda o: (-o.related_event_count, o.canonical_name))
+        return orgs
 
 
 class ObjectIndexPage(Page):
