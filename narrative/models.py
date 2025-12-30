@@ -256,6 +256,7 @@ class SeriesIndexPage(Page):
         context['events_index'] = None
         context['characters_index'] = None
         context['organizations_index'] = None
+        context['objects_index'] = None
         context['seasons'] = []
 
         for child in children:
@@ -265,6 +266,8 @@ class SeriesIndexPage(Page):
                 context['characters_index'] = child
             elif isinstance(child, OrganizationIndexPage):
                 context['organizations_index'] = child
+            elif isinstance(child, ObjectIndexPage):
+                context['objects_index'] = child
             elif isinstance(child, SeasonPage):
                 context['seasons'].append(child)
 
