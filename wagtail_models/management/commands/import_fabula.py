@@ -16,11 +16,15 @@ Import Order (respecting dependencies):
 2. Conflict Arcs (snippets, no dependencies)
 3. Locations (snippets, self-referential for parent)
 4. Organizations (pages, no dependencies)
-5. Characters (pages, depend on organizations)
+5. Objects (pages, depend on organizations for ownership)
 6. Series → Seasons → Episodes (page hierarchy)
-7. Events (pages, depend on episodes, locations, themes, arcs)
-8. Event Participations (inline, depend on events and characters)
-9. Narrative Connections (model, depend on events)
+7. Characters (pages, depend on organizations)
+8. Events (pages, depend on episodes, locations, themes, arcs)
+9. Event Participations (inline, depend on events and characters)
+10. Object Involvements (inline, depend on events and objects)
+11. Location Involvements (inline, depend on events and locations)
+12. Organization Involvements (inline, depend on events and organizations)
+13. Narrative Connections (model, depend on events)
 """
 
 import os
@@ -38,8 +42,10 @@ from narrative.models import (
     SeriesIndexPage, SeasonPage, EpisodePage,
     CharacterPage, CharacterIndexPage,
     OrganizationPage, OrganizationIndexPage,
+    ObjectPage, ObjectIndexPage,
     EventPage, EventIndexPage,
     EventParticipation, NarrativeConnection,
+    ObjectInvolvement, LocationInvolvement, OrganizationInvolvement,
     CharacterEpisodeProfile,
     ConnectionType, ConnectionStrength, CharacterType, ArcType
 )
@@ -89,6 +95,7 @@ class Command(BaseCommand):
         self.arc_cache: Dict[str, ConflictArc] = {}
         self.location_cache: Dict[str, Location] = {}
         self.org_cache: Dict[str, OrganizationPage] = {}
+        self.object_cache: Dict[str, ObjectPage] = {}
         self.character_cache: Dict[str, CharacterPage] = {}
         self.episode_cache: Dict[str, EpisodePage] = {}
         self.event_cache: Dict[str, EventPage] = {}
@@ -98,11 +105,15 @@ class Command(BaseCommand):
             'themes': 0,
             'arcs': 0,
             'locations': 0,
+            'objects': 0,
             'organizations': 0,
             'characters': 0,
             'episodes': 0,
             'events': 0,
             'participations': 0,
+            'object_involvements': 0,
+            'location_involvements': 0,
+            'organization_involvements': 0,
             'connections': 0,
         }
 
@@ -115,6 +126,8 @@ class Command(BaseCommand):
                 self._import_themes(source_dir)
                 self._import_arcs(source_dir)
                 self._import_locations(source_dir)
+                self._import_organizations(source_dir)
+                self._import_objects(source_dir)
                 self._import_series_structure(source_dir)
                 self._import_characters(source_dir)
                 self._import_events(source_dir)
@@ -209,6 +222,102 @@ class Command(BaseCommand):
                 location.parent_location = self.location_cache[parent_uuid]
                 location.save()
 
+    def _import_organizations(self, source_dir: str):
+        """Import organizations as pages."""
+        self.stdout.write("🏛️  Importing organizations...")
+        data = self._load_yaml(os.path.join(source_dir, 'organizations.yaml'))
+
+        # Find or create organization index page
+        org_index = OrganizationIndexPage.objects.first()
+        if not org_index:
+            # Will be created later when series structure is imported
+            self.stdout.write("  ⚠ OrganizationIndexPage not yet created, deferring...")
+            # Store for later
+            self._deferred_orgs = data.get('organizations', [])
+            return
+
+        for org_data in data.get('organizations', []):
+            self._import_single_organization(org_index, org_data)
+
+    def _import_single_organization(self, org_index: OrganizationIndexPage, org_data: dict):
+        """Import a single organization."""
+        try:
+            org = OrganizationPage.objects.get(fabula_uuid=org_data['fabula_uuid'])
+            org.canonical_name = org_data['canonical_name']
+            org.title = org_data['canonical_name']
+            org.description = org_data.get('description', '')
+            org.sphere_of_influence = org_data.get('sphere_of_influence', '')
+            org.save()
+        except OrganizationPage.DoesNotExist:
+            org = OrganizationPage(
+                title=org_data['canonical_name'],
+                slug=slugify(org_data['canonical_name'])[:50],
+                fabula_uuid=org_data['fabula_uuid'],
+                canonical_name=org_data['canonical_name'],
+                description=org_data.get('description', ''),
+                sphere_of_influence=org_data.get('sphere_of_influence', ''),
+            )
+            org_index.add_child(instance=org)
+
+        self.org_cache[org_data['fabula_uuid']] = org
+        self.stats['organizations'] += 1
+
+    def _import_objects(self, source_dir: str):
+        """Import objects as pages."""
+        self.stdout.write("📦 Importing objects...")
+        data = self._load_yaml(os.path.join(source_dir, 'objects.yaml'))
+
+        if not data:
+            self.stdout.write("  ⚠ No objects.yaml found")
+            return
+
+        # Find or create object index page
+        obj_index = ObjectIndexPage.objects.first()
+        if not obj_index:
+            # Will be created later when series structure is imported
+            self.stdout.write("  ⚠ ObjectIndexPage not yet created, deferring...")
+            self._deferred_objects = data.get('objects', [])
+            return
+
+        for obj_data in data.get('objects', []):
+            self._import_single_object(obj_index, obj_data)
+
+    def _import_single_object(self, obj_index: ObjectIndexPage, obj_data: dict):
+        """Import a single object."""
+        try:
+            obj = ObjectPage.objects.get(fabula_uuid=obj_data['fabula_uuid'])
+            obj.canonical_name = obj_data['canonical_name']
+            obj.title = obj_data['canonical_name']
+            obj.description = obj_data.get('description', '')
+            obj.purpose = obj_data.get('purpose', '')
+            obj.significance = obj_data.get('significance', '')
+            obj.save()
+        except ObjectPage.DoesNotExist:
+            obj = ObjectPage(
+                title=obj_data['canonical_name'],
+                slug=slugify(obj_data['canonical_name'])[:50],
+                fabula_uuid=obj_data['fabula_uuid'],
+                canonical_name=obj_data['canonical_name'],
+                description=obj_data.get('description', ''),
+                purpose=obj_data.get('purpose', ''),
+                significance=obj_data.get('significance', ''),
+            )
+            obj_index.add_child(instance=obj)
+
+        # Set owner relationships if present
+        owner_agent_uuid = obj_data.get('owner_agent_uuid')
+        owner_org_uuid = obj_data.get('owner_org_uuid')
+
+        if owner_agent_uuid and owner_agent_uuid in self.character_cache:
+            obj.potential_owner = self.character_cache[owner_agent_uuid]
+            obj.save()
+        elif owner_org_uuid and owner_org_uuid in self.org_cache:
+            obj.owner_organization = self.org_cache[owner_org_uuid]
+            obj.save()
+
+        self.object_cache[obj_data['fabula_uuid']] = obj
+        self.stats['objects'] += 1
+
     def _import_series_structure(self, source_dir: str):
         """Import series → seasons → episodes hierarchy."""
         self.stdout.write("📺 Importing series structure...")
@@ -250,13 +359,14 @@ class Command(BaseCommand):
                 self._import_episode(season_page, episode_data)
 
     def _ensure_index_pages(self, series_page: SeriesIndexPage):
-        """Ensure character, event, org index pages exist."""
+        """Ensure character, event, org, object index pages exist."""
         index_types = [
             (CharacterIndexPage, 'characters', 'Characters'),
             (EventIndexPage, 'events', 'Events'),
             (OrganizationIndexPage, 'organizations', 'Organizations'),
+            (ObjectIndexPage, 'objects', 'Objects'),
         ]
-        
+
         for page_class, slug, title in index_types:
             if not page_class.objects.child_of(series_page).exists():
                 index_page = page_class(title=title, slug=slug)
@@ -433,7 +543,12 @@ class Command(BaseCommand):
         
         # Import participations
         self._import_participations(event, data.get('participations', []))
-        
+
+        # Import involvements
+        self._import_object_involvements(event, data.get('object_involvements', []))
+        self._import_location_involvements(event, data.get('location_involvements', []))
+        self._import_organization_involvements(event, data.get('organization_involvements', []))
+
         self.event_cache[data['fabula_uuid']] = event
         self.stats['events'] += 1
 
@@ -462,6 +577,79 @@ class Command(BaseCommand):
                 importance=p_data.get('importance', 'secondary'),
             )
             self.stats['participations'] += 1
+
+    def _import_object_involvements(self, event: EventPage, involvements_data: List[dict]):
+        """Import object involvements for an event."""
+        # Clear existing involvements for this event
+        ObjectInvolvement.objects.filter(event=event).delete()
+
+        for i, inv_data in enumerate(involvements_data):
+            obj_uuid = inv_data.get('object_uuid')
+            obj = self.object_cache.get(obj_uuid)
+
+            if not obj:
+                continue
+
+            ObjectInvolvement.objects.create(
+                event=event,
+                object=obj,
+                sort_order=i,
+                description_of_involvement=inv_data.get('description_of_involvement', ''),
+                status_before_event=inv_data.get('status_before_event', ''),
+                status_after_event=inv_data.get('status_after_event', ''),
+            )
+            self.stats['object_involvements'] += 1
+
+    def _import_location_involvements(self, event: EventPage, involvements_data: List[dict]):
+        """Import location involvements for an event."""
+        # Clear existing involvements for this event
+        LocationInvolvement.objects.filter(event=event).delete()
+
+        for i, inv_data in enumerate(involvements_data):
+            loc_uuid = inv_data.get('location_uuid')
+            loc = self.location_cache.get(loc_uuid)
+
+            if not loc:
+                continue
+
+            LocationInvolvement.objects.create(
+                event=event,
+                location=loc,
+                sort_order=i,
+                description_of_involvement=inv_data.get('description_of_involvement', ''),
+                observed_atmosphere=inv_data.get('observed_atmosphere', ''),
+                functional_role=inv_data.get('functional_role', ''),
+                symbolic_significance=inv_data.get('symbolic_significance', ''),
+                access_restrictions=inv_data.get('access_restrictions', ''),
+                key_environmental_details=inv_data.get('key_environmental_details', []),
+            )
+            self.stats['location_involvements'] += 1
+
+    def _import_organization_involvements(self, event: EventPage, involvements_data: List[dict]):
+        """Import organization involvements for an event."""
+        # Clear existing involvements for this event
+        OrganizationInvolvement.objects.filter(event=event).delete()
+
+        for i, inv_data in enumerate(involvements_data):
+            org_uuid = inv_data.get('organization_uuid')
+            org = self.org_cache.get(org_uuid)
+
+            if not org:
+                continue
+
+            OrganizationInvolvement.objects.create(
+                event=event,
+                organization=org,
+                sort_order=i,
+                description_of_involvement=inv_data.get('description_of_involvement', ''),
+                active_representation=inv_data.get('active_representation', ''),
+                power_dynamics=inv_data.get('power_dynamics', ''),
+                organizational_goals=inv_data.get('organizational_goals', []),
+                influence_mechanisms=inv_data.get('influence_mechanisms', []),
+                institutional_impact=inv_data.get('institutional_impact', ''),
+                internal_dynamics=inv_data.get('internal_dynamics', ''),
+            )
+            self.stats['organization_involvements'] += 1
 
     def _import_connections(self, source_dir: str):
         """Import narrative connections between events."""
@@ -493,11 +681,16 @@ class Command(BaseCommand):
     def _clear_existing_data(self):
         """Clear all existing narrative data. USE WITH CAUTION."""
         self.stdout.write(self.style.WARNING("⚠️  Clearing existing data..."))
-        
+
         NarrativeConnection.objects.all().delete()
+        ObjectInvolvement.objects.all().delete()
+        LocationInvolvement.objects.all().delete()
+        OrganizationInvolvement.objects.all().delete()
         EventParticipation.objects.all().delete()
         EventPage.objects.all().delete()
+        ObjectPage.objects.all().delete()
         CharacterPage.objects.all().delete()
+        OrganizationPage.objects.all().delete()
         EpisodePage.objects.all().delete()
         SeasonPage.objects.all().delete()
         SeriesIndexPage.objects.all().delete()
@@ -509,14 +702,19 @@ class Command(BaseCommand):
         """Print import statistics."""
         self.stdout.write("")
         self.stdout.write("✅ Import complete!")
-        self.stdout.write(f"   Themes:        {self.stats['themes']}")
-        self.stdout.write(f"   Arcs:          {self.stats['arcs']}")
-        self.stdout.write(f"   Locations:     {self.stats['locations']}")
-        self.stdout.write(f"   Characters:    {self.stats['characters']}")
-        self.stdout.write(f"   Episodes:      {self.stats['episodes']}")
-        self.stdout.write(f"   Events:        {self.stats['events']}")
-        self.stdout.write(f"   Participations:{self.stats['participations']}")
-        self.stdout.write(f"   Connections:   {self.stats['connections']}")
+        self.stdout.write(f"   Themes:                   {self.stats['themes']}")
+        self.stdout.write(f"   Arcs:                     {self.stats['arcs']}")
+        self.stdout.write(f"   Locations:                {self.stats['locations']}")
+        self.stdout.write(f"   Objects:                  {self.stats['objects']}")
+        self.stdout.write(f"   Organizations:            {self.stats['organizations']}")
+        self.stdout.write(f"   Characters:               {self.stats['characters']}")
+        self.stdout.write(f"   Episodes:                 {self.stats['episodes']}")
+        self.stdout.write(f"   Events:                   {self.stats['events']}")
+        self.stdout.write(f"   Participations:           {self.stats['participations']}")
+        self.stdout.write(f"   Object involvements:      {self.stats['object_involvements']}")
+        self.stdout.write(f"   Location involvements:    {self.stats['location_involvements']}")
+        self.stdout.write(f"   Organization involvements:{self.stats['organization_involvements']}")
+        self.stdout.write(f"   Connections:              {self.stats['connections']}")
 
 
 class DryRunRollback(Exception):

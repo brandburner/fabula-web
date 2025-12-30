@@ -92,6 +92,7 @@ class Neo4jExporter:
             'event_count': 0,
             'character_count': 0,
             'location_count': 0,
+            'object_count': 0,
             'organization_count': 0,
             'theme_count': 0,
             'arc_count': 0,
@@ -369,6 +370,54 @@ class Neo4jExporter:
         return organizations
 
     # =========================================================================
+    # Export Objects
+    # =========================================================================
+
+    def export_objects(self) -> List[Dict]:
+        """
+        Export all objects with ownership relationships.
+
+        Returns:
+            List of object dictionaries
+        """
+        print("Exporting objects...")
+
+        query = """
+        MATCH (obj:Object)
+        WHERE obj.status = 'canonical'
+        OPTIONAL MATCH (agent:Agent)-[:OWNS]->(obj)
+        WHERE agent.status = 'canonical'
+        OPTIONAL MATCH (org:Organization)-[:OWNS]->(obj)
+        WHERE org.status = 'canonical'
+        RETURN obj,
+               agent.agent_uuid as owner_agent_uuid,
+               org.org_uuid as owner_org_uuid
+        ORDER BY obj.canonical_name
+        """
+
+        results = self.execute_query(query)
+        objects = []
+
+        for record in results:
+            obj = record['obj']
+
+            object_data = {
+                'fabula_uuid': self.safe_get(obj, 'object_uuid', ''),
+                'canonical_name': self.safe_get(obj, 'canonical_name', 'Unknown'),
+                'description': self.safe_get(obj, 'foundational_description', ''),
+                'purpose': self.safe_get(obj, 'foundational_purpose', ''),
+                'significance': self.safe_get(obj, 'foundational_significance', ''),
+                'potential_owner_mention': self.safe_get(obj, 'potential_owner_mention', ''),
+                'owner_agent_uuid': record.get('owner_agent_uuid'),
+                'owner_org_uuid': record.get('owner_org_uuid')
+            }
+
+            objects.append(object_data)
+            self.stats['object_count'] += 1
+
+        return objects
+
+    # =========================================================================
     # Export Themes
     # =========================================================================
 
@@ -447,60 +496,39 @@ class Neo4jExporter:
 
     def export_events_by_episode(self, episode_uuid: str) -> List[Dict]:
         """
-        Export all events for a specific episode.
+        Export all events for a specific episode with all involvements.
 
         Args:
             episode_uuid: Episode UUID to filter events
 
         Returns:
-            List of event dictionaries with participations
+            List of event dictionaries with participations and involvements
         """
-        query = """
+        # Main event query
+        event_query = """
         MATCH (e:Event)-[:PART_OF_EPISODE]->(ep:Episode {episode_uuid: $episode_uuid})
-
-        // Get scene boundary
         OPTIONAL MATCH (e)-[:PART_OF_SCENE]->(sb:SceneBoundary)
-
-        // Get location
         OPTIONAL MATCH (e)-[:OCCURS_IN]->(loc:Location)
-
-        // Get themes
         OPTIONAL MATCH (e)-[:EXEMPLIFIES_THEME]->(theme:Theme)
-
-        // Get arcs
         OPTIONAL MATCH (e)-[:PART_OF_ARC]->(arc:ConflictArc)
-
-        // Get participations with edge properties (only canonical agents)
-        OPTIONAL MATCH (agent:Agent)-[p:PARTICIPATED_AS]->(e)
-        WHERE agent.status = 'canonical'
-
         RETURN e,
                sb.scene_uuid as scene_uuid,
                loc.location_uuid as location_uuid,
                collect(DISTINCT theme.theme_uuid) as theme_uuids,
-               collect(DISTINCT arc.arc_uuid) as arc_uuids,
-               collect(DISTINCT {
-                   character_uuid: agent.agent_uuid,
-                   emotional_state: p.emotional_state_at_event,
-                   goals: p.goals_at_event,
-                   what_happened: p.observed_status,
-                   observed_status: p.observed_status,
-                   beliefs: p.beliefs_at_event,
-                   observed_traits: p.observed_traits_at_event,
-                   importance: coalesce(p.importance_to_event, 'primary')
-               }) as participations
+               collect(DISTINCT arc.arc_uuid) as arc_uuids
         ORDER BY sb.scene_uuid, e.sequence_in_scene
         """
 
-        results = self.execute_query(query, {'episode_uuid': episode_uuid})
+        event_results = self.execute_query(event_query, {'episode_uuid': episode_uuid})
         events = []
 
         # Track scene sequence by scene_uuid
         scene_sequence = 0
         last_scene_uuid = None
 
-        for record in results:
+        for record in event_results:
             event = record['e']
+            event_uuid = self.safe_get(event, 'event_uuid', '')
 
             # Compute scene_sequence: increment when scene_uuid changes
             current_scene_uuid = record.get('scene_uuid')
@@ -513,42 +541,24 @@ class Neo4jExporter:
             if isinstance(key_dialogue, str):
                 key_dialogue = [key_dialogue] if key_dialogue else []
 
-            # Filter out null participations (from OPTIONAL MATCH)
-            participations = [
-                p for p in record.get('participations', [])
-                if p.get('character_uuid')
-            ]
-
-            # Clean up participation data
-            for p in participations:
-                # Convert goals and beliefs from string to list if needed
-                if isinstance(p.get('goals'), str):
-                    p['goals'] = [g.strip() for g in p['goals'].split('\n') if g.strip()]
-                elif not p.get('goals'):
-                    p['goals'] = []
-
-                if isinstance(p.get('beliefs'), str):
-                    p['beliefs'] = [b.strip() for b in p['beliefs'].split('\n') if b.strip()]
-                elif not p.get('beliefs'):
-                    p['beliefs'] = []
-
-                if isinstance(p.get('observed_traits'), str):
-                    p['observed_traits'] = [t.strip() for t in p['observed_traits'].split(',') if t.strip()]
-                elif not p.get('observed_traits'):
-                    p['observed_traits'] = []
-
-                # Set defaults
-                p['emotional_state'] = p.get('emotional_state') or ''
-                p['what_happened'] = p.get('what_happened') or ''
-                p['observed_status'] = p.get('observed_status') or ''
-                p['importance'] = p.get('importance') or 'primary'
-
             # Filter out null UUIDs from collections
             theme_uuids = [uid for uid in record.get('theme_uuids', []) if uid]
             arc_uuids = [uid for uid in record.get('arc_uuids', []) if uid]
 
+            # Get participations for this event
+            participations = self._get_event_participations(event_uuid)
+
+            # Get object involvements for this event
+            object_involvements = self._get_object_involvements(event_uuid)
+
+            # Get location involvements for this event
+            location_involvements = self._get_location_involvements(event_uuid)
+
+            # Get organization involvements for this event
+            organization_involvements = self._get_organization_involvements(event_uuid)
+
             event_data = {
-                'fabula_uuid': self.safe_get(event, 'event_uuid', ''),
+                'fabula_uuid': event_uuid,
                 'title': self.safe_get(event, 'title', 'Untitled Event'),
                 'description': self.safe_get(event, 'description', ''),
                 'episode_uuid': episode_uuid,
@@ -559,13 +569,165 @@ class Neo4jExporter:
                 'location_uuid': record.get('location_uuid'),
                 'theme_uuids': theme_uuids,
                 'arc_uuids': arc_uuids,
-                'participations': participations
+                'participations': participations,
+                'object_involvements': object_involvements,
+                'location_involvements': location_involvements,
+                'organization_involvements': organization_involvements
             }
 
             events.append(event_data)
             self.stats['event_count'] += 1
 
         return events
+
+    def _get_event_participations(self, event_uuid: str) -> List[Dict]:
+        """Get agent participations for an event."""
+        query = """
+        MATCH (agent:Agent)-[p:PARTICIPATED_AS]->(e:Event {event_uuid: $event_uuid})
+        WHERE agent.status = 'canonical'
+        RETURN
+            agent.agent_uuid as character_uuid,
+            p.emotional_state_at_event as emotional_state,
+            p.goals_at_event as goals,
+            p.observed_status as what_happened,
+            p.observed_status as observed_status,
+            p.beliefs_at_event as beliefs,
+            p.observed_traits_at_event as observed_traits,
+            coalesce(p.importance_to_event, 'primary') as importance
+        """
+        results = self.execute_query(query, {'event_uuid': event_uuid})
+
+        participations = []
+        for r in results:
+            # Convert goals and beliefs from string to list if needed
+            goals = r.get('goals') or []
+            if isinstance(goals, str):
+                goals = [g.strip() for g in goals.split('\n') if g.strip()]
+
+            beliefs = r.get('beliefs') or []
+            if isinstance(beliefs, str):
+                beliefs = [b.strip() for b in beliefs.split('\n') if b.strip()]
+
+            observed_traits = r.get('observed_traits') or []
+            if isinstance(observed_traits, str):
+                observed_traits = [t.strip() for t in observed_traits.split(',') if t.strip()]
+
+            participation = {
+                'character_uuid': r.get('character_uuid'),
+                'emotional_state': r.get('emotional_state') or '',
+                'goals': goals,
+                'what_happened': r.get('what_happened') or '',
+                'observed_status': r.get('observed_status') or '',
+                'beliefs': beliefs,
+                'observed_traits': observed_traits,
+                'importance': r.get('importance') or 'primary'
+            }
+            participations.append(participation)
+
+        return participations
+
+    def _get_object_involvements(self, event_uuid: str) -> List[Dict]:
+        """Get object involvements for an event (INVOLVED_WITH relationship)."""
+        query = """
+        MATCH (obj:Object)-[oi:INVOLVED_WITH]->(e:Event {event_uuid: $event_uuid})
+        WHERE obj.status = 'canonical'
+        RETURN
+            obj.object_uuid as object_uuid,
+            oi.description_of_involvement as description_of_involvement,
+            oi.status_before_event as status_before_event,
+            oi.status_after_event as status_after_event
+        """
+        results = self.execute_query(query, {'event_uuid': event_uuid})
+
+        involvements = []
+        for r in results:
+            involvement = {
+                'object_uuid': r.get('object_uuid'),
+                'description_of_involvement': r.get('description_of_involvement') or '',
+                'status_before_event': r.get('status_before_event') or '',
+                'status_after_event': r.get('status_after_event') or ''
+            }
+            involvements.append(involvement)
+
+        return involvements
+
+    def _get_location_involvements(self, event_uuid: str) -> List[Dict]:
+        """Get location involvements for an event (IN_EVENT relationship)."""
+        query = """
+        MATCH (loc:Location)-[li:IN_EVENT]->(e:Event {event_uuid: $event_uuid})
+        WHERE loc.status = 'canonical'
+        RETURN
+            loc.location_uuid as location_uuid,
+            li.description_of_involvement as description_of_involvement,
+            li.observed_atmosphere as observed_atmosphere,
+            li.functional_role as functional_role,
+            li.symbolic_significance as symbolic_significance,
+            li.access_restrictions as access_restrictions,
+            li.key_environmental_details as key_environmental_details
+        """
+        results = self.execute_query(query, {'event_uuid': event_uuid})
+
+        involvements = []
+        for r in results:
+            # key_environmental_details may be string or list
+            key_env = r.get('key_environmental_details') or []
+            if isinstance(key_env, str):
+                key_env = [d.strip() for d in key_env.split(',') if d.strip()]
+
+            involvement = {
+                'location_uuid': r.get('location_uuid'),
+                'description_of_involvement': r.get('description_of_involvement') or '',
+                'observed_atmosphere': r.get('observed_atmosphere') or '',
+                'functional_role': r.get('functional_role') or '',
+                'symbolic_significance': r.get('symbolic_significance') or '',
+                'access_restrictions': r.get('access_restrictions') or '',
+                'key_environmental_details': key_env
+            }
+            involvements.append(involvement)
+
+        return involvements
+
+    def _get_organization_involvements(self, event_uuid: str) -> List[Dict]:
+        """Get organization involvements for an event (INVOLVED_WITH relationship)."""
+        query = """
+        MATCH (org:Organization)-[orgi:INVOLVED_WITH]->(e:Event {event_uuid: $event_uuid})
+        WHERE org.status = 'canonical'
+        RETURN
+            org.org_uuid as organization_uuid,
+            orgi.description_of_involvement as description_of_involvement,
+            orgi.active_representation as active_representation,
+            orgi.power_dynamics as power_dynamics,
+            orgi.organizational_goals_at_event as organizational_goals,
+            orgi.influence_mechanisms as influence_mechanisms,
+            orgi.institutional_impact as institutional_impact,
+            orgi.internal_dynamics as internal_dynamics
+        """
+        results = self.execute_query(query, {'event_uuid': event_uuid})
+
+        involvements = []
+        for r in results:
+            # organizational_goals and influence_mechanisms may be string or list
+            org_goals = r.get('organizational_goals') or []
+            if isinstance(org_goals, str):
+                org_goals = [g.strip() for g in org_goals.split('\n') if g.strip()]
+
+            inf_mechanisms = r.get('influence_mechanisms') or []
+            if isinstance(inf_mechanisms, str):
+                inf_mechanisms = [m.strip() for m in inf_mechanisms.split(',') if m.strip()]
+
+            involvement = {
+                'organization_uuid': r.get('organization_uuid'),
+                'description_of_involvement': r.get('description_of_involvement') or '',
+                'active_representation': r.get('active_representation') or '',
+                'power_dynamics': r.get('power_dynamics') or '',
+                'organizational_goals': org_goals,
+                'influence_mechanisms': inf_mechanisms,
+                'institutional_impact': r.get('institutional_impact') or '',
+                'internal_dynamics': r.get('internal_dynamics') or ''
+            }
+            involvements.append(involvement)
+
+        return involvements
 
     # =========================================================================
     # Export Narrative Connections
@@ -664,7 +826,7 @@ class Neo4jExporter:
         """
         series_titles = [s.get('title', 'Unknown') for s in all_series]
         manifest = {
-            'fabula_version': '2.0.0',
+            'fabula_version': '2.1.0',
             'export_date': datetime.now().isoformat(),
             'source_graph': self.uri,
             'series_titles': series_titles,
@@ -674,11 +836,12 @@ class Neo4jExporter:
             'event_count': self.stats['event_count'],
             'character_count': self.stats['character_count'],
             'location_count': self.stats['location_count'],
+            'object_count': self.stats['object_count'],
             'organization_count': self.stats['organization_count'],
             'theme_count': self.stats['theme_count'],
             'arc_count': self.stats['arc_count'],
             'connection_count': self.stats['connection_count'],
-            'notes': 'Export generated by Django management command export_from_neo4j'
+            'notes': 'Export generated by Django management command export_from_neo4j (v2.1 with objects and involvements)'
         }
 
         return manifest
@@ -762,6 +925,14 @@ class Neo4jExporter:
                 'Organization Data'
             )
 
+            # Export objects
+            objects = self.export_objects()
+            self.write_yaml(
+                self.output_dir / 'objects.yaml',
+                objects,
+                'Object Data'
+            )
+
             # Export themes
             themes = self.export_themes()
             self.write_yaml(
@@ -836,6 +1007,7 @@ class Neo4jExporter:
             print(f"  Events: {self.stats['event_count']}")
             print(f"  Characters: {self.stats['character_count']}")
             print(f"  Locations: {self.stats['location_count']}")
+            print(f"  Objects: {self.stats['object_count']}")
             print(f"  Organizations: {self.stats['organization_count']}")
             print(f"  Themes: {self.stats['theme_count']}")
             print(f"  Conflict Arcs: {self.stats['arc_count']}")
