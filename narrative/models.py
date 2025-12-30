@@ -722,10 +722,40 @@ class EventIndexPage(Page):
 
     def get_context(self, request):
         context = super().get_context(request)
-        # Get events ordered by scene_sequence
-        context['events'] = EventPage.objects.live().descendant_of(self).order_by(
-            'scene_sequence', 'sequence_in_scene'
-        )
+
+        # Get all live events (not just descendants - events may not be direct children)
+        events = EventPage.objects.live().select_related(
+            'episode'
+        ).order_by('episode__episode_number', 'scene_sequence', 'sequence_in_scene')
+
+        # Sort by series/season/episode/scene (requires Python for page tree traversal)
+        def sort_key(event):
+            if not event.episode:
+                return ('', 0, 0, 0, 0)
+            season = event.episode.get_parent().specific if event.episode else None
+            series = season.get_parent() if season else None
+            series_title = series.title if series else ''
+            season_num = getattr(season, 'season_number', 0) if season else 0
+            episode_num = event.episode.episode_number if event.episode else 0
+            return (series_title, season_num, episode_num, event.scene_sequence, event.sequence_in_scene)
+
+        sorted_events = sorted(events, key=sort_key)
+
+        # Group events by episode for template rendering
+        from itertools import groupby
+        episodes_with_events = []
+        for episode, episode_events in groupby(sorted_events, key=lambda e: e.episode):
+            season = episode.get_parent().specific if episode else None
+            series = season.get_parent().specific if season else None
+            episodes_with_events.append({
+                'episode': episode,
+                'season': season,
+                'series': series,
+                'events': list(episode_events)
+            })
+
+        context['episodes_with_events'] = episodes_with_events
+        context['events'] = sorted_events  # Keep flat list for backwards compatibility
         return context
 
 

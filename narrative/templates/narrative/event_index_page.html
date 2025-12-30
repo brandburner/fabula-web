@@ -20,41 +20,76 @@
                 {{ page.introduction|richtext }}
             </div>
             {% endif %}
+
+            <div class="mt-4 text-slate-500 text-sm">
+                {{ events|length }} events across {{ episodes_with_events|length }} episodes
+            </div>
         </div>
     </div>
 
     <div class="max-w-6xl mx-auto px-6 mt-8">
-        <div class="grid gap-4">
-            {% for event in events %}
-            <a href="{% pageurl event %}"
-               class="block p-4 bg-slate-900/50 border border-slate-800 rounded-lg hover:border-amber-500/30 transition-all group">
-                <div class="flex items-start gap-4">
-                    <div class="flex-shrink-0 w-16 text-center">
-                        <span class="text-xs text-slate-500 block">Scene</span>
-                        <span class="text-lg font-mono text-amber-400">{{ event.scene_sequence|default:"—" }}</span>
-                    </div>
-                    <div class="flex-1 min-w-0">
-                        <h3 class="text-lg font-medium text-slate-200 group-hover:text-amber-300 transition-colors truncate">
-                            {{ event.title }}
-                        </h3>
-                        {% if event.description %}
-                        <p class="text-sm text-slate-400 mt-1 line-clamp-2">
-                            {{ event.description|striptags|truncatewords:30 }}
-                        </p>
-                        {% endif %}
-                    </div>
-                    <div class="flex-shrink-0 text-slate-600 group-hover:text-amber-400 transition-colors">
-                        <i data-lucide="chevron-right" class="w-5 h-5"></i>
-                    </div>
-                </div>
-            </a>
-            {% empty %}
-            <div class="text-slate-500 text-sm p-8 bg-slate-900/30 rounded-lg border border-slate-800/50 text-center">
-                <i data-lucide="inbox" class="w-8 h-8 mx-auto mb-2 opacity-50"></i>
-                <p>No events found</p>
-            </div>
-            {% endfor %}
+        {% for ep_group in episodes_with_events %}
+        {# Series separator - show when series changes #}
+        {% ifchanged ep_group.series %}
+        {% if not forloop.first %}
+        <hr class="border-slate-800 my-12">
+        {% endif %}
+        <div class="flex items-center gap-3 mb-8">
+            <i data-lucide="tv" class="w-6 h-6 text-slate-500"></i>
+            <h2 class="text-2xl font-bold text-slate-300">{{ ep_group.series.title }}</h2>
         </div>
+        {% endifchanged %}
+
+        <div class="mb-8">
+            {# Episode header #}
+            <div class="flex items-center gap-3 mb-4">
+                <div class="flex-shrink-0 px-3 py-1.5 bg-amber-500/10 border border-amber-500/20 rounded-lg">
+                    <span class="text-amber-400 font-mono font-semibold">
+                        S{{ ep_group.season.season_number }}E{{ ep_group.episode.episode_number }}
+                    </span>
+                </div>
+                <a href="{% pageurl ep_group.episode %}" class="flex-1 min-w-0 group">
+                    <h3 class="text-lg font-semibold text-slate-200 group-hover:text-amber-300 transition-colors truncate">
+                        {{ ep_group.episode.title }}
+                    </h3>
+                </a>
+                <span class="text-slate-500 text-sm">{{ ep_group.events|length }} events</span>
+            </div>
+
+            {# Events in this episode #}
+            <div class="grid gap-2 pl-4 border-l-2 border-amber-500/20">
+                {% for event in ep_group.events %}
+                <a href="{% pageurl event %}"
+                   class="block p-4 bg-slate-900/50 border border-slate-800 rounded-lg hover:border-amber-500/30 hover:bg-slate-900/80 transition-all group">
+                    <div class="flex items-start gap-4">
+                        <div class="flex-shrink-0 w-12 text-center">
+                            <span class="text-xs text-slate-600 block">Scene</span>
+                            <span class="text-lg font-mono text-amber-400/80">{{ event.scene_sequence|default:"—" }}</span>
+                        </div>
+                        <div class="flex-1 min-w-0">
+                            <h3 class="text-base font-medium text-slate-200 group-hover:text-amber-300 transition-colors">
+                                {{ event.title }}
+                            </h3>
+                            {% if event.description %}
+                            <p class="text-sm text-slate-500 mt-1 line-clamp-2">
+                                {{ event.description|striptags|truncatewords:25 }}
+                            </p>
+                            {% endif %}
+                        </div>
+                        <div class="flex-shrink-0 text-slate-700 group-hover:text-amber-400 transition-colors">
+                            <i data-lucide="chevron-right" class="w-5 h-5"></i>
+                        </div>
+                    </div>
+                </a>
+                {% endfor %}
+            </div>
+        </div>
+        {% empty %}
+        <div class="text-slate-500 text-sm p-8 bg-slate-900/30 rounded-lg border border-slate-800/50 text-center">
+            <i data-lucide="inbox" class="w-8 h-8 mx-auto mb-2 opacity-50"></i>
+            <p>No events found</p>
+        </div>
+        {% endfor %}
     </div>
 </article>
 {% endblock %}
