@@ -720,6 +720,14 @@ class EventIndexPage(Page):
 
     subpage_types = ['narrative.EventPage']
 
+    def get_context(self, request):
+        context = super().get_context(request)
+        # Get events ordered by scene_sequence
+        context['events'] = EventPage.objects.live().descendant_of(self).order_by(
+            'scene_sequence', 'sequence_in_scene'
+        )
+        return context
+
 
 # =============================================================================
 # INLINE MODELS - Edge data from relationships

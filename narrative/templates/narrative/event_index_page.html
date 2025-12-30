@@ -25,7 +25,7 @@
 
     <div class="max-w-6xl mx-auto px-6 mt-8">
         <div class="grid gap-4">
-            {% for event in page.get_children.live.specific %}
+            {% for event in events %}
             <a href="{% pageurl event %}"
                class="block p-4 bg-slate-900/50 border border-slate-800 rounded-lg hover:border-amber-500/30 transition-all group">
                 <div class="flex items-start gap-4">

@@ -81,7 +81,7 @@
 
             {# Group events by scene #}
             <div class="space-y-10">
-                {% regroup page.events.all by scene_sequence as scene_list %}
+                {% regroup page.get_events by scene_sequence as scene_list %}
                 {% for scene in scene_list %}
                 <div class="relative">
                     <div class="flex items-center gap-3 mb-5">
