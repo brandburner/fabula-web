@@ -839,9 +839,7 @@ class Command(BaseCommand):
                     event_page.location = location
 
                     if not self.dry_run:
-                        event_page.save_revision().publish()
-
-                        # Update themes and arcs (ManyToMany)
+                        # Set themes and arcs BEFORE save (ParentalManyToManyField requires this)
                         theme_uuids = event_data.get('theme_uuids') or []
                         themes = [self.themes_cache[uuid] for uuid in theme_uuids if uuid in self.themes_cache]
                         event_page.themes.set(themes)
@@ -849,6 +847,8 @@ class Command(BaseCommand):
                         arc_uuids = event_data.get('arc_uuids') or []
                         arcs = [self.arcs_cache[uuid] for uuid in arc_uuids if uuid in self.arcs_cache]
                         event_page.arcs.set(arcs)
+
+                        event_page.save_revision().publish()
 
                     self.stats.record_updated('EventPage')
                 else:
@@ -869,9 +869,8 @@ class Command(BaseCommand):
 
                     if not self.dry_run:
                         event_index.add_child(instance=event_page)
-                        event_page.save_revision().publish()
 
-                        # Set themes and arcs (ManyToMany)
+                        # Set themes and arcs BEFORE final save (ParentalManyToManyField requires this)
                         theme_uuids = event_data.get('theme_uuids') or []
                         themes = [self.themes_cache[uuid] for uuid in theme_uuids if uuid in self.themes_cache]
                         event_page.themes.set(themes)
@@ -879,6 +878,8 @@ class Command(BaseCommand):
                         arc_uuids = event_data.get('arc_uuids') or []
                         arcs = [self.arcs_cache[uuid] for uuid in arc_uuids if uuid in self.arcs_cache]
                         event_page.arcs.set(arcs)
+
+                        event_page.save_revision().publish()
 
                     self.stats.record_created('EventPage')
 
