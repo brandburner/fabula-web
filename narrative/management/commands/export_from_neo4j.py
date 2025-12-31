@@ -254,7 +254,7 @@ class Neo4jExporter:
         MATCH (a:Agent)
         WHERE a.status = 'canonical'
         OPTIONAL MATCH (a)-[:AFFILIATED_WITH]->(org:Organization)
-        RETURN a, org.uuid as org_uuid
+        RETURN a, org.org_uuid as org_uuid
         ORDER BY a.canonical_name
         """
 
@@ -382,16 +382,13 @@ class Neo4jExporter:
         """
         print("Exporting objects...")
 
+        # Uses pattern comprehension with head() to get first owner without duplicates
+        # (multiple OPTIONAL MATCH would create cartesian product if object has multiple owners)
         query = """
         MATCH (obj:Object)
         WHERE obj.status = 'canonical'
-        OPTIONAL MATCH (agent:Agent)-[:OWNS]->(obj)
-        WHERE agent.status = 'canonical'
-        OPTIONAL MATCH (org:Organization)-[:OWNS]->(obj)
-        WHERE org.status = 'canonical'
         RETURN obj,
-               agent.agent_uuid as owner_agent_uuid,
-               org.org_uuid as owner_org_uuid
+               head([(agent:Agent {status: 'canonical'})-[:OWNS]->(obj) | agent.agent_uuid]) as owner_agent_uuid
         ORDER BY obj.canonical_name
         """
 
@@ -408,8 +405,8 @@ class Neo4jExporter:
                 'purpose': self.safe_get(obj, 'foundational_purpose', ''),
                 'significance': self.safe_get(obj, 'foundational_significance', ''),
                 'potential_owner_mention': self.safe_get(obj, 'potential_owner_mention', ''),
-                'owner_agent_uuid': record.get('owner_agent_uuid'),
-                'owner_org_uuid': record.get('owner_org_uuid')
+                # Map to field name expected by import (potential_owner_uuid -> CharacterPage)
+                'potential_owner_uuid': record.get('owner_agent_uuid'),
             }
 
             objects.append(object_data)
@@ -505,17 +502,17 @@ class Neo4jExporter:
             List of event dictionaries with participations and involvements
         """
         # Main event query
+        # Uses pattern comprehensions for themes/arcs to avoid cartesian product issues
+        # that occur with multiple OPTIONAL MATCH + collect() clauses
         event_query = """
         MATCH (e:Event)-[:PART_OF_EPISODE]->(ep:Episode {episode_uuid: $episode_uuid})
         OPTIONAL MATCH (e)-[:PART_OF_SCENE]->(sb:SceneBoundary)
         OPTIONAL MATCH (e)-[:OCCURS_IN]->(loc:Location)
-        OPTIONAL MATCH (e)-[:EXEMPLIFIES_THEME]->(theme:Theme)
-        OPTIONAL MATCH (e)-[:PART_OF_ARC]->(arc:ConflictArc)
         RETURN e,
                sb.scene_uuid as scene_uuid,
                loc.location_uuid as location_uuid,
-               collect(DISTINCT theme.theme_uuid) as theme_uuids,
-               collect(DISTINCT arc.arc_uuid) as arc_uuids
+               [(e)-[:EXEMPLIFIES_THEME]->(t:Theme) | t.theme_uuid] as theme_uuids,
+               [(e)-[:PART_OF_ARC]->(a:ConflictArc) | a.arc_uuid] as arc_uuids
         ORDER BY sb.scene_uuid, e.sequence_in_scene
         """
 

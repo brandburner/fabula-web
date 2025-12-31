@@ -112,20 +112,21 @@ class ThemeDetailView(DetailView):
     context_object_name = 'theme'
     
     def get_context_data(self, **kwargs):
+        from django.db.models import Count
         context = super().get_context_data(**kwargs)
-        
+
         # Get events for this theme
         context['events'] = self.object.events.all().select_related(
             'episode', 'location'
         ).order_by('episode__episode_number', 'scene_sequence')
-        
+
         # Get other themes for exploration
         context['other_themes'] = Theme.objects.exclude(
             pk=self.object.pk
         ).annotate(
             event_count=Count('events')
         ).order_by('-event_count')[:8]
-        
+
         return context
 
 
@@ -408,7 +409,7 @@ class GraphView(ListView):
 
         # Sample characters (most connected)
         context['sample_characters'] = CharacterPage.objects.live().annotate(
-            event_count=Count('participations')
+            event_count=Count('event_participations')
         ).filter(event_count__gt=0).order_by('-event_count')[:5]
 
         # Sample themes (most events)
