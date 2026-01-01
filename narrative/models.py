@@ -742,6 +742,55 @@ class EventPage(Page):
     class Meta:
         ordering = ['episode__episode_number', 'scene_sequence', 'sequence_in_scene']
 
+    def get_participations_by_importance(self):
+        """
+        Return participations grouped by importance level, sorted by engagement.
+
+        Returns dict with keys: 'primary', 'secondary', 'mentioned', 'other'
+        Each containing a list of participations sorted by richness of data.
+        """
+        all_parts = self.participations.select_related('character')
+
+        grouped = {
+            'primary': [],
+            'secondary': [],
+            'mentioned': [],
+            'other': [],
+        }
+
+        for p in all_parts:
+            importance = (p.importance or '').lower().strip()
+            if importance in grouped:
+                grouped[importance].append(p)
+            elif importance:
+                grouped['other'].append(p)
+            else:
+                # Empty importance defaults to primary (active participant)
+                grouped['primary'].append(p)
+
+        # Sort within each group by engagement richness
+        def engagement_score(p):
+            """Higher score = more engaged/richer data = should appear first."""
+            score = 0
+            if p.what_happened:
+                score += 3  # Active action described
+            if p.emotional_state:
+                score += 2  # Emotional engagement captured
+            if p.goals:
+                score += 1  # Goals documented
+            return -score  # Negative for descending sort
+
+        for key in grouped:
+            grouped[key].sort(key=engagement_score)
+
+        return grouped
+
+    def get_primary_participants(self):
+        """Get only primary (active) participants."""
+        return self.participations.filter(
+            importance__in=['primary', '']
+        ).select_related('character')
+
     def get_connections_from(self):
         """Get narrative connections where this event is the source."""
         return NarrativeConnection.objects.filter(

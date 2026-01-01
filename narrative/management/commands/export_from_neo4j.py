@@ -68,7 +68,7 @@ class Neo4jExporter:
     5. Writing organized YAML files
     """
 
-    def __init__(self, uri: str, user: str, password: str, output_dir: Path):
+    def __init__(self, uri: str, user: str, password: str, output_dir: Path, database: str = None):
         """
         Initialize the Neo4j exporter.
 
@@ -77,11 +77,13 @@ class Neo4jExporter:
             user: Neo4j username
             password: Neo4j password
             output_dir: Directory to write YAML files
+            database: Neo4j database name (default: neo4j)
         """
         self.uri = uri
         self.user = user
         self.password = password
         self.output_dir = output_dir
+        self.database = database
         self.driver: Optional[Driver] = None
 
         # Statistics for manifest
@@ -128,7 +130,7 @@ class Neo4jExporter:
         Returns:
             List of result records as dictionaries
         """
-        with self.driver.session() as session:
+        with self.driver.session(database=self.database) as session:
             result = session.run(query, parameters or {})
             return [dict(record) for record in result]
 
@@ -1052,6 +1054,17 @@ class Command(BaseCommand):
             default=None,
             help='Neo4j password (default: from settings or mythology)'
         )
+        parser.add_argument(
+            '--database',
+            type=str,
+            default=None,
+            help='Neo4j database name (default: from settings or neo4j)'
+        )
+        parser.add_argument(
+            '-y', '--yes',
+            action='store_true',
+            help='Skip confirmation prompt for overwriting existing files'
+        )
 
     def handle(self, *args, **options):
         """Execute the export command."""
@@ -1063,6 +1076,7 @@ class Command(BaseCommand):
         uri = options['uri'] or getattr(settings, 'NEO4J_URI', 'bolt://localhost:7689')
         user = options['user'] or getattr(settings, 'NEO4J_USER', 'neo4j')
         password = options['password'] or getattr(settings, 'NEO4J_PASSWORD', 'mythology')
+        database = options['database'] or getattr(settings, 'NEO4J_DATABASE', 'neo4j')
 
         # Get output directory
         output_dir = Path(options['output']).absolute()
@@ -1071,10 +1085,11 @@ class Command(BaseCommand):
         self.stdout.write(self.style.SUCCESS('\nNeo4j Export Configuration:'))
         self.stdout.write(f"  URI: {uri}")
         self.stdout.write(f"  User: {user}")
+        self.stdout.write(f"  Database: {database}")
         self.stdout.write(f"  Output: {output_dir}\n")
 
         # Confirm if output directory exists and is not empty
-        if output_dir.exists():
+        if output_dir.exists() and not options['yes']:
             existing_files = list(output_dir.glob('*'))
             if existing_files:
                 self.stdout.write(
@@ -1090,7 +1105,7 @@ class Command(BaseCommand):
 
         # Create exporter and run
         try:
-            exporter = Neo4jExporter(uri, user, password, output_dir)
+            exporter = Neo4jExporter(uri, user, password, output_dir, database)
             exporter.export_all()
 
             self.stdout.write(

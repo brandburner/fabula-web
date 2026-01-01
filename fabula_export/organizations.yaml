@@ -1,5 +1,5 @@
 # Organization Data
-# Generated: 2025-12-31T17:41:05.240717
+# Generated: 2026-01-01T17:30:17.380292
 
 - fabula_uuid: organization_96c82d14cc0a
   canonical_name: 10th Corps (Eastern Front)
@@ -265,20 +265,14 @@
     leadership is shown in the material, and its power manifests through coordinated
     legislative and political pressure.
   sphere_of_influence: Financial‑sector Political Lobbying and Legislative Pressure
-- fabula_uuid: organization_1265cdea8f38
-  canonical_name: Bartlet Administration (Executive Office of the President)
-  description: The Bartlet Administration operates as the Executive Office around
-    President Jed Bartlet, coordinating federal governance, security, personnel, and
-    public messaging. In the current material it acts as the originating source for
-    institutional templates and precedents (the recurring thirty‑year memo), directs
-    rapid damage‑control and press strategy, and executes tactical personnel maneuvers—promotions,
-    appointments, and public framing—to preserve institutional advantage. The organization
-    functions through a clear hierarchy from the President to senior advisors, chiefs
-    of staff, communications officers, and junior staff; it mobilizes aides, the press
-    office, and interagency partners (e.g., OMB) to manage scandals, shape narrative,
-    and pursue policy goals while balancing political optics against substantive debate.
-  sphere_of_influence: Federal Executive Governance, Presidential Messaging, Crisis
-    Management, and Personnel Operations
+- fabula_uuid: organization_effd9085baf5
+  canonical_name: Bartlet Administration (White House / Executive Office of the President)
+  description: Broad Executive Office hierarchy under President Josiah Bartlet, coordinating
+    governance, policy, scandals, and interagency efforts; formal employer of West
+    Wing senior staff like C.J. and Carol; distinct from public crowds, visitors,
+    or narrower frontline traveling staff.
+  sphere_of_influence: Executive governance, West Wing operations, presidential communications,
+    crisis management, and logistical coordination
 - fabula_uuid: organization_20403619b52e
   canonical_name: Bartlet Presidential Campaign (Electoral Campaign Organization)
   description: A coordinated presidential campaign apparatus organized to elect Josiah
@@ -294,13 +288,8 @@
     political dynamics
 - fabula_uuid: org_192de0a9e91e
   canonical_name: Bartlet Supporters
-  description: An informal, grassroots assembly of supporters who mobilize at President
-    Jed Bartlet's public appearances to supply visible affirmation—applause, vocal
-    approval, and physical presence. They lack formal hierarchy or organizational
-    infrastructure and operate through spontaneous crowd dynamics. In the processed
-    material they rally around a rhetorical turning point, amplify the administration's
-    moral framing, shape event optics, and increase both political momentum and partisan
-    risk as witnessed by administration agents.
+  description: Pro-Bartlet group focused on affirmation, distinct from opposing anti-Bartlet
+    protesters.
   sphere_of_influence: Grassroots Political Support and Public Constituency (Electoral
     Optics and Event Influence)
 - fabula_uuid: org_7adaba04c14f
@@ -335,14 +324,6 @@
     single centralized hierarchy; it functions narratively as an exemplar of corporate
     money shaping confirmations, legislation, and public opinion.
   sphere_of_influence: Corporate Political Influence and Electoral Campaign Support
-- fabula_uuid: org_333973d8c5eb
-  canonical_name: Board of Directors
-  description: A corporate decision-making body that evaluates executive presentations,
-    authorizes strategic direction, and confers formal approval or censure. In the
-    current material the board functions as the primary audience for quarterly results,
-    exercising evaluative authority over John Smith's performance; its scrutiny and
-    endorsement materially affect executive standing and internal power dynamics.
-  sphere_of_influence: Corporate Governance and Executive Oversight
 - fabula_uuid: organization_31feeaa9961d
   canonical_name: Broadcast Crew (Cameramen, Gaffers, Stage Managers)
   description: A temporary on-site television production unit tasked with assembling
@@ -1267,6 +1248,12 @@
     coordinated White House damage control and press-management responses.
   sphere_of_influence: International summitry and intergovernmental diplomacy; high‑level
     political and economic forum with significant media and public‑opinion impact
+- fabula_uuid: organization_3934aa485b54
+  canonical_name: General Anti-Bartlet Protesters
+  description: Expresses broad disapproval of President Bartlet at various public
+    events, distinct from issue-specific protests like those against ceremonial vermeil.
+  sphere_of_influence: Public Protest and Local Political Opposition (Event Optics
+    and Media Pressure)
 - fabula_uuid: org_a9ccb7810a99
   canonical_name: Geneva Trade Negotiator Delegation (international drafting body)
   description: A delegation of international trade negotiators who convened in Geneva
@@ -2415,13 +2402,8 @@
     Executive Branch operational and scheduling support for senior officials
 - fabula_uuid: organization_1e5bf9838045
   canonical_name: Office of Congressman Lillienfield - Staff
-  description: The Office of Congressman Lillienfield - Staff functions as Lillienfield's
-    immediate political operations and communications team. They assemble and distribute
-    statistical figures, provide logistical and operational support for on-air press
-    conferences, and amplify partisan narratives aimed at White House personnel. Structured
-    as a hierarchical aide corps, they coordinate messaging, circulate briefing materials
-    to media and allies, and act as the congressman’s operational arm in public confrontations
-    and crisis moments.
+  description: Congressman Lillienfield's team for partisan communications and press
+    logistics
   sphere_of_influence: Congressional Political Operations and Media Communications
     (press event logistics, message amplification, partisan information distribution)
 - fabula_uuid: organization_56a0fe7977e1
@@ -2441,14 +2423,7 @@
     Screening for Executive Office Staff
 - fabula_uuid: organization_92744ab71521
   canonical_name: Office of Katie Simon (Personal Scheduling & Access Liaison)
-  description: The Office of Katie Simon functions as an internal White House appointment
-    and coordination node tied to Katie Simon, operating as a staff-run scheduling
-    hub that West Wing aides contact to arrange meetings, route personnel, and control
-    timing for appointments. Observed activities include receiving coordination requests
-    from senior gatekeepers (e.g., Leo), aligning executive calendars, and managing
-    on-the-ground logistics and access for visitors and briefings. It acts as a liaison
-    between White House offices and individual executive staff, enforcing scheduling
-    constraints and facilitating rapid coordination under time pressure.
+  description: Led by Katie Simon for White House-affiliated internal operations
   sphere_of_influence: White House internal scheduling and staff coordination; Executive
     Office appointment management
 - fabula_uuid: org_a9315686d5b3
@@ -2524,13 +2499,8 @@
   sphere_of_influence: Federal Energy Policy and Executive-Branch Coordination
 - fabula_uuid: organization_dc59d2d79148
   canonical_name: Office of the First Lady — Staff (Lilly Mays' Staff)
-  description: The Office of the First Lady — Staff serves as Lilly Mays' immediate
-    media and public‑engagement team, directing her communications strategy, arranging
-    on‑camera appearances, and coordinating advocacy tactics. In the processed material
-    they plan and execute a tactically risky television placement, make rapid outreach
-    decisions to legislative allies, and operate as a compact, high‑trust group of
-    senior communicators and aides who shape the First Lady's public posture and influence
-    downstream policy negotiations.
+  description: Focused on First Lady Lilly Mays' media strategy and public advocacy,
+    separate from scheduling operations.
   sphere_of_influence: First Lady’s Communications, Media Strategy, and Political
     Advocacy (public appearances, rapid-response media operations, liaison to legislative
     actors)
@@ -2790,15 +2760,16 @@
     commission used for tactical deception and intra-administration maneuvering
 - fabula_uuid: organization_dcf8f426444d
   canonical_name: President's Council on Physical Fitness
-  description: The President's Council on Physical Fitness operates as a federal advisory
-    and public-facing office promoting physical fitness while also functioning as
-    an administrative and credentialing node for the White House. In the processed
-    material it appears as Lynette's affiliation and the source of routine internal
-    communications (a forwarded raisin‑muffin calorie email). The Council supplies
-    named personnel, legitimizes federal presence at presidential events, and interfaces
-    directly with executive staff for logistical coordination and routine vetting.
+  description: Fitness advisory with Lynette affiliation and event logistics; separate
+    from presidential frontline entourage.
   sphere_of_influence: Federal public health advisory; executive-branch administrative
     coordination, credentialing, and logistical support for White House events
+- fabula_uuid: organization_d98c9b520d25
+  canonical_name: President's Frontline Staff (Public Entourage)
+  description: Focuses on immediate public protection, optics, and family interactions
+    (e.g., Zoey); distinct from fitness advisory councils.
+  sphere_of_influence: Executive Office Operations, Presidential Support, Protective
+    Coordination, and Rapid Messaging/Optics
 - fabula_uuid: org_2554acf49747
   canonical_name: Presidential Advance Team (Advance Team)
   description: An operational presidential scheduling unit responsible for preparing
@@ -3600,17 +3571,6 @@
     by statutes and institutional norms.
   sphere_of_influence: National Executive Authority — Clemency, Political Decision‑Making,
     and Interactions with Federal Legal Institutions
-- fabula_uuid: organization_d98c9b520d25
-  canonical_name: The President's Staff (Office of the President)
-  description: A frontline executive support apparatus that accompanies and protects
-    the President in public settings, provides immediate operational coordination,
-    and manages interpersonal and institutional optics. In the current material they
-    move with the President during exits, assist with departures, trade casual banter
-    with family members, and function as the proximate group under protective detail
-    and within which loyalties and social relationships (e.g., with Zoey) are measured
-    against professional boundaries.
-  sphere_of_influence: Executive Office Operations, Presidential Support, Protective
-    Coordination, and Rapid Messaging/Optics
 - fabula_uuid: organization_375dd1a7b82c
   canonical_name: The Salvation Army (local charitable nonprofit — scene recipient)
   description: The Salvation Army appears as a local charitable and religious nonprofit
@@ -3664,16 +3624,6 @@
     to adversarial critic depending on coverage.
   sphere_of_influence: National Political Journalism and Media Influence; Public Opinion
     and Agenda‑Setting
-- fabula_uuid: organization_effd9085baf5
-  canonical_name: The White House (Administration / Executive Office of the President)
-  description: A centralized executive institution housing the President and West
-    Wing senior staff that supplies institutional context and authority for on‑site
-    aides, pressroom personnel, and communications operations. In the processed material
-    it functions as the employer and operational backdrop for C.J., Danny, and Carol,
-    shaping messaging choices, enabling rapid logistical responses, and containing
-    private disputes through hierarchical routines and operational imperatives.
-  sphere_of_influence: Executive governance, West Wing operations, presidential communications,
-    crisis management, and logistical coordination
 - fabula_uuid: org_3dd43a6b16c7
   canonical_name: The World Church of the Creator
   description: A domestic white‑supremacist extremist organization identified in the
@@ -4156,25 +4106,10 @@
     antagonist that seeks reputational leverage through false or opportunistic attribution.
   sphere_of_influence: Paramilitary/Extremist Action, Information Warfare and Propaganda
     Attribution
-- fabula_uuid: organization_3934aa485b54
-  canonical_name: Unspecified Anti‑Bartlet Protesters
-  description: A loosely organized crowd of local demonstrators who mobilize at public
-    events to express vocal disapproval of President Jed Bartlet. Their activities
-    in the processed material include holding signs, creating noise across the street
-    from an official engagement, and shaping event optics; they exhibit no formal
-    hierarchy or sustained organizational infrastructure and influence the political
-    moment through visible protest and media attention rather than coordinated policy
-    advocacy.
-  sphere_of_influence: Public Protest and Local Political Opposition (Event Optics
-    and Media Pressure)
 - fabula_uuid: organization_1d78f11c5ece
   canonical_name: Vermeil Centerpiece Protestors
-  description: A loosely organized cohort of demonstrators mobilized to oppose the
-    display and use of vermeil centerpieces at a state dinner. They stage visible
-    public protests and symbolic demonstrations aimed at shaping public perception
-    and forcing adjustments to West Wing messaging. The group exhibits no formal hierarchy
-    in the processed material and functions primarily as a catalyst for media scrutiny
-    and internal policy debate.
+  description: Mobilized exclusively against vermeil centerpieces at a state dinner,
+    separate from general anti-Bartlet demonstrations.
   sphere_of_influence: Public Protest and Media Pressure on State Ceremonial Messaging
 - fabula_uuid: org_255ce9e7ddea
   canonical_name: Vice President's Campaign
@@ -4296,12 +4231,8 @@
     reputational exposure within White House staff operations
 - fabula_uuid: organization_58eaaa97c4fa
   canonical_name: White House Ceremonial Visitors and Onlookers (ceremonial spaces)
-  description: A loosely organized assembly of visitors and onlookers who gather within
-    White House ceremonial spaces to provide a live public audience, applause, and
-    immediate witness to presidential engagements. Lacking formal leadership or command,
-    the group shapes event atmosphere through applause, silence, and physical presence,
-    functions as a visible political barometer, and exerts immediate pressure on White
-    House messaging, security responses, and the dramatic tone of official interactions.
+  description: Distinct from White House administrative staff or executive operations;
+    represents transient public crowds in ceremonial areas.
   sphere_of_influence: Public political presence, event optics, and immediate situational
     security influence within presidential venues
 - fabula_uuid: org_96e06cb4f0fc
@@ -4316,11 +4247,11 @@
   sphere_of_influence: Presidential communications, media operations, crisis messaging,
     and embedded polling coordination within the West Wing
 - fabula_uuid: organization_d9e6e01df82b
-  canonical_name: White House Counsel's Office (Executive Office of the President)
-  description: The White House Counsel's Office functions as the administration's
-    in-house legal authority, advising the President and senior aides on nominations,
-    press issues, and personnel matters. In the processed material it acts as the
-    confirming legal source for factual details about the President's nominations,
+  canonical_name: White House Counsel's Office
+  description: The White House Counsel's Office (also referred to as Counsel's Office)
+    functions as the administration's in-house legal authority, advising the President
+    and senior aides on nominations, press issues, and personnel matters. It acts
+    as the confirming legal source for factual details about the President's nominations,
     enforces staff compliance, initiates and directs internal inquiries, and coordinates
     escalation with external bodies such as the Department of Justice. The office
     operates as a hierarchical legal unit embedded in the Executive Office and converts

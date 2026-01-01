@@ -74,6 +74,7 @@
         {# ============================================================= #}
         {# PARTICIPANTS SECTION #}
         {# ============================================================= #}
+        {% with parts=page.get_participations_by_importance %}
         <section class="mb-12">
             <div class="flex items-center gap-3 mb-8">
                 <div class="p-2 bg-emerald-500/10 rounded-lg">
@@ -88,17 +89,65 @@
                 </span>
             </div>
 
-            <div class="space-y-4 stagger-children" x-data="{ expanded: {} }">
-                {% for participation in page.participations.all %}
+            {# Primary participants - the main actors #}
+            {% if parts.primary %}
+            <div class="space-y-4 stagger-children mb-8" x-data="{ expanded: {} }">
+                {% for participation in parts.primary %}
                     {% include "includes/participation_card.html" with participation=participation %}
-                {% empty %}
-                <div class="text-slate-500 text-sm p-6 bg-slate-900/30 rounded-xl border border-slate-800/50 text-center">
-                    <i data-lucide="user-x" class="w-8 h-8 mx-auto mb-2 text-slate-700"></i>
-                    <p>No character participations recorded</p>
-                </div>
                 {% endfor %}
             </div>
+            {% endif %}
+
+            {# Secondary participants - supporting roles #}
+            {% if parts.secondary %}
+            <div class="mb-8">
+                <div class="flex items-center gap-2 text-sm font-semibold text-slate-400 mb-4 uppercase tracking-wider">
+                    <i data-lucide="users" class="w-4 h-4 text-slate-500"></i>
+                    <span>Supporting</span>
+                    <span class="px-2 py-0.5 text-xs bg-slate-800 text-slate-500 rounded">{{ parts.secondary|length }}</span>
+                </div>
+                <div class="space-y-3" x-data="{ expanded: {} }">
+                    {% for participation in parts.secondary %}
+                        {% include "includes/participation_card.html" with participation=participation %}
+                    {% endfor %}
+                </div>
+            </div>
+            {% endif %}
+
+            {# Mentioned characters - referenced but not physically present #}
+            {% if parts.mentioned %}
+            <div x-data="{ showMentioned: false }">
+                <button @click="showMentioned = !showMentioned"
+                        class="flex items-center gap-2 text-sm font-semibold text-slate-500 hover:text-slate-400 transition-colors mb-4 uppercase tracking-wider">
+                    <i data-lucide="message-circle" class="w-4 h-4"></i>
+                    <span>Mentioned</span>
+                    <span class="px-2 py-0.5 text-xs bg-slate-800/50 text-slate-600 rounded">{{ parts.mentioned|length }}</span>
+                    <i data-lucide="chevron-down" class="w-4 h-4 transition-transform" :class="{ 'rotate-180': showMentioned }"></i>
+                </button>
+                <div x-show="showMentioned" x-collapse class="space-y-3">
+                    {% for participation in parts.mentioned %}
+                    <div class="p-4 bg-slate-900/30 border border-slate-800/50 rounded-xl opacity-75">
+                        <a href="{% pageurl participation.character %}" class="font-medium text-slate-300 hover:text-emerald-400 transition-colors">
+                            {{ participation.character.canonical_name }}
+                        </a>
+                        {% if participation.what_happened %}
+                        <p class="text-sm text-slate-500 mt-1">{{ participation.what_happened|truncatewords:20 }}</p>
+                        {% endif %}
+                    </div>
+                    {% endfor %}
+                </div>
+            </div>
+            {% endif %}
+
+            {# Empty state #}
+            {% if not parts.primary and not parts.secondary and not parts.mentioned %}
+            <div class="text-slate-500 text-sm p-6 bg-slate-900/30 rounded-xl border border-slate-800/50 text-center">
+                <i data-lucide="user-x" class="w-8 h-8 mx-auto mb-2 text-slate-700"></i>
+                <p>No character participations recorded</p>
+            </div>
+            {% endif %}
         </section>
+        {% endwith %}
 
         {# ============================================================= #}
         {# OBJECT INVOLVEMENTS SECTION #}

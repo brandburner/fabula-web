@@ -1,5 +1,5 @@
 # Events for Celestial Navigation
-# Generated: 2025-12-31T17:41:12.763364
+# Generated: 2026-01-01T17:30:25.279645
 
 episode_uuid: ep_sea_ser_the_west_wing_s01_e15
 episode_title: Celestial Navigation
@@ -57,7 +57,7 @@ events:
     - statesmanlike (as invoked)
     - focused on symbolic gestures
     - measured
-    importance: primary
+    importance: mentioned
   - character_uuid: agent_a1a50da165c5
     emotional_state: Wry, performative exasperation masking urgency — amused on the
       surface while steeling for political containment and narrative reclamation underneath.
@@ -508,6 +508,21 @@ events:
     - Painted murals on the walls
     - Echoes of camera flashes and reporter foot traffic
     - Doorway leading directly to the Oval Office
+  - location_uuid: location_7a05dd9edc84
+    description_of_involvement: The Outer Oval Office serves as the staging area where
+      senior staff assemble and trade terse, anxious asides before moving into the
+      Oval Office—it sets the mood of anticipatory triage and immediate operational
+      pressure.
+    observed_atmosphere: Tense, expectant; a held breath before formal accountability.
+    functional_role: Holding area and preliminary briefing spot for senior staff before
+      the main Oval Office meeting.
+    symbolic_significance: Represents the threshold between private panic and public
+      presidential authority.
+    access_restrictions: Restricted to senior staff and immediate aides in this moment.
+    key_environmental_details:
+    - Dim hallway light filtering in
+    - Low, urgent conversation and clipped questions
+    - Folded papers and briefed staff waiting
   - location_uuid: location_d2a0589bae15
     description_of_involvement: Connecticut is mentioned as an antique‑shopping stop
       in Sam's itinerary, adding a domestic touch of normalcy to Mendoza's trip and
@@ -538,21 +553,6 @@ events:
     - Salt air and leisurely coastal imagery (implied)
     - Long travel time and scenic routes described
     - Contrast with West Wing urgency
-  - location_uuid: location_501e84a66aa7
-    description_of_involvement: The Outer Oval Office serves as the staging area where
-      senior staff assemble and trade terse, anxious asides before moving into the
-      Oval Office—it sets the mood of anticipatory triage and immediate operational
-      pressure.
-    observed_atmosphere: Tense, expectant; a held breath before formal accountability.
-    functional_role: Holding area and preliminary briefing spot for senior staff before
-      the main Oval Office meeting.
-    symbolic_significance: Represents the threshold between private panic and public
-      presidential authority.
-    access_restrictions: Restricted to senior staff and immediate aides in this moment.
-    key_environmental_details:
-    - Dim hallway light filtering in
-    - Low, urgent conversation and clipped questions
-    - Folded papers and briefed staff waiting
   - location_uuid: location_81f147795700
     description_of_involvement: The Trans-Canada Highway appears in Sam's itinerary
       as the plausible backbone of Mendoza's scenic drive—its invocation gives comedic
@@ -828,7 +828,7 @@ events:
     - Painted murals on the walls
     - Door from which the President enters
     - Implied presence of reporters and camera flash earlier
-  - location_uuid: location_501e84a66aa7
+  - location_uuid: location_7a05dd9edc84
     description_of_involvement: The Outer Oval Office is the waiting area where senior
       staff assemble before the formal meeting; it functions as the staging ground
       that funnels private triage into the Oval Office confrontation.
@@ -1452,7 +1452,7 @@ events:
     - provocative interrogator
     - focused on extracting presidential stance
     - professionally insistent
-    importance: primary
+    importance: mentioned
   - character_uuid: agent_6ea82690fa05
     emotional_state: Composed and confident in his moral read; unaware or unconcerned
       with immediate tactical consequences.
@@ -1584,6 +1584,23 @@ events:
       murmur of reporters.
     - A crowded doorway leading back toward the Oval Office that compresses staff
       movement.
+  - location_uuid: location_7a05dd9edc84
+    description_of_involvement: The Outer Oval Office is invoked as the immediate
+      administrative threshold the President and staff move toward after the exchange;
+      it functions as the administrative hub where follow-up triage and private coordination
+      will occur.
+    observed_atmosphere: A transitory corridor of focused urgency—less public than
+      the Mural Room but charged with the aftermath of the on-camera slip.
+    functional_role: Refuge and command center for private crisis management and staff
+      coordination after the public interaction.
+    symbolic_significance: Marks the return from public performance to the engine
+      room of governance and damage-control.
+    access_restrictions: Restricted to senior staff and aides; movement controlled
+      and purposeful.
+    key_environmental_details:
+    - Hallway noise fading as they leave the press scrum.
+    - Natural light filtering from the Oval and the sense of moving from stage to
+      backstage.
   - location_uuid: location_953b08eabfec
     description_of_involvement: 'Portugal exists here as a referenced, remote geographic
       fact: Toby''s correction that the U.N. ambassador is in Portugal punctures Sam''s
@@ -1601,23 +1618,6 @@ events:
     - Different time zone and physical distance that make the ambassador's presence
       impossible.
     - Embassy/diplomatic protocols implied as governing the ambassador's movements.
-  - location_uuid: location_501e84a66aa7
-    description_of_involvement: The Outer Oval Office is invoked as the immediate
-      administrative threshold the President and staff move toward after the exchange;
-      it functions as the administrative hub where follow-up triage and private coordination
-      will occur.
-    observed_atmosphere: A transitory corridor of focused urgency—less public than
-      the Mural Room but charged with the aftermath of the on-camera slip.
-    functional_role: Refuge and command center for private crisis management and staff
-      coordination after the public interaction.
-    symbolic_significance: Marks the return from public performance to the engine
-      room of governance and damage-control.
-    access_restrictions: Restricted to senior staff and aides; movement controlled
-      and purposeful.
-    key_environmental_details:
-    - Hallway noise fading as they leave the press scrum.
-    - Natural light filtering from the Oval and the sense of moving from stage to
-      backstage.
   organization_involvements: []
 - fabula_uuid: cand_evt_scene_227bdd5e1339f1a6_1
   title: 'On-Air Rebuke: Katie Calls Out Josh''s Evasion'
@@ -1709,7 +1709,7 @@ events:
     - combative-by-default (implied)
     - evasive
     - tactically quick-thinking
-    importance: primary
+    importance: mentioned
   object_involvements: []
   location_involvements: []
   organization_involvements: []
@@ -2301,7 +2301,7 @@ events:
     - decisive
     - burdened
     - politically attuned
-    importance: primary
+    importance: mentioned
   - character_uuid: agent_sam_seaborn_canonical
     emotional_state: Controlled and businesslike with a hint of relief — composed
       enough to formalize closure but not celebratory.
@@ -2668,7 +2668,7 @@ events:
     - steady
     - procedural
     - emotionally controlled
-    importance: primary
+    importance: mentioned
   - character_uuid: agent_a1a50da165c5
     emotional_state: Guilt and self-reproach giving way to professional urgency; surface
       apologetic vulnerability masking a spike of controlled anxiety.
@@ -3081,7 +3081,7 @@ events:
       through the operator to the President; the device remains the immediate instrument
       of presidential logistics.
   location_involvements:
-  - location_uuid: location_501e84a66aa7
+  - location_uuid: location_7a05dd9edc84
     description_of_involvement: 'The Outer Oval Office functions as the intimate staging
       area where Charlie places the call: a liminal space between private residence
       and executive work where small rituals occur and exhausted aides perform caretaking
@@ -3613,7 +3613,7 @@ events:
     - polite
     - curious
     - non-confrontational
-    importance: primary
+    importance: secondary
   - character_uuid: agent_a1a50da165c5
     emotional_state: Externally calm but inwardly preoccupied and anxious; appears
       professional and controlled while attention is pulled toward an urgent problem.
@@ -3739,7 +3739,7 @@ events:
     - impatient
     - controlled under pressure
     - politically attuned
-    importance: primary
+    importance: mentioned
   - character_uuid: agent_sam_seaborn_canonical
     emotional_state: Determined and slightly flustered but upbeat; focused on solving
       the immediate logistical problem.
@@ -3943,7 +3943,7 @@ events:
     - control-oriented
     - concerned
     - impatient
-    importance: primary
+    importance: mentioned
   - character_uuid: agent_sam_seaborn_canonical
     emotional_state: Focused and quietly anxious but outwardly steady — determined
       to solve the immediate logistical problem despite surrounding stress.
@@ -4209,7 +4209,7 @@ events:
     - humanly fallible
     - public-facing
     - influential
-    importance: primary
+    importance: mentioned
   - character_uuid: agent_710e1c1c4231
     emotional_state: Absent but portrayed as frustrated and publically combustible;
       implied indignation and the consequences of visible anger.
@@ -4230,7 +4230,7 @@ events:
     - passionate
     - publicly exposed
     - authoritative
-    importance: primary
+    importance: mentioned
   - character_uuid: agent_fe653442c492
     emotional_state: Amused and attentive, shifting between entertainment and judgment
       as they parse what is a joke and what is confession.
@@ -4700,7 +4700,7 @@ events:
     - vulnerable (as referenced)
     - innocent witness
     - traumatized (implied)
-    importance: primary
+    importance: mentioned
   - character_uuid: agent_8b1f3a7442de
     emotional_state: Worried and protective (as reported by Mendoza) — focused on
       immediate safety and clarity for her child and family.
@@ -4721,7 +4721,7 @@ events:
     - protective (in role as mother)
     - anxious (implied)
     - caretaker
-    importance: primary
+    importance: mentioned
   - character_uuid: agent_b6c7063ac760
     emotional_state: Used ironically — Toby's invocation casts Fife as laughable to
       reduce the moral authority of the arresting officers.
@@ -4744,7 +4744,7 @@ events:
     - comic archetype (as referenced)
     - bungling lawman (as shorthand)
     - satirical reference
-    importance: primary
+    importance: mentioned
   object_involvements:
   - object_uuid: object_17869e9a6750
     description_of_involvement: The Breathalyzer is referenced as the specific instrument
@@ -4916,7 +4916,7 @@ events:
     observed_traits:
     - institutional
     - policy-focused (implied)
-    importance: primary
+    importance: mentioned
   - character_uuid: agent_451536f09285
     emotional_state: Impatient and focused on procedural accountability — wants the
       unanswered question confronted.
@@ -5034,7 +5034,7 @@ events:
     - institutional authority (referenced)
     - political center of gravity
     - symbolic leverage
-    importance: primary
+    importance: mentioned
   - character_uuid: agent_e2d134c2a32c
     emotional_state: Impatient and tightly wound, masking anxiety with controlled
       stillness; focused on the consequences rather than theatrics.
@@ -5137,7 +5137,7 @@ events:
     - authoritative (implied)
     - procedural pressure
     - rapid responder (implied)
-    importance: primary
+    importance: mentioned
   - character_uuid: agent_sam_seaborn_canonical
     emotional_state: Controlled, outwardly composed; underneath is urgency and a tactical
       impatience to resolve a crisis before it metastasizes.
@@ -5829,7 +5829,7 @@ events:
     - decisive
     - strategic
     - institutionally minded
-    importance: primary
+    importance: mentioned
   - character_uuid: agent_e2d134c2a32c
     emotional_state: Implied weighed responsibility — measured exterior, likely privately
       apprehensive about managing an uncooperative nominee.
@@ -5875,7 +5875,7 @@ events:
     observed_traits:
     - institutional
     - catalytic (by absence)
-    importance: primary
+    importance: mentioned
   - character_uuid: agent_a1a50da165c5
     emotional_state: Controlled urgency — outwardly authoritative but carrying an
       undercurrent of anxiety about political fallout.
@@ -6649,7 +6649,7 @@ events:
     - authoritative (implied)
     - decisive (anticipated)
     - institutional center
-    importance: primary
+    importance: mentioned
   - character_uuid: agent_0eac97acdced
     emotional_state: Mortified and defensive — performing an unpleasant duty with
       discomfort while adhering to institutional obligations.
@@ -6672,7 +6672,7 @@ events:
     - embarrassed
     - professional
     - procedural
-    importance: primary
+    importance: mentioned
   - character_uuid: agent_a1a50da165c5
     emotional_state: Controlled urgency masking rising panic — pragmatic about next
       steps but culpable and anxious about escalation.
@@ -6766,7 +6766,7 @@ events:
     - direct
     - disciplined
     - uncompromising
-    importance: primary
+    importance: mentioned
   - character_uuid: agent_a1a50da165c5
     emotional_state: Tense, sharply focused; outwardly terse but inwardly mobilized
       toward immediate containment and control.
@@ -6899,7 +6899,7 @@ events:
     observed_traits:
     - principled (as referenced)
     - polarizing (symbolic of prior conflict)
-    importance: primary
+    importance: mentioned
   - character_uuid: agent_a1a50da165c5
     emotional_state: Surface control giving way to thinly masked anxiety—professional
       urgency overriding rhetorical composure; embarrassed about the interruption
@@ -7113,7 +7113,7 @@ events:
     - principled (as implied by her prior action)
     - vulnerable to political fallout
     - morally assertive (by prior behavior)
-    importance: primary
+    importance: mentioned
   - character_uuid: agent_b4b1742a7a5d
     emotional_state: Not shown; implied exposure and reputational risk due to the
       public question and ensuing equivocation.
@@ -7132,7 +7132,7 @@ events:
     observed_traits:
     - politically embattled (implied)
     - vulnerable to media scrutiny
-    importance: primary
+    importance: mentioned
   - character_uuid: agent_a1a50da165c5
     emotional_state: Quietly tense and pragmatic; thinking rapidly about contingency
       plans and damage-control tactics.
@@ -7268,7 +7268,7 @@ events:
     - professional control (implied)
     - responsible for messaging
     - subject to public accountability
-    importance: primary
+    importance: mentioned
   - character_uuid: agent_69471a80d433
     emotional_state: Absent physically in the scene; likely positioned as compromised
       or sidelined by the administration's rapid containment—implicitly vulnerable
@@ -7295,7 +7295,7 @@ events:
     - moral conviction (implied)
     - politicized vulnerability
     - symbolic lightning-rod
-    importance: primary
+    importance: mentioned
   - character_uuid: agent_a1a50da165c5
     emotional_state: Outwardly composed and authoritative; under the surface defensive
       and anxious to contain fallout—using bravado to hide uncertainty about the real
@@ -7391,7 +7391,7 @@ events:
     - professional
     - disciplined
     - media-savvy
-    importance: primary
+    importance: mentioned
   - character_uuid: agent_69471a80d433
     emotional_state: Conflicted and defensive — morally sure of her position but aware
       that her stance creates institutional risk and requires damage control.
@@ -7436,7 +7436,7 @@ events:
     - institutional
     - combative
     - vulnerable-to-advantage
-    importance: primary
+    importance: mentioned
   - character_uuid: agent_0eac97acdced
     emotional_state: Implicit discomfort and professional reluctance; placed in a
       role that will expose him to the brunt of reporters' scrutiny.
@@ -7653,7 +7653,7 @@ events:
     - implicit
     - provocative-by-reference
     - journalistically proximate
-    importance: primary
+    importance: mentioned
   - character_uuid: agent_a1a50da165c5
     emotional_state: Nervous and embarrassed on the surface; scrambling to downplay
       the remark while anxious about losing control of the narrative.
@@ -8370,7 +8370,7 @@ events:
     - politically pragmatic
     - protective of agenda
     - authoritative
-    importance: primary
+    importance: mentioned
   - character_uuid: agent_69471a80d433
     emotional_state: Positioned between defiance and vulnerability — likely defensive
       about her remarks but aware of institutional pressure and the cost of escalation.
@@ -8395,7 +8395,7 @@ events:
     - confrontational
     - principled
     - politically combustible
-    importance: primary
+    importance: mentioned
   - character_uuid: agent_a1a50da165c5
     emotional_state: Brisk and slightly embarrassed on the surface; inwardly apprehensive
       and culpable — a professional who knows he has to manage fallout he helped create.
@@ -8736,7 +8736,7 @@ events:
     - Bed with an empty side (First Lady absent)
     - Lamps switched on to illuminate the room
     - President's robe presented to be worn
-  - location_uuid: location_501e84a66aa7
+  - location_uuid: location_7a05dd9edc84
     description_of_involvement: The Outer/Oval Office is invoked as the destination
       where senior staff waits; it functions as the bureaucratic pressure point compelling
       Charlie to rouse the President. Though offscreen, its presence structures the
@@ -9393,7 +9393,7 @@ events:
     - probing
     - opportunistic
     - persistent
-    importance: primary
+    importance: mentioned
   - character_uuid: agent_a1a50da165c5
     emotional_state: Wry and rueful on the surface, masking an underlying anxiety
       about the political consequences of his impulsiveness and a defensiveness about
@@ -9816,7 +9816,7 @@ events:
     - provocative (by implication)
     - principled
     - politically risky
-    importance: primary
+    importance: mentioned
   - character_uuid: agent_a1a50da165c5
     emotional_state: Alert and lightly anxious — stoked to act, aware that timing
       and tone will determine political fallout.

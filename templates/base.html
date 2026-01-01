@@ -142,6 +142,22 @@
         .glow-on-hover:hover {
             box-shadow: 0 0 20px currentColor;
         }
+
+        /* Episode summary prose styling */
+        .episode-summary p {
+            margin-bottom: 1.5em;
+        }
+        .episode-summary p:last-child {
+            margin-bottom: 0;
+        }
+
+        /* Rich text prose styling */
+        .prose-narrative p {
+            margin-bottom: 1.25em;
+        }
+        .prose-narrative p:last-child {
+            margin-bottom: 0;
+        }
     </style>
     
     {% block extra_css %}{% endblock %}
@@ -149,40 +165,40 @@
 <body class="min-h-screen bg-slate-950 text-slate-100 antialiased">
     {# Header #}
     <header class="fixed top-0 left-0 right-0 z-50 glass border-b border-slate-800/50">
-        <div class="flex items-center justify-between px-6 h-16">
-            {# Logo and series title #}
-            <div class="flex items-center gap-4">
-                <a href="{% url 'wagtail_serve' '' %}" class="flex items-center gap-3 group transition-all duration-300">
-                    <div class="w-9 h-9 rounded-lg bg-gradient-to-br from-amber-500 via-orange-500 to-amber-600 animate-gradient flex items-center justify-center shadow-lg shadow-amber-500/25 group-hover:shadow-amber-500/40 group-hover:scale-105 transition-all duration-300">
-                        <i data-lucide="zap" class="w-5 h-5 text-white"></i>
+        <div class="flex items-center justify-between px-6 h-14">
+            {# Left: Logo + Back button #}
+            <div class="flex items-center gap-3">
+                <a href="{% url 'wagtail_serve' '' %}" class="flex items-center gap-2.5 group transition-all duration-300">
+                    <div class="w-8 h-8 rounded-lg bg-gradient-to-br from-amber-500 via-orange-500 to-amber-600 flex items-center justify-center shadow-lg shadow-amber-500/20 group-hover:shadow-amber-500/35 group-hover:scale-105 transition-all duration-300">
+                        <i data-lucide="zap" class="w-4 h-4 text-white"></i>
                     </div>
-                    <div class="flex items-baseline gap-2">
-                        <span class="font-bold tracking-tight text-white text-lg group-hover:text-amber-400 transition-colors">FABULA</span>
-                        {% block series_context %}
-                        <span class="text-slate-500 text-sm font-medium hidden sm:inline">{{ request.site.site_name|default:"Narrative Web" }}</span>
-                        {% endblock %}
-                    </div>
+                    <span class="font-bold tracking-tight text-white text-base group-hover:text-amber-400 transition-colors hidden sm:inline">FABULA</span>
                 </a>
+                <span class="text-slate-700 hidden sm:inline">|</span>
+                <button onclick="history.back()"
+                        class="flex items-center gap-1.5 px-2.5 py-1.5 text-sm text-slate-400 hover:text-white hover:bg-slate-800/50 rounded-md transition-all duration-200"
+                        title="Go back">
+                    <i data-lucide="chevron-left" class="w-4 h-4"></i>
+                    <span class="hidden sm:inline">Back</span>
+                </button>
             </div>
 
-            {# Navigation breadcrumb #}
-            <nav class="flex items-center gap-3 flex-1 justify-center">
-                {% block navigation %}
-                {% include "includes/breadcrumb.html" %}
+            {# Center: Context (series/episode info) #}
+            <div class="flex-1 flex justify-center">
+                {% block series_context %}
+                <span class="text-slate-500 text-sm font-medium">{{ request.site.site_name|default:"Narrative Web" }}</span>
                 {% endblock %}
-            </nav>
+            </div>
 
-            {# Actions - Contextual Graph View #}
+            {# Right: Graph View #}
             <div class="flex items-center gap-3">
                 {% block header_actions %}
                 {% contextual_graph_url as graph_url %}
                 <a href="{{ graph_url }}"
-                   class="group px-4 py-2 text-sm font-medium rounded-lg bg-gradient-to-r from-slate-800/80 to-slate-700/80 text-slate-300 hover:text-white border border-slate-700/50 hover:border-slate-600 transition-all duration-300 hover:shadow-lg hover:shadow-slate-900/50 hover:scale-105"
+                   class="group flex items-center gap-2 px-3 py-1.5 text-sm font-medium rounded-lg bg-slate-800/60 text-slate-400 hover:text-white border border-slate-700/50 hover:border-cyan-500/30 hover:bg-cyan-500/10 transition-all duration-300"
                    title="View in graph context">
-                    <span class="flex items-center gap-2">
-                        <i data-lucide="git-branch" class="w-4 h-4 group-hover:rotate-12 transition-transform duration-300"></i>
-                        <span class="hidden sm:inline">Graph View</span>
-                    </span>
+                    <i data-lucide="git-branch" class="w-4 h-4 text-cyan-400"></i>
+                    <span class="hidden sm:inline">Graph</span>
                 </a>
                 {% endblock %}
             </div>
@@ -190,7 +206,7 @@
     </header>
 
     {# Main content #}
-    <main class="pt-16">
+    <main class="pt-14">
         {% block content %}{% endblock %}
     </main>
 

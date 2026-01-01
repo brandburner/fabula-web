@@ -1,7 +1,7 @@
 {# Object involvement card - shows an object's role in an event #}
 {% load wagtailcore_tags %}
 
-<div class="p-4 bg-gradient-to-br from-slate-900/50 to-slate-900/30 border border-slate-800 rounded-xl hover:border-amber-500/30 transition-all group">
+<div x-data="{ expanded: false }" class="p-4 bg-gradient-to-br from-slate-900/50 to-slate-900/30 border border-slate-800 rounded-xl hover:border-amber-500/30 transition-all group">
     <div class="flex items-start gap-3">
         <div class="p-2 bg-amber-500/10 rounded-lg shrink-0">
             <i data-lucide="box" class="w-5 h-5 text-amber-400"></i>
@@ -20,22 +20,44 @@
             </p>
             {% endif %}
 
-            {# Status changes #}
+            {# Status changes - expandable #}
             {% if involvement.status_before_event or involvement.status_after_event %}
-            <div class="flex flex-wrap items-center gap-2 mt-3 text-xs">
-                {% if involvement.status_before_event %}
-                <div class="px-2 py-1 bg-slate-800/50 rounded text-slate-400">
-                    <span class="text-slate-500">Before:</span> {{ involvement.status_before_event|truncatewords:8 }}
+            <div class="mt-3 text-xs">
+                <div class="flex flex-wrap items-center gap-2">
+                    {% if involvement.status_before_event %}
+                    <div x-show="!expanded" class="px-2 py-1 bg-slate-800/50 rounded text-slate-400 truncate max-w-[200px]">
+                        <span class="text-slate-500">Before:</span> {{ involvement.status_before_event|truncatewords:8 }}
+                    </div>
+                    {% endif %}
+                    {% if involvement.status_before_event and involvement.status_after_event %}
+                    <i x-show="!expanded" data-lucide="arrow-right" class="w-3 h-3 text-slate-600"></i>
+                    {% endif %}
+                    {% if involvement.status_after_event %}
+                    <div x-show="!expanded" class="px-2 py-1 bg-amber-500/10 rounded text-amber-300 truncate max-w-[200px]">
+                        <span class="text-amber-400/70">After:</span> {{ involvement.status_after_event|truncatewords:8 }}
+                    </div>
+                    {% endif %}
+                    <button @click="expanded = !expanded"
+                            class="p-1 rounded hover:bg-slate-700/50 text-slate-500 hover:text-amber-400 transition-colors"
+                            :title="expanded ? 'Collapse' : 'Expand full text'">
+                        <i data-lucide="chevron-down" class="w-3.5 h-3.5 transition-transform" :class="expanded && 'rotate-180'"></i>
+                    </button>
                 </div>
-                {% endif %}
-                {% if involvement.status_before_event and involvement.status_after_event %}
-                <i data-lucide="arrow-right" class="w-3 h-3 text-slate-600"></i>
-                {% endif %}
-                {% if involvement.status_after_event %}
-                <div class="px-2 py-1 bg-amber-500/10 rounded text-amber-300">
-                    <span class="text-amber-400/70">After:</span> {{ involvement.status_after_event|truncatewords:8 }}
+                {# Expanded view #}
+                <div x-show="expanded" x-collapse class="mt-3 space-y-2 pl-2 border-l-2 border-amber-500/20">
+                    {% if involvement.status_before_event %}
+                    <div class="pl-3 py-1.5 bg-slate-800/30 rounded-r">
+                        <span class="text-slate-500 font-medium block mb-1">Before:</span>
+                        <span class="text-slate-400 leading-relaxed">{{ involvement.status_before_event }}</span>
+                    </div>
+                    {% endif %}
+                    {% if involvement.status_after_event %}
+                    <div class="pl-3 py-1.5 bg-amber-500/5 rounded-r">
+                        <span class="text-amber-400/70 font-medium block mb-1">After:</span>
+                        <span class="text-amber-300/90 leading-relaxed">{{ involvement.status_after_event }}</span>
+                    </div>
+                    {% endif %}
                 </div>
-                {% endif %}
             </div>
             {% endif %}
         </div>

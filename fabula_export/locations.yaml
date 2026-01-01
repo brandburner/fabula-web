@@ -1,5 +1,5 @@
 # Location Data
-# Generated: 2025-12-31T17:41:05.036474
+# Generated: 2026-01-01T17:30:17.181517
 
 - fabula_uuid: location_3301ed9a39b3
   canonical_name: 17th Street NW (formal White House approach — dawn, S1E16)
@@ -660,13 +660,8 @@
   parent_location_uuid: null
 - fabula_uuid: location_d38dc723fc44
   canonical_name: California Field Office
-  description: Sunlight slices through Venetian blinds into a cramped California field
-    office where ringing lines and stacked folders create an atmosphere of low-grade
-    urgency. Campaign posters and county maps peel at the edges of plaster; a whiteboard
-    lists names, meeting times, and a penciled note about a lead. Voices come and
-    go in clipped, practiced registers as staff reroute information. This is the practical
-    hub Josh's assistant calls when tracking Joey — a functional, evidence-driven
-    space where political movement turns into immediate action.
+  description: Campaign field office located specifically in California, distinct
+    from any Manchester-based office.
   location_type: Campaign Field Office
   parent_location_uuid: null
 - fabula_uuid: location_58b0b6afa603
@@ -721,14 +716,8 @@
   parent_location_uuid: null
 - fabula_uuid: location_79b083835d61
   canonical_name: Capitol Hill Conference Room
-  description: 'Fluorescent light flattens a long central table and rows of chairs;
-    paper stacks, half‑drunk coffee cups, and buzzing radios lace the air with bureaucratic
-    static. Footsteps in the corridor measure time like a metronome, while phones
-    punctuate hushed, tactical exchanges. The room acts as a scheduling iron—an appointment
-    that interrupts private friction, clamps down on intimacy, and converts combustible
-    debate into negotiable tasks. Joshua Lyman invokes it as the destination for legislative
-    outreach, where administration strategy collides with congressional scheduling,
-    pressure, and procedural leverage. Match confidence: 0.75.'
+  description: Generic conference room in the Capitol Hill area for administration-congressional
+    strategy meetings, as invoked by Joshua Lyman.
   location_type: Legislative Conference Room (Capitol Hill)
   parent_location_uuid: null
 - fabula_uuid: location_44de86be3110
@@ -743,15 +732,8 @@
   parent_location_uuid: null
 - fabula_uuid: location_171fd13b29ad
   canonical_name: Capitol and P Street
-  description: A frayed, public street corner on the edge of the Capitol precinct
-    where stone monuments and government facades give way to benches, stoops, and
-    the unnoticed margins that citizens and veterans claim. Wind carries the metallic
-    tang of traffic and the faint echo of distant debate; cigarette smoke and the
-    rustle of paper blend with worn leather coats and the hollow cadence of walkers.
-    The corner functions as an informal refuge — a meeting point, a place where veterans
-    gather, share stories, and pass time outside official institutions — and it operates
-    narratively as a directional lead and a human geography of neglect that anchors
-    Toby's search for dignity and burial for the forgotten serviceman.
+  description: ; specific public street corner (Capitol and P Street) outside the
+    main Capitol building, used as a veterans' gathering spot
   location_type: Urban Street Intersection
   parent_location_uuid: null
 - fabula_uuid: location_c44306ffcd47
@@ -965,18 +947,6 @@
     and message control ignite into immediate political action.
   location_type: West Wing Administrative Corridor
   parent_location_uuid: null
-- fabula_uuid: location_3902fa8db662
-  canonical_name: Conference Room
-  description: 'A windowless corporate conference room hums with fluorescent clarity,
-    its long lacquered table commanding the center while high-backed chairs ring it
-    like sentries. A projected slide glints on the far wall, charts and figures cutting
-    the air with clinical precision. John anchors the head of the table, measured
-    and unflappable, while Mary’s pen converts spoken totals into a single decisive
-    validation. The space concentrates attention into ritualized scrutiny: the scrape
-    of a chair, the click of a remote, the metallic taste of ambition. Authority consolidates
-    here, reputations affirmed or endangered beneath the cool, corporate light.'
-  location_type: Corporate Boardroom
-  parent_location_uuid: null
 - fabula_uuid: location_dd8384b416aa
   canonical_name: Conference‑Area Seafood Restaurant (casual, conference overflow)
   description: Salt-laced air and the close press of bodies mark a seafood restaurant
@@ -1164,14 +1134,8 @@
   parent_location_uuid: null
 - fabula_uuid: location_fc2ac0db2478
   canonical_name: Dentist's Office
-  description: A small, off‑site dental practice defined by antiseptic air, a reception
-    row of vinyl chairs, a receptionist's clipboard and the low hum of fluorescent
-    lights over dated magazines and a muted television. Behind a closed door a treatment
-    chair and a sterile tray wait, instruments glinting under task lamps. The space
-    reads as mundanely legitimate—a socially acceptable, time‑limited appointment
-    that functions narratively as a plausible alibi and a brief refuge from West Wing
-    pressure. Its ordinary sterility offers concealment and breathing room, allowing
-    characters a sanctioned hour away from immediate political heat.
+  description: Off-site private dental practice with reception and treatment areas,
+    distinct from residential therapy offices
   location_type: Dental Clinic (Private Practice)
   parent_location_uuid: null
 - fabula_uuid: location_ffcdcc745993
@@ -1257,15 +1221,8 @@
   parent_location_uuid: null
 - fabula_uuid: location_add33ac2db4e
   canonical_name: Doorway to C.J. Cregg's Office (West Wing)
-  description: 'Light from the private office slashes into a colder corridor, compressing
-    sound and emotion at a narrow threshold. Staff cluster and unspool conversations
-    here: Sam stands waiting, tense and guilty; Toby storms out, fury and fierce loyalty
-    coiled at his shoulders; Leo appears, blunt and commanding, arresting the moment
-    and redirecting it toward presidential triage. The doorway pinches intimacy into
-    urgency — voices harden, footsteps carry consequence, and the frame functions
-    as a staging ground where private panic is converted into institutional procedure.
-    The space tastes of coffee and paper, and authority arrives on the air like a
-    footstep.'
+  description: Specific to the West Wing of the White House, adjacent to C.J. Cregg's
+    private office.
   location_type: West Wing Executive Office Threshold
   parent_location_uuid: null
 - fabula_uuid: location_96441bf65e80
@@ -1280,27 +1237,10 @@
     re‑entry.
   location_type: Urban Business District
   parent_location_uuid: null
-- fabula_uuid: location_58f66c42bf1c
-  canonical_name: Downtown Corporate Boardroom
-  description: Glass canyons and honking traffic compress into a narrow urban throat
-    that leads to a corporate tower and its boardroom — the destination John slips
-    toward. Polished wood, a long table under cool recessed lights and the faint buzz
-    of HVAC create a stage for measured smiles and sharp questions. The air carries
-    exhaust, coffee, and a trace of expensive cologne; footsteps and murmured greetings
-    tighten into public scrutiny, turning presentation into trial and ritual farewell
-    into a crossing point.
-  location_type: Downtown Corporate Boardroom
-  parent_location_uuid: null
 - fabula_uuid: location_176e13029ba7
   canonical_name: Dr. Stanley's Apartment Office
-  description: Sunlight pours through curtained windows, outlining a compact residential
-    flat converted into a private therapy room. A worn couch faces a solitary armchair
-    across a low rug; a small wooden desk holds a mug and scattered index cards, and
-    a half-filled bookshelf and framed certificates anchor the wall. The air carries
-    the faint scent of tea and domestic detritus, warm yet claustrophobic; hushed,
-    surgical questioning snaps against it. The space functions as an intimate arena
-    where everyday triggers—the green evacuation card, a hummed Schubert melody—pry
-    open buried trauma and force raw confession and moral reckoning.
+  description: Residential apartment converted to private therapy office, distinct
+    from clinical dental spaces
   location_type: Psychiatrist's Apartment Office
   parent_location_uuid: null
 - fabula_uuid: location_ec549b3cc322
@@ -1864,19 +1804,6 @@
     action.
   location_type: Satellite Imagery Grid Coordinate
   parent_location_uuid: null
-- fabula_uuid: location_9cf76ad9450f
-  canonical_name: Hallway Outside Leo McGarry's Office (West Wing Corridor)
-  description: A tight, lamp-lit West Wing office that seals sound and urgency into
-    a private crucible. The door snaps shut like a circuit breaker after hallway confrontations,
-    turning public friction into compressed, combustible quiet. Phones sit within
-    arm's reach, stacks of paper and a humming scanner crowd the desk, and light pools
-    in deliberate islands. Staff press at the doorway; knocks and slammed doors ricochet
-    through the room's small geometry. Courier envelopes, late-night plans, and whispered
-    strategems arrive here—this is a triage chamber for reputation, a refuge for blunt
-    counsel and a pressure-filled stage where private anxiety collides with public
-    consequence.
-  location_type: Presidential West Wing Corridor
-  parent_location_uuid: null
 - fabula_uuid: location_bf98c275a4c7
   canonical_name: Hallway Outside the Hearing Room (Hearing Room Exterior — S1E15
     'Celestial Navigation')
@@ -2343,18 +2270,6 @@
     and an emotional stage.'
   location_type: West Wing Private Office
   parent_location_uuid: null
-- fabula_uuid: location_382ec18862ce
-  canonical_name: John Smith's Office
-  description: 'Sunlight slants across a polished desk and a heavy leather chair,
-    setting a stage of quiet authority where small gestures carry outsized meaning.
-    The room smells faintly of coffee and paper; a nameplate, framed credentials,
-    and a neat stack of briefing folders anchor the space. Mornings here follow a
-    scripted choreography: a controlled entrance, a warm but abbreviated acknowledgement
-    from a colleague, and the secretary''s measured delivery of coffee as ceremonial
-    service. The office functions as a crucible for status, rehearsal for public performance,
-    and a psychological buffer before professional trials.'
-  location_type: Executive Office
-  parent_location_uuid: null
 - fabula_uuid: location_2ec5b87b4080
   canonical_name: Johns Hopkins Medical Center (Baltimore)
   description: Johns Hopkins Medical Center stands as a large, clinical academic complex
@@ -2694,13 +2609,8 @@
   parent_location_uuid: null
 - fabula_uuid: location_40ed750d0e79
   canonical_name: Leo McGarry's Office (Chief of Staff's Office)
-  description: Compact, private West Wing Chief of Staff's office that functions as
-    both command center and personal confessional. Lamplight, a polished desk, leather
-    chairs, briefing folders, coffee, and a muted phone create an ordered chaos where
-    staffing decisions, urgent triage, and moral counsel converge. The room operates
-    as a decision engine and institutional locus of authority—timed entries, a waiting
-    aide, Marines at attention, and confidentiality protocols mark it as Leo McGarry's
-    operational and strategic workspace.
+  description: Personal office of White House Chief of Staff Leo McGarry in the West
+    Wing
   location_type: West Wing Executive Office (Chief of Staff's Office)
   parent_location_uuid: null
 - fabula_uuid: location_852fb72050a1
@@ -3236,13 +3146,8 @@
   parent_location_uuid: null
 - fabula_uuid: location_bbec1be29238
   canonical_name: New Hampshire (U.S. state — retail-primary political destination)
-  description: 'A Northeastern state that reads as political terrain as much as geography:
-    cold, compact towns and early‑morning main streets that stage retail life and
-    town‑hall ritual. Here, local civic heat converts into national consequence —
-    delegates like Dr. Josiah Bartlet carry municipal loyalties into federal reckoning.
-    Smells of wood smoke and thin winter air mingle with campaign signage and advance
-    teams; the place functions as a decisive political destination where schedule,
-    optics, and everyday voters tighten into urgent pressure on the presidency.'
+  description: Distinct from New York State; emphasizes early primary politics, cold
+    towns, and Dr. Josiah Bartlet's origins.
   location_type: U.S. State / Political Destination
   parent_location_uuid: null
 - fabula_uuid: location_b45e34d1f1ae
@@ -3271,15 +3176,8 @@
   parent_location_uuid: null
 - fabula_uuid: location_7e7c7bbb3cd3
   canonical_name: New York State
-  description: 'New York State unfurls as a vast, contested jurisdiction — a compressed
-    world of skyline media markets, dense suburban rings, and quieter upstate towns
-    threaded with historical sites. In the episode it functions as both political
-    battleground and moral touchstone: staffers convert its delegate heft and fundraising
-    circuits into strategy while a single line item — funding to restore Susan B.
-    Anthony''s home — turns geography into ethical accounting. The name carries civic
-    texture (urban bustle, regional organizers, high-dollar fundraisers) and historic
-    weight, forcing operatives to weigh tactical advantage against preservation and
-    public sentiment.'
+  description: Distinct from New Hampshire; features Susan B. Anthony's home restoration
+    funding as a key ethical/political element.
   location_type: U.S. State
   parent_location_uuid: null
 - fabula_uuid: location_c0aa06b08d1b
@@ -3527,17 +3425,6 @@
     calls, and media intrusion.'
   location_type: Canadian Province / Vacation Destination
   parent_location_uuid: null
-- fabula_uuid: location_ef0314a16b19
-  canonical_name: Office Parking Lot
-  description: A pragmatic, asphalted threshold that hums with low-level motion and
-    tense expectation. Striped bays and scattered cars frame a narrow private stage
-    where John and Mary exchange measured words before he disappears into the city.
-    The air tastes of exhaust and late afternoon coolness; footsteps and distant traffic
-    puncture the hush. From a nearby office window the Secretary’s small wave registers
-    as a ritualized farewell, converting this unremarkable exterior into a hinge between
-    familiar workplace rituals and public scrutiny.
-  location_type: Office Building Parking Lot
-  parent_location_uuid: null
 - fabula_uuid: location_ea18444386b4
   canonical_name: Office of the White House Counsel (closed-door legal suite)
   description: A formal, closed-door legal enclave inside the Executive Mansion where
@@ -3631,26 +3518,15 @@
     becoming a lived setting in the scene.'
   location_type: U.S. State (Geographic Region)
   parent_location_uuid: null
-- fabula_uuid: location_501e84a66aa7
-  canonical_name: Outer Oval Office
-  description: 'Night gathers in the narrow threshold that frames the Oval Office:
-    a cramped, liminal anteroom where footsteps ricochet and last‑minute instructions
-    land like thrown papers. The President shrugs off the schedule here—preferring
-    a women’s softball game—while Leo and Mrs. Landingham pile on briefing notes and
-    urgency. Voices trade scold and banter; the air smells faintly of leather and
-    paper. The room functions as a staging strip between private refuge and public
-    duty, where small domestic impulses collide with the weight of command.'
-  location_type: Presidential Anteroom
-  parent_location_uuid: null
 - fabula_uuid: location_7a05dd9edc84
-  canonical_name: Outer Oval Office (Oval Office Threshold — Presidential Anteroom)
-  description: Narrow anteroom/threshold immediately adjacent to the Oval Office that
-    frames the doorway between the Oval's interior and the adjacent corridor/anteroom.
-    Characterized by dim lamplight, carpeted hush, and a compressed acoustic/ceremonial
-    seam where staff gather and private or tonal beats play out; functions as a staging
-    point for personal exchanges, staff confrontations, and transitions between formal
-    ceremony and private Presidential presence (appears in multiple early-season episodes,
-    e.g., S01E07 'The State Dinner', S01E13 'Take Out The Trash Day').
+  canonical_name: Outer Oval Office
+  description: Narrow, cramped anteroom/threshold immediately adjacent to the Oval
+    Office, framing the doorway between its interior and the adjacent corridor. A
+    liminal staging space between private presidential refuge and public duty, characterized
+    by dim lamplight, carpeted hush, ricocheting footsteps, scents of leather and
+    paper; site of staff gatherings, banter, briefings (e.g., Leo and Mrs. Landingham),
+    personal exchanges, confrontations, and transitions (recurs across early seasons
+    like S01E06, E10, E13, E17, E21, E22).
   location_type: West Wing Anteroom
   parent_location_uuid: null
 - fabula_uuid: location_49009b3b7ed3
@@ -3999,13 +3875,8 @@
   parent_location_uuid: null
 - fabula_uuid: location_6acd422792c5
   canonical_name: Press Monitoring Office / Newsroom (adjacent to Press Room)
-  description: 'Fluorescent light glares over stacked papers and corkboards thumbtacked
-    with headlines. Phones ring in quick staccato while aides slice newspaper columns
-    into neat clippings, tapping keyboards and assembling digests that travel upstairs.
-    The room smells faintly of printer ink and coffee; footsteps and low, urgent conversation
-    puncture the air. It operates as the building’s press-monitoring hub: a compact,
-    frenetic nerve center that produces the physical clippings and rapid intel that
-    reshape decisions elsewhere.'
+  description: Adjacent to the main Press Room; serves as a frenetic nerve center
+    for press clipping and intel production, distinct from public briefing space.
   location_type: Institutional Newsroom / Press Monitoring Office
   parent_location_uuid: null
 - fabula_uuid: location_31eff55bea3e
@@ -4418,13 +4289,8 @@
   parent_location_uuid: null
 - fabula_uuid: location_62b5a0b65749
   canonical_name: Secret Service Briefing/Monitoring Room (West Wing)
-  description: 'Banks of monitors throw a cold, flickering wash across a long table;
-    the room hums with electronics, printer whirr, and the thin, urgent murmur of
-    staff. From this backstage vantage staff watch Bartlet on a live feed while they
-    triage private crises: Sam stands at the room’s end with notes, Bonnie stitches
-    calls toward Toby, and signals move along a chain to the President. The space
-    feels clinical and conspiratorial — a controlled monitoring hub where operational
-    focus and whispered relief collide beneath harsh technical light.'
+  description: Secret Service-operated monitoring hub in West Wing with banks of monitors
+    and live Presidential feeds during crisis triage in S01E18
   location_type: Secret Service Briefing Room
   parent_location_uuid: null
 - fabula_uuid: location_0de515d9f09a
@@ -5203,14 +5069,8 @@
   parent_location_uuid: null
 - fabula_uuid: location_cb21b6211fcc
   canonical_name: The Oval Office
-  description: 'The Oval Office occupies the presidency’s intimate command stage:
-    a formally charged executive chamber where private tenderness and public duty
-    collide. Worn carpet cushions brisk footsteps as aides deliver memos at the threshold;
-    a telephone line carries a president’s rare, fatherly call. Light shifts between
-    lamplight and daylight while visitors gather at the room’s edges and an admiral’s
-    easy banter briefly loosens the air. Tension compresses into focused decision-making
-    — and can dissolve into palpable relief when operational news transforms dread
-    into gratitude — making the space both sanctuary and operational hub.'
+  description: Executive workspace in the West Wing, distinct from private residential
+    bedroom
   location_type: Presidential Executive Office (Executive Audience Chamber)
   parent_location_uuid: null
 - fabula_uuid: location_a2f1d6e610d3
@@ -5228,15 +5088,8 @@
   parent_location_uuid: null
 - fabula_uuid: location_647e3998b989
   canonical_name: The President's Bedroom
-  description: 'Night compresses into a small, domestic stage: bedside lamp pools
-    warmth over rumpled sheets while a soft knock slices the hush. Voices fall to
-    conspiratorial whispers as Leo slips in, trading comfort for counsel. The space
-    smells faintly of aftershave and cold coffee; footsteps pad from the hallway,
-    clothing rustles, and a mattress becomes the unlikely locus of policy forging.
-    Intimacy and urgency collide here — personal vulnerability opens into strategic
-    resolve as senior staff gather for late‑night reassurance, moral argument, and
-    the hard reframing of political risk. The room functions as sanctuary, confessional,
-    and private war room where values are tested and decisions harden.'
+  description: Private bedroom in the Presidential Residence, separate from Oval Office
+    workspace
   location_type: Presidential Residence Bedroom
   parent_location_uuid: null
 - fabula_uuid: location_ab3343770ea5
@@ -5328,14 +5181,8 @@
   parent_location_uuid: null
 - fabula_uuid: location_8dc311a7a7d2
   canonical_name: Toby Ziegler's Office
-  description: 'A narrow, private communications office used primarily by Toby Ziegler:
-    book-lined and lamplit at night, layered with paper-strewn desks, legal pads marked
-    with redlines, and the constant thrum of ringing phones. The room functions as
-    a tactical refuge and moral pressure chamber where technical briefings, rehearsed
-    talking points, and private confessions collide — from shuttle-failure updates
-    and Bonnie’s breathless CNN reports to moments where Bartlet intercedes with blunt
-    counsel. It is a focused editing and crisis-triage space where precision, secrecy,
-    and moral fury meet.'
+  description: Personal office of Communications Director Toby Ziegler in the West
+    Wing
   location_type: West Wing Private Office (Communications)
   parent_location_uuid: null
 - fabula_uuid: location_896367e30948
@@ -5486,13 +5333,8 @@
   parent_location_uuid: null
 - fabula_uuid: location_9efa0a35bac8
   canonical_name: United States Capitol Building (entire building)
-  description: Marble steps and colonnades rise into a civic amphitheater where private
-    administration plans collide with congressional power. Daylight slants through
-    tall windows into hushed corridors where aides shuttle dossiers and whispered
-    threats, turning personnel disputes and nominations into public leverage. The
-    building tastes of cold stone, paper, and coffee; its formal halls compress tactical
-    bargaining into immediate consequence, making political retaliation and procedural
-    maneuvering feel both inevitable and public.
+  description: ; main United States Capitol building structure, focusing on internal
+    corridors, steps, and political activities
   location_type: National Legislative Building
   parent_location_uuid: null
 - fabula_uuid: location_8eb2ed96741c
@@ -5694,14 +5536,8 @@
   parent_location_uuid: null
 - fabula_uuid: location_422e4291bea0
   canonical_name: Washington, D.C. (District of Columbia)
-  description: 'Washington, D.C. frames the confrontation as a nationwide stage: Rock
-    Creek Parkway channels sunlight and motion toward the Lincoln Memorial while joggers,
-    commuters, and passing cars register the exchange like indifferent witnesses.
-    Monument-lined avenues and federal façades compress policy dispute into public
-    theater; breath, footsteps, and clipped accusations cut through open air. The
-    city’s civic scale transforms a private admonition about "legalized bribery" into
-    an exposed political turning point, where strategy and consequence collide in
-    daylight.'
+  description: Broad civic location including specific landmarks like Rock Creek Parkway
+    and Lincoln Memorial, distinct from generic streets.
   location_type: National Capital City (Urban Exterior)
   parent_location_uuid: null
 - fabula_uuid: location_6f9d5abdd1e9
@@ -5826,6 +5662,15 @@
     messaging.
   location_type: West Wing Communications Bullpen
   parent_location_uuid: null
+- fabula_uuid: location_9cf76ad9450f
+  canonical_name: West Wing Corridor (Hallway Outside Leo McGarry's Office)
+  description: A corridor/hallway in the West Wing of the White House, specifically
+    outside Leo McGarry's office. Site of staff confrontations, quick conversations,
+    knocks, and transitions into private office discussions; lamp-lit and bustling
+    with urgency, connecting to key events in episodes like 'Enemies' (S01E10), 'The
+    Crackpots and These Women' (S01E13), and 'Six Meetings Before Lunch' (S01E18).
+  location_type: Presidential West Wing Corridor
+  parent_location_uuid: null
 - fabula_uuid: location_3e4889b0c494
   canonical_name: West Wing Outdoor Patio (semi-enclosed)
   description: A sunlit, semi-enclosed patio just off the West Wing where aides drift
@@ -5896,14 +5741,8 @@
   parent_location_uuid: null
 - fabula_uuid: location_a5eeeba53039
   canonical_name: White House Communications Office
-  description: 'Daylight slices into a compact communications bullpen where Toby paces,
-    rehearsing razor‑edged talking points on China and Cuba while Bonnie sits nearby
-    and Ginger drifts past. The room functions as a tense prep crucible: professional
-    discipline pins down raw nerves until Sam’s abrupt revelation — about Toby’s previously
-    unknown brother and a delayed Space Shuttle landing — converts policy rehearsal
-    into a private crisis. Language tightens, focus fractures, and the space shifts
-    from staging to emotional triage as staff scramble to contain both message and
-    feeling.'
+  description: Specific bullpen/workspace for White House Communications Director
+    Toby Ziegler and staff (Bonnie, Ginger); distinct from hallways or corridors
   location_type: White House Communications Office (Operational Hub)
   parent_location_uuid: null
 - fabula_uuid: location_628c3d4a2d52
