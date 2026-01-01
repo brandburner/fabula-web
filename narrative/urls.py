@@ -65,6 +65,18 @@ urlpatterns = [
     path('graph/arc/<int:pk>/',
          views.ArcGraphView.as_view(),
          name='arc_graph'),
+    path('graph/location/<int:pk>/',
+         views.LocationGraphView.as_view(),
+         name='location_graph'),
+    path('graph/organization/<int:pk>/',
+         views.OrganizationGraphView.as_view(),
+         name='organization_graph'),
+    path('graph/object/<int:pk>/',
+         views.ObjectGraphView.as_view(),
+         name='object_graph'),
+    path('graph/event/<int:pk>/',
+         views.EventGraphView.as_view(),
+         name='event_graph'),
 
     # Graph landing page (replaces broken full graph)
     path('graph/',

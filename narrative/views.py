@@ -21,7 +21,7 @@ from .models import (
     NarrativeConnection, Theme, ConflictArc, Location,
     EventPage, CharacterPage, EpisodePage, EventParticipation,
     ConnectionType, LocationInvolvement, OrganizationInvolvement,
-    OrganizationPage
+    OrganizationPage, ObjectPage, ObjectInvolvement
 )
 
 
@@ -558,6 +558,109 @@ class ArcGraphView(ScopedGraphMixin, DetailView):
     def get_events_queryset(self):
         arc = self.get_object()
         return EventPage.objects.live().filter(arcs=arc)
+
+
+class LocationGraphView(ScopedGraphMixin, DetailView):
+    """
+    Graph of events involving a specific location.
+    Shows all events that take place at this location.
+    """
+    model = Location
+
+    def get_graph_title(self):
+        return f"Location: {self.get_object().canonical_name}"
+
+    def get_back_url(self):
+        return f"/locations/{self.get_object().pk}/"
+
+    def get_events_queryset(self):
+        location = self.get_object()
+        # Get events via LocationInvolvement
+        event_ids = LocationInvolvement.objects.filter(
+            location=location
+        ).values_list('event_id', flat=True)
+        # Also include events where this is the primary location
+        return EventPage.objects.live().filter(
+            models.Q(pk__in=event_ids) | models.Q(location=location)
+        ).distinct()
+
+
+class OrganizationGraphView(ScopedGraphMixin, DetailView):
+    """
+    Graph of events involving a specific organization.
+    Shows the organization's role across the narrative.
+    """
+    model = OrganizationPage
+
+    def get_graph_title(self):
+        return f"Organization: {self.get_object().title}"
+
+    def get_back_url(self):
+        return self.get_object().url
+
+    def get_events_queryset(self):
+        org = self.get_object()
+        event_ids = OrganizationInvolvement.objects.filter(
+            organization=org
+        ).values_list('event_id', flat=True)
+        return EventPage.objects.live().filter(pk__in=event_ids)
+
+
+class ObjectGraphView(ScopedGraphMixin, DetailView):
+    """
+    Graph of events involving a specific object.
+    Shows how an object appears across the narrative.
+    """
+    model = ObjectPage
+
+    def get_graph_title(self):
+        return f"Object: {self.get_object().title}"
+
+    def get_back_url(self):
+        return self.get_object().url
+
+    def get_events_queryset(self):
+        obj = self.get_object()
+        event_ids = ObjectInvolvement.objects.filter(
+            object=obj
+        ).values_list('event_id', flat=True)
+        return EventPage.objects.live().filter(pk__in=event_ids)
+
+
+class EventGraphView(ScopedGraphMixin, DetailView):
+    """
+    Graph centered on a single event, showing its connections.
+    Includes connected events up to 2 hops away.
+    """
+    model = EventPage
+
+    def get_graph_title(self):
+        return f"Event: {self.get_object().title}"
+
+    def get_back_url(self):
+        return self.get_object().url
+
+    def get_events_queryset(self):
+        event = self.get_object()
+        # Get directly connected events (1 hop)
+        outgoing_ids = NarrativeConnection.objects.filter(
+            from_event=event
+        ).values_list('to_event_id', flat=True)
+        incoming_ids = NarrativeConnection.objects.filter(
+            to_event=event
+        ).values_list('from_event_id', flat=True)
+
+        # Also get 2-hop connections for context
+        first_hop_ids = set(outgoing_ids) | set(incoming_ids)
+        second_hop_out = NarrativeConnection.objects.filter(
+            from_event_id__in=first_hop_ids
+        ).values_list('to_event_id', flat=True)
+        second_hop_in = NarrativeConnection.objects.filter(
+            to_event_id__in=first_hop_ids
+        ).values_list('from_event_id', flat=True)
+
+        all_ids = {event.pk} | first_hop_ids | set(second_hop_out) | set(second_hop_in)
+        return EventPage.objects.live().filter(pk__in=all_ids)
 
 
 class GraphView(ListView):

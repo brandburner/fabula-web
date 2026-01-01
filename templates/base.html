@@ -172,11 +172,13 @@
                 {% endblock %}
             </nav>
 
-            {# Actions #}
+            {# Actions - Contextual Graph View #}
             <div class="flex items-center gap-3">
                 {% block header_actions %}
-                <a href="{% url 'graph_view' %}"
-                   class="group px-4 py-2 text-sm font-medium rounded-lg bg-gradient-to-r from-slate-800/80 to-slate-700/80 text-slate-300 hover:text-white border border-slate-700/50 hover:border-slate-600 transition-all duration-300 hover:shadow-lg hover:shadow-slate-900/50 hover:scale-105">
+                {% contextual_graph_url as graph_url %}
+                <a href="{{ graph_url }}"
+                   class="group px-4 py-2 text-sm font-medium rounded-lg bg-gradient-to-r from-slate-800/80 to-slate-700/80 text-slate-300 hover:text-white border border-slate-700/50 hover:border-slate-600 transition-all duration-300 hover:shadow-lg hover:shadow-slate-900/50 hover:scale-105"
+                   title="View in graph context">
                     <span class="flex items-center gap-2">
                         <i data-lucide="git-branch" class="w-4 h-4 group-hover:rotate-12 transition-transform duration-300"></i>
                         <span class="hidden sm:inline">Graph View</span>
