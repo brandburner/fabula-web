@@ -9,15 +9,19 @@ These views handle display of models that are not Wagtail Pages:
 URL patterns should be added to urls.py.
 """
 
+import json
+
 from django.shortcuts import render, get_object_or_404
 from django.views.generic import ListView, DetailView
 
-from django.db.models import Q
+from django.db import models
+from django.db.models import Q, Count
 
 from .models import (
     NarrativeConnection, Theme, ConflictArc, Location,
     EventPage, CharacterPage, EpisodePage, EventParticipation,
-    ConnectionType, LocationInvolvement
+    ConnectionType, LocationInvolvement, OrganizationInvolvement,
+    OrganizationPage
 )
 
 
@@ -263,38 +267,207 @@ class ScopedGraphMixin:
         raise NotImplementedError
 
     def build_graph_data(self, events):
-        """Build graph nodes and edges from a queryset of events."""
+        """
+        Build graph with multi-type nodes and real relationship edges.
+
+        Node types:
+        - event: Narrative events (central nodes)
+        - character: Characters who participate in events
+        - location: Locations where events occur
+        - organization: Organizations involved in events
+
+        Edge types (from LPG schema):
+        - PARTICIPATED_AS: Character → Event
+        - IN_EVENT: Location → Event
+        - INVOLVED_WITH: Organization → Event
+        - Narrative connections (CAUSAL, etc.): Event → Event
+        """
         event_ids = set(events.values_list('pk', flat=True))
+        event_list = list(events.select_related('episode', 'location'))
 
         nodes = []
-        for event in events.select_related('episode'):
+        edges = []
+        seen_nodes = set()  # Track node IDs to avoid duplicates
+
+        # =================================================================
+        # 1. EVENT NODES
+        # =================================================================
+        for event in event_list:
             try:
                 season = event.episode.get_parent().specific
                 ep_label = f"S{season.season_number}E{event.episode.episode_number}"
             except (AttributeError, TypeError):
-                ep_label = f"E{event.episode.episode_number}"
+                ep_label = f"E{event.episode.episode_number}" if event.episode else "Unknown"
+
+            node_id = f"event_{event.pk}"
+            seen_nodes.add(node_id)
 
             nodes.append({
-                'id': str(event.pk),
-                'label': event.title[:30] + '...' if len(event.title) > 30 else event.title,
+                'id': node_id,
+                'nodeType': 'event',
+                'label': event.title[:40] + '...' if len(event.title) > 40 else event.title,
+                'fullTitle': event.title,
                 'url': event.url,
                 'episode': ep_label,
+                'sceneSequence': event.scene_sequence or 0,
             })
 
-        # Only include connections where BOTH events are in scope
+        # =================================================================
+        # 2. CHARACTER NODES + PARTICIPATED_AS EDGES
+        # =================================================================
+        participations = EventParticipation.objects.filter(
+            event_id__in=event_ids
+        ).select_related('character')
+
+        for p in participations:
+            char = p.character
+            char_node_id = f"character_{char.pk}"
+
+            # Add character node if not seen
+            if char_node_id not in seen_nodes:
+                seen_nodes.add(char_node_id)
+                nodes.append({
+                    'id': char_node_id,
+                    'nodeType': 'character',
+                    'label': char.title,
+                    'fullTitle': char.title,
+                    'url': char.url,
+                })
+
+            # Add PARTICIPATED_AS edge (character → event)
+            event_node_id = f"event_{p.event_id}"
+            edges.append({
+                'from': char_node_id,
+                'to': event_node_id,
+                'type': 'PARTICIPATED_AS',
+                'label': p.emotional_state[:30] if p.emotional_state else 'Participates',
+                'description': p.emotional_state or '',
+                'strength': 'strong',
+                'pk': p.pk,
+            })
+
+        # =================================================================
+        # 3. LOCATION NODES + IN_EVENT EDGES
+        # =================================================================
+        # From LocationInvolvement (rich data)
+        location_involvements = LocationInvolvement.objects.filter(
+            event_id__in=event_ids
+        ).select_related('location')
+
+        for inv in location_involvements:
+            loc = inv.location
+            loc_node_id = f"location_{loc.pk}"
+
+            if loc_node_id not in seen_nodes:
+                seen_nodes.add(loc_node_id)
+                nodes.append({
+                    'id': loc_node_id,
+                    'nodeType': 'location',
+                    'label': loc.canonical_name,
+                    'fullTitle': loc.canonical_name,
+                    'url': None,  # Locations are snippets, no page URL
+                })
+
+            event_node_id = f"event_{inv.event_id}"
+            edges.append({
+                'from': loc_node_id,
+                'to': event_node_id,
+                'type': 'IN_EVENT',
+                'label': inv.functional_role[:30] if inv.functional_role else 'Setting',
+                'description': inv.observed_atmosphere or inv.description_of_involvement or '',
+                'strength': 'medium',
+                'pk': inv.pk,
+            })
+
+        # Also from primary location FK (if not already covered)
+        for event in event_list:
+            if event.location_id:
+                loc = event.location
+                loc_node_id = f"location_{loc.pk}"
+                event_node_id = f"event_{event.pk}"
+
+                # Add location node if not seen
+                if loc_node_id not in seen_nodes:
+                    seen_nodes.add(loc_node_id)
+                    nodes.append({
+                        'id': loc_node_id,
+                        'nodeType': 'location',
+                        'label': loc.canonical_name,
+                        'fullTitle': loc.canonical_name,
+                        'url': None,
+                    })
+
+                # Check if edge already exists from LocationInvolvement
+                edge_exists = any(
+                    e['from'] == loc_node_id and e['to'] == event_node_id
+                    for e in edges
+                )
+                if not edge_exists:
+                    edges.append({
+                        'from': loc_node_id,
+                        'to': event_node_id,
+                        'type': 'IN_EVENT',
+                        'label': 'Primary Location',
+                        'description': '',
+                        'strength': 'medium',
+                        'pk': None,
+                    })
+
+        # =================================================================
+        # 4. ORGANIZATION NODES + INVOLVED_WITH EDGES
+        # =================================================================
+        org_involvements = OrganizationInvolvement.objects.filter(
+            event_id__in=event_ids
+        ).select_related('organization')
+
+        for inv in org_involvements:
+            org = inv.organization
+            org_node_id = f"organization_{org.pk}"
+
+            if org_node_id not in seen_nodes:
+                seen_nodes.add(org_node_id)
+                nodes.append({
+                    'id': org_node_id,
+                    'nodeType': 'organization',
+                    'label': org.title,
+                    'fullTitle': org.title,
+                    'url': org.url,
+                })
+
+            event_node_id = f"event_{inv.event_id}"
+            edges.append({
+                'from': org_node_id,
+                'to': event_node_id,
+                'type': 'INVOLVED_WITH',
+                'label': inv.active_representation[:30] if inv.active_representation else 'Involved',
+                'description': inv.description_of_involvement or '',
+                'strength': 'medium',
+                'pk': inv.pk,
+            })
+
+        # =================================================================
+        # 5. NARRATIVE CONNECTIONS (Event → Event)
+        # =================================================================
         connections = NarrativeConnection.objects.filter(
             from_event_id__in=event_ids,
             to_event_id__in=event_ids
         ).select_related('from_event', 'to_event')
 
-        edges = []
         for conn in connections:
+            from_id = f"event_{conn.from_event_id}"
+            to_id = f"event_{conn.to_event_id}"
+            desc = conn.description or ''
+            if len(desc) > 150:
+                desc = desc[:150] + '...'
+
             edges.append({
-                'from': str(conn.from_event_id),
-                'to': str(conn.to_event_id),
+                'from': from_id,
+                'to': to_id,
                 'type': conn.connection_type,
                 'label': conn.get_connection_type_display(),
                 'strength': conn.strength,
+                'description': desc,
+                'pk': conn.pk,
             })
 
         return {'nodes': nodes, 'edges': edges}
@@ -302,7 +475,8 @@ class ScopedGraphMixin:
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
         events = self.get_events_queryset()
-        context['graph_data'] = self.build_graph_data(events)
+        # Serialize to JSON string for safe JavaScript embedding
+        context['graph_data'] = json.dumps(self.build_graph_data(events))
         context['graph_title'] = self.get_graph_title()
         context['back_url'] = self.get_back_url()
         return context
