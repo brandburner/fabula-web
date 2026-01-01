@@ -343,7 +343,7 @@ class ScopedGraphMixin:
                 'label': p.emotional_state[:30] if p.emotional_state else 'Participates',
                 'description': p.emotional_state or '',
                 'strength': 'strong',
-                'pk': p.pk,
+                # Note: No 'pk' - this is a participation, not a clickable connection
             })
 
         # =================================================================
@@ -376,7 +376,7 @@ class ScopedGraphMixin:
                 'label': inv.functional_role[:30] if inv.functional_role else 'Setting',
                 'description': inv.observed_atmosphere or inv.description_of_involvement or '',
                 'strength': 'medium',
-                'pk': inv.pk,
+                # Note: No 'pk' - this is a location involvement, not a clickable connection
             })
 
         # Also from primary location FK (if not already covered)
@@ -442,7 +442,7 @@ class ScopedGraphMixin:
                 'label': inv.active_representation[:30] if inv.active_representation else 'Involved',
                 'description': inv.description_of_involvement or '',
                 'strength': 'medium',
-                'pk': inv.pk,
+                # Note: No 'pk' - this is an org involvement, not a clickable connection
             })
 
         # =================================================================
