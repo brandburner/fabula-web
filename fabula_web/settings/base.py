@@ -114,3 +114,19 @@ WAGTAILSEARCH_BACKENDS = {
         'BACKEND': 'wagtail.search.backends.database',
     }
 }
+
+# =============================================================================
+# CHARACTER IMPORTANCE TIER THRESHOLDS (Graph Gravity)
+# =============================================================================
+# These thresholds determine how characters are classified into importance tiers.
+# A character qualifies for a tier if they meet EITHER the episode OR relationship threshold.
+
+# Anchor tier (main cast): High narrative importance
+TIER_ANCHOR_MIN_EPISODES = int(os.environ.get('TIER_ANCHOR_MIN_EPISODES', 5))
+TIER_ANCHOR_MIN_RELATIONSHIPS = int(os.environ.get('TIER_ANCHOR_MIN_RELATIONSHIPS', 20))
+
+# Planet tier (recurring): Moderate narrative importance
+TIER_PLANET_MIN_EPISODES = int(os.environ.get('TIER_PLANET_MIN_EPISODES', 2))
+TIER_PLANET_MIN_RELATIONSHIPS = int(os.environ.get('TIER_PLANET_MIN_RELATIONSHIPS', 5))
+
+# Asteroid tier: Everything below Planet thresholds (default tier)

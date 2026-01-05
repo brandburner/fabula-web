@@ -72,6 +72,57 @@ def truncate_title(title, length=30):
     return title[:length].rsplit(' ', 1)[0] + '...'
 
 
+@register.filter
+def tier_icon(tier):
+    """
+    Get emoji icon for a character importance tier.
+    Usage: {{ character.importance_tier|tier_icon }}
+    """
+    icons = {
+        'anchor': '☀️',
+        'planet': '🪐',
+        'asteroid': '☄️',
+    }
+    return icons.get(tier, '☄️')
+
+
+@register.filter
+def tier_class(tier):
+    """
+    Get CSS class for a character importance tier.
+    Usage: <span class="{{ character.importance_tier|tier_class }}">
+    """
+    return f"tier-{tier}" if tier else "tier-asteroid"
+
+
+@register.filter
+def tier_label(tier):
+    """
+    Get human-readable label for a character importance tier.
+    Usage: {{ character.importance_tier|tier_label }}
+    """
+    labels = {
+        'anchor': 'Main Cast',
+        'planet': 'Recurring',
+        'asteroid': 'One-off',
+    }
+    return labels.get(tier, 'One-off')
+
+
+@register.filter
+def tier_color(tier):
+    """
+    Get hex color for a character importance tier.
+    Usage: style="color: {{ character.importance_tier|tier_color }}"
+    """
+    colors = {
+        'anchor': '#fbbf24',  # Amber/gold for main cast
+        'planet': '#14b8a6',  # Teal for recurring
+        'asteroid': '#6b7280',  # Gray for one-offs
+    }
+    return colors.get(tier, '#6b7280')
+
+
 # =============================================================================
 # SIMPLE TAGS
 # =============================================================================

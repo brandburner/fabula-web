@@ -332,6 +332,15 @@ class ScopedGraphMixin:
                     'label': char.title,
                     'fullTitle': char.title,
                     'url': char.url,
+                    # Graph Gravity tier data
+                    'tier': char.importance_tier,
+                    'episodeCount': char.episode_count,
+                    'relationshipCount': char.relationship_count,
+                    # Pre-computed 3D positions (if available)
+                    'x': char.graph_x if char.graph_x != 0 else None,
+                    'y': char.graph_y if char.graph_y != 0 else None,
+                    'z': char.graph_z if char.graph_z != 0 else None,
+                    'community': char.graph_community,
                 })
 
             # Add PARTICIPATED_AS edge (character → event)

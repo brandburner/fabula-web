@@ -444,6 +444,14 @@ const NODE_TYPE_CONFIG = {
     'organization': { color: '#a855f7', icon: 'building-2', label: 'Organization', size: 4 }
 };
 
+// Graph Gravity tier configuration for character nodes
+// Size multipliers are dramatically different for visual distinction
+const TIER_CONFIG = {
+    'anchor': { sizeMultiplier: 4.0, color: '#fbbf24', icon: '☀️', label: 'Main Cast' },   // ☀️ SUNs are HUGE
+    'planet': { sizeMultiplier: 1.8, color: '#14b8a6', icon: '🪐', label: 'Recurring' },   // 🪐 Planets visible
+    'asteroid': { sizeMultiplier: 0.6, color: '#6b7280', icon: '☄️', label: 'One-off' }    // ☄️ Asteroids tiny
+};
+
 // Edge type configuration - real LPG relationships
 const CONNECTION_CONFIG = {
     // Participation edges (Entity → Event)
@@ -508,6 +516,9 @@ function getFilteredGraphData() {
 
 // Initial filtered data
 let forceGraphData = getFilteredGraphData();
+
+// Check if pre-computed positions are available (from compute_graph_positions command)
+const hasPrecomputedPositions = allNodes.some(n => n.x !== null && n.x !== undefined);
 
 // Update stats display
 function updateStats() {
@@ -607,15 +618,30 @@ const Graph = ForceGraph3D()(container)
     // Node configuration
     .nodeLabel(null)  // We use custom tooltip
     .nodeColor(node => {
+        // Characters use tier-based colors
+        if (node.nodeType === 'character' && node.tier) {
+            const tierConfig = TIER_CONFIG[node.tier];
+            if (tierConfig) return tierConfig.color;
+        }
         const config = NODE_TYPE_CONFIG[node.nodeType] || { color: '#64748b' };
         return config.color;
     })
     .nodeVal(node => {
         const config = NODE_TYPE_CONFIG[node.nodeType] || { size: 4 };
+        let baseSize = config.size;
+
+        // Characters get tier-based size multiplier
+        if (node.nodeType === 'character' && node.tier) {
+            const tierConfig = TIER_CONFIG[node.tier];
+            if (tierConfig) {
+                baseSize = config.size * tierConfig.sizeMultiplier;
+            }
+        }
+
         // Events are larger, entities scale with connections
         return node.nodeType === 'event'
-            ? config.size + node.connections * 0.5
-            : config.size + node.connections * 0.3;
+            ? baseSize + node.connections * 0.5
+            : baseSize + node.connections * 0.3;
     })
     .nodeOpacity(0.9)
     // Adaptive resolution based on graph size
@@ -686,9 +712,10 @@ const Graph = ForceGraph3D()(container)
         }
     })
 
-    // Performance optimizations - adaptive based on graph size
-    .warmupTicks(forceGraphData.nodes.length > 300 ? 50 : 100)
-    .cooldownTicks(forceGraphData.nodes.length > 300 ? 100 : 200)
+    // Performance optimizations - adaptive based on graph size and pre-computed positions
+    // When positions are pre-computed, use fewer warmup ticks since layout is already meaningful
+    .warmupTicks(hasPrecomputedPositions ? 20 : (forceGraphData.nodes.length > 300 ? 50 : 100))
+    .cooldownTicks(hasPrecomputedPositions ? 50 : (forceGraphData.nodes.length > 300 ? 100 : 200))
     .d3AlphaDecay(forceGraphData.nodes.length > 300 ? 0.04 : 0.02)
     .d3VelocityDecay(forceGraphData.nodes.length > 300 ? 0.4 : 0.3)
     // Enable octree for spatial indexing (O(n log n) vs O(n²))
@@ -703,17 +730,37 @@ function showNodeTooltip(node) {
     tooltip.classList.add('visible', 'node-tooltip');
     tooltip.classList.remove('edge-tooltip');
 
+    // For characters, use tier-based color
+    let nodeColor = config.color;
+    if (node.nodeType === 'character' && node.tier) {
+        const tierConfig = TIER_CONFIG[node.tier];
+        if (tierConfig) nodeColor = tierConfig.color;
+    }
+
     // Set the node color for CSS styling
-    tooltip.style.setProperty('--node-color', config.color);
+    tooltip.style.setProperty('--node-color', nodeColor);
     tooltip.style.setProperty('--edge-color', '');
 
     // Update icon
     tooltipNodeIcon.innerHTML = `<i data-lucide="${config.icon}" class="w-5 h-5"></i>`;
 
-    // Update content
-    tooltipNodeType.textContent = config.label;
+    // Update content - add tier badge for characters
+    let typeLabel = config.label;
+    if (node.nodeType === 'character' && node.tier) {
+        const tierConfig = TIER_CONFIG[node.tier];
+        if (tierConfig) {
+            typeLabel = `${tierConfig.icon} ${tierConfig.label}`;
+        }
+    }
+    tooltipNodeType.textContent = typeLabel;
     tooltipNodeTitle.textContent = node.fullTitle || node.label;
-    tooltipNodeEpisode.textContent = node.episode || '';
+
+    // Episode context or tier stats for characters
+    if (node.nodeType === 'character' && node.episodeCount) {
+        tooltipNodeEpisode.textContent = `${node.episodeCount} episodes, ${node.relationshipCount || 0} relationships`;
+    } else {
+        tooltipNodeEpisode.textContent = node.episode || '';
+    }
 
     // Update link
     if (node.url) {

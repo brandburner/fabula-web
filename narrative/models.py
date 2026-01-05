@@ -63,6 +63,20 @@ class CharacterType(models.TextChoices):
     MENTIONED = 'mentioned', 'Mentioned Only'
 
 
+class ImportanceTier(models.TextChoices):
+    """
+    Graph Gravity-inspired narrative importance tier.
+
+    Computed from episode appearances and relationship density:
+    - ANCHOR: Main cast, appears in 5+ episodes or 20+ relationships
+    - PLANET: Recurring characters, 2-4 episodes or 5-19 relationships
+    - ASTEROID: One-off characters, single episode appearance
+    """
+    ANCHOR = 'anchor', 'Anchor (Main Cast)'
+    PLANET = 'planet', 'Planet (Recurring)'
+    ASTEROID = 'asteroid', 'Asteroid (One-off)'
+
+
 class ArcType(models.TextChoices):
     """Conflict arc types from Fabula."""
     INTERNAL = 'INTERNAL', 'Internal'
@@ -398,7 +412,41 @@ class CharacterPage(Page):
         default=0,
         help_text="Number of event appearances"
     )
-    
+
+    # Graph Gravity tiering fields
+    episode_count = models.PositiveIntegerField(
+        default=0,
+        help_text="Number of distinct episodes appeared in (computed)"
+    )
+    importance_tier = models.CharField(
+        max_length=20,
+        choices=ImportanceTier.choices,
+        default=ImportanceTier.ASTEROID,
+        help_text="Narrative importance tier (computed from episode/relationship counts)"
+    )
+    relationship_count = models.PositiveIntegerField(
+        default=0,
+        help_text="Number of unique characters co-participated with (computed)"
+    )
+
+    # Pre-computed 3D graph positions (from co-occurrence analysis)
+    graph_x = models.FloatField(
+        default=0.0,
+        help_text="Pre-computed X position for graph visualization"
+    )
+    graph_y = models.FloatField(
+        default=0.0,
+        help_text="Pre-computed Y position for graph visualization"
+    )
+    graph_z = models.FloatField(
+        default=0.0,
+        help_text="Pre-computed Z position for graph visualization"
+    )
+    graph_community = models.PositiveIntegerField(
+        default=0,
+        help_text="Community cluster ID from Louvain detection"
+    )
+
     # Relationships
     affiliated_organization = models.ForeignKey(
         'narrative.OrganizationPage',
@@ -421,7 +469,12 @@ class CharacterPage(Page):
             FieldPanel('sphere_of_influence'),
         ], heading="Attributes"),
         FieldPanel('affiliated_organization'),
-        FieldPanel('appearance_count'),
+        MultiFieldPanel([
+            FieldPanel('appearance_count'),
+            FieldPanel('episode_count'),
+            FieldPanel('relationship_count'),
+            FieldPanel('importance_tier'),
+        ], heading="Graph Gravity Metrics"),
         FieldPanel('fabula_uuid'),
     ]
 
