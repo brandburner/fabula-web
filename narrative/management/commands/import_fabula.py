@@ -54,6 +54,7 @@ class ImportStats:
     def __init__(self):
         self.created = {}
         self.updated = {}
+        self.cross_season_matched = {}  # Track GER cross-season matches
         self.errors = []
 
     def record_created(self, model_name: str):
@@ -61,6 +62,10 @@ class ImportStats:
 
     def record_updated(self, model_name: str):
         self.updated[model_name] = self.updated.get(model_name, 0) + 1
+
+    def record_cross_season_match(self, model_name: str):
+        """Record a cross-season entity match via GER global_id."""
+        self.cross_season_matched[model_name] = self.cross_season_matched.get(model_name, 0) + 1
 
     def record_error(self, message: str):
         self.errors.append(message)
@@ -78,6 +83,11 @@ class ImportStats:
         if self.updated:
             lines.append("\nUpdated:")
             for model, count in sorted(self.updated.items()):
+                lines.append(f"  {model}: {count}")
+
+        if self.cross_season_matched:
+            lines.append("\nCross-Season Matched (via GER global_id):")
+            for model, count in sorted(self.cross_season_matched.items()):
                 lines.append(f"  {model}: {count}")
 
         if self.errors:
@@ -99,7 +109,7 @@ class Command(BaseCommand):
         self.dry_run = False
         self.verbose = False
 
-        # Caches for lookups
+        # Caches for lookups by fabula_uuid
         self.themes_cache: Dict[str, Theme] = {}
         self.arcs_cache: Dict[str, ConflictArc] = {}
         self.locations_cache: Dict[str, Location] = {}
@@ -108,6 +118,15 @@ class Command(BaseCommand):
         self.objects_cache: Dict[str, ObjectPage] = {}
         self.episodes_cache: Dict[str, EpisodePage] = {}
         self.events_cache: Dict[str, EventPage] = {}
+
+        # GER global_id caches for cross-season entity resolution
+        # These enable finding existing entities when importing a new season
+        self.themes_by_global_id: Dict[str, Theme] = {}
+        self.arcs_by_global_id: Dict[str, ConflictArc] = {}
+        self.locations_by_global_id: Dict[str, Location] = {}
+        self.characters_by_global_id: Dict[str, CharacterPage] = {}
+        self.organizations_by_global_id: Dict[str, OrganizationPage] = {}
+        self.objects_by_global_id: Dict[str, ObjectPage] = {}
 
     def add_arguments(self, parser):
         parser.add_argument(
@@ -217,6 +236,56 @@ class Command(BaseCommand):
             settings.WAGTAIL_REFERENCE_INDEX_AUTOUPDATE = original_autoupdate
             self.stdout.write("Restored automatic reference index updates")
 
+    def load_global_id_caches(self):
+        """
+        Pre-load existing entities with global_id into caches for cross-season resolution.
+
+        This enables GER-based cross-season matching: when importing S2 data,
+        entities with matching global_id will UPDATE the existing S1 entity
+        rather than creating duplicates.
+        """
+        self.log_progress("Loading GER global_id caches for cross-season resolution...")
+
+        # Load themes with global_id
+        for theme in Theme.objects.exclude(global_id__isnull=True).exclude(global_id=''):
+            self.themes_by_global_id[theme.global_id] = theme
+        self.log_detail(f"  Loaded {len(self.themes_by_global_id)} themes with global_id")
+
+        # Load conflict arcs with global_id
+        for arc in ConflictArc.objects.exclude(global_id__isnull=True).exclude(global_id=''):
+            self.arcs_by_global_id[arc.global_id] = arc
+        self.log_detail(f"  Loaded {len(self.arcs_by_global_id)} arcs with global_id")
+
+        # Load locations with global_id
+        for location in Location.objects.exclude(global_id__isnull=True).exclude(global_id=''):
+            self.locations_by_global_id[location.global_id] = location
+        self.log_detail(f"  Loaded {len(self.locations_by_global_id)} locations with global_id")
+
+        # Load characters with global_id
+        for char in CharacterPage.objects.exclude(global_id__isnull=True).exclude(global_id=''):
+            self.characters_by_global_id[char.global_id] = char
+        self.log_detail(f"  Loaded {len(self.characters_by_global_id)} characters with global_id")
+
+        # Load organizations with global_id
+        for org in OrganizationPage.objects.exclude(global_id__isnull=True).exclude(global_id=''):
+            self.organizations_by_global_id[org.global_id] = org
+        self.log_detail(f"  Loaded {len(self.organizations_by_global_id)} organizations with global_id")
+
+        # Load objects with global_id
+        for obj in ObjectPage.objects.exclude(global_id__isnull=True).exclude(global_id=''):
+            self.objects_by_global_id[obj.global_id] = obj
+        self.log_detail(f"  Loaded {len(self.objects_by_global_id)} objects with global_id")
+
+        total = (
+            len(self.themes_by_global_id) +
+            len(self.arcs_by_global_id) +
+            len(self.locations_by_global_id) +
+            len(self.characters_by_global_id) +
+            len(self.organizations_by_global_id) +
+            len(self.objects_by_global_id)
+        )
+        self.log_info(f"  Total entities with GER global_id: {total}")
+
     def run_import(
         self,
         manifest: Dict,
@@ -231,6 +300,9 @@ class Command(BaseCommand):
         connections_data: List[Dict]
     ):
         """Execute the import in dependency order."""
+
+        # Load existing entities with global_id for cross-season resolution
+        self.load_global_id_caches()
 
         self.log_progress("Phase 1: Importing snippets (themes, arcs, locations)")
         self.import_themes(themes_data)
@@ -388,97 +460,165 @@ class Command(BaseCommand):
     # =========================================================================
 
     def import_themes(self, themes_data: List[Dict]):
-        """Import Theme snippets."""
+        """Import Theme snippets with GER cross-season resolution."""
         self.log_progress(f"  Importing {len(themes_data)} themes...")
 
         for theme_data in themes_data:
             fabula_uuid = theme_data.get('fabula_uuid') or theme_data.get('theme_uuid', '')
+            global_id = theme_data.get('global_id', '')
 
-            theme, created = Theme.objects.get_or_create(
-                fabula_uuid=fabula_uuid,
-                defaults={
-                    'name': self.truncate_field(theme_data['name'], 255),
-                    'description': theme_data.get('description', ''),
-                }
-            )
+            # Cross-season resolution: first try to find by global_id
+            theme = None
+            cross_season_match = False
+            if global_id and global_id in self.themes_by_global_id:
+                theme = self.themes_by_global_id[global_id]
+                cross_season_match = True
+                self.log_detail(f"    Cross-season match for theme: {theme.name} (global_id: {global_id})")
 
-            if not created:
-                # Update existing
+            # Fall back to fabula_uuid lookup
+            if not theme:
+                theme = Theme.objects.filter(fabula_uuid=fabula_uuid).first()
+
+            created = False
+            if theme:
+                # Update existing (either from cross-season match or fabula_uuid)
                 theme.name = self.truncate_field(theme_data['name'], 255)
                 theme.description = theme_data.get('description', '')
+                if global_id:
+                    theme.global_id = global_id
                 if not self.dry_run:
                     theme.save()
+                if cross_season_match:
+                    self.stats.record_cross_season_match('Theme')
                 self.stats.record_updated('Theme')
             else:
+                # Create new
+                theme = Theme(
+                    fabula_uuid=fabula_uuid,
+                    name=self.truncate_field(theme_data['name'], 255),
+                    description=theme_data.get('description', ''),
+                    global_id=global_id or None,
+                )
                 if not self.dry_run:
                     theme.save()
                 self.stats.record_created('Theme')
+                created = True
 
+            # Update caches
             self.themes_cache[fabula_uuid] = theme
+            if global_id:
+                self.themes_by_global_id[global_id] = theme
+
             self.log_detail(f"    {'Created' if created else 'Updated'} theme: {theme.name}")
 
     def import_arcs(self, arcs_data: List[Dict]):
-        """Import ConflictArc snippets."""
+        """Import ConflictArc snippets with GER cross-season resolution."""
         self.log_progress(f"  Importing {len(arcs_data)} conflict arcs...")
 
         for arc_data in arcs_data:
             fabula_uuid = arc_data.get('fabula_uuid') or arc_data.get('arc_uuid', '')
+            global_id = arc_data.get('global_id', '')
             title = self.truncate_field(arc_data['title'], 255)
 
-            arc, created = ConflictArc.objects.get_or_create(
-                fabula_uuid=fabula_uuid,
-                defaults={
-                    'title': title,
-                    'description': arc_data.get('description', ''),
-                    'arc_type': arc_data.get('arc_type', 'INTERPERSONAL'),
-                }
-            )
+            # Cross-season resolution: first try to find by global_id
+            arc = None
+            cross_season_match = False
+            if global_id and global_id in self.arcs_by_global_id:
+                arc = self.arcs_by_global_id[global_id]
+                cross_season_match = True
+                self.log_detail(f"    Cross-season match for arc: {arc.title} (global_id: {global_id})")
 
-            if not created:
+            # Fall back to fabula_uuid lookup
+            if not arc:
+                arc = ConflictArc.objects.filter(fabula_uuid=fabula_uuid).first()
+
+            created = False
+            if arc:
+                # Update existing
                 arc.title = title
                 arc.description = arc_data.get('description', '')
                 arc.arc_type = arc_data.get('arc_type', 'INTERPERSONAL')
+                if global_id:
+                    arc.global_id = global_id
                 if not self.dry_run:
                     arc.save()
+                if cross_season_match:
+                    self.stats.record_cross_season_match('ConflictArc')
                 self.stats.record_updated('ConflictArc')
             else:
+                # Create new
+                arc = ConflictArc(
+                    fabula_uuid=fabula_uuid,
+                    title=title,
+                    description=arc_data.get('description', ''),
+                    arc_type=arc_data.get('arc_type', 'INTERPERSONAL'),
+                    global_id=global_id or None,
+                )
                 if not self.dry_run:
                     arc.save()
                 self.stats.record_created('ConflictArc')
+                created = True
 
+            # Update caches
             self.arcs_cache[fabula_uuid] = arc
+            if global_id:
+                self.arcs_by_global_id[global_id] = arc
+
             self.log_detail(f"    {'Created' if created else 'Updated'} arc: {arc.title}")
 
     def import_locations(self, locations_data: List[Dict]):
-        """Import Location snippets."""
+        """Import Location snippets with GER cross-season resolution."""
         self.log_progress(f"  Importing {len(locations_data)} locations...")
 
         # First pass: create all locations without parent relationships
         for loc_data in locations_data:
             fabula_uuid = loc_data.get('fabula_uuid') or loc_data.get('location_uuid', '')
+            global_id = loc_data.get('global_id', '')
 
-            location, created = Location.objects.get_or_create(
-                fabula_uuid=fabula_uuid,
-                defaults={
-                    'canonical_name': self.truncate_field(loc_data['canonical_name'], 255),
-                    'description': loc_data.get('description', ''),
-                    'location_type': self.truncate_field(loc_data.get('location_type', ''), 100),
-                }
-            )
+            # Cross-season resolution: first try to find by global_id
+            location = None
+            cross_season_match = False
+            if global_id and global_id in self.locations_by_global_id:
+                location = self.locations_by_global_id[global_id]
+                cross_season_match = True
+                self.log_detail(f"    Cross-season match for location: {location.canonical_name} (global_id: {global_id})")
 
-            if not created:
+            # Fall back to fabula_uuid lookup
+            if not location:
+                location = Location.objects.filter(fabula_uuid=fabula_uuid).first()
+
+            created = False
+            if location:
+                # Update existing
                 location.canonical_name = self.truncate_field(loc_data['canonical_name'], 255)
                 location.description = loc_data.get('description', '')
                 location.location_type = self.truncate_field(loc_data.get('location_type', ''), 100)
+                if global_id:
+                    location.global_id = global_id
                 if not self.dry_run:
                     location.save()
+                if cross_season_match:
+                    self.stats.record_cross_season_match('Location')
                 self.stats.record_updated('Location')
             else:
+                # Create new
+                location = Location(
+                    fabula_uuid=fabula_uuid,
+                    canonical_name=self.truncate_field(loc_data['canonical_name'], 255),
+                    description=loc_data.get('description', ''),
+                    location_type=self.truncate_field(loc_data.get('location_type', ''), 100),
+                    global_id=global_id or None,
+                )
                 if not self.dry_run:
                     location.save()
                 self.stats.record_created('Location')
+                created = True
 
+            # Update caches
             self.locations_cache[fabula_uuid] = location
+            if global_id:
+                self.locations_by_global_id[global_id] = location
+
             self.log_detail(f"    {'Created' if created else 'Updated'} location: {location.canonical_name}")
 
         # Second pass: set parent relationships
@@ -663,22 +803,40 @@ class Command(BaseCommand):
     # =========================================================================
 
     def import_organizations(self, orgs_data: List[Dict], org_index: OrganizationIndexPage):
-        """Import organizations."""
+        """Import organizations with GER cross-season resolution."""
         self.log_progress(f"  Importing {len(orgs_data)} organizations...")
 
         for org_data in orgs_data:
             org_uuid = org_data.get('fabula_uuid') or org_data.get('org_uuid', '')
+            global_id = org_data.get('global_id', '')
 
-            org_page = OrganizationPage.objects.filter(fabula_uuid=org_uuid).first()
+            # Cross-season resolution: first try to find by global_id
+            org_page = None
+            cross_season_match = False
+            if global_id and global_id in self.organizations_by_global_id:
+                org_page = self.organizations_by_global_id[global_id]
+                cross_season_match = True
+                self.log_detail(f"    Cross-season match for organization: {org_page.canonical_name} (global_id: {global_id})")
 
+            # Fall back to fabula_uuid lookup
+            if not org_page:
+                org_page = OrganizationPage.objects.filter(fabula_uuid=org_uuid).first()
+
+            created = False
             if org_page:
+                # Update existing
                 org_page.canonical_name = self.truncate_field(org_data['canonical_name'], 255)
                 org_page.description = org_data.get('description', '')
                 org_page.sphere_of_influence = self.truncate_field(org_data.get('sphere_of_influence', ''), 255)
+                if global_id:
+                    org_page.global_id = global_id
                 if not self.dry_run:
                     org_page.save_revision().publish()
+                if cross_season_match:
+                    self.stats.record_cross_season_match('OrganizationPage')
                 self.stats.record_updated('OrganizationPage')
             else:
+                # Create new
                 base_slug = slugify(org_data['canonical_name'])
                 unique_slug = self.make_unique_slug(base_slug, org_uuid)
                 org_page = OrganizationPage(
@@ -688,30 +846,49 @@ class Command(BaseCommand):
                     canonical_name=self.truncate_field(org_data['canonical_name'], 255),
                     description=org_data.get('description', ''),
                     sphere_of_influence=self.truncate_field(org_data.get('sphere_of_influence', ''), 255),
+                    global_id=global_id or None,
                 )
                 if not self.dry_run:
                     org_index.add_child(instance=org_page)
                     org_page.save_revision().publish()
                 self.stats.record_created('OrganizationPage')
+                created = True
 
+            # Update caches
             self.organizations_cache[org_uuid] = org_page
-            self.log_detail(f"    {'Updated' if org_page.pk else 'Created'} organization: {org_page.canonical_name}")
+            if global_id:
+                self.organizations_by_global_id[global_id] = org_page
+
+            self.log_detail(f"    {'Created' if created else 'Updated'} organization: {org_page.canonical_name}")
 
     def import_characters(self, characters_data: List[Dict], char_index: CharacterIndexPage):
-        """Import characters."""
+        """Import characters with GER cross-season resolution."""
         self.log_progress(f"  Importing {len(characters_data)} characters...")
 
         for char_data in characters_data:
             char_uuid = char_data.get('fabula_uuid') or char_data.get('agent_uuid', '')
+            global_id = char_data.get('global_id', '')
 
-            char_page = CharacterPage.objects.filter(fabula_uuid=char_uuid).first()
+            # Cross-season resolution: first try to find by global_id
+            char_page = None
+            cross_season_match = False
+            if global_id and global_id in self.characters_by_global_id:
+                char_page = self.characters_by_global_id[global_id]
+                cross_season_match = True
+                self.log_detail(f"    Cross-season match for character: {char_page.canonical_name} (global_id: {global_id})")
+
+            # Fall back to fabula_uuid lookup
+            if not char_page:
+                char_page = CharacterPage.objects.filter(fabula_uuid=char_uuid).first()
 
             # Get organization if specified
             org = None
             if org_uuid := char_data.get('affiliated_organization_uuid'):
                 org = self.organizations_cache.get(org_uuid)
 
+            created = False
             if char_page:
+                # Update existing
                 char_page.canonical_name = self.truncate_field(char_data['canonical_name'], 255)
                 char_page.title_role = self.truncate_field(char_data.get('title_role') or '', 255)
                 char_page.description = char_data.get('description') or ''
@@ -721,10 +898,15 @@ class Command(BaseCommand):
                 char_page.sphere_of_influence = self.truncate_field(char_data.get('sphere_of_influence') or '', 255)
                 char_page.appearance_count = char_data.get('appearance_count', 0)
                 char_page.affiliated_organization = org
+                if global_id:
+                    char_page.global_id = global_id
                 if not self.dry_run:
                     char_page.save_revision().publish()
+                if cross_season_match:
+                    self.stats.record_cross_season_match('CharacterPage')
                 self.stats.record_updated('CharacterPage')
             else:
+                # Create new
                 base_slug = slugify(char_data['canonical_name'])
                 unique_slug = self.make_unique_slug(base_slug, char_uuid)
                 char_page = CharacterPage(
@@ -740,39 +922,63 @@ class Command(BaseCommand):
                     sphere_of_influence=self.truncate_field(char_data.get('sphere_of_influence') or '', 255),
                     appearance_count=char_data.get('appearance_count', 0),
                     affiliated_organization=org,
+                    global_id=global_id or None,
                 )
                 if not self.dry_run:
                     char_index.add_child(instance=char_page)
                     char_page.save_revision().publish()
                 self.stats.record_created('CharacterPage')
+                created = True
 
+            # Update caches
             self.characters_cache[char_uuid] = char_page
-            self.log_detail(f"    {'Updated' if char_page.pk else 'Created'} character: {char_page.canonical_name}")
+            if global_id:
+                self.characters_by_global_id[global_id] = char_page
+
+            self.log_detail(f"    {'Created' if created else 'Updated'} character: {char_page.canonical_name}")
 
     def import_objects(self, objects_data: List[Dict], object_index: ObjectIndexPage):
-        """Import objects."""
+        """Import objects with GER cross-season resolution."""
         self.log_progress(f"  Importing {len(objects_data)} objects...")
 
         for obj_data in objects_data:
             obj_uuid = obj_data.get('fabula_uuid') or obj_data.get('object_uuid', '')
+            global_id = obj_data.get('global_id', '')
 
-            obj_page = ObjectPage.objects.filter(fabula_uuid=obj_uuid).first()
+            # Cross-season resolution: first try to find by global_id
+            obj_page = None
+            cross_season_match = False
+            if global_id and global_id in self.objects_by_global_id:
+                obj_page = self.objects_by_global_id[global_id]
+                cross_season_match = True
+                self.log_detail(f"    Cross-season match for object: {obj_page.canonical_name} (global_id: {global_id})")
+
+            # Fall back to fabula_uuid lookup
+            if not obj_page:
+                obj_page = ObjectPage.objects.filter(fabula_uuid=obj_uuid).first()
 
             # Get potential owner if specified
             owner = None
             if owner_uuid := obj_data.get('potential_owner_uuid'):
                 owner = self.characters_cache.get(owner_uuid)
 
+            created = False
             if obj_page:
+                # Update existing
                 obj_page.canonical_name = self.truncate_field(obj_data['canonical_name'], 255)
                 obj_page.description = obj_data.get('description', '')
                 obj_page.purpose = obj_data.get('purpose', '')
                 obj_page.significance = obj_data.get('significance', '')
                 obj_page.potential_owner = owner
+                if global_id:
+                    obj_page.global_id = global_id
                 if not self.dry_run:
                     obj_page.save_revision().publish()
+                if cross_season_match:
+                    self.stats.record_cross_season_match('ObjectPage')
                 self.stats.record_updated('ObjectPage')
             else:
+                # Create new
                 base_slug = slugify(obj_data['canonical_name'])
                 unique_slug = self.make_unique_slug(base_slug, obj_uuid)
                 obj_page = ObjectPage(
@@ -784,14 +990,20 @@ class Command(BaseCommand):
                     purpose=obj_data.get('purpose', ''),
                     significance=obj_data.get('significance', ''),
                     potential_owner=owner,
+                    global_id=global_id or None,
                 )
                 if not self.dry_run:
                     object_index.add_child(instance=obj_page)
                     obj_page.save_revision().publish()
                 self.stats.record_created('ObjectPage')
+                created = True
 
+            # Update caches
             self.objects_cache[obj_uuid] = obj_page
-            self.log_detail(f"    {'Updated' if obj_page.pk else 'Created'} object: {obj_page.canonical_name}")
+            if global_id:
+                self.objects_by_global_id[global_id] = obj_page
+
+            self.log_detail(f"    {'Created' if created else 'Updated'} object: {obj_page.canonical_name}")
 
     # =========================================================================
     # Phase 4: Events

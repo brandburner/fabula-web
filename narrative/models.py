@@ -94,13 +94,20 @@ class ArcType(models.TextChoices):
 class Theme(index.Indexed, ClusterableModel):
     """
     Thematic element that events can exemplify.
-    
+
     From Fabula: Theme nodes connected to Events via EXEMPLIFIES_THEME.
     """
     fabula_uuid = models.CharField(
-        max_length=100, 
-        unique=True, 
+        max_length=100,
+        unique=True,
         help_text="UUID from Fabula graph (theme_uuid)"
+    )
+    global_id = models.CharField(
+        max_length=100,
+        blank=True,
+        null=True,
+        db_index=True,
+        help_text="GER global entity ID for cross-season identity (e.g., ger_theme_...)"
     )
     name = models.CharField(max_length=255)
     description = models.TextField(
@@ -133,13 +140,20 @@ class Theme(index.Indexed, ClusterableModel):
 class ConflictArc(index.Indexed, ClusterableModel):
     """
     A narrative arc tracking a conflict across multiple events.
-    
+
     From Fabula: ConflictArc nodes connected to Events via PART_OF_ARC.
     """
     fabula_uuid = models.CharField(
-        max_length=100, 
+        max_length=100,
         unique=True,
         help_text="UUID from Fabula graph (arc_uuid)"
+    )
+    global_id = models.CharField(
+        max_length=100,
+        blank=True,
+        null=True,
+        db_index=True,
+        help_text="GER global entity ID for cross-season identity (e.g., ger_arc_...)"
     )
     title = models.CharField(
         max_length=255,
@@ -178,17 +192,24 @@ class ConflictArc(index.Indexed, ClusterableModel):
         verbose_name_plural = "Conflict Arcs"
 
 
-@register_snippet  
+@register_snippet
 class Location(index.Indexed, ClusterableModel):
     """
     A place where events occur.
-    
+
     From Fabula: Location nodes with foundational_description and foundational_type.
     """
     fabula_uuid = models.CharField(
         max_length=100,
         unique=True,
         help_text="UUID from Fabula graph (location_uuid)"
+    )
+    global_id = models.CharField(
+        max_length=100,
+        blank=True,
+        null=True,
+        db_index=True,
+        help_text="GER global entity ID for cross-season identity (e.g., ger_location_...)"
     )
     canonical_name = models.CharField(max_length=255)
     description = models.TextField(
@@ -368,13 +389,20 @@ class EpisodePage(Page):
 class CharacterPage(Page):
     """
     A character/agent in the narrative.
-    
+
     From Fabula: Agent nodes with foundational_description, foundational_traits, etc.
     """
     fabula_uuid = models.CharField(
         max_length=100,
         blank=True,
         help_text="UUID from Fabula graph (agent_uuid)"
+    )
+    global_id = models.CharField(
+        max_length=100,
+        blank=True,
+        null=True,
+        db_index=True,
+        help_text="GER global entity ID for cross-season identity (e.g., ger_agent_...)"
     )
     canonical_name = models.CharField(
         max_length=255,
@@ -525,13 +553,20 @@ class CharacterIndexPage(Page):
 class OrganizationPage(Page):
     """
     An organization in the narrative.
-    
+
     From Fabula: Organization nodes.
     """
     fabula_uuid = models.CharField(
         max_length=100,
         blank=True,
         help_text="UUID from Fabula graph (org_uuid)"
+    )
+    global_id = models.CharField(
+        max_length=100,
+        blank=True,
+        null=True,
+        db_index=True,
+        help_text="GER global entity ID for cross-season identity (e.g., ger_org_...)"
     )
     canonical_name = models.CharField(max_length=255)
     description = RichTextField()
@@ -643,6 +678,13 @@ class ObjectPage(Page):
         max_length=100,
         blank=True,
         help_text="UUID from Fabula graph (object_uuid)"
+    )
+    global_id = models.CharField(
+        max_length=100,
+        blank=True,
+        null=True,
+        db_index=True,
+        help_text="GER global entity ID for cross-season identity (e.g., ger_object_...)"
     )
     canonical_name = models.CharField(max_length=255)
     description = RichTextField(

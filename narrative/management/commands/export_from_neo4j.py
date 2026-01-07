@@ -66,9 +66,18 @@ class Neo4jExporter:
     3. Extracting all relationships (participations, connections)
     4. Converting to YAML-serializable dictionaries
     5. Writing organized YAML files
+    6. Optionally fetching GER global_id mappings for cross-season support
     """
 
-    def __init__(self, uri: str, user: str, password: str, output_dir: Path, database: str = None):
+    def __init__(
+        self,
+        uri: str,
+        user: str,
+        password: str,
+        output_dir: Path,
+        database: str = None,
+        ger_database: str = None
+    ):
         """
         Initialize the Neo4j exporter.
 
@@ -78,13 +87,19 @@ class Neo4jExporter:
             password: Neo4j password
             output_dir: Directory to write YAML files
             database: Neo4j database name (default: neo4j)
+            ger_database: GER database name for cross-season lookups (default: None)
         """
         self.uri = uri
         self.user = user
         self.password = password
         self.output_dir = output_dir
         self.database = database
+        self.ger_database = ger_database
         self.driver: Optional[Driver] = None
+
+        # GER global_id mappings (local_uuid -> global_id)
+        self.ger_mappings: Dict[str, str] = {}
+        self.ger_available = False
 
         # Statistics for manifest
         self.stats = {
@@ -99,6 +114,7 @@ class Neo4jExporter:
             'theme_count': 0,
             'arc_count': 0,
             'connection_count': 0,
+            'ger_linked_count': 0,
         }
 
     def connect(self):
@@ -118,6 +134,60 @@ class Neo4jExporter:
         """Close Neo4j connection."""
         if self.driver:
             self.driver.close()
+
+    def load_ger_mappings(self):
+        """
+        Load GER global_id mappings for the current season database.
+
+        This queries the GER (fabulager) database to build a mapping of
+        local_uuid -> global_id for all entities in the season being exported.
+        """
+        if not self.ger_database:
+            print("  GER: Disabled (no --ger-database specified)")
+            return
+
+        print(f"Loading GER mappings from '{self.ger_database}'...")
+
+        try:
+            # Query GER for all mappings from this season database
+            query = """
+            MATCH (g:GlobalEntityRef)-[:HAS_SEASON_MAPPING]->(m:SeasonMapping)
+            WHERE m.local_database = $database
+            RETURN m.local_uuid AS local_uuid, g.global_id AS global_id
+            """
+
+            with self.driver.session(database=self.ger_database) as session:
+                result = session.run(query, {'database': self.database})
+                for record in result:
+                    local_uuid = record.get('local_uuid')
+                    global_id = record.get('global_id')
+                    if local_uuid and global_id:
+                        self.ger_mappings[local_uuid] = global_id
+
+            self.ger_available = True
+            print(f"  GER: Loaded {len(self.ger_mappings)} global_id mappings")
+
+        except Exception as e:
+            print(f"  GER: Warning - could not load mappings: {e}")
+            print("  GER: Export will continue without global_id fields")
+            self.ger_available = False
+
+    def get_global_id(self, local_uuid: str) -> Optional[str]:
+        """
+        Get global_id for a local UUID if GER is available.
+
+        Args:
+            local_uuid: Season-specific entity UUID
+
+        Returns:
+            GER global_id or None if not found/GER not available
+        """
+        if self.ger_available and local_uuid:
+            global_id = self.ger_mappings.get(local_uuid)
+            if global_id:
+                self.stats['ger_linked_count'] += 1
+            return global_id
+        return None
 
     def execute_query(self, query: str, parameters: Optional[Dict] = None) -> List[Dict]:
         """
@@ -276,8 +346,10 @@ class Neo4jExporter:
             if isinstance(aliases, str):
                 aliases = [a.strip() for a in aliases.split(',') if a.strip()]
 
+            fabula_uuid = self.safe_get(agent, 'agent_uuid', '')
             character = {
-                'fabula_uuid': self.safe_get(agent, 'agent_uuid', ''),
+                'fabula_uuid': fabula_uuid,
+                'global_id': self.get_global_id(fabula_uuid),
                 'canonical_name': self.safe_get(agent, 'canonical_name', 'Unknown'),
                 'title_role': self.safe_get(agent, 'title_role'),
                 'description': self.safe_get(agent, 'foundational_description', ''),
@@ -319,9 +391,11 @@ class Neo4jExporter:
 
         for record in results:
             loc = record['loc']
+            fabula_uuid = self.safe_get(loc, 'location_uuid', '')
 
             location = {
-                'fabula_uuid': self.safe_get(loc, 'location_uuid', ''),
+                'fabula_uuid': fabula_uuid,
+                'global_id': self.get_global_id(fabula_uuid),
                 'canonical_name': self.safe_get(loc, 'canonical_name', 'Unknown'),
                 'description': self.safe_get(loc, 'foundational_description', ''),
                 'location_type': self.safe_get(loc, 'foundational_type', ''),
@@ -358,9 +432,11 @@ class Neo4jExporter:
 
         for record in results:
             org = record['org']
+            fabula_uuid = self.safe_get(org, 'organization_uuid') or self.safe_get(org, 'org_uuid', '')
 
             organization = {
-                'fabula_uuid': self.safe_get(org, 'organization_uuid') or self.safe_get(org, 'org_uuid', ''),
+                'fabula_uuid': fabula_uuid,
+                'global_id': self.get_global_id(fabula_uuid),
                 'canonical_name': self.safe_get(org, 'canonical_name', 'Unknown'),
                 'description': self.safe_get(org, 'foundational_description', ''),
                 'sphere_of_influence': self.safe_get(org, 'foundational_sphere_of_influence', '')
@@ -399,9 +475,11 @@ class Neo4jExporter:
 
         for record in results:
             obj = record['obj']
+            fabula_uuid = self.safe_get(obj, 'object_uuid', '')
 
             object_data = {
-                'fabula_uuid': self.safe_get(obj, 'object_uuid', ''),
+                'fabula_uuid': fabula_uuid,
+                'global_id': self.get_global_id(fabula_uuid),
                 'canonical_name': self.safe_get(obj, 'canonical_name', 'Unknown'),
                 'description': self.safe_get(obj, 'foundational_description', ''),
                 'purpose': self.safe_get(obj, 'foundational_purpose', ''),
@@ -440,9 +518,11 @@ class Neo4jExporter:
 
         for record in results:
             theme = record['t']
+            fabula_uuid = self.safe_get(theme, 'theme_uuid', '')
 
             theme_data = {
-                'fabula_uuid': self.safe_get(theme, 'theme_uuid', ''),
+                'fabula_uuid': fabula_uuid,
+                'global_id': self.get_global_id(fabula_uuid),
                 'name': self.safe_get(theme, 'name', 'Unknown'),
                 'description': self.safe_get(theme, 'description', '')
             }
@@ -476,9 +556,11 @@ class Neo4jExporter:
 
         for record in results:
             arc = record['arc']
+            fabula_uuid = self.safe_get(arc, 'arc_uuid', '')
 
             arc_data = {
-                'fabula_uuid': self.safe_get(arc, 'arc_uuid', ''),
+                'fabula_uuid': fabula_uuid,
+                'global_id': self.get_global_id(fabula_uuid),
                 'title': self.safe_get(arc, 'conflict_description', 'Unknown'),
                 'description': self.safe_get(arc, 'conflict_description', ''),
                 'arc_type': self.safe_get(arc, 'type', 'INTERPERSONAL')
@@ -825,9 +907,13 @@ class Neo4jExporter:
         """
         series_titles = [s.get('title', 'Unknown') for s in all_series]
         manifest = {
-            'fabula_version': '2.1.0',
+            'fabula_version': '2.2.0',
             'export_date': datetime.now().isoformat(),
             'source_graph': self.uri,
+            'source_database': self.database,
+            'ger_database': self.ger_database,
+            'ger_enabled': self.ger_available,
+            'ger_linked_count': self.stats['ger_linked_count'],
             'series_titles': series_titles,
             'series_count': self.stats['series_count'],
             'season_count': self.stats['season_count'],
@@ -840,7 +926,7 @@ class Neo4jExporter:
             'theme_count': self.stats['theme_count'],
             'arc_count': self.stats['arc_count'],
             'connection_count': self.stats['connection_count'],
-            'notes': 'Export generated by Django management command export_from_neo4j (v2.1 with objects and involvements)'
+            'notes': 'Export generated by Django management command export_from_neo4j (v2.2 with GER cross-season support)'
         }
 
         return manifest
@@ -878,11 +964,12 @@ class Neo4jExporter:
         Execute full export process.
 
         This method orchestrates the entire export:
-        1. Export series/seasons/episodes
-        2. Export all entity types
-        3. Export events by episode
-        4. Export narrative connections
-        5. Create manifest
+        1. Load GER mappings (if enabled)
+        2. Export series/seasons/episodes
+        3. Export all entity types
+        4. Export events by episode
+        5. Export narrative connections
+        6. Create manifest
         """
         print("\n" + "=" * 70)
         print("Starting Neo4j to YAML export")
@@ -892,6 +979,9 @@ class Neo4jExporter:
         self.connect()
 
         try:
+            # Load GER mappings if enabled
+            self.load_ger_mappings()
+
             # Export series hierarchy (returns list of all series)
             all_series = self.export_series()
             self.write_yaml(
@@ -1011,6 +1101,12 @@ class Neo4jExporter:
             print(f"  Themes: {self.stats['theme_count']}")
             print(f"  Conflict Arcs: {self.stats['arc_count']}")
             print(f"  Narrative Connections: {self.stats['connection_count']}")
+            print("\nGER Cross-Season Support:")
+            if self.ger_available:
+                print(f"  GER Database: {self.ger_database}")
+                print(f"  Entities with global_id: {self.stats['ger_linked_count']}")
+            else:
+                print("  Status: Disabled (use --ger-database to enable)")
             print()
 
         finally:
@@ -1061,6 +1157,12 @@ class Command(BaseCommand):
             help='Neo4j database name (default: from settings or neo4j)'
         )
         parser.add_argument(
+            '--ger-database',
+            type=str,
+            default=None,
+            help='GER database name for cross-season support (e.g., fabulager). If not specified, global_id fields will be null.'
+        )
+        parser.add_argument(
             '-y', '--yes',
             action='store_true',
             help='Skip confirmation prompt for overwriting existing files'
@@ -1077,6 +1179,7 @@ class Command(BaseCommand):
         user = options['user'] or getattr(settings, 'NEO4J_USER', 'neo4j')
         password = options['password'] or getattr(settings, 'NEO4J_PASSWORD', 'mythology')
         database = options['database'] or getattr(settings, 'NEO4J_DATABASE', 'neo4j')
+        ger_database = options['ger_database']
 
         # Get output directory
         output_dir = Path(options['output']).absolute()
@@ -1086,6 +1189,7 @@ class Command(BaseCommand):
         self.stdout.write(f"  URI: {uri}")
         self.stdout.write(f"  User: {user}")
         self.stdout.write(f"  Database: {database}")
+        self.stdout.write(f"  GER Database: {ger_database or '(disabled)'}")
         self.stdout.write(f"  Output: {output_dir}\n")
 
         # Confirm if output directory exists and is not empty
@@ -1105,7 +1209,7 @@ class Command(BaseCommand):
 
         # Create exporter and run
         try:
-            exporter = Neo4jExporter(uri, user, password, output_dir, database)
+            exporter = Neo4jExporter(uri, user, password, output_dir, database, ger_database)
             exporter.export_all()
 
             self.stdout.write(
