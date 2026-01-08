@@ -585,37 +585,49 @@ class Neo4jExporter:
         Returns:
             List of event dictionaries with participations and involvements
         """
+        # First, build a scene number mapping by finding the first event in each scene
+        # This derives scene_number from the order scenes appear (by their first event)
+        scene_order_query = """
+        MATCH (e:Event)-[:PART_OF_EPISODE]->(ep:Episode {episode_uuid: $episode_uuid})
+        MATCH (e)-[:OCCURS_IN]->(sb:SceneBoundary)
+        WITH sb.scene_uuid AS scene_uuid, min(e.sequence_in_scene) AS first_event_seq
+        ORDER BY first_event_seq
+        RETURN scene_uuid, first_event_seq
+        """
+        scene_results = self.execute_query(scene_order_query, {'episode_uuid': episode_uuid})
+
+        # Build scene_uuid -> scene_number mapping (1-indexed)
+        scene_number_map = {}
+        for idx, record in enumerate(scene_results, start=1):
+            scene_uuid = record.get('scene_uuid')
+            if scene_uuid:
+                scene_number_map[scene_uuid] = idx
+
         # Main event query
+        # Uses OCCURS_IN (canonical relationship) with fallback to PART_OF_SCENE (legacy)
         # Uses pattern comprehensions for themes/arcs to avoid cartesian product issues
-        # that occur with multiple OPTIONAL MATCH + collect() clauses
         event_query = """
         MATCH (e:Event)-[:PART_OF_EPISODE]->(ep:Episode {episode_uuid: $episode_uuid})
-        OPTIONAL MATCH (e)-[:PART_OF_SCENE]->(sb:SceneBoundary)
+        OPTIONAL MATCH (e)-[:OCCURS_IN]->(sb:SceneBoundary)
         OPTIONAL MATCH (e)-[:OCCURS_IN]->(loc:Location)
         RETURN e,
                sb.scene_uuid as scene_uuid,
                loc.location_uuid as location_uuid,
                [(e)-[:EXEMPLIFIES_THEME]->(t:Theme) | t.theme_uuid] as theme_uuids,
                [(e)-[:PART_OF_ARC]->(a:ConflictArc) | a.arc_uuid] as arc_uuids
-        ORDER BY sb.scene_uuid, e.sequence_in_scene
+        ORDER BY e.sequence_in_scene
         """
 
         event_results = self.execute_query(event_query, {'episode_uuid': episode_uuid})
         events = []
 
-        # Track scene sequence by scene_uuid
-        scene_sequence = 0
-        last_scene_uuid = None
-
         for record in event_results:
             event = record['e']
             event_uuid = self.safe_get(event, 'event_uuid', '')
 
-            # Compute scene_sequence: increment when scene_uuid changes
+            # Get scene_sequence from the pre-computed map (default to 1 if no scene)
             current_scene_uuid = record.get('scene_uuid')
-            if current_scene_uuid != last_scene_uuid:
-                scene_sequence += 1
-                last_scene_uuid = current_scene_uuid
+            scene_sequence = scene_number_map.get(current_scene_uuid, 1) if current_scene_uuid else 1
 
             # Parse key_dialogue (may be string or list)
             key_dialogue = self.safe_get(event, 'key_dialogue', [])
