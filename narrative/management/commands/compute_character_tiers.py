@@ -70,12 +70,17 @@ class Command(BaseCommand):
         characters_to_update = []
 
         for i, character in enumerate(characters, 1):
-            # 1. Count distinct episodes via participations
+            # 1. Count total event participations (appearance_count)
+            appearance_count = EventParticipation.objects.filter(
+                character=character
+            ).count()
+
+            # 2. Count distinct episodes via participations
             episode_count = EventParticipation.objects.filter(
                 character=character
             ).values('event__episode').distinct().count()
 
-            # 2. Count unique co-participants (other characters in same events)
+            # 3. Count unique co-participants (other characters in same events)
             # Get all events this character participated in
             character_events = EventParticipation.objects.filter(
                 character=character
@@ -88,7 +93,7 @@ class Command(BaseCommand):
                 character=character
             ).values('character').distinct().count()
 
-            # 3. Determine tier based on thresholds
+            # 4. Determine tier based on thresholds
             if (episode_count >= anchor_min_episodes or
                     relationship_count >= anchor_min_relationships):
                 new_tier = ImportanceTier.ANCHOR
@@ -112,6 +117,7 @@ class Command(BaseCommand):
             stats[new_tier] += 1
 
             # Update character object
+            character.appearance_count = appearance_count
             character.episode_count = episode_count
             character.relationship_count = relationship_count
             character.importance_tier = new_tier
@@ -137,7 +143,7 @@ class Command(BaseCommand):
         if not dry_run:
             CharacterPage.objects.bulk_update(
                 characters_to_update,
-                ['episode_count', 'relationship_count', 'importance_tier']
+                ['appearance_count', 'episode_count', 'relationship_count', 'importance_tier']
             )
             self.stdout.write(self.style.SUCCESS(f"\nUpdated {len(characters_to_update)} characters."))
         else:

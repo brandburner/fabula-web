@@ -184,6 +184,16 @@ class Command(BaseCommand):
             objects_data = self.unwrap_data(objects_data_raw, 'objects') if objects_data_raw else []
             connections_data = self.unwrap_data(self.load_yaml(data_dir / 'connections.yaml'), 'connections')
 
+            # Deduplicate entities that may have duplicate entries in YAML
+            # (e.g., same character with different organization affiliations from JOIN queries)
+            characters_data = self.dedupe_by_global_id(characters_data, 'characters')
+            if organizations_data:
+                organizations_data = self.dedupe_by_global_id(organizations_data, 'organizations')
+            objects_data = self.dedupe_by_global_id(objects_data, 'objects')
+            locations_data = self.dedupe_by_global_id(locations_data, 'locations')
+            themes_data = self.dedupe_by_global_id(themes_data, 'themes')
+            arcs_data = self.dedupe_by_global_id(arcs_data, 'arcs')
+
             # Load event files
             events_dir = data_dir / 'events'
             events_data = self.load_events(events_dir)
@@ -454,6 +464,52 @@ class Command(BaseCommand):
         if not value or len(value) <= max_length:
             return value
         return value[:max_length - 3] + '...'
+
+    def dedupe_by_global_id(self, data_list: List[Dict], entity_type: str = 'entity') -> List[Dict]:
+        """
+        Deduplicate a list of entity data by global_id.
+
+        Some exports (particularly from Neo4j with JOINs) can produce duplicate
+        entries for the same entity with different relationships (e.g., same
+        character with different organization affiliations). This dedupes by
+        global_id, keeping the first occurrence.
+
+        Args:
+            data_list: List of entity dictionaries
+            entity_type: Name of entity type for logging
+
+        Returns:
+            Deduplicated list
+        """
+        seen_global_ids = set()
+        seen_fabula_uuids = set()
+        deduped = []
+        duplicates_skipped = 0
+
+        for item in data_list:
+            global_id = item.get('global_id', '')
+            fabula_uuid = item.get('fabula_uuid', '')
+
+            # Skip if we've seen this global_id before
+            if global_id and global_id in seen_global_ids:
+                duplicates_skipped += 1
+                continue
+
+            # Also skip if we've seen this fabula_uuid (backup dedup)
+            if fabula_uuid and fabula_uuid in seen_fabula_uuids:
+                duplicates_skipped += 1
+                continue
+
+            if global_id:
+                seen_global_ids.add(global_id)
+            if fabula_uuid:
+                seen_fabula_uuids.add(fabula_uuid)
+            deduped.append(item)
+
+        if duplicates_skipped > 0:
+            self.log_info(f"  Deduped {entity_type}: removed {duplicates_skipped} duplicate entries")
+
+        return deduped
 
     # =========================================================================
     # Phase 1: Snippets
