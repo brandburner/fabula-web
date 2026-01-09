@@ -307,7 +307,7 @@
 
             <div class="grid md:grid-cols-2 gap-4">
                 {% for theme in page.themes.all %}
-                <a href="{% url 'theme_detail' theme.pk %}"
+                <a href="{{ theme.get_absolute_url }}"
                    class="group block p-5 bg-gradient-to-br from-slate-900/50 to-slate-900/30 border border-slate-800 rounded-xl hover:border-violet-500/40 hover:bg-violet-500/5 transition-all duration-300 hover:shadow-lg hover:shadow-violet-500/10 hover:-translate-y-1">
                     <div class="flex items-start justify-between gap-4 mb-3">
                         <div class="font-semibold text-slate-200 group-hover:text-violet-300 transition-colors leading-snug">
@@ -338,7 +338,7 @@
             
             <div class="flex flex-wrap gap-2">
                 {% for arc in page.arcs.all %}
-                <a href="{% url 'arc_detail' arc.pk %}"
+                <a href="{{ arc.get_absolute_url }}"
                    class="px-3 py-1.5 text-sm border border-orange-500/30 text-orange-400 bg-orange-500/5 rounded-lg hover:bg-orange-500/10 transition-colors">
                     {{ arc.title }}
                 </a>

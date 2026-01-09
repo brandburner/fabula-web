@@ -132,6 +132,11 @@ class Theme(index.Indexed, ClusterableModel):
     def __str__(self):
         return self.name
 
+    def get_absolute_url(self):
+        """Return URL using global_id for stable cross-season links."""
+        identifier = self.global_id or self.fabula_uuid or self.pk
+        return f"/themes/{identifier}/"
+
     class Meta:
         verbose_name_plural = "Themes"
 
@@ -186,6 +191,11 @@ class ConflictArc(index.Indexed, ClusterableModel):
 
     def __str__(self):
         return self.title
+
+    def get_absolute_url(self):
+        """Return URL using global_id for stable cross-season links."""
+        identifier = self.global_id or self.fabula_uuid or self.pk
+        return f"/arcs/{identifier}/"
 
     class Meta:
         verbose_name = "Conflict Arc"
@@ -248,6 +258,11 @@ class Location(index.Indexed, ClusterableModel):
 
     def __str__(self):
         return self.canonical_name
+
+    def get_absolute_url(self):
+        """Return URL using global_id for stable cross-season links."""
+        identifier = self.global_id or self.fabula_uuid or self.pk
+        return f"/locations/{identifier}/"
 
     class Meta:
         verbose_name_plural = "Locations"
@@ -533,6 +548,11 @@ class CharacterPage(Page):
             emotional_state=''
         )
 
+    def get_absolute_url(self):
+        """Return URL using global_id for stable cross-season links."""
+        identifier = self.global_id or self.fabula_uuid or self.pk
+        return f"/characters/{identifier}/"
+
 
 class CharacterIndexPage(Page):
     """Index page listing all characters."""
@@ -628,6 +648,11 @@ class OrganizationPage(Page):
         for term in terms:
             q |= Q(description__icontains=term)
         return EventPage.objects.live().filter(q).select_related('episode').distinct()[:limit]
+
+    def get_absolute_url(self):
+        """Return URL using global_id for stable cross-season links."""
+        identifier = self.global_id or self.fabula_uuid or self.pk
+        return f"/organizations/{identifier}/"
 
 
 class OrganizationIndexPage(Page):
@@ -734,6 +759,11 @@ class ObjectPage(Page):
             'event__scene_sequence'
         )
 
+    def get_absolute_url(self):
+        """Return URL using global_id for stable cross-season links."""
+        identifier = self.global_id or self.fabula_uuid or self.pk
+        return f"/objects/{identifier}/"
+
 
 class EventPage(Page):
     """
@@ -747,7 +777,14 @@ class EventPage(Page):
         blank=True,
         help_text="UUID from Fabula graph (event_uuid)"
     )
-    
+    global_id = models.CharField(
+        max_length=100,
+        blank=True,
+        null=True,
+        db_index=True,
+        help_text="GER global entity ID for cross-season identity (e.g., ger_event_...)"
+    )
+
     # Episode context
     episode = models.ForeignKey(
         EpisodePage,
@@ -904,6 +941,11 @@ class EventPage(Page):
             'outgoing': self.get_connections_from(),
             'incoming': self.get_connections_to(),
         }
+
+    def get_absolute_url(self):
+        """Return URL using global_id for stable cross-season links."""
+        identifier = self.global_id or self.fabula_uuid or self.pk
+        return f"/events/{identifier}/"
 
 
 class EventIndexPage(Page):
@@ -1222,7 +1264,14 @@ class NarrativeConnection(models.Model):
         blank=True,
         help_text="UUID from Fabula graph (connection_uuid)"
     )
-    
+    global_id = models.CharField(
+        max_length=100,
+        blank=True,
+        null=True,
+        db_index=True,
+        help_text="GER global entity ID for cross-season identity (e.g., ger_conn_...)"
+    )
+
     from_event = models.ForeignKey(
         EventPage,
         on_delete=models.CASCADE,
@@ -1263,7 +1312,9 @@ class NarrativeConnection(models.Model):
 
     def get_absolute_url(self):
         """Connections are navigable - they have their own URLs."""
-        return f"/connections/{self.id}/"
+        # Use global_id for stable cross-season URLs, fall back to pk
+        identifier = self.global_id or self.fabula_uuid or self.pk
+        return f"/connections/{identifier}/"
 
 
 class CharacterEpisodeProfile(models.Model):

@@ -11,7 +11,7 @@
     {# Connection type badge #}
     <div class="flex items-center gap-3 mb-3">
         <span class="conn-badge inline-flex items-center gap-2 px-3 py-1.5 text-xs font-semibold border-2 rounded-lg capitalize hover:scale-105 transition-transform"
-              onclick="event.stopPropagation(); window.location='{% url 'connection_detail' connection.pk %}'">
+              onclick="event.stopPropagation(); window.location='{{ connection.get_absolute_url }}'">
             {% include "includes/connection_icon.html" with conn_type=connection.connection_type %}
             {{ connection.get_connection_type_display }}
         </span>

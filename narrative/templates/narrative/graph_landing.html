@@ -52,7 +52,7 @@
                 {% if sample_episodes %}
                 <div class="flex flex-wrap gap-2 mb-4">
                     {% for episode in sample_episodes %}
-                    <a href="{% url 'episode_graph' episode.pk %}"
+                    <a href="{% url 'episode_graph' episode.fabula_uuid|default:episode.pk %}"
                        class="inline-flex items-center gap-2 px-3 py-1.5 bg-blue-500/10 border border-blue-500/20 rounded-lg hover:bg-blue-500/20 transition-colors text-sm">
                         <i data-lucide="git-branch" class="w-3.5 h-3.5 text-blue-400"></i>
                         <span class="text-blue-300">{{ episode.title|truncatewords:4 }}</span>
@@ -83,7 +83,7 @@
                 {% if sample_characters %}
                 <div class="flex flex-wrap gap-2 mb-4">
                     {% for character in sample_characters %}
-                    <a href="{% url 'character_graph' character.pk %}"
+                    <a href="{% url 'character_graph' character.global_id|default:character.fabula_uuid|default:character.pk %}"
                        class="inline-flex items-center gap-2 px-3 py-1.5 bg-emerald-500/10 border border-emerald-500/20 rounded-lg hover:bg-emerald-500/20 transition-colors text-sm">
                         <i data-lucide="git-branch" class="w-3.5 h-3.5 text-emerald-400"></i>
                         <span class="text-emerald-300">{{ character.title }}</span>
@@ -114,7 +114,7 @@
                 {% if sample_themes %}
                 <div class="flex flex-wrap gap-2 mb-4">
                     {% for theme in sample_themes %}
-                    <a href="{% url 'theme_graph' theme.pk %}"
+                    <a href="{% url 'theme_graph' theme.global_id|default:theme.fabula_uuid|default:theme.pk %}"
                        class="inline-flex items-center gap-2 px-3 py-1.5 bg-violet-500/10 border border-violet-500/20 rounded-lg hover:bg-violet-500/20 transition-colors text-sm">
                         <i data-lucide="git-branch" class="w-3.5 h-3.5 text-violet-400"></i>
                         <span class="text-violet-300">{{ theme.name|truncatewords:3 }}</span>
@@ -145,7 +145,7 @@
                 {% if sample_arcs %}
                 <div class="flex flex-wrap gap-2 mb-4">
                     {% for arc in sample_arcs %}
-                    <a href="{% url 'arc_graph' arc.pk %}"
+                    <a href="{% url 'arc_graph' arc.global_id|default:arc.fabula_uuid|default:arc.pk %}"
                        class="inline-flex items-center gap-2 px-3 py-1.5 bg-amber-500/10 border border-amber-500/20 rounded-lg hover:bg-amber-500/20 transition-colors text-sm">
                         <i data-lucide="git-branch" class="w-3.5 h-3.5 text-amber-400"></i>
                         <span class="text-amber-300">{{ arc.title|truncatewords:3 }}</span>

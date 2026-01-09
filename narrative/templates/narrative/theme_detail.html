@@ -21,7 +21,7 @@
                     <i data-lucide="sparkles" class="w-4 h-4 text-violet-500"></i>
                     <span class="text-violet-500/80 font-medium">Theme</span>
                 </div>
-                <a href="{% url 'theme_graph' theme.pk %}"
+                <a href="{% url 'theme_graph' theme.global_id|default:theme.fabula_uuid|default:theme.pk %}"
                    class="flex items-center gap-2 px-3 py-1.5 bg-cyan-500/10 border border-cyan-500/20 rounded-lg hover:bg-cyan-500/20 transition-colors">
                     <i data-lucide="git-branch" class="w-4 h-4 text-cyan-400"></i>
                     <span class="text-cyan-400 text-sm font-medium">View Graph</span>
@@ -96,7 +96,7 @@
             
             <div class="flex flex-wrap gap-2">
                 {% for other in other_themes %}
-                <a href="{% url 'theme_detail' other.pk %}"
+                <a href="{{ other.get_absolute_url }}"
                    class="px-3 py-1.5 text-sm border border-violet-500/20 text-violet-400 bg-violet-500/5 rounded-lg hover:bg-violet-500/10 transition-colors">
                     {{ other.name }}
                     <span class="text-violet-500/50 ml-1">({{ other.events.count }})</span>

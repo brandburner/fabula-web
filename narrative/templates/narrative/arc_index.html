@@ -37,7 +37,7 @@
         {# Arc grid #}
         <div class="space-y-4">
             {% for arc in arcs %}
-            <a href="{% url 'arc_detail' arc.pk %}"
+            <a href="{{ arc.get_absolute_url }}"
                class="block p-5 bg-slate-900/50 border border-slate-800 rounded-lg hover:border-amber-500/30 hover:bg-amber-500/5 transition-all group">
                 <div class="flex items-start justify-between gap-4 mb-3">
                     <div class="flex items-center gap-3">

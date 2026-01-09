@@ -1,18 +1,21 @@
 """
 Custom Views for Fabula Narrative Web
 
-These views handle display of models that are not Wagtail Pages:
-- NarrativeConnection (Django model)
-- Theme (Wagtail snippet)
-- ConflictArc (Wagtail snippet)
+All entity URLs use a flexible identifier that can be:
+- global_id (preferred, e.g., ger_agent_fe6eddb52e5e) - stable across seasons
+- fabula_uuid (fallback, e.g., agent_256dcf4afffe) - from Neo4j
+- pk (legacy support, e.g., 3176) - database primary key
 
-URL patterns should be added to urls.py.
+This enables cross-season entity linking where the same character/location/etc.
+can be addressed by a single stable URL regardless of which season's data
+was imported first.
 """
 
 import json
 
+from django.http import Http404
 from django.shortcuts import render, get_object_or_404
-from django.views.generic import ListView, DetailView
+from django.views.generic import ListView, DetailView, TemplateView
 
 from django.db import models
 from django.db.models import Q, Count
@@ -21,8 +24,66 @@ from .models import (
     NarrativeConnection, Theme, ConflictArc, Location,
     EventPage, CharacterPage, EpisodePage, EventParticipation,
     ConnectionType, LocationInvolvement, OrganizationInvolvement,
-    OrganizationPage, ObjectPage, ObjectInvolvement
+    OrganizationPage, ObjectPage, ObjectInvolvement,
+    CharacterIndexPage, OrganizationIndexPage, ObjectIndexPage, EventIndexPage
 )
+
+
+# =============================================================================
+# FLEXIBLE IDENTIFIER LOOKUP MIXIN
+# =============================================================================
+
+class FlexibleIdentifierMixin:
+    """
+    Mixin that looks up objects by global_id, fabula_uuid, or pk.
+
+    This enables stable cross-season URLs where entities can be addressed by:
+    - global_id: Cross-season identity (e.g., ger_agent_fe6eddb52e5e)
+    - fabula_uuid: Season-specific Neo4j ID (e.g., agent_256dcf4afffe)
+    - pk: Database primary key (e.g., 3176)
+
+    The identifier is extracted from self.kwargs['identifier'].
+    """
+
+    def get_object(self, queryset=None):
+        """Look up object by global_id, fabula_uuid, or pk."""
+        if queryset is None:
+            queryset = self.get_queryset()
+
+        identifier = self.kwargs.get('identifier', '')
+
+        # Try global_id first (preferred for cross-season links)
+        if identifier.startswith('ger_'):
+            try:
+                return queryset.get(global_id=identifier)
+            except self.model.DoesNotExist:
+                pass
+
+        # Try fabula_uuid (starts with entity type prefix)
+        entity_prefixes = ('agent_', 'event_', 'theme_', 'arc_', 'location_',
+                          'org_', 'object_', 'conn_', 'episode_', 'season_')
+        if any(identifier.startswith(prefix) for prefix in entity_prefixes):
+            try:
+                return queryset.get(fabula_uuid=identifier)
+            except self.model.DoesNotExist:
+                pass
+
+        # Try pk (numeric)
+        if identifier.isdigit():
+            try:
+                return queryset.get(pk=int(identifier))
+            except self.model.DoesNotExist:
+                pass
+
+        # If nothing matched, try all three as a last resort
+        try:
+            return queryset.get(
+                Q(global_id=identifier) |
+                Q(fabula_uuid=identifier) |
+                Q(pk=identifier if identifier.isdigit() else -1)
+            )
+        except self.model.DoesNotExist:
+            raise Http404(f"No {self.model.__name__} found with identifier: {identifier}")
 
 
 # =============================================================================
@@ -55,9 +116,10 @@ class ConnectionIndexView(ListView):
         return context
 
 
-class ConnectionDetailView(DetailView):
+class ConnectionDetailView(FlexibleIdentifierMixin, DetailView):
     """
     View a single narrative connection as first-class content.
+    Uses flexible identifier lookup (global_id, fabula_uuid, or pk).
     """
     model = NarrativeConnection
     template_name = 'narrative/connection_detail.html'
@@ -107,9 +169,10 @@ class ThemeIndexView(ListView):
         ).order_by('-event_count')
 
 
-class ThemeDetailView(DetailView):
+class ThemeDetailView(FlexibleIdentifierMixin, DetailView):
     """
     View a single theme with all events that exemplify it.
+    Uses flexible identifier lookup (global_id, fabula_uuid, or pk).
     """
     model = Theme
     template_name = 'narrative/theme_detail.html'
@@ -153,9 +216,10 @@ class ArcIndexView(ListView):
         ).order_by('-event_count')
 
 
-class ArcDetailView(DetailView):
+class ArcDetailView(FlexibleIdentifierMixin, DetailView):
     """
     View a single conflict arc with all related events.
+    Uses flexible identifier lookup (global_id, fabula_uuid, or pk).
     """
     model = ConflictArc
     template_name = 'narrative/arc_detail.html'
@@ -206,10 +270,11 @@ class LocationIndexView(ListView):
         return context
 
 
-class LocationDetailView(DetailView):
+class LocationDetailView(FlexibleIdentifierMixin, DetailView):
     """
     View a single location with all events that occur there.
     Shows both simple FK events and rich involvement events.
+    Uses flexible identifier lookup (global_id, fabula_uuid, or pk).
     """
     model = Location
     template_name = 'narrative/location_detail.html'
@@ -239,6 +304,185 @@ class LocationDetailView(DetailView):
         context['child_locations'] = Location.objects.filter(
             parent_location=self.object
         )
+
+        return context
+
+
+# =============================================================================
+# WAGTAIL PAGE VIEWS (served via global_id for stable URLs)
+# =============================================================================
+
+class CharacterIndexView(ListView):
+    """Browse all characters, ordered by importance tier and appearance count."""
+    model = CharacterPage
+    template_name = 'narrative/character_index.html'
+    context_object_name = 'characters'
+
+    def get_queryset(self):
+        return CharacterPage.objects.live().order_by(
+            '-importance_tier', '-appearance_count', 'canonical_name'
+        )
+
+
+class CharacterDetailView(FlexibleIdentifierMixin, DetailView):
+    """
+    View a single character with their event participations and journey.
+    Uses flexible identifier lookup (global_id, fabula_uuid, or pk).
+    """
+    model = CharacterPage
+    template_name = 'narrative/character_page.html'
+    context_object_name = 'character'
+
+    def get_queryset(self):
+        return CharacterPage.objects.live()
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        character = self.object
+
+        # Alias 'page' for template compatibility with Wagtail conventions
+        context['page'] = character
+        context['self'] = character
+
+        # Get participations grouped by importance
+        context['participations_by_importance'] = self._get_participations_grouped()
+
+        # Get emotional journey
+        context['emotional_journey'] = character.get_emotional_journey()
+
+        return context
+
+    def _get_participations_grouped(self):
+        """Group participations by importance level."""
+        all_parts = EventParticipation.objects.filter(
+            character=self.object
+        ).select_related('event', 'event__episode')
+
+        grouped = {'primary': [], 'secondary': [], 'mentioned': [], 'other': []}
+        for p in all_parts:
+            importance = (p.importance or '').lower().strip()
+            if importance in grouped:
+                grouped[importance].append(p)
+            elif importance:
+                grouped['other'].append(p)
+            else:
+                grouped['primary'].append(p)
+
+        return grouped
+
+
+class OrganizationIndexView(ListView):
+    """Browse all organizations."""
+    model = OrganizationPage
+    template_name = 'narrative/organization_index.html'
+    context_object_name = 'organizations'
+
+    def get_queryset(self):
+        return OrganizationPage.objects.live().order_by('canonical_name')
+
+
+class OrganizationDetailView(FlexibleIdentifierMixin, DetailView):
+    """
+    View a single organization with related characters and events.
+    Uses flexible identifier lookup (global_id, fabula_uuid, or pk).
+    """
+    model = OrganizationPage
+    template_name = 'narrative/organization_page.html'
+    context_object_name = 'organization'
+
+    def get_queryset(self):
+        return OrganizationPage.objects.live()
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        org = self.object
+
+        # Alias 'page' for template compatibility
+        context['page'] = org
+        context['self'] = org
+
+        # Get related data
+        context['related_characters'] = org.get_related_characters()
+        context['related_events'] = org.get_related_events()
+
+        return context
+
+
+class ObjectIndexView(ListView):
+    """Browse all narrative objects."""
+    model = ObjectPage
+    template_name = 'narrative/object_index.html'
+    context_object_name = 'objects'
+
+    def get_queryset(self):
+        return ObjectPage.objects.live().annotate(
+            involvement_count=Count('event_involvements')
+        ).order_by('-involvement_count', 'canonical_name')
+
+
+class ObjectDetailView(FlexibleIdentifierMixin, DetailView):
+    """
+    View a single object with its event involvements.
+    Uses flexible identifier lookup (global_id, fabula_uuid, or pk).
+    """
+    model = ObjectPage
+    template_name = 'narrative/object_page.html'
+    context_object_name = 'object'
+
+    def get_queryset(self):
+        return ObjectPage.objects.live()
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        obj = self.object
+
+        # Alias 'page' for template compatibility
+        context['page'] = obj
+        context['self'] = obj
+
+        # Get involvements
+        context['involvements'] = obj.get_involvements()
+
+        return context
+
+
+class EventIndexView(ListView):
+    """Browse all events, organized by episode."""
+    model = EventPage
+    template_name = 'narrative/event_index.html'
+    context_object_name = 'events'
+
+    def get_queryset(self):
+        return EventPage.objects.live().select_related(
+            'episode', 'location'
+        ).order_by('episode__path', 'scene_sequence')
+
+
+class EventDetailView(FlexibleIdentifierMixin, DetailView):
+    """
+    View a single event with participations and connections.
+    Uses flexible identifier lookup (global_id, fabula_uuid, or pk).
+    """
+    model = EventPage
+    template_name = 'narrative/event_page.html'
+    context_object_name = 'event'
+
+    def get_queryset(self):
+        return EventPage.objects.live().select_related('episode', 'location')
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        event = self.object
+
+        # Alias 'page' for template compatibility
+        context['page'] = event
+        context['self'] = event
+
+        # Get participations grouped by importance
+        context['participations'] = event.get_participations_by_importance()
+
+        # Get connections
+        context['connections'] = event.get_all_connections()
 
         return context
 
@@ -307,7 +551,7 @@ class ScopedGraphMixin:
                 'nodeType': 'event',
                 'label': event.title[:40] + '...' if len(event.title) > 40 else event.title,
                 'fullTitle': event.title,
-                'url': event.url,
+                'url': event.get_absolute_url(),
                 'episode': ep_label,
                 'sceneSequence': event.scene_sequence or 0,
             })
@@ -331,7 +575,7 @@ class ScopedGraphMixin:
                     'nodeType': 'character',
                     'label': char.title,
                     'fullTitle': char.title,
-                    'url': char.url,
+                    'url': char.get_absolute_url(),
                     # Graph Gravity tier data
                     'tier': char.importance_tier,
                     'episodeCount': char.episode_count,
@@ -374,7 +618,7 @@ class ScopedGraphMixin:
                     'nodeType': 'location',
                     'label': loc.canonical_name,
                     'fullTitle': loc.canonical_name,
-                    'url': None,  # Locations are snippets, no page URL
+                    'url': loc.get_absolute_url(),  # Now served via custom view
                 })
 
             event_node_id = f"event_{inv.event_id}"
@@ -403,7 +647,7 @@ class ScopedGraphMixin:
                         'nodeType': 'location',
                         'label': loc.canonical_name,
                         'fullTitle': loc.canonical_name,
-                        'url': None,
+                        'url': loc.get_absolute_url(),
                     })
 
                 # Check if edge already exists from LocationInvolvement
@@ -440,7 +684,7 @@ class ScopedGraphMixin:
                     'nodeType': 'organization',
                     'label': org.title,
                     'fullTitle': org.title,
-                    'url': org.url,
+                    'url': org.get_absolute_url(),
                 })
 
             event_node_id = f"event_{inv.event_id}"
@@ -491,10 +735,11 @@ class ScopedGraphMixin:
         return context
 
 
-class EpisodeGraphView(ScopedGraphMixin, DetailView):
+class EpisodeGraphView(FlexibleIdentifierMixin, ScopedGraphMixin, DetailView):
     """
     Graph of events within a single episode.
     Typically ~20-40 nodes, very fast.
+    Uses flexible identifier lookup (fabula_uuid or pk - episodes don't have global_id).
     """
     model = EpisodePage
 
@@ -514,18 +759,19 @@ class EpisodeGraphView(ScopedGraphMixin, DetailView):
         return EventPage.objects.live().filter(episode=episode)
 
 
-class CharacterGraphView(ScopedGraphMixin, DetailView):
+class CharacterGraphView(FlexibleIdentifierMixin, ScopedGraphMixin, DetailView):
     """
     Graph of events a character participates in.
     Shows the character's journey through the narrative.
+    Uses flexible identifier lookup (global_id, fabula_uuid, or pk).
     """
     model = CharacterPage
 
     def get_graph_title(self):
-        return f"{self.get_object().title}'s Journey"
+        return f"{self.get_object().canonical_name}'s Journey"
 
     def get_back_url(self):
-        return self.get_object().url
+        return self.get_object().get_absolute_url()
 
     def get_events_queryset(self):
         character = self.get_object()
@@ -535,9 +781,10 @@ class CharacterGraphView(ScopedGraphMixin, DetailView):
         return EventPage.objects.live().filter(pk__in=event_ids)
 
 
-class ThemeGraphView(ScopedGraphMixin, DetailView):
+class ThemeGraphView(FlexibleIdentifierMixin, ScopedGraphMixin, DetailView):
     """
     Graph of events tagged with a specific theme.
+    Uses flexible identifier lookup (global_id, fabula_uuid, or pk).
     """
     model = Theme
 
@@ -545,16 +792,17 @@ class ThemeGraphView(ScopedGraphMixin, DetailView):
         return f"Theme: {self.get_object().name}"
 
     def get_back_url(self):
-        return f"/themes/{self.get_object().pk}/"
+        return self.get_object().get_absolute_url()
 
     def get_events_queryset(self):
         theme = self.get_object()
         return EventPage.objects.live().filter(themes=theme)
 
 
-class ArcGraphView(ScopedGraphMixin, DetailView):
+class ArcGraphView(FlexibleIdentifierMixin, ScopedGraphMixin, DetailView):
     """
     Graph of events in a conflict arc.
+    Uses flexible identifier lookup (global_id, fabula_uuid, or pk).
     """
     model = ConflictArc
 
@@ -562,17 +810,18 @@ class ArcGraphView(ScopedGraphMixin, DetailView):
         return f"Arc: {self.get_object().title}"
 
     def get_back_url(self):
-        return f"/arcs/{self.get_object().pk}/"
+        return self.get_object().get_absolute_url()
 
     def get_events_queryset(self):
         arc = self.get_object()
         return EventPage.objects.live().filter(arcs=arc)
 
 
-class LocationGraphView(ScopedGraphMixin, DetailView):
+class LocationGraphView(FlexibleIdentifierMixin, ScopedGraphMixin, DetailView):
     """
     Graph of events involving a specific location.
     Shows all events that take place at this location.
+    Uses flexible identifier lookup (global_id, fabula_uuid, or pk).
     """
     model = Location
 
@@ -580,7 +829,7 @@ class LocationGraphView(ScopedGraphMixin, DetailView):
         return f"Location: {self.get_object().canonical_name}"
 
     def get_back_url(self):
-        return f"/locations/{self.get_object().pk}/"
+        return self.get_object().get_absolute_url()
 
     def get_events_queryset(self):
         location = self.get_object()
@@ -594,18 +843,19 @@ class LocationGraphView(ScopedGraphMixin, DetailView):
         ).distinct()
 
 
-class OrganizationGraphView(ScopedGraphMixin, DetailView):
+class OrganizationGraphView(FlexibleIdentifierMixin, ScopedGraphMixin, DetailView):
     """
     Graph of events involving a specific organization.
     Shows the organization's role across the narrative.
+    Uses flexible identifier lookup (global_id, fabula_uuid, or pk).
     """
     model = OrganizationPage
 
     def get_graph_title(self):
-        return f"Organization: {self.get_object().title}"
+        return f"Organization: {self.get_object().canonical_name}"
 
     def get_back_url(self):
-        return self.get_object().url
+        return self.get_object().get_absolute_url()
 
     def get_events_queryset(self):
         org = self.get_object()
@@ -615,18 +865,19 @@ class OrganizationGraphView(ScopedGraphMixin, DetailView):
         return EventPage.objects.live().filter(pk__in=event_ids)
 
 
-class ObjectGraphView(ScopedGraphMixin, DetailView):
+class ObjectGraphView(FlexibleIdentifierMixin, ScopedGraphMixin, DetailView):
     """
     Graph of events involving a specific object.
     Shows how an object appears across the narrative.
+    Uses flexible identifier lookup (global_id, fabula_uuid, or pk).
     """
     model = ObjectPage
 
     def get_graph_title(self):
-        return f"Object: {self.get_object().title}"
+        return f"Object: {self.get_object().canonical_name}"
 
     def get_back_url(self):
-        return self.get_object().url
+        return self.get_object().get_absolute_url()
 
     def get_events_queryset(self):
         obj = self.get_object()
@@ -636,10 +887,11 @@ class ObjectGraphView(ScopedGraphMixin, DetailView):
         return EventPage.objects.live().filter(pk__in=event_ids)
 
 
-class EventGraphView(ScopedGraphMixin, DetailView):
+class EventGraphView(FlexibleIdentifierMixin, ScopedGraphMixin, DetailView):
     """
     Graph centered on a single event, showing its connections.
     Includes connected events up to 2 hops away.
+    Uses flexible identifier lookup (global_id, fabula_uuid, or pk).
     """
     model = EventPage
 
@@ -647,7 +899,7 @@ class EventGraphView(ScopedGraphMixin, DetailView):
         return f"Event: {self.get_object().title}"
 
     def get_back_url(self):
-        return self.get_object().url
+        return self.get_object().get_absolute_url()
 
     def get_events_queryset(self):
         event = self.get_object()

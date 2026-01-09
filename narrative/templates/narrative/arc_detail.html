@@ -21,7 +21,7 @@
                     <i data-lucide="trending-up" class="w-4 h-4 text-amber-500"></i>
                     <span class="text-amber-500/80 font-medium">{{ arc.get_arc_type_display }} Conflict</span>
                 </div>
-                <a href="{% url 'arc_graph' arc.pk %}"
+                <a href="{% url 'arc_graph' arc.global_id|default:arc.fabula_uuid|default:arc.pk %}"
                    class="flex items-center gap-2 px-3 py-1.5 bg-cyan-500/10 border border-cyan-500/20 rounded-lg hover:bg-cyan-500/20 transition-colors">
                     <i data-lucide="git-branch" class="w-4 h-4 text-cyan-400"></i>
                     <span class="text-cyan-400 text-sm font-medium">View Graph</span>

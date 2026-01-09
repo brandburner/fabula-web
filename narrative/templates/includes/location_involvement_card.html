@@ -7,7 +7,7 @@
         </div>
         <div class="flex-1 min-w-0">
             {# Location link #}
-            <a href="{% url 'location_detail' involvement.location.pk %}"
+            <a href="{{ involvement.location.get_absolute_url }}"
                class="font-semibold text-slate-200 group-hover:text-blue-300 transition-colors">
                 {{ involvement.location.canonical_name }}
             </a>

@@ -79,7 +79,7 @@
                 {# Sample connections #}
                 <div class="space-y-2">
                     {% for connection in connections %}
-                    <a href="{% url 'connection_detail' connection.pk %}"
+                    <a href="{{ connection.get_absolute_url }}"
                        class="flex items-center gap-3 p-3 bg-slate-900/50 border border-slate-800 rounded-lg hover:border-slate-700 transition-colors group">
                         <span class="text-sm text-slate-400 group-hover:text-slate-200 flex-1 truncate">
                             {{ connection.from_event.title }}

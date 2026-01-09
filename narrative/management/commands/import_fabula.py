@@ -880,7 +880,8 @@ class Command(BaseCommand):
 
             created = False
             if org_page:
-                # Update existing
+                # Update existing - sync title with canonical_name for graph display consistency
+                org_page.title = self.truncate_field(org_data['canonical_name'], 255)
                 org_page.canonical_name = self.truncate_field(org_data['canonical_name'], 255)
                 org_page.description = org_data.get('description', '')
                 org_page.sphere_of_influence = self.truncate_field(org_data.get('sphere_of_influence', ''), 255)
@@ -944,7 +945,8 @@ class Command(BaseCommand):
 
             created = False
             if char_page:
-                # Update existing
+                # Update existing - sync title with canonical_name for graph display consistency
+                char_page.title = self.truncate_field(char_data['canonical_name'], 255)
                 char_page.canonical_name = self.truncate_field(char_data['canonical_name'], 255)
                 char_page.title_role = self.truncate_field(char_data.get('title_role') or '', 255)
                 char_page.description = char_data.get('description') or ''
@@ -1020,7 +1022,8 @@ class Command(BaseCommand):
 
             created = False
             if obj_page:
-                # Update existing
+                # Update existing - sync title with canonical_name for graph display consistency
+                obj_page.title = self.truncate_field(obj_data['canonical_name'], 255)
                 obj_page.canonical_name = self.truncate_field(obj_data['canonical_name'], 255)
                 obj_page.description = obj_data.get('description', '')
                 obj_page.purpose = obj_data.get('purpose', '')

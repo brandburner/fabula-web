@@ -182,7 +182,7 @@
                 {# Other connections from the source event #}
                 {% for other in from_connections %}
                 {% if other.pk != connection.pk %}
-                <a href="{% url 'connection_detail' other.pk %}"
+                <a href="{{ other.get_absolute_url }}"
                    class="p-3 bg-slate-900/50 border border-slate-800 rounded-lg hover:border-slate-700 transition-colors text-sm">
                     <div class="flex items-center gap-2 mb-1">
                         <span class="conn-{{ other.connection_type|lower|slugify }} conn-badge px-1.5 py-0.5 text-xs border rounded">
@@ -199,7 +199,7 @@
                 {# Other connections to the target event #}
                 {% for other in to_connections %}
                 {% if other.pk != connection.pk %}
-                <a href="{% url 'connection_detail' other.pk %}"
+                <a href="{{ other.get_absolute_url }}"
                    class="p-3 bg-slate-900/50 border border-slate-800 rounded-lg hover:border-slate-700 transition-colors text-sm">
                     <div class="flex items-center gap-2 mb-1">
                         <span class="conn-{{ other.connection_type|lower|slugify }} conn-badge px-1.5 py-0.5 text-xs border rounded">
