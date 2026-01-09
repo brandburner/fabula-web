@@ -1410,8 +1410,13 @@ class Command(BaseCommand):
     # =========================================================================
 
     def import_connections(self, connections_data: List[Dict]):
-        """Import narrative connections."""
+        """Import narrative connections with GER cross-season resolution."""
         self.log_progress(f"  Importing {len(connections_data)} narrative connections...")
+
+        # Build cache of existing connections by global_id for cross-season matching
+        connections_by_global_id = {
+            c.global_id: c for c in NarrativeConnection.objects.exclude(global_id__isnull=True).exclude(global_id='')
+        }
 
         for conn_data in connections_data:
             from_uuid = conn_data['from_event_uuid']
@@ -1427,20 +1432,33 @@ class Command(BaseCommand):
                 continue
 
             conn_type = conn_data['connection_type']
+            global_id = conn_data.get('global_id', '')
+            fabula_uuid = conn_data.get('fabula_uuid') or conn_data.get('connection_uuid', '')
 
-            # Check if connection exists
-            connection = NarrativeConnection.objects.filter(
-                from_event=from_event,
-                to_event=to_event,
-                connection_type=conn_type
-            ).first()
+            # Cross-season resolution: first try to find by global_id
+            connection = None
+            cross_season_match = False
+            if global_id and global_id in connections_by_global_id:
+                connection = connections_by_global_id[global_id]
+                cross_season_match = True
+                self.log_detail(f"    Cross-season match for connection: {global_id}")
+
+            # Fall back to event pair + type lookup
+            if not connection:
+                connection = NarrativeConnection.objects.filter(
+                    from_event=from_event,
+                    to_event=to_event,
+                    connection_type=conn_type
+                ).first()
 
             if connection:
                 # Update existing
                 connection.strength = conn_data.get('strength', 'medium')
                 connection.description = conn_data.get('description', '')
-                if fabula_uuid := conn_data.get('fabula_uuid') or conn_data.get('connection_uuid'):
+                if fabula_uuid:
                     connection.fabula_uuid = fabula_uuid
+                if global_id:
+                    connection.global_id = global_id
 
                 if not self.dry_run:
                     connection.save()
@@ -1448,7 +1466,8 @@ class Command(BaseCommand):
             else:
                 # Create new
                 connection = NarrativeConnection(
-                    fabula_uuid=conn_data.get('fabula_uuid') or conn_data.get('connection_uuid', ''),
+                    fabula_uuid=fabula_uuid,
+                    global_id=global_id,
                     from_event=from_event,
                     to_event=to_event,
                     connection_type=conn_type,
