@@ -180,8 +180,9 @@ class FabulaExporter:
         MATCH (a:Agent)
         WHERE a.status = 'canonical' AND a.canonical_name IS NOT NULL
         OPTIONAL MATCH (a)-[:AFFILIATED_WITH]->(org:Organization)
-        RETURN 
+        RETURN
             a.agent_uuid as fabula_uuid,
+            a.global_id as global_id,
             a.canonical_name as canonical_name,
             a.title as title_role,
             a.foundational_description as description,
@@ -194,11 +195,12 @@ class FabulaExporter:
         ORDER BY a.appearance_count DESC
         """
         results = self._run_query(query)
-        
+
         characters = []
         for row in results:
             char = {
                 'fabula_uuid': row['fabula_uuid'],
+                'global_id': row['global_id'],
                 'canonical_name': row['canonical_name'],
                 'title_role': row['title_role'] or '',
                 'description': row['description'] or '',
@@ -211,7 +213,7 @@ class FabulaExporter:
             }
             characters.append(char)
             self.stats['characters'] += 1
-        
+
         return characters
     
     def export_locations(self) -> List[dict]:
@@ -219,8 +221,9 @@ class FabulaExporter:
         query = """
         MATCH (l:Location)
         WHERE l.status = 'canonical' AND l.canonical_name IS NOT NULL
-        RETURN 
+        RETURN
             l.location_uuid as fabula_uuid,
+            l.global_id as global_id,
             l.canonical_name as canonical_name,
             l.foundational_description as description,
             l.foundational_type as location_type,
@@ -228,11 +231,12 @@ class FabulaExporter:
         ORDER BY l.canonical_name
         """
         results = self._run_query(query)
-        
+
         locations = []
         for row in results:
             loc = {
                 'fabula_uuid': row['fabula_uuid'],
+                'global_id': row['global_id'],
                 'canonical_name': row['canonical_name'],
                 'description': row['description'] or '',
                 'location_type': row['location_type'] or '',
@@ -252,6 +256,7 @@ class FabulaExporter:
         WHERE a.status = 'canonical'
         RETURN
             o.object_uuid as fabula_uuid,
+            o.global_id as global_id,
             o.canonical_name as canonical_name,
             o.foundational_description as description,
             o.foundational_purpose as purpose,
@@ -265,6 +270,7 @@ class FabulaExporter:
         for row in results:
             obj = {
                 'fabula_uuid': row['fabula_uuid'],
+                'global_id': row['global_id'],
                 'canonical_name': row['canonical_name'],
                 'description': row['description'] or '',
                 'purpose': row['purpose'] or '',
@@ -283,6 +289,7 @@ class FabulaExporter:
         WHERE org.status = 'canonical' AND org.canonical_name IS NOT NULL
         RETURN
             org.org_uuid as fabula_uuid,
+            org.global_id as global_id,
             org.canonical_name as canonical_name,
             org.foundational_description as description,
             org.sphere_of_influence as sphere_of_influence
@@ -294,6 +301,7 @@ class FabulaExporter:
         for row in results:
             org = {
                 'fabula_uuid': row['fabula_uuid'],
+                'global_id': row['global_id'],
                 'canonical_name': row['canonical_name'],
                 'description': row['description'] or '',
                 'sphere_of_influence': row['sphere_of_influence'] or ''
@@ -307,52 +315,56 @@ class FabulaExporter:
         """Export all themes."""
         query = """
         MATCH (t:Theme)
-        RETURN 
+        RETURN
             t.theme_uuid as fabula_uuid,
+            t.global_id as global_id,
             t.name as name,
             t.description as description
         ORDER BY t.name
         """
         results = self._run_query(query)
-        
+
         themes = []
         for row in results:
             theme = {
                 'fabula_uuid': row['fabula_uuid'],
+                'global_id': row['global_id'],
                 'name': row['name'],
                 'description': row['description'] or ''
             }
             themes.append(theme)
             self.stats['themes'] += 1
-        
+
         return themes
     
     def export_arcs(self) -> List[dict]:
         """Export all conflict arcs."""
         query = """
         MATCH (arc:ConflictArc)
-        RETURN 
+        RETURN
             arc.arc_uuid as fabula_uuid,
+            arc.global_id as global_id,
             arc.conflict_description as description,
             arc.type as arc_type
         ORDER BY arc.type
         """
         results = self._run_query(query)
-        
+
         arcs = []
         for row in results:
             # Generate title from description
             desc = row['description'] or ''
             title = desc[:50] + '...' if len(desc) > 50 else desc
-            
+
             arc = {
                 'fabula_uuid': row['fabula_uuid'],
+                'global_id': row['global_id'],
                 'title': title,
                 'description': desc,
                 'arc_type': row['arc_type'] or 'INTERPERSONAL'
             }
             arcs.append(arc)
-        
+
         return arcs
     
     def export_events_for_episode(self, episode_uuid: str) -> List[dict]:
@@ -370,6 +382,7 @@ class FabulaExporter:
              collect(DISTINCT l.location_uuid)[0] as location_uuid
         RETURN
             e.event_uuid as fabula_uuid,
+            e.global_id as global_id,
             e.title as title,
             e.description as description,
             e.sequence_in_scene as sequence_in_scene,
@@ -509,6 +522,7 @@ class FabulaExporter:
 
             event = {
                 'fabula_uuid': row['fabula_uuid'],
+                'global_id': row['global_id'],
                 'title': row['title'] or 'Untitled Event',
                 'description': row['description'] or '',
                 'episode_uuid': episode_uuid,
@@ -553,6 +567,7 @@ class FabulaExporter:
 
             RETURN DISTINCT
                 r.connection_uuid as fabula_uuid,
+                r.global_id as global_id,
                 e1.event_uuid as from_event_uuid,
                 e2.event_uuid as to_event_uuid,
                 type(r) as connection_type,
@@ -575,6 +590,7 @@ class FabulaExporter:
 
             RETURN DISTINCT
                 r.connection_uuid as fabula_uuid,
+                r.global_id as global_id,
                 e1.event_uuid as from_event_uuid,
                 e2.event_uuid as to_event_uuid,
                 type(r) as connection_type,
@@ -582,18 +598,19 @@ class FabulaExporter:
                 r.description as description
             """
             results = self._run_query(query)
-        
+
         connections = []
         seen = set()  # Deduplicate
-        
+
         for row in results:
             key = (row['from_event_uuid'], row['to_event_uuid'], row['connection_type'])
             if key in seen:
                 continue
             seen.add(key)
-            
+
             conn = {
                 'fabula_uuid': row['fabula_uuid'] or f"conn_{len(connections)}",
+                'global_id': row['global_id'],
                 'from_event_uuid': row['from_event_uuid'],
                 'to_event_uuid': row['to_event_uuid'],
                 'connection_type': row['connection_type'],
@@ -602,7 +619,7 @@ class FabulaExporter:
             }
             connections.append(conn)
             self.stats['connections'] += 1
-        
+
         return connections
 
 

@@ -509,7 +509,10 @@ class Neo4jExporter:
 
         query = """
         MATCH (t:Theme)
-        RETURN t
+        RETURN t.theme_uuid as theme_uuid,
+               t.global_id as global_id,
+               t.name as name,
+               t.description as description
         ORDER BY t.name
         """
 
@@ -517,14 +520,17 @@ class Neo4jExporter:
         themes = []
 
         for record in results:
-            theme = record['t']
-            fabula_uuid = self.safe_get(theme, 'theme_uuid', '')
+            fabula_uuid = record.get('theme_uuid', '')
+            # Read global_id directly from Theme node (propagated by GER)
+            # Fall back to GER lookup for backwards compatibility
+            direct_global_id = record.get('global_id')
+            global_id = direct_global_id if direct_global_id else self.get_global_id(fabula_uuid)
 
             theme_data = {
                 'fabula_uuid': fabula_uuid,
-                'global_id': self.get_global_id(fabula_uuid),
-                'name': self.safe_get(theme, 'name', 'Unknown'),
-                'description': self.safe_get(theme, 'description', '')
+                'global_id': global_id,
+                'name': record.get('name', 'Unknown'),
+                'description': record.get('description', '')
             }
 
             themes.append(theme_data)
@@ -547,7 +553,10 @@ class Neo4jExporter:
 
         query = """
         MATCH (arc:ConflictArc)
-        RETURN arc
+        RETURN arc.arc_uuid as arc_uuid,
+               arc.global_id as global_id,
+               arc.conflict_description as conflict_description,
+               arc.type as arc_type
         ORDER BY arc.conflict_description
         """
 
@@ -555,15 +564,18 @@ class Neo4jExporter:
         arcs = []
 
         for record in results:
-            arc = record['arc']
-            fabula_uuid = self.safe_get(arc, 'arc_uuid', '')
+            fabula_uuid = record.get('arc_uuid', '')
+            # Read global_id directly from ConflictArc node (propagated by GER)
+            # Fall back to GER lookup for backwards compatibility
+            direct_global_id = record.get('global_id')
+            global_id = direct_global_id if direct_global_id else self.get_global_id(fabula_uuid)
 
             arc_data = {
                 'fabula_uuid': fabula_uuid,
-                'global_id': self.get_global_id(fabula_uuid),
-                'title': self.safe_get(arc, 'conflict_description', 'Unknown'),
-                'description': self.safe_get(arc, 'conflict_description', ''),
-                'arc_type': self.safe_get(arc, 'type', 'INTERPERSONAL')
+                'global_id': global_id,
+                'title': record.get('conflict_description', 'Unknown'),
+                'description': record.get('conflict_description', ''),
+                'arc_type': record.get('arc_type', 'INTERPERSONAL')
             }
 
             arcs.append(arc_data)
@@ -652,6 +664,7 @@ class Neo4jExporter:
 
             event_data = {
                 'fabula_uuid': event_uuid,
+                'global_id': self.get_global_id(event_uuid),
                 'title': self.safe_get(event, 'title', 'Untitled Event'),
                 'description': self.safe_get(event, 'description', ''),
                 'episode_uuid': episode_uuid,
@@ -867,7 +880,8 @@ class Neo4jExporter:
                type(r) as connection_type,
                r.strength as strength,
                r.description as description,
-               r.connection_uuid as connection_uuid
+               r.connection_uuid as connection_uuid,
+               r.global_id as global_id
         """
 
         results = self.execute_query(query, {'connection_types': connection_types})
@@ -891,6 +905,7 @@ class Neo4jExporter:
 
                 connection = {
                     'fabula_uuid': record.get('connection_uuid', ''),
+                    'global_id': record.get('global_id'),
                     'from_event_uuid': from_event,
                     'to_event_uuid': to_event,
                     'connection_type': record.get('connection_type', 'CAUSAL'),
