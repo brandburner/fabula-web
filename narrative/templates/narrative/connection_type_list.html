@@ -1,0 +1,90 @@
+{% extends "base.html" %}
+{% load narrative_tags %}
+
+{% block title %}{{ connection_type_display }} Connections{% endblock %}
+
+{% block content %}
+<article class="min-h-screen pb-16">
+    <div class="relative overflow-hidden">
+        <div class="absolute inset-0 bg-gradient-to-b from-cyan-950/20 via-slate-950 to-slate-950"></div>
+
+        <div class="relative max-w-4xl mx-auto px-6 pt-12 pb-8">
+            <div class="flex items-center gap-2 text-sm text-slate-400 mb-4">
+                <a href="{% url 'connection_index' %}" class="hover:text-cyan-400 transition-colors">
+                    <i data-lucide="link-2" class="w-4 h-4"></i>
+                </a>
+                <span class="text-slate-600">/</span>
+                <span class="text-cyan-500/80 font-medium">{{ connection_type_display }}</span>
+            </div>
+
+            <h1 class="text-3xl md:text-4xl font-bold text-white mb-4 leading-tight tracking-tight">
+                {{ connection_type_display }} Connections
+            </h1>
+        </div>
+    </div>
+
+    <div class="max-w-4xl mx-auto px-6">
+        <hr class="border-slate-800 mb-8">
+
+        <div class="space-y-4">
+            {% for connection in connections %}
+            <div class="group bg-slate-900/50 border border-slate-800 rounded-lg p-4 hover:border-cyan-800/50 transition-all">
+                <div class="flex items-start gap-4">
+                    <div class="flex-1 min-w-0">
+                        <div class="flex items-center gap-2 text-xs text-slate-500 mb-2">
+                            {% if connection.from_event.episode %}
+                            <span>{{ connection.from_event.episode.title }}</span>
+                            <span class="text-slate-700">→</span>
+                            {% endif %}
+                            {% if connection.to_event.episode %}
+                            <span>{{ connection.to_event.episode.title }}</span>
+                            {% endif %}
+                        </div>
+
+                        <h3 class="text-white font-medium mb-2">
+                            <a href="{{ connection.get_absolute_url }}" class="hover:text-cyan-400 transition-colors">
+                                {{ connection.from_event.title|truncatechars:50 }}
+                                <span class="text-slate-500 mx-2">→</span>
+                                {{ connection.to_event.title|truncatechars:50 }}
+                            </a>
+                        </h3>
+
+                        {% if connection.description %}
+                        <p class="text-slate-400 text-sm line-clamp-2">{{ connection.description }}</p>
+                        {% endif %}
+                    </div>
+
+                    <div class="flex-shrink-0">
+                        <span class="text-xs text-slate-500">{{ connection.strength }}</span>
+                    </div>
+                </div>
+            </div>
+            {% empty %}
+            <p class="text-slate-500 text-center py-8">No connections of this type found.</p>
+            {% endfor %}
+        </div>
+
+        {% if is_paginated %}
+        <nav class="flex justify-center gap-2 mt-8">
+            {% if page_obj.has_previous %}
+            <a href="?page={{ page_obj.previous_page_number }}"
+               class="px-4 py-2 bg-slate-800 text-slate-300 rounded hover:bg-slate-700 transition-colors">
+                Previous
+            </a>
+            {% endif %}
+
+            <span class="px-4 py-2 text-slate-500">
+                Page {{ page_obj.number }} of {{ page_obj.paginator.num_pages }}
+            </span>
+
+            {% if page_obj.has_next %}
+            <a href="?page={{ page_obj.next_page_number }}"
+               class="px-4 py-2 bg-slate-800 text-slate-300 rounded hover:bg-slate-700 transition-colors">
+                Next
+            </a>
+            {% endif %}
+        </nav>
+        {% endif %}
+    </div>
+</article>
+{% endblock %}

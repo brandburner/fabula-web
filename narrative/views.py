@@ -35,18 +35,19 @@ from .models import (
 
 class FlexibleIdentifierMixin:
     """
-    Mixin that looks up objects by global_id, fabula_uuid, or pk.
+    Mixin that looks up objects by global_id, fabula_uuid, slug, or pk.
 
     This enables stable cross-season URLs where entities can be addressed by:
     - global_id: Cross-season identity (e.g., ger_agent_fe6eddb52e5e)
     - fabula_uuid: Season-specific Neo4j ID (e.g., agent_256dcf4afffe)
+    - slug: Wagtail page slug (for Page subclasses)
     - pk: Database primary key (e.g., 3176)
 
     The identifier is extracted from self.kwargs['identifier'].
     """
 
     def get_object(self, queryset=None):
-        """Look up object by global_id, fabula_uuid, or pk."""
+        """Look up object by global_id, fabula_uuid, slug, or pk."""
         if queryset is None:
             queryset = self.get_queryset()
 
@@ -61,7 +62,8 @@ class FlexibleIdentifierMixin:
 
         # Try fabula_uuid (starts with entity type prefix)
         entity_prefixes = ('agent_', 'event_', 'theme_', 'arc_', 'location_',
-                          'org_', 'object_', 'conn_', 'episode_', 'season_')
+                          'org_', 'object_', 'conn_', 'episode_', 'season_',
+                          'cand_evt_')
         if any(identifier.startswith(prefix) for prefix in entity_prefixes):
             try:
                 return queryset.get(fabula_uuid=identifier)
@@ -75,13 +77,34 @@ class FlexibleIdentifierMixin:
             except self.model.DoesNotExist:
                 pass
 
-        # If nothing matched, try all three as a last resort
+        # Try slug (for Wagtail Page subclasses)
+        if hasattr(self.model, 'slug'):
+            try:
+                return queryset.get(slug=identifier)
+            except self.model.DoesNotExist:
+                pass
+
+        # Try fabula_uuid embedded in slug (e.g., "abbey-bartlet-agent_5347405cc1de")
+        # Extract the fabula_uuid suffix if present
+        for prefix in entity_prefixes:
+            if prefix in identifier:
+                fabula_uuid_start = identifier.find(prefix)
+                if fabula_uuid_start >= 0:
+                    potential_uuid = identifier[fabula_uuid_start:]
+                    try:
+                        return queryset.get(fabula_uuid=potential_uuid)
+                    except self.model.DoesNotExist:
+                        pass
+
+        # If nothing matched, try all available fields as a last resort
+        lookup = Q(global_id=identifier) | Q(fabula_uuid=identifier)
+        if hasattr(self.model, 'slug'):
+            lookup |= Q(slug=identifier)
+        if identifier.isdigit():
+            lookup |= Q(pk=int(identifier))
+
         try:
-            return queryset.get(
-                Q(global_id=identifier) |
-                Q(fabula_uuid=identifier) |
-                Q(pk=identifier if identifier.isdigit() else -1)
-            )
+            return queryset.get(lookup)
         except self.model.DoesNotExist:
             raise Http404(f"No {self.model.__name__} found with identifier: {identifier}")
 

@@ -1,0 +1,138 @@
+{% extends "base.html" %}
+{% load narrative_tags %}
+
+{% block title %}Search Results{% if query %}: {{ query }}{% endif %}{% endblock %}
+
+{% block content %}
+<article class="min-h-screen pb-16">
+    <div class="relative overflow-hidden">
+        <div class="absolute inset-0 bg-gradient-to-b from-slate-900 via-slate-950 to-slate-950"></div>
+
+        <div class="relative max-w-4xl mx-auto px-6 pt-12 pb-8">
+            <div class="flex items-center gap-2 text-sm text-slate-400 mb-4">
+                <i data-lucide="search" class="w-4 h-4 text-cyan-500"></i>
+                <span class="text-cyan-500/80 font-medium">Search</span>
+            </div>
+
+            <h1 class="text-3xl md:text-4xl font-bold text-white mb-4 leading-tight tracking-tight">
+                {% if query %}
+                Results for "{{ query }}"
+                {% else %}
+                Search
+                {% endif %}
+            </h1>
+
+            <form action="{% url 'narrative_search' %}" method="get" class="mt-6">
+                <div class="flex gap-2">
+                    <input type="text" name="q" value="{{ query }}"
+                           placeholder="Search events, characters, themes..."
+                           class="flex-1 px-4 py-3 bg-slate-900 border border-slate-700 rounded-lg text-white placeholder-slate-500 focus:outline-none focus:border-cyan-600 focus:ring-1 focus:ring-cyan-600">
+                    <button type="submit"
+                            class="px-6 py-3 bg-cyan-600 text-white rounded-lg hover:bg-cyan-500 transition-colors">
+                        Search
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <div class="max-w-4xl mx-auto px-6">
+        <hr class="border-slate-800 mb-8">
+
+        {% if query %}
+            {% if character_results %}
+            <section class="mb-10">
+                <h2 class="text-xl font-bold text-white mb-4 flex items-center gap-2">
+                    <i data-lucide="users" class="w-5 h-5 text-amber-500"></i>
+                    Characters
+                </h2>
+                <div class="space-y-3">
+                    {% for character in character_results %}
+                    <a href="{{ character.get_absolute_url }}"
+                       class="block p-4 bg-slate-900/50 border border-slate-800 rounded-lg hover:border-amber-800/50 transition-all">
+                        <h3 class="text-white font-medium">{{ character.title }}</h3>
+                        {% if character.role %}
+                        <p class="text-slate-400 text-sm mt-1">{{ character.role }}</p>
+                        {% endif %}
+                    </a>
+                    {% endfor %}
+                </div>
+            </section>
+            {% endif %}
+
+            {% if theme_results %}
+            <section class="mb-10">
+                <h2 class="text-xl font-bold text-white mb-4 flex items-center gap-2">
+                    <i data-lucide="sparkles" class="w-5 h-5 text-purple-500"></i>
+                    Themes
+                </h2>
+                <div class="space-y-3">
+                    {% for theme in theme_results %}
+                    <a href="{{ theme.get_absolute_url }}"
+                       class="block p-4 bg-slate-900/50 border border-slate-800 rounded-lg hover:border-purple-800/50 transition-all">
+                        <h3 class="text-white font-medium">{{ theme.name }}</h3>
+                        {% if theme.description %}
+                        <p class="text-slate-400 text-sm mt-1 line-clamp-2">{{ theme.description }}</p>
+                        {% endif %}
+                    </a>
+                    {% endfor %}
+                </div>
+            </section>
+            {% endif %}
+
+            <section>
+                <h2 class="text-xl font-bold text-white mb-4 flex items-center gap-2">
+                    <i data-lucide="clapperboard" class="w-5 h-5 text-cyan-500"></i>
+                    Events
+                </h2>
+                <div class="space-y-3">
+                    {% for event in results %}
+                    <a href="{{ event.get_absolute_url }}"
+                       class="block p-4 bg-slate-900/50 border border-slate-800 rounded-lg hover:border-cyan-800/50 transition-all">
+                        <div class="flex items-center gap-2 text-xs text-slate-500 mb-1">
+                            {% if event.episode %}
+                            <span>{{ event.episode.title }}</span>
+                            {% endif %}
+                        </div>
+                        <h3 class="text-white font-medium">{{ event.title }}</h3>
+                        {% if event.description %}
+                        <p class="text-slate-400 text-sm mt-1 line-clamp-2">{{ event.description }}</p>
+                        {% endif %}
+                    </a>
+                    {% empty %}
+                    <p class="text-slate-500 text-center py-8">No events found matching your search.</p>
+                    {% endfor %}
+                </div>
+            </section>
+
+            {% if is_paginated %}
+            <nav class="flex justify-center gap-2 mt-8">
+                {% if page_obj.has_previous %}
+                <a href="?q={{ query }}&page={{ page_obj.previous_page_number }}"
+                   class="px-4 py-2 bg-slate-800 text-slate-300 rounded hover:bg-slate-700 transition-colors">
+                    Previous
+                </a>
+                {% endif %}
+
+                <span class="px-4 py-2 text-slate-500">
+                    Page {{ page_obj.number }} of {{ page_obj.paginator.num_pages }}
+                </span>
+
+                {% if page_obj.has_next %}
+                <a href="?q={{ query }}&page={{ page_obj.next_page_number }}"
+                   class="px-4 py-2 bg-slate-800 text-slate-300 rounded hover:bg-slate-700 transition-colors">
+                    Next
+                </a>
+                {% endif %}
+            </nav>
+            {% endif %}
+
+        {% else %}
+        <div class="text-center py-12">
+            <i data-lucide="search" class="w-12 h-12 text-slate-700 mx-auto mb-4"></i>
+            <p class="text-slate-500">Enter a search term to find events, characters, and themes.</p>
+        </div>
+        {% endif %}
+    </div>
+</article>
+{% endblock %}
