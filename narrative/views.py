@@ -315,7 +315,7 @@ class LocationDetailView(FlexibleIdentifierMixin, DetailView):
 class CharacterIndexView(ListView):
     """Browse all characters, ordered by importance tier and appearance count."""
     model = CharacterPage
-    template_name = 'narrative/character_index.html'
+    template_name = 'narrative/character_index_page.html'
     context_object_name = 'characters'
 
     def get_queryset(self):
@@ -374,7 +374,7 @@ class CharacterDetailView(FlexibleIdentifierMixin, DetailView):
 class OrganizationIndexView(ListView):
     """Browse all organizations."""
     model = OrganizationPage
-    template_name = 'narrative/organization_index.html'
+    template_name = 'narrative/organization_index_page.html'
     context_object_name = 'organizations'
 
     def get_queryset(self):
@@ -411,7 +411,7 @@ class OrganizationDetailView(FlexibleIdentifierMixin, DetailView):
 class ObjectIndexView(ListView):
     """Browse all narrative objects."""
     model = ObjectPage
-    template_name = 'narrative/object_index.html'
+    template_name = 'narrative/object_index_page.html'
     context_object_name = 'objects'
 
     def get_queryset(self):
@@ -449,7 +449,7 @@ class ObjectDetailView(FlexibleIdentifierMixin, DetailView):
 class EventIndexView(ListView):
     """Browse all events, organized by episode."""
     model = EventPage
-    template_name = 'narrative/event_index.html'
+    template_name = 'narrative/event_index_page.html'
     context_object_name = 'events'
 
     def get_queryset(self):

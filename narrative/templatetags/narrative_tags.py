@@ -344,20 +344,20 @@ def contextual_graph_url(context):
         page_class = page.__class__.__name__
 
         if page_class == 'EventPage':
-            return reverse('event_graph', kwargs={'pk': page.pk})
+            return reverse('event_graph', kwargs={'identifier': page.pk})
         elif page_class == 'CharacterPage':
-            return reverse('character_graph', kwargs={'pk': page.pk})
+            return reverse('character_graph', kwargs={'identifier': page.pk})
         elif page_class == 'EpisodePage':
-            return reverse('episode_graph', kwargs={'pk': page.pk})
+            return reverse('episode_graph', kwargs={'identifier': page.pk})
         elif page_class == 'OrganizationPage':
-            return reverse('organization_graph', kwargs={'pk': page.pk})
+            return reverse('organization_graph', kwargs={'identifier': page.pk})
         elif page_class == 'ObjectPage':
-            return reverse('object_graph', kwargs={'pk': page.pk})
+            return reverse('object_graph', kwargs={'identifier': page.pk})
         elif page_class == 'SeasonPage':
             # For seasons, link to the first episode's graph or landing
             first_episode = page.get_children().live().first()
             if first_episode:
-                return reverse('episode_graph', kwargs={'pk': first_episode.pk})
+                return reverse('episode_graph', kwargs={'identifier': first_episode.pk})
 
     # Check for Django detail view object in context
     obj = context.get('object')
@@ -365,19 +365,19 @@ def contextual_graph_url(context):
         obj_class = obj.__class__.__name__
 
         if obj_class == 'Location':
-            return reverse('location_graph', kwargs={'pk': obj.pk})
+            return reverse('location_graph', kwargs={'identifier': obj.pk})
         elif obj_class == 'Theme':
-            return reverse('theme_graph', kwargs={'pk': obj.pk})
+            return reverse('theme_graph', kwargs={'identifier': obj.pk})
         elif obj_class == 'ConflictArc':
-            return reverse('arc_graph', kwargs={'pk': obj.pk})
+            return reverse('arc_graph', kwargs={'identifier': obj.pk})
 
     # Check for specific named context variables (for custom views)
     if context.get('location'):
-        return reverse('location_graph', kwargs={'pk': context['location'].pk})
+        return reverse('location_graph', kwargs={'identifier': context['location'].pk})
     if context.get('theme'):
-        return reverse('theme_graph', kwargs={'pk': context['theme'].pk})
+        return reverse('theme_graph', kwargs={'identifier': context['theme'].pk})
     if context.get('arc'):
-        return reverse('arc_graph', kwargs={'pk': context['arc'].pk})
+        return reverse('arc_graph', kwargs={'identifier': context['arc'].pk})
 
     # Default to graph landing page
     return reverse('graph_view')
