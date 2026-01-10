@@ -342,9 +342,18 @@ class CharacterIndexView(ListView):
     context_object_name = 'characters'
 
     def get_queryset(self):
-        return CharacterPage.objects.live().order_by(
-            '-importance_tier', '-appearance_count', 'canonical_name'
+        from django.db.models import Case, When, Value, IntegerField
+        # Custom ordering: anchor=0, planet=1, asteroid=2 (ascending = anchor first)
+        tier_order = Case(
+            When(importance_tier='anchor', then=Value(0)),
+            When(importance_tier='planet', then=Value(1)),
+            When(importance_tier='asteroid', then=Value(2)),
+            default=Value(3),
+            output_field=IntegerField(),
         )
+        return CharacterPage.objects.live().annotate(
+            tier_order=tier_order
+        ).order_by('tier_order', '-appearance_count', 'canonical_name')
 
 
 class CharacterDetailView(FlexibleIdentifierMixin, DetailView):
