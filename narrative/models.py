@@ -942,6 +942,18 @@ class EventPage(Page):
             'incoming': self.get_connections_to(),
         }
 
+    def primary_location_has_involvement(self):
+        """
+        Check if the primary location FK also has a LocationInvolvement record.
+
+        Used by templates to avoid showing the same location twice:
+        - If True: show rich involvement data, skip simple location card
+        - If False: show simple location card (no rich data available)
+        """
+        if not self.location_id:
+            return False
+        return self.location_involvements.filter(location_id=self.location_id).exists()
+
     def get_absolute_url(self):
         """Return URL using global_id for stable cross-season links."""
         identifier = self.global_id or self.fabula_uuid or self.pk

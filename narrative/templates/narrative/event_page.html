@@ -51,8 +51,8 @@
     </div>
 
     <div class="max-w-4xl mx-auto px-6">
-        {# Location card #}
-        {% if page.location %}
+        {# Location card - only show if no rich involvement data exists for this location #}
+        {% if page.location and not page.primary_location_has_involvement %}
         <div class="mb-10 p-5 bg-gradient-to-br from-slate-900/50 to-slate-900/30 border border-slate-800/70 rounded-xl hover:border-blue-500/30 transition-all duration-300 hover:shadow-lg hover:shadow-blue-500/5 group">
             <div class="flex items-start gap-4">
                 <div class="p-3 bg-blue-500/10 rounded-xl border border-blue-500/20 group-hover:bg-blue-500/15 transition-colors">

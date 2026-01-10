@@ -37,7 +37,7 @@
 
         {# Character grid #}
         <div class="grid gap-4 sm:grid-cols-2">
-            {% for character in page.get_characters %}
+            {% for character in characters %}
             <a href="{% pageurl character %}"
                class="p-4 bg-slate-900/50 border border-slate-800 rounded-lg hover:border-emerald-500/30 hover:bg-emerald-500/5 transition-all group">
                 <div class="flex items-start justify-between gap-3 mb-2">

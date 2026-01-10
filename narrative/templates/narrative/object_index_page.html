@@ -42,7 +42,7 @@
 
         {# Object grid #}
         <div class="grid gap-4 sm:grid-cols-2">
-            {% for object in page.get_objects %}
+            {% for object in objects %}
             <a href="{% pageurl object %}"
                class="p-4 bg-slate-900/50 border border-slate-800 rounded-lg hover:border-amber-500/30 hover:bg-amber-500/5 transition-all group">
                 <div class="flex items-start justify-between gap-3 mb-2">

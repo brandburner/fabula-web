@@ -1176,13 +1176,27 @@ class Command(BaseCommand):
 
                 participations = event_data.get('participations') or []
 
+                # Track seen characters in this event to skip duplicates in YAML
+                seen_characters_in_event = set()
+
                 for part_data in participations:
                     char_uuid = part_data.get('character_uuid') or part_data.get('agent_uuid', '')
+                    char_global_id = part_data.get('global_id', '')
+
+                    # Try cache lookup by fabula_uuid first, then by global_id
                     character = self.characters_cache.get(char_uuid)
+                    if not character and char_global_id:
+                        character = self.characters_by_global_id.get(char_global_id)
 
                     if not character:
                         self.stats.record_error(f"Character {char_uuid} not found for participation")
                         continue
+
+                    # Skip duplicate participations in YAML (same character twice in same event)
+                    if character.pk in seen_characters_in_event:
+                        self.log_detail(f"    Skipping duplicate participation for {character.canonical_name} in event {event.title}")
+                        continue
+                    seen_characters_in_event.add(character.pk)
 
                     # Check if participation already exists
                     participation = EventParticipation.objects.filter(
@@ -1244,13 +1258,26 @@ class Command(BaseCommand):
 
                 involvements = event_data.get('object_involvements') or []
 
+                # Track seen objects in this event to skip duplicates in YAML
+                seen_objects_in_event = set()
+
                 for inv_data in involvements:
                     obj_uuid = inv_data.get('object_uuid', '')
+                    obj_global_id = inv_data.get('global_id', '')
+
+                    # Try cache lookup by fabula_uuid first, then by global_id
                     obj = self.objects_cache.get(obj_uuid)
+                    if not obj and obj_global_id:
+                        obj = self.objects_by_global_id.get(obj_global_id)
 
                     if not obj:
                         self.stats.record_error(f"Object {obj_uuid} not found for involvement")
                         continue
+
+                    # Skip duplicate involvements in YAML
+                    if obj.pk in seen_objects_in_event:
+                        continue
+                    seen_objects_in_event.add(obj.pk)
 
                     # Check if involvement already exists
                     involvement = ObjectInvolvement.objects.filter(
@@ -1298,13 +1325,26 @@ class Command(BaseCommand):
 
                 involvements = event_data.get('location_involvements') or []
 
+                # Track seen locations in this event to skip duplicates in YAML
+                seen_locations_in_event = set()
+
                 for inv_data in involvements:
                     loc_uuid = inv_data.get('location_uuid', '')
+                    loc_global_id = inv_data.get('global_id', '')
+
+                    # Try cache lookup by fabula_uuid first, then by global_id
                     location = self.locations_cache.get(loc_uuid)
+                    if not location and loc_global_id:
+                        location = self.locations_by_global_id.get(loc_global_id)
 
                     if not location:
                         self.stats.record_error(f"Location {loc_uuid} not found for involvement")
                         continue
+
+                    # Skip duplicate involvements in YAML
+                    if location.pk in seen_locations_in_event:
+                        continue
+                    seen_locations_in_event.add(location.pk)
 
                     # Check if involvement already exists
                     involvement = LocationInvolvement.objects.filter(
@@ -1358,13 +1398,26 @@ class Command(BaseCommand):
 
                 involvements = event_data.get('organization_involvements') or []
 
+                # Track seen organizations in this event to skip duplicates in YAML
+                seen_orgs_in_event = set()
+
                 for inv_data in involvements:
                     org_uuid = inv_data.get('organization_uuid', '')
+                    org_global_id = inv_data.get('global_id', '')
+
+                    # Try cache lookup by fabula_uuid first, then by global_id
                     organization = self.organizations_cache.get(org_uuid)
+                    if not organization and org_global_id:
+                        organization = self.organizations_by_global_id.get(org_global_id)
 
                     if not organization:
                         self.stats.record_error(f"Organization {org_uuid} not found for involvement")
                         continue
+
+                    # Skip duplicate involvements in YAML
+                    if organization.pk in seen_orgs_in_event:
+                        continue
+                    seen_orgs_in_event.add(organization.pk)
 
                     # Check if involvement already exists
                     involvement = OrganizationInvolvement.objects.filter(
