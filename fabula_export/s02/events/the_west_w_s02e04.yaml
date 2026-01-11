@@ -1,5 +1,5 @@
 # Events for In This White House
-# Generated: 2026-01-10T18:12:19.074647
+# Generated: 2026-01-11T19:27:39.361358
 
 episode_uuid: ep_sea_ser_the_west_wing_s02_e04
 episode_title: In This White House
@@ -50,6 +50,26 @@ events:
     - principled
     - dismissive
     - quick-witted
+    importance: primary
+  - character_uuid: agent_8265f9568328
+    emotional_state: Resigned pragmatism tinged with slight amusement at the absurdity
+    goals:
+    - Brief Sam efficiently on opponent change to smooth show transition
+    - Defuse tension with casual reassurance amid production scramble
+    what_happened: Mark Gottfried escorts Sam through backstage, delivers bad news
+      on Wengland's stranding and booking failures, describes Ainsley Hayes reductively
+      with wry pragmatism, pats Sam's shoulder reassuringly before departing.
+    observed_status: Mark Gottfried escorts Sam through backstage, delivers bad news
+      on Wengland's stranding and booking failures, describes Ainsley Hayes reductively
+      with wry pragmatism, pats Sam's shoulder reassuringly before departing.
+    beliefs:
+    - Show viability trumps ideological heft in live TV bookings
+    - Physical appeal boosts Republican guests' on-air zing
+    observed_traits:
+    - pragmatic
+    - ' unflappable'
+    - wry
+    - professional
     importance: primary
   - character_uuid: agent_a698d9833415
     emotional_state: Absent and unavailable
@@ -166,26 +186,6 @@ events:
     - businesslike
     - no-nonsense
     importance: primary
-  - character_uuid: agent_b977f1665ce1
-    emotional_state: Resigned pragmatism tinged with slight amusement at the absurdity
-    goals:
-    - Brief Sam efficiently on opponent change to smooth show transition
-    - Defuse tension with casual reassurance amid production scramble
-    what_happened: Mark Gottfried escorts Sam through backstage, delivers bad news
-      on Wengland's stranding and booking failures, describes Ainsley Hayes reductively
-      with wry pragmatism, pats Sam's shoulder reassuringly before departing.
-    observed_status: Mark Gottfried escorts Sam through backstage, delivers bad news
-      on Wengland's stranding and booking failures, describes Ainsley Hayes reductively
-      with wry pragmatism, pats Sam's shoulder reassuringly before departing.
-    beliefs:
-    - Show viability trumps ideological heft in live TV bookings
-    - Physical appeal boosts Republican guests' on-air zing
-    observed_traits:
-    - pragmatic
-    - ' unflappable'
-    - wry
-    - professional
-    importance: primary
   object_involvements:
   - object_uuid: object_cbad1bb86975
     description_of_involvement: Sam's Make-up Chair serves as launchpad for the event—Sam
@@ -283,6 +283,28 @@ events:
     - collegial
     - anxious undertone
     importance: primary
+  - character_uuid: agent_8265f9568328
+    emotional_state: Mildly amused protectiveness veiling professional control
+    goals:
+    - Manage Ainsley's performance to avoid show embarrassment
+    - Maintain smooth broadcast transition and studio hierarchy
+    what_happened: Mark approaches Ainsley, checks his watch, introduces himself,
+      delivers protective advice against overreaching opposite seasoned Sam, sits
+      at desk, banters lightly with incoming Sam about bets and Josh, reinforces warning
+      to Ainsley as countdown nears.
+    observed_status: Mark approaches Ainsley, checks his watch, introduces himself,
+      delivers protective advice against overreaching opposite seasoned Sam, sits
+      at desk, banters lightly with incoming Sam about bets and Josh, reinforces warning
+      to Ainsley as countdown nears.
+    beliefs:
+    - Sam Seaborn is unbeatable based on past appearances
+    - Novices succeed by sticking to basics under live pressure
+    observed_traits:
+    - professional
+    - paternalistic
+    - pragmatic
+    - amused
+    importance: primary
   - character_uuid: agent_2905f54e51ac
     emotional_state: Calm competence tinged with polite deference
     goals:
@@ -355,28 +377,6 @@ events:
     observed_traits:
     - efficient
     - responsive
-    importance: primary
-  - character_uuid: agent_b977f1665ce1
-    emotional_state: Mildly amused protectiveness veiling professional control
-    goals:
-    - Manage Ainsley's performance to avoid show embarrassment
-    - Maintain smooth broadcast transition and studio hierarchy
-    what_happened: Mark approaches Ainsley, checks his watch, introduces himself,
-      delivers protective advice against overreaching opposite seasoned Sam, sits
-      at desk, banters lightly with incoming Sam about bets and Josh, reinforces warning
-      to Ainsley as countdown nears.
-    observed_status: Mark approaches Ainsley, checks his watch, introduces himself,
-      delivers protective advice against overreaching opposite seasoned Sam, sits
-      at desk, banters lightly with incoming Sam about bets and Josh, reinforces warning
-      to Ainsley as countdown nears.
-    beliefs:
-    - Sam Seaborn is unbeatable based on past appearances
-    - Novices succeed by sticking to basics under live pressure
-    observed_traits:
-    - professional
-    - paternalistic
-    - pragmatic
-    - amused
     importance: primary
   object_involvements:
   - object_uuid: object_77214681c23b
@@ -488,6 +488,27 @@ events:
     - defensive
     - overconfident initially
     - rattled
+    importance: primary
+  - character_uuid: agent_8265f9568328
+    emotional_state: Professionally engaged with mild amusement at the fireworks
+    goals:
+    - Facilitate balanced debate to drive ratings
+    - Elicit sharp exchanges on key policy points
+    what_happened: Hosting from center desk, Mark introduces the education segment,
+      prompts Sam first then Ainsley on the claim's veracity, presses if Sam's 'lying,'
+      allows interruptions, wryly smiles at the fray, transitions to commercial, then
+      chuckles post-air leaning to tell Sam 'this one might know something.'
+    observed_status: Hosting from center desk, Mark introduces the education segment,
+      prompts Sam first then Ainsley on the claim's veracity, presses if Sam's 'lying,'
+      allows interruptions, wryly smiles at the fray, transitions to commercial, then
+      chuckles post-air leaning to tell Sam 'this one might know something.'
+    beliefs:
+    - Live TV thrives on unscripted clashes
+    - Ainsley holds her own against seasoned pros
+    observed_traits:
+    - moderating
+    - amused
+    - neutral facilitator
     importance: primary
   - character_uuid: agent_2905f54e51ac
     emotional_state: Calmly dominant with subtle relish in exposing falsehoods
@@ -617,27 +638,6 @@ events:
     observed_traits:
     - efficient
     - responsive
-    importance: primary
-  - character_uuid: agent_b977f1665ce1
-    emotional_state: Professionally engaged with mild amusement at the fireworks
-    goals:
-    - Facilitate balanced debate to drive ratings
-    - Elicit sharp exchanges on key policy points
-    what_happened: Hosting from center desk, Mark introduces the education segment,
-      prompts Sam first then Ainsley on the claim's veracity, presses if Sam's 'lying,'
-      allows interruptions, wryly smiles at the fray, transitions to commercial, then
-      chuckles post-air leaning to tell Sam 'this one might know something.'
-    observed_status: Hosting from center desk, Mark introduces the education segment,
-      prompts Sam first then Ainsley on the claim's veracity, presses if Sam's 'lying,'
-      allows interruptions, wryly smiles at the fray, transitions to commercial, then
-      chuckles post-air leaning to tell Sam 'this one might know something.'
-    beliefs:
-    - Live TV thrives on unscripted clashes
-    - Ainsley holds her own against seasoned pros
-    observed_traits:
-    - moderating
-    - amused
-    - neutral facilitator
     importance: primary
   object_involvements:
   - object_uuid: object_77214681c23b
@@ -1088,6 +1088,25 @@ events:
     - loyal
     - composed
     importance: primary
+  - character_uuid: agent_6a1b37afae25
+    emotional_state: Aggressively skeptical and confrontational
+    goals:
+    - Force administration to clarify stance on pharma patents vs. pricing
+    - Expose potential policy contradictions publicly
+    what_happened: Reporter stands to aggressively probe C.J. on summit goals—pressuring
+      drug firms vs. enforcing U.S. patents—then escalates to 'declare war' accusation,
+      met with her sarcasm before briefing ends.
+    observed_status: Reporter stands to aggressively probe C.J. on summit goals—pressuring
+      drug firms vs. enforcing U.S. patents—then escalates to 'declare war' accusation,
+      met with her sarcasm before briefing ends.
+    beliefs:
+    - Summit hides zero-sum choice between profits and lives
+    - White House evades tough accountability
+    observed_traits:
+    - probing
+    - adversarial
+    - persistent
+    importance: primary
   - character_uuid: agent_2ba97c852001
     emotional_state: Curiously determined yet deferential
     goals:
@@ -1134,25 +1153,6 @@ events:
     - Patents safeguard economic interests (implied)
     observed_traits:
     - pragmatic
-    importance: primary
-  - character_uuid: agent_66506b3c37db
-    emotional_state: Aggressively skeptical and confrontational
-    goals:
-    - Force administration to clarify stance on pharma patents vs. pricing
-    - Expose potential policy contradictions publicly
-    what_happened: Reporter stands to aggressively probe C.J. on summit goals—pressuring
-      drug firms vs. enforcing U.S. patents—then escalates to 'declare war' accusation,
-      met with her sarcasm before briefing ends.
-    observed_status: Reporter stands to aggressively probe C.J. on summit goals—pressuring
-      drug firms vs. enforcing U.S. patents—then escalates to 'declare war' accusation,
-      met with her sarcasm before briefing ends.
-    beliefs:
-    - Summit hides zero-sum choice between profits and lives
-    - White House evades tough accountability
-    observed_traits:
-    - probing
-    - adversarial
-    - persistent
     importance: primary
   object_involvements:
   - object_uuid: object_d8b8f07cf799
@@ -1368,6 +1368,22 @@ events:
     - efficient
     - dutiful
     importance: primary
+  - character_uuid: agent_6a1b37afae25
+    emotional_state: Confrontational insistence
+    goals:
+    - Expose policy contradictions
+    - Provoke clear White House stance
+    what_happened: Stands to challenge C.J. on summit goals and 'declaring war' on
+      drug companies during briefing wrap, setting confrontational tone Toby exploits.
+    observed_status: Stands to challenge C.J. on summit goals and 'declaring war'
+      on drug companies during briefing wrap, setting confrontational tone Toby exploits.
+    beliefs:
+    - Press must pierce spin for truth
+    - Drug pricing demands aggressive accountability
+    observed_traits:
+    - aggressive
+    - probing
+    importance: primary
   - character_uuid: agent_2ba97c852001
     emotional_state: Curious and composed
     goals:
@@ -1386,22 +1402,6 @@ events:
     - persistent
     - earnest
     - professional
-    importance: primary
-  - character_uuid: agent_66506b3c37db
-    emotional_state: Confrontational insistence
-    goals:
-    - Expose policy contradictions
-    - Provoke clear White House stance
-    what_happened: Stands to challenge C.J. on summit goals and 'declaring war' on
-      drug companies during briefing wrap, setting confrontational tone Toby exploits.
-    observed_status: Stands to challenge C.J. on summit goals and 'declaring war'
-      on drug companies during briefing wrap, setting confrontational tone Toby exploits.
-    beliefs:
-    - Press must pierce spin for truth
-    - Drug pricing demands aggressive accountability
-    observed_traits:
-    - aggressive
-    - probing
     importance: primary
   object_involvements:
   - object_uuid: object_d8b8f07cf799
@@ -1586,6 +1586,25 @@ events:
     - efficient
     - dutiful
     importance: primary
+  - character_uuid: agent_6a1b37afae25
+    emotional_state: Aggressively challenging with journalistic zeal
+    goals:
+    - Expose administration's pharma stance
+    - Provoke clear policy admission
+    what_happened: Stands aggressively in Press Room, firing pointed questions on
+      summit goals—drug price cuts versus U.S. patents—and escalates with 'declare
+      war' provocation, sharpening policy fault lines before C.J. dismisses the briefing.
+    observed_status: Stands aggressively in Press Room, firing pointed questions on
+      summit goals—drug price cuts versus U.S. patents—and escalates with 'declare
+      war' provocation, sharpening policy fault lines before C.J. dismisses the briefing.
+    beliefs:
+    - Press must pierce official spin
+    - Drug pricing inequities demand accountability
+    observed_traits:
+    - persistent
+    - confrontational
+    - inquisitive
+    importance: primary
   - character_uuid: agent_2ba97c852001
     emotional_state: Eager curiosity with professional poise
     goals:
@@ -1606,25 +1625,6 @@ events:
     - persistent
     - earnest
     - polite
-    importance: primary
-  - character_uuid: agent_66506b3c37db
-    emotional_state: Aggressively challenging with journalistic zeal
-    goals:
-    - Expose administration's pharma stance
-    - Provoke clear policy admission
-    what_happened: Stands aggressively in Press Room, firing pointed questions on
-      summit goals—drug price cuts versus U.S. patents—and escalates with 'declare
-      war' provocation, sharpening policy fault lines before C.J. dismisses the briefing.
-    observed_status: Stands aggressively in Press Room, firing pointed questions on
-      summit goals—drug price cuts versus U.S. patents—and escalates with 'declare
-      war' provocation, sharpening policy fault lines before C.J. dismisses the briefing.
-    beliefs:
-    - Press must pierce official spin
-    - Drug pricing inequities demand accountability
-    observed_traits:
-    - persistent
-    - confrontational
-    - inquisitive
     importance: primary
   object_involvements:
   - object_uuid: object_d8b8f07cf799
@@ -1855,6 +1855,22 @@ events:
     - persistent
     - direct
     importance: primary
+  - character_uuid: agent_6a1b37afae25
+    emotional_state: Insistently analytical
+    goals:
+    - Gauge fiscal commitments
+    - Force broad policy admissions
+    what_happened: Questions Bartlet on debt forgiveness consideration amid health
+      crisis, representing press corps' policy thrusts.
+    observed_status: Questions Bartlet on debt forgiveness consideration amid health
+      crisis, representing press corps' policy thrusts.
+    beliefs:
+    - Crises demand all options
+    - Press exposes hidden agendas
+    observed_traits:
+    - probing
+    - assertive
+    importance: primary
   - character_uuid: agent_2905f54e51ac
     emotional_state: Admired from afar
     goals: []
@@ -1917,22 +1933,6 @@ events:
     - respectful
     - disciplined
     - neutral
-    importance: primary
-  - character_uuid: agent_66506b3c37db
-    emotional_state: Insistently analytical
-    goals:
-    - Gauge fiscal commitments
-    - Force broad policy admissions
-    what_happened: Questions Bartlet on debt forgiveness consideration amid health
-      crisis, representing press corps' policy thrusts.
-    observed_status: Questions Bartlet on debt forgiveness consideration amid health
-      crisis, representing press corps' policy thrusts.
-    beliefs:
-    - Crises demand all options
-    - Press exposes hidden agendas
-    observed_traits:
-    - probing
-    - assertive
     importance: primary
   object_involvements:
   - object_uuid: object_ea765086bd08
@@ -2199,6 +2199,25 @@ events:
     - direct
     - unflinching
     importance: primary
+  - character_uuid: agent_6a1b37afae25
+    emotional_state: Determined scrutiny unyielding to evasive rhetoric
+    goals:
+    - Gauge administration's debt relief commitment
+    - Link humanitarian crisis to legislative action
+    what_happened: Interjects post-Katie on debt forgiveness prospects, pressing Bartlet
+      on congressional overtures amid international health framing, contributing to
+      policy fault-line exposure.
+    observed_status: Interjects post-Katie on debt forgiveness prospects, pressing
+      Bartlet on congressional overtures amid international health framing, contributing
+      to policy fault-line exposure.
+    beliefs:
+    - Debt burdens exacerbate African health collapses
+    - Presidential signals predict congressional maneuvers
+    observed_traits:
+    - probing
+    - persistent
+    - policy-focused
+    importance: primary
   - character_uuid: agent_2905f54e51ac
     emotional_state: Implied confident intellect sparking Oval fascination
     goals: []
@@ -2291,25 +2310,6 @@ events:
     - disciplined
     - responsive
     - neutral
-    importance: primary
-  - character_uuid: agent_66506b3c37db
-    emotional_state: Determined scrutiny unyielding to evasive rhetoric
-    goals:
-    - Gauge administration's debt relief commitment
-    - Link humanitarian crisis to legislative action
-    what_happened: Interjects post-Katie on debt forgiveness prospects, pressing Bartlet
-      on congressional overtures amid international health framing, contributing to
-      policy fault-line exposure.
-    observed_status: Interjects post-Katie on debt forgiveness prospects, pressing
-      Bartlet on congressional overtures amid international health framing, contributing
-      to policy fault-line exposure.
-    beliefs:
-    - Debt burdens exacerbate African health collapses
-    - Presidential signals predict congressional maneuvers
-    observed_traits:
-    - probing
-    - persistent
-    - policy-focused
     importance: primary
   object_involvements:
   - object_uuid: object_ea765086bd08
@@ -2594,6 +2594,16 @@ events:
     - teasingly supportive
     - attentively curious
     - quick to pivot from banter
+    importance: primary
+  - character_uuid: agent_5ef56112ab3c
+    emotional_state: ''
+    goals: []
+    what_happened: Referenced as the expected caller (Bruce's friend); not directly
+      present in the scene.
+    observed_status: Referenced as the expected caller (Bruce's friend); not directly
+      present in the scene.
+    beliefs: []
+    observed_traits: []
     importance: primary
   object_involvements:
   - object_uuid: object_c2d14fd91941
@@ -5243,6 +5253,24 @@ events:
     - professional poise
     - message discipline
     importance: primary
+  - character_uuid: agent_6a1b37afae25
+    emotional_state: Pressing impatience
+    goals:
+    - Extract fresh fiscal clarifications
+    - Challenge optimistic projections
+    what_happened: Off-screen reporter interjects with demand for updated assumptions
+      during C.J.'s briefing, voice cutting through the monitor audio amid group clamor,
+      heightening the press room's interrogative energy Ainsley observes.
+    observed_status: Off-screen reporter interjects with demand for updated assumptions
+      during C.J.'s briefing, voice cutting through the monitor audio amid group clamor,
+      heightening the press room's interrogative energy Ainsley observes.
+    beliefs:
+    - Assumptions underpin fiscal claims
+    - Aggressive questions force transparency
+    observed_traits:
+    - inquisitive persistence
+    - aggressive probing
+    importance: primary
   - character_uuid: agent_2905f54e51ac
     emotional_state: Startled curiosity sharpening into alerted concern
     goals:
@@ -5303,24 +5331,6 @@ events:
     - brisk efficiency
     - protective vigilance
     - loyal gatekeeping
-    importance: primary
-  - character_uuid: agent_66506b3c37db
-    emotional_state: Pressing impatience
-    goals:
-    - Extract fresh fiscal clarifications
-    - Challenge optimistic projections
-    what_happened: Off-screen reporter interjects with demand for updated assumptions
-      during C.J.'s briefing, voice cutting through the monitor audio amid group clamor,
-      heightening the press room's interrogative energy Ainsley observes.
-    observed_status: Off-screen reporter interjects with demand for updated assumptions
-      during C.J.'s briefing, voice cutting through the monitor audio amid group clamor,
-      heightening the press room's interrogative energy Ainsley observes.
-    beliefs:
-    - Assumptions underpin fiscal claims
-    - Aggressive questions force transparency
-    observed_traits:
-    - inquisitive persistence
-    - aggressive probing
     importance: primary
   object_involvements:
   - object_uuid: object_9c87cfbf3339
@@ -5474,6 +5484,22 @@ events:
     - composed under pressure
     - professional pivot-master
     importance: primary
+  - character_uuid: agent_6a1b37afae25
+    emotional_state: Inquisitive intensity
+    goals:
+    - Extract policy details from briefing
+    - Challenge official projections
+    what_happened: Off-screen reporter interjects with fiscal probe amid C.J.'s briefing,
+      amplifying chaotic press hum as backdrop to Ainsley-Bill exchange.
+    observed_status: Off-screen reporter interjects with fiscal probe amid C.J.'s
+      briefing, amplifying chaotic press hum as backdrop to Ainsley-Bill exchange.
+    beliefs:
+    - Aggressive questions uncover truths
+    - Surpluses hide fiscal maneuvers
+    observed_traits:
+    - probing
+    - insistent
+    importance: primary
   - character_uuid: agent_2905f54e51ac
     emotional_state: Stunned alertness piercing through polite facade, instant grasp
       of crisis gravity
@@ -5535,22 +5561,6 @@ events:
     - efficient
     - protective
     - decisive
-    importance: primary
-  - character_uuid: agent_66506b3c37db
-    emotional_state: Inquisitive intensity
-    goals:
-    - Extract policy details from briefing
-    - Challenge official projections
-    what_happened: Off-screen reporter interjects with fiscal probe amid C.J.'s briefing,
-      amplifying chaotic press hum as backdrop to Ainsley-Bill exchange.
-    observed_status: Off-screen reporter interjects with fiscal probe amid C.J.'s
-      briefing, amplifying chaotic press hum as backdrop to Ainsley-Bill exchange.
-    beliefs:
-    - Aggressive questions uncover truths
-    - Surpluses hide fiscal maneuvers
-    observed_traits:
-    - probing
-    - insistent
     importance: primary
   object_involvements:
   - object_uuid: object_9c87cfbf3339
@@ -6091,6 +6101,17 @@ events:
     - Receptive to unsolicited expertise
     - Physically taxed but mentally alert
     importance: primary
+  - character_uuid: agent_6a1b37afae25
+    emotional_state: Uninformed opportunism (as characterized)
+    goals: []
+    what_happened: The reporter is referenced by Ainsley as the uninformed press room
+      source who overlooked Federal Rules, sparking C.J.'s confirmation peril.
+    observed_status: The reporter is referenced by Ainsley as the uninformed press
+      room source who overlooked Federal Rules, sparking C.J.'s confirmation peril.
+    beliefs: []
+    observed_traits:
+    - Journalistically aggressive yet legally naive
+    importance: primary
   - character_uuid: agent_2905f54e51ac
     emotional_state: Calmly assertive with a chill undercurrent of professional superiority
     goals:
@@ -6130,16 +6151,33 @@ events:
     - Efficiently dutiful
     - Patiently accommodating
     importance: primary
-  - character_uuid: agent_66506b3c37db
-    emotional_state: Uninformed opportunism (as characterized)
+  - character_uuid: agent_5ef56112ab3c
+    emotional_state: ''
     goals: []
-    what_happened: The reporter is referenced by Ainsley as the uninformed press room
-      source who overlooked Federal Rules, sparking C.J.'s confirmation peril.
-    observed_status: The reporter is referenced by Ainsley as the uninformed press
-      room source who overlooked Federal Rules, sparking C.J.'s confirmation peril.
+    what_happened: Referenced by C.J. as the person who told her about the grand jury
+      having been impaneled.
+    observed_status: Referenced by C.J. as the person who told her about the grand
+      jury having been impaneled.
     beliefs: []
-    observed_traits:
-    - Journalistically aggressive yet legally naive
+    observed_traits: []
+    importance: primary
+  - character_uuid: agent_07ef0abf6985
+    emotional_state: ''
+    goals: []
+    what_happened: Referenced by Ainsley as being under a gag order in relation to
+      the grand jury; not present.
+    observed_status: Referenced by Ainsley as being under a gag order in relation
+      to the grand jury; not present.
+    beliefs: []
+    observed_traits: []
+    importance: primary
+  - character_uuid: agent_65579d36b4c2
+    emotional_state: ''
+    goals: []
+    what_happened: Referenced by Ainsley as being under a gag order; not present.
+    observed_status: Referenced by Ainsley as being under a gag order; not present.
+    beliefs: []
+    observed_traits: []
     importance: primary
   object_involvements:
   - object_uuid: object_d808d05b5e62

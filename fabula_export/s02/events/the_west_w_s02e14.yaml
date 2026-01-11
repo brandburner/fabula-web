@@ -1,5 +1,5 @@
 # Events for The War At Home
-# Generated: 2026-01-10T18:12:23.353877
+# Generated: 2026-01-11T19:27:43.748894
 
 episode_uuid: ep_sea_ser_the_west_wing_s02_e14
 episode_title: The War At Home
@@ -963,7 +963,7 @@ events:
   theme_uuids: []
   arc_uuids: []
   participations:
-  - character_uuid: agent_b977f1665ce1
+  - character_uuid: agent_8265f9568328
     emotional_state: Professional detachment laced with subtle awe at the address's
       scale
     goals:
@@ -1023,7 +1023,7 @@ events:
   theme_uuids: []
   arc_uuids: []
   participations:
-  - character_uuid: agent_b977f1665ce1
+  - character_uuid: agent_8265f9568328
     emotional_state: Detached yet urgently informative, evoking a professional calm
       that masks the impending dread
     goals:
@@ -1113,46 +1113,7 @@ events:
     - persuasive
     - empathetic yet firm
     importance: primary
-  - character_uuid: agent_3ee4436e9a6d
-    emotional_state: Calm professionalism, unflappable amid late-night frenzy
-    goals:
-    - Execute C.J.'s logistical directive seamlessly
-    - Ensure Sloane's safe transit preserving operational flow
-    what_happened: Promptly enters office at C.J.'s yell, affirms readiness with simple
-      'Yeah,' agrees without hesitation to escort Sloane back to his hotel, embodying
-      efficient support in the Press Office hierarchy.
-    observed_status: Promptly enters office at C.J.'s yell, affirms readiness with
-      simple 'Yeah,' agrees without hesitation to escort Sloane back to his hotel,
-      embodying efficient support in the Press Office hierarchy.
-    beliefs:
-    - Team coordination maintains crisis momentum
-    - Guest handling upholds White House protocol
-    observed_traits:
-    - reliable
-    - concise
-    - dutiful
-    - poised
-    importance: primary
-  - character_uuid: agent_b977f1665ce1
-    emotional_state: Animated enthusiasm for broadcast dissection
-    goals:
-    - Entertain and inform national audience on SOTU metrics
-    - Highlight speech's historic scale
-    what_happened: Appears via TV broadcast in C.J.'s office, delivering live post-SOTU
-      commentary on speech length with witty historical comparisons, inadvertently
-      fueling Sloane's tension until C.J. intervenes.
-    observed_status: Appears via TV broadcast in C.J.'s office, delivering live post-SOTU
-      commentary on speech length with witty historical comparisons, inadvertently
-      fueling Sloane's tension until C.J. intervenes.
-    beliefs:
-    - Precise trivia underscores political spectacle
-    - Viewership thrives on insider speech analysis
-    observed_traits:
-    - witty
-    - analytical
-    - pundit-sharp
-    importance: primary
-  - character_uuid: agent_6749a9efe14b
+  - character_uuid: agent_63ad5b384efc
     emotional_state: Wary reluctance laced with resignation, eyes the media glare
       with haunted caution
     goals:
@@ -1174,6 +1135,45 @@ events:
     - defensive
     - pragmatic
     - forthcoming under pressure
+    importance: primary
+  - character_uuid: agent_3ee4436e9a6d
+    emotional_state: Calm professionalism, unflappable amid late-night frenzy
+    goals:
+    - Execute C.J.'s logistical directive seamlessly
+    - Ensure Sloane's safe transit preserving operational flow
+    what_happened: Promptly enters office at C.J.'s yell, affirms readiness with simple
+      'Yeah,' agrees without hesitation to escort Sloane back to his hotel, embodying
+      efficient support in the Press Office hierarchy.
+    observed_status: Promptly enters office at C.J.'s yell, affirms readiness with
+      simple 'Yeah,' agrees without hesitation to escort Sloane back to his hotel,
+      embodying efficient support in the Press Office hierarchy.
+    beliefs:
+    - Team coordination maintains crisis momentum
+    - Guest handling upholds White House protocol
+    observed_traits:
+    - reliable
+    - concise
+    - dutiful
+    - poised
+    importance: primary
+  - character_uuid: agent_8265f9568328
+    emotional_state: Animated enthusiasm for broadcast dissection
+    goals:
+    - Entertain and inform national audience on SOTU metrics
+    - Highlight speech's historic scale
+    what_happened: Appears via TV broadcast in C.J.'s office, delivering live post-SOTU
+      commentary on speech length with witty historical comparisons, inadvertently
+      fueling Sloane's tension until C.J. intervenes.
+    observed_status: Appears via TV broadcast in C.J.'s office, delivering live post-SOTU
+      commentary on speech length with witty historical comparisons, inadvertently
+      fueling Sloane's tension until C.J. intervenes.
+    beliefs:
+    - Precise trivia underscores political spectacle
+    - Viewership thrives on insider speech analysis
+    observed_traits:
+    - witty
+    - analytical
+    - pundit-sharp
     importance: primary
   object_involvements:
   - object_uuid: object_4feaa0549e4e
@@ -1259,7 +1259,7 @@ events:
     - witty
     - commanding
     importance: primary
-  - character_uuid: agent_b977f1665ce1
+  - character_uuid: agent_8265f9568328
     emotional_state: Irritated insistence softening into opportunistic eagerness
     goals:
     - Extract the full Sloane scandal story for his broadcast
@@ -1685,19 +1685,19 @@ events:
     - weary
     - intellectually sharp
     importance: primary
-  - character_uuid: agent_d35a6e4f13cd
+  - character_uuid: agent_63ad5b384efc
     emotional_state: ''
     goals: []
-    what_happened: Discussed by Sam as junior Senator from North Dakota whose importance—adored
-      by Left, link to environmentalists—necessitates Toby meeting, despite Toby's
-      dismissal.
-    observed_status: Discussed by Sam as junior Senator from North Dakota whose importance—adored
-      by Left, link to environmentalists—necessitates Toby meeting, despite Toby's
-      dismissal.
+    what_happened: Absent but centrally discussed as the invited police hero guest
+      promoted amid drug war, with past Detroit excessive force citation against Black
+      suspect revealed as vetting bomb threatening PR and Gottfried interview.
+    observed_status: Absent but centrally discussed as the invited police hero guest
+      promoted amid drug war, with past Detroit excessive force citation against Black
+      suspect revealed as vetting bomb threatening PR and Gottfried interview.
     beliefs: []
     observed_traits: []
     importance: primary
-  - character_uuid: agent_b977f1665ce1
+  - character_uuid: agent_8265f9568328
     emotional_state: ''
     goals: []
     what_happened: Referenced in scene continuation as interviewer for Sloane's morning
@@ -1707,15 +1707,15 @@ events:
     beliefs: []
     observed_traits: []
     importance: primary
-  - character_uuid: agent_6749a9efe14b
+  - character_uuid: agent_d35a6e4f13cd
     emotional_state: ''
     goals: []
-    what_happened: Absent but centrally discussed as the invited police hero guest
-      promoted amid drug war, with past Detroit excessive force citation against Black
-      suspect revealed as vetting bomb threatening PR and Gottfried interview.
-    observed_status: Absent but centrally discussed as the invited police hero guest
-      promoted amid drug war, with past Detroit excessive force citation against Black
-      suspect revealed as vetting bomb threatening PR and Gottfried interview.
+    what_happened: Discussed by Sam as junior Senator from North Dakota whose importance—adored
+      by Left, link to environmentalists—necessitates Toby meeting, despite Toby's
+      dismissal.
+    observed_status: Discussed by Sam as junior Senator from North Dakota whose importance—adored
+      by Left, link to environmentalists—necessitates Toby meeting, despite Toby's
+      dismissal.
     beliefs: []
     observed_traits: []
     importance: primary
@@ -1875,6 +1875,15 @@ events:
   arc_uuids:
   - arc_8083dc0febf0
   participations:
+  - character_uuid: agent_f3078a4f1b2f
+    emotional_state: ''
+    goals: []
+    what_happened: stands in the dark, leans on the counter, and responds curtly 'Yeah'
+    observed_status: stands in the dark, leans on the counter, and responds curtly
+      'Yeah'
+    beliefs: []
+    observed_traits: []
+    importance: primary
   - character_uuid: agent_d5524a94a33b
     emotional_state: Tentative concern veiling deeper resolve to connect
     goals:
@@ -2159,6 +2168,15 @@ events:
     - Collaborative
     - Receptive
     - Persistent bridge-builder
+    importance: primary
+  - character_uuid: agent_f3078a4f1b2f
+    emotional_state: ''
+    goals: []
+    what_happened: walks down the hallway and asks Sam 'Can I tell you something strange?'
+    observed_status: walks down the hallway and asks Sam 'Can I tell you something
+      strange?'
+    beliefs: []
+    observed_traits: []
     importance: primary
   object_involvements: []
   location_involvements:
@@ -2455,7 +2473,15 @@ events:
   location_uuid: null
   theme_uuids: []
   arc_uuids: []
-  participations: []
+  participations:
+  - character_uuid: agent_f3078a4f1b2f
+    emotional_state: ''
+    goals: []
+    what_happened: voiceover announcing 'I'm on hold'
+    observed_status: voiceover announcing 'I'm on hold'
+    beliefs: []
+    observed_traits: []
+    importance: primary
   object_involvements: []
   location_involvements:
   - location_uuid: location_7be499e08165
@@ -2501,6 +2527,20 @@ events:
   - theme_7b4b15818c33
   arc_uuids: []
   participations:
+  - character_uuid: agent_f3078a4f1b2f
+    emotional_state: ''
+    goals: []
+    what_happened: pacing frantically in darkened office while on hold with phone,
+      banging receiver on desk, venting bureaucratic frustration, discussing polling
+      concerns in five swing districts over President's crime package, bantering with
+      Donna about Joey Lucas, hanging up phone when power returns
+    observed_status: pacing frantically in darkened office while on hold with phone,
+      banging receiver on desk, venting bureaucratic frustration, discussing polling
+      concerns in five swing districts over President's crime package, bantering with
+      Donna about Joey Lucas, hanging up phone when power returns
+    beliefs: []
+    observed_traits: []
+    importance: primary
   - character_uuid: agent_d5524a94a33b
     emotional_state: Playfully supportive with underlying concern, using levity to
       steady Josh's anxiety
@@ -2779,6 +2819,18 @@ events:
     - discreet
     - dutiful
     importance: primary
+  - character_uuid: agent_f3078a4f1b2f
+    emotional_state: ''
+    goals: []
+    what_happened: present during the debate, follows Bartlet out to the hallway,
+      exchanges lines with Donna in the doorway about timing, incoming numbers, Colombia,
+      and negotiating
+    observed_status: present during the debate, follows Bartlet out to the hallway,
+      exchanges lines with Donna in the doorway about timing, incoming numbers, Colombia,
+      and negotiating
+    beliefs: []
+    observed_traits: []
+    importance: primary
   - character_uuid: agent_d11a3b3bb6e4
     emotional_state: Grimly approving, resolute in backing principled escalation.
     goals:
@@ -3002,6 +3054,18 @@ events:
     - discreet
     - steady
     importance: primary
+  - character_uuid: agent_f3078a4f1b2f
+    emotional_state: ''
+    goals: []
+    what_happened: Present in the room, follows Bartlet out to the hallway, debates
+      with Donna in the doorway about the crisis's implications on U.S. policy and
+      the war on drugs.
+    observed_status: Present in the room, follows Bartlet out to the hallway, debates
+      with Donna in the doorway about the crisis's implications on U.S. policy and
+      the war on drugs.
+    beliefs: []
+    observed_traits: []
+    importance: primary
   - character_uuid: agent_d11a3b3bb6e4
     emotional_state: Gratefully resolute, channeling relief into unity
     goals:
@@ -3188,7 +3252,7 @@ events:
     - loyal
     - pragmatic
     importance: primary
-  - character_uuid: agent_6749a9efe14b
+  - character_uuid: agent_63ad5b384efc
     emotional_state: Focused attentiveness under pressure
     goals:
     - Clarify enemy designation for accurate discussion
@@ -3373,25 +3437,6 @@ events:
     - Efficient
     - Professional
     - Discreet
-    importance: primary
-  - character_uuid: agent_e8cc055ff16f
-    emotional_state: Professional detachment witnessing intimate strain
-    goals:
-    - Facilitate First Lady's departure logistics
-    - Remain unobtrusive in private space
-    what_happened: Two aides silently carry Abbey's suitcase to the bedroom door,
-      their efficient background labor enabling her distracted packing ritual amid
-      unspoken marital fractures.
-    observed_status: Two aides silently carry Abbey's suitcase to the bedroom door,
-      their efficient background labor enabling her distracted packing ritual amid
-      unspoken marital fractures.
-    beliefs:
-    - Unseen service powers elite functionality
-    - Silence honors relational boundaries
-    observed_traits:
-    - Discreet
-    - Efficient
-    - Silent
     importance: primary
   object_involvements:
   - object_uuid: object_3f741fd7ca46
@@ -3612,6 +3657,16 @@ events:
   arc_uuids:
   - arc_8083dc0febf0
   participations:
+  - character_uuid: agent_f3078a4f1b2f
+    emotional_state: ''
+    goals: []
+    what_happened: dejectedly leans over the polling results on his desk and says
+      'Son of a bitch'
+    observed_status: dejectedly leans over the polling results on his desk and says
+      'Son of a bitch'
+    beliefs: []
+    observed_traits: []
+    importance: primary
   - character_uuid: agent_d5524a94a33b
     emotional_state: Calm and reassuring, projecting unshakeable steadiness to mask
       underlying concern for Josh's morale.

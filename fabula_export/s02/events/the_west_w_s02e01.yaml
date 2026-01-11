@@ -1,5 +1,5 @@
 # Events for The West Wing — In the Shadow of Two Gunmen Part I
-# Generated: 2026-01-10T18:12:17.034190
+# Generated: 2026-01-11T19:27:37.559270
 
 episode_uuid: ep_sea_ser_the_west_wing_s02_e01
 episode_title: The West Wing — In the Shadow of Two Gunmen Part I
@@ -82,6 +82,14 @@ events:
     - protocol adherence
     - adaptive crisis response
     importance: primary
+  - character_uuid: agent_1b4e146363a1
+    emotional_state: ''
+    goals: []
+    what_happened: secure in separate car with agents but vomiting from shock
+    observed_status: secure in separate car with agents but vomiting from shock
+    beliefs: []
+    observed_traits: []
+    importance: primary
   - character_uuid: agent_aa397b651aac
     emotional_state: Focused operational intensity post-extraction
     goals:
@@ -154,7 +162,7 @@ events:
     - mechanical mastery
     - discreet obedience
     importance: primary
-  - character_uuid: agent_17cc57e2e89c
+  - character_uuid: agent_4566d65dd1c0
     emotional_state: Pained urgency laced with paternal terror and mounting frailty
     goals:
     - Confirm Zoey's immediate safety and condition
@@ -288,6 +296,15 @@ events:
     observed_traits:
     - Panic-stricken
     - Persistent
+    importance: primary
+  - character_uuid: agent_1b4e146363a1
+    emotional_state: ''
+    goals: []
+    what_happened: significantly mentioned by Sam as en route back to the White House
+    observed_status: significantly mentioned by Sam as en route back to the White
+      House
+    beliefs: []
+    observed_traits: []
     importance: primary
   - character_uuid: agent_aa397b651aac
     emotional_state: High-alert urgency tempered by operational focus
@@ -467,6 +484,14 @@ events:
     - Desperate
     - Vocal
     importance: primary
+  - character_uuid: agent_89d2f8102427
+    emotional_state: ''
+    goals: []
+    what_happened: mentioned by Toby as having gotten in the car with Leo
+    observed_status: mentioned by Toby as having gotten in the car with Leo
+    beliefs: []
+    observed_traits: []
+    importance: primary
   object_involvements:
   - object_uuid: object_8480a8e65476
     description_of_involvement: Medic 2nd urgently requests 4 by 4's gauze pads to
@@ -629,6 +654,14 @@ events:
     - Efficient
     - Responsive
     importance: primary
+  - character_uuid: agent_89d2f8102427
+    emotional_state: ''
+    goals: []
+    what_happened: reported by Toby as the one who got in car with Leo (mentioned)
+    observed_status: reported by Toby as the one who got in car with Leo (mentioned)
+    beliefs: []
+    observed_traits: []
+    importance: primary
   object_involvements:
   - object_uuid: object_4a41ee05c616
     description_of_involvement: Gina references the signal man's baseball cap as a
@@ -690,6 +723,14 @@ events:
   arc_uuids:
   - arc_8726d90dd948
   participations:
+  - character_uuid: agent_1b4e146363a1
+    emotional_state: ''
+    goals: []
+    what_happened: mentioned as on way back to White House with President
+    observed_status: mentioned as on way back to White House with President
+    beliefs: []
+    observed_traits: []
+    importance: primary
   - character_uuid: agent_57456b21c104
     emotional_state: Shaken daze pierced by urgent alarm
     goals:
@@ -1149,7 +1190,7 @@ events:
     - resolute
     - authoritative
     importance: primary
-  - character_uuid: agent_17cc57e2e89c
+  - character_uuid: agent_4566d65dd1c0
     emotional_state: Desperate survival instinct overriding agony
     goals:
     - Sustain consciousness to reach hospital
@@ -1669,28 +1710,7 @@ events:
     - authoritative
     - precise
     importance: primary
-  - character_uuid: agent_5d8f40fcfab2
-    emotional_state: Heightened focus driving operational precision
-    goals:
-    - Deliver accurate vital signs for immediate treatment
-    - Expedite gurney transport to trauma stabilization
-    what_happened: Hurriedly pushing Bartlet's bloodied gurney into the trauma room
-      alongside nurses, the paramedic crisply reports pulse ox at 98, bridging ambulance
-      urgency to hospital frenzy as vitals are called out amid the President's groans
-      and demands.
-    observed_status: Hurriedly pushing Bartlet's bloodied gurney into the trauma room
-      alongside nurses, the paramedic crisply reports pulse ox at 98, bridging ambulance
-      urgency to hospital frenzy as vitals are called out amid the President's groans
-      and demands.
-    beliefs:
-    - Timely reporting prevents deterioration in gunshots
-    - Team coordination saves lives in trauma handoffs
-    observed_traits:
-    - efficient
-    - precise
-    - urgent
-    importance: primary
-  - character_uuid: agent_17cc57e2e89c
+  - character_uuid: agent_4566d65dd1c0
     emotional_state: Defiant resilience masking visceral agony and paternal terror
     goals:
     - Secure immediate contact with daughter Zoey
@@ -1713,6 +1733,27 @@ events:
     - paternal
     - humorous under duress
     - selfless
+    importance: primary
+  - character_uuid: agent_5d8f40fcfab2
+    emotional_state: Heightened focus driving operational precision
+    goals:
+    - Deliver accurate vital signs for immediate treatment
+    - Expedite gurney transport to trauma stabilization
+    what_happened: Hurriedly pushing Bartlet's bloodied gurney into the trauma room
+      alongside nurses, the paramedic crisply reports pulse ox at 98, bridging ambulance
+      urgency to hospital frenzy as vitals are called out amid the President's groans
+      and demands.
+    observed_status: Hurriedly pushing Bartlet's bloodied gurney into the trauma room
+      alongside nurses, the paramedic crisply reports pulse ox at 98, bridging ambulance
+      urgency to hospital frenzy as vitals are called out amid the President's groans
+      and demands.
+    beliefs:
+    - Timely reporting prevents deterioration in gunshots
+    - Team coordination saves lives in trauma handoffs
+    observed_traits:
+    - efficient
+    - precise
+    - urgent
     importance: primary
   object_involvements:
   - object_uuid: object_a66deaa1b784
@@ -1773,6 +1814,22 @@ events:
   theme_uuids: []
   arc_uuids: []
   participations:
+  - character_uuid: agent_4566d65dd1c0
+    emotional_state: N/A (referenced, not present)
+    goals:
+    - N/A (referenced, not present)
+    what_happened: Absent but centrally referenced in banter as overdue from rope
+      line schmoozing and targeted in newscast gunfire report from Rosslyn, embodying
+      the crisis pivot shattering staff normalcy.
+    observed_status: Absent but centrally referenced in banter as overdue from rope
+      line schmoozing and targeted in newscast gunfire report from Rosslyn, embodying
+      the crisis pivot shattering staff normalcy.
+    beliefs:
+    - N/A (referenced, not present)
+    observed_traits:
+    - charismatic
+    - irresistibly engaging
+    importance: primary
   - character_uuid: agent_4ad5a1792822
     emotional_state: Fondly nostalgic and warm, abruptly shifting to horrified shock
     goals:
@@ -1813,22 +1870,6 @@ events:
     - professional
     - dispassionate
     - precise
-    importance: primary
-  - character_uuid: agent_17cc57e2e89c
-    emotional_state: N/A (referenced, not present)
-    goals:
-    - N/A (referenced, not present)
-    what_happened: Absent but centrally referenced in banter as overdue from rope
-      line schmoozing and targeted in newscast gunfire report from Rosslyn, embodying
-      the crisis pivot shattering staff normalcy.
-    observed_status: Absent but centrally referenced in banter as overdue from rope
-      line schmoozing and targeted in newscast gunfire report from Rosslyn, embodying
-      the crisis pivot shattering staff normalcy.
-    beliefs:
-    - N/A (referenced, not present)
-    observed_traits:
-    - charismatic
-    - irresistibly engaging
     importance: primary
   object_involvements:
   - object_uuid: object_48d1b7050a54
@@ -1908,6 +1949,18 @@ events:
   - theme_61bbc22b7e76
   arc_uuids: []
   participations:
+  - character_uuid: agent_1b4e146363a1
+    emotional_state: ''
+    goals: []
+    what_happened: enters the trauma room, expresses fear and concern for her father,
+      shares affection and praise, vomits mentioned in backstory, exits to wait for
+      her mother
+    observed_status: enters the trauma room, expresses fear and concern for her father,
+      shares affection and praise, vomits mentioned in backstory, exits to wait for
+      her mother
+    beliefs: []
+    observed_traits: []
+    importance: primary
   - character_uuid: agent_d11a3b3bb6e4
     emotional_state: Deeply troubled resolve, steadied by presidential bond
     goals:
@@ -1968,7 +2021,7 @@ events:
     - professional
     - unflappable
     importance: primary
-  - character_uuid: agent_17cc57e2e89c
+  - character_uuid: agent_4566d65dd1c0
     emotional_state: Excruciating pain masked by paternal resolve and leadership steel
     goals:
     - Reassure daughter and project unbowed image
@@ -1992,6 +2045,14 @@ events:
     - affectionate
     - authoritative
     - vulnerable
+    importance: primary
+  - character_uuid: agent_0132b1e48955
+    emotional_state: ''
+    goals: []
+    what_happened: mentioned to be told to suspend stock exchange trading
+    observed_status: mentioned to be told to suspend stock exchange trading
+    beliefs: []
+    observed_traits: []
     importance: primary
   - character_uuid: agent_9623e7e26e19
     emotional_state: Frozen terror yielding to heartfelt affection and reluctant relief
@@ -2065,6 +2126,16 @@ events:
   theme_uuids: []
   arc_uuids: []
   participations:
+  - character_uuid: agent_1b4e146363a1
+    emotional_state: ''
+    goals: []
+    what_happened: enters the trauma room, expresses fear and concern for her father's
+      pain, engages in a loving dialogue, exits to wait for her mother
+    observed_status: enters the trauma room, expresses fear and concern for her father's
+      pain, engages in a loving dialogue, exits to wait for her mother
+    beliefs: []
+    observed_traits: []
+    importance: primary
   - character_uuid: agent_d11a3b3bb6e4
     emotional_state: Troubled urgency tempered by steadfast professionalism
     goals:
@@ -2125,7 +2196,7 @@ events:
     - focused
     - protocol-driven
     importance: primary
-  - character_uuid: agent_17cc57e2e89c
+  - character_uuid: agent_4566d65dd1c0
     emotional_state: Excruciating pain masked by defiant resolve and tender loyalty
     goals:
     - Secure casualty intel and activate continuity protocols
@@ -2146,6 +2217,15 @@ events:
     - authoritative
     - paternal
     - wryly humorous
+    importance: primary
+  - character_uuid: agent_0132b1e48955
+    emotional_state: ''
+    goals: []
+    what_happened: instructed by Bartlet via Leo to suspend trading on the stock exchange
+    observed_status: instructed by Bartlet via Leo to suspend trading on the stock
+      exchange
+    beliefs: []
+    observed_traits: []
     importance: primary
   - character_uuid: agent_9623e7e26e19
     emotional_state: Fearful tenderness yielding to filial compliance
@@ -2212,6 +2292,18 @@ events:
   arc_uuids:
   - arc_52e7acb0b780
   participations:
+  - character_uuid: agent_1b4e146363a1
+    emotional_state: ''
+    goals: []
+    what_happened: walks into the trauma room, shows fear upon seeing her wounded
+      father, engages in concerned dialogue reassuring and expressing love to him,
+      then exits at his request to wait for her mother
+    observed_status: walks into the trauma room, shows fear upon seeing her wounded
+      father, engages in concerned dialogue reassuring and expressing love to him,
+      then exits at his request to wait for her mother
+    beliefs: []
+    observed_traits: []
+    importance: primary
   - character_uuid: agent_d11a3b3bb6e4
     emotional_state: Troubled determination pierced by moved tenderness from the intimate
       gesture
@@ -2255,7 +2347,7 @@ events:
     - Urgent
     - Professionally detached
     importance: primary
-  - character_uuid: agent_17cc57e2e89c
+  - character_uuid: agent_4566d65dd1c0
     emotional_state: Pain-wracked composure veiling deep affection and quiet fear
       for his team's burden
     goals:
@@ -2277,6 +2369,16 @@ events:
     - Vulnerable
     - Reassuring
     - Stoically paternal
+    importance: primary
+  - character_uuid: agent_0132b1e48955
+    emotional_state: ''
+    goals: []
+    what_happened: mentioned by Bartlet as the person Leo should tell to suspend trading
+      on the stock exchange
+    observed_status: mentioned by Bartlet as the person Leo should tell to suspend
+      trading on the stock exchange
+    beliefs: []
+    observed_traits: []
     importance: primary
   object_involvements: []
   location_involvements:
@@ -2323,6 +2425,18 @@ events:
   theme_uuids: []
   arc_uuids: []
   participations:
+  - character_uuid: agent_1b4e146363a1
+    emotional_state: ''
+    goals: []
+    what_happened: talks to a woman for updates on her father's condition, hugs her
+      mother tightly, shares that her dad is making jokes to elicit family humor,
+      assures her mother she'll be okay
+    observed_status: talks to a woman for updates on her father's condition, hugs
+      her mother tightly, shares that her dad is making jokes to elicit family humor,
+      assures her mother she'll be okay
+    beliefs: []
+    observed_traits: []
+    importance: primary
   - character_uuid: agent_37b32f57b3aa
     emotional_state: Composed reassurance masking crisis urgency
     goals:
@@ -2380,6 +2494,22 @@ events:
     - ' unflappable'
     - clinically dominant
     importance: primary
+  - character_uuid: agent_4566d65dd1c0
+    emotional_state: Dark humor veiling mortal peril
+    goals:
+    - Lighten family's dread with wit
+    - Project unbreakable leadership resolve
+    what_happened: Referenced via Zoey's report of his dark jokes from trauma room,
+      his defiant humor relayed to forge family levity amid his unseen gut-shot agony.
+    observed_status: Referenced via Zoey's report of his dark jokes from trauma room,
+      his defiant humor relayed to forge family levity amid his unseen gut-shot agony.
+    beliefs:
+    - Humor disarms fear's grip
+    - Family draws strength from his spirit
+    observed_traits:
+    - defiantly humorous
+    - unyieldingly paternal
+    importance: primary
   - character_uuid: agent_45883b79da77
     emotional_state: Raw relief surging into clinical determination
     goals:
@@ -2416,22 +2546,6 @@ events:
     observed_traits:
     - reliable
     - essential team pillar
-    importance: primary
-  - character_uuid: agent_17cc57e2e89c
-    emotional_state: Dark humor veiling mortal peril
-    goals:
-    - Lighten family's dread with wit
-    - Project unbreakable leadership resolve
-    what_happened: Referenced via Zoey's report of his dark jokes from trauma room,
-      his defiant humor relayed to forge family levity amid his unseen gut-shot agony.
-    observed_status: Referenced via Zoey's report of his dark jokes from trauma room,
-      his defiant humor relayed to forge family levity amid his unseen gut-shot agony.
-    beliefs:
-    - Humor disarms fear's grip
-    - Family draws strength from his spirit
-    observed_traits:
-    - defiantly humorous
-    - unyieldingly paternal
     importance: primary
   - character_uuid: agent_9623e7e26e19
     emotional_state: Shaken vulnerability yielding to relieved poise via family humor
@@ -3575,6 +3689,16 @@ events:
     - loyal
     - affectionate
     importance: primary
+  - character_uuid: agent_c38d38d681d9
+    emotional_state: ''
+    goals: []
+    what_happened: meets Sam in the corridor and informs him that Josh Lyman is waiting
+      in his office
+    observed_status: meets Sam in the corridor and informs him that Josh Lyman is
+      waiting in his office
+    beliefs: []
+    observed_traits: []
+    importance: primary
   object_involvements: []
   location_involvements:
   - location_uuid: location_88f404538431
@@ -4150,6 +4274,24 @@ events:
     - professional
     - precise
     importance: primary
+  - character_uuid: agent_4566d65dd1c0
+    emotional_state: Inferred stability post-trauma, unknowing of team's vigil
+    goals:
+    - Undergo successful surgical stabilization
+    - Reassure nation through personal survival
+    what_happened: Absent but central—reported by doctor as stabilizing post-laparoscopy
+      with pristine peritoneum, minimal blood loss, no organ breach, full recovery
+      trajectory allowing Abbey viewing in two hours.
+    observed_status: Absent but central—reported by doctor as stabilizing post-laparoscopy
+      with pristine peritoneum, minimal blood loss, no organ breach, full recovery
+      trajectory allowing Abbey viewing in two hours.
+    beliefs:
+    - Leadership endures physical violation
+    - Fortune favors the prepared command
+    observed_traits:
+    - resilient
+    - miraculously spared
+    importance: primary
   - character_uuid: agent_45883b79da77
     emotional_state: Initial relief surging into shadowed concern for surrogate son
       Josh
@@ -4171,24 +4313,6 @@ events:
     - medically astute
     - resilient
     - communicative
-    importance: primary
-  - character_uuid: agent_17cc57e2e89c
-    emotional_state: Inferred stability post-trauma, unknowing of team's vigil
-    goals:
-    - Undergo successful surgical stabilization
-    - Reassure nation through personal survival
-    what_happened: Absent but central—reported by doctor as stabilizing post-laparoscopy
-      with pristine peritoneum, minimal blood loss, no organ breach, full recovery
-      trajectory allowing Abbey viewing in two hours.
-    observed_status: Absent but central—reported by doctor as stabilizing post-laparoscopy
-      with pristine peritoneum, minimal blood loss, no organ breach, full recovery
-      trajectory allowing Abbey viewing in two hours.
-    beliefs:
-    - Leadership endures physical violation
-    - Fortune favors the prepared command
-    observed_traits:
-    - resilient
-    - miraculously spared
     importance: primary
   object_involvements: []
   location_involvements:
@@ -4391,6 +4515,34 @@ events:
     observed_traits:
     - gritty
     - direct
+    importance: primary
+  - character_uuid: agent_cf4eaa927d1b
+    emotional_state: ''
+    goals: []
+    what_happened: Mentioned as needing to be in custody within one hour or National
+      Guards will be federalized.
+    observed_status: Mentioned as needing to be in custody within one hour or National
+      Guards will be federalized.
+    beliefs: []
+    observed_traits: []
+    importance: primary
+  - character_uuid: agent_d8240b99472a
+    emotional_state: ''
+    goals: []
+    what_happened: Mentioned as one of half dozen cell leaders whose whereabouts are
+      unknown.
+    observed_status: Mentioned as one of half dozen cell leaders whose whereabouts
+      are unknown.
+    beliefs: []
+    observed_traits: []
+    importance: primary
+  - character_uuid: agent_1556d4688c7a
+    emotional_state: ''
+    goals: []
+    what_happened: Suggested by Jack as best way to get message to Iraq.
+    observed_status: Suggested by Jack as best way to get message to Iraq.
+    beliefs: []
+    observed_traits: []
     importance: primary
   object_involvements:
   - object_uuid: object_3d4a351cd62b
@@ -5475,6 +5627,23 @@ events:
     observed_traits:
     - clinically authoritative
     importance: primary
+  - character_uuid: agent_4566d65dd1c0
+    emotional_state: Implicitly endangered
+    goals:
+    - N/A (referenced)
+    - N/A (referenced)
+    what_happened: Referenced centrally in Arthur's security lapse question on unprotected
+      entries/exits, embodying the vulnerability at assassination's core without direct
+      presence.
+    observed_status: Referenced centrally in Arthur's security lapse question on unprotected
+      entries/exits, embodying the vulnerability at assassination's core without direct
+      presence.
+    beliefs:
+    - Security protocols protect leadership
+    - Deviations invite catastrophe
+    observed_traits:
+    - central to peril
+    importance: primary
   - character_uuid: agent_d9ea8565c92f
     emotional_state: Insistent urgency tempered by professional restraint
     goals:
@@ -5549,23 +5718,6 @@ events:
     observed_traits:
     - disciplined
     - precise
-    importance: primary
-  - character_uuid: agent_17cc57e2e89c
-    emotional_state: Implicitly endangered
-    goals:
-    - N/A (referenced)
-    - N/A (referenced)
-    what_happened: Referenced centrally in Arthur's security lapse question on unprotected
-      entries/exits, embodying the vulnerability at assassination's core without direct
-      presence.
-    observed_status: Referenced centrally in Arthur's security lapse question on unprotected
-      entries/exits, embodying the vulnerability at assassination's core without direct
-      presence.
-    beliefs:
-    - Security protocols protect leadership
-    - Deviations invite catastrophe
-    observed_traits:
-    - central to peril
     importance: primary
   object_involvements: []
   location_involvements: []
@@ -6086,6 +6238,16 @@ events:
     - hawkish
     - insistent
     - legally astute
+    importance: primary
+  - character_uuid: agent_c38d38d681d9
+    emotional_state: ''
+    goals: []
+    what_happened: role as 'principal assistant' to President on national security
+      cited as vaguely defined in National Security Act
+    observed_status: role as 'principal assistant' to President on national security
+      cited as vaguely defined in National Security Act
+    beliefs: []
+    observed_traits: []
     importance: primary
   - character_uuid: agent_27fa58e83ea5
     emotional_state: Heightened urgency driving bold suggestion
@@ -6637,6 +6799,24 @@ events:
     - direct
     - empathetic
     importance: primary
+  - character_uuid: agent_4566d65dd1c0
+    emotional_state: Idealized hope in Toby's recounting
+    goals:
+    - Secure covert campaign momentum
+    - Draw supporters via rallies
+    what_happened: Referenced in flashback dialogue as secretly running candidate
+      speaking at VFW hall that night, with Toby inviting woman to attend, positioning
+      him as elusive principled force pulling Toby despite losses.
+    observed_status: Referenced in flashback dialogue as secretly running candidate
+      speaking at VFW hall that night, with Toby inviting woman to attend, positioning
+      him as elusive principled force pulling Toby despite losses.
+    beliefs:
+    - Stealth builds authentic coalition
+    - Events like VFW foster loyalty
+    observed_traits:
+    - elusive
+    - principled
+    importance: primary
   - character_uuid: agent_2fd2fa99c0cf
     emotional_state: Detached neutrality amid patron distress
     goals:
@@ -6655,24 +6835,6 @@ events:
     - courteous
     - professional
     - unperturbed
-    importance: primary
-  - character_uuid: agent_17cc57e2e89c
-    emotional_state: Idealized hope in Toby's recounting
-    goals:
-    - Secure covert campaign momentum
-    - Draw supporters via rallies
-    what_happened: Referenced in flashback dialogue as secretly running candidate
-      speaking at VFW hall that night, with Toby inviting woman to attend, positioning
-      him as elusive principled force pulling Toby despite losses.
-    observed_status: Referenced in flashback dialogue as secretly running candidate
-      speaking at VFW hall that night, with Toby inviting woman to attend, positioning
-      him as elusive principled force pulling Toby despite losses.
-    beliefs:
-    - Stealth builds authentic coalition
-    - Events like VFW foster loyalty
-    observed_traits:
-    - elusive
-    - principled
     importance: primary
   object_involvements:
   - object_uuid: object_73473419b966
@@ -6934,28 +7096,7 @@ events:
     - Humbly honest
     - Relatable everyperson
     importance: primary
-  - character_uuid: agent_60fae6a392fe
-    emotional_state: Relentless frustration boiling into accusatory desperation
-    goals:
-    - Extract commitment to soften or spin Dairy Compact response
-    - Protect campaign from voter backlash fallout
-    what_happened: Circling Toby repeatedly in the corner, Cal demands Bartlet's Dairy
-      Compact line with mounting fury, accuses Toby of greenlighting farmer alienation,
-      mocks loss enjoyment, then stalks off glancing back—embodying staff pragmatism
-      clashing with idealism.
-    observed_status: Circling Toby repeatedly in the corner, Cal demands Bartlet's
-      Dairy Compact line with mounting fury, accuses Toby of greenlighting farmer
-      alienation, mocks loss enjoyment, then stalks off glancing back—embodying staff
-      pragmatism clashing with idealism.
-    beliefs:
-    - Political survival demands pandering to key blocs
-    - Unfiltered truth guarantees electoral defeat
-    observed_traits:
-    - Pragmatically aggressive
-    - Electorally risk-averse
-    - Frustrated traditionalist
-    importance: primary
-  - character_uuid: agent_17cc57e2e89c
+  - character_uuid: agent_4566d65dd1c0
     emotional_state: Confident authority laced with empathetic humility and righteous
       conviction
     goals:
@@ -6979,6 +7120,27 @@ events:
     - Morally unyielding
     - Charismatically humble
     - Defiantly principled
+    importance: primary
+  - character_uuid: agent_60fae6a392fe
+    emotional_state: Relentless frustration boiling into accusatory desperation
+    goals:
+    - Extract commitment to soften or spin Dairy Compact response
+    - Protect campaign from voter backlash fallout
+    what_happened: Circling Toby repeatedly in the corner, Cal demands Bartlet's Dairy
+      Compact line with mounting fury, accuses Toby of greenlighting farmer alienation,
+      mocks loss enjoyment, then stalks off glancing back—embodying staff pragmatism
+      clashing with idealism.
+    observed_status: Circling Toby repeatedly in the corner, Cal demands Bartlet's
+      Dairy Compact line with mounting fury, accuses Toby of greenlighting farmer
+      alienation, mocks loss enjoyment, then stalks off glancing back—embodying staff
+      pragmatism clashing with idealism.
+    beliefs:
+    - Political survival demands pandering to key blocs
+    - Unfiltered truth guarantees electoral defeat
+    observed_traits:
+    - Pragmatically aggressive
+    - Electorally risk-averse
+    - Frustrated traditionalist
     importance: primary
   object_involvements:
   - object_uuid: object_b6346f382c25
@@ -7057,28 +7219,7 @@ events:
     - Strategically truthful
     - Resigned to losing
     importance: primary
-  - character_uuid: agent_60fae6a392fe
-    emotional_state: Frustrated worry boiling into accusatory exasperation
-    goals:
-    - Secure a safe scripted response to protect dairy farmer support
-    - Expose Toby's perceived sabotage of the campaign
-    what_happened: Approaching Toby repeatedly in the corner, Cal presses urgently
-      for Bartlet's Dairy Compact talking points, escalating to accusations that Toby
-      urged alienating key voters, frustration peaking as he walks off just before
-      the confrontation erupts onstage.
-    observed_status: Approaching Toby repeatedly in the corner, Cal presses urgently
-      for Bartlet's Dairy Compact talking points, escalating to accusations that Toby
-      urged alienating key voters, frustration peaking as he walks off just before
-      the confrontation erupts onstage.
-    beliefs:
-    - Pissing off core voters guarantees electoral defeat
-    - Campaign success demands pandering over blunt principles
-    observed_traits:
-    - Relentlessly cautious
-    - Politically anxious
-    - Accusatory
-    importance: primary
-  - character_uuid: agent_17cc57e2e89c
+  - character_uuid: agent_4566d65dd1c0
     emotional_state: Righteously unapologetic with steely resolve beneath a veneer
       of folksy candor
     goals:
@@ -7102,6 +7243,27 @@ events:
     - Morally principled
     - Eloquently passionate
     - Charismatically defiant
+    importance: primary
+  - character_uuid: agent_60fae6a392fe
+    emotional_state: Frustrated worry boiling into accusatory exasperation
+    goals:
+    - Secure a safe scripted response to protect dairy farmer support
+    - Expose Toby's perceived sabotage of the campaign
+    what_happened: Approaching Toby repeatedly in the corner, Cal presses urgently
+      for Bartlet's Dairy Compact talking points, escalating to accusations that Toby
+      urged alienating key voters, frustration peaking as he walks off just before
+      the confrontation erupts onstage.
+    observed_status: Approaching Toby repeatedly in the corner, Cal presses urgently
+      for Bartlet's Dairy Compact talking points, escalating to accusations that Toby
+      urged alienating key voters, frustration peaking as he walks off just before
+      the confrontation erupts onstage.
+    beliefs:
+    - Pissing off core voters guarantees electoral defeat
+    - Campaign success demands pandering over blunt principles
+    observed_traits:
+    - Relentlessly cautious
+    - Politically anxious
+    - Accusatory
     importance: primary
   object_involvements:
   - object_uuid: object_b6346f382c25
@@ -7258,6 +7420,25 @@ events:
     - authoritative
     - pragmatic
     importance: primary
+  - character_uuid: agent_4566d65dd1c0
+    emotional_state: Fierce determination fueled by fraternal urgency
+    goals:
+    - Reach Josh's side to offer personal support
+    - Reassert agency against medical confinement
+    what_happened: Bartlet, bedbound and wounded, demands to see Josh, requests door
+      assistance, references Charlie's clothes as mobilization aid, then begins rising
+      with 'Great,' his will overriding agony and counsel.
+    observed_status: Bartlet, bedbound and wounded, demands to see Josh, requests
+      door assistance, references Charlie's clothes as mobilization aid, then begins
+      rising with 'Great,' his will overriding agony and counsel.
+    beliefs:
+    - Personal bonds outrank physical limits in crisis
+    - Leadership demands presence over passivity
+    observed_traits:
+    - determined
+    - loyal
+    - stubborn
+    importance: primary
   - character_uuid: agent_45883b79da77
     emotional_state: Deep worry laced with helpless resignation
     goals:
@@ -7276,25 +7457,6 @@ events:
     - maternal
     - worried
     - conflicted
-    importance: primary
-  - character_uuid: agent_17cc57e2e89c
-    emotional_state: Fierce determination fueled by fraternal urgency
-    goals:
-    - Reach Josh's side to offer personal support
-    - Reassert agency against medical confinement
-    what_happened: Bartlet, bedbound and wounded, demands to see Josh, requests door
-      assistance, references Charlie's clothes as mobilization aid, then begins rising
-      with 'Great,' his will overriding agony and counsel.
-    observed_status: Bartlet, bedbound and wounded, demands to see Josh, requests
-      door assistance, references Charlie's clothes as mobilization aid, then begins
-      rising with 'Great,' his will overriding agony and counsel.
-    beliefs:
-    - Personal bonds outrank physical limits in crisis
-    - Leadership demands presence over passivity
-    observed_traits:
-    - determined
-    - loyal
-    - stubborn
     importance: primary
   object_involvements:
   - object_uuid: object_f547093f101a
@@ -7388,6 +7550,28 @@ events:
     - authoritative
     - loyal
     importance: primary
+  - character_uuid: agent_4566d65dd1c0
+    emotional_state: Frustrated impatience laced with fierce self-assurance
+    goals:
+    - Propel the meeting forward decisively
+    - Defend his tactical instincts against staff caution
+    what_happened: Chairs the post-speech meeting with commanding presence, sharply
+      interrogates staff on next issues, dismantles Cal and Jerry's cautious reframing
+      on naming opponent with biting logic about seeming forgetful, asserts unyielding
+      judgment, and storms out when agenda stalls.
+    observed_status: Chairs the post-speech meeting with commanding presence, sharply
+      interrogates staff on next issues, dismantles Cal and Jerry's cautious reframing
+      on naming opponent with biting logic about seeming forgetful, asserts unyielding
+      judgment, and storms out when agenda stalls.
+    beliefs:
+    - Cautious anonymity risks portraying him as weak-minded
+    - Direct confrontation sharpens his intellectual edge
+    observed_traits:
+    - assertive
+    - sharp-witted
+    - willful
+    - impatient
+    importance: primary
   - character_uuid: agent_60fae6a392fe
     emotional_state: Cautious insistence turning to stunned disbelief
     goals:
@@ -7462,28 +7646,6 @@ events:
     - loyal
     - silent
     - resigned
-    importance: primary
-  - character_uuid: agent_17cc57e2e89c
-    emotional_state: Frustrated impatience laced with fierce self-assurance
-    goals:
-    - Propel the meeting forward decisively
-    - Defend his tactical instincts against staff caution
-    what_happened: Chairs the post-speech meeting with commanding presence, sharply
-      interrogates staff on next issues, dismantles Cal and Jerry's cautious reframing
-      on naming opponent with biting logic about seeming forgetful, asserts unyielding
-      judgment, and storms out when agenda stalls.
-    observed_status: Chairs the post-speech meeting with commanding presence, sharply
-      interrogates staff on next issues, dismantles Cal and Jerry's cautious reframing
-      on naming opponent with biting logic about seeming forgetful, asserts unyielding
-      judgment, and storms out when agenda stalls.
-    beliefs:
-    - Cautious anonymity risks portraying him as weak-minded
-    - Direct confrontation sharpens his intellectual edge
-    observed_traits:
-    - assertive
-    - sharp-witted
-    - willful
-    - impatient
     importance: primary
   object_involvements: []
   location_involvements:
@@ -7566,6 +7728,28 @@ events:
     - authoritative
     - loyal to vision
     importance: primary
+  - character_uuid: agent_4566d65dd1c0
+    emotional_state: Frustrated defensiveness masking underlying vulnerability to
+      perceptions of weakness
+    goals:
+    - Redirect meeting momentum beyond petty critiques
+    - Assert personal judgment over staff consensus
+    what_happened: Abruptly shuts down staff criticism of his speech tactic—defending
+      it as strategically vital despite risks of appearing forgetful—dismisses the
+      room with 'Nothing? Excellent' and storms out, leaving a vacuum Leo immediately
+      fills with decisive action.
+    observed_status: Abruptly shuts down staff criticism of his speech tactic—defending
+      it as strategically vital despite risks of appearing forgetful—dismisses the
+      room with 'Nothing? Excellent' and storms out, leaving a vacuum Leo immediately
+      fills with decisive action.
+    beliefs:
+    - Direct confrontation in speeches projects strength, not frailty
+    - Endless debate stalls bold progress
+    observed_traits:
+    - decisive
+    - irritable
+    - strategically defiant
+    importance: primary
   - character_uuid: agent_60fae6a392fe
     emotional_state: Alarmed outrage at abrupt betrayal
     goals:
@@ -7642,28 +7826,6 @@ events:
     - shocked
     - peripheral
     importance: primary
-  - character_uuid: agent_17cc57e2e89c
-    emotional_state: Frustrated defensiveness masking underlying vulnerability to
-      perceptions of weakness
-    goals:
-    - Redirect meeting momentum beyond petty critiques
-    - Assert personal judgment over staff consensus
-    what_happened: Abruptly shuts down staff criticism of his speech tactic—defending
-      it as strategically vital despite risks of appearing forgetful—dismisses the
-      room with 'Nothing? Excellent' and storms out, leaving a vacuum Leo immediately
-      fills with decisive action.
-    observed_status: Abruptly shuts down staff criticism of his speech tactic—defending
-      it as strategically vital despite risks of appearing forgetful—dismisses the
-      room with 'Nothing? Excellent' and storms out, leaving a vacuum Leo immediately
-      fills with decisive action.
-    beliefs:
-    - Direct confrontation in speeches projects strength, not frailty
-    - Endless debate stalls bold progress
-    observed_traits:
-    - decisive
-    - irritable
-    - strategically defiant
-    importance: primary
   object_involvements: []
   location_involvements:
   - location_uuid: location_4064500be121
@@ -7737,7 +7899,7 @@ events:
     - Fervently loyal
     - Visionary strategist
     importance: primary
-  - character_uuid: agent_17cc57e2e89c
+  - character_uuid: agent_4566d65dd1c0
     emotional_state: Frustrated anger flaring into indignant defense, softening to
       doubtful hesitation then nascent resolve
     goals:
@@ -7925,6 +8087,27 @@ events:
     - steadfast
     - protective
     importance: primary
+  - character_uuid: agent_4566d65dd1c0
+    emotional_state: Frail determination masking physical agony and paternal worry
+    goals:
+    - Reaffirm visible continuity of command
+    - Bolster staff and national morale through presence
+    what_happened: President Bartlet, visibly frail from his wounds, walks slowly
+      down the G.W. Hospital hallway alongside Leo, his deliberate pace projecting
+      resolute leadership amid the swelling musical score and overlaying news reports
+      of national uncertainty.
+    observed_status: President Bartlet, visibly frail from his wounds, walks slowly
+      down the G.W. Hospital hallway alongside Leo, his deliberate pace projecting
+      resolute leadership amid the swelling musical score and overlaying news reports
+      of national uncertainty.
+    beliefs:
+    - Leadership endures beyond physical limits
+    - Personal resolve stabilizes institutional chaos
+    observed_traits:
+    - resolute
+    - defiant
+    - stoic
+    importance: primary
   - character_uuid: agent_4ad5a1792822
     emotional_state: Calm reassurance concealing shared sorrow
     goals:
@@ -7962,27 +8145,6 @@ events:
     - devastated
     - vulnerable
     - dependent
-    importance: primary
-  - character_uuid: agent_17cc57e2e89c
-    emotional_state: Frail determination masking physical agony and paternal worry
-    goals:
-    - Reaffirm visible continuity of command
-    - Bolster staff and national morale through presence
-    what_happened: President Bartlet, visibly frail from his wounds, walks slowly
-      down the G.W. Hospital hallway alongside Leo, his deliberate pace projecting
-      resolute leadership amid the swelling musical score and overlaying news reports
-      of national uncertainty.
-    observed_status: President Bartlet, visibly frail from his wounds, walks slowly
-      down the G.W. Hospital hallway alongside Leo, his deliberate pace projecting
-      resolute leadership amid the swelling musical score and overlaying news reports
-      of national uncertainty.
-    beliefs:
-    - Leadership endures beyond physical limits
-    - Personal resolve stabilizes institutional chaos
-    observed_traits:
-    - resolute
-    - defiant
-    - stoic
     importance: primary
   object_involvements: []
   location_involvements:
@@ -8176,6 +8338,25 @@ events:
     - unflinching
     - strategic
     importance: primary
+  - character_uuid: agent_4566d65dd1c0
+    emotional_state: Somber resolve masking profound presidential vulnerability
+    goals:
+    - Maintain continuity of command despite injury
+    - Project stability to inner circle amid chaos
+    what_happened: Slowly walking down the G.W. Hospital hallway alongside Leo, embodying
+      a somber, deliberate pace that underscores the weight of crisis leadership amid
+      intercut reports of national shutdowns and military mobilizations.
+    observed_status: Slowly walking down the G.W. Hospital hallway alongside Leo,
+      embodying a somber, deliberate pace that underscores the weight of crisis leadership
+      amid intercut reports of national shutdowns and military mobilizations.
+    beliefs:
+    - Duty transcends personal pain
+    - Leadership demands visible fortitude in crisis
+    observed_traits:
+    - resilient
+    - paternal
+    - stoic
+    importance: primary
   - character_uuid: agent_4ad5a1792822
     emotional_state: Supportive calm conveying quiet solidarity
     goals:
@@ -8211,25 +8392,6 @@ events:
     - devoted
     - shattered
     - vulnerable
-    importance: primary
-  - character_uuid: agent_17cc57e2e89c
-    emotional_state: Somber resolve masking profound presidential vulnerability
-    goals:
-    - Maintain continuity of command despite injury
-    - Project stability to inner circle amid chaos
-    what_happened: Slowly walking down the G.W. Hospital hallway alongside Leo, embodying
-      a somber, deliberate pace that underscores the weight of crisis leadership amid
-      intercut reports of national shutdowns and military mobilizations.
-    observed_status: Slowly walking down the G.W. Hospital hallway alongside Leo,
-      embodying a somber, deliberate pace that underscores the weight of crisis leadership
-      amid intercut reports of national shutdowns and military mobilizations.
-    beliefs:
-    - Duty transcends personal pain
-    - Leadership demands visible fortitude in crisis
-    observed_traits:
-    - resilient
-    - paternal
-    - stoic
     importance: primary
   object_involvements: []
   location_involvements:
@@ -8421,6 +8583,26 @@ events:
     - somber
     - protective
     importance: primary
+  - character_uuid: agent_4566d65dd1c0
+    emotional_state: Somber determination veiling profound physical and leadership
+      exhaustion
+    goals:
+    - Maintain visible continuity of command
+    - Process the assassination's immediate aftermath privately with Leo
+    what_happened: Slowly walking down the G.W. Hospital hallway alongside Leo, serving
+      as the visual anchor for the montage's opening amid swelling music and overlapping
+      news reports voicing national uncertainty.
+    observed_status: Slowly walking down the G.W. Hospital hallway alongside Leo,
+      serving as the visual anchor for the montage's opening amid swelling music and
+      overlapping news reports voicing national uncertainty.
+    beliefs:
+    - Duty endures despite personal peril
+    - The nation's stability hinges on presidential presence
+    observed_traits:
+    - somber
+    - resolute
+    - vulnerable
+    importance: primary
   - character_uuid: agent_4ad5a1792822
     emotional_state: Quiet compassion channeling decades of service into solace
     goals:
@@ -8457,26 +8639,6 @@ events:
     observed_traits:
     - shocked
     - devoted
-    - vulnerable
-    importance: primary
-  - character_uuid: agent_17cc57e2e89c
-    emotional_state: Somber determination veiling profound physical and leadership
-      exhaustion
-    goals:
-    - Maintain visible continuity of command
-    - Process the assassination's immediate aftermath privately with Leo
-    what_happened: Slowly walking down the G.W. Hospital hallway alongside Leo, serving
-      as the visual anchor for the montage's opening amid swelling music and overlapping
-      news reports voicing national uncertainty.
-    observed_status: Slowly walking down the G.W. Hospital hallway alongside Leo,
-      serving as the visual anchor for the montage's opening amid swelling music and
-      overlapping news reports voicing national uncertainty.
-    beliefs:
-    - Duty endures despite personal peril
-    - The nation's stability hinges on presidential presence
-    observed_traits:
-    - somber
-    - resolute
     - vulnerable
     importance: primary
   object_involvements: []
@@ -8646,6 +8808,24 @@ events:
     - loyal
     - composed
     importance: primary
+  - character_uuid: agent_4566d65dd1c0
+    emotional_state: Somber determination masking vulnerability
+    goals:
+    - Maintain continuity of leadership
+    - Navigate personal and national peril
+    what_happened: Slowly walking down the G.W. Hospital hallway with Leo at the montage's
+      outset, embodying presidential resilience amid surrounding crisis visuals and
+      news reports.
+    observed_status: Slowly walking down the G.W. Hospital hallway with Leo at the
+      montage's outset, embodying presidential resilience amid surrounding crisis
+      visuals and news reports.
+    beliefs:
+    - Duty transcends physical frailty
+    - Staff unity will endure the storm
+    observed_traits:
+    - resolute
+    - somber
+    importance: primary
   - character_uuid: agent_4ad5a1792822
     emotional_state: Quiet empathy and resolve
     goals:
@@ -8677,24 +8857,6 @@ events:
     observed_traits:
     - devoted
     - fractured
-    importance: primary
-  - character_uuid: agent_17cc57e2e89c
-    emotional_state: Somber determination masking vulnerability
-    goals:
-    - Maintain continuity of leadership
-    - Navigate personal and national peril
-    what_happened: Slowly walking down the G.W. Hospital hallway with Leo at the montage's
-      outset, embodying presidential resilience amid surrounding crisis visuals and
-      news reports.
-    observed_status: Slowly walking down the G.W. Hospital hallway with Leo at the
-      montage's outset, embodying presidential resilience amid surrounding crisis
-      visuals and news reports.
-    beliefs:
-    - Duty transcends physical frailty
-    - Staff unity will endure the storm
-    observed_traits:
-    - resolute
-    - somber
     importance: primary
   object_involvements: []
   location_involvements:
@@ -8812,7 +8974,7 @@ events:
     - professional
     - determined
     importance: primary
-  - character_uuid: agent_17cc57e2e89c
+  - character_uuid: agent_4566d65dd1c0
     emotional_state: Raw grief piercing presidential facade, heavy with paternal dread
       and survivor's guilt
     goals:

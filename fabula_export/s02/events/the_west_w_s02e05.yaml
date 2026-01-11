@@ -1,5 +1,5 @@
 # Events for And It's Surely To Their Credit
-# Generated: 2026-01-10T18:12:19.572827
+# Generated: 2026-01-11T19:27:39.854104
 
 episode_uuid: ep_sea_ser_the_west_wing_s02_e05
 episode_title: And It's Surely To Their Credit
@@ -559,6 +559,22 @@ events:
     - precise
     - inquisitive
     importance: primary
+  - character_uuid: agent_8265f9568328
+    emotional_state: Pragmatic conduit
+    goals:
+    - Maintain show flow intel
+    - Facilitate guest bookings
+    what_happened: Mark Gottfried credited as Toby/Sam's broadcast intel pipeline
+      leaking Barrie's Sunday lineup.
+    observed_status: Mark Gottfried credited as Toby/Sam's broadcast intel pipeline
+      leaking Barrie's Sunday lineup.
+    beliefs:
+    - Schedules are public leverage
+    - Aides extract amid chaos
+    observed_traits:
+    - unflappable
+    - informative
+    importance: primary
   - character_uuid: agent_2905f54e51ac
     emotional_state: Resilient amid hazing (inferred from defense)
     goals:
@@ -576,6 +592,24 @@ events:
     observed_traits:
     - competent
     - outsider
+    importance: primary
+  - character_uuid: agent_a8c80552a22d
+    emotional_state: Defiant antagonism toward administration
+    goals:
+    - Publicly savage military readiness policies
+    - Exploit retirement spotlight for partisan leverage
+    what_happened: Retiring General Barrie looms as the absent aggressor, his Sunday
+      media blitz across three shows dissected and targeted for disruption, positioning
+      him as the crisis catalyst whose critiques demand immediate White House seizure.
+    observed_status: Retiring General Barrie looms as the absent aggressor, his Sunday
+      media blitz across three shows dissected and targeted for disruption, positioning
+      him as the crisis catalyst whose critiques demand immediate White House seizure.
+    beliefs:
+    - Administration undermines Army readiness
+    - Media evasion beats direct confrontation
+    observed_traits:
+    - aggressive
+    - evasive
     importance: primary
   - character_uuid: agent_0296df04e166
     emotional_state: Ferocious partisanship brewing
@@ -609,40 +643,6 @@ events:
     - Timely loops avert crises
     observed_traits:
     - essential liaison
-    importance: primary
-  - character_uuid: agent_9c0f103b7655
-    emotional_state: Defiant antagonism toward administration
-    goals:
-    - Publicly savage military readiness policies
-    - Exploit retirement spotlight for partisan leverage
-    what_happened: Retiring General Barrie looms as the absent aggressor, his Sunday
-      media blitz across three shows dissected and targeted for disruption, positioning
-      him as the crisis catalyst whose critiques demand immediate White House seizure.
-    observed_status: Retiring General Barrie looms as the absent aggressor, his Sunday
-      media blitz across three shows dissected and targeted for disruption, positioning
-      him as the crisis catalyst whose critiques demand immediate White House seizure.
-    beliefs:
-    - Administration undermines Army readiness
-    - Media evasion beats direct confrontation
-    observed_traits:
-    - aggressive
-    - evasive
-    importance: primary
-  - character_uuid: agent_b977f1665ce1
-    emotional_state: Pragmatic conduit
-    goals:
-    - Maintain show flow intel
-    - Facilitate guest bookings
-    what_happened: Mark Gottfried credited as Toby/Sam's broadcast intel pipeline
-      leaking Barrie's Sunday lineup.
-    observed_status: Mark Gottfried credited as Toby/Sam's broadcast intel pipeline
-      leaking Barrie's Sunday lineup.
-    beliefs:
-    - Schedules are public leverage
-    - Aides extract amid chaos
-    observed_traits:
-    - unflappable
-    - informative
     importance: primary
   object_involvements: []
   location_involvements:
@@ -1613,6 +1613,29 @@ events:
     - professional
     - concise
     importance: primary
+  - character_uuid: agent_a8c80552a22d
+    emotional_state: Implied defiant and aggrieved (via defense), soon to face rebuke
+    goals:
+    - Execute 'Ring and Run' media ambush on President unscathed
+    - Voice expert critiques on armed forces readiness pre-retirement
+    what_happened: Absent but pivotal—General Barrie dispatched Buckley as proxy;
+      his scheme to critique military readiness and the administration on morning
+      TV right before retirement is ruthlessly exposed and condemned by C.J. as cowardly
+      'Ring and Run,' with explicit instructions for Buckley to deliver her verdict
+      personally.
+    observed_status: Absent but pivotal—General Barrie dispatched Buckley as proxy;
+      his scheme to critique military readiness and the administration on morning
+      TV right before retirement is ruthlessly exposed and condemned by C.J. as cowardly
+      'Ring and Run,' with explicit instructions for Buckley to deliver her verdict
+      personally.
+    beliefs:
+    - Administration endangers military readiness
+    - Patriotic duty overrides retirement protocol for public warnings
+    observed_traits:
+    - evasive
+    - dissenting
+    - strategic
+    importance: primary
   - character_uuid: agent_e3786f5360e7
     emotional_state: Initially defensive and composed, fracturing into stunned disbelief
     goals:
@@ -1636,29 +1659,6 @@ events:
     - loyal
     - evasive
     - disciplined
-    importance: primary
-  - character_uuid: agent_9c0f103b7655
-    emotional_state: Implied defiant and aggrieved (via defense), soon to face rebuke
-    goals:
-    - Execute 'Ring and Run' media ambush on President unscathed
-    - Voice expert critiques on armed forces readiness pre-retirement
-    what_happened: Absent but pivotal—General Barrie dispatched Buckley as proxy;
-      his scheme to critique military readiness and the administration on morning
-      TV right before retirement is ruthlessly exposed and condemned by C.J. as cowardly
-      'Ring and Run,' with explicit instructions for Buckley to deliver her verdict
-      personally.
-    observed_status: Absent but pivotal—General Barrie dispatched Buckley as proxy;
-      his scheme to critique military readiness and the administration on morning
-      TV right before retirement is ruthlessly exposed and condemned by C.J. as cowardly
-      'Ring and Run,' with explicit instructions for Buckley to deliver her verdict
-      personally.
-    beliefs:
-    - Administration endangers military readiness
-    - Patriotic duty overrides retirement protocol for public warnings
-    observed_traits:
-    - evasive
-    - dissenting
-    - strategic
     importance: primary
   object_involvements: []
   location_involvements:
@@ -2302,7 +2302,7 @@ events:
     - professional
     - deferential
     importance: primary
-  - character_uuid: agent_9c0f103b7655
+  - character_uuid: agent_a8c80552a22d
     emotional_state: Bombastic fury masking insecurity, collapsing into deflated humiliation
     goals:
     - Defend 'Ring and Run' media attacks as conscience
@@ -3730,6 +3730,24 @@ events:
     - playful
     - poised
     importance: primary
+  - character_uuid: agent_a8c80552a22d
+    emotional_state: Absent but framed as honor-bound critic.
+    goals:
+    - Exercise earned right to voice military dissent publicly
+    - Evade direct accountability through media proxies
+    what_happened: General Barrie is invoked by name as the crisis focal point—C.J.
+      seeks instructions on his containment, Bartlet defends his Vietnam service granting
+      him unfiltered speech rights, overriding staff pressure.
+    observed_status: General Barrie is invoked by name as the crisis focal point—C.J.
+      seeks instructions on his containment, Bartlet defends his Vietnam service granting
+      him unfiltered speech rights, overriding staff pressure.
+    beliefs:
+    - Vietnam sacrifice confers perpetual authority on readiness critiques
+    - Administration frailties demand public exposure despite loyalty oaths
+    observed_traits:
+    - valorized
+    - contentious
+    importance: primary
   - character_uuid: agent_e4dff4cbbd51
     emotional_state: Calmly procedural, focused on technical closure.
     goals:
@@ -3748,24 +3766,6 @@ events:
     - precise
     - professional
     - efficient
-    importance: primary
-  - character_uuid: agent_9c0f103b7655
-    emotional_state: Absent but framed as honor-bound critic.
-    goals:
-    - Exercise earned right to voice military dissent publicly
-    - Evade direct accountability through media proxies
-    what_happened: General Barrie is invoked by name as the crisis focal point—C.J.
-      seeks instructions on his containment, Bartlet defends his Vietnam service granting
-      him unfiltered speech rights, overriding staff pressure.
-    observed_status: General Barrie is invoked by name as the crisis focal point—C.J.
-      seeks instructions on his containment, Bartlet defends his Vietnam service granting
-      him unfiltered speech rights, overriding staff pressure.
-    beliefs:
-    - Vietnam sacrifice confers perpetual authority on readiness critiques
-    - Administration frailties demand public exposure despite loyalty oaths
-    observed_traits:
-    - valorized
-    - contentious
     importance: primary
   object_involvements:
   - object_uuid: object_eb134effcdb0
@@ -3850,6 +3850,22 @@ events:
     - assertive
     - frustrated
     importance: primary
+  - character_uuid: agent_a8c80552a22d
+    emotional_state: N/A (mentioned off-screen)
+    goals:
+    - Voice military critiques freely
+    - Leverage valor for policy influence
+    what_happened: Invoked by C.J. as crisis focal point; Bartlet debates then greenlights
+      his unbridled media expression, citing Vietnam service as earned privilege despite
+      personal disagreements.
+    observed_status: Invoked by C.J. as crisis focal point; Bartlet debates then greenlights
+      his unbridled media expression, citing Vietnam service as earned privilege despite
+      personal disagreements.
+    beliefs:
+    - Service grants outspoken rights
+    - Administration weaknesses demand public callout
+    observed_traits: []
+    importance: primary
   - character_uuid: agent_e4dff4cbbd51
     emotional_state: Calmly procedural
     goals:
@@ -3866,22 +3882,6 @@ events:
     - efficient
     - precise
     - unobtrusive
-    importance: primary
-  - character_uuid: agent_9c0f103b7655
-    emotional_state: N/A (mentioned off-screen)
-    goals:
-    - Voice military critiques freely
-    - Leverage valor for policy influence
-    what_happened: Invoked by C.J. as crisis focal point; Bartlet debates then greenlights
-      his unbridled media expression, citing Vietnam service as earned privilege despite
-      personal disagreements.
-    observed_status: Invoked by C.J. as crisis focal point; Bartlet debates then greenlights
-      his unbridled media expression, citing Vietnam service as earned privilege despite
-      personal disagreements.
-    beliefs:
-    - Service grants outspoken rights
-    - Administration weaknesses demand public callout
-    observed_traits: []
     importance: primary
   object_involvements:
   - object_uuid: object_eb134effcdb0
@@ -3965,6 +3965,24 @@ events:
     - protective
     - poised
     importance: primary
+  - character_uuid: agent_a8c80552a22d
+    emotional_state: Empowered by presidential reprieve (inferred)
+    goals:
+    - Voice unvarnished critiques publicly
+    - Leverage service for platform access
+    what_happened: Absent but pivotally invoked by CJ's query and Bartlet's monologue,
+      positioned as the freed critic whose Vietnam valor earns unfiltered airtime
+      despite administration tensions.
+    observed_status: Absent but pivotally invoked by CJ's query and Bartlet's monologue,
+      positioned as the freed critic whose Vietnam valor earns unfiltered airtime
+      despite administration tensions.
+    beliefs:
+    - Military honor outweighs political loyalty
+    - Personal experience justifies bold speech
+    observed_traits:
+    - veteran
+    - contentious
+    importance: primary
   - character_uuid: agent_e4dff4cbbd51
     emotional_state: Calmly procedural
     goals:
@@ -3983,24 +4001,6 @@ events:
     - precise
     - professional
     - unflappable
-    importance: primary
-  - character_uuid: agent_9c0f103b7655
-    emotional_state: Empowered by presidential reprieve (inferred)
-    goals:
-    - Voice unvarnished critiques publicly
-    - Leverage service for platform access
-    what_happened: Absent but pivotally invoked by CJ's query and Bartlet's monologue,
-      positioned as the freed critic whose Vietnam valor earns unfiltered airtime
-      despite administration tensions.
-    observed_status: Absent but pivotally invoked by CJ's query and Bartlet's monologue,
-      positioned as the freed critic whose Vietnam valor earns unfiltered airtime
-      despite administration tensions.
-    beliefs:
-    - Military honor outweighs political loyalty
-    - Personal experience justifies bold speech
-    observed_traits:
-    - veteran
-    - contentious
     importance: primary
   object_involvements:
   - object_uuid: object_eb134effcdb0
@@ -4233,6 +4233,24 @@ events:
     - wary outsider
     - delightedly surprised
     - graciously receptive
+    importance: primary
+  - character_uuid: agent_e0503a409522
+    emotional_state: ''
+    goals: []
+    what_happened: singing 'He is an Englishman!' on tape as Ainsley walks, individual
+      voices join in, music continues during applause and handshakes
+    observed_status: singing 'He is an Englishman!' on tape as Ainsley walks, individual
+      voices join in, music continues during applause and handshakes
+    beliefs: []
+    observed_traits: []
+    importance: primary
+  - character_uuid: agent_e0503a409522
+    emotional_state: ''
+    goals: []
+    what_happened: singing lines from 'He is an Englishman!' on tape
+    observed_status: singing lines from 'He is an Englishman!' on tape
+    beliefs: []
+    observed_traits: []
     importance: primary
   object_involvements:
   - object_uuid: object_e84122306f39

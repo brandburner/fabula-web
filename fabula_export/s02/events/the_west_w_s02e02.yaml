@@ -1,5 +1,5 @@
 # Events for In the Shadow of Two Gunmen Part 2
-# Generated: 2026-01-10T18:12:17.879676
+# Generated: 2026-01-11T19:27:38.326680
 
 episode_uuid: ep_sea_ser_the_west_wing_s02_e02
 episode_title: In the Shadow of Two Gunmen Part 2
@@ -404,6 +404,24 @@ events:
     - authoritative
     - strained
     importance: primary
+  - character_uuid: agent_4566d65dd1c0
+    emotional_state: Portrayed as steadily recovering amid leadership vacuum fears
+    goals:
+    - N/A (not physically present)
+    - N/A (not physically present)
+    what_happened: President Bartlet is referenced by C.J. as remaining in stable
+      condition in recovery, expected home Wednesday, anchoring White House continuity
+      messaging.
+    observed_status: President Bartlet is referenced by C.J. as remaining in stable
+      condition in recovery, expected home Wednesday, anchoring White House continuity
+      messaging.
+    beliefs:
+    - N/A (not physically present)
+    - N/A (not physically present)
+    observed_traits:
+    - resilient
+    - stable
+    importance: primary
   - character_uuid: agent_98d12d662022
     emotional_state: Insistent and unrelenting in pursuit of breaking news
     goals:
@@ -440,24 +458,6 @@ events:
     observed_traits:
     - vulnerable
     - emblematic
-    importance: primary
-  - character_uuid: agent_17cc57e2e89c
-    emotional_state: Portrayed as steadily recovering amid leadership vacuum fears
-    goals:
-    - N/A (not physically present)
-    - N/A (not physically present)
-    what_happened: President Bartlet is referenced by C.J. as remaining in stable
-      condition in recovery, expected home Wednesday, anchoring White House continuity
-      messaging.
-    observed_status: President Bartlet is referenced by C.J. as remaining in stable
-      condition in recovery, expected home Wednesday, anchoring White House continuity
-      messaging.
-    beliefs:
-    - N/A (not physically present)
-    - N/A (not physically present)
-    observed_traits:
-    - resilient
-    - stable
     importance: primary
   object_involvements:
   - object_uuid: object_45bdce194d25
@@ -702,6 +702,24 @@ events:
     - Observant
     - Steadfast
     importance: primary
+  - character_uuid: agent_4566d65dd1c0
+    emotional_state: Groggy disorientation from recovery
+    goals:
+    - Regain full situational awareness
+    - Reassert presidential authority
+    what_happened: The President lingers off-screen, groggy post-anesthesia and briefed
+      by Abbey on the suspect's arrest, his condition referenced in Sam's query and
+      anchoring the room's procedural anxieties amid Josh's surgical shadow.
+    observed_status: The President lingers off-screen, groggy post-anesthesia and
+      briefed by Abbey on the suspect's arrest, his condition referenced in Sam's
+      query and anchoring the room's procedural anxieties amid Josh's surgical shadow.
+    beliefs:
+    - Informed leadership stabilizes nation
+    - Trust in Abbey ensures continuity
+    observed_traits:
+    - Resilient
+    - Commanding
+    importance: primary
   - character_uuid: agent_45883b79da77
     emotional_state: Composed empathy undergirded by quiet resolve
     goals:
@@ -741,24 +759,6 @@ events:
     - Devoted
     - Proactive
     - Vulnerable
-    importance: primary
-  - character_uuid: agent_17cc57e2e89c
-    emotional_state: Groggy disorientation from recovery
-    goals:
-    - Regain full situational awareness
-    - Reassert presidential authority
-    what_happened: The President lingers off-screen, groggy post-anesthesia and briefed
-      by Abbey on the suspect's arrest, his condition referenced in Sam's query and
-      anchoring the room's procedural anxieties amid Josh's surgical shadow.
-    observed_status: The President lingers off-screen, groggy post-anesthesia and
-      briefed by Abbey on the suspect's arrest, his condition referenced in Sam's
-      query and anchoring the room's procedural anxieties amid Josh's surgical shadow.
-    beliefs:
-    - Informed leadership stabilizes nation
-    - Trust in Abbey ensures continuity
-    observed_traits:
-    - Resilient
-    - Commanding
     importance: primary
   object_involvements:
   - object_uuid: object_f79fbe703171
@@ -906,6 +906,24 @@ events:
     - observant
     - restrained
     importance: primary
+  - character_uuid: agent_4566d65dd1c0
+    emotional_state: Groggy disorientation from recovery
+    goals:
+    - Regain full command awareness
+    - Project stability despite wounds
+    what_happened: The President is referenced indirectly by Abbey as groggy post-anesthesia,
+      having been informed of the suspect's arrest, anchoring the discussion on executive
+      continuity.
+    observed_status: The President is referenced indirectly by Abbey as groggy post-anesthesia,
+      having been informed of the suspect's arrest, anchoring the discussion on executive
+      continuity.
+    beliefs:
+    - Knowledge empowers recovery
+    - Leadership endures physical limits
+    observed_traits:
+    - resilient
+    - informed
+    importance: primary
   - character_uuid: agent_45883b79da77
     emotional_state: Calm poise masking underlying strain
     goals:
@@ -943,24 +961,6 @@ events:
     - devoted
     - proactive
     - vulnerable
-    importance: primary
-  - character_uuid: agent_17cc57e2e89c
-    emotional_state: Groggy disorientation from recovery
-    goals:
-    - Regain full command awareness
-    - Project stability despite wounds
-    what_happened: The President is referenced indirectly by Abbey as groggy post-anesthesia,
-      having been informed of the suspect's arrest, anchoring the discussion on executive
-      continuity.
-    observed_status: The President is referenced indirectly by Abbey as groggy post-anesthesia,
-      having been informed of the suspect's arrest, anchoring the discussion on executive
-      continuity.
-    beliefs:
-    - Knowledge empowers recovery
-    - Leadership endures physical limits
-    observed_traits:
-    - resilient
-    - informed
     importance: primary
   object_involvements:
   - object_uuid: object_f79fbe703171
@@ -1327,6 +1327,18 @@ events:
     - guilt-laden
     - controlling
     importance: primary
+  - character_uuid: agent_4566d65dd1c0
+    emotional_state: Unstated, contextually recovering
+    goals: []
+    what_happened: The President is passively referenced as the figure whose open-air
+      exit from the tent draws media fire, anchoring the procedural debate in his
+      survival.
+    observed_status: The President is passively referenced as the figure whose open-air
+      exit from the tent draws media fire, anchoring the procedural debate in his
+      survival.
+    beliefs: []
+    observed_traits: []
+    importance: primary
   - character_uuid: agent_ce5b4cc4d4aa
     emotional_state: Clinically interrogative, detached
     goals:
@@ -1345,18 +1357,6 @@ events:
     - pedantic
     - scrutinizing
     - transactional
-    importance: primary
-  - character_uuid: agent_17cc57e2e89c
-    emotional_state: Unstated, contextually recovering
-    goals: []
-    what_happened: The President is passively referenced as the figure whose open-air
-      exit from the tent draws media fire, anchoring the procedural debate in his
-      survival.
-    observed_status: The President is passively referenced as the figure whose open-air
-      exit from the tent draws media fire, anchoring the procedural debate in his
-      survival.
-    beliefs: []
-    observed_traits: []
     importance: primary
   object_involvements:
   - object_uuid: object_5f473e0e1bab
@@ -2375,6 +2375,25 @@ events:
     - efficient
     - adaptive
     importance: primary
+  - character_uuid: agent_5028a314f4e6
+    emotional_state: ''
+    goals: []
+    what_happened: referenced by C.J. as working on the constitutional issue with
+      Nancy McNally and White House Counsel
+    observed_status: referenced by C.J. as working on the constitutional issue with
+      Nancy McNally and White House Counsel
+    beliefs: []
+    observed_traits: []
+    importance: primary
+  - character_uuid: agent_e83bfcfd36b1
+    emotional_state: ''
+    goals: []
+    what_happened: referenced by Carol as needing a callback from C.J. for Today Show
+    observed_status: referenced by Carol as needing a callback from C.J. for Today
+      Show
+    beliefs: []
+    observed_traits: []
+    importance: primary
   object_involvements: []
   location_involvements: []
   organization_involvements: []
@@ -3052,6 +3071,25 @@ events:
     - loyal
     - self-effacing
     importance: primary
+  - character_uuid: agent_4566d65dd1c0
+    emotional_state: Concerned vigilance tempered by presidential resolve
+    goals:
+    - Brief Charlie on facts to ease personal fears
+    - Insist on full injury scope amid partial relief
+    what_happened: Bedridden but commanding, Bartlet receives Ron's briefing, summons
+      Charlie to relay suspect details, dismisses Zoey curtly, and twice cautions
+      Abbey on unknown injury count, anchoring the room's gravity.
+    observed_status: Bedridden but commanding, Bartlet receives Ron's briefing, summons
+      Charlie to relay suspect details, dismisses Zoey curtly, and twice cautions
+      Abbey on unknown injury count, anchoring the room's gravity.
+    beliefs:
+    - Casualty unknowns demand caution
+    - Crisis scope broader than personal targeting
+    observed_traits:
+    - concerned
+    - decisive
+    - pragmatic
+    importance: primary
   - character_uuid: agent_45883b79da77
     emotional_state: Explanatory poise masking underlying familial anxiety
     goals:
@@ -3070,25 +3108,6 @@ events:
     - explanatory
     - compassionate
     - composed
-    importance: primary
-  - character_uuid: agent_17cc57e2e89c
-    emotional_state: Concerned vigilance tempered by presidential resolve
-    goals:
-    - Brief Charlie on facts to ease personal fears
-    - Insist on full injury scope amid partial relief
-    what_happened: Bedridden but commanding, Bartlet receives Ron's briefing, summons
-      Charlie to relay suspect details, dismisses Zoey curtly, and twice cautions
-      Abbey on unknown injury count, anchoring the room's gravity.
-    observed_status: Bedridden but commanding, Bartlet receives Ron's briefing, summons
-      Charlie to relay suspect details, dismisses Zoey curtly, and twice cautions
-      Abbey on unknown injury count, anchoring the room's gravity.
-    beliefs:
-    - Casualty unknowns demand caution
-    - Crisis scope broader than personal targeting
-    observed_traits:
-    - concerned
-    - decisive
-    - pragmatic
     importance: primary
   - character_uuid: agent_9623e7e26e19
     emotional_state: Weary detachment amid lingering shock
@@ -3253,6 +3272,14 @@ events:
     - principled
     - preoccupied
     - decisive
+    importance: primary
+  - character_uuid: agent_180028862afa
+    emotional_state: ''
+    goals: []
+    what_happened: hypothetically referenced as deeming forgery a coup d'etat
+    observed_status: hypothetically referenced as deeming forgery a coup d'etat
+    beliefs: []
+    observed_traits: []
     importance: primary
   - character_uuid: agent_256dcf4afffe
     emotional_state: Playfully provocative veiling procedural anxiety and crisis fatigue
@@ -3618,7 +3645,7 @@ events:
     - observant
     - resilient
     importance: primary
-  - character_uuid: agent_17cc57e2e89c
+  - character_uuid: agent_4566d65dd1c0
     emotional_state: Intensely focused determination amid mounting stakes
     goals:
     - Absorb critical news intelligence to inform strategy
@@ -3775,6 +3802,27 @@ events:
     - authoritative
     - wry
     importance: primary
+  - character_uuid: agent_4566d65dd1c0
+    emotional_state: determined impatience masking steely confidence
+    goals:
+    - reject pragmatic retreat from NH
+    - imprint leadership resolve on staff
+    what_happened: Bartlet owns the TV blow-up, repeatedly interrupts pivot pitch
+      with 'What's next?'—clarifying it signals readiness to move on—reaffirms NH
+      win intent, confuses new faces like Toby and Josh, rises and exits decisively,
+      ending debate.
+    observed_status: Bartlet owns the TV blow-up, repeatedly interrupts pivot pitch
+      with 'What's next?'—clarifying it signals readiness to move on—reaffirms NH
+      win intent, confuses new faces like Toby and Josh, rises and exits decisively,
+      ending debate.
+    beliefs:
+    - true wins come from contested battles
+    - granular pivots undermine bold candidacy
+    observed_traits:
+    - decisive
+    - unyielding
+    - charismatic
+    importance: primary
   - character_uuid: agent_46f2bac3d00b
     emotional_state: neutral and observational
     goals:
@@ -3796,26 +3844,17 @@ events:
     - factual
     - professional
     importance: primary
-  - character_uuid: agent_17cc57e2e89c
-    emotional_state: determined impatience masking steely confidence
-    goals:
-    - reject pragmatic retreat from NH
-    - imprint leadership resolve on staff
-    what_happened: Bartlet owns the TV blow-up, repeatedly interrupts pivot pitch
-      with 'What's next?'—clarifying it signals readiness to move on—reaffirms NH
-      win intent, confuses new faces like Toby and Josh, rises and exits decisively,
-      ending debate.
-    observed_status: Bartlet owns the TV blow-up, repeatedly interrupts pivot pitch
-      with 'What's next?'—clarifying it signals readiness to move on—reaffirms NH
-      win intent, confuses new faces like Toby and Josh, rises and exits decisively,
-      ending debate.
-    beliefs:
-    - true wins come from contested battles
-    - granular pivots undermine bold candidacy
-    observed_traits:
-    - decisive
-    - unyielding
-    - charismatic
+  - character_uuid: agent_c70f8c179639
+    emotional_state: ''
+    goals: []
+    what_happened: Significantly referenced as rival who drew 22% in straw poll, expected
+      to vie for second in NH and drop out after SC, with potential endorsement/money
+      for Bartlet
+    observed_status: Significantly referenced as rival who drew 22% in straw poll,
+      expected to vie for second in NH and drop out after SC, with potential endorsement/money
+      for Bartlet
+    beliefs: []
+    observed_traits: []
     importance: primary
   object_involvements: []
   location_involvements:
@@ -3906,7 +3945,7 @@ events:
     - insightful
     - wryly protective
     importance: primary
-  - character_uuid: agent_17cc57e2e89c
+  - character_uuid: agent_4566d65dd1c0
     emotional_state: Irritated resolve masking deeper determination
     goals:
     - Shut down unproductive strategy debate
@@ -3927,6 +3966,14 @@ events:
     - impatient
     - decisive
     - uncompromising
+    importance: primary
+  - character_uuid: agent_c70f8c179639
+    emotional_state: ''
+    goals: []
+    what_happened: mentioned as rival with poor poll performance and potential dropout
+    observed_status: mentioned as rival with poor poll performance and potential dropout
+    beliefs: []
+    observed_traits: []
     importance: primary
   object_involvements: []
   location_involvements:
@@ -4552,6 +4599,16 @@ events:
     - authoritative
     - pragmatic
     importance: primary
+  - character_uuid: agent_1b4e146363a1
+    emotional_state: ''
+    goals: []
+    what_happened: referenced by Ron as having been gotten into the car safely during
+      the shooting
+    observed_status: referenced by Ron as having been gotten into the car safely during
+      the shooting
+    beliefs: []
+    observed_traits: []
+    importance: primary
   - character_uuid: agent_7c84dea6dcc9
     emotional_state: Overwhelmed by remorseful desperation, yielding to defeated resignation
     goals:
@@ -4844,6 +4901,42 @@ events:
     - respectful
     - observant
     - collegial
+    importance: primary
+  - character_uuid: agent_d7b98ec1f1bc
+    emotional_state: ''
+    goals: []
+    what_happened: referenced as a Philadelphia Biology Teacher killed by gun last
+      night
+    observed_status: referenced as a Philadelphia Biology Teacher killed by gun last
+      night
+    beliefs: []
+    observed_traits: []
+    importance: primary
+  - character_uuid: agent_f2e689913a1e
+    emotional_state: ''
+    goals: []
+    what_happened: referenced as a Philadelphia Nursing student killed by gun last
+      night
+    observed_status: referenced as a Philadelphia Nursing student killed by gun last
+      night
+    beliefs: []
+    observed_traits: []
+    importance: primary
+  - character_uuid: agent_28dbd3296a88
+    emotional_state: ''
+    goals: []
+    what_happened: referenced as a 12-year-old killed with a gun last night
+    observed_status: referenced as a 12-year-old killed with a gun last night
+    beliefs: []
+    observed_traits: []
+    importance: primary
+  - character_uuid: agent_18b7c109bbc3
+    emotional_state: ''
+    goals: []
+    what_happened: referenced as a 12-year-old killed with a gun last night
+    observed_status: referenced as a 12-year-old killed with a gun last night
+    beliefs: []
+    observed_traits: []
     importance: primary
   - character_uuid: agent_256dcf4afffe
     emotional_state: Calm professionalism amid high-stakes tension
@@ -5155,6 +5248,27 @@ events:
     - conciliatory
     - dutiful
     importance: primary
+  - character_uuid: agent_4566d65dd1c0
+    emotional_state: Furious impatience veiling profound terror of victory's burdens
+    goals:
+    - Personalize the victory speech for authenticity
+    - Reassert dominance over campaign messaging
+    what_happened: Storms into the suite very grumpy, snatches Sam's draft and erupts
+      in fury over its generic phrasing without naming the opponent, demands Leo join
+      him to overhaul it entirely, continues ranting via voice-over as they exit the
+      room.
+    observed_status: Storms into the suite very grumpy, snatches Sam's draft and erupts
+      in fury over its generic phrasing without naming the opponent, demands Leo join
+      him to overhaul it entirely, continues ranting via voice-over as they exit the
+      room.
+    beliefs:
+    - Generic speeches undermine his personal voice
+    - Team is reverting to manipulative amateur tactics
+    observed_traits:
+    - temperamental
+    - perfectionist
+    - assertive
+    importance: primary
   - character_uuid: agent_45883b79da77
     emotional_state: Fiercely protective empathy for her husband's vulnerability
     goals:
@@ -5175,27 +5289,6 @@ events:
     - protective
     - candid
     - resolute
-    importance: primary
-  - character_uuid: agent_17cc57e2e89c
-    emotional_state: Furious impatience veiling profound terror of victory's burdens
-    goals:
-    - Personalize the victory speech for authenticity
-    - Reassert dominance over campaign messaging
-    what_happened: Storms into the suite very grumpy, snatches Sam's draft and erupts
-      in fury over its generic phrasing without naming the opponent, demands Leo join
-      him to overhaul it entirely, continues ranting via voice-over as they exit the
-      room.
-    observed_status: Storms into the suite very grumpy, snatches Sam's draft and erupts
-      in fury over its generic phrasing without naming the opponent, demands Leo join
-      him to overhaul it entirely, continues ranting via voice-over as they exit the
-      room.
-    beliefs:
-    - Generic speeches undermine his personal voice
-    - Team is reverting to manipulative amateur tactics
-    observed_traits:
-    - temperamental
-    - perfectionist
-    - assertive
     importance: primary
   object_involvements:
   - object_uuid: object_f805c8f0d490
@@ -5603,6 +5696,31 @@ events:
     - instinctively attuned
     - quietly optimistic
     importance: primary
+  - character_uuid: agent_4566d65dd1c0
+    emotional_state: Compassionate paternal warmth laced with reflective guilt and
+      chuckling tenderness
+    goals:
+    - Comfort Josh through shared fatherhood and campaign atonement
+    - Reinforce team loyalty by acknowledging sacrifices publicly
+    what_happened: Ambush-surges from behind oblivious Josh with security detail,
+      sits intimately to probe death details, affirms Noah's pride as fellow father
+      chuckling warmly, confesses 'jackass' mistreatment naming team, pats pockets
+      for wallet offering impulsive plane company, nods encouragement as Josh boards,
+      pivots ready to Leo for speech amid handshakes.
+    observed_status: Ambush-surges from behind oblivious Josh with security detail,
+      sits intimately to probe death details, affirms Noah's pride as fellow father
+      chuckling warmly, confesses 'jackass' mistreatment naming team, pats pockets
+      for wallet offering impulsive plane company, nods encouragement as Josh boards,
+      pivots ready to Leo for speech amid handshakes.
+    beliefs:
+    - True leadership honors personal sacrifices with vulnerability
+    - Fathers instinctively know and beam with pride in sons' paths
+    observed_traits:
+    - paternal and compassionate
+    - self-reflective confessor
+    - impulsively loyal
+    - politically resilient
+    importance: primary
   - character_uuid: agent_46f2bac3d00b
     emotional_state: Neutral journalistic detachment
     goals:
@@ -5655,31 +5773,6 @@ events:
     - Grandchildren eclipse politics in joys
     observed_traits:
     - implicitly proud litigator
-    importance: primary
-  - character_uuid: agent_17cc57e2e89c
-    emotional_state: Compassionate paternal warmth laced with reflective guilt and
-      chuckling tenderness
-    goals:
-    - Comfort Josh through shared fatherhood and campaign atonement
-    - Reinforce team loyalty by acknowledging sacrifices publicly
-    what_happened: Ambush-surges from behind oblivious Josh with security detail,
-      sits intimately to probe death details, affirms Noah's pride as fellow father
-      chuckling warmly, confesses 'jackass' mistreatment naming team, pats pockets
-      for wallet offering impulsive plane company, nods encouragement as Josh boards,
-      pivots ready to Leo for speech amid handshakes.
-    observed_status: Ambush-surges from behind oblivious Josh with security detail,
-      sits intimately to probe death details, affirms Noah's pride as fellow father
-      chuckling warmly, confesses 'jackass' mistreatment naming team, pats pockets
-      for wallet offering impulsive plane company, nods encouragement as Josh boards,
-      pivots ready to Leo for speech amid handshakes.
-    beliefs:
-    - True leadership honors personal sacrifices with vulnerability
-    - Fathers instinctively know and beam with pride in sons' paths
-    observed_traits:
-    - paternal and compassionate
-    - self-reflective confessor
-    - impulsively loyal
-    - politically resilient
     importance: primary
   object_involvements:
   - object_uuid: object_51849cb48c90
@@ -5782,7 +5875,7 @@ events:
     - supportive
     - optimistic
     importance: primary
-  - character_uuid: agent_17cc57e2e89c
+  - character_uuid: agent_4566d65dd1c0
     emotional_state: Empathetic resolve hardening into triumphant determination
     goals:
     - Reassure Leo and affirm team strength
@@ -5866,6 +5959,25 @@ events:
     - loyal
     - pragmatic
     importance: primary
+  - character_uuid: agent_4566d65dd1c0
+    emotional_state: Paternal tenderness fused with steely resolve
+    goals:
+    - Comfort and rally his wounded protégé
+    - Harness the moment to unify the inner circle
+    what_happened: Leans intimately over Josh's bedside to hear faint mutter, relays
+      'He said, "What\'s next?"' to Leo after straining closer, then places paternal
+      hand on Josh's head, transforming agony into resolve.
+    observed_status: Leans intimately over Josh's bedside to hear faint mutter, relays
+      'He said, "What\'s next?"' to Leo after straining closer, then places paternal
+      hand on Josh's head, transforming agony into resolve.
+    beliefs:
+    - Mentor-protégé bonds forge unbreakable strength
+    - Defiance defines leadership in adversity
+    observed_traits:
+    - paternal
+    - resolute
+    - empathetic
+    importance: primary
   - character_uuid: agent_fe07a2a75164
     emotional_state: Focused intensity masking underlying tension
     goals:
@@ -5903,25 +6015,6 @@ events:
     - professional
     - vigilant
     - coordinated
-    importance: primary
-  - character_uuid: agent_17cc57e2e89c
-    emotional_state: Paternal tenderness fused with steely resolve
-    goals:
-    - Comfort and rally his wounded protégé
-    - Harness the moment to unify the inner circle
-    what_happened: Leans intimately over Josh's bedside to hear faint mutter, relays
-      'He said, "What\'s next?"' to Leo after straining closer, then places paternal
-      hand on Josh's head, transforming agony into resolve.
-    observed_status: Leans intimately over Josh's bedside to hear faint mutter, relays
-      'He said, "What\'s next?"' to Leo after straining closer, then places paternal
-      hand on Josh's head, transforming agony into resolve.
-    beliefs:
-    - Mentor-protégé bonds forge unbreakable strength
-    - Defiance defines leadership in adversity
-    observed_traits:
-    - paternal
-    - resolute
-    - empathetic
     importance: primary
   object_involvements:
   - object_uuid: object_4332c69a5432

@@ -1,5 +1,5 @@
 # Events for The Fall's Gonna Kill You
-# Generated: 2026-01-10T18:12:25.191382
+# Generated: 2026-01-11T19:27:45.727246
 
 episode_uuid: ep_sea_ser_the_west_wing_s02_e20
 episode_title: The Fall's Gonna Kill You
@@ -44,6 +44,17 @@ events:
     beliefs: []
     observed_traits: []
     importance: primary
+  - character_uuid: agent_f3078a4f1b2f
+    emotional_state: ''
+    goals: []
+    what_happened: exits Leo's office, apologizes to Connelly, discusses tobacco lawsuit
+      funding crisis in his office, beeper interrupts, stares thoughtfully after
+    observed_status: exits Leo's office, apologizes to Connelly, discusses tobacco
+      lawsuit funding crisis in his office, beeper interrupts, stares thoughtfully
+      after
+    beliefs: []
+    observed_traits: []
+    importance: primary
   - character_uuid: agent_d11a3b3bb6e4
     emotional_state: Unspecified
     goals: []
@@ -76,6 +87,14 @@ events:
     - efficient
     - vulnerable
     - reactive
+    importance: primary
+  - character_uuid: agent_6565547b0ddc
+    emotional_state: ''
+    goals: []
+    what_happened: referenced as currently meeting with C.J.
+    observed_status: referenced as currently meeting with C.J.
+    beliefs: []
+    observed_traits: []
     importance: primary
   - character_uuid: agent_46efecdfe25d
     emotional_state: Calm and accommodating despite urgent underlying mission
@@ -206,6 +225,14 @@ events:
     - efficient
     - coordinating
     importance: primary
+  - character_uuid: agent_6565547b0ddc
+    emotional_state: ''
+    goals: []
+    what_happened: Meeting with C.J.
+    observed_status: Meeting with C.J.
+    beliefs: []
+    observed_traits: []
+    importance: primary
   - character_uuid: agent_46efecdfe25d
     emotional_state: Impassioned urgency veiling defensive frustration
     goals:
@@ -227,6 +254,16 @@ events:
     - desperate
     - righteous
     - articulate
+    importance: primary
+  - character_uuid: agent_2420811c75ab
+    emotional_state: ''
+    goals: []
+    what_happened: Sender of fax about Chinese satellite (Associate Administrator
+      for NASA's Office of Space Flight).
+    observed_status: Sender of fax about Chinese satellite (Associate Administrator
+      for NASA's Office of Space Flight).
+    beliefs: []
+    observed_traits: []
     importance: primary
   object_involvements:
   - object_uuid: object_a76566e24d8f
@@ -791,6 +828,18 @@ events:
     - professional
     - unflappable
     importance: primary
+  - character_uuid: agent_6565547b0ddc
+    emotional_state: ''
+    goals: []
+    what_happened: plays videotape of C.J.'s press briefing, interrogates C.J. about
+      frequency and process of her health statements on the President, pours himself
+      a glass of water, questions her phrasing for deniability
+    observed_status: plays videotape of C.J.'s press briefing, interrogates C.J. about
+      frequency and process of her health statements on the President, pours himself
+      a glass of water, questions her phrasing for deniability
+    beliefs: []
+    observed_traits: []
+    importance: primary
   - character_uuid: agent_14ede397c2ee
     emotional_state: Detached clinical neutrality (referenced only)
     goals:
@@ -912,6 +961,18 @@ events:
     - efficient
     - professional
     - discreet
+    importance: primary
+  - character_uuid: agent_6565547b0ddc
+    emotional_state: ''
+    goals: []
+    what_happened: interrogates C.J. about her past health briefings on the President,
+      turns off the videotape recording, pours himself water, and probes the exact
+      phrasing she uses when questioning the President about his health
+    observed_status: interrogates C.J. about her past health briefings on the President,
+      turns off the videotape recording, pours himself water, and probes the exact
+      phrasing she uses when questioning the President about his health
+    beliefs: []
+    observed_traits: []
     importance: primary
   object_involvements:
   - object_uuid: object_3e192b622c4b
@@ -1187,6 +1248,18 @@ events:
   arc_uuids:
   - arc_45cebba97af9
   participations:
+  - character_uuid: agent_6565547b0ddc
+    emotional_state: ''
+    goals: []
+    what_happened: ruthlessly interrogating C.J. about her presence at the President's
+      collapse and her flu announcement to the press, dismantling her evasions and
+      calling a break
+    observed_status: ruthlessly interrogating C.J. about her presence at the President's
+      collapse and her flu announcement to the press, dismantling her evasions and
+      calling a break
+    beliefs: []
+    observed_traits: []
+    importance: primary
   - character_uuid: agent_b34210e2b1b1
     emotional_state: Neutral invocation as a rhetorical shield
     goals:
@@ -1555,27 +1628,6 @@ events:
     - Courteous
     - Polished
     importance: primary
-  - character_uuid: agent_e8cc055ff16f
-    emotional_state: Professionally composed amid underlying tension
-    goals:
-    - Welcome and brief First Lady smoothly
-    - Coordinate post-trip schedule seamlessly
-    what_happened: Clusters by limousine at portico greeting Abbey's arrival with
-      'Good afternoon' and 'Welcome back,' trails her brisk hallway stride delivering
-      schedule reminders for Children's Cancer Fund and Head Start, receives handed-off
-      glasses and briefcase amid her businesslike procession.
-    observed_status: Clusters by limousine at portico greeting Abbey's arrival with
-      'Good afternoon' and 'Welcome back,' trails her brisk hallway stride delivering
-      schedule reminders for Children's Cancer Fund and Head Start, receives handed-off
-      glasses and briefcase amid her businesslike procession.
-    beliefs:
-    - Routine protocol steadies crises
-    - Discretion oils executive machinery
-    observed_traits:
-    - Efficient
-    - Poised
-    - Attentive
-    importance: primary
   - character_uuid: agent_81f9265878cd
     emotional_state: Stoically professional
     goals:
@@ -1809,27 +1861,6 @@ events:
     - courteous
     - polished
     - unflappable
-    importance: primary
-  - character_uuid: agent_e8cc055ff16f
-    emotional_state: Composed and dutiful, oblivious to underlying turmoil
-    goals:
-    - Smoothly brief and support First Lady's transition
-    - Uphold routine protocol during high-stakes return
-    what_happened: Cluster at portico greeting Abbey's arrival with poised welcomes,
-      accompany through hallway delivering schedule reminders for Children's Cancer
-      Fund and Head Start, one receives her glasses and briefcase, maintaining seamless
-      efficiency amid her building tension.
-    observed_status: Cluster at portico greeting Abbey's arrival with poised welcomes,
-      accompany through hallway delivering schedule reminders for Children's Cancer
-      Fund and Head Start, one receives her glasses and briefcase, maintaining seamless
-      efficiency amid her building tension.
-    beliefs:
-    - Professionalism buffers personal crises
-    - First Lady's schedule persists regardless of drama
-    observed_traits:
-    - efficient
-    - professional
-    - discreet
     importance: primary
   - character_uuid: agent_9623e7e26e19
     emotional_state: Off-screen familial normalcy anchor
@@ -2409,6 +2440,18 @@ events:
     beliefs: []
     observed_traits: []
     importance: primary
+  - character_uuid: agent_f3078a4f1b2f
+    emotional_state: ''
+    goals: []
+    what_happened: spots Joey and Dale in the terminal, approaches them, dismisses
+      Dale for privacy, engages Joey in lip-reading conversation at a bar table, reveals
+      the President's MS diagnosis eight years ago by signing the letters
+    observed_status: spots Joey and Dale in the terminal, approaches them, dismisses
+      Dale for privacy, engages Joey in lip-reading conversation at a bar table, reveals
+      the President's MS diagnosis eight years ago by signing the letters
+    beliefs: []
+    observed_traits: []
+    importance: primary
   - character_uuid: agent_d11a3b3bb6e4
     emotional_state: Off-screen authoritative
     goals: []
@@ -2418,6 +2461,25 @@ events:
       of Joey's trustworthiness, bolstering the rationale for sharing the MS secret.
     beliefs: []
     observed_traits: []
+    importance: primary
+  - character_uuid: agent_d669d978c7e3
+    emotional_state: Professionally neutral
+    goals:
+    - Fulfill table orders promptly
+    - Provide seamless service in busy terminal
+    what_happened: Unnamed Airport Waitress approaches the bar table amid rising tension,
+      takes Josh's drink orders for cranberry juice, club soda, and ice water, then
+      returns to serve them precisely as Joey processes the MS bombshell silently.
+    observed_status: Unnamed Airport Waitress approaches the bar table amid rising
+      tension, takes Josh's drink orders for cranberry juice, club soda, and ice water,
+      then returns to serve them precisely as Joey processes the MS bombshell silently.
+    beliefs:
+    - Customer needs come first regardless of patrons' urgency
+    - Routine service punctuates terminal transience
+    observed_traits:
+    - efficient
+    - courteous
+    - oblivious to drama
     importance: primary
   - character_uuid: agent_b1dc4633b968
     emotional_state: Perplexed and amenable evolving to slightly annoyed then deeply
@@ -2494,25 +2556,6 @@ events:
     - impersonal
     - authoritative
     - routine
-    importance: primary
-  - character_uuid: agent_545e9827b59a
-    emotional_state: Professionally neutral
-    goals:
-    - Fulfill table orders promptly
-    - Provide seamless service in busy terminal
-    what_happened: Unnamed Airport Waitress approaches the bar table amid rising tension,
-      takes Josh's drink orders for cranberry juice, club soda, and ice water, then
-      returns to serve them precisely as Joey processes the MS bombshell silently.
-    observed_status: Unnamed Airport Waitress approaches the bar table amid rising
-      tension, takes Josh's drink orders for cranberry juice, club soda, and ice water,
-      then returns to serve them precisely as Joey processes the MS bombshell silently.
-    beliefs:
-    - Customer needs come first regardless of patrons' urgency
-    - Routine service punctuates terminal transience
-    observed_traits:
-    - efficient
-    - courteous
-    - oblivious to drama
     importance: primary
   object_involvements:
   - object_uuid: object_eed3073debce
@@ -2592,7 +2635,15 @@ events:
   location_uuid: null
   theme_uuids: []
   arc_uuids: []
-  participations: []
+  participations:
+  - character_uuid: agent_6565547b0ddc
+    emotional_state: ''
+    goals: []
+    what_happened: acknowledges the aide curtly with 'Thank you'
+    observed_status: acknowledges the aide curtly with 'Thank you'
+    beliefs: []
+    observed_traits: []
+    importance: primary
   object_involvements: []
   location_involvements: []
   organization_involvements: []
@@ -2929,6 +2980,14 @@ events:
     - hyper-anxious
     - dutifully informative
     - bluntly urgent
+    importance: primary
+  - character_uuid: agent_6565547b0ddc
+    emotional_state: ''
+    goals: []
+    what_happened: referenced as having interrogated C.J. about MS cover-up phrasing
+    observed_status: referenced as having interrogated C.J. about MS cover-up phrasing
+    beliefs: []
+    observed_traits: []
     importance: primary
   object_involvements:
   - object_uuid: object_72ff45b16596
