@@ -139,115 +139,127 @@ class Command(BaseCommand):
         # Actually delete everything
         self.stdout.write(self.style.MIGRATE_HEADING('\n=== Deleting... ===\n'))
 
-        with transaction.atomic():
-            # Phase 1: Delete relationship records (no FK dependencies)
-            self.stdout.write('Deleting relationship records...')
+        # Disable Wagtail's automatic reference index updates during bulk deletion
+        # This prevents background tasks from trying to update indexes for deleted pages
+        from django.conf import settings
+        original_autoupdate = getattr(settings, 'WAGTAIL_REFERENCE_INDEX_AUTOUPDATE', True)
+        settings.WAGTAIL_REFERENCE_INDEX_AUTOUPDATE = False
+        self.stdout.write("Disabled automatic reference index updates for bulk deletion")
 
-            deleted = EventParticipation.objects.all().delete()[0]
-            self.stdout.write(f'  EventParticipation: {deleted:,} deleted')
+        try:
+            with transaction.atomic():
+                # Phase 1: Delete relationship records (no FK dependencies)
+                self.stdout.write('Deleting relationship records...')
 
-            deleted = ObjectInvolvement.objects.all().delete()[0]
-            self.stdout.write(f'  ObjectInvolvement: {deleted:,} deleted')
+                deleted = EventParticipation.objects.all().delete()[0]
+                self.stdout.write(f'  EventParticipation: {deleted:,} deleted')
 
-            deleted = LocationInvolvement.objects.all().delete()[0]
-            self.stdout.write(f'  LocationInvolvement: {deleted:,} deleted')
+                deleted = ObjectInvolvement.objects.all().delete()[0]
+                self.stdout.write(f'  ObjectInvolvement: {deleted:,} deleted')
 
-            deleted = OrganizationInvolvement.objects.all().delete()[0]
-            self.stdout.write(f'  OrganizationInvolvement: {deleted:,} deleted')
+                deleted = LocationInvolvement.objects.all().delete()[0]
+                self.stdout.write(f'  LocationInvolvement: {deleted:,} deleted')
 
-            deleted = NarrativeConnection.objects.all().delete()[0]
-            self.stdout.write(f'  NarrativeConnection: {deleted:,} deleted')
+                deleted = OrganizationInvolvement.objects.all().delete()[0]
+                self.stdout.write(f'  OrganizationInvolvement: {deleted:,} deleted')
 
-            deleted = CharacterEpisodeProfile.objects.all().delete()[0]
-            self.stdout.write(f'  CharacterEpisodeProfile: {deleted:,} deleted')
+                deleted = NarrativeConnection.objects.all().delete()[0]
+                self.stdout.write(f'  NarrativeConnection: {deleted:,} deleted')
 
-            # Phase 2: Delete entity pages
-            # Note: Wagtail Page models require deletion via page.delete(), not queryset.delete()
-            self.stdout.write('\nDeleting entity pages...')
+                deleted = CharacterEpisodeProfile.objects.all().delete()[0]
+                self.stdout.write(f'  CharacterEpisodeProfile: {deleted:,} deleted')
 
-            # Events first (they reference episodes, locations, themes, arcs)
-            count = EventPage.objects.count()
-            for page in EventPage.objects.all():
-                page.delete()
-            self.stdout.write(f'  EventPage: {count:,} deleted')
+                # Phase 2: Delete entity pages
+                # Note: Wagtail Page models require deletion via page.delete(), not queryset.delete()
+                self.stdout.write('\nDeleting entity pages...')
 
-            # Characters (may reference organizations)
-            count = CharacterPage.objects.count()
-            for page in CharacterPage.objects.all():
-                page.delete()
-            self.stdout.write(f'  CharacterPage: {count:,} deleted')
-
-            count = OrganizationPage.objects.count()
-            for page in OrganizationPage.objects.all():
-                page.delete()
-            self.stdout.write(f'  OrganizationPage: {count:,} deleted')
-
-            count = ObjectPage.objects.count()
-            for page in ObjectPage.objects.all():
-                page.delete()
-            self.stdout.write(f'  ObjectPage: {count:,} deleted')
-
-            # Phase 3: Delete snippets
-            self.stdout.write('\nDeleting snippets...')
-
-            deleted = Theme.objects.all().delete()[0]
-            self.stdout.write(f'  Theme: {deleted:,} deleted')
-
-            deleted = ConflictArc.objects.all().delete()[0]
-            self.stdout.write(f'  ConflictArc: {deleted:,} deleted')
-
-            deleted = Location.objects.all().delete()[0]
-            self.stdout.write(f'  Location: {deleted:,} deleted')
-
-            # Phase 4: Delete structure if requested
-            if not keep_structure:
-                from narrative.models import (
-                    SeriesIndexPage,
-                    SeasonPage,
-                    EpisodePage,
-                    CharacterIndexPage,
-                    OrganizationIndexPage,
-                    ObjectIndexPage,
-                    EventIndexPage,
-                )
-
-                self.stdout.write('\nDeleting structure pages...')
-
-                # Delete in reverse hierarchy order (children before parents)
-                count = EpisodePage.objects.count()
-                for page in EpisodePage.objects.all():
+                # Events first (they reference episodes, locations, themes, arcs)
+                count = EventPage.objects.count()
+                for page in EventPage.objects.all():
                     page.delete()
-                self.stdout.write(f'  EpisodePage: {count:,} deleted')
+                self.stdout.write(f'  EventPage: {count:,} deleted')
 
-                count = SeasonPage.objects.count()
-                for page in SeasonPage.objects.all():
+                # Characters (may reference organizations)
+                count = CharacterPage.objects.count()
+                for page in CharacterPage.objects.all():
                     page.delete()
-                self.stdout.write(f'  SeasonPage: {count:,} deleted')
+                self.stdout.write(f'  CharacterPage: {count:,} deleted')
 
-                count = SeriesIndexPage.objects.count()
-                for page in SeriesIndexPage.objects.all():
+                count = OrganizationPage.objects.count()
+                for page in OrganizationPage.objects.all():
                     page.delete()
-                self.stdout.write(f'  SeriesIndexPage: {count:,} deleted')
+                self.stdout.write(f'  OrganizationPage: {count:,} deleted')
 
-                count = CharacterIndexPage.objects.count()
-                for page in CharacterIndexPage.objects.all():
+                count = ObjectPage.objects.count()
+                for page in ObjectPage.objects.all():
                     page.delete()
-                self.stdout.write(f'  CharacterIndexPage: {count:,} deleted')
+                self.stdout.write(f'  ObjectPage: {count:,} deleted')
 
-                count = OrganizationIndexPage.objects.count()
-                for page in OrganizationIndexPage.objects.all():
-                    page.delete()
-                self.stdout.write(f'  OrganizationIndexPage: {count:,} deleted')
+                # Phase 3: Delete snippets
+                self.stdout.write('\nDeleting snippets...')
 
-                count = ObjectIndexPage.objects.count()
-                for page in ObjectIndexPage.objects.all():
-                    page.delete()
-                self.stdout.write(f'  ObjectIndexPage: {count:,} deleted')
+                deleted = Theme.objects.all().delete()[0]
+                self.stdout.write(f'  Theme: {deleted:,} deleted')
 
-                count = EventIndexPage.objects.count()
-                for page in EventIndexPage.objects.all():
-                    page.delete()
-                self.stdout.write(f'  EventIndexPage: {count:,} deleted')
+                deleted = ConflictArc.objects.all().delete()[0]
+                self.stdout.write(f'  ConflictArc: {deleted:,} deleted')
 
-        self.stdout.write(self.style.SUCCESS(f'\nSuccessfully deleted {total:,} records.'))
-        self.stdout.write(self.style.SUCCESS('Database is ready for fresh import.'))
+                deleted = Location.objects.all().delete()[0]
+                self.stdout.write(f'  Location: {deleted:,} deleted')
+
+                # Phase 4: Delete structure if requested
+                if not keep_structure:
+                    from narrative.models import (
+                        SeriesIndexPage,
+                        SeasonPage,
+                        EpisodePage,
+                        CharacterIndexPage,
+                        OrganizationIndexPage,
+                        ObjectIndexPage,
+                        EventIndexPage,
+                    )
+
+                    self.stdout.write('\nDeleting structure pages...')
+
+                    # Delete in reverse hierarchy order (children before parents)
+                    count = EpisodePage.objects.count()
+                    for page in EpisodePage.objects.all():
+                        page.delete()
+                    self.stdout.write(f'  EpisodePage: {count:,} deleted')
+
+                    count = SeasonPage.objects.count()
+                    for page in SeasonPage.objects.all():
+                        page.delete()
+                    self.stdout.write(f'  SeasonPage: {count:,} deleted')
+
+                    count = SeriesIndexPage.objects.count()
+                    for page in SeriesIndexPage.objects.all():
+                        page.delete()
+                    self.stdout.write(f'  SeriesIndexPage: {count:,} deleted')
+
+                    count = CharacterIndexPage.objects.count()
+                    for page in CharacterIndexPage.objects.all():
+                        page.delete()
+                    self.stdout.write(f'  CharacterIndexPage: {count:,} deleted')
+
+                    count = OrganizationIndexPage.objects.count()
+                    for page in OrganizationIndexPage.objects.all():
+                        page.delete()
+                    self.stdout.write(f'  OrganizationIndexPage: {count:,} deleted')
+
+                    count = ObjectIndexPage.objects.count()
+                    for page in ObjectIndexPage.objects.all():
+                        page.delete()
+                    self.stdout.write(f'  ObjectIndexPage: {count:,} deleted')
+
+                    count = EventIndexPage.objects.count()
+                    for page in EventIndexPage.objects.all():
+                        page.delete()
+                    self.stdout.write(f'  EventIndexPage: {count:,} deleted')
+
+                self.stdout.write(self.style.SUCCESS(f'\nSuccessfully deleted {total:,} records.'))
+                self.stdout.write(self.style.SUCCESS('Database is ready for fresh import.'))
+        finally:
+            # Restore automatic reference index updates
+            settings.WAGTAIL_REFERENCE_INDEX_AUTOUPDATE = original_autoupdate
+            self.stdout.write("Restored automatic reference index updates")
