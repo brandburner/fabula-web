@@ -1,5 +1,5 @@
 # Events for Bad Moon Rising
-# Generated: 2026-01-11T19:27:45.402194
+# Generated: 2026-01-12T09:57:22.725335
 
 episode_uuid: ep_sea_ser_the_west_wing_s02_e19
 episode_title: Bad Moon Rising
@@ -53,6 +53,15 @@ events:
     - authoritative
     - decisive
     importance: primary
+  - character_uuid: agent_4566d65dd1c0
+    emotional_state: ''
+    goals:
+    - consult with Babish on ongoing crisis
+    what_happened: arriving at the office with Mr. McGarry
+    observed_status: arriving at the office with Mr. McGarry
+    beliefs: []
+    observed_traits: []
+    importance: primary
   - character_uuid: agent_45883b79da77
     emotional_state: Sarcastic fury veiling bone-deep fatigue and fierce determination
       to confront the MS crisis head-on.
@@ -99,8 +108,10 @@ events:
     - loyal
     importance: primary
   - character_uuid: agent_6565547b0ddc
-    emotional_state: ''
-    goals: []
+    emotional_state: sarcastic and furious
+    goals:
+    - reject forced vacation to continue legal work on MS conspiracy
+    - obtain amicus brief on Sovereign Immunity and Federal Land Use
     what_happened: erupting in sarcastic criticism of his staff's flawed HR 437 analysis
       ignoring Fourth Amendment, resisting vacation push, demanding legal briefs,
       defending his gavel, and complaining about malfunctioning Dictaphone
@@ -255,27 +266,16 @@ events:
     - commanding
     - decisive
     importance: primary
-  - character_uuid: agent_45883b79da77
-    emotional_state: Bitterly exasperated, masking exhaustion with sharp-witted defiance
+  - character_uuid: agent_4566d65dd1c0
+    emotional_state: ''
     goals:
-    - Expose the Dictaphone's grave security risk to underscore crisis gravity
-    - Deflect staff's vacation push to maintain control amid mounting duties
-    what_happened: Oliver Babish, poised to leave amid cluttered desk, discovers malfunctioning
-      Dictaphone on desk, delivers biting sarcasm on its endless recording hazard
-      in sensitive environs, resists vacation pleas while asserting readiness to go
-      home—only to pivot at news of incoming VIPs.
-    observed_status: Oliver Babish, poised to leave amid cluttered desk, discovers
-      malfunctioning Dictaphone on desk, delivers biting sarcasm on its endless recording
-      hazard in sensitive environs, resists vacation pleas while asserting readiness
-      to go home—only to pivot at news of incoming VIPs.
-    beliefs:
-    - Personal rest is secondary to White House legal imperatives
-    - Even mundane tools like Dictaphones can betray amid conspiracy probes
-    observed_traits:
-    - sarcastic
-    - workaholic
-    - resistant
-    - irascible
+    - meet with Oliver Babish, shattering his potential escape from duties
+    what_happened: en route to the Counsel's office with Mr. McGarry (announced via
+      phone call)
+    observed_status: en route to the Counsel's office with Mr. McGarry (announced
+      via phone call)
+    beliefs: []
+    observed_traits: []
     importance: primary
   - character_uuid: agent_4e57282548ac
     emotional_state: Weary persistence veiling concern for Babish's burnout
@@ -300,8 +300,11 @@ events:
     - persistent
     importance: primary
   - character_uuid: agent_6565547b0ddc
-    emotional_state: ''
-    goals: []
+    emotional_state: bitter, sarcastic, resistant
+    goals:
+    - resist leaving for vacation to continue handling critical work like amicus briefs
+    - highlight the dangers of uncontrollable recording devices in a secretive environment,
+      symbolically paralleling upcoming MS concealment confrontation
     what_happened: resisting staff's efforts to send him on a forced vacation, critiquing
       staff work on HR 437, discovering and bitterly complaining about malfunctioning
       Dictaphone stuck on record, preparing to go home but interrupted by news of
@@ -446,6 +449,16 @@ events:
     - authoritative
     - decisive
     importance: primary
+  - character_uuid: agent_4566d65dd1c0
+    emotional_state: ''
+    goals:
+    - meet with Oliver Babish urgently
+    what_happened: announced as arriving with Mr. McGarry, interrupting Babish's departure
+    observed_status: announced as arriving with Mr. McGarry, interrupting Babish's
+      departure
+    beliefs: []
+    observed_traits: []
+    importance: primary
   - character_uuid: agent_45883b79da77
     emotional_state: Irritated defiance masking bone-deep exhaustion, jolted to wary
       alertness by impending crisis.
@@ -497,8 +510,9 @@ events:
     - pragmatic
     importance: primary
   - character_uuid: agent_6565547b0ddc
-    emotional_state: ''
-    goals: []
+    emotional_state: irritated and reluctant
+    goals:
+    - delay or resist the forced vacation to continue working
     what_happened: resisting staff's efforts to leave for vacation by nitpicking their
       analysis of HR 437, defending his ancestral gavel, complaining about malfunctioning
       Dictaphone, and preparing to go home briefly
@@ -652,6 +666,21 @@ events:
     - loyal
     - pragmatic
     importance: primary
+  - character_uuid: agent_4566d65dd1c0
+    emotional_state: passionate and obsessive
+    goals:
+    - express idealism about breaking the 'vicious circle' in school funding
+    - vent distraction amid MS cover-up turmoil via thematic parallel to larger conspiratorial
+      issues
+    what_happened: passionately argues against funding public schools with property
+      taxes, labeling it a 'vicious circle', dismisses taking action, and obsessively
+      repeats the metaphor to Leo
+    observed_status: passionately argues against funding public schools with property
+      taxes, labeling it a 'vicious circle', dismisses taking action, and obsessively
+      repeats the metaphor to Leo
+    beliefs: []
+    observed_traits: []
+    importance: primary
   - character_uuid: agent_ce63042f4999
     emotional_state: Neutral and agreeable, projecting steady support amid the President's
       intensity
@@ -720,6 +749,18 @@ events:
     - decisive
     - loyal
     - authoritative
+    importance: primary
+  - character_uuid: agent_4566d65dd1c0
+    emotional_state: frustrated
+    goals:
+    - Express outrage over school funding vicious circle
+    - Resist immediate redirection from obsession
+    what_happened: Discusses school funding inequities with Cal, then obsessively
+      repeats 'vicious circle' to Leo, reluctantly questions meeting timing
+    observed_status: Discusses school funding inequities with Cal, then obsessively
+      repeats 'vicious circle' to Leo, reluctantly questions meeting timing
+    beliefs: []
+    observed_traits: []
     importance: primary
   - character_uuid: agent_ce63042f4999
     emotional_state: Calmly neutral, absorbing presidential intensity without disruption
@@ -808,8 +849,9 @@ events:
     - righteously indignant
     importance: primary
   - character_uuid: agent_f3078a4f1b2f
-    emotional_state: ''
-    goals: []
+    emotional_state: nonchalant and humorous
+    goals:
+    - secure $30B bailout for Mexico by rallying Senate support
     what_happened: talks on phone coordinating Senate committees, casually confesses
       to Donna his advisory role in Mexico's peso devaluation, dismisses Toby's concerns
       about voucher leak to prioritize bailout, sings folksy song to lighten tension,
@@ -1012,8 +1054,10 @@ events:
     - unyielding
     importance: primary
   - character_uuid: agent_f3078a4f1b2f
-    emotional_state: ''
-    goals: []
+    emotional_state: urgent and dismissive
+    goals:
+    - Prioritize securing a bailout for Mexico's debt crisis over communications leak
+      issues
     what_happened: Talking on the phone about an upcoming meeting with Finance, Foreign
       Relations, and Senate Banking committees, briefing Donna on Mexico's peso devaluation
       and $30 billion debt crisis, dismissing Toby's concerns about the voucher leak
@@ -1211,8 +1255,10 @@ events:
     - impassioned
     importance: primary
   - character_uuid: agent_f3078a4f1b2f
-    emotional_state: ''
-    goals: []
+    emotional_state: determined with dark humor
+    goals:
+    - mobilize congressional support for $30 billion Mexico bailout
+    - prioritize global financial crisis over internal voucher leak squabbles
     what_happened: coordinates crisis response via phone, briefs Donna on Mexico's
       peso devaluation he influenced, Bolsa plunge, and $30B loan crisis equivalent
       to 2000-point Dow drop, dismisses Toby's voucher leak rage by redirecting to
@@ -1424,6 +1470,16 @@ events:
     - strategic
     - authoritative
     importance: primary
+  - character_uuid: agent_4566d65dd1c0
+    emotional_state: ''
+    goals: []
+    what_happened: referenced repeatedly as not having reversed stance on vouchers;
+      C.J. states she hasn't spoken to him that morning
+    observed_status: referenced repeatedly as not having reversed stance on vouchers;
+      C.J. states she hasn't spoken to him that morning
+    beliefs: []
+    observed_traits: []
+    importance: primary
   - character_uuid: agent_6a1b37afae25
     emotional_state: Aggressively predatory, scenting blood in the leak
     goals:
@@ -1569,6 +1625,16 @@ events:
     - strategic
     - authoritative
     - resourceful
+    importance: primary
+  - character_uuid: agent_4566d65dd1c0
+    emotional_state: ''
+    goals: []
+    what_happened: Referenced multiple times regarding school voucher stance and as
+      not yet spoken to by C.J.
+    observed_status: Referenced multiple times regarding school voucher stance and
+      as not yet spoken to by C.J.
+    beliefs: []
+    observed_traits: []
     importance: primary
   - character_uuid: agent_6a1b37afae25
     emotional_state: Insistent hunger for scoops, energized by perceived administration
@@ -2104,6 +2170,17 @@ events:
     - evasive
     - poised under fire
     importance: primary
+  - character_uuid: agent_4e57282548ac
+    emotional_state: clamorous
+    goals:
+    - obtain instant details on the oil spill crisis
+    what_happened: Clamor in response to C.J.'s announcement, demanding more immediate
+      information.
+    observed_status: Clamor in response to C.J.'s announcement, demanding more immediate
+      information.
+    beliefs: []
+    observed_traits: []
+    importance: primary
   object_involvements: []
   location_involvements:
   - location_uuid: location_95ff950c3f46
@@ -2234,6 +2311,26 @@ events:
     - prophetic
     importance: primary
   - character_uuid: agent_f3078a4f1b2f
+    emotional_state: ''
+    goals: []
+    what_happened: mentioned by C.J. as someone she will talk to for clarification
+      on the leak
+    observed_status: mentioned by C.J. as someone she will talk to for clarification
+      on the leak
+    beliefs: []
+    observed_traits: []
+    importance: primary
+  - character_uuid: agent_d11a3b3bb6e4
+    emotional_state: ''
+    goals: []
+    what_happened: mentioned by C.J. as someone she will talk to for clarification
+      on the leak
+    observed_status: mentioned by C.J. as someone she will talk to for clarification
+      on the leak
+    beliefs: []
+    observed_traits: []
+    importance: primary
+  - character_uuid: agent_4566d65dd1c0
     emotional_state: ''
     goals: []
     what_happened: mentioned by C.J. as someone she will talk to for clarification
@@ -2456,6 +2553,22 @@ events:
     beliefs: []
     observed_traits: []
     importance: primary
+  - character_uuid: agent_d11a3b3bb6e4
+    emotional_state: ''
+    goals: []
+    what_happened: mentioned by C.J. as someone she will talk to about the leak
+    observed_status: mentioned by C.J. as someone she will talk to about the leak
+    beliefs: []
+    observed_traits: []
+    importance: primary
+  - character_uuid: agent_4566d65dd1c0
+    emotional_state: ''
+    goals: []
+    what_happened: mentioned by C.J. as someone she will talk to about the leak
+    observed_status: mentioned by C.J. as someone she will talk to about the leak
+    beliefs: []
+    observed_traits: []
+    importance: primary
   - character_uuid: agent_3ee4436e9a6d
     emotional_state: Neutral and operational in background support role.
     goals:
@@ -2471,6 +2584,36 @@ events:
     observed_traits:
     - Efficient
     - Reliable
+    importance: primary
+  - character_uuid: agent_97e6afc415fe
+    emotional_state: ''
+    goals: []
+    what_happened: mentioned by Toby as a Republican leader who now thinks they can
+      get votes on a compromised measure
+    observed_status: mentioned by Toby as a Republican leader who now thinks they
+      can get votes on a compromised measure
+    beliefs: []
+    observed_traits: []
+    importance: primary
+  - character_uuid: agent_1e9bc58cadaa
+    emotional_state: ''
+    goals: []
+    what_happened: mentioned by Toby as a Republican leader who now thinks they can
+      get votes on a compromised measure
+    observed_status: mentioned by Toby as a Republican leader who now thinks they
+      can get votes on a compromised measure
+    beliefs: []
+    observed_traits: []
+    importance: primary
+  - character_uuid: agent_d35a6e4f13cd
+    emotional_state: ''
+    goals: []
+    what_happened: mentioned by Toby as someone who will be right this time about
+      political consequences
+    observed_status: mentioned by Toby as someone who will be right this time about
+      political consequences
+    beliefs: []
+    observed_traits: []
     importance: primary
   object_involvements:
   - object_uuid: object_614663f9f9ff
@@ -2574,6 +2717,17 @@ events:
     - loyal
     - strategically reserved
     importance: primary
+  - character_uuid: agent_4566d65dd1c0
+    emotional_state: evasive
+    goals:
+    - deflect Oliver's probe into his understanding of multiple sclerosis
+    what_happened: sits at the conference table and deflects Oliver's question by
+      saying he knows not as much as a doctor and suggesting consulting one
+    observed_status: sits at the conference table and deflects Oliver's question by
+      saying he knows not as much as a doctor and suggesting consulting one
+    beliefs: []
+    observed_traits: []
+    importance: primary
   - character_uuid: agent_45883b79da77
     emotional_state: Intense and unyielding, probing for cracks in denial
     goals:
@@ -2596,8 +2750,10 @@ events:
     - sarcastic undertone
     importance: primary
   - character_uuid: agent_6565547b0ddc
-    emotional_state: ''
-    goals: []
+    emotional_state: intense
+    goals:
+    - probe Bartlet's knowledge of multiple sclerosis to test his candor and expose
+      concealment
     what_happened: confronts Bartlet at the conference table, asking what he can tell
       about the disease beyond Oliver's own knowledge
     observed_status: confronts Bartlet at the conference table, asking what he can
@@ -2653,14 +2809,35 @@ events:
     - Uncompromising
     importance: primary
   - character_uuid: agent_f3078a4f1b2f
-    emotional_state: ''
-    goals: []
+    emotional_state: urgent
+    goals:
+    - secure immediate commitment from aides for markup and vote without delay
     what_happened: aggressively presses congressional aides to fast-track the Mexico
       bailout bill to markup and vote, citing the President's imminent call and Treasury's
       draft
     observed_status: aggressively presses congressional aides to fast-track the Mexico
       bailout bill to markup and vote, citing the President's imminent call and Treasury's
       draft
+    beliefs: []
+    observed_traits: []
+    importance: primary
+  - character_uuid: agent_d11a3b3bb6e4
+    emotional_state: strategic
+    goals:
+    - persuade aides by emphasizing control of the news cycle narrative
+    what_happened: reframes the urgency of the bailout in terms of dominating the
+      news cycle
+    observed_status: reframes the urgency of the bailout in terms of dominating the
+      news cycle
+    beliefs: []
+    observed_traits: []
+    importance: primary
+  - character_uuid: agent_4566d65dd1c0
+    emotional_state: ''
+    goals:
+    - personally persuade aides to fast-track the bailout bill
+    what_happened: planned to call the aides to request fast-tracking the bill
+    observed_status: planned to call the aides to request fast-tracking the bill
     beliefs: []
     observed_traits: []
     importance: primary
@@ -2681,6 +2858,17 @@ events:
     observed_traits:
     - Efficient
     - Reliable
+    importance: primary
+  - character_uuid: agent_ec1f911dd3d7
+    emotional_state: resistant
+    goals:
+    - gain time for congressional members to review the bailout bill
+    what_happened: responds as a congressional aide, identifying Carol Villenuevo
+      and insisting members need a day to review the bill
+    observed_status: responds as a congressional aide, identifying Carol Villenuevo
+      and insisting members need a day to review the bill
+    beliefs: []
+    observed_traits: []
     importance: primary
   - character_uuid: agent_25d9b47f3162
     emotional_state: Implied resolute under market siege
@@ -2796,14 +2984,60 @@ events:
     - Unyielding
     importance: primary
   - character_uuid: agent_f3078a4f1b2f
-    emotional_state: ''
-    goals: []
+    emotional_state: urgent
+    goals:
+    - convince the aide to take the bailout legislation straight to mark-up and vote
+      without delay
     what_happened: presses the congressional aide for an immediate fast-track vote
       on the Mexico bailout, detailing Treasury's legislative drafting by Carol Villenuevo
       and the impending call from the President
     observed_status: presses the congressional aide for an immediate fast-track vote
       on the Mexico bailout, detailing Treasury's legislative drafting by Carol Villenuevo
       and the impending call from the President
+    beliefs: []
+    observed_traits: []
+    importance: primary
+  - character_uuid: agent_d11a3b3bb6e4
+    emotional_state: persuasive
+    goals:
+    - reinforce the need for immediate action to dominate the news cycle
+    what_happened: clarifies the urgency by emphasizing that the next news cycle story
+      must be the U.S. guaranteeing the loans
+    observed_status: clarifies the urgency by emphasizing that the next news cycle
+      story must be the U.S. guaranteeing the loans
+    beliefs: []
+    observed_traits: []
+    importance: primary
+  - character_uuid: agent_4566d65dd1c0
+    emotional_state: ''
+    goals:
+    - personally persuade the aide to expedite the vote
+    what_happened: planning to call the aide to request fast-tracking the bailout
+      legislation
+    observed_status: planning to call the aide to request fast-tracking the bailout
+      legislation
+    beliefs: []
+    observed_traits: []
+    importance: primary
+  - character_uuid: agent_3ee4436e9a6d
+    emotional_state: ''
+    goals:
+    - draft and deliver legislative language for the Mexico bailout quickly
+    what_happened: Assistant Secretary for Legislative Affairs at Treasury, reported
+      to have the bailout legislation ready for review in an hour
+    observed_status: Assistant Secretary for Legislative Affairs at Treasury, reported
+      to have the bailout legislation ready for review in an hour
+    beliefs: []
+    observed_traits: []
+    importance: primary
+  - character_uuid: agent_ec1f911dd3d7
+    emotional_state: resistant
+    goals:
+    - secure review time for congressional members on the bailout legislation
+    what_happened: questions if it's Carol Villenuevo drafting and resists by demanding
+      a day for members to review the legislation
+    observed_status: questions if it's Carol Villenuevo drafting and resists by demanding
+      a day for members to review the legislation
     beliefs: []
     observed_traits: []
     importance: primary
@@ -2954,6 +3188,15 @@ events:
     - precise
     - self-deprecatingly sharp
     importance: primary
+  - character_uuid: agent_4566d65dd1c0
+    emotional_state: ''
+    goals: []
+    what_happened: referenced by Charlie as having been bugging him about taking classes
+    observed_status: referenced by Charlie as having been bugging him about taking
+      classes
+    beliefs: []
+    observed_traits: []
+    importance: primary
   - character_uuid: agent_12db9dc6462c
     emotional_state: Calmly urgent, focused on seamless coordination
     goals:
@@ -2973,6 +3216,29 @@ events:
     - direct
     - professional
     - attentive to protocol
+    importance: primary
+  - character_uuid: agent_b4f972f59aa1
+    emotional_state: professional
+    goals:
+    - brief Sam on the Indio oil spill incident and offer ongoing updates
+    what_happened: meets Sam in dress uniform, provides detailed technical explanation
+      of the Indio's malfunction, anchor failure, towing attempt by Tallahassee, weather
+      impacts, and the severe oil spill response challenges
+    observed_status: meets Sam in dress uniform, provides detailed technical explanation
+      of the Indio's malfunction, anchor failure, towing attempt by Tallahassee, weather
+      impacts, and the severe oil spill response challenges
+    beliefs: []
+    observed_traits: []
+    importance: primary
+  - character_uuid: agent_4f062bed032f
+    emotional_state: ''
+    goals: []
+    what_happened: referenced as having dropped anchor on the Indio after steering
+      loss
+    observed_status: referenced as having dropped anchor on the Indio after steering
+      loss
+    beliefs: []
+    observed_traits: []
     importance: primary
   object_involvements: []
   location_involvements: []
@@ -3049,6 +3315,17 @@ events:
     - confident
     - wry
     - self-assured
+    importance: primary
+  - character_uuid: agent_4566d65dd1c0
+    emotional_state: ''
+    goals:
+    - Encourage Charlie to take specific college classes
+    what_happened: Mentioned as not yet back and as someone bugging Charlie about
+      taking classes.
+    observed_status: Mentioned as not yet back and as someone bugging Charlie about
+      taking classes.
+    beliefs: []
+    observed_traits: []
     importance: primary
   - character_uuid: agent_12db9dc6462c
     emotional_state: Calmly urgent in relaying critical arrival
@@ -3261,6 +3538,17 @@ events:
     - loyal
     - pragmatic
     importance: primary
+  - character_uuid: agent_4566d65dd1c0
+    emotional_state: defiant
+    goals:
+    - deny any perjury or nondisclosure regarding his MS diagnosis
+    what_happened: denies having life insurance or health insurance and firmly denies
+      signing any perjury document about his health or MS, then exits after interruption
+    observed_status: denies having life insurance or health insurance and firmly denies
+      signing any perjury document about his health or MS, then exits after interruption
+    beliefs: []
+    observed_traits: []
+    importance: primary
   - character_uuid: agent_45883b79da77
     emotional_state: Focused determination veiling underlying frustration at incomplete
       evidence
@@ -3284,8 +3572,9 @@ events:
     - unflinching
     importance: primary
   - character_uuid: agent_6565547b0ddc
-    emotional_state: ''
-    goals: []
+    emotional_state: focused
+    goals:
+    - determine if Bartlet committed perjury by not disclosing MS on official documents
     what_happened: interrogates President Bartlet about life insurance, health insurance,
       and whether he signed a perjury-punishable document concealing his MS diagnosis
     observed_status: interrogates President Bartlet about life insurance, health insurance,
@@ -3353,6 +3642,17 @@ events:
     - commanding
     - anxious
     importance: primary
+  - character_uuid: agent_4566d65dd1c0
+    emotional_state: calm
+    goals:
+    - Respond accurately to legal interrogation while managing external crises
+    what_happened: Answering Oliver's questions about insurance and denying signing
+      any perjurious documents regarding his health; quietly exits after Leo's interruption.
+    observed_status: Answering Oliver's questions about insurance and denying signing
+      any perjurious documents regarding his health; quietly exits after Leo's interruption.
+    beliefs: []
+    observed_traits: []
+    importance: primary
   - character_uuid: agent_45883b79da77
     emotional_state: Composed precision masking the gravity of unfolding peril
     goals:
@@ -3376,8 +3676,10 @@ events:
     - methodical
     importance: primary
   - character_uuid: agent_6565547b0ddc
-    emotional_state: ''
-    goals: []
+    emotional_state: composed
+    goals:
+    - Assess President Bartlet's potential criminal liability for MS concealment through
+      targeted questioning
     what_happened: Interrogating President Bartlet about life insurance, health insurance,
       and potential perjury in health disclosures; responds to Leo that he is nowhere
       close to a conclusion.
@@ -3616,6 +3918,16 @@ events:
     - loyal
     - angry
     importance: primary
+  - character_uuid: agent_5a2edd973e6c
+    emotional_state: ''
+    goals: []
+    what_happened: Mentioned by C.J. as a Baltimore Sun reporter Jamie may have spoken
+      to in the last four days regarding the voucher leak
+    observed_status: Mentioned by C.J. as a Baltimore Sun reporter Jamie may have
+      spoken to in the last four days regarding the voucher leak
+    beliefs: []
+    observed_traits: []
+    importance: primary
   object_involvements: []
   location_involvements: []
   organization_involvements: []
@@ -3648,8 +3960,10 @@ events:
   arc_uuids: []
   participations:
   - character_uuid: agent_f3078a4f1b2f
-    emotional_state: ''
-    goals: []
+    emotional_state: defensive, sarcastic
+    goals:
+    - justify the Mexico bailout policy against Donna's moral challenge
+    - dismiss the emotional appeal of Frank Kelly's story with sarcasm and logic
     what_happened: walks through bullpen past Donna's desk, inquires about a meeting,
       receives and debates Frank Kelly's phone message, counters with pragmatic economic
       arguments defending the Mexico bailout as a repaid loan benefiting U.S. workers
@@ -4320,8 +4634,10 @@ events:
     - Urgency-driven
     importance: primary
   - character_uuid: agent_6565547b0ddc
-    emotional_state: ''
-    goals: []
+    emotional_state: pissed
+    goals:
+    - highlight the fraudulent intent behind Bartlet's technically legal maneuvers
+    - express reluctance to stay involved
     what_happened: arguing with Leo, venting anger about President Bartlet's ethically
       suspect but legally sound actions resembling fraud, questioning whether to stay
     observed_status: arguing with Leo, venting anger about President Bartlet's ethically
@@ -4467,8 +4783,10 @@ events:
     - discreet
     importance: primary
   - character_uuid: agent_6565547b0ddc
-    emotional_state: ''
-    goals: []
+    emotional_state: pissed
+    goals:
+    - Convince Leo of the fraud implications of the President's actions
+    - Express deep concern and reluctance about continuing involvement
     what_happened: Debating intensely with Leo about the President's MS concealment,
       accusing it of suggesting intent to perpetrate fraud despite technical legality.
     observed_status: Debating intensely with Leo about the President's MS concealment,
@@ -4572,6 +4890,16 @@ events:
     - loyal
     - resolute under pressure
     - protective
+    importance: primary
+  - character_uuid: agent_4566d65dd1c0
+    emotional_state: ''
+    goals: []
+    what_happened: his concealed illness referenced as omitted from daughters' college
+      health forms, implying perjury
+    observed_status: his concealed illness referenced as omitted from daughters' college
+      health forms, implying perjury
+    beliefs: []
+    observed_traits: []
     importance: primary
   - character_uuid: agent_256dcf4afffe
     emotional_state: Focused determination amid implied urgency
@@ -4804,8 +5132,10 @@ events:
   arc_uuids: []
   participations:
   - character_uuid: agent_f3078a4f1b2f
-    emotional_state: ''
-    goals: []
+    emotional_state: confident
+    goals:
+    - probe Donna on potential leak confession
+    - sway Donna to support Mexico bailout through rhetorical persuasion
     what_happened: probes Donna about confessing during her grilling by C.J., pivots
       to deliver WWII 'Europe 1939' phone call analogy likening Mexico bailout to
       Lend-Lease Act, hands her a flagged textbook, quotes neighbor's house on fire
@@ -4928,8 +5258,10 @@ events:
   arc_uuids: []
   participations:
   - character_uuid: agent_f3078a4f1b2f
-    emotional_state: ''
-    goals: []
+    emotional_state: confident
+    goals:
+    - Persuade skeptical Donna to support the Mexico bailout by framing it as a moral
+      imperative via Lend-Lease historical analogy
     what_happened: Initiates playful reference to Donna's interrogation, pivots to
       historical 'phone call' from 1939 Europe analogy about WWII, hands Donna an
       eighth-grade textbook flagged to the Lend-Lease Act page, explains the policy
@@ -5425,6 +5757,25 @@ events:
     - defensive
     - dutiful
     importance: primary
+  - character_uuid: agent_4566d65dd1c0
+    emotional_state: uncomfortable then authoritative
+    goals:
+    - test and secure Charlie's unwavering loyalty through a stark ultimatum mirroring
+      his own experience with Oliver Babish
+    - protect Charlie from excessive legal exposure by limiting discussions
+    - pivot Charlie toward law school as a protective career move amid escalating
+      crises
+    what_happened: approaches Charlie on the portico, sits on bench with him, confronts
+      him about Zoey's revelation of MS diagnosis, issues ultimatum demanding absolute
+      honesty amid impending subpoenas, dismisses him to work, and urges him to attend
+      law school immediately
+    observed_status: approaches Charlie on the portico, sits on bench with him, confronts
+      him about Zoey's revelation of MS diagnosis, issues ultimatum demanding absolute
+      honesty amid impending subpoenas, dismisses him to work, and urges him to attend
+      law school immediately
+    beliefs: []
+    observed_traits: []
+    importance: primary
   - character_uuid: agent_45883b79da77
     emotional_state: Implied protective ferocity driving clandestine health monitoring
       network.
@@ -5517,6 +5868,24 @@ events:
     - loyal
     - persistent recruiter
     importance: primary
+  - character_uuid: agent_4566d65dd1c0
+    emotional_state: defiant
+    goals:
+    - disclose Abbey's perjury and offer Oliver an exit
+    - defiantly commit to full transparency and face existential costs of investigation
+    what_happened: enters the Oval Office, reveals Abbey's perjury on Zoey's Georgetown
+      family history form omitting MS, offers Oliver an honorable exit before crisis
+      worsens, sits on sofa then stands and walks to desk, questions first steps,
+      stares silently after ultimatum, whispers 'Bring it on' defiantly committing
+      to transparency
+    observed_status: enters the Oval Office, reveals Abbey's perjury on Zoey's Georgetown
+      family history form omitting MS, offers Oliver an honorable exit before crisis
+      worsens, sits on sofa then stands and walks to desk, questions first steps,
+      stares silently after ultimatum, whispers 'Bring it on' defiantly committing
+      to transparency
+    beliefs: []
+    observed_traits: []
+    importance: primary
   - character_uuid: agent_45883b79da77
     emotional_state: Implied defiant maternal resolve masking legal vulnerability
     goals:
@@ -5536,8 +5905,11 @@ events:
     - decisively complicit
     importance: primary
   - character_uuid: agent_6565547b0ddc
-    emotional_state: ''
-    goals: []
+    emotional_state: resolute
+    goals:
+    - demand absolute obedience and total compliance from Bartlet for the MS investigation
+    - escalate the internal probe through brutal terms mirroring high-stakes truth
+      demands
     what_happened: stands in the Oval Office, greets President Bartlet, questions
       about the Georgetown form, rejects conditional obedience, delivers ultimatum
       demanding full staff disclosure, public announcement, and appointment of a ruthless

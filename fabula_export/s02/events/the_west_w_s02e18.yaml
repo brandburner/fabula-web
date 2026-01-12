@@ -1,5 +1,5 @@
 # Events for 17 People
-# Generated: 2026-01-11T19:27:45.040574
+# Generated: 2026-01-12T09:57:22.414446
 
 episode_uuid: ep_sea_ser_the_west_wing_s02_e18
 episode_title: 17 People
@@ -73,6 +73,16 @@ events:
     - Stoic
     - Terse
     - Resignedly candid
+    importance: primary
+  - character_uuid: agent_4566d65dd1c0
+    emotional_state: ''
+    goals: []
+    what_happened: mentioned as still on the phone with State in the Residence; subject
+      of Hoynes' belief that he won't run again
+    observed_status: mentioned as still on the phone with State in the Residence;
+      subject of Hoynes' belief that he won't run again
+    beliefs: []
+    observed_traits: []
     importance: primary
   - character_uuid: agent_738f513a2eba
     emotional_state: Coldly calculating ambition (inferred from beliefs)
@@ -157,8 +167,10 @@ events:
     observed_traits: []
     importance: primary
   - character_uuid: agent_f3078a4f1b2f
-    emotional_state: ''
-    goals: []
+    emotional_state: surprised, incredulous, supportive
+    goals:
+    - find Sam's speech from overloaded shelf (initiates spill and cleanup)
+    - respond to Donna's vulnerability during cleanup (causal from entry beat)
     what_happened: stands precariously on chair reaching top shelf causing books and
       binders to spill, kneels to clean up, banters with Donna, listens incredulously
       to her story, asserts he would prioritize her in an accident, watches her exit

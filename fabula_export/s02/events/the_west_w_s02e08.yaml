@@ -1,5 +1,5 @@
 # Events for Shibboleth
-# Generated: 2026-01-11T19:27:41.069970
+# Generated: 2026-01-12T09:57:18.541337
 
 episode_uuid: ep_sea_ser_the_west_wing_s02_e08
 episode_title: Shibboleth
@@ -539,8 +539,10 @@ events:
     - pragmatic
     importance: primary
   - character_uuid: agent_f3078a4f1b2f
-    emotional_state: ''
-    goals: []
+    emotional_state: cocky
+    goals:
+    - demonstrate coin-flipping dexterity
+    - respond to urgent summons for Situation Room call
     what_happened: boasts about flipping nickel sixteen times in a row and flips it
       again, then walks to bullpen area and picks up phone for call
     observed_status: boasts about flipping nickel sixteen times in a row and flips
@@ -771,6 +773,17 @@ events:
   - theme_9d478180c70e
   arc_uuids: []
   participations:
+  - character_uuid: agent_57456b21c104
+    emotional_state: confused
+    goals:
+    - clarify details of invitation from historical group
+    what_happened: enters office, inquires about historical society invitation, banters
+      about history and Thanksgiving
+    observed_status: enters office, inquires about historical society invitation,
+      banters about history and Thanksgiving
+    beliefs: []
+    observed_traits: []
+    importance: primary
   - character_uuid: agent_77f1a613709a
     emotional_state: Startled amusement cutting through prior playfulness.
     goals:
@@ -810,8 +823,10 @@ events:
     - pragmatic
     importance: primary
   - character_uuid: agent_f3078a4f1b2f
-    emotional_state: ''
-    goals: []
+    emotional_state: surprised
+    goals:
+    - resolve turkey delivery confusion
+    - respond to urgent phone summons
     what_happened: flipping nickel, goes to hallway to see turkeys, agrees to redirect
       them to C.J.'s office, heads to bullpen for phone call
     observed_status: flipping nickel, goes to hallway to see turkeys, agrees to redirect
@@ -1127,8 +1142,11 @@ events:
     - provocative
     importance: primary
   - character_uuid: agent_f3078a4f1b2f
-    emotional_state: ''
-    goals: []
+    emotional_state: casual and dutiful
+    goals:
+    - Relay urgent details of the Chinese stowaways crisis to Leo and C.J.
+    - Deflect tension with lighthearted Thanksgiving conversation (per temporal connection
+      to overlapping crises)
     what_happened: Enters Leo's office with Leo, briefs him on the Horizon container
       ship and Chinese stowaways (83 total, 13 dead), engages in Thanksgiving banter
       about football plans, receives repeated orders to brief C.J., intercepts C.J.
@@ -1165,6 +1183,18 @@ events:
     - impatient
     - sarcastic
     - pragmatic
+    importance: primary
+  - character_uuid: agent_4566d65dd1c0
+    emotional_state: ''
+    goals: []
+    what_happened: Referenced in banter as dining with the First Family for Thanksgiving,
+      potentially inviting Josh's group if aware of their football plans, and humorously
+      associated with lecturing on the history of the yam.
+    observed_status: Referenced in banter as dining with the First Family for Thanksgiving,
+      potentially inviting Josh's group if aware of their football plans, and humorously
+      associated with lecturing on the history of the yam.
+    beliefs: []
+    observed_traits: []
     importance: primary
   object_involvements:
   - object_uuid: object_86807bfb6744
@@ -1325,8 +1355,11 @@ events:
     - strategically provocative
     importance: primary
   - character_uuid: agent_f3078a4f1b2f
-    emotional_state: ''
-    goals: []
+    emotional_state: determined and playful
+    goals:
+    - Brief Leo on refugee crisis details
+    - Control information flow by briefing C.J. before she enters pressroom
+    - Inform C.J. of Toby's school prayer gambit via Josephine McGarry nomination
     what_happened: Briefs Leo on the Horizon ship refugee crisis details (83 Chinese
       stowaways, 13 dead), engages in Thanksgiving banter, intercepts C.J. in the
       hallway to restrict her press access until briefed, and reveals Toby's recess
@@ -1359,6 +1392,18 @@ events:
     - exasperated
     - wryly paternal
     - commanding
+    importance: primary
+  - character_uuid: agent_4566d65dd1c0
+    emotional_state: ''
+    goals: []
+    what_happened: Referenced in banter as someone Josh doesn't want to know about
+      football plans to avoid dinner invitation; referred to as 'the President of
+      the United States'.
+    observed_status: Referenced in banter as someone Josh doesn't want to know about
+      football plans to avoid dinner invitation; referred to as 'the President of
+      the United States'.
+    beliefs: []
+    observed_traits: []
     importance: primary
   object_involvements:
   - object_uuid: object_86807bfb6744
@@ -1503,6 +1548,18 @@ events:
     - agreeable
     - loyal
     - competent
+    importance: primary
+  - character_uuid: agent_4566d65dd1c0
+    emotional_state: ''
+    goals: []
+    what_happened: significantly referenced as recipient of carving knife purchase
+      and target of Sam's requested meeting; addressed by Charlie upon arrival at
+      Oval Office
+    observed_status: significantly referenced as recipient of carving knife purchase
+      and target of Sam's requested meeting; addressed by Charlie upon arrival at
+      Oval Office
+    beliefs: []
+    observed_traits: []
     importance: primary
   object_involvements:
   - object_uuid: object_06b59da2fd88
@@ -1715,6 +1772,16 @@ events:
       with Christian leaders, Beijing embassy officials, and INS agents
     observed_status: significantly mentioned as tasked by the President to run meetings
       with Christian leaders, Beijing embassy officials, and INS agents
+    beliefs: []
+    observed_traits: []
+    importance: primary
+  - character_uuid: agent_4566d65dd1c0
+    emotional_state: ''
+    goals: []
+    what_happened: referenced multiple times as having tasked Josh and Sam with meetings,
+      performing turkey pardon, and making Thanksgiving proclamation
+    observed_status: referenced multiple times as having tasked Josh and Sam with
+      meetings, performing turkey pardon, and making Thanksgiving proclamation
     beliefs: []
     observed_traits: []
     importance: primary
@@ -1964,6 +2031,16 @@ events:
     beliefs: []
     observed_traits: []
     importance: primary
+  - character_uuid: agent_4566d65dd1c0
+    emotional_state: ''
+    goals: []
+    what_happened: mentioned as having tasked Josh and Sam with running meetings,
+      and scheduled to pardon turkey and issue Thanksgiving proclamation
+    observed_status: mentioned as having tasked Josh and Sam with running meetings,
+      and scheduled to pardon turkey and issue Thanksgiving proclamation
+    beliefs: []
+    observed_traits: []
+    importance: primary
   - character_uuid: agent_3ee4436e9a6d
     emotional_state: Quiet attentiveness with empathetic concern
     goals:
@@ -2201,6 +2278,18 @@ events:
     beliefs: []
     observed_traits: []
     importance: primary
+  - character_uuid: agent_4566d65dd1c0
+    emotional_state: ''
+    goals: []
+    what_happened: mentioned multiple times by C.J. as having tasked Josh and Sam
+      with running meetings, planning to pardon the turkey on Wednesday, and make
+      Thanksgiving proclamation in Rose Garden on Thursday
+    observed_status: mentioned multiple times by C.J. as having tasked Josh and Sam
+      with running meetings, planning to pardon the turkey on Wednesday, and make
+      Thanksgiving proclamation in Rose Garden on Thursday
+    beliefs: []
+    observed_traits: []
+    importance: primary
   - character_uuid: agent_3ee4436e9a6d
     emotional_state: Quietly supportive and attentive
     goals:
@@ -2397,8 +2486,9 @@ events:
     - conflicted
     importance: primary
   - character_uuid: agent_f3078a4f1b2f
-    emotional_state: ''
-    goals: []
+    emotional_state: assertive
+    goals:
+    - control the agenda and prevent diplomatic pitfalls by curbing Sam's impulsiveness
     what_happened: walking down the hallway and preemptively commanding Sam not to
       raise a sensitive topic at the upcoming meeting
     observed_status: walking down the hallway and preemptively commanding Sam not
@@ -2652,8 +2742,9 @@ events:
     - vulnerable
     importance: primary
   - character_uuid: agent_f3078a4f1b2f
-    emotional_state: ''
-    goals: []
+    emotional_state: casual and teasing
+    goals:
+    - engage in light banter amid distractions
     what_happened: banters with C.J. about turkey schedule and her leading children's
       song as she passes by with Donna
     observed_status: banters with C.J. about turkey schedule and her leading children's
@@ -2843,7 +2934,7 @@ events:
     - exasperated
     importance: primary
   - character_uuid: agent_f3078a4f1b2f
-    emotional_state: ''
+    emotional_state: casual and amused
     goals: []
     what_happened: Greets C.J. passing by, engages in brief banter about turkey pardoning
       and singing, acknowledges Donna's mention of INS guys.
@@ -3044,8 +3135,10 @@ events:
     - inquisitive
     importance: primary
   - character_uuid: agent_f3078a4f1b2f
-    emotional_state: ''
-    goals: []
+    emotional_state: skeptical and weary
+    goals:
+    - receive briefing on smuggling realities and coached claims
+    - acknowledge Christian League involvement while noting legal concerns
     what_happened: enters office with Sam, engages in discussion on smuggling costs
       and indentured servitude, mentions Christian League's bond offer, thanks INS
       agents and sighs heavily after they leave
@@ -3177,15 +3270,55 @@ events:
     - dutiful
     - poised under pressure
     importance: primary
+  - character_uuid: agent_77f1a613709a
+    emotional_state: ''
+    goals:
+    - brief President on refugee crisis developments and counterarguments to asylum
+    what_happened: enters with Josh, contributes to discussion relaying Chinese arguments
+      on refugee status and illegal exit from China
+    observed_status: enters with Josh, contributes to discussion relaying Chinese
+      arguments on refugee status and illegal exit from China
+    beliefs: []
+    observed_traits: []
+    importance: primary
+  - character_uuid: agent_e9dd0ae36832
+    emotional_state: ''
+    goals:
+    - deliver carving knife to President
+    what_happened: enters carrying open knife box, presents and opens it to show carving
+      knife, banters with President about the knife, turns to leave
+    observed_status: enters carrying open knife box, presents and opens it to show
+      carving knife, banters with President about the knife, turns to leave
+    beliefs: []
+    observed_traits: []
+    importance: primary
   - character_uuid: agent_f3078a4f1b2f
     emotional_state: ''
-    goals: []
+    goals:
+    - brief President on refugee crisis developments and counterarguments to asylum
     what_happened: enters with Sam, reports on recent meetings including with Chinese
       embassy officials and INS agents' views on refugees feigning faith, questions
       how to distinguish genuine refugees
     observed_status: enters with Sam, reports on recent meetings including with Chinese
       embassy officials and INS agents' views on refugees feigning faith, questions
       how to distinguish genuine refugees
+    beliefs: []
+    observed_traits: []
+    importance: primary
+  - character_uuid: agent_4566d65dd1c0
+    emotional_state: preoccupied
+    goals:
+    - resolve doubts on authenticity of Chinese refugees' faith claims through personal
+      shibboleth test
+    - stay updated on San Diego refugee situation
+    what_happened: working on papers at his desk, distractedly agrees to turkey pardon,
+      receives and admires carving knife from Charlie, asks about San Diego, engages
+      in discussion on refugee crisis with Josh and Sam, explains shibboleth and decides
+      to fly in a Chinese refugee for testing
+    observed_status: working on papers at his desk, distractedly agrees to turkey
+      pardon, receives and admires carving knife from Charlie, asks about San Diego,
+      engages in discussion on refugee crisis with Josh and Sam, explains shibboleth
+      and decides to fly in a Chinese refugee for testing
     beliefs: []
     observed_traits: []
     importance: primary
@@ -3244,6 +3377,17 @@ events:
     - professional
     - poised
     importance: primary
+  - character_uuid: agent_77f1a613709a
+    emotional_state: professional
+    goals:
+    - support briefing on refugee crisis legal and diplomatic arguments
+    what_happened: enters with Josh, contributes to briefing on Chinese officials'
+      points about illegal departure and lack of persecution
+    observed_status: enters with Josh, contributes to briefing on Chinese officials'
+      points about illegal departure and lack of persecution
+    beliefs: []
+    observed_traits: []
+    importance: primary
   - character_uuid: agent_e9dd0ae36832
     emotional_state: Warmly loyal and quietly proud, radiating devotion amid routine
       duties
@@ -3267,12 +3411,29 @@ events:
     - dutiful
     importance: primary
   - character_uuid: agent_f3078a4f1b2f
-    emotional_state: ''
-    goals: []
+    emotional_state: professional and reporting
+    goals:
+    - update President on refugee crisis developments and challenges
     what_happened: enters with Sam, briefs President on recent meetings including
       Chinese embassy and INS agents' views on refugees feigning faith
     observed_status: enters with Sam, briefs President on recent meetings including
       Chinese embassy and INS agents' views on refugees feigning faith
+    beliefs: []
+    observed_traits: []
+    importance: primary
+  - character_uuid: agent_4566d65dd1c0
+    emotional_state: delighted with knife, serious and decisive about refugees
+    goals:
+    - receive heirloom knife as gesture of trust
+    - gather information on refugee crisis to decide on asylum approach
+    what_happened: standing over desk reviewing and writing on papers, eagerly approaches
+      to admire the carving knife, engages in banter with Charlie, discusses San Diego
+      refugee situation with Josh and Sam, decides to test a Chinese refugee with
+      a shibboleth, responds to C.J.'s turkey reminder
+    observed_status: standing over desk reviewing and writing on papers, eagerly approaches
+      to admire the carving knife, engages in banter with Charlie, discusses San Diego
+      refugee situation with Josh and Sam, decides to test a Chinese refugee with
+      a shibboleth, responds to C.J.'s turkey reminder
     beliefs: []
     observed_traits: []
     importance: primary
@@ -3389,14 +3550,34 @@ events:
     - Discreet
     importance: primary
   - character_uuid: agent_f3078a4f1b2f
-    emotional_state: ''
-    goals: []
+    emotional_state: professional
+    goals:
+    - brief President on China's pushback and INS warnings of coached faith claims
+      to inform decision on repatriation
     what_happened: enters with Sam to brief President on recent meetings with Chinese
       embassy officials and INS agents' concerns about feigned faith among refugees,
       questions how to differentiate true claims
     observed_status: enters with Sam to brief President on recent meetings with Chinese
       embassy officials and INS agents' concerns about feigned faith among refugees,
       questions how to differentiate true claims
+    beliefs: []
+    observed_traits: []
+    importance: primary
+  - character_uuid: agent_4566d65dd1c0
+    emotional_state: decisive
+    goals:
+    - devise and implement 'shibboleth' pronunciation test to distinguish true Christian
+      refugees from coached impostors
+    - respond to INS warnings and diplomatic pressure by personally verifying refugee
+      faith
+    what_happened: stands over desk reviewing and writing on papers, receives and
+      admires carving knife gift from Charlie, receives briefing from Josh and Sam
+      on Chinese diplomatic pushback and INS warnings, explains biblical 'shibboleth'
+      concept, orders one Chinese refugee flown to Oval Office for pronunciation test
+    observed_status: stands over desk reviewing and writing on papers, receives and
+      admires carving knife gift from Charlie, receives briefing from Josh and Sam
+      on Chinese diplomatic pushback and INS warnings, explains biblical 'shibboleth'
+      concept, orders one Chinese refugee flown to Oval Office for pronunciation test
     beliefs: []
     observed_traits: []
     importance: primary
@@ -3534,15 +3715,44 @@ events:
     - loyal
     - strategically reserved
     importance: primary
+  - character_uuid: agent_e9dd0ae36832
+    emotional_state: ''
+    goals:
+    - to present the carving knife to the President
+    what_happened: enters with open knife box, presents and opens box containing carving
+      knife, banters with Bartlet about knives
+    observed_status: enters with open knife box, presents and opens box containing
+      carving knife, banters with Bartlet about knives
+    beliefs: []
+    observed_traits: []
+    importance: primary
   - character_uuid: agent_f3078a4f1b2f
     emotional_state: ''
-    goals: []
+    goals:
+    - to update Bartlet on counterarguments against granting refugee status
     what_happened: enters with Sam, briefs Bartlet on recent meetings, Chinese embassy
       position, INS agents' skepticism about feigned faith, and asks about shibboleth
       plan
     observed_status: enters with Sam, briefs Bartlet on recent meetings, Chinese embassy
       position, INS agents' skepticism about feigned faith, and asks about shibboleth
       plan
+    beliefs: []
+    observed_traits: []
+    importance: primary
+  - character_uuid: agent_4566d65dd1c0
+    emotional_state: distracted
+    goals:
+    - to distinguish genuine Christian refugees from impostors using a biblical shibboleth
+      test
+    - to multitask presidential duties including refugee crisis and ceremonial preparations
+    what_happened: standing over desk reviewing and writing on papers, admires carving
+      knife from Charlie, discusses San Diego and refugee crisis with Josh and Sam,
+      decides to fly in a Chinese refugee for shibboleth test, distractedly acknowledges
+      C.J.'s turkey concern
+    observed_status: standing over desk reviewing and writing on papers, admires carving
+      knife from Charlie, discusses San Diego and refugee crisis with Josh and Sam,
+      decides to fly in a Chinese refugee for shibboleth test, distractedly acknowledges
+      C.J.'s turkey concern
     beliefs: []
     observed_traits: []
     importance: primary
@@ -3695,6 +3905,17 @@ events:
   theme_uuids: []
   arc_uuids: []
   participations:
+  - character_uuid: agent_4566d65dd1c0
+    emotional_state: eager
+    goals:
+    - confirm the arrival of the pivotal visitor for the impending confrontation
+    what_happened: responds eagerly to Mrs. Landingham's voice-over by asking 'Is
+      he here?'
+    observed_status: responds eagerly to Mrs. Landingham's voice-over by asking 'Is
+      he here?'
+    beliefs: []
+    observed_traits: []
+    importance: primary
   - character_uuid: agent_4ad5a1792822
     emotional_state: Steadfast professionalism masking underlying urgency of the crisis
     goals:
@@ -3758,7 +3979,57 @@ events:
   location_uuid: null
   theme_uuids: []
   arc_uuids: []
-  participations: []
+  participations:
+  - character_uuid: agent_57456b21c104
+    emotional_state: charming
+    goals:
+    - secure a second pardon for Troy
+    what_happened: charmingly badgers President Bartlet into pardoning the second
+      turkey Troy
+    observed_status: charmingly badgers President Bartlet into pardoning the second
+      turkey Troy
+    beliefs: []
+    observed_traits: []
+    importance: primary
+  - character_uuid: agent_4566d65dd1c0
+    emotional_state: impassioned
+    goals:
+    - participate in the Thanksgiving turkey pardon ritual
+    - emphasize public education's role in democracy through lecture
+    what_happened: pardons the turkey Troy after being persuaded by C.J. and delivers
+      an impromptu lecture to Morton Horn on the importance of public education
+    observed_status: pardons the turkey Troy after being persuaded by C.J. and delivers
+      an impromptu lecture to Morton Horn on the importance of public education
+    beliefs: []
+    observed_traits: []
+    importance: primary
+  - character_uuid: agent_6ba1eec3d300
+    emotional_state: ''
+    goals:
+    - deliver the presidential turkeys
+    what_happened: receives impassioned lecture from President Bartlet on public education
+      after delivering the turkeys
+    observed_status: receives impassioned lecture from President Bartlet on public
+      education after delivering the turkeys
+    beliefs: []
+    observed_traits: []
+    importance: primary
+  - character_uuid: agent_9c43c023e013
+    emotional_state: ''
+    goals: []
+    what_happened: previously selected as the first turkey prior to Troy's pardon
+    observed_status: previously selected as the first turkey prior to Troy's pardon
+    beliefs: []
+    observed_traits: []
+    importance: primary
+  - character_uuid: agent_1dd8a6049483
+    emotional_state: ''
+    goals: []
+    what_happened: is pardoned by President Bartlet as the second turkey
+    observed_status: is pardoned by President Bartlet as the second turkey
+    beliefs: []
+    observed_traits: []
+    importance: primary
   object_involvements: []
   location_involvements: []
   organization_involvements: []
@@ -3800,6 +4071,19 @@ events:
     - humble
     - resolute
     importance: primary
+  - character_uuid: agent_4566d65dd1c0
+    emotional_state: sentimental
+    goals:
+    - cement mentor-protégé bond with Charlie
+    - symbolize trust and heritage through family relic
+    - affirm personal loyalty amid political turmoil
+    what_happened: gifts his devoted aide Charlie Young a treasured Paul Revere heirloom
+      knife in a private gesture
+    observed_status: gifts his devoted aide Charlie Young a treasured Paul Revere
+      heirloom knife in a private gesture
+    beliefs: []
+    observed_traits: []
+    importance: primary
   object_involvements: []
   location_involvements:
   - location_uuid: location_7be499e08165
@@ -3836,6 +4120,16 @@ events:
   arc_uuids:
   - arc_d68e915104cd
   participations:
+  - character_uuid: agent_4566d65dd1c0
+    emotional_state: reflective
+    goals:
+    - proclaim national gratitude and unity
+    - resolve refugee crisis through clandestine mercy
+    what_happened: delivers a poignant proclamation of national gratitude and unity
+    observed_status: delivers a poignant proclamation of national gratitude and unity
+    beliefs: []
+    observed_traits: []
+    importance: primary
   - character_uuid: agent_87cf4008ad6f
     emotional_state: Hopeful and exuberant, channeling national renewal
     goals:
@@ -3956,11 +4250,42 @@ events:
     - efficient
     - decisive
     importance: primary
+  - character_uuid: agent_77f1a613709a
+    emotional_state: ''
+    goals: []
+    what_happened: Mentioned by Toby as part of dinner group.
+    observed_status: Mentioned by Toby as part of dinner group.
+    beliefs: []
+    observed_traits: []
+    importance: primary
+  - character_uuid: agent_7c84dea6dcc9
+    emotional_state: playful, casual
+    goals:
+    - Invite C.J. to dinner
+    - Discuss song in context of briefing prep
+    what_happened: Stops in hallway to talk to C.J., teases about song lyrics and
+      meaning, invites her to dinner with Josh and Sam.
+    observed_status: Stops in hallway to talk to C.J., teases about song lyrics and
+      meaning, invites her to dinner with Josh and Sam.
+    beliefs: []
+    observed_traits: []
+    importance: primary
   - character_uuid: agent_f3078a4f1b2f
     emotional_state: ''
     goals: []
     what_happened: Mentioned by Toby as part of dinner group.
     observed_status: Mentioned by Toby as part of dinner group.
+    beliefs: []
+    observed_traits: []
+    importance: primary
+  - character_uuid: agent_d5524a94a33b
+    emotional_state: ''
+    goals:
+    - Assist with turkey logistics and handover
+    what_happened: In C.J.'s office with Morton, introduces him and explains turkey
+      donation and return situation.
+    observed_status: In C.J.'s office with Morton, introduces him and explains turkey
+      donation and return situation.
     beliefs: []
     observed_traits: []
     importance: primary
@@ -3982,6 +4307,33 @@ events:
     - responsive
     - concise
     - dutiful
+    importance: primary
+  - character_uuid: agent_6ba1eec3d300
+    emotional_state: frustrated, insistent
+    goals:
+    - Retrieve and return donated turkey to Jasper Farms
+    what_happened: In C.J.'s office trying to retrieve turkey, explains need to return
+      it to farm, sighs and follows C.J. after grabbing Troy.
+    observed_status: In C.J.'s office trying to retrieve turkey, explains need to
+      return it to farm, sighs and follows C.J. after grabbing Troy.
+    beliefs: []
+    observed_traits: []
+    importance: primary
+  - character_uuid: agent_9c43c023e013
+    emotional_state: ''
+    goals: []
+    what_happened: Referenced as the turkey chosen for pardon, not to be sent back.
+    observed_status: Referenced as the turkey chosen for pardon, not to be sent back.
+    beliefs: []
+    observed_traits: []
+    importance: primary
+  - character_uuid: agent_1dd8a6049483
+    emotional_state: ''
+    goals: []
+    what_happened: Flaps wings behind C.J. in office, grabbed from desk by Morton.
+    observed_status: Flaps wings behind C.J. in office, grabbed from desk by Morton.
+    beliefs: []
+    observed_traits: []
     importance: primary
   object_involvements: []
   location_involvements:
@@ -4111,6 +4463,17 @@ events:
     beliefs: []
     observed_traits: []
     importance: primary
+  - character_uuid: agent_d5524a94a33b
+    emotional_state: helpful
+    goals:
+    - assist with turkey logistics and inform C.J.
+    what_happened: in C.J.'s office with Morton, introduces him and explains turkey
+      donation and return situation
+    observed_status: in C.J.'s office with Morton, introduces him and explains turkey
+      donation and return situation
+    beliefs: []
+    observed_traits: []
+    importance: primary
   - character_uuid: agent_3ee4436e9a6d
     emotional_state: Calmly professional and unflappable
     goals:
@@ -4128,6 +4491,17 @@ events:
     - efficient
     - concise
     - loyal
+    importance: primary
+  - character_uuid: agent_6ba1eec3d300
+    emotional_state: resigned and insistent
+    goals:
+    - retrieve one turkey (Troy) back to Jasper Farms as instructed
+    what_happened: in C.J.'s office trying to retrieve turkey, explains situation
+      and price to C.J., grabs Troy and follows her
+    observed_status: in C.J.'s office trying to retrieve turkey, explains situation
+      and price to C.J., grabs Troy and follows her
+    beliefs: []
+    observed_traits: []
     importance: primary
   object_involvements: []
   location_involvements:
@@ -4229,6 +4603,17 @@ events:
     - flirtatious
     - wry
     - persistent
+    importance: primary
+  - character_uuid: agent_d5524a94a33b
+    emotional_state: informative
+    goals:
+    - inform C.J. about Morton's purpose
+    what_happened: introduces Morton to C.J. and explains situation with turkeys,
+      attempts to interject during negotiation
+    observed_status: introduces Morton to C.J. and explains situation with turkeys,
+      attempts to interject during negotiation
+    beliefs: []
+    observed_traits: []
     importance: primary
   - character_uuid: agent_3ee4436e9a6d
     emotional_state: Calmly focused amid brewing chaos
@@ -4454,11 +4839,31 @@ events:
     importance: primary
   - character_uuid: agent_f3078a4f1b2f
     emotional_state: ''
-    goals: []
+    goals:
+    - Attend urgent meeting in Oval Office with Bartlet and Sam
     what_happened: Enters the Outer Oval Office with Sam and follows Bartlet into
       the Oval Office.
     observed_status: Enters the Outer Oval Office with Sam and follows Bartlet into
       the Oval Office.
+    beliefs: []
+    observed_traits: []
+    importance: primary
+  - character_uuid: agent_4566d65dd1c0
+    emotional_state: playful then passionately fervent
+    goals:
+    - Impulsively engage in turkey pardon farce
+    - Deliver impassioned lecture on public education to Morton
+    - Transition to urgent business with Josh and Sam
+    what_happened: Emerges from the Oval Office, greets Morton, impulsively pardons
+      then revokes the pardon for turkey Troy while lecturing Morton on public education
+      and ignorance of traditions versus law, humorously drafts the turkey into military
+      service, promises a signed compensation check, and enters the Oval Office with
+      Sam and Josh.
+    observed_status: Emerges from the Oval Office, greets Morton, impulsively pardons
+      then revokes the pardon for turkey Troy while lecturing Morton on public education
+      and ignorance of traditions versus law, humorously drafts the turkey into military
+      service, promises a signed compensation check, and enters the Oval Office with
+      Sam and Josh.
     beliefs: []
     observed_traits: []
     importance: primary
@@ -4605,12 +5010,24 @@ events:
     - strategic
     importance: primary
   - character_uuid: agent_f3078a4f1b2f
-    emotional_state: ''
-    goals: []
+    emotional_state: urgent
+    goals:
+    - brief President Bartlet on the Chinese refugee crisis
     what_happened: intercepting Bartlet urgently and asking if he has heard about
       the crisis
     observed_status: intercepting Bartlet urgently and asking if he has heard about
       the crisis
+    beliefs: []
+    observed_traits: []
+    importance: primary
+  - character_uuid: agent_4566d65dd1c0
+    emotional_state: whimsical
+    goals:
+    - evade discussion of the refugee crisis using intellectual deflection
+    what_happened: walking toward his desk and deflecting Josh's question with trivia
+      about the Latin word for 'yam'
+    observed_status: walking toward his desk and deflecting Josh's question with trivia
+      about the Latin word for 'yam'
     beliefs: []
     observed_traits: []
     importance: primary

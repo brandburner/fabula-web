@@ -1,5 +1,5 @@
 # Events for The War At Home
-# Generated: 2026-01-11T19:27:43.748894
+# Generated: 2026-01-12T09:57:21.223903
 
 episode_uuid: ep_sea_ser_the_west_wing_s02_e14
 episode_title: The War At Home
@@ -75,6 +75,21 @@ events:
     - loyal
     - protective
     - terse
+    importance: primary
+  - character_uuid: agent_4566d65dd1c0
+    emotional_state: defiant
+    goals:
+    - to defy health and weather warnings with a smoke break
+    - to underscore the rapid pace of crisis and steel resolve for the upcoming high-stakes
+      operation
+    what_happened: stands in the cold smoking rebelliously, banters with Leo about
+      the State of the Union, health, and a Shaw quote, checks his watch, stubs out
+      cigarette, and follows Leo inside
+    observed_status: stands in the cold smoking rebelliously, banters with Leo about
+      the State of the Union, health, and a Shaw quote, checks his watch, stubs out
+      cigarette, and follows Leo inside
+    beliefs: []
+    observed_traits: []
     importance: primary
   object_involvements:
   - object_uuid: object_f06e6a1ad025
@@ -170,6 +185,19 @@ events:
     - pragmatic
     - unflinching
     - aggressive
+    importance: primary
+  - character_uuid: agent_4566d65dd1c0
+    emotional_state: decisive
+    goals:
+    - To decisively initiate the Cassiopeia operation following prior defiance
+    what_happened: enters the Situation Room, demands raid update, questions the operational
+      plan in detail, challenges Mickey's dissent on torture risks, and decisively
+      orders 'Go' to launch the operation
+    observed_status: enters the Situation Room, demands raid update, questions the
+      operational plan in detail, challenges Mickey's dissent on torture risks, and
+      decisively orders 'Go' to launch the operation
+    beliefs: []
+    observed_traits: []
     importance: primary
   - character_uuid: agent_029e045a2104
     emotional_state: Calmly focused under pressure
@@ -464,6 +492,22 @@ events:
     - impatient
     - uncompromising
     importance: primary
+  - character_uuid: agent_4566d65dd1c0
+    emotional_state: resolute
+    goals:
+    - Gather detailed operational intelligence
+    - Resolve dissent by highlighting torture risks and authorize the raid
+    what_happened: Enters the Situation Room, motions officers to sit, interrogates
+      the military on raid details, notices Mickey's unease and invites his input,
+      reveals that hostages (U.S. drug agents) will be tortured at Villa Cerreno,
+      gives the final 'Go' order.
+    observed_status: Enters the Situation Room, motions officers to sit, interrogates
+      the military on raid details, notices Mickey's unease and invites his input,
+      reveals that hostages (U.S. drug agents) will be tortured at Villa Cerreno,
+      gives the final 'Go' order.
+    beliefs: []
+    observed_traits: []
+    importance: primary
   - character_uuid: agent_029e045a2104
     emotional_state: Calm professionalism amid mounting crisis pressure
     goals:
@@ -521,6 +565,17 @@ events:
     observed_traits:
     - intransigent
     - calculating
+    importance: primary
+  - character_uuid: agent_a4f31f029fd3
+    emotional_state: ''
+    goals:
+    - Provide update on airborne Delta Force teams
+    what_happened: Briefs Bartlet on the C-141's status and that Delta Force will
+      enter Colombian airspace upon order.
+    observed_status: Briefs Bartlet on the C-141's status and that Delta Force will
+      enter Colombian airspace upon order.
+    beliefs: []
+    observed_traits: []
     importance: primary
   - character_uuid: agent_e205734617c5
     emotional_state: Irrelevant (imprisoned, off-screen)
@@ -704,6 +759,23 @@ events:
     - pragmatic
     - aggressive
     - loyal
+    importance: primary
+  - character_uuid: agent_4566d65dd1c0
+    emotional_state: grim and determined
+    goals:
+    - Authorize the immediate raid on the terrorists despite dissent to prevent prolonged
+      hostage suffering and torture
+    - Escalate commitment to the operation leading to further military retaliation
+    what_happened: Enters the Situation Room with Leo, motions officers to sit, questions
+      operational details extensively, challenges Mickey's caution on hostage torture,
+      glances at Mickey and Leo, and decisively issues the 'Go' order to launch Operation
+      Cassiopeia.
+    observed_status: Enters the Situation Room with Leo, motions officers to sit,
+      questions operational details extensively, challenges Mickey's caution on hostage
+      torture, glances at Mickey and Leo, and decisively issues the 'Go' order to
+      launch Operation Cassiopeia.
+    beliefs: []
+    observed_traits: []
     importance: primary
   - character_uuid: agent_029e045a2104
     emotional_state: Calm vigilance amid crisis escalation
@@ -963,6 +1035,16 @@ events:
   theme_uuids: []
   arc_uuids: []
   participations:
+  - character_uuid: agent_4566d65dd1c0
+    emotional_state: ''
+    goals: []
+    what_happened: State of the Union address freshly concluded and tallied at 8,756
+      words in Mark's voiceover
+    observed_status: State of the Union address freshly concluded and tallied at 8,756
+      words in Mark's voiceover
+    beliefs: []
+    observed_traits: []
+    importance: primary
   - character_uuid: agent_8265f9568328
     emotional_state: Professional detachment laced with subtle awe at the address's
       scale
@@ -1258,6 +1340,14 @@ events:
     - assertive
     - witty
     - commanding
+    importance: primary
+  - character_uuid: agent_7c84dea6dcc9
+    emotional_state: ''
+    goals: []
+    what_happened: mentioned by Mark on TV as guest on Capitol Beat
+    observed_status: mentioned by Mark on TV as guest on Capitol Beat
+    beliefs: []
+    observed_traits: []
     importance: primary
   - character_uuid: agent_8265f9568328
     emotional_state: Irritated insistence softening into opportunistic eagerness
@@ -1876,8 +1966,9 @@ events:
   - arc_8083dc0febf0
   participations:
   - character_uuid: agent_f3078a4f1b2f
-    emotional_state: ''
-    goals: []
+    emotional_state: exhausted
+    goals:
+    - to acknowledge Donna minimally while bracing from weariness
     what_happened: stands in the dark, leans on the counter, and responds curtly 'Yeah'
     observed_status: stands in the dark, leans on the counter, and responds curtly
       'Yeah'
@@ -1996,6 +2087,22 @@ events:
     - loyal
     - stoic
     - strategic
+    importance: primary
+  - character_uuid: agent_4566d65dd1c0
+    emotional_state: brooding
+    goals:
+    - unburden personal leadership costs by confessing to Leo about Abbey and sharing
+      Vietnam memory (emotional echo of war's toll)
+    what_happened: sits alone on a bench playing chess, banters with Leo about weather
+      and chess moves, confesses Abbey's anger toward him, shares haunting Vietnam
+      memory of flag-draped caskets unloading from planes, receives terse raid update
+      from Leo, studies chessboard after Leo leaves
+    observed_status: sits alone on a bench playing chess, banters with Leo about weather
+      and chess moves, confesses Abbey's anger toward him, shares haunting Vietnam
+      memory of flag-draped caskets unloading from planes, receives terse raid update
+      from Leo, studies chessboard after Leo leaves
+    beliefs: []
+    observed_traits: []
     importance: primary
   - character_uuid: agent_45883b79da77
     emotional_state: Furious and betrayed over spousal secrecy
@@ -2170,8 +2277,9 @@ events:
     - Persistent bridge-builder
     importance: primary
   - character_uuid: agent_f3078a4f1b2f
-    emotional_state: ''
-    goals: []
+    emotional_state: intrigued
+    goals:
+    - to share a cryptic secret with Sam as a setup for deeper revelations
     what_happened: walks down the hallway and asks Sam 'Can I tell you something strange?'
     observed_status: walks down the hallway and asks Sam 'Can I tell you something
       strange?'
@@ -2240,6 +2348,16 @@ events:
     - deflective
     - reluctantly decent
     - multitasking professional
+    importance: primary
+  - character_uuid: agent_4566d65dd1c0
+    emotional_state: ''
+    goals: []
+    what_happened: referenced as the figure Ainsley embarrassed herself in front of
+      during first meeting, subject of her plea for reintroduction
+    observed_status: referenced as the figure Ainsley embarrassed herself in front
+      of during first meeting, subject of her plea for reintroduction
+    beliefs: []
+    observed_traits: []
     importance: primary
   - character_uuid: agent_12db9dc6462c
     emotional_state: Neutral professionalism inferred
@@ -2475,8 +2593,9 @@ events:
   arc_uuids: []
   participations:
   - character_uuid: agent_f3078a4f1b2f
-    emotional_state: ''
-    goals: []
+    emotional_state: fuming impatience
+    goals:
+    - express frustration trapped in bureaucratic limbo
     what_happened: voiceover announcing 'I'm on hold'
     observed_status: voiceover announcing 'I'm on hold'
     beliefs: []
@@ -2528,8 +2647,11 @@ events:
   arc_uuids: []
   participations:
   - character_uuid: agent_f3078a4f1b2f
-    emotional_state: ''
-    goals: []
+    emotional_state: frustrated and anxious
+    goals:
+    - obtain update from phone hold amid blackout
+    - assess polling impact of crime package on swing districts to avoid losing Democratic
+      seats
     what_happened: pacing frantically in darkened office while on hold with phone,
       banging receiver on desk, venting bureaucratic frustration, discussing polling
       concerns in five swing districts over President's crime package, bantering with
@@ -2538,6 +2660,16 @@ events:
       banging receiver on desk, venting bureaucratic frustration, discussing polling
       concerns in five swing districts over President's crime package, bantering with
       Donna about Joey Lucas, hanging up phone when power returns
+    beliefs: []
+    observed_traits: []
+    importance: primary
+  - character_uuid: agent_4566d65dd1c0
+    emotional_state: ''
+    goals: []
+    what_happened: referenced as having announced crime package with five-day background
+      check waiting period, central to Josh's polling concerns in swing districts
+    observed_status: referenced as having announced crime package with five-day background
+      check waiting period, central to Josh's polling concerns in swing districts
     beliefs: []
     observed_traits: []
     importance: primary
@@ -2821,7 +2953,8 @@ events:
     importance: primary
   - character_uuid: agent_f3078a4f1b2f
     emotional_state: ''
-    goals: []
+    goals:
+    - discuss crisis timing and negotiation implications with Donna
     what_happened: present during the debate, follows Bartlet out to the hallway,
       exchanges lines with Donna in the doorway about timing, incoming numbers, Colombia,
       and negotiating
@@ -2849,6 +2982,20 @@ events:
     - loyal
     - pragmatic
     - composed
+    importance: primary
+  - character_uuid: agent_4566d65dd1c0
+    emotional_state: resolute and angry
+    goals:
+    - refuse to release Juan Aguilar to avoid capitulating to terrorists
+    - pivot to military options as alternative to negotiation
+    what_happened: stands across the table from Toby and Sam, details Juan Aguilar's
+      criminal history and cartel leadership, slams folder shut while declaring refusal
+      to release him and demanding military options, then leaves the room
+    observed_status: stands across the table from Toby and Sam, details Juan Aguilar's
+      criminal history and cartel leadership, slams folder shut while declaring refusal
+      to release him and demanding military options, then leaves the room
+    beliefs: []
+    observed_traits: []
     importance: primary
   - character_uuid: agent_d5524a94a33b
     emotional_state: Attentive and steady, absorbing crisis gravity without overt
@@ -3055,8 +3202,9 @@ events:
     - steady
     importance: primary
   - character_uuid: agent_f3078a4f1b2f
-    emotional_state: ''
-    goals: []
+    emotional_state: concerned
+    goals:
+    - Discuss the escalating moral and political stakes of the crisis with Donna
     what_happened: Present in the room, follows Bartlet out to the hallway, debates
       with Donna in the doorway about the crisis's implications on U.S. policy and
       the war on drugs.
@@ -3084,6 +3232,20 @@ events:
     - pragmatic
     - loyal
     - concise
+    importance: primary
+  - character_uuid: agent_4566d65dd1c0
+    emotional_state: decisive
+    goals:
+    - Reject the release of Juan Aguilar
+    - Secure military options despite risks
+    what_happened: Recounting Juan Aguilar's atrocities including drug production
+      and murders, rejecting his release, slamming his folder shut, demanding military
+      options, and exiting the room.
+    observed_status: Recounting Juan Aguilar's atrocities including drug production
+      and murders, rejecting his release, slamming his folder shut, demanding military
+      options, and exiting the room.
+    beliefs: []
+    observed_traits: []
     importance: primary
   - character_uuid: agent_d5524a94a33b
     emotional_state: Engaged and analytically concerned over policy cascade
@@ -3252,6 +3414,23 @@ events:
     - loyal
     - pragmatic
     importance: primary
+  - character_uuid: agent_4566d65dd1c0
+    emotional_state: surprised
+    goals:
+    - assess feasibility of rescuing DEA agents alive
+    - evaluate military cost of annihilating Fronte (escalation from prior order to
+      'Go')
+    what_happened: Stands at head of table, demands exact location of DEA agents and
+      feasibility of rescuing them alive, pivots to asking requirements for annihilating
+      Fronte, expresses surprise at casualty estimates, shakes head, delivers sardonic
+      remark to Leo about superpower futility, and abruptly exits
+    observed_status: Stands at head of table, demands exact location of DEA agents
+      and feasibility of rescuing them alive, pivots to asking requirements for annihilating
+      Fronte, expresses surprise at casualty estimates, shakes head, delivers sardonic
+      remark to Leo about superpower futility, and abruptly exits
+    beliefs: []
+    observed_traits: []
+    importance: primary
   - character_uuid: agent_63ad5b384efc
     emotional_state: Focused attentiveness under pressure
     goals:
@@ -3396,6 +3575,21 @@ events:
     - Respectful
     - Efficient
     importance: primary
+  - character_uuid: agent_4566d65dd1c0
+    emotional_state: concerned, hurt, angry, tearful, reflective
+    goals:
+    - engage Abbey on her distraction and silence
+    - inquire about Charlie's errand
+    - reaffirm love amid argument
+    what_happened: enters the bedroom, greets Charlie, asks Abbey about Charlie's
+      conversation, sits on the bed by Abbey, argues with her about their issues including
+      MS and the deal, expresses love as she leaves, sits back down and thinks
+    observed_status: enters the bedroom, greets Charlie, asks Abbey about Charlie's
+      conversation, sits on the bed by Abbey, argues with her about their issues including
+      MS and the deal, expresses love as she leaves, sits back down and thinks
+    beliefs: []
+    observed_traits: []
+    importance: primary
   - character_uuid: agent_45883b79da77
     emotional_state: Distracted evasion masking hurt anger and tearful betrayal over
       MS secrets
@@ -3523,6 +3717,20 @@ events:
     - loyal
     - discreet
     - professional
+    importance: primary
+  - character_uuid: agent_4566d65dd1c0
+    emotional_state: desperate, vulnerable, anguished
+    goals:
+    - probe Abbey's emotional distance via inquiry about $500 cash
+    - attempt reconciliation through vulnerable confession of love amid fury
+    what_happened: greets and dismisses Charlie, questions Abbey about the cash, sits
+      on bed beside her, engages in raw confrontation over MS and pact, watches her
+      leave while confessing love, sits back down thinking
+    observed_status: greets and dismisses Charlie, questions Abbey about the cash,
+      sits on bed beside her, engages in raw confrontation over MS and pact, watches
+      her leave while confessing love, sits back down thinking
+    beliefs: []
+    observed_traits: []
     importance: primary
   - character_uuid: agent_45883b79da77
     emotional_state: Furious and hurt with tearful vulnerability masking resolute
@@ -3658,8 +3866,9 @@ events:
   - arc_8083dc0febf0
   participations:
   - character_uuid: agent_f3078a4f1b2f
-    emotional_state: ''
-    goals: []
+    emotional_state: dejected and frustrated
+    goals:
+    - vent frustration over dismal polling results
     what_happened: dejectedly leans over the polling results on his desk and says
       'Son of a bitch'
     observed_status: dejectedly leans over the polling results on his desk and says
@@ -3782,6 +3991,17 @@ events:
     - loyal
     - formal
     - resilient
+    importance: primary
+  - character_uuid: agent_4566d65dd1c0
+    emotional_state: fatigued but concerned
+    goals:
+    - express paternal concern for Charlie's well-being
+    what_happened: walks tiredly towards the Oval Office, passes Charlie, and rebukes
+      him for not wearing a coat
+    observed_status: walks tiredly towards the Oval Office, passes Charlie, and rebukes
+      him for not wearing a coat
+    beliefs: []
+    observed_traits: []
     importance: primary
   object_involvements: []
   location_involvements: []
@@ -3912,6 +4132,17 @@ events:
     - professional
     - resolute
     - commanding
+    importance: primary
+  - character_uuid: agent_4566d65dd1c0
+    emotional_state: somber
+    goals:
+    - attend the somber return of soldiers' remains amid the raid's fallout
+    what_happened: arriving via Presidential motorcade speeding onto the tarmac at
+      Dover Air Force Base
+    observed_status: arriving via Presidential motorcade speeding onto the tarmac
+      at Dover Air Force Base
+    beliefs: []
+    observed_traits: []
     importance: primary
   object_involvements:
   - object_uuid: object_3e815f41079b
@@ -4074,6 +4305,14 @@ events:
     - poised
     - narratively commanding
     - empathetic
+    importance: primary
+  - character_uuid: agent_4566d65dd1c0
+    emotional_state: somber
+    goals: []
+    what_happened: exits his limo
+    observed_status: exits his limo
+    beliefs: []
+    observed_traits: []
     importance: primary
   - character_uuid: agent_d523d5689c21
     emotional_state: Unyielding solemnity masking institutional grief
@@ -4268,6 +4507,17 @@ events:
     - poised
     - communicative
     importance: primary
+  - character_uuid: agent_4566d65dd1c0
+    emotional_state: strained
+    goals:
+    - defer grief and maintain command amid crisis
+    what_happened: walks past Mickey in heavy silence and curtly defers calling the
+      families of the dead soldiers
+    observed_status: walks past Mickey in heavy silence and curtly defers calling
+      the families of the dead soldiers
+    beliefs: []
+    observed_traits: []
+    importance: primary
   - character_uuid: agent_cf077dc4eba5
     emotional_state: Somber relief tempered by awareness of raid's deadly cost
     goals:
@@ -4353,6 +4603,15 @@ events:
     - Strategic transparency
     - Press mastery
     importance: primary
+  - character_uuid: agent_4566d65dd1c0
+    emotional_state: stoic
+    goals:
+    - maintain composure amid crisis and commit to personal outreach to affected families
+    what_happened: walks past Mickey and vows to call the families afterwards
+    observed_status: walks past Mickey and vows to call the families afterwards
+    beliefs: []
+    observed_traits: []
+    importance: primary
   - character_uuid: agent_cf077dc4eba5
     emotional_state: Relieved determination veiling sorrow for raid's human cost
     goals:
@@ -4434,6 +4693,18 @@ events:
     - Poised under pressure
     - Strategically communicative
     importance: primary
+  - character_uuid: agent_4566d65dd1c0
+    emotional_state: somber
+    goals:
+    - acknowledge the hostage extraction news
+    - commit to personally notifying families of the fallen
+    what_happened: walks past Mickey and states he will call the families of the slain
+      afterwards
+    observed_status: walks past Mickey and states he will call the families of the
+      slain afterwards
+    beliefs: []
+    observed_traits: []
+    importance: primary
   - character_uuid: agent_cf077dc4eba5
     emotional_state: Relieved determination tempered by the raid's profound losses
     goals:
@@ -4512,6 +4783,17 @@ events:
     - strategic
     - composed
     importance: primary
+  - character_uuid: agent_4566d65dd1c0
+    emotional_state: somber
+    goals:
+    - express personal accountability by committing to contact families of the deceased
+    what_happened: walks past Mickey and vows to call the families of the fallen soldiers
+      afterwards
+    observed_status: walks past Mickey and vows to call the families of the fallen
+      soldiers afterwards
+    beliefs: []
+    observed_traits: []
+    importance: primary
   - character_uuid: agent_cf077dc4eba5
     emotional_state: Professional resolve tempered by underlying grief over casualties
     goals:
@@ -4571,6 +4853,19 @@ events:
   arc_uuids:
   - arc_6de9ceb79b46
   participations:
+  - character_uuid: agent_4566d65dd1c0
+    emotional_state: tired and grieving
+    goals:
+    - witness the procession of fallen soldiers' coffins to confront the personal
+      toll of his raid decision
+    - reflect on the emotional echo of past war experiences like Vietnam caskets
+    what_happened: gazes past the first coffin and looks on with a tired expression
+      as multiple subsequent coffins are carried past by the Honor Guard
+    observed_status: gazes past the first coffin and looks on with a tired expression
+      as multiple subsequent coffins are carried past by the Honor Guard
+    beliefs: []
+    observed_traits: []
+    importance: primary
   - character_uuid: agent_cf077dc4eba5
     emotional_state: Stoic composure veiling profound unease and shared grief over
       the raid's cost

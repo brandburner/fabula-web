@@ -1,5 +1,5 @@
 # Events for Two Cathedrals
-# Generated: 2026-01-11T19:27:46.517129
+# Generated: 2026-01-12T09:57:23.831136
 
 episode_uuid: ep_sea_ser_the_west_wing_s02_e22
 episode_title: Two Cathedrals
@@ -165,6 +165,15 @@ events:
   arc_uuids:
   - arc_1877625c03d7
   participations:
+  - character_uuid: agent_57456b21c104
+    emotional_state: ''
+    goals:
+    - secure network slot for President's address
+    what_happened: gave 8pm press slot to the network, locking in schedule
+    observed_status: gave 8pm press slot to the network, locking in schedule
+    beliefs: []
+    observed_traits: []
+    importance: primary
   - character_uuid: agent_77f1a613709a
     emotional_state: Deep concern laced with frustration over ignored grief
     goals:
@@ -228,6 +237,24 @@ events:
     - commanding
     - strategic
     importance: primary
+  - character_uuid: agent_4566d65dd1c0
+    emotional_state: ''
+    goals: []
+    what_happened: to sit in specific position for press conference with First Lady
+      on right, referenced in past poor Easter message lighting example
+    observed_status: to sit in specific position for press conference with First Lady
+      on right, referenced in past poor Easter message lighting example
+    beliefs: []
+    observed_traits: []
+    importance: primary
+  - character_uuid: agent_45883b79da77
+    emotional_state: ''
+    goals: []
+    what_happened: to sit on President's right during press conference
+    observed_status: to sit on President's right during press conference
+    beliefs: []
+    observed_traits: []
+    importance: primary
   - character_uuid: agent_12db9dc6462c
     emotional_state: Regretful obedience under hierarchical pressure
     goals:
@@ -248,6 +275,14 @@ events:
     - deferential
     - precise
     - apologetic yet dutiful
+    importance: primary
+  - character_uuid: agent_7ca96c12d334
+    emotional_state: ''
+    goals: []
+    what_happened: meeting reinstated on Toby's schedule at 4pm per Leo's office
+    observed_status: meeting reinstated on Toby's schedule at 4pm per Leo's office
+    beliefs: []
+    observed_traits: []
     importance: primary
   object_involvements:
   - object_uuid: object_fa32bda56eed
@@ -400,6 +435,16 @@ events:
     - exhausted
     - loyal
     importance: primary
+  - character_uuid: agent_d11a3b3bb6e4
+    emotional_state: ''
+    goals: []
+    what_happened: His office referenced as directing Ginger to reschedule Greg Summerhays
+      on Toby's calendar
+    observed_status: His office referenced as directing Ginger to reschedule Greg
+      Summerhays on Toby's calendar
+    beliefs: []
+    observed_traits: []
+    importance: primary
   - character_uuid: agent_4566d65dd1c0
     emotional_state: ''
     goals: []
@@ -409,6 +454,15 @@ events:
     observed_status: Referenced extensively as the subject of press conference setup,
       seating with First Lady, lighting concerns, past Easter message taping, and
       emotional readiness doubts
+    beliefs: []
+    observed_traits: []
+    importance: primary
+  - character_uuid: agent_45883b79da77
+    emotional_state: ''
+    goals: []
+    what_happened: Referenced as to be seated on President's right during press conference
+    observed_status: Referenced as to be seated on President's right during press
+      conference
     beliefs: []
     observed_traits: []
     importance: primary
@@ -525,6 +579,16 @@ events:
   theme_uuids: []
   arc_uuids: []
   participations:
+  - character_uuid: agent_57456b21c104
+    emotional_state: ''
+    goals: []
+    what_happened: Referenced as having given press conference to the network, locking
+      it in.
+    observed_status: Referenced as having given press conference to the network, locking
+      it in.
+    beliefs: []
+    observed_traits: []
+    importance: primary
   - character_uuid: agent_77f1a613709a
     emotional_state: Anxious frustration over Bartlet's fragility amid unrelenting
       duty
@@ -569,6 +633,17 @@ events:
     - dutiful
     - pragmatic
     importance: primary
+  - character_uuid: agent_d11a3b3bb6e4
+    emotional_state: ''
+    goals:
+    - enforce schedule override to maintain hierarchy
+    what_happened: Office referenced as directing reinstatement of Greg Summerhays
+      meeting on Toby's schedule.
+    observed_status: Office referenced as directing reinstatement of Greg Summerhays
+      meeting on Toby's schedule.
+    beliefs: []
+    observed_traits: []
+    importance: primary
   - character_uuid: agent_4566d65dd1c0
     emotional_state: ''
     goals: []
@@ -576,6 +651,16 @@ events:
       press conference prep.
     observed_status: Referenced in setup instructions for seating and lighting during
       press conference prep.
+    beliefs: []
+    observed_traits: []
+    importance: primary
+  - character_uuid: agent_45883b79da77
+    emotional_state: ''
+    goals: []
+    what_happened: Referenced to sit on President's right during press conference
+      setup.
+    observed_status: Referenced to sit on President's right during press conference
+      setup.
     beliefs: []
     observed_traits: []
     importance: primary
@@ -709,8 +794,12 @@ events:
     - resilient
     importance: primary
   - character_uuid: agent_f3078a4f1b2f
-    emotional_state: ''
-    goals: []
+    emotional_state: serious and determined, smiling
+    goals:
+    - brief C.J. on the Justice Department appropriations issue
+    - share and seek input on the press release
+    - rally support to address Democratic opposition
+    - check on Bartlet's status indirectly
     what_happened: enters C.J.'s office, briefs C.J. on Justice Department's tobacco
       suit funding shortage and opposition from eight subcommittee members including
       Kalmbach, Warren, and Rossiter, provides her with a strongly worded press release,
@@ -721,6 +810,29 @@ events:
       Kalmbach, Warren, and Rossiter, provides her with a strongly worded press release,
       discusses Democratic defections, walks-and-talks with C.J. down the hallway,
       smiles at her reaction to the release, inquires if she has seen Bartlet
+    beliefs: []
+    observed_traits: []
+    importance: primary
+  - character_uuid: agent_d11a3b3bb6e4
+    emotional_state: ''
+    goals:
+    - light a fire under the appropriations subcommittee
+    what_happened: referenced by Josh as feeling strongly about pushing the appropriations
+      issue
+    observed_status: referenced by Josh as feeling strongly about pushing the appropriations
+      issue
+    beliefs: []
+    observed_traits: []
+    importance: primary
+  - character_uuid: agent_4566d65dd1c0
+    emotional_state: ''
+    goals: []
+    what_happened: referenced in Josh's press release as calling on Congress, subject
+      of 'Let Bartlet be Bartlet' comment, inquired about by Josh and C.J. as 'him'
+      whether seen today
+    observed_status: referenced in Josh's press release as calling on Congress, subject
+      of 'Let Bartlet be Bartlet' comment, inquired about by Josh and C.J. as 'him'
+      whether seen today
     beliefs: []
     observed_traits: []
     importance: primary
@@ -743,6 +855,36 @@ events:
     - competent
     - responsive
     - dutiful
+    importance: primary
+  - character_uuid: agent_e31cef09ab15
+    emotional_state: ''
+    goals: []
+    what_happened: mentioned as one of eight subcommittee members opposing Justice
+      Department funding, no tobacco ties
+    observed_status: mentioned as one of eight subcommittee members opposing Justice
+      Department funding, no tobacco ties
+    beliefs: []
+    observed_traits: []
+    importance: primary
+  - character_uuid: agent_53ba892e0908
+    emotional_state: ''
+    goals: []
+    what_happened: mentioned as one of eight subcommittee members opposing Justice
+      Department funding, no tobacco ties
+    observed_status: mentioned as one of eight subcommittee members opposing Justice
+      Department funding, no tobacco ties
+    beliefs: []
+    observed_traits: []
+    importance: primary
+  - character_uuid: agent_e9ab957fa83a
+    emotional_state: ''
+    goals: []
+    what_happened: mentioned as one of eight subcommittee members opposing Justice
+      Department funding, has significant ties to tobacco
+    observed_status: mentioned as one of eight subcommittee members opposing Justice
+      Department funding, has significant ties to tobacco
+    beliefs: []
+    observed_traits: []
     importance: primary
   object_involvements:
   - object_uuid: object_69364f7d345d
@@ -875,8 +1017,11 @@ events:
     - empathetic
     importance: primary
   - character_uuid: agent_f3078a4f1b2f
-    emotional_state: ''
-    goals: []
+    emotional_state: determined, smiling, resigned
+    goals:
+    - pitch and gain approval for fiery press release to pressure appropriations subcommittee
+    - brief C.J. on tobacco funding crisis
+    - check on Bartlet's visibility amid staff anxiety
     what_happened: enters C.J.'s office, briefs her on Justice Department's tobacco
       lawsuit funding shortfall and two Democratic defections on appropriations subcommittee,
       presents strongly worded press release, participates in walk-and-talk, agrees
@@ -903,6 +1048,16 @@ events:
     observed_traits:
     - commanding
     - combative
+    importance: primary
+  - character_uuid: agent_4566d65dd1c0
+    emotional_state: grieving
+    goals: []
+    what_happened: significantly mentioned as absent and unseen by C.J. or Josh today;
+      his 'Bartlet-esque bite' style echoed in Josh's press release
+    observed_status: significantly mentioned as absent and unseen by C.J. or Josh
+      today; his 'Bartlet-esque bite' style echoed in Josh's press release
+    beliefs: []
+    observed_traits: []
     importance: primary
   - character_uuid: agent_3ee4436e9a6d
     emotional_state: Calmly focused amid office churn
@@ -1201,6 +1356,17 @@ events:
     - ambitious
     - fundraising powerhouse
     importance: primary
+  - character_uuid: agent_52f93da11502
+    emotional_state: ''
+    goals:
+    - support Hoynes as successor
+    what_happened: dismisses Gillette's viability, notes Hoynes put together money
+      fast
+    observed_status: dismisses Gillette's viability, notes Hoynes put together money
+      fast
+    beliefs: []
+    observed_traits: []
+    importance: primary
   - character_uuid: agent_7c442dfb24b7
     emotional_state: Speculatively strong (absent)
     goals:
@@ -1410,6 +1576,30 @@ events:
     - methodical
     - unflinching
     importance: primary
+  - character_uuid: agent_4566d65dd1c0
+    emotional_state: dissociated
+    goals:
+    - Participate in the crisis briefing
+    what_happened: Profile shown during briefing as camera pans; questions why to
+      send Fitzwallace; drowns out Nancy's voice and enters flashback triggered by
+      church bells.
+    observed_status: Profile shown during briefing as camera pans; questions why to
+      send Fitzwallace; drowns out Nancy's voice and enters flashback triggered by
+      church bells.
+    beliefs: []
+    observed_traits: []
+    importance: primary
+  - character_uuid: agent_4566d65dd1c0
+    emotional_state: submissive
+    goals:
+    - Respond to father's summons
+    what_happened: Runs to his father after being alerted, denies hearing the call,
+      accepts reprimand, agrees to tell friends, and meets and smiles at Mrs. Landingham.
+    observed_status: Runs to his father after being alerted, denies hearing the call,
+      accepts reprimand, agrees to tell friends, and meets and smiles at Mrs. Landingham.
+    beliefs: []
+    observed_traits: []
+    importance: primary
   - character_uuid: agent_4ad5a1792822
     emotional_state: Welcoming openness amid new beginnings
     goals:
@@ -1485,6 +1675,34 @@ events:
     - alert
     - direct
     - observant
+    importance: primary
+  - character_uuid: agent_81bcc410d6ea
+    emotional_state: ''
+    goals: []
+    what_happened: Proposed by Nancy to be sent to negotiate with Haitian general
+      Francis St. Jacques.
+    observed_status: Proposed by Nancy to be sent to negotiate with Haitian general
+      Francis St. Jacques.
+    beliefs: []
+    observed_traits: []
+    importance: primary
+  - character_uuid: agent_22d456104283
+    emotional_state: ''
+    goals: []
+    what_happened: Named by Nancy as Haitian general who trained with Fitz at Annapolis;
+      implied leader of besieging forces.
+    observed_status: Named by Nancy as Haitian general who trained with Fitz at Annapolis;
+      implied leader of besieging forces.
+    beliefs: []
+    observed_traits: []
+    importance: primary
+  - character_uuid: agent_74c490143360
+    emotional_state: ''
+    goals: []
+    what_happened: Mentioned as diabetic running out of insulin inside the embassy.
+    observed_status: Mentioned as diabetic running out of insulin inside the embassy.
+    beliefs: []
+    observed_traits: []
     importance: primary
   object_involvements:
   - object_uuid: object_1a80eaef2233
@@ -1610,6 +1828,29 @@ events:
     - commanding
     - persistent
     - loyal
+    importance: primary
+  - character_uuid: agent_4566d65dd1c0
+    emotional_state: distracted
+    goals:
+    - Participate in crisis briefing but triggered into reflective flashback intensifying
+      grief
+    what_happened: Profile shown as he zones out to church bells, drowns out Nancy's
+      voice, enters flashback, briefly responds 'Why?'
+    observed_status: Profile shown as he zones out to church bells, drowns out Nancy's
+      voice, enters flashback, briefly responds 'Why?'
+    beliefs: []
+    observed_traits: []
+    importance: primary
+  - character_uuid: agent_4566d65dd1c0
+    emotional_state: sheepish
+    goals:
+    - Deflect responsibility for smoking incident
+    what_happened: Hears father calling, runs to him, denies hearing the call, accepts
+      reprimand, meets and smiles at Mrs. Landingham
+    observed_status: Hears father calling, runs to him, denies hearing the call, accepts
+      reprimand, meets and smiles at Mrs. Landingham
+    beliefs: []
+    observed_traits: []
     importance: primary
   - character_uuid: agent_4ad5a1792822
     emotional_state: Gentle openness welcoming new connection
@@ -1843,6 +2084,28 @@ events:
     - assertive
     - decisive
     - unyielding
+    importance: primary
+  - character_uuid: agent_4566d65dd1c0
+    emotional_state: introspective
+    goals:
+    - seek clarification on intervention proposal
+    what_happened: present during briefing with camera panning to his profile, questions
+      Nancy on sending Fitz, drowns out her voice amid church bells triggering flashback
+    observed_status: present during briefing with camera panning to his profile, questions
+      Nancy on sending Fitz, drowns out her voice amid church bells triggering flashback
+    beliefs: []
+    observed_traits: []
+    importance: primary
+  - character_uuid: agent_4566d65dd1c0
+    emotional_state: sheepish
+    goals:
+    - comply with father's instructions
+    what_happened: hears father calling, runs to him, denies hearing the call, agrees
+      to warn friends about smoking, meets and smiles at Mrs. Landingham
+    observed_status: hears father calling, runs to him, denies hearing the call, agrees
+      to warn friends about smoking, meets and smiles at Mrs. Landingham
+    beliefs: []
+    observed_traits: []
     importance: primary
   - character_uuid: agent_4ad5a1792822
     emotional_state: Friendly openness
@@ -2085,6 +2348,24 @@ events:
     - authoritative
     - coordinating
     importance: primary
+  - character_uuid: agent_4566d65dd1c0
+    emotional_state: grieving yet resolute
+    goals:
+    - authorize Fitzwallace's intervention reframed as peacekeeping amid Haitian crisis
+    - navigate personal grief while asserting leadership
+    what_happened: listens to Nancy's strategy while tapping an unlit cigarette, decisively
+      authorizes Admiral Fitzwallace's deployment, exits with Charlie to discuss the
+      Haitian president's 48-hour hostage situation and an anomalous May tropical
+      storm moving from Florida to South Carolina, requests pallbearers upon entering
+      the Oval Office
+    observed_status: listens to Nancy's strategy while tapping an unlit cigarette,
+      decisively authorizes Admiral Fitzwallace's deployment, exits with Charlie to
+      discuss the Haitian president's 48-hour hostage situation and an anomalous May
+      tropical storm moving from Florida to South Carolina, requests pallbearers upon
+      entering the Oval Office
+    beliefs: []
+    observed_traits: []
+    importance: primary
   - character_uuid: agent_f00a9f666e44
     emotional_state: Bold confidence underscoring crisis mastery
     goals:
@@ -2268,6 +2549,23 @@ events:
     - vigilant
     - loyal
     importance: primary
+  - character_uuid: agent_4566d65dd1c0
+    emotional_state: grieving, obsessive
+    goals:
+    - authorize Haiti peacekeeping strategy
+    - confront grief over Mrs. Landingham's death through storm obsession and pallbearer
+      request
+    what_happened: listens to Haiti briefing while tapping an unlit cigarette, authorizes
+      sending Fitzwallace, exits with Charlie, empathizes with besieged Haitian president,
+      fixates obsessively on anomalous May tropical storm, enters Outer Oval Office
+      and demands pallbearers
+    observed_status: listens to Haiti briefing while tapping an unlit cigarette, authorizes
+      sending Fitzwallace, exits with Charlie, empathizes with besieged Haitian president,
+      fixates obsessively on anomalous May tropical storm, enters Outer Oval Office
+      and demands pallbearers
+    beliefs: []
+    observed_traits: []
+    importance: primary
   - character_uuid: agent_f00a9f666e44
     emotional_state: Professionally composed, satisfied with strategic buy-in
     goals:
@@ -2404,6 +2702,17 @@ events:
     - efficient
     - authoritative
     - loyal
+    importance: primary
+  - character_uuid: agent_46f2bac3d00b
+    emotional_state: frenzied
+    goals:
+    - demand answers from C.J. on Haiti crisis
+    what_happened: fill the Press Room, frantically shout 'C.J.! C.J.! C.J.!' before
+      and after her briefing
+    observed_status: fill the Press Room, frantically shout 'C.J.! C.J.! C.J.!' before
+      and after her briefing
+    beliefs: []
+    observed_traits: []
     importance: primary
   object_involvements:
   - object_uuid: object_9c87cfbf3339
@@ -2970,6 +3279,17 @@ events:
     - urgent
     - precise
     importance: primary
+  - character_uuid: agent_4566d65dd1c0
+    emotional_state: attentive
+    goals:
+    - eavesdrop on the discussion of imminent market panic
+    what_happened: standing off to one side reading and only half listening initially,
+      then removes his glasses and turns to listen intently
+    observed_status: standing off to one side reading and only half listening initially,
+      then removes his glasses and turns to listen intently
+    beliefs: []
+    observed_traits: []
+    importance: primary
   - character_uuid: agent_abb5a96b8fb6
     emotional_state: Clinical detachment underscoring inevitable catastrophe
     goals:
@@ -3117,6 +3437,17 @@ events:
   theme_uuids: []
   arc_uuids: []
   participations:
+  - character_uuid: agent_4566d65dd1c0
+    emotional_state: grieving and tense
+    goals:
+    - transit urgently to the National Cathedral
+    what_happened: isolated in the Presidential limousine as the motorcade surges
+      through the streets
+    observed_status: isolated in the Presidential limousine as the motorcade surges
+      through the streets
+    beliefs: []
+    observed_traits: []
+    importance: primary
   - character_uuid: agent_2d46de497130
     emotional_state: Hyper-alert professionalism overlaying subtle tension from the
       President's grief
@@ -3226,6 +3557,19 @@ events:
   theme_uuids: []
   arc_uuids: []
   participations:
+  - character_uuid: agent_4566d65dd1c0
+    emotional_state: melancholy, bitter
+    goals:
+    - withdraw emotionally and shut down the conversation
+    what_happened: seated in the back seat of the limousine, staring out the window
+      preoccupied and melancholy, acknowledges Abbey absently, responds with sarcasm
+      'The world'll rest easier', then abruptly declares 'We're here'
+    observed_status: seated in the back seat of the limousine, staring out the window
+      preoccupied and melancholy, acknowledges Abbey absently, responds with sarcasm
+      'The world'll rest easier', then abruptly declares 'We're here'
+    beliefs: []
+    observed_traits: []
+    importance: primary
   - character_uuid: agent_738f513a2eba
     emotional_state: Poised for leverage in Bartlet's vulnerability
     goals:
@@ -3244,6 +3588,29 @@ events:
     - opportunistic
     - ambitious
     - fundraising-strong
+    importance: primary
+  - character_uuid: agent_45883b79da77
+    emotional_state: gentle, discouraged, stunned, sad
+    goals:
+    - inform Bartlet about the driver's situation
+    - update him on political pressures from party elders
+    what_happened: seated next to Bartlet, stares ahead then turns to gently inform
+      him about the driver's release and charges, relays party elders' meetings and
+      consensus on supporting Hoynes, reacts stunned and resigned to his sarcasm
+    observed_status: seated next to Bartlet, stares ahead then turns to gently inform
+      him about the driver's release and charges, relays party elders' meetings and
+      consensus on supporting Hoynes, reacts stunned and resigned to his sarcasm
+    beliefs: []
+    observed_traits: []
+    importance: primary
+  - character_uuid: agent_e5c704e824c9
+    emotional_state: ''
+    goals:
+    - plot to install Hoynes as successor if Bartlet steps aside
+    what_happened: party elder mentioned as being in meetings all morning
+    observed_status: party elder mentioned as being in meetings all morning
+    beliefs: []
+    observed_traits: []
     importance: primary
   - character_uuid: agent_af7b2558e2a2
     emotional_state: Recovering physically but shadowed by legal peril
@@ -3364,6 +3731,34 @@ events:
   theme_uuids: []
   arc_uuids: []
   participations:
+  - character_uuid: agent_4566d65dd1c0
+    emotional_state: weary, sad, emotionally numb
+    goals:
+    - transition from private isolation to public mourning
+    - attend the funeral service
+    what_happened: emerges from the limousine, walks around the back of the vehicle,
+      gazes up at the cathedral wearily and sadly, allows Abbey to take his hand without
+      reaction, ascends the steps and enters the cathedral hand-in-hand
+    observed_status: emerges from the limousine, walks around the back of the vehicle,
+      gazes up at the cathedral wearily and sadly, allows Abbey to take his hand without
+      reaction, ascends the steps and enters the cathedral hand-in-hand
+    beliefs: []
+    observed_traits: []
+    importance: primary
+  - character_uuid: agent_45883b79da77
+    emotional_state: supportive
+    goals:
+    - provide silent emotional support to Bartlet
+    - accompany Bartlet into the cathedral for the funeral
+    what_happened: emerges from the limousine on the opposite side, walks up the steps
+      to join Bartlet, gently takes his hand in support, ascends the steps and enters
+      the cathedral hand-in-hand
+    observed_status: emerges from the limousine on the opposite side, walks up the
+      steps to join Bartlet, gently takes his hand in support, ascends the steps and
+      enters the cathedral hand-in-hand
+    beliefs: []
+    observed_traits: []
+    importance: primary
   - character_uuid: agent_2d46de497130
     emotional_state: Stoically focused, masking situational gravity with operational
       impassivity
@@ -3504,8 +3899,9 @@ events:
     - loyal
     importance: primary
   - character_uuid: agent_f3078a4f1b2f
-    emotional_state: ''
-    goals: []
+    emotional_state: grieving
+    goals:
+    - attending the funeral service
     what_happened: seated together with Sam and Toby
     observed_status: seated together with Sam and Toby
     beliefs: []
@@ -3529,6 +3925,27 @@ events:
     - stoic
     - commanding
     - enduring
+    importance: primary
+  - character_uuid: agent_4566d65dd1c0
+    emotional_state: somber
+    goals:
+    - participating in the mourning service
+    what_happened: guided to front pew, sits down beside Abbey exhaling heavily, stares
+      straight ahead like a statue, half-listening and drifting back in time
+    observed_status: guided to front pew, sits down beside Abbey exhaling heavily,
+      stares straight ahead like a statue, half-listening and drifting back in time
+    beliefs: []
+    observed_traits: []
+    importance: primary
+  - character_uuid: agent_45883b79da77
+    emotional_state: somber
+    goals:
+    - supporting Bartlet during the funeral service
+    what_happened: guided by Secret Service agents and ushers to front pew, sits down
+    observed_status: guided by Secret Service agents and ushers to front pew, sits
+      down
+    beliefs: []
+    observed_traits: []
     importance: primary
   - character_uuid: agent_4ad5a1792822
     emotional_state: Echoed affection from past memory
@@ -3829,8 +4246,9 @@ events:
     - introspective
     importance: primary
   - character_uuid: agent_f3078a4f1b2f
-    emotional_state: ''
-    goals: []
+    emotional_state: somber
+    goals:
+    - attending the funeral service
     what_happened: seated together with Sam and Toby
     observed_status: seated together with Sam and Toby
     beliefs: []
@@ -3853,6 +4271,26 @@ events:
     observed_traits:
     - stoic
     - loyal
+    importance: primary
+  - character_uuid: agent_4566d65dd1c0
+    emotional_state: somber
+    goals:
+    - emotionally detaching from the collective mourning
+    what_happened: sits down beside Abbey exhaling with effort, stares vacantly ahead
+      like a statue, half-listens to the service, and drifts into a flashback
+    observed_status: sits down beside Abbey exhaling with effort, stares vacantly
+      ahead like a statue, half-listens to the service, and drifts into a flashback
+    beliefs: []
+    observed_traits: []
+    importance: primary
+  - character_uuid: agent_45883b79da77
+    emotional_state: somber
+    goals:
+    - attending the funeral service and supporting Bartlet
+    what_happened: guided to a pew in the front and sits down
+    observed_status: guided to a pew in the front and sits down
+    beliefs: []
+    observed_traits: []
     importance: primary
   - character_uuid: agent_4ad5a1792822
     emotional_state: Urgently commanding attention from memory
@@ -4059,6 +4497,18 @@ events:
   arc_uuids:
   - arc_e12e54748935
   participations:
+  - character_uuid: agent_4566d65dd1c0
+    emotional_state: distracted then mildly amused and surprised
+    goals:
+    - complete his maintenance work on the sculls
+    - defend his work ethic during banter
+    what_happened: hosing down sculls, distracted at first, banters defensively about
+      his work, expresses surprise at the pay gap revelation
+    observed_status: hosing down sculls, distracted at first, banters defensively
+      about his work, expresses surprise at the pay gap revelation
+    beliefs: []
+    observed_traits: []
+    importance: primary
   - character_uuid: agent_4ad5a1792822
     emotional_state: Playfully teasing masking bold moral conviction and assertive
       challenge
@@ -4137,6 +4587,14 @@ events:
   theme_uuids: []
   arc_uuids: []
   participations:
+  - character_uuid: agent_4566d65dd1c0
+    emotional_state: detached
+    goals: []
+    what_happened: staring straight ahead as the service proceeds, with mind elsewhere
+    observed_status: staring straight ahead as the service proceeds, with mind elsewhere
+    beliefs: []
+    observed_traits: []
+    importance: primary
   - character_uuid: agent_516ea443d8f4
     emotional_state: Somber solemnity veiling raw personal anguish
     goals:
@@ -4246,6 +4704,14 @@ events:
   theme_uuids: []
   arc_uuids: []
   participations:
+  - character_uuid: agent_4566d65dd1c0
+    emotional_state: detached
+    goals: []
+    what_happened: staring straight ahead as the service proceeds, mind elsewhere
+    observed_status: staring straight ahead as the service proceeds, mind elsewhere
+    beliefs: []
+    observed_traits: []
+    importance: primary
   - character_uuid: agent_516ea443d8f4
     emotional_state: Raw grief channeled into stoic resolve
     goals:
@@ -4358,6 +4824,20 @@ events:
   theme_uuids: []
   arc_uuids: []
   participations:
+  - character_uuid: agent_4566d65dd1c0
+    emotional_state: dismissive and sarcastic
+    goals:
+    - brush off Mrs. Landingham's issue
+    - demand concrete evidence before engaging
+    what_happened: reads while walking across school grounds, dismisses Mrs. Landingham's
+      persistence, mocks her home life and meddling, demands numbers as proof, walks
+      away
+    observed_status: reads while walking across school grounds, dismisses Mrs. Landingham's
+      persistence, mocks her home life and meddling, demands numbers as proof, walks
+      away
+    beliefs: []
+    observed_traits: []
+    importance: primary
   - character_uuid: agent_4ad5a1792822
     emotional_state: Determined resolve masking irritation at dismissal, fueled by
       righteous indignation over injustice
@@ -4455,6 +4935,15 @@ events:
   theme_uuids: []
   arc_uuids: []
   participations:
+  - character_uuid: agent_4566d65dd1c0
+    emotional_state: very sad
+    goals:
+    - mourn Mrs. Landingham's death
+    what_happened: sitting motionless in the front pew, staring straight ahead
+    observed_status: sitting motionless in the front pew, staring straight ahead
+    beliefs: []
+    observed_traits: []
+    importance: primary
   - character_uuid: agent_516ea443d8f4
     emotional_state: Solemn composure veiling surrogate son's deep personal anguish
       over Mrs. Landingham's death
@@ -4535,6 +5024,17 @@ events:
   theme_uuids: []
   arc_uuids: []
   participations:
+  - character_uuid: agent_4566d65dd1c0
+    emotional_state: irritated and evasive
+    goals:
+    - evade Mrs. Landingham's lecture by pretending to fix his car
+    what_happened: sits in stalled car, exits, lifts hood and tinkers to pretend not
+      listening, walks around her while questioning the timing
+    observed_status: sits in stalled car, exits, lifts hood and tinkers to pretend
+      not listening, walks around her while questioning the timing
+    beliefs: []
+    observed_traits: []
+    importance: primary
   - character_uuid: agent_4ad5a1792822
     emotional_state: Playfully determined, blending light-hearted challenge with righteous
       urgency to pierce Jed's evasion.
@@ -4672,11 +5172,22 @@ events:
     importance: primary
   - character_uuid: agent_f3078a4f1b2f
     emotional_state: ''
-    goals: []
+    goals:
+    - carry Mrs. Landingham's casket honorably in the funeral procession
     what_happened: hoists the casket onto shoulders as part of the pallbearers following
       Reverend Monohan in procession
     observed_status: hoists the casket onto shoulders as part of the pallbearers following
       Reverend Monohan in procession
+    beliefs: []
+    observed_traits: []
+    importance: primary
+  - character_uuid: agent_4566d65dd1c0
+    emotional_state: upset
+    goals: []
+    what_happened: looks upset and deep in thought, still lost in thought as procession
+      passes
+    observed_status: looks upset and deep in thought, still lost in thought as procession
+      passes
     beliefs: []
     observed_traits: []
     importance: primary
@@ -5079,6 +5590,27 @@ events:
     - dutiful
     - weary
     importance: primary
+  - character_uuid: agent_4566d65dd1c0
+    emotional_state: grieving, angry, betrayed, defiant
+    goals:
+    - vent grief and rage at perceived divine vindictiveness
+    - defy divine disfavor and political pressure to yield reelection to Hoynes
+    - forge unyielding resolve amid crises
+    what_happened: stands alone glaring at the altar, brushes off Leo's consolation,
+      orders cathedral sealed for solitude, delivers raw Latin-infused tirade accusing
+      God of cruelty citing Mrs. Landingham's death, Josh's shooting, lost sailors,
+      and MS lie while touting achievements, lights and defiantly grinds out a cigarette,
+      bellows 'You get Hoynes!' rejecting reelection pressure, walks down aisle holding
+      back tears
+    observed_status: stands alone glaring at the altar, brushes off Leo's consolation,
+      orders cathedral sealed for solitude, delivers raw Latin-infused tirade accusing
+      God of cruelty citing Mrs. Landingham's death, Josh's shooting, lost sailors,
+      and MS lie while touting achievements, lights and defiantly grinds out a cigarette,
+      bellows 'You get Hoynes!' rejecting reelection pressure, walks down aisle holding
+      back tears
+    beliefs: []
+    observed_traits: []
+    importance: primary
   - character_uuid: agent_738f513a2eba
     emotional_state: Scorned political lightning rod, absent yet catalyzing defiance.
     goals:
@@ -5096,6 +5628,16 @@ events:
     observed_traits:
     - ambitious
     - opportunistic
+    importance: primary
+  - character_uuid: agent_45883b79da77
+    emotional_state: grieving
+    goals: []
+    what_happened: stands silently at the back of the sanctuary with Leo and Secret
+      Service agents
+    observed_status: stands silently at the back of the sanctuary with Leo and Secret
+      Service agents
+    beliefs: []
+    observed_traits: []
     importance: primary
   - character_uuid: agent_2d46de497130
     emotional_state: Professionally detached and vigilant, betraying no personal sentiment.
@@ -5232,8 +5774,9 @@ events:
     - loyal
     importance: primary
   - character_uuid: agent_f3078a4f1b2f
-    emotional_state: ''
-    goals: []
+    emotional_state: drained, serious
+    goals:
+    - voice raw pessimism and obstacles to the President's reelection
     what_happened: sits drained and serious, proposes savage pessimistic 'Answer B'
       highlighting reelection impossibilities, questions if it's too direct
     observed_status: sits drained and serious, proposes savage pessimistic 'Answer
@@ -5248,6 +5791,14 @@ events:
       reelection responses amid MS diagnosis, investigations, and grief
     observed_status: extensively discussed as subject of press conference debate on
       reelection responses amid MS diagnosis, investigations, and grief
+    beliefs: []
+    observed_traits: []
+    importance: primary
+  - character_uuid: agent_4ad5a1792822
+    emotional_state: ''
+    goals: []
+    what_happened: condolences offered by Greg Summerhays regarding her recent death
+    observed_status: condolences offered by Greg Summerhays regarding her recent death
     beliefs: []
     observed_traits: []
     importance: primary
@@ -5453,8 +6004,9 @@ events:
     - irritated
     importance: primary
   - character_uuid: agent_f3078a4f1b2f
-    emotional_state: ''
-    goals: []
+    emotional_state: drained and serious
+    goals:
+    - Contribute to brainstorming press conference answers
     what_happened: Sitting drained and serious, agreeing with C.J., suggesting Answer
       B, commenting that it's too on the nose, follows Sam out
     observed_status: Sitting drained and serious, agreeing with C.J., suggesting Answer
@@ -5671,8 +6223,9 @@ events:
     - impatient
     importance: primary
   - character_uuid: agent_f3078a4f1b2f
-    emotional_state: ''
-    goals: []
+    emotional_state: drained and serious
+    goals:
+    - contribute to prepping the President's press conference answers
     what_happened: sits drained and serious, agrees with C.J.'s proposals, questions
       if Answer B is too direct
     observed_status: sits drained and serious, agrees with C.J.'s proposals, questions
@@ -5810,8 +6363,10 @@ events:
   arc_uuids: []
   participations:
   - character_uuid: agent_f3078a4f1b2f
-    emotional_state: ''
-    goals: []
+    emotional_state: weary, resigned, numb
+    goals:
+    - express acceptance of the current hasty reelection decision process despite
+      doubts
     what_happened: aimlessly wanders around desk and credenza, shuffles through files
       and papers, responds minimally to Donna, expresses tired resignation about decision-making
       process
@@ -5840,8 +6395,10 @@ events:
     - decisive
     importance: primary
   - character_uuid: agent_4566d65dd1c0
-    emotional_state: ''
-    goals: []
+    emotional_state: obsessive
+    goals:
+    - obtain storm details
+    - make reelection decision with Leo
     what_happened: obsessively asking for storm information from OEMB, privately deciding
       on reelection with Leo
     observed_status: obsessively asking for storm information from OEMB, privately
@@ -5931,9 +6488,18 @@ events:
   participations:
   - character_uuid: agent_4566d65dd1c0
     emotional_state: ''
-    goals: []
+    goals:
+    - deliver a public statement amid crises
     what_happened: expected to arrive at the State Department for a press conference
     observed_status: expected to arrive at the State Department for a press conference
+    beliefs: []
+    observed_traits: []
+    importance: primary
+  - character_uuid: agent_45883b79da77
+    emotional_state: ''
+    goals: []
+    what_happened: had just concluded an interview
+    observed_status: had just concluded an interview
     beliefs: []
     observed_traits: []
     importance: primary
@@ -6055,9 +6621,18 @@ events:
   participations:
   - character_uuid: agent_4566d65dd1c0
     emotional_state: ''
-    goals: []
+    goals:
+    - hold press conference at State Department
     what_happened: expected to arrive at State Department for press conference
     observed_status: expected to arrive at State Department for press conference
+    beliefs: []
+    observed_traits: []
+    importance: primary
+  - character_uuid: agent_45883b79da77
+    emotional_state: ''
+    goals: []
+    what_happened: had just concluded an interview prior to the broadcast
+    observed_status: had just concluded an interview prior to the broadcast
     beliefs: []
     observed_traits: []
     importance: primary
@@ -6208,6 +6783,15 @@ events:
     - steadfast
     - perceptive
     importance: primary
+  - character_uuid: agent_4566d65dd1c0
+    emotional_state: exhausted and vulnerable
+    goals:
+    - acquiesce to Leo's suggestion to rest
+    what_happened: walking inside Leo's office and wearily acquiescing with 'Yeah'
+    observed_status: walking inside Leo's office and wearily acquiescing with 'Yeah'
+    beliefs: []
+    observed_traits: []
+    importance: primary
   object_involvements: []
   location_involvements: []
   organization_involvements: []
@@ -6261,6 +6845,20 @@ events:
     - insistent
     - strategic
     - resilient
+    importance: primary
+  - character_uuid: agent_4566d65dd1c0
+    emotional_state: distracted and irritable
+    goals:
+    - probe the meteorological anomaly of the May tropical storm as a symbol of chaotic
+      crises
+    what_happened: looks out at the rain, summons and questions Donna about the tropical
+      storm's unprecedented nature in May, dismisses her, receives press conference
+      prep from C.J., and confirms Altman's position reluctantly
+    observed_status: looks out at the rain, summons and questions Donna about the
+      tropical storm's unprecedented nature in May, dismisses her, receives press
+      conference prep from C.J., and confirms Altman's position reluctantly
+    beliefs: []
+    observed_traits: []
     importance: primary
   - character_uuid: agent_d5524a94a33b
     emotional_state: Apprehensive politeness veiling grief-strained resolve
@@ -6435,6 +7033,20 @@ events:
     - persistent
     - urgent
     importance: primary
+  - character_uuid: agent_4566d65dd1c0
+    emotional_state: distracted
+    goals:
+    - memorize and confirm protocol to call on Lawrence Altman first to manage press
+      conference questions
+    what_happened: looking out at the rain, quizzing Donna on tropical storm facts,
+      reluctantly repeating C.J.'s instructions on calling Lawrence Altman first at
+      the press conference
+    observed_status: looking out at the rain, quizzing Donna on tropical storm facts,
+      reluctantly repeating C.J.'s instructions on calling Lawrence Altman first at
+      the press conference
+    beliefs: []
+    observed_traits: []
+    importance: primary
   - character_uuid: agent_d5524a94a33b
     emotional_state: Composed professionalism veiling apprehension
     goals:
@@ -6585,6 +7197,24 @@ events:
     - dutiful
     - discreet
     importance: primary
+  - character_uuid: agent_4566d65dd1c0
+    emotional_state: vulnerable
+    goals:
+    - confess MS diagnosis and political insecurities
+    - seek reassurance and absolution from grief
+    what_happened: Closes door behind C.J., leans on desk amid storm chaos, desperately
+      calls for Mrs. Landingham, expresses disbelief at her apparition, confesses
+      hidden MS diagnosis, admits lack of popularity in Democratic Party, engages
+      in rapid-fire exchange of U.S. social statistics on poverty, uninsured, homicide,
+      incarceration, addiction.
+    observed_status: Closes door behind C.J., leans on desk amid storm chaos, desperately
+      calls for Mrs. Landingham, expresses disbelief at her apparition, confesses
+      hidden MS diagnosis, admits lack of popularity in Democratic Party, engages
+      in rapid-fire exchange of U.S. social statistics on poverty, uninsured, homicide,
+      incarceration, addiction.
+    beliefs: []
+    observed_traits: []
+    importance: primary
   - character_uuid: agent_4ad5a1792822
     emotional_state: Stern compassion laced with unyielding resolve
     goals:
@@ -6689,8 +7319,10 @@ events:
     - exhausted-yet-duty-bound
     importance: primary
   - character_uuid: agent_4566d65dd1c0
-    emotional_state: ''
-    goals: []
+    emotional_state: vulnerable and self-pitying
+    goals:
+    - to vent grief and self-pity over MS diagnosis and party rejection
+    - to seek excuse or comfort from Mrs. Landingham's memory
     what_happened: closes the door behind C.J., leans on desk with hands among pictures,
       calls out to Mrs. Landingham in frustration, engages in dialogue confessing
       MS secret, expresses political fears, recites national poverty and social crisis
@@ -6823,7 +7455,8 @@ events:
     importance: primary
   - character_uuid: agent_f3078a4f1b2f
     emotional_state: ''
-    goals: []
+    goals:
+    - rejoin as unifying team with President
     what_happened: follows Leo, Sam, and Toby joining President walking
     observed_status: follows Leo, Sam, and Toby joining President walking
     beliefs: []
@@ -6847,8 +7480,10 @@ events:
     - steady anchor
     importance: primary
   - character_uuid: agent_4566d65dd1c0
-    emotional_state: ''
-    goals: []
+    emotional_state: resolute
+    goals:
+    - advocate for school construction funding to address systemic issues
+    - reclaim leadership purpose amid grief and crisis
     what_happened: passionately pitches school construction funding to empty chair,
       receives interrupting ultimatum from spectral Mrs. Landingham, stands and walks
       onto veranda into rain, avoids Charlie's coat, enters another door, removes
@@ -6971,8 +7606,9 @@ events:
     - introspective
     importance: primary
   - character_uuid: agent_f3078a4f1b2f
-    emotional_state: ''
-    goals: []
+    emotional_state: resigned yet unified
+    goals:
+    - demonstrate solidarity and support
     what_happened: silently follows and joins President Bartlet
     observed_status: silently follows and joins President Bartlet
     beliefs: []
@@ -6998,8 +7634,9 @@ events:
     - commanding
     importance: primary
   - character_uuid: agent_4566d65dd1c0
-    emotional_state: ''
-    goals: []
+    emotional_state: resolute
+    goals:
+    - recommit to leadership amid grief and crises
     what_happened: talks passionately about school funding needs, responds to Mrs.
       Landingham, stands and walks onto the veranda letting rain wash over his face,
       rejects Charlie's offered coat, walks back inside, sheds his soaked jacket at
@@ -7087,7 +7724,16 @@ events:
   location_uuid: null
   theme_uuids: []
   arc_uuids: []
-  participations: []
+  participations:
+  - character_uuid: agent_4566d65dd1c0
+    emotional_state: reflective
+    goals:
+    - engage in solitary reflection amid personal grief and turmoil
+    what_happened: is in the limo, immersed in the playing song lyrics
+    observed_status: is in the limo, immersed in the playing song lyrics
+    beliefs: []
+    observed_traits: []
+    importance: primary
   object_involvements: []
   location_involvements:
   - location_uuid: location_b729bdbe28a6
@@ -7154,6 +7800,26 @@ events:
     - strategically transparent
     - vulnerable in overload
     importance: primary
+  - character_uuid: agent_4566d65dd1c0
+    emotional_state: ''
+    goals:
+    - order the appointment of a Special Prosecutor
+    what_happened: Announced by C.J. to direct the Attorney General to appoint a Special
+      Prosecutor tomorrow morning.
+    observed_status: Announced by C.J. to direct the Attorney General to appoint a
+      Special Prosecutor tomorrow morning.
+    beliefs: []
+    observed_traits: []
+    importance: primary
+  - character_uuid: agent_46f2bac3d00b
+    emotional_state: frenzied
+    goals:
+    - press for more details on the announcement
+    what_happened: Clamor frenziedly in response to C.J.'s confirmation.
+    observed_status: Clamor frenziedly in response to C.J.'s confirmation.
+    beliefs: []
+    observed_traits: []
+    importance: primary
   - character_uuid: agent_de9b1c2b23b2
     emotional_state: Professionally braced for crisis escalation off-screen
     goals:
@@ -7171,6 +7837,25 @@ events:
     observed_traits:
     - institutionally dutiful
     - legally pivotal
+    importance: primary
+  - character_uuid: agent_22d456104283
+    emotional_state: determined
+    goals:
+    - obtain confirmation on Special Prosecutor rumors
+    what_happened: Probes C.J. by asking if there has been any discussion of a Special
+      Prosecutor.
+    observed_status: Probes C.J. by asking if there has been any discussion of a Special
+      Prosecutor.
+    beliefs: []
+    observed_traits: []
+    importance: primary
+  - character_uuid: agent_f5f7bc5e6dfd
+    emotional_state: ''
+    goals: []
+    what_happened: Called by C.J. for assistance during the chaotic press response.
+    observed_status: Called by C.J. for assistance during the chaotic press response.
+    beliefs: []
+    observed_traits: []
     importance: primary
   object_involvements: []
   location_involvements:
@@ -7230,6 +7915,14 @@ events:
     - loyal
     - perceptive
     - steadfast
+    importance: primary
+  - character_uuid: agent_4566d65dd1c0
+    emotional_state: grief-stricken
+    goals: []
+    what_happened: is present and observed by Leo in silence
+    observed_status: is present and observed by Leo in silence
+    beliefs: []
+    observed_traits: []
     importance: primary
   - character_uuid: agent_029caffba659
     emotional_state: Stoically focused, professionally detached amid the somber mood
@@ -7425,6 +8118,16 @@ events:
   theme_uuids: []
   arc_uuids: []
   participations:
+  - character_uuid: agent_4566d65dd1c0
+    emotional_state: defiant
+    goals: []
+    what_happened: motorcade passing by the cathedral, announced by sirens; discarded
+      cigarette butt symbolizing defiance
+    observed_status: motorcade passing by the cathedral, announced by sirens; discarded
+      cigarette butt symbolizing defiance
+    beliefs: []
+    observed_traits: []
+    importance: primary
   - character_uuid: agent_0fd203474d50
     emotional_state: Calm curiosity tinged with subtle awareness of converging worlds
     goals:
@@ -7508,6 +8211,15 @@ events:
     - composed
     - strategic
     - resolute
+    importance: primary
+  - character_uuid: agent_46f2bac3d00b
+    emotional_state: frenzied
+    goals:
+    - probe for more details on subpoenas and witness list
+    what_happened: clamor in explosive reaction to C.J.'s subpoena revelation
+    observed_status: clamor in explosive reaction to C.J.'s subpoena revelation
+    beliefs: []
+    observed_traits: []
     importance: primary
   object_involvements:
   - object_uuid: object_aeb28d529845
@@ -7610,8 +8322,9 @@ events:
     - enduring
     importance: primary
   - character_uuid: agent_f3078a4f1b2f
-    emotional_state: ''
-    goals: []
+    emotional_state: steadfast
+    goals:
+    - provide unified support and follow the President's lead in defiance
     what_happened: follows Bartlet steadfastly through the rain toward the conference
       room
     observed_status: follows Bartlet steadfastly through the rain toward the conference
@@ -7637,6 +8350,20 @@ events:
     - unflinching
     - commanding
     - loyal
+    importance: primary
+  - character_uuid: agent_4566d65dd1c0
+    emotional_state: resolute
+    goals:
+    - embody unbreakable resolve and collective defiance through rain-soaked procession
+    - brace for press showdown to reaffirm leadership
+    what_happened: arrives in the rain, slowly walks in without an umbrella, is given
+      a towel and wipes his face with it, heads for the conference room followed by
+      staff and agents
+    observed_status: arrives in the rain, slowly walks in without an umbrella, is
+      given a towel and wipes his face with it, heads for the conference room followed
+      by staff and agents
+    beliefs: []
+    observed_traits: []
     importance: primary
   - character_uuid: agent_2d46de497130
     emotional_state: Professional stoicism amid heightened operational tension
@@ -7783,8 +8510,9 @@ events:
     - intense
     importance: primary
   - character_uuid: agent_f3078a4f1b2f
-    emotional_state: ''
-    goals: []
+    emotional_state: anticipatory
+    goals:
+    - Observe political navigation
     what_happened: Watches Bartlet with others
     observed_status: Watches Bartlet with others
     beliefs: []
@@ -7808,6 +8536,20 @@ events:
     - commanding
     - prescient
     - unflinching
+    importance: primary
+  - character_uuid: agent_4566d65dd1c0
+    emotional_state: defiant and confident
+    goals:
+    - Command the narrative by choosing his own question
+    - Defy expectations amid scrutiny
+    what_happened: Walks to podium passing C.J., looks over room, ignores Lawrence
+      Altman and calls on Sandy, asks her to repeat question, slides hands off podium
+      into pockets, looks away and smiles
+    observed_status: Walks to podium passing C.J., looks over room, ignores Lawrence
+      Altman and calls on Sandy, asks her to repeat question, slides hands off podium
+      into pockets, looks away and smiles
+    beliefs: []
+    observed_traits: []
     importance: primary
   - character_uuid: agent_d5524a94a33b
     emotional_state: Anticipatory suspense tempered by grief awareness
@@ -8045,8 +8787,9 @@ events:
     - intense
     importance: primary
   - character_uuid: agent_f3078a4f1b2f
-    emotional_state: ''
-    goals: []
+    emotional_state: tense
+    goals:
+    - Observe Bartlet’s response to reelection question
     what_happened: Watches Bartlet with others.
     observed_status: Watches Bartlet with others.
     beliefs: []
@@ -8070,6 +8813,22 @@ events:
     - commanding
     - insightful
     - unyielding
+    importance: primary
+  - character_uuid: agent_4566d65dd1c0
+    emotional_state: playful
+    goals:
+    - Assert control by snubbing Altman
+    - Playfully draw out Sandy’s reelection question
+    what_happened: Walks up to podium passing C.J., looks over room seeing Altman
+      but deliberately points to Sandy in center instead, asks Sandy to repeat reelection
+      question feigning hearing issue, slides hands off podium into pockets, looks
+      away and smiles.
+    observed_status: Walks up to podium passing C.J., looks over room seeing Altman
+      but deliberately points to Sandy in center instead, asks Sandy to repeat reelection
+      question feigning hearing issue, slides hands off podium into pockets, looks
+      away and smiles.
+    beliefs: []
+    observed_traits: []
     importance: primary
   - character_uuid: agent_d5524a94a33b
     emotional_state: Tense empathy for high-wire moment
@@ -8297,8 +9056,9 @@ events:
     - observant
     importance: primary
   - character_uuid: agent_f3078a4f1b2f
-    emotional_state: ''
-    goals: []
+    emotional_state: tense
+    goals:
+    - observe President's handling of reelection question
     what_happened: Watches Bartlet's response tensely from the wings with other staff.
     observed_status: Watches Bartlet's response tensely from the wings with other
       staff.
@@ -8323,6 +9083,24 @@ events:
     - anticipatory
     - confident
     - loyal
+    importance: primary
+  - character_uuid: agent_4566d65dd1c0
+    emotional_state: resolute
+    goals:
+    - silently affirm commitment to reelection bid via defiant non-verbal gesture
+    - evoke callback to young Jed's rebellious gesture completing Mrs. Landingham's
+      influence
+    - escalate from prior surrender to resolute determination
+    what_happened: Enters and walks to podium passing C.J., surveys room and sees
+      Lawrence Altman but calls on Sandy instead, asks her to repeat reelection question,
+      slides hands off podium into pockets, looks away, and flashes a subtle resolute
+      smile.
+    observed_status: Enters and walks to podium passing C.J., surveys room and sees
+      Lawrence Altman but calls on Sandy instead, asks her to repeat reelection question,
+      slides hands off podium into pockets, looks away, and flashes a subtle resolute
+      smile.
+    beliefs: []
+    observed_traits: []
     importance: primary
   - character_uuid: agent_d5524a94a33b
     emotional_state: Tense empathy surging to quiet triumph

@@ -1,5 +1,5 @@
 # Events for The Leadership Breakfast
-# Generated: 2026-01-11T19:27:42.362655
+# Generated: 2026-01-12T09:57:19.853819
 
 episode_uuid: ep_sea_ser_the_west_wing_s02_e11
 episode_title: The Leadership Breakfast
@@ -62,11 +62,35 @@ events:
     importance: primary
   - character_uuid: agent_f3078a4f1b2f
     emotional_state: ''
-    goals: []
+    goals:
+    - ensure Rep. Jancowitz's accommodation in seating to prevent perceived snub
     what_happened: sending urgent request via Donna to reposition Rep. Jancowitz closer
       due to faulty hearing aid to avoid snub
     observed_status: sending urgent request via Donna to reposition Rep. Jancowitz
       closer due to faulty hearing aid to avoid snub
+    beliefs: []
+    observed_traits: []
+    importance: primary
+  - character_uuid: agent_d11a3b3bb6e4
+    emotional_state: ''
+    goals:
+    - contribute to complete and precise seating hierarchy
+    what_happened: suggesting placements for Finance, House Appropriations, Senate
+      Budget, Deputy Chief of Staff, Congressional Liaison, Political Liaison, Communications
+      Director, and Deputy Communications Director
+    observed_status: suggesting placements for Finance, House Appropriations, Senate
+      Budget, Deputy Chief of Staff, Congressional Liaison, Political Liaison, Communications
+      Director, and Deputy Communications Director
+    beliefs: []
+    observed_traits: []
+    importance: primary
+  - character_uuid: agent_d11a3b3bb6e4
+    emotional_state: ''
+    goals: []
+    what_happened: referenced by name in seating chart placement as Chief of Staff
+      with Deputy Chief of Staff and others adjacent
+    observed_status: referenced by name in seating chart placement as Chief of Staff
+      with Deputy Chief of Staff and others adjacent
     beliefs: []
     observed_traits: []
     importance: primary
@@ -111,6 +135,17 @@ events:
     - efficient
     - supportive
     - attentive
+    importance: primary
+  - character_uuid: agent_7a933c6f3f59
+    emotional_state: ''
+    goals:
+    - contribute to complete and precise seating hierarchy
+    what_happened: suggesting placements for committee chairs including Ways and Means,
+      Senate Appropriations, House Budget, and White House Chief of Staff
+    observed_status: suggesting placements for committee chairs including Ways and
+      Means, Senate Appropriations, House Budget, and White House Chief of Staff
+    beliefs: []
+    observed_traits: []
     importance: primary
   - character_uuid: agent_c7af130dfc7d
     emotional_state: Vulnerable due to hearing impairment (inferred)
@@ -248,8 +283,10 @@ events:
     - quick-witted
     importance: primary
   - character_uuid: agent_f3078a4f1b2f
-    emotional_state: ''
-    goals: []
+    emotional_state: playful
+    goals:
+    - erect a functional tripod for starting a fire
+    - find suitable fire starters like dried leaves or newspaper
     what_happened: working with Sam to erect a tripod of sticks in front of the fireplace,
       bantering about terminology, suggesting and agreeing on dried leaves and newspaper
       as fire starters
@@ -441,6 +478,14 @@ events:
     - exasperated
     - commanding
     importance: primary
+  - character_uuid: agent_77f1a613709a
+    emotional_state: ''
+    goals: []
+    what_happened: referenced as adjacent position for House Whip in seating chart
+    observed_status: referenced as adjacent position for House Whip in seating chart
+    beliefs: []
+    observed_traits: []
+    importance: primary
   - character_uuid: agent_7c84dea6dcc9
     emotional_state: Amused detachment savoring the ironic blunder
     goals:
@@ -459,6 +504,33 @@ events:
     - wry
     - observant
     - disruptive
+    importance: primary
+  - character_uuid: agent_d11a3b3bb6e4
+    emotional_state: ''
+    goals:
+    - support seating finalization
+    what_happened: confirms seating arrangement is set
+    observed_status: confirms seating arrangement is set
+    beliefs: []
+    observed_traits: []
+    importance: primary
+  - character_uuid: agent_d11a3b3bb6e4
+    emotional_state: ''
+    goals: []
+    what_happened: referenced as adjacent position for Jancowitz in seating chart
+    observed_status: referenced as adjacent position for Jancowitz in seating chart
+    beliefs: []
+    observed_traits: []
+    importance: primary
+  - character_uuid: agent_4566d65dd1c0
+    emotional_state: ''
+    goals: []
+    what_happened: place card overlooked and forgotten in seating arrangement until
+      revealed
+    observed_status: place card overlooked and forgotten in seating arrangement until
+      revealed
+    beliefs: []
+    observed_traits: []
     importance: primary
   - character_uuid: agent_d5524a94a33b
     emotional_state: Relieved efficiency shifting to alarmed urgency
@@ -514,6 +586,31 @@ events:
     - alert
     - instinctive
     - urgent
+    importance: primary
+  - character_uuid: agent_7a933c6f3f59
+    emotional_state: ''
+    goals:
+    - support seating finalization
+    what_happened: confirms seating arrangement is set
+    observed_status: confirms seating arrangement is set
+    beliefs: []
+    observed_traits: []
+    importance: primary
+  - character_uuid: agent_c7af130dfc7d
+    emotional_state: ''
+    goals: []
+    what_happened: referenced for repositioning across from Leo in seating chart
+    observed_status: referenced for repositioning across from Leo in seating chart
+    beliefs: []
+    observed_traits: []
+    importance: primary
+  - character_uuid: agent_0b1e5f2c4ce7
+    emotional_state: ''
+    goals: []
+    what_happened: referenced for repositioning to the left of Sam in seating chart
+    observed_status: referenced for repositioning to the left of Sam in seating chart
+    beliefs: []
+    observed_traits: []
     importance: primary
   object_involvements:
   - object_uuid: object_d8bcad093927
@@ -653,12 +750,24 @@ events:
     - worried
     importance: primary
   - character_uuid: agent_f3078a4f1b2f
-    emotional_state: ''
-    goals: []
+    emotional_state: defensive and alarmed
+    goals:
+    - Light a fire for warmth
+    - Extinguish fire before alarms trigger
     what_happened: backing away in smoke, coughing, defending the fire attempt and
       wood choice, admitting lack of knowledge, suggesting fire extinguisher
     observed_status: backing away in smoke, coughing, defending the fire attempt and
       wood choice, admitting lack of knowledge, suggesting fire extinguisher
+    beliefs: []
+    observed_traits: []
+    importance: primary
+  - character_uuid: agent_4566d65dd1c0
+    emotional_state: ''
+    goals: []
+    what_happened: significantly mentioned as potentially disturbed by alarms two
+      floors up
+    observed_status: significantly mentioned as potentially disturbed by alarms two
+      floors up
     beliefs: []
     observed_traits: []
     importance: primary
@@ -791,6 +900,17 @@ events:
     - dutiful
     - wryly ironic
     - loyal
+    importance: primary
+  - character_uuid: agent_4566d65dd1c0
+    emotional_state: angry
+    goals:
+    - confront the disturbance directly
+    what_happened: emerges from the Presidential bedroom by flinging open the door,
+      very unhappy, demands 'What?!' in frustration
+    observed_status: emerges from the Presidential bedroom by flinging open the door,
+      very unhappy, demands 'What?!' in frustration
+    beliefs: []
+    observed_traits: []
     importance: primary
   object_involvements: []
   location_involvements:
@@ -1562,6 +1682,16 @@ events:
     - vigilant
     - methodical
     - authoritative
+    importance: primary
+  - character_uuid: agent_4566d65dd1c0
+    emotional_state: ''
+    goals: []
+    what_happened: referenced as having claimed staggering stats were in Washington,
+      D.C., while actually speaking from Louisville, Kentucky
+    observed_status: referenced as having claimed staggering stats were in Washington,
+      D.C., while actually speaking from Louisville, Kentucky
+    beliefs: []
+    observed_traits: []
     importance: primary
   - character_uuid: agent_3ee4436e9a6d
     emotional_state: Neutral and professionally curious
@@ -2470,6 +2600,19 @@ events:
     - cunning
     - manipulative
     importance: primary
+  - character_uuid: agent_dad1f3cbeff2
+    emotional_state: ''
+    goals:
+    - to open the press conference proceedings
+    what_happened: speaks on the television feed from the press conference, introducing
+      participants and explaining the Senate Majority Leader's absence due to a sore
+      throat
+    observed_status: speaks on the television feed from the press conference, introducing
+      participants and explaining the Senate Majority Leader's absence due to a sore
+      throat
+    beliefs: []
+    observed_traits: []
+    importance: primary
   object_involvements:
   - object_uuid: object_fd3d02abc4fd
     description_of_involvement: The television in C.J.'s office broadcasts the live
@@ -2690,6 +2833,29 @@ events:
     - Vulnerable linchpin
     - Unwitting pawn
     importance: primary
+  - character_uuid: agent_3a2c4763d00b
+    emotional_state: ''
+    goals: []
+    what_happened: mentioned as source of press room relocation rumor, reportedly
+      called by a pollster
+    observed_status: mentioned as source of press room relocation rumor, reportedly
+      called by a pollster
+    beliefs: []
+    observed_traits: []
+    importance: primary
+  - character_uuid: agent_dad1f3cbeff2
+    emotional_state: formal
+    goals:
+    - open the Republican press conference and explain absences
+    what_happened: speaking on TV during press conference, greets attendees (Congressman
+      Dade, Congressman Shallot, Senator Hammond, Senator Ford), announces Senate
+      Majority Leader's absence due to sore throat
+    observed_status: speaking on TV during press conference, greets attendees (Congressman
+      Dade, Congressman Shallot, Senator Hammond, Senator Ford), announces Senate
+      Majority Leader's absence due to sore throat
+    beliefs: []
+    observed_traits: []
+    importance: primary
   object_involvements:
   - object_uuid: object_fd3d02abc4fd
     description_of_involvement: C.J.'s office television broadcasts the live Capitol
@@ -2747,7 +2913,21 @@ events:
   location_uuid: null
   theme_uuids: []
   arc_uuids: []
-  participations: []
+  participations:
+  - character_uuid: agent_dad1f3cbeff2
+    emotional_state: composed
+    goals:
+    - project bipartisanship and unity
+    - deflect direct probe on the divisive Patients Bill of Rights by rebranding it
+    what_happened: stages a bipartisan presser outside Capitol Hill, invites questions,
+      and rephrases the Patients Bill of Rights as the 'Comprehensive Access and Responsibility
+      Act' in response to a reporter's question
+    observed_status: stages a bipartisan presser outside Capitol Hill, invites questions,
+      and rephrases the Patients Bill of Rights as the 'Comprehensive Access and Responsibility
+      Act' in response to a reporter's question
+    beliefs: []
+    observed_traits: []
+    importance: primary
   object_involvements:
   - object_uuid: object_4bb95f180de0
     description_of_involvement: The Comprehensive Access and Responsibility Act is
@@ -2882,6 +3062,15 @@ events:
     - vulnerable
     - subordinate to staff ambition
     importance: primary
+  - character_uuid: agent_dad1f3cbeff2
+    emotional_state: evasive
+    goals:
+    - avoid specifics on litigation clause
+    what_happened: appears on T.V. evading specifics of the litigation clause discussion
+    observed_status: appears on T.V. evading specifics of the litigation clause discussion
+    beliefs: []
+    observed_traits: []
+    importance: primary
   object_involvements:
   - object_uuid: object_fd3d02abc4fd
     description_of_involvement: The television screen in C.J.'s office beams the live
@@ -2914,7 +3103,19 @@ events:
   location_uuid: null
   theme_uuids: []
   arc_uuids: []
-  participations: []
+  participations:
+  - character_uuid: agent_dad1f3cbeff2
+    emotional_state: evasive
+    goals:
+    - dodge direct admission of minimum wage hike discussions
+    - counter reporter's questions with an alternative timeline proposal
+    what_happened: initially denies that the wage hike was discussed, then evasively
+      counters by stating a preference for the same increase over three years
+    observed_status: initially denies that the wage hike was discussed, then evasively
+      counters by stating a preference for the same increase over three years
+    beliefs: []
+    observed_traits: []
+    importance: primary
   object_involvements: []
   location_involvements:
   - location_uuid: location_9efa0a35bac8
@@ -3047,6 +3248,15 @@ events:
     - aggressive
     - strategic
     - combative
+    importance: primary
+  - character_uuid: agent_dad1f3cbeff2
+    emotional_state: ''
+    goals:
+    - facilitate the ambush by calling on Simon to deliver the quote
+    what_happened: responds to Greg's question, calls on Simon in the back
+    observed_status: responds to Greg's question, calls on Simon in the back
+    beliefs: []
+    observed_traits: []
     importance: primary
   object_involvements:
   - object_uuid: object_00c4c6795eb9
@@ -3871,8 +4081,9 @@ events:
     - introspective
     importance: primary
   - character_uuid: agent_f3078a4f1b2f
-    emotional_state: ''
-    goals: []
+    emotional_state: defeated
+    goals:
+    - huddle silently while awaiting reckoning
     what_happened: waiting outside Leo's office in silence
     observed_status: waiting outside Leo's office in silence
     beliefs: []

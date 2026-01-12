@@ -1,5 +1,5 @@
 # Events for Bartlet's Third State of the Union
-# Generated: 2026-01-11T19:27:43.253792
+# Generated: 2026-01-12T09:57:20.688081
 
 episode_uuid: ep_sea_ser_the_west_wing_s02_e13
 episode_title: Bartlet's Third State of the Union
@@ -126,6 +126,19 @@ events:
     - relentless
     - authoritative
     importance: primary
+  - character_uuid: agent_4566d65dd1c0
+    emotional_state: nervous but composed
+    goals:
+    - finalize speech tweaks and vote deal before departing for SOTU
+    what_happened: enters Oval rolling down sleeves looking nervous, asks status,
+      approves speech changes and deal, confirms Abbey's seat, helped with suit jacket
+      by Charlie, enters middle limo
+    observed_status: enters Oval rolling down sleeves looking nervous, asks status,
+      approves speech changes and deal, confirms Abbey's seat, helped with suit jacket
+      by Charlie, enters middle limo
+    beliefs: []
+    observed_traits: []
+    importance: primary
   - character_uuid: agent_45883b79da77
     emotional_state: Presumed composed in position
     goals:
@@ -182,7 +195,8 @@ events:
     importance: primary
   - character_uuid: agent_83fa547880b6
     emotional_state: ''
-    goals: []
+    goals:
+    - inform audience about SOTU proceedings
     what_happened: provides commentary on TV about President Bartlet's upcoming State
       of the Union address and House protocols
     observed_status: provides commentary on TV about President Bartlet's upcoming
@@ -492,6 +506,18 @@ events:
     - methodical
     - protective
     importance: primary
+  - character_uuid: agent_4566d65dd1c0
+    emotional_state: nervous
+    goals:
+    - approve final SOTU edits and confirm preparations including Abbey's seating
+      amid visible anxiety
+    what_happened: enters rolling down sleeves, asks status, approves cut of 'vigorously',
+      checks nervously on Abbey's seating while Charlie helps with jacket
+    observed_status: enters rolling down sleeves, asks status, approves cut of 'vigorously',
+      checks nervously on Abbey's seating while Charlie helps with jacket
+    beliefs: []
+    observed_traits: []
+    importance: primary
   - character_uuid: agent_45883b79da77
     emotional_state: Off-screen reliability
     goals:
@@ -504,6 +530,14 @@ events:
     - Seating ritual calms pre-speech nerves
     observed_traits:
     - stabilizing presence
+    importance: primary
+  - character_uuid: agent_4ad5a1792822
+    emotional_state: ''
+    goals: []
+    what_happened: quickly moves through the Outer Oval Office with other staffers
+    observed_status: quickly moves through the Outer Oval Office with other staffers
+    beliefs: []
+    observed_traits: []
     importance: primary
   - character_uuid: agent_12db9dc6462c
     emotional_state: Energized by momentum
@@ -592,6 +626,16 @@ events:
     observed_traits:
     - brinkmanship
     - demanding
+    importance: primary
+  - character_uuid: agent_e143a21f9e13
+    emotional_state: ''
+    goals: []
+    what_happened: mentioned by reporter as the Doorkeeper of the House providing
+      introduction
+    observed_status: mentioned by reporter as the Doorkeeper of the House providing
+      introduction
+    beliefs: []
+    observed_traits: []
     importance: primary
   object_involvements:
   - object_uuid: object_ba1b0ee90153
@@ -745,6 +789,16 @@ events:
     - strategic integrator
     - urgent adapter
     importance: primary
+  - character_uuid: agent_e9dd0ae36832
+    emotional_state: ''
+    goals: []
+    what_happened: follows Bartlet into Oval Office, helps with suit jacket, confirms
+      Abbey is in her seat
+    observed_status: follows Bartlet into Oval Office, helps with suit jacket, confirms
+      Abbey is in her seat
+    beliefs: []
+    observed_traits: []
+    importance: primary
   - character_uuid: agent_d11a3b3bb6e4
     emotional_state: Stern focus veiling high-stakes impatience
     goals:
@@ -765,6 +819,35 @@ events:
     - methodical verifier
     - commanding orchestrator
     - pragmatic enforcer
+    importance: primary
+  - character_uuid: agent_4566d65dd1c0
+    emotional_state: nervous
+    goals:
+    - approve political horse-trade to lock in Blue Ribbon support ahead of SOTU
+    what_happened: enters Oval Office rolling down sleeves, approves speech edits
+      and McGowan deal, nervously prepares with Charlie's help for suit jacket and
+      SOTU
+    observed_status: enters Oval Office rolling down sleeves, approves speech edits
+      and McGowan deal, nervously prepares with Charlie's help for suit jacket and
+      SOTU
+    beliefs: []
+    observed_traits: []
+    importance: primary
+  - character_uuid: agent_45883b79da77
+    emotional_state: ''
+    goals: []
+    what_happened: already seated for State of the Union (confirmed by Charlie)
+    observed_status: already seated for State of the Union (confirmed by Charlie)
+    beliefs: []
+    observed_traits: []
+    importance: primary
+  - character_uuid: agent_4ad5a1792822
+    emotional_state: ''
+    goals: []
+    what_happened: quickly moves through the Outer Oval Office with other staffers
+    observed_status: quickly moves through the Outer Oval Office with other staffers
+    beliefs: []
+    observed_traits: []
     importance: primary
   - character_uuid: agent_12db9dc6462c
     emotional_state: Alert readiness primed for dispatch
@@ -795,6 +878,48 @@ events:
     beliefs: []
     observed_traits: []
     importance: primary
+  - character_uuid: agent_f0096de01dc5
+    emotional_state: ''
+    goals: []
+    what_happened: addressed by Toby in Oval Office during speech edits
+    observed_status: addressed by Toby in Oval Office during speech edits
+    beliefs: []
+    observed_traits: []
+    importance: primary
+  - character_uuid: agent_78e097894ddd
+    emotional_state: ''
+    goals: []
+    what_happened: questions removal of 'vigorously pursue', notes time constraints
+      multiple times
+    observed_status: questions removal of 'vigorously pursue', notes time constraints
+      multiple times
+    beliefs: []
+    observed_traits: []
+    importance: primary
+  - character_uuid: agent_78e097894ddd
+    emotional_state: ''
+    goals: []
+    what_happened: asks if speech changes are complete
+    observed_status: asks if speech changes are complete
+    beliefs: []
+    observed_traits: []
+    importance: primary
+  - character_uuid: agent_78e097894ddd
+    emotional_state: ''
+    goals: []
+    what_happened: affirms speech changes are done
+    observed_status: affirms speech changes are done
+    beliefs: []
+    observed_traits: []
+    importance: primary
+  - character_uuid: agent_0d5b7c45ce0c
+    emotional_state: ''
+    goals: []
+    what_happened: mentioned as commentator praising speech as political high point
+    observed_status: mentioned as commentator praising speech as political high point
+    beliefs: []
+    observed_traits: []
+    importance: primary
   - character_uuid: agent_356197197d07
     emotional_state: Satisfied extraction yielding to agreement
     goals:
@@ -812,6 +937,14 @@ events:
     observed_traits:
     - shrewd bargainer
     - leveraged holdout
+    importance: primary
+  - character_uuid: agent_e143a21f9e13
+    emotional_state: ''
+    goals: []
+    what_happened: mentioned as Doorkeeper of the House who introduces President
+    observed_status: mentioned as Doorkeeper of the House who introduces President
+    beliefs: []
+    observed_traits: []
     importance: primary
   object_involvements:
   - object_uuid: object_0be46dbdd316
@@ -1011,6 +1144,19 @@ events:
     - relentless
     - pragmatic
     - commanding
+    importance: primary
+  - character_uuid: agent_4566d65dd1c0
+    emotional_state: nervous
+    goals:
+    - greenlight speech edits and Blue Ribbon deal to proceed to State of the Union
+    what_happened: entering while rolling down sleeves, inquiring on status, greenlighting
+      speech edits and deal, looking nervous as helped into suit jacket, confirming
+      Abbey's presence
+    observed_status: entering while rolling down sleeves, inquiring on status, greenlighting
+      speech edits and deal, looking nervous as helped into suit jacket, confirming
+      Abbey's presence
+    beliefs: []
+    observed_traits: []
     importance: primary
   - character_uuid: agent_45883b79da77
     emotional_state: Implied poised readiness
@@ -1305,8 +1451,10 @@ events:
   - arc_e625677753c6
   participations:
   - character_uuid: agent_f3078a4f1b2f
-    emotional_state: ''
-    goals: []
+    emotional_state: nervous and paranoid
+    goals:
+    - ensure professional polling for the President
+    - manage pre-State of the Union anxiety and deadlines
     what_happened: paces nervously, confronts female caller about chewing gum, sarcastically
       retorts to male caller as 'Mr. Helper', argues with Donna about the team's accents
       and professionalism, yells at the room about accents and speech, nervously checks
@@ -1466,8 +1614,10 @@ events:
   arc_uuids: []
   participations:
   - character_uuid: agent_f3078a4f1b2f
-    emotional_state: ''
-    goals: []
+    emotional_state: anxious
+    goals:
+    - validate pollsters' competence and reliability for the President's poll
+    - rush to the State of the Union address
     what_happened: paces nervously, interrogates Female Caller about chewing gum,
       questions Male Caller, yells at pollsters about accents and power of speech,
       nervously checks watch, storms off fixating on needing to be at the State of
@@ -1755,6 +1905,15 @@ events:
     - Pragmatic
     - Decisive
     importance: primary
+  - character_uuid: agent_4566d65dd1c0
+    emotional_state: concise
+    goals:
+    - approve Leo's initiative to establish the commission
+    what_happened: nodding and verbally approving ('Yeah') Leo's phone conversation
+    observed_status: nodding and verbally approving ('Yeah') Leo's phone conversation
+    beliefs: []
+    observed_traits: []
+    importance: primary
   - character_uuid: agent_8265f9568328
     emotional_state: Professionally aggressive curiosity
     goals:
@@ -1886,6 +2045,15 @@ events:
     - commanding
     - pragmatic
     - relentless
+    importance: primary
+  - character_uuid: agent_4566d65dd1c0
+    emotional_state: ''
+    goals:
+    - affirm Leo's coordination of the Blue Ribbon Commission
+    what_happened: nodding affirmatively and agreeing with 'Yeah'
+    observed_status: nodding affirmatively and agreeing with 'Yeah'
+    beliefs: []
+    observed_traits: []
     importance: primary
   - character_uuid: agent_8265f9568328
     emotional_state: Professionally aggressive and expectant
@@ -2028,9 +2196,22 @@ events:
     - deflective
     - commanding
     importance: primary
-  - character_uuid: agent_83fa547880b6
+  - character_uuid: agent_4566d65dd1c0
     emotional_state: ''
-    goals: []
+    goals:
+    - Secure and announce bipartisan support for the Entitlements Commission in the
+      SOTU amid high-wire political maneuvering
+    what_happened: Referenced as the one who will announce the bipartisan Blue Ribbon
+      Commission during the State of the Union address.
+    observed_status: Referenced as the one who will announce the bipartisan Blue Ribbon
+      Commission during the State of the Union address.
+    beliefs: []
+    observed_traits: []
+    importance: primary
+  - character_uuid: agent_83fa547880b6
+    emotional_state: skeptical
+    goals:
+    - Probe the suspicious timing of the commission announcement
     what_happened: Questions C.J. on the last-minute addition of the commission and
       Capital Beat's live post-address broadcast from the White House.
     observed_status: Questions C.J. on the last-minute addition of the commission
@@ -2039,8 +2220,10 @@ events:
     observed_traits: []
     importance: primary
   - character_uuid: agent_83fa547880b6
-    emotional_state: ''
-    goals: []
+    emotional_state: skeptical
+    goals:
+    - Elicit details on Democratic leadership buy-in and perceived favoritism toward
+      Capital Beat
     what_happened: Persistently questions C.J. on the last-minute nature of the commission,
       confirmation of Democratic leadership support, and special treatment for Capital
       Beat.
@@ -2273,6 +2456,22 @@ events:
     - composed
     - loyal
     - stoic
+    importance: primary
+  - character_uuid: agent_4566d65dd1c0
+    emotional_state: nervous
+    goals:
+    - proceed to deliver the State of the Union address
+    - prepare spiritually before entering chamber
+    what_happened: passes with entourage, stoops to tie shoelace, receives leather
+      portfolio from Toby, thanks Toby, shakes Toby and Sam's hands, tries to hide
+      nervousness, nods to Finney, pauses to pray and cross himself, says 'Amen',
+      requests Mr. Finney tell the Speaker he'd like to see him, enters chamber
+    observed_status: passes with entourage, stoops to tie shoelace, receives leather
+      portfolio from Toby, thanks Toby, shakes Toby and Sam's hands, tries to hide
+      nervousness, nods to Finney, pauses to pray and cross himself, says 'Amen',
+      requests Mr. Finney tell the Speaker he'd like to see him, enters chamber
+    beliefs: []
+    observed_traits: []
     importance: primary
   - character_uuid: agent_27fa58e83ea5
     emotional_state: Focused operational intensity under pressure
@@ -2531,6 +2730,25 @@ events:
     - Vigilant
     - Proudly paternal
     importance: primary
+  - character_uuid: agent_4566d65dd1c0
+    emotional_state: nervous and vulnerable
+    goals:
+    - pause for vulnerable ritual of tying shoelace and prayer with Charlie for strength
+      amid nerves
+    - transition composed to chamber entrance
+    what_happened: stoops to tie shoelace amid entourage passage, receives leather
+      portfolio from Toby, shakes hands with Toby and Sam, walks with group amid applause
+      while hiding nervousness, nods to Finney, bows head in prayer crossing himself
+      and saying 'Amen', requests Mr. Finney tell the Speaker he'd like to see him,
+      enters chamber after announcement
+    observed_status: stoops to tie shoelace amid entourage passage, receives leather
+      portfolio from Toby, shakes hands with Toby and Sam, walks with group amid applause
+      while hiding nervousness, nods to Finney, bows head in prayer crossing himself
+      and saying 'Amen', requests Mr. Finney tell the Speaker he'd like to see him,
+      enters chamber after announcement
+    beliefs: []
+    observed_traits: []
+    importance: primary
   - character_uuid: agent_27fa58e83ea5
     emotional_state: Heightened focus amid operational pressure
     goals:
@@ -2684,7 +2902,17 @@ events:
   location_uuid: null
   theme_uuids: []
   arc_uuids: []
-  participations: []
+  participations:
+  - character_uuid: agent_4566d65dd1c0
+    emotional_state: resolute
+    goals:
+    - establish visionary idealism and rhetorical power
+    - serve as tonal bridge juxtaposing presidential rhetoric against upcoming crises
+    what_happened: delivering commanding voiceover of State of the Union excerpt
+    observed_status: delivering commanding voiceover of State of the Union excerpt
+    beliefs: []
+    observed_traits: []
+    importance: primary
   object_involvements: []
   location_involvements:
   - location_uuid: location_d2becabeecf9
@@ -2728,14 +2956,29 @@ events:
   arc_uuids: []
   participations:
   - character_uuid: agent_f3078a4f1b2f
-    emotional_state: ''
-    goals: []
+    emotional_state: euphoric
+    goals:
+    - celebrate and share excitement over the President's triumphant State of the
+      Union address
     what_happened: sits on a stairway with Donna watching the President's address
       on a monitor, surrounded by callers; stands hollering and clapping after the
       speech; says to Donna 'Tell me about it.'
     observed_status: sits on a stairway with Donna watching the President's address
       on a monitor, surrounded by callers; stands hollering and clapping after the
       speech; says to Donna 'Tell me about it.'
+    beliefs: []
+    observed_traits: []
+    importance: primary
+  - character_uuid: agent_4566d65dd1c0
+    emotional_state: triumphant
+    goals:
+    - deliver a unifying and inspirational close to the State of the Union address
+    what_happened: delivers the State of the Union address, culminating in the lines
+      '...Our best days lie ahead. God bless you and God bless the United States of
+      America!' which is watched on a monitor (referred to as 'He' by Donna)
+    observed_status: delivers the State of the Union address, culminating in the lines
+      '...Our best days lie ahead. God bless you and God bless the United States of
+      America!' which is watched on a monitor (referred to as 'He' by Donna)
     beliefs: []
     observed_traits: []
     importance: primary
@@ -3053,6 +3296,18 @@ events:
     - ' unflappable competence'
     - dutiful despite frustration
     - wryly self-aware
+    importance: primary
+  - character_uuid: agent_4566d65dd1c0
+    emotional_state: ''
+    goals:
+    - resolve mystery of the uncashed check without directly confronting the First
+      Lady
+    what_happened: discovered an uncashed $500 check written by the First Lady while
+      balancing his checkbook to relax; delegates inquiry via note
+    observed_status: discovered an uncashed $500 check written by the First Lady while
+      balancing his checkbook to relax; delegates inquiry via note
+    beliefs: []
+    observed_traits: []
     importance: primary
   - character_uuid: agent_45883b79da77
     emotional_state: Anticipated volatility and anger toward inquiries.
@@ -3406,7 +3661,8 @@ events:
     importance: primary
   - character_uuid: agent_f3078a4f1b2f
     emotional_state: ''
-    goals: []
+    goals:
+    - deliver polling data on SOTU reactions
     what_happened: Referenced as providing early polling numbers soon with Joey.
     observed_status: Referenced as providing early polling numbers soon with Joey.
     beliefs: []
@@ -3432,6 +3688,17 @@ events:
     - pragmatic
     - commanding
     - strategic
+    importance: primary
+  - character_uuid: agent_4566d65dd1c0
+    emotional_state: ''
+    goals:
+    - honor the police officer publicly
+    what_happened: Referenced as having pointed to the police officer and asked him
+      to stand during event.
+    observed_status: Referenced as having pointed to the police officer and asked
+      him to stand during event.
+    beliefs: []
+    observed_traits: []
     importance: primary
   - character_uuid: agent_256dcf4afffe
     emotional_state: Urgent professionalism masking underlying tension
@@ -3484,6 +3751,19 @@ events:
     - ebullient
     - loyal
     - impulsive
+    importance: primary
+  - character_uuid: agent_3c1bc6e354cb
+    emotional_state: ''
+    goals:
+    - attend reception as honored guest
+    what_happened: Referenced as honored by President (pointed to and asked to stand),
+      confirmed present at reception, subject of scandal-handling plan (C.J. to talk,
+      no photos near President).
+    observed_status: Referenced as honored by President (pointed to and asked to stand),
+      confirmed present at reception, subject of scandal-handling plan (C.J. to talk,
+      no photos near President).
+    beliefs: []
+    observed_traits: []
     importance: primary
   object_involvements: []
   location_involvements:
@@ -3608,6 +3888,16 @@ events:
     - strategically terse
     - relentlessly pragmatic
     importance: primary
+  - character_uuid: agent_4566d65dd1c0
+    emotional_state: ''
+    goals: []
+    what_happened: Referenced by Leo as having pointed to and asked the police officer
+      to stand, creating scandal exposure risk.
+    observed_status: Referenced by Leo as having pointed to and asked the police officer
+      to stand, creating scandal exposure risk.
+    beliefs: []
+    observed_traits: []
+    importance: primary
   - character_uuid: agent_256dcf4afffe
     emotional_state: calm urgency underscoring duty
     goals:
@@ -3664,6 +3954,18 @@ events:
     - fervently loyal
     - spontaneous
     importance: primary
+  - character_uuid: agent_3c1bc6e354cb
+    emotional_state: ''
+    goals: []
+    what_happened: Significantly discussed as the individual spotlighted by the President,
+      posing a scandal threat to be managed by C.J. with no photos permitted near
+      the President.
+    observed_status: Significantly discussed as the individual spotlighted by the
+      President, posing a scandal threat to be managed by C.J. with no photos permitted
+      near the President.
+    beliefs: []
+    observed_traits: []
+    importance: primary
   object_involvements: []
   location_involvements:
   - location_uuid: location_f6d14322bba4
@@ -3716,6 +4018,17 @@ events:
   - theme_b1984582361b
   arc_uuids: []
   participations:
+  - character_uuid: agent_57456b21c104
+    emotional_state: ''
+    goals:
+    - talk to the police officer (inferred)
+    what_happened: referenced by Sam as having been talked to and suggested to handle
+      the police officer
+    observed_status: referenced by Sam as having been talked to and suggested to handle
+      the police officer
+    beliefs: []
+    observed_traits: []
+    importance: primary
   - character_uuid: agent_77f1a613709a
     emotional_state: Competent and briefed
     goals:
@@ -3730,7 +4043,8 @@ events:
     importance: primary
   - character_uuid: agent_f3078a4f1b2f
     emotional_state: ''
-    goals: []
+    goals:
+    - provide early polling numbers
     what_happened: referenced by Leo as source of early polling numbers with Joey
     observed_status: referenced by Leo as source of early polling numbers with Joey
     beliefs: []
@@ -3754,6 +4068,16 @@ events:
     - authoritative
     - pragmatic
     - responsive
+    importance: primary
+  - character_uuid: agent_4566d65dd1c0
+    emotional_state: ''
+    goals: []
+    what_happened: referenced as having pointed to and asked the police officer to
+      stand during speech
+    observed_status: referenced as having pointed to and asked the police officer
+      to stand during speech
+    beliefs: []
+    observed_traits: []
     importance: primary
   - character_uuid: agent_256dcf4afffe
     emotional_state: Urgent professionalism veiling crisis gravity
@@ -3784,6 +4108,27 @@ events:
       numbers amid scandal talk.
     beliefs:
     - Numbers guide political adjustments
+    observed_traits: []
+    importance: primary
+  - character_uuid: agent_b3f4ed5db370
+    emotional_state: excited
+    goals:
+    - welcome and celebrate Sam at the reception
+    what_happened: announces and cheers for Sam Seaborn upon his entrance
+    observed_status: announces and cheers for Sam Seaborn upon his entrance
+    beliefs: []
+    observed_traits: []
+    importance: primary
+  - character_uuid: agent_3c1bc6e354cb
+    emotional_state: ''
+    goals: []
+    what_happened: discussed as the individual lauded by President who was pointed
+      to and asked to stand, checked if present, flagged for no photos near President
+      due to scandal risk
+    observed_status: discussed as the individual lauded by President who was pointed
+      to and asked to stand, checked if present, flagged for no photos near President
+      due to scandal risk
+    beliefs: []
     observed_traits: []
     importance: primary
   object_involvements: []
@@ -4330,8 +4675,12 @@ events:
   - arc_4cffee58da45
   participations:
   - character_uuid: agent_f3078a4f1b2f
-    emotional_state: ''
-    goals: []
+    emotional_state: frustrated
+    goals:
+    - reveal Jack Sloane's reprimand history to Donna and Joey to highlight potential
+      scandal
+    - obtain early poll numbers
+    - vent anxiety over polling impact from cop news cycle
     what_happened: walks up and reveals Jack Sloane's past reprimand for excessive
       violence, paces while demanding poll numbers, vents frustration over cop news
       dragging down polls, sits at desk, grabs phone
@@ -4532,14 +4881,26 @@ events:
   arc_uuids: []
   participations:
   - character_uuid: agent_f3078a4f1b2f
-    emotional_state: ''
-    goals: []
+    emotional_state: frustrated
+    goals:
+    - obtain early poll numbers
+    - inform team about Jack Sloane scandal to amplify pre-SOTU anxiety
     what_happened: walks up to brief Donna and Joey on Jack Sloane's reprimand, paces
       while demanding early poll numbers from Joey, vents frustration about media
       impact on polls, sits at a desk, grabs his phone
     observed_status: walks up to brief Donna and Joey on Jack Sloane's reprimand,
       paces while demanding early poll numbers from Joey, vents frustration about
       media impact on polls, sits at a desk, grabs his phone
+    beliefs: []
+    observed_traits: []
+    importance: primary
+  - character_uuid: agent_4566d65dd1c0
+    emotional_state: ''
+    goals: []
+    what_happened: referenced as recognizing invited guests including Jack Sloane
+      during SOTU speech
+    observed_status: referenced as recognizing invited guests including Jack Sloane
+      during SOTU speech
     beliefs: []
     observed_traits: []
     importance: primary
@@ -4751,6 +5112,16 @@ events:
     - strategic
     - authoritative
     importance: primary
+  - character_uuid: agent_4566d65dd1c0
+    emotional_state: ''
+    goals: []
+    what_happened: referenced on TV as the subject of predictions for a State of the
+      Union speech bump.
+    observed_status: referenced on TV as the subject of predictions for a State of
+      the Union speech bump.
+    beliefs: []
+    observed_traits: []
+    importance: primary
   - character_uuid: agent_8265f9568328
     emotional_state: Energetically probing and insistent
     goals:
@@ -4900,6 +5271,14 @@ events:
     beliefs:
     - Subtlety preserves White House composure
     - Hierarchy ensures rapid mobilization
+    observed_traits: []
+    importance: primary
+  - character_uuid: agent_4566d65dd1c0
+    emotional_state: ''
+    goals: []
+    what_happened: referenced by Mark on T.V. regarding speech bump predictions
+    observed_status: referenced by Mark on T.V. regarding speech bump predictions
+    beliefs: []
     observed_traits: []
     importance: primary
   - character_uuid: agent_8265f9568328
@@ -5061,6 +5440,17 @@ events:
     - decisive
     - relentlessly commanding
     importance: primary
+  - character_uuid: agent_ab81c01de34b
+    emotional_state: professional
+    goals:
+    - Provide accurate update on agent verification
+    what_happened: Reports verification status of captured agents McGraff and Nunn,
+      notes inability to verify the other three
+    observed_status: Reports verification status of captured agents McGraff and Nunn,
+      notes inability to verify the other three
+    beliefs: []
+    observed_traits: []
+    importance: primary
   - character_uuid: agent_cf077dc4eba5
     emotional_state: Concerned optimism tempered by strategic realism
     goals:
@@ -5132,6 +5522,26 @@ events:
       as potential diplomatic leverage in CRF talks.
     observed_status: Jeffe referenced by Mickey as Nelson Guerra's close friend, surfacing
       as potential diplomatic leverage in CRF talks.
+    beliefs: []
+    observed_traits: []
+    importance: primary
+  - character_uuid: agent_3c1bc6e354cb
+    emotional_state: ''
+    goals:
+    - Execute Leo's orders promptly
+    what_happened: Acknowledges Leo's orders to get intel on Nelson Guerra and to
+      alert Tres Encinas forces
+    observed_status: Acknowledges Leo's orders to get intel on Nelson Guerra and to
+      alert Tres Encinas forces
+    beliefs: []
+    observed_traits: []
+    importance: primary
+  - character_uuid: agent_3c1bc6e354cb
+    emotional_state: ''
+    goals:
+    - Report accurate troop numbers at Tres Encinas
+    what_happened: Reports 6 commanders and 13 support personnel at Tres Encinas
+    observed_status: Reports 6 commanders and 13 support personnel at Tres Encinas
     beliefs: []
     observed_traits: []
     importance: primary
@@ -5413,6 +5823,26 @@ events:
     observed_traits:
     - connected
     - loyal
+    importance: primary
+  - character_uuid: agent_3c1bc6e354cb
+    emotional_state: ''
+    goals:
+    - Execute Leo's orders promptly
+    what_happened: Acknowledges Leo's order to get intel on Nelson Guerra and to notify
+      the 19 personnel at Tres Encinas.
+    observed_status: Acknowledges Leo's order to get intel on Nelson Guerra and to
+      notify the 19 personnel at Tres Encinas.
+    beliefs: []
+    observed_traits: []
+    importance: primary
+  - character_uuid: agent_3c1bc6e354cb
+    emotional_state: ''
+    goals:
+    - Provide precise count of personnel at Tres Encinas
+    what_happened: Specifies 6 commanders and 13 support personnel at Tres Encinas.
+    observed_status: Specifies 6 commanders and 13 support personnel at Tres Encinas.
+    beliefs: []
+    observed_traits: []
     importance: primary
   object_involvements: []
   location_involvements:
@@ -5701,6 +6131,26 @@ events:
     - connected
     - influential
     importance: primary
+  - character_uuid: agent_3c1bc6e354cb
+    emotional_state: ''
+    goals:
+    - Execute Leo's orders promptly
+    what_happened: Acknowledges Leo's order to gather intel on Nelson Guerra and to
+      alert operatives at Tres Encinas.
+    observed_status: Acknowledges Leo's order to gather intel on Nelson Guerra and
+      to alert operatives at Tres Encinas.
+    beliefs: []
+    observed_traits: []
+    importance: primary
+  - character_uuid: agent_3c1bc6e354cb
+    emotional_state: ''
+    goals:
+    - Provide precise count of personnel at Tres Encinas
+    what_happened: Reports 6 commanders and 13 support personnel at Tres Encinas.
+    observed_status: Reports 6 commanders and 13 support personnel at Tres Encinas.
+    beliefs: []
+    observed_traits: []
+    importance: primary
   object_involvements: []
   location_involvements:
   - location_uuid: location_f6d14322bba4
@@ -5846,6 +6296,17 @@ events:
   theme_uuids: []
   arc_uuids: []
   participations:
+  - character_uuid: agent_4566d65dd1c0
+    emotional_state: ''
+    goals:
+    - Promote school uniforms in public schools to improve focus on education
+    what_happened: State of the Union address clip played, endorsing school uniforms
+      to prioritize education over fashion.
+    observed_status: State of the Union address clip played, endorsing school uniforms
+      to prioritize education over fashion.
+    beliefs: []
+    observed_traits: []
+    importance: primary
   - character_uuid: agent_8265f9568328
     emotional_state: Amused delight masking sharp journalistic opportunism
     goals:
@@ -6018,6 +6479,16 @@ events:
     - vigilant
     - collegial
     importance: primary
+  - character_uuid: agent_4566d65dd1c0
+    emotional_state: ''
+    goals: []
+    what_happened: subject of Ainsley's televised critique regarding his school uniform
+      proposal (mentioned)
+    observed_status: subject of Ainsley's televised critique regarding his school
+      uniform proposal (mentioned)
+    beliefs: []
+    observed_traits: []
+    importance: primary
   - character_uuid: agent_2905f54e51ac
     emotional_state: Confident forthrightness with gracious diplomacy
     goals:
@@ -6079,6 +6550,22 @@ events:
   theme_uuids: []
   arc_uuids: []
   participations:
+  - character_uuid: agent_57456b21c104
+    emotional_state: ''
+    goals: []
+    what_happened: Mentioned by Leo as handling the Jack Sloane issue
+    observed_status: Mentioned by Leo as handling the Jack Sloane issue
+    beliefs: []
+    observed_traits: []
+    importance: primary
+  - character_uuid: agent_77f1a613709a
+    emotional_state: ''
+    goals: []
+    what_happened: Credited by Abbey for writing her toast line
+    observed_status: Credited by Abbey for writing her toast line
+    beliefs: []
+    observed_traits: []
+    importance: primary
   - character_uuid: agent_7c84dea6dcc9
     emotional_state: Triumphantly received publicly but viscerally uneasy from summons
     goals:
@@ -6239,6 +6726,22 @@ events:
   theme_uuids: []
   arc_uuids: []
   participations:
+  - character_uuid: agent_57456b21c104
+    emotional_state: ''
+    goals: []
+    what_happened: mentioned by Leo as handling the Jack Sloane situation
+    observed_status: mentioned by Leo as handling the Jack Sloane situation
+    beliefs: []
+    observed_traits: []
+    importance: primary
+  - character_uuid: agent_77f1a613709a
+    emotional_state: ''
+    goals: []
+    what_happened: credited by Abbey for writing a line in her toast
+    observed_status: credited by Abbey for writing a line in her toast
+    beliefs: []
+    observed_traits: []
+    importance: primary
   - character_uuid: agent_7c84dea6dcc9
     emotional_state: Apprehensive discomfort beneath triumphant basking
     goals:
@@ -6285,6 +6788,14 @@ events:
     observed_traits:
     - defensive
     - composed
+    importance: primary
+  - character_uuid: agent_4566d65dd1c0
+    emotional_state: ''
+    goals: []
+    what_happened: mentioned by Abbey as arriving later for her official toast
+    observed_status: mentioned by Abbey as arriving later for her official toast
+    beliefs: []
+    observed_traits: []
     importance: primary
   - character_uuid: agent_45883b79da77
     emotional_state: Seething fury veiled by strained civility and public facade
@@ -6518,8 +7029,9 @@ events:
   arc_uuids: []
   participations:
   - character_uuid: agent_f3078a4f1b2f
-    emotional_state: ''
-    goals: []
+    emotional_state: anxious
+    goals:
+    - monitor the Capitol Beat debate while distracting himself
     what_happened: sits on a couch rapidly thumbing through "Vogue."
     observed_status: sits on a couch rapidly thumbing through "Vogue."
     beliefs: []
@@ -6937,6 +7449,14 @@ events:
     - direct
     - unyielding
     importance: primary
+  - character_uuid: agent_4566d65dd1c0
+    emotional_state: ''
+    goals: []
+    what_happened: referenced as having pointed to Sloane as an example
+    observed_status: referenced as having pointed to Sloane as an example
+    beliefs: []
+    observed_traits: []
+    importance: primary
   - character_uuid: agent_63ad5b384efc
     emotional_state: Stricken discomfort blending defensive fury and plaintive desperation.
     goals:
@@ -6975,6 +7495,16 @@ events:
     - professional
     - poised
     - efficient
+    importance: primary
+  - character_uuid: agent_3c1bc6e354cb
+    emotional_state: ''
+    goals: []
+    what_happened: referenced as unable to bring a case against Sloane; civil suit
+      dismissed
+    observed_status: referenced as unable to bring a case against Sloane; civil suit
+      dismissed
+    beliefs: []
+    observed_traits: []
     importance: primary
   - character_uuid: agent_e68ca75397ca
     emotional_state: Portrayed historically as combative during arrest.
@@ -7105,8 +7635,11 @@ events:
     - strategic
     importance: primary
   - character_uuid: agent_f3078a4f1b2f
-    emotional_state: ''
-    goals: []
+    emotional_state: frustrated and obsessed
+    goals:
+    - obtain delayed West Coast polling numbers for State of the Union validation
+    - ensure polling data security during blackout
+    - confront Sam directly about polling delays
     what_happened: sits nearby with head in hands, demands power restoration timeline
       and polling numbers, yells for Sam, grabs Donna's phone and stalks away
     observed_status: sits nearby with head in hands, demands power restoration timeline
@@ -7269,7 +7802,7 @@ events:
     - responsive to command
     importance: primary
   - character_uuid: agent_f3078a4f1b2f
-    emotional_state: ''
+    emotional_state: commanding
     goals: []
     what_happened: calls out to Sam
     observed_status: calls out to Sam
@@ -7351,6 +7884,31 @@ events:
     - pragmatic
     - resolute
     - incisive
+    importance: primary
+  - character_uuid: agent_4566d65dd1c0
+    emotional_state: resolute
+    goals:
+    - interrogate officials on hostage status and survival odds
+    - evaluate rescue plan and authorize decisive military action within deadline
+    what_happened: stands behind the couch reading a brief, interrogates DEA Rep and
+      Mickey on captured agents' identification and status, reviews Cassiopeia rescue
+      plan, dismisses concern for Affronte casualties, sets three-hour mobilization
+      deadline for Special Forces, dismisses the group
+    observed_status: stands behind the couch reading a brief, interrogates DEA Rep
+      and Mickey on captured agents' identification and status, reviews Cassiopeia
+      rescue plan, dismisses concern for Affronte casualties, sets three-hour mobilization
+      deadline for Special Forces, dismisses the group
+    beliefs: []
+    observed_traits: []
+    importance: primary
+  - character_uuid: agent_ab81c01de34b
+    emotional_state: deferential
+    goals:
+    - provide accurate identification of captured agents to President
+    what_happened: confirms captured individuals are DEA agents via badges
+    observed_status: confirms captured individuals are DEA agents via badges
+    beliefs: []
+    observed_traits: []
     importance: primary
   - character_uuid: agent_cf077dc4eba5
     emotional_state: Gravely concerned, balancing diplomatic restraint with mounting
@@ -7611,6 +8169,31 @@ events:
     - determined
     - unflinching
     importance: primary
+  - character_uuid: agent_4566d65dd1c0
+    emotional_state: resolute
+    goals:
+    - assess and approve the Cassiopeia rescue plan
+    - escalate to decisive military commitment by setting three-hour deadline
+    what_happened: stands behind the couch reading a brief, questions advisors on
+      agent status and enemy intentions, reviews Cassiopeia plan, dismisses enemy
+      casualties, orders Special Forces mobilization in three hours while feigning
+      negotiations, adjourns meeting
+    observed_status: stands behind the couch reading a brief, questions advisors on
+      agent status and enemy intentions, reviews Cassiopeia plan, dismisses enemy
+      casualties, orders Special Forces mobilization in three hours while feigning
+      negotiations, adjourns meeting
+    beliefs: []
+    observed_traits: []
+    importance: primary
+  - character_uuid: agent_ab81c01de34b
+    emotional_state: professional
+    goals:
+    - provide accurate intelligence on captured agents
+    what_happened: confirms identification of captured agents via DEA badges
+    observed_status: confirms identification of captured agents via DEA badges
+    beliefs: []
+    observed_traits: []
+    importance: primary
   - character_uuid: agent_cf077dc4eba5
     emotional_state: Cautiously alarmed, balancing diplomatic restraint with fear
       of broader conflict
@@ -7851,8 +8434,9 @@ events:
     - Efficient under pressure
     importance: primary
   - character_uuid: agent_f3078a4f1b2f
-    emotional_state: ''
-    goals: []
+    emotional_state: confused
+    goals:
+    - obtain details about the urgent recall
     what_happened: responds over voiceover on the phone, questioning the situation
     observed_status: responds over voiceover on the phone, questioning the situation
     beliefs: []
@@ -7956,8 +8540,10 @@ events:
     - responsive
     importance: primary
   - character_uuid: agent_f3078a4f1b2f
-    emotional_state: ''
-    goals: []
+    emotional_state: assured
+    goals:
+    - end phone call with Sam decisively
+    - pivot back to Donna amid polling anxieties
     what_happened: says 'I'll be right there', hangs up, and walks back to DONNA
     observed_status: says 'I'll be right there', hangs up, and walks back to DONNA
     beliefs: []
@@ -8258,6 +8844,16 @@ events:
     - N/A (referenced)
     observed_traits: []
     importance: primary
+  - character_uuid: agent_4566d65dd1c0
+    emotional_state: ''
+    goals: []
+    what_happened: mentioned as likely staying up late at reception with friends and
+      Mrs. Bartlet.
+    observed_status: mentioned as likely staying up late at reception with friends
+      and Mrs. Bartlet.
+    beliefs: []
+    observed_traits: []
+    importance: primary
   - character_uuid: agent_45883b79da77
     emotional_state: Unspecified, implied celebratory
     goals:
@@ -8424,6 +9020,20 @@ events:
     - dutiful
     - ' unflappable'
     - professional
+    importance: primary
+  - character_uuid: agent_4566d65dd1c0
+    emotional_state: defensive
+    goals:
+    - justify speech cuts to Abbey
+    - resolve marital tension briefly before crisis
+    what_happened: enters the kitchen, presses Abbey on her anger, defends cutting
+      the Violence Against Women Act from the speech due to time constraints, leaves
+      for senior staff meeting after Charlie's interruption
+    observed_status: enters the kitchen, presses Abbey on her anger, defends cutting
+      the Violence Against Women Act from the speech due to time constraints, leaves
+      for senior staff meeting after Charlie's interruption
+    beliefs: []
+    observed_traits: []
     importance: primary
   - character_uuid: agent_45883b79da77
     emotional_state: Righteously furious, blending betrayal over policy with deep
@@ -8610,6 +9220,21 @@ events:
     - ' unflappable'
     - competent
     - loyal
+    importance: primary
+  - character_uuid: agent_4566d65dd1c0
+    emotional_state: frustrated
+    goals:
+    - justify shortening the State of the Union speech
+    - prioritize presidential duties and attend Senior Staff meeting amid encroaching
+      crisis
+    what_happened: enters the kitchen, engages in a heated argument with Abbey over
+      speech omissions including the Violence Against Women Act, defends the cuts,
+      receives summons from Charlie, sighs and departs for Senior Staff meeting
+    observed_status: enters the kitchen, engages in a heated argument with Abbey over
+      speech omissions including the Violence Against Women Act, defends the cuts,
+      receives summons from Charlie, sighs and departs for Senior Staff meeting
+    beliefs: []
+    observed_traits: []
     importance: primary
   - character_uuid: agent_45883b79da77
     emotional_state: Raw anger yielding to steely professionalism

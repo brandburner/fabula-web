@@ -1,5 +1,5 @@
 # Events for The West Wing — In the Shadow of Two Gunmen Part I
-# Generated: 2026-01-11T19:27:37.559270
+# Generated: 2026-01-12T09:57:15.000871
 
 episode_uuid: ep_sea_ser_the_west_wing_s02_e01
 episode_title: The West Wing — In the Shadow of Two Gunmen Part I
@@ -25,7 +25,20 @@ events:
   location_uuid: null
   theme_uuids: []
   arc_uuids: []
-  participations: []
+  participations:
+  - character_uuid: agent_f05f343d04c2
+    emotional_state: tense
+    goals:
+    - report real-time uncertainty on perimeter security to coordinate response
+    what_happened: 'delivering tense voice-over radio transmission admitting uncertainty
+      about the post-attack perimeter sweep: ''We have no idea on the sweep of the
+      perimeter at this time. We have no idea...'''
+    observed_status: 'delivering tense voice-over radio transmission admitting uncertainty
+      about the post-attack perimeter sweep: ''We have no idea on the sweep of the
+      perimeter at this time. We have no idea...'''
+    beliefs: []
+    observed_traits: []
+    importance: primary
   object_involvements: []
   location_involvements: []
   organization_involvements: []
@@ -83,7 +96,7 @@ events:
     - adaptive crisis response
     importance: primary
   - character_uuid: agent_1b4e146363a1
-    emotional_state: ''
+    emotional_state: shocked, nauseous
     goals: []
     what_happened: secure in separate car with agents but vomiting from shock
     observed_status: secure in separate car with agents but vomiting from shock
@@ -484,11 +497,31 @@ events:
     - Desperate
     - Vocal
     importance: primary
+  - character_uuid: agent_d11a3b3bb6e4
+    emotional_state: ''
+    goals: []
+    what_happened: significantly mentioned by Sam as just put in the car and by Charlie
+      as with Josh or Shanahan
+    observed_status: significantly mentioned by Sam as just put in the car and by
+      Charlie as with Josh or Shanahan
+    beliefs: []
+    observed_traits: []
+    importance: primary
   - character_uuid: agent_89d2f8102427
     emotional_state: ''
     goals: []
     what_happened: mentioned by Toby as having gotten in the car with Leo
     observed_status: mentioned by Toby as having gotten in the car with Leo
+    beliefs: []
+    observed_traits: []
+    importance: primary
+  - character_uuid: agent_4566d65dd1c0
+    emotional_state: ''
+    goals: []
+    what_happened: significantly mentioned by C.J. and Sam as en route back to the
+      White House
+    observed_status: significantly mentioned by C.J. and Sam as en route back to the
+      White House
     beliefs: []
     observed_traits: []
     importance: primary
@@ -598,6 +631,19 @@ events:
     - Observant
     - Professional under pressure
     importance: primary
+  - character_uuid: agent_57456b21c104
+    emotional_state: shaken and worried
+    goals:
+    - determine the President's status
+    what_happened: being treated by medics for a scalp laceration from a fall, insists
+      she is fine, walks around police car, notices broken glass door, asks about
+      the President's status
+    observed_status: being treated by medics for a scalp laceration from a fall, insists
+      she is fine, walks around police car, notices broken glass door, asks about
+      the President's status
+    beliefs: []
+    observed_traits: []
+    importance: primary
   - character_uuid: agent_77f1a613709a
     emotional_state: Concerned and momentarily sidelined amid rising dread
     goals:
@@ -615,6 +661,17 @@ events:
     - Concerned
     - Attentive
     - Loyal
+    importance: primary
+  - character_uuid: agent_0c441567b79f
+    emotional_state: ''
+    goals:
+    - treat and stabilize C.J.
+    what_happened: attending to C.J. for thigh and head injuries, assessing her condition,
+      advising her to lie down, refusing to comment on President
+    observed_status: attending to C.J. for thigh and head injuries, assessing her
+      condition, advising her to lie down, refusing to comment on President
+    beliefs: []
+    observed_traits: []
     importance: primary
   - character_uuid: agent_2c3d84e0b0b1
     emotional_state: Decisively aggressive, channeling chaos into control
@@ -654,11 +711,63 @@ events:
     - Efficient
     - Responsive
     importance: primary
+  - character_uuid: agent_7c84dea6dcc9
+    emotional_state: worried turning to horrified
+    goals:
+    - locate Josh
+    what_happened: looks around calling for Josh, asks Charlie if he has seen him,
+      spots Josh behind ledge, runs to him, reacts in shock to his injury, shouts
+      for doctor and help
+    observed_status: looks around calling for Josh, asks Charlie if he has seen him,
+      spots Josh behind ledge, runs to him, reacts in shock to his injury, shouts
+      for doctor and help
+    beliefs: []
+    observed_traits: []
+    importance: primary
+  - character_uuid: agent_e9dd0ae36832
+    emotional_state: calm
+    goals:
+    - provide information to Toby
+    what_happened: spotted by Toby, confirms he is okay, incorrectly informs Toby
+      that Josh got in car with Leo
+    observed_status: spotted by Toby, confirms he is okay, incorrectly informs Toby
+      that Josh got in car with Leo
+    beliefs: []
+    observed_traits: []
+    importance: primary
+  - character_uuid: agent_d11a3b3bb6e4
+    emotional_state: ''
+    goals: []
+    what_happened: reported by Sam as just put in the car, confirmed by Charlie as
+      in car (not with Josh) (mentioned)
+    observed_status: reported by Sam as just put in the car, confirmed by Charlie
+      as in car (not with Josh) (mentioned)
+    beliefs: []
+    observed_traits: []
+    importance: primary
   - character_uuid: agent_89d2f8102427
     emotional_state: ''
     goals: []
     what_happened: reported by Toby as the one who got in car with Leo (mentioned)
     observed_status: reported by Toby as the one who got in car with Leo (mentioned)
+    beliefs: []
+    observed_traits: []
+    importance: primary
+  - character_uuid: agent_4566d65dd1c0
+    emotional_state: ''
+    goals: []
+    what_happened: reported by Sam as on the way back to the White House (mentioned)
+    observed_status: reported by Sam as on the way back to the White House (mentioned)
+    beliefs: []
+    observed_traits: []
+    importance: primary
+  - character_uuid: agent_9623e7e26e19
+    emotional_state: ''
+    goals: []
+    what_happened: reported by Sam as on the way back to the White House with President
+      (mentioned)
+    observed_status: reported by Sam as on the way back to the White House with President
+      (mentioned)
     beliefs: []
     observed_traits: []
     importance: primary
@@ -723,11 +832,31 @@ events:
   arc_uuids:
   - arc_8726d90dd948
   participations:
+  - character_uuid: agent_f05f343d04c2
+    emotional_state: anxious
+    goals:
+    - locate individuals
+    what_happened: shouts 'Stevie! Paul!'
+    observed_status: shouts 'Stevie! Paul!'
+    beliefs: []
+    observed_traits: []
+    importance: primary
   - character_uuid: agent_1b4e146363a1
     emotional_state: ''
     goals: []
     what_happened: mentioned as on way back to White House with President
     observed_status: mentioned as on way back to White House with President
+    beliefs: []
+    observed_traits: []
+    importance: primary
+  - character_uuid: agent_aa397b651aac
+    emotional_state: urgent
+    goals:
+    - report intelligence on assassination perpetrators
+    what_happened: runs past Sam, identifies herself to Tommy Cho, reports details
+      on shooters from window and ground signaler
+    observed_status: runs past Sam, identifies herself to Tommy Cho, reports details
+      on shooters from window and ground signaler
     beliefs: []
     observed_traits: []
     importance: primary
@@ -768,6 +897,59 @@ events:
     - protective
     - reactive
     - solidarity-driven
+    importance: primary
+  - character_uuid: agent_0c441567b79f
+    emotional_state: ''
+    goals:
+    - treat wounded
+    what_happened: assesses injury, reports 'Left thigh, nerovasc intact'
+    observed_status: assesses injury, reports 'Left thigh, nerovasc intact'
+    beliefs: []
+    observed_traits: []
+    importance: primary
+  - character_uuid: agent_0c441567b79f
+    emotional_state: ''
+    goals:
+    - stabilize patient
+    what_happened: attends to injured, reports patient stable, requests 4 by 4's
+    observed_status: attends to injured, reports patient stable, requests 4 by 4's
+    beliefs: []
+    observed_traits: []
+    importance: primary
+  - character_uuid: agent_0c441567b79f
+    emotional_state: ''
+    goals:
+    - assess C.J.'s injury
+    what_happened: assesses C.J., reports 'Scalp laceration, secondary to fall', then
+      leaves
+    observed_status: assesses C.J., reports 'Scalp laceration, secondary to fall',
+      then leaves
+    beliefs: []
+    observed_traits: []
+    importance: primary
+  - character_uuid: agent_0c441567b79f
+    emotional_state: ''
+    goals:
+    - evaluate C.J.'s condition
+    what_happened: examines C.J., questions her on LOC, date, identifies her, advises
+      rest, declines to comment on President
+    observed_status: examines C.J., questions her on LOC, date, identifies her, advises
+      rest, declines to comment on President
+    beliefs: []
+    observed_traits: []
+    importance: primary
+  - character_uuid: agent_2c3d84e0b0b1
+    emotional_state: commanding
+    goals:
+    - initiate manhunt and secure perimeter
+    what_happened: confirms ID as agent with Gina, receives shooter intel, orders
+      perimeter fix, airport closures, and mobilization of Harbor Patrol and Coast
+      Guard
+    observed_status: confirms ID as agent with Gina, receives shooter intel, orders
+      perimeter fix, airport closures, and mobilization of Harbor Patrol and Coast
+      Guard
+    beliefs: []
+    observed_traits: []
     importance: primary
   - character_uuid: agent_7c84dea6dcc9
     emotional_state: Desperate urgency exploding into raw, unfiltered panic and terror
@@ -829,6 +1011,22 @@ events:
     - distressed
     - pleading
     - overwhelmed
+    importance: primary
+  - character_uuid: agent_d11a3b3bb6e4
+    emotional_state: ''
+    goals: []
+    what_happened: mentioned as just put in a car, with Shanahan
+    observed_status: mentioned as just put in a car, with Shanahan
+    beliefs: []
+    observed_traits: []
+    importance: primary
+  - character_uuid: agent_4566d65dd1c0
+    emotional_state: ''
+    goals: []
+    what_happened: mentioned as on way back to White House
+    observed_status: mentioned as on way back to White House
+    beliefs: []
+    observed_traits: []
     importance: primary
   object_involvements: []
   location_involvements:
@@ -892,6 +1090,44 @@ events:
     - anxious
     - compliant
     - hypochondriac tendencies
+    importance: primary
+  - character_uuid: agent_3a5b237248e8
+    emotional_state: frustrated, weary
+    goals:
+    - alert Nurse 2nd to the return of frequent patient Cynthia
+    - express exasperation about repeat hypochondriac visits to build staff camaraderie
+    what_happened: greets Nurse 2nd, alerts her to Cynthia's return by nodding toward
+      the waiting area, walks to reception desk, converses with Nurse 3rd about Cynthia's
+      frequent visits expressing frustration, answers local phone and then red wall
+      phone
+    observed_status: greets Nurse 2nd, alerts her to Cynthia's return by nodding toward
+      the waiting area, walks to reception desk, converses with Nurse 3rd about Cynthia's
+      frequent visits expressing frustration, answers local phone and then red wall
+      phone
+    beliefs: []
+    observed_traits: []
+    importance: primary
+  - character_uuid: agent_3a5b237248e8
+    emotional_state: sarcastic, weary
+    goals:
+    - triage and escort frequent patient Cynthia away from the main area
+    what_happened: greets Nurse 1st, notices Cynthia in waiting section, sarcastically
+      thanks Nurse 1st, warmly approaches and escorts Cynthia away
+    observed_status: greets Nurse 1st, notices Cynthia in waiting section, sarcastically
+      thanks Nurse 1st, warmly approaches and escorts Cynthia away
+    beliefs: []
+    observed_traits: []
+    importance: primary
+  - character_uuid: agent_3a5b237248e8
+    emotional_state: curious
+    goals:
+    - engage in banter with Nurse 1st about managing repeat patients
+    what_happened: approaches reception desk, engages Nurse 1st in conversation about
+      Cynthia
+    observed_status: approaches reception desk, engages Nurse 1st in conversation
+      about Cynthia
+    beliefs: []
+    observed_traits: []
     importance: primary
   object_involvements: []
   location_involvements:
@@ -968,6 +1204,17 @@ events:
   theme_uuids: []
   arc_uuids: []
   participations:
+  - character_uuid: agent_f1e7d30f5f65
+    emotional_state: ''
+    goals:
+    - receive medical attention for pregnancy concern
+    what_happened: sitting in waiting section as repeat pregnant hypochondriac patient
+      who complains about not feeling the baby kick, escorted away by Nurse 2nd
+    observed_status: sitting in waiting section as repeat pregnant hypochondriac patient
+      who complains about not feeling the baby kick, escorted away by Nurse 2nd
+    beliefs: []
+    observed_traits: []
+    importance: primary
   - character_uuid: agent_3a5b237248e8
     emotional_state: Curiously amused with undertones of shared professional exasperation
     goals:
@@ -1190,6 +1437,17 @@ events:
     - resolute
     - authoritative
     importance: primary
+  - character_uuid: agent_3a5b237248e8
+    emotional_state: skeptical
+    goals:
+    - verify if the incoming situation is a real emergency or a drill
+    what_happened: responding over voiceover on the phone 'I copy that. Is this a
+      drill?'
+    observed_status: responding over voiceover on the phone 'I copy that. Is this
+      a drill?'
+    beliefs: []
+    observed_traits: []
+    importance: primary
   - character_uuid: agent_4566d65dd1c0
     emotional_state: Desperate survival instinct overriding agony
     goals:
@@ -1276,6 +1534,20 @@ events:
     - commanding
     - methodical
     - relentless
+    importance: primary
+  - character_uuid: agent_3a5b237248e8
+    emotional_state: skeptical turning to urgent
+    goals:
+    - mobilize ER staff and resources for incoming critical trauma patient
+    - clear civilian patients to facilitate security takeover
+    what_happened: on skeptical phone call about potential drill, hears sirens, hangs
+      up red phone, announces 'Trauma One, Blue!' over PA, confirms no priorities
+      to Agent 1st, directs waiting patients to follow agent to waiting van
+    observed_status: on skeptical phone call about potential drill, hears sirens,
+      hangs up red phone, announces 'Trauma One, Blue!' over PA, confirms no priorities
+      to Agent 1st, directs waiting patients to follow agent to waiting van
+    beliefs: []
+    observed_traits: []
     importance: primary
   - character_uuid: agent_fd4c7a9acff3
     emotional_state: Confused anxiety yielding to obedient haste
@@ -1539,6 +1811,17 @@ events:
     - Steady
     - Professional
     importance: primary
+  - character_uuid: agent_ce5b4cc4d4aa
+    emotional_state: ''
+    goals:
+    - capture optimal photo of Vice President with jersey
+    what_happened: requests Vice President Hoynes to hold the shirt up higher for
+      photos
+    observed_status: requests Vice President Hoynes to hold the shirt up higher for
+      photos
+    beliefs: []
+    observed_traits: []
+    importance: primary
   object_involvements:
   - object_uuid: object_7eef3774eeba
     description_of_involvement: The jersey functions as a central photo-op prop, gripped
@@ -1596,6 +1879,16 @@ events:
     - Professional detachment under pressure
     - Concise communicator
     importance: primary
+  - character_uuid: agent_4566d65dd1c0
+    emotional_state: ''
+    goals: []
+    what_happened: conscious with entry and exit wounds in his side, being moved to
+      pre-op
+    observed_status: conscious with entry and exit wounds in his side, being moved
+      to pre-op
+    beliefs: []
+    observed_traits: []
+    importance: primary
   - character_uuid: agent_45883b79da77
     emotional_state: Frantic maternal terror laced with steely resolve
     goals:
@@ -1614,6 +1907,14 @@ events:
     - Maternal ferocity
     - Frantic determination
     - Physician's precision in questioning
+    importance: primary
+  - character_uuid: agent_9623e7e26e19
+    emotional_state: ''
+    goals: []
+    what_happened: secure in a car, heading to G.W. Hospital
+    observed_status: secure in a car, heading to G.W. Hospital
+    beliefs: []
+    observed_traits: []
     importance: primary
   object_involvements:
   - object_uuid: object_28295b7205af
@@ -1688,6 +1989,47 @@ events:
     - dutiful
     - composed under injury
     importance: primary
+  - character_uuid: agent_d11a3b3bb6e4
+    emotional_state: ''
+    goals: []
+    what_happened: significantly mentioned as the person President Bartlet insists
+      on speaking to before anesthesia
+    observed_status: significantly mentioned as the person President Bartlet insists
+      on speaking to before anesthesia
+    beliefs: []
+    observed_traits: []
+    importance: primary
+  - character_uuid: agent_3a5b237248e8
+    emotional_state: ''
+    goals:
+    - report wound details
+    what_happened: hurriedly pushing gurney, reporting abdominal entry and exit wounds
+    observed_status: hurriedly pushing gurney, reporting abdominal entry and exit
+      wounds
+    beliefs: []
+    observed_traits: []
+    importance: primary
+  - character_uuid: agent_3a5b237248e8
+    emotional_state: ''
+    goals:
+    - report vital signs
+    what_happened: reporting blood pressure, pulse, and requesting pulse ox
+    observed_status: reporting blood pressure, pulse, and requesting pulse ox
+    beliefs: []
+    observed_traits: []
+    importance: primary
+  - character_uuid: agent_3a5b237248e8
+    emotional_state: ''
+    goals:
+    - address Ron Butterfield's injury
+    - prepare for President Bartlet's treatment
+    what_happened: acknowledging President Bartlet's request to treat Ron Butterfield's
+      hand, hurriedly preparing for treatment
+    observed_status: acknowledging President Bartlet's request to treat Ron Butterfield's
+      hand, hurriedly preparing for treatment
+    beliefs: []
+    observed_traits: []
+    importance: primary
   - character_uuid: agent_0e2ff1a4a9c5
     emotional_state: Focused professionalism amid high-stakes urgency
     goals:
@@ -1754,6 +2096,16 @@ events:
     - efficient
     - precise
     - urgent
+    importance: primary
+  - character_uuid: agent_9623e7e26e19
+    emotional_state: ''
+    goals: []
+    what_happened: significantly mentioned as the daughter President Bartlet demands
+      to speak to immediately
+    observed_status: significantly mentioned as the daughter President Bartlet demands
+      to speak to immediately
+    beliefs: []
+    observed_traits: []
     importance: primary
   object_involvements:
   - object_uuid: object_a66deaa1b784
@@ -1871,6 +2223,18 @@ events:
     - dispassionate
     - precise
     importance: primary
+  - character_uuid: agent_16a5b84aea3f
+    emotional_state: urgent and alarmed
+    goals:
+    - exchange casual greetings and banter
+    - alert Mrs. Landingham to the breaking news report
+    what_happened: greets Mrs. Landingham, notices special report on TV, urgently
+      alerts her, turns up the volume
+    observed_status: greets Mrs. Landingham, notices special report on TV, urgently
+      alerts her, turns up the volume
+    beliefs: []
+    observed_traits: []
+    importance: primary
   object_involvements:
   - object_uuid: object_48d1b7050a54
     description_of_involvement: Serves as the critical conduit for crisis intrusion,
@@ -1950,14 +2314,24 @@ events:
   arc_uuids: []
   participations:
   - character_uuid: agent_1b4e146363a1
-    emotional_state: ''
-    goals: []
+    emotional_state: fearful, loving, relieved
+    goals:
+    - reassure and connect with her wounded father
+    - wait for her mother without distressing medical staff
     what_happened: enters the trauma room, expresses fear and concern for her father,
       shares affection and praise, vomits mentioned in backstory, exits to wait for
       her mother
     observed_status: enters the trauma room, expresses fear and concern for her father,
       shares affection and praise, vomits mentioned in backstory, exits to wait for
       her mother
+    beliefs: []
+    observed_traits: []
+    importance: primary
+  - character_uuid: agent_57456b21c104
+    emotional_state: ''
+    goals: []
+    what_happened: mentioned as having hit her head during the incident
+    observed_status: mentioned as having hit her head during the incident
     beliefs: []
     observed_traits: []
     importance: primary
@@ -2127,12 +2501,21 @@ events:
   arc_uuids: []
   participations:
   - character_uuid: agent_1b4e146363a1
-    emotional_state: ''
-    goals: []
+    emotional_state: fearful
+    goals:
+    - reassure her father and seek reassurance about his condition
     what_happened: enters the trauma room, expresses fear and concern for her father's
       pain, engages in a loving dialogue, exits to wait for her mother
     observed_status: enters the trauma room, expresses fear and concern for her father's
       pain, engages in a loving dialogue, exits to wait for her mother
+    beliefs: []
+    observed_traits: []
+    importance: primary
+  - character_uuid: agent_57456b21c104
+    emotional_state: ''
+    goals: []
+    what_happened: reported as having hit her head on the ground during the incident
+    observed_status: reported as having hit her head on the ground during the incident
     beliefs: []
     observed_traits: []
     importance: primary
@@ -2293,14 +2676,25 @@ events:
   - arc_52e7acb0b780
   participations:
   - character_uuid: agent_1b4e146363a1
-    emotional_state: ''
-    goals: []
+    emotional_state: fearful
+    goals:
+    - assess and comfort her father's condition
     what_happened: walks into the trauma room, shows fear upon seeing her wounded
       father, engages in concerned dialogue reassuring and expressing love to him,
       then exits at his request to wait for her mother
     observed_status: walks into the trauma room, shows fear upon seeing her wounded
       father, engages in concerned dialogue reassuring and expressing love to him,
       then exits at his request to wait for her mother
+    beliefs: []
+    observed_traits: []
+    importance: primary
+  - character_uuid: agent_57456b21c104
+    emotional_state: ''
+    goals: []
+    what_happened: mentioned by Leo as having hit her head on the ground during the
+      attack but otherwise okay
+    observed_status: mentioned by Leo as having hit her head on the ground during
+      the attack but otherwise okay
     beliefs: []
     observed_traits: []
     importance: primary
@@ -2370,6 +2764,16 @@ events:
     - Reassuring
     - Stoically paternal
     importance: primary
+  - character_uuid: agent_45883b79da77
+    emotional_state: ''
+    goals: []
+    what_happened: mentioned by Zoey as on her way to the hospital; Leo confirms he
+      will talk to her about implied constitutional matters
+    observed_status: mentioned by Zoey as on her way to the hospital; Leo confirms
+      he will talk to her about implied constitutional matters
+    beliefs: []
+    observed_traits: []
+    importance: primary
   - character_uuid: agent_0132b1e48955
     emotional_state: ''
     goals: []
@@ -2426,8 +2830,11 @@ events:
   arc_uuids: []
   participations:
   - character_uuid: agent_1b4e146363a1
-    emotional_state: ''
-    goals: []
+    emotional_state: shaken but relieved
+    goals:
+    - coordinate updates on father's condition
+    - reunite emotionally with mother
+    - deflect trauma with strained family humor
     what_happened: talks to a woman for updates on her father's condition, hugs her
       mother tightly, shares that her dad is making jokes to elicit family humor,
       assures her mother she'll be okay
@@ -2612,6 +3019,36 @@ events:
   theme_uuids: []
   arc_uuids: []
   participations:
+  - character_uuid: agent_d11a3b3bb6e4
+    emotional_state: ''
+    goals: []
+    what_happened: referenced as one of the 14 people in the world who know about
+      President Bartlet's MS diagnosis
+    observed_status: referenced as one of the 14 people in the world who know about
+      President Bartlet's MS diagnosis
+    beliefs: []
+    observed_traits: []
+    importance: primary
+  - character_uuid: agent_4566d65dd1c0
+    emotional_state: ''
+    goals: []
+    what_happened: patient inside trauma room whose relapsing/remitting MS diagnosis
+      (known to 14 people for seven years) is disclosed by Abbey to Dr. Lee
+    observed_status: patient inside trauma room whose relapsing/remitting MS diagnosis
+      (known to 14 people for seven years) is disclosed by Abbey to Dr. Lee
+    beliefs: []
+    observed_traits: []
+    importance: primary
+  - character_uuid: agent_738f513a2eba
+    emotional_state: ''
+    goals: []
+    what_happened: referenced as one of the 14 people in the world who know about
+      President Bartlet's MS diagnosis
+    observed_status: referenced as one of the 14 people in the world who know about
+      President Bartlet's MS diagnosis
+    beliefs: []
+    observed_traits: []
+    importance: primary
   - character_uuid: agent_45883b79da77
     emotional_state: Pragmatic steel veiling raw maternal terror and resolve
     goals:
@@ -2654,6 +3091,16 @@ events:
     - poised
     - optimistic
     - receptive
+    importance: primary
+  - character_uuid: agent_8cbd193878e6
+    emotional_state: ''
+    goals: []
+    what_happened: referenced as one of the 14 people in the world who know about
+      President Bartlet's MS diagnosis
+    observed_status: referenced as one of the 14 people in the world who know about
+      President Bartlet's MS diagnosis
+    beliefs: []
+    observed_traits: []
     importance: primary
   object_involvements: []
   location_involvements:
@@ -2802,6 +3249,17 @@ events:
     - Empathetic
     - Decisive
     - Loyal
+    importance: primary
+  - character_uuid: agent_3a5b237248e8
+    emotional_state: ''
+    goals:
+    - provide immediate assessment and prepare for trauma treatment
+    what_happened: arrives with paramedics pushing gurney, reports 'Gunshot wound!
+      No exit!', has hemocue, announces Trauma One ready
+    observed_status: arrives with paramedics pushing gurney, reports 'Gunshot wound!
+      No exit!', has hemocue, announces Trauma One ready
+    beliefs: []
+    observed_traits: []
     importance: primary
   - character_uuid: agent_ebcf0949f1c9
     emotional_state: Adrenaline-fueled professionalism overriding shock
@@ -3057,6 +3515,17 @@ events:
     - loyal
     - urgent
     importance: primary
+  - character_uuid: agent_3a5b237248e8
+    emotional_state: ''
+    goals:
+    - prepare trauma bay and equipment for Josh's treatment
+    what_happened: assisting paramedics wheeling in patient, announcing gunshot wound
+      with no exit, holding hemocue, confirming Trauma One ready
+    observed_status: assisting paramedics wheeling in patient, announcing gunshot
+      wound with no exit, holding hemocue, confirming Trauma One ready
+    beliefs: []
+    observed_traits: []
+    importance: primary
   - character_uuid: agent_ebcf0949f1c9
     emotional_state: Adrenaline-sharpened clinical focus
     goals:
@@ -3204,6 +3673,17 @@ events:
     - witty
     - pragmatically casual
     importance: primary
+  - character_uuid: agent_16a5b84aea3f
+    emotional_state: defensive and strategic
+    goals:
+    - support campaign misdirection to safer issues like tax cuts
+    what_happened: defends delaying Social Security discussion, suggests focusing
+      on tax cuts for now
+    observed_status: defends delaying Social Security discussion, suggests focusing
+      on tax cuts for now
+    beliefs: []
+    observed_traits: []
+    importance: primary
   object_involvements: []
   location_involvements:
   - location_uuid: location_63e37842b4ae
@@ -3332,6 +3812,15 @@ events:
     - discreet
     - authoritative
     importance: primary
+  - character_uuid: agent_738f513a2eba
+    emotional_state: ''
+    goals:
+    - attend the procedural vote on the nuclear waste resolution
+    what_happened: absent from the offices, having gone down for the 404 vote
+    observed_status: absent from the offices, having gone down for the 404 vote
+    beliefs: []
+    observed_traits: []
+    importance: primary
   object_involvements: []
   location_involvements:
   - location_uuid: location_63e37842b4ae
@@ -3403,6 +3892,14 @@ events:
     - persistent
     - witty
     - empathetic
+    importance: primary
+  - character_uuid: agent_738f513a2eba
+    emotional_state: ''
+    goals: []
+    what_happened: referenced as Josh's employer who has the nomination sewn up
+    observed_status: referenced as Josh's employer who has the nomination sewn up
+    beliefs: []
+    observed_traits: []
     importance: primary
   - character_uuid: agent_29e37898414c
     emotional_state: professionally responsive amid sudden directive
@@ -3690,8 +4187,9 @@ events:
     - affectionate
     importance: primary
   - character_uuid: agent_c38d38d681d9
-    emotional_state: ''
-    goals: []
+    emotional_state: neutral
+    goals:
+    - notify Sam about the visitor in his office
     what_happened: meets Sam in the corridor and informs him that Josh Lyman is waiting
       in his office
     observed_status: meets Sam in the corridor and informs him that Josh Lyman is
@@ -3969,6 +4467,23 @@ events:
     - vigilant
     - authoritative
     importance: primary
+  - character_uuid: agent_3a5b237248e8
+    emotional_state: calm
+    goals:
+    - forgive and reassure Sam
+    what_happened: reassures Sam after being rammed into
+    observed_status: reassures Sam after being rammed into
+    beliefs: []
+    observed_traits: []
+    importance: primary
+  - character_uuid: agent_0e2ff1a4a9c5
+    emotional_state: ''
+    goals: []
+    what_happened: referenced as having performed laparoscopy on President
+    observed_status: referenced as having performed laparoscopy on President
+    beliefs: []
+    observed_traits: []
+    importance: primary
   - character_uuid: agent_ebcf0949f1c9
     emotional_state: Steadfast professionalism amid surrounding frenzy
     goals:
@@ -3989,6 +4504,16 @@ events:
     - composed
     - professional
     - efficient
+    importance: primary
+  - character_uuid: agent_4566d65dd1c0
+    emotional_state: ''
+    goals: []
+    what_happened: prognosis reported as full recovery with no organ damage and minimal
+      blood loss after laparoscopy
+    observed_status: prognosis reported as full recovery with no organ damage and
+      minimal blood loss after laparoscopy
+    beliefs: []
+    observed_traits: []
     importance: primary
   - character_uuid: agent_45883b79da77
     emotional_state: Initial wave of relief yielding to deepening concern for Josh
@@ -4101,6 +4626,22 @@ events:
     - protocol-driven
     - stoic
     importance: primary
+  - character_uuid: agent_3a5b237248e8
+    emotional_state: ''
+    goals: []
+    what_happened: is bumped by Sam and reassures him it's okay
+    observed_status: is bumped by Sam and reassures him it's okay
+    beliefs: []
+    observed_traits: []
+    importance: primary
+  - character_uuid: agent_0e2ff1a4a9c5
+    emotional_state: ''
+    goals: []
+    what_happened: performed laparoscopy on President, visualized entire abdomen
+    observed_status: performed laparoscopy on President, visualized entire abdomen
+    beliefs: []
+    observed_traits: []
+    importance: primary
   - character_uuid: agent_ebcf0949f1c9
     emotional_state: Steady professionalism amid high-stakes frenzy
     goals:
@@ -4121,6 +4662,16 @@ events:
     - professional
     - reassuring
     - precise
+    importance: primary
+  - character_uuid: agent_4566d65dd1c0
+    emotional_state: ''
+    goals: []
+    what_happened: recovering post-laparoscopy with no organ damage or significant
+      blood loss, visitable in two hours
+    observed_status: recovering post-laparoscopy with no organ damage or significant
+      blood loss, visitable in two hours
+    beliefs: []
+    observed_traits: []
     importance: primary
   - character_uuid: agent_45883b79da77
     emotional_state: Palpable relief tempered by deepening concern
@@ -4234,6 +4785,14 @@ events:
     - decisive
     - protocol-bound
     - impassive
+    importance: primary
+  - character_uuid: agent_3a5b237248e8
+    emotional_state: calm
+    goals: []
+    what_happened: reassures Sam that the collision is okay
+    observed_status: reassures Sam that the collision is okay
+    beliefs: []
+    observed_traits: []
     importance: primary
   - character_uuid: agent_0e2ff1a4a9c5
     emotional_state: Inferred focused post-op confidence
@@ -4397,6 +4956,14 @@ events:
     - efficient
     - unflappable
     importance: primary
+  - character_uuid: agent_37b32f57b3aa
+    emotional_state: ''
+    goals: []
+    what_happened: Mentioned as having no wallet or ID, knowing they would be caught.
+    observed_status: Mentioned as having no wallet or ID, knowing they would be caught.
+    beliefs: []
+    observed_traits: []
+    importance: primary
   - character_uuid: agent_d11a3b3bb6e4
     emotional_state: Steadfast confidence veiling acute crisis pressure
     goals:
@@ -4419,6 +4986,16 @@ events:
     - wryly dismissive
     - decisive
     importance: primary
+  - character_uuid: agent_4566d65dd1c0
+    emotional_state: ''
+    goals: []
+    what_happened: Mentioned as being out of surgery in two hours and under general
+      anesthesia; referenced in context of potential orders for DEFCON.
+    observed_status: Mentioned as being out of surgery in two hours and under general
+      anesthesia; referenced in context of potential orders for DEFCON.
+    beliefs: []
+    observed_traits: []
+    importance: primary
   - character_uuid: agent_738f513a2eba
     emotional_state: Momentary surprise yielding to measured authority
     goals:
@@ -4439,6 +5016,16 @@ events:
     - poised
     - pragmatic
     - deferential to chain
+    importance: primary
+  - character_uuid: agent_8cbd193878e6
+    emotional_state: ''
+    goals: []
+    what_happened: Mentioned as returning from Manila in four hours, accessible by
+      phone; referenced for potential orders on tactical alert.
+    observed_status: Mentioned as returning from Manila in four hours, accessible
+      by phone; referenced for potential orders on tactical alert.
+    beliefs: []
+    observed_traits: []
     importance: primary
   - character_uuid: agent_1312000473ae
     emotional_state: Alert professionalism under high-stakes tension
@@ -4541,6 +5128,20 @@ events:
     goals: []
     what_happened: Suggested by Jack as best way to get message to Iraq.
     observed_status: Suggested by Jack as best way to get message to Iraq.
+    beliefs: []
+    observed_traits: []
+    importance: primary
+  - character_uuid: agent_16a5b84aea3f
+    emotional_state: professional
+    goals:
+    - Provide logistical updates on military personnel
+    - Facilitate communication channels to Iraq
+    what_happened: Appears on TV monitor entering with Leo, provides updates on Fitzwallace's
+      travel and phone access, calls room to attention for Hoynes, suggests King of
+      Jordan as channel to Iraq.
+    observed_status: Appears on TV monitor entering with Leo, provides updates on
+      Fitzwallace's travel and phone access, calls room to attention for Hoynes, suggests
+      King of Jordan as channel to Iraq.
     beliefs: []
     observed_traits: []
     importance: primary
@@ -4801,6 +5402,20 @@ events:
     - operational
     - protocol-driven
     importance: primary
+  - character_uuid: agent_16a5b84aea3f
+    emotional_state: professional
+    goals:
+    - Provide updates on key military personnel movements
+    - Facilitate secure communications and protocol
+    what_happened: Appears on TV monitor entering with Leo, reports Fitzwallace's
+      travel turnaround and phone availability, calls room to attention for Hoynes,
+      recommends King of Jordan for messaging Iraq.
+    observed_status: Appears on TV monitor entering with Leo, reports Fitzwallace's
+      travel turnaround and phone availability, calls room to attention for Hoynes,
+      recommends King of Jordan for messaging Iraq.
+    beliefs: []
+    observed_traits: []
+    importance: primary
   object_involvements:
   - object_uuid: object_3d4a351cd62b
     description_of_involvement: Dominates room wall flickering KH-10 feeds earlier
@@ -4880,6 +5495,14 @@ events:
   theme_uuids: []
   arc_uuids: []
   participations:
+  - character_uuid: agent_15d8544fc3fb
+    emotional_state: ''
+    goals: []
+    what_happened: Acknowledges Nancy's request for clothes.
+    observed_status: Acknowledges Nancy's request for clothes.
+    beliefs: []
+    observed_traits: []
+    importance: primary
   - character_uuid: agent_d11a3b3bb6e4
     emotional_state: Steadfast calm anchoring the room's hierarchy
     goals:
@@ -4995,6 +5618,20 @@ events:
     observed_traits:
     - direct
     - matter-of-fact
+    importance: primary
+  - character_uuid: agent_16a5b84aea3f
+    emotional_state: professional
+    goals:
+    - Provide updates on military leadership logistics
+    - Facilitate communication channels
+    what_happened: Appears on TV monitor entering with Leo, reports on Fitzwallace's
+      travel and phone availability, calls room to attention, and suggests the King
+      of Jordan as message route to Iraq.
+    observed_status: Appears on TV monitor entering with Leo, reports on Fitzwallace's
+      travel and phone availability, calls room to attention, and suggests the King
+      of Jordan as message route to Iraq.
+    beliefs: []
+    observed_traits: []
     importance: primary
   object_involvements: []
   location_involvements:
@@ -5147,6 +5784,19 @@ events:
     - insistent
     - analytical
     importance: primary
+  - character_uuid: agent_731e56209de5
+    emotional_state: ''
+    goals:
+    - report potential related infrastructure incidents
+    what_happened: 'briefs on minor disruptions: Logan air traffic control down 22
+      minutes, city bank computers offline over an hour, Delta Center lights out 7
+      minutes.'
+    observed_status: 'briefs on minor disruptions: Logan air traffic control down
+      22 minutes, city bank computers offline over an hour, Delta Center lights out
+      7 minutes.'
+    beliefs: []
+    observed_traits: []
+    importance: primary
   - character_uuid: agent_52f93da11502
     emotional_state: Professionally focused and alert
     goals:
@@ -5165,6 +5815,20 @@ events:
     - precise
     - dutiful
     - operational
+    importance: primary
+  - character_uuid: agent_16a5b84aea3f
+    emotional_state: ''
+    goals:
+    - provide logistical and military updates
+    - recommend diplomatic communication channels
+    what_happened: appears with Leo on TV monitor entering room, updates Leo on Fitzwallace's
+      return from Manila and phone availability, calls room to attention for Hoynes,
+      suggests King of Jordan as best channel to message Iraq.
+    observed_status: appears with Leo on TV monitor entering room, updates Leo on
+      Fitzwallace's return from Manila and phone availability, calls room to attention
+      for Hoynes, suggests King of Jordan as best channel to message Iraq.
+    beliefs: []
+    observed_traits: []
     importance: primary
   object_involvements:
   - object_uuid: object_3d4a351cd62b
@@ -5327,6 +5991,14 @@ events:
     - Calmly efficient
     - Loyal servant
     importance: primary
+  - character_uuid: agent_d11a3b3bb6e4
+    emotional_state: ''
+    goals: []
+    what_happened: scheduled to meet with leadership in ten minutes
+    observed_status: scheduled to meet with leadership in ten minutes
+    beliefs: []
+    observed_traits: []
+    importance: primary
   - character_uuid: agent_ebcf0949f1c9
     emotional_state: Calm professionalism veiling awareness of human stakes
     goals:
@@ -5347,6 +6019,14 @@ events:
     - Professional
     - Empathetic yet detached
     - Protocol-oriented
+    importance: primary
+  - character_uuid: agent_4566d65dd1c0
+    emotional_state: ''
+    goals: []
+    what_happened: stability confirmed and reported as going to be fine
+    observed_status: stability confirmed and reported as going to be fine
+    beliefs: []
+    observed_traits: []
     importance: primary
   - character_uuid: agent_d5524a94a33b
     emotional_state: Euphoric relief inverting to shocked paralysis
@@ -5504,6 +6184,35 @@ events:
     - loyal
     - proactive
     importance: primary
+  - character_uuid: agent_d11a3b3bb6e4
+    emotional_state: ''
+    goals:
+    - meet with leadership
+    what_happened: mentioned as meeting with leadership soon
+    observed_status: mentioned as meeting with leadership soon
+    beliefs: []
+    observed_traits: []
+    importance: primary
+  - character_uuid: agent_ebcf0949f1c9
+    emotional_state: professional
+    goals:
+    - provide medical update and manage expectations for Josh's long surgery
+    what_happened: enters the waiting room, updates the staff on Josh's surgery duration
+      and condition, suggests they go home and offers to stay in contact, then exits
+    observed_status: enters the waiting room, updates the staff on Josh's surgery
+      duration and condition, suggests they go home and offers to stay in contact,
+      then exits
+    beliefs: []
+    observed_traits: []
+    importance: primary
+  - character_uuid: agent_4566d65dd1c0
+    emotional_state: ''
+    goals: []
+    what_happened: reported to be fine
+    observed_status: reported to be fine
+    beliefs: []
+    observed_traits: []
+    importance: primary
   - character_uuid: agent_d5524a94a33b
     emotional_state: Shocked and devastated, relief instantly yielding to profound
       personal grief
@@ -5643,6 +6352,26 @@ events:
     - Deviations invite catastrophe
     observed_traits:
     - central to peril
+    importance: primary
+  - character_uuid: agent_052558e83a3b
+    emotional_state: frustrated
+    goals:
+    - demand answers to multiple questions
+    what_happened: repeatedly calling out 'C.J.!', groaning and calling after postponement
+      announcement
+    observed_status: repeatedly calling out 'C.J.!', groaning and calling after postponement
+      announcement
+    beliefs: []
+    observed_traits: []
+    importance: primary
+  - character_uuid: agent_052558e83a3b
+    emotional_state: ''
+    goals:
+    - gain access to medical updates
+    what_happened: asking when the press can talk to the medical team
+    observed_status: asking when the press can talk to the medical team
+    beliefs: []
+    observed_traits: []
     importance: primary
   - character_uuid: agent_d9ea8565c92f
     emotional_state: Insistent urgency tempered by professional restraint
@@ -5888,6 +6617,16 @@ events:
     - Resilient through humor
     - Vulnerable yet professional
     importance: primary
+  - character_uuid: agent_4566d65dd1c0
+    emotional_state: ''
+    goals: []
+    what_happened: referenced as being under anesthetic for over an hour and likely
+      on morphine drip
+    observed_status: referenced as being under anesthetic for over an hour and likely
+      on morphine drip
+    beliefs: []
+    observed_traits: []
+    importance: primary
   - character_uuid: agent_d9ea8565c92f
     emotional_state: Urgent insistence tempered by apologetic restraint
     goals:
@@ -6053,6 +6792,34 @@ events:
     - cautious
     - pragmatic
     importance: primary
+  - character_uuid: agent_4566d65dd1c0
+    emotional_state: ''
+    goals: []
+    what_happened: referenced as under anesthetic without signing letter delegating
+      power
+    observed_status: referenced as under anesthetic without signing letter delegating
+      power
+    beliefs: []
+    observed_traits: []
+    importance: primary
+  - character_uuid: agent_738f513a2eba
+    emotional_state: ''
+    goals: []
+    what_happened: discussed as potentially ordering tactical alert but limited by
+      unsigned letter
+    observed_status: discussed as potentially ordering tactical alert but limited
+      by unsigned letter
+    beliefs: []
+    observed_traits: []
+    importance: primary
+  - character_uuid: agent_8cbd193878e6
+    emotional_state: ''
+    goals: []
+    what_happened: referenced as agreeing with Leo on not upgrading DEFCON
+    observed_status: referenced as agreeing with Leo on not upgrading DEFCON
+    beliefs: []
+    observed_traits: []
+    importance: primary
   - character_uuid: agent_f00a9f666e44
     emotional_state: Intense urgency laced with frustration at legal paralysis
     goals:
@@ -6073,6 +6840,14 @@ events:
     - urgent
     - analytical
     - hawkish
+    importance: primary
+  - character_uuid: agent_d9ea8565c92f
+    emotional_state: ''
+    goals: []
+    what_happened: referenced as asking C.J. questions on chain of command
+    observed_status: referenced as asking C.J. questions on chain of command
+    beliefs: []
+    observed_traits: []
     importance: primary
   - character_uuid: agent_27fa58e83ea5
     emotional_state: Impatient determination amid perceived hesitation
@@ -6218,6 +6993,34 @@ events:
     - authoritative
     - pragmatic
     importance: primary
+  - character_uuid: agent_4566d65dd1c0
+    emotional_state: ''
+    goals: []
+    what_happened: described as hemorrhaging under anesthetic, unable to sign delegation
+      letter granting VP authority
+    observed_status: described as hemorrhaging under anesthetic, unable to sign delegation
+      letter granting VP authority
+    beliefs: []
+    observed_traits: []
+    importance: primary
+  - character_uuid: agent_738f513a2eba
+    emotional_state: ''
+    goals: []
+    what_happened: debated as lacking authority to order DEFCON 4 without signed presidential
+      letter
+    observed_status: debated as lacking authority to order DEFCON 4 without signed
+      presidential letter
+    beliefs: []
+    observed_traits: []
+    importance: primary
+  - character_uuid: agent_8cbd193878e6
+    emotional_state: ''
+    goals: []
+    what_happened: agrees with Leo against DEFCON upgrade
+    observed_status: agrees with Leo against DEFCON upgrade
+    beliefs: []
+    observed_traits: []
+    importance: primary
   - character_uuid: agent_f00a9f666e44
     emotional_state: Alarmed urgency laced with frustration at institutional paralysis
     goals:
@@ -6238,6 +7041,15 @@ events:
     - hawkish
     - insistent
     - legally astute
+    importance: primary
+  - character_uuid: agent_d9ea8565c92f
+    emotional_state: ''
+    goals:
+    - probe administration on constitutional crisis
+    what_happened: pressing C.J. with questions on chain of command and 25th Amendment
+    observed_status: pressing C.J. with questions on chain of command and 25th Amendment
+    beliefs: []
+    observed_traits: []
     importance: primary
   - character_uuid: agent_c38d38d681d9
     emotional_state: ''
@@ -6396,6 +7208,35 @@ events:
     - restrained
     - strategic
     importance: primary
+  - character_uuid: agent_4566d65dd1c0
+    emotional_state: ''
+    goals: []
+    what_happened: discussed as hemorrhaging and customarily needing to sign letter
+      delegating power to VP under anesthetic, absent 25th Amendment
+    observed_status: discussed as hemorrhaging and customarily needing to sign letter
+      delegating power to VP under anesthetic, absent 25th Amendment
+    beliefs: []
+    observed_traits: []
+    importance: primary
+  - character_uuid: agent_738f513a2eba
+    emotional_state: ''
+    goals:
+    - (potential) assume delegated powers for continuity
+    what_happened: discussed as lacking authority to order alerts without President's
+      signed delegation letter
+    observed_status: discussed as lacking authority to order alerts without President's
+      signed delegation letter
+    beliefs: []
+    observed_traits: []
+    importance: primary
+  - character_uuid: agent_8cbd193878e6
+    emotional_state: ''
+    goals: []
+    what_happened: referenced as agreeing with Leo on DefCon posture
+    observed_status: referenced as agreeing with Leo on DefCon posture
+    beliefs: []
+    observed_traits: []
+    importance: primary
   - character_uuid: agent_f00a9f666e44
     emotional_state: Urgent insistence laced with frustration at bureaucratic paralysis
     goals:
@@ -6416,6 +7257,16 @@ events:
     - hawkish
     - insistent
     - analytical
+    importance: primary
+  - character_uuid: agent_d9ea8565c92f
+    emotional_state: ''
+    goals: []
+    what_happened: referenced as pressing C.J. with questions on authority and chain
+      of command
+    observed_status: referenced as pressing C.J. with questions on authority and chain
+      of command
+    beliefs: []
+    observed_traits: []
     importance: primary
   - character_uuid: agent_27fa58e83ea5
     emotional_state: Heightened urgency driving bold suggestion
@@ -6541,6 +7392,28 @@ events:
     - empathetic
     - decisive
     importance: primary
+  - character_uuid: agent_d9ea8565c92f
+    emotional_state: ''
+    goals:
+    - press for information on crisis response
+    what_happened: persistent reporter referenced by Toby as needing to be stalled
+      for hours
+    observed_status: persistent reporter referenced by Toby as needing to be stalled
+      for hours
+    beliefs: []
+    observed_traits: []
+    importance: primary
+  - character_uuid: agent_b3c2c76d4114
+    emotional_state: ''
+    goals:
+    - probe security lapses like missing canopy
+    what_happened: reporter who asked C.J. about Secret Service canopy, mentioned
+      along with others
+    observed_status: reporter who asked C.J. about Secret Service canopy, mentioned
+      along with others
+    beliefs: []
+    observed_traits: []
+    importance: primary
   - character_uuid: agent_12db9dc6462c
     emotional_state: Overwhelmed terror yielding to reassured determination
     goals:
@@ -6652,6 +7525,19 @@ events:
   theme_uuids: []
   arc_uuids: []
   participations:
+  - character_uuid: agent_57456b21c104
+    emotional_state: composed but concerned about press
+    goals:
+    - seek Toby's guidance on handling press questions about security lapses
+    what_happened: catches up to Toby in hallway, discusses delaying Danny, mentions
+      neck scratch from necklace and press questions about Secret Service canopy from
+      Arthur Leeds and others, confirms non-comment policy on security
+    observed_status: catches up to Toby in hallway, discusses delaying Danny, mentions
+      neck scratch from necklace and press questions about Secret Service canopy from
+      Arthur Leeds and others, confirms non-comment policy on security
+    beliefs: []
+    observed_traits: []
+    importance: primary
   - character_uuid: agent_7c84dea6dcc9
     emotional_state: Calm paternal reassurance masking underlying crisis strain
     goals:
@@ -6673,6 +7559,23 @@ events:
     - empathetic
     - resolute leadership
     - tender under gruff exterior
+    importance: primary
+  - character_uuid: agent_d9ea8565c92f
+    emotional_state: ''
+    goals: []
+    what_happened: referenced by Toby and C.J. as a reporter to hold off on questions
+    observed_status: referenced by Toby and C.J. as a reporter to hold off on questions
+    beliefs: []
+    observed_traits: []
+    importance: primary
+  - character_uuid: agent_b3c2c76d4114
+    emotional_state: ''
+    goals: []
+    what_happened: referenced by C.J. as reporter who asked about Secret Service canopy
+    observed_status: referenced by C.J. as reporter who asked about Secret Service
+      canopy
+    beliefs: []
+    observed_traits: []
     importance: primary
   - character_uuid: agent_12db9dc6462c
     emotional_state: Overwhelmed terror shifting to reassured resolve
@@ -6961,6 +7864,16 @@ events:
     - direct
     - empathetic
     importance: primary
+  - character_uuid: agent_4566d65dd1c0
+    emotional_state: ''
+    goals: []
+    what_happened: significantly mentioned by Toby as secretly running a campaign
+      and scheduled to speak at the VFW hall tonight
+    observed_status: significantly mentioned by Toby as secretly running a campaign
+      and scheduled to speak at the VFW hall tonight
+    beliefs: []
+    observed_traits: []
+    importance: primary
   - character_uuid: agent_2fd2fa99c0cf
     emotional_state: Detached neutrality amid routine service
     goals:
@@ -7056,6 +7969,17 @@ events:
   theme_uuids: []
   arc_uuids: []
   participations:
+  - character_uuid: agent_f05f343d04c2
+    emotional_state: hurt and resentful
+    goals:
+    - demand explanation for Bartlet's vote impacting his livelihood
+    what_happened: standing up to question Bartlet about his vote against New England
+      Dairy Compact hurting his business, listening to response
+    observed_status: standing up to question Bartlet about his vote against New England
+      Dairy Compact hurting his business, listening to response
+    beliefs: []
+    observed_traits: []
+    importance: primary
   - character_uuid: agent_7c84dea6dcc9
     emotional_state: Annoyed sarcasm veiling defensive loyalty to Bartlet's integrity
     goals:
@@ -7198,6 +8122,19 @@ events:
   theme_uuids: []
   arc_uuids: []
   participations:
+  - character_uuid: agent_f05f343d04c2
+    emotional_state: hurt and seeking explanation
+    goals:
+    - obtain an explanation for Bartlet's vote that damaged his business
+    what_happened: stands up to confront Governor Bartlet about his vote against the
+      New England Dairy Farming Compact, explains personal financial harm despite
+      past support
+    observed_status: stands up to confront Governor Bartlet about his vote against
+      the New England Dairy Farming Compact, explains personal financial harm despite
+      past support
+    beliefs: []
+    observed_traits: []
+    importance: primary
   - character_uuid: agent_7c84dea6dcc9
     emotional_state: Calm defensiveness masking irritation at persistent badgering
     goals:
@@ -7218,6 +8155,17 @@ events:
     - Evasively pragmatic
     - Strategically truthful
     - Resigned to losing
+    importance: primary
+  - character_uuid: agent_37b32f57b3aa
+    emotional_state: confused
+    goals:
+    - understand Bartlet's explanation on taxes
+    what_happened: standing and listening to Bartlet explain tax issues for married
+      couples
+    observed_status: standing and listening to Bartlet explain tax issues for married
+      couples
+    beliefs: []
+    observed_traits: []
     importance: primary
   - character_uuid: agent_4566d65dd1c0
     emotional_state: Righteously unapologetic with steely resolve beneath a veneer
@@ -7381,6 +8329,14 @@ events:
     - dutiful
     - professional
     - unflinching
+    importance: primary
+  - character_uuid: agent_e9dd0ae36832
+    emotional_state: ''
+    goals: []
+    what_happened: delivered clothes to Bartlet (mentioned)
+    observed_status: delivered clothes to Bartlet (mentioned)
+    beliefs: []
+    observed_traits: []
     importance: primary
   - character_uuid: agent_d11a3b3bb6e4
     emotional_state: Concerned steadiness veiling crisis fatigue
@@ -7874,6 +8830,14 @@ events:
   arc_uuids:
   - arc_4294885c3e32
   participations:
+  - character_uuid: agent_7c84dea6dcc9
+    emotional_state: ''
+    goals: []
+    what_happened: the only staff member retained by Leo after purge
+    observed_status: the only staff member retained by Leo after purge
+    beliefs: []
+    observed_traits: []
+    importance: primary
   - character_uuid: agent_d11a3b3bb6e4
     emotional_state: Mocking amusement veiling deep disillusionment, surging to passionate
       conviction and unyielding resolve
@@ -7923,6 +8887,48 @@ events:
     - Defensive of achievements
     - Vulnerable to doubt
     - Open to inspiration
+    importance: primary
+  - character_uuid: agent_738f513a2eba
+    emotional_state: ''
+    goals: []
+    what_happened: referenced by Bartlet as a bigger party player who would offer
+      Leo national chairmanship
+    observed_status: referenced by Bartlet as a bigger party player who would offer
+      Leo national chairmanship
+    beliefs: []
+    observed_traits: []
+    importance: primary
+  - character_uuid: agent_60fae6a392fe
+    emotional_state: ''
+    goals: []
+    what_happened: fired by Leo from Bartlet's campaign staff
+    observed_status: fired by Leo from Bartlet's campaign staff
+    beliefs: []
+    observed_traits: []
+    importance: primary
+  - character_uuid: agent_9e7ef9e52ffa
+    emotional_state: ''
+    goals: []
+    what_happened: fired by Leo from Bartlet's campaign staff
+    observed_status: fired by Leo from Bartlet's campaign staff
+    beliefs: []
+    observed_traits: []
+    importance: primary
+  - character_uuid: agent_16a5b84aea3f
+    emotional_state: ''
+    goals: []
+    what_happened: fired by Leo from Bartlet's campaign staff
+    observed_status: fired by Leo from Bartlet's campaign staff
+    beliefs: []
+    observed_traits: []
+    importance: primary
+  - character_uuid: agent_98d12d662022
+    emotional_state: ''
+    goals: []
+    what_happened: fired by Leo from Bartlet's campaign staff
+    observed_status: fired by Leo from Bartlet's campaign staff
+    beliefs: []
+    observed_traits: []
     importance: primary
   object_involvements: []
   location_involvements:

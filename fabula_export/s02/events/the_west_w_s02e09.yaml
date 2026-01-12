@@ -1,5 +1,5 @@
 # Events for Galileo
-# Generated: 2026-01-11T19:27:41.457453
+# Generated: 2026-01-12T09:57:18.866304
 
 episode_uuid: ep_sea_ser_the_west_wing_s02_e09
 episode_title: Galileo
@@ -50,6 +50,22 @@ events:
     - skeptical
     - adaptable
     - playfully compliant
+    importance: primary
+  - character_uuid: agent_4566d65dd1c0
+    emotional_state: playful, joyful awe
+    goals:
+    - ignite C.J.'s childlike enthusiasm and imagination for the Galileo V Mars probe
+    - instill a mythic sense of adventure in the team's Mars briefing preparation
+    what_happened: walking down the White House colonnade with C.J. and aides, enthusiastically
+      sharing childlike wonder about the Galileo V Mars probe name, comparing it to
+      'Yellow Submarine,' and prodding C.J. to recite it with imaginative gusto to
+      prepare for the Mars briefing rehearsal
+    observed_status: walking down the White House colonnade with C.J. and aides, enthusiastically
+      sharing childlike wonder about the Galileo V Mars probe name, comparing it to
+      'Yellow Submarine,' and prodding C.J. to recite it with imaginative gusto to
+      prepare for the Mars briefing rehearsal
+    beliefs: []
+    observed_traits: []
     importance: primary
   object_involvements:
   - object_uuid: object_2329b65ad685
@@ -166,6 +182,20 @@ events:
     - assertive
     - visionary
     - witty
+    importance: primary
+  - character_uuid: agent_4566d65dd1c0
+    emotional_state: playful, authoritative, enthusiastic
+    goals:
+    - realize his vision of presenting the Galileo V as a mythic symbol of exploration
+      by supporting Sam's rewrite and elevating the event beyond rote facts
+    what_happened: enters with C.J., greets everyone, defies protocol by personally
+      answering kids' questions on Mars facts, critiques clichés like 'very unique'
+      in the intro, decisively backs Sam to rewrite it
+    observed_status: enters with C.J., greets everyone, defies protocol by personally
+      answering kids' questions on Mars facts, critiques clichés like 'very unique'
+      in the intro, decisively backs Sam to rewrite it
+    beliefs: []
+    observed_traits: []
     importance: primary
   - character_uuid: agent_2cf1a72b7d57
     emotional_state: Inquisitive wonder (inferred from question)
@@ -482,8 +512,9 @@ events:
     - dutiful under pressure
     importance: primary
   - character_uuid: agent_f3078a4f1b2f
-    emotional_state: ''
-    goals: []
+    emotional_state: puzzled then amused
+    goals:
+    - understand Martian time zones
     what_happened: puzzling over Martian time zones, dismissing the green beans leak
       story, drinking coffee, chuckling at Toby receiving the stamp assignment, and
       following Leo out
@@ -513,6 +544,14 @@ events:
     - commanding authority
     - no-nonsense efficiency
     - sardonic dismissal of frivolity
+    importance: primary
+  - character_uuid: agent_4566d65dd1c0
+    emotional_state: ''
+    goals: []
+    what_happened: referenced by unnamed source as not liking green beans
+    observed_status: referenced by unnamed source as not liking green beans
+    beliefs: []
+    observed_traits: []
     importance: primary
   object_involvements:
   - object_uuid: object_867f841dbb71
@@ -626,8 +665,10 @@ events:
     - adaptive
     importance: primary
   - character_uuid: agent_f3078a4f1b2f
-    emotional_state: ''
-    goals: []
+    emotional_state: amused
+    goals:
+    - engage in casual banter about Mars and news
+    - reluctantly accept involvement in stamp selection task
     what_happened: bantering with Toby about Martian time zones and green beans news
       leak, drinking coffee, following Leo out of the Mess, chuckling at Toby receiving
       the stamp assignment, and getting recruited by Toby to help with the task
@@ -656,6 +697,16 @@ events:
     - authoritative
     - brisk
     - pragmatic
+    importance: primary
+  - character_uuid: agent_4566d65dd1c0
+    emotional_state: ''
+    goals: []
+    what_happened: referenced in news report as not liking green beans according to
+      unnamed White House source
+    observed_status: referenced in news report as not liking green beans according
+      to unnamed White House source
+    beliefs: []
+    observed_traits: []
     importance: primary
   object_involvements:
   - object_uuid: object_867f841dbb71
@@ -928,6 +979,20 @@ events:
     - pragmatic
     - wry
     - commanding
+    importance: primary
+  - character_uuid: agent_4566d65dd1c0
+    emotional_state: excited and playfully reluctant
+    goals:
+    - secure free evening for reading about Mars and Galileo
+    - understand and negotiate avoidance of concert duty
+    what_happened: walks with Charlie reciting schedule, eagerly plans evening reading
+      Mars and Galileo books, calls out to Mrs. Landingham and Leo, humorously pleads
+      to skip Kennedy Center concert, transitions to intelligence briefing
+    observed_status: walks with Charlie reciting schedule, eagerly plans evening reading
+      Mars and Galileo books, calls out to Mrs. Landingham and Leo, humorously pleads
+      to skip Kennedy Center concert, transitions to intelligence briefing
+    beliefs: []
+    observed_traits: []
     importance: primary
   - character_uuid: agent_4ad5a1792822
     emotional_state: Firm and resolute, channeling administrative steel without apology
@@ -1228,6 +1293,24 @@ events:
     - matter-of-fact
     - loyal
     importance: primary
+  - character_uuid: agent_4566d65dd1c0
+    emotional_state: playfully resistant and frustrated
+    goals:
+    - Secure free evening for personal intellectual pursuit on Mars
+    - Probe and understand the diplomatic necessity overriding personal plans
+    what_happened: Walks with Charlie through Colonnade to Oval Office, discusses
+      packed schedule, plans evening reading Mars books and Galileo, resists attending
+      Kennedy Center concert, calls for and questions Leo on diplomatic reasons, jokes
+      about bribing Leo and whales voting, receives papers, transitions to intelligence
+      briefing mentioning Russian oil refinery.
+    observed_status: Walks with Charlie through Colonnade to Oval Office, discusses
+      packed schedule, plans evening reading Mars books and Galileo, resists attending
+      Kennedy Center concert, calls for and questions Leo on diplomatic reasons, jokes
+      about bribing Leo and whales voting, receives papers, transitions to intelligence
+      briefing mentioning Russian oil refinery.
+    beliefs: []
+    observed_traits: []
+    importance: primary
   - character_uuid: agent_4ad5a1792822
     emotional_state: Firmly resolute, channeling steely gatekeeper resolve against
       Bartlet's whims.
@@ -1487,6 +1570,21 @@ events:
     - authoritative
     - perceptive
     - composed
+    importance: primary
+  - character_uuid: agent_4566d65dd1c0
+    emotional_state: frustrated and reluctant
+    goals:
+    - Secure evening free time to read Mars and Galileo books
+    - Address diplomatic makeup with Iceland
+    - Receive and process urgent intelligence on Russian explosion
+    what_happened: Walking and discussing schedule with Charlie, resisting diplomatic
+      concert obligation, calling for Leo, referencing Russian oil refinery explosion,
+      transitioning to intelligence briefing.
+    observed_status: Walking and discussing schedule with Charlie, resisting diplomatic
+      concert obligation, calling for Leo, referencing Russian oil refinery explosion,
+      transitioning to intelligence briefing.
+    beliefs: []
+    observed_traits: []
     importance: primary
   - character_uuid: agent_4ad5a1792822
     emotional_state: firm and authoritative, unmoved by pleas
@@ -1910,6 +2008,21 @@ events:
     - decisive
     - sardonic undertone
     importance: primary
+  - character_uuid: agent_4566d65dd1c0
+    emotional_state: concerned
+    goals:
+    - Confirm details of Russian missile silo explosion
+    - Initiate confrontation with Russian ambassador via Leo
+    - Respond to Galileo V signal loss by summoning NASA Advisor
+    what_happened: Presides over Situation Room briefing, questions officer on silo
+      explosion cause, reads note on Galileo signal loss, hands note to Leo, orders
+      Leo to meet Russian ambassador.
+    observed_status: Presides over Situation Room briefing, questions officer on silo
+      explosion cause, reads note on Galileo signal loss, hands note to Leo, orders
+      Leo to meet Russian ambassador.
+    beliefs: []
+    observed_traits: []
+    importance: primary
   - character_uuid: agent_029e045a2104
     emotional_state: Professional detachment veiling concern over nuclear absurdity
     goals:
@@ -2160,6 +2273,23 @@ events:
     - wry
     - ' unflappable'
     importance: primary
+  - character_uuid: agent_4566d65dd1c0
+    emotional_state: exasperated
+    goals:
+    - avoid attending the diplomatic concert featuring modern music
+    - express curmudgeonly disdain for post-1860 music to contrast future diplomatic
+      adaptability
+    what_happened: quizzing Charlie on the Reykjavik Symphony's program while riding
+      in the limousine, repeatedly demanding to turn the car around upon learning
+      it's modern music, dismissing post-1860 compositions by Barber, Stravinsky,
+      Schoenberg, and the Icelandic premiere as sucking or blowing
+    observed_status: quizzing Charlie on the Reykjavik Symphony's program while riding
+      in the limousine, repeatedly demanding to turn the car around upon learning
+      it's modern music, dismissing post-1860 compositions by Barber, Stravinsky,
+      Schoenberg, and the Icelandic premiere as sucking or blowing
+    beliefs: []
+    observed_traits: []
+    importance: primary
   object_involvements:
   - object_uuid: object_f48ab3b6d2a8
     description_of_involvement: Charlie actively consults the slim booklet throughout
@@ -2309,6 +2439,23 @@ events:
     - competent
     - loyal
     - discreet
+    importance: primary
+  - character_uuid: agent_4566d65dd1c0
+    emotional_state: optimistic
+    goals:
+    - demand a broader theme in his speech
+    - refuse to cancel the classroom broadcast to talk with kids
+    - inquire about Sam's whereabouts
+    what_happened: exits limousine, walks up ramp with Charlie and Agents, spots and
+      calls C.J., demands broader theme for speech, rebuffs her plea to cancel classroom
+      broadcast insisting on more recovery time, banters about Sam hiding from Mallory,
+      enters freight elevator
+    observed_status: exits limousine, walks up ramp with Charlie and Agents, spots
+      and calls C.J., demands broader theme for speech, rebuffs her plea to cancel
+      classroom broadcast insisting on more recovery time, banters about Sam hiding
+      from Mallory, enters freight elevator
+    beliefs: []
+    observed_traits: []
     importance: primary
   - character_uuid: agent_e37a87438fdb
     emotional_state: Contentious spark inferred in relational tension
@@ -2812,6 +2959,14 @@ events:
     - Attentive
     - Supportive
     importance: primary
+  - character_uuid: agent_4566d65dd1c0
+    emotional_state: ''
+    goals: []
+    what_happened: associated with the box from which C.J. emerges
+    observed_status: associated with the box from which C.J. emerges
+    beliefs: []
+    observed_traits: []
+    importance: primary
   - character_uuid: agent_4e57282548ac
     emotional_state: Focused determination with no-nonsense poise
     goals:
@@ -3300,12 +3455,22 @@ events:
     - vulnerable
     importance: primary
   - character_uuid: agent_f3078a4f1b2f
-    emotional_state: ''
-    goals: []
+    emotional_state: playful, teasing
+    goals:
+    - assist Sam in refining and finalizing the Galileo briefing language
+    - hand off the briefing to Carol
     what_happened: speaking to Sam on the phone (voice-over), reading back briefing
       text about JPL flight manager, teasing Sam about Mallory's appearance and outfit.
     observed_status: speaking to Sam on the phone (voice-over), reading back briefing
       text about JPL flight manager, teasing Sam about Mallory's appearance and outfit.
+    beliefs: []
+    observed_traits: []
+    importance: primary
+  - character_uuid: agent_d11a3b3bb6e4
+    emotional_state: ''
+    goals: []
+    what_happened: mentioned by Mallory as someone she talked to about Galileo.
+    observed_status: mentioned by Mallory as someone she talked to about Galileo.
     beliefs: []
     observed_traits: []
     importance: primary
@@ -3505,8 +3670,10 @@ events:
     - romantically vulnerable
     importance: primary
   - character_uuid: agent_f3078a4f1b2f
-    emotional_state: ''
-    goals: []
+    emotional_state: playful
+    goals:
+    - verify briefing script with Sam
+    - tease Sam about his interaction with Mallory
     what_happened: speaks to Sam on the phone via voice-over, reads back briefing
       script, teases Sam about Mallory's appearance
     observed_status: speaks to Sam on the phone via voice-over, reads back briefing
@@ -3668,8 +3835,10 @@ events:
     - accommodating
     importance: primary
   - character_uuid: agent_f3078a4f1b2f
-    emotional_state: ''
-    goals: []
+    emotional_state: playful, curious
+    goals:
+    - Assist Sam with refining briefing draft
+    - Tease Sam about Mallory
     what_happened: On phone with Sam ([VO]), reads back draft text, teases about Mallory's
       appearance and presence, hangs up.
     observed_status: On phone with Sam ([VO]), reads back draft text, teases about
@@ -3791,8 +3960,9 @@ events:
   arc_uuids: []
   participations:
   - character_uuid: agent_f3078a4f1b2f
-    emotional_state: ''
-    goals: []
+    emotional_state: curious
+    goals:
+    - understand Donna's excited discovery
     what_happened: sees Donna's excitement and inquiringly asks 'What you got there?'
     observed_status: sees Donna's excitement and inquiringly asks 'What you got there?'
     beliefs: []
@@ -3889,6 +4059,20 @@ events:
     - loyal
     - resolute
     - strategic
+    importance: primary
+  - character_uuid: agent_4566d65dd1c0
+    emotional_state: outraged
+    goals:
+    - Override Nadia's secrecy with full unconditional NATO access and force transparency
+      on Russia's crumbling arsenal (per causal revelation and escalation connections)
+    what_happened: Bursts into the office, slams the door, mocks Nadia's paranoia,
+      exposes Russia's military disrepair and warhead theft attempt by deserters,
+      demands unconditional NATO inspectors, and threatens press exposure.
+    observed_status: Bursts into the office, slams the door, mocks Nadia's paranoia,
+      exposes Russia's military disrepair and warhead theft attempt by deserters,
+      demands unconditional NATO inspectors, and threatens press exposure.
+    beliefs: []
+    observed_traits: []
     importance: primary
   - character_uuid: agent_fcd6cc15db1c
     emotional_state: Defiant rigidity masking vulnerability to exposure
@@ -4080,12 +4264,31 @@ events:
     - pragmatic
     importance: primary
   - character_uuid: agent_f3078a4f1b2f
-    emotional_state: ''
-    goals: []
+    emotional_state: pragmatic
+    goals:
+    - navigate stamp selection bureaucracy
     what_happened: murmurs with aides, discusses Citizen's Stamp Advisory Committee
       issue, agrees to Aquino stamp after C.J.'s argument, whispers with C.J.
     observed_status: murmurs with aides, discusses Citizen's Stamp Advisory Committee
       issue, agrees to Aquino stamp after C.J.'s argument, whispers with C.J.
+    beliefs: []
+    observed_traits: []
+    importance: primary
+  - character_uuid: agent_4566d65dd1c0
+    emotional_state: authoritative, concerned, inspired
+    goals:
+    - reassert commanding presence
+    - obtain Galileo V update
+    - resolve staff scandals
+    - pivot to inspirational message for schoolchildren
+    what_happened: enters Oval Office unnoticed, startles aides with quip, questions
+      Sam on Galileo V status, discusses scandals with staff, dismisses them, privately
+      raves to C.J. about concert music, smokes cigar in colonnade, heeds her advice
+      on school speech, gazes at sky hoping for probe contact
+    observed_status: enters Oval Office unnoticed, startles aides with quip, questions
+      Sam on Galileo V status, discusses scandals with staff, dismisses them, privately
+      raves to C.J. about concert music, smokes cigar in colonnade, heeds her advice
+      on school speech, gazes at sky hoping for probe contact
     beliefs: []
     observed_traits: []
     importance: primary
@@ -4235,6 +4438,14 @@ events:
     - supportive
     - composed
     importance: primary
+  - character_uuid: agent_ee19c503a4e1
+    emotional_state: ''
+    goals: []
+    what_happened: opens door for C.J. as she exits Oval Office
+    observed_status: opens door for C.J. as she exits Oval Office
+    beliefs: []
+    observed_traits: []
+    importance: primary
   - character_uuid: agent_7c84dea6dcc9
     emotional_state: Slyly amused with intrigued curiosity under strategic focus
     goals:
@@ -4256,14 +4467,31 @@ events:
     - pragmatic
     importance: primary
   - character_uuid: agent_f3078a4f1b2f
-    emotional_state: ''
-    goals: []
+    emotional_state: pragmatic then convinced
+    goals:
+    - address stamp issue assigned by Leo
     what_happened: murmurs with aides, raises stamp issue involving Citizen's Stamp
       Advisory Committee, swayed by C.J.'s defense to endorse it, whispers with C.J.
       while exiting
     observed_status: murmurs with aides, raises stamp issue involving Citizen's Stamp
       Advisory Committee, swayed by C.J.'s defense to endorse it, whispers with C.J.
       while exiting
+    beliefs: []
+    observed_traits: []
+    importance: primary
+  - character_uuid: agent_4566d65dd1c0
+    emotional_state: reflective and hopeful
+    goals:
+    - resolve petty crises including green beans and stamp amid NASA uncertainty
+    - await and act on NASA Galileo update
+    what_happened: enters Oval Office unnoticed by aides, removes jacket, sits at
+      desk, questions aides on NASA update and crises, smokes cigar on Colonnade while
+      discussing concert and receiving C.J.'s advice on televised classroom, looks
+      at night sky hoping for Galileo contact
+    observed_status: enters Oval Office unnoticed by aides, removes jacket, sits at
+      desk, questions aides on NASA update and crises, smokes cigar on Colonnade while
+      discussing concert and receiving C.J.'s advice on televised classroom, looks
+      at night sky hoping for Galileo contact
     beliefs: []
     observed_traits: []
     importance: primary

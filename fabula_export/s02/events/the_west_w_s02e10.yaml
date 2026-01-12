@@ -1,5 +1,5 @@
 # Events for Noel
-# Generated: 2026-01-11T19:27:41.955074
+# Generated: 2026-01-12T09:57:19.376626
 
 episode_uuid: ep_sea_ser_the_west_wing_s02_e10
 episode_title: Noel
@@ -36,8 +36,10 @@ events:
   - arc_958db1cad772
   participations:
   - character_uuid: agent_f3078a4f1b2f
-    emotional_state: ''
-    goals: []
+    emotional_state: defiant, paranoid, silenced
+    goals:
+    - expose the surveillance deception to reclaim agency and shatter the therapy
+      facade
     what_happened: enters the secluded White House room, greets the therapists, questions
       their credentials and Kaytha's presence, erupts accusing them of using her as
       surveillance pretext rather than training, reveals insider knowledge of ATVA,
@@ -64,6 +66,14 @@ events:
     observed_traits:
     - authoritative
     - commanding
+    importance: primary
+  - character_uuid: agent_4566d65dd1c0
+    emotional_state: ''
+    goals: []
+    what_happened: mentioned by Josh as one of his direct superiors
+    observed_status: mentioned by Josh as one of his direct superiors
+    beliefs: []
+    observed_traits: []
     importance: primary
   - character_uuid: agent_e1fd68430b57
     emotional_state: Steadfast composure veiling therapeutic determination
@@ -186,8 +196,10 @@ events:
   arc_uuids: []
   participations:
   - character_uuid: agent_f3078a4f1b2f
-    emotional_state: ''
-    goals: []
+    emotional_state: defiant then speechless
+    goals:
+    - expose the therapists' surveillance lie
+    - maintain control and deny vulnerability through bravado
     what_happened: enters the secluded room, greets therapists, questions their titles
       and presence, lies about cutting his hand on a glass, exposes their surveillance,
       demands a restart, then falls silent when confronted about the hand injury
@@ -206,6 +218,14 @@ events:
     observed_status: Invoked indirectly via prior context of Josh's chain-of-command
       authority, symbolizing external White House pressures that frame this mandated
       vulnerability, though absent physically.
+    beliefs: []
+    observed_traits: []
+    importance: primary
+  - character_uuid: agent_4566d65dd1c0
+    emotional_state: ''
+    goals: []
+    what_happened: referenced by Josh as his superior
+    observed_status: referenced by Josh as his superior
     beliefs: []
     observed_traits: []
     importance: primary
@@ -382,8 +402,10 @@ events:
     - loyal aide
     importance: primary
   - character_uuid: agent_f3078a4f1b2f
-    emotional_state: ''
-    goals: []
+    emotional_state: defensive, detached, fracturing
+    goals:
+    - Resist probing by minimizing and denying Rosslyn trauma
+    - Deflect discussion of recent erratic behavior to other topics like the pilot
     what_happened: Declines coffee and tea, compulsively corrects 'Rosslyn, not Rosalyn',
       rote lists companions from Rosslyn Town Hall, delivers stark minimized recount
       of shooting ('walked out... heard gunshots... woke up in hospital'), denies
@@ -408,6 +430,16 @@ events:
     - N/A - not active
     observed_traits:
     - command presence
+    importance: primary
+  - character_uuid: agent_4566d65dd1c0
+    emotional_state: ''
+    goals: []
+    what_happened: Referenced by Josh as traveling with large group at Rosslyn Town
+      Hall.
+    observed_status: Referenced by Josh as traveling with large group at Rosslyn Town
+      Hall.
+    beliefs: []
+    observed_traits: []
     importance: primary
   - character_uuid: agent_d5524a94a33b
     emotional_state: Neutral - referenced off-screen
@@ -650,8 +682,9 @@ events:
     - loyal
     importance: primary
   - character_uuid: agent_f3078a4f1b2f
-    emotional_state: ''
-    goals: []
+    emotional_state: defensive and sarcastic
+    goals:
+    - To deflect and minimize discussion of the Rosslyn trauma and his recent breakdown
     what_happened: Declining offers of coffee or tea, correcting Stanley on Rosslyn
       location, listing attendees at the town hall, deflecting with sarcasm about
       recent behavior, inadvertently mentioning Robert Cano
@@ -922,8 +955,11 @@ events:
     - pragmatic
     importance: primary
   - character_uuid: agent_f3078a4f1b2f
-    emotional_state: ''
-    goals: []
+    emotional_state: irritated, rattled, frayed
+    goals:
+    - halt or criticize the disruptive brass quintet music
+    - alert Toby to Ben Zaharian's policy misalignment on SPR to initiate crisis response
+    - foreshadow PTSD auditory trauma responses through irritation with the music
     what_happened: enters the White House lobby rattled, snaps at Toby over the loud
       brass quintet, dismisses it as mall-like noise, grudgingly relents, pivots to
       urgently raise Ben Zaharian's off-message SPR comments, then exits
@@ -1127,8 +1163,9 @@ events:
     - multitasking
     importance: primary
   - character_uuid: agent_f3078a4f1b2f
-    emotional_state: ''
-    goals: []
+    emotional_state: irritated
+    goals:
+    - inform Toby about Ben Zaharian's rogue policy statement for handling
     what_happened: enters the White House lobby, confronts Toby about the loud brass
       quintet playing Christmas music, expresses disapproval comparing it to a mall,
       then alerts Toby to Ben Zaharian's unauthorized endorsement of tapping the SPR
@@ -1137,6 +1174,16 @@ events:
       quintet playing Christmas music, expresses disapproval comparing it to a mall,
       then alerts Toby to Ben Zaharian's unauthorized endorsement of tapping the SPR
       at an NRDC Q&A, and exits
+    beliefs: []
+    observed_traits: []
+    importance: primary
+  - character_uuid: agent_4566d65dd1c0
+    emotional_state: ''
+    goals: []
+    what_happened: referenced in question to Ben Zaharian about whether the President
+      would consider tapping the SPR
+    observed_status: referenced in question to Ben Zaharian about whether the President
+      would consider tapping the SPR
     beliefs: []
     observed_traits: []
     importance: primary
@@ -1339,12 +1386,23 @@ events:
     - team-oriented
     importance: primary
   - character_uuid: agent_f3078a4f1b2f
-    emotional_state: ''
-    goals: []
+    emotional_state: approving
+    goals:
+    - commend C.J.'s handling of briefing
+    - brief C.J. en route to pilot crisis
     what_happened: approaching C.J. in hallway, praising her briefing performance,
       updating her on President in situation room dealing with pilot issue
     observed_status: approaching C.J. in hallway, praising her briefing performance,
       updating her on President in situation room dealing with pilot issue
+    beliefs: []
+    observed_traits: []
+    importance: primary
+  - character_uuid: agent_4566d65dd1c0
+    emotional_state: ''
+    goals: []
+    what_happened: location in situation room mentioned by Josh regarding pilot issue
+    observed_status: location in situation room mentioned by Josh regarding pilot
+      issue
     beliefs: []
     observed_traits: []
     importance: primary
@@ -1655,7 +1713,8 @@ events:
     importance: primary
   - character_uuid: agent_f3078a4f1b2f
     emotional_state: ''
-    goals: []
+    goals:
+    - Update C.J. on emerging pilot crisis involving the President
     what_happened: Approaches C.J. in hallway, compliments her briefing response,
       informs her President is in situation room dealing with pilot issue
     observed_status: Approaches C.J. in hallway, compliments her briefing response,
@@ -1913,12 +1972,74 @@ events:
     - lightly amused
     importance: primary
   - character_uuid: agent_f3078a4f1b2f
-    emotional_state: ''
-    goals: []
+    emotional_state: casual
+    goals:
+    - praise C.J.'s handling of the briefing
+    - inform C.J. about the President's location and pilot crisis
     what_happened: approaches C.J. in hallway, praises her briefing performance, discloses
       President is in Situation Room dealing with pilot issue
     observed_status: approaches C.J. in hallway, praises her briefing performance,
       discloses President is in Situation Room dealing with pilot issue
+    beliefs: []
+    observed_traits: []
+    importance: primary
+  - character_uuid: agent_4566d65dd1c0
+    emotional_state: ''
+    goals:
+    - address pilot-related crisis
+    what_happened: in the Situation Room dealing with something about a pilot
+    observed_status: in the Situation Room dealing with something about a pilot
+    beliefs: []
+    observed_traits: []
+    importance: primary
+  - character_uuid: agent_3ee4436e9a6d
+    emotional_state: ''
+    goals: []
+    what_happened: standing beside C.J. during briefing, passes note from Sam to C.J.
+    observed_status: standing beside C.J. during briefing, passes note from Sam to
+      C.J.
+    beliefs: []
+    observed_traits: []
+    importance: primary
+  - character_uuid: agent_2cf1a72b7d57
+    emotional_state: ''
+    goals:
+    - clarify if energy policy has changed
+    what_happened: questions C.J. on energy secretary's comments about Strategic Petroleum
+      Reserve signaling policy shift
+    observed_status: questions C.J. on energy secretary's comments about Strategic
+      Petroleum Reserve signaling policy shift
+    beliefs: []
+    observed_traits: []
+    importance: primary
+  - character_uuid: agent_195e08d34d96
+    emotional_state: ''
+    goals:
+    - probe potential policy obstacles
+    what_happened: questions C.J. on Pete Didian's objections potentially impacting
+      IMF/World Bank restrictions
+    observed_status: questions C.J. on Pete Didian's objections potentially impacting
+      IMF/World Bank restrictions
+    beliefs: []
+    observed_traits: []
+    importance: primary
+  - character_uuid: agent_f185ea7446f0
+    emotional_state: ''
+    goals: []
+    what_happened: mentioned as having objections that could impact IMF/World Bank
+      restrictions; sits on foreign ep subcommittee
+    observed_status: mentioned as having objections that could impact IMF/World Bank
+      restrictions; sits on foreign ep subcommittee
+    beliefs: []
+    observed_traits: []
+    importance: primary
+  - character_uuid: agent_418686a39de3
+    emotional_state: ''
+    goals: []
+    what_happened: mentioned as having given speech at NRDC on North Slope drilling
+      and commenting positively on tapping Strategic Petroleum Reserve
+    observed_status: mentioned as having given speech at NRDC on North Slope drilling
+      and commenting positively on tapping Strategic Petroleum Reserve
     beliefs: []
     observed_traits: []
     importance: primary
@@ -2025,6 +2146,22 @@ events:
     - composed
     - decisive
     - strategic
+    importance: primary
+  - character_uuid: agent_4566d65dd1c0
+    emotional_state: determined
+    goals:
+    - Fully assess the rogue F-16 crisis details
+    - Evaluate threats, options, and contingencies to prepare for escalation
+    what_happened: Enters the Situation Room with Leo, directs everyone to sit, and
+      methodically interrogates military officers about the rogue F-16 pilot's deviation,
+      communication failure, crash possibilities, onboard weapons, intentions, psychological
+      screening, non-lethal options, and response plans.
+    observed_status: Enters the Situation Room with Leo, directs everyone to sit,
+      and methodically interrogates military officers about the rogue F-16 pilot's
+      deviation, communication failure, crash possibilities, onboard weapons, intentions,
+      psychological screening, non-lethal options, and response plans.
+    beliefs: []
+    observed_traits: []
     importance: primary
   - character_uuid: agent_664a07fd38c6
     emotional_state: Calm expertise in crisis delivery
@@ -2212,8 +2349,10 @@ events:
   arc_uuids: []
   participations:
   - character_uuid: agent_f3078a4f1b2f
-    emotional_state: ''
-    goals: []
+    emotional_state: very tired, resistant, evasive, startled
+    goals:
+    - deflect and minimize details about pilot involvement
+    - shorten or end the therapy session
     what_happened: evading Stanley's questions about his knowledge and assignment
       regarding the pilot, expresses fatigue, questions session length, reluctantly
       admits assignment to probe pilot's personal records, jumps startled at door
@@ -2335,8 +2474,10 @@ events:
   arc_uuids: []
   participations:
   - character_uuid: agent_f3078a4f1b2f
-    emotional_state: ''
-    goals: []
+    emotional_state: very tired, startled
+    goals:
+    - deflect detailed discussion of the pilot assignment
+    - shorten or end the therapy session
     what_happened: engages reluctantly in therapy dialogue about the pilot and his
       assignment, expresses tiredness, jumps startled at loud door knock, experiences
       vivid PTSD flashback to his apartment with bleeding hand while someone knocks
@@ -2449,8 +2590,9 @@ events:
   arc_uuids: []
   participations:
   - character_uuid: agent_f3078a4f1b2f
-    emotional_state: ''
-    goals: []
+    emotional_state: accusatory
+    goals:
+    - confront Leo about when he learned of Josh's condition
     what_happened: walking down the hallway with Leo and directly confronting him
       by asking 'When did you find out?'
     observed_status: walking down the hallway with Leo and directly confronting him
@@ -2607,6 +2749,18 @@ events:
     - dutiful
     - unflappable
     importance: primary
+  - character_uuid: agent_4566d65dd1c0
+    emotional_state: frustrated
+    goals:
+    - express frustration over delayed pilot intelligence
+    - conclude the meeting
+    what_happened: sitting in meeting with staffers, voices frustration over delayed
+      F-16 intelligence on the pilot, acknowledges thanks as meeting ends
+    observed_status: sitting in meeting with staffers, voices frustration over delayed
+      F-16 intelligence on the pilot, acknowledges thanks as meeting ends
+    beliefs: []
+    observed_traits: []
+    importance: primary
   - character_uuid: agent_4e57282548ac
     emotional_state: Politely deferential amid underlying tension
     goals:
@@ -2676,8 +2830,10 @@ events:
   arc_uuids: []
   participations:
   - character_uuid: agent_f3078a4f1b2f
-    emotional_state: ''
-    goals: []
+    emotional_state: defensive
+    goals:
+    - deflect probing into his fixation on the pilot
+    - stick to surface-level public facts
     what_happened: Responds defensively to questions about his knowledge of the pilot
       Robert Cano, claiming limited time and reliance on public newspaper reports.
     observed_status: Responds defensively to questions about his knowledge of the
@@ -2781,8 +2937,10 @@ events:
   arc_uuids: []
   participations:
   - character_uuid: agent_f3078a4f1b2f
-    emotional_state: ''
-    goals: []
+    emotional_state: preoccupied
+    goals:
+    - gather precise details about the pilot's crash and final words
+    - understand the incident tied to his trauma
     what_happened: sitting alone in darkened office fixated on photos of the suicidal
       pilot, interrupted by Stanley's VO, questioning Leo about crash details, resumes
       looking through photos
@@ -2916,8 +3074,9 @@ events:
   arc_uuids: []
   participations:
   - character_uuid: agent_f3078a4f1b2f
-    emotional_state: ''
-    goals: []
+    emotional_state: obsessed
+    goals:
+    - obtain precise details on the pilot's crash and cryptic final words
     what_happened: fixated on looking at photos, questions Leo intensely about the
       F-16 crash and pilot's final words, then evasively resumes studying the photos
     observed_status: fixated on looking at photos, questions Leo intensely about the
@@ -3041,8 +3200,9 @@ events:
   - arc_222ec2b05f04
   participations:
   - character_uuid: agent_f3078a4f1b2f
-    emotional_state: ''
-    goals: []
+    emotional_state: fixated
+    goals:
+    - probe for detailed confirmation on the suicidal pilot's fate and last words
     what_happened: sitting in his office looking at photos, persistently questions
       Leo about the F-16 pilot's crash and final radio communication, then evasively
       resumes examining photos
@@ -3164,8 +3324,10 @@ events:
   arc_uuids: []
   participations:
   - character_uuid: agent_f3078a4f1b2f
-    emotional_state: ''
-    goals: []
+    emotional_state: defensive
+    goals:
+    - minimize personal knowledge of the suicidal pilot
+    - resist Stanley's probing
     what_happened: Greets Stanley curtly, defensively minimizes his knowledge of the
       pilot by listing only name, rank, training, and missions, then admits sharing
       the same birthday
@@ -3236,8 +3398,10 @@ events:
   - arc_222ec2b05f04
   participations:
   - character_uuid: agent_f3078a4f1b2f
-    emotional_state: ''
-    goals: []
+    emotional_state: defensive
+    goals:
+    - deflect deeper probing by providing superficial details about the pilot
+    - resist full emotional revelation
     what_happened: defensively lists superficial facts about the suicidal pilot (name,
       rank, training, missions) before reluctantly admitting their shared birthday
     observed_status: defensively lists superficial facts about the suicidal pilot
@@ -3304,8 +3468,9 @@ events:
   arc_uuids: []
   participations:
   - character_uuid: agent_f3078a4f1b2f
-    emotional_state: ''
-    goals: []
+    emotional_state: distressed
+    goals:
+    - recount details of Cano's trauma fixation
     what_happened: haltingly recounts Lieutenant Cano having a Purple Heart for his
       plane being shot at over Bosnia, catching fire, ejecting, and sustaining injuries,
       amid faint background sounds of gunshots, screaming, and sirens
@@ -3474,8 +3639,9 @@ events:
     - persistent
     importance: primary
   - character_uuid: agent_f3078a4f1b2f
-    emotional_state: ''
-    goals: []
+    emotional_state: irritated escalating to panicked PTSD trauma
+    goals:
+    - silence the bagpipes and lobby noise
     what_happened: confronts Toby about the bagpipes, screams mistaking them for sirens
       in PTSD flashback, storms to his office, bursts out yelling for quiet, slams
       door
@@ -3658,8 +3824,10 @@ events:
     - alarmed
     importance: primary
   - character_uuid: agent_f3078a4f1b2f
-    emotional_state: ''
-    goals: []
+    emotional_state: enraged and frayed
+    goals:
+    - stop the loud bagpipe music
+    - restore silence in the lobby
     what_happened: confronts Toby about the bagpipes, screams in PTSD-triggered rage
       mistaking them for sirens, storms to his office, bursts out yelling for silence,
       demands CBO spec from Donna, complains about chaos like a hockey game, and slams
@@ -3810,8 +3978,10 @@ events:
   arc_uuids: []
   participations:
   - character_uuid: agent_f3078a4f1b2f
-    emotional_state: ''
-    goals: []
+    emotional_state: defensive
+    goals:
+    - deflect probing questions
+    - maintain denial of issues
     what_happened: sits across from Stanley, denies unusual behavior post-pilot, dismisses
       friends' concerns, deflects questions about December 19th
     observed_status: sits across from Stanley, denies unusual behavior post-pilot,
@@ -3908,8 +4078,9 @@ events:
     - poised under pressure
     importance: primary
   - character_uuid: agent_f3078a4f1b2f
-    emotional_state: ''
-    goals: []
+    emotional_state: frustrated
+    goals:
+    - obtain new information on Robert Cano's suicide
     what_happened: bursts into C.J.'s office demanding information on Robert Cano's
       suicide, argues sarcastically, recognizes the painting in the photograph, storms
       out glaring at Donna
@@ -4076,14 +4247,26 @@ events:
     - intense colleague
     importance: primary
   - character_uuid: agent_f3078a4f1b2f
-    emotional_state: ''
-    goals: []
+    emotional_state: agitated, irritated, defensive
+    goals:
+    - deflect Stanley's probing into his trauma
+    - downplay significance of the day's events
     what_happened: pacing the room, expressing irritation at Donna's incessant talk
       about Yo-Yo Ma, denying specific memory of Oval Office meeting while acknowledging
       routine meetings with the President
     observed_status: pacing the room, expressing irritation at Donna's incessant talk
       about Yo-Yo Ma, denying specific memory of Oval Office meeting while acknowledging
       routine meetings with the President
+    beliefs: []
+    observed_traits: []
+    importance: primary
+  - character_uuid: agent_4566d65dd1c0
+    emotional_state: ''
+    goals: []
+    what_happened: referenced by Josh and Stanley in context of routine and unusual
+      Oval Office meetings
+    observed_status: referenced by Josh and Stanley in context of routine and unusual
+      Oval Office meetings
     beliefs: []
     observed_traits: []
     importance: primary
@@ -4238,12 +4421,23 @@ events:
     - intense communicator
     importance: primary
   - character_uuid: agent_f3078a4f1b2f
-    emotional_state: ''
-    goals: []
+    emotional_state: defensive
+    goals:
+    - deflect Stanley's probing by focusing on trivial irritations like Donna's comments
     what_happened: pacing the room and defensively fixating on Donna's Yo-Yo Ma obsession
       while downplaying the Oval Office meeting
     observed_status: pacing the room and defensively fixating on Donna's Yo-Yo Ma
       obsession while downplaying the Oval Office meeting
+    beliefs: []
+    observed_traits: []
+    importance: primary
+  - character_uuid: agent_4566d65dd1c0
+    emotional_state: ''
+    goals: []
+    what_happened: referenced by Stanley and Josh in context of an Oval Office meeting
+      on the day of the Christmas party
+    observed_status: referenced by Stanley and Josh in context of an Oval Office meeting
+      on the day of the Christmas party
     beliefs: []
     observed_traits: []
     importance: primary
@@ -4373,6 +4567,17 @@ events:
     - dutiful
     - alarmist
     importance: primary
+  - character_uuid: agent_4566d65dd1c0
+    emotional_state: ''
+    goals:
+    - receive briefing on New England's oil crisis
+    what_happened: visually present, receiving off-screen briefing from Sam during
+      senior staff meeting
+    observed_status: visually present, receiving off-screen briefing from Sam during
+      senior staff meeting
+    beliefs: []
+    observed_traits: []
+    importance: primary
   object_involvements: []
   location_involvements:
   - location_uuid: location_c5378a7ab3a8
@@ -4413,8 +4618,10 @@ events:
   arc_uuids: []
   participations:
   - character_uuid: agent_f3078a4f1b2f
-    emotional_state: ''
-    goals: []
+    emotional_state: defensive and hesitant
+    goals:
+    - deny further implications or casualties from the shooting
+    - downplay personal involvement in the referenced meeting
     what_happened: stammering a defensive denial, insisting 'Nobody was next' regarding
       the shooting and claiming 'It wasn't even my meeting' while addressing an implied
       interrogator
@@ -4493,7 +4700,9 @@ events:
     importance: primary
   - character_uuid: agent_f3078a4f1b2f
     emotional_state: ''
-    goals: []
+    goals:
+    - Observe the SPR policy debate, paralleling personal political opposition under
+      stress
     what_happened: Standing silently in front of President Bartlet during the policy
       discussion
     observed_status: Standing silently in front of President Bartlet during the policy
@@ -4519,6 +4728,20 @@ events:
     - stoic
     - observant
     - authoritative
+    importance: primary
+  - character_uuid: agent_4566d65dd1c0
+    emotional_state: skeptical
+    goals:
+    - Challenge Sam's defense of tapping the SPR to expose potential flaws in foreign
+      policy assumptions
+    what_happened: Voices skepticism about OPEC punishing the US for tapping the SPR
+      and probes the sincerity of Saudi concerns by questioning why they don't pump
+      oil faster
+    observed_status: Voices skepticism about OPEC punishing the US for tapping the
+      SPR and probes the sincerity of Saudi concerns by questioning why they don't
+      pump oil faster
+    beliefs: []
+    observed_traits: []
     importance: primary
   object_involvements: []
   location_involvements: []
@@ -4606,8 +4829,11 @@ events:
     - policy-focused
     importance: primary
   - character_uuid: agent_f3078a4f1b2f
-    emotional_state: ''
-    goals: []
+    emotional_state: defensive
+    goals:
+    - deflect specifics of his Oval Office behavior
+    - admit political opposition to SPR while denying impropriety
+    - invoke decorum to mask vulnerability
     what_happened: sits with bandaged hand visible on the table; explains his attendance
       at Sam's SPR meeting for political perspective; admits opposing the SPR idea
       politically and voicing it as paid to do; smirks, deflects specifics, laughs,
@@ -4618,6 +4844,16 @@ events:
       politically and voicing it as paid to do; smirks, deflects specifics, laughs,
       and denies raising his voice to the President; emphasizes uncrossable line of
       decorum in Oval Office
+    beliefs: []
+    observed_traits: []
+    importance: primary
+  - character_uuid: agent_4566d65dd1c0
+    emotional_state: ''
+    goals: []
+    what_happened: attended Sam's SPR meeting in Oval Office; described as informal
+      with staff but with uncrossable decorum line; Josh denies raising voice to him
+    observed_status: attended Sam's SPR meeting in Oval Office; described as informal
+      with staff but with uncrossable decorum line; Josh denies raising voice to him
     beliefs: []
     observed_traits: []
     importance: primary
@@ -4708,8 +4944,10 @@ events:
   arc_uuids: []
   participations:
   - character_uuid: agent_f3078a4f1b2f
-    emotional_state: ''
-    goals: []
+    emotional_state: defensive, shocked
+    goals:
+    - minimize and deflect from his trauma
+    - maintain damage control and facade
     what_happened: minimizing severity of outburst, fabricating hand injury story
       involving glass and magazine, deflecting with humor and cleverness, shocked
       into silence by diagnosis
@@ -4805,8 +5043,9 @@ events:
   arc_uuids: []
   participations:
   - character_uuid: agent_f3078a4f1b2f
-    emotional_state: ''
-    goals: []
+    emotional_state: catatonic
+    goals:
+    - bridge therapy confrontation with traumatic flashback by confirming party context
     what_happened: motionless on the couch, ignoring knocking, tersely confirms attending
       the Congressional Christmas party
     observed_status: motionless on the couch, ignoring knocking, tersely confirms
@@ -4901,8 +5140,9 @@ events:
   arc_uuids: []
   participations:
   - character_uuid: agent_f3078a4f1b2f
-    emotional_state: ''
-    goals: []
+    emotional_state: defensive
+    goals:
+    - deflect Stanley's scrutiny of his memory
     what_happened: sitting motionless on the couch amid knocking, responds with clipped
       confirmation about the party
     observed_status: sitting motionless on the couch amid knocking, responds with
@@ -4990,12 +5230,22 @@ events:
   arc_uuids: []
   participations:
   - character_uuid: agent_f3078a4f1b2f
-    emotional_state: ''
-    goals: []
+    emotional_state: hesitant
+    goals:
+    - provide a clipped, defensive anecdote to evade deeper trauma and bridge probing
+      challenge
     what_happened: haltingly recounts attending the Congressional Christmas party,
       noting its unusual white-tie formality preferred by the President
     observed_status: haltingly recounts attending the Congressional Christmas party,
       noting its unusual white-tie formality preferred by the President
+    beliefs: []
+    observed_traits: []
+    importance: primary
+  - character_uuid: agent_4566d65dd1c0
+    emotional_state: ''
+    goals: []
+    what_happened: prefers white-tie formality for the Congressional Christmas party
+    observed_status: prefers white-tie formality for the Congressional Christmas party
     beliefs: []
     observed_traits: []
     importance: primary
@@ -5055,14 +5305,25 @@ events:
   arc_uuids: []
   participations:
   - character_uuid: agent_f3078a4f1b2f
-    emotional_state: ''
-    goals: []
+    emotional_state: tense
+    goals:
+    - Share recollection of the past party in the therapy session
     what_happened: Recounting the Congressional Christmas party's unusual white-tie
       formality and noting that the President likes it, with trailing words as the
       scene fades out.
     observed_status: Recounting the Congressional Christmas party's unusual white-tie
       formality and noting that the President likes it, with trailing words as the
       scene fades out.
+    beliefs: []
+    observed_traits: []
+    importance: primary
+  - character_uuid: agent_4566d65dd1c0
+    emotional_state: ''
+    goals: []
+    what_happened: Recalled by Josh as liking the white-tie formality of the Congressional
+      Christmas party.
+    observed_status: Recalled by Josh as liking the white-tie formality of the Congressional
+      Christmas party.
     beliefs: []
     observed_traits: []
     importance: primary
@@ -5171,6 +5432,23 @@ events:
     - dutiful
     - politely humorous
     importance: primary
+  - character_uuid: agent_4566d65dd1c0
+    emotional_state: proud and playful
+    goals:
+    - promote and enforce statesmanlike regal attire for formal occasions like the
+      Congressional Christmas party
+    - humanize his leadership through warm, erudite interaction
+    what_happened: enters the room, compliments Charlie's appearance, declares revival
+      of statesmanlike dress code referencing Woodrow Wilson, playfully dismisses
+      top hats, lectures on regal protocol for formal occasions while getting assisted
+      with his coat
+    observed_status: enters the room, compliments Charlie's appearance, declares revival
+      of statesmanlike dress code referencing Woodrow Wilson, playfully dismisses
+      top hats, lectures on regal protocol for formal occasions while getting assisted
+      with his coat
+    beliefs: []
+    observed_traits: []
+    importance: primary
   - character_uuid: agent_519f0b48361a
     emotional_state: Calmly polite and focused on service
     goals:
@@ -5275,12 +5553,22 @@ events:
     - reliable
     importance: primary
   - character_uuid: agent_f3078a4f1b2f
-    emotional_state: ''
+    emotional_state: distracted, curt
     goals: []
     what_happened: walks by in hallway, responds curtly to C.J.'s mention of Sam reporting
       on Didion meeting and her reminder about Christmas and upcoming start
     observed_status: walks by in hallway, responds curtly to C.J.'s mention of Sam
       reporting on Didion meeting and her reminder about Christmas and upcoming start
+    beliefs: []
+    observed_traits: []
+    importance: primary
+  - character_uuid: agent_4566d65dd1c0
+    emotional_state: ''
+    goals: []
+    what_happened: mentioned as having spotted the painting at the National Gallery,
+      sparking recovery efforts
+    observed_status: mentioned as having spotted the painting at the National Gallery,
+      sparking recovery efforts
     beliefs: []
     observed_traits: []
     importance: primary
@@ -5513,8 +5801,11 @@ events:
     - reliable communicator
     importance: primary
   - character_uuid: agent_f3078a4f1b2f
-    emotional_state: ''
-    goals: []
+    emotional_state: detached and disengaged
+    goals:
+    - provide minimal policy update
+    - brush off conversation quickly to maintain emotional withdrawal consistent with
+      PTSD-driven detachment
     what_happened: walks by in hallway, responds curtly and monosyllabically to C.J.'s
       queries about Didion meeting, Christmas, and event timing
     observed_status: walks by in hallway, responds curtly and monosyllabically to
@@ -5540,6 +5831,34 @@ events:
     - playfully gruff
     - witty
     - courteous beneath bluster
+    importance: primary
+  - character_uuid: agent_6779bda9701d
+    emotional_state: grateful
+    goals:
+    - receive the family's Nazi-looted painting back
+    what_happened: waits in C.J.'s office, confirms father's identity, nods in agreement,
+      receives news of painting return, declines offer to leave it hanging via gesture
+      to son, thanks C.J.
+    observed_status: waits in C.J.'s office, confirms father's identity, nods in agreement,
+      receives news of painting return, declines offer to leave it hanging via gesture
+      to son, thanks C.J.
+    beliefs: []
+    observed_traits: []
+    importance: primary
+  - character_uuid: agent_e598b8a03da2
+    emotional_state: appreciative and informative
+    goals:
+    - assist mother in receiving painting
+    - provide historical context
+    - relay appraisal info to mother
+    what_happened: waits with mother in office, confirms prior call with C.J., explains
+      family history, receives wrapped painting from Bernard, discusses original price,
+      expresses happiness
+    observed_status: waits with mother in office, confirms prior call with C.J., explains
+      family history, receives wrapped painting from Bernard, discusses original price,
+      expresses happiness
+    beliefs: []
+    observed_traits: []
     importance: primary
   object_involvements: []
   location_involvements:
@@ -5590,8 +5909,9 @@ events:
   arc_uuids: []
   participations:
   - character_uuid: agent_f3078a4f1b2f
-    emotional_state: ''
-    goals: []
+    emotional_state: denial masking terror, reluctantly piercing facade toward self-awareness
+    goals:
+    - resist and deny PTSD diagnosis to maintain professional facade
     what_happened: Aggressively demands the diagnosis Stanley made in five minutes,
       delivers rapid-fire humorous denials of PTSD while masking terror, relives the
       White House Christmas party shooting through vivid flashbacks triggered by Yo-Yo
@@ -5602,6 +5922,16 @@ events:
       White House Christmas party shooting through vivid flashbacks triggered by Yo-Yo
       Ma's Bach performance, interrupted by Kaytha's adrenaline insight, leading to
       turning-point revelation.
+    beliefs: []
+    observed_traits: []
+    importance: primary
+  - character_uuid: agent_4566d65dd1c0
+    emotional_state: humorous
+    goals: []
+    what_happened: Provides voice-over introducing Yo-Yo Ma's Bach Suite in G Major
+      performance with a humorous polling joke.
+    observed_status: Provides voice-over introducing Yo-Yo Ma's Bach Suite in G Major
+      performance with a humorous polling joke.
     beliefs: []
     observed_traits: []
     importance: primary
@@ -5742,14 +6072,27 @@ events:
   - arc_958db1cad772
   participations:
   - character_uuid: agent_f3078a4f1b2f
-    emotional_state: ''
-    goals: []
+    emotional_state: defensive and in denial shifting to distressed realization
+    goals:
+    - demand and challenge PTSD diagnosis
+    - deflect confrontation with trauma through denial and humor
     what_happened: demands his diagnosis from Stanley, denies having PTSD, reluctantly
       recalls Christmas party and shooting trauma triggered by Yo-Yo Ma's music, admits
       he couldn't stop reliving it
     observed_status: demands his diagnosis from Stanley, denies having PTSD, reluctantly
       recalls Christmas party and shooting trauma triggered by Yo-Yo Ma's music, admits
       he couldn't stop reliving it
+    beliefs: []
+    observed_traits: []
+    importance: primary
+  - character_uuid: agent_4566d65dd1c0
+    emotional_state: humorous and engaging
+    goals:
+    - humorously introduce Yo-Yo Ma performer
+    what_happened: voiceover from past speech introducing Yo-Yo Ma and Bach Suite
+      in G Major at Christmas party, eliciting crowd laughter and applause
+    observed_status: voiceover from past speech introducing Yo-Yo Ma and Bach Suite
+      in G Major at Christmas party, eliciting crowd laughter and applause
     beliefs: []
     observed_traits: []
     importance: primary
@@ -5881,7 +6224,7 @@ events:
   arc_uuids: []
   participations:
   - character_uuid: agent_f3078a4f1b2f
-    emotional_state: ''
+    emotional_state: dissociated
     goals: []
     what_happened: looking at his bloody hand in a transfixed, dissociative state
     observed_status: looking at his bloody hand in a transfixed, dissociative state
@@ -5938,8 +6281,10 @@ events:
   - arc_dcc1447647c3
   participations:
   - character_uuid: agent_f3078a4f1b2f
-    emotional_state: ''
-    goals: []
+    emotional_state: defensive
+    goals:
+    - deflect probing into suicidal ideation
+    - maintain denial of trauma
     what_happened: Deflects with claims of mundane activities like sitting on the
       couch, pushing aside a magazine for a coaster, and making a drink; internally
       flashbacks to bloody hand and Bach Suite; repeatedly denies suicidal thoughts;
@@ -6040,8 +6385,9 @@ events:
   - arc_dcc1447647c3
   participations:
   - character_uuid: agent_f3078a4f1b2f
-    emotional_state: ''
-    goals: []
+    emotional_state: overwhelmed, catatonic
+    goals:
+    - physically manifest escalating trauma from prior irritation with music
     what_happened: experiencing flashbacks in his apartment, smashes fist through
       window, lacerates hand, stares at bleeding hand in catatonic shock
     observed_status: experiencing flashbacks in his apartment, smashes fist through
@@ -6101,8 +6447,9 @@ events:
   - arc_958db1cad772
   participations:
   - character_uuid: agent_f3078a4f1b2f
-    emotional_state: ''
-    goals: []
+    emotional_state: desperate
+    goals:
+    - persuade Stanley to continue the therapy session
     what_happened: questions and protests the session's abrupt end, admits to breaking
       a window, pleads to continue therapy with Stanley
     observed_status: questions and protests the session's abrupt end, admits to breaking
@@ -6179,8 +6526,10 @@ events:
   - arc_80637f43811b
   participations:
   - character_uuid: agent_f3078a4f1b2f
-    emotional_state: ''
-    goals: []
+    emotional_state: defensive then vulnerable
+    goals:
+    - initially deflect truth of PTSD symptom
+    - admit window-smashing incident prompted by therapy breakthrough
     what_happened: enters lobby post-therapy without noticing Leo, deflects inquiry
       with absurd humor about eating disorder and rectangle phobia, confesses breaking
       apartment window in rage, listens to Leo's parable, confirms self-wrapping bandage,
@@ -6285,8 +6634,9 @@ events:
   arc_uuids: []
   participations:
   - character_uuid: agent_f3078a4f1b2f
-    emotional_state: ''
-    goals: []
+    emotional_state: defensive and reluctant
+    goals:
+    - downplay therapy revelations and injury
     what_happened: enters lobby unaware of Leo, deflects therapy with sarcasm about
       eating disorder and fear of rectangles, admits breaking apartment window, listens
       to parable, confirms self-bandaging hand, resists ER visit, leaves with Donna
@@ -6385,8 +6735,10 @@ events:
   - arc_80637f43811b
   participations:
   - character_uuid: agent_f3078a4f1b2f
-    emotional_state: ''
-    goals: []
+    emotional_state: defensive and reluctant
+    goals:
+    - deflect concerns about therapy and injury
+    - resist going to ER to avoid accountability for self-harm
     what_happened: enters lobby, sarcastically deflects therapy insights, admits breaking
       apartment window causing hand injury, protests ER visit but reluctantly leaves
       with Donna
@@ -6494,8 +6846,9 @@ events:
   - arc_80637f43811b
   participations:
   - character_uuid: agent_f3078a4f1b2f
-    emotional_state: ''
-    goals: []
+    emotional_state: distant and dissociated
+    goals:
+    - resist and deny need for medical attention amid PTSD denial
     what_happened: emerges through White House gates, defiantly rejects need for doctor
       in dialogue with Donna, stops before carolers with distant look indicating dissociation
       triggered by their singing (merging harmonies with phantom sirens), responds
@@ -6528,6 +6881,18 @@ events:
     - intuitive
     - loyal
     - resourceful
+    importance: primary
+  - character_uuid: agent_3ee4436e9a6d
+    emotional_state: ''
+    goals: []
+    what_happened: singing outside White House gates, continue singing (with bells
+      evoking sirens in Josh's dissociation) as Josh and Donna stop before them and
+      then leave
+    observed_status: singing outside White House gates, continue singing (with bells
+      evoking sirens in Josh's dissociation) as Josh and Donna stop before them and
+      then leave
+    beliefs: []
+    observed_traits: []
     importance: primary
   object_involvements: []
   location_involvements: []

@@ -1,5 +1,5 @@
 # Events for The Lame Duck Congress
-# Generated: 2026-01-11T19:27:40.212926
+# Generated: 2026-01-12T09:57:17.645924
 
 episode_uuid: ep_sea_ser_the_west_wing_s02_e06
 episode_title: The Lame Duck Congress
@@ -64,6 +64,16 @@ events:
     - witty
     - poised
     - deflective
+    importance: primary
+  - character_uuid: agent_4566d65dd1c0
+    emotional_state: ''
+    goals: []
+    what_happened: Referenced as not meeting Konanov and as potentially considering
+      a lame duck session (denied by C.J.).
+    observed_status: Referenced as not meeting Konanov and as potentially considering
+      a lame duck session (denied by C.J.).
+    beliefs: []
+    observed_traits: []
     importance: primary
   - character_uuid: agent_f00a9f666e44
     emotional_state: Neutral; insulated senior advisor.
@@ -274,6 +284,16 @@ events:
     - strategically defensive
     - aware of vulnerability
     importance: primary
+  - character_uuid: agent_4566d65dd1c0
+    emotional_state: ''
+    goals: []
+    what_happened: hypothetically referenced as not having considered a lame duck
+      session yet
+    observed_status: hypothetically referenced as not having considered a lame duck
+      session yet
+    beliefs: []
+    observed_traits: []
+    importance: primary
   - character_uuid: agent_d5524a94a33b
     emotional_state: Skeptically amused, balancing doubt with instinctive teamwork
     goals:
@@ -427,6 +447,19 @@ events:
     - authoritative
     - pragmatic
     - irascible
+    importance: primary
+  - character_uuid: agent_4566d65dd1c0
+    emotional_state: exasperated
+    goals:
+    - Decide on pursuing lame duck session amid staff chaos
+    what_happened: Listening to chaotic staff explanations, expresses frustration
+      comparing to circus, demands aspirin and weapon from Charlie, questions next
+      steps, approves staff filing out
+    observed_status: Listening to chaotic staff explanations, expresses frustration
+      comparing to circus, demands aspirin and weapon from Charlie, questions next
+      steps, approves staff filing out
+    beliefs: []
+    observed_traits: []
     importance: primary
   - character_uuid: agent_b5378b53e0f5
     emotional_state: N/A (mentioned)
@@ -806,8 +839,9 @@ events:
     - poised
     importance: primary
   - character_uuid: agent_f3078a4f1b2f
-    emotional_state: ''
-    goals: []
+    emotional_state: eager
+    goals:
+    - support push for immediate treaty ratification via committee strategy
     what_happened: participates in overlapping explanation of Senate reshuffle plan
       and arguments for/against calling vote, objects to style-cramping memo rule
     observed_status: participates in overlapping explanation of Senate reshuffle plan
@@ -835,6 +869,19 @@ events:
     - authoritative
     - pragmatic
     - irascible
+    importance: primary
+  - character_uuid: agent_4566d65dd1c0
+    emotional_state: exasperated
+    goals:
+    - cope with chaotic pressure from staff briefing on Senate reshuffles
+    what_happened: quips about circus-like disarray and overlapping staff talk in
+      Oval Office, jokingly requests aspirin and weapon from Charlie to endure overload,
+      seeks Leo's input on strategy
+    observed_status: quips about circus-like disarray and overlapping staff talk in
+      Oval Office, jokingly requests aspirin and weapon from Charlie to endure overload,
+      seeks Leo's input on strategy
+    beliefs: []
+    observed_traits: []
     importance: primary
   - character_uuid: agent_b5378b53e0f5
     emotional_state: Implied irrelevance to core priorities
@@ -1116,6 +1163,19 @@ events:
     - pragmatic
     - irascible
     importance: primary
+  - character_uuid: agent_4566d65dd1c0
+    emotional_state: exasperated
+    goals:
+    - Evaluate merits of calling lame duck session for Test Ban Treaty
+    what_happened: Listens to frenetic staff briefing on committee plan and lame duck
+      arguments, expresses frustration with overlapping talk, requests aspirin from
+      Charlie, and defers to Leo on lame duck decision.
+    observed_status: Listens to frenetic staff briefing on committee plan and lame
+      duck arguments, expresses frustration with overlapping talk, requests aspirin
+      from Charlie, and defers to Leo on lame duck decision.
+    beliefs: []
+    observed_traits: []
+    importance: primary
   - character_uuid: agent_b5378b53e0f5
     emotional_state: Anticipated disruption (inferred)
     goals:
@@ -1128,6 +1188,106 @@ events:
       amid ratification push.'
     beliefs:
     - Proximity to power yields leverage
+    observed_traits: []
+    importance: primary
+  - character_uuid: agent_8d9985cf41e3
+    emotional_state: ''
+    goals: []
+    what_happened: Target of Senate committee shuffle strategy to prevent placement
+      in Foreign Relations.
+    observed_status: Target of Senate committee shuffle strategy to prevent placement
+      in Foreign Relations.
+    beliefs: []
+    observed_traits: []
+    importance: primary
+  - character_uuid: agent_da9923f45d4d
+    emotional_state: ''
+    goals: []
+    what_happened: Republican aide Toby plans to meet to loosen up votes.
+    observed_status: Republican aide Toby plans to meet to loosen up votes.
+    beliefs: []
+    observed_traits: []
+    importance: primary
+  - character_uuid: agent_95492ce5fba8
+    emotional_state: ''
+    goals: []
+    what_happened: Republican aide Toby plans to meet to loosen up votes.
+    observed_status: Republican aide Toby plans to meet to loosen up votes.
+    beliefs: []
+    observed_traits: []
+    importance: primary
+  - character_uuid: agent_46f7e396d735
+    emotional_state: ''
+    goals: []
+    what_happened: Absence creates vulnerable votes that Toby is assigned to secure.
+    observed_status: Absence creates vulnerable votes that Toby is assigned to secure.
+    beliefs: []
+    observed_traits: []
+    importance: primary
+  - character_uuid: agent_b67eae8069fd
+    emotional_state: ''
+    goals: []
+    what_happened: Political/legislative liaison who met with Toby and unanimously
+      advised calling lame duck session.
+    observed_status: Political/legislative liaison who met with Toby and unanimously
+      advised calling lame duck session.
+    beliefs: []
+    observed_traits: []
+    importance: primary
+  - character_uuid: agent_cdf9a0915197
+    emotional_state: ''
+    goals: []
+    what_happened: Political/legislative liaison who met with Toby and unanimously
+      advised calling lame duck session.
+    observed_status: Political/legislative liaison who met with Toby and unanimously
+      advised calling lame duck session.
+    beliefs: []
+    observed_traits: []
+    importance: primary
+  - character_uuid: agent_b2697f64854c
+    emotional_state: ''
+    goals: []
+    what_happened: Political/legislative liaison who met with Toby and unanimously
+      advised calling lame duck session.
+    observed_status: Political/legislative liaison who met with Toby and unanimously
+      advised calling lame duck session.
+    beliefs: []
+    observed_traits: []
+    importance: primary
+  - character_uuid: agent_d2391666d92e
+    emotional_state: ''
+    goals: []
+    what_happened: 'Mentioned in Senate committee shuffle plan: wants Appropriations,
+      has Budget seniority.'
+    observed_status: 'Mentioned in Senate committee shuffle plan: wants Appropriations,
+      has Budget seniority.'
+    beliefs: []
+    observed_traits: []
+    importance: primary
+  - character_uuid: agent_04e42e1d4ae8
+    emotional_state: ''
+    goals: []
+    what_happened: 'Mentioned in Senate committee shuffle plan: to take Budget seat.'
+    observed_status: 'Mentioned in Senate committee shuffle plan: to take Budget seat.'
+    beliefs: []
+    observed_traits: []
+    importance: primary
+  - character_uuid: agent_b10f7a2b8b0b
+    emotional_state: ''
+    goals: []
+    what_happened: 'Mentioned in Senate committee shuffle plan: moves to Armed Services,
+      then Judiciary.'
+    observed_status: 'Mentioned in Senate committee shuffle plan: moves to Armed Services,
+      then Judiciary.'
+    beliefs: []
+    observed_traits: []
+    importance: primary
+  - character_uuid: agent_ce1541c7e3b4
+    emotional_state: ''
+    goals: []
+    what_happened: 'Mentioned in Senate committee shuffle plan: leaves Foreign Relations.'
+    observed_status: 'Mentioned in Senate committee shuffle plan: leaves Foreign Relations.'
+    beliefs: []
     observed_traits: []
     importance: primary
   - character_uuid: agent_11ababa0dabb
@@ -1825,6 +1985,15 @@ events:
     - competent
     - loyal
     importance: primary
+  - character_uuid: agent_4566d65dd1c0
+    emotional_state: ''
+    goals: []
+    what_happened: referenced as the individual Vasily Konanov demands to speak with
+    observed_status: referenced as the individual Vasily Konanov demands to speak
+      with
+    beliefs: []
+    observed_traits: []
+    importance: primary
   - character_uuid: agent_d5524a94a33b
     emotional_state: Determined frustration yielding to surprised sidelining
     goals:
@@ -2052,6 +2221,22 @@ events:
   - theme_ec62775da61a
   arc_uuids: []
   participations:
+  - character_uuid: agent_57456b21c104
+    emotional_state: indignant and nervous
+    goals:
+    - gain Leo's approval for new State Department messaging
+    - deny Danny Concannon access to the President
+    what_happened: in the Communications Office briefing Leo on the State Department's
+      proposed vocabulary shift from 'rogue nations' to 'states of concern', explaining
+      benefits and downsides, resisting Danny Concannon's access request due to recent
+      critical editorials, and answering her phone
+    observed_status: in the Communications Office briefing Leo on the State Department's
+      proposed vocabulary shift from 'rogue nations' to 'states of concern', explaining
+      benefits and downsides, resisting Danny Concannon's access request due to recent
+      critical editorials, and answering her phone
+    beliefs: []
+    observed_traits: []
+    importance: primary
   - character_uuid: agent_e9dd0ae36832
     emotional_state: Bewildered curiosity laced with lighthearted attraction
     goals:
@@ -2093,6 +2278,42 @@ events:
     - Pragmatic
     - Wryly tolerant
     - Authoritative
+    importance: primary
+  - character_uuid: agent_4566d65dd1c0
+    emotional_state: ''
+    goals: []
+    what_happened: not the appointee for the Ukrainian's visit, to be consulted by
+      C.J. about Danny Concannon's access (mentioned)
+    observed_status: not the appointee for the Ukrainian's visit, to be consulted
+      by C.J. about Danny Concannon's access (mentioned)
+    beliefs: []
+    observed_traits: []
+    importance: primary
+  - character_uuid: agent_d5524a94a33b
+    emotional_state: persistent
+    goals:
+    - advocate for OSHA ergonomics standards and repetitive stress injury regulations
+    what_happened: catching up to Leo, complimenting his suit, and pitching Occupational
+      Safety and Health Administration initiatives on repetitive stress injuries and
+      carpal tunnel syndrome
+    observed_status: catching up to Leo, complimenting his suit, and pitching Occupational
+      Safety and Health Administration initiatives on repetitive stress injuries and
+      carpal tunnel syndrome
+    beliefs: []
+    observed_traits: []
+    importance: primary
+  - character_uuid: agent_d9ea8565c92f
+    emotional_state: ''
+    goals:
+    - gain access to the President for a feature story
+    what_happened: Washington Post reporter requesting access for a three-part feature,
+      whose paper's editorial staff recently criticized Leo and the President (significantly
+      discussed)
+    observed_status: Washington Post reporter requesting access for a three-part feature,
+      whose paper's editorial staff recently criticized Leo and the President (significantly
+      discussed)
+    beliefs: []
+    observed_traits: []
     importance: primary
   - character_uuid: agent_b5378b53e0f5
     emotional_state: Implied chaotic and bold
@@ -2183,6 +2404,32 @@ events:
   arc_uuids:
   - arc_8ad302f6e256
   participations:
+  - character_uuid: agent_57456b21c104
+    emotional_state: indignant
+    goals:
+    - pitch approval for State Department's 'rogue nations' to 'states of concern'
+      terminology change
+    - deny Danny Concannon access due to recent critical editorials
+    what_happened: briefing Leo in the Communications Office on State Department vocabulary
+      change and refusing Danny Concannon press access, then answering phone
+    observed_status: briefing Leo in the Communications Office on State Department
+      vocabulary change and refusing Danny Concannon press access, then answering
+      phone
+    beliefs: []
+    observed_traits: []
+    importance: primary
+  - character_uuid: agent_e9dd0ae36832
+    emotional_state: confused
+    goals:
+    - seek clarification on White House protocol for handling a crazy Ukrainian official's
+      unannounced visit
+    what_happened: walking through the White House lobby and questioning Leo about
+      the Ukrainian government member's visit
+    observed_status: walking through the White House lobby and questioning Leo about
+      the Ukrainian government member's visit
+    beliefs: []
+    observed_traits: []
+    importance: primary
   - character_uuid: agent_d11a3b3bb6e4
     emotional_state: Impatient pragmatism laced with wry dismissiveness
     goals:
@@ -2205,6 +2452,16 @@ events:
     - irascible
     - decisive
     importance: primary
+  - character_uuid: agent_4566d65dd1c0
+    emotional_state: ''
+    goals: []
+    what_happened: referenced as not meeting the Ukrainian and needing to be consulted
+      by end of day about Danny Concannon
+    observed_status: referenced as not meeting the Ukrainian and needing to be consulted
+      by end of day about Danny Concannon
+    beliefs: []
+    observed_traits: []
+    importance: primary
   - character_uuid: agent_d5524a94a33b
     emotional_state: Hopeful determination curdling into dejection
     goals:
@@ -2226,6 +2483,37 @@ events:
     - strategic
     - advocacy-driven
     - resilient
+    importance: primary
+  - character_uuid: agent_d9ea8565c92f
+    emotional_state: ''
+    goals:
+    - gain access for Washington Post feature
+    what_happened: referenced as seeking access for a three-part feature, denied by
+      C.J. due to recent critical editorials
+    observed_status: referenced as seeking access for a three-part feature, denied
+      by C.J. due to recent critical editorials
+    beliefs: []
+    observed_traits: []
+    importance: primary
+  - character_uuid: agent_b5378b53e0f5
+    emotional_state: ''
+    goals: []
+    what_happened: significantly referenced as the crazy Ukrainian government member
+      who showed up unannounced
+    observed_status: significantly referenced as the crazy Ukrainian government member
+      who showed up unannounced
+    beliefs: []
+    observed_traits: []
+    importance: primary
+  - character_uuid: agent_1cf3499185e6
+    emotional_state: ''
+    goals: []
+    what_happened: referenced as 'the girl' accompanying the Ukrainian, noted for
+      looks and jokingly for threat
+    observed_status: referenced as 'the girl' accompanying the Ukrainian, noted for
+      looks and jokingly for threat
+    beliefs: []
+    observed_traits: []
     importance: primary
   object_involvements: []
   location_involvements:
@@ -2319,6 +2607,19 @@ events:
     - resistant
     - strategic
     importance: primary
+  - character_uuid: agent_e9dd0ae36832
+    emotional_state: confused
+    goals:
+    - understand White House protocol for foreign government visitors
+    what_happened: walking through the White House lobby with Leo, questioning the
+      protocol for the Ukrainian visitor's arrival, commenting on the girl's appearance,
+      and seeking reassurance
+    observed_status: walking through the White House lobby with Leo, questioning the
+      protocol for the Ukrainian visitor's arrival, commenting on the girl's appearance,
+      and seeking reassurance
+    beliefs: []
+    observed_traits: []
+    importance: primary
   - character_uuid: agent_d11a3b3bb6e4
     emotional_state: Commanding pragmatism laced with impatience and understated amusement
       at C.J.'s quips
@@ -2345,6 +2646,29 @@ events:
     - impatient
     - dryly humorous
     importance: primary
+  - character_uuid: agent_4566d65dd1c0
+    emotional_state: ''
+    goals: []
+    what_happened: Ukrainian visitor had appointment not to meet him; to be consulted
+      by C.J. on Danny's access (mentioned)
+    observed_status: Ukrainian visitor had appointment not to meet him; to be consulted
+      by C.J. on Danny's access (mentioned)
+    beliefs: []
+    observed_traits: []
+    importance: primary
+  - character_uuid: agent_d5524a94a33b
+    emotional_state: persistent
+    goals:
+    - convince Leo to support OSHA ergonomics standards
+    what_happened: catches up to Leo in the hallway, compliments his suit, and pitches
+      Occupational Safety and Health Administration initiatives on repetitive stress
+      injuries
+    observed_status: catches up to Leo in the hallway, compliments his suit, and pitches
+      Occupational Safety and Health Administration initiatives on repetitive stress
+      injuries
+    beliefs: []
+    observed_traits: []
+    importance: primary
   - character_uuid: agent_d9ea8565c92f
     emotional_state: Not present; inferred as eagerly persistent from offscreen request
     goals:
@@ -2365,8 +2689,16 @@ events:
     - tenacious
     - opportunistic
     importance: primary
-  - character_uuid: agent_11ababa0dabb
+  - character_uuid: agent_1cf3499185e6
     emotional_state: ''
+    goals: []
+    what_happened: accompanying the Ukrainian government member (mentioned)
+    observed_status: accompanying the Ukrainian government member (mentioned)
+    beliefs: []
+    observed_traits: []
+    importance: primary
+  - character_uuid: agent_11ababa0dabb
+    emotional_state: crazy
     goals: []
     what_happened: showed up at the White House with an appointment not to meet the
       President (discussed)
@@ -2679,6 +3011,16 @@ events:
     - resilient
     - frustrated
     importance: primary
+  - character_uuid: agent_4566d65dd1c0
+    emotional_state: ''
+    goals: []
+    what_happened: Referenced by Ainsley as her employer on whose payroll she now
+      works.
+    observed_status: Referenced by Ainsley as her employer on whose payroll she now
+      works.
+    beliefs: []
+    observed_traits: []
+    importance: primary
   - character_uuid: agent_2905f54e51ac
     emotional_state: Buoyant confidence surging to triumphant glee
     goals:
@@ -2870,6 +3212,16 @@ events:
     - pragmatic
     - authoritative
     - resourceful
+    importance: primary
+  - character_uuid: agent_4566d65dd1c0
+    emotional_state: ''
+    goals: []
+    what_happened: target of the planned 'accidental' meeting with Konanov via low-level
+      ruse
+    observed_status: target of the planned 'accidental' meeting with Konanov via low-level
+      ruse
+    beliefs: []
+    observed_traits: []
     importance: primary
   - character_uuid: agent_d5524a94a33b
     emotional_state: Indignant outrage transforming to empowered resolve
@@ -3110,6 +3462,16 @@ events:
     - pragmatic
     - authoritative
     - strategic
+    importance: primary
+  - character_uuid: agent_4566d65dd1c0
+    emotional_state: ''
+    goals: []
+    what_happened: mentioned as target of Konanov's desire to meet 'accidentally'
+      via ruse
+    observed_status: mentioned as target of Konanov's desire to meet 'accidentally'
+      via ruse
+    beliefs: []
+    observed_traits: []
     importance: primary
   - character_uuid: agent_d5524a94a33b
     emotional_state: Principled outrage yielding to scheming empowerment
@@ -3353,6 +3715,16 @@ events:
     - irascible
     - pragmatic
     - authoritative
+    importance: primary
+  - character_uuid: agent_4566d65dd1c0
+    emotional_state: ''
+    goals: []
+    what_happened: central to proposed ploy where he 'accidentally' encounters Konanov
+      during Donna's meeting
+    observed_status: central to proposed ploy where he 'accidentally' encounters Konanov
+      during Donna's meeting
+    beliefs: []
+    observed_traits: []
     importance: primary
   - character_uuid: agent_d5524a94a33b
     emotional_state: Indignant outrage pivoting to opportunistic empowerment
@@ -4074,6 +4446,17 @@ events:
     - idealistic
     - frustrated
     importance: primary
+  - character_uuid: agent_4566d65dd1c0
+    emotional_state: ''
+    goals:
+    - Ratify the Test Ban Treaty through a lame duck session
+    what_happened: mentioned as thinking about calling a lame duck session to secure
+      Test Ban Treaty ratification
+    observed_status: mentioned as thinking about calling a lame duck session to secure
+      Test Ban Treaty ratification
+    beliefs: []
+    observed_traits: []
+    importance: primary
   - character_uuid: agent_8d9985cf41e3
     emotional_state: Neutral (offscreen)
     goals:
@@ -4270,6 +4653,14 @@ events:
     - Sarcastic under pressure
     - Prophetic in frustration
     - Impulsively volcanic
+    importance: primary
+  - character_uuid: agent_4566d65dd1c0
+    emotional_state: ''
+    goals: []
+    what_happened: present in his office in the West Wing
+    observed_status: present in his office in the West Wing
+    beliefs: []
+    observed_traits: []
     importance: primary
   - character_uuid: agent_b2fc4f5f4e5f
     emotional_state: Composed professionalism veiling mild surprise at Toby's intrusion
@@ -4612,6 +5003,14 @@ events:
     - decisive
     - irascible
     - data-driven
+    importance: primary
+  - character_uuid: agent_4566d65dd1c0
+    emotional_state: ''
+    goals: []
+    what_happened: referenced by Sam as the next approver after Leo
+    observed_status: referenced by Sam as the next approver after Leo
+    beliefs: []
+    observed_traits: []
     importance: primary
   - character_uuid: agent_2905f54e51ac
     emotional_state: Bewildered confusion shifting to thrilled awe at power's pace.

@@ -1,5 +1,5 @@
 # Events for The Fall's Gonna Kill You
-# Generated: 2026-01-11T19:27:45.727246
+# Generated: 2026-01-12T09:57:23.012110
 
 episode_uuid: ep_sea_ser_the_west_wing_s02_e20
 episode_title: The Fall's Gonna Kill You
@@ -45,8 +45,9 @@ events:
     observed_traits: []
     importance: primary
   - character_uuid: agent_f3078a4f1b2f
-    emotional_state: ''
-    goals: []
+    emotional_state: surprised and contemplative
+    goals:
+    - learn about and assess Justice Department's financial crisis for tobacco case
     what_happened: exits Leo's office, apologizes to Connelly, discusses tobacco lawsuit
       funding crisis in his office, beeper interrupts, stares thoughtfully after
     observed_status: exits Leo's office, apologizes to Connelly, discusses tobacco
@@ -87,6 +88,18 @@ events:
     - efficient
     - vulnerable
     - reactive
+    importance: primary
+  - character_uuid: agent_a8c80552a22d
+    emotional_state: amused
+    goals:
+    - prank Donna with satellite fax
+    - deliver fax intended for C.J.
+    what_happened: approaches with Larry laughing, delivers and reveals details of
+      prank fax to Donna, mocks her panic
+    observed_status: approaches with Larry laughing, delivers and reveals details
+      of prank fax to Donna, mocks her panic
+    beliefs: []
+    observed_traits: []
     importance: primary
   - character_uuid: agent_6565547b0ddc
     emotional_state: ''
@@ -224,6 +237,17 @@ events:
     - professional
     - efficient
     - coordinating
+    importance: primary
+  - character_uuid: agent_a8c80552a22d
+    emotional_state: amused
+    goals:
+    - Share funny fax with Donna
+    what_happened: Approaches Donna laughing with Larry, reveals fax about Chinese
+      satellite from Byron Talmadge.
+    observed_status: Approaches Donna laughing with Larry, reveals fax about Chinese
+      satellite from Byron Talmadge.
+    beliefs: []
+    observed_traits: []
     importance: primary
   - character_uuid: agent_6565547b0ddc
     emotional_state: ''
@@ -444,6 +468,16 @@ events:
     - Distrustful guardian
     - Pragmatic decision-maker
     importance: primary
+  - character_uuid: agent_4566d65dd1c0
+    emotional_state: ''
+    goals: []
+    what_happened: referenced extensively in discussion of polling on perceptions
+      of his physical fitness and MS deception cover-up
+    observed_status: referenced extensively in discussion of polling on perceptions
+      of his physical fitness and MS deception cover-up
+    beliefs: []
+    observed_traits: []
+    importance: primary
   - character_uuid: agent_d5524a94a33b
     emotional_state: Professionally urgent amid routine frenzy
     goals:
@@ -479,6 +513,25 @@ events:
     observed_traits:
     - Precise gatekeeper
     - Efficient messenger
+    importance: primary
+  - character_uuid: agent_b1dc4633b968
+    emotional_state: ''
+    goals:
+    - conduct covert blind poll on attitudes toward President's MS
+    what_happened: referenced as trusted pollster from California flying in, commissioned
+      by Josh for blind MS poll disguised as subsurface agricultural products survey
+    observed_status: referenced as trusted pollster from California flying in, commissioned
+      by Josh for blind MS poll disguised as subsurface agricultural products survey
+    beliefs: []
+    observed_traits: []
+    importance: primary
+  - character_uuid: agent_46efecdfe25d
+    emotional_state: ''
+    goals: []
+    what_happened: approached by Josh in the lobby
+    observed_status: approached by Josh in the lobby
+    beliefs: []
+    observed_traits: []
     importance: primary
   object_involvements:
   - object_uuid: object_9916107ba212
@@ -617,6 +670,16 @@ events:
     - skeptical
     - pragmatic
     - authoritative
+    importance: primary
+  - character_uuid: agent_4566d65dd1c0
+    emotional_state: ''
+    goals: []
+    what_happened: referenced in discussion about public perceptions of his physical
+      fitness and honesty regarding MS
+    observed_status: referenced in discussion about public perceptions of his physical
+      fitness and honesty regarding MS
+    beliefs: []
+    observed_traits: []
     importance: primary
   - character_uuid: agent_d5524a94a33b
     emotional_state: Escalating alarm over satellite threat
@@ -786,6 +849,18 @@ events:
   arc_uuids:
   - arc_45cebba97af9
   participations:
+  - character_uuid: agent_4566d65dd1c0
+    emotional_state: ''
+    goals: []
+    what_happened: central subject of interrogation; his physicals, health vitals,
+      campaign statements, shooting recovery, bicycle accident, and consultations
+      with C.J. are discussed
+    observed_status: central subject of interrogation; his physicals, health vitals,
+      campaign statements, shooting recovery, bicycle accident, and consultations
+      with C.J. are discussed
+    beliefs: []
+    observed_traits: []
+    importance: primary
   - character_uuid: agent_d5524a94a33b
     emotional_state: Primal terror veiled as urgent dispatch
     goals:
@@ -829,8 +904,10 @@ events:
     - unflappable
     importance: primary
   - character_uuid: agent_6565547b0ddc
-    emotional_state: ''
-    goals: []
+    emotional_state: methodical and relentless
+    goals:
+    - surgically dissect C.J.'s pattern of deceptive health statements
+    - expose premeditated complicity in MS cover-up through precise questioning
     what_happened: plays videotape of C.J.'s press briefing, interrogates C.J. about
       frequency and process of her health statements on the President, pours himself
       a glass of water, questions her phrasing for deniability
@@ -922,6 +999,18 @@ events:
   - theme_02e4526c7b7d
   arc_uuids: []
   participations:
+  - character_uuid: agent_4566d65dd1c0
+    emotional_state: ''
+    goals: []
+    what_happened: subject of detailed discussion in C.J.'s past health briefings,
+      including vitals, physical incidents, and direct questioning by C.J. about undisclosed
+      health issues
+    observed_status: subject of detailed discussion in C.J.'s past health briefings,
+      including vitals, physical incidents, and direct questioning by C.J. about undisclosed
+      health issues
+    beliefs: []
+    observed_traits: []
+    importance: primary
   - character_uuid: agent_d5524a94a33b
     emotional_state: Overwhelmed panic laced with desperate immediacy
     goals:
@@ -963,14 +1052,25 @@ events:
     - discreet
     importance: primary
   - character_uuid: agent_6565547b0ddc
-    emotional_state: ''
-    goals: []
+    emotional_state: persistent and clinical
+    goals:
+    - dissect C.J.'s scripted health briefings for legal deniability
     what_happened: interrogates C.J. about her past health briefings on the President,
       turns off the videotape recording, pours himself water, and probes the exact
       phrasing she uses when questioning the President about his health
     observed_status: interrogates C.J. about her past health briefings on the President,
       turns off the videotape recording, pours himself water, and probes the exact
       phrasing she uses when questioning the President about his health
+    beliefs: []
+    observed_traits: []
+    importance: primary
+  - character_uuid: agent_14ede397c2ee
+    emotional_state: ''
+    goals: []
+    what_happened: mentioned as the current President's physician who provides C.J.
+      with short statements including vitals for press briefings
+    observed_status: mentioned as the current President's physician who provides C.J.
+      with short statements including vitals for press briefings
     beliefs: []
     observed_traits: []
     importance: primary
@@ -1248,9 +1348,21 @@ events:
   arc_uuids:
   - arc_45cebba97af9
   participations:
-  - character_uuid: agent_6565547b0ddc
+  - character_uuid: agent_4566d65dd1c0
     emotional_state: ''
     goals: []
+    what_happened: significantly referenced as having had an MS attack and collapsed
+      a year ago in January, with C.J. present nearby
+    observed_status: significantly referenced as having had an MS attack and collapsed
+      a year ago in January, with C.J. present nearby
+    beliefs: []
+    observed_traits: []
+    importance: primary
+  - character_uuid: agent_6565547b0ddc
+    emotional_state: unfazed
+    goals:
+    - probe C.J.'s firsthand knowledge of the President's MS attack
+    - demand precise answers about the flu lie and cover-up involvement
     what_happened: ruthlessly interrogating C.J. about her presence at the President's
       collapse and her flu announcement to the press, dismantling her evasions and
       calling a break
@@ -1585,6 +1697,32 @@ events:
     - Deferential
     - Efficient
     importance: primary
+  - character_uuid: agent_d11a3b3bb6e4
+    emotional_state: ''
+    goals: []
+    what_happened: mentioned as having spoken to Abbey on plane, assuming she knew
+      about MS
+    observed_status: mentioned as having spoken to Abbey on plane, assuming she knew
+      about MS
+    beliefs: []
+    observed_traits: []
+    importance: primary
+  - character_uuid: agent_4566d65dd1c0
+    emotional_state: exhausted
+    goals:
+    - explain cover-up involving Abbey's signature
+    - prepare Abbey for White House Counsel meeting
+    what_happened: stands by desk reading, greets Abbey, evades questions deflecting
+      to pleasantries, reveals Abbey unwittingly signed Zoey's Georgetown family medical
+      history form to cover MS, shouts defensively, shifts to exhausted family chit-chat
+      about Zoey and Ellie, instructs her to speak to White House Counsel
+    observed_status: stands by desk reading, greets Abbey, evades questions deflecting
+      to pleasantries, reveals Abbey unwittingly signed Zoey's Georgetown family medical
+      history form to cover MS, shouts defensively, shifts to exhausted family chit-chat
+      about Zoey and Ellie, instructs her to speak to White House Counsel
+    beliefs: []
+    observed_traits: []
+    importance: primary
   - character_uuid: agent_45883b79da77
     emotional_state: Fury boiling over betrayal morphing into exhausted resignation
       laced with fear
@@ -1627,6 +1765,14 @@ events:
     observed_traits:
     - Courteous
     - Polished
+    importance: primary
+  - character_uuid: agent_9623e7e26e19
+    emotional_state: ''
+    goals: []
+    what_happened: mentioned in family chit-chat; Bartlet expresses hating her boyfriend
+    observed_status: mentioned in family chit-chat; Bartlet expresses hating her boyfriend
+    beliefs: []
+    observed_traits: []
     importance: primary
   - character_uuid: agent_81f9265878cd
     emotional_state: Stoically professional
@@ -1816,6 +1962,25 @@ events:
     observed_traits:
     - loyal
     - assumptive
+    importance: primary
+  - character_uuid: agent_4566d65dd1c0
+    emotional_state: defensive then exhausted, miserable, and scared
+    goals:
+    - deflect confrontation with routine spousal talk
+    - explain MS cover-up details including Abbey's signature on form
+    - direct Abbey to White House Counsel amid unfolding legal crisis
+    what_happened: stands by desk reading in Oval Office, turns to greet entering
+      Abbey, attempts small talk about flight, explains Leo's call and that Abbey
+      signed Zoey's Georgetown form, defends not disclosing on phone, shouts response,
+      sighs exhausted shifts uncomfortably, initiates family chit-chat about Zoey
+      and Ellie, directs Abbey to speak with White House Counsel
+    observed_status: stands by desk reading in Oval Office, turns to greet entering
+      Abbey, attempts small talk about flight, explains Leo's call and that Abbey
+      signed Zoey's Georgetown form, defends not disclosing on phone, shouts response,
+      sighs exhausted shifts uncomfortably, initiates family chit-chat about Zoey
+      and Ellie, directs Abbey to speak with White House Counsel
+    beliefs: []
+    observed_traits: []
     importance: primary
   - character_uuid: agent_45883b79da77
     emotional_state: Burning betrayal and anger erupting into shared exhaustion and
@@ -2074,6 +2239,14 @@ events:
     - distracted
     - authoritative
     importance: primary
+  - character_uuid: agent_4566d65dd1c0
+    emotional_state: ''
+    goals: []
+    what_happened: had not yet told First Lady about Zoey's application issue
+    observed_status: had not yet told First Lady about Zoey's application issue
+    beliefs: []
+    observed_traits: []
+    importance: primary
   - character_uuid: agent_46efecdfe25d
     emotional_state: Implied desperation fueling prosecutorial zeal.
     goals:
@@ -2258,6 +2431,14 @@ events:
     - authoritative
     - distracted
     importance: primary
+  - character_uuid: agent_4566d65dd1c0
+    emotional_state: ''
+    goals: []
+    what_happened: mentioned as not yet having told First Lady about Zoey's application
+    observed_status: mentioned as not yet having told First Lady about Zoey's application
+    beliefs: []
+    observed_traits: []
+    importance: primary
   - character_uuid: agent_46efecdfe25d
     emotional_state: Desperate urgency fueling pleas for financial lifeline.
     goals:
@@ -2441,8 +2622,11 @@ events:
     observed_traits: []
     importance: primary
   - character_uuid: agent_f3078a4f1b2f
-    emotional_state: ''
-    goals: []
+    emotional_state: apprehensive and stressed
+    goals:
+    - secure total privacy by dismissing Dale and positioning to block lip-reading
+    - reveal the President's undisclosed MS diagnosis to induct Joey into the inner
+      circle for covert polling
     what_happened: spots Joey and Dale in the terminal, approaches them, dismisses
       Dale for privacy, engages Joey in lip-reading conversation at a bar table, reveals
       the President's MS diagnosis eight years ago by signing the letters
@@ -2459,6 +2643,16 @@ events:
       of Joey's trustworthiness, bolstering the rationale for sharing the MS secret.
     observed_status: Leo McGarry invoked by Josh as the authority figure he convinced
       of Joey's trustworthiness, bolstering the rationale for sharing the MS secret.
+    beliefs: []
+    observed_traits: []
+    importance: primary
+  - character_uuid: agent_4566d65dd1c0
+    emotional_state: ''
+    goals: []
+    what_happened: referenced as having been diagnosed with an undisclosed illness
+      (MS) eight years ago
+    observed_status: referenced as having been diagnosed with an undisclosed illness
+      (MS) eight years ago
     beliefs: []
     observed_traits: []
     importance: primary
@@ -2637,8 +2831,9 @@ events:
   arc_uuids: []
   participations:
   - character_uuid: agent_6565547b0ddc
-    emotional_state: ''
-    goals: []
+    emotional_state: curt
+    goals:
+    - halt the interrogation to pivot to confronting the First Lady
     what_happened: acknowledges the aide curtly with 'Thank you'
     observed_status: acknowledges the aide curtly with 'Thank you'
     beliefs: []
@@ -2675,6 +2870,16 @@ events:
   - theme_92420179729a
   arc_uuids: []
   participations:
+  - character_uuid: agent_4566d65dd1c0
+    emotional_state: ''
+    goals: []
+    what_happened: referenced as the subject whose degenerative illness (MS) is being
+      proxied in the blind poll design; health directly inquired about by Joey
+    observed_status: referenced as the subject whose degenerative illness (MS) is
+      being proxied in the blind poll design; health directly inquired about by Joey
+    beliefs: []
+    observed_traits: []
+    importance: primary
   - character_uuid: agent_d5524a94a33b
     emotional_state: Detached efficiency underscoring ongoing crises
     goals:
@@ -2920,6 +3125,14 @@ events:
   arc_uuids:
   - arc_116dad899979
   participations:
+  - character_uuid: agent_7c84dea6dcc9
+    emotional_state: ''
+    goals: []
+    what_happened: mentioned as waiting outside during C.J.'s MS revelation
+    observed_status: mentioned as waiting outside during C.J.'s MS revelation
+    beliefs: []
+    observed_traits: []
+    importance: primary
   - character_uuid: agent_e9dd0ae36832
     emotional_state: Relaxed amusement tempering routine crisis speculation
     goals:
@@ -2938,6 +3151,22 @@ events:
     - calmly humorous
     - casually alarming
     - seasonedly detached
+    importance: primary
+  - character_uuid: agent_d11a3b3bb6e4
+    emotional_state: ''
+    goals: []
+    what_happened: mentioned as having called C.J. into Oval Office for MS revelation
+    observed_status: mentioned as having called C.J. into Oval Office for MS revelation
+    beliefs: []
+    observed_traits: []
+    importance: primary
+  - character_uuid: agent_4566d65dd1c0
+    emotional_state: ''
+    goals: []
+    what_happened: referenced in conversation about MS injection and physical releases
+    observed_status: referenced in conversation about MS injection and physical releases
+    beliefs: []
+    observed_traits: []
     importance: primary
   - character_uuid: agent_45883b79da77
     emotional_state: Bone-deep exhaustion masking MS betrayal agony with biting irony
@@ -2983,7 +3212,8 @@ events:
     importance: primary
   - character_uuid: agent_6565547b0ddc
     emotional_state: ''
-    goals: []
+    goals:
+    - vet and interrogate staff on MS cover-up
     what_happened: referenced as having interrogated C.J. about MS cover-up phrasing
     observed_status: referenced as having interrogated C.J. about MS cover-up phrasing
     beliefs: []

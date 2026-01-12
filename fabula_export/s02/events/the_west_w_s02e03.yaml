@@ -1,5 +1,5 @@
 # Events for The Midterms
-# Generated: 2026-01-11T19:27:38.749214
+# Generated: 2026-01-12T09:57:16.219194
 
 episode_uuid: ep_sea_ser_the_west_wing_s02_e03
 episode_title: The Midterms
@@ -221,6 +221,14 @@ events:
     - unamused
     - concise
     importance: primary
+  - character_uuid: agent_4566d65dd1c0
+    emotional_state: ''
+    goals: []
+    what_happened: thoughts with Samuels family as mentioned in C.J.'s briefing
+    observed_status: thoughts with Samuels family as mentioned in C.J.'s briefing
+    beliefs: []
+    observed_traits: []
+    importance: primary
   - character_uuid: agent_3ee4436e9a6d
     emotional_state: Steadfast neutrality buffering C.J.'s stress
     goals:
@@ -239,6 +247,18 @@ events:
     - efficient
     - supportive
     - calm amid chaos
+    importance: primary
+  - character_uuid: agent_54f7c984b9e2
+    emotional_state: ''
+    goals: []
+    what_happened: announced by C.J. in briefing as having succumbed to pneumonia,
+      survived by wife Eileen, son Robert, daughters Priscilla and Patty, and eight
+      grandchildren
+    observed_status: announced by C.J. in briefing as having succumbed to pneumonia,
+      survived by wife Eileen, son Robert, daughters Priscilla and Patty, and eight
+      grandchildren
+    beliefs: []
+    observed_traits: []
     importance: primary
   object_involvements:
   - object_uuid: object_e1d2c9cb4c5e
@@ -800,6 +820,17 @@ events:
     - mocking
     - authoritative
     importance: primary
+  - character_uuid: agent_4566d65dd1c0
+    emotional_state: playful
+    goals:
+    - Humanize atmosphere, seek electoral strategy overview
+    what_happened: Enters room, initiates playful trivia exchange on 'acalculia' with
+      Sam, requests overview of poll implications.
+    observed_status: Enters room, initiates playful trivia exchange on 'acalculia'
+      with Sam, requests overview of poll implications.
+    beliefs: []
+    observed_traits: []
+    importance: primary
   object_involvements: []
   location_involvements:
   - location_uuid: location_0de36049a71e
@@ -958,6 +989,17 @@ events:
     - pragmatic
     - opportunistic
     importance: primary
+  - character_uuid: agent_4566d65dd1c0
+    emotional_state: amused
+    goals:
+    - Receive briefing on approval ratings and midterm electoral opportunities
+    what_happened: Enters with Leo, engages in playful banter about 'acalculia', requests
+      overview of polls and midterm strategy
+    observed_status: Enters with Leo, engages in playful banter about 'acalculia',
+      requests overview of polls and midterm strategy
+    beliefs: []
+    observed_traits: []
+    importance: primary
   object_involvements: []
   location_involvements:
   - location_uuid: location_0de36049a71e
@@ -1036,12 +1078,45 @@ events:
   arc_uuids: []
   participations:
   - character_uuid: agent_1b4e146363a1
-    emotional_state: ''
-    goals: []
+    emotional_state: frustrated and sarcastic
+    goals:
+    - address strain in relationship with Charlie
+    - ensure Charlie returns calls
     what_happened: enters seeking Charlie, confronts him in hallway about unreturned
       call from previous night
     observed_status: enters seeking Charlie, confronts him in hallway about unreturned
       call from previous night
+    beliefs: []
+    observed_traits: []
+    importance: primary
+  - character_uuid: agent_57456b21c104
+    emotional_state: concerned
+    goals:
+    - prevent poor optics on exploiting tragedy
+    what_happened: in Roosevelt Room meeting, cautioning against politicizing the
+      shooting for midterm gains
+    observed_status: in Roosevelt Room meeting, cautioning against politicizing the
+      shooting for midterm gains
+    beliefs: []
+    observed_traits: []
+    importance: primary
+  - character_uuid: agent_77f1a613709a
+    emotional_state: ''
+    goals:
+    - support C.J.'s caution
+    what_happened: in Roosevelt Room meeting, agreeing with C.J. on avoiding politicization
+    observed_status: in Roosevelt Room meeting, agreeing with C.J. on avoiding politicization
+    beliefs: []
+    observed_traits: []
+    importance: primary
+  - character_uuid: agent_7c84dea6dcc9
+    emotional_state: combative
+    goals:
+    - push aggressive political strategy post-assassination attempt
+    what_happened: in Roosevelt Room meeting, advocating to leverage post-shooting
+      approval for gun control and hate groups
+    observed_status: in Roosevelt Room meeting, advocating to leverage post-shooting
+      approval for gun control and hate groups
     beliefs: []
     observed_traits: []
     importance: primary
@@ -1067,6 +1142,31 @@ events:
     - dutiful
     - evasive
     - overworked
+    importance: primary
+  - character_uuid: agent_d11a3b3bb6e4
+    emotional_state: authoritative
+    goals:
+    - keep President focused on national priorities over local distractions
+    what_happened: in Roosevelt Room meeting providing messaging guidance, later in
+      hallway firmly discouraging Bartlet from focusing on local school board race
+    observed_status: in Roosevelt Room meeting providing messaging guidance, later
+      in hallway firmly discouraging Bartlet from focusing on local school board race
+    beliefs: []
+    observed_traits: []
+    importance: primary
+  - character_uuid: agent_4566d65dd1c0
+    emotional_state: impatient and assertive
+    goals:
+    - guide midterm strategy response
+    - obtain polling on personal political rival
+    what_happened: presiding over Roosevelt Room strategy meeting on midterms and
+      shooting, reads note from Charlie, questions about Zoey, argues with Leo about
+      resuming campaign and polling Elliot Roush's school board race
+    observed_status: presiding over Roosevelt Room strategy meeting on midterms and
+      shooting, reads note from Charlie, questions about Zoey, argues with Leo about
+      resuming campaign and polling Elliot Roush's school board race
+    beliefs: []
+    observed_traits: []
     importance: primary
   - character_uuid: agent_4ad5a1792822
     emotional_state: Unobserved, but implied practical concern over malfunction.
@@ -1101,6 +1201,16 @@ events:
     observed_traits:
     - trusted
     - specialized
+    importance: primary
+  - character_uuid: agent_a43c5ec562de
+    emotional_state: ''
+    goals: []
+    what_happened: mentioned by Bartlet as past congressional opponent now running
+      for school board in Manchester
+    observed_status: mentioned by Bartlet as past congressional opponent now running
+      for school board in Manchester
+    beliefs: []
+    observed_traits: []
     importance: primary
   - character_uuid: agent_256dcf4afffe
     emotional_state: Amused and lighthearted, injecting levity into the chaos.
@@ -1205,8 +1315,9 @@ events:
   - arc_c6abfd19e742
   participations:
   - character_uuid: agent_1b4e146363a1
-    emotional_state: ''
-    goals: []
+    emotional_state: frustrated
+    goals:
+    - confront Charlie about not returning her calls
     what_happened: enters looking for Charlie, converses with him in hallway about
       missed calls and their relationship
     observed_status: enters looking for Charlie, converses with him in hallway about
@@ -1311,6 +1422,21 @@ events:
     - authoritative
     - protective
     - sardonic
+    importance: primary
+  - character_uuid: agent_4566d65dd1c0
+    emotional_state: determined
+    goals:
+    - sidestep midterm questions vaguely
+    - obtain polling on Elliot Roush
+    - push to resume campaign appearances despite medical advice
+    what_happened: provides vague press guidance on midterms, reads Charlie's note,
+      fixates privately on polling old rival Elliot Roush's school board race, defies
+      Leo's medical advice on campaign schedule
+    observed_status: provides vague press guidance on midterms, reads Charlie's note,
+      fixates privately on polling old rival Elliot Roush's school board race, defies
+      Leo's medical advice on campaign schedule
+    beliefs: []
+    observed_traits: []
     importance: primary
   - character_uuid: agent_4ad5a1792822
     emotional_state: Preoccupied by external commitments
@@ -1449,7 +1575,35 @@ events:
   location_uuid: null
   theme_uuids: []
   arc_uuids: []
-  participations: []
+  participations:
+  - character_uuid: agent_77f1a613709a
+    emotional_state: eager
+    goals:
+    - personally retrieve and greet the visitor
+    - assert personal investment in the meeting
+    what_happened: verifies the visitor's arrival and decides to go get him himself
+    observed_status: verifies the visitor's arrival and decides to go get him himself
+    beliefs: []
+    observed_traits: []
+    importance: primary
+  - character_uuid: agent_12db9dc6462c
+    emotional_state: curt
+    goals:
+    - alert Sam to the visitor's arrival
+    - offer to escort the visitor
+    what_happened: interrupts Sam curtly and offers to bring the visitor back
+    observed_status: interrupts Sam curtly and offers to bring the visitor back
+    beliefs: []
+    observed_traits: []
+    importance: primary
+  - character_uuid: agent_8dc62e539b7d
+    emotional_state: ''
+    goals: []
+    what_happened: arrives as the visitor, prompting Ginger's alert to Sam
+    observed_status: arrives as the visitor, prompting Ginger's alert to Sam
+    beliefs: []
+    observed_traits: []
+    importance: primary
   object_involvements: []
   location_involvements: []
   organization_involvements: []
@@ -1659,6 +1813,16 @@ events:
     - prepared
     - pragmatic
     importance: primary
+  - character_uuid: agent_54f7c984b9e2
+    emotional_state: ''
+    goals: []
+    what_happened: Referenced as the recently deceased congressman who held the seat
+      and was not planning to run again due to illness.
+    observed_status: Referenced as the recently deceased congressman who held the
+      seat and was not planning to run again due to illness.
+    beliefs: []
+    observed_traits: []
+    importance: primary
   - character_uuid: agent_8dc62e539b7d
     emotional_state: Thoughtfully contemplative amid sudden opportunity
     goals:
@@ -1700,6 +1864,16 @@ events:
     - direct
     - protective
     - wary
+    importance: primary
+  - character_uuid: agent_671655f4eead
+    emotional_state: ''
+    goals: []
+    what_happened: Referenced as the replacement candidate who was expected to run
+      but is no longer doing so.
+    observed_status: Referenced as the replacement candidate who was expected to run
+      but is no longer doing so.
+    beliefs: []
+    observed_traits: []
     importance: primary
   object_involvements: []
   location_involvements: []
@@ -1800,6 +1974,16 @@ events:
     - unyielding
     - pragmatic
     - impassioned
+    importance: primary
+  - character_uuid: agent_4566d65dd1c0
+    emotional_state: ''
+    goals: []
+    what_happened: referenced as the key decision-maker Toby must convince on hate
+      groups and guns, rather than C.J.
+    observed_status: referenced as the key decision-maker Toby must convince on hate
+      groups and guns, rather than C.J.
+    beliefs: []
+    observed_traits: []
     importance: primary
   object_involvements: []
   location_involvements: []
@@ -1923,6 +2107,16 @@ events:
     - dismissive
     - determined
     - pragmatic
+    importance: primary
+  - character_uuid: agent_4566d65dd1c0
+    emotional_state: ''
+    goals: []
+    what_happened: Referenced by C.J. as the key decision-maker Toby needs to convince
+      on hate groups action.
+    observed_status: Referenced by C.J. as the key decision-maker Toby needs to convince
+      on hate groups action.
+    beliefs: []
+    observed_traits: []
     importance: primary
   object_involvements: []
   location_involvements: []
@@ -2265,6 +2459,22 @@ events:
     - witty
     - idealistic
     importance: primary
+  - character_uuid: agent_d11a3b3bb6e4
+    emotional_state: ''
+    goals: []
+    what_happened: mentioned by Toby as next stop for his plan (not present)
+    observed_status: mentioned by Toby as next stop for his plan (not present)
+    beliefs: []
+    observed_traits: []
+    importance: primary
+  - character_uuid: agent_4566d65dd1c0
+    emotional_state: ''
+    goals: []
+    what_happened: mentioned as target for bringing the hate crimes plan (not present)
+    observed_status: mentioned as target for bringing the hate crimes plan (not present)
+    beliefs: []
+    observed_traits: []
+    importance: primary
   - character_uuid: agent_d5524a94a33b
     emotional_state: Firmly authoritative with playful deflection masking deep concern
     goals:
@@ -2419,8 +2629,11 @@ events:
   arc_uuids: []
   participations:
   - character_uuid: agent_1b4e146363a1
-    emotional_state: ''
-    goals: []
+    emotional_state: curious and concerned
+    goals:
+    - locate her father
+    - understand the President's strict adherence to the Pendleton Act
+    - probe Leo about Charlie's distant behavior
     what_happened: knocks on Leo's door frame, enters seeking her father, questions
       the President's campaign call location and Pendleton Act interpretation, inquires
       about Charlie's recent behavior
@@ -2470,6 +2683,18 @@ events:
     - humorously explanatory
     - fiercely protective
     - decisively curt
+    importance: primary
+  - character_uuid: agent_4566d65dd1c0
+    emotional_state: ''
+    goals:
+    - adhere strictly to the Pendleton Act by avoiding campaign calls on government
+      property
+    what_happened: mentioned as making campaign calls from the residence due to strict
+      Pendleton Act adherence
+    observed_status: mentioned as making campaign calls from the residence due to
+      strict Pendleton Act adherence
+    beliefs: []
+    observed_traits: []
     importance: primary
   - character_uuid: agent_9623e7e26e19
     emotional_state: Curious insistence laced with familial worry and budding relational
@@ -2540,8 +2765,9 @@ events:
   - arc_f8fa38e2d82b
   participations:
   - character_uuid: agent_1b4e146363a1
-    emotional_state: ''
-    goals: []
+    emotional_state: hesitant
+    goals:
+    - discuss Charlie with her father
     what_happened: entering with Leo, responding to Bartlet about talking to him,
       requesting to speak about Charlie after others leave
     observed_status: entering with Leo, responding to Bartlet about talking to him,
@@ -2570,6 +2796,14 @@ events:
     - sarcastic
     - dutiful
     importance: primary
+  - character_uuid: agent_e9dd0ae36832
+    emotional_state: ''
+    goals: []
+    what_happened: referenced by Zoey as the topic she wants to discuss with Bartlet
+    observed_status: referenced by Zoey as the topic she wants to discuss with Bartlet
+    beliefs: []
+    observed_traits: []
+    importance: primary
   - character_uuid: agent_d11a3b3bb6e4
     emotional_state: Calm directiveness masking impatience with distractions
     goals:
@@ -2588,6 +2822,34 @@ events:
     - authoritative
     - concise
     - protective
+    importance: primary
+  - character_uuid: agent_4566d65dd1c0
+    emotional_state: obsessed and frustrated
+    goals:
+    - emphasize the threat posed by Elliot Roush's local election success as erosion
+      of governance
+    - continue obsession with Roush consistent with prior continuity
+    what_happened: sitting on the bed with a phone to his ear, obsessively discussing
+      Elliot Roush's 46% poll surge in the school board race, commissioning polls,
+      arguing its national threat, dismissing staff concerns, eating breakfast, and
+      rebuffing Zoey
+    observed_status: sitting on the bed with a phone to his ear, obsessively discussing
+      Elliot Roush's 46% poll surge in the school board race, commissioning polls,
+      arguing its national threat, dismissing staff concerns, eating breakfast, and
+      rebuffing Zoey
+    beliefs: []
+    observed_traits: []
+    importance: primary
+  - character_uuid: agent_a43c5ec562de
+    emotional_state: ''
+    goals:
+    - implied pursuit of school board seat, threatening local governance per Bartlet
+    what_happened: significantly referenced as the school board candidate polling
+      at 46%, subject of Bartlet's obsession and personal history
+    observed_status: significantly referenced as the school board candidate polling
+      at 46%, subject of Bartlet's obsession and personal history
+    beliefs: []
+    observed_traits: []
     importance: primary
   - character_uuid: agent_1d42caeec58a
     emotional_state: Neutral composure in service role
@@ -2694,8 +2956,9 @@ events:
   arc_uuids: []
   participations:
   - character_uuid: agent_1b4e146363a1
-    emotional_state: ''
-    goals: []
+    emotional_state: hesitant
+    goals:
+    - Discuss Charlie with her father
     what_happened: Enters bedroom with Leo, attempts to talk to father about Charlie
       but deterred by his mood.
     observed_status: Enters bedroom with Leo, attempts to talk to father about Charlie
@@ -2724,6 +2987,15 @@ events:
     - vulnerable
     - dutiful
     importance: primary
+  - character_uuid: agent_e9dd0ae36832
+    emotional_state: ''
+    goals: []
+    what_happened: Mentioned by Zoey as the topic she wants to discuss with her father.
+    observed_status: Mentioned by Zoey as the topic she wants to discuss with her
+      father.
+    beliefs: []
+    observed_traits: []
+    importance: primary
   - character_uuid: agent_d11a3b3bb6e4
     emotional_state: Steadfast operational focus overriding interpersonal nuance
     goals:
@@ -2744,6 +3016,38 @@ events:
     - pragmatic
     - authoritative
     - dismissive
+    importance: primary
+  - character_uuid: agent_4566d65dd1c0
+    emotional_state: obsessed
+    goals:
+    - Advocate for taking the local school board race seriously
+    - Check on fundraising calls indirectly
+    what_happened: Sitting on bed with phone to ear discussing Elliot Roush's polling
+      obsessively, interacts with Leo and Zoey, eats breakfast at settee, dismisses
+      C.J. and Leo.
+    observed_status: Sitting on bed with phone to ear discussing Elliot Roush's polling
+      obsessively, interacts with Leo and Zoey, eats breakfast at settee, dismisses
+      C.J. and Leo.
+    beliefs: []
+    observed_traits: []
+    importance: primary
+  - character_uuid: agent_a43c5ec562de
+    emotional_state: ''
+    goals: []
+    what_happened: Significantly mentioned as opponent polling at 46% in local Board
+      of Education race, subject of Bartlet's obsession.
+    observed_status: Significantly mentioned as opponent polling at 46% in local Board
+      of Education race, subject of Bartlet's obsession.
+    beliefs: []
+    observed_traits: []
+    importance: primary
+  - character_uuid: agent_1d42caeec58a
+    emotional_state: ''
+    goals: []
+    what_happened: Brings breakfast for Bartlet.
+    observed_status: Brings breakfast for Bartlet.
+    beliefs: []
+    observed_traits: []
     importance: primary
   object_involvements: []
   location_involvements:
@@ -3249,6 +3553,28 @@ events:
     - reflective
     - hesitant
     importance: primary
+  - character_uuid: agent_4566d65dd1c0
+    emotional_state: firm and principled
+    goals:
+    - enforce symbolic ethical boundary separating presidential duties from campaign
+      fundraising in the Oval Office
+    - make campaign calls from the Residence instead
+    - schedule a meeting with C.J.
+    what_happened: stuffing papers into his briefcase while preparing to leave; inquiring
+      about Tokyo market; listing and confirming campaign calls to Wyman, Frank Gates,
+      and McNamara; sharply reprimanding Charlie and enforcing ethical boundary against
+      campaigning from the Oval desk; tentatively accepting talk radio reception;
+      taking phone messages to call from Residence; directing Charlie to summon C.J.;
+      leaving the office
+    observed_status: stuffing papers into his briefcase while preparing to leave;
+      inquiring about Tokyo market; listing and confirming campaign calls to Wyman,
+      Frank Gates, and McNamara; sharply reprimanding Charlie and enforcing ethical
+      boundary against campaigning from the Oval desk; tentatively accepting talk
+      radio reception; taking phone messages to call from Residence; directing Charlie
+      to summon C.J.; leaving the office
+    beliefs: []
+    observed_traits: []
+    importance: primary
   - character_uuid: agent_de031c370545
     emotional_state: N/A (mentioned off-screen)
     goals:
@@ -3399,6 +3725,17 @@ events:
     - warm
     - empathetic
     - approachable
+    importance: primary
+  - character_uuid: agent_d11a3b3bb6e4
+    emotional_state: resolute
+    goals:
+    - enforce cancellation of the President's stop and funding for Tom Jordan
+    what_happened: sits in his office with Josh on speakerphone, informs Sam of the
+      decision to end support for Tom Jordan due to scandal risks
+    observed_status: sits in his office with Josh on speakerphone, informs Sam of
+      the decision to end support for Tom Jordan due to scandal risks
+    beliefs: []
+    observed_traits: []
     importance: primary
   - character_uuid: agent_b4c222a20679
     emotional_state: Embarrassed yet steady, balancing professional apology with fatherly
@@ -3747,6 +4084,16 @@ events:
     - sardonic
     - authoritative
     importance: primary
+  - character_uuid: agent_4566d65dd1c0
+    emotional_state: ''
+    goals: []
+    what_happened: referenced as needing to be directed with money to winnable areas
+      by Leo
+    observed_status: referenced as needing to be directed with money to winnable areas
+      by Leo
+    beliefs: []
+    observed_traits: []
+    importance: primary
   - character_uuid: agent_8dc62e539b7d
     emotional_state: N/A (not present)
     goals: []
@@ -3883,6 +4230,16 @@ events:
     - authoritative
     - pragmatic
     - sardonic
+    importance: primary
+  - character_uuid: agent_4566d65dd1c0
+    emotional_state: ''
+    goals: []
+    what_happened: referenced in strategy to deploy the President and money to winnable
+      districts
+    observed_status: referenced in strategy to deploy the President and money to winnable
+      districts
+    beliefs: []
+    observed_traits: []
     importance: primary
   - character_uuid: agent_8dc62e539b7d
     emotional_state: Implied desperation from polling plunge (off-screen)
@@ -4207,6 +4564,22 @@ events:
     - reliable
     - dutiful
     importance: primary
+  - character_uuid: agent_4566d65dd1c0
+    emotional_state: frustrated
+    goals:
+    - secure national press coverage for Elliot Roush
+    - escalate confrontation to express moral fixation over House strategy
+    what_happened: sits reading papers in bedroom, summons C.J., demands national
+      press coverage for Elliot Roush's school board race as human interest story,
+      declares disinterest in retaking the House, reluctantly concedes after C.J.'s
+      argument
+    observed_status: sits reading papers in bedroom, summons C.J., demands national
+      press coverage for Elliot Roush's school board race as human interest story,
+      declares disinterest in retaking the House, reluctantly concedes after C.J.'s
+      argument
+    beliefs: []
+    observed_traits: []
+    importance: primary
   - character_uuid: agent_a43c5ec562de
     emotional_state: N/A (absent, but evoked as unworthy threat by Bartlet).
     goals:
@@ -4391,6 +4764,21 @@ events:
     observed_traits:
     - dutiful
     - reliable
+    importance: primary
+  - character_uuid: agent_4566d65dd1c0
+    emotional_state: fixated and outraged, then resigned
+    goals:
+    - escalate confrontation over Roush coverage to declaration of disinterest in
+      House (escalation)
+    - maintain obsession with Roush school board race (continuity)
+    what_happened: sits reading papers, questions C.J. on lack of national press coverage
+      for Elliot Roush's school board race, declares disinterest in winning back the
+      House, yields after pause
+    observed_status: sits reading papers, questions C.J. on lack of national press
+      coverage for Elliot Roush's school board race, declares disinterest in winning
+      back the House, yields after pause
+    beliefs: []
+    observed_traits: []
     importance: primary
   - character_uuid: agent_a43c5ec562de
     emotional_state: Object of Bartlet's seething moral outrage and disdain
@@ -5235,6 +5623,26 @@ events:
     - loyal
     - vulnerable
     importance: primary
+  - character_uuid: agent_4566d65dd1c0
+    emotional_state: empathetic, resolute, vulnerable
+    goals:
+    - rally Toby back to work by reframing trauma as lynching to evoke moral resolve
+      (per thematic parallel on moral vs. legal justice)
+    - share personal restraint to bond over shared grief and transform vulnerability
+      into political action
+    what_happened: sits in chair reviewing papers and drinking egg cream, sharply
+      refuses Toby's extended leave granting only 15 minutes, reframes assassination
+      attempt as lynching using satellite photos of hate group headquarters, confesses
+      personal restraint against targeting them, admits mutual doubt but recommits
+      to duty, prepares to attend reception
+    observed_status: sits in chair reviewing papers and drinking egg cream, sharply
+      refuses Toby's extended leave granting only 15 minutes, reframes assassination
+      attempt as lynching using satellite photos of hate group headquarters, confesses
+      personal restraint against targeting them, admits mutual doubt but recommits
+      to duty, prepares to attend reception
+    beliefs: []
+    observed_traits: []
+    importance: primary
   - character_uuid: agent_de9b1c2b23b2
     emotional_state: Primed for action but held in moral suspense by Bartlet's calculus
     goals:
@@ -5405,6 +5813,22 @@ events:
     - loyal vulnerable aide
     - symbol of racial peril
     importance: primary
+  - character_uuid: agent_4566d65dd1c0
+    emotional_state: empathetic, resolute, and playfully insistent
+    goals:
+    - console Toby and share mutual trauma
+    - rally staff to fulfill campaign duties by attending reception
+    what_happened: sitting in chair going over papers and drinking egg cream, consoles
+      Toby on shared trauma over assassination attempt, hands him satellite photos,
+      rallies Toby and Sam to attend Talk Radio reception despite grief, engages in
+      playful banter over crab puffs
+    observed_status: sitting in chair going over papers and drinking egg cream, consoles
+      Toby on shared trauma over assassination attempt, hands him satellite photos,
+      rallies Toby and Sam to attend Talk Radio reception despite grief, engages in
+      playful banter over crab puffs
+    beliefs: []
+    observed_traits: []
+    importance: primary
   - character_uuid: agent_de9b1c2b23b2
     emotional_state: Anticipatory readiness under presidential leash
     goals:
@@ -5536,6 +5960,26 @@ events:
     - adaptable
     - dutiful
     importance: primary
+  - character_uuid: agent_77f1a613709a
+    emotional_state: ''
+    goals:
+    - humorously take a crab puff
+    what_happened: approaches Jenna Jacobs and snatches a crab puff from her plate
+    observed_status: approaches Jenna Jacobs and snatches a crab puff from her plate
+    beliefs: []
+    observed_traits: []
+    importance: primary
+  - character_uuid: agent_7c84dea6dcc9
+    emotional_state: ''
+    goals:
+    - acknowledge Bartlet
+    what_happened: responds 'Yes, Mr. President' to Bartlet, exchanges glance with
+      Jenna Jacobs before leaving
+    observed_status: responds 'Yes, Mr. President' to Bartlet, exchanges glance with
+      Jenna Jacobs before leaving
+    beliefs: []
+    observed_traits: []
+    importance: primary
   - character_uuid: agent_4566d65dd1c0
     emotional_state: Detached neutrality
     goals:
@@ -5571,6 +6015,19 @@ events:
     - vigilant
     - discreet
     - authoritative
+    importance: primary
+  - character_uuid: agent_e491d964c01d
+    emotional_state: defensive, uncomfortable
+    goals:
+    - defend her radio persona and biblical stance
+    what_happened: sits during Bartlet's speech, responds to his questions about credentials
+      and views, fidgets uncomfortably, squirms, exchanges glance with Toby, holds
+      plate as Sam takes food
+    observed_status: sits during Bartlet's speech, responds to his questions about
+      credentials and views, fidgets uncomfortably, squirms, exchanges glance with
+      Toby, holds plate as Sam takes food
+    beliefs: []
+    observed_traits: []
     importance: primary
   - character_uuid: agent_1e4724bea2dc
     emotional_state: Exuberantly boastful and performative
@@ -5739,6 +6196,14 @@ events:
     - loyal
     - observant
     - composed
+    importance: primary
+  - character_uuid: agent_d11a3b3bb6e4
+    emotional_state: ''
+    goals: []
+    what_happened: mentioned hypothetically by Bartlet as working on the Sabbath
+    observed_status: mentioned hypothetically by Bartlet as working on the Sabbath
+    beliefs: []
+    observed_traits: []
     importance: primary
   - character_uuid: agent_4566d65dd1c0
     emotional_state: Neutrally professional
@@ -5913,8 +6378,10 @@ events:
   arc_uuids: []
   participations:
   - character_uuid: agent_1b4e146363a1
-    emotional_state: ''
-    goals: []
+    emotional_state: concerned
+    goals:
+    - voice empathy and worry for Charlie's resilience
+    - offer intimate solidarity by joining him to vote
     what_happened: sitting on the portico reading a book, kisses Charlie, expresses
       deep concern about his parental losses and recent assassination attempt, offers
       to join him to vote
@@ -5972,6 +6439,16 @@ events:
     - protective
     - urgent
     - darkly humorous
+    importance: primary
+  - character_uuid: agent_4566d65dd1c0
+    emotional_state: ''
+    goals: []
+    what_happened: absent but actively sought by Leo after performing at Talk Radio
+      reception, referenced in context of 'dead pig's skin' quip
+    observed_status: absent but actively sought by Leo after performing at Talk Radio
+      reception, referenced in context of 'dead pig's skin' quip
+    beliefs: []
+    observed_traits: []
     importance: primary
   - character_uuid: agent_9623e7e26e19
     emotional_state: Deeply concerned empathy laced with romantic tenderness and post-trauma
@@ -6073,8 +6550,10 @@ events:
   arc_uuids: []
   participations:
   - character_uuid: agent_1b4e146363a1
-    emotional_state: ''
-    goals: []
+    emotional_state: sympathetic and affectionate
+    goals:
+    - comfort Charlie amid his trauma
+    - spend intimate time with Charlie by going out together
     what_happened: sitting in a chair on the balcony reading a book, smiles and kisses
       Charlie, expresses sympathy for his personal tragedies, offers to accompany
       him out
@@ -6130,6 +6609,16 @@ events:
     - protective
     - wryly humorous
     - decisive
+    importance: primary
+  - character_uuid: agent_4566d65dd1c0
+    emotional_state: ''
+    goals: []
+    what_happened: being urgently sought by Leo, suspected of performing 'a couple
+      of numbers' at the Talk Radio reception
+    observed_status: being urgently sought by Leo, suspected of performing 'a couple
+      of numbers' at the Talk Radio reception
+    beliefs: []
+    observed_traits: []
     importance: primary
   - character_uuid: agent_9623e7e26e19
     emotional_state: Sympathetic warmth blending into affectionate vulnerability then

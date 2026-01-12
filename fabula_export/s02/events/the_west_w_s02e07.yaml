@@ -1,5 +1,5 @@
 # Events for The Portland Trip
-# Generated: 2026-01-11T19:27:40.631194
+# Generated: 2026-01-12T09:57:18.051770
 
 episode_uuid: ep_sea_ser_the_west_wing_s02_e07
 episode_title: The Portland Trip
@@ -98,6 +98,28 @@ events:
     - self-deprecating
     - poised under pressure
     - collegial
+    importance: primary
+  - character_uuid: agent_77f1a613709a
+    emotional_state: ''
+    goals: []
+    what_happened: Deputy Communications Director added to the evening's Portland
+      flight passenger manifest.
+    observed_status: Deputy Communications Director added to the evening's Portland
+      flight passenger manifest.
+    beliefs: []
+    observed_traits: []
+    importance: primary
+  - character_uuid: agent_4566d65dd1c0
+    emotional_state: ''
+    goals: []
+    what_happened: President whose motorcade includes the press bus; reporters accompanying
+      him on the trip; implied source of C.J.'s 'punishment' via playful disciplinary
+      style.
+    observed_status: President whose motorcade includes the press bus; reporters accompanying
+      him on the trip; implied source of C.J.'s 'punishment' via playful disciplinary
+      style.
+    beliefs: []
+    observed_traits: []
     importance: primary
   - character_uuid: agent_d9ea8565c92f
     emotional_state: Amused curiosity with flirtatious probing
@@ -294,6 +316,24 @@ events:
     - stoic
     - witty
     - efficient
+    importance: primary
+  - character_uuid: agent_4566d65dd1c0
+    emotional_state: playful and enthusiastic
+    goals:
+    - Balance humor with gravitas during crisis briefing
+    - Receive update on tanker to inform aggressive sanctions approach
+    what_happened: mishears Leo's mention of Bruno and Hess as 'Michigan sucks' amid
+      engine roar, engages in playful banter linking to Michigan-Notre Dame rivalry;
+      confirms tanker details including Cyprus flag, Qais origin, oil suspicion, and
+      boarding plan; orders C.J. to wear Notre Dame cap for photo op, waves enthusiastically
+      to crowd below plane
+    observed_status: mishears Leo's mention of Bruno and Hess as 'Michigan sucks'
+      amid engine roar, engages in playful banter linking to Michigan-Notre Dame rivalry;
+      confirms tanker details including Cyprus flag, Qais origin, oil suspicion, and
+      boarding plan; orders C.J. to wear Notre Dame cap for photo op, waves enthusiastically
+      to crowd below plane
+    beliefs: []
+    observed_traits: []
     importance: primary
   - character_uuid: agent_9e93c2fbbca0
     emotional_state: Determined operational focus
@@ -505,6 +545,22 @@ events:
     - concise
     - deferential
     importance: primary
+  - character_uuid: agent_4566d65dd1c0
+    emotional_state: playful
+    goals:
+    - receive crisis update from Leo
+    - exact playful revenge on C.J. via Notre Dame cap and photo op
+    what_happened: banters playfully with Leo mishearing his words as a Michigan joke,
+      receives tanker briefing, spots C.J. and insists she wear the Notre Dame cap
+      as retribution for her earlier joke, calls for a photo op, waves enthusiastically
+      to the crowd below before boarding
+    observed_status: banters playfully with Leo mishearing his words as a Michigan
+      joke, receives tanker briefing, spots C.J. and insists she wear the Notre Dame
+      cap as retribution for her earlier joke, calls for a photo op, waves enthusiastically
+      to the crowd below before boarding
+    beliefs: []
+    observed_traits: []
+    importance: primary
   - character_uuid: agent_9e93c2fbbca0
     emotional_state: Cooperative resolve (inferred)
     goals:
@@ -679,6 +735,23 @@ events:
     - efficient
     - wry
     importance: primary
+  - character_uuid: agent_4566d65dd1c0
+    emotional_state: playful and enthusiastic
+    goals:
+    - balance humor with gravitas during briefing
+    - enforce playful punishment on C.J.
+    - rally team for Air Force One departure
+    what_happened: playfully mishears Leo's update as a Michigan-Notre Dame sports
+      jab due to roaring engines, confirms the tanker's details and boarding plan,
+      orders C.J. to wear Notre Dame cap, initiates photo op waving to crowd, proclaims
+      'Let’s hit the sky!'
+    observed_status: playfully mishears Leo's update as a Michigan-Notre Dame sports
+      jab due to roaring engines, confirms the tanker's details and boarding plan,
+      orders C.J. to wear Notre Dame cap, initiates photo op waving to crowd, proclaims
+      'Let’s hit the sky!'
+    beliefs: []
+    observed_traits: []
+    importance: primary
   - character_uuid: agent_9e93c2fbbca0
     emotional_state: Implied steady resolve
     goals:
@@ -845,8 +918,10 @@ events:
   arc_uuids: []
   participations:
   - character_uuid: agent_f3078a4f1b2f
-    emotional_state: ''
-    goals: []
+    emotional_state: urgent
+    goals:
+    - assess President Bartlet's fatigue to protect his health
+    - reveal interconnected personal and professional stresses amid crises
     what_happened: sitting at his desk and urgently asking 'Did he look tired?' mid-conversation
     observed_status: sitting at his desk and urgently asking 'Did he look tired?'
       mid-conversation
@@ -873,6 +948,14 @@ events:
     - Stoic
     - Protective
     - Commanding
+    importance: primary
+  - character_uuid: agent_4566d65dd1c0
+    emotional_state: tired
+    goals: []
+    what_happened: subject of Josh's urgent inquiry about looking tired
+    observed_status: subject of Josh's urgent inquiry about looking tired
+    beliefs: []
+    observed_traits: []
     importance: primary
   object_involvements:
   - object_uuid: object_5bfc61d7efd4
@@ -914,8 +997,10 @@ events:
   - arc_0f07f49d444c
   participations:
   - character_uuid: agent_f3078a4f1b2f
-    emotional_state: ''
-    goals: []
+    emotional_state: defensive
+    goals:
+    - obtain update on President Bartlet from Leo
+    - inform Leo about urgent meeting with Matt Skinner on the bill
     what_happened: on the phone with Leo, defending President Bartlet's affinity for
       long flights, revealing plans to meet Matt Skinner to challenge the Marriage
       Recognition Act's federal definition, abruptly ending the call as Donna interrupts
@@ -945,6 +1030,18 @@ events:
     - pragmatic
     - protective
     - strategic
+    importance: primary
+  - character_uuid: agent_4566d65dd1c0
+    emotional_state: ''
+    goals: []
+    what_happened: significantly mentioned as looking fine amid the tanker crisis,
+      liking long flights to talk and think out loud, but fretted over for the toll
+      upon landing, needing to make a decision from the plane
+    observed_status: significantly mentioned as looking fine amid the tanker crisis,
+      liking long flights to talk and think out loud, but fretted over for the toll
+      upon landing, needing to make a decision from the plane
+    beliefs: []
+    observed_traits: []
     importance: primary
   - character_uuid: agent_d5524a94a33b
     emotional_state: Fierce determination edged with exasperated affection
@@ -1156,8 +1253,9 @@ events:
   - arc_0f07f49d444c
   participations:
   - character_uuid: agent_f3078a4f1b2f
-    emotional_state: ''
-    goals: []
+    emotional_state: confrontational then shocked
+    goals:
+    - challenge Skinner on the discriminatory nature of the Marriage Recognition Act
     what_happened: greets Skinner, offers and provides beers, laments rushed timing
       of discussion, aggressively challenges the Marriage Recognition Act's anti-gay
       implications and rhetoric from Skinner's party allies, accuses Skinner of being
@@ -1301,6 +1399,14 @@ events:
     - fatalistic
     - authoritative
     - terse
+    importance: primary
+  - character_uuid: agent_4566d65dd1c0
+    emotional_state: ''
+    goals: []
+    what_happened: target of Leo's impending phone call regarding the crisis
+    observed_status: target of Leo's impending phone call regarding the crisis
+    beliefs: []
+    observed_traits: []
     importance: primary
   - character_uuid: agent_5cd0a166036c
     emotional_state: Professionally urgent with restrained optimism
@@ -1480,6 +1586,20 @@ events:
     - authoritative
     - vulnerable
     importance: primary
+  - character_uuid: agent_4566d65dd1c0
+    emotional_state: demanding
+    goals:
+    - to interrogate Leo on operational goals and strike perils
+    - to ensure awareness of catastrophe risks
+    what_happened: calls Leo (voice over phone), demands clarity on seizure goal,
+      questions F-18 pilots' plan, warns sharply about explosion risks if propeller
+      is missed on crude oil tanker
+    observed_status: calls Leo (voice over phone), demands clarity on seizure goal,
+      questions F-18 pilots' plan, warns sharply about explosion risks if propeller
+      is missed on crude oil tanker
+    beliefs: []
+    observed_traits: []
+    importance: primary
   - character_uuid: agent_256dcf4afffe
     emotional_state: Deep concern laced with hesitant devotion and quiet hurt
     goals:
@@ -1589,6 +1709,17 @@ events:
     - irritable under pressure
     - commanding
     - vulnerable in confidence
+    importance: primary
+  - character_uuid: agent_4566d65dd1c0
+    emotional_state: focused and cautionary
+    goals:
+    - obtain clear briefing on tanker crisis handling
+    what_happened: calls Leo (VO), questions operational goals for tanker, seeks confirmation
+      on F-18 pilots' actions and risks
+    observed_status: calls Leo (VO), questions operational goals for tanker, seeks
+      confirmation on F-18 pilots' actions and risks
+    beliefs: []
+    observed_traits: []
     importance: primary
   - character_uuid: agent_256dcf4afffe
     emotional_state: Deep concern laced with awkward vulnerability and fear for Leo's
@@ -1737,6 +1868,17 @@ events:
     - reassuring
     - professional
     - loyal
+    importance: primary
+  - character_uuid: agent_4566d65dd1c0
+    emotional_state: brisk
+    goals:
+    - obtain the final draft of the Portland morning speech
+    what_happened: talking on the phone about an unknown matter, pivoting to demand
+      the final draft of tomorrow morning's speech, hangs up
+    observed_status: talking on the phone about an unknown matter, pivoting to demand
+      the final draft of tomorrow morning's speech, hangs up
+    beliefs: []
+    observed_traits: []
     importance: primary
   object_involvements:
   - object_uuid: object_03ee5c7c6246
@@ -2055,14 +2197,26 @@ events:
   arc_uuids: []
   participations:
   - character_uuid: agent_f3078a4f1b2f
-    emotional_state: ''
-    goals: []
+    emotional_state: exasperated
+    goals:
+    - defend the administration's moral opposition to the Marriage Recognition Act
+    - resist Skinner's pressure to urge the President to sign the bill
     what_happened: engages in a heated debate with Skinner, countering arguments on
       public opinion, historical precedents like interracial marriage and school integration,
       state laws, and conservative hypocrisy on government size
     observed_status: engages in a heated debate with Skinner, countering arguments
       on public opinion, historical precedents like interracial marriage and school
       integration, state laws, and conservative hypocrisy on government size
+    beliefs: []
+    observed_traits: []
+    importance: primary
+  - character_uuid: agent_4566d65dd1c0
+    emotional_state: ''
+    goals: []
+    what_happened: referenced as the decision-maker who needs to sign the bill; Josh
+      plans to call him
+    observed_status: referenced as the decision-maker who needs to sign the bill;
+      Josh plans to call him
     beliefs: []
     observed_traits: []
     importance: primary
@@ -2299,6 +2453,17 @@ events:
     observed_traits:
     - poised messenger
     - loyal conduit for presidential whimsy
+    importance: primary
+  - character_uuid: agent_4566d65dd1c0
+    emotional_state: playful
+    goals:
+    - playfully jibe at C.J. regarding Notre Dame cap punishment
+    what_happened: mentioned as having budget meeting; sends cheeky message via Charlie
+      about Notre Dame fight song
+    observed_status: mentioned as having budget meeting; sends cheeky message via
+      Charlie about Notre Dame fight song
+    beliefs: []
+    observed_traits: []
     importance: primary
   - character_uuid: agent_3ee4436e9a6d
     emotional_state: Calmly competent and responsive
@@ -2583,8 +2748,11 @@ events:
   arc_uuids: []
   participations:
   - character_uuid: agent_f3078a4f1b2f
-    emotional_state: ''
-    goals: []
+    emotional_state: frustrated
+    goals:
+    - dismantle Skinner's biblical and moral defense of the discriminatory marriage
+      bill
+    - emphasize the bill's harmful impacts on gay partners
     what_happened: confronts Skinner about quoting the Bible, paces while arguing
       separation of church and state, sits after pause, highlights denial of federal
       benefits to gay partners, sighs
@@ -2765,8 +2933,10 @@ events:
   arc_uuids: []
   participations:
   - character_uuid: agent_f3078a4f1b2f
-    emotional_state: ''
-    goals: []
+    emotional_state: dismissive
+    goals:
+    - Preemptively reject the poll statistic's relevance and frame the bill as moral
+      discrimination
     what_happened: 'Delivering voice-over line: ''I know what 57% of the people say.'''
     observed_status: 'Delivering voice-over line: ''I know what 57% of the people
       say.'''
@@ -2842,8 +3012,11 @@ events:
   arc_uuids: []
   participations:
   - character_uuid: agent_f3078a4f1b2f
-    emotional_state: ''
-    goals: []
+    emotional_state: exasperated
+    goals:
+    - challenge Skinner's support for the discriminatory marriage bill using moral
+      and legal arguments
+    - express principled fury against pragmatic compromise on homophobia
     what_happened: walks with Skinner in hallway then debates intensely in his office,
       citing polls, 14th Amendment, Lawrence Tribe, erupting over party loyalty before
       ending thoughtfully
@@ -2982,8 +3155,9 @@ events:
   arc_uuids: []
   participations:
   - character_uuid: agent_f3078a4f1b2f
-    emotional_state: ''
-    goals: []
+    emotional_state: observant
+    goals:
+    - Silently witness the overconfident victory claim and intra-party discord
     what_happened: Observes the congressmen from his doorway, watches them exit
     observed_status: Observes the congressmen from his doorway, watches them exit
     beliefs: []
@@ -3113,8 +3287,9 @@ events:
   arc_uuids: []
   participations:
   - character_uuid: agent_f3078a4f1b2f
-    emotional_state: ''
-    goals: []
+    emotional_state: observant
+    goals:
+    - witness internal discord among opponents for strategic advantage
     what_happened: silently observes the congressmen interacting from his doorway,
       watches them exit
     observed_status: silently observes the congressmen interacting from his doorway,
@@ -3371,8 +3546,10 @@ events:
     - direct
     importance: primary
   - character_uuid: agent_f3078a4f1b2f
-    emotional_state: ''
-    goals: []
+    emotional_state: determined
+    goals:
+    - obtain legal clarification on Marriage Recognition Act
+    - coordinate with Toby on advising President
     what_happened: walks up interrupting Donna and Ainsley, questions Ainsley on Full
       Faith and Credit Clause and constitutionality of Marriage Recognition Act, takes
       phone call from Toby discussing plan to tell President to sign the bill and
@@ -3526,8 +3703,10 @@ events:
     - Strategic restraint
     importance: primary
   - character_uuid: agent_f3078a4f1b2f
-    emotional_state: ''
-    goals: []
+    emotional_state: urgent and determined
+    goals:
+    - obtain vital legal clarification on the Marriage Recognition Act to equip strategizing
+    - discuss President's mood and decision with Toby
     what_happened: walks up abruptly interrupting Donna and Ainsley, demands explanation
       of the Full Faith and Credit Clause and Marriage Recognition Act's constitutionality
       from Ainsley, then takes phone call from Toby discussing plans to tell 'him'
@@ -3677,8 +3856,12 @@ events:
     - strained
     importance: primary
   - character_uuid: agent_f3078a4f1b2f
-    emotional_state: ''
-    goals: []
+    emotional_state: determined
+    goals:
+    - obtain legal clarification from Ainsley
+    - declare strategy to Toby to push President Bartlet to sign Marriage Recognition
+      Act
+    - assess and strategize around President's frustrated mood
     what_happened: walks up interrupting Donna, questions Ainsley on Full Faith and
       Credit Clause and Marriage Recognition Act's constitutionality, picks up phone,
       tells Toby he plans to advise President to sign the bill, probes Toby on President's
@@ -3687,6 +3870,18 @@ events:
       and Credit Clause and Marriage Recognition Act's constitutionality, picks up
       phone, tells Toby he plans to advise President to sign the bill, probes Toby
       on President's mood and instructs on handling his impulses
+    beliefs: []
+    observed_traits: []
+    importance: primary
+  - character_uuid: agent_4566d65dd1c0
+    emotional_state: frustrated
+    goals: []
+    what_happened: discussed by Toby and Josh regarding his frustrated mood and impulsive
+      tendencies, target of Josh's plan to advise signing the Marriage Recognition
+      Act
+    observed_status: discussed by Toby and Josh regarding his frustrated mood and
+      impulsive tendencies, target of Josh's plan to advise signing the Marriage Recognition
+      Act
     beliefs: []
     observed_traits: []
     importance: primary
@@ -3831,8 +4026,11 @@ events:
     - ' curt'
     importance: primary
   - character_uuid: agent_f3078a4f1b2f
-    emotional_state: ''
-    goals: []
+    emotional_state: supportive
+    goals:
+    - Resume policy discussion with Toby
+    - Console Donna about her disappointing date
+    - Proceed to meet with Leo
     what_happened: Responds to Toby's interrupted question, seeks to resume it, walks
       with Donna through the bullpen and hallway discussing her night, apologizes,
       compliments her dress, and heads to see Leo.
@@ -3896,6 +4094,17 @@ events:
     observed_traits:
     - cordial
     - accommodating
+    importance: primary
+  - character_uuid: agent_029e045a2104
+    emotional_state: professional
+    goals:
+    - Inform passengers of the plane's descent and safety procedures
+    what_happened: Makes PA announcement from the flight deck about beginning descent
+      and asking passengers to find seats.
+    observed_status: Makes PA announcement from the flight deck about beginning descent
+      and asking passengers to find seats.
+    beliefs: []
+    observed_traits: []
     importance: primary
   - character_uuid: agent_e4eabf34e75b
     emotional_state: Projected as obnoxiously self-satisfied
@@ -3990,8 +4199,11 @@ events:
     - dutiful
     importance: primary
   - character_uuid: agent_f3078a4f1b2f
-    emotional_state: ''
-    goals: []
+    emotional_state: sarcastic then tender
+    goals:
+    - to defer conversation with Toby
+    - to provide sympathy laced with sarcasm to Donna and deliver a sincere compliment
+    - to proceed to meet Leo
     what_happened: responds to Toby's interrupted question, exits bullpen ahead of
       Donna past Ainsley, bids casual goodbyes, offers sarcastic sympathy for Donna's
       bad date, then sincerely compliments her dress before heading to Leo
@@ -4061,6 +4273,17 @@ events:
     - affable
     - professional
     - conciliatory
+    importance: primary
+  - character_uuid: agent_029e045a2104
+    emotional_state: ''
+    goals:
+    - to inform passengers of the plane's descent and landing preparations
+    what_happened: announces via P.A. that they are 82 miles south of the runway,
+      beginning descent, and asks passengers to find seats
+    observed_status: announces via P.A. that they are 82 miles south of the runway,
+      beginning descent, and asks passengers to find seats
+    beliefs: []
+    observed_traits: []
     importance: primary
   - character_uuid: agent_e4eabf34e75b
     emotional_state: Projected disdain from Donna's recounting
@@ -4158,6 +4381,18 @@ events:
     - strategic
     - resolute
     - loyal
+    importance: primary
+  - character_uuid: agent_4566d65dd1c0
+    emotional_state: impatient
+    goals:
+    - prompt Leo for a crisis response plan
+    - challenge the impact and viability of Leo's proposed action
+    what_happened: speaks over speakerphone, impatiently repeats prompting and immediately
+      challenges the effectiveness of holding the ship in Bahrain
+    observed_status: speaks over speakerphone, impatiently repeats prompting and immediately
+      challenges the effectiveness of holding the ship in Bahrain
+    beliefs: []
+    observed_traits: []
     importance: primary
   object_involvements:
   - object_uuid: object_77652f419146
@@ -4259,7 +4494,8 @@ events:
     importance: primary
   - character_uuid: agent_f3078a4f1b2f
     emotional_state: ''
-    goals: []
+    goals:
+    - to discuss the Marriage Recognition Act with Leo
     what_happened: enters Leo's office and takes a seat, referenced by Leo as wanting
       to talk about the Marriage Recognition Act
     observed_status: enters Leo's office and takes a seat, referenced by Leo as wanting
@@ -4288,6 +4524,20 @@ events:
     - pragmatic
     - ' unflinching'
     - strategic
+    importance: primary
+  - character_uuid: agent_4566d65dd1c0
+    emotional_state: frustrated and resigned
+    goals:
+    - to escalate sanctions enforcement by making them proactive and meaningful through
+      cargo confiscation and ship seizure
+    what_happened: standing and talking on the phone with Leo, proposing confiscation
+      of cargo, seizure of ship, sale of oil to fund anti-smuggling, sighing heavily,
+      interacting with C.J.
+    observed_status: standing and talking on the phone with Leo, proposing confiscation
+      of cargo, seizure of ship, sale of oil to fund anti-smuggling, sighing heavily,
+      interacting with C.J.
+    beliefs: []
+    observed_traits: []
     importance: primary
   object_involvements: []
   location_involvements:
@@ -4364,7 +4614,8 @@ events:
     importance: primary
   - character_uuid: agent_f3078a4f1b2f
     emotional_state: ''
-    goals: []
+    goals:
+    - discuss the Marriage Recognition Act with Leo
     what_happened: enters Leo's office and takes a seat; wants to talk about the Marriage
       Recognition Act (per Leo)
     observed_status: enters Leo's office and takes a seat; wants to talk about the
@@ -4393,6 +4644,21 @@ events:
     - pragmatic
     - authoritative
     - steady under pressure
+    importance: primary
+  - character_uuid: agent_4566d65dd1c0
+    emotional_state: resigned
+    goals:
+    - push for bold, transformative sanctions enforcement by seizing the sanctions-evading
+      tanker (paralleling revolutionary policy ambitions)
+    - defer the seizure plan to the future due to imminent landing
+    what_happened: standing and talking on the phone with Leo, proposing to confiscate
+      the cargo, seize the ship, and sell the oil to enforce sanctions; sighs heavily
+      in resignation and concedes to defer the plan; asks C.J. if she needs him
+    observed_status: standing and talking on the phone with Leo, proposing to confiscate
+      the cargo, seize the ship, and sell the oil to enforce sanctions; sighs heavily
+      in resignation and concedes to defer the plan; asks C.J. if she needs him
+    beliefs: []
+    observed_traits: []
     importance: primary
   object_involvements:
   - object_uuid: object_ecd975d2bcc2
@@ -4624,8 +4890,9 @@ events:
   - arc_0f07f49d444c
   participations:
   - character_uuid: agent_f3078a4f1b2f
-    emotional_state: ''
-    goals: []
+    emotional_state: insistent
+    goals:
+    - press forward with constitutional defense of the Marriage Recognition Act
     what_happened: continues conversation with Bartlet, states 'The constitutional
       argument...'
     observed_status: continues conversation with Bartlet, states 'The constitutional
@@ -4656,6 +4923,18 @@ events:
     - Observant
     - Tense
     - Loyal
+    importance: primary
+  - character_uuid: agent_4566d65dd1c0
+    emotional_state: outraged
+    goals:
+    - condemn the Marriage Recognition Act as 'legislative gay bashing' and reject
+      constitutional arguments
+    what_happened: abruptly shuts down Josh, declares 'I don't care about the constitutional
+      argument. It's gay bashing. It's legislative gay bashing.'
+    observed_status: abruptly shuts down Josh, declares 'I don't care about the constitutional
+      argument. It's gay bashing. It's legislative gay bashing.'
+    beliefs: []
+    observed_traits: []
     importance: primary
   object_involvements: []
   location_involvements: []
@@ -4704,6 +4983,17 @@ events:
     - professional
     - intuitive
     - respectful
+    importance: primary
+  - character_uuid: agent_4566d65dd1c0
+    emotional_state: weary
+    goals:
+    - reveal vulnerability through accessible response amid solitude
+    what_happened: sitting in a chair reading something alone and responding laconically
+      with 'Yeah?' to C.J.'s queries
+    observed_status: sitting in a chair reading something alone and responding laconically
+      with 'Yeah?' to C.J.'s queries
+    beliefs: []
+    observed_traits: []
     importance: primary
   object_involvements: []
   location_involvements: []

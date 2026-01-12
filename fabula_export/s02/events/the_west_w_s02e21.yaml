@@ -1,5 +1,5 @@
 # Events for 18th and Potomac
-# Generated: 2026-01-11T19:27:45.982691
+# Generated: 2026-01-12T09:57:23.325588
 
 episode_uuid: ep_sea_ser_the_west_wing_s02_e21
 episode_title: 18th and Potomac
@@ -32,7 +32,8 @@ events:
   participations:
   - character_uuid: agent_f3078a4f1b2f
     emotional_state: ''
-    goals: []
+    goals:
+    - lure pollster Joey Lucas to D.C. via deception
     what_happened: significantly mentioned as the originator of the elaborate ruse
       to lure the pollster to D.C. by fabricating a polling trip on subsurface agriculture
       (beets).
@@ -67,8 +68,9 @@ events:
     - commanding
     importance: primary
   - character_uuid: agent_4566d65dd1c0
-    emotional_state: ''
-    goals: []
+    emotional_state: skeptical
+    goals:
+    - understand and challenge the ethics of Josh's deception
     what_happened: walks from the portico into the Oval Office with Leo, probes Leo
       about Josh's phone call and ruse to lure the pollster, puts down papers, searches
       front pockets for a pen, expresses disbelief at the deception, questions moving
@@ -232,8 +234,9 @@ events:
     - gravely anticipatory
     importance: primary
   - character_uuid: agent_f3078a4f1b2f
-    emotional_state: ''
-    goals: []
+    emotional_state: anxious
+    goals:
+    - present and unveil the poll data to the group
     what_happened: confirms Bartlet and Leo are on their way, asks if there's anything
       likable in the polls, introduces Joey Lucas and Kenny to the President, and
       reads the catastrophic Michigan poll results aloud
@@ -263,8 +266,10 @@ events:
     - expeditious leader
     importance: primary
   - character_uuid: agent_4566d65dd1c0
-    emotional_state: ''
-    goals: []
+    emotional_state: defeated
+    goals:
+    - humanize the group by asking about Kenny
+    - assess the full impact of the polls
     what_happened: enters with Leo, greets the group, inquires if anyone knows Kenny's
       last name, concedes 'They may be right' to poll data on MS fatality, asks Joey
       directly for any good news
@@ -445,8 +450,9 @@ events:
     - supportive
     importance: primary
   - character_uuid: agent_f3078a4f1b2f
-    emotional_state: ''
-    goals: []
+    emotional_state: tense
+    goals:
+    - facilitate the poll discussion
     what_happened: confirms Bartlet and Leo are on their way, asks if there's anything
       good in the polls, introduces Joey and Kenny to Bartlet, introduces and reads
       the poll results aloud
@@ -476,8 +482,10 @@ events:
     - protective
     importance: primary
   - character_uuid: agent_4566d65dd1c0
-    emotional_state: ''
-    goals: []
+    emotional_state: resigned
+    goals:
+    - humanize the group amid crisis
+    - concede political reality of MS diagnosis
     what_happened: enters with Leo, greeted by staff who rise, interrupts to ask how
       many know Kenny's last name, concedes 'They may be right' to MS being fatal,
       asks Joey if any good news
@@ -625,8 +633,10 @@ events:
     - strategic
     importance: primary
   - character_uuid: agent_4566d65dd1c0
-    emotional_state: ''
-    goals: []
+    emotional_state: resolute and frustrated
+    goals:
+    - obtain clear updates on the Haitian coup situation
+    - protect US personnel by ordering evacuations and reinforcements
     what_happened: stands near desk then sits in chair, questions advisors on events
       in Haiti including last night's rally suppression and Dessaline's whereabouts,
       decisively orders evacuation of non-essential embassy personnel, Marines to
@@ -635,6 +645,14 @@ events:
       in Haiti including last night's rally suppression and Dessaline's whereabouts,
       decisively orders evacuation of non-essential embassy personnel, Marines to
       the embassy, and Fitzwallace to be briefed
+    beliefs: []
+    observed_traits: []
+    importance: primary
+  - character_uuid: agent_8cbd193878e6
+    emotional_state: ''
+    goals: []
+    what_happened: ordered to be briefed on the situation
+    observed_status: ordered to be briefed on the situation
     beliefs: []
     observed_traits: []
     importance: primary
@@ -699,6 +717,30 @@ events:
     - observant
     - unflinching
     importance: primary
+  - character_uuid: agent_637145fc4b8d
+    emotional_state: ''
+    goals: []
+    what_happened: president-elect reported as vanished, failed to attend 4 pm courtesy
+      conference with Gilbert Tass, calls to party HQ and both houses unanswered,
+      armed forces radio claims flight denied by Dominicans
+    observed_status: president-elect reported as vanished, failed to attend 4 pm courtesy
+      conference with Gilbert Tass, calls to party HQ and both houses unanswered,
+      armed forces radio claims flight denied by Dominicans
+    beliefs: []
+    observed_traits: []
+    importance: primary
+  - character_uuid: agent_f7742f99d303
+    emotional_state: ''
+    goals: []
+    what_happened: soldiers under his command surrounded rally sites citing improper
+      permits, arrested Justice Minister Ducasse, surrounded Chief Justice's house
+      claiming protection from threats
+    observed_status: soldiers under his command surrounded rally sites citing improper
+      permits, arrested Justice Minister Ducasse, surrounded Chief Justice's house
+      claiming protection from threats
+    beliefs: []
+    observed_traits: []
+    importance: primary
   - character_uuid: agent_d39ac5259f0c
     emotional_state: ''
     goals: []
@@ -714,6 +756,16 @@ events:
       did not attend
     observed_status: scheduled for 4 pm courtesy conference with Dessaline which he
       did not attend
+    beliefs: []
+    observed_traits: []
+    importance: primary
+  - character_uuid: agent_1944ff1b2dd4
+    emotional_state: ''
+    goals: []
+    what_happened: house surrounded by soldiers supposedly for protection from death
+      threats, intelligence indicates under house arrest
+    observed_status: house surrounded by soldiers supposedly for protection from death
+      threats, intelligence indicates under house arrest
     beliefs: []
     observed_traits: []
     importance: primary
@@ -893,8 +945,12 @@ events:
     - loyal
     importance: primary
   - character_uuid: agent_4566d65dd1c0
-    emotional_state: ''
-    goals: []
+    emotional_state: resolute and urgent
+    goals:
+    - protect U.S. personnel by evacuating non-essentials and deploying Marines to
+      embassy
+    - escalate U.S. response to Haitian coup, unifying team under his authority and
+      causally leading to later embassy standoff
     what_happened: stands near desk, sits in chair, questions advisors on Haitian
       events including Dessaline's disappearance, decisively overrides Jake's warning
       by declaring no Dessaline government exists, orders evacuation of non-essential
@@ -1189,7 +1245,9 @@ events:
     importance: primary
   - character_uuid: agent_f3078a4f1b2f
     emotional_state: ''
-    goals: []
+    goals:
+    - join the secure meeting
+    - contribute to finalizing MS disclosure strategy details
     what_happened: walks up to guarding agent, utters code word 'Saggitarius' to gain
       entry, sits at table, questions details on live vs. tape and timing of the special
     observed_status: walks up to guarding agent, utters code word 'Saggitarius' to
@@ -1427,8 +1485,10 @@ events:
     - Decisive
     importance: primary
   - character_uuid: agent_f3078a4f1b2f
-    emotional_state: ''
-    goals: []
+    emotional_state: strategic
+    goals:
+    - assess and challenge the production details of the disclosure plan to ensure
+      message control
     what_happened: walks up to the agent, says 'Sagittarius' to enter, sits at the
       table, questions if the special will be live/live to tape or tape, asks about
       editing the President's statements, inquires about the timing
@@ -1586,8 +1646,10 @@ events:
     - affectionately persistent
     importance: primary
   - character_uuid: agent_f3078a4f1b2f
-    emotional_state: ''
-    goals: []
+    emotional_state: playful
+    goals:
+    - tease Mrs. Landingham about her car
+    - locate Leo per message
     what_happened: joining the teasing by invoking gender stereotypes on car-buying
       and asking about extended warranty and tow package, then inquiring about Leo
     observed_status: joining the teasing by invoking gender stereotypes on car-buying
@@ -1673,8 +1735,10 @@ events:
   - arc_2977c4299a88
   participations:
   - character_uuid: agent_f3078a4f1b2f
-    emotional_state: ''
-    goals: []
+    emotional_state: concerned and persistent
+    goals:
+    - Probe Ritter on Justice Department budget issues as tasked
+    - Secure firm reelection position from President and facilitate senior staff discussion
     what_happened: Arrives in Leo's office, acknowledges tobacco lawsuit stats, accepts
       task to confront Ritter, pushes for senior staff discussion on reelection amid
       MS polls and Dateline/press conference plans
@@ -1883,8 +1947,10 @@ events:
     - loyal
     importance: primary
   - character_uuid: agent_4566d65dd1c0
-    emotional_state: ''
-    goals: []
+    emotional_state: resolute
+    goals:
+    - authorize entry for Dessalines into the U.S. embassy despite risks, enabling
+      potential asylum
     what_happened: enters Oval Office from outside with Charlie, questions Leo about
       the situation and evacuation status, overrides Robbie's objections and orders
       the embassy gates opened to admit Dessalines
@@ -2335,6 +2401,25 @@ events:
     beliefs: []
     observed_traits: []
     importance: primary
+  - character_uuid: agent_738f513a2eba
+    emotional_state: ''
+    goals: []
+    what_happened: Significantly discussed as whether to feature him at the press
+      conference, noted as early knower of president's health issue.
+    observed_status: Significantly discussed as whether to feature him at the press
+      conference, noted as early knower of president's health issue.
+    beliefs: []
+    observed_traits: []
+    importance: primary
+  - character_uuid: agent_27fa58e83ea5
+    emotional_state: ''
+    goals:
+    - deliver urgent note on Haiti crisis
+    what_happened: Knocks, enters, and hands C.J. an urgent note.
+    observed_status: Knocks, enters, and hands C.J. an urgent note.
+    beliefs: []
+    observed_traits: []
+    importance: primary
   - character_uuid: agent_1944ff1b2dd4
     emotional_state: Clinically urgent, detached from room's tension
     goals:
@@ -2501,6 +2586,18 @@ events:
     beliefs: []
     observed_traits: []
     importance: primary
+  - character_uuid: agent_738f513a2eba
+    emotional_state: ''
+    goals: []
+    what_happened: extensively discussed as potential figure to place at press conference
+      to demonstrate endorsement of Bartlet's health, with concerns over his potential
+      responses and ambitions
+    observed_status: extensively discussed as potential figure to place at press conference
+      to demonstrate endorsement of Bartlet's health, with concerns over his potential
+      responses and ambitions
+    beliefs: []
+    observed_traits: []
+    importance: primary
   - character_uuid: agent_1944ff1b2dd4
     emotional_state: Professionally composed under pressure
     goals:
@@ -2600,8 +2697,10 @@ events:
   arc_uuids: []
   participations:
   - character_uuid: agent_f3078a4f1b2f
-    emotional_state: ''
-    goals: []
+    emotional_state: persistent and frustrated
+    goals:
+    - Lobby Ritter to advance or support the stalled appropriations bill for the tobacco
+      case
     what_happened: exits a D.C. building with Ritter, confirms Haitian president smuggled
       in trunk, pivots to lobby for $30M Justice Department appropriations bill for
       tobacco lawsuit, questions chairman's scheduling, tobacco donations, vote count,
@@ -2615,7 +2714,8 @@ events:
     importance: primary
   - character_uuid: agent_4566d65dd1c0
     emotional_state: ''
-    goals: []
+    goals:
+    - Advance the Justice Department tobacco lawsuit funding
     what_happened: referenced as wanting to support the $30M appropriations bill
     observed_status: referenced as wanting to support the $30M appropriations bill
     beliefs: []
@@ -3519,6 +3619,15 @@ events:
     - Instinctive acuity
     - Persistent probing
     importance: primary
+  - character_uuid: agent_256dcf4afffe
+    emotional_state: ''
+    goals:
+    - probe U.S. diplomatic stance on recognizing Bazan government in Haiti
+    what_happened: asks C.J. if recognizing the Bazan government is an option
+    observed_status: asks C.J. if recognizing the Bazan government is an option
+    beliefs: []
+    observed_traits: []
+    importance: primary
   object_involvements: []
   location_involvements:
   - location_uuid: location_176bbdde9893
@@ -3838,14 +3947,24 @@ events:
   - arc_2977c4299a88
   participations:
   - character_uuid: agent_f3078a4f1b2f
-    emotional_state: ''
-    goals: []
+    emotional_state: furious
+    goals:
+    - escalate confrontation over the human cost of congressional inaction on tobacco
+      lawsuit funding
     what_happened: confronts congressmen about tobacco industry ties, defends the
       lawsuit with evidence of corporate deceit and addiction, cites underage smoking
       statistic, and storms out
     observed_status: confronts congressmen about tobacco industry ties, defends the
       lawsuit with evidence of corporate deceit and addiction, cites underage smoking
       statistic, and storms out
+    beliefs: []
+    observed_traits: []
+    importance: primary
+  - character_uuid: agent_b5b09e3fda5b
+    emotional_state: ''
+    goals: []
+    what_happened: mentioned as having provided Josh with the vote nose count
+    observed_status: mentioned as having provided Josh with the vote nose count
     beliefs: []
     observed_traits: []
     importance: primary
@@ -4270,8 +4389,10 @@ events:
     - loyal
     importance: primary
   - character_uuid: agent_6565547b0ddc
-    emotional_state: ''
-    goals: []
+    emotional_state: firm, relentless
+    goals:
+    - expose Abbey's legal and ethical violations
+    - compel Abbey to secure independent legal counsel and avoid the broadcast
     what_happened: enters holding thick volume, dismisses Sam, firmly insists Abbey
       get independent counsel, interrogates her on prescription details and ethics
       violations using the book, pours coffee, closes book and leaves after pause
@@ -4447,8 +4568,11 @@ events:
     - professorial
     importance: primary
   - character_uuid: agent_6565547b0ddc
-    emotional_state: ''
-    goals: []
+    emotional_state: firm and relentless
+    goals:
+    - expose Abbey's legal and ethical violations in prescribing MS medication to
+      highlight peril paralleling public exposure of Bartlet's MS secrecy
+    - compel Abbey to secure independent legal counsel immediately and avoid the broadcast
     what_happened: enters holding thick volume, asks Sam to leave, insists Abbey get
       independent counsel, methodically questions and exposes her prescription violations
       across states without records by quoting rules from book, silently closes book
@@ -4595,8 +4719,10 @@ events:
     - decisive
     importance: primary
   - character_uuid: agent_f3078a4f1b2f
-    emotional_state: ''
-    goals: []
+    emotional_state: exhausted and grieving
+    goals:
+    - push through fatigue on tobacco work
+    - process sudden news of Mrs. Landingham's death
     what_happened: sits exhausted at his desk with head in hands under desk lamp light,
       stares blankly at papers, distractedly takes document from Donna, discusses
       tobacco work and sarcastically dismisses presidential meeting as Blue Ribbon
@@ -4628,7 +4754,8 @@ events:
     importance: primary
   - character_uuid: agent_4566d65dd1c0
     emotional_state: ''
-    goals: []
+    goals:
+    - convene staff meeting with Josh
     what_happened: requests Josh's attendance at a meeting in the Residence around
       9:00 PM
     observed_status: requests Josh's attendance at a meeting in the Residence around
@@ -4850,6 +4977,15 @@ events:
     - professional
     - observant
     importance: primary
+  - character_uuid: agent_256dcf4afffe
+    emotional_state: ''
+    goals:
+    - probe for information on Haitian casualties
+    what_happened: asking C.J. one more question on Haitian casualties
+    observed_status: asking C.J. one more question on Haitian casualties
+    beliefs: []
+    observed_traits: []
+    importance: primary
   object_involvements: []
   location_involvements: []
   organization_involvements:
@@ -4973,8 +5109,10 @@ events:
     - irritated
     importance: primary
   - character_uuid: agent_f3078a4f1b2f
-    emotional_state: ''
-    goals: []
+    emotional_state: concerned then animated
+    goals:
+    - address Toby telling Donna the MS news
+    - push forward on tobacco litigation despite obstacles
     what_happened: enters and confronts Toby in the hall about telling Donna, updates
       Leo on tobacco subcommittee vote, suggests and crafts strong statement language
       with Leo

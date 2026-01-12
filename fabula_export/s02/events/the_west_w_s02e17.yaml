@@ -1,5 +1,5 @@
 # Events for The Stackhouse Filibuster
-# Generated: 2026-01-11T19:27:44.905949
+# Generated: 2026-01-12T09:57:22.269889
 
 episode_uuid: ep_sea_ser_the_west_wing_s02_e17
 episode_title: The Stackhouse Filibuster
@@ -256,7 +256,8 @@ events:
     importance: primary
   - character_uuid: agent_f3078a4f1b2f
     emotional_state: ''
-    goals: []
+    goals:
+    - lead negotiations on the Family Wellness Act
     what_happened: had been leading staffers from the Legislative Liaison Office in
       negotiations with the conference chairman for weeks and walked into the Roosevelt
       Room
@@ -379,7 +380,9 @@ events:
     importance: primary
   - character_uuid: agent_f3078a4f1b2f
     emotional_state: ''
-    goals: []
+    goals:
+    - Orchestrate bipartisan negotiations for the Family Wellness Act, climaxing in
+      Roosevelt Room announcement
     what_happened: had been leading staffers in negotiations with the conference chairman
       for weeks and walked into the Roosevelt Room
     observed_status: had been leading staffers in negotiations with the conference
@@ -497,7 +500,9 @@ events:
     importance: primary
   - character_uuid: agent_f3078a4f1b2f
     emotional_state: ''
-    goals: []
+    goals:
+    - achieve negotiation triumph on Family Wellness Act
+    - make pivotal announcement in the Roosevelt Room
     what_happened: leading staffers from the Legislative Liaison Office in weeks-long
       negotiations with the conference chairman and walking into the Roosevelt Room
       on Monday morning
@@ -595,12 +600,25 @@ events:
   arc_uuids: []
   participations:
   - character_uuid: agent_f3078a4f1b2f
-    emotional_state: ''
-    goals: []
+    emotional_state: excited
+    goals:
+    - announce the successful securing of the Family Wellness Act
+    - pivot White House momentum from frustration to triumph
     what_happened: enters the Roosevelt Room purposefully, seats himself at the table,
       and announces 'We got the Family Wellness Act.'
     observed_status: enters the Roosevelt Room purposefully, seats himself at the
       table, and announces 'We got the Family Wellness Act.'
+    beliefs: []
+    observed_traits: []
+    importance: primary
+  - character_uuid: agent_d11a3b3bb6e4
+    emotional_state: stunned
+    goals:
+    - confirm the passage of the Family Wellness Act
+    what_happened: responds with stunned urgency, asking 'It's done?' to confirm the
+      breakthrough
+    observed_status: responds with stunned urgency, asking 'It's done?' to confirm
+      the breakthrough
     beliefs: []
     observed_traits: []
     importance: primary
@@ -1245,6 +1263,18 @@ events:
     - probing
     - skeptical
     importance: primary
+  - character_uuid: agent_1d42caeec58a
+    emotional_state: ''
+    goals: []
+    what_happened: Referenced as scheduled to deliver speech on energy efficiency
+      to Detroit Economic Counsel, proposed for rebutting Sluman but deemed ineffective
+      by Hoynes.
+    observed_status: Referenced as scheduled to deliver speech on energy efficiency
+      to Detroit Economic Counsel, proposed for rebutting Sluman but deemed ineffective
+      by Hoynes.
+    beliefs: []
+    observed_traits: []
+    importance: primary
   - character_uuid: agent_1988cf3dd146
     emotional_state: Bewildered honesty amid crisis optics
     goals:
@@ -1282,6 +1312,16 @@ events:
     - poised
     - insistent
     - respectful
+    importance: primary
+  - character_uuid: agent_4e57282548ac
+    emotional_state: ''
+    goals: []
+    what_happened: Notes unseasonably warm temperatures last month contributed to
+      flooding.
+    observed_status: Notes unseasonably warm temperatures last month contributed to
+      flooding.
+    beliefs: []
+    observed_traits: []
     importance: primary
   - character_uuid: agent_94e5960ef786
     emotional_state: Assertive off-screen provocation
@@ -1483,6 +1523,44 @@ events:
     - efficient
     - loyal
     - poised
+    importance: primary
+  - character_uuid: agent_1d42caeec58a
+    emotional_state: ''
+    goals: []
+    what_happened: scheduled to deliver speech on energy efficiency including rebuttal
+      to Sluman (significantly mentioned)
+    observed_status: scheduled to deliver speech on energy efficiency including rebuttal
+      to Sluman (significantly mentioned)
+    beliefs: []
+    observed_traits: []
+    importance: primary
+  - character_uuid: agent_1988cf3dd146
+    emotional_state: ''
+    goals: []
+    what_happened: poses for pictures with Hoynes and comments on unknown reasons
+      for weather
+    observed_status: poses for pictures with Hoynes and comments on unknown reasons
+      for weather
+    beliefs: []
+    observed_traits: []
+    importance: primary
+  - character_uuid: agent_664a07fd38c6
+    emotional_state: ''
+    goals: []
+    what_happened: poses for pictures with Hoynes and requests to see Toby Ziegler
+    observed_status: poses for pictures with Hoynes and requests to see Toby Ziegler
+    beliefs: []
+    observed_traits: []
+    importance: primary
+  - character_uuid: agent_4e57282548ac
+    emotional_state: ''
+    goals: []
+    what_happened: poses for pictures with Hoynes and comments on unseasonably warm
+      temperatures
+    observed_status: poses for pictures with Hoynes and comments on unseasonably warm
+      temperatures
+    beliefs: []
+    observed_traits: []
     importance: primary
   - character_uuid: agent_94e5960ef786
     emotional_state: Absent but portrayed as provocatively unyielding
@@ -1713,11 +1791,25 @@ events:
   participations:
   - character_uuid: agent_f3078a4f1b2f
     emotional_state: ''
-    goals: []
+    goals:
+    - receive Leo's approval and instructions for the clandestine Senator meeting
     what_happened: provides voiceover narration about receiving a cryptic message
       from a Senator, discusses it with Leo, takes the memo from Leo, and exits
     observed_status: provides voiceover narration about receiving a cryptic message
       from a Senator, discusses it with Leo, takes the memo from Leo, and exits
+    beliefs: []
+    observed_traits: []
+    importance: primary
+  - character_uuid: agent_d11a3b3bb6e4
+    emotional_state: unconcerned
+    goals:
+    - greenlight and counsel Josh on proceeding with the Senator meeting cautiously
+    what_happened: agrees the direct Senator message is unusual but shows no concern,
+      advises Josh to take the meeting without sweating it or revealing anything,
+      hands memo to Josh
+    observed_status: agrees the direct Senator message is unusual but shows no concern,
+      advises Josh to take the meeting without sweating it or revealing anything,
+      hands memo to Josh
     beliefs: []
     observed_traits: []
     importance: primary
@@ -1803,8 +1895,10 @@ events:
   arc_uuids: []
   participations:
   - character_uuid: agent_f3078a4f1b2f
-    emotional_state: ''
-    goals: []
+    emotional_state: polite, pleading, mildly amused
+    goals:
+    - dismiss Stackhouse's request for autism funding to keep the bloated bill closed
+      and secure a pre-recess vote
     what_happened: slides into the Capitol Building hallway and falls on his butt,
       walks to Senator Stackhouse's office, removes his coat, engages in negotiation
       pleading against adding autism funding to the closed bill, smiles acknowledging
@@ -1918,8 +2012,10 @@ events:
   arc_uuids: []
   participations:
   - character_uuid: agent_f3078a4f1b2f
-    emotional_state: ''
-    goals: []
+    emotional_state: excited
+    goals:
+    - confirm travel to attend Mets game
+    - thank mother for shoes via email
     what_happened: enters for walk-and-talk with Donna about flight to Mets intrasquad
       game, types email to thank mother for shoes
     observed_status: enters for walk-and-talk with Donna about flight to Mets intrasquad
@@ -2172,8 +2268,10 @@ events:
   arc_uuids: []
   participations:
   - character_uuid: agent_f3078a4f1b2f
-    emotional_state: ''
-    goals: []
+    emotional_state: excited
+    goals:
+    - finalize travel arrangements to attend Mets exhibition game
+    - thank mother for the shoes via email
     what_happened: Enters bullpen, discusses travel plans to Mets intrasquad game
       with Donna, complains about flight logistics, types email to mother thanking
       her for shoes
@@ -2437,8 +2535,11 @@ events:
   arc_uuids: []
   participations:
   - character_uuid: agent_f3078a4f1b2f
-    emotional_state: ''
-    goals: []
+    emotional_state: euphoric, vulnerable
+    goals:
+    - arrange flight to attend Mets intrasquad game despite logistics
+    - express gratitude to mother for shoes via email as brief personal reflection
+      before crisis mobilization
     what_happened: entering euphoric about attending Mets intrasquad exhibition game,
       discussing and rejecting flight options with Donna, starting to type an email
       thanking his mother for shoes, reflecting personally
@@ -2890,6 +2991,18 @@ events:
     beliefs: []
     observed_traits: []
     importance: primary
+  - character_uuid: agent_4566d65dd1c0
+    emotional_state: ''
+    goals:
+    - pursue personal normalcy and indulge in a recurring gourmet dinner during the
+      filibuster
+    what_happened: in his private dining room having dinner prepared by a visiting
+      French chef
+    observed_status: in his private dining room having dinner prepared by a visiting
+      French chef
+    beliefs: []
+    observed_traits: []
+    importance: primary
   - character_uuid: agent_c41483d0931c
     emotional_state: Focused and indulgent (inferred from ritualistic service)
     goals:
@@ -2934,7 +3047,26 @@ events:
   location_uuid: null
   theme_uuids: []
   arc_uuids: []
-  participations: []
+  participations:
+  - character_uuid: agent_d11a3b3bb6e4
+    emotional_state: respectful
+    goals:
+    - acknowledge the President's arrival and prepare for counsel
+    what_happened: responds with 'Good evening, sir'
+    observed_status: responds with 'Good evening, sir'
+    beliefs: []
+    observed_traits: []
+    importance: primary
+  - character_uuid: agent_4566d65dd1c0
+    emotional_state: serious
+    goals:
+    - initiate urgent strategic deliberation on the filibuster crisis
+    - express initial frustration with Stackhouse's obstruction
+    what_happened: walks in and addresses Leo with 'Leo'
+    observed_status: walks in and addresses Leo with 'Leo'
+    beliefs: []
+    observed_traits: []
+    importance: primary
   object_involvements: []
   location_involvements: []
   organization_involvements: []
@@ -3107,6 +3239,38 @@ events:
     - urgent
     - informative
     - decisive
+    importance: primary
+  - character_uuid: agent_d11a3b3bb6e4
+    emotional_state: preoccupied, concerned, urgent
+    goals:
+    - handle work calls on international prep
+    - provide grounded counsel to Bartlet during vulnerability (per event thematics)
+    what_happened: distracted on phone discussing G-8 and Tel Aviv, engages with Bartlet
+      after hanging up, probes details of the one-term deal, addresses steward as
+      Billy, answers CJ's call about Stackhouse's grandson and mobilizes
+    observed_status: distracted on phone discussing G-8 and Tel Aviv, engages with
+      Bartlet after hanging up, probes details of the one-term deal, addresses steward
+      as Billy, answers CJ's call about Stackhouse's grandson and mobilizes
+    beliefs: []
+    observed_traits: []
+    importance: primary
+  - character_uuid: agent_4566d65dd1c0
+    emotional_state: frustrated, vulnerable, resolved
+    goals:
+    - confide personal secret deal with Abbey to Leo
+    - seek genuine conversation amid work pressures
+    - expose personal fragility to fuel resolve (per event emotional echo and narrative
+      follow to Stackhouse pivot)
+    what_happened: having dinner with Leo, declines brandy, chides steward's formality,
+      expresses frustration over lack of real talk, vulnerably reveals one-term deal
+      with Abbey due to MS linking it to Hoynes' oil gambit, sighs and decides to
+      leave upon CJ's call about Stackhouse
+    observed_status: having dinner with Leo, declines brandy, chides steward's formality,
+      expresses frustration over lack of real talk, vulnerably reveals one-term deal
+      with Abbey due to MS linking it to Hoynes' oil gambit, sighs and decides to
+      leave upon CJ's call about Stackhouse
+    beliefs: []
+    observed_traits: []
     importance: primary
   - character_uuid: agent_738f513a2eba
     emotional_state: Opportunistic leverage implied through disclosure.
@@ -3298,6 +3462,40 @@ events:
     - decisive
     - empathetic
     importance: primary
+  - character_uuid: agent_d11a3b3bb6e4
+    emotional_state: concerned and attentive
+    goals:
+    - manage presidential schedule via phone
+    - provide emotional support to Bartlet during vulnerability
+    - relay critical revelation about Stackhouse to enable strategic pivot
+    what_happened: having dinner with Bartlet while handling phone calls (to Ben about
+      schedule, then receiving C.J.'s call), listening empathetically to President's
+      confession, whispering concern, and relaying Stackhouse news before confirming
+      they're coming up
+    observed_status: having dinner with Bartlet while handling phone calls (to Ben
+      about schedule, then receiving C.J.'s call), listening empathetically to President's
+      confession, whispering concern, and relaying Stackhouse news before confirming
+      they're coming up
+    beliefs: []
+    observed_traits: []
+    importance: primary
+  - character_uuid: agent_4566d65dd1c0
+    emotional_state: vulnerable and frustrated, then profoundly realized and determined
+    goals:
+    - confide personal vulnerability and one-term deal to Leo
+    - pivot White House strategy to support Stackhouse upon revelation of grandson's
+      condition
+    what_happened: having intimate dinner with Leo, expressing frustration about lack
+      of personal talk, confessing one-term deal with Abbey due to his MS condition,
+      sighing in realization upon hearing about Stackhouse's grandson, and commanding
+      'Let's go' to abandon dinner
+    observed_status: having intimate dinner with Leo, expressing frustration about
+      lack of personal talk, confessing one-term deal with Abbey due to his MS condition,
+      sighing in realization upon hearing about Stackhouse's grandson, and commanding
+      'Let's go' to abandon dinner
+    beliefs: []
+    observed_traits: []
+    importance: primary
   - character_uuid: agent_738f513a2eba
     emotional_state: Opportunistically alert to power vacuums (inferred)
     goals:
@@ -3374,6 +3572,16 @@ events:
     - tenacious
     - grandfatherly devoted
     - principled
+    importance: primary
+  - character_uuid: agent_df93a7e5eaa1
+    emotional_state: ''
+    goals: []
+    what_happened: on phone with Leo discussing schedule adjustments for G-8 and Tel
+      Aviv
+    observed_status: on phone with Leo discussing schedule adjustments for G-8 and
+      Tel Aviv
+    beliefs: []
+    observed_traits: []
     importance: primary
   object_involvements:
   - object_uuid: object_73f933064156
@@ -3485,6 +3693,14 @@ events:
     - diplomatic
     - persistent
     importance: primary
+  - character_uuid: agent_4566d65dd1c0
+    emotional_state: ''
+    goals: []
+    what_happened: mentioned as arriving soon, to be informed about the broken statue
+    observed_status: mentioned as arriving soon, to be informed about the broken statue
+    beliefs: []
+    observed_traits: []
+    importance: primary
   - character_uuid: agent_d5524a94a33b
     emotional_state: Amused detachment with loyal candor
     goals:
@@ -3572,6 +3788,35 @@ events:
     - professional
     - deferential
     importance: primary
+  - character_uuid: agent_d11a3b3bb6e4
+    emotional_state: calm
+    goals:
+    - Provide grounded counsel to Bartlet admiring Stackhouse's discretion
+    - Temper Bartlet's partisan irritation amid filibuster chaos
+    what_happened: Accompanies Bartlet into Oval Office and counters his frustration
+      by defending Stackhouse's principled discretion against politicizing his grandson's
+      condition
+    observed_status: Accompanies Bartlet into Oval Office and counters his frustration
+      by defending Stackhouse's principled discretion against politicizing his grandson's
+      condition
+    beliefs: []
+    observed_traits: []
+    importance: primary
+  - character_uuid: agent_4566d65dd1c0
+    emotional_state: frustrated
+    goals:
+    - Express irritation and bruised ego over Stackhouse's secretive silence despite
+      their rapport
+    - Seek validation from Leo on why Stackhouse didn't approach him directly
+    what_happened: Enters Oval Office from portico with Leo while venting raw frustration
+      about Senator Stackhouse not confiding personally about his grandson's autism,
+      lamenting the lost chance for direct aid, and dismissing Stackhouse as a 'crank'
+    observed_status: Enters Oval Office from portico with Leo while venting raw frustration
+      about Senator Stackhouse not confiding personally about his grandson's autism,
+      lamenting the lost chance for direct aid, and dismissing Stackhouse as a 'crank'
+    beliefs: []
+    observed_traits: []
+    importance: primary
   - character_uuid: agent_d5524a94a33b
     emotional_state: Expectant professionalism masking urgency
     goals:
@@ -3658,6 +3903,31 @@ events:
     - courteous
     - professional
     - poised
+    importance: primary
+  - character_uuid: agent_d11a3b3bb6e4
+    emotional_state: calm
+    goals:
+    - Explain Stackhouse's principled refusal to politicize his grandson's needs
+    what_happened: Entering the Oval Office with Bartlet while providing explanatory
+      responses about Stackhouse's motivations
+    observed_status: Entering the Oval Office with Bartlet while providing explanatory
+      responses about Stackhouse's motivations
+    beliefs: []
+    observed_traits: []
+    importance: primary
+  - character_uuid: agent_4566d65dd1c0
+    emotional_state: frustrated
+    goals:
+    - Understand Stackhouse's reluctance to seek personal help
+    - Pivot to caring for staff amid political tensions
+    what_happened: Expressing frustration to Leo about Stackhouse not approaching
+      him directly for help with his grandson, dismissing Stackhouse as a 'crank',
+      then greeting C.J. and noticing Donna to ask if she needs something
+    observed_status: Expressing frustration to Leo about Stackhouse not approaching
+      him directly for help with his grandson, dismissing Stackhouse as a 'crank',
+      then greeting C.J. and noticing Donna to ask if she needs something
+    beliefs: []
+    observed_traits: []
     importance: primary
   - character_uuid: agent_d5524a94a33b
     emotional_state: Attentive readiness laced with quiet determination
@@ -3942,12 +4212,25 @@ events:
     - communally exhilarated
     importance: primary
   - character_uuid: agent_f3078a4f1b2f
-    emotional_state: ''
-    goals: []
+    emotional_state: tense then relieved and joyful
+    goals:
+    - rally Senators to support Stackhouse's filibuster
+    - monitor Grissom's intervention to relieve Stackhouse
     what_happened: narrating and participating in frantic calls to Senators, watching
       14 TVs for Grissom's arrival, calculating timing
     observed_status: narrating and participating in frantic calls to Senators, watching
       14 TVs for Grissom's arrival, calculating timing
+    beliefs: []
+    observed_traits: []
+    importance: primary
+  - character_uuid: agent_4566d65dd1c0
+    emotional_state: trusting and urgent
+    goals:
+    - rally Senators through personal calls to support Stackhouse
+    what_happened: having called Senators directly, urging Stackhouse via TV to trust
+      Grissom
+    observed_status: having called Senators directly, urging Stackhouse via TV to
+      trust Grissom
     beliefs: []
     observed_traits: []
     importance: primary
@@ -4273,12 +4556,24 @@ events:
     - collegial
     importance: primary
   - character_uuid: agent_f3078a4f1b2f
-    emotional_state: ''
-    goals: []
+    emotional_state: anxious then relieved
+    goals:
+    - Mobilize bipartisan support to sustain Stackhouse's filibuster
     what_happened: Recounts frantic calls to senators and watching Grissom's intervention
       on 14 TVs in tense silence.
     observed_status: Recounts frantic calls to senators and watching Grissom's intervention
       on 14 TVs in tense silence.
+    beliefs: []
+    observed_traits: []
+    importance: primary
+  - character_uuid: agent_4566d65dd1c0
+    emotional_state: impatient yet hopeful
+    goals:
+    - Rally support for Stackhouse's cause
+    what_happened: Urges 'Trust me just this once, you grouchy old son of a bitch'
+      amid the tension.
+    observed_status: Urges 'Trust me just this once, you grouchy old son of a bitch'
+      amid the tension.
     beliefs: []
     observed_traits: []
     importance: primary
@@ -4549,14 +4844,27 @@ events:
     - collegial
     importance: primary
   - character_uuid: agent_f3078a4f1b2f
-    emotional_state: ''
-    goals: []
+    emotional_state: anxious then relieved
+    goals:
+    - rally senators including through presidential calls to relieve Stackhouse
+    - witness and support the bipartisan intervention
     what_happened: Narrates the frantic staff calls to senators, the mobilization
       involving the President, the tense watching of 14 TVs for Grissom's arrival,
       and the post-event opportunity to reopen the bill.
     observed_status: Narrates the frantic staff calls to senators, the mobilization
       involving the President, the tense watching of 14 TVs for Grissom's arrival,
       and the post-event opportunity to reopen the bill.
+    beliefs: []
+    observed_traits: []
+    importance: primary
+  - character_uuid: agent_4566d65dd1c0
+    emotional_state: earnest and paternal
+    goals:
+    - convince Stackhouse to yield to Grissom
+    what_happened: Urges Stackhouse to trust him with affectionate insult during the
+      yield moment.
+    observed_status: Urges Stackhouse to trust him with affectionate insult during
+      the yield moment.
     beliefs: []
     observed_traits: []
     importance: primary

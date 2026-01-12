@@ -1,5 +1,5 @@
 # Events for Somebody's Going to Emergency, Somebody's Going to Jail
-# Generated: 2026-01-11T19:27:44.586072
+# Generated: 2026-01-12T09:57:21.959957
 
 episode_uuid: ep_sea_ser_the_west_wing_s02_e16
 episode_title: Somebody's Going to Emergency, Somebody's Going to Jail
@@ -181,6 +181,14 @@ events:
     - foreboding
     - resilient under distress
     importance: primary
+  - character_uuid: agent_d11a3b3bb6e4
+    emotional_state: ''
+    goals: []
+    what_happened: enters purposefully
+    observed_status: enters purposefully
+    beliefs: []
+    observed_traits: []
+    importance: primary
   object_involvements: []
   location_involvements:
   - location_uuid: location_9cf76ad9450f
@@ -265,10 +273,20 @@ events:
   arc_uuids: []
   participations:
   - character_uuid: agent_f3078a4f1b2f
-    emotional_state: ''
-    goals: []
+    emotional_state: playful
+    goals:
+    - praise Leo's annual Andrew Jackson speech ritual for continuity and levity
     what_happened: voice-over casually praising Leo's Andrew Jackson speech
     observed_status: voice-over casually praising Leo's Andrew Jackson speech
+    beliefs: []
+    observed_traits: []
+    importance: primary
+  - character_uuid: agent_d11a3b3bb6e4
+    emotional_state: deadpan
+    goals:
+    - acknowledge Josh's praise of his speech tradition
+    what_happened: voice-over deadpanning acknowledgment of the Andrew Jackson speech
+    observed_status: voice-over deadpanning acknowledgment of the Andrew Jackson speech
     beliefs: []
     observed_traits: []
     importance: primary
@@ -321,6 +339,17 @@ events:
     goals: []
     what_happened: his office referenced as the destination for Stephanie
     observed_status: his office referenced as the destination for Stephanie
+    beliefs: []
+    observed_traits: []
+    importance: primary
+  - character_uuid: agent_4566d65dd1c0
+    emotional_state: ''
+    goals:
+    - fulfill demanding presidential duties
+    what_happened: referenced as having a grueling schedule, working past 10 PM but
+      vacating the West Wing and Oval Office afterward
+    observed_status: referenced as having a grueling schedule, working past 10 PM
+      but vacating the West Wing and Oval Office afterward
     beliefs: []
     observed_traits: []
     importance: primary
@@ -455,6 +484,16 @@ events:
     - ego-sensitive
     - presidential confidant
     importance: primary
+  - character_uuid: agent_d11a3b3bb6e4
+    emotional_state: ''
+    goals: []
+    what_happened: Mentioned as the staffer who designates Big Block of Cheese Day
+      for senior staff.
+    observed_status: Mentioned as the staffer who designates Big Block of Cheese Day
+      for senior staff.
+    beliefs: []
+    observed_traits: []
+    importance: primary
   - character_uuid: agent_d5524a94a33b
     emotional_state: Empathetic resolve tempered by cautious reluctance to impose
       favors
@@ -580,6 +619,37 @@ events:
   theme_uuids: []
   arc_uuids: []
   participations:
+  - character_uuid: agent_e9dd0ae36832
+    emotional_state: deferential
+    goals:
+    - brief the President on the presidential library site complication
+    - obtain a decision on proceeding with the second site
+    what_happened: informs the President about an incoming fax from Jonathan Bartlet,
+      explains the library site issue citing notes on the Historic Barn and Bridges
+      Preservation Act, seeks approval for the second site
+    observed_status: informs the President about an incoming fax from Jonathan Bartlet,
+      explains the library site issue citing notes on the Historic Barn and Bridges
+      Preservation Act, seeks approval for the second site
+    beliefs: []
+    observed_traits: []
+    importance: primary
+  - character_uuid: agent_4566d65dd1c0
+    emotional_state: exasperated
+    goals:
+    - dismiss and mock the unreliable ten-year economic projections
+    - express frustration with bureaucratic minutiae and institutional absurdities
+    - postpone decision on the presidential library site
+    what_happened: sarcastically dismisses the staffer's request to review ten-year
+      projections, mockingly requests a Ouija board and magic wand, discusses a fax
+      from his brother about the presidential library site, initially approves then
+      retracts approval for the second site
+    observed_status: sarcastically dismisses the staffer's request to review ten-year
+      projections, mockingly requests a Ouija board and magic wand, discusses a fax
+      from his brother about the presidential library site, initially approves then
+      retracts approval for the second site
+    beliefs: []
+    observed_traits: []
+    importance: primary
   - character_uuid: agent_27fa58e83ea5
     emotional_state: Determined insistence veiled by respectful deference under presidential
       fire
@@ -602,6 +672,29 @@ events:
     - deferential
     - professional
     - earnest
+    importance: primary
+  - character_uuid: agent_0b55a47d246a
+    emotional_state: ''
+    goals:
+    - resolve the presidential library site selection issue
+    what_happened: significantly mentioned as the President's brother who sent a fax
+      and has been speaking with Neda Wallin about the library site
+    observed_status: significantly mentioned as the President's brother who sent a
+      fax and has been speaking with Neda Wallin about the library site
+    beliefs: []
+    observed_traits: []
+    importance: primary
+  - character_uuid: agent_92c6c6b9b6c4
+    emotional_state: ''
+    goals: []
+    what_happened: significantly mentioned as counsel to the Bartlet Presidential
+      Library Commission with whom Jonathan Bartlet has been speaking regarding the
+      site
+    observed_status: significantly mentioned as counsel to the Bartlet Presidential
+      Library Commission with whom Jonathan Bartlet has been speaking regarding the
+      site
+    beliefs: []
+    observed_traits: []
     importance: primary
   object_involvements:
   - object_uuid: object_2cd1e3d04292
@@ -698,6 +791,36 @@ events:
     - precise
     - observant
     - competent
+    importance: primary
+  - character_uuid: agent_4566d65dd1c0
+    emotional_state: sarcastic, frustrated, ambivalent
+    goals:
+    - Reluctantly engage with bureaucratic projections
+    - Grapple with internal conflict over library site blocked by own law and stall
+      decision to express ongoing presidential frustrations
+    what_happened: Sarcastically dismisses accuracy of ten-year projections in hallway
+      exchange with staffer, enters Outer Oval and Oval Office, discusses brother's
+      fax with Charlie revealing library site violation due to his own past legislation,
+      curses the bill before realizing authorship, initially green-lights second site
+      then retracts with sigh and instructs to stall.
+    observed_status: Sarcastically dismisses accuracy of ten-year projections in hallway
+      exchange with staffer, enters Outer Oval and Oval Office, discusses brother's
+      fax with Charlie revealing library site violation due to his own past legislation,
+      curses the bill before realizing authorship, initially green-lights second site
+      then retracts with sigh and instructs to stall.
+    beliefs: []
+    observed_traits: []
+    importance: primary
+  - character_uuid: agent_27fa58e83ea5
+    emotional_state: persistent and professional
+    goals:
+    - Persuade President to examine ten-year projections
+    what_happened: Insists President review ten-year projections despite historical
+      inaccuracies in hallway conversation.
+    observed_status: Insists President review ten-year projections despite historical
+      inaccuracies in hallway conversation.
+    beliefs: []
+    observed_traits: []
     importance: primary
   - character_uuid: agent_0b55a47d246a
     emotional_state: Determined advocacy inferred through proactive intel relay
@@ -1237,8 +1360,11 @@ events:
     - pragmatic
     importance: primary
   - character_uuid: agent_f3078a4f1b2f
-    emotional_state: ''
-    goals: []
+    emotional_state: supportive
+    goals:
+    - Warn Sam about potential FBI backlash
+    - Arrange Sam's FBI contact
+    - Ease tension through humor
     what_happened: Joins the group, warns Sam of FBI unhappiness, lightens tension
       with trivia about Lincoln's pardon, agrees to arrange FBI contact, and invites
       Sam to C.J.'s meeting.
@@ -1414,8 +1540,10 @@ events:
     - knowledgeable
     importance: primary
   - character_uuid: agent_f3078a4f1b2f
-    emotional_state: ''
-    goals: []
+    emotional_state: supportive and playful
+    goals:
+    - Diffuse Sam's tension through humor
+    - Facilitate FBI contact to support Sam's Gault inquiry
     what_happened: Approaches table to greet Stephanie, exits Mess with Sam, probes
       Gault case, attempts to lighten Sam's mood with Lincoln assassination pardon
       trivia, arranges FBI contact for Sam, teases CJ's cartographers meeting.
@@ -2022,12 +2150,23 @@ events:
     - playful
     importance: primary
   - character_uuid: agent_f3078a4f1b2f
-    emotional_state: ''
-    goals: []
+    emotional_state: amused and intrigued
+    goals:
+    - Observe and participate in the cartographers' presentation
     what_happened: Enters from back of room to watch presentation, jokes about influencing
       the President, nudges C.J., leans forward at Peters Projection
     observed_status: Enters from back of room to watch presentation, jokes about influencing
       the President, nudges C.J., leans forward at Peters Projection
+    beliefs: []
+    observed_traits: []
+    importance: primary
+  - character_uuid: agent_4566d65dd1c0
+    emotional_state: ''
+    goals: []
+    what_happened: Mentioned as target for supporting legislation on Peters Projection
+      maps
+    observed_status: Mentioned as target for supporting legislation on Peters Projection
+      maps
     beliefs: []
     observed_traits: []
     importance: primary
@@ -2211,6 +2350,16 @@ events:
     - perceptive
     - deferential
     importance: primary
+  - character_uuid: agent_4566d65dd1c0
+    emotional_state: frustrated
+    goals: []
+    what_happened: lost first-choice presidential library site blocked by irremovable
+      18th-century farmhouse, in a sour mood exacerbated by re-election timeline uncertainty
+    observed_status: lost first-choice presidential library site blocked by irremovable
+      18th-century farmhouse, in a sour mood exacerbated by re-election timeline uncertainty
+    beliefs: []
+    observed_traits: []
+    importance: primary
   - character_uuid: agent_12db9dc6462c
     emotional_state: Urgently professional, prioritizing high-level interruptions
     goals:
@@ -2342,6 +2491,16 @@ events:
     - deferential efficiency
     - quiet competence
     importance: primary
+  - character_uuid: agent_4566d65dd1c0
+    emotional_state: frustrated
+    goals: []
+    what_happened: Reportedly lost his first choice of site for the library due to
+      an 18th century farmhouse and is in a mood.
+    observed_status: Reportedly lost his first choice of site for the library due
+      to an 18th century farmhouse and is in a mood.
+    beliefs: []
+    observed_traits: []
+    importance: primary
   - character_uuid: agent_12db9dc6462c
     emotional_state: Insistent professionalism overriding deference
     goals:
@@ -2429,6 +2588,14 @@ events:
   theme_uuids: []
   arc_uuids: []
   participations:
+  - character_uuid: agent_4566d65dd1c0
+    emotional_state: ''
+    goals: []
+    what_happened: anticipated to question Nancy McNally about the readiness issue
+    observed_status: anticipated to question Nancy McNally about the readiness issue
+    beliefs: []
+    observed_traits: []
+    importance: primary
   - character_uuid: agent_f00a9f666e44
     emotional_state: High-stakes urgency veiled by taut professionalism, with fleeting
       apologetic vulnerability
@@ -2546,8 +2713,9 @@ events:
     - open-minded yet resistant
     importance: primary
   - character_uuid: agent_f3078a4f1b2f
-    emotional_state: ''
-    goals: []
+    emotional_state: impatient
+    goals:
+    - end the meeting politely
     what_happened: joins C.J. standing, thanks the group and attempts to end the meeting,
       exchanges looks with C.J., jokes about Brigadoon, exits to check on Toby
     observed_status: joins C.J. standing, thanks the group and attempts to end the
@@ -2924,6 +3092,35 @@ events:
     - deferential
     - competent
     importance: primary
+  - character_uuid: agent_d11a3b3bb6e4
+    emotional_state: concerned
+    goals:
+    - check on the President's health and status
+    - discuss presidential library site challenges and offer support
+    what_happened: enters, greets the President, inquires about his well-being and
+      backup site, reassures him on finding a site, probes if there's anything to
+      discuss
+    observed_status: enters, greets the President, inquires about his well-being and
+      backup site, reassures him on finding a site, probes if there's anything to
+      discuss
+    beliefs: []
+    observed_traits: []
+    importance: primary
+  - character_uuid: agent_4566d65dd1c0
+    emotional_state: exhausted and frustrated
+    goals:
+    - shift call handling to the residence for a less formal workspace
+    - vent frustrations about bureaucratic hurdles in site selection and job tenure
+      to Leo
+    what_happened: summons Charlie, instructs him to handle calls from the residence,
+      mentions late memos, discusses failed site options and expresses deep frustration
+      about his job and presidential library planning with Leo
+    observed_status: summons Charlie, instructs him to handle calls from the residence,
+      mentions late memos, discusses failed site options and expresses deep frustration
+      about his job and presidential library planning with Leo
+    beliefs: []
+    observed_traits: []
+    importance: primary
   object_involvements:
   - object_uuid: object_a90444da0fa8
     description_of_involvement: Bartlet's Oval Office desk cradles the late memos
@@ -3003,6 +3200,35 @@ events:
     - deferential
     - discreet
     - competent
+    importance: primary
+  - character_uuid: agent_d11a3b3bb6e4
+    emotional_state: concerned
+    goals:
+    - assess and address President's uncharacteristic early exit and potential deeper
+      issues
+    what_happened: enters and greets President, questions early 7:30 PM departure
+      and health, inquires about lost library site and backups, reassures on finding
+      a site, reminds of term length, probes for deeper troubles, and bids farewell
+    observed_status: enters and greets President, questions early 7:30 PM departure
+      and health, inquires about lost library site and backups, reassures on finding
+      a site, reminds of term length, probes for deeper troubles, and bids farewell
+    beliefs: []
+    observed_traits: []
+    importance: primary
+  - character_uuid: agent_4566d65dd1c0
+    emotional_state: wearied and frustrated
+    goals:
+    - express ongoing frustration from library site obstructions (continuing prior
+      bureaucratic battles)
+    - deflect deeper discussion of personal burdens
+    what_happened: instructs Charlie on calls and memos, announces early departure,
+      vents frustration over failed library sites and presidency's learning curve,
+      pauses reflectively, deflects Leo's probing, and exits abruptly
+    observed_status: instructs Charlie on calls and memos, announces early departure,
+      vents frustration over failed library sites and presidency's learning curve,
+      pauses reflectively, deflects Leo's probing, and exits abruptly
+    beliefs: []
+    observed_traits: []
     importance: primary
   object_involvements:
   - object_uuid: object_a90444da0fa8
@@ -3154,6 +3380,16 @@ events:
     beliefs: []
     observed_traits: []
     importance: primary
+  - character_uuid: agent_4566d65dd1c0
+    emotional_state: ''
+    goals: []
+    what_happened: mentioned as figure whose ear Sam is said to have, targeted for
+      pardon influence
+    observed_status: mentioned as figure whose ear Sam is said to have, targeted for
+      pardon influence
+    beliefs: []
+    observed_traits: []
+    importance: primary
   - character_uuid: agent_d5524a94a33b
     emotional_state: Nervous desperation laced with compassion, masking fear of irreversible
       harm
@@ -3189,6 +3425,16 @@ events:
       confrontation over revealing her grandfather Gault's treasonous past.
     beliefs:
     - White House insiders hold compassionate power to right personal wrongs
+    observed_traits: []
+    importance: primary
+  - character_uuid: agent_3d6906ce2e45
+    emotional_state: ''
+    goals: []
+    what_happened: mentioned by Sam as murdered Hungarian trade mission translator
+      about to expose Soviet agent Black Water in 1952
+    observed_status: mentioned by Sam as murdered Hungarian trade mission translator
+      about to expose Soviet agent Black Water in 1952
+    beliefs: []
     observed_traits: []
     importance: primary
   object_involvements:

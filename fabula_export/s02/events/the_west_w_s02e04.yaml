@@ -1,5 +1,5 @@
 # Events for In This White House
-# Generated: 2026-01-11T19:27:39.361358
+# Generated: 2026-01-12T09:57:16.787679
 
 episode_uuid: ep_sea_ser_the_west_wing_s02_e04
 episode_title: In This White House
@@ -283,6 +283,17 @@ events:
     - collegial
     - anxious undertone
     importance: primary
+  - character_uuid: agent_4566d65dd1c0
+    emotional_state: ''
+    goals:
+    - N/A in this scene (policy focus/subject of debate)
+    what_happened: Referenced by Mark and Sam as the proposer of the education package
+      being debated on the show.
+    observed_status: Referenced by Mark and Sam as the proposer of the education package
+      being debated on the show.
+    beliefs: []
+    observed_traits: []
+    importance: primary
   - character_uuid: agent_8265f9568328
     emotional_state: Mildly amused protectiveness veiling professional control
     goals:
@@ -346,6 +357,17 @@ events:
     - precise
     - unflappable
     importance: primary
+  - character_uuid: agent_2d09f3c80726
+    emotional_state: neutral, professional
+    goals:
+    - Introduce the program and the night's guests
+    what_happened: Voices the show's opening introduction naming guests and remote
+      correspondents.
+    observed_status: Voices the show's opening introduction naming guests and remote
+      correspondents.
+    beliefs: []
+    observed_traits: []
+    importance: primary
   - character_uuid: agent_7e85bdc7164c
     emotional_state: Relaxed camaraderie
     goals:
@@ -361,6 +383,35 @@ events:
     observed_traits:
     - casual
     - friendly
+    importance: primary
+  - character_uuid: agent_ec05c58cf36a
+    emotional_state: ''
+    goals:
+    - Serve as a remote correspondent for the program (contextual mention)
+    what_happened: Mentioned in the announcer's listing as reporting from the Pentagon.
+    observed_status: Mentioned in the announcer's listing as reporting from the Pentagon.
+    beliefs: []
+    observed_traits: []
+    importance: primary
+  - character_uuid: agent_e4466a628d1d
+    emotional_state: ''
+    goals:
+    - Serve as a remote correspondent for the program (contextual mention)
+    what_happened: Mentioned in the announcer's listing as reporting from New York.
+    observed_status: Mentioned in the announcer's listing as reporting from New York.
+    beliefs: []
+    observed_traits: []
+    importance: primary
+  - character_uuid: agent_ba46b46bd840
+    emotional_state: ''
+    goals:
+    - N/A (referenced constituency affected by the policy debate)
+    what_happened: Referenced in Sam's statistic about lack of textbooks; part of
+      the factual claims under discussion.
+    observed_status: Referenced in Sam's statistic about lack of textbooks; part of
+      the factual claims under discussion.
+    beliefs: []
+    observed_traits: []
     importance: primary
   - character_uuid: agent_b894b5a98b12
     emotional_state: Neutral readiness
@@ -488,6 +539,17 @@ events:
     - defensive
     - overconfident initially
     - rattled
+    importance: primary
+  - character_uuid: agent_4566d65dd1c0
+    emotional_state: ''
+    goals:
+    - Pass the administration's education bill (contextual/implicit)
+    what_happened: Mentioned by Mark as the sponsor of the one point five billion
+      dollar education package under discussion.
+    observed_status: Mentioned by Mark as the sponsor of the one point five billion
+      dollar education package under discussion.
+    beliefs: []
+    observed_traits: []
     importance: primary
   - character_uuid: agent_8265f9568328
     emotional_state: Professionally engaged with mild amusement at the fireworks
@@ -1071,6 +1133,17 @@ events:
     - persistent
     - dryly humorous
     importance: primary
+  - character_uuid: agent_4566d65dd1c0
+    emotional_state: engaged / authoritative (implied)
+    goals:
+    - Advance the summit and administration's handling of the AIDS crisis
+    what_happened: Referenced by C.J. as participating in a half-hour summit with
+      President Nimbala; a brief voice-over line appears at the end.
+    observed_status: Referenced by C.J. as participating in a half-hour summit with
+      President Nimbala; a brief voice-over line appears at the end.
+    beliefs: []
+    observed_traits: []
+    importance: primary
   - character_uuid: agent_3ee4436e9a6d
     emotional_state: Calmly focused amid chaos
     goals:
@@ -1153,6 +1226,17 @@ events:
     - Patents safeguard economic interests (implied)
     observed_traits:
     - pragmatic
+    importance: primary
+  - character_uuid: agent_10e853fcc1af
+    emotional_state: urgent / pleading (implied by context)
+    goals:
+    - Seek AIDS relief and support for his nation/continent
+    what_happened: Mentioned as the President of the Republic of Equatorial Kuhndu
+      and representing African nations at the upcoming meeting with Bartlet.
+    observed_status: Mentioned as the President of the Republic of Equatorial Kuhndu
+      and representing African nations at the upcoming meeting with Bartlet.
+    beliefs: []
+    observed_traits: []
     importance: primary
   object_involvements:
   - object_uuid: object_d8b8f07cf799
@@ -1352,6 +1436,18 @@ events:
     - uncompromising
     - sardonic
     importance: primary
+  - character_uuid: agent_4566d65dd1c0
+    emotional_state: observational, authoritative
+    goals:
+    - Frame the broader summit conversation
+    - Provide context for the press room briefing
+    what_happened: Provides a voiceover line referencing Mbeki in the context of summit
+      discussion; not physically present in the scene.
+    observed_status: Provides a voiceover line referencing Mbeki in the context of
+      summit discussion; not physically present in the scene.
+    beliefs: []
+    observed_traits: []
+    importance: primary
   - character_uuid: agent_3ee4436e9a6d
     emotional_state: Businesslike neutrality
     goals:
@@ -1402,6 +1498,36 @@ events:
     - persistent
     - earnest
     - professional
+    importance: primary
+  - character_uuid: agent_c893485eeb0e
+    emotional_state: ''
+    goals: []
+    what_happened: Mentioned as the reporter for whom Bill is covering (Bill sitting
+      in to cover for him).
+    observed_status: Mentioned as the reporter for whom Bill is covering (Bill sitting
+      in to cover for him).
+    beliefs: []
+    observed_traits: []
+    importance: primary
+  - character_uuid: agent_caf0ae1b6125
+    emotional_state: ''
+    goals: []
+    what_happened: Referenced in Bartlet's voiceover as an example in the summit discussion.
+    observed_status: Referenced in Bartlet's voiceover as an example in the summit
+      discussion.
+    beliefs: []
+    observed_traits: []
+    importance: primary
+  - character_uuid: agent_10e853fcc1af
+    emotional_state: not directly shown (context implies urgency/desperation)
+    goals:
+    - Seek AIDS relief/support for his country/region (implied)
+    what_happened: Mentioned as attending the upcoming half‑hour meeting with President
+      Bartlet, representing the Republic of Equatorial Kuhndu and African nations.
+    observed_status: Mentioned as attending the upcoming half‑hour meeting with President
+      Bartlet, representing the Republic of Equatorial Kuhndu and African nations.
+    beliefs: []
+    observed_traits: []
     importance: primary
   object_involvements:
   - object_uuid: object_d8b8f07cf799
@@ -1568,6 +1694,17 @@ events:
     - moralistic
     - blunt
     importance: primary
+  - character_uuid: agent_4566d65dd1c0
+    emotional_state: informative/engaged (VO)
+    goals:
+    - Frame summit priorities and provide rhetorical context for the press exchange
+    what_happened: Speaks in voiceover referencing other world leaders (Mbeki) and
+      the summit context.
+    observed_status: Speaks in voiceover referencing other world leaders (Mbeki) and
+      the summit context.
+    beliefs: []
+    observed_traits: []
+    importance: primary
   - character_uuid: agent_3ee4436e9a6d
     emotional_state: Calmly professional
     goals:
@@ -1625,6 +1762,37 @@ events:
     - persistent
     - earnest
     - polite
+    importance: primary
+  - character_uuid: agent_c893485eeb0e
+    emotional_state: ''
+    goals:
+    - None active in scene (mentioned as context for Bill's presence)
+    what_happened: Mentioned as the reporter Bill is covering for (absent).
+    observed_status: Mentioned as the reporter Bill is covering for (absent).
+    beliefs: []
+    observed_traits: []
+    importance: primary
+  - character_uuid: agent_caf0ae1b6125
+    emotional_state: ''
+    goals:
+    - None active in scene (referential)
+    what_happened: Referenced in Bartlet's voiceover as an example of other leaders'
+      positions.
+    observed_status: Referenced in Bartlet's voiceover as an example of other leaders'
+      positions.
+    beliefs: []
+    observed_traits: []
+    importance: primary
+  - character_uuid: agent_10e853fcc1af
+    emotional_state: ''
+    goals:
+    - Represent African nations' interests at the summit (implied)
+    what_happened: Mentioned as attending the upcoming meeting with President Bartlet,
+      representing the Republic of Equatorial Kuhndu and African nations.
+    observed_status: Mentioned as attending the upcoming meeting with President Bartlet,
+      representing the Republic of Equatorial Kuhndu and African nations.
+    beliefs: []
+    observed_traits: []
     importance: primary
   object_involvements:
   - object_uuid: object_d8b8f07cf799
@@ -1819,6 +1987,21 @@ events:
     - loyal
     - skeptical
     importance: primary
+  - character_uuid: agent_4566d65dd1c0
+    emotional_state: decisive, morally engaged, intrigued
+    goals:
+    - assert factual clarity about AIDS and HIV
+    - respond to the international health crisis
+    - recruit Ainsley Hayes into the White House
+    what_happened: Walking with Leo, correcting misconceptions about AIDS/HIV, watching/recalling
+      Sam's televised takedown, decides to hire Ainsley Hayes, puts on glasses, addresses
+      press and President Nimbala, instructs Charlie and Leo about recruiting Ainsley.
+    observed_status: Walking with Leo, correcting misconceptions about AIDS/HIV, watching/recalling
+      Sam's televised takedown, decides to hire Ainsley Hayes, puts on glasses, addresses
+      press and President Nimbala, instructs Charlie and Leo about recruiting Ainsley.
+    beliefs: []
+    observed_traits: []
+    importance: primary
   - character_uuid: agent_4ad5a1792822
     emotional_state: Warmly routine amid underlying urgency
     goals:
@@ -1916,6 +2099,24 @@ events:
     - precise
     - neutral
     - facilitative
+    importance: primary
+  - character_uuid: agent_ba0aa5525b34
+    emotional_state: ''
+    goals: []
+    what_happened: Referenced as the person for whom Ainsley was clerking.
+    observed_status: Referenced as the person for whom Ainsley was clerking.
+    beliefs: []
+    observed_traits: []
+    importance: primary
+  - character_uuid: agent_0ff9a9e12506
+    emotional_state: ''
+    goals: []
+    what_happened: Mentioned by Bartlet/translator as the Nobel laureate responsible
+      for dwarf wheat; used as an example of a 'miracle'.
+    observed_status: Mentioned by Bartlet/translator as the Nobel laureate responsible
+      for dwarf wheat; used as an example of a 'miracle'.
+    beliefs: []
+    observed_traits: []
     importance: primary
   - character_uuid: agent_9f5eb0afba44
     emotional_state: Respectfully attentive
@@ -2160,6 +2361,23 @@ events:
     - wry
     - loyal
     - skeptical
+    importance: primary
+  - character_uuid: agent_4566d65dd1c0
+    emotional_state: concerned, decisive, thoughtful
+    goals:
+    - Respond to President Nimbala's plea and show moral leadership on the AIDS crisis
+    - Convert a moment of public sympathy into concrete action
+    - Recruit Ainsley Hayes to the administration to broaden voices/staff dynamics
+    what_happened: Walking and debating with Leo about AIDS/HIV in the portico and
+      Oval; greets President Nimbala and addresses the press; responds emotionally
+      to Nimbala's plea; decides to hire Ainsley Hayes and instructs Charlie/Leo to
+      make it happen.
+    observed_status: Walking and debating with Leo about AIDS/HIV in the portico and
+      Oval; greets President Nimbala and addresses the press; responds emotionally
+      to Nimbala's plea; decides to hire Ainsley Hayes and instructs Charlie/Leo to
+      make it happen.
+    beliefs: []
+    observed_traits: []
     importance: primary
   - character_uuid: agent_4ad5a1792822
     emotional_state: Warm, unflappable routine poise amid brewing crises
@@ -2597,7 +2815,8 @@ events:
     importance: primary
   - character_uuid: agent_5ef56112ab3c
     emotional_state: ''
-    goals: []
+    goals:
+    - (implied) contact Ainsley about representation/opportunities
     what_happened: Referenced as the expected caller (Bruce's friend); not directly
       present in the scene.
     observed_status: Referenced as the expected caller (Bruce's friend); not directly
@@ -3121,6 +3340,18 @@ events:
     - Authoritative
     - Calculated
     importance: primary
+  - character_uuid: agent_2905f54e51ac
+    emotional_state: ''
+    goals:
+    - 'implicitly: consider the job offer / reconcile joining the White House with
+      conservative views'
+    what_happened: Referred to as 'the woman who was on Capital Beat with Sam'; Leo
+      is offering her a job (she is not physically present in the scene).
+    observed_status: Referred to as 'the woman who was on Capital Beat with Sam';
+      Leo is offering her a job (she is not physically present in the scene).
+    beliefs: []
+    observed_traits: []
+    importance: primary
   object_involvements: []
   location_involvements:
   - location_uuid: location_6dc643fbf3e3
@@ -3224,6 +3455,33 @@ events:
     - loyal
     - empathetic
     - efficient
+    importance: primary
+  - character_uuid: agent_10e853fcc1af
+    emotional_state: defensive / exasperated
+    goals:
+    - Justify and defend the company's pricing decisions
+    - Refute accusations that pricing is purely profit-driven
+    - Protect the company's reputation and position
+    what_happened: Defends his company's pricing practices, explains price differences
+      between countries, cites retail mark-ups/taxes/pharmacy discounts and company
+      donations of free drugs.
+    observed_status: Defends his company's pricing practices, explains price differences
+      between countries, cites retail mark-ups/taxes/pharmacy discounts and company
+      donations of free drugs.
+    beliefs: []
+    observed_traits: []
+    importance: primary
+  - character_uuid: agent_10e853fcc1af
+    emotional_state: dignified / frustrated / pleading
+    goals:
+    - Obtain access to affordable medicines for his country
+    - Highlight inequities in pricing and distribution
+    what_happened: Attempts to speak, is interrupted, presents his country's need
+      and cites Fluconazole sales ('A billion dollars').
+    observed_status: Attempts to speak, is interrupted, presents his country's need
+      and cites Fluconazole sales ('A billion dollars').
+    beliefs: []
+    observed_traits: []
     importance: primary
   - character_uuid: agent_bf2490701273
     emotional_state: Assertive defensiveness masking frustration at moral attacks
@@ -3475,6 +3733,32 @@ events:
     - supportive
     - earnest
     - analytical
+    importance: primary
+  - character_uuid: agent_10e853fcc1af
+    emotional_state: defensive / exasperated
+    goals:
+    - Defend his company's pricing and practices
+    - Avoid being blamed for deaths and corporate motives
+    what_happened: Pharmaceutical representative defending pricing and company practices,
+      explains pricing differences and charity contributions, shrugs about patient
+      life expectancy.
+    observed_status: Pharmaceutical representative defending pricing and company practices,
+      explains pricing differences and charity contributions, shrugs about patient
+      life expectancy.
+    beliefs: []
+    observed_traits: []
+    importance: primary
+  - character_uuid: agent_10e853fcc1af
+    emotional_state: pleading / indignant
+    goals:
+    - Secure access to lifesaving drugs for his nation
+    - Demonstrate the urgency and inequity of pricing
+    what_happened: President Nimbala attempts to speak and plead about his country's
+      need for AIDS drugs, answers questions about sales.
+    observed_status: President Nimbala attempts to speak and plead about his country's
+      need for AIDS drugs, answers questions about sales.
+    beliefs: []
+    observed_traits: []
     importance: primary
   - character_uuid: agent_bf2490701273
     emotional_state: Cautious defensiveness hardening into accusation
@@ -4448,6 +4732,19 @@ events:
     - wryly humorous
     - unflinchingly direct
     importance: primary
+  - character_uuid: agent_4566d65dd1c0
+    emotional_state: expectant / inclusive (as reported by Leo)
+    goals:
+    - Bring dissenting, intelligent voices into the administration (as expressed by
+      Leo)
+    - Recruit Ainsley to serve
+    what_happened: Referenced by Leo as the authority who wants smart dissenting voices
+      and is asking Ainsley to serve.
+    observed_status: Referenced by Leo as the authority who wants smart dissenting
+      voices and is asking Ainsley to serve.
+    beliefs: []
+    observed_traits: []
+    importance: primary
   - character_uuid: agent_2905f54e51ac
     emotional_state: Indignant defiance cracking into shocked vulnerability and conflicted
       ambition
@@ -4656,6 +4953,18 @@ events:
     - strategically unflappable
     - wryly authoritative
     - pragmatically persuasive
+    importance: primary
+  - character_uuid: agent_4566d65dd1c0
+    emotional_state: not present / described as open to dissent
+    goals:
+    - Bring intelligent dissent into the administration (as described by Leo)
+    - Recruit Ainsley to serve in the White House
+    what_happened: Referenced by Leo as the person who 'likes smart people who disagree
+      with him' and as the actor offering Ainsley a spot to serve.
+    observed_status: Referenced by Leo as the person who 'likes smart people who disagree
+      with him' and as the actor offering Ainsley a spot to serve.
+    beliefs: []
+    observed_traits: []
     importance: primary
   - character_uuid: agent_2905f54e51ac
     emotional_state: Righteously indignant exploding into stunned vulnerability, laced
@@ -4871,6 +5180,32 @@ events:
     - calm
     - businesslike
     importance: primary
+  - character_uuid: agent_10e853fcc1af
+    emotional_state: described as dignified, desperate, burdened
+    goals:
+    - Hold his country together and secure urgent aid for his people
+    - Represent his nation's plight directly by traveling to plead for support
+    what_happened: Referenced and described by Toby as a good president, former soldier
+      and commander who personally came to plead for aid; subject of the humanizing
+      portrait that reframes the policy argument.
+    observed_status: Referenced and described by Toby as a good president, former
+      soldier and commander who personally came to plead for aid; subject of the humanizing
+      portrait that reframes the policy argument.
+    beliefs: []
+    observed_traits: []
+    importance: primary
+  - character_uuid: agent_0ff9a9e12506
+    emotional_state: ''
+    goals:
+    - Serve as a rhetorical reference to frame Nimbala's perspective (no active goal
+      in scene)
+    what_happened: Mentioned by Toby as a reference Nimbala talks about (used to illustrate
+      Nimbala's concerns and worldview).
+    observed_status: Mentioned by Toby as a reference Nimbala talks about (used to
+      illustrate Nimbala's concerns and worldview).
+    beliefs: []
+    observed_traits: []
+    importance: primary
   object_involvements:
   - object_uuid: object_964e9a79377a
     description_of_involvement: Toby balances the wrapped boysenberry danish atop
@@ -5001,6 +5336,20 @@ events:
     - efficient
     - whimsical
     - professional
+    importance: primary
+  - character_uuid: agent_10e853fcc1af
+    emotional_state: desperate, dignified (inferred from description)
+    goals:
+    - Secure meaningful aid or policy outcomes for his country's AIDS crisis (as described
+      by Toby)
+    what_happened: Referenced by Toby and Josh as the dignified, desperate leader
+      of a nation needing aid; described as having led his people and come in person
+      to the summit.
+    observed_status: Referenced by Toby and Josh as the dignified, desperate leader
+      of a nation needing aid; described as having led his people and come in person
+      to the summit.
+    beliefs: []
+    observed_traits: []
     importance: primary
   - character_uuid: agent_0ff9a9e12506
     emotional_state: Idealized legacy fueling moral urgency
@@ -5719,6 +6068,21 @@ events:
     - denialist
     - sovereign
     importance: primary
+  - character_uuid: agent_10e853fcc1af
+    emotional_state: defensive, assertive
+    goals:
+    - Defend the pharmaceutical industry's practices and pricing
+    - Reframe the debate from moral blame to logistical realities
+    - Warn of dangers in proposed policies
+    what_happened: Speaks at the Roosevelt Room summit as a pharmaceutical representative,
+      arguing that free drugs would have little impact without infrastructure and
+      defending industry positions.
+    observed_status: Speaks at the Roosevelt Room summit as a pharmaceutical representative,
+      arguing that free drugs would have little impact without infrastructure and
+      defending industry positions.
+    beliefs: []
+    observed_traits: []
+    importance: primary
   - character_uuid: agent_bf2490701273
     emotional_state: Calm pragmatism underscoring defensive resolve
     goals:
@@ -5921,6 +6285,21 @@ events:
     - controversial
     - denialist
     importance: primary
+  - character_uuid: agent_10e853fcc1af
+    emotional_state: defensive, pragmatic
+    goals:
+    - Defend the pharmaceutical position and practices
+    - Shift debate from price to practical barriers to treatment
+    - Warn policymakers about unintended consequences of proposed solutions
+    what_happened: Pharmaceutical representative arguing that even free AIDS medication
+      would likely have little impact due to practical adherence problems; defends
+      industry and warns of dangers in some proposals.
+    observed_status: Pharmaceutical representative arguing that even free AIDS medication
+      would likely have little impact due to practical adherence problems; defends
+      industry and warns of dangers in some proposals.
+    beliefs: []
+    observed_traits: []
+    importance: primary
   - character_uuid: agent_bf2490701273
     emotional_state: Calmly pragmatic, underscoring harsh truths
     goals:
@@ -6101,6 +6480,17 @@ events:
     - Receptive to unsolicited expertise
     - Physically taxed but mentally alert
     importance: primary
+  - character_uuid: agent_d11a3b3bb6e4
+    emotional_state: ''
+    goals:
+    - (Implied) Continue recruitment or follow-up with Ainsley later
+    what_happened: Mentioned as the person Ainsley was going to see later in the day;
+      not present in scene.
+    observed_status: Mentioned as the person Ainsley was going to see later in the
+      day; not present in scene.
+    beliefs: []
+    observed_traits: []
+    importance: primary
   - character_uuid: agent_6a1b37afae25
     emotional_state: Uninformed opportunism (as characterized)
     goals: []
@@ -6153,7 +6543,8 @@ events:
     importance: primary
   - character_uuid: agent_5ef56112ab3c
     emotional_state: ''
-    goals: []
+    goals:
+    - Provide testimony or information (implied)
     what_happened: Referenced by C.J. as the person who told her about the grand jury
       having been impaneled.
     observed_status: Referenced by C.J. as the person who told her about the grand
@@ -6163,7 +6554,8 @@ events:
     importance: primary
   - character_uuid: agent_07ef0abf6985
     emotional_state: ''
-    goals: []
+    goals:
+    - Comply with gag orders (contextual)
     what_happened: Referenced by Ainsley as being under a gag order in relation to
       the grand jury; not present.
     observed_status: Referenced by Ainsley as being under a gag order in relation
@@ -6173,7 +6565,8 @@ events:
     importance: primary
   - character_uuid: agent_65579d36b4c2
     emotional_state: ''
-    goals: []
+    goals:
+    - Adhere to legal restrictions (contextual)
     what_happened: Referenced by Ainsley as being under a gag order; not present.
     observed_status: Referenced by Ainsley as being under a gag order; not present.
     beliefs: []
@@ -7546,6 +7939,20 @@ events:
     - pragmatic
     - protective
     importance: primary
+  - character_uuid: agent_4566d65dd1c0
+    emotional_state: grave, composed but anguished
+    goals:
+    - Understand the situation on the ground
+    - Convey the facts to President Nimbala
+    - Explain why military intervention is not possible
+    - Manage White House response and summon key advisors
+    what_happened: Hosting meeting in the Oval Office; reads incoming message; informs
+      President Nimbala of coup details and that the U.S. cannot offer military assistance.
+    observed_status: Hosting meeting in the Oval Office; reads incoming message; informs
+      President Nimbala of coup details and that the U.S. cannot offer military assistance.
+    beliefs: []
+    observed_traits: []
+    importance: primary
   - character_uuid: agent_8cbd193878e6
     emotional_state: Not directly observable
     goals: []
@@ -7622,6 +8029,19 @@ events:
     - responsive
     - precise
     - discreet
+    importance: primary
+  - character_uuid: agent_10e853fcc1af
+    emotional_state: desperate, pleading, determined
+    goals:
+    - Secure safe return to his country
+    - Ensure safety of his family
+    - Obtain U.S. assistance or negotiation leverage
+    what_happened: Incoming exiled President; pleads to return home and for his family's
+      safety; asks about his children and requests to call his embassy.
+    observed_status: Incoming exiled President; pleads to return home and for his
+      family's safety; asks about his children and requests to call his embassy.
+    beliefs: []
+    observed_traits: []
     importance: primary
   - character_uuid: agent_256dcf4afffe
     emotional_state: Efficient protectiveness safeguarding operations
@@ -7874,6 +8294,19 @@ events:
     - composed
     - protective
     importance: primary
+  - character_uuid: agent_4566d65dd1c0
+    emotional_state: grave, sorrowful, resolute
+    goals:
+    - Convey the military and humanitarian realities of the coup
+    - Protect American lives
+    - Offer asylum while denying military intervention
+    what_happened: Delivers coup briefing to President Nimbala, reads a message, offers
+      asylum, explains why military assistance cannot be provided.
+    observed_status: Delivers coup briefing to President Nimbala, reads a message,
+      offers asylum, explains why military assistance cannot be provided.
+    beliefs: []
+    observed_traits: []
+    importance: primary
   - character_uuid: agent_8cbd193878e6
     emotional_state: Not directly observed
     goals: []
@@ -7950,6 +8383,19 @@ events:
     - hurried
     - reliable
     - discreet
+    importance: primary
+  - character_uuid: agent_10e853fcc1af
+    emotional_state: desperate, distraught, pleading
+    goals:
+    - Return safely to his country
+    - Get information about his family
+    - Secure protection or a deal to ensure his safety
+    what_happened: Visiting President of Equatorial Kuhndu; reacts to news of the
+      coup, pleads to return home, asks about his children and calls embassy and Americans.
+    observed_status: Visiting President of Equatorial Kuhndu; reacts to news of the
+      coup, pleads to return home, asks about his children and calls embassy and Americans.
+    beliefs: []
+    observed_traits: []
     importance: primary
   - character_uuid: agent_256dcf4afffe
     emotional_state: Professional protectiveness ensuring protocol
@@ -8485,6 +8931,18 @@ events:
     - responsive
     - strategically engaged
     importance: primary
+  - character_uuid: agent_4566d65dd1c0
+    emotional_state: measured; clipped / corrective
+    goals:
+    - Undercut apocalyptic framing by citing historical example
+    - Encourage pragmatic, evidence-based thinking
+    what_happened: Speaks in voice-over, references Paul Erlich's book and its failed
+      prediction about India
+    observed_status: Speaks in voice-over, references Paul Erlich's book and its failed
+      prediction about India
+    beliefs: []
+    observed_traits: []
+    importance: primary
   - character_uuid: agent_13b9ef4eff02
     emotional_state: Invoked negatively as a cautionary specter of overreach, stripped
       of prophetic authority
@@ -8598,6 +9056,21 @@ events:
     - dutiful
     - precise
     - discreet
+    importance: primary
+  - character_uuid: agent_4566d65dd1c0
+    emotional_state: grave / solemn / resigned
+    goals:
+    - Frame the staff's approach via the Borlaug parable (prior to receiving news)
+    - Receive and process the incoming report
+    - Dismiss the meeting and end the immediate discussion
+    what_happened: Delivers a parable about Norman Borlaug, receives a note from Charlie,
+      reads its contents aloud about an execution, removes his glasses, sighs, dismisses
+      the room and leaves.
+    observed_status: Delivers a parable about Norman Borlaug, receives a note from
+      Charlie, reads its contents aloud about an execution, removes his glasses, sighs,
+      dismisses the room and leaves.
+    beliefs: []
+    observed_traits: []
     importance: primary
   - character_uuid: agent_0ff9a9e12506
     emotional_state: Idealized optimism in historical reverence
@@ -8732,6 +9205,35 @@ events:
     - competent
     - discreet
     - loyal
+    importance: primary
+  - character_uuid: agent_4566d65dd1c0
+    emotional_state: grave, solemn, restrained grief
+    goals:
+    - Absorb and acknowledge the news
+    - Maintain composure and close the meeting
+    - Signal the personal and moral weight of the consequence
+    what_happened: Delivering a parable about Norman Borlaug; receives a small slip
+      of paper from Charlie, puts on then takes off his glasses, reads the message
+      aloud ('They executed him in the airport parking lot'), sighs, says 'Okay. I'll
+      see you Monday,' and leaves the office.
+    observed_status: Delivering a parable about Norman Borlaug; receives a small slip
+      of paper from Charlie, puts on then takes off his glasses, reads the message
+      aloud ('They executed him in the airport parking lot'), sighs, says 'Okay. I'll
+      see you Monday,' and leaves the office.
+    beliefs: []
+    observed_traits: []
+    importance: primary
+  - character_uuid: agent_10e853fcc1af
+    emotional_state: deceased (subject of execution)
+    goals:
+    - 'Contextually: had sought urgent aid for his country (prior narrative context)'
+    - 'Within this event: none — presented as the executed victim'
+    what_happened: Mentioned as the person who 'They executed... in the airport parking
+      lot' (the victim of the execution conveyed by the slip of paper).
+    observed_status: Mentioned as the person who 'They executed... in the airport
+      parking lot' (the victim of the execution conveyed by the slip of paper).
+    beliefs: []
+    observed_traits: []
     importance: primary
   - character_uuid: agent_0ff9a9e12506
     emotional_state: idealized legacy (invoked neutrally)

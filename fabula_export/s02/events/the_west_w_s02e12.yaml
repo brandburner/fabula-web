@@ -1,5 +1,5 @@
 # Events for The Drop-In
-# Generated: 2026-01-11T19:27:42.701407
+# Generated: 2026-01-12T09:57:20.175015
 
 episode_uuid: ep_sea_ser_the_west_wing_s02_e12
 episode_title: The Drop-In
@@ -53,6 +53,25 @@ events:
     - attentive
     - dutiful
     - discreet
+    importance: primary
+  - character_uuid: agent_4566d65dd1c0
+    emotional_state: charming
+    goals:
+    - build rapport with incoming Thai Ambassador through banter
+    - conduct formal diplomatic accreditation ceremony
+    - ensure details for upcoming Bangkok trip are noted
+    what_happened: banters affably with Sumatra about golf and the Oriental hotel,
+      directs Charlie to note trip details, formally accepts and signs credentials
+      from King Bhumibol Adulyadej via Tom, declares Sumatra ambassador extraordinary
+      and plenipotentiary, shakes hands, mentions exchanging gifts, and congratulates
+      Mrs. Sumatra before posing for photos
+    observed_status: banters affably with Sumatra about golf and the Oriental hotel,
+      directs Charlie to note trip details, formally accepts and signs credentials
+      from King Bhumibol Adulyadej via Tom, declares Sumatra ambassador extraordinary
+      and plenipotentiary, shakes hands, mentions exchanging gifts, and congratulates
+      Mrs. Sumatra before posing for photos
+    beliefs: []
+    observed_traits: []
     importance: primary
   - character_uuid: agent_4a8e7d6fea42
     emotional_state: Amused respectfulness with poised warmth
@@ -235,6 +254,17 @@ events:
     - pragmatic
     - sardonic
     importance: primary
+  - character_uuid: agent_4566d65dd1c0
+    emotional_state: ''
+    goals:
+    - Respond to national security urgency amid schedule
+    what_happened: Enters from the Oval Office and receives Leo's urgent briefing
+      on the NMD test.
+    observed_status: Enters from the Oval Office and receives Leo's urgent briefing
+      on the NMD test.
+    beliefs: []
+    observed_traits: []
+    importance: primary
   - character_uuid: agent_4ad5a1792822
     emotional_state: sarcastic skepticism laced with wry amusement
     goals:
@@ -380,6 +410,17 @@ events:
     - knowledgeable
     - authoritative
     importance: primary
+  - character_uuid: agent_4566d65dd1c0
+    emotional_state: ''
+    goals:
+    - accept credentials of arriving ambassadors in order
+    what_happened: chats with, receives gifts from, and formally accepts credentials
+      of new ambassadors by signing letter (ceremony described)
+    observed_status: chats with, receives gifts from, and formally accepts credentials
+      of new ambassadors by signing letter (ceremony described)
+    beliefs: []
+    observed_traits: []
+    importance: primary
   - character_uuid: agent_6a1b37afae25
     emotional_state: Eager confusion laced with opportunistic hunger
     goals:
@@ -399,6 +440,15 @@ events:
     - confused
     - pack-oriented
     importance: primary
+  - character_uuid: agent_4a8e7d6fea42
+    emotional_state: ''
+    goals: []
+    what_happened: first ambassador whose credentials accepted by President this morning
+    observed_status: first ambassador whose credentials accepted by President this
+      morning
+    beliefs: []
+    observed_traits: []
+    importance: primary
   - character_uuid: agent_5586192ca03a
     emotional_state: ''
     goals: []
@@ -406,6 +456,14 @@ events:
       to President (ceremony described)
     observed_status: leads ambassadors into Oval Office and presents their credentials
       to President (ceremony described)
+    beliefs: []
+    observed_traits: []
+    importance: primary
+  - character_uuid: agent_69c01388f1ad
+    emotional_state: ''
+    goals: []
+    what_happened: second ambassador scheduled for credential acceptance
+    observed_status: second ambassador scheduled for credential acceptance
     beliefs: []
     observed_traits: []
     importance: primary
@@ -425,11 +483,29 @@ events:
     beliefs: []
     observed_traits: []
     importance: primary
+  - character_uuid: agent_475b3b61fdd1
+    emotional_state: ''
+    goals: []
+    what_happened: fifth and last ambassador in order, arriving upon naming
+    observed_status: fifth and last ambassador in order, arriving upon naming
+    beliefs: []
+    observed_traits: []
+    importance: primary
   - character_uuid: agent_f0da003ed75f
     emotional_state: ''
     goals: []
     what_happened: previous British nominee who withdrew due to family obligations
     observed_status: previous British nominee who withdrew due to family obligations
+    beliefs: []
+    observed_traits: []
+    importance: primary
+  - character_uuid: agent_13a406d03ab6
+    emotional_state: ''
+    goals: []
+    what_happened: intended replacement nominee diagnosed with encephalitis from Kenya
+      posting
+    observed_status: intended replacement nominee diagnosed with encephalitis from
+      Kenya posting
     beliefs: []
     observed_traits: []
     importance: primary
@@ -648,6 +724,16 @@ events:
     - policy-savvy
     - efficient messenger
     - teasing colleague
+    importance: primary
+  - character_uuid: agent_4566d65dd1c0
+    emotional_state: ''
+    goals: []
+    what_happened: mentioned as accepting last-minute invitation to address Global
+      Defense Council on CARE
+    observed_status: mentioned as accepting last-minute invitation to address Global
+      Defense Council on CARE
+    beliefs: []
+    observed_traits: []
     importance: primary
   - character_uuid: agent_3ee4436e9a6d
     emotional_state: Calmly supportive, unfazed by the trivia outburst
@@ -968,8 +1054,10 @@ events:
     - frustrated
     importance: primary
   - character_uuid: agent_f3078a4f1b2f
-    emotional_state: ''
-    goals: []
+    emotional_state: strained
+    goals:
+    - assert that he has heard the information about the ambassador switch
+    - express irritation to halt C.J.'s repetition amid escalating communication tension
     what_happened: standing against the wall by the door while talking to C.J. on
       the speaker phone, sounding strained, responding 'I heard!' and 'And I said
       I heard you!'
@@ -1097,8 +1185,10 @@ events:
     - relentlessly task-focused
     importance: primary
   - character_uuid: agent_f3078a4f1b2f
-    emotional_state: ''
-    goals: []
+    emotional_state: irritated and stressed
+    goals:
+    - manage frayed nerves amid assignments
+    - object to poor ideas like GDC pitch while accepting tasks
     what_happened: sitting at desk, argues about knocking etiquette, walks with Toby
       through bullpen, receives assignments to draft GDC speech and warn C.J. about
       Cornelius Sykes, attempts to explain relaxation method
@@ -1281,6 +1371,18 @@ events:
     - authoritative
     - reluctantly accommodating
     importance: primary
+  - character_uuid: agent_4566d65dd1c0
+    emotional_state: ''
+    goals: []
+    what_happened: Referenced regarding the NMD missile shield support, prior approval
+      of Sam's GDC speech pitch, and as the target for Leo to propose the drop-in
+      rebuke.
+    observed_status: Referenced regarding the NMD missile shield support, prior approval
+      of Sam's GDC speech pitch, and as the target for Leo to propose the drop-in
+      rebuke.
+    beliefs: []
+    observed_traits: []
+    importance: primary
   - character_uuid: agent_cf15241465b5
     emotional_state: Professionally detached amid reporting failure's gravity.
     goals:
@@ -1432,8 +1534,10 @@ events:
     - flustered
     importance: primary
   - character_uuid: agent_f3078a4f1b2f
-    emotional_state: ''
-    goals: []
+    emotional_state: concerned
+    goals:
+    - Brief C.J. on developing PR crises with Marbury and Sykes
+    - Coordinate damage control meeting with Sykes
     what_happened: Peeks into Press Room, pulls C.J. aside for private talk outside
       door about Marbury appointment and potential Sykes hosting of Will Rogers dinner;
       later instructs Donna to arrange C.J.-Sykes meeting in New York.
@@ -1482,6 +1586,28 @@ events:
     - attentive
     - responsive
     - sardonic
+    importance: primary
+  - character_uuid: agent_475b3b61fdd1
+    emotional_state: ''
+    goals: []
+    what_happened: Significantly mentioned as the newly named eccentric British Ambassador;
+      C.J. defends her affection for him, notes his nicknames and quirks.
+    observed_status: Significantly mentioned as the newly named eccentric British
+      Ambassador; C.J. defends her affection for him, notes his nicknames and quirks.
+    beliefs: []
+    observed_traits: []
+    importance: primary
+  - character_uuid: agent_83e0a2de8a26
+    emotional_state: ''
+    goals: []
+    what_happened: Significantly mentioned (also as Corey Sykes) as comedian potentially
+      hosting Will Rogers dinner, resurfacing past joke controversy; C.J. agrees to
+      meet him in New York for PR handling.
+    observed_status: Significantly mentioned (also as Corey Sykes) as comedian potentially
+      hosting Will Rogers dinner, resurfacing past joke controversy; C.J. agrees to
+      meet him in New York for PR handling.
+    beliefs: []
+    observed_traits: []
     importance: primary
   object_involvements:
   - object_uuid: object_f9f3fc3db0b9
@@ -1606,14 +1732,24 @@ events:
     - accommodating
     importance: primary
   - character_uuid: agent_f3078a4f1b2f
-    emotional_state: ''
-    goals: []
+    emotional_state: urgent
+    goals:
+    - enlist reluctant C.J. to handle damage control on Cornelius Sykes' potential
+      hosting of Will Rogers dinner to avoid reviving past PR scandal
     what_happened: peeks into briefing, pulls C.J. aside, banters about Marbury, reveals
       Sykes hosting concern, tasks C.J. to dissuade him, instructs Donna to arrange
       meeting
     observed_status: peeks into briefing, pulls C.J. aside, banters about Marbury,
       reveals Sykes hosting concern, tasks C.J. to dissuade him, instructs Donna to
       arrange meeting
+    beliefs: []
+    observed_traits: []
+    importance: primary
+  - character_uuid: agent_d11a3b3bb6e4
+    emotional_state: ''
+    goals: []
+    what_happened: briefly mentioned by Josh as being called 'Gerald' by Marbury
+    observed_status: briefly mentioned by Josh as being called 'Gerald' by Marbury
     beliefs: []
     observed_traits: []
     importance: primary
@@ -1654,6 +1790,36 @@ events:
     - persistent
     - synchronized
     - predatory
+    importance: primary
+  - character_uuid: agent_475b3b61fdd1
+    emotional_state: ''
+    goals: []
+    what_happened: significantly discussed in banter between C.J. and Josh regarding
+      his eccentric appointment as British Ambassador
+    observed_status: significantly discussed in banter between C.J. and Josh regarding
+      his eccentric appointment as British Ambassador
+    beliefs: []
+    observed_traits: []
+    importance: primary
+  - character_uuid: agent_83e0a2de8a26
+    emotional_state: ''
+    goals: []
+    what_happened: central topic of discussion; Josh tasks C.J. to dissuade him from
+      hosting Will Rogers dinner due to past NYPD joke scandal
+    observed_status: central topic of discussion; Josh tasks C.J. to dissuade him
+      from hosting Will Rogers dinner due to past NYPD joke scandal
+    beliefs: []
+    observed_traits: []
+    importance: primary
+  - character_uuid: agent_83e0a2de8a26
+    emotional_state: ''
+    goals: []
+    what_happened: referred to by C.J. as same person as Cornelius Sykes, denying
+      close friendship
+    observed_status: referred to by C.J. as same person as Cornelius Sykes, denying
+      close friendship
+    beliefs: []
+    observed_traits: []
     importance: primary
   - character_uuid: agent_d593b3ec7ccf
     emotional_state: ''
@@ -1743,6 +1909,42 @@ events:
   - theme_5072b594b6b6
   arc_uuids: []
   participations:
+  - character_uuid: agent_57456b21c104
+    emotional_state: sarcastic, confident
+    goals:
+    - Attend Matrix Award ceremony in New York
+    what_happened: Spotted by Toby wearing coat with briefcase, explains New York
+      award trip, receives talking points from Toby
+    observed_status: Spotted by Toby wearing coat with briefcase, explains New York
+      award trip, receives talking points from Toby
+    beliefs: []
+    observed_traits: []
+    importance: primary
+  - character_uuid: agent_7c84dea6dcc9
+    emotional_state: direct, politically focused
+    goals:
+    - Confirm President's commitment to GDC drop-in
+    - Equip C.J. with press talking points
+    what_happened: Waits outside Oval Office, walks and discusses GDC speech and lynx
+      with President, questions C.J. about New York trip, hands her talking points
+      paper, responds to Bonnie about Sam's speech
+    observed_status: Waits outside Oval Office, walks and discusses GDC speech and
+      lynx with President, questions C.J. about New York trip, hands her talking points
+      paper, responds to Bonnie about Sam's speech
+    beliefs: []
+    observed_traits: []
+    importance: primary
+  - character_uuid: agent_e9dd0ae36832
+    emotional_state: casual
+    goals:
+    - Accompany President during exit
+    what_happened: Walks out with President and Toby, responds lightly to President's
+      comment on environmentalists
+    observed_status: Walks out with President and Toby, responds lightly to President's
+      comment on environmentalists
+    beliefs: []
+    observed_traits: []
+    importance: primary
   - character_uuid: agent_d11a3b3bb6e4
     emotional_state: Dryly amused, bridging ceremony to urgent duties.
     goals:
@@ -1761,6 +1963,30 @@ events:
     - Pragmatic
     - Wry
     - Collegial
+    importance: primary
+  - character_uuid: agent_4566d65dd1c0
+    emotional_state: witty, sarcastic, amused
+    goals:
+    - Perform light-hearted diplomatic banter preceding formal credential acceptance
+    - Conduct formal accreditation ceremony
+    - Evaluate DOD test success and GDC speech strategy
+    what_happened: Engages in witty banter with Swedish Ambassador about history,
+      formally accepts credentials, poses for photos, discusses Sweden's literacy,
+      DOD missile test results, GDC speech drop-in, and Marbury with Leo and Toby
+    observed_status: Engages in witty banter with Swedish Ambassador about history,
+      formally accepts credentials, poses for photos, discusses Sweden's literacy,
+      DOD missile test results, GDC speech drop-in, and Marbury with Leo and Toby
+    beliefs: []
+    observed_traits: []
+    importance: primary
+  - character_uuid: agent_b2fc4f5f4e5f
+    emotional_state: ''
+    goals:
+    - Share Sam's speech draft with Toby
+    what_happened: Opens door, offers Toby Sam's GDC speech
+    observed_status: Opens door, offers Toby Sam's GDC speech
+    beliefs: []
+    observed_traits: []
     importance: primary
   - character_uuid: agent_9f88a5c4ab22
     emotional_state: Professionally unflappable, focused on ceremonial perfection.
@@ -1985,6 +2211,22 @@ events:
     - pragmatic
     - strategic
     importance: primary
+  - character_uuid: agent_4566d65dd1c0
+    emotional_state: sarcastic, reluctant, amused
+    goals:
+    - Evaluate missile defense funding request
+    - Decide on adding drop-in to GDC speech for moral consistency
+    what_happened: Accepts credentials from Swedish Ambassador Peter Hans, banters
+      about Swedish history, sarcastically debates Leo on missile defense test results,
+      reluctantly approves eco-terrorism drop-in for GDC speech, discusses with Toby
+      and instructs Charlie
+    observed_status: Accepts credentials from Swedish Ambassador Peter Hans, banters
+      about Swedish history, sarcastically debates Leo on missile defense test results,
+      reluctantly approves eco-terrorism drop-in for GDC speech, discusses with Toby
+      and instructs Charlie
+    beliefs: []
+    observed_traits: []
+    importance: primary
   - character_uuid: agent_b2fc4f5f4e5f
     emotional_state: Earnest efficiency amid bullpen pulse
     goals:
@@ -2001,6 +2243,38 @@ events:
     - efficient
     - dutiful
     - supportive
+    importance: primary
+  - character_uuid: agent_9f88a5c4ab22
+    emotional_state: formal
+    goals:
+    - Facilitate credential presentation protocol
+    what_happened: Formally presents Ambassador Hans and family, directs posing for
+      photos, escorts ambassador out
+    observed_status: Formally presents Ambassador Hans and family, directs posing
+      for photos, escorts ambassador out
+    beliefs: []
+    observed_traits: []
+    importance: primary
+  - character_uuid: agent_69c01388f1ad
+    emotional_state: smiling, agreeable
+    goals:
+    - Complete formal accreditation ceremony as Sweden's ambassador
+    what_happened: Engages in banter with Bartlet about Swedish history, receives
+      formal credential acceptance, shakes hands with Leo, poses for photos with family
+    observed_status: Engages in banter with Bartlet about Swedish history, receives
+      formal credential acceptance, shakes hands with Leo, poses for photos with family
+    beliefs: []
+    observed_traits: []
+    importance: primary
+  - character_uuid: agent_69c01388f1ad
+    emotional_state: ''
+    goals: []
+    what_happened: Present during credential ceremony, pose for photos with ambassador
+      and Bartlet
+    observed_status: Present during credential ceremony, pose for photos with ambassador
+      and Bartlet
+    beliefs: []
+    observed_traits: []
     importance: primary
   object_involvements:
   - object_uuid: object_4a1481aafd16
@@ -2101,6 +2375,18 @@ events:
   theme_uuids: []
   arc_uuids: []
   participations:
+  - character_uuid: agent_57456b21c104
+    emotional_state: sarcastic, confident
+    goals:
+    - Attend Matrix Award in New York
+    - Prepare for GDC-related briefing
+    what_happened: Wearing coat with briefcase, discusses New York trip with Toby,
+      receives note on drop-in
+    observed_status: Wearing coat with briefcase, discusses New York trip with Toby,
+      receives note on drop-in
+    beliefs: []
+    observed_traits: []
+    importance: primary
   - character_uuid: agent_77f1a613709a
     emotional_state: Idealistic frustration invoked off-screen
     goals:
@@ -2157,6 +2443,75 @@ events:
     - ' unflappable'
     - dutiful
     - observant
+    importance: primary
+  - character_uuid: agent_d11a3b3bb6e4
+    emotional_state: insistent, pragmatic
+    goals:
+    - Advocate for NMD funding despite failure
+    - Propose GDC drop-in to signal independence
+    what_happened: Enters office, congratulates ambassador, briefs Bartlet on NMD
+      test success and GDC drop-in strategy, hands papers, exits
+    observed_status: Enters office, congratulates ambassador, briefs Bartlet on NMD
+      test success and GDC drop-in strategy, hands papers, exits
+    beliefs: []
+    observed_traits: []
+    importance: primary
+  - character_uuid: agent_4566d65dd1c0
+    emotional_state: sarcastic, principled, amused
+    goals:
+    - Conduct diplomatic credential acceptance
+    - Debate NMD project viability
+    - Affirm moral imperative over politics for GDC drop-in
+    - Correct Toby's factual error on lynx
+    - Probe Toby on Sam's reaction to strategy
+    what_happened: Accepts ambassadorial credentials, discusses missile defense test
+      and GDC drop-in with Leo, exits office and confronts Toby on moral principles
+      and lynx facts, smiles at Toby's sarcasm, shouts warning to Charlie about protesters
+    observed_status: Accepts ambassadorial credentials, discusses missile defense
+      test and GDC drop-in with Leo, exits office and confronts Toby on moral principles
+      and lynx facts, smiles at Toby's sarcasm, shouts warning to Charlie about protesters
+    beliefs: []
+    observed_traits: []
+    importance: primary
+  - character_uuid: agent_b2fc4f5f4e5f
+    emotional_state: ''
+    goals:
+    - Share Sam's GDC speech draft with Toby
+    what_happened: Opens door, offers Toby Sam's speech
+    observed_status: Opens door, offers Toby Sam's speech
+    beliefs: []
+    observed_traits: []
+    importance: primary
+  - character_uuid: agent_9f88a5c4ab22
+    emotional_state: ''
+    goals:
+    - Facilitate credential ceremony protocol
+    what_happened: Presents ambassador, directs family for photos, escorts ambassador
+      out
+    observed_status: Presents ambassador, directs family for photos, escorts ambassador
+      out
+    beliefs: []
+    observed_traits: []
+    importance: primary
+  - character_uuid: agent_69c01388f1ad
+    emotional_state: smiling, agreeable
+    goals:
+    - Complete credential presentation ceremony
+    what_happened: Presents credentials to Bartlet, engages in banter about Swedish
+      history, shakes hands, poses for pictures
+    observed_status: Presents credentials to Bartlet, engages in banter about Swedish
+      history, shakes hands, poses for pictures
+    beliefs: []
+    observed_traits: []
+    importance: primary
+  - character_uuid: agent_69c01388f1ad
+    emotional_state: ''
+    goals:
+    - Secure formal recognition as ambassador
+    what_happened: Formally presented as Sweden's ambassador, accepts congratulations
+    observed_status: Formally presented as Sweden's ambassador, accepts congratulations
+    beliefs: []
+    observed_traits: []
     importance: primary
   object_involvements: []
   location_involvements: []
@@ -2246,6 +2601,44 @@ events:
     - strategic
     - pragmatic
     importance: primary
+  - character_uuid: agent_e9dd0ae36832
+    emotional_state: ''
+    goals:
+    - Accompany and protect the President
+    what_happened: Walks behind Bartlet and Toby, responds to President's comment
+      on environmentalists
+    observed_status: Walks behind Bartlet and Toby, responds to President's comment
+      on environmentalists
+    beliefs: []
+    observed_traits: []
+    importance: primary
+  - character_uuid: agent_d11a3b3bb6e4
+    emotional_state: persistent, pragmatic
+    goals:
+    - Persuade Bartlet to fund missile defense
+    - Secure approval for President's drop-in at GDC speech
+    what_happened: Congratulates ambassador, hands papers to Bartlet, briefs on DOD
+      missile test success and advocates for GDC drop-in strategy
+    observed_status: Congratulates ambassador, hands papers to Bartlet, briefs on
+      DOD missile test success and advocates for GDC drop-in strategy
+    beliefs: []
+    observed_traits: []
+    importance: primary
+  - character_uuid: agent_4566d65dd1c0
+    emotional_state: amused, sarcastic
+    goals:
+    - Officially accredit Peter Hans as ambassador
+    - Evaluate and reluctantly approve GDC drop-in despite political optics
+    - Reject full commitment to missile defense project
+    what_happened: Accepts credentials from Swedish Ambassador Peter Hans, banters
+      about Swedish history, discusses missile defense test results and GDC drop-in
+      strategy with Leo, interacts with Toby while walking out
+    observed_status: Accepts credentials from Swedish Ambassador Peter Hans, banters
+      about Swedish history, discusses missile defense test results and GDC drop-in
+      strategy with Leo, interacts with Toby while walking out
+    beliefs: []
+    observed_traits: []
+    importance: primary
   - character_uuid: agent_b2fc4f5f4e5f
     emotional_state: Optimistic helpfulness amid bullpen duties
     goals:
@@ -2264,6 +2657,36 @@ events:
     - dutiful
     - supportive
     - efficient
+    importance: primary
+  - character_uuid: agent_9f88a5c4ab22
+    emotional_state: ''
+    goals:
+    - Facilitate the credential presentation ceremony
+    what_happened: Formally presents Ambassador Peter Hans and family, directs posing
+      for photos, escorts them out
+    observed_status: Formally presents Ambassador Peter Hans and family, directs posing
+      for photos, escorts them out
+    beliefs: []
+    observed_traits: []
+    importance: primary
+  - character_uuid: agent_69c01388f1ad
+    emotional_state: smiling, agreeable
+    goals:
+    - Secure formal accreditation as Sweden's ambassador
+    what_happened: Presents credentials to President Bartlet, engages in historical
+      banter, shakes hands, poses for photos with family
+    observed_status: Presents credentials to President Bartlet, engages in historical
+      banter, shakes hands, poses for photos with family
+    beliefs: []
+    observed_traits: []
+    importance: primary
+  - character_uuid: agent_a0ef2b781835
+    emotional_state: ''
+    goals: []
+    what_happened: Present in room and poses for pictures during credential ceremony
+    observed_status: Present in room and poses for pictures during credential ceremony
+    beliefs: []
+    observed_traits: []
     importance: primary
   object_involvements:
   - object_uuid: object_20b03f880459
@@ -2539,6 +2962,16 @@ events:
     - persistent
     - defensive
     importance: primary
+  - character_uuid: agent_4566d65dd1c0
+    emotional_state: ''
+    goals: []
+    what_happened: significantly mentioned as attending the Will Rogers dinner where
+      Corey is asked to host
+    observed_status: significantly mentioned as attending the Will Rogers dinner where
+      Corey is asked to host
+    beliefs: []
+    observed_traits: []
+    importance: primary
   - character_uuid: agent_83e0a2de8a26
     emotional_state: Casual warmth exploding into righteous anger and wounded pride
     goals:
@@ -2562,6 +2995,16 @@ events:
     - loyal
     - principled
     - combative
+    importance: primary
+  - character_uuid: agent_356575386ccc
+    emotional_state: ''
+    goals: []
+    what_happened: called by Corey to get a club soda, brings drinks to the table
+      for C.J. and Corey
+    observed_status: called by Corey to get a club soda, brings drinks to the table
+      for C.J. and Corey
+    beliefs: []
+    observed_traits: []
     importance: primary
   object_involvements:
   - object_uuid: object_50c5a6e993ce
@@ -2668,6 +3111,26 @@ events:
     - diplomatic
     - empathetic under pressure
     - professionally guarded
+    importance: primary
+  - character_uuid: agent_4566d65dd1c0
+    emotional_state: ''
+    goals: []
+    what_happened: revealed by Corey to have laughed at the joke during the fundraiser
+      and not disavowed Corey despite pressures
+    observed_status: revealed by Corey to have laughed at the joke during the fundraiser
+      and not disavowed Corey despite pressures
+    beliefs: []
+    observed_traits: []
+    importance: primary
+  - character_uuid: agent_83e0a2de8a26
+    emotional_state: ''
+    goals: []
+    what_happened: referred to by Corey as himself, labeled 'Hollywood sleaze' publicly
+      after the fundraiser
+    observed_status: referred to by Corey as himself, labeled 'Hollywood sleaze' publicly
+      after the fundraiser
+    beliefs: []
+    observed_traits: []
     importance: primary
   - character_uuid: agent_df8bb56e2193
     emotional_state: Righteously insulted with underlying wounded pride
@@ -2790,6 +3253,14 @@ events:
     - commanding
     - anxiously proactive
     importance: primary
+  - character_uuid: agent_4566d65dd1c0
+    emotional_state: ''
+    goals: []
+    what_happened: is referenced as nearly offstage following his speech.
+    observed_status: is referenced as nearly offstage following his speech.
+    beliefs: []
+    observed_traits: []
+    importance: primary
   - character_uuid: agent_12db9dc6462c
     emotional_state: Alert focus amid controlled urgency
     goals:
@@ -2908,6 +3379,14 @@ events:
     - urgent
     - commanding
     - preoccupied
+    importance: primary
+  - character_uuid: agent_4566d65dd1c0
+    emotional_state: ''
+    goals: []
+    what_happened: referenced as potentially still onstage giving a speech
+    observed_status: referenced as potentially still onstage giving a speech
+    beliefs: []
+    observed_traits: []
     importance: primary
   - character_uuid: agent_12db9dc6462c
     emotional_state: Focused alertness amid underlying tension
@@ -3036,6 +3515,17 @@ events:
     - pragmatic
     - strategic
     - authoritative
+    importance: primary
+  - character_uuid: agent_4566d65dd1c0
+    emotional_state: ''
+    goals:
+    - publicly rebuke environmental groups consistent with Toby's 'drop-in' gambit
+    what_happened: has just finished speech, having gone off-script at the end to
+      admonish environmental groups for ignoring eco-terrorism at a Colorado ski resort
+    observed_status: has just finished speech, having gone off-script at the end to
+      admonish environmental groups for ignoring eco-terrorism at a Colorado ski resort
+    beliefs: []
+    observed_traits: []
     importance: primary
   object_involvements: []
   location_involvements:
@@ -4429,6 +4919,16 @@ events:
     - cynical
     - persistent
     importance: primary
+  - character_uuid: agent_4566d65dd1c0
+    emotional_state: ''
+    goals: []
+    what_happened: his eco-terrorism rebuke and drop-in remarks at environmental dinner
+      are central to Sam and Toby's debate
+    observed_status: his eco-terrorism rebuke and drop-in remarks at environmental
+      dinner are central to Sam and Toby's debate
+    beliefs: []
+    observed_traits: []
+    importance: primary
   - character_uuid: agent_356575386ccc
     emotional_state: Detached and unflappable amid tension
     goals:
@@ -4532,8 +5032,9 @@ events:
     - essential
     importance: primary
   - character_uuid: agent_f3078a4f1b2f
-    emotional_state: ''
-    goals: []
+    emotional_state: sarcastic, skeptical
+    goals:
+    - highlight staff skepticism on missile shield costs
     what_happened: waits in Oval Office, delivers sarcastic quip about bribing North
       Korea instead of missile shield
     observed_status: waits in Oval Office, delivers sarcastic quip about bribing North
@@ -4562,6 +5063,23 @@ events:
     - resilient
     - techno-optimistic
     importance: primary
+  - character_uuid: agent_4566d65dd1c0
+    emotional_state: frustrated, angry
+    goals:
+    - unload fury over eco-backlash from speech
+    - grill Leo on true motives for missile shield
+    - perform diplomatic credential acceptance ceremony
+    what_happened: enters Oval Office, vents explosive frustration to Leo and Josh
+      about irate calls from environmental leaders, accuses Leo of pushing missile
+      shield for political posturing, yells for Nancy, formally accepts Marbury's
+      credentials and conducts handshake and photo op
+    observed_status: enters Oval Office, vents explosive frustration to Leo and Josh
+      about irate calls from environmental leaders, accuses Leo of pushing missile
+      shield for political posturing, yells for Nancy, formally accepts Marbury's
+      credentials and conducts handshake and photo op
+    beliefs: []
+    observed_traits: []
+    importance: primary
   - character_uuid: agent_f00a9f666e44
     emotional_state: Calm professionalism under pressure
     goals:
@@ -4580,6 +5098,29 @@ events:
     - dutiful
     - efficient
     - composed
+    importance: primary
+  - character_uuid: agent_9f88a5c4ab22
+    emotional_state: ''
+    goals:
+    - facilitate diplomatic credential ceremony
+    what_happened: formally presents Lord Marbury and requests Bartlet accept credentials
+    observed_status: formally presents Lord Marbury and requests Bartlet accept credentials
+    beliefs: []
+    observed_traits: []
+    importance: primary
+  - character_uuid: agent_475b3b61fdd1
+    emotional_state: witty, critical
+    goals:
+    - complete credential presentation and acceptance ceremony
+    - voice opposition to missile shield
+    what_happened: enters Oval Office with entourage, banters with Bartlet about waiting,
+      opposes missile shield in debate with Bartlet and Leo, hands credentials folder
+      to Bartlet, shakes hands with Bartlet and Leo, poses for photos
+    observed_status: enters Oval Office with entourage, banters with Bartlet about
+      waiting, opposes missile shield in debate with Bartlet and Leo, hands credentials
+      folder to Bartlet, shakes hands with Bartlet and Leo, poses for photos
+    beliefs: []
+    observed_traits: []
     importance: primary
   - character_uuid: agent_5da043c0e2f4
     emotional_state: Furious indignation (via recount)
@@ -4745,9 +5286,18 @@ events:
   theme_uuids: []
   arc_uuids: []
   participations:
-  - character_uuid: agent_f3078a4f1b2f
+  - character_uuid: agent_e9dd0ae36832
     emotional_state: ''
     goals: []
+    what_happened: mentioned as being summoned by Nancy for Marbury's ceremony
+    observed_status: mentioned as being summoned by Nancy for Marbury's ceremony
+    beliefs: []
+    observed_traits: []
+    importance: primary
+  - character_uuid: agent_f3078a4f1b2f
+    emotional_state: sarcastic
+    goals:
+    - express skepticism toward missile shield
     what_happened: waits with Leo, makes sarcastic remark about missile shield funding
     observed_status: waits with Leo, makes sarcastic remark about missile shield funding
     beliefs: []
@@ -4774,6 +5324,29 @@ events:
     - pragmatic
     - resolute
     - courteous
+    importance: primary
+  - character_uuid: agent_4566d65dd1c0
+    emotional_state: frustrated and assertive
+    goals:
+    - probe Marbury's stance on missile shield
+    - formally accept Marbury's credentials
+    what_happened: enters Oval Office, discusses phone calls with environmental leaders,
+      yells for Nancy, debates missile shield with Leo and Marbury, accepts credentials,
+      shakes hands, and poses for photos
+    observed_status: enters Oval Office, discusses phone calls with environmental
+      leaders, yells for Nancy, debates missile shield with Leo and Marbury, accepts
+      credentials, shakes hands, and poses for photos
+    beliefs: []
+    observed_traits: []
+    importance: primary
+  - character_uuid: agent_f00a9f666e44
+    emotional_state: professional
+    goals:
+    - relay message to Charlie that Bartlet is ready
+    what_happened: responds to Bartlet's summons and agrees to inform Charlie
+    observed_status: responds to Bartlet's summons and agrees to inform Charlie
+    beliefs: []
+    observed_traits: []
     importance: primary
   - character_uuid: agent_9f88a5c4ab22
     emotional_state: Professionally composed and authoritative
@@ -4820,6 +5393,42 @@ events:
     - vehement
     - eloquent
     - diplomatic
+    importance: primary
+  - character_uuid: agent_5da043c0e2f4
+    emotional_state: ''
+    goals: []
+    what_happened: mentioned as recent phone call participant complaining to Bartlet
+    observed_status: mentioned as recent phone call participant complaining to Bartlet
+    beliefs: []
+    observed_traits: []
+    importance: primary
+  - character_uuid: agent_a10290769c71
+    emotional_state: ''
+    goals: []
+    what_happened: mentioned as conference call participant from Environmental Defense
+      Fund
+    observed_status: mentioned as conference call participant from Environmental Defense
+      Fund
+    beliefs: []
+    observed_traits: []
+    importance: primary
+  - character_uuid: agent_8e75fc4e15a8
+    emotional_state: ''
+    goals: []
+    what_happened: mentioned as conference call participant from Sierra Club threatening
+      third-party bid support
+    observed_status: mentioned as conference call participant from Sierra Club threatening
+      third-party bid support
+    beliefs: []
+    observed_traits: []
+    importance: primary
+  - character_uuid: agent_d35a6e4f13cd
+    emotional_state: ''
+    goals: []
+    what_happened: mentioned as potential third-party candidate encouraged by environmentalists
+    observed_status: mentioned as potential third-party candidate encouraged by environmentalists
+    beliefs: []
+    observed_traits: []
     importance: primary
   - character_uuid: agent_8278e3cb49be
     emotional_state: Remote and regal authority

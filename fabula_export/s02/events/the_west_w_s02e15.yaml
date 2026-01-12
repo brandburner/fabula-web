@@ -1,5 +1,5 @@
 # Events for Ellie
-# Generated: 2026-01-11T19:27:44.222469
+# Generated: 2026-01-12T09:57:21.620849
 
 episode_uuid: ep_sea_ser_the_west_wing_s02_e15
 episode_title: Ellie
@@ -166,12 +166,22 @@ events:
   arc_uuids: []
   participations:
   - character_uuid: agent_f3078a4f1b2f
-    emotional_state: ''
-    goals: []
+    emotional_state: sarcastic then stunned
+    goals:
+    - enforce office efficiency and leave early
+    - engage with the emerging political crisis from the chat
     what_happened: attempting to leave early enforcing his efficiency memo, returns
       to watch and read the Surgeon General's online chat responses
     observed_status: attempting to leave early enforcing his efficiency memo, returns
       to watch and read the Surgeon General's online chat responses
+    beliefs: []
+    observed_traits: []
+    importance: primary
+  - character_uuid: agent_4566d65dd1c0
+    emotional_state: ''
+    goals: []
+    what_happened: mentioned as being in Tokyo
+    observed_status: mentioned as being in Tokyo
     beliefs: []
     observed_traits: []
     importance: primary
@@ -306,7 +316,9 @@ events:
     importance: primary
   - character_uuid: agent_f3078a4f1b2f
     emotional_state: ''
-    goals: []
+    goals:
+    - escalate the crisis by alerting C.J. to Surgeon General Griffith's statements
+      (inferred from causal connection to beat_6ed480a85d8a62e0)
     what_happened: providing voice-over narration
     observed_status: providing voice-over narration
     beliefs: []
@@ -377,8 +389,10 @@ events:
     - professional
     importance: primary
   - character_uuid: agent_f3078a4f1b2f
-    emotional_state: ''
-    goals: []
+    emotional_state: urgent
+    goals:
+    - Alert C.J. to the Surgeon General's marijuana controversy via the printout
+    - Initiate damage control by involving C.J. immediately
     what_happened: Walks in and urgently demands 'I need you to take a look at this,'
       thrusting a printout
     observed_status: Walks in and urgently demands 'I need you to take a look at this,'
@@ -482,6 +496,14 @@ events:
     observed_traits:
     - reliable
     - essential aide
+    importance: primary
+  - character_uuid: agent_4566d65dd1c0
+    emotional_state: ''
+    goals: []
+    what_happened: referenced as needing to appoint Seth Gillette to the Commission
+    observed_status: referenced as needing to appoint Seth Gillette to the Commission
+    beliefs: []
+    observed_traits: []
     importance: primary
   - character_uuid: agent_12db9dc6462c
     emotional_state: Calm and professionally detached, focused solely on relaying
@@ -695,6 +717,14 @@ events:
     - reliable
     - connected
     importance: primary
+  - character_uuid: agent_4566d65dd1c0
+    emotional_state: ''
+    goals: []
+    what_happened: referenced as the one AARP and AFL-CIO want to appoint Seth Gillette
+    observed_status: referenced as the one AARP and AFL-CIO want to appoint Seth Gillette
+    beliefs: []
+    observed_traits: []
+    importance: primary
   - character_uuid: agent_12db9dc6462c
     emotional_state: Calmly professional, unmoved by the charged strategy session
     goals:
@@ -711,6 +741,16 @@ events:
     - dutiful
     - efficient
     - neutral
+    importance: primary
+  - character_uuid: agent_d35a6e4f13cd
+    emotional_state: ''
+    goals: []
+    what_happened: significantly discussed as target for appointment to the Commission
+      to neutralize opposition
+    observed_status: significantly discussed as target for appointment to the Commission
+      to neutralize opposition
+    beliefs: []
+    observed_traits: []
     importance: primary
   object_involvements:
   - object_uuid: object_1e39e8ac0598
@@ -861,6 +901,16 @@ events:
     - efficient
     - discreet
     importance: primary
+  - character_uuid: agent_4566d65dd1c0
+    emotional_state: ''
+    goals: []
+    what_happened: not involved in movie decision; delegates choices to Charlie who
+      selected 'Dial M for Murder' deeming it preferable
+    observed_status: not involved in movie decision; delegates choices to Charlie
+      who selected 'Dial M for Murder' deeming it preferable
+    beliefs: []
+    observed_traits: []
+    importance: primary
   - character_uuid: agent_3bee2863a681
     emotional_state: Ambitious cynicism implied through referenced actions
     goals:
@@ -978,12 +1028,22 @@ events:
     - resourceful
     importance: primary
   - character_uuid: agent_f3078a4f1b2f
-    emotional_state: ''
-    goals: []
+    emotional_state: concerned
+    goals:
+    - outline dire political consequences of the Surgeon General's marijuana stance
+      to assess damage
     what_happened: on the phone, speaking about anticipated political fallout from
       women voters, the AMA, and the First Lady
     observed_status: on the phone, speaking about anticipated political fallout from
       women voters, the AMA, and the First Lady
+    beliefs: []
+    observed_traits: []
+    importance: primary
+  - character_uuid: agent_9623e7e26e19
+    emotional_state: ''
+    goals: []
+    what_happened: significantly mentioned as a source of potential backlash
+    observed_status: significantly mentioned as a source of potential backlash
     beliefs: []
     observed_traits: []
     importance: primary
@@ -1190,8 +1250,9 @@ events:
     - defensive strategist
     importance: primary
   - character_uuid: agent_f3078a4f1b2f
-    emotional_state: ''
-    goals: []
+    emotional_state: tense
+    goals:
+    - monitor the communications team's damage control on the Surgeon General crisis
     what_happened: sitting on a couch, watching C.J.'s briefing on television
     observed_status: sitting on a couch, watching C.J.'s briefing on television
     beliefs: []
@@ -1329,6 +1390,16 @@ events:
     - Collaborative staff unity drives agenda forward
     observed_traits:
     - strategic linchpin
+    importance: primary
+  - character_uuid: agent_4566d65dd1c0
+    emotional_state: ''
+    goals: []
+    what_happened: referenced in the ad as having denounced 'Prince of New York';
+      C.J. states he has not done so publicly or to her unless 'in the shower'
+    observed_status: referenced in the ad as having denounced 'Prince of New York';
+      C.J. states he has not done so publicly or to her unless 'in the shower'
+    beliefs: []
+    observed_traits: []
     importance: primary
   - character_uuid: agent_3ee4436e9a6d
     emotional_state: Calm professionalism amid surrounding frenzy
@@ -1473,6 +1544,16 @@ events:
     beliefs:
     - Unified staff strategy neutralizes external attacks
     - Direct intervention tempers reactive impulses
+    observed_traits: []
+    importance: primary
+  - character_uuid: agent_4566d65dd1c0
+    emotional_state: ''
+    goals: []
+    what_happened: referenced in reporters' questions as having allegedly denounced
+      the movie Prince of New York, but C.J. states he has not done so publicly.
+    observed_status: referenced in reporters' questions as having allegedly denounced
+      the movie Prince of New York, but C.J. states he has not done so publicly.
+    beliefs: []
     observed_traits: []
     importance: primary
   - character_uuid: agent_3ee4436e9a6d
@@ -1634,6 +1715,16 @@ events:
     observed_traits:
     - loyal
     - decisive
+    importance: primary
+  - character_uuid: agent_4566d65dd1c0
+    emotional_state: ''
+    goals: []
+    what_happened: mentioned as having rejected the screening via Charlie and being
+      insulted as cowardly by Morgan Ross on Imus
+    observed_status: mentioned as having rejected the screening via Charlie and being
+      insulted as cowardly by Morgan Ross on Imus
+    beliefs: []
+    observed_traits: []
     importance: primary
   - character_uuid: agent_d9ea8565c92f
     emotional_state: Aggressively journalistic pursuit (as relayed).
@@ -1854,6 +1945,28 @@ events:
     - Calmly authoritative
     - Concise
     importance: primary
+  - character_uuid: agent_e9dd0ae36832
+    emotional_state: ''
+    goals: []
+    what_happened: mentioned as the recipient of phone banks from the studio requesting
+      a 'Prince of New York' screening, which he passed on
+    observed_status: mentioned as the recipient of phone banks from the studio requesting
+      a 'Prince of New York' screening, which he passed on
+    beliefs: []
+    observed_traits: []
+    importance: primary
+  - character_uuid: agent_4566d65dd1c0
+    emotional_state: ''
+    goals: []
+    what_happened: referenced as the target of Morgan Ross's 'cowardly' criticism
+      on Imus and as the subject whose reaction Danny Concannon seeks regarding Eleanor
+      Bartlet's comment
+    observed_status: referenced as the target of Morgan Ross's 'cowardly' criticism
+      on Imus and as the subject whose reaction Danny Concannon seeks regarding Eleanor
+      Bartlet's comment
+    beliefs: []
+    observed_traits: []
+    importance: primary
   - character_uuid: agent_d9ea8565c92f
     emotional_state: Aggressively probing with professional hunger
     goals:
@@ -1892,6 +2005,29 @@ events:
     - Efficient
     - Discreet
     - Urgent communicator
+    importance: primary
+  - character_uuid: agent_5ef177c798e9
+    emotional_state: ''
+    goals: []
+    what_happened: referenced in the context of the ongoing controversy to which Eleanor
+      Bartlet publicly commented
+    observed_status: referenced in the context of the ongoing controversy to which
+      Eleanor Bartlet publicly commented
+    beliefs: []
+    observed_traits: []
+    importance: primary
+  - character_uuid: agent_3bee2863a681
+    emotional_state: ''
+    goals:
+    - generate free media publicity by criticizing the President
+    what_happened: referenced repeatedly as the producer of 'Prince of New York' who
+      appeared on Imus by phone and called President Bartlet cowardly for denying
+      a screening
+    observed_status: referenced repeatedly as the producer of 'Prince of New York'
+      who appeared on Imus by phone and called President Bartlet cowardly for denying
+      a screening
+    beliefs: []
+    observed_traits: []
     importance: primary
   - character_uuid: agent_9623e7e26e19
     emotional_state: Conviction-driven audacity (inferred from action)
@@ -1976,6 +2112,16 @@ events:
     - persistent
     - desperate
     - combative
+    importance: primary
+  - character_uuid: agent_4566d65dd1c0
+    emotional_state: ''
+    goals: []
+    what_happened: referenced as proposer of the Blue Ribbon Commission in the State
+      of the Union and ally of labor and seniors.
+    observed_status: referenced as proposer of the Blue Ribbon Commission in the State
+      of the Union and ally of labor and seniors.
+    beliefs: []
+    observed_traits: []
     importance: primary
   - character_uuid: agent_1988cf3dd146
     emotional_state: Guarded skepticism with reluctant openness
@@ -2109,14 +2255,25 @@ events:
     - strategic
     importance: primary
   - character_uuid: agent_f3078a4f1b2f
-    emotional_state: ''
-    goals: []
+    emotional_state: surprised and exasperated
+    goals:
+    - achieve damage control by retracting C.J.'s statements
+    - involve Leo to contain the crisis
     what_happened: urgently warns C.J. to retract her press room support for the Surgeon
       General and involve Leo, then expresses confusion by mistaking Eleanor for Zoey
       and sighs
     observed_status: urgently warns C.J. to retract her press room support for the
       Surgeon General and involve Leo, then expresses confusion by mistaking Eleanor
       for Zoey and sighs
+    beliefs: []
+    observed_traits: []
+    importance: primary
+  - character_uuid: agent_d11a3b3bb6e4
+    emotional_state: ''
+    goals:
+    - talk to Eleanor to address the crisis
+    what_happened: referenced by Josh as needing to talk to Eleanor
+    observed_status: referenced by Josh as needing to talk to Eleanor
     beliefs: []
     observed_traits: []
     importance: primary
@@ -2235,6 +2392,36 @@ events:
     - efficient
     - concise
     - dutiful
+    importance: primary
+  - character_uuid: agent_d11a3b3bb6e4
+    emotional_state: urgent and firm
+    goals:
+    - contain political fallout by preventing Bartlet from addressing press amid family
+      crisis
+    what_happened: intercepts Bartlet and Charlie, prohibits press questions due to
+      Eleanor's statement, reveals the six-hour-old news quietly, urges entry into
+      limo
+    observed_status: intercepts Bartlet and Charlie, prohibits press questions due
+      to Eleanor's statement, reveals the six-hour-old news quietly, urges entry into
+      limo
+    beliefs: []
+    observed_traits: []
+    importance: primary
+  - character_uuid: agent_4566d65dd1c0
+    emotional_state: fired-up then stunned
+    goals:
+    - address the press directly on steel tariffs and protectionism to reveal economic
+      instincts
+    what_happened: exiting Air Force One with Charlie, discussing Japan's steel dumping
+      and risks of protectionist tariffs including Smoot-Hawley echoes, waves to welcomers,
+      attempts to address reporters but is intercepted by Leo, stunned upon learning
+      of Eleanor's statement, enters limo silently
+    observed_status: exiting Air Force One with Charlie, discussing Japan's steel
+      dumping and risks of protectionist tariffs including Smoot-Hawley echoes, waves
+      to welcomers, attempts to address reporters but is intercepted by Leo, stunned
+      upon learning of Eleanor's statement, enters limo silently
+    beliefs: []
+    observed_traits: []
     importance: primary
   - character_uuid: agent_6a1b37afae25
     emotional_state: Eagerly anticipatory, frustrated by evasion
@@ -2396,6 +2583,33 @@ events:
     - efficient
     - loyal
     - composed under pressure
+    importance: primary
+  - character_uuid: agent_d11a3b3bb6e4
+    emotional_state: urgent and composed
+    goals:
+    - prevent Bartlet from engaging press due to Eleanor's comment
+    - avoid mid-flight distraction by delaying news
+    what_happened: intercepts Bartlet and Charlie en route to press, reveals Eleanor's
+      on-record comment from six hours ago, insists on no questions and directs them
+      to the limo, explains delay in disclosure quietly
+    observed_status: intercepts Bartlet and Charlie en route to press, reveals Eleanor's
+      on-record comment from six hours ago, insists on no questions and directs them
+      to the limo, explains delay in disclosure quietly
+    beliefs: []
+    observed_traits: []
+    importance: primary
+  - character_uuid: agent_4566d65dd1c0
+    emotional_state: engaged then surprised and contemplative
+    goals:
+    - inform the press about the high taxpayer costs of retaliatory tariffs
+    what_happened: exiting Air Force One while heatedly discussing Japanese steel
+      dumping and retaliatory tariffs with Charlie, waves to greeters, intercepted
+      by Leo, reacts with surprise to news of Eleanor's comment, enters limo silently
+    observed_status: exiting Air Force One while heatedly discussing Japanese steel
+      dumping and retaliatory tariffs with Charlie, waves to greeters, intercepted
+      by Leo, reacts with surprise to news of Eleanor's comment, enters limo silently
+    beliefs: []
+    observed_traits: []
     importance: primary
   - character_uuid: agent_6a1b37afae25
     emotional_state: Eager frustration at denied questions amid high-stakes arrival.
@@ -2605,14 +2819,40 @@ events:
     - obedient
     importance: primary
   - character_uuid: agent_f3078a4f1b2f
-    emotional_state: ''
-    goals: []
+    emotional_state: professional
+    goals:
+    - brief Bartlet on bizarre political alliances forming in Griffith's defense
     what_happened: enters and greets President, briefs on opposing congressional committees
       and pro-marijuana groups defending Griffith, notes Leo is seeing her tomorrow,
       thanks and exits
     observed_status: enters and greets President, briefs on opposing congressional
       committees and pro-marijuana groups defending Griffith, notes Leo is seeing
       her tomorrow, thanks and exits
+    beliefs: []
+    observed_traits: []
+    importance: primary
+  - character_uuid: agent_d11a3b3bb6e4
+    emotional_state: ''
+    goals: []
+    what_happened: mentioned as seeing 'her' (Griffith) tomorrow
+    observed_status: mentioned as seeing 'her' (Griffith) tomorrow
+    beliefs: []
+    observed_traits: []
+    importance: primary
+  - character_uuid: agent_4566d65dd1c0
+    emotional_state: angry, stunned, sarcastic
+    goals:
+    - express outrage over perceived protocol breach by Danny
+    - absorb revelation of Ellie's defiance and escalate to direct confrontation
+    - obtain update on political alliances defending Surgeon General Griffith
+    what_happened: enters angrily accusing Danny Concannon of calling his daughter,
+      reacts with shock upon learning Ellie called Danny, sits at desk, engages in
+      sarcastic banter while receiving political briefing from Josh, dismisses staff,
+      orders Charlie to summon Ellie immediately
+    observed_status: enters angrily accusing Danny Concannon of calling his daughter,
+      reacts with shock upon learning Ellie called Danny, sits at desk, engages in
+      sarcastic banter while receiving political briefing from Josh, dismisses staff,
+      orders Charlie to summon Ellie immediately
     beliefs: []
     observed_traits: []
     importance: primary
@@ -2859,14 +3099,42 @@ events:
     - dutiful
     importance: primary
   - character_uuid: agent_f3078a4f1b2f
-    emotional_state: ''
-    goals: []
+    emotional_state: professional
+    goals:
+    - Brief President on Surgeon General's political opposition and supporters
     what_happened: Enters and greets President, briefs on opposing congressional committees
       and pro-marijuana organizations defending Surgeon General, notes Leo is seeing
       her tomorrow, exits with C.J.
     observed_status: Enters and greets President, briefs on opposing congressional
       committees and pro-marijuana organizations defending Surgeon General, notes
       Leo is seeing her tomorrow, exits with C.J.
+    beliefs: []
+    observed_traits: []
+    importance: primary
+  - character_uuid: agent_d11a3b3bb6e4
+    emotional_state: ''
+    goals: []
+    what_happened: Mentioned by Josh as seeing 'her' (Surgeon General) tomorrow.
+    observed_status: Mentioned by Josh as seeing 'her' (Surgeon General) tomorrow.
+    beliefs: []
+    observed_traits: []
+    importance: primary
+  - character_uuid: agent_4566d65dd1c0
+    emotional_state: angry
+    goals:
+    - Vent fury over daughter's involvement with reporter
+    - Assess political fallout from Surgeon General controversy
+    - Summon Ellie for confrontation
+    what_happened: Rants angrily about Danny Concannon contacting his daughter, sits
+      at desk upon learning she called first, receives briefing from Josh on political
+      opposition and pro-weed defenders of Surgeon General, delivers sarcastic commentary
+      on bizarre alliances gained, instructs Charlie to summon his middle daughter
+      immediately.
+    observed_status: Rants angrily about Danny Concannon contacting his daughter,
+      sits at desk upon learning she called first, receives briefing from Josh on
+      political opposition and pro-weed defenders of Surgeon General, delivers sarcastic
+      commentary on bizarre alliances gained, instructs Charlie to summon his middle
+      daughter immediately.
     beliefs: []
     observed_traits: []
     importance: primary
@@ -3125,13 +3393,38 @@ events:
     importance: primary
   - character_uuid: agent_f3078a4f1b2f
     emotional_state: ''
-    goals: []
+    goals:
+    - brief President on current political opposition and support regarding the Surgeon
+      General crisis
     what_happened: enters and greets President, lists opposing congressional committees
       and pro-cannabis groups defending Surgeon General, notes Leo seeing her tomorrow,
       thanks President and exits
     observed_status: enters and greets President, lists opposing congressional committees
       and pro-cannabis groups defending Surgeon General, notes Leo seeing her tomorrow,
       thanks President and exits
+    beliefs: []
+    observed_traits: []
+    importance: primary
+  - character_uuid: agent_d11a3b3bb6e4
+    emotional_state: ''
+    goals: []
+    what_happened: mentioned by Josh as seeing the Surgeon General tomorrow
+    observed_status: mentioned by Josh as seeing the Surgeon General tomorrow
+    beliefs: []
+    observed_traits: []
+    importance: primary
+  - character_uuid: agent_4566d65dd1c0
+    emotional_state: angry
+    goals:
+    - summon Ellie Bartlet immediately to set up a pivotal father-daughter confrontation
+    what_happened: returns angry, rants about Danny Concannon contacting his daughter,
+      demands suspension of credentials, learns she called Danny, sits at desk, discusses
+      political opponents and supporters, dismisses staff, politely then furiously
+      orders Charlie to summon his middle daughter Ellie
+    observed_status: returns angry, rants about Danny Concannon contacting his daughter,
+      demands suspension of credentials, learns she called Danny, sits at desk, discusses
+      political opponents and supporters, dismisses staff, politely then furiously
+      orders Charlie to summon his middle daughter Ellie
     beliefs: []
     observed_traits: []
     importance: primary
@@ -3404,7 +3697,30 @@ events:
   location_uuid: null
   theme_uuids: []
   arc_uuids: []
-  participations: []
+  participations:
+  - character_uuid: agent_d11a3b3bb6e4
+    emotional_state: ruthless
+    goals:
+    - force Griffith's resignation for administration damage control amid marijuana
+      scandal
+    what_happened: intercepts Millicent Griffith outside the White House and issues
+      a ruthless, non-negotiable ultimatum to resign by 8 PM or be fired at dawn
+    observed_status: intercepts Millicent Griffith outside the White House and issues
+      a ruthless, non-negotiable ultimatum to resign by 8 PM or be fired at dawn
+    beliefs: []
+    observed_traits: []
+    importance: primary
+  - character_uuid: agent_5ef177c798e9
+    emotional_state: conflicted
+    goals:
+    - uphold unyielding medical principles against political pressure
+    what_happened: intercepted by Leo McGarry outside the White House and receives
+      ultimatum, grappling with principles versus political necessity
+    observed_status: intercepted by Leo McGarry outside the White House and receives
+      ultimatum, grappling with principles versus political necessity
+    beliefs: []
+    observed_traits: []
+    importance: primary
   object_involvements: []
   location_involvements:
   - location_uuid: location_7be499e08165
@@ -3557,6 +3873,26 @@ events:
     observed_traits:
     - dutiful
     - precise
+    importance: primary
+  - character_uuid: agent_d35a6e4f13cd
+    emotional_state: ''
+    goals: []
+    what_happened: mentioned as the person Labor and AARP want on the Commission,
+      whom Toby opposes
+    observed_status: mentioned as the person Labor and AARP want on the Commission,
+      whom Toby opposes
+    beliefs: []
+    observed_traits: []
+    importance: primary
+  - character_uuid: agent_5ef177c798e9
+    emotional_state: ''
+    goals: []
+    what_happened: referenced in a note as someone the administration should stand
+      by, subject of Toby's pun
+    observed_status: referenced in a note as someone the administration should stand
+      by, subject of Toby's pun
+    beliefs: []
+    observed_traits: []
     importance: primary
   - character_uuid: agent_3710a2960084
     emotional_state: Sardonic reluctance laced with unresolved resentment
@@ -3874,6 +4210,17 @@ events:
     - playful
     - loyal
     importance: primary
+  - character_uuid: agent_4566d65dd1c0
+    emotional_state: ''
+    goals:
+    - summon Ellie (inferred)
+    what_happened: significantly referenced in banter about his movie preferences,
+      Ellie seeking to meet him
+    observed_status: significantly referenced in banter about his movie preferences,
+      Ellie seeking to meet him
+    beliefs: []
+    observed_traits: []
+    importance: primary
   - character_uuid: agent_4ad5a1792822
     emotional_state: Amused with feigned prim outrage, delighting in playful camaraderie
     goals:
@@ -3976,6 +4323,15 @@ events:
     - respectful
     - humorous but adaptable
     importance: primary
+  - character_uuid: agent_4566d65dd1c0
+    emotional_state: ''
+    goals:
+    - initiate family confrontation with Ellie
+    what_happened: significantly referenced as having summoned Ellie for a meeting
+    observed_status: significantly referenced as having summoned Ellie for a meeting
+    beliefs: []
+    observed_traits: []
+    importance: primary
   - character_uuid: agent_4ad5a1792822
     emotional_state: Amused warmth shifting to intuitive deference
     goals:
@@ -4058,6 +4414,19 @@ events:
   theme_uuids: []
   arc_uuids: []
   participations:
+  - character_uuid: agent_d11a3b3bb6e4
+    emotional_state: sarcastic
+    goals:
+    - to summon Dr. Griffith for a private confrontation about her marijuana interview
+    what_happened: walking through to his office, summoning Dr. Griffith, closing
+      the door, and sarcastically congratulating her on the political fallout from
+      her interview
+    observed_status: walking through to his office, summoning Dr. Griffith, closing
+      the door, and sarcastically congratulating her on the political fallout from
+      her interview
+    beliefs: []
+    observed_traits: []
+    importance: primary
   - character_uuid: agent_5ef177c798e9
     emotional_state: Light-hearted amusement during banter, shifting to attentive
       resolve upon summons
@@ -4109,6 +4478,20 @@ events:
   theme_uuids: []
   arc_uuids: []
   participations:
+  - character_uuid: agent_d11a3b3bb6e4
+    emotional_state: sarcastic
+    goals:
+    - to confront and warn Dr. Griffith about the political fundraising damage from
+      her interview
+    what_happened: walking through outer office, summoning Dr. Griffith, closing the
+      door to his office, and delivering sarcastic congratulations on her becoming
+      right-wing fundraising fodder worth $20-30 million
+    observed_status: walking through outer office, summoning Dr. Griffith, closing
+      the door to his office, and delivering sarcastic congratulations on her becoming
+      right-wing fundraising fodder worth $20-30 million
+    beliefs: []
+    observed_traits: []
+    importance: primary
   - character_uuid: agent_5ef177c798e9
     emotional_state: Witty amusement yielding to focused attentiveness
     goals:
@@ -4185,6 +4568,20 @@ events:
     - efficient
     - discreetly loyal
     - personable
+    importance: primary
+  - character_uuid: agent_4566d65dd1c0
+    emotional_state: furious during tariff rant, then instantly warm and affectionate
+    goals:
+    - excoriate advisors on economic folly of retaliatory tariffs
+    - prioritize and warmly reconnect with daughter upon seeing her
+    what_happened: storms in mid-rant about steel tariffs while entering with advisors,
+      spots Ellie via Charlie's cue, dismisses advisors, warmly greets and kisses
+      his daughter, invites her into the Oval
+    observed_status: storms in mid-rant about steel tariffs while entering with advisors,
+      spots Ellie via Charlie's cue, dismisses advisors, warmly greets and kisses
+      his daughter, invites her into the Oval
+    beliefs: []
+    observed_traits: []
     importance: primary
   - character_uuid: agent_2d46de497130
     emotional_state: Neutral and vigilant, focused on duty without personal inflection.
@@ -4272,6 +4669,18 @@ events:
   theme_uuids: []
   arc_uuids: []
   participations:
+  - character_uuid: agent_4566d65dd1c0
+    emotional_state: guardedly concerned
+    goals:
+    - confirm Ellie's safe arrival
+    - probe her emotional state amid tension
+    what_happened: enters the Oval Office with Ellie and tentatively asks if she arrived
+      safely
+    observed_status: enters the Oval Office with Ellie and tentatively asks if she
+      arrived safely
+    beliefs: []
+    observed_traits: []
+    importance: primary
   - character_uuid: agent_9623e7e26e19
     emotional_state: Distant and walled-off, her brevity masking resentment from clashing
       loyalties
@@ -4816,6 +5225,18 @@ events:
     - independent
     - principled
     importance: primary
+  - character_uuid: agent_4566d65dd1c0
+    emotional_state: ''
+    goals: []
+    what_happened: referenced by Sam as never having seen Ross's movie and not objecting
+      to it; watching 'Dial M for Murder'; defended against being called a coward
+      by Ross
+    observed_status: referenced by Sam as never having seen Ross's movie and not objecting
+      to it; watching 'Dial M for Murder'; defended against being called a coward
+      by Ross
+    beliefs: []
+    observed_traits: []
+    importance: primary
   - character_uuid: agent_3bee2863a681
     emotional_state: Initially combative defiance eroding into reluctant submission
     goals:
@@ -4912,12 +5333,25 @@ events:
   arc_uuids: []
   participations:
   - character_uuid: agent_f3078a4f1b2f
-    emotional_state: ''
-    goals: []
+    emotional_state: concerned
+    goals:
+    - observe and highlight President Bartlet's inner turmoil through his uncharacteristic
+      silence
     what_happened: whispers to Donna in the back about the President's unusual silence
       during the movie, noting he usually talks
     observed_status: whispers to Donna in the back about the President's unusual silence
       during the movie, noting he usually talks
+    beliefs: []
+    observed_traits: []
+    importance: primary
+  - character_uuid: agent_4566d65dd1c0
+    emotional_state: disturbed
+    goals:
+    - withdraw from the movie viewing due to mounting inner turmoil
+    what_happened: sits unusually silent while watching the movie, then stands up
+      and abruptly leaves
+    observed_status: sits unusually silent while watching the movie, then stands up
+      and abruptly leaves
     beliefs: []
     observed_traits: []
     importance: primary
@@ -5021,6 +5455,15 @@ events:
   theme_uuids: []
   arc_uuids: []
   participations:
+  - character_uuid: agent_4566d65dd1c0
+    emotional_state: serious
+    goals:
+    - initiate formal tension leading causally to confrontation over resignation
+    what_happened: walks in and greets Dr. Griffith with 'Good evening.'
+    observed_status: walks in and greets Dr. Griffith with 'Good evening.'
+    beliefs: []
+    observed_traits: []
+    importance: primary
   - character_uuid: agent_5ef177c798e9
     emotional_state: Anxiously composed, politeness veiling apprehension about her
       job and principles
@@ -5093,12 +5536,25 @@ events:
     - strategic
     importance: primary
   - character_uuid: agent_f3078a4f1b2f
-    emotional_state: ''
-    goals: []
+    emotional_state: defiant
+    goals:
+    - caution Bartlet about political optics and familial influence to test his resolve
     what_happened: stands up and warns Bartlet that the decision will appear as capitulation
       to his daughter's plea
     observed_status: stands up and warns Bartlet that the decision will appear as
       capitulation to his daughter's plea
+    beliefs: []
+    observed_traits: []
+    importance: primary
+  - character_uuid: agent_4566d65dd1c0
+    emotional_state: determined
+    goals:
+    - issue a firm directive to publicly back Surgeon General Griffith, closing the
+      storyline loop
+    what_happened: walks to Josh and instructs him to tell C.J. to authentically support
+      Millie on Monday
+    observed_status: walks to Josh and instructs him to tell C.J. to authentically
+      support Millie on Monday
     beliefs: []
     observed_traits: []
     importance: primary
