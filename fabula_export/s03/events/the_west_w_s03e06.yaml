@@ -1,0 +1,3682 @@
+# Events for Gone Quiet
+# Generated: 2026-01-13T19:32:43.290064
+
+episode_uuid: ep_sea_ser_the_west_wing_s03_e06
+episode_title: Gone Quiet
+series_title: The West Wing
+events:
+- fabula_uuid: cand_evt_scene_19ce30d49673128a_1
+  global_id: null
+  title: Leo Uncovers the U.S.S. Portland's Deliberate Silence Off North Korea
+  description: Leo storms into the Situation Room with sardonic gallows humor masking
+    his dread, grilling Nancy on the U.S.S. Portland's unannounced radio silence in
+    the Yellow Sea, perilously close to North Korea. They dissect possibilities—from
+    power loss in hostile waters to intentional blackout amid tensions—while Nancy
+    details a primed but risky rescue apparatus of DSRVs and Tomahawks, urging restraint
+    as the sub crew likely knows their peril. Leo, undeterred, resolves to brief President
+    Bartlet, igniting the ticking-clock crisis that tests command resolve against
+    war's brink.
+  episode_uuid: ep_sea_ser_the_west_wing_s03_e06
+  scene_sequence: 1
+  sequence_in_scene: 1
+  key_dialogue:
+  - 'LEO: "One day, I''m gonna get called to the Situation Room, and it''s gonna be
+    good news. We''ll have discovered buried treasure, or it turns out there''s life
+    on Andromeda, and they think we''re doing a good job. When''s that day gonna come,
+    Nancy? When''s that gonna happen?"'
+  - 'NANCY: "The Commander of the Pac Fleet has informed us he''s lost contact with
+    the U.S.S. Portland, which is a Sea Wolf class sub."'
+  - 'NANCY: "Cause I think they''ve gone quiet." LEO: "You said they usually call."
+    NANCY: "They usually do." LEO: "I''ve gotta tell the President."'
+  is_flashback: false
+  location_uuid: null
+  theme_uuids:
+  - theme_6f101ab17cc5
+  arc_uuids:
+  - arc_5a5cea964350
+  participations:
+  - character_uuid: agent_45883b79da77
+    emotional_state: ''
+    goals: []
+    what_happened: referenced by Leo as the next person to be briefed on the crisis,
+      expected to react strongly
+    observed_status: referenced by Leo as the next person to be briefed on the crisis,
+      expected to react strongly
+    beliefs: []
+    observed_traits: []
+    importance: secondary
+  - character_uuid: agent_f00a9f666e44
+    emotional_state: Steady caution tempering underlying gravity
+    goals:
+    - Brief Leo comprehensively on assets and risks
+    - Deter premature rescue to avoid escalation
+    what_happened: Awaits Leo calmly amid screens, delivers crisp intel on Portland's
+      location, scenarios, and primed rescue chain—from DSRVs to Tomahawks—while firmly
+      urging restraint, believing intentional quiet amid threats.
+    observed_status: Awaits Leo calmly amid screens, delivers crisp intel on Portland's
+      location, scenarios, and primed rescue chain—from DSRVs to Tomahawks—while firmly
+      urging restraint, believing intentional quiet amid threats.
+    beliefs:
+    - Crew's expertise warrants assuming tactical silence over failure
+    - Rash action risks geopolitical war trigger
+    observed_traits:
+    - composed
+    - precise
+    - cautionary
+    - authoritative
+    importance: primary
+  - character_uuid: agent_5fe10b4d8e71
+    emotional_state: Professionally alarmed
+    goals:
+    - Report submarine blackout
+    - Mobilize rescue readiness
+    what_happened: Invoked by Nancy as source of initial alarm, having relayed lost
+      contact with Portland, priming naval response chain in background coordination.
+    observed_status: Invoked by Nancy as source of initial alarm, having relayed lost
+      contact with Portland, priming naval response chain in background coordination.
+    beliefs:
+    - Immediate hierarchy notification essential
+    - Pacific assets hold extraction edge
+    observed_traits:
+    - alert
+    - operational
+    importance: primary
+  - character_uuid: agent_d11a3b6bb6e4
+    emotional_state: Sardonic gallows humor thinly masking urgent apprehension and
+      resolve
+    goals:
+    - Extract precise crisis details from Nancy
+    - Commit to immediate Presidential briefing despite risks
+    what_happened: Bursts in mid-sentence with sardonic banter, sharply questions
+      Nancy on sub silence causes and rescue readiness while pacing to maps, dismisses
+      caution, and exits determined to brief President amid room's humming tension.
+    observed_status: Bursts in mid-sentence with sardonic banter, sharply questions
+      Nancy on sub silence causes and rescue readiness while pacing to maps, dismisses
+      caution, and exits determined to brief President amid room's humming tension.
+    beliefs:
+    - Submarine blackout demands top-level alert regardless of crew competence
+    - White House command cannot delay on potential catastrophe
+    observed_traits:
+    - sardonic
+    - relentless
+    - decisive
+    - gallows-humored
+    importance: primary
+  object_involvements:
+  - object_uuid: object_33edf7da8109
+    description_of_involvement: USS Portland dominates dialogue as crisis epicenter—its
+      unheralded silence post periscope-depth check dissected as power loss or evasion
+      tactic; narrative pivot hurling Situation Room into high-stakes calculus of
+      rescue vs. restraint.
+    status_before_event: Operational on close-in mission in Yellow Sea
+    status_after_event: Radio silent, last ping 60 miles west of Seoul
+  - object_uuid: object_de78bf27fefc
+    description_of_involvement: Nancy spotlights two DSRVs on Ballast Point alert
+      as rescue vanguard, mating trunks primed for sub hookup; embodies high-risk
+      extraction precision, fueling Leo's probe into full apparatus amid geopolitical
+      razor-wire.
+    status_before_event: On high alert in San Diego
+    status_after_event: Primed for potential deployment
+  - object_uuid: object_2723b7ea8b38
+    description_of_involvement: Two C-141 Starlifters queued at NAS North Island to
+      ferry crews and fittings; Nancy integrates them into relay chain, underscoring
+      practiced but perilous readiness that tempts action against her caution.
+    status_before_event: On alert at NAS North Island
+    status_after_event: On alert, engines hot for scramble
+  - object_uuid: object_ad55238fadcf
+    description_of_involvement: Two Fast Attack Sea Wolfs off Japan, Tomahawk-armed,
+      positioned as escort muscle; Nancy's rundown casts them as bristling safeguard
+      in rescue surge, amplifying war brink subtext in room's charged debate.
+    status_before_event: Stationed off Japan with missiles loaded
+    status_after_event: Holding station, ready to surge
+  - object_uuid: object_491ac95ae7af
+    description_of_involvement: 50 Tomahawks per Sea Wolf invoked by Nancy as lethal
+      backstop in rescue blueprint; their primed warheads underscore escalation peril,
+      transforming dialogue from query to hair-trigger command threshold.
+    status_before_event: Loaded in Sea Wolf tubes off Japan
+    status_after_event: Primed for potential launch
+  - object_uuid: object_f515ac530652
+    description_of_involvement: Life-size monitors and screens blaze with data as
+      staff hustle; Leo and Nancy circle them en route to maps, their glow etching
+      crisis pulse—visual heartbeat amplifying verbal dread and operational frenzy.
+    status_before_event: Active with naval feeds
+    status_after_event: Active, monitoring ongoing
+  location_involvements:
+  - location_uuid: location_14ebf172b5ad
+    description_of_involvement: Yellow Sea pinned as Portland's hostile operational
+      theater, its swells conjured in Nancy's briefing as drift-risk zone kissing
+      North Korean threat; infuses debate with immediate geopolitical peril and rescue
+      urgency.
+    observed_atmosphere: Hostile, treacherous depths laced with war shadows
+    functional_role: Crisis operational zone
+    symbolic_significance: Brink of superpower flashpoint
+    access_restrictions: ' patrolled by adversaries'
+    key_environmental_details:
+    - Churning swells
+    - Proximity to North Korean coast
+  - location_uuid: location_c043705487e0
+    description_of_involvement: Map-highlighted as Portland's final ping—60 miles
+      west of Seoul—hammering home vulnerability near enemy lines; Leo's shock pivots
+      room focus, mapping dread into tangible extraction coordinates.
+    observed_atmosphere: Perilously exposed silence
+    functional_role: Last known position marker
+    symbolic_significance: Knife-edge proximity to provocation
+    access_restrictions: ''
+    key_environmental_details:
+    - Map glow
+    - Strategic choke point
+  - location_uuid: location_2c0bb913cc5f
+    description_of_involvement: Ballast Point invoked as DSRV launch cradle in San
+      Diego; Nancy's chain starts here, projecting West Coast steel into Pacific peril,
+      concretizing rescue feasibility amid restraint pleas.
+    observed_atmosphere: Taut alert under salt haze
+    functional_role: Rescue staging vanguard
+    symbolic_significance: ''
+    access_restrictions: Military restricted
+    key_environmental_details:
+    - Rugged flanks
+    - Sealed hatches
+  - location_uuid: location_dae93aedb7bf
+    description_of_involvement: NAS North Island flagged for Starlifter standby, yawning
+      holds for crews; amplifies Nancy's practiced drill narrative, runway thrum echoing
+      in verbal blueprint of salvation surge.
+    observed_atmosphere: Urgent tarmac hum
+    functional_role: Air transport staging
+    symbolic_significance: ''
+    access_restrictions: Naval air station secure
+    key_environmental_details:
+    - Wide wings locked
+    - Engine hunger
+  - location_uuid: location_d89dafb50230
+    description_of_involvement: Waters off Japan house Sea Wolfs as missile escort;
+      Nancy closes rescue loop here, shadowed depths veiling Tomahawk fangs that spike
+      escalation stakes in Leo's unyielding push.
+    observed_atmosphere: Stealthy briny tension
+    functional_role: Escort staging area
+    symbolic_significance: Latent strike shadow
+    access_restrictions: ''
+    key_environmental_details:
+    - Churning swells
+    - Hidden tubes
+  organization_involvements:
+  - organization_uuid: organization_45ce0488ec2e
+    description_of_involvement: Pac Fleet's commander triggers alarm via Nancy, detailing
+      Portland blackout and unleashing asset cascade—DSRVs, Starlifters, Sea Wolfs—to
+      forge disciplined response; embodies naval hierarchy funneling grit into White
+      House brink.
+    active_representation: Via commander relay and primed assets
+    power_dynamics: Subordinate to White House but wielding operational muscle
+    organizational_goals:
+    - Restore contact or extract Portland crew
+    - Maintain readiness without premature escalation
+    influence_mechanisms:
+    - Asset mobilization
+    - Intel relay chain
+    institutional_impact: Tests Pacific command's crisis protocol under Presidential
+      glare
+    internal_dynamics: Chain of command snapping into high alert
+  - organization_uuid: organization_8879f9656011
+    description_of_involvement: North Korean Navy looms as spectral stalker via 'hostile
+      waters' and 'somebody sitting on top'; inferred destroyer pursuit forces quiet,
+      spiking Nancy's restraint pitch and Leo's urgency in shadow-play brinkmanship.
+    active_representation: Through implied patrols and threat
+    power_dynamics: Antagonistic regional predator constraining US ops
+    organizational_goals:
+    - Detect and shadow US sub incursions
+    - Provoke or deter Yellow Sea presence
+    influence_mechanisms:
+    - Maritime pursuit pressure
+    - Geopolitical intimidation
+    institutional_impact: Amplifies war threshold in US calculus
+    internal_dynamics: ''
+- fabula_uuid: cand_evt_scene_b20eb319a0c93fed_2
+  global_id: null
+  title: Leo Abruptly Halts Bartlet's NH Filing Trip with U.S.S. Portland Silence
+  description: 'As Bartlet banters playfully with Charlie about helicopter safety
+    and insists on personally filing for the New Hampshire ballot as a ''profound
+    statement about democracy,'' Leo interrupts to deliver dire news: the nuclear
+    submarine U.S.S. Portland, lurking off North Korea''s coast with 137 crew and
+    classified gear, has gone radio silent despite constant monitoring. Bartlet immediately
+    sheds his coat, cancels the trip, and snaps into command mode. This pivot contrasts
+    campaign ritual with existential military peril, launching a high-stakes ticking-clock
+    crisis that reframes Bartlet''s re-election burdens.'
+  episode_uuid: ep_sea_ser_the_west_wing_s03_e06
+  scene_sequence: 2
+  sequence_in_scene: 2
+  key_dialogue:
+  - 'LEO: "Yeah. You can''t go."'
+  - 'BARTLET: "Why not?"'
+  - 'LEO: "[pause] We don''t have it right now."'
+  - 'BARTLET: "What does \"we don''t have it\" mean?"'
+  - 'LEO: "We do not."'
+  - 'BARTLET: "Yeah. I think I''ll go ahead and cancel that trip, Leo. If only to
+    stick around to see how this sounds worse than it really is."'
+  is_flashback: false
+  location_uuid: null
+  theme_uuids:
+  - theme_6f101ab17cc5
+  arc_uuids: []
+  participations:
+  - character_uuid: agent_e9dd0ae36832
+    emotional_state: Amused and relaxed, delighting in banter amid routine duty
+    goals:
+    - Prepare President for timely New Hampshire trip
+    - Maintain playful rapport to ease pre-departure tension
+    what_happened: Charlie readies Bartlet's departure items in the Oval Office, engaging
+      in light-hearted banter about propeller safety and height jokes, deftly catching
+      the tossed book, affirming the democracy statement, and assisting with the coat—his
+      laughter and retorts punctuating the ritual before crisis erupts.
+    observed_status: Charlie readies Bartlet's departure items in the Oval Office,
+      engaging in light-hearted banter about propeller safety and height jokes, deftly
+      catching the tossed book, affirming the democracy statement, and assisting with
+      the coat—his laughter and retorts punctuating the ritual before crisis erupts.
+    beliefs:
+    - Personal rituals like ballot filing embody democratic ideals
+    - Humor defuses everyday White House pressures
+    observed_traits:
+    - cheeky
+    - loyal
+    - humorous
+    importance: primary
+  - character_uuid: agent_45883b79da77
+    emotional_state: playful then alarmed and decisive
+    goals:
+    - Personally file for the New Hampshire ballot to make a profound democratic statement
+    - Address the emerging submarine crisis by canceling travel and preparing for
+      response
+    what_happened: Banters playfully with Charlie about Marine One propeller safety
+      and height jokes, insists on personally filing the New Hampshire ballot as a
+      profound statement about democracy, throws a book to Charlie, puts on coat preparing
+      to leave, then upon Leo's news sheds coat, cancels trip, and snaps into command
+      mode looking toward the helicopter.
+    observed_status: Banters playfully with Charlie about Marine One propeller safety
+      and height jokes, insists on personally filing the New Hampshire ballot as a
+      profound statement about democracy, throws a book to Charlie, puts on coat preparing
+      to leave, then upon Leo's news sheds coat, cancels trip, and snaps into command
+      mode looking toward the helicopter.
+    beliefs: []
+    observed_traits: []
+    importance: primary
+  - character_uuid: agent_d11a3b6bb6e4
+    emotional_state: Grave apprehension veiled by professional steadiness
+    goals:
+    - Halt President's departure to address submarine blackout
+    - Reframe personal ritual within military threat context
+    what_happened: Leo enters from his office as Bartlet dons coat, queries departure
+      with sarcastic echo of 'profound democracy,' then delivers urgent intel on U.S.S.
+      Portland's radio silence off North Korea despite constant monitoring, advises
+      canceling trip and convening meetings, and commits to staying—his measured tone
+      masking crisis gravity.
+    observed_status: Leo enters from his office as Bartlet dons coat, queries departure
+      with sarcastic echo of 'profound democracy,' then delivers urgent intel on U.S.S.
+      Portland's radio silence off North Korea despite constant monitoring, advises
+      canceling trip and convening meetings, and commits to staying—his measured tone
+      masking crisis gravity.
+    beliefs:
+    - Commander-in-Chief must prioritize national security over campaign optics
+    - Submarine silence demands immediate high-level response
+    observed_traits:
+    - sardonic
+    - resolute
+    - pragmatic
+    importance: primary
+  - character_uuid: agent_a3bcc1260116
+    emotional_state: Stoic neutrality amid escalating tension
+    goals:
+    - Secure Oval Office perimeter during transition
+    - Enable seamless access control for executive movements
+    what_happened: The Secret Service Agent stationed outside the Oval Office opens
+      the glass door as Bartlet prepares to exit for the helicopter, then promptly
+      closes it after Leo's crisis revelation—silent sentinel facilitating the pivot
+      from departure to lockdown without intrusion.
+    observed_status: The Secret Service Agent stationed outside the Oval Office opens
+      the glass door as Bartlet prepares to exit for the helicopter, then promptly
+      closes it after Leo's crisis revelation—silent sentinel facilitating the pivot
+      from departure to lockdown without intrusion.
+    beliefs:
+    - Protocol preserves presidential focus in flux
+    - Doors seal command sanctity from external eyes
+    observed_traits:
+    - vigilant
+    - professional
+    - discreet
+    importance: primary
+  object_involvements:
+  - object_uuid: object_33edf7da8109
+    description_of_involvement: U.S.S. Portland dominates as Leo's dire revelation—the
+      Sea Wolf-class nuclear sub with 137 crew and classified gear has gone radio
+      silent in North Korean waters despite radar, sonar, and satellite tracking—triggering
+      instant command pivot, its ghostly absence launching the episode's geopolitical
+      thriller spine.
+    status_before_event: Last tracked in waters off North Korea
+    status_after_event: Unlocated and silent, prompting crisis response
+  - object_uuid: object_9dce299efd0d
+    description_of_involvement: Bartlet removes his glasses at the scene's outset,
+      pressing close to the glass door for an unfiltered crisis stare toward the portico
+      and helicopter—shedding scholarly pretense for raw vigilance, the lenses glinting
+      as a prop marking the shift from banter to peril awareness.
+    status_before_event: Worn by Bartlet inside Oval Office
+    status_after_event: Removed and set aside in Oval Office
+  - object_uuid: object_c55083407f68
+    description_of_involvement: Bartlet hurls the leather-bound New Hampshire ballot
+      filing book through the air to Charlie, who catches it mid-flight; it embodies
+      the 'profound statement about democracy' ritual, transforming playful campaign
+      sacrament into a harbinger tossed aside as submarine news derails the trip.
+    status_before_event: Held by Bartlet in Oval Office
+    status_after_event: Caught and held by Charlie in Oval Office
+  - object_uuid: object_80acebcbf1bc
+    description_of_involvement: Marine One idles visibly on the portico outside the
+      Oval's glass door, its rotors still and propellers the subject of safety banter;
+      Bartlet's final gaze toward it post-cancellation symbolizes aborted democratic
+      outing, rotors' hush mirroring the sub's silence in narrative irony.
+    status_before_event: Idling on White House portico, ready for departure
+    status_after_event: Still idling unused on portico as trip cancels
+  location_involvements:
+  - location_uuid: location_19497469db61
+    description_of_involvement: Viewed from the sunlit portico through Oval glass,
+      it frames the waiting Marine One and chopper rotors central to safety jabs;
+      Bartlet's post-news gaze outward underscores aborted departure, arches' shadows
+      veiling vulnerability as crisis yanks ritual into geopolitical vertigo.
+    observed_atmosphere: Ominously anticipatory with rotor hush and daylight glare
+    functional_role: Staging ground for canceled helicopter exodus
+    symbolic_significance: Threshold between domestic pomp and external threats
+    access_restrictions: Heavily secured by Secret Service
+    key_environmental_details:
+    - Shadowed arches under sunlight
+    - Idling Marine One blades slicing tension air
+  organization_involvements:
+  - organization_uuid: organization_8879f9656011
+    description_of_involvement: The North Korean Navy looms implicitly as the hostile
+      context for U.S.S. Portland's blackout—Leo's intel pins the sub 'in the waters
+      off North Korea' last heard, heightening peril of detection or pursuit, reframing
+      Oval levity into brinkmanship calculus amid re-election shadows.
+    active_representation: Invoked via geopolitical threat in military briefing
+    power_dynamics: Antagonistic predator stalking U.S. naval asset
+    organizational_goals:
+    - Monitor and potentially interdict U.S. submarine incursions
+    - Exploit radio silence for territorial advantage
+    influence_mechanisms:
+    - Maritime patrols enforcing coastal sovereignty
+    - Escalatory silence forcing U.S. response dilemmas
+    institutional_impact: Amplifies White House crisis calculus, linking military
+      ops to campaign optics
+    internal_dynamics: ''
+- fabula_uuid: cand_evt_scene_fa409d78aee08395_1
+  global_id: null
+  title: C.J. Dances in Triumph Over Rival's 'Why President?' Flop
+  description: In her office, with 'I'm Too Sexy' blasting, C.J. banters playfully
+    with Carol, dissecting the song's hyperbolic bravado as a celebration of feeling
+    'too good.' Carol then reveals the Majority Leader's disastrous Cleveland interview
+    gaffe—stammering 'I really don't know' when asked why he wants to be President,
+    a 'train wreck' moment. Amid campaign pressures and scandals, C.J. demands transcripts
+    and erupts into a solo victory dance, a buoyant release that spotlights her savvy,
+    contrasts heavier crises, and thematically echoes Bartlet's own struggles with
+    presidential purpose.
+  episode_uuid: ep_sea_ser_the_west_wing_s03_e06
+  scene_sequence: 3
+  sequence_in_scene: 3
+  key_dialogue:
+  - 'CAROL: The majority leader was doing local news in Cleveland last night and they
+    asked him why he wants to be President. / C.J.: What did he say? / CAROL: I really
+    don''t know.'
+  - 'C.J.: Wait a second. Are you telling me he got the question and he- / CAROL:
+    It was a train wreck. I recognized all the words, but-'
+  - 'C.J.: Get me the transcripts.'
+  is_flashback: false
+  location_uuid: null
+  theme_uuids:
+  - theme_f6e6e00bd943
+  arc_uuids:
+  - arc_ee8c52e2f18a
+  participations:
+  - character_uuid: agent_3ee4436e9a6d
+    emotional_state: Casual pragmatism laced with amused satisfaction at the scoop
+    goals:
+    - Brief C.J. on critical breaking wires
+    - Promptly deliver requested transcripts for exploitation
+    - Maintain rhythmic office support amid crises
+    what_happened: Enters C.J.'s office casually, matches banter on song as feel-good
+      hyperbole, pivots to reveal wire news of Majority Leader's gaffe with vivid
+      'train wreck' detail, agrees promptly to fetch transcripts, then exits as C.J.
+      dances.
+    observed_status: Enters C.J.'s office casually, matches banter on song as feel-good
+      hyperbole, pivots to reveal wire news of Majority Leader's gaffe with vivid
+      'train wreck' detail, agrees promptly to fetch transcripts, then exits as C.J.
+      dances.
+    beliefs:
+    - News wires deliver unvarnished political gold
+    - Boss's instincts for spin demand instant backup
+    - Leaders' stumbles fuel the opposition's fire
+    observed_traits:
+    - pragmatic
+    - loyal
+    - wryly efficient
+    - informative
+    importance: primary
+  - character_uuid: agent_e282d4d880da
+    emotional_state: Flustered paralysis and humiliated evasion in the recounted moment
+    goals:
+    - Articulate ambitions credibly (failed)
+    - Navigate interview without self-sabotage (thwarted)
+    what_happened: Invoked through Carol's recounting of his Cleveland interview fiasco,
+      where he stammers 'I really don't know' to direct question on presidential ambitions,
+      branded a 'train wreck' that ignites White House glee.
+    observed_status: Invoked through Carol's recounting of his Cleveland interview
+      fiasco, where he stammers 'I really don't know' to direct question on presidential
+      ambitions, branded a 'train wreck' that ignites White House glee.
+    beliefs:
+    - Ambition requires clear rationale (unconvincingly held)
+    - Media scrutiny demands poised deflection (collapsed)
+    observed_traits:
+    - flustered
+    - indecisive
+    - exposed
+    importance: primary
+  object_involvements:
+  - object_uuid: object_f49d6ca8c0c9
+    description_of_involvement: Carol references the gaffe from wires, prompting C.J.'s
+      urgent demand for these transcripts of the Majority Leader's Cleveland interview,
+      capturing his verbatim stammered 'I really don't know'—transforming raw scandal
+      into weaponized press ammo amid re-election battles.
+    status_before_event: Held implicitly in press office files or wires, unreviewed
+      by C.J.
+    status_after_event: Ordered for immediate retrieval and delivery to C.J. for dissection.
+  location_involvements:
+  - location_uuid: location_b02b2ea4e555
+    description_of_involvement: Recalled as the Midwestern flashpoint for the Majority
+      Leader's local news implosion, where studio lights expose his ambition's void—'I
+      really don't know' echoing through wires to detonate White House levity, contrasting
+      coastal crises with heartland humiliation.
+    observed_atmosphere: Tense, unforgiving studio glare amplifying verbal catastrophe
+      remotely
+    functional_role: Remote origin of scandalous soundbite fueling present glee
+    symbolic_significance: Embodies Republican vaulting hunger crashing in stammered
+      silence
+    access_restrictions: ''
+    key_environmental_details:
+    - Local news studio microphones turning guillotine
+    - Midwestern voter fury pulsing in the recount
+  organization_involvements: []
+- fabula_uuid: cand_evt_scene_49c0efbbfcffaa27_1
+  global_id: null
+  title: Oliver Confronts Injured Abbey with Malpractice Witness List, Brands Her
+    Bartlet's Top Liability
+  description: 'Oliver enters his office to find First Lady Abbey Bartlet in a wheelchair,
+    her ankle in a cast from a hiking mishap. Their banter—sardonic jabs at her injury
+    and his worldview—swiftly escalates as he reveals a witness list from Oversight
+    Democrats naming her past malpractice suit patients (Hawking, Alva, Bluestein,
+    Nording). Dismissing her defenses as routine for doctors, Oliver delivers the
+    gut-punch verdict: Abbey herself is President Bartlet''s greatest liability. This
+    revelation, laced with Oliver''s relentless legal scrutiny and Abbey''s rising
+    nervousness, marks a turning point, weaponizing her medical history against the
+    administration amid re-election scandals.'
+  episode_uuid: ep_sea_ser_the_west_wing_s03_e06
+  scene_sequence: 4
+  sequence_in_scene: 4
+  key_dialogue:
+  - |-
+    OLIVER: "Jonathan Hawking, Nina Alva, Maurice Bluestein, Jessica Nording. Do these names mean anything to you?"
+    ABBEY: "Where'd you get them?"
+  - |-
+    ABBEY: "Those are some patients involved in malpractice suits against me."
+    OLIVER: "How many were there altogether?"
+  - |-
+    OLIVER: "From this witness list, it is becoming clear to me what the President's biggest liability is going to be."
+    ABBEY: "What?"
+    OLIVER: "You."
+  is_flashback: false
+  location_uuid: null
+  theme_uuids:
+  - theme_d3c2e728f42e
+  arc_uuids:
+  - arc_0b15236d320d
+  participations:
+  - character_uuid: agent_5347405cc1de
+    emotional_state: nervous
+    goals:
+    - deflect banter and focus on business
+    - downplay past malpractice suits as nuisance cases
+    what_happened: waits in wheelchair with cast on ankle, banters back defensively
+      about her injury, expresses nervousness upon hearing witness names, and defends
+      her malpractice suits as routine
+    observed_status: waits in wheelchair with cast on ankle, banters back defensively
+      about her injury, expresses nervousness upon hearing witness names, and defends
+      her malpractice suits as routine
+    beliefs: []
+    observed_traits: []
+    importance: primary
+  - character_uuid: agent_45883b79da77
+    emotional_state: Defensive bravado fracturing into raw nervousness and shock
+    goals:
+    - Deflect personal scrutiny through banter and normalization
+    - Minimize perceived threat of past suits to protect administration
+    what_happened: Waits rigidly in wheelchair with casted ankle, parries Oliver's
+      barbs with defiant retorts about her injury and his worldview, grows visibly
+      nervous upon hearing witness names, defends suits as routine doctor life before
+      absorbing the liability verdict in stunned silence.
+    observed_status: Waits rigidly in wheelchair with casted ankle, parries Oliver's
+      barbs with defiant retorts about her injury and his worldview, grows visibly
+      nervous upon hearing witness names, defends suits as routine doctor life before
+      absorbing the liability verdict in stunned silence.
+    beliefs:
+    - Malpractice claims are commonplace occupational hazards for physicians
+    - Her loyalty shields Bartlet from fallout
+    observed_traits:
+    - defiant
+    - combative
+    - nervous
+    - resilient
+    importance: primary
+  - character_uuid: agent_6565547b0ddc
+    emotional_state: Sardonic detachment veiling unyielding professional resolve
+    goals:
+    - Confront Abbey with irrefutable evidence of her vulnerability
+    - Force acknowledgment of her role as administration liability to prepare defenses
+    what_happened: Enters office casually, launches sardonic jabs at Abbey's ankle
+      injury and nature metaphors while moving behind desk to sit, then opens file
+      to recite witness names from Oversight Democrats, culminating in declaring her
+      the President's biggest liability with dispassionate precision.
+    observed_status: Enters office casually, launches sardonic jabs at Abbey's ankle
+      injury and nature metaphors while moving behind desk to sit, then opens file
+      to recite witness names from Oversight Democrats, culminating in declaring her
+      the President's biggest liability with dispassionate precision.
+    beliefs:
+    - Abbey's malpractice history endangers Bartlet's presidency
+    - Ethical precision trumps political deflection in legal crises
+    observed_traits:
+    - sardonic
+    - relentless
+    - dispassionate
+    - precise
+    importance: primary
+  object_involvements:
+  - object_uuid: object_45942802ca10
+    description_of_involvement: Abbey hunches in the wheelchair throughout the exchange,
+      its locked wheels and gleaming ankle cast amplifying her physical immobility
+      and vulnerability as Oliver circles verbally, transforming it from mere prop
+      into a stark emblem of exposure amid his escalating legal assault on her past.
+    status_before_event: Stationary in counsel's office with Abbey seated, left ankle
+      securely casted
+    status_after_event: Unchanged, still positioned centrally with Abbey gripped to
+      armrests in tension
+  - object_uuid: object_0b334ab7ef27
+    description_of_involvement: Oliver cracks open the file's covers at his desk,
+      gripping and reading aloud the ink-black names—Hawking, Alva, Bluestein, Nording—from
+      Oversight Democrats, wielding it as a surgical weapon to dismantle Abbey's defenses
+      and deliver the liability verdict, shifting banter to brutal revelation.
+    status_before_event: Closed file resting on or near Oliver's desk, unread
+    status_after_event: Opened and actively referenced on desk during confrontation
+  location_involvements:
+  - location_uuid: location_ea18444386b4
+    description_of_involvement: Daylight slashes through blinds into this White House
+      legal bunker, framing Abbey's wheelchair immobility as Oliver enters, banters
+      from behind his desk, and unleashes the witness list ambush—transforming the
+      space into a pressure cooker where personal history ignites political peril.
+    observed_atmosphere: Sardonic tension escalating to visceral confrontation under
+      harsh daylight
+    functional_role: Isolated arena for White House Counsel's unsparing interrogation
+      of First Lady
+    symbolic_significance: Fortified legal vivisection chamber exposing administration's
+      intimate liabilities
+    access_restrictions: Highly restricted to Counsel and invited principals like
+      First Lady
+    key_environmental_details:
+    - Daylight cutting through blinds for stark illumination
+    - Desk serving as Oliver's command post
+    - Confined space amplifying verbal claustrophobia
+  organization_involvements:
+  - organization_uuid: organization_1c5022f2207b
+    description_of_involvement: Invoked as source of the damning witness list naming
+      Abbey's malpractice patients, their partisan probe fuels Oliver's ambush, dragging
+      her medical ghosts into re-election crosshairs and crystallizing her as Bartlet's
+      deadliest vulnerability in this counsel's office showdown.
+    active_representation: Through procured witness list brandished by White House
+      Counsel
+    power_dynamics: External congressional predators exerting subpoena leverage over
+      executive insiders
+    organizational_goals:
+    - Eviscerate Bartlet administration via First Lady's ethical exposures
+    - Amplify scandals through public airing of private medical disputes
+    influence_mechanisms:
+    - Witness lists and committee subpoenas
+    - Partisan oversight amplifying re-election pressures
+    institutional_impact: Intensifies House committee assaults, fracturing White House
+      solidarity amid legacy threats
+    internal_dynamics: ''
+- fabula_uuid: cand_evt_scene_07ec1c582fd57c7d_1
+  global_id: null
+  title: Toby Spars with Tawny Over NEA Cuts as Sam Pitches Soft Money Ads
+  description: In the Mural Room, Toby Ziegler confronts Congresswoman Tawny Cryer,
+    who weaponizes examples of provocative, NEA-funded art—like chocolate-covered
+    nudity and dung cheeseburgers—to justify the Appropriations Committee's plan to
+    dissolve the Endowment and redirect funds to national parks. Sam Seaborn interrupts,
+    urgently pulling Toby aside to reveal Bruno's push for unregulated soft money
+    issue ads, with Toby noting the NEA's modest $105 million budget. C.J. briefly
+    presses Sam on crafting Bartlet's 'why President?' answer amid a rival's gaffe.
+    This multi-threaded clash excavates ideological purity versus pragmatic politics,
+    escalating campaign strategy tensions and foreshadowing deeper rifts.
+  episode_uuid: ep_sea_ser_the_west_wing_s03_e06
+  scene_sequence: 5
+  sequence_in_scene: 5
+  key_dialogue:
+  - 'TAWNY CRYER: "Throne," by Rain Billings, a photographer from North Dakota whose
+    work consists of Polaroids of his dysfunctional family in the bathroom.'
+  - 'TOBY: You''re dissolving the Endowment to give more money to national parks?'
+  - 'SAM: He thinks it''s time to run ads. TOBY: With what? SAM: Soft money.'
+  is_flashback: false
+  location_uuid: null
+  theme_uuids:
+  - theme_6f101ab17cc5
+  - theme_d0e8d2276021
+  arc_uuids:
+  - arc_c28c894f6e08
+  participations:
+  - character_uuid: agent_7c84dea6dcc9
+    emotional_state: Exasperated defensiveness laced with principled resolve
+    goals:
+    - Defend NEA's existence and budget
+    - Grasp and respond to emerging soft-money campaign threat
+    what_happened: Enters Mural Room to confront Tawny, listens to her litany of provocative
+      NEA art, defends the Endowment by questioning its dissolution for parks, allows
+      Sam to pull him into hallway for soft-money briefing, notes the modest budget.
+    observed_status: Enters Mural Room to confront Tawny, listens to her litany of
+      provocative NEA art, defends the Endowment by questioning its dissolution for
+      parks, allows Sam to pull him into hallway for soft-money briefing, notes the
+      modest budget.
+    beliefs:
+    - NEA's $105 million is negligible yet vital for arts
+    - Cultural funding merits protection over partisan cuts
+    observed_traits:
+    - defensive
+    - principled
+    - frustrated
+    importance: primary
+  - character_uuid: agent_77f1a613709a
+    emotional_state: Urgently focused amid divided priorities
+    goals:
+    - Brief Toby on soft-money ad risks
+    - Rejoin NEA debate post-huddle
+    what_happened: Knocks and interrupts Mural Room debate, greets Tawny lightly,
+      urgently pulls Toby to hallway revealing Bruno's soft-money ads and NEA's $105
+      million scale, returns to room where C.J. intercepts him on campaign gaffe.
+    observed_status: Knocks and interrupts Mural Room debate, greets Tawny lightly,
+      urgently pulls Toby to hallway revealing Bruno's soft-money ads and NEA's $105
+      million scale, returns to room where C.J. intercepts him on campaign gaffe.
+    beliefs:
+    - NEA budget too small to fight over amid bigger threats
+    - Campaign must navigate ethical soft-money loopholes
+    observed_traits:
+    - urgent
+    - pragmatic
+    - witty
+    importance: primary
+  - character_uuid: agent_83a05177ce60
+    emotional_state: Righteously indignant and aggressively persuasive
+    goals:
+    - Convince Toby of NEA's unworthiness
+    - Mobilize support for dissolution and park fund redirection
+    what_happened: Waits in Mural Room, aggressively recites shocking NEA-funded art
+      pieces like dung cheeseburgers and chocolate nudes to Toby and Sam, attributes
+      push to her committee, briefly engages Sam on another artist.
+    observed_status: Waits in Mural Room, aggressively recites shocking NEA-funded
+      art pieces like dung cheeseburgers and chocolate nudes to Toby and Sam, attributes
+      push to her committee, briefly engages Sam on another artist.
+    beliefs:
+    - Taxpayer funds should not subsidize obscenity
+    - Appropriations Committee overrides individual tastes for fiscal reform
+    observed_traits:
+    - confrontational
+    - moralistic
+    - unyielding
+    importance: primary
+  object_involvements: []
+  location_involvements:
+  - location_uuid: location_176bbdde9893
+    description_of_involvement: Serves as the primary battleground where Toby enters
+      to face Tawny's assault on NEA via lurid art examples, debate intensifies until
+      Sam's interruption pulls focus to hallway, embodying White House policy skirmishes
+      amid presidential murals symbolizing enduring ideals under siege.
+    observed_atmosphere: Charged with ideological tension and verbal fireworks
+    functional_role: debate site
+    symbolic_significance: Historical witness to clashing cultural and fiscal visions
+    access_restrictions: Private White House meeting space for scheduled confrontations
+    key_environmental_details:
+    - Daylight filtering through windows
+    - Presidential murals looming overhead
+  - location_uuid: location_4c8dc85f049d
+    description_of_involvement: Brief refuge for Sam and Toby's hushed sidebar on
+      soft-money ads, contrasting Mural Room's clamor with urgent whispers that heighten
+      campaign fractures, transitioning staff between public clashes and private strategy
+      amid West Wing's bustling arteries.
+    observed_atmosphere: Hushed and conspiratorial with echoing footsteps
+    functional_role: private discussion spot
+    symbolic_significance: Corridor of tactical pivots amid broader crises
+    access_restrictions: Restricted to White House staff circulation
+    key_environmental_details:
+    - Fluorescent lighting overhead
+    - Linoleum floors amplifying movement
+  organization_involvements:
+  - organization_uuid: organization_bb95c6c37934
+    description_of_involvement: Weaponized by Tawny Cryer as she invokes its authority
+      to dismantle NEA over funded grotesqueries, positioning it as fiscal arbiter
+      redirecting arts dollars to parks, escalating partisan budget wars into White
+      House residence.
+    active_representation: Through member Tawny Cryer articulating committee stance
+    power_dynamics: Exerting budgetary leverage to challenge administration priorities
+    organizational_goals:
+    - Eliminate NEA funding entirely
+    - Reallocate $105 million to national parks
+    influence_mechanisms:
+    - Public outrage over provocative art
+    - Congressional appropriations authority
+    institutional_impact: Highlights congressional override of executive cultural
+      policy
+    internal_dynamics: ''
+  - organization_uuid: organization_5b4151b060f9
+    description_of_involvement: Thrust into crossfire as Tawny catalogs its funded
+      abominations—from dung cheeseburgers to chocolate nudes—prompting Toby's defense
+      of its $105 million mission, framing it as embattled symbol of artistic freedom
+      versus fiscal conservatism.
+    active_representation: Referenced via specific grant-funded projects and leadership
+    power_dynamics: Defenseless under Appropriations threat of dissolution
+    organizational_goals:
+    - Preserve modest $105 million budget
+    - Sustain nationwide artist support
+    influence_mechanisms:
+    - Institutional grants to provocative works
+    - Endowment chairmanship legacy
+    institutional_impact: Exposes vulnerability of federal arts patronage to partisan
+      revulsion
+    internal_dynamics: ''
+- fabula_uuid: cand_evt_scene_6b3e0f6916464850_1
+  global_id: null
+  title: Oliver Exposes Abbey's Malpractice Suit and Ethical Violations as Political
+    Ammunition
+  description: 'In the White House Counsel''s office, Oliver Babish methodically confronts
+    First Lady Abbey Bartlet with her past malpractice suit over a fatal post-CABG
+    infection and her undocumented prescriptions of medication to President Bartlet,
+    violating medical ethics and state laws. Abbey defends the clinical inevitability
+    and dismissed case, but Oliver reveals the House Government Reform Committee''s
+    strategy: lacking a direct case against the President, they target her to taint
+    him by association, distracting from governance and the campaign. This revelation
+    pierces Abbey''s resilience, amplifying personal stakes amid administration scandals
+    and forcing her to confront sacrificial vulnerabilities.'
+  episode_uuid: ep_sea_ser_the_west_wing_s03_e06
+  scene_sequence: 6
+  sequence_in_scene: 6
+  key_dialogue:
+  - 'OLIVER: "It''s an investigation of you too, Abbey. You had prescriptions filled
+    in your own name, which you administered daily to the President."'
+  - 'ABBEY: "How is this the purview of House Government Reform and Oversight?" OLIVER:
+    "It''s not."'
+  - 'ABBEY: "And in going after me, they can taint the President." OLIVER: "Sure."
+    ABBEY: "Distract him from governing. Distract the public''s attention from the
+    campaign." OLIVER: "Yeah."'
+  is_flashback: false
+  location_uuid: null
+  theme_uuids:
+  - theme_d3c2e728f42e
+  arc_uuids: []
+  participations:
+  - character_uuid: agent_5347405cc1de
+    emotional_state: defensive
+    goals:
+    - justify her clinical decisions and dismissed lawsuit
+    - understand and connect the investigation to threats against the President
+    what_happened: defends her medical actions in the malpractice case and undocumented
+      prescriptions, questions and deduces the political implications of the investigation
+    observed_status: defends her medical actions in the malpractice case and undocumented
+      prescriptions, questions and deduces the political implications of the investigation
+    beliefs: []
+    observed_traits: []
+    importance: primary
+  - character_uuid: agent_45883b79da77
+    emotional_state: Defensive resolve cracking into alarmed realization
+    goals:
+    - Minimize her actions' severity through clinical rationales
+    - Uncover and counter the investigation's true anti-President agenda
+    what_happened: Wheelchair-bound, defensively recounts CABG malpractice details,
+      patient's infection inevitability, and dismissed ruling by Judge Nguyen; justifies
+      undocumented prescriptions before deducing and voicing the Committee's political
+      strategy to target her and taint the President.
+    observed_status: Wheelchair-bound, defensively recounts CABG malpractice details,
+      patient's infection inevitability, and dismissed ruling by Judge Nguyen; justifies
+      undocumented prescriptions before deducing and voicing the Committee's political
+      strategy to target her and taint the President.
+    beliefs:
+    - Her medical decisions were clinically sound despite complications
+    - Political investigators lack legitimate jurisdiction over her ethics
+    observed_traits:
+    - defiant
+    - analytical
+    - protective
+    importance: primary
+  - character_uuid: agent_6565547b0ddc
+    emotional_state: Calm precision masking urgent protectiveness for administration
+    goals:
+    - Compel Abbey to fully disclose and confront her legal vulnerabilities
+    - Strategically prepare her against congressional entrapment tactics
+    what_happened: Methodically initiates confrontation by naming Arlene Niederlander,
+      presses on malpractice details and undocumented prescriptions to President Bartlet,
+      flatly reveals House Committee's lack of jurisdiction yet aggressive strategy,
+      maintaining clipped, unyielding delivery to force clarity.
+    observed_status: Methodically initiates confrontation by naming Arlene Niederlander,
+      presses on malpractice details and undocumented prescriptions to President Bartlet,
+      flatly reveals House Committee's lack of jurisdiction yet aggressive strategy,
+      maintaining clipped, unyielding delivery to force clarity.
+    beliefs:
+    - Abbey's ethical breaches provide exploitable leverage against the President
+    - Unvarnished truth is essential to dismantle political scandals
+    observed_traits:
+    - dispassionate
+    - precise
+    - relentless
+    importance: primary
+  - character_uuid: agent_18df0c583007
+    emotional_state: Historical grief fueling legal persistence
+    goals:
+    - Exact justice for husband's alleged negligent death
+    what_happened: Invoked by name as the widow who filed wrongful death malpractice
+      suit against Abbey over CABG patient's fatal infection, her offstage anguish
+      weaponized in Babish's interrogation.
+    observed_status: Invoked by name as the widow who filed wrongful death malpractice
+      suit against Abbey over CABG patient's fatal infection, her offstage anguish
+      weaponized in Babish's interrogation.
+    beliefs:
+    - Abbey's surgery caused preventable fatality
+    observed_traits:
+    - vindictive
+    importance: primary
+  - character_uuid: agent_71475f7e3d1a
+    emotional_state: Detached judicial neutrality
+    goals:
+    - Uphold legal standards in malpractice dismissal
+    what_happened: Referenced as New York Superior Court Judge who dismissed Niederlander's
+      malpractice suit against Abbey, his ruling cited as defensive bulwark now scrutinized
+      in ethical context.
+    observed_status: Referenced as New York Superior Court Judge who dismissed Niederlander's
+      malpractice suit against Abbey, his ruling cited as defensive bulwark now scrutinized
+      in ethical context.
+    beliefs:
+    - Insufficient evidence linked Abbey to patient's death
+    observed_traits:
+    - judicious
+    importance: primary
+  object_involvements: []
+  location_involvements:
+  - location_uuid: location_ea18444386b4
+    description_of_involvement: Daylit office with blinds slicing light serves as
+      stark legal bunker for Babish's surgical grilling of wheelchair-bound Abbey,
+      amplifying isolation and vulnerability; every revelation echoes in confined
+      space, heightening personal and political stakes without escape.
+    observed_atmosphere: Taut and clinical, like a courtroom deposition under fluorescent
+      scrutiny
+    functional_role: Secure venue for high-stakes legal counseling and confrontation
+    symbolic_significance: Fortress of unflinching truth amid White House scandal
+      siege
+    access_restrictions: Restricted to Counsel and First Lady; utmost White House
+      confidentiality
+    key_environmental_details:
+    - Daylight slashing through blinds
+    - Intimate, enclosed space fostering verbal sparring
+  organization_involvements:
+  - organization_uuid: organization_1614791d856e
+    description_of_involvement: House Government Reform and Oversight Committee cast
+      as ruthless antagonist lacking direct criminal case against President; Babish
+      exposes their strategy to prosecute Abbey's ethics breaches, tainting him by
+      association to distract governance and campaign amid re-election scandals.
+    active_representation: Invoked through Babish's exposition of their investigative
+      tactics
+    power_dynamics: Exploiting jurisdictional overreach to pressure administration
+      vulnerabilities
+    organizational_goals:
+    - Develop prosecutable case against Abbey to implicate President
+    - Divert White House focus from policy and elections
+    influence_mechanisms:
+    - Partisan investigations amplifying personal scandals
+    - Guilt-by-association political weaponry
+    institutional_impact: Erodes executive ethical armor, fueling congressional oversight
+      as campaign sabotage
+    internal_dynamics: ''
+  - organization_uuid: organization_4ca9f0e971b5
+    description_of_involvement: American Medical Association's code of ethics weaponized
+      by Babish as core violation in Abbey's spousal prescriptions to President, transcending
+      clinical acts into familial conflict-of-interest breach fueling multi-state
+      probes and congressional taint.
+    active_representation: Cited as authoritative ethical standard breached by Abbey
+    power_dynamics: Imposes unyielding professional norms challenging Abbey's defenses
+    organizational_goals:
+    - Enforce physician conduct prohibiting familial prescribing
+    - Uphold documentation and expertise standards
+    influence_mechanisms:
+    - Ethical codes amplifying legal scrutiny
+    - Professional taboo arming political attacks
+    institutional_impact: Exposes First Lady's dual roles as physician and spouse
+      to institutional judgment
+    internal_dynamics: ''
+  - organization_uuid: organization_52b8abc3c054
+    description_of_involvement: New York Superior Court positioned via Judge Nguyen's
+      dismissal of Niederlander's suit as Abbey's judicial shield against negligence
+      claims, yet Babish reframes it within broader ethical failures now exploited
+      by federal probes.
+    active_representation: Referenced through its judge's prior ruling on malpractice
+    power_dynamics: Provides defensive precedent undermined by escalating scandals
+    organizational_goals:
+    - Adjudicate malpractice claims on evidentiary merits
+    - Dismiss unsubstantiated suits per legal standards
+    influence_mechanisms:
+    - Judicial rulings as bulwarks or ammunition
+    - State-level decisions feeding federal ethics battles
+    institutional_impact: Highlights clash between state judicial closure and congressional
+      revival
+    internal_dynamics: ''
+- fabula_uuid: cand_evt_scene_da8e4bb2582c599d_1
+  global_id: null
+  title: Sam Probes Bruno and Connie's Campaign Strategy Clarity
+  description: In the Roosevelt Room, idealist Sam Seaborn challenges pragmatic strategists
+    Bruno Gianelli and Connie Tate on their grasp of the campaign's core discussion—likely
+    soft-money tactics clashing with Bartlet's principles. Sam repeatedly questions
+    their understanding, met by Bruno's curt affirmation and defensive pivot to vouch
+    for Connie, abruptly shutting down the inquiry. This terse standoff reveals Sam's
+    distrust of their win-at-all-costs approach, exposing team fractures and power
+    imbalances that foreshadow deeper strategic clashes amid re-election pressures.
+  episode_uuid: ep_sea_ser_the_west_wing_s03_e06
+  scene_sequence: 7
+  sequence_in_scene: 7
+  key_dialogue:
+  - 'SAM: "You know what we''re talking about, here?"'
+  - 'BRUNO: "Sure."'
+  - 'SAM: "Do you know what we''re talking about, here?"'
+  - 'BRUNO: "She knows what we''re"'
+  is_flashback: false
+  location_uuid: null
+  theme_uuids: []
+  arc_uuids:
+  - arc_5b93f71a75fb
+  participations:
+  - character_uuid: agent_77f1a613709a
+    emotional_state: Intensely skeptical, bordering on accusatory distrust
+    goals:
+    - Verify Bruno and Connie's authentic understanding of soft-money tactics
+    - Expose any superficial grasp that risks ethical compromise
+    what_happened: Sam leans in aggressively, firing repeated direct questions at
+      Bruno to gauge his true comprehension of the campaign finance loophole, his
+      tone laced with doubt, physically dominating the terse exchange while eyeing
+      Connie's silent presence.
+    observed_status: Sam leans in aggressively, firing repeated direct questions at
+      Bruno to gauge his true comprehension of the campaign finance loophole, his
+      tone laced with doubt, physically dominating the terse exchange while eyeing
+      Connie's silent presence.
+    beliefs:
+    - True strategy demands ethical clarity beyond legal loopholes
+    - Pragmatists like Bruno prioritize victory over Bartlet's principles
+    observed_traits:
+    - skeptical
+    - idealistic
+    - interrogative
+    - persistent
+    importance: primary
+  - character_uuid: agent_9e93c2fbbca0
+    emotional_state: Defensive impatience masking strategic confidence
+    goals:
+    - Deflect Sam's ethical probing to maintain campaign momentum
+    - Affirm team expertise and solidarity against idealism
+    what_happened: Bruno responds with clipped affirmation to Sam's first probe, then
+      defensively vouches for Connie mid-sentence on the second, his abrupt pivot
+      signaling irritation and a desire to shut down the line of questioning in the
+      strategy meeting.
+    observed_status: Bruno responds with clipped affirmation to Sam's first probe,
+      then defensively vouches for Connie mid-sentence on the second, his abrupt pivot
+      signaling irritation and a desire to shut down the line of questioning in the
+      strategy meeting.
+    beliefs:
+    - Winning requires exploiting every legal edge, semantics be damned
+    - Sam's idealism is a luxury the re-election can't afford
+    observed_traits:
+    - defensive
+    - pragmatic
+    - ' curt'
+    - protective
+    importance: primary
+  - character_uuid: agent_d3afc08a6374
+    emotional_state: Calm assurance under scrutiny
+    goals:
+    - Support Bruno's pitch without engaging Sam's challenge directly
+    - Uphold the soft-money strategy's viability
+    what_happened: Connie sits silently in the meeting, her presence invoked by Bruno's
+      incomplete defense as the target of Sam's implied doubt, her composure underscoring
+      the pragmatists' united front amid the verbal sparring.
+    observed_status: Connie sits silently in the meeting, her presence invoked by
+      Bruno's incomplete defense as the target of Sam's implied doubt, her composure
+      underscoring the pragmatists' united front amid the verbal sparring.
+    beliefs:
+    - Buckley loopholes enable necessary aggressive campaigning
+    - Ethical qualms hinder electoral victory
+    observed_traits:
+    - composed
+    - pragmatic
+    - observant
+    importance: primary
+  object_involvements: []
+  location_involvements:
+  - location_uuid: location_0de36049a71e
+    description_of_involvement: The Roosevelt Room serves as the intimate battleground
+      for this high-stakes strategy clash, its daylight-flooded confines amplifying
+      the verbal tension as Sam corners Bruno and Connie over campaign ethics. It
+      frames the power imbalance, confining idealist skepticism within the White House's
+      pragmatic re-election war room.
+    observed_atmosphere: Terse and electrically charged with unspoken distrust
+    functional_role: Private venue for confidential campaign finance deliberations
+    symbolic_significance: Microcosm of White House fractures between principle and
+      power
+    access_restrictions: Restricted to senior campaign strategists
+    key_environmental_details:
+    - Daylight streaming in, heightening exposure
+    - Compact table setup fostering direct confrontation
+  organization_involvements: []
+- fabula_uuid: cand_evt_scene_543218e060c9ac7a_0
+  global_id: null
+  title: Bartlet Litany of Electoral Victories, Affirmed by Leo
+  description: 'In the Oval Office, amid escalating crises like the silent U.S.S.
+    Portland and campaign scandals, President Bartlet emphatically recites his unblemished
+    electoral record—''Every single election... Legislature, house, governor''—as
+    Chief of Staff Leo delivers terse, unwavering affirmations: ''Yes'' and ''Yeah.''
+    This ritualistic exchange excavates their deep trust and shared history, bolstering
+    Bartlet''s resolve, countering leadership doubts, and reinforcing his decisiveness
+    for the submarine standoff while serving as a character anchor in the season''s
+    mounting pressures.'
+  episode_uuid: ep_sea_ser_the_west_wing_s03_e06
+  scene_sequence: 8
+  sequence_in_scene: 8
+  key_dialogue:
+  - |-
+    BARTLET: "Every single election..."
+    LEO: "Yes."
+  - |-
+    BARTLET: "Legislature, house, governor."
+    LEO: "Yeah."
+  is_flashback: false
+  location_uuid: null
+  theme_uuids: []
+  arc_uuids: []
+  participations:
+  - character_uuid: agent_45883b79da77
+    emotional_state: determined
+    goals:
+    - assert political record to bolster resolve
+    - demonstrate decisiveness amid submarine crisis and leadership doubts
+    what_happened: 'emphatically recites his unblemished electoral record: ''Every
+      single election... Legislature, house, governor'''
+    observed_status: 'emphatically recites his unblemished electoral record: ''Every
+      single election... Legislature, house, governor'''
+    beliefs: []
+    observed_traits: []
+    importance: primary
+  - character_uuid: agent_d11a3b6bb6e4
+    emotional_state: Unshakable confidence masking crisis strain
+    goals:
+    - Reinforce Bartlet's self-assurance in his record
+    - Solidify their partnership amid mounting pressures
+    what_happened: Leo delivers terse, unwavering affirmations 'Yes' and 'Yeah' in
+      direct response to Bartlet's electoral recitation, his presence a steady counterpoint
+      in the Oval Office, embodying silent solidarity through minimal verbal reinforcement.
+    observed_status: Leo delivers terse, unwavering affirmations 'Yes' and 'Yeah'
+      in direct response to Bartlet's electoral recitation, his presence a steady
+      counterpoint in the Oval Office, embodying silent solidarity through minimal
+      verbal reinforcement.
+    beliefs:
+    - Bartlet's electoral perfection is unassailable
+    - Shared history guarantees mutual strength in adversity
+    observed_traits:
+    - stoic
+    - loyal
+    - concise
+    - resolute
+    importance: primary
+  object_involvements: []
+  location_involvements: []
+  organization_involvements: []
+- fabula_uuid: cand_evt_scene_a0cd777a2f903e8d_0
+  global_id: null
+  title: Josh Dictates Scathing Letter, Overrides Donna's Objections
+  description: Frustrated Josh groans while dictating a sarcastically polite letter
+    to Donna, mocking a congressman's chartered bus of fifty protesting seniors that
+    escalated to Park Police intervention. He details the refueled bus and souvenir
+    security tags with biting irony. Donna interjects twice to temper the tone, but
+    Josh curtly demands she type it verbatim and sign it. C.J.'s interruption reinforces
+    his insistence; Donna reveals seniors ruined her keyboard with Wheatena, prompting
+    an uneasy computer swap. This exposes Josh's stress-fueled abrasiveness, straining
+    their dynamic amid campaign chaos and petty disruptions.
+  episode_uuid: ep_sea_ser_the_west_wing_s03_e06
+  scene_sequence: 9
+  sequence_in_scene: 9
+  key_dialogue:
+  - 'JOSH: New paragraph. As always, your thoughtfulness is greatly appreciated. Also
+    appreciated was the visit to the White House by some fifty of your constituents
+    on board a bus that was chartered by your office. Their complaints were respectfully
+    heard by my assistant and I regret that matters escalated to the point where she
+    felt it necessary to call in the Park Police. You''ll be happy to know that their
+    bus has been refueled and that the seniors are on their way home, each having
+    been allowed to keep their security tags as a souvenir.'
+  - 'DONNA: Look... JOSH: Signed... DONNA: I was just... JOSH: Do it.'
+  - 'DONNA: One of them poured Wheatena on the keyboard.'
+  is_flashback: false
+  location_uuid: null
+  theme_uuids: []
+  arc_uuids: []
+  participations:
+  - character_uuid: agent_2589955c763e
+    emotional_state: Frustrated irritability masking deeper campaign stress
+    goals:
+    - Vent irritation through mocking letter to congressman
+    - Quickly resolve C.J.'s interruption to refocus on priorities
+    what_happened: Josh groans while dictating a sarcastically polite letter detailing
+      the seniors' bus protest and Park Police callout, curtly overrides Donna's softening
+      attempts twice, authorizes her computer use after Wheatena revelation, and follows
+      C.J. into hallway for brief exchange on Majority Leader gaffe.
+    observed_status: Josh groans while dictating a sarcastically polite letter detailing
+      the seniors' bus protest and Park Police callout, curtly overrides Donna's softening
+      attempts twice, authorizes her computer use after Wheatena revelation, and follows
+      C.J. into hallway for brief exchange on Majority Leader gaffe.
+    beliefs:
+    - Petty disruptions like seniors' protest deserve sharp retaliation
+    - Staff must execute directives without question under pressure
+    observed_traits:
+    - sarcastic
+    - abrasive
+    - frustrated
+    - authoritative
+    importance: primary
+  object_involvements:
+  - object_uuid: object_f04217cc6cd5
+    description_of_involvement: Donna's notepad serves as immediate note-taking tool
+      during Josh's heated dictation of the sarcastic letter, capturing every ironic
+      detail of the bus protest, Park Police involvement, refueling, and souvenir
+      tags, bridging the keyboard failure and underscoring frantic office improvisation.
+    status_before_event: Intact, in Donna's possession in Josh's office
+    status_after_event: Filled with dictated letter text, still with Donna
+  - object_uuid: object_3374883d968c
+    description_of_involvement: Seniors' Wheatena is invoked as the spiteful substance
+      poured on Donna's keyboard by protesters, ruining it and forcing the computer
+      swap; it amplifies the petty chaos of the bus incident, fueling Josh's sarcasm
+      and exposing staff vulnerabilities.
+    status_before_event: Residue on Donna's damaged keyboard
+    status_after_event: Cause of ongoing disruption, indirectly prompting tech exchange
+  - object_uuid: object_3f9f304c81d9
+    description_of_involvement: Congressman's chartered bus is central to Josh's dictation,
+      mocked as vehicle for fifty seniors' White House protest that escalated chaotically;
+      its refueling post-police intervention adds biting irony, embodying trivial
+      distractions plaguing the campaign.
+    status_before_event: Referenced as past event, refueled and departed
+    status_after_event: Embedded in letter as sarcastic punchline
+  - object_uuid: object_97b40189203a
+    description_of_involvement: Protesting seniors' souvenir security tags are highlighted
+      in Josh's dictation as absurd keepsakes allowed post-police standoff, sharpening
+      the letter's mockery and underscoring the ridiculousness of the disruption in
+      the high-stakes West Wing environment.
+    status_before_event: Kept by seniors as souvenirs from earlier incident
+    status_after_event: Featured in dictated letter for ironic emphasis
+  - object_uuid: object_ee5d0c634167
+    description_of_involvement: Josh's computer is thrust toward Donna as replacement
+      after her keyboard sabotage, enabling her to type the verbatim letter; the awkward
+      location swap heightens tension, symbolizing disrupted routines and Josh's reluctant
+      accommodation amid escalating frustrations.
+    status_before_event: Functional on Josh's desk
+    status_after_event: In Donna's use, Josh displaced to her station temporarily
+  location_involvements:
+  - location_uuid: location_4c8dc85f049d
+    description_of_involvement: West Wing hallway becomes site of C.J. pulling Josh
+      from dictation chaos for hushed strategy talk on Majority Leader gaffe and campaign
+      answer, providing semi-private pivot from office friction to broader political
+      maneuvering, with footsteps echoing amid fluorescent buzz.
+    observed_atmosphere: Tense and conspiratorial, amplifying urgency of whispered
+      exchanges
+    functional_role: Private discussion area for staff recalibration
+    symbolic_significance: Artery of West Wing power, stripping public armor for raw
+      strategy
+    access_restrictions: Restricted to senior staff, semi-public corridor
+    key_environmental_details:
+    - Fluorescent lighting casting shadows
+    - Linoleum floors echoing footsteps
+  organization_involvements:
+  - organization_uuid: organization_8332c679ff56
+    description_of_involvement: Park Police are referenced in Josh's dictation as
+      responders called by Donna to defuse the seniors' bus protest at the White House
+      perimeter, their intervention enabling refueling and dispersal with souvenir
+      tags, framing institutional efficiency against congressional stunt gone awry.
+    active_representation: Via referenced protocol and actions in letter dictation
+    power_dynamics: Exercising authority to restore order over disruptive civilians
+    organizational_goals:
+    - Maintain White House security perimeter
+    - Facilitate safe dispersal of protesters
+    influence_mechanisms:
+    - Direct intervention and escort
+    - Enforcement of federal access protocols
+    institutional_impact: Reinforces boundary between political theater and protected
+      governance
+    internal_dynamics: ''
+- fabula_uuid: cand_evt_scene_a0cd777a2f903e8d_1
+  global_id: null
+  title: C.J. Curbs Josh's Gloating, Uncovers Submarine Policy Void
+  description: 'C.J. interrupts Josh mid-dictation in his office, pulling him into
+    the hallway to discuss the Majority Leader''s fumbling response to a question
+    on the Bartlet administration''s submarine policy. Josh revels in sarcastic mockery
+    of the gaffe, but C.J. sharply rebukes him, insisting they avoid public gloating
+    to maintain strategic poise. Pressing for their prepared answer, she exposes the
+    alarming reality: no response exists, amplifying the crisis''s urgency and revealing
+    Josh''s impulsiveness against C.J.''s disciplined foresight. This beat heightens
+    staff vulnerabilities amid the U.S.S. Portland standoff, serving as a revelation
+    of unpreparedness that propels plot tension.'
+  episode_uuid: ep_sea_ser_the_west_wing_s03_e06
+  scene_sequence: 9
+  sequence_in_scene: 10
+  key_dialogue:
+  - 'JOSH: Yeah. And he just kept on diggin''. ''We have the greatest technolgy of
+    any people of any country in the world along with the greatest--not the greatest,
+    but very serious problems confronting our people, and I want to be President in
+    order to focus on these problems in a way that uses the energy of our people to
+    move us forward, basically.'
+  - 'C.J.: Listen, the best thing we can do is to take a step back. We can''t be seen
+    to be gloating.'
+  - 'C.J.: What is it? JOSH: Do we have one? C.J.: Josh!'
+  is_flashback: false
+  location_uuid: null
+  theme_uuids:
+  - theme_6f101ab17cc5
+  - theme_f6e6e00bd943
+  arc_uuids: []
+  participations:
+  - character_uuid: agent_2589955c763e
+    emotional_state: Sarcastic glee curdling into evasive discomfort under pressure
+    goals:
+    - Savor and mock political rival's stumble privately
+    - Deflect C.J.'s demand for policy readiness without full admission
+    what_happened: Josh pauses dictation to Donna, swaps workstations uncomfortably
+      after Wheatena mishap reveal, follows C.J. to hallway; mock-quotes Majority
+      Leader's gaffe with exaggerated sarcasm, deflects gloating rebuke slyly, then
+      squirms admitting no prepared submarine policy answer exists, promising to check
+      amid her frustration.
+    observed_status: Josh pauses dictation to Donna, swaps workstations uncomfortably
+      after Wheatena mishap reveal, follows C.J. to hallway; mock-quotes Majority
+      Leader's gaffe with exaggerated sarcasm, deflects gloating rebuke slyly, then
+      squirms admitting no prepared submarine policy answer exists, promising to check
+      amid her frustration.
+    beliefs:
+    - Gloating over enemies boosts morale in high-stakes campaigns
+    - They'll scramble a decent answer if pushed, no need to panic yet
+    observed_traits:
+    - sarcastic
+    - impulsive
+    - evasive
+    - frustrated
+    importance: primary
+  - character_uuid: agent_e282d4d880da
+    emotional_state: Exposed vulnerability through ridiculed incompetence
+    goals:
+    - Position self as presidential contender
+    - Deflect scrutiny on administration's submarine handling
+    what_happened: Senate Majority Leader referenced off-screen via Josh's verbatim
+      mockery of his prior night's fumbling submarine policy answer—rambling technobabble
+      devolving into vague presidential ambition—serving as foil that highlights White
+      House vulnerabilities when C.J. demands their counter-response.
+    observed_status: Senate Majority Leader referenced off-screen via Josh's verbatim
+      mockery of his prior night's fumbling submarine policy answer—rambling technobabble
+      devolving into vague presidential ambition—serving as foil that highlights White
+      House vulnerabilities when C.J. demands their counter-response.
+    beliefs:
+    - Technological superiority excuses policy focus shifts
+    - Vague optimism masks substantive weaknesses
+    observed_traits:
+    - inarticulate
+    - evasive
+    - ambitious
+    importance: primary
+  object_involvements:
+  - object_uuid: object_f04217cc6cd5
+    description_of_involvement: Donna's notepad captures Josh's ongoing dictation
+      of the snarky seniors' letter amid C.J.'s interruption, symbolizing disrupted
+      routine work; its use underscores office chaos spilling into the urgent policy
+      pull-aside, bridging petty distractions with high-stakes submarine crisis.
+    status_before_event: In Donna's hand, actively receiving dictation
+    status_after_event: Still with Donna, dictation paused as she shifts to computer
+  - object_uuid: object_3374883d968c
+    description_of_involvement: Seniors' Wheatena invoked as culprit for Donna's keyboard
+      ruin, prompting computer swap just before hallway exit; this petty sabotage
+      anecdote punctuates the interrupt, contrasting trivial office mayhem with the
+      grave submarine policy void exposed moments later.
+    status_before_event: Residue on Donna's damaged keyboard
+    status_after_event: Unchanged, but its effects force workflow shift
+  - object_uuid: object_3f9f304c81d9
+    description_of_involvement: Congressman's chartered bus referenced in Josh's halted
+      dictation—refueled post-police intervention—its chaotic seniors' protest fuels
+      the letter's sarcasm, framing the interruption as collision of campaign pettiness
+      with Leader's gaffe and policy urgency.
+    status_before_event: Off-site, having dispersed seniors home
+    status_after_event: Same, merely recounted in paused missive
+  - object_uuid: object_97b40189203a
+    description_of_involvement: Protesting seniors' souvenir security tags mocked
+      in dictation as ironic keepsakes from police standoff; their mention in the
+      interrupted letter ties grassroots disruption to the hallway's elite political
+      reckoning, underscoring absurdities pressuring staff focus.
+    status_before_event: In seniors' possession as souvenirs
+    status_after_event: Unchanged, referenced for satirical bite
+  - object_uuid: object_ee5d0c634167
+    description_of_involvement: Josh's computer becomes fallback workstation after
+      Donna's keyboard sabotage; uncomfortable location swap occurs precisely as C.J.
+      drags Josh away, its handover amplifying physical awkwardness that mirrors the
+      verbal evasion in hallway policy grilling, heightening comedic tension amid
+      crisis.
+    status_before_event: On Josh's desk, idle during his dictation oversight
+    status_after_event: Now at Donna's position, ready for her typing
+  location_involvements:
+  - location_uuid: location_4c8dc85f049d
+    description_of_involvement: West Wing hallway serves as semi-private conduit for
+      C.J.'s urgent pull of Josh from office chaos, hosting terse exchange on Leader's
+      gaffe—its shadowed confinement strips away public facades, forcing raw admission
+      of policy gap amid fluorescent hum and echoing footsteps.
+    observed_atmosphere: Tense and hushed, amplifying whispered strategy and frustration
+    functional_role: Semi-private discussion area for crisis triage
+    symbolic_significance: Corridor of vulnerability where campaign armor cracks
+    access_restrictions: Restricted to senior staff, quick pivots from bullpen
+    key_environmental_details:
+    - Fluorescent buzz overhead
+    - Linoleum under rushed steps
+    - Proximity to offices for sudden drags
+  organization_involvements:
+  - organization_uuid: organization_8332c679ff56
+    description_of_involvement: Park Police referenced in Josh's interrupted dictation
+      as responders to seniors' bus protest escalation at White House perimeter; their
+      intervention—refueling bus, allowing souvenir tags—exemplifies institutional
+      bulwark against chaos, invoked to heighten letter's sarcasm amid pivot to submarine
+      policy void.
+    active_representation: Through recounted actions by summoned officers
+    power_dynamics: Exercising authority to enforce perimeter security over disruptive
+      constituents
+    organizational_goals:
+    - Maintain White House security protocols
+    - De-escalate public disturbances efficiently
+    influence_mechanisms:
+    - Direct intervention and dispersal
+    - Provision of courtesy services like refueling
+    institutional_impact: Reinforces federal vigilance amid political pressures
+    internal_dynamics: ''
+- fabula_uuid: cand_evt_scene_1211f03710c5677f_1
+  global_id: null
+  title: Tawny Scorches NEA Mission; Toby's Fiery Defense Exposes Ideological Rift
+  description: In the Mural Room, Appropriations member Tawny Cryer lambasts the NEA's
+    mission to subsidize artists as wasteful, citing controversial works like 'Piss
+    Christ' and explicit art by Lisa Mulberry to justify cuts. Toby Ziegler erupts
+    in passionate defense, clarifying the Endowment funds art via institutions, not
+    individuals, and decrying taxpayer vetoes on disliked expenditures. His frustration
+    peaks with a guttural noise as Tawny persists, underscoring deep administration
+    divides on cultural policy versus fiscal pragmatism. Sam interrupts, pulling Toby
+    aside to pivot to campaign finance loopholes, marking this clash as a microcosm
+    of broader re-election tensions and Toby's unyielding idealism.
+  episode_uuid: ep_sea_ser_the_west_wing_s03_e06
+  scene_sequence: 10
+  sequence_in_scene: 11
+  key_dialogue:
+  - "TAWNY: \"No. The problem is that Oakenwood thinks that the mission of the NEA\
+    \ is to subsidize artists in this country.\" \nTOBY: \"The mission of the NEA\
+    \ IS to subsidize artists in this country.\""
+  - "TOBY: \"In fact, it's not to subsidize artists - it's to subsidize art.\" \n\
+    TAWNY: \"Go ahead and explain that distinction in Topeka.\""
+  - 'TAWNY: "Lisa Mulberry, 28, specializes in placing genitalia in anatomically incorrect..."'
+  is_flashback: false
+  location_uuid: null
+  theme_uuids:
+  - theme_d0e8d2276021
+  arc_uuids: []
+  participations:
+  - character_uuid: agent_7c84dea6dcc9
+    emotional_state: Building frustration exploding into raw, guttural outrage
+    goals:
+    - Clarify and protect NEA's structural mission
+    - Repel Tawny's cultural revulsion with broader principles
+    what_happened: Defends NEA passionately by clarifying institutional grants over
+      individual ones eliminated by Republicans, admits personal aversion to modern
+      art but rejects veto principle, erupts in loud guttural frustration noise before
+      Sam pulls him outside.
+    observed_status: Defends NEA passionately by clarifying institutional grants over
+      individual ones eliminated by Republicans, admits personal aversion to modern
+      art but rejects veto principle, erupts in loud guttural frustration noise before
+      Sam pulls him outside.
+    beliefs:
+    - Government must fund art without content-based vetoes
+    - Institutional funding shields expression from politics
+    observed_traits:
+    - principled
+    - combative
+    - idealistic
+    importance: primary
+  - character_uuid: agent_77f1a613709a
+    emotional_state: Calm urgency overriding the room's chaos
+    goals:
+    - Extract Toby from NEA debate for campaign finance pivot
+    - Enlighten on Supreme Court loophole for strategic response
+    what_happened: Enters abruptly with 'Hi,' interrupts Tawny's Mulberry critique
+      as Toby noises in frustration, politely excuses them, pulls Toby outside to
+      urgently dissect Buckley v. Valeo loophole on soft money ads.
+    observed_status: Enters abruptly with 'Hi,' interrupts Tawny's Mulberry critique
+      as Toby noises in frustration, politely excuses them, pulls Toby outside to
+      urgently dissect Buckley v. Valeo loophole on soft money ads.
+    beliefs:
+    - Legal precedents like Buckley enable pragmatic election tactics
+    - Re-election threats demand immediate staff realignment
+    observed_traits:
+    - decisive
+    - pragmatic
+    - composed
+    importance: primary
+  - character_uuid: agent_83a05177ce60
+    emotional_state: Smug sarcasm veiling partisan zeal
+    goals:
+    - Discredit NEA subsidies via scandalous examples
+    - Pressure Toby into conceding taxpayer veto rights
+    what_happened: Aggressively challenges Toby on NEA funding, cites Oakenwood's
+      museum backdoor and Lisa Mulberry's explicit art mid-sentence, invokes Topeka
+      voters' disdain, persists sarcastically despite interruption, embodying fiscal
+      hawk assault.
+    observed_status: Aggressively challenges Toby on NEA funding, cites Oakenwood's
+      museum backdoor and Lisa Mulberry's explicit art mid-sentence, invokes Topeka
+      voters' disdain, persists sarcastically despite interruption, embodying fiscal
+      hawk assault.
+    beliefs:
+    - NEA wastes funds on offensive art
+    - Voters in heartland reject such expenditures
+    observed_traits:
+    - sarcastic
+    - aggressive
+    - unyielding
+    importance: primary
+  - character_uuid: agent_32b71aff4962
+    emotional_state: Neutral (mentioned only)
+    goals:
+    - Sustain provocative art funding covertly
+    what_happened: Invoked by Tawny as Toby's friend who bypassed NEA cuts via direct
+      museum donations for controversial exhibits, absent but weaponized in the argument.
+    observed_status: Invoked by Tawny as Toby's friend who bypassed NEA cuts via direct
+      museum donations for controversial exhibits, absent but weaponized in the argument.
+    beliefs:
+    - Private channels protect expression from public veto
+    observed_traits:
+    - resourceful
+    - loyal
+    importance: primary
+  - character_uuid: agent_395a19e07d4b
+    emotional_state: Neutral (mentioned only)
+    goals:
+    - Push artistic boundaries through explicit installations
+    what_happened: Cited by Tawny as 28-year-old artist of anatomically incorrect
+      genitalia works displayed via NEA-funded museums, her explicit art fueling the
+      subsidy indictment before interruption.
+    observed_status: Cited by Tawny as 28-year-old artist of anatomically incorrect
+      genitalia works displayed via NEA-funded museums, her explicit art fueling the
+      subsidy indictment before interruption.
+    beliefs:
+    - Art thrives on unflinching anatomical exploration
+    observed_traits:
+    - provocative
+    - avant-garde
+    importance: primary
+  object_involvements:
+  - object_uuid: object_fae1a93faba2
+    description_of_involvement: Sam invokes the 1976 U.S. Supreme Court ruling post-interruption,
+      wielding its 'magic words' loophole—express advocacy terms like 'elect' or 'defeat'—to
+      justify unregulated issue ads in soft-money strategy, yanking debate from cultural
+      policy to electoral pragmatism and exposing White House tensions.
+    status_before_event: Abstract legal precedent, known but dormant in context
+    status_after_event: Activated as tactical weapon in hallway discussion
+  location_involvements:
+  - location_uuid: location_176bbdde9893
+    description_of_involvement: Serves as crucible for explosive NEA debate where
+      Tawny and Toby clash ideologically amid presidential murals, tension mounting
+      through rapid-fire barbs until Toby's roar and Sam's extraction shifts action
+      outside, embodying White House culture-war fault line.
+    observed_atmosphere: Heated, claustrophobic with ideological thunder echoing off
+      muraled walls
+    functional_role: Arena for partisan policy confrontation
+    symbolic_significance: Encapsulates administration's fractured ideals under re-election
+      siege
+    access_restrictions: Restricted to senior staff and congressional visitors
+    key_environmental_details:
+    - Oppressive murals of past presidents
+    - Daylight filtering through windows amplifying verbal intensity
+  - location_uuid: location_f8025f386930
+    description_of_involvement: Tawny hurls Topeka as rhetorical spear, mocking NEA
+      distinctions' irrelevance to heartland voters who prioritize roads over 'Piss
+      Christ,' grounding abstract policy in visceral populist revolt.
+    observed_atmosphere: Evoked as folksy, bewildered diner heartland
+    functional_role: Exemplar of taxpayer backlash
+    symbolic_significance: Represents flyover country disdain for elite cultural subsidies
+    access_restrictions: ''
+    key_environmental_details:
+    - Imagined grain silos and Main Street diners
+    - Weathered plains evoking fiscal austerity
+  organization_involvements:
+  - organization_uuid: organization_932c8e9b23b1
+    description_of_involvement: Toby cites Republicans' prior NEA defunding push that
+      eliminated individual grants, framing them as repeated assailants on the Endowment,
+      fueling Tawny's current crusade and broader culture-war narrative.
+    active_representation: Via Tawny as Appropriations proxy and historical actions
+    power_dynamics: Wielding congressional budget axe over executive defenders
+    organizational_goals:
+    - Slash NEA for fiscal purity
+    - Exploit cultural scandals for voter appeal
+    influence_mechanisms:
+    - Past legislative victories on grants
+    - Partisan rhetoric amplifying taxpayer revulsion
+    institutional_impact: Locks policy in stasis, mirroring synopsis' congressional
+      barricades
+    internal_dynamics: ''
+  - organization_uuid: organization_5b4151b060f9
+    description_of_involvement: NEA ignites the core confrontation as Tawny decries
+      its artist-subsidy mission via controversial indirect funding, Toby defends
+      its institutional art nurturing role against past Republican defunding attempts,
+      spotlighting fiscal vs. expressive freedom chasm.
+    active_representation: Through policy debate and cited grants/programs
+    power_dynamics: Under congressional siege, defended by White House idealists
+    organizational_goals:
+    - Sustain nationwide artist support via institutions
+    - Preserve budget from cultural outrage cuts
+    influence_mechanisms:
+    - Indirect museum grants evading direct vetoes
+    - Historical mission invoking global arts legacy
+    institutional_impact: Exposes partisan razor-edge on public arts funding amid
+      re-election
+    internal_dynamics: ''
+  - organization_uuid: organization_d7b53268dfb5
+    description_of_involvement: Sam leverages the Court's Buckley v. Valeo precedent
+      outside the room, its loophole on 'express terms' advocacy unlocking soft-money
+      issue ads, abruptly redirecting from NEA fray to campaign survival imperatives.
+    active_representation: Through invoked 1976 ruling as legal loophole
+    power_dynamics: Supreme authority enabling pragmatic circumvention of finance
+      laws
+    organizational_goals:
+    - Define electoral speech boundaries
+    - Permit unregulated issue advocacy
+    influence_mechanisms:
+    - Judicial precedent shaping ad regulations
+    - Loophole exploitation in political strategy
+    institutional_impact: Empowers re-election maneuvers against smears in synopsis
+      context
+    internal_dynamics: ''
+- fabula_uuid: cand_evt_scene_1211f03710c5677f_2
+  global_id: null
+  title: Sam Interrupts NEA Clash to Unveil Buckley v. Valeo Loophole
+  description: Amid Toby's mounting frustration as Tawny cites obscene NEA-funded
+    art like Lisa Mulberry's genitalia exhibit, Sam abruptly interrupts, greeting
+    with a casual 'Hi' before pulling Toby outside the Mural Room. Toby preempts by
+    noting soft money can't fund primary ads, but Sam redirects to the Buckley v.
+    Valeo Supreme Court ruling, highlighting its loophole for 'issue ads' that evade
+    restrictions by avoiding 'magic words' expressly advocating a candidate's election
+    or defeat. This pivot exposes Sam's strategic pragmatism clashing with idealist
+    reservations, shifting the debate from cultural policy to a viable, ethically
+    fraught campaign counterattack against smears.
+  episode_uuid: ep_sea_ser_the_west_wing_s03_e06
+  scene_sequence: 10
+  sequence_in_scene: 12
+  key_dialogue:
+  - 'SAM: "Excuse us."'
+  - 'TOBY: "Look, we can''t spend soft money on a primary ad anyway, so..."'
+  - 'SAM: "No, he''s passing the magic words test."'
+  - 'TOBY: "What magic words test?"'
+  - 'SAM: "The US Supreme Court, Buckley v. Valeo. The court created a loophole by
+    ruling only apply to communications that in express terms advocate the election
+    or defeat of a clearly-identified candidate for federal office."'
+  is_flashback: false
+  location_uuid: null
+  theme_uuids:
+  - theme_d0e8d2276021
+  arc_uuids: []
+  participations:
+  - character_uuid: agent_7c84dea6dcc9
+    emotional_state: Boiling frustration edged with weary pragmatism
+    goals:
+    - Defend NEA's institutional mission against personal taste attacks
+    - Clarify legal limits on soft-money ads in re-election strategy
+    what_happened: Toby Ziegler emits a loud, primal noise of raw frustration at Tawny's
+      art citations, then follows Sam outside the Mural Room, preemptively dismissing
+      soft-money use for primaries before probing the 'magic words test' in their
+      urgent hallway pivot.
+    observed_status: Toby Ziegler emits a loud, primal noise of raw frustration at
+      Tawny's art citations, then follows Sam outside the Mural Room, preemptively
+      dismissing soft-money use for primaries before probing the 'magic words test'
+      in their urgent hallway pivot.
+    beliefs:
+    - Government should subsidize art without taxpayer vetoes
+    - Campaign finance rules demand ethical precision
+    observed_traits:
+    - Volcanically passionate
+    - Principled defender
+    - Quick to frustration
+    importance: primary
+  - character_uuid: agent_77f1a613709a
+    emotional_state: Composed determination masking tactical impatience
+    goals:
+    - Extract Toby from NEA deadlock for campaign finance breakthrough
+    - Leverage Supreme Court precedent for ethically flexible counterattacks
+    what_happened: Sam Seaborn strides in with a nonchalant 'Hi,' interrupts Tawny
+      mid-citation, excuses Toby and himself smoothly, then outside methodically explains
+      the Buckley v. Valeo loophole's 'magic words' evasion for issue ads, injecting
+      strategic urgency into the fray.
+    observed_status: Sam Seaborn strides in with a nonchalant 'Hi,' interrupts Tawny
+      mid-citation, excuses Toby and himself smoothly, then outside methodically explains
+      the Buckley v. Valeo loophole's 'magic words' evasion for issue ads, injecting
+      strategic urgency into the fray.
+    beliefs:
+    - Legal loopholes enable necessary pragmatic responses to smears
+    - Issue ads without express advocacy skirt restrictions effectively
+    observed_traits:
+    - Calmly strategic
+    - Pragmatically incisive
+    - Interruption-savvy
+    importance: primary
+  - character_uuid: agent_83a05177ce60
+    emotional_state: Triumphantly dismissive, savoring her cultural assault
+    goals:
+    - Discredit NEA by highlighting provocative art examples
+    - Pressure Toby into conceding taxpayer veto on subsidies
+    what_happened: Tawny Cryer aggressively begins citing Lisa Mulberry's obscene
+      genitalia exhibit to attack NEA funding via institutional backdoors, persisting
+      briefly before graciously allowing Sam and Toby to exit with a curt 'Sure,'
+      maintaining her partisan offensive amid the heated exchange.
+    observed_status: Tawny Cryer aggressively begins citing Lisa Mulberry's obscene
+      genitalia exhibit to attack NEA funding via institutional backdoors, persisting
+      briefly before graciously allowing Sam and Toby to exit with a curt 'Sure,'
+      maintaining her partisan offensive amid the heated exchange.
+    beliefs:
+    - Taxpayers should not fund morally offensive art
+    - Institutional grants are mere backdoor subsidies for artists
+    observed_traits:
+    - Aggressively confrontational
+    - Dismissively sarcastic
+    - Unyielding ideologue
+    importance: primary
+  - character_uuid: agent_32b71aff4962
+    emotional_state: Absent but implied steadfast commitment
+    goals:
+    - Sustain provocative art through private institutional channels
+    - Evade direct taxpayer funding controversies
+    what_happened: Oakenwood is invoked by Tawny as the enabler of backdoor museum
+      funding for controversial art, positioning him as a shadowy defender in the
+      NEA subsidy debate that precipitates Toby's frustration and Sam's intervention.
+    observed_status: Oakenwood is invoked by Tawny as the enabler of backdoor museum
+      funding for controversial art, positioning him as a shadowy defender in the
+      NEA subsidy debate that precipitates Toby's frustration and Sam's intervention.
+    beliefs:
+    - Museums shield essential artistic expression from politics
+    - Private funds preserve cultural freedom
+    observed_traits:
+    - Covertly resourceful
+    - Loyal patron
+    importance: primary
+  - character_uuid: agent_395a19e07d4b
+    emotional_state: Absent but weaponized as scandalous symbol
+    goals:
+    - Challenge anatomical norms through explicit installations
+    - Secure indirect institutional support for radical art
+    what_happened: Lisa Mulberry is thrust forward by Tawny as the epitome of NEA-fueled
+      obscenity—a 28-year-old artist with anatomically incorrect genitalia exhibits—triggering
+      Toby's explosive frustration and Sam's abrupt extraction.
+    observed_status: Lisa Mulberry is thrust forward by Tawny as the epitome of NEA-fueled
+      obscenity—a 28-year-old artist with anatomically incorrect genitalia exhibits—triggering
+      Toby's explosive frustration and Sam's abrupt extraction.
+    beliefs:
+    - Art thrives on deliberate inaccuracy and provocation
+    - Public funding enables uncompromised expression
+    observed_traits:
+    - Provocative innovator
+    - Boundary-pushing creator
+    importance: primary
+  object_involvements:
+  - object_uuid: object_fae1a93faba2
+    description_of_involvement: Buckley v. Valeo is wielded by Sam as a pivotal Supreme
+      Court precedent, its 'magic words' loophole dissected to reveal how issue ads
+      evade federal restrictions by omitting express advocacy for candidate election
+      or defeat, reframing the debate from NEA defense to campaign pragmatism.
+    status_before_event: Legal precedent invoked in prior strategy discussions
+    status_after_event: Central to emerging White House counterstrategy against smears
+  location_involvements:
+  - location_uuid: location_176bbdde9893
+    description_of_involvement: The Mural Room serves as the volatile arena for Tawny's
+      art outrage climaxing in Lisa Mulberry's citation, Toby's frustrated outburst,
+      and Sam's interruption leading to an exit—its presidential murals looming over
+      the ideological clash before spilling into private strategy.
+    observed_atmosphere: Electrically charged with partisan fury and sudden redirection
+    functional_role: Battleground for NEA debate and extraction point for pivot
+    symbolic_significance: Encapsulates White House tensions between culture wars
+      and electoral survival
+    access_restrictions: Restricted to senior staff and congressional visitors
+    key_environmental_details:
+    - Oppressive murals of past presidents witnessing discord
+    - Daylight filtering through windows heightening exposure
+  organization_involvements:
+  - organization_uuid: organization_932c8e9b23b1
+    description_of_involvement: Republicans lurk as the backdrop via prior NEA defunding
+      history and Tawny's advocacy, their fiscal conservatism provoking the debate
+      that Sam redirects toward countering their soft-money smears.
+    active_representation: Through congressional proxy Tawny Cryer
+    power_dynamics: Antagonistic force pressuring Democratic arts policy
+    organizational_goals:
+    - Eliminate individual artist grants and NEA funding
+    - Exploit cultural outrage for electoral advantage
+    influence_mechanisms:
+    - Congressional appropriations cuts
+    - Rhetorical attacks on taxpayer-funded art
+    institutional_impact: Forces White House into defensive cultural and financial
+      maneuvers
+    internal_dynamics: ''
+  - organization_uuid: organization_5b4151b060f9
+    description_of_involvement: The National Endowment for the Arts fuels the confrontation
+      as Tawny weaponizes its indirect funding of Mulberry's exhibits via museums,
+      provoking Toby's defense and Sam's diversion—exposing it as a lightning rod
+      diverting from re-election tactics.
+    active_representation: Through cited grants and institutional backdoors
+    power_dynamics: Under siege from congressional fiscal hawks
+    organizational_goals:
+    - Sustain nationwide artist subsidies indirectly
+    - Preserve cultural expression against defunding
+    influence_mechanisms:
+    - Grants to institutions shielding controversial works
+    - Policy mission clashing with taxpayer sentiments
+    institutional_impact: Highlights vulnerability to partisan cultural vetoes amid
+      budget battles
+    internal_dynamics: ''
+  - organization_uuid: organization_d7b53268dfb5
+    description_of_involvement: The U.S. Supreme Court is directly invoked via Sam
+      citing Buckley v. Valeo, its ruling's loophole empowering issue ads and offering
+      the administration a pragmatic escape from soft-money taboos in the campaign
+      finance pivot.
+    active_representation: Through binding legal precedent explained in dialogue
+    power_dynamics: Supreme authority overriding executive campaign constraints
+    organizational_goals:
+    - Define constitutional limits on political speech
+    - Distinguish express advocacy from issue discussions
+    influence_mechanisms:
+    - Judicial rulings creating regulatory loopholes
+    - Precedent shaping federal election law interpretation
+    institutional_impact: Enables ethically ambiguous strategies in polarized elections
+    internal_dynamics: ''
+- fabula_uuid: cand_evt_scene_e6a4a4d3cd529f75_1
+  global_id: null
+  title: Bruno and Connie Pitch Issue Ad Loophole, Sam Mounts Ethical Defense
+  description: In the Roosevelt Room, Bruno and Connie aggressively pitch a campaign
+    finance loophole from Buckley v. Valeo, enabling 'issue ads' funded by soft money
+    if they avoid 'magic words' like 'vote for.' Toby quickly grasps the tactic. Idealist
+    Sam pushes back fiercely, insisting the ethical standard should hinge on intent
+    to sway elections, not semantics. Bruno mocks Sam's naivety with sarcasm, prioritizing
+    victory. Toby, torn between principle and pragmatism, demands an ad proposal on
+    his return. This tense clash exposes staff fractures over integrity versus winning,
+    propelling the campaign toward ethical compromise amid re-election smears.
+  episode_uuid: ep_sea_ser_the_west_wing_s03_e06
+  scene_sequence: 11
+  sequence_in_scene: 13
+  key_dialogue:
+  - 'BRUNO: "You don''t put \"vote Bartlet\" in the ad, you can pay for it with unmarked
+    bills from a bank heist if you want to."'
+  - 'SAM: "The standard ought to be, does the ad try to influence the outcome of the
+    election? If so, you can''t use soft money, period."'
+  - 'BRUNO: "Well, zippity-do-dah, Sam."'
+  - 'TOBY: "I''ve gotta go back in there. When I come back, show me an ad without
+    the magic words."'
+  is_flashback: false
+  location_uuid: null
+  theme_uuids:
+  - theme_d0e8d2276021
+  arc_uuids:
+  - arc_5b93f71a75fb
+  participations:
+  - character_uuid: agent_7c84dea6dcc9
+    emotional_state: Pragmatically torn, steeling toward compromise
+    goals:
+    - Fully comprehend the tactic's viability
+    - Test the loophole with a concrete ad example
+    what_happened: Toby swiftly completes the loophole logic by noting avoidance of
+      specific words, listens amid the clash, and pragmatically demands a magic-word-free
+      ad proposal upon his return, signaling tentative buy-in.
+    observed_status: Toby swiftly completes the loophole logic by noting avoidance
+      of specific words, listens amid the clash, and pragmatically demands a magic-word-free
+      ad proposal upon his return, signaling tentative buy-in.
+    beliefs:
+    - Ethical ads can exploit loopholes without corruption
+    - Re-election demands adapting principles to reality
+    observed_traits:
+    - quick-witted
+    - pragmatic
+    - conflicted
+    - decisive
+    importance: primary
+  - character_uuid: agent_77f1a613709a
+    emotional_state: Frustrated and righteously indignant at semantic cynicism
+    goals:
+    - Block the loophole by reframing ethical standards
+    - Rally Toby to reject soft-money exploitation
+    what_happened: Sam interrupts sharply with 'No,' questions the metaphor, fiercely
+      argues for an intent-based ethical standard over semantics, and appeals directly
+      to Toby for support, embodying idealism against pragmatism.
+    observed_status: Sam interrupts sharply with 'No,' questions the metaphor, fiercely
+      argues for an intent-based ethical standard over semantics, and appeals directly
+      to Toby for support, embodying idealism against pragmatism.
+    beliefs:
+    - True ethics judges intent, not legal wordplay
+    - Soft money undermines democratic integrity
+    observed_traits:
+    - idealistic
+    - fierce
+    - skeptical
+    - principled
+    importance: primary
+  - character_uuid: agent_9e93c2fbbca0
+    emotional_state: Sarcastically triumphant, masking impatience with ethical hurdles
+    goals:
+    - Convince the team to embrace the issue ad loophole
+    - Dismiss idealistic objections to secure campaign funds
+    what_happened: Bruno aggressively pitches the soft-money loophole, completes the
+      logic on issue ads, deploys the 'water on pavement' metaphor with Connie, and
+      sarcastically mocks Sam's idealism with 'zippity-do-dah,' driving the pragmatic
+      push for victory.
+    observed_status: Bruno aggressively pitches the soft-money loophole, completes
+      the logic on issue ads, deploys the 'water on pavement' metaphor with Connie,
+      and sarcastically mocks Sam's idealism with 'zippity-do-dah,' driving the pragmatic
+      push for victory.
+    beliefs:
+    - Legal loopholes define political reality, not ideals
+    - Winning elections demands matching opponents' ruthlessness
+    observed_traits:
+    - aggressive
+    - sarcastic
+    - pragmatic
+    - ruthless
+    importance: primary
+  - character_uuid: agent_d3afc08a6374
+    emotional_state: Confidently assured, playfully deflecting challenges
+    goals:
+    - Clarify the precise legal mechanics of the loophole
+    - Ally with Bruno to normalize soft-money tactics
+    what_happened: Connie meticulously explains Buckley footnote 52's 'magic words'
+      list, boasts savant-like knowledge, and reinforces the money-politics metaphor
+      as 'water on pavement,' bolstering the pitch amid Sam's interruptions.
+    observed_status: Connie meticulously explains Buckley footnote 52's 'magic words'
+      list, boasts savant-like knowledge, and reinforces the money-politics metaphor
+      as 'water on pavement,' bolstering the pitch amid Sam's interruptions.
+    beliefs:
+    - Campaign finance laws are navigable via technicalities
+    - Pragmatic tools like loopholes enable necessary aggression
+    observed_traits:
+    - confident
+    - analytical
+    - savant-like
+    - unflappable
+    importance: primary
+  object_involvements: []
+  location_involvements:
+  - location_uuid: location_0de36049a71e
+    description_of_involvement: The Roosevelt Room hosts the intense verbal joust
+      over campaign finance loopholes, its daylight-flooded confines amplifying the
+      claustrophobic tension as idealists and pragmatists collide, crystallizing White
+      House fractures in re-election's pressure cooker.
+    observed_atmosphere: Charged with terse interruptions and sarcastic barbs, building
+      to pragmatic resolve
+    functional_role: Strategy war room for campaign finance debate
+    symbolic_significance: Microcosm of Bartlet administration's integrity-vs-victory
+      power struggles
+    access_restrictions: Restricted to core senior staff and advisors
+    key_environmental_details:
+    - Daylight piercing the interior
+    - Conference table fostering direct confrontation
+  organization_involvements: []
+- fabula_uuid: cand_evt_scene_bd930181be683212_1
+  global_id: null
+  title: Oliver Details Abbey's Dire Pendleton Plea Risks
+  description: In the White House Counsel's office, Oliver Babish confronts First
+    Lady Abbey Bartlet with subpoenaed details of her $58,000 confidential settlement
+    in the Francis Pendleton malpractice case over an atreo-ventricular canal repair.
+    Abbey urgently presses for a plea deal, offering to testify to mitigate damage,
+    but Oliver warns of a worst-case suspended jail sentence of three to five years,
+    framing her sympathetic motives via a pharmacy break-in analogy. This escalation
+    reveals Abbey's sacrificial resolve amid mounting scandal pressures threatening
+    the Bartlet legacy, deepening personal stakes in the administration's crises.
+  episode_uuid: ep_sea_ser_the_west_wing_s03_e06
+  scene_sequence: 12
+  sequence_in_scene: 14
+  key_dialogue:
+  - 'ABBEY: "Is there a deal to be made? Is there? Oliver, I raise my right hand,
+    they''re halfway to where they wanna be. Is there a deal?"'
+  - 'OLIVER: "Suspended jail sentence of three to five years."'
+  - 'ABBEY: "All right, what''s the one right above that?"'
+  is_flashback: false
+  location_uuid: null
+  theme_uuids:
+  - theme_d3c2e728f42e
+  arc_uuids: []
+  participations:
+  - character_uuid: agent_5347405cc1de
+    emotional_state: urgent
+    goals:
+    - Secure a plea deal to mitigate scandal damage
+    - Demonstrate sacrificial resolve by offering testimony
+    what_happened: Confirms details of the Pendleton case settlement, urgently presses
+      Oliver for a plea deal, offers to testify, and probes worst-case outcomes.
+    observed_status: Confirms details of the Pendleton case settlement, urgently presses
+      Oliver for a plea deal, offers to testify, and probes worst-case outcomes.
+    beliefs: []
+    observed_traits: []
+    importance: primary
+  - character_uuid: agent_45883b79da77
+    emotional_state: Urgent determination laced with fraying nerves
+    goals:
+    - Secure plea deal through testimony to contain scandal
+    - Probe full spectrum of legal outcomes for strategic sacrifice
+    what_happened: Wheelchair-bound Abbey confirms Pendleton details and confidentiality
+      clause, urgently demands plea deal options, offers personal testimony as leverage,
+      embraces pharmacy analogy, and presses for worst-to-best case scenarios with
+      defiant resolve.
+    observed_status: Wheelchair-bound Abbey confirms Pendleton details and confidentiality
+      clause, urgently demands plea deal options, offers personal testimony as leverage,
+      embraces pharmacy analogy, and presses for worst-to-best case scenarios with
+      defiant resolve.
+    beliefs:
+    - Testifying admits fault but shields Jed's presidency
+    - Her life-saving motives mirror sympathetic crimes warranting leniency
+    observed_traits:
+    - urgent
+    - sacrificial
+    - defiant
+    - resourceful
+    importance: primary
+  - character_uuid: agent_6565547b0ddc
+    emotional_state: Dispassionate precision veiling strategic caution
+    goals:
+    - Fully disclose subpoenaed risks to Abbey
+    - Gauge plea deal feasibility while protecting administration
+    what_happened: Oliver methodically confronts Abbey by naming Pendleton, confirming
+      the $58,000 SVM Mutual payout and subpoena breach, detailing her surgery, floating
+      plea viability with pharmacy analogy for sympathy, and delivering the grim worst-case
+      suspended jail warning, his delivery clipped and unyielding.
+    observed_status: Oliver methodically confronts Abbey by naming Pendleton, confirming
+      the $58,000 SVM Mutual payout and subpoena breach, detailing her surgery, floating
+      plea viability with pharmacy analogy for sympathy, and delivering the grim worst-case
+      suspended jail warning, his delivery clipped and unyielding.
+    beliefs:
+    - Sympathetic narratives like pharmacy break-ins can humanize but not erase legal
+      peril
+    - Honest reckoning beats evasion in scandal defense
+    observed_traits:
+    - dispassionate
+    - precise
+    - principled
+    - sardonic
+    importance: primary
+  - character_uuid: agent_371b122ca8c6
+    emotional_state: Absent but hauntingly central
+    goals: []
+    what_happened: Francis Pendleton looms as invoked patient whose atreo-ventricular
+      canal repair malpractice anchors the subpoenaed settlement, with Abbey correcting
+      his name to 'Frank' amid revelations, his case fracturing her defenses without
+      physical presence.
+    observed_status: Francis Pendleton looms as invoked patient whose atreo-ventricular
+      canal repair malpractice anchors the subpoenaed settlement, with Abbey correcting
+      his name to 'Frank' amid revelations, his case fracturing her defenses without
+      physical presence.
+    beliefs: []
+    observed_traits: []
+    importance: primary
+  object_involvements:
+  - object_uuid: object_62c336c1d184
+    description_of_involvement: Subpoenaed Pendleton settlement papers serve as explosive
+      evidence, explicitly referenced by Abbey as the sole revealer of the $58,000
+      payout absent subpoena; they shatter confidentiality, thrusting the atrioventricular
+      repair malpractice into confrontation, functioning as narrative dagger exposing
+      Abbey's liability and fueling plea negotiations.
+    status_before_event: Confidential, sealed by clause, undisclosed during campaign
+    status_after_event: Subpoena-revealed, actively discussed and weaponized in counsel's
+      office
+  location_involvements:
+  - location_uuid: location_ea18444386b4
+    description_of_involvement: Oliver's Counsel office hosts the raw interrogation
+      over Pendleton papers, its daylight-slashed blinds and fluorescent glare amplifying
+      clinical tension as wheelchair-bound Abbey faces surgical ghosts; it confines
+      the duel to legal brinkmanship, embodying White House vulnerability amid scandal
+      siege.
+    observed_atmosphere: Taut and claustrophobic, charged with ethical vivisection
+    functional_role: Private arena for high-stakes legal reckoning
+    symbolic_significance: Fortress of truth-extraction amid political peril
+    access_restrictions: Restricted to Counsel and First Lady, subpoena-secured sanctity
+    key_environmental_details:
+    - Daylight through blinds creating stark shadows
+    - Fluorescent lighting on documents
+    - Wheelchair positioning underscoring Abbey's vulnerability
+  organization_involvements:
+  - organization_uuid: organization_ce30cc4efed2
+    description_of_involvement: SVM Mutual materializes as the payout source for Abbey's
+      $58,000 Pendleton settlement, invoked by Oliver to quantify the confidential
+      liability now subpoena-exposed; it underscores insurer's firewall role in malpractice
+      concealment, heightening White House tremors as financial reckoning feeds prosecutorial
+      leverage.
+    active_representation: Via explicit payout reference in settlement details
+    power_dynamics: Institutional backer exerting passive pressure through historical
+      financial liability
+    organizational_goals:
+    - Minimize exposure from past settlements
+    - Contain fallout from subpoena revelations
+    influence_mechanisms:
+    - Financial payouts sealing confidential deals
+    - Subpoena vulnerability amplifying legal scrutiny
+    institutional_impact: Exposes elite medical-political fault lines in scandal ecosystem
+    internal_dynamics: ''
+- fabula_uuid: cand_evt_scene_0219bc967917107c_1
+  global_id: null
+  title: Bartlet Exasperatedly Defies Albie's Submarine Disaster Warnings
+  description: Albie recounts harrowing historical submarine disasters—USS Glomar's
+    failed recovery, Gudgeon's Soviet entrapment, and others—to caution Bartlet against
+    aggressive action near North Korea, risking alliances. Frustrated, Bartlet bangs
+    his head on the desk, snaps he's not lost the boat yet, and insists on deploying
+    fast-attack subs and convening the NSC within the hour. He invokes the Korean
+    War's unresolved legacy, defying Albie's sarcasm. Charlie interrupts for Josh,
+    who delivers a campaign question; Bartlet bluntly admits, 'I don't' want to be
+    President, revealing raw exhaustion amid the ticking crisis, heightening personal
+    and global stakes as a pivotal character revelation and decision escalation.
+  episode_uuid: ep_sea_ser_the_west_wing_s03_e06
+  scene_sequence: 13
+  sequence_in_scene: 15
+  key_dialogue:
+  - 'BARTLET: Oh, God, I''m sorry, am I still here?'
+  - 'BARTLET: I haven''t lost the boat yet, Mr. Secretary, and I happen to be the
+    only one in the building who thinks we should be sending the fast attack subs
+    right now. And I''m an hour from gathering the NSC and calling Japan.'
+  - 'JOSH: Why do you want to be President? BARTLET: ([without hesitation]) I don''t.'
+  is_flashback: false
+  location_uuid: null
+  theme_uuids:
+  - theme_6f101ab17cc5
+  - theme_f1992505c4df
+  arc_uuids: []
+  participations:
+  - character_uuid: agent_2589955c763e
+    emotional_state: Tentative deference pierced by raw presidential candor
+    goals:
+    - Secure authentic response to pivotal campaign question
+    - Exploit crisis distraction for staff business
+    what_happened: Enters post-Charlie's ushering, greets cautiously sensing tension,
+      probes 'Why do you want to be President?' for campaign prep despite hesitation,
+      absorbs blunt 'I don't,' drafts it mentally, and exits with thanks.
+    observed_status: Enters post-Charlie's ushering, greets cautiously sensing tension,
+      probes 'Why do you want to be President?' for campaign prep despite hesitation,
+      absorbs blunt 'I don't,' drafts it mentally, and exits with thanks.
+    beliefs:
+    - Honest vulnerability strengthens political messaging
+    - President's fatigue yields unfiltered truth
+    observed_traits:
+    - deferential
+    - persistent
+    - politically astute
+    importance: primary
+  - character_uuid: agent_e9dd0ae36832
+    emotional_state: Professionally detached amid enveloping tension
+    goals:
+    - Interrupt protocol-correctly to relay visitor
+    - Facilitate Bartlet's requested distraction
+    what_happened: Knocks decisively at Oval door during heated exchange, announces
+      'Josh' upon presidential prompt, enabling intrusion of campaign business into
+      submarine crisis debate.
+    observed_status: Knocks decisively at Oval door during heated exchange, announces
+      'Josh' upon presidential prompt, enabling intrusion of campaign business into
+      submarine crisis debate.
+    beliefs:
+    - Aide's role demands unflinching message delivery
+    - President's needs supersede meeting decorum
+    observed_traits:
+    - dutiful
+    - concise
+    - loyal
+    importance: primary
+  - character_uuid: agent_45883b79da77
+    emotional_state: exasperated
+    goals:
+    - defy Albie's warnings and assert decisiveness by deploying fast-attack subs
+      and convening the NSC
+    - invoke unresolved Korean War to justify action
+    what_happened: Bangs head on desk in frustration, snaps that he hasn't lost the
+      boat yet, insists on sending fast-attack subs and convening NSC, invokes Korean
+      War legacy, bluntly admits he doesn't want to be President when asked by Josh.
+    observed_status: Bangs head on desk in frustration, snaps that he hasn't lost
+      the boat yet, insists on sending fast-attack subs and convening NSC, invokes
+      Korean War legacy, bluntly admits he doesn't want to be President when asked
+      by Josh.
+    beliefs: []
+    observed_traits: []
+    importance: primary
+  - character_uuid: agent_123f8fae48a3
+    emotional_state: Sarcastic resolve veiling grave institutional caution
+    goals:
+    - Deter presidential rush to deploy fast-attack submarines
+    - Impress historical precedents to enforce restraint near North Korea
+    what_happened: Delivers vivid recount of submarine disasters—Glomar's failed salvage,
+      Gudgeon's oxygen-starved trap, Wasp in Solomons—twice jabbing sarcastically
+      that Bartlet 'lost the boat in the wrong part of the world,' persisting despite
+      rebuttals and Leo's mediation.
+    observed_status: Delivers vivid recount of submarine disasters—Glomar's failed
+      salvage, Gudgeon's oxygen-starved trap, Wasp in Solomons—twice jabbing sarcastically
+      that Bartlet 'lost the boat in the wrong part of the world,' persisting despite
+      rebuttals and Leo's mediation.
+    beliefs:
+    - Rash naval actions mirror past catastrophic failures
+    - Allies won't back adventures in volatile regions
+    observed_traits:
+    - sardonic
+    - persistent
+    - historically erudite
+    - caustic
+    importance: primary
+  - character_uuid: agent_d11a3b6bb6e4
+    emotional_state: Steady command tempering crisis urgency with gallows poise
+    goals:
+    - De-escalate Oval Office friction between Bartlet and Albie
+    - Anchor discussion to the ticking NSC convocation clock
+    what_happened: Wryly interjects on submariner smoking habits amid Albie's tales,
+      pivots gaze to Bartlet's desk-banging, mediates tension by invoking Albie's
+      name, and snaps 'Fifty-five minutes' post-Josh's exit to yank focus back to
+      NSC timeline.
+    observed_status: Wryly interjects on submariner smoking habits amid Albie's tales,
+      pivots gaze to Bartlet's desk-banging, mediates tension by invoking Albie's
+      name, and snaps 'Fifty-five minutes' post-Josh's exit to yank focus back to
+      NSC timeline.
+    beliefs:
+    - Humor punctures high-stakes deadlock
+    - Deadlines override personal fractures in command chain
+    observed_traits:
+    - wry
+    - mediating
+    - time-conscious
+    - unflinching
+    importance: primary
+  object_involvements:
+  - object_uuid: object_4da5d5c58b23
+    description_of_involvement: Endures Bartlet's repeated forehead slams in visceral
+      outburst of frustration against Albie's dire warnings, transforming from executive
+      fixture into raw emblem of leadership's breaking point, channeling pent-up crisis
+      rage without yielding.
+    status_before_event: Intact polished wood in Oval Office centerpiece
+    status_after_event: Resonant from impacts, unscathed sentinel of strain
+  location_involvements:
+  - location_uuid: location_2b4945196857
+    description_of_involvement: Conjured by Albie as watery grave of USS Wasp amid
+      WWII carrier infernos, its reefs and volcanoes haunting current North Korean
+      gambit to amplify perils of shadowed naval pursuits.
+    observed_atmosphere: Phantom menace of humid, tide-choked doom
+    functional_role: Historical analogy fueling cautionary rhetoric
+    symbolic_significance: Mirror to contemporary sub risks off hostile coasts
+    access_restrictions: ''
+    key_environmental_details:
+    - Coral fangs shredding hulls
+    - Volcanic isles steaming peril
+    - Tidal surges claiming wrecks
+  organization_involvements:
+  - organization_uuid: organization_28af24d4f7ef
+    description_of_involvement: Bartlet defiantly schedules its assembly in one hour
+      to deliberate fast-attack sub deployment, overriding Albie's ghosts to escalate
+      USS Portland crisis into full war council thunder.
+    active_representation: Invoked as summoned presidential body
+    power_dynamics: Mobilized under direct executive command
+    organizational_goals:
+    - Orchestrate coherent response to sub blackout
+    - Weigh military escalation against alliance strains
+    influence_mechanisms:
+    - Principals' deliberation protocol
+    - High-level risk assessment resources
+    institutional_impact: Funnels ad-hoc fury into structured security apparatus
+    internal_dynamics: ''
+  - organization_uuid: organization_58a7fe390b2b
+    description_of_involvement: Bartlet vows post-NSC call to Tokyo, weaving it into
+      rescue calculus near North Korea, testing alliance sinews amid historical sub
+      snares.
+    active_representation: Prospective diplomatic contact point
+    power_dynamics: Strategic partner courted for regional backing
+    organizational_goals:
+    - Bolster stability on Korean flank
+    - Coordinate intel on sub shadows
+    influence_mechanisms:
+    - Bilateral hotline diplomacy
+    - Geoeconomic leverage in crisis
+    institutional_impact: Integrates Asian powerhouse into U.S. brinkmanship
+    internal_dynamics: ''
+- fabula_uuid: cand_evt_scene_0219bc967917107c_2
+  global_id: null
+  title: 'Bartlet''s Raw Confession: ''I Don''t Want to Be President'''
+  description: Charlie announces Josh, who enters the Oval Office amid the submarine
+    crisis discussion. Seeking distraction from Albie's dire warnings, Bartlet insists
+    Josh share urgent campaign updates on responding to the Majority Leader's gaffe.
+    When Josh poses the core question—'Why do you want to be President?'—a weary Bartlet
+    bluntly replies 'I don't,' revealing profound exhaustion and the human cost of
+    leadership. This raw admission, contrasting global peril with personal toll, humanizes
+    Bartlet as a turning-point revelation before Leo redirects to the ticking clock.
+  episode_uuid: ep_sea_ser_the_west_wing_s03_e06
+  scene_sequence: 13
+  sequence_in_scene: 16
+  key_dialogue:
+  - 'BARTLET: No, give it to me now. I want a distraction.'
+  - |-
+    JOSH: Why do you want to be President?
+    BARTLET: ([without hesitation]) I don't.
+  - 'JOSH: Well, we''ll put that in the hopper and show you a draft.'
+  is_flashback: false
+  location_uuid: null
+  theme_uuids:
+  - theme_f6e6e00bd943
+  arc_uuids:
+  - arc_ee8c52e2f18a
+  participations:
+  - character_uuid: agent_2589955c763e
+    emotional_state: Hesitant yet professionally persistent, gauging room dynamics
+    goals:
+    - Secure Bartlet's input on campaign response to gaffe
+    - Gauge crisis severity without overstepping
+    what_happened: Josh enters politely, greets Bartlet and Albie, probes if crisis
+      talk precludes his update, hesitates on campaign sensitivity, then delivers
+      the Majority Leader gaffe details and core question, absorbs the blunt reply
+      with wry deflection before exiting promptly.
+    observed_status: Josh enters politely, greets Bartlet and Albie, probes if crisis
+      talk precludes his update, hesitates on campaign sensitivity, then delivers
+      the Majority Leader gaffe details and core question, absorbs the blunt reply
+      with wry deflection before exiting promptly.
+    beliefs:
+    - Presidential authenticity fuels effective campaigning
+    - Distractions can humanize amid unrelenting pressure
+    observed_traits:
+    - strategic
+    - deferential
+    - resilient
+    importance: primary
+  - character_uuid: agent_e9dd0ae36832
+    emotional_state: Calmly professional amid underlying tension
+    goals:
+    - Promptly deliver Josh's arrival to the President
+    - Minimize disruption to ongoing discussions
+    what_happened: Charlie knocks decisively on the Oval Office door, announces 'Josh'
+      with crisp deference, facilitating the intruder's entry into the high-stakes
+      gathering without lingering, his presence a brief conduit bridging campaign
+      urgency to crisis command.
+    observed_status: Charlie knocks decisively on the Oval Office door, announces
+      'Josh' with crisp deference, facilitating the intruder's entry into the high-stakes
+      gathering without lingering, his presence a brief conduit bridging campaign
+      urgency to crisis command.
+    beliefs:
+    - Duty demands swift, unquestioning service to Bartlet
+    - Campaign matters warrant immediate presidential access
+    observed_traits:
+    - loyal
+    - efficient
+    - discreet
+    importance: primary
+  - character_uuid: agent_45883b79da77
+    emotional_state: exhausted and frustrated
+    goals:
+    - Seek distraction from the submarine crisis.
+    - Respond to the campaign question on desiring the presidency amid re-election
+      pressures.
+    what_happened: Bangs his head on the desk in frustration, defends his plan to
+      send subs and gather NSC, seeks distraction, and bluntly confesses 'I don't'
+      want to be President.
+    observed_status: Bangs his head on the desk in frustration, defends his plan to
+      send subs and gather NSC, seeks distraction, and bluntly confesses 'I don't'
+      want to be President.
+    beliefs: []
+    observed_traits: []
+    importance: primary
+  - character_uuid: agent_123f8fae48a3
+    emotional_state: Wryly tolerant of the interruption
+    goals:
+    - Maintain diplomatic composure during diversion
+    - Observe presidential handling of dual pressures
+    what_happened: Albie briefly acknowledges Josh's entrance with a curt 'Joshua,'
+      remaining a silent sentinel of cautionary presence as the campaign pivot unfolds,
+      his earlier warnings lingering in the air without further interruption.
+    observed_status: Albie briefly acknowledges Josh's entrance with a curt 'Joshua,'
+      remaining a silent sentinel of cautionary presence as the campaign pivot unfolds,
+      his earlier warnings lingering in the air without further interruption.
+    beliefs:
+    - Historical precedents demand unwavering caution
+    - Campaign intrusions risk diluting crisis focus
+    observed_traits:
+    - formal
+    - observant
+    - restrained
+    importance: primary
+  - character_uuid: agent_d11a3b6bb6e4
+    emotional_state: Sardonic calm veiling operational impatience
+    goals:
+    - Minimize campaign intrusion on crisis
+    - Redirect to NSC timeline immediately after diversion
+    what_happened: Leo deflects Josh's query with laconic 'We're just catching up,'
+      endures the campaign detour stoically, then delivers the terse 'Fifty-five minutes'
+      post-confession, yanking Bartlet back to submarine urgency with iron command.
+    observed_status: Leo deflects Josh's query with laconic 'We're just catching up,'
+      endures the campaign detour stoically, then delivers the terse 'Fifty-five minutes'
+      post-confession, yanking Bartlet back to submarine urgency with iron command.
+    beliefs:
+    - Time is the enemy in submarine blackouts
+    - Personal revelations must yield to duty
+    observed_traits:
+    - sardonic
+    - authoritative
+    - pragmatic
+    importance: primary
+  object_involvements: []
+  location_involvements: []
+  organization_involvements:
+  - organization_uuid: organization_28af24d4f7ef
+    description_of_involvement: The NSC looms implicitly as Leo's 'Fifty-five minutes'
+      countdown redirects post-confession, underscoring the event's pivot from personal
+      exhaustion to institutional crisis machinery, where Bartlet's raw admission
+      delays but cannot derail convocation amid North Korean submarine shadows.
+    active_representation: Via Leo's timeline enforcement as Chief of Staff proxy
+    power_dynamics: Exerting procedural urgency over presidential distraction
+    organizational_goals:
+    - Convene principals for submarine rescue deliberation
+    - Coordinate fast-attack sub deployment without rash escalation
+    influence_mechanisms:
+    - Time-bound protocols pressuring individual focus
+    - Hierarchical command channeling executive decisions
+    institutional_impact: Highlights tension between personal toll and national security
+      imperatives
+    internal_dynamics: Clock-driven alignment overriding momentary human fracture
+- fabula_uuid: cand_evt_scene_0219bc967917107c_3
+  global_id: null
+  title: 'Leo''s Stark Refocus: ''Fifty-Five Minutes'''
+  description: 'In the tense aftermath of Josh''s campaign interruption and Bartlet''s
+    raw admission of presidential exhaustion, the President utters a single word:
+    ''Leo.'' His Chief of Staff responds with unflinching precision: ''Fifty-five
+    minutes.'' This pivotal beat yanks Bartlet from personal and political distractions
+    back to the submarine crisis off North Korea''s coast, heightening the stakes
+    of the ticking clock for rescue amid war risks. Leo''s intervention excavates
+    the deeper conflict of leadership''s toll, serving as a turning point that propels
+    the scene toward NSC mobilization.'
+  episode_uuid: ep_sea_ser_the_west_wing_s03_e06
+  scene_sequence: 13
+  sequence_in_scene: 17
+  key_dialogue:
+  - 'BARTLET: "Leo."'
+  - 'LEO: "Fifty-five minutes."'
+  is_flashback: false
+  location_uuid: null
+  theme_uuids:
+  - theme_f1992505c4df
+  arc_uuids: []
+  participations:
+  - character_uuid: agent_2589955c763e
+    emotional_state: Awkwardly professional, unsettled by President's candor
+    goals:
+    - Extract re-election rationale despite poor timing
+    - Minimize intrusion on crisis deliberations
+    what_happened: Exits the Oval Office moments before, after Bartlet's stark 'I
+      don't' admission to the campaign question, his departure creating the tense
+      vacuum filled by Leo's timer, lingering as the catalyst for emotional rawness.
+    observed_status: Exits the Oval Office moments before, after Bartlet's stark 'I
+      don't' admission to the campaign question, his departure creating the tense
+      vacuum filled by Leo's timer, lingering as the catalyst for emotional rawness.
+    beliefs:
+    - Campaign momentum requires presidential authenticity
+    - Interruptions test but cannot halt crisis focus
+    observed_traits:
+    - hesitant
+    - professional
+    - dutiful
+    importance: primary
+  - character_uuid: agent_e9dd0ae36832
+    emotional_state: neutral
+    goals:
+    - Alert the President to Josh Lyman's presence
+    what_happened: Knocks and announces Josh's arrival to the President.
+    observed_status: Knocks and announces Josh's arrival to the President.
+    beliefs: []
+    observed_traits: []
+    importance: minor
+  - character_uuid: agent_45883b79da77
+    emotional_state: exhausted and frustrated
+    goals:
+    - Push for immediate rescue action with subs despite warnings
+    - Seek temporary distraction from the crisis
+    what_happened: Bangs his head on the desk in frustration, apologizes, argues for
+      sending fast attack subs and convening NSC, references past UN action, requests
+      distraction from Josh, admits 'I don't' want to be President, and calls for
+      Leo.
+    observed_status: Bangs his head on the desk in frustration, apologizes, argues
+      for sending fast attack subs and convening NSC, references past UN action, requests
+      distraction from Josh, admits 'I don't' want to be President, and calls for
+      Leo.
+    beliefs: []
+    observed_traits: []
+    importance: primary
+  - character_uuid: agent_123f8fae48a3
+    emotional_state: Sardonic restraint, watchful amid ignored warnings
+    goals:
+    - Witness reinforcement of cautious stance on rescue
+    - Bolster historical precedent against rash action
+    what_happened: Stands silently in the Oval Office periphery during the President's
+      call to Leo and the crisp time-check response, his prior historical cautions
+      on sub perils hovering unspoken as the room realigns to the ticking threat.
+    observed_status: Stands silently in the Oval Office periphery during the President's
+      call to Leo and the crisp time-check response, his prior historical cautions
+      on sub perils hovering unspoken as the room realigns to the ticking threat.
+    beliefs:
+    - Submarine risks in hostile waters demand patience
+    - Presidential impulses echo past naval catastrophes
+    observed_traits:
+    - sardonic
+    - cautionary
+    - institutional
+    importance: primary
+  - character_uuid: agent_d11a3b6bb6e4
+    emotional_state: Calm and authoritative, veiling the crisis's mounting dread
+    goals:
+    - Redirect President from distractions to NSC countdown
+    - Reinforce urgency of USS Portland rescue window
+    what_happened: Responds instantly to the President's summons with 'Fifty-five
+      minutes,' his voice cutting through the post-Josh silence to enforce the submarine
+      crisis timeline, physically present as the room's steady pivot point amid fraying
+      resolve.
+    observed_status: Responds instantly to the President's summons with 'Fifty-five
+      minutes,' his voice cutting through the post-Josh silence to enforce the submarine
+      crisis timeline, physically present as the room's steady pivot point amid fraying
+      resolve.
+    beliefs:
+    - Time discipline averts disaster in submarine blackouts
+    - Personal toll yields to national security imperatives
+    observed_traits:
+    - authoritative
+    - precise
+    - unflinching
+    - loyal
+    importance: primary
+  object_involvements: []
+  location_involvements: []
+  organization_involvements: []
+- fabula_uuid: cand_evt_scene_64279bcfd30ace5f_1
+  global_id: null
+  title: Donna Razes Josh and C.J.'s Soulless 'Why President?' Pitch
+  description: In C.J.'s office, Josh and C.J. collaboratively craft a safe, focus-group-tested
+    pitch for Bartlet's re-election response to 'Why do you want to be President?'—highlighting
+    jobs, medical advancements, technology, and education amid global change. Donna
+    mocks it with derisive raspberries, branding it inauthentic and passionless, questioning
+    if such bland promises truly motivate presidential ambition. Josh admits her point,
+    while C.J. defuses with a wry quip about immortalizing one's face on currency.
+    This pivotal beat exposes the campaign's messaging crisis, contrasting cautious
+    politics with the need for raw conviction, heightening tension in their quest
+    for Bartlet's genuine voice.
+  episode_uuid: ep_sea_ser_the_west_wing_s03_e06
+  scene_sequence: 14
+  sequence_in_scene: 18
+  key_dialogue:
+  - 'DONNA: "That''s why somebody wants to become President - medical research and
+    the internet?"'
+  - 'JOSH: "She''s got a point."'
+  - 'C.J.: "Sometimes you get your face on a coin."'
+  is_flashback: false
+  location_uuid: null
+  theme_uuids: []
+  arc_uuids: []
+  participations:
+  - character_uuid: agent_2589955c763e
+    emotional_state: Defensive confidence cracking into frustrated concession, masking
+      deeper anxiety over campaign authenticity
+    goals:
+    - Construct a politically safe re-election rationale
+    - Validate the pitch's rhetorical strengths against criticism
+    what_happened: Josh spearheads the pitch-building with forward-looking lines on
+      jobs, economic growth, and technology; he probes Donna's silence, launches a
+      passionate defense highlighting 'crisp phrases' and 'active verbs,' then concedes
+      her critique, slumping into frustrated realism amid the stalled momentum.
+    observed_status: Josh spearheads the pitch-building with forward-looking lines
+      on jobs, economic growth, and technology; he probes Donna's silence, launches
+      a passionate defense highlighting 'crisp phrases' and 'active verbs,' then concedes
+      her critique, slumping into frustrated realism amid the stalled momentum.
+    beliefs:
+    - Focus-group language with vivid verbs sells a visionary future
+    - Admitting flaws accelerates finding Bartlet's genuine spark
+    observed_traits:
+    - pragmatic
+    - defensive
+    - self-deprecating
+    importance: primary
+  object_involvements: []
+  location_involvements: []
+  organization_involvements: []
+- fabula_uuid: cand_evt_scene_53fe991c584b76ec_1
+  global_id: null
+  title: Toby Likens NEA Cuts to Nazi 'Degenerate Art' Purge
+  description: In the Mural Room, Toby passionately confronts Tawny over proposed
+    NEA funding cuts, provocatively analogizing them to Nazi Germany's 1937 'degenerate
+    art' exhibition that vilified progressive works. He counters her bad-taste objection
+    with global arts spending stats and historical ties between societal progress
+    and cultural golden ages (Pericles/Phidias, Medici/Da Vinci, Elizabeth/Shakespeare).
+    Tawny pivots to national park security funding, proposing elimination of the Oakenwood
+    program as compromise, crystallizing their ideological chasm—Toby's fervent cultural
+    evangelism versus Tawny's pragmatic conservatism—in a fiery escalation amid White
+    House budget wars.
+  episode_uuid: ep_sea_ser_the_west_wing_s03_e06
+  scene_sequence: 15
+  sequence_in_scene: 19
+  key_dialogue:
+  - 'TOBY: You guys should charge money for this, Tawny. You should sell tickets and
+    charge money and call it "Journey Back to Germany." Where, in 1937, they held
+    a show of degenerate art, vilifying art they deemed sick, art that featured insolent
+    mockery of the divine, art that wasted the taxes of the German working people.'
+  - 'TAWNY: I think it''s in incredibly bad taste to equate the US Congress with the
+    Nazis. TOBY: Me too.'
+  - 'TOBY: There is a connection between progress of a society and progress in the
+    Arts. The age of Pericles was also the age of Phidias. The age of Lorenzo de Medici
+    was also the age of Leonardo Da Vinci. The age of Elizabeth was the age of Shakespeare.'
+  is_flashback: false
+  location_uuid: null
+  theme_uuids: []
+  arc_uuids:
+  - arc_c28c894f6e08
+  participations:
+  - character_uuid: agent_7c84dea6dcc9
+    emotional_state: Righteously indignant, fueled by evangelical zeal for cultural
+      preservation
+    goals:
+    - Defend NEA funding against cuts
+    - Persuade Tawny of arts' societal indispensability
+    what_happened: Toby aggressively confronts Tawny with a provocative Nazi degenerate
+      art analogy for NEA cuts, counters her rebuttal using international spending
+      stats and historical cultural progress links, and skeptically questions her
+      national parks pivot, his voice rising in principled fury.
+    observed_status: Toby aggressively confronts Tawny with a provocative Nazi degenerate
+      art analogy for NEA cuts, counters her rebuttal using international spending
+      stats and historical cultural progress links, and skeptically questions her
+      national parks pivot, his voice rising in principled fury.
+    beliefs:
+    - Cultural funding mirrors societal progress, as in Periclean Athens
+    - NEA cuts risk echoing Nazi-era artistic purges
+    observed_traits:
+    - passionate
+    - intellectual
+    - combative
+    - principled
+    importance: primary
+  - character_uuid: agent_83a05177ce60
+    emotional_state: Composed defensiveness laced with firm conviction in fiscal priorities
+    goals:
+    - Secure NEA and Oakenwood funding reductions
+    - Redirect savings to national park security needs
+    what_happened: Tawny steadfastly rejects Toby's Nazi analogy as bad taste, affirms
+      $105 million arts cuts as appropriate, shifts focus to national park security
+      enhancements, and proposes eliminating Oakenwood program as a pragmatic funding
+      source alternative.
+    observed_status: Tawny steadfastly rejects Toby's Nazi analogy as bad taste, affirms
+      $105 million arts cuts as appropriate, shifts focus to national park security
+      enhancements, and proposes eliminating Oakenwood program as a pragmatic funding
+      source alternative.
+    beliefs:
+    - Arts funding is indulgent compared to security essentials
+    - Budget cuts represent responsible stewardship over extravagance
+    observed_traits:
+    - pragmatic
+    - fiscally conservative
+    - defensive
+    - unyielding
+    importance: primary
+  object_involvements: []
+  location_involvements:
+  - location_uuid: location_176bbdde9893
+    description_of_involvement: The Mural Room confines Toby and Tawny's explosive
+      verbal duel over NEA cuts, its presidential murals bearing witness to the ideological
+      fray where Toby's cultural firebombs collide with Tawny's budgetary blade, amplifying
+      the intimacy and stakes of their partisan standoff.
+    observed_atmosphere: Electrically tense, reverberating with sharp retorts and
+      ideological thunder
+    functional_role: Private arena for high-stakes policy confrontation
+    symbolic_significance: Evokes White House's haunted legacy of betrayed ideals
+      and power struggles
+    access_restrictions: Restricted to invited political combatants
+    key_environmental_details:
+    - Daylit interior with looming murals
+    - Compact space intensifying verbal proximity
+  organization_involvements:
+  - organization_uuid: organization_e66a065b3956
+    description_of_involvement: Nazis are weaponized by Toby as a historical analogy
+      for Congress's NEA cuts, referencing their 1937 Degenerate Art Exhibition that
+      mocked and defunded 'sick' progressive works, heightening the moral stakes of
+      the contemporary funding purge.
+    active_representation: Rhetorical invocation as cautionary historical precedent
+    power_dynamics: Framed as tyrannical archetype challenging congressional actions
+    organizational_goals:
+    - Vilify and suppress nonconformist art
+    - Redirect public funds from 'degenerate' culture
+    influence_mechanisms:
+    - Emotional historical parallel
+    - Moral suasion through infamy
+    institutional_impact: ''
+    internal_dynamics: ''
+  - organization_uuid: organization_70ddb3c3afe8
+    description_of_involvement: National Parks are thrust forward by Tawny as the
+      superior funding priority over arts, with calls for bolstered security framing
+      them as pragmatic public good amid NEA skirmishes, crystallizing conservative
+      reallocative logic.
+    active_representation: Budgetary cause championed by Tawny
+    power_dynamics: Elevated as protected priority over vulnerable cultural entities
+    organizational_goals:
+    - Secure additional security funding
+    - Capture redirected NEA savings
+    influence_mechanisms:
+    - Public safety appeals
+    - Fiscal tradeoff propositions
+    institutional_impact: Highlights tensions in federal resource prioritization
+    internal_dynamics: ''
+  - organization_uuid: organization_327e54b8c5e9
+    description_of_involvement: Oakenwood program is singled out by Tawny for termination
+      to generate funds for national park security, emerging as a sacrificial bargaining
+      chip in the NEA debate and underscoring pragmatic cuts within arts funding structures.
+    active_representation: Targeted federal initiative proposed for elimination
+    power_dynamics: Subordinate and expendable in budgetary hierarchy
+    organizational_goals:
+    - Preserve program viability
+    - Resist funding diversion
+    influence_mechanisms:
+    - Linkage to broader NEA defense
+    - Association with indulgent spending critiques
+    institutional_impact: Exemplifies intra-cultural funding vulnerabilities
+    internal_dynamics: ''
+  - organization_uuid: organization_a6352e060856
+    description_of_involvement: US Congress drives the conflict as the body proposing
+      drastic NEA cuts to $105 million, lambasted by Toby as culturally regressive
+      and defended by Tawny as fiscally sound, positioning it as the epicenter of
+      White House budget trench warfare.
+    active_representation: Via Tawny Cryer as Appropriations Committee advocate
+    power_dynamics: Asserting legislative budgetary supremacy over executive arts
+      defense
+    organizational_goals:
+    - Enforce arts spending austerity
+    - Reallocate funds from cultural programs
+    influence_mechanisms:
+    - Appropriations committee leverage
+    - Fiscal policy mandates
+    institutional_impact: Exposes partisan rifts in federal cultural funding debates
+    internal_dynamics: ''
+- fabula_uuid: cand_evt_scene_ad26976702bae728_1
+  global_id: null
+  title: Oliver Vehemently Rejects Abbey's License Suspension Ploy
+  description: 'In a tense showdown, First Lady Abbey Bartlet proposes a humiliating
+    self-sacrifice: voluntarily suspending her medical license in three states for
+    the duration of President Bartlet''s terms, paying fines, entering the practitioners''
+    data bank, and resigning all boards to grant opponents a ''win'' and halt the
+    investigation. Oliver Babish coolly concedes its tactical savvy but recoils in
+    moral outrage, refusing to endorse or pitch it to the President. He lambasts it
+    as ethically rancid, insisting Abbey confront the hearing with raw truth to defy
+    the criminalization of politics. This pivotal clash excavates the administration''s
+    fault line—principle versus expediency—escalating Abbey''s crisis while affirming
+    Oliver''s unyielding integrity as a bulwark against corruption.'
+  episode_uuid: ep_sea_ser_the_west_wing_s03_e06
+  scene_sequence: 16
+  sequence_in_scene: 20
+  key_dialogue:
+  - 'ABBEY: "What if I agree to a suspension of my license? I agree of a suspension
+    of my license for the length of Jed''s term. If he serves a second term, it includes
+    those years, too."'
+  - 'OLIVER: "You just said it was good." ABBEY: "Yeah?" OLIVER: "It stinks."'
+  - 'OLIVER: "Truth isn''t a luxury. You''re gonna go in there, you''re gonna swear
+    an oath. You''re gonna get asked questions, you''re gonna tell the truth. It''s
+    the way you stand up and say ''STOP!''"'
+  is_flashback: false
+  location_uuid: null
+  theme_uuids: []
+  arc_uuids:
+  - arc_0b15236d320d
+  participations:
+  - character_uuid: agent_5347405cc1de
+    emotional_state: persistent and frustrated
+    goals:
+    - Escalate her response to legal jeopardy by offering a humiliating self-sacrifice
+      to end the investigation
+    - Gain Oliver's support to pitch the plan to the President
+    what_happened: Proposes voluntarily suspending her medical license in New Hampshire,
+      Missouri, and Arizona for the duration of Jed's terms, paying a fine, recording
+      the violation in the practitioners' data bank, and resigning from all boards
+      to give opponents a win and halt the investigation; seeks Oliver's opinion and
+      help to convince the President.
+    observed_status: Proposes voluntarily suspending her medical license in New Hampshire,
+      Missouri, and Arizona for the duration of Jed's terms, paying a fine, recording
+      the violation in the practitioners' data bank, and resigning from all boards
+      to give opponents a win and halt the investigation; seeks Oliver's opinion and
+      help to convince the President.
+    beliefs: []
+    observed_traits: []
+    importance: primary
+  - character_uuid: agent_45883b79da77
+    emotional_state: Determined persistence veiling mounting frustration and desperation
+    goals:
+    - Secure Oliver's support to pitch plan to President
+    - End investigation by granting opponents a symbolic victory
+    what_happened: Wheelchair-bound from injury, Abbey pitches her detailed self-sacrifice
+      plan with urgency, pressing Oliver for endorsement and aid in swaying Jed, bantering
+      wittily amid pushback to mask vulnerability.
+    observed_status: Wheelchair-bound from injury, Abbey pitches her detailed self-sacrifice
+      plan with urgency, pressing Oliver for endorsement and aid in swaying Jed, bantering
+      wittily amid pushback to mask vulnerability.
+    beliefs:
+    - Self-sacrifice can shield Jed's presidency from scandal
+    - Political survival demands pragmatic concessions over purity
+    observed_traits:
+    - persistent
+    - defiant
+    - strategic
+    - frustrated
+    importance: primary
+  - character_uuid: agent_6565547b0ddc
+    emotional_state: Morally outraged beneath cool, sarcastic detachment
+    goals:
+    - Reject ethically compromised tactics
+    - Compel Abbey to testify honestly against political weaponization
+    what_happened: Seated in his office, Oliver initially concedes the plan's cunning,
+      then firmly refuses assistance, delivering a principled tirade on truth-telling
+      and politicized probes, capped with sardonic retort.
+    observed_status: Seated in his office, Oliver initially concedes the plan's cunning,
+      then firmly refuses assistance, delivering a principled tirade on truth-telling
+      and politicized probes, capped with sardonic retort.
+    beliefs:
+    - Truth is essential to resist criminalization of dissent
+    - No counsel duty extends to abetting moral shortcuts
+    observed_traits:
+    - principled
+    - sardonic
+    - unyielding
+    - dispassionate
+    importance: primary
+  object_involvements: []
+  location_involvements:
+  - location_uuid: location_ea18444386b4
+    description_of_involvement: The Counsel's office frames the intimate showdown
+      as daylight streams through blinds, casting stark shadows on Abbey's wheelchair
+      and Oliver's desk, amplifying the claustrophobic tension of their ethical duel
+      and underscoring the administration's legal vulnerabilities.
+    observed_atmosphere: Tense and interrogative, charged with sarcasm and defiance
+    functional_role: Arena for private strategic confrontation
+    symbolic_significance: Legal bunker vivisecting principle versus expediency
+    access_restrictions: Restricted to high-level White House personnel
+    key_environmental_details:
+    - Daylight slashing through blinds
+    - Abbey's wheelchair presence
+    - Professional office setup fostering confrontation
+  - location_uuid: location_32aef76ac78c
+    description_of_involvement: Missouri emerges as a key jurisdiction in Abbey's
+      triad of sacrificial states, invoked to detail her license suspension gambit—fines,
+      data bank entry, board exits—positioning it as a regulatory battleground where
+      medical ethics yield to political absolution.
+    observed_atmosphere: Remote yet oppressively looming in discussion
+    functional_role: Referential site of proposed regulatory penalty
+    symbolic_significance: Midwestern colossus of bureaucratic sacrifice
+    access_restrictions: ''
+    key_environmental_details:
+    - Named in tense dialogue
+    - Evokes practitioner oversight structures
+  - location_uuid: location_01c0262c66da
+    description_of_involvement: Arizona stands as the third state in Abbey's bold
+      proposal for license suspension, fines, data bank notation, and resignations,
+      framed as a distant anvil for self-inflicted blows to halt probes and protect
+      Bartlet's legacy amid scandal.
+    observed_atmosphere: Abstractly arid and punitive in invocation
+    functional_role: Jurisdictional target for voluntary capitulation
+    symbolic_significance: Expansive terrain of calculated ethical hemorrhage
+    access_restrictions: ''
+    key_environmental_details:
+    - Explicitly listed by Abbey
+    - Tied to multi-state gambit
+  organization_involvements: []
+- fabula_uuid: cand_evt_scene_385fb48c8b63fa77_1
+  global_id: null
+  title: Toby Forges Ethical Pivot to Crumbling Schools Issue Ads
+  description: Bruno and Connie pitch 'magic words' to disguise candidate ads as unregulated
+    issue ads, skirting campaign finance laws. Sam denounces it as a scam, but Bruno's
+    fiery rant exposes Democratic frustrations with past timidity. Toby validates
+    the passion, redirects to authentic issue ads on schools, healthcare, and opportunity—uniting
+    the team in crafting a potent spot on crumbling schools that advances Bartlet's
+    moral campaign while countering GOP strengths.
+  episode_uuid: ep_sea_ser_the_west_wing_s03_e06
+  scene_sequence: 17
+  sequence_in_scene: 21
+  key_dialogue:
+  - 'BRUNO: Cause I am tired of working for candidates who make me think I should
+    be embarrassed to believe what I believe, Sam. I''m tired of getting them elected.
+    We all need some therapy, because somebody came along and said "liberal" means
+    soft on crime, soft on drugs, soft on Communism, soft on defense, and we''re gonna
+    tax you back to the Stone Age because people shouldn''t have to go to work if
+    they don''t want to. And instead of saying "Well excuse me, you right-wing, reactionary,
+    xenophobic, homophobic, anti-education, anti-choice, pro-gun, ''Leave it to Beaver''
+    trip back to the fifties," we cowered in the corner and said "Please, don''t hurt
+    me." No more.'
+  - 'TOBY: I agree. So let''s stick to the spirit of the law. No, I''m saying let''s
+    do an issue ad, an actual issue ad. Let''s do a bunch. Health care, equal opportunity--
+    School construction.'
+  - 'SAM: There''s actually a reasonable point here. New polls see Republicans as
+    better on education with no basis for it.'
+  is_flashback: false
+  location_uuid: null
+  theme_uuids:
+  - theme_d0e8d2276021
+  arc_uuids:
+  - arc_5b93f71a75fb
+  participations:
+  - character_uuid: agent_7c84dea6dcc9
+    emotional_state: Resolute conviction fueling inspirational redirection
+    goals:
+    - Channel raw passion into legally pure issue ads
+    - Unite fractious team around Bartlet's moral strengths
+    what_happened: Toby enters querying 'Where are we?', validates Bruno's fire with
+      agreement, redirects to spirit-honoring authentic issue ads on healthcare, opportunity,
+      and school construction, probing team consensus on crumbling schools' electoral
+      impact.
+    observed_status: Toby enters querying 'Where are we?', validates Bruno's fire
+      with agreement, redirects to spirit-honoring authentic issue ads on healthcare,
+      opportunity, and school construction, probing team consensus on crumbling schools'
+      electoral impact.
+    beliefs:
+    - Authentic issues like schools embody Democratic fire
+    - Raising crisis awareness inherently aids re-election
+    observed_traits:
+    - resolute
+    - principled
+    - strategic
+    - unifying
+    importance: primary
+  - character_uuid: agent_77f1a613709a
+    emotional_state: Initially indignant skepticism thawing into cautious acknowledgment
+    goals:
+    - Expose ethical sham in loophole ads
+    - Pivot to legitimate issue ads strengthening Bartlet's platform
+    what_happened: Sam sharply denounces leaflet changes as non-magical scams and
+      straitjacket evasions, questions Bruno's attachment to 'idiot leaflets,' but
+      gradually concedes reasonable merits in education polls, echoing ad copy to
+      align on parallel free media paths.
+    observed_status: Sam sharply denounces leaflet changes as non-magical scams and
+      straitjacket evasions, questions Bruno's attachment to 'idiot leaflets,' but
+      gradually concedes reasonable merits in education polls, echoing ad copy to
+      align on parallel free media paths.
+    beliefs:
+    - True spirit of law bans soft money regardless of wordplay
+    - Republicans' unearned education lead demands counterattack
+    observed_traits:
+    - skeptical
+    - idealistic
+    - analytical
+    - adaptive
+    importance: primary
+  - character_uuid: agent_45883b79da77
+    emotional_state: ''
+    goals: []
+    what_happened: Referenced in proposed ad script as fighting to rebuild crumbling
+      schools, with his picture on screen.
+    observed_status: Referenced in proposed ad script as fighting to rebuild crumbling
+      schools, with his picture on screen.
+    beliefs: []
+    observed_traits: []
+    importance: secondary
+  - character_uuid: agent_9e93c2fbbca0
+    emotional_state: Righteously frustrated, boiling with pent-up partisan fury masking
+      strategic desperation
+    goals:
+    - Convince team to adopt loophole ads for unrestricted funding
+    - Ignite passionate commitment to aggressive campaigning
+    what_happened: Bruno bursts in clutching leaflets, aggressively pitching ad rewrites
+      like 'We're fighting to rebuild crumbling schools' and 'Paid for by Democrats
+      for America,' then unleashes a profanity-laced rant decrying Democratic cowardice,
+      laughing at Toby's school pivot while fueling collaborative scripting.
+    observed_status: Bruno bursts in clutching leaflets, aggressively pitching ad
+      rewrites like 'We're fighting to rebuild crumbling schools' and 'Paid for by
+      Democrats for America,' then unleashes a profanity-laced rant decrying Democratic
+      cowardice, laughing at Toby's school pivot while fueling collaborative scripting.
+    beliefs:
+    - Past Democratic timidity has ceded ground to Republicans
+    - Ethical purity loses elections; pragmatic illusions win them
+    observed_traits:
+    - pragmatic
+    - fiery
+    - ruthless
+    - inspirational
+    importance: primary
+  - character_uuid: agent_d3afc08a6374
+    emotional_state: Coolly assured, radiating pragmatic triumph amid ethical firestorm
+    goals:
+    - Educate team on Buckley loopholes for soft-money ads
+    - Co-author authentic issue ad to harness unified momentum
+    what_happened: Connie confidently backs Bruno's pitches, explaining 'magic words'
+      as illusions skirting laws, affirms the scam label with cool admission, and
+      contributes vivid school ad copy about crumbling walls and trailer-packed kids,
+      solidifying the team's pivot.
+    observed_status: Connie confidently backs Bruno's pitches, explaining 'magic words'
+      as illusions skirting laws, affirms the scam label with cool admission, and
+      contributes vivid school ad copy about crumbling walls and trailer-packed kids,
+      solidifying the team's pivot.
+    beliefs:
+    - Legal illusions like 'magic words' enable necessary firepower
+    - Issue ads on real crises like schools expose GOP weaknesses
+    observed_traits:
+    - confident
+    - savant-like
+    - unflinching
+    - collaborative
+    importance: primary
+  object_involvements:
+  - object_uuid: object_d6c716a89eb3
+    description_of_involvement: Bruno shoulders in clutching armloads of printed campaign
+      leaflets exemplifying 'magic words' loopholes—candidate ads disguised as issue
+      blasts. Sam savages them as 'idiot leaflets' central to the scam debate, their
+      bold pages fueling the pitch until fury pivots to ethical school spots, binding
+      the team's resolve.
+    status_before_event: Held by Bruno upon entering Roosevelt Room, intact and distributed
+      for review
+    status_after_event: Still in Bruno's possession or on table, symbolically sidelined
+      as focus shifts to new ad scripting
+  location_involvements:
+  - location_uuid: location_0de36049a71e
+    description_of_involvement: Daylit Roosevelt Room hosts high-stakes verbal crossfire
+      where idealism clashes with pragmatism, leaflets splayed amid rising tension;
+      it cradles the pitch, rant, and collaborative scripting, transforming discord
+      into strategic unity under re-election pressure cooker dynamics.
+    observed_atmosphere: Electrified tension surging to passionate release, terse
+      exchanges building to unified resolve
+    functional_role: Strategy war room for campaign ad brainstorming and ethical arbitration
+    symbolic_significance: Embodies White House power crucible where moral compromises
+      forge electoral weapons
+    access_restrictions: Restricted to senior campaign strategists and advisors
+    key_environmental_details:
+    - Daylight piercing windows amplifying stark confrontations
+    - Table strewn with leaflets as props in debate
+  organization_involvements:
+  - organization_uuid: organization_932c8e9b23b1
+    description_of_involvement: Republicans loom as spectral foes in Bruno's blistering
+      rant and ad strategy—blamed for smearing liberals as 'soft' on core issues and
+      falsely polling strong on education. Team counters with school crisis spots
+      to dismantle their phantom merits, escalating partisan ad war.
+    active_representation: Invoked through Bruno's rhetorical evisceration and poll
+      references
+    power_dynamics: Positioned as entrenched rivals dominating polls, challenged by
+      Democratic issue-ads counteroffensive
+    organizational_goals:
+    - Maintain unearned education polling lead via cultural smears
+    - Defund progressive programs like NEA to starve opponents
+    influence_mechanisms:
+    - Fiscal conservatism and wedge-issue propaganda
+    - Congressional barricades amplifying re-election smears
+    institutional_impact: Exposes GOP's poll myths, priming debate that bolsters Bartlet's
+      moral authority
+    internal_dynamics: ''
+- fabula_uuid: cand_evt_scene_c246d2d774259f62_1
+  global_id: null
+  title: Bartlet Overrides Albie's Dire Warnings, Orders Rescue as Portland Breaks
+    Silence
+  description: 'In the Oval Office, veteran diplomat Albie Duncan recounts harrowing
+    histories of submarine disasters near North Korea to urge caution against hasty
+    action, but an impatient President Bartlet interrupts abruptly, overriding the
+    remaining ten-minute window to launch the rescue immediately. With Leo, he strides
+    to the Situation Room, grilling officers on the DSRV rescue plan en route. Upon
+    arrival, as Bartlet rallies ''Let''s go get ''em,'' satellite contact restores:
+    the Portland evaded a North Korean destroyer by going deep and quiet, vindicating
+    Bartlet''s bold trust in the crew and transforming crisis into controlled peril.'
+  episode_uuid: ep_sea_ser_the_west_wing_s03_e06
+  scene_sequence: 18
+  sequence_in_scene: 22
+  key_dialogue:
+  - 'BARTLET: "Okay." / ALBIE: "I beg your pardon?" / BARTLET: "It''s time."'
+  - 'ALBIE: "You still got ten minutes by my watch, Mr. President." / BARTLET: "Yeah.
+    We''re going now."'
+  - 'LEO: "We have the Portland on satellite." / BARTLET: "We have them." / BARTLET:
+    "What you gotta do in these situations is you trust the captain, you trust the
+    crew."'
+  is_flashback: false
+  location_uuid: null
+  theme_uuids:
+  - theme_6f101ab17cc5
+  - theme_f1992505c4df
+  arc_uuids:
+  - arc_5a5cea964350
+  participations:
+  - character_uuid: agent_45883b79da77
+    emotional_state: impatient and decisive, later relieved
+    goals:
+    - Override Albie's caution and initiate rescue immediately
+    - Gather details on the rescue plan from officers
+    - Rally team to proceed with rescue
+    what_happened: Interrupts Albie abruptly, overrides warnings by ordering immediate
+      rescue launch, strides with Leo to Situation Room while grilling officers on
+      DSRV plan, rallies room with 'Let's go get 'em', reacts positively to restored
+      contact with Portland.
+    observed_status: Interrupts Albie abruptly, overrides warnings by ordering immediate
+      rescue launch, strides with Leo to Situation Room while grilling officers on
+      DSRV plan, rallies room with 'Let's go get 'em', reacts positively to restored
+      contact with Portland.
+    beliefs: []
+    observed_traits: []
+    importance: primary
+  - character_uuid: agent_123f8fae48a3
+    emotional_state: Earnest urgency laced with surprised disbelief at presidential
+      impatience
+    goals:
+    - Persuade Bartlet to wait the full ten minutes before launching risky rescue
+    - Invoke submarine disaster precedents to avert potential catastrophe
+    what_happened: Recounts a grim catalog of historical submarine disasters near
+      North Korea—Wanson Harbor mine strikes, Korean War shellings—to urgently caution
+      against premature rescue, expresses polite shock at Bartlet's interruption with
+      'I beg your pardon?' and notes the remaining ten-minute window on his watch.
+    observed_status: Recounts a grim catalog of historical submarine disasters near
+      North Korea—Wanson Harbor mine strikes, Korean War shellings—to urgently caution
+      against premature rescue, expresses polite shock at Bartlet's interruption with
+      'I beg your pardon?' and notes the remaining ten-minute window on his watch.
+    beliefs:
+    - History's submarine losses demand deliberate caution near adversarial coasts
+    - Rushing rescue operations invites repeats of past naval tragedies
+    observed_traits:
+    - earnest
+    - historical
+    - cautious
+    - sarcastic undertone
+    importance: primary
+  - character_uuid: agent_b30713fee0c6
+    emotional_state: Focused professionalism under pressure
+    goals:
+    - Decode specialized terminology to ensure presidential comprehension
+    - Maintain operational clarity during transit briefing
+    what_happened: Interjects crisply en route to Situation Room to clarify 'Whiskey
+      Three' as Portland's callsign for the President, anchoring cryptic naval codes
+      into the unfolding rescue briefing amid Bartlet's rapid-fire questions.
+    observed_status: Interjects crisply en route to Situation Room to clarify 'Whiskey
+      Three' as Portland's callsign for the President, anchoring cryptic naval codes
+      into the unfolding rescue briefing amid Bartlet's rapid-fire questions.
+    beliefs:
+    - Clear communication prevents command misunderstandings in crises
+    - Naval protocol demands instant jargon translation for civilian leaders
+    observed_traits:
+    - precise
+    - professional
+    - dutiful
+    importance: primary
+  - character_uuid: agent_e009c22dc6d3
+    emotional_state: Rigid attentiveness signaling operational readiness
+    goals:
+    - Honor presidential arrival with full military protocol
+    - Instill disciplined focus in the room for crisis response
+    what_happened: Barks 'Ten-hut!' upon Bartlet's Situation Room entry, snapping
+      all to rigid attention and enforcing military discipline as the command center
+      activates for rescue push.
+    observed_status: Barks 'Ten-hut!' upon Bartlet's Situation Room entry, snapping
+      all to rigid attention and enforcing military discipline as the command center
+      activates for rescue push.
+    beliefs:
+    - Chain-of-command rituals sharpen crisis execution
+    - Formal honors underscore the gravity of Situation Room pivots
+    observed_traits:
+    - disciplined
+    - authoritative
+    - protocol-driven
+    importance: primary
+  - character_uuid: agent_5fe10b4d8e71
+    emotional_state: Operational confidence affirming allied success
+    goals:
+    - Confirm U.S.S. Portland's status post-evasion via direct radio query
+    - Relay positive operational update to sustain rescue momentum
+    what_happened: Crackles over Situation Room radio as VOICE 1ST, hailing 'Whiskey-Three-Charlie,
+      this is Pac Fleet, report you whiskey,' then acknowledging Portland's status
+      with 'Roger all, and happy hunting,' funneling naval coordination into White
+      House triumph.
+    observed_status: Crackles over Situation Room radio as VOICE 1ST, hailing 'Whiskey-Three-Charlie,
+      this is Pac Fleet, report you whiskey,' then acknowledging Portland's status
+      with 'Roger all, and happy hunting,' funneling naval coordination into White
+      House triumph.
+    beliefs:
+    - Seamless fleet comms transform peril into controlled recovery
+    - Crew evasion tactics merit swift affirmation and clearance
+    observed_traits:
+    - crisp
+    - coordinating
+    - resilient
+    importance: primary
+  - character_uuid: agent_d11a3b6bb6e4
+    emotional_state: Heightened alertness shifting to quiet vindication amid unfolding
+      success
+    goals:
+    - Support Bartlet's decisive pivot to action despite diplomatic cautions
+    - Facilitate clear communication of restored sub contact to de-escalate tension
+    what_happened: Accompanies Bartlet from Oval Office to Situation Room in resolute
+      stride, queries 'Sir?' amid rallying cry, then crisply decodes Officer 3rd's
+      report by explaining 'We have the Portland on satellite. We have them,' bridging
+      military jargon to presidential relief.
+    observed_status: Accompanies Bartlet from Oval Office to Situation Room in resolute
+      stride, queries 'Sir?' amid rallying cry, then crisply decodes Officer 3rd's
+      report by explaining 'We have the Portland on satellite. We have them,' bridging
+      military jargon to presidential relief.
+    beliefs:
+    - Presidential instinct outweighs historical warnings in high-stakes crises
+    - Trust in naval crew competence can override institutional hesitations
+    observed_traits:
+    - alert
+    - concise
+    - mediating
+    - resolute
+    importance: primary
+  object_involvements:
+  - object_uuid: object_2723b7ea8b38
+    description_of_involvement: Referenced by Officer en route as primed C-141 Starlifters
+      at North Island, tasked to airlift DSR-V rescue submersibles westward, embodying
+      logistical backbone that converts presidential order into tangible extraction
+      assets amid the urgent transit briefing.
+    status_before_event: On alert at NAS North Island, engines ready for immediate
+      scramble
+    status_after_event: Confirmed in deployment pipeline for DSR-V transport to crisis
+      zone
+  - object_uuid: object_f49c5752b057
+    description_of_involvement: Officers detail DSR-V submersibles' harrowing procedure
+      en route—submerging to dock with Portland's hull, blowing docking collar, evacuating
+      24 survivors per forward escape trunk across six trips with medevac for injured—serving
+      as the mechanical lifeline Bartlet seizes to override caution.
+    status_before_event: Staged for transport via C-141 from North Island
+    status_after_event: Locked into operational sequence pending sub contact confirmation
+  - object_uuid: object_23e9b9605c65
+    description_of_involvement: Invoked in Portland's triumphant radio report as the
+      evaded Luna-class destroyer via 'close-aboard contact,' its lurking threat dissolved
+      by sub's deep-and-quiet dive, retroactively validating Bartlet's gamble and
+      deflating Albie's dire warnings.
+    status_before_event: Actively pursuing U.S.S. Portland in contested waters
+    status_after_event: Shaken off, retreating as irrelevant to restored ops
+  - object_uuid: object_be64b6429677
+    description_of_involvement: Activates in Situation Room as Officer 3rd announces
+      Whiskey-Three-Charlie contact on Sat-Hi Com, channeling Portland's voice to
+      report evasion and full ops, shattering dread into vindication and propelling
+      narrative from brinkmanship to extraction.
+    status_before_event: Silent amid sub blackout tension
+    status_after_event: Live with bidirectional Pacific Fleet-Portland linkage
+  location_involvements:
+  - location_uuid: location_dae93aedb7bf
+    description_of_involvement: Invoked en route as NAS North Island staging C-141
+      Starlifters for DSR-V haul, its Pacific tarmac urgency anchoring the briefing's
+      logistical chain from San Diego relays to deep-sea salvation.
+    observed_atmosphere: Remote operational hum under salt haze
+    functional_role: Logistics launchpad for rescue assets
+    symbolic_significance: Naval frontier bridging West Coast to Yellow Sea peril
+    access_restrictions: Military-restricted naval air station
+    key_environmental_details:
+    - Thrumming runways and shadowed aprons
+    - Primed behemoth aircraft wings locked wide
+  organization_involvements:
+  - organization_uuid: organization_45ce0488ec2e
+    description_of_involvement: Relayed in en route briefing as initial contact point—Pac
+      Fleet to Ballast chain—and manifests via radio VOICE 1ST querying then affirming
+      Portland's status, channeling hierarchical naval precision into White House
+      vindication.
+    active_representation: Via radio comms from command relay
+    power_dynamics: Subordinate to presidential override yet executing operational
+      authority
+    organizational_goals:
+    - Verify U.S.S. Portland's post-evasion viability
+    - Coordinate extraction assets across Pacific chain
+    influence_mechanisms:
+    - Radio protocol for status confirmation
+    - Logistical relays to support units like Ballast
+    institutional_impact: Reinforces U.S. naval readiness amid geopolitical tensions
+    internal_dynamics: Chain-of-command efficiency tested by sub silence
+  - organization_uuid: organization_b8210904cfb1
+    description_of_involvement: Breaks silence as VOICE 2ND over Sat-Hi Com, reporting
+      precise position, destroyer evasion via deep-and-quiet, and full mechanical
+      ops—its crew's grit directly vindicating Bartlet's trust and transforming event
+      from potential loss to recovery.
+    active_representation: Through captain/crew radio transmission
+    power_dynamics: Autonomous tactical execution under fleet oversight
+    organizational_goals:
+    - Confirm survival and operational integrity post-threat
+    - Maintain stealth evasion to enable safe extraction
+    influence_mechanisms:
+    - Direct satellite reporting to Pac Fleet
+    - Demonstrated seamanship overriding historical cautions
+    institutional_impact: Upholds Sea Wolf-class resilience in hostile waters
+    internal_dynamics: ''
+  - organization_uuid: organization_63dfb0b168cb
+    description_of_involvement: Integrated into officer's briefing as second link
+      in Pac Fleet contact chain to facilitate DSRV deployment, underscoring naval
+      hierarchy propelling rescue from White House fiat to Pacific execution.
+    active_representation: Via relayed command confirmation in briefing
+    power_dynamics: Supportive node in fleet hierarchy serving presidential directive
+    organizational_goals:
+    - Relay crisis intel down Pacific support chain
+    - Prepare for DSRV Mystic integration in extraction
+    influence_mechanisms:
+    - Hierarchical comms bridging fleet to sub assets
+    - Logistical coordination for air/sea rescue convergence
+    institutional_impact: Exemplifies rapid naval mobilization under crisis
+    internal_dynamics: ''
+  - organization_uuid: organization_8879f9656011
+    description_of_involvement: Shadow antagonist via its Luna-class destroyer's 'close-aboard
+      contact' evaded by Portland, its predatory patrol spiking stakes until sub report
+      renders it neutralized, heightening the event's brinkmanship drama.
+    active_representation: Through deployed Luna-class hunter vessel
+    power_dynamics: Regional threat neutralized by U.S. tactical superiority
+    organizational_goals:
+    - Patrol and interdict intruding submarines off coast
+    - Force U.S. naval exposure in contested waters
+    influence_mechanisms:
+    - Anti-submarine deployment pressuring evasion
+    - Geopolitical shadow escalating White House risks
+    institutional_impact: Embodies North Korean maritime aggression testing U.S. resolve
+    internal_dynamics: ''
+- fabula_uuid: cand_evt_scene_c246d2d774259f62_3
+  global_id: null
+  title: Portland Breaks Radio Silence, Evading Destroyer
+  description: As Bartlet overrides Albie's cautions and mobilizes rescue efforts
+    en route to the Situation Room, satellite communication suddenly restores contact
+    with the U.S.S. Portland (Whiskey Three). The crew reports their position, revealing
+    they went 'deep and quiet' to evade a North Korean Luna-class destroyer, with
+    systems fully operational. This revelation vindicates Bartlet's faith in the captain
+    and crew, transforming the crisis from dire silence to manageable peril, easing
+    immediate war risks while heightening extraction stakes in a pivotal turning point
+    of relief amid tension.
+  episode_uuid: ep_sea_ser_the_west_wing_s03_e06
+  scene_sequence: 18
+  sequence_in_scene: 23
+  key_dialogue:
+  - 'VOICE 1ST: "Whiskey-Three-Charlie, this is Pac Fleet, report you whiskey, over."'
+  - 'VOICE 2ND: "Pac Fleet, Whiskey Three-Charlie, Whiskey is 36.6 degrees north by
+    110 west. Went deep and quiet to avoid close-aboard contact with Luna class destroyer.
+    Mechanical situations at full op."'
+  - 'BARTLET: "All right, okay. There they are. See, they went deep and quiet to avoid
+    a close-aboard with a Luna class destroyer. What you gotta do in these situations
+    is you trust the captain, you trust the crew."'
+  is_flashback: false
+  location_uuid: null
+  theme_uuids:
+  - theme_f1992505c4df
+  arc_uuids:
+  - arc_5a5cea964350
+  participations:
+  - character_uuid: agent_45883b79da77
+    emotional_state: determined then relieved
+    goals:
+    - Override caution and initiate rescue for U.S.S. Portland
+    - Resolve submarine silence crisis
+    what_happened: Overrides Albie's caution, mobilizes to Situation Room, questions
+      rescue details, reacts with relief to restored contact, affirms trust in Portland's
+      captain and crew.
+    observed_status: Overrides Albie's caution, mobilizes to Situation Room, questions
+      rescue details, reacts with relief to restored contact, affirms trust in Portland's
+      captain and crew.
+    beliefs: []
+    observed_traits: []
+    importance: primary
+  - character_uuid: agent_123f8fae48a3
+    emotional_state: Insistent frustration laced with institutional dread
+    goals:
+    - Delay rash rescue to avert historical repetition
+    - Leverage time pressure via watch to reinforce caution
+    what_happened: Albie Duncan urgently recites historical submarine losses to caution
+      Bartlet, checking his watch to insist on waiting ten more minutes, but is overridden
+      as the President mobilizes to the Situation Room.
+    observed_status: Albie Duncan urgently recites historical submarine losses to
+      caution Bartlet, checking his watch to insist on waiting ten more minutes, but
+      is overridden as the President mobilizes to the Situation Room.
+    beliefs:
+    - Past submarine disasters predict current peril
+    - Hasty presidential action risks irrecoverable loss
+    observed_traits:
+    - insistent
+    - historical
+    - cautious
+    importance: primary
+  - character_uuid: agent_b30713fee0c6
+    emotional_state: Focused professionalism under pressure
+    goals:
+    - Clarify code names for command understanding
+    - Support seamless intel flow during mobilization
+    what_happened: Officer 2nd crisply decodes 'Whiskey Three' as Portland's callsign
+      during en-route briefing, locking naval terminology into the President's grasp
+      as rescue details unfold.
+    observed_status: Officer 2nd crisply decodes 'Whiskey Three' as Portland's callsign
+      during en-route briefing, locking naval terminology into the President's grasp
+      as rescue details unfold.
+    beliefs:
+    - Clear jargon accelerates crisis response
+    - Presidential queries demand instant precision
+    observed_traits:
+    - precise
+    - professional
+    - informative
+    importance: primary
+  - character_uuid: agent_e009c22dc6d3
+    emotional_state: Rigid attentiveness signaling operational readiness
+    goals:
+    - Maintain military decorum upon President's arrival
+    - Signal room's primed status for briefing
+    what_happened: Another Officer barks 'Ten-hut!' snapping Situation Room to attention
+      as Bartlet enters, enforcing military protocol at the crisis threshold.
+    observed_status: Another Officer barks 'Ten-hut!' snapping Situation Room to attention
+      as Bartlet enters, enforcing military protocol at the crisis threshold.
+    beliefs:
+    - Hierarchy demands immediate respect
+    - Protocol steadies high-stakes environments
+    observed_traits:
+    - disciplined
+    - protocol-driven
+    - alert
+    importance: primary
+  - character_uuid: agent_5fe10b4d8e71
+    emotional_state: Operational calm confirming success
+    goals:
+    - Verify Portland's status post-evasion
+    - Authorize continued mission with positive dispatch
+    what_happened: Pac Fleet's voice (VOICE 1ST) hails Whiskey-Three-Charlie via Sat-Hi
+      Com, requests status report, then rogers the evasion details with 'happy hunting,'
+      funneling naval coordination into White House relief.
+    observed_status: Pac Fleet's voice (VOICE 1ST) hails Whiskey-Three-Charlie via
+      Sat-Hi Com, requests status report, then rogers the evasion details with 'happy
+      hunting,' funneling naval coordination into White House relief.
+    beliefs:
+    - Sub crew competence handles threats autonomously
+    - Clear comms sustain fleet-wide momentum
+    observed_traits:
+    - professional
+    - concise
+    - affirmative
+    importance: primary
+  - character_uuid: agent_d11a3b6bb6e4
+    emotional_state: Steady reassurance amid rising tension
+    goals:
+    - Facilitate clear communication of restored contact
+    - Reinforce Bartlet's momentum post-override
+    what_happened: Leo accompanies Bartlet en route to Situation Room, crisply interprets
+      Officer 3rd's report twice—'We have the Portland on satellite' and 'We have
+      them'—bridging military jargon to presidential clarity amid unfolding radio
+      contact.
+    observed_status: Leo accompanies Bartlet en route to Situation Room, crisply interprets
+      Officer 3rd's report twice—'We have the Portland on satellite' and 'We have
+      them'—bridging military jargon to presidential clarity amid unfolding radio
+      contact.
+    beliefs:
+    - Bartlet's instincts outweigh historical cautions
+    - Operational confirmation trumps diplomatic delay
+    observed_traits:
+    - supportive
+    - decisive
+    - translator
+    importance: primary
+  object_involvements:
+  - object_uuid: object_2723b7ea8b38
+    description_of_involvement: C-141 Starlifters at NAS North Island referenced in
+      officer briefing as primed transport for DSR-V submersibles, embodying logistical
+      backbone of rescue mobilization, heightening stakes with their readiness amid
+      en-route strategy.
+    status_before_event: On alert at NAS North Island, engines poised
+    status_after_event: Confirmed in deployment chain for DSR-V haul
+  - object_uuid: object_f49c5752b057
+    description_of_involvement: DSR-V rescue submersibles detailed in briefing—submerging
+      to dock with Portland, blowing collars for 24-survivor egress over six trips
+      with medevac—serving as narrative lifeline, transforming Bartlet's override
+      into tangible extraction plan.
+    status_before_event: Staged for transport from North Island
+    status_after_event: Integrated into active rescue sequence post-contact
+  - object_uuid: object_23e9b9605c65
+    description_of_involvement: North Korean Luna-class destroyer invoked in Portland's
+      report as evaded threat via deep-and-quiet maneuver, shifting from antagonist
+      peril to neutralized risk, vindicating Bartlet's trust and easing war brink
+      tension.
+    status_before_event: Pursuing Portland in close-aboard contact
+    status_after_event: Shaken off, no longer immediate threat
+  - object_uuid: object_be64b6429677
+    description_of_involvement: Sat-Hi Com surges active in Situation Room, channeling
+      Officer 3rd's announcement, Leo's confirmation, and Pac Fleet/Portland radio
+      exchange—pivotal conduit restoring contact, catalyzing relief and operational
+      pivot.
+    status_before_event: Silent amid blackout crisis
+    status_after_event: Live with confirmed sub comms
+  location_involvements: []
+  organization_involvements:
+  - organization_uuid: organization_45ce0488ec2e
+    description_of_involvement: Pac Fleet orchestrates via radio (VOICE 1ST), hailing
+      Portland post-Sat-Hi Com restoration, rogering evasion report—driving narrative
+      turn from silence to coordination, aligning naval might with White House command.
+    active_representation: Through radio voice in Situation Room
+    power_dynamics: Exercising operational authority under presidential oversight
+    organizational_goals:
+    - Confirm sub status and capabilities
+    - Sustain mission momentum post-evasion
+    influence_mechanisms:
+    - Satellite radio relays
+    - Hierarchical command acknowledgments
+    institutional_impact: Reinforces U.S. naval readiness in geopolitical hotspots
+    internal_dynamics: Chain of command from Ballast/San Diego flowing seamlessly
+  - organization_uuid: organization_b8210904cfb1
+    description_of_involvement: U.S.S. Portland manifests via VOICE 2ND on Sat-Hi
+      Com, reporting position, deep-quiet evasion of destroyer, and full ops—core
+      distressed asset proving resilient, validating Bartlet's gamble and refocusing
+      on extraction.
+    active_representation: Via crew radio transmission
+    power_dynamics: Demonstrating tactical autonomy amid higher command
+    organizational_goals:
+    - Report status to restore contact
+    - Affirm operational integrity post-threat
+    influence_mechanisms:
+    - Direct satellite voice report
+    - Proven seamanship evading foe
+    institutional_impact: Upholds submarine service's brinkmanship legacy
+    internal_dynamics: ''
+  - organization_uuid: organization_63dfb0b168cb
+    description_of_involvement: Ballast noted in officer briefing as contacted via
+      Pac Fleet chain, integral to rescue relay from San Diego/North Island, embedding
+      in broader extraction infrastructure activated by Bartlet's push.
+    active_representation: Via mentioned command linkage
+    power_dynamics: Support node in naval hierarchy
+    organizational_goals:
+    - Facilitate DSRV deployment coordination
+    - Relay crisis intel upward
+    influence_mechanisms:
+    - Inter-fleet communication chains
+    - Logistical support provisioning
+    institutional_impact: ''
+    internal_dynamics: ''
+  - organization_uuid: organization_8879f9656011
+    description_of_involvement: North Korean Navy's Luna-class destroyer cited in
+      Portland's report as evaded pursuer, receding from immediate threat to contextual
+      antagonist, underscoring sub's grit and de-escalating war flashpoint.
+    active_representation: Through referenced destroyer action
+    power_dynamics: Aggressor force neutralized by U.S. tactics
+    organizational_goals:
+    - Stalk and engage U.S. sub
+    - Enforce territorial maritime dominance
+    influence_mechanisms:
+    - Deployed anti-sub assets
+    - Provoking deep-quiet evasion
+    institutional_impact: Heights Yellow Sea tensions in Cold War echoes
+    internal_dynamics: ''
+- fabula_uuid: cand_evt_scene_d4780068624076d0_0
+  global_id: null
+  title: Bartlet Confirms Ballot Filing, Endures Charlie's Populist Jab
+  description: Returning to the Outer Oval Office, President Bartlet eagerly confirms
+    with Charlie that his re-election papers are filed in New Hampshire, officially
+    launching his campaign amid national crises. Their banter invokes Roman consular
+    togas as symbols of personal commitment, but Charlie sharply challenges Bartlet's
+    'man of the people' self-image, contrasting intellectual flourishes with presidential
+    isolation—nuclear codes, secure perimeters, submarine rescues. Bartlet's light
+    rebuke of Charlie's 'mouthiness' reveals affectionate tension, humanizing him
+    before transitioning to C.J. This beat offers levity, excavates class disconnect
+    subtext, and affirms Bartlet's resolve despite burdens, echoing emotional persistence
+    through crisis.
+  episode_uuid: ep_sea_ser_the_west_wing_s03_e06
+  scene_sequence: 19
+  sequence_in_scene: 24
+  key_dialogue:
+  - 'BARTLET: So I''m on the ballot in New Hampshire. CHARLIE: Yeah.'
+  - 'BARTLET: When Romans ran for the office of Counsel - did I just see you roll
+    your eyes? CHARLIE: No sir. BARTLET: They wore whitened togas to show their intent
+    - a bit silly, perhaps... CHARLIE: Perhaps?'
+  - 'CHARLIE: I know how much you like to think of yourself as a man of the people.
+    Roman references and all. But you''re the only person who can launch our nuclear
+    weapons. You travel in a fully secured perimeter. You rescue submarines. Maybe
+    it''s time that an aide delivers a piece of paper. BARTLET: You''re pretty mouthy
+    today.'
+  is_flashback: false
+  location_uuid: null
+  theme_uuids:
+  - theme_f6e6e00bd943
+  arc_uuids: []
+  participations:
+  - character_uuid: agent_e9dd0ae36832
+    emotional_state: Playfully defiant sass masking deep familiarity and affection
+    goals:
+    - Confirm and celebrate campaign launch milestone
+    - Affectionately ground Bartlet in presidential realities
+    - Seamlessly transition him to C.J. for strategy
+    what_happened: Greets returning Bartlet warmly, repeatedly affirms New Hampshire
+      filing success, denies eye-roll with cheek, launches bold challenge on presidential
+      isolation via nukes/perimeters/subs, then professionally directs him to waiting
+      C.J. inside Oval.
+    observed_status: Greets returning Bartlet warmly, repeatedly affirms New Hampshire
+      filing success, denies eye-roll with cheek, launches bold challenge on presidential
+      isolation via nukes/perimeters/subs, then professionally directs him to waiting
+      C.J. inside Oval.
+    beliefs:
+    - Bartlet's self-image as 'man of the people' ignores elite isolation
+    - Bold candor strengthens their intimate bond
+    observed_traits:
+    - playfully defiant
+    - sassy
+    - loyal
+    - grounded
+    importance: primary
+  - character_uuid: agent_45883b79da77
+    emotional_state: eager, light-hearted, reflective
+    goals:
+    - officially confirm re-election campaign launch via New Hampshire ballot filing
+    - affirm personal commitment to presidency through historical analogy
+    - persist humorous banter amid crisis to maintain levity
+    - prepare authentic response to 'Why do I want to be President?' campaign question
+    what_happened: returns to Outer Oval Office, confirms re-election ballot filing
+      with Charlie, engages in banter about Roman consular togas as symbol of commitment,
+      lightly rebukes Charlie's challenge, enters Oval Office to discuss campaign
+      question with C.J.
+    observed_status: returns to Outer Oval Office, confirms re-election ballot filing
+      with Charlie, engages in banter about Roman consular togas as symbol of commitment,
+      lightly rebukes Charlie's challenge, enters Oval Office to discuss campaign
+      question with C.J.
+    beliefs: []
+    observed_traits: []
+    importance: primary
+  - character_uuid: agent_e282d4d880da
+    emotional_state: Implied inadequacy from prior stumble
+    goals:
+    - Sidestep tough reelection introspection
+    - Project casual accessibility
+    what_happened: Referenced off-screen by C.J. as having flubbed previous night's
+      'Why President?' query with simplistic 'went to the zoo' dodge, underscoring
+      partisan contrast.
+    observed_status: Referenced off-screen by C.J. as having flubbed previous night's
+      'Why President?' query with simplistic 'went to the zoo' dodge, underscoring
+      partisan contrast.
+    beliefs:
+    - Vague folksy answers suffice politically
+    - Ambition best concealed
+    observed_traits:
+    - evasive
+    - underprepared
+    importance: primary
+  object_involvements:
+  - object_uuid: object_80acebcbf1bc
+    description_of_involvement: Invoked in witty banter between Bartlet and C.J. as
+      emblem of presidential isolation—query on ducking under blades underscores secured
+      perimeter privileges, echoing Charlie's earlier perks critique and amplifying
+      theme of command's human cost amid campaign levity.
+    status_before_event: Idling on White House portico with whirring rotors
+    status_after_event: Idling on White House portico with whirring rotors
+  location_involvements: []
+  organization_involvements: []
+- fabula_uuid: cand_evt_scene_d4780068624076d0_1
+  global_id: null
+  title: 'C.J. Presses Bartlet: Why Do You Want to Be President?'
+  description: In the Oval Office, Bartlet banters lightly with C.J. about Marine
+    One's rotor blades and the Majority Leader's zoo gaffe, urging her to go easy
+    on him as a 'conscientious guy' facing a tough question. C.J. turns the spotlight
+    on Bartlet, challenging him to answer why he wants to be President. His heavy
+    sigh and admission—he's been pondering it for hours but 'almost had it'—reveals
+    profound vulnerability and authenticity struggles amid re-election pressures,
+    scandals, and crises. This raw exchange deepens their bond, exposes personal stakes,
+    and underscores the campaign's quest for a genuine core message.
+  episode_uuid: ep_sea_ser_the_west_wing_s03_e06
+  scene_sequence: 19
+  sequence_in_scene: 25
+  key_dialogue:
+  - 'BARTLET: Yeah, listen. I want you to go easy on him. He''s a conscientious and
+    dedicated guy. It''s not an easy question.'
+  - |-
+    C.J.: Can you answer it?
+    BARTLET: Why do I want to be President?
+    C.J.: Yeah.
+  - 'BARTLET: [sighs] I''ve been thinking about it for the last couple of hours. I
+    almost had it.'
+  is_flashback: false
+  location_uuid: null
+  theme_uuids:
+  - theme_f6e6e00bd943
+  arc_uuids: []
+  participations:
+  - character_uuid: agent_e9dd0ae36832
+    emotional_state: Cheekily defiant, buoyed by intimate rapport
+    goals:
+    - Ground Bartlet in presidential realities
+    - Prompt timely meeting with C.J.
+    what_happened: Sasses Bartlet post-ballot confirmation with bold reminder of nuclear
+      codes, secured perimeters, and submarine rescues versus 'man of the people'
+      pretensions, then crisply directs him to waiting C.J. inside Oval Office, bridging
+      Outer Oval banter to inner exchange.
+    observed_status: Sasses Bartlet post-ballot confirmation with bold reminder of
+      nuclear codes, secured perimeters, and submarine rescues versus 'man of the
+      people' pretensions, then crisply directs him to waiting C.J. inside Oval Office,
+      bridging Outer Oval banter to inner exchange.
+    beliefs:
+    - Presidential power demands realism over populism
+    - Directness strengthens aide-boss bond
+    observed_traits:
+    - cheeky
+    - bold
+    - loyal
+    - sassy
+    importance: primary
+  - character_uuid: agent_45883b79da77
+    emotional_state: pensive and vulnerable
+    goals:
+    - confirm placement on New Hampshire ballot
+    - grapple with and articulate authentic reason for seeking presidency amid re-election
+      pressures
+    what_happened: returns to Outer Oval Office, confirms ballot filing with Charlie
+      through banter about Roman history, enters Oval Office, banters with C.J. about
+      Marine One and defends Majority Leader, sighs and admits struggling to articulate
+      why he wants to be President
+    observed_status: returns to Outer Oval Office, confirms ballot filing with Charlie
+      through banter about Roman history, enters Oval Office, banters with C.J. about
+      Marine One and defends Majority Leader, sighs and admits struggling to articulate
+      why he wants to be President
+    beliefs: []
+    observed_traits: []
+    importance: primary
+  - character_uuid: agent_e282d4d880da
+    emotional_state: Stammering under scrutiny, politically cornered
+    goals:
+    - Deflect ambition-probing questions
+    - Maintain dignified public facade
+    what_happened: Invoked by C.J. as foil—his prior press gaffe dodging 'Why President?'
+      with zoo tangent, prompting Bartlet's defense and her counter-challenge, underscoring
+      partisan pressure cooker.
+    observed_status: Invoked by C.J. as foil—his prior press gaffe dodging 'Why President?'
+      with zoo tangent, prompting Bartlet's defense and her counter-challenge, underscoring
+      partisan pressure cooker.
+    beliefs:
+    - Personal motivations stay private
+    - Partisan loyalty trumps introspection
+    observed_traits:
+    - evasive
+    - conscientious
+    importance: primary
+  object_involvements:
+  - object_uuid: object_80acebcbf1bc
+    description_of_involvement: Casually invoked in Bartlet-C.J. banter as symbol
+      of executive isolation—query on ducking rotors underscores perks alienating
+      presidents from 'people,' echoing Charlie's earlier perks critique and contrasting
+      Oval candor amid axed New Hampshire trip tensions.
+    status_before_event: Idling with whirring rotors on White House portico
+    status_after_event: Still idling on portico, blades slicing air
+  location_involvements: []
+  organization_involvements: []

@@ -1,0 +1,422 @@
+# Events for Bartlet for America
+# Generated: 2026-01-13T19:32:44.054820
+
+episode_uuid: ep_sea_ser_the_west_wing_s03_e09
+episode_title: Bartlet for America
+series_title: The West Wing
+events:
+- fabula_uuid: cand_evt_scene_b63535b661d08fc7_1
+  global_id: null
+  title: 'Leo''s Defiant Prep: Delegating Crises, Rebuking Rescue'
+  description: Alone at first in the tense congressional meeting room, Leo rapidly
+    delegates the escalating church arson threats in Tennessee to Mike Casper, instructing
+    him to team with Josh while securing a phone link to monitor. On the call with
+    Josh, Leo firmly rejects schemes to extract him from the hearing, exposing Josh's
+    guilt-fueled fixer compulsion and Leo's stoic resolve to 'take the hit.' Jordan
+    presses him to enter, but Leo defiantly lists crises and banters with press, masking
+    nerves while hinting at undisclosed secrets, heightening isolation before the
+    MS cover-up showdown.
+  episode_uuid: ep_sea_ser_the_west_wing_s03_e09
+  scene_sequence: 1
+  sequence_in_scene: 1
+  key_dialogue:
+  - |-
+    JOSH: I'm going to help you, 'cause you know why?
+    LEO: Cause you walk around with so much guilt about everybody you love dying that you're a compulsive fixer?
+  - 'LEO: I swear to God, Jordan, the last thing I am right now is nervous.'
+  - |-
+    JORDAN: Leo, is there something you haven't told me?
+    LEO: There's lots of things I haven't told you, Jordan.
+    JORDAN: About today.
+  is_flashback: false
+  location_uuid: null
+  theme_uuids:
+  - theme_6e3f01c55975
+  - theme_567e23a56fdb
+  arc_uuids:
+  - arc_201b327ac66d
+  - arc_30cbad740c8a
+  - arc_ef3db31ea007
+  participations:
+  - character_uuid: agent_2589955c763e
+    emotional_state: Insistent determination laced with personal guilt
+    goals:
+    - Extract Leo from hearing peril
+    - Coordinate arson response while aiding mentor
+    what_happened: On phone via Margaret's facilitation, Josh reports new Tennessee
+      threats, pushes extraction tactics from past experience despite Leo's rebuffs,
+      invokes guilt metaphor to justify compulsion, persists until cut off.
+    observed_status: On phone via Margaret's facilitation, Josh reports new Tennessee
+      threats, pushes extraction tactics from past experience despite Leo's rebuffs,
+      invokes guilt metaphor to justify compulsion, persists until cut off.
+    beliefs:
+    - Fixer skills can circumvent congressional trap
+    - Leo's vulnerability demands intervention
+    observed_traits:
+    - persistent
+    - guilt-driven
+    - resourceful
+    importance: primary
+  - character_uuid: agent_256dcf4afffe
+    emotional_state: Calm competence amid brewing storm
+    goals:
+    - Connect Leo to Josh without delay
+    - Support Leo's delegation smoothly
+    what_happened: Present in room, Margaret facilitates by indicating cellphone for
+      Josh connection at Leo's prompt, enabling seamless crisis handoff amid anteroom
+      tension.
+    observed_status: Present in room, Margaret facilitates by indicating cellphone
+      for Josh connection at Leo's prompt, enabling seamless crisis handoff amid anteroom
+      tension.
+    beliefs:
+    - Quick action preserves command chain
+    - Leo needs reliable lifeline to operations
+    observed_traits:
+    - efficient
+    - loyal
+    - responsive
+    importance: primary
+  - character_uuid: agent_d11a3b6bb6e4
+    emotional_state: Feigned nonchalance masking steely resolve and buried vulnerability
+    goals:
+    - Delegate church arson threats effectively to maintain national response
+    - Reject extraction to face hearing consequences head-on
+    what_happened: Sitting alone at the table, Leo directs Mike's entry, delegates
+      arson crisis response to him and Josh via crisp orders, demands secure phone
+      monitoring, sharply rejects Josh's extraction pleas over cellphone, stalls Jordan
+      with breakfast quips and crisis recaps, banters wryly with press encroaching,
+      jaw set in command amid ticking isolation.
+    observed_status: Sitting alone at the table, Leo directs Mike's entry, delegates
+      arson crisis response to him and Josh via crisp orders, demands secure phone
+      monitoring, sharply rejects Josh's extraction pleas over cellphone, stalls Jordan
+      with breakfast quips and crisis recaps, banters wryly with press encroaching,
+      jaw set in command amid ticking isolation.
+    beliefs:
+    - Duty demands taking the hit personally
+    - Josh's fixer impulses stem from unresolved guilt
+    observed_traits:
+    - stoic
+    - defiant
+    - commanding
+    - wry
+    importance: primary
+  - character_uuid: agent_24e5ef13f654
+    emotional_state: Focused professionalism underscoring crisis urgency
+    goals:
+    - Update Leo on arson escalation accurately
+    - Coordinate seamlessly with Josh on response
+    what_happened: Entering from outside, Mike reports seven new church threats in
+      Tennessee counties, details 25 agents on ground plus incoming ATF team and ongoing
+      Governor briefing, agrees to partner with Josh, wishes Leo luck before exiting
+      on command.
+    observed_status: Entering from outside, Mike reports seven new church threats
+      in Tennessee counties, details 25 agents on ground plus incoming ATF team and
+      ongoing Governor briefing, agrees to partner with Josh, wishes Leo luck before
+      exiting on command.
+    beliefs:
+    - Federal resources are mobilizing effectively
+    - White House delegation strengthens interagency effort
+    observed_traits:
+    - professional
+    - concise
+    - dutiful
+    importance: primary
+  - character_uuid: agent_9ef33b98f829
+    emotional_state: Impatient resolve probing deeper unease
+    goals:
+    - Propel Leo into hearing on time
+    - Gauge his true state amid secrets
+    what_happened: Entering to pressure Leo for hearing entry, rejects breakfast stall
+      and delay tactics, challenges his nerves and hidden info, banters lightly with
+      him and press swarm outside door.
+    observed_status: Entering to pressure Leo for hearing entry, rejects breakfast
+      stall and delay tactics, challenges his nerves and hidden info, banters lightly
+      with him and press swarm outside door.
+    beliefs:
+    - Stalling signals undisclosed nerves
+    - Direct confrontation uncovers truths
+    observed_traits:
+    - impatient
+    - probing
+    - supportive
+    importance: primary
+  object_involvements:
+  - object_uuid: object_8e7bb7c91621
+    description_of_involvement: The clock ticks relentlessly in the opening hush,
+      its mechanical pulse underscoring Leo's isolation at the table and amplifying
+      tension as delegations and rebuffs unfold, symbolizing inexorable march toward
+      MS hearing confrontation.
+    status_before_event: Ticking audibly in empty room
+    status_after_event: Continuing to tick amid press intrusion
+  - object_uuid: object_ad9ab4bc1135
+    description_of_involvement: Leo's cellphone, indicated by Margaret, serves as
+      vital crisis lifeline for Josh call, enabling delegation updates and heated
+      extraction debate; Leo requests secure hookup upgrade, tethering isolated command
+      to arson frontlines narratively bridging hearing peril to national threats.
+    status_before_event: In Leo's possession, primary link
+    status_after_event: Still with Leo, pending secure upgrade
+  location_involvements:
+  - location_uuid: location_f05c17be43d0
+    description_of_involvement: The congressional meeting room confines Leo's high-stakes
+      preparations, from solitary clock-ticked delegation with Mike to phone clashes
+      with Josh and Jordan's entry pressures, culminating in press siege at threshold—embodying
+      trapped command hub where personal resolve steels against institutional inquisition.
+    observed_atmosphere: Stifling hush pierced by ticking clock, urgent voices, and
+      encroaching press clamor
+    functional_role: Isolation chamber for crisis delegation and pre-hearing defiance
+    symbolic_significance: Represents Leo's voluntary isolation in loyalty's crucible
+    access_restrictions: Controlled entry; press massed outside door
+    key_environmental_details:
+    - Ticking clock
+    - Long table for briefings
+    - Blinds-filtered daylight
+    - Encroaching press noise
+  organization_involvements:
+  - organization_uuid: organization_c8178be8d172
+    description_of_involvement: Press corps surges as Leo/Jordan exit, met with Grammy
+      banter deflection, embodying media scrutiny circling hearing, probing for MS
+      leaks amid arson distractions in scandal-hungry swarm.
+    active_representation: Physical encirclement outside room door
+    power_dynamics: Exerting narrative pressure on isolated executive
+    organizational_goals:
+    - Elicit comments on hearing secrets
+    - Amplify arson/hearing linkage for scoops
+    influence_mechanisms:
+    - Microphone thrusts and questions
+    - Public spectacle creation
+    institutional_impact: Threatens exposure of cover-up vulnerabilities
+    internal_dynamics: ''
+  - organization_uuid: organization_fe73236832d7
+    description_of_involvement: ATF's deployment of a tactical team to Tennessee arsons
+      is relayed by Mike, reinforcing federal muscle under Leo's delegated ops, heightening
+      interagency fusion amid White House hearing distractions and escalating domestic
+      terror.
+    active_representation: Via Mike Casper's operational briefing
+    power_dynamics: Deploying resources under FBI-White House coordination
+    organizational_goals:
+    - Bolster ground response to church threats
+    - Enforce explosives investigation protocols
+    influence_mechanisms:
+    - Dispatching specialized teams
+    - Interagency resource allocation
+    institutional_impact: Amplifies federal override in state crises
+    internal_dynamics: ''
+  - organization_uuid: organization_d5ac05496fa5
+    description_of_involvement: Leo flags potential federalization of Tennessee National
+      Guard amid Governor involvement and new threats, positioning it as crisis escalation
+      option in delegation to Mike/Josh, underscoring White House readiness to seize
+      state militia control.
+    active_representation: Referenced in Leo's crisis rundown to justify delays
+    power_dynamics: Pending federal override of state authority
+    organizational_goals:
+    - Prepare for riot lockdown
+    - Respond to church arsons as first responders
+    influence_mechanisms:
+    - Governor briefing chain
+    - Federalization threat
+    institutional_impact: Highlights tensions between state loyalty and national security
+    internal_dynamics: ''
+- fabula_uuid: cand_evt_scene_1ac0dfcff0a51ba6_2
+  global_id: null
+  title: Bartlet's Banter Bolsters Leo Before the Oath
+  description: Margaret interrupts Leo's prep for Jordan's probing, connecting him
+    to President Bartlet on the phone. Amid high-stakes tension over MS cover-up and
+    Leo's relapse, Bartlet mixes fierce loyalty—urging perjury if needed—with screwball
+    levity about Jordan's 'spandex' outfit, then reminds Leo of forgotten Christmas
+    Eve plans, restoring normalcy. He pledges the White House staff's solidarity as
+    Leo steels for testimony. Post-oath, Leo whispers to Jordan his relapse is 'a
+    family thing,' humanizing vulnerability before chaos erupts. This respite beat
+    reinforces loyalty, contrasts crisis with domesticity, and sets emotional stakes
+    for revelations.
+  episode_uuid: ep_sea_ser_the_west_wing_s03_e09
+  scene_sequence: 2
+  sequence_in_scene: 2
+  key_dialogue:
+  - 'BARTLET ([on phone]): "You got about a thousand people in this building standing
+    with you right now."'
+  - 'BARTLET: "It''s Christmas Eve."'
+  - 'LEO ([to Jordan]): "It ain''t nothing but a family thing."'
+  is_flashback: false
+  location_uuid: null
+  theme_uuids:
+  - theme_567e23a56fdb
+  arc_uuids:
+  - arc_201b327ac66d
+  - arc_30cbad740c8a
+  - arc_c449fe643345
+  participations:
+  - character_uuid: agent_2589955c763e
+    emotional_state: Guilt-fueled determination (inferred)
+    goals:
+    - Execute extraction plans for Leo
+    - Penetrate hearing defenses
+    what_happened: Josh invoked by Bartlet as strategic ally whose crisis maneuvers
+      Leo must greenlight, his off-screen persistence fueling the pep talk's urgency
+      without physical presence.
+    observed_status: Josh invoked by Bartlet as strategic ally whose crisis maneuvers
+      Leo must greenlight, his off-screen persistence fueling the pep talk's urgency
+      without physical presence.
+    beliefs:
+    - Loyalty demands aggressive intervention
+    - Leo's resistance must be overridden
+    observed_traits:
+    - persistent
+    - strategic
+    importance: primary
+  - character_uuid: agent_45883b79da77
+    emotional_state: Fiercely protective with jocular deflection
+    goals:
+    - Rally Leo emotionally against committee onslaught
+    - Restore personal normalcy amid crisis
+    what_happened: Bartlet crackles over phone with fierce protection—urging perjury
+      for Leo's sake—tempers with screwball jabs at Jordan's 'spandex,' overrides
+      resistance on Josh's plans, reminds of Christmas Eve normalcy, pledges thousand-strong
+      White House solidarity, blending command with familial warmth.
+    observed_status: Bartlet crackles over phone with fierce protection—urging perjury
+      for Leo's sake—tempers with screwball jabs at Jordan's 'spandex,' overrides
+      resistance on Josh's plans, reminds of Christmas Eve normalcy, pledges thousand-strong
+      White House solidarity, blending command with familial warmth.
+    beliefs:
+    - Perjury justified to shield inner circle
+    - Humor and family bind staff through firestorms
+    observed_traits:
+    - loyal
+    - irreverent
+    - commanding
+    importance: primary
+  - character_uuid: agent_256dcf4afffe
+    emotional_state: Determined and unflinching
+    goals:
+    - Connect Leo with Bartlet for crucial support
+    - Cut through procedural barriers to aid her boss
+    what_happened: Margaret bursts into the hearing room, overriding Jordan's objection
+      by announcing the President's call, handing off the phone to Leo with brusque
+      efficiency amid prep tension, her interruption knitting vital White House loyalty
+      into the congressional gauntlet.
+    observed_status: Margaret bursts into the hearing room, overriding Jordan's objection
+      by announcing the President's call, handing off the phone to Leo with brusque
+      efficiency amid prep tension, her interruption knitting vital White House loyalty
+      into the congressional gauntlet.
+    beliefs:
+    - Presidential access trumps hearing protocols
+    - Leo needs this rally to face the committee
+    observed_traits:
+    - assertive
+    - loyal
+    - efficient
+    importance: primary
+  - character_uuid: agent_d11a3b6bb6e4
+    emotional_state: Tense bolstered by loyalty, feigning levity over vulnerability
+    goals:
+    - Absorb Bartlet's support to fortify for testimony
+    - Humanize relapse privately to Jordan before perjury risks
+    what_happened: Leo takes Bartlet's call amid tension, deflects perjury urge with
+      global spy jest, relays outfit banter to Jordan, affirms Christmas Eve plans,
+      whispers relapse as 'family thing' to her alone, then rises to swear solemn
+      oath before committee, steeling resolve with wry humor masking frayed nerves.
+    observed_status: Leo takes Bartlet's call amid tension, deflects perjury urge
+      with global spy jest, relays outfit banter to Jordan, affirms Christmas Eve
+      plans, whispers relapse as 'family thing' to her alone, then rises to swear
+      solemn oath before committee, steeling resolve with wry humor masking frayed
+      nerves.
+    beliefs:
+    - Family loyalty overrides institutional peril
+    - Humor disarms eavesdroppers and tension alike
+    observed_traits:
+    - stoic
+    - wry
+    - loyal
+    importance: primary
+  - character_uuid: agent_9ef33b98f829
+    emotional_state: Irritated curiosity laced with strategic impatience
+    goals:
+    - Maintain control over Leo's prep without distractions
+    - Uncover Leo's vulnerability for leverage in questioning
+    what_happened: Jordan snaps objection to calls during prep, banters sharply over
+      her gray Armani suit dubbed 'spandex' by Leo relaying Bartlet, probes Leo post-call
+      on 'what's going on?', receives his intimate relapse whisper, her impatience
+      yielding to probing curiosity as oath looms.
+    observed_status: Jordan snaps objection to calls during prep, banters sharply
+      over her gray Armani suit dubbed 'spandex' by Leo relaying Bartlet, probes Leo
+      post-call on 'what's going on?', receives his intimate relapse whisper, her
+      impatience yielding to probing curiosity as oath looms.
+    beliefs:
+    - No interruptions during high-stakes testimony prep
+    - Leo's secrets hold keys to MS cover-up unraveling
+    observed_traits:
+    - impatient
+    - probing
+    - witty
+    importance: primary
+  - character_uuid: agent_c9335cc29ed8
+    emotional_state: Impartial procedural resolve
+    goals:
+    - Initiate sworn testimony per protocol
+    - Maintain committee decorum
+    what_happened: Chairman commands Leo to rise, right hand raised, swearing the
+      written oath before God, enforcing procedural gravity that punctuates the private
+      rally with public ritual amid hearing room tension.
+    observed_status: Chairman commands Leo to rise, right hand raised, swearing the
+      written oath before God, enforcing procedural gravity that punctuates the private
+      rally with public ritual amid hearing room tension.
+    beliefs:
+    - Oath binds truth in inquiry
+    - Ritual underscores institutional power
+    observed_traits:
+    - authoritative
+    - formal
+    importance: primary
+  object_involvements:
+  - object_uuid: object_777a9d72c427
+    description_of_involvement: Leo's Written Oath positioned before him in witness
+      chair serves as solemn anchor; Chairman directs swearing to its text, Leo recites
+      verbatim post-whisper, transforming personal respite into public pledge under
+      perjury's gaze, heightening stakes from loyalty banter to truth-bound vulnerability.
+    status_before_event: Positioned before Leo in hearing room witness chair, unread
+    status_after_event: Sworn from by Leo, now invoked as binding testimony commitment
+  location_involvements:
+  - location_uuid: location_149a1210fdba
+    description_of_involvement: House Hearing Room frames intimate phone rally and
+      oath ritual in daylight-paneled formality, witness chair creaking under Leo
+      as Margaret interrupts, Bartlet's voice pierces tension, transitioning private
+      bolstering to public scrutiny, embodying clash of loyalty and institutional
+      hammer.
+    observed_atmosphere: Charged with procedural tension laced by screwball levity
+    functional_role: Stage for pre-testimony rally and oath administration
+    symbolic_significance: Arena where White House bonds collide with congressional
+      inquisition
+    access_restrictions: Restricted to witnesses, counsel, committee members
+    key_environmental_details:
+    - Daylight flooding paneled walls
+    - Echoing voices and footfalls amplifying tension
+  organization_involvements:
+  - organization_uuid: organization_1614791d856e
+    description_of_involvement: House Government Reform and Oversight Committee looms
+      via Chairman's oath command and procedural steel, framing Leo's rally as prelude
+      to MS grilling, its authority piercing White House solidarity with ritual gravity
+      amid cover-up probe.
+    active_representation: Via Chairman enforcing oath protocol
+    power_dynamics: Exercising inquisitorial authority over witness
+    organizational_goals:
+    - Extract sworn testimony on MS secrets
+    - Uphold procedural integrity in hearing
+    influence_mechanisms:
+    - Ritual oaths binding truth
+    - Institutional command structure
+    institutional_impact: Tests executive loyalty against legislative oversight
+    internal_dynamics: ''
+  - organization_uuid: organization_f44626e1c6a3
+    description_of_involvement: Global Intelligence Agencies invoked in Leo's wry
+      deflection of Bartlet's perjury urge, jesting '17 agencies listening' on non-secure
+      line, injecting paranoid levity that underscores vulnerability of even Oval
+      whispers amid domestic crisis.
+    active_representation: As humorous spectral threat in dialogue
+    power_dynamics: Omnipresent eavesdropper challenging secure communication
+    organizational_goals:
+    - Intercept sensitive political intel
+    - Monitor executive discussions
+    influence_mechanisms:
+    - Surveillance capabilities
+    - Paranoia-inducing omnipresence
+    institutional_impact: Highlights blurred lines of domestic security threats
+    internal_dynamics: ''
