@@ -1,5 +1,5 @@
 # Events for Isaac and Ishmael
-# Generated: 2026-01-13T19:32:41.093525
+# Generated: 2026-01-14T18:28:53.737093
 
 episode_uuid: ep_sea_ser_the_west_wing_s03_e00
 episode_title: Isaac and Ishmael
@@ -416,7 +416,18 @@ events:
     - composed
     - professional
     importance: primary
-  - character_uuid: agent_029caffba659
+  - character_uuid: agent_f017908db48f
+    emotional_state: authoritative
+    goals:
+    - enforce lockdown and secure the area
+    what_happened: bursts in with other agents and instructs 'Everybody, please, stay
+      where you are'
+    observed_status: bursts in with other agents and instructs 'Everybody, please,
+      stay where you are'
+    beliefs: []
+    observed_traits: []
+    importance: primary
+  - character_uuid: agent_6de62e9068a4
     emotional_state: Terse urgency honed by training, no panic.
     goals:
     - Respond swiftly to Crash phone alert
@@ -434,17 +445,6 @@ events:
     - urgent
     - protocol-driven
     - vigilant
-    importance: primary
-  - character_uuid: agent_f017908db48f
-    emotional_state: authoritative
-    goals:
-    - enforce lockdown and secure the area
-    what_happened: bursts in with other agents and instructs 'Everybody, please, stay
-      where you are'
-    observed_status: bursts in with other agents and instructs 'Everybody, please,
-      stay where you are'
-    beliefs: []
-    observed_traits: []
     importance: primary
   - character_uuid: agent_a3bcc1260116
     emotional_state: Controlled intensity projecting unyielding command.
@@ -655,7 +655,7 @@ events:
     - professional
     - disciplined
     importance: primary
-  - character_uuid: agent_029caffba659
+  - character_uuid: agent_6de62e9068a4
     emotional_state: Urgent professionalism overriding alarm
     goals:
     - Initiate lockdown protocol accurately

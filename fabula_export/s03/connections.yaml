@@ -1,5 +1,5 @@
 # Narrative Connections Between Events
-# Generated: 2026-01-13T19:32:48.160389
+# Generated: 2026-01-14T18:29:01.981100
 
 - fabula_uuid: conn_3314f06c1b62
   global_id: ger_narrativeconnection_5238a74526f2
@@ -883,14 +883,128 @@
   strength: strong
   description: Toby's silent apology to CJ recalls their earlier explosive confrontation
     over Qumar.
-- fabula_uuid: conn_3a2397338285
-  global_id: ger_narrativeconnection_8fbba2249a37
-  from_event_uuid: cand_evt_scene_1ac0dfcff0a51ba6_2
+- fabula_uuid: conn_614c72b833a0
+  global_id: ger_narrativeconnection_3cd5b7c72ae1
+  from_event_uuid: cand_evt_scene_b63535b661d08fc7_1
+  to_event_uuid: cand_evt_scene_b63535b661d08fc7_1
+  connection_type: CHARACTER_CONTINUITY
+  strength: strong
+  description: Leo's refusal of Josh's help in disrupting the hearing stems from his
+    sense of guilt and responsibility, a trait established in his initial preparation
+    for the hearing.
+- fabula_uuid: conn_fb41403303f0
+  global_id: ger_narrativeconnection_e0e0a7fdba65
+  from_event_uuid: cand_evt_scene_b63535b661d08fc7_1
+  to_event_uuid: cand_evt_scene_1ac0dfcff0a51ba6_1
+  connection_type: NARRATIVELY_FOLLOWS
+  strength: strong
+  description: Josh's offer to help Leo disrupt the hearing is followed by Bartlet's
+    call instructing Leo to let Josh act on his behalf.
+- fabula_uuid: conn_9987b5484596
+  global_id: ger_narrativeconnection_e7a06099f215
+  from_event_uuid: cand_evt_scene_b63535b661d08fc7_2
+  to_event_uuid: cand_evt_scene_b63535b661d08fc7_2
+  connection_type: CHARACTER_CONTINUITY
+  strength: medium
+  description: Leo's deflection of Jordan's probing about undisclosed information
+    foreshadows his later revelation about his alcoholic relapse.
+- fabula_uuid: conn_4bfc761aea43
+  global_id: ger_narrativeconnection_eb0fb23b30d6
+  from_event_uuid: cand_evt_scene_b63535b661d08fc7_1
+  to_event_uuid: cand_evt_scene_b63535b661d08fc7_2
+  connection_type: CHARACTER_CONTINUITY
+  strength: strong
+  description: Leo's solitary tension at the hearing directly triggers Josh's compulsive
+    need to intervene, showcasing Josh's protective instincts and Leo's stoic determination.
+- fabula_uuid: conn_69592b32b052
+  global_id: ger_narrativeconnection_d1c381e1550a
+  from_event_uuid: cand_evt_scene_b63535b661d08fc7_1
+  to_event_uuid: cand_evt_scene_b63535b661d08fc7_2
+  connection_type: NARRATIVELY_FOLLOWS
+  strength: strong
+  description: Leo directing Mike Casper to assist Josh leads directly to their strategic
+    clash over handling the hearing and crisis, showing the chain of command in action.
+- fabula_uuid: conn_efc9ad3d861a
+  global_id: ger_narrativeconnection_d7abb71386bc
+  from_event_uuid: cand_evt_scene_b63535b661d08fc7_2
+  to_event_uuid: cand_evt_scene_b63535b661d08fc7_2
+  connection_type: CAUSAL
+  strength: medium
+  description: Josh's insistence on strategizing leads to Leo's metaphorical rejection,
+    deepening the tension between their approaches to crisis.
+- fabula_uuid: conn_809920064fd7
+  global_id: ger_narrativeconnection_61a637115c3c
+  from_event_uuid: cand_evt_scene_b63535b661d08fc7_2
+  to_event_uuid: cand_evt_scene_1ac0dfcff0a51ba6_1
+  connection_type: CHARACTER_CONTINUITY
+  strength: medium
+  description: Leo's insistence on facing the hearing directly contrasts with Bartlet's
+    trust in Josh's disruptive tactics, showing both Leo's protective nature and Bartlet's
+    strategic delegation.
+- fabula_uuid: conn_de2dc2b483d4
+  global_id: ger_narrativeconnection_0f0f8c45be45
+  from_event_uuid: cand_evt_scene_b63535b661d08fc7_2
+  to_event_uuid: cand_evt_scene_1ac0dfcff0a51ba6_1
+  connection_type: EMOTIONAL_ECHO
+  strength: medium
+  description: Leo's defiance in the press scrum mirrors his playful banter with Jordan
+    and Bartlet, illustrating his use of humor as a coping mechanism under stress.
+- fabula_uuid: conn_151eed9f1ff2
+  global_id: ger_narrativeconnection_641018550055
+  from_event_uuid: cand_evt_scene_1ac0dfcff0a51ba6_1
+  to_event_uuid: cand_evt_scene_1ac0dfcff0a51ba6_1
+  connection_type: CAUSAL
+  strength: strong
+  description: Bartlet's instruction to Leo to let Josh protect him leads to Leo's
+    public disclaimer about perjury.
+- fabula_uuid: conn_c8121ee5975e
+  global_id: ger_narrativeconnection_ac5e4e7c145e
+  from_event_uuid: cand_evt_scene_1ac0dfcff0a51ba6_1
+  to_event_uuid: cand_evt_scene_1ac0dfcff0a51ba6_1
+  connection_type: THEMATIC_PARALLEL
+  strength: medium
+  description: Bartlet's joke about perjury mirrors his later cryptic questions about
+    Jordan, both serving as veiled directives to Leo about navigating crises.
+- fabula_uuid: conn_84ea52175efc
+  global_id: ger_narrativeconnection_2cce690ecd75
+  from_event_uuid: cand_evt_scene_1ac0dfcff0a51ba6_1
+  to_event_uuid: cand_evt_scene_1ac0dfcff0a51ba6_1
+  connection_type: EMOTIONAL_ECHO
+  strength: medium
+  description: Bartlet's protective surveillance of Jordan echoes in Leo and Jordan's
+    banter, reflecting unspoken trust and authority dynamics.
+- fabula_uuid: conn_5a2bce1abf66
+  global_id: ger_narrativeconnection_7d0e94a1b505
+  from_event_uuid: cand_evt_scene_1ac0dfcff0a51ba6_1
   to_event_uuid: cand_evt_scene_1ac0dfcff0a51ba6_2
+  connection_type: THEMATIC_PARALLEL
+  strength: medium
+  description: The banter about Christmas Eve plans contrasts with the solemnity of
+    Leo taking the oath, highlighting the duality of personal and professional pressures.
+- fabula_uuid: conn_3a2397338285
+  global_id: ger_narrativeconnection_cf18cd144ef7
+  from_event_uuid: cand_evt_scene_1ac0dfcff0a51ba6_1
+  to_event_uuid: cand_evt_scene_1ac0dfcff0a51ba6_1
   connection_type: SYMBOLIC_PARALLEL
   strength: strong
   description: Leo forgetting Christmas Eve plans contrasts with Bartlet's later reminder,
     symbolizing their shared avoidance of looming personal and professional crises.
+- fabula_uuid: conn_4925c7bd45dc
+  global_id: ger_narrativeconnection_faa126fd1ed8
+  from_event_uuid: cand_evt_scene_1ac0dfcff0a51ba6_1
+  to_event_uuid: cand_evt_scene_1ac0dfcff0a51ba6_2
+  connection_type: CHARACTER_CONTINUITY
+  strength: strong
+  description: Bartlet's reassurance of widespread support mirrors Leo's dismissal
+    of the phone call's importance, both reinforcing the facade of control under scrutiny.
+- fabula_uuid: conn_8c2236ea9b8b
+  global_id: ger_narrativeconnection_b1b8a127fdb1
+  from_event_uuid: cand_evt_scene_1ac0dfcff0a51ba6_1
+  to_event_uuid: cand_evt_scene_1ac0dfcff0a51ba6_2
+  connection_type: EMOTIONAL_ECHO
+  strength: strong
+  description: Bartlet's reassurance of support echoes in Leo's solemn oath-taking,
+    underscoring their mutual trust.
 - fabula_uuid: conn_45c5faeef932
   global_id: ger_narrativeconnection_07ca7fae7ffa
   from_event_uuid: cand_evt_scene_1ee4f38469f1d20d_1
@@ -2128,3 +2242,75 @@
   strength: medium
   description: Bartlet's silhouette behind the theater curtain symbolically contrasts
     with the hopeful chorus about peace, highlighting the irony of his decision.
+- fabula_uuid: conn_06129d59f948
+  global_id: ger_narrativeconnection_ee25bac5bd6e
+  from_event_uuid: cand_evt_scene_33a36e2f159e3bca_2
+  to_event_uuid: cand_evt_scene_e42af34603b0b9cc_1
+  connection_type: CAUSAL
+  strength: medium
+  description: Leo assigning Mike to assist Josh directly leads to Josh pressuring
+    Mike about the church arson investigations.
+- fabula_uuid: conn_5083d99ae9b7
+  global_id: ger_narrativeconnection_7eafd1bcb3ce
+  from_event_uuid: cand_evt_scene_33a36e2f159e3bca_2
+  to_event_uuid: cand_evt_scene_e42af34603b0b9cc_2
+  connection_type: CHARACTER_CONTINUITY
+  strength: medium
+  description: Josh's 'compulsive fixing' behavior is acknowledged by both Leo and
+    Bartlet, highlighting Josh's consistent character trait.
+- fabula_uuid: conn_db27304a7483
+  global_id: ger_narrativeconnection_b6294465c9ec
+  from_event_uuid: cand_evt_scene_33a36e2f159e3bca_3
+  to_event_uuid: cand_evt_scene_e784c5683529b00c_1
+  connection_type: ESCALATION
+  strength: strong
+  description: Leo's cryptic admission about unshared information escalates to Jordan
+    demanding full disclosure about his relapse.
+- fabula_uuid: conn_e11d213cd539
+  global_id: ger_narrativeconnection_96647f00c580
+  from_event_uuid: cand_evt_scene_5a98bf3e9b30ed8e_1
+  to_event_uuid: cand_evt_scene_c2d649006a40d5ac_2
+  connection_type: THEMATIC_PARALLEL
+  strength: medium
+  description: Erickson's challenge about succession parallels Hoynes' reaction to
+    Bartlet's MS revelation, both questioning the implications of Bartlet's health.
+- fabula_uuid: conn_b7a1735d251e
+  global_id: ger_narrativeconnection_efd01b6dfaa4
+  from_event_uuid: cand_evt_scene_23f5982500c5830f_2
+  to_event_uuid: cand_evt_scene_7f987a3372355e2e_1
+  connection_type: CAUSAL
+  strength: strong
+  description: Leo's admission that Gibson witnessed his relapse directly leads to
+    Gibson questioning him about that night during the hearing.
+- fabula_uuid: conn_2e04721280f2
+  global_id: ger_narrativeconnection_8c84567890c8
+  from_event_uuid: cand_evt_scene_a5b200ab0b7ee547_2
+  to_event_uuid: cand_evt_scene_fa6b8f03482b22b6_1
+  connection_type: CALLBACK
+  strength: strong
+  description: The 'Bartlet for America' napkin from the early campaign is callback
+    when Bartlet gifts it to Leo framed.
+- fabula_uuid: conn_8a73a5cf9332
+  global_id: ger_narrativeconnection_8cd998785bc6
+  from_event_uuid: cand_evt_scene_fa6b8f03482b22b6_1
+  to_event_uuid: cand_evt_scene_fa6b8f03482b22b6_1
+  connection_type: NARRATIVELY_FOLLOWS
+  strength: medium
+  description: Leo entering his office unaware of Bartlet waiting narratively leads
+    to the emotional gift exchange.
+- fabula_uuid: conn_932c3619ad51
+  global_id: ger_narrativeconnection_a35b9c22b287
+  from_event_uuid: cand_evt_scene_c2d649006a40d5ac_2
+  to_event_uuid: cand_evt_scene_c2d649006a40d5ac_2
+  connection_type: ESCALATION
+  strength: medium
+  description: Bartlet's revelation of his MS to Hoynes escalates to Hoynes' bitter
+    reaction and storming out.
+- fabula_uuid: conn_6e1ca5884b27
+  global_id: ger_narrativeconnection_7882b6d40683
+  from_event_uuid: cand_evt_scene_a6dbf5daba1df5e3_1
+  to_event_uuid: cand_evt_scene_a6dbf5daba1df5e3_3
+  connection_type: EMOTIONAL_ECHO
+  strength: medium
+  description: Josh's urgent call about Bartlet's collapse echoes in Leo's horror
+    and regret upon realizing Gibson witnessed his relapse.

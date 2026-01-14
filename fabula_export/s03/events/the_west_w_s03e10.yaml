@@ -1,5 +1,5 @@
 # Events for H. Con-172
-# Generated: 2026-01-13T19:32:44.323205
+# Generated: 2026-01-14T18:28:57.955828
 
 episode_uuid: ep_sea_ser_the_west_wing_s03_e10
 episode_title: H. Con-172
@@ -326,6 +326,17 @@ events:
     status_before_event: Set up in room's middle for four negotiators, awaiting arrivals
     status_after_event: Occupied by all parties settled in chairs, tension palpable
   location_involvements:
+  - location_uuid: location_149a1210fdba
+    description_of_involvement: Hallway outside door serves as contested security
+      perimeter where Cliff dispatches policeman; its linoleum expanse witnesses intimidation
+      accusation, yielding reluctant privacy amid midnight congressional hush.
+    observed_atmosphere: Coldly institutional with echoing tension
+    functional_role: Security buffer zone
+    symbolic_significance: Frontline of power posturing
+    access_restrictions: Patrolled by Capitol Police
+    key_environmental_details:
+    - Guarded door threshold
+    - Fluorescent overhead hum
   - location_uuid: location_731630644388
     description_of_involvement: Dimly lit chamber hosts entry, greetings, police challenge,
       and table settling; its confined intimacy amplifies verbal sparring, transforming
@@ -338,17 +349,6 @@ events:
     key_environmental_details:
     - Prepared central table
     - Door to guarded hallway
-  - location_uuid: location_bf98c275a4c7
-    description_of_involvement: Hallway outside door serves as contested security
-      perimeter where Cliff dispatches policeman; its linoleum expanse witnesses intimidation
-      accusation, yielding reluctant privacy amid midnight congressional hush.
-    observed_atmosphere: Coldly institutional with echoing tension
-    functional_role: Security buffer zone
-    symbolic_significance: Frontline of power posturing
-    access_restrictions: Patrolled by Capitol Police
-    key_environmental_details:
-    - Guarded door threshold
-    - Fluorescent overhead hum
   - location_uuid: location_276fa15f4304
     description_of_involvement: Distant hall end becomes enforced relocation site
       for police, marking Jordan's successful demand; shadows swallow guards, stripping
@@ -574,6 +574,18 @@ events:
     status_before_event: Conceptual, referenced in proposal
     status_after_event: Rejected, lingering as shattered gambit
   location_involvements:
+  - location_uuid: location_149a1210fdba
+    description_of_involvement: Hallway outside hearing room features Cliff's door
+      conferral with policeman on relocation, Leo's defiant storm-through post-rejection;
+      transitional tension vein where security yields and loyalty propels escape from
+      compromise.
+    observed_atmosphere: Cold fluorescent hush echoing commands
+    functional_role: Security perimeter and brief intervention zone
+    symbolic_significance: Threshold between negotiation siege and resolute withdrawal
+    access_restrictions: Flanked by retreating Capitol Police
+    key_environmental_details:
+    - Rigid officer postures
+    - Linoleum echoing boots
   - location_uuid: location_731630644388
     description_of_involvement: Rayburn House Negotiation Room hosts terse greetings,
       police dispute resolution, table-bound censure pitch, Leo's explosive rejection
@@ -587,18 +599,6 @@ events:
     key_environmental_details:
     - Prepared central table
     - Closed door muffling external world
-  - location_uuid: location_bf98c275a4c7
-    description_of_involvement: Hallway outside hearing room features Cliff's door
-      conferral with policeman on relocation, Leo's defiant storm-through post-rejection;
-      transitional tension vein where security yields and loyalty propels escape from
-      compromise.
-    observed_atmosphere: Cold fluorescent hush echoing commands
-    functional_role: Security perimeter and brief intervention zone
-    symbolic_significance: Threshold between negotiation siege and resolute withdrawal
-    access_restrictions: Flanked by retreating Capitol Police
-    key_environmental_details:
-    - Rigid officer postures
-    - Linoleum echoing boots
   - location_uuid: location_276fa15f4304
     description_of_involvement: End of hall receives relocated Capitol Police per
       Jordan's intimidation charge and Cliff's orders, swallowing guards' forms to
@@ -718,7 +718,7 @@ events:
     importance: primary
   object_involvements: []
   location_involvements:
-  - location_uuid: location_bf98c275a4c7
+  - location_uuid: location_149a1210fdba
     description_of_involvement: The hallway outside the hearing room serves as the
       taut corridor of exit, where Leo's purposeful strides past flanking police crystallize
       his defiance; its linoleum expanse amplifies the stark isolation of his stand,

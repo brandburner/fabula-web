@@ -1,5 +1,5 @@
 # Events for We Killed Yamamoto
-# Generated: 2026-01-13T19:32:47.503103
+# Generated: 2026-01-14T18:29:01.311987
 
 episode_uuid: ep_sea_ser_the_west_wing_s03_e20
 episode_title: We Killed Yamamoto
@@ -769,21 +769,13 @@ events:
     - threatening
     importance: primary
   object_involvements:
-  - object_uuid: object_9dce299efd0d
+  - object_uuid: object_c75193aca9ad
     description_of_involvement: Bartlet removes his glasses after reading the full
       threat translation, a ritual shedding vulnerability for unfiltered resolve;
       amplifies his shift from introspective mourner to steely leader entering the
       limo.
     status_before_event: Worn on Bartlet's face during reading
     status_after_event: Removed and held or pocketed, discarded in decisive gesture
-  - object_uuid: object_ff6917b146de
-    description_of_involvement: Leo's phone captures urgent intel on Shareef's meeting
-      during his lean against the limo; he concludes the call with 'I will do it again.'
-      Thanks,' hangs up brutally, propelling the interruption of mourning with crisis
-      immediacy, bridging cemetery hush to Oval Office peril.
-    status_before_event: Held to Leo's ear while leaning on limo, actively receiving
-      intel
-    status_after_event: Hung up, pocketed or set aside as Leo approaches grave
   - object_uuid: object_26d55d80adbf
     description_of_involvement: Leo opens his notepad to reveal hurried translation
       of Shareef's cleric threats, scanned by three Arabic experts; Bartlet reads
@@ -806,6 +798,14 @@ events:
       from sacred pause into crisis velocity.
     status_before_event: Parked and idling with Leo leaning on flank
     status_after_event: In motion, surging from cemetery with full presidential convoy
+  - object_uuid: object_2c20074669d4
+    description_of_involvement: Leo's phone captures urgent intel on Shareef's meeting
+      during his lean against the limo; he concludes the call with 'I will do it again.'
+      Thanks,' hangs up brutally, propelling the interruption of mourning with crisis
+      immediacy, bridging cemetery hush to Oval Office peril.
+    status_before_event: Held to Leo's ear while leaning on limo, actively receiving
+      intel
+    status_after_event: Hung up, pocketed or set aside as Leo approaches grave
   location_involvements:
   - location_uuid: location_467b7105a652
     description_of_involvement: Arlington's solemn rows frame the motorcade's restrained
@@ -952,18 +952,12 @@ events:
     - zealot-aligned
     importance: primary
   object_involvements:
-  - object_uuid: object_9dce299efd0d
+  - object_uuid: object_c75193aca9ad
     description_of_involvement: Bartlet wears the glasses to read the notepad's threat
       precisely, then removes them post-recitation—a signature gesture stripping intellectual
       buffer to bare-eyed command, signaling emotional pivot to action.
     status_before_event: Perched on Bartlet's nose for close reading.
     status_after_event: Removed and held in hand, discarded as resolve crystallizes.
-  - object_uuid: object_ff6917b146de
-    description_of_involvement: Leo concludes a tense call on the phone—echoing Shareef's
-      phrase 'I will do it again'—while leaning on the limo and noting details, hanging
-      up to approach Bartlet, channeling raw intercepts into the unfolding briefing.
-    status_before_event: Pressed to Leo's ear, actively transmitting crisis intel.
-    status_after_event: Hung up and pocketed, intel transferred to notepad.
   - object_uuid: object_26d55d80adbf
     description_of_involvement: Leo opens the notepad mid-walk to the motorcade, displaying
       hurried scribbles of the triple-verified Arabic translation from Shareef's Bechar
@@ -985,6 +979,12 @@ events:
       Oval confrontations.
     status_before_event: Parked and cruising idly amid security at Arlington.
     status_after_event: Activated and speeding away, sirens heralding crisis momentum.
+  - object_uuid: object_2c20074669d4
+    description_of_involvement: Leo concludes a tense call on the phone—echoing Shareef's
+      phrase 'I will do it again'—while leaning on the limo and noting details, hanging
+      up to approach Bartlet, channeling raw intercepts into the unfolding briefing.
+    status_before_event: Pressed to Leo's ear, actively transmitting crisis intel.
+    status_after_event: Hung up and pocketed, intel transferred to notepad.
   location_involvements:
   - location_uuid: location_467b7105a652
     description_of_involvement: Arlington's vast rows of markers frame the event's
