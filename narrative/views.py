@@ -61,9 +61,10 @@ class FlexibleIdentifierMixin:
                 pass
 
         # Try fabula_uuid (starts with entity type prefix)
+        # Note: ep_ and sea_ are the actual Neo4j export prefixes for episodes/seasons
         entity_prefixes = ('agent_', 'event_', 'theme_', 'arc_', 'location_',
                           'org_', 'object_', 'conn_', 'episode_', 'season_',
-                          'cand_evt_')
+                          'ep_', 'sea_', 'cand_evt_')
         if any(identifier.startswith(prefix) for prefix in entity_prefixes):
             try:
                 return queryset.get(fabula_uuid=identifier)
