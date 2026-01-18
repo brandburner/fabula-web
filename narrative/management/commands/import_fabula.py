@@ -651,6 +651,13 @@ class Command(BaseCommand):
                 location.location_type = self.truncate_field(loc_data.get('location_type', ''), 100)
                 if global_id:
                     location.global_id = global_id
+                # Megagraph cross-season tracking fields
+                if loc_data.get('season_appearances'):
+                    location.season_appearances = loc_data['season_appearances']
+                if loc_data.get('local_uuids'):
+                    location.local_uuids = loc_data['local_uuids']
+                if loc_data.get('first_appearance_season') is not None:
+                    location.first_appearance_season = loc_data['first_appearance_season']
                 if not self.dry_run:
                     location.save()
                 if cross_season_match:
@@ -664,6 +671,10 @@ class Command(BaseCommand):
                     description=loc_data.get('description', ''),
                     location_type=self.truncate_field(loc_data.get('location_type', ''), 100),
                     global_id=global_id or None,
+                    # Megagraph cross-season tracking fields
+                    season_appearances=loc_data.get('season_appearances') or [],
+                    local_uuids=loc_data.get('local_uuids') or {},
+                    first_appearance_season=loc_data.get('first_appearance_season'),
                 )
                 if not self.dry_run:
                     location.save()
@@ -887,6 +898,13 @@ class Command(BaseCommand):
                 org_page.sphere_of_influence = self.truncate_field(org_data.get('sphere_of_influence', ''), 255)
                 if global_id:
                     org_page.global_id = global_id
+                # Megagraph cross-season tracking fields
+                if org_data.get('season_appearances'):
+                    org_page.season_appearances = org_data['season_appearances']
+                if org_data.get('local_uuids'):
+                    org_page.local_uuids = org_data['local_uuids']
+                if org_data.get('first_appearance_season') is not None:
+                    org_page.first_appearance_season = org_data['first_appearance_season']
                 if not self.dry_run:
                     org_page.save_revision().publish()
                 if cross_season_match:
@@ -904,6 +922,10 @@ class Command(BaseCommand):
                     description=org_data.get('description', ''),
                     sphere_of_influence=self.truncate_field(org_data.get('sphere_of_influence', ''), 255),
                     global_id=global_id or None,
+                    # Megagraph cross-season tracking fields
+                    season_appearances=org_data.get('season_appearances') or [],
+                    local_uuids=org_data.get('local_uuids') or {},
+                    first_appearance_season=org_data.get('first_appearance_season'),
                 )
                 if not self.dry_run:
                     org_index.add_child(instance=org_page)
@@ -958,6 +980,13 @@ class Command(BaseCommand):
                 char_page.affiliated_organization = org
                 if global_id:
                     char_page.global_id = global_id
+                # Megagraph cross-season tracking fields
+                if char_data.get('season_appearances'):
+                    char_page.season_appearances = char_data['season_appearances']
+                if char_data.get('local_uuids'):
+                    char_page.local_uuids = char_data['local_uuids']
+                if char_data.get('first_appearance_season') is not None:
+                    char_page.first_appearance_season = char_data['first_appearance_season']
                 if not self.dry_run:
                     char_page.save_revision().publish()
                 if cross_season_match:
@@ -981,6 +1010,10 @@ class Command(BaseCommand):
                     appearance_count=char_data.get('appearance_count', 0),
                     affiliated_organization=org,
                     global_id=global_id or None,
+                    # Megagraph cross-season tracking fields
+                    season_appearances=char_data.get('season_appearances') or [],
+                    local_uuids=char_data.get('local_uuids') or {},
+                    first_appearance_season=char_data.get('first_appearance_season'),
                 )
                 if not self.dry_run:
                     char_index.add_child(instance=char_page)
@@ -1031,6 +1064,13 @@ class Command(BaseCommand):
                 obj_page.potential_owner = owner
                 if global_id:
                     obj_page.global_id = global_id
+                # Megagraph cross-season tracking fields
+                if obj_data.get('season_appearances'):
+                    obj_page.season_appearances = obj_data['season_appearances']
+                if obj_data.get('local_uuids'):
+                    obj_page.local_uuids = obj_data['local_uuids']
+                if obj_data.get('first_appearance_season') is not None:
+                    obj_page.first_appearance_season = obj_data['first_appearance_season']
                 if not self.dry_run:
                     obj_page.save_revision().publish()
                 if cross_season_match:
@@ -1050,6 +1090,10 @@ class Command(BaseCommand):
                     significance=obj_data.get('significance', ''),
                     potential_owner=owner,
                     global_id=global_id or None,
+                    # Megagraph cross-season tracking fields
+                    season_appearances=obj_data.get('season_appearances') or [],
+                    local_uuids=obj_data.get('local_uuids') or {},
+                    first_appearance_season=obj_data.get('first_appearance_season'),
                 )
                 if not self.dry_run:
                     object_index.add_child(instance=obj_page)
@@ -1108,6 +1152,11 @@ class Command(BaseCommand):
                     event_page.key_dialogue = event_data.get('key_dialogue') or []
                     event_page.is_flashback = event_data.get('is_flashback', False)
                     event_page.location = location
+                    # Megagraph source tracking fields
+                    if event_data.get('source_season'):
+                        event_page.source_season = event_data['source_season']
+                    if event_data.get('source_database'):
+                        event_page.source_database = event_data['source_database']
 
                     if not self.dry_run:
                         # Set themes and arcs BEFORE save (ParentalManyToManyField requires this)
@@ -1136,6 +1185,9 @@ class Command(BaseCommand):
                         key_dialogue=event_data.get('key_dialogue') or [],
                         is_flashback=event_data.get('is_flashback', False),
                         location=location,
+                        # Megagraph source tracking fields
+                        source_season=event_data.get('source_season'),
+                        source_database=event_data.get('source_database') or '',
                     )
 
                     if not self.dry_run:

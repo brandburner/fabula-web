@@ -238,7 +238,24 @@ class Location(index.Indexed, ClusterableModel):
         related_name='child_locations',
         help_text="Parent location for hierarchical relationships"
     )
-    
+
+    # Megagraph cross-season tracking fields
+    season_appearances = models.JSONField(
+        default=list,
+        blank=True,
+        help_text="Seasons this entity appears in, e.g., [1, 2, 3]"
+    )
+    local_uuids = models.JSONField(
+        default=dict,
+        blank=True,
+        help_text="Mapping of season number to local fabula_uuid, e.g., {1: 'uuid_abc', 2: 'uuid_def'}"
+    )
+    first_appearance_season = models.PositiveIntegerField(
+        null=True,
+        blank=True,
+        help_text="First season this entity appears"
+    )
+
     # Metadata
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
@@ -248,7 +265,13 @@ class Location(index.Indexed, ClusterableModel):
         FieldPanel('description'),
         FieldPanel('location_type'),
         FieldPanel('parent_location'),
-        FieldPanel('fabula_uuid'),
+        MultiFieldPanel([
+            FieldPanel('fabula_uuid'),
+            FieldPanel('global_id'),
+            FieldPanel('season_appearances'),
+            FieldPanel('local_uuids'),
+            FieldPanel('first_appearance_season'),
+        ], heading="Megagraph Metadata", classname="collapsible collapsed"),
     ]
 
     search_fields = [
@@ -490,6 +513,23 @@ class CharacterPage(Page):
         help_text="Community cluster ID from Louvain detection"
     )
 
+    # Megagraph cross-season tracking fields
+    season_appearances = models.JSONField(
+        default=list,
+        blank=True,
+        help_text="Seasons this character appears in, e.g., [1, 2, 3]"
+    )
+    local_uuids = models.JSONField(
+        default=dict,
+        blank=True,
+        help_text="Mapping of season number to local fabula_uuid, e.g., {1: 'uuid_abc', 2: 'uuid_def'}"
+    )
+    first_appearance_season = models.PositiveIntegerField(
+        null=True,
+        blank=True,
+        help_text="First season this character appears"
+    )
+
     # Relationships
     affiliated_organization = models.ForeignKey(
         'narrative.OrganizationPage',
@@ -518,7 +558,13 @@ class CharacterPage(Page):
             FieldPanel('relationship_count'),
             FieldPanel('importance_tier'),
         ], heading="Graph Gravity Metrics"),
-        FieldPanel('fabula_uuid'),
+        MultiFieldPanel([
+            FieldPanel('fabula_uuid'),
+            FieldPanel('global_id'),
+            FieldPanel('season_appearances'),
+            FieldPanel('local_uuids'),
+            FieldPanel('first_appearance_season'),
+        ], heading="Megagraph Metadata", classname="collapsible collapsed"),
     ]
 
     search_fields = Page.search_fields + [
@@ -596,11 +642,34 @@ class OrganizationPage(Page):
         help_text="Primary domain of operation"
     )
 
+    # Megagraph cross-season tracking fields
+    season_appearances = models.JSONField(
+        default=list,
+        blank=True,
+        help_text="Seasons this organization appears in, e.g., [1, 2, 3]"
+    )
+    local_uuids = models.JSONField(
+        default=dict,
+        blank=True,
+        help_text="Mapping of season number to local fabula_uuid, e.g., {1: 'uuid_abc', 2: 'uuid_def'}"
+    )
+    first_appearance_season = models.PositiveIntegerField(
+        null=True,
+        blank=True,
+        help_text="First season this organization appears"
+    )
+
     content_panels = Page.content_panels + [
         FieldPanel('canonical_name'),
         FieldPanel('description'),
         FieldPanel('sphere_of_influence'),
-        FieldPanel('fabula_uuid'),
+        MultiFieldPanel([
+            FieldPanel('fabula_uuid'),
+            FieldPanel('global_id'),
+            FieldPanel('season_appearances'),
+            FieldPanel('local_uuids'),
+            FieldPanel('first_appearance_season'),
+        ], heading="Megagraph Metadata", classname="collapsible collapsed"),
     ]
 
     parent_page_types = ['narrative.OrganizationIndexPage']
@@ -732,13 +801,36 @@ class ObjectPage(Page):
         help_text="Character who typically owns or possesses this object"
     )
 
+    # Megagraph cross-season tracking fields
+    season_appearances = models.JSONField(
+        default=list,
+        blank=True,
+        help_text="Seasons this object appears in, e.g., [1, 2, 3]"
+    )
+    local_uuids = models.JSONField(
+        default=dict,
+        blank=True,
+        help_text="Mapping of season number to local fabula_uuid, e.g., {1: 'uuid_abc', 2: 'uuid_def'}"
+    )
+    first_appearance_season = models.PositiveIntegerField(
+        null=True,
+        blank=True,
+        help_text="First season this object appears"
+    )
+
     content_panels = Page.content_panels + [
         FieldPanel('canonical_name'),
         FieldPanel('description'),
         FieldPanel('purpose'),
         FieldPanel('significance'),
         FieldPanel('potential_owner'),
-        FieldPanel('fabula_uuid'),
+        MultiFieldPanel([
+            FieldPanel('fabula_uuid'),
+            FieldPanel('global_id'),
+            FieldPanel('season_appearances'),
+            FieldPanel('local_uuids'),
+            FieldPanel('first_appearance_season'),
+        ], heading="Megagraph Metadata", classname="collapsible collapsed"),
     ]
 
     search_fields = Page.search_fields + [
@@ -836,6 +928,18 @@ class EventPage(Page):
         related_name='events'
     )
 
+    # Megagraph source tracking fields
+    source_season = models.PositiveIntegerField(
+        null=True,
+        blank=True,
+        help_text="Season number this event came from (for megagraph imports)"
+    )
+    source_database = models.CharField(
+        max_length=100,
+        blank=True,
+        help_text="Source database name, e.g., westwing.s01"
+    )
+
     content_panels = Page.content_panels + [
         MultiFieldPanel([
             FieldPanel('episode'),
@@ -858,7 +962,12 @@ class EventPage(Page):
             InlinePanel('location_involvements', label="Locations"),
             InlinePanel('organization_involvements', label="Organizations"),
         ], heading="Entity Involvement", classname="collapsible"),
-        FieldPanel('fabula_uuid'),
+        MultiFieldPanel([
+            FieldPanel('fabula_uuid'),
+            FieldPanel('global_id'),
+            FieldPanel('source_season'),
+            FieldPanel('source_database'),
+        ], heading="Megagraph Metadata", classname="collapsible collapsed"),
     ]
 
     search_fields = Page.search_fields + [
