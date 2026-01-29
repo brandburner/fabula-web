@@ -1,21 +1,166 @@
 {% extends "marketing_base.html" %}
 {% load wagtailcore_tags %}
 
+{% block title %}FAQ - Fabula{% endblock %}
+
 {% block content %}
 <div class="max-w-4xl mx-auto px-6 py-16">
     {# Page Header #}
     <div class="text-center mb-16">
-        <h1 class="text-4xl md:text-5xl font-bold text-white mb-4">{{ page.title }}</h1>
-        {% if page.introduction %}
-        <div class="text-xl text-slate-400 max-w-2xl mx-auto prose prose-invert">
-            {{ page.introduction|richtext }}
-        </div>
-        {% endif %}
+        <h1 class="text-4xl md:text-5xl font-bold text-white mb-4">Frequently Asked Questions</h1>
+        <p class="text-xl text-slate-400">
+            Everything you need to know about Fabula. Can't find the answer? <a href="{% slugurl 'demo' %}" class="text-amber-400 hover:text-amber-300">Get in touch</a>.
+        </p>
     </div>
 
-    {# FAQ Sections #}
-    {% for block in page.sections %}
-        {% include_block block %}
-    {% endfor %}
+    {# FAQ Items #}
+    <div class="space-y-4" x-data="{ open: null }">
+        {# FAQ 1 #}
+        <div class="rounded-xl border border-slate-800 bg-slate-900/50 overflow-hidden">
+            <button @click="open = open === 1 ? null : 1" class="w-full flex items-center justify-between p-6 text-left">
+                <span class="text-white font-semibold">"What if your AI makes a mistake?"</span>
+                <i data-lucide="chevron-down" class="w-5 h-5 text-slate-400 transition-transform" :class="open === 1 ? 'rotate-180' : ''"></i>
+            </button>
+            <div x-show="open === 1" x-collapse class="px-6 pb-6">
+                <p class="text-slate-400">
+                    You have full editing control. Merge characters, fix descriptions, adjust timelines. Fabula gives you a 90% starting point; you refine the last 10%. Think of it as a very fast first draft that you then polish.
+                </p>
+            </div>
+        </div>
+
+        {# FAQ 2 #}
+        <div class="rounded-xl border border-slate-800 bg-slate-900/50 overflow-hidden">
+            <button @click="open = open === 2 ? null : 2" class="w-full flex items-center justify-between p-6 text-left">
+                <span class="text-white font-semibold">"Will this replace our script coordinator?"</span>
+                <i data-lucide="chevron-down" class="w-5 h-5 text-slate-400 transition-transform" :class="open === 2 ? 'rotate-180' : ''"></i>
+            </button>
+            <div x-show="open === 2" x-collapse class="px-6 pb-6">
+                <p class="text-slate-400">
+                    No. It makes them superhuman. They spend less time on data entry, more time catching creative problems. The best coordinators we've worked with love Fabula because it handles the tedious parts and lets them focus on what matters.
+                </p>
+            </div>
+        </div>
+
+        {# FAQ 3 #}
+        <div class="rounded-xl border border-slate-800 bg-slate-900/50 overflow-hidden">
+            <button @click="open = open === 3 ? null : 3" class="w-full flex items-center justify-between p-6 text-left">
+                <span class="text-white font-semibold">"Do you support Final Draft?"</span>
+                <i data-lucide="chevron-down" class="w-5 h-5 text-slate-400 transition-transform" :class="open === 3 ? 'rotate-180' : ''"></i>
+            </button>
+            <div x-show="open === 3" x-collapse class="px-6 pb-6">
+                <p class="text-slate-400">
+                    Yes. Plus Fountain, PDF, and plain text. If your script is in a weird format, send us a sample—we'll make it work. We've handled everything from hand-typed scripts to OCR'd PDFs.
+                </p>
+            </div>
+        </div>
+
+        {# FAQ 4 #}
+        <div class="rounded-xl border border-slate-800 bg-slate-900/50 overflow-hidden">
+            <button @click="open = open === 4 ? null : 4" class="w-full flex items-center justify-between p-6 text-left">
+                <span class="text-white font-semibold">"How long does it take to process a script?"</span>
+                <i data-lucide="chevron-down" class="w-5 h-5 text-slate-400 transition-transform" :class="open === 4 ? 'rotate-180' : ''"></i>
+            </button>
+            <div x-show="open === 4" x-collapse class="px-6 pb-6">
+                <p class="text-slate-400">
+                    1-hour TV episode: 15-20 minutes. Feature film: 30-45 minutes. You can batch-process overnight, so upload an entire season before you leave and it's ready in the morning.
+                </p>
+            </div>
+        </div>
+
+        {# FAQ 5 #}
+        <div class="rounded-xl border border-slate-800 bg-slate-900/50 overflow-hidden">
+            <button @click="open = open === 5 ? null : 5" class="w-full flex items-center justify-between p-6 text-left">
+                <span class="text-white font-semibold">"Can I edit the story bible after processing?"</span>
+                <i data-lucide="chevron-down" class="w-5 h-5 text-slate-400 transition-transform" :class="open === 5 ? 'rotate-180' : ''"></i>
+            </button>
+            <div x-show="open === 5" x-collapse class="px-6 pb-6">
+                <p class="text-slate-400">
+                    Yes. Edit character descriptions, merge duplicates, add notes. Changes sync everywhere instantly. You can also add manual entries for things the AI missed.
+                </p>
+            </div>
+        </div>
+
+        {# FAQ 6 #}
+        <div class="rounded-xl border border-slate-800 bg-slate-900/50 overflow-hidden">
+            <button @click="open = open === 6 ? null : 6" class="w-full flex items-center justify-between p-6 text-left">
+                <span class="text-white font-semibold">"What happens to our scripts?"</span>
+                <i data-lucide="chevron-down" class="w-5 h-5 text-slate-400 transition-transform" :class="open === 6 ? 'rotate-180' : ''"></i>
+            </button>
+            <div x-show="open === 6" x-collapse class="px-6 pb-6">
+                <p class="text-slate-400">
+                    They're stored encrypted on isolated servers (or your servers if self-hosted). Never shared, never used for training. We're serious about IP protection—it's the foundation of trust with studios.
+                </p>
+            </div>
+        </div>
+
+        {# FAQ 7 #}
+        <div class="rounded-xl border border-slate-800 bg-slate-900/50 overflow-hidden">
+            <button @click="open = open === 7 ? null : 7" class="w-full flex items-center justify-between p-6 text-left">
+                <span class="text-white font-semibold">"Can I export to Excel?"</span>
+                <i data-lucide="chevron-down" class="w-5 h-5 text-slate-400 transition-transform" :class="open === 7 ? 'rotate-180' : ''"></i>
+            </button>
+            <div x-show="open === 7" x-collapse class="px-6 pb-6">
+                <p class="text-slate-400">
+                    Yes. Excel, CSV, JSON, or custom formats. Perfect for legal, licensing, and game dev handoffs. Export your entire story bible or filter to exactly what you need.
+                </p>
+            </div>
+        </div>
+
+        {# FAQ 8 #}
+        <div class="rounded-xl border border-slate-800 bg-slate-900/50 overflow-hidden">
+            <button @click="open = open === 8 ? null : 8" class="w-full flex items-center justify-between p-6 text-left">
+                <span class="text-white font-semibold">"Do you integrate with writers' room tools?"</span>
+                <i data-lucide="chevron-down" class="w-5 h-5 text-slate-400 transition-transform" :class="open === 8 ? 'rotate-180' : ''"></i>
+            </button>
+            <div x-show="open === 8" x-collapse class="px-6 pb-6">
+                <p class="text-slate-400">
+                    We're building integrations with common tools. Our API makes custom integrations straightforward if you have specific needs. Talk to us about your workflow.
+                </p>
+            </div>
+        </div>
+
+        {# FAQ 9 #}
+        <div class="rounded-xl border border-slate-800 bg-slate-900/50 overflow-hidden">
+            <button @click="open = open === 9 ? null : 9" class="w-full flex items-center justify-between p-6 text-left">
+                <span class="text-white font-semibold">"What if we want to delete everything?"</span>
+                <i data-lucide="chevron-down" class="w-5 h-5 text-slate-400 transition-transform" :class="open === 9 ? 'rotate-180' : ''"></i>
+            </button>
+            <div x-show="open === 9" x-collapse class="px-6 pb-6">
+                <p class="text-slate-400">
+                    One click. Data deletion is immediate and permanent. We'll export your data first if you want it. Your IP, your rules.
+                </p>
+            </div>
+        </div>
+
+        {# FAQ 10 #}
+        <div class="rounded-xl border border-slate-800 bg-slate-900/50 overflow-hidden">
+            <button @click="open = open === 10 ? null : 10" class="w-full flex items-center justify-between p-6 text-left">
+                <span class="text-white font-semibold">"Can I try it before buying?"</span>
+                <i data-lucide="chevron-down" class="w-5 h-5 text-slate-400 transition-transform" :class="open === 10 ? 'rotate-180' : ''"></i>
+            </button>
+            <div x-show="open === 10" x-collapse class="px-6 pb-6">
+                <p class="text-slate-400">
+                    Yes. Process 3 scripts free to see if it works for your show. No credit card required. You can also explore our interactive demo with The West Wing right now.
+                </p>
+            </div>
+        </div>
+    </div>
+
+    {# CTA #}
+    <div class="mt-16 text-center">
+        <p class="text-slate-400 mb-6">Still have questions?</p>
+        <div class="flex flex-wrap justify-center gap-4">
+            <a href="{% slugurl 'demo' %}" class="inline-flex items-center gap-2 px-6 py-3 text-base font-semibold rounded-xl bg-gradient-to-r from-amber-500 to-orange-500 text-white hover:from-amber-400 hover:to-orange-400 transition-all duration-300">
+                Get in Touch
+            </a>
+            <a href="{% url 'catalog' %}" class="inline-flex items-center gap-2 px-6 py-3 text-base font-semibold rounded-xl border border-slate-700 text-white hover:bg-slate-800/50">
+                Explore Demo
+            </a>
+        </div>
+    </div>
 </div>
+{% endblock %}
+
+{% block extra_js %}
+<script src="https://unpkg.com/@alpinejs/collapse@3.x.x/dist/cdn.min.js"></script>
 {% endblock %}

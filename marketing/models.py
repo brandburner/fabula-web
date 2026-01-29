@@ -474,6 +474,17 @@ class FlexibleContentPage(Page):
     subpage_types = ['marketing.FlexibleContentPage']
     parent_page_types = ['marketing.MarketingHomePage', 'marketing.FlexibleContentPage']
 
+    def get_template(self, request, *args, **kwargs):
+        """Return custom templates for specific pages."""
+        # Map slugs to custom templates
+        slug_templates = {
+            'product': 'marketing/product_page.html',
+            'about': 'marketing/about_page.html',
+        }
+        if self.slug in slug_templates:
+            return slug_templates[self.slug]
+        return super().get_template(request, *args, **kwargs)
+
     class Meta:
         verbose_name = "Marketing Page"
 

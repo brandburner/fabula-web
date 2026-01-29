@@ -1,64 +1,157 @@
 {% extends "marketing_base.html" %}
 {% load wagtailcore_tags %}
 
+{% block title %}Pricing - Fabula{% endblock %}
+
 {% block content %}
 <div class="max-w-7xl mx-auto px-6 py-16">
     {# Page Header #}
     <div class="text-center mb-16">
-        <h1 class="text-4xl md:text-5xl font-bold text-white mb-4">{{ page.title }}</h1>
-        {% if page.introduction %}
-        <div class="text-xl text-slate-400 max-w-2xl mx-auto prose prose-invert">
-            {{ page.introduction|richtext }}
-        </div>
-        {% endif %}
+        <h1 class="text-4xl md:text-5xl font-bold text-white mb-4">Pricing That Makes Sense for Production</h1>
+        <p class="text-xl text-slate-400 max-w-2xl mx-auto">
+            From one-off pilots to studio-wide deployment. Start free, scale as you grow.
+        </p>
     </div>
 
     {# Pricing Tiers #}
     <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
-        {% for block in page.tiers %}
-            {% with tier=block.value %}
-            <div class="relative rounded-2xl border {% if tier.highlighted %}border-amber-500/50 bg-amber-500/5{% else %}border-slate-800 bg-slate-900/50{% endif %} p-8 flex flex-col">
-                {% if tier.highlighted %}
-                <div class="absolute -top-3 left-1/2 -translate-x-1/2">
-                    <span class="px-3 py-1 text-xs font-medium rounded-full bg-amber-500 text-white">Recommended</span>
-                </div>
-                {% endif %}
-
-                <h3 class="text-xl font-bold text-white mb-2">{{ tier.name }}</h3>
-                <div class="text-2xl font-bold text-amber-400 mb-4">{{ tier.price }}</div>
-
-                {% if tier.description %}
-                <p class="text-sm text-slate-400 mb-6">{{ tier.description }}</p>
-                {% endif %}
-
-                <ul class="space-y-3 mb-8 flex-1">
-                    {% for feature in tier.features %}
-                    <li class="flex items-start gap-3 text-sm text-slate-300">
-                        <i data-lucide="check" class="w-4 h-4 text-emerald-400 mt-0.5 flex-shrink-0"></i>
-                        <span>{{ feature }}</span>
-                    </li>
-                    {% endfor %}
-                </ul>
-
-                {% if tier.cta %}
-                <a href="{% if tier.cta.page %}{% pageurl tier.cta.page %}{% else %}{{ tier.cta.url }}{% endif %}"
-                   class="block w-full text-center py-3 px-6 rounded-lg font-medium transition-all duration-300
-                          {% if tier.cta.style == 'primary' %}bg-gradient-to-r from-amber-500 to-orange-500 text-white hover:from-amber-400 hover:to-orange-400 shadow-lg shadow-amber-500/25
-                          {% elif tier.cta.style == 'secondary' %}border border-slate-700 text-slate-300 hover:border-amber-500/50 hover:text-white
-                          {% else %}text-amber-400 hover:text-amber-300{% endif %}">
-                    {{ tier.cta.text }}
-                </a>
-                {% endif %}
+        {# Pilot / Limited Series #}
+        <div class="rounded-2xl border border-slate-800 bg-slate-900/50 p-8 flex flex-col">
+            <div class="w-12 h-12 rounded-xl bg-cyan-500/10 flex items-center justify-center mb-6">
+                <i data-lucide="file-text" class="w-6 h-6 text-cyan-400"></i>
             </div>
-            {% endwith %}
-        {% endfor %}
+            <h3 class="text-xl font-bold text-white mb-2">Pilot / Limited Series</h3>
+            <p class="text-sm text-slate-500 mb-4">Pay per script. Perfect for testing.</p>
+            <div class="text-3xl font-bold text-white mb-1">Contact Us</div>
+            <p class="text-slate-500 text-sm mb-6">per script</p>
+
+            <ul class="space-y-3 mb-8 flex-1">
+                <li class="flex items-start gap-3 text-sm text-slate-300">
+                    <i data-lucide="check" class="w-4 h-4 text-emerald-400 mt-0.5 flex-shrink-0"></i>
+                    <span>Full story bible extraction</span>
+                </li>
+                <li class="flex items-start gap-3 text-sm text-slate-300">
+                    <i data-lucide="check" class="w-4 h-4 text-emerald-400 mt-0.5 flex-shrink-0"></i>
+                    <span>Search and visualization</span>
+                </li>
+                <li class="flex items-start gap-3 text-sm text-slate-300">
+                    <i data-lucide="check" class="w-4 h-4 text-emerald-400 mt-0.5 flex-shrink-0"></i>
+                    <span>Export to Excel/JSON</span>
+                </li>
+                <li class="flex items-start gap-3 text-sm text-slate-300">
+                    <i data-lucide="check" class="w-4 h-4 text-emerald-400 mt-0.5 flex-shrink-0"></i>
+                    <span>30 days of access</span>
+                </li>
+            </ul>
+
+            <a href="{% slugurl 'demo' %}" class="block w-full text-center py-3 px-6 rounded-lg font-medium border border-slate-700 text-slate-300 hover:border-amber-500/50 hover:text-white transition-all duration-300">
+                Get Started
+            </a>
+        </div>
+
+        {# Multi-Season Shows - Highlighted #}
+        <div class="relative rounded-2xl border border-amber-500/50 bg-amber-500/5 p-8 flex flex-col">
+            <div class="absolute -top-3 left-1/2 -translate-x-1/2">
+                <span class="px-3 py-1 text-xs font-medium rounded-full bg-amber-500 text-white">Most Popular</span>
+            </div>
+
+            <div class="w-12 h-12 rounded-xl bg-amber-500/10 flex items-center justify-center mb-6">
+                <i data-lucide="tv" class="w-6 h-6 text-amber-400"></i>
+            </div>
+            <h3 class="text-xl font-bold text-white mb-2">Multi-Season Shows</h3>
+            <p class="text-sm text-slate-500 mb-4">Flat rate per season. Best for ongoing series.</p>
+            <div class="text-3xl font-bold text-white mb-1">Contact Us</div>
+            <p class="text-slate-500 text-sm mb-6">per season (up to 22 episodes)</p>
+
+            <ul class="space-y-3 mb-8 flex-1">
+                <li class="flex items-start gap-3 text-sm text-slate-300">
+                    <i data-lucide="check" class="w-4 h-4 text-emerald-400 mt-0.5 flex-shrink-0"></i>
+                    <span>Unlimited script reprocessing</span>
+                </li>
+                <li class="flex items-start gap-3 text-sm text-slate-300">
+                    <i data-lucide="check" class="w-4 h-4 text-emerald-400 mt-0.5 flex-shrink-0"></i>
+                    <span>Cross-season character tracking</span>
+                </li>
+                <li class="flex items-start gap-3 text-sm text-slate-300">
+                    <i data-lucide="check" class="w-4 h-4 text-emerald-400 mt-0.5 flex-shrink-0"></i>
+                    <span>1 year of access</span>
+                </li>
+                <li class="flex items-start gap-3 text-sm text-slate-300">
+                    <i data-lucide="check" class="w-4 h-4 text-emerald-400 mt-0.5 flex-shrink-0"></i>
+                    <span>Priority support</span>
+                </li>
+                <li class="flex items-start gap-3 text-sm text-slate-300">
+                    <i data-lucide="check" class="w-4 h-4 text-emerald-400 mt-0.5 flex-shrink-0"></i>
+                    <span>Continuity validation</span>
+                </li>
+            </ul>
+
+            <a href="{% slugurl 'demo' %}" class="block w-full text-center py-3 px-6 rounded-lg font-medium bg-gradient-to-r from-amber-500 to-orange-500 text-white hover:from-amber-400 hover:to-orange-400 shadow-lg shadow-amber-500/25 transition-all duration-300">
+                Request Pricing
+            </a>
+        </div>
+
+        {# Studio / Network #}
+        <div class="rounded-2xl border border-slate-800 bg-slate-900/50 p-8 flex flex-col">
+            <div class="w-12 h-12 rounded-xl bg-purple-500/10 flex items-center justify-center mb-6">
+                <i data-lucide="building" class="w-6 h-6 text-purple-400"></i>
+            </div>
+            <h3 class="text-xl font-bold text-white mb-2">Studio / Network</h3>
+            <p class="text-sm text-slate-500 mb-4">Custom pricing for multiple shows.</p>
+            <div class="text-3xl font-bold text-white mb-1">Let's Talk</div>
+            <p class="text-slate-500 text-sm mb-6">enterprise features</p>
+
+            <ul class="space-y-3 mb-8 flex-1">
+                <li class="flex items-start gap-3 text-sm text-slate-300">
+                    <i data-lucide="check" class="w-4 h-4 text-emerald-400 mt-0.5 flex-shrink-0"></i>
+                    <span>Deploy across your entire slate</span>
+                </li>
+                <li class="flex items-start gap-3 text-sm text-slate-300">
+                    <i data-lucide="check" class="w-4 h-4 text-emerald-400 mt-0.5 flex-shrink-0"></i>
+                    <span>On-premise installation available</span>
+                </li>
+                <li class="flex items-start gap-3 text-sm text-slate-300">
+                    <i data-lucide="check" class="w-4 h-4 text-emerald-400 mt-0.5 flex-shrink-0"></i>
+                    <span>SSO and security compliance</span>
+                </li>
+                <li class="flex items-start gap-3 text-sm text-slate-300">
+                    <i data-lucide="check" class="w-4 h-4 text-emerald-400 mt-0.5 flex-shrink-0"></i>
+                    <span>Dedicated support team</span>
+                </li>
+                <li class="flex items-start gap-3 text-sm text-slate-300">
+                    <i data-lucide="check" class="w-4 h-4 text-emerald-400 mt-0.5 flex-shrink-0"></i>
+                    <span>Custom integrations</span>
+                </li>
+            </ul>
+
+            <a href="{% slugurl 'demo' %}" class="block w-full text-center py-3 px-6 rounded-lg font-medium border border-slate-700 text-slate-300 hover:border-purple-500/50 hover:text-white transition-all duration-300">
+                Contact Sales
+            </a>
+        </div>
     </div>
 
-    {# Footer Note #}
-    {% if page.footer_note %}
-    <div class="text-center prose prose-invert mx-auto">
-        {{ page.footer_note|richtext }}
+    {# Try Free Banner #}
+    <div class="rounded-2xl border border-green-500/20 bg-green-500/5 p-8 text-center">
+        <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-green-500/10 text-green-400 text-sm mb-4">
+            <i data-lucide="gift" class="w-4 h-4"></i>
+            <span>Try Free</span>
+        </div>
+        <h3 class="text-2xl font-bold text-white mb-3">Process 3 scripts free</h3>
+        <p class="text-slate-400 mb-6 max-w-xl mx-auto">
+            No credit card required. See if Fabula works for your show before committing to anything.
+        </p>
+        <a href="{% slugurl 'demo' %}" class="inline-flex items-center gap-2 px-6 py-3 text-base font-semibold rounded-xl bg-green-500 text-white hover:bg-green-400 transition-all duration-300">
+            Start Free Trial
+            <i data-lucide="arrow-right" class="w-5 h-5"></i>
+        </a>
     </div>
-    {% endif %}
+
+    {# FAQ Section #}
+    <div class="mt-16 text-center">
+        <h3 class="text-xl font-bold text-white mb-4">Questions about pricing?</h3>
+        <p class="text-slate-400 mb-6">
+            Check our <a href="{% slugurl 'faq' %}" class="text-amber-400 hover:text-amber-300">FAQ</a> or <a href="{% slugurl 'demo' %}" class="text-amber-400 hover:text-amber-300">get in touch</a> to discuss your specific needs.
+        </p>
+    </div>
 </div>
 {% endblock %}

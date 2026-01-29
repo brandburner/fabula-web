@@ -1,0 +1,476 @@
+{% extends "marketing_base.html" %}
+{% load static wagtailcore_tags %}
+
+{% block title %}Product - Why Fabula Is Different{% endblock %}
+
+{% block content %}
+{# ============================================ #}
+{# HERO #}
+{# ============================================ #}
+<section class="py-24 bg-gradient-to-b from-slate-950 to-slate-900">
+    <div class="max-w-7xl mx-auto px-6">
+        <div class="text-center max-w-3xl mx-auto">
+            <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-cyan-500/10 border border-cyan-500/20 text-cyan-400 text-sm mb-8">
+                <i data-lucide="cpu" class="w-4 h-4"></i>
+                <span>How It Works</span>
+            </div>
+            <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6">
+                Why This Isn't Just "AI Reads Scripts"
+            </h1>
+            <p class="text-xl text-slate-400">
+                Other tools create three different characters when your script mentions "The Captain," "Picard," and "Jean-Luc." Fabula knows they're the same person.
+            </p>
+        </div>
+    </div>
+</section>
+
+{# ============================================ #}
+{# DIFFERENTIATORS #}
+{# ============================================ #}
+<section class="py-24">
+    <div class="max-w-7xl mx-auto px-6">
+        <div class="space-y-16">
+            {# Differentiator 1 #}
+            <div class="grid lg:grid-cols-2 gap-12 items-center">
+                <div>
+                    <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-amber-500/10 text-amber-400 text-sm mb-4">
+                        <span class="w-6 h-6 rounded-full bg-amber-500 text-white text-xs flex items-center justify-center font-bold">1</span>
+                        Key Differentiator
+                    </div>
+                    <h2 class="text-3xl font-bold text-white mb-4">It Knows the Same Character Has Different Names</h2>
+                    <p class="text-lg text-slate-400 mb-6">
+                        Your script calls them "The Captain" in action lines, "Picard" in dialogue, and "Jean-Luc" when it's intimate. Fabula knows these are all the same person.
+                    </p>
+                    <div class="rounded-xl border border-amber-500/20 bg-amber-500/5 p-4">
+                        <p class="text-amber-400 font-medium mb-1">Why it matters:</p>
+                        <p class="text-slate-300">Other tools create three different characters. Fabula creates one character with nicknames and aliases.</p>
+                    </div>
+                </div>
+                <div class="rounded-2xl border border-slate-800 bg-slate-900/50 p-8">
+                    <div class="space-y-4">
+                        <div class="flex items-center gap-4 p-4 rounded-xl bg-red-500/10 border border-red-500/20">
+                            <i data-lucide="x-circle" class="w-6 h-6 text-red-400 shrink-0"></i>
+                            <div>
+                                <p class="text-slate-500 text-sm">Other tools see:</p>
+                                <p class="text-white">"The Captain" + "Picard" + "Jean-Luc" = 3 characters</p>
+                            </div>
+                        </div>
+                        <div class="flex items-center gap-4 p-4 rounded-xl bg-green-500/10 border border-green-500/20">
+                            <i data-lucide="check-circle" class="w-6 h-6 text-green-400 shrink-0"></i>
+                            <div>
+                                <p class="text-slate-500 text-sm">Fabula sees:</p>
+                                <p class="text-white">"Jean-Luc Picard" with aliases: "The Captain", "Picard", "Jean-Luc"</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            {# Differentiator 2 #}
+            <div class="grid lg:grid-cols-2 gap-12 items-center">
+                <div class="order-2 lg:order-1 rounded-2xl border border-slate-800 bg-slate-900/50 p-8">
+                    <div class="space-y-3">
+                        <div class="flex items-start gap-3 p-3 rounded-lg bg-slate-800/50">
+                            <div class="w-8 h-8 rounded-full bg-cyan-500/20 flex items-center justify-center shrink-0">
+                                <span class="text-cyan-400 text-sm font-bold">S1</span>
+                            </div>
+                            <div>
+                                <p class="text-white text-sm font-medium">Sam & Donna meet</p>
+                                <p class="text-slate-500 text-xs">Professional, distant</p>
+                            </div>
+                        </div>
+                        <div class="flex items-center justify-center">
+                            <i data-lucide="arrow-down" class="w-4 h-4 text-slate-600"></i>
+                        </div>
+                        <div class="flex items-start gap-3 p-3 rounded-lg bg-slate-800/50">
+                            <div class="w-8 h-8 rounded-full bg-purple-500/20 flex items-center justify-center shrink-0">
+                                <span class="text-purple-400 text-sm font-bold">S2</span>
+                            </div>
+                            <div>
+                                <p class="text-white text-sm font-medium">They argue about policy</p>
+                                <p class="text-slate-500 text-xs">Tension building</p>
+                            </div>
+                        </div>
+                        <div class="flex items-center justify-center">
+                            <i data-lucide="arrow-down" class="w-4 h-4 text-slate-600"></i>
+                        </div>
+                        <div class="flex items-start gap-3 p-3 rounded-lg bg-slate-800/50">
+                            <div class="w-8 h-8 rounded-full bg-amber-500/20 flex items-center justify-center shrink-0">
+                                <span class="text-amber-400 text-sm font-bold">S3</span>
+                            </div>
+                            <div>
+                                <p class="text-white text-sm font-medium">First genuine connection</p>
+                                <p class="text-slate-500 text-xs">Relationship evolving</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="order-1 lg:order-2">
+                    <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-cyan-500/10 text-cyan-400 text-sm mb-4">
+                        <span class="w-6 h-6 rounded-full bg-cyan-500 text-white text-xs flex items-center justify-center font-bold">2</span>
+                        Key Differentiator
+                    </div>
+                    <h2 class="text-3xl font-bold text-white mb-4">It Tracks Relationships, Not Just Characters</h2>
+                    <p class="text-lg text-slate-400 mb-6">
+                        Fabula doesn't just list "Character A appeared in Episode 3." It knows who they had scenes with, what they argued about, how their relationship changed.
+                    </p>
+                    <div class="rounded-xl border border-cyan-500/20 bg-cyan-500/5 p-4">
+                        <p class="text-cyan-400 font-medium mb-1">Why it matters:</p>
+                        <p class="text-slate-300">You can search "scenes between the lawyer and the detective" and get relationship evolution over time.</p>
+                    </div>
+                </div>
+            </div>
+
+            {# Differentiator 3 #}
+            <div class="grid lg:grid-cols-2 gap-12 items-center">
+                <div>
+                    <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-red-500/10 text-red-400 text-sm mb-4">
+                        <span class="w-6 h-6 rounded-full bg-red-500 text-white text-xs flex items-center justify-center font-bold">3</span>
+                        Key Differentiator
+                    </div>
+                    <h2 class="text-3xl font-bold text-white mb-4">It Catches "Wait, Didn't That Character Die?"</h2>
+                    <p class="text-lg text-slate-400 mb-6">
+                        Fabula tracks character status across episodes. Dead characters don't magically reappear. Timeline inconsistencies get flagged.
+                    </p>
+                    <div class="rounded-xl border border-red-500/20 bg-red-500/5 p-4">
+                        <p class="text-red-400 font-medium mb-1">Why it matters:</p>
+                        <p class="text-slate-300">Continuity errors caught in pre-production, not on Reddit after the episode airs.</p>
+                    </div>
+                </div>
+                <div class="rounded-2xl border border-slate-800 bg-slate-900/50 p-8">
+                    <div class="rounded-xl border border-red-500/30 bg-red-500/5 p-6">
+                        <div class="flex items-start gap-4">
+                            <div class="w-10 h-10 rounded-full bg-red-500/20 flex items-center justify-center shrink-0">
+                                <i data-lucide="alert-triangle" class="w-5 h-5 text-red-400"></i>
+                            </div>
+                            <div>
+                                <p class="text-red-400 font-semibold mb-1">Continuity Alert</p>
+                                <p class="text-white text-sm mb-2">Character "Marcus" appears in S4E12</p>
+                                <p class="text-slate-400 text-sm">But Marcus was killed in S3E18 ("The Reckoning")</p>
+                                <div class="mt-3 flex gap-2">
+                                    <button class="px-3 py-1.5 text-xs rounded-lg bg-slate-800 text-slate-300 hover:bg-slate-700">View Scene</button>
+                                    <button class="px-3 py-1.5 text-xs rounded-lg bg-red-500/20 text-red-400 hover:bg-red-500/30">Mark as Flashback</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            {# Differentiator 4 #}
+            <div class="grid lg:grid-cols-2 gap-12 items-center">
+                <div class="order-2 lg:order-1 rounded-2xl border border-slate-800 bg-slate-900/50 p-8">
+                    <div class="space-y-4">
+                        <div class="flex items-center justify-between p-4 rounded-xl bg-slate-800/50">
+                            <div class="flex items-center gap-3">
+                                <div class="w-10 h-10 rounded-lg bg-gradient-to-br from-amber-500/20 to-orange-500/20 flex items-center justify-center">
+                                    <span class="text-amber-400 font-bold">S1</span>
+                                </div>
+                                <span class="text-white">Season 1</span>
+                            </div>
+                            <span class="text-green-400 text-sm">Processed</span>
+                        </div>
+                        <div class="flex items-center justify-center">
+                            <i data-lucide="link" class="w-4 h-4 text-cyan-400"></i>
+                        </div>
+                        <div class="flex items-center justify-between p-4 rounded-xl bg-slate-800/50">
+                            <div class="flex items-center gap-3">
+                                <div class="w-10 h-10 rounded-lg bg-gradient-to-br from-cyan-500/20 to-blue-500/20 flex items-center justify-center">
+                                    <span class="text-cyan-400 font-bold">S2</span>
+                                </div>
+                                <span class="text-white">Season 2</span>
+                            </div>
+                            <span class="text-green-400 text-sm">Linked</span>
+                        </div>
+                        <div class="flex items-center justify-center">
+                            <i data-lucide="link" class="w-4 h-4 text-cyan-400"></i>
+                        </div>
+                        <div class="flex items-center justify-between p-4 rounded-xl bg-slate-800/50">
+                            <div class="flex items-center gap-3">
+                                <div class="w-10 h-10 rounded-lg bg-gradient-to-br from-purple-500/20 to-violet-500/20 flex items-center justify-center">
+                                    <span class="text-purple-400 font-bold">S3</span>
+                                </div>
+                                <span class="text-white">Season 3</span>
+                            </div>
+                            <span class="text-green-400 text-sm">Linked</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="order-1 lg:order-2">
+                    <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-purple-500/10 text-purple-400 text-sm mb-4">
+                        <span class="w-6 h-6 rounded-full bg-purple-500 text-white text-xs flex items-center justify-center font-bold">4</span>
+                        Key Differentiator
+                    </div>
+                    <h2 class="text-3xl font-bold text-white mb-4">It Works Across Seasons Without Getting Confused</h2>
+                    <p class="text-lg text-slate-400 mb-6">
+                        Process Season 1. Then Season 2. Fabula knows returning characters are the same people, even if years have passed in production.
+                    </p>
+                    <div class="rounded-xl border border-purple-500/20 bg-purple-500/5 p-4">
+                        <p class="text-purple-400 font-medium mb-1">Why it matters:</p>
+                        <p class="text-slate-300">Your story bible spans the entire show, not just individual seasons.</p>
+                    </div>
+                </div>
+            </div>
+
+            {# Differentiator 5 #}
+            <div class="grid lg:grid-cols-2 gap-12 items-center">
+                <div>
+                    <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-green-500/10 text-green-400 text-sm mb-4">
+                        <span class="w-6 h-6 rounded-full bg-green-500 text-white text-xs flex items-center justify-center font-bold">5</span>
+                        Key Differentiator
+                    </div>
+                    <h2 class="text-3xl font-bold text-white mb-4">You Control Everything</h2>
+                    <p class="text-lg text-slate-400 mb-6">
+                        AI got it wrong? Merge characters manually. Bad character description? Edit it. You're the editor, Fabula is the assistant.
+                    </p>
+                    <div class="rounded-xl border border-green-500/20 bg-green-500/5 p-4">
+                        <p class="text-green-400 font-medium mb-1">Why it matters:</p>
+                        <p class="text-slate-300">This is a tool, not a black box. You have final say on everything.</p>
+                    </div>
+                </div>
+                <div class="rounded-2xl border border-slate-800 bg-slate-900/50 p-8">
+                    <div class="space-y-4">
+                        <div class="flex items-center gap-3 text-slate-300">
+                            <i data-lucide="git-merge" class="w-5 h-5 text-cyan-400"></i>
+                            <span>Merge duplicate characters</span>
+                        </div>
+                        <div class="flex items-center gap-3 text-slate-300">
+                            <i data-lucide="pencil" class="w-5 h-5 text-amber-400"></i>
+                            <span>Edit descriptions and metadata</span>
+                        </div>
+                        <div class="flex items-center gap-3 text-slate-300">
+                            <i data-lucide="link" class="w-5 h-5 text-purple-400"></i>
+                            <span>Adjust relationship types</span>
+                        </div>
+                        <div class="flex items-center gap-3 text-slate-300">
+                            <i data-lucide="clock" class="w-5 h-5 text-green-400"></i>
+                            <span>Fix timeline inconsistencies</span>
+                        </div>
+                        <div class="flex items-center gap-3 text-slate-300">
+                            <i data-lucide="download" class="w-5 h-5 text-pink-400"></i>
+                            <span>Export in any format</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+{# ============================================ #}
+{# ACCURACY #}
+{# ============================================ #}
+<section class="py-24 bg-slate-900/50">
+    <div class="max-w-7xl mx-auto px-6">
+        <div class="text-center mb-16">
+            <h2 class="text-4xl font-bold text-white mb-4">Tested on Shows More Complex Than Yours</h2>
+            <p class="text-xl text-slate-400">Real numbers from real productions.</p>
+        </div>
+
+        <div class="grid md:grid-cols-3 gap-8 mb-16">
+            <div class="rounded-2xl border border-slate-800 bg-slate-900/50 p-8 text-center">
+                <div class="text-5xl font-bold text-white mb-2">85-95%</div>
+                <div class="text-slate-500 mb-4">Character Recognition</div>
+                <p class="text-slate-400 text-sm">
+                    Correctly identifies characters, even with nickname variations. The rest you can merge manually in minutes.
+                </p>
+            </div>
+            <div class="rounded-2xl border border-slate-800 bg-slate-900/50 p-8 text-center">
+                <div class="text-5xl font-bold text-white mb-2">90-98%</div>
+                <div class="text-slate-500 mb-4">Relationship Extraction</div>
+                <p class="text-slate-400 text-sm">
+                    When two characters have a scene together, Fabula catches it. Including background characters in crowd scenes.
+                </p>
+            </div>
+            <div class="rounded-2xl border border-slate-800 bg-slate-900/50 p-8 text-center">
+                <div class="text-5xl font-bold text-amber-400 mb-2">Near-Perfect</div>
+                <div class="text-slate-500 mb-4">Continuity Validation</div>
+                <p class="text-slate-400 text-sm">
+                    Tracks character status (alive/dead/whereabouts) with near-perfect accuracy. False positives are rare.
+                </p>
+            </div>
+        </div>
+
+        <div class="rounded-2xl border border-slate-800 bg-slate-900/50 p-8">
+            <div class="grid md:grid-cols-2 gap-8">
+                <div>
+                    <h3 class="text-xl font-bold text-white mb-4">The Reality Check</h3>
+                    <p class="text-slate-400 mb-4">
+                        Is it perfect? No. Does it get you 90% of the way there and save you weeks of work? Yes.
+                    </p>
+                    <p class="text-slate-400">
+                        Fabula gives you a massive head start. You refine the last 10% with human judgment.
+                    </p>
+                </div>
+                <div>
+                    <h3 class="text-xl font-bold text-white mb-4">What We Test Against</h3>
+                    <p class="text-slate-400 mb-4">
+                        We've processed 60+ episodes of Star Trek TNG, The West Wing, I Claudius, and Doctor Who. These shows have:
+                    </p>
+                    <ul class="space-y-2 text-slate-400">
+                        <li class="flex items-center gap-2">
+                            <i data-lucide="check" class="w-4 h-4 text-green-400"></i>
+                            50+ recurring characters
+                        </li>
+                        <li class="flex items-center gap-2">
+                            <i data-lucide="check" class="w-4 h-4 text-green-400"></i>
+                            Multi-season arcs spanning years
+                        </li>
+                        <li class="flex items-center gap-2">
+                            <i data-lucide="check" class="w-4 h-4 text-green-400"></i>
+                            Complex family trees and political networks
+                        </li>
+                        <li class="flex items-center gap-2">
+                            <i data-lucide="check" class="w-4 h-4 text-green-400"></i>
+                            Flashbacks, time jumps, alternate timelines
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+{# ============================================ #}
+{# DATA SECURITY #}
+{# ============================================ #}
+<section class="py-24">
+    <div class="max-w-7xl mx-auto px-6">
+        <div class="text-center mb-16">
+            <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-green-500/10 border border-green-500/20 text-green-400 text-sm mb-6">
+                <i data-lucide="shield" class="w-4 h-4"></i>
+                <span>Security</span>
+            </div>
+            <h2 class="text-4xl font-bold text-white mb-4">We're Paranoid About Your IP</h2>
+            <p class="text-xl text-slate-400">Your scripts are your most valuable asset. We treat them that way.</p>
+        </div>
+
+        <div class="grid md:grid-cols-2 gap-8">
+            <div class="rounded-2xl border border-red-500/20 bg-red-500/5 p-8">
+                <h3 class="text-xl font-bold text-white mb-6 flex items-center gap-2">
+                    <i data-lucide="x-circle" class="w-6 h-6 text-red-400"></i>
+                    We Never
+                </h3>
+                <ul class="space-y-4">
+                    <li class="flex items-start gap-3 text-slate-300">
+                        <i data-lucide="x" class="w-5 h-5 text-red-400 mt-0.5 shrink-0"></i>
+                        Share your scripts with other customers
+                    </li>
+                    <li class="flex items-start gap-3 text-slate-300">
+                        <i data-lucide="x" class="w-5 h-5 text-red-400 mt-0.5 shrink-0"></i>
+                        Use your scripts to train AI models
+                    </li>
+                    <li class="flex items-start gap-3 text-slate-300">
+                        <i data-lucide="x" class="w-5 h-5 text-red-400 mt-0.5 shrink-0"></i>
+                        Store scripts on shared infrastructure
+                    </li>
+                    <li class="flex items-start gap-3 text-slate-300">
+                        <i data-lucide="x" class="w-5 h-5 text-red-400 mt-0.5 shrink-0"></i>
+                        Allow cross-customer data access
+                    </li>
+                </ul>
+            </div>
+
+            <div class="rounded-2xl border border-green-500/20 bg-green-500/5 p-8">
+                <h3 class="text-xl font-bold text-white mb-6 flex items-center gap-2">
+                    <i data-lucide="check-circle" class="w-6 h-6 text-green-400"></i>
+                    You Control
+                </h3>
+                <ul class="space-y-4">
+                    <li class="flex items-start gap-3 text-slate-300">
+                        <i data-lucide="check" class="w-5 h-5 text-green-400 mt-0.5 shrink-0"></i>
+                        Where data is stored (our servers or yours)
+                    </li>
+                    <li class="flex items-start gap-3 text-slate-300">
+                        <i data-lucide="check" class="w-5 h-5 text-green-400 mt-0.5 shrink-0"></i>
+                        Which AI providers process your scripts
+                    </li>
+                    <li class="flex items-start gap-3 text-slate-300">
+                        <i data-lucide="check" class="w-5 h-5 text-green-400 mt-0.5 shrink-0"></i>
+                        Who has access to your story bible
+                    </li>
+                    <li class="flex items-start gap-3 text-slate-300">
+                        <i data-lucide="check" class="w-5 h-5 text-green-400 mt-0.5 shrink-0"></i>
+                        When data gets deleted (it's permanent)
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="mt-8 rounded-2xl border border-slate-800 bg-slate-900/50 p-8 text-center">
+            <h3 class="text-xl font-bold text-white mb-4">For Extra Paranoid Studios</h3>
+            <p class="text-slate-400 max-w-2xl mx-auto">
+                Deploy Fabula on your own servers. Your scripts never leave your network. We'll help you set it up.
+            </p>
+        </div>
+    </div>
+</section>
+
+{# ============================================ #}
+{# DEPLOYMENT OPTIONS #}
+{# ============================================ #}
+<section class="py-24 bg-slate-900/50">
+    <div class="max-w-7xl mx-auto px-6">
+        <div class="text-center mb-16">
+            <h2 class="text-4xl font-bold text-white mb-4">Deployment: Your Choice</h2>
+            <p class="text-xl text-slate-400">Run Fabula where it makes sense for your security requirements.</p>
+        </div>
+
+        <div class="grid md:grid-cols-3 gap-8">
+            <div class="rounded-2xl border border-slate-800 bg-slate-900/50 p-8 hover:border-cyan-500/30 transition-all duration-300">
+                <div class="w-14 h-14 rounded-xl bg-cyan-500/10 flex items-center justify-center mb-6">
+                    <i data-lucide="cloud" class="w-7 h-7 text-cyan-400"></i>
+                </div>
+                <h3 class="text-xl font-bold text-white mb-2">Cloud</h3>
+                <p class="text-amber-400 text-sm mb-4">We Host Everything</p>
+                <p class="text-slate-400">
+                    You upload scripts, we handle servers, backups, updates. Most customers choose this.
+                </p>
+            </div>
+
+            <div class="rounded-2xl border border-slate-800 bg-slate-900/50 p-8 hover:border-purple-500/30 transition-all duration-300">
+                <div class="w-14 h-14 rounded-xl bg-purple-500/10 flex items-center justify-center mb-6">
+                    <i data-lucide="server" class="w-7 h-7 text-purple-400"></i>
+                </div>
+                <h3 class="text-xl font-bold text-white mb-2">Self-Hosted</h3>
+                <p class="text-amber-400 text-sm mb-4">You Run It</p>
+                <p class="text-slate-400">
+                    We give you the software, you run it on your infrastructure. Your IT team has full control.
+                </p>
+            </div>
+
+            <div class="rounded-2xl border border-slate-800 bg-slate-900/50 p-8 hover:border-green-500/30 transition-all duration-300">
+                <div class="w-14 h-14 rounded-xl bg-green-500/10 flex items-center justify-center mb-6">
+                    <i data-lucide="shuffle" class="w-7 h-7 text-green-400"></i>
+                </div>
+                <h3 class="text-xl font-bold text-white mb-2">Hybrid</h3>
+                <p class="text-amber-400 text-sm mb-4">Scripts Stay With You</p>
+                <p class="text-slate-400">
+                    Process scripts on your servers, use our cloud for search and visualization. Best of both worlds.
+                </p>
+            </div>
+        </div>
+    </div>
+</section>
+
+{# ============================================ #}
+{# CTA #}
+{# ============================================ #}
+<section class="py-24">
+    <div class="max-w-4xl mx-auto px-6 text-center">
+        <h2 class="text-4xl font-bold text-white mb-6">See It In Action</h2>
+        <p class="text-xl text-slate-400 mb-8">
+            Explore our interactive demo with The West Wing, or request a custom demo with your own scripts.
+        </p>
+        <div class="flex flex-wrap justify-center gap-4">
+            <a href="{% slugurl 'demo' %}" class="group inline-flex items-center gap-2 px-8 py-4 text-lg font-semibold rounded-xl bg-gradient-to-r from-amber-500 to-orange-500 text-white hover:from-amber-400 hover:to-orange-400 transition-all duration-300 shadow-lg shadow-amber-500/25">
+                Request a Demo
+                <i data-lucide="arrow-right" class="w-5 h-5 group-hover:translate-x-1 transition-transform"></i>
+            </a>
+            <a href="{% url 'catalog' %}" class="inline-flex items-center gap-2 px-8 py-4 text-lg font-semibold rounded-xl border border-slate-700 text-white hover:bg-slate-800/50">
+                Explore The West Wing
+            </a>
+        </div>
+    </div>
+</section>
+{% endblock %}

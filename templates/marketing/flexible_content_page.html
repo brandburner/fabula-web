@@ -2,6 +2,11 @@
 {% load wagtailcore_tags %}
 
 {% block content %}
+{% if page.slug == 'product' %}
+    {% include "marketing/includes/product_content.html" %}
+{% elif page.slug == 'about' %}
+    {% include "marketing/includes/about_content.html" %}
+{% else %}
 <div class="max-w-7xl mx-auto px-6 py-16">
     {# Page Header #}
     <div class="text-center mb-16">
@@ -16,4 +21,5 @@
         {% include_block block %}
     {% endfor %}
 </div>
+{% endif %}
 {% endblock %}
