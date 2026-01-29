@@ -1,0 +1,112 @@
+{% extends "marketing_base.html" %}
+{% load static wagtailcore_tags %}
+
+{% block title %}Explore Narrative Graphs{% endblock %}
+
+{% block content %}
+<div class="max-w-7xl mx-auto px-6 py-16">
+    {# Page Header #}
+    <div class="text-center mb-16">
+        <div class="w-16 h-16 rounded-2xl bg-cyan-500/10 flex items-center justify-center mx-auto mb-6">
+            <i data-lucide="compass" class="w-8 h-8 text-cyan-400"></i>
+        </div>
+        <h1 class="text-4xl md:text-5xl font-bold text-white mb-4">Explore Narrative Graphs</h1>
+        <p class="text-xl text-slate-400 max-w-2xl mx-auto">
+            Dive into interactive story graphs from iconic TV series. See how characters connect, trace narrative arcs, and explore thematic patterns.
+        </p>
+    </div>
+
+    {% if series_list %}
+    {# Series Cards #}
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        {% for item in series_list %}
+        <a href="{{ item.series.url }}"
+           class="group relative rounded-2xl border border-slate-800 bg-slate-900/50 overflow-hidden hover:border-cyan-500/30 transition-all duration-300">
+            {# Background gradient #}
+            <div class="absolute inset-0 bg-gradient-to-br from-cyan-500/5 to-purple-500/5 opacity-0 group-hover:opacity-100 transition-opacity"></div>
+
+            <div class="relative p-8">
+                {# Series Icon #}
+                <div class="w-14 h-14 rounded-xl bg-gradient-to-br from-cyan-500/20 to-purple-500/20 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+                    <i data-lucide="git-branch" class="w-7 h-7 text-cyan-400"></i>
+                </div>
+
+                {# Series Title #}
+                <h2 class="text-2xl font-bold text-white mb-3 group-hover:text-cyan-400 transition-colors">
+                    {{ item.series.title }}
+                </h2>
+
+                {# Description #}
+                {% if item.series.description %}
+                <div class="text-slate-400 text-sm mb-6 line-clamp-2">
+                    {{ item.series.description|striptags|truncatewords:30 }}
+                </div>
+                {% endif %}
+
+                {# Stats Grid #}
+                <div class="grid grid-cols-2 gap-4 mb-6">
+                    <div class="rounded-lg bg-slate-800/50 p-3 text-center">
+                        <div class="text-2xl font-bold text-white">{{ item.season_count }}</div>
+                        <div class="text-xs text-slate-500">Seasons</div>
+                    </div>
+                    <div class="rounded-lg bg-slate-800/50 p-3 text-center">
+                        <div class="text-2xl font-bold text-white">{{ item.event_count|default:0 }}</div>
+                        <div class="text-xs text-slate-500">Events</div>
+                    </div>
+                    <div class="rounded-lg bg-slate-800/50 p-3 text-center">
+                        <div class="text-2xl font-bold text-white">{{ item.character_count|default:0 }}</div>
+                        <div class="text-xs text-slate-500">Characters</div>
+                    </div>
+                    <div class="rounded-lg bg-slate-800/50 p-3 text-center">
+                        <div class="text-2xl font-bold text-white">{{ item.connection_count|default:0 }}</div>
+                        <div class="text-xs text-slate-500">Connections</div>
+                    </div>
+                </div>
+
+                {# Explore Button #}
+                <div class="flex items-center gap-2 text-sm text-cyan-400 group-hover:text-cyan-300">
+                    <span>Explore graph</span>
+                    <i data-lucide="arrow-right" class="w-4 h-4 group-hover:translate-x-1 transition-transform"></i>
+                </div>
+            </div>
+        </a>
+        {% endfor %}
+    </div>
+    {% else %}
+    {# Empty State #}
+    <div class="text-center py-20">
+        <div class="w-20 h-20 rounded-full bg-slate-800/50 flex items-center justify-center mx-auto mb-6">
+            <i data-lucide="database" class="w-10 h-10 text-slate-600"></i>
+        </div>
+        <h2 class="text-2xl font-bold text-white mb-3">No Graphs Available Yet</h2>
+        <p class="text-slate-400 max-w-md mx-auto">
+            Check back soon! We're adding narrative graphs from iconic TV series.
+        </p>
+    </div>
+    {% endif %}
+
+    {# Coming Soon Section #}
+    <div class="mt-20 text-center">
+        <h3 class="text-lg font-medium text-slate-500 mb-6">Coming Soon</h3>
+        <div class="flex flex-wrap justify-center gap-4">
+            <span class="px-4 py-2 rounded-full bg-slate-800/50 text-slate-500 text-sm">Star Trek: TNG</span>
+            <span class="px-4 py-2 rounded-full bg-slate-800/50 text-slate-500 text-sm">Breaking Bad</span>
+            <span class="px-4 py-2 rounded-full bg-slate-800/50 text-slate-500 text-sm">I, Claudius</span>
+            <span class="px-4 py-2 rounded-full bg-slate-800/50 text-slate-500 text-sm">Doctor Who</span>
+        </div>
+    </div>
+
+    {# CTA #}
+    <div class="mt-20 text-center rounded-2xl border border-slate-800 bg-gradient-to-br from-slate-900 to-slate-900/50 p-12">
+        <h3 class="text-2xl font-bold text-white mb-4">Want to see your show here?</h3>
+        <p class="text-slate-400 mb-8 max-w-lg mx-auto">
+            Fabula can process any TV series. Contact us to add your show to the demo catalog.
+        </p>
+        <a href="{% slugurl 'demo' %}"
+           class="inline-flex items-center gap-2 px-6 py-3 text-base font-medium rounded-xl bg-gradient-to-r from-amber-500 to-orange-500 text-white hover:from-amber-400 hover:to-orange-400 transition-all duration-300 shadow-lg shadow-amber-500/25">
+            Request a Demo
+            <i data-lucide="arrow-right" class="w-5 h-5"></i>
+        </a>
+    </div>
+</div>
+{% endblock %}

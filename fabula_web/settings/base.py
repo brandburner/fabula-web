@@ -42,6 +42,7 @@ INSTALLED_APPS = [
 
     # Project apps
     'narrative',
+    'marketing',
 ]
 
 MIDDLEWARE = [
@@ -71,6 +72,7 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
+                'marketing.context_processors.series_context',
             ],
         },
     },
@@ -105,7 +107,7 @@ MEDIA_ROOT = BASE_DIR / 'media'
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 # Wagtail settings
-WAGTAIL_SITE_NAME = 'Fabula: The West Wing'
+WAGTAIL_SITE_NAME = 'Fabula'
 WAGTAILADMIN_BASE_URL = os.environ.get('WAGTAILADMIN_BASE_URL', 'http://localhost:8000')
 
 # Search backend

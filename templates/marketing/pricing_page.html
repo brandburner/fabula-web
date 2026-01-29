@@ -1,0 +1,64 @@
+{% extends "marketing_base.html" %}
+{% load wagtailcore_tags %}
+
+{% block content %}
+<div class="max-w-7xl mx-auto px-6 py-16">
+    {# Page Header #}
+    <div class="text-center mb-16">
+        <h1 class="text-4xl md:text-5xl font-bold text-white mb-4">{{ page.title }}</h1>
+        {% if page.introduction %}
+        <div class="text-xl text-slate-400 max-w-2xl mx-auto prose prose-invert">
+            {{ page.introduction|richtext }}
+        </div>
+        {% endif %}
+    </div>
+
+    {# Pricing Tiers #}
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
+        {% for block in page.tiers %}
+            {% with tier=block.value %}
+            <div class="relative rounded-2xl border {% if tier.highlighted %}border-amber-500/50 bg-amber-500/5{% else %}border-slate-800 bg-slate-900/50{% endif %} p-8 flex flex-col">
+                {% if tier.highlighted %}
+                <div class="absolute -top-3 left-1/2 -translate-x-1/2">
+                    <span class="px-3 py-1 text-xs font-medium rounded-full bg-amber-500 text-white">Recommended</span>
+                </div>
+                {% endif %}
+
+                <h3 class="text-xl font-bold text-white mb-2">{{ tier.name }}</h3>
+                <div class="text-2xl font-bold text-amber-400 mb-4">{{ tier.price }}</div>
+
+                {% if tier.description %}
+                <p class="text-sm text-slate-400 mb-6">{{ tier.description }}</p>
+                {% endif %}
+
+                <ul class="space-y-3 mb-8 flex-1">
+                    {% for feature in tier.features %}
+                    <li class="flex items-start gap-3 text-sm text-slate-300">
+                        <i data-lucide="check" class="w-4 h-4 text-emerald-400 mt-0.5 flex-shrink-0"></i>
+                        <span>{{ feature }}</span>
+                    </li>
+                    {% endfor %}
+                </ul>
+
+                {% if tier.cta %}
+                <a href="{% if tier.cta.page %}{% pageurl tier.cta.page %}{% else %}{{ tier.cta.url }}{% endif %}"
+                   class="block w-full text-center py-3 px-6 rounded-lg font-medium transition-all duration-300
+                          {% if tier.cta.style == 'primary' %}bg-gradient-to-r from-amber-500 to-orange-500 text-white hover:from-amber-400 hover:to-orange-400 shadow-lg shadow-amber-500/25
+                          {% elif tier.cta.style == 'secondary' %}border border-slate-700 text-slate-300 hover:border-amber-500/50 hover:text-white
+                          {% else %}text-amber-400 hover:text-amber-300{% endif %}">
+                    {{ tier.cta.text }}
+                </a>
+                {% endif %}
+            </div>
+            {% endwith %}
+        {% endfor %}
+    </div>
+
+    {# Footer Note #}
+    {% if page.footer_note %}
+    <div class="text-center prose prose-invert mx-auto">
+        {{ page.footer_note|richtext }}
+    </div>
+    {% endif %}
+</div>
+{% endblock %}

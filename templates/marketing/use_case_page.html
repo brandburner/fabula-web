@@ -1,0 +1,107 @@
+{% extends "marketing_base.html" %}
+{% load wagtailcore_tags %}
+
+{% block content %}
+<div class="max-w-4xl mx-auto px-6 py-16">
+    {# Page Header #}
+    <div class="text-center mb-16">
+        {% if page.icon %}
+        <div class="w-16 h-16 rounded-2xl bg-amber-500/10 flex items-center justify-center mx-auto mb-6">
+            <i data-lucide="{{ page.icon }}" class="w-8 h-8 text-amber-400"></i>
+        </div>
+        {% endif %}
+        <h1 class="text-4xl md:text-5xl font-bold text-white mb-4">{{ page.title }}</h1>
+        {% if page.tagline %}
+        <p class="text-xl text-slate-400">{{ page.tagline }}</p>
+        {% endif %}
+    </div>
+
+    {# Use Case Structure #}
+    <div class="space-y-12">
+        {# The Situation #}
+        <section class="rounded-2xl border border-slate-800 bg-slate-900/50 p-8">
+            <div class="flex items-center gap-3 mb-4">
+                <div class="w-10 h-10 rounded-lg bg-blue-500/10 flex items-center justify-center">
+                    <i data-lucide="map-pin" class="w-5 h-5 text-blue-400"></i>
+                </div>
+                <h2 class="text-xl font-bold text-white">The Situation</h2>
+            </div>
+            <div class="prose prose-invert prose-slate max-w-none">
+                {{ page.situation|richtext }}
+            </div>
+        </section>
+
+        {# Old Way vs Fabula Way #}
+        <div class="grid md:grid-cols-2 gap-8">
+            {# The Old Way #}
+            <section class="rounded-2xl border border-red-500/20 bg-red-500/5 p-8">
+                <div class="flex items-center gap-3 mb-4">
+                    <div class="w-10 h-10 rounded-lg bg-red-500/10 flex items-center justify-center">
+                        <i data-lucide="x-circle" class="w-5 h-5 text-red-400"></i>
+                    </div>
+                    <h2 class="text-xl font-bold text-white">The Old Way</h2>
+                </div>
+                <div class="prose prose-invert prose-slate max-w-none text-slate-300">
+                    {{ page.old_way|richtext }}
+                </div>
+            </section>
+
+            {# The Fabula Way #}
+            <section class="rounded-2xl border border-emerald-500/20 bg-emerald-500/5 p-8">
+                <div class="flex items-center gap-3 mb-4">
+                    <div class="w-10 h-10 rounded-lg bg-emerald-500/10 flex items-center justify-center">
+                        <i data-lucide="check-circle" class="w-5 h-5 text-emerald-400"></i>
+                    </div>
+                    <h2 class="text-xl font-bold text-white">The Fabula Way</h2>
+                </div>
+                <div class="prose prose-invert prose-slate max-w-none text-slate-300">
+                    {{ page.fabula_way|richtext }}
+                </div>
+            </section>
+        </div>
+
+        {# The Result #}
+        <section class="rounded-2xl border border-amber-500/20 bg-amber-500/5 p-8">
+            <div class="flex items-center gap-3 mb-4">
+                <div class="w-10 h-10 rounded-lg bg-amber-500/10 flex items-center justify-center">
+                    <i data-lucide="trophy" class="w-5 h-5 text-amber-400"></i>
+                </div>
+                <h2 class="text-xl font-bold text-white">The Result</h2>
+            </div>
+            <div class="prose prose-invert prose-slate max-w-none">
+                {{ page.result|richtext }}
+            </div>
+        </section>
+
+        {# Real Example Quote #}
+        {% if page.real_example %}
+        <section class="text-center py-8">
+            <div class="max-w-2xl mx-auto">
+                <i data-lucide="quote" class="w-10 h-10 text-amber-500/30 mx-auto mb-4"></i>
+                <blockquote class="text-lg text-slate-300 italic">
+                    "{{ page.real_example }}"
+                </blockquote>
+            </div>
+        </section>
+        {% endif %}
+    </div>
+
+    {# Additional Content #}
+    {% if page.additional_content %}
+    <div class="mt-16">
+        {% for block in page.additional_content %}
+            {% include_block block %}
+        {% endfor %}
+    </div>
+    {% endif %}
+
+    {# CTA #}
+    <div class="mt-16 text-center">
+        <a href="{% url 'wagtail_serve' 'demo' %}"
+           class="inline-flex items-center gap-2 px-8 py-4 text-lg font-medium rounded-xl bg-gradient-to-r from-amber-500 to-orange-500 text-white hover:from-amber-400 hover:to-orange-400 transition-all duration-300 shadow-lg shadow-amber-500/25 hover:shadow-amber-500/40">
+            See Fabula in Action
+            <i data-lucide="arrow-right" class="w-5 h-5"></i>
+        </a>
+    </div>
+</div>
+{% endblock %}

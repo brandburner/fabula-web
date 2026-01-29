@@ -1,0 +1,56 @@
+{% load wagtailimages_tags %}
+
+<section class="bg-slate-900/50 py-20">
+    <div class="max-w-7xl mx-auto px-6">
+        {% if self.section_title %}
+        <div class="text-center mb-16">
+            <h2 class="text-3xl md:text-4xl font-bold text-white mb-4">{{ self.section_title }}</h2>
+            {% if self.section_subtitle %}
+            <p class="text-lg text-slate-400 max-w-2xl mx-auto">{{ self.section_subtitle }}</p>
+            {% endif %}
+        </div>
+        {% endif %}
+
+        {# Stats #}
+        {% if self.stats %}
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-8 mb-16">
+            {% for stat in self.stats %}
+            <div class="text-center">
+                <div class="text-4xl md:text-5xl font-bold text-amber-400 mb-2">{{ stat.value }}</div>
+                <div class="text-sm text-slate-500">{{ stat.label }}</div>
+            </div>
+            {% endfor %}
+        </div>
+        {% endif %}
+
+        {# Testimonials #}
+        {% if self.testimonials %}
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {% for testimonial in self.testimonials %}
+            <div class="rounded-2xl border border-slate-800 bg-slate-950/50 p-8">
+                <i data-lucide="quote" class="w-8 h-8 text-amber-500/30 mb-4"></i>
+                <blockquote class="text-slate-300 mb-6">{{ testimonial.quote }}</blockquote>
+
+                <div class="flex items-center gap-4">
+                    {% if testimonial.author_image %}
+                    {% image testimonial.author_image fill-48x48 as author_img %}
+                    <img src="{{ author_img.url }}" alt="{{ testimonial.author_name }}" class="w-12 h-12 rounded-full">
+                    {% else %}
+                    <div class="w-12 h-12 rounded-full bg-slate-800 flex items-center justify-center">
+                        <i data-lucide="user" class="w-6 h-6 text-slate-600"></i>
+                    </div>
+                    {% endif %}
+
+                    <div>
+                        <div class="font-medium text-white">{{ testimonial.author_name }}</div>
+                        {% if testimonial.author_role %}
+                        <div class="text-sm text-slate-500">{{ testimonial.author_role }}{% if testimonial.author_company %}, {{ testimonial.author_company }}{% endif %}</div>
+                        {% endif %}
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+        {% endif %}
+    </div>
+</section>

@@ -1,0 +1,235 @@
+{% load static wagtailcore_tags %}
+<!DOCTYPE html>
+<html lang="en" class="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}{{ page.title }}{% endblock %} | Fabula</title>
+    {% if page.meta_description %}
+    <meta name="description" content="{{ page.meta_description }}">
+    {% endif %}
+
+    {# Open Graph #}
+    <meta property="og:title" content="{{ page.title }} | Fabula">
+    {% if page.meta_description %}
+    <meta property="og:description" content="{{ page.meta_description }}">
+    {% endif %}
+    {% if page.og_image %}
+    <meta property="og:image" content="{{ page.og_image.url }}">
+    {% endif %}
+
+    {# Tailwind CSS via CDN #}
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        slate: {
+                            950: '#0a0a0f',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+
+    {# Lucide Icons #}
+    <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
+
+    {# Alpine.js for interactivity #}
+    <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
+
+    <style>
+        /* Custom scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+            height: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #0f172a;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #334155;
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #475569;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        /* Animated gradient backgrounds */
+        @keyframes gradient-shift {
+            0%, 100% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+        }
+
+        .animate-gradient {
+            background-size: 200% 200%;
+            animation: gradient-shift 15s ease infinite;
+        }
+
+        /* Fade in animation */
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .fade-in {
+            animation: fadeIn 0.6s ease-out forwards;
+        }
+
+        /* Glass morphism effect */
+        .glass {
+            background: rgba(15, 23, 42, 0.8);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+        }
+    </style>
+
+    {% block extra_css %}{% endblock %}
+</head>
+<body class="min-h-screen bg-slate-950 text-slate-100 antialiased">
+    {# Marketing Navigation #}
+    <header class="fixed top-0 left-0 right-0 z-50 glass border-b border-slate-800/50">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="flex items-center justify-between h-16">
+                {# Logo #}
+                <a href="/" class="flex items-center gap-2.5 group transition-all duration-300">
+                    <div class="w-9 h-9 rounded-lg bg-gradient-to-br from-amber-500 via-orange-500 to-amber-600 flex items-center justify-center shadow-lg shadow-amber-500/20 group-hover:shadow-amber-500/35 group-hover:scale-105 transition-all duration-300">
+                        <i data-lucide="zap" class="w-5 h-5 text-white"></i>
+                    </div>
+                    <span class="font-bold tracking-tight text-white text-lg group-hover:text-amber-400 transition-colors">FABULA</span>
+                </a>
+
+                {# Desktop Navigation #}
+                <nav class="hidden md:flex items-center gap-8">
+                    <a href="{% slugurl 'product' %}" class="text-sm text-slate-400 hover:text-white transition-colors">Product</a>
+                    <a href="{% slugurl 'use-cases' %}" class="text-sm text-slate-400 hover:text-white transition-colors">Use Cases</a>
+                    <a href="{% slugurl 'pricing' %}" class="text-sm text-slate-400 hover:text-white transition-colors">Pricing</a>
+                    <a href="{% url 'catalog' %}" class="text-sm text-slate-400 hover:text-white transition-colors flex items-center gap-1.5">
+                        <i data-lucide="compass" class="w-4 h-4"></i>
+                        Explore
+                    </a>
+                </nav>
+
+                {# CTA #}
+                <div class="flex items-center gap-4">
+                    <a href="{% slugurl 'demo' %}"
+                       class="px-4 py-2 text-sm font-medium rounded-lg bg-gradient-to-r from-amber-500 to-orange-500 text-white hover:from-amber-400 hover:to-orange-400 transition-all duration-300 shadow-lg shadow-amber-500/25 hover:shadow-amber-500/40">
+                        Get Demo
+                    </a>
+
+                    {# Mobile menu button #}
+                    <button class="md:hidden p-2 text-slate-400 hover:text-white" x-data @click="$dispatch('toggle-mobile-menu')">
+                        <i data-lucide="menu" class="w-5 h-5"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    {# Mobile Menu #}
+    <div x-data="{ open: false }"
+         @toggle-mobile-menu.window="open = !open"
+         x-show="open"
+         x-transition:enter="transition ease-out duration-200"
+         x-transition:enter-start="opacity-0"
+         x-transition:enter-end="opacity-100"
+         x-transition:leave="transition ease-in duration-150"
+         x-transition:leave-start="opacity-100"
+         x-transition:leave-end="opacity-0"
+         class="fixed inset-0 z-40 md:hidden"
+         style="display: none;">
+        <div class="absolute inset-0 bg-slate-950/90" @click="open = false"></div>
+        <nav class="absolute top-16 left-0 right-0 glass border-b border-slate-800/50 p-6 space-y-4">
+            <a href="{% slugurl 'product' %}" class="block text-slate-300 hover:text-white">Product</a>
+            <a href="{% slugurl 'use-cases' %}" class="block text-slate-300 hover:text-white">Use Cases</a>
+            <a href="{% slugurl 'pricing' %}" class="block text-slate-300 hover:text-white">Pricing</a>
+            <a href="{% url 'catalog' %}" class="block text-slate-300 hover:text-white">Explore Graphs</a>
+        </nav>
+    </div>
+
+    {# Main content #}
+    <main class="pt-16">
+        {% block content %}{% endblock %}
+    </main>
+
+    {# Marketing Footer #}
+    <footer class="border-t border-slate-800/50 mt-20 bg-slate-950">
+        <div class="max-w-7xl mx-auto px-6 py-16">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-12">
+                {# Brand #}
+                <div class="md:col-span-1">
+                    <div class="flex items-center gap-2.5 mb-4">
+                        <div class="w-8 h-8 rounded-lg bg-gradient-to-br from-amber-500 via-orange-500 to-amber-600 flex items-center justify-center">
+                            <i data-lucide="zap" class="w-4 h-4 text-white"></i>
+                        </div>
+                        <span class="font-bold text-white">FABULA</span>
+                    </div>
+                    <p class="text-sm text-slate-500">
+                        {% if page.tagline %}{{ page.tagline }}{% else %}Your Show's Memory, Automated{% endif %}
+                    </p>
+                </div>
+
+                {# Product Links #}
+                <div>
+                    <h4 class="text-sm font-semibold text-white mb-4">Product</h4>
+                    <ul class="space-y-3 text-sm text-slate-500">
+                        <li><a href="{% slugurl 'product' %}" class="hover:text-white transition-colors">Features</a></li>
+                        <li><a href="{% slugurl 'pricing' %}" class="hover:text-white transition-colors">Pricing</a></li>
+                        <li><a href="{% url 'catalog' %}" class="hover:text-white transition-colors">Explore Graphs</a></li>
+                    </ul>
+                </div>
+
+                {# Use Cases #}
+                <div>
+                    <h4 class="text-sm font-semibold text-white mb-4">Use Cases</h4>
+                    <ul class="space-y-3 text-sm text-slate-500">
+                        <li><a href="{% slugurl 'use-cases' %}" class="hover:text-white transition-colors">Writers' Rooms</a></li>
+                        <li><a href="{% slugurl 'use-cases' %}" class="hover:text-white transition-colors">Legal & Licensing</a></li>
+                        <li><a href="{% slugurl 'use-cases' %}" class="hover:text-white transition-colors">Game Adaptation</a></li>
+                    </ul>
+                </div>
+
+                {# Company #}
+                <div>
+                    <h4 class="text-sm font-semibold text-white mb-4">Company</h4>
+                    <ul class="space-y-3 text-sm text-slate-500">
+                        <li><a href="{% slugurl 'about' %}" class="hover:text-white transition-colors">About</a></li>
+                        <li><a href="{% slugurl 'faq' %}" class="hover:text-white transition-colors">FAQ</a></li>
+                        <li><a href="{% slugurl 'demo' %}" class="hover:text-white transition-colors">Contact</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="mt-12 pt-8 border-t border-slate-800/50 flex flex-col md:flex-row justify-between items-center gap-4">
+                <p class="text-xs text-slate-600">
+                    &copy; {% now "Y" %} Fabula. All rights reserved.
+                </p>
+                <div class="flex items-center gap-6 text-xs text-slate-600">
+                    <a href="#" class="hover:text-white transition-colors">Privacy</a>
+                    <a href="#" class="hover:text-white transition-colors">Terms</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    {# Initialize Lucide icons #}
+    <script>
+        lucide.createIcons();
+    </script>
+
+    {% block extra_js %}{% endblock %}
+</body>
+</html>

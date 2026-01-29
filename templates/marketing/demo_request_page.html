@@ -1,0 +1,104 @@
+{% extends "marketing_base.html" %}
+{% load wagtailcore_tags %}
+
+{% block content %}
+<div class="max-w-2xl mx-auto px-6 py-16">
+    {% if form_submitted %}
+    {# Thank You State #}
+    <div class="text-center">
+        <div class="w-20 h-20 rounded-full bg-emerald-500/10 flex items-center justify-center mx-auto mb-8">
+            <i data-lucide="check-circle" class="w-10 h-10 text-emerald-400"></i>
+        </div>
+        <h1 class="text-3xl md:text-4xl font-bold text-white mb-4">{{ page.thank_you_headline }}</h1>
+        {% if page.thank_you_text %}
+        <div class="text-lg text-slate-400 prose prose-invert mx-auto">
+            {{ page.thank_you_text|richtext }}
+        </div>
+        {% endif %}
+
+        <div class="mt-8">
+            <a href="{% url 'catalog' %}"
+               class="inline-flex items-center gap-2 text-amber-400 hover:text-amber-300 transition-colors">
+                <span>Explore demo graphs while you wait</span>
+                <i data-lucide="arrow-right" class="w-4 h-4"></i>
+            </a>
+        </div>
+    </div>
+    {% else %}
+    {# Form State #}
+    <div class="text-center mb-12">
+        <h1 class="text-3xl md:text-4xl font-bold text-white mb-4">{{ page.intro_headline }}</h1>
+        {% if page.intro_subheadline %}
+        <p class="text-lg text-slate-400">{{ page.intro_subheadline }}</p>
+        {% endif %}
+    </div>
+
+    {% if page.introduction %}
+    <div class="mb-8 prose prose-invert mx-auto">
+        {{ page.introduction|richtext }}
+    </div>
+    {% endif %}
+
+    {# Form #}
+    <form action="{% pageurl page %}" method="POST" class="space-y-6">
+        {% csrf_token %}
+
+        {% for field in form %}
+        <div>
+            <label for="{{ field.id_for_label }}" class="block text-sm font-medium text-slate-300 mb-2">
+                {{ field.label }}
+                {% if field.field.required %}
+                <span class="text-amber-400">*</span>
+                {% endif %}
+            </label>
+
+            {% if field.field.widget.input_type == 'textarea' %}
+            <textarea name="{{ field.html_name }}"
+                      id="{{ field.id_for_label }}"
+                      rows="4"
+                      class="w-full px-4 py-3 rounded-lg bg-slate-900 border border-slate-700 text-white placeholder-slate-500 focus:border-amber-500/50 focus:ring-1 focus:ring-amber-500/50 transition-colors"
+                      {% if field.field.required %}required{% endif %}
+                      placeholder="{{ field.help_text }}">{{ field.value|default:'' }}</textarea>
+            {% elif field.field.widget.input_type == 'select' %}
+            <select name="{{ field.html_name }}"
+                    id="{{ field.id_for_label }}"
+                    class="w-full px-4 py-3 rounded-lg bg-slate-900 border border-slate-700 text-white focus:border-amber-500/50 focus:ring-1 focus:ring-amber-500/50 transition-colors"
+                    {% if field.field.required %}required{% endif %}>
+                {% for choice in field.field.choices %}
+                <option value="{{ choice.0 }}" {% if field.value == choice.0 %}selected{% endif %}>{{ choice.1 }}</option>
+                {% endfor %}
+            </select>
+            {% else %}
+            <input type="{{ field.field.widget.input_type|default:'text' }}"
+                   name="{{ field.html_name }}"
+                   id="{{ field.id_for_label }}"
+                   value="{{ field.value|default:'' }}"
+                   class="w-full px-4 py-3 rounded-lg bg-slate-900 border border-slate-700 text-white placeholder-slate-500 focus:border-amber-500/50 focus:ring-1 focus:ring-amber-500/50 transition-colors"
+                   {% if field.field.required %}required{% endif %}
+                   placeholder="{{ field.help_text }}">
+            {% endif %}
+
+            {% if field.errors %}
+            <p class="mt-2 text-sm text-red-400">{{ field.errors.0 }}</p>
+            {% endif %}
+        </div>
+        {% endfor %}
+
+        <button type="submit"
+                class="w-full py-4 px-6 text-lg font-medium rounded-xl bg-gradient-to-r from-amber-500 to-orange-500 text-white hover:from-amber-400 hover:to-orange-400 transition-all duration-300 shadow-lg shadow-amber-500/25 hover:shadow-amber-500/40">
+            Get a Custom Demo
+        </button>
+    </form>
+
+    {% if page.alternative_cta_text and page.alternative_cta_url %}
+    <div class="mt-8 text-center">
+        <a href="{{ page.alternative_cta_url }}"
+           class="inline-flex items-center gap-2 text-slate-400 hover:text-white transition-colors">
+            <span>{{ page.alternative_cta_text }}</span>
+            <i data-lucide="external-link" class="w-4 h-4"></i>
+        </a>
+    </div>
+    {% endif %}
+    {% endif %}
+</div>
+{% endblock %}

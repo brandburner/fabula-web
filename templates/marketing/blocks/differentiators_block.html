@@ -1,0 +1,35 @@
+<section class="max-w-4xl mx-auto px-6 py-20">
+    {% if self.section_title %}
+    <div class="text-center mb-16">
+        <h2 class="text-3xl md:text-4xl font-bold text-white mb-4">{{ self.section_title }}</h2>
+        {% if self.section_subtitle %}
+        <p class="text-lg text-slate-400 max-w-2xl mx-auto">{{ self.section_subtitle }}</p>
+        {% endif %}
+    </div>
+    {% endif %}
+
+    <div class="space-y-8">
+        {% for diff in self.differentiators %}
+        <div class="rounded-2xl border border-slate-800 bg-slate-900/50 p-8 hover:border-slate-700 transition-all duration-300">
+            <div class="flex items-start gap-4">
+                <div class="w-10 h-10 rounded-lg bg-emerald-500/10 flex items-center justify-center flex-shrink-0 mt-1">
+                    <i data-lucide="check" class="w-5 h-5 text-emerald-400"></i>
+                </div>
+                <div>
+                    <h3 class="text-xl font-bold text-white mb-3">{{ diff.title }}</h3>
+                    <p class="text-slate-400 mb-4">{{ diff.description }}</p>
+
+                    {% if diff.why_it_matters %}
+                    <div class="pl-4 border-l-2 border-amber-500/30">
+                        <p class="text-sm text-slate-500">
+                            <span class="text-amber-400 font-medium">Why it matters:</span>
+                            {{ diff.why_it_matters }}
+                        </p>
+                    </div>
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</section>

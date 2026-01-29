@@ -186,7 +186,13 @@
             {# Center: Context (series/episode info) #}
             <div class="flex-1 flex justify-center">
                 {% block series_context %}
+                {% if current_series %}
+                <a href="{{ current_series.url }}" class="text-slate-500 text-sm font-medium hover:text-amber-400 transition-colors">
+                    {{ current_series.title }}
+                </a>
+                {% else %}
                 <span class="text-slate-500 text-sm font-medium">{{ request.site.site_name|default:"Narrative Web" }}</span>
+                {% endif %}
                 {% endblock %}
             </div>
 
@@ -219,7 +225,7 @@
             </p>
             <div class="flex items-center justify-center gap-2 text-xs text-slate-600">
                 <span>Mapping the narrative web of</span>
-                <span class="text-amber-500/70">The West Wing</span>
+                <span class="text-amber-500/70">{% if current_series %}{{ current_series.title }}{% else %}your story{% endif %}</span>
             </div>
         </div>
     </footer>

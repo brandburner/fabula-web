@@ -1,0 +1,43 @@
+{% extends "marketing_base.html" %}
+{% load wagtailcore_tags %}
+
+{% block content %}
+<div class="max-w-7xl mx-auto px-6 py-16">
+    {# Page Header #}
+    <div class="text-center mb-16">
+        <h1 class="text-4xl md:text-5xl font-bold text-white mb-4">{{ page.title }}</h1>
+        {% if page.introduction %}
+        <div class="text-xl text-slate-400 max-w-2xl mx-auto prose prose-invert">
+            {{ page.introduction|richtext }}
+        </div>
+        {% endif %}
+    </div>
+
+    {# Use Case Cards #}
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        {% for use_case in page.get_use_cases %}
+        <a href="{% pageurl use_case %}"
+           class="group rounded-2xl border border-slate-800 bg-slate-900/50 p-8 hover:border-amber-500/30 hover:bg-slate-900/80 transition-all duration-300">
+            {% if use_case.icon %}
+            <div class="w-12 h-12 rounded-xl bg-amber-500/10 flex items-center justify-center mb-6 group-hover:bg-amber-500/20 transition-colors">
+                <i data-lucide="{{ use_case.icon }}" class="w-6 h-6 text-amber-400"></i>
+            </div>
+            {% endif %}
+
+            <h3 class="text-xl font-bold text-white mb-3 group-hover:text-amber-400 transition-colors">
+                {{ use_case.title }}
+            </h3>
+
+            {% if use_case.tagline %}
+            <p class="text-slate-400 text-sm">{{ use_case.tagline }}</p>
+            {% endif %}
+
+            <div class="mt-6 flex items-center gap-2 text-sm text-amber-400 group-hover:text-amber-300">
+                <span>Read more</span>
+                <i data-lucide="arrow-right" class="w-4 h-4 group-hover:translate-x-1 transition-transform"></i>
+            </div>
+        </a>
+        {% endfor %}
+    </div>
+</div>
+{% endblock %}

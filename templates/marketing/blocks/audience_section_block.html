@@ -1,0 +1,37 @@
+<section class="max-w-6xl mx-auto px-6 py-20">
+    {% if self.section_title %}
+    <div class="text-center mb-16">
+        <h2 class="text-3xl md:text-4xl font-bold text-white">{{ self.section_title }}</h2>
+    </div>
+    {% endif %}
+
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+        {% for role in self.roles %}
+        <div class="rounded-2xl border border-slate-800 bg-slate-900/50 p-8 hover:border-slate-700 transition-all duration-300">
+            <h3 class="text-xl font-bold text-amber-400 mb-4">{{ role.role_title }}</h3>
+            <p class="text-slate-400 mb-6">{{ role.description }}</p>
+
+            {% if role.example_queries %}
+            <div class="space-y-3 mb-6">
+                {% for query in role.example_queries %}
+                <div class="flex items-start gap-3 text-sm">
+                    <span class="text-slate-600">"</span>
+                    <span class="text-slate-300 italic">{{ query }}</span>
+                    <span class="text-slate-600">"</span>
+                </div>
+                {% endfor %}
+            </div>
+            {% endif %}
+
+            {% if role.benefit_statement %}
+            <div class="pt-4 border-t border-slate-800">
+                <p class="text-sm text-emerald-400 font-medium flex items-center gap-2">
+                    <i data-lucide="check-circle" class="w-4 h-4"></i>
+                    {{ role.benefit_statement }}
+                </p>
+            </div>
+            {% endif %}
+        </div>
+        {% endfor %}
+    </div>
+</section>

@@ -113,7 +113,17 @@ class Theme(index.Indexed, ClusterableModel):
     description = models.TextField(
         help_text="Thematic description explaining how this theme manifests"
     )
-    
+
+    # Series scoping for multi-graph support
+    series = models.ForeignKey(
+        'narrative.SeriesIndexPage',
+        null=True,
+        blank=True,
+        on_delete=models.CASCADE,
+        related_name='themes',
+        help_text="Series this theme belongs to (for multi-graph scoping)"
+    )
+
     # Metadata
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
@@ -121,6 +131,7 @@ class Theme(index.Indexed, ClusterableModel):
     panels = [
         FieldPanel('name'),
         FieldPanel('description'),
+        FieldPanel('series'),
         FieldPanel('fabula_uuid'),
     ]
 
@@ -172,7 +183,17 @@ class ConflictArc(index.Indexed, ClusterableModel):
         choices=ArcType.choices,
         default=ArcType.INTERPERSONAL
     )
-    
+
+    # Series scoping for multi-graph support
+    series = models.ForeignKey(
+        'narrative.SeriesIndexPage',
+        null=True,
+        blank=True,
+        on_delete=models.CASCADE,
+        related_name='conflict_arcs',
+        help_text="Series this arc belongs to (for multi-graph scoping)"
+    )
+
     # Metadata
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
@@ -181,6 +202,7 @@ class ConflictArc(index.Indexed, ClusterableModel):
         FieldPanel('title'),
         FieldPanel('description'),
         FieldPanel('arc_type'),
+        FieldPanel('series'),
         FieldPanel('fabula_uuid'),
     ]
 
@@ -239,6 +261,16 @@ class Location(index.Indexed, ClusterableModel):
         help_text="Parent location for hierarchical relationships"
     )
 
+    # Series scoping for multi-graph support
+    series = models.ForeignKey(
+        'narrative.SeriesIndexPage',
+        null=True,
+        blank=True,
+        on_delete=models.CASCADE,
+        related_name='locations',
+        help_text="Series this location belongs to (for multi-graph scoping)"
+    )
+
     # Megagraph cross-season tracking fields
     season_appearances = models.JSONField(
         default=list,
@@ -265,6 +297,7 @@ class Location(index.Indexed, ClusterableModel):
         FieldPanel('description'),
         FieldPanel('location_type'),
         FieldPanel('parent_location'),
+        FieldPanel('series'),
         MultiFieldPanel([
             FieldPanel('fabula_uuid'),
             FieldPanel('global_id'),

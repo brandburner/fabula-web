@@ -9,13 +9,19 @@ All entity URLs use a flexible identifier that can be:
 This enables cross-season entity linking where the same character/location/etc.
 can be addressed by a single stable URL regardless of which season's data
 was imported first.
+
+Multi-Graph Support:
+Views support series scoping via SeriesScopedMixin, enabling URLs like:
+- /explore/ (catalog of all graphs)
+- /explore/west-wing/characters/ (characters in West Wing)
+- /explore/star-trek-tng/graph/ (Star Trek TNG graph)
 """
 
 import json
 
 from django.http import Http404
-from django.shortcuts import render, get_object_or_404
-from django.views.generic import ListView, DetailView, TemplateView
+from django.shortcuts import render, get_object_or_404, redirect
+from django.views.generic import ListView, DetailView, TemplateView, View
 
 from django.db import models
 from django.db.models import Q, Count
@@ -25,7 +31,8 @@ from .models import (
     EventPage, CharacterPage, EpisodePage, EventParticipation,
     ConnectionType, LocationInvolvement, OrganizationInvolvement,
     OrganizationPage, ObjectPage, ObjectInvolvement,
-    CharacterIndexPage, OrganizationIndexPage, ObjectIndexPage, EventIndexPage
+    CharacterIndexPage, OrganizationIndexPage, ObjectIndexPage, EventIndexPage,
+    SeriesIndexPage
 )
 
 
@@ -108,6 +115,134 @@ class FlexibleIdentifierMixin:
             return queryset.get(lookup)
         except self.model.DoesNotExist:
             raise Http404(f"No {self.model.__name__} found with identifier: {identifier}")
+
+
+# =============================================================================
+# SERIES SCOPING MIXIN
+# =============================================================================
+
+class SeriesScopedMixin:
+    """
+    Mixin that scopes queries to the current series from URL slug.
+
+    For URLs like /explore/west-wing/characters/, this extracts 'west-wing'
+    and filters all queries to only return content within that series.
+
+    Works with:
+    - Wagtail Pages: filters by ancestry (descendants of series)
+    - Snippets with series FK: filters by series foreign key
+    - Models without series: returns unfiltered (graceful fallback)
+    """
+
+    def get_series(self):
+        """Get the current series from URL kwargs or return first available."""
+        series_slug = self.kwargs.get('series_slug')
+        if series_slug:
+            return get_object_or_404(SeriesIndexPage.objects.live(), slug=series_slug)
+        # Fallback to first series if no slug provided
+        return SeriesIndexPage.objects.live().first()
+
+    def get_series_queryset(self, base_queryset):
+        """
+        Filter a queryset to the current series.
+
+        For Wagtail Pages, uses descendant_of() for page tree filtering.
+        For snippets with series FK, uses direct filter.
+        """
+        series = self.get_series()
+        if not series:
+            return base_queryset
+
+        model = base_queryset.model
+
+        # For Wagtail Page subclasses, filter by ancestry
+        if hasattr(model, 'get_parent'):
+            return base_queryset.descendant_of(series)
+
+        # For snippets with series FK
+        if hasattr(model, 'series'):
+            return base_queryset.filter(series=series)
+
+        return base_queryset
+
+    def get_context_data(self, **kwargs):
+        """Add series context to all templates."""
+        context = super().get_context_data(**kwargs)
+        context['current_series'] = self.get_series()
+        return context
+
+
+# =============================================================================
+# CATALOG VIEW (Graph Explorer Landing)
+# =============================================================================
+
+class CatalogView(TemplateView):
+    """
+    Catalog page showing all available narrative graphs.
+
+    URL: /explore/
+
+    Displays cards for each series with stats (event count, character count, etc.)
+    to help users choose which graph to explore.
+    """
+    template_name = 'narrative/catalog.html'
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+
+        # Get all live series with stats
+        series_list = SeriesIndexPage.objects.live().annotate(
+            # Count events via the page tree (events are under series/season/episode)
+            # This requires a subquery approach for accurate counts
+        ).order_by('title')
+
+        # Compute stats for each series
+        series_with_stats = []
+        for series in series_list:
+            # Get events under this series (via episode ancestry)
+            episodes = EpisodePage.objects.live().descendant_of(series)
+            event_count = EventPage.objects.live().filter(
+                episode__in=episodes
+            ).count()
+
+            # Get characters under this series
+            character_count = CharacterPage.objects.live().descendant_of(series).count()
+
+            # Get connections between events in this series
+            event_ids = EventPage.objects.live().filter(
+                episode__in=episodes
+            ).values_list('pk', flat=True)
+            connection_count = NarrativeConnection.objects.filter(
+                from_event_id__in=event_ids
+            ).count()
+
+            # Get season count
+            season_count = series.get_children().live().count()
+
+            series_with_stats.append({
+                'series': series,
+                'event_count': event_count,
+                'character_count': character_count,
+                'connection_count': connection_count,
+                'season_count': season_count,
+            })
+
+        context['series_list'] = series_with_stats
+        context['total_series'] = len(series_with_stats)
+        return context
+
+
+class SeriesLandingView(View):
+    """
+    Redirect from /explore/<series_slug>/ to the Wagtail series page.
+
+    This bridges the Django URL structure with Wagtail's page tree,
+    allowing /explore/west-wing/ to redirect to /the-west-wing/.
+    """
+
+    def get(self, request, series_slug):
+        series = get_object_or_404(SeriesIndexPage.objects.live(), slug=series_slug)
+        return redirect(series.url)
 
 
 # =============================================================================

@@ -1,0 +1,47 @@
+<section class="max-w-4xl mx-auto px-6 py-20">
+    {% if self.section_title %}
+    <div class="text-center mb-16">
+        <h2 class="text-3xl md:text-4xl font-bold text-white mb-4">{{ self.section_title }}</h2>
+        {% if self.section_subtitle %}
+        <p class="text-lg text-slate-400 max-w-2xl mx-auto">{{ self.section_subtitle }}</p>
+        {% endif %}
+    </div>
+    {% endif %}
+
+    <div class="relative">
+        {# Connecting line #}
+        <div class="absolute left-8 top-0 bottom-0 w-px bg-gradient-to-b from-amber-500/50 via-amber-500/20 to-transparent hidden md:block"></div>
+
+        <div class="space-y-12">
+            {% for step in self.steps %}
+            <div class="relative flex gap-8 items-start">
+                {# Step Number #}
+                <div class="flex-shrink-0 w-16 h-16 rounded-2xl bg-amber-500/10 border border-amber-500/30 flex items-center justify-center">
+                    {% if step.icon %}
+                    <i data-lucide="{{ step.icon }}" class="w-7 h-7 text-amber-400"></i>
+                    {% else %}
+                    <span class="text-2xl font-bold text-amber-400">{{ step.number }}</span>
+                    {% endif %}
+                </div>
+
+                {# Step Content #}
+                <div class="flex-1 pt-2">
+                    <h3 class="text-xl font-bold text-white mb-3">{{ step.title }}</h3>
+                    <p class="text-slate-400">{{ step.description }}</p>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+
+    {% if self.closing_text %}
+    <div class="mt-16 p-6 rounded-2xl bg-gradient-to-r from-amber-500/5 to-orange-500/5 border border-amber-500/20">
+        <div class="flex items-start gap-4">
+            <div class="w-10 h-10 rounded-lg bg-amber-500/20 flex items-center justify-center flex-shrink-0">
+                <i data-lucide="sparkles" class="w-5 h-5 text-amber-400"></i>
+            </div>
+            <p class="text-slate-300"><strong class="text-amber-400">The Magic:</strong> {{ self.closing_text }}</p>
+        </div>
+    </div>
+    {% endif %}
+</section>
