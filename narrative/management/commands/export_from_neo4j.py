@@ -406,6 +406,15 @@ class Neo4jExporter:
                                self.safe_get(agent, 'appearance_count') or \
                                self.safe_get(agent, 'dialogue_count', 0)
 
+            # Compute importance tier based on appearance count
+            # Thresholds: anchor (main cast) = 50+, planet (recurring) = 5-49, asteroid (one-off) = <5
+            if appearance_count >= 50:
+                computed_tier = 'anchor'
+            elif appearance_count >= 5:
+                computed_tier = 'planet'
+            else:
+                computed_tier = 'asteroid'
+
             character = {
                 'fabula_uuid': fabula_uuid,
                 'global_id': global_id,
@@ -417,6 +426,7 @@ class Neo4jExporter:
                 'character_type': self.safe_get(agent, 'character_type', 'guest'),
                 'sphere_of_influence': self.safe_get(agent, 'sphere_of_influence'),
                 'appearance_count': appearance_count,
+                'importance_tier': computed_tier,
                 'affiliated_organization_uuid': org_uuid
             }
 
@@ -435,7 +445,8 @@ class Neo4jExporter:
                 character['season_appearances'] = season_appearances
                 character['local_uuids'] = local_uuids_dict
                 character['first_appearance_season'] = min(season_appearances) if season_appearances else None
-                character['tier'] = record.get('tier') or self.safe_get(agent, 'tier')
+                # Use computed tier or fall back to node property
+                character['tier'] = record.get('tier') or self.safe_get(agent, 'tier') or computed_tier
                 character['episode_count'] = record.get('episode_count') or self.safe_get(agent, 'episode_count', 0)
 
                 # Track cross-season entities

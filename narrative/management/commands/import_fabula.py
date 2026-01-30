@@ -977,6 +977,7 @@ class Command(BaseCommand):
                 char_page.character_type = self.normalize_character_type(char_data.get('character_type', 'recurring'))
                 char_page.sphere_of_influence = self.truncate_field(char_data.get('sphere_of_influence') or '', 255)
                 char_page.appearance_count = char_data.get('appearance_count', 0)
+                char_page.importance_tier = char_data.get('importance_tier') or char_data.get('tier') or 'asteroid'
                 char_page.affiliated_organization = org
                 if global_id:
                     char_page.global_id = global_id
@@ -1008,6 +1009,7 @@ class Command(BaseCommand):
                     character_type=self.normalize_character_type(char_data.get('character_type', 'recurring')),
                     sphere_of_influence=self.truncate_field(char_data.get('sphere_of_influence') or '', 255),
                     appearance_count=char_data.get('appearance_count', 0),
+                    importance_tier=char_data.get('importance_tier') or char_data.get('tier') or 'asteroid',
                     affiliated_organization=org,
                     global_id=global_id or None,
                     # Megagraph cross-season tracking fields
