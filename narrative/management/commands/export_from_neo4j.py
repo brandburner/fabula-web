@@ -347,12 +347,14 @@ class Neo4jExporter:
         """
         print("Exporting characters...")
 
-        # Megagraph query includes additional fields
+        # Megagraph query includes additional fields and participation count
         if self.megagraph_mode:
             query = """
             MATCH (a:Agent)
             WHERE a.status = 'canonical' OR a.entity_status = 'canonical'
             OPTIONAL MATCH (a)-[:AFFILIATED_WITH]->(org:Organization)
+            OPTIONAL MATCH (a)-[p:PARTICIPATED_AS]->(:Event)
+            WITH a, org, count(p) as participation_count
             RETURN a,
                    org.org_uuid as org_uuid,
                    a.ger_global_id as ger_global_id,
@@ -360,7 +362,8 @@ class Neo4jExporter:
                    a.local_uuids as local_uuids,
                    a.episode_count as episode_count,
                    a.first_episode_seq as first_episode_seq,
-                   a.tier as tier
+                   a.tier as tier,
+                   participation_count
             ORDER BY a.canonical_name
             """
         else:
@@ -368,7 +371,9 @@ class Neo4jExporter:
             MATCH (a:Agent)
             WHERE a.status = 'canonical'
             OPTIONAL MATCH (a)-[:AFFILIATED_WITH]->(org:Organization)
-            RETURN a, org.org_uuid as org_uuid
+            OPTIONAL MATCH (a)-[p:PARTICIPATED_AS]->(:Event)
+            WITH a, org, count(p) as participation_count
+            RETURN a, org.org_uuid as org_uuid, participation_count
             ORDER BY a.canonical_name
             """
 
@@ -396,6 +401,11 @@ class Neo4jExporter:
             else:
                 global_id = self.get_global_id(fabula_uuid)
 
+            # Get appearance count from query (participation count) or fallback to node properties
+            appearance_count = record.get('participation_count', 0) or \
+                               self.safe_get(agent, 'appearance_count') or \
+                               self.safe_get(agent, 'dialogue_count', 0)
+
             character = {
                 'fabula_uuid': fabula_uuid,
                 'global_id': global_id,
@@ -406,7 +416,7 @@ class Neo4jExporter:
                 'aliases': aliases,
                 'character_type': self.safe_get(agent, 'character_type', 'guest'),
                 'sphere_of_influence': self.safe_get(agent, 'sphere_of_influence'),
-                'appearance_count': self.safe_get(agent, 'appearance_count') or self.safe_get(agent, 'dialogue_count', 0),
+                'appearance_count': appearance_count,
                 'affiliated_organization_uuid': org_uuid
             }
 
