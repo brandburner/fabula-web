@@ -1,4 +1,4 @@
-{% extends "marketing_base.html" %}
+{% extends "catalog_base.html" %}
 {% load static wagtailcore_tags %}
 
 {% block title %}Explore Narrative Graphs{% endblock %}
@@ -102,10 +102,10 @@
         <p class="text-slate-400 mb-8 max-w-lg mx-auto">
             Fabula can process any TV series. Contact us to add your show to the demo catalog.
         </p>
-        <a href="{% slugurl 'demo' %}"
+        <a href="mailto:hello@fabula.dev"
            class="inline-flex items-center gap-2 px-6 py-3 text-base font-medium rounded-xl bg-gradient-to-r from-amber-500 to-orange-500 text-white hover:from-amber-400 hover:to-orange-400 transition-all duration-300 shadow-lg shadow-amber-500/25">
-            Request a Demo
-            <i data-lucide="arrow-right" class="w-5 h-5"></i>
+            Get in Touch
+            <i data-lucide="mail" class="w-5 h-5"></i>
         </a>
     </div>
 </div>

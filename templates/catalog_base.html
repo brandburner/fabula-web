@@ -1,0 +1,99 @@
+{% load static wagtailcore_tags %}
+<!DOCTYPE html>
+<html lang="en" class="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}Explore{% endblock %} | Fabula</title>
+    <meta name="description" content="Explore interactive narrative graphs from iconic TV series.">
+
+    {# Tailwind CSS via CDN #}
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        slate: {
+                            950: '#0a0a0f',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+
+    {# Lucide Icons #}
+    <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
+
+    {# Alpine.js for interactivity #}
+    <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
+
+    <style>
+        ::-webkit-scrollbar { width: 8px; height: 8px; }
+        ::-webkit-scrollbar-track { background: #0f172a; }
+        ::-webkit-scrollbar-thumb { background: #334155; border-radius: 4px; }
+        ::-webkit-scrollbar-thumb:hover { background: #475569; }
+        html { scroll-behavior: smooth; }
+        .glass {
+            background: rgba(15, 23, 42, 0.8);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+        }
+    </style>
+</head>
+<body class="min-h-screen bg-slate-950 text-slate-100 antialiased">
+    {# Simple Navigation #}
+    <header class="fixed top-0 left-0 right-0 z-50 glass border-b border-slate-800/50">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="flex items-center justify-between h-16">
+                {# Logo #}
+                <a href="{% url 'catalog' %}" class="flex items-center gap-2.5 group transition-all duration-300">
+                    <div class="w-9 h-9 rounded-lg bg-gradient-to-br from-amber-500 via-orange-500 to-amber-600 flex items-center justify-center shadow-lg shadow-amber-500/20 group-hover:shadow-amber-500/35 group-hover:scale-105 transition-all duration-300">
+                        <i data-lucide="zap" class="w-5 h-5 text-white"></i>
+                    </div>
+                    <span class="font-bold tracking-tight text-white text-lg group-hover:text-amber-400 transition-colors">FABULA</span>
+                </a>
+
+                {# Navigation #}
+                <nav class="flex items-center gap-6">
+                    <a href="{% url 'catalog' %}" class="text-sm text-cyan-400 hover:text-cyan-300 transition-colors flex items-center gap-1.5">
+                        <i data-lucide="compass" class="w-4 h-4"></i>
+                        Explore
+                    </a>
+                    <a href="{% url 'graph_view' %}" class="text-sm text-slate-400 hover:text-white transition-colors flex items-center gap-1.5">
+                        <i data-lucide="git-branch" class="w-4 h-4"></i>
+                        Graph
+                    </a>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    {# Spacer for fixed header #}
+    <div class="h-16"></div>
+
+    {# Main Content #}
+    <main>
+        {% block content %}{% endblock %}
+    </main>
+
+    {# Simple Footer #}
+    <footer class="border-t border-slate-800/50 mt-20">
+        <div class="max-w-7xl mx-auto px-6 py-8">
+            <div class="flex items-center justify-between text-sm text-slate-500">
+                <span>Fabula - Narrative Graph Analysis</span>
+                <span>&copy; 2026</span>
+            </div>
+        </div>
+    </footer>
+
+    {# Initialize Lucide icons #}
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            lucide.createIcons();
+        });
+    </script>
+</body>
+</html>
