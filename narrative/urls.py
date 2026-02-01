@@ -140,8 +140,11 @@ series_patterns = [
 
 urlpatterns = [
     # ==========================================================================
-    # CATALOG - Graph explorer landing page
+    # CATALOG - Graph explorer landing page (served at both / and /explore/)
     # ==========================================================================
+    path('',
+         views.CatalogView.as_view(),
+         name='home'),
     path('explore/',
          views.CatalogView.as_view(),
          name='catalog'),
