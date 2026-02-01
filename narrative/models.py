@@ -648,6 +648,11 @@ class CharacterIndexPage(Page):
             '-appearance_count'
         )
 
+    def get_context(self, request, *args, **kwargs):
+        context = super().get_context(request, *args, **kwargs)
+        context['characters'] = self.get_characters()
+        return context
+
 
 class OrganizationPage(Page):
     """
@@ -776,6 +781,11 @@ class OrganizationIndexPage(Page):
         """
         return OrganizationPage.objects.live().child_of(self).order_by('canonical_name')
 
+    def get_context(self, request, *args, **kwargs):
+        context = super().get_context(request, *args, **kwargs)
+        context['organizations'] = self.get_organizations()
+        return context
+
 
 class ObjectIndexPage(Page):
     """Index page listing all objects."""
@@ -793,6 +803,11 @@ class ObjectIndexPage(Page):
         return ObjectPage.objects.live().child_of(self).annotate(
             involvement_count=Count('event_involvements')
         ).order_by('-involvement_count', 'canonical_name')
+
+    def get_context(self, request, *args, **kwargs):
+        context = super().get_context(request, *args, **kwargs)
+        context['objects'] = self.get_objects()
+        return context
 
 
 class ObjectPage(Page):
