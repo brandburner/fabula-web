@@ -398,9 +398,10 @@ class ArcDetailView(FlexibleIdentifierMixin, DetailView):
 # LOCATIONS
 # =============================================================================
 
-class LocationIndexView(ListView):
+class LocationIndexView(SeriesScopedMixin, ListView):
     """
     Browse all locations, organized by type.
+    When accessed via series-scoped URL, filters to locations used in that series.
     """
     model = Location
     template_name = 'narrative/location_index.html'
@@ -408,10 +409,28 @@ class LocationIndexView(ListView):
 
     def get_queryset(self):
         from django.db.models import Count
-        # Count events via LocationInvolvement (rich involvement data)
-        return Location.objects.annotate(
-            event_count=Count('event_involvements')
-        ).order_by('-event_count')
+
+        series = self.get_series()
+
+        if series:
+            # Get events in this series
+            series_events = EventPage.objects.live().descendant_of(series)
+            # Get locations that have involvements in those events
+            location_ids = LocationInvolvement.objects.filter(
+                event__in=series_events
+            ).values_list('location_id', flat=True).distinct()
+
+            # Filter and annotate with count for this series only
+            return Location.objects.filter(
+                id__in=location_ids
+            ).annotate(
+                event_count=Count('event_involvements', filter=Q(event_involvements__event__in=series_events))
+            ).order_by('-event_count')
+        else:
+            # Global view - all locations
+            return Location.objects.annotate(
+                event_count=Count('event_involvements')
+            ).order_by('-event_count')
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
@@ -425,7 +444,7 @@ class LocationIndexView(ListView):
             locations_by_type[loc_type].append(location)
 
         context['locations_by_type'] = locations_by_type
-        context['total_count'] = Location.objects.count()
+        context['total_count'] = self.get_queryset().count()
         return context
 
 
