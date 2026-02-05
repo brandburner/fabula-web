@@ -1,5 +1,5 @@
 {# Object involvement card - shows an object's role in an event #}
-{% load wagtailcore_tags %}
+{% load wagtailcore_tags narrative_tags %}
 
 <div x-data="{ expanded: false }" class="p-4 bg-gradient-to-br from-slate-900/50 to-slate-900/30 border border-slate-800 rounded-xl hover:border-amber-500/30 transition-all group">
     <div class="flex items-start gap-3">
@@ -8,7 +8,7 @@
         </div>
         <div class="flex-1 min-w-0">
             {# Object link #}
-            <a href="{% pageurl involvement.object %}"
+            <a href="{% narrative_url involvement.object %}"
                class="font-semibold text-slate-200 group-hover:text-amber-300 transition-colors">
                 {{ involvement.object.canonical_name }}
             </a>

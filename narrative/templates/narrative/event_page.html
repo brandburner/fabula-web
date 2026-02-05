@@ -27,7 +27,7 @@
                     </span>
                 </div>
                 <span class="text-slate-700">·</span>
-                <a href="{% pageurl page.episode %}" class="text-slate-400 hover:text-amber-300 transition-colors hover:underline decoration-amber-500/30 underline-offset-4">
+                <a href="{% narrative_url page.episode %}" class="text-slate-400 hover:text-amber-300 transition-colors hover:underline decoration-amber-500/30 underline-offset-4">
                     {{ page.episode.title }}
                 </a>
                 {% if page.is_flashback %}
@@ -127,7 +127,7 @@
                 <div x-show="showMentioned" x-collapse class="space-y-3">
                     {% for participation in parts.mentioned %}
                     <div class="p-4 bg-slate-900/30 border border-slate-800/50 rounded-xl opacity-75">
-                        <a href="{% pageurl participation.character %}" class="font-medium text-slate-300 hover:text-emerald-400 transition-colors">
+                        <a href="{% narrative_url participation.character %}" class="font-medium text-slate-300 hover:text-emerald-400 transition-colors">
                             {{ participation.character.canonical_name }}
                         </a>
                         {% if participation.what_happened %}

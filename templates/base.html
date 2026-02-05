@@ -187,7 +187,7 @@
             <div class="flex-1 flex justify-center">
                 {% block series_context %}
                 {% if current_series %}
-                <a href="{{ current_series.url }}" class="text-slate-500 text-sm font-medium hover:text-amber-400 transition-colors">
+                <a href="{% url 'series_landing' series_slug=current_series.slug %}" class="text-slate-500 text-sm font-medium hover:text-amber-400 transition-colors">
                     {{ current_series.title }}
                 </a>
                 {% else %}

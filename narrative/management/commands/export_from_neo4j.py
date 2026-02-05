@@ -1253,6 +1253,11 @@ class Neo4jExporter:
             if not from_event or not to_event:
                 continue
 
+            # Skip self-referential connections (same event)
+            # This happens when two PlotBeats in the same SceneBoundary have a relationship
+            if from_event == to_event:
+                continue
+
             # Create unique key to avoid duplicates (multiple beats may map to same event)
             conn_key = (from_event, to_event, record.get('connection_type'))
             if conn_key in seen:

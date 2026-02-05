@@ -23,7 +23,7 @@
                     <span class="text-amber-400 font-semibold">Object</span>
                 </div>
                 {% if page.potential_owner %}
-                <a href="{% pageurl page.potential_owner %}"
+                <a href="{% narrative_url page.potential_owner %}"
                    class="flex items-center gap-2 px-3 py-1.5 bg-emerald-500/10 border border-emerald-500/20 rounded-lg hover:bg-emerald-500/20 transition-colors">
                     <i data-lucide="user" class="w-4 h-4 text-emerald-400"></i>
                     <span class="text-emerald-400 text-sm font-medium">{{ page.potential_owner.canonical_name }}</span>
@@ -120,7 +120,7 @@
                         </div>
 
                         {# Event card #}
-                        <a href="{% pageurl involvement.event %}"
+                        <a href="{% narrative_url involvement.event %}"
                            class="block p-5 bg-gradient-to-br from-slate-900/60 to-slate-900/40 border border-slate-800 rounded-xl hover:border-amber-500/40 hover:bg-amber-500/5 transition-all duration-300 hover:shadow-lg hover:shadow-amber-500/10 hover:-translate-y-0.5">
 
                             {# Episode context #}

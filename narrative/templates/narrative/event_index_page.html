@@ -1,5 +1,5 @@
 {% extends "base.html" %}
-{% load wagtailcore_tags %}
+{% load wagtailcore_tags narrative_tags %}
 
 {% block title %}{{ page.title }}{% endblock %}
 
@@ -48,7 +48,7 @@
                         S{{ ep_group.season.season_number }}E{{ ep_group.episode.episode_number }}
                     </span>
                 </div>
-                <a href="{% pageurl ep_group.episode %}" class="flex-1 min-w-0 group">
+                <a href="{% narrative_url ep_group.episode %}" class="flex-1 min-w-0 group">
                     <h3 class="text-lg font-semibold text-slate-200 group-hover:text-amber-300 transition-colors truncate">
                         {{ ep_group.episode.title }}
                     </h3>
@@ -59,7 +59,7 @@
             {# Events in this episode #}
             <div class="grid gap-2 pl-4 border-l-2 border-amber-500/20">
                 {% for event in ep_group.events %}
-                <a href="{% pageurl event %}"
+                <a href="{% narrative_url event %}"
                    class="block p-4 bg-slate-900/50 border border-slate-800 rounded-lg hover:border-amber-500/30 hover:bg-slate-900/80 transition-all group">
                     <div class="flex items-start gap-4">
                         <div class="flex-shrink-0 w-12 text-center">

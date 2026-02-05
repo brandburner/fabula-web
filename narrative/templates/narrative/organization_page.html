@@ -1,5 +1,5 @@
 {% extends "base.html" %}
-{% load wagtailcore_tags %}
+{% load wagtailcore_tags narrative_tags %}
 
 {% block title %}{{ page.title }}{% endblock %}
 
@@ -11,7 +11,7 @@
 
         <div class="relative max-w-4xl mx-auto px-6 pt-12 pb-8">
             <nav class="text-sm text-slate-500 mb-6">
-                <a href="{% pageurl page.get_parent %}" class="hover:text-slate-300 transition-colors">
+                <a href="{% narrative_url page.get_parent %}" class="hover:text-slate-300 transition-colors">
                     Organizations
                 </a>
                 <span class="mx-2">/</span>
@@ -59,7 +59,7 @@
             </h2>
             <div class="grid sm:grid-cols-2 gap-3">
                 {% for character in related_chars %}
-                <a href="{% pageurl character %}" class="p-3 bg-slate-800/50 border border-slate-700 rounded-lg hover:border-violet-500/30 transition-colors group">
+                <a href="{% narrative_url character %}" class="p-3 bg-slate-800/50 border border-slate-700 rounded-lg hover:border-violet-500/30 transition-colors group">
                     <div class="font-medium text-slate-200 group-hover:text-violet-300">{{ character.canonical_name }}</div>
                     {% if character.title_role %}
                     <div class="text-sm text-slate-500">{{ character.title_role }}</div>
@@ -94,7 +94,7 @@
 
             <div class="space-y-3">
                 {% for event in related_events %}
-                <a href="{% pageurl event %}"
+                <a href="{% narrative_url event %}"
                    class="block p-4 bg-slate-900/50 border border-slate-800 rounded-lg hover:border-indigo-500/30 hover:bg-indigo-500/5 transition-all group">
                     <div class="flex items-start gap-3">
                         <div class="flex-shrink-0 px-2 py-1 bg-slate-800/80 rounded text-xs text-slate-400 font-mono">

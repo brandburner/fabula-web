@@ -93,7 +93,7 @@
 
                     <div class="space-y-4 pl-6 border-l-2 border-amber-500/30 relative before:absolute before:left-[-9px] before:top-0 before:w-4 before:h-4 before:rounded-full before:bg-amber-500 before:shadow-lg before:shadow-amber-500/50">
                         {% for event in scene.list %}
-                        <a href="{% pageurl event %}"
+                        <a href="{% narrative_url event %}"
                            class="block p-5 bg-gradient-to-br from-slate-900/60 to-slate-900/40 border border-slate-800 rounded-xl hover:border-amber-500/40 hover:bg-amber-500/5 transition-all duration-300 group hover:shadow-lg hover:shadow-amber-500/10 hover:-translate-y-0.5">
                             <div class="font-semibold text-slate-200 group-hover:text-amber-300 transition-colors mb-3 text-lg leading-snug">
                                 {{ event.title }}
@@ -149,7 +149,7 @@
             
             <div class="grid grid-cols-2 md:grid-cols-3 gap-3">
                 {% for profile in profiles %}
-                <a href="{% pageurl profile.character %}"
+                <a href="{% narrative_url profile.character %}"
                    class="p-3 bg-slate-900/50 border border-slate-800 rounded-lg hover:border-emerald-500/30 transition-colors group">
                     <div class="font-medium text-slate-200 group-hover:text-emerald-300 text-sm">
                         {{ profile.character.canonical_name }}
@@ -173,7 +173,7 @@
             {% with prev=page.get_prev_sibling next=page.get_next_sibling %}
             
             {% if prev %}
-            <a href="{% pageurl prev %}" 
+            <a href="{% narrative_url prev %}" 
                class="flex items-center gap-2 text-sm text-slate-400 hover:text-white transition-colors group">
                 <i data-lucide="chevron-left" class="w-5 h-5 group-hover:-translate-x-1 transition-transform"></i>
                 <div>
@@ -186,7 +186,7 @@
             {% endif %}
             
             {% if next %}
-            <a href="{% pageurl next %}" 
+            <a href="{% narrative_url next %}" 
                class="flex items-center gap-2 text-sm text-slate-400 hover:text-white transition-colors group text-right">
                 <div>
                     <div class="text-xs text-slate-600">Next Episode</div>

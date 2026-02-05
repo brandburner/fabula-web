@@ -234,15 +234,21 @@ class CatalogView(TemplateView):
 
 class SeriesLandingView(View):
     """
-    Redirect from /explore/<series_slug>/ to the Wagtail series page.
+    Serve the series landing page at /explore/<series_slug>/.
 
-    This bridges the Django URL structure with Wagtail's page tree,
-    allowing /explore/west-wing/ to redirect to /the-west-wing/.
+    This renders the series page template directly rather than redirecting
+    to the Wagtail URL, ensuring it works regardless of Site configuration.
     """
 
     def get(self, request, series_slug):
         series = get_object_or_404(SeriesIndexPage.objects.live(), slug=series_slug)
-        return redirect(series.url)
+
+        # Build context similar to SeriesIndexPage.get_context()
+        context = series.get_context(request)
+        context['page'] = series
+        context['self'] = series
+
+        return render(request, 'narrative/series_index_page.html', context)
 
 
 # =============================================================================
@@ -490,7 +496,7 @@ class LocationDetailView(FlexibleIdentifierMixin, DetailView):
 # WAGTAIL PAGE VIEWS (served via global_id for stable URLs)
 # =============================================================================
 
-class CharacterIndexView(ListView):
+class CharacterIndexView(SeriesScopedMixin, ListView):
     """Browse all characters, ordered by importance tier and appearance count."""
     model = CharacterPage
     template_name = 'narrative/character_index_page.html'
@@ -498,6 +504,9 @@ class CharacterIndexView(ListView):
 
     def get_queryset(self):
         from django.db.models import Case, When, Value, IntegerField
+
+        series = self.get_series()
+
         # Custom ordering: anchor=0, planet=1, asteroid=2 (ascending = anchor first)
         tier_order = Case(
             When(importance_tier='anchor', then=Value(0)),
@@ -506,9 +515,25 @@ class CharacterIndexView(ListView):
             default=Value(3),
             output_field=IntegerField(),
         )
-        return CharacterPage.objects.live().annotate(
-            tier_order=tier_order
-        ).order_by('tier_order', '-appearance_count', 'canonical_name')
+
+        if series:
+            # Get events in this series
+            series_events = EventPage.objects.live().descendant_of(series)
+            # Get characters that have participations in those events
+            character_ids = EventParticipation.objects.filter(
+                event__in=series_events
+            ).values_list('character_id', flat=True).distinct()
+
+            return CharacterPage.objects.live().filter(
+                id__in=character_ids
+            ).annotate(
+                tier_order=tier_order
+            ).order_by('tier_order', '-appearance_count', 'canonical_name')
+        else:
+            # Global view - all characters
+            return CharacterPage.objects.live().annotate(
+                tier_order=tier_order
+            ).order_by('tier_order', '-appearance_count', 'canonical_name')
 
 
 class CharacterDetailView(FlexibleIdentifierMixin, DetailView):
@@ -558,14 +583,29 @@ class CharacterDetailView(FlexibleIdentifierMixin, DetailView):
         return grouped
 
 
-class OrganizationIndexView(ListView):
+class OrganizationIndexView(SeriesScopedMixin, ListView):
     """Browse all organizations."""
     model = OrganizationPage
     template_name = 'narrative/organization_index_page.html'
     context_object_name = 'organizations'
 
     def get_queryset(self):
-        return OrganizationPage.objects.live().order_by('canonical_name')
+        series = self.get_series()
+
+        if series:
+            # Get events in this series
+            series_events = EventPage.objects.live().descendant_of(series)
+            # Get organizations that have involvements in those events
+            org_ids = OrganizationInvolvement.objects.filter(
+                event__in=series_events
+            ).values_list('organization_id', flat=True).distinct()
+
+            return OrganizationPage.objects.live().filter(
+                id__in=org_ids
+            ).order_by('canonical_name')
+        else:
+            # Global view - all organizations
+            return OrganizationPage.objects.live().order_by('canonical_name')
 
 
 class OrganizationDetailView(FlexibleIdentifierMixin, DetailView):
@@ -595,16 +635,33 @@ class OrganizationDetailView(FlexibleIdentifierMixin, DetailView):
         return context
 
 
-class ObjectIndexView(ListView):
+class ObjectIndexView(SeriesScopedMixin, ListView):
     """Browse all narrative objects."""
     model = ObjectPage
     template_name = 'narrative/object_index_page.html'
     context_object_name = 'objects'
 
     def get_queryset(self):
-        return ObjectPage.objects.live().annotate(
-            involvement_count=Count('event_involvements')
-        ).order_by('-involvement_count', 'canonical_name')
+        series = self.get_series()
+
+        if series:
+            # Get events in this series
+            series_events = EventPage.objects.live().descendant_of(series)
+            # Get objects that have involvements in those events
+            object_ids = ObjectInvolvement.objects.filter(
+                event__in=series_events
+            ).values_list('narrative_object_id', flat=True).distinct()
+
+            return ObjectPage.objects.live().filter(
+                id__in=object_ids
+            ).annotate(
+                involvement_count=Count('event_involvements', filter=Q(event_involvements__event__in=series_events))
+            ).order_by('-involvement_count', 'canonical_name')
+        else:
+            # Global view - all objects
+            return ObjectPage.objects.live().annotate(
+                involvement_count=Count('event_involvements')
+            ).order_by('-involvement_count', 'canonical_name')
 
 
 class ObjectDetailView(FlexibleIdentifierMixin, DetailView):
@@ -633,16 +690,25 @@ class ObjectDetailView(FlexibleIdentifierMixin, DetailView):
         return context
 
 
-class EventIndexView(ListView):
+class EventIndexView(SeriesScopedMixin, ListView):
     """Browse all events, organized by episode."""
     model = EventPage
     template_name = 'narrative/event_index_page.html'
     context_object_name = 'events'
 
     def get_queryset(self):
-        return EventPage.objects.live().select_related(
+        series = self.get_series()
+
+        base_qs = EventPage.objects.live().select_related(
             'episode', 'location'
-        ).order_by('episode__path', 'scene_sequence')
+        )
+
+        if series:
+            # Filter to events within this series
+            return base_qs.descendant_of(series).order_by('episode__path', 'scene_sequence')
+        else:
+            # Global view - all events
+            return base_qs.order_by('episode__path', 'scene_sequence')
 
 
 class EventDetailView(FlexibleIdentifierMixin, DetailView):
@@ -670,6 +736,34 @@ class EventDetailView(FlexibleIdentifierMixin, DetailView):
 
         # Get connections
         context['connections'] = event.get_all_connections()
+
+        return context
+
+
+class EpisodeDetailView(FlexibleIdentifierMixin, DetailView):
+    """
+    View a single episode with its events.
+    Uses flexible identifier lookup (fabula_uuid or pk).
+    """
+    model = EpisodePage
+    template_name = 'narrative/episode_page.html'
+    context_object_name = 'episode'
+
+    def get_queryset(self):
+        return EpisodePage.objects.live()
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        episode = self.object
+
+        # Alias 'page' for template compatibility with Wagtail conventions
+        context['page'] = episode
+        context['self'] = episode
+
+        # Get events for this episode
+        context['events'] = EventPage.objects.live().filter(
+            episode=episode
+        ).select_related('location').order_by('scene_sequence', 'sequence_in_scene')
 
         return context
 

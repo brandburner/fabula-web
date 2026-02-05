@@ -20,7 +20,7 @@
     {# Series Cards #}
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
         {% for item in series_list %}
-        <a href="{{ item.series.url }}"
+        <a href="{% url 'series_landing' series_slug=item.series.slug %}"
            class="group relative rounded-2xl border border-slate-800 bg-slate-900/50 overflow-hidden hover:border-cyan-500/30 transition-all duration-300">
             {# Background gradient #}
             <div class="absolute inset-0 bg-gradient-to-br from-cyan-500/5 to-purple-500/5 opacity-0 group-hover:opacity-100 transition-opacity"></div>
@@ -85,7 +85,6 @@
     <div class="mt-20 text-center">
         <h3 class="text-lg font-medium text-slate-500 mb-6">Coming Soon</h3>
         <div class="flex flex-wrap justify-center gap-4">
-            <span class="px-4 py-2 rounded-full bg-slate-800/50 text-slate-500 text-sm">Star Trek: TNG</span>
             <span class="px-4 py-2 rounded-full bg-slate-800/50 text-slate-500 text-sm">Breaking Bad</span>
             <span class="px-4 py-2 rounded-full bg-slate-800/50 text-slate-500 text-sm">I, Claudius</span>
             <span class="px-4 py-2 rounded-full bg-slate-800/50 text-slate-500 text-sm">Doctor Who</span>

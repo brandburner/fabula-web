@@ -28,41 +28,33 @@
         {# QUICK NAVIGATION #}
         {# ============================================================= #}
         <div class="grid grid-cols-2 md:grid-cols-3 gap-4 mb-12">
-            {% if events_index %}
-            <a href="{{ events_index.url }}"
+            <a href="{% url 'series_event_index' series_slug=page.slug %}"
                class="p-4 bg-slate-900/50 border border-slate-800 rounded-lg hover:border-amber-500/30 transition-colors group text-center">
                 <i data-lucide="zap" class="w-8 h-8 mx-auto text-amber-400 mb-2"></i>
                 <div class="font-medium text-slate-200 group-hover:text-amber-300">Events</div>
                 <div class="text-xs text-slate-500">Story moments</div>
             </a>
-            {% endif %}
 
-            {% if characters_index %}
-            <a href="{{ characters_index.url }}"
+            <a href="{% url 'series_character_index' series_slug=page.slug %}"
                class="p-4 bg-slate-900/50 border border-slate-800 rounded-lg hover:border-emerald-500/30 transition-colors group text-center">
                 <i data-lucide="users" class="w-8 h-8 mx-auto text-emerald-400 mb-2"></i>
                 <div class="font-medium text-slate-200 group-hover:text-emerald-300">Characters</div>
                 <div class="text-xs text-slate-500">Who's who</div>
             </a>
-            {% endif %}
 
-            {% if organizations_index %}
-            <a href="{{ organizations_index.url }}"
+            <a href="{% url 'series_organization_index' series_slug=page.slug %}"
                class="p-4 bg-slate-900/50 border border-slate-800 rounded-lg hover:border-violet-500/30 transition-colors group text-center">
                 <i data-lucide="building-2" class="w-8 h-8 mx-auto text-violet-400 mb-2"></i>
                 <div class="font-medium text-slate-200 group-hover:text-violet-300">Organizations</div>
                 <div class="text-xs text-slate-500">Power structures</div>
             </a>
-            {% endif %}
 
-            {% if objects_index %}
-            <a href="{{ objects_index.url }}"
+            <a href="{% url 'series_object_index' series_slug=page.slug %}"
                class="p-4 bg-slate-900/50 border border-slate-800 rounded-lg hover:border-amber-500/30 transition-colors group text-center">
                 <i data-lucide="box" class="w-8 h-8 mx-auto text-amber-400 mb-2"></i>
                 <div class="font-medium text-slate-200 group-hover:text-amber-300">Objects</div>
                 <div class="text-xs text-slate-500">Significant items</div>
             </a>
-            {% endif %}
 
             <a href="{% url 'series_location_index' series_slug=page.slug %}"
                class="p-4 bg-slate-900/50 border border-slate-800 rounded-lg hover:border-blue-500/30 transition-colors group text-center">
@@ -86,10 +78,9 @@
             <div class="space-y-4">
                 {% for season in seasons %}
                 <div class="p-4 bg-slate-900/50 border border-slate-800 rounded-lg">
-                    <a href="{% pageurl season %}"
-                       class="text-lg font-semibold text-slate-200 hover:text-white transition-colors">
+                    <div class="text-lg font-semibold text-slate-200">
                         Season {{ season.season_number }}
-                    </a>
+                    </div>
 
                     {% if season.description %}
                     <p class="text-sm text-slate-400 mt-2">
@@ -100,7 +91,7 @@
                     {# Episode list #}
                     <div class="mt-4 grid grid-cols-2 md:grid-cols-4 gap-2">
                         {% for episode in season.get_children.specific %}
-                        <a href="{% pageurl episode %}"
+                        <a href="{% url 'series_episode_detail' series_slug=page.slug identifier=episode.fabula_uuid|default:episode.pk %}"
                            class="p-2 text-sm bg-slate-800/50 rounded hover:bg-slate-800 transition-colors">
                             <span class="text-slate-500 font-mono">E{{ episode.episode_number }}</span>
                             <span class="text-slate-300 ml-1">{{ episode.title|truncatewords:3 }}</span>

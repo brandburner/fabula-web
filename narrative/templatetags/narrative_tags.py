@@ -381,3 +381,97 @@ def contextual_graph_url(context):
 
     # Default to graph landing page
     return reverse('graph_view')
+
+
+# =============================================================================
+# NARRATIVE URL TAG - Universal page URL generation
+# =============================================================================
+
+@register.simple_tag(takes_context=True)
+def narrative_url(context, page):
+    """
+    Generate the correct URL for any narrative page, regardless of Site configuration.
+
+    This is a replacement for {% pageurl %} that works for multi-series setups
+    where not all pages are under the current Site root.
+
+    Usage: {% narrative_url event %}
+           {% narrative_url character %}
+           {% narrative_url episode %}
+
+    For pages within a series context, generates series-scoped URLs like:
+        /explore/star-trek-tng/events/event_uuid/
+        /explore/star-trek-tng/characters/character_uuid/
+
+    For pages without series context, generates global URLs like:
+        /events/event_uuid/
+        /characters/character_uuid/
+    """
+    from django.urls import reverse
+    from narrative.models import (
+        EventPage, CharacterPage, EpisodePage, SeasonPage, SeriesIndexPage,
+        OrganizationPage, ObjectPage
+    )
+
+    if page is None:
+        return ''
+
+    # Get the specific page type
+    if hasattr(page, 'specific'):
+        page = page.specific
+
+    page_class = page.__class__.__name__
+
+    # Get identifier - prefer global_id, then fabula_uuid, then pk
+    identifier = getattr(page, 'global_id', None) or getattr(page, 'fabula_uuid', None) or str(page.pk)
+
+    # Find series context from the page's ancestry
+    series_slug = None
+    if hasattr(page, 'get_ancestors'):
+        for ancestor in page.get_ancestors():
+            if hasattr(ancestor, 'specific') and isinstance(ancestor.specific, SeriesIndexPage):
+                series_slug = ancestor.specific.slug
+                break
+
+    # If no series from ancestry, try to get from current_series in context
+    if not series_slug:
+        current_series = context.get('current_series')
+        if current_series:
+            series_slug = current_series.slug
+
+    # Map page types to URL names
+    url_map = {
+        'EventPage': ('series_event_detail', 'event_detail'),
+        'CharacterPage': ('series_character_detail', 'character_detail'),
+        'EpisodePage': ('series_episode_detail', None),  # Episodes always need series context
+        'OrganizationPage': ('series_organization_detail', 'organization_detail'),
+        'ObjectPage': ('series_object_detail', 'object_detail'),
+    }
+
+    if page_class in url_map:
+        series_url_name, global_url_name = url_map[page_class]
+
+        if series_slug:
+            # Series-scoped URL
+            return reverse(series_url_name, kwargs={
+                'series_slug': series_slug,
+                'identifier': identifier
+            })
+        elif global_url_name:
+            # Global URL fallback
+            return reverse(global_url_name, kwargs={'identifier': identifier})
+
+    # For SeriesIndexPage
+    if page_class == 'SeriesIndexPage':
+        return reverse('series_landing', kwargs={'series_slug': page.slug})
+
+    # For SeasonPage - link to first episode or series landing
+    if page_class == 'SeasonPage':
+        if series_slug:
+            return reverse('series_landing', kwargs={'series_slug': series_slug})
+
+    # Fallback to Wagtail's URL if available
+    if hasattr(page, 'url') and page.url:
+        return page.url
+
+    return ''

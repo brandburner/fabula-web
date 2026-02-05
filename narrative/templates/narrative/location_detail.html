@@ -118,7 +118,7 @@
                 {% for involvement in involvements %}
                 <div class="p-5 bg-gradient-to-br from-slate-900/60 to-slate-900/40 border border-slate-800 rounded-xl hover:border-cyan-500/30 transition-all">
                     {# Event link #}
-                    <a href="{% pageurl involvement.event %}" class="group">
+                    <a href="{% narrative_url involvement.event %}" class="group">
                         <div class="flex items-center gap-2 text-xs text-slate-500 font-mono mb-2">
                             <span class="px-2 py-0.5 bg-slate-800/50 rounded">
                                 S{{ involvement.event.episode.get_parent.specific.season_number }}E{{ involvement.event.episode.episode_number }}
@@ -213,7 +213,7 @@
 
             <div class="space-y-3">
                 {% for event in events %}
-                <a href="{% pageurl event %}"
+                <a href="{% narrative_url event %}"
                    class="block p-4 bg-slate-900/50 border border-slate-800 rounded-lg hover:border-blue-500/30 hover:bg-blue-500/5 transition-all group">
                     <div class="flex items-center gap-2 text-xs text-slate-500 font-mono mb-2">
                         <span class="px-2 py-0.5 bg-slate-800/50 rounded">

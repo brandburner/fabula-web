@@ -31,6 +31,11 @@ from . import views
 # They scope all queries to the specified series.
 
 series_patterns = [
+    # Episodes
+    path('episodes/<str:identifier>/',
+         views.EpisodeDetailView.as_view(),
+         name='series_episode_detail'),
+
     # Characters
     path('characters/',
          views.CharacterIndexView.as_view(),

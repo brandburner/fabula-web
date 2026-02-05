@@ -1,11 +1,11 @@
-{% load wagtailcore_tags %}
+{% load wagtailcore_tags narrative_tags %}
 <div class="bg-gradient-to-br from-slate-900/60 to-slate-900/40 border-2 border-slate-800 rounded-xl overflow-hidden hover:border-emerald-500/40 transition-all duration-300 hover:shadow-lg hover:shadow-emerald-500/10"
      x-data="{ isOpen: false }">
 
     <div class="p-5">
         {# Header with character name and expand toggle #}
         <div class="flex items-start justify-between gap-4 mb-4">
-            <a href="{% pageurl participation.character %}"
+            <a href="{% narrative_url participation.character %}"
                class="flex-1 group">
                 <div class="font-bold text-slate-100 group-hover:text-emerald-400 transition-colors text-lg mb-1">
                     {{ participation.character.canonical_name }}
@@ -120,7 +120,7 @@
         {% endif %}
 
         {# Link to character page #}
-        <a href="{% pageurl participation.character %}"
+        <a href="{% narrative_url participation.character %}"
            class="group inline-flex items-center gap-2 px-4 py-2 text-sm font-medium text-emerald-400 hover:text-emerald-300 bg-emerald-500/10 hover:bg-emerald-500/15 border border-emerald-500/20 hover:border-emerald-500/30 rounded-lg transition-all duration-200">
             <span>Follow {{ participation.character.canonical_name|truncatewords:2 }}'s journey</span>
             <i data-lucide="arrow-right" class="w-4 h-4 group-hover:translate-x-1 transition-transform"></i>

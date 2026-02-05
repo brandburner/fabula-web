@@ -2,7 +2,7 @@
 {% with conn_type=connection.connection_type|lower|slugify %}
 <div class="group relative p-5 rounded-xl border-2 transition-all duration-300 cursor-pointer
             conn-{{ conn_type }} conn-card hover:shadow-2xl"
-     onclick="window.location='{% if direction == 'incoming' %}{% pageurl connection.from_event %}{% else %}{% pageurl connection.to_event %}{% endif %}'">
+     onclick="window.location='{% if direction == 'incoming' %}{% narrative_url connection.from_event %}{% else %}{% narrative_url connection.to_event %}{% endif %}'">
 
     {# Background accent line #}
     <div class="absolute top-0 left-0 right-0 h-1 rounded-t-xl opacity-50 group-hover:opacity-100 transition-opacity"
