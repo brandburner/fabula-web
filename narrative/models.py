@@ -739,13 +739,8 @@ class OrganizationPage(Page):
         return terms
 
     def get_related_characters(self, limit=20):
-        """Find characters whose description or sphere mentions this organization."""
-        from django.db.models import Q
-        terms = self.get_search_terms()
-        q = Q()
-        for term in terms:
-            q |= Q(description__icontains=term) | Q(sphere_of_influence__icontains=term)
-        return CharacterPage.objects.live().filter(q).distinct()[:limit]
+        """Get characters affiliated with this organization."""
+        return self.affiliated_characters.filter(live=True).order_by('canonical_name')[:limit]
 
     def get_related_events(self, limit=30):
         """Find events whose description mentions this organization."""
@@ -1530,6 +1525,140 @@ class CharacterEpisodeProfile(models.Model):
 
     def __str__(self):
         return f"{self.character} in {self.episode}"
+
+
+# =============================================================================
+# ACT / PLOTBEAT / EVENT-BEAT LINK (Prototype — reversible via migration rollback)
+# =============================================================================
+
+class Act(models.Model):
+    """
+    A structural act within an episode (e.g. Act 1, Act 2, Act 3).
+
+    Links to events indirectly via scene_numbers: each act owns a set of
+    scene_sequence integers, and events with matching scene_sequence belong
+    to that act.  This avoids any schema changes to EventPage.
+    """
+    fabula_uuid = models.CharField(
+        max_length=100,
+        unique=True,
+        help_text="UUID from Fabula graph (act_uuid)"
+    )
+    episode = models.ForeignKey(
+        EpisodePage,
+        on_delete=models.CASCADE,
+        related_name='acts',
+    )
+    number = models.PositiveIntegerField(
+        help_text="Act number within the episode (1-indexed)"
+    )
+    summary = models.TextField(
+        blank=True,
+        help_text="Brief summary of this act"
+    )
+    key_moments = models.JSONField(
+        default=list,
+        blank=True,
+        help_text="Notable moments in this act"
+    )
+    scene_numbers = models.JSONField(
+        default=list,
+        blank=True,
+        help_text="List of scene_sequence ints belonging to this act"
+    )
+
+    created_at = models.DateTimeField(auto_now_add=True)
+    updated_at = models.DateTimeField(auto_now=True)
+
+    class Meta:
+        unique_together = ['episode', 'number']
+        ordering = ['episode', 'number']
+
+    def __str__(self):
+        return f"Act {self.number} — {self.episode.title}"
+
+    def get_events(self):
+        """Return events whose scene_sequence falls within this act."""
+        return EventPage.objects.filter(
+            episode=self.episode,
+            scene_sequence__in=self.scene_numbers,
+        ).order_by('scene_sequence', 'sequence_in_scene')
+
+
+class PlotBeat(models.Model):
+    """
+    An atomic plot beat within an episode scene.
+
+    PlotBeats are finer-grained than events — multiple beats may map to
+    one event, or a beat may not correspond to any event at all.
+    """
+    fabula_uuid = models.CharField(
+        max_length=100,
+        unique=True,
+        help_text="UUID from Fabula graph (beat_uuid)"
+    )
+    episode = models.ForeignKey(
+        EpisodePage,
+        on_delete=models.CASCADE,
+        related_name='plot_beats',
+    )
+    scene_sequence = models.PositiveIntegerField(
+        help_text="Scene number within episode (matches EventPage.scene_sequence)"
+    )
+    sequence_in_scene = models.PositiveIntegerField(
+        help_text="Beat order within the scene"
+    )
+    action_description = models.TextField(
+        blank=True,
+        help_text="What happens in this beat"
+    )
+    emotional_shift = models.TextField(
+        blank=True,
+        help_text="Emotional shift occurring in this beat"
+    )
+    involved_character_mentions = models.JSONField(
+        default=list,
+        blank=True,
+        help_text="Character names mentioned in this beat"
+    )
+    key_objects_mentioned = models.JSONField(
+        default=list,
+        blank=True,
+        help_text="Objects mentioned in this beat"
+    )
+    setting_details = models.TextField(
+        blank=True,
+        help_text="Setting/location details for this beat"
+    )
+
+    class Meta:
+        indexes = [
+            models.Index(fields=['episode', 'scene_sequence']),
+        ]
+        ordering = ['episode', 'scene_sequence', 'sequence_in_scene']
+
+    def __str__(self):
+        return f"Beat {self.scene_sequence}.{self.sequence_in_scene} — {self.episode.title}"
+
+
+class EventBeatLink(models.Model):
+    """Junction table linking events to the plot beats they derive from."""
+    event = models.ForeignKey(
+        EventPage,
+        on_delete=models.CASCADE,
+        related_name='beat_links',
+    )
+    plot_beat = models.ForeignKey(
+        PlotBeat,
+        on_delete=models.CASCADE,
+        related_name='event_links',
+    )
+
+    class Meta:
+        unique_together = ['event', 'plot_beat']
+
+    def __str__(self):
+        return f"{self.event.title} ← Beat {self.plot_beat.fabula_uuid}"
 
 
 # =============================================================================

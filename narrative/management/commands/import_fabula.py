@@ -45,6 +45,9 @@ from narrative.models import (
     ObjectInvolvement,
     LocationInvolvement,
     OrganizationInvolvement,
+    Act,
+    PlotBeat,
+    EventBeatLink,
 )
 
 
@@ -118,6 +121,8 @@ class Command(BaseCommand):
         self.objects_cache: Dict[str, ObjectPage] = {}
         self.episodes_cache: Dict[str, EpisodePage] = {}
         self.events_cache: Dict[str, EventPage] = {}
+        self.acts_cache: Dict[str, 'Act'] = {}
+        self.plot_beats_cache: Dict[str, 'PlotBeat'] = {}
 
         # GER global_id caches for cross-season entity resolution
         # These enable finding existing entities when importing a new season
@@ -350,6 +355,12 @@ class Command(BaseCommand):
         self.log_progress("Phase 4: Importing events")
         self.import_events(events_data, event_index)
 
+        self.log_progress("Phase 4b: Importing acts")
+        self.import_acts(events_data)
+
+        self.log_progress("Phase 4c: Importing plot beats")
+        self.import_plot_beats(events_data)
+
         self.log_progress("Phase 5: Creating event participations")
         self.import_event_participations(events_data)
 
@@ -357,6 +368,9 @@ class Command(BaseCommand):
         self.import_object_involvements(events_data)
         self.import_location_involvements(events_data)
         self.import_organization_involvements(events_data)
+
+        self.log_progress("Phase 6b: Linking events to plot beats")
+        self.import_event_beat_links(events_data)
 
         self.log_progress("Phase 7: Creating narrative connections")
         self.import_connections(connections_data)
@@ -1212,6 +1226,129 @@ class Command(BaseCommand):
                 self.log_detail(f"    {'Updated' if event_page.pk else 'Created'} event: {title}")
 
     # =========================================================================
+    # Phase 4b: Acts
+    # =========================================================================
+
+    def import_acts(self, events_data: List[Dict]):
+        """Import acts from episode files (each file may contain an 'acts' list)."""
+        total = 0
+        for episode_file_data in events_data:
+            episode_uuid = episode_file_data.get('episode_uuid', '')
+            episode = self.episodes_cache.get(episode_uuid)
+            if not episode:
+                continue
+
+            for act_data in episode_file_data.get('acts', []):
+                act_uuid = act_data.get('fabula_uuid', '')
+                if not act_uuid:
+                    continue
+
+                defaults = {
+                    'episode': episode,
+                    'number': act_data.get('number', 0),
+                    'summary': act_data.get('summary') or '',
+                    'key_moments': act_data.get('key_moments') or [],
+                    'scene_numbers': act_data.get('scene_numbers') or [],
+                }
+
+                if self.dry_run:
+                    self.stats.record_created('Act')
+                else:
+                    act, created = Act.objects.update_or_create(
+                        fabula_uuid=act_uuid,
+                        defaults=defaults,
+                    )
+                    self.acts_cache[act_uuid] = act
+                    if created:
+                        self.stats.record_created('Act')
+                    else:
+                        self.stats.record_updated('Act')
+
+                total += 1
+
+        self.log_detail(f"    Processed {total} acts")
+
+    # =========================================================================
+    # Phase 4c: Plot Beats
+    # =========================================================================
+
+    def import_plot_beats(self, events_data: List[Dict]):
+        """Import plot beats from episode files (each file may contain a 'plot_beats' list)."""
+        total = 0
+        for episode_file_data in events_data:
+            episode_uuid = episode_file_data.get('episode_uuid', '')
+            episode = self.episodes_cache.get(episode_uuid)
+            if not episode:
+                continue
+
+            for beat_data in episode_file_data.get('plot_beats', []):
+                beat_uuid = beat_data.get('fabula_uuid', '')
+                if not beat_uuid:
+                    continue
+
+                defaults = {
+                    'episode': episode,
+                    'scene_sequence': beat_data.get('scene_sequence', 0),
+                    'sequence_in_scene': beat_data.get('sequence_in_scene', 0),
+                    'action_description': beat_data.get('action_description') or '',
+                    'emotional_shift': beat_data.get('emotional_shift') or '',
+                    'involved_character_mentions': beat_data.get('involved_character_mentions') or [],
+                    'key_objects_mentioned': beat_data.get('key_objects_mentioned') or [],
+                    'setting_details': beat_data.get('setting_details') or '',
+                }
+
+                if self.dry_run:
+                    self.stats.record_created('PlotBeat')
+                else:
+                    beat, created = PlotBeat.objects.update_or_create(
+                        fabula_uuid=beat_uuid,
+                        defaults=defaults,
+                    )
+                    self.plot_beats_cache[beat_uuid] = beat
+                    if created:
+                        self.stats.record_created('PlotBeat')
+                    else:
+                        self.stats.record_updated('PlotBeat')
+
+                total += 1
+
+        self.log_detail(f"    Processed {total} plot beats")
+
+    # =========================================================================
+    # Phase 6b: Event-Beat Links
+    # =========================================================================
+
+    def import_event_beat_links(self, events_data: List[Dict]):
+        """Link events to their derived plot beats via EventBeatLink."""
+        total = 0
+        for episode_file_data in events_data:
+            for event_data in episode_file_data.get('events', []):
+                event_uuid = event_data.get('fabula_uuid') or event_data.get('event_uuid', '')
+                event = self.events_cache.get(event_uuid)
+                if not event:
+                    continue
+
+                beat_uuids = event_data.get('derived_from_beat_uuids') or []
+                for beat_uuid in beat_uuids:
+                    beat = self.plot_beats_cache.get(beat_uuid)
+                    if not beat:
+                        continue
+
+                    if self.dry_run:
+                        self.stats.record_created('EventBeatLink')
+                    else:
+                        _, created = EventBeatLink.objects.get_or_create(
+                            event=event,
+                            plot_beat=beat,
+                        )
+                        if created:
+                            self.stats.record_created('EventBeatLink')
+
+                    total += 1
+
+        self.log_detail(f"    Processed {total} event-beat links")
+
+    # =========================================================================
     # Phase 5: Event Participations
     # =========================================================================
 
@@ -1253,10 +1390,13 @@ class Command(BaseCommand):
                     seen_characters_in_event.add(character.pk)
 
                     # Check if participation already exists
-                    participation = EventParticipation.objects.filter(
-                        event=event,
-                        character=character
-                    ).first()
+                    if self.dry_run:
+                        participation = None
+                    else:
+                        participation = EventParticipation.objects.filter(
+                            event=event,
+                            character=character
+                        ).first()
 
                     if participation:
                         # Update existing
@@ -1334,10 +1474,13 @@ class Command(BaseCommand):
                     seen_objects_in_event.add(obj.pk)
 
                     # Check if involvement already exists
-                    involvement = ObjectInvolvement.objects.filter(
-                        event=event,
-                        object=obj
-                    ).first()
+                    if self.dry_run:
+                        involvement = None
+                    else:
+                        involvement = ObjectInvolvement.objects.filter(
+                            event=event,
+                            object=obj
+                        ).first()
 
                     if involvement:
                         involvement.description_of_involvement = inv_data.get('description_of_involvement') or ''
@@ -1401,10 +1544,13 @@ class Command(BaseCommand):
                     seen_locations_in_event.add(location.pk)
 
                     # Check if involvement already exists
-                    involvement = LocationInvolvement.objects.filter(
-                        event=event,
-                        location=location
-                    ).first()
+                    if self.dry_run:
+                        involvement = None
+                    else:
+                        involvement = LocationInvolvement.objects.filter(
+                            event=event,
+                            location=location
+                        ).first()
 
                     if involvement:
                         involvement.description_of_involvement = inv_data.get('description_of_involvement') or ''
@@ -1474,10 +1620,13 @@ class Command(BaseCommand):
                     seen_orgs_in_event.add(organization.pk)
 
                     # Check if involvement already exists
-                    involvement = OrganizationInvolvement.objects.filter(
-                        event=event,
-                        organization=organization
-                    ).first()
+                    if self.dry_run:
+                        involvement = None
+                    else:
+                        involvement = OrganizationInvolvement.objects.filter(
+                            event=event,
+                            organization=organization
+                        ).first()
 
                     if involvement:
                         involvement.description_of_involvement = inv_data.get('description_of_involvement') or ''
@@ -1551,7 +1700,7 @@ class Command(BaseCommand):
                 self.log_detail(f"    Cross-season match for connection: {global_id}")
 
             # Fall back to event pair + type lookup
-            if not connection:
+            if not connection and not self.dry_run:
                 connection = NarrativeConnection.objects.filter(
                     from_event=from_event,
                     to_event=to_event,
@@ -1560,7 +1709,7 @@ class Command(BaseCommand):
 
             if connection:
                 # Update existing
-                connection.strength = conn_data.get('strength', 'medium')
+                connection.strength = conn_data.get('strength') or 'medium'
                 connection.description = conn_data.get('description', '')
                 if fabula_uuid:
                     connection.fabula_uuid = fabula_uuid
@@ -1578,7 +1727,7 @@ class Command(BaseCommand):
                     from_event=from_event,
                     to_event=to_event,
                     connection_type=conn_type,
-                    strength=conn_data.get('strength', 'medium'),
+                    strength=conn_data.get('strength') or 'medium',
                     description=conn_data.get('description', ''),
                 )
 

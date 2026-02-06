@@ -298,6 +298,12 @@
             <button class="node-toggle active" data-type="organization" style="--toggle-color: #a855f7;">
                 <i data-lucide="building-2" class="w-3 h-3"></i> Orgs
             </button>
+            <button class="node-toggle active" data-type="act" style="--toggle-color: #6366f1;">
+                <i data-lucide="bookmark" class="w-3 h-3"></i> Acts
+            </button>
+            <button class="node-toggle" data-type="plotbeat" style="--toggle-color: #f472b6;">
+                <i data-lucide="activity" class="w-3 h-3"></i> Beats
+            </button>
         </div>
     </div>
 </div>
@@ -350,6 +356,14 @@
             <div class="w-3 h-3 rounded-full" style="background-color: #a855f7; box-shadow: 0 0 8px #a855f7;"></div>
             <span class="text-xs text-slate-300">Organization</span>
         </div>
+        <div class="flex items-center gap-2">
+            <div class="w-3 h-3 rounded-full" style="background-color: #6366f1; box-shadow: 0 0 8px #6366f1;"></div>
+            <span class="text-xs text-slate-300">Act</span>
+        </div>
+        <div class="flex items-center gap-2">
+            <div class="w-3 h-3 rounded-full" style="background-color: #f472b6; box-shadow: 0 0 8px #f472b6;"></div>
+            <span class="text-xs text-slate-300">Plot Beat</span>
+        </div>
     </div>
 
     {# Edge types - participation #}
@@ -373,6 +387,14 @@
         <div class="flex items-center gap-2">
             <div class="w-5 h-0.5 rounded-full" style="background-color: #22d3ee; box-shadow: 0 0 6px #22d3ee;"></div>
             <span class="text-xs text-slate-300">Narrative</span>
+        </div>
+        <div class="flex items-center gap-2">
+            <div class="w-5 h-0.5 rounded-full" style="background-color: #6366f1; box-shadow: 0 0 6px #6366f1;"></div>
+            <span class="text-xs text-slate-300">Contains</span>
+        </div>
+        <div class="flex items-center gap-2">
+            <div class="w-5 h-0.5 rounded-full" style="background-color: #f472b6; box-shadow: 0 0 6px #f472b6;"></div>
+            <span class="text-xs text-slate-300">Derived From</span>
         </div>
     </div>
 
@@ -441,7 +463,9 @@ const NODE_TYPE_CONFIG = {
     'event': { color: '#f59e0b', icon: 'zap', label: 'Event', size: 6 },
     'character': { color: '#14b8a6', icon: 'user', label: 'Character', size: 4 },
     'location': { color: '#84cc16', icon: 'map-pin', label: 'Location', size: 4 },
-    'organization': { color: '#a855f7', icon: 'building-2', label: 'Organization', size: 4 }
+    'organization': { color: '#a855f7', icon: 'building-2', label: 'Organization', size: 4 },
+    'act': { color: '#6366f1', icon: 'bookmark', label: 'Act', size: 8 },
+    'plotbeat': { color: '#f472b6', icon: 'activity', label: 'Plot Beat', size: 2 }
 };
 
 // Graph Gravity tier configuration for character nodes
@@ -469,11 +493,15 @@ const CONNECTION_CONFIG = {
     'EMOTIONAL_ECHO': { color: '#ec4899', icon: 'heart', label: 'Emotional Echo', category: 'narrative' },
     'SYMBOLIC_PARALLEL': { color: '#8b5cf6', icon: 'equal', label: 'Symbolic Parallel', category: 'narrative' },
     'TEMPORAL': { color: '#6366f1', icon: 'clock', label: 'Temporal', category: 'narrative' },
-    'NARRATIVELY_FOLLOWS': { color: '#94a3b8', icon: 'arrow-down', label: 'Narratively Follows', category: 'narrative' }
+    'NARRATIVELY_FOLLOWS': { color: '#94a3b8', icon: 'arrow-down', label: 'Narratively Follows', category: 'narrative' },
+
+    // Structural connections (Act/PlotBeat)
+    'CONTAINS': { color: '#6366f1', icon: 'bookmark', label: 'Contains', category: 'structural' },
+    'DERIVED_FROM': { color: '#f472b6', icon: 'activity', label: 'Derived From', category: 'structural' }
 };
 
 // Node type visibility state
-const visibleNodeTypes = new Set(['event', 'character', 'location', 'organization']);
+const visibleNodeTypes = new Set(['event', 'character', 'location', 'organization', 'act']);
 
 // Transform data for 3d-force-graph (uses 'source'/'target' not 'from'/'to')
 const allNodes = graphData.nodes.map(n => ({

@@ -89,7 +89,8 @@ class Neo4jExporter:
         output_dir: Path,
         database: str = None,
         ger_database: str = None,
-        megagraph_mode: bool = False
+        megagraph_mode: bool = False,
+        series_filter: str = None
     ):
         """
         Initialize the Neo4j exporter.
@@ -102,6 +103,7 @@ class Neo4jExporter:
             database: Neo4j database name (default: neo4j)
             ger_database: GER database name for cross-season lookups (default: None)
             megagraph_mode: If True, export megagraph-specific fields (season_appearances, etc.)
+            series_filter: If specified, only export entities involved in this series (by title or UUID)
         """
         self.uri = uri
         self.user = user
@@ -110,7 +112,11 @@ class Neo4jExporter:
         self.database = database
         self.ger_database = ger_database
         self.megagraph_mode = megagraph_mode
+        self.series_filter = series_filter
         self.driver: Optional[Driver] = None
+
+        # Cache of event UUIDs in the filtered series (populated if series_filter is set)
+        self.series_event_uuids: set = set()
 
         # GER global_id mappings (local_uuid -> global_id)
         self.ger_mappings: Dict[str, str] = {}
@@ -129,6 +135,8 @@ class Neo4jExporter:
             'theme_count': 0,
             'arc_count': 0,
             'connection_count': 0,
+            'act_count': 0,
+            'plot_beat_count': 0,
             'ger_linked_count': 0,
             'cross_season_entities': 0,
         }
@@ -150,6 +158,29 @@ class Neo4jExporter:
         """Close Neo4j connection."""
         if self.driver:
             self.driver.close()
+
+    def load_series_event_uuids(self):
+        """
+        Load event UUIDs for the filtered series.
+
+        This is used to filter other entities (organizations, characters, etc.)
+        to only those that are involved in events from the target series.
+        """
+        if not self.series_filter:
+            return
+
+        print(f"Loading event UUIDs for series filter: {self.series_filter}")
+
+        # Find events that belong to the specified series
+        query = """
+        MATCH (e:Event)-[:PART_OF]->(ep:Episode)-[:BELONGS_TO_SEASON]->(s:Season)-[:BELONGS_TO_SERIES]->(series:Series)
+        WHERE series.title CONTAINS $series_filter OR series.series_uuid = $series_filter
+        RETURN e.event_uuid as event_uuid
+        """
+
+        results = self.execute_query(query, {'series_filter': self.series_filter})
+        self.series_event_uuids = {r['event_uuid'] for r in results if r.get('event_uuid')}
+        print(f"  Found {len(self.series_event_uuids)} events in series")
 
     def load_ger_mappings(self):
         """
@@ -342,42 +373,81 @@ class Neo4jExporter:
         - local_uuids: Dict mapping season to original UUID
         - first_appearance_season: First season appeared
 
+        If series_filter is set, only exports characters that participate in that series' events.
+
         Returns:
             List of character dictionaries
         """
         print("Exporting characters...")
 
-        # Megagraph query includes additional fields and participation count
-        if self.megagraph_mode:
-            query = """
-            MATCH (a:Agent)
-            WHERE a.status = 'canonical' OR a.entity_status = 'canonical'
-            OPTIONAL MATCH (a)-[:AFFILIATED_WITH]->(org:Organization)
-            OPTIONAL MATCH (a)-[p:PARTICIPATED_AS]->(:Event)
-            WITH a, org, count(p) as participation_count
-            RETURN a,
-                   org.org_uuid as org_uuid,
-                   a.ger_global_id as ger_global_id,
-                   a.season_appearances as season_appearances,
-                   a.local_uuids as local_uuids,
-                   a.episode_count as episode_count,
-                   a.first_episode_seq as first_episode_seq,
-                   a.tier as tier,
-                   participation_count
-            ORDER BY a.canonical_name
-            """
+        # If filtering by series, only get characters that participate in series events
+        if self.series_filter and self.series_event_uuids:
+            print(f"  Filtering to characters participating in {len(self.series_event_uuids)} series events...")
+            if self.megagraph_mode:
+                query = """
+                MATCH (a:Agent)-[:PARTICIPATED_AS]->(e:Event)
+                WHERE e.event_uuid IN $event_uuids
+                  AND (a.status = 'canonical' OR a.entity_status = 'canonical')
+                WITH DISTINCT a
+                OPTIONAL MATCH (a)-[:AFFILIATED_WITH]->(org:Organization)
+                OPTIONAL MATCH (a)-[p:PARTICIPATED_AS]->(:Event)
+                WITH a, org, count(p) as participation_count
+                RETURN a,
+                       org.org_uuid as org_uuid,
+                       a.ger_global_id as ger_global_id,
+                       a.season_appearances as season_appearances,
+                       a.local_uuids as local_uuids,
+                       a.episode_count as episode_count,
+                       a.first_episode_seq as first_episode_seq,
+                       a.tier as tier,
+                       participation_count
+                ORDER BY a.canonical_name
+                """
+            else:
+                query = """
+                MATCH (a:Agent)-[:PARTICIPATED_AS]->(e:Event)
+                WHERE e.event_uuid IN $event_uuids
+                  AND a.status = 'canonical'
+                WITH DISTINCT a
+                OPTIONAL MATCH (a)-[:AFFILIATED_WITH]->(org:Organization)
+                OPTIONAL MATCH (a)-[p:PARTICIPATED_AS]->(:Event)
+                WITH a, org, count(p) as participation_count
+                RETURN a, org.org_uuid as org_uuid, participation_count
+                ORDER BY a.canonical_name
+                """
+            results = self.execute_query(query, {'event_uuids': list(self.series_event_uuids)})
         else:
-            query = """
-            MATCH (a:Agent)
-            WHERE a.status = 'canonical'
-            OPTIONAL MATCH (a)-[:AFFILIATED_WITH]->(org:Organization)
-            OPTIONAL MATCH (a)-[p:PARTICIPATED_AS]->(:Event)
-            WITH a, org, count(p) as participation_count
-            RETURN a, org.org_uuid as org_uuid, participation_count
-            ORDER BY a.canonical_name
-            """
-
-        results = self.execute_query(query)
+            # No series filter - export all characters
+            # Megagraph query includes additional fields and participation count
+            if self.megagraph_mode:
+                query = """
+                MATCH (a:Agent)
+                WHERE a.status = 'canonical' OR a.entity_status = 'canonical'
+                OPTIONAL MATCH (a)-[:AFFILIATED_WITH]->(org:Organization)
+                OPTIONAL MATCH (a)-[p:PARTICIPATED_AS]->(:Event)
+                WITH a, org, count(p) as participation_count
+                RETURN a,
+                       org.org_uuid as org_uuid,
+                       a.ger_global_id as ger_global_id,
+                       a.season_appearances as season_appearances,
+                       a.local_uuids as local_uuids,
+                       a.episode_count as episode_count,
+                       a.first_episode_seq as first_episode_seq,
+                       a.tier as tier,
+                       participation_count
+                ORDER BY a.canonical_name
+                """
+            else:
+                query = """
+                MATCH (a:Agent)
+                WHERE a.status = 'canonical'
+                OPTIONAL MATCH (a)-[:AFFILIATED_WITH]->(org:Organization)
+                OPTIONAL MATCH (a)-[p:PARTICIPATED_AS]->(:Event)
+                WITH a, org, count(p) as participation_count
+                RETURN a, org.org_uuid as org_uuid, participation_count
+                ORDER BY a.canonical_name
+                """
+            results = self.execute_query(query)
         characters = []
 
         for record in results:
@@ -467,35 +537,66 @@ class Neo4jExporter:
         Export all locations with parent relationships.
 
         In megagraph mode, includes cross-season tracking fields.
+        If series_filter is set, only exports locations involved in that series' events.
 
         Returns:
             List of location dictionaries
         """
         print("Exporting locations...")
 
-        if self.megagraph_mode:
-            query = """
-            MATCH (loc:Location)
-            WHERE loc.status = 'canonical' OR loc.entity_status = 'canonical'
-            OPTIONAL MATCH (loc)-[:PART_OF]->(parent:Location)
-            RETURN loc,
-                   parent.location_uuid as parent_uuid,
-                   loc.ger_global_id as ger_global_id,
-                   loc.season_appearances as season_appearances,
-                   loc.local_uuids as local_uuids,
-                   loc.episode_count as episode_count,
-                   loc.tier as tier
-            ORDER BY loc.canonical_name
-            """
+        # If filtering by series, only get locations involved in series events
+        if self.series_filter and self.series_event_uuids:
+            print(f"  Filtering to locations involved in {len(self.series_event_uuids)} series events...")
+            if self.megagraph_mode:
+                query = """
+                MATCH (loc:Location)-[:INVOLVED_WITH]->(e:Event)
+                WHERE e.event_uuid IN $event_uuids
+                  AND (loc.status = 'canonical' OR loc.entity_status = 'canonical')
+                WITH DISTINCT loc
+                OPTIONAL MATCH (loc)-[:PART_OF]->(parent:Location)
+                RETURN loc,
+                       parent.location_uuid as parent_uuid,
+                       loc.ger_global_id as ger_global_id,
+                       loc.season_appearances as season_appearances,
+                       loc.local_uuids as local_uuids,
+                       loc.episode_count as episode_count,
+                       loc.tier as tier
+                ORDER BY loc.canonical_name
+                """
+            else:
+                query = """
+                MATCH (loc:Location)-[:INVOLVED_WITH]->(e:Event)
+                WHERE e.event_uuid IN $event_uuids
+                  AND loc.status = 'canonical'
+                WITH DISTINCT loc
+                RETURN loc
+                ORDER BY loc.canonical_name
+                """
+            results = self.execute_query(query, {'event_uuids': list(self.series_event_uuids)})
         else:
-            query = """
-            MATCH (loc:Location)
-            WHERE loc.status = 'canonical'
-            RETURN loc
-            ORDER BY loc.canonical_name
-            """
-
-        results = self.execute_query(query)
+            # No series filter - export all locations
+            if self.megagraph_mode:
+                query = """
+                MATCH (loc:Location)
+                WHERE loc.status = 'canonical' OR loc.entity_status = 'canonical'
+                OPTIONAL MATCH (loc)-[:PART_OF]->(parent:Location)
+                RETURN loc,
+                       parent.location_uuid as parent_uuid,
+                       loc.ger_global_id as ger_global_id,
+                       loc.season_appearances as season_appearances,
+                       loc.local_uuids as local_uuids,
+                       loc.episode_count as episode_count,
+                       loc.tier as tier
+                ORDER BY loc.canonical_name
+                """
+            else:
+                query = """
+                MATCH (loc:Location)
+                WHERE loc.status = 'canonical'
+                RETURN loc
+                ORDER BY loc.canonical_name
+                """
+            results = self.execute_query(query)
         locations = []
 
         for record in results:
@@ -550,33 +651,62 @@ class Neo4jExporter:
         Export all organizations.
 
         In megagraph mode, includes cross-season tracking fields.
+        If series_filter is set, only exports organizations involved in that series' events.
 
         Returns:
             List of organization dictionaries
         """
         print("Exporting organizations...")
 
-        if self.megagraph_mode:
-            query = """
-            MATCH (org:Organization)
-            WHERE org.status = 'canonical' OR org.entity_status = 'canonical'
-            RETURN org,
-                   org.ger_global_id as ger_global_id,
-                   org.season_appearances as season_appearances,
-                   org.local_uuids as local_uuids,
-                   org.episode_count as episode_count,
-                   org.tier as tier
-            ORDER BY org.canonical_name
-            """
+        # If filtering by series, only get orgs that are involved in series events
+        if self.series_filter and self.series_event_uuids:
+            print(f"  Filtering to organizations involved in {len(self.series_event_uuids)} series events...")
+            if self.megagraph_mode:
+                query = """
+                MATCH (org:Organization)-[:INVOLVED_WITH]->(e:Event)
+                WHERE e.event_uuid IN $event_uuids
+                  AND (org.status = 'canonical' OR org.entity_status = 'canonical')
+                WITH DISTINCT org
+                RETURN org,
+                       org.ger_global_id as ger_global_id,
+                       org.season_appearances as season_appearances,
+                       org.local_uuids as local_uuids,
+                       org.episode_count as episode_count,
+                       org.tier as tier
+                ORDER BY org.canonical_name
+                """
+            else:
+                query = """
+                MATCH (org:Organization)-[:INVOLVED_WITH]->(e:Event)
+                WHERE e.event_uuid IN $event_uuids
+                  AND org.status = 'canonical'
+                WITH DISTINCT org
+                RETURN org
+                ORDER BY org.canonical_name
+                """
+            results = self.execute_query(query, {'event_uuids': list(self.series_event_uuids)})
         else:
-            query = """
-            MATCH (org:Organization)
-            WHERE org.status = 'canonical'
-            RETURN org
-            ORDER BY org.canonical_name
-            """
-
-        results = self.execute_query(query)
+            # No series filter - export all organizations
+            if self.megagraph_mode:
+                query = """
+                MATCH (org:Organization)
+                WHERE org.status = 'canonical' OR org.entity_status = 'canonical'
+                RETURN org,
+                       org.ger_global_id as ger_global_id,
+                       org.season_appearances as season_appearances,
+                       org.local_uuids as local_uuids,
+                       org.episode_count as episode_count,
+                       org.tier as tier
+                ORDER BY org.canonical_name
+                """
+            else:
+                query = """
+                MATCH (org:Organization)
+                WHERE org.status = 'canonical'
+                RETURN org
+                ORDER BY org.canonical_name
+                """
+            results = self.execute_query(query)
         organizations = []
 
         for record in results:
@@ -630,37 +760,68 @@ class Neo4jExporter:
         Export all objects with ownership relationships.
 
         In megagraph mode, includes cross-season tracking fields.
+        If series_filter is set, only exports objects involved in that series' events.
 
         Returns:
             List of object dictionaries
         """
         print("Exporting objects...")
 
-        if self.megagraph_mode:
-            # Megagraph query with cross-season fields
-            query = """
-            MATCH (obj:Object)
-            WHERE obj.status = 'canonical' OR obj.entity_status = 'canonical'
-            RETURN obj,
-                   head([(agent:Agent)-[:OWNS]->(obj) WHERE agent.status = 'canonical' OR agent.entity_status = 'canonical' | agent.agent_uuid]) as owner_agent_uuid,
-                   obj.ger_global_id as ger_global_id,
-                   obj.season_appearances as season_appearances,
-                   obj.local_uuids as local_uuids,
-                   obj.episode_count as episode_count,
-                   obj.tier as tier
-            ORDER BY obj.canonical_name
-            """
+        # If filtering by series, only get objects involved in series events
+        if self.series_filter and self.series_event_uuids:
+            print(f"  Filtering to objects involved in {len(self.series_event_uuids)} series events...")
+            if self.megagraph_mode:
+                query = """
+                MATCH (obj:Object)-[:INVOLVED_WITH]->(e:Event)
+                WHERE e.event_uuid IN $event_uuids
+                  AND (obj.status = 'canonical' OR obj.entity_status = 'canonical')
+                WITH DISTINCT obj
+                RETURN obj,
+                       head([(agent:Agent)-[:OWNS]->(obj) WHERE agent.status = 'canonical' OR agent.entity_status = 'canonical' | agent.agent_uuid]) as owner_agent_uuid,
+                       obj.ger_global_id as ger_global_id,
+                       obj.season_appearances as season_appearances,
+                       obj.local_uuids as local_uuids,
+                       obj.episode_count as episode_count,
+                       obj.tier as tier
+                ORDER BY obj.canonical_name
+                """
+            else:
+                query = """
+                MATCH (obj:Object)-[:INVOLVED_WITH]->(e:Event)
+                WHERE e.event_uuid IN $event_uuids
+                  AND obj.status = 'canonical'
+                WITH DISTINCT obj
+                RETURN obj,
+                       head([(agent:Agent {status: 'canonical'})-[:OWNS]->(obj) | agent.agent_uuid]) as owner_agent_uuid
+                ORDER BY obj.canonical_name
+                """
+            results = self.execute_query(query, {'event_uuids': list(self.series_event_uuids)})
         else:
-            # Uses pattern comprehension with head() to get first owner without duplicates
-            query = """
-            MATCH (obj:Object)
-            WHERE obj.status = 'canonical'
-            RETURN obj,
-                   head([(agent:Agent {status: 'canonical'})-[:OWNS]->(obj) | agent.agent_uuid]) as owner_agent_uuid
-            ORDER BY obj.canonical_name
-            """
-
-        results = self.execute_query(query)
+            # No series filter - export all objects
+            if self.megagraph_mode:
+                # Megagraph query with cross-season fields
+                query = """
+                MATCH (obj:Object)
+                WHERE obj.status = 'canonical' OR obj.entity_status = 'canonical'
+                RETURN obj,
+                       head([(agent:Agent)-[:OWNS]->(obj) WHERE agent.status = 'canonical' OR agent.entity_status = 'canonical' | agent.agent_uuid]) as owner_agent_uuid,
+                       obj.ger_global_id as ger_global_id,
+                       obj.season_appearances as season_appearances,
+                       obj.local_uuids as local_uuids,
+                       obj.episode_count as episode_count,
+                       obj.tier as tier
+                ORDER BY obj.canonical_name
+                """
+            else:
+                # Uses pattern comprehension with head() to get first owner without duplicates
+                query = """
+                MATCH (obj:Object)
+                WHERE obj.status = 'canonical'
+                RETURN obj,
+                       head([(agent:Agent {status: 'canonical'})-[:OWNS]->(obj) | agent.agent_uuid]) as owner_agent_uuid
+                ORDER BY obj.canonical_name
+                """
+            results = self.execute_query(query)
         objects = []
 
         for record in results:
@@ -724,8 +885,10 @@ class Neo4jExporter:
 
         if self.megagraph_mode:
             # Megagraph uses canonical_name and foundational_description
+            # Filter out season-unique themes with no name
             query = """
             MATCH (t:Theme)
+            WHERE t.canonical_name IS NOT NULL OR t.name IS NOT NULL
             RETURN t.theme_uuid as theme_uuid,
                    t.global_id as global_id,
                    t.ger_global_id as ger_global_id,
@@ -790,8 +953,10 @@ class Neo4jExporter:
 
         if self.megagraph_mode:
             # Megagraph uses canonical_name and foundational_description
+            # Filter out season-unique arcs with no description
             query = """
             MATCH (arc:ConflictArc)
+            WHERE arc.canonical_name IS NOT NULL OR arc.conflict_description IS NOT NULL
             RETURN arc.arc_uuid as arc_uuid,
                    arc.global_id as global_id,
                    arc.ger_global_id as ger_global_id,
@@ -846,7 +1011,7 @@ class Neo4jExporter:
     # Export Events (by episode)
     # =========================================================================
 
-    def export_events_by_episode(self, episode_uuid: str) -> List[Dict]:
+    def export_events_by_episode(self, episode_uuid: str, scene_number_map: Dict[str, int] = None) -> List[Dict]:
         """
         Export all events for a specific episode with all involvements.
 
@@ -855,37 +1020,15 @@ class Neo4jExporter:
 
         Args:
             episode_uuid: Episode UUID to filter events
+            scene_number_map: Optional pre-built scene_uuid->scene_number map
 
         Returns:
             List of event dictionaries with participations and involvements
         """
-        # First, build a scene number mapping by finding the first event in each scene
-        # This derives scene_number from the order scenes appear (by their first event)
-        # Megagraph: Event-[:OCCURS_IN]->SceneBoundary-[:BELONGS_TO_EPISODE]->Episode
-        # Single-season DB: Event-[:PART_OF_EPISODE]->Episode
-        if self.megagraph_mode:
-            scene_order_query = """
-            MATCH (e:Event)-[:OCCURS_IN]->(sb:SceneBoundary)-[:BELONGS_TO_EPISODE]->(ep:Episode {episode_uuid: $episode_uuid})
-            WITH sb.scene_uuid AS scene_uuid, sb.scene_number as scene_num, min(e.sequence_in_scene) AS first_event_seq
-            ORDER BY coalesce(scene_num, first_event_seq)
-            RETURN scene_uuid, first_event_seq
-            """
-        else:
-            scene_order_query = """
-            MATCH (e:Event)-[:PART_OF_EPISODE]->(ep:Episode {episode_uuid: $episode_uuid})
-            MATCH (e)-[:OCCURS_IN]->(sb:SceneBoundary)
-            WITH sb.scene_uuid AS scene_uuid, min(e.sequence_in_scene) AS first_event_seq
-            ORDER BY first_event_seq
-            RETURN scene_uuid, first_event_seq
-            """
-        scene_results = self.execute_query(scene_order_query, {'episode_uuid': episode_uuid})
-
         # Build scene_uuid -> scene_number mapping (1-indexed)
-        scene_number_map = {}
-        for idx, record in enumerate(scene_results, start=1):
-            scene_uuid = record.get('scene_uuid')
-            if scene_uuid:
-                scene_number_map[scene_uuid] = idx
+        if scene_number_map is None:
+            scene_number_map = self._build_scene_number_map(episode_uuid)
+
 
         # Main event query - megagraph mode includes source tracking fields
         # Megagraph: Event-[:OCCURS_IN]->SceneBoundary-[:BELONGS_TO_EPISODE]->Episode
@@ -964,7 +1107,8 @@ class Neo4jExporter:
                 'participations': participations,
                 'object_involvements': object_involvements,
                 'location_involvements': location_involvements,
-                'organization_involvements': organization_involvements
+                'organization_involvements': organization_involvements,
+                'derived_from_beat_uuids': self.safe_get(event, 'derived_from_beat_uuids', []),
             }
 
             # Add megagraph-specific fields for events
@@ -976,6 +1120,161 @@ class Neo4jExporter:
             self.stats['event_count'] += 1
 
         return events
+
+    # =========================================================================
+    # Shared Scene-Number Map Helper
+    # =========================================================================
+
+    def _build_scene_number_map(self, episode_uuid: str) -> Dict[str, int]:
+        """
+        Build a scene_uuid → scene_number mapping for an episode.
+
+        Returns a dict mapping scene UUIDs to 1-indexed sequence numbers,
+        derived from the order scenes appear (by their first event).
+        """
+        if self.megagraph_mode:
+            scene_order_query = """
+            MATCH (e:Event)-[:OCCURS_IN]->(sb:SceneBoundary)-[:BELONGS_TO_EPISODE]->(ep:Episode {episode_uuid: $episode_uuid})
+            WITH sb.scene_uuid AS scene_uuid, sb.scene_number as scene_num, min(e.sequence_in_scene) AS first_event_seq
+            ORDER BY coalesce(scene_num, first_event_seq)
+            RETURN scene_uuid, first_event_seq
+            """
+        else:
+            scene_order_query = """
+            MATCH (e:Event)-[:PART_OF_EPISODE]->(ep:Episode {episode_uuid: $episode_uuid})
+            MATCH (e)-[:OCCURS_IN]->(sb:SceneBoundary)
+            WITH sb.scene_uuid AS scene_uuid, min(e.sequence_in_scene) AS first_event_seq
+            ORDER BY first_event_seq
+            RETURN scene_uuid, first_event_seq
+            """
+        scene_results = self.execute_query(scene_order_query, {'episode_uuid': episode_uuid})
+
+        scene_number_map = {}
+        for idx, record in enumerate(scene_results, start=1):
+            scene_uuid = record.get('scene_uuid')
+            if scene_uuid:
+                scene_number_map[scene_uuid] = idx
+        return scene_number_map
+
+    # =========================================================================
+    # Export Acts (by episode)
+    # =========================================================================
+
+    def export_acts_by_episode(self, episode_uuid: str, scene_number_map: Dict[str, int]) -> List[Dict]:
+        """
+        Export acts for a specific episode (megagraph mode only).
+
+        Args:
+            episode_uuid: Episode UUID
+            scene_number_map: Pre-built scene_uuid → scene_number mapping
+
+        Returns:
+            List of act dictionaries
+        """
+        if not self.megagraph_mode:
+            return []
+
+        query = """
+        MATCH (act:Act {episode_uuid_fk: $episode_uuid})
+        OPTIONAL MATCH (sb:SceneBoundary)-[:PART_OF_ACT]->(act)
+        WITH act, collect(DISTINCT sb.scene_uuid) as scene_uuids
+        RETURN act.act_uuid as act_uuid, act.number as number,
+               act.summary as summary, act.key_moments as key_moments,
+               scene_uuids
+        ORDER BY act.number
+        """
+        results = self.execute_query(query, {'episode_uuid': episode_uuid})
+        acts = []
+
+        for record in results:
+            act_uuid = record.get('act_uuid')
+            if not act_uuid:
+                continue
+
+            # Convert scene_uuids to scene_numbers via the shared map
+            raw_scene_uuids = record.get('scene_uuids') or []
+            scene_numbers = sorted(
+                scene_number_map[su] for su in raw_scene_uuids if su in scene_number_map
+            )
+
+            key_moments = record.get('key_moments') or []
+            if isinstance(key_moments, str):
+                key_moments = [key_moments] if key_moments else []
+
+            acts.append({
+                'fabula_uuid': act_uuid,
+                'number': record.get('number', 0),
+                'summary': record.get('summary') or '',
+                'key_moments': key_moments,
+                'scene_numbers': scene_numbers,
+            })
+            self.stats['act_count'] += 1
+
+        return acts
+
+    # =========================================================================
+    # Export PlotBeats (by episode)
+    # =========================================================================
+
+    def export_plot_beats_by_episode(self, episode_uuid: str, scene_number_map: Dict[str, int]) -> List[Dict]:
+        """
+        Export plot beats for a specific episode (megagraph mode only).
+
+        Args:
+            episode_uuid: Episode UUID
+            scene_number_map: Pre-built scene_uuid → scene_number mapping
+
+        Returns:
+            List of plot beat dictionaries
+        """
+        if not self.megagraph_mode:
+            return []
+
+        query = """
+        MATCH (sb:SceneBoundary)-[:BELONGS_TO_EPISODE]->(ep:Episode {episode_uuid: $episode_uuid})
+        MATCH (pb:PlotBeat) WHERE pb.scene_uuid_fk = sb.scene_uuid
+        RETURN pb.beat_uuid as beat_uuid, sb.scene_uuid as scene_uuid,
+               pb.sequence_in_scene as sequence_in_scene,
+               pb.action_description as action_description,
+               pb.emotional_shift as emotional_shift,
+               pb.involved_character_mentions as involved_character_mentions,
+               pb.key_objects_mentioned as key_objects_mentioned,
+               pb.setting_details as setting_details
+        ORDER BY sb.scene_number, pb.sequence_in_scene
+        """
+        results = self.execute_query(query, {'episode_uuid': episode_uuid})
+        beats = []
+
+        for record in results:
+            beat_uuid = record.get('beat_uuid')
+            if not beat_uuid:
+                continue
+
+            scene_uuid = record.get('scene_uuid')
+            scene_sequence = scene_number_map.get(scene_uuid, 1) if scene_uuid else 1
+
+            # Normalize list fields
+            char_mentions = record.get('involved_character_mentions') or []
+            if isinstance(char_mentions, str):
+                char_mentions = [c.strip() for c in char_mentions.split(',') if c.strip()]
+
+            key_objects = record.get('key_objects_mentioned') or []
+            if isinstance(key_objects, str):
+                key_objects = [o.strip() for o in key_objects.split(',') if o.strip()]
+
+            beats.append({
+                'fabula_uuid': beat_uuid,
+                'scene_sequence': scene_sequence,
+                'sequence_in_scene': record.get('sequence_in_scene') or 0,
+                'action_description': record.get('action_description') or '',
+                'emotional_shift': record.get('emotional_shift') or '',
+                'involved_character_mentions': char_mentions,
+                'key_objects_mentioned': key_objects,
+                'setting_details': record.get('setting_details') or '',
+            })
+            self.stats['plot_beat_count'] += 1
+
+        return beats
 
     def _get_event_participations(self, event_uuid: str) -> List[Dict]:
         """Get agent participations for an event."""
@@ -1208,8 +1507,8 @@ class Neo4jExporter:
         Connections are stored as relationships between PlotBeat nodes:
         (:PlotBeat)-[:CAUSAL|THEMATIC_PARALLEL|etc]->(:PlotBeat)
 
-        We map beats to events via the SceneBoundary path:
-        Event -[:OCCURS_IN]-> SceneBoundary -[:CONTAINS_BEAT]-> PlotBeat
+        We map beats to events via FK property join + SceneBoundary path:
+        PlotBeat.scene_uuid_fk → SceneBoundary.scene_uuid ← Event -[:OCCURS_IN]-> SceneBoundary
 
         Returns:
             List of connection dictionaries
@@ -1224,12 +1523,16 @@ class Neo4jExporter:
             'CALLBACK', 'FORESHADOWING', 'TEMPORAL', 'NARRATIVELY_FOLLOWS'
         ]
 
-        # Query connections with event UUIDs resolved via SceneBoundary path
+        # Query connections with event UUIDs resolved via FK property joins
+        # PlotBeat.scene_uuid_fk → SceneBoundary.scene_uuid
+        # Event -[:OCCURS_IN]-> SceneBoundary
         query = """
         MATCH (from_pb:PlotBeat)-[r]->(to_pb:PlotBeat)
         WHERE type(r) IN $connection_types
-        OPTIONAL MATCH (from_e:Event)-[:OCCURS_IN]->(sb1:SceneBoundary)-[:CONTAINS_BEAT]->(from_pb)
-        OPTIONAL MATCH (to_e:Event)-[:OCCURS_IN]->(sb2:SceneBoundary)-[:CONTAINS_BEAT]->(to_pb)
+        OPTIONAL MATCH (sb1:SceneBoundary) WHERE sb1.scene_uuid = from_pb.scene_uuid_fk
+        OPTIONAL MATCH (from_e:Event)-[:OCCURS_IN]->(sb1)
+        OPTIONAL MATCH (sb2:SceneBoundary) WHERE sb2.scene_uuid = to_pb.scene_uuid_fk
+        OPTIONAL MATCH (to_e:Event)-[:OCCURS_IN]->(sb2)
         RETURN from_pb.beat_uuid as from_beat,
                to_pb.beat_uuid as to_beat,
                from_e.event_uuid as from_event,
@@ -1319,6 +1622,8 @@ class Neo4jExporter:
             'theme_count': self.stats['theme_count'],
             'arc_count': self.stats['arc_count'],
             'connection_count': self.stats['connection_count'],
+            'act_count': self.stats['act_count'],
+            'plot_beat_count': self.stats['plot_beat_count'],
         }
 
         # Add megagraph-specific stats
@@ -1384,6 +1689,9 @@ class Neo4jExporter:
         try:
             # Load GER mappings if enabled
             self.load_ger_mappings()
+
+            # Load series event UUIDs for filtering (if series filter specified)
+            self.load_series_event_uuids()
 
             # Export series hierarchy (returns list of all series)
             all_series = self.export_series()
@@ -1458,7 +1766,10 @@ class Neo4jExporter:
                         filename = f"{series_prefix}_s{season_num:02d}e{episode_num:02d}.yaml"
 
                         print(f"Exporting events for {series_title} - {episode['title']}...")
-                        events = self.export_events_by_episode(episode_uuid)
+                        scene_number_map = self._build_scene_number_map(episode_uuid)
+                        events = self.export_events_by_episode(episode_uuid, scene_number_map)
+                        acts = self.export_acts_by_episode(episode_uuid, scene_number_map)
+                        plot_beats = self.export_plot_beats_by_episode(episode_uuid, scene_number_map)
 
                         self.write_yaml(
                             events_dir / filename,
@@ -1466,7 +1777,9 @@ class Neo4jExporter:
                                 'episode_uuid': episode_uuid,
                                 'episode_title': episode['title'],
                                 'series_title': series_title,
-                                'events': events
+                                'events': events,
+                                'acts': acts,
+                                'plot_beats': plot_beats,
                             },
                             f"Events for {episode['title']}"
                         )
@@ -1505,6 +1818,8 @@ class Neo4jExporter:
             print(f"  Themes: {self.stats['theme_count']}")
             print(f"  Conflict Arcs: {self.stats['arc_count']}")
             print(f"  Narrative Connections: {self.stats['connection_count']}")
+            print(f"  Acts: {self.stats['act_count']}")
+            print(f"  Plot Beats: {self.stats['plot_beat_count']}")
 
             if self.megagraph_mode:
                 print("\nMegagraph Cross-Season Stats:")
@@ -1582,6 +1897,12 @@ class Command(BaseCommand):
             action='store_true',
             help='Skip confirmation prompt for overwriting existing files'
         )
+        parser.add_argument(
+            '--series',
+            type=str,
+            default=None,
+            help='Filter export to entities involved in this series (by title or UUID). Only exports organizations, characters, etc. that participate in events from this series.'
+        )
 
     def handle(self, *args, **options):
         """Execute the export command."""
@@ -1596,6 +1917,7 @@ class Command(BaseCommand):
         database = options['database'] or getattr(settings, 'NEO4J_DATABASE', 'neo4j')
         ger_database = options['ger_database']
         megagraph_mode = options['megagraph']
+        series_filter = options['series']
 
         # Get output directory
         output_dir = Path(options['output']).absolute()
@@ -1610,6 +1932,7 @@ class Command(BaseCommand):
         self.stdout.write(f"  Database: {database}")
         self.stdout.write(f"  GER Database: {ger_database or '(disabled)'}")
         self.stdout.write(f"  Megagraph Mode: {'ENABLED' if megagraph_mode else 'disabled'}")
+        self.stdout.write(f"  Series Filter: {series_filter or '(all series)'}")
         self.stdout.write(f"  Output: {output_dir}\n")
 
         if megagraph_mode:
@@ -1638,7 +1961,8 @@ class Command(BaseCommand):
         try:
             exporter = Neo4jExporter(
                 uri, user, password, output_dir, database, ger_database,
-                megagraph_mode=megagraph_mode
+                megagraph_mode=megagraph_mode,
+                series_filter=series_filter
             )
             exporter.export_all()
 

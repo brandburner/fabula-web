@@ -32,7 +32,7 @@ from .models import (
     ConnectionType, LocationInvolvement, OrganizationInvolvement,
     OrganizationPage, ObjectPage, ObjectInvolvement,
     CharacterIndexPage, OrganizationIndexPage, ObjectIndexPage, EventIndexPage,
-    SeriesIndexPage
+    SeriesIndexPage, Act, EventBeatLink,
 )
 
 
@@ -61,11 +61,11 @@ class FlexibleIdentifierMixin:
         identifier = self.kwargs.get('identifier', '')
 
         # Try global_id first (preferred for cross-season links)
+        # Use filter().first() to handle duplicates gracefully
         if identifier.startswith('ger_'):
-            try:
-                return queryset.get(global_id=identifier)
-            except self.model.DoesNotExist:
-                pass
+            obj = queryset.filter(global_id=identifier).first()
+            if obj:
+                return obj
 
         # Try fabula_uuid (starts with entity type prefix)
         # Note: ep_ and sea_ are the actual Neo4j export prefixes for episodes/seasons
@@ -73,10 +73,9 @@ class FlexibleIdentifierMixin:
                           'org_', 'object_', 'conn_', 'episode_', 'season_',
                           'ep_', 'sea_', 'cand_evt_')
         if any(identifier.startswith(prefix) for prefix in entity_prefixes):
-            try:
-                return queryset.get(fabula_uuid=identifier)
-            except self.model.DoesNotExist:
-                pass
+            obj = queryset.filter(fabula_uuid=identifier).first()
+            if obj:
+                return obj
 
         # Try pk (numeric)
         if identifier.isdigit():
@@ -584,7 +583,7 @@ class CharacterDetailView(FlexibleIdentifierMixin, DetailView):
 
 
 class OrganizationIndexView(SeriesScopedMixin, ListView):
-    """Browse all organizations."""
+    """Browse all organizations, tiered by narrative importance."""
     model = OrganizationPage
     template_name = 'narrative/organization_index_page.html'
     context_object_name = 'organizations'
@@ -592,20 +591,37 @@ class OrganizationIndexView(SeriesScopedMixin, ListView):
     def get_queryset(self):
         series = self.get_series()
 
+        base_qs = OrganizationPage.objects.live()
         if series:
-            # Get events in this series
-            series_events = EventPage.objects.live().descendant_of(series)
-            # Get organizations that have involvements in those events
-            org_ids = OrganizationInvolvement.objects.filter(
-                event__in=series_events
-            ).values_list('organization_id', flat=True).distinct()
+            base_qs = base_qs.descendant_of(series)
 
-            return OrganizationPage.objects.live().filter(
-                id__in=org_ids
-            ).order_by('canonical_name')
-        else:
-            # Global view - all organizations
-            return OrganizationPage.objects.live().order_by('canonical_name')
+        return base_qs.annotate(
+            involvement_count=Count('event_involvements'),
+            member_count=Count(
+                'affiliated_characters',
+                filter=Q(affiliated_characters__live=True),
+                distinct=True,
+            ),
+        ).order_by('-involvement_count', '-member_count', 'canonical_name')
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        orgs = list(self.get_queryset())
+
+        # Tier thresholds
+        key_orgs = [o for o in orgs if o.involvement_count >= 10]
+        active_orgs = [o for o in orgs if 1 <= o.involvement_count < 10]
+        connected_orgs = [o for o in orgs
+                          if o.involvement_count == 0 and o.member_count > 0]
+        minor_orgs = [o for o in orgs
+                      if o.involvement_count == 0 and o.member_count == 0]
+
+        context['key_orgs'] = key_orgs
+        context['active_orgs'] = active_orgs
+        context['connected_orgs'] = connected_orgs
+        context['minor_orgs'] = minor_orgs
+        context['total_count'] = len(orgs)
+        return context
 
 
 class OrganizationDetailView(FlexibleIdentifierMixin, DetailView):
@@ -1002,6 +1018,78 @@ class ScopedGraphMixin:
                 'strength': conn.strength,
                 'description': desc,
                 'pk': conn.pk,
+            })
+
+        # =================================================================
+        # 6. ACT NODES + CONTAINS EDGES
+        # =================================================================
+        episode_ids = set(
+            e.episode_id for e in event_list if e.episode_id
+        )
+        acts = Act.objects.filter(episode_id__in=episode_ids)
+
+        for act in acts:
+            act_node_id = f"act_{act.pk}"
+
+            # Find events in this graph that belong to this act
+            act_edges = []
+            for event in event_list:
+                if event.episode_id == act.episode_id and event.scene_sequence in act.scene_numbers:
+                    act_edges.append(f"event_{event.pk}")
+
+            # Only add act node if it connects to at least one event in the graph
+            if act_edges and act_node_id not in seen_nodes:
+                seen_nodes.add(act_node_id)
+                nodes.append({
+                    'id': act_node_id,
+                    'nodeType': 'act',
+                    'label': f"Act {act.number}",
+                    'fullTitle': f"Act {act.number}" + (f": {act.summary[:60]}..." if act.summary and len(act.summary) > 60 else f": {act.summary}" if act.summary else ""),
+                    'actNumber': act.number,
+                    'sceneNumbers': act.scene_numbers,
+                })
+
+                for event_node_id in act_edges:
+                    edges.append({
+                        'from': act_node_id,
+                        'to': event_node_id,
+                        'type': 'CONTAINS',
+                        'label': 'Contains',
+                        'description': '',
+                        'strength': 'weak',
+                    })
+
+        # =================================================================
+        # 7. PLOTBEAT NODES + DERIVED_FROM EDGES
+        # =================================================================
+        beat_links = EventBeatLink.objects.filter(
+            event_id__in=event_ids
+        ).select_related('plot_beat')
+
+        for link in beat_links:
+            beat = link.plot_beat
+            beat_node_id = f"plotbeat_{beat.pk}"
+
+            if beat_node_id not in seen_nodes:
+                seen_nodes.add(beat_node_id)
+                desc = beat.action_description
+                label = desc[:30] + '...' if desc and len(desc) > 30 else (desc or f"Beat {beat.scene_sequence}.{beat.sequence_in_scene}")
+                nodes.append({
+                    'id': beat_node_id,
+                    'nodeType': 'plotbeat',
+                    'label': label,
+                    'fullTitle': desc or f"Beat {beat.scene_sequence}.{beat.sequence_in_scene}",
+                    'sceneSequence': beat.scene_sequence,
+                })
+
+            event_node_id = f"event_{link.event_id}"
+            edges.append({
+                'from': event_node_id,
+                'to': beat_node_id,
+                'type': 'DERIVED_FROM',
+                'label': 'Derived from',
+                'description': '',
+                'strength': 'weak',
             })
 
         return {'nodes': nodes, 'edges': edges}

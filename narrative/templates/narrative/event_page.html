@@ -51,6 +51,57 @@
     </div>
 
     <div class="max-w-4xl mx-auto px-6">
+        {# ============================================================= #}
+        {# PLOT BEATS - the micro-narrative breakdown #}
+        {# ============================================================= #}
+        {% with beats=page.beat_links.all %}
+        {% if beats %}
+        <section class="mb-10">
+            <div class="flex items-center gap-3 mb-6">
+                <div class="p-2 bg-pink-500/10 rounded-lg">
+                    <i data-lucide="activity" class="w-5 h-5 text-pink-400"></i>
+                </div>
+                <div class="flex-1">
+                    <h2 class="text-lg font-bold text-white">Plot Beats</h2>
+                    <p class="text-sm text-slate-500 mt-0.5">The narrative micro-steps within this event</p>
+                </div>
+                <span class="px-2.5 py-1 text-xs font-semibold bg-pink-500/10 text-pink-400 border border-pink-500/20 rounded-lg">
+                    {{ beats.count }}
+                </span>
+            </div>
+
+            <div class="relative pl-6 border-l-2 border-pink-500/20 space-y-4">
+                {% for link in beats %}
+                {% with beat=link.plot_beat %}
+                <div class="relative before:absolute before:left-[-25px] before:top-3 before:w-2.5 before:h-2.5 before:rounded-full before:bg-pink-500/60 before:border-2 before:border-slate-950">
+                    <div class="p-4 bg-gradient-to-br from-slate-900/50 to-slate-900/30 border border-slate-800/70 rounded-xl">
+                        {% if beat.action_description %}
+                        <p class="text-sm text-slate-300 leading-relaxed">{{ beat.action_description }}</p>
+                        {% endif %}
+
+                        <div class="flex items-center flex-wrap gap-3 mt-3 text-xs text-slate-500">
+                            {% if beat.emotional_shift %}
+                            <span class="flex items-center gap-1.5 px-2 py-1 bg-pink-500/5 border border-pink-500/10 rounded text-pink-300/70">
+                                <i data-lucide="heart" class="w-3 h-3"></i>
+                                {{ beat.emotional_shift|truncatewords:8 }}
+                            </span>
+                            {% endif %}
+                            {% if beat.setting_details %}
+                            <span class="flex items-center gap-1.5 px-2 py-1 bg-slate-800/50 rounded">
+                                <i data-lucide="map-pin" class="w-3 h-3 text-blue-400/60"></i>
+                                {{ beat.setting_details|truncatewords:6 }}
+                            </span>
+                            {% endif %}
+                        </div>
+                    </div>
+                </div>
+                {% endwith %}
+                {% endfor %}
+            </div>
+        </section>
+        {% endif %}
+        {% endwith %}
+
         {# Location card - only show if no rich involvement data exists for this location #}
         {% if page.location and not page.primary_location_has_involvement %}
         <div class="mb-10 p-5 bg-gradient-to-br from-slate-900/50 to-slate-900/30 border border-slate-800/70 rounded-xl hover:border-blue-500/30 transition-all duration-300 hover:shadow-lg hover:shadow-blue-500/5 group">

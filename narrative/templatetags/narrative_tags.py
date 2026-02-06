@@ -281,6 +281,41 @@ def get_episode_context(event):
 # =============================================================================
 
 @register.simple_tag
+def get_episode_acts(episode):
+    """
+    Get acts with their grouped scenes and events for an episode.
+    Returns None if no acts exist (so templates can fall back to scene-only display).
+
+    Usage: {% get_episode_acts page as acts_data %}
+    """
+    from narrative.models import Act, EventPage
+
+    acts = Act.objects.filter(episode=episode).order_by('number')
+    if not acts.exists():
+        return None
+
+    # Get all events for this episode, grouped by scene_sequence
+    events = EventPage.objects.live().filter(episode=episode).order_by(
+        'scene_sequence', 'sequence_in_scene'
+    ).select_related('location')
+
+    events_by_scene = {}
+    for event in events:
+        events_by_scene.setdefault(event.scene_sequence, []).append(event)
+
+    result = []
+    for act in acts:
+        scenes = []
+        for scene_num in sorted(act.scene_numbers):
+            scene_events = events_by_scene.get(scene_num, [])
+            if scene_events:
+                scenes.append({'number': scene_num, 'events': scene_events})
+        result.append({'act': act, 'scenes': scenes})
+
+    return result
+
+
+@register.simple_tag
 def narrative_stats():
     """
     Get overall narrative statistics.
@@ -469,6 +504,20 @@ def narrative_url(context, page):
     if page_class == 'SeasonPage':
         if series_slug:
             return reverse('series_landing', kwargs={'series_slug': series_slug})
+
+    # For index pages (OrganizationIndexPage, CharacterIndexPage, etc.)
+    index_url_map = {
+        'OrganizationIndexPage': ('series_organization_index', 'organization_index'),
+        'CharacterIndexPage': ('series_character_index', 'character_index'),
+        'ObjectIndexPage': ('series_object_index', 'object_index'),
+        'LocationIndexPage': ('series_location_index', 'location_index'),
+    }
+    if page_class in index_url_map:
+        series_url_name, global_url_name = index_url_map[page_class]
+        if series_slug:
+            return reverse(series_url_name, kwargs={'series_slug': series_slug})
+        else:
+            return reverse(global_url_name)
 
     # Fallback to Wagtail's URL if available
     if hasattr(page, 'url') and page.url:
