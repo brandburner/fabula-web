@@ -23,7 +23,7 @@
 
     {# Description - the narrative assertion #}
     <p class="text-sm text-slate-200 mb-4 leading-relaxed font-medium italic">
-        "{{ connection.description }}"
+        "{{ connection.description|md }}"
     </p>
 
     {# Target event link #}
@@ -31,12 +31,12 @@
         {% if direction == "incoming" %}
             <i data-lucide="arrow-left" class="w-4 h-4 shrink-0" style="color: var(--conn-color)"></i>
             <span class="font-semibold text-slate-200 group-hover:text-white transition-colors">
-                {{ connection.from_event.title }}
+                {{ connection.from_event.title|md }}
             </span>
         {% else %}
             <i data-lucide="arrow-right" class="w-4 h-4 shrink-0" style="color: var(--conn-color)"></i>
             <span class="font-semibold text-slate-200 group-hover:text-white transition-colors">
-                {{ connection.to_event.title }}
+                {{ connection.to_event.title|md }}
             </span>
         {% endif %}
     </div>

@@ -136,7 +136,7 @@
 
                             {# Event title #}
                             <div class="font-semibold text-slate-200 group-hover:text-emerald-300 transition-colors mb-3 text-lg leading-snug">
-                                {{ participation.event.title }}
+                                {{ participation.event.title|md }}
                             </div>
 
                             {# Emotional state #}
@@ -144,7 +144,7 @@
                             <div class="flex items-start gap-2 mb-3 p-3 bg-pink-500/5 border border-pink-500/10 rounded-lg">
                                 <i data-lucide="heart" class="w-4 h-4 text-pink-400 mt-0.5 shrink-0"></i>
                                 <p class="text-sm text-slate-300 leading-relaxed">
-                                    {{ participation.emotional_state }}
+                                    {{ participation.emotional_state|md }}
                                 </p>
                             </div>
                             {% endif %}
@@ -152,7 +152,7 @@
                             {# What happened (brief) #}
                             {% if participation.what_happened %}
                             <p class="text-sm text-slate-400 leading-relaxed line-clamp-2">
-                                {{ participation.what_happened|truncatewords:30 }}
+                                {{ participation.what_happened|md|striptags|truncatewords:30 }}
                             </p>
                             {% endif %}
 

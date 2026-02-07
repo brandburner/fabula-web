@@ -134,7 +134,7 @@
 
                             {# Event title #}
                             <div class="font-semibold text-slate-200 group-hover:text-amber-300 transition-colors mb-3 text-lg leading-snug">
-                                {{ involvement.event.title }}
+                                {{ involvement.event.title|md }}
                             </div>
 
                             {# Description of involvement #}
@@ -142,7 +142,7 @@
                             <div class="flex items-start gap-2 mb-3 p-3 bg-amber-500/5 border border-amber-500/10 rounded-lg">
                                 <i data-lucide="box" class="w-4 h-4 text-amber-400 mt-0.5 shrink-0"></i>
                                 <p class="text-sm text-slate-300 leading-relaxed">
-                                    {{ involvement.description_of_involvement }}
+                                    {{ involvement.description_of_involvement|md }}
                                 </p>
                             </div>
                             {% endif %}

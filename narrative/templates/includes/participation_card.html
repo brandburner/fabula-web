@@ -42,7 +42,7 @@
         <div class="flex items-start gap-3 mb-4 p-3 bg-pink-500/5 border border-pink-500/10 rounded-lg">
             <i data-lucide="heart" class="w-5 h-5 text-pink-400 mt-0.5 shrink-0"></i>
             <p class="text-sm text-slate-200 leading-relaxed font-medium">
-                {{ participation.emotional_state }}
+                {{ participation.emotional_state|md }}
             </p>
         </div>
         {% endif %}
@@ -50,7 +50,7 @@
         {# What happened - always visible #}
         {% if participation.what_happened %}
         <p class="text-sm text-slate-400 leading-relaxed">
-            {{ participation.what_happened }}
+            {{ participation.what_happened|md }}
         </p>
         {% endif %}
     </div>

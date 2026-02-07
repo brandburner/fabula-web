@@ -127,14 +127,14 @@
                             <span class="line-clamp-1">{{ involvement.event.episode.title }}</span>
                         </div>
                         <div class="font-semibold text-slate-200 group-hover:text-cyan-300 transition-colors text-lg mb-3">
-                            {{ involvement.event.title }}
+                            {{ involvement.event.title|md }}
                         </div>
                     </a>
 
                     {# Involvement description #}
                     {% if involvement.description_of_involvement %}
                     <p class="text-slate-400 leading-relaxed mb-4">
-                        {{ involvement.description_of_involvement }}
+                        {{ involvement.description_of_involvement|md }}
                     </p>
                     {% endif %}
 
@@ -223,11 +223,11 @@
                         <span class="line-clamp-1">{{ event.episode.title }}</span>
                     </div>
                     <div class="font-semibold text-slate-200 group-hover:text-blue-300 transition-colors">
-                        {{ event.title }}
+                        {{ event.title|md }}
                     </div>
                     {% if event.description %}
                     <p class="text-sm text-slate-400 mt-2 line-clamp-2">
-                        {{ event.description|striptags|truncatewords:30 }}
+                        {{ event.description|md|striptags|truncatewords:30 }}
                     </p>
                     {% endif %}
                 </a>

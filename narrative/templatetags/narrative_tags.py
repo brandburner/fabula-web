@@ -7,7 +7,10 @@ Usage in templates:
     {% load narrative_tags %}
 """
 
+import re
+
 from django import template
+from django.utils.html import escape
 from django.utils.safestring import mark_safe
 
 register = template.Library()
@@ -16,6 +19,24 @@ register = template.Library()
 # =============================================================================
 # FILTERS
 # =============================================================================
+
+@register.filter
+def md(value):
+    """
+    Convert inline markdown formatting to HTML.
+    Handles **bold** and *italic*. Escapes HTML for safety.
+    Usage: {{ event.title|md }}
+    """
+    if not value:
+        return ''
+    text = str(value)
+    text = escape(text)
+    # **bold** → <strong>bold</strong>
+    text = re.sub(r'\*\*(.+?)\*\*', r'<strong>\1</strong>', text, flags=re.DOTALL)
+    # *italic* → <em>italic</em> (not inside a bold span)
+    text = re.sub(r'(?<!\*)\*([^*]+?)\*(?!\*)', r'<em>\1</em>', text)
+    return mark_safe(text)
+
 
 @register.filter
 def replace(value, args):

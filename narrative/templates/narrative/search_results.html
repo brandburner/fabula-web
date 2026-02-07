@@ -94,9 +94,9 @@
                             <span>{{ event.episode.title }}</span>
                             {% endif %}
                         </div>
-                        <h3 class="text-white font-medium">{{ event.title }}</h3>
+                        <h3 class="text-white font-medium">{{ event.title|md }}</h3>
                         {% if event.description %}
-                        <p class="text-slate-400 text-sm mt-1 line-clamp-2">{{ event.description }}</p>
+                        <p class="text-slate-400 text-sm mt-1 line-clamp-2">{{ event.description|md }}</p>
                         {% endif %}
                     </a>
                     {% empty %}

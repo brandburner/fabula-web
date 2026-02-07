@@ -68,10 +68,10 @@
                                 S{{ event.episode.get_parent.specific.season_number }}E{{ event.episode.episode_number }} · {{ event.episode.title }}
                             </div>
                             <div class="font-medium text-slate-200 group-hover:text-violet-300 transition-colors mb-2">
-                                {{ event.title }}
+                                {{ event.title|md }}
                             </div>
                             <p class="text-sm text-slate-400 line-clamp-2">
-                                {{ event.description|striptags|truncatewords:30 }}
+                                {{ event.description|md|striptags|truncatewords:30 }}
                             </p>
                         </div>
                     </div>

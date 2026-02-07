@@ -40,12 +40,12 @@
 
             {# Event title #}
             <h1 class="text-4xl md:text-5xl font-bold text-white mb-8 leading-tight tracking-tight bg-clip-text">
-                {{ page.title }}
+                {{ page.title|md }}
             </h1>
 
             {# Description #}
             <div class="text-xl text-slate-300 leading-relaxed max-w-3xl prose prose-lg prose-invert prose-amber">
-                {{ page.description|richtext }}
+                {{ page.description|md }}
             </div>
         </div>
     </div>
@@ -182,7 +182,7 @@
                             {{ participation.character.canonical_name }}
                         </a>
                         {% if participation.what_happened %}
-                        <p class="text-sm text-slate-500 mt-1">{{ participation.what_happened|truncatewords:20 }}</p>
+                        <p class="text-sm text-slate-500 mt-1">{{ participation.what_happened|md|striptags|truncatewords:20 }}</p>
                         {% endif %}
                     </div>
                     {% endfor %}
