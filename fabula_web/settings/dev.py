@@ -8,21 +8,15 @@ DEBUG = True
 
 ALLOWED_HOSTS = ['localhost', '127.0.0.1']
 
-# Use SQLite for development
+# PostgreSQL for development
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'fabula_web',
+        'HOST': 'localhost',
+        'PORT': '5432',
     }
 }
-
-# Optional: Use PostgreSQL in dev too
-# import dj_database_url
-# DATABASES = {
-#     'default': dj_database_url.config(
-#         default='postgres://localhost/fabula_web'
-#     )
-# }
 
 # Debug toolbar (optional)
 # INSTALLED_APPS += ['debug_toolbar']

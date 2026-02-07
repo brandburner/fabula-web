@@ -666,7 +666,7 @@ class ObjectIndexView(SeriesScopedMixin, ListView):
             # Get objects that have involvements in those events
             object_ids = ObjectInvolvement.objects.filter(
                 event__in=series_events
-            ).values_list('narrative_object_id', flat=True).distinct()
+            ).values_list('object_id', flat=True).distinct()
 
             return ObjectPage.objects.live().filter(
                 id__in=object_ids
