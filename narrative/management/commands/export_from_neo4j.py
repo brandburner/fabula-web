@@ -1218,7 +1218,7 @@ class Neo4jExporter:
 
     def export_plot_beats_by_episode(self, episode_uuid: str, scene_number_map: Dict[str, int]) -> List[Dict]:
         """
-        Export plot beats for a specific episode (megagraph mode only).
+        Export plot beats for a specific episode.
 
         Args:
             episode_uuid: Episode UUID
@@ -1227,8 +1227,6 @@ class Neo4jExporter:
         Returns:
             List of plot beat dictionaries
         """
-        if not self.megagraph_mode:
-            return []
 
         query = """
         MATCH (sb:SceneBoundary)-[:BELONGS_TO_EPISODE]->(ep:Episode {episode_uuid: $episode_uuid})
