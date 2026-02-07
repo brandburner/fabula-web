@@ -24,16 +24,24 @@ register = template.Library()
 def md(value):
     """
     Convert inline markdown formatting to HTML.
-    Handles **bold** and *italic*. Escapes HTML for safety.
+    Handles **bold**, *italic*, and strips wrapping quotes from LLM output.
+    Escapes HTML for safety.
     Usage: {{ event.title|md }}
     """
     if not value:
         return ''
-    text = str(value)
+    text = str(value).strip()
+    # Strip LLM formatting cruft (applied as plain text before escaping).
+    # Peel off wrapping ** and then wrapping quotes, in any nesting order.
+    for _ in range(2):
+        if text.startswith('**') and text.endswith('**'):
+            text = text[2:-2].strip()
+        if len(text) >= 2 and text[0] in '"\u201c' and text[-1] in '"\u201d':
+            text = text[1:-1].strip()
     text = escape(text)
-    # **bold** → <strong>bold</strong>
+    # **bold** → <strong>bold</strong>  (handles remaining inline bold)
     text = re.sub(r'\*\*(.+?)\*\*', r'<strong>\1</strong>', text, flags=re.DOTALL)
-    # *italic* → <em>italic</em> (not inside a bold span)
+    # *italic* → <em>italic</em>
     text = re.sub(r'(?<!\*)\*([^*]+?)\*(?!\*)', r'<em>\1</em>', text)
     return mark_safe(text)
 
