@@ -435,12 +435,17 @@ class EpisodePage(Page):
         blank=True,
         help_text="The prevailing emotional/atmospheric tone"
     )
+    written_by = models.TextField(
+        blank=True,
+        help_text="Writer credit(s)"
+    )
 
     content_panels = Page.content_panels + [
         FieldPanel('episode_number'),
         FieldPanel('logline'),
         FieldPanel('high_level_summary'),
         FieldPanel('dominant_tone'),
+        FieldPanel('written_by'),
         FieldPanel('fabula_uuid'),
     ]
 
@@ -1128,21 +1133,27 @@ class EventIndexPage(Page):
     def get_context(self, request):
         context = super().get_context(request)
 
-        # Get all live events (not just descendants - events may not be direct children)
-        events = EventPage.objects.live().select_related(
-            'episode'
-        ).order_by('episode__episode_number', 'scene_sequence', 'sequence_in_scene')
+        series_page = self.get_parent().specific
 
-        # Sort by series/season/episode/scene (requires Python for page tree traversal)
+        # Scope to events in THIS series only (children of this index page)
+        events = list(
+            EventPage.objects.child_of(self).live().select_related('episode')
+        )
+
+        # Batch-fetch season info for all unique episodes (avoids N+1)
+        episode_pks = set(e.episode_id for e in events if e.episode_id)
+        episode_season = {}
+        for ep in EpisodePage.objects.filter(pk__in=episode_pks):
+            season = ep.get_parent()
+            if season:
+                episode_season[ep.pk] = season.specific
+
         def sort_key(event):
-            if not event.episode:
-                return ('', 0, 0, 0, 0)
-            season = event.episode.get_parent().specific if event.episode else None
-            series = season.get_parent() if season else None
-            series_title = series.title if series else ''
+            if not event.episode_id:
+                return (0, 0, 0, 0)
+            season = episode_season.get(event.episode_id)
             season_num = getattr(season, 'season_number', 0) if season else 0
-            episode_num = event.episode.episode_number if event.episode else 0
-            return (series_title, season_num, episode_num, event.scene_sequence, event.sequence_in_scene)
+            return (season_num, event.episode.episode_number, event.scene_sequence, event.sequence_in_scene)
 
         sorted_events = sorted(events, key=sort_key)
 
@@ -1150,17 +1161,16 @@ class EventIndexPage(Page):
         from itertools import groupby
         episodes_with_events = []
         for episode, episode_events in groupby(sorted_events, key=lambda e: e.episode):
-            season = episode.get_parent().specific if episode else None
-            series = season.get_parent().specific if season else None
+            season = episode_season.get(episode.pk) if episode else None
             episodes_with_events.append({
                 'episode': episode,
                 'season': season,
-                'series': series,
+                'series': series_page,
                 'events': list(episode_events)
             })
 
         context['episodes_with_events'] = episodes_with_events
-        context['events'] = sorted_events  # Keep flat list for backwards compatibility
+        context['events'] = sorted_events
         return context
 
 

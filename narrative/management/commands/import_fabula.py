@@ -731,6 +731,7 @@ class Command(BaseCommand):
 
         if series_page:
             self.log_detail(f"  Using existing series: {series_page.title}")
+            series_page.title = series_title
             series_page.description = series_data.get('description', '')
             if not self.dry_run:
                 series_page.save_revision().publish()
@@ -829,6 +830,7 @@ class Command(BaseCommand):
             episode_page.logline = episode_data.get('logline', '')
             episode_page.high_level_summary = episode_data.get('high_level_summary', '')
             episode_page.dominant_tone = episode_data.get('dominant_tone', '')
+            episode_page.written_by = episode_data.get('written_by', '')
             if not self.dry_run:
                 episode_page.save_revision().publish()
             self.stats.record_updated('EpisodePage')
@@ -841,6 +843,7 @@ class Command(BaseCommand):
                 logline=episode_data.get('logline', ''),
                 high_level_summary=episode_data.get('high_level_summary', ''),
                 dominant_tone=episode_data.get('dominant_tone', ''),
+                written_by=episode_data.get('written_by', ''),
             )
             if not self.dry_run:
                 season_page.add_child(instance=episode_page)
