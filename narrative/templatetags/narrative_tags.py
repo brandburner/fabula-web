@@ -32,12 +32,18 @@ def md(value):
         return ''
     text = str(value).strip()
     # Strip LLM formatting cruft (applied as plain text before escaping).
-    # Peel off wrapping ** and then wrapping quotes, in any nesting order.
-    for _ in range(2):
-        if text.startswith('**') and text.endswith('**'):
-            text = text[2:-2].strip()
-        if len(text) >= 2 and text[0] in '"\u201c' and text[-1] in '"\u201d':
-            text = text[1:-1].strip()
+    # First pass: peel matched wrapping ** pairs.
+    if text.startswith('**') and text.endswith('**') and len(text) > 4:
+        text = text[2:-2].strip()
+    # Second pass: strip orphaned leading/trailing ** (unmatched bold markers).
+    if text.startswith('**') and '**' not in text[2:]:
+        text = text[2:].strip()
+    if text.endswith('**') and '**' not in text[:-2]:
+        text = text[:-2].strip()
+    # Strip wrapping quotes (including doubled quotes like "Title"").
+    text = re.sub(r'^["\u201c]+', '', text)
+    text = re.sub(r'["\u201d]+$', '', text)
+    text = text.strip()
     text = escape(text)
     # **bold** → <strong>bold</strong>  (handles remaining inline bold)
     text = re.sub(r'\*\*(.+?)\*\*', r'<strong>\1</strong>', text, flags=re.DOTALL)
