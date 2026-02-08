@@ -1,7 +1,7 @@
 {% extends "base.html" %}
 {% load wagtailcore_tags wagtailimages_tags narrative_tags %}
 
-{% block title %}{{ page.title }}{% endblock %}
+{% block title %}{{ page.title|md_plain }}{% endblock %}
 
 {% block series_context %}
 <span class="text-slate-500 text-sm font-medium">

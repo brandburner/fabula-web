@@ -1,7 +1,7 @@
 {% extends "base.html" %}
 {% load wagtailcore_tags narrative_tags %}
 
-{% block title %}{{ page.title }}{% endblock %}
+{% block title %}{{ page.title|md_plain }}{% endblock %}
 
 {% block content %}
 <article class="min-h-screen pb-16">

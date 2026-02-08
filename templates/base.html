@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{% block title %}{{ page.title }}{% endblock %} | Fabula</title>
+    <title>{% block title %}{{ page.title|md_plain }}{% endblock %} | Fabula</title>
     
     {# Tailwind CSS via CDN - replace with compiled CSS in production #}
     <script src="https://cdn.tailwindcss.com"></script>

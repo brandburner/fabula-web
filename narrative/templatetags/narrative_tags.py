@@ -20,18 +20,11 @@ register = template.Library()
 # FILTERS
 # =============================================================================
 
-@register.filter
-def md(value):
-    """
-    Convert inline markdown formatting to HTML.
-    Handles **bold**, *italic*, and strips wrapping quotes from LLM output.
-    Escapes HTML for safety.
-    Usage: {{ event.title|md }}
-    """
+def _strip_md_cruft(value):
+    """Strip LLM formatting cruft: wrapping ** bold markers and quotes."""
     if not value:
         return ''
     text = str(value).strip()
-    # Strip LLM formatting cruft (applied as plain text before escaping).
     # First pass: peel matched wrapping ** pairs.
     if text.startswith('**') and text.endswith('**') and len(text) > 4:
         text = text[2:-2].strip()
@@ -43,13 +36,41 @@ def md(value):
     # Strip wrapping quotes (including doubled quotes like "Title"").
     text = re.sub(r'^["\u201c]+', '', text)
     text = re.sub(r'["\u201d]+$', '', text)
-    text = text.strip()
+    return text.strip()
+
+
+@register.filter
+def md(value):
+    """
+    Convert inline markdown formatting to HTML.
+    Handles **bold**, *italic*, and strips wrapping quotes from LLM output.
+    Escapes HTML for safety.
+    Usage: {{ event.title|md }}
+    """
+    text = _strip_md_cruft(value)
+    if not text:
+        return ''
     text = escape(text)
     # **bold** → <strong>bold</strong>  (handles remaining inline bold)
     text = re.sub(r'\*\*(.+?)\*\*', r'<strong>\1</strong>', text, flags=re.DOTALL)
     # *italic* → <em>italic</em>
     text = re.sub(r'(?<!\*)\*([^*]+?)\*(?!\*)', r'<em>\1</em>', text)
     return mark_safe(text)
+
+
+@register.filter
+def md_plain(value):
+    """
+    Strip markdown formatting to plain text (no HTML).
+    Removes wrapping cruft, then strips all remaining ** and * markers.
+    Safe for use in <title>, alt text, etc.
+    Usage: {{ event.title|md_plain }}
+    """
+    text = _strip_md_cruft(value)
+    if not text:
+        return ''
+    text = text.replace('**', '').replace('*', '')
+    return text
 
 
 @register.filter
