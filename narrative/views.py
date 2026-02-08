@@ -646,7 +646,22 @@ class OrganizationDetailView(FlexibleIdentifierMixin, DetailView):
 
         # Get related data
         context['related_characters'] = org.get_related_characters()
-        context['related_events'] = org.get_related_events()
+
+        # Get rich organization involvements
+        involvements = OrganizationInvolvement.objects.filter(
+            organization=org
+        ).select_related('event', 'event__episode').order_by(
+            'event__episode__episode_number',
+            'event__scene_sequence'
+        )
+        context['involvements'] = involvements
+
+        # Text-search related events, excluding those already covered by involvements
+        involvement_event_ids = set(involvements.values_list('event_id', flat=True))
+        related_events = org.get_related_events()
+        if involvement_event_ids:
+            related_events = [e for e in related_events if e.pk not in involvement_event_ids]
+        context['related_events'] = related_events
 
         return context
 
