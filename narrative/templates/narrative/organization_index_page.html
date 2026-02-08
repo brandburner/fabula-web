@@ -4,10 +4,208 @@
 {% block title %}Organizations{% endblock %}
 
 {% block series_context %}
+{% if fabula_theme == 'writerly' %}
+<span class="text-sm" style="color: var(--f-fg-tertiary); font-family: var(--f-font-display);">Institutions & Groups</span>
+{% else %}
 <span class="text-slate-500 text-sm font-medium">Institutions & Groups</span>
+{% endif %}
 {% endblock %}
 
 {% block content %}
+{% if fabula_theme == 'writerly' %}
+{# ===== WRITERLY ORGANIZATION INDEX ===== #}
+<article class="min-h-screen pb-16">
+    <div class="py-14" style="background: var(--f-bg-hero);">
+        <div class="max-w-4xl mx-auto px-6">
+            <div class="flex items-center gap-2 text-sm mb-4">
+                <i data-lucide="building-2" class="w-4 h-4" style="color: var(--f-accent-violet);"></i>
+                <span class="text-xs font-medium tracking-widest uppercase" style="color: var(--f-fg-placeholder); letter-spacing: 0.12em;">Narrative Institutions</span>
+            </div>
+
+            <h1 class="mb-4" style="font-family: var(--f-font-display); color: var(--f-fg-heading); font-size: clamp(1.75rem, 3.5vw, 2.5rem); line-height: 1.15; letter-spacing: -0.02em; font-weight: 400;">
+                Organizations
+            </h1>
+
+            {% if page.introduction %}
+            <div class="max-w-3xl leading-relaxed" style="color: var(--f-fg-secondary); font-size: 1.05rem; line-height: 1.7;">
+                {{ page.introduction|richtext }}
+            </div>
+            {% else %}
+            <p class="max-w-3xl leading-relaxed" style="color: var(--f-fg-secondary); font-size: 1.05rem; line-height: 1.7;">
+                Government bodies, political organizations, media outlets, and other institutions
+                that shape the narrative landscape.
+            </p>
+            {% endif %}
+
+            <div class="flex items-center gap-4 mt-6 text-sm" style="color: var(--f-fg-placeholder);">
+                <span>{{ total_count }} organizations</span>
+                {% if key_orgs %}
+                <span style="color: var(--f-border-default);">|</span>
+                <span>{{ key_orgs|length }} key</span>
+                {% endif %}
+                {% if active_orgs %}
+                <span style="color: var(--f-border-default);">|</span>
+                <span>{{ active_orgs|length }} active</span>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+
+    <div class="max-w-4xl mx-auto px-6 pt-6">
+
+        {# KEY ORGANIZATIONS #}
+        {% if key_orgs %}
+        <section class="mb-12">
+            <div class="flex items-center gap-3 mb-6">
+                <i data-lucide="landmark" class="w-5 h-5" style="color: var(--f-accent-violet);"></i>
+                <div>
+                    <h2 style="font-family: var(--f-font-display); color: var(--f-fg-heading); font-size: 1.15rem; font-weight: 400;">Key Organizations</h2>
+                    <p class="text-sm" style="color: var(--f-fg-placeholder);">Major institutions driving the narrative</p>
+                </div>
+            </div>
+
+            <div class="space-y-3">
+                {% for org in key_orgs %}
+                <a href="{% narrative_url org %}"
+                   class="block p-5 rounded-lg transition-all duration-200 group"
+                   style="background: var(--f-card-bg); border: 1px solid var(--f-card-border); box-shadow: var(--f-card-shadow);"
+                   onmouseover="this.style.boxShadow='var(--f-card-shadow-hover)'; this.style.borderColor='var(--f-accent-violet)'"
+                   onmouseout="this.style.boxShadow='var(--f-card-shadow)'; this.style.borderColor='var(--f-card-border)'">
+                    <div class="flex items-start justify-between gap-4">
+                        <div class="flex-1 min-w-0">
+                            <div class="font-medium text-lg" style="font-family: var(--f-font-display); color: var(--f-fg-heading);">
+                                {{ org.canonical_name }}
+                            </div>
+                            {% if org.sphere_of_influence %}
+                            <div class="text-sm mt-0.5" style="color: var(--f-fg-tertiary);">{{ org.sphere_of_influence }}</div>
+                            {% endif %}
+                            {% if org.description %}
+                            <p class="text-sm line-clamp-2 mt-2" style="color: var(--f-fg-tertiary);">
+                                {{ org.description|striptags|truncatewords:30 }}
+                            </p>
+                            {% endif %}
+                        </div>
+                        <div class="flex-shrink-0 text-right">
+                            <div class="text-sm font-medium" style="color: var(--f-accent-violet);">{{ org.involvement_count }}</div>
+                            <div class="text-xs" style="color: var(--f-fg-placeholder);">events</div>
+                            {% if org.member_count %}
+                            <div class="text-sm font-medium mt-1" style="color: var(--f-fg-secondary);">{{ org.member_count }}</div>
+                            <div class="text-xs" style="color: var(--f-fg-placeholder);">members</div>
+                            {% endif %}
+                        </div>
+                    </div>
+                </a>
+                {% endfor %}
+            </div>
+        </section>
+        {% endif %}
+
+        {# ACTIVE ORGANIZATIONS #}
+        {% if active_orgs %}
+        <section class="mb-12">
+            <div class="flex items-center gap-3 mb-6">
+                <i data-lucide="building-2" class="w-5 h-5" style="color: var(--f-fg-tertiary);"></i>
+                <div>
+                    <h2 style="font-family: var(--f-font-display); color: var(--f-fg-heading); font-size: 1.15rem; font-weight: 400;">Active Organizations</h2>
+                    <p class="text-sm" style="color: var(--f-fg-placeholder);">Organizations with direct event involvement</p>
+                </div>
+            </div>
+
+            <div class="grid gap-3 sm:grid-cols-2">
+                {% for org in active_orgs %}
+                <a href="{% narrative_url org %}"
+                   class="p-4 rounded-lg transition-all duration-200 group"
+                   style="background: var(--f-card-bg); border: 1px solid var(--f-card-border);"
+                   onmouseover="this.style.borderColor='var(--f-accent-violet)'"
+                   onmouseout="this.style.borderColor='var(--f-card-border)'">
+                    <div class="flex items-start justify-between gap-3 mb-1">
+                        <div class="font-medium" style="color: var(--f-fg-heading); font-family: var(--f-font-display);">
+                            {{ org.canonical_name }}
+                        </div>
+                        <span class="flex-shrink-0 px-2 py-0.5 text-xs rounded" style="background: var(--f-bg-elevated); color: var(--f-fg-tertiary);">
+                            {{ org.involvement_count }}
+                        </span>
+                    </div>
+                    {% if org.description %}
+                    <p class="text-sm line-clamp-1" style="color: var(--f-fg-tertiary);">
+                        {{ org.description|striptags|truncatewords:15 }}
+                    </p>
+                    {% endif %}
+                </a>
+                {% endfor %}
+            </div>
+        </section>
+        {% endif %}
+
+        {# CONNECTED ORGANIZATIONS #}
+        {% if connected_orgs %}
+        <section class="mb-12" x-data="{ open: false }">
+            <button @click="open = !open" class="flex items-center gap-3 mb-4 w-full text-left group">
+                <i data-lucide="users" class="w-5 h-5" style="color: var(--f-fg-placeholder);"></i>
+                <div class="flex-1">
+                    <h2 style="font-family: var(--f-font-display); color: var(--f-fg-heading); font-size: 1.15rem; font-weight: 400;">Connected Organizations</h2>
+                    <p class="text-sm" style="color: var(--f-fg-placeholder);">{{ connected_orgs|length }} organizations with affiliated characters</p>
+                </div>
+                <i data-lucide="chevron-down" class="w-5 h-5 transition-transform" style="color: var(--f-fg-placeholder);" :class="open && 'rotate-180'"></i>
+            </button>
+
+            <div x-show="open" x-collapse>
+                <div class="grid gap-2 sm:grid-cols-2 lg:grid-cols-3">
+                    {% for org in connected_orgs %}
+                    <a href="{% narrative_url org %}"
+                       class="px-3 py-2 rounded transition-all group"
+                       style="background: var(--f-bg-elevated); border: 1px solid var(--f-border-light);"
+                       onmouseover="this.style.borderColor='var(--f-accent-violet)'"
+                       onmouseout="this.style.borderColor='var(--f-border-light)'">
+                        <div class="font-medium text-sm truncate" style="color: var(--f-fg-heading);">
+                            {{ org.canonical_name }}
+                        </div>
+                        <div class="text-xs" style="color: var(--f-fg-placeholder);">{{ org.member_count }} member{{ org.member_count|pluralize }}</div>
+                    </a>
+                    {% endfor %}
+                </div>
+            </div>
+        </section>
+        {% endif %}
+
+        {# MINOR ORGANIZATIONS #}
+        {% if minor_orgs %}
+        <section class="mb-12" x-data="{ open: false }">
+            <button @click="open = !open" class="flex items-center gap-3 mb-4 w-full text-left group">
+                <i data-lucide="list" class="w-5 h-5" style="color: var(--f-fg-placeholder);"></i>
+                <div class="flex-1">
+                    <h2 style="font-family: var(--f-font-display); color: var(--f-fg-tertiary); font-size: 1.15rem; font-weight: 400;">All Other Organizations</h2>
+                    <p class="text-sm" style="color: var(--f-fg-placeholder);">{{ minor_orgs|length }} mentioned but not structurally connected</p>
+                </div>
+                <i data-lucide="chevron-down" class="w-5 h-5 transition-transform" style="color: var(--f-fg-placeholder);" :class="open && 'rotate-180'"></i>
+            </button>
+
+            <div x-show="open" x-collapse>
+                <div class="columns-2 sm:columns-3 gap-x-4">
+                    {% for org in minor_orgs %}
+                    <a href="{% narrative_url org %}"
+                       class="block py-1 text-sm transition-colors truncate" style="color: var(--f-fg-tertiary);"
+                       onmouseover="this.style.color='var(--f-accent-violet)'"
+                       onmouseout="this.style.color='var(--f-fg-tertiary)'">
+                        {{ org.canonical_name }}
+                    </a>
+                    {% endfor %}
+                </div>
+            </div>
+        </section>
+        {% endif %}
+
+        {# Empty state #}
+        {% if not key_orgs and not active_orgs and not connected_orgs and not minor_orgs %}
+        <div class="text-sm p-4 rounded-lg" style="color: var(--f-fg-tertiary); background: var(--f-bg-elevated); border: 1px solid var(--f-border-light);">
+            No organizations found
+        </div>
+        {% endif %}
+    </div>
+</article>
+
+{% else %}
+{# ===== DARK ORGANIZATION INDEX (original) ===== #}
 <article class="min-h-screen pb-16">
     {# Hero section #}
     <div class="relative overflow-hidden">
@@ -51,9 +249,6 @@
 
     <div class="max-w-4xl mx-auto px-6">
 
-        {# ================================================================= #}
-        {# KEY ORGANIZATIONS — 10+ event involvements                        #}
-        {# ================================================================= #}
         {% if key_orgs %}
         <section class="mb-12">
             <div class="flex items-center gap-3 mb-6">
@@ -78,7 +273,6 @@
                             {% if org.sphere_of_influence %}
                             <div class="text-sm text-slate-500 mt-0.5">{{ org.sphere_of_influence }}</div>
                             {% endif %}
-
                             {% if org.description %}
                             <p class="text-sm text-slate-400 line-clamp-2 mt-2">
                                 {{ org.description|striptags|truncatewords:30 }}
@@ -100,9 +294,6 @@
         </section>
         {% endif %}
 
-        {# ================================================================= #}
-        {# ACTIVE ORGANIZATIONS — 1-9 event involvements                     #}
-        {# ================================================================= #}
         {% if active_orgs %}
         <section class="mb-12">
             <div class="flex items-center gap-3 mb-6">
@@ -138,9 +329,6 @@
         </section>
         {% endif %}
 
-        {# ================================================================= #}
-        {# CONNECTED ORGANIZATIONS — no events, but have affiliated chars    #}
-        {# ================================================================= #}
         {% if connected_orgs %}
         <section class="mb-12" x-data="{ open: false }">
             <button @click="open = !open"
@@ -171,9 +359,6 @@
         </section>
         {% endif %}
 
-        {# ================================================================= #}
-        {# MINOR ORGANIZATIONS — no events, no chars                         #}
-        {# ================================================================= #}
         {% if minor_orgs %}
         <section class="mb-12" x-data="{ open: false }">
             <button @click="open = !open"
@@ -201,7 +386,6 @@
         </section>
         {% endif %}
 
-        {# Empty state #}
         {% if not key_orgs and not active_orgs and not connected_orgs and not minor_orgs %}
         <div class="text-slate-500 text-sm p-4 bg-slate-900/30 rounded-lg border border-slate-800/50">
             No organizations found
@@ -209,4 +393,5 @@
         {% endif %}
     </div>
 </article>
+{% endif %}
 {% endblock %}

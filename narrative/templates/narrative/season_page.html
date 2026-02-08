@@ -4,6 +4,94 @@
 {% block title %}Season {{ page.season_number }} | {{ page.get_parent.title }}{% endblock %}
 
 {% block content %}
+{% if fabula_theme == 'writerly' %}
+{# ===== WRITERLY SEASON PAGE ===== #}
+<article class="min-h-screen pb-16">
+    {# Hero section #}
+    <div class="py-14" style="background: var(--f-bg-hero);">
+        <div class="max-w-4xl mx-auto px-6">
+            {# Breadcrumb #}
+            <nav class="mb-6" style="font-size: 0.875rem; color: var(--f-fg-placeholder);">
+                <a href="{% narrative_url page.get_parent %}" class="transition-colors duration-200"
+                   style="color: var(--f-fg-placeholder);"
+                   onmouseover="this.style.color='var(--f-fg-secondary)'"
+                   onmouseout="this.style.color='var(--f-fg-placeholder)'">
+                    {{ page.get_parent.title }}
+                </a>
+                <span class="mx-2">/</span>
+                <span style="color: var(--f-fg-secondary);">Season {{ page.season_number }}</span>
+            </nav>
+
+            <div class="flex items-center gap-4">
+                <div class="flex-shrink-0 w-16 h-16 rounded-xl flex items-center justify-center"
+                     style="background: var(--f-accent-blue-bg); border: 1px solid color-mix(in srgb, var(--f-accent-blue) 25%, transparent);">
+                    <i data-lucide="film" class="w-8 h-8" style="color: var(--f-accent-blue);"></i>
+                </div>
+                <div>
+                    <h1 style="font-family: var(--f-font-display); color: var(--f-fg-heading); font-size: clamp(1.875rem, 4vw, 2.5rem); line-height: 1.15; letter-spacing: -0.02em; font-weight: 400;">
+                        Season {{ page.season_number }}
+                    </h1>
+                    <p style="color: var(--f-fg-tertiary);">{{ page.get_children.live.count }} episodes</p>
+                </div>
+            </div>
+
+            {% if page.description %}
+            <div class="mt-6 max-w-3xl leading-relaxed" style="color: var(--f-fg-secondary); font-size: 1.05rem; line-height: 1.7;">
+                {{ page.description|richtext }}
+            </div>
+            {% endif %}
+        </div>
+    </div>
+
+    <div class="max-w-4xl mx-auto px-6 pt-6">
+        <hr style="border-color: var(--f-rule-color);" class="mb-8">
+
+        <section>
+            <div class="flex items-center gap-3 mb-8">
+                <i data-lucide="play-circle" class="w-5 h-5" style="color: var(--f-accent-blue);"></i>
+                <h2 style="font-family: var(--f-font-display); color: var(--f-fg-heading); font-size: 1.35rem; font-weight: 400;">
+                    Episodes
+                </h2>
+            </div>
+
+            <div class="space-y-3">
+                {% for episode in page.get_children.live.specific %}
+                <a href="{% narrative_url episode %}"
+                   class="block p-4 rounded-lg transition-all duration-200 group"
+                   style="background: var(--f-card-bg); border: 1px solid var(--f-card-border); box-shadow: var(--f-card-shadow);"
+                   onmouseover="this.style.boxShadow='var(--f-card-shadow-hover)'; this.style.borderColor='var(--f-accent-blue)'"
+                   onmouseout="this.style.boxShadow='var(--f-card-shadow)'; this.style.borderColor='var(--f-card-border)'">
+                    <div class="flex items-center gap-4">
+                        <div class="flex-shrink-0 w-12 h-12 rounded-lg flex items-center justify-center"
+                             style="background: var(--f-accent-blue-bg); border: 1px solid color-mix(in srgb, var(--f-accent-blue) 20%, transparent);">
+                            <span class="text-lg" style="font-family: var(--f-font-mono); color: var(--f-accent-blue);">{{ episode.episode_number }}</span>
+                        </div>
+                        <div class="flex-1 min-w-0">
+                            <h3 class="text-base font-medium transition-colors" style="color: var(--f-fg-heading);">
+                                {{ episode.title }}
+                            </h3>
+                            {% if episode.air_date %}
+                            <p class="text-sm" style="color: var(--f-fg-placeholder);">{{ episode.air_date|date:"F j, Y" }}</p>
+                            {% endif %}
+                        </div>
+                        <div class="flex-shrink-0 transition-colors" style="color: var(--f-fg-placeholder);">
+                            <i data-lucide="chevron-right" class="w-5 h-5"></i>
+                        </div>
+                    </div>
+                </a>
+                {% empty %}
+                <div class="text-sm p-8 rounded-lg text-center" style="color: var(--f-fg-placeholder); background: var(--f-bg-elevated); border: 1px solid var(--f-border-light);">
+                    <i data-lucide="inbox" class="w-8 h-8 mx-auto mb-2 opacity-50"></i>
+                    <p>No episodes found</p>
+                </div>
+                {% endfor %}
+            </div>
+        </section>
+    </div>
+</article>
+
+{% else %}
+{# ===== DARK SEASON PAGE ===== #}
 <article class="min-h-screen pb-16">
     <div class="relative overflow-hidden">
         <div class="absolute inset-0 bg-gradient-to-b from-blue-950/20 via-slate-950 to-slate-950"></div>
@@ -76,4 +164,5 @@
         </section>
     </div>
 </article>
+{% endif %}
 {% endblock %}

@@ -1,11 +1,11 @@
 {% load static wagtailcore_tags narrative_tags %}
 <!DOCTYPE html>
-<html lang="en" class="dark">
+<html lang="en" data-theme="{{ fabula_theme|default:'writerly' }}"{% if fabula_theme == 'dark' %} class="dark"{% endif %}>
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{% block title %}{{ page.title|md_plain }}{% endblock %} | Fabula</title>
-    
+
     {# Tailwind CSS via CDN - replace with compiled CSS in production #}
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
@@ -22,31 +22,23 @@
             }
         }
     </script>
-    
+
     {# Lucide Icons #}
     <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
-    
-    <style>
-        /* Custom scrollbar */
-        ::-webkit-scrollbar {
-            width: 8px;
-            height: 8px;
-        }
-        ::-webkit-scrollbar-track {
-            background: #0f172a;
-        }
-        ::-webkit-scrollbar-thumb {
-            background: #334155;
-            border-radius: 4px;
-        }
-        ::-webkit-scrollbar-thumb:hover {
-            background: #475569;
-        }
 
-        /* Smooth scroll behavior */
-        html {
-            scroll-behavior: smooth;
-        }
+    {# Design System Tokens #}
+    <link rel="stylesheet" href="{% static 'narrative/css/theme-tokens.css' %}">
+
+    {% if fabula_theme == 'writerly' %}
+    {# Writerly typography: Newsreader for display, DM Sans for body #}
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,300;1,9..40,400&family=Newsreader:ital,opsz,wght@0,6..72,300;0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,300;1,6..72,400&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    {% endif %}
+
+    <style>
+        {% if fabula_theme == 'dark' %}
+        /* ===== DARK THEME INLINE STYLES (original) ===== */
 
         /* Smooth transitions */
         .transition-base {
@@ -158,10 +150,145 @@
         .prose-narrative p:last-child {
             margin-bottom: 0;
         }
+
+        {% else %}
+        /* ===== WRITERLY THEME INLINE STYLES ===== */
+
+        /* Connection type colors (muted for writerly) */
+        .conn-causal { --conn-color: #5a8a8a; }
+        .conn-foreshadowing { --conn-color: #7a6b8a; }
+        .conn-thematic-parallel { --conn-color: #8a7b4a; }
+        .conn-character-continuity { --conn-color: #4a7c59; }
+        .conn-escalation { --conn-color: #8a4a4a; }
+        .conn-callback { --conn-color: #4a6b8a; }
+        .conn-emotional-echo { --conn-color: #8a5a6b; }
+        .conn-symbolic-parallel { --conn-color: #6b5a8a; }
+        .conn-temporal { --conn-color: #5a6b8a; }
+
+        .conn-badge {
+            background-color: color-mix(in srgb, var(--conn-color) 8%, #faf8f4);
+            border-color: color-mix(in srgb, var(--conn-color) 25%, #e3ded5);
+            color: var(--conn-color);
+            transition: all 250ms ease;
+        }
+        .conn-badge:hover {
+            background-color: color-mix(in srgb, var(--conn-color) 14%, #faf8f4);
+            border-color: color-mix(in srgb, var(--conn-color) 40%, #e3ded5);
+        }
+
+        .conn-card {
+            border-color: color-mix(in srgb, var(--conn-color) 20%, #e3ded5);
+            background-color: color-mix(in srgb, var(--conn-color) 4%, #ffffff);
+            transition: all 250ms ease;
+        }
+        .conn-card:hover {
+            background-color: color-mix(in srgb, var(--conn-color) 8%, #ffffff);
+            border-color: color-mix(in srgb, var(--conn-color) 35%, #e3ded5);
+            box-shadow: 0 4px 12px rgba(26, 24, 21, 0.06);
+        }
+
+        /* Fade in animation (subtler) */
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(8px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .fade-in { animation: fadeIn 0.4s ease-out forwards; }
+        .stagger-children > * { opacity: 0; animation: fadeIn 0.35s ease-out forwards; }
+        .stagger-children > *:nth-child(1) { animation-delay: 0.03s; }
+        .stagger-children > *:nth-child(2) { animation-delay: 0.06s; }
+        .stagger-children > *:nth-child(3) { animation-delay: 0.09s; }
+        .stagger-children > *:nth-child(4) { animation-delay: 0.12s; }
+        .stagger-children > *:nth-child(5) { animation-delay: 0.15s; }
+        .stagger-children > *:nth-child(6) { animation-delay: 0.18s; }
+
+        /* Glass for writerly */
+        .glass {
+            background: rgba(250, 248, 244, 0.92);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+        }
+
+        /* Episode summary prose styling */
+        .episode-summary {
+            font-family: 'DM Sans', system-ui, sans-serif;
+            line-height: 1.7;
+        }
+        .episode-summary p { margin-bottom: 1.25em; }
+        .episode-summary p:last-child { margin-bottom: 0; }
+
+        /* Prose narrative */
+        .prose-narrative { line-height: 1.7; }
+        .prose-narrative p { margin-bottom: 1.25em; }
+        .prose-narrative p:last-child { margin-bottom: 0; }
+
+        /* Animated gradient disabled in writerly */
+        .animate-gradient { animation: none; }
+
+        {% endif %}
     </style>
-    
+
     {% block extra_css %}{% endblock %}
 </head>
+
+{% if fabula_theme == 'writerly' %}
+{# ===== WRITERLY BODY ===== #}
+<body class="min-h-screen antialiased" style="background-color: var(--f-bg-page); color: var(--f-fg-secondary); font-family: var(--f-font-body);">
+    {# Header #}
+    <header class="fixed top-0 left-0 right-0 z-50 glass" style="border-bottom: 1px solid var(--f-border-light);">
+        <div class="flex items-center justify-between px-6 h-14 max-w-5xl mx-auto">
+            {# Left: Logo + Back #}
+            <div class="flex items-center gap-3">
+                <a href="{% url 'wagtail_serve' '' %}" class="flex items-center gap-2.5 group transition-all duration-200">
+                    <span class="text-lg tracking-tight font-semibold transition-colors" style="font-family: var(--f-font-display); color: var(--f-fg-heading);">
+                        Fabula
+                    </span>
+                </a>
+                <span style="color: var(--f-border-strong);" class="hidden sm:inline">|</span>
+                <button onclick="history.back()"
+                        class="flex items-center gap-1.5 px-2 py-1.5 text-sm rounded-md transition-all duration-200"
+                        style="color: var(--f-fg-tertiary);"
+                        onmouseover="this.style.color='var(--f-fg-primary)'"
+                        onmouseout="this.style.color='var(--f-fg-tertiary)'"
+                        title="Go back">
+                    <i data-lucide="chevron-left" class="w-4 h-4"></i>
+                    <span class="hidden sm:inline">Back</span>
+                </button>
+            </div>
+
+            {# Center: Context #}
+            <div class="flex-1 flex justify-center">
+                {% block series_context %}
+                {% if current_series %}
+                <a href="{% url 'series_landing' series_slug=current_series.slug %}" class="text-sm transition-colors" style="color: var(--f-fg-tertiary); font-family: var(--f-font-display);">
+                    {{ current_series.title }}
+                </a>
+                {% else %}
+                <span class="text-sm" style="color: var(--f-fg-tertiary); font-family: var(--f-font-display);">{{ request.site.site_name|default:"Narrative Web" }}</span>
+                {% endif %}
+                {% endblock %}
+            </div>
+
+            {# Right: Graph + Theme toggle #}
+            <div class="flex items-center gap-2">
+                {% block header_actions %}
+                {% contextual_graph_url as graph_url %}
+                <a href="{{ graph_url }}"
+                   class="group flex items-center gap-2 px-3 py-1.5 text-sm rounded-md transition-all duration-200"
+                   style="color: var(--f-accent-cyan); border: 1px solid var(--f-border-default);"
+                   title="View in graph context">
+                    <i data-lucide="git-branch" class="w-4 h-4"></i>
+                    <span class="hidden sm:inline">Graph</span>
+                </a>
+                {% endblock %}
+                {# Theme toggle #}
+                <a href="?theme=dark" class="flex items-center px-2 py-1.5 text-sm rounded-md transition-all duration-200" style="color: var(--f-fg-tertiary); border: 1px solid var(--f-border-light);" title="Switch to dark theme">
+                    <i data-lucide="moon" class="w-4 h-4"></i>
+                </a>
+            </div>
+        </div>
+    </header>
+{% else %}
+{# ===== DARK BODY (original, preserved exactly) ===== #}
 <body class="min-h-screen bg-slate-950 text-slate-100 antialiased">
     {# Header #}
     <header class="fixed top-0 left-0 right-0 z-50 glass border-b border-slate-800/50">
@@ -183,9 +310,9 @@
                 </button>
             </div>
 
-            {# Center: Context (series/episode info) #}
+            {# Center: Context (series/episode info) - uses same block as writerly #}
             <div class="flex-1 flex justify-center">
-                {% block series_context %}
+                {# series_context block is defined in writerly branch above; dark uses its default #}
                 {% if current_series %}
                 <a href="{% url 'series_landing' series_slug=current_series.slug %}" class="text-slate-500 text-sm font-medium hover:text-amber-400 transition-colors">
                     {{ current_series.title }}
@@ -193,12 +320,11 @@
                 {% else %}
                 <span class="text-slate-500 text-sm font-medium">{{ request.site.site_name|default:"Narrative Web" }}</span>
                 {% endif %}
-                {% endblock %}
             </div>
 
-            {# Right: Graph View #}
-            <div class="flex items-center gap-3">
-                {% block header_actions %}
+            {# Right: Graph View + Theme toggle #}
+            <div class="flex items-center gap-2">
+                {% block header_actions_dark %}
                 {% contextual_graph_url as graph_url %}
                 <a href="{{ graph_url }}"
                    class="group flex items-center gap-2 px-3 py-1.5 text-sm font-medium rounded-lg bg-slate-800/60 text-slate-400 hover:text-white border border-slate-700/50 hover:border-cyan-500/30 hover:bg-cyan-500/10 transition-all duration-300"
@@ -207,16 +333,35 @@
                     <span class="hidden sm:inline">Graph</span>
                 </a>
                 {% endblock %}
+                {# Theme toggle #}
+                <a href="?theme=writerly" class="flex items-center px-2 py-1.5 text-sm text-slate-500 hover:text-white border border-slate-700/50 rounded-lg transition-all duration-200" title="Switch to writerly theme">
+                    <i data-lucide="sun" class="w-4 h-4"></i>
+                </a>
             </div>
         </div>
     </header>
+{% endif %}
 
-    {# Main content #}
+    {# Main content - single block definition #}
     <main class="pt-14">
         {% block content %}{% endblock %}
     </main>
 
     {# Footer #}
+    {% if fabula_theme == 'writerly' %}
+    <footer style="border-top: 1px solid var(--f-border-default);" class="mt-20 py-10">
+        <div class="max-w-4xl mx-auto px-6 text-center">
+            <p class="text-sm mb-4" style="color: var(--f-fg-tertiary);">
+                Narrative analysis powered by
+                <a href="#" class="transition-colors font-medium" style="color: var(--f-accent-primary);">Fabula</a>
+            </p>
+            <div class="flex items-center justify-center gap-2 text-xs" style="color: var(--f-fg-placeholder);">
+                <span>Mapping the narrative web of</span>
+                <span style="color: var(--f-accent-primary);">{% if current_series %}{{ current_series.title }}{% else %}your story{% endif %}</span>
+            </div>
+        </div>
+    </footer>
+    {% else %}
     <footer class="border-t border-slate-800/50 mt-20 py-10 relative overflow-hidden">
         <div class="absolute inset-0 bg-gradient-to-b from-transparent to-slate-950/50"></div>
         <div class="relative max-w-4xl mx-auto px-6 text-center">
@@ -229,12 +374,13 @@
             </div>
         </div>
     </footer>
+    {% endif %}
 
     {# Initialize Lucide icons #}
     <script>
         lucide.createIcons();
     </script>
-    
+
     {% block extra_js %}{% endblock %}
 </body>
 </html>

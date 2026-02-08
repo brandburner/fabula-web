@@ -4,10 +4,196 @@
 {% block title %}Narrative Graph{% endblock %}
 
 {% block series_context %}
+{% if fabula_theme == 'writerly' %}
+<span class="text-sm" style="color: var(--f-fg-tertiary); font-family: var(--f-font-display);">Graph Visualization</span>
+{% else %}
 <span class="text-slate-500 text-sm font-medium">Graph Visualization</span>
+{% endif %}
 {% endblock %}
 
 {% block content %}
+{% if fabula_theme == 'writerly' %}
+{# ===== WRITERLY GRAPH LANDING ===== #}
+<article class="min-h-screen pb-16">
+    {# Hero section #}
+    <div class="py-14" style="background: var(--f-bg-hero);">
+        <div class="max-w-4xl mx-auto px-6">
+            <div class="flex items-center gap-2 mb-4">
+                <i data-lucide="git-branch" class="w-4 h-4" style="color: var(--f-accent-cyan);"></i>
+                <span class="text-sm font-medium" style="color: var(--f-accent-cyan);">Graph Visualization</span>
+            </div>
+
+            <h1 class="mb-6" style="font-family: var(--f-font-display); color: var(--f-fg-heading); font-size: clamp(1.75rem, 3.5vw, 2.5rem); line-height: 1.15; letter-spacing: -0.02em; font-weight: 400;">
+                Explore the Narrative Graph
+            </h1>
+
+            <p class="max-w-3xl leading-relaxed" style="color: var(--f-fg-secondary); font-size: 1.05rem; line-height: 1.7;">
+                The narrative graph contains {{ event_count }} events and {{ connection_count }} connections.
+                Select a focused view below for the best experience.
+            </p>
+        </div>
+    </div>
+
+    <div class="max-w-4xl mx-auto px-6 pt-6">
+        <hr style="border-color: var(--f-rule-color);" class="mb-8">
+
+        {# Graph options with sample items #}
+        <div class="space-y-6">
+
+            {# Episode graphs #}
+            <section class="p-6 rounded-lg" style="background: var(--f-card-bg); border: 1px solid var(--f-card-border); box-shadow: var(--f-card-shadow);">
+                <div class="flex items-center gap-3 mb-4">
+                    <div class="w-10 h-10 rounded-lg flex items-center justify-center" style="background: var(--f-accent-blue-bg); border: 1px solid color-mix(in srgb, var(--f-accent-blue) 20%, transparent);">
+                        <i data-lucide="tv" class="w-5 h-5" style="color: var(--f-accent-blue);"></i>
+                    </div>
+                    <div>
+                        <h3 class="font-medium" style="font-family: var(--f-font-display); color: var(--f-fg-heading); font-size: 1.05rem;">Episode Graphs</h3>
+                        <p class="text-sm" style="color: var(--f-fg-tertiary);">Events within a single episode (20-40 nodes)</p>
+                    </div>
+                </div>
+
+                {% if sample_episodes %}
+                <div class="flex flex-wrap gap-2 mb-4">
+                    {% for episode in sample_episodes %}
+                    <a href="{% url 'episode_graph' episode.fabula_uuid|default:episode.pk %}"
+                       class="inline-flex items-center gap-2 px-3 py-1.5 rounded-md text-sm transition-colors"
+                       style="background: color-mix(in srgb, var(--f-accent-blue) 8%, transparent); color: var(--f-accent-blue); border: 1px solid color-mix(in srgb, var(--f-accent-blue) 20%, transparent);"
+                       onmouseover="this.style.background='color-mix(in srgb, var(--f-accent-blue) 15%, transparent)'"
+                       onmouseout="this.style.background='color-mix(in srgb, var(--f-accent-blue) 8%, transparent)'">
+                        <i data-lucide="git-branch" class="w-3.5 h-3.5"></i>
+                        <span>{{ episode.title|truncatewords:4 }}</span>
+                        <span style="opacity: 0.5;" class="text-xs">({{ episode.event_count }})</span>
+                    </a>
+                    {% endfor %}
+                </div>
+                {% endif %}
+
+                <a href="{% url 'wagtail_serve' '' %}"
+                   class="text-sm flex items-center gap-1 transition-colors"
+                   style="color: var(--f-accent-blue);"
+                   onmouseover="this.style.opacity='0.8'"
+                   onmouseout="this.style.opacity='1'">
+                    Browse all episodes <i data-lucide="arrow-right" class="w-4 h-4"></i>
+                </a>
+            </section>
+
+            {# Character journeys #}
+            <section class="p-6 rounded-lg" style="background: var(--f-card-bg); border: 1px solid var(--f-card-border); box-shadow: var(--f-card-shadow);">
+                <div class="flex items-center gap-3 mb-4">
+                    <div class="w-10 h-10 rounded-lg flex items-center justify-center" style="background: var(--f-accent-green-bg); border: 1px solid color-mix(in srgb, var(--f-accent-green) 20%, transparent);">
+                        <i data-lucide="user" class="w-5 h-5" style="color: var(--f-accent-green);"></i>
+                    </div>
+                    <div>
+                        <h3 class="font-medium" style="font-family: var(--f-font-display); color: var(--f-fg-heading); font-size: 1.05rem;">Character Journeys</h3>
+                        <p class="text-sm" style="color: var(--f-fg-tertiary);">Follow a character's path through events</p>
+                    </div>
+                </div>
+
+                {% if sample_characters %}
+                <div class="flex flex-wrap gap-2 mb-4">
+                    {% for character in sample_characters %}
+                    <a href="{% url 'character_graph' character.global_id|default:character.fabula_uuid|default:character.pk %}"
+                       class="inline-flex items-center gap-2 px-3 py-1.5 rounded-md text-sm transition-colors"
+                       style="background: color-mix(in srgb, var(--f-accent-green) 8%, transparent); color: var(--f-accent-green); border: 1px solid color-mix(in srgb, var(--f-accent-green) 20%, transparent);"
+                       onmouseover="this.style.background='color-mix(in srgb, var(--f-accent-green) 15%, transparent)'"
+                       onmouseout="this.style.background='color-mix(in srgb, var(--f-accent-green) 8%, transparent)'">
+                        <i data-lucide="git-branch" class="w-3.5 h-3.5"></i>
+                        <span>{{ character.title }}</span>
+                        <span style="opacity: 0.5;" class="text-xs">({{ character.event_count }})</span>
+                    </a>
+                    {% endfor %}
+                </div>
+                {% endif %}
+
+                <a href="{% url 'wagtail_serve' 'characters/' %}"
+                   class="text-sm flex items-center gap-1 transition-colors"
+                   style="color: var(--f-accent-green);"
+                   onmouseover="this.style.opacity='0.8'"
+                   onmouseout="this.style.opacity='1'">
+                    Browse all characters <i data-lucide="arrow-right" class="w-4 h-4"></i>
+                </a>
+            </section>
+
+            {# Theme graphs #}
+            <section class="p-6 rounded-lg" style="background: var(--f-card-bg); border: 1px solid var(--f-card-border); box-shadow: var(--f-card-shadow);">
+                <div class="flex items-center gap-3 mb-4">
+                    <div class="w-10 h-10 rounded-lg flex items-center justify-center" style="background: var(--f-accent-violet-bg); border: 1px solid color-mix(in srgb, var(--f-accent-violet) 20%, transparent);">
+                        <i data-lucide="sparkles" class="w-5 h-5" style="color: var(--f-accent-violet);"></i>
+                    </div>
+                    <div>
+                        <h3 class="font-medium" style="font-family: var(--f-font-display); color: var(--f-fg-heading); font-size: 1.05rem;">Theme Graphs</h3>
+                        <p class="text-sm" style="color: var(--f-fg-tertiary);">Events connected by thematic threads</p>
+                    </div>
+                </div>
+
+                {% if sample_themes %}
+                <div class="flex flex-wrap gap-2 mb-4">
+                    {% for theme in sample_themes %}
+                    <a href="{% url 'theme_graph' theme.global_id|default:theme.fabula_uuid|default:theme.pk %}"
+                       class="inline-flex items-center gap-2 px-3 py-1.5 rounded-md text-sm transition-colors"
+                       style="background: color-mix(in srgb, var(--f-accent-violet) 8%, transparent); color: var(--f-accent-violet); border: 1px solid color-mix(in srgb, var(--f-accent-violet) 20%, transparent);"
+                       onmouseover="this.style.background='color-mix(in srgb, var(--f-accent-violet) 15%, transparent)'"
+                       onmouseout="this.style.background='color-mix(in srgb, var(--f-accent-violet) 8%, transparent)'">
+                        <i data-lucide="git-branch" class="w-3.5 h-3.5"></i>
+                        <span>{{ theme.name|truncatewords:3 }}</span>
+                        <span style="opacity: 0.5;" class="text-xs">({{ theme.event_count }})</span>
+                    </a>
+                    {% endfor %}
+                </div>
+                {% endif %}
+
+                <a href="{% url 'theme_index' %}"
+                   class="text-sm flex items-center gap-1 transition-colors"
+                   style="color: var(--f-accent-violet);"
+                   onmouseover="this.style.opacity='0.8'"
+                   onmouseout="this.style.opacity='1'">
+                    Browse all themes <i data-lucide="arrow-right" class="w-4 h-4"></i>
+                </a>
+            </section>
+
+            {# Arc graphs #}
+            <section class="p-6 rounded-lg" style="background: var(--f-card-bg); border: 1px solid var(--f-card-border); box-shadow: var(--f-card-shadow);">
+                <div class="flex items-center gap-3 mb-4">
+                    <div class="w-10 h-10 rounded-lg flex items-center justify-center" style="background: var(--f-accent-orange-bg); border: 1px solid color-mix(in srgb, var(--f-accent-orange) 20%, transparent);">
+                        <i data-lucide="trending-up" class="w-5 h-5" style="color: var(--f-accent-orange);"></i>
+                    </div>
+                    <div>
+                        <h3 class="font-medium" style="font-family: var(--f-font-display); color: var(--f-fg-heading); font-size: 1.05rem;">Conflict Arc Graphs</h3>
+                        <p class="text-sm" style="color: var(--f-fg-tertiary);">Track conflicts across episodes</p>
+                    </div>
+                </div>
+
+                {% if sample_arcs %}
+                <div class="flex flex-wrap gap-2 mb-4">
+                    {% for arc in sample_arcs %}
+                    <a href="{% url 'arc_graph' arc.global_id|default:arc.fabula_uuid|default:arc.pk %}"
+                       class="inline-flex items-center gap-2 px-3 py-1.5 rounded-md text-sm transition-colors"
+                       style="background: color-mix(in srgb, var(--f-accent-orange) 8%, transparent); color: var(--f-accent-orange); border: 1px solid color-mix(in srgb, var(--f-accent-orange) 20%, transparent);"
+                       onmouseover="this.style.background='color-mix(in srgb, var(--f-accent-orange) 15%, transparent)'"
+                       onmouseout="this.style.background='color-mix(in srgb, var(--f-accent-orange) 8%, transparent)'">
+                        <i data-lucide="git-branch" class="w-3.5 h-3.5"></i>
+                        <span>{{ arc.title|truncatewords:3 }}</span>
+                        <span style="opacity: 0.5;" class="text-xs">({{ arc.event_count }})</span>
+                    </a>
+                    {% endfor %}
+                </div>
+                {% endif %}
+
+                <a href="{% url 'arc_index' %}"
+                   class="text-sm flex items-center gap-1 transition-colors"
+                   style="color: var(--f-accent-orange);"
+                   onmouseover="this.style.opacity='0.8'"
+                   onmouseout="this.style.opacity='1'">
+                    Browse all arcs <i data-lucide="arrow-right" class="w-4 h-4"></i>
+                </a>
+            </section>
+
+        </div>
+    </div>
+</article>
+
+{% else %}
+{# ===== DARK GRAPH LANDING (original) ===== #}
 <article class="min-h-screen pb-16">
     {# Hero section #}
     <div class="relative overflow-hidden">
@@ -164,4 +350,5 @@
         </div>
     </div>
 </article>
+{% endif %}
 {% endblock %}

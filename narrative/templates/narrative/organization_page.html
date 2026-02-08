@@ -4,6 +4,259 @@
 {% block title %}{{ page.title|md_plain }}{% endblock %}
 
 {% block content %}
+{% if fabula_theme == 'writerly' %}
+{# ===== WRITERLY ORGANIZATION DETAIL ===== #}
+<article class="min-h-screen pb-16">
+    {# Hero section #}
+    <div class="py-14" style="background: var(--f-bg-hero);">
+        <div class="max-w-4xl mx-auto px-6">
+            {# Breadcrumb #}
+            <nav class="text-sm mb-6">
+                <a href="{% narrative_url page.get_parent %}" class="transition-colors" style="color: var(--f-fg-placeholder);"
+                   onmouseover="this.style.color='var(--f-accent-violet)'"
+                   onmouseout="this.style.color='var(--f-fg-placeholder)'">
+                    Organizations
+                </a>
+                <span class="mx-2" style="color: var(--f-border-default);">/</span>
+                <span style="color: var(--f-fg-secondary);">{{ page.title }}</span>
+            </nav>
+
+            <div class="flex items-start gap-6">
+                <div class="flex-shrink-0 w-16 h-16 rounded-xl flex items-center justify-center" style="background: color-mix(in srgb, var(--f-accent-violet) 8%, transparent); border: 1px solid color-mix(in srgb, var(--f-accent-violet) 20%, transparent);">
+                    <i data-lucide="building-2" class="w-8 h-8" style="color: var(--f-accent-violet);"></i>
+                </div>
+                <div>
+                    <h1 class="mb-2 leading-tight" style="font-family: var(--f-font-display); color: var(--f-fg-heading); font-size: clamp(1.75rem, 3.5vw, 2.5rem); letter-spacing: -0.02em; font-weight: 400;">
+                        {{ page.title }}
+                    </h1>
+                    {% if page.sphere_of_influence %}
+                    <span class="inline-block px-3 py-1 rounded-full text-sm" style="background: color-mix(in srgb, var(--f-accent-violet) 8%, transparent); border: 1px solid color-mix(in srgb, var(--f-accent-violet) 20%, transparent); color: var(--f-accent-violet);">
+                        {{ page.sphere_of_influence }}
+                    </span>
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="max-w-4xl mx-auto px-6 pt-6">
+        {% if page.description %}
+        <section class="mb-8">
+            <h2 class="flex items-center gap-2 mb-4" style="font-family: var(--f-font-display); color: var(--f-fg-heading); font-size: 1.15rem; font-weight: 400;">
+                <i data-lucide="file-text" class="w-5 h-5" style="color: var(--f-fg-placeholder);"></i>
+                Description
+            </h2>
+            <div class="max-w-none leading-relaxed" style="color: var(--f-fg-secondary); line-height: 1.7;">
+                {{ page.description|richtext }}
+            </div>
+        </section>
+        {% endif %}
+
+        {% with related_chars=page.get_related_characters %}
+        {% if related_chars %}
+        <section class="mb-8">
+            <h2 class="flex items-center gap-2 mb-4" style="font-family: var(--f-font-display); color: var(--f-fg-heading); font-size: 1.15rem; font-weight: 400;">
+                <i data-lucide="users" class="w-5 h-5" style="color: var(--f-fg-placeholder);"></i>
+                Affiliated Characters
+            </h2>
+            <div class="grid sm:grid-cols-2 gap-3">
+                {% for character in related_chars %}
+                <a href="{% narrative_url character %}" class="p-3 rounded-lg transition-all duration-200 group"
+                   style="background: var(--f-card-bg); border: 1px solid var(--f-card-border);"
+                   onmouseover="this.style.borderColor='var(--f-accent-violet)'"
+                   onmouseout="this.style.borderColor='var(--f-card-border)'">
+                    <div class="font-medium" style="color: var(--f-fg-heading); font-family: var(--f-font-display);">{{ character.canonical_name }}</div>
+                    {% if character.title_role %}
+                    <div class="text-sm mt-0.5" style="color: var(--f-fg-tertiary);">{{ character.title_role }}</div>
+                    {% endif %}
+                </a>
+                {% endfor %}
+            </div>
+        </section>
+        {% endif %}
+        {% endwith %}
+
+        {# ============================================================= #}
+        {# ORGANIZATION INVOLVEMENTS (rich structured data) #}
+        {# ============================================================= #}
+        {% if involvements %}
+        <section class="mb-8">
+            <div class="flex items-center gap-3 mb-6">
+                <i data-lucide="layers" class="w-5 h-5" style="color: var(--f-accent-violet);"></i>
+                <div class="flex-1">
+                    <h2 style="font-family: var(--f-font-display); color: var(--f-fg-heading); font-size: 1.35rem; font-weight: 400;">
+                        Event Involvements
+                    </h2>
+                    <p class="text-sm mt-0.5" style="color: var(--f-fg-placeholder);">Events with structured involvement data</p>
+                </div>
+                <span class="px-3 py-1.5 text-sm font-medium rounded-md" style="background: color-mix(in srgb, var(--f-accent-violet) 8%, transparent); color: var(--f-accent-violet); border: 1px solid color-mix(in srgb, var(--f-accent-violet) 20%, transparent);">
+                    {{ involvements|length }} events
+                </span>
+            </div>
+
+            <div class="space-y-6">
+                {% for involvement in involvements %}
+                <div class="p-5 rounded-xl transition-all duration-200"
+                     style="background: var(--f-card-bg); border: 1px solid var(--f-card-border); box-shadow: var(--f-card-shadow);"
+                     onmouseover="this.style.borderColor='color-mix(in srgb, var(--f-accent-violet) 40%, transparent)'"
+                     onmouseout="this.style.borderColor='var(--f-card-border)'">
+                    {# Event link #}
+                    <a href="{% narrative_url involvement.event %}" class="group">
+                        <div class="flex items-center gap-2 text-xs mb-2" style="color: var(--f-fg-placeholder); font-family: var(--f-font-mono);">
+                            <span class="px-2 py-0.5 rounded" style="background: var(--f-bg-elevated);">
+                                S{{ involvement.event.episode.get_parent.specific.season_number }}E{{ involvement.event.episode.episode_number }}
+                            </span>
+                            <span style="color: var(--f-border-default);">&middot;</span>
+                            <span class="line-clamp-1">{{ involvement.event.episode.title }}</span>
+                        </div>
+                        <div class="font-medium transition-colors text-lg mb-3" style="font-family: var(--f-font-display); color: var(--f-fg-heading);"
+                             onmouseover="this.style.color='var(--f-accent-violet)'"
+                             onmouseout="this.style.color='var(--f-fg-heading)'">
+                            {{ involvement.event.title|md }}
+                        </div>
+                    </a>
+
+                    {# Involvement description #}
+                    {% if involvement.description_of_involvement %}
+                    <p class="leading-relaxed mb-4" style="color: var(--f-fg-secondary);">
+                        {{ involvement.description_of_involvement|md }}
+                    </p>
+                    {% endif %}
+
+                    {# Rich involvement details #}
+                    <div class="grid md:grid-cols-2 gap-3">
+                        {% if involvement.active_representation %}
+                        <div class="p-3 rounded-lg" style="background: var(--f-bg-elevated); border: 1px solid var(--f-border-light);">
+                            <div class="flex items-center gap-2 text-xs mb-1" style="color: var(--f-fg-placeholder);">
+                                <i data-lucide="user-check" class="w-3 h-3"></i>
+                                <span>Active Representation</span>
+                            </div>
+                            <p class="text-sm" style="color: var(--f-fg-secondary);">{{ involvement.active_representation }}</p>
+                        </div>
+                        {% endif %}
+                        {% if involvement.power_dynamics %}
+                        <div class="p-3 rounded-lg" style="background: var(--f-bg-elevated); border: 1px solid var(--f-border-light);">
+                            <div class="flex items-center gap-2 text-xs mb-1" style="color: var(--f-fg-placeholder);">
+                                <i data-lucide="scale" class="w-3 h-3"></i>
+                                <span>Power Dynamics</span>
+                            </div>
+                            <p class="text-sm" style="color: var(--f-fg-secondary);">{{ involvement.power_dynamics }}</p>
+                        </div>
+                        {% endif %}
+                        {% if involvement.institutional_impact %}
+                        <div class="p-3 rounded-lg" style="background: var(--f-bg-elevated); border: 1px solid var(--f-border-light);">
+                            <div class="flex items-center gap-2 text-xs mb-1" style="color: var(--f-fg-placeholder);">
+                                <i data-lucide="landmark" class="w-3 h-3"></i>
+                                <span>Institutional Impact</span>
+                            </div>
+                            <p class="text-sm" style="color: var(--f-fg-secondary);">{{ involvement.institutional_impact }}</p>
+                        </div>
+                        {% endif %}
+                        {% if involvement.internal_dynamics %}
+                        <div class="p-3 rounded-lg" style="background: var(--f-bg-elevated); border: 1px solid var(--f-border-light);">
+                            <div class="flex items-center gap-2 text-xs mb-1" style="color: var(--f-fg-placeholder);">
+                                <i data-lucide="network" class="w-3 h-3"></i>
+                                <span>Internal Dynamics</span>
+                            </div>
+                            <p class="text-sm" style="color: var(--f-fg-secondary);">{{ involvement.internal_dynamics }}</p>
+                        </div>
+                        {% endif %}
+                    </div>
+
+                    {# Organizational goals #}
+                    {% if involvement.organizational_goals %}
+                    <div class="mt-4">
+                        <div class="flex items-center gap-2 text-xs mb-2" style="color: var(--f-fg-placeholder);">
+                            <i data-lucide="target" class="w-3 h-3"></i>
+                            <span>Organizational Goals</span>
+                        </div>
+                        <div class="flex flex-wrap gap-2">
+                            {% for goal in involvement.organizational_goals %}
+                            <span class="px-2 py-1 text-xs rounded" style="background: color-mix(in srgb, var(--f-accent-violet) 8%, transparent); color: var(--f-accent-violet); border: 1px solid color-mix(in srgb, var(--f-accent-violet) 15%, transparent);">
+                                {{ goal }}
+                            </span>
+                            {% endfor %}
+                        </div>
+                    </div>
+                    {% endif %}
+
+                    {# Influence mechanisms #}
+                    {% if involvement.influence_mechanisms %}
+                    <div class="mt-4">
+                        <div class="flex items-center gap-2 text-xs mb-2" style="color: var(--f-fg-placeholder);">
+                            <i data-lucide="megaphone" class="w-3 h-3"></i>
+                            <span>Influence Mechanisms</span>
+                        </div>
+                        <div class="flex flex-wrap gap-2">
+                            {% for mechanism in involvement.influence_mechanisms %}
+                            <span class="px-2 py-1 text-xs rounded" style="background: color-mix(in srgb, var(--f-accent-blue) 8%, transparent); color: var(--f-accent-blue); border: 1px solid color-mix(in srgb, var(--f-accent-blue) 15%, transparent);">
+                                {{ mechanism }}
+                            </span>
+                            {% endfor %}
+                        </div>
+                    </div>
+                    {% endif %}
+                </div>
+                {% endfor %}
+            </div>
+        </section>
+        {% endif %}
+
+        {# ============================================================= #}
+        {# RELATED EVENTS (text search) #}
+        {# ============================================================= #}
+        {% with related_events=page.get_related_events %}
+        {% if related_events %}
+        <section class="mb-8">
+            <div class="flex items-center gap-3 mb-6">
+                <i data-lucide="zap" class="w-5 h-5" style="color: var(--f-accent-blue);"></i>
+                <div class="flex-1">
+                    <h2 style="font-family: var(--f-font-display); color: var(--f-fg-heading); font-size: 1.35rem; font-weight: 400;">
+                        Related Events
+                    </h2>
+                    <p class="text-sm mt-0.5" style="color: var(--f-fg-placeholder);">Events mentioning this organization</p>
+                </div>
+                <span class="px-3 py-1.5 text-sm font-medium rounded-md" style="background: color-mix(in srgb, var(--f-accent-blue) 8%, transparent); color: var(--f-accent-blue); border: 1px solid color-mix(in srgb, var(--f-accent-blue) 20%, transparent);">
+                    {{ related_events|length }} events
+                </span>
+            </div>
+
+            <div class="space-y-3">
+                {% for event in related_events %}
+                <a href="{% narrative_url event %}"
+                   class="block p-4 rounded-lg transition-all duration-200 group"
+                   style="background: var(--f-card-bg); border: 1px solid var(--f-card-border);"
+                   onmouseover="this.style.borderColor='var(--f-accent-blue)'; this.style.boxShadow='var(--f-card-shadow-hover)'"
+                   onmouseout="this.style.borderColor='var(--f-card-border)'; this.style.boxShadow='none'">
+                    <div class="flex items-start gap-3">
+                        <div class="flex-shrink-0 px-2 py-1 rounded text-xs" style="background: var(--f-bg-elevated); color: var(--f-fg-placeholder); font-family: var(--f-font-mono);">
+                            {% if event.episode %}
+                            S{{ event.episode.get_parent.specific.season_number }}E{{ event.episode.episode_number }}
+                            {% endif %}
+                        </div>
+                        <div class="flex-1 min-w-0">
+                            <div class="font-medium" style="color: var(--f-fg-heading); font-family: var(--f-font-display);">
+                                {{ event.title|md }}
+                            </div>
+                            {% if event.description %}
+                            <p class="text-sm mt-1 line-clamp-2" style="color: var(--f-fg-tertiary);">
+                                {{ event.description|md|striptags|truncatewords:25 }}
+                            </p>
+                            {% endif %}
+                        </div>
+                        <i data-lucide="chevron-right" class="w-4 h-4" style="color: var(--f-fg-placeholder);"></i>
+                    </div>
+                </a>
+                {% endfor %}
+            </div>
+        </section>
+        {% endif %}
+        {% endwith %}
+    </div>
+</article>
+
+{% else %}
+{# ===== DARK ORGANIZATION DETAIL (original) ===== #}
 <article class="min-h-screen pb-16">
     <div class="relative overflow-hidden">
         <div class="absolute inset-0 bg-gradient-to-b from-violet-950/20 via-slate-950 to-slate-950"></div>
@@ -244,4 +497,5 @@
         {% endwith %}
     </div>
 </article>
+{% endif %}
 {% endblock %}

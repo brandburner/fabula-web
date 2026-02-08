@@ -1,6 +1,6 @@
 {% load static wagtailcore_tags %}
 <!DOCTYPE html>
-<html lang="en" class="dark">
+<html lang="en" data-theme="{{ fabula_theme|default:'writerly' }}"{% if fabula_theme == 'dark' %} class="dark"{% endif %}>
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -30,7 +30,17 @@
     {# Alpine.js for interactivity #}
     <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
 
+    {# Design System Tokens #}
+    <link rel="stylesheet" href="{% static 'narrative/css/theme-tokens.css' %}">
+
+    {% if fabula_theme == 'writerly' %}
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,300;1,9..40,400&family=Newsreader:ital,opsz,wght@0,6..72,300;0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,300;1,6..72,400&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    {% endif %}
+
     <style>
+        {% if fabula_theme == 'dark' %}
         ::-webkit-scrollbar { width: 8px; height: 8px; }
         ::-webkit-scrollbar-track { background: #0f172a; }
         ::-webkit-scrollbar-thumb { background: #334155; border-radius: 4px; }
@@ -41,22 +51,56 @@
             backdrop-filter: blur(12px);
             -webkit-backdrop-filter: blur(12px);
         }
+        {% else %}
+        html { scroll-behavior: smooth; }
+        .glass {
+            background: rgba(250, 248, 244, 0.92);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+        }
+        {% endif %}
     </style>
 </head>
+
+{% if fabula_theme == 'writerly' %}
+<body class="min-h-screen antialiased" style="background-color: var(--f-bg-page); color: var(--f-fg-secondary); font-family: var(--f-font-body);">
+    {# Navigation #}
+    <header class="fixed top-0 left-0 right-0 z-50 glass" style="border-bottom: 1px solid var(--f-border-light);">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="flex items-center justify-between h-16">
+                <a href="{% url 'catalog' %}" class="flex items-center gap-2.5 group transition-all duration-200">
+                    <span class="text-xl tracking-tight font-semibold" style="font-family: var(--f-font-display); color: var(--f-fg-heading);">
+                        Fabula
+                    </span>
+                </a>
+                <nav class="flex items-center gap-6">
+                    <a href="{% url 'catalog' %}" class="text-sm transition-colors flex items-center gap-1.5" style="color: var(--f-accent-primary);">
+                        <i data-lucide="compass" class="w-4 h-4"></i>
+                        Explore
+                    </a>
+                    <a href="{% url 'graph_view' %}" class="text-sm transition-colors flex items-center gap-1.5" style="color: var(--f-fg-tertiary);">
+                        <i data-lucide="git-branch" class="w-4 h-4"></i>
+                        Graph
+                    </a>
+                    <a href="?theme=dark" class="flex items-center px-2 py-1.5 text-sm rounded-md transition-all duration-200" style="color: var(--f-fg-tertiary); border: 1px solid var(--f-border-light);" title="Switch to dark theme">
+                        <i data-lucide="moon" class="w-4 h-4"></i>
+                    </a>
+                </nav>
+            </div>
+        </div>
+    </header>
+{% else %}
 <body class="min-h-screen bg-slate-950 text-slate-100 antialiased">
-    {# Simple Navigation #}
+    {# Navigation #}
     <header class="fixed top-0 left-0 right-0 z-50 glass border-b border-slate-800/50">
         <div class="max-w-7xl mx-auto px-6">
             <div class="flex items-center justify-between h-16">
-                {# Logo #}
                 <a href="{% url 'catalog' %}" class="flex items-center gap-2.5 group transition-all duration-300">
                     <div class="w-9 h-9 rounded-lg bg-gradient-to-br from-amber-500 via-orange-500 to-amber-600 flex items-center justify-center shadow-lg shadow-amber-500/20 group-hover:shadow-amber-500/35 group-hover:scale-105 transition-all duration-300">
                         <i data-lucide="zap" class="w-5 h-5 text-white"></i>
                     </div>
                     <span class="font-bold tracking-tight text-white text-lg group-hover:text-amber-400 transition-colors">FABULA</span>
                 </a>
-
-                {# Navigation #}
                 <nav class="flex items-center gap-6">
                     <a href="{% url 'catalog' %}" class="text-sm text-cyan-400 hover:text-cyan-300 transition-colors flex items-center gap-1.5">
                         <i data-lucide="compass" class="w-4 h-4"></i>
@@ -66,20 +110,34 @@
                         <i data-lucide="git-branch" class="w-4 h-4"></i>
                         Graph
                     </a>
+                    <a href="?theme=writerly" class="flex items-center px-2 py-1.5 text-sm text-slate-500 hover:text-white border border-slate-700/50 rounded-lg transition-all duration-200" title="Switch to writerly theme">
+                        <i data-lucide="sun" class="w-4 h-4"></i>
+                    </a>
                 </nav>
             </div>
         </div>
     </header>
+{% endif %}
 
     {# Spacer for fixed header #}
     <div class="h-16"></div>
 
-    {# Main Content #}
+    {# Main Content - single block definition #}
     <main>
         {% block content %}{% endblock %}
     </main>
 
-    {# Simple Footer #}
+    {# Footer #}
+    {% if fabula_theme == 'writerly' %}
+    <footer style="border-top: 1px solid var(--f-border-default);" class="mt-20">
+        <div class="max-w-7xl mx-auto px-6 py-8">
+            <div class="flex items-center justify-between text-sm" style="color: var(--f-fg-tertiary);">
+                <span style="font-family: var(--f-font-display);">Fabula &mdash; Narrative Graph Analysis</span>
+                <span>&copy; 2026</span>
+            </div>
+        </div>
+    </footer>
+    {% else %}
     <footer class="border-t border-slate-800/50 mt-20">
         <div class="max-w-7xl mx-auto px-6 py-8">
             <div class="flex items-center justify-between text-sm text-slate-500">
@@ -88,8 +146,8 @@
             </div>
         </div>
     </footer>
+    {% endif %}
 
-    {# Initialize Lucide icons #}
     <script>
         document.addEventListener('DOMContentLoaded', () => {
             lucide.createIcons();

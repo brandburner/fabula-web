@@ -1,4 +1,137 @@
 {% load wagtailcore_tags narrative_tags %}
+{% if fabula_theme == 'writerly' %}
+{# ===== WRITERLY PARTICIPATION CARD ===== #}
+<div class="rounded-lg overflow-hidden transition-all duration-200"
+     style="background: var(--f-card-bg); border: 2px solid var(--f-card-border); box-shadow: var(--f-card-shadow);"
+     x-data="{ isOpen: false }">
+
+    <div class="p-5">
+        {# Header with character name and expand toggle #}
+        <div class="flex items-start justify-between gap-4 mb-4">
+            <a href="{% narrative_url participation.character %}" class="flex-1 group">
+                <div class="font-medium text-lg mb-1" style="font-family: var(--f-font-display); color: var(--f-fg-heading);">
+                    {{ participation.character.canonical_name }}
+                </div>
+                {% if participation.character.title_role %}
+                <div class="text-sm font-medium" style="color: var(--f-fg-tertiary);">{{ participation.character.title_role }}</div>
+                {% endif %}
+            </a>
+
+            {# Importance badge #}
+            {% if participation.importance %}
+            <span class="px-3 py-1 text-xs font-medium rounded-md"
+                style="{% if participation.importance == 'primary' %}background: var(--f-accent-green-bg); color: var(--f-accent-green-fg); border: 1px solid color-mix(in srgb, var(--f-accent-green) 25%, transparent);{% elif participation.importance == 'secondary' %}background: var(--f-bg-elevated); color: var(--f-fg-secondary); border: 1px solid var(--f-border-light);{% else %}background: var(--f-bg-elevated); color: var(--f-fg-tertiary); border: 1px solid var(--f-border-light);{% endif %}">
+                {{ participation.importance }}
+            </span>
+            {% endif %}
+
+            <button @click="isOpen = !isOpen"
+                    class="p-2 rounded-md transition-all duration-200"
+                    style="color: var(--f-fg-tertiary);"
+                    onmouseover="this.style.background='var(--f-bg-elevated)'"
+                    onmouseout="this.style.background='transparent'">
+                <i data-lucide="chevron-down"
+                   class="w-5 h-5 transition-transform duration-300"
+                   :class="{ 'rotate-180': isOpen }"></i>
+            </button>
+        </div>
+
+        {# Emotional state - always visible #}
+        {% if participation.emotional_state %}
+        <div class="flex items-start gap-3 mb-4 p-3 rounded-md" style="background: color-mix(in srgb, var(--f-accent-rose) 6%, transparent); border: 1px solid color-mix(in srgb, var(--f-accent-rose) 15%, transparent);">
+            <i data-lucide="heart" class="w-5 h-5 mt-0.5 shrink-0" style="color: var(--f-accent-rose);"></i>
+            <p class="text-sm leading-relaxed font-medium" style="color: var(--f-fg-secondary);">
+                {{ participation.emotional_state|md }}
+            </p>
+        </div>
+        {% endif %}
+
+        {# What happened - always visible #}
+        {% if participation.what_happened %}
+        <p class="text-sm leading-relaxed" style="color: var(--f-fg-tertiary);">
+            {{ participation.what_happened|md }}
+        </p>
+        {% endif %}
+    </div>
+
+    {# Expandable section #}
+    <div x-show="isOpen"
+         x-collapse
+         class="px-5 pb-5 space-y-5" style="border-top: 1px solid var(--f-border-light);">
+
+        {# Goals #}
+        {% if participation.goals %}
+        <div class="pt-4">
+            <div class="flex items-center gap-2 mb-2">
+                <i data-lucide="target" class="w-4 h-4" style="color: var(--f-accent-primary);"></i>
+                <span class="text-xs font-medium uppercase tracking-wide" style="color: var(--f-fg-placeholder); letter-spacing: 0.08em;">Goals in this moment</span>
+            </div>
+            <ul class="space-y-1.5">
+                {% for goal in participation.goals %}
+                <li class="text-sm flex items-start gap-2" style="color: var(--f-fg-secondary);">
+                    <span class="mt-1" style="color: var(--f-fg-placeholder);">&bull;</span>
+                    <span>{{ goal }}</span>
+                </li>
+                {% endfor %}
+            </ul>
+        </div>
+        {% endif %}
+
+        {# Beliefs #}
+        {% if participation.beliefs %}
+        <div>
+            <div class="flex items-center gap-2 mb-2">
+                <i data-lucide="brain" class="w-4 h-4" style="color: var(--f-accent-blue);"></i>
+                <span class="text-xs font-medium uppercase tracking-wide" style="color: var(--f-fg-placeholder); letter-spacing: 0.08em;">Active beliefs</span>
+            </div>
+            <ul class="space-y-1.5">
+                {% for belief in participation.beliefs %}
+                <li class="text-sm flex items-start gap-2" style="color: var(--f-fg-secondary);">
+                    <span class="mt-1" style="color: var(--f-fg-placeholder);">&bull;</span>
+                    <span>{{ belief }}</span>
+                </li>
+                {% endfor %}
+            </ul>
+        </div>
+        {% endif %}
+
+        {# Character traits #}
+        {% if participation.observed_traits or participation.character.traits %}
+        <div>
+            <div class="flex items-center gap-2 mb-2">
+                <i data-lucide="user" class="w-4 h-4" style="color: var(--f-accent-green);"></i>
+                <span class="text-xs font-medium uppercase tracking-wide" style="color: var(--f-fg-placeholder); letter-spacing: 0.08em;">Character traits</span>
+            </div>
+            <div class="flex flex-wrap gap-1.5">
+                {% for trait in participation.observed_traits %}
+                <span class="px-2 py-0.5 text-xs rounded" style="background: var(--f-accent-green-bg); color: var(--f-accent-green-fg);">
+                    {{ trait }}
+                </span>
+                {% empty %}
+                    {% for trait in participation.character.traits %}
+                    <span class="px-2 py-0.5 text-xs rounded" style="background: var(--f-bg-elevated); color: var(--f-fg-tertiary); border: 1px solid var(--f-border-light);">
+                        {{ trait }}
+                    </span>
+                    {% endfor %}
+                {% endfor %}
+            </div>
+        </div>
+        {% endif %}
+
+        {# Link to character page #}
+        <a href="{% narrative_url participation.character %}"
+           class="group inline-flex items-center gap-2 px-4 py-2 text-sm font-medium rounded-md transition-all duration-200"
+           style="color: var(--f-accent-green); background: var(--f-accent-green-bg); border: 1px solid color-mix(in srgb, var(--f-accent-green) 20%, transparent);"
+           onmouseover="this.style.background='color-mix(in srgb, var(--f-accent-green) 12%, transparent)'"
+           onmouseout="this.style.background='var(--f-accent-green-bg)'">
+            <span>Follow {{ participation.character.canonical_name|truncatewords:2 }}'s journey</span>
+            <i data-lucide="arrow-right" class="w-4 h-4 group-hover:translate-x-1 transition-transform"></i>
+        </a>
+    </div>
+</div>
+
+{% else %}
+{# ===== DARK PARTICIPATION CARD (original) ===== #}
 <div class="bg-gradient-to-br from-slate-900/60 to-slate-900/40 border-2 border-slate-800 rounded-xl overflow-hidden hover:border-emerald-500/40 transition-all duration-300 hover:shadow-lg hover:shadow-emerald-500/10"
      x-data="{ isOpen: false }">
 
@@ -59,7 +192,7 @@
     <div x-show="isOpen"
          x-collapse
          class="px-5 pb-5 space-y-5 border-t border-slate-800/50">
-        
+
         {# Goals #}
         {% if participation.goals %}
         <div class="pt-4">
@@ -70,7 +203,7 @@
             <ul class="space-y-1.5">
                 {% for goal in participation.goals %}
                 <li class="text-sm text-slate-300 flex items-start gap-2">
-                    <span class="text-slate-600 mt-1">•</span>
+                    <span class="text-slate-600 mt-1">&bull;</span>
                     <span>{{ goal }}</span>
                 </li>
                 {% endfor %}
@@ -88,7 +221,7 @@
             <ul class="space-y-1.5">
                 {% for belief in participation.beliefs %}
                 <li class="text-sm text-slate-300 flex items-start gap-2">
-                    <span class="text-slate-600 mt-1">•</span>
+                    <span class="text-slate-600 mt-1">&bull;</span>
                     <span>{{ belief }}</span>
                 </li>
                 {% endfor %}
@@ -127,3 +260,4 @@
         </a>
     </div>
 </div>
+{% endif %}

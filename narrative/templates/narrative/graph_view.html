@@ -229,10 +229,125 @@
     @keyframes spin {
         to { transform: rotate(360deg); }
     }
+
+    /* ===== Writerly theme overrides ===== */
+    [data-theme="writerly"] #graph-container {
+        background: linear-gradient(135deg, #f5f3ee 0%, #ece8e1 100%);
+    }
+
+    [data-theme="writerly"] .graph-stats,
+    [data-theme="writerly"] .graph-legend {
+        background: rgba(250, 248, 244, 0.97);
+        border-color: var(--f-border-default);
+        box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+        backdrop-filter: blur(12px);
+    }
+
+    [data-theme="writerly"] .graph-control-btn {
+        background: rgba(250, 248, 244, 0.97);
+        border-color: var(--f-border-default);
+        color: var(--f-fg-tertiary);
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+    }
+
+    [data-theme="writerly"] .graph-control-btn:hover {
+        background: var(--f-bg-elevated);
+        color: var(--f-fg-heading);
+        border-color: var(--f-accent-primary);
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    }
+
+    [data-theme="writerly"] .graph-control-btn.active {
+        background: color-mix(in srgb, var(--f-accent-primary) 10%, white);
+        border-color: var(--f-accent-primary);
+        color: var(--f-accent-primary);
+    }
+
+    [data-theme="writerly"] .graph-tooltip {
+        background: rgba(250, 248, 244, 0.98);
+        border-color: var(--f-border-default);
+        box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+    }
+
+    [data-theme="writerly"] .graph-loading {
+        background: rgba(250, 248, 244, 0.92);
+    }
+
+    [data-theme="writerly"] .graph-loading-spinner {
+        border-color: color-mix(in srgb, var(--f-accent-primary) 20%, transparent);
+        border-top-color: var(--f-accent-primary);
+    }
+
+    [data-theme="writerly"] .node-toggle {
+        background: rgba(0, 0, 0, 0.04);
+        color: var(--f-fg-placeholder);
+    }
+
+    /* Text color overrides for light panels */
+    [data-theme="writerly"] .graph-stats [class*="text-white"],
+    [data-theme="writerly"] .graph-tooltip [class*="text-white"],
+    [data-theme="writerly"] #tooltip-node-title {
+        color: var(--f-fg-heading) !important;
+    }
+
+    [data-theme="writerly"] .graph-stats [class*="text-slate-4"],
+    [data-theme="writerly"] .graph-legend [class*="text-slate-4"],
+    [data-theme="writerly"] .graph-tooltip [class*="text-slate-4"],
+    [data-theme="writerly"] .graph-loading [class*="text-slate-4"] {
+        color: var(--f-fg-tertiary) !important;
+    }
+
+    [data-theme="writerly"] .graph-stats [class*="text-slate-5"],
+    [data-theme="writerly"] .graph-legend [class*="text-slate-5"],
+    [data-theme="writerly"] .graph-tooltip [class*="text-slate-5"] {
+        color: var(--f-fg-placeholder) !important;
+    }
+
+    [data-theme="writerly"] .graph-legend [class*="text-slate-3"],
+    [data-theme="writerly"] .graph-tooltip [class*="text-slate-3"] {
+        color: var(--f-fg-secondary) !important;
+    }
+
+    /* Border and divider overrides */
+    [data-theme="writerly"] .graph-stats [class*="bg-slate-7"] {
+        background-color: var(--f-border-light) !important;
+    }
+
+    [data-theme="writerly"] .graph-stats [class*="border-slate-7"],
+    [data-theme="writerly"] .graph-legend [class*="border-slate-8"] {
+        border-color: var(--f-border-light) !important;
+    }
 </style>
 {% endblock %}
 
 {% block header_actions %}
+{% if fabula_theme == 'writerly' %}
+{% if back_url %}
+<a href="{{ back_url }}"
+   class="px-4 py-2 text-sm font-medium rounded-lg transition-all duration-200"
+   style="background: var(--f-bg-elevated); color: var(--f-fg-secondary); border: 1px solid var(--f-border-default);">
+    <span class="flex items-center gap-2">
+        <i data-lucide="chevron-left" class="w-4 h-4"></i>
+        Back
+    </span>
+</a>
+{% endif %}
+<a href="#" onclick="toggleFullscreen(); return false;"
+   class="px-4 py-2 text-sm font-medium rounded-lg transition-all duration-200"
+   style="background: var(--f-bg-elevated); color: var(--f-fg-secondary); border: 1px solid var(--f-border-default);">
+    <span class="flex items-center gap-2">
+        <i data-lucide="maximize-2" class="w-4 h-4"></i>
+    </span>
+</a>
+<a href="{% url 'wagtail_serve' '' %}"
+   class="px-4 py-2 text-sm font-medium rounded-lg transition-all duration-200"
+   style="background: color-mix(in srgb, var(--f-accent-primary) 10%, white); color: var(--f-accent-primary); border: 1px solid color-mix(in srgb, var(--f-accent-primary) 30%, transparent);">
+    <span class="flex items-center gap-2">
+        <i data-lucide="x" class="w-4 h-4"></i>
+        Close Graph
+    </span>
+</a>
+{% else %}
 {% if back_url %}
 <a href="{{ back_url }}"
    class="px-4 py-2 text-sm font-medium rounded-lg bg-slate-800/80 text-slate-300 border border-slate-700/50 hover:bg-slate-700 hover:text-white transition-all duration-200">
@@ -255,6 +370,7 @@
         Close Graph
     </span>
 </a>
+{% endif %}
 {% endblock %}
 
 {% block content %}

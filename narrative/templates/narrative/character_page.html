@@ -4,10 +4,245 @@
 {% block title %}{{ page.canonical_name }}{% endblock %}
 
 {% block series_context %}
+{% if fabula_theme == 'writerly' %}
+<span class="text-sm" style="color: var(--f-fg-tertiary); font-family: var(--f-font-display);">Character</span>
+{% else %}
 <span class="text-slate-500 text-sm font-medium">Character</span>
+{% endif %}
 {% endblock %}
 
 {% block content %}
+{% if fabula_theme == 'writerly' %}
+{# ===== WRITERLY CHARACTER DETAIL ===== #}
+<article class="min-h-screen pb-16">
+    {# Hero section #}
+    <div class="py-14" style="background: var(--f-bg-hero);">
+        <div class="max-w-4xl mx-auto px-6">
+            {# Character type badge row #}
+            <div class="flex items-center gap-3 mb-6 flex-wrap">
+                <div class="flex items-center gap-2 px-3 py-1.5 rounded-md" style="background: var(--f-accent-green-bg); border: 1px solid color-mix(in srgb, var(--f-accent-green) 25%, transparent);">
+                    <i data-lucide="user" class="w-4 h-4" style="color: var(--f-accent-green);"></i>
+                    <span class="text-sm font-medium" style="color: var(--f-accent-green-fg);">Character</span>
+                </div>
+                {% if page.title_role %}
+                <div class="px-3 py-1.5 rounded-md" style="background: var(--f-bg-elevated); border: 1px solid var(--f-border-light);">
+                    <span class="text-sm font-medium" style="color: var(--f-fg-secondary);">{{ page.title_role }}</span>
+                </div>
+                {% endif %}
+                <a href="{% url 'character_graph' page.global_id|default:page.fabula_uuid|default:page.pk %}"
+                   class="flex items-center gap-2 px-3 py-1.5 rounded-md transition-colors"
+                   style="background: var(--f-accent-blue-bg); border: 1px solid color-mix(in srgb, var(--f-accent-blue) 25%, transparent);"
+                   onmouseover="this.style.background='color-mix(in srgb, var(--f-accent-blue) 15%, transparent)'"
+                   onmouseout="this.style.background='var(--f-accent-blue-bg)'">
+                    <i data-lucide="git-branch" class="w-4 h-4" style="color: var(--f-accent-blue);"></i>
+                    <span class="text-sm font-medium" style="color: var(--f-accent-blue);">View Journey</span>
+                </a>
+            </div>
+
+            {# Name #}
+            <h1 class="mb-6" style="font-family: var(--f-font-display); color: var(--f-fg-heading); font-size: clamp(2rem, 4vw, 3rem); line-height: 1.15; letter-spacing: -0.02em; font-weight: 400;">
+                {{ page.canonical_name }}
+            </h1>
+
+            {# Traits #}
+            {% if page.traits %}
+            <div class="flex flex-wrap gap-2 mb-8">
+                {% for trait in page.traits %}
+                <span class="px-3 py-1.5 text-sm rounded-md font-medium" style="background: var(--f-accent-green-bg); color: var(--f-accent-green-fg); border: 1px solid color-mix(in srgb, var(--f-accent-green) 20%, transparent);">
+                    {{ trait }}
+                </span>
+                {% endfor %}
+            </div>
+            {% endif %}
+
+            {# Description #}
+            <div class="max-w-3xl leading-relaxed" style="color: var(--f-fg-secondary); font-size: 1.05rem; line-height: 1.7;">
+                {{ page.description|richtext }}
+            </div>
+
+            {# Stats #}
+            <div class="flex items-center flex-wrap gap-4 mt-6">
+                <div class="flex items-center gap-2 px-4 py-2 rounded-md" style="background: var(--f-bg-elevated); border: 1px solid var(--f-border-light);">
+                    <i data-lucide="calendar" class="w-5 h-5" style="color: var(--f-accent-green);"></i>
+                    <span class="font-medium" style="color: var(--f-fg-primary);">{{ page.appearance_count }} appearances</span>
+                </div>
+                {% if page.sphere_of_influence %}
+                <div class="flex items-center gap-2 px-4 py-2 rounded-md" style="background: var(--f-bg-elevated); border: 1px solid var(--f-border-light);">
+                    <i data-lucide="briefcase" class="w-5 h-5" style="color: var(--f-accent-blue);"></i>
+                    <span class="font-medium" style="color: var(--f-fg-primary);">{{ page.sphere_of_influence }}</span>
+                </div>
+                {% endif %}
+            </div>
+
+            {# Aliases #}
+            {% if page.nicknames %}
+            <div class="text-sm mt-4" style="color: var(--f-fg-tertiary); font-style: italic;">
+                <span class="font-medium" style="color: var(--f-fg-placeholder);">Also known as:</span>
+                {% for alias in page.nicknames %}
+                    {{ alias }}{% if not forloop.last %}, {% endif %}
+                {% endfor %}
+            </div>
+            {% endif %}
+        </div>
+    </div>
+
+    <div class="max-w-4xl mx-auto px-6 pt-6">
+        <hr style="border-color: var(--f-rule-color);" class="mb-8">
+
+        {# ============================================================= #}
+        {# CHARACTER'S JOURNEY - Timeline of events #}
+        {# ============================================================= #}
+        <section>
+            <div class="flex items-center gap-3 mb-10">
+                <i data-lucide="route" class="w-5 h-5" style="color: var(--f-accent-green);"></i>
+                <div class="flex-1">
+                    <h2 style="font-family: var(--f-font-display); color: var(--f-fg-heading); font-size: 1.35rem; font-weight: 400;">
+                        {{ page.canonical_name|truncatewords:2 }}'s Journey
+                    </h2>
+                    <p class="text-sm mt-0.5" style="color: var(--f-fg-placeholder);">A timeline through the narrative</p>
+                </div>
+                <span class="px-3 py-1.5 text-sm font-medium rounded-md" style="background: var(--f-accent-green-bg); color: var(--f-accent-green-fg); border: 1px solid color-mix(in srgb, var(--f-accent-green) 25%, transparent);">
+                    {{ page.event_participations.count }} moments
+                </span>
+            </div>
+
+            {# Timeline #}
+            <div class="relative">
+                {# Vertical line #}
+                <div class="absolute left-[15px] top-4 bottom-4 w-px" style="background: linear-gradient(to bottom, var(--f-accent-green), color-mix(in srgb, var(--f-accent-green) 20%, transparent));"></div>
+
+                <div class="space-y-6">
+                    {% for participation in page.get_participations %}
+                    <div class="relative pl-12 group">
+                        {# Timeline dot #}
+                        <div class="absolute left-0 top-3 w-8 h-8 rounded-full flex items-center justify-center transition-all duration-200"
+                             style="{% if forloop.first %}background: var(--f-accent-green); box-shadow: 0 0 0 4px color-mix(in srgb, var(--f-accent-green) 15%, transparent);{% else %}background: var(--f-bg-page); border: 2px solid color-mix(in srgb, var(--f-accent-green) 40%, transparent);{% endif %}">
+                            <div class="w-2 h-2 rounded-full" style="background: {% if forloop.first %}white{% else %}var(--f-accent-green){% endif %};"></div>
+                        </div>
+
+                        {# Event card #}
+                        <a href="{% narrative_url participation.event %}"
+                           class="block p-5 rounded-lg transition-all duration-200"
+                           style="background: var(--f-card-bg); border: 1px solid var(--f-card-border); box-shadow: var(--f-card-shadow);"
+                           onmouseover="this.style.boxShadow='var(--f-card-shadow-hover)'; this.style.borderColor='var(--f-accent-green)'"
+                           onmouseout="this.style.boxShadow='var(--f-card-shadow)'; this.style.borderColor='var(--f-card-border)'">
+
+                            {# Episode context #}
+                            <div class="flex items-center gap-2 text-xs mb-2" style="color: var(--f-fg-placeholder); font-family: var(--f-font-mono);">
+                                <span class="px-2 py-0.5 rounded" style="background: var(--f-bg-elevated);">
+                                    S{{ participation.event.episode.get_parent.specific.season_number }}E{{ participation.event.episode.episode_number }}
+                                </span>
+                                <span style="color: var(--f-border-default);">·</span>
+                                <span class="line-clamp-1">{{ participation.event.episode.title }}</span>
+                            </div>
+
+                            {# Event title #}
+                            <div class="font-medium mb-3 leading-snug" style="font-family: var(--f-font-display); color: var(--f-fg-heading); font-size: 1.05rem;">
+                                {{ participation.event.title|md }}
+                            </div>
+
+                            {# Emotional state #}
+                            {% if participation.emotional_state %}
+                            <div class="flex items-start gap-2 mb-3 p-3 rounded-md" style="background: color-mix(in srgb, var(--f-accent-rose) 6%, transparent); border: 1px solid color-mix(in srgb, var(--f-accent-rose) 15%, transparent);">
+                                <i data-lucide="heart" class="w-4 h-4 mt-0.5 shrink-0" style="color: var(--f-accent-rose);"></i>
+                                <p class="text-sm leading-relaxed" style="color: var(--f-fg-secondary);">
+                                    {{ participation.emotional_state|md }}
+                                </p>
+                            </div>
+                            {% endif %}
+
+                            {# What happened #}
+                            {% if participation.what_happened %}
+                            <p class="text-sm leading-relaxed line-clamp-2" style="color: var(--f-fg-tertiary);">
+                                {{ participation.what_happened|md|striptags|truncatewords:30 }}
+                            </p>
+                            {% endif %}
+
+                            {# View more #}
+                            <div class="flex items-center gap-1 text-xs mt-3 opacity-0 group-hover:opacity-100 transition-opacity" style="color: var(--f-accent-green);">
+                                <span>View full event</span>
+                                <i data-lucide="arrow-right" class="w-3 h-3"></i>
+                            </div>
+                        </a>
+                    </div>
+                    {% empty %}
+                    <div class="text-sm p-8 rounded-lg text-center" style="color: var(--f-fg-tertiary); background: var(--f-bg-elevated); border: 1px solid var(--f-border-light);">
+                        <i data-lucide="calendar-x" class="w-10 h-10 mx-auto mb-3" style="color: var(--f-fg-placeholder);"></i>
+                        <p class="font-medium">No events found for this character</p>
+                    </div>
+                    {% endfor %}
+                </div>
+            </div>
+        </section>
+
+        {# ============================================================= #}
+        {# AFFILIATED ORGANIZATION #}
+        {# ============================================================= #}
+        {% if page.affiliated_organization %}
+        <section class="mt-10">
+            <div class="flex items-center gap-2 mb-6">
+                <i data-lucide="building-2" class="w-5 h-5" style="color: var(--f-accent-violet);"></i>
+                <h2 style="font-family: var(--f-font-display); color: var(--f-fg-heading); font-size: 1.15rem; font-weight: 400;">Affiliation</h2>
+            </div>
+
+            <a href="{% narrative_url page.affiliated_organization %}"
+               class="block p-4 rounded-lg transition-all duration-200 group"
+               style="background: var(--f-card-bg); border: 1px solid var(--f-card-border);"
+               onmouseover="this.style.borderColor='var(--f-accent-violet)'"
+               onmouseout="this.style.borderColor='var(--f-card-border)'">
+                <div class="font-medium" style="color: var(--f-fg-heading); font-family: var(--f-font-display);">
+                    {{ page.affiliated_organization.canonical_name }}
+                </div>
+                {% if page.affiliated_organization.sphere_of_influence %}
+                <div class="text-sm mt-1" style="color: var(--f-fg-tertiary);">
+                    {{ page.affiliated_organization.sphere_of_influence }}
+                </div>
+                {% endif %}
+            </a>
+        </section>
+        {% endif %}
+
+        {# ============================================================= #}
+        {# EPISODE PROFILES #}
+        {# ============================================================= #}
+        {% if page.episode_profiles.exists %}
+        <section class="mt-10">
+            <div class="flex items-center gap-2 mb-6">
+                <i data-lucide="film" class="w-5 h-5" style="color: var(--f-fg-tertiary);"></i>
+                <h2 style="font-family: var(--f-font-display); color: var(--f-fg-heading); font-size: 1.15rem; font-weight: 400;">Per-Episode Profiles</h2>
+            </div>
+
+            <div class="space-y-3">
+                {% for profile in page.episode_profiles.all %}
+                <div class="p-4 rounded-lg" style="background: var(--f-card-bg); border: 1px solid var(--f-card-border);">
+                    <a href="{% narrative_url profile.episode %}" class="font-medium transition-colors" style="color: var(--f-fg-heading);"
+                       onmouseover="this.style.color='var(--f-accent-primary)'"
+                       onmouseout="this.style.color='var(--f-fg-heading)'">
+                        {{ profile.episode.title }}
+                    </a>
+                    {% if profile.description_in_episode %}
+                    <p class="text-sm mt-2" style="color: var(--f-fg-tertiary);">
+                        {{ profile.description_in_episode }}
+                    </p>
+                    {% endif %}
+                    {% if profile.traits_in_episode %}
+                    <div class="flex flex-wrap gap-1 mt-2">
+                        {% for trait in profile.traits_in_episode %}
+                        <span class="px-2 py-0.5 text-xs rounded" style="background: var(--f-bg-elevated); color: var(--f-fg-tertiary); border: 1px solid var(--f-border-light);">{{ trait }}</span>
+                        {% endfor %}
+                    </div>
+                    {% endif %}
+                </div>
+                {% endfor %}
+            </div>
+        </section>
+        {% endif %}
+
+    </div>
+</article>
+
+{% else %}
+{# ===== DARK CHARACTER DETAIL (original) ===== #}
 <article class="min-h-screen pb-16 fade-in">
     {# Hero section #}
     <div class="relative overflow-hidden">
@@ -182,7 +417,7 @@
                 <i data-lucide="building-2" class="w-5 h-5 text-blue-400"></i>
                 <h2 class="text-lg font-semibold text-white">Affiliation</h2>
             </div>
-            
+
             <a href="{% narrative_url page.affiliated_organization %}"
                class="block p-4 bg-slate-900/50 border border-slate-800 rounded-lg hover:border-blue-500/30 transition-colors group">
                 <div class="font-medium text-slate-200 group-hover:text-blue-300">
@@ -206,7 +441,7 @@
                 <i data-lucide="film" class="w-5 h-5 text-slate-400"></i>
                 <h2 class="text-lg font-semibold text-white">Per-Episode Profiles</h2>
             </div>
-            
+
             <div class="space-y-3">
                 {% for profile in page.episode_profiles.all %}
                 <div class="p-4 bg-slate-900/50 border border-slate-800 rounded-lg">
@@ -233,4 +468,5 @@
 
     </div>
 </article>
+{% endif %}
 {% endblock %}

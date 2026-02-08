@@ -4,12 +4,427 @@
 {% block title %}{{ page.title|md_plain }}{% endblock %}
 
 {% block series_context %}
+{% if fabula_theme == 'writerly' %}
+<span class="text-sm" style="color: var(--f-fg-tertiary); font-family: var(--f-font-mono);">
+    S{{ page.episode.get_parent.specific.season_number }}E{{ page.episode.episode_number }} · {{ page.episode.title }}
+</span>
+{% else %}
 <span class="text-slate-500 text-sm font-medium">
     S{{ page.episode.get_parent.specific.season_number }}E{{ page.episode.episode_number }} · {{ page.episode.title }}
 </span>
+{% endif %}
 {% endblock %}
 
 {% block content %}
+{% if fabula_theme == 'writerly' %}
+{# ===== WRITERLY EVENT DETAIL ===== #}
+<article class="min-h-screen pb-16">
+    {# Hero section #}
+    <div class="py-14" style="background: var(--f-bg-hero);">
+        <div class="max-w-4xl mx-auto px-6">
+            {# Episode context badge #}
+            <div class="flex items-center gap-2 text-sm mb-6 flex-wrap">
+                <div class="flex items-center gap-2 px-3 py-1.5 rounded-md" style="background: var(--f-accent-primary-bg); border: 1px solid color-mix(in srgb, var(--f-accent-primary) 25%, transparent);">
+                    <i data-lucide="film" class="w-3.5 h-3.5" style="color: var(--f-accent-primary);"></i>
+                    <span style="font-family: var(--f-font-mono); color: var(--f-accent-primary); font-weight: 500;">
+                        S{{ page.episode.get_parent.specific.season_number }}E{{ page.episode.episode_number }}
+                    </span>
+                </div>
+                <span style="color: var(--f-border-default);">·</span>
+                <a href="{% narrative_url page.episode %}" class="transition-colors" style="color: var(--f-fg-tertiary);"
+                   onmouseover="this.style.color='var(--f-accent-primary)'"
+                   onmouseout="this.style.color='var(--f-fg-tertiary)'">
+                    {{ page.episode.title }}
+                </a>
+                {% if page.is_flashback %}
+                <span class="px-3 py-1 text-xs rounded-md font-medium" style="background: color-mix(in srgb, var(--f-accent-violet) 8%, transparent); color: var(--f-accent-violet); border: 1px solid color-mix(in srgb, var(--f-accent-violet) 20%, transparent);">
+                    <i data-lucide="rewind" class="w-3 h-3 inline-block mr-1"></i>
+                    Flashback
+                </span>
+                {% endif %}
+            </div>
+
+            {# Event title #}
+            <h1 class="mb-8" style="font-family: var(--f-font-display); color: var(--f-fg-heading); font-size: clamp(2rem, 4vw, 3rem); line-height: 1.15; letter-spacing: -0.02em; font-weight: 400;">
+                {{ page.title|md }}
+            </h1>
+
+            {# Description #}
+            <div class="max-w-3xl leading-relaxed" style="color: var(--f-fg-secondary); font-size: 1.05rem; line-height: 1.7;">
+                {{ page.description|md }}
+            </div>
+        </div>
+    </div>
+
+    <div class="max-w-4xl mx-auto px-6 pt-6">
+        {# ============================================================= #}
+        {# PLOT BEATS #}
+        {# ============================================================= #}
+        {% with beats=page.beat_links.all %}
+        {% if beats %}
+        <section class="mb-10">
+            <div class="flex items-center gap-3 mb-6">
+                <i data-lucide="activity" class="w-5 h-5" style="color: var(--f-accent-rose);"></i>
+                <div class="flex-1">
+                    <h2 style="font-family: var(--f-font-display); color: var(--f-fg-heading); font-size: 1.15rem; font-weight: 400;">Plot Beats</h2>
+                    <p class="text-sm mt-0.5" style="color: var(--f-fg-placeholder);">The narrative micro-steps within this event</p>
+                </div>
+                <span class="px-2.5 py-1 text-xs font-medium rounded-md" style="background: color-mix(in srgb, var(--f-accent-rose) 8%, transparent); color: var(--f-accent-rose); border: 1px solid color-mix(in srgb, var(--f-accent-rose) 20%, transparent);">
+                    {{ beats.count }}
+                </span>
+            </div>
+
+            <div class="relative pl-6 space-y-4" style="border-left: 2px solid color-mix(in srgb, var(--f-accent-rose) 25%, transparent);">
+                {% for link in beats %}
+                {% with beat=link.plot_beat %}
+                <div class="relative" style="--dot-offset: -25px;">
+                    <div class="absolute -left-[25px] top-3 w-2.5 h-2.5 rounded-full" style="background: color-mix(in srgb, var(--f-accent-rose) 60%, transparent); border: 2px solid var(--f-bg-page);"></div>
+                    <div class="p-4 rounded-lg" style="background: var(--f-card-bg); border: 1px solid var(--f-card-border);">
+                        {% if beat.action_description %}
+                        <p class="text-sm leading-relaxed" style="color: var(--f-fg-secondary);">{{ beat.action_description }}</p>
+                        {% endif %}
+
+                        <div class="flex items-center flex-wrap gap-3 mt-3 text-xs" style="color: var(--f-fg-placeholder);">
+                            {% if beat.emotional_shift %}
+                            <span class="flex items-center gap-1.5 px-2 py-1 rounded" style="background: color-mix(in srgb, var(--f-accent-rose) 6%, transparent); color: var(--f-accent-rose); border: 1px solid color-mix(in srgb, var(--f-accent-rose) 12%, transparent);">
+                                <i data-lucide="heart" class="w-3 h-3"></i>
+                                {{ beat.emotional_shift|truncatewords:8 }}
+                            </span>
+                            {% endif %}
+                            {% if beat.setting_details %}
+                            <span class="flex items-center gap-1.5 px-2 py-1 rounded" style="background: var(--f-bg-elevated); border: 1px solid var(--f-border-light);">
+                                <i data-lucide="map-pin" class="w-3 h-3" style="color: var(--f-accent-blue);"></i>
+                                {{ beat.setting_details|truncatewords:6 }}
+                            </span>
+                            {% endif %}
+                        </div>
+                    </div>
+                </div>
+                {% endwith %}
+                {% endfor %}
+            </div>
+        </section>
+        {% endif %}
+        {% endwith %}
+
+        {# Location card - only show if no rich involvement data #}
+        {% if page.location and not page.primary_location_has_involvement %}
+        <div class="mb-10 p-5 rounded-lg group" style="background: var(--f-card-bg); border: 1px solid var(--f-card-border); box-shadow: var(--f-card-shadow);">
+            <div class="flex items-start gap-4">
+                <div class="p-3 rounded-lg shrink-0" style="background: var(--f-accent-blue-bg); border: 1px solid color-mix(in srgb, var(--f-accent-blue) 20%, transparent);">
+                    <i data-lucide="map-pin" class="w-6 h-6" style="color: var(--f-accent-blue);"></i>
+                </div>
+                <div class="flex-1">
+                    <div class="text-xs font-medium uppercase tracking-wider mb-2" style="color: var(--f-fg-placeholder); letter-spacing: 0.08em;">Location</div>
+                    <div class="font-medium text-lg mb-1" style="color: var(--f-fg-heading); font-family: var(--f-font-display);">{{ page.location.canonical_name }}</div>
+                    {% if page.location.description %}
+                    <div class="text-sm leading-relaxed" style="color: var(--f-fg-tertiary);">{{ page.location.description|truncatewords:30 }}</div>
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+        {% endif %}
+
+        <hr style="border-color: var(--f-rule-color);" class="mb-10">
+
+        {# ============================================================= #}
+        {# PARTICIPANTS SECTION #}
+        {# ============================================================= #}
+        {% with parts=page.get_participations_by_importance %}
+        <section class="mb-12">
+            <div class="flex items-center gap-3 mb-8">
+                <i data-lucide="users" class="w-5 h-5" style="color: var(--f-accent-green);"></i>
+                <div class="flex-1">
+                    <h2 style="font-family: var(--f-font-display); color: var(--f-fg-heading); font-size: 1.35rem; font-weight: 400;">Who Was There</h2>
+                    <p class="text-sm mt-0.5" style="color: var(--f-fg-placeholder);">Characters present in this moment</p>
+                </div>
+                <span class="px-3 py-1.5 text-sm font-medium rounded-md" style="background: var(--f-accent-green-bg); color: var(--f-accent-green-fg); border: 1px solid color-mix(in srgb, var(--f-accent-green) 25%, transparent);">
+                    {{ page.participations.count }}
+                </span>
+            </div>
+
+            {# Primary participants #}
+            {% if parts.primary %}
+            <div class="space-y-4 mb-8" x-data="{ expanded: {} }">
+                {% for participation in parts.primary %}
+                    {% include "includes/participation_card.html" with participation=participation %}
+                {% endfor %}
+            </div>
+            {% endif %}
+
+            {# Secondary participants #}
+            {% if parts.secondary %}
+            <div class="mb-8">
+                <div class="flex items-center gap-2 text-sm font-medium mb-4 uppercase tracking-wider" style="color: var(--f-fg-placeholder); letter-spacing: 0.08em;">
+                    <i data-lucide="users" class="w-4 h-4"></i>
+                    <span>Supporting</span>
+                    <span class="px-2 py-0.5 text-xs rounded" style="background: var(--f-bg-elevated); color: var(--f-fg-placeholder);">{{ parts.secondary|length }}</span>
+                </div>
+                <div class="space-y-3" x-data="{ expanded: {} }">
+                    {% for participation in parts.secondary %}
+                        {% include "includes/participation_card.html" with participation=participation %}
+                    {% endfor %}
+                </div>
+            </div>
+            {% endif %}
+
+            {# Mentioned characters #}
+            {% if parts.mentioned %}
+            <div x-data="{ showMentioned: false }">
+                <button @click="showMentioned = !showMentioned"
+                        class="flex items-center gap-2 text-sm font-medium mb-4 uppercase tracking-wider transition-colors"
+                        style="color: var(--f-fg-placeholder); letter-spacing: 0.08em;">
+                    <i data-lucide="message-circle" class="w-4 h-4"></i>
+                    <span>Mentioned</span>
+                    <span class="px-2 py-0.5 text-xs rounded" style="background: var(--f-bg-elevated);">{{ parts.mentioned|length }}</span>
+                    <i data-lucide="chevron-down" class="w-4 h-4 transition-transform" :class="{ 'rotate-180': showMentioned }"></i>
+                </button>
+                <div x-show="showMentioned" x-collapse class="space-y-3">
+                    {% for participation in parts.mentioned %}
+                    <div class="p-4 rounded-lg opacity-75" style="background: var(--f-bg-elevated); border: 1px solid var(--f-border-light);">
+                        <a href="{% narrative_url participation.character %}" class="font-medium transition-colors" style="color: var(--f-fg-heading);"
+                           onmouseover="this.style.color='var(--f-accent-green)'"
+                           onmouseout="this.style.color='var(--f-fg-heading)'">
+                            {{ participation.character.canonical_name }}
+                        </a>
+                        {% if participation.what_happened %}
+                        <p class="text-sm mt-1" style="color: var(--f-fg-tertiary);">{{ participation.what_happened|md|striptags|truncatewords:20 }}</p>
+                        {% endif %}
+                    </div>
+                    {% endfor %}
+                </div>
+            </div>
+            {% endif %}
+
+            {# Empty state #}
+            {% if not parts.primary and not parts.secondary and not parts.mentioned %}
+            <div class="text-sm p-6 rounded-lg text-center" style="background: var(--f-bg-elevated); border: 1px solid var(--f-border-light); color: var(--f-fg-tertiary);">
+                <i data-lucide="user-x" class="w-8 h-8 mx-auto mb-2" style="color: var(--f-fg-placeholder);"></i>
+                <p>No character participations recorded</p>
+            </div>
+            {% endif %}
+        </section>
+        {% endwith %}
+
+        {# ============================================================= #}
+        {# OBJECT INVOLVEMENTS #}
+        {# ============================================================= #}
+        {% if page.object_involvements.exists %}
+        <section class="mb-12">
+            <div class="flex items-center gap-3 mb-8">
+                <i data-lucide="box" class="w-5 h-5" style="color: var(--f-accent-orange);"></i>
+                <div class="flex-1">
+                    <h2 style="font-family: var(--f-font-display); color: var(--f-fg-heading); font-size: 1.35rem; font-weight: 400;">Objects Involved</h2>
+                    <p class="text-sm mt-0.5" style="color: var(--f-fg-placeholder);">Significant items in this scene</p>
+                </div>
+                <span class="px-3 py-1.5 text-sm font-medium rounded-md" style="background: color-mix(in srgb, var(--f-accent-orange) 8%, transparent); color: var(--f-accent-orange); border: 1px solid color-mix(in srgb, var(--f-accent-orange) 25%, transparent);">
+                    {{ page.object_involvements.count }}
+                </span>
+            </div>
+
+            <div class="space-y-4">
+                {% for involvement in page.object_involvements.all %}
+                    {% include "includes/object_involvement_card.html" with involvement=involvement %}
+                {% endfor %}
+            </div>
+        </section>
+        {% endif %}
+
+        {# ============================================================= #}
+        {# LOCATION INVOLVEMENTS #}
+        {# ============================================================= #}
+        {% if page.location_involvements.exists %}
+        <section class="mb-12">
+            <div class="flex items-center gap-3 mb-8">
+                <i data-lucide="map-pin" class="w-5 h-5" style="color: var(--f-accent-blue);"></i>
+                <div class="flex-1">
+                    <h2 style="font-family: var(--f-font-display); color: var(--f-fg-heading); font-size: 1.35rem; font-weight: 400;">Location Details</h2>
+                    <p class="text-sm mt-0.5" style="color: var(--f-fg-placeholder);">Places and their significance in this event</p>
+                </div>
+                <span class="px-3 py-1.5 text-sm font-medium rounded-md" style="background: var(--f-accent-blue-bg); color: var(--f-accent-blue); border: 1px solid color-mix(in srgb, var(--f-accent-blue) 25%, transparent);">
+                    {{ page.location_involvements.count }}
+                </span>
+            </div>
+
+            <div class="space-y-4">
+                {% for involvement in page.location_involvements.all %}
+                    {% include "includes/location_involvement_card.html" with involvement=involvement %}
+                {% endfor %}
+            </div>
+        </section>
+        {% endif %}
+
+        {# ============================================================= #}
+        {# ORGANIZATION INVOLVEMENTS #}
+        {# ============================================================= #}
+        {% if page.organization_involvements.exists %}
+        <section class="mb-12">
+            <div class="flex items-center gap-3 mb-8">
+                <i data-lucide="building-2" class="w-5 h-5" style="color: var(--f-accent-violet);"></i>
+                <div class="flex-1">
+                    <h2 style="font-family: var(--f-font-display); color: var(--f-fg-heading); font-size: 1.35rem; font-weight: 400;">Organizations Involved</h2>
+                    <p class="text-sm mt-0.5" style="color: var(--f-fg-placeholder);">Institutional presence and influence</p>
+                </div>
+                <span class="px-3 py-1.5 text-sm font-medium rounded-md" style="background: color-mix(in srgb, var(--f-accent-violet) 8%, transparent); color: var(--f-accent-violet); border: 1px solid color-mix(in srgb, var(--f-accent-violet) 25%, transparent);">
+                    {{ page.organization_involvements.count }}
+                </span>
+            </div>
+
+            <div class="space-y-4">
+                {% for involvement in page.organization_involvements.all %}
+                    {% include "includes/organization_involvement_card.html" with involvement=involvement %}
+                {% endfor %}
+            </div>
+        </section>
+        {% endif %}
+
+        <hr style="border-color: var(--f-rule-color);" class="mb-10">
+
+        {# ============================================================= #}
+        {# NARRATIVE CONNECTIONS #}
+        {# ============================================================= #}
+        <section class="mb-12">
+            <div class="flex items-center gap-3 mb-8">
+                <i data-lucide="git-branch" class="w-5 h-5" style="color: var(--f-accent-cyan);"></i>
+                <div class="flex-1">
+                    <h2 style="font-family: var(--f-font-display); color: var(--f-fg-heading); font-size: 1.35rem; font-weight: 400;">Narrative Connections</h2>
+                    <p class="text-sm mt-0.5" style="color: var(--f-fg-placeholder);">How this event relates to others in the story</p>
+                </div>
+            </div>
+
+            {% with incoming=page.incoming_connections.all outgoing=page.outgoing_connections.all %}
+
+            {# What led here #}
+            {% if incoming %}
+            <div class="mb-8">
+                <div class="flex items-center gap-2 text-sm font-medium mb-4 uppercase tracking-wider" style="color: var(--f-fg-placeholder); letter-spacing: 0.08em;">
+                    <i data-lucide="arrow-down" class="w-4 h-4" style="color: var(--f-accent-cyan);"></i>
+                    <span>What led here</span>
+                    <span class="px-2 py-0.5 text-xs rounded" style="background: var(--f-bg-elevated); color: var(--f-fg-placeholder);">{{ incoming.count }}</span>
+                </div>
+                <div class="space-y-3">
+                    {% for connection in incoming %}
+                        {% include "includes/connection_card.html" with connection=connection direction="incoming" %}
+                    {% endfor %}
+                </div>
+            </div>
+            {% endif %}
+
+            {# What this causes #}
+            {% if outgoing %}
+            <div class="mb-6">
+                <div class="flex items-center gap-2 text-sm font-medium mb-4 uppercase tracking-wider" style="color: var(--f-fg-placeholder); letter-spacing: 0.08em;">
+                    <i data-lucide="arrow-up" class="w-4 h-4" style="color: var(--f-accent-primary);"></i>
+                    <span>What this causes</span>
+                    <span class="px-2 py-0.5 text-xs rounded" style="background: var(--f-bg-elevated); color: var(--f-fg-placeholder);">{{ outgoing.count }}</span>
+                </div>
+                <div class="space-y-3">
+                    {% for connection in outgoing %}
+                        {% include "includes/connection_card.html" with connection=connection direction="outgoing" %}
+                    {% endfor %}
+                </div>
+            </div>
+            {% endif %}
+
+            {% if not incoming and not outgoing %}
+            <div class="text-sm p-8 rounded-lg text-center" style="background: var(--f-bg-elevated); border: 1px solid var(--f-border-light); color: var(--f-fg-tertiary);">
+                <i data-lucide="link-2-off" class="w-10 h-10 mx-auto mb-3" style="color: var(--f-fg-placeholder);"></i>
+                <p class="font-medium">No narrative connections mapped yet</p>
+                <p class="text-xs mt-1" style="color: var(--f-fg-placeholder);">This event is currently isolated in the narrative graph</p>
+            </div>
+            {% endif %}
+
+            {% endwith %}
+        </section>
+
+        <hr style="border-color: var(--f-rule-color);" class="mb-10">
+
+        {# ============================================================= #}
+        {# THEMES #}
+        {# ============================================================= #}
+        {% if page.themes.exists %}
+        <section class="mb-12">
+            <div class="flex items-center gap-3 mb-6">
+                <i data-lucide="sparkles" class="w-5 h-5" style="color: var(--f-accent-violet);"></i>
+                <div class="flex-1">
+                    <h2 style="font-family: var(--f-font-display); color: var(--f-fg-heading); font-size: 1.35rem; font-weight: 400;">Themes This Exemplifies</h2>
+                    <p class="text-sm mt-0.5" style="color: var(--f-fg-placeholder);">Thematic resonance and meaning</p>
+                </div>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-4">
+                {% for theme in page.themes.all %}
+                <a href="{{ theme.get_absolute_url }}"
+                   class="group block p-5 rounded-lg transition-all duration-200"
+                   style="background: var(--f-card-bg); border: 1px solid var(--f-card-border); box-shadow: var(--f-card-shadow);"
+                   onmouseover="this.style.boxShadow='var(--f-card-shadow-hover)'; this.style.borderColor='var(--f-accent-violet)'"
+                   onmouseout="this.style.boxShadow='var(--f-card-shadow)'; this.style.borderColor='var(--f-card-border)'">
+                    <div class="flex items-start justify-between gap-4 mb-3">
+                        <div class="font-medium leading-snug" style="color: var(--f-fg-heading); font-family: var(--f-font-display);">
+                            {{ theme.name }}
+                        </div>
+                        <span class="shrink-0 px-2 py-1 text-xs font-medium rounded" style="background: color-mix(in srgb, var(--f-accent-violet) 8%, transparent); color: var(--f-accent-violet); border: 1px solid color-mix(in srgb, var(--f-accent-violet) 20%, transparent);">
+                            {{ theme.events.count }}
+                        </span>
+                    </div>
+                    <div class="text-sm line-clamp-2 leading-relaxed" style="color: var(--f-fg-tertiary);">
+                        {{ theme.description|truncatewords:25 }}
+                    </div>
+                </a>
+                {% endfor %}
+            </div>
+        </section>
+        {% endif %}
+
+        {# ============================================================= #}
+        {# CONFLICT ARCS #}
+        {# ============================================================= #}
+        {% if page.arcs.exists %}
+        <section>
+            <div class="flex items-center gap-2 mb-6">
+                <i data-lucide="git-branch" class="w-5 h-5" style="color: var(--f-accent-orange);"></i>
+                <h2 style="font-family: var(--f-font-display); color: var(--f-fg-heading); font-size: 1.15rem; font-weight: 400;">Part of Larger Arcs</h2>
+            </div>
+
+            <div class="flex flex-wrap gap-2">
+                {% for arc in page.arcs.all %}
+                <a href="{{ arc.get_absolute_url }}"
+                   class="px-3 py-1.5 text-sm rounded-md transition-colors"
+                   style="border: 1px solid color-mix(in srgb, var(--f-accent-orange) 30%, transparent); color: var(--f-accent-orange); background: color-mix(in srgb, var(--f-accent-orange) 5%, transparent);"
+                   onmouseover="this.style.background='color-mix(in srgb, var(--f-accent-orange) 10%, transparent)'"
+                   onmouseout="this.style.background='color-mix(in srgb, var(--f-accent-orange) 5%, transparent)'">
+                    {{ arc.title }}
+                </a>
+                {% endfor %}
+            </div>
+        </section>
+        {% endif %}
+
+        {# ============================================================= #}
+        {# KEY DIALOGUE #}
+        {# ============================================================= #}
+        {% if page.key_dialogue %}
+        <section class="mt-10">
+            <div class="flex items-center gap-2 mb-6">
+                <i data-lucide="quote" class="w-5 h-5" style="color: var(--f-fg-tertiary);"></i>
+                <h2 style="font-family: var(--f-font-display); color: var(--f-fg-heading); font-size: 1.15rem; font-weight: 400;">Key Dialogue</h2>
+            </div>
+
+            <div class="space-y-3">
+                {% for line in page.key_dialogue %}
+                <blockquote class="pl-4 italic" style="border-left: 2px solid var(--f-border-accent); color: var(--f-fg-secondary); font-family: var(--f-font-display);">
+                    "{{ line }}"
+                </blockquote>
+                {% endfor %}
+            </div>
+        </section>
+        {% endif %}
+
+    </div>
+</article>
+
+{% else %}
+{# ===== DARK EVENT DETAIL (original) ===== #}
 <article class="min-h-screen pb-16 fade-in">
     {# Hero section with gradient #}
     <div class="relative overflow-hidden">
@@ -386,7 +801,7 @@
                 <i data-lucide="git-branch" class="w-5 h-5 text-orange-400"></i>
                 <h2 class="text-lg font-semibold text-white">Part of Larger Arcs</h2>
             </div>
-            
+
             <div class="flex flex-wrap gap-2">
                 {% for arc in page.arcs.all %}
                 <a href="{{ arc.get_absolute_url }}"
@@ -407,7 +822,7 @@
                 <i data-lucide="quote" class="w-5 h-5 text-slate-400"></i>
                 <h2 class="text-lg font-semibold text-white">Key Dialogue</h2>
             </div>
-            
+
             <div class="space-y-3">
                 {% for line in page.key_dialogue %}
                 <blockquote class="pl-4 border-l-2 border-slate-700 text-slate-300 italic">
@@ -420,6 +835,7 @@
 
     </div>
 </article>
+{% endif %}
 {% endblock %}
 
 {% block extra_js %}

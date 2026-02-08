@@ -4,10 +4,99 @@
 {% block title %}{{ arc.title }}{% endblock %}
 
 {% block series_context %}
+{% if fabula_theme == 'writerly' %}
+<span class="text-sm" style="color: var(--f-fg-tertiary); font-family: var(--f-font-display);">Conflict Arc</span>
+{% else %}
 <span class="text-slate-500 text-sm font-medium">Conflict Arc</span>
+{% endif %}
 {% endblock %}
 
 {% block content %}
+{% if fabula_theme == 'writerly' %}
+{# ===== WRITERLY ARC DETAIL ===== #}
+<article class="min-h-screen pb-16">
+    {# Hero section #}
+    <div class="py-14" style="background: var(--f-bg-hero);">
+        <div class="max-w-4xl mx-auto px-6">
+            {# Arc badge row #}
+            <div class="flex items-center gap-3 mb-4 flex-wrap">
+                <div class="flex items-center gap-2 px-3 py-1.5 rounded-md" style="background: var(--f-accent-orange-bg); border: 1px solid color-mix(in srgb, var(--f-accent-orange) 25%, transparent);">
+                    <i data-lucide="trending-up" class="w-4 h-4" style="color: var(--f-accent-orange);"></i>
+                    <span class="text-sm font-medium" style="color: var(--f-accent-orange-fg);">{{ arc.get_arc_type_display }} Conflict</span>
+                </div>
+                <a href="{% url 'arc_graph' arc.global_id|default:arc.fabula_uuid|default:arc.pk %}"
+                   class="flex items-center gap-2 px-3 py-1.5 rounded-md transition-colors"
+                   style="background: var(--f-accent-cyan-bg); border: 1px solid color-mix(in srgb, var(--f-accent-cyan) 25%, transparent);"
+                   onmouseover="this.style.background='color-mix(in srgb, var(--f-accent-cyan) 15%, transparent)'"
+                   onmouseout="this.style.background='var(--f-accent-cyan-bg)'">
+                    <i data-lucide="git-branch" class="w-4 h-4" style="color: var(--f-accent-cyan);"></i>
+                    <span class="text-sm font-medium" style="color: var(--f-accent-cyan);">View Graph</span>
+                </a>
+            </div>
+
+            {# Title #}
+            <h1 class="mb-6" style="font-family: var(--f-font-display); color: var(--f-fg-heading); font-size: clamp(1.75rem, 3.5vw, 2.5rem); line-height: 1.15; letter-spacing: -0.02em; font-weight: 400;">
+                {{ arc.title }}
+            </h1>
+
+            {# Description #}
+            <p class="max-w-3xl leading-relaxed" style="color: var(--f-fg-secondary); font-size: 1.05rem; line-height: 1.7;">
+                {{ arc.description }}
+            </p>
+
+            {# Stats #}
+            <div class="flex items-center gap-2 mt-6">
+                <i data-lucide="calendar" class="w-4 h-4" style="color: var(--f-accent-orange);"></i>
+                <span class="text-sm" style="color: var(--f-fg-tertiary);">{{ events.count }} events in this arc</span>
+            </div>
+        </div>
+    </div>
+
+    <div class="max-w-4xl mx-auto px-6 pt-6">
+        <hr style="border-color: var(--f-rule-color);" class="mb-8">
+
+        {# ============================================================= #}
+        {# EVENTS IN THIS ARC #}
+        {# ============================================================= #}
+        <section>
+            <div class="flex items-center gap-2 mb-6">
+                <i data-lucide="trending-up" class="w-5 h-5" style="color: var(--f-accent-orange);"></i>
+                <h2 style="font-family: var(--f-font-display); color: var(--f-fg-heading); font-size: 1.15rem; font-weight: 400;">Events in This Arc</h2>
+            </div>
+
+            <div class="space-y-3">
+                {% for event in events %}
+                <a href="{% narrative_url event %}"
+                   class="block p-4 rounded-lg transition-all duration-200 group"
+                   style="background: var(--f-card-bg); border: 1px solid var(--f-card-border); box-shadow: var(--f-card-shadow);"
+                   onmouseover="this.style.boxShadow='var(--f-card-shadow-hover)'; this.style.borderColor='var(--f-accent-orange)'"
+                   onmouseout="this.style.boxShadow='var(--f-card-shadow)'; this.style.borderColor='var(--f-card-border)'">
+                    <div class="flex items-start justify-between gap-4">
+                        <div class="flex-1">
+                            <div class="text-xs mb-1" style="color: var(--f-fg-placeholder); font-family: var(--f-font-mono);">
+                                S{{ event.episode.get_parent.specific.season_number }}E{{ event.episode.episode_number }} · {{ event.episode.title }}
+                            </div>
+                            <div class="font-medium mb-2 leading-snug" style="font-family: var(--f-font-display); color: var(--f-fg-heading);">
+                                {{ event.title|md }}
+                            </div>
+                            <p class="text-sm line-clamp-2" style="color: var(--f-fg-tertiary);">
+                                {{ event.description|md|striptags|truncatewords:30 }}
+                            </p>
+                        </div>
+                    </div>
+                </a>
+                {% empty %}
+                <div class="text-sm p-4 rounded-lg text-center" style="color: var(--f-fg-tertiary); background: var(--f-bg-elevated); border: 1px solid var(--f-border-light);">
+                    No events found in this arc
+                </div>
+                {% endfor %}
+            </div>
+        </section>
+    </div>
+</article>
+
+{% else %}
+{# ===== DARK ARC DETAIL (original) ===== #}
 <article class="min-h-screen pb-16">
     {# Hero section #}
     <div class="relative overflow-hidden">
@@ -85,4 +174,5 @@
         </section>
     </div>
 </article>
+{% endif %}
 {% endblock %}

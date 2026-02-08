@@ -4,6 +4,101 @@
 {% block title %}{{ page.title|md_plain }}{% endblock %}
 
 {% block content %}
+{% if fabula_theme == 'writerly' %}
+{# ===== WRITERLY EVENT INDEX ===== #}
+<article class="min-h-screen pb-16">
+    <div class="py-14 text-center" style="background: var(--f-bg-hero);">
+        <div class="max-w-4xl mx-auto px-6">
+            <i data-lucide="zap" class="w-10 h-10 mx-auto mb-4" style="color: var(--f-accent-primary);"></i>
+            <h1 class="mb-4" style="font-family: var(--f-font-display); color: var(--f-fg-heading); font-size: clamp(2rem, 4vw, 3rem); line-height: 1.15; letter-spacing: -0.02em; font-weight: 400;">
+                {{ page.title }}
+            </h1>
+
+            {% if page.introduction %}
+            <div class="max-w-2xl mx-auto leading-relaxed" style="color: var(--f-fg-secondary); font-size: 1.05rem; line-height: 1.7;">
+                {{ page.introduction|richtext }}
+            </div>
+            {% endif %}
+
+            <div class="mt-4 text-sm" style="color: var(--f-fg-placeholder);">
+                {{ events|length }} events across {{ episodes_with_events|length }} episodes
+            </div>
+        </div>
+    </div>
+
+    <div class="max-w-6xl mx-auto px-6 pt-8">
+        {% for ep_group in episodes_with_events %}
+        {# Series separator #}
+        {% ifchanged ep_group.series %}
+        {% if not forloop.first %}
+        <hr style="border-color: var(--f-rule-color);" class="my-12">
+        {% endif %}
+        <div class="flex items-center gap-3 mb-8">
+            <i data-lucide="tv" class="w-6 h-6" style="color: var(--f-fg-placeholder);"></i>
+            <h2 style="font-family: var(--f-font-display); color: var(--f-fg-heading); font-size: 1.5rem; font-weight: 400;">{{ ep_group.series.title }}</h2>
+        </div>
+        {% endifchanged %}
+
+        <div class="mb-8">
+            {# Episode header #}
+            <div class="flex items-center gap-3 mb-4">
+                <div class="flex-shrink-0 px-3 py-1.5 rounded-md" style="background: var(--f-accent-primary-bg); border: 1px solid color-mix(in srgb, var(--f-accent-primary) 25%, transparent);">
+                    <span style="color: var(--f-accent-primary); font-family: var(--f-font-mono); font-weight: 600;">
+                        S{{ ep_group.season.season_number }}E{{ ep_group.episode.episode_number }}
+                    </span>
+                </div>
+                <a href="{% narrative_url ep_group.episode %}" class="flex-1 min-w-0 group">
+                    <h3 class="font-medium truncate transition-colors" style="font-family: var(--f-font-display); color: var(--f-fg-heading); font-size: 1.1rem;"
+                        onmouseover="this.style.color='var(--f-accent-primary)'"
+                        onmouseout="this.style.color='var(--f-fg-heading)'">
+                        {{ ep_group.episode.title }}
+                    </h3>
+                </a>
+                <span class="text-sm" style="color: var(--f-fg-placeholder);">{{ ep_group.events|length }} events</span>
+            </div>
+
+            {# Events in this episode #}
+            <div class="grid gap-2 pl-4" style="border-left: 2px solid color-mix(in srgb, var(--f-accent-primary) 25%, transparent);">
+                {% for event in ep_group.events %}
+                <a href="{% narrative_url event %}"
+                   class="block p-4 rounded-lg transition-all duration-200 group"
+                   style="background: var(--f-card-bg); border: 1px solid var(--f-card-border);"
+                   onmouseover="this.style.borderColor='var(--f-accent-primary)'; this.style.boxShadow='var(--f-card-shadow-hover)'"
+                   onmouseout="this.style.borderColor='var(--f-card-border)'; this.style.boxShadow='none'">
+                    <div class="flex items-start gap-4">
+                        <div class="flex-shrink-0 w-12 text-center">
+                            <span class="text-xs block" style="color: var(--f-fg-placeholder);">Scene</span>
+                            <span class="text-lg" style="font-family: var(--f-font-mono); color: var(--f-accent-primary);">{{ event.scene_sequence|default:"&mdash;" }}</span>
+                        </div>
+                        <div class="flex-1 min-w-0">
+                            <h3 class="text-base font-medium transition-colors" style="color: var(--f-fg-heading);">
+                                {{ event.title|md }}
+                            </h3>
+                            {% if event.description %}
+                            <p class="text-sm mt-1 line-clamp-2" style="color: var(--f-fg-tertiary);">
+                                {{ event.description|md|striptags|truncatewords:25 }}
+                            </p>
+                            {% endif %}
+                        </div>
+                        <div class="flex-shrink-0 transition-colors" style="color: var(--f-fg-placeholder);">
+                            <i data-lucide="chevron-right" class="w-5 h-5"></i>
+                        </div>
+                    </div>
+                </a>
+                {% endfor %}
+            </div>
+        </div>
+        {% empty %}
+        <div class="text-sm p-8 rounded-lg text-center" style="color: var(--f-fg-tertiary); background: var(--f-bg-elevated); border: 1px solid var(--f-border-light);">
+            <i data-lucide="inbox" class="w-8 h-8 mx-auto mb-2 opacity-50"></i>
+            <p>No events found</p>
+        </div>
+        {% endfor %}
+    </div>
+</article>
+
+{% else %}
+{# ===== DARK EVENT INDEX (original) ===== #}
 <article class="min-h-screen pb-16">
     <div class="relative overflow-hidden">
         <div class="absolute inset-0 bg-gradient-to-b from-amber-950/20 via-slate-950 to-slate-950"></div>
@@ -92,4 +187,5 @@
         {% endfor %}
     </div>
 </article>
+{% endif %}
 {% endblock %}

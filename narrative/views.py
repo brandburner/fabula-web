@@ -18,6 +18,7 @@ Views support series scoping via SeriesScopedMixin, enabling URLs like:
 """
 
 import json
+import re
 
 from django.http import Http404
 from django.shortcuts import render, get_object_or_404, redirect
@@ -34,6 +35,19 @@ from .models import (
     CharacterIndexPage, OrganizationIndexPage, ObjectIndexPage, EventIndexPage,
     SeriesIndexPage, Act, EventBeatLink,
 )
+
+
+def _clean_title(value):
+    """Strip markdown bold markers and wrapping quotes from titles."""
+    if not value:
+        return ''
+    text = str(value).strip()
+    # Strip all bold markers first
+    text = text.replace('**', '').replace('*', '')
+    # Then strip wrapping quotes
+    text = re.sub(r'^["\u201c]+', '', text)
+    text = re.sub(r'["\u201d]+$', '', text)
+    return text.strip()
 
 
 # =============================================================================
@@ -858,11 +872,12 @@ class ScopedGraphMixin:
             node_id = f"event_{event.pk}"
             seen_nodes.add(node_id)
 
+            clean = _clean_title(event.title)
             nodes.append({
                 'id': node_id,
                 'nodeType': 'event',
-                'label': event.title[:40] + '...' if len(event.title) > 40 else event.title,
-                'fullTitle': event.title,
+                'label': clean[:40] + '...' if len(clean) > 40 else clean,
+                'fullTitle': clean,
                 'url': event.get_absolute_url(),
                 'episode': ep_label,
                 'sceneSequence': event.scene_sequence or 0,
@@ -1131,9 +1146,9 @@ class EpisodeGraphView(FlexibleIdentifierMixin, ScopedGraphMixin, DetailView):
         episode = self.get_object()
         try:
             season = episode.get_parent().specific
-            return f"S{season.season_number}E{episode.episode_number}: {episode.title}"
+            return f"S{season.season_number}E{episode.episode_number}: {_clean_title(episode.title)}"
         except (AttributeError, TypeError):
-            return f"Episode: {episode.title}"
+            return f"Episode: {_clean_title(episode.title)}"
 
     def get_back_url(self):
         return self.get_object().url
@@ -1280,7 +1295,7 @@ class EventGraphView(FlexibleIdentifierMixin, ScopedGraphMixin, DetailView):
     model = EventPage
 
     def get_graph_title(self):
-        return f"Event: {self.get_object().title}"
+        return f"Event: {_clean_title(self.get_object().title)}"
 
     def get_back_url(self):
         return self.get_object().get_absolute_url()

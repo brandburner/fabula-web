@@ -4,10 +4,77 @@
 {% block title %}Conflict Arcs{% endblock %}
 
 {% block series_context %}
+{% if fabula_theme == 'writerly' %}
+<span class="text-sm" style="color: var(--f-fg-placeholder); font-size: 0.875rem; font-weight: 500;">Conflict Analysis</span>
+{% else %}
 <span class="text-slate-500 text-sm font-medium">Conflict Analysis</span>
+{% endif %}
 {% endblock %}
 
 {% block content %}
+{% if fabula_theme == 'writerly' %}
+{# ===== WRITERLY ARC INDEX ===== #}
+<article class="min-h-screen pb-16">
+    {# Hero section #}
+    <div class="py-14" style="background: var(--f-bg-hero);">
+        <div class="max-w-4xl mx-auto px-6">
+            <div class="flex items-center gap-2 text-sm mb-4">
+                <i data-lucide="trending-up" class="w-4 h-4" style="color: var(--f-accent-orange);"></i>
+                <span class="font-medium" style="color: var(--f-accent-orange);">Story Arcs</span>
+            </div>
+
+            <h1 class="mb-4 leading-tight" style="font-family: var(--f-font-display); color: var(--f-fg-heading); font-size: clamp(2rem, 4vw, 2.5rem); letter-spacing: -0.02em; font-weight: 400;">
+                Conflict Arcs
+            </h1>
+
+            <p class="leading-relaxed max-w-3xl" style="color: var(--f-fg-tertiary); font-size: 1.1rem; line-height: 1.7;">
+                The sustained tensions and conflicts that drive the narrative forward.
+                Each arc tracks how conflicts escalate, transform, and resolve across multiple episodes.
+            </p>
+        </div>
+    </div>
+
+    <div class="max-w-4xl mx-auto px-6 pt-6">
+        <hr style="border-color: var(--f-rule-color);" class="mb-8">
+
+        {# Arc grid #}
+        <div class="space-y-4">
+            {% for arc in arcs %}
+            <a href="{{ arc.get_absolute_url }}"
+               class="block p-5 rounded-lg transition-all duration-200 group"
+               style="background: var(--f-card-bg); border: 1px solid var(--f-card-border);"
+               onmouseover="this.style.borderColor='color-mix(in srgb, var(--f-accent-orange) 40%, transparent)'; this.style.boxShadow='0 2px 8px color-mix(in srgb, var(--f-accent-orange) 6%, transparent)'"
+               onmouseout="this.style.borderColor='var(--f-card-border)'; this.style.boxShadow='none'">
+                <div class="flex items-start justify-between gap-4 mb-3">
+                    <div class="flex items-center gap-3">
+                        <h2 class="text-lg font-medium transition-colors" style="font-family: var(--f-font-display); color: var(--f-fg-heading);">
+                            {{ arc.title }}
+                        </h2>
+                        <span class="px-2 py-0.5 text-xs rounded" style="background: var(--f-bg-elevated); color: var(--f-fg-secondary); border: 1px solid var(--f-border-light);">
+                            {{ arc.get_arc_type_display }}
+                        </span>
+                    </div>
+                    <span class="shrink-0 px-2 py-0.5 text-xs rounded" style="background: color-mix(in srgb, var(--f-accent-orange) 8%, transparent); color: var(--f-accent-orange);">
+                        {{ arc.event_count }} events
+                    </span>
+                </div>
+
+                <p class="leading-relaxed" style="color: var(--f-fg-tertiary);">
+                    {{ arc.description|truncatewords:40 }}
+                </p>
+            </a>
+            {% empty %}
+            <div class="text-sm p-4 rounded-lg" style="background: var(--f-bg-elevated); border: 1px solid var(--f-border-light); color: var(--f-fg-placeholder);">
+                No conflict arcs found
+            </div>
+            {% endfor %}
+        </div>
+
+    </div>
+</article>
+
+{% else %}
+{# ===== DARK ARC INDEX ===== #}
 <article class="min-h-screen pb-16">
     {# Hero section #}
     <div class="relative overflow-hidden">
@@ -66,4 +133,5 @@
 
     </div>
 </article>
+{% endif %}
 {% endblock %}

@@ -4,6 +4,122 @@
 {% block title %}Explore Narrative Graphs{% endblock %}
 
 {% block content %}
+{% if fabula_theme == 'writerly' %}
+{# ===== WRITERLY CATALOG ===== #}
+<div class="max-w-5xl mx-auto px-6 py-20">
+    {# Page Header - Editorial style #}
+    <header class="mb-20 text-center">
+        <div class="mb-6" style="color: var(--f-fg-placeholder);">
+            <div class="w-12 h-px mx-auto mb-6" style="background: var(--f-border-accent);"></div>
+            <span class="text-xs font-medium tracking-widest uppercase" style="font-family: var(--f-font-body); letter-spacing: 0.15em;">Narrative Intelligence</span>
+        </div>
+        <h1 class="mb-6" style="font-family: var(--f-font-display); color: var(--f-fg-heading); font-size: clamp(2.25rem, 5vw, 3.5rem); line-height: 1.1; letter-spacing: -0.03em; font-weight: 400;">
+            Explore the Narrative Web
+        </h1>
+        <p class="max-w-xl mx-auto leading-relaxed" style="color: var(--f-fg-secondary); font-size: 1.125rem; line-height: 1.7;">
+            Interactive story graphs from iconic television series.
+            Trace how characters connect, follow narrative arcs,
+            and discover the thematic patterns that bind stories together.
+        </p>
+    </header>
+
+    {% if series_list %}
+    {# Series Cards - Clean editorial grid #}
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-24">
+        {% for item in series_list %}
+        <a href="{% url 'series_landing' series_slug=item.series.slug %}"
+           class="group block rounded-lg overflow-hidden transition-all duration-300"
+           style="background: var(--f-card-bg); border: 1px solid var(--f-card-border); box-shadow: var(--f-card-shadow);"
+           onmouseover="this.style.boxShadow='var(--f-card-shadow-hover)'; this.style.borderColor='var(--f-card-border-hover)'; this.style.transform='translateY(-2px)'"
+           onmouseout="this.style.boxShadow='var(--f-card-shadow)'; this.style.borderColor='var(--f-card-border)'; this.style.transform='translateY(0)'">
+
+            {# Top accent line #}
+            <div class="h-0.5" style="background: linear-gradient(90deg, var(--f-accent-primary), var(--f-accent-cyan));"></div>
+
+            <div class="p-8">
+                {# Series number + label #}
+                <div class="flex items-baseline gap-3 mb-4">
+                    <span class="text-xs font-medium tracking-widest uppercase" style="color: var(--f-fg-placeholder); letter-spacing: 0.12em;">Series</span>
+                </div>
+
+                {# Title #}
+                <h2 class="mb-3 transition-colors duration-200" style="font-family: var(--f-font-display); color: var(--f-fg-heading); font-size: 1.75rem; line-height: 1.2; letter-spacing: -0.02em; font-weight: 400;">
+                    {{ item.series.title }}
+                </h2>
+
+                {# Description #}
+                {% if item.series.description %}
+                <p class="mb-6 line-clamp-2" style="color: var(--f-fg-secondary); font-size: 0.9rem; line-height: 1.6;">
+                    {{ item.series.description|striptags|truncatewords:30 }}
+                </p>
+                {% endif %}
+
+                {# Stats - understated horizontal layout #}
+                <div class="flex items-center gap-6 mb-6 pb-6" style="border-bottom: 1px solid var(--f-border-light);">
+                    <div>
+                        <div class="text-2xl font-light tabular-nums" style="color: var(--f-fg-heading); font-family: var(--f-font-display);">{{ item.event_count|default:0 }}</div>
+                        <div class="text-xs mt-0.5" style="color: var(--f-fg-placeholder); letter-spacing: 0.05em;">Events</div>
+                    </div>
+                    <div style="width: 1px; height: 2rem; background: var(--f-border-light);"></div>
+                    <div>
+                        <div class="text-2xl font-light tabular-nums" style="color: var(--f-fg-heading); font-family: var(--f-font-display);">{{ item.character_count|default:0 }}</div>
+                        <div class="text-xs mt-0.5" style="color: var(--f-fg-placeholder); letter-spacing: 0.05em;">Characters</div>
+                    </div>
+                    <div style="width: 1px; height: 2rem; background: var(--f-border-light);"></div>
+                    <div>
+                        <div class="text-2xl font-light tabular-nums" style="color: var(--f-fg-heading); font-family: var(--f-font-display);">{{ item.connection_count|default:0 }}</div>
+                        <div class="text-xs mt-0.5" style="color: var(--f-fg-placeholder); letter-spacing: 0.05em;">Connections</div>
+                    </div>
+                </div>
+
+                {# Explore link #}
+                <div class="flex items-center gap-2 text-sm transition-colors duration-200" style="color: var(--f-accent-primary);">
+                    <span style="font-family: var(--f-font-display); font-style: italic;">Explore this graph</span>
+                    <i data-lucide="arrow-right" class="w-4 h-4 group-hover:translate-x-1 transition-transform duration-200"></i>
+                </div>
+            </div>
+        </a>
+        {% endfor %}
+    </div>
+    {% else %}
+    {# Empty State #}
+    <div class="text-center py-20">
+        <div class="w-12 h-px mx-auto mb-8" style="background: var(--f-border-accent);"></div>
+        <h2 class="mb-3" style="font-family: var(--f-font-display); color: var(--f-fg-heading); font-size: 1.5rem;">No Graphs Available Yet</h2>
+        <p style="color: var(--f-fg-tertiary); max-width: 28rem;" class="mx-auto">
+            Check back soon. We're adding narrative graphs from iconic television series.
+        </p>
+    </div>
+    {% endif %}
+
+    {# Coming Soon - quiet, editorial #}
+    <div class="text-center mb-20">
+        <div class="w-12 h-px mx-auto mb-6" style="background: var(--f-border-default);"></div>
+        <p class="text-xs font-medium tracking-widest uppercase mb-5" style="color: var(--f-fg-placeholder); letter-spacing: 0.15em;">Coming Soon</p>
+        <div class="flex flex-wrap justify-center gap-3">
+            <span class="px-4 py-2 rounded-md text-sm" style="background: var(--f-bg-elevated); color: var(--f-fg-tertiary); border: 1px solid var(--f-border-light);">Breaking Bad</span>
+            <span class="px-4 py-2 rounded-md text-sm" style="background: var(--f-bg-elevated); color: var(--f-fg-tertiary); border: 1px solid var(--f-border-light);">I, Claudius</span>
+            <span class="px-4 py-2 rounded-md text-sm" style="background: var(--f-bg-elevated); color: var(--f-fg-tertiary); border: 1px solid var(--f-border-light);">Doctor Who</span>
+        </div>
+    </div>
+
+    {# CTA - warm and inviting #}
+    <div class="text-center rounded-lg p-12" style="background: var(--f-bg-elevated); border: 1px solid var(--f-border-default);">
+        <h3 class="mb-4" style="font-family: var(--f-font-display); color: var(--f-fg-heading); font-size: 1.5rem; font-weight: 400;">Want to see your show here?</h3>
+        <p class="mb-8 max-w-lg mx-auto" style="color: var(--f-fg-secondary);">
+            Fabula can process any TV series. Contact us to add your show to the demo catalog.
+        </p>
+        <a href="mailto:hello@fabula.dev"
+           class="inline-flex items-center gap-2 px-6 py-3 text-base font-medium rounded-md transition-all duration-200"
+           style="background: var(--f-accent-primary); color: var(--f-fg-inverse);">
+            Get in Touch
+            <i data-lucide="mail" class="w-5 h-5"></i>
+        </a>
+    </div>
+</div>
+
+{% else %}
+{# ===== DARK CATALOG (original, preserved) ===== #}
 <div class="max-w-7xl mx-auto px-6 py-16">
     {# Page Header #}
     <div class="text-center mb-16">
@@ -104,4 +220,5 @@
         </a>
     </div>
 </div>
+{% endif %}
 {% endblock %}

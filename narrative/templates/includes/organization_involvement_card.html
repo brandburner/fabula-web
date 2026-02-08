@@ -1,26 +1,106 @@
 {# Organization involvement card - shows an organization's role in an event #}
 {% load wagtailcore_tags narrative_tags %}
 
+{% if fabula_theme == 'writerly' %}
+{# ===== WRITERLY ORGANIZATION INVOLVEMENT CARD ===== #}
+<div class="p-4 rounded-lg transition-all group"
+     style="background: var(--f-card-bg); border: 1px solid var(--f-card-border);">
+    <div class="flex items-start gap-3">
+        <div class="p-2 rounded-lg shrink-0" style="background: color-mix(in srgb, var(--f-accent-violet) 8%, transparent); border: 1px solid color-mix(in srgb, var(--f-accent-violet) 15%, transparent);">
+            <i data-lucide="building-2" class="w-5 h-5" style="color: var(--f-accent-violet);"></i>
+        </div>
+        <div class="flex-1 min-w-0">
+            <a href="{% narrative_url involvement.organization %}"
+               class="font-medium transition-colors" style="color: var(--f-fg-heading);"
+               onmouseover="this.style.color='var(--f-accent-violet)'"
+               onmouseout="this.style.color='var(--f-fg-heading)'">
+                {{ involvement.organization.canonical_name }}
+            </a>
+
+            {% if involvement.description_of_involvement %}
+            <p class="text-sm mt-2 leading-relaxed" style="color: var(--f-fg-tertiary);">
+                {{ involvement.description_of_involvement }}
+            </p>
+            {% endif %}
+
+            {% if involvement.active_representation or involvement.power_dynamics or involvement.institutional_impact %}
+            <div class="grid sm:grid-cols-2 gap-2 mt-3">
+                {% if involvement.active_representation %}
+                <div class="flex items-start gap-2 p-2 rounded text-xs" style="background: var(--f-bg-elevated);">
+                    <i data-lucide="users" class="w-3 h-3 mt-0.5 shrink-0" style="color: var(--f-accent-violet);"></i>
+                    <div>
+                        <span class="block" style="color: var(--f-fg-placeholder);">Representation</span>
+                        <span style="color: var(--f-fg-secondary);">{{ involvement.active_representation|truncatewords:15 }}</span>
+                    </div>
+                </div>
+                {% endif %}
+                {% if involvement.power_dynamics %}
+                <div class="flex items-start gap-2 p-2 rounded text-xs" style="background: var(--f-bg-elevated);">
+                    <i data-lucide="scale" class="w-3 h-3 mt-0.5 shrink-0" style="color: var(--f-accent-orange);"></i>
+                    <div>
+                        <span class="block" style="color: var(--f-fg-placeholder);">Power Dynamics</span>
+                        <span style="color: var(--f-fg-secondary);">{{ involvement.power_dynamics|truncatewords:15 }}</span>
+                    </div>
+                </div>
+                {% endif %}
+                {% if involvement.institutional_impact %}
+                <div class="flex items-start gap-2 p-2 rounded text-xs" style="background: var(--f-bg-elevated);">
+                    <i data-lucide="zap" class="w-3 h-3 mt-0.5 shrink-0" style="color: var(--f-accent-primary);"></i>
+                    <div>
+                        <span class="block" style="color: var(--f-fg-placeholder);">Impact</span>
+                        <span style="color: var(--f-fg-secondary);">{{ involvement.institutional_impact|truncatewords:15 }}</span>
+                    </div>
+                </div>
+                {% endif %}
+                {% if involvement.internal_dynamics %}
+                <div class="flex items-start gap-2 p-2 rounded text-xs" style="background: var(--f-bg-elevated);">
+                    <i data-lucide="git-merge" class="w-3 h-3 mt-0.5 shrink-0" style="color: var(--f-accent-cyan);"></i>
+                    <div>
+                        <span class="block" style="color: var(--f-fg-placeholder);">Internal Dynamics</span>
+                        <span style="color: var(--f-fg-secondary);">{{ involvement.internal_dynamics|truncatewords:15 }}</span>
+                    </div>
+                </div>
+                {% endif %}
+            </div>
+            {% endif %}
+
+            {% if involvement.organizational_goals or involvement.influence_mechanisms %}
+            <div class="flex flex-wrap gap-1 mt-3">
+                {% for goal in involvement.organizational_goals %}
+                <span class="px-2 py-0.5 text-xs rounded" style="background: color-mix(in srgb, var(--f-accent-violet) 8%, transparent); color: var(--f-accent-violet); border: 1px solid color-mix(in srgb, var(--f-accent-violet) 20%, transparent);">
+                    {{ goal }}
+                </span>
+                {% endfor %}
+                {% for mechanism in involvement.influence_mechanisms %}
+                <span class="px-2 py-0.5 text-xs rounded" style="background: color-mix(in srgb, var(--f-accent-orange) 8%, transparent); color: var(--f-accent-orange); border: 1px solid color-mix(in srgb, var(--f-accent-orange) 20%, transparent);">
+                    {{ mechanism }}
+                </span>
+                {% endfor %}
+            </div>
+            {% endif %}
+        </div>
+    </div>
+</div>
+
+{% else %}
+{# ===== DARK ORGANIZATION INVOLVEMENT CARD (original) ===== #}
 <div class="p-4 bg-gradient-to-br from-slate-900/50 to-slate-900/30 border border-slate-800 rounded-xl hover:border-indigo-500/30 transition-all group">
     <div class="flex items-start gap-3">
         <div class="p-2 bg-indigo-500/10 rounded-lg shrink-0">
             <i data-lucide="building-2" class="w-5 h-5 text-indigo-400"></i>
         </div>
         <div class="flex-1 min-w-0">
-            {# Organization link #}
             <a href="{% narrative_url involvement.organization %}"
                class="font-semibold text-slate-200 group-hover:text-indigo-300 transition-colors">
                 {{ involvement.organization.canonical_name }}
             </a>
 
-            {# Description of involvement #}
             {% if involvement.description_of_involvement %}
             <p class="text-sm text-slate-400 mt-2 leading-relaxed">
                 {{ involvement.description_of_involvement }}
             </p>
             {% endif %}
 
-            {# Rich details grid #}
             {% if involvement.active_representation or involvement.power_dynamics or involvement.institutional_impact %}
             <div class="grid sm:grid-cols-2 gap-2 mt-3">
                 {% if involvement.active_representation %}
@@ -62,7 +142,6 @@
             </div>
             {% endif %}
 
-            {# Goals and mechanisms #}
             {% if involvement.organizational_goals or involvement.influence_mechanisms %}
             <div class="flex flex-wrap gap-1 mt-3">
                 {% for goal in involvement.organizational_goals %}
@@ -80,3 +159,4 @@
         </div>
     </div>
 </div>
+{% endif %}

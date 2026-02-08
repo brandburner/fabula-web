@@ -4,10 +4,101 @@
 {% block title %}Locations{% endblock %}
 
 {% block series_context %}
+{% if fabula_theme == 'writerly' %}
+<span class="text-sm" style="color: var(--f-fg-placeholder); font-size: 0.875rem; font-weight: 500;">Story Locations</span>
+{% else %}
 <span class="text-slate-500 text-sm font-medium">Story Locations</span>
+{% endif %}
 {% endblock %}
 
 {% block content %}
+{% if fabula_theme == 'writerly' %}
+{# ===== WRITERLY LOCATION INDEX ===== #}
+<article class="min-h-screen pb-16">
+    {# Hero section #}
+    <div class="py-14" style="background: var(--f-bg-hero);">
+        <div class="max-w-4xl mx-auto px-6">
+            <div class="flex items-center gap-2 text-sm mb-4">
+                <i data-lucide="map-pin" class="w-4 h-4" style="color: var(--f-accent-blue);"></i>
+                <span class="font-medium" style="color: var(--f-accent-blue);">Story Geography</span>
+            </div>
+
+            <h1 class="mb-4 leading-tight" style="font-family: var(--f-font-display); color: var(--f-fg-heading); font-size: clamp(2rem, 4vw, 2.5rem); letter-spacing: -0.02em; font-weight: 400;">
+                Locations
+            </h1>
+
+            <p class="leading-relaxed max-w-3xl" style="color: var(--f-fg-tertiary); font-size: 1.1rem; line-height: 1.7;">
+                The places where the narrative unfolds. Each location carries its own
+                atmosphere, history, and narrative significance.
+            </p>
+
+            <div class="flex items-center gap-4 mt-6">
+                <span class="px-3 py-1.5 text-sm font-medium rounded-md" style="background: color-mix(in srgb, var(--f-accent-blue) 8%, transparent); color: var(--f-accent-blue); border: 1px solid color-mix(in srgb, var(--f-accent-blue) 25%, transparent);">
+                    {{ total_count }} locations
+                </span>
+            </div>
+        </div>
+    </div>
+
+    <div class="max-w-4xl mx-auto px-6 pt-6">
+        <hr style="border-color: var(--f-rule-color);" class="mb-8">
+
+        {# Locations grouped by type #}
+        {% for loc_type, locs in locations_by_type.items %}
+        <section class="mb-10">
+            <div class="flex items-center gap-2 mb-6">
+                <i data-lucide="folder" class="w-5 h-5" style="color: var(--f-accent-blue);"></i>
+                <h2 style="font-family: var(--f-font-display); color: var(--f-fg-heading); font-size: 1.2rem; font-weight: 400;">{{ loc_type }}</h2>
+                <span class="px-2 py-0.5 text-xs rounded" style="background: var(--f-bg-elevated); color: var(--f-fg-secondary); border: 1px solid var(--f-border-light);">{{ locs|length }}</span>
+            </div>
+
+            <div class="space-y-3">
+                {% for location in locs %}
+                <a href="{{ location.get_absolute_url }}"
+                   class="block p-4 rounded-lg transition-all duration-200 group"
+                   style="background: var(--f-card-bg); border: 1px solid var(--f-card-border);"
+                   onmouseover="this.style.borderColor='color-mix(in srgb, var(--f-accent-blue) 40%, transparent)'; this.style.boxShadow='0 2px 8px color-mix(in srgb, var(--f-accent-blue) 6%, transparent)'"
+                   onmouseout="this.style.borderColor='var(--f-card-border)'; this.style.boxShadow='none'">
+                    <div class="flex items-start justify-between gap-4">
+                        <div class="flex-1">
+                            <div class="flex items-center gap-2 mb-1">
+                                <div class="font-medium transition-colors" style="color: var(--f-fg-heading);">
+                                    {{ location.canonical_name }}
+                                </div>
+                                {% if location.parent_location %}
+                                <span class="text-xs" style="color: var(--f-fg-placeholder);">
+                                    in {{ location.parent_location.canonical_name }}
+                                </span>
+                                {% endif %}
+                            </div>
+                            {% if location.description %}
+                            <p class="text-sm line-clamp-2" style="color: var(--f-fg-tertiary);">
+                                {{ location.description|truncatewords:25 }}
+                            </p>
+                            {% endif %}
+                        </div>
+                        <div class="flex items-center gap-2 shrink-0">
+                            <span class="px-2 py-1 text-xs rounded" style="background: color-mix(in srgb, var(--f-accent-blue) 8%, transparent); color: var(--f-accent-blue);">
+                                {{ location.event_count }} events
+                            </span>
+                        </div>
+                    </div>
+                </a>
+                {% endfor %}
+            </div>
+        </section>
+        {% empty %}
+        <div class="text-sm p-8 rounded-lg text-center" style="background: var(--f-bg-elevated); border: 1px solid var(--f-border-light); color: var(--f-fg-placeholder);">
+            <i data-lucide="map-pin-off" class="w-10 h-10 mx-auto mb-3" style="color: var(--f-fg-placeholder);"></i>
+            <p class="font-medium">No locations found</p>
+        </div>
+        {% endfor %}
+
+    </div>
+</article>
+
+{% else %}
+{# ===== DARK LOCATION INDEX ===== #}
 <article class="min-h-screen pb-16">
     {# Hero section #}
     <div class="relative overflow-hidden">
@@ -90,4 +181,5 @@
 
     </div>
 </article>
+{% endif %}
 {% endblock %}

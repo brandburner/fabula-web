@@ -4,11 +4,237 @@
 {% block title %}{{ connection.get_connection_type_display }} Connection{% endblock %}
 
 {% block series_context %}
+{% if fabula_theme == 'writerly' %}
+<span style="color: var(--f-fg-placeholder); font-size: 0.875rem; font-family: var(--f-font-display);">Narrative Connection</span>
+{% else %}
 <span class="text-slate-500 text-sm font-medium">Narrative Connection</span>
+{% endif %}
 {% endblock %}
 
 {% block content %}
 {% with conn_type=connection.connection_type|lower|slugify %}
+{% if fabula_theme == 'writerly' %}
+{# ===== WRITERLY CONNECTION DETAIL ===== #}
+<article class="min-h-screen pb-16 conn-{{ conn_type }} fade-in">
+    {# Hero section #}
+    <div class="py-14" style="background: color-mix(in srgb, var(--conn-color) 5%, var(--f-bg-page));">
+        <div class="max-w-4xl mx-auto px-6">
+            {# Connection type badges #}
+            <div class="flex items-center gap-3 mb-8 flex-wrap">
+                <span class="conn-badge inline-flex items-center gap-2 px-4 py-2 text-base font-semibold border-2 rounded-lg shadow-lg">
+                    {% include "includes/connection_icon.html" with conn_type=connection.connection_type %}
+                    {{ connection.get_connection_type_display }}
+                </span>
+                <span class="px-3 py-1.5 text-sm font-medium capitalize rounded-lg"
+                      style="background: var(--f-bg-elevated); color: var(--f-fg-secondary); border: 1px solid var(--f-border-default);">
+                    {{ connection.strength }} strength
+                </span>
+            </div>
+
+            {# Page title #}
+            <h1 class="mb-4" style="font-family: var(--f-font-display); color: var(--f-fg-heading); font-size: clamp(2rem, 4vw, 3rem); line-height: 1.15; letter-spacing: -0.02em; font-weight: 400;">
+                Narrative Connection
+            </h1>
+            <p style="font-size: 1.25rem; color: var(--f-fg-tertiary);">
+                How these two moments in the story relate
+            </p>
+        </div>
+    </div>
+
+    <div class="max-w-4xl mx-auto px-6">
+        {# ============================================================= #}
+        {# CONNECTION VISUALIZATION - The Core Visual #}
+        {# ============================================================= #}
+        <div class="relative py-10">
+            {# From event - Source #}
+            <a href="{% narrative_url connection.from_event %}"
+               class="group block p-6 rounded-xl transition-all duration-200 mb-6"
+               style="background: var(--f-card-bg); border: 2px solid var(--f-card-border); box-shadow: var(--f-card-shadow);"
+               onmouseover="this.style.boxShadow='var(--f-card-shadow-hover)'; this.style.borderColor='color-mix(in srgb, var(--conn-color) 40%, var(--f-card-border))'"
+               onmouseout="this.style.boxShadow='var(--f-card-shadow)'; this.style.borderColor='var(--f-card-border)'">
+                <div class="flex items-center gap-2 mb-3">
+                    <div class="text-xs font-bold uppercase tracking-wider px-2 py-1 rounded"
+                         style="color: var(--f-fg-placeholder); background: var(--f-bg-elevated); letter-spacing: 0.1em;">From</div>
+                    <i data-lucide="arrow-down-right" class="w-4 h-4" style="color: var(--f-fg-placeholder);"></i>
+                </div>
+                <div class="text-xl font-bold mb-3 leading-tight transition-colors" style="color: var(--f-fg-heading);">
+                    {{ connection.from_event.title|md }}
+                </div>
+                <div class="flex items-center gap-2 text-sm" style="color: var(--f-fg-tertiary);">
+                    <span class="px-2 py-0.5 rounded" style="background: var(--f-bg-elevated); font-family: var(--f-font-mono);">
+                        S{{ connection.from_event.episode.get_parent.specific.season_number }}E{{ connection.from_event.episode.episode_number }}
+                    </span>
+                    <span style="color: var(--f-fg-placeholder);">&#183;</span>
+                    <span>{{ connection.from_event.episode.title }}</span>
+                </div>
+            </a>
+
+            {# Connection indicator - Visual emphasis #}
+            <div class="flex justify-center my-6 relative">
+                <div class="absolute top-1/2 left-0 right-0 h-px" style="background: linear-gradient(to right, transparent, var(--conn-color), transparent); opacity: 0.3;"></div>
+                <div class="conn-badge relative p-4 rounded-2xl border-2 shadow-xl" style="box-shadow: 0 0 30px color-mix(in srgb, var(--conn-color) 30%, transparent);">
+                    <i data-lucide="arrow-down" class="w-6 h-6"></i>
+                </div>
+            </div>
+
+            {# To event - Target #}
+            <a href="{% narrative_url connection.to_event %}"
+               class="group block p-6 rounded-xl transition-all duration-200 mt-6"
+               style="background: var(--f-card-bg); border: 2px solid var(--f-card-border); box-shadow: var(--f-card-shadow);"
+               onmouseover="this.style.boxShadow='var(--f-card-shadow-hover)'; this.style.borderColor='color-mix(in srgb, var(--conn-color) 40%, var(--f-card-border))'"
+               onmouseout="this.style.boxShadow='var(--f-card-shadow)'; this.style.borderColor='var(--f-card-border)'">
+                <div class="flex items-center gap-2 mb-3">
+                    <div class="text-xs font-bold uppercase tracking-wider px-2 py-1 rounded"
+                         style="color: var(--f-fg-placeholder); background: var(--f-bg-elevated); letter-spacing: 0.1em;">To</div>
+                    <i data-lucide="arrow-up-right" class="w-4 h-4" style="color: var(--f-fg-placeholder);"></i>
+                </div>
+                <div class="text-xl font-bold mb-3 leading-tight transition-colors" style="color: var(--f-fg-heading);">
+                    {{ connection.to_event.title|md }}
+                </div>
+                <div class="flex items-center gap-2 text-sm" style="color: var(--f-fg-tertiary);">
+                    <span class="px-2 py-0.5 rounded" style="background: var(--f-bg-elevated); font-family: var(--f-font-mono);">
+                        S{{ connection.to_event.episode.get_parent.specific.season_number }}E{{ connection.to_event.episode.episode_number }}
+                    </span>
+                    <span style="color: var(--f-fg-placeholder);">&#183;</span>
+                    <span>{{ connection.to_event.episode.title }}</span>
+                </div>
+            </a>
+        </div>
+
+        <hr style="border-color: var(--f-rule-color);" class="mb-10">
+
+        {# ============================================================= #}
+        {# THE NARRATIVE ASSERTION - The Heart of the Connection #}
+        {# ============================================================= #}
+        <section class="mb-12">
+            <div class="flex items-center gap-3 mb-6">
+                <div class="p-2 rounded-lg" style="background-color: color-mix(in srgb, var(--conn-color) 15%, transparent);">
+                    <i data-lucide="quote" class="w-6 h-6" style="color: var(--conn-color)"></i>
+                </div>
+                <div class="flex-1">
+                    <h2 style="font-family: var(--f-font-display); color: var(--f-fg-heading); font-size: 1.5rem; font-weight: 400;">Why These Connect</h2>
+                    <p class="text-sm mt-0.5" style="color: var(--f-fg-placeholder);">The narrative assertion</p>
+                </div>
+            </div>
+
+            <div class="conn-card p-8 border-2 rounded-2xl relative overflow-hidden shadow-xl">
+                <div class="absolute top-0 left-0 right-0 h-1" style="background: linear-gradient(to right, transparent, var(--conn-color), transparent);"></div>
+                <p class="text-2xl leading-relaxed italic" style="color: var(--f-fg-heading); font-family: var(--f-font-display);">
+                    "{{ connection.description|md }}"
+                </p>
+            </div>
+        </section>
+
+        {# ============================================================= #}
+        {# CONNECTION TYPE EXPLANATION #}
+        {# ============================================================= #}
+        <section class="mb-12">
+            <div class="flex items-center gap-3 mb-6">
+                <div class="conn-badge p-2.5 rounded-lg border">
+                    {% include "includes/connection_icon.html" with conn_type=connection.connection_type %}
+                </div>
+                <h2 style="font-family: var(--f-font-display); color: var(--conn-color); font-size: 1.25rem; font-weight: 400;">
+                    About {{ connection.get_connection_type_display }} Connections
+                </h2>
+            </div>
+
+            <div class="p-6 rounded-xl" style="background: var(--f-card-bg); border: 1px solid var(--f-card-border);">
+                <p class="leading-relaxed text-lg" style="color: var(--f-fg-secondary);">
+                {% if connection.connection_type == 'CAUSAL' %}
+                    A directly causes B. The first event sets forces in motion that produce the second.
+                    These are the load-bearing connections of plot--remove one and the story structure collapses.
+                {% elif connection.connection_type == 'FORESHADOWING' %}
+                    A hints at B. The first event plants narrative seeds that pay off later.
+                    These connections reward attentive viewers with a sense of inevitability on rewatch.
+                {% elif connection.connection_type == 'THEMATIC_PARALLEL' %}
+                    A and B explore the same theme from different angles. They resonate without direct causation,
+                    creating meaning through juxtaposition and echo.
+                {% elif connection.connection_type == 'CHARACTER_CONTINUITY' %}
+                    A character's state in A evolves into their state in B. The same person, changed by time--
+                    tracking how experience shapes identity across the narrative.
+                {% elif connection.connection_type == 'ESCALATION' %}
+                    B raises the stakes established in A. The conflict intensifies, the pressure increases,
+                    the consequences grow more severe. The ratchet tightens.
+                {% elif connection.connection_type == 'CALLBACK' %}
+                    B explicitly references A. A later moment deliberately echoes an earlier one,
+                    creating a sense of narrative completeness and rewarding memory.
+                {% elif connection.connection_type == 'EMOTIONAL_ECHO' %}
+                    B evokes the same emotional register as A. The feeling rhymes even if the circumstances differ--
+                    creating emotional continuity across the narrative.
+                {% elif connection.connection_type == 'SYMBOLIC_PARALLEL' %}
+                    A and B share symbolic meaning. Objects, gestures, or images recur with accumulated significance,
+                    building a visual or symbolic vocabulary for the story.
+                {% elif connection.connection_type == 'TEMPORAL' %}
+                    A and B are connected by their placement in time--flashback, flash-forward,
+                    or simultaneous action that creates meaning through temporal structure.
+                {% else %}
+                    These events are narratively connected, contributing to the overall story structure.
+                {% endif %}
+                </p>
+            </div>
+        </section>
+
+        {# ============================================================= #}
+        {# RELATED CONNECTIONS #}
+        {# ============================================================= #}
+        {% with from_connections=connection.from_event.outgoing_connections.all to_connections=connection.to_event.incoming_connections.all %}
+        {% if from_connections.count > 1 or to_connections.count > 1 %}
+        <section>
+            <div class="flex items-center gap-2 mb-4">
+                <i data-lucide="git-branch" class="w-5 h-5" style="color: var(--f-fg-tertiary);"></i>
+                <h2 style="font-family: var(--f-font-display); color: var(--f-fg-heading); font-size: 1.15rem; font-weight: 400;">Related Connections</h2>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-4">
+                {# Other connections from the source event #}
+                {% for other in from_connections %}
+                {% if other.pk != connection.pk %}
+                <a href="{{ other.get_absolute_url }}"
+                   class="p-3 rounded-lg transition-all duration-200 text-sm"
+                   style="background: var(--f-card-bg); border: 1px solid var(--f-card-border);"
+                   onmouseover="this.style.borderColor='var(--f-border-default)'"
+                   onmouseout="this.style.borderColor='var(--f-card-border)'">
+                    <div class="flex items-center gap-2 mb-1">
+                        <span class="conn-{{ other.connection_type|lower|slugify }} conn-badge px-1.5 py-0.5 text-xs border rounded">
+                            {{ other.get_connection_type_display }}
+                        </span>
+                    </div>
+                    <div style="color: var(--f-fg-secondary);">
+                        &rarr; {{ other.to_event.title|md|striptags|truncatewords:6 }}
+                    </div>
+                </a>
+                {% endif %}
+                {% endfor %}
+
+                {# Other connections to the target event #}
+                {% for other in to_connections %}
+                {% if other.pk != connection.pk %}
+                <a href="{{ other.get_absolute_url }}"
+                   class="p-3 rounded-lg transition-all duration-200 text-sm"
+                   style="background: var(--f-card-bg); border: 1px solid var(--f-card-border);"
+                   onmouseover="this.style.borderColor='var(--f-border-default)'"
+                   onmouseout="this.style.borderColor='var(--f-card-border)'">
+                    <div class="flex items-center gap-2 mb-1">
+                        <span class="conn-{{ other.connection_type|lower|slugify }} conn-badge px-1.5 py-0.5 text-xs border rounded">
+                            {{ other.get_connection_type_display }}
+                        </span>
+                    </div>
+                    <div style="color: var(--f-fg-secondary);">
+                        &larr; {{ other.from_event.title|md|striptags|truncatewords:6 }}
+                    </div>
+                </a>
+                {% endif %}
+                {% endfor %}
+            </div>
+        </section>
+        {% endif %}
+        {% endwith %}
+
+    </div>
+</article>
+
+{% else %}
+{# ===== DARK CONNECTION DETAIL ===== #}
 <article class="min-h-screen pb-16 conn-{{ conn_type }} fade-in">
     {# Hero section with enhanced gradients #}
     <div class="relative overflow-hidden">
@@ -134,22 +360,22 @@
             <div class="p-6 bg-gradient-to-br from-slate-900/50 to-slate-900/30 border border-slate-800 rounded-xl">
                 <p class="text-slate-300 leading-relaxed text-lg">
                 {% if connection.connection_type == 'CAUSAL' %}
-                    A directly causes B. The first event sets forces in motion that produce the second. 
+                    A directly causes B. The first event sets forces in motion that produce the second.
                     These are the load-bearing connections of plot—remove one and the story structure collapses.
                 {% elif connection.connection_type == 'FORESHADOWING' %}
-                    A hints at B. The first event plants narrative seeds that pay off later. 
+                    A hints at B. The first event plants narrative seeds that pay off later.
                     These connections reward attentive viewers with a sense of inevitability on rewatch.
                 {% elif connection.connection_type == 'THEMATIC_PARALLEL' %}
-                    A and B explore the same theme from different angles. They resonate without direct causation, 
+                    A and B explore the same theme from different angles. They resonate without direct causation,
                     creating meaning through juxtaposition and echo.
                 {% elif connection.connection_type == 'CHARACTER_CONTINUITY' %}
                     A character's state in A evolves into their state in B. The same person, changed by time—
                     tracking how experience shapes identity across the narrative.
                 {% elif connection.connection_type == 'ESCALATION' %}
-                    B raises the stakes established in A. The conflict intensifies, the pressure increases, 
+                    B raises the stakes established in A. The conflict intensifies, the pressure increases,
                     the consequences grow more severe. The ratchet tightens.
                 {% elif connection.connection_type == 'CALLBACK' %}
-                    B explicitly references A. A later moment deliberately echoes an earlier one, 
+                    B explicitly references A. A later moment deliberately echoes an earlier one,
                     creating a sense of narrative completeness and rewarding memory.
                 {% elif connection.connection_type == 'EMOTIONAL_ECHO' %}
                     B evokes the same emotional register as A. The feeling rhymes even if the circumstances differ—
@@ -158,7 +384,7 @@
                     A and B share symbolic meaning. Objects, gestures, or images recur with accumulated significance,
                     building a visual or symbolic vocabulary for the story.
                 {% elif connection.connection_type == 'TEMPORAL' %}
-                    A and B are connected by their placement in time—flashback, flash-forward, 
+                    A and B are connected by their placement in time—flashback, flash-forward,
                     or simultaneous action that creates meaning through temporal structure.
                 {% else %}
                     These events are narratively connected, contributing to the overall story structure.
@@ -177,7 +403,7 @@
                 <i data-lucide="git-branch" class="w-5 h-5 text-slate-400"></i>
                 <h2 class="text-lg font-semibold text-white">Related Connections</h2>
             </div>
-            
+
             <div class="grid md:grid-cols-2 gap-4">
                 {# Other connections from the source event #}
                 {% for other in from_connections %}
@@ -195,7 +421,7 @@
                 </a>
                 {% endif %}
                 {% endfor %}
-                
+
                 {# Other connections to the target event #}
                 {% for other in to_connections %}
                 {% if other.pk != connection.pk %}
@@ -219,5 +445,6 @@
 
     </div>
 </article>
+{% endif %}
 {% endwith %}
 {% endblock %}

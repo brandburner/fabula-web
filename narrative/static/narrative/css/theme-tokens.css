@@ -1,0 +1,496 @@
+/*
+ * ============================================================================
+ * FABULA DESIGN SYSTEM - Theme Tokens
+ * ============================================================================
+ *
+ * Two themes: "dark" (original cyberpunk) and "writerly" (literary magazine)
+ *
+ * Usage:
+ *   <html data-theme="writerly">  or  <html data-theme="dark">
+ *
+ * Token naming convention:
+ *   --f-{category}-{variant}
+ *
+ * Categories:
+ *   bg     = backgrounds
+ *   fg     = foreground / text
+ *   border = borders and dividers
+ *   accent = primary accent color
+ *   muted  = secondary/muted accent
+ *   card   = card backgrounds
+ *   nav    = navigation elements
+ *   badge  = tag/badge backgrounds
+ *   icon   = icon colors
+ *   conn   = connection type colors (shared across themes)
+ *
+ * ============================================================================
+ */
+
+/* ----- WRITERLY THEME (default) ----------------------------------------- */
+/* Aesthetic: The Paris Review meets Stripe                                    */
+/* Warm cream paper, refined serif headings, clean geometric sans body,        */
+/* muted earthy accents, typographic hierarchy like a literary journal.         */
+
+[data-theme="writerly"] {
+  /* --- Typography --- */
+  --f-font-display: 'Newsreader', 'Georgia', 'Times New Roman', serif;
+  --f-font-body: 'DM Sans', 'Helvetica Neue', system-ui, sans-serif;
+  --f-font-mono: 'JetBrains Mono', 'Fira Code', ui-monospace, monospace;
+  --f-font-size-base: 16px;
+  --f-line-height-body: 1.7;
+  --f-line-height-heading: 1.2;
+  --f-letter-spacing-heading: -0.025em;
+  --f-letter-spacing-label: 0.06em;
+
+  /* --- Page backgrounds --- */
+  --f-bg-page: #faf8f4;            /* warm cream */
+  --f-bg-surface: #ffffff;          /* clean white cards */
+  --f-bg-elevated: #f5f2ec;         /* slightly darker cream */
+  --f-bg-inset: #efeae2;            /* recessed areas */
+  --f-bg-hero: linear-gradient(180deg, #f0ebe3 0%, #faf8f4 100%);
+  --f-bg-nav: rgba(250, 248, 244, 0.92);
+
+  /* --- Text colors --- */
+  --f-fg-primary: #1a1815;          /* near-black, warm */
+  --f-fg-secondary: #5c564d;        /* warm gray body text */
+  --f-fg-tertiary: #8e877b;         /* muted annotations */
+  --f-fg-placeholder: #b8b1a5;      /* light placeholders */
+  --f-fg-heading: #2c2824;          /* slightly warmer than primary */
+  --f-fg-link: #7c5e3a;             /* warm brown links */
+  --f-fg-link-hover: #5a3f22;       /* darker on hover */
+  --f-fg-inverse: #faf8f4;          /* light text on dark bg */
+
+  /* --- Borders --- */
+  --f-border-default: #e3ded5;      /* subtle warm border */
+  --f-border-light: #eeebe4;        /* very subtle */
+  --f-border-strong: #c9c2b6;       /* stronger separator */
+  --f-border-accent: #c4a97d;       /* accent border */
+
+  /* --- Accent colors (muted earth tones) --- */
+  --f-accent-primary: #8b6b3d;      /* warm amber-brown */
+  --f-accent-primary-bg: #f5efe5;   /* very light amber bg */
+  --f-accent-primary-fg: #6b4f28;   /* readable amber text */
+
+  --f-accent-green: #4a7c59;        /* sage green (characters) */
+  --f-accent-green-bg: #eef4f0;
+  --f-accent-green-fg: #3a6347;
+
+  --f-accent-blue: #4a6b8a;         /* steel blue (episodes) */
+  --f-accent-blue-bg: #edf2f7;
+  --f-accent-blue-fg: #3a5570;
+
+  --f-accent-violet: #6b5a8a;       /* dusty violet (organizations) */
+  --f-accent-violet-bg: #f0edf5;
+  --f-accent-violet-fg: #554770;
+
+  --f-accent-rose: #8a5a6b;         /* dusty rose (emotional) */
+  --f-accent-rose-bg: #f5edf0;
+  --f-accent-rose-fg: #704757;
+
+  --f-accent-indigo: #5a6b8a;       /* muted indigo (acts) */
+  --f-accent-indigo-bg: #edf0f5;
+  --f-accent-indigo-fg: #475570;
+
+  --f-accent-cyan: #4a7a7c;         /* teal (graph/connections) */
+  --f-accent-cyan-bg: #edf4f4;
+  --f-accent-cyan-fg: #3a6163;
+
+  --f-accent-orange: #8a6b3d;       /* deep amber (objects) */
+  --f-accent-orange-bg: #f5f0e5;
+  --f-accent-orange-fg: #6b4f28;
+
+  /* --- Card styling --- */
+  --f-card-bg: #ffffff;
+  --f-card-bg-hover: #fdfcfa;
+  --f-card-border: #e3ded5;
+  --f-card-border-hover: #c4a97d;
+  --f-card-shadow: 0 1px 3px rgba(26, 24, 21, 0.04), 0 1px 2px rgba(26, 24, 21, 0.02);
+  --f-card-shadow-hover: 0 4px 12px rgba(26, 24, 21, 0.08), 0 2px 4px rgba(26, 24, 21, 0.04);
+  --f-card-radius: 8px;
+
+  /* --- Badge / tag styling --- */
+  --f-badge-bg: #f0ebe3;
+  --f-badge-fg: #5c564d;
+  --f-badge-border: #e3ded5;
+
+  /* --- Scrollbar --- */
+  --f-scrollbar-track: #f0ebe3;
+  --f-scrollbar-thumb: #c9c2b6;
+  --f-scrollbar-thumb-hover: #a8a198;
+
+  /* --- Decorative --- */
+  --f-rule-color: #e3ded5;
+  --f-rule-accent: #c4a97d;
+  --f-blockquote-border: #c4a97d;
+  --f-blockquote-bg: #f5f0e5;
+  --f-selection-bg: rgba(196, 169, 125, 0.2);
+
+  /* --- Transitions --- */
+  --f-transition-fast: 150ms ease;
+  --f-transition-base: 250ms ease;
+  --f-transition-slow: 400ms cubic-bezier(0.4, 0, 0.2, 1);
+
+  /* --- Connection type colors (muted for writerly) --- */
+  --conn-color-causal: #5a8a8a;
+  --conn-color-foreshadowing: #7a6b8a;
+  --conn-color-thematic-parallel: #8a7b4a;
+  --conn-color-character-continuity: #4a7c59;
+  --conn-color-escalation: #8a4a4a;
+  --conn-color-callback: #4a6b8a;
+  --conn-color-emotional-echo: #8a5a6b;
+  --conn-color-symbolic-parallel: #6b5a8a;
+  --conn-color-temporal: #5a6b8a;
+}
+
+
+/* ----- DARK THEME (original) -------------------------------------------- */
+/* Preserves the existing cyberpunk aesthetic with neon accents.                */
+
+[data-theme="dark"] {
+  --f-font-display: system-ui, -apple-system, sans-serif;
+  --f-font-body: system-ui, -apple-system, sans-serif;
+  --f-font-mono: ui-monospace, 'Cascadia Code', monospace;
+  --f-font-size-base: 16px;
+  --f-line-height-body: 1.6;
+  --f-line-height-heading: 1.15;
+  --f-letter-spacing-heading: -0.025em;
+  --f-letter-spacing-label: 0.05em;
+
+  --f-bg-page: #0a0a0f;
+  --f-bg-surface: rgba(15, 23, 42, 0.5);
+  --f-bg-elevated: rgba(15, 23, 42, 0.8);
+  --f-bg-inset: rgba(15, 23, 42, 0.3);
+  --f-bg-hero: linear-gradient(180deg, rgba(30, 41, 59, 0.3) 0%, #0a0a0f 100%);
+  --f-bg-nav: rgba(15, 23, 42, 0.8);
+
+  --f-fg-primary: #f1f5f9;
+  --f-fg-secondary: #94a3b8;
+  --f-fg-tertiary: #64748b;
+  --f-fg-placeholder: #475569;
+  --f-fg-heading: #ffffff;
+  --f-fg-link: #22d3ee;
+  --f-fg-link-hover: #67e8f9;
+  --f-fg-inverse: #0a0a0f;
+
+  --f-border-default: rgba(51, 65, 85, 0.5);
+  --f-border-light: rgba(51, 65, 85, 0.3);
+  --f-border-strong: #475569;
+  --f-border-accent: rgba(34, 211, 238, 0.3);
+
+  --f-accent-primary: #f59e0b;
+  --f-accent-primary-bg: rgba(245, 158, 11, 0.1);
+  --f-accent-primary-fg: #fbbf24;
+
+  --f-accent-green: #10b981;
+  --f-accent-green-bg: rgba(16, 185, 129, 0.1);
+  --f-accent-green-fg: #34d399;
+
+  --f-accent-blue: #3b82f6;
+  --f-accent-blue-bg: rgba(59, 130, 246, 0.1);
+  --f-accent-blue-fg: #60a5fa;
+
+  --f-accent-violet: #8b5cf6;
+  --f-accent-violet-bg: rgba(139, 92, 246, 0.1);
+  --f-accent-violet-fg: #a78bfa;
+
+  --f-accent-rose: #ec4899;
+  --f-accent-rose-bg: rgba(236, 72, 153, 0.05);
+  --f-accent-rose-fg: #f472b6;
+
+  --f-accent-indigo: #6366f1;
+  --f-accent-indigo-bg: rgba(99, 102, 241, 0.1);
+  --f-accent-indigo-fg: #818cf8;
+
+  --f-accent-cyan: #22d3ee;
+  --f-accent-cyan-bg: rgba(34, 211, 238, 0.1);
+  --f-accent-cyan-fg: #67e8f9;
+
+  --f-accent-orange: #f59e0b;
+  --f-accent-orange-bg: rgba(245, 158, 11, 0.1);
+  --f-accent-orange-fg: #fbbf24;
+
+  --f-card-bg: rgba(15, 23, 42, 0.5);
+  --f-card-bg-hover: rgba(15, 23, 42, 0.7);
+  --f-card-border: rgba(51, 65, 85, 0.5);
+  --f-card-border-hover: rgba(34, 211, 238, 0.3);
+  --f-card-shadow: none;
+  --f-card-shadow-hover: 0 8px 24px rgba(0, 0, 0, 0.3);
+  --f-card-radius: 12px;
+
+  --f-badge-bg: rgba(51, 65, 85, 0.5);
+  --f-badge-fg: #94a3b8;
+  --f-badge-border: rgba(51, 65, 85, 0.5);
+
+  --f-scrollbar-track: #0f172a;
+  --f-scrollbar-thumb: #334155;
+  --f-scrollbar-thumb-hover: #475569;
+
+  --f-rule-color: rgba(51, 65, 85, 0.5);
+  --f-rule-accent: rgba(245, 158, 11, 0.3);
+  --f-blockquote-border: #475569;
+  --f-blockquote-bg: rgba(15, 23, 42, 0.5);
+  --f-selection-bg: rgba(34, 211, 238, 0.2);
+
+  --f-transition-fast: 150ms ease;
+  --f-transition-base: 300ms cubic-bezier(0.4, 0, 0.2, 1);
+  --f-transition-slow: 400ms cubic-bezier(0.4, 0, 0.2, 1);
+
+  --conn-color-causal: #22d3ee;
+  --conn-color-foreshadowing: #a855f7;
+  --conn-color-thematic-parallel: #f59e0b;
+  --conn-color-character-continuity: #10b981;
+  --conn-color-escalation: #ef4444;
+  --conn-color-callback: #3b82f6;
+  --conn-color-emotional-echo: #ec4899;
+  --conn-color-symbolic-parallel: #8b5cf6;
+  --conn-color-temporal: #6366f1;
+}
+
+
+/* ============================================================================
+ * SEMANTIC UTILITY CLASSES
+ * These resolve to different values per theme via CSS custom properties.
+ * ============================================================================ */
+
+/* --- Page-level --- */
+.f-page {
+  background-color: var(--f-bg-page);
+  color: var(--f-fg-secondary);
+  font-family: var(--f-font-body);
+  font-size: var(--f-font-size-base);
+  line-height: var(--f-line-height-body);
+}
+
+.f-heading {
+  font-family: var(--f-font-display);
+  color: var(--f-fg-heading);
+  line-height: var(--f-line-height-heading);
+  letter-spacing: var(--f-letter-spacing-heading);
+}
+
+.f-label {
+  font-family: var(--f-font-body);
+  font-size: 0.75rem;
+  font-weight: 500;
+  letter-spacing: var(--f-letter-spacing-label);
+  text-transform: uppercase;
+  color: var(--f-fg-tertiary);
+}
+
+.f-mono {
+  font-family: var(--f-font-mono);
+}
+
+/* --- Text levels --- */
+.f-text-primary { color: var(--f-fg-primary); }
+.f-text-secondary { color: var(--f-fg-secondary); }
+.f-text-tertiary { color: var(--f-fg-tertiary); }
+.f-text-heading { color: var(--f-fg-heading); }
+.f-text-link {
+  color: var(--f-fg-link);
+  transition: color var(--f-transition-fast);
+}
+.f-text-link:hover { color: var(--f-fg-link-hover); }
+
+/* --- Backgrounds --- */
+.f-bg-page { background-color: var(--f-bg-page); }
+.f-bg-surface { background-color: var(--f-bg-surface); }
+.f-bg-elevated { background-color: var(--f-bg-elevated); }
+.f-bg-inset { background-color: var(--f-bg-inset); }
+
+/* --- Cards --- */
+.f-card {
+  background: var(--f-card-bg);
+  border: 1px solid var(--f-card-border);
+  border-radius: var(--f-card-radius);
+  box-shadow: var(--f-card-shadow);
+  transition: all var(--f-transition-base);
+}
+.f-card:hover,
+a.f-card:hover {
+  background: var(--f-card-bg-hover);
+  border-color: var(--f-card-border-hover);
+  box-shadow: var(--f-card-shadow-hover);
+}
+
+/* --- Badges --- */
+.f-badge {
+  background: var(--f-badge-bg);
+  color: var(--f-badge-fg);
+  border: 1px solid var(--f-badge-border);
+  border-radius: 4px;
+  padding: 0.125rem 0.5rem;
+  font-size: 0.75rem;
+  font-weight: 500;
+}
+
+/* --- Navigation --- */
+.f-nav {
+  background: var(--f-bg-nav);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--f-border-light);
+}
+
+/* --- Rules / dividers --- */
+.f-rule {
+  border-color: var(--f-rule-color);
+}
+.f-rule-accent {
+  border-color: var(--f-rule-accent);
+}
+
+/* --- Borders --- */
+.f-border { border-color: var(--f-border-default); }
+.f-border-light { border-color: var(--f-border-light); }
+.f-border-strong { border-color: var(--f-border-strong); }
+
+/* --- Blockquotes --- */
+.f-blockquote {
+  border-left: 2px solid var(--f-blockquote-border);
+  background: var(--f-blockquote-bg);
+  padding: 1rem 1.25rem;
+  border-radius: 0 var(--f-card-radius) var(--f-card-radius) 0;
+}
+
+/* --- Selection --- */
+::selection {
+  background: var(--f-selection-bg);
+}
+
+/* --- Scrollbar --- */
+::-webkit-scrollbar { width: 8px; height: 8px; }
+::-webkit-scrollbar-track { background: var(--f-scrollbar-track); }
+::-webkit-scrollbar-thumb { background: var(--f-scrollbar-thumb); border-radius: 4px; }
+::-webkit-scrollbar-thumb:hover { background: var(--f-scrollbar-thumb-hover); }
+
+/* --- Accent-colored utilities --- */
+.f-accent-primary { color: var(--f-accent-primary); }
+.f-accent-primary-bg { background-color: var(--f-accent-primary-bg); }
+.f-accent-green { color: var(--f-accent-green); }
+.f-accent-green-bg { background-color: var(--f-accent-green-bg); }
+.f-accent-blue { color: var(--f-accent-blue); }
+.f-accent-blue-bg { background-color: var(--f-accent-blue-bg); }
+.f-accent-violet { color: var(--f-accent-violet); }
+.f-accent-violet-bg { background-color: var(--f-accent-violet-bg); }
+.f-accent-cyan { color: var(--f-accent-cyan); }
+.f-accent-cyan-bg { background-color: var(--f-accent-cyan-bg); }
+
+/* --- Connection colors (theme-aware) --- */
+[data-theme] .conn-causal { --conn-color: var(--conn-color-causal); }
+[data-theme] .conn-foreshadowing { --conn-color: var(--conn-color-foreshadowing); }
+[data-theme] .conn-thematic-parallel { --conn-color: var(--conn-color-thematic-parallel); }
+[data-theme] .conn-character-continuity { --conn-color: var(--conn-color-character-continuity); }
+[data-theme] .conn-escalation { --conn-color: var(--conn-color-escalation); }
+[data-theme] .conn-callback { --conn-color: var(--conn-color-callback); }
+[data-theme] .conn-emotional-echo { --conn-color: var(--conn-color-emotional-echo); }
+[data-theme] .conn-symbolic-parallel { --conn-color: var(--conn-color-symbolic-parallel); }
+[data-theme] .conn-temporal { --conn-color: var(--conn-color-temporal); }
+
+/* --- Writerly-specific prose styling --- */
+[data-theme="writerly"] .f-prose {
+  font-family: var(--f-font-body);
+  color: var(--f-fg-secondary);
+  line-height: var(--f-line-height-body);
+}
+[data-theme="writerly"] .f-prose p {
+  margin-bottom: 1.25em;
+}
+[data-theme="writerly"] .f-prose p:last-child {
+  margin-bottom: 0;
+}
+[data-theme="writerly"] .f-prose strong {
+  color: var(--f-fg-primary);
+  font-weight: 600;
+}
+[data-theme="writerly"] .f-prose em {
+  font-style: italic;
+  color: var(--f-fg-primary);
+}
+[data-theme="writerly"] .f-prose a {
+  color: var(--f-fg-link);
+  text-decoration: underline;
+  text-decoration-color: var(--f-border-accent);
+  text-underline-offset: 3px;
+}
+
+/* --- Smooth transitions for theme switching --- */
+html {
+  scroll-behavior: smooth;
+}
+html[data-theme] * {
+  transition-property: background-color, border-color, color, box-shadow;
+  transition-duration: 0ms;  /* instant on page load */
+}
+html.theme-transitioning * {
+  transition-duration: 300ms !important;
+}
+
+/* --- Writerly-specific decorative elements --- */
+[data-theme="writerly"] .f-ornament::before {
+  content: '';
+  display: block;
+  width: 40px;
+  height: 2px;
+  background: var(--f-border-accent);
+  margin-bottom: 1.5rem;
+}
+[data-theme="writerly"] .f-ornament-center::before {
+  content: '';
+  display: block;
+  width: 40px;
+  height: 2px;
+  background: var(--f-border-accent);
+  margin: 0 auto 1.5rem;
+}
+
+/* --- Dark theme retains existing animations --- */
+[data-theme="dark"] .f-animate-gradient {
+  background-size: 200% 200%;
+  animation: gradient-shift 15s ease infinite;
+}
+@keyframes gradient-shift {
+  0%, 100% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+}
+
+[data-theme="dark"] .f-glass {
+  background: rgba(15, 23, 42, 0.8);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+}
+
+/* --- Fade-in animation (both themes, subtler in writerly) --- */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(12px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+.f-fade-in {
+  animation: fadeIn 0.5s ease-out forwards;
+}
+.f-stagger > * {
+  opacity: 0;
+  animation: fadeIn 0.4s ease-out forwards;
+}
+.f-stagger > *:nth-child(1) { animation-delay: 0.03s; }
+.f-stagger > *:nth-child(2) { animation-delay: 0.06s; }
+.f-stagger > *:nth-child(3) { animation-delay: 0.09s; }
+.f-stagger > *:nth-child(4) { animation-delay: 0.12s; }
+.f-stagger > *:nth-child(5) { animation-delay: 0.15s; }
+.f-stagger > *:nth-child(6) { animation-delay: 0.18s; }
+
+/* --- Connection badges (shared, theme-aware) --- */
+.f-conn-badge {
+  background-color: color-mix(in srgb, var(--conn-color) 12%, transparent);
+  border: 1px solid color-mix(in srgb, var(--conn-color) 30%, transparent);
+  color: var(--conn-color);
+  transition: all var(--f-transition-base);
+}
+[data-theme="writerly"] .f-conn-badge {
+  background-color: color-mix(in srgb, var(--conn-color) 8%, var(--f-bg-surface));
+  border-color: color-mix(in srgb, var(--conn-color) 25%, var(--f-border-default));
+}
+.f-conn-badge:hover {
+  background-color: color-mix(in srgb, var(--conn-color) 20%, transparent);
+  border-color: color-mix(in srgb, var(--conn-color) 50%, transparent);
+}

@@ -1,25 +1,100 @@
 {# Location involvement card - shows a location's rich role in an event #}
 
+{% if fabula_theme == 'writerly' %}
+{# ===== WRITERLY LOCATION INVOLVEMENT CARD ===== #}
+<div class="p-4 rounded-lg transition-all group"
+     style="background: var(--f-card-bg); border: 1px solid var(--f-card-border);">
+    <div class="flex items-start gap-3">
+        <div class="p-2 rounded-lg shrink-0" style="background: var(--f-accent-blue-bg); border: 1px solid color-mix(in srgb, var(--f-accent-blue) 15%, transparent);">
+            <i data-lucide="map-pin" class="w-5 h-5" style="color: var(--f-accent-blue);"></i>
+        </div>
+        <div class="flex-1 min-w-0">
+            <a href="{{ involvement.location.get_absolute_url }}"
+               class="font-medium transition-colors" style="color: var(--f-fg-heading);"
+               onmouseover="this.style.color='var(--f-accent-blue)'"
+               onmouseout="this.style.color='var(--f-fg-heading)'">
+                {{ involvement.location.canonical_name }}
+            </a>
+
+            {% if involvement.description_of_involvement %}
+            <p class="text-sm mt-2 leading-relaxed" style="color: var(--f-fg-tertiary);">
+                {{ involvement.description_of_involvement }}
+            </p>
+            {% endif %}
+
+            {% if involvement.observed_atmosphere or involvement.functional_role or involvement.symbolic_significance %}
+            <div class="grid sm:grid-cols-2 gap-2 mt-3">
+                {% if involvement.observed_atmosphere %}
+                <div class="flex items-start gap-2 p-2 rounded text-xs" style="background: var(--f-bg-elevated);">
+                    <i data-lucide="cloud" class="w-3 h-3 mt-0.5 shrink-0" style="color: var(--f-accent-cyan);"></i>
+                    <div>
+                        <span class="block" style="color: var(--f-fg-placeholder);">Atmosphere</span>
+                        <span style="color: var(--f-fg-secondary);">{{ involvement.observed_atmosphere|truncatewords:15 }}</span>
+                    </div>
+                </div>
+                {% endif %}
+                {% if involvement.functional_role %}
+                <div class="flex items-start gap-2 p-2 rounded text-xs" style="background: var(--f-bg-elevated);">
+                    <i data-lucide="settings" class="w-3 h-3 mt-0.5 shrink-0" style="color: var(--f-accent-blue);"></i>
+                    <div>
+                        <span class="block" style="color: var(--f-fg-placeholder);">Function</span>
+                        <span style="color: var(--f-fg-secondary);">{{ involvement.functional_role|truncatewords:15 }}</span>
+                    </div>
+                </div>
+                {% endif %}
+                {% if involvement.symbolic_significance %}
+                <div class="flex items-start gap-2 p-2 rounded text-xs" style="background: var(--f-bg-elevated);">
+                    <i data-lucide="sparkles" class="w-3 h-3 mt-0.5 shrink-0" style="color: var(--f-accent-violet);"></i>
+                    <div>
+                        <span class="block" style="color: var(--f-fg-placeholder);">Symbolism</span>
+                        <span style="color: var(--f-fg-secondary);">{{ involvement.symbolic_significance|truncatewords:15 }}</span>
+                    </div>
+                </div>
+                {% endif %}
+                {% if involvement.access_restrictions %}
+                <div class="flex items-start gap-2 p-2 rounded text-xs" style="background: var(--f-bg-elevated);">
+                    <i data-lucide="lock" class="w-3 h-3 mt-0.5 shrink-0" style="color: var(--f-accent-orange);"></i>
+                    <div>
+                        <span class="block" style="color: var(--f-fg-placeholder);">Access</span>
+                        <span style="color: var(--f-fg-secondary);">{{ involvement.access_restrictions|truncatewords:15 }}</span>
+                    </div>
+                </div>
+                {% endif %}
+            </div>
+            {% endif %}
+
+            {% if involvement.key_environmental_details %}
+            <div class="flex flex-wrap gap-1 mt-3">
+                {% for detail in involvement.key_environmental_details %}
+                <span class="px-2 py-0.5 text-xs rounded" style="background: var(--f-accent-blue-bg); color: var(--f-accent-blue); border: 1px solid color-mix(in srgb, var(--f-accent-blue) 20%, transparent);">
+                    {{ detail }}
+                </span>
+                {% endfor %}
+            </div>
+            {% endif %}
+        </div>
+    </div>
+</div>
+
+{% else %}
+{# ===== DARK LOCATION INVOLVEMENT CARD (original) ===== #}
 <div class="p-4 bg-gradient-to-br from-slate-900/50 to-slate-900/30 border border-slate-800 rounded-xl hover:border-blue-500/30 transition-all group">
     <div class="flex items-start gap-3">
         <div class="p-2 bg-blue-500/10 rounded-lg shrink-0">
             <i data-lucide="map-pin" class="w-5 h-5 text-blue-400"></i>
         </div>
         <div class="flex-1 min-w-0">
-            {# Location link #}
             <a href="{{ involvement.location.get_absolute_url }}"
                class="font-semibold text-slate-200 group-hover:text-blue-300 transition-colors">
                 {{ involvement.location.canonical_name }}
             </a>
 
-            {# Description of involvement #}
             {% if involvement.description_of_involvement %}
             <p class="text-sm text-slate-400 mt-2 leading-relaxed">
                 {{ involvement.description_of_involvement }}
             </p>
             {% endif %}
 
-            {# Rich details grid #}
             {% if involvement.observed_atmosphere or involvement.functional_role or involvement.symbolic_significance %}
             <div class="grid sm:grid-cols-2 gap-2 mt-3">
                 {% if involvement.observed_atmosphere %}
@@ -61,7 +136,6 @@
             </div>
             {% endif %}
 
-            {# Environmental details #}
             {% if involvement.key_environmental_details %}
             <div class="flex flex-wrap gap-1 mt-3">
                 {% for detail in involvement.key_environmental_details %}
@@ -74,3 +148,4 @@
         </div>
     </div>
 </div>
+{% endif %}

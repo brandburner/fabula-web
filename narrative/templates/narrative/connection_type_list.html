@@ -4,6 +4,106 @@
 {% block title %}{{ connection_type_display }} Connections{% endblock %}
 
 {% block content %}
+{% if fabula_theme == 'writerly' %}
+{# ===== WRITERLY CONNECTION TYPE LIST ===== #}
+<article class="min-h-screen pb-16">
+    <div class="py-14" style="background: var(--f-bg-hero);">
+        <div class="max-w-4xl mx-auto px-6">
+            <div class="flex items-center gap-2 text-sm mb-4">
+                <a href="{% url 'connection_index' %}" class="transition-colors"
+                   style="color: var(--f-fg-secondary);"
+                   onmouseover="this.style.color='var(--f-accent-cyan)'"
+                   onmouseout="this.style.color='var(--f-fg-secondary)'">
+                    <i data-lucide="link-2" class="w-4 h-4"></i>
+                </a>
+                <span style="color: var(--f-fg-placeholder);">/</span>
+                <span class="font-medium" style="color: var(--f-accent-cyan);">{{ connection_type_display }}</span>
+            </div>
+
+            <h1 class="mb-4 leading-tight" style="font-family: var(--f-font-display); color: var(--f-fg-heading); font-size: clamp(2rem, 4vw, 2.5rem); letter-spacing: -0.02em; font-weight: 400;">
+                {{ connection_type_display }} Connections
+            </h1>
+        </div>
+    </div>
+
+    <div class="max-w-4xl mx-auto px-6 pt-6">
+        <hr style="border-color: var(--f-rule-color);" class="mb-8">
+
+        <div class="space-y-4">
+            {% for connection in connections %}
+            <div class="p-4 rounded-lg transition-all duration-200"
+                 style="background: var(--f-card-bg); border: 1px solid var(--f-card-border);"
+                 onmouseover="this.style.borderColor='color-mix(in srgb, var(--f-accent-cyan) 40%, transparent)'; this.style.boxShadow='0 2px 8px color-mix(in srgb, var(--f-accent-cyan) 6%, transparent)'"
+                 onmouseout="this.style.borderColor='var(--f-card-border)'; this.style.boxShadow='none'">
+                <div class="flex items-start gap-4">
+                    <div class="flex-1 min-w-0">
+                        <div class="flex items-center gap-2 text-xs mb-2" style="color: var(--f-fg-placeholder);">
+                            {% if connection.from_event.episode %}
+                            <span>{{ connection.from_event.episode.title }}</span>
+                            <span style="color: var(--f-fg-placeholder);">&rarr;</span>
+                            {% endif %}
+                            {% if connection.to_event.episode %}
+                            <span>{{ connection.to_event.episode.title }}</span>
+                            {% endif %}
+                        </div>
+
+                        <h3 class="font-medium mb-2" style="color: var(--f-fg-heading);">
+                            <a href="{{ connection.get_absolute_url }}" class="transition-colors"
+                               onmouseover="this.style.color='var(--f-accent-cyan)'"
+                               onmouseout="this.style.color='var(--f-fg-heading)'">
+                                {{ connection.from_event.title|md|striptags|truncatechars:50 }}
+                                <span style="color: var(--f-fg-placeholder);"> &rarr; </span>
+                                {{ connection.to_event.title|md|striptags|truncatechars:50 }}
+                            </a>
+                        </h3>
+
+                        {% if connection.description %}
+                        <p class="text-sm line-clamp-2" style="color: var(--f-fg-tertiary);">{{ connection.description|md }}</p>
+                        {% endif %}
+                    </div>
+
+                    <div class="flex-shrink-0">
+                        <span class="text-xs" style="color: var(--f-fg-placeholder);">{{ connection.strength }}</span>
+                    </div>
+                </div>
+            </div>
+            {% empty %}
+            <p class="text-center py-8" style="color: var(--f-fg-placeholder);">No connections of this type found.</p>
+            {% endfor %}
+        </div>
+
+        {% if is_paginated %}
+        <nav class="flex justify-center gap-2 mt-8">
+            {% if page_obj.has_previous %}
+            <a href="?page={{ page_obj.previous_page_number }}"
+               class="px-4 py-2 rounded transition-colors"
+               style="background: var(--f-bg-elevated); color: var(--f-fg-secondary); border: 1px solid var(--f-border-default);"
+               onmouseover="this.style.borderColor='var(--f-accent-cyan)'"
+               onmouseout="this.style.borderColor='var(--f-border-default)'">
+                Previous
+            </a>
+            {% endif %}
+
+            <span class="px-4 py-2" style="color: var(--f-fg-placeholder);">
+                Page {{ page_obj.number }} of {{ page_obj.paginator.num_pages }}
+            </span>
+
+            {% if page_obj.has_next %}
+            <a href="?page={{ page_obj.next_page_number }}"
+               class="px-4 py-2 rounded transition-colors"
+               style="background: var(--f-bg-elevated); color: var(--f-fg-secondary); border: 1px solid var(--f-border-default);"
+               onmouseover="this.style.borderColor='var(--f-accent-cyan)'"
+               onmouseout="this.style.borderColor='var(--f-border-default)'">
+                Next
+            </a>
+            {% endif %}
+        </nav>
+        {% endif %}
+    </div>
+</article>
+
+{% else %}
+{# ===== DARK CONNECTION TYPE LIST ===== #}
 <article class="min-h-screen pb-16">
     <div class="relative overflow-hidden">
         <div class="absolute inset-0 bg-gradient-to-b from-cyan-950/20 via-slate-950 to-slate-950"></div>
@@ -87,4 +187,5 @@
         {% endif %}
     </div>
 </article>
+{% endif %}
 {% endblock %}
