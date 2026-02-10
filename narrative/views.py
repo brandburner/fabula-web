@@ -755,6 +755,42 @@ class EventIndexView(SeriesScopedMixin, ListView):
             # Global view - all events
             return base_qs.order_by('episode__path', 'scene_sequence')
 
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        from itertools import groupby
+
+        series = self.get_series()
+        events = list(context['events'])
+
+        # Build episode→season map
+        episode_pks = set(e.episode_id for e in events if e.episode_id)
+        episode_season = {}
+        for ep in EpisodePage.objects.filter(pk__in=episode_pks):
+            season = ep.get_parent()
+            if season:
+                episode_season[ep.pk] = season.specific
+
+        # Group events by episode
+        episodes_with_events = []
+        for episode, episode_events in groupby(events, key=lambda e: e.episode):
+            season = episode_season.get(episode.pk) if episode else None
+            episodes_with_events.append({
+                'episode': episode,
+                'season': season,
+                'series': series,
+                'events': list(episode_events),
+            })
+
+        # Provide 'page' context for template compatibility
+        if series:
+            event_index = EventIndexPage.objects.descendant_of(series).first()
+            if event_index:
+                context['page'] = event_index
+                context['self'] = event_index
+
+        context['episodes_with_events'] = episodes_with_events
+        return context
+
 
 class EventDetailView(FlexibleIdentifierMixin, DetailView):
     """

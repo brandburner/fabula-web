@@ -35,12 +35,13 @@
                     <span class="text-sm" style="color: var(--f-fg-secondary);">{{ page.dominant_tone }}</span>
                 </div>
                 {% endif %}
-                {% if page.written_by %}
+                {% format_writing_credits page as credit_lines %}
+                {% for credit in credit_lines %}
                 <div class="flex items-center gap-2 px-3 py-1.5 rounded" style="background: var(--f-bg-elevated); border: 1px solid var(--f-border-default);">
                     <i data-lucide="pen-tool" class="w-3.5 h-3.5" style="color: var(--f-fg-placeholder);"></i>
-                    <span class="text-sm" style="color: var(--f-fg-secondary);">Written by {{ page.written_by }}</span>
+                    <span class="text-sm" style="color: var(--f-fg-secondary);">{{ credit.type }} {{ credit.names }}</span>
                 </div>
-                {% endif %}
+                {% endfor %}
                 <a href="{% url 'episode_graph' page.fabula_uuid|default:page.pk %}"
                    class="flex items-center gap-2 px-3 py-1.5 rounded transition-colors duration-200" style="background: var(--f-accent-cyan-bg); border: 1px solid color-mix(in srgb, var(--f-accent-cyan) 25%, transparent); color: var(--f-accent-cyan-fg);">
                     <i data-lucide="git-branch" class="w-4 h-4"></i>
@@ -303,12 +304,13 @@
                     <span class="text-slate-300 text-sm font-medium">{{ page.dominant_tone }}</span>
                 </div>
                 {% endif %}
-                {% if page.written_by %}
+                {% format_writing_credits page as dark_credit_lines %}
+                {% for credit in dark_credit_lines %}
                 <div class="flex items-center gap-2 px-3 py-1.5 bg-slate-800/50 border border-slate-700 rounded-lg">
                     <i data-lucide="pen-tool" class="w-3.5 h-3.5 text-slate-400"></i>
-                    <span class="text-slate-300 text-sm">Written by {{ page.written_by }}</span>
+                    <span class="text-slate-300 text-sm">{{ credit.type }} {{ credit.names }}</span>
                 </div>
-                {% endif %}
+                {% endfor %}
                 <a href="{% url 'episode_graph' page.fabula_uuid|default:page.pk %}"
                    class="flex items-center gap-2 px-3 py-1.5 bg-cyan-500/10 border border-cyan-500/20 rounded-lg hover:bg-cyan-500/20 transition-colors">
                     <i data-lucide="git-branch" class="w-4 h-4 text-cyan-400"></i>

@@ -372,6 +372,58 @@ def get_episode_acts(episode):
 
 
 @register.simple_tag
+def format_writing_credits(episode):
+    """
+    Format structured writing credits for an episode.
+
+    Returns a list of credit line dicts: [{'type': 'Written by', 'names': 'Gene Roddenberry & D.C. Fontana'}]
+    Team members (group_type='Team') are joined with '&', sequential writers with 'and'.
+
+    Falls back to episode.written_by if no structured credits exist.
+
+    Usage: {% format_writing_credits page as credits %}
+    """
+    from narrative.models import WritingCredit
+
+    credits = WritingCredit.objects.filter(episode=episode).select_related('writer').order_by(
+        'credit_position', 'writer_group'
+    )
+
+    if not credits.exists():
+        # Fallback to legacy written_by field
+        if episode.written_by:
+            return [{'type': 'Written by', 'names': episode.written_by}]
+        return []
+
+    # Group by credit_position (each position is a credit line)
+    from itertools import groupby
+    lines = []
+    for position, group in groupby(credits, key=lambda c: c.credit_position):
+        group_list = list(group)
+        credit_type = group_list[0].credit_type or 'Written by'
+
+        # Within a credit line, group by writer_group to handle teams
+        writer_groups = {}
+        for credit in group_list:
+            writer_groups.setdefault(credit.writer_group, []).append(credit)
+
+        # Build name parts: team members joined with '&', groups joined with 'and'
+        name_parts = []
+        for wg_key in sorted(writer_groups.keys()):
+            wg = writer_groups[wg_key]
+            if len(wg) > 1 or (wg[0].group_type == 'Team' and len(wg) > 1):
+                # Team: join with ' & '
+                name_parts.append(' & '.join(c.writer.canonical_name for c in wg))
+            else:
+                name_parts.append(wg[0].writer.canonical_name)
+
+        names = ' and '.join(name_parts)
+        lines.append({'type': credit_type, 'names': names})
+
+    return lines
+
+
+@register.simple_tag
 def narrative_stats():
     """
     Get overall narrative statistics.

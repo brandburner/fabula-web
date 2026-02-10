@@ -26,6 +26,7 @@ from narrative.models import (
     Theme,
     ConflictArc,
     Location,
+    Writer,
     # Pages
     SeriesIndexPage,
     SeasonPage,
@@ -45,6 +46,7 @@ from narrative.models import (
     ObjectInvolvement,
     LocationInvolvement,
     OrganizationInvolvement,
+    WritingCredit,
     Act,
     PlotBeat,
     EventBeatLink,
@@ -121,6 +123,7 @@ class Command(BaseCommand):
         self.objects_cache: Dict[str, ObjectPage] = {}
         self.episodes_cache: Dict[str, EpisodePage] = {}
         self.events_cache: Dict[str, EventPage] = {}
+        self.writers_cache: Dict[str, Writer] = {}
         self.acts_cache: Dict[str, 'Act'] = {}
         self.plot_beats_cache: Dict[str, 'PlotBeat'] = {}
 
@@ -187,6 +190,8 @@ class Command(BaseCommand):
             organizations_data = self.unwrap_data(organizations_data_raw, 'organizations') if organizations_data_raw else None
             objects_data_raw = self.load_yaml(data_dir / 'objects.yaml', required=False)
             objects_data = self.unwrap_data(objects_data_raw, 'objects') if objects_data_raw else []
+            writers_data_raw = self.load_yaml(data_dir / 'writers.yaml', required=False)
+            writers_data = self.unwrap_data(writers_data_raw, 'writers') if writers_data_raw else []
             connections_data = self.unwrap_data(self.load_yaml(data_dir / 'connections.yaml'), 'connections')
 
             # Deduplicate entities that may have duplicate entries in YAML
@@ -209,13 +214,15 @@ class Command(BaseCommand):
             if self.dry_run:
                 self.run_import(
                     manifest, series_data, themes_data, arcs_data, locations_data,
-                    characters_data, organizations_data, objects_data, events_data, connections_data
+                    characters_data, organizations_data, objects_data, events_data, connections_data,
+                    writers_data
                 )
             else:
                 with transaction.atomic():
                     self.run_import(
                         manifest, series_data, themes_data, arcs_data, locations_data,
-                        characters_data, organizations_data, objects_data, events_data, connections_data
+                        characters_data, organizations_data, objects_data, events_data, connections_data,
+                        writers_data
                     )
 
             # Print summary
@@ -312,17 +319,20 @@ class Command(BaseCommand):
         organizations_data: Optional[List[Dict]],
         objects_data: List[Dict],
         events_data: List[Dict],
-        connections_data: List[Dict]
+        connections_data: List[Dict],
+        writers_data: Optional[List[Dict]] = None
     ):
         """Execute the import in dependency order."""
 
         # Load existing entities with global_id for cross-season resolution
         self.load_global_id_caches()
 
-        self.log_progress("Phase 1: Importing snippets (themes, arcs, locations)")
+        self.log_progress("Phase 1: Importing snippets (themes, arcs, locations, writers)")
         self.import_themes(themes_data)
         self.import_arcs(arcs_data)
         self.import_locations(locations_data)
+        if writers_data:
+            self.import_writers(writers_data)
 
         self.log_progress("Phase 2: Creating page tree structure")
         # Handle series_data as either a list or a single dict
@@ -363,6 +373,9 @@ class Command(BaseCommand):
 
         self.log_progress("Phase 5: Creating event participations")
         self.import_event_participations(events_data)
+
+        self.log_progress("Phase 5b: Creating writing credits")
+        self.import_writing_credits(series_data)
 
         self.log_progress("Phase 6: Creating entity involvements")
         self.import_object_involvements(events_data)
@@ -713,6 +726,93 @@ class Command(BaseCommand):
                     if not self.dry_run:
                         location.save()
 
+    def import_writers(self, writers_data: List[Dict]):
+        """Import Writer snippets."""
+        self.log_progress(f"  Importing {len(writers_data)} writers...")
+
+        for writer_data in writers_data:
+            fabula_uuid = writer_data.get('fabula_uuid') or writer_data.get('writer_uuid', '')
+
+            writer = Writer.objects.filter(fabula_uuid=fabula_uuid).first()
+
+            created = False
+            if writer:
+                writer.canonical_name = self.truncate_field(writer_data['canonical_name'], 255)
+                writer.aliases = writer_data.get('aliases') or []
+                writer.is_pseudonym = writer_data.get('is_pseudonym', False)
+                writer.pseudonym_of_name = writer_data.get('pseudonym_of_name') or ''
+                writer.notes = writer_data.get('notes') or ''
+                if not self.dry_run:
+                    writer.save()
+                self.stats.record_updated('Writer')
+            else:
+                writer = Writer(
+                    fabula_uuid=fabula_uuid,
+                    canonical_name=self.truncate_field(writer_data['canonical_name'], 255),
+                    aliases=writer_data.get('aliases') or [],
+                    is_pseudonym=writer_data.get('is_pseudonym', False),
+                    pseudonym_of_name=writer_data.get('pseudonym_of_name') or '',
+                    notes=writer_data.get('notes') or '',
+                )
+                if not self.dry_run:
+                    writer.save()
+                self.stats.record_created('Writer')
+                created = True
+
+            self.writers_cache[fabula_uuid] = writer
+            self.log_detail(f"    {'Created' if created else 'Updated'} writer: {writer.canonical_name}")
+
+    def import_writing_credits(self, series_data):
+        """Import WritingCredit records from series_data episode writing_credits."""
+        series_list = series_data if isinstance(series_data, list) else [series_data]
+
+        total = 0
+        for series in series_list:
+            for season in series.get('seasons', []):
+                for episode_data in season.get('episodes', []):
+                    episode_uuid = episode_data.get('fabula_uuid') or episode_data.get('episode_uuid', '')
+                    episode = self.episodes_cache.get(episode_uuid)
+                    if not episode:
+                        continue
+
+                    credits_data = episode_data.get('writing_credits') or []
+                    if not credits_data:
+                        continue
+
+                    # Clear existing credits for this episode before re-importing
+                    if not self.dry_run:
+                        WritingCredit.objects.filter(episode=episode).delete()
+
+                    for credit_data in credits_data:
+                        writer_uuid = credit_data.get('writer_uuid', '')
+                        writer = self.writers_cache.get(writer_uuid)
+                        if not writer:
+                            self.stats.record_error(f"Writer {writer_uuid} not found for credit on {episode}")
+                            continue
+
+                        credit = WritingCredit(
+                            episode=episode,
+                            writer=writer,
+                            credit_type=credit_data.get('credit_type') or '',
+                            credit_position=credit_data.get('credit_position') or 1,
+                            writer_group=credit_data.get('writer_group') or 1,
+                            group_type=credit_data.get('group_type') or 'Individual',
+                            full_credit_line=credit_data.get('full_credit_line') or '',
+                            source=credit_data.get('source') or '',
+                            is_wga_standard=credit_data.get('is_wga_standard', True),
+                        )
+                        if not self.dry_run:
+                            credit.save()
+                        self.stats.record_created('WritingCredit')
+                        total += 1
+
+                    # Mark episode as having complete credits
+                    if credits_data and not self.dry_run:
+                        episode.has_complete_credits = True
+                        episode.save_revision().publish()
+
+        self.log_detail(f"    Processed {total} writing credits")
+
     # =========================================================================
     # Phase 2: Page Tree Structure
     # =========================================================================
@@ -831,6 +931,8 @@ class Command(BaseCommand):
             episode_page.high_level_summary = episode_data.get('high_level_summary', '')
             episode_page.dominant_tone = episode_data.get('dominant_tone', '')
             episode_page.written_by = episode_data.get('written_by', '')
+            episode_page.raw_credits_block = episode_data.get('raw_credits_block', '')
+            episode_page.has_complete_credits = episode_data.get('has_complete_credits', False)
             if not self.dry_run:
                 episode_page.save_revision().publish()
             self.stats.record_updated('EpisodePage')
@@ -844,6 +946,8 @@ class Command(BaseCommand):
                 high_level_summary=episode_data.get('high_level_summary', ''),
                 dominant_tone=episode_data.get('dominant_tone', ''),
                 written_by=episode_data.get('written_by', ''),
+                raw_credits_block=episode_data.get('raw_credits_block', ''),
+                has_complete_credits=episode_data.get('has_complete_credits', False),
             )
             if not self.dry_run:
                 season_page.add_child(instance=episode_page)

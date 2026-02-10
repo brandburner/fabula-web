@@ -137,6 +137,8 @@ class Neo4jExporter:
             'connection_count': 0,
             'act_count': 0,
             'plot_beat_count': 0,
+            'writer_count': 0,
+            'writing_credit_count': 0,
             'ger_linked_count': 0,
             'cross_season_entities': 0,
         }
@@ -343,8 +345,14 @@ class Neo4jExporter:
                             'title': self.safe_get(episode_node, 'title') or self.safe_get(episode_node, 'episode_title', 'Untitled'),
                             'logline': self.safe_get(episode_node, 'logline', ''),
                             'high_level_summary': self.safe_get(episode_node, 'high_level_summary', ''),
-                            'dominant_tone': self.safe_get(episode_node, 'final_dominant_tone', '')
+                            'dominant_tone': self.safe_get(episode_node, 'final_dominant_tone', ''),
+                            'raw_credits_block': self.safe_get(episode_node, 'raw_credits_block', ''),
+                            'has_complete_credits': self.safe_get(episode_node, 'has_complete_credits', False) or False,
                         }
+                        # Fetch writing credits for this episode
+                        writing_credits = self._get_episode_writing_credits(episode_uuid)
+                        if writing_credits:
+                            episode_data['writing_credits'] = writing_credits
                         series_map[series_uuid]['seasons'][season_uuid]['episodes'].append(episode_data)
                         self.stats['episode_count'] += 1
 
@@ -1008,6 +1016,89 @@ class Neo4jExporter:
         return arcs
 
     # =========================================================================
+    # Export Writers
+    # =========================================================================
+
+    def export_writers(self) -> List[Dict]:
+        """
+        Export all writers.
+
+        Returns:
+            List of writer dictionaries
+        """
+        print("Exporting writers...")
+
+        query = """
+        MATCH (w:Writer)
+        RETURN w.writer_uuid as writer_uuid,
+               w.canonical_name as canonical_name,
+               w.aliases as aliases,
+               w.is_pseudonym as is_pseudonym,
+               w.pseudonym_of_name as pseudonym_of_name,
+               w.notes as notes
+        ORDER BY w.canonical_name
+        """
+
+        results = self.execute_query(query)
+        writers = []
+
+        for record in results:
+            fabula_uuid = record.get('writer_uuid', '')
+            if not fabula_uuid:
+                continue
+
+            aliases = record.get('aliases') or []
+            if isinstance(aliases, str):
+                aliases = [a.strip() for a in aliases.split(',') if a.strip()]
+
+            writer_data = {
+                'fabula_uuid': fabula_uuid,
+                'canonical_name': record.get('canonical_name', 'Unknown'),
+                'aliases': aliases,
+                'is_pseudonym': record.get('is_pseudonym', False) or False,
+                'pseudonym_of_name': record.get('pseudonym_of_name') or '',
+                'notes': record.get('notes') or '',
+            }
+
+            writers.append(writer_data)
+            self.stats['writer_count'] += 1
+
+        return writers
+
+    def _get_episode_writing_credits(self, episode_uuid: str) -> List[Dict]:
+        """Get writing credits for an episode via CREDITED_ON relationships."""
+        query = """
+        MATCH (w:Writer)-[c:CREDITED_ON]->(ep:Episode {episode_uuid: $episode_uuid})
+        RETURN w.writer_uuid as writer_uuid,
+               c.credit_type as credit_type,
+               c.credit_position as credit_position,
+               c.writer_group as writer_group,
+               c.group_type as group_type,
+               c.full_credit_line as full_credit_line,
+               c.source as source,
+               c.is_wga_standard as is_wga_standard
+        ORDER BY c.credit_position, c.writer_group
+        """
+        results = self.execute_query(query, {'episode_uuid': episode_uuid})
+        credits = []
+
+        for r in results:
+            credit = {
+                'writer_uuid': r.get('writer_uuid', ''),
+                'credit_type': r.get('credit_type') or '',
+                'credit_position': r.get('credit_position') or 1,
+                'writer_group': r.get('writer_group') or 1,
+                'group_type': r.get('group_type') or 'Individual',
+                'full_credit_line': r.get('full_credit_line') or '',
+                'source': r.get('source') or '',
+                'is_wga_standard': r.get('is_wga_standard', True) if r.get('is_wga_standard') is not None else True,
+            }
+            credits.append(credit)
+            self.stats['writing_credit_count'] += 1
+
+        return credits
+
+    # =========================================================================
     # Export Events (by episode)
     # =========================================================================
 
@@ -1622,6 +1713,8 @@ class Neo4jExporter:
             'connection_count': self.stats['connection_count'],
             'act_count': self.stats['act_count'],
             'plot_beat_count': self.stats['plot_beat_count'],
+            'writer_count': self.stats['writer_count'],
+            'writing_credit_count': self.stats['writing_credit_count'],
         }
 
         # Add megagraph-specific stats
@@ -1747,6 +1840,14 @@ class Neo4jExporter:
                 'Conflict Arc Data'
             )
 
+            # Export writers
+            writers = self.export_writers()
+            self.write_yaml(
+                self.output_dir / 'writers.yaml',
+                writers,
+                'Writer Data'
+            )
+
             # Export events by episode for all series
             events_dir = self.output_dir / 'events'
             events_dir.mkdir(exist_ok=True)
@@ -1818,6 +1919,8 @@ class Neo4jExporter:
             print(f"  Narrative Connections: {self.stats['connection_count']}")
             print(f"  Acts: {self.stats['act_count']}")
             print(f"  Plot Beats: {self.stats['plot_beat_count']}")
+            print(f"  Writers: {self.stats['writer_count']}")
+            print(f"  Writing Credits: {self.stats['writing_credit_count']}")
 
             if self.megagraph_mode:
                 print("\nMegagraph Cross-Season Stats:")

@@ -225,6 +225,55 @@ class ConflictArc(index.Indexed, ClusterableModel):
 
 
 @register_snippet
+class Writer(index.Indexed, ClusterableModel):
+    """
+    A writer credited on one or more episodes.
+
+    From Fabula: Writer nodes connected to Episodes via CREDITED_ON relationships.
+    WGA-style credit attribution with support for team vs individual credits.
+    """
+    fabula_uuid = models.CharField(
+        max_length=100,
+        unique=True,
+        help_text="UUID from Fabula graph (writer_uuid)"
+    )
+    canonical_name = models.CharField(max_length=255)
+    aliases = models.JSONField(
+        default=list,
+        blank=True,
+        help_text="Alternative names or spellings"
+    )
+    is_pseudonym = models.BooleanField(default=False)
+    pseudonym_of_name = models.CharField(
+        max_length=255,
+        blank=True,
+        help_text="Real name if this is a pseudonym"
+    )
+    notes = models.TextField(blank=True)
+
+    created_at = models.DateTimeField(auto_now_add=True)
+    updated_at = models.DateTimeField(auto_now=True)
+
+    panels = [
+        FieldPanel('canonical_name'),
+        FieldPanel('aliases'),
+        FieldPanel('is_pseudonym'),
+        FieldPanel('pseudonym_of_name'),
+        FieldPanel('notes'),
+        FieldPanel('fabula_uuid'),
+    ]
+
+    search_fields = [
+        index.SearchField('canonical_name', boost=10),
+    ]
+
+    def __str__(self):
+        return self.canonical_name
+
+    class Meta:
+        verbose_name_plural = "Writers"
+
+
 class Location(index.Indexed, ClusterableModel):
     """
     A place where events occur.
@@ -437,7 +486,15 @@ class EpisodePage(Page):
     )
     written_by = models.TextField(
         blank=True,
-        help_text="Writer credit(s)"
+        help_text="Writer credit(s) - legacy text field"
+    )
+    raw_credits_block = models.TextField(
+        blank=True,
+        help_text="Full credit text extracted from script header"
+    )
+    has_complete_credits = models.BooleanField(
+        default=False,
+        help_text="Whether structured writing credits are available"
     )
 
     content_panels = Page.content_panels + [
@@ -446,6 +503,8 @@ class EpisodePage(Page):
         FieldPanel('high_level_summary'),
         FieldPanel('dominant_tone'),
         FieldPanel('written_by'),
+        InlinePanel('writing_credits', label="Writers"),
+        FieldPanel('raw_credits_block'),
         FieldPanel('fabula_uuid'),
     ]
 
@@ -1491,10 +1550,78 @@ class NarrativeConnection(models.Model):
         return f"/connections/{identifier}/"
 
 
+class WritingCredit(Orderable):
+    """
+    A WGA-style writing credit linking a Writer to an Episode.
+
+    From Fabula: CREDITED_ON relationship between Writer and Episode nodes.
+    Supports team vs individual credits, credit type taxonomy, and ordering.
+    """
+    episode = ParentalKey(
+        EpisodePage,
+        on_delete=models.CASCADE,
+        related_name='writing_credits'
+    )
+    writer = models.ForeignKey(
+        Writer,
+        on_delete=models.CASCADE,
+        related_name='episode_credits'
+    )
+
+    credit_type = models.CharField(
+        max_length=100,
+        blank=True,
+        help_text="WGA credit type: 'Written by', 'Teleplay by', 'Story by'"
+    )
+    credit_position = models.PositiveIntegerField(
+        default=1,
+        help_text="Order of credit line (1st credit, 2nd credit, etc.)"
+    )
+    writer_group = models.PositiveIntegerField(
+        default=1,
+        help_text="Position within a credit line"
+    )
+    group_type = models.CharField(
+        max_length=50,
+        default='Individual',
+        help_text="'Individual' or 'Team'"
+    )
+    full_credit_line = models.TextField(
+        blank=True,
+        help_text="Raw credit line text"
+    )
+    source = models.CharField(
+        max_length=50,
+        blank=True,
+        help_text="Credit source: 'File', 'Official', 'BAML'"
+    )
+    is_wga_standard = models.BooleanField(
+        default=True,
+        help_text="Whether this follows WGA standard credit format"
+    )
+
+    panels = [
+        FieldPanel('writer'),
+        FieldPanel('credit_type'),
+        FieldPanel('credit_position'),
+        FieldPanel('writer_group'),
+        FieldPanel('group_type'),
+        FieldPanel('full_credit_line'),
+        FieldPanel('source'),
+        FieldPanel('is_wga_standard'),
+    ]
+
+    class Meta:
+        ordering = ['credit_position', 'writer_group']
+
+    def __str__(self):
+        return f"{self.writer} - {self.credit_type} ({self.episode})"
+
+
 class CharacterEpisodeProfile(models.Model):
     """
     A character's state/profile within a specific episode.
-    
+
     From Fabula: AgentEpisodeProfile nodes tracking per-episode character state.
     """
     fabula_uuid = models.CharField(

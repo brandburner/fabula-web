@@ -70,10 +70,9 @@
                             <h3 class="text-base font-medium transition-colors" style="color: var(--f-fg-heading);">
                                 {{ episode.title }}
                             </h3>
-                            {% if episode.written_by %}
-                            <p class="text-xs" style="color: var(--f-fg-placeholder);">Written by {{ episode.written_by }}</p>
-                            {% elif episode.air_date %}
-                            <p class="text-sm" style="color: var(--f-fg-placeholder);">{{ episode.air_date|date:"F j, Y" }}</p>
+                            {% format_writing_credits episode as ep_credits %}
+                            {% if ep_credits %}
+                            <p class="text-xs" style="color: var(--f-fg-placeholder);">{% for credit in ep_credits %}{{ credit.type }} {{ credit.names }}{% if not forloop.last %} / {% endif %}{% endfor %}</p>
                             {% endif %}
                         </div>
                         <div class="flex-shrink-0 transition-colors" style="color: var(--f-fg-placeholder);">
@@ -147,10 +146,9 @@
                             <h3 class="text-base font-medium text-slate-200 group-hover:text-blue-300 transition-colors">
                                 {{ episode.title }}
                             </h3>
-                            {% if episode.written_by %}
-                            <p class="text-xs text-slate-500">Written by {{ episode.written_by }}</p>
-                            {% elif episode.air_date %}
-                            <p class="text-sm text-slate-500">{{ episode.air_date|date:"F j, Y" }}</p>
+                            {% format_writing_credits episode as dark_ep_credits %}
+                            {% if dark_ep_credits %}
+                            <p class="text-xs text-slate-500">{% for credit in dark_ep_credits %}{{ credit.type }} {{ credit.names }}{% if not forloop.last %} / {% endif %}{% endfor %}</p>
                             {% endif %}
                         </div>
                         <div class="flex-shrink-0 text-slate-600 group-hover:text-blue-400 transition-colors">
