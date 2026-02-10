@@ -41,7 +41,7 @@
 
             {# Description #}
             <p class="max-w-3xl leading-relaxed" style="color: var(--f-fg-secondary); font-size: 1.05rem; line-height: 1.7;">
-                {{ arc.description }}
+                {{ arc.description|md }}
             </p>
 
             {# Stats #}
@@ -124,7 +124,7 @@
 
             {# Description #}
             <p class="text-lg text-slate-300 leading-relaxed max-w-3xl">
-                {{ arc.description }}
+                {{ arc.description|md }}
             </p>
 
             {# Stats #}

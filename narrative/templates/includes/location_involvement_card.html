@@ -1,4 +1,5 @@
 {# Location involvement card - shows a location's rich role in an event #}
+{% load narrative_tags %}
 
 {% if fabula_theme == 'writerly' %}
 {# ===== WRITERLY LOCATION INVOLVEMENT CARD ===== #}
@@ -18,7 +19,7 @@
 
             {% if involvement.description_of_involvement %}
             <p class="text-sm mt-2 leading-relaxed" style="color: var(--f-fg-tertiary);">
-                {{ involvement.description_of_involvement }}
+                {{ involvement.description_of_involvement|md }}
             </p>
             {% endif %}
 
@@ -29,7 +30,7 @@
                     <i data-lucide="cloud" class="w-3 h-3 mt-0.5 shrink-0" style="color: var(--f-accent-cyan);"></i>
                     <div>
                         <span class="block" style="color: var(--f-fg-placeholder);">Atmosphere</span>
-                        <span style="color: var(--f-fg-secondary);">{{ involvement.observed_atmosphere|truncatewords:15 }}</span>
+                        <span style="color: var(--f-fg-secondary);">{{ involvement.observed_atmosphere|md_plain|truncatewords:15 }}</span>
                     </div>
                 </div>
                 {% endif %}
@@ -38,7 +39,7 @@
                     <i data-lucide="settings" class="w-3 h-3 mt-0.5 shrink-0" style="color: var(--f-accent-blue);"></i>
                     <div>
                         <span class="block" style="color: var(--f-fg-placeholder);">Function</span>
-                        <span style="color: var(--f-fg-secondary);">{{ involvement.functional_role|truncatewords:15 }}</span>
+                        <span style="color: var(--f-fg-secondary);">{{ involvement.functional_role|md_plain|truncatewords:15 }}</span>
                     </div>
                 </div>
                 {% endif %}
@@ -47,7 +48,7 @@
                     <i data-lucide="sparkles" class="w-3 h-3 mt-0.5 shrink-0" style="color: var(--f-accent-violet);"></i>
                     <div>
                         <span class="block" style="color: var(--f-fg-placeholder);">Symbolism</span>
-                        <span style="color: var(--f-fg-secondary);">{{ involvement.symbolic_significance|truncatewords:15 }}</span>
+                        <span style="color: var(--f-fg-secondary);">{{ involvement.symbolic_significance|md_plain|truncatewords:15 }}</span>
                     </div>
                 </div>
                 {% endif %}
@@ -56,7 +57,7 @@
                     <i data-lucide="lock" class="w-3 h-3 mt-0.5 shrink-0" style="color: var(--f-accent-orange);"></i>
                     <div>
                         <span class="block" style="color: var(--f-fg-placeholder);">Access</span>
-                        <span style="color: var(--f-fg-secondary);">{{ involvement.access_restrictions|truncatewords:15 }}</span>
+                        <span style="color: var(--f-fg-secondary);">{{ involvement.access_restrictions|md_plain|truncatewords:15 }}</span>
                     </div>
                 </div>
                 {% endif %}
@@ -67,7 +68,7 @@
             <div class="flex flex-wrap gap-1 mt-3">
                 {% for detail in involvement.key_environmental_details %}
                 <span class="px-2 py-0.5 text-xs rounded" style="background: var(--f-accent-blue-bg); color: var(--f-accent-blue); border: 1px solid color-mix(in srgb, var(--f-accent-blue) 20%, transparent);">
-                    {{ detail }}
+                    {{ detail|md_plain }}
                 </span>
                 {% endfor %}
             </div>
@@ -91,7 +92,7 @@
 
             {% if involvement.description_of_involvement %}
             <p class="text-sm text-slate-400 mt-2 leading-relaxed">
-                {{ involvement.description_of_involvement }}
+                {{ involvement.description_of_involvement|md }}
             </p>
             {% endif %}
 
@@ -102,7 +103,7 @@
                     <i data-lucide="cloud" class="w-3 h-3 text-cyan-400 mt-0.5 shrink-0"></i>
                     <div>
                         <span class="text-slate-500 block">Atmosphere</span>
-                        <span class="text-slate-300">{{ involvement.observed_atmosphere|truncatewords:15 }}</span>
+                        <span class="text-slate-300">{{ involvement.observed_atmosphere|md_plain|truncatewords:15 }}</span>
                     </div>
                 </div>
                 {% endif %}
@@ -111,7 +112,7 @@
                     <i data-lucide="settings" class="w-3 h-3 text-blue-400 mt-0.5 shrink-0"></i>
                     <div>
                         <span class="text-slate-500 block">Function</span>
-                        <span class="text-slate-300">{{ involvement.functional_role|truncatewords:15 }}</span>
+                        <span class="text-slate-300">{{ involvement.functional_role|md_plain|truncatewords:15 }}</span>
                     </div>
                 </div>
                 {% endif %}
@@ -120,7 +121,7 @@
                     <i data-lucide="sparkles" class="w-3 h-3 text-violet-400 mt-0.5 shrink-0"></i>
                     <div>
                         <span class="text-slate-500 block">Symbolism</span>
-                        <span class="text-slate-300">{{ involvement.symbolic_significance|truncatewords:15 }}</span>
+                        <span class="text-slate-300">{{ involvement.symbolic_significance|md_plain|truncatewords:15 }}</span>
                     </div>
                 </div>
                 {% endif %}
@@ -129,7 +130,7 @@
                     <i data-lucide="lock" class="w-3 h-3 text-orange-400 mt-0.5 shrink-0"></i>
                     <div>
                         <span class="text-slate-500 block">Access</span>
-                        <span class="text-slate-300">{{ involvement.access_restrictions|truncatewords:15 }}</span>
+                        <span class="text-slate-300">{{ involvement.access_restrictions|md_plain|truncatewords:15 }}</span>
                     </div>
                 </div>
                 {% endif %}
@@ -140,7 +141,7 @@
             <div class="flex flex-wrap gap-1 mt-3">
                 {% for detail in involvement.key_environmental_details %}
                 <span class="px-2 py-0.5 text-xs bg-blue-500/10 text-blue-300 border border-blue-500/20 rounded">
-                    {{ detail }}
+                    {{ detail|md_plain }}
                 </span>
                 {% endfor %}
             </div>

@@ -19,7 +19,7 @@
 
             {% if involvement.description_of_involvement %}
             <p class="text-sm mt-2 leading-relaxed" style="color: var(--f-fg-tertiary);">
-                {{ involvement.description_of_involvement }}
+                {{ involvement.description_of_involvement|md }}
             </p>
             {% endif %}
 
@@ -28,7 +28,7 @@
                 <div class="flex flex-wrap items-center gap-2">
                     {% if involvement.status_before_event %}
                     <div x-show="!expanded" class="px-2 py-1 rounded truncate max-w-[200px]" style="background: var(--f-bg-elevated); color: var(--f-fg-tertiary);">
-                        <span style="color: var(--f-fg-placeholder);">Before:</span> {{ involvement.status_before_event|truncatewords:8 }}
+                        <span style="color: var(--f-fg-placeholder);">Before:</span> {{ involvement.status_before_event|md_plain|truncatewords:8 }}
                     </div>
                     {% endif %}
                     {% if involvement.status_before_event and involvement.status_after_event %}
@@ -36,7 +36,7 @@
                     {% endif %}
                     {% if involvement.status_after_event %}
                     <div x-show="!expanded" class="px-2 py-1 rounded truncate max-w-[200px]" style="background: color-mix(in srgb, var(--f-accent-orange) 6%, transparent); color: var(--f-accent-orange);">
-                        <span style="opacity: 0.7;">After:</span> {{ involvement.status_after_event|truncatewords:8 }}
+                        <span style="opacity: 0.7;">After:</span> {{ involvement.status_after_event|md_plain|truncatewords:8 }}
                     </div>
                     {% endif %}
                     <button @click="expanded = !expanded"
@@ -50,13 +50,13 @@
                     {% if involvement.status_before_event %}
                     <div class="pl-3 py-1.5 rounded-r" style="background: var(--f-bg-elevated);">
                         <span class="font-medium block mb-1" style="color: var(--f-fg-placeholder);">Before:</span>
-                        <span class="leading-relaxed" style="color: var(--f-fg-tertiary);">{{ involvement.status_before_event }}</span>
+                        <span class="leading-relaxed" style="color: var(--f-fg-tertiary);">{{ involvement.status_before_event|md }}</span>
                     </div>
                     {% endif %}
                     {% if involvement.status_after_event %}
                     <div class="pl-3 py-1.5 rounded-r" style="background: color-mix(in srgb, var(--f-accent-orange) 4%, transparent);">
                         <span class="font-medium block mb-1" style="color: var(--f-accent-orange); opacity: 0.7;">After:</span>
-                        <span class="leading-relaxed" style="color: var(--f-accent-orange);">{{ involvement.status_after_event }}</span>
+                        <span class="leading-relaxed" style="color: var(--f-accent-orange);">{{ involvement.status_after_event|md }}</span>
                     </div>
                     {% endif %}
                 </div>
@@ -81,7 +81,7 @@
 
             {% if involvement.description_of_involvement %}
             <p class="text-sm text-slate-400 mt-2 leading-relaxed">
-                {{ involvement.description_of_involvement }}
+                {{ involvement.description_of_involvement|md }}
             </p>
             {% endif %}
 
@@ -90,7 +90,7 @@
                 <div class="flex flex-wrap items-center gap-2">
                     {% if involvement.status_before_event %}
                     <div x-show="!expanded" class="px-2 py-1 bg-slate-800/50 rounded text-slate-400 truncate max-w-[200px]">
-                        <span class="text-slate-500">Before:</span> {{ involvement.status_before_event|truncatewords:8 }}
+                        <span class="text-slate-500">Before:</span> {{ involvement.status_before_event|md_plain|truncatewords:8 }}
                     </div>
                     {% endif %}
                     {% if involvement.status_before_event and involvement.status_after_event %}
@@ -98,7 +98,7 @@
                     {% endif %}
                     {% if involvement.status_after_event %}
                     <div x-show="!expanded" class="px-2 py-1 bg-amber-500/10 rounded text-amber-300 truncate max-w-[200px]">
-                        <span class="text-amber-400/70">After:</span> {{ involvement.status_after_event|truncatewords:8 }}
+                        <span class="text-amber-400/70">After:</span> {{ involvement.status_after_event|md_plain|truncatewords:8 }}
                     </div>
                     {% endif %}
                     <button @click="expanded = !expanded"
@@ -111,13 +111,13 @@
                     {% if involvement.status_before_event %}
                     <div class="pl-3 py-1.5 bg-slate-800/30 rounded-r">
                         <span class="text-slate-500 font-medium block mb-1">Before:</span>
-                        <span class="text-slate-400 leading-relaxed">{{ involvement.status_before_event }}</span>
+                        <span class="text-slate-400 leading-relaxed">{{ involvement.status_before_event|md }}</span>
                     </div>
                     {% endif %}
                     {% if involvement.status_after_event %}
                     <div class="pl-3 py-1.5 bg-amber-500/5 rounded-r">
                         <span class="text-amber-400/70 font-medium block mb-1">After:</span>
-                        <span class="text-amber-300/90 leading-relaxed">{{ involvement.status_after_event }}</span>
+                        <span class="text-amber-300/90 leading-relaxed">{{ involvement.status_after_event|md }}</span>
                     </div>
                     {% endif %}
                 </div>

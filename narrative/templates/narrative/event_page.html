@@ -81,7 +81,7 @@
                     <div class="absolute -left-[25px] top-3 w-2.5 h-2.5 rounded-full" style="background: color-mix(in srgb, var(--f-accent-rose) 60%, transparent); border: 2px solid var(--f-bg-page);"></div>
                     <div class="p-4 rounded-lg" style="background: var(--f-card-bg); border: 1px solid var(--f-card-border);">
                         {% if beat.action_description %}
-                        <p class="text-sm leading-relaxed" style="color: var(--f-fg-secondary);">{{ beat.action_description }}</p>
+                        <p class="text-sm leading-relaxed" style="color: var(--f-fg-secondary);">{{ beat.action_description|md }}</p>
                         {% endif %}
 
                         <div class="flex items-center flex-wrap gap-3 mt-3 text-xs" style="color: var(--f-fg-placeholder);">
@@ -118,7 +118,7 @@
                     <div class="text-xs font-medium uppercase tracking-wider mb-2" style="color: var(--f-fg-placeholder); letter-spacing: 0.08em;">Location</div>
                     <div class="font-medium text-lg mb-1" style="color: var(--f-fg-heading); font-family: var(--f-font-display);">{{ page.location.canonical_name }}</div>
                     {% if page.location.description %}
-                    <div class="text-sm leading-relaxed" style="color: var(--f-fg-tertiary);">{{ page.location.description|truncatewords:30 }}</div>
+                    <div class="text-sm leading-relaxed" style="color: var(--f-fg-tertiary);">{{ page.location.description|md_plain|truncatewords:30 }}</div>
                     {% endif %}
                 </div>
             </div>
@@ -368,7 +368,7 @@
                         </span>
                     </div>
                     <div class="text-sm line-clamp-2 leading-relaxed" style="color: var(--f-fg-tertiary);">
-                        {{ theme.description|truncatewords:25 }}
+                        {{ theme.description|md_plain|truncatewords:25 }}
                     </div>
                 </a>
                 {% endfor %}
@@ -491,7 +491,7 @@
                 <div class="relative before:absolute before:left-[-25px] before:top-3 before:w-2.5 before:h-2.5 before:rounded-full before:bg-pink-500/60 before:border-2 before:border-slate-950">
                     <div class="p-4 bg-gradient-to-br from-slate-900/50 to-slate-900/30 border border-slate-800/70 rounded-xl">
                         {% if beat.action_description %}
-                        <p class="text-sm text-slate-300 leading-relaxed">{{ beat.action_description }}</p>
+                        <p class="text-sm text-slate-300 leading-relaxed">{{ beat.action_description|md }}</p>
                         {% endif %}
 
                         <div class="flex items-center flex-wrap gap-3 mt-3 text-xs text-slate-500">
@@ -528,7 +528,7 @@
                     <div class="text-xs font-semibold text-slate-500 uppercase tracking-wider mb-2">Location</div>
                     <div class="font-semibold text-slate-100 text-lg mb-1">{{ page.location.canonical_name }}</div>
                     {% if page.location.description %}
-                    <div class="text-sm text-slate-400 leading-relaxed">{{ page.location.description|truncatewords:30 }}</div>
+                    <div class="text-sm text-slate-400 leading-relaxed">{{ page.location.description|md_plain|truncatewords:30 }}</div>
                     {% endif %}
                 </div>
             </div>
@@ -784,7 +784,7 @@
                         </span>
                     </div>
                     <div class="text-sm text-slate-400 line-clamp-2 leading-relaxed">
-                        {{ theme.description|truncatewords:25 }}
+                        {{ theme.description|md_plain|truncatewords:25 }}
                     </div>
                 </a>
                 {% endfor %}

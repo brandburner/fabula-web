@@ -19,7 +19,7 @@
 
             {% if involvement.description_of_involvement %}
             <p class="text-sm mt-2 leading-relaxed" style="color: var(--f-fg-tertiary);">
-                {{ involvement.description_of_involvement }}
+                {{ involvement.description_of_involvement|md }}
             </p>
             {% endif %}
 
@@ -30,7 +30,7 @@
                     <i data-lucide="users" class="w-3 h-3 mt-0.5 shrink-0" style="color: var(--f-accent-violet);"></i>
                     <div>
                         <span class="block" style="color: var(--f-fg-placeholder);">Representation</span>
-                        <span style="color: var(--f-fg-secondary);">{{ involvement.active_representation|truncatewords:15 }}</span>
+                        <span style="color: var(--f-fg-secondary);">{{ involvement.active_representation|md_plain|truncatewords:15 }}</span>
                     </div>
                 </div>
                 {% endif %}
@@ -39,7 +39,7 @@
                     <i data-lucide="scale" class="w-3 h-3 mt-0.5 shrink-0" style="color: var(--f-accent-orange);"></i>
                     <div>
                         <span class="block" style="color: var(--f-fg-placeholder);">Power Dynamics</span>
-                        <span style="color: var(--f-fg-secondary);">{{ involvement.power_dynamics|truncatewords:15 }}</span>
+                        <span style="color: var(--f-fg-secondary);">{{ involvement.power_dynamics|md_plain|truncatewords:15 }}</span>
                     </div>
                 </div>
                 {% endif %}
@@ -48,7 +48,7 @@
                     <i data-lucide="zap" class="w-3 h-3 mt-0.5 shrink-0" style="color: var(--f-accent-primary);"></i>
                     <div>
                         <span class="block" style="color: var(--f-fg-placeholder);">Impact</span>
-                        <span style="color: var(--f-fg-secondary);">{{ involvement.institutional_impact|truncatewords:15 }}</span>
+                        <span style="color: var(--f-fg-secondary);">{{ involvement.institutional_impact|md_plain|truncatewords:15 }}</span>
                     </div>
                 </div>
                 {% endif %}
@@ -57,7 +57,7 @@
                     <i data-lucide="git-merge" class="w-3 h-3 mt-0.5 shrink-0" style="color: var(--f-accent-cyan);"></i>
                     <div>
                         <span class="block" style="color: var(--f-fg-placeholder);">Internal Dynamics</span>
-                        <span style="color: var(--f-fg-secondary);">{{ involvement.internal_dynamics|truncatewords:15 }}</span>
+                        <span style="color: var(--f-fg-secondary);">{{ involvement.internal_dynamics|md_plain|truncatewords:15 }}</span>
                     </div>
                 </div>
                 {% endif %}
@@ -68,12 +68,12 @@
             <div class="flex flex-wrap gap-1 mt-3">
                 {% for goal in involvement.organizational_goals %}
                 <span class="px-2 py-0.5 text-xs rounded" style="background: color-mix(in srgb, var(--f-accent-violet) 8%, transparent); color: var(--f-accent-violet); border: 1px solid color-mix(in srgb, var(--f-accent-violet) 20%, transparent);">
-                    {{ goal }}
+                    {{ goal|md_plain }}
                 </span>
                 {% endfor %}
                 {% for mechanism in involvement.influence_mechanisms %}
                 <span class="px-2 py-0.5 text-xs rounded" style="background: color-mix(in srgb, var(--f-accent-orange) 8%, transparent); color: var(--f-accent-orange); border: 1px solid color-mix(in srgb, var(--f-accent-orange) 20%, transparent);">
-                    {{ mechanism }}
+                    {{ mechanism|md_plain }}
                 </span>
                 {% endfor %}
             </div>
@@ -97,7 +97,7 @@
 
             {% if involvement.description_of_involvement %}
             <p class="text-sm text-slate-400 mt-2 leading-relaxed">
-                {{ involvement.description_of_involvement }}
+                {{ involvement.description_of_involvement|md }}
             </p>
             {% endif %}
 
@@ -108,7 +108,7 @@
                     <i data-lucide="users" class="w-3 h-3 text-indigo-400 mt-0.5 shrink-0"></i>
                     <div>
                         <span class="text-slate-500 block">Representation</span>
-                        <span class="text-slate-300">{{ involvement.active_representation|truncatewords:15 }}</span>
+                        <span class="text-slate-300">{{ involvement.active_representation|md_plain|truncatewords:15 }}</span>
                     </div>
                 </div>
                 {% endif %}
@@ -117,7 +117,7 @@
                     <i data-lucide="scale" class="w-3 h-3 text-orange-400 mt-0.5 shrink-0"></i>
                     <div>
                         <span class="text-slate-500 block">Power Dynamics</span>
-                        <span class="text-slate-300">{{ involvement.power_dynamics|truncatewords:15 }}</span>
+                        <span class="text-slate-300">{{ involvement.power_dynamics|md_plain|truncatewords:15 }}</span>
                     </div>
                 </div>
                 {% endif %}
@@ -126,7 +126,7 @@
                     <i data-lucide="zap" class="w-3 h-3 text-yellow-400 mt-0.5 shrink-0"></i>
                     <div>
                         <span class="text-slate-500 block">Impact</span>
-                        <span class="text-slate-300">{{ involvement.institutional_impact|truncatewords:15 }}</span>
+                        <span class="text-slate-300">{{ involvement.institutional_impact|md_plain|truncatewords:15 }}</span>
                     </div>
                 </div>
                 {% endif %}
@@ -135,7 +135,7 @@
                     <i data-lucide="git-merge" class="w-3 h-3 text-cyan-400 mt-0.5 shrink-0"></i>
                     <div>
                         <span class="text-slate-500 block">Internal Dynamics</span>
-                        <span class="text-slate-300">{{ involvement.internal_dynamics|truncatewords:15 }}</span>
+                        <span class="text-slate-300">{{ involvement.internal_dynamics|md_plain|truncatewords:15 }}</span>
                     </div>
                 </div>
                 {% endif %}
@@ -146,12 +146,12 @@
             <div class="flex flex-wrap gap-1 mt-3">
                 {% for goal in involvement.organizational_goals %}
                 <span class="px-2 py-0.5 text-xs bg-indigo-500/10 text-indigo-300 border border-indigo-500/20 rounded">
-                    {{ goal }}
+                    {{ goal|md_plain }}
                 </span>
                 {% endfor %}
                 {% for mechanism in involvement.influence_mechanisms %}
                 <span class="px-2 py-0.5 text-xs bg-orange-500/10 text-orange-300 border border-orange-500/20 rounded">
-                    {{ mechanism }}
+                    {{ mechanism|md_plain }}
                 </span>
                 {% endfor %}
             </div>

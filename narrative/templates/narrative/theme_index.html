@@ -55,7 +55,7 @@
                 </div>
 
                 <p class="leading-relaxed" style="color: var(--f-fg-tertiary);">
-                    {{ theme.description }}
+                    {{ theme.description|md }}
                 </p>
             </a>
             {% empty %}
@@ -111,7 +111,7 @@
                 </div>
 
                 <p class="text-slate-400 leading-relaxed">
-                    {{ theme.description }}
+                    {{ theme.description|md }}
                 </p>
             </a>
             {% empty %}

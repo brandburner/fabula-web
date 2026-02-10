@@ -60,7 +60,7 @@
                 </div>
 
                 <p class="leading-relaxed" style="color: var(--f-fg-tertiary);">
-                    {{ arc.description|truncatewords:40 }}
+                    {{ arc.description|md_plain|truncatewords:40 }}
                 </p>
             </a>
             {% empty %}
@@ -121,7 +121,7 @@
                 </div>
 
                 <p class="text-slate-400 leading-relaxed">
-                    {{ arc.description|truncatewords:40 }}
+                    {{ arc.description|md_plain|truncatewords:40 }}
                 </p>
             </a>
             {% empty %}
