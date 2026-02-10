@@ -1031,12 +1031,12 @@ class Neo4jExporter:
         query = """
         MATCH (w:Writer)
         RETURN w.writer_uuid as writer_uuid,
-               w.canonical_name as canonical_name,
+               coalesce(w.canonical_name, w.name) as canonical_name,
                w.aliases as aliases,
                w.is_pseudonym as is_pseudonym,
                w.pseudonym_of_name as pseudonym_of_name,
                w.notes as notes
-        ORDER BY w.canonical_name
+        ORDER BY coalesce(w.canonical_name, w.name)
         """
 
         results = self.execute_query(query)
