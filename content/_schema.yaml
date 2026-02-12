@@ -1,0 +1,245 @@
+# Fabula Website Content Schema
+# ==============================
+# Each page is a YAML file in content/<slug>.yaml
+# Templates load content via {% load_content 'slug' as page %}
+# Content is structured, templates handle presentation.
+#
+# PAGES:
+#   homepage.yaml        - Router/hybrid landing (/)
+#   for_production.yaml  - Hollywood entry point (/for-production)
+#   platform.yaml        - Investor/technical entry (/platform)
+#   benchmarks.yaml      - Shared proof bridge (/benchmarks)
+#   about.yaml           - Philosophy & narrative (/about)
+#   early_access.yaml    - Demand testing (/early-access)
+#
+# DESIGN SYSTEM:
+#   Colors: primary, green, blue, violet, orange, cyan, rose
+#   Backgrounds alternate: page / surface (hero for bookends)
+#   Icons: Lucide icon names (kebab-case)
+#   Typography: f-heading, f-label, f-prose classes
+#
+# CONVENTIONS:
+#   - Prose fields support light HTML: <em>, <strong>, &mdash;, &ldquo;
+#   - URLs use Django template syntax: {% slugurl 'x' %}, {% url 'x' %}
+#   - code_snippet.code is literal (preserve whitespace)
+#   - Each section has 'id' (anchor), 'background' (page|surface|hero)
+
+---
+# Page metadata
+meta:
+  slug: string            # URL slug
+  title: string           # HTML <title>
+  description: string     # Meta description
+  template: string        # Template path (e.g., marketing/platform.html)
+  audiences:              # Target audiences for analytics
+    - string              # investors | hollywood | technical | general
+
+# Hero — every page has one
+hero:
+  badge:
+    icon: string          # Lucide icon name
+    text: string          # Badge label
+  headline: string
+  body: string            # 1-3 paragraphs
+  footnote: string        # Optional small text below body
+  ctas:
+    - label: string
+      url: string         # Django URL or absolute
+      style: string       # primary | secondary
+      icon: string        # Optional trailing icon
+
+# Sections — ordered list, type determines template include
+sections:
+  - id: string            # Anchor ID and section identifier
+    type: string          # Section type (see below)
+    background: string    # page | surface | hero | elevated
+    label: string         # Small caps label above headline
+    headline: string      # Section headline
+    intro: string         # Introductory paragraph(s)
+
+    # --- TYPE-SPECIFIC FIELDS ---
+
+    # type: feature_grid
+    # Grid of icon+title+subtitle cards (e.g., Five Node Types, Deployment Options)
+    features:
+      - icon: string
+        color: string     # primary | green | blue | violet | orange | cyan | rose
+        title: string
+        subtitle: string
+
+    # type: pipeline
+    # Numbered steps (e.g., Extraction Chain, How It Works)
+    steps:
+      - number: integer
+        color: string
+        title: string
+        description: string
+
+    # type: cards
+    # Vertical list of icon+title+description cards (e.g., Guardrails, Context Engineering)
+    cards:
+      - icon: string
+        color: string
+        title: string
+        description: string
+        border: string    # Optional: left | top | none
+
+    # type: comparison
+    # Before/after visual (e.g., Entity Resolution)
+    before:
+      title: string
+      items:
+        - icon: string
+          text: string
+          color: string   # Usually rose for "before"
+    after:
+      title: string
+      canonical:
+        icon: string
+        name: string
+        badges:
+          - string
+
+    # type: stats
+    # Row of stat cards (e.g., Performance, Scale)
+    stats:
+      - value: string     # "726" or "87ms" or "5h → 83min"
+        color: string
+        title: string
+        description: string
+
+    # type: split
+    # Two equal columns (e.g., Security: We Never / You Control)
+    left:
+      title: string
+      icon: string
+      color: string
+      items:
+        - icon: string
+          text: string
+    right:
+      title: string
+      icon: string
+      color: string
+      items:
+        - icon: string
+          text: string
+
+    # type: prose
+    # Long-form text (e.g., About page sections)
+    body: string          # Multi-paragraph prose, supports HTML entities
+
+    # type: principles
+    # Philosophy cards with italic quotes
+    principles:
+      - title: string
+        quote: string     # Italic display font quote
+        body: string
+
+    # type: pain_points
+    # Expandable pain scenario cards (Hollywood audience)
+    scenarios:
+      - title: string     # e.g., "We're Breaking Season 4"
+        context: string   # e.g., "(writers' room)"
+        pain: string      # The problem
+        solution: string  # How Fabula solves it
+
+    # type: messaging_matrix
+    # Two-column audience translation table
+    rows:
+      - concept: string
+        hollywood: string
+        investor: string
+
+    # type: benchmark_table
+    # Metric tables with dual-audience framing
+    metrics:
+      - metric: string
+        result: string
+        hollywood_meaning: string
+        investor_meaning: string
+
+    # type: format_grid
+    # Export format categories (Open Formats page)
+    format_groups:
+      - title: string
+        icon: string
+        formats:
+          - name: string
+            description: string
+            status: string  # available | coming_soon
+
+    # type: form
+    # Interest registration form definition
+    fields:
+      - name: string
+        type: string      # text | email | select | checkbox_group | textarea
+        label: string
+        required: boolean
+        options:           # For select/checkbox_group
+          - string
+    confirmation:
+      headline: string
+      body: string
+      links:
+        - text: string
+          url: string
+
+    # --- SHARED OPTIONAL FIELDS (any section type) ---
+
+    blockquote: string    # Italic serif quote
+
+    code_snippets:        # One or more code blocks
+      - label: string     # e.g., "EventParticipation · BDI Model"
+        icon: string      # Lucide icon for label
+        filename: string  # Shown in header bar
+        badge: string     # e.g., "Schema-validated JSON"
+        language: string  # json | yaml | graphql | cypher | csv
+        code: string      # Literal code content
+        caption: string   # Text below the code block
+      explanation:        # Optional paired explanation
+        title: string
+        body: string
+        footnote: string
+
+    sidebar:              # Right-column content (for split layouts)
+      blockquote: string
+      card:
+        title: string
+        body: string
+        items:            # For bullet lists in card
+          - icon: string
+            color: string
+            title: string
+            description: string
+      code_snippet: {}    # Same as code_snippets[0] shape
+
+    blog_links:
+      - text: string      # e.g., "Read: Why Stories Are Webs"
+        url: string
+
+    footer_cards:         # Cards below main content (e.g., deployment options)
+      - icon: string
+        color: string
+        title: string
+        description: string
+
+    ctas:                 # Section-level CTAs
+      - label: string
+        url: string
+        style: string
+        icon: string
+
+# CTA section — every page ends with one
+cta:
+  background: string      # Usually hero
+  headline: string
+  body: string
+  ctas:
+    - label: string
+      url: string
+      style: string
+      icon: string
+
+# Footer breadcrumb (optional — e.g., "Fabula is a context engine. We started with entertainment.")
+footer_breadcrumb: string

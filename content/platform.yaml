@@ -1,0 +1,822 @@
+---
+meta:
+  slug: platform
+  title: "Fabula Platform — Context Graph Architecture for Narrative"
+  description: "Fabula's context graph architecture: typed entity extraction, dual temporal indices, and GraphRAG-powered narrative intelligence at production scale."
+  template: "marketing/platform_page.html"
+  audiences:
+    - investors
+    - technical
+
+hero:
+  badge:
+    icon: cpu
+    text: "How Fabula Works"
+  headline: "Stories Are Context Graphs. We Treat Them That Way."
+  body: >
+    Most AI tools read scripts the way autocomplete reads sentences&mdash;left to right,
+    no memory, no structure. Fabula decomposes narrative into a typed knowledge graph with
+    five core node types, dual temporal indices, and hallucination-guarded entity extraction
+    from unstructured sources at scale. This is what it takes to get it right.
+  footnote: "Engineered over 18 months. Tested on 60+ episodes across Star Trek TNG, The West Wing, Doctor Who, and more."
+  ctas:
+    - label: "Register Your Interest"
+      url: "{% slugurl 'early-access' %}"
+      style: primary
+      icon: arrow-right
+    - label: "Explore The West Wing"
+      url: "{% url 'catalog' %}"
+      style: secondary
+
+# =============================================
+# SECTIONS
+# =============================================
+sections:
+
+  # ------------------------------------------
+  # 1. THE UNIVERSAL SCHEMA MODEL
+  # ------------------------------------------
+  - id: schema-model
+    type: feature_grid
+    background: page
+    label: "The Foundation"
+    headline: "Five Node Types. Every Story Ever Told."
+    intro: >
+      Every narrative, from a sitcom pilot to a seven-season epic, reduces to the same
+      five primitives. The insight isn't that these entities exist&mdash;it's how they connect.
+      We separate <em>canonical identity</em> from <em>transient participation state</em>.
+      A Character is who someone <em>is</em>. An EventParticipation is who they are
+      <em>in this scene</em>&mdash;their goals, their emotional state, what they did.
+      Most tools flatten this distinction. That's why they lose the plot.
+      This separation enables narrative state prediction&mdash;forecasting character arc
+      trajectories based on accumulated participation history.
+
+    features:
+      - icon: user
+        color: green
+        title: "Character"
+        subtitle: "Canonical identity"
+      - icon: zap
+        color: primary
+        title: "Event"
+        subtitle: "Narrative action"
+      - icon: clapperboard
+        color: violet
+        title: "Scene"
+        subtitle: "Temporal container"
+      - icon: map-pin
+        color: blue
+        title: "Location"
+        subtitle: "Spatial anchor"
+      - icon: gem
+        color: orange
+        title: "Object"
+        subtitle: "Narrative prop"
+
+    blockquote: >
+      When other tools extract &ldquo;Picard was angry in this scene,&rdquo; they overwrite
+      his previous state. When Fabula extracts it, the anger is scoped to an
+      EventParticipation&mdash;his canonical node retains the full arc. This is the difference
+      between a search index and a knowledge graph.
+
+    code_snippets:
+      - label: "EventParticipation &middot; BDI Model"
+        icon: file-json
+        filename: "Jed Bartlet &middot; The West Wing S2"
+        badge: "Schema-validated JSON"
+        language: json
+        code: |
+          {
+            "incarnation_identifier":
+              "as the President Concealing
+               a Chronic Illness",
+            "emotional_state_at_event":
+              "Resolute but conflicted, carrying
+               the weight of public deception
+               against personal integrity",
+            "goals_at_event": [
+              "Reveal the MS diagnosis on his
+               own terms before it becomes
+               a scandal",
+              "Protect Abbey from the fallout
+               of the concealment"
+            ],
+            "beliefs_at_event": [
+              "The American people deserve honesty
+               from their President",
+              "Disclosure now, while he controls
+               the narrative, is less damaging
+               than disclosure later"
+            ],
+            "importance_to_event": "primary"
+          }
+        explanation:
+          title: "Not Just &ldquo;Character Was Present&rdquo;"
+          body: >
+            Every EventParticipation captures the character's <strong>Beliefs, Desires,
+            and Intentions</strong> in that specific moment. The incarnation identifier
+            tracks how the character presents in this scene versus their canonical identity.
+            This is what makes queries like &ldquo;scenes where Bartlet's beliefs conflict
+            with his goals&rdquo; answerable.
+          footnote: >
+            The BDI model is extracted per-character, per-event, producing a temporal
+            stack of psychological states that can be traversed, compared, and queried
+            across the full series.
+
+    blog_links:
+      - text: "Read: Why Stories Are Webs"
+        url: "https://storygraph.substack.com/p/why-stories-are-webs-and-how-were"
+
+  # ------------------------------------------
+  # 2. THE EXTRACTION CHAIN
+  # ------------------------------------------
+  - id: extraction-chain
+    type: pipeline
+    background: surface
+    label: "The Architecture"
+    headline: "Compositional Cognitive Architecture. Decision Lineage at Every Layer."
+    intro: >
+      Fabula doesn't send your script to an LLM with &ldquo;extract the characters.&rdquo;
+      It runs a four-phase entity extraction pipeline where each stage has its own schema
+      constraints, validation gates, and error-recovery paths. Base personas combine with
+      specialist modifiers and style templates&mdash;each independently testable and versionable.
+
+    steps:
+      - number: 1
+        color: primary
+        title: "Structural Decomposition"
+        description: >
+          Parse the screenplay into acts, scenes, and beats. Identify dialogue vs. action.
+          Map the temporal skeleton before touching content.
+      - number: 2
+        color: green
+        title: "Entity Synthesis"
+        description: >
+          Extract characters, locations, objects. Resolve aliases against the existing graph.
+          &ldquo;The Captain&rdquo; = &ldquo;Picard&rdquo; = &ldquo;Jean-Luc.&rdquo;
+          One canonical node.
+      - number: 3
+        color: violet
+        title: "Event Enrichment with BDI Model"
+        description: >
+          For every event, extract Beliefs, Desires, and Intentions of each participant.
+          Not just <em>what happened</em>&mdash;but <em>what each character wanted, believed,
+          and did about it</em>.
+      - number: 4
+        color: cyan
+        title: "Graph Construction with Dual Timelines"
+        description: >
+          Build the knowledge graph with two temporal indices: <em>fabula</em> (story-world
+          chronology) and <em>syuzhet</em> (narrative presentation order). Flashbacks get
+          both timestamps. This dual-index architecture functions as a world model for
+          narrative&mdash;maintaining both chronological state and presentation state.
+
+    sidebar:
+      blockquote: >
+        The key architectural insight: base personas + specialist modifiers + style templates.
+        Each component is independently testable and versionable. When the BDI extractor
+        improves, we deploy it without touching structural decomposition. When a new show
+        has unusual formatting, we swap one style template.
+      card:
+        title: "Why This Matters"
+        body: >
+          Monolithic prompts are brittle. Change one thing and three others break.
+          A compositional architecture means each stage has its own contract, its own tests,
+          its own failure modes. It's how you build systems that improve reliably over time.
+
+    code_snippets:
+      - label: "Pipeline Output"
+        icon: file-json
+        filename: "EventInteractionOutput &middot; Indiana Jones"
+        badge: "Schema-validated JSON"
+        language: json
+        code: |
+          {
+            "title": "The Idol Exchange: Satipo's
+                      Betrayal at the Temple Threshold",
+            "sequence_in_scene": 4,
+            "key_dialogue": [
+              { "speaker": "SATIPO",
+                "dialogue": "There is nothing to fear
+                  here." },
+              { "speaker": "SATIPO",
+                "dialogue": "Throw me the idol, I'll
+                  throw you the whip!" },
+              { "speaker": "INDY",
+                "dialogue": "Adios, Satipo." }
+            ],
+            "is_flashback": null,
+            "arc_uuids": ["arc_golden_idol_pursuit"]
+          }
+
+    blog_links:
+      - text: "Read: Beyond Monolithic Prompts"
+        url: "https://storygraph.substack.com/p/beyond-monolithic-prompts"
+      - text: "Read: Don't Blink"
+        url: "https://storygraph.substack.com/p/dont-blink"
+
+  # ------------------------------------------
+  # 3. DYNAMIC CONTEXT ENGINEERING
+  # ------------------------------------------
+  - id: context-engineering
+    type: cards
+    background: page
+    label: "Context Engineering"
+    headline: "Every Function Gets Exactly the Context It Needs. Nothing More."
+    intro: >
+      The AI industry is waking up to what Andrej Karpathy calls &ldquo;the delicate art
+      and science of filling the context window with just the right information for the next
+      step.&rdquo; We've been doing it since day one. Every function in our pipeline receives
+      a dynamically constructed payload&mdash;optimised for that specific task, stripped of
+      everything irrelevant, scoped to prevent drift. This is the difference between prompting
+      a model and engineering a system.
+
+    cards:
+      - icon: scissors
+        color: primary
+        title: "Payload Scoping"
+        description: >
+          The entity synthesiser sees only the current scene excerpt and the relevant slice
+          of the existing graph&mdash;not the entire screenplay, not the full database.
+          Each function receives a context window assembled for its specific task.
+        border: left
+      - icon: ruler
+        color: green
+        title: "Adaptive Token Budgeting"
+        description: >
+          Content duration and complexity determine sampling density. Short scenes get dense
+          context; long sequences get intelligently compressed. Frame counts, token limits,
+          and output caps are all set dynamically&mdash;not by a fixed prompt template.
+        border: left
+      - icon: shield-off
+        color: violet
+        title: "Context Rot Prevention"
+        description: >
+          Chroma's research shows LLM performance degrades well before stated token limits.
+          We never let it get there. Scope constraints, negative instructions, and temporal
+          boundaries keep each call focused. The model can't hallucinate about scenes it
+          never sees.
+        border: left
+      - icon: anchor
+        color: cyan
+        title: "Prior State Injection"
+        description: >
+          Each extraction call is anchored to previous work. The draft screenplay, the
+          existing entity graph, the resolved aliases&mdash;injected as constraints, not
+          conversation history. The model builds on verified state, not its own prior outputs.
+        border: left
+
+    sidebar:
+      blockquote: >
+        Most AI applications dump everything into a giant context window and hope for the best.
+        That's prompt engineering. Context engineering is the opposite: you build a system that
+        dynamically constructs exactly the right payload for each function call. The model sees
+        only what it needs, formatted how it needs it, with explicit constraints on what it
+        should ignore.
+      card:
+        title: "Why This Is the Economics Layer"
+        body: "Dynamic context engineering is the foundation of cost control and quality assurance."
+        items:
+          - icon: trending-down
+            color: green
+            title: "Cost control at the token level"
+            description: >
+              Every token costs money. Scoped payloads mean we send thousands of tokens per call,
+              not tens of thousands. The savings compound across sixty episodes.
+          - icon: cpu
+            color: primary
+            title: "Smaller models, same quality"
+            description: >
+              A focused 8K-token payload to a smaller model outperforms a bloated 128K-token
+              dump to a frontier model. We route tasks to the cheapest model that can handle
+              the scoped context.
+          - icon: shield-check
+            color: violet
+            title: "Hallucination prevention at source"
+            description: >
+              Context poisoning, context distraction, context confusion&mdash;the failure modes
+              Drew Breunig catalogued&mdash;all stem from sending the model too much, too
+              irrelevant, or too contradictory information. We eliminate them structurally.
+          - icon: refresh-cw
+            color: cyan
+            title: "Model-agnostic by design"
+            description: >
+              Because context is engineered per-function, we can swap models without rewriting
+              prompts. OpenAI for vision, Anthropic for reasoning, open-source for commodity
+              tasks. The context layer is the stable interface.
+
+  # ------------------------------------------
+  # 4. ANTI-HALLUCINATION GUARDRAILS
+  # ------------------------------------------
+  - id: guardrails
+    type: cards
+    background: surface
+    label: "The Guardrails"
+    headline: "Every Claim Requires Evidence. Every Entity Earns Its Place."
+    intro: >
+      LLMs hallucinate. This is not a philosophical problem&mdash;it's an engineering one.
+      We treat hallucination the way databases treat corruption: with schema constraints,
+      validation layers, and evidence requirements at every extraction boundary.
+
+    cards:
+      - icon: file-code
+        color: primary
+        title: "BAML Schema Enforcement"
+        description: >
+          Every LLM output is validated against a typed schema before it enters the graph.
+          Wrong types, missing fields, malformed relationships&mdash;rejected at the boundary.
+      - icon: quote
+        color: green
+        title: "Evidence Grounding"
+        description: >
+          Every extracted entity and relationship must cite the scene, dialogue line, or
+          action description that supports it. No citation, no node.
+      - icon: gauge
+        color: violet
+        title: "Confidence Gating at 0.7"
+        description: >
+          Extractions below our confidence threshold are flagged for human review, not
+          silently committed. The graph stays clean; the human stays in the loop.
+      - icon: scan-search
+        color: cyan
+        title: "Contrastive Entity Sharpening"
+        description: >
+          When the model is unsure whether two mentions refer to the same entity, it
+          generates arguments for and against&mdash;then resolves with evidence, not
+          probability.
+
+    sidebar:
+      card:
+        title: "Results: What the Guardrails Deliver"
+        items:
+          - icon: trending-down
+            color: green
+            title: "Duplicate entity flags"
+            description: "66% fewer"
+          - icon: clock
+            color: primary
+            title: "Harmonization time"
+            description: "62% faster"
+          - icon: zap
+            color: cyan
+            title: "API calls per episode"
+            description: "43% fewer"
+
+    blog_links:
+      - text: "Read: Teaching a Knowledge Graph to Learn from No"
+        url: "https://storygraph.substack.com/p/teaching-a-knowledge-graph-to-learn"
+
+  # ------------------------------------------
+  # 5. SMART ADJUDICATION
+  # ------------------------------------------
+  - id: adjudication
+    type: pipeline
+    background: page
+    label: "Adjudication"
+    headline: "Graph-Native Decision Adjudication. Not a Similarity Threshold."
+    intro: >
+      When semantic search surfaces potential duplicates, most systems apply a cosine
+      similarity threshold and hope for the best. Fabula uses multi-level LLM adjudication:
+      a compositional prompt system that reasons through evidence, weighs competing
+      interpretations, and documents every decision. The system doesn't just resolve
+      entities&mdash;it gets smarter with each pass.
+
+    steps:
+      - number: 1
+        color: primary
+        title: "Candidate Discovery"
+        description: >
+          ChromaDB semantic search surfaces plausible matches. Mathematical filtering
+          reduces O(n&sup2;) comparisons to a tractable candidate set&mdash;only entities
+          that <em>could</em> plausibly be the same.
+      - number: 2
+        color: violet
+        title: "LLM Adjudication"
+        description: >
+          Each candidate pair goes to an LLM with full narrative context, existing
+          descriptions, aliases, and a decision framework. The model reasons through
+          evidence for and against merging&mdash;then commits with a confidence score.
+      - number: 3
+        color: green
+        title: "Graph Update + Sharpening"
+        description: >
+          Merges create a refined canonical entity with synthesised descriptions.
+          Keeps trigger <em>contrastive entity sharpening</em>&mdash;enhancing both
+          entities' definitions so they're never flagged as duplicates again.
+
+    code_snippets:
+      - label: "KEEP_SEPARATE &middot; Contrastive Sharpening"
+        icon: split
+        filename: "Indiana Jones &middot; Object Entities"
+        badge: "Confidence: 0.99"
+        language: json
+        code: |
+          {
+            "decision": "KEEP_SEPARATE",
+            "reasoning": "Two distinct garments worn by
+              the same character, each serving a different
+              narrative function: one signals his academic
+              identity (tweed, office, daytime lectures),
+              the other marks his shift into field operative
+              mode (leather, rain, covert infiltration).",
+            "distinction_clarifications": [
+              {
+                "entity": "Indiana Jones' Professorial Tweeds",
+                "enhancement": "Academic wardrobe signalling
+                  his civilian identity as Dr. Henry Jones Jr.",
+                "distinguishing_features": [
+                  "Worn in university/office scenes only",
+                  "Tweed jacket, bow tie, spectacles",
+                  "Signals scholarly, restrained persona"
+                ]
+              },
+              {
+                "entity": "Indiana Jones' Rain-Soaked
+                  Infiltration Overcoat",
+                "enhancement": "Field gear for the Club
+                  Obi Wan infiltration sequence",
+                "distinguishing_features": [
+                  "Worn in a single covert-entry scene",
+                  "Rain-soaked, dark, utilitarian",
+                  "Signals shift to adventurer persona"
+                ]
+              }
+            ]
+          }
+        caption: >
+          The system identifies that these are narratively distinct objects&mdash;one academic,
+          one operational&mdash;and sharpens both definitions to prevent future false matches.
+          Costume-as-character is exactly the kind of nuance production teams need tracked.
+
+      - label: "MERGE &middot; Canonical Refinement"
+        icon: git-merge
+        filename: "Doctor Who &middot; Character Entities"
+        badge: "Confidence: 0.97"
+        language: json
+        code: |
+          {
+            "decision": "MERGE",
+            "surviving_entity_uuid": "agent_7cc1a9f3e812",
+            "uuids_to_deprecate": ["agent_2ab8d4e01f97"],
+            "refined_canonical_name": "The Doctor",
+            "refined_foundational_description":
+              "The Doctor is a Time Lord from the planet
+               Gallifrey who travels through space and
+               time in the TARDIS. Currently in his tenth
+               incarnation, he adopts the alias 'John Smith'
+               when operating undercover among humans,
+               most notably at Farringham School in 1913.",
+            "refined_aliases": [
+              "John Smith",
+              "The Doctor",
+              "Dr. John Smith",
+              "The Oncoming Storm"
+            ],
+            "reasoning": "Both entities refer to the same
+              Time Lord. 'John Smith' is a known alias used
+              across multiple incarnations. Descriptions
+              cover the same character in and out of cover."
+          }
+        caption: >
+          The merge creates a single canonical entity with a synthesised description drawn
+          from both sources, and a consolidated alias list. The deprecated UUID is preserved
+          in the graph&mdash;never deleted.
+
+    footer_cards:
+      - icon: scroll-text
+        color: primary
+        title: "Full Audit Chain"
+        description: >
+          Every adjudication decision&mdash;the reasoning, the confidence score, the evidence
+          weighed&mdash;is stored in the graph alongside the entities it affected. Deprecated
+          entities aren't deleted; they're linked to the surviving canonical with the full
+          decision chain. When someone asks &ldquo;why did you merge these?&rdquo; or
+          &ldquo;why are these separate?&rdquo;&mdash;there's a complete, LLM-generated
+          analytical answer. For IP owners, this is the foundation of provenance. A knowledge
+          graph of narrative isn't just a creative tool&mdash;it's an auditable record of every
+          analytical claim made about the property.
+      - icon: brain-circuit
+        color: green
+        title: "A System That Gets Smarter"
+        description: >
+          Contrastive entity sharpening isn't just about the current decision. Every
+          KEEP_SEPARATE adds distinguishing features and description enhancements that update
+          the entities' embeddings in ChromaDB. Next time semantic search runs, those two
+          entities are further apart in vector space. Fewer false positives. Fewer adjudication
+          calls. Lower cost. By series end, the graph has self-optimised its own entity
+          boundaries.
+
+    blockquote: >
+      The distinction between &ldquo;Indiana Jones' professorial tweeds&rdquo;
+      and &ldquo;his rain-soaked infiltration overcoat&rdquo; is exactly the kind of
+      nuance that matters for production: which costume to pull, which character register
+      the actor is playing, which visual motif to maintain. A simple string match would merge them.
+      The adjudicator understands they're different outfits on the same man.
+
+  # ------------------------------------------
+  # 6. ENTITY RESOLUTION AT SCALE
+  # ------------------------------------------
+  - id: entity-resolution
+    type: comparison
+    background: surface
+    label: "Entity Resolution"
+    headline: "Zero Entity Drift. From Pilot to Series Finale."
+    intro: >
+      The hardest problem in narrative extraction isn't finding entities&mdash;it's keeping
+      them consistent across sixty episodes and five years of production. We handle this with
+      a hybrid GraphRAG architecture: Neo4j for structural queries and relationship traversal,
+      ChromaDB for semantic similarity and fuzzy matching.
+
+    before:
+      title: "Before Entity Resolution"
+      items:
+        - icon: user
+          text: "&ldquo;The Captain&rdquo;"
+          color: rose
+        - icon: user
+          text: "&ldquo;Picard&rdquo;"
+          color: rose
+        - icon: user
+          text: "&ldquo;Jean-Luc&rdquo;"
+          color: rose
+
+    after:
+      title: "After Entity Resolution"
+      canonical:
+        icon: user-check
+        name: "Jean-Luc Picard"
+        badges:
+          - "The Captain"
+          - "Picard"
+          - "Jean-Luc"
+          - "Number One (by Lwaxana)"
+
+    stats:
+      - value: "726"
+        color: primary
+        title: "Canonical Entities"
+        description: "Across 60+ episodes of television"
+      - value: "0"
+        color: green
+        title: "Entity Drift"
+        description: "Zero drift from pilot to finale"
+      - value: "<100ms"
+        color: cyan
+        title: "Query Latency"
+        description: "Sub-100ms for any graph query"
+
+    sidebar:
+      card:
+        body: >
+          Neo4j handles the structural questions: &ldquo;Which characters appear in both the
+          pilot and the finale?&rdquo; ChromaDB handles the semantic ones: &ldquo;Is &lsquo;the
+          Starfleet captain on the Enterprise&rsquo; the same person as &lsquo;Picard&rsquo;?&rdquo;
+          The hybrid architecture means we get both relational precision and semantic
+          intelligence&mdash;and the confidence to merge only when the evidence warrants it.
+
+    code_snippets:
+      - label: "Typed Narrative Edges"
+        icon: git-branch
+        filename: "connections.yaml"
+        badge: "Schema-validated"
+        language: yaml
+        code: |
+          - connection_type: CAUSAL
+            strength: strong
+            description: "Q's abrupt appearance and assertion of authority
+              on the bridge leads directly to his ultimatum commanding
+              humanity's retreat, provoking Picard's demand for Q's
+              identity and Conn's readiness to fight."
+
+          - connection_type: CHARACTER_CONTINUITY
+            strength: strong
+            description: "Picard's immediate reaction to Conn being frozen
+              — administering orders for medical aid and confronting Q —
+              reflects his steadfast leadership and moral resolve."
+
+          - connection_type: THEMATIC_PARALLEL
+            strength: medium
+            description: "Both events stage a confrontation between
+              institutional authority and individual moral conviction,
+              with the bridge serving as contested ground."
+        caption: >
+          Every edge carries a type, a strength, and a narrative claim explaining
+          <em>why</em> these events connect&mdash;not just <em>that</em> they do.
+          This is what makes the graph queryable.
+
+    blog_links:
+      - text: "Read: The Computational Problem of Narrative Memory"
+        url: "https://storygraph.substack.com/p/the-computational-problem-of-narrative"
+
+  # ------------------------------------------
+  # 7. PERFORMANCE ENGINEERING
+  # ------------------------------------------
+  - id: performance
+    type: stats
+    background: page
+    label: "Performance"
+    headline: "83 Minutes Per Episode. Down from Five Hours."
+    intro: >
+      Performance isn't a feature&mdash;it's the line between a research prototype
+      and production-grade software. We've achieved 3.6x improvement through architectural
+      discipline, not hardware scaling.
+
+    stats:
+      - value: "5h → 83min"
+        color: primary
+        title: "Prep / Async / Save"
+        description: >
+          The three-step pattern: prepare all data before LLM calls, run extraction phases
+          concurrently where possible, batch-write results. Simple discipline, dramatic results.
+      - value: "9,993 → 254"
+        color: green
+        title: "Smart Duplicate Filtering"
+        description: >
+          Mathematical filtering reduces pairwise comparisons from O(n&sup2;) to a tractable
+          set. We don't compare every entity against every other&mdash;we compare candidates
+          that could plausibly match.
+      - value: "18x faster"
+        color: cyan
+        title: "Batch Graph Operations"
+        description: >
+          Neo4j UNWIND operations replace individual node-by-node writes. One batch operation
+          where we used to make thousands of individual calls.
+
+    blog_links:
+      - text: "Read: From 5 Hours to 83 Minutes"
+        url: "https://storygraph.substack.com/p/from-5-hours-to-83-minutes"
+
+  # ------------------------------------------
+  # 8. OPEN FORMATS
+  # ------------------------------------------
+  - id: open-formats
+    type: cards
+    background: surface
+    label: "Open Formats"
+    headline: "Netflix Built a Walled Garden. We Built the Railway."
+    intro: >
+      Fabula accepts industry-standard screenplay formats and exports to any format your
+      team needs&mdash;from Excel for production coordinators to GraphQL for developers.
+      Open formats don't dilute the moat. They <em>create</em> the moat by enabling
+      network effects.
+
+    cards:
+      - icon: file-input
+        color: primary
+        title: "Import: Industry Screenplay Formats"
+        description: >
+          Final Draft (FDX), Fountain (plain text), and PDF screenplays. No proprietary
+          formats, no manual data entry. Your scripts go in as they are.
+        border: left
+      - icon: file-output
+        color: green
+        title: "Export: Any Format You Need"
+        description: >
+          GraphQL API for real-time queries. JSON-LD for linked data. RDF for semantic web.
+          Cypher for direct Neo4j access. CSV for production spreadsheets. PDF for printable
+          story bibles. Markdown for version control.
+        border: left
+      - icon: git-compare
+        color: violet
+        title: "vs. Netflix EKG: Walled Garden"
+        description: >
+          Netflix's Entertainment Knowledge Graph has no export formats, no API access, and
+          no third-party integrations. It's proprietary, siloed, and internal-only. Fabula
+          is the opposite: full data portability, zero vendor lock-in, open APIs that every
+          tool can integrate with.
+        border: left
+      - icon: blocks
+        color: cyan
+        title: "vs. Notion Templates: Manual Entry"
+        description: >
+          Notion-based story bibles require manual entry, offer limited CSV/PDF export, and
+          provide generic API access with no narrative intelligence. Fabula automates the
+          extraction and exports structured, queryable knowledge graphs.
+        border: left
+
+    blockquote: >
+      We're not building a tool, we're building infrastructure. Stripe doesn't own
+      Visa/Mastercard&mdash;they provide the API layer that everyone integrates with.
+      When every writers' room tool, script supervision app, and asset management system
+      queries Fabula's API, we become infrastructure. Open formats create network effects,
+      not lock-in.
+
+  # ------------------------------------------
+  # 9. SECURITY & CONTROL
+  # ------------------------------------------
+  - id: security
+    type: split
+    background: page
+    label: "Security"
+    headline: "Your Scripts. Your Servers. Your Graph."
+
+    left:
+      title: "We Never"
+      icon: x-circle
+      color: rose
+      items:
+        - icon: x
+          text: "Share your scripts with other customers"
+        - icon: x
+          text: "Use your scripts to train AI models"
+        - icon: x
+          text: "Store scripts on shared infrastructure"
+        - icon: x
+          text: "Allow cross-customer data access"
+
+    right:
+      title: "You Control"
+      icon: check-circle
+      color: green
+      items:
+        - icon: check
+          text: "Where your data is stored (our servers or yours)"
+        - icon: check
+          text: "Which AI providers process your scripts"
+        - icon: check
+          text: "Who has access to your knowledge graph"
+        - icon: check
+          text: "When data gets deleted (it's permanent)"
+
+    footer_cards:
+      - icon: cloud
+        color: cyan
+        title: "Cloud"
+        description: "We host everything. You upload scripts, we handle servers, backups, updates."
+      - icon: server
+        color: violet
+        title: "Self-Hosted"
+        description: "You run it on your infrastructure. Your scripts never leave your network."
+      - icon: shuffle
+        color: green
+        title: "Hybrid"
+        description: "Process scripts on your servers. Use our cloud for search and visualization."
+
+  # ------------------------------------------
+  # 10. WHO THIS IS FOR
+  # ------------------------------------------
+  - id: who-this-is-for
+    type: cards
+    background: surface
+    label: "Built For"
+    headline: "The Industry That Creates the Most Complex Narratives Manages Them in Google Sheets"
+    intro: >
+      These are the teams where continuity failures cost real money, where characters number
+      in the hundreds, and where &ldquo;what happened in Season 2&rdquo; is a question nobody
+      in the room can answer with confidence.
+
+    cards:
+      - icon: clapperboard
+        color: primary
+        title: "Production Teams"
+        description: >
+          Your script coordinator maintains a spreadsheet with 40 tabs and an institutional
+          memory that walks out the door when they leave. Fabula extracts, resolves, and
+          tracks every entity across every episode&mdash;automatically, with zero drift.
+        border: top
+      - icon: briefcase
+        color: green
+        title: "Development Executives"
+        description: >
+          You greenlight based on a pilot script and a pitch deck. Fabula gives you narrative
+          complexity metrics, character arc density, relationship networks, and thematic
+          coverage across a property's full history&mdash;the structural fingerprint behind
+          the gut instinct.
+        border: top
+      - icon: gamepad-2
+        color: violet
+        title: "Game Studios"
+        description: >
+          IP adaptation starts with months of manual character cataloguing. Fabula exports
+          structured character data, canonical relationship networks, and timeline-consistent
+          descriptions in any format your engine or toolchain requires.
+        border: top
+      - icon: line-chart
+        color: cyan
+        title: "Investors"
+        description: >
+          Context graph infrastructure for entertainment IP. Entity extraction, resolution,
+          and graph construction&mdash;horizontal infrastructure with entertainment as the
+          beachhead and the architecture to generalise.
+        border: top
+
+# =============================================
+# CTA
+# =============================================
+cta:
+  background: hero
+  headline: "You&rsquo;ve Read the Architecture. Now Walk the Graph."
+  body: >
+    Explore four seasons of <em>The West Wing</em> as a live knowledge graph&mdash;726
+    canonical entities, thousands of typed connections, zero entity drift. Or register
+    your interest and we'll show you what it looks like with your scripts.
+  ctas:
+    - label: "Walk the Graph"
+      url: "{% url 'catalog' %}"
+      style: primary
+      icon: arrow-right
+    - label: "Register Your Interest"
+      url: "{% slugurl 'early-access' %}"
+      style: secondary
+
+footer_breadcrumb: "All edges. No spreadsheets. Your story&rsquo;s structure has always been a graph. Now you can see it."

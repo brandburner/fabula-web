@@ -1,0 +1,75 @@
+{% comment %}
+Split section — two equal columns (e.g., "We Never" / "You Control").
+
+Context:
+  section: dict with label, headline, left{title, icon, color, items[]}, right{title, icon, color, items[]},
+           footer_cards[]
+{% endcomment %}
+{% load content_tags %}
+
+<section class="py-20 md:py-28" style="background: {{ section.background|section_bg }};">
+    <div class="max-w-7xl mx-auto px-6">
+        {% if section.headline %}
+        <div class="text-center mb-16 f-ornament-center">
+            {% if section.label %}<span class="f-label">{{ section.label }}</span>{% endif %}
+            <h2 class="text-3xl md:text-4xl font-semibold mt-3 mb-4 f-heading">{{ section.headline|safe }}</h2>
+        </div>
+        {% endif %}
+
+        <div class="grid md:grid-cols-2 gap-6 mb-10">
+            {# Left column #}
+            {% if section.left %}
+            <div class="f-card p-8" style="border-top: 3px solid {{ section.left.color|accent_color }};">
+                <h3 class="text-lg font-semibold mb-6 f-heading flex items-center gap-2">
+                    {% if section.left.icon %}
+                    <i data-lucide="{{ section.left.icon }}" class="w-5 h-5" style="color: {{ section.left.color|accent_color }};"></i>
+                    {% endif %}
+                    {{ section.left.title|safe }}
+                </h3>
+                <ul class="space-y-4">
+                    {% for item in section.left.items %}
+                    <li class="flex items-start gap-3" style="color: var(--f-fg-secondary);">
+                        <i data-lucide="{{ item.icon|default:'x' }}" class="w-4 h-4 mt-0.5 shrink-0" style="color: {{ section.left.color|accent_color }};"></i>
+                        {{ item.text|safe }}
+                    </li>
+                    {% endfor %}
+                </ul>
+            </div>
+            {% endif %}
+
+            {# Right column #}
+            {% if section.right %}
+            <div class="f-card p-8" style="border-top: 3px solid {{ section.right.color|accent_color }};">
+                <h3 class="text-lg font-semibold mb-6 f-heading flex items-center gap-2">
+                    {% if section.right.icon %}
+                    <i data-lucide="{{ section.right.icon }}" class="w-5 h-5" style="color: {{ section.right.color|accent_color }};"></i>
+                    {% endif %}
+                    {{ section.right.title|safe }}
+                </h3>
+                <ul class="space-y-4">
+                    {% for item in section.right.items %}
+                    <li class="flex items-start gap-3" style="color: var(--f-fg-secondary);">
+                        <i data-lucide="{{ item.icon|default:'check' }}" class="w-4 h-4 mt-0.5 shrink-0" style="color: {{ section.right.color|accent_color }};"></i>
+                        {{ item.text|safe }}
+                    </li>
+                    {% endfor %}
+                </ul>
+            </div>
+            {% endif %}
+        </div>
+
+        {% if section.footer_cards %}
+        <div class="grid md:grid-cols-{{ section.footer_cards|length }} gap-6">
+            {% for card in section.footer_cards %}
+            <div class="f-card p-6 text-center">
+                <div class="w-10 h-10 rounded-lg flex items-center justify-center mx-auto mb-3" style="background: {{ card.color|accent_bg }};">
+                    <i data-lucide="{{ card.icon }}" class="w-5 h-5" style="color: {{ card.color|accent_color }};"></i>
+                </div>
+                <h4 class="font-semibold mb-1 f-heading">{{ card.title|safe }}</h4>
+                <p class="text-sm" style="color: var(--f-fg-secondary);">{{ card.description|safe }}</p>
+            </div>
+            {% endfor %}
+        </div>
+        {% endif %}
+    </div>
+</section>

@@ -37,7 +37,7 @@
 
             {% if page.description %}
             <div class="mt-6 max-w-3xl leading-relaxed" style="color: var(--f-fg-secondary); font-size: 1.05rem; line-height: 1.7;">
-                {{ page.description|richtext }}
+                {{ page.description|md }}
             </div>
             {% endif %}
         </div>
@@ -121,7 +121,7 @@
 
             {% if page.description %}
             <div class="mt-6 text-lg text-slate-400 leading-relaxed prose prose-invert max-w-none">
-                {{ page.description|richtext }}
+                {{ page.description|md }}
             </div>
             {% endif %}
         </div>

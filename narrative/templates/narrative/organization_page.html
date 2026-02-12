@@ -47,7 +47,7 @@
                 Description
             </h2>
             <div class="max-w-none leading-relaxed" style="color: var(--f-fg-secondary); line-height: 1.7;">
-                {{ page.description|richtext }}
+                {{ page.description|md }}
             </div>
         </section>
         {% endif %}
@@ -297,7 +297,7 @@
                 Description
             </h2>
             <div class="prose prose-invert prose-slate max-w-none">
-                {{ page.description|richtext }}
+                {{ page.description|md }}
             </div>
         </section>
         {% endif %}

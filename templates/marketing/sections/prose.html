@@ -1,0 +1,55 @@
+{% comment %}
+Prose section — long-form text section (f-prose class, max-w-3xl).
+
+Context:
+  section: dict with label, headline, body, blockquote, blog_links[], ctas[]
+{% endcomment %}
+{% load content_tags %}
+
+<section class="py-20 md:py-28" style="background: {{ section.background|section_bg }};">
+    <div class="max-w-3xl mx-auto px-6">
+        <div class="mb-10 f-ornament">
+            {% if section.label %}<span class="f-label">{{ section.label }}</span>{% endif %}
+            {% if section.headline %}
+            <h2 class="text-3xl md:text-4xl font-semibold {% if section.label %}mt-3{% endif %} mb-4 f-heading">{{ section.headline|safe }}</h2>
+            {% endif %}
+        </div>
+
+        {% if section.body %}
+        <div class="f-prose">
+            {{ section.body|safe }}
+        </div>
+        {% endif %}
+
+        {% if section.blockquote %}
+        <div class="f-blockquote my-10">
+            <p class="text-lg" style="color: var(--f-fg-secondary); font-family: var(--f-font-display); font-style: italic; line-height: var(--f-line-height-body);">
+                {{ section.blockquote|safe }}
+            </p>
+        </div>
+        {% endif %}
+
+        {% if section.blog_links %}
+        <div class="flex flex-wrap gap-4 mt-10">
+            {% for link in section.blog_links %}
+            <a href="{{ link.url }}" target="_blank" rel="noopener" class="f-text-link text-sm font-medium">
+                {{ link.text|safe }} &rarr;
+            </a>
+            {% endfor %}
+        </div>
+        {% endif %}
+
+        {% if section.ctas %}
+        <div class="flex flex-wrap gap-4 mt-10">
+            {% for cta in section.ctas %}
+            <a href="{{ cta.url }}" class="{% if cta.style == 'primary' %}f-btn-primary{% else %}f-btn-secondary{% endif %}">
+                {{ cta.label }}
+                {% if cta.icon %}
+                <i data-lucide="{{ cta.icon }}" class="w-4 h-4"></i>
+                {% endif %}
+            </a>
+            {% endfor %}
+        </div>
+        {% endif %}
+    </div>
+</section>

@@ -1,0 +1,1120 @@
+# Character/Agent Data
+# Generated: 2026-02-10T16:46:00.206292
+
+- fabula_uuid: agent_eaf00138aa03
+  global_id: null
+  canonical_name: Adults
+  title_role: null
+  description: Group of adults, including Julia, Kevin, and Liz, attends a children's
+    gathering in Amanda's kitchen. They hover expectantly as Amanda ladles spaghetti
+    bolognese for the kids. Julia checks the pot and finds it empty, realizing the
+    hosts prioritize children over adults. She alerts Kevin and Liz to the oversight.
+    This neglect exposes household dynamics favoring kids, leaving adults sidelined
+    and prompting surprise among visiting parents.
+  traits:
+  - expectant
+  - observant
+  - surprised
+  aliases: []
+  character_type: guest
+  sphere_of_influence: children's gatherings
+  appearance_count: 1
+  importance_tier: asteroid
+  affiliated_organization_uuid: null
+- fabula_uuid: agent_93a466ac1690
+  global_id: null
+  canonical_name: Amanda
+  title_role: null
+  description: Amanda leads the alpha mums, a dominant group of local mothers who
+    orchestrate childcare swaps and casual gatherings like spag bol dinners at her
+    home with husband Johnny. She commands her children Georgie and Manus during crises,
+    such as an Airbnb lockout, and trades favors with Julia to manage her kids. As
+    polished hostess, she greets with double kisses, serves wine and food, and maintains
+    control through eye rolls and terse responses. She excludes outsiders like Liz,
+    tolerating her briefly before ostracizing her, and ends overtures with cold stares
+    and slammed doors.
+  traits: &id001
+  - condescending
+  - controlling
+  - pragmatic
+  - polished
+  - exclusionary
+  aliases: &id002 []
+  character_type: guest
+  sphere_of_influence: Alpha mums childcare network and social hosting
+  appearance_count: 20
+  importance_tier: planet
+  affiliated_organization_uuid: org_6bbb141764bb
+- fabula_uuid: agent_93a466ac1690
+  global_id: null
+  canonical_name: Amanda
+  title_role: null
+  description: Amanda leads the alpha mums, a dominant group of local mothers who
+    orchestrate childcare swaps and casual gatherings like spag bol dinners at her
+    home with husband Johnny. She commands her children Georgie and Manus during crises,
+    such as an Airbnb lockout, and trades favors with Julia to manage her kids. As
+    polished hostess, she greets with double kisses, serves wine and food, and maintains
+    control through eye rolls and terse responses. She excludes outsiders like Liz,
+    tolerating her briefly before ostracizing her, and ends overtures with cold stares
+    and slammed doors.
+  traits: *id001
+  aliases: *id002
+  character_type: guest
+  sphere_of_influence: Alpha mums childcare network and social hosting
+  appearance_count: 20
+  importance_tier: planet
+  affiliated_organization_uuid: org_40ee9df7342b
+- fabula_uuid: agent_1fe1f762a024
+  global_id: null
+  canonical_name: Amanda's Children
+  title_role: null
+  description: Amanda's two young children form part of an eight-kid group that Julia
+    and Kevin escort down the street to Amanda's house. They amplify the procession's
+    chaos with noise and indifference, resisting Kevin's attempts to organize them.
+    Their presence underscores Julia's struggle to manage multiple children amid neighborhood
+    scrutiny, pulling her deeper into overlapping family obligations and social exposure.
+  traits:
+  - noisy
+  - indifferent
+  - unruly
+  aliases:
+  - Child (Amanda) x2
+  - 2 x Amanda
+  character_type: guest
+  sphere_of_influence: family childcare
+  appearance_count: 1
+  importance_tier: asteroid
+  affiliated_organization_uuid: null
+- fabula_uuid: agent_3b081ba474d4
+  global_id: null
+  canonical_name: Andrew
+  title_role: null
+  description: Andrew serves as a crucial phone contact for Julia during her public
+    breakdown outside a row of shops. Overwhelmed by four children, a stalled coin-operated
+    horse, and mounting childcare pressures, Julia assures him she will be there despite
+    her crisis. This interaction underscores his role in her stretched obligations,
+    likely tied to work or childcare logistics, pulling her attention amid emotional
+    collapse and highlighting tensions between personal duties and reliability.
+  traits:
+  - patient
+  - expectant
+  - dependable
+  aliases: []
+  character_type: guest
+  sphere_of_influence: childcare and personal obligations
+  appearance_count: 2
+  importance_tier: asteroid
+  affiliated_organization_uuid: null
+- fabula_uuid: agent_0334b8f57e59
+  global_id: null
+  canonical_name: Anne
+  title_role: null
+  description: Anne anchors the alpha mums' group, a dominant clique of local mothers
+    who control cafe seating and childcare swaps. She snaps to Amanda's orders, shoving
+    aside coats and chairs to enforce table boundaries while dodging kid-holding duties.
+    Anne fuels kitchen gossip by outing Liz's affair with Melissa's husband, then
+    crumbles recounting her husband's arm-dropping stroke during TV time. Her compliance
+    binds her to the group's pecking order, her chatter sharpens alliances, and her
+    tears expose raw nerves under the mums' glossy front.
+  traits:
+  - obedient
+  - gossipy
+  - emotional
+  aliases: []
+  character_type: guest
+  sphere_of_influence: Alpha Mums Social Hierarchy
+  appearance_count: 4
+  importance_tier: asteroid
+  affiliated_organization_uuid: org_6bbb141764bb
+- fabula_uuid: agent_fb7213225709
+  global_id: null
+  canonical_name: Charlie
+  title_role: null
+  description: Charlie serves as Liz's young son, a central figure in the chaotic
+    childcare exchanges among mothers like Julia, Amanda, and Liz. He appears as a
+    toddler in a Spiderman outfit with his arm in a cast, embodying restless energy
+    amid playdates. Charlie jumps from windowsills onto mattresses, grabs mini-pizzas
+    after Liz's scolding, hits Manus to spark fights, screams offscreen during gatherings,
+    and fixates on an iPad swiped from Amanda's house. His birthday party looms as
+    a social obligation, and he grows punchy without food, highlighting the physical
+    demands that strain adult alliances.
+  traits: &id003
+  - boisterous
+  - impulsive
+  - playful
+  - irritable when hungry
+  aliases: &id004 []
+  character_type: guest
+  sphere_of_influence: childcare playgroups
+  appearance_count: 11
+  importance_tier: planet
+  affiliated_organization_uuid: org_6bbb141764bb
+- fabula_uuid: agent_fb7213225709
+  global_id: null
+  canonical_name: Charlie
+  title_role: null
+  description: Charlie serves as Liz's young son, a central figure in the chaotic
+    childcare exchanges among mothers like Julia, Amanda, and Liz. He appears as a
+    toddler in a Spiderman outfit with his arm in a cast, embodying restless energy
+    amid playdates. Charlie jumps from windowsills onto mattresses, grabs mini-pizzas
+    after Liz's scolding, hits Manus to spark fights, screams offscreen during gatherings,
+    and fixates on an iPad swiped from Amanda's house. His birthday party looms as
+    a social obligation, and he grows punchy without food, highlighting the physical
+    demands that strain adult alliances.
+  traits: *id003
+  aliases: *id004
+  character_type: guest
+  sphere_of_influence: childcare playgroups
+  appearance_count: 11
+  importance_tier: planet
+  affiliated_organization_uuid: org_40ee9df7342b
+- fabula_uuid: agent_e622272a4c79
+  global_id: null
+  canonical_name: Child with the Plait
+  title_role: null
+  description: One of four children—Julia's own and Amanda's—gathered outside a row
+    of shops by a coin-operated horse ride. Julia singles out the child with the plait
+    for poor behavior, calling her 'horrible' amid efforts to manage the group's chaos
+    during a phone call and childcare scramble. The child's presence contributes to
+    Julia's public overload, drawing Liz's intervention. Antagonistic actions strain
+    Julia's control, marking the child as a source of disruption in the unfolding
+    alliance between Julia and Liz.
+  traits:
+  - antagonistic
+  - disruptive
+  - unruly
+  aliases: []
+  character_type: guest
+  sphere_of_influence: null
+  appearance_count: 3
+  importance_tier: asteroid
+  affiliated_organization_uuid: null
+- fabula_uuid: agent_f56351217ac7
+  global_id: null
+  canonical_name: Chris
+  title_role: null
+  description: Chris partners with Anne in their shared home life. After returning
+    from work, he plays a computer game laced with profanity. Anne avoids bringing
+    the children home during this time to shield them from the language, forcing her
+    to decline a childcare swap amid the alpha mums' cafe negotiations. His off-screen
+    presence underscores casual domestic rhythms that ripple into group childcare
+    logistics.
+  traits:
+  - leisure-focused
+  - immersive
+  - unconcerned
+  aliases: []
+  character_type: guest
+  sphere_of_influence: domestic life
+  appearance_count: 0
+  importance_tier: asteroid
+  affiliated_organization_uuid: null
+- fabula_uuid: agent_a0d985526e9f
+  global_id: null
+  canonical_name: Darius
+  title_role: null
+  description: Darius stands as Charlie's best friend, anchoring the children's emotional
+    world amid adult tensions. Liz directs Anne to RSVP for him at Charlie's birthday
+    party, warning that his absence would break Charlie's heart. This role positions
+    Darius as a vital source of companionship and stability for Charlie, contrasting
+    the hypocrisy and conflicts among the grown-ups in Amanda's kitchen circle. His
+    expected presence underscores the value of unbroken childhood bonds in this social
+    network.
+  traits:
+  - loyal
+  - cherished
+  - essential
+  aliases: []
+  character_type: guest
+  sphere_of_influence: Children's friendships
+  appearance_count: 1
+  importance_tier: asteroid
+  affiliated_organization_uuid: null
+- fabula_uuid: agent_1ee98553930f
+  global_id: null
+  canonical_name: Deirdre
+  title_role: null
+  description: Deirdre moves in the local cafe's circle of mothers. Kevin references
+    her in an anecdote about a breastfeeding incident where the group asked her to
+    cover up. He contrasts this with a hypothetical of men feeding openly to expose
+    hypocrisy in the alpha mums' etiquette. Deirdre embodies the everyday enforcement
+    of modesty norms that define the cafe's social hierarchy and gender dynamics.
+  traits:
+  - norm-compliant
+  - socially embedded
+  aliases: []
+  character_type: guest
+  sphere_of_influence: Cafe motherhood etiquette
+  appearance_count: 0
+  importance_tier: asteroid
+  affiliated_organization_uuid: null
+- fabula_uuid: agent_cc93bd02efc8
+  global_id: null
+  canonical_name: Duncan
+  title_role: null
+  description: Duncan manages work scheduling with Julia, pressing for her involvement
+    in tasks like overseeing Elaine's press release printing. Julia calls him from
+    a cafe, explaining she must mind her five- and nine-year-old kids today, which
+    blocks her attendance. He pushes back initially but accepts her Thursday alternative
+    after she asserts remote handling suffices. Duncan embodies Julia's professional
+    pressures, balancing operational needs against her family demands in their shared
+    workplace dynamic.
+  traits:
+  - insistent
+  - professional
+  - pragmatic
+  aliases: []
+  character_type: guest
+  sphere_of_influence: Work Scheduling
+  appearance_count: 0
+  importance_tier: asteroid
+  affiliated_organization_uuid: null
+- fabula_uuid: agent_138cca701e68
+  global_id: null
+  canonical_name: Elaine
+  title_role: null
+  description: Elaine works in Julia's professional environment, where she handles
+    printing press releases. Julia coordinates remotely with her colleague Duncan
+    to ensure Elaine completes the task without Julia's supervision on Thursday. This
+    setup frees Julia to manage childcare logistics at the cafe, highlighting Elaine's
+    role in supporting Julia's workflow during family crises. Her independent execution
+    of routine office duties maintains operational continuity in Julia's demanding
+    schedule.
+  traits:
+  - reliable
+  - competent
+  - dutiful
+  aliases: []
+  character_type: guest
+  sphere_of_influence: Office Administration
+  appearance_count: 0
+  importance_tier: asteroid
+  affiliated_organization_uuid: null
+- fabula_uuid: agent_632524ff859b
+  global_id: null
+  canonical_name: Georgie
+  title_role: null
+  description: Georgie serves as one of Amanda's young children, central to the episode's
+    childcare barter among alpha mums at the local cafe. Amanda shouts for Georgie
+    and sibling Manus to halt their disruptive antics amid an Airbnb lockout crisis
+    with French guests. Desperate for help, Amanda offers Georgie to Anne or Julia,
+    thrusting the child into the group's transactional social web. This moment underscores
+    Georgie's role in exposing parental strains and forging obligatory alliances,
+    as Julia steps in to take Georgie alongside Manus, binding her to the hierarchy.
+  traits:
+  - disruptive
+  - energetic
+  - dependent
+  aliases: []
+  character_type: guest
+  sphere_of_influence: null
+  appearance_count: 1
+  importance_tier: asteroid
+  affiliated_organization_uuid: null
+- fabula_uuid: agent_9c46bc50ac56
+  global_id: null
+  canonical_name: Group of Mothers
+  title_role: null
+  description: Group of local mothers gather at Amanda's kitchen table during an evening
+    meal. They chat casually while one member's child faces a family health scare—a
+    possible stroke—which draws sympathetic responses like 'Oh, no!' from Sunita and
+    Julia. The group comforts Anne amid her worry, then turns vigilant, glancing at
+    and judging Julia as she sneaks leftover spaghetti. They watch silently as Amanda
+    offers Julia an omelette in a ritual of charity-laced punishment, responding to
+    the announcement and amplifying the social tension. Their presence enforces group
+    norms around food, childcare, and propriety.
+  traits:
+  - sympathetic
+  - judgmental
+  - observant
+  - supportive
+  aliases:
+  - MUMS
+  - small group of mothers
+  character_type: guest
+  sphere_of_influence: Domestic Social Circle
+  appearance_count: 1
+  importance_tier: asteroid
+  affiliated_organization_uuid: null
+- fabula_uuid: agent_03ab62de5ac3
+  global_id: null
+  canonical_name: Helinka
+  title_role: null
+  description: Helinka works as a cleaner in the office reception area by the Costa
+    Coffee stand. Paul proposes hiring her as temporary childcare for Julia's children,
+    citing her on-site availability during work hours as a quick fix to the crisis.
+    Julia rejects the idea outright, insisting a cleaner lacks the cultural fit and
+    maternal qualities needed for her kids' upbringing. This positions Helinka as
+    a dependable building staffer whose everyday role sparks debate over family logistics
+    and class boundaries.
+  traits:
+  - dependable
+  - practical
+  - unpretentious
+  - accessible
+  aliases: []
+  character_type: guest
+  sphere_of_influence: Office cleaning
+  appearance_count: 1
+  importance_tier: asteroid
+  affiliated_organization_uuid: null
+- fabula_uuid: agent_8987b3c4965f
+  global_id: null
+  canonical_name: Ivy
+  title_role: null
+  description: Ivy attends the same class as Manus and belongs to Julia's extended
+    childcare circle. Julia name-drops Ivy to Amanda as a mutual connection, citing
+    how Ivy constantly talks about Manus during school chats. Julia also lists Ivy
+    alongside James among the children she handles in urgent childcare swaps, positioning
+    Ivy within the alpha mums' social web and the pressures of shared parenting logistics.
+    Her mentions bridge parental introductions and highlight school-based ties that
+    influence adult alliances.
+  traits:
+  - chatty
+  - sociable
+  aliases: []
+  character_type: guest
+  sphere_of_influence: School Classmates
+  appearance_count: 2
+  importance_tier: asteroid
+  affiliated_organization_uuid: null
+- fabula_uuid: agent_f15ba9ed958d
+  global_id: null
+  canonical_name: James
+  title_role: null
+  description: James is one of Julia's young children, whom she cares for amid heavy
+    childcare demands. Julia names him alongside Ivy during a frantic phone call about
+    kids while juggling four children—including Amanda's—outside a row of shops. His
+    mention highlights the relentless parenting pressures that contribute to Julia's
+    public emotional collapse, as she questions priorities in exhaustion. James embodies
+    the daily strains of family life testing Julia's limits, though he remains absent
+    from the scene.
+  traits: []
+  aliases: []
+  character_type: guest
+  sphere_of_influence: null
+  appearance_count: 2
+  importance_tier: asteroid
+  affiliated_organization_uuid: null
+- fabula_uuid: agent_735533fffa52
+  global_id: null
+  canonical_name: Jenny
+  title_role: null
+  description: Jenny functions as a child in the alpha mums' childcare rotation at
+    the local cafe. Alpha mums mention her during logistical talks, specifying one
+    takes her on Tuesdays alongside other kids like Charlie and Sam. Her inclusion
+    highlights the group's choreographed parenting exchanges, which Julia overhears
+    and exploits to offer help with her own children. Jenny embodies the dependents
+    anchoring the alpha mums' social hierarchy and transactional bonds.
+  traits:
+  - dependent
+  - scheduled
+  - central to group logistics
+  aliases: []
+  character_type: guest
+  sphere_of_influence: childcare scheduling
+  appearance_count: 0
+  importance_tier: asteroid
+  affiliated_organization_uuid: null
+- fabula_uuid: agent_92666c72031a
+  global_id: null
+  canonical_name: Johnny
+  title_role: null
+  description: Johnny, Amanda's husband in his 40s, projects innate arrogance that
+    drives his sexual success despite unremarkable looks. He controls household access
+    with brusque efficiency, answering the door mid-business call to wave Julia, Kevin,
+    and the children inside while herding them downstairs impatiently. In the kitchen,
+    he grabs a beer from the fridge and slaps Amanda's backside casually as he passes,
+    asserting casual dominance amid neighborhood gossip. His territorial demeanor
+    marks him as the unchallenged authority in Amanda's home, influencing social dynamics
+    with visitors and wives.
+  traits:
+  - arrogant
+  - dismissive
+  - impatient
+  - territorial
+  - casual
+  aliases: []
+  character_type: guest
+  sphere_of_influence: Household Dynamics
+  appearance_count: 3
+  importance_tier: asteroid
+  affiliated_organization_uuid: null
+- fabula_uuid: agent_6218b6a46223
+  global_id: null
+  canonical_name: Julia
+  title_role: null
+  description: Julia organizes corporate events, including high-profile gigs like
+    Peter Mandelson's Women in Construction awards. Mother to a five-year-old and
+    nine-year-old, she rejects hiring cleaners for childcare, insisting on maternal
+    or familial upbringing like her own. Married to Paul, she navigates a new community's
+    alpha mums by eavesdropping on swaps and offering to mind Amanda's kids, Manus
+    and Georgie. Overwhelmed juggling work calls and four kids, she breaks down publicly
+    but accepts Liz's practical help, bonds over wine, assists in crises like Liz's
+    injury, and forges a childcare pact with Liz and Kevin after rebuffs.
+  traits: &id005
+  - anxious
+  - pragmatic
+  - overwhelmed
+  - strategic
+  - persistent
+  aliases: &id006 []
+  character_type: guest
+  sphere_of_influence: Corporate Event Planning and Childcare Networking
+  appearance_count: 28
+  importance_tier: planet
+  affiliated_organization_uuid: org_6bbb141764bb
+- fabula_uuid: agent_6218b6a46223
+  global_id: null
+  canonical_name: Julia
+  title_role: null
+  description: Julia organizes corporate events, including high-profile gigs like
+    Peter Mandelson's Women in Construction awards. Mother to a five-year-old and
+    nine-year-old, she rejects hiring cleaners for childcare, insisting on maternal
+    or familial upbringing like her own. Married to Paul, she navigates a new community's
+    alpha mums by eavesdropping on swaps and offering to mind Amanda's kids, Manus
+    and Georgie. Overwhelmed juggling work calls and four kids, she breaks down publicly
+    but accepts Liz's practical help, bonds over wine, assists in crises like Liz's
+    injury, and forges a childcare pact with Liz and Kevin after rebuffs.
+  traits: *id005
+  aliases: *id006
+  character_type: guest
+  sphere_of_influence: Corporate Event Planning and Childcare Networking
+  appearance_count: 28
+  importance_tier: planet
+  affiliated_organization_uuid: org_40ee9df7342b
+- fabula_uuid: agent_2a9d3a5cab11
+  global_id: null
+  canonical_name: Julia's Children
+  title_role: null
+  description: Julia's children serve as young dependents whose care ignites family
+    conflict during a logistics crunch. Julia rejects Helinka as a sitter because
+    her tattooed eyebrows frighten them and demands grandmother-style upbringing for
+    cultural continuity. Paul pushes practical fixes, but Julia stands firm, leaving
+    her to scramble. Their needs expose parental rifts—Julia's protective fervor against
+    Paul's detachment—and propel the childcare crisis forward.
+  traits:
+  - vulnerable
+  - impressionable
+  - dependent
+  aliases:
+  - children
+  character_type: guest
+  sphere_of_influence: null
+  appearance_count: 2
+  importance_tier: asteroid
+  affiliated_organization_uuid: null
+- fabula_uuid: agent_bdb3d801d7de
+  global_id: null
+  canonical_name: Julia's Mother
+  title_role: null
+  description: Julia's mother embodies the trusted family caregiver Julia favors for
+    raising her children. Julia rejects alternatives like Helinka, citing distrust
+    and the cleaner's intimidating appearance that scares the kids. This preference
+    highlights Julia's mother as a source of cultural continuity, maternal reliability,
+    and emotional security amid the escalating childcare crisis triggered by Paul's
+    detached suggestions.
+  traits:
+  - nurturing
+  - trusted
+  - non-threatening
+  - culturally continuous
+  aliases: []
+  character_type: guest
+  sphere_of_influence: family childcare
+  appearance_count: 1
+  importance_tier: asteroid
+  affiliated_organization_uuid: null
+- fabula_uuid: agent_63f1e98a99df
+  global_id: null
+  canonical_name: Kevin
+  title_role: null
+  description: Kevin fathers two children and orbits the local alpha mums' social
+    circle as an earnest outsider. At the cafe, he sits with Liz, gazes longingly
+    at their table, and makes an awkward bid to join by raising a breastfeeding incident
+    with Amanda, promising an email follow-up. When Julia faces a childcare crisis,
+    he volunteers instantly, marshals eight kids toward Amanda's spag bol dinner,
+    and herds the group through streets and into the house. He offers to advocate
+    with the mums, supports childcare swaps, brings wine to Liz, and blurts awkward
+    gossip, revealing persistent efforts to connect despite rebuffs.
+  traits:
+  - awkward
+  - earnest
+  - helpful
+  - eager
+  - oblivious
+  aliases: []
+  character_type: guest
+  sphere_of_influence: neighborhood parenting logistics
+  appearance_count: 17
+  importance_tier: planet
+  affiliated_organization_uuid: org_6bbb141764bb
+- fabula_uuid: agent_6c48e70a359c
+  global_id: null
+  canonical_name: Kevin's Children
+  title_role: null
+  description: Kevin's children walk alongside their father past Liz's house, providing
+    a glimpse of order that Julia spots from the chaotic kitchen window. Their unremarkable
+    stroll contrasts the riot of Liz's kids inside and triggers Julia's impulsive
+    bang on the glass, drawing Kevin into her crisis. They anchor Kevin's family life
+    in the neighborhood, appearing as a cohesive unit without individual distinction.
+  traits:
+  - docile
+  - unobtrusive
+  - family-oriented
+  aliases:
+  - his kids
+  character_type: guest
+  sphere_of_influence: null
+  appearance_count: 2
+  importance_tier: asteroid
+  affiliated_organization_uuid: null
+- fabula_uuid: agent_31c5f3c4cb68
+  global_id: null
+  canonical_name: Liz
+  title_role: null
+  description: 'Liz mothers two children amid social exclusion from the alpha mums,
+    fueled by rumors of affairs and her firing from Citizens Advice over a recorded
+    call. She extends practical aid to Julia: rigs a coin ride with pennies, brews
+    tea in her cluttered kitchen, cooks mini-pizzas, and offers wine-soaked solidarity.
+    After slicing off her finger while prepping frozen bread, she binds the wound
+    with a dish towel and tape, takes a cab to hospital, and returns defiant, airing
+    hypocrisies and pledging reciprocal childcare. Her wry commentary and steady competence
+    forge an outsider alliance with Julia.'
+  traits: &id007
+  - wry
+  - practical
+  - resilient
+  - defiant
+  - protective
+  aliases: &id008
+  - LIZ
+  character_type: guest
+  sphere_of_influence: Informal childcare and maternal alliances
+  appearance_count: 23
+  importance_tier: planet
+  affiliated_organization_uuid: org_6bbb141764bb
+- fabula_uuid: agent_31c5f3c4cb68
+  global_id: null
+  canonical_name: Liz
+  title_role: null
+  description: 'Liz mothers two children amid social exclusion from the alpha mums,
+    fueled by rumors of affairs and her firing from Citizens Advice over a recorded
+    call. She extends practical aid to Julia: rigs a coin ride with pennies, brews
+    tea in her cluttered kitchen, cooks mini-pizzas, and offers wine-soaked solidarity.
+    After slicing off her finger while prepping frozen bread, she binds the wound
+    with a dish towel and tape, takes a cab to hospital, and returns defiant, airing
+    hypocrisies and pledging reciprocal childcare. Her wry commentary and steady competence
+    forge an outsider alliance with Julia.'
+  traits: *id007
+  aliases: *id008
+  character_type: guest
+  sphere_of_influence: Informal childcare and maternal alliances
+  appearance_count: 23
+  importance_tier: planet
+  affiliated_organization_uuid: org_40ee9df7342b
+- fabula_uuid: agent_b57669ad1381
+  global_id: null
+  canonical_name: Manus
+  title_role: null
+  description: Manus serves as one of Amanda's young sons amid the alpha mums' intricate
+    childcare exchanges. Amanda calls him alongside Georgie during cafe logistics
+    and offers him to Anne or Julia for temporary care. Julia addresses him directly
+    for a crisp amid street chaos. Liz recalls his past friendship with Charlie, ended
+    after the boys showed each other their genitalia, highlighting Amanda's brief
+    tolerance. He scraps with Charlie outside Liz's flat and later mesmerizes the
+    group with his iPad in Amanda's kitchen, drawing silent attention from peers during
+    adult gossip.
+  traits: &id009
+  - playful
+  - combative
+  - mischievous
+  - captivating
+  aliases: &id010 []
+  character_type: guest
+  sphere_of_influence: Children's play and childcare dynamics
+  appearance_count: 10
+  importance_tier: planet
+  affiliated_organization_uuid: org_6bbb141764bb
+- fabula_uuid: agent_b57669ad1381
+  global_id: null
+  canonical_name: Manus
+  title_role: null
+  description: Manus serves as one of Amanda's young sons amid the alpha mums' intricate
+    childcare exchanges. Amanda calls him alongside Georgie during cafe logistics
+    and offers him to Anne or Julia for temporary care. Julia addresses him directly
+    for a crisp amid street chaos. Liz recalls his past friendship with Charlie, ended
+    after the boys showed each other their genitalia, highlighting Amanda's brief
+    tolerance. He scraps with Charlie outside Liz's flat and later mesmerizes the
+    group with his iPad in Amanda's kitchen, drawing silent attention from peers during
+    adult gossip.
+  traits: *id009
+  aliases: *id010
+  character_type: guest
+  sphere_of_influence: Children's play and childcare dynamics
+  appearance_count: 10
+  importance_tier: planet
+  affiliated_organization_uuid: org_40ee9df7342b
+- fabula_uuid: agent_b1a3b08ec079
+  global_id: null
+  canonical_name: Melissa's Husband
+  title_role: null
+  description: Melissa's husband drives a scandal at the heart of tensions among competitive
+    mothers. Kevin exposes Liz's affair with him during a gathering at Amanda's home,
+    sparking Liz's fury and endangering Julia's childcare ties. Though absent, his
+    alleged infidelity fractures the group's alliances built on child-rearing and
+    status, marking him as a pivot for betrayal and gossip in their social web.
+  traits:
+  - disloyal
+  - elusive
+  - incendiary
+  aliases:
+  - Melissa's husband
+  character_type: guest
+  sphere_of_influence: Elite Mothers' Social Circle
+  appearance_count: 1
+  importance_tier: asteroid
+  affiliated_organization_uuid: null
+- fabula_uuid: agent_02763fa6780b
+  global_id: null
+  canonical_name: Mister Spider
+  title_role: null
+  description: Mister Spider occupies Liz's cluttered kitchen, where she apologizes
+    to him while washing dirty cups during Julia's visit. This offscreen presence
+    prompts Liz's courteous gesture, highlighting her affectionate, unpretentious
+    handling of domestic chaos. He endures the bustle without disruption, embodying
+    the quirky inhabitants of her improvisational home life. Liz navigates around
+    him with ease, treating him as a named fixture in her fond, messy space.
+  traits:
+  - docile
+  - unobtrusive
+  - personified
+  aliases: []
+  character_type: guest
+  sphere_of_influence: Liz's Kitchen
+  appearance_count: 1
+  importance_tier: asteroid
+  affiliated_organization_uuid: null
+- fabula_uuid: agent_c5322b44feed
+  global_id: null
+  canonical_name: Office Worker
+  title_role: null
+  description: The Office Worker stands behind Paul at the Costa Coffee stand in the
+    office reception. Paul, fresh off a tense phone call with Julia, turns and lets
+    the Office Worker go ahead in line while he studies the menu. This brief encounter
+    underscores the mundane office rhythm that frames Paul's distracted handling of
+    family childcare issues. The Office Worker navigates typical morning routines,
+    interacting politely in shared spaces without drawing attention.
+  traits:
+  - neutral
+  - patient
+  - unobtrusive
+  aliases:
+  - office worker
+  character_type: guest
+  sphere_of_influence: Office Reception
+  appearance_count: 1
+  importance_tier: asteroid
+  affiliated_organization_uuid: null
+- fabula_uuid: agent_d949c4ea6fab
+  global_id: null
+  canonical_name: One of Liz's Kids
+  title_role: null
+  description: One of Liz's young children thrives in the chaotic energy of her sitting
+    room, where kids leap from windowsills to mattresses and cry offscreen. This kid
+    launches impulsively from a chair just as Liz exits, narrowly missing her and
+    underscoring the relentless disorder Liz handles with practical reassurance amid
+    wine with Julia. The action captures the playful mayhem defining Liz's family
+    life, contrasting Julia's structured world and hinting at budding support networks.
+  traits:
+  - impulsive
+  - energetic
+  - playful
+  aliases:
+  - one of the kids
+  character_type: guest
+  sphere_of_influence: Household Dynamics
+  appearance_count: 0
+  importance_tier: asteroid
+  affiliated_organization_uuid: null
+- fabula_uuid: agent_e75fb9c2d169
+  global_id: null
+  canonical_name: One of the Kids
+  title_role: null
+  description: A child in Liz's chaotic sitting room where kids rampage in the background
+    during Julia and Liz's wine-fueled talk. This child cries offscreen, voicing distress
+    amid mattress jumps and wild play. The outburst amplifies the disorder Liz manages
+    with mattresses and pizza offers, while Julia voices anxiety over her caregiving
+    demands and packed schedule.
+  traits:
+  - distressed
+  - emotional
+  - expressive
+  aliases:
+  - one of the kids (offscreen crying)
+  - offscreen crying child
+  character_type: guest
+  sphere_of_influence: null
+  appearance_count: 3
+  importance_tier: asteroid
+  affiliated_organization_uuid: org_6bbb141764bb
+- fabula_uuid: agent_b9261a666638
+  global_id: null
+  canonical_name: Paul
+  title_role: null
+  description: Paul acts as Julia's husband, navigating family childcare challenges
+    alongside his office job. He queues calmly at the office coffee wagon and proposes
+    hiring Helinka as a temporary nanny to resolve the immediate crisis. His suggestions
+    stay pragmatic and low-conflict, aimed at quick fixes. Yet distraction pulls him
+    toward the pastry display and coffee menu, prompting him to end the call abruptly
+    and leave Julia without further support. Good-looking and chilled-out, Paul maintains
+    detachment amid her urgency.
+  traits:
+  - calm
+  - pragmatic
+  - detached
+  - distracted
+  - placatory
+  aliases: []
+  character_type: guest
+  sphere_of_influence: Family Logistics and Office Environment
+  appearance_count: 1
+  importance_tier: asteroid
+  affiliated_organization_uuid: null
+- fabula_uuid: agent_be54aa3ea36c
+  global_id: null
+  canonical_name: Paul Burrell
+  title_role: null
+  description: Paul Burrell stands as Liz's go-to example of a public figure who rebooted
+    his career on reality TV through extreme challenges like eating worms. Liz name-drops
+    him during a raw exchange about her Citizens Advice firing, wielding the reference
+    with gallows humor to underscore paths to reinvention. This casual invocation
+    highlights Liz's wry take on fame and failure, positioning Burrell as a cultural
+    shorthand for bold, unorthodox survival in her circle's conversations.
+  traits:
+  - bold
+  - adaptable
+  - media-savvy
+  aliases: []
+  character_type: guest
+  sphere_of_influence: Reality Television
+  appearance_count: 3
+  importance_tier: asteroid
+  affiliated_organization_uuid: org_6bbb141764bb
+- fabula_uuid: agent_33409b17cde2
+  global_id: null
+  canonical_name: Pedestrian
+  title_role: null
+  description: A pedestrian crosses the road in front of Julia's car, forcing her
+    to swerve sharply during a tense phone call with her husband Paul about childcare.
+    This sudden hazard interrupts their exchange—Julia shouts 'SORRY' amid the distraction—heightening
+    her frustration and isolation as she rejects Paul's practical suggestion to hire
+    Helinka. The pedestrian's routine action underscores the precarious timing of
+    Julia's crisis, injecting urban unpredictability into her mounting personal pressures.
+  traits:
+  - unwitting
+  - transient
+  - disruptive
+  aliases:
+  - human crossing the road
+  character_type: guest
+  sphere_of_influence: null
+  appearance_count: 1
+  importance_tier: asteroid
+  affiliated_organization_uuid: null
+- fabula_uuid: agent_0e459617f6ba
+  global_id: null
+  canonical_name: Peter Mandelson
+  title_role: null
+  description: Peter Mandelson hosts the Women in Construction awards, a high-profile
+    event Julia organizes for Thursday. Julia cites this commitment repeatedly amid
+    her childcare crisis, underscoring how his involvement pulls her into elite professional
+    networks and intensifies her scheduling conflicts. His role as host positions
+    him as a prominent figure whose participation elevates the event's status and
+    pressures Julia's work-family balance.
+  traits: &id011
+  - prominent
+  - influential
+  - high-profile
+  aliases: &id012 []
+  character_type: guest
+  sphere_of_influence: professional awards ceremonies
+  appearance_count: 4
+  importance_tier: asteroid
+  affiliated_organization_uuid: org_6bbb141764bb
+- fabula_uuid: agent_0e459617f6ba
+  global_id: null
+  canonical_name: Peter Mandelson
+  title_role: null
+  description: Peter Mandelson hosts the Women in Construction awards, a high-profile
+    event Julia organizes for Thursday. Julia cites this commitment repeatedly amid
+    her childcare crisis, underscoring how his involvement pulls her into elite professional
+    networks and intensifies her scheduling conflicts. His role as host positions
+    him as a prominent figure whose participation elevates the event's status and
+    pressures Julia's work-family balance.
+  traits: *id011
+  aliases: *id012
+  character_type: guest
+  sphere_of_influence: professional awards ceremonies
+  appearance_count: 4
+  importance_tier: asteroid
+  affiliated_organization_uuid: org_40ee9df7342b
+- fabula_uuid: agent_3b3427652598
+  global_id: null
+  canonical_name: Sam
+  title_role: null
+  description: Sam is a child in the same class as the alpha mums' kids, including
+    Amanda's children Manus and Georgie. Sam plays football and requires pickup on
+    Wednesdays as part of the group's choreographed childcare logistics. This scheduling
+    detail catches Julia's ear, prompting her to volunteer help with pickups and insert
+    herself into the alpha mums' social economy amid her own childcare crisis. Sam's
+    routine underscores the precise coordination that binds the group and attracts
+    outsiders seeking entry.
+  traits:
+  - active (football player)
+  aliases: []
+  character_type: guest
+  sphere_of_influence: childcare logistics
+  appearance_count: 0
+  importance_tier: asteroid
+  affiliated_organization_uuid: null
+- fabula_uuid: agent_950f80502229
+  global_id: null
+  canonical_name: Six Kids (group accompanying Julia)
+  title_role: null
+  description: A group of six children who accompany Julia across multiple scenes,
+    repeatedly testing her patience and precipitating crises. In one scene Liz, bleeding,
+    hands the children to Julia outside her flat and speeds away, after which tensions
+    among the children (including Charlie and Manus) erupt into a fistfight that forces
+    Julia into crisis management. In another scene the same children travel with Julia
+    to a row of shops where their loud cries escalate Julia's public distress over
+    a stalled coin-operated horse until Liz slips two pennies into the machine to
+    quiet one child. They function as a single recurring, unruly child group in the
+    narrative.
+  traits:
+  - chaotic
+  - unruly
+  - escalatory
+  aliases:
+  - six kids
+  - the yelling kids
+  character_type: guest
+  sphere_of_influence: Child Supervision
+  appearance_count: 1
+  importance_tier: asteroid
+  affiliated_organization_uuid: null
+- fabula_uuid: agent_905d3004e93c
+  global_id: null
+  canonical_name: Sunita
+  title_role: null
+  description: Sunita numbers among the alpha mothers who control the cafe's prime
+    table and Amanda's kitchen conversations. She leans in to whisper 'slut' about
+    Liz, plants seeds of scandal by telling Julia that Johnny drove Liz home nights
+    ago, and reacts with a sharp 'Oh, no!' to heavier disclosures. Her sotto voce
+    digs and confidential relays sharpen group judgments, bind alliances through shared
+    venom, and mark outsiders like Liz for exclusion. She navigates the mothers' hierarchy
+    by fueling mistrust with precise, malicious gossip.
+  traits:
+  - gossipy
+  - judgmental
+  - conspiratorial
+  - malicious
+  aliases: []
+  character_type: guest
+  sphere_of_influence: Alpha Mothers' Social Circle
+  appearance_count: 5
+  importance_tier: planet
+  affiliated_organization_uuid: org_6bbb141764bb
+- fabula_uuid: agent_7fe233f2d4b7
+  global_id: null
+  canonical_name: The Four Children (Julia's temporary charges)
+  title_role: null
+  description: 'A group of four children in Julia''s care who repeatedly generate
+    chaotic scenes that overwhelm her: two of Julia''s own children (James and Ivy),
+    Amanda''s child, and a fourth child. They appear both inside Julia''s home—running
+    riot through the kitchen and sitting room—and outside a row of shops near a laundrette,
+    yelling, demanding crisps, and amplifying Julia''s childcare crisis. Julia is
+    forced into desperate measures (including phoning Liz for guidance), and their
+    rowdy, restless energy drives several narrative beats around parenting stress
+    and community intervention.'
+  traits:
+  - rowdy
+  - restless
+  - demanding
+  - noisy
+  aliases:
+  - 4 kids
+  - The Four Children
+  - kids
+  - children
+  - Children (group of four)
+  - the yelling kids
+  character_type: guest
+  sphere_of_influence: childcare disruptions
+  appearance_count: 4
+  importance_tier: asteroid
+  affiliated_organization_uuid: null
+- fabula_uuid: agent_c0c9ab610314
+  global_id: null
+  canonical_name: The Kids (neighborhood children of Amanda, Liz, Julia, and Kevin)
+  title_role: null
+  description: 'A boisterous collective of neighborhood children who orbit the competitive
+    mothers Amanda, Liz, and Julia and Kevin. Across scenes they function as a single
+    narrative group that drives maternal logistics, public spectacle, and childcare
+    pressure—ranging from a crowded dinner-table presence (roughly a dozen children)
+    to an outdoor marching cluster (explicitly described as eight children: two from
+    each of Julia, Amanda, Liz, and Kevin). Their behavior varies by scene (from impassive/obedient
+    at mealtimes to noisy/chaotic in public), but they are consistently the same social
+    cohort tied to those four adults.'
+  traits:
+  - impassive
+  - eager
+  - obedient
+  - communal
+  aliases:
+  - The Kids
+  - kids
+  - 8 Kids
+  - small army
+  character_type: guest
+  sphere_of_influence: childcare gatherings
+  appearance_count: 12
+  importance_tier: planet
+  affiliated_organization_uuid: org_6bbb141764bb
+- fabula_uuid: agent_33f7d145b5f5
+  global_id: null
+  canonical_name: The Mums (alpha-mum collective)
+  title_role: null
+  description: 'A cohesive collective of neighborhood mothers who gather in Amanda''s
+    kitchen to drink wine and swap gossip about local scandals. They display an ''alpha-mum''
+    social hierarchy: convivial on the surface but judgmental and cliquish in practice,
+    top up Julia''s glass, listen with blank politeness to crude anecdotes, exchange
+    hostile glances toward outsiders (notably Liz and Julia), and use coordinated
+    social signaling to enforce group boundaries.'
+  traits:
+  - gossipy
+  - convivial
+  - judgmental
+  aliases:
+  - mums
+  - alpha mums
+  - other mums
+  character_type: guest
+  sphere_of_influence: Neighborhood social gossip
+  appearance_count: 4
+  importance_tier: asteroid
+  affiliated_organization_uuid: org_6bbb141764bb
+- fabula_uuid: agent_caf52ba551cd
+  global_id: null
+  canonical_name: Toddler (Liz's sitting room)
+  title_role: null
+  description: A young, unnamed toddler who inhabits Liz's chaotic sitting room and
+    anchors a lively domestic scene. The child follows Charlie off the windowsill
+    onto a mattress in a burst of playful, instinctive energy, amplifying the household's
+    disorder as Julia frets over caregiving and Liz responds with practical calm.
+    As a background presence, the toddler embodies uninhibited childhood motion and
+    everyday childcare demands that shape the adults' conversations and alliances.
+  traits:
+  - playful
+  - instinctive
+  - energetic
+  - imitative
+  aliases:
+  - toddler
+  - another young child
+  - Unnamed Toddler
+  character_type: guest
+  sphere_of_influence: family play
+  appearance_count: 3
+  importance_tier: asteroid
+  affiliated_organization_uuid: org_6bbb141764bb
+- fabula_uuid: agent_c333973fd3ff
+  global_id: null
+  canonical_name: Unnamed Chair-Launching Kid
+  title_role: null
+  description: This unnamed child fuels the chaos in Liz's cluttered sitting room
+    during a midday conversation between Liz and Julia. As the adults sip wine and
+    discuss jobs and social exclusion, the kid hurtles themself off a chair in a burst
+    of energy, narrowly missing Liz on her way out. The action captures the relentless,
+    disruptive play of the children amid adult tensions, heightening the scene's noise
+    and logistical strain.
+  traits:
+  - playful
+  - reckless
+  - energetic
+  aliases:
+  - one of the kids
+  character_type: guest
+  sphere_of_influence: Household Chaos
+  appearance_count: 2
+  importance_tier: asteroid
+  affiliated_organization_uuid: null
+- fabula_uuid: agent_a7e7dd5d1682
+  global_id: null
+  canonical_name: Unnamed Mum
+  title_role: null
+  description: She belongs to Julia's circle of school mums who gather in Amanda's
+    kitchen for wine and chat. During a tense reveal of gossip about Liz's affair
+    with Melissa's husband, she tops up Julia's glass, maintaining the group's cordial
+    facade amid performative domesticity. Johnny slaps Amanda's backside nearby, underscoring
+    the casual undercurrents. Her attentive gesture supports the social lubrication
+    as Julia grows uncomfortable.
+  traits:
+  - attentive
+  - sociable
+  - cordial
+  aliases:
+  - one of the mums
+  character_type: guest
+  sphere_of_influence: Mothers' Social Circle
+  appearance_count: 1
+  importance_tier: asteroid
+  affiliated_organization_uuid: null
+- fabula_uuid: agent_254d7ef4bb34
+  global_id: null
+  canonical_name: Unnamed Screaming Child (coin-operated horse scene)
+  title_role: null
+  description: An unnamed young child in Julia's care during a chaotic outing outside
+    a row of shops (near a laundrette). The child rides a coin-operated horse that
+    stalls and erupts in loud screams, amplifying the commotion among the four children
+    and contributing to Julia's mascara-streaked emotional breakdown. The disturbance
+    draws public attention and is resolved when Liz restarts the ride with two pennies
+    and offers tea. Appears in the same moment tied to Julia's childcare pressures
+    and phone demands from Andrew/Manus.
+  traits:
+  - distressed
+  - vocal
+  - reactive
+  aliases:
+  - Unnamed Screaming Child
+  - Unnamed Child
+  - screaming child
+  - one of the other kids
+  character_type: guest
+  sphere_of_influence: null
+  appearance_count: 3
+  importance_tier: asteroid
+  affiliated_organization_uuid: null
+- fabula_uuid: agent_416e057eecfa
+  global_id: null
+  canonical_name: Young Breastfeeding Mum
+  title_role: null
+  description: A young mother breastfeeding her baby in a quiet corner of the local
+    cafe, situated among groups of mothers and children. She is discreet and observant,
+    aware of the cafe's social dynamics (alpha mums, outsiders like Liz and Kevin)
+    and becomes the focus of Kevin's attention—catching his prolonged stare and accepting
+    a reassuring wink—highlighting a mix of maternal privacy and guarded vulnerability
+    during an intimate parenting moment.
+  traits:
+  - discreet
+  - observant
+  - vulnerable
+  aliases:
+  - Young Mum
+  - Young Breastfeeding Mum
+  - Young Mother (Local Cafe)
+  character_type: guest
+  sphere_of_influence: null
+  appearance_count: 0
+  importance_tier: asteroid
+  affiliated_organization_uuid: null

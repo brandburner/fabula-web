@@ -145,11 +145,16 @@ series_patterns = [
 
 urlpatterns = [
     # ==========================================================================
-    # CATALOG - Graph explorer landing page (served at both / and /explore/)
+    # API - Lightweight engagement tracking
     # ==========================================================================
-    path('',
-         views.CatalogView.as_view(),
-         name='home'),
+    path('api/engagement/',
+         views.record_engagement,
+         name='record_engagement'),
+
+    # ==========================================================================
+    # CATALOG - Graph explorer landing page (at /explore/)
+    # Root URL (/) is served by Wagtail's MarketingHomePage
+    # ==========================================================================
     path('explore/',
          views.CatalogView.as_view(),
          name='catalog'),

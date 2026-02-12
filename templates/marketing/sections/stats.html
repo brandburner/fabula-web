@@ -1,0 +1,56 @@
+{% comment %}
+Stats section — grid of stat cards with big numbers.
+
+Context:
+  section: dict with label, headline, intro, stats[], blog_links[], ctas[]
+{% endcomment %}
+{% load content_tags %}
+
+<section class="py-20 md:py-28" style="background: {{ section.background|section_bg }};">
+    <div class="max-w-7xl mx-auto px-6">
+        <div class="mb-16 f-ornament">
+            {% if section.label %}<span class="f-label">{{ section.label }}</span>{% endif %}
+            <h2 class="text-3xl md:text-4xl font-semibold mt-3 mb-4 f-heading">{{ section.headline|safe }}</h2>
+            {% if section.intro %}
+            <p class="text-lg max-w-3xl" style="color: var(--f-fg-secondary); line-height: var(--f-line-height-body);">
+                {{ section.intro|safe }}
+            </p>
+            {% endif %}
+        </div>
+
+        <div class="grid md:grid-cols-{{ section.stats|length|default:3 }} gap-6 mb-12">
+            {% for stat in section.stats %}
+            <div class="f-card p-8" style="border-top: 3px solid {{ stat.color|accent_color }};">
+                <div class="text-3xl font-semibold mb-2 f-heading" style="font-family: var(--f-font-display); color: {{ stat.color|accent_color }};">{{ stat.value|safe }}</div>
+                <h3 class="font-semibold mb-3 f-heading">{{ stat.title|safe }}</h3>
+                <p class="text-sm" style="color: var(--f-fg-secondary);">
+                    {{ stat.description|safe }}
+                </p>
+            </div>
+            {% endfor %}
+        </div>
+
+        {% if section.blog_links %}
+        <div class="flex flex-wrap gap-4">
+            {% for link in section.blog_links %}
+            <a href="{{ link.url }}" target="_blank" rel="noopener" class="f-text-link text-sm font-medium">
+                {{ link.text|safe }} &rarr;
+            </a>
+            {% endfor %}
+        </div>
+        {% endif %}
+
+        {% if section.ctas %}
+        <div class="flex flex-wrap gap-4 mt-8">
+            {% for cta in section.ctas %}
+            <a href="{{ cta.url }}" class="{% if cta.style == 'primary' %}f-btn-primary{% else %}f-btn-secondary{% endif %}">
+                {{ cta.label }}
+                {% if cta.icon %}
+                <i data-lucide="{{ cta.icon }}" class="w-4 h-4"></i>
+                {% endif %}
+            </a>
+            {% endfor %}
+        </div>
+        {% endif %}
+    </div>
+</section>

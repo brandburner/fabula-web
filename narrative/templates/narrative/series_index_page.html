@@ -20,7 +20,7 @@
 
             {% if page.description %}
             <div class="max-w-2xl mx-auto leading-relaxed" style="color: var(--f-fg-secondary); font-size: 1.05rem; line-height: 1.7;">
-                {{ page.description|richtext }}
+                {{ page.description|md }}
             </div>
             {% endif %}
         </div>
@@ -98,7 +98,7 @@
 
                     {% if season.description %}
                     <p class="text-sm mt-2 mb-4" style="color: var(--f-fg-secondary);">
-                        {{ season.description|striptags|truncatewords:20 }}
+                        {{ season.description|md_plain|truncatewords:20 }}
                     </p>
                     {% endif %}
 
@@ -121,6 +121,13 @@
                     No seasons found
                 </div>
                 {% endfor %}
+
+                {# Request Next Season card #}
+                {% if seasons %}
+                {% with next_season=seasons|last %}
+                {% include "narrative/includes/request_season_card.html" with series_slug=page.slug next_season=next_season.season_number|add:"1" %}
+                {% endwith %}
+                {% endif %}
             </div>
         </section>
     </div>
@@ -141,7 +148,7 @@
 
             {% if page.description %}
             <div class="text-lg text-slate-400 leading-relaxed max-w-2xl mx-auto prose prose-invert">
-                {{ page.description|richtext }}
+                {{ page.description|md }}
             </div>
             {% endif %}
         </div>
@@ -204,7 +211,7 @@
 
                     {% if season.description %}
                     <p class="text-sm text-slate-400 mt-2">
-                        {{ season.description|striptags|truncatewords:20 }}
+                        {{ season.description|md_plain|truncatewords:20 }}
                     </p>
                     {% endif %}
 
@@ -224,6 +231,13 @@
                     No seasons found
                 </div>
                 {% endfor %}
+
+                {# Request Next Season card #}
+                {% if seasons %}
+                {% with next_season=seasons|last %}
+                {% include "narrative/includes/request_season_card.html" with series_slug=page.slug next_season=next_season.season_number|add:"1" %}
+                {% endwith %}
+                {% endif %}
             </div>
         </section>
     </div>

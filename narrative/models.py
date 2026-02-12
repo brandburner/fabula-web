@@ -480,7 +480,7 @@ class EpisodePage(Page):
         help_text="Detailed episode summary"
     )
     dominant_tone = models.CharField(
-        max_length=100,
+        max_length=255,
         blank=True,
         help_text="The prevailing emotional/atmospheric tone"
     )
@@ -1801,6 +1801,38 @@ class EventBeatLink(models.Model):
 # =============================================================================
 # THEME AND CONNECTION INDEX PAGES
 # =============================================================================
+
+class EngagementSignal(models.Model):
+    """
+    Lightweight engagement tracking for user interest signals.
+
+    Records anonymous button clicks (e.g. "request next season") so we
+    can gauge demand without any PII or heavyweight analytics stack.
+    Queryable from Django admin or shell; also logged to stdout for
+    Railway log search.
+    """
+    ACTION_CHOICES = [
+        ('request_season', 'Request next season'),
+    ]
+
+    series_slug = models.SlugField(max_length=200)
+    action = models.CharField(max_length=50, choices=ACTION_CHOICES)
+    created_at = models.DateTimeField(auto_now_add=True)
+    metadata = models.JSONField(
+        default=dict, blank=True,
+        help_text="Optional context (e.g. next_season_number, referrer)"
+    )
+
+    class Meta:
+        indexes = [
+            models.Index(fields=['series_slug', 'action']),
+            models.Index(fields=['created_at']),
+        ]
+        ordering = ['-created_at']
+
+    def __str__(self):
+        return f"{self.action} — {self.series_slug} @ {self.created_at:%Y-%m-%d %H:%M}"
+
 
 class ThemeIndexPage(Page):
     """Index page for exploring themes."""

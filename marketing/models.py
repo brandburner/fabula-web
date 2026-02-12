@@ -426,6 +426,10 @@ class MarketingHomePage(Page):
     class Meta:
         verbose_name = "Marketing Homepage"
 
+    def get_template(self, request, *args, **kwargs):
+        """Use YAML-driven homepage template."""
+        return 'marketing/homepage_page.html'
+
     def get_context(self, request):
         context = super().get_context(request)
         # Make series available for navigation
@@ -475,11 +479,20 @@ class FlexibleContentPage(Page):
     parent_page_types = ['marketing.MarketingHomePage', 'marketing.FlexibleContentPage']
 
     def get_template(self, request, *args, **kwargs):
-        """Return custom templates for specific pages."""
-        # Map slugs to custom templates
+        """Return custom templates for specific pages.
+
+        YAML-driven pages load content via {% load_content 'slug' %} template
+        tag from content/<slug>.yaml files.
+        """
         slug_templates = {
+            # Legacy hardcoded templates
             'product': 'marketing/product_page.html',
-            'about': 'marketing/about_page.html',
+            # YAML-driven pages (content in content/<slug>.yaml)
+            'about': 'marketing/about_page_yaml.html',
+            'platform': 'marketing/platform_page.html',
+            'for-production': 'marketing/for_production_page.html',
+            'benchmarks': 'marketing/benchmarks_page.html',
+            'early-access': 'marketing/early_access_page.html',
         }
         if self.slug in slug_templates:
             return slug_templates[self.slug]

@@ -1,0 +1,105 @@
+{% comment %}
+Form section — registration form with fields from YAML.
+
+Context:
+  section: dict with label, headline, intro, fields[], confirmation{headline, body, links[]}
+{% endcomment %}
+{% load content_tags %}
+
+<section class="py-20 md:py-28" style="background: {{ section.background|section_bg }};">
+    <div class="max-w-3xl mx-auto px-6">
+        <div class="mb-12 f-ornament">
+            {% if section.label %}<span class="f-label">{{ section.label }}</span>{% endif %}
+            <h2 class="text-3xl md:text-4xl font-semibold mt-3 mb-4 f-heading">{{ section.headline|safe }}</h2>
+            {% if section.intro %}
+            <p class="text-lg" style="color: var(--f-fg-secondary); line-height: var(--f-line-height-body);">
+                {{ section.intro|safe }}
+            </p>
+            {% endif %}
+        </div>
+
+        <div class="f-card p-8" x-data="{ submitted: false }">
+            <form @submit.prevent="submitted = true" x-show="!submitted">
+                <div class="space-y-6">
+                    {% for field in section.fields %}
+                    <div>
+                        <label class="block text-sm font-medium mb-2" style="color: var(--f-fg-heading);">
+                            {{ field.label }}
+                            {% if field.required %}<span style="color: var(--f-accent-rose);">*</span>{% endif %}
+                        </label>
+
+                        {% if field.type == 'text' or field.type == 'email' %}
+                        <input
+                            type="{{ field.type }}"
+                            name="{{ field.name }}"
+                            {% if field.required %}required{% endif %}
+                            class="w-full px-4 py-3 rounded-lg text-sm"
+                            style="background: var(--f-bg-elevated); border: 1px solid var(--f-border-default); color: var(--f-fg-primary); font-family: var(--f-font-body);"
+                            onfocus="this.style.borderColor='var(--f-accent-primary)'"
+                            onblur="this.style.borderColor='var(--f-border-default)'">
+
+                        {% elif field.type == 'select' %}
+                        <select
+                            name="{{ field.name }}"
+                            {% if field.required %}required{% endif %}
+                            class="w-full px-4 py-3 rounded-lg text-sm"
+                            style="background: var(--f-bg-elevated); border: 1px solid var(--f-border-default); color: var(--f-fg-primary); font-family: var(--f-font-body);">
+                            <option value="">Select&hellip;</option>
+                            {% for option in field.options %}
+                            <option value="{{ option }}">{{ option }}</option>
+                            {% endfor %}
+                        </select>
+
+                        {% elif field.type == 'textarea' %}
+                        <textarea
+                            name="{{ field.name }}"
+                            rows="4"
+                            {% if field.required %}required{% endif %}
+                            class="w-full px-4 py-3 rounded-lg text-sm"
+                            style="background: var(--f-bg-elevated); border: 1px solid var(--f-border-default); color: var(--f-fg-primary); font-family: var(--f-font-body); resize: vertical;"
+                            onfocus="this.style.borderColor='var(--f-accent-primary)'"
+                            onblur="this.style.borderColor='var(--f-border-default)'"></textarea>
+
+                        {% elif field.type == 'checkbox_group' %}
+                        <div class="space-y-2">
+                            {% for option in field.options %}
+                            <label class="flex items-center gap-3 text-sm cursor-pointer" style="color: var(--f-fg-secondary);">
+                                <input type="checkbox" name="{{ field.name }}" value="{{ option }}"
+                                    class="rounded" style="accent-color: var(--f-accent-primary);">
+                                {{ option }}
+                            </label>
+                            {% endfor %}
+                        </div>
+                        {% endif %}
+                    </div>
+                    {% endfor %}
+                </div>
+
+                <div class="mt-8">
+                    <button type="submit" class="f-btn-primary" style="padding: 0.875rem 2rem;">
+                        Submit
+                        <i data-lucide="arrow-right" class="w-4 h-4"></i>
+                    </button>
+                </div>
+            </form>
+
+            {# Confirmation state #}
+            {% if section.confirmation %}
+            <div x-show="submitted" x-cloak class="text-center py-8">
+                <div class="w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-6" style="background: var(--f-accent-green-bg);">
+                    <i data-lucide="check" class="w-8 h-8" style="color: var(--f-accent-green);"></i>
+                </div>
+                <h3 class="text-2xl font-semibold mb-4 f-heading">{{ section.confirmation.headline|safe }}</h3>
+                <p class="text-lg mb-6" style="color: var(--f-fg-secondary);">{{ section.confirmation.body|safe }}</p>
+                {% if section.confirmation.links %}
+                <div class="flex flex-wrap justify-center gap-4">
+                    {% for link in section.confirmation.links %}
+                    <a href="{{ link.url }}" class="f-text-link text-sm font-medium">{{ link.text|safe }} &rarr;</a>
+                    {% endfor %}
+                </div>
+                {% endif %}
+            </div>
+            {% endif %}
+        </div>
+    </div>
+</section>

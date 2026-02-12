@@ -1,0 +1,174 @@
+# Early Access Page — Application and Partnership Intake
+# =====================================================
+#
+# VOICE REGISTER: Early Access Voice.
+# A warmer, more collegial variant of the Intelligent Friend.
+# This page should feel like an invitation to a private conversation,
+# not a transactional form. The reader is being welcomed into something
+# selective, not sold something mass-market. Think: a club acknowledging
+# a potential new member, not a SaaS funnel processing a lead.
+#
+# STRATEGIC ARGUMENT (page-level):
+# Fabula is in private beta because the work is hard and the standards
+# are high. Every project gets individual attention. This isn't a
+# waitlist — it's a partnership intake. The form is the content.
+#
+# STRUCTURAL APPROACH:
+# Minimal. Hero (provocative reversal + warm resolution) → Form
+# (the action) → CTA (soft alternative) → Closing mantra.
+# Don't over-write it. The form IS the page.
+#
+
+---
+meta:
+  slug: early-access
+  title: "Early Access — Fabula Context Engine for Narrative Production"
+  description: "Apply for early access to Fabula — the context engine for narrative production. We're working with a small group of production teams and research partners during private beta."
+  template: marketing/early_access_page.html
+  audiences:
+    - general
+
+# ===========================================================
+# HERO
+# ===========================================================
+# HEADLINE: Provocative reversal with warmth.
+# Surface reading: Sounds gatekeeping, exclusive, even a little
+# intimidating. "Application" implies you might not get in.
+# Resolved reading: We take each project seriously enough to
+# review it individually. We're not mass-producing demos or
+# running a drip campaign. We're building relationships with
+# production teams. The friction of "application" is actually
+# respect — for the work and for the people doing it.
+#
+# The body resolves the tension immediately: this is about
+# individual attention, not exclusivity for its own sake.
+# ===========================================================
+
+hero:
+  badge:
+    icon: lock-keyhole
+    text: "Private Beta"
+  headline: "This Is Not a Contact Form. It&rsquo;s an Application."
+  body: >
+    We could have built a waitlist. Collect emails, drip-feed updates,
+    announce general availability in six months. Instead, we review every
+    project individually. When you tell us what you&rsquo;re working on,
+    someone on the team reads it&mdash;not a routing algorithm, not a
+    lead-scoring model, a person who understands narrative production.
+    We respond with specifics: what Fabula can do with your scripts today,
+    what it can&rsquo;t do yet, and whether the timing is right.
+    <br><br>
+    That takes longer than a waitlist. It also means that when we say
+    &ldquo;we&rsquo;re ready for your project,&rdquo; we mean it.
+  footnote: >
+    Currently processing <em>Star Trek: The Next Generation</em>, <em>The West Wing</em>,
+    <em>Doctor Who</em>, <em>Motherland: Fort Salem</em>, and <em>Indiana Jones</em>.
+
+sections:
+  # ---------------------------------------------------------
+  # 1. REGISTRATION FORM
+  # ---------------------------------------------------------
+  # The form is the content. The intro text sets the tone:
+  # collegial, specific, conversational. Not a preamble to
+  # a form — an opening move in a dialogue. The confirmation
+  # section acknowledges that they've done something meaningful
+  # and tells them exactly what happens next.
+  # ---------------------------------------------------------
+  - id: registration
+    type: form
+    background: page
+    label: "Apply"
+    headline: "Tell Us About Your Project"
+    intro: >
+      We work with showrunners, writers&rsquo; rooms, development executives,
+      researchers, and the occasional investor who understands that narrative
+      infrastructure is a category, not a feature. Whatever brought you here,
+      start by telling us what you&rsquo;re building. That&rsquo;s the conversation
+      we want to have.
+    fields:
+      - name: name
+        type: text
+        label: "Your Name"
+        required: true
+      - name: email
+        type: email
+        label: "Email"
+        required: true
+      - name: role
+        type: select
+        label: "Your Role"
+        required: true
+        options:
+          - "Showrunner / Creator"
+          - "Writer / Story Editor"
+          - "Script Supervisor"
+          - "Development Executive"
+          - "Producer"
+          - "Investor / VC"
+          - "Technical Founder"
+          - "Researcher / Academic"
+          - "Other"
+      - name: interests
+        type: checkbox_group
+        label: "I'm interested in..."
+        required: false
+        options:
+          - "Testing Fabula on my show or film"
+          - "API access for integration"
+          - "Batch processing for existing seasons"
+          - "Academic research partnership"
+          - "Investment opportunity"
+      - name: use_case
+        type: textarea
+        label: "Tell us about your use case (optional)"
+        required: false
+    confirmation:
+      headline: "We&rsquo;ve Got It. Here&rsquo;s What Happens Next."
+      body: >
+        Someone on the team will review your project within a few days.
+        We&rsquo;ll come back with a specific assessment&mdash;not a
+        generic &ldquo;thanks for your interest&rdquo; email, but an honest
+        read on what Fabula can do with your material and what the onboarding
+        looks like. In the meantime, the live catalog is the best way to see
+        the system thinking.
+      links:
+        - text: "Explore The West Wing catalog"
+          url: "/catalog/"
+        - text: "Read our technical architecture"
+          url: "/platform/"
+        - text: "See our benchmarks"
+          url: "/benchmarks/"
+
+# ===========================================================
+# CTA — SOFT ALTERNATIVE
+# ===========================================================
+# "Not Ready to Apply?" echoes the "application" framing from
+# the hero. No pressure, but the language keeps the register
+# consistent: this is something you apply for, not something
+# you sign up for. The body gives a low-commitment alternative
+# that still moves the reader deeper into the product.
+# ===========================================================
+cta:
+  background: hero
+  headline: "Not Ready to Apply?"
+  body: >
+    The live catalog is open. Browse four seasons of <em>The West Wing</em>
+    as a knowledge graph&mdash;every character, relationship, and narrative
+    connection&mdash;and see the context engine working on real scripts.
+    When you&rsquo;re ready to talk about yours, we&rsquo;ll be here.
+  ctas:
+    - label: "Explore The West Wing"
+      url: "/catalog/"
+      style: primary
+      icon: arrow-right
+    - label: "Read the Benchmarks"
+      url: "/benchmarks/"
+      style: secondary
+      icon: bar-chart-3
+
+# ===========================================================
+# CLOSING MANTRA
+# ===========================================================
+# Consistent across all pages. The architectural declaration.
+# ===========================================================
+footer_breadcrumb: "All edges. No spreadsheets. Your story&rsquo;s structure has always been a graph. Now you can see it."

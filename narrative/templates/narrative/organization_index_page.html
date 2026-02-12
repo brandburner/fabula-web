@@ -81,7 +81,7 @@
                             {% endif %}
                             {% if org.description %}
                             <p class="text-sm line-clamp-2 mt-2" style="color: var(--f-fg-tertiary);">
-                                {{ org.description|striptags|truncatewords:30 }}
+                                {{ org.description|md_plain|truncatewords:30 }}
                             </p>
                             {% endif %}
                         </div>
@@ -128,7 +128,7 @@
                     </div>
                     {% if org.description %}
                     <p class="text-sm line-clamp-1" style="color: var(--f-fg-tertiary);">
-                        {{ org.description|striptags|truncatewords:15 }}
+                        {{ org.description|md_plain|truncatewords:15 }}
                     </p>
                     {% endif %}
                 </a>
@@ -275,7 +275,7 @@
                             {% endif %}
                             {% if org.description %}
                             <p class="text-sm text-slate-400 line-clamp-2 mt-2">
-                                {{ org.description|striptags|truncatewords:30 }}
+                                {{ org.description|md_plain|truncatewords:30 }}
                             </p>
                             {% endif %}
                         </div>
@@ -320,7 +320,7 @@
                     </div>
                     {% if org.description %}
                     <p class="text-sm text-slate-500 line-clamp-1">
-                        {{ org.description|striptags|truncatewords:15 }}
+                        {{ org.description|md_plain|truncatewords:15 }}
                     </p>
                     {% endif %}
                 </a>

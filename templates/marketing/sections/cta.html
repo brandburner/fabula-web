@@ -1,0 +1,35 @@
+{% comment %}
+CTA section — full-width call-to-action with headline, body, buttons.
+
+Context:
+  section: dict with background, headline, body, ctas[]
+{% endcomment %}
+{% load content_tags %}
+
+<section class="py-20 md:py-28" style="background: {{ section.background|section_bg }};">
+    <div class="max-w-3xl mx-auto px-6 text-center">
+        <div class="f-ornament-center">
+            <h2 class="text-3xl md:text-4xl font-semibold mb-6 f-heading">{{ section.headline|safe }}</h2>
+        </div>
+        {% if section.body %}
+        <p class="text-lg mb-10" style="color: var(--f-fg-secondary); line-height: var(--f-line-height-body);">
+            {{ section.body|safe }}
+        </p>
+        {% endif %}
+        {% if section.ctas %}
+        <div class="flex flex-wrap justify-center gap-4">
+            {% for cta in section.ctas %}
+            <a href="{{ cta.url }}" class="{% if cta.style == 'primary' %}f-btn-primary{% else %}f-btn-secondary{% endif %}" style="padding: 1rem 2rem; font-size: 1rem;">
+                {% if cta.icon and cta.style != 'primary' %}
+                <i data-lucide="{{ cta.icon }}" class="w-4 h-4"></i>
+                {% endif %}
+                {{ cta.label }}
+                {% if cta.icon and cta.style == 'primary' %}
+                <i data-lucide="{{ cta.icon }}" class="w-4 h-4"></i>
+                {% endif %}
+            </a>
+            {% endfor %}
+        </div>
+        {% endif %}
+    </div>
+</section>

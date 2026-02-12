@@ -1,0 +1,66 @@
+# Sample section demonstrating all YAML conventions
+# -------------------------------------------------
+# This is an annotated reference, not a live content file.
+# Copy and adapt when adding new sections to any content/*.yaml page.
+
+# BACKGROUND ALTERNATION:
+#   Sections alternate page/surface. Hero bookends use 'hero'.
+#   Pattern: hero → page → surface → page → surface → ... → hero (CTA)
+
+# HTML ENTITIES:
+#   Smart quotes: &ldquo; &rdquo; (double), &lsquo; &rsquo; (single)
+#   Dashes: &mdash; (em dash), &ndash; (en dash)
+#   Emphasis: <em>italics</em>, <strong>bold</strong>
+
+# EXAMPLE: A feature_grid section (icon+title+body cards)
+- id: context-engineering
+  type: feature_grid
+  background: surface          # alternates with previous section
+  label: "THE ARCHITECTURE"   # small-caps label above headline
+  headline: "&ldquo;Context Engineering&rdquo; &mdash; Not Just Another AI Pipeline"
+  intro: >-
+    Most AI tools treat scripts as flat text. Fabula decomposes narrative
+    into a typed knowledge graph with five core node types, dual temporal
+    indices, and hallucination-guarded extraction.
+  features:
+    - icon: users              # Lucide icon names, kebab-case
+      color: primary           # primary | green | blue | violet | cyan | rose | orange
+      title: "Characters"
+      subtitle: >-
+        Canonical identity separated from transient participation state.
+        Zero entity drift from pilot to series finale.
+    - icon: calendar
+      color: green
+      title: "Events"
+      subtitle: >-
+        Dual temporal indices &mdash; fabula (story-internal) and syuzhet
+        (discourse order) &mdash; enable flashback-aware traversal.
+    - icon: map-pin
+      color: blue
+      title: "Locations"
+      subtitle: >-
+        Every location carries the weight of everything that happened there.
+        A corridor on the <em>Enterprise</em> isn&rsquo;t just a set.
+    - icon: box
+      color: violet
+      title: "Objects"
+      subtitle: >-
+        Artefacts, documents, weapons &mdash; tracked across scenes with
+        narrative significance annotations.
+    - icon: git-merge
+      color: cyan
+      title: "Connections"
+      subtitle: >-
+        The assertion explaining <em>why</em> two events connect,
+        not just <em>that</em> they connect. Nine typed edge categories.
+
+  # OPTIONAL: blockquote adds a serif pull-quote below the grid
+  blockquote: >-
+    &ldquo;We didn&rsquo;t invent this framework. G&eacute;rard Genette
+    described it in 1972. We&rsquo;re the first to implement it as
+    production-grade software.&rdquo;
+
+  # OPTIONAL: blog_links for source references
+  blog_links:
+    - text: "Read: Why Stories Are Webs"
+      url: "https://storygraph.substack.com/p/why-stories-are-webs-and-how-were"

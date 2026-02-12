@@ -1,338 +1,292 @@
 {% extends "marketing_base.html" %}
 {% load static wagtailcore_tags %}
 
-{% block title %}Fabula - Never Lose Track of Your Story Again{% endblock %}
+{% block title %}Fabula — Every Story Is a Web of Decisions. We Map Them.{% endblock %}
 
 {% block content %}
 {# ============================================ #}
-{# HERO SECTION #}
+{# HERO SECTION                                  #}
 {# ============================================ #}
-<section class="relative min-h-[90vh] flex items-center overflow-hidden">
-    {# Background effects #}
-    <div class="absolute inset-0 bg-gradient-to-br from-slate-950 via-slate-900 to-slate-950"></div>
-    <div class="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,_var(--tw-gradient-stops))] from-amber-500/10 via-transparent to-transparent"></div>
-    <div class="absolute inset-0 bg-[radial-gradient(ellipse_at_bottom_left,_var(--tw-gradient-stops))] from-cyan-500/5 via-transparent to-transparent"></div>
-
-    {# Grid pattern overlay #}
-    <div class="absolute inset-0 opacity-[0.03]" style="background-image: url('data:image/svg+xml,%3Csvg width=&quot;60&quot; height=&quot;60&quot; viewBox=&quot;0 0 60 60&quot; xmlns=&quot;http://www.w3.org/2000/svg&quot;%3E%3Cg fill=&quot;none&quot; fill-rule=&quot;evenodd&quot;%3E%3Cg fill=&quot;%23ffffff&quot; fill-opacity=&quot;1&quot;%3E%3Cpath d=&quot;M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z&quot;/%3E%3C/g%3E%3C/g%3E%3C/svg%3E');"></div>
-
-    <div class="relative max-w-7xl mx-auto px-6 py-20">
-        <div class="max-w-4xl">
-            {# Eyebrow #}
-            <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-amber-500/10 border border-amber-500/20 text-amber-400 text-sm mb-8">
-                <i data-lucide="sparkles" class="w-4 h-4"></i>
-                <span>The Story Bible That Updates Itself</span>
+<section class="relative overflow-hidden" style="background: var(--f-bg-hero); min-height: 85vh; display: flex; align-items: center;">
+    <div class="max-w-7xl mx-auto px-6 py-24 md:py-32 relative z-10">
+        <div class="max-w-3xl">
+            {# Eyebrow badge #}
+            <div class="inline-flex items-center gap-2 px-3 py-1 rounded mb-8 f-badge" style="font-size: 0.8125rem;">
+                <i data-lucide="sparkles" class="w-3.5 h-3.5" style="color: var(--f-accent-primary);"></i>
+                <span>Narrative Intelligence for Production</span>
             </div>
 
             {# Main headline #}
-            <h1 class="text-5xl md:text-6xl lg:text-7xl font-bold text-white leading-[1.1] mb-6">
-                Never Lose Track of Your Story
-                <span class="text-transparent bg-clip-text bg-gradient-to-r from-amber-400 to-orange-500"> Again</span>
+            <h1 class="text-4xl md:text-5xl lg:text-6xl font-semibold leading-tight mb-6 f-heading" style="letter-spacing: var(--f-letter-spacing-heading); line-height: var(--f-line-height-heading);">
+                Every Story Is a Web of Decisions. We Map Them.
             </h1>
 
             {# Subheadline #}
-            <p class="text-xl md:text-2xl text-slate-400 mb-8 max-w-2xl leading-relaxed">
-                Fabula is the story bible that updates itself. From pilot to finale, know every character, every relationship, every detail—instantly.
+            <p class="text-lg md:text-xl mb-10 leading-relaxed max-w-2xl" style="color: var(--f-fg-secondary); line-height: var(--f-line-height-body);">
+                Fabula builds a living context graph from your scripts&mdash;tracking every character, every relationship, every narrative choice across temporal boundaries. From pilot to finale, your show's memory is instant, searchable, and always current.
             </p>
 
             {# CTAs #}
-            <div class="flex flex-wrap gap-4 mb-12">
-                <a href="{% slugurl 'demo' %}" class="group inline-flex items-center gap-2 px-6 py-3.5 text-base font-semibold rounded-xl bg-gradient-to-r from-amber-500 to-orange-500 text-white hover:from-amber-400 hover:to-orange-400 transition-all duration-300 shadow-lg shadow-amber-500/25 hover:shadow-amber-500/40 hover:scale-105">
-                    See How It Works
-                    <i data-lucide="arrow-right" class="w-5 h-5 group-hover:translate-x-1 transition-transform"></i>
-                </a>
-                <a href="{% url 'catalog' %}" class="inline-flex items-center gap-2 px-6 py-3.5 text-base font-semibold rounded-xl border border-slate-700 text-white hover:bg-slate-800/50 hover:border-slate-600 transition-all duration-300">
-                    <i data-lucide="play-circle" class="w-5 h-5"></i>
+            <div class="flex flex-wrap gap-4 mb-10">
+                <a href="{% url 'catalog' %}" class="f-btn-primary">
                     Explore Live Demo
+                    <i data-lucide="arrow-right" class="w-4 h-4"></i>
+                </a>
+                <a href="{% slugurl 'demo' %}" class="f-btn-secondary">
+                    See How It Works
                 </a>
             </div>
 
-            {# Supporting copy #}
-            <p class="text-sm text-slate-500 max-w-xl">
-                Used by production teams to eliminate continuity errors, speed up writers' rooms, and answer "wait, what happened in Season 2?" in seconds.
+            {# Proof line #}
+            <p class="text-sm" style="color: var(--f-fg-tertiary);">
+                Processing Star Trek: TNG, The West Wing, Doctor Who, and more. 726 canonical entities. Zero drift.
             </p>
         </div>
     </div>
 
-    {# Scroll indicator #}
-    <div class="absolute bottom-8 left-1/2 -translate-x-1/2 animate-bounce">
-        <i data-lucide="chevron-down" class="w-6 h-6 text-slate-600"></i>
-    </div>
+    {# Decorative accent line #}
+    <div class="absolute bottom-0 left-0 right-0 h-px" style="background: var(--f-border-light);"></div>
 </section>
 
 {# ============================================ #}
-{# THE PROBLEM - "You Know These Moments" #}
+{# THE PROBLEM                                   #}
 {# ============================================ #}
-<section class="py-24 bg-slate-900/50">
+<section class="py-20 md:py-28" style="background-color: var(--f-bg-page);">
     <div class="max-w-7xl mx-auto px-6">
-        <div class="text-center mb-16">
-            <h2 class="text-4xl md:text-5xl font-bold text-white mb-4">You Know These Moments</h2>
-            <p class="text-xl text-slate-400">Every production hits these walls. What if you didn't have to?</p>
+        <div class="text-center mb-16 f-ornament-center">
+            <h2 class="text-3xl md:text-4xl font-semibold mb-4 f-heading">Every Production Hits These Walls</h2>
+            <p class="text-lg max-w-2xl mx-auto" style="color: var(--f-fg-secondary);">
+                The problems are universal. The cost is real.
+            </p>
         </div>
 
-        <div class="grid md:grid-cols-2 gap-8">
-            {# Scenario 1 #}
-            <div class="group relative rounded-2xl border border-slate-800 bg-slate-900/50 p-8 hover:border-red-500/30 transition-all duration-300">
-                <div class="absolute top-0 right-0 w-32 h-32 bg-red-500/5 rounded-bl-full"></div>
-                <div class="relative">
-                    <div class="w-12 h-12 rounded-xl bg-red-500/10 flex items-center justify-center mb-6">
-                        <i data-lucide="repeat" class="w-6 h-6 text-red-400"></i>
-                    </div>
-                    <h3 class="text-xl font-bold text-white mb-3">"Wait, Did We Already Do That?"</h3>
-                    <p class="text-slate-400 mb-6">
-                        It's the writers' room, Season 4. Someone pitches a great storyline. Then the script coordinator says: "We basically did that in Season 2, Episode 7." Two hours of breaking wasted.
-                    </p>
-                    <div class="pt-4 border-t border-slate-800">
-                        <p class="text-amber-400 font-medium flex items-center gap-2">
-                            <i data-lucide="sparkles" class="w-4 h-4"></i>
-                            What if you could search your entire show in seconds?
-                        </p>
-                    </div>
-                </div>
+        <div class="grid md:grid-cols-2 gap-6 f-stagger">
+            {# Card 1 #}
+            <div class="f-card p-8" style="border-top: 3px solid var(--f-accent-rose);">
+                <h3 class="text-lg font-semibold mb-3 f-heading">&ldquo;Did We Already Do That?&rdquo;</h3>
+                <p class="mb-4" style="color: var(--f-fg-secondary);">
+                    Writers' room wastes hours rediscovering storylines. Someone pitches a great arc, then the coordinator says: &ldquo;We basically did that in Season 2.&rdquo;
+                </p>
+                <p class="text-sm italic mb-4" style="color: var(--f-fg-tertiary);">
+                    Without queryable precedent, you're searching by memory.
+                </p>
+                <p class="text-sm font-medium" style="color: var(--f-accent-primary);">
+                    <i data-lucide="arrow-right" class="w-3.5 h-3.5 inline"></i>
+                    Search your entire show's history in seconds.
+                </p>
             </div>
 
-            {# Scenario 2 #}
-            <div class="group relative rounded-2xl border border-slate-800 bg-slate-900/50 p-8 hover:border-purple-500/30 transition-all duration-300">
-                <div class="absolute top-0 right-0 w-32 h-32 bg-purple-500/5 rounded-bl-full"></div>
-                <div class="relative">
-                    <div class="w-12 h-12 rounded-xl bg-purple-500/10 flex items-center justify-center mb-6">
-                        <i data-lucide="user-search" class="w-6 h-6 text-purple-400"></i>
-                    </div>
-                    <h3 class="text-xl font-bold text-white mb-3">"Who's This Character Again?"</h3>
-                    <p class="text-slate-400 mb-6">
-                        A director wants to bring back that lawyer from Season 1. What was their deal? Who did they interact with? Three people spend an afternoon rewatching episodes and taking notes.
-                    </p>
-                    <div class="pt-4 border-t border-slate-800">
-                        <p class="text-amber-400 font-medium flex items-center gap-2">
-                            <i data-lucide="sparkles" class="w-4 h-4"></i>
-                            What if you had instant character lookup with every scene?
-                        </p>
-                    </div>
-                </div>
+            {# Card 2 #}
+            <div class="f-card p-8" style="border-top: 3px solid var(--f-accent-violet);">
+                <h3 class="text-lg font-semibold mb-3 f-heading">&ldquo;Who Is This Character Again?&rdquo;</h3>
+                <p class="mb-4" style="color: var(--f-fg-secondary);">
+                    A director wants to bring back a character from Season 1. Three people spend an afternoon rewatching episodes and taking notes.
+                </p>
+                <p class="text-sm italic mb-4" style="color: var(--f-fg-tertiary);">
+                    Character state persistence across temporal boundaries&mdash;solved in seconds.
+                </p>
+                <p class="text-sm font-medium" style="color: var(--f-accent-primary);">
+                    <i data-lucide="arrow-right" class="w-3.5 h-3.5 inline"></i>
+                    Instant character lookup with every scene, every arc.
+                </p>
             </div>
 
-            {# Scenario 3 #}
-            <div class="group relative rounded-2xl border border-slate-800 bg-slate-900/50 p-8 hover:border-orange-500/30 transition-all duration-300">
-                <div class="absolute top-0 right-0 w-32 h-32 bg-orange-500/5 rounded-bl-full"></div>
-                <div class="relative">
-                    <div class="w-12 h-12 rounded-xl bg-orange-500/10 flex items-center justify-center mb-6">
-                        <i data-lucide="alert-triangle" class="w-6 h-6 text-orange-400"></i>
-                    </div>
-                    <h3 class="text-xl font-bold text-white mb-3">"That's a Continuity Error"</h3>
-                    <p class="text-slate-400 mb-6">
-                        You're in post. Someone notices: that character died in Season 3. You're now reshooting or ADR-ing your way out of an expensive mistake.
-                    </p>
-                    <div class="pt-4 border-t border-slate-800">
-                        <p class="text-amber-400 font-medium flex items-center gap-2">
-                            <i data-lucide="sparkles" class="w-4 h-4"></i>
-                            What if continuity errors were caught before cameras rolled?
-                        </p>
-                    </div>
-                </div>
+            {# Card 3 #}
+            <div class="f-card p-8" style="border-top: 3px solid var(--f-accent-orange);">
+                <h3 class="text-lg font-semibold mb-3 f-heading">&ldquo;That's a Continuity Error&rdquo;</h3>
+                <p class="mb-4" style="color: var(--f-fg-secondary);">
+                    You're in post. Someone notices: that character died in Season 3. Now you're reshooting&mdash;an expensive mistake caught too late.
+                </p>
+                <p class="text-sm italic mb-4" style="color: var(--f-fg-tertiary);">
+                    Decision lineage validation catches it before cameras roll.
+                </p>
+                <p class="text-sm font-medium" style="color: var(--f-accent-primary);">
+                    <i data-lucide="arrow-right" class="w-3.5 h-3.5 inline"></i>
+                    Pre-production continuity checks, automated.
+                </p>
             </div>
 
-            {# Scenario 4 #}
-            <div class="group relative rounded-2xl border border-slate-800 bg-slate-900/50 p-8 hover:border-cyan-500/30 transition-all duration-300">
-                <div class="absolute top-0 right-0 w-32 h-32 bg-cyan-500/5 rounded-bl-full"></div>
-                <div class="relative">
-                    <div class="w-12 h-12 rounded-xl bg-cyan-500/10 flex items-center justify-center mb-6">
-                        <i data-lucide="file-spreadsheet" class="w-6 h-6 text-cyan-400"></i>
-                    </div>
-                    <h3 class="text-xl font-bold text-white mb-3">"We Need This for Legal"</h3>
-                    <p class="text-slate-400 mb-6">
-                        The network wants a complete asset list for licensing. Characters, locations, objects—everything. Your coordinator is building a spreadsheet. It'll take two weeks.
-                    </p>
-                    <div class="pt-4 border-t border-slate-800">
-                        <p class="text-amber-400 font-medium flex items-center gap-2">
-                            <i data-lucide="sparkles" class="w-4 h-4"></i>
-                            What if your story bible exported everything automatically?
-                        </p>
-                    </div>
-                </div>
+            {# Card 4 #}
+            <div class="f-card p-8" style="border-top: 3px solid var(--f-accent-cyan);">
+                <h3 class="text-lg font-semibold mb-3 f-heading">&ldquo;Legal Needs This Yesterday&rdquo;</h3>
+                <p class="mb-4" style="color: var(--f-fg-secondary);">
+                    The network wants a complete asset list for licensing. Characters, locations, objects&mdash;everything. Your coordinator is building a spreadsheet. It'll take two weeks.
+                </p>
+                <p class="text-sm italic mb-4" style="color: var(--f-fg-tertiary);">
+                    Structured entity export from the graph in minutes.
+                </p>
+                <p class="text-sm font-medium" style="color: var(--f-accent-primary);">
+                    <i data-lucide="arrow-right" class="w-3.5 h-3.5 inline"></i>
+                    Asset manifests exported instantly.
+                </p>
             </div>
         </div>
     </div>
 </section>
 
 {# ============================================ #}
-{# WHAT FABULA DOES #}
+{# WHAT FABULA DOES                              #}
 {# ============================================ #}
-<section class="py-24">
+<section class="py-20 md:py-28" style="background-color: var(--f-bg-surface);">
     <div class="max-w-7xl mx-auto px-6">
-        <div class="text-center mb-16">
-            <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-cyan-500/10 border border-cyan-500/20 text-cyan-400 text-sm mb-6">
-                <i data-lucide="zap" class="w-4 h-4"></i>
-                <span>Core Capabilities</span>
-            </div>
-            <h2 class="text-4xl md:text-5xl font-bold text-white mb-4">Your Show's Memory, Automated</h2>
+        <div class="text-center mb-20 f-ornament-center">
+            <h2 class="text-3xl md:text-4xl font-semibold mb-4 f-heading">Your Show's Memory, Built in Context</h2>
         </div>
 
-        <div class="space-y-20">
-            {# Feature 1: Story Bible #}
+        <div class="space-y-24">
+            {# Feature 1: Entity Resolution #}
             <div class="grid lg:grid-cols-2 gap-12 items-center">
                 <div>
-                    <div class="w-14 h-14 rounded-2xl bg-gradient-to-br from-amber-500/20 to-orange-500/20 flex items-center justify-center mb-6">
-                        <i data-lucide="book-open" class="w-7 h-7 text-amber-400"></i>
+                    <div class="flex items-center gap-3 mb-6">
+                        <div class="w-10 h-10 rounded-lg flex items-center justify-center" style="background: var(--f-accent-primary-bg);">
+                            <i data-lucide="book-open" class="w-5 h-5" style="color: var(--f-accent-primary);"></i>
+                        </div>
+                        <span class="f-label">Entity Resolution</span>
                     </div>
-                    <h3 class="text-2xl md:text-3xl font-bold text-white mb-4">Story Bible That Updates Itself</h3>
-                    <p class="text-lg text-slate-400 mb-6">
-                        Upload your script. Fabula reads it, extracts every character, location, and object, then builds your story bible automatically. New script? The bible updates itself.
+                    <h3 class="text-2xl font-semibold mb-4 f-heading">Entity Resolution Across Time</h3>
+                    <p class="text-lg mb-6" style="color: var(--f-fg-secondary); line-height: var(--f-line-height-body);">
+                        The Captain, Picard, Jean-Luc&mdash;Fabula knows they're the same person across nicknames and seven seasons. Every alias resolved. Every state change tracked.
                     </p>
-                    <p class="text-amber-400 font-semibold mb-4">Never manually update a wiki again:</p>
-                    <ul class="space-y-3">
-                        <li class="flex items-start gap-3 text-slate-300">
-                            <i data-lucide="check" class="w-5 h-5 text-green-400 mt-0.5 shrink-0"></i>
-                            Character profiles with complete appearance history
-                        </li>
-                        <li class="flex items-start gap-3 text-slate-300">
-                            <i data-lucide="check" class="w-5 h-5 text-green-400 mt-0.5 shrink-0"></i>
-                            Every relationship between characters
-                        </li>
-                        <li class="flex items-start gap-3 text-slate-300">
-                            <i data-lucide="check" class="w-5 h-5 text-green-400 mt-0.5 shrink-0"></i>
-                            Every location with scenes that happened there
-                        </li>
-                        <li class="flex items-start gap-3 text-slate-300">
-                            <i data-lucide="check" class="w-5 h-5 text-green-400 mt-0.5 shrink-0"></i>
-                            Objects, organizations, all tracked automatically
-                        </li>
-                    </ul>
+                    <p class="text-sm" style="color: var(--f-fg-tertiary);">
+                        Canonical entity resolution with 90%+ accuracy. Alias chains, state transitions, temporal validity windows.
+                    </p>
                 </div>
-                <div class="relative">
-                    <div class="aspect-[4/3] rounded-2xl bg-gradient-to-br from-slate-800 to-slate-900 border border-slate-700 overflow-hidden">
-                        <div class="absolute inset-0 flex items-center justify-center">
-                            <div class="text-center p-8">
-                                <i data-lucide="book-open" class="w-16 h-16 text-slate-600 mx-auto mb-4"></i>
-                                <p class="text-slate-500">Story Bible Preview</p>
-                            </div>
+                <div class="f-card p-8" style="background: var(--f-bg-elevated);">
+                    <div class="space-y-4">
+                        <div class="flex items-center gap-3 p-3 rounded" style="background: var(--f-bg-surface); border: 1px solid var(--f-border-light);">
+                            <i data-lucide="user" class="w-4 h-4" style="color: var(--f-accent-green);"></i>
+                            <span class="text-sm font-medium" style="color: var(--f-fg-heading);">&ldquo;The Captain&rdquo;</span>
+                            <i data-lucide="arrow-right" class="w-3 h-3" style="color: var(--f-fg-tertiary);"></i>
+                            <span class="text-sm" style="color: var(--f-fg-secondary);">Jean-Luc Picard</span>
+                        </div>
+                        <div class="flex items-center gap-3 p-3 rounded" style="background: var(--f-bg-surface); border: 1px solid var(--f-border-light);">
+                            <i data-lucide="user" class="w-4 h-4" style="color: var(--f-accent-green);"></i>
+                            <span class="text-sm font-medium" style="color: var(--f-fg-heading);">&ldquo;Picard&rdquo;</span>
+                            <i data-lucide="arrow-right" class="w-3 h-3" style="color: var(--f-fg-tertiary);"></i>
+                            <span class="text-sm" style="color: var(--f-fg-secondary);">Jean-Luc Picard</span>
+                        </div>
+                        <div class="flex items-center gap-3 p-3 rounded" style="background: var(--f-bg-surface); border: 1px solid var(--f-border-light);">
+                            <i data-lucide="user" class="w-4 h-4" style="color: var(--f-accent-green);"></i>
+                            <span class="text-sm font-medium" style="color: var(--f-fg-heading);">&ldquo;Jean-Luc&rdquo;</span>
+                            <i data-lucide="arrow-right" class="w-3 h-3" style="color: var(--f-fg-tertiary);"></i>
+                            <span class="text-sm" style="color: var(--f-fg-secondary);">Jean-Luc Picard</span>
+                        </div>
+                        <div class="text-center pt-2">
+                            <span class="f-badge">One canonical node &middot; 726 entities resolved</span>
                         </div>
                     </div>
                 </div>
             </div>
 
-            {# Feature 2: Search #}
+            {# Feature 2: Semantic Search #}
             <div class="grid lg:grid-cols-2 gap-12 items-center">
-                <div class="order-2 lg:order-1 relative">
-                    <div class="aspect-[4/3] rounded-2xl bg-gradient-to-br from-slate-800 to-slate-900 border border-slate-700 overflow-hidden">
-                        <div class="absolute inset-0 flex items-center justify-center">
-                            <div class="text-center p-8">
-                                <i data-lucide="search" class="w-16 h-16 text-slate-600 mx-auto mb-4"></i>
-                                <p class="text-slate-500">Search Interface Preview</p>
+                <div class="order-2 lg:order-1">
+                    <div class="f-card p-8" style="background: var(--f-bg-elevated);">
+                        <div class="space-y-3">
+                            <div class="p-3 rounded" style="background: var(--f-bg-surface); border: 1px solid var(--f-border-light);">
+                                <div class="flex items-center gap-2 mb-2">
+                                    <i data-lucide="search" class="w-4 h-4" style="color: var(--f-accent-cyan);"></i>
+                                    <span class="text-sm italic" style="color: var(--f-fg-tertiary);">&ldquo;Episodes where Picard and Data discuss morality&rdquo;</span>
+                                </div>
+                            </div>
+                            <div class="p-3 rounded" style="background: var(--f-accent-primary-bg); border: 1px solid var(--f-border-accent);">
+                                <p class="text-sm font-medium mb-1" style="color: var(--f-fg-heading);">3 results &middot; 87ms</p>
+                                <p class="text-xs" style="color: var(--f-fg-tertiary);">S2E09 &ldquo;The Measure of a Man&rdquo; &middot; S5E25 &ldquo;The Inner Light&rdquo; &middot; S7E25 &ldquo;All Good Things&rdquo;</p>
                             </div>
                         </div>
                     </div>
                 </div>
                 <div class="order-1 lg:order-2">
-                    <div class="w-14 h-14 rounded-2xl bg-gradient-to-br from-cyan-500/20 to-blue-500/20 flex items-center justify-center mb-6">
-                        <i data-lucide="search" class="w-7 h-7 text-cyan-400"></i>
+                    <div class="flex items-center gap-3 mb-6">
+                        <div class="w-10 h-10 rounded-lg flex items-center justify-center" style="background: var(--f-accent-cyan-bg);">
+                            <i data-lucide="search" class="w-5 h-5" style="color: var(--f-accent-cyan);"></i>
+                        </div>
+                        <span class="f-label">Narrative Search</span>
                     </div>
-                    <h3 class="text-2xl md:text-3xl font-bold text-white mb-4">Search Your Entire Show Like Google</h3>
-                    <p class="text-lg text-slate-400 mb-6">
-                        Type a question, get an answer. "Which episodes feature the Captain and the Engineer together?" Instant answers with scene references.
+                    <h3 class="text-2xl font-semibold mb-4 f-heading">Semantic Search Over Story Structure</h3>
+                    <p class="text-lg mb-6" style="color: var(--f-fg-secondary); line-height: var(--f-line-height-body);">
+                        Type: &ldquo;Episodes where Picard and Data discuss morality.&rdquo; Instant answers with scene references. No rewatching required.
                     </p>
-                    <p class="text-cyan-400 font-semibold mb-4">Stop rewatching episodes to find details:</p>
-                    <ul class="space-y-3">
-                        <li class="flex items-start gap-3 text-slate-300">
-                            <i data-lucide="check" class="w-5 h-5 text-green-400 mt-0.5 shrink-0"></i>
-                            Natural language search across all scripts
-                        </li>
-                        <li class="flex items-start gap-3 text-slate-300">
-                            <i data-lucide="check" class="w-5 h-5 text-green-400 mt-0.5 shrink-0"></i>
-                            Character-specific timelines
-                        </li>
-                        <li class="flex items-start gap-3 text-slate-300">
-                            <i data-lucide="check" class="w-5 h-5 text-green-400 mt-0.5 shrink-0"></i>
-                            Relationship histories
-                        </li>
-                        <li class="flex items-start gap-3 text-slate-300">
-                            <i data-lucide="check" class="w-5 h-5 text-green-400 mt-0.5 shrink-0"></i>
-                            Location appearances
-                        </li>
-                    </ul>
+                    <p class="text-sm" style="color: var(--f-fg-tertiary);">
+                        Natural language queries over structured narrative graph. 87ms average traversal latency.
+                    </p>
                 </div>
             </div>
 
-            {# Feature 3: Continuity #}
+            {# Feature 3: Continuity Validation #}
             <div class="grid lg:grid-cols-2 gap-12 items-center">
                 <div>
-                    <div class="w-14 h-14 rounded-2xl bg-gradient-to-br from-red-500/20 to-pink-500/20 flex items-center justify-center mb-6">
-                        <i data-lucide="shield-check" class="w-7 h-7 text-red-400"></i>
+                    <div class="flex items-center gap-3 mb-6">
+                        <div class="w-10 h-10 rounded-lg flex items-center justify-center" style="background: var(--f-accent-rose-bg);">
+                            <i data-lucide="shield-check" class="w-5 h-5" style="color: var(--f-accent-rose);"></i>
+                        </div>
+                        <span class="f-label">Continuity Validation</span>
                     </div>
-                    <h3 class="text-2xl md:text-3xl font-bold text-white mb-4">Catch Continuity Errors Before Production</h3>
-                    <p class="text-lg text-slate-400 mb-6">
-                        Run tomorrow's script through Fabula. It flags inconsistencies with what's already happened. That character who died? Fabula catches it before you're on set.
+                    <h3 class="text-2xl font-semibold mb-4 f-heading">Pre-Production Continuity Validation</h3>
+                    <p class="text-lg mb-6" style="color: var(--f-fg-secondary); line-height: var(--f-line-height-body);">
+                        Upload tomorrow's script. Fabula flags: &ldquo;This character died in S3E12.&rdquo; Catch errors before they cost you a reshoot.
                     </p>
-                    <p class="text-red-400 font-semibold mb-4">Save expensive mistakes:</p>
-                    <ul class="space-y-3">
-                        <li class="flex items-start gap-3 text-slate-300">
-                            <i data-lucide="check" class="w-5 h-5 text-green-400 mt-0.5 shrink-0"></i>
-                            Pre-production continuity validation
-                        </li>
-                        <li class="flex items-start gap-3 text-slate-300">
-                            <i data-lucide="check" class="w-5 h-5 text-green-400 mt-0.5 shrink-0"></i>
-                            Character status tracking (dead, alive, whereabouts)
-                        </li>
-                        <li class="flex items-start gap-3 text-slate-300">
-                            <i data-lucide="check" class="w-5 h-5 text-green-400 mt-0.5 shrink-0"></i>
-                            Timeline verification
-                        </li>
-                        <li class="flex items-start gap-3 text-slate-300">
-                            <i data-lucide="check" class="w-5 h-5 text-green-400 mt-0.5 shrink-0"></i>
-                            Relationship consistency checks
-                        </li>
-                    </ul>
+                    <p class="text-sm" style="color: var(--f-fg-tertiary);">
+                        State validation pipeline embedded in the creative execution path.
+                    </p>
                 </div>
-                <div class="relative">
-                    <div class="aspect-[4/3] rounded-2xl bg-gradient-to-br from-slate-800 to-slate-900 border border-slate-700 overflow-hidden">
-                        <div class="absolute inset-0 flex items-center justify-center">
-                            <div class="text-center p-8">
-                                <i data-lucide="shield-check" class="w-16 h-16 text-slate-600 mx-auto mb-4"></i>
-                                <p class="text-slate-500">Continuity Check Preview</p>
+                <div class="f-card p-8" style="background: var(--f-bg-elevated);">
+                    <div class="space-y-3">
+                        <div class="flex items-start gap-3 p-3 rounded" style="background: var(--f-accent-rose-bg); border: 1px solid var(--f-accent-rose);">
+                            <i data-lucide="alert-triangle" class="w-4 h-4 mt-0.5" style="color: var(--f-accent-rose);"></i>
+                            <div>
+                                <p class="text-sm font-medium" style="color: var(--f-fg-heading);">Continuity conflict detected</p>
+                                <p class="text-xs mt-1" style="color: var(--f-fg-tertiary);">Character &ldquo;Lt. Yar&rdquo; appears in S4E03 dialogue but was killed in S1E23 &ldquo;Skin of Evil&rdquo;</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start gap-3 p-3 rounded" style="background: var(--f-accent-green-bg); border: 1px solid var(--f-accent-green);">
+                            <i data-lucide="check-circle" class="w-4 h-4 mt-0.5" style="color: var(--f-accent-green);"></i>
+                            <div>
+                                <p class="text-sm font-medium" style="color: var(--f-fg-heading);">Location verified</p>
+                                <p class="text-xs mt-1" style="color: var(--f-fg-tertiary);">Ten Forward established S2E01 &mdash; valid for S4E03 scene</p>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
 
-            {# Feature 4: Writers' Room Intelligence #}
+            {# Feature 4: World Model #}
             <div class="grid lg:grid-cols-2 gap-12 items-center">
-                <div class="order-2 lg:order-1 relative">
-                    <div class="aspect-[4/3] rounded-2xl bg-gradient-to-br from-slate-800 to-slate-900 border border-slate-700 overflow-hidden">
-                        <div class="absolute inset-0 flex items-center justify-center">
-                            <div class="text-center p-8">
-                                <i data-lucide="git-branch" class="w-16 h-16 text-slate-600 mx-auto mb-4"></i>
-                                <p class="text-slate-500">Arc Dashboard Preview</p>
+                <div class="order-2 lg:order-1">
+                    <div class="f-card p-8" style="background: var(--f-bg-elevated);">
+                        <div class="text-center">
+                            <div class="inline-flex items-center gap-4 mb-4">
+                                <div class="w-12 h-12 rounded-full flex items-center justify-center" style="background: var(--f-accent-green-bg); border: 2px solid var(--f-accent-green);">
+                                    <i data-lucide="user" class="w-5 h-5" style="color: var(--f-accent-green);"></i>
+                                </div>
+                                <div class="w-16 border-t border-dashed" style="border-color: var(--f-border-strong);"></div>
+                                <div class="w-12 h-12 rounded-full flex items-center justify-center" style="background: var(--f-accent-violet-bg); border: 2px solid var(--f-accent-violet);">
+                                    <i data-lucide="users" class="w-5 h-5" style="color: var(--f-accent-violet);"></i>
+                                </div>
+                                <div class="w-16 border-t border-dashed" style="border-color: var(--f-border-strong);"></div>
+                                <div class="w-12 h-12 rounded-full flex items-center justify-center" style="background: var(--f-accent-blue-bg); border: 2px solid var(--f-accent-blue);">
+                                    <i data-lucide="map-pin" class="w-5 h-5" style="color: var(--f-accent-blue);"></i>
+                                </div>
                             </div>
+                            <p class="text-sm" style="color: var(--f-fg-tertiary);">Characters &middot; Organizations &middot; Locations &middot; Objects &middot; Events</p>
+                            <p class="text-sm mt-2 font-medium" style="color: var(--f-fg-heading);">5,287 relationships &middot; zero manual curation</p>
                         </div>
                     </div>
                 </div>
                 <div class="order-1 lg:order-2">
-                    <div class="w-14 h-14 rounded-2xl bg-gradient-to-br from-purple-500/20 to-violet-500/20 flex items-center justify-center mb-6">
-                        <i data-lucide="brain" class="w-7 h-7 text-purple-400"></i>
+                    <div class="flex items-center gap-3 mb-6">
+                        <div class="w-10 h-10 rounded-lg flex items-center justify-center" style="background: var(--f-accent-violet-bg);">
+                            <i data-lucide="brain" class="w-5 h-5" style="color: var(--f-accent-violet);"></i>
+                        </div>
+                        <span class="f-label">World Model</span>
                     </div>
-                    <h3 class="text-2xl md:text-3xl font-bold text-white mb-4">Writers' Room Intelligence</h3>
-                    <p class="text-lg text-slate-400 mb-6">
-                        Breaking a new season? Fabula shows you character arcs, underutilized relationships, and story threads you set up but never resolved.
+                    <h3 class="text-2xl font-semibold mb-4 f-heading">A World Model That Updates Itself</h3>
+                    <p class="text-lg mb-6" style="color: var(--f-fg-secondary); line-height: var(--f-line-height-body);">
+                        Every relationship, every arc, every location&mdash;automatically extracted, linked, and kept current. Your narrative world model grows with every script.
                     </p>
-                    <p class="text-purple-400 font-semibold mb-4">Make better creative decisions:</p>
-                    <ul class="space-y-3">
-                        <li class="flex items-start gap-3 text-slate-300">
-                            <i data-lucide="check" class="w-5 h-5 text-green-400 mt-0.5 shrink-0"></i>
-                            Character arc dashboards showing emotional journey
-                        </li>
-                        <li class="flex items-start gap-3 text-slate-300">
-                            <i data-lucide="check" class="w-5 h-5 text-green-400 mt-0.5 shrink-0"></i>
-                            Relationship maps revealing unused dynamics
-                        </li>
-                        <li class="flex items-start gap-3 text-slate-300">
-                            <i data-lucide="check" class="w-5 h-5 text-green-400 mt-0.5 shrink-0"></i>
-                            Theme tracking across episodes
-                        </li>
-                        <li class="flex items-start gap-3 text-slate-300">
-                            <i data-lucide="check" class="w-5 h-5 text-green-400 mt-0.5 shrink-0"></i>
-                            Story thread completion status
-                        </li>
-                    </ul>
+                    <p class="text-sm" style="color: var(--f-fg-tertiary);">
+                        Vertical knowledge graph for entertainment IP. 5,287 relationships, zero manual curation.
+                    </p>
                 </div>
             </div>
         </div>
@@ -340,264 +294,299 @@
 </section>
 
 {# ============================================ #}
-{# HOW IT WORKS #}
+{# HOW IT WORKS                                  #}
 {# ============================================ #}
-<section class="py-24 bg-slate-900/50">
+<section class="py-20 md:py-28" style="background-color: var(--f-bg-page);">
     <div class="max-w-7xl mx-auto px-6">
-        <div class="text-center mb-16">
-            <h2 class="text-4xl md:text-5xl font-bold text-white mb-4">Three Steps. Always Up-to-Date.</h2>
-            <p class="text-xl text-slate-400">Upload a script, get a complete story bible. It's that simple.</p>
+        <div class="text-center mb-16 f-ornament-center">
+            <h2 class="text-3xl md:text-4xl font-semibold mb-4 f-heading">Three Steps to Your Context Graph</h2>
         </div>
 
-        <div class="grid md:grid-cols-3 gap-8">
+        <div class="grid md:grid-cols-3 gap-8 mb-12">
             {# Step 1 #}
-            <div class="relative">
-                <div class="absolute -top-4 -left-4 w-12 h-12 rounded-full bg-gradient-to-br from-amber-500 to-orange-500 flex items-center justify-center text-xl font-bold text-white shadow-lg shadow-amber-500/25">
+            <div class="f-card p-8 relative">
+                <div class="w-10 h-10 rounded-full flex items-center justify-center mb-6" style="background: var(--f-accent-primary); color: var(--f-fg-inverse); font-family: var(--f-font-display); font-size: 1.125rem; font-weight: 600;">
                     1
                 </div>
-                <div class="pt-8 pl-4">
-                    <div class="rounded-2xl border border-slate-800 bg-slate-900/50 p-8 h-full">
-                        <div class="w-14 h-14 rounded-xl bg-amber-500/10 flex items-center justify-center mb-6">
-                            <i data-lucide="upload" class="w-7 h-7 text-amber-400"></i>
-                        </div>
-                        <h3 class="text-xl font-bold text-white mb-3">Upload Your Script</h3>
-                        <p class="text-slate-400">
-                            Drop in your Final Draft file or screenplay PDF. Fabula reads it just like a human would—understanding acts, scenes, dialogue, and action.
-                        </p>
-                    </div>
-                </div>
+                <h3 class="text-lg font-semibold mb-3 f-heading">Upload</h3>
+                <p style="color: var(--f-fg-secondary);">
+                    Drop your screenplay. Fabula parses acts, scenes, dialogue, and action&mdash;understanding structure the way a reader would.
+                </p>
             </div>
 
             {# Step 2 #}
-            <div class="relative">
-                <div class="absolute -top-4 -left-4 w-12 h-12 rounded-full bg-gradient-to-br from-amber-500 to-orange-500 flex items-center justify-center text-xl font-bold text-white shadow-lg shadow-amber-500/25">
+            <div class="f-card p-8 relative">
+                <div class="w-10 h-10 rounded-full flex items-center justify-center mb-6" style="background: var(--f-accent-primary); color: var(--f-fg-inverse); font-family: var(--f-font-display); font-size: 1.125rem; font-weight: 600;">
                     2
                 </div>
-                <div class="pt-8 pl-4">
-                    <div class="rounded-2xl border border-slate-800 bg-slate-900/50 p-8 h-full">
-                        <div class="w-14 h-14 rounded-xl bg-cyan-500/10 flex items-center justify-center mb-6">
-                            <i data-lucide="cpu" class="w-7 h-7 text-cyan-400"></i>
-                        </div>
-                        <h3 class="text-xl font-bold text-white mb-3">Fabula Builds Your Story Bible</h3>
-                        <p class="text-slate-400">
-                            Our AI identifies every character mention (even nicknames), every location, every relationship. It knows "The Captain" and "Picard" are the same person.
-                        </p>
-                    </div>
-                </div>
+                <h3 class="text-lg font-semibold mb-3 f-heading">Extract</h3>
+                <p style="color: var(--f-fg-secondary);">
+                    AI identifies entities across aliases. &ldquo;The Captain&rdquo; = &ldquo;Picard&rdquo; = &ldquo;Jean-Luc.&rdquo; One canonical node, every mention linked.
+                </p>
             </div>
 
             {# Step 3 #}
-            <div class="relative">
-                <div class="absolute -top-4 -left-4 w-12 h-12 rounded-full bg-gradient-to-br from-amber-500 to-orange-500 flex items-center justify-center text-xl font-bold text-white shadow-lg shadow-amber-500/25">
+            <div class="f-card p-8 relative">
+                <div class="w-10 h-10 rounded-full flex items-center justify-center mb-6" style="background: var(--f-accent-primary); color: var(--f-fg-inverse); font-family: var(--f-font-display); font-size: 1.125rem; font-weight: 600;">
                     3
                 </div>
-                <div class="pt-8 pl-4">
-                    <div class="rounded-2xl border border-slate-800 bg-slate-900/50 p-8 h-full">
-                        <div class="w-14 h-14 rounded-xl bg-green-500/10 flex items-center justify-center mb-6">
-                            <i data-lucide="compass" class="w-7 h-7 text-green-400"></i>
-                        </div>
-                        <h3 class="text-xl font-bold text-white mb-3">Search, Explore, Export</h3>
-                        <p class="text-slate-400">
-                            Search your show instantly. Visualize character networks. Export for game engines. Your story bible stays current forever.
-                        </p>
-                    </div>
-                </div>
+                <h3 class="text-lg font-semibold mb-3 f-heading">Explore</h3>
+                <p style="color: var(--f-fg-secondary);">
+                    Search instantly. Visualize networks. Export for legal, game engines, or downstream production agents. Your story bible stays current forever.
+                </p>
             </div>
         </div>
 
-        {# The Magic callout #}
-        <div class="mt-12 rounded-2xl border border-amber-500/20 bg-gradient-to-r from-amber-500/5 to-orange-500/5 p-8 text-center">
-            <div class="inline-flex items-center gap-2 text-amber-400 font-semibold mb-2">
-                <i data-lucide="wand-2" class="w-5 h-5"></i>
-                The Magic
-            </div>
-            <p class="text-lg text-slate-300">
-                When you upload Episode 5, Fabula automatically connects it to Episodes 1-4. Same characters, continuous arcs, zero manual work.
+        {# Magic callout #}
+        <div class="f-blockquote max-w-3xl mx-auto">
+            <p class="text-lg" style="color: var(--f-fg-secondary); font-family: var(--f-font-display); font-style: italic; line-height: var(--f-line-height-body);">
+                When you upload Episode 5, Fabula connects it to Episodes 1&ndash;4 automatically. Same characters, continuous state. That's entity persistence across temporal boundaries&mdash;and it's why your story bible never falls out of date.
             </p>
         </div>
     </div>
 </section>
 
 {# ============================================ #}
-{# WHO IT'S FOR #}
+{# WHO IT'S FOR                                  #}
 {# ============================================ #}
-<section class="py-24">
+<section class="py-20 md:py-28" style="background-color: var(--f-bg-surface);">
     <div class="max-w-7xl mx-auto px-6">
-        <div class="text-center mb-16">
-            <h2 class="text-4xl md:text-5xl font-bold text-white mb-4">Built for Every Role in Production</h2>
-            <p class="text-xl text-slate-400">From the writers' room to game studios, Fabula speaks your language.</p>
+        <div class="text-center mb-16 f-ornament-center">
+            <h2 class="text-3xl md:text-4xl font-semibold mb-4 f-heading">Built for Every Role in the Production Value Chain</h2>
         </div>
 
-        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6 f-stagger">
             {# Showrunners #}
-            <div class="rounded-2xl border border-slate-800 bg-slate-900/50 p-8 hover:border-amber-500/30 transition-all duration-300">
-                <div class="w-12 h-12 rounded-xl bg-amber-500/10 flex items-center justify-center mb-6">
-                    <i data-lucide="crown" class="w-6 h-6 text-amber-400"></i>
+            <div class="f-card p-8">
+                <div class="flex items-center gap-3 mb-4">
+                    <div class="w-9 h-9 rounded-lg flex items-center justify-center" style="background: var(--f-accent-primary-bg);">
+                        <i data-lucide="crown" class="w-4 h-4" style="color: var(--f-accent-primary);"></i>
+                    </div>
+                    <span class="f-badge">Showrunners</span>
                 </div>
-                <h3 class="text-xl font-bold text-white mb-3">For Showrunners</h3>
-                <p class="text-slate-400 mb-4">
-                    Stop being the only person who remembers everything. Fabula is your external brain for the writers' room.
+                <p style="color: var(--f-fg-secondary);">
+                    Your external brain for the writers' room. Data-backed answers to &ldquo;which character deserves more screen time?&rdquo;
                 </p>
-                <div class="space-y-2 text-sm text-slate-500 italic">
-                    <p>"Which supporting character deserves more screen time?"</p>
-                    <p>"What themes are we hitting too hard?"</p>
-                </div>
-                <p class="mt-4 text-amber-400 text-sm font-medium">Instant answers backed by data from every episode.</p>
             </div>
 
             {# Script Coordinators #}
-            <div class="rounded-2xl border border-slate-800 bg-slate-900/50 p-8 hover:border-cyan-500/30 transition-all duration-300">
-                <div class="w-12 h-12 rounded-xl bg-cyan-500/10 flex items-center justify-center mb-6">
-                    <i data-lucide="clipboard-list" class="w-6 h-6 text-cyan-400"></i>
+            <div class="f-card p-8">
+                <div class="flex items-center gap-3 mb-4">
+                    <div class="w-9 h-9 rounded-lg flex items-center justify-center" style="background: var(--f-accent-cyan-bg);">
+                        <i data-lucide="clipboard-list" class="w-4 h-4" style="color: var(--f-accent-cyan);"></i>
+                    </div>
+                    <span class="f-badge">Script Coordinators</span>
                 </div>
-                <h3 class="text-xl font-bold text-white mb-3">For Script Coordinators</h3>
-                <p class="text-slate-400 mb-4">
-                    Your job just got 10x easier. Story bibles update automatically. Legal gets their asset lists in minutes.
+                <p style="color: var(--f-fg-secondary);">
+                    Story bibles update automatically. Legal asset lists in minutes, not weeks.
                 </p>
-                <div class="space-y-2 text-sm text-slate-500 italic">
-                    <p>"Export all characters in Episode 3."</p>
-                    <p>"List every scene at the hospital."</p>
-                </div>
-                <p class="mt-4 text-cyan-400 text-sm font-medium">Done in seconds, not hours.</p>
-            </div>
-
-            {# Development Executives #}
-            <div class="rounded-2xl border border-slate-800 bg-slate-900/50 p-8 hover:border-purple-500/30 transition-all duration-300">
-                <div class="w-12 h-12 rounded-xl bg-purple-500/10 flex items-center justify-center mb-6">
-                    <i data-lucide="bar-chart-3" class="w-6 h-6 text-purple-400"></i>
-                </div>
-                <h3 class="text-xl font-bold text-white mb-3">For Development Executives</h3>
-                <p class="text-slate-400 mb-4">
-                    Evaluate pilots faster. Understand narrative complexity without reading scripts three times.
-                </p>
-                <div class="space-y-2 text-sm text-slate-500 italic">
-                    <p>"How many storylines does this pilot juggle?"</p>
-                    <p>"Is the protagonist's arc compelling?"</p>
-                </div>
-                <p class="mt-4 text-purple-400 text-sm font-medium">Coverage that goes deeper than human readers can.</p>
             </div>
 
             {# Writers' Rooms #}
-            <div class="rounded-2xl border border-slate-800 bg-slate-900/50 p-8 hover:border-green-500/30 transition-all duration-300">
-                <div class="w-12 h-12 rounded-xl bg-green-500/10 flex items-center justify-center mb-6">
-                    <i data-lucide="users" class="w-6 h-6 text-green-400"></i>
+            <div class="f-card p-8">
+                <div class="flex items-center gap-3 mb-4">
+                    <div class="w-9 h-9 rounded-lg flex items-center justify-center" style="background: var(--f-accent-green-bg);">
+                        <i data-lucide="users" class="w-4 h-4" style="color: var(--f-accent-green);"></i>
+                    </div>
+                    <span class="f-badge">Writers' Rooms</span>
                 </div>
-                <h3 class="text-xl font-bold text-white mb-3">For Writers' Rooms</h3>
-                <p class="text-slate-400 mb-4">
-                    New writer joining Season 3? They can search the entire show's history. Instant beat sheets and relationship maps.
+                <p style="color: var(--f-fg-secondary);">
+                    New writer joins Season 3? They search the full show history. Onboard in days, not weeks.
                 </p>
-                <div class="space-y-2 text-sm text-slate-500 italic">
-                    <p>"Show me every scene between these two characters."</p>
-                    <p>"What were the major conflicts in Season 1?"</p>
+            </div>
+
+            {# Development Executives #}
+            <div class="f-card p-8">
+                <div class="flex items-center gap-3 mb-4">
+                    <div class="w-9 h-9 rounded-lg flex items-center justify-center" style="background: var(--f-accent-violet-bg);">
+                        <i data-lucide="bar-chart-3" class="w-4 h-4" style="color: var(--f-accent-violet);"></i>
+                    </div>
+                    <span class="f-badge">Development Execs</span>
                 </div>
-                <p class="mt-4 text-green-400 text-sm font-medium">Onboard writers in days, not weeks.</p>
+                <p style="color: var(--f-fg-secondary);">
+                    Evaluate pilots faster. Narrative complexity metrics without triple-reading.
+                </p>
             </div>
 
             {# Game Studios #}
-            <div class="rounded-2xl border border-slate-800 bg-slate-900/50 p-8 hover:border-pink-500/30 transition-all duration-300 md:col-span-2 lg:col-span-2">
-                <div class="w-12 h-12 rounded-xl bg-pink-500/10 flex items-center justify-center mb-6">
-                    <i data-lucide="gamepad-2" class="w-6 h-6 text-pink-400"></i>
+            <div class="f-card p-8">
+                <div class="flex items-center gap-3 mb-4">
+                    <div class="w-9 h-9 rounded-lg flex items-center justify-center" style="background: var(--f-accent-rose-bg);">
+                        <i data-lucide="gamepad-2" class="w-4 h-4" style="color: var(--f-accent-rose);"></i>
+                    </div>
+                    <span class="f-badge">Game Studios</span>
                 </div>
-                <h3 class="text-xl font-bold text-white mb-3">For Game Studios & Virtual Production</h3>
-                <p class="text-slate-400 mb-4">
-                    Adapting TV IP into games or VR? Get structured character data, relationship networks, and location catalogs ready for your engine.
+                <p style="color: var(--f-fg-secondary);">
+                    Structured entity export for Unity/Unreal. Character schemas, relationship networks, location catalogs.
                 </p>
-                <div class="grid sm:grid-cols-3 gap-4 mt-6">
-                    <div class="text-sm text-slate-500 italic">"Export character profiles with personality traits."</div>
-                    <div class="text-sm text-slate-500 italic">"Give me event sequences for mission design."</div>
-                    <div class="text-sm text-slate-500 italic">"List all locations with canonical descriptions."</div>
+            </div>
+
+            {# Legal & Licensing #}
+            <div class="f-card p-8">
+                <div class="flex items-center gap-3 mb-4">
+                    <div class="w-9 h-9 rounded-lg flex items-center justify-center" style="background: var(--f-accent-blue-bg);">
+                        <i data-lucide="scale" class="w-4 h-4" style="color: var(--f-accent-blue);"></i>
+                    </div>
+                    <span class="f-badge">Legal &amp; Licensing</span>
                 </div>
-                <p class="mt-4 text-pink-400 text-sm font-medium">Months of manual work done instantly.</p>
+                <p style="color: var(--f-fg-secondary);">
+                    Complete asset manifests with temporal attribution. Chain-of-custody for every IP element.
+                </p>
             </div>
         </div>
     </div>
 </section>
 
 {# ============================================ #}
-{# SOCIAL PROOF / STATS #}
+{# THE TECHNOLOGY                                #}
 {# ============================================ #}
-<section class="py-24 bg-slate-900/50">
+<section class="py-20 md:py-28" style="background-color: var(--f-bg-page);">
     <div class="max-w-7xl mx-auto px-6">
-        <div class="text-center mb-16">
-            <h2 class="text-4xl md:text-5xl font-bold text-white mb-4">Tested on TV's Most Complex Shows</h2>
-            <p class="text-xl text-slate-400">If Fabula works on these, it'll work on yours.</p>
+        <div class="text-center mb-16 f-ornament-center">
+            <h2 class="text-3xl md:text-4xl font-semibold mb-4 f-heading">Production-Grade Knowledge Graphs</h2>
+        </div>
+
+        <div class="grid md:grid-cols-3 gap-8 mb-16">
+            {# Architecture #}
+            <div class="f-card p-8">
+                <div class="flex items-center gap-3 mb-4">
+                    <i data-lucide="database" class="w-5 h-5" style="color: var(--f-accent-primary);"></i>
+                    <h3 class="text-lg font-semibold f-heading">Entity-Centric Architecture</h3>
+                </div>
+                <p class="mb-4" style="color: var(--f-fg-secondary);">
+                    Every character, location, object is a canonical node. Aliases resolve. State changes are temporal.
+                </p>
+                <p class="text-sm font-medium" style="color: var(--f-accent-primary);">
+                    726 canonical entities from 60+ episodes. Zero entity drift.
+                </p>
+            </div>
+
+            {# Graph #}
+            <div class="f-card p-8">
+                <div class="flex items-center gap-3 mb-4">
+                    <i data-lucide="git-branch" class="w-5 h-5" style="color: var(--f-accent-cyan);"></i>
+                    <h3 class="text-lg font-semibold f-heading">Relationship-Aware Graph</h3>
+                </div>
+                <p class="mb-4" style="color: var(--f-fg-secondary);">
+                    Not just entity lists&mdash;typed, weighted edges. Parent-child, ally-enemy, professional-personal.
+                </p>
+                <p class="text-sm font-medium" style="color: var(--f-accent-cyan);">
+                    5,287 relationship edges with temporal validity.
+                </p>
+            </div>
+
+            {# Performance #}
+            <div class="f-card p-8">
+                <div class="flex items-center gap-3 mb-4">
+                    <i data-lucide="zap" class="w-5 h-5" style="color: var(--f-accent-green);"></i>
+                    <h3 class="text-lg font-semibold f-heading">Query Performance</h3>
+                </div>
+                <p class="mb-4" style="color: var(--f-fg-secondary);">
+                    Sub-second response for complex traversals. Real-time decision support, not batch processing.
+                </p>
+                <p class="text-sm font-medium" style="color: var(--f-accent-green);">
+                    87ms average latency on production-scale graphs.
+                </p>
+            </div>
+        </div>
+
+        {# Platform vision callout #}
+        <div class="f-blockquote max-w-3xl mx-auto f-ornament-center">
+            <p class="text-lg mb-2" style="color: var(--f-fg-secondary); font-family: var(--f-font-display); font-style: italic; line-height: var(--f-line-height-body);">
+                Netflix built knowledge graphs for what 200 million people watch. We're building them for what gets made&mdash;the $50B entertainment production market.
+            </p>
+            <p class="text-sm" style="color: var(--f-fg-tertiary);">
+                Start with story bibles. Expand to game adaptation, AI video generation, interactive media. Context graphs for production.
+            </p>
+        </div>
+    </div>
+</section>
+
+{# ============================================ #}
+{# SOCIAL PROOF                                  #}
+{# ============================================ #}
+<section class="py-20 md:py-28" style="background-color: var(--f-bg-surface);">
+    <div class="max-w-7xl mx-auto px-6">
+        <div class="text-center mb-16 f-ornament-center">
+            <h2 class="text-3xl md:text-4xl font-semibold mb-4 f-heading">Tested on TV's Most Complex Shows</h2>
+            <p class="text-lg" style="color: var(--f-fg-secondary);">If Fabula works on these, it'll work on yours.</p>
         </div>
 
         {# Show cards #}
-        <div class="grid md:grid-cols-3 gap-8 mb-16">
-            <div class="rounded-2xl border border-slate-800 bg-slate-900/50 p-8 text-center">
-                <h3 class="text-xl font-bold text-white mb-2">Star Trek: TNG</h3>
-                <p class="text-slate-400 text-sm mb-4">
-                    726 unique characters across 60+ episodes. Zero entity drift. Every character variation correctly identified.
+        <div class="grid md:grid-cols-3 gap-6 mb-16">
+            <div class="f-card p-8 text-center" style="border-top: 3px solid var(--f-accent-primary);">
+                <h3 class="text-lg font-semibold mb-2 f-heading">Star Trek: TNG</h3>
+                <p class="text-sm mb-4" style="color: var(--f-fg-secondary);">
+                    726 characters, 60+ episodes. Every variation correctly resolved.
                 </p>
-                <span class="text-slate-600 text-sm">Coming soon</span>
+                <span class="f-badge">Coming Soon</span>
             </div>
-            <div class="rounded-2xl border border-slate-800 bg-slate-900/50 p-8 text-center">
-                <h3 class="text-xl font-bold text-white mb-2">I, Claudius</h3>
-                <p class="text-slate-400 text-sm mb-4">
-                    Multi-generational Roman family trees spanning 50+ years. Complex political networks tracked accurately.
+            <div class="f-card p-8 text-center" style="border-top: 3px solid var(--f-accent-violet);">
+                <h3 class="text-lg font-semibold mb-2 f-heading">Doctor Who</h3>
+                <p class="text-sm mb-4" style="color: var(--f-fg-secondary);">
+                    Multi-incarnation timelines. 50+ year canon.
                 </p>
-                <span class="text-slate-600 text-sm">Coming soon</span>
+                <span class="f-badge">Coming Soon</span>
             </div>
-            <div class="rounded-2xl border border-cyan-500/30 bg-slate-900/50 p-8 text-center ring-1 ring-cyan-500/20">
-                <h3 class="text-xl font-bold text-white mb-2">The West Wing</h3>
-                <p class="text-slate-400 text-sm mb-4">
-                    Dense political hierarchies. 50+ recurring characters. Organizational affiliations automatically inferred.
+            <div class="f-card p-8 text-center" style="border-top: 3px solid var(--f-accent-cyan);">
+                <h3 class="text-lg font-semibold mb-2 f-heading">The West Wing</h3>
+                <p class="text-sm mb-4" style="color: var(--f-fg-secondary);">
+                    Dense political hierarchies. 50+ recurring characters.
                 </p>
-                <a href="{% url 'catalog' %}" class="text-cyan-400 text-sm hover:text-cyan-300 transition-colors font-medium">
-                    Explore live demo &rarr;
+                <a href="{% url 'catalog' %}" class="f-text-link text-sm font-medium">
+                    Explore Live Demo &rarr;
                 </a>
             </div>
         </div>
 
         {# Stats #}
         <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
-            <div class="rounded-xl border border-slate-800 bg-slate-900/80 p-6 text-center">
-                <div class="text-4xl font-bold text-white mb-1">5,287</div>
-                <div class="text-slate-500 text-sm">Entities Processed</div>
+            <div class="f-card p-6 text-center">
+                <div class="text-3xl md:text-4xl font-semibold mb-1 f-heading" style="font-family: var(--f-font-display);">5,287</div>
+                <div class="text-sm" style="color: var(--f-fg-tertiary);">Entities Processed</div>
             </div>
-            <div class="rounded-xl border border-slate-800 bg-slate-900/80 p-6 text-center">
-                <div class="text-4xl font-bold text-white mb-1">3.6x</div>
-                <div class="text-slate-500 text-sm">Faster Than Manual</div>
+            <div class="f-card p-6 text-center">
+                <div class="text-3xl md:text-4xl font-semibold mb-1 f-heading" style="font-family: var(--f-font-display);">87ms</div>
+                <div class="text-sm" style="color: var(--f-fg-tertiary);">Avg Query Latency</div>
             </div>
-            <div class="rounded-xl border border-slate-800 bg-slate-900/80 p-6 text-center">
-                <div class="text-4xl font-bold text-white mb-1">&lt;1s</div>
-                <div class="text-slate-500 text-sm">Search Response</div>
+            <div class="f-card p-6 text-center">
+                <div class="text-3xl md:text-4xl font-semibold mb-1 f-heading" style="font-family: var(--f-font-display);">90%+</div>
+                <div class="text-sm" style="color: var(--f-fg-tertiary);">Entity Resolution Accuracy</div>
             </div>
-            <div class="rounded-xl border border-slate-800 bg-slate-900/80 p-6 text-center">
-                <div class="text-4xl font-bold text-white mb-1">90%+</div>
-                <div class="text-slate-500 text-sm">Extraction Accuracy</div>
+            <div class="f-card p-6 text-center">
+                <div class="text-3xl md:text-4xl font-semibold mb-1 f-heading" style="font-family: var(--f-font-display);">0</div>
+                <div class="text-sm" style="color: var(--f-fg-tertiary);">Entity Drift Errors</div>
             </div>
         </div>
     </div>
 </section>
 
 {# ============================================ #}
-{# FAQ TEASER #}
+{# FAQ TEASER                                    #}
 {# ============================================ #}
-<section class="py-24">
-    <div class="max-w-4xl mx-auto px-6">
-        <div class="text-center mb-12">
-            <h2 class="text-3xl font-bold text-white mb-4">Quick Answers</h2>
+<section class="py-20 md:py-28" style="background-color: var(--f-bg-page);">
+    <div class="max-w-3xl mx-auto px-6">
+        <div class="text-center mb-12 f-ornament-center">
+            <h2 class="text-3xl font-semibold f-heading">Quick Answers</h2>
         </div>
 
         <div class="space-y-4">
-            <div class="rounded-xl border border-slate-800 bg-slate-900/50 p-6">
-                <h3 class="font-semibold text-white mb-2">"Does this replace our script coordinator?"</h3>
-                <p class="text-slate-400">No. Fabula makes coordinators superhuman. They spend less time on manual data entry and more time on creative problem-solving.</p>
+            <div class="f-card p-6">
+                <h3 class="font-semibold mb-2 f-heading">&ldquo;Does this replace our script coordinator?&rdquo;</h3>
+                <p style="color: var(--f-fg-secondary);">No. Fabula makes coordinators superhuman. They spend less time on manual data entry and more time on creative problem-solving.</p>
             </div>
-            <div class="rounded-xl border border-slate-800 bg-slate-900/50 p-6">
-                <h3 class="font-semibold text-white mb-2">"What if the AI gets it wrong?"</h3>
-                <p class="text-slate-400">You have full control. Merge characters manually, edit profiles, adjust relationships. Fabula is a starting point, not a black box.</p>
+            <div class="f-card p-6">
+                <h3 class="font-semibold mb-2 f-heading">&ldquo;What if the AI gets it wrong?&rdquo;</h3>
+                <p style="color: var(--f-fg-secondary);">You have full control. Merge, edit, adjust. Human-in-the-loop by design.</p>
             </div>
-            <div class="rounded-xl border border-slate-800 bg-slate-900/50 p-6">
-                <h3 class="font-semibold text-white mb-2">"Do you train on our scripts?"</h3>
-                <p class="text-slate-400">Never. Your IP stays yours. We don't share data across customers or use it for model training.</p>
+            <div class="f-card p-6">
+                <h3 class="font-semibold mb-2 f-heading">&ldquo;Do you train on our scripts?&rdquo;</h3>
+                <p style="color: var(--f-fg-secondary);">Never. Your IP stays yours. Zero cross-customer data sharing.</p>
             </div>
         </div>
 
         <div class="text-center mt-8">
-            <a href="{% slugurl 'faq' %}" class="text-amber-400 hover:text-amber-300 font-medium">
+            <a href="{% slugurl 'faq' %}" class="f-text-link font-medium">
                 See all FAQs &rarr;
             </a>
         </div>
@@ -605,20 +594,22 @@
 </section>
 
 {# ============================================ #}
-{# FINAL CTA #}
+{# FINAL CTA                                     #}
 {# ============================================ #}
-<section class="py-24 bg-gradient-to-br from-slate-900 via-slate-900 to-slate-950">
-    <div class="max-w-4xl mx-auto px-6 text-center">
-        <h2 class="text-4xl md:text-5xl font-bold text-white mb-6">Ready to Never Lose Track Again?</h2>
-        <p class="text-xl text-slate-400 mb-8 max-w-2xl mx-auto">
-            See what Fabula can do with your show. Upload a sample script or explore our interactive demo.
+<section class="py-20 md:py-28" style="background: var(--f-bg-hero);">
+    <div class="max-w-3xl mx-auto px-6 text-center">
+        <div class="f-ornament-center">
+            <h2 class="text-3xl md:text-4xl font-semibold mb-6 f-heading">See What Fabula Knows About Your Show</h2>
+        </div>
+        <p class="text-lg mb-10" style="color: var(--f-fg-secondary); line-height: var(--f-line-height-body);">
+            Upload a sample script, or explore our live demo of The West Wing's narrative graph.
         </p>
         <div class="flex flex-wrap justify-center gap-4">
-            <a href="{% slugurl 'demo' %}" class="group inline-flex items-center gap-2 px-8 py-4 text-lg font-semibold rounded-xl bg-gradient-to-r from-amber-500 to-orange-500 text-white hover:from-amber-400 hover:to-orange-400 transition-all duration-300 shadow-lg shadow-amber-500/25 hover:shadow-amber-500/40">
+            <a href="{% slugurl 'demo' %}" class="f-btn-primary" style="padding: 1rem 2rem; font-size: 1rem;">
                 Get a Demo
-                <i data-lucide="arrow-right" class="w-5 h-5 group-hover:translate-x-1 transition-transform"></i>
+                <i data-lucide="arrow-right" class="w-4 h-4"></i>
             </a>
-            <a href="{% url 'catalog' %}" class="inline-flex items-center gap-2 px-8 py-4 text-lg font-semibold rounded-xl border border-slate-700 text-white hover:bg-slate-800/50 hover:border-slate-600 transition-all duration-300">
+            <a href="{% url 'catalog' %}" class="f-btn-secondary" style="padding: 1rem 2rem; font-size: 1rem;">
                 Explore The West Wing
             </a>
         </div>

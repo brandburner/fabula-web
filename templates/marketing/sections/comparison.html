@@ -1,0 +1,124 @@
+{% comment %}
+Comparison section — before/after visual + stats + body text.
+
+Context:
+  section: dict with label, headline, intro, before{title, items[]}, after{title, canonical{}},
+           stats[], body, code_snippets[], blog_links[]
+{% endcomment %}
+{% load content_tags %}
+
+<section class="py-20 md:py-28" style="background: {{ section.background|section_bg }};">
+    <div class="max-w-7xl mx-auto px-6">
+        <div class="mb-16 f-ornament">
+            {% if section.label %}<span class="f-label">{{ section.label }}</span>{% endif %}
+            <h2 class="text-3xl md:text-4xl font-semibold mt-3 mb-4 f-heading">{{ section.headline|safe }}</h2>
+            {% if section.intro %}
+            <p class="text-lg max-w-3xl" style="color: var(--f-fg-secondary); line-height: var(--f-line-height-body);">
+                {{ section.intro|safe }}
+            </p>
+            {% endif %}
+        </div>
+
+        <div class="grid lg:grid-cols-2 gap-12 items-center mb-12">
+            {# Before/after visual #}
+            {% if section.before or section.after %}
+            <div class="f-card p-8" style="background: var(--f-bg-elevated);">
+                {% if section.before %}
+                <h4 class="text-sm font-semibold mb-6 f-heading">{{ section.before.title|safe }}</h4>
+                <div class="space-y-3 mb-8">
+                    {% for item in section.before.items %}
+                    <div class="flex items-center gap-3 p-3 rounded" style="background: var(--f-bg-surface); border: 1px solid {{ item.color|default:'rose'|accent_color }};">
+                        <i data-lucide="{{ item.icon }}" class="w-4 h-4" style="color: {{ item.color|default:'rose'|accent_color }};"></i>
+                        <span class="text-sm" style="color: var(--f-fg-heading);">{{ item.text|safe }}</span>
+                        <span class="f-badge ml-auto">Separate node</span>
+                    </div>
+                    {% endfor %}
+                </div>
+                {% endif %}
+
+                {% if section.after %}
+                <h4 class="text-sm font-semibold mb-6 f-heading">{{ section.after.title|safe }}</h4>
+                <div class="p-4 rounded" style="background: var(--f-bg-surface); border: 1px solid var(--f-accent-green);">
+                    <div class="flex items-center gap-3 mb-3">
+                        <i data-lucide="{{ section.after.canonical.icon|default:'user-check' }}" class="w-5 h-5" style="color: var(--f-accent-green);"></i>
+                        <span class="font-semibold" style="color: var(--f-fg-heading);">{{ section.after.canonical.name|safe }}</span>
+                    </div>
+                    {% if section.after.canonical.badges %}
+                    <div class="flex flex-wrap gap-2">
+                        {% for badge in section.after.canonical.badges %}
+                        <span class="f-badge">{{ badge }}</span>
+                        {% endfor %}
+                    </div>
+                    {% endif %}
+                </div>
+                {% endif %}
+            </div>
+            {% endif %}
+
+            {# Stats + explanation #}
+            <div>
+                {% if section.stats %}
+                <div class="grid grid-cols-3 gap-4 mb-8">
+                    {% for stat in section.stats %}
+                    <div class="f-card p-5 text-center">
+                        <div class="text-2xl font-semibold mb-1 f-heading" style="font-family: var(--f-font-display);">{{ stat.value|safe }}</div>
+                        <div class="text-xs" style="color: var(--f-fg-tertiary);">{{ stat.title|safe }}</div>
+                    </div>
+                    {% endfor %}
+                </div>
+                {% endif %}
+
+                {% if section.body %}
+                <div class="f-prose">
+                    <p style="color: var(--f-fg-secondary);">{{ section.body|safe }}</p>
+                </div>
+                {% endif %}
+
+                {% if section.blog_links %}
+                <div class="mt-6">
+                    {% for link in section.blog_links %}
+                    <a href="{{ link.url }}" target="_blank" rel="noopener" class="f-text-link text-sm font-medium">
+                        {{ link.text|safe }} &rarr;
+                    </a>
+                    {% endfor %}
+                </div>
+                {% endif %}
+            </div>
+        </div>
+
+        {% if section.code_snippets %}
+        <div class="mt-12">
+            {% for snippet in section.code_snippets %}
+            <div class="flex items-center gap-2 mb-3">
+                {% if snippet.icon %}
+                <i data-lucide="{{ snippet.icon }}" class="w-4 h-4" style="color: var(--f-accent-cyan);"></i>
+                {% endif %}
+                <span class="f-label">{{ snippet.label }}</span>
+            </div>
+            <div class="f-card overflow-hidden" style="background: var(--f-bg-inset);">
+                <div class="px-4 py-2 flex items-center gap-2" style="background: var(--f-bg-elevated); border-bottom: 1px solid var(--f-border-light);">
+                    <span class="text-xs font-medium" style="color: var(--f-fg-tertiary); font-family: var(--f-font-mono);">{{ snippet.filename }}</span>
+                    {% if snippet.badge %}
+                    <span class="f-badge ml-auto" style="font-size: 0.6875rem;">{{ snippet.badge }}</span>
+                    {% endif %}
+                </div>
+                <pre class="p-4 overflow-x-auto text-xs leading-relaxed" style="color: var(--f-fg-secondary); font-family: var(--f-font-mono); margin: 0;"><code>{{ snippet.code }}</code></pre>
+            </div>
+            {% if snippet.caption %}
+            <p class="text-xs mt-3" style="color: var(--f-fg-tertiary);">{{ snippet.caption|safe }}</p>
+            {% endif %}
+            {% endfor %}
+        </div>
+        {% endif %}
+
+        {% if section.blockquote %}
+        <div class="mt-8">
+            <div class="f-blockquote max-w-3xl">
+                <p class="text-lg" style="color: var(--f-fg-secondary); font-family: var(--f-font-display); font-style: italic; line-height: var(--f-line-height-body);">
+                    {{ section.blockquote|safe }}
+                </p>
+            </div>
+        </div>
+        {% endif %}
+    </div>
+</section>

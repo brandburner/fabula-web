@@ -1,9 +1,9 @@
 # Series, Seasons, and Episodes
-# Generated: 2026-02-06T18:52:15.752623
+# Generated: 2026-02-10T13:01:18.015251
 
 - fabula_uuid: ser_star_trek_the_next_generation
-  title: 'Star Trek: The Next Generation'
-  description: 'Captain Picard and the crew of the Enterprise explore the galaxy in this landmark science fiction series. The graph traces narrative connections across three seasons of moral dilemmas, first contacts, and the crew''s evolving bonds.'
+  title: Star Trek The Next Generation
+  description: ''
   seasons:
   - fabula_uuid: sea_ser_star_trek_the_next_generation_s01
     season_number: 1
@@ -11,7 +11,7 @@
     episodes:
     - fabula_uuid: ep_sea_ser_star_trek_the_next_generation_s01_e01
       episode_number: 1
-      title: 'Encounter at Farpoint: Part One'
+      title: Encounter at Farpoint, Part I
       logline: Captain Jean-Luc Picard commands the newly commissioned USS Enterprise
         to investigate the mysterious Farpoint Station, only to be confronted by the
         omnipotent being Q who accuses humanity of savagery and puts them on trial,
@@ -27,9 +27,28 @@
 
         The narrative weaves themes of judgment, redemption, and the human struggle against inscrutable cosmic forces. The crew’s commitment to standard operating procedures and authenticity in the face of omnipotent scrutiny highlights the enduring spirit of exploration and moral courage. As the Enterprise closes in on Farpoint Station, the promise of revelation and confrontation beckons, setting the stage for a profound examination of humanity’s place in the universe and the challenges that lie ahead.
       dominant_tone: Hopeful
+      raw_credits_block: by D.C. Fontana and Gene Roddenberry
+      has_complete_credits: true
+      writing_credits:
+      - writer_uuid: writer_d_c_fontana
+        credit_type: Written by
+        credit_position: 1
+        writer_group: 1
+        group_type: Individual
+        full_credit_line: by D.C. Fontana and Gene Roddenberry
+        source: File
+        is_wga_standard: true
+      - writer_uuid: writer_gene_roddenberry
+        credit_type: Written by
+        credit_position: 1
+        writer_group: 2
+        group_type: Individual
+        full_credit_line: by D.C. Fontana and Gene Roddenberry
+        source: File
+        is_wga_standard: true
     - fabula_uuid: ep_sea_ser_star_trek_the_next_generation_s01_e02
       episode_number: 2
-      title: 'Encounter at Farpoint: Part Two'
+      title: Encounter at Farpoint, Part II
       logline: Captain Picard and his crew must unravel the mystery behind a hostile,
         living vessel attacking the Bandi people at Farpoint Station while confronting
         the omnipotent trickster Q, who demands they prove humanity's worth within
@@ -41,6 +60,25 @@
 
         In the end, Picard confronts "Q" with righteous indignation, accusing him of using other lifeforms for his twisted entertainment and exposing his hypocritical judgment of humanity. "Q" disappears, leaving the Enterprise crew to reflect on the extraordinary test they have endured. Picard and Riker share a moment of camaraderie, recognizing that this mission is only the beginning of many challenging adventures ahead. The episode weaves themes of trust, compassion, and the unknown, setting the stage for humanity’s ongoing quest to prove its worth in a vast and often hostile universe.
       dominant_tone: Hopeful
+      raw_credits_block: by D.C. Fontana and Gene Roddenberry
+      has_complete_credits: true
+      writing_credits:
+      - writer_uuid: writer_d_c_fontana
+        credit_type: Written by
+        credit_position: 1
+        writer_group: 1
+        group_type: Individual
+        full_credit_line: by D.C. Fontana and Gene Roddenberry
+        source: File
+        is_wga_standard: true
+      - writer_uuid: writer_gene_roddenberry
+        credit_type: Written by
+        credit_position: 1
+        writer_group: 2
+        group_type: Individual
+        full_credit_line: by D.C. Fontana and Gene Roddenberry
+        source: File
+        is_wga_standard: true
     - fabula_uuid: ep_sea_ser_star_trek_the_next_generation_s01_e03
       episode_number: 3
       title: The Naked Now
@@ -82,6 +120,44 @@
         crew, with a nod to the lessons learned in maintaining vigilance and the strength
         of teamwork under extraordinary circumstances.
       dominant_tone: Tense and Resolute
+      raw_credits_block: |-
+        Teleplay by D.C. Fontana
+        Story by D.C. Fontana and Gene Roddenberry
+        Based on a story by John D.F. Black
+      has_complete_credits: true
+      writing_credits:
+      - writer_uuid: writer_d_c_fontana
+        credit_type: Teleplay by
+        credit_position: 1
+        writer_group: 1
+        group_type: Individual
+        full_credit_line: Teleplay by D.C. Fontana
+        source: File
+        is_wga_standard: true
+      - writer_uuid: writer_d_c_fontana
+        credit_type: Story by
+        credit_position: 2
+        writer_group: 1
+        group_type: Individual
+        full_credit_line: Story by D.C. Fontana and Gene Roddenberry
+        source: File
+        is_wga_standard: true
+      - writer_uuid: writer_gene_roddenberry
+        credit_type: Story by
+        credit_position: 2
+        writer_group: 2
+        group_type: Individual
+        full_credit_line: Story by D.C. Fontana and Gene Roddenberry
+        source: File
+        is_wga_standard: true
+      - writer_uuid: writer_john_d_f_black
+        credit_type: Based on a story by
+        credit_position: 3
+        writer_group: 1
+        group_type: Individual
+        full_credit_line: Based on a story by John D.F. Black
+        source: File
+        is_wga_standard: true
     - fabula_uuid: ep_sea_ser_star_trek_the_next_generation_s01_e04
       episode_number: 4
       title: Code of Honor
@@ -98,6 +174,25 @@
 
         Picard confronts Lutan with the consequences of his actions, asserting Federation law while acknowledging cultural complexities. The vaccine is secured and beamed aboard, and the Enterprise departs, mission accomplished but underscored by the costly cultural and personal conflicts endured. Themes of honor, cultural relativism, and the precarious balance between respect and resistance pulse throughout the narrative, as Picard and his crew navigate the treacherous intersection of alien tradition and Federation principles under the shadow of a deadly epidemic.
       dominant_tone: Tragic
+      raw_credits_block: Written by Katharyn Powers & Michael Baron
+      has_complete_credits: false
+      writing_credits:
+      - writer_uuid: writer_katharyn_powers
+        credit_type: Written by
+        credit_position: 1
+        writer_group: 1
+        group_type: Team
+        full_credit_line: Written by Katharyn Powers & Michael Baron
+        source: Official
+        is_wga_standard: true
+      - writer_uuid: writer_michael_baron
+        credit_type: Written by
+        credit_position: 1
+        writer_group: 1
+        group_type: Team
+        full_credit_line: Written by Katharyn Powers & Michael Baron
+        source: Official
+        is_wga_standard: true
     - fabula_uuid: ep_sea_ser_star_trek_the_next_generation_s01_e05
       episode_number: 5
       title: Haven
@@ -131,6 +226,35 @@
         themes of cultural legacy, the painful negotiation between duty and desire,
         and the resilience of hope amid cosmic tragedy.'
       dominant_tone: Dramatic
+      raw_credits_block: |-
+        Teleplay by Tracy Tormé
+        Story by Tracy Tormé and Lan O'Kun
+      has_complete_credits: true
+      writing_credits:
+      - writer_uuid: writer_tracy_tormé
+        credit_type: Teleplay by
+        credit_position: 1
+        writer_group: 1
+        group_type: Individual
+        full_credit_line: Teleplay by Tracy Tormé
+        source: File
+        is_wga_standard: true
+      - writer_uuid: writer_tracy_tormé
+        credit_type: Story by
+        credit_position: 2
+        writer_group: 1
+        group_type: Individual
+        full_credit_line: Story by Tracy Tormé and Lan O'Kun
+        source: File
+        is_wga_standard: true
+      - writer_uuid: writer_lan_o_kun
+        credit_type: Story by
+        credit_position: 2
+        writer_group: 2
+        group_type: Individual
+        full_credit_line: Story by Tracy Tormé and Lan O'Kun
+        source: File
+        is_wga_standard: true
     - fabula_uuid: ep_sea_ser_star_trek_the_next_generation_s01_e06
       episode_number: 6
       title: Where No One Has Gone Before
@@ -174,6 +298,25 @@
         \ cosmos is shaped by more than just matter and energy—it is shaped by the\
         \ very thoughts of those who dare to explore it."
       dominant_tone: Tense and Transcendent
+      raw_credits_block: Written by Diane Duane & Michael Reaves
+      has_complete_credits: true
+      writing_credits:
+      - writer_uuid: writer_diane_duane
+        credit_type: Written by
+        credit_position: 1
+        writer_group: 1
+        group_type: Team
+        full_credit_line: Written by Diane Duane & Michael Reaves
+        source: File
+        is_wga_standard: true
+      - writer_uuid: writer_michael_reaves
+        credit_type: Written by
+        credit_position: 1
+        writer_group: 1
+        group_type: Team
+        full_credit_line: Written by Diane Duane & Michael Reaves
+        source: File
+        is_wga_standard: true
     - fabula_uuid: ep_sea_ser_star_trek_the_next_generation_s01_e07
       episode_number: 7
       title: The Last Outpost
@@ -223,6 +366,27 @@
         \ the dangers of prejudice and mistrust, and the enduring hope for cooperation\
         \ beyond ancient enmities."
       dominant_tone: Tense and Resolute
+      raw_credits_block: |-
+        Story by Richard Krzemien
+        Teleplay by Herbert Wright
+      has_complete_credits: true
+      writing_credits:
+      - writer_uuid: writer_richard_krzemien
+        credit_type: Story by
+        credit_position: 1
+        writer_group: 1
+        group_type: Individual
+        full_credit_line: Story by Richard Krzemien
+        source: File
+        is_wga_standard: true
+      - writer_uuid: writer_herbert_wright
+        credit_type: Teleplay by
+        credit_position: 2
+        writer_group: 1
+        group_type: Individual
+        full_credit_line: Teleplay by Herbert Wright
+        source: File
+        is_wga_standard: true
     - fabula_uuid: ep_sea_ser_star_trek_the_next_generation_s01_e08
       episode_number: 8
       title: Lonely Among Us
@@ -243,6 +407,27 @@
 
         The story concludes with the Enterprise crew striving to balance their mission of peace with the urgent need to save their captain and prevent the alien entity from claiming him entirely. Themes of identity, exploration, and the perilous allure of transcendence underpin the narrative, as the crew grapples with the mysteries of consciousness and the fragile boundary between man and the unknown.
       dominant_tone: Tense and Foreboding
+      raw_credits_block: |-
+        Story by Michael Halperin
+        Teleplay by D.C. Fontana
+      has_complete_credits: true
+      writing_credits:
+      - writer_uuid: writer_michael_halperin
+        credit_type: Story by
+        credit_position: 1
+        writer_group: 1
+        group_type: Individual
+        full_credit_line: Story by Michael Halperin
+        source: File
+        is_wga_standard: true
+      - writer_uuid: writer_d_c_fontana
+        credit_type: Teleplay by
+        credit_position: 2
+        writer_group: 1
+        group_type: Individual
+        full_credit_line: Teleplay by D.C. Fontana
+        source: File
+        is_wga_standard: true
     - fabula_uuid: ep_sea_ser_star_trek_the_next_generation_s01_e09
       episode_number: 9
       title: Justice
@@ -266,6 +451,35 @@
 
         With the mysterious vessel gone and communications restored, Picard orders the Enterprise to depart, recognizing the limits of their understanding and the precarious balance between cultural respect, ethical obligation, and survival. The story closes on the tension between justice and mercy, the clash of civilizations, and the haunting presence of an alien god-entity watching silently from orbit—a nemesis whose judgment lingers as the Enterprise leaves Rubicun Three behind.
       dominant_tone: Tense and contemplative
+      raw_credits_block: |-
+        Story by John D.F. Black and Worley Thorne
+        Teleplay by Worley Thorne
+      has_complete_credits: true
+      writing_credits:
+      - writer_uuid: writer_john_d_f_black
+        credit_type: Story by
+        credit_position: 1
+        writer_group: 1
+        group_type: Individual
+        full_credit_line: Story by John D.F. Black and Worley Thorne
+        source: File
+        is_wga_standard: true
+      - writer_uuid: writer_worley_thorne
+        credit_type: Story by
+        credit_position: 1
+        writer_group: 2
+        group_type: Individual
+        full_credit_line: Story by John D.F. Black and Worley Thorne
+        source: File
+        is_wga_standard: true
+      - writer_uuid: writer_worley_thorne
+        credit_type: Teleplay by
+        credit_position: 2
+        writer_group: 1
+        group_type: Individual
+        full_credit_line: Teleplay by Worley Thorne
+        source: File
+        is_wga_standard: true
     - fabula_uuid: ep_sea_ser_star_trek_the_next_generation_s01_e10
       episode_number: 10
       title: The Battle
@@ -282,6 +496,27 @@
 
         This narrative explores themes of memory, truth, and the fragility of the mind under psychological warfare. Picard’s journey reveals the battle scars hidden beneath a steadfast exterior, emphasizing the resilience required to face one’s past and the loyalty of a crew united to protect their captain and ship. The story blends suspense and psychological drama, heightening the tension with the invisible enemy of mind control and the tangible threat of a starship reanimated from history’s ashes.
       dominant_tone: Tense and resolute
+      raw_credits_block: |-
+        Story by Larry Forrester
+        Teleplay by Herbert Wright
+      has_complete_credits: true
+      writing_credits:
+      - writer_uuid: writer_larry_forrester
+        credit_type: Story by
+        credit_position: 1
+        writer_group: 1
+        group_type: Individual
+        full_credit_line: Story by Larry Forrester
+        source: File
+        is_wga_standard: true
+      - writer_uuid: writer_herbert_wright
+        credit_type: Teleplay by
+        credit_position: 2
+        writer_group: 1
+        group_type: Individual
+        full_credit_line: Teleplay by Herbert Wright
+        source: File
+        is_wga_standard: true
     - fabula_uuid: ep_sea_ser_star_trek_the_next_generation_s01_e11
       episode_number: 11
       title: Hide and Q
@@ -298,6 +533,35 @@
 
         Ultimately, the Enterprise crew resumes their rescue mission, with time having been suspended by 'Q', erasing the temporal disruption they suffered. Riker's ordeal leaves him changed but grounded, having faced the ultimate test of power and humanity. The episode closes on a note of awe and humility, with Captain Picard reflecting on the soul's essence as the true differentiator between humans and godlike beings. The interplay between cosmic omnipotence and human fallibility drives a thrilling exploration of ambition, loyalty, and the timeless quest for meaning in a vast and indifferent universe.
       dominant_tone: Hopeful
+      raw_credits_block: |-
+        Story by C.J. Holland
+        Teleplay by C.J. Holland and Gene Roddenberry
+      has_complete_credits: true
+      writing_credits:
+      - writer_uuid: writer_c_j_holland
+        credit_type: Story by
+        credit_position: 1
+        writer_group: 1
+        group_type: Individual
+        full_credit_line: Story by C.J. Holland
+        source: File
+        is_wga_standard: true
+      - writer_uuid: writer_c_j_holland
+        credit_type: Teleplay by
+        credit_position: 2
+        writer_group: 1
+        group_type: Individual
+        full_credit_line: Teleplay by C.J. Holland and Gene Roddenberry
+        source: File
+        is_wga_standard: true
+      - writer_uuid: writer_gene_roddenberry
+        credit_type: Teleplay by
+        credit_position: 2
+        writer_group: 2
+        group_type: Individual
+        full_credit_line: Teleplay by C.J. Holland and Gene Roddenberry
+        source: File
+        is_wga_standard: true
     - fabula_uuid: ep_sea_ser_star_trek_the_next_generation_s01_e12
       episode_number: 12
       title: Too Short a Season
@@ -318,6 +582,35 @@
 
         Captain Picard closes his log reflecting on the futility of chasing youth at the expense of wisdom and acceptance, as the Enterprise sets course for their next destination. The story explores themes of aging, redemption, and the moral consequences of intervention, wrapped in a tense, character-driven Star Trek drama where the cost of second chances becomes tragically clear.
       dominant_tone: Tragic
+      raw_credits_block: |-
+        Story by Michael Michaelian
+        Teleplay by Michael Michaelian and D.C. Fontana
+      has_complete_credits: true
+      writing_credits:
+      - writer_uuid: writer_michael_michaelian
+        credit_type: Story by
+        credit_position: 1
+        writer_group: 1
+        group_type: Individual
+        full_credit_line: Story by Michael Michaelian
+        source: File
+        is_wga_standard: true
+      - writer_uuid: writer_michael_michaelian
+        credit_type: Teleplay by
+        credit_position: 2
+        writer_group: 1
+        group_type: Individual
+        full_credit_line: Teleplay by Michael Michaelian and D.C. Fontana
+        source: File
+        is_wga_standard: true
+      - writer_uuid: writer_d_c_fontana
+        credit_type: Teleplay by
+        credit_position: 2
+        writer_group: 2
+        group_type: Individual
+        full_credit_line: Teleplay by Michael Michaelian and D.C. Fontana
+        source: File
+        is_wga_standard: true
     - fabula_uuid: ep_sea_ser_star_trek_the_next_generation_s01_e13
       episode_number: 13
       title: The Big Goodbye
@@ -336,6 +629,17 @@
 
         After harrowing ordeals and narrow escapes, the crew finally restores Holodeck control, evacuating the injured and stepping back into the Enterprise’s reality. Picard, now fully prepared, delivers the critical Jaradan greeting flawlessly, breaking the ice and opening the door to a new alliance. Yet the experience leaves him haunted, acknowledging the Holodeck’s seductive, dangerous allure and the fragile line between worlds. “The Big Good-bye” is a pulse-pounding fusion of cerebral diplomacy and classic detective noir, exploring themes of identity, reality, and the peril hidden in escapism, as a starship captain fights to survive both alien threats and the dark underworld of his own imagination.
       dominant_tone: Tense and resolute
+      raw_credits_block: Written by Tracy Tormé
+      has_complete_credits: true
+      writing_credits:
+      - writer_uuid: writer_tracy_tormé
+        credit_type: Written by
+        credit_position: 1
+        writer_group: 1
+        group_type: Individual
+        full_credit_line: Written by Tracy Tormé
+        source: File
+        is_wga_standard: true
     - fabula_uuid: ep_sea_ser_star_trek_the_next_generation_s01_e14
       episode_number: 14
       title: Datalore
@@ -369,6 +673,43 @@
         intelligence, driving a suspenseful, emotionally charged exploration of selfhood
         within the vastness of space.
       dominant_tone: Tense and Reflective
+      raw_credits_block: |-
+        Story by Robert Lewin and Maurice Hurley
+        Teleplay by Robert Lewin and Gene Roddenberry
+      has_complete_credits: true
+      writing_credits:
+      - writer_uuid: writer_robert_lewin
+        credit_type: Story by
+        credit_position: 1
+        writer_group: 1
+        group_type: Individual
+        full_credit_line: Story by Robert Lewin and Maurice Hurley
+        source: File
+        is_wga_standard: true
+      - writer_uuid: writer_maurice_hurley
+        credit_type: Story by
+        credit_position: 1
+        writer_group: 2
+        group_type: Individual
+        full_credit_line: Story by Robert Lewin and Maurice Hurley
+        source: File
+        is_wga_standard: true
+      - writer_uuid: writer_robert_lewin
+        credit_type: Teleplay by
+        credit_position: 2
+        writer_group: 1
+        group_type: Individual
+        full_credit_line: Teleplay by Robert Lewin and Gene Roddenberry
+        source: File
+        is_wga_standard: true
+      - writer_uuid: writer_gene_roddenberry
+        credit_type: Teleplay by
+        credit_position: 2
+        writer_group: 2
+        group_type: Individual
+        full_credit_line: Teleplay by Robert Lewin and Gene Roddenberry
+        source: File
+        is_wga_standard: true
     - fabula_uuid: ep_sea_ser_star_trek_the_next_generation_s01_e15
       episode_number: 15
       title: Angel One
@@ -390,6 +731,17 @@
 
         The away team returns to the Enterprise, greeted by a ship ravaged by illness but relieved at the medical progress. Picard recovers and resumes command as the Enterprise sets course for the Neutral Zone to confront the Romulan threat. The narrative closes with tensions unresolved but the crew united, highlighting themes of cultural relativism, gender politics, personal freedom, and the burdens of command under crisis.
       dominant_tone: Tense and Reflective
+      raw_credits_block: Written by Patrick Barry
+      has_complete_credits: true
+      writing_credits:
+      - writer_uuid: writer_patrick_barry
+        credit_type: Written by
+        credit_position: 1
+        writer_group: 1
+        group_type: Individual
+        full_credit_line: Written by Patrick Barry
+        source: File
+        is_wga_standard: true
     - fabula_uuid: ep_sea_ser_star_trek_the_next_generation_s01_e16
       episode_number: 16
       title: '11001001'
@@ -406,6 +758,25 @@
 
         With the crisis resolved, the Enterprise redocks at Starbase 74, the crew rejoices, and the Bynars prepare to face any necessary hearing. Riker returns to the Holodeck, only to find the evocative Minuet replaced by generic holograms, underscoring the ephemeral nature of his connection. The story closes on the bittersweet note that some relationships—even those with perfect illusions—cannot endure, highlighting themes of trust, communication, and the complex interplay between technology and humanity.
       dominant_tone: Tense yet hopeful
+      raw_credits_block: Written by Maurice Hurley & Robert Lewin
+      has_complete_credits: true
+      writing_credits:
+      - writer_uuid: writer_robert_lewin
+        credit_type: Written by
+        credit_position: 1
+        writer_group: 1
+        group_type: Team
+        full_credit_line: Written by Maurice Hurley & Robert Lewin
+        source: File
+        is_wga_standard: true
+      - writer_uuid: writer_maurice_hurley
+        credit_type: Written by
+        credit_position: 1
+        writer_group: 1
+        group_type: Team
+        full_credit_line: Written by Maurice Hurley & Robert Lewin
+        source: File
+        is_wga_standard: true
     - fabula_uuid: ep_sea_ser_star_trek_the_next_generation_s01_e17
       episode_number: 17
       title: Home Soil
@@ -423,6 +794,43 @@
 
         Through this harrowing encounter, the story explores humanity’s hubris in imposing change on untouched worlds, the ethical dilemmas of discovering new life in unexpected forms, and the fragile boundary between life and machine. The crew confronts the unknown with caution and empathy, balancing curiosity with responsibility. Picard’s leadership embodies the Federation’s principles of respect for all life, even when that life challenges their deepest assumptions. The narrative unfolds with mounting suspense, scientific wonder, and moral complexity, culminating in a tense but hopeful resolution that honors the mysteries of the cosmos and the enduring quest to understand it.
       dominant_tone: Grim yet hopeful
+      raw_credits_block: |-
+        Story by Karl Geurs & Ralph Sanchez and Robert Sabaroff
+        Teleplay by Robert Sabaroff
+      has_complete_credits: true
+      writing_credits:
+      - writer_uuid: writer_karl_geurs
+        credit_type: Story by
+        credit_position: 1
+        writer_group: 1
+        group_type: Team
+        full_credit_line: Story by Karl Geurs & Ralph Sanchez and Robert Sabaroff
+        source: File
+        is_wga_standard: true
+      - writer_uuid: writer_ralph_sanchez
+        credit_type: Story by
+        credit_position: 1
+        writer_group: 1
+        group_type: Team
+        full_credit_line: Story by Karl Geurs & Ralph Sanchez and Robert Sabaroff
+        source: File
+        is_wga_standard: true
+      - writer_uuid: writer_robert_sabaroff
+        credit_type: Story by
+        credit_position: 1
+        writer_group: 2
+        group_type: Individual
+        full_credit_line: Story by Karl Geurs & Ralph Sanchez and Robert Sabaroff
+        source: File
+        is_wga_standard: true
+      - writer_uuid: writer_robert_sabaroff
+        credit_type: Teleplay by
+        credit_position: 2
+        writer_group: 1
+        group_type: Individual
+        full_credit_line: Teleplay by Robert Sabaroff
+        source: File
+        is_wga_standard: true
     - fabula_uuid: ep_sea_ser_star_trek_the_next_generation_s01_e18
       episode_number: 18
       title: When the Bough Breaks
@@ -445,6 +853,17 @@
 
         The story explores themes of cultural pride, the ethics of survival, the bonds of family, and the necessity of challenging stagnant traditions. It juxtaposes the wonder of advanced technology against the vulnerabilities of a declining society, highlighting humanity’s resilience and the courage it takes to embrace change for a future worth living.
       dominant_tone: Hopeful
+      raw_credits_block: Written by Hannah Louise Shearer
+      has_complete_credits: true
+      writing_credits:
+      - writer_uuid: writer_hannah_louise_shearer
+        credit_type: Written by
+        credit_position: 1
+        writer_group: 1
+        group_type: Individual
+        full_credit_line: Written by Hannah Louise Shearer
+        source: File
+        is_wga_standard: true
     - fabula_uuid: ep_sea_ser_star_trek_the_next_generation_s01_e19
       episode_number: 19
       title: Coming of Age
@@ -464,6 +883,17 @@
 
         The screenplay weaves themes of maturity, integrity, and institutional trust, juxtaposing the intimate trials of a young aspirant against the broader challenges of command under suspicion. It captures the essence of growth through adversity, the complexity of leadership, and the enduring spirit of exploration and camaraderie that defines Starfleet.
       dominant_tone: Resolute
+      raw_credits_block: Written by Sandy Fries
+      has_complete_credits: true
+      writing_credits:
+      - writer_uuid: writer_sandy_fries
+        credit_type: Written by
+        credit_position: 1
+        writer_group: 1
+        group_type: Individual
+        full_credit_line: Written by Sandy Fries
+        source: File
+        is_wga_standard: true
     - fabula_uuid: ep_sea_ser_star_trek_the_next_generation_s01_e20
       episode_number: 20
       title: Heart of Glory
@@ -515,6 +945,35 @@
         \ and that the true battle may lie in reconciling identity, loyalty, and honor\
         \ in a changing galaxy."
       dominant_tone: Tense and Resolute
+      raw_credits_block: |-
+        Story by Herbert Wright & D.C. Fontana
+        Teleplay by Maurice Hurley
+      has_complete_credits: false
+      writing_credits:
+      - writer_uuid: writer_d_c_fontana
+        credit_type: Story by
+        credit_position: 1
+        writer_group: 1
+        group_type: Team
+        full_credit_line: Story by Herbert Wright & D.C. Fontana
+        source: Official
+        is_wga_standard: true
+      - writer_uuid: writer_herbert_wright
+        credit_type: Story by
+        credit_position: 1
+        writer_group: 1
+        group_type: Team
+        full_credit_line: Story by Herbert Wright & D.C. Fontana
+        source: Official
+        is_wga_standard: true
+      - writer_uuid: writer_maurice_hurley
+        credit_type: Teleplay by
+        credit_position: 2
+        writer_group: 1
+        group_type: Individual
+        full_credit_line: Teleplay by Maurice Hurley
+        source: Official
+        is_wga_standard: true
     - fabula_uuid: ep_sea_ser_star_trek_the_next_generation_s01_e21
       episode_number: 21
       title: The Arsenal of Freedom
@@ -533,6 +992,43 @@
 
         The narrative threads converge as the Enterprise crew confronts the dangers of automated warfare, the ethical costs of advanced weaponry, and the resilience of human courage and ingenuity. Picard's leadership, the crew's loyalty, and their struggle to survive a mechanized nightmare underscore the story's tension, culminating in a hard-won victory amid the ruins of a civilization destroyed by its own creations.
       dominant_tone: Tense and Resolute
+      raw_credits_block: |-
+        Story by Maurice Hurley & Robert Lewin
+        Teleplay by Richard Manning & Hans Beimler
+      has_complete_credits: false
+      writing_credits:
+      - writer_uuid: writer_robert_lewin
+        credit_type: Story by
+        credit_position: 1
+        writer_group: 1
+        group_type: Team
+        full_credit_line: Story by Maurice Hurley & Robert Lewin
+        source: File
+        is_wga_standard: true
+      - writer_uuid: writer_maurice_hurley
+        credit_type: Story by
+        credit_position: 1
+        writer_group: 1
+        group_type: Team
+        full_credit_line: Story by Maurice Hurley & Robert Lewin
+        source: File
+        is_wga_standard: true
+      - writer_uuid: writer_richard_manning
+        credit_type: Teleplay by
+        credit_position: 2
+        writer_group: 1
+        group_type: Team
+        full_credit_line: Teleplay by Richard Manning & Hans Beimler
+        source: Official
+        is_wga_standard: true
+      - writer_uuid: writer_hans_beimler
+        credit_type: Teleplay by
+        credit_position: 2
+        writer_group: 1
+        group_type: Team
+        full_credit_line: Teleplay by Richard Manning & Hans Beimler
+        source: Official
+        is_wga_standard: true
     - fabula_uuid: ep_sea_ser_star_trek_the_next_generation_s01_e22
       episode_number: 22
       title: Skin of Evil
@@ -551,6 +1047,35 @@
 
         The episode culminates in a somber memorial service aboard the Enterprise honoring Lieutenant Yar’s life. A holographic recording reveals her heartfelt reflections on friendship, courage, and the meaning of chosen family. The crew confronts grief and loss, while Data contemplates his own sense of emptiness without Yar’s presence. The narrative explores themes of evil as an externalized, rejected force and the strength of human connection, dignity, and resistance in the face of senseless cruelty. Armus embodies pure malevolence and alienation, while the Enterprise crew demonstrates resilience, sacrifice, and affirmation of life’s worth even amid darkness and despair.
       dominant_tone: Tragic with resolute hope
+      raw_credits_block: |-
+        Story by Joseph Stefano
+        Teleplay by Joseph Stefano and Hannah Louise Shearer
+      has_complete_credits: false
+      writing_credits:
+      - writer_uuid: writer_joseph_stefano
+        credit_type: Story by
+        credit_position: 1
+        writer_group: 1
+        group_type: Individual
+        full_credit_line: Story by Joseph Stefano
+        source: Official
+        is_wga_standard: true
+      - writer_uuid: writer_joseph_stefano
+        credit_type: Teleplay by
+        credit_position: 2
+        writer_group: 1
+        group_type: Individual
+        full_credit_line: Teleplay by Joseph Stefano and Hannah Louise Shearer
+        source: Official
+        is_wga_standard: true
+      - writer_uuid: writer_hannah_louise_shearer
+        credit_type: Teleplay by
+        credit_position: 2
+        writer_group: 2
+        group_type: Individual
+        full_credit_line: Teleplay by Joseph Stefano and Hannah Louise Shearer
+        source: Official
+        is_wga_standard: true
     - fabula_uuid: ep_sea_ser_star_trek_the_next_generation_s01_e23
       episode_number: 23
       title: Symbiosis
@@ -589,6 +1114,43 @@
         as the Enterprise departs orbit, leaving the future of the two entwined civilizations
         uncertain but shaped by their own hands.
       dominant_tone: Tense and Moralistic
+      raw_credits_block: |-
+        Story by Robert Lewin
+        Teleplay by Robert Lewin and Richard Manning & Hans Beimler
+      has_complete_credits: false
+      writing_credits:
+      - writer_uuid: writer_robert_lewin
+        credit_type: Story by
+        credit_position: 1
+        writer_group: 1
+        group_type: Individual
+        full_credit_line: Story by Robert Lewin
+        source: File
+        is_wga_standard: true
+      - writer_uuid: writer_robert_lewin
+        credit_type: Teleplay by
+        credit_position: 2
+        writer_group: 1
+        group_type: Individual
+        full_credit_line: Teleplay by Robert Lewin and Richard Manning & Hans Beimler
+        source: Official
+        is_wga_standard: true
+      - writer_uuid: writer_richard_manning
+        credit_type: Teleplay by
+        credit_position: 2
+        writer_group: 2
+        group_type: Team
+        full_credit_line: Teleplay by Robert Lewin and Richard Manning & Hans Beimler
+        source: Official
+        is_wga_standard: true
+      - writer_uuid: writer_hans_beimler
+        credit_type: Teleplay by
+        credit_position: 2
+        writer_group: 2
+        group_type: Team
+        full_credit_line: Teleplay by Robert Lewin and Richard Manning & Hans Beimler
+        source: Official
+        is_wga_standard: true
     - fabula_uuid: ep_sea_ser_star_trek_the_next_generation_s01_e24
       episode_number: 24
       title: We'll Always Have Paris
@@ -609,6 +1171,25 @@
 
         Themes of destiny, sacrifice, and the intersection of personal history with cosmic mystery permeate the narrative. The interplay of action-packed crisis, scientific intrigue, and deep emotional undercurrents drive the story, culminating in a resolution that restores safety but leaves lingering questions about the unknown realms humanity dares to explore.
       dominant_tone: Tense and Reflective
+      raw_credits_block: Written by Deborah Dean Davis & Hannah Louise Shearer
+      has_complete_credits: true
+      writing_credits:
+      - writer_uuid: writer_hannah_louise_shearer
+        credit_type: Written by
+        credit_position: 1
+        writer_group: 1
+        group_type: Team
+        full_credit_line: Written by Deborah Dean Davis & Hannah Louise Shearer
+        source: File
+        is_wga_standard: true
+      - writer_uuid: writer_deborah_dean_davis
+        credit_type: Written by
+        credit_position: 1
+        writer_group: 1
+        group_type: Team
+        full_credit_line: Written by Deborah Dean Davis & Hannah Louise Shearer
+        source: File
+        is_wga_standard: true
     - fabula_uuid: ep_sea_ser_star_trek_the_next_generation_s01_e25
       episode_number: 25
       title: Conspiracy
@@ -625,6 +1206,27 @@
 
         Despite the destruction of Remmick and the apparent liberation of their friends, Picard and the Enterprise crew grapple with the chilling realization that the alien threat may only be dormant, with echoes of its presence lingering in the vast reaches of space. The narrative explores themes of trust shattered by betrayal, the fragility of institutions, and the resilience required to confront insidious, unseen enemies. Through tense alliances, covert operations, and relentless danger, Picard embodies the relentless pursuit of truth and loyalty amidst deceit and corruption, culminating in a stark warning about vigilance and the unknown perils lurking beyond Federation borders.
       dominant_tone: Tense and Foreboding
+      raw_credits_block: |-
+        Story by Robert Sabaroff
+        Teleplay by Tracy Tormé
+      has_complete_credits: true
+      writing_credits:
+      - writer_uuid: writer_robert_sabaroff
+        credit_type: Story by
+        credit_position: 1
+        writer_group: 1
+        group_type: Individual
+        full_credit_line: Story by Robert Sabaroff
+        source: File
+        is_wga_standard: true
+      - writer_uuid: writer_tracy_tormé
+        credit_type: Teleplay by
+        credit_position: 2
+        writer_group: 1
+        group_type: Individual
+        full_credit_line: Teleplay by Tracy Tormé
+        source: File
+        is_wga_standard: true
     - fabula_uuid: ep_sea_ser_star_trek_the_next_generation_s01_e26
       episode_number: 26
       title: The Neutral Zone
@@ -645,6 +1247,17 @@
 
         The episode propels themes of time-displacement, responsibility, and the ethics of resurrection against a backdrop of Cold-War diplomacy reawakened. Picard's leadership foregrounds the series' moral center: curiosity and compassion must temper power. The survivors' microcosmic human stories—grief, denial, craving for control, and adaption—mirror the macrocosmic danger at the Neutral Zone, where misunderstanding or pride could trigger catastrophe. The Enterprise departs with new questions, uneasy alliances, and an affirmed mission: to outthink threats rather than simply outfight them, and to carry the past forward with care rather than abandon it to oblivion.
       dominant_tone: Tense but Hopeful
+      raw_credits_block: Written by Maurice Hurley
+      has_complete_credits: true
+      writing_credits:
+      - writer_uuid: writer_maurice_hurley
+        credit_type: Written by
+        credit_position: 1
+        writer_group: 1
+        group_type: Individual
+        full_credit_line: Written by Maurice Hurley
+        source: File
+        is_wga_standard: true
   - fabula_uuid: sea_ser_star_trek_the_next_generation_s02
     season_number: 2
     description: ''
@@ -699,6 +1312,35 @@
         \ swaddled in the afterglow of one small life that proved humanity worth the\
         \ risk."
       dominant_tone: Reverent defiance
+      raw_credits_block: |-
+        Based on a Premise by Jaron Summers and Jon Povill
+        Teleplay by Maurice Hurley
+      has_complete_credits: true
+      writing_credits:
+      - writer_uuid: writer_jaron_summers
+        credit_type: Based on a Premise by
+        credit_position: 1
+        writer_group: 1
+        group_type: Individual
+        full_credit_line: Based on a Premise by Jaron Summers and Jon Povill
+        source: File
+        is_wga_standard: false
+      - writer_uuid: writer_jon_povill
+        credit_type: Based on a Premise by
+        credit_position: 1
+        writer_group: 2
+        group_type: Individual
+        full_credit_line: Based on a Premise by Jaron Summers and Jon Povill
+        source: File
+        is_wga_standard: false
+      - writer_uuid: writer_maurice_hurley
+        credit_type: Teleplay by
+        credit_position: 2
+        writer_group: 1
+        group_type: Individual
+        full_credit_line: Teleplay by Maurice Hurley
+        source: File
+        is_wga_standard: true
     - fabula_uuid: ep_sea_ser_star_trek_the_next_generation_s02_e02
       episode_number: 2
       title: Where Silence Has Lease
@@ -710,9 +1352,20 @@
 
         The entity orchestrating this experiment manifests as Nagilum, a cosmic intelligence that announces its intent to dissect the nature of death by killing nearly half the crew. Picard refuses to submit, activating the ship’s auto-destruct sequence—a bluff that risks annihilation but calls Nagilum’s terrifying game. When the entity finally releases the Enterprise, the crew narrowly averts destruction while Picard confronts their captor’s cold fascination. Nagilum concludes humans are too chaotic to warrant further engagement—but leaves Picard with unsettling truths about curiosity as both their shared trait and their undoing. Through psychological resilience and unity against the unknown, the crew emerges from the void forever altered by its indifference toward mortal suffering.
       dominant_tone: Cosmic Horror
+      raw_credits_block: Written by Jack B. Sowards
+      has_complete_credits: true
+      writing_credits:
+      - writer_uuid: writer_jack_b_sowards
+        credit_type: Written by
+        credit_position: 1
+        writer_group: 1
+        group_type: Individual
+        full_credit_line: Written by Jack B. Sowards
+        source: File
+        is_wga_standard: true
     - fabula_uuid: ep_sea_ser_star_trek_the_next_generation_s02_e03
       episode_number: 3
-      title: 'Elementary, Dear Data'
+      title: Elementary, Dear Data
       logline: When Lt. Geordi La Forge challenges Data with an unsolved Sherlock
         Holmes mystery on the holodeck, their quest for an unbeatable adversary accidentally
         creates a sentient Professor Moriarty who gains control of the Enterprise,
@@ -738,6 +1391,17 @@
         \ The episode closes with a reflection on the nature of sentience and the\
         \ blurred line between artificial and organic life."
       dominant_tone: Philosophical thriller
+      raw_credits_block: Written by Brian Alan Lane
+      has_complete_credits: true
+      writing_credits:
+      - writer_uuid: writer_brian_alan_lane
+        credit_type: Written by
+        credit_position: 1
+        writer_group: 1
+        group_type: Individual
+        full_credit_line: Written by Brian Alan Lane
+        source: File
+        is_wga_standard: true
     - fabula_uuid: ep_sea_ser_star_trek_the_next_generation_s02_e04
       episode_number: 4
       title: The Outrageous Okona
@@ -761,6 +1425,43 @@
         against Starfleet's structured ideals while exploring themes of honor, deception,
         and the transformative power of laughter.
       dominant_tone: Wryly Hopeful
+      raw_credits_block: |-
+        Premise by Les Menchen & Lance Dickson and David Landsberg
+        Teleplay by Burton Armus
+      has_complete_credits: true
+      writing_credits:
+      - writer_uuid: writer_les_menchen
+        credit_type: Premise by
+        credit_position: 1
+        writer_group: 1
+        group_type: Team
+        full_credit_line: Premise by Les Menchen & Lance Dickson and David Landsberg
+        source: File
+        is_wga_standard: false
+      - writer_uuid: writer_lance_dickson
+        credit_type: Premise by
+        credit_position: 1
+        writer_group: 1
+        group_type: Team
+        full_credit_line: Premise by Les Menchen & Lance Dickson and David Landsberg
+        source: File
+        is_wga_standard: false
+      - writer_uuid: writer_david_landsberg
+        credit_type: Premise by
+        credit_position: 1
+        writer_group: 2
+        group_type: Individual
+        full_credit_line: Premise by Les Menchen & Lance Dickson and David Landsberg
+        source: File
+        is_wga_standard: false
+      - writer_uuid: writer_burton_armus
+        credit_type: Teleplay by
+        credit_position: 2
+        writer_group: 1
+        group_type: Individual
+        full_credit_line: Teleplay by Burton Armus
+        source: File
+        is_wga_standard: true
     - fabula_uuid: ep_sea_ser_star_trek_the_next_generation_s02_e05
       episode_number: 5
       title: The Schizoid Man
@@ -775,6 +1476,35 @@
 
         Kareen becomes the key to stopping Graves' rampage. Picard convinces her to reject Graves publicly—shattering his fragile ego during a brutal confrontation on the bridge. Overwhelmed by grief and self-loathing, Graves relinquishes control, transferring his consciousness into the ship's computer before vanishing. Data awakens restored but haunted, while Kareen mourns the tragic end of the man who mentored her. The story explores themes of mortality, identity theft, and the ethical boundaries of scientific ambition—showcasing how even genius can corrupt when fueled by fear of death.
       dominant_tone: Tragic
+      raw_credits_block: |-
+        Story by Richard Manning & Hans Beimler
+        Teleplay by Tracy Tormé
+      has_complete_credits: true
+      writing_credits:
+      - writer_uuid: writer_richard_manning
+        credit_type: Story by
+        credit_position: 1
+        writer_group: 1
+        group_type: Team
+        full_credit_line: Story by Richard Manning & Hans Beimler
+        source: File
+        is_wga_standard: true
+      - writer_uuid: writer_hans_beimler
+        credit_type: Story by
+        credit_position: 1
+        writer_group: 1
+        group_type: Team
+        full_credit_line: Story by Richard Manning & Hans Beimler
+        source: File
+        is_wga_standard: true
+      - writer_uuid: writer_tracy_tormé
+        credit_type: Teleplay by
+        credit_position: 2
+        writer_group: 1
+        group_type: Individual
+        full_credit_line: Teleplay by Tracy Tormé
+        source: File
+        is_wga_standard: true
     - fabula_uuid: ep_sea_ser_star_trek_the_next_generation_s02_e06
       episode_number: 6
       title: Loud as a Whisper
@@ -801,6 +1531,17 @@
         to his mission, and reflecting on themes of communication, resilience, and
         the value of embracing one's uniqueness.
       dominant_tone: Hopeful
+      raw_credits_block: Written by Jackie Zambrano
+      has_complete_credits: true
+      writing_credits:
+      - writer_uuid: writer_jacqueline_zambrano
+        credit_type: Written by
+        credit_position: 1
+        writer_group: 1
+        group_type: Individual
+        full_credit_line: Written by Jackie Zambrano
+        source: File
+        is_wga_standard: true
     - fabula_uuid: ep_sea_ser_star_trek_the_next_generation_s02_e07
       episode_number: 7
       title: Unnatural Selection
@@ -821,6 +1562,25 @@
         professional complications. The resolution demonstrates the franchise's core
         themes of humanity's potential and perils when manipulating biology.
       dominant_tone: Ethical Dread
+      raw_credits_block: Written by Mike Gray and John Mason
+      has_complete_credits: true
+      writing_credits:
+      - writer_uuid: writer_mike_gray
+        credit_type: Written by
+        credit_position: 1
+        writer_group: 1
+        group_type: Individual
+        full_credit_line: Written by Mike Gray and John Mason
+        source: File
+        is_wga_standard: true
+      - writer_uuid: writer_john_mason
+        credit_type: Written by
+        credit_position: 1
+        writer_group: 2
+        group_type: Individual
+        full_credit_line: Written by Mike Gray and John Mason
+        source: File
+        is_wga_standard: true
     - fabula_uuid: ep_sea_ser_star_trek_the_next_generation_s02_e08
       episode_number: 8
       title: A Matter of Honor
@@ -841,6 +1601,43 @@
 
         Picard receives Riker back on the Enterprise with a dry benediction and a complement: Riker proved diplomacy through combat, loyalty through guile, and nerve through sacrifice. Mendon, chastened and transformed, vows to adapt Enterprise protocols to his Benzite zeal. The episode closes with the moral that honor and loyalty can collide yet coexist: Riker refuses treachery, preserves lives, and learns a different code of courage — and the Enterprise learns that cultural differences require both discipline and mercy to bridge. The crisis resolves not by annihilation but by bold improvisation, precise teamwork, and the hard-won respect of enemies turned allies.
       dominant_tone: Tense and Resolute
+      raw_credits_block: |-
+        Story by Wanda M. Haight & Gregory W. Amos and Burton Armus
+        Teleplay by Burton Armus
+      has_complete_credits: true
+      writing_credits:
+      - writer_uuid: writer_wanda_m_haight
+        credit_type: Story by
+        credit_position: 1
+        writer_group: 1
+        group_type: Team
+        full_credit_line: Story by Wanda M. Haight & Gregory W. Amos and Burton Armus
+        source: File
+        is_wga_standard: true
+      - writer_uuid: writer_gregory_w_amos
+        credit_type: Story by
+        credit_position: 1
+        writer_group: 1
+        group_type: Team
+        full_credit_line: Story by Wanda M. Haight & Gregory W. Amos and Burton Armus
+        source: File
+        is_wga_standard: true
+      - writer_uuid: writer_burton_armus
+        credit_type: Story by
+        credit_position: 1
+        writer_group: 2
+        group_type: Individual
+        full_credit_line: Story by Wanda M. Haight & Gregory W. Amos and Burton Armus
+        source: File
+        is_wga_standard: true
+      - writer_uuid: writer_burton_armus
+        credit_type: Teleplay by
+        credit_position: 2
+        writer_group: 1
+        group_type: Individual
+        full_credit_line: Teleplay by Burton Armus
+        source: File
+        is_wga_standard: true
     - fabula_uuid: ep_sea_ser_star_trek_the_next_generation_s02_e09
       episode_number: 9
       title: The Measure of a Man
@@ -861,6 +1658,17 @@
 
         The narrative hammers urgent ethical questions: what constitutes sentience, who claims rights, and how legal frameworks translate moral values into precedent. It dramatizes the tension between scientific ambition and individual dignity, forcing pragmatic officers to choose between procedure and conscience. The trial operates as both legal contest and moral theater, with Picard’s rhetoric reframing law as a tool that can either protect or damn future life. At its heart, the story converts abstract philosophy into human pain: loyalty, sacrifice, the terror of being reduced to an instrument, and the fragile triumph when a court—and a people—choose to affirm worth over utility.
       dominant_tone: Bittersweet / Triumphant with Moral Cost
+      raw_credits_block: Written by Melinda Snodgrass
+      has_complete_credits: true
+      writing_credits:
+      - writer_uuid: writer_melinda_snodgrass
+        credit_type: Written by
+        credit_position: 1
+        writer_group: 1
+        group_type: Individual
+        full_credit_line: Written by Melinda Snodgrass
+        source: File
+        is_wga_standard: true
     - fabula_uuid: ep_sea_ser_star_trek_the_next_generation_s02_e10
       episode_number: 10
       title: The Dauphin
@@ -883,6 +1691,25 @@
 
         Wesley experiences crushing loss and a first lesson in love’s complexity. Guinan consoles him: future loves will differ; the memory will remain. Captain Picard orders the course set for Aldebaran Zeta; Wesley resumes duty at Conn, watching Daled Four recede on the viewer. The arc resolves the central conflicts: Salia accepts duty and reveals her authentic nature; Anya fulfills her role as guardian and protector; Wesley grows from starry‑eyed adolescent to a young officer scarred by love but ready to continue exploration. Thematically, the story sharpens a struggle between individual desire and imposed destiny, between parental protection and autonomy, and between appearance and essence — culminating in an image of pure light that defines who Salia truly is and what she must become.
       dominant_tone: Tragic
+      raw_credits_block: Written by Leonard Mlodinow & Scott Rubenstein
+      has_complete_credits: false
+      writing_credits:
+      - writer_uuid: writer_leonard_mlodinow
+        credit_type: Written by
+        credit_position: 1
+        writer_group: 1
+        group_type: Team
+        full_credit_line: Written by Leonard Mlodinow & Scott Rubenstein
+        source: Official
+        is_wga_standard: true
+      - writer_uuid: writer_scott_rubenstein
+        credit_type: Written by
+        credit_position: 1
+        writer_group: 1
+        group_type: Team
+        full_credit_line: Written by Leonard Mlodinow & Scott Rubenstein
+        source: Official
+        is_wga_standard: true
     - fabula_uuid: ep_sea_ser_star_trek_the_next_generation_s02_e11
       episode_number: 11
       title: Contagion
@@ -907,6 +1734,25 @@
 
         The episode tumbles through technical peril and moral urgency: advanced technology behaves like magic until understood, and fear of the unknown can provoke genocide or worse. Picard reframes the Iconians from demonized conquerors to victims of fear, and the Enterprise's victory tastes of steel—lives saved, but an entire culture and its miraculous transport erased. The crew endures, chastened and wiser, carrying the burden of choices made in a split second to prevent a far worse war.
       dominant_tone: Tragic
+      raw_credits_block: Written by Steve Gerber & Beth Woods
+      has_complete_credits: true
+      writing_credits:
+      - writer_uuid: writer_steve_gerber
+        credit_type: Written by
+        credit_position: 1
+        writer_group: 1
+        group_type: Team
+        full_credit_line: Written by Steve Gerber & Beth Woods
+        source: File
+        is_wga_standard: true
+      - writer_uuid: writer_beth_woods
+        credit_type: Written by
+        credit_position: 1
+        writer_group: 1
+        group_type: Team
+        full_credit_line: Written by Steve Gerber & Beth Woods
+        source: File
+        is_wga_standard: true
     - fabula_uuid: ep_sea_ser_star_trek_the_next_generation_s02_e12
       episode_number: 12
       title: The Royale
@@ -926,6 +1772,17 @@
 
         The Royale interrogates authorship, compassion, and the violence of imposed narratives. It pits Starfleet’s ethics against a literalized fiction: beings created to soothe a survivor become agents of imprisonment, and the solution demands creativity rather than force. Picard’s restraint, Riker’s improvisation, and Data’s cold calculation converge to wrest agency from a scripted world. The story closes with rescue and unease: the crew escapes, but the Enterprise leaves behind a staged, grieving monument to misapplied mercy—a hotel that will keep spinning for an absent audience.
       dominant_tone: Tense, morally fraught
+      raw_credits_block: Written by Keith Mills
+      has_complete_credits: true
+      writing_credits:
+      - writer_uuid: writer_keith_mills
+        credit_type: Written by
+        credit_position: 1
+        writer_group: 1
+        group_type: Individual
+        full_credit_line: Written by Keith Mills
+        source: File
+        is_wga_standard: true
     - fabula_uuid: ep_sea_ser_star_trek_the_next_generation_s02_e13
       episode_number: 13
       title: Time Squared
@@ -949,6 +1806,27 @@
 
         The final images return to small domestic ritual: Riker, still the ship’s reliable second, invites the crew back to his quarters, cooks a course that lands better than his earlier omelet, and offers a quiet counterweight to cosmic terror. The crisis resolves without full explanation. The Enterprise survives; the duplicate disappears; the vortex yields. The story closes on Picard’s admission of unease — he will not soon forget the moral decision he made, nor the way time itself seemed to conspire to test command, consequence, and the line between willing sacrifice and cowardly flight.
       dominant_tone: Somber and Resolute
+      raw_credits_block: |-
+        Story by Kurt Michael Bensmiller
+        Teleplay by Maurice Hurley
+      has_complete_credits: true
+      writing_credits:
+      - writer_uuid: writer_kurt_michael_bensmiller
+        credit_type: Story by
+        credit_position: 1
+        writer_group: 1
+        group_type: Individual
+        full_credit_line: Story by Kurt Michael Bensmiller
+        source: File
+        is_wga_standard: true
+      - writer_uuid: writer_maurice_hurley
+        credit_type: Teleplay by
+        credit_position: 2
+        writer_group: 1
+        group_type: Individual
+        full_credit_line: Teleplay by Maurice Hurley
+        source: File
+        is_wga_standard: true
     - fabula_uuid: ep_sea_ser_star_trek_the_next_generation_s02_e14
       episode_number: 14
       title: The Icarus Factor
@@ -973,6 +1851,25 @@
 
         Thematic resonance pulses through the episode: identity forms through confrontation, rituals—whether Klingon rites or anbo-jyutsu bouts—force truth, and leadership reaches maturity when a commander reconciles private wounds with public responsibilities. The Icarus Factor turns a promotion subplot into a study of pride, grief, and the work it takes to choose belonging over ambition.
       dominant_tone: Hopeful
+      raw_credits_block: Written by David Assael and Robert L. McCullough
+      has_complete_credits: true
+      writing_credits:
+      - writer_uuid: writer_david_assael
+        credit_type: Written by
+        credit_position: 1
+        writer_group: 1
+        group_type: Individual
+        full_credit_line: Written by David Assael and Robert L. McCullough
+        source: Corrected
+        is_wga_standard: true
+      - writer_uuid: writer_robert_l_mccullough
+        credit_type: Written by
+        credit_position: 1
+        writer_group: 2
+        group_type: Individual
+        full_credit_line: Written by David Assael and Robert L. McCullough
+        source: Corrected
+        is_wga_standard: true
     - fabula_uuid: ep_sea_ser_star_trek_the_next_generation_s02_e15
       episode_number: 15
       title: Pen Pals
@@ -993,9 +1890,30 @@
 
         Wesley's subplot closes with decisive growth: his insistence on a thorough Ico-spectrogram proves crucial to finding the dilithium lattice, and Riker affirms that command never gets easier, but that a young officer proves himself by acting. Picard and Data share a quiet final exchange: Picard commends Data for stepping closer to humanity, while Data admits sorrow and gratitude. The Enterprise leaves the Selcundi Drema quadrant having saved a world while paying the ethical price: a child's memory cleansed, a captain's burden reinforced, and an android one step further along the jagged path toward what humans call feeling. The episode interrogates law versus compassion, the cost of intervention, and the painful growth required of leaders and those who aspire to be human.
       dominant_tone: Melancholic with moral urgency
+      raw_credits_block: |-
+        Story by Hannah Louise Shearer
+        Teleplay by Melinda M. Snodgrass
+      has_complete_credits: true
+      writing_credits:
+      - writer_uuid: writer_hannah_louise_shearer
+        credit_type: Story by
+        credit_position: 1
+        writer_group: 1
+        group_type: Individual
+        full_credit_line: Story by Hannah Louise Shearer
+        source: File
+        is_wga_standard: true
+      - writer_uuid: writer_melinda_m_snodgrass
+        credit_type: Teleplay by
+        credit_position: 2
+        writer_group: 1
+        group_type: Individual
+        full_credit_line: Teleplay by Melinda M. Snodgrass
+        source: File
+        is_wga_standard: true
     - fabula_uuid: ep_sea_ser_star_trek_the_next_generation_s02_e16
       episode_number: 16
-      title: Q Who?
+      title: Q Who
       logline: When the godlike Q hurls Captain Jean-Luc Picard and the Enterprise
         into a distant sector, Picard must protect his crew and confront the Borg—a
         relentless cybernetic collective—lest his ship, crew, and humanity become
@@ -1017,6 +1935,17 @@
 
         The episode resolves with the Enterprise limping toward a starbase to regroup, set a course for repair and study, and confront the existential shock delivered by Q’s test. The closing register carries a hard clarity: the cosmos yields wonders and terrors in equal measure, and curiosity without readiness can cost lives. Q departs having proved that arrogance and complacency make the ship vulnerable; Picard departs chastened but resolved—he accepts that the lesson stings, yet will steel his crew for the Borg’s inevitable return. The narrative hones themes of hubris versus preparedness, the ethical cost of exploration, and the brutal education that experience thrusts upon a civilization stepping into a galaxy that has already learned to assimilate what it finds.
       dominant_tone: Somber, resolute
+      raw_credits_block: Written by Maurice Hurley
+      has_complete_credits: true
+      writing_credits:
+      - writer_uuid: writer_maurice_hurley
+        credit_type: Written by
+        credit_position: 1
+        writer_group: 1
+        group_type: Individual
+        full_credit_line: Written by Maurice Hurley
+        source: File
+        is_wga_standard: true
     - fabula_uuid: ep_sea_ser_star_trek_the_next_generation_s02_e17
       episode_number: 17
       title: Samaritan Snare
@@ -1043,6 +1972,17 @@
 
         The resolution rewards cunning and solidarity. The Enterprise protects its core—personnel and secrets—without unnecessary slaughter, and the captain returns renewed. The final tableau returns to shipboard routine, but now the crew carries the sting of how easily compassion can be weaponized and how leadership must balance courage, restraint, and improvisation under pressure.
       dominant_tone: Tense and morally ambivalent
+      raw_credits_block: Written by Robert L. McCullough
+      has_complete_credits: true
+      writing_credits:
+      - writer_uuid: writer_robert_l_mccullough
+        credit_type: Written by
+        credit_position: 1
+        writer_group: 1
+        group_type: Individual
+        full_credit_line: Written by Robert L. McCullough
+        source: File
+        is_wga_standard: true
     - fabula_uuid: ep_sea_ser_star_trek_the_next_generation_s02_e18
       episode_number: 18
       title: Up the Long Ladder
@@ -1128,6 +2068,17 @@
         \ the hard, intimate work of integration, honoring difference while forging\
         \ shared futures."
       dominant_tone: Sombre (ambiguous hope)
+      raw_credits_block: Written by Melinda M. Snodgrass
+      has_complete_credits: true
+      writing_credits:
+      - writer_uuid: writer_melinda_m_snodgrass
+        credit_type: Written by
+        credit_position: 1
+        writer_group: 1
+        group_type: Individual
+        full_credit_line: Written by Melinda M. Snodgrass
+        source: File
+        is_wga_standard: true
     - fabula_uuid: ep_sea_ser_star_trek_the_next_generation_s02_e19
       episode_number: 19
       title: Manhunt
@@ -1149,6 +2100,17 @@
 
         Thematically the episode interrogates duty versus desire, the value of unpopular truths, and the limits of propriety. Lwaxana's Phase, first played for laughs, becomes a catalyst that forces the crew to respect an unpredictable ally. Picard's Holodeck refuge exposes his need for distance and the occasional necessity to perform a role to survive pressure. The Antedians’ false diplomatic mask and the hidden ultritium dramatize the fragility of trust and the ever‑present risk that ceremonies of peace can hide deadly intent. In the end, order prevails: assassins are unmasked, the conference is saved, and Lwaxana departs chastising Picard as she dematerializes — a final, scolding reminder that leadership sometimes enlists the most inconvenient of saviors.
       dominant_tone: Urgent
+      raw_credits_block: Written by Tracy Tormé
+      has_complete_credits: true
+      writing_credits:
+      - writer_uuid: writer_tracy_tormé
+        credit_type: Written by
+        credit_position: 1
+        writer_group: 1
+        group_type: Individual
+        full_credit_line: Written by Tracy Tormé
+        source: File
+        is_wga_standard: true
     - fabula_uuid: ep_sea_ser_star_trek_the_next_generation_s02_e20
       episode_number: 20
       title: The Emissary
@@ -1171,6 +2133,35 @@
 
         The Emissary closes on a bittersweet victory: a potentially cataclysmic clash averts bloodshed, colonies remain safe, and a fragile bridge forms between cultures, yet two lovers part with unresolved futures. The Enterprise sails on — restored to course but marked by the collision of war's legacy and the messy mercy of the present.
       dominant_tone: Tense, Hopeful
+      raw_credits_block: |-
+        Based on unpublished story by Thomas H. Calder
+        Teleplay by Richard Manning & Hans Beimler
+      has_complete_credits: false
+      writing_credits:
+      - writer_uuid: writer_thomas_h_calder
+        credit_type: Based on unpublished story by
+        credit_position: 1
+        writer_group: 1
+        group_type: Individual
+        full_credit_line: Based on unpublished story by Thomas H. Calder
+        source: Corrected
+        is_wga_standard: true
+      - writer_uuid: writer_richard_manning
+        credit_type: Teleplay by
+        credit_position: 2
+        writer_group: 1
+        group_type: Team
+        full_credit_line: Teleplay by Richard Manning & Hans Beimler
+        source: Corrected
+        is_wga_standard: true
+      - writer_uuid: writer_hans_beimler
+        credit_type: Teleplay by
+        credit_position: 2
+        writer_group: 1
+        group_type: Team
+        full_credit_line: Teleplay by Richard Manning & Hans Beimler
+        source: Corrected
+        is_wga_standard: true
     - fabula_uuid: ep_sea_ser_star_trek_the_next_generation_s02_e21
       episode_number: 21
       title: Peak Performance
@@ -1193,6 +2184,17 @@
 
         Thematic resonance pulses through every beat: command is not a statistical algorithm but a bond of trust; strategy without empathy becomes cruelty; defeat can catalyze growth. Data's arc—losing, obsessing, then redefining the problem and discovering a new, satisfying outcome—anchors the episode's lesson about vulnerability and the dignity of choosing values over mere victory. Kolrami's pride collapses; Picard's steady faith in his officers vindicates Riker's leadership. The Enterprise walks away battle‑scarred but morally intact, and Data returns to the bridge not as an infallible machine but as a being who has tasted—and turned—failure into mastery.
       dominant_tone: Tense and Hopeful
+      raw_credits_block: Written by David Kemper
+      has_complete_credits: true
+      writing_credits:
+      - writer_uuid: writer_david_kemper
+        credit_type: Written by
+        credit_position: 1
+        writer_group: 1
+        group_type: Individual
+        full_credit_line: Written by David Kemper
+        source: File
+        is_wga_standard: true
     - fabula_uuid: ep_sea_ser_star_trek_the_next_generation_s02_e22
       episode_number: 22
       title: Shades of Gray
@@ -1215,6 +2217,43 @@
 
         The episode closes on recovery and ironic relief, but also on a quieter theme: exploration exposes vulnerability. Riker's swagger yields to mortality; the crew's competence and care reassert the ship's ethical core. Memories that once sustained identity also become the battleground for life and death, proving that every mission carries unseen hazards—not just in alien ecosystems, but in the intimate chemistry of memory itself.
       dominant_tone: Tense, ultimately hopeful
+      raw_credits_block: |-
+        Story by Maurice Hurley
+        Teleplay by Maurice Hurley and Richard Manning & Hans Beimler
+      has_complete_credits: true
+      writing_credits:
+      - writer_uuid: writer_maurice_hurley
+        credit_type: Story by
+        credit_position: 1
+        writer_group: 1
+        group_type: Individual
+        full_credit_line: Story by Maurice Hurley
+        source: File
+        is_wga_standard: true
+      - writer_uuid: writer_maurice_hurley
+        credit_type: Teleplay by
+        credit_position: 2
+        writer_group: 1
+        group_type: Individual
+        full_credit_line: Teleplay by Maurice Hurley and Richard Manning & Hans Beimler
+        source: File
+        is_wga_standard: true
+      - writer_uuid: writer_richard_manning
+        credit_type: Teleplay by
+        credit_position: 2
+        writer_group: 2
+        group_type: Team
+        full_credit_line: Teleplay by Maurice Hurley and Richard Manning & Hans Beimler
+        source: File
+        is_wga_standard: true
+      - writer_uuid: writer_hans_beimler
+        credit_type: Teleplay by
+        credit_position: 2
+        writer_group: 2
+        group_type: Team
+        full_credit_line: Teleplay by Maurice Hurley and Richard Manning & Hans Beimler
+        source: File
+        is_wga_standard: true
   - fabula_uuid: sea_ser_star_trek_the_next_generation_s03
     season_number: 3
     description: ''
@@ -1237,6 +2276,35 @@
 
         The episode resolves on intimate notes: Wesley confronts his error, accepts accountability and re-enters adolescence with new perspective; Beverly Crusher and Guinan talk about parenting and listening, and Wesley tentatively reconnects socially with Annette. Picard preserves Starfleet ethics by refusing extermination and proving that diplomacy and respect, not force, can shepherd an emergent intelligence into coexistence. The narrative threads—scientific hubris, the unpredictability of emergent life, parental expectations and youthful responsibility—coalesce into a portrait of discovery that demands both humility and courage. Action propels the plot, but the climax arrives not as annihilation but as an uneasy, hard-won accord that allows both human and machine cultures to survive and evolve.
       dominant_tone: Tense, ultimately hopeful
+      raw_credits_block: |-
+        Story by Michael Piller & Michael Wagner
+        Teleplay by Michael Piller
+      has_complete_credits: true
+      writing_credits:
+      - writer_uuid: writer_michael_piller
+        credit_type: Story by
+        credit_position: 1
+        writer_group: 1
+        group_type: Team
+        full_credit_line: Story by Michael Piller & Michael Wagner
+        source: File
+        is_wga_standard: true
+      - writer_uuid: writer_michael_wagner
+        credit_type: Story by
+        credit_position: 1
+        writer_group: 1
+        group_type: Team
+        full_credit_line: Story by Michael Piller & Michael Wagner
+        source: File
+        is_wga_standard: true
+      - writer_uuid: writer_michael_piller
+        credit_type: Teleplay by
+        credit_position: 2
+        writer_group: 1
+        group_type: Individual
+        full_credit_line: Teleplay by Michael Piller
+        source: File
+        is_wga_standard: true
     - fabula_uuid: ep_sea_ser_star_trek_the_next_generation_s03_e02
       episode_number: 2
       title: The Ensigns of Command
@@ -1258,6 +2326,17 @@
 
         The screenplay drives a central theme: law and logic cannot by themselves preserve human life or dignity. The Sheliak enforce treaties to the letter; Gosheven defends a people's soul with equal conviction. Data becomes the fulcrum—an unemotional instrument who learns that persuasion demands staged acts, emotional truth, and, ultimately, sacrifice of symbols to save people. Picard's diplomatic audacity and Data's improvised force converge to buy time and inspire the colony to choose survival over martyrdom. The final image balances triumph and loss: the colony abandons its monument to survival and prepares to live elsewhere, Data departs having engineered the salvation of fifteen thousand lives, and Ard'rian walks away with unresolved longing—an intimate, human ache left in the wake of a rational savior who still cannot feel.
       dominant_tone: Bittersweet
+      raw_credits_block: Written by H.B. Savage
+      has_complete_credits: true
+      writing_credits:
+      - writer_uuid: writer_h_b_savage
+        credit_type: Written by
+        credit_position: 1
+        writer_group: 1
+        group_type: Individual
+        full_credit_line: Written by H.B. Savage
+        source: File
+        is_wga_standard: true
     - fabula_uuid: ep_sea_ser_star_trek_the_next_generation_s03_e03
       episode_number: 3
       title: The Survivors
@@ -1280,6 +2359,17 @@
 
         The episode drives hard into ethical terrain. It propels Picard from investigator to moral arbiter, forces the crew to endure overpowering weaponry and psychic harm, and arrives at an austere question: can love ever justify genocide, and how does a civilization hold a near‑god accountable? The emotional center rests on Kevin’s ruined conscience and Rishon’s human innocence; Troi’s psychic suffering provides a concrete human cost that galvanizes Picard’s choices. Actions move quickly—discover, probe, resist, retreat, test, reveal—while the story refuses easy closure, leaving the Enterprise to ferry survivors and a hard lesson through deep space.
       dominant_tone: Tragic
+      raw_credits_block: Written by Michael Wagner
+      has_complete_credits: true
+      writing_credits:
+      - writer_uuid: writer_michael_wagner
+        credit_type: Written by
+        credit_position: 1
+        writer_group: 1
+        group_type: Individual
+        full_credit_line: Written by Michael Wagner
+        source: File
+        is_wga_standard: true
     - fabula_uuid: ep_sea_ser_star_trek_the_next_generation_s03_e04
       episode_number: 4
       title: Who Watches the Watchers
@@ -1302,6 +2392,25 @@
 
         The episode resolves with a somber mixture of accountability and hope. Picard orders the dismantling of the observation post and the Enterprise departs, leaving the Mintakans with new questions and the hard-earned lesson that even those who appear godlike have limits. The arc spotlights the wreckage that inadvertent contact can wreak on a vulnerable culture and forces Picard to confront the moral cost of observation, the impotence of imposing salvation, and the human cost when science meets faith. Scenes—Barron's panic, Beverly's failed memory erasure, Riker's pragmatic rescue, Nuria kneeling then learning to look Picard in the eye, and Liko's shooting—drive home a single insistence: responsibility to other cultures demands humility, honesty, and restraint, even at the price of individual lives.
       dominant_tone: Tragic
+      raw_credits_block: Written by Richard Manning & Hans Beimler
+      has_complete_credits: true
+      writing_credits:
+      - writer_uuid: writer_richard_manning
+        credit_type: Written by
+        credit_position: 1
+        writer_group: 1
+        group_type: Team
+        full_credit_line: Written by Richard Manning & Hans Beimler
+        source: File
+        is_wga_standard: true
+      - writer_uuid: writer_hans_beimler
+        credit_type: Written by
+        credit_position: 1
+        writer_group: 1
+        group_type: Team
+        full_credit_line: Written by Richard Manning & Hans Beimler
+        source: File
+        is_wga_standard: true
     - fabula_uuid: ep_sea_ser_star_trek_the_next_generation_s03_e05
       episode_number: 5
       title: The Bonding
@@ -1322,6 +2431,17 @@
 
         The episode closes on quiet, hard comfort: Worf and Jeremy standing at a window, newly bound by the R'uustai, wordless guardians of memory and future. Picard’s duty—bearing and announcing terrible news—meets Troi’s craft of patient counsel, Wesley’s honest pain, and Worf’s fierce, ceremonial compassion. The story interrogates grief and the seduction of painless escape, insisting that acceptance, ritual, and community convert senseless death into meaning and forward motion rather than a frozen shrine. It leaves the Enterprise altered: casualties accounted for, a boy adopted into an unexpected family, and an entire crew humbled by the limits of power when confronted with the deepest human needs.
       dominant_tone: Bittersweet
+      raw_credits_block: Written by Ronald D. Moore
+      has_complete_credits: true
+      writing_credits:
+      - writer_uuid: writer_ronald_d_moore
+        credit_type: Written by
+        credit_position: 1
+        writer_group: 1
+        group_type: Individual
+        full_credit_line: Written by Ronald D. Moore
+        source: File
+        is_wga_standard: true
     - fabula_uuid: ep_sea_ser_star_trek_the_next_generation_s03_e06
       episode_number: 6
       title: Booby Trap
@@ -1346,6 +2466,51 @@
 
         The episode closes on a tone equal parts triumph and tenderness: the Enterprise sails on, systems humming, crew relieved but wiser; Geordi deposits his saved program and walks away from the holodeck a little less lonely, a little more sure. The booby trap is neutralized, but its lesson endures — sometimes one must shut the machines off, trust human judgment, and steer by intuition through the void.
       dominant_tone: Tense, resolute
+      raw_credits_block: |-
+        Story by Michael Wagner & Ron Roman
+        Teleplay by Ron Roman and Michael Piller & Richard Danus
+      has_complete_credits: false
+      writing_credits:
+      - writer_uuid: writer_michael_wagner
+        credit_type: Story by
+        credit_position: 1
+        writer_group: 1
+        group_type: Team
+        full_credit_line: Story by Michael Wagner & Ron Roman
+        source: Official
+        is_wga_standard: true
+      - writer_uuid: writer_ron_roman
+        credit_type: Story by
+        credit_position: 1
+        writer_group: 1
+        group_type: Team
+        full_credit_line: Story by Michael Wagner & Ron Roman
+        source: Official
+        is_wga_standard: true
+      - writer_uuid: writer_ron_roman
+        credit_type: Teleplay by
+        credit_position: 2
+        writer_group: 1
+        group_type: Individual
+        full_credit_line: Teleplay by Ron Roman and Michael Piller & Richard Danus
+        source: Official
+        is_wga_standard: true
+      - writer_uuid: writer_michael_piller
+        credit_type: Teleplay by
+        credit_position: 2
+        writer_group: 2
+        group_type: Team
+        full_credit_line: Teleplay by Ron Roman and Michael Piller & Richard Danus
+        source: Official
+        is_wga_standard: true
+      - writer_uuid: writer_richard_danus
+        credit_type: Teleplay by
+        credit_position: 2
+        writer_group: 2
+        group_type: Team
+        full_credit_line: Teleplay by Ron Roman and Michael Piller & Richard Danus
+        source: Official
+        is_wga_standard: true
     - fabula_uuid: ep_sea_ser_star_trek_the_next_generation_s03_e07
       episode_number: 7
       title: The Enemy
@@ -1368,6 +2533,25 @@
 
         Thematically the story hammers at the cost of enmity and the fragile utility of trust. Technology—VISORs, tricorders, neutrino beacons—both separates and unites: instruments fail, then fuse, turning tools of detection into instruments of rapprochement. Honor and grief drive Worf and Tomalak; curiosity and compassion bind Geordi and Bochra. The episode closes with uneasy reconciliation: Bochra leaves alive and salutes a human who saved him; Geordi returns to the ship, changed and exhausted; Worf stands apart, untouched in surface gesture but altered beneath his Klingon armor. Picard’s final posture—hesitant, ethically restrained—leaves the viewer with a sharp question about leadership: when duty and conscience clash, a captain may refuse to command the soul. The immediate war is avoided, but the price—death, bitterness, and an unresolved moral rift—lingers like the electric arc across Galorndon Core’s night sky.
       dominant_tone: ''
+      raw_credits_block: Written by David Kemper and Michael Piller
+      has_complete_credits: false
+      writing_credits:
+      - writer_uuid: writer_david_kemper
+        credit_type: Written by
+        credit_position: 1
+        writer_group: 1
+        group_type: Individual
+        full_credit_line: Written by David Kemper and Michael Piller
+        source: Corrected
+        is_wga_standard: true
+      - writer_uuid: writer_michael_piller
+        credit_type: Written by
+        credit_position: 1
+        writer_group: 2
+        group_type: Individual
+        full_credit_line: Written by David Kemper and Michael Piller
+        source: Corrected
+        is_wga_standard: true
     - fabula_uuid: ep_sea_ser_star_trek_the_next_generation_s03_e08
       episode_number: 8
       title: The Price
@@ -1392,6 +2576,17 @@
 
         The episode closes on bittersweet notes. Devinoni departs with an invitation for Troi to run away with him; she refuses, anchored to her duty. Chrysalia secures the wormhole’s rights, but the prize proves hollow: the passage’s unpredictable endpoint transforms it from strategic windfall into a perilous liability. The Ferengi remain stranded; Mendoza recovers but diplomacy bears scars. The Price interrogates the ethics of using empathic advantage in commerce and war, dramatizing how intimacy can both enlighten and corrupt; Troi’s integrity becomes the fulcrum that balances personal longing against collective safety. In the end, negotiation proves less a game of clever moves than a test of conscience—one Troi chooses to pass at the cost of her private happiness.
       dominant_tone: Dramatic
+      raw_credits_block: Written by Hannah Louise Shearer
+      has_complete_credits: true
+      writing_credits:
+      - writer_uuid: writer_hannah_louise_shearer
+        credit_type: Written by
+        credit_position: 1
+        writer_group: 1
+        group_type: Individual
+        full_credit_line: Written by Hannah Louise Shearer
+        source: File
+        is_wga_standard: true
     - fabula_uuid: ep_sea_ser_star_trek_the_next_generation_s03_e09
       episode_number: 9
       title: The Vengeance Factor
@@ -1412,6 +2607,17 @@
 
         The screenplay interrogates revenge as a corrosive logic and science as an instrument of inherited hate. It stages political theater—ceremonial brandy, council seats, and barbed offers of autonomy—alongside intimate betrayals: Yuta’s engineered immortality, Riker’s brief tender connection, and the moral fracture in his final, fatal decision. Characters move with urgent purpose: Picard mediates with moral clarity; Marouk wrestles public shame and maternal responsibility; Brull balances survival and aspiration; Chorgan embodies tribal pride pushed to the brink. The story keeps tension at both public and private scales, asking whether a society can be reunited after a century of bloodletting and whether individuals trapped by engineered destinies can reclaim moral agency. It ends on wary hope—political bridges begin to form even as the human cost of ending vengeance remains searingly clear.
       dominant_tone: Tragic
+      raw_credits_block: Written by Sam Rolfe
+      has_complete_credits: true
+      writing_credits:
+      - writer_uuid: writer_sam_rolfe
+        credit_type: Written by
+        credit_position: 1
+        writer_group: 1
+        group_type: Individual
+        full_credit_line: Written by Sam Rolfe
+        source: File
+        is_wga_standard: true
     - fabula_uuid: ep_sea_ser_star_trek_the_next_generation_s03_e10
       episode_number: 10
       title: The Defector
@@ -1434,6 +2640,17 @@
 
         The episode ends on a hard, bittersweet note: conflict is averted for now, alliances were tested, and a single act of conscience produces no tidy victory—only the lonely hope that others might one day risk the same kind of sacrifice and succeed in turning the gears of history toward peace.
       dominant_tone: Tragic
+      raw_credits_block: Written by Ronald D. Moore
+      has_complete_credits: true
+      writing_credits:
+      - writer_uuid: writer_ronald_d_moore
+        credit_type: Written by
+        credit_position: 1
+        writer_group: 1
+        group_type: Individual
+        full_credit_line: Written by Ronald D. Moore
+        source: File
+        is_wga_standard: true
     - fabula_uuid: ep_sea_ser_star_trek_the_next_generation_s03_e11
       episode_number: 11
       title: The Hunted
@@ -1455,6 +2672,17 @@
 
         The episode resolves without a facile cure. Danar's immediate rebellion forces Angosia to confront its moral bankruptcy; Picard refuses to rescue a government that cast aside its own soldiers but pledges tangible remedial support should they accept responsibility. The Enterprise charts for Starbase Lya Three, leaving Angosia to choose its future. The story closes on a grim, humane note: engineered warriors and political expedience collide, and a captain's duty compels him to protect lives while insisting that justice and healing must come from the culpable society itself. Themes of culpability, the ethics of wartime engineering, and the limits of technological and political solutions animate the narrative: power built into flesh demands moral reckoning, and survival programming cannot substitute for citizenship.
       dominant_tone: Sober
+      raw_credits_block: Written by Robin Bernheim
+      has_complete_credits: true
+      writing_credits:
+      - writer_uuid: writer_robin_bernheim
+        credit_type: Written by
+        credit_position: 1
+        writer_group: 1
+        group_type: Individual
+        full_credit_line: Written by Robin Bernheim
+        source: File
+        is_wga_standard: true
     - fabula_uuid: ep_sea_ser_star_trek_the_next_generation_s03_e12
       episode_number: 12
       title: The High Ground
@@ -1477,6 +2705,17 @@
 
         The Enterprise emerges scarred but intact. Geordi and his engineering team survive a near-catastrophic blast; Wesley receives praise for his pivotal technical deductions; Crusher reunites with her son in a scene of tender relief. The narrative ends on mixed closure: hostages return, the immediate threat is neutralized, but questions linger — about the efficacy and morality of terror as political tactic, the cost of neutrality, and whether force or negotiation will break the cycle. Dialogue from Data and Picard frames that ambiguity: terrorism registers as politically effective in historical terms, but the Federation cannot condone violence. The story leaves Finn’s convictions resonant and disturbing, forcing characters and audience to reckon with the human faces behind insurgency and the heavy, imperfect choices leaders make when peace breaks down.
       dominant_tone: Tense
+      raw_credits_block: Written by Melinda M. Snodgrass
+      has_complete_credits: true
+      writing_credits:
+      - writer_uuid: writer_melinda_m_snodgrass
+        credit_type: Written by
+        credit_position: 1
+        writer_group: 1
+        group_type: Individual
+        full_credit_line: Written by Melinda M. Snodgrass
+        source: File
+        is_wga_standard: true
     - fabula_uuid: ep_sea_ser_star_trek_the_next_generation_s03_e13
       episode_number: 13
       title: Deja Q
@@ -1499,6 +2738,17 @@
 
         The episode hammers a set of themes with blunt, dramatic clarity: vulnerability and responsibility collide; compassion proves strategically costly but morally essential; humiliation and mortality transform arrogance into humility. Q’s forced mortgage on humanity reveals empathy not through rhetoric but through consequence—Data’s near-sacrifice and subsequent laughter mark the most concrete evidence of moral growth. Picard steers the ship by principle: he refuses to use Q as a weapon, insists on restraint, and ultimately accepts an uneasy peace between moral duty and cosmic caprice. The screenplay closes on Q’s whisper—“Don't bet on it, Picard”—a sly reminder that mercy in the galaxy is always provisional, and that human decency remains a dangerous, unpredictable force.
       dominant_tone: Bittersweet
+      raw_credits_block: Written by Richard Danus
+      has_complete_credits: true
+      writing_credits:
+      - writer_uuid: writer_richard_danus
+        credit_type: Written by
+        credit_position: 1
+        writer_group: 1
+        group_type: Individual
+        full_credit_line: Written by Richard Danus
+        source: File
+        is_wga_standard: true
     - fabula_uuid: ep_sea_ser_star_trek_the_next_generation_s03_e14
       episode_number: 14
       title: A Matter of Perspective
@@ -1523,6 +2773,17 @@
 
         Thematically the screenplay hammers on perspective—literal, through holographic recreations, and moral, through competing memories. It crackles with present-tense urgency: accusations flare, testimony bites, and technology both illuminates and deceives. By forcing witnesses to confront orchestrated versions of the past, Picard and his team pry truth free of competing narratives. The Enterprise moves on—Riker returns to command, Krag departs chastened, and Picard leaves orbit carrying the hard-earned lesson that truth often hides between angles, and that command means shouldering the consequences when human frailty and scientific hubris collide.
       dominant_tone: Tense and resolute
+      raw_credits_block: Written by Ed Zuckerman
+      has_complete_credits: true
+      writing_credits:
+      - writer_uuid: writer_ed_zuckerman
+        credit_type: Written by
+        credit_position: 1
+        writer_group: 1
+        group_type: Individual
+        full_credit_line: Written by Ed Zuckerman
+        source: File
+        is_wga_standard: true
     - fabula_uuid: ep_sea_ser_star_trek_the_next_generation_s03_e15
       episode_number: 15
       title: Yesterday's Enterprise
@@ -1543,6 +2804,63 @@
 
         Resolution arrives with quiet, bitter clarity. The bridge, uniforms, and people snap back to their familiar selves; the militarized present evaporates as if it had been a fever dream. Picard orders a sensor probe left behind to monitor the rift's final closure and plots a course for Archer Four. Guinan, wounded by cost even as she is vindicated, slips into Ten-Forward and asks Geordi to "tell me about Tasha Yar," a small, tragic request that acknowledges a life given to restore a larger future. The story detonates its themes—sacrifice, honor, the ethics of altering history, and the human cost of righting a wrong—forcing characters to choose between preserving the present and restoring what ought to have been. Picard's command becomes an act of moral leadership: he trusts Guinan's inscrutable wisdom, accepts painful loss, and lets a past ship run its course so that the future may be unmade and remade by those brave enough to go back.
       dominant_tone: Tragic
+      raw_credits_block: |-
+        Story by Trent Christopher Ganino & Eric A. Stillwell
+        Teleplay by Ira Steven Behr & Richard Manning & Hans Beimler & Ronald D. Moore
+      has_complete_credits: false
+      writing_credits:
+      - writer_uuid: writer_trent_christopher_ganino
+        credit_type: Story by
+        credit_position: 1
+        writer_group: 1
+        group_type: Team
+        full_credit_line: Story by Trent Christopher Ganino & Eric A. Stillwell
+        source: Corrected
+        is_wga_standard: true
+      - writer_uuid: writer_eric_a_stillwell
+        credit_type: Story by
+        credit_position: 1
+        writer_group: 1
+        group_type: Team
+        full_credit_line: Story by Trent Christopher Ganino & Eric A. Stillwell
+        source: Corrected
+        is_wga_standard: true
+      - writer_uuid: writer_richard_manning
+        credit_type: Teleplay by
+        credit_position: 2
+        writer_group: 1
+        group_type: Team
+        full_credit_line: Teleplay by Ira Steven Behr & Richard Manning & Hans Beimler
+          & Ronald D. Moore
+        source: Corrected
+        is_wga_standard: true
+      - writer_uuid: writer_hans_beimler
+        credit_type: Teleplay by
+        credit_position: 2
+        writer_group: 1
+        group_type: Team
+        full_credit_line: Teleplay by Ira Steven Behr & Richard Manning & Hans Beimler
+          & Ronald D. Moore
+        source: Corrected
+        is_wga_standard: true
+      - writer_uuid: writer_ronald_d_moore
+        credit_type: Teleplay by
+        credit_position: 2
+        writer_group: 1
+        group_type: Team
+        full_credit_line: Teleplay by Ira Steven Behr & Richard Manning & Hans Beimler
+          & Ronald D. Moore
+        source: Corrected
+        is_wga_standard: true
+      - writer_uuid: writer_ira_steven_behr
+        credit_type: Teleplay by
+        credit_position: 2
+        writer_group: 1
+        group_type: Team
+        full_credit_line: Teleplay by Ira Steven Behr & Richard Manning & Hans Beimler
+          & Ronald D. Moore
+        source: Corrected
+        is_wga_standard: true
     - fabula_uuid: ep_sea_ser_star_trek_the_next_generation_s03_e16
       episode_number: 16
       title: The Offspring
@@ -1567,6 +2885,17 @@
 
         The story resolves with a bitter-sweet preservation. Lal's physical existence dies, but her consciousness endures within Data — a salvaged, intimate legacy that transforms Data's solitude. Themes collide: creation and custody, the ethics of parenthood, the limits of scientific control, and the ineffable human need to feel and be recognized. Data's stubborn choice to be a father reshapes command responsibilities and forces Starfleet to reckon with what it means to be alive. The final image leaves Data carrying Lal's memory inside him, having learned the cost and the meaning of love he cannot biologically feel but can honor through continuity and devotion.
       dominant_tone: Tragic
+      raw_credits_block: Written by René Echevarria
+      has_complete_credits: true
+      writing_credits:
+      - writer_uuid: writer_rené_echevarria
+        credit_type: Written by
+        credit_position: 1
+        writer_group: 1
+        group_type: Individual
+        full_credit_line: Written by René Echevarria
+        source: File
+        is_wga_standard: true
     - fabula_uuid: ep_sea_ser_star_trek_the_next_generation_s03_e17
       episode_number: 17
       title: Sins of the Father
@@ -1589,6 +2918,35 @@
 
         The episode closes on ritual resignation and private solidarity. Kurn beams into the Hall, recovering but unbowed; Worf and his chosen champions—Picard and Kurn—walk with heads held high as the council turns its back and the crowd rejects him. Worf takes the blow to family honor to protect his brother and the broader peace; Picard stands as cha'DIch and witness, bridging two cultures with forceful diplomacy. The technology sleuthing, assassination attempts, and courtroom theater converge into an indictment of political expediency: honor survives only through brutal choices, and truth can demand personal exile. The story ends with the echo of Klingon law and the hard, private promise between brothers—one turning his back to survive, the other accepting silence so the name of Mogh might someday rise again.
       dominant_tone: Tragic
+      raw_credits_block: |-
+        Story by Drew Deighan
+        Teleplay by Ronald D. Moore & W. Reed Moran
+      has_complete_credits: false
+      writing_credits:
+      - writer_uuid: writer_drew_deighan
+        credit_type: Story by
+        credit_position: 1
+        writer_group: 1
+        group_type: Individual
+        full_credit_line: Story by Drew Deighan
+        source: Official
+        is_wga_standard: true
+      - writer_uuid: writer_ronald_d_moore
+        credit_type: Teleplay by
+        credit_position: 2
+        writer_group: 1
+        group_type: Team
+        full_credit_line: Teleplay by Ronald D. Moore & W. Reed Moran
+        source: File
+        is_wga_standard: true
+      - writer_uuid: writer_w_reed_moran
+        credit_type: Teleplay by
+        credit_position: 2
+        writer_group: 1
+        group_type: Team
+        full_credit_line: Teleplay by Ronald D. Moore & W. Reed Moran
+        source: File
+        is_wga_standard: true
     - fabula_uuid: ep_sea_ser_star_trek_the_next_generation_s03_e18
       episode_number: 18
       title: Allegiance
@@ -1643,6 +3001,25 @@
         \ with Picard back in command, the Enterprise resumes her mission to rendezvous\
         \ with the USS Hood."
       dominant_tone: Tragic (with undercurrents of cynicism and moral ambiguity)
+      raw_credits_block: Written by Richard Manning & Hans Beimler
+      has_complete_credits: true
+      writing_credits:
+      - writer_uuid: writer_richard_manning
+        credit_type: Written by
+        credit_position: 1
+        writer_group: 1
+        group_type: Team
+        full_credit_line: Written by Richard Manning & Hans Beimler
+        source: File
+        is_wga_standard: true
+      - writer_uuid: writer_hans_beimler
+        credit_type: Written by
+        credit_position: 1
+        writer_group: 1
+        group_type: Team
+        full_credit_line: Written by Richard Manning & Hans Beimler
+        source: File
+        is_wga_standard: true
     - fabula_uuid: ep_sea_ser_star_trek_the_next_generation_s03_e19
       episode_number: 19
       title: Captain's Holiday
@@ -1663,6 +3040,17 @@
 
         Picard prepares to leave Risa, having developed a complicated relationship with Vash. There is mutual goodbay and perhaps, they were not so different after all. He returns to the Enterprise, ready to resume his duties. The episode concludes by returning to the teaser scene with the Vorgons who materialized at the beginning of the episode. This time, the Vorgons determine that they arrived earlier than Captain Picard's arrival and the scene irises out.
       dominant_tone: Tragic with moments of hard-won clarity
+      raw_credits_block: Written by Ira Steven Behr
+      has_complete_credits: true
+      writing_credits:
+      - writer_uuid: writer_ira_steven_behr
+        credit_type: Written by
+        credit_position: 1
+        writer_group: 1
+        group_type: Individual
+        full_credit_line: Written by Ira Steven Behr
+        source: File
+        is_wga_standard: true
     - fabula_uuid: ep_sea_ser_star_trek_the_next_generation_s03_e20
       episode_number: 20
       title: Tin Man
@@ -1678,6 +3066,25 @@
 
         Inside Tin Man, Data witnesses Elbrun merging with the ship's consciousness, finding a sense of belonging that has eluded him his entire life. Elbrun expresses his intention to stay, and merges with Tin Man. Meanwhile, the Romulan warbird threatens the Enterprise. With Elbrun now fully integrated, Tin Man emits another energy pulse, throwing both the Enterprise and the Romulan ship billions of kilometers away to safety, just as Beta Stromgren goes supernova. Data is safely returned to the Enterprise. In the aftermath, Data reflects on Elbrun's decision, realizing that he found peace and purpose in his union with Tin Man. Data then says that he feels like he belongs on the Enterprise ship.
       dominant_tone: Cynical
+      raw_credits_block: Written by Dennis Putman Bailey & David Bischoff
+      has_complete_credits: true
+      writing_credits:
+      - writer_uuid: writer_dennis_putman_bailey
+        credit_type: Written by
+        credit_position: 1
+        writer_group: 1
+        group_type: Team
+        full_credit_line: Written by Dennis Putman Bailey & David Bischoff
+        source: File
+        is_wga_standard: true
+      - writer_uuid: writer_david_bischoff
+        credit_type: Written by
+        credit_position: 1
+        writer_group: 1
+        group_type: Team
+        full_credit_line: Written by Dennis Putman Bailey & David Bischoff
+        source: File
+        is_wga_standard: true
     - fabula_uuid: ep_sea_ser_star_trek_the_next_generation_s03_e21
       episode_number: 21
       title: Hollow Pursuits
@@ -1694,6 +3101,17 @@
 
         Barclay identifies Invidium, an old medical containment agent, as the culprit and proposes a solution to neutralize it. Working together, Geordi and Barclay devise a risky plan to flood the injector pathway with liquid nitrogen. The plan works, averting disaster and saving the ship. In the aftermath, Barclay gains confidence and a sense of belonging. He realizes that his holodeck fantasies, while comforting, are not a substitute for real connection. He chooses to erase his holodeck programs, except for one, signifying a step towards integrating his real self with his imagined world. The episode concludes with Barclay's tentative steps towards genuine relationships and Geordi's newfound appreciation for Barclay's unique perspective and potential.
       dominant_tone: Hopeful
+      raw_credits_block: Written by Sally Caves
+      has_complete_credits: true
+      writing_credits:
+      - writer_uuid: writer_sally_caves
+        credit_type: Written by
+        credit_position: 1
+        writer_group: 1
+        group_type: Individual
+        full_credit_line: Written by Sally Caves
+        source: File
+        is_wga_standard: true
     - fabula_uuid: ep_sea_ser_star_trek_the_next_generation_s03_e22
       episode_number: 22
       title: The Most Toys
@@ -1719,6 +3137,17 @@
 
         In the brig, Fajo declares that the circumstances will change. But Data informs him all of his possessions have been confiscated. Fajo is stunned at the extent of his loss. Data exits, stating that the lack of Fajo's pleasure does not bring him pleasure as he is only an android.
       dominant_tone: Tragic yet triumphant
+      raw_credits_block: Written by Shari Goodhartz
+      has_complete_credits: true
+      writing_credits:
+      - writer_uuid: writer_shari_goodhartz
+        credit_type: Written by
+        credit_position: 1
+        writer_group: 1
+        group_type: Individual
+        full_credit_line: Written by Shari Goodhartz
+        source: File
+        is_wga_standard: true
     - fabula_uuid: ep_sea_ser_star_trek_the_next_generation_s03_e23
       episode_number: 23
       title: Sarek
@@ -1739,6 +3168,35 @@
 
         In the mind meld, Picard is overwhelmed by Sarek’s powerful and turbulent emotions. He experiences Sarek's regrets, his love for his wife, and intense feelings he had long suppressed. The process is harrowing, causing Picard immense emotional distress, yet he endures, allowing Sarek to regain momentary control. Sarek, now infused with Picard’s stability, successfully meets with the Legarans and concludes the historic treaty. Following the successful meeting, Sarek and his party depart for Vulcan. Picard and Riker reflect on the events, recognizing the heavy cost of preserving Sarek's legacy and his contribution to galactic peace.
       dominant_tone: Tragic (with undercurrents of quiet resilience)
+      raw_credits_block: |-
+        From an unpublished story by Marc Cushman & Jake Jacobs
+        Television Story & Teleplay by Peter S. Beagle
+      has_complete_credits: true
+      writing_credits:
+      - writer_uuid: writer_marc_cushman
+        credit_type: From an unpublished story by
+        credit_position: 1
+        writer_group: 1
+        group_type: Team
+        full_credit_line: From an unpublished story by Marc Cushman & Jake Jacobs
+        source: File
+        is_wga_standard: true
+      - writer_uuid: writer_jake_jacobs
+        credit_type: From an unpublished story by
+        credit_position: 1
+        writer_group: 1
+        group_type: Team
+        full_credit_line: From an unpublished story by Marc Cushman & Jake Jacobs
+        source: File
+        is_wga_standard: true
+      - writer_uuid: writer_peter_s_beagle
+        credit_type: Television Story & Teleplay by
+        credit_position: 2
+        writer_group: 1
+        group_type: Individual
+        full_credit_line: Television Story & Teleplay by Peter S. Beagle
+        source: File
+        is_wga_standard: false
     - fabula_uuid: ep_sea_ser_star_trek_the_next_generation_s03_e24
       episode_number: 24
       title: Menage a Troi
@@ -1763,6 +3221,25 @@
 
         The episode explores themes of family dynamics, personal agency, and the complexities of interstellar relations. It highlights Lwaxana's strength and resourcefulness, Riker's leadership, and Wesley's intellectual capabilities. The resolution emphasizes the importance of sacrifice and the bonds of family, as Lwaxana prioritizes her daughter's safety and Wesley's analytical skills prove instrumental in the rescue.
       dominant_tone: Defiant
+      raw_credits_block: Written by Fred Bronson & Susan Sackett
+      has_complete_credits: true
+      writing_credits:
+      - writer_uuid: writer_fred_bronson
+        credit_type: Written by
+        credit_position: 1
+        writer_group: 1
+        group_type: Team
+        full_credit_line: Written by Fred Bronson & Susan Sackett
+        source: File
+        is_wga_standard: true
+      - writer_uuid: writer_susan_sackett
+        credit_type: Written by
+        credit_position: 1
+        writer_group: 1
+        group_type: Team
+        full_credit_line: Written by Fred Bronson & Susan Sackett
+        source: File
+        is_wga_standard: true
     - fabula_uuid: ep_sea_ser_star_trek_the_next_generation_s03_e25
       episode_number: 25
       title: Transfigurations
@@ -1802,9 +3279,20 @@
         \ an incorporeal being, and departs the Enterprise, signaling hope for his\
         \ people's future."
       dominant_tone: Tragic (with undertones of existential hope)
+      raw_credits_block: Written by René Echevarria
+      has_complete_credits: true
+      writing_credits:
+      - writer_uuid: writer_rené_echevarria
+        credit_type: Written by
+        credit_position: 1
+        writer_group: 1
+        group_type: Individual
+        full_credit_line: Written by René Echevarria
+        source: File
+        is_wga_standard: true
     - fabula_uuid: ep_sea_ser_star_trek_the_next_generation_s03_e26
       episode_number: 26
-      title: The Best of Both Worlds, Part I
+      title: The Best of Both Worlds
       logline: When the Borg attack a Federation colony, Captain Picard and the Enterprise
         crew face a terrifying enemy who seeks to assimilate them, leading to Picard's
         capture and transformation, threatening Earth itself.
@@ -1842,3 +3330,14 @@
         \ futility of resistance. With a heavy heart, Riker orders the deflector weapon\
         \ to fire."
       dominant_tone: Tragic (with moments of defiant hope)
+      raw_credits_block: Written by Michael Piller
+      has_complete_credits: true
+      writing_credits:
+      - writer_uuid: writer_michael_piller
+        credit_type: Written by
+        credit_position: 1
+        writer_group: 1
+        group_type: Individual
+        full_credit_line: Written by Michael Piller
+        source: File
+        is_wga_standard: true

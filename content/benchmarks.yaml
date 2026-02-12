@@ -1,0 +1,266 @@
+# Benchmarks Page — Brand Voice Transformation
+# ==============================================
+#
+# STRATEGIC ARGUMENT:
+# Fabula publishes validated, reproducible metrics because it can.
+# The industry standard is self-reported accuracy claims with no
+# methodology disclosure. This page turns transparency into a
+# competitive weapon: our willingness to show the numbers IS the
+# argument, before you even read the numbers themselves.
+#
+# COMPETITIVE FOIL:
+# Self-reported metrics. Vendor demos on cherry-picked inputs.
+# "AI-powered" claims with no validation methodology. The spreadsheet
+# of unverifiable promises.
+#
+# AUDIENCE:
+# This is the shared bridge. Hollywood readers need to trust the
+# product. Investors need to trust the technology. The benchmark_table
+# type serves both with dual-audience framing — a voice innovation
+# worth preserving.
+#
+# VOICE REGISTER:
+# The Intelligent Friend who brought receipts. Confident without
+# being combative. The aggression is structural (publishing numbers
+# your competitors won't) rather than tonal.
+#
+# STRUCTURAL APPROACH:
+# Provocative challenge headline → dual-framed evidence tables →
+# narrative-woven scale proof → methodology as intellectual honesty →
+# bridge CTA from numbers to product → closing mantra.
+
+---
+meta:
+  slug: benchmarks
+  title: "Fabula Benchmarks — Narrative Extraction Accuracy at Scale"
+  description: "Real metrics from processing 80+ episodes of television. Entity extraction accuracy, relationship precision, and query latency — validated against human annotation, not self-reported."
+  template: marketing/benchmarks_page.html
+  audiences:
+    - hollywood
+    - investors
+    - technical
+
+# ===========================================================
+# HERO
+# ===========================================================
+# HEADLINE: Provocative challenge directed at competitors.
+# Surface reading: aggressive, maybe arrogant.
+# Resolved reading: the willingness to publish validated numbers
+# is itself evidence of quality. If your metrics survive
+# independent human review, you publish them. If they don't,
+# you say "AI-powered" and change the subject.
+#
+# The body resolves the aggression into methodology: these
+# aren't self-reported numbers, they're consensus annotations
+# from humans who agreed with each other 96.3% of the time.
+# That agreement rate is the real headline — it means the
+# benchmark itself is trustworthy before Fabula even enters
+# the picture.
+# ===========================================================
+
+hero:
+  badge:
+    icon: bar-chart-3
+    text: "Benchmarks"
+  headline: "We Published Our Numbers. Now Ask Your Vendor to Publish Theirs."
+  body: >
+    Every metric on this page was validated against human annotation&mdash;not
+    self-reported, not cherry-picked, not measured on a dataset we designed to
+    make ourselves look good. Two independent annotators reviewed the same material
+    and agreed with each other 96.3% of the time. Then we measured Fabula against
+    their consensus. That&rsquo;s how you build a benchmark you can defend in a
+    room full of people who read scripts for a living and engineers who read
+    architecture docs the same way.
+  footnote: >
+    All benchmarks measured on <em>The West Wing</em> seasons 1&ndash;4, validated
+    by independent human annotators with 96.3% inter-annotator agreement.
+
+sections:
+  # ---------------------------------------------------------
+  # 1. ACCURACY METRICS
+  # ---------------------------------------------------------
+  # HEADLINE: Conversational directness with conspiratorial
+  # confidence. The parenthetical "(We Brought Receipts.)"
+  # implies that other vendors didn't. The dual-audience
+  # framing in the benchmark_table is preserved and tightened —
+  # each meaning is now punchier and more specific.
+  # ---------------------------------------------------------
+  - id: accuracy
+    type: benchmark_table
+    background: page
+    label: "Accuracy"
+    headline: "Does It Actually Work? (We Brought Receipts.)"
+    intro: >
+      The first question everyone asks, and the one most vendors answer with
+      a demo on their best example. Here are validated numbers across the full
+      dataset&mdash;the ambiguous scenes, the walk-on characters, the cold opens
+      that don&rsquo;t name anyone for three pages. Framed for both the people
+      who make television and the people who evaluate infrastructure.
+    metrics:
+      - metric: "Entity Extraction Accuracy"
+        result: "90.2%"
+        hollywood_meaning: "Nine out of ten characters, locations, and objects extracted automatically. You review the genuinely ambiguous tenth&mdash;not the nine we missed."
+        investor_meaning: "Hallucination rate below noise floor. Human-in-loop adjudication handles genuine ambiguity, not systemic extraction failures."
+      - metric: "Relationship Precision"
+        result: "94.7%"
+        hollywood_meaning: "Who talked to whom, who works for whom, who betrayed whom&mdash;correctly mapped across four seasons without manual curation."
+        investor_meaning: "Typed edges maintain semantic accuracy across temporal boundaries. Graph connectivity is high-signal, low-noise at production scale."
+      - metric: "Temporal Ordering Accuracy"
+        result: "98.1%"
+        hollywood_meaning: "Flashbacks, cold opens, non-linear timelines&mdash;correctly sequenced. Near-perfect timeline construction from scripts alone."
+        investor_meaning: "Dual temporal index architecture validates at research-grade accuracy. Fabula/syuzhet separation handles narrative complexity the way narratologists intended."
+
+  # ---------------------------------------------------------
+  # 2. PERFORMANCE METRICS
+  # ---------------------------------------------------------
+  # HEADLINE: Lead with the number, then make it visceral.
+  # "87 milliseconds" is abstract. "Before you finish the
+  # thought" makes it concrete. The benchmark_table dual
+  # framing does the rest.
+  # ---------------------------------------------------------
+  - id: performance
+    type: benchmark_table
+    background: surface
+    label: "Performance"
+    headline: "87 Milliseconds. You Won&rsquo;t Finish the Thought."
+    intro: >
+      Speed matters in a writers&rsquo; room where momentum is currency and
+      every pause to look something up costs the pitch that was forming in
+      someone&rsquo;s head. Speed also matters when you&rsquo;re evaluating
+      whether infrastructure can scale past a single show.
+    metrics:
+      - metric: "Query Latency (Avg)"
+        result: "87ms"
+        hollywood_meaning: "Ask any question about your show&mdash;who was in that scene, what happened after, where it took place&mdash;and the answer arrives before the room moves on."
+        investor_meaning: "Sub-100ms P50 on PostgreSQL + Neo4j hybrid. Production-ready, horizontally scalable. No caching tricks."
+      - metric: "Processing Throughput"
+        result: "83 min/episode"
+        hollywood_meaning: "Upload scripts Friday evening. Complete knowledge graph by Monday morning. Overnight batch processing, not a weekend project."
+        investor_meaning: "3.6x faster than baseline after async pipeline optimisation. Linear cost scaling per episode&mdash;no superlinear blowup at series length."
+      - metric: "Entity Resolution Speed"
+        result: "120ms P95"
+        hollywood_meaning: "&ldquo;Is this the same character?&rdquo; resolved instantly&mdash;even across seasons, even after name changes, even when the script just says &lsquo;the bartender.&rsquo;"
+        investor_meaning: "ChromaDB + Neo4j hybrid scales in constant time per entity pair. Contrastive entity sharpening eliminates the N&sup2; trap."
+
+  # ---------------------------------------------------------
+  # 3. SCALE — CONVERTED FROM STATS TO PROSE
+  # ---------------------------------------------------------
+  # The original stats grid presented good numbers without
+  # narrative context. Converting to prose lets us weave the
+  # numbers into an argument: we chose hard test cases on
+  # purpose, and the numbers survived. Stats become punchlines
+  # inside sentences, not orphaned callouts.
+  #
+  # HEADLINE: "We Didn't Benchmark on Toy Examples" — implies
+  # that competitors did. The body proves it by describing
+  # what "real" looks like: 726 characters across 80+ episodes
+  # with zero entity drift.
+  # ---------------------------------------------------------
+  - id: scale
+    type: prose
+    background: page
+    label: "Scale"
+    headline: "We Didn&rsquo;t Benchmark on Toy Examples"
+    body: >
+      We chose the hardest test cases we could find. <em>The West Wing</em>
+      alone has 726 canonical entities across four seasons&mdash;from the President
+      of the United States to the bartender who appeared once in a cold open and
+      might return in Season 5. We processed 80+ episodes of television across five
+      series with different narrative structures, different temporal patterns,
+      different ratios of dialogue to action. The result: 15,000+ graph relationships
+      with dense connectivity across causal, thematic, temporal, and emotional edges.
+      <br><br>
+      The number that matters most isn&rsquo;t any of those. It&rsquo;s zero.
+      Zero entity drift. Process the same episode twice, get the same graph. Process
+      it a third time six months later, get the same graph again. The same character
+      mentioned in Episode 1 and Episode 40 resolves to the same canonical entity
+      with the same UUID. Deterministic, reproducible, and verifiable&mdash;which is
+      another way of saying: these aren&rsquo;t benchmarks we ran once and then
+      stopped looking. They hold.
+
+  # ---------------------------------------------------------
+  # 4. VALIDATION METHODOLOGY
+  # ---------------------------------------------------------
+  # HEADLINE: The inter-annotator agreement rate is the buried
+  # lede of the entire page. 96.3% agreement means the humans
+  # reviewing Fabula's output nearly always agreed with each
+  # other — so when they agree that Fabula is right, that
+  # agreement means something. Making them "argue" (resolve
+  # disagreements via adjudication) is methodology, not chaos.
+  #
+  # This section is where credibility lives. The tone is
+  # precise and intellectually honest — showing our work
+  # is the whole point.
+  # ---------------------------------------------------------
+  - id: methodology
+    type: prose
+    background: surface
+    label: "Methodology"
+    headline: "Two Annotators. 96.3% Agreement. And We Still Made Them Argue."
+    body: >
+      <strong>Human Annotation Baseline.</strong> Two independent annotators reviewed
+      the same material without seeing each other&rsquo;s work or Fabula&rsquo;s output.
+      They agreed 96.3% of the time. Where they disagreed, they adjudicated&mdash;discussed
+      the edge case, examined the source text, reached consensus. Fabula&rsquo;s accuracy
+      is measured against that consensus, not against either individual annotator and
+      certainly not against itself. This is how you build a benchmark that survives
+      peer review.
+      <br><br>
+      <strong>Cross-Episode Consistency.</strong> The hardest problem in narrative
+      extraction isn&rsquo;t identifying a character in one scene. It&rsquo;s knowing
+      that the &ldquo;Andy&rdquo; in Episode 1 and the &ldquo;Andrea Wyatt&rdquo; in
+      Episode 40 are the same person. We measure entity UUID stability across the full
+      series run: 98.7%. Manual adjudication is only triggered for genuine edge cases&mdash;name
+      changes after marriage, promotions that change how characters are addressed, aliases
+      that the writers invented to mislead the audience.
+      <br><br>
+      <strong>Reproducibility Is Not a Feature. It&rsquo;s an Obligation.</strong>
+      Process the same input twice, get the same output. No stochastic drift, no
+      accumulated error, no results that depend on which server handled the request.
+      Deterministic extraction with schema-enforced output validation. If a benchmark
+      can&rsquo;t be reproduced, it isn&rsquo;t a benchmark. It&rsquo;s a press release.
+      <br><br>
+      <strong>Open Dataset (Planned).</strong> We intend to open-source our <em>West Wing</em>
+      annotations for academic validation&mdash;a reproducible benchmark for narrative
+      extraction research. The field needs shared evaluation standards. Publishing ours
+      is the smallest useful thing we can do about that.
+
+# ===========================================================
+# CTA — BRIDGE FROM NUMBERS TO PRODUCT
+# ===========================================================
+# The closing CTA bridges from metrics (abstract) to the live
+# product (concrete). "You've read the benchmarks" acknowledges
+# what they just did. "Now walk the graph" invites them to
+# verify the claims themselves. The distinction between
+# "describing" and "demonstrating" is the whole argument of
+# the page compressed into six words.
+# ===========================================================
+cta:
+  background: hero
+  headline: "You&rsquo;ve Read the Benchmarks. Now Walk the Graph."
+  body: >
+    Numbers describe. The graph demonstrates. Browse the live catalog to see what
+    90.2% extraction accuracy and 87ms query latency actually feel like when you&rsquo;re
+    tracing a character through four seasons of television&mdash;or follow our thinking
+    on why narrative infrastructure matters.
+  ctas:
+    - label: "Explore The West Wing"
+      url: "/catalog/"
+      style: primary
+      icon: arrow-right
+    - label: "Read the Architecture"
+      url: "/platform/"
+      style: secondary
+      icon: cpu
+    - label: "Register Your Interest"
+      url: "/early-access/"
+      style: secondary
+      icon: user-plus
+
+# ===========================================================
+# CLOSING MANTRA
+# ===========================================================
+# Same ritual as the homepage: challenge, declaration,
+# romantic promise, personal invitation.
+# ===========================================================
+footer_breadcrumb: "All edges. No spreadsheets. Your story&rsquo;s structure has always been a graph. Now you can see it."

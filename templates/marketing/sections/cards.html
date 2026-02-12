@@ -1,0 +1,104 @@
+{% comment %}
+Cards section — vertical card list (left) + optional sidebar card/blockquote (right).
+
+Context:
+  section: dict with label, headline, intro, cards[], sidebar{blockquote, card}, blog_links[], ctas[]
+{% endcomment %}
+{% load content_tags %}
+
+<section class="py-20 md:py-28" style="background: {{ section.background|section_bg }};">
+    <div class="max-w-7xl mx-auto px-6">
+        <div class="mb-16 f-ornament">
+            {% if section.label %}<span class="f-label">{{ section.label }}</span>{% endif %}
+            <h2 class="text-3xl md:text-4xl font-semibold mt-3 mb-4 f-heading">{{ section.headline|safe }}</h2>
+            {% if section.intro %}
+            <p class="text-lg max-w-3xl" style="color: var(--f-fg-secondary); line-height: var(--f-line-height-body);">
+                {{ section.intro|safe }}
+            </p>
+            {% endif %}
+        </div>
+
+        <div class="grid lg:grid-cols-2 gap-12">
+            {# Left: card list #}
+            <div class="space-y-4">
+                {% for card in section.cards %}
+                <div class="f-card p-6"{% if card.border == 'left' %} style="border-left: 3px solid {{ card.color|accent_color }};"{% elif card.border == 'top' %} style="border-top: 3px solid {{ card.color|accent_color }};"{% endif %}>
+                    <div class="flex items-start gap-4">
+                        <div class="w-9 h-9 rounded-lg flex items-center justify-center shrink-0" style="background: {{ card.color|accent_bg }};">
+                            <i data-lucide="{{ card.icon }}" class="w-4 h-4" style="color: {{ card.color|accent_color }};"></i>
+                        </div>
+                        <div>
+                            <h3 class="font-semibold mb-1 f-heading">{{ card.title|safe }}</h3>
+                            <p class="text-sm" style="color: var(--f-fg-secondary);">
+                                {{ card.description|safe }}
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+
+            {# Right: sidebar #}
+            {% if section.sidebar %}
+            <div class="flex flex-col justify-center">
+                {% if section.sidebar.blockquote %}
+                <div class="f-blockquote mb-8">
+                    <p class="text-lg" style="color: var(--f-fg-secondary); font-family: var(--f-font-display); font-style: italic; line-height: var(--f-line-height-body);">
+                        {{ section.sidebar.blockquote|safe }}
+                    </p>
+                </div>
+                {% endif %}
+
+                {% if section.sidebar.card %}
+                <div class="f-card p-8" style="background: var(--f-bg-elevated);">
+                    <h4 class="text-sm font-semibold mb-4 f-heading">{{ section.sidebar.card.title|safe }}</h4>
+                    {% if section.sidebar.card.body %}
+                    <p class="text-sm mb-4" style="color: var(--f-fg-secondary);">
+                        {{ section.sidebar.card.body|safe }}
+                    </p>
+                    {% endif %}
+                    {% if section.sidebar.card.items %}
+                    <div class="space-y-4">
+                        {% for item in section.sidebar.card.items %}
+                        <div class="flex items-start gap-3">
+                            <i data-lucide="{{ item.icon }}" class="w-4 h-4 mt-1 shrink-0" style="color: {{ item.color|accent_color }};"></i>
+                            <div>
+                                <p class="text-sm font-medium" style="color: var(--f-fg-heading);">{{ item.title|safe }}</p>
+                                {% if item.description %}
+                                <p class="text-xs" style="color: var(--f-fg-tertiary);">{{ item.description|safe }}</p>
+                                {% endif %}
+                            </div>
+                        </div>
+                        {% endfor %}
+                    </div>
+                    {% endif %}
+                </div>
+                {% endif %}
+
+                {% if section.blog_links %}
+                <div class="mt-6">
+                    {% for link in section.blog_links %}
+                    <a href="{{ link.url }}" target="_blank" rel="noopener" class="f-text-link text-sm font-medium">
+                        {{ link.text|safe }} &rarr;
+                    </a>
+                    {% endfor %}
+                </div>
+                {% endif %}
+            </div>
+            {% endif %}
+        </div>
+
+        {% if section.ctas %}
+        <div class="flex flex-wrap gap-4 mt-12">
+            {% for cta in section.ctas %}
+            <a href="{{ cta.url }}" class="{% if cta.style == 'primary' %}f-btn-primary{% else %}f-btn-secondary{% endif %}">
+                {{ cta.label }}
+                {% if cta.icon %}
+                <i data-lucide="{{ cta.icon }}" class="w-4 h-4"></i>
+                {% endif %}
+            </a>
+            {% endfor %}
+        </div>
+        {% endif %}
+    </div>
+</section>

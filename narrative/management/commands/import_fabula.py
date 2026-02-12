@@ -392,24 +392,25 @@ class Command(BaseCommand):
         self.configure_site(main_series_page)
 
     def configure_site(self, root_page):
-        """Configure the default Wagtail Site to use our content root."""
+        """Configure the default Wagtail Site to use our content root.
+
+        Only sets the site root when no default site exists yet.  If a default
+        site is already configured (e.g. pointing at another series' index),
+        we leave it alone so that importing a second series doesn't hijack the
+        site root.
+        """
         if not root_page:
             self.log_info("  No root page available, skipping site configuration")
             return
 
         if self.dry_run:
-            self.log_info(f"  Would update default site to use root: {root_page.title}")
+            self.log_info(f"  Would configure site if needed (root: {root_page.title})")
             return
 
         try:
-            # Get or create the default site
             site = Site.objects.filter(is_default_site=True).first()
             if site:
-                site.root_page = root_page
-                site.site_name = root_page.title
-                site.save()
-                self.log_info(f"  Updated default site to use root: {root_page.title}")
-                self.stats.record_updated('Site')
+                self.log_info(f"  Default site already configured (root: {site.root_page.title}), skipping")
             else:
                 Site.objects.create(
                     hostname='*',

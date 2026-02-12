@@ -1,9 +1,9 @@
 # Series, Seasons, and Episodes
-# Generated: 2026-02-07T18:44:20.002256
+# Generated: 2026-02-10T16:46:00.193494
 
 - fabula_uuid: ser_motherland
   title: Motherland
-  description: 'Sharon Horgan and Holly Walsh''s BBC comedy about the chaos of modern parenting. The graph analyses the pilot episode, tracing Julia''s fraught alliances with the alpha mums and her makeshift support network.'
+  description: ''
   seasons:
   - fabula_uuid: sea_ser_motherland_s01
     season_number: 1
@@ -11,8 +11,7 @@
     episodes:
     - fabula_uuid: ep_sea_ser_motherland_s01_e01
       episode_number: 1
-      title: Motherland
-      written_by: Sharon Horgan & Holly Walsh
+      title: MOTHERLAND
       logline: Julia, a harried events organizer, scrambles to replace her suddenly
         retired mother as primary carer, juggling a swarm of children, a high-pressure
         job commitment and the ruthless social politics of the local 'alpha' mums
@@ -38,3 +37,42 @@
 
         Throughout, the script balances farce and anxiety: physical comedy (scarf in door, frozen bread, severed finger) meets social satire (alpha mum politics, curated domestic interiors). Julia’s arc moves from panic and brittle self-presentation toward pragmatic resilience: she loses access to the polished support network but gains a ragged, workable substitute that may sustain her when formal systems fail.
       dominant_tone: Bittersweet
+      raw_credits_block: ''
+      has_complete_credits: false
+      writing_credits:
+      - writer_uuid: writer_holly_walsh
+        credit_type: written_by
+        credit_position: 1
+        writer_group: 1
+        group_type: solo
+        full_credit_line: Written by Holly Walsh, Sharon Horgan, Graham Linehan &
+          Helen Linehan
+        source: manual_backfill
+        is_wga_standard: false
+      - writer_uuid: writer_sharon_horgan
+        credit_type: written_by
+        credit_position: 2
+        writer_group: 2
+        group_type: solo
+        full_credit_line: Written by Holly Walsh, Sharon Horgan, Graham Linehan &
+          Helen Linehan
+        source: manual_backfill
+        is_wga_standard: false
+      - writer_uuid: writer_graham_linehan
+        credit_type: written_by
+        credit_position: 3
+        writer_group: 3
+        group_type: team
+        full_credit_line: Written by Holly Walsh, Sharon Horgan, Graham Linehan &
+          Helen Linehan
+        source: manual_backfill
+        is_wga_standard: false
+      - writer_uuid: writer_helen_linehan
+        credit_type: written_by
+        credit_position: 4
+        writer_group: 3
+        group_type: team
+        full_credit_line: Written by Holly Walsh, Sharon Horgan, Graham Linehan &
+          Helen Linehan
+        source: manual_backfill
+        is_wga_standard: false

@@ -1,6 +1,6 @@
 {% load static wagtailcore_tags %}
 <!DOCTYPE html>
-<html lang="en" class="dark">
+<html lang="en" data-theme="{{ fabula_theme|default:'writerly' }}"{% if fabula_theme == 'dark' %} class="dark"{% endif %}>
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -18,7 +18,10 @@
     <meta property="og:image" content="{{ page.og_image.url }}">
     {% endif %}
 
-    {# Tailwind CSS via CDN #}
+    {# Design System Tokens #}
+    <link rel="stylesheet" href="{% static 'narrative/css/theme-tokens.css' %}">
+
+    {# Tailwind CSS via CDN (layout utilities only) #}
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
         tailwind.config = {
@@ -26,9 +29,7 @@
             theme: {
                 extend: {
                     colors: {
-                        slate: {
-                            950: '#0a0a0f',
-                        }
+                        slate: { 950: '#0a0a0f' }
                     }
                 }
             }
@@ -41,96 +42,113 @@
     {# Alpine.js for interactivity #}
     <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
 
+    {% if fabula_theme != 'dark' %}
+    {# Writerly fonts #}
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,300;1,9..40,400&family=Newsreader:ital,opsz,wght@0,6..72,300;0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,300;1,6..72,400&display=swap" rel="stylesheet">
+    {% endif %}
+
     <style>
-        /* Custom scrollbar */
-        ::-webkit-scrollbar {
-            width: 8px;
-            height: 8px;
-        }
-        ::-webkit-scrollbar-track {
-            background: #0f172a;
-        }
-        ::-webkit-scrollbar-thumb {
-            background: #334155;
-            border-radius: 4px;
-        }
-        ::-webkit-scrollbar-thumb:hover {
-            background: #475569;
-        }
+        html { scroll-behavior: smooth; }
 
-        html {
-            scroll-behavior: smooth;
-        }
-
-        /* Animated gradient backgrounds */
-        @keyframes gradient-shift {
-            0%, 100% { background-position: 0% 50%; }
-            50% { background-position: 100% 50%; }
-        }
-
-        .animate-gradient {
-            background-size: 200% 200%;
-            animation: gradient-shift 15s ease infinite;
-        }
-
-        /* Fade in animation */
-        @keyframes fadeIn {
-            from {
-                opacity: 0;
-                transform: translateY(20px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        .fade-in {
-            animation: fadeIn 0.6s ease-out forwards;
-        }
-
-        /* Glass morphism effect */
+        {% if fabula_theme == 'dark' %}
+        ::-webkit-scrollbar { width: 8px; height: 8px; }
+        ::-webkit-scrollbar-track { background: #0f172a; }
+        ::-webkit-scrollbar-thumb { background: #334155; border-radius: 4px; }
+        ::-webkit-scrollbar-thumb:hover { background: #475569; }
         .glass {
             background: rgba(15, 23, 42, 0.8);
             backdrop-filter: blur(12px);
             -webkit-backdrop-filter: blur(12px);
         }
+        {% else %}
+        .glass {
+            background: var(--f-bg-nav);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+        }
+        {% endif %}
+
+        /* Marketing-specific button styles */
+        .f-btn-primary {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.75rem 1.75rem;
+            font-family: var(--f-font-body);
+            font-size: 0.9375rem;
+            font-weight: 600;
+            border-radius: 6px;
+            background: var(--f-accent-primary);
+            color: var(--f-fg-inverse);
+            transition: all var(--f-transition-base);
+            text-decoration: none;
+        }
+        .f-btn-primary:hover {
+            opacity: 0.9;
+            transform: translateY(-1px);
+            box-shadow: 0 4px 12px rgba(139, 107, 61, 0.2);
+        }
+        .f-btn-secondary {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.75rem 1.75rem;
+            font-family: var(--f-font-body);
+            font-size: 0.9375rem;
+            font-weight: 500;
+            border-radius: 6px;
+            border: 1px solid var(--f-border-strong);
+            color: var(--f-fg-heading);
+            background: transparent;
+            transition: all var(--f-transition-base);
+            text-decoration: none;
+        }
+        .f-btn-secondary:hover {
+            border-color: var(--f-accent-primary);
+            color: var(--f-accent-primary);
+        }
     </style>
 
     {% block extra_css %}{% endblock %}
 </head>
+
+{% if fabula_theme == 'dark' %}
 <body class="min-h-screen bg-slate-950 text-slate-100 antialiased">
-    {# Marketing Navigation #}
+{% else %}
+<body class="min-h-screen antialiased" style="background-color: var(--f-bg-page); color: var(--f-fg-secondary); font-family: var(--f-font-body);">
+{% endif %}
+
+    {# ================================================================ #}
+    {# NAVIGATION                                                        #}
+    {# ================================================================ #}
+    {% if fabula_theme == 'dark' %}
     <header class="fixed top-0 left-0 right-0 z-50 glass border-b border-slate-800/50">
         <div class="max-w-7xl mx-auto px-6">
             <div class="flex items-center justify-between h-16">
-                {# Logo #}
                 <a href="/" class="flex items-center gap-2.5 group transition-all duration-300">
-                    <div class="w-9 h-9 rounded-lg bg-gradient-to-br from-amber-500 via-orange-500 to-amber-600 flex items-center justify-center shadow-lg shadow-amber-500/20 group-hover:shadow-amber-500/35 group-hover:scale-105 transition-all duration-300">
+                    <div class="w-9 h-9 rounded-lg bg-gradient-to-br from-amber-500 via-orange-500 to-amber-600 flex items-center justify-center shadow-lg shadow-amber-500/20">
                         <i data-lucide="zap" class="w-5 h-5 text-white"></i>
                     </div>
-                    <span class="font-bold tracking-tight text-white text-lg group-hover:text-amber-400 transition-colors">FABULA</span>
+                    <span class="font-bold tracking-tight text-white text-lg">FABULA</span>
                 </a>
-
-                {# Desktop Navigation #}
                 <nav class="hidden md:flex items-center gap-8">
-                    <a href="{% slugurl 'product' %}" class="text-sm text-slate-400 hover:text-white transition-colors">Product</a>
-                    <a href="{% slugurl 'use-cases' %}" class="text-sm text-slate-400 hover:text-white transition-colors">Use Cases</a>
-                    <a href="{% slugurl 'pricing' %}" class="text-sm text-slate-400 hover:text-white transition-colors">Pricing</a>
+                    <a href="/for-production/" class="text-sm text-slate-400 hover:text-white transition-colors">For Production</a>
                     <a href="{% url 'catalog' %}" class="text-sm text-slate-400 hover:text-white transition-colors flex items-center gap-1.5">
                         <i data-lucide="compass" class="w-4 h-4"></i>
                         Explore
                     </a>
+                    <a href="/about/" class="text-sm text-slate-400 hover:text-white transition-colors">About</a>
+                    <a href="/platform/" class="text-sm text-slate-400 hover:text-white transition-colors">Investors</a>
                 </nav>
-
-                {# CTA #}
                 <div class="flex items-center gap-4">
-                    <a href="{% slugurl 'demo' %}"
-                       class="px-4 py-2 text-sm font-medium rounded-lg bg-gradient-to-r from-amber-500 to-orange-500 text-white hover:from-amber-400 hover:to-orange-400 transition-all duration-300 shadow-lg shadow-amber-500/25 hover:shadow-amber-500/40">
-                        Get Demo
+                    <a href="?theme=writerly" class="hidden md:flex items-center px-2 py-1.5 text-sm text-slate-500 hover:text-white border border-slate-700/50 rounded-md transition-all duration-200" title="Switch to writerly theme">
+                        <i data-lucide="sun" class="w-4 h-4"></i>
                     </a>
-
-                    {# Mobile menu button #}
+                    <a href="/early-access/" class="px-4 py-2 text-sm font-medium rounded-lg bg-gradient-to-r from-amber-500 to-orange-500 text-white hover:from-amber-400 hover:to-orange-400 transition-all duration-300 shadow-lg shadow-amber-500/25">
+                        Early Access
+                    </a>
                     <button class="md:hidden p-2 text-slate-400 hover:text-white" x-data @click="$dispatch('toggle-mobile-menu')">
                         <i data-lucide="menu" class="w-5 h-5"></i>
                     </button>
@@ -138,6 +156,45 @@
             </div>
         </div>
     </header>
+    {% else %}
+    {# Writerly navigation #}
+    <header class="fixed top-0 left-0 right-0 z-50 glass" style="border-bottom: 1px solid var(--f-border-light);">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="flex items-center justify-between h-16">
+                {# Logo #}
+                <a href="/" class="flex items-center gap-2 group transition-all duration-200">
+                    <span class="text-xl tracking-tight font-semibold" style="font-family: var(--f-font-display); color: var(--f-fg-heading);">
+                        Fabula
+                    </span>
+                </a>
+
+                {# Desktop nav #}
+                <nav class="hidden md:flex items-center gap-8">
+                    <a href="/for-production/" class="text-sm transition-colors" style="color: var(--f-fg-tertiary);" onmouseover="this.style.color='var(--f-fg-heading)'" onmouseout="this.style.color='var(--f-fg-tertiary)'">For Production</a>
+                    <a href="{% url 'catalog' %}" class="text-sm transition-colors flex items-center gap-1.5" style="color: var(--f-fg-tertiary);" onmouseover="this.style.color='var(--f-fg-heading)'" onmouseout="this.style.color='var(--f-fg-tertiary)'">
+                        <i data-lucide="compass" class="w-4 h-4"></i>
+                        Explore
+                    </a>
+                    <a href="/about/" class="text-sm transition-colors" style="color: var(--f-fg-tertiary);" onmouseover="this.style.color='var(--f-fg-heading)'" onmouseout="this.style.color='var(--f-fg-tertiary)'">About</a>
+                    <a href="/platform/" class="text-sm transition-colors" style="color: var(--f-fg-tertiary);" onmouseover="this.style.color='var(--f-fg-heading)'" onmouseout="this.style.color='var(--f-fg-tertiary)'">Investors</a>
+                </nav>
+
+                {# Right side: theme toggle + CTA + mobile menu #}
+                <div class="flex items-center gap-4">
+                    <a href="?theme=dark" class="hidden md:flex items-center px-2 py-1.5 text-sm rounded-md transition-all duration-200" style="color: var(--f-fg-tertiary); border: 1px solid var(--f-border-light);" title="Switch to dark theme">
+                        <i data-lucide="moon" class="w-4 h-4"></i>
+                    </a>
+                    <a href="/early-access/" class="f-btn-primary" style="padding: 0.5rem 1.25rem; font-size: 0.875rem;">
+                        Early Access
+                    </a>
+                    <button class="md:hidden p-2" style="color: var(--f-fg-tertiary);" x-data @click="$dispatch('toggle-mobile-menu')">
+                        <i data-lucide="menu" class="w-5 h-5"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </header>
+    {% endif %}
 
     {# Mobile Menu #}
     <div x-data="{ open: false }"
@@ -151,13 +208,23 @@
          x-transition:leave-end="opacity-0"
          class="fixed inset-0 z-40 md:hidden"
          style="display: none;">
+        {% if fabula_theme == 'dark' %}
         <div class="absolute inset-0 bg-slate-950/90" @click="open = false"></div>
         <nav class="absolute top-16 left-0 right-0 glass border-b border-slate-800/50 p-6 space-y-4">
-            <a href="{% slugurl 'product' %}" class="block text-slate-300 hover:text-white">Product</a>
-            <a href="{% slugurl 'use-cases' %}" class="block text-slate-300 hover:text-white">Use Cases</a>
-            <a href="{% slugurl 'pricing' %}" class="block text-slate-300 hover:text-white">Pricing</a>
-            <a href="{% url 'catalog' %}" class="block text-slate-300 hover:text-white">Explore Graphs</a>
+            <a href="/for-production/" class="block text-slate-300 hover:text-white">For Production</a>
+            <a href="{% url 'catalog' %}" class="block text-slate-300 hover:text-white">Explore</a>
+            <a href="/about/" class="block text-slate-300 hover:text-white">About</a>
+            <a href="/platform/" class="block text-slate-300 hover:text-white">Investors</a>
         </nav>
+        {% else %}
+        <div class="absolute inset-0" style="background: rgba(250, 248, 244, 0.9);" @click="open = false"></div>
+        <nav class="absolute top-16 left-0 right-0 glass p-6 space-y-4" style="border-bottom: 1px solid var(--f-border-light);">
+            <a href="/for-production/" class="block" style="color: var(--f-fg-secondary);">For Production</a>
+            <a href="{% url 'catalog' %}" class="block" style="color: var(--f-fg-secondary);">Explore</a>
+            <a href="/about/" class="block" style="color: var(--f-fg-secondary);">About</a>
+            <a href="/platform/" class="block" style="color: var(--f-fg-secondary);">Investors</a>
+        </nav>
+        {% endif %}
     </div>
 
     {# Main content #}
@@ -165,11 +232,13 @@
         {% block content %}{% endblock %}
     </main>
 
-    {# Marketing Footer #}
+    {# ================================================================ #}
+    {# FOOTER                                                            #}
+    {# ================================================================ #}
+    {% if fabula_theme == 'dark' %}
     <footer class="border-t border-slate-800/50 mt-20 bg-slate-950">
         <div class="max-w-7xl mx-auto px-6 py-16">
             <div class="grid grid-cols-1 md:grid-cols-4 gap-12">
-                {# Brand #}
                 <div class="md:col-span-1">
                     <div class="flex items-center gap-2.5 mb-4">
                         <div class="w-8 h-8 rounded-lg bg-gradient-to-br from-amber-500 via-orange-500 to-amber-600 flex items-center justify-center">
@@ -177,46 +246,35 @@
                         </div>
                         <span class="font-bold text-white">FABULA</span>
                     </div>
-                    <p class="text-sm text-slate-500">
-                        {% if page.tagline %}{{ page.tagline }}{% else %}Your Show's Memory, Automated{% endif %}
-                    </p>
+                    <p class="text-sm text-slate-500">Narrative intelligence for production.</p>
                 </div>
-
-                {# Product Links #}
                 <div>
                     <h4 class="text-sm font-semibold text-white mb-4">Product</h4>
                     <ul class="space-y-3 text-sm text-slate-500">
-                        <li><a href="{% slugurl 'product' %}" class="hover:text-white transition-colors">Features</a></li>
-                        <li><a href="{% slugurl 'pricing' %}" class="hover:text-white transition-colors">Pricing</a></li>
+                        <li><a href="/for-production/" class="hover:text-white transition-colors">For Production</a></li>
                         <li><a href="{% url 'catalog' %}" class="hover:text-white transition-colors">Explore Graphs</a></li>
+                        <li><a href="/benchmarks/" class="hover:text-white transition-colors">Benchmarks</a></li>
                     </ul>
                 </div>
-
-                {# Use Cases #}
                 <div>
-                    <h4 class="text-sm font-semibold text-white mb-4">Use Cases</h4>
+                    <h4 class="text-sm font-semibold text-white mb-4">Investors</h4>
                     <ul class="space-y-3 text-sm text-slate-500">
-                        <li><a href="{% slugurl 'use-cases' %}" class="hover:text-white transition-colors">Writers' Rooms</a></li>
-                        <li><a href="{% slugurl 'use-cases' %}" class="hover:text-white transition-colors">Legal & Licensing</a></li>
-                        <li><a href="{% slugurl 'use-cases' %}" class="hover:text-white transition-colors">Game Adaptation</a></li>
+                        <li><a href="/platform/" class="hover:text-white transition-colors">Platform Architecture</a></li>
+                        <li><a href="/benchmarks/" class="hover:text-white transition-colors">Benchmarks</a></li>
+                        <li><a href="/early-access/" class="hover:text-white transition-colors">Early Access</a></li>
                     </ul>
                 </div>
-
-                {# Company #}
                 <div>
                     <h4 class="text-sm font-semibold text-white mb-4">Company</h4>
                     <ul class="space-y-3 text-sm text-slate-500">
-                        <li><a href="{% slugurl 'about' %}" class="hover:text-white transition-colors">About</a></li>
-                        <li><a href="{% slugurl 'faq' %}" class="hover:text-white transition-colors">FAQ</a></li>
-                        <li><a href="{% slugurl 'demo' %}" class="hover:text-white transition-colors">Contact</a></li>
+                        <li><a href="/about/" class="hover:text-white transition-colors">About</a></li>
+                        <li><a href="https://fabula.substack.com" class="hover:text-white transition-colors">Blog</a></li>
+                        <li><a href="mailto:hello@fabula.productions" class="hover:text-white transition-colors">Contact</a></li>
                     </ul>
                 </div>
             </div>
-
             <div class="mt-12 pt-8 border-t border-slate-800/50 flex flex-col md:flex-row justify-between items-center gap-4">
-                <p class="text-xs text-slate-600">
-                    &copy; {% now "Y" %} Fabula. All rights reserved.
-                </p>
+                <p class="text-xs text-slate-600">&copy; {% now "Y" %} Fabula. All rights reserved.</p>
                 <div class="flex items-center gap-6 text-xs text-slate-600">
                     <a href="#" class="hover:text-white transition-colors">Privacy</a>
                     <a href="#" class="hover:text-white transition-colors">Terms</a>
@@ -224,6 +282,67 @@
             </div>
         </div>
     </footer>
+
+    {% else %}
+    {# Writerly footer #}
+    <footer style="border-top: 1px solid var(--f-border-default);" class="mt-20">
+        <div class="max-w-7xl mx-auto px-6 py-16">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-12">
+                {# Brand #}
+                <div class="md:col-span-1">
+                    <div class="mb-4">
+                        <span class="text-xl tracking-tight font-semibold" style="font-family: var(--f-font-display); color: var(--f-fg-heading);">
+                            Fabula
+                        </span>
+                    </div>
+                    <p class="text-sm" style="color: var(--f-fg-tertiary);">
+                        Narrative intelligence for production.
+                    </p>
+                </div>
+
+                {# Product #}
+                <div>
+                    <h4 class="text-sm font-semibold mb-4" style="color: var(--f-fg-heading); font-family: var(--f-font-body); letter-spacing: var(--f-letter-spacing-label); text-transform: uppercase; font-size: 0.75rem;">Product</h4>
+                    <ul class="space-y-3 text-sm" style="color: var(--f-fg-tertiary);">
+                        <li><a href="/for-production/" class="f-text-link">For Production</a></li>
+                        <li><a href="{% url 'catalog' %}" class="f-text-link">Explore Graphs</a></li>
+                        <li><a href="/benchmarks/" class="f-text-link">Benchmarks</a></li>
+                    </ul>
+                </div>
+
+                {# Investors #}
+                <div>
+                    <h4 class="text-sm font-semibold mb-4" style="color: var(--f-fg-heading); font-family: var(--f-font-body); letter-spacing: var(--f-letter-spacing-label); text-transform: uppercase; font-size: 0.75rem;">Investors</h4>
+                    <ul class="space-y-3 text-sm" style="color: var(--f-fg-tertiary);">
+                        <li><a href="/platform/" class="f-text-link">Platform Architecture</a></li>
+                        <li><a href="/benchmarks/" class="f-text-link">Benchmarks</a></li>
+                        <li><a href="/early-access/" class="f-text-link">Early Access</a></li>
+                    </ul>
+                </div>
+
+                {# Company #}
+                <div>
+                    <h4 class="text-sm font-semibold mb-4" style="color: var(--f-fg-heading); font-family: var(--f-font-body); letter-spacing: var(--f-letter-spacing-label); text-transform: uppercase; font-size: 0.75rem;">Company</h4>
+                    <ul class="space-y-3 text-sm" style="color: var(--f-fg-tertiary);">
+                        <li><a href="/about/" class="f-text-link">About</a></li>
+                        <li><a href="https://fabula.substack.com" class="f-text-link">Blog</a></li>
+                        <li><a href="mailto:hello@fabula.productions" class="f-text-link">Contact</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="mt-12 pt-8 flex flex-col md:flex-row justify-between items-center gap-4" style="border-top: 1px solid var(--f-border-light);">
+                <p class="text-xs" style="color: var(--f-fg-tertiary);">
+                    &copy; {% now "Y" %} Fabula. All rights reserved.
+                </p>
+                <div class="flex items-center gap-6 text-xs" style="color: var(--f-fg-tertiary);">
+                    <a href="#" class="f-text-link">Privacy</a>
+                    <a href="#" class="f-text-link">Terms</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+    {% endif %}
 
     {# Initialize Lucide icons #}
     <script>

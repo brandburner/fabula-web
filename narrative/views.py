@@ -18,10 +18,12 @@ Views support series scoping via SeriesScopedMixin, enabling URLs like:
 """
 
 import json
+import logging
 import re
 
-from django.http import Http404
+from django.http import Http404, JsonResponse
 from django.shortcuts import render, get_object_or_404, redirect
+from django.views.decorators.http import require_POST
 from django.views.generic import ListView, DetailView, TemplateView, View
 
 from django.db import models
@@ -33,8 +35,10 @@ from .models import (
     ConnectionType, LocationInvolvement, OrganizationInvolvement,
     OrganizationPage, ObjectPage, ObjectInvolvement,
     CharacterIndexPage, OrganizationIndexPage, ObjectIndexPage, EventIndexPage,
-    SeriesIndexPage, Act, EventBeatLink,
+    SeriesIndexPage, Act, EventBeatLink, EngagementSignal,
 )
+
+logger = logging.getLogger(__name__)
 
 
 def _clean_title(value):
@@ -1396,6 +1400,52 @@ class GraphView(ListView):
         ).filter(event_count__gt=0).order_by('-event_count')[:5]
 
         return context
+
+
+# =============================================================================
+# ENGAGEMENT TRACKING
+# =============================================================================
+
+@require_POST
+def record_engagement(request):
+    """
+    Record an anonymous engagement signal (e.g. "request next season" click).
+
+    POST /api/engagement/
+    Body (JSON): {"series_slug": "west-wing", "action": "request_season",
+                  "metadata": {"next_season": 5}}
+
+    Returns 201 on success. No auth required — these are anonymous signals.
+    """
+    try:
+        data = json.loads(request.body)
+    except (json.JSONDecodeError, ValueError):
+        return JsonResponse({'error': 'Invalid JSON'}, status=400)
+
+    series_slug = data.get('series_slug', '').strip()
+    action = data.get('action', '').strip()
+    metadata = data.get('metadata', {})
+
+    if not series_slug or not action:
+        return JsonResponse({'error': 'series_slug and action required'}, status=400)
+
+    valid_actions = {c[0] for c in EngagementSignal.ACTION_CHOICES}
+    if action not in valid_actions:
+        return JsonResponse({'error': f'Unknown action: {action}'}, status=400)
+
+    signal = EngagementSignal.objects.create(
+        series_slug=series_slug,
+        action=action,
+        metadata=metadata,
+    )
+
+    # Structured log for Railway log search
+    logger.info(
+        'engagement_signal series=%s action=%s meta=%s',
+        series_slug, action, json.dumps(metadata),
+    )
+
+    return JsonResponse({'ok': True, 'id': signal.pk}, status=201)
 
 
 # =============================================================================

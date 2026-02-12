@@ -1,0 +1,401 @@
+# About Page — Brand Voice Transformation
+# ========================================
+#
+# STRATEGIC ARGUMENT (sustained throughout):
+# The gap between the told order and the happened order is the oldest
+# unsolved problem in narrative theory. It is also an engineering
+# problem. Nobody built the infrastructure to solve it computationally
+# until now. That failure has cost studios millions and showrunners
+# their sanity. We built the thing that was never built.
+#
+# COMPETITIVE FOIL:
+# The spreadsheet, the wiki, the PDF story bible — but also the
+# deeper foil: the entire category of "document-shaped tools" applied
+# to graph-shaped problems. The About page diagnoses WHY documents
+# fail at a theoretical level, not just a practical one.
+#
+# AUDIENCE:
+# Intellectually serious readers — showrunners, narratologists,
+# investors who want to understand the depth. This is the page that
+# gets forwarded to colleagues with "you need to read this."
+#
+# VOICE REGISTER:
+# The Intelligent Friend at their most essayistic. Confident,
+# conspiratorial, precise. Diagnoses, never empathises. Makes
+# an argument, not a pitch.
+#
+# PAGE ROLE:
+# Intellectual anchor of the site. If the homepage is the opening
+# argument, this is the peer-reviewed paper behind it. Narratological
+# depth, architectural conviction, philosophical seriousness.
+
+---
+meta:
+  slug: about
+  title: "About Fabula — The Story You Told Is Not the Story That Happened"
+  description: "The oldest problem in narrative theory is also an engineering problem. Fabula is the first production-grade system that solves it. Here's why it matters."
+  template: marketing/about_page.html
+  audiences:
+    - general
+
+# ===========================================================
+# HERO
+# ===========================================================
+# HEADLINE: Provocative reversal.
+# Surface reading: accusatory — "your story is wrong, you told
+# it incorrectly." Creates genuine friction for anyone who makes
+# stories for a living.
+#
+# Resolved reading: This is literally what the page is about.
+# Fabula vs. syuzhet — the told order is not the happened order.
+# The Russian formalists named this gap a century ago. Every
+# flashback, every cold open, every non-linear narrative lives
+# in that gap. The resolution lands in the first two sentences
+# and reframes the accusation as the foundational insight of
+# narrative theory itself.
+#
+# The word "story" does double duty: the audience makes stories,
+# and this headline challenges their relationship to them. The
+# word "happened" implies a ground truth that exists independent
+# of telling — which is exactly what a knowledge graph captures.
+# ===========================================================
+
+hero:
+  badge:
+    icon: book-open
+    text: "First Principles"
+  headline: "The Story You Told Is Not the Story That Happened"
+  body: >
+    That&rsquo;s not an accusation. It&rsquo;s a century-old insight. In 1925, the Russian
+    formalists gave it a name: the gap between <em>fabula</em>&mdash;what happened in the story
+    world&mdash;and <em>syuzhet</em>&mdash;the order in which the audience encounters it. Every
+    flashback exploits that gap. Every cold open depends on it. Every non-linear narrative is an
+    argument about which gap matters most. And for a hundred years, nobody built the infrastructure
+    to represent both sides computationally. We did.
+
+# ===========================================================
+# SECTIONS
+# ===========================================================
+sections:
+
+  # ---------------------------------------------------------
+  # 1. NARRATOLOGICAL FOUNDATION
+  # ---------------------------------------------------------
+  # VOICE STRATEGY: This section is the intellectual credentials.
+  # The headline is already strong — keep and tighten. The Genette
+  # blockquote is the page's best single line — preserve it. The
+  # content about dual temporal indices and computational implications
+  # is where the page earns the right to be forwarded to colleagues.
+  #
+  # COMPRESSION: Show the computational problem through a specific
+  # example (a flashback in Episode 15 recontextualizing Episode 3)
+  # rather than abstracting. Trust the reader to generalise.
+  # ---------------------------------------------------------
+  - id: narratological-foundation
+    type: prose
+    background: page
+    label: "First Principles"
+    headline: "Fabula and Syuzhet: The Oldest Problem in Narrative Theory"
+    body: >
+      <em>Fabula</em> is what happened&mdash;the chronological sequence of events in the story
+      world. <em>Syuzhet</em> is how it&rsquo;s told&mdash;the order in which the audience
+      encounters those events. The distinction is not academic. It is computational. To model a
+      story properly, you need dual parallel indices with typed edges connecting them. When a writer
+      introduces a flashback in Episode 15 that recontextualises a scene from Episode 3, the
+      knowledge graph needs to represent both the story-world sequence <em>and</em> the narrative
+      presentation order&mdash;and the causal, thematic, and emotional relationships between them.
+      <br><br>
+      This matters for production because the questions showrunners actually ask are questions about
+      this gap. &ldquo;What did the audience know at this point in the story?&rdquo; is a syuzhet
+      query. &ldquo;What had actually happened by this point in the timeline?&rdquo; is a fabula
+      query. They sound similar. They are fundamentally different operations, and answering them
+      correctly requires maintaining both indices simultaneously. Flashback impact analysis. Causal
+      chain traversal. Audience knowledge state at any point in the narrative. These are graph
+      operations. They require graph infrastructure. Most tools don&rsquo;t even try.
+    blockquote: >
+      We didn&rsquo;t invent this framework. G&eacute;rard Genette described it in 1972.
+      We&rsquo;re the first to implement it as production-grade software.
+    blog_links:
+      - text: "Read: Don&rsquo;t Blink"
+        url: "https://storygraph.substack.com/p/dont-blink"
+
+  # ---------------------------------------------------------
+  # 2. THE INFRASTRUCTURE WAS NEVER BUILT
+  # ---------------------------------------------------------
+  # VOICE STRATEGY: Diagnostic, not empathetic. The original
+  # section opened with "We've been in writers' rooms. We've seen
+  # the chaos..." — empathy-first, origin-story framing. The voice
+  # primer says: "Fabula doesn't empathise. It diagnoses."
+  #
+  # REVERSAL: "The Infrastructure Was Never Built" — surface reads
+  # as a complaint or an excuse. Resolved reading: this is an
+  # architectural diagnosis. The tools exist (spreadsheets, wikis,
+  # proprietary metadata systems). The infrastructure — the layer
+  # that treats narrative structure as queryable, typed, temporal
+  # data — was never built. Nobody built it. Not Netflix, not
+  # Disney, not the studios spending millions on content metadata
+  # teams. They built documents about stories. They never built
+  # the computational layer that understands story structure.
+  #
+  # FOIL: Studio proprietary systems — specific (Netflix's
+  # Entertainment Knowledge Graph, Disney's content metadata
+  # teams), not generic. Diagnosed as expensive, manual, siloed.
+  # ---------------------------------------------------------
+  - id: infrastructure-gap
+    type: prose
+    background: surface
+    label: "The Diagnosis"
+    headline: "The Infrastructure Was Never Built"
+    body: >
+      Every major studio has spent millions on proprietary content metadata systems. Netflix has
+      its Entertainment Knowledge Graph. Disney has content metadata teams. These systems are
+      manually curated, siloed per show, and not embedded in creative workflows. They can tell
+      you which actor appears in which episode. They cannot tell you why a character&rsquo;s
+      decision in Season 2 makes a storyline in Season 4 impossible. That is not a feature they
+      lack. It is a category of question they were never designed to answer.
+      <br><br>
+      The gap is architectural, not budgetary. A spreadsheet with tabs for each season is not an
+      infrastructure failure because it&rsquo;s underfunded. It&rsquo;s an infrastructure failure
+      because spreadsheets model lists, and stories are not lists. A wiki that was accurate in
+      February is not a knowledge management problem. It&rsquo;s a temporal data problem&mdash;the
+      wiki has no concept of &ldquo;accurate as of which episode.&rdquo; A PDF story bible that
+      the script coordinator updates on Fridays is not a process problem. It&rsquo;s a single
+      point of failure with no version control, no query interface, and no mechanism to detect
+      its own inaccuracy.
+      <br><br>
+      Nobody ever built the infrastructure layer that treats narrative structure the way databases
+      treat transactions&mdash;with typed relationships, temporal indices, and zero drift. Not
+      because it was impossible. Because it required thinking about stories as data structures
+      rather than documents, and the people who think about stories and the people who think about
+      data structures have historically not been in the same room. We put them in the same room.
+
+  # ---------------------------------------------------------
+  # 3. SPREADSHEETS LIST. WIKIS DESCRIBE. ONLY GRAPHS ANSWER.
+  # ---------------------------------------------------------
+  # VOICE STRATEGY: The competitive foil at its sharpest. Three
+  # words diagnose each tool category. Then we demonstrate: show
+  # a graph query running in prose (not code) that no spreadsheet
+  # or wiki could answer. The reader should feel the architectural
+  # argument click into place.
+  #
+  # STRUCTURAL NOTE: The deepest move in this section is the
+  # identity/state separation — Character vs. EventParticipation.
+  # This is the architectural insight that distinguishes a knowledge
+  # graph from a document. Documents flatten. Graphs preserve.
+  # ---------------------------------------------------------
+  - id: why-graphs
+    type: prose
+    background: page
+    label: "Architecture"
+    headline: "Spreadsheets List. Wikis Describe. Only Graphs Answer."
+    body: >
+      The question &ldquo;which characters have scenes with both the President and the First Lady,
+      and how did those relationships change after the MS scandal?&rdquo; is not a hard question.
+      Any writer on <em>The West Wing</em> could answer it from memory&mdash;for a while. By
+      Season 4, they couldn&rsquo;t. By the time a new writer joins mid-season, they have no
+      chance. The question requires traversal: following typed edges across temporal boundaries,
+      filtering by relationship state, aggregating across episodes. Try that in a spreadsheet.
+      Try it in a wiki. You will get silence, or you will get the script coordinator&rsquo;s
+      best guess, which is the same thing.
+      <br><br>
+      A knowledge graph answers it in 87 milliseconds. Not because graphs are faster than
+      spreadsheets&mdash;they are, but that&rsquo;s not the point. Because the question is
+      a graph operation. It has a shape: start at two nodes (the President, the First Lady),
+      traverse all shared edges (scenes), filter by temporal boundary (the MS scandal), compare
+      relationship states before and after. That shape does not exist in a spreadsheet. It does
+      not exist in a wiki. It exists in a graph, the way a join exists in a relational database.
+      You cannot fake it with a better spreadsheet any more than you can fake a SQL join with
+      a cleverer filing cabinet.
+      <br><br>
+      The deepest architectural decision is subtler than the database choice. It is the separation
+      of <em>identity</em> from <em>state</em>. A Character node represents who someone
+      is&mdash;their canonical identity, their aliases, their persistent attributes. An
+      EventParticipation represents who they are <em>in a specific moment</em>&mdash;their
+      emotional state, their goals, what they did. This separation is what allows a knowledge
+      graph to answer &ldquo;how did this character change over time?&rdquo; without overwriting
+      their history. Documents flatten time into the most recent edit. Graphs preserve every state
+      a character has ever occupied. That is the difference between a reference document and a
+      knowledge structure.
+    blog_links:
+      - text: "Read: The Computational Problem of Narrative Memory"
+        url: "https://storygraph.substack.com/p/the-computational-problem-of-narrative"
+      - text: "Read: Why Stories Are Webs"
+        url: "https://storygraph.substack.com/p/why-stories-are-webs-and-how-were"
+
+  # ---------------------------------------------------------
+  # 4. PRINCIPLES
+  # ---------------------------------------------------------
+  # VOICE STRATEGY: Convictions, not aspirations. Each principle
+  # advances the strategic argument. The quotes are compressed
+  # to single-clause punchlines. The bodies diagnose rather than
+  # describe.
+  # ---------------------------------------------------------
+  - id: principles
+    type: principles
+    background: surface
+    label: "Convictions"
+    headline: "What We Believe"
+    intro: >
+      These are not design principles. They are architectural commitments that determine
+      what the system can and cannot do. Each one closes a door on purpose.
+    principles:
+      - title: "Graphs, not documents"
+        quote: "&ldquo;A story is a web of typed relationships. A spreadsheet is a list.&rdquo;"
+        body: >
+          The entertainment industry creates the most complex narrative structures in human
+          culture and manages them in Google Sheets with tabs for each season. We built a graph
+          database because stories are webs of relationships, not rows of data. The tool should
+          match the shape of the problem.
+      - title: "Dual temporal indices"
+        quote: "&ldquo;Narrative time is not audience time. Track both or track neither.&rdquo;"
+        body: >
+          Every flashback exploits the gap between fabula and syuzhet. Every cold open depends on
+          it. We maintain both temporal indices because the questions writers actually ask require
+          both timelines, and a system that collapses them into one is not simplifying. It is
+          losing information.
+      - title: "Human-in-loop adjudication"
+        quote: "&ldquo;The AI is the research assistant. You are the editor.&rdquo;"
+        body: >
+          Every extraction is editable. Every entity is mergeable. Every relationship is
+          overridable. We designed for a workflow where machines propose and humans decide,
+          because narrative interpretation is not a classification task. It is an editorial
+          judgment, and editorial judgments belong to editors.
+      - title: "Zero drift"
+        quote: "&ldquo;Hallucination is an engineering problem, not an inevitability.&rdquo;"
+        body: >
+          Schema constraints. Evidence grounding. Confidence gating. Contrastive resolution.
+          We treat hallucination the way databases treat corruption: with layers of defence
+          that make it progressively harder for bad data to survive. Same input, same graph,
+          every time. Accuracy over speed, always.
+      - title: "Edges are first-class content"
+        quote: "&ldquo;Connections between events matter as much as the events themselves.&rdquo;"
+        body: >
+          Other tools extract entities. We extract the relationships between them&mdash;causal,
+          thematic, emotional, temporal&mdash;because narrative meaning lives in the edges. A
+          character is a node. A character&rsquo;s arc is a path through typed edges over time.
+          If your tool only gives you nodes, it is giving you a cast list, not a story.
+
+  # ---------------------------------------------------------
+  # 5. THE WORK SO FAR — converted from stats to prose
+  # ---------------------------------------------------------
+  # VOICE STRATEGY: The original was a stat grid. The voice primer
+  # says: "Stats appear WITHIN prose as punchlines, not freestanding
+  # callouts." The intro text about choosing the hardest test cases
+  # was already the best material — promote it to the core of a
+  # prose section, weave the numbers in as evidence.
+  #
+  # COMPRESSION: 726 entities, 80+ episodes, 5 series, 0 entity
+  # drift — these numbers appear as punchlines within sentences,
+  # not as callout cards. The reader encounters them as proof
+  # points in an argument, not as a dashboard.
+  # ---------------------------------------------------------
+  - id: the-work
+    type: prose
+    background: page
+    label: "Production Scale"
+    headline: "Five Series. Zero Shortcuts."
+    body: >
+      We chose the hardest test cases we could find, deliberately. Star Trek: The Next Generation
+      for alias complexity and multi-species naming conventions&mdash;a universe where a single
+      character might be referenced as &ldquo;Lieutenant Worf,&rdquo; &ldquo;Worf, son of Mogh,&rdquo;
+      or &ldquo;Ambassador Worf&rdquo; across different episodes, and the system must understand
+      these are the same entity without being told. Doctor Who for identity continuity across
+      regeneration&mdash;a protagonist who changes face, personality, and actor while remaining
+      canonically continuous. The West Wing for sheer density of political relationships, where
+      726 canonical entities interact across four seasons of overlapping storylines. Motherland:
+      Fort Salem for military hierarchy and supernatural world-building that bends the rules of
+      a realist knowledge graph. Indiana Jones for cinematic set pieces spanning decades of
+      in-world time.
+      <br><br>
+      Five series. More than 80 episodes processed end to end. 726 canonical entities&mdash;characters,
+      locations, objects, organisations&mdash;extracted, resolved, and linked with zero entity drift
+      across the entire corpus. Same input, same graph, every time. Deterministic, reproducible,
+      auditable. We did not choose easy shows and claim generality. We chose the shows that would
+      break a brittle system and built a system that did not break. If the architecture survives
+      Worf&rsquo;s three canonical names and the Doctor&rsquo;s fourteen canonical faces, it will
+      survive your show.
+    ctas:
+      - label: "Explore the Catalog"
+        url: "/catalog/"
+        style: secondary
+        icon: arrow-right
+
+  # ---------------------------------------------------------
+  # 6. WHEN YOUR SHOW'S STRUCTURE IS A GRAPH, ADAPTATION
+  #    BECOMES A QUERY
+  # ---------------------------------------------------------
+  # VOICE STRATEGY: The future positioned as inevitability, not
+  # aspiration. The original headline "What Comes Next" is a
+  # generic roadmap label. The replacement makes the future a
+  # logical consequence of the architecture: if you have a graph,
+  # then adaptation, onboarding, legal export, and game design
+  # are all just queries against it.
+  #
+  # The prose about game studios, legal asset manifests, and
+  # Season 4 onboarding is the argument's natural conclusion —
+  # not a product roadmap but an architectural inevitability.
+  # ---------------------------------------------------------
+  - id: whats-next
+    type: prose
+    background: surface
+    label: "What Follows"
+    headline: "When Your Show&rsquo;s Structure Is a Graph, Adaptation Becomes a Query"
+    body: >
+      A knowledge graph of narrative is not a story bible. It is a foundation. When your show&rsquo;s
+      narrative structure is a queryable graph, things that used to require months of manual work
+      become operations. &ldquo;Give me every character with more than three scenes in the same
+      location&rdquo; is a graph traversal that feeds directly into game level design. &ldquo;Find
+      all unresolved character conflicts&rdquo; is a query that tells the writers&rsquo; room
+      where to focus next. &ldquo;Export every entity, relationship, and constraint for legal
+      review&rdquo; is a single command, not a three-week project.
+      <br><br>
+      When a new writer joins in Season 4, they do not read a 200-page PDF and hope they absorbed
+      it. They query the graph: &ldquo;Show me this character&rsquo;s complete arc, every
+      relationship they have, and every unresolved thread attached to them.&rdquo; When legal needs
+      an asset manifest for a licensing deal, they export structured data from the graph, not a
+      folder of documents that someone assembled by hand. When a game studio licenses the IP, they
+      receive a knowledge graph with typed relationships and temporal indices, not a binder and a
+      phone call with the showrunner.
+      <br><br>
+      This is not a vision statement. It is an architectural consequence. If the data is structured,
+      queryable, and temporally indexed, these capabilities do not need to be built. They are already
+      implied by the structure. The only question was whether anyone would build the structure.
+      We built it.
+
+# ===========================================================
+# CTA — THE CLOSING MANTRA
+# ===========================================================
+# VOICE STRATEGY: "Step Into the Graph" echoes the closing mantra
+# and mirrors the homepage CTA. It is an invitation that is also
+# a declarative statement about the product's nature. You don't
+# "sign up for" a graph. You step into it. The spatial metaphor
+# implies exploration, not consumption.
+#
+# The original "We'd Like to Hear Your Story" was a benefit
+# statement — empathy-first, audience-pleasing. The replacement
+# is a challenge and an invitation simultaneously.
+# ===========================================================
+cta:
+  background: hero
+  headline: "Step Into the Graph"
+  body: >
+    See what happens when every character, location, and story thread in a show
+    lives in a knowledge graph instead of a spreadsheet. Browse the live catalog.
+    Read the arguments behind the architecture. Or just ask us about Genette.
+  ctas:
+    - label: "Explore the Catalog"
+      url: "/catalog/"
+      style: primary
+      icon: arrow-right
+    - label: "Read Our Substack"
+      url: "https://fabula.substack.com"
+      style: secondary
+      icon: book-open
+
+# ===========================================================
+# CLOSING MANTRA (footer breadcrumb)
+# ===========================================================
+# Challenge / declaration / romantic promise / personal invitation.
+# Matches the homepage mantra exactly — site-wide consistency.
+# ===========================================================
+footer_breadcrumb: "All edges. No spreadsheets. Your story&rsquo;s structure has always been a graph. Now you can see it."

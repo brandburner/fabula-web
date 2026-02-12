@@ -1852,6 +1852,12 @@ class Neo4jExporter:
             events_dir = self.output_dir / 'events'
             events_dir.mkdir(exist_ok=True)
 
+            # Clear stale event files from previous exports to prevent
+            # the importer from loading orphaned files with mismatched
+            # episode UUIDs (e.g. after switching megagraph ↔ single-season)
+            for stale in events_dir.glob('*.yaml'):
+                stale.unlink()
+
             for series_data in all_series:
                 series_title = series_data.get('title', 'Unknown')
                 for season in series_data.get('seasons', []):

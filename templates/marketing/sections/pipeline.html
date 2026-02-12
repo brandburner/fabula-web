@@ -1,0 +1,113 @@
+{% comment %}
+Pipeline section — numbered step cards (left) + optional sidebar content (right).
+
+Context:
+  section: dict with label, headline, intro, steps[], sidebar{blockquote, card, code_snippet}, blog_links[]
+{% endcomment %}
+{% load content_tags %}
+
+<section class="py-20 md:py-28" style="background: {{ section.background|section_bg }};">
+    <div class="max-w-7xl mx-auto px-6">
+        <div class="mb-16 f-ornament">
+            {% if section.label %}<span class="f-label">{{ section.label }}</span>{% endif %}
+            <h2 class="text-3xl md:text-4xl font-semibold mt-3 mb-4 f-heading">{{ section.headline|safe }}</h2>
+            {% if section.intro %}
+            <p class="text-lg max-w-3xl" style="color: var(--f-fg-secondary); line-height: var(--f-line-height-body);">
+                {{ section.intro|safe }}
+            </p>
+            {% endif %}
+        </div>
+
+        <div class="grid lg:grid-cols-2 gap-12">
+            {# Left: pipeline steps #}
+            <div class="space-y-4">
+                {% for step in section.steps %}
+                <div class="f-card p-6" style="border-left: 3px solid {{ step.color|accent_color }};">
+                    <div class="flex items-start gap-4">
+                        <div class="w-10 h-10 rounded-lg flex items-center justify-center shrink-0" style="background: {{ step.color|accent_bg }};">
+                            <span class="text-sm font-semibold" style="color: {{ step.color|accent_color }};">{{ step.number }}</span>
+                        </div>
+                        <div>
+                            <h3 class="font-semibold mb-1 f-heading">{{ step.title|safe }}</h3>
+                            <p class="text-sm" style="color: var(--f-fg-secondary);">
+                                {{ step.description|safe }}
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+
+            {# Right: sidebar content #}
+            {% if section.sidebar %}
+            <div class="flex flex-col justify-center">
+                {% if section.sidebar.blockquote %}
+                <div class="f-blockquote mb-8">
+                    <p class="text-lg mb-4" style="color: var(--f-fg-secondary); font-family: var(--f-font-display); font-style: italic; line-height: var(--f-line-height-body);">
+                        {{ section.sidebar.blockquote|safe }}
+                    </p>
+                </div>
+                {% endif %}
+
+                {% if section.sidebar.card %}
+                <div class="f-card p-6" style="background: var(--f-bg-elevated);">
+                    <h4 class="text-sm font-semibold mb-3 f-heading">{{ section.sidebar.card.title|safe }}</h4>
+                    {% if section.sidebar.card.body %}
+                    <p class="text-sm mb-4" style="color: var(--f-fg-secondary);">
+                        {{ section.sidebar.card.body|safe }}
+                    </p>
+                    {% endif %}
+                    {% if section.sidebar.card.items %}
+                    <div class="space-y-4">
+                        {% for item in section.sidebar.card.items %}
+                        <div class="flex items-start gap-3">
+                            <i data-lucide="{{ item.icon }}" class="w-4 h-4 mt-1 shrink-0" style="color: {{ item.color|accent_color }};"></i>
+                            <div>
+                                <p class="text-sm font-medium" style="color: var(--f-fg-heading);">{{ item.title|safe }}</p>
+                                {% if item.description %}
+                                <p class="text-xs" style="color: var(--f-fg-tertiary);">{{ item.description|safe }}</p>
+                                {% endif %}
+                            </div>
+                        </div>
+                        {% endfor %}
+                    </div>
+                    {% endif %}
+                </div>
+                {% endif %}
+
+                {% if section.sidebar.code_snippet %}
+                {% with snippet=section.sidebar.code_snippet %}
+                <div class="mt-6">
+                    <div class="flex items-center gap-2 mb-3">
+                        {% if snippet.icon %}
+                        <i data-lucide="{{ snippet.icon }}" class="w-4 h-4" style="color: var(--f-accent-primary);"></i>
+                        {% endif %}
+                        <span class="f-label">{{ snippet.label }}</span>
+                    </div>
+                    <div class="f-card overflow-hidden" style="background: var(--f-bg-inset);">
+                        <div class="px-4 py-2 flex items-center gap-2" style="background: var(--f-bg-elevated); border-bottom: 1px solid var(--f-border-light);">
+                            <span class="text-xs font-medium" style="color: var(--f-fg-tertiary); font-family: var(--f-font-mono);">{{ snippet.filename }}</span>
+                            {% if snippet.badge %}
+                            <span class="f-badge ml-auto" style="font-size: 0.6875rem;">{{ snippet.badge }}</span>
+                            {% endif %}
+                        </div>
+                        <pre class="p-4 overflow-x-auto text-xs leading-relaxed" style="color: var(--f-fg-secondary); font-family: var(--f-font-mono); margin: 0;"><code>{{ snippet.code }}</code></pre>
+                    </div>
+                </div>
+                {% endwith %}
+                {% endif %}
+
+                {% if section.blog_links %}
+                <div class="mt-6 flex flex-wrap gap-3">
+                    {% for link in section.blog_links %}
+                    <a href="{{ link.url }}" target="_blank" rel="noopener" class="f-text-link text-sm font-medium">
+                        {{ link.text|safe }} &rarr;
+                    </a>
+                    {% endfor %}
+                </div>
+                {% endif %}
+            </div>
+            {% endif %}
+        </div>
+    </div>
+</section>

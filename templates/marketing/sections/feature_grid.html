@@ -1,0 +1,108 @@
+{% comment %}
+Feature grid section — label + headline + intro, then grid of icon+title+subtitle cards.
+Optional blockquote, code_snippets, blog_links.
+
+Context:
+  section: dict with label, headline, intro, features[], blockquote, code_snippets[], blog_links[]
+{% endcomment %}
+{% load content_tags %}
+
+<section class="py-20 md:py-28" style="background: {{ section.background|section_bg }};">
+    <div class="max-w-7xl mx-auto px-6">
+        <div class="mb-16 f-ornament">
+            {% if section.label %}<span class="f-label">{{ section.label }}</span>{% endif %}
+            <h2 class="text-3xl md:text-4xl font-semibold mt-3 mb-4 f-heading">{{ section.headline|safe }}</h2>
+            {% if section.intro %}
+            <p class="text-lg max-w-3xl" style="color: var(--f-fg-secondary); line-height: var(--f-line-height-body);">
+                {{ section.intro|safe }}
+            </p>
+            {% endif %}
+        </div>
+
+        {% if section.features %}
+        <div class="grid grid-cols-2 md:grid-cols-{{ section.features|length|default:3 }} gap-4 mb-12">
+            {% for feature in section.features %}
+            <div class="f-card p-6 text-center{% if forloop.last and section.features|length|divisibleby:2 %} col-span-2 md:col-span-1{% endif %}" style="border-top: 3px solid {{ feature.color|accent_color }};">
+                <div class="w-10 h-10 rounded-full flex items-center justify-center mx-auto mb-3" style="background: {{ feature.color|accent_bg }};">
+                    <i data-lucide="{{ feature.icon }}" class="w-5 h-5" style="color: {{ feature.color|accent_color }};"></i>
+                </div>
+                <h3 class="text-sm font-semibold f-heading">{{ feature.title|safe }}</h3>
+                <p class="text-xs mt-1" style="color: var(--f-fg-tertiary);">{{ feature.subtitle|safe }}</p>
+            </div>
+            {% endfor %}
+        </div>
+        {% endif %}
+
+        {% if section.blockquote %}
+        <div class="f-blockquote max-w-3xl mb-10">
+            <p class="text-lg" style="color: var(--f-fg-secondary); font-family: var(--f-font-display); font-style: italic; line-height: var(--f-line-height-body);">
+                {{ section.blockquote|safe }}
+            </p>
+        </div>
+        {% endif %}
+
+        {% if section.code_snippets %}
+        <div class="grid lg:grid-cols-2 gap-8 mb-10">
+            {% for snippet in section.code_snippets %}
+            <div>
+                <div class="flex items-center gap-2 mb-3">
+                    {% if snippet.icon %}
+                    <i data-lucide="{{ snippet.icon }}" class="w-4 h-4" style="color: var(--f-accent-green);"></i>
+                    {% endif %}
+                    <span class="f-label">{{ snippet.label }}</span>
+                </div>
+                <div class="f-card overflow-hidden" style="background: var(--f-bg-inset);">
+                    <div class="px-4 py-2 flex items-center gap-2" style="background: var(--f-bg-elevated); border-bottom: 1px solid var(--f-border-light);">
+                        <span class="text-xs font-medium" style="color: var(--f-fg-tertiary); font-family: var(--f-font-mono);">{{ snippet.filename }}</span>
+                        {% if snippet.badge %}
+                        <span class="f-badge ml-auto" style="font-size: 0.6875rem;">{{ snippet.badge }}</span>
+                        {% endif %}
+                    </div>
+                    <pre class="p-4 overflow-x-auto text-xs leading-relaxed" style="color: var(--f-fg-secondary); font-family: var(--f-font-mono); margin: 0;"><code>{{ snippet.code }}</code></pre>
+                </div>
+                {% if snippet.caption %}
+                <p class="text-xs mt-3" style="color: var(--f-fg-tertiary);">{{ snippet.caption|safe }}</p>
+                {% endif %}
+            </div>
+            {% if snippet.explanation %}
+            <div class="flex flex-col justify-center">
+                <h4 class="text-lg font-semibold mb-3 f-heading">{{ snippet.explanation.title|safe }}</h4>
+                <p class="text-sm mb-4" style="color: var(--f-fg-secondary); line-height: var(--f-line-height-body);">
+                    {{ snippet.explanation.body|safe }}
+                </p>
+                {% if snippet.explanation.footnote %}
+                <p class="text-xs" style="color: var(--f-fg-tertiary);">
+                    {{ snippet.explanation.footnote|safe }}
+                </p>
+                {% endif %}
+            </div>
+            {% endif %}
+            {% endfor %}
+        </div>
+        {% endif %}
+
+        {% if section.blog_links %}
+        <div class="flex flex-wrap gap-4">
+            {% for link in section.blog_links %}
+            <a href="{{ link.url }}" target="_blank" rel="noopener" class="f-text-link text-sm font-medium">
+                {{ link.text|safe }} &rarr;
+            </a>
+            {% endfor %}
+        </div>
+        {% endif %}
+
+        {% if section.footer_cards %}
+        <div class="grid md:grid-cols-{{ section.footer_cards|length }} gap-6 mt-12">
+            {% for card in section.footer_cards %}
+            <div class="f-card p-6 text-center" style="border-top: 3px solid {{ card.color|accent_color }};">
+                <div class="w-10 h-10 rounded-lg flex items-center justify-center mx-auto mb-3" style="background: {{ card.color|accent_bg }};">
+                    <i data-lucide="{{ card.icon }}" class="w-5 h-5" style="color: {{ card.color|accent_color }};"></i>
+                </div>
+                <h4 class="font-semibold mb-1 f-heading">{{ card.title|safe }}</h4>
+                <p class="text-sm" style="color: var(--f-fg-secondary);">{{ card.description|safe }}</p>
+            </div>
+            {% endfor %}
+        </div>
+        {% endif %}
+    </div>
+</section>

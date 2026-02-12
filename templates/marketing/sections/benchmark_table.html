@@ -1,0 +1,64 @@
+{% comment %}
+Benchmark table section — metric tables with dual-audience "What This Means" columns.
+
+Context:
+  section: dict with label, headline, intro, metrics[{metric, result, hollywood_meaning, investor_meaning}]
+{% endcomment %}
+{% load content_tags %}
+
+<section class="py-20 md:py-28" style="background: {{ section.background|section_bg }};">
+    <div class="max-w-7xl mx-auto px-6">
+        <div class="mb-16 f-ornament">
+            {% if section.label %}<span class="f-label">{{ section.label }}</span>{% endif %}
+            <h2 class="text-3xl md:text-4xl font-semibold mt-3 mb-4 f-heading">{{ section.headline|safe }}</h2>
+            {% if section.intro %}
+            <p class="text-lg max-w-3xl" style="color: var(--f-fg-secondary); line-height: var(--f-line-height-body);">
+                {{ section.intro|safe }}
+            </p>
+            {% endif %}
+        </div>
+
+        <div class="f-card overflow-hidden">
+            <div class="overflow-x-auto">
+                <table class="w-full text-sm">
+                    <thead>
+                        <tr style="background: var(--f-bg-elevated); border-bottom: 1px solid var(--f-border-default);">
+                            <th class="px-6 py-4 text-left font-semibold f-heading" style="min-width: 160px;">Metric</th>
+                            <th class="px-6 py-4 text-left font-semibold f-heading" style="min-width: 120px;">Result</th>
+                            <th class="px-6 py-4 text-left font-semibold f-heading" style="min-width: 200px;">
+                                <span class="flex items-center gap-2">
+                                    <i data-lucide="clapperboard" class="w-3.5 h-3.5" style="color: var(--f-accent-primary);"></i>
+                                    For Production
+                                </span>
+                            </th>
+                            <th class="px-6 py-4 text-left font-semibold f-heading" style="min-width: 200px;">
+                                <span class="flex items-center gap-2">
+                                    <i data-lucide="trending-up" class="w-3.5 h-3.5" style="color: var(--f-accent-cyan);"></i>
+                                    For Investors
+                                </span>
+                            </th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for row in section.metrics %}
+                        <tr style="border-bottom: 1px solid var(--f-border-light);">
+                            <td class="px-6 py-4 font-medium" style="color: var(--f-fg-heading);">{{ row.metric|safe }}</td>
+                            <td class="px-6 py-4 font-semibold f-heading" style="color: var(--f-accent-primary);">{{ row.result|safe }}</td>
+                            <td class="px-6 py-4" style="color: var(--f-fg-secondary);">{{ row.hollywood_meaning|safe }}</td>
+                            <td class="px-6 py-4" style="color: var(--f-fg-secondary);">{{ row.investor_meaning|safe }}</td>
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        {% if section.blockquote %}
+        <div class="f-blockquote max-w-3xl mt-10">
+            <p class="text-lg" style="color: var(--f-fg-secondary); font-family: var(--f-font-display); font-style: italic; line-height: var(--f-line-height-body);">
+                {{ section.blockquote|safe }}
+            </p>
+        </div>
+        {% endif %}
+    </div>
+</section>

@@ -1,0 +1,24 @@
+{% extends "marketing_base.html" %}
+{% load content_tags %}
+
+{% block title %}{% load_content 'homepage' as page %}{{ page.meta.title }}{% endblock %}
+
+{% block content %}
+{% load_content 'homepage' as page %}
+
+{# Hero — production-first with standard button CTAs #}
+{% include "marketing/sections/hero.html" with section=page.hero %}
+
+{# Content sections #}
+{% for section in page.sections %}
+  {% with section_template="marketing/sections/"|add:section.type|add:".html" %}
+    {% include section_template with section=section %}
+  {% endwith %}
+{% endfor %}
+
+{# CTA #}
+{% if page.cta %}
+{% include "marketing/sections/cta.html" with section=page.cta %}
+{% endif %}
+
+{% endblock %}

@@ -1,275 +1,256 @@
 {% extends "marketing_base.html" %}
 {% load static wagtailcore_tags %}
 
-{% block title %}About Fabula{% endblock %}
+{% block title %}About — Stories Are Not Lines. They Are Webs.{% endblock %}
 
 {% block content %}
 {# ============================================ #}
-{# HERO #}
+{# HERO                                          #}
 {# ============================================ #}
-<section class="py-24 bg-gradient-to-b from-slate-950 to-slate-900">
-    <div class="max-w-7xl mx-auto px-6">
-        <div class="text-center max-w-3xl mx-auto">
-            <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6">
-                We Built This Because We Needed It
+<section class="relative overflow-hidden" style="background: var(--f-bg-hero); min-height: 70vh; display: flex; align-items: center;">
+    <div class="max-w-7xl mx-auto px-6 py-24 md:py-32 relative z-10">
+        <div class="max-w-3xl mx-auto text-center">
+            <h1 class="text-4xl md:text-5xl lg:text-6xl font-semibold leading-tight mb-8 f-heading" style="letter-spacing: var(--f-letter-spacing-heading); line-height: var(--f-line-height-heading);">
+                Stories Are Not Lines. They Are Webs.
             </h1>
-            <p class="text-xl text-slate-400">
-                Story bibles are still maintained in spreadsheets. Writers' rooms waste hours answering "what happened in Season 2?" We knew there had to be a better way.
+
+            <p class="text-lg md:text-xl leading-relaxed" style="color: var(--f-fg-secondary); line-height: var(--f-line-height-body);">
+                For millennia, we've told stories as sequences&mdash;one thing after another. But we've always <em style="color: var(--f-fg-primary);">understood</em> them as webs. A character's decision in Act One reverberates through Act Five. A location carries the weight of everything that happened there. Every story is a knowledge graph. We just haven't had the tools to see it until now.
+            </p>
+        </div>
+    </div>
+
+    <div class="absolute bottom-0 left-0 right-0 h-px" style="background: var(--f-border-light);"></div>
+</section>
+
+{# ============================================ #}
+{# THE NARRATOLOGICAL FOUNDATION                  #}
+{# ============================================ #}
+<section class="py-20 md:py-28" style="background-color: var(--f-bg-page);">
+    <div class="max-w-3xl mx-auto px-6">
+        <div class="mb-10 f-ornament">
+            <h2 class="text-3xl md:text-4xl font-semibold mb-4 f-heading">Fabula and Syuzhet: The Oldest Problem in Narrative Theory</h2>
+        </div>
+
+        <div class="f-prose">
+            <p style="color: var(--f-fg-secondary);">
+                In 1925, the Russian formalists articulated a distinction that has haunted narrative theory ever since. They called it <em style="color: var(--f-fg-primary);">fabula</em> and <em style="color: var(--f-fg-primary);">syuzhet</em>. Fabula is what happened&mdash;the chronological sequence of events in the story world. Syuzhet is how it's told&mdash;the order in which the audience encounters those events. Every flashback, every cold open, every non-linear narrative exploits the gap between the two.
+            </p>
+            <p style="color: var(--f-fg-secondary);">
+                This isn't an academic curiosity. It's a computational problem. To model a story properly, you need dual parallel linked lists with typed edges connecting them. When a writer introduces a flashback in Episode 15 that recontextualizes a scene from Episode 3, the knowledge graph needs to represent both the story-world sequence <em>and</em> the narrative presentation order&mdash;and the causal relationship between them. Most tools don't even try.
+            </p>
+            <p style="color: var(--f-fg-secondary);">
+                Why does this matter for production? Because the questions showrunners actually ask&mdash;&ldquo;What did the audience know at this point in the story?&rdquo; and &ldquo;What had actually happened by this point in the timeline?&rdquo;&mdash;are fundamentally different queries, and answering them correctly requires maintaining both indices. Flashback impact analysis. Causal chain traversal. Audience knowledge state at any point in the narrative. These are graph operations, and they require graph infrastructure.
+            </p>
+        </div>
+
+        <div class="f-blockquote my-10">
+            <p class="text-lg" style="color: var(--f-fg-secondary); font-family: var(--f-font-display); font-style: italic; line-height: var(--f-line-height-body);">
+                We didn't invent this framework. G&eacute;rard Genette described it in 1972. We're the first to implement it as production-grade software.
+            </p>
+        </div>
+
+        <a href="https://storygraph.substack.com/p/dont-blink" target="_blank" rel="noopener" class="f-text-link text-sm font-medium">
+            Read: Don't Blink &rarr;
+        </a>
+    </div>
+</section>
+
+{# ============================================ #}
+{# WHY GRAPHS, NOT DOCUMENTS                      #}
+{# ============================================ #}
+<section class="py-20 md:py-28" style="background-color: var(--f-bg-surface);">
+    <div class="max-w-3xl mx-auto px-6">
+        <div class="mb-10 f-ornament">
+            <h2 class="text-3xl md:text-4xl font-semibold mb-4 f-heading">Why a Knowledge Graph, Not a Better Spreadsheet</h2>
+        </div>
+
+        <div class="f-prose">
+            <p style="color: var(--f-fg-secondary);">
+                Spreadsheets can list. Wikis can describe. But only graphs can <em style="color: var(--f-fg-primary);">answer</em>. The question &ldquo;Which characters have scenes with both the President and the First Lady, and how did those relationships change after the MS scandal?&rdquo; requires traversal&mdash;following typed edges across temporal boundaries, filtering by relationship state, aggregating across episodes. Try that in a spreadsheet. Try it in a wiki. You can't. It's a graph operation.
+            </p>
+            <p style="color: var(--f-fg-secondary);">
+                We use Neo4j for structural queries and relationship traversal&mdash;the &ldquo;find all paths between these two characters&rdquo; queries that graph databases were invented to answer. We use ChromaDB for semantic intelligence&mdash;the &ldquo;find entities similar to this description&rdquo; queries that require embedding space rather than explicit edges. The combination gives us both relational precision and semantic flexibility.
+            </p>
+            <p style="color: var(--f-fg-secondary);">
+                But the deepest architectural decision is subtler than the database choice. It's the separation of <em style="color: var(--f-fg-primary);">identity</em> from <em style="color: var(--f-fg-primary);">state</em>. A Character node represents who someone is&mdash;their canonical identity, their aliases, their persistent attributes. An EventParticipation represents who they are in a specific moment&mdash;their emotional state, their goals, what they did. This separation is what allows a knowledge graph to answer &ldquo;how did this character change over time?&rdquo; without overwriting their history. It's the difference between a database and a document. Documents flatten. Graphs preserve.
+            </p>
+        </div>
+
+        <div class="flex flex-wrap gap-4 mt-10">
+            <a href="https://storygraph.substack.com/p/the-computational-problem-of-narrative" target="_blank" rel="noopener" class="f-text-link text-sm font-medium">
+                Read: The Computational Problem of Narrative Memory &rarr;
+            </a>
+            <a href="https://storygraph.substack.com/p/why-stories-are-webs-and-how-were" target="_blank" rel="noopener" class="f-text-link text-sm font-medium">
+                Read: Why Stories Are Webs &rarr;
+            </a>
+        </div>
+    </div>
+</section>
+
+{# ============================================ #}
+{# PRINCIPLES                                     #}
+{# ============================================ #}
+<section class="py-20 md:py-28" style="background-color: var(--f-bg-page);">
+    <div class="max-w-3xl mx-auto px-6">
+        <div class="text-center mb-16 f-ornament-center">
+            <h2 class="text-3xl md:text-4xl font-semibold f-heading">What We Believe</h2>
+        </div>
+
+        <div class="space-y-10">
+            <div class="f-ornament">
+                <h3 class="text-xl font-semibold mb-2 f-heading" style="font-family: var(--f-font-display); font-style: italic;">
+                    &ldquo;Stories deserve better tools than spreadsheets.&rdquo;
+                </h3>
+                <p style="color: var(--f-fg-secondary);">
+                    The entertainment industry creates the most complex narrative structures in human culture. It manages them in Google Sheets.
+                </p>
+            </div>
+
+            <div class="f-ornament">
+                <h3 class="text-xl font-semibold mb-2 f-heading" style="font-family: var(--f-font-display); font-style: italic;">
+                    &ldquo;AI should be a collaborator, not a black box.&rdquo;
+                </h3>
+                <p style="color: var(--f-fg-secondary);">
+                    Every extraction is editable. Every entity is mergeable. Every relationship is overridable. You are the editor. The AI is the research assistant.
+                </p>
+            </div>
+
+            <div class="f-ornament">
+                <h3 class="text-xl font-semibold mb-2 f-heading" style="font-family: var(--f-font-display); font-style: italic;">
+                    &ldquo;Hallucination is an engineering problem, not an inevitability.&rdquo;
+                </h3>
+                <p style="color: var(--f-fg-secondary);">
+                    Schema constraints, evidence grounding, confidence gating, contrastive resolution. We treat hallucination the way databases treat corruption: with layers of defence.
+                </p>
+            </div>
+
+            <div class="f-ornament">
+                <h3 class="text-xl font-semibold mb-2 f-heading" style="font-family: var(--f-font-display); font-style: italic;">
+                    &ldquo;The connections between events are as important as the events themselves.&rdquo;
+                </h3>
+                <p style="color: var(--f-fg-secondary);">
+                    Other tools extract entities. We extract the relationships between them&mdash;causal, thematic, emotional, temporal&mdash;because narrative meaning lives in the edges, not just the nodes.
+                </p>
+            </div>
+
+            <div class="f-ornament">
+                <h3 class="text-xl font-semibold mb-2 f-heading" style="font-family: var(--f-font-display); font-style: italic;">
+                    &ldquo;IP is a graph, not a document.&rdquo;
+                </h3>
+                <p style="color: var(--f-fg-secondary);">
+                    When your show's narrative structure is a queryable graph, every downstream use case&mdash;game adaptation, interactive media, AI-assisted writing&mdash;becomes a query, not a rewrite.
+                </p>
+            </div>
+        </div>
+    </div>
+</section>
+
+{# ============================================ #}
+{# THE WORK SO FAR                                #}
+{# ============================================ #}
+<section class="py-20 md:py-28" style="background-color: var(--f-bg-surface);">
+    <div class="max-w-7xl mx-auto px-6">
+        <div class="text-center mb-16 f-ornament-center">
+            <h2 class="text-3xl md:text-4xl font-semibold f-heading">The Work So Far</h2>
+        </div>
+
+        {# Stats #}
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-6 mb-12">
+            <div class="f-card p-6 text-center">
+                <div class="text-3xl md:text-4xl font-semibold mb-1 f-heading" style="font-family: var(--f-font-display);">726</div>
+                <div class="text-sm" style="color: var(--f-fg-tertiary);">Canonical Entities</div>
+            </div>
+            <div class="f-card p-6 text-center">
+                <div class="text-3xl md:text-4xl font-semibold mb-1 f-heading" style="font-family: var(--f-font-display);">87ms</div>
+                <div class="text-sm" style="color: var(--f-fg-tertiary);">Avg Query Latency</div>
+            </div>
+            <div class="f-card p-6 text-center">
+                <div class="text-3xl md:text-4xl font-semibold mb-1 f-heading" style="font-family: var(--f-font-display);">90%+</div>
+                <div class="text-sm" style="color: var(--f-fg-tertiary);">Entity Resolution Accuracy</div>
+            </div>
+            <div class="f-card p-6 text-center">
+                <div class="text-3xl md:text-4xl font-semibold mb-1 f-heading" style="font-family: var(--f-font-display);">0</div>
+                <div class="text-sm" style="color: var(--f-fg-tertiary);">Entity Drift Errors</div>
+            </div>
+        </div>
+
+        {# Show cards #}
+        <div class="grid md:grid-cols-3 gap-6 mb-12">
+            <div class="f-card p-8 text-center" style="border-top: 3px solid var(--f-accent-primary);">
+                <h3 class="text-lg font-semibold mb-2 f-heading">Star Trek: TNG</h3>
+                <p class="text-sm mb-4" style="color: var(--f-fg-secondary);">
+                    Seven seasons, 178 episodes. Alias resolution across ranks, titles, and intimate address forms. Multi-species naming conventions.
+                </p>
+                <span class="f-badge">Coming Soon</span>
+            </div>
+            <div class="f-card p-8 text-center" style="border-top: 3px solid var(--f-accent-violet);">
+                <h3 class="text-lg font-semibold mb-2 f-heading">Doctor Who</h3>
+                <p class="text-sm mb-4" style="color: var(--f-fg-secondary);">
+                    Multi-incarnation timelines. Regeneration as identity continuity. The most complex entity resolution problem in television.
+                </p>
+                <span class="f-badge">Coming Soon</span>
+            </div>
+            <div class="f-card p-8 text-center" style="border-top: 3px solid var(--f-accent-cyan);">
+                <h3 class="text-lg font-semibold mb-2 f-heading">The West Wing</h3>
+                <p class="text-sm mb-4" style="color: var(--f-fg-secondary);">
+                    Dense political hierarchies, overlapping professional and personal relationships, 50+ recurring characters.
+                </p>
+                <a href="{% url 'catalog' %}" class="f-text-link text-sm font-medium">
+                    Explore Live Demo &rarr;
+                </a>
+            </div>
+        </div>
+
+        <div class="max-w-3xl mx-auto f-prose">
+            <p style="color: var(--f-fg-secondary);">
+                We chose the hardest test cases deliberately. Star Trek TNG for alias complexity and multi-species naming conventions. Doctor Who for identity continuity across regeneration&mdash;the same character, different bodies, 60 years of canon. The West Wing for sheer density of political relationships and the challenge of tracking professional hierarchies that shift across seasons. If the architecture works on these, it'll work on your show.
             </p>
         </div>
     </div>
 </section>
 
 {# ============================================ #}
-{# THE PROBLEM WE HAD #}
+{# WHAT COMES NEXT                                #}
 {# ============================================ #}
-<section class="py-24">
-    <div class="max-w-7xl mx-auto px-6">
-        <div class="grid lg:grid-cols-2 gap-16 items-center">
-            <div>
-                <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-red-500/10 border border-red-500/20 text-red-400 text-sm mb-6">
-                    <i data-lucide="alert-circle" class="w-4 h-4"></i>
-                    <span>The Problem</span>
-                </div>
-                <h2 class="text-3xl font-bold text-white mb-6">Story Bibles Shouldn't Take Weeks to Update</h2>
-                <div class="space-y-4 text-slate-400">
-                    <p>
-                        Story bibles are still maintained in spreadsheets and Notion docs. Writers' rooms waste hours answering "what happened in Season 2?" Continuity errors cost money. Legal waits weeks for asset lists.
-                    </p>
-                    <p>
-                        Every production we talked to had the same problem: their institutional knowledge was trapped in one person's head or scattered across dozens of documents that were always out of date.
-                    </p>
-                </div>
-            </div>
-            <div class="rounded-2xl border border-slate-800 bg-slate-900/50 p-8">
-                <div class="space-y-6">
-                    <div class="flex items-start gap-4">
-                        <div class="w-10 h-10 rounded-full bg-red-500/10 flex items-center justify-center shrink-0">
-                            <i data-lucide="file-spreadsheet" class="w-5 h-5 text-red-400"></i>
-                        </div>
-                        <div>
-                            <p class="text-white font-medium">Spreadsheets and wikis</p>
-                            <p class="text-slate-500 text-sm">Always out of date, impossible to search</p>
-                        </div>
-                    </div>
-                    <div class="flex items-start gap-4">
-                        <div class="w-10 h-10 rounded-full bg-red-500/10 flex items-center justify-center shrink-0">
-                            <i data-lucide="users" class="w-5 h-5 text-red-400"></i>
-                        </div>
-                        <div>
-                            <p class="text-white font-medium">Knowledge trapped in heads</p>
-                            <p class="text-slate-500 text-sm">When that person leaves, so does the history</p>
-                        </div>
-                    </div>
-                    <div class="flex items-start gap-4">
-                        <div class="w-10 h-10 rounded-full bg-red-500/10 flex items-center justify-center shrink-0">
-                            <i data-lucide="clock" class="w-5 h-5 text-red-400"></i>
-                        </div>
-                        <div>
-                            <p class="text-white font-medium">Weeks to compile anything</p>
-                            <p class="text-slate-500 text-sm">Legal requests that should take minutes</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
+<section class="py-20 md:py-28" style="background-color: var(--f-bg-page);">
+    <div class="max-w-3xl mx-auto px-6">
+        <div class="mb-10 f-ornament">
+            <h2 class="text-3xl md:text-4xl font-semibold mb-4 f-heading">What Comes Next</h2>
+        </div>
+
+        <div class="f-prose">
+            <p style="color: var(--f-fg-secondary);">
+                A knowledge graph of narrative isn't just a story bible. It's a foundation. When your show is a graph, adaptation becomes a query. &ldquo;Give me every character with more than three scenes in the same location&rdquo; is a graph traversal that feeds directly into game level design. &ldquo;Find all unresolved character conflicts&rdquo; is a query that suggests where the writers' room should focus next.
+            </p>
+            <p style="color: var(--f-fg-secondary);">
+                We're building toward a world where the narrative knowledge graph is the canonical source of truth for an IP&mdash;not a PDF, not a wiki, not a spreadsheet that someone updates on Fridays. When a new writer joins in Season 4, they query the graph. When legal needs an asset manifest, they export from the graph. When a game studio licenses the IP, they receive a structured knowledge graph, not a folder of documents.
+            </p>
+            <p style="color: var(--f-fg-secondary);">
+                The infrastructure for narrative intelligence is just beginning. We think it's the most important thing we can build.
+            </p>
         </div>
     </div>
 </section>
 
 {# ============================================ #}
-{# WHY NOW #}
+{# CONTACT CTA                                    #}
 {# ============================================ #}
-<section class="py-24 bg-slate-900/50">
-    <div class="max-w-7xl mx-auto px-6">
-        <div class="grid lg:grid-cols-2 gap-16 items-center">
-            <div class="order-2 lg:order-1 rounded-2xl border border-slate-800 bg-slate-900/50 p-8">
-                <div class="space-y-4">
-                    <div class="flex items-center gap-3 p-4 rounded-xl bg-green-500/5 border border-green-500/20">
-                        <i data-lucide="brain" class="w-6 h-6 text-green-400"></i>
-                        <span class="text-white">AI understands narrative structure</span>
-                    </div>
-                    <div class="flex items-center gap-3 p-4 rounded-xl bg-cyan-500/5 border border-cyan-500/20">
-                        <i data-lucide="link" class="w-6 h-6 text-cyan-400"></i>
-                        <span class="text-white">Graph databases track relationships</span>
-                    </div>
-                    <div class="flex items-center gap-3 p-4 rounded-xl bg-purple-500/5 border border-purple-500/20">
-                        <i data-lucide="search" class="w-6 h-6 text-purple-400"></i>
-                        <span class="text-white">Semantic search finds meaning, not keywords</span>
-                    </div>
-                    <div class="flex items-center gap-3 p-4 rounded-xl bg-amber-500/5 border border-amber-500/20">
-                        <i data-lucide="zap" class="w-6 h-6 text-amber-400"></i>
-                        <span class="text-white">Processing is fast enough for production</span>
-                    </div>
-                </div>
-            </div>
-            <div class="order-1 lg:order-2">
-                <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-green-500/10 border border-green-500/20 text-green-400 text-sm mb-6">
-                    <i data-lucide="calendar" class="w-4 h-4"></i>
-                    <span>Why Now</span>
-                </div>
-                <h2 class="text-3xl font-bold text-white mb-6">AI Is Finally Good Enough</h2>
-                <div class="space-y-4 text-slate-400">
-                    <p>
-                        AI is finally good enough to read scripts like humans do—understanding that "the Captain" and "Picard" are the same person, tracking relationships, catching inconsistencies.
-                    </p>
-                    <p>
-                        The technology stack we needed didn't exist five years ago. Now it does, and we've spent the last two years building Fabula on top of it.
-                    </p>
-                </div>
-            </div>
+<section class="py-20 md:py-28" style="background: var(--f-bg-hero);">
+    <div class="max-w-3xl mx-auto px-6 text-center">
+        <div class="f-ornament-center">
+            <h2 class="text-3xl md:text-4xl font-semibold mb-6 f-heading">We'd Like to Hear Your Story</h2>
         </div>
-    </div>
-</section>
-
-{# ============================================ #}
-{# WHAT WE BELIEVE #}
-{# ============================================ #}
-<section class="py-24">
-    <div class="max-w-4xl mx-auto px-6">
-        <div class="text-center mb-16">
-            <h2 class="text-4xl font-bold text-white mb-4">What We Believe</h2>
-        </div>
-
-        <div class="grid md:grid-cols-2 gap-6">
-            <div class="rounded-2xl border border-slate-800 bg-slate-900/50 p-8">
-                <div class="w-12 h-12 rounded-xl bg-amber-500/10 flex items-center justify-center mb-6">
-                    <i data-lucide="pen-tool" class="w-6 h-6 text-amber-400"></i>
-                </div>
-                <h3 class="text-xl font-bold text-white mb-3">Writers should write</h3>
-                <p class="text-slate-400">Not maintain databases. Not answer "wait, what happened with...?" for the hundredth time.</p>
-            </div>
-
-            <div class="rounded-2xl border border-slate-800 bg-slate-900/50 p-8">
-                <div class="w-12 h-12 rounded-xl bg-cyan-500/10 flex items-center justify-center mb-6">
-                    <i data-lucide="refresh-cw" class="w-6 h-6 text-cyan-400"></i>
-                </div>
-                <h3 class="text-xl font-bold text-white mb-3">Story bibles should update themselves</h3>
-                <p class="text-slate-400">Upload a script, the bible updates. No manual entry, no falling out of date.</p>
-            </div>
-
-            <div class="rounded-2xl border border-slate-800 bg-slate-900/50 p-8">
-                <div class="w-12 h-12 rounded-xl bg-red-500/10 flex items-center justify-center mb-6">
-                    <i data-lucide="shield-alert" class="w-6 h-6 text-red-400"></i>
-                </div>
-                <h3 class="text-xl font-bold text-white mb-3">Continuity errors should be caught before production</h3>
-                <p class="text-slate-400">Not discovered on Reddit after the episode airs. Not fixed with expensive reshoots.</p>
-            </div>
-
-            <div class="rounded-2xl border border-slate-800 bg-slate-900/50 p-8">
-                <div class="w-12 h-12 rounded-xl bg-purple-500/10 flex items-center justify-center mb-6">
-                    <i data-lucide="gamepad-2" class="w-6 h-6 text-purple-400"></i>
-                </div>
-                <h3 class="text-xl font-bold text-white mb-3">IP should be structured for the future</h3>
-                <p class="text-slate-400">Games, VR, whatever comes next. Your story data should be ready.</p>
-            </div>
-        </div>
-    </div>
-</section>
-
-{# ============================================ #}
-{# WHAT WE'VE BUILT #}
-{# ============================================ #}
-<section class="py-24 bg-slate-900/50">
-    <div class="max-w-7xl mx-auto px-6">
-        <div class="text-center mb-16">
-            <h2 class="text-4xl font-bold text-white mb-4">What We've Built</h2>
-            <p class="text-xl text-slate-400">Proven on TV's most complex shows.</p>
-        </div>
-
-        <div class="grid md:grid-cols-3 gap-8">
-            <div class="rounded-2xl border border-slate-800 bg-slate-900/50 p-8 text-center">
-                <div class="text-5xl font-bold text-amber-400 mb-2">60+</div>
-                <div class="text-white mb-2">Episodes Processed</div>
-                <p class="text-slate-500 text-sm">Multiple seasons across different shows</p>
-            </div>
-            <div class="rounded-2xl border border-slate-800 bg-slate-900/50 p-8 text-center">
-                <div class="text-5xl font-bold text-cyan-400 mb-2">700+</div>
-                <div class="text-white mb-2">Characters Tracked</div>
-                <p class="text-slate-500 text-sm">Without getting confused by aliases</p>
-            </div>
-            <div class="rounded-2xl border border-slate-800 bg-slate-900/50 p-8 text-center">
-                <div class="text-5xl font-bold text-purple-400 mb-2">0</div>
-                <div class="text-white mb-2">Entity Drift</div>
-                <p class="text-slate-500 text-sm">Same character across seasons stays linked</p>
-            </div>
-        </div>
-    </div>
-</section>
-
-{# ============================================ #}
-{# WHAT'S NEXT #}
-{# ============================================ #}
-<section class="py-24">
-    <div class="max-w-4xl mx-auto px-6">
-        <div class="text-center mb-16">
-            <h2 class="text-4xl font-bold text-white mb-4">What's Next</h2>
-            <p class="text-xl text-slate-400">We're just getting started.</p>
-        </div>
-
-        <div class="space-y-4">
-            <div class="flex items-center gap-4 p-6 rounded-xl border border-slate-800 bg-slate-900/50">
-                <div class="w-12 h-12 rounded-xl bg-amber-500/10 flex items-center justify-center shrink-0">
-                    <i data-lucide="message-square" class="w-6 h-6 text-amber-400"></i>
-                </div>
-                <div>
-                    <h3 class="text-white font-semibold">Writers' Room Copilot</h3>
-                    <p class="text-slate-500 text-sm">Scene suggestions based on character arcs and unresolved threads</p>
-                </div>
-                <span class="ml-auto px-3 py-1 rounded-full bg-amber-500/10 text-amber-400 text-xs">In Development</span>
-            </div>
-
-            <div class="flex items-center gap-4 p-6 rounded-xl border border-slate-800 bg-slate-900/50">
-                <div class="w-12 h-12 rounded-xl bg-cyan-500/10 flex items-center justify-center shrink-0">
-                    <i data-lucide="smartphone" class="w-6 h-6 text-cyan-400"></i>
-                </div>
-                <div>
-                    <h3 class="text-white font-semibold">Mobile App</h3>
-                    <p class="text-slate-500 text-sm">On-set continuity checks from your phone</p>
-                </div>
-                <span class="ml-auto px-3 py-1 rounded-full bg-slate-500/10 text-slate-400 text-xs">Planned</span>
-            </div>
-
-            <div class="flex items-center gap-4 p-6 rounded-xl border border-slate-800 bg-slate-900/50">
-                <div class="w-12 h-12 rounded-xl bg-purple-500/10 flex items-center justify-center shrink-0">
-                    <i data-lucide="box" class="w-6 h-6 text-purple-400"></i>
-                </div>
-                <div>
-                    <h3 class="text-white font-semibold">Game Engine SDKs</h3>
-                    <p class="text-slate-500 text-sm">Direct integration with Unity, Unreal, and Godot</p>
-                </div>
-                <span class="ml-auto px-3 py-1 rounded-full bg-slate-500/10 text-slate-400 text-xs">Planned</span>
-            </div>
-
-            <div class="flex items-center gap-4 p-6 rounded-xl border border-slate-800 bg-slate-900/50">
-                <div class="w-12 h-12 rounded-xl bg-pink-500/10 flex items-center justify-center shrink-0">
-                    <i data-lucide="video" class="w-6 h-6 text-pink-400"></i>
-                </div>
-                <div>
-                    <h3 class="text-white font-semibold">AI Video Integration</h3>
-                    <p class="text-slate-500 text-sm">Connect your story bible to actual footage for visual storyboarding</p>
-                </div>
-                <span class="ml-auto px-3 py-1 rounded-full bg-slate-500/10 text-slate-400 text-xs">Research</span>
-            </div>
-        </div>
-    </div>
-</section>
-
-{# ============================================ #}
-{# CONTACT #}
-{# ============================================ #}
-<section class="py-24 bg-slate-900/50">
-    <div class="max-w-4xl mx-auto px-6 text-center">
-        <h2 class="text-4xl font-bold text-white mb-6">Let's Talk</h2>
-        <p class="text-xl text-slate-400 mb-8">
-            Interested in Fabula for your production? Have questions? We'd love to hear from you.
+        <p class="text-lg mb-10" style="color: var(--f-fg-secondary); line-height: var(--f-line-height-body);">
+            Whether you're a showrunner who needs a better story bible, an investor who sees the infrastructure layer for entertainment IP, or a narratologist who wants to argue about Genette&mdash;we'd like to talk.
         </p>
         <div class="flex flex-wrap justify-center gap-4">
-            <a href="{% slugurl 'demo' %}" class="group inline-flex items-center gap-2 px-8 py-4 text-lg font-semibold rounded-xl bg-gradient-to-r from-amber-500 to-orange-500 text-white hover:from-amber-400 hover:to-orange-400 transition-all duration-300 shadow-lg shadow-amber-500/25">
+            <a href="{% slugurl 'demo' %}" class="f-btn-primary" style="padding: 1rem 2rem; font-size: 1rem;">
                 Request a Demo
-                <i data-lucide="arrow-right" class="w-5 h-5 group-hover:translate-x-1 transition-transform"></i>
+                <i data-lucide="arrow-right" class="w-4 h-4"></i>
             </a>
-            <a href="mailto:hello@fabula.productions" class="inline-flex items-center gap-2 px-8 py-4 text-lg font-semibold rounded-xl border border-slate-700 text-white hover:bg-slate-800/50">
-                <i data-lucide="mail" class="w-5 h-5"></i>
+            <a href="mailto:hello@fabula.productions" class="f-btn-secondary" style="padding: 1rem 2rem; font-size: 1rem;">
+                <i data-lucide="mail" class="w-4 h-4"></i>
                 hello@fabula.productions
             </a>
         </div>

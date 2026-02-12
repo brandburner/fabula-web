@@ -1,0 +1,65 @@
+{% comment %}
+Pain points section — expandable scenario cards (title, context, pain, solution).
+
+Context:
+  section: dict with label, headline, intro, scenarios[{title, context, pain, solution}]
+{% endcomment %}
+{% load content_tags %}
+
+<section class="py-20 md:py-28" style="background: {{ section.background|section_bg }};">
+    <div class="max-w-7xl mx-auto px-6">
+        <div class="mb-16 f-ornament">
+            {% if section.label %}<span class="f-label">{{ section.label }}</span>{% endif %}
+            <h2 class="text-3xl md:text-4xl font-semibold mt-3 mb-4 f-heading">{{ section.headline|safe }}</h2>
+            {% if section.intro %}
+            <p class="text-lg max-w-3xl" style="color: var(--f-fg-secondary); line-height: var(--f-line-height-body);">
+                {{ section.intro|safe }}
+            </p>
+            {% endif %}
+        </div>
+
+        <div class="space-y-4 max-w-4xl">
+            {% for scenario in section.scenarios %}
+            <div class="f-card overflow-hidden" x-data="{ open: {% if forloop.first %}true{% else %}false{% endif %} }">
+                <button
+                    @click="open = !open"
+                    class="w-full px-6 py-5 text-left flex items-center justify-between gap-4"
+                    style="background: transparent;">
+                    <div>
+                        <h3 class="text-lg font-semibold f-heading">{{ scenario.title|safe }}</h3>
+                        {% if scenario.context %}
+                        <span class="text-sm" style="color: var(--f-fg-tertiary);">{{ scenario.context|safe }}</span>
+                        {% endif %}
+                    </div>
+                    <i data-lucide="chevron-down"
+                       class="w-5 h-5 shrink-0 transition-transform duration-200"
+                       style="color: var(--f-fg-tertiary);"
+                       :class="open && 'rotate-180'"></i>
+                </button>
+                <div x-show="open" x-collapse>
+                    <div class="px-6 pb-6">
+                        <div class="grid md:grid-cols-2 gap-6">
+                            {# Pain #}
+                            <div class="p-4 rounded" style="background: var(--f-accent-rose-bg); border: 1px solid var(--f-accent-rose);">
+                                <div class="flex items-center gap-2 mb-2">
+                                    <i data-lucide="alert-circle" class="w-4 h-4" style="color: var(--f-accent-rose);"></i>
+                                    <span class="text-xs font-semibold" style="color: var(--f-accent-rose); text-transform: uppercase; letter-spacing: var(--f-letter-spacing-label);">The Problem</span>
+                                </div>
+                                <p class="text-sm" style="color: var(--f-fg-secondary);">{{ scenario.pain|safe }}</p>
+                            </div>
+                            {# Solution #}
+                            <div class="p-4 rounded" style="background: var(--f-accent-green-bg); border: 1px solid var(--f-accent-green);">
+                                <div class="flex items-center gap-2 mb-2">
+                                    <i data-lucide="check-circle" class="w-4 h-4" style="color: var(--f-accent-green);"></i>
+                                    <span class="text-xs font-semibold" style="color: var(--f-accent-green); text-transform: uppercase; letter-spacing: var(--f-letter-spacing-label);">With Fabula</span>
+                                </div>
+                                <p class="text-sm" style="color: var(--f-fg-secondary);">{{ scenario.solution|safe }}</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</section>
