@@ -1,7 +1,7 @@
-{% extends "catalog_base.html" %}
+{% extends "marketing_base.html" %}
 {% load static wagtailcore_tags %}
 
-{% block title %}Explore Narrative Graphs{% endblock %}
+{% block title %}Walk the Graph — Fabula Catalog{% endblock %}
 
 {% block content %}
 {% if fabula_theme == 'writerly' %}
@@ -11,15 +11,15 @@
     <header class="mb-20 text-center">
         <div class="mb-6" style="color: var(--f-fg-placeholder);">
             <div class="w-12 h-px mx-auto mb-6" style="background: var(--f-border-accent);"></div>
-            <span class="text-xs font-medium tracking-widest uppercase" style="font-family: var(--f-font-body); letter-spacing: 0.15em;">Narrative Intelligence</span>
+            <span class="text-xs font-medium tracking-widest uppercase" style="font-family: var(--f-font-body); letter-spacing: 0.15em;">The Catalog</span>
         </div>
         <h1 class="mb-6" style="font-family: var(--f-font-display); color: var(--f-fg-heading); font-size: clamp(2.25rem, 5vw, 3.5rem); line-height: 1.1; letter-spacing: -0.03em; font-weight: 400;">
-            Explore the Narrative Web
+            Walk the Graph
         </h1>
         <p class="max-w-xl mx-auto leading-relaxed" style="color: var(--f-fg-secondary); font-size: 1.125rem; line-height: 1.7;">
-            Interactive story graphs from iconic television series.
-            Trace how characters connect, follow narrative arcs,
-            and discover the thematic patterns that bind stories together.
+            Every character, relationship, and narrative connection &mdash;
+            extracted from scripts, resolved into a knowledge graph,
+            and published here for you to explore. Choose a series. Follow the edges.
         </p>
     </header>
 
@@ -37,7 +37,7 @@
             <div class="h-0.5" style="background: linear-gradient(90deg, var(--f-accent-primary), var(--f-accent-cyan));"></div>
 
             <div class="p-8">
-                {# Series number + label #}
+                {# Series label #}
                 <div class="flex items-baseline gap-3 mb-4">
                     <span class="text-xs font-medium tracking-widest uppercase" style="color: var(--f-fg-placeholder); letter-spacing: 0.12em;">Series</span>
                 </div>
@@ -74,7 +74,7 @@
 
                 {# Explore link #}
                 <div class="flex items-center gap-2 text-sm transition-colors duration-200" style="color: var(--f-accent-primary);">
-                    <span style="font-family: var(--f-font-display); font-style: italic;">Explore this graph</span>
+                    <span style="font-family: var(--f-font-display); font-style: italic;">Walk this graph</span>
                     <i data-lucide="arrow-right" class="w-4 h-4 group-hover:translate-x-1 transition-transform duration-200"></i>
                 </div>
             </div>
@@ -85,9 +85,9 @@
     {# Empty State #}
     <div class="text-center py-20">
         <div class="w-12 h-px mx-auto mb-8" style="background: var(--f-border-accent);"></div>
-        <h2 class="mb-3" style="font-family: var(--f-font-display); color: var(--f-fg-heading); font-size: 1.5rem;">No Graphs Available Yet</h2>
+        <h2 class="mb-3" style="font-family: var(--f-font-display); color: var(--f-fg-heading); font-size: 1.5rem;">No Graphs Yet</h2>
         <p style="color: var(--f-fg-tertiary); max-width: 28rem;" class="mx-auto">
-            Check back soon. We're adding narrative graphs from iconic television series.
+            We&rsquo;re building the first production-grade knowledge graphs from television scripts. Check back soon.
         </p>
     </div>
     {% endif %}
@@ -95,7 +95,7 @@
     {# Coming Soon - quiet, editorial #}
     <div class="text-center mb-20">
         <div class="w-12 h-px mx-auto mb-6" style="background: var(--f-border-default);"></div>
-        <p class="text-xs font-medium tracking-widest uppercase mb-5" style="color: var(--f-fg-placeholder); letter-spacing: 0.15em;">Coming Soon</p>
+        <p class="text-xs font-medium tracking-widest uppercase mb-5" style="color: var(--f-fg-placeholder); letter-spacing: 0.15em;">In the Pipeline</p>
         <div class="flex flex-wrap justify-center gap-3">
             <span class="px-4 py-2 rounded-md text-sm" style="background: var(--f-bg-elevated); color: var(--f-fg-tertiary); border: 1px solid var(--f-border-light);">Breaking Bad</span>
             <span class="px-4 py-2 rounded-md text-sm" style="background: var(--f-bg-elevated); color: var(--f-fg-tertiary); border: 1px solid var(--f-border-light);">I, Claudius</span>
@@ -103,32 +103,35 @@
         </div>
     </div>
 
-    {# CTA - warm and inviting #}
+    {# CTA - Fabula voice #}
     <div class="text-center rounded-lg p-12" style="background: var(--f-bg-elevated); border: 1px solid var(--f-border-default);">
-        <h3 class="mb-4" style="font-family: var(--f-font-display); color: var(--f-fg-heading); font-size: 1.5rem; font-weight: 400;">Want to see your show here?</h3>
-        <p class="mb-8 max-w-lg mx-auto" style="color: var(--f-fg-secondary);">
-            Fabula can process any TV series. Contact us to add your show to the demo catalog.
+        <h3 class="mb-4" style="font-family: var(--f-font-display); color: var(--f-fg-heading); font-size: 1.5rem; font-weight: 400;">Your Show Could Be Next</h3>
+        <p class="mb-8 max-w-lg mx-auto" style="color: var(--f-fg-secondary); line-height: 1.7;">
+            We&rsquo;re opening early access to production teams working on series television.
+            If your scripts are sitting in a shared drive while your writers&rsquo; room relies on memory,
+            we should talk.
         </p>
-        <a href="mailto:hello@fabula.productions"
-           class="inline-flex items-center gap-2 px-6 py-3 text-base font-medium rounded-md transition-all duration-200"
-           style="background: var(--f-accent-primary); color: var(--f-fg-inverse);">
-            Get in Touch
-            <i data-lucide="mail" class="w-5 h-5"></i>
+        <a href="/early-access/"
+           class="f-btn-primary">
+            Join Early Access
+            <i data-lucide="arrow-right" class="w-4 h-4"></i>
         </a>
     </div>
 </div>
 
 {% else %}
-{# ===== DARK CATALOG (original, preserved) ===== #}
+{# ===== DARK CATALOG ===== #}
 <div class="max-w-7xl mx-auto px-6 py-16">
     {# Page Header #}
     <div class="text-center mb-16">
         <div class="w-16 h-16 rounded-2xl bg-cyan-500/10 flex items-center justify-center mx-auto mb-6">
             <i data-lucide="compass" class="w-8 h-8 text-cyan-400"></i>
         </div>
-        <h1 class="text-4xl md:text-5xl font-bold text-white mb-4">Explore Narrative Graphs</h1>
+        <h1 class="text-4xl md:text-5xl font-bold text-white mb-4">Walk the Graph</h1>
         <p class="text-xl text-slate-400 max-w-2xl mx-auto">
-            Dive into interactive story graphs from iconic TV series. See how characters connect, trace narrative arcs, and explore thematic patterns.
+            Every character, relationship, and narrative connection &mdash;
+            extracted from scripts, resolved into a knowledge graph,
+            and published here for you to explore. Choose a series. Follow the edges.
         </p>
     </div>
 
@@ -177,7 +180,7 @@
 
                 {# Explore Button #}
                 <div class="flex items-center gap-2 text-sm text-cyan-400 group-hover:text-cyan-300">
-                    <span>Explore graph</span>
+                    <span>Walk this graph</span>
                     <i data-lucide="arrow-right" class="w-4 h-4 group-hover:translate-x-1 transition-transform"></i>
                 </div>
             </div>
@@ -190,16 +193,16 @@
         <div class="w-20 h-20 rounded-full bg-slate-800/50 flex items-center justify-center mx-auto mb-6">
             <i data-lucide="database" class="w-10 h-10 text-slate-600"></i>
         </div>
-        <h2 class="text-2xl font-bold text-white mb-3">No Graphs Available Yet</h2>
+        <h2 class="text-2xl font-bold text-white mb-3">No Graphs Yet</h2>
         <p class="text-slate-400 max-w-md mx-auto">
-            Check back soon! We're adding narrative graphs from iconic TV series.
+            We&rsquo;re building the first production-grade knowledge graphs from television scripts. Check back soon.
         </p>
     </div>
     {% endif %}
 
     {# Coming Soon Section #}
     <div class="mt-20 text-center">
-        <h3 class="text-lg font-medium text-slate-500 mb-6">Coming Soon</h3>
+        <h3 class="text-lg font-medium text-slate-500 mb-6">In the Pipeline</h3>
         <div class="flex flex-wrap justify-center gap-4">
             <span class="px-4 py-2 rounded-full bg-slate-800/50 text-slate-500 text-sm">Breaking Bad</span>
             <span class="px-4 py-2 rounded-full bg-slate-800/50 text-slate-500 text-sm">I, Claudius</span>
@@ -209,14 +212,16 @@
 
     {# CTA #}
     <div class="mt-20 text-center rounded-2xl border border-slate-800 bg-gradient-to-br from-slate-900 to-slate-900/50 p-12">
-        <h3 class="text-2xl font-bold text-white mb-4">Want to see your show here?</h3>
+        <h3 class="text-2xl font-bold text-white mb-4">Your Show Could Be Next</h3>
         <p class="text-slate-400 mb-8 max-w-lg mx-auto">
-            Fabula can process any TV series. Contact us to add your show to the demo catalog.
+            We&rsquo;re opening early access to production teams working on series television.
+            If your scripts are sitting in a shared drive while your writers&rsquo; room relies on memory,
+            we should talk.
         </p>
-        <a href="mailto:hello@fabula.productions"
+        <a href="/early-access/"
            class="inline-flex items-center gap-2 px-6 py-3 text-base font-medium rounded-xl bg-gradient-to-r from-amber-500 to-orange-500 text-white hover:from-amber-400 hover:to-orange-400 transition-all duration-300 shadow-lg shadow-amber-500/25">
-            Get in Touch
-            <i data-lucide="mail" class="w-5 h-5"></i>
+            Join Early Access
+            <i data-lucide="arrow-right" class="w-5 h-5"></i>
         </a>
     </div>
 </div>

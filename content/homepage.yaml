@@ -1,34 +1,62 @@
-# Homepage — Infocom Voice Transformation
-# =========================================
+# Homepage — v2 Voice Primer Rewrite
+# ====================================
 #
 # STRATEGIC ARGUMENT (the one argument, prosecuted throughout):
 # Stories are knowledge graphs. The entertainment industry manages them
 # as documents. This is architecturally wrong, and we built the thing
 # that's right.
 #
-# COMPETITIVE FOIL (equivalent to Infocom's "pixel-based games"):
-# The spreadsheet. The wiki. The PDF story bible. The binder.
-# These are the blocky arcade sprites of narrative production.
+# V2 PRIMER ASSIGNMENTS:
+# Unique thesis: Your story bible is a document. It should be a graph.
+# Signature show: The West Wing
+# Signature demonstration: Mrs. Landingham temporal analysis
+# Emotional movement: Provocation → recognition → wonder → invitation
+# What the reader leaves with: The category exists. The product exists. Go look at it.
+#
+# COMPETITIVE FOIL (homepage instance):
+# The story bible that someone updated last Thursday.
+# The shared drive nobody trusts. The room going quiet.
+# (Other pages own other foil instances — the script coordinator's
+# memory, Netflix EKG, monolithic prompts, self-reported metrics.)
 #
 # AUDIENCE:
-# Smart, literate, frustrated professionals who create the most complex
-# narrative structures in human culture and manage them with the tools
-# of a dentist's office. They will read five hundred words if those
-# words respect their intelligence.
+# Smart, literate, frustrated professionals who create complex
+# narrative structures and manage them with inadequate infrastructure.
+# They will read five hundred words if those words respect their
+# intelligence. The homepage assumes no prior knowledge of Fabula.
 #
 # VOICE REGISTER:
 # The Intelligent Friend. Aspirational, not adversarial. Trusts the
 # reader. Flatters their intelligence. Makes a case, doesn't make a pitch.
 #
+# EMOTIONAL GEARS USED:
+# Gear 1 (Diagnosis): Hero + Section 1. "Here's what's broken."
+# Gear 2 (Wonder): Section 2. "Here's what becomes visible."
+# Gear 3 (Conviction): CTA. "This is what stories deserve."
+#
 # STRUCTURAL APPROACH:
-# Provocative reversal headline → long-copy resolution → sustained
-# argument → compressed evidence → call to action → closing mantra.
-# Stats and feature grids replaced with prose and specificity.
+# Provocative reversal headline → long-copy resolution → compressed
+# problem diagnosis → sustained wonder demonstration → conviction CTA
+# → closing mantra.
+#
+# V1 → V2 CHANGES:
+# - Section 1 tightened from three paragraphs to two. Diagnosis is
+#   faster and more specific. New headline.
+# - Section 2 (Mrs. Landingham) restructured to lead with wonder.
+#   The discovery is the headline. The system capabilities are
+#   implications, not features. Leans into Gear 2.
+# - Section 3 ("Beachhead") removed. It was investor-speak on a
+#   page for showrunners. The architecture-generalises argument
+#   belongs on Platform and About. The homepage's job is: the
+#   category exists, the product exists, go look at it.
+# - CTA rewritten with conviction (Gear 3) instead of soft invitation.
+# - Footer mantra is the site-wide default (homepage is the canonical
+#   source of the full mantra per v2 primer).
 
 ---
 meta:
   slug: homepage
-  title: "Fabula — The Context Engine for Narrative Production"
+  title: "Fabula &mdash; The Context Engine for Narrative Production"
   description: "Fabula is a context engine for narrative production. Stories are knowledge graphs. We built the first tool that treats them that way."
   template: marketing/homepage_page.html
   audiences:
@@ -38,15 +66,20 @@ meta:
 # ===========================================================
 # HERO
 # ===========================================================
-# HEADLINE: Provocative reversal.
-# Surface reading: You're insulting our work product.
-# Resolved reading: The stories in it are fiction. The bible itself
-# should be fact — but a document that someone updated last Thursday
-# can't be a source of truth for 726 characters across four seasons.
-# That's not a reference. That's an act of faith.
+# HEADLINE: Provocative reversal. Preserved from v1 — it's the
+# strongest piece of copy on the site.
 #
-# The word "fiction" is doing double duty in a domain where fiction
-# is the product. The audience will feel the friction immediately.
+# "Fiction" does triple duty: pejorative (unreliable), descriptive
+# (the genre), domain-specific (the audience makes fiction).
+#
+# BODY: Tightened. The resolution ("Not the stories in it.")
+# lands in four words. The accumulating clauses build the case.
+# "Act of faith" / "lose the plot" is the turn. The second
+# paragraph is the product statement — compressed, confident,
+# one clean architectural claim.
+#
+# GEAR: Diagnosis (1). The hero's job is provocation and
+# recognition. Wonder comes later.
 # ===========================================================
 
 hero:
@@ -59,14 +92,14 @@ hero:
     a source of truth. That's an act of faith. And faith, in a writers' room
     on Episode 7 of Season 4, is how you lose the plot. Literally.
     <br><br>
-    Fabula is the context engine that replaces faith with structure. Upload your scripts
-    and it extracts every character, every relationship, every location, every narrative
-    thread into a searchable knowledge graph&mdash;one that updates itself, can't drift,
-    and answers questions no spreadsheet will ever answer. We didn't build a better
-    story bible. We built what a story bible should have been all along.
+    Fabula is the context engine that replaces faith with structure. Upload your
+    scripts and it extracts every character, every relationship, every location,
+    every narrative thread into a searchable knowledge graph&mdash;one that updates
+    itself, can't drift, and answers questions no document ever will. We didn't
+    build a better story bible. We built what a story bible should have been all along.
   ctas:
     - label: "Explore The West Wing"
-      url: "/catalog/"
+      url: "/explore/"
       style: primary
       icon: arrow-right
     - label: "Join Early Access"
@@ -80,54 +113,75 @@ hero:
 sections:
 
   # ---------------------------------------------------------
-  # 1. THE ARGUMENT (replaces "proof-points" stats block)
+  # 1. THE PROBLEM
   # ---------------------------------------------------------
-  # INFOCOM PRINCIPLE: Sustained prose argument, not stat callouts.
-  # The five-part body copy architecture: the headline resolution
-  # happened in the hero. Now we make the product argument.
+  # RHYTHMIC MODE: The Scenic (Section 9).
+  # V1 and the first v2 draft both used sustained argument here.
+  # The scenic mode puts the reader inside the moment instead
+  # of describing it analytically. Second person, present tense.
+  # The pain is felt, not explained.
   #
-  # INFOCOM PRINCIPLE: Compression and implied vastness.
-  # Instead of saying "726 canonical entities," we show one
-  # character's graph trace and let the reader infer the other 725.
+  # The shift from the hero (sustained argument, diagnostic) to
+  # this section (scenic, experiential) creates rhythmic relief.
+  # The reader moves from being told to being immersed.
+  #
+  # GEAR: Diagnosis (1), delivered through immersion rather
+  # than analysis.
   # ---------------------------------------------------------
-  - id: the-argument
+  - id: the-problem
     type: prose
     background: surface
     label: "The Problem"
-    headline: "The Most Complex Narratives in Human Culture Are Managed in Google Sheets"
+    headline: "The Room Goes Quiet. Nobody Remembers Season 2."
     body: >
-      Consider what a showrunner actually manages. Four seasons of television. Seven
-      hundred characters&mdash;from the President of the United States to the bartender
-      who appeared once in a cold open and might come back in Season 5. Thousands of
-      relationships between those characters, each of which has a history, a trajectory,
-      and a current state. Every location carries the weight of everything that happened
-      there. Every established fact is a constraint on every future script.
+      It's Tuesday. Someone pitches a storyline and the room stalls — not because
+      the idea is bad, but because nobody can confirm whether you did something like
+      it two seasons ago. You look at the wiki. The wiki was last updated before the
+      holiday hiatus. You look at the shared drive. The shared drive has three
+      competing versions of the character list and no indication which one is current.
+      You look at the script coordinator. The script coordinator is thinking hard and
+      not making promises.
       <br><br>
-      Now consider the tools. A spreadsheet with tabs for each season. A wiki that
-      was accurate in February. Binders. Whiteboards. The script coordinator's memory.
-      When someone in the writers' room pitches a storyline and the room goes quiet
-      because nobody's sure if they did something like it in Season 2&mdash;that silence
-      is an infrastructure failure. Not a memory failure. An infrastructure failure.
-      <br><br>
-      There is a reason the question &ldquo;which episodes is Toby's ex-wife
-      in?&rdquo; can't be answered by a spreadsheet. It's the same reason &ldquo;show
-      me every character who has scenes with both the President and the First Lady,
-      and how those relationships changed after the MS scandal&rdquo; can't be answered
-      by a wiki. These are graph operations. They require following typed edges across
-      temporal boundaries, filtering by relationship state, aggregating across episodes.
-      They require a knowledge graph. We built one.
+      That silence is not a memory failure. It is an infrastructure failure. The
+      question &ldquo;did we do this before?&rdquo; is a graph operation &mdash; it requires
+      traversing relationships across temporal boundaries, filtering by story state,
+      aggregating across episodes. Your tools can't do that. Not because they're bad
+      tools. Because they're the wrong kind of tool. A knowledge graph answers that
+      question in milliseconds, because the question has a shape that only a graph
+      can hold. We built one.
 
   # ---------------------------------------------------------
-  # 2. THE EVIDENCE (replaces "social-proof" section)
+  # 2. THE EVIDENCE — MRS. LANDINGHAM
   # ---------------------------------------------------------
-  # INFOCOM PRINCIPLE: "Show, don't tell." The Hitchhiker's ad
-  # reproduced actual game output as evidence. The ad became the
-  # product for a few seconds. We do the same: show one specific,
-  # evocative detail from the live graph that implies the whole system.
+  # V2 PRIMER: This is the homepage's signature demonstration.
+  # Mrs. Landingham lives here and nowhere else on the site.
   #
-  # INFOCOM PRINCIPLE: Genre pastiche as proof of product.
-  # The copy should demonstrate what it claims. If we claim the graph
-  # can answer questions, we should show a question being answered.
+  # V1 → V2 CHANGES:
+  # - Restructured to lead with wonder (Gear 2) rather than
+  #   capability description. V1 opened with "Fabula knows
+  #   this because it read the scripts" — a feature statement.
+  #   V2 opens with the discovery itself: what the graph
+  #   reveals about Mrs. Landingham that no human reader
+  #   assembled. The system's capabilities are implications
+  #   of the discovery, not the point.
+  # - "Her presence in the graph is larger than her presence
+  #   on screen" promoted from buried line to the structural
+  #   centre of the section. This is the wonder moment — the
+  #   thing that makes a reader feel the excitement of what
+  #   a knowledge graph can do, not just the embarrassment
+  #   of what a spreadsheet can't.
+  # - Removed "Not a mockup. Not a demo rigged to impress."
+  #   Defensive language doesn't belong in the wonder section.
+  #   Let the catalog speak for itself.
+  # - "726" does not appear. Per v2 primer, the homepage
+  #   implies scale through compression ("hundreds more")
+  #   rather than announcing a number. 726 as a featured
+  #   punchline lives on the Benchmarks page.
+  #
+  # GEAR: Wonder (2). This section should make the reader
+  # feel something — the thrill of structural understanding,
+  # the sense that the graph reveals patterns that were always
+  # in the scripts but that no individual reading could surface.
   # ---------------------------------------------------------
   - id: the-evidence
     type: prose
@@ -135,73 +189,51 @@ sections:
     label: "See It Live"
     headline: "Mrs. Landingham Was Mentioned in Three Episodes Before She Appeared on Screen"
     body: >
-      Fabula knows this because it read the scripts. It also knows that her relationship
-      with President Bartlet preceded his political career, that her death in the Season 2
-      finale reverberates through four subsequent episodes across two seasons, and that her
-      name appears in dialogue delivered by eleven different characters. It knows the
-      emotional arc of every conversation she had with the President, what she believed in
-      each one, and how those beliefs shifted. It can tell you all of this in 87 milliseconds.
+      Her name appears in dialogue delivered by eleven different characters. Her
+      relationship with President Bartlet preceded his political career. Her death
+      in the Season 2 finale reverberates through four subsequent episodes across
+      two seasons — not just as grief, but as a structural event that deflects
+      the arcs of everyone who knew her. The graph can trace the emotional wake
+      of that single death through the entire narrative: which characters changed
+      direction, in which episodes, and how those changes compound.
       <br><br>
-      This is one character out of 726. We've processed four seasons of <em>The West
-      Wing</em> end to end&mdash;every character, every relationship, every location, every
-      narrative connection&mdash;into a searchable, browsable knowledge graph. Not a mockup.
-      Not a demo rigged to impress. A live production system you can explore right now, the
-      way you'd explore any tool you were considering trusting with your show.
+      Her presence in the graph is larger than her presence on screen. That's the
+      pattern that emerges when you stop managing a show as a collection of documents
+      and start treating it as the connected structure it always was. We've processed
+      four seasons of <em>The West Wing</em> end to end — every character, every
+      relationship, every narrative connection — into a knowledge graph you can
+      explore right now. You'll find patterns like this everywhere. Connections that
+      were always in the scripts, waiting for an infrastructure that could surface them.
     ctas:
       - label: "Explore The West Wing"
-        url: "/catalog/"
+        url: "/explore/"
         style: primary
         icon: arrow-right
 
-  # ---------------------------------------------------------
-  # 3. THE BIGGER PICTURE
-  # ---------------------------------------------------------
-  # Retained from original, but rewritten in the Infocom register:
-  # confident, compressed, advancing the strategic argument.
-  # The "beachhead" framing is kept but given more conviction.
-  # ---------------------------------------------------------
-  - id: beyond-entertainment
-    type: prose
-    background: surface
-    label: "The Bigger Picture"
-    headline: "Entertainment Is the Beachhead. The Architecture Generalises."
-    body: >
-      At its core, Fabula is a pipeline for creating accurate, structured knowledge at scale
-      from unstructured sources. We started with screenplays because they're the hardest test
-      case we could find&mdash;consistent formatting, clear entities, brutal temporal complexity,
-      and an audience that will notice if you get a single detail wrong. If the architecture
-      survives four seasons of <em>The West Wing</em> with zero entity drift and 90% extraction
-      accuracy validated against human annotation, it'll survive your domain too.
-      <br><br>
-      But we're not in a hurry to leave entertainment. The industry that creates the most
-      complex narrative structures in human culture deserves tools that understand what it's
-      actually building. Right now, every major studio is spending millions on proprietary
-      content metadata systems that are manually curated, siloed per show, and not embedded
-      in creative workflows. We think that's about to change.
-
 # ===========================================================
-# CTA — THE CLOSING MANTRA
+# CTA — CLOSING WITH CONVICTION
 # ===========================================================
-# INFOCOM PRINCIPLE: The closing mantra is not a tagline.
-# It's a ritual — challenge, declaration, romantic promise,
-# personal invitation. "Step up to Infocom. All words. No pictures.
-# The secret reaches of your mind are beckoning."
+# RHYTHMIC MODE: Magnanimous Declaration (Section 9).
+# After the scenic problem section and the wonder-driven
+# evidence section, the CTA shifts to the quietest, most
+# confident mode. No diagnosis. No foil. No argument. Just
+# a clear, warm, declarative statement and an invitation.
+# The confidence comes from the absence of argument — the
+# page has already made the case.
 #
-# Fabula equivalent: challenge (step into), declaration (the
-# architectural claim), romantic promise (your story's structure
-# was always there), personal invitation (now you can see it).
+# GEAR: Conviction (3).
 # ===========================================================
 cta:
   background: hero
   headline: "Step Into the Graph"
   body: >
-    See what happens when every character, location, and story thread in a show
-    lives in a knowledge graph instead of a spreadsheet. Browse the live catalog
-    or follow our thinking on why stories deserve better infrastructure than
-    the tools of a dentist's office.
+    Mrs. Landingham was one character. The graph holds hundreds more, each
+    with the same depth. Browse the live catalog and see what a show looks
+    like when its structure is finally visible. Or follow our thinking on
+    why we built it.
   ctas:
     - label: "Explore The West Wing"
-      url: "/catalog/"
+      url: "/explore/"
       style: primary
       icon: arrow-right
     - label: "Read Our Substack"
@@ -210,10 +242,9 @@ cta:
       icon: book-open
 
 # ===========================================================
-# CLOSING MANTRA (footer breadcrumb replacement)
+# CLOSING MANTRA
 # ===========================================================
-# "Step into the graph" = "Step up to Infocom" (challenge/elevation)
-# "All edges. No spreadsheets." = "All words. No pictures." (declaration)
-# "Your story's structure..." = "The secret reaches..." (romantic promise)
+# Homepage is the canonical source of the full mantra.
+# Other pages vary the closing promise per v2 primer Section 11.
 # ===========================================================
 footer_breadcrumb: "All edges. No spreadsheets. Your story&rsquo;s structure has always been a graph. Now you can see it."

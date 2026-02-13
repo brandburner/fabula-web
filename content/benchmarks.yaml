@@ -1,38 +1,41 @@
-# Benchmarks Page — Brand Voice Transformation
-# ==============================================
+# Benchmarks Page — v2 Voice Primer Rewrite
+# ============================================
 #
-# STRATEGIC ARGUMENT:
-# Fabula publishes validated, reproducible metrics because it can.
-# The industry standard is self-reported accuracy claims with no
-# methodology disclosure. This page turns transparency into a
-# competitive weapon: our willingness to show the numbers IS the
-# argument, before you even read the numbers themselves.
+# V2 PRIMER ASSIGNMENTS:
+# Unique thesis: Validated numbers as evidence. The willingness
+#   to publish is itself the argument.
+# Signature show: The West Wing (methodology focus — the test
+#   material, not the narrative demonstration)
+# Signature demonstration: Inter-annotator agreement methodology
+# Emotional movement: Challenge → evidence → precision → bridge
 #
-# COMPETITIVE FOIL:
+# COMPETITIVE FOIL (this page's instance):
 # Self-reported metrics. Vendor demos on cherry-picked inputs.
-# "AI-powered" claims with no validation methodology. The spreadsheet
-# of unverifiable promises.
+# "AI-powered" claims with no validation methodology.
 #
-# AUDIENCE:
-# This is the shared bridge. Hollywood readers need to trust the
-# product. Investors need to trust the technology. The benchmark_table
-# type serves both with dual-audience framing — a voice innovation
-# worth preserving.
+# RHYTHMIC MODES USED:
+# Hero: Sustained argument
+# Accuracy tables: Sustained argument (appropriate for precision)
+# Scale section: Staccato confession (the honesty about 90.2%)
+# Methodology: Sustained argument with playful double-take headlines
+# CTA: Magnanimous declaration
 #
-# VOICE REGISTER:
-# The Intelligent Friend who brought receipts. Confident without
-# being combative. The aggression is structural (publishing numbers
-# your competitors won't) rather than tonal.
-#
-# STRUCTURAL APPROACH:
-# Provocative challenge headline → dual-framed evidence tables →
-# narrative-woven scale proof → methodology as intellectual honesty →
-# bridge CTA from numbers to product → closing mantra.
+# V1 → V2 CHANGES:
+# - Scale section restructured. V1 was a prose paragraph weaving
+#   numbers in. V2 opens with a staccato confession about what
+#   we don't extract, then builds to what we do. The honesty
+#   moment earns trust before the numbers land.
+# - 726 is correctly here as primary home per v2 primer.
+# - "87ms" appears in the performance table — this is its
+#   co-primary home alongside the homepage's compressed reference.
+# - Footer mantra already varied. Refined.
+# - Methodology section: already uses playful double-take
+#   headline ("We Still Made Them Argue"). Good. Preserved.
 
 ---
 meta:
   slug: benchmarks
-  title: "Fabula Benchmarks — Narrative Extraction Accuracy at Scale"
+  title: "Fabula Benchmarks &mdash; Narrative Extraction Accuracy at Scale"
   description: "Real metrics from processing 80+ episodes of television. Entity extraction accuracy, relationship precision, and query latency — validated against human annotation, not self-reported."
   template: marketing/benchmarks_page.html
   audiences:
@@ -43,19 +46,11 @@ meta:
 # ===========================================================
 # HERO
 # ===========================================================
-# HEADLINE: Provocative challenge directed at competitors.
-# Surface reading: aggressive, maybe arrogant.
-# Resolved reading: the willingness to publish validated numbers
-# is itself evidence of quality. If your metrics survive
-# independent human review, you publish them. If they don't,
-# you say "AI-powered" and change the subject.
+# Preserved from v1. "We Published Our Numbers. Now Ask Your
+# Vendor to Publish Theirs." is the right challenge for this
+# page — structurally aggressive, tonally confident.
 #
-# The body resolves the aggression into methodology: these
-# aren't self-reported numbers, they're consensus annotations
-# from humans who agreed with each other 96.3% of the time.
-# That agreement rate is the real headline — it means the
-# benchmark itself is trustworthy before Fabula even enters
-# the picture.
+# GEAR: Challenge.
 # ===========================================================
 
 hero:
@@ -79,11 +74,8 @@ sections:
   # ---------------------------------------------------------
   # 1. ACCURACY METRICS
   # ---------------------------------------------------------
-  # HEADLINE: Conversational directness with conspiratorial
-  # confidence. The parenthetical "(We Brought Receipts.)"
-  # implies that other vendors didn't. The dual-audience
-  # framing in the benchmark_table is preserved and tightened —
-  # each meaning is now punchier and more specific.
+  # Preserved from v1. The dual-audience framing (hollywood_meaning
+  # / investor_meaning) is a structural innovation worth keeping.
   # ---------------------------------------------------------
   - id: accuracy
     type: benchmark_table
@@ -113,10 +105,8 @@ sections:
   # ---------------------------------------------------------
   # 2. PERFORMANCE METRICS
   # ---------------------------------------------------------
-  # HEADLINE: Lead with the number, then make it visceral.
-  # "87 milliseconds" is abstract. "Before you finish the
-  # thought" makes it concrete. The benchmark_table dual
-  # framing does the rest.
+  # Preserved from v1. 87ms is co-primary home here (also
+  # referenced on homepage in compressed form).
   # ---------------------------------------------------------
   - id: performance
     type: benchmark_table
@@ -143,18 +133,22 @@ sections:
         investor_meaning: "ChromaDB + Neo4j hybrid scales in constant time per entity pair. Contrastive entity sharpening eliminates the N&sup2; trap."
 
   # ---------------------------------------------------------
-  # 3. SCALE — CONVERTED FROM STATS TO PROSE
+  # 3. SCALE — THE HONEST VERSION
   # ---------------------------------------------------------
-  # The original stats grid presented good numbers without
-  # narrative context. Converting to prose lets us weave the
-  # numbers into an argument: we chose hard test cases on
-  # purpose, and the numbers survived. Stats become punchlines
-  # inside sentences, not orphaned callouts.
+  # V1 → V2 CHANGES (significant):
+  # V1 wove numbers into a prose paragraph. Good writing, but
+  # rhythmically identical to everything else on the page.
   #
-  # HEADLINE: "We Didn't Benchmark on Toy Examples" — implies
-  # that competitors did. The body proves it by describing
-  # what "real" looks like: 726 characters across 80+ episodes
-  # with zero entity drift.
+  # V2 opens with a staccato confession: "We don't extract
+  # everything." This is the honesty moment that earns trust
+  # for everything that follows. The concession (90.2%, not
+  # 100%) is reframed as design intent, not limitation.
+  #
+  # 726 is correctly here as its primary home per v2 primer.
+  # Other pages reference it only in compressed form.
+  #
+  # RHYTHMIC MODE: Staccato confession → sustained argument.
+  # GEAR: Evidence.
   # ---------------------------------------------------------
   - id: scale
     type: prose
@@ -162,35 +156,39 @@ sections:
     label: "Scale"
     headline: "We Didn&rsquo;t Benchmark on Toy Examples"
     body: >
-      We chose the hardest test cases we could find. <em>The West Wing</em>
-      alone has 726 canonical entities across four seasons&mdash;from the President
-      of the United States to the bartender who appeared once in a cold open and
-      might return in Season 5. We processed 80+ episodes of television across five
-      series with different narrative structures, different temporal patterns,
-      different ratios of dialogue to action. The result: 15,000+ graph relationships
-      with dense connectivity across causal, thematic, temporal, and emotional edges.
+      We don&rsquo;t extract everything.
       <br><br>
-      The number that matters most isn&rsquo;t any of those. It&rsquo;s zero.
-      Zero entity drift. Process the same episode twice, get the same graph. Process
-      it a third time six months later, get the same graph again. The same character
-      mentioned in Episode 1 and Episode 40 resolves to the same canonical entity
-      with the same UUID. Deterministic, reproducible, and verifiable&mdash;which is
-      another way of saying: these aren&rsquo;t benchmarks we ran once and then
+      Ninety percent. Validated against human annotation across the full dataset.
+      <br><br>
+      The other ten percent is genuinely ambiguous&mdash;characters the script
+      doesn&rsquo;t name, relationships implied but never stated, moments where
+      two professional annotators looked at the same scene and disagreed about
+      what was happening. We flag those. You decide. That is not a limitation.
+      That is the design.
+      <br><br>
+      What that ninety percent covers: 726 canonical entities across four seasons
+      of <em>The West Wing</em>&mdash;from heads of state to walk-on characters
+      who appear once and might return three seasons later. 80+ episodes across
+      five series with different narrative structures, different temporal patterns,
+      different ratios of dialogue to action. 15,000+ graph relationships with
+      dense connectivity across causal, thematic, temporal, and emotional edges.
+      <br><br>
+      And zero entity drift. Process the same episode twice, get the same graph.
+      Process it a third time six months later, get the same graph again. The same
+      character mentioned in Episode 1 and Episode 40 resolves to the same canonical
+      entity with the same UUID. Deterministic, reproducible, and verifiable&mdash;which
+      is another way of saying: these aren&rsquo;t benchmarks we ran once and then
       stopped looking. They hold.
 
   # ---------------------------------------------------------
   # 4. VALIDATION METHODOLOGY
   # ---------------------------------------------------------
-  # HEADLINE: The inter-annotator agreement rate is the buried
-  # lede of the entire page. 96.3% agreement means the humans
-  # reviewing Fabula's output nearly always agreed with each
-  # other — so when they agree that Fabula is right, that
-  # agreement means something. Making them "argue" (resolve
-  # disagreements via adjudication) is methodology, not chaos.
+  # Preserved from v1. The playful double-take headline
+  # ("We Still Made Them Argue") already provides rhythmic
+  # relief. The intellectual honesty of showing methodology
+  # is the whole point of this section.
   #
-  # This section is where credibility lives. The tone is
-  # precise and intellectually honest — showing our work
-  # is the whole point.
+  # GEAR: Precision.
   # ---------------------------------------------------------
   - id: methodology
     type: prose
@@ -228,24 +226,20 @@ sections:
 # ===========================================================
 # CTA — BRIDGE FROM NUMBERS TO PRODUCT
 # ===========================================================
-# The closing CTA bridges from metrics (abstract) to the live
-# product (concrete). "You've read the benchmarks" acknowledges
-# what they just did. "Now walk the graph" invites them to
-# verify the claims themselves. The distinction between
-# "describing" and "demonstrating" is the whole argument of
-# the page compressed into six words.
+# RHYTHMIC MODE: Magnanimous declaration.
+# "Numbers describe. The graph demonstrates." — the bridge
+# from abstract metrics to concrete product experience.
 # ===========================================================
 cta:
   background: hero
   headline: "You&rsquo;ve Read the Benchmarks. Now Walk the Graph."
   body: >
-    Numbers describe. The graph demonstrates. Browse the live catalog to see what
-    90.2% extraction accuracy and 87ms query latency actually feel like when you&rsquo;re
-    tracing a character through four seasons of television&mdash;or follow our thinking
-    on why narrative infrastructure matters.
+    Numbers describe. The graph demonstrates. Browse the live catalog to see
+    what these metrics feel like when you&rsquo;re tracing a character through
+    four seasons of television. Or read the architecture behind them.
   ctas:
     - label: "Explore The West Wing"
-      url: "/catalog/"
+      url: "/explore/"
       style: primary
       icon: arrow-right
     - label: "Read the Architecture"
@@ -257,10 +251,4 @@ cta:
       style: secondary
       icon: user-plus
 
-# ===========================================================
-# CLOSING MANTRA
-# ===========================================================
-# Same ritual as the homepage: challenge, declaration,
-# romantic promise, personal invitation.
-# ===========================================================
-footer_breadcrumb: "All edges. No spreadsheets. Your story&rsquo;s structure has always been a graph. Now you can see it."
+footer_breadcrumb: "All edges. No spreadsheets. We published our numbers. We&rsquo;ll keep publishing them. The graph holds."

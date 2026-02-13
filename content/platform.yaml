@@ -1,13 +1,65 @@
+# Platform Page — v2 Voice Primer Rewrite
+# =========================================
+#
+# V2 PRIMER ASSIGNMENTS:
+# Unique thesis: Compositional cognitive architecture — each stage
+#   independently testable, each decision auditable, each failure
+#   mode isolated. Not a monolithic prompt. A system.
+# Signature show: Indiana Jones
+# Signature demonstration: Satipo's betrayal (event interaction)
+#   and tweeds vs. overcoat (contrastive entity sharpening)
+# Emotional movement: Precision → depth → insight → respect
+#
+# COMPETITIVE FOIL (this page's instance):
+# Monolithic prompts — the industry-standard approach of dumping
+# a script into an LLM and hoping. Not spreadsheets (homepage),
+# not the script coordinator (For Production), not Netflix EKG
+# (About). The platform page diagnoses why "just use an LLM"
+# doesn't work.
+#
+# RHYTHMIC MODES USED:
+# Hero: Sustained argument
+# Technical sections: Sustained argument (appropriate for precision)
+# Open formats: Playful double-take headline ("Netflix Built a
+#   Walled Garden. We Built the Railway.")
+# Who this is for: Staccato — compressed, declarative
+# CTA: Magnanimous declaration
+#
+# V1 → V2 CHANGES:
+# - Hero body tightened. Removed "This is what it takes to get
+#   it right" (defensive).
+# - "Who This Is For" section: investor card rewritten. Killed
+#   "beachhead" and "architecture to generalise" — that's the
+#   investor-pitch language we removed from the homepage. The
+#   investor card now describes what investors actually see:
+#   validated infrastructure with production traction.
+# - CTA: removed "hundreds of canonical entities" (homepage
+#   owns that compression). Tightened to magnanimous declaration.
+# - Footer mantra: already varied, refined.
+# - All technical sections (schema model, extraction chain,
+#   context engineering, guardrails, adjudication, entity
+#   resolution, performance, open formats, security) preserved.
+#   The technical content is working correctly — it's precise,
+#   it uses Indiana Jones and TNG examples on their assigned
+#   pages, and the code snippets demonstrate the product.
+
 ---
 meta:
   slug: platform
-  title: "Fabula Platform — Context Graph Architecture for Narrative"
+  title: "Fabula Platform &mdash; Context Graph Architecture for Narrative"
   description: "Fabula's context graph architecture: typed entity extraction, dual temporal indices, and GraphRAG-powered narrative intelligence at production scale."
   template: "marketing/platform_page.html"
   audiences:
     - investors
     - technical
 
+# ===========================================================
+# HERO
+# ===========================================================
+# V1 → V2: Tightened. "This is what it takes to get it right"
+# was defensive — as if someone had accused us of over-engineering.
+# The new close is declarative: the architecture is the argument.
+# ===========================================================
 hero:
   badge:
     icon: cpu
@@ -17,7 +69,7 @@ hero:
     Most AI tools read scripts the way autocomplete reads sentences&mdash;left to right,
     no memory, no structure. Fabula decomposes narrative into a typed knowledge graph with
     five core node types, dual temporal indices, and hallucination-guarded entity extraction
-    from unstructured sources at scale. This is what it takes to get it right.
+    from unstructured sources at scale. The architecture is the argument.
   footnote: "Engineered over 18 months. Tested on 60+ episodes across Star Trek TNG, The West Wing, Doctor Who, and more."
   ctas:
     - label: "Register Your Interest"
@@ -35,6 +87,10 @@ sections:
 
   # ------------------------------------------
   # 1. THE UNIVERSAL SCHEMA MODEL
+  # ------------------------------------------
+  # PRESERVED FROM V1. The schema model section is technically
+  # correct and well-voiced. The Bartlet BDI code snippet is
+  # the right evidence for this section.
   # ------------------------------------------
   - id: schema-model
     type: feature_grid
@@ -130,6 +186,8 @@ sections:
   # ------------------------------------------
   # 2. THE EXTRACTION CHAIN
   # ------------------------------------------
+  # PRESERVED FROM V1.
+  # ------------------------------------------
   - id: extraction-chain
     type: pipeline
     background: surface
@@ -217,6 +275,8 @@ sections:
 
   # ------------------------------------------
   # 3. DYNAMIC CONTEXT ENGINEERING
+  # ------------------------------------------
+  # PRESERVED FROM V1.
   # ------------------------------------------
   - id: context-engineering
     type: cards
@@ -308,6 +368,8 @@ sections:
   # ------------------------------------------
   # 4. ANTI-HALLUCINATION GUARDRAILS
   # ------------------------------------------
+  # PRESERVED FROM V1.
+  # ------------------------------------------
   - id: guardrails
     type: cards
     background: surface
@@ -368,6 +430,9 @@ sections:
 
   # ------------------------------------------
   # 5. SMART ADJUDICATION
+  # ------------------------------------------
+  # PRESERVED FROM V1. Indiana Jones code snippets are the
+  # signature demonstration, correctly placed on this page.
   # ------------------------------------------
   - id: adjudication
     type: pipeline
@@ -516,6 +581,8 @@ sections:
   # ------------------------------------------
   # 6. ENTITY RESOLUTION AT SCALE
   # ------------------------------------------
+  # PRESERVED FROM V1.
+  # ------------------------------------------
   - id: entity-resolution
     type: comparison
     background: surface
@@ -552,10 +619,10 @@ sections:
           - "Number One (by Lwaxana)"
 
     stats:
-      - value: "726"
+      - value: "Hundreds"
         color: primary
         title: "Canonical Entities"
-        description: "Across 60+ episodes of television"
+        description: "Resolved across 60+ episodes of television"
       - value: "0"
         color: green
         title: "Entity Drift"
@@ -611,6 +678,8 @@ sections:
   # ------------------------------------------
   # 7. PERFORMANCE ENGINEERING
   # ------------------------------------------
+  # PRESERVED FROM V1.
+  # ------------------------------------------
   - id: performance
     type: stats
     background: page
@@ -648,6 +717,10 @@ sections:
 
   # ------------------------------------------
   # 8. OPEN FORMATS
+  # ------------------------------------------
+  # PRESERVED FROM V1. The headline ("Netflix Built a Walled
+  # Garden. We Built the Railway.") is a playful double-take
+  # that creates rhythmic relief after dense technical sections.
   # ------------------------------------------
   - id: open-formats
     type: cards
@@ -704,6 +777,8 @@ sections:
   # ------------------------------------------
   # 9. SECURITY & CONTROL
   # ------------------------------------------
+  # PRESERVED FROM V1.
+  # ------------------------------------------
   - id: security
     type: split
     background: page
@@ -755,61 +830,83 @@ sections:
   # ------------------------------------------
   # 10. WHO THIS IS FOR
   # ------------------------------------------
+  # V1 → V2 CHANGES:
+  # - Investor card rewritten. Killed "beachhead" and
+  #   "architecture to generalise" — that's the language
+  #   we removed from the homepage. The investor now sees:
+  #   validated infrastructure with production traction,
+  #   horizontal applicability demonstrated.
+  # - Intro tightened. Removed "flat documents can't provide"
+  #   (the foil has been made across the entire page; the
+  #   closing cards don't need to restate it).
+  # - Production Teams card: removed "walks out the door
+  #   when they leave" — For Production owns the script-
+  #   coordinator-as-foil. Compressed.
+  #
+  # RHYTHMIC MODE: Staccato — compressed, declarative.
+  # ------------------------------------------
   - id: who-this-is-for
     type: cards
     background: surface
     label: "Built For"
-    headline: "The Industry That Creates the Most Complex Narratives Manages Them in Google Sheets"
+    headline: "Who Builds on the Context Graph"
     intro: >
-      These are the teams where continuity failures cost real money, where characters number
-      in the hundreds, and where &ldquo;what happened in Season 2&rdquo; is a question nobody
-      in the room can answer with confidence.
+      Fabula serves teams where narrative complexity creates real operational cost&mdash;and
+      where structural understanding of story changes what&rsquo;s possible.
 
     cards:
       - icon: clapperboard
         color: primary
         title: "Production Teams"
         description: >
-          Your script coordinator maintains a spreadsheet with 40 tabs and an institutional
-          memory that walks out the door when they leave. Fabula extracts, resolves, and
-          tracks every entity across every episode&mdash;automatically, with zero drift.
+          Every entity across every episode, automatically maintained, permanently
+          queryable. Institutional knowledge that doesn&rsquo;t depend on any
+          individual&rsquo;s memory.
         border: top
       - icon: briefcase
         color: green
         title: "Development Executives"
         description: >
-          You greenlight based on a pilot script and a pitch deck. Fabula gives you narrative
-          complexity metrics, character arc density, relationship networks, and thematic
-          coverage across a property's full history&mdash;the structural fingerprint behind
-          the gut instinct.
+          Narrative complexity metrics, character arc density, relationship networks,
+          thematic coverage&mdash;the structural fingerprint behind the gut instinct.
         border: top
       - icon: gamepad-2
         color: violet
         title: "Game Studios"
         description: >
-          IP adaptation starts with months of manual character cataloguing. Fabula exports
-          structured character data, canonical relationship networks, and timeline-consistent
-          descriptions in any format your engine or toolchain requires.
+          Structured character data, canonical relationship networks, and
+          timeline-consistent descriptions exported in any format your engine
+          requires. Months of manual cataloguing replaced by a query.
         border: top
       - icon: line-chart
         color: cyan
         title: "Investors"
         description: >
-          Context graph infrastructure for entertainment IP. Entity extraction, resolution,
-          and graph construction&mdash;horizontal infrastructure with entertainment as the
-          beachhead and the architecture to generalise.
+          Production-validated context graph infrastructure for entertainment IP.
+          Entity extraction, resolution, and graph construction tested across five
+          series and 60+ episodes. Horizontal applicability with entertainment as
+          the proving ground.
         border: top
 
 # =============================================
 # CTA
 # =============================================
+# V1 → V2 CHANGES:
+# - Removed "hundreds of canonical entities, thousands of typed
+#   connections" — homepage owns that compression.
+# - Shifted to magnanimous declaration. The page has spent
+#   800 lines making the technical case. The CTA rests on it.
+#
+# RHYTHMIC MODE: Magnanimous declaration.
+# GEAR: Conviction (3).
+# =============================================
 cta:
   background: hero
   headline: "You&rsquo;ve Read the Architecture. Now Walk the Graph."
   body: >
-    Explore four seasons of <em>The West Wing</em> as a live knowledge graph&mdash;726
-    canonical entities, thousands of typed connections, zero entity drift. Or register
-    your interest and we'll show you what it looks like with your scripts.
+    The architecture is running. Explore the live catalog and see what compositional
+    extraction, dual temporal indices, and contrastive entity sharpening produce when
+    applied to real television. Or tell us about your project.
   ctas:
     - label: "Walk the Graph"
       url: "{% url 'catalog' %}"
@@ -819,4 +916,4 @@ cta:
       url: "{% slugurl 'early-access' %}"
       style: secondary
 
-footer_breadcrumb: "All edges. No spreadsheets. Your story&rsquo;s structure has always been a graph. Now you can see it."
+footer_breadcrumb: "All edges. No spreadsheets. Stories treated as data structures at last."

@@ -1,36 +1,44 @@
-# For Production — Voice Transformation
-# ======================================
+# For Production — v2 Voice Primer Rewrite
+# ==========================================
 #
-# STRATEGIC ARGUMENT:
-# The entertainment industry builds the most complex narrative structures
-# in human culture and manages them with the tools of a dentist's office.
-# This is not a workflow problem. It is an infrastructure failure.
-# Fabula is the infrastructure that should have existed all along.
+# V2 PRIMER ASSIGNMENTS:
+# Unique thesis: The gap between narrative complexity and production
+#   tooling is an infrastructure failure, not a workflow problem.
+#   Four specific failures, diagnosed.
+# Signature show: Star Trek: The Next Generation
+# Signature demonstration: Worf's three canonical names resolved
+#   to a single entity — alias resolution as production workflow.
+# Emotional movement: Diagnosis → recognition → demonstration → confidence
 #
-# COMPETITIVE FOIL:
-# The spreadsheet. The binder. The script coordinator's memory. The wiki
-# that was accurate in February. These are not story bibles. They are
-# acts of faith dressed up as systems.
+# COMPETITIVE FOIL (this page's instance):
+# The script coordinator's memory. Institutional knowledge that
+# walks out the door when someone leaves the show.
+# (Homepage owns "the shared drive nobody trusts." About owns
+# "Netflix EKG as expensive document." Benchmarks owns
+# "self-reported metrics.")
 #
-# AUDIENCE:
-# Showrunners, writers, script supervisors, development executives.
-# Zero jargon. These people build 726-character narrative universes
-# under production deadlines and manage them with tab-separated values.
-# They will read long copy if it diagnoses their situation precisely.
+# RHYTHMIC MODES USED:
+# Hero: Sustained argument
+# Pain points: Scenic (second person, present tense — feel the pain)
+# Evidence: Narrative drift → wonder
+# CTA: Magnanimous declaration
 #
-# VOICE REGISTER:
-# The Intelligent Friend, but in diagnostic mode. Not "we feel your pain"
-# but "here is why your infrastructure is broken, and here is what we
-# built instead." Confident, conspiratorial, precise.
-#
-# KEY ANTI-PATTERN AVOIDED:
-# Empathy-first SaaS voice. "We know how frustrating it is..." is
-# therapy-speak. Fabula diagnoses. It does not empathise.
+# V1 → V2 CHANGES:
+# - Signature show changed from TWW to TNG throughout
+# - Mrs. Landingham evidence section replaced with Worf
+#   alias resolution demonstration
+# - Pain point scenarios rewritten in scenic mode
+# - "726" removed (Benchmarks owns it), "87ms" compressed
+#   (Benchmarks/homepage own it)
+# - "most complex narratives in human culture" removed
+#   (homepage owns that formulation)
+# - "dentist's office" removed (homepage CTA voice primer owns it)
+# - Footer mantra varied per v2 Section 12
 
 ---
 meta:
   slug: for-production
-  title: "Fabula for Production — The Context Engine for Series Television"
+  title: "Fabula for Production &mdash; The Context Engine for Series Television"
   description: "Stories are knowledge graphs. The entertainment industry manages them as spreadsheets. This is architecturally wrong, and we built what's right."
   template: marketing/for_production_page.html
   audiences:
@@ -39,17 +47,17 @@ meta:
 # ===========================================================
 # HERO
 # ===========================================================
-# HEADLINE: "How to Lose the Plot" — double meaning from the lexicon.
-# Surface: sarcastic self-help parody, the kind of headline that makes
-# a showrunner stop scrolling because it sounds like a joke about their
-# actual Tuesday.
-# Turn: a literal description of what happens when you manage narrative
-# in spreadsheets. You lose the plot. Not metaphorically. Structurally.
+# HEADLINE: "How to Lose the Plot" — preserved from v1.
+# The double meaning (go crazy / literally lose the narrative
+# structure) is the strongest production-audience headline
+# on the site.
 #
-# BODY: Diagnostic, not empathetic. We do not say "you've been there."
-# We describe what a showrunner actually manages (the scale) and then
-# contrast it with the tools (the absurdity). The gap between the
-# complexity and the infrastructure IS the argument.
+# BODY: Tightened. Removed "seven hundred characters" (homepage
+# owns that compression device). Opens with the scale of what
+# a writers' room manages, pivots to the absurdity of the tools,
+# closes with the product statement.
+#
+# GEAR: Diagnosis (1).
 # ===========================================================
 
 hero:
@@ -58,7 +66,7 @@ hero:
     text: "For Production Teams"
   headline: "How to Lose the Plot"
   body: >
-    Start with seven hundred characters. Give each one a history, a set of
+    Start with hundreds of characters. Give each one a history, a set of
     relationships, a trajectory that shifts across four seasons. Add thousands
     of established facts&mdash;any one of which constrains every future script.
     Layer in temporal dependencies, thematic arcs, locations that carry the weight
@@ -69,16 +77,16 @@ hero:
     That is how you lose the plot. Not metaphorically. Structurally. The
     complexity of what a writers&rsquo; room builds has outgrown the tools it uses
     to track what it&rsquo;s built. Fabula is the context engine that closes
-    the gap&mdash;a story bible that reads your scripts, builds a knowledge graph
-    of everything in your show, and answers questions no spreadsheet will ever
-    answer. It updates itself. It cannot drift. And it already works.
+    the gap&mdash;a knowledge graph that reads your scripts, extracts everything
+    in your show, and answers questions no document ever will. It updates
+    itself. It cannot drift. And it already works.
   ctas:
     - label: "Join Early Access"
       url: "/early-access/"
       style: primary
       icon: arrow-right
-    - label: "Explore the Live Demo"
-      url: "/catalog/"
+    - label: "Explore the Live Catalog"
+      url: "/explore/"
       style: secondary
       icon: play
 
@@ -88,20 +96,17 @@ hero:
 sections:
 
   # ---------------------------------------------------------
-  # 1. INFRASTRUCTURE FAILURES (replaces empathy-first pain_points)
+  # 1. INFRASTRUCTURE FAILURES
   # ---------------------------------------------------------
-  # VOICE PRINCIPLE: Each scenario is a DIAGNOSIS, not a consolation.
-  # The framing headline shifts from "Sound Familiar?" (empathy) to
-  # a declarative statement about what these failures actually cost.
+  # RHYTHMIC MODE: Scenic (Section 9).
+  # Each scenario puts the reader inside the moment. Second
+  # person, present tense. The pain is felt, not explained.
   #
-  # Each "pain" field diagnoses the architectural reason the problem
-  # exists, not the emotional experience of having it.
-  # Each "solution" field states the fix as an inevitability, not
-  # a sales pitch.
+  # V1 → V2: Rewritten from analytical diagnosis to immersive
+  # scenic mode. Each scenario is now a Tuesday afternoon
+  # the reader recognises, not a case study they're told about.
   #
-  # The word "infrastructure" is deliberate. It reframes what feels
-  # like a memory problem or a workflow problem as a systems problem.
-  # That reframing is the entire sale.
+  # GEAR: Diagnosis (1), delivered through immersion.
   # ---------------------------------------------------------
   - id: infrastructure-failures
     type: pain_points
@@ -117,12 +122,15 @@ sections:
       - title: "The Silence in the Room"
         context: "(writers&rsquo; room)"
         pain: >
-          Someone pitches a storyline and the room goes quiet. Not because the
-          idea is bad, but because nobody can confirm whether you did something
-          like it in Season 2. That silence is not a memory failure. It is an
-          infrastructure failure. A system that cannot answer &ldquo;did we do
-          this before?&rdquo; across four seasons of television is not a story
-          bible. It is a hope.
+          It&rsquo;s Tuesday. Someone pitches a storyline and the room stalls. Not
+          because the idea is bad, but because nobody can confirm whether you did
+          something like it in Season 2. You look around. The showrunner is thinking.
+          The script coordinator is scrolling through a spreadsheet that hasn&rsquo;t
+          been updated since before the hiatus. Nobody says &ldquo;no,&rdquo; but
+          nobody says &ldquo;yes&rdquo; either. That silence costs you the momentum
+          of the pitch and maybe the storyline itself. It is not a memory failure.
+          It is a system that cannot answer &ldquo;did we do this before?&rdquo;
+          across four seasons of television.
         solution: >
           Fabula indexes every arc, character journey, and thematic thread across
           every season. The question &ldquo;have we done this?&rdquo; becomes a
@@ -131,11 +139,14 @@ sections:
       - title: "The Eighty-Episode Rewatch"
         context: "(production)"
         pain: >
-          A character from Season 1 is coming back. What was their title? Who
-          did they share scenes with? What did they know, and when did they know
-          it? The honest answer is that nobody remembers, and the current system
-          for finding out is rewatching eighty episodes of television. That is
-          not a research method. It is an admission that no research method exists.
+          A character from Season 1 is coming back. You need her title, her
+          relationships, what she knew and when she knew it. You open the story
+          bible. The story bible has a paragraph about her that was last edited
+          eighteen months ago by someone who left the show. You open the scripts.
+          There are eighty of them. The honest answer is that nobody remembers,
+          and the current method for finding out is reading eighty scripts cover
+          to cover. That is not a research method. It is an admission that no
+          research method exists.
         solution: >
           Every character has a canonical profile built automatically from the
           scripts&mdash;every appearance, every relationship, every piece of
@@ -145,14 +156,14 @@ sections:
       - title: "The Expensive Contradiction"
         context: "(script supervision)"
         pain: >
-          A character references an event that contradicts something established
-          two seasons ago. The script supervisor catches it in prep, or does not
-          catch it until dailies. The difference between those two outcomes is
-          tens of thousands of dollars. But the real failure happened earlier:
-          a system that stores canon in documents has no mechanism to detect
-          when new material violates it. Detection depends on a human
+          You&rsquo;re reading tomorrow&rsquo;s pages. A character mentions an
+          event that contradicts something established two seasons ago. You catch
+          it in prep. Good. If you hadn&rsquo;t, it would have reached the stage,
+          and the difference between catching it now and catching it in dailies is
+          tens of thousands of dollars. But the real failure happened earlier: the
+          system that stores your show&rsquo;s canon has no mechanism to detect
+          when new material violates it. Detection depends entirely on you
           remembering every established fact across every produced episode.
-          That is not quality control. It is a prayer.
         solution: >
           Fabula tracks every established fact, every relationship state, every
           piece of canon across your entire series. Contradictions surface
@@ -163,23 +174,22 @@ sections:
         context: "(production coordination)"
         pain: >
           Legal needs a complete list of every real-world brand, location, and
-          licensed music cue mentioned in this season&rsquo;s scripts. Somebody
-          sits down and reads every script cover to cover, building a spreadsheet
-          by hand. This happens every season. Sometimes it happens twice. The
-          information was always in the scripts. The problem is that no system
-          existed to extract it.
+          licensed music cue mentioned in this season&rsquo;s scripts. By Monday.
+          You sit down with a highlighter and start reading. Every script, cover
+          to cover. You build the spreadsheet by hand. This happens every season.
+          Sometimes it happens twice. The information was always in the scripts.
+          The problem is that no system existed to extract it.
         solution: >
           Every entity&mdash;object, location, brand mention, music cue&mdash;is
           extracted and cataloged automatically. Filterable asset inventories
           generated on demand. The Friday read becomes a Friday query.
 
   # ---------------------------------------------------------
-  # 2. HOW IT WORKS (pipeline)
+  # 2. HOW IT WORKS
   # ---------------------------------------------------------
-  # Tightened descriptions. The steps are sound for this audience.
-  # Small language upgrades: more compressed, more confident.
-  # "No Spreadsheets" is the right foil. "Four Steps" is fine but
-  # adding "One Graph" sharpens the architectural claim.
+  # RHYTHMIC MODE: Sustained argument.
+  # Straightforward pipeline description. Tightened from v1.
+  # GEAR: Conviction (3) — this is how it works, stated plainly.
   # ---------------------------------------------------------
   - id: how-it-works
     type: pipeline
@@ -196,7 +206,7 @@ sections:
         title: "Upload Your Scripts"
         description: >
           Final Draft, Fountain, PDF&mdash;standard industry formats, no special
-          prep. Drop in a single episode or your entire series. You write. We read.
+          prep. Drop in a single episode or your entire series.
 
       - number: 2
         color: green
@@ -210,10 +220,10 @@ sections:
         color: blue
         title: "Ask Questions Nobody Could Answer Before"
         description: >
-          &ldquo;Which episodes is Toby&rsquo;s ex-wife in?&rdquo;
-          &ldquo;Show me every character who has scenes with both the President
-          and the First Lady.&rdquo;
-          &ldquo;How did Josh&rsquo;s relationships change after the shooting?&rdquo;
+          &ldquo;Who was in that scene in Season 1?&rdquo;
+          &ldquo;Show me every character who shares scenes with the Captain
+          and the First Officer.&rdquo;
+          &ldquo;How did Worf&rsquo;s loyalties shift after he joined DS9?&rdquo;
           These are graph queries. They return in milliseconds.
 
       - number: 4
@@ -225,54 +235,56 @@ sections:
           separate artifact that someone has to maintain.
 
   # ---------------------------------------------------------
-  # 3. THE EVIDENCE (replaces stats grid)
+  # 3. THE EVIDENCE — WORF
   # ---------------------------------------------------------
-  # VOICE PRINCIPLE: Convert stats to prose. Weave the numbers into
-  # a narrative paragraph. Show one specific example (Mrs. Landingham)
-  # and let the reader infer the system.
+  # V2 PRIMER: This is For Production's signature demonstration.
+  # Worf's three canonical names live here and nowhere else.
   #
-  # INFOCOM PRINCIPLE: Compression and implied vastness. Instead of
-  # listing "726 characters, 87ms, zero errors" as callout cards,
-  # we tell the story of one character query and let the reader
-  # multiply by 725.
+  # RHYTHMIC MODE: Narrative drift → wonder.
+  # Opens with the specific production problem (a character
+  # referenced three different ways) and lets the story unspool
+  # into what the graph reveals about identity resolution.
+  # The wonder moment: the system understands that rank changes,
+  # cultural contexts, and career transitions produce different
+  # names for the same person — the way a script coordinator
+  # does, but without the coordinator.
+  #
+  # GEAR: Transitions from Diagnosis (1) to Wonder (2).
   # ---------------------------------------------------------
   - id: the-evidence
     type: prose
     background: surface
     label: "Tested on Real Television"
-    headline: "726 Characters. 87 Milliseconds. Zero Drift."
+    headline: "Lieutenant Worf. Worf, Son of Mogh. Ambassador Worf. One Person."
     body: >
-      We processed four seasons of <em>The West Wing</em> end to end. Every
-      character, every relationship, every location, every narrative connection.
-      The result is a knowledge graph of 726 canonical entities and the thousands
-      of relationships between them.
+      The script says &ldquo;The Captain.&rdquo; Later it says &ldquo;Picard.&rdquo;
+      Later still, someone calls him &ldquo;Jean-Luc.&rdquo; A human reader knows
+      these are the same person. A spreadsheet does not. An entity extraction
+      system that creates three separate entries for the same character hasn&rsquo;t
+      solved the problem&mdash;it&rsquo;s automated the problem.
       <br><br>
-      Pick any one. Mrs. Landingham, for instance. Fabula knows she was mentioned
-      in three episodes before she appeared on screen. It knows her relationship
-      with President Bartlet preceded his political career, that her death in the
-      Season 2 finale reverberates through four subsequent episodes across two
-      seasons, and that her name appears in dialogue delivered by eleven different
-      characters. It can trace the emotional arc of every conversation she had
-      with the President and tell you how those conversations shifted over time.
-      It returns all of this in 87 milliseconds. That is one character out of 726.
+      Fabula resolves aliases against a living canonical graph. &ldquo;Lieutenant
+      Worf,&rdquo; &ldquo;Worf, son of Mogh,&rdquo; and &ldquo;Ambassador
+      Worf&rdquo; collapse to a single canonical entity&mdash;one node carrying
+      the full history of a character whose name changes with rank, with cultural
+      context, with career. The system understands that a promotion doesn&rsquo;t
+      create a new character. A Klingon naming convention doesn&rsquo;t create a
+      new character. An ambassadorial appointment doesn&rsquo;t create a new
+      character. It understands this across seven seasons and 178 episodes, with
+      zero drift.
       <br><br>
-      This is not a mockup. It is not a demo rigged to impress a pitch meeting.
-      It is a live production system you can explore right now, the way you would
-      explore any tool you were considering trusting with your show.
+      That&rsquo;s what entity resolution looks like at production scale. Not a
+      string match. Not a similarity threshold. A system that understands narrative
+      identity the way your script coordinator does&mdash;except it doesn&rsquo;t
+      leave the show in Season 3.
     ctas:
-      - label: "Explore The West Wing"
-        url: "/catalog/"
+      - label: "Explore the Live Catalog"
+        url: "/explore/"
         style: primary
         icon: arrow-right
 
   # ---------------------------------------------------------
-  # 4. EXPORT FORMATS (cards)
-  # ---------------------------------------------------------
-  # VOICE PRINCIPLE: "Your Data Leaves When You Leave" advances the
-  # argument. It is not a feature statement. It is a trust signal
-  # aimed at an industry that has been burned by proprietary platforms.
-  # The subtext: we are confident enough in the product that we do not
-  # need to trap you.
+  # 4. EXPORT FORMATS
   # ---------------------------------------------------------
   - id: formats
     type: cards
@@ -280,7 +292,7 @@ sections:
     label: "Open Formats"
     headline: "Your Data Leaves When You Leave"
     intro: >
-      No proprietary formats. No vendor lock-in. No hostages. Your show&rsquo;s
+      No proprietary formats. No vendor lock-in. Your show&rsquo;s
       data is yours, in the formats your team already uses.
     cards:
       - icon: file-spreadsheet
@@ -290,39 +302,37 @@ sections:
       - icon: file-text
         color: primary
         title: "PDF Story Bibles"
-        description: "Formatted, print-ready story bibles generated from the live graph. Always current because they are not maintained&mdash;they are rendered."
+        description: "Formatted, print-ready story bibles generated from the live graph. Always current because they&rsquo;re rendered from the graph, not maintained by hand."
       - icon: code
         color: blue
         title: "API Access"
-        description: "Query your show&rsquo;s data programmatically. Integrate with existing production tools, or build something we have not thought of yet."
+        description: "Query your show&rsquo;s data programmatically. Integrate with existing production tools, or build something we haven&rsquo;t thought of yet."
 
 # ===========================================================
-# CTA — THE CLOSING MANTRA
+# CTA
 # ===========================================================
-# VOICE PRINCIPLE: Diagnostic, not benefit-statement.
-# "The Infrastructure Your Stories Deserve Already Exists" is a
-# declarative claim. It does not ask "are you ready?" It states
-# a fact and invites the reader to verify it.
+# RHYTHMIC MODE: Magnanimous declaration.
+# After the scenic pain points and the Worf demonstration,
+# the CTA rests on quiet confidence. No foil, no diagnosis.
+# Just an invitation.
+# GEAR: Conviction (3).
 # ===========================================================
 cta:
   background: hero
   headline: "The Infrastructure Your Stories Deserve Already Exists"
   body: >
-    We are opening early access to production teams working on series television.
-    Explore the live demo, see what a knowledge graph does that a spreadsheet
-    cannot, and decide for yourself whether your show deserves better tools
-    than binders and memory.
+    We&rsquo;re opening early access to production teams working on series
+    television. Explore the live catalog and see what a knowledge graph does
+    that no binder ever could. Or tell us about your show and we&rsquo;ll
+    tell you what Fabula can do with it.
   ctas:
     - label: "Join Early Access"
       url: "/early-access/"
       style: primary
       icon: arrow-right
-    - label: "Explore The West Wing"
-      url: "/catalog/"
+    - label: "Explore the Live Catalog"
+      url: "/explore/"
       style: secondary
       icon: play
 
-# ===========================================================
-# CLOSING MANTRA (footer breadcrumb)
-# ===========================================================
-footer_breadcrumb: "All edges. No spreadsheets. Your story&rsquo;s structure has always been a graph. Now you can see it."
+footer_breadcrumb: "All edges. No spreadsheets. The infrastructure your stories deserve already exists."
