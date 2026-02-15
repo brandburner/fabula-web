@@ -130,7 +130,7 @@
                             {# Episode context #}
                             <div class="flex items-center gap-2 text-xs mb-2" style="color: var(--f-fg-placeholder); font-family: var(--f-font-mono);">
                                 <span class="px-2 py-0.5 rounded" style="background: var(--f-bg-elevated);">
-                                    S{{ participation.event.episode.get_parent.specific.season_number }}E{{ participation.event.episode.episode_number }}
+                                    S{{ participation.season_number }}E{{ participation.event.episode.episode_number }}
                                 </span>
                                 <span style="color: var(--f-border-default);">·</span>
                                 <span class="line-clamp-1">{{ participation.event.episode.title }}</span>
@@ -363,7 +363,7 @@
                             {# Episode context #}
                             <div class="flex items-center gap-2 text-xs text-slate-500 font-mono mb-2">
                                 <span class="px-2 py-0.5 bg-slate-800/50 rounded">
-                                    S{{ participation.event.episode.get_parent.specific.season_number }}E{{ participation.event.episode.episode_number }}
+                                    S{{ participation.season_number }}E{{ participation.event.episode.episode_number }}
                                 </span>
                                 <span class="text-slate-600">·</span>
                                 <span class="line-clamp-1">{{ participation.event.episode.title }}</span>
