@@ -6,11 +6,11 @@
 {% block series_context %}
 {% if fabula_theme == 'writerly' %}
 <span class="text-sm" style="color: var(--f-fg-tertiary); font-family: var(--f-font-display);">
-    Season {{ page.get_parent.specific.season_number }} &middot; Episode {{ page.episode_number }}
+    Season {{ page.season_number }} &middot; Episode {{ page.episode_number }}
 </span>
 {% else %}
 <span class="text-slate-500 text-sm font-medium">
-    Season {{ page.get_parent.specific.season_number }} &middot; Episode {{ page.episode_number }}
+    Season {{ page.season_number }} &middot; Episode {{ page.episode_number }}
 </span>
 {% endif %}
 {% endblock %}
@@ -27,7 +27,7 @@
                 <div class="flex items-center gap-2 px-3 py-1.5 rounded" style="background: var(--f-accent-blue-bg); border: 1px solid color-mix(in srgb, var(--f-accent-blue) 25%, transparent);">
                     <i data-lucide="film" class="w-4 h-4" style="color: var(--f-accent-blue);"></i>
                     <span class="font-medium" style="font-family: var(--f-font-mono); color: var(--f-accent-blue-fg); font-size: 0.875rem;">
-                        S{{ page.get_parent.specific.season_number }}E{{ page.episode_number }}
+                        S{{ page.season_number }}E{{ page.episode_number }}
                     </span>
                 </div>
                 {% if page.dominant_tone %}
@@ -296,7 +296,7 @@
                 <div class="flex items-center gap-2 px-3 py-1.5 bg-blue-500/10 border border-blue-500/20 rounded-lg">
                     <i data-lucide="film" class="w-4 h-4 text-blue-400"></i>
                     <span class="text-blue-400 font-bold font-mono">
-                        S{{ page.get_parent.specific.season_number }}E{{ page.episode_number }}
+                        S{{ page.season_number }}E{{ page.episode_number }}
                     </span>
                 </div>
                 {% if page.dominant_tone %}

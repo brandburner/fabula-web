@@ -128,7 +128,7 @@
                             {# Episode context #}
                             <div class="flex items-center gap-2 text-xs mb-2" style="color: var(--f-fg-placeholder); font-family: var(--f-font-mono);">
                                 <span class="px-2 py-0.5 rounded" style="background: var(--f-bg-elevated);">
-                                    S{{ involvement.event.episode.get_parent.specific.season_number }}E{{ involvement.event.episode.episode_number }}
+                                    S{{ involvement.event.episode.season_number }}E{{ involvement.event.episode.episode_number }}
                                 </span>
                                 <span style="color: var(--f-border-default);">·</span>
                                 <span class="line-clamp-1">{{ involvement.event.episode.title }}</span>
@@ -307,7 +307,7 @@
                             {# Episode context #}
                             <div class="flex items-center gap-2 text-xs text-slate-500 font-mono mb-2">
                                 <span class="px-2 py-0.5 bg-slate-800/50 rounded">
-                                    S{{ involvement.event.episode.get_parent.specific.season_number }}E{{ involvement.event.episode.episode_number }}
+                                    S{{ involvement.event.episode.season_number }}E{{ involvement.event.episode.episode_number }}
                                 </span>
                                 <span class="text-slate-600">·</span>
                                 <span class="line-clamp-1">{{ involvement.event.episode.title }}</span>

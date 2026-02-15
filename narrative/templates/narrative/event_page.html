@@ -6,11 +6,11 @@
 {% block series_context %}
 {% if fabula_theme == 'writerly' %}
 <span class="text-sm" style="color: var(--f-fg-tertiary); font-family: var(--f-font-mono);">
-    S{{ page.episode.get_parent.specific.season_number }}E{{ page.episode.episode_number }} · {{ page.episode.title }}
+    S{{ page.episode.season_number }}E{{ page.episode.episode_number }} · {{ page.episode.title }}
 </span>
 {% else %}
 <span class="text-slate-500 text-sm font-medium">
-    S{{ page.episode.get_parent.specific.season_number }}E{{ page.episode.episode_number }} · {{ page.episode.title }}
+    S{{ page.episode.season_number }}E{{ page.episode.episode_number }} · {{ page.episode.title }}
 </span>
 {% endif %}
 {% endblock %}
@@ -27,7 +27,7 @@
                 <div class="flex items-center gap-2 px-3 py-1.5 rounded-md" style="background: var(--f-accent-primary-bg); border: 1px solid color-mix(in srgb, var(--f-accent-primary) 25%, transparent);">
                     <i data-lucide="film" class="w-3.5 h-3.5" style="color: var(--f-accent-primary);"></i>
                     <span style="font-family: var(--f-font-mono); color: var(--f-accent-primary); font-weight: 500;">
-                        S{{ page.episode.get_parent.specific.season_number }}E{{ page.episode.episode_number }}
+                        S{{ page.episode.season_number }}E{{ page.episode.episode_number }}
                     </span>
                 </div>
                 <span style="color: var(--f-border-default);">·</span>
@@ -438,7 +438,7 @@
                 <div class="flex items-center gap-2 px-3 py-1.5 bg-amber-500/10 border border-amber-500/20 rounded-lg">
                     <i data-lucide="film" class="w-3.5 h-3.5 text-amber-400"></i>
                     <span class="font-mono text-amber-400 font-medium">
-                        S{{ page.episode.get_parent.specific.season_number }}E{{ page.episode.episode_number }}
+                        S{{ page.episode.season_number }}E{{ page.episode.episode_number }}
                     </span>
                 </div>
                 <span class="text-slate-700">·</span>

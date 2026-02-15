@@ -928,6 +928,7 @@ class Command(BaseCommand):
         if episode_page:
             episode_page.title = title
             episode_page.episode_number = episode_number
+            episode_page.season_number = season_page.season_number
             episode_page.logline = episode_data.get('logline', '')
             episode_page.high_level_summary = episode_data.get('high_level_summary', '')
             episode_page.dominant_tone = episode_data.get('dominant_tone', '')
@@ -943,6 +944,7 @@ class Command(BaseCommand):
                 slug=slugify(f"s{season_page.season_number}e{episode_number}-{title}"),
                 fabula_uuid=episode_uuid,
                 episode_number=episode_number,
+                season_number=season_page.season_number,
                 logline=episode_data.get('logline', ''),
                 high_level_summary=episode_data.get('high_level_summary', ''),
                 dominant_tone=episode_data.get('dominant_tone', ''),

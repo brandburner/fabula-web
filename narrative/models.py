@@ -496,6 +496,10 @@ class EpisodePage(Page):
         default=False,
         help_text="Whether structured writing credits are available"
     )
+    season_number = models.PositiveIntegerField(
+        default=1,
+        help_text="Denormalized from parent SeasonPage for query-free access"
+    )
 
     content_panels = Page.content_panels + [
         FieldPanel('episode_number'),

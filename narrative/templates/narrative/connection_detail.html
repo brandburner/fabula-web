@@ -62,7 +62,7 @@
                 </div>
                 <div class="flex items-center gap-2 text-sm" style="color: var(--f-fg-tertiary);">
                     <span class="px-2 py-0.5 rounded" style="background: var(--f-bg-elevated); font-family: var(--f-font-mono);">
-                        S{{ connection.from_event.episode.get_parent.specific.season_number }}E{{ connection.from_event.episode.episode_number }}
+                        S{{ connection.from_event.episode.season_number }}E{{ connection.from_event.episode.episode_number }}
                     </span>
                     <span style="color: var(--f-fg-placeholder);">&#183;</span>
                     <span>{{ connection.from_event.episode.title }}</span>
@@ -93,7 +93,7 @@
                 </div>
                 <div class="flex items-center gap-2 text-sm" style="color: var(--f-fg-tertiary);">
                     <span class="px-2 py-0.5 rounded" style="background: var(--f-bg-elevated); font-family: var(--f-font-mono);">
-                        S{{ connection.to_event.episode.get_parent.specific.season_number }}E{{ connection.to_event.episode.episode_number }}
+                        S{{ connection.to_event.episode.season_number }}E{{ connection.to_event.episode.episode_number }}
                     </span>
                     <span style="color: var(--f-fg-placeholder);">&#183;</span>
                     <span>{{ connection.to_event.episode.title }}</span>
@@ -285,7 +285,7 @@
                 </div>
                 <div class="flex items-center gap-2 text-sm text-slate-400">
                     <span class="px-2 py-0.5 bg-slate-800/50 rounded font-mono">
-                        S{{ connection.from_event.episode.get_parent.specific.season_number }}E{{ connection.from_event.episode.episode_number }}
+                        S{{ connection.from_event.episode.season_number }}E{{ connection.from_event.episode.episode_number }}
                     </span>
                     <span class="text-slate-600">·</span>
                     <span>{{ connection.from_event.episode.title }}</span>
@@ -312,7 +312,7 @@
                 </div>
                 <div class="flex items-center gap-2 text-sm text-slate-400">
                     <span class="px-2 py-0.5 bg-slate-800/50 rounded font-mono">
-                        S{{ connection.to_event.episode.get_parent.specific.season_number }}E{{ connection.to_event.episode.episode_number }}
+                        S{{ connection.to_event.episode.season_number }}E{{ connection.to_event.episode.episode_number }}
                     </span>
                     <span class="text-slate-600">·</span>
                     <span>{{ connection.to_event.episode.title }}</span>

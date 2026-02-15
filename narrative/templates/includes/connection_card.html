@@ -48,9 +48,9 @@
     {# Episode context #}
     <div class="text-xs" style="color: var(--f-fg-placeholder); font-family: var(--f-font-mono);">
         {% if direction == "incoming" %}
-            S{{ connection.from_event.episode.get_parent.specific.season_number }}E{{ connection.from_event.episode.episode_number }} · {{ connection.from_event.episode.title|truncatewords:5 }}
+            S{{ connection.from_event.episode.season_number }}E{{ connection.from_event.episode.episode_number }} · {{ connection.from_event.episode.title|truncatewords:5 }}
         {% else %}
-            S{{ connection.to_event.episode.get_parent.specific.season_number }}E{{ connection.to_event.episode.episode_number }} · {{ connection.to_event.episode.title|truncatewords:5 }}
+            S{{ connection.to_event.episode.season_number }}E{{ connection.to_event.episode.episode_number }} · {{ connection.to_event.episode.title|truncatewords:5 }}
         {% endif %}
     </div>
 
@@ -106,9 +106,9 @@
     {# Episode context #}
     <div class="text-xs text-slate-500 font-mono">
         {% if direction == "incoming" %}
-            S{{ connection.from_event.episode.get_parent.specific.season_number }}E{{ connection.from_event.episode.episode_number }} · {{ connection.from_event.episode.title|truncatewords:5 }}
+            S{{ connection.from_event.episode.season_number }}E{{ connection.from_event.episode.episode_number }} · {{ connection.from_event.episode.title|truncatewords:5 }}
         {% else %}
-            S{{ connection.to_event.episode.get_parent.specific.season_number }}E{{ connection.to_event.episode.episode_number }} · {{ connection.to_event.episode.title|truncatewords:5 }}
+            S{{ connection.to_event.episode.season_number }}E{{ connection.to_event.episode.episode_number }} · {{ connection.to_event.episode.title|truncatewords:5 }}
         {% endif %}
     </div>
 

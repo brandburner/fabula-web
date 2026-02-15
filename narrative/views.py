@@ -583,41 +583,12 @@ class CharacterDetailView(FlexibleIdentifierMixin, DetailView):
 
     def _get_participations_grouped(self):
         """Group participations by importance level."""
-        all_parts = list(EventParticipation.objects.filter(
+        all_parts = EventParticipation.objects.filter(
             character=self.object
-        ).select_related('event', 'event__episode'))
-
-        # Batch-fetch season numbers to avoid N+1 .get_parent.specific calls
-        episode_ids = {p.event.episode_id for p in all_parts if p.event.episode_id}
-        season_map = {}  # episode_id -> season_number
-        if episode_ids:
-            from narrative.models import SeasonPage
-            # Episodes are children of SeasonPages in the page tree.
-            # Use the Page path to find parent season pages in bulk.
-            from wagtail.models import Page
-            episodes = Page.objects.filter(id__in=episode_ids).values('id', 'path', 'depth')
-            # Season pages are one level up (depth - 1, same path prefix)
-            parent_paths = {}
-            for ep in episodes:
-                parent_path = ep['path'][: -Page.steplen]
-                parent_paths[parent_path] = parent_paths.get(parent_path, [])
-                parent_paths[parent_path].append(ep['id'])
-            if parent_paths:
-                seasons = SeasonPage.objects.filter(
-                    path__in=parent_paths.keys()
-                ).values('path', 'season_number')
-                for s in seasons:
-                    for ep_id in parent_paths.get(s['path'], []):
-                        season_map[ep_id] = s['season_number']
+        ).select_related('event', 'event__episode')
 
         grouped = {'primary': [], 'secondary': [], 'mentioned': [], 'other': []}
         for p in all_parts:
-            # Attach precomputed season number
-            ep = p.event.episode
-            if ep:
-                p.season_number = season_map.get(ep.id)
-            else:
-                p.season_number = None
             importance = (p.importance or '').lower().strip()
             if importance in grouped:
                 grouped[importance].append(p)
