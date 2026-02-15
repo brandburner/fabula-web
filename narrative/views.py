@@ -23,6 +23,8 @@ import re
 
 from django.http import Http404, JsonResponse
 from django.shortcuts import render, get_object_or_404, redirect
+from django.utils.decorators import method_decorator
+from django.views.decorators.cache import cache_page
 from django.views.decorators.http import require_POST
 from django.views.generic import ListView, DetailView, TemplateView, View
 
@@ -553,10 +555,14 @@ class CharacterIndexView(SeriesScopedMixin, ListView):
             ).order_by('tier_order', '-appearance_count', 'canonical_name')
 
 
+@method_decorator(cache_page(60 * 60 * 24), name='dispatch')  # 24h cache; data changes only on import
 class CharacterDetailView(FlexibleIdentifierMixin, DetailView):
     """
     View a single character with their event participations and journey.
     Uses flexible identifier lookup (global_id, fabula_uuid, or pk).
+
+    Participations are paginated by season via ?season=N query param.
+    Defaults to season 1 (or the character's first season of appearance).
     """
     model = CharacterPage
     template_name = 'narrative/character_page.html'
@@ -573,31 +579,47 @@ class CharacterDetailView(FlexibleIdentifierMixin, DetailView):
         context['page'] = character
         context['self'] = character
 
-        # Get participations grouped by importance
-        context['participations_by_importance'] = self._get_participations_grouped()
-
-        # Get emotional journey
-        context['emotional_journey'] = character.get_emotional_journey()
-
-        return context
-
-    def _get_participations_grouped(self):
-        """Group participations by importance level."""
-        all_parts = EventParticipation.objects.filter(
-            character=self.object
+        # Build season navigation and filter participations
+        base_parts = EventParticipation.objects.filter(
+            character=character
         ).select_related('event', 'event__episode')
 
-        grouped = {'primary': [], 'secondary': [], 'mentioned': [], 'other': []}
-        for p in all_parts:
-            importance = (p.importance or '').lower().strip()
-            if importance in grouped:
-                grouped[importance].append(p)
-            elif importance:
-                grouped['other'].append(p)
-            else:
-                grouped['primary'].append(p)
+        # Get available seasons with counts
+        season_stats = list(
+            base_parts.values('event__episode__season_number')
+            .annotate(count=Count('id'))
+            .order_by('event__episode__season_number')
+        )
+        available_seasons = [
+            {'number': s['event__episode__season_number'], 'count': s['count']}
+            for s in season_stats
+        ]
+        context['available_seasons'] = available_seasons
+        context['total_participation_count'] = sum(s['count'] for s in available_seasons)
 
-        return grouped
+        # Determine selected season
+        requested = self.request.GET.get('season')
+        season_numbers = [s['number'] for s in available_seasons]
+        if requested and requested.isdigit() and int(requested) in season_numbers:
+            selected_season = int(requested)
+        elif season_numbers:
+            selected_season = season_numbers[0]
+        else:
+            selected_season = None
+        context['selected_season'] = selected_season
+
+        # Filter participations to selected season
+        if selected_season is not None:
+            context['participations'] = base_parts.filter(
+                event__episode__season_number=selected_season
+            ).order_by(
+                'event__episode__episode_number',
+                'event__scene_sequence'
+            )
+        else:
+            context['participations'] = base_parts.none()
+
+        return context
 
 
 class OrganizationIndexView(SeriesScopedMixin, ListView):
