@@ -46,7 +46,7 @@
 ---
 meta:
   slug: platform
-  title: "Fabula Platform &mdash; Context Graph Architecture for Narrative"
+  title: "Fabula Platform — Context Graph Architecture for Narrative"
   description: "Fabula's context graph architecture: typed entity extraction, dual temporal indices, and GraphRAG-powered narrative intelligence at production scale."
   template: "marketing/platform_page.html"
   audiences:
@@ -73,7 +73,7 @@ hero:
   footnote: "Engineered over 18 months. Tested on 60+ episodes across Star Trek TNG, The West Wing, Doctor Who, and more."
   ctas:
     - label: "Register Your Interest"
-      url: "{% slugurl 'early-access' %}"
+      url: "/early-access/"
       style: primary
       icon: arrow-right
     - label: "Explore The West Wing"
@@ -913,7 +913,7 @@ cta:
       style: primary
       icon: arrow-right
     - label: "Register Your Interest"
-      url: "{% slugurl 'early-access' %}"
+      url: "/early-access/"
       style: secondary
 
 footer_breadcrumb: "All edges. No spreadsheets. Stories treated as data structures at last."
