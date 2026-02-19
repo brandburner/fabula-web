@@ -1,5 +1,5 @@
 {% extends "marketing_base.html" %}
-{% load static wagtailcore_tags %}
+{% load static wagtailcore_tags narrative_tags %}
 
 {% block title %}Walk the Graph — Fabula Catalog{% endblock %}
 
@@ -50,7 +50,7 @@
                 {# Description #}
                 {% if item.series.description %}
                 <p class="mb-6 line-clamp-2" style="color: var(--f-fg-secondary); font-size: 0.9rem; line-height: 1.6;">
-                    {{ item.series.description|striptags|truncatewords:30 }}
+                    {{ item.series.description|md_plain|truncatewords:30 }}
                 </p>
                 {% endif %}
 
@@ -158,7 +158,7 @@
                 {# Description #}
                 {% if item.series.description %}
                 <div class="text-slate-400 text-sm mb-6 line-clamp-2">
-                    {{ item.series.description|striptags|truncatewords:30 }}
+                    {{ item.series.description|md_plain|truncatewords:30 }}
                 </div>
                 {% endif %}
 
