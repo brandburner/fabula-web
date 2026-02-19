@@ -1,0 +1,740 @@
+# Location Data
+# Generated: 2026-02-19T15:55:48.402374
+
+- fabula_uuid: location_1fa3bddf9805
+  global_id: null
+  canonical_name: 1209 Columbus Road (Abandoned Storefront)
+  description: Vacant urban storefront at 1209 Columbus Road, two doors down from
+    the hair salon. Serves as a primary event location with interior/exterior spaces,
+    hosting Fran's overdose, EMT intervention, Ransom's actions, and Marta's covert
+    entry. Physically distinct from the back alley, with its own address, cluttered
+    interior, and layered narrative functions.
+  location_type: Vacant Urban Storefront
+  parent_location_uuid: null
+- fabula_uuid: location_6ec7d1fdcdf5
+  global_id: null
+  canonical_name: Back Alley Connecting Hair Salon to 1209 Columbus Road
+  description: Narrow, dimly lit passageway used exclusively as a covert route between
+    the hair salon and the abandoned storefront at 1209 Columbus Road. Serves as a
+    transitional space emphasizing Marta's urgency and isolation, with no permanent
+    features or hosted events of its own.
+  location_type: Urban Back Alley
+  parent_location_uuid: location_c1c8fcfaba94
+- fabula_uuid: location_e4d9fca9f66f
+  global_id: null
+  canonical_name: Basement Party (Downstairs)
+  description: Lower-level party space in the Thrombey mansion, explicitly distinguished
+    by its vertical separation from upper floors. Serves as a tactical backdrop for
+    Ransom Drysdale Thrombey's covert movements, with its noise masking his infiltration
+    of Harlan's quarters. Spatially connected to the Third-Floor Landing (exterior
+    platform) above.
+  location_type: Mansion Party Floor
+  parent_location_uuid: null
+- fabula_uuid: location_570d14228812
+  global_id: null
+  canonical_name: Bathroom Adjacent to Joni and Meg's Guest Room
+  description: A private bathroom adjacent to the guest room occupied by Meg and Joni,
+    used for discreet nocturnal movements during the party. Its proximity to the guest
+    room and muffled sounds from the party underscore its role as a liminal space
+    in the Thrombey mansion's power dynamics.
+  location_type: Private Guest Bathroom
+  parent_location_uuid: location_73455a7609da
+- fabula_uuid: location_edb189ca4042
+  global_id: null
+  canonical_name: Boston
+  description: 'A city-level setting in *Schitt''s Creek* that serves as the Drysdale
+    family''s home and a backdrop for their emotional conflicts, particularly Richard''s
+    avoidance of difficult conversations. Thematic focus: family obligations, urban
+    routines, and rooted history.'
+  location_type: Major City
+  parent_location_uuid: null
+- fabula_uuid: location_dd5770cd0577
+  global_id: null
+  canonical_name: Cabrera Apartment Building
+  description: Reporters swarm the sidewalk outside the Cabrera Apartment Building,
+    news vans blocking the street and cameras fixed on the entrance where an anchor
+    delivers live updates on Marta Cabrera's sudden inheritance from Harlan Thrombey.
+    Inside, her family crowds the living room, eyes glued to the TV as panic rises—mother
+    pacing in fear, sister firing blunt accusations—transforming their cramped home
+    into ground zero for media scrutiny, familial suspicion, and the unraveling of
+    private life under public glare.
+  location_type: Residential Apartment Building
+  parent_location_uuid: null
+- fabula_uuid: location_b3c05490e998
+  global_id: null
+  canonical_name: Cabrera Apartment Building Hallway
+  description: Exterior hallway *outside* the Cabrera apartment, part of the apartment
+    building’s common areas. Serves as a transitional space for confrontations (e.g.,
+    Walt’s ambush).
+  location_type: Apartment Building Hallway
+  parent_location_uuid: location_dd5770cd0577
+- fabula_uuid: location_46485fc91145
+  global_id: null
+  canonical_name: Cabrera House Back Door
+  description: Marta shoves open the back door from the Cabrera living room and bolts
+    outside, her mother's urgent Spanish pleas trailing after her. Stacked legal documents
+    and business cards from Thrombey investigators litter the space behind, fueling
+    her panic over deportation threats. This narrow exit channels her flight into
+    the night, sharpening the raw fear gripping her undocumented family amid Harlan's
+    murder probe.
+  location_type: Residential Back Entrance
+  parent_location_uuid: null
+- fabula_uuid: location_d523f4110e22
+  global_id: null
+  canonical_name: Cabrera Kitchen
+  description: Morning light fills the Cabrera kitchen where Marta sits numbly scrolling
+    job listings on her phone, grief over Harlan's death weighing her down. Her mother
+    scolds sister Alice to silence the iPad's crime show, sparking bickering that
+    triggers Marta's laughter turning to raw sobs and a brief sisterly hug. Walt Thrombey's
+    cryptic call shatters the moment. Later, alone and panicked, Marta leans against
+    the counter, ripping open a blackmail letter with a medical tag bearing her name
+    and a torn toxicology report, her fear mounting before she seeks Ransom's help.
+    This tight domestic space bottles family tensions, grief, and sudden threats from
+    the outside world.
+  location_type: Residential Kitchen
+  parent_location_uuid: null
+- fabula_uuid: location_3c611cb612d3
+  global_id: null
+  canonical_name: Cabrera Living Room
+  description: Interior living space within the Cabrera apartment, distinct from common
+    areas like hallways. Central to Marta's private emotional conflicts and family
+    interactions.
+  location_type: Apartment Living Room
+  parent_location_uuid: null
+- fabula_uuid: location_e270811d4a33
+  global_id: null
+  canonical_name: Corner Booth in Roadside Family Restaurant
+  description: A secluded, dimly lit corner booth within the Roadside Family Restaurant,
+    specifically used for Ransom's psychological manipulation of Marta. Its intimate
+    setting and shadows amplify the tension of Harlan Thrombey's murder confession.
+  location_type: Restaurant Corner Booth
+  parent_location_uuid: null
+- fabula_uuid: location_f04be4bd1764
+  global_id: null
+  canonical_name: Drawing Room
+  description: Harlan grabs Walt's arm and hauls him into the drawing room, its dim
+    intimacy pierced only by the fireplace's blaze. An ornate mantle clock conceals
+    compartments for Fran's joints, pot leaves dusting papers in a hidden drawer Marta
+    pries open with a letter opener. Here Walt crumbles under rebuke, Marta spirals
+    in guilt before Meg's dismissal, and she spars with Blanc over a cryptic document—the
+    air thick with family fractures and guarded secrets.
+  location_type: Mansion Drawing Room
+  parent_location_uuid: null
+- fabula_uuid: location_f5e706260da9
+  global_id: null
+  canonical_name: Exterior Porch Outside Harlan's Study
+  description: Outdoor porch adjacent to Harlan's study, where Walt observes family
+    dynamics through the study's window. Serves as a space of exclusion and tension,
+    contrasting with indoor interactions.
+  location_type: Mansion Porch
+  parent_location_uuid: null
+- fabula_uuid: location_c2d0cd07671e
+  global_id: null
+  canonical_name: Exterior Trellis Beneath Harlan's Bedroom Window
+  description: Climbable wooden trellis attached to the outer wall of the Thrombey
+    mansion, directly below Harlan Thrombey's third-floor bedroom window. Serves as
+    the intruder's unguarded entry point, with muddy bootprints and vine-covered slats
+    providing forensic evidence of the climb. Exterior location critical to disproving
+    the suicide theory by demonstrating an alternative access route.
+  location_type: Exterior Residential Trellis
+  parent_location_uuid: null
+- fabula_uuid: location_e4164e7d400e
+  global_id: null
+  canonical_name: Gardener’s Utility Road
+  description: Narrow utility road snakes through the estate grounds for gardener
+    access. A carved elephant marks its entrance, standing out in grainy security
+    footage from the guard house camera. Harlan Thrombey ordered Marta to avoid it
+    that night; its capture on the tape alarms her, pointing to premeditated events
+    amid the tense review.
+  location_type: Estate Utility Road
+  parent_location_uuid: null
+- fabula_uuid: location_db4ea2e35254
+  global_id: null
+  canonical_name: Greatnana's Room
+  description: Blanc enters this dimly lit room to find Greatnana seated near an open
+    window where sheer curtains shift in the breeze. The space holds a quiet intimacy
+    that heightens the psychological tension of his interrogation disguised as condolences.
+    Harlan's elderly, possibly senile mother reacts with subtle eye movements and
+    silences amid the charged atmosphere, her fragmented awareness poised to reveal
+    key details about the night of Harlan's death.
+  location_type: Private Mansion Bedroom
+  parent_location_uuid: null
+- fabula_uuid: location_0a2ca9f61974
+  global_id: null
+  canonical_name: Guard House
+  description: 'Proofroc mans this cramped, dusty guard house filled with security
+    relics no newer than 1988: a bulky VCR, flickering CRT monitor, and preserved
+    VHS tapes. Investigators squeeze inside alongside the family to review grainy
+    footage from Harlan Thrombey''s death night. Frustration builds as outdated equipment
+    slows their progress, heightening tension while Marta spots a crucial detail on
+    the gardener''s road, masking her alarm behind a poker face.'
+  location_type: Private Estate Guard House
+  parent_location_uuid: null
+- fabula_uuid: location_c1c8fcfaba94
+  global_id: null
+  canonical_name: Hair Salon
+  description: The hair salon hums with life near 1209 Columbus Road. Dryers whir,
+    scissors click through hair, and patrons exchange small talk amid sharp chemical
+    scents. This bustling public spot shields Marta's entry; she announces a quick
+    visit to maintain cover, then scans the vacant storefront across the street. The
+    everyday chaos grants her plausible deniability for reconnaissance tied to the
+    Thrombey case, her tension hidden amid the routine bustle.
+  location_type: Neighborhood Hair Salon
+  parent_location_uuid: null
+- fabula_uuid: location_064c0b3b3411
+  global_id: null
+  canonical_name: Harlan Thrombey's Study
+  description: 'A small, private study within Harlan Thrombey''s mansion, serving
+    as a dimly lit sanctuary for late-night Go games, tense family confrontations,
+    and violent confrontations. The room contains a desk with drawers concealing letters,
+    personal effects (including a prized baseball smashed in rage), medical supplies,
+    vials, and an ornamental dagger. A Go board, landline phone, small window, and
+    soft rug (where items scatter during chaos) complete the furnishings. The study
+    is the site of Harlan''s throat-slashing suicide, leaving a dark bloodstain, and
+    later becomes a preserved crime scene. Key events include: Harlan''s arguments
+    with Ransom and Richard (whose shouts silence the living room), Ransom storming
+    out in fury, Richard rifling through drawers for blackmail notes, Marta administering
+    final medication, Ransom later swapping vials in the medical bag past police tape,
+    and the room''s psychological manipulation and vulnerability during Harlan''s
+    death.'
+  location_type: Private Home Study
+  parent_location_uuid: null
+- fabula_uuid: location_704b86fe9c07
+  global_id: null
+  canonical_name: Harlan Thrombey's Third-Floor Bedroom (Crime Scene)
+  description: Upper-floor private bedroom in the Thrombey mansion, isolated by a
+    single staircase, where Harlan Thrombey's body is discovered. Serves as a crime
+    scene (blood splatter patterns) and a space of secrecy (Marta's disguise, Ransom's
+    sabotage of medications).
+  location_type: Private Mansion Bedroom
+  parent_location_uuid: null
+- fabula_uuid: location_89326d2b79d6
+  global_id: null
+  canonical_name: Hospital Waiting Room
+  description: Fluorescent lights cast a harsh glow over plastic chairs and beige
+    walls in this sterile hospital waiting room. Marta hunches forward, face buried
+    in her hands, shock pinning her as Blanc fields calls on Fran's overdose. Silence
+    thickens until her guilt erupts in demands for confession, marking the unraveling
+    of secrets.
+  location_type: Hospital Waiting Room
+  parent_location_uuid: null
+- fabula_uuid: location_1c748e2a1f1f
+  global_id: null
+  canonical_name: Indoor Threshold Outside Harlan's Attic Office Door
+  description: Confined indoor space adjacent to Harlan's attic office door, where
+    Marta experiences a pivotal moment of guilt and resolve. Part of the Thrombey
+    House interior, distinct from exterior porches.
+  location_type: Residential Attic Landing
+  parent_location_uuid: null
+- fabula_uuid: location_764dbf6cd903
+  global_id: null
+  canonical_name: Jacob's Half Bath (Thrombey Estate Vent Room)
+  description: Half bath in the Thrombey Estate with a vent that carries voices from
+    nearby rooms, used by Jacob Thrombey to eavesdrop on Harlan and Ransom's argument
+    about the will. This space is integral to the mystery plot and is distinct from
+    other half baths in the estate due to its acoustic properties and plot-critical
+    function.
+  location_type: Mansion Half-Bath
+  parent_location_uuid: null
+- fabula_uuid: location_73455a7609da
+  global_id: null
+  canonical_name: Joni and Meg's Guest Room
+  description: Joni retreats here amid Harlan Thrombey's party chaos, silk drapes
+    and flickering candles creating a meditative sanctuary that starkly contrasts
+    family tensions. A rhythmic thump from above shatters her calm. Later, dogs' barking
+    pierces the quiet; Meg rises, uses the bathroom, and returns to bed unobserved
+    while Joni sleeps. The space offers brief privacy, hinting at unease over the
+    night's secrets.
+  location_type: Mansion Guest Bedroom
+  parent_location_uuid: null
+- fabula_uuid: location_6a6a0315bafa
+  global_id: null
+  canonical_name: Joni's Bedroom
+  description: Joni waves to Marta and Harlan from the second-floor landing, then
+    retires to her bedroom as the family disperses for the night. The room provides
+    her private refuge on the creaking upstairs level of the Thrombey home, where
+    she maintains her bedtime routine. This detachment shields her from the quiet
+    tension of Harlan's final ascent and the oblivious family's drift toward hidden
+    tragedy. Night settles over the post-party hush, the space echoing her focus on
+    normalcy amid encroaching catastrophe.
+  location_type: Second-Floor Private Bedroom
+  parent_location_uuid: null
+- fabula_uuid: location_c0f3f67b9144
+  global_id: null
+  canonical_name: Linda's Childhood Bedroom
+  description: Fading light fills Linda's childhood bedroom, a private space crowded
+    with personal mementos that anchor her to happier times. She grips a stack of
+    pink notecards covered in her father Harlan's playful handwriting—notes from their
+    games and affectionate rituals. Alone at first, she insists his death plays like
+    one of his schemes, dodging grief until Walt steps in, his fatigue sharpening
+    the room's heavy nostalgia and emotional isolation.
+  location_type: Childhood Bedroom
+  parent_location_uuid: null
+- fabula_uuid: location_f3c1076a46f4
+  global_id: null
+  canonical_name: Main Floor Party Interior
+  description: Primary gathering space on the main floor of the Thrombey mansion,
+    serving as the dramatic focal point for Marta Cabrera's exit and Walt Thrombey's
+    reaction. This space is spatially connected to the Thrombey Estate Front Porch
+    and functions as the 'staged alibi' for the night's events.
+  location_type: House Party Interior
+  parent_location_uuid: null
+- fabula_uuid: location_6ef2534aa6a1
+  global_id: null
+  canonical_name: Marta Cabrera's Door
+  description: Ransom creeps through the dimly lit back hallway of Marta Cabrera's
+    apartment building at night. He targets her door's letter slot, sliding in a blackmail
+    note to frame her for Harlan's overdose. The plain door stands as a vulnerable
+    entry point, its slot enabling anonymous threats that pull Marta deeper into the
+    murder investigation's lies.
+  location_type: Apartment Door
+  parent_location_uuid: location_eaa64e0b0dc0
+- fabula_uuid: location_eaa64e0b0dc0
+  global_id: null
+  canonical_name: Marta Cabrera's South Boston Apartment
+  description: Parent location containing Marta's Bedroom and other unspecified rooms;
+    serves as the primary residential setting for Marta Cabrera, symbolizing her socioeconomic
+    status and isolation.
+  location_type: Urban Apartment
+  parent_location_uuid: location_edb189ca4042
+- fabula_uuid: location_82ef477b00d2
+  global_id: null
+  canonical_name: Marta's Bedroom
+  description: Specific bedroom within Marta's South Boston Apartment; the primary
+    location for intimate, high-tension moments (e.g., waking up, Alice's intrusion).
+  location_type: Urban Apartment Bedroom
+  parent_location_uuid: null
+- fabula_uuid: location_b742fb7a2257
+  global_id: null
+  canonical_name: Marta's Car
+  description: Marta's car parks outside Thrombey Manor under night cover, engine
+    off, dashboard lights casting faint glow on her tense face. She replays Fran’s
+    accusations and her 911 call on her phone, breaths shallow, eyes fixed on the
+    looming house. Blanc sits beside her as she confesses Harlan’s final moments,
+    the confined space heightening vulnerability. Earlier, Harlan directs Marta here
+    for a loud, staged exit Walt witnesses from the porch, slamming door to fake midnight
+    departure.
+  location_type: Personal Automobile
+  parent_location_uuid: null
+- fabula_uuid: location_7920495908dd
+  global_id: null
+  canonical_name: Marta's Half Bath (Thrombey Estate)
+  description: Private half bath used by Marta Cabrera during a moment of personal
+    crisis, distinct from other half baths in the estate. Located in a secluded area,
+    this space serves as a refuge for her emotional turmoil and is not connected to
+    the Thrombey family's activities or the birthday party.
+  location_type: Private Half Bathroom
+  parent_location_uuid: null
+- fabula_uuid: location_7fa6adf55fed
+  global_id: null
+  canonical_name: Marta's Home Front Porch
+  description: Marta stands exposed at the doorway threshold, silence heavy as the
+    Thrombey family stares up from the lawn below. The porch balcony frames her isolation,
+    the barrier between her vulnerability and their unified accusation. Ransom's cruiser
+    fades, suspicion hardening in the charged air—her former allies now a wall of
+    judgment.
+  location_type: Residential Front Porch
+  parent_location_uuid: null
+- fabula_uuid: location_70a151d20cc4
+  global_id: null
+  canonical_name: Medical Examiner's Office
+  description: Smoke rises from the charred brick husk of this one-story standalone
+    building, gutted by a recent explosion and fire. Debris litters the ground outside
+    the Medical Examiner's Office, where saboteurs destroyed key autopsy evidence—blood
+    samples from Harlan Thrombey's death and related records. Blanc and Elliott pick
+    through the wreckage, the acrid air thick with the scent of conspiracy as scrambled
+    security tapes confirm deliberate obstruction.
+  location_type: Medical Examiner's Facility
+  parent_location_uuid: null
+- fabula_uuid: location_dfaff50e2bd8
+  global_id: null
+  canonical_name: Morgue
+  description: Stark brick building houses Harlan Thrombey's body for autopsy amid
+    a tightening police probe. Marta parks her car in the adjacent lot, engine idling,
+    as Blanc and Elliott stride toward her across the asphalt. Fluorescent security
+    lights buzz overhead, cutting through the night chill; her panicked gaze darts
+    between the detectives and the morgue doors, where Harlan's death implicates her
+    presence. Tension coils tight—escape now means fleeing the truth of her role in
+    the cover-up.
+  location_type: City Morgue
+  parent_location_uuid: null
+- fabula_uuid: location_10602862c3b0
+  global_id: null
+  canonical_name: Narrow Stairs
+  description: Tight, steep stairs rise from Harlan's bedroom to his office in the
+    dead of night. Harlan hauls his frail body up each creaking step, breath ragged
+    from exhaustion after his 85th birthday party. Marta trails behind, exasperated
+    pleas echoing off the confining walls as she grabs a medical kit. The labored
+    ascent captures Harlan's iron will clashing against his weakening frame, the dim
+    light and close quarters amplifying the tension of his refusal to rest.
+  location_type: Residential Staircase
+  parent_location_uuid: null
+- fabula_uuid: location_6a94cb68458c
+  global_id: null
+  canonical_name: Norfolk Countryside Roads
+  description: A network of winding, rural roads cutting through Norfolk's open countryside,
+    linking distant towns to the looming Thrombey estate. These roads are characterized
+    by tight curves, uneven terrain, and desolate stretches that heighten the tension
+    of high-speed chases and evasions. The landscape includes rolling fields and dense
+    trees, where Marta grips the wheel, navigating the natural flow of the terrain
+    while recounting her story to Blanc. The steady passage of verdant countryside—alive
+    with subtle shifts in light and shadow—clashes with her tale's rehearsed edges.
+    Blanc watches the scenery blur past, his furrowed brow and clenched jaw amplifying
+    the unease that permeates their drive. Key narrative moments include police pursuits,
+    Marta's evasions, Ransom's driving, and the psychological weight of these roads
+    as 'tense gateways' between personal crises and institutional scrutiny.
+  location_type: Countryside Roads
+  parent_location_uuid: null
+- fabula_uuid: location_f20f6fc332b5
+  global_id: null
+  canonical_name: Norfolk Side Street (Urban Backstreet Chase Route)
+  description: Narrow, labyrinthine urban backstreet in Norfolk where Marta exploits
+    tight confines to evade police, emphasizing her resourcefulness and desperation.
+    Distinct from the troopers' straightaway chase on Washington Street.
+  location_type: Urban Backstreet
+  parent_location_uuid: null
+- fabula_uuid: location_d749993aa6fd
+  global_id: null
+  canonical_name: Parking Lot
+  description: Police cruisers surge from this shadowed asphalt expanse under night
+    skies, sirens piercing the air as they launch pursuit of Marta and Ransom's speeding
+    car. Gravel scatters under accelerating tires, flashing lights cut through darkness,
+    and the lot fades behind them, marking the frantic start of their evasion amid
+    growing distrust.
+  location_type: Exterior Parking Lot
+  parent_location_uuid: null
+- fabula_uuid: location_1dffa248980a
+  global_id: null
+  canonical_name: Police Cruiser Interior
+  description: A **mobile police pursuit vehicle** with dashboard controls, radio
+    communication, and engine noise, used during the high-stakes chase for a potential
+    murder suspect.
+  location_type: Police Cruiser Interior
+  parent_location_uuid: null
+- fabula_uuid: location_35fbb2dca6f7
+  global_id: null
+  canonical_name: Police Station
+  description: A **stationary police investigation hub** with interrogation rooms
+    (metal tables, one-way mirrors) where detectives conduct rigorous questioning
+    during the Harlan Thrombey murder probe.
+  location_type: Police Station
+  parent_location_uuid: null
+- fabula_uuid: location_bea7cce754c6
+  global_id: null
+  canonical_name: Ransom's Living Room
+  description: Ransom's living room centers on a couch where Marta perches tensely
+    as Ransom pores over a blackmail letter's photocopied medical tag and torn toxicology
+    header, their exchange clipped and probing in the hushed space. Flashback daylight
+    filters in as he rifles through mail, expression twisting from bafflement to sly
+    triumph upon spotting the note. The room contains calculated dissections of threats
+    and private missteps, a cool counterpoint to rawer household panics.
+  location_type: Apartment Living Room
+  parent_location_uuid: null
+- fabula_uuid: location_fe14581f83ab
+  global_id: null
+  canonical_name: Richard and Linda's Bedroom
+  description: A private bedroom on the second floor of the Thrombey mansion, serving
+    as the personal retreat for Richard and Linda Drysdale. Its insulation from the
+    party’s chaos and Harlan’s overdose highlights the family’s detachment from the
+    patriarchal crisis unfolding above them.
+  location_type: Mansion Bedroom
+  parent_location_uuid: null
+- fabula_uuid: location_42a6ab76a40d
+  global_id: null
+  canonical_name: Roadside Family Restaurant (Establishment)
+  description: The full roadside diner where the corner booth confrontation occurs,
+    including its exterior (neon sign, gravel lot), rural highway setting, and broader
+    cast interactions (Porsche owner, Benoit Blanc). Serves as the overarching venue
+    for multiple scenes, not limited to the booth.
+  location_type: Roadside Diner
+  parent_location_uuid: null
+- fabula_uuid: location_323f965f24f3
+  global_id: null
+  canonical_name: Secluded Back Lot (Norfolk Police Chase Refuge)
+  description: A hidden, industrial back lot in Norfolk's backstreets where Marta
+    stops her car after evading police, marked by chain-link fences, puddles, and
+    the fading sound of sirens. Serves as a fleeting refuge to regroup after the chase,
+    emphasizing isolation and dread.
+  location_type: Urban Back Lot
+  parent_location_uuid: null
+- fabula_uuid: location_ba85fb8fe795
+  global_id: null
+  canonical_name: Second Floor (Harlan’s Residence – Go Game Room)
+  description: A quiet, secluded upper level (likely the second floor) in Harlan’s
+    mansion, distinct from the third-floor bedroom/office. Serves as a private retreat
+    for Harlan and Marta’s Go game session, with Joni’s arrival marking its role as
+    a family oversight space. Lacks medical or plot-critical functions tied to the
+    murder.
+  location_type: Private Residence Upstairs
+  parent_location_uuid: null
+- fabula_uuid: location_f8d0413ba7c8
+  global_id: null
+  canonical_name: Side of Thrombey House
+  description: Blanc, Elliott, and Wagner stroll the wide lawn flanking the Thrombey
+    house under daytime light. Blanc bends to pick an old baseball from the grass
+    while probing the suicide story's flaws—throat-slitting's awkward mechanics. Tension
+    crackles in the open air as Elliott pushes back, his impatience clashing with
+    Blanc's calm skepticism. The green expanse frames their walk, turning casual steps
+    into the first unraveling of the family's narrative.
+  location_type: Country Estate Lawn
+  parent_location_uuid: null
+- fabula_uuid: location_be4f775bda5e
+  global_id: null
+  canonical_name: Smith College
+  description: Meg slips away from Harlan's party early to visit friends at Smith
+    College, claiming the campus as her alibi for the night's later hours. Dorms glow
+    with late conversations among students, paths cut through quads under clear skies,
+    and academic halls hum with distant purpose. This student haven offers Meg brief
+    escape from Thrombey pressures, a pocket of camaraderie and routine far from the
+    estate's shadows.
+  location_type: College Campus
+  parent_location_uuid: null
+- fabula_uuid: location_b233abed2b48
+  global_id: null
+  canonical_name: Third Floor (Harlan’s Bedroom and Attic Office – Murder Site)
+  description: The **topmost floor** of Harlan’s mansion, combining his **bedroom**
+    (where he receives fatal medication from Marta) and **attic office** (implied
+    as a private workspace). Central to the murder plot, with interactions involving
+    Linda, Richard, and Elliott. Structurally and narratively distinct from the second-floor
+    Go game room.
+  location_type: Private Mansion Bedroom and Attic Office
+  parent_location_uuid: null
+- fabula_uuid: location_869b975e5fa9
+  global_id: null
+  canonical_name: Third-Floor Landing (Exterior Platform)
+  description: "\n      The **Third-Floor Landing** of the Thrombey Estate is a **dual-purpose\
+    \ space** serving as both an *interior hallway* (outside Harlan's attic office)\
+    \ and an *exterior platform* (where Marta stands alone after his murder). Key\
+    \ features:\n      1. **Interior Function**: A narrow hallway outside Harlan Thrombey's\
+    \ attic office door, marking the threshold between public and private zones. It\
+    \ contains a hidden door behind a painting leading to Harlan's bedroom. Joni pauses\
+    \ here before knocking, and Marta traverses it to reach the secret door (preparing\
+    \ a hidden needle nearby).\n      2. **Exterior Function**: An exposed platform\
+    \ where Marta stands alone after Harlan's murder, her isolation amplified by the\
+    \ open air. She steels her posture here before descending the stairs with hardened\
+    \ purpose.\n      **Narrative Role**: This landing is a *liminal space* tying\
+    \ Harlan's secrets (interior) to Marta's emotional arc (exterior). It appears\
+    \ in flashbacks and the party, heightening tension as a threshold where family\
+    \ members skirt Harlan's concealed world.\n      "
+  location_type: Mansion Landing
+  parent_location_uuid: null
+- fabula_uuid: location_17d90be388a4
+  global_id: null
+  canonical_name: Third-Floor Landing Hall (Thrombey Mansion)
+  description: Private upper-level corridor on the third floor of Thrombey Mansion,
+    connecting the landing to Harlan Thrombey’s bedroom. Used exclusively for Ransom
+    Drysdale Thrombey’s covert infiltration during the night party, marked by muddy
+    footprints and amplified silence. Distinct from public hallways on lower floors.
+  location_type: Mansion Corridor
+  parent_location_uuid: null
+- fabula_uuid: location_bf04d300ff3a
+  global_id: null
+  canonical_name: Thrombey Estate Exterior
+  description: Shadows stretch across the Thrombey Estate exterior at dusk, cloaking
+    Walt and Alan in dim secrecy during their heated clash over challenging Harlan's
+    will. Walt pushes desperately for legal maneuvers amid growing frustration; Alan
+    blocks him with ethical bounds and constraints. Low voices underscore urgency,
+    isolation amplifies fractured family desperation, and evening chill sharpens stakes
+    as darkness gathers around the manor.
+  location_type: Manor Exterior Grounds
+  parent_location_uuid: location_d1d01c4003e6
+- fabula_uuid: location_4e980d7b1d74
+  global_id: null
+  canonical_name: Thrombey Estate Foyer
+  description: Central indoor entryway of the Thrombey manor, serving as the primary
+    social hub for family gatherings, confrontations, and police investigations during
+    the present-day timeline.
+  location_type: Manor House Foyer
+  parent_location_uuid: location_d1d01c4003e6
+- fabula_uuid: location_04aabe38ed73
+  global_id: null
+  canonical_name: Thrombey Estate Foyer Stairs
+  description: |-
+    The central staircase of the Thrombey Estate, connecting the foyer (ground level) to upper floors, including the third-floor landing. This staircase serves as a critical passage for dramatic confrontations and character movements, including:
+          - **Linda Thrombey Drysdale** descending to corner **Joni** in the foyer, using her elevated position to assert dominance.
+          - **Marta Cabrera** descending from the third-floor landing on the night of Harlan's murder, her bloodstained sneaker marking the treads as she moves from the murder site toward the lower levels.
+          - **Benoit Blanc, Marta Cabrera, and Ransom Drysdale Thrombey** climbing from the living room, their deliberate steps drawing attention from **Elliott, Wagner, and Ransom** below.
+          The staircase amplifies tension, scrutiny, and maneuvering, channeling the mansion's social and narrative conflicts through its vertical passage. Its design—overlooking the foyer and adjoining the living room—turns height into a subtle but powerful dynamic tool.
+  location_type: Manor Foyer Staircase
+  parent_location_uuid: location_4e980d7b1d74
+- fabula_uuid: location_9f2a6e42c0d4
+  global_id: null
+  canonical_name: Thrombey Estate Front Drive (Private Road Access)
+  description: The wide paved drive leading to the Thrombey manor, also referred to
+    as the private road to the estate. This location serves as the primary vehicular
+    access point where Marta's modest car arrives under police scrutiny, Wagner's
+    prowler arrives amid the estate's grandeur, and family cars cluster during chaotic
+    moments. Key events include Marta's stalled vehicle being mobbed by the family,
+    Ransom's Porsche arrival for their escape, and later police cruisers/ambulance
+    activity during Ransom's arrest. The road's seclusion and contrast between Marta's
+    modest vehicle and the Thrombeys' luxury rides create tension, symbolizing privilege
+    vs. intrusion. This location is also where Linda steps aside to reveal Harlan's
+    hidden message via cigarette flame.
+  location_type: Private Estate Driveway
+  parent_location_uuid: location_d1d01c4003e6
+- fabula_uuid: location_c700eefb0e59
+  global_id: null
+  canonical_name: Thrombey Estate Front Porch
+  description: Walt and Jacob sit side by side on the Thrombey Estate Front Porch
+    under night-party shadows, eyes tracking Marta's car as it pulls away at midnight.
+    Walt checks his watch, locking their alibi for Harlan's murder window. The wooden
+    structure overlooks the drive, party noise fading into tense silence where family
+    suspicion sharpens and timelines anchor the investigation. Cool air carries distant
+    laughter, heightening their detached watchfulness.
+  location_type: Country Estate Front Porch
+  parent_location_uuid: location_d1d01c4003e6
+- fabula_uuid: location_cf77788e52bd
+  global_id: null
+  canonical_name: Thrombey Estate Grounds
+  description: "\n        The **Thrombey Estate Grounds** encompass the overgrown\
+    \ natural and semi-natural spaces surrounding the Thrombey Manor, including:\n\
+    \        - **Wooded areas**: Tangled underbrush, Harlan Thrombey's *Menagerie\
+    \ Tragedy* statues, and paths snagging at investigators' feet. This space serves\
+    \ as a liminal zone for the murder probe, where Marta pockets fridge magnets,\
+    \ passes a VHS tape to Wagner, and the 'whimsy of art sharpens the murder probe's\
+    \ edge.' **Dark woods at night** (as described in the target) are a subset of\
+    \ these wooded areas, where Marta follows Harlan's garbled instructions, and shadows\
+    \ deepen the flashback's tension.\n        - **Lawns**: Moonlit expanses where\
+    \ Marta races at night (avoiding Greatnana's gaze) and the family gathers in daylight,\
+    \ their collective suspicion transforming the open stretch into an 'exposed arena\
+    \ of accusation.'\n        - **Peripheral paths**: Used for covert movements (e.g.,\
+    \ Marta's exit toward the side gate under Harlan's posthumous guidance).\n\n \
+    \       The grounds function as a **symbolic and investigative backdrop**, contrasting\
+    \ the manor's architectural decay with the wild, untamed nature of the Thrombey\
+    \ family's secrets. Shadows deepen isolation, and the estate's art (e.g., statues)\
+    \ mirrors the intellectual haze clashing with police scrutiny.\n      "
+  location_type: Private Estate Grounds
+  parent_location_uuid: location_bf04d300ff3a
+- fabula_uuid: location_b63c2cdfcaa2
+  global_id: null
+  canonical_name: Thrombey Estate Guard Gate
+  description: Marta steers her subcompact through the Thrombey Estate Guard Gate
+    under night cover, Harlan's garbled voice urging turns before or after the carved
+    elephant statue to skirt surveillance. Confusion stalls her—hesitation yields
+    to sudden detour—as implied controls enforce the estate's edge. Darkness amplifies
+    isolation, her labored breaths and engine hum underscoring fragile escape from
+    the family's guarded world.
+  location_type: Secured Estate Entrance
+  parent_location_uuid: null
+- fabula_uuid: location_d1d01c4003e6
+  global_id: null
+  canonical_name: Thrombey Estate Manor House
+  description: The Thrombey Estate Manor House, a decaying New England manor, serves
+    as the primary setting for the Thrombey family's dysfunction and secrets. Its
+    crumbling grandeur—marked by overgrown gardens, peeling paint, and oppressive
+    silence—contrasts with the vibrant yet sinister gatherings it hosts, such as Harlan
+    Thrombey's 85th birthday party. The estate's architecture includes distinct interior
+    spaces like the **Living Room** (central to family gatherings) and **Upstairs**
+    (bedrooms and halls where family members retreat late at night, e.g., Meg's arrival
+    at 12:30 AM). Exterior features like the trellis and covert entry points facilitate
+    both celebration and clandestine activity, while the **stairs** connecting these
+    spaces (e.g., Harlan's frail climb) underscore the manor's role as a microcosm
+    of the family's hidden tensions and the detective's investigation into Harlan's
+    death.
+  location_type: New England Manor House
+  parent_location_uuid: null
+- fabula_uuid: location_78d8c04b9a1e
+  global_id: null
+  canonical_name: Thrombey Estate Patio
+  description: |-
+    Outdoor patio adjacent to the Thrombey estate's foyer, accessible through glass doors that carry muffled voices and cigar smoke from inside. This space serves as a neutral yet exposed arena for high-stakes confrontations, where Blanc interrogates Marta, triggering her vomiting tell and exposing family lies about affairs, allowances, and firings. The patio blends privacy for deductions with public exposure, marking Marta's transition from outsider to investigation insider under Blanc's scrutiny. Key events include:
+      - Marta's interrogation and subsequent retreat indoors due to nausea.
+      - Blanc, Lieutenant Elliott, and Trooper Wagner debating suicide rulings, alibis, and back staircases.
+      - The space's transformation into a neutral arena for theory clashes and evidence scrutiny, fracturing family deceptions.
+  location_type: Private Estate Patio
+  parent_location_uuid: location_d1d01c4003e6
+- fabula_uuid: location_7a05d8d399c1
+  global_id: null
+  canonical_name: Thrombey Estate Second-Floor Landing
+  description: 'The dimly lit Second-Floor Landing of the Thrombey Estate, a narrow
+    wooden platform overlooking the stairwell, where the creaking floorboards and
+    thick air bear witness to pivotal moments in Harlan''s final hours. This threshold
+    between the family''s public spaces and Harlan''s private quarters becomes a charged
+    space during the party''s aftermath: Marta guides frail Harlan up the stairs to
+    his third-floor bedroom, her hands steady on his arm during the fatal medication
+    handoff, while Richard, Linda, and Joni drift off to their rooms without a glance.
+    Later, Joni charges up these same stairs in urgent pursuit to check Harlan''s
+    condition after his death, her footsteps echoing in the emotionally charged air.
+    The worn wood groans faintly—a sound Lieutenant Elliott later recalls—as this
+    passage transforms from a routine family route into a symbolic and literal threshold
+    between life and death, routine and murder.'
+  location_type: Mansion Stair Landing
+  parent_location_uuid: location_d1d01c4003e6
+- fabula_uuid: location_00563caeee7f
+  global_id: null
+  canonical_name: Thrombey Estate Side Gate
+  description: Concealed outdoor pedestrian gate on the Thrombey Estate perimeter,
+    used by Marta in a nighttime flashback to enter covertly under Harlan’s posthumous
+    guidance.
+  location_type: Private Estate Pedestrian Gate
+  parent_location_uuid: null
+- fabula_uuid: location_574647797481
+  global_id: null
+  canonical_name: Thrombey Estate Side Porch
+  description: Elevated wooden porch adjacent to the Thrombey Estate's side yard,
+    serving as a vantage point for tense standoffs (e.g., Greatnana vs. Blanc) and
+    covert actions (e.g., Marta kicking a trellis fragment beneath bushes). The porch
+    is characterized by wooden railings, muddy ground, and proximity to the side yard
+    where Blanc stands below. It is also the site of a nighttime encounter between
+    Marta and Blanc, where cigar smoke curls into the cool darkness, intensifying
+    their intimate tension. Key features include its role in amplifying isolation
+    amid unraveling alibis and hidden tracks, as well as its use in high-stakes confrontations
+    (e.g., Blanc's calculated questions press Marta into reluctant alliance).
+  location_type: Manor House Side Porch
+  parent_location_uuid: location_d1d01c4003e6
+- fabula_uuid: location_d433aba0d27d
+  global_id: null
+  canonical_name: Thrombey Estate Trellis (Third-Floor Window Access)
+  description: Wooden lattice structure clinging to the Thrombey Estate manor wall,
+    serving as the primary covert access point to the boarded third-floor window.
+    The trellis offers shaky handholds and footrungs, enabling clandestine climbs
+    (e.g., Marta Cabrera's nighttime ascent during Harlan Thrombey's murder investigation).
+    Wanetta Thrombey's parking-lot testimony initially implicates Ransom Drysdale
+    here, though Marta later corrects the record by revealing her own climb. Physical
+    evidence includes mud-slicked base, barking dogs, and broken slats from repeated
+    use under cover of darkness. The structure's instability (buckling under weight)
+    and strategic location make it both a path to hidden rooms and a critical alibi-shattering
+    element in the investigation.
+  location_type: Manor Wall Trellis
+  parent_location_uuid: location_00563caeee7f
+- fabula_uuid: location_d1d262d4243d
+  global_id: null
+  canonical_name: Thrombey Kitchen
+  description: Late at night, frail Harlan Thrombey descends the stairs toward the
+    Thrombey kitchen for a midnight snack, only for Walt's sharp order from the porch
+    to send him back up. The next morning, amid family fractures in the living room,
+    Ransom slips into the kitchen and grabs pinwheel cookies, his brief absence amplifying
+    his disruptive presence before he returns. Adjacent to stairs and living room,
+    this stocked domestic space pulls characters for impulsive grabs during tense
+    household moments.
+  location_type: Mansion Kitchen
+  parent_location_uuid: null
+- fabula_uuid: location_1b3188ead5e3
+  global_id: null
+  canonical_name: Thrombey Library
+  description: Gothic private library within the Thrombey mansion, dominated by bookshelves
+    (e.g., *A Thousand Knives*) and ornamental knife displays. Serves as a hub for
+    interrogations, family confrontations, and evidence presentations (e.g., morphine
+    vials).
+  location_type: Private Estate Library
+  parent_location_uuid: null
+- fabula_uuid: location_f84c6ad71884
+  global_id: null
+  canonical_name: Thrombey Mansion Hallway
+  description: A narrow corridor within the Thrombey Mansion that serves as a critical
+    passage linking Harlan Thrombey's study to the living room. This hallway is a
+    site of heightened tension and family drama, where key interactions occur during
+    the Thrombey family's 85th birthday party. Ransom storms through this corridor,
+    brushing past Greatnana, while Marta later slips in alone to regain composure.
+    The space also serves as a conduit for eavesdropping on family secrets, as evidenced
+    by Harlan Thrombey's raised voice cutting through a closed door during the party.
+  location_type: Mansion Hallway
+  parent_location_uuid: null
+- fabula_uuid: location_701b5bdc8440
+  global_id: null
+  canonical_name: Washington Street
+  description: Straight urban thoroughfare used by troopers in a high-speed pursuit
+    of a murder suspect's vehicle, featuring multiple cruisers, nighttime chaos, and
+    life-and-death stakes. Distinct from Marta's evasion route in Norfolk's backstreets.
+  location_type: Urban Street
+  parent_location_uuid: null

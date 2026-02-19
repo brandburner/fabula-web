@@ -1,0 +1,988 @@
+# Character/Agent Data
+# Generated: 2026-02-19T15:55:48.258371
+
+- fabula_uuid: agent_fc0e7d2b3b96
+  global_id: null
+  canonical_name: 911 Operator
+  title_role: null
+  description: The 911 Operator handles incoming emergency calls for local dispatch
+    services. They follow strict protocols to assess situations quickly, starting
+    with standard triage questions like '911, what is your emergency?' Their role
+    demands unflappable composure amid urgent pleas, directing responders to scenes
+    of crisis while gathering vital details on location and nature of the incident.
+  traits:
+  - professional
+  - protocol-driven
+  - calm
+  aliases: []
+  character_type: Non-speaking Character
+  sphere_of_influence: Emergency Dispatch
+  appearance_count: 2
+  importance_tier: asteroid
+  affiliated_organization_uuid: null
+- fabula_uuid: agent_5f50322f3267
+  global_id: null
+  canonical_name: Alan Stevens
+  title_role: Attorney
+  description: Primary attorney for the Thrombey estate, with full authority to interpret
+    Harlan Thrombey's will and resist family pressures. Unlike his assistant Sally,
+    Alan Stevens holds legal decision-making power and engages directly with family
+    members.
+  traits:
+  - professional
+  - ethical
+  - resolute
+  - weary
+  - detached
+  aliases:
+  - ALAN
+  character_type: Speaking Character
+  sphere_of_influence: Thrombey Family Estate Law
+  appearance_count: 6
+  importance_tier: planet
+  affiliated_organization_uuid: organization_a8cd749586bf
+- fabula_uuid: agent_7e895df48d7b
+  global_id: null
+  canonical_name: Alice Cabrera
+  title_role: null
+  description: Alice Cabrera is Marta Cabrera's younger sister and a central figure
+    in the tight-knit Cabrera family, sharing a modest apartment marked by everyday
+    tensions and loyalties. She navigates sibling dynamics with blunt directness and
+    impulsive energy, though she also demonstrates moments of discretion and quiet
+    loyalty—particularly in high-stakes situations where her silence reinforces family
+    cohesion. Quick to challenge authority yet capable of swift remorse and physical
+    affection, her curiosity drives probing questions during crises, revealing a pragmatic
+    focus on family security and sudden opportunities amid upheaval. Her role blends
+    impulsive boldness with steadfast support, embodying both the family’s resilience
+    and its internal tensions.
+  traits:
+  - blunt
+  - impulsive
+  - sympathetic
+  - curious
+  - insistent
+  aliases:
+  - Marta's Sister
+  - Alice
+  character_type: Speaking Character
+  sphere_of_influence: family dynamics
+  appearance_count: 4
+  importance_tier: asteroid
+  affiliated_organization_uuid: null
+- fabula_uuid: agent_f3bf02c48998
+  global_id: null
+  canonical_name: Benoit Blanc
+  title_role: Private Investigator
+  description: Benoit Blanc is a private investigator hired anonymously to probe Harlan
+    Thrombey's death. He operates independently while shadowing the official police
+    investigation led by Lieutenant Elliott, employing psychological tactics, deductive
+    reasoning, and cryptic metaphors to dismantle alibis and expose secrets. Known
+    for his unflappable calm, Southern drawl, and distinctive habits—such as flipping
+    a silver dollar and lighting cigars—Blanc disarms suspects and allies with Marta
+    Cabrera, Harlan's nurse, to uncover the Thrombey family's greed and lies. His
+    methodical approach and relentless determination position him as the pivotal force
+    in exposing the family's tangled loyalties and institutional blind spots, despite
+    attempts by figures like Ransom Drysdale to downplay his acuity.
+  traits:
+  - methodical
+  - observant
+  - calculating
+  - persistent
+  - eloquent
+  aliases:
+  - Linen suit man
+  - B. Blanc
+  - BLANC
+  character_type: Speaking Character
+  sphere_of_influence: Criminal Investigations
+  appearance_count: 119
+  importance_tier: anchor
+  affiliated_organization_uuid: organization_536ee8d95f4d
+- fabula_uuid: agent_61c43aa8f78a
+  global_id: null
+  canonical_name: Caterer
+  title_role: null
+  description: Caterer serves as professional food service staff at Harlan Thrombey's
+    estate gatherings. She navigates the household during high-tension family events,
+    carrying platters through private areas. Her natural curiosity draws her to raised
+    voices, positioning her as an acute observer of concealed conflicts among the
+    Thrombeys. Diligent in duties yet alert to undercurrents, she provides clear recollections
+    that cut through alibis in investigations.
+  traits:
+  - diligent
+  - curious
+  - observant
+  aliases:
+  - A Caterer
+  character_type: Non-speaking Character
+  sphere_of_influence: Event Catering
+  appearance_count: 2
+  importance_tier: asteroid
+  affiliated_organization_uuid: null
+- fabula_uuid: agent_857668893d66
+  global_id: null
+  canonical_name: Cop (Logistics Officer)
+  title_role: Police Officer
+  description: Individual police officer assigned to assist detectives (e.g., Benoit
+    Blanc) in the Thrombey murder investigation. Known for driving detectives to scenes,
+    escorting suspects, and pursuing vehicles. Exhibits class bias, particularly toward
+    service workers like Marta Cabrera.
+  traits:
+  - condescending
+  - dismissive
+  - determined
+  - dutiful
+  - classist
+  aliases:
+  - COP
+  - Cop
+  character_type: Speaking Character
+  sphere_of_influence: Local Police Investigation
+  appearance_count: 13
+  importance_tier: planet
+  affiliated_organization_uuid: organization_536ee8d95f4d
+- fabula_uuid: agent_86fb06cbe156
+  global_id: null
+  canonical_name: Danica McKellar
+  title_role: null
+  description: Danica McKellar stars in the Hallmark mystery film *Deadly By Surprise*,
+    where she plays a wife poisoned by her husband.
+  traits: []
+  aliases: []
+  character_type: Non-speaking Character
+  sphere_of_influence: Hallmark Film Acting
+  appearance_count: 2
+  importance_tier: asteroid
+  affiliated_organization_uuid: null
+- fabula_uuid: agent_bc61dc66e59a
+  global_id: null
+  canonical_name: Donna Thrombey (née Gumley)
+  title_role: null
+  description: Donna Thrombey (née Gumley) anchors Walt Thrombey's family as his wife
+    and Jacob's mother within the fractious Thrombey clan. Walt calls her his rock,
+    relying on her quiet support amid tensions over Harlan's publishing empire. She
+    navigates social gatherings with nervousness, clings to Walt during crises, and
+    occasionally unleashes nativist fervor when alcohol loosens her restraint. Her
+    passivity in conflicts masks emotional volatility, from startled yelps to hyperventilating
+    shock, while her loyalty to Walt and Jacob defines her amid the family's unraveling.
+    Donna invests deeply in the family's wealth and legacy, expecting continued access
+    to Harlan's estate, and maintains poise amid entitlement until shocks expose her
+    vulnerability. Her motivations are tied to preserving privilege and status within
+    the Thrombey family circle.
+  traits:
+  - nervous
+  - loyal
+  - volatile
+  - nativist
+  - passive
+  aliases:
+  - Donna
+  - Donna Gumley
+  - Donna Thrombey
+  character_type: Speaking Character
+  sphere_of_influence: Thrombey Family Dynamics
+  appearance_count: 7
+  importance_tier: planet
+  affiliated_organization_uuid: organization_49c73339569b
+- fabula_uuid: agent_bf8519d0d232
+  global_id: null
+  canonical_name: Elliott
+  title_role: Detective Lieutenant
+  description: Detective Lieutenant Elliott directs the local police investigation
+    into Harlan Thrombey's death. In his thirties and sharp at his job, he partners
+    with Trooper Wagner to interview Thrombey family members, probe alibis, and scrutinize
+    timelines through methodical questioning and voiceover narration. He clashes with
+    consultant Benoit Blanc over procedural versus intuitive approaches, starting
+    dismissive of murder theories but shifting to pursue evidence like footprints
+    and tapes. His sarcasm cuts family tensions, and he coordinates forensics, chases,
+    and arrests while balancing skepticism with adaptability.
+  traits:
+  - methodical
+  - professional
+  - skeptical
+  - sarcastic
+  - adaptable
+  aliases:
+  - Lieutenant Elliott
+  character_type: Speaking Character
+  sphere_of_influence: Homicide Investigations
+  appearance_count: 67
+  importance_tier: anchor
+  affiliated_organization_uuid: organization_536ee8d95f4d
+- fabula_uuid: agent_34b6f60721bd
+  global_id: null
+  canonical_name: Emergency Medical Technicians
+  title_role: null
+  description: Specializes in **pre-hospital emergency care**, responding to **urgent
+    medical crises** (e.g., overdoses, trauma) to **stabilize and transport patients**.
+    Operates via **ambulance teams** under **local emergency services**. **Does not
+    conduct autopsies or forensic analysis**.
+  traits:
+  - prompt
+  - competent
+  - professional
+  aliases:
+  - EMTs
+  character_type: Non-speaking Character
+  sphere_of_influence: emergency medical response
+  appearance_count: 2
+  importance_tier: asteroid
+  affiliated_organization_uuid: organization_536ee8d95f4d
+- fabula_uuid: agent_19597fc05933
+  global_id: null
+  canonical_name: Emergency Room Medical Team
+  title_role: Doctors
+  description: Collective of hospital doctors responsible for emergency medical treatment,
+    patient monitoring, and protocol-driven care. Operates as a faceless group following
+    standard procedures, with no direct narrative involvement beyond institutional
+    functions.
+  traits:
+  - professional
+  - diligent
+  - protocol-driven
+  aliases:
+  - Hospital Staff
+  - Doctors
+  character_type: Non-speaking Character
+  sphere_of_influence: Hospital Emergency Care
+  appearance_count: 2
+  importance_tier: asteroid
+  affiliated_organization_uuid: null
+- fabula_uuid: agent_744fc6fe55be
+  global_id: null
+  canonical_name: Fran
+  title_role: Housekeeper
+  description: Fran works as Harlan Thrombey's longtime housekeeper, managing the
+    estate with quiet competence amid the family's chaos. She remains fiercely loyal
+    to Harlan, harbors deep contempt for Ransom Drysdale's entitlement, and extends
+    small acts of kindness to outsiders like Marta Cabrera through shared champagne
+    or hidden marijuana. Resourceful and observant, she taps family connections like
+    her cousin at the medical examiner's office to pursue justice, driven by love
+    for her employer and disdain for his ungrateful heirs. Her actions blend discretion,
+    defiance, and a weary insider's empathy.
+  traits:
+  - loyal
+  - discreet
+  - compassionate
+  - defiant
+  - resourceful
+  aliases: []
+  character_type: Speaking Character
+  sphere_of_influence: Thrombey Household
+  appearance_count: 24
+  importance_tier: planet
+  affiliated_organization_uuid: organization_49c73339569b
+- fabula_uuid: agent_d4792f130f62
+  global_id: null
+  canonical_name: Fran's Cousin
+  title_role: Receptionist
+  description: Fran's cousin works as a receptionist at the medical examiner's office.
+    She possesses practical knowledge of poisoning cases and maintains access to confidential
+    documents like toxicology reports. Her familial tie to Fran, Harlan Thrombey's
+    housekeeper, positions her as a discreet source of insider information during
+    family crises. She shares details on unusual deaths and provides copies of official
+    records, driven by loyalty to her cousin and willingness to bend rules for personal
+    justice.
+  traits:
+  - resourceful
+  - loyal
+  - informative
+  aliases:
+  - receptionist at the medical examiner's office
+  - receptionist at the examiners office
+  character_type: Non-speaking Character
+  sphere_of_influence: Medical Examiner's Office
+  appearance_count: 2
+  importance_tier: asteroid
+  affiliated_organization_uuid: organization_0918affd6cca
+- fabula_uuid: agent_82dbfec72515
+  global_id: null
+  canonical_name: Harlan Thrombey
+  title_role: null
+  description: Patriarch of the Thrombey family and founder of the publishing empire;
+    exercises ultimate control over family finances, adaptations, and legacy. His
+    relationships are defined by trust in outsiders (e.g., Marta Cabrera) and strategic
+    confrontations with his children, particularly Walt.
+  traits: &id001
+  - authoritative
+  - confrontational
+  - manipulative
+  - pragmatic
+  - paternal
+  aliases: &id002
+  - Harlan
+  character_type: Speaking Character
+  sphere_of_influence: Publishing Empire and Family Leadership
+  appearance_count: 93
+  importance_tier: anchor
+  affiliated_organization_uuid: organization_016903361ca2
+- fabula_uuid: agent_82dbfec72515
+  global_id: null
+  canonical_name: Harlan Thrombey
+  title_role: null
+  description: Patriarch of the Thrombey family and founder of the publishing empire;
+    exercises ultimate control over family finances, adaptations, and legacy. His
+    relationships are defined by trust in outsiders (e.g., Marta Cabrera) and strategic
+    confrontations with his children, particularly Walt.
+  traits: *id001
+  aliases: *id002
+  character_type: Speaking Character
+  sphere_of_influence: Publishing Empire and Family Leadership
+  appearance_count: 93
+  importance_tier: anchor
+  affiliated_organization_uuid: organization_49c73339569b
+- fabula_uuid: agent_48cae7532951
+  global_id: null
+  canonical_name: Jacob Thrombey
+  title_role: null
+  description: Jacob Thrombey, sixteen-year-old son of Walt Thrombey and Donna, serves
+    as Harlan Thrombey's grandson and a peripheral figure in the family's web of tensions.
+    Perpetually absorbed in his phone, he drifts through gatherings with minimal engagement,
+    his silence masking sharp observation. Walt touts his political activism, yet
+    Jacob's sparse comments betray far-right views that draw family scorn and external
+    labels like 'Nazi child.' Reluctant to speak despite overhearing pivotal exchanges,
+    he navigates the household as a detached witness, his disinterest shielding him
+    from the clan's overt conflicts.
+  traits:
+  - disengaged
+  - observant
+  - reluctant
+  - politically provocative
+  - detached
+  aliases:
+  - Jacob
+  character_type: Speaking Character
+  sphere_of_influence: Thrombey Family Dynamics
+  appearance_count: 28
+  importance_tier: planet
+  affiliated_organization_uuid: organization_49c73339569b
+- fabula_uuid: agent_ea37919c5c20
+  global_id: null
+  canonical_name: Joni Thrombey
+  title_role: null
+  description: Joni Thrombey serves as Harlan Thrombey's widowed daughter-in-law through
+    her marriage to his late son Neil and as mother to Meg Thrombey. She owns Flam,
+    a skincare brand that promotes bohemian self-sufficiency with chunky jewelry and
+    flowy dresses defining her style. Financially reliant on Harlan for her business
+    and Meg's tuition, Joni navigates family tensions through outspoken defenses,
+    evasive deflections, and emotional manipulation. Her free-spirited facade masks
+    dependence and self-interest within the Thrombey clan's disputes over wealth and
+    loyalty.
+  traits:
+  - free-spirited
+  - defensive
+  - manipulative
+  - outspoken
+  - evasive
+  aliases:
+  - JONI
+  character_type: Speaking Character
+  sphere_of_influence: Thrombey Family Dynamics
+  appearance_count: 38
+  importance_tier: planet
+  affiliated_organization_uuid: organization_49c73339569b
+- fabula_uuid: agent_9453dc7e44bb
+  global_id: null
+  canonical_name: Journalists
+  title_role: null
+  description: Journalists track police activity at high-profile crime scenes, positioning
+    themselves to observe key developments despite barriers. Police restrict their
+    access, forcing distant vantage points. They drive public scrutiny of investigations
+    like the Thrombey case, channeling curiosity into potential exposés. Persistent
+    in pursuit of facts, they navigate law enforcement containment to report on unfolding
+    mysteries.
+  traits:
+  - persistent
+  - observant
+  - scrutinizing
+  aliases: []
+  character_type: Non-speaking Character
+  sphere_of_influence: Crime Scene Reporting
+  appearance_count: 1
+  importance_tier: asteroid
+  affiliated_organization_uuid: organization_c6954d4df8ea
+- fabula_uuid: agent_380d3195b3c1
+  global_id: null
+  canonical_name: Linda Thrombey Drysdale
+  title_role: null
+  description: Harlan Thrombey's eldest daughter and co-owner of an independent real
+    estate firm (separate from her husband Richard Drysdale). Mother to Ransom Drysdale
+    Thrombey, she serves as the Thrombey family's strategic protector, wielding calculated
+    poise and hidden resentments to maintain control over family secrets and status.
+    Her dynamic with Harlan is marked by a game-like demand for equality, while her
+    marriage to Richard is fraught with unspoken tensions.
+  traits: &id003
+  - guarded
+  - assertive
+  - controlling
+  - sharp-witted
+  - resentful
+  aliases: &id004
+  - Linda
+  - Linda Thrombey
+  character_type: Speaking Character
+  sphere_of_influence: Real Estate and Thrombey Family Dynamics
+  appearance_count: 48
+  importance_tier: planet
+  affiliated_organization_uuid: organization_4f89c063f686
+- fabula_uuid: agent_380d3195b3c1
+  global_id: null
+  canonical_name: Linda Thrombey Drysdale
+  title_role: null
+  description: Harlan Thrombey's eldest daughter and co-owner of an independent real
+    estate firm (separate from her husband Richard Drysdale). Mother to Ransom Drysdale
+    Thrombey, she serves as the Thrombey family's strategic protector, wielding calculated
+    poise and hidden resentments to maintain control over family secrets and status.
+    Her dynamic with Harlan is marked by a game-like demand for equality, while her
+    marriage to Richard is fraught with unspoken tensions.
+  traits: *id003
+  aliases: *id004
+  character_type: Speaking Character
+  sphere_of_influence: Real Estate and Thrombey Family Dynamics
+  appearance_count: 48
+  importance_tier: planet
+  affiliated_organization_uuid: organization_49c73339569b
+- fabula_uuid: agent_d44da24d6eb5
+  global_id: null
+  canonical_name: Local News Field Reporters
+  title_role: null
+  description: Mobile team of journalists who cover breaking local news by filming
+    events in real-time, often staking out locations tied to developing stories. Their
+    intrusive presence amplifies private crises into public spectacles, directly interacting
+    with key characters and driving narrative tension.
+  traits:
+  - persistent
+  - mobile
+  - intrusive
+  aliases:
+  - Reporters
+  character_type: Non-speaking Character
+  sphere_of_influence: Local News Coverage
+  appearance_count: 1
+  importance_tier: asteroid
+  affiliated_organization_uuid: organization_c6954d4df8ea
+- fabula_uuid: agent_8a6baa1f7e1e
+  global_id: null
+  canonical_name: Local News Studio Anchor
+  title_role: null
+  description: Studio-based news anchor who delivers pre-recorded or live broadcasts
+    of major local events, maintaining a neutral and authoritative tone. Serves as
+    the public's primary source for curated updates on unfolding mysteries, without
+    direct interaction with subjects.
+  traits:
+  - professional
+  - observant
+  - neutral
+  aliases: []
+  character_type: Mentioned Only
+  sphere_of_influence: Local Television News
+  appearance_count: 0
+  importance_tier: asteroid
+  affiliated_organization_uuid: organization_c6954d4df8ea
+- fabula_uuid: agent_879a028f2e90
+  global_id: null
+  canonical_name: Marta Cabrera
+  title_role: Nurse
+  description: Professional nurse for Harlan Thrombey with a personal stake in protecting
+    her undocumented mother while navigating the Thrombey family's elite social dynamics.
+    Her moral compass and physical reaction to dishonesty (vomiting) create unique
+    narrative tension.
+  traits:
+  - principled
+  - empathetic
+  - resilient
+  - resourceful
+  - dutiful
+  aliases:
+  - Marta
+  character_type: Speaking Character
+  sphere_of_influence: Private Nursing
+  appearance_count: 168
+  importance_tier: anchor
+  affiliated_organization_uuid: organization_49c73339569b
+- fabula_uuid: agent_4fe617eac03e
+  global_id: null
+  canonical_name: Marta Cabrera's Mother
+  title_role: null
+  description: Undocumented immigrant and cleaner who lives with her daughters, Marta
+    and Alice, in South Boston. Her narrative role is exclusively maternal, focused
+    on shielding her family from harm and expressing anxieties in rapid Spanish. She
+    has no professional ties to the Thrombey family.
+  traits:
+  - protective
+  - concerned
+  - resilient
+  - anxious
+  aliases:
+  - Mom
+  - Marta's Mom
+  - Marta’s Mom
+  character_type: Speaking Character
+  sphere_of_influence: Family protection
+  appearance_count: 11
+  importance_tier: planet
+  affiliated_organization_uuid: null
+- fabula_uuid: agent_583e51cc92fa
+  global_id: null
+  canonical_name: Medical Examiner
+  title_role: Medical Examiner
+  description: Specializes in **post-mortem forensic pathology**, conducting autopsies
+    and certifying causes of death in **suspicious or legal cases**. Collaborates
+    with **law enforcement and private investigators** to adjust findings based on
+    new evidence. **Not involved in pre-hospital care or emergency response**.
+  traits:
+  - professional
+  - cautious
+  - evidence-driven
+  - dutiful
+  aliases: []
+  character_type: Mentioned Only
+  sphere_of_influence: Forensic Pathology
+  appearance_count: 0
+  importance_tier: asteroid
+  affiliated_organization_uuid: organization_0918affd6cca
+- fabula_uuid: agent_afd5ad8773b4
+  global_id: null
+  canonical_name: Meg Thrombey
+  title_role: null
+  description: Meg Thrombey is the college-aged daughter of Joni Thrombey and granddaughter
+    of Harlan Thrombey. A Smith College student, she champions friends like Marta
+    Cabrera against family entitlement. Her progressive values fuel sharp clashes
+    with relatives such as Ransom Drysdale and Jacob Thrombey. Empathy drives fierce
+    defenses and nurturing gestures, yet family loyalty triggers conflicted betrayals
+    and tearful reconciliations, marking her as the clan's volatile moral outlier.
+  traits: &id005
+  - empathetic
+  - outspoken
+  - conflicted
+  - protective
+  aliases: &id006
+  - MEG
+  character_type: Speaking Character
+  sphere_of_influence: Thrombey Family Dynamics
+  appearance_count: 38
+  importance_tier: planet
+  affiliated_organization_uuid: organization_0a79c059776d
+- fabula_uuid: agent_afd5ad8773b4
+  global_id: null
+  canonical_name: Meg Thrombey
+  title_role: null
+  description: Meg Thrombey is the college-aged daughter of Joni Thrombey and granddaughter
+    of Harlan Thrombey. A Smith College student, she champions friends like Marta
+    Cabrera against family entitlement. Her progressive values fuel sharp clashes
+    with relatives such as Ransom Drysdale and Jacob Thrombey. Empathy drives fierce
+    defenses and nurturing gestures, yet family loyalty triggers conflicted betrayals
+    and tearful reconciliations, marking her as the clan's volatile moral outlier.
+  traits: *id005
+  aliases: *id006
+  character_type: Speaking Character
+  sphere_of_influence: Thrombey Family Dynamics
+  appearance_count: 38
+  importance_tier: planet
+  affiliated_organization_uuid: organization_49c73339569b
+- fabula_uuid: agent_0818a177f3ab
+  global_id: null
+  canonical_name: Phyllis
+  title_role: null
+  description: Phyllis runs Harlan Thrombey's office and manages family financial
+    disbursements. She wires Joni Thrombey's annual allowance and, at Joni's request,
+    sends tuition payments directly to Meg's school. Precise and reliable, she keeps
+    detailed transaction records that Harlan uses to monitor and enforce fiscal discipline
+    among his dependents. Her role anchors the family's dependence on his wealth,
+    executing payments with quiet efficiency amid their personal dramas.
+  traits:
+  - efficient
+  - precise
+  - dutiful
+  aliases: []
+  character_type: Mentioned Only
+  sphere_of_influence: Harlan Thrombey's financial administration
+  appearance_count: 0
+  importance_tier: asteroid
+  affiliated_organization_uuid: organization_49c73339569b
+- fabula_uuid: agent_6d75410660e3
+  global_id: null
+  canonical_name: Police Escort
+  title_role: null
+  description: The Police Escort consists of local law enforcement officers assigned
+    to convoy protection for witnesses in high-stakes investigations. They drive in
+    formation through rural routes, enforcing security protocols to counter threats
+    from powerful families. Disciplined operators, they prioritize route adherence
+    and team coordination, embodying institutional reliability while exposing limits
+    against determined individual actions.
+  traits:
+  - dutiful
+  - coordinated
+  - protocol-driven
+  - vigilant
+  aliases:
+  - cop caravan
+  character_type: Non-speaking Character
+  sphere_of_influence: Security Escort
+  appearance_count: 2
+  importance_tier: asteroid
+  affiliated_organization_uuid: organization_536ee8d95f4d
+- fabula_uuid: agent_a0b2f98b7e89
+  global_id: null
+  canonical_name: Police Officer (Thrombey Estate Investigation)
+  title_role: null
+  description: "\n      **Consolidated Description**:\n      Police officers manage\
+    \ **frontline law enforcement** during **arrests, disturbances, and investigations**\
+    \ at private estates (e.g., Thrombey household). Their roles include:\n      1.\
+    \ **Active Intervention**: Restraining agitated family members, securing handcuffed\
+    \ suspects in patrol cars, and preserving order amid emotional chaos.\n      2.\
+    \ **Backup Support**: Standing as **silent, observant backup** for senior officers\
+    \ (e.g., Lieutenant Elliott, Trooper Wagner) during tense family confrontations,\
+    \ reinforcing institutional authority through professional detachment.\n     \
+    \ 3. **Protocol Adherence**: Following strict protocols without yielding to personal\
+    \ pleas, embodying **institutional authority that overrides personal privilege**.\n\
+    \n      **Key Traits**: Professional, detached, protocol-driven, authoritative.\n\
+    \      **Sphere of Influence**: Thrombey Estate and related investigations.\n\
+    \      **Narrative Function**: Serve as **both active enforcers and passive observers**,\
+    \ highlighting the duality of police presence in elite domestic settings.\n  \
+    \    "
+  traits:
+  - professional
+  - neutral
+  - firm
+  - efficient
+  - observant
+  - passive
+  aliases:
+  - officers
+  - cops
+  - Uniformed Officer (Thrombey Investigation)
+  - Police Backup (Thrombey Household)
+  - Police Officers (Thrombey Estate)
+  character_type: Non-speaking Character
+  sphere_of_influence: Law Enforcement
+  appearance_count: 6
+  importance_tier: planet
+  affiliated_organization_uuid: organization_536ee8d95f4d
+- fabula_uuid: agent_83e2b3e0d663
+  global_id: null
+  canonical_name: Proofroc
+  title_role: Security Guard
+  description: Proofroc works as the veteran security guard for the Thrombey estate,
+    logging fifty years on the job. Old and salty, he favors traditional methods—patrolling
+    with a shotgun and sharp ears—over modern tech. Pride anchors his service; he
+    preserves relics like faded photos and VHS tapes with care. Loyal to the estate's
+    history, he guides visitors through its outdated systems, his tenure shaping his
+    gruff authority and resistance to change.
+  traits:
+  - proud
+  - salty
+  - dutiful
+  - traditional
+  - experienced
+  aliases:
+  - Mr. Proofroc
+  character_type: Speaking Character
+  sphere_of_influence: Thrombey Estate Security
+  appearance_count: 2
+  importance_tier: asteroid
+  affiliated_organization_uuid: organization_49c73339569b
+- fabula_uuid: agent_7a756396e512
+  global_id: null
+  canonical_name: Ransom Drysdale Thrombey
+  title_role: null
+  description: Ransom Drysdale Thrombey, grandson of Harlan Thrombey through daughter
+    Linda and son-in-law Richard, is the family's black sheep—a cynical, calculating
+    manipulator who drifts without steady employment, sustained by trust fund allowances.
+    He drives a vintage Porsche, deploys classist jabs, and embodies entitled dysfunction.
+    His volatile love-hate bond with Harlan sparks explosive arguments, while his
+    smug detachment and insider knowledge position him to exploit family secrets and
+    dismantle inheritance claims. Ransom thrives on orchestrating chaos from the shadows,
+    blending charisma with cold self-interest to pursue personal advantage amid the
+    Thrombey family's collective ruin. He interacts warily with detective Benoit Blanc
+    and anticipates the role of lawyer Alan Stevens in the unfolding drama.
+  traits:
+  - manipulative
+  - cynical
+  - calculating
+  - volatile
+  - entitled
+  aliases:
+  - Hugh
+  - Ransom Thrombey
+  - RANSOM DRYSDALE
+  - Ransom
+  character_type: Speaking Character
+  sphere_of_influence: Thrombey Family Intrigue
+  appearance_count: 83
+  importance_tier: anchor
+  affiliated_organization_uuid: organization_49c73339569b
+- fabula_uuid: agent_578d69587bc9
+  global_id: null
+  canonical_name: Richard Drysdale
+  title_role: null
+  description: Son-in-law to Harlan Thrombey and co-owner of the Thrombey family’s
+    real estate firm (partnered with his wife, Linda Thrombey Drysdale). Father to
+    Ransom Drysdale Thrombey, he occupies a tenuous position as an **entitled outsider**
+    within the Thrombey clan, marked by blunt disdain for Harlan’s self-made empire.
+    His confrontational and passive-aggressive demeanor masks deep-seated insecurities
+    about his financial standing and fidelity, which he compensates for with performative
+    gestures and nativist rhetoric.
+  traits:
+  - blunt
+  - dismissive
+  - resentful
+  - confrontational
+  - passive-aggressive
+  aliases:
+  - Richard
+  character_type: Speaking Character
+  sphere_of_influence: Real Estate and Thrombey Family Dynamics
+  appearance_count: 46
+  importance_tier: planet
+  affiliated_organization_uuid: organization_49c73339569b
+- fabula_uuid: agent_a8e159ede89a
+  global_id: null
+  canonical_name: Sally (Alan Stevens' Assistant)
+  title_role: Assistant
+  description: Assistant to Alan Stevens, specializing in logistical support for legal
+    proceedings. Unlike Alan, Sally has no independent authority and does not interact
+    directly with family members beyond handing documents or pointing to clauses.
+  traits:
+  - professional
+  - composed
+  - helpful
+  - efficient
+  - neutral
+  aliases: []
+  character_type: Non-speaking Character
+  sphere_of_influence: Legal Proceedings Support
+  appearance_count: 2
+  importance_tier: asteroid
+  affiliated_organization_uuid: null
+- fabula_uuid: agent_2f21f0f0601e
+  global_id: null
+  canonical_name: Spider
+  title_role: null
+  description: Spider operates as an ordinary arachnid in shadowed human environments.
+    It moves with precise, unhurried steps across exposed surfaces, exploiting moments
+    of human vulnerability. This instinctive navigator ignores larger threats, triggering
+    revulsion and heightened alertness in witnesses through sudden proximity. Its
+    presence injects raw unease into tense encounters, embodying nature's indifferent
+    intrusion on personal crises. Survival drives every advance, indifferent to the
+    drama it disrupts.
+  traits:
+  - agile
+  - instinctive
+  - unsettling
+  aliases: []
+  character_type: Non-speaking Character
+  sphere_of_influence: null
+  appearance_count: 1
+  importance_tier: asteroid
+  affiliated_organization_uuid: null
+- fabula_uuid: agent_72471873814d
+  global_id: null
+  canonical_name: Thrombey Estate
+  title_role: null
+  description: The Thrombey Estate functions as the Thrombey family's ancestral New
+    England manor house. Overgrown gardens, peeling paint, and crumbling architecture
+    mark its faded opulence. Mist-shrouded grounds and oppressive silence define its
+    presence, mirroring the family's dysfunction and concealed secrets. Harlan Thrombey's
+    home stands as a fixed point amid their unraveling, its decay underscoring isolation
+    that binds generations.
+  traits:
+  - foreboding
+  - isolated
+  - decaying
+  - oppressive
+  - eerie
+  aliases: []
+  character_type: Non-speaking Character
+  sphere_of_influence: Thrombey Family Secrets
+  appearance_count: 1
+  importance_tier: asteroid
+  affiliated_organization_uuid: organization_49c73339569b
+- fabula_uuid: agent_0a4b89c19588
+  global_id: null
+  canonical_name: Thrombey Family
+  title_role: null
+  description: The Thrombey family, including the Drysdale line through daughter Linda
+    Drysdale and grandson Ransom Drysdale, anchors the world of Harlan Thrombey, the
+    celebrated mystery novelist. This tight-knit yet fractious clan—comprising son
+    Walt, daughter Linda Drysdale, their spouses Richard and Donna, grandsons Ransom
+    Drysdale and Jacob Thrombey, and Harlan's mother Wanetta (Greatnana)—resides in
+    Harlan's opulent estate, sustained by his publishing empire. Internal tensions,
+    marked by open conflict and opportunism, are further complicated by external scrutiny
+    (e.g., from detective Benoit Blanc and nurse Marta Cabrera), as the family navigates
+    shared legacy, dependency, and suspicion. The group embodies a blend of loyalty
+    and entitlement, with dynamics shaped by both familial bonds and financial interdependence.
+  traits:
+  - dramatic
+  - social
+  - attentive
+  aliases:
+  - Family
+  - The Family
+  - Thrombey/Drysdale
+  character_type: Non-speaking Character
+  sphere_of_influence: Familial dynamics
+  appearance_count: 13
+  importance_tier: planet
+  affiliated_organization_uuid: organization_49c73339569b
+- fabula_uuid: agent_f76975110025
+  global_id: null
+  canonical_name: Thrombey Family Dogs
+  title_role: null
+  description: The Thrombey family dogs live on Harlan Thrombey's estate as household
+    pets. They patrol the grounds and bark at nighttime disturbances outside guest
+    rooms, jolting occupants awake. Their vocal reactions signal irregularities amid
+    family tensions, functioning as informal sentinels tied to the clan's routines
+    and the property's rhythms.
+  traits:
+  - alert
+  - territorial
+  - boisterous
+  aliases:
+  - the dogs
+  - DOGS
+  character_type: Non-speaking Character
+  sphere_of_influence: Thrombey estate grounds
+  appearance_count: 8
+  importance_tier: planet
+  affiliated_organization_uuid: organization_49c73339569b
+- fabula_uuid: agent_c27d798a99fc
+  global_id: null
+  canonical_name: Thrombey Family Liaison Doctor
+  title_role: Doctor
+  description: Individual hospital doctor with direct, personalized communication
+    responsibilities for high-profile cases, including the Thrombey family. Acts as
+    a narrative bridge between medical staff and caregivers like Marta Cabrera, reporting
+    on survival status and recovery progress in tense situations.
+  traits:
+  - proactive
+  - precise
+  - professional
+  aliases:
+  - Hospital Staff
+  character_type: Mentioned Only
+  sphere_of_influence: Hospital Patient Care
+  appearance_count: 0
+  importance_tier: asteroid
+  affiliated_organization_uuid: null
+- fabula_uuid: agent_f3c7726d4c3e
+  global_id: null
+  canonical_name: Unknown Porsche Owner
+  title_role: null
+  description: An elusive individual tied to the circumstances of Harlan Thrombey's
+    death. As the owner of a sleek, high-end Porsche, this figure maintains complete
+    anonymity while inserting themselves into key locations around the Thrombey family
+    orbit. Their discreet movements and choice of luxury vehicle signal wealth and
+    separation from the family's working-class facades, positioning them as a potential
+    holder of concealed knowledge or motives within the murder's web of secrets.
+  traits:
+  - elusive
+  - discreet
+  - enigmatic
+  - affluent
+  aliases: []
+  character_type: Non-speaking Character
+  sphere_of_influence: Thrombey murder investigation
+  appearance_count: 1
+  importance_tier: asteroid
+  affiliated_organization_uuid: null
+- fabula_uuid: agent_fe59812461de
+  global_id: null
+  canonical_name: Wagner
+  title_role: State Trooper
+  description: Wagner serves as a junior state trooper under Lieutenant Elliott, supporting
+    the murder investigation at the Thrombey estate. Fresh-faced and in his thirties,
+    he handles logistics like securing scenes, operating equipment, and detaining
+    suspects. He contributes timeline details and defers to superiors during interrogations.
+    An avid mystery fan, he recognizes Harlan Thrombey's novels and film references
+    with excitement. His earnest professionalism mixes with nervousness in high-tension
+    moments and deference to detectives like Benoit Blanc.
+  traits:
+  - enthusiastic
+  - deferential
+  - observant
+  - eager
+  - earnest
+  aliases:
+  - Trooper Wagner
+  character_type: Speaking Character
+  sphere_of_influence: Police Investigation
+  appearance_count: 49
+  importance_tier: planet
+  affiliated_organization_uuid: organization_536ee8d95f4d
+- fabula_uuid: agent_f3d5c89c444c
+  global_id: null
+  canonical_name: Waitress
+  title_role: null
+  description: Waitress at a dimly lit local restaurant near the Thrombey family estate.
+    She serves patrons including Ransom Drysdale and Marta Cabrera during late-night
+    meals, delivering sausage plates and extra bowls on request. Her efficient movements
+    and brief interactions highlight her role in the everyday service world that contrasts
+    the Thrombey family's dysfunction. Professional and unobtrusive, she navigates
+    customer needs without drawing attention to herself.
+  traits:
+  - efficient
+  - professional
+  - unobtrusive
+  aliases: []
+  character_type: Non-speaking Character
+  sphere_of_influence: Restaurant Service
+  appearance_count: 1
+  importance_tier: asteroid
+  affiliated_organization_uuid: null
+- fabula_uuid: agent_06cb530c9cc2
+  global_id: null
+  canonical_name: Walt Thrombey
+  title_role: null
+  description: Harlan Thrombey's younger son and operator of the family's publishing
+    company; resents Harlan's control and seeks to gain independence. His personality
+    is boastful, resentful, and manipulative, masking insecurity with bravado.
+  traits: &id007
+  - boastful
+  - resentful
+  - manipulative
+  - defensive
+  aliases: &id008
+  - Walter Thrombey
+  - WALT
+  character_type: Speaking Character
+  sphere_of_influence: Publishing
+  appearance_count: 57
+  importance_tier: anchor
+  affiliated_organization_uuid: organization_016903361ca2
+- fabula_uuid: agent_06cb530c9cc2
+  global_id: null
+  canonical_name: Walt Thrombey
+  title_role: null
+  description: Harlan Thrombey's younger son and operator of the family's publishing
+    company; resents Harlan's control and seeks to gain independence. His personality
+    is boastful, resentful, and manipulative, masking insecurity with bravado.
+  traits: *id007
+  aliases: *id008
+  character_type: Speaking Character
+  sphere_of_influence: Publishing
+  appearance_count: 57
+  importance_tier: anchor
+  affiliated_organization_uuid: organization_49c73339569b
+- fabula_uuid: agent_3997ff54dd91
+  global_id: null
+  canonical_name: Wanetta Thrombey
+  title_role: null
+  description: Wanetta Thrombey, known to family as Greatnana, stands as Harlan Thrombey's
+    aged mother and the Thrombey household's quirky matriarch. Her extreme longevity
+    shapes her unhurried presence at family events, where she layers on multiple coats
+    and devours snacks with gusto. Detached from intrigues, she embodies harmless
+    eccentricity amid the clan's ambitions, her silent observations underscoring generational
+    disconnects.
+  traits:
+  - eccentric
+  - voracious
+  - unfazed
+  aliases:
+  - Greatnana
+  - Wanetta
+  character_type: Speaking Character
+  sphere_of_influence: Thrombey family gatherings
+  appearance_count: 10
+  importance_tier: planet
+  affiliated_organization_uuid: organization_49c73339569b

@@ -287,11 +287,11 @@ class Neo4jExporter:
 
         # Query matches actual Neo4j schema:
         # Episode-[:BELONGS_TO_SEASON]->Season-[:BELONGS_TO_SERIES]->Series
-        # Megagraph uses 'season_number' for season and 'episode_number' for episodes
+        # Season may use 'number' or 'season_number' property depending on source
         query = """
         MATCH (ep:Episode)-[:BELONGS_TO_SEASON]->(season:Season)-[:BELONGS_TO_SERIES]->(s:Series)
         RETURN s, season, ep,
-               coalesce(season.season_number, season.number, 0) as season_num,
+               coalesce(season.number, season.season_number, 0) as season_num,
                coalesce(ep.episode_number, ep.number, 0) as episode_num
         ORDER BY season_num, episode_num
         """
@@ -577,7 +577,8 @@ class Neo4jExporter:
                 WHERE e.event_uuid IN $event_uuids
                   AND loc.status = 'canonical'
                 WITH DISTINCT loc
-                RETURN loc
+                OPTIONAL MATCH (loc)-[:PART_OF]->(parent:Location)
+                RETURN loc, parent.location_uuid as parent_uuid
                 ORDER BY loc.canonical_name
                 """
             results = self.execute_query(query, {'event_uuids': list(self.series_event_uuids)})
@@ -601,7 +602,8 @@ class Neo4jExporter:
                 query = """
                 MATCH (loc:Location)
                 WHERE loc.status = 'canonical'
-                RETURN loc
+                OPTIONAL MATCH (loc)-[:PART_OF]->(parent:Location)
+                RETURN loc, parent.location_uuid as parent_uuid
                 ORDER BY loc.canonical_name
                 """
             results = self.execute_query(query)
@@ -623,7 +625,7 @@ class Neo4jExporter:
                 'canonical_name': self.safe_get(loc, 'canonical_name', 'Unknown'),
                 'description': self.safe_get(loc, 'foundational_description', ''),
                 'location_type': self.safe_get(loc, 'foundational_type', ''),
-                'parent_location_uuid': record.get('parent_uuid') if self.megagraph_mode else None
+                'parent_location_uuid': record.get('parent_uuid')
             }
 
             # Add megagraph-specific fields
@@ -1253,7 +1255,7 @@ class Neo4jExporter:
 
     def export_acts_by_episode(self, episode_uuid: str, scene_number_map: Dict[str, int]) -> List[Dict]:
         """
-        Export acts for a specific episode (megagraph mode only).
+        Export acts for a specific episode.
 
         Args:
             episode_uuid: Episode UUID
@@ -1262,9 +1264,6 @@ class Neo4jExporter:
         Returns:
             List of act dictionaries
         """
-        if not self.megagraph_mode:
-            return []
-
         query = """
         MATCH (act:Act {episode_uuid_fk: $episode_uuid})
         OPTIONAL MATCH (sb:SceneBoundary)-[:PART_OF_ACT]->(act)
