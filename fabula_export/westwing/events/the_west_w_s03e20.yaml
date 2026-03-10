@@ -1,5 +1,5 @@
 # Events for We Killed Yamamoto
-# Generated: 2026-02-10T12:17:31.938893
+# Generated: 2026-02-22T16:33:29.161244
 
 episode_uuid: ep_sea_ser_the_west_wing_s03_e20
 episode_title: We Killed Yamamoto
@@ -115,7 +115,7 @@ events:
     - professional
     importance: primary
     global_id: ger_agent_faaafb0f3355
-  - character_uuid: ger_agent_0c46fe4078a3
+  - character_uuid: ger_agent_e2310869a36b
     emotional_state: ''
     goals: []
     what_happened: significantly referenced as Qumari Defense Minister, bank controller,
@@ -125,7 +125,7 @@ events:
     beliefs: []
     observed_traits: []
     importance: primary
-    global_id: ger_agent_0c46fe4078a3
+    global_id: ger_agent_e2310869a36b
   - character_uuid: ger_agent_04e8421f41f6
     emotional_state: ''
     goals:
@@ -157,21 +157,6 @@ events:
     institutional_impact: Amplifies call for force protection amid ally betrayal.
     internal_dynamics: ''
     global_id: ger_organization_82ca779ef585
-  - organization_uuid: ger_organization_bc02bb7be974
-    description_of_involvement: Department of Justice invoked by Bartlet as the gatekeeper
-      demanding airtight proof for indicting Shareef as terror kingpin, its standards
-      dooming circumstantial evidence and forcing moral pivot.
-    active_representation: Off-screen authority cited in presidential rejection.
-    power_dynamics: Legal arbiter constraining executive action on terror.
-    organizational_goals:
-    - Uphold prosecutorial evidence thresholds
-    - Avoid indictments vulnerable to dismissal
-    influence_mechanisms:
-    - Indictment approval protocols
-    - Demand for beyond-circumstantial proof
-    institutional_impact: Exposes chasm between intel urgency and judicial rigor.
-    internal_dynamics: ''
-    global_id: ger_organization_bc02bb7be974
   - organization_uuid: ger_organization_d2526bf54dd0
     description_of_involvement: Sultanate of Qumar framed via its Defense Minister
       Shareef's bank control and terror ties, transforming U.S. ally into suspect
@@ -278,6 +263,21 @@ events:
     institutional_impact: ''
     internal_dynamics: ''
     global_id: ger_organization_672eb4ba9ee6
+  - organization_uuid: ger_organization_bc02bb7be974
+    description_of_involvement: Department of Justice invoked by Bartlet as the gatekeeper
+      demanding airtight proof for indicting Shareef as terror kingpin, its standards
+      dooming circumstantial evidence and forcing moral pivot.
+    active_representation: Off-screen authority cited in presidential rejection.
+    power_dynamics: Legal arbiter constraining executive action on terror.
+    organizational_goals:
+    - Uphold prosecutorial evidence thresholds
+    - Avoid indictments vulnerable to dismissal
+    influence_mechanisms:
+    - Indictment approval protocols
+    - Demand for beyond-circumstantial proof
+    institutional_impact: Exposes chasm between intel urgency and judicial rigor.
+    internal_dynamics: ''
+    global_id: ger_organization_bc02bb7be974
   derived_from_beat_uuids:
   - beat_d5e089769c1a17e6
   - beat_9b935ccd4509a6fd
@@ -923,7 +923,7 @@ events:
     SAM: "Yeah. No. I''m not taking it to Bruno, but thanks for coming in."'
   - 'MURIEL: "Technically, it''s not a tax!" SAM: "[VO] Thanks, guys!"'
   is_flashback: false
-  location_uuid: ger_location_d3572f4d3ee7
+  location_uuid: ger_location_f471c3ca284d
   theme_uuids:
   - ger_theme_fd1835d35bd2
   arc_uuids: []
@@ -973,7 +973,7 @@ events:
     - scarred-by-scandal
     importance: primary
     global_id: ger_agent_04bbccb1e352
-  - character_uuid: ger_agent_89fd2481c324
+  - character_uuid: ger_agent_69979de71a68
     emotional_state: ''
     goals: []
     what_happened: referenced as political rival whose sugar industry backers would
@@ -983,7 +983,7 @@ events:
     beliefs: []
     observed_traits: []
     importance: minor
-    global_id: ger_agent_89fd2481c324
+    global_id: ger_agent_69979de71a68
   - character_uuid: ger_agent_0e71f0a9c315
     emotional_state: Determined optimism edged with urgency
     goals:
@@ -1031,19 +1031,6 @@ events:
     global_id: ger_agent_7a1d9f622ae5
   object_involvements: []
   location_involvements:
-  - location_uuid: ger_location_d3572f4d3ee7
-    description_of_involvement: Florida emerges as pivotal battleground unlocked by
-      subsidy cuts—Ritchie's home state suddenly 'in play,' forcing him to burn resources
-      defending against environmental attack, with Everglades restoration flipping
-      loyalties in humid swing-state frenzy.
-    observed_atmosphere: Charged electoral swamp of cane fields and voter revolt
-    functional_role: Strategic prize in re-election calculus
-    symbolic_significance: Quivering faultline where policy guts conservative power
-    access_restrictions: ''
-    key_environmental_details:
-    - Cane fields dumping toxic slurry upstream
-    - Subtropical strongholds fracturing competitively
-    global_id: ger_location_d3572f4d3ee7
   - location_uuid: ger_location_f471c3ca284d
     description_of_involvement: Everglades National Park anchors the pitch as the
       plan's urgent beneficiary—largest subtropical wilderness in the low 48, dying
@@ -1059,6 +1046,19 @@ events:
     - Sawgrass rivers choked by algal blooms
     - Shrinking sloughs threatening panthers and herons
     global_id: ger_location_f471c3ca284d
+  - location_uuid: ger_location_ef49f7f66924
+    description_of_involvement: Florida emerges as pivotal battleground unlocked by
+      subsidy cuts—Ritchie's home state suddenly 'in play,' forcing him to burn resources
+      defending against environmental attack, with Everglades restoration flipping
+      loyalties in humid swing-state frenzy.
+    observed_atmosphere: Charged electoral swamp of cane fields and voter revolt
+    functional_role: Strategic prize in re-election calculus
+    symbolic_significance: Quivering faultline where policy guts conservative power
+    access_restrictions: ''
+    key_environmental_details:
+    - Cane fields dumping toxic slurry upstream
+    - Subtropical strongholds fracturing competitively
+    global_id: ger_location_ef49f7f66924
   organization_involvements:
   - organization_uuid: ger_organization_4b2652bcb3f6
     description_of_involvement: Sugar industry spotlighted as dual pollution source
@@ -1116,7 +1116,7 @@ events:
   sequence_in_scene: 4
   key_dialogue: *id005
   is_flashback: false
-  location_uuid: ger_location_f471c3ca284d
+  location_uuid: ger_location_ef49f7f66924
   theme_uuids:
   - ger_theme_fd1835d35bd2
   arc_uuids: []
@@ -1166,7 +1166,7 @@ events:
     - scarred-by-scandal
     importance: primary
     global_id: ger_agent_04bbccb1e352
-  - character_uuid: ger_agent_89fd2481c324
+  - character_uuid: ger_agent_69979de71a68
     emotional_state: ''
     goals: []
     what_happened: referenced as political rival whose sugar industry backers would
@@ -1176,7 +1176,7 @@ events:
     beliefs: []
     observed_traits: []
     importance: minor
-    global_id: ger_agent_89fd2481c324
+    global_id: ger_agent_69979de71a68
   - character_uuid: ger_agent_0e71f0a9c315
     emotional_state: Determined optimism edged with urgency
     goals:
@@ -1224,19 +1224,6 @@ events:
     global_id: ger_agent_7a1d9f622ae5
   object_involvements: []
   location_involvements:
-  - location_uuid: ger_location_d3572f4d3ee7
-    description_of_involvement: Florida emerges as pivotal battleground unlocked by
-      subsidy cuts—Ritchie's home state suddenly 'in play,' forcing him to burn resources
-      defending against environmental attack, with Everglades restoration flipping
-      loyalties in humid swing-state frenzy.
-    observed_atmosphere: Charged electoral swamp of cane fields and voter revolt
-    functional_role: Strategic prize in re-election calculus
-    symbolic_significance: Quivering faultline where policy guts conservative power
-    access_restrictions: ''
-    key_environmental_details:
-    - Cane fields dumping toxic slurry upstream
-    - Subtropical strongholds fracturing competitively
-    global_id: ger_location_d3572f4d3ee7
   - location_uuid: ger_location_f471c3ca284d
     description_of_involvement: Everglades National Park anchors the pitch as the
       plan's urgent beneficiary—largest subtropical wilderness in the low 48, dying
@@ -1252,6 +1239,19 @@ events:
     - Sawgrass rivers choked by algal blooms
     - Shrinking sloughs threatening panthers and herons
     global_id: ger_location_f471c3ca284d
+  - location_uuid: ger_location_ef49f7f66924
+    description_of_involvement: Florida emerges as pivotal battleground unlocked by
+      subsidy cuts—Ritchie's home state suddenly 'in play,' forcing him to burn resources
+      defending against environmental attack, with Everglades restoration flipping
+      loyalties in humid swing-state frenzy.
+    observed_atmosphere: Charged electoral swamp of cane fields and voter revolt
+    functional_role: Strategic prize in re-election calculus
+    symbolic_significance: Quivering faultline where policy guts conservative power
+    access_restrictions: ''
+    key_environmental_details:
+    - Cane fields dumping toxic slurry upstream
+    - Subtropical strongholds fracturing competitively
+    global_id: ger_location_ef49f7f66924
   organization_involvements:
   - organization_uuid: ger_organization_4b2652bcb3f6
     description_of_involvement: Sugar industry spotlighted as dual pollution source
@@ -1313,6 +1313,195 @@ events:
     assured. There will be other moments.'' [...] ''I have brought him low, and I
     will do it again.''"'
   is_flashback: false
+  location_uuid: ger_location_b95019a9c579
+  theme_uuids:
+  - ger_theme_c90b9bacbc27
+  - ger_theme_690ebacdfa55
+  arc_uuids:
+  - ger_conflictarc_1e8a82996d05
+  participations:
+  - character_uuid: ger_agent_52e3762c6aed
+    emotional_state: Somber empathy shadowed by quiet resolve
+    goals:
+    - Provide unwavering presence for Bartlet's grief
+    - Remain alert to shift toward crisis response
+    what_happened: Stands silently beside Bartlet at the grave, holding vigil with
+      flowers during the president's intimate confession to the headstone, witnesses
+      Leo's interruption and intel delivery without speaking.
+    observed_status: Stands silently beside Bartlet at the grave, holding vigil with
+      flowers during the president's intimate confession to the headstone, witnesses
+      Leo's interruption and intel delivery without speaking.
+    beliefs:
+    - Bartlet's vulnerability strengthens their bond
+    - Personal moments must bend to national security
+    observed_traits:
+    - loyal
+    - discreet
+    - supportive
+    importance: primary
+    global_id: ger_agent_52e3762c6aed
+  - character_uuid: ger_agent_198649bce78f
+    emotional_state: Raw grief and embarrassment yielding to hardened determination
+    goals:
+    - Honor Mrs. Landingham through ritual mourning
+    - Seize control of emerging terror threat
+    what_happened: Stands holding flowers with Charlie at Mrs. Landingham's grave,
+      vulnerably confesses insomnia therapy to grave and aide, lays flowers down,
+      presses Leo twice for intel despite reluctance, reads Shareef's translated threat
+      aloud with piercing focus, removes glasses decisively, enters limousine as motorcade
+      departs.
+    observed_status: Stands holding flowers with Charlie at Mrs. Landingham's grave,
+      vulnerably confesses insomnia therapy to grave and aide, lays flowers down,
+      presses Leo twice for intel despite reluctance, reads Shareef's translated threat
+      aloud with piercing focus, removes glasses decisively, enters limousine as motorcade
+      departs.
+    beliefs:
+    - Duty overrides personal solace in crisis
+    - Shareef's veiled promises demand immediate action
+    observed_traits:
+    - vulnerable
+    - introspective
+    - commanding
+    - resolute
+    importance: primary
+    global_id: ger_agent_198649bce78f
+  - character_uuid: ger_agent_1f0b1cae13c5
+    emotional_state: N/A (deceased, invoked in grief)
+    goals: []
+    what_happened: Deceased secretary whose grave becomes the focal point of Bartlet's
+      anniversary mourning; receives flowers as tribute and serves as silent confidant
+      for his therapy confession amid the living's pivot to peril.
+    observed_status: Deceased secretary whose grave becomes the focal point of Bartlet's
+      anniversary mourning; receives flowers as tribute and serves as silent confidant
+      for his therapy confession amid the living's pivot to peril.
+    beliefs: []
+    observed_traits:
+    - enduring legacy
+    - symbol of loyalty
+    importance: primary
+    global_id: ger_agent_1f0b1cae13c5
+  - character_uuid: ger_agent_e2310869a36b
+    emotional_state: Arrogant confidence in veiled retribution
+    goals:
+    - Coordinate jihadist vows through proxies
+    - Intimidate American leadership indirectly
+    what_happened: Terror mastermind referenced via Leo's intel; his intercepted Bechar
+      meeting with clerics yields translated threats of future attacks, shattering
+      graveside peace and fueling Bartlet's resolve.
+    observed_status: Terror mastermind referenced via Leo's intel; his intercepted
+      Bechar meeting with clerics yields translated threats of future attacks, shattering
+      graveside peace and fueling Bartlet's resolve.
+    beliefs:
+    - Failed bridge strike precedes greater victories
+    - Divine assurance trumps enemy's perceived security
+    observed_traits:
+    - cunning
+    - threatening
+    importance: primary
+    global_id: ger_agent_e2310869a36b
+  object_involvements:
+  - object_uuid: ger_object_bd0fdd90934e
+    description_of_involvement: Bartlet removes his glasses after reading the full
+      threat translation, a ritual shedding vulnerability for unfiltered resolve;
+      amplifies his shift from introspective mourner to steely leader entering the
+      limo.
+    status_before_event: Worn on Bartlet's face during reading
+    status_after_event: Removed and held or pocketed, discarded in decisive gesture
+    global_id: ger_object_bd0fdd90934e
+  - object_uuid: ger_object_2cc302e2c0ec
+    description_of_involvement: Leo opens his notepad to reveal hurried translation
+      of Shareef's cleric threats, scanned by three Arabic experts; Bartlet reads
+      the coded vows aloud—'The enemy imagines he is secure...'—Leo clarifies phrasing,
+      transforming scribbled intercept into catalyst for command pivot from grief.
+    status_before_event: In Leo's hand or pocket, filled with fresh notes from phone
+      call
+    status_after_event: Opened and presented for reading, then closed as motorcade
+      moves
+    global_id: ger_object_2cc302e2c0ec
+  - object_uuid: ger_object_6859f4982683
+    description_of_involvement: Bartlet grips flowers tightly while confessing at
+      the grave, then deliberately places them down as tribute before turning to Leo's
+      intel; symbolizes fleeting personal ritual crushed by duty's inexorable pull.
+    status_before_event: Held firmly in Bartlet's hand at graveside
+    status_after_event: Laid upon Mrs. Landingham's grave as memorial offering
+    global_id: ger_object_6859f4982683
+  - object_uuid: ger_object_898bda0552e1
+    description_of_involvement: Motorcade idles amid cemetery silence as group walks
+      toward it post-intel; Bartlet wrenches limo door open, slides in with jaw set,
+      triggering departure—engines roar, tires crunch gravel, sirens wail, yanking
+      from sacred pause into crisis velocity.
+    status_before_event: Parked and idling with Leo leaning on flank
+    status_after_event: In motion, surging from cemetery with full presidential convoy
+    global_id: ger_object_898bda0552e1
+  - object_uuid: ger_object_d3b781642e35
+    description_of_involvement: Leo's phone captures urgent intel on Shareef's meeting
+      during his lean against the limo; he concludes the call with 'I will do it again.'
+      Thanks,' hangs up brutally, propelling the interruption of mourning with crisis
+      immediacy, bridging cemetery hush to Oval Office peril.
+    status_before_event: Held to Leo's ear while leaning on limo, actively receiving
+      intel
+    status_after_event: Hung up, pocketed or set aside as Leo approaches grave
+    global_id: ger_object_d3b781642e35
+  location_involvements:
+  - location_uuid: ger_location_b95019a9c579
+    description_of_involvement: Arlington's solemn rows frame the motorcade's restrained
+      thrum and graveside vigil; transforms private anniversary grief into public
+      duty's threshold, where Leo's phone intel breaches mourning hush amid pale markers
+      and distant honors.
+    observed_atmosphere: Hushed reverence pierced by urgent undertones
+    functional_role: Transition space from personal reflection to national command
+    symbolic_significance: Confluence of fallen loyalty and looming threats
+    access_restrictions: Heavily secured by Secret Service for presidential visit
+    key_environmental_details:
+    - Cruising motorcade engines and idling rumble
+    - Daylight glare on stone markers and dew
+    global_id: ger_location_b95019a9c579
+  - location_uuid: ger_location_33b5fc4f18b8
+    description_of_involvement: Mrs. Landingham's grave anchors Bartlet's raw confession
+      of therapy and disbelief at a year's passage; flowers laid here mark vulnerability's
+      peak before Leo's approach and intel reading pivot the trio toward motorcade.
+    observed_atmosphere: Intimate sorrow heavy with unspoken loss
+    functional_role: Sanctuary for confession and ritual tribute
+    symbolic_significance: Emblem of irreplaceable personal anchor amid power's isolation
+    access_restrictions: Private presidential mourning under guard
+    key_environmental_details:
+    - Somber headstone under daylight
+    - Flowers' petals against earth
+    global_id: ger_location_33b5fc4f18b8
+  - location_uuid: ger_location_307a33c293c4
+    description_of_involvement: Bechar invoked as site of Shareef's intercepted cleric
+      huddle, IR-laser spied from afar; its distant shadows birth the notepad threat
+      read aloud, invading cemetery peace to underscore terror's global reach.
+    observed_atmosphere: Remote fanaticism evoked through translation
+    functional_role: Off-screen origin of pivotal intel
+    symbolic_significance: Foreign peril infiltrating sacred American ground
+    access_restrictions: N/A (remote, surveilled covertly)
+    key_environmental_details:
+    - Shrouded windows pierced by IR laser
+    - Dust-laden air of zealot murmurs
+    global_id: ger_location_307a33c293c4
+  organization_involvements: []
+  derived_from_beat_uuids: &id008
+  - beat_b0520bf56932dd1f
+  - beat_d022a373054ef507
+  source_season: 3
+  source_database: westwing.s03
+- fabula_uuid: cand_evt_scene_5f03cd5d7a0058fb_1
+  global_id: null
+  title: Bartlet's Graveside Therapy Confession and Shareef's Menacing Intel
+  description: At Mrs. Landingham's grave on the anniversary of her death, Bartlet
+    vulnerably confesses to Charlie and the grave about seeing a therapist for insomnia,
+    humanizing his grief amid national crisis. Leo, fresh off a call, reluctantly
+    approaches with urgent intercepted intel from Shareef's meeting with clerics—a
+    coded threat of future attacks. Bartlet reads the ominous translation, absorbs
+    its gravity, and decisively enters the limousine, pivoting from personal mourning
+    to commanding crisis response, underscoring his emotional depth before pragmatic
+    resolve.
+  episode_uuid: ep_sea_ser_the_west_wing_s03_e20
+  scene_sequence: 5
+  sequence_in_scene: 5
+  key_dialogue: *id007
+  is_flashback: false
   location_uuid: ger_location_33b5fc4f18b8
   theme_uuids:
   - ger_theme_c90b9bacbc27
@@ -1365,7 +1554,7 @@ events:
     - resolute
     importance: primary
     global_id: ger_agent_198649bce78f
-  - character_uuid: ger_agent_8511b338f685
+  - character_uuid: ger_agent_1f0b1cae13c5
     emotional_state: N/A (deceased, invoked in grief)
     goals: []
     what_happened: Deceased secretary whose grave becomes the focal point of Bartlet's
@@ -1379,8 +1568,8 @@ events:
     - enduring legacy
     - symbol of loyalty
     importance: primary
-    global_id: ger_agent_8511b338f685
-  - character_uuid: ger_agent_0c46fe4078a3
+    global_id: ger_agent_1f0b1cae13c5
+  - character_uuid: ger_agent_e2310869a36b
     emotional_state: Arrogant confidence in veiled retribution
     goals:
     - Coordinate jihadist vows through proxies
@@ -1398,17 +1587,8 @@ events:
     - cunning
     - threatening
     importance: primary
-    global_id: ger_agent_0c46fe4078a3
+    global_id: ger_agent_e2310869a36b
   object_involvements:
-  - object_uuid: ger_object_d3b781642e35
-    description_of_involvement: Leo's phone captures urgent intel on Shareef's meeting
-      during his lean against the limo; he concludes the call with 'I will do it again.'
-      Thanks,' hangs up brutally, propelling the interruption of mourning with crisis
-      immediacy, bridging cemetery hush to Oval Office peril.
-    status_before_event: Held to Leo's ear while leaning on limo, actively receiving
-      intel
-    status_after_event: Hung up, pocketed or set aside as Leo approaches grave
-    global_id: ger_object_d3b781642e35
   - object_uuid: ger_object_bd0fdd90934e
     description_of_involvement: Bartlet removes his glasses after reading the full
       threat translation, a ritual shedding vulnerability for unfiltered resolve;
@@ -1442,7 +1622,29 @@ events:
     status_before_event: Parked and idling with Leo leaning on flank
     status_after_event: In motion, surging from cemetery with full presidential convoy
     global_id: ger_object_898bda0552e1
+  - object_uuid: ger_object_d3b781642e35
+    description_of_involvement: Leo's phone captures urgent intel on Shareef's meeting
+      during his lean against the limo; he concludes the call with 'I will do it again.'
+      Thanks,' hangs up brutally, propelling the interruption of mourning with crisis
+      immediacy, bridging cemetery hush to Oval Office peril.
+    status_before_event: Held to Leo's ear while leaning on limo, actively receiving
+      intel
+    status_after_event: Hung up, pocketed or set aside as Leo approaches grave
+    global_id: ger_object_d3b781642e35
   location_involvements:
+  - location_uuid: ger_location_b95019a9c579
+    description_of_involvement: Arlington's solemn rows frame the motorcade's restrained
+      thrum and graveside vigil; transforms private anniversary grief into public
+      duty's threshold, where Leo's phone intel breaches mourning hush amid pale markers
+      and distant honors.
+    observed_atmosphere: Hushed reverence pierced by urgent undertones
+    functional_role: Transition space from personal reflection to national command
+    symbolic_significance: Confluence of fallen loyalty and looming threats
+    access_restrictions: Heavily secured by Secret Service for presidential visit
+    key_environmental_details:
+    - Cruising motorcade engines and idling rumble
+    - Daylight glare on stone markers and dew
+    global_id: ger_location_b95019a9c579
   - location_uuid: ger_location_33b5fc4f18b8
     description_of_involvement: Mrs. Landingham's grave anchors Bartlet's raw confession
       of therapy and disbelief at a year's passage; flowers laid here mark vulnerability's
@@ -1467,23 +1669,8 @@ events:
     - Shrouded windows pierced by IR laser
     - Dust-laden air of zealot murmurs
     global_id: ger_location_307a33c293c4
-  - location_uuid: ger_location_b95019a9c579
-    description_of_involvement: Arlington's solemn rows frame the motorcade's restrained
-      thrum and graveside vigil; transforms private anniversary grief into public
-      duty's threshold, where Leo's phone intel breaches mourning hush amid pale markers
-      and distant honors.
-    observed_atmosphere: Hushed reverence pierced by urgent undertones
-    functional_role: Transition space from personal reflection to national command
-    symbolic_significance: Confluence of fallen loyalty and looming threats
-    access_restrictions: Heavily secured by Secret Service for presidential visit
-    key_environmental_details:
-    - Cruising motorcade engines and idling rumble
-    - Daylight glare on stone markers and dew
-    global_id: ger_location_b95019a9c579
   organization_involvements: []
-  derived_from_beat_uuids: &id008
-  - beat_b0520bf56932dd1f
-  - beat_d022a373054ef507
+  derived_from_beat_uuids: *id008
   source_season: 3
   source_database: westwing.s03
 - fabula_uuid: cand_evt_scene_5f03cd5d7a0058fb_1
@@ -1554,7 +1741,7 @@ events:
     - resolute
     importance: primary
     global_id: ger_agent_198649bce78f
-  - character_uuid: ger_agent_8511b338f685
+  - character_uuid: ger_agent_1f0b1cae13c5
     emotional_state: N/A (deceased, invoked in grief)
     goals: []
     what_happened: Deceased secretary whose grave becomes the focal point of Bartlet's
@@ -1568,8 +1755,8 @@ events:
     - enduring legacy
     - symbol of loyalty
     importance: primary
-    global_id: ger_agent_8511b338f685
-  - character_uuid: ger_agent_0c46fe4078a3
+    global_id: ger_agent_1f0b1cae13c5
+  - character_uuid: ger_agent_e2310869a36b
     emotional_state: Arrogant confidence in veiled retribution
     goals:
     - Coordinate jihadist vows through proxies
@@ -1587,17 +1774,8 @@ events:
     - cunning
     - threatening
     importance: primary
-    global_id: ger_agent_0c46fe4078a3
+    global_id: ger_agent_e2310869a36b
   object_involvements:
-  - object_uuid: ger_object_d3b781642e35
-    description_of_involvement: Leo's phone captures urgent intel on Shareef's meeting
-      during his lean against the limo; he concludes the call with 'I will do it again.'
-      Thanks,' hangs up brutally, propelling the interruption of mourning with crisis
-      immediacy, bridging cemetery hush to Oval Office peril.
-    status_before_event: Held to Leo's ear while leaning on limo, actively receiving
-      intel
-    status_after_event: Hung up, pocketed or set aside as Leo approaches grave
-    global_id: ger_object_d3b781642e35
   - object_uuid: ger_object_bd0fdd90934e
     description_of_involvement: Bartlet removes his glasses after reading the full
       threat translation, a ritual shedding vulnerability for unfiltered resolve;
@@ -1631,151 +1809,6 @@ events:
     status_before_event: Parked and idling with Leo leaning on flank
     status_after_event: In motion, surging from cemetery with full presidential convoy
     global_id: ger_object_898bda0552e1
-  location_involvements:
-  - location_uuid: ger_location_33b5fc4f18b8
-    description_of_involvement: Mrs. Landingham's grave anchors Bartlet's raw confession
-      of therapy and disbelief at a year's passage; flowers laid here mark vulnerability's
-      peak before Leo's approach and intel reading pivot the trio toward motorcade.
-    observed_atmosphere: Intimate sorrow heavy with unspoken loss
-    functional_role: Sanctuary for confession and ritual tribute
-    symbolic_significance: Emblem of irreplaceable personal anchor amid power's isolation
-    access_restrictions: Private presidential mourning under guard
-    key_environmental_details:
-    - Somber headstone under daylight
-    - Flowers' petals against earth
-    global_id: ger_location_33b5fc4f18b8
-  - location_uuid: ger_location_307a33c293c4
-    description_of_involvement: Bechar invoked as site of Shareef's intercepted cleric
-      huddle, IR-laser spied from afar; its distant shadows birth the notepad threat
-      read aloud, invading cemetery peace to underscore terror's global reach.
-    observed_atmosphere: Remote fanaticism evoked through translation
-    functional_role: Off-screen origin of pivotal intel
-    symbolic_significance: Foreign peril infiltrating sacred American ground
-    access_restrictions: N/A (remote, surveilled covertly)
-    key_environmental_details:
-    - Shrouded windows pierced by IR laser
-    - Dust-laden air of zealot murmurs
-    global_id: ger_location_307a33c293c4
-  - location_uuid: ger_location_b95019a9c579
-    description_of_involvement: Arlington's solemn rows frame the motorcade's restrained
-      thrum and graveside vigil; transforms private anniversary grief into public
-      duty's threshold, where Leo's phone intel breaches mourning hush amid pale markers
-      and distant honors.
-    observed_atmosphere: Hushed reverence pierced by urgent undertones
-    functional_role: Transition space from personal reflection to national command
-    symbolic_significance: Confluence of fallen loyalty and looming threats
-    access_restrictions: Heavily secured by Secret Service for presidential visit
-    key_environmental_details:
-    - Cruising motorcade engines and idling rumble
-    - Daylight glare on stone markers and dew
-    global_id: ger_location_b95019a9c579
-  organization_involvements: []
-  derived_from_beat_uuids: *id008
-  source_season: 3
-  source_database: westwing.s03
-- fabula_uuid: cand_evt_scene_5f03cd5d7a0058fb_1
-  global_id: null
-  title: Bartlet's Graveside Therapy Confession and Shareef's Menacing Intel
-  description: At Mrs. Landingham's grave on the anniversary of her death, Bartlet
-    vulnerably confesses to Charlie and the grave about seeing a therapist for insomnia,
-    humanizing his grief amid national crisis. Leo, fresh off a call, reluctantly
-    approaches with urgent intercepted intel from Shareef's meeting with clerics—a
-    coded threat of future attacks. Bartlet reads the ominous translation, absorbs
-    its gravity, and decisively enters the limousine, pivoting from personal mourning
-    to commanding crisis response, underscoring his emotional depth before pragmatic
-    resolve.
-  episode_uuid: ep_sea_ser_the_west_wing_s03_e20
-  scene_sequence: 5
-  sequence_in_scene: 5
-  key_dialogue: *id007
-  is_flashback: false
-  location_uuid: ger_location_b95019a9c579
-  theme_uuids:
-  - ger_theme_c90b9bacbc27
-  - ger_theme_690ebacdfa55
-  arc_uuids:
-  - ger_conflictarc_1e8a82996d05
-  participations:
-  - character_uuid: ger_agent_52e3762c6aed
-    emotional_state: Somber empathy shadowed by quiet resolve
-    goals:
-    - Provide unwavering presence for Bartlet's grief
-    - Remain alert to shift toward crisis response
-    what_happened: Stands silently beside Bartlet at the grave, holding vigil with
-      flowers during the president's intimate confession to the headstone, witnesses
-      Leo's interruption and intel delivery without speaking.
-    observed_status: Stands silently beside Bartlet at the grave, holding vigil with
-      flowers during the president's intimate confession to the headstone, witnesses
-      Leo's interruption and intel delivery without speaking.
-    beliefs:
-    - Bartlet's vulnerability strengthens their bond
-    - Personal moments must bend to national security
-    observed_traits:
-    - loyal
-    - discreet
-    - supportive
-    importance: primary
-    global_id: ger_agent_52e3762c6aed
-  - character_uuid: ger_agent_198649bce78f
-    emotional_state: Raw grief and embarrassment yielding to hardened determination
-    goals:
-    - Honor Mrs. Landingham through ritual mourning
-    - Seize control of emerging terror threat
-    what_happened: Stands holding flowers with Charlie at Mrs. Landingham's grave,
-      vulnerably confesses insomnia therapy to grave and aide, lays flowers down,
-      presses Leo twice for intel despite reluctance, reads Shareef's translated threat
-      aloud with piercing focus, removes glasses decisively, enters limousine as motorcade
-      departs.
-    observed_status: Stands holding flowers with Charlie at Mrs. Landingham's grave,
-      vulnerably confesses insomnia therapy to grave and aide, lays flowers down,
-      presses Leo twice for intel despite reluctance, reads Shareef's translated threat
-      aloud with piercing focus, removes glasses decisively, enters limousine as motorcade
-      departs.
-    beliefs:
-    - Duty overrides personal solace in crisis
-    - Shareef's veiled promises demand immediate action
-    observed_traits:
-    - vulnerable
-    - introspective
-    - commanding
-    - resolute
-    importance: primary
-    global_id: ger_agent_198649bce78f
-  - character_uuid: ger_agent_8511b338f685
-    emotional_state: N/A (deceased, invoked in grief)
-    goals: []
-    what_happened: Deceased secretary whose grave becomes the focal point of Bartlet's
-      anniversary mourning; receives flowers as tribute and serves as silent confidant
-      for his therapy confession amid the living's pivot to peril.
-    observed_status: Deceased secretary whose grave becomes the focal point of Bartlet's
-      anniversary mourning; receives flowers as tribute and serves as silent confidant
-      for his therapy confession amid the living's pivot to peril.
-    beliefs: []
-    observed_traits:
-    - enduring legacy
-    - symbol of loyalty
-    importance: primary
-    global_id: ger_agent_8511b338f685
-  - character_uuid: ger_agent_0c46fe4078a3
-    emotional_state: Arrogant confidence in veiled retribution
-    goals:
-    - Coordinate jihadist vows through proxies
-    - Intimidate American leadership indirectly
-    what_happened: Terror mastermind referenced via Leo's intel; his intercepted Bechar
-      meeting with clerics yields translated threats of future attacks, shattering
-      graveside peace and fueling Bartlet's resolve.
-    observed_status: Terror mastermind referenced via Leo's intel; his intercepted
-      Bechar meeting with clerics yields translated threats of future attacks, shattering
-      graveside peace and fueling Bartlet's resolve.
-    beliefs:
-    - Failed bridge strike precedes greater victories
-    - Divine assurance trumps enemy's perceived security
-    observed_traits:
-    - cunning
-    - threatening
-    importance: primary
-    global_id: ger_agent_0c46fe4078a3
-  object_involvements:
   - object_uuid: ger_object_d3b781642e35
     description_of_involvement: Leo's phone captures urgent intel on Shareef's meeting
       during his lean against the limo; he concludes the call with 'I will do it again.'
@@ -1785,40 +1818,20 @@ events:
       intel
     status_after_event: Hung up, pocketed or set aside as Leo approaches grave
     global_id: ger_object_d3b781642e35
-  - object_uuid: ger_object_bd0fdd90934e
-    description_of_involvement: Bartlet removes his glasses after reading the full
-      threat translation, a ritual shedding vulnerability for unfiltered resolve;
-      amplifies his shift from introspective mourner to steely leader entering the
-      limo.
-    status_before_event: Worn on Bartlet's face during reading
-    status_after_event: Removed and held or pocketed, discarded in decisive gesture
-    global_id: ger_object_bd0fdd90934e
-  - object_uuid: ger_object_2cc302e2c0ec
-    description_of_involvement: Leo opens his notepad to reveal hurried translation
-      of Shareef's cleric threats, scanned by three Arabic experts; Bartlet reads
-      the coded vows aloud—'The enemy imagines he is secure...'—Leo clarifies phrasing,
-      transforming scribbled intercept into catalyst for command pivot from grief.
-    status_before_event: In Leo's hand or pocket, filled with fresh notes from phone
-      call
-    status_after_event: Opened and presented for reading, then closed as motorcade
-      moves
-    global_id: ger_object_2cc302e2c0ec
-  - object_uuid: ger_object_6859f4982683
-    description_of_involvement: Bartlet grips flowers tightly while confessing at
-      the grave, then deliberately places them down as tribute before turning to Leo's
-      intel; symbolizes fleeting personal ritual crushed by duty's inexorable pull.
-    status_before_event: Held firmly in Bartlet's hand at graveside
-    status_after_event: Laid upon Mrs. Landingham's grave as memorial offering
-    global_id: ger_object_6859f4982683
-  - object_uuid: ger_object_898bda0552e1
-    description_of_involvement: Motorcade idles amid cemetery silence as group walks
-      toward it post-intel; Bartlet wrenches limo door open, slides in with jaw set,
-      triggering departure—engines roar, tires crunch gravel, sirens wail, yanking
-      from sacred pause into crisis velocity.
-    status_before_event: Parked and idling with Leo leaning on flank
-    status_after_event: In motion, surging from cemetery with full presidential convoy
-    global_id: ger_object_898bda0552e1
   location_involvements:
+  - location_uuid: ger_location_b95019a9c579
+    description_of_involvement: Arlington's solemn rows frame the motorcade's restrained
+      thrum and graveside vigil; transforms private anniversary grief into public
+      duty's threshold, where Leo's phone intel breaches mourning hush amid pale markers
+      and distant honors.
+    observed_atmosphere: Hushed reverence pierced by urgent undertones
+    functional_role: Transition space from personal reflection to national command
+    symbolic_significance: Confluence of fallen loyalty and looming threats
+    access_restrictions: Heavily secured by Secret Service for presidential visit
+    key_environmental_details:
+    - Cruising motorcade engines and idling rumble
+    - Daylight glare on stone markers and dew
+    global_id: ger_location_b95019a9c579
   - location_uuid: ger_location_33b5fc4f18b8
     description_of_involvement: Mrs. Landingham's grave anchors Bartlet's raw confession
       of therapy and disbelief at a year's passage; flowers laid here mark vulnerability's
@@ -1843,19 +1856,6 @@ events:
     - Shrouded windows pierced by IR laser
     - Dust-laden air of zealot murmurs
     global_id: ger_location_307a33c293c4
-  - location_uuid: ger_location_b95019a9c579
-    description_of_involvement: Arlington's solemn rows frame the motorcade's restrained
-      thrum and graveside vigil; transforms private anniversary grief into public
-      duty's threshold, where Leo's phone intel breaches mourning hush amid pale markers
-      and distant honors.
-    observed_atmosphere: Hushed reverence pierced by urgent undertones
-    functional_role: Transition space from personal reflection to national command
-    symbolic_significance: Confluence of fallen loyalty and looming threats
-    access_restrictions: Heavily secured by Secret Service for presidential visit
-    key_environmental_details:
-    - Cruising motorcade engines and idling rumble
-    - Daylight glare on stone markers and dew
-    global_id: ger_location_b95019a9c579
   organization_involvements: []
   derived_from_beat_uuids: *id008
   source_season: 3
@@ -1889,6 +1889,195 @@ events:
     LEO: Meaning times, places, or opportunities.
     BARTLET: I have brought him low, and I will do it again.
   is_flashback: false
+  location_uuid: ger_location_b95019a9c579
+  theme_uuids:
+  - ger_theme_c90b9bacbc27
+  - ger_theme_690ebacdfa55
+  arc_uuids: []
+  participations:
+  - character_uuid: ger_agent_52e3762c6aed
+    emotional_state: Somber loyalty tempered by crisis awareness
+    goals:
+    - Provide unwavering presence for Bartlet amid transition
+    - Observe and internalize intel for aide duties
+    what_happened: Stands loyally beside Bartlet at the grave during the flower's
+      placement and the tense exchange with Leo, silently witnessing the pivot from
+      grief confession to crisis absorption as they proceed to the motorcade.
+    observed_status: Stands loyally beside Bartlet at the grave during the flower's
+      placement and the tense exchange with Leo, silently witnessing the pivot from
+      grief confession to crisis absorption as they proceed to the motorcade.
+    beliefs:
+    - President's emotional needs integrate with duty
+    - Threat intel reshapes White House priorities instantly
+    observed_traits:
+    - steadfast
+    - attentive
+    - discreetly supportive
+    importance: primary
+    global_id: ger_agent_52e3762c6aed
+  - character_uuid: ger_agent_198649bce78f
+    emotional_state: Grief-stricken vulnerability hardening into fierce presidential
+      determination
+    goals:
+    - Extract urgent intelligence immediately, overriding decorum
+    - Internalize threat to fuel decisive action on Shareef
+    what_happened: Places flowers at the grave to conclude mourning, repeatedly presses
+      Leo for intel despite protests, reads the notepad's ominous translation aloud
+      with grave intensity, removes glasses as a ritual of resolve, then enters the
+      limousine prompting motorcade departure.
+    observed_status: Places flowers at the grave to conclude mourning, repeatedly
+      presses Leo for intel despite protests, reads the notepad's ominous translation
+      aloud with grave intensity, removes glasses as a ritual of resolve, then enters
+      the limousine prompting motorcade departure.
+    beliefs:
+    - National security demands precedence over personal ritual
+    - Intercepted vows signal imminent danger requiring swift response
+    observed_traits:
+    - commanding
+    - resolute
+    - emotionally raw yet steeling
+    importance: primary
+    global_id: ger_agent_198649bce78f
+  - character_uuid: ger_agent_1f0b1cae13c5
+    emotional_state: N/A (deceased, but inspires mourning)
+    goals: []
+    what_happened: Evoked through her grave as Bartlet places flowers, symbolizing
+      the personal loss that frames his abrupt shift to duty, her absence underscoring
+      the emotional cost of command.
+    observed_status: Evoked through her grave as Bartlet places flowers, symbolizing
+      the personal loss that frames his abrupt shift to duty, her absence underscoring
+      the emotional cost of command.
+    beliefs: []
+    observed_traits:
+    - enduringly loyal
+    - spiritually present
+    importance: primary
+    global_id: ger_agent_1f0b1cae13c5
+  - character_uuid: ger_agent_e2310869a36b
+    emotional_state: Arrogant confidence in ultimate victory despite setbacks
+    goals:
+    - Rally clerics for subsequent terror operations
+    - Psychologically undermine U.S. vigilance via coded boasts
+    what_happened: Invoked through intercepted dialogue from his Bechar meeting with
+      clerics; his coded words, translated in Leo's notepad, promise relentless attacks,
+      taunting American security and escalating Oval tensions.
+    observed_status: Invoked through intercepted dialogue from his Bechar meeting
+      with clerics; his coded words, translated in Leo's notepad, promise relentless
+      attacks, taunting American security and escalating Oval tensions.
+    beliefs:
+    - Past failures prelude greater triumphs
+    - Divine or ideological assurance against elevated foes
+    observed_traits:
+    - defiant
+    - calculating
+    - zealot-aligned
+    importance: primary
+    global_id: ger_agent_e2310869a36b
+  object_involvements:
+  - object_uuid: ger_object_bd0fdd90934e
+    description_of_involvement: Bartlet wears the glasses to read the notepad's threat
+      precisely, then removes them post-recitation—a signature gesture stripping intellectual
+      buffer to bare-eyed command, signaling emotional pivot to action.
+    status_before_event: Perched on Bartlet's nose for close reading.
+    status_after_event: Removed and held in hand, discarded as resolve crystallizes.
+    global_id: ger_object_bd0fdd90934e
+  - object_uuid: ger_object_2cc302e2c0ec
+    description_of_involvement: Leo opens the notepad mid-walk to the motorcade, displaying
+      hurried scribbles of the triple-verified Arabic translation from Shareef's Bechar
+      meeting; Bartlet seizes and reads it aloud, elevating the object from private
+      note to pivotal catalyst igniting assassination deliberations.
+    status_before_event: In Leo's pocket or hand, freshly inscribed from phone intel.
+    status_after_event: Remains with Leo, contents now verbally disseminated and seared
+      into Bartlet's resolve.
+    global_id: ger_object_2cc302e2c0ec
+  - object_uuid: ger_object_6859f4982683
+    description_of_involvement: Bartlet grips and deliberately places the flowers
+      on Mrs. Landingham's grave, a tactile ritual sealing anniversary grief just
+      before demanding intel, visually bridging intimate loss with encroaching terror.
+    status_before_event: Clutched tightly in Bartlet's hand during vigil.
+    status_after_event: Laid reverently on the grave, wilting amid cemetery hush.
+    global_id: ger_object_6859f4982683
+  - object_uuid: ger_object_898bda0552e1
+    description_of_involvement: The idling motorcade looms as destination during the
+      walking briefing; Bartlet wrenches open the limo door, slides in post-glasses
+      removal, and triggers its urgent departure from cemetery grounds, hurtling toward
+      Oval confrontations.
+    status_before_event: Parked and cruising idly amid security at Arlington.
+    status_after_event: Activated and speeding away, sirens heralding crisis momentum.
+    global_id: ger_object_898bda0552e1
+  - object_uuid: ger_object_d3b781642e35
+    description_of_involvement: Leo concludes a tense call on the phone—echoing Shareef's
+      phrase 'I will do it again'—while leaning on the limo and noting details, hanging
+      up to approach Bartlet, channeling raw intercepts into the unfolding briefing.
+    status_before_event: Pressed to Leo's ear, actively transmitting crisis intel.
+    status_after_event: Hung up and pocketed, intel transferred to notepad.
+    global_id: ger_object_d3b781642e35
+  location_involvements:
+  - location_uuid: ger_location_b95019a9c579
+    description_of_involvement: Arlington's vast rows of markers frame the event's
+      core tension, transforming a sacred memorial into an ad-hoc security briefing
+      ground where motorcade idles nearby, forcing collision of private grief with
+      public peril.
+    observed_atmosphere: Solemn hush fractured by clipped urgency and distant engine
+      hum.
+    functional_role: Staging ground for grief-to-duty transition and intel drop.
+    symbolic_significance: Embodies sacrifice—personal and national—fueling resolve.
+    access_restrictions: Secured by presidential motorcade and Secret Service.
+    key_environmental_details:
+    - Daylight glinting off pale headstones
+    - Restrained motorcade engines thrumming
+    - Wind-swept quiet amplifying voices
+    global_id: ger_location_b95019a9c579
+  - location_uuid: ger_location_33b5fc4f18b8
+    description_of_involvement: The grave anchors the event's emotional launchpad;
+      Bartlet deposits flowers here, whispering finality before striding away, its
+      stone witness to the instant grief surrenders to Shareef's distant menace.
+    observed_atmosphere: Intimate mourning laced with intruding crisis.
+    functional_role: Ritual endpoint propelling action.
+    symbolic_significance: Harbinger of loss sharpening leadership's edge.
+    access_restrictions: Private presidential vigil amid public cemetery.
+    key_environmental_details:
+    - Freshly placed flowers against somber stone
+    - Earth-kissed petals in daylight
+    - Proximal motorcade intrusion
+    global_id: ger_location_33b5fc4f18b8
+  - location_uuid: ger_location_307a33c293c4
+    description_of_involvement: Bechar materializes via Leo's briefing as Shareef's
+      clandestine conclave site, IR-laser intercepted from afar; its invocation injects
+      remote fanaticism into Arlington's sanctity, chaining terror's origin to immediate
+      U.S. threat.
+    observed_atmosphere: Shadowed zealotry inferred through coded echoes.
+    functional_role: Remote origin point of actionable intel.
+    symbolic_significance: Global web ensnaring American soil.
+    access_restrictions: Hostile foreign territory under surveillance.
+    key_environmental_details:
+    - Shrouded windows pierced by IR beams
+    - Diesel-tanged air of cleric murmurs
+    - 400-feet distant American gaze
+    global_id: ger_location_307a33c293c4
+  organization_involvements: []
+  derived_from_beat_uuids: &id010
+  - beat_db24c6c4d36309d4
+  - beat_5e37dd0ec7f6bd8c
+  - beat_0a6e5556c08c90f3
+  source_season: 3
+  source_database: westwing.s03
+- fabula_uuid: cand_evt_scene_5f03cd5d7a0058fb_2
+  global_id: null
+  title: Bartlet Presses Reluctant Leo for Shareef's Coded Terror Threat
+  description: Transitioning from graveside grief over Mrs. Landingham's anniversary,
+    Bartlet overrides Leo's reluctance to discuss urgent intelligence at Arlington
+    Cemetery. Insisting they walk to the motorcade, Bartlet absorbs Leo's revelation
+    of intercepted dialogue from Shareef's meeting with Muslim clerics—a chilling
+    coded promise of future attacks despite the failed bridge plot. Reading the ominous
+    translation aloud, Bartlet removes his glasses with steely resolve, pivoting from
+    personal vulnerability to commanding action, escalating the terrorist crisis and
+    causal chain toward tainted evidence dilemmas.
+  episode_uuid: ep_sea_ser_the_west_wing_s03_e20
+  scene_sequence: 5
+  sequence_in_scene: 6
+  key_dialogue: *id009
+  is_flashback: false
   location_uuid: ger_location_33b5fc4f18b8
   theme_uuids:
   - ger_theme_c90b9bacbc27
@@ -1938,7 +2127,7 @@ events:
     - emotionally raw yet steeling
     importance: primary
     global_id: ger_agent_198649bce78f
-  - character_uuid: ger_agent_8511b338f685
+  - character_uuid: ger_agent_1f0b1cae13c5
     emotional_state: N/A (deceased, but inspires mourning)
     goals: []
     what_happened: Evoked through her grave as Bartlet places flowers, symbolizing
@@ -1952,8 +2141,8 @@ events:
     - enduringly loyal
     - spiritually present
     importance: primary
-    global_id: ger_agent_8511b338f685
-  - character_uuid: ger_agent_0c46fe4078a3
+    global_id: ger_agent_1f0b1cae13c5
+  - character_uuid: ger_agent_e2310869a36b
     emotional_state: Arrogant confidence in ultimate victory despite setbacks
     goals:
     - Rally clerics for subsequent terror operations
@@ -1972,15 +2161,8 @@ events:
     - calculating
     - zealot-aligned
     importance: primary
-    global_id: ger_agent_0c46fe4078a3
+    global_id: ger_agent_e2310869a36b
   object_involvements:
-  - object_uuid: ger_object_d3b781642e35
-    description_of_involvement: Leo concludes a tense call on the phone—echoing Shareef's
-      phrase 'I will do it again'—while leaning on the limo and noting details, hanging
-      up to approach Bartlet, channeling raw intercepts into the unfolding briefing.
-    status_before_event: Pressed to Leo's ear, actively transmitting crisis intel.
-    status_after_event: Hung up and pocketed, intel transferred to notepad.
-    global_id: ger_object_d3b781642e35
   - object_uuid: ger_object_bd0fdd90934e
     description_of_involvement: Bartlet wears the glasses to read the notepad's threat
       precisely, then removes them post-recitation—a signature gesture stripping intellectual
@@ -2012,7 +2194,29 @@ events:
     status_before_event: Parked and cruising idly amid security at Arlington.
     status_after_event: Activated and speeding away, sirens heralding crisis momentum.
     global_id: ger_object_898bda0552e1
+  - object_uuid: ger_object_d3b781642e35
+    description_of_involvement: Leo concludes a tense call on the phone—echoing Shareef's
+      phrase 'I will do it again'—while leaning on the limo and noting details, hanging
+      up to approach Bartlet, channeling raw intercepts into the unfolding briefing.
+    status_before_event: Pressed to Leo's ear, actively transmitting crisis intel.
+    status_after_event: Hung up and pocketed, intel transferred to notepad.
+    global_id: ger_object_d3b781642e35
   location_involvements:
+  - location_uuid: ger_location_b95019a9c579
+    description_of_involvement: Arlington's vast rows of markers frame the event's
+      core tension, transforming a sacred memorial into an ad-hoc security briefing
+      ground where motorcade idles nearby, forcing collision of private grief with
+      public peril.
+    observed_atmosphere: Solemn hush fractured by clipped urgency and distant engine
+      hum.
+    functional_role: Staging ground for grief-to-duty transition and intel drop.
+    symbolic_significance: Embodies sacrifice—personal and national—fueling resolve.
+    access_restrictions: Secured by presidential motorcade and Secret Service.
+    key_environmental_details:
+    - Daylight glinting off pale headstones
+    - Restrained motorcade engines thrumming
+    - Wind-swept quiet amplifying voices
+    global_id: ger_location_b95019a9c579
   - location_uuid: ger_location_33b5fc4f18b8
     description_of_involvement: The grave anchors the event's emotional launchpad;
       Bartlet deposits flowers here, whispering finality before striding away, its
@@ -2040,26 +2244,8 @@ events:
     - Diesel-tanged air of cleric murmurs
     - 400-feet distant American gaze
     global_id: ger_location_307a33c293c4
-  - location_uuid: ger_location_b95019a9c579
-    description_of_involvement: Arlington's vast rows of markers frame the event's
-      core tension, transforming a sacred memorial into an ad-hoc security briefing
-      ground where motorcade idles nearby, forcing collision of private grief with
-      public peril.
-    observed_atmosphere: Solemn hush fractured by clipped urgency and distant engine
-      hum.
-    functional_role: Staging ground for grief-to-duty transition and intel drop.
-    symbolic_significance: Embodies sacrifice—personal and national—fueling resolve.
-    access_restrictions: Secured by presidential motorcade and Secret Service.
-    key_environmental_details:
-    - Daylight glinting off pale headstones
-    - Restrained motorcade engines thrumming
-    - Wind-swept quiet amplifying voices
-    global_id: ger_location_b95019a9c579
   organization_involvements: []
-  derived_from_beat_uuids: &id010
-  - beat_db24c6c4d36309d4
-  - beat_5e37dd0ec7f6bd8c
-  - beat_0a6e5556c08c90f3
+  derived_from_beat_uuids: *id010
   source_season: 3
   source_database: westwing.s03
 - fabula_uuid: cand_evt_scene_5f03cd5d7a0058fb_2
@@ -2127,7 +2313,7 @@ events:
     - emotionally raw yet steeling
     importance: primary
     global_id: ger_agent_198649bce78f
-  - character_uuid: ger_agent_8511b338f685
+  - character_uuid: ger_agent_1f0b1cae13c5
     emotional_state: N/A (deceased, but inspires mourning)
     goals: []
     what_happened: Evoked through her grave as Bartlet places flowers, symbolizing
@@ -2141,8 +2327,8 @@ events:
     - enduringly loyal
     - spiritually present
     importance: primary
-    global_id: ger_agent_8511b338f685
-  - character_uuid: ger_agent_0c46fe4078a3
+    global_id: ger_agent_1f0b1cae13c5
+  - character_uuid: ger_agent_e2310869a36b
     emotional_state: Arrogant confidence in ultimate victory despite setbacks
     goals:
     - Rally clerics for subsequent terror operations
@@ -2161,15 +2347,8 @@ events:
     - calculating
     - zealot-aligned
     importance: primary
-    global_id: ger_agent_0c46fe4078a3
+    global_id: ger_agent_e2310869a36b
   object_involvements:
-  - object_uuid: ger_object_d3b781642e35
-    description_of_involvement: Leo concludes a tense call on the phone—echoing Shareef's
-      phrase 'I will do it again'—while leaning on the limo and noting details, hanging
-      up to approach Bartlet, channeling raw intercepts into the unfolding briefing.
-    status_before_event: Pressed to Leo's ear, actively transmitting crisis intel.
-    status_after_event: Hung up and pocketed, intel transferred to notepad.
-    global_id: ger_object_d3b781642e35
   - object_uuid: ger_object_bd0fdd90934e
     description_of_involvement: Bartlet wears the glasses to read the notepad's threat
       precisely, then removes them post-recitation—a signature gesture stripping intellectual
@@ -2201,154 +2380,6 @@ events:
     status_before_event: Parked and cruising idly amid security at Arlington.
     status_after_event: Activated and speeding away, sirens heralding crisis momentum.
     global_id: ger_object_898bda0552e1
-  location_involvements:
-  - location_uuid: ger_location_33b5fc4f18b8
-    description_of_involvement: The grave anchors the event's emotional launchpad;
-      Bartlet deposits flowers here, whispering finality before striding away, its
-      stone witness to the instant grief surrenders to Shareef's distant menace.
-    observed_atmosphere: Intimate mourning laced with intruding crisis.
-    functional_role: Ritual endpoint propelling action.
-    symbolic_significance: Harbinger of loss sharpening leadership's edge.
-    access_restrictions: Private presidential vigil amid public cemetery.
-    key_environmental_details:
-    - Freshly placed flowers against somber stone
-    - Earth-kissed petals in daylight
-    - Proximal motorcade intrusion
-    global_id: ger_location_33b5fc4f18b8
-  - location_uuid: ger_location_307a33c293c4
-    description_of_involvement: Bechar materializes via Leo's briefing as Shareef's
-      clandestine conclave site, IR-laser intercepted from afar; its invocation injects
-      remote fanaticism into Arlington's sanctity, chaining terror's origin to immediate
-      U.S. threat.
-    observed_atmosphere: Shadowed zealotry inferred through coded echoes.
-    functional_role: Remote origin point of actionable intel.
-    symbolic_significance: Global web ensnaring American soil.
-    access_restrictions: Hostile foreign territory under surveillance.
-    key_environmental_details:
-    - Shrouded windows pierced by IR beams
-    - Diesel-tanged air of cleric murmurs
-    - 400-feet distant American gaze
-    global_id: ger_location_307a33c293c4
-  - location_uuid: ger_location_b95019a9c579
-    description_of_involvement: Arlington's vast rows of markers frame the event's
-      core tension, transforming a sacred memorial into an ad-hoc security briefing
-      ground where motorcade idles nearby, forcing collision of private grief with
-      public peril.
-    observed_atmosphere: Solemn hush fractured by clipped urgency and distant engine
-      hum.
-    functional_role: Staging ground for grief-to-duty transition and intel drop.
-    symbolic_significance: Embodies sacrifice—personal and national—fueling resolve.
-    access_restrictions: Secured by presidential motorcade and Secret Service.
-    key_environmental_details:
-    - Daylight glinting off pale headstones
-    - Restrained motorcade engines thrumming
-    - Wind-swept quiet amplifying voices
-    global_id: ger_location_b95019a9c579
-  organization_involvements: []
-  derived_from_beat_uuids: *id010
-  source_season: 3
-  source_database: westwing.s03
-- fabula_uuid: cand_evt_scene_5f03cd5d7a0058fb_2
-  global_id: null
-  title: Bartlet Presses Reluctant Leo for Shareef's Coded Terror Threat
-  description: Transitioning from graveside grief over Mrs. Landingham's anniversary,
-    Bartlet overrides Leo's reluctance to discuss urgent intelligence at Arlington
-    Cemetery. Insisting they walk to the motorcade, Bartlet absorbs Leo's revelation
-    of intercepted dialogue from Shareef's meeting with Muslim clerics—a chilling
-    coded promise of future attacks despite the failed bridge plot. Reading the ominous
-    translation aloud, Bartlet removes his glasses with steely resolve, pivoting from
-    personal vulnerability to commanding action, escalating the terrorist crisis and
-    causal chain toward tainted evidence dilemmas.
-  episode_uuid: ep_sea_ser_the_west_wing_s03_e20
-  scene_sequence: 5
-  sequence_in_scene: 6
-  key_dialogue: *id009
-  is_flashback: false
-  location_uuid: ger_location_b95019a9c579
-  theme_uuids:
-  - ger_theme_c90b9bacbc27
-  - ger_theme_690ebacdfa55
-  arc_uuids: []
-  participations:
-  - character_uuid: ger_agent_52e3762c6aed
-    emotional_state: Somber loyalty tempered by crisis awareness
-    goals:
-    - Provide unwavering presence for Bartlet amid transition
-    - Observe and internalize intel for aide duties
-    what_happened: Stands loyally beside Bartlet at the grave during the flower's
-      placement and the tense exchange with Leo, silently witnessing the pivot from
-      grief confession to crisis absorption as they proceed to the motorcade.
-    observed_status: Stands loyally beside Bartlet at the grave during the flower's
-      placement and the tense exchange with Leo, silently witnessing the pivot from
-      grief confession to crisis absorption as they proceed to the motorcade.
-    beliefs:
-    - President's emotional needs integrate with duty
-    - Threat intel reshapes White House priorities instantly
-    observed_traits:
-    - steadfast
-    - attentive
-    - discreetly supportive
-    importance: primary
-    global_id: ger_agent_52e3762c6aed
-  - character_uuid: ger_agent_198649bce78f
-    emotional_state: Grief-stricken vulnerability hardening into fierce presidential
-      determination
-    goals:
-    - Extract urgent intelligence immediately, overriding decorum
-    - Internalize threat to fuel decisive action on Shareef
-    what_happened: Places flowers at the grave to conclude mourning, repeatedly presses
-      Leo for intel despite protests, reads the notepad's ominous translation aloud
-      with grave intensity, removes glasses as a ritual of resolve, then enters the
-      limousine prompting motorcade departure.
-    observed_status: Places flowers at the grave to conclude mourning, repeatedly
-      presses Leo for intel despite protests, reads the notepad's ominous translation
-      aloud with grave intensity, removes glasses as a ritual of resolve, then enters
-      the limousine prompting motorcade departure.
-    beliefs:
-    - National security demands precedence over personal ritual
-    - Intercepted vows signal imminent danger requiring swift response
-    observed_traits:
-    - commanding
-    - resolute
-    - emotionally raw yet steeling
-    importance: primary
-    global_id: ger_agent_198649bce78f
-  - character_uuid: ger_agent_8511b338f685
-    emotional_state: N/A (deceased, but inspires mourning)
-    goals: []
-    what_happened: Evoked through her grave as Bartlet places flowers, symbolizing
-      the personal loss that frames his abrupt shift to duty, her absence underscoring
-      the emotional cost of command.
-    observed_status: Evoked through her grave as Bartlet places flowers, symbolizing
-      the personal loss that frames his abrupt shift to duty, her absence underscoring
-      the emotional cost of command.
-    beliefs: []
-    observed_traits:
-    - enduringly loyal
-    - spiritually present
-    importance: primary
-    global_id: ger_agent_8511b338f685
-  - character_uuid: ger_agent_0c46fe4078a3
-    emotional_state: Arrogant confidence in ultimate victory despite setbacks
-    goals:
-    - Rally clerics for subsequent terror operations
-    - Psychologically undermine U.S. vigilance via coded boasts
-    what_happened: Invoked through intercepted dialogue from his Bechar meeting with
-      clerics; his coded words, translated in Leo's notepad, promise relentless attacks,
-      taunting American security and escalating Oval tensions.
-    observed_status: Invoked through intercepted dialogue from his Bechar meeting
-      with clerics; his coded words, translated in Leo's notepad, promise relentless
-      attacks, taunting American security and escalating Oval tensions.
-    beliefs:
-    - Past failures prelude greater triumphs
-    - Divine or ideological assurance against elevated foes
-    observed_traits:
-    - defiant
-    - calculating
-    - zealot-aligned
-    importance: primary
-    global_id: ger_agent_0c46fe4078a3
-  object_involvements:
   - object_uuid: ger_object_d3b781642e35
     description_of_involvement: Leo concludes a tense call on the phone—echoing Shareef's
       phrase 'I will do it again'—while leaning on the limo and noting details, hanging
@@ -2356,38 +2387,22 @@ events:
     status_before_event: Pressed to Leo's ear, actively transmitting crisis intel.
     status_after_event: Hung up and pocketed, intel transferred to notepad.
     global_id: ger_object_d3b781642e35
-  - object_uuid: ger_object_bd0fdd90934e
-    description_of_involvement: Bartlet wears the glasses to read the notepad's threat
-      precisely, then removes them post-recitation—a signature gesture stripping intellectual
-      buffer to bare-eyed command, signaling emotional pivot to action.
-    status_before_event: Perched on Bartlet's nose for close reading.
-    status_after_event: Removed and held in hand, discarded as resolve crystallizes.
-    global_id: ger_object_bd0fdd90934e
-  - object_uuid: ger_object_2cc302e2c0ec
-    description_of_involvement: Leo opens the notepad mid-walk to the motorcade, displaying
-      hurried scribbles of the triple-verified Arabic translation from Shareef's Bechar
-      meeting; Bartlet seizes and reads it aloud, elevating the object from private
-      note to pivotal catalyst igniting assassination deliberations.
-    status_before_event: In Leo's pocket or hand, freshly inscribed from phone intel.
-    status_after_event: Remains with Leo, contents now verbally disseminated and seared
-      into Bartlet's resolve.
-    global_id: ger_object_2cc302e2c0ec
-  - object_uuid: ger_object_6859f4982683
-    description_of_involvement: Bartlet grips and deliberately places the flowers
-      on Mrs. Landingham's grave, a tactile ritual sealing anniversary grief just
-      before demanding intel, visually bridging intimate loss with encroaching terror.
-    status_before_event: Clutched tightly in Bartlet's hand during vigil.
-    status_after_event: Laid reverently on the grave, wilting amid cemetery hush.
-    global_id: ger_object_6859f4982683
-  - object_uuid: ger_object_898bda0552e1
-    description_of_involvement: The idling motorcade looms as destination during the
-      walking briefing; Bartlet wrenches open the limo door, slides in post-glasses
-      removal, and triggers its urgent departure from cemetery grounds, hurtling toward
-      Oval confrontations.
-    status_before_event: Parked and cruising idly amid security at Arlington.
-    status_after_event: Activated and speeding away, sirens heralding crisis momentum.
-    global_id: ger_object_898bda0552e1
   location_involvements:
+  - location_uuid: ger_location_b95019a9c579
+    description_of_involvement: Arlington's vast rows of markers frame the event's
+      core tension, transforming a sacred memorial into an ad-hoc security briefing
+      ground where motorcade idles nearby, forcing collision of private grief with
+      public peril.
+    observed_atmosphere: Solemn hush fractured by clipped urgency and distant engine
+      hum.
+    functional_role: Staging ground for grief-to-duty transition and intel drop.
+    symbolic_significance: Embodies sacrifice—personal and national—fueling resolve.
+    access_restrictions: Secured by presidential motorcade and Secret Service.
+    key_environmental_details:
+    - Daylight glinting off pale headstones
+    - Restrained motorcade engines thrumming
+    - Wind-swept quiet amplifying voices
+    global_id: ger_location_b95019a9c579
   - location_uuid: ger_location_33b5fc4f18b8
     description_of_involvement: The grave anchors the event's emotional launchpad;
       Bartlet deposits flowers here, whispering finality before striding away, its
@@ -2415,21 +2430,6 @@ events:
     - Diesel-tanged air of cleric murmurs
     - 400-feet distant American gaze
     global_id: ger_location_307a33c293c4
-  - location_uuid: ger_location_b95019a9c579
-    description_of_involvement: Arlington's vast rows of markers frame the event's
-      core tension, transforming a sacred memorial into an ad-hoc security briefing
-      ground where motorcade idles nearby, forcing collision of private grief with
-      public peril.
-    observed_atmosphere: Solemn hush fractured by clipped urgency and distant engine
-      hum.
-    functional_role: Staging ground for grief-to-duty transition and intel drop.
-    symbolic_significance: Embodies sacrifice—personal and national—fueling resolve.
-    access_restrictions: Secured by presidential motorcade and Secret Service.
-    key_environmental_details:
-    - Daylight glinting off pale headstones
-    - Restrained motorcade engines thrumming
-    - Wind-swept quiet amplifying voices
-    global_id: ger_location_b95019a9c579
   organization_involvements: []
   derived_from_beat_uuids: *id010
   source_season: 3
@@ -2574,7 +2574,7 @@ events:
     - motivational
     importance: primary
     global_id: ger_agent_7854a70e34ea
-  - character_uuid: ger_agent_89fd2481c324
+  - character_uuid: ger_agent_69979de71a68
     emotional_state: N/A (discussed as strategic adversary)
     goals:
     - Gain incumbent parity through event optics
@@ -2587,7 +2587,7 @@ events:
     observed_traits:
     - rivalrous
     importance: primary
-    global_id: ger_agent_89fd2481c324
+    global_id: ger_agent_69979de71a68
   - character_uuid: ger_agent_0e71f0a9c315
     emotional_state: N/A (reported as excited)
     goals:
@@ -2828,7 +2828,7 @@ events:
     - motivational
     importance: primary
     global_id: ger_agent_7854a70e34ea
-  - character_uuid: ger_agent_89fd2481c324
+  - character_uuid: ger_agent_69979de71a68
     emotional_state: N/A (discussed as strategic adversary)
     goals:
     - Gain incumbent parity through event optics
@@ -2841,7 +2841,7 @@ events:
     observed_traits:
     - rivalrous
     importance: primary
-    global_id: ger_agent_89fd2481c324
+    global_id: ger_agent_69979de71a68
   - character_uuid: ger_agent_0e71f0a9c315
     emotional_state: N/A (reported as excited)
     goals:
@@ -3066,7 +3066,7 @@ events:
     - empathetic to junior staff
     importance: primary
     global_id: ger_agent_7854a70e34ea
-  - character_uuid: ger_agent_89fd2481c324
+  - character_uuid: ger_agent_69979de71a68
     emotional_state: ''
     goals: []
     what_happened: Discussed extensively in meeting as political rival whose presence
@@ -3076,7 +3076,7 @@ events:
     beliefs: []
     observed_traits: []
     importance: minor
-    global_id: ger_agent_89fd2481c324
+    global_id: ger_agent_69979de71a68
   - character_uuid: ger_agent_0e71f0a9c315
     emotional_state: Enthusiastic (as described secondhand)
     goals:
@@ -3302,7 +3302,7 @@ events:
     - empathetic to junior staff
     importance: primary
     global_id: ger_agent_7854a70e34ea
-  - character_uuid: ger_agent_89fd2481c324
+  - character_uuid: ger_agent_69979de71a68
     emotional_state: ''
     goals: []
     what_happened: Discussed extensively in meeting as political rival whose presence
@@ -3312,7 +3312,7 @@ events:
     beliefs: []
     observed_traits: []
     importance: minor
-    global_id: ger_agent_89fd2481c324
+    global_id: ger_agent_69979de71a68
   - character_uuid: ger_agent_0e71f0a9c315
     emotional_state: Enthusiastic (as described secondhand)
     goals:
@@ -3511,7 +3511,27 @@ events:
     - Institutionally savvy
     importance: primary
     global_id: ger_agent_9eb77e9bc5ec
-  - character_uuid: ger_agent_0c46fe4078a3
+  - character_uuid: ger_agent_3d5f49f437bb
+    emotional_state: N/A (offscreen, presumed protective)
+    goals:
+    - Shield royal family from prosecution
+    - Preserve Qumar's sovereignty
+    what_happened: The Sultan of Qumar is cited as the indispensable gatekeeper whose
+      fraternal bond to Shareef blocks any immunity waiver or extradition appeal,
+      dooming diplomatic overtures.
+    observed_status: The Sultan of Qumar is cited as the indispensable gatekeeper
+      whose fraternal bond to Shareef blocks any immunity waiver or extradition appeal,
+      dooming diplomatic overtures.
+    beliefs:
+    - Family overrides foreign justice demands
+    - Treaties do not bind against kin
+    observed_traits:
+    - Loyal
+    - Authoritative
+    - Inaccessible
+    importance: primary
+    global_id: ger_agent_3d5f49f437bb
+  - character_uuid: ger_agent_e2310869a36b
     emotional_state: N/A (offscreen, perceived as smugly secure)
     goals:
     - Evade capture upon U.S. arrival
@@ -3530,7 +3550,7 @@ events:
     - Protected
     - Threatening
     importance: primary
-    global_id: ger_agent_0c46fe4078a3
+    global_id: ger_agent_e2310869a36b
   - character_uuid: ger_agent_04e8421f41f6
     emotional_state: ''
     goals: []
@@ -3562,26 +3582,6 @@ events:
     - Historically informed
     importance: primary
     global_id: ger_agent_fab5c95deac7
-  - character_uuid: ger_agent_3d5f49f437bb
-    emotional_state: N/A (offscreen, presumed protective)
-    goals:
-    - Shield royal family from prosecution
-    - Preserve Qumar's sovereignty
-    what_happened: The Sultan of Qumar is cited as the indispensable gatekeeper whose
-      fraternal bond to Shareef blocks any immunity waiver or extradition appeal,
-      dooming diplomatic overtures.
-    observed_status: The Sultan of Qumar is cited as the indispensable gatekeeper
-      whose fraternal bond to Shareef blocks any immunity waiver or extradition appeal,
-      dooming diplomatic overtures.
-    beliefs:
-    - Family overrides foreign justice demands
-    - Treaties do not bind against kin
-    observed_traits:
-    - Loyal
-    - Authoritative
-    - Inaccessible
-    importance: primary
-    global_id: ger_agent_3d5f49f437bb
   object_involvements:
   - object_uuid: ger_object_d36740bce750
     description_of_involvement: Bartlet references Shareef's Lear jet as the self-delivered
@@ -3807,7 +3807,7 @@ events:
     - Slammed steel lockers
     global_id: ger_location_a0b163c4d02b
   organization_involvements:
-  - organization_uuid: ger_organization_d033a1b32d4f
+  - organization_uuid: ger_organization_bb39d5dd403d
     description_of_involvement: Envelops the encounter as pressurized executive nerve-center,
       where hacker shadows on staff like C.J. ripple through gym access debates and
       security protocols, embodying the institutional grind fueling personal fractures.
@@ -3822,8 +3822,8 @@ events:
     institutional_impact: Highlights vulnerability bleed from public duty to private
       life
     internal_dynamics: Inter-agency turf (Secret Service vs. staff gyms)
-    global_id: ger_organization_d033a1b32d4f
-  - organization_uuid: ger_organization_0bee0f493ccc
+    global_id: ger_organization_bb39d5dd403d
+  - organization_uuid: ger_organization_6eb3355b6ea6
     description_of_involvement: Simon relays OPR's pivotal hard drive dissection unmasking
       Trojan horse mechanics, positioning them as cyber forensics vanguard whose intel
       concretizes the hacker threat and validates Secret Service response amid C.J.'s
@@ -3838,7 +3838,7 @@ events:
     - Inter-agency intel sharing
     institutional_impact: Bolsters White House cyber defenses narrative
     internal_dynamics: ''
-    global_id: ger_organization_0bee0f493ccc
+    global_id: ger_organization_6eb3355b6ea6
   derived_from_beat_uuids: &id016
   - beat_5d2afe2d082644c7
   - beat_6346ef9167a9888e
@@ -4014,7 +4014,7 @@ events:
     - Slammed steel lockers
     global_id: ger_location_a0b163c4d02b
   organization_involvements:
-  - organization_uuid: ger_organization_d033a1b32d4f
+  - organization_uuid: ger_organization_bb39d5dd403d
     description_of_involvement: Envelops the encounter as pressurized executive nerve-center,
       where hacker shadows on staff like C.J. ripple through gym access debates and
       security protocols, embodying the institutional grind fueling personal fractures.
@@ -4029,8 +4029,8 @@ events:
     institutional_impact: Highlights vulnerability bleed from public duty to private
       life
     internal_dynamics: Inter-agency turf (Secret Service vs. staff gyms)
-    global_id: ger_organization_d033a1b32d4f
-  - organization_uuid: ger_organization_0bee0f493ccc
+    global_id: ger_organization_bb39d5dd403d
+  - organization_uuid: ger_organization_6eb3355b6ea6
     description_of_involvement: Simon relays OPR's pivotal hard drive dissection unmasking
       Trojan horse mechanics, positioning them as cyber forensics vanguard whose intel
       concretizes the hacker threat and validates Secret Service response amid C.J.'s
@@ -4045,7 +4045,7 @@ events:
     - Inter-agency intel sharing
     institutional_impact: Bolsters White House cyber defenses narrative
     internal_dynamics: ''
-    global_id: ger_organization_0bee0f493ccc
+    global_id: ger_organization_6eb3355b6ea6
   derived_from_beat_uuids: *id016
   source_season: 3
   source_database: westwing.s03
@@ -4217,7 +4217,7 @@ events:
     - Slammed steel lockers
     global_id: ger_location_a0b163c4d02b
   organization_involvements:
-  - organization_uuid: ger_organization_d033a1b32d4f
+  - organization_uuid: ger_organization_bb39d5dd403d
     description_of_involvement: Envelops the encounter as pressurized executive nerve-center,
       where hacker shadows on staff like C.J. ripple through gym access debates and
       security protocols, embodying the institutional grind fueling personal fractures.
@@ -4232,8 +4232,8 @@ events:
     institutional_impact: Highlights vulnerability bleed from public duty to private
       life
     internal_dynamics: Inter-agency turf (Secret Service vs. staff gyms)
-    global_id: ger_organization_d033a1b32d4f
-  - organization_uuid: ger_organization_0bee0f493ccc
+    global_id: ger_organization_bb39d5dd403d
+  - organization_uuid: ger_organization_6eb3355b6ea6
     description_of_involvement: Simon relays OPR's pivotal hard drive dissection unmasking
       Trojan horse mechanics, positioning them as cyber forensics vanguard whose intel
       concretizes the hacker threat and validates Secret Service response amid C.J.'s
@@ -4248,7 +4248,7 @@ events:
     - Inter-agency intel sharing
     institutional_impact: Bolsters White House cyber defenses narrative
     internal_dynamics: ''
-    global_id: ger_organization_0bee0f493ccc
+    global_id: ger_organization_6eb3355b6ea6
   derived_from_beat_uuids: *id016
   source_season: 3
   source_database: westwing.s03
@@ -4420,7 +4420,7 @@ events:
     - Slammed steel lockers
     global_id: ger_location_a0b163c4d02b
   organization_involvements:
-  - organization_uuid: ger_organization_d033a1b32d4f
+  - organization_uuid: ger_organization_bb39d5dd403d
     description_of_involvement: Envelops the encounter as pressurized executive nerve-center,
       where hacker shadows on staff like C.J. ripple through gym access debates and
       security protocols, embodying the institutional grind fueling personal fractures.
@@ -4435,8 +4435,8 @@ events:
     institutional_impact: Highlights vulnerability bleed from public duty to private
       life
     internal_dynamics: Inter-agency turf (Secret Service vs. staff gyms)
-    global_id: ger_organization_d033a1b32d4f
-  - organization_uuid: ger_organization_0bee0f493ccc
+    global_id: ger_organization_bb39d5dd403d
+  - organization_uuid: ger_organization_6eb3355b6ea6
     description_of_involvement: Simon relays OPR's pivotal hard drive dissection unmasking
       Trojan horse mechanics, positioning them as cyber forensics vanguard whose intel
       concretizes the hacker threat and validates Secret Service response amid C.J.'s
@@ -4451,7 +4451,7 @@ events:
     - Inter-agency intel sharing
     institutional_impact: Bolsters White House cyber defenses narrative
     internal_dynamics: ''
-    global_id: ger_organization_0bee0f493ccc
+    global_id: ger_organization_6eb3355b6ea6
   derived_from_beat_uuids: *id016
   source_season: 3
   source_database: westwing.s03
@@ -4474,138 +4474,6 @@ events:
     a new Executive Secretary.'
   - 'CHARLIE: No, I don''t imagine you''re going to hire somebody, sir, but this is
     a step in the right direction.'
-  is_flashback: false
-  location_uuid: ger_location_9bc5181407ba
-  theme_uuids:
-  - ger_theme_c90b9bacbc27
-  arc_uuids: []
-  participations:
-  - character_uuid: ger_agent_52e3762c6aed
-    emotional_state: Respectfully supportive, intuitively attuned to Bartlet's unspoken
-      grief with quiet optimism.
-    goals:
-    - Provide emotional reassurance to grieving President
-    - Efficiently assume responsibility for recruitment to aid healing
-    what_happened: Present and attentive as Bartlet calls him, humbly accepts thanks
-      for cemetery visit, enthusiastically commits to organizing secretary search,
-      offers gentle reassurance framing it as positive progress, and closes with mutual
-      gratitude.
-    observed_status: Present and attentive as Bartlet calls him, humbly accepts thanks
-      for cemetery visit, enthusiastically commits to organizing secretary search,
-      offers gentle reassurance framing it as positive progress, and closes with mutual
-      gratitude.
-    beliefs:
-    - President's vulnerability strengthens their bond
-    - Small steps like this search foster resilience in crisis
-    observed_traits:
-    - dutiful
-    - empathetic
-    - supportive
-    - discreet
-    importance: primary
-    global_id: ger_agent_52e3762c6aed
-  - character_uuid: ger_agent_c9d41ae93618
-    emotional_state: Task-focused
-    goals:
-    - Secure legislative progress
-    what_happened: Referenced offscreen in Leo's welfare bill update as having met
-      Pintero yesterday; no physical presence or dialogue.
-    observed_status: Referenced offscreen in Leo's welfare bill update as having met
-      Pintero yesterday; no physical presence or dialogue.
-    beliefs:
-    - Negotiation yields incremental wins
-    observed_traits:
-    - pragmatic
-    importance: primary
-    global_id: ger_agent_c9d41ae93618
-  - character_uuid: ger_agent_198649bce78f
-    emotional_state: Raw grief surfacing through appreciative warmth, tempered by
-      resolute pragmatism masking deeper reluctance to replace the irreplaceable.
-    goals:
-    - Acknowledge Charlie's loyalty and emotional support
-    - Initiate forward momentum on filling Landingham's role despite personal pain
-    what_happened: Pauses after Leo departs, calls Charlie upon entering Outer Oval
-      Office, delivers sincere thanks for cemetery support, acknowledges the year's
-      passage since Landingham's death, tasks him with leading Executive Secretary
-      search, and tempers expectations about hiring amid evident reluctance.
-    observed_status: Pauses after Leo departs, calls Charlie upon entering Outer Oval
-      Office, delivers sincere thanks for cemetery support, acknowledges the year's
-      passage since Landingham's death, tasks him with leading Executive Secretary
-      search, and tempers expectations about hiring amid evident reluctance.
-    beliefs:
-    - True leadership honors personal bonds amid duty
-    - Grief demands time, but voids must be addressed to sustain operations
-    observed_traits:
-    - vulnerable
-    - appreciative
-    - resolute
-    - paternal
-    importance: primary
-    global_id: ger_agent_198649bce78f
-  - character_uuid: ger_agent_a5205081e6e0
-    emotional_state: Deal-making
-    goals:
-    - Advance independence legislation
-    what_happened: Referenced offscreen as Josh's recent meeting partner on welfare
-      act; no direct involvement.
-    observed_status: Referenced offscreen as Josh's recent meeting partner on welfare
-      act; no direct involvement.
-    beliefs:
-    - Incentives balance reform
-    observed_traits:
-    - negotiating
-    importance: primary
-    global_id: ger_agent_a5205081e6e0
-  object_involvements: []
-  location_involvements:
-  - location_uuid: ger_location_9bc5181407ba
-    description_of_involvement: Serves as transitional space where Bartlet concludes
-      strategy walk with Leo before entering Outer Oval for intimate exchange with
-      Charlie; its stark confines amplify the shift from public crisis to private
-      grief, underscoring isolation in power's underbelly.
-    observed_atmosphere: Stale, echoing chill heightening emotional intimacy's contrast
-      to institutional grind.
-    functional_role: Pathway for private reflection post-strategy.
-    symbolic_significance: Embodies hidden fractures beneath White House facade.
-    access_restrictions: Restricted to senior staff.
-    key_environmental_details:
-    - Cinderblock walls
-    - Fluorescent hum
-    - Concrete floors echoing footsteps
-    global_id: ger_location_9bc5181407ba
-  - location_uuid: ger_location_b95019a9c579
-    description_of_involvement: Invoked directly as 'cemetery' in Bartlet's thanks
-      to Charlie for yesterday's visit on Landingham's anniversary; symbolizes irreplaceable
-      loss, catalyzing vulnerability and the mandate to seek replacement, fusing personal
-      mourning with operational necessity.
-    observed_atmosphere: Somber, recalled grief under daylight markers.
-    functional_role: Emotional anchor referenced for gratitude and transition.
-    symbolic_significance: Marker of human cost in leadership's unyielding march.
-    access_restrictions: ''
-    key_environmental_details:
-    - Pale grave markers
-    - Rolling lawns
-    - Idling motorcade
-    global_id: ger_location_b95019a9c579
-  organization_involvements: []
-  derived_from_beat_uuids: &id018
-  - beat_6c18edad71d3fe9d
-  source_season: 3
-  source_database: westwing.s03
-- fabula_uuid: cand_evt_scene_a4c8695152df6d64_2
-  global_id: null
-  title: Bartlet Marks Mrs. Landingham's Anniversary, Tasks Charlie with Replacement
-    Search
-  description: In the basement hallway, after strategizing crises with Leo, President
-    Bartlet pauses to thank Charlie for joining him at Mrs. Landingham's gravesite
-    on the first anniversary of her death, exposing his raw grief and vulnerability
-    amid national turmoil. He then directs Charlie to lead the search for a new Executive
-    Secretary, a pragmatic yet emotionally fraught step forward, underscoring themes
-    of loss, resilience, and the human cost of leadership.
-  episode_uuid: ep_sea_ser_the_west_wing_s03_e20
-  scene_sequence: 9
-  sequence_in_scene: 11
-  key_dialogue: *id017
   is_flashback: false
   location_uuid: ger_location_b95019a9c579
   theme_uuids:
@@ -4690,6 +4558,20 @@ events:
     global_id: ger_agent_a5205081e6e0
   object_involvements: []
   location_involvements:
+  - location_uuid: ger_location_b95019a9c579
+    description_of_involvement: Invoked directly as 'cemetery' in Bartlet's thanks
+      to Charlie for yesterday's visit on Landingham's anniversary; symbolizes irreplaceable
+      loss, catalyzing vulnerability and the mandate to seek replacement, fusing personal
+      mourning with operational necessity.
+    observed_atmosphere: Somber, recalled grief under daylight markers.
+    functional_role: Emotional anchor referenced for gratitude and transition.
+    symbolic_significance: Marker of human cost in leadership's unyielding march.
+    access_restrictions: ''
+    key_environmental_details:
+    - Pale grave markers
+    - Rolling lawns
+    - Idling motorcade
+    global_id: ger_location_b95019a9c579
   - location_uuid: ger_location_9bc5181407ba
     description_of_involvement: Serves as transitional space where Bartlet concludes
       strategy walk with Leo before entering Outer Oval for intimate exchange with
@@ -4705,6 +4587,109 @@ events:
     - Fluorescent hum
     - Concrete floors echoing footsteps
     global_id: ger_location_9bc5181407ba
+  organization_involvements: []
+  derived_from_beat_uuids: &id018
+  - beat_6c18edad71d3fe9d
+  source_season: 3
+  source_database: westwing.s03
+- fabula_uuid: cand_evt_scene_a4c8695152df6d64_2
+  global_id: null
+  title: Bartlet Marks Mrs. Landingham's Anniversary, Tasks Charlie with Replacement
+    Search
+  description: In the basement hallway, after strategizing crises with Leo, President
+    Bartlet pauses to thank Charlie for joining him at Mrs. Landingham's gravesite
+    on the first anniversary of her death, exposing his raw grief and vulnerability
+    amid national turmoil. He then directs Charlie to lead the search for a new Executive
+    Secretary, a pragmatic yet emotionally fraught step forward, underscoring themes
+    of loss, resilience, and the human cost of leadership.
+  episode_uuid: ep_sea_ser_the_west_wing_s03_e20
+  scene_sequence: 9
+  sequence_in_scene: 11
+  key_dialogue: *id017
+  is_flashback: false
+  location_uuid: ger_location_9bc5181407ba
+  theme_uuids:
+  - ger_theme_c90b9bacbc27
+  arc_uuids: []
+  participations:
+  - character_uuid: ger_agent_52e3762c6aed
+    emotional_state: Respectfully supportive, intuitively attuned to Bartlet's unspoken
+      grief with quiet optimism.
+    goals:
+    - Provide emotional reassurance to grieving President
+    - Efficiently assume responsibility for recruitment to aid healing
+    what_happened: Present and attentive as Bartlet calls him, humbly accepts thanks
+      for cemetery visit, enthusiastically commits to organizing secretary search,
+      offers gentle reassurance framing it as positive progress, and closes with mutual
+      gratitude.
+    observed_status: Present and attentive as Bartlet calls him, humbly accepts thanks
+      for cemetery visit, enthusiastically commits to organizing secretary search,
+      offers gentle reassurance framing it as positive progress, and closes with mutual
+      gratitude.
+    beliefs:
+    - President's vulnerability strengthens their bond
+    - Small steps like this search foster resilience in crisis
+    observed_traits:
+    - dutiful
+    - empathetic
+    - supportive
+    - discreet
+    importance: primary
+    global_id: ger_agent_52e3762c6aed
+  - character_uuid: ger_agent_c9d41ae93618
+    emotional_state: Task-focused
+    goals:
+    - Secure legislative progress
+    what_happened: Referenced offscreen in Leo's welfare bill update as having met
+      Pintero yesterday; no physical presence or dialogue.
+    observed_status: Referenced offscreen in Leo's welfare bill update as having met
+      Pintero yesterday; no physical presence or dialogue.
+    beliefs:
+    - Negotiation yields incremental wins
+    observed_traits:
+    - pragmatic
+    importance: primary
+    global_id: ger_agent_c9d41ae93618
+  - character_uuid: ger_agent_198649bce78f
+    emotional_state: Raw grief surfacing through appreciative warmth, tempered by
+      resolute pragmatism masking deeper reluctance to replace the irreplaceable.
+    goals:
+    - Acknowledge Charlie's loyalty and emotional support
+    - Initiate forward momentum on filling Landingham's role despite personal pain
+    what_happened: Pauses after Leo departs, calls Charlie upon entering Outer Oval
+      Office, delivers sincere thanks for cemetery support, acknowledges the year's
+      passage since Landingham's death, tasks him with leading Executive Secretary
+      search, and tempers expectations about hiring amid evident reluctance.
+    observed_status: Pauses after Leo departs, calls Charlie upon entering Outer Oval
+      Office, delivers sincere thanks for cemetery support, acknowledges the year's
+      passage since Landingham's death, tasks him with leading Executive Secretary
+      search, and tempers expectations about hiring amid evident reluctance.
+    beliefs:
+    - True leadership honors personal bonds amid duty
+    - Grief demands time, but voids must be addressed to sustain operations
+    observed_traits:
+    - vulnerable
+    - appreciative
+    - resolute
+    - paternal
+    importance: primary
+    global_id: ger_agent_198649bce78f
+  - character_uuid: ger_agent_a5205081e6e0
+    emotional_state: Deal-making
+    goals:
+    - Advance independence legislation
+    what_happened: Referenced offscreen as Josh's recent meeting partner on welfare
+      act; no direct involvement.
+    observed_status: Referenced offscreen as Josh's recent meeting partner on welfare
+      act; no direct involvement.
+    beliefs:
+    - Incentives balance reform
+    observed_traits:
+    - negotiating
+    importance: primary
+    global_id: ger_agent_a5205081e6e0
+  object_involvements: []
+  location_involvements:
   - location_uuid: ger_location_b95019a9c579
     description_of_involvement: Invoked directly as 'cemetery' in Bartlet's thanks
       to Charlie for yesterday's visit on Landingham's anniversary; symbolizes irreplaceable
@@ -4719,6 +4704,21 @@ events:
     - Rolling lawns
     - Idling motorcade
     global_id: ger_location_b95019a9c579
+  - location_uuid: ger_location_9bc5181407ba
+    description_of_involvement: Serves as transitional space where Bartlet concludes
+      strategy walk with Leo before entering Outer Oval for intimate exchange with
+      Charlie; its stark confines amplify the shift from public crisis to private
+      grief, underscoring isolation in power's underbelly.
+    observed_atmosphere: Stale, echoing chill heightening emotional intimacy's contrast
+      to institutional grind.
+    functional_role: Pathway for private reflection post-strategy.
+    symbolic_significance: Embodies hidden fractures beneath White House facade.
+    access_restrictions: Restricted to senior staff.
+    key_environmental_details:
+    - Cinderblock walls
+    - Fluorescent hum
+    - Concrete floors echoing footsteps
+    global_id: ger_location_9bc5181407ba
   organization_involvements: []
   derived_from_beat_uuids: *id018
   source_season: 3
@@ -4848,7 +4848,7 @@ events:
     - Pine-scented tourist throngs
     global_id: ger_location_e285811a3bed
   organization_involvements:
-  - organization_uuid: ger_organization_d033a1b32d4f
+  - organization_uuid: ger_organization_bb39d5dd403d
     description_of_involvement: Looms as the unyielding authority whose nuanced position—sympathy
       sans action—Donna recites verbatim, deflecting pleas through delegated protocol,
       reinforcing institutional boundaries on quirky state bids while locals probe
@@ -4865,7 +4865,7 @@ events:
     institutional_impact: Highlights White House's selective engagement, prioritizing
       crises like terrorism over peripheral economics
     internal_dynamics: Clear chain-of-command limiting aide improvisation
-    global_id: ger_organization_d033a1b32d4f
+    global_id: ger_organization_bb39d5dd403d
   derived_from_beat_uuids: &id020
   - beat_9de687aefa65bf4c
   - beat_14f9393ad0fef99a
@@ -4985,7 +4985,7 @@ events:
     - Pine-scented tourist throngs
     global_id: ger_location_e285811a3bed
   organization_involvements:
-  - organization_uuid: ger_organization_d033a1b32d4f
+  - organization_uuid: ger_organization_bb39d5dd403d
     description_of_involvement: Looms as the unyielding authority whose nuanced position—sympathy
       sans action—Donna recites verbatim, deflecting pleas through delegated protocol,
       reinforcing institutional boundaries on quirky state bids while locals probe
@@ -5002,7 +5002,7 @@ events:
     institutional_impact: Highlights White House's selective engagement, prioritizing
       crises like terrorism over peripheral economics
     internal_dynamics: Clear chain-of-command limiting aide improvisation
-    global_id: ger_organization_d033a1b32d4f
+    global_id: ger_organization_bb39d5dd403d
   derived_from_beat_uuids: *id020
   source_season: 3
   source_database: westwing.s03
@@ -5037,7 +5037,7 @@ events:
   is_flashback: false
   location_uuid: ger_location_fac05155f9a7
   theme_uuids:
-  - ger_theme_134db6c4e455
+  - ger_theme_39b5852d89a6
   arc_uuids:
   - ger_conflictarc_0a0c41813bc3
   participations:
@@ -5065,6 +5065,36 @@ events:
     - politically calculating
     importance: primary
     global_id: ger_agent_c9d41ae93618
+  - character_uuid: ger_agent_69979de71a68
+    emotional_state: Neutral (not present)
+    goals:
+    - Advance conservative platform
+    what_happened: Rob Ritchie invoked by Josh as dire electoral alternative whose
+      presidency would devastate Amy's agenda.
+    observed_status: Rob Ritchie invoked by Josh as dire electoral alternative whose
+      presidency would devastate Amy's agenda.
+    beliefs:
+    - Limited sympathy for progressive welfare
+    observed_traits:
+    - conservative threat
+    importance: primary
+    global_id: ger_agent_69979de71a68
+  - character_uuid: ger_agent_1802e4e8bf7d
+    emotional_state: Alert responsiveness (inferred via phone)
+    goals:
+    - Execute Amy's rapid-response orders
+    what_happened: Scott receives Amy's urgent phone directive to lock down office
+      and arrange Legislative Affairs meeting with Regina King, serving as immediate
+      extension of her mobilization command.
+    observed_status: Scott receives Amy's urgent phone directive to lock down office
+      and arrange Legislative Affairs meeting with Regina King, serving as immediate
+      extension of her mobilization command.
+    beliefs:
+    - Team unity amplifies advocacy impact
+    observed_traits:
+    - loyal executor
+    importance: primary
+    global_id: ger_agent_1802e4e8bf7d
   - character_uuid: ger_agent_3b01f1d856de
     emotional_state: Initial playfulness yielding to righteous outrage and betrayal-fueled
       determination
@@ -5089,20 +5119,6 @@ events:
     - passionate
     importance: primary
     global_id: ger_agent_3b01f1d856de
-  - character_uuid: ger_agent_89fd2481c324
-    emotional_state: Neutral (not present)
-    goals:
-    - Advance conservative platform
-    what_happened: Rob Ritchie invoked by Josh as dire electoral alternative whose
-      presidency would devastate Amy's agenda.
-    observed_status: Rob Ritchie invoked by Josh as dire electoral alternative whose
-      presidency would devastate Amy's agenda.
-    beliefs:
-    - Limited sympathy for progressive welfare
-    observed_traits:
-    - conservative threat
-    importance: primary
-    global_id: ger_agent_89fd2481c324
   - character_uuid: ger_agent_a5205081e6e0
     emotional_state: Neutral (not present)
     goals:
@@ -5133,22 +5149,6 @@ events:
     - key legislative contact
     importance: primary
     global_id: ger_agent_382f6653ef83
-  - character_uuid: ger_agent_1802e4e8bf7d
-    emotional_state: Alert responsiveness (inferred via phone)
-    goals:
-    - Execute Amy's rapid-response orders
-    what_happened: Scott receives Amy's urgent phone directive to lock down office
-      and arrange Legislative Affairs meeting with Regina King, serving as immediate
-      extension of her mobilization command.
-    observed_status: Scott receives Amy's urgent phone directive to lock down office
-      and arrange Legislative Affairs meeting with Regina King, serving as immediate
-      extension of her mobilization command.
-    beliefs:
-    - Team unity amplifies advocacy impact
-    observed_traits:
-    - loyal executor
-    importance: primary
-    global_id: ger_agent_1802e4e8bf7d
   object_involvements:
   - object_uuid: ger_object_a1c80961b4f1
     description_of_involvement: Amy's Apartment Radio plays Van Morrison continuously
@@ -5781,9 +5781,9 @@ events:
   - 'LEO: "You know, it was a screw up, but I got to say I love the way he did it--
     full speed, bam. Like there''s a Sam Seaborn-shaped hole in the wall."'
   is_flashback: false
-  location_uuid: ger_location_8bd81caac8cf
+  location_uuid: ger_location_5e2e1d56cd7d
   theme_uuids:
-  - ger_theme_134db6c4e455
+  - ger_theme_39b5852d89a6
   - ger_theme_fd1835d35bd2
   arc_uuids: []
   participations:
@@ -5928,6 +5928,18 @@ events:
     global_id: ger_agent_cbd9c1d3b294
   object_involvements: []
   location_involvements:
+  - location_uuid: ger_location_5e2e1d56cd7d
+    description_of_involvement: New York is weaponized by Josh as scheduling pretext—clashing
+      planned trip with welfare floor vote to strand Amy's activists without mobilization
+      time, turning urban allure into legislative trap that Leo greenlights instantly.
+    observed_atmosphere: Remote gravitational pull dictating DC chaos
+    functional_role: Strategic alibi and timing disruptor
+    symbolic_significance: Embodies external pressures fracturing internal timelines
+    access_restrictions: ''
+    key_environmental_details:
+    - Implied skyline as distant threat
+    - Gala shrapnel clashing with vote deadlines
+    global_id: ger_location_5e2e1d56cd7d
   - location_uuid: ger_location_8bd81caac8cf
     description_of_involvement: Helsinki surfaces as Leo's recalled ploy source—Chigorin
       pretext from its summit repurposed to bail President from Archbishop event,
@@ -5941,18 +5953,6 @@ events:
     - Subzero gales and Mantyniemi showdowns
     - Air Force One photo ops in frost
     global_id: ger_location_8bd81caac8cf
-  - location_uuid: ger_location_5e2e1d56cd7d
-    description_of_involvement: New York is weaponized by Josh as scheduling pretext—clashing
-      planned trip with welfare floor vote to strand Amy's activists without mobilization
-      time, turning urban allure into legislative trap that Leo greenlights instantly.
-    observed_atmosphere: Remote gravitational pull dictating DC chaos
-    functional_role: Strategic alibi and timing disruptor
-    symbolic_significance: Embodies external pressures fracturing internal timelines
-    access_restrictions: ''
-    key_environmental_details:
-    - Implied skyline as distant threat
-    - Gala shrapnel clashing with vote deadlines
-    global_id: ger_location_5e2e1d56cd7d
   organization_involvements:
   - organization_uuid: ger_organization_6e0f9bffc0b7
     description_of_involvement: Women's groups loom as Josh's cited threat—one faction
@@ -5994,9 +5994,9 @@ events:
   sequence_in_scene: 18
   key_dialogue: *id021
   is_flashback: false
-  location_uuid: ger_location_5e2e1d56cd7d
+  location_uuid: ger_location_8bd81caac8cf
   theme_uuids:
-  - ger_theme_134db6c4e455
+  - ger_theme_39b5852d89a6
   - ger_theme_fd1835d35bd2
   arc_uuids: []
   participations:
@@ -6141,6 +6141,18 @@ events:
     global_id: ger_agent_cbd9c1d3b294
   object_involvements: []
   location_involvements:
+  - location_uuid: ger_location_5e2e1d56cd7d
+    description_of_involvement: New York is weaponized by Josh as scheduling pretext—clashing
+      planned trip with welfare floor vote to strand Amy's activists without mobilization
+      time, turning urban allure into legislative trap that Leo greenlights instantly.
+    observed_atmosphere: Remote gravitational pull dictating DC chaos
+    functional_role: Strategic alibi and timing disruptor
+    symbolic_significance: Embodies external pressures fracturing internal timelines
+    access_restrictions: ''
+    key_environmental_details:
+    - Implied skyline as distant threat
+    - Gala shrapnel clashing with vote deadlines
+    global_id: ger_location_5e2e1d56cd7d
   - location_uuid: ger_location_8bd81caac8cf
     description_of_involvement: Helsinki surfaces as Leo's recalled ploy source—Chigorin
       pretext from its summit repurposed to bail President from Archbishop event,
@@ -6154,18 +6166,6 @@ events:
     - Subzero gales and Mantyniemi showdowns
     - Air Force One photo ops in frost
     global_id: ger_location_8bd81caac8cf
-  - location_uuid: ger_location_5e2e1d56cd7d
-    description_of_involvement: New York is weaponized by Josh as scheduling pretext—clashing
-      planned trip with welfare floor vote to strand Amy's activists without mobilization
-      time, turning urban allure into legislative trap that Leo greenlights instantly.
-    observed_atmosphere: Remote gravitational pull dictating DC chaos
-    functional_role: Strategic alibi and timing disruptor
-    symbolic_significance: Embodies external pressures fracturing internal timelines
-    access_restrictions: ''
-    key_environmental_details:
-    - Implied skyline as distant threat
-    - Gala shrapnel clashing with vote deadlines
-    global_id: ger_location_5e2e1d56cd7d
   organization_involvements:
   - organization_uuid: ger_organization_6e0f9bffc0b7
     description_of_involvement: Women's groups loom as Josh's cited threat—one faction
@@ -6402,7 +6402,7 @@ events:
     - Resigned yet resolute
     importance: primary
     global_id: ger_agent_198649bce78f
-  - character_uuid: ger_agent_0c46fe4078a3
+  - character_uuid: ger_agent_e2310869a36b
     emotional_state: ''
     goals: []
     what_happened: central subject of discussion; his indictment rendered impossible
@@ -6414,7 +6414,7 @@ events:
     beliefs: []
     observed_traits: []
     importance: secondary
-    global_id: ger_agent_0c46fe4078a3
+    global_id: ger_agent_e2310869a36b
   - character_uuid: ger_agent_fab5c95deac7
     emotional_state: Reluctant unease revealing cracks in professional composure
     goals:
@@ -6521,7 +6521,7 @@ events:
     observed_traits: []
     importance: primary
     global_id: ger_agent_9eb77e9bc5ec
-  - character_uuid: ger_agent_0c46fe4078a3
+  - character_uuid: ger_agent_e2310869a36b
     emotional_state: ''
     goals: []
     what_happened: Referenced repeatedly as the terrorist enemy funded attacks, identified
@@ -6533,7 +6533,7 @@ events:
     beliefs: []
     observed_traits: []
     importance: secondary
-    global_id: ger_agent_0c46fe4078a3
+    global_id: ger_agent_e2310869a36b
   object_involvements: []
   location_involvements: []
   organization_involvements: []
@@ -6634,6 +6634,17 @@ events:
     observed_traits: []
     importance: secondary
     global_id: ger_agent_7854a70e34ea
+  - character_uuid: ger_agent_69979de71a68
+    emotional_state: ''
+    goals: []
+    what_happened: mentioned by Sam as political opponent aligned with Florida's special
+      interests and polluters
+    observed_status: mentioned by Sam as political opponent aligned with Florida's
+      special interests and polluters
+    beliefs: []
+    observed_traits: []
+    importance: minor
+    global_id: ger_agent_69979de71a68
   - character_uuid: ger_agent_60a68a084e0c
     emotional_state: agreeable
     goals:
@@ -6664,17 +6675,6 @@ events:
     - disruptive
     importance: primary
     global_id: ger_agent_3b01f1d856de
-  - character_uuid: ger_agent_89fd2481c324
-    emotional_state: ''
-    goals: []
-    what_happened: mentioned by Sam as political opponent aligned with Florida's special
-      interests and polluters
-    observed_status: mentioned by Sam as political opponent aligned with Florida's
-      special interests and polluters
-    beliefs: []
-    observed_traits: []
-    importance: minor
-    global_id: ger_agent_89fd2481c324
   - character_uuid: ger_agent_0e71f0a9c315
     emotional_state: ''
     goals:
@@ -6763,7 +6763,7 @@ events:
   is_flashback: false
   location_uuid: ger_location_3d4b26f1de82
   theme_uuids:
-  - ger_theme_134db6c4e455
+  - ger_theme_39b5852d89a6
   - ger_theme_fd1835d35bd2
   arc_uuids:
   - ger_conflictarc_94789aa4e7e1
@@ -6856,6 +6856,25 @@ events:
     - blunt
     importance: primary
     global_id: ger_agent_7854a70e34ea
+  - character_uuid: ger_agent_69979de71a68
+    emotional_state: Vulnerable under attack (inferred)
+    goals:
+    - Defend sugar subsidies and Florida base
+    - Maintain clean campaign image
+    what_happened: Ritchie looms as the targeted rival nominee, his Florida special
+      interest ties weaponized by Sam's memo strategy to paint him as polluter defender,
+      escalating campaign crossfire.
+    observed_status: Ritchie looms as the targeted rival nominee, his Florida special
+      interest ties weaponized by Sam's memo strategy to paint him as polluter defender,
+      escalating campaign crossfire.
+    beliefs:
+    - Special interests fuel legitimate growth
+    - Environmental attacks are liberal tactics
+    observed_traits:
+    - conservative
+    - entrenched
+    importance: primary
+    global_id: ger_agent_69979de71a68
   - character_uuid: ger_agent_60a68a084e0c
     emotional_state: Alert and ready to execute
     goals:
@@ -6895,25 +6914,6 @@ events:
     - combative
     importance: primary
     global_id: ger_agent_3b01f1d856de
-  - character_uuid: ger_agent_89fd2481c324
-    emotional_state: Vulnerable under attack (inferred)
-    goals:
-    - Defend sugar subsidies and Florida base
-    - Maintain clean campaign image
-    what_happened: Ritchie looms as the targeted rival nominee, his Florida special
-      interest ties weaponized by Sam's memo strategy to paint him as polluter defender,
-      escalating campaign crossfire.
-    observed_status: Ritchie looms as the targeted rival nominee, his Florida special
-      interest ties weaponized by Sam's memo strategy to paint him as polluter defender,
-      escalating campaign crossfire.
-    beliefs:
-    - Special interests fuel legitimate growth
-    - Environmental attacks are liberal tactics
-    observed_traits:
-    - conservative
-    - entrenched
-    importance: primary
-    global_id: ger_agent_89fd2481c324
   - character_uuid: ger_agent_0e71f0a9c315
     emotional_state: Inspired persistence (inferred)
     goals:
@@ -7045,7 +7045,7 @@ events:
     institutional_impact: Tightens party discipline across state-federal lines
     internal_dynamics: Debates over dropping states like North Dakota
     global_id: ger_organization_22fb3f119458
-  - organization_uuid: ger_organization_843eb23e4dbd
+  - organization_uuid: ger_organization_e5b96b0c1e6b
     description_of_involvement: Florida's special interests emerge as prime target
       in Sam's memo pivot, their sugar subsidies and Everglades polluters framed to
       bleed Ritchie's swing-state cash, forcing defensive posture and exposing his
@@ -7060,7 +7060,7 @@ events:
     - Lobbying for polluter defenses
     institutional_impact: Highlights donor-policy vise on nominees
     internal_dynamics: Backroom pacts fueling Florida empire
-    global_id: ger_organization_843eb23e4dbd
+    global_id: ger_organization_e5b96b0c1e6b
   derived_from_beat_uuids: &id024
   - beat_953dcd04e34f64b3
   - beat_7cf14ba08a617ea9
@@ -7086,7 +7086,7 @@ events:
   is_flashback: false
   location_uuid: ger_location_7e75a940a75a
   theme_uuids:
-  - ger_theme_134db6c4e455
+  - ger_theme_39b5852d89a6
   - ger_theme_fd1835d35bd2
   arc_uuids:
   - ger_conflictarc_94789aa4e7e1
@@ -7179,6 +7179,25 @@ events:
     - blunt
     importance: primary
     global_id: ger_agent_7854a70e34ea
+  - character_uuid: ger_agent_69979de71a68
+    emotional_state: Vulnerable under attack (inferred)
+    goals:
+    - Defend sugar subsidies and Florida base
+    - Maintain clean campaign image
+    what_happened: Ritchie looms as the targeted rival nominee, his Florida special
+      interest ties weaponized by Sam's memo strategy to paint him as polluter defender,
+      escalating campaign crossfire.
+    observed_status: Ritchie looms as the targeted rival nominee, his Florida special
+      interest ties weaponized by Sam's memo strategy to paint him as polluter defender,
+      escalating campaign crossfire.
+    beliefs:
+    - Special interests fuel legitimate growth
+    - Environmental attacks are liberal tactics
+    observed_traits:
+    - conservative
+    - entrenched
+    importance: primary
+    global_id: ger_agent_69979de71a68
   - character_uuid: ger_agent_60a68a084e0c
     emotional_state: Alert and ready to execute
     goals:
@@ -7218,25 +7237,6 @@ events:
     - combative
     importance: primary
     global_id: ger_agent_3b01f1d856de
-  - character_uuid: ger_agent_89fd2481c324
-    emotional_state: Vulnerable under attack (inferred)
-    goals:
-    - Defend sugar subsidies and Florida base
-    - Maintain clean campaign image
-    what_happened: Ritchie looms as the targeted rival nominee, his Florida special
-      interest ties weaponized by Sam's memo strategy to paint him as polluter defender,
-      escalating campaign crossfire.
-    observed_status: Ritchie looms as the targeted rival nominee, his Florida special
-      interest ties weaponized by Sam's memo strategy to paint him as polluter defender,
-      escalating campaign crossfire.
-    beliefs:
-    - Special interests fuel legitimate growth
-    - Environmental attacks are liberal tactics
-    observed_traits:
-    - conservative
-    - entrenched
-    importance: primary
-    global_id: ger_agent_89fd2481c324
   - character_uuid: ger_agent_0e71f0a9c315
     emotional_state: Inspired persistence (inferred)
     goals:
@@ -7368,7 +7368,7 @@ events:
     institutional_impact: Tightens party discipline across state-federal lines
     internal_dynamics: Debates over dropping states like North Dakota
     global_id: ger_organization_22fb3f119458
-  - organization_uuid: ger_organization_843eb23e4dbd
+  - organization_uuid: ger_organization_e5b96b0c1e6b
     description_of_involvement: Florida's special interests emerge as prime target
       in Sam's memo pivot, their sugar subsidies and Everglades polluters framed to
       bleed Ritchie's swing-state cash, forcing defensive posture and exposing his
@@ -7383,7 +7383,7 @@ events:
     - Lobbying for polluter defenses
     institutional_impact: Highlights donor-policy vise on nominees
     internal_dynamics: Backroom pacts fueling Florida empire
-    global_id: ger_organization_843eb23e4dbd
+    global_id: ger_organization_e5b96b0c1e6b
   derived_from_beat_uuids: *id024
   source_season: 3
   source_database: westwing.s03
@@ -7405,7 +7405,7 @@ events:
   is_flashback: false
   location_uuid: ger_location_724376683a98
   theme_uuids:
-  - ger_theme_134db6c4e455
+  - ger_theme_39b5852d89a6
   - ger_theme_fd1835d35bd2
   arc_uuids:
   - ger_conflictarc_94789aa4e7e1
@@ -7498,6 +7498,25 @@ events:
     - blunt
     importance: primary
     global_id: ger_agent_7854a70e34ea
+  - character_uuid: ger_agent_69979de71a68
+    emotional_state: Vulnerable under attack (inferred)
+    goals:
+    - Defend sugar subsidies and Florida base
+    - Maintain clean campaign image
+    what_happened: Ritchie looms as the targeted rival nominee, his Florida special
+      interest ties weaponized by Sam's memo strategy to paint him as polluter defender,
+      escalating campaign crossfire.
+    observed_status: Ritchie looms as the targeted rival nominee, his Florida special
+      interest ties weaponized by Sam's memo strategy to paint him as polluter defender,
+      escalating campaign crossfire.
+    beliefs:
+    - Special interests fuel legitimate growth
+    - Environmental attacks are liberal tactics
+    observed_traits:
+    - conservative
+    - entrenched
+    importance: primary
+    global_id: ger_agent_69979de71a68
   - character_uuid: ger_agent_60a68a084e0c
     emotional_state: Alert and ready to execute
     goals:
@@ -7537,25 +7556,6 @@ events:
     - combative
     importance: primary
     global_id: ger_agent_3b01f1d856de
-  - character_uuid: ger_agent_89fd2481c324
-    emotional_state: Vulnerable under attack (inferred)
-    goals:
-    - Defend sugar subsidies and Florida base
-    - Maintain clean campaign image
-    what_happened: Ritchie looms as the targeted rival nominee, his Florida special
-      interest ties weaponized by Sam's memo strategy to paint him as polluter defender,
-      escalating campaign crossfire.
-    observed_status: Ritchie looms as the targeted rival nominee, his Florida special
-      interest ties weaponized by Sam's memo strategy to paint him as polluter defender,
-      escalating campaign crossfire.
-    beliefs:
-    - Special interests fuel legitimate growth
-    - Environmental attacks are liberal tactics
-    observed_traits:
-    - conservative
-    - entrenched
-    importance: primary
-    global_id: ger_agent_89fd2481c324
   - character_uuid: ger_agent_0e71f0a9c315
     emotional_state: Inspired persistence (inferred)
     goals:
@@ -7687,7 +7687,7 @@ events:
     institutional_impact: Tightens party discipline across state-federal lines
     internal_dynamics: Debates over dropping states like North Dakota
     global_id: ger_organization_22fb3f119458
-  - organization_uuid: ger_organization_843eb23e4dbd
+  - organization_uuid: ger_organization_e5b96b0c1e6b
     description_of_involvement: Florida's special interests emerge as prime target
       in Sam's memo pivot, their sugar subsidies and Everglades polluters framed to
       bleed Ritchie's swing-state cash, forcing defensive posture and exposing his
@@ -7702,7 +7702,7 @@ events:
     - Lobbying for polluter defenses
     institutional_impact: Highlights donor-policy vise on nominees
     internal_dynamics: Backroom pacts fueling Florida empire
-    global_id: ger_organization_843eb23e4dbd
+    global_id: ger_organization_e5b96b0c1e6b
   derived_from_beat_uuids: *id024
   source_season: 3
   source_database: westwing.s03
@@ -7800,7 +7800,7 @@ events:
     observed_traits: []
     importance: secondary
     global_id: ger_agent_377b4d83808f
-  - character_uuid: ger_agent_89fd2481c324
+  - character_uuid: ger_agent_69979de71a68
     emotional_state: ''
     goals: []
     what_happened: significantly mentioned as having accepted an invitation to the
@@ -7810,7 +7810,7 @@ events:
     beliefs: []
     observed_traits: []
     importance: minor
-    global_id: ger_agent_89fd2481c324
+    global_id: ger_agent_69979de71a68
   object_involvements: []
   location_involvements: []
   organization_involvements: []
@@ -7839,10 +7839,10 @@ events:
     got to endure three screwiest."'
   - 'BARTLET: "Win the damn vote."'
   is_flashback: false
-  location_uuid: ger_location_00c48391ec2c
+  location_uuid: ger_location_5e2e1d56cd7d
   theme_uuids:
   - ger_theme_c90b9bacbc27
-  - ger_theme_134db6c4e455
+  - ger_theme_39b5852d89a6
   arc_uuids:
   - ger_conflictarc_1e8a82996d05
   participations:
@@ -7932,7 +7932,7 @@ events:
     - defensive
     importance: primary
     global_id: ger_agent_377b4d83808f
-  - character_uuid: ger_agent_89fd2481c324
+  - character_uuid: ger_agent_69979de71a68
     emotional_state: Not present; referenced as strategic threat
     goals:
     - Encroach on Democratic fundraising turf
@@ -7951,22 +7951,9 @@ events:
     observed_traits:
     - politically opportunistic
     importance: primary
-    global_id: ger_agent_89fd2481c324
+    global_id: ger_agent_69979de71a68
   object_involvements: []
   location_involvements:
-  - location_uuid: ger_location_00c48391ec2c
-    description_of_involvement: The Broadway theatre's mezzanine is derisively cited
-      by Bartlet as his absurd perch for directing the welfare vote amid the fundraiser,
-      transforming cultural grandeur into a logistical farce that underscores the
-      scheduling's recklessness.
-    observed_atmosphere: Theatrical mockery amplifying political humiliation
-    functional_role: Remote command post for crisis vote
-    symbolic_significance: Hijacked stage mirroring Oval power plays
-    access_restrictions: Presidential box reserved amid public event
-    key_environmental_details:
-    - Mezzanine balcony oversight
-    - Chandelier-lit tension
-    global_id: ger_location_00c48391ec2c
   - location_uuid: ger_location_5e2e1d56cd7d
     description_of_involvement: New York looms as the gravitational epicenter of the
       Catholic Charities fundraiser, yanking Bartlet from D.C. and forcing remote
@@ -7980,6 +7967,19 @@ events:
     - Catholic Charities gala venue
     - Ritchie's confirmed presence
     global_id: ger_location_5e2e1d56cd7d
+  - location_uuid: ger_location_00c48391ec2c
+    description_of_involvement: The Broadway theatre's mezzanine is derisively cited
+      by Bartlet as his absurd perch for directing the welfare vote amid the fundraiser,
+      transforming cultural grandeur into a logistical farce that underscores the
+      scheduling's recklessness.
+    observed_atmosphere: Theatrical mockery amplifying political humiliation
+    functional_role: Remote command post for crisis vote
+    symbolic_significance: Hijacked stage mirroring Oval power plays
+    access_restrictions: Presidential box reserved amid public event
+    key_environmental_details:
+    - Mezzanine balcony oversight
+    - Chandelier-lit tension
+    global_id: ger_location_00c48391ec2c
   organization_involvements:
   - organization_uuid: ger_organization_6e0f9bffc0b7
     description_of_involvement: Women's groups are scapegoated by Josh for eroding
@@ -8019,10 +8019,10 @@ events:
   sequence_in_scene: 25
   key_dialogue: *id025
   is_flashback: false
-  location_uuid: ger_location_5e2e1d56cd7d
+  location_uuid: ger_location_00c48391ec2c
   theme_uuids:
   - ger_theme_c90b9bacbc27
-  - ger_theme_134db6c4e455
+  - ger_theme_39b5852d89a6
   arc_uuids:
   - ger_conflictarc_1e8a82996d05
   participations:
@@ -8112,7 +8112,7 @@ events:
     - defensive
     importance: primary
     global_id: ger_agent_377b4d83808f
-  - character_uuid: ger_agent_89fd2481c324
+  - character_uuid: ger_agent_69979de71a68
     emotional_state: Not present; referenced as strategic threat
     goals:
     - Encroach on Democratic fundraising turf
@@ -8131,22 +8131,9 @@ events:
     observed_traits:
     - politically opportunistic
     importance: primary
-    global_id: ger_agent_89fd2481c324
+    global_id: ger_agent_69979de71a68
   object_involvements: []
   location_involvements:
-  - location_uuid: ger_location_00c48391ec2c
-    description_of_involvement: The Broadway theatre's mezzanine is derisively cited
-      by Bartlet as his absurd perch for directing the welfare vote amid the fundraiser,
-      transforming cultural grandeur into a logistical farce that underscores the
-      scheduling's recklessness.
-    observed_atmosphere: Theatrical mockery amplifying political humiliation
-    functional_role: Remote command post for crisis vote
-    symbolic_significance: Hijacked stage mirroring Oval power plays
-    access_restrictions: Presidential box reserved amid public event
-    key_environmental_details:
-    - Mezzanine balcony oversight
-    - Chandelier-lit tension
-    global_id: ger_location_00c48391ec2c
   - location_uuid: ger_location_5e2e1d56cd7d
     description_of_involvement: New York looms as the gravitational epicenter of the
       Catholic Charities fundraiser, yanking Bartlet from D.C. and forcing remote
@@ -8160,6 +8147,19 @@ events:
     - Catholic Charities gala venue
     - Ritchie's confirmed presence
     global_id: ger_location_5e2e1d56cd7d
+  - location_uuid: ger_location_00c48391ec2c
+    description_of_involvement: The Broadway theatre's mezzanine is derisively cited
+      by Bartlet as his absurd perch for directing the welfare vote amid the fundraiser,
+      transforming cultural grandeur into a logistical farce that underscores the
+      scheduling's recklessness.
+    observed_atmosphere: Theatrical mockery amplifying political humiliation
+    functional_role: Remote command post for crisis vote
+    symbolic_significance: Hijacked stage mirroring Oval power plays
+    access_restrictions: Presidential box reserved amid public event
+    key_environmental_details:
+    - Mezzanine balcony oversight
+    - Chandelier-lit tension
+    global_id: ger_location_00c48391ec2c
   organization_involvements:
   - organization_uuid: ger_organization_6e0f9bffc0b7
     description_of_involvement: Women's groups are scapegoated by Josh for eroding
@@ -8288,7 +8288,7 @@ events:
   is_flashback: false
   location_uuid: ger_location_54fae3237155
   theme_uuids:
-  - ger_theme_134db6c4e455
+  - ger_theme_39b5852d89a6
   arc_uuids:
   - ger_conflictarc_0a0c41813bc3
   participations:
@@ -8472,7 +8472,7 @@ events:
   is_flashback: false
   location_uuid: ger_location_79e5a50bc801
   theme_uuids:
-  - ger_theme_134db6c4e455
+  - ger_theme_39b5852d89a6
   arc_uuids:
   - ger_conflictarc_0a0c41813bc3
   participations:
@@ -8651,7 +8651,7 @@ events:
   is_flashback: false
   location_uuid: ger_location_318bf7166bfc
   theme_uuids:
-  - ger_theme_134db6c4e455
+  - ger_theme_39b5852d89a6
   arc_uuids:
   - ger_conflictarc_0a0c41813bc3
   participations:
@@ -8879,7 +8879,7 @@ events:
     - decisively resolute
     importance: primary
     global_id: ger_agent_198649bce78f
-  - character_uuid: ger_agent_0c46fe4078a3
+  - character_uuid: ger_agent_e2310869a36b
     emotional_state: Unknown, as off-screen target
     goals:
     - Advance terror operations under diplomatic cover
@@ -8897,7 +8897,7 @@ events:
     - cunning terrorist
     - diplomatic deceiver
     importance: primary
-    global_id: ger_agent_0c46fe4078a3
+    global_id: ger_agent_e2310869a36b
   object_involvements: []
   location_involvements:
   - location_uuid: ger_location_d1360144f47e
@@ -9014,7 +9014,7 @@ events:
     - decisively resolute
     importance: primary
     global_id: ger_agent_198649bce78f
-  - character_uuid: ger_agent_0c46fe4078a3
+  - character_uuid: ger_agent_e2310869a36b
     emotional_state: Unknown, as off-screen target
     goals:
     - Advance terror operations under diplomatic cover
@@ -9032,7 +9032,7 @@ events:
     - cunning terrorist
     - diplomatic deceiver
     importance: primary
-    global_id: ger_agent_0c46fe4078a3
+    global_id: ger_agent_e2310869a36b
   object_involvements: []
   location_involvements:
   - location_uuid: ger_location_d1360144f47e

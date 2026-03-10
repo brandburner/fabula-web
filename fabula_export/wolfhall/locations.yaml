@@ -1,5 +1,5 @@
 # Location Data
-# Generated: 2026-02-12T21:08:07.034666
+# Generated: 2026-02-20T11:31:53.436938
 
 - fabula_uuid: ger_location_95c11c29bc5e
   global_id: ger_location_95c11c29bc5e
@@ -26,7 +26,7 @@
     or outer chambers. Serves as Anne Boleyn's personal and political stage, where
     her arrest and downfall are orchestrated.
   location_type: Queen's Private Chambers
-  parent_location_uuid: null
+  parent_location_uuid: ger_location_9879f6cfd510
   season_appearances:
   - 1
   local_uuids:
@@ -48,7 +48,29 @@
     unattended candle) and paranoia (accusations of arson or intrigue), turning her
     refuge into a stage for emotional rifts and political maneuvering.
   location_type: Queen's Bedchamber
-  parent_location_uuid: null
+  parent_location_uuid: ger_location_62cd0a4af39d
+  season_appearances:
+  - 1
+  local_uuids:
+    1: location_ad3e60285d13
+  first_appearance_season: 1
+  tier: asteroid
+  episode_count: 1
+- fabula_uuid: ger_location_55cd9e153e5a
+  global_id: ger_location_55cd9e153e5a
+  canonical_name: Anne Boleyn's Windsor Bedchamber
+  description: Smoke hangs heavy in Anne Boleyn's Windsor bedchamber after a fire
+    guts the arras and nearly kills her. The private room serves as a tense arena
+    where court secrets simmer amid charred remnants, trapping confrontations between
+    Anne, Cromwell, and Henry. Orange light flickers through smoke as Anne wakes amid
+    flames, later recovering wrapped in silk while her women hover close and Henry
+    stands detached. The space reeks of burnt fabric and unspoken peril, with Cromwell
+    probing survivors outside its door to expose court secrets in the embers' glow.
+    The room's atmosphere shifts between defiance (Anne dismissing the blaze as an
+    unattended candle) and paranoia (accusations of arson or intrigue), turning her
+    refuge into a stage for emotional rifts and political maneuvering.
+  location_type: Queen's Bedchamber
+  parent_location_uuid: ger_location_4cdff6abd6d0
   season_appearances:
   - 1
   local_uuids:
@@ -91,22 +113,45 @@
     2: location_64e282fb446f
   first_appearance_season: 1
   tier: planet
-  episode_count: 3
+  episode_count: 2
+- fabula_uuid: ger_location_0a7547c82fa2
+  global_id: ger_location_0a7547c82fa2
+  canonical_name: Antechamber to the King’s Bedchamber, Hampton Court
+  description: Rafe Sadler waits in this formal antechamber outside Henry VIII’s bedchamber
+    at Hampton Court, alerting Cromwell to the king’s festering leg wound and frailty
+    before they enter. Night shadows dim the public space, heightening tension as
+    a threshold between court hierarchy and royal privacy. Cromwell pauses here, steeling
+    for audience amid Henry’s defiant grip on power, the air thick with anticipation
+    of illness and political maneuvering.
+  location_type: Royal Palace Antechamber
+  parent_location_uuid: null
+  season_appearances:
+  - 2
+  local_uuids:
+    1: location_90825079b72a
+  first_appearance_season: 2
+  tier: planet
+  episode_count: 2
 - fabula_uuid: ger_location_273be29a5310
   global_id: ger_location_273be29a5310
   canonical_name: Antwerp
-  description: Geopolitical and narrative hub in the Low Countries, serving as a backdrop
-    for intelligence smuggling (e.g., Richard’s mission with the letter). Distinct
-    from specific buildings or warehouses within the city.
+  description: Jenneke hails from Antwerp, a Flemish trading city where she grew up
+    in Mister Vaughan's household. Cromwell recognizes her sharp accent from his past
+    visits, a sound tied to merchant homes buzzing with deal-making voices and the
+    tang of commerce. The city holds his memory strong—people there recall him well—and
+    stirs his old homesickness. Jenneke invokes it as an escape from England's intrigues,
+    a return to simpler roots contrasting his burdened life in Austin Friars.
   location_type: Low Countries Trade City
   parent_location_uuid: null
   season_appearances:
   - 1
+  - 2
   local_uuids:
     1: location_7af82b9eea72
+    2: location_769483ac90bd
   first_appearance_season: 1
   tier: asteroid
-  episode_count: 1
+  episode_count: 0
 - fabula_uuid: ger_location_8e8cc6c46e09
   global_id: ger_location_8e8cc6c46e09
   canonical_name: Antwerp Warehouse (Tyndale’s Smuggling Hub)
@@ -114,7 +159,7 @@
     gospels are hidden in a wooden chest marked with black tar. Interacts with Thomas
     More and an Unnamed Accomplice in Episode 2 of *Wolf Hall*.
   location_type: Trade Warehouse
-  parent_location_uuid: null
+  parent_location_uuid: ger_location_273be29a5310
   season_appearances:
   - 1
   local_uuids:
@@ -135,15 +180,15 @@
           - **Narrative arcs**: Military campaigns (Lincolnshire rebels), familial tensions (Gregory, Richard), and political maneuvering (Norfolk’s downfall, Lady Mary’s debts).
           - **Symbolism**: Rain/mud (chaos), candlelight (secrets), ledgers (power), shadows (guilt).
           **Part of larger location**: None (this is the root compound).
-  location_type: Tudor Townhouse Residence
-  parent_location_uuid: null
+  location_type: Townhouse Residence
+  parent_location_uuid: ger_location_2a9631638467
   season_appearances:
-  - 1
+  - 2
   local_uuids:
-    1: location_7481a553f3af
-  first_appearance_season: 1
+    1: location_bc6e6fccf331
+  first_appearance_season: 2
   tier: asteroid
-  episode_count: 0
+  episode_count: 1
 - fabula_uuid: ger_location_2e28b1a3a5e8
   global_id: ger_location_2e28b1a3a5e8
   canonical_name: Austin Friars (Cromwell’s London Townhouse)
@@ -155,53 +200,45 @@
           4. **Dimly lit studies** where Cromwell tears letters and strategizes, as well as **quiet bedrooms** where lovers' tensions are interrupted by urgent political news. Claustrophobic rooms amplify invasions by foes like More, while the scent of ink and vintage wine fills confidential spaces, blending domestic intimacy with ruthless political maneuvering.
           The townhouse serves as a microcosm of Cromwell's dual life, where **public political strategy** (dining room gatherings, garden negotiations) intersects with **private familial bonds** (daughters’ stories, lovers’ interruptions) and **clandestine maneuvering** (studies, torn letters).
   location_type: Tudor Townhouse Residence
-  parent_location_uuid: null
+  parent_location_uuid: ger_location_2a9631638467
   season_appearances:
   - 1
   - 1
   - 1
+  - 2
   local_uuids:
     1: location_7481a553f3af
     2: location_5531cddcad23
     3: location_42fd4d3ef124
+    4: location_97f6e2ff192f
   first_appearance_season: 1
   tier: anchor
-  episode_count: 8
+  episode_count: 6
 - fabula_uuid: ger_location_10dfd3bf3040
   global_id: ger_location_10dfd3bf3040
   canonical_name: Austin Friars (Cromwell’s Residence)
-  description: Thomas Cromwell's Austin Friars townhouse anchors his operations amid
-    Tudor intrigue. Richard and Rafe escort Mark Smeaton into shadowed halls, confiscate
-    his lute, and heighten his dread under false pretenses. Cromwell breaks Smeaton
-    in the dimly lit study through flattery, veiled threats, and Richard's looming
-    presence, forging a coerced confession. Post-execution, candlelight flickers as
-    Cromwell orders Wyatt's release, shares wine with fawning Wriothesley, fields
-    Rafe's doubts, and issues stark maxims like 'have the axe in your hand.' The intimate
-    space amplifies isolation, control, and the gilded peril of power.
-  location_type: Urban Townhouse Residence
-  parent_location_uuid: null
+  description: Cromwell occupies this former monastic complex in Austin Friars as
+    his London townhouse, a sprawling property that houses his studies (including
+    the ground-floor study where he confronts Norfolk, Gardiner, and Wriothesley),
+    sitting rooms, and private chambers amid political intrigue. The intimate ground-floor
+    study, meant for political strategy and private business, becomes a hostile arena
+    during confrontations with rivals, while the broader townhouse serves as a gilded
+    cage where Cromwell confronts isolation and the gathering shadows of his downfall.
+    Candlelight flickers across confined walls, casting shadows that amplify tension—whether
+    in the study during accusations of murder and lowborn origins, or in the broader
+    residence during urgent interruptions like Gregory’s news of Anne of Cleves's
+    failure. The space echoes Cromwell’s rise from low origins and the fragility of
+    his power, with distant barking from Bella and rising commotions outside shattering
+    solitude.
+  location_type: Historic Townhouse Complex
+  parent_location_uuid: ger_location_2a9631638467
   season_appearances:
-  - 1
+  - 2
   local_uuids:
-    1: location_b68a8c142ada
-  first_appearance_season: 1
-  tier: asteroid
-  episode_count: 0
-- fabula_uuid: ger_location_e3c714fa027e
-  global_id: ger_location_e3c714fa027e
-  canonical_name: Austin Friars Back Corridor (Servants’ Passageway)
-  description: A **narrow, candlelit servants’ corridor** within Austin Friars townhouse,
-    used as a **transitional space** for rushing servants carrying platters of eels
-    toward the Great Hall during Cromwell’s diplomatic supper with Chapuys.
-  location_type: Townhouse Service Corridor
-  parent_location_uuid: null
-  season_appearances:
-  - 1
-  local_uuids:
-    1: location_68d777ac9821
-  first_appearance_season: 1
-  tier: asteroid
-  episode_count: 1
+    1: location_c2664481bc17
+  first_appearance_season: 2
+  tier: planet
+  episode_count: 3
 - fabula_uuid: ger_location_7c0b03704467
   global_id: ger_location_7c0b03704467
   canonical_name: Austin Friars Chapel (Cromwell’s Townhouse)
@@ -213,29 +250,33 @@
     unburdened days colliding against present ambition, ruthless power, and looming
     doom. The chapel traps this raw confrontation, amplifying unresolved regret.
   location_type: Townhouse Chapel
-  parent_location_uuid: null
+  parent_location_uuid: ger_location_46b143c32ac0
   season_appearances:
-  - 1
+  - 2
   local_uuids:
-    1: location_5f21e479bc68
-  first_appearance_season: 1
-  tier: asteroid
-  episode_count: 1
-- fabula_uuid: ger_location_e31b0e29cfd3
-  global_id: ger_location_e31b0e29cfd3
-  canonical_name: Austin Friars Clerks' Corridor
-  description: Horizontal passage in Cromwell’s townhouse, serving as a link between
-    the clerks’ room and the Great Hall. Crowded with clerks working at desks, emphasizing
-    administrative intensity.
-  location_type: Townhouse Corridor
-  parent_location_uuid: null
+    1: location_91aa4ca5c4de
+  first_appearance_season: 2
+  tier: planet
+  episode_count: 2
+- fabula_uuid: ger_location_7c0b03704467
+  global_id: ger_location_7c0b03704467
+  canonical_name: Austin Friars Chapel (Cromwell’s Townhouse)
+  description: Hushed stillness and thick incense fill the Austin Friars chapel, a
+    sanctuary steeped in Cromwell's past. Daylight filters into this intimate space
+    during a flashback where spectral Jenneke from Antwerp appears before him. Cromwell
+    sits motionless as she urges escape to a simpler life of love and art, her tender
+    pleas thickening the air with longing. His silence rejects her, past dreams of
+    unburdened days colliding against present ambition, ruthless power, and looming
+    doom. The chapel traps this raw confrontation, amplifying unresolved regret.
+  location_type: Townhouse Chapel
+  parent_location_uuid: ger_location_2a9631638467
   season_appearances:
-  - 1
+  - 2
   local_uuids:
-    1: location_2a52ce2361d9
-  first_appearance_season: 1
-  tier: asteroid
-  episode_count: 1
+    1: location_91aa4ca5c4de
+  first_appearance_season: 2
+  tier: planet
+  episode_count: 2
 - fabula_uuid: ger_location_7b91908b73ec
   global_id: ger_location_7b91908b73ec
   canonical_name: Austin Friars Courtyard (Cromwell’s Townhouse)
@@ -243,7 +284,7 @@
     reception areas like the Main Hall. Used for casual household interactions and
     political tests in Episode 2.
   location_type: Townhouse Courtyard
-  parent_location_uuid: null
+  parent_location_uuid: ger_location_2e28b1a3a5e8
   season_appearances:
   - 1
   local_uuids:
@@ -257,7 +298,7 @@
   description: The communal and political heart of the Cromwell household, distinct
     from the private storeroom upstairs.
   location_type: Townhouse Sitting Room
-  parent_location_uuid: null
+  parent_location_uuid: ger_location_2e28b1a3a5e8
   season_appearances:
   - 1
   local_uuids:
@@ -275,7 +316,7 @@
     play (nephews) transitions to political intrigue (Chapuys’s arrival), contrasting
     with the indoor Main Hall’s feast.
   location_type: Townhouse Grounds
-  parent_location_uuid: null
+  parent_location_uuid: ger_location_2e28b1a3a5e8
   season_appearances:
   - 1
   local_uuids:
@@ -286,21 +327,55 @@
 - fabula_uuid: ger_location_46b143c32ac0
   global_id: ger_location_46b143c32ac0
   canonical_name: Austin Friars Main Hall (Cromwell’s Townhouse)
-  description: The central, candlelit gathering space of Cromwell’s Austin Friars
-    townhouse, where he hosts political talks, Christmas feasts, and family meals.
-    The hall’s enclosed yet socially open atmosphere reflects Cromwell’s public persona—a
-    stage for his political maneuvering and a site for his private moral reckonings,
-    such as solitary breakfasts where he stares at bloody chops, mirroring his orchestrated
-    violence.
+  description: |-
+    Thomas Cromwell's private residence at Austin Friars, featuring:
+          - **The Great Hall** (site of tense dinners with political threats against Princess Mary, delivered through Chapuys amid back corridors).
+          - **A sitting room with a projecting oriel window** (where Chapuys observes stormy nights, and Cromwell uses the tempest to amplify psychological pressure).
+          - **A sunlit garden** (hosting private daytime gatherings of Cromwell’s inner circle, where secrecy and familial tensions surface).
+          The estate’s **tower** (with a single illuminated window) and **courtyard** (beneath stormy skies) frame the narrative, with lightning flickering through staircase windows. The spaces collectively amplify isolation, political danger, and raw exchanges—whether in formal dinners, psychological duels, or shattered tranquility.
   location_type: Townhouse Main Hall
-  parent_location_uuid: null
+  parent_location_uuid: ger_location_12e8e027d6b7
   season_appearances:
   - 1
+  - 2
   local_uuids:
     1: location_2a823b1131f7
+    2: location_c0d49e03c2f4
   first_appearance_season: 1
   tier: planet
-  episode_count: 3
+  episode_count: 4
+- fabula_uuid: ger_location_2a9631638467
+  global_id: ger_location_2a9631638467
+  canonical_name: Austin Friars Precinct
+  description: A *public urban district* near Cromwell’s townhouse, serving as a neutral
+    ground for diplomatic and political confrontations (e.g., between Cromwell and
+    Chapuys). Distinct from the townhouse’s interior spaces (e.g., courtyards, halls)
+    and encompassing sub-locations like Chapuys’ garden.
+  location_type: Urban Precinct
+  parent_location_uuid: null
+  season_appearances:
+  - 2
+  local_uuids:
+    1: location_f478b628f54a
+  first_appearance_season: 2
+  tier: asteroid
+  episode_count: 1
+- fabula_uuid: ger_location_b321e1136411
+  global_id: ger_location_b321e1136411
+  canonical_name: Austin Friars Private Gardens and Shaded Tunnel
+  description: Outdoor garden and tunnel complex within Austin Friars townhouse, distinct
+    from the indoor chapel. Serves as a space for raw emotional exposure, guilt, and
+    contrasts between light/shadow, ease, and turmoil. Features clipped greenery,
+    winter sunlight, and interactions with Henry VIII and Dorothea.
+  location_type: Private Townhouse Gardens
+  parent_location_uuid: ger_location_10dfd3bf3040
+  season_appearances:
+  - 2
+  local_uuids:
+    1: location_d605d32be263
+  first_appearance_season: 2
+  tier: asteroid
+  episode_count: 1
 - fabula_uuid: ger_location_3e650fb40774
   global_id: ger_location_3e650fb40774
   canonical_name: Austin Friars Private Storeroom (Cromwell’s Townhouse)
@@ -311,27 +386,11 @@
     private bedchamber, creating a direct auditory link between his personal space
     and the hidden horrors below.
   location_type: Private Storeroom
-  parent_location_uuid: null
+  parent_location_uuid: ger_location_12e8e027d6b7
   season_appearances:
   - 1
   local_uuids:
     1: location_4e18cf2c3781
-  first_appearance_season: 1
-  tier: planet
-  episode_count: 2
-- fabula_uuid: ger_location_3dc1ec3a3f9e
-  global_id: ger_location_3dc1ec3a3f9e
-  canonical_name: Austin Friars Sitting Room (Cromwell’s Townhouse)
-  description: A **downstairs communal space** within Cromwell’s Austin Friars townhouse,
-    distinguished by its **intimate, emotionally charged atmosphere**—where Gregory
-    Cromwell processes his father’s execution in isolation, and where Bess offers
-    hollow comforts against the backdrop of public grief.
-  location_type: Townhouse Sitting Room
-  parent_location_uuid: null
-  season_appearances:
-  - 1
-  local_uuids:
-    1: location_efe63d553870
   first_appearance_season: 1
   tier: planet
   episode_count: 2
@@ -343,38 +402,63 @@
     to the **lower public halls**. Serves as a liminal space for urgent movement,
     brief encounters, and exposure of Cromwell’s political isolation, distinct from
     the enclosed bedrooms it links.
-  location_type: Townhouse Tower Staircase
-  parent_location_uuid: null
+  location_type: Townhouse Staircase
+  parent_location_uuid: ger_location_2e28b1a3a5e8
   season_appearances:
   - 1
-  - 1
   local_uuids:
-    1: location_776024e38013
-    2: location_fad413889430
+    1: location_fad413889430
   first_appearance_season: 1
-  tier: anchor
-  episode_count: 5
+  tier: planet
+  episode_count: 4
 - fabula_uuid: ger_location_1279ac154ea4
   global_id: ger_location_1279ac154ea4
   canonical_name: Austin Friars Study (Cromwell's Private Study)
-  description: Cromwell’s private study in Austin Friars townhouse, a dimly lit space
-    with firelight and candles casting glows across a heavy desk cluttered with counting
-    boards, boxes, and items like a velvet cap. The room holds paintings, books, lutes,
-    and a fine mirror, serving as a private refuge for Cromwell, where he paces, sits,
-    or handles Wolsey’s turquoise ring and signet. Gregory huddles by the fireplace,
-    and the intimate space—stripped of Christmas decorations—amplifies tension during
-    father-son exchanges, barked orders to Richard and Rafe, and Cavendish’s tearful
-    raid account. The study also hosts tense talks with Johane on fear, lost wives,
-    unmet desires, and vulnerability clashing with ambition’s isolation.
+  description: A private study within Thomas Cromwell's Austin Friars townhouse, serving
+    as a key location for pivotal moments in his political and personal life. This
+    space is characterized by its daylight-filled atmosphere and its role in both
+    Cromwell's early interactions with Wolsey and his later introspective moments.
+    The study features notable elements such as a tapestry of King Solomon and Queen
+    Sheba (seen in Cromwell's first meeting with Wolsey) and later becomes a space
+    where Cromwell reflects on his rise, guilt, and moral compromises while compulsively
+    twisting Wolsey's signet ring. The room's function evolves from a site of mentor-protégé
+    tension to one of solitude and reckoning, reflecting Cromwell's transformation
+    from a lowly blacksmith's son to a powerful political figure.
   location_type: Townhouse Study
-  parent_location_uuid: null
+  parent_location_uuid: ger_location_2e28b1a3a5e8
   season_appearances:
   - 1
+  - 2
   local_uuids:
     1: location_83ea86e5606d
+    2: location_7e3182789010
   first_appearance_season: 1
   tier: planet
-  episode_count: 2
+  episode_count: 4
+- fabula_uuid: ger_location_1279ac154ea4
+  global_id: ger_location_1279ac154ea4
+  canonical_name: Austin Friars Study (Cromwell's Private Study)
+  description: A private study within Thomas Cromwell's Austin Friars townhouse, serving
+    as a key location for pivotal moments in his political and personal life. This
+    space is characterized by its daylight-filled atmosphere and its role in both
+    Cromwell's early interactions with Wolsey and his later introspective moments.
+    The study features notable elements such as a tapestry of King Solomon and Queen
+    Sheba (seen in Cromwell's first meeting with Wolsey) and later becomes a space
+    where Cromwell reflects on his rise, guilt, and moral compromises while compulsively
+    twisting Wolsey's signet ring. The room's function evolves from a site of mentor-protégé
+    tension to one of solitude and reckoning, reflecting Cromwell's transformation
+    from a lowly blacksmith's son to a powerful political figure.
+  location_type: Townhouse Study
+  parent_location_uuid: ger_location_46b143c32ac0
+  season_appearances:
+  - 1
+  - 2
+  local_uuids:
+    1: location_83ea86e5606d
+    2: location_7e3182789010
+  first_appearance_season: 1
+  tier: planet
+  episode_count: 4
 - fabula_uuid: ger_location_450e00753ca7
   global_id: ger_location_450e00753ca7
   canonical_name: Austin Friars Study (Cromwell’s Townhouse)
@@ -386,7 +470,7 @@
     The room's enclosure turns voluntary admissions into weapons, marking the start
     of Anne's downfall amid veiled promises of violence.
   location_type: Townhouse Study (Private Interrogation Space)
-  parent_location_uuid: null
+  parent_location_uuid: ger_location_12e8e027d6b7
   season_appearances:
   - 1
   local_uuids:
@@ -403,7 +487,7 @@
     and the outside world, appearing in a single scene where Cromwell watches Wriothesley
     depart and Rafe warns of exposure.
   location_type: Townhouse Study Window
-  parent_location_uuid: null
+  parent_location_uuid: ger_location_12e8e027d6b7
   season_appearances:
   - 1
   local_uuids:
@@ -411,23 +495,6 @@
   first_appearance_season: 1
   tier: asteroid
   episode_count: 1
-- fabula_uuid: ger_location_60d0e74a2901
-  global_id: ger_location_60d0e74a2901
-  canonical_name: Austin Friars Tower Oriel Window (Wolsey’s Spectral Threshold)
-  description: Projecting oriel window in Cromwell’s Austin Friars tower, serving
-    as a liminal space where Wolsey’s ghost materializes during storms and lightning,
-    symbolizing external threats, guilt, and supernatural warnings. Unlike the enclosed
-    study, this window overlooks the courtyard and grounds, framing scenes of political
-    betrayal and illusory solitude.
-  location_type: Townhouse Tower Window
-  parent_location_uuid: null
-  season_appearances:
-  - 1
-  local_uuids:
-    1: location_777308248b35
-  first_appearance_season: 1
-  tier: planet
-  episode_count: 2
 - fabula_uuid: ger_location_12e8e027d6b7
   global_id: ger_location_12e8e027d6b7
   canonical_name: Austin Friars Townhouse (Cromwell’s Political and Residential Headquarters)
@@ -446,44 +513,56 @@
   local_uuids:
     1: location_b68a8c142ada
   first_appearance_season: 1
-  tier: anchor
-  episode_count: 5
-- fabula_uuid: ger_location_8dc487adc149
-  global_id: ger_location_8dc487adc149
-  canonical_name: Austin Friars Townhouse Study (Cromwell’s Private Study)
-  description: "\n    Cromwell’s primary private study at the Austin Friars townhouse,\
-    \ a space of introspection and emotional reckoning. The study contains **Wolsey’s\
-    \ Corner**, a now-barren nook where his mentor Cardinal Wolsey once worked, symbolizing\
-    \ the fragility of power and the absence of lost mentors. After hollow triumphs\
-    \ (e.g., elevating Rafe and Wriothesley), Cromwell retreats here to confront isolation,\
-    \ where titles and ambition feel empty amid the quiet. The space sharpens his\
-    \ regrets over severed connections, contrasting with busier political environments.\
-    \ Shadows and silence dominate, emphasizing the void left by Wolsey’s death and\
-    \ the weight of Cromwell’s own emotional toll.\n  "
-  location_type: Townhouse Study Window
-  parent_location_uuid: null
-  season_appearances:
-  - 1
-  local_uuids:
-    1: location_0be591f471fa
-  first_appearance_season: 1
-  tier: asteroid
-  episode_count: 0
-- fabula_uuid: ger_location_593feab770c5
-  global_id: ger_location_593feab770c5
-  canonical_name: Bell Tower Staircase, Tower of London
-  description: A steep exterior stone staircase connecting the Bell Tower to the inner
-    ward, used for character transitions and emphasizing tension through its exposed,
-    wind-swept design. Distinct from execution sites like the scaffold.
-  location_type: Prison Tower Staircase
-  parent_location_uuid: null
-  season_appearances:
-  - 1
-  local_uuids:
-    1: location_05d9d3258055
-  first_appearance_season: 1
   tier: planet
-  episode_count: 2
+  episode_count: 3
+- fabula_uuid: ger_location_6c7290a355a3
+  global_id: ger_location_6c7290a355a3
+  canonical_name: Austin Friars Townhouse Courtyard/Entrance
+  description: A *confined, private threshold space* within Austin Friars townhouse,
+    marking the transition between exterior and interior. Serves as a site for urgent,
+    intimate interactions (e.g., Cromwell’s dire news, Rafe’s document handoff) before
+    characters proceed to the Great Hall or other interior spaces.
+  location_type: Townhouse Courtyard Entrance
+  parent_location_uuid: ger_location_10dfd3bf3040
+  season_appearances:
+  - 2
+  local_uuids:
+    1: location_fade0befab7d
+  first_appearance_season: 2
+  tier: planet
+  episode_count: 3
+- fabula_uuid: ger_location_6c7290a355a3
+  global_id: ger_location_6c7290a355a3
+  canonical_name: Austin Friars Townhouse Courtyard/Entrance
+  description: A *confined, private threshold space* within Austin Friars townhouse,
+    marking the transition between exterior and interior. Serves as a site for urgent,
+    intimate interactions (e.g., Cromwell’s dire news, Rafe’s document handoff) before
+    characters proceed to the Great Hall or other interior spaces.
+  location_type: Townhouse Courtyard Entrance
+  parent_location_uuid: ger_location_46b143c32ac0
+  season_appearances:
+  - 2
+  local_uuids:
+    1: location_fade0befab7d
+  first_appearance_season: 2
+  tier: planet
+  episode_count: 3
+- fabula_uuid: ger_location_b7e40067ffd4
+  global_id: ger_location_b7e40067ffd4
+  canonical_name: Base Court, Hampton Court Palace
+  description: Central ceremonial courtyard at Hampton Court Palace, historically
+    used for royal processions, public displays, and informal gatherings. Distinct
+    from other courtyards (e.g., Clock Court) by its lack of a palace clock and its
+    focus on communal, public events rather than private or introspective moments.
+  location_type: Royal Palace Outer Courtyard
+  parent_location_uuid: ger_location_1edd5f69abb2
+  season_appearances:
+  - 2
+  local_uuids:
+    1: location_7aa78bac641d
+  first_appearance_season: 2
+  tier: planet
+  episode_count: 4
 - fabula_uuid: ger_location_a66e0083549f
   global_id: ger_location_a66e0083549f
   canonical_name: Bishop’s Waltham
@@ -603,7 +682,7 @@
     for Richard and Rafe’s whispered political discussions, with Cromwell occasionally
     passing by on the adjacent staircase.
   location_type: Townhouse Bedroom
-  parent_location_uuid: null
+  parent_location_uuid: ger_location_2e28b1a3a5e8
   season_appearances:
   - 1
   local_uuids:
@@ -626,26 +705,6 @@
   - 1
   local_uuids:
     1: location_3e9b0c8bcc9f
-  first_appearance_season: 1
-  tier: asteroid
-  episode_count: 0
-- fabula_uuid: ger_location_88921df431e9
-  global_id: ger_location_88921df431e9
-  canonical_name: Bull-Baiting Courtyard at Rochester
-  description: Crowds pack the open Rochester courtyard for a brutal bull-baiting
-    spectacle, where dogs savage a chained bull amid roars and dust. Anne of Cleves
-    fixates on the chaos, blind to Henry VIII's masked approach through the throng.
-    The clamor drowns diplomatic signals, turning rowdy entertainment into the unwitting
-    stage for royal revulsion and Cromwell's looming downfall. Harsh daylight exposes
-    every flinch in this public arena of distraction.
-  location_type: Courtyard Arena
-  parent_location_uuid: null
-  season_appearances:
-  - 1
-  - 1
-  local_uuids:
-    1: location_7bd5bd0ee8e5
-    2: location_1fc0597cf0f6
   first_appearance_season: 1
   tier: asteroid
   episode_count: 0
@@ -682,7 +741,7 @@
     them from the court's clamor and stares, turning diplomacy into personal risk
     amid Henry's distant jealousy.
   location_type: Castle Window Seat
-  parent_location_uuid: null
+  parent_location_uuid: ger_location_edb548f57e30
   season_appearances:
   - 1
   local_uuids:
@@ -792,7 +851,7 @@
     and guards, turning pilgrimage into political theater. Stone arches and chants
     await, where commoners cheer the king and bolster his fracturing authority.
   location_type: Cathedral Exterior Precincts
-  parent_location_uuid: null
+  parent_location_uuid: ger_location_469126670ce4
   season_appearances:
   - 1
   - 1
@@ -809,7 +868,7 @@
     window of Elizabeth of York, used as a symbolic setting for Cromwell's rationalist
     arguments against Elizabeth Barton's prophecies.
   location_type: Cathedral
-  parent_location_uuid: null
+  parent_location_uuid: ger_location_469126670ce4
   season_appearances:
   - 1
   local_uuids:
@@ -817,6 +876,22 @@
   first_appearance_season: 1
   tier: asteroid
   episode_count: 0
+- fabula_uuid: ger_location_7502912c779d
+  global_id: ger_location_7502912c779d
+  canonical_name: Castle Battlements
+  description: A **narrative-specific micro-location** within an unnamed castle, serving
+    as the setting for Richard Cromwell's emotional breakdown in *Wolf Hall* S02E06.
+    Distinct from broader castle entities due to its **architectural specificity (battlements)**
+    and **tied narrative function (grief scene)**.
+  location_type: Castle Battlements
+  parent_location_uuid: null
+  season_appearances:
+  - 2
+  local_uuids:
+    1: location_db90163cb791
+  first_appearance_season: 2
+  tier: asteroid
+  episode_count: 1
 - fabula_uuid: ger_location_e5afe4177673
   global_id: ger_location_e5afe4177673
   canonical_name: Cawood Castle
@@ -831,59 +906,6 @@
   - 1
   local_uuids:
     1: location_a8582a761cf7
-  first_appearance_season: 1
-  tier: asteroid
-  episode_count: 1
-- fabula_uuid: ger_location_62702a975869
-  global_id: ger_location_62702a975869
-  canonical_name: Chairs by the Fire (Austin Friars)
-  description: In a storm-lit tower room at Austin Friars, Cromwell sinks into his
-    chair by the crackling fire after offering Chapuys strawberries. The flames throw
-    warm light across the space, cutting through the evening chill and thunder outside.
-    Chapuys pulls up another chair nearby, drawn into tense talk of Princess Mary's
-    fate. The fire anchors their wary exchange, its heat a stark counterpoint to threats
-    of death and fragile pacts over wine and submission letters.
-  location_type: Residential Fireside Nook
-  parent_location_uuid: null
-  season_appearances:
-  - 1
-  local_uuids:
-    1: location_e4db27c23cbe
-  first_appearance_season: 1
-  tier: asteroid
-  episode_count: 1
-- fabula_uuid: ger_location_57f79ba4606a
-  global_id: ger_location_57f79ba4606a
-  canonical_name: Chancel During Evensong
-  description: Candlelight flickers across stone walls and wooden stalls as the court
-    gathers in hushed rows for Evensong, chants rising in solemn cadence. Thomas Cromwell
-    scans the assembly, spots Edward Seymour amid the congregation, then faces Eustace
-    Chapuys' interception. The ambassador delivers urgent news of Don Diego’s arrival,
-    turning sacred chants into cover for political whispers. Tension simmers beneath
-    the service's reflective calm, sacred space doubling as arena for courtly maneuvers.
-  location_type: Chapel Chancel
-  parent_location_uuid: null
-  season_appearances:
-  - 1
-  local_uuids:
-    1: location_f4c95f8d6be6
-  first_appearance_season: 1
-  tier: asteroid
-  episode_count: 1
-- fabula_uuid: ger_location_d4fc10728e74
-  global_id: ger_location_d4fc10728e74
-  canonical_name: Chapel, Tower of London
-  description: This nearby chapel in the Tower of London serves as Anne Boleyn's final
-    resting place, her remains a haunting reminder of Cromwell's role in her execution.
-    From his suffocating cell at night, Cromwell senses its stone silence amplifying
-    the cost of ambition. Proximity turns the space into a spectral witness, echoes
-    of Tudor beheadings sharpening dread and regret in the fortress's grim confines.
-  location_type: Fortress Chapel
-  parent_location_uuid: null
-  season_appearances:
-  - 1
-  local_uuids:
-    1: location_9ea70f0717ef
   first_appearance_season: 1
   tier: asteroid
   episode_count: 1
@@ -906,6 +928,25 @@
   first_appearance_season: 1
   tier: planet
   episode_count: 2
+- fabula_uuid: ger_location_fca00b12d914
+  global_id: ger_location_fca00b12d914
+  canonical_name: Chapuys’ Garden
+  description: Sunlight dapples a small, private garden in the Austin Friars district
+    where Eustace Chapuys sits reading under a tree. Thomas Cromwell bursts in, his
+    boots crunching gravel as he confronts the ambassador over rumors of marriage
+    to Princess Mary. The enclosed green space traps their voices, turning natural
+    seclusion into a pressure cooker of accusations, feigned innocence, and veiled
+    threats. Tension mounts in the open air, exposing fragile alliances amid court
+    intrigue.
+  location_type: Private Ambassadorial Garden
+  parent_location_uuid: null
+  season_appearances:
+  - 2
+  local_uuids:
+    1: location_b75d148699f7
+  first_appearance_season: 2
+  tier: asteroid
+  episode_count: 1
 - fabula_uuid: ger_location_8e1f2ba06a7a
   global_id: ger_location_8e1f2ba06a7a
   canonical_name: Chertsey
@@ -944,28 +985,24 @@
 - fabula_uuid: ger_location_f14823120cdd
   global_id: ger_location_f14823120cdd
   canonical_name: Chester Place
-  description: A grand, opulent gallery at Chester Place serving multiple narrative
-    functions across *The Mirror and the Light*. In one scene, Cromwell directs servants
-    preparing seating and glasses for a political gathering, where tension crackles
-    as he orchestrates Mary's presentation to Henry and Anne (linked to the adjacent
-    Grand Chamber). In another, Henry leads the royal family and court into the gallery
-    after their reconciliation, where the space offers seclusion for processing the
-    fragile truce between Mary and Jane under Henry's gaze. The gallery's length and
-    polished floors amplify both political maneuvering and intimate courtly dynamics,
-    with shadows and light reflecting the shifting alliances of the Tudor court.
-  location_type: London Aristocratic Residence
-  parent_location_uuid: null
+  description: 'The Seymours'' London townhouse at Chester Place, featuring two key
+    interconnected spaces: the **Grand Chamber** (public celebration hall) and the
+    **Long Gallery** (private corridor for confidential exchanges). The Grand Chamber
+    hosts crowded courtly gatherings (e.g., the celebration of Jane Seymour''s newborn
+    daughter with Henry VIII as guest of honor), while the Long Gallery serves as
+    a secluded space for tense political confrontations (e.g., Cromwell''s private
+    clash with Lady Rochford). Both spaces reflect the duality of Tudor court life:
+    public splendor masking private maneuvering, with the Long Gallery''s isolation
+    amplifying its role as a stage for whispered threats and calculated risks.'
+  location_type: Townhouse Grand Reception Chamber
+  parent_location_uuid: ger_location_8a3a15306cc9
   season_appearances:
-  - 1
-  - 1
-  - 1
-  - 1
+  - 2
+  - 2
   local_uuids:
-    1: location_37d3f0857fa1
-    2: location_f428744e03d6
-    3: location_006470cc792e
-    4: location_027e4f30c906
-  first_appearance_season: 1
+    1: location_142a5c29554f
+    2: location_3fe85379e407
+  first_appearance_season: 2
   tier: planet
   episode_count: 2
 - fabula_uuid: ger_location_6b3c6e01ab8d
@@ -983,19 +1020,50 @@
   first_appearance_season: 1
   tier: asteroid
   episode_count: 1
-- fabula_uuid: ger_location_439ecd4ba354
-  global_id: ger_location_439ecd4ba354
-  canonical_name: Cloister Corridor, Hampton Court Palace
-  description: A narrow, dimly lit cloister at Hampton Court Palace, distinct from
-    the daylight-filled cloister at Shaftesbury Convent. Serves as a hidden space
-    for secretive political discussions rather than a formal transition area.
-  location_type: Palace Cloister Corridor
-  parent_location_uuid: null
+- fabula_uuid: ger_location_f2b447071e68
+  global_id: ger_location_f2b447071e68
+  canonical_name: Clerks’ Rooms (Austin Friars)
+  description: Administrative sub-location within the Austin Friars townhouse, characterized
+    by bureaucratic activity, transitions between public/private spaces, and a buffer
+    zone between Cromwell’s study and the outside world.
+  location_type: Townhouse Administrative Rooms
+  parent_location_uuid: ger_location_10dfd3bf3040
   season_appearances:
-  - 1
+  - 2
   local_uuids:
-    1: location_71df8817f5ad
-  first_appearance_season: 1
+    1: location_7bd7470fe11e
+  first_appearance_season: 2
+  tier: planet
+  episode_count: 3
+- fabula_uuid: ger_location_f2b447071e68
+  global_id: ger_location_f2b447071e68
+  canonical_name: Clerks’ Rooms (Austin Friars)
+  description: Administrative sub-location within the Austin Friars townhouse, characterized
+    by bureaucratic activity, transitions between public/private spaces, and a buffer
+    zone between Cromwell’s study and the outside world.
+  location_type: Townhouse Administrative Rooms
+  parent_location_uuid: ger_location_cce9b7446861
+  season_appearances:
+  - 2
+  local_uuids:
+    1: location_7bd7470fe11e
+  first_appearance_season: 2
+  tier: planet
+  episode_count: 3
+- fabula_uuid: ger_location_cf89f6fc20cb
+  global_id: ger_location_cf89f6fc20cb
+  canonical_name: Clock Court, Hampton Court Palace
+  description: Stone-paved courtyard at Hampton Court Palace named for its proximity
+    to the palace clock. Characterized by wind, a ticking clock, and a narrative focus
+    on Thomas Cromwell’s isolation and political tension. Distinct from Base Court
+    by its atmospheric and symbolic role in the story.
+  location_type: Royal Palace Courtyard
+  parent_location_uuid: ger_location_1edd5f69abb2
+  season_appearances:
+  - 2
+  local_uuids:
+    1: location_f2931d8cf93d
+  first_appearance_season: 2
   tier: asteroid
   episode_count: 1
 - fabula_uuid: ger_location_3b46094efe62
@@ -1014,8 +1082,8 @@
   local_uuids:
     1: location_16838637be30
   first_appearance_season: 1
-  tier: planet
-  episode_count: 2
+  tier: asteroid
+  episode_count: 1
 - fabula_uuid: ger_location_233b94a0437e
   global_id: ger_location_233b94a0437e
   canonical_name: Convent near Paul’s
@@ -1049,22 +1117,6 @@
   first_appearance_season: 1
   tier: asteroid
   episode_count: 1
-- fabula_uuid: ger_location_d352aab2f2e4
-  global_id: ger_location_d352aab2f2e4
-  canonical_name: Corridor Outside Cromwell's Cell (Tower of London)
-  description: A narrow, echoing corridor adjacent to Cromwell's final cell in the
-    Tower of London, where the executioner's footsteps mark the transition from imprisonment
-    to death. Distinct from the interrogation chamber, this space is a liminal zone
-    of finality, not judgment.
-  location_type: Prison Execution Corridor
-  parent_location_uuid: null
-  season_appearances:
-  - 1
-  local_uuids:
-    1: location_79a98389352d
-  first_appearance_season: 1
-  tier: asteroid
-  episode_count: 0
 - fabula_uuid: ger_location_d9dd4a4465b2
   global_id: ger_location_d9dd4a4465b2
   canonical_name: Corridor Outside Elizabeth Barton’s Interrogation Room (Hampton
@@ -1091,7 +1143,7 @@
     vulnerability for Cromwell, distinct from other corridors by its nighttime atmosphere
     and lack of other characters.
   location_type: Confined Palace Corridor
-  parent_location_uuid: null
+  parent_location_uuid: ger_location_d9dd4a4465b2
   season_appearances:
   - 1
   local_uuids:
@@ -1114,28 +1166,11 @@
     The corridor's daylight setting and proximity to the interrogation chamber make
     it a critical psychological space in Cromwell's Anne Boleyn campaign.
   location_type: Interrogation Precinct Corridor
-  parent_location_uuid: null
+  parent_location_uuid: ger_location_d9dd4a4465b2
   season_appearances:
   - 1
   local_uuids:
     1: location_29bc1d87a9a1
-  first_appearance_season: 1
-  tier: asteroid
-  episode_count: 0
-- fabula_uuid: ger_location_d3a40013dc90
-  global_id: ger_location_d3a40013dc90
-  canonical_name: Corridor Outside Mary’s Bedchamber (Hampton Court)
-  description: Cromwell trails Lady Rochford through this narrow, shadowed corridor
-    at Hampton Court Palace under night cover. Stone confines press close, darkness
-    cloaks their steps toward Mary’s bedchamber door. The tight space sharpens whispers
-    of conspiracy, builds coiled tension for the intimate clash ahead, turning passage
-    into prelude of veiled threats.
-  location_type: Palace Bedchamber Corridor
-  parent_location_uuid: null
-  season_appearances:
-  - 1
-  local_uuids:
-    1: location_d84597b83633
   first_appearance_season: 1
   tier: asteroid
   episode_count: 0
@@ -1167,68 +1202,88 @@
     secrets and the finality of containment, bridging interrogation's intensity to
     custody's grip.
   location_type: Townhouse Corridor
-  parent_location_uuid: null
+  parent_location_uuid: ger_location_46b143c32ac0
   season_appearances:
   - 1
+  - 2
   local_uuids:
     1: location_2fc90f9849b1
-  first_appearance_season: 1
-  tier: asteroid
-  episode_count: 0
-- fabula_uuid: ger_location_62bfaf1f1a65
-  global_id: ger_location_62bfaf1f1a65
-  canonical_name: Corridor to the Council Chamber, Hampton Court Palace
-  description: A transitional corridor leading *directly* to the Council Chamber,
-    distinct from the Privy Chamber antechamber. This space is characterized by its
-    role in facilitating the shift from private political strategy to public debate,
-    as seen in the Anne of Cleves marriage negotiations.
-  location_type: Palace Corridor
-  parent_location_uuid: null
-  season_appearances:
-  - 1
-  local_uuids:
-    1: location_d04a6e6ac50b
+    2: location_e72b4f7b004b
   first_appearance_season: 1
   tier: asteroid
   episode_count: 1
-- fabula_uuid: ger_location_683e20ad394b
-  global_id: ger_location_683e20ad394b
-  canonical_name: Council Chamber Door
-  description: William Kingston escorts Thomas Cromwell through this door immediately
-    after his arrest in the Council Chamber. Cromwell's legs tremble as the weight
-    of his fall hits, his chain of office already stripped by enemies like Gardiner
-    and Fitzwilliam. Gardiner delivers a final taunt—'You are no more than God made
-    you'—as the door marks Cromwell's passage from fury-filled defiance to Tower imprisonment.
-    Tension peaks in this brief threshold, where power evaporates amid echoing footsteps
-    and crushed ambition.
-  location_type: Council Chamber Threshold
-  parent_location_uuid: null
+- fabula_uuid: ger_location_da7bb9e8096e
+  global_id: ger_location_da7bb9e8096e
+  canonical_name: Corridor Outside the Study (Austin Friars Townhouse)
+  description: Narrow corridor adjacent to the study door in Cromwell's Austin Friars
+    townhouse holds the charged aftermath of Mark Smeaton's interrogation. Rafe Sadler
+    escorts the trembling musician down the nearby stairs to confinement below. Cromwell
+    and Richard stand at the threshold, eyes tracking the pair's descent through lengthening
+    evening shadows. Footsteps echo off wooden panels, the air heavy with coerced
+    secrets and the finality of containment, bridging interrogation's intensity to
+    custody's grip.
+  location_type: Townhouse Corridor
+  parent_location_uuid: ger_location_12e8e027d6b7
   season_appearances:
   - 1
+  - 2
   local_uuids:
-    1: location_4a2509a975df
+    1: location_2fc90f9849b1
+    2: location_e72b4f7b004b
   first_appearance_season: 1
+  tier: asteroid
+  episode_count: 1
+- fabula_uuid: ger_location_597d696eba4c
+  global_id: ger_location_597d696eba4c
+  canonical_name: Corridor to Mary’s Bedchamber (Hampton Court Palace)
+  description: Narrow, dimly lit corridor leading to **Mary Tudor’s bedchamber**,
+    used for intimate political confrontations. Nighttime setting heightens secrecy
+    and personal stakes.
+  location_type: Palace Bedchamber Corridor
+  parent_location_uuid: ger_location_08a8a93772b3
+  season_appearances:
+  - 2
+  local_uuids:
+    1: location_c76dad7998b3
+  first_appearance_season: 2
+  tier: asteroid
+  episode_count: 1
+- fabula_uuid: ger_location_597d696eba4c
+  global_id: ger_location_597d696eba4c
+  canonical_name: Corridor to Mary’s Bedchamber (Hampton Court Palace)
+  description: Narrow, dimly lit corridor leading to **Mary Tudor’s bedchamber**,
+    used for intimate political confrontations. Nighttime setting heightens secrecy
+    and personal stakes.
+  location_type: Palace Bedchamber Corridor
+  parent_location_uuid: ger_location_1edd5f69abb2
+  season_appearances:
+  - 2
+  local_uuids:
+    1: location_c76dad7998b3
+  first_appearance_season: 2
   tier: asteroid
   episode_count: 1
 - fabula_uuid: ger_location_db36449055a7
   global_id: ger_location_db36449055a7
   canonical_name: Council Chamber, Hampton Court Palace
-  description: |-
-    A formal council chamber at Hampton Court Palace where pivotal scenes of political intrigue and power shifts unfold. Key events include:
-          1. **Cromwell's Arrest (Episode 5, Scene 5febd7d2c69e9de3):** Thomas Cromwell is violently overthrown by Gardiner, Fitzwilliam, and Kingston. The chamber becomes a site of betrayal and physical confrontation as Cromwell's chain of office is torn from his neck, and he is hauled toward the Tower.
-          2. **Anne of Cleves Portrait Reveal (Episode 5, Scenes aa8b22f56efe42da, e624db202070b509):** Henry VIII sits beneath the King's Canopy of State as Cromwell unveils Holbein's portrait of Anne of Cleves, marking a turning point in Cromwell's political fortunes.
-          3. **Rafe Sadler's Interception (Episode 6, Scene 9ab17dd24a49a7f3):** Rafe Sadler strides toward the chamber, where Richard Riche intercepts him with news of Cromwell's arrest, highlighting the chamber's role as a threshold of power and exclusion.
-
-          The chamber's dual role—both a site of **ceremonial council business** and **violent political upheaval**—reflects its centrality in the court's power dynamics. Its location at Hampton Court Palace is explicitly confirmed in the narrative.
-  location_type: Royal Council Chamber
-  parent_location_uuid: null
+  description: "\n  The **Council Chamber at Hampton Court Palace** is a grand, high-ceilinged\
+    \ hall where England’s political fate is debated and decided. Its ornate furnishings—including\
+    \ the **King’s Canopy of State**—underscore its role as the seat of royal authority,\
+    \ where courtiers, advisors, and the monarch convene for matters of governance.\
+    \ Yet beneath its ceremonial grandeur lies a volatile undercurrent: this is where\
+    \ alliances fracture, betrayals unfold, and power shifts violently. The chamber’s\
+    \ imposing presence and strategic location within Hampton Court Palace make it\
+    \ a microcosm of Tudor court politics—equal parts arena for diplomacy and stage\
+    \ for downfall.\n  "
+  location_type: Palace Council Chamber
+  parent_location_uuid: ger_location_1edd5f69abb2
   season_appearances:
-  - 1
+  - 2
   local_uuids:
-    1: location_a52b90acaab4
-  first_appearance_season: 1
-  tier: planet
-  episode_count: 2
+    1: location_08ae0511c231
+  first_appearance_season: 2
+  tier: asteroid
+  episode_count: 1
 - fabula_uuid: ger_location_eec3a2a97fe8
   global_id: ger_location_eec3a2a97fe8
   canonical_name: Court Theater Backstage (Post-Play)
@@ -1250,6 +1305,55 @@
   first_appearance_season: 1
   tier: asteroid
   episode_count: 1
+- fabula_uuid: ger_location_14b41f4cf3ef
+  global_id: ger_location_14b41f4cf3ef
+  canonical_name: Court of Augmentations Attic Rooms, Palace of Westminster
+  description: Cramped attic rooms in the Palace of Westminster form the Court of
+    Augmentations, where clerks scurry through dust and chaos with boxes of papers,
+    administering the dissolution of monasteries amid mice and squalor. Richard Riche
+    shoulders paperwork and gripes about the ironic grandeur of the name against the
+    grim reality. Thomas Cromwell dismisses the complaints bluntly, then lingers alone
+    at a grimy window overlooking the London skyline, turning a crucifix in his hand
+    during a quiet moment of reckoning.
+  location_type: Administrative Attic Chambers
+  parent_location_uuid: null
+  season_appearances:
+  - 2
+  local_uuids:
+    1: location_85a12e5606b7
+  first_appearance_season: 2
+  tier: asteroid
+  episode_count: 1
+- fabula_uuid: ger_location_d5d1d3a389cf
+  global_id: ger_location_d5d1d3a389cf
+  canonical_name: Courtyard, Hunsdon House
+  description: Part of the Hunsdon House estate, this courtyard is the setting for
+    Cromwell's political maneuvering with Mary Boleyn and his men. Distinct from other
+    courtyards in the series, such as those at Leicester Abbey.
+  location_type: Manor House Courtyard
+  parent_location_uuid: ger_location_08a8a93772b3
+  season_appearances:
+  - 2
+  local_uuids:
+    1: location_d161768cd21c
+  first_appearance_season: 2
+  tier: asteroid
+  episode_count: 1
+- fabula_uuid: ger_location_a3622a3a1027
+  global_id: ger_location_a3622a3a1027
+  canonical_name: Courtyard, Leicester Abbey
+  description: Open, sunlit courtyard within Leicester Abbey where Cardinal Wolsey
+    paces in despair during his exile, symbolizing his isolation and the collapse
+    of royal favor.
+  location_type: Abbey Courtyard
+  parent_location_uuid: ger_location_1de26f3ba596
+  season_appearances:
+  - 2
+  local_uuids:
+    1: location_1ebecf2db2b6
+  first_appearance_season: 2
+  tier: planet
+  episode_count: 2
 - fabula_uuid: ger_location_13efdaa3bbf1
   global_id: ger_location_13efdaa3bbf1
   canonical_name: Cromwell Bedchamber
@@ -1279,7 +1383,7 @@
     pageant serves as a recurring motif in Gregory's memories, representing both joy
     and the erosion of family unity.
   location_type: Parish Pageant Venue
-  parent_location_uuid: null
+  parent_location_uuid: ger_location_994e24c068e1
   season_appearances:
   - 1
   local_uuids:
@@ -1287,6 +1391,74 @@
   first_appearance_season: 1
   tier: asteroid
   episode_count: 0
+- fabula_uuid: ger_location_f5f9096aafe7
+  global_id: ger_location_f5f9096aafe7
+  canonical_name: Cromwell's Bedchamber, Royal Apartment (Tower of London)
+  description: A royal apartment within the Tower of London, historically associated
+    with high-ranking figures like Thomas Cromwell. This space serves as a **symbolic
+    and psychological prison**, reflecting Cromwell's guilt over Anne Boleyn's death
+    and foreshadowing his own execution. Unlike the harsh prison cells of the Tower,
+    this apartment retains elements of nobility, though its thick stone walls and
+    narrow windows amplify a sense of confinement.
+  location_type: Royal Apartment Bedroom
+  parent_location_uuid: ger_location_b807e4d73640
+  season_appearances:
+  - 2
+  local_uuids:
+    1: location_87e5376254b8
+  first_appearance_season: 2
+  tier: asteroid
+  episode_count: 1
+- fabula_uuid: ger_location_f5f9096aafe7
+  global_id: ger_location_f5f9096aafe7
+  canonical_name: Cromwell's Bedchamber, Royal Apartment (Tower of London)
+  description: A royal apartment within the Tower of London, historically associated
+    with high-ranking figures like Thomas Cromwell. This space serves as a **symbolic
+    and psychological prison**, reflecting Cromwell's guilt over Anne Boleyn's death
+    and foreshadowing his own execution. Unlike the harsh prison cells of the Tower,
+    this apartment retains elements of nobility, though its thick stone walls and
+    narrow windows amplify a sense of confinement.
+  location_type: Royal Apartment Bedroom
+  parent_location_uuid: ger_location_419aa40003df
+  season_appearances:
+  - 2
+  local_uuids:
+    1: location_87e5376254b8
+  first_appearance_season: 2
+  tier: asteroid
+  episode_count: 1
+- fabula_uuid: ger_location_d291ecd51074
+  global_id: ger_location_d291ecd51074
+  canonical_name: Cromwell's Bedroom (Austin Friars Townhouse)
+  description: A private, intimate bedroom in Cromwell’s Austin Friars townhouse,
+    where his **personal unraveling** and **paranoia** are most acute. Unlike the
+    study, this space is tied to Cromwell’s **physical and psychological vulnerability**,
+    including feverish hallucinations and moments of collapse.
+  location_type: Private Family Bedchamber
+  parent_location_uuid: ger_location_46b143c32ac0
+  season_appearances:
+  - 2
+  local_uuids:
+    1: location_052e33905ad9
+  first_appearance_season: 2
+  tier: planet
+  episode_count: 2
+- fabula_uuid: ger_location_d291ecd51074
+  global_id: ger_location_d291ecd51074
+  canonical_name: Cromwell's Bedroom (Austin Friars Townhouse)
+  description: A private, intimate bedroom in Cromwell’s Austin Friars townhouse,
+    where his **personal unraveling** and **paranoia** are most acute. Unlike the
+    study, this space is tied to Cromwell’s **physical and psychological vulnerability**,
+    including feverish hallucinations and moments of collapse.
+  location_type: Private Family Bedchamber
+  parent_location_uuid: ger_location_13efdaa3bbf1
+  season_appearances:
+  - 2
+  local_uuids:
+    1: location_052e33905ad9
+  first_appearance_season: 2
+  tier: planet
+  episode_count: 2
 - fabula_uuid: ger_location_51b6f03abce5
   global_id: ger_location_51b6f03abce5
   canonical_name: Cromwell's Private Bedchamber (Austin Friars Townhouse)
@@ -1296,88 +1468,79 @@
     in violence is most palpable. Unlike the study window, it is not a transitional
     or symbolic element but a fully realized location for intimate narrative beats.
   location_type: Private Townhouse Bedchamber
-  parent_location_uuid: null
+  parent_location_uuid: ger_location_12e8e027d6b7
   season_appearances:
   - 1
   local_uuids:
     1: location_e480e953b80c
   first_appearance_season: 1
-  tier: anchor
-  episode_count: 5
-- fabula_uuid: ger_location_3a6b1c4dbd6b
-  global_id: ger_location_3a6b1c4dbd6b
-  canonical_name: Cromwell's Private Chamber
-  description: Sunlight cuts through the window where Wolsey's ghost materializes,
-    its translucent form delivering sharp warnings about the orange tawny garment
-    Cromwell wears and the treachery of Wriothesley and Gardiner. Cromwell stands
-    alone at first, twisting his turquoise ring in deep thought, the room's quiet
-    shattered when Wriothesley bursts through the door with Princess Mary's letter.
-    He pockets the document, orders silence, and destroys the evidence in this tense
-    space of spectral counsel and desperate secrecy, where past mentors haunt present
-    perils.
-  location_type: Palace Private Chamber
-  parent_location_uuid: null
+  tier: planet
+  episode_count: 4
+- fabula_uuid: ger_location_51b6f03abce5
+  global_id: ger_location_51b6f03abce5
+  canonical_name: Cromwell's Private Bedchamber (Austin Friars Townhouse)
+  description: A secluded upstairs bedroom in Cromwell’s Austin Friars townhouse,
+    distinct from the study. This space is reserved for Cromwell’s private moments—illness,
+    dreams of his late wife Liz, and confrontations with Norfolk—where his moral complicity
+    in violence is most palpable. Unlike the study window, it is not a transitional
+    or symbolic element but a fully realized location for intimate narrative beats.
+  location_type: Private Townhouse Bedchamber
+  parent_location_uuid: ger_location_da7bb9e8096e
   season_appearances:
   - 1
-  - 1
   local_uuids:
-    1: location_b398a67613d5
-    2: location_e3ea44f1ef7d
+    1: location_e480e953b80c
   first_appearance_season: 1
   tier: planet
-  episode_count: 2
-- fabula_uuid: ger_location_0c0d17797273
-  global_id: ger_location_0c0d17797273
-  canonical_name: Cromwell's Tower of London Execution Cell
-  description: Micro-location within the Tower of London, specifically the prison
-    cell where Thomas Cromwell spends his final hours before execution. A character-specific
-    space tied exclusively to Cromwell's narrative arc, featuring his interrogations,
-    visions of Wolsey's ghost, and emotional reckoning. Physically contained within
-    the Tower of London fortress complex.
-  location_type: Prison Interrogation Cell
-  parent_location_uuid: null
-  season_appearances:
-  - 1
-  local_uuids:
-    1: location_5c891cd26f3e
-  first_appearance_season: 1
-  tier: asteroid
-  episode_count: 1
+  episode_count: 4
 - fabula_uuid: ger_location_a6e4f77a6163
   global_id: ger_location_a6e4f77a6163
   canonical_name: Cromwell’s Chambers (Greenwich)
-  description: |2-
-
-          A secluded study in Greenwich Palace where Thomas Cromwell processes Wolsey’s legacy and reflects on his moral conflict. The room is defined by its solitude, the presence of a **silver box containing Wolsey’s signet ring**, and the faint scrape of metal as Cromwell slides the ring onto his finger. This space also serves as the setting for supernatural warnings (e.g., Wolsey’s ghost in the *Private Chamber*) and political intrigue, though its primary function is as a place of **personal reckoning**.
-          **Key Features**:
-          - Located in **Greenwich Palace** (as implied by the target entity’s name).
-          - Appears in **Episode 2** (*The Mirror and the Light*) and involves interactions with **Thomas More, George Cavendish, and William Warham**.
-          - Thematic focus: **betrayal, succession, and solitude**, with a supernatural undertone (e.g., Wolsey’s lingering influence via the signet ring).
-          - Physically distinct from the *Private Chamber* (another location in the palace where Wolsey’s ghost appears).
+  description: Morning light spills into these intimate chambers where Cromwell tightens
+    armor laces around Gregory's legs and mixes tactical advice with excuses tied
+    to court crises. A desk scattered with ink pots and a Turkish dagger anchors later
+    talks on relics with Rafe; Richard's burst through the door with news of Henry
+    VIII's death topples ink, staining papers as Cromwell's hand trembles toward the
+    blade amid sudden chaos.
   location_type: Palace Private Chambers
-  parent_location_uuid: null
-  season_appearances:
-  - 1
-  - 1
-  local_uuids:
-    1: location_b44688c8a23c
-    2: location_9940cc816d1c
-  first_appearance_season: 1
-  tier: planet
-  episode_count: 2
-- fabula_uuid: ger_location_79e59d1a4bfa
-  global_id: ger_location_79e59d1a4bfa
-  canonical_name: Cromwell’s Execution Barge (River Thames)
-  description: A specific barge used for transporting prisoners to the Tower of London,
-    historically tied to Anne Boleyn’s execution. Its timbers and groaning sounds
-    create a tense, foreboding atmosphere as Cromwell reflects on his downfall.
-  location_type: Thames River Barge
-  parent_location_uuid: null
+  parent_location_uuid: ger_location_532461a030f3
   season_appearances:
   - 1
   local_uuids:
-    1: location_937dda84d8d6
+    1: location_9940cc816d1c
   first_appearance_season: 1
+  tier: asteroid
+  episode_count: 1
+- fabula_uuid: ger_location_153b0a846468
+  global_id: ger_location_153b0a846468
+  canonical_name: Cromwell’s New Study (Austin Friars)
+  description: A stripped-down, semi-public workspace in Cromwell’s Austin Friars
+    townhouse, symbolizing political collapse and moral reckoning. Unlike the private
+    bedroom, this space is associated with Wriothesley and the aftermath of Cromwell’s
+    downfall, emphasizing emptiness and betrayal.
+  location_type: Townhouse Study
+  parent_location_uuid: ger_location_2e28b1a3a5e8
+  season_appearances:
+  - 2
+  local_uuids:
+    1: location_84fcfe9f738d
+  first_appearance_season: 2
+  tier: asteroid
+  episode_count: 1
+- fabula_uuid: ger_location_153b0a846468
+  global_id: ger_location_153b0a846468
+  canonical_name: Cromwell’s New Study (Austin Friars)
+  description: A stripped-down, semi-public workspace in Cromwell’s Austin Friars
+    townhouse, symbolizing political collapse and moral reckoning. Unlike the private
+    bedroom, this space is associated with Wriothesley and the aftermath of Cromwell’s
+    downfall, emphasizing emptiness and betrayal.
+  location_type: Townhouse Study
+  parent_location_uuid: ger_location_46b143c32ac0
+  season_appearances:
+  - 2
+  local_uuids:
+    1: location_84fcfe9f738d
+  first_appearance_season: 2
   tier: asteroid
   episode_count: 1
 - fabula_uuid: ger_location_516d80efaf96
@@ -1387,7 +1550,7 @@
     reflection, artistic sittings (e.g., Holbein’s portrait), and private family/political
     interactions. Distinct from royal spaces like Greenwich Chapel.
   location_type: Townhouse Private Chamber
-  parent_location_uuid: null
+  parent_location_uuid: ger_location_da7bb9e8096e
   season_appearances:
   - 1
   local_uuids:
@@ -1454,22 +1617,38 @@
   first_appearance_season: 1
   tier: asteroid
   episode_count: 0
+- fabula_uuid: ger_location_9913b6989250
+  global_id: ger_location_9913b6989250
+  canonical_name: Doorway to Interior Chamber (Second Cloister, Shaftesbury Abbey)
+  description: A **narrative threshold** marking the boundary between the **Second
+    Cloister, Shaftesbury Abbey** and an unseen interior chamber. This doorway has
+    no independent narrative function and serves solely as a transitional sub-location
+    within the cloister's spatial hierarchy.
+  location_type: Abbey Cloister Doorway
+  parent_location_uuid: ger_location_73eba39b0d9a
+  season_appearances:
+  - 2
+  local_uuids:
+    1: location_ef7dc1617bfe
+  first_appearance_season: 2
+  tier: asteroid
+  episode_count: 1
 - fabula_uuid: ger_location_0396a0eb2d4b
   global_id: ger_location_0396a0eb2d4b
   canonical_name: Enfield
-  description: Cromwell eyes the rain and foresees cannons bogging down north of Enfield,
-    where wet fields and roads turn to clinging mud under relentless drizzle. Wheels
-    sink deep, soldiers strain to free artillery mired in the churn, slowing the push
-    against northern rebels. Gray skies press low over this stretch, a gritty test
-    of march logistics that pulls at the heart of his strategy amid the downpour's
-    grip.
-  location_type: Rural Town Approach
+  description: Cromwell gauges the downpour and predicts it will mire the cannons'
+    wagons in mud before they reach Enfield on the road north. Hooves sink into ruts,
+    wheels groan under weight, and soldiers battle slick paths flanked by sodden fields.
+    This town marks a vital waypoint in the campaign against rebels—delay here stalls
+    artillery, heightening the urgency of swift transport from London amid relentless
+    rain.
+  location_type: Historic English Town
   parent_location_uuid: null
   season_appearances:
-  - 1
+  - 2
   local_uuids:
-    1: location_247f5780fd7c
-  first_appearance_season: 1
+    1: location_72f154fcf82a
+  first_appearance_season: 2
   tier: asteroid
   episode_count: 0
 - fabula_uuid: ger_location_0dec7585f9fb
@@ -1491,43 +1670,26 @@
   first_appearance_season: 1
   tier: planet
   episode_count: 2
-- fabula_uuid: ger_location_daf4a8cc2ef3
-  global_id: ger_location_daf4a8cc2ef3
-  canonical_name: Entrance Hall (Austin Friars Townhouse)
-  description: Central entrance hall of Cromwell's Austin Friars townhouse marks the
-    threshold where household routine meets political intrusion. Servants and Gregory
-    wait at night as Cromwell descends from Johane's bedroom above, footsteps echoing
-    off walls while he relays Wyatt's arrest, shifting quiet domesticity to crisis.
-    Day brings Cromwell back pale and dazed from Henry's audience; Wriothesley and
-    Rafe approach him here before the household erupts in cheers over knighthoods
-    and council posts, masking his isolation with forced revelry.
-  location_type: Townhouse Entrance Hall
-  parent_location_uuid: null
-  season_appearances:
-  - 1
-  local_uuids:
-    1: location_8bb4a05aa900
-  first_appearance_season: 1
-  tier: asteroid
-  episode_count: 0
 - fabula_uuid: ger_location_547b6ed430aa
   global_id: ger_location_547b6ed430aa
   canonical_name: Entrance Hall/Dining Room, Hunsdon House
-  description: A private manor owned by the Shelton family, distinct from royal or
-    courtly spaces like Greenwich Palace. Central to the events of *The Mirror and
-    the Light* (Episode 1, Season 2), where Thomas Cromwell and the Dukes of Norfolk/Suffolk
-    clash over Princess Mary’s submission to Henry VIII.
-  location_type: Manor House Dining Room
-  parent_location_uuid: null
+  description: Cromwell passes through this entrance hall at Hunsdon House to reach
+    Mary's privy chamber. Cromwell, Norfolk, Suffolk, and Thomas Howard the Lesser
+    enter here earlier, met by Lady Shelton's sharp hostility. A torn tapestry bears
+    witness to Norfolk's rampage, his threats against Princess Mary aimed at blocking
+    her restoration. Cool daylight highlights high ceilings and paneled walls during
+    their tense exchange, where veiled accusations fly and Cromwell sizes up court
+    rivalries. The hall serves as a grand threshold to private spaces, echoing with
+    footsteps and political friction.
+  location_type: Manor House Entrance Hall
+  parent_location_uuid: ger_location_08a8a93772b3
   season_appearances:
-  - 1
-  - 1
+  - 2
   local_uuids:
-    1: location_7a0b330c1d0c
-    2: location_dbbc3fbda75c
-  first_appearance_season: 1
+    1: location_b679d7b0fcd9
+  first_appearance_season: 2
   tier: asteroid
-  episode_count: 1
+  episode_count: 0
 - fabula_uuid: ger_location_ba76fde51c0e
   global_id: ger_location_ba76fde51c0e
   canonical_name: Esher
@@ -1543,35 +1705,93 @@
     Wolsey''s penitential frenzy, while the broader manor captures the unraveling
     of power and personal grief amid Tudor intrigue.'
   location_type: Decaying Country Estate
-  parent_location_uuid: null
+  parent_location_uuid: ger_location_ba76fde51c0e
   season_appearances:
   - 1
   - 1
   - 1
   - 1
   - 1
+  - 2
   local_uuids:
     1: location_c7e1c16d6a6e
     2: location_dd328d633b9c
     3: location_ec1422f039ed
     4: location_afb3a06f58d3
     5: location_11f034574139
+    6: location_95b3a182140e
   first_appearance_season: 1
   tier: planet
-  episode_count: 2
+  episode_count: 3
+- fabula_uuid: ger_location_a4327c06ac95
+  global_id: ger_location_a4327c06ac95
+  canonical_name: Extensive Grounds Outside Cromwell’s New Study (Austin Friars)
+  description: The exterior grounds of Austin Friars townhouse, distinct from the
+    study’s interior window. This open space serves as the setting for Wriothesley’s
+    approach and Cromwell’s observation from afar, contrasting with the confined interior
+    of the study.
+  location_type: Townhouse Grounds
+  parent_location_uuid: ger_location_46b143c32ac0
+  season_appearances:
+  - 2
+  local_uuids:
+    1: location_e341e1aa83b3
+  first_appearance_season: 2
+  tier: asteroid
+  episode_count: 1
+- fabula_uuid: ger_location_a4327c06ac95
+  global_id: ger_location_a4327c06ac95
+  canonical_name: Extensive Grounds Outside Cromwell’s New Study (Austin Friars)
+  description: The exterior grounds of Austin Friars townhouse, distinct from the
+    study’s interior window. This open space serves as the setting for Wriothesley’s
+    approach and Cromwell’s observation from afar, contrasting with the confined interior
+    of the study.
+  location_type: Townhouse Grounds
+  parent_location_uuid: ger_location_1279ac154ea4
+  season_appearances:
+  - 2
+  local_uuids:
+    1: location_e341e1aa83b3
+  first_appearance_season: 2
+  tier: asteroid
+  episode_count: 1
+- fabula_uuid: ger_location_e50f8715debd
+  global_id: ger_location_e50f8715debd
+  canonical_name: Far Door to Anne of Cleves' Quarters (King's Outer Privy Chamber,
+    Hampton Court)
+  description: This far door in the King's Outer Privy Chamber at Hampton Court Palace
+    opens directly to Anne of Cleves' quarters. Lord Essex enters through it late,
+    his arrival sparking Henry's fury and courtroom snickers. Cromwell exits the same
+    way on the king's sharp command to fetch the bride, his reluctance palpable amid
+    the chamber's tense daylight and echoing footsteps. The door's swing punctuates
+    power shifts, courtiers' murmurs, and Cromwell's public humiliation on the wedding
+    day.
+  location_type: Palace Privy Chamber Threshold
+  parent_location_uuid: null
+  season_appearances:
+  - 2
+  local_uuids:
+    1: location_b2655768717e
+  first_appearance_season: 2
+  tier: asteroid
+  episode_count: 0
 - fabula_uuid: ger_location_981bf1aede8d
   global_id: ger_location_981bf1aede8d
   canonical_name: First Cloister, Shaftesbury Convent (Political Threshold)
-  description: A daylight-filled cloister at Shaftesbury Convent, distinct from the
-    dim, narrow cloister at Hampton Court Palace. Serves as a formal political transition
-    space rather than a hidden conspiratorial passage.
+  description: Sunlight crosses ancient stone arches in the First Cloister of Shaftesbury
+    Convent, founded by King Alfred centuries ago. Nuns move through their daily tasks
+    amid vaulted walkways that echo with religious history. Cromwell stands with Richard
+    Riche and Christophe, waiting for the Abbess. She arrives with veiled skepticism,
+    recognizing him from a portrait and questioning his visit to see Sister Dorothea.
+    Tension builds as Cromwell leverages old ties to press his authority against the
+    convent's quiet resistance.
   location_type: Convent Cloister
-  parent_location_uuid: null
+  parent_location_uuid: ger_location_73eba39b0d9a
   season_appearances:
-  - 1
+  - 2
   local_uuids:
-    1: location_1dd2f16efc95
-  first_appearance_season: 1
+    1: location_6a52e064eeab
+  first_appearance_season: 2
   tier: asteroid
   episode_count: 1
 - fabula_uuid: ger_location_ad1277f225c2
@@ -1656,25 +1876,37 @@
 - fabula_uuid: ger_location_a0197439315a
   global_id: ger_location_a0197439315a
   canonical_name: Garden Below Cromwell’s Study (Austin Friars Townhouse)
-  description: Paths wind through the garden beside Cromwell's Austin Friars townhouse.
-    Rafe Sadler and Helen Barre walk its grounds in early evening, their talk intimate
-    under Cromwell's gaze from an upstairs window. Daytime sun warms the space as
-    Cromwell shares his vow to protect Mary amid toasts from his circle, Wriothesley's
-    glass raised amid uneasy loyalties. Leafy seclusion hosts private confessions,
-    including alleged secret talks with Katherine of Aragon and Lady Mary, now cited
-    as proof of treason in his interrogation. Greenery shields raw exchanges from
-    prying eyes, contrasting calm paths with political peril.
+  description: Outdoor courtyard or sunken garden accessible from the townhouse’s
+    ground floor, positioned below the study window. Designed for leisurely strolls
+    and romantic conversations, observed by Cromwell from the study above.
   location_type: Townhouse Garden
-  parent_location_uuid: null
+  parent_location_uuid: ger_location_da7bb9e8096e
   season_appearances:
   - 1
-  - 1
   local_uuids:
-    1: location_32c6cc4b3af9
-    2: location_28a1b7cb6521
+    1: location_28a1b7cb6521
   first_appearance_season: 1
-  tier: planet
-  episode_count: 3
+  tier: asteroid
+  episode_count: 1
+- fabula_uuid: ger_location_b171fa7573b8
+  global_id: ger_location_b171fa7573b8
+  canonical_name: Garden, Abbot of Westminster’s Residence
+  description: Princess Mary receives Duke Philip of Bavaria's pear-studded gold cross
+    and chaste cheek kiss in this secluded, elegant garden at the Abbot of Westminster’s
+    residence. Sunlight bathes the spacious grounds, providing privacy for their intimate
+    yet politically charged exchange while allowing Thomas Cromwell to observe from
+    a distance. The layout balances seclusion from most eyes with vulnerability to
+    calculated surveillance, heightening the tension of potential alliances against
+    Henry VIII’s court.
+  location_type: Abbey Residence Garden
+  parent_location_uuid: null
+  season_appearances:
+  - 2
+  local_uuids:
+    1: location_0b3158b323d9
+  first_appearance_season: 2
+  tier: asteroid
+  episode_count: 1
 - fabula_uuid: ger_location_32c2b16159bf
   global_id: ger_location_32c2b16159bf
   canonical_name: Garigliano Battlefield
@@ -1707,7 +1939,7 @@
     The location serves as a liminal space, forcing reckoning with the bloody cost
     of Cromwell's rise.
   location_type: Sun-Bleached Riverside Banks
-  parent_location_uuid: null
+  parent_location_uuid: ger_location_5ab6184dbc81
   season_appearances:
   - 1
   - 1
@@ -1720,16 +1952,17 @@
 - fabula_uuid: ger_location_c0b8371f79b0
   global_id: ger_location_c0b8371f79b0
   canonical_name: Gatehouse of Hunsdon House
-  description: A *specific architectural entry point* to Hunsdon House, where Cromwell
-    and Suffolk arrive amid factional tension. Highlights Cromwell’s vulnerable position
-    and the Duke of Norfolk’s whispered conspiracies.
-  location_type: Noble Estate Gatehouse
-  parent_location_uuid: null
+  description: The **exterior entry point** to Hunsdon House, where Cromwell and others
+    arrive. Serves as a stage for tense interactions (e.g., Norfolk/Howard's whispers,
+    Suffolk's ramblings) and marks the threshold between the outside world and Mary's
+    confinement.
+  location_type: Estate Gatehouse
+  parent_location_uuid: ger_location_08a8a93772b3
   season_appearances:
-  - 1
+  - 2
   local_uuids:
-    1: location_8d09c5f05c4d
-  first_appearance_season: 1
+    1: location_3ead6729602f
+  first_appearance_season: 2
   tier: asteroid
   episode_count: 1
 - fabula_uuid: ger_location_b3c43fe16477
@@ -1743,12 +1976,28 @@
     and superstition from the court's hidden power plays. Cromwell pauses here, disarmed
     by their innocence amid growing paranoia.
   location_type: Palace Entrance Gates
-  parent_location_uuid: null
+  parent_location_uuid: ger_location_29eebe28b2df
   season_appearances:
   - 1
   local_uuids:
     1: location_2ed65dbe656d
   first_appearance_season: 1
+  tier: asteroid
+  episode_count: 1
+- fabula_uuid: ger_location_ac7200de492a
+  global_id: ger_location_ac7200de492a
+  canonical_name: Geoffrey Pole's Cell (Bell Tower)
+  description: Prison cell in the **Bell Tower** of the Tower of London, where **Geoffrey
+    Pole** is held after a failed suicide attempt. Scene of Thomas Cromwell's psychological
+    coercion using a burning candle as a metaphor for Pole's impending death if he
+    does not betray his family.
+  location_type: Prison Interrogation Cell
+  parent_location_uuid: null
+  season_appearances:
+  - 2
+  local_uuids:
+    1: location_8e7b28bd1365
+  first_appearance_season: 2
   tier: asteroid
   episode_count: 1
 - fabula_uuid: ger_location_fec8770462b0
@@ -1812,7 +2061,7 @@
     fading authority and the rise of new forces, serving as a stage for court dynamics
     and unspoken authority.
   location_type: Palace Grand Staircase
-  parent_location_uuid: null
+  parent_location_uuid: ger_location_29eebe28b2df
   season_appearances:
   - 1
   local_uuids:
@@ -1835,36 +2084,105 @@
   first_appearance_season: 1
   tier: asteroid
   episode_count: 1
-- fabula_uuid: ger_location_dd394c0600de
-  global_id: ger_location_dd394c0600de
-  canonical_name: Great Hall (Private Chamber), Hampton Court Palace
-  description: Cavernous, empty Great Hall at Hampton Court Palace, distinct from
-    the King's Presence Chamber. Used for private, tense exchanges and moments of
-    isolation, such as Cromwell's warning to Rafe Sadler about the King's unpredictability.
-  location_type: Palace Great Hall
-  parent_location_uuid: null
+- fabula_uuid: ger_location_be9618189a25
+  global_id: ger_location_be9618189a25
+  canonical_name: Great Cloister Corridor (Public Ceremonial Space), Hampton Court
+    Palace
+  description: Grand, open cloister corridor adjacent to the King’s Presence Chamber,
+    designed for royal processions and public factional clashes. Architecturally grand
+    with towering arches and gilded tapestries, this space serves as a stage for symbolic
+    power dynamics, including Henry VIII’s performative departures and Cromwell’s
+    political isolation.
+  location_type: Palace Cloister Corridor
+  parent_location_uuid: ger_location_1edd5f69abb2
   season_appearances:
-  - 1
+  - 2
   local_uuids:
-    1: location_7703bc2498ba
-  first_appearance_season: 1
-  tier: asteroid
-  episode_count: 1
+    1: location_1ba5eb5782c4
+  first_appearance_season: 2
+  tier: planet
+  episode_count: 2
+- fabula_uuid: ger_location_be9618189a25
+  global_id: ger_location_be9618189a25
+  canonical_name: Great Cloister Corridor (Public Ceremonial Space), Hampton Court
+    Palace
+  description: Grand, open cloister corridor adjacent to the King’s Presence Chamber,
+    designed for royal processions and public factional clashes. Architecturally grand
+    with towering arches and gilded tapestries, this space serves as a stage for symbolic
+    power dynamics, including Henry VIII’s performative departures and Cromwell’s
+    political isolation.
+  location_type: Palace Cloister Corridor
+  parent_location_uuid: ger_location_b9ca495fc724
+  season_appearances:
+  - 2
+  local_uuids:
+    1: location_1ba5eb5782c4
+  first_appearance_season: 2
+  tier: planet
+  episode_count: 2
+- fabula_uuid: ger_location_cce9b7446861
+  global_id: ger_location_cce9b7446861
+  canonical_name: Great Hall, Austin Friars
+  description: Thomas Cromwell's Great Hall in his Austin Friars townhouse hosts tense
+    breakfasts around a central table draped in white linen. Crisp daylight streams
+    from tall windows, reflecting coldly off the cloth as Cromwell assigns Gregory
+    the task of greeting Anne of Cleves in Calais. Wriothesley departs abruptly amid
+    household friction, his jealousy palpable. Cromwell later gathers Rafe Sadler
+    and Wriothesley here to announce their promotions to Master Secretary alongside
+    his own rise to Earl of Essex, prompting jubilant cheers that conceal his underlying
+    alarm over royal plots. Holbein portraits and a Queen of Sheba tapestry line the
+    walls, where servants linger in shadows during family milestones and power plays.
+  location_type: Townhouse Great Hall
+  parent_location_uuid: ger_location_10dfd3bf3040
+  season_appearances:
+  - 2
+  - 2
+  local_uuids:
+    1: location_670d716c0ab7
+    2: location_a5ad84584ecb
+  first_appearance_season: 2
+  tier: planet
+  episode_count: 3
+- fabula_uuid: ger_location_cce9b7446861
+  global_id: ger_location_cce9b7446861
+  canonical_name: Great Hall, Austin Friars
+  description: Thomas Cromwell's Great Hall in his Austin Friars townhouse hosts tense
+    breakfasts around a central table draped in white linen. Crisp daylight streams
+    from tall windows, reflecting coldly off the cloth as Cromwell assigns Gregory
+    the task of greeting Anne of Cleves in Calais. Wriothesley departs abruptly amid
+    household friction, his jealousy palpable. Cromwell later gathers Rafe Sadler
+    and Wriothesley here to announce their promotions to Master Secretary alongside
+    his own rise to Earl of Essex, prompting jubilant cheers that conceal his underlying
+    alarm over royal plots. Holbein portraits and a Queen of Sheba tapestry line the
+    walls, where servants linger in shadows during family milestones and power plays.
+  location_type: Townhouse Great Hall
+  parent_location_uuid: ger_location_cce9b7446861
+  season_appearances:
+  - 2
+  - 2
+  local_uuids:
+    1: location_670d716c0ab7
+    2: location_a5ad84584ecb
+  first_appearance_season: 2
+  tier: planet
+  episode_count: 3
 - fabula_uuid: ger_location_5b823f8228d0
   global_id: ger_location_5b823f8228d0
   canonical_name: Great Hall, Tower of London
-  description: Interior cavernous space within the Tower of London's inner ward, serving
-    as the starting point for Cromwell's procession toward the Royal Apartment and
-    ultimately the Main Gate.
-  location_type: Fortress Ceremonial Hall
+  description: A **temporarily repurposed courtroom** within the Tower of London,
+    specifically used for the trials of Anne Boleyn and George Boleyn. Features elevated
+    judicial platforms, wooden spectator benches, and a jury composed of Cromwell’s
+    allies, including Harry Percy. The space is charged with legal maneuvering, psychological
+    tension, and the inevitability of condemnation.
+  location_type: Fortress Great Hall (Converted Courtroom)
   parent_location_uuid: null
   season_appearances:
-  - 1
+  - 2
   local_uuids:
-    1: location_3e5f43276825
-  first_appearance_season: 1
+    1: location_905ec8e93729
+  first_appearance_season: 2
   tier: asteroid
-  episode_count: 1
+  episode_count: 0
 - fabula_uuid: ger_location_473775559b95
   global_id: ger_location_473775559b95
   canonical_name: Greenwich Chapel Private Closet (Henry VIII’s Chapel)
@@ -1873,7 +2191,7 @@
     discussions between Henry VIII and Thomas Cromwell, emphasizing vulnerability
     and personal stakes.
   location_type: Royal Private Chapel
-  parent_location_uuid: null
+  parent_location_uuid: ger_location_532461a030f3
   season_appearances:
   - 1
   local_uuids:
@@ -1913,7 +2231,7 @@
     the carving knife, the space pulsing with the court's cannibalistic hunger and
     his dawning moral fracture.
   location_type: Royal Palace Great Hall
-  parent_location_uuid: null
+  parent_location_uuid: ger_location_532461a030f3
   season_appearances:
   - 1
   local_uuids:
@@ -1964,7 +2282,7 @@
     marriage and the annulment plot, involving multiple courtiers and amplifying court
     tensions.
   location_type: Palace Council Chamber
-  parent_location_uuid: null
+  parent_location_uuid: ger_location_532461a030f3
   season_appearances:
   - 1
   local_uuids:
@@ -1979,7 +2297,7 @@
     where the lack of walls symbolizes exposure and risk. Contrasts with interior
     anteroom by its open, unshielded nature.
   location_type: Royal Palace Exterior Grounds
-  parent_location_uuid: null
+  parent_location_uuid: ger_location_532461a030f3
   season_appearances:
   - 1
   local_uuids:
@@ -2020,11 +2338,13 @@
   parent_location_uuid: null
   season_appearances:
   - 1
+  - 2
   local_uuids:
     1: location_7ae5d41c994c
+    2: location_26ac41ff0f78
   first_appearance_season: 1
   tier: planet
-  episode_count: 3
+  episode_count: 4
 - fabula_uuid: ger_location_110c21251b12
   global_id: ger_location_110c21251b12
   canonical_name: Greenwich Palace River Wharf
@@ -2064,6 +2384,22 @@
   first_appearance_season: 1
   tier: planet
   episode_count: 2
+- fabula_uuid: ger_location_742279bcbceb
+  global_id: ger_location_742279bcbceb
+  canonical_name: Gregory Cromwell’s Fireside Room (Austin Friars)
+  description: A secluded, dimly lit chamber within Austin Friars Townhouse, where
+    Gregory Cromwell processes his father’s execution in isolation. Distinct from
+    other rooms in the townhouse by its intimate, grief-laden atmosphere and specific
+    narrative role in Episode 6.
+  location_type: Private Townhouse Chamber
+  parent_location_uuid: ger_location_46b143c32ac0
+  season_appearances:
+  - 2
+  local_uuids:
+    1: location_f302efa6f509
+  first_appearance_season: 2
+  tier: asteroid
+  episode_count: 1
 - fabula_uuid: ger_location_422b545e7571
   global_id: ger_location_422b545e7571
   canonical_name: Grounds of Windsor Palace
@@ -2093,7 +2429,7 @@
     mentorship of Rafe Sadler. Contrasts with the Private Room’s intimate emotional
     scenes.
   location_type: Townhouse Hallway
-  parent_location_uuid: null
+  parent_location_uuid: ger_location_2e28b1a3a5e8
   season_appearances:
   - 1
   local_uuids:
@@ -2237,59 +2573,56 @@
     court. Silence weighs heavy amid the hall's imposing scale, where black attire
     contrasts opulent weaves and political peril sharpens every hesitation into a
     moment of raw vulnerability and historical reckoning.
-  location_type: Royal Palace Presence Chamber
+  location_type: Royal Palace Great Hall
   parent_location_uuid: null
   season_appearances:
   - 1
-  - 1
   local_uuids:
-    1: location_64c6889d6842
-    2: location_9c0eeca730a2
+    1: location_9c0eeca730a2
   first_appearance_season: 1
-  tier: planet
-  episode_count: 3
+  tier: asteroid
+  episode_count: 1
 - fabula_uuid: ger_location_1edd5f69abb2
   global_id: ger_location_1edd5f69abb2
   canonical_name: Hampton Court Palace
-  description: Hampton Court Palace, a sprawling royal residence where political intrigue
-    and personal drama unfold across its diverse spaces. The palace's **exterior grounds**
-    (e.g., 'Hampton Court Palace Exterior at Dawn') are shrouded in thick mist, heightening
-    tension during diplomatic exchanges. The **grounds** (e.g., 'Hampton Court Grounds')
-    host sunlit archery ranges and manicured lawns, where Anne Boleyn looses arrows
-    and Henry VIII shreds Cromwell’s alliances amid courtiers. Key interior areas
-    include the **Council Chamber** (where Holbein’s portrait of Anne of Cleves is
-    unveiled), the **King’s Presence Chamber** (site of Henry VIII’s grand entrances),
-    and the **Presence Chamber** (where Cromwell faces Norfolk’s accusations). The
-    palace’s architecture—from foggy exteriors to opulent chambers—serves as a stage
-    for shifting alliances, unraveling authority, and the fragility of Henry VIII’s
-    reign.
-  location_type: Palace Ornamental Gardens
-  parent_location_uuid: null
+  description: Hampton Court Palace sprawls as the royal complex housing Henry VIII's
+    antechamber, bedchamber, presence chamber, **Privy Council Chamber**, **Chantry
+    Chapel**, **Ornamental Gardens**, **Great Hall**, and **Long Gallery**, where
+    night shadows deepen the tension of his sickbed rule and political maneuvering.
+    The **King's Bedchamber** (an intimate chamber by the window) is where Henry rests,
+    dismisses physicians, and debates politics with Cromwell and Rafe Sadler. The
+    **King's Presence Chamber** serves as a grand public stage for royal announments.
+    The **Privy Council Chamber** (under the King's Canopy of State) hosts formal
+    gatherings where Cromwell unveils Anne of Cleves's portrait and is later arrested.
+    The **Chantry Chapel** is a sacred yet politically charged space. The **Ornamental
+    Gardens** (including a bowling green) serve as recreational and political spaces.
+    The **Great Hall** is a vast space where Cromwell walks Rafe Sadler through lessons
+    on court survival. The **Long Gallery** is a grand, ornate hall where Henry stands
+    motionless at a tall window, his back turned to the Duke of Norfolk and Bishop
+    Gardiner, amplifying tension and political maneuvering.
+  location_type: Princess's Privy Chamber
+  parent_location_uuid: ger_location_1edd5f69abb2
   season_appearances:
   - 1
   - 1
-  - 1
-  - 1
-  - 1
-  - 1
-  - 1
-  - 1
-  - 1
-  - 1
+  - 2
+  - 2
+  - 2
+  - 2
+  - 2
+  - 2
   local_uuids:
-    1: location_a92b103ba1dc
-    2: location_2294e701b1ed
-    3: location_6ab9b31edbdf
-    4: location_f17ff8b7b09b
-    5: location_1cc55ce326ac
-    6: location_9328e4a3d011
-    7: location_cca72d058ec6
-    8: location_6fa883347853
-    9: location_29652af77663
-    10: location_b84f528ca83b
+    1: location_29652af77663
+    2: location_b84f528ca83b
+    3: location_d4339d08d0fb
+    4: location_9eecf04104a1
+    5: location_2588f29be70e
+    6: location_c45fc37aa8e0
+    7: location_53d2988a18d6
+    8: location_8d80d12de950
   first_appearance_season: 1
   tier: anchor
-  episode_count: 7
+  episode_count: 8
 - fabula_uuid: ger_location_c94f5ad7764b
   global_id: ger_location_c94f5ad7764b
   canonical_name: Hampton Court Palace Chapel
@@ -2302,13 +2635,13 @@
     here, with Archbishop Cranmer officiating amid the watchful eyes of courtiers.
     The chapel''s architecture (stone walls) and its role as a stage for both sacred
     and political drama are central to the narrative.'
-  location_type: Palace Chapel
-  parent_location_uuid: null
+  location_type: Royal Chapel Chancel
+  parent_location_uuid: ger_location_1edd5f69abb2
   season_appearances:
-  - 1
+  - 2
   local_uuids:
-    1: location_63be1bd686d7
-  first_appearance_season: 1
+    1: location_e77789afe00b
+  first_appearance_season: 2
   tier: asteroid
   episode_count: 1
 - fabula_uuid: ger_location_e367b7958dfd
@@ -2394,7 +2727,7 @@
     by Thomas More to assert dominance during the dinner scene in *Wolf Hall* Episode
     1. Represents power dynamics between Cromwell, More, and Chapuys.
   location_type: Dining Table Head
-  parent_location_uuid: null
+  parent_location_uuid: ger_location_5358bdf0d965
   season_appearances:
   - 1
   local_uuids:
@@ -2437,23 +2770,6 @@
   first_appearance_season: 1
   tier: asteroid
   episode_count: 0
-- fabula_uuid: ger_location_593078b926a6
-  global_id: ger_location_593078b926a6
-  canonical_name: Henry VIII and Catherine Howard's Wedding Festivities
-  description: Distant cheers, music, and laughter from Henry VIII's marriage celebrations
-    to Catherine Howard filter into Cromwell's Tower cell, their exuberance clashing
-    against his grim isolation. Revelry of feasts, dances, and toasts paints a vivid
-    backdrop of courtly pageantry, sharpening the irony of his fall from influence
-    amid the king's untroubled joy.
-  location_type: Royal Wedding Festivities
-  parent_location_uuid: null
-  season_appearances:
-  - 1
-  local_uuids:
-    1: location_0343485832bd
-  first_appearance_season: 1
-  tier: asteroid
-  episode_count: 1
 - fabula_uuid: ger_location_31e90b66694f
   global_id: ger_location_31e90b66694f
   canonical_name: Henry VIII’s Discarded Hat in Wolf Hall Woods
@@ -2462,7 +2778,7 @@
     and court instability. **Tied to a single event in Episode 4 and distinct from
     the broader Wolf Hall estate.**
   location_type: Woodland Tree Branch
-  parent_location_uuid: null
+  parent_location_uuid: ger_location_d62426af88de
   season_appearances:
   - 1
   local_uuids:
@@ -2493,22 +2809,40 @@
   first_appearance_season: 1
   tier: asteroid
   episode_count: 1
+- fabula_uuid: ger_location_062fe6a270b0
+  global_id: ger_location_062fe6a270b0
+  canonical_name: Hillside Near Launde Abbey
+  description: Storm clouds hang heavy over this steep Rutland hillside as Thomas
+    Cromwell stumbles downward toward Launde Abbey. Fever wracks his body—he sweats
+    and shivers amid lashing wind and slick terrain that taxes every step. The path's
+    rugged incline mirrors his delirium, inner turmoil, and political fragility, with
+    oppressive skies amplifying isolation and the crush of past burdens. Nature turns
+    hostile here, stripping away control in a visceral test of endurance.
+  location_type: Storm-Lashed Rural Hillside
+  parent_location_uuid: ger_location_d4ba0f7cface
+  season_appearances:
+  - 2
+  local_uuids:
+    1: location_0d1ca88cb68f
+  first_appearance_season: 2
+  tier: asteroid
+  episode_count: 1
 - fabula_uuid: ger_location_8a86c1b978c5
   global_id: ger_location_8a86c1b978c5
   canonical_name: Horncastle
-  description: 'Riders burst into Hampton Court with tales of Horncastle''s bloodshed:
-    Bishop Langland''s men ambushed in this Lincolnshire town, one slain amid rising
-    rebellion fury. The attack marks the uprising''s lethal turn, its details fueling
-    Cromwell''s rage and exposing threats to royal authority. Stone-walled streets
-    and rural fields turn hostile ground, where whispers of church defense mask coordinated
-    violence that riders carry south, amplifying dread at court.'
+  description: Horncastle emerges as a violent outpost in the Lincolnshire rebellion.
+    Rebels there strike Bishop Langland’s men, killing one and fueling rumors of Henry
+    VIII’s death and Cromwell’s power grab. Dawn riders race from its tense lanes
+    to Austin Friars, carrying bloodied news that ignites Cromwell’s defiance. The
+    town’s rural crossroads pulse with raw uprising, its fields and streets scarred
+    by the first blows of widespread unrest against Reformation policies.
   location_type: Lincolnshire Town
   parent_location_uuid: null
   season_appearances:
-  - 1
+  - 2
   local_uuids:
-    1: location_0725b90aace4
-  first_appearance_season: 1
+    1: location_fc9e8ff1175f
+  first_appearance_season: 2
   tier: asteroid
   episode_count: 0
 - fabula_uuid: ger_location_f1be583e7b67
@@ -2537,7 +2871,7 @@
     Serves as Cromwell’s **personal retreat for strategic reflection**, featuring
     a recessed fireplace and no barred windows or smoke motifs.
   location_type: Castle Hall Adjoining Nook
-  parent_location_uuid: null
+  parent_location_uuid: ger_location_e73b95dec4a1
   season_appearances:
   - 1
   local_uuids:
@@ -2545,6 +2879,38 @@
   first_appearance_season: 1
   tier: asteroid
   episode_count: 1
+- fabula_uuid: ger_location_e2898d1e5d7c
+  global_id: ger_location_e2898d1e5d7c
+  canonical_name: Inner Royal Apartment (Tower of London)
+  description: A **public/ceremonial chamber** within the Royal Apartment, historically
+    tied to Anne Boleyn's political maneuvering and execution. Serves as a **threshold
+    space** for Cromwell's reflection on loyalty and authority, emphasizing **historical
+    weight** and **collective memory** over personal intimacy.
+  location_type: Fortress Royal Chambers
+  parent_location_uuid: ger_location_b807e4d73640
+  season_appearances:
+  - 2
+  local_uuids:
+    1: location_8e810e50b43e
+  first_appearance_season: 2
+  tier: planet
+  episode_count: 2
+- fabula_uuid: ger_location_e2898d1e5d7c
+  global_id: ger_location_e2898d1e5d7c
+  canonical_name: Inner Royal Apartment (Tower of London)
+  description: A **public/ceremonial chamber** within the Royal Apartment, historically
+    tied to Anne Boleyn's political maneuvering and execution. Serves as a **threshold
+    space** for Cromwell's reflection on loyalty and authority, emphasizing **historical
+    weight** and **collective memory** over personal intimacy.
+  location_type: Fortress Royal Chambers
+  parent_location_uuid: ger_location_419aa40003df
+  season_appearances:
+  - 2
+  local_uuids:
+    1: location_8e810e50b43e
+  first_appearance_season: 2
+  tier: planet
+  episode_count: 2
 - fabula_uuid: ger_location_d584f8ce46f9
   global_id: ger_location_d584f8ce46f9
   canonical_name: Iron Acton
@@ -2639,6 +3005,27 @@
   first_appearance_season: 1
   tier: asteroid
   episode_count: 1
+- fabula_uuid: ger_location_b788b1c31dc1
+  global_id: ger_location_b788b1c31dc1
+  canonical_name: Katherine’s Bedchamber at Kimbolton Castle
+  description: Private chamber in Kimbolton Castle where Katherine of Aragon spends
+    her final days. The space serves as both her dying sanctuary and the stage for
+    pivotal political confrontations. Firelight bathes the room as she receives Thomas
+    Cromwell for a tense verbal duel, where she displays frailty and defiance while
+    probing the fates of her daughter Mary and rival Anne Boleyn. The chamber's atmosphere
+    shifts between grief (her final moments), political maneuvering (Cromwell's threats),
+    and fleeting moments of humanity (shared supper). The room's dual role—once a
+    defiant sanctuary, now a space marking the collapse of her marriage and Anne Boleyn's
+    rising peril—reflects the broader court dynamics and Cromwell's strategic shifts.
+  location_type: Royal Bedchamber
+  parent_location_uuid: null
+  season_appearances:
+  - 2
+  local_uuids:
+    1: location_d7d228e49289
+  first_appearance_season: 2
+  tier: asteroid
+  episode_count: 1
 - fabula_uuid: ger_location_e34a5cfb34bd
   global_id: ger_location_e34a5cfb34bd
   canonical_name: Kenninghall
@@ -2660,17 +3047,20 @@
 - fabula_uuid: ger_location_d715ea5d164f
   global_id: ger_location_d715ea5d164f
   canonical_name: Kent
-  description: Kent emerges as Mary's grim exile, a distant rural county far from
-    courtly splendor. Jane Rochford thrusts her there to escape wrath, stripping her
-    status. Cromwell mocks that love poems offer no warmth against its chill, evoking
-    isolation, hardship, and provincial cold. Mary clings to hopes her brother George
-    will intervene, but Kent promises demotion to obscurity amid fields and frost.
+  description: 'Kent, a rural English county southeast of London, contains the Weald''s
+    dense woods and iron forges. Cromwell names it the destination for Henry''s fabricated
+    trip there—tramping misty forests, bargaining with soot-covered ironmasters over
+    cannons and muskets—a journey projected but never taken. Earlier, it held Mary''s
+    exile: Jane exiled her to its cold fields, far from court luxury, where frost
+    bites and obscurity awaits amid isolation.'
   location_type: Rural English County
   parent_location_uuid: null
   season_appearances:
   - 1
+  - 2
   local_uuids:
     1: location_925a9a2cfa7d
+    2: location_925a9a2cfa7d
   first_appearance_season: 1
   tier: asteroid
   episode_count: 0
@@ -2686,29 +3076,13 @@
     while Thomas Boleyn issues sardonic warnings. The formal atmosphere amplifies
     the performative gravity of loyalty oaths, stone walls enclosing political rituals
     and raw power plays.
-  location_type: Palace Privy Council Chamber
+  location_type: Royal Privy Council Chamber
   parent_location_uuid: null
   season_appearances:
-  - 1
+  - 2
   local_uuids:
-    1: location_b4c97523dae2
-  first_appearance_season: 1
-  tier: asteroid
-  episode_count: 1
-- fabula_uuid: ger_location_263ff16e6a0b
-  global_id: ger_location_263ff16e6a0b
-  canonical_name: King’s Bedchamber, Hampton Court Palace
-  description: Private royal chamber at Hampton Court Palace where Henry VIII conducts
-    intimate, high-stakes audiences with courtiers (e.g., Thomas Cromwell, Cardinal
-    Pole). Distinct from the antechamber *outside* its door, this space is the site
-    of direct confrontations and decisions, not threshold moments.
-  location_type: Royal Palace Bedchamber
-  parent_location_uuid: null
-  season_appearances:
-  - 1
-  local_uuids:
-    1: location_c0f48df33cae
-  first_appearance_season: 1
+    1: location_15737a8d9e26
+  first_appearance_season: 2
   tier: asteroid
   episode_count: 1
 - fabula_uuid: ger_location_ee27b7f8befb
@@ -2723,7 +3097,7 @@
     Henry's childhood terror confession to Cromwell, marked by oppressive intimacy
     and a fragile pinnacle of trust.
   location_type: Royal Private Chambers
-  parent_location_uuid: null
+  parent_location_uuid: ger_location_532461a030f3
   season_appearances:
   - 1
   local_uuids:
@@ -2747,6 +3121,36 @@
   first_appearance_season: 1
   tier: planet
   episode_count: 2
+- fabula_uuid: ger_location_b9ca495fc724
+  global_id: ger_location_b9ca495fc724
+  canonical_name: King’s Presence Chamber, Hampton Court Palace
+  description: Indoor grand reception hall at Hampton Court Palace, distinct from
+    outdoor courtyards. Used for formal royal ceremonies and high-stakes political
+    interactions (e.g., parading Anne of Cleves, Norfolk-Cromwell clashes).
+  location_type: Royal Presence Chamber
+  parent_location_uuid: ger_location_1edd5f69abb2
+  season_appearances:
+  - 2
+  local_uuids:
+    1: location_4b8540cdef74
+  first_appearance_season: 2
+  tier: asteroid
+  episode_count: 1
+- fabula_uuid: ger_location_28982c12fa00
+  global_id: ger_location_28982c12fa00
+  canonical_name: King’s Privy Chamber, Whitehall Palace
+  description: Henry VIII’s private chamber at Whitehall Palace, featuring Holbein’s
+    mural and serving as a site for Henry’s self-mythologizing and Cromwell’s influence.
+    Contrasts with Mary’s privy chamber in ownership, location, and thematic focus.
+  location_type: Royal Privy Chamber
+  parent_location_uuid: ger_location_be2cbc89292f
+  season_appearances:
+  - 2
+  local_uuids:
+    1: location_9d7806d7851f
+  first_appearance_season: 2
+  tier: asteroid
+  episode_count: 1
 - fabula_uuid: ger_location_0d4d70d990e1
   global_id: ger_location_0d4d70d990e1
   canonical_name: Lambeth
@@ -2765,102 +3169,63 @@
     words and moral divides, as well as high-stakes interrogations of Elizabeth Barton
     and More's oath refusal, filling the space with tension, theological clashes,
     and political desperation.
-  location_type: Archbishop's Residence
-  parent_location_uuid: null
+  location_type: Archbishop's Palace Great Hall
+  parent_location_uuid: ger_location_0d4d70d990e1
   season_appearances:
   - 1
   - 1
-  - 1
-  - 1
+  - 2
   local_uuids:
-    1: location_15c4e89afb37
-    2: location_7622df0a0bf4
-    3: location_fe1825dc3f6d
-    4: location_35a882c05afe
+    1: location_fe1825dc3f6d
+    2: location_35a882c05afe
+    3: location_3ebcb2997d65
   first_appearance_season: 1
-  tier: anchor
-  episode_count: 5
+  tier: planet
+  episode_count: 4
 - fabula_uuid: ger_location_d4ba0f7cface
   global_id: ger_location_d4ba0f7cface
   canonical_name: Launde Abbey, Rutland (Garden Sanctuary)
-  description: Historic rural abbey and its surrounding gardens in Rutland, England,
-    where Cromwell seeks solace amid manicured paths, buzzing beehives, and golden
-    light filtering through trees. The gardens—described as a 'little heaven on earth'—offer
-    a serene counterpoint to political chaos, embodying spiritual solace, nostalgia,
-    and the bittersweet weight of his choices. The abbey's cloisters, where monks
-    chant and incense drifts, amplify its role as a sanctuary from violence and a
-    symbol of redemption he glimpses but never attains. The natural harmony and idyllic
-    beauty contrast sharply with Cromwell's unraveling ambitions and the political
-    storms of his era.
-  location_type: Historic Rural Abbey
+  description: Launde Abbey, a monastic haven in Rutland, encompasses both its ancient
+    stone structures and the serene gardens where bees hum amid blooms. The abbey
+    serves as a spiritual sanctuary and a site of introspection for Thomas Cromwell,
+    contrasting its enduring grace with his political fragility and looming execution.
+    The gardens (Launde Abbey Gardens) are a key component of the abbey's tranquil
+    beauty, where slow tracking shots emphasize the natural harmony that underscores
+    Cromwell's vulnerable introspection. The abbey's spiritual resonance darkens under
+    the shadow of Cromwell's downfall, reflecting the tension between timeless sanctuary
+    and political doom.
+  location_type: Rural English County
   parent_location_uuid: null
   season_appearances:
-  - 1
+  - 2
+  - 2
   local_uuids:
-    1: location_d92941864214
-  first_appearance_season: 1
+    1: location_619e104d6414
+    2: location_d986ede4537a
+  first_appearance_season: 2
   tier: planet
   episode_count: 2
 - fabula_uuid: ger_location_1de26f3ba596
   global_id: ger_location_1de26f3ba596
   canonical_name: Leicester Abbey
-  description: Open courtyard at Leicester Abbey where Cardinal Wolsey paces restlessly,
-    his footsteps echoing his crumbling resolve. The space serves as a raw confessional
-    where courtly grandeur yields to personal ruin, with Cavendish's voiceover lament
-    underscoring Wolsey's unguarded frailty. The enclosed stone walls trap his isolation,
-    exposing his vulnerability under dim daylight that casts long shadows mirroring
-    his fall from power. This courtyard contrasts with Wolsey's usual stages of imperious
-    power plays, transforming into a stage for quiet desperation during his final
-    moments of influence.
-  location_type: Abbey Deathbed Chamber
-  parent_location_uuid: null
+  description: |-
+    Leicester Abbey, a historic abbey containing multiple key spaces for political intrigue and personal reckoning in *Wolf Hall*. The abbey includes:
+          - **Private Chamber**: A dimly lit room where Cromwell and Cavendish engage in tense debates (e.g., over loyalty and court strategy) and where Wolsey later lies on his deathbed, receiving Last Rites from a priest. The chamber’s stone walls and flickering firelight amplify the weight of secrecy, betrayal, and political maneuvering.
+          - **Courtyard**: A space where Wolsey paces, his language turning autocratic as he navigates the downfall of his political ambitions. The courtyard’s open yet enclosed nature mirrors the characters’ trapped yet public roles in the court.
+          The abbey’s architecture—stone walls, echoing footsteps, and flickering light—creates an atmosphere of solemnity, isolation, and the heavy air of political reckoning. It serves as a backdrop for pivotal moments of transition, power shifts, and final confrontations among Thomas Cromwell, Thomas Wolsey, Cavendish, and Henry VIII.
+  location_type: Monastic Deathbed Chamber
+  parent_location_uuid: ger_location_1de26f3ba596
   season_appearances:
   - 1
-  - 1
-  - 1
+  - 2
+  - 2
   local_uuids:
-    1: location_3ec818971444
-    2: location_c0f44f1181d5
-    3: location_6ca31eeda0d9
+    1: location_6ca31eeda0d9
+    2: location_e20f4606794d
+    3: location_9ee785de8fbf
   first_appearance_season: 1
   tier: planet
-  episode_count: 3
-- fabula_uuid: ger_location_8ba2b1654d6c
-  global_id: ger_location_8ba2b1654d6c
-  canonical_name: Leicester Abbey Chamber (Cromwell-Cavendish Exchange)
-  description: Intimate indoor room within Leicester Abbey, distinct from the courtyard.
-    Site of Cromwell and Cavendish's tense dialogue, characterized by firelight, a
-    hearth, and psychological manipulation. Contrasts with the abbey's broader courtyard
-    setting.
-  location_type: Abbey Private Chamber
-  parent_location_uuid: null
-  season_appearances:
-  - 1
-  local_uuids:
-    1: location_37fa811e701f
-  first_appearance_season: 1
-  tier: asteroid
-  episode_count: 1
-- fabula_uuid: ger_location_a1695d84c956
-  global_id: ger_location_a1695d84c956
-  canonical_name: Lincolnshire (Rebellion Region)
-  description: Northern English county (Lincolnshire) where a violent rebellion erupts
-    against the Cromwell regime, with **Louth** as the key flashpoint. Rain-soaked
-    terrain bogs down troops and cannons, while rebels commit brutal acts (e.g., mutilating
-    Cromwell's agent John Bellowe in Louth). The unrest stems from dissolved monasteries,
-    exploited poor, and anti-Cromwell sentiment. Riders carry news of the rebellion
-    from Louth to Hampton Court, escalating tensions with the Cromwell family. The
-    region's savagery—particularly the atrocities in Louth—personalizes the conflict
-    for Richard Cromwell's platoon.
-  location_type: Rural English County
-  parent_location_uuid: null
-  season_appearances:
-  - 1
-  local_uuids:
-    1: location_a4ccd7af3c3a
-  first_appearance_season: 1
-  tier: asteroid
-  episode_count: 1
+  episode_count: 4
 - fabula_uuid: ger_location_e31309930b05
   global_id: ger_location_e31309930b05
   canonical_name: Local Parish (Christmas Pageant)
@@ -2903,21 +3268,21 @@
           1. **Urban Streets**: Thomas Cromwell and Francis Bryan ride horses down a crowded London street (Episode 3), where Bryan reveals Harry Percy's secret marriage to Anne Boleyn. The public space amplifies their tension amid everyday Londoners.
           2. **Approach to the City**: Cromwell and Wriothesley ride along Cambridge Road toward London (Episode 5), where the city looms as the heart of Tudor politics, promising confrontation and legal maneuvers.
           The city serves as a backdrop for political intrigue, power shifts, and the unfolding of Cromwell's strategies against Anne Boleyn's faction.
-  location_type: Urban Defensive Walls
+  location_type: Metropolitan Skyline
   parent_location_uuid: null
   season_appearances:
   - 1
   - 1
-  - 1
-  - 1
+  - 2
+  - 2
   local_uuids:
-    1: location_b0240f09e77a
-    2: location_6ad81c1e69e7
-    3: location_e494cc7d5ee0
-    4: location_f57cb31f42f4
+    1: location_e494cc7d5ee0
+    2: location_f57cb31f42f4
+    3: location_281a330d5d13
+    4: location_d5c1ec998a02
   first_appearance_season: 1
-  tier: asteroid
-  episode_count: 1
+  tier: planet
+  episode_count: 2
 - fabula_uuid: ger_location_c357bbe4ae53
   global_id: ger_location_c357bbe4ae53
   canonical_name: London Execution Square (Public Heresy Plaza)
@@ -2961,79 +3326,50 @@
   location_type: Noble Residence
   parent_location_uuid: null
   season_appearances:
-  - 1
+  - 2
   local_uuids:
-    1: location_14f1a4846a2e
-  first_appearance_season: 1
+    1: location_418eb1481a5e
+  first_appearance_season: 2
   tier: asteroid
-  episode_count: 0
-- fabula_uuid: ger_location_339caaa3ebdd
-  global_id: ger_location_339caaa3ebdd
-  canonical_name: Lower Gallery, Chester Place
-  description: Public transit space at Chester Place, used for a daytime procession
-    toward Henry's court. Architecturally narrow with stone walls and a staircase,
-    contrasting with the intimate bedchamber setting.
-  location_type: Palace Gallery
+  episode_count: 1
+- fabula_uuid: ger_location_41f82d994c5f
+  global_id: ger_location_41f82d994c5f
+  canonical_name: Louth
+  description: 'Louth ignites the Lincolnshire rebellion. Rebels launch attacks from
+    here, targeting Bishop Langland’s men in nearby Horncastle, killing one amid swirling
+    rumors of King Henry VIII''s death and Cromwell''s supposed power grab. Richard
+    Cromwell reports Bellowe''s capture in the town: rebels blind him, skin a bull,
+    sew him inside its hide, and unleash dogs. Tension grips the streets as violence
+    erupts and propaganda spreads, marking Louth as the uprising''s brutal heart.'
+  location_type: Provincial Town
   parent_location_uuid: null
   season_appearances:
-  - 1
+  - 2
   local_uuids:
-    1: location_5992807d0da7
-  first_appearance_season: 1
+    1: location_baa9329bb568
+  first_appearance_season: 2
   tier: asteroid
   episode_count: 1
 - fabula_uuid: ger_location_6db4ea1ebd35
   global_id: ger_location_6db4ea1ebd35
   canonical_name: L’Erber (Pole Family Estate)
-  description: |-
-    L’Erber is the ancestral estate of the Pole family, a sprawling noble residence where political intrigue and familial loyalty intersect. The estate features:
-      - **Exterior grounds**: Gardeners burn foliage under daylight, with smoke rising as Thomas Cromwell surveys the estate, assessing the Poles' allegiance and asserting his dominance.
-      - **Interior ornate room**: A private chamber adorned with rich furnishings and tapestries, symbolizing the family's noble standing. This is where Cromwell corners Margaret and Geoffrey Pole, using threats of attainder and land forfeiture to coerce them into drafting a letter to Princess Mary. The opulent surroundings amplify the tension, as the room becomes a stage for coercion, defiance, and the fragility of familial loyalty amid rising political peril.
-      The estate embodies the broader themes of treason, coercion, and the precarious balance of power in Tudor England, where every detail—from the crackling flames to the ornate decor—signals the stakes of the Poles' allegiance.
-  location_type: Ancestral Estate
+  description: "\n  L’Erber is the ancestral estate of the Pole family, a grand Tudor\
+    \ noble residence steeped in political tension. Its sprawling grounds and opulent\
+    \ interiors—adorned with tapestries and fine furnishings—reflect the family’s\
+    \ aristocratic prestige, even as the estate becomes a battleground for coercion\
+    \ and loyalty. A symbol of both power and vulnerability, L’Erber’s halls bear\
+    \ witness to the fragile balance between noble defiance and the encroaching authority\
+    \ of figures like Thomas Cromwell, where every gilded detail underscores the high\
+    \ stakes of allegiance in Tudor England.\n  "
+  location_type: Noble Family Estate Grounds
   parent_location_uuid: null
   season_appearances:
-  - 1
+  - 2
   local_uuids:
-    1: location_886cc63c1f1b
-  first_appearance_season: 1
+    1: location_83dcaa0f4b0a
+  first_appearance_season: 2
   tier: asteroid
   episode_count: 1
-- fabula_uuid: ger_location_700ad6448fb5
-  global_id: ger_location_700ad6448fb5
-  canonical_name: Main Gate (Austin Friars, Cromwell’s Townhouse)
-  description: Daylight floods the main gate of Cromwell's Austin Friars townhouse.
-    Desperate petitioners press against the iron barrier in chaotic throngs, their
-    clamor demanding attention. Cromwell arrives with an armed escort, swords at their
-    sides, amid whispers of northern rebellion. Jenneke stands amid the crowd in green,
-    her gaze locking with his in a final, silent reckoning. Her departing glance pierces
-    the turmoil, exposing Cromwell's vulnerability as guards escort her away. The
-    public space heightens the contrast between desperate pleas and their private
-    emotional fracture.
-  location_type: Townhouse Main Gate
-  parent_location_uuid: null
-  season_appearances:
-  - 1
-  local_uuids:
-    1: location_bef40bcdec26
-  first_appearance_season: 1
-  tier: planet
-  episode_count: 2
-- fabula_uuid: ger_location_a483bed13493
-  global_id: ger_location_a483bed13493
-  canonical_name: Main Gate (Tower of London)
-  description: Exterior stone archway and iron-bound barrier marking the Main Gate
-    of the Tower of London's inner ward, serving as the threshold for Cromwell's final
-    exit from the Tower to Tower Hill scaffold.
-  location_type: Fortress Main Gate
-  parent_location_uuid: null
-  season_appearances:
-  - 1
-  local_uuids:
-    1: location_44a63705fcf7
-  first_appearance_season: 1
-  tier: planet
-  episode_count: 2
 - fabula_uuid: ger_location_1ae81824dee8
   global_id: ger_location_1ae81824dee8
   canonical_name: Main Hall of Blackfriars (Legatine Court)
@@ -3052,22 +3388,6 @@
   - 1
   local_uuids:
     1: location_950464ff7587
-  first_appearance_season: 1
-  tier: asteroid
-  episode_count: 1
-- fabula_uuid: ger_location_ef1686b9c9fe
-  global_id: ger_location_ef1686b9c9fe
-  canonical_name: Main Staircase, Hunsdon House
-  description: A narrow, vertical passage connecting the shabby entrance hall and
-    dining room to upper floors, serving as a conduit for aggressive searches and
-    courtly intimidation. Symbolizes movement and intrusion, contrasting with the
-    Privy Chamber’s stillness.
-  location_type: Manor House Staircase
-  parent_location_uuid: null
-  season_appearances:
-  - 1
-  local_uuids:
-    1: location_cafc0483c12a
   first_appearance_season: 1
   tier: asteroid
   episode_count: 1
@@ -3099,30 +3419,75 @@
     veiled alliances. The space reflects Mary's frantic preparations for exile and
     mirrors her emotional turmoil, with the cramped court room trapping raw defiance,
     betrayal, and whispered power plays in daylight clutter.
-  location_type: Courtier's Bedchamber
-  parent_location_uuid: null
+  location_type: Courtier's Private Chamber
+  parent_location_uuid: ger_location_08a8a93772b3
   season_appearances:
   - 1
+  - 2
   local_uuids:
     1: location_7c0ae9bc5a6d
+    2: location_a01e7333bcf9
   first_appearance_season: 1
+  tier: planet
+  episode_count: 2
+- fabula_uuid: ger_location_47e756a2d82d
+  global_id: ger_location_47e756a2d82d
+  canonical_name: Mary Boleyn’s Privy Chamber, Hunsdon House
+  description: A secluded, sparsely furnished receiving room in Mary Boleyn’s private
+    residence, Hunsdon House, symbolizing her exile from court and interactions with
+    lower-ranking figures like Cromwell’s men. Distinct from her bedchamber at Hampton
+    Court Palace.
+  location_type: Manor Privy Chamber
+  parent_location_uuid: ger_location_08a8a93772b3
+  season_appearances:
+  - 2
+  local_uuids:
+    1: location_9c68e7b0310e
+  first_appearance_season: 2
   tier: asteroid
   episode_count: 1
+- fabula_uuid: ger_location_075fb5e18950
+  global_id: ger_location_075fb5e18950
+  canonical_name: Mary Tudor's Residence
+  description: Rafe Sadler and Wriothesley enter Mary Tudor's residence to find her
+    household under Pole family sway. The Poles mock Cromwell's authority openly while
+    Mary demands submission from her visitors. She refuses the oath, clings to her
+    title as princess, and avows loyalty to Rome. Defiance saturates the air—Wriothesley
+    sees unbreakable resolve, Rafe detects calculated performance meant to paint her
+    a martyr if forced to yield.
+  location_type: Princess's Household Residence
+  parent_location_uuid: null
+  season_appearances:
+  - 2
+  local_uuids:
+    1: location_8db5481d9165
+  first_appearance_season: 2
+  tier: asteroid
+  episode_count: 0
 - fabula_uuid: ger_location_08a8a93772b3
   global_id: ger_location_08a8a93772b3
   canonical_name: Mary’s Privy Chamber at Hunsdon House
-  description: A private, enclosed space on an upper floor of Hunsdon House, symbolizing
-    Mary Tudor’s isolation and political fragility. Contrasts with public thoroughfares
-    like the house’s stairs.
-  location_type: Princess's Privy Chamber
+  description: Hunsdon House, a dilapidated estate in Princess Mary Tudor's exile,
+    serves as the stage for her defiance against Henry VIII's authority. The estate's
+    halls—including Mary's **Privy Chamber** (where she resists Norfolk and Suffolk,
+    signs the letter under Cromwell's manipulation, and shatters a Venetian jug in
+    despair)—are ransacked by Cromwell's men, who upend chests, rip tapestries, and
+    burn documents. The **entrance hall** hosts tense revelations about Norfolk's
+    aggression, while the **gatehouse** becomes a flashpoint for court rivalries (e.g.,
+    Cromwell, Suffolk, and Norfolk's whispered hostility). Mary's powerlessness is
+    underscored by the destruction of her private spaces, amplifying her isolation
+    and submission.
+  location_type: Dilapidated Country House
   parent_location_uuid: null
   season_appearances:
-  - 1
+  - 2
+  - 2
   local_uuids:
-    1: location_0d9ae972291c
-  first_appearance_season: 1
-  tier: asteroid
-  episode_count: 1
+    1: location_e128e9a7b595
+    2: location_97907c4568a0
+  first_appearance_season: 2
+  tier: planet
+  episode_count: 2
 - fabula_uuid: ger_location_ae2bde3032c8
   global_id: ger_location_ae2bde3032c8
   canonical_name: Missenden
@@ -3167,7 +3532,7 @@
     Thomas Cromwell stands in existential contemplation beside a beached whale carcass.
     *Distinct from the broader river and other riverbanks.*
   location_type: River Muddy Bank
-  parent_location_uuid: null
+  parent_location_uuid: ger_location_31d88527c7d3
   season_appearances:
   - 1
   local_uuids:
@@ -3175,6 +3540,41 @@
   first_appearance_season: 1
   tier: asteroid
   episode_count: 1
+- fabula_uuid: ger_location_b85e99de0adf
+  global_id: ger_location_b85e99de0adf
+  canonical_name: New-found Lands
+  description: Jenneke pictures Cromwell departing familiar shores for these distant
+    realms, returning with chests of gold and jewels. Salt winds carry ship scents
+    in her mind; exotic spices and gleaming treasures fill imagined markets. This
+    fantasy space captures her longing for a father who provides and protects, contrasting
+    his real absences amid court duties.
+  location_type: Imagined Exotic Territories
+  parent_location_uuid: null
+  season_appearances:
+  - 2
+  local_uuids:
+    1: location_bf55811a04e2
+  first_appearance_season: 2
+  tier: asteroid
+  episode_count: 0
+- fabula_uuid: ger_location_cbd289f0e659
+  global_id: ger_location_cbd289f0e659
+  canonical_name: Norfolk’s Palace, Lambeth
+  description: Catherine Howard returns here under Duke of Norfolk's protection, establishing
+    the palace as Howard faction headquarters for political schemes to unseat Anne
+    of Cleves. Henry's barge glides up the Thames for secret evening visits to her
+    chambers, long after sunset. Corridors carry hushed plotting and guarded footsteps;
+    torchlight reveals faces set with ambition, while river mist clings to stone walls
+    hiding court threats from prying eyes.
+  location_type: Duke of Norfolk's Palace
+  parent_location_uuid: null
+  season_appearances:
+  - 2
+  local_uuids:
+    1: location_a33d39ff968b
+  first_appearance_season: 2
+  tier: asteroid
+  episode_count: 0
 - fabula_uuid: ger_location_6e5be58abcce
   global_id: ger_location_6e5be58abcce
   canonical_name: Normandy and Brittany (French Coastal Regions)
@@ -3210,6 +3610,24 @@
   first_appearance_season: 1
   tier: asteroid
   episode_count: 1
+- fabula_uuid: ger_location_fd1f7833ef07
+  global_id: ger_location_fd1f7833ef07
+  canonical_name: Open Countryside Beyond the Castle Battlements
+  description: Daylight stretches across this vast rural expanse visible from the
+    castle battlements. Richard Cromwell stares into the endless fields and horizon,
+    the open landscape dwarfing his solitary figure. Wind sweeps the heights, carrying
+    isolation that mirrors his tear-streaked grief and fear for his father's fate.
+    The unbroken vista amplifies helplessness, turning nature into a silent witness
+    to personal collapse amid political ruin.
+  location_type: Rural Castle Vista
+  parent_location_uuid: null
+  season_appearances:
+  - 2
+  local_uuids:
+    1: location_e49f86584515
+  first_appearance_season: 2
+  tier: asteroid
+  episode_count: 1
 - fabula_uuid: ger_location_809be89a6d42
   global_id: ger_location_809be89a6d42
   canonical_name: Open Road Between Kimbolton Castle and London
@@ -3227,20 +3645,38 @@
   first_appearance_season: 1
   tier: asteroid
   episode_count: 1
-- fabula_uuid: ger_location_6536df14b5e2
-  global_id: ger_location_6536df14b5e2
-  canonical_name: Outer Royal Apartments, Tower of London (Interrogation Chamber)
-  description: A repurposed royal apartment in the Tower of London, converted into
-    an interrogation chamber for Cromwell's political trial. Filled with trestles,
-    documents, and key antagonists (Norfolk, Gardiner, Riche, Wriothesley), this space
-    is claustrophobic and tense, foreshadowing his downfall but not his execution.
-  location_type: Royal Apartment Interrogation Chamber
-  parent_location_uuid: null
+- fabula_uuid: ger_location_f6b5fc7741cc
+  global_id: ger_location_f6b5fc7741cc
+  canonical_name: Ornate Reception Room at L’Erber Estate
+  description: A lavish interior chamber within the Pole family’s L’Erber estate,
+    distinguished by its ornate decorations, formal layout, and role as the site of
+    Cromwell’s confrontation with Margaret and Geoffrey Pole. Unlike Lordington, this
+    room is actively used in the narrative and tied to a specific scene of coercion
+    and betrayal.
+  location_type: Noble Estate Private Chamber
+  parent_location_uuid: ger_location_6db4ea1ebd35
   season_appearances:
-  - 1
+  - 2
   local_uuids:
-    1: location_0f1fa8385c43
-  first_appearance_season: 1
+    1: location_24accee6b293
+  first_appearance_season: 2
+  tier: asteroid
+  episode_count: 1
+- fabula_uuid: ger_location_62ddb91fc0f6
+  global_id: ger_location_62ddb91fc0f6
+  canonical_name: Ornate Side-Chapel, Shaftesbury Abbey
+  description: 'Dorothea corners Cromwell amid stone walls and sacred icons. Claustrophobic
+    confines trap their accusations—her claims of perjury and betrayal cut deep. Solemn
+    intimacy amplifies irony: reformer faces judgment from Wolsey''s daughter. Dim
+    light and echoing rebuttals heighten moral tension, exposing Cromwell''s buried
+    guilt before the scene cuts sharp.'
+  location_type: Abbey Side-Chapel
+  parent_location_uuid: ger_location_73eba39b0d9a
+  season_appearances:
+  - 2
+  local_uuids:
+    1: location_92c1b0b0ecb2
+  first_appearance_season: 2
   tier: asteroid
   episode_count: 1
 - fabula_uuid: ger_location_7c5a7b2cc7f3
@@ -3255,7 +3691,7 @@
     public exposure with fleeting isolation as courtiers linger nearby, witnessing
     the ambassador's raw fury clash against Cromwell's calculated restraint.
   location_type: Chapel Exterior Grounds
-  parent_location_uuid: null
+  parent_location_uuid: ger_location_b646aa5cba47
   season_appearances:
   - 1
   local_uuids:
@@ -3280,7 +3716,25 @@
     1: location_f8b0e91e4de2
   first_appearance_season: 1
   tier: asteroid
-  episode_count: 0
+  episode_count: 1
+- fabula_uuid: ger_location_4b0d0dbe66ba
+  global_id: ger_location_4b0d0dbe66ba
+  canonical_name: Path Below Cromwell’s Window, Wolf Hall Grounds
+  description: Cold dawn light bathes the stone path on Wolf Hall grounds directly
+    below Cromwell’s bedroom window. Henry VIII takes Jane Seymour’s hand in quiet
+    intimacy here, their tender connection framed by his distant gaze from above.
+    Cromwell steps back, smile fading, as the physical gap underscores his waning
+    political hold. This open yet confined space captures fragile alliances and betrayal's
+    shadow amid the estate's hush.
+  location_type: Country Estate Garden
+  parent_location_uuid: ger_location_d62426af88de
+  season_appearances:
+  - 2
+  local_uuids:
+    1: location_34e9d0fdea6a
+  first_appearance_season: 2
+  tier: planet
+  episode_count: 2
 - fabula_uuid: ger_location_344c2d72727e
   global_id: ger_location_344c2d72727e
   canonical_name: Paul’s Cross
@@ -3327,7 +3781,7 @@
     with Leicester Abbey's darker, Wolsey-centered scenes. Historically distinct from
     Leicester Abbey; the show treats them as separate locations.
   location_type: Monastic Abbey
-  parent_location_uuid: null
+  parent_location_uuid: ger_location_98669fb00dab
   season_appearances:
   - 1
   local_uuids:
@@ -3335,23 +3789,61 @@
   first_appearance_season: 1
   tier: asteroid
   episode_count: 1
+- fabula_uuid: ger_location_9129b4ed67de
+  global_id: ger_location_9129b4ed67de
+  canonical_name: Pole Household
+  description: Cromwell targets the Pole household for an immediate raid, directing
+    Wriothesley to seize incriminating letters between Mary Tudor and Reginald Pole
+    hidden within its rooms. The home shelters a network of Catholic opposition ties
+    under Reginald Pole's influence, its family quarters ripe for search amid desks,
+    chests, and private papers. Wriothesley anticipates confronting Mary there, his
+    discomfort sharpening the tension of intrusion into noble domestic space. Sunlit
+    chambers hold whispers of exile and loyalty, now exposed to Cromwell's calculated
+    strike.
+  location_type: Noble Household
+  parent_location_uuid: null
+  season_appearances:
+  - 2
+  local_uuids:
+    1: location_534a9341e8a1
+  first_appearance_season: 2
+  tier: asteroid
+  episode_count: 1
 - fabula_uuid: ger_location_6a8b389a779b
   global_id: ger_location_6a8b389a779b
   canonical_name: Port of Calais (Fortified Harbor)
-  description: The fortified English-held port city of Calais in France, encompassing
-    quays, crowds, and halls, serving as a key destination for Henry VIII's royal
-    procession and a site of Anne Boleyn's public humiliation. Unlike the Church in
-    Calais, this entity represents the broader geopolitical and symbolic landscape
-    of the location.
+  description: Calais stands as the vital English-held port where Anne of Cleves lands
+    for her marriage journey to Henry VIII. Cromwell sends Gregory ahead to greet
+    her, armed with funds to settle her debts, orders for familiar German food, and
+    strict instructions for kindness to win her loyalty. The destination anchors Cromwell's
+    diplomatic maneuvering, its impending arrival freighted with alliance stakes and
+    court rivalries that demand flawless execution amid simmering household tensions.
   location_type: Fortified Port City
   parent_location_uuid: null
   season_appearances:
   - 1
+  - 2
   local_uuids:
     1: location_b4403a32a521
+    2: location_935d0f57289f
   first_appearance_season: 1
   tier: planet
   episode_count: 2
+- fabula_uuid: ger_location_ea8ae42a71c5
+  global_id: ger_location_ea8ae42a71c5
+  canonical_name: Private Aisle, Shaftesbury Abbey
+  description: A narrow, enclosed interior aisle within Shaftesbury Abbey, used for
+    private or strategic conversations. Focuses solely on Cromwell and the Abbess,
+    emphasizing secrecy and intimacy.
+  location_type: Abbey Aisle
+  parent_location_uuid: ger_location_73eba39b0d9a
+  season_appearances:
+  - 2
+  local_uuids:
+    1: location_6023b4991c07
+  first_appearance_season: 2
+  tier: asteroid
+  episode_count: 1
 - fabula_uuid: ger_location_a3ed9c319464
   global_id: ger_location_a3ed9c319464
   canonical_name: Private Audience Chamber Adjacent to Greenwich Palace’s Main Hall
@@ -3378,55 +3870,35 @@
     the charged air, amplifying subtext of pliability tests and hidden awareness in
     this intimate space for private scheming.
   location_type: Manor Private Chamber
-  parent_location_uuid: null
+  parent_location_uuid: ger_location_d62426af88de
   season_appearances:
   - 1
   - 1
+  - 2
   local_uuids:
     1: location_e3df140b4012
     2: location_09cc501ef118
+    3: location_09cc501ef118
   first_appearance_season: 1
   tier: planet
-  episode_count: 3
-- fabula_uuid: ger_location_6cd3217ebcc6
-  global_id: ger_location_6cd3217ebcc6
-  canonical_name: Private Chamber of Whitehall Palace
-  description: A dimly lit, secluded private chamber within Whitehall Palace, designed
-    to shield intimate and politically sensitive exchanges from the scrutiny of the
-    royal court. This confined space serves as the setting for Thomas Cromwell's tense
-    confrontation with Jenneke, his long-lost daughter from Antwerp. The chamber's
-    shadows amplify their raw emotional exchange—grief, resentment, and urgent political
-    warnings about enemies like Gardiner and Norfolk—while the confined space heightens
-    the vulnerability of their personal reckoning amid the broader backdrop of royal
-    intrigues. The encounter exposes the human cost of Cromwell's ambition, where
-    paternal guilt and political maneuvering collide.
-  location_type: Palace Private Chamber
-  parent_location_uuid: null
+  episode_count: 4
+- fabula_uuid: ger_location_028efff56dde
+  global_id: ger_location_028efff56dde
+  canonical_name: Private Corridor to Council Chamber, Hampton Court Palace
+  description: Narrow, utilitarian interior passage connecting private areas to the
+    Council Chamber, used exclusively for discreet transitions by key political figures
+    (Cromwell, Wriothesley, Fitzwilliam) during high-stakes deliberations. Serves
+    as a backstage space for private political maneuvering, distinct from public ceremonial
+    corridors.
+  location_type: Palace Interior Corridor
+  parent_location_uuid: ger_location_1edd5f69abb2
   season_appearances:
-  - 1
+  - 2
   local_uuids:
-    1: location_04aacf2d951b
-  first_appearance_season: 1
-  tier: asteroid
-  episode_count: 1
-- fabula_uuid: ger_location_31f6165646fa
-  global_id: ger_location_31f6165646fa
-  canonical_name: Private Chamber within the Royal Household
-  description: Cromwell strides into the chamber to face Lady Mary. Close walls trap
-    their confrontation over her gambling debts. His frustration surges—voice sharpens,
-    demands accountability amid her defiance. Intimate confines amplify every exchanged
-    glare and retort, turning confidentiality into a pressure cooker. The space lays
-    bare his slipping grip on royal affairs, with tense silence underscoring threats
-    of wider rebellion.
-  location_type: Royal Household Private Chamber
-  parent_location_uuid: null
-  season_appearances:
-  - 1
-  local_uuids:
-    1: location_d10d27eef11e
-  first_appearance_season: 1
-  tier: asteroid
-  episode_count: 1
+    1: location_e81a3758f4fd
+  first_appearance_season: 2
+  tier: planet
+  episode_count: 2
 - fabula_uuid: ger_location_5a4e84acef9a
   global_id: ger_location_5a4e84acef9a
   canonical_name: Private London Residence of Suspected Reformist (Book Purge Site)
@@ -3463,32 +3935,23 @@
 - fabula_uuid: ger_location_383a69033c8e
   global_id: ger_location_383a69033c8e
   canonical_name: Privy Chamber
-  description: The Queen’s Privy Chamber at Hampton Court Palace serves as a semi-public
-    venue for Queen Jane Seymour’s court, where she holds audiences with courtiers,
-    ladies-in-waiting, and political figures. This intimate apartment is distinct
-    from grander halls, characterized by soft light filtering through heavy tapestries
-    and a bustling atmosphere of attendants and political exchanges. It includes a
-    candlelit alcove tucked within the chamber, where Jane Seymour engages in tense,
-    private conversations (e.g., with Thomas Cromwell in *The Mirror and the Light
-    Episodes 1, 2, and 3*). The space blends public and private functions, masking
-    subtle scandals and whispered alliances beneath an air of deference.
-  location_type: Royal Inner Privy Chamber
-  parent_location_uuid: null
+  description: Gentlemen of the Privy Chamber move through this secluded royal apartment
+    at Hampton Court, tending to the king's private routines amid heavy tapestries
+    and polished oak paneling. They share a false sense of relief, certain Anne Boleyn's
+    quarrel with Henry VIII has faded, blind to Cromwell's covert investigation into
+    her fidelity. Candlelight flickers on portraits of past monarchs as whispers of
+    loyalty mask the encroaching machinery of persecution.
+  location_type: Royal Private Apartment
+  parent_location_uuid: ger_location_1edd5f69abb2
   season_appearances:
   - 1
-  - 1
-  - 1
-  - 1
-  - 1
+  - 2
   local_uuids:
-    1: location_a5683b7947e0
-    2: location_4689f8364fd2
-    3: location_f8b0e91e4de2
-    4: location_7ba6cd2a6d91
-    5: location_34d048ffcd7b
+    1: location_34d048ffcd7b
+    2: location_722606ad07c9
   first_appearance_season: 1
-  tier: anchor
-  episode_count: 7
+  tier: planet
+  episode_count: 4
 - fabula_uuid: ger_location_994e24c068e1
   global_id: ger_location_994e24c068e1
   canonical_name: Putney
@@ -3523,7 +3986,33 @@
     Thomas Cromwell to confront his brutal origins, the unbridgeable rift between
     his past violence and courtly present exposed by the clash of shadows and daylight.
   location_type: Blacksmith Forge
-  parent_location_uuid: null
+  parent_location_uuid: ger_location_994e24c068e1
+  season_appearances:
+  - 1
+  - 1
+  local_uuids:
+    1: location_e70d7cf68309
+    2: location_cc599e9d1662
+  first_appearance_season: 1
+  tier: planet
+  episode_count: 2
+- fabula_uuid: ger_location_7eba68c0cb88
+  global_id: ger_location_7eba68c0cb88
+  canonical_name: Putney Blacksmith's Forge and Yard (Walter Cromwell's Smithy)
+  description: A suffocating, soot-stained blacksmith's forge and courtyard in Putney,
+    where Walter Cromwell labors at the anvil amid the unease of a skittish horse.
+    The dark, enclosed smithy—marked by hammer and anvil—opens onto a grimy cobbled
+    yard, where the raw heat and clinging soot trap the weight of family confrontation.
+    This space serves as the brutal stage for Walter Cromwell's violent assault on
+    his son, Thomas Cromwell, imprinting lifelong trauma amid the clang of daily labor.
+    The courtyard embodies raw paternal fury and the irreversible rifts between father
+    and son, stripping away Thomas's courtly poise to expose his brutal youth. The
+    courtyard also features a dark, sinister smithy entrance, where suffocating heat
+    rises from the forge, and a skittish horse stamps uneasily. This location forces
+    Thomas Cromwell to confront his brutal origins, the unbridgeable rift between
+    his past violence and courtly present exposed by the clash of shadows and daylight.
+  location_type: Blacksmith Forge
+  parent_location_uuid: ger_location_7eba68c0cb88
   season_appearances:
   - 1
   - 1
@@ -3542,7 +4031,7 @@
     for political gatherings but instead symbolizes shame, exposure, and Cromwell’s
     psychological burden.
   location_type: Riverside Village Fields
-  parent_location_uuid: null
+  parent_location_uuid: ger_location_994e24c068e1
   season_appearances:
   - 1
   local_uuids:
@@ -3557,7 +4046,7 @@
     Wolsey surrenders. Serves as a private space for familial bonds and resistance
     to cruelty.
   location_type: Rural Inn
-  parent_location_uuid: null
+  parent_location_uuid: ger_location_994e24c068e1
   season_appearances:
   - 1
   local_uuids:
@@ -3581,64 +4070,41 @@
   first_appearance_season: 1
   tier: asteroid
   episode_count: 1
-- fabula_uuid: ger_location_7d3b369bfd12
-  global_id: ger_location_7d3b369bfd12
-  canonical_name: Queen’s Bedchamber (Anne of Cleves and Jane Seymour, Hampton Court
-    Palace)
-  description: 'The intimate royal bedchamber at Hampton Court Palace that serves
-    as the setting for two pivotal scenes in *Wolf Hall* (Episode 5): Anne of Cleves’
-    tense exchange with Thomas Cromwell and Jane Seymour’s deathbed. The space is
-    described as brightly lit with royal furnishings in Anne’s scene, contrasting
-    with the somber, shadowed atmosphere of Jane’s death. The chamber functions as
-    a microcosm of political and personal isolation in the Tudor court, thematically
-    linking Anne’s vulnerability and Jane’s fragility through Cromwell’s perspective.
-    The same physical space is later evoked in Cromwell’s memories, reinforcing the
-    fragility of Henry VIII’s alliances.'
-  location_type: Royal Deathbed Chamber
+- fabula_uuid: ger_location_63d9c9627474
+  global_id: ger_location_63d9c9627474
+  canonical_name: Queen's Chambers
+  description: Courtiers and ladies fill the Queen's chambers in the royal household,
+    turning private visits into public risks. Thomas Howard meets Lady Margaret Douglas
+    here amid the bustle, their marriage whispers drowned in chatter yet witnessed
+    by passersby. The space blends accessibility and intimacy, where lack of isolation
+    exposes secrets to the court's prying eyes and undermines any claim to legitimacy.
+  location_type: Royal Household Chambers
   parent_location_uuid: null
   season_appearances:
-  - 1
+  - 2
   local_uuids:
-    1: location_31676d51907a
-  first_appearance_season: 1
+    1: location_5203976a9992
+  first_appearance_season: 2
   tier: asteroid
   episode_count: 1
-- fabula_uuid: ger_location_0e8f4b47947f
-  global_id: ger_location_0e8f4b47947f
-  canonical_name: Queen’s Outer Rooms, Hampton Court
-  description: Cromwell tracks through these brightly lit outer rooms at Hampton Court
-    Palace, stone floors echoing footsteps beneath vaulted ceilings and heavy tapestries
-    that muffle court bustle. Attendants linger in doorways, eyes following his passage,
-    while cooler air carries incense from the queen's inner chambers. The space bridges
-    public crowds to Anne of Cleves' bedchamber, building tension amid contrasts to
-    dark flashbacks of Jane Seymour's death chamber.
-  location_type: Royal Palace Antechamber
-  parent_location_uuid: null
+- fabula_uuid: ger_location_c191aa0edb20
+  global_id: ger_location_c191aa0edb20
+  canonical_name: Quire, Shaftesbury Abbey
+  description: Candlelight flickers across stone walls in the Quire of Shaftesbury
+    Abbey, the abbey's central liturgical space enclosed apart from cloisters. Dorothea
+    faces Cromwell here in charged confrontations, and in nightmares, the suffocating
+    air thickens with execution's echo—'A porter l’épée'—spinning her toward psychological
+    collapse. Claustrophobic silence blurs dream and reality, trapping guilt over
+    his downfall.
+  location_type: Abbey Quire
+  parent_location_uuid: ger_location_73eba39b0d9a
   season_appearances:
-  - 1
+  - 2
   local_uuids:
-    1: location_6725938bec6e
-  first_appearance_season: 1
-  tier: asteroid
-  episode_count: 0
-- fabula_uuid: ger_location_8bfc43bae141
-  global_id: ger_location_8bfc43bae141
-  canonical_name: Quire of Shaftesbury Convent (Central Chapel)
-  description: Central sacred space of Shaftesbury Convent, housing the main altar
-    where Cromwell’s rejected marriage proposal and emotional confrontation with Abbess
-    Dorothea occur. Adjacent to the First Cloister and other convent areas, this space
-    is marked by Vespers bells, filtered sunlight, and a holy calm that amplifies
-    Cromwell’s vulnerability. Serves as the emotional core of his visit in Episode
-    2.
-  location_type: Convent Quire
-  parent_location_uuid: null
-  season_appearances:
-  - 1
-  local_uuids:
-    1: location_70bd73a633c7
-  first_appearance_season: 1
-  tier: asteroid
-  episode_count: 1
+    1: location_14b5e11e722c
+  first_appearance_season: 2
+  tier: planet
+  episode_count: 3
 - fabula_uuid: ger_location_ce37f29afc03
   global_id: ger_location_ce37f29afc03
   canonical_name: Reading
@@ -3667,15 +4133,15 @@
     of Henry's arrival, her isolation mirroring Cromwell's fall amid spacious halls
     and distant Thames views, the site's remoteness amplifying themes of capricious
     favor and abandonment.
-  location_type: Royal Residence
-  parent_location_uuid: null
+  location_type: Royal Palace
+  parent_location_uuid: ger_location_8a3a15306cc9
   season_appearances:
-  - 1
+  - 2
   local_uuids:
-    1: location_75ba41a3ccc8
-  first_appearance_season: 1
+    1: location_ea9e147dcee1
+  first_appearance_season: 2
   tier: asteroid
-  episode_count: 1
+  episode_count: 0
 - fabula_uuid: ger_location_b5ceb72ebcb1
   global_id: ger_location_b5ceb72ebcb1
   canonical_name: Richmond Gallery
@@ -3696,18 +4162,22 @@
 - fabula_uuid: ger_location_31d88527c7d3
   global_id: ger_location_31d88527c7d3
   canonical_name: River Thames
-  description: Natural waterway serving as the primary setting for Anne Boleyn's royal
-    barge passage, symbolizing isolation and political vulnerability through its reflective
-    waters and relentless current.
-  location_type: Navigable River
-  parent_location_uuid: null
+  description: 'A mist-veiled stretch of the Thames where Cromwell rides in Anne Boleyn’s
+    former seat, escorted toward the Tower of London. Thematic focus: power’s fragility,
+    betrayal, and the inversion of roles.'
+  location_type: River Barge Approach
+  parent_location_uuid: ger_location_8a3a15306cc9
   season_appearances:
   - 1
+  - 2
+  - 2
   local_uuids:
     1: location_02ed51941b63
+    2: location_7140bd4eeb15
+    3: location_ac75b8aa0381
   first_appearance_season: 1
-  tier: planet
-  episode_count: 4
+  tier: anchor
+  episode_count: 7
 - fabula_uuid: ger_location_892ee3afee51
   global_id: ger_location_892ee3afee51
   canonical_name: Riverside Retreat House near London
@@ -3729,16 +4199,20 @@
 - fabula_uuid: ger_location_dbd110ea52dc
   global_id: ger_location_dbd110ea52dc
   canonical_name: Rochester
-  description: A historic English city serving as the primary setting for Henry VIII’s
-    disastrous diplomatic visit to Anne of Cleves, including the bull-baiting courtyard
-    scene and subsequent political fallout.
-  location_type: English City
+  description: Rochester hosts Anne of Cleves during her journey to London, drawing
+    Henry VIII for an unannounced meeting in disguise. Anne watches bull-baiting from
+    a vantage point, her attention fixed on the roaring crowd and tethered animals
+    as Henry approaches unrecognized. She starts back upon realizing his identity,
+    her dismay igniting his revulsion amid the town's clamor. This transit stop turns
+    romantic whim into public humiliation, its streets and lodgings amplifying the
+    clash between royal impulse and diplomatic protocol under overcast skies.
+  location_type: Provincial English Town
   parent_location_uuid: null
   season_appearances:
-  - 1
+  - 2
   local_uuids:
-    1: location_badc3efa5a8f
-  first_appearance_season: 1
+    1: location_0401d5f60e4c
+  first_appearance_season: 2
   tier: asteroid
   episode_count: 1
 - fabula_uuid: ger_location_17ef57528cce
@@ -3781,24 +4255,6 @@
   first_appearance_season: 1
   tier: asteroid
   episode_count: 1
-- fabula_uuid: ger_location_550cf3cb7088
-  global_id: ger_location_550cf3cb7088
-  canonical_name: Royal Apartment, Tower of London
-  description: Cromwell halts at the threshold during his Tower escort, the Royal
-    Apartment's preserved opulence clashing with its vacant power. Reserved for monarchs,
-    the space now reflects his hubris in heavy silence. He locks eyes on the Inner
-    Chamber, where past machinations—executions, betrayals—crash down, forcing paralyzing
-    self-judgment. Stone walls enclose this gilded trap, once for Anne Boleyn's tense
-    vigils amid watchful ladies, now his altar of reckoning amid echoing corridors.
-  location_type: Fortress Royal Prison Chambers
-  parent_location_uuid: null
-  season_appearances:
-  - 1
-  local_uuids:
-    1: location_908d3cbe34d1
-  first_appearance_season: 1
-  tier: asteroid
-  episode_count: 0
 - fabula_uuid: ger_location_d30a9bb8bf9f
   global_id: ger_location_d30a9bb8bf9f
   canonical_name: Royal Gallery
@@ -3864,8 +4320,8 @@
   local_uuids:
     1: location_093f2b339f25
   first_appearance_season: 1
-  tier: planet
-  episode_count: 2
+  tier: asteroid
+  episode_count: 1
 - fabula_uuid: ger_location_fd92026093d7
   global_id: ger_location_fd92026093d7
   canonical_name: Saxony
@@ -3884,24 +4340,41 @@
   first_appearance_season: 1
   tier: asteroid
   episode_count: 0
-- fabula_uuid: ger_location_7a0613856a1a
-  global_id: ger_location_7a0613856a1a
-  canonical_name: Second Cloister of Shaftesbury Abbey (Penitential Walkway)
-  description: Atmospheric, candlelit cloister in Shaftesbury Abbey where incense
-    hangs thick and silence presses in. Serves as the site of Cromwell’s **hallucinations
-    and guilt-induced visions**, including Anne Boleyn’s execution, Wolsey’s downfall,
-    and Abbess accusations. The space is tied to his **fears of religious persecution
-    and political betrayal**, with an **Abbess figure** appearing to confront him.
-    Appears in Episodes 4–6 as his psychological state deteriorates.
+- fabula_uuid: ger_location_1c39d4d530de
+  global_id: ger_location_1c39d4d530de
+  canonical_name: Scheldt River
+  description: Jenneke watched the Scheldt River's broad waters as a child, eyes fixed
+    on passing ships, dreaming Cromwell would return from new-found lands heavy with
+    treasure. Gentle currents carried trading vessels past her vantage point, fueling
+    visions of heroic exploits. Now, those banks evoke the sting of broken illusions—his
+    endless absence shattered her hopes, leaving only the river's steady flow as witness
+    to their divide.
+  location_type: Navigable River
+  parent_location_uuid: null
+  season_appearances:
+  - 2
+  local_uuids:
+    1: location_c2dc312abf68
+  first_appearance_season: 2
+  tier: asteroid
+  episode_count: 0
+- fabula_uuid: ger_location_73eba39b0d9a
+  global_id: ger_location_73eba39b0d9a
+  canonical_name: Second Cloister, Shaftesbury Abbey
+  description: A **covered walkway ringing a courtyard** in Shaftesbury Abbey, distinct
+    from the quire and other chambers. This cloister is a *recurring semi-open space*
+    with symbolic and atmospheric weight, serving as a setting for multiple events
+    (e.g., Dorothea’s guilt, Cromwell’s nightmare). It contains *sub-locations* such
+    as doorways and chambers, but is not synonymous with them.
   location_type: Abbey Cloister
   parent_location_uuid: null
   season_appearances:
-  - 1
+  - 2
   local_uuids:
-    1: location_189b4e504006
-  first_appearance_season: 1
+    1: location_7b0840c8d6b5
+  first_appearance_season: 2
   tier: planet
-  episode_count: 3
+  episode_count: 4
 - fabula_uuid: ger_location_4b35ce202841
   global_id: ger_location_4b35ce202841
   canonical_name: Servants' Corridors at York Place (Covert Passageways)
@@ -3910,29 +4383,11 @@
     Cromwell to navigate undetected, emphasizing secrecy, strategic maneuvering, and
     the labyrinthine nature of court intrigue.
   location_type: Palace Servants' Passageways
-  parent_location_uuid: null
+  parent_location_uuid: ger_location_29eebe28b2df
   season_appearances:
   - 1
   local_uuids:
     1: location_db85c87a00bc
-  first_appearance_season: 1
-  tier: asteroid
-  episode_count: 1
-- fabula_uuid: ger_location_d6dc98057c27
-  global_id: ger_location_d6dc98057c27
-  canonical_name: Shadowy Underworld (Nightmares)
-  description: Cromwell plunges into this psychological realm during his fever, where
-    shadows swallow him whole. Anne Boleyn's executed specter pursues him relentlessly,
-    her form a vivid accusation of his complicity in her downfall. Guilt thickens
-    the air, fever blurs boundaries between mind and memory, and past consequences
-    claw at his unraveling resolve. The space throbs with dread, amplifying his paranoia
-    as ambition's toll demands reckoning.
-  location_type: Psychological Nightmare Realm
-  parent_location_uuid: null
-  season_appearances:
-  - 1
-  local_uuids:
-    1: location_eb17f9fa01df
   first_appearance_season: 1
   tier: asteroid
   episode_count: 1
@@ -3947,7 +4402,7 @@
     Catholic faith. The space isolates him amid the elements, underscoring his shift
     toward ambition.
   location_type: Ocean-Going Sailing Ship
-  parent_location_uuid: null
+  parent_location_uuid: ger_location_0dec7585f9fb
   season_appearances:
   - 1
   local_uuids:
@@ -3962,7 +4417,7 @@
     for Cromwell's private confrontation with Elizabeth Barton after the court's arrival.
     Contrasts with the open 'Road to Canterbury' by emphasizing secrecy and tension.
   location_type: Cathedral Side Streets
-  parent_location_uuid: null
+  parent_location_uuid: ger_location_469126670ce4
   season_appearances:
   - 1
   local_uuids:
@@ -4041,25 +4496,6 @@
   first_appearance_season: 1
   tier: asteroid
   episode_count: 0
-- fabula_uuid: ger_location_18f5451bad7a
-  global_id: ger_location_18f5451bad7a
-  canonical_name: Spoleto
-  description: Spoleto surfaces in heated accusations at Lambeth Palace as the Italian
-    town where agents bought the poison that killed Cardinal Bainbridge in Rome. Gardiner
-    and Norfolk wield its name like a blade, pinning Wolsey's corruption—and Cromwell's
-    complicity—on this distant source of treachery. The mention conjures shadowy markets
-    amid Umbrian hills, where rare toxins changed hands, now fueling courtly sabotage
-    and Henry's growing distrust. Dialogue paints it as a nexus of conspiracy, its
-    remoteness amplifying the scandal's reach across Europe.
-  location_type: Italian Town
-  parent_location_uuid: null
-  season_appearances:
-  - 1
-  local_uuids:
-    1: location_d0d22cc1e061
-  first_appearance_season: 1
-  tier: asteroid
-  episode_count: 0
 - fabula_uuid: ger_location_d11c3980711e
   global_id: ger_location_d11c3980711e
   canonical_name: St. Austin's Church, London
@@ -4111,40 +4547,85 @@
   first_appearance_season: 1
   tier: asteroid
   episode_count: 0
+- fabula_uuid: ger_location_4666900d1cb3
+  global_id: ger_location_4666900d1cb3
+  canonical_name: Staircase/Landing, Hunsdon House
+  description: Lady Shelton climbs the staircase and moves along the landing in daylight
+    pursuit of Mary Boleyn. Hurried footsteps mark the chase through this narrow passage,
+    which funnels toward a heavy door. Mary reaches the threshold, slams it shut,
+    and bolts it with a sharp clank, rejecting Shelton's authority and the court's
+    reach. The space heightens urgency, its steps and platform bridging the house's
+    lower levels to private chambers above, where defiance solidifies amid echoing
+    tension.
+  location_type: Manor House Staircase
+  parent_location_uuid: ger_location_08a8a93772b3
+  season_appearances:
+  - 2
+  local_uuids:
+    1: location_d3d11551f8e2
+  first_appearance_season: 2
+  tier: asteroid
+  episode_count: 1
 - fabula_uuid: ger_location_75d3f545c627
   global_id: ger_location_75d3f545c627
   canonical_name: Stairs Outside the Study (Austin Friars)
-  description: These stairs descend directly from the door of Cromwell's study in
-    the Austin Friars townhouse during evening interrogation aftermath. Rafe Sadler
-    grips the hand of the broken, sobbing Mark Smeaton and leads him downward to detention,
-    steps creaking under their weight. Cromwell and Richard Cromwell stand at the
-    top, watching in silence as shadows stretch across the narrow passage. Tension
-    lingers in the air, thick with the echo of coerced confession turning to confinement,
-    marking the grim passage from questioning room to imprisonment.
+  description: Narrow staircase inside Austin Friars where Cromwell and Chapuys climb
+    during an evening storm. Lightning flashes through windows, casting flickering
+    light that mirrors Cromwell's confessed dread. The confined space forces closeness,
+    amplifying confidentiality as he reveals vulnerability amid the psychological
+    toll of court survival. Thunder rumbles outside while their steps echo, heightening
+    the emotional weight of his unguarded moment. Also referred to as 'Stairs Outside
+    the Study (Austin Friars)' in some contexts, though this appears to be the same
+    internal staircase location.
   location_type: Townhouse Staircase
-  parent_location_uuid: null
+  parent_location_uuid: ger_location_da7bb9e8096e
   season_appearances:
   - 1
+  - 2
   local_uuids:
     1: location_4506800fb1ce
+    2: location_2b7534b62c06
   first_appearance_season: 1
-  tier: asteroid
-  episode_count: 1
-- fabula_uuid: ger_location_00b393077aca
-  global_id: ger_location_00b393077aca
-  canonical_name: Stairs between Great Hall and Royal Apartment (Tower of London)
-  description: Cromwell and his escort climb these stone stairs from the Tower of
-    London's echoing Great Hall to the Royal Apartment. Each step carries the weight
-    of his downfall, shadows stretching across worn treads amid hollow grandeur. The
-    path underscores his inexorable journey to reckoning, corridors whispering ghosts
-    of past machinations as tension builds toward the opulent threshold above.
-  location_type: Fortress Interior Staircase
-  parent_location_uuid: null
+  tier: planet
+  episode_count: 2
+- fabula_uuid: ger_location_75d3f545c627
+  global_id: ger_location_75d3f545c627
+  canonical_name: Stairs Outside the Study (Austin Friars)
+  description: Narrow staircase inside Austin Friars where Cromwell and Chapuys climb
+    during an evening storm. Lightning flashes through windows, casting flickering
+    light that mirrors Cromwell's confessed dread. The confined space forces closeness,
+    amplifying confidentiality as he reveals vulnerability amid the psychological
+    toll of court survival. Thunder rumbles outside while their steps echo, heightening
+    the emotional weight of his unguarded moment. Also referred to as 'Stairs Outside
+    the Study (Austin Friars)' in some contexts, though this appears to be the same
+    internal staircase location.
+  location_type: Townhouse Staircase
+  parent_location_uuid: ger_location_cce9b7446861
   season_appearances:
   - 1
+  - 2
   local_uuids:
-    1: location_c9eef1f18231
+    1: location_4506800fb1ce
+    2: location_2b7534b62c06
   first_appearance_season: 1
+  tier: planet
+  episode_count: 2
+- fabula_uuid: ger_location_b807e4d73640
+  global_id: ger_location_b807e4d73640
+  canonical_name: Stairs from Great Hall to Outer Royal Apartment (The Tower)
+  description: Cromwell ascends these stairs from the Tower's Great Hall to the Outer
+    Royal Apartment, footsteps echoing on worn stone treads under William Kingston's
+    escort. Empty corridors frame the climb, their stark silence amplifying the fortress's
+    oppressive history. The passage triggers Cromwell's visceral memory, linking past
+    authority to current captivity as daylight filters through narrow windows, casting
+    long shadows over each step toward private royal chambers.
+  location_type: Fortress Staircase
+  parent_location_uuid: null
+  season_appearances:
+  - 2
+  local_uuids:
+    1: location_be33bd16678f
+  first_appearance_season: 2
   tier: asteroid
   episode_count: 1
 - fabula_uuid: ger_location_a34cf4ae805f
@@ -4157,30 +4638,15 @@
     thatch, and the Thames'' murmur promises temporary shield from northern savagery
     spilling south. Their selection reveals Cromwell''s grim calculus: safety lies
     beyond city walls in precarious rural margins.'
-  location_type: Thameside Refuge Villages
+  location_type: Outlying London Parish
   parent_location_uuid: null
   season_appearances:
-  - 1
+  - 2
   local_uuids:
-    1: location_a3d1cfbdc6f0
-  first_appearance_season: 1
+    1: location_824808b4517a
+  first_appearance_season: 2
   tier: asteroid
   episode_count: 0
-- fabula_uuid: ger_location_f85be5bd5192
-  global_id: ger_location_f85be5bd5192
-  canonical_name: Storm-Lashed Hillside Leading to Launde Abbey
-  description: A rugged, exposed slope in Rutland where Cromwell endures the storm's
-    fury during his descent toward Launde Abbey, distinct from the abbey itself as
-    a physical and narrative threshold.
-  location_type: Storm-Lashed Rural Hillside
-  parent_location_uuid: null
-  season_appearances:
-  - 1
-  local_uuids:
-    1: location_166a2cf0d746
-  first_appearance_season: 1
-  tier: asteroid
-  episode_count: 1
 - fabula_uuid: ger_location_12a70c775f37
   global_id: ger_location_12a70c775f37
   canonical_name: Street Adjacent to Austin Friars Townhouse
@@ -4189,14 +4655,14 @@
     strategy discussions. Part of the larger Austin Friars location but distinct from
     the townhouse interior.
   location_type: Urban Townhouse Street
-  parent_location_uuid: null
+  parent_location_uuid: ger_location_2e28b1a3a5e8
   season_appearances:
   - 1
   local_uuids:
     1: location_eb6d22c4739c
   first_appearance_season: 1
-  tier: planet
-  episode_count: 2
+  tier: asteroid
+  episode_count: 1
 - fabula_uuid: ger_location_b144068f4ec8
   global_id: ger_location_b144068f4ec8
   canonical_name: Sudley
@@ -4238,7 +4704,7 @@
   description: A specific barge operating on the River Thames, serving as a confined
     narrative space for Cromwell and Gardiner’s tense dialogue in Episode 2.
   location_type: Thames Barge
-  parent_location_uuid: null
+  parent_location_uuid: ger_location_31d88527c7d3
   season_appearances:
   - 1
   local_uuids:
@@ -4260,23 +4726,6 @@
   first_appearance_season: 1
   tier: asteroid
   episode_count: 1
-- fabula_uuid: ger_location_9d41ca7586b4
-  global_id: ger_location_9d41ca7586b4
-  canonical_name: The Country
-  description: Expanses of rural England lie beyond London's political maelstrom,
-    serving as refuge for Richard Cromwell. Cromwell orders his son sent there to
-    escape execution's shadow and capital fallout. Quiet fields and villages grant
-    distance and safety, shielding family from vengeful crowds, whispered betrayals,
-    and Tower grimness. This countryside embodies desperate anonymity amid urban peril.
-  location_type: Rural English Countryside
-  parent_location_uuid: null
-  season_appearances:
-  - 1
-  local_uuids:
-    1: location_a09d7697c4d0
-  first_appearance_season: 1
-  tier: asteroid
-  episode_count: 0
 - fabula_uuid: ger_location_d001b7a5a86c
   global_id: ger_location_d001b7a5a86c
   canonical_name: The North of England (York)
@@ -4292,8 +4741,10 @@
   parent_location_uuid: null
   season_appearances:
   - 1
+  - 2
   local_uuids:
     1: location_062eb8922872
+    2: location_062eb8922872
   first_appearance_season: 1
   tier: asteroid
   episode_count: 0
@@ -4334,8 +4785,10 @@
   parent_location_uuid: null
   season_appearances:
   - 1
+  - 2
   local_uuids:
     1: location_21a2519e0784
+    2: location_21a2519e0784
   first_appearance_season: 1
   tier: asteroid
   episode_count: 0
@@ -4349,7 +4802,7 @@
     coastal holds like Normandy. Breached gates and churned fields haunt royal memory,
     sparking heated debates where fiscal logic clashes with kingly pride.
   location_type: Fortified Town
-  parent_location_uuid: null
+  parent_location_uuid: ger_location_1caa27144971
   season_appearances:
   - 1
   local_uuids:
@@ -4367,13 +4820,13 @@
     accusations of grave disrespect to noble lineage and feudal piety. Shadows of
     dissolution hang over its weathered arches, turning sacred earth into a symbol
     of reformist assault on ancient privilege.
-  location_type: Priory Burial Ground
+  location_type: Monastic Priory
   parent_location_uuid: null
   season_appearances:
-  - 1
+  - 2
   local_uuids:
-    1: location_4568d495c722
-  first_appearance_season: 1
+    1: location_b5ceeb5e5f01
+  first_appearance_season: 2
   tier: asteroid
   episode_count: 0
 - fabula_uuid: ger_location_0165769b4479
@@ -4425,7 +4878,7 @@
     clashes, with Gardiner probing loyalties and court rivalries infiltrating the
     domestic space.'
   location_type: Thames Riverside Estate
-  parent_location_uuid: null
+  parent_location_uuid: ger_location_0165769b4479
   season_appearances:
   - 1
   local_uuids:
@@ -4452,24 +4905,6 @@
   first_appearance_season: 1
   tier: asteroid
   episode_count: 1
-- fabula_uuid: ger_location_47e4bc0c60ba
-  global_id: ger_location_47e4bc0c60ba
-  canonical_name: Thomas Truth's Cell, Bell Tower
-  description: Damp stone walls trap Thomas Truth in this claustrophobic cell high
-    in the Bell Tower of the Tower of London. A small table displays his incriminating
-    poems, drawing Cromwell's focus during interrogation. Shadows deepen the confined
-    space, where every word echoes, amplifying psychological pressure. Truth squirms
-    under accusations of treasonous verse plotting marriage to Lady Margaret Douglas,
-    his defiance cracking as Cromwell dissects the lines aloud through Wriothesley.
-  location_type: Prison Interrogation Cell
-  parent_location_uuid: null
-  season_appearances:
-  - 1
-  local_uuids:
-    1: location_f8c31bf9cb56
-  first_appearance_season: 1
-  tier: asteroid
-  episode_count: 1
 - fabula_uuid: ger_location_6abba13ab946
   global_id: ger_location_6abba13ab946
   canonical_name: Thornbury
@@ -4491,18 +4926,91 @@
 - fabula_uuid: ger_location_8494c35ac6ff
   global_id: ger_location_8494c35ac6ff
   canonical_name: Tower Hill Public Execution Scaffold
-  description: Elevated wooden platform on *Tower Hill* (outside the Tower of London),
-    serving as the *specific site* for Thomas Cromwell’s public execution. Marked
-    by daylight skies, a jeering crowd, and sensory immersion (damp wood, iron scent,
-    buzzing bees), this scaffold is where Cromwell delivers his final confession,
-    interacts with the executioner, and sees Wolsey’s spectral figure.
-  location_type: Public Execution Scaffold
+  description: Open public execution site in London where Thomas Cromwell's beheading
+    takes place. The location includes both the vast open space where crowds gather
+    to jeer and the elevated wooden scaffold where executions occur. The site serves
+    as a stage for Henry VIII's displays of power, where ritualistic public executions
+    are performed with dramatic spectacle. The wooden platform (scaffold) stands as
+    the focal point where condemned individuals confront their final moments amid
+    suffocating tension and royal wrath.
+  location_type: Public Execution Ground
   parent_location_uuid: null
   season_appearances:
-  - 1
+  - 2
   local_uuids:
-    1: location_e7756cc88fbf
-  first_appearance_season: 1
+    1: location_d5b632041e20
+  first_appearance_season: 2
+  tier: asteroid
+  episode_count: 1
+- fabula_uuid: ger_location_d5dcf3054df3
+  global_id: ger_location_d5dcf3054df3
+  canonical_name: Tower of Austin Friars
+  description: Exterior tower structure of the Austin Friars *precinct*, distinct
+    from interior spaces like the chapel. Serves as a *symbolic* landmark in Episode
+    1, emphasizing isolation and observation through storm-lashed stone and a single
+    lit window.
+  location_type: Townhouse Tower
+  parent_location_uuid: null
+  season_appearances:
+  - 2
+  local_uuids:
+    1: location_196827997121
+  first_appearance_season: 2
+  tier: asteroid
+  episode_count: 1
+- fabula_uuid: ger_location_dadcb28c5eb0
+  global_id: ger_location_dadcb28c5eb0
+  canonical_name: Tower of London (Bell Tower Complex)
+  description: |-
+    The Tower of London's Bell Tower complex, a fortress prison under Tudor control, features a narrow, steep staircase (Bell Tower Staircase) leading to cramped interrogation cells (e.g., Tom Truth's Cell). Stone walls trap heat, echoes, and threats, while guards enforce isolation. The space amplifies political intrigue, betrayal, and the peril of Tudor interrogations. Key locations include:
+          - **Bell Tower Staircase**: Climbed by Cromwell and allies (shared event: `cand_evt_scene_2dadcac9942dbe5e_01`).
+          - **Tom Truth's Cell**: Site of Geoffrey Pole's interrogation (Episode 2) and Thomas Howard's interrogation (Episode 4), where nobles face accusations of treason in confined, oppressive spaces.
+          Broader complex reinforces Tudor authority, with battlements and cells amplifying the stakes of noble interrogations amid damp stone and flickering light.
+  location_type: Fortress Prison Complex
+  parent_location_uuid: ger_location_8a3a15306cc9
+  season_appearances:
+  - 2
+  local_uuids:
+    1: location_4f600c1421ca
+  first_appearance_season: 2
+  tier: planet
+  episode_count: 2
+- fabula_uuid: ger_location_dadcb28c5eb0
+  global_id: ger_location_dadcb28c5eb0
+  canonical_name: Tower of London (Bell Tower Complex)
+  description: |-
+    The Tower of London's Bell Tower complex, a fortress prison under Tudor control, features a narrow, steep staircase (Bell Tower Staircase) leading to cramped interrogation cells (e.g., Tom Truth's Cell). Stone walls trap heat, echoes, and threats, while guards enforce isolation. The space amplifies political intrigue, betrayal, and the peril of Tudor interrogations. Key locations include:
+          - **Bell Tower Staircase**: Climbed by Cromwell and allies (shared event: `cand_evt_scene_2dadcac9942dbe5e_01`).
+          - **Tom Truth's Cell**: Site of Geoffrey Pole's interrogation (Episode 2) and Thomas Howard's interrogation (Episode 4), where nobles face accusations of treason in confined, oppressive spaces.
+          Broader complex reinforces Tudor authority, with battlements and cells amplifying the stakes of noble interrogations amid damp stone and flickering light.
+  location_type: Fortress Prison Complex
+  parent_location_uuid: ger_location_419aa40003df
+  season_appearances:
+  - 2
+  local_uuids:
+    1: location_4f600c1421ca
+  first_appearance_season: 2
+  tier: planet
+  episode_count: 2
+- fabula_uuid: ger_location_419aa40003df
+  global_id: ger_location_419aa40003df
+  canonical_name: Tower of London (Fortress Complex)
+  description: The Tower of London is a fortress-prison complex encompassing multiple
+    sub-locations, including the Inner Ward Courtyard, where Cromwell emerges into
+    daylight before his execution. Its massive walls cast a shadow of inevitability,
+    symbolizing isolation, silence, and the crush of impending execution. Historically
+    linked to Anne Boleyn's downfall, the Tower receives Cromwell in deliberate echo,
+    marking his fall from power. Within its confines, he composes his desperate letter
+    for mercy ('Written the Tower, this Wednesday the last of June'), while the Inner
+    Ward Courtyard serves as a transitional space between imprisonment and public
+    spectacle.
+  location_type: Fortress Prison Complex
+  parent_location_uuid: ger_location_8a3a15306cc9
+  season_appearances:
+  - 2
+  local_uuids:
+    1: location_e20813f56ac0
+  first_appearance_season: 2
   tier: asteroid
   episode_count: 1
 - fabula_uuid: ger_location_af60061ff3d4
@@ -4514,14 +5022,35 @@
     particularly in **Anne Boleyn’s arrival in Episode 6**, where her collapse under
     the gate’s shadow becomes a symbol of her downfall.
   location_type: Fortress Water Gate
-  parent_location_uuid: null
+  parent_location_uuid: ger_location_b2f7fcb8bc24
   season_appearances:
   - 1
+  - 2
   local_uuids:
     1: location_2da6b50a2364
+    2: location_2da6b50a2364
   first_appearance_season: 1
-  tier: asteroid
-  episode_count: 1
+  tier: planet
+  episode_count: 2
+- fabula_uuid: ger_location_af60061ff3d4
+  global_id: ger_location_af60061ff3d4
+  canonical_name: Tower of London - Court Gate
+  description: Riverside entrance to the Tower of London where barges deliver prisoners
+    and queens alike. This space is **distinct from enclosed areas** like the Royal
+    Menagerie Cages; it serves as a **stage for public humiliation and court protocol**,
+    particularly in **Anne Boleyn’s arrival in Episode 6**, where her collapse under
+    the gate’s shadow becomes a symbol of her downfall.
+  location_type: Fortress Water Gate
+  parent_location_uuid: ger_location_419aa40003df
+  season_appearances:
+  - 1
+  - 2
+  local_uuids:
+    1: location_2da6b50a2364
+    2: location_2da6b50a2364
+  first_appearance_season: 1
+  tier: planet
+  episode_count: 2
 - fabula_uuid: ger_location_abf32d626abd
   global_id: ger_location_abf32d626abd
   canonical_name: Tower of London - Great Hall (Courtroom)
@@ -4531,14 +5060,48 @@
     allies, including Harry Percy. The space is charged with legal maneuvering, psychological
     tension, and the inevitability of condemnation.
   location_type: Fortress Great Hall (Converted Courtroom)
-  parent_location_uuid: null
+  parent_location_uuid: ger_location_b2f7fcb8bc24
   season_appearances:
   - 1
   local_uuids:
     1: location_905ec8e93729
   first_appearance_season: 1
-  tier: asteroid
-  episode_count: 1
+  tier: planet
+  episode_count: 3
+- fabula_uuid: ger_location_abf32d626abd
+  global_id: ger_location_abf32d626abd
+  canonical_name: Tower of London - Great Hall (Courtroom)
+  description: A **temporarily repurposed courtroom** within the Tower of London,
+    specifically used for the trials of Anne Boleyn and George Boleyn. Features elevated
+    judicial platforms, wooden spectator benches, and a jury composed of Cromwell’s
+    allies, including Harry Percy. The space is charged with legal maneuvering, psychological
+    tension, and the inevitability of condemnation.
+  location_type: Fortress Great Hall (Converted Courtroom)
+  parent_location_uuid: ger_location_dadcb28c5eb0
+  season_appearances:
+  - 1
+  local_uuids:
+    1: location_905ec8e93729
+  first_appearance_season: 1
+  tier: planet
+  episode_count: 3
+- fabula_uuid: ger_location_abf32d626abd
+  global_id: ger_location_abf32d626abd
+  canonical_name: Tower of London - Great Hall (Courtroom)
+  description: A **temporarily repurposed courtroom** within the Tower of London,
+    specifically used for the trials of Anne Boleyn and George Boleyn. Features elevated
+    judicial platforms, wooden spectator benches, and a jury composed of Cromwell’s
+    allies, including Harry Percy. The space is charged with legal maneuvering, psychological
+    tension, and the inevitability of condemnation.
+  location_type: Fortress Great Hall (Converted Courtroom)
+  parent_location_uuid: ger_location_419aa40003df
+  season_appearances:
+  - 1
+  local_uuids:
+    1: location_905ec8e93729
+  first_appearance_season: 1
+  tier: planet
+  episode_count: 3
 - fabula_uuid: ger_location_a063032a1c83
   global_id: ger_location_a063032a1c83
   canonical_name: Tower of London - Royal Quarters
@@ -4550,70 +5113,62 @@
     taunts with Wyatt's name—blending defiance, despair, and irony in suffocating
     luxury.
   location_type: Fortress Royal Prison Chambers
-  parent_location_uuid: null
+  parent_location_uuid: ger_location_b2f7fcb8bc24
   season_appearances:
   - 1
   local_uuids:
     1: location_908d3cbe34d1
   first_appearance_season: 1
-  tier: planet
-  episode_count: 2
-- fabula_uuid: ger_location_173d8714d134
-  global_id: ger_location_173d8714d134
-  canonical_name: Tower of London Execution Chamber
-  description: The Tower of London's execution chamber, a suffocating space of stone
-    and shadow where Thomas Cromwell awaits his final moments. This location encompasses
-    both the enclosed indoor execution chamber (where Cromwell's final hours are spent
-    in isolation, facing Wolsey's ghost and political interrogators) and the outdoor
-    execution yard (where the axe falls and Cromwell's execution is carried out).
-    The space serves as a site of raw reckoning, political theater, and fleeting redemption,
-    unified by its role in Cromwell's execution and the haunting presence of Wolsey's
-    ghost. Key moments include Cromwell's contrite speech, the materialization of
-    Wolsey's ghost, and the final execution itself, where Christophe slips a holy
-    medal into Cromwell's bound hands.
-  location_type: Fortress Execution Chamber
-  parent_location_uuid: null
-  season_appearances:
-  - 1
-  local_uuids:
-    1: location_2f29c79aa628
-  first_appearance_season: 1
-  tier: planet
-  episode_count: 2
-- fabula_uuid: ger_location_9d56ccfe645a
-  global_id: ger_location_9d56ccfe645a
-  canonical_name: Tower of London Execution Courtyard
-  description: Enclosed fortress courtyard within the Tower of London, where condemned
-    individuals (e.g., Thomas Cromwell, Anne Boleyn) are positioned *before* ascending
-    to the scaffold. Characterized by stone walls, predawn chill, and political tension,
-    this space serves as the staging area for executions rather than the execution
-    site itself.
-  location_type: Fortress Execution Courtyard
-  parent_location_uuid: null
-  season_appearances:
-  - 1
-  local_uuids:
-    1: location_f04292652f9b
-  first_appearance_season: 1
-  tier: asteroid
-  episode_count: 1
-- fabula_uuid: ger_location_9b194010d6cf
-  global_id: ger_location_9b194010d6cf
-  canonical_name: Tower of London Fortress Complex
-  description: Macro-location encompassing the entire prison fortress, including public
-    chambers, interrogation rooms, and multiple cells. Serves as the primary setting
-    for political imprisonments, executions, and hauntings across the series, involving
-    figures like Anne Boleyn, Thomas Cromwell, and Thomas Wolsey. Physically contains
-    smaller sub-locations such as individual prison cells (e.g., Cromwell's cell).
-  location_type: Fortress Prison Grounds
-  parent_location_uuid: null
-  season_appearances:
-  - 1
-  local_uuids:
-    1: location_64e282fb446f
-  first_appearance_season: 1
   tier: asteroid
   episode_count: 0
+- fabula_uuid: ger_location_1827a726df90
+  global_id: ger_location_1827a726df90
+  canonical_name: Tower of London Battlements (Observer’s Vantage Point)
+  description: Elevated fortress walkway *above* the execution scaffold, serving as
+    a symbolic and physical separation between observers (e.g., Cromwell, Gregory)
+    and the execution’s brutality below. Represents the detached perspective of power
+    and fate, contrasting with the scaffold’s immediate violence.
+  location_type: Fortress Walls
+  parent_location_uuid: ger_location_419aa40003df
+  season_appearances:
+  - 2
+  local_uuids:
+    1: location_8cf6600d649d
+  first_appearance_season: 2
+  tier: asteroid
+  episode_count: 1
+- fabula_uuid: ger_location_821847383527
+  global_id: ger_location_821847383527
+  canonical_name: Tower of London Execution Scaffold (Ground-Level Platform)
+  description: Ground-level wooden platform *below the battlements* where Anne Boleyn’s
+    beheading occurs. The site of immediate violence, guilt, and Cromwell’s nightmarish
+    reliving of his role in her fall. Physically and thematically opposed to the battlements’
+    detached observation.
+  location_type: Execution Scaffold
+  parent_location_uuid: ger_location_419aa40003df
+  season_appearances:
+  - 2
+  local_uuids:
+    1: location_1f8e75754dfb
+  first_appearance_season: 2
+  tier: planet
+  episode_count: 4
+- fabula_uuid: ger_location_821847383527
+  global_id: ger_location_821847383527
+  canonical_name: Tower of London Execution Scaffold (Ground-Level Platform)
+  description: Ground-level wooden platform *below the battlements* where Anne Boleyn’s
+    beheading occurs. The site of immediate violence, guilt, and Cromwell’s nightmarish
+    reliving of his role in her fall. Physically and thematically opposed to the battlements’
+    detached observation.
+  location_type: Execution Scaffold
+  parent_location_uuid: ger_location_1827a726df90
+  season_appearances:
+  - 2
+  local_uuids:
+    1: location_1f8e75754dfb
+  first_appearance_season: 2
+  tier: planet
+  episode_count: 4
 - fabula_uuid: ger_location_31a0271d21ba
   global_id: ger_location_31a0271d21ba
   canonical_name: Tower of London Generic Prison Cell
@@ -4623,7 +5178,7 @@
     *Wolf Hall* Episodes 3, 4, and 6, emphasizing the **universal experience of isolation
     and psychological oppression** under Cromwell’s regime.
   location_type: Fortress Prison Cell
-  parent_location_uuid: null
+  parent_location_uuid: ger_location_b2f7fcb8bc24
   season_appearances:
   - 1
   local_uuids:
@@ -4674,7 +5229,7 @@
     tasks him with annulment secrets. The secluded trees shield their private conversation
     from courtiers' eyes, marking a pivotal moment in the annulment plot.
   location_type: Palace Grounds Grove
-  parent_location_uuid: null
+  parent_location_uuid: ger_location_532461a030f3
   season_appearances:
   - 1
   local_uuids:
@@ -4702,27 +5257,6 @@
   first_appearance_season: 1
   tier: asteroid
   episode_count: 1
-- fabula_uuid: ger_location_1e58e45d60e9
-  global_id: ger_location_1e58e45d60e9
-  canonical_name: Tudor Court
-  description: Courtiers pack the Tudor Court to witness Thomas Cromwell's execution.
-    Henry VIII justifies the act in a speech that masks his fear of disloyalty. Norfolk
-    smirks in triumph, Gardiner savors hollow victory, Catherine Howard laughs amid
-    oblivious youth, while Mary observes with calculated sorrow. Cromwell's family—Gregory
-    shattered, Rafe weeping, Elizabeth numb—grieves openly. Rafe whispers a prayer
-    as the king's men carry the body away. Gilded walls frame these reactions, exposing
-    power's fragility and the rot beneath courtly splendor.
-  location_type: Public Courtyard
-  parent_location_uuid: null
-  season_appearances:
-  - 1
-  - 1
-  local_uuids:
-    1: location_5cc432d7036e
-    2: location_4e6712e08a8b
-  first_appearance_season: 1
-  tier: planet
-  episode_count: 3
 - fabula_uuid: ger_location_a3fc4ea5063b
   global_id: ger_location_a3fc4ea5063b
   canonical_name: Tudor Port Dockside
@@ -4751,7 +5285,7 @@
     part of the broader York Place complex, distinct from its lower-level antechambers
     and audience halls.
   location_type: Residence Upper Chamber
-  parent_location_uuid: null
+  parent_location_uuid: ger_location_b3c43fe16477
   season_appearances:
   - 1
   local_uuids:
@@ -4843,7 +5377,7 @@
     hidden debauchery and Cromwell's public display of control, where every stumble
     fuels his strategic advantage.
   location_type: Palace Gatehouse
-  parent_location_uuid: null
+  parent_location_uuid: ger_location_906fa35e0dfd
   season_appearances:
   - 1
   local_uuids:
@@ -4864,17 +5398,15 @@
     tension, while its interior previously hosted legal strategy sessions in back
     rooms. The entity consolidates both the exterior parade grounds (previously ''Outside
     Westminster Hall'') and the interior courtroom (previously ''Westminster Hall'').'
-  location_type: Historic Trial Hall
+  location_type: Public Trial Hall
   parent_location_uuid: null
   season_appearances:
   - 1
-  - 1
   local_uuids:
-    1: location_c7cfa9cd571b
-    2: location_b19bf2106fe8
+    1: location_b19bf2106fe8
   first_appearance_season: 1
   tier: planet
-  episode_count: 3
+  episode_count: 2
 - fabula_uuid: ger_location_906fa35e0dfd
   global_id: ger_location_906fa35e0dfd
   canonical_name: Westminster Hall - Gallery
@@ -4943,7 +5475,7 @@
     Tower of London cells, this space is tied to Weston's personal downfall and Cromwell's
     manipulation of his debts to Anne Boleyn.
   location_type: Prison Interrogation Cell
-  parent_location_uuid: null
+  parent_location_uuid: ger_location_fec8770462b0
   season_appearances:
   - 1
   local_uuids:
@@ -4966,7 +5498,7 @@
           - The *muffled argument* scene (target) focuses on **Mary Boleyn’s scandal** and eavesdropping, while the *grief scene* (source) centers on **Anne’s miscarriages and demands for bloodshed**.
           - Different episode/scene UUIDs but same *larger location* (Whitehall).
   location_type: Palace Royal Chambers
-  parent_location_uuid: null
+  parent_location_uuid: ger_location_be2cbc89292f
   season_appearances:
   - 1
   local_uuids:
@@ -5002,7 +5534,7 @@
     shield furtive glances amid the court's unraveling tensions. Eavesdroppers linger
     just beyond, turning the nook into a tense outpost for opportunistic spying.
   location_type: Palace Interior Corner
-  parent_location_uuid: null
+  parent_location_uuid: ger_location_be2cbc89292f
   season_appearances:
   - 1
   local_uuids:
@@ -5040,13 +5572,13 @@
   parent_location_uuid: null
   season_appearances:
   - 1
-  - 1
+  - 2
   local_uuids:
-    1: location_541e2c250a72
-    2: location_a5934f3ca3ff
+    1: location_a5934f3ca3ff
+    2: location_93f696b5ab80
   first_appearance_season: 1
   tier: planet
-  episode_count: 4
+  episode_count: 3
 - fabula_uuid: ger_location_67a18fae62d6
   global_id: ger_location_67a18fae62d6
   canonical_name: Whitehall Palace - Neutral Corridor
@@ -5105,11 +5637,13 @@
     Cromwell, Bryan, Percy). Binds to court ambitions and power plays, such as Anne
     Boleyn's retreat to Hanworth Manor.
   location_type: Royal Palace Grounds
-  parent_location_uuid: null
+  parent_location_uuid: ger_location_be2cbc89292f
   season_appearances:
   - 1
+  - 2
   local_uuids:
     1: location_ebf3db99a0fb
+    2: location_ebf3db99a0fb
   first_appearance_season: 1
   tier: asteroid
   episode_count: 1
@@ -5124,7 +5658,7 @@
     and **political maneuvering**. The chamber’s close confines witness the **unraveling
     of Anne’s grip on favor**.
   location_type: Royal Private Chambers
-  parent_location_uuid: null
+  parent_location_uuid: ger_location_be2cbc89292f
   season_appearances:
   - 1
   local_uuids:
@@ -5169,6 +5703,22 @@
   first_appearance_season: 1
   tier: asteroid
   episode_count: 0
+- fabula_uuid: ger_location_360e60d47558
+  global_id: ger_location_360e60d47558
+  canonical_name: Window in Cromwell’s New Study (Austin Friars)
+  description: A specific interior architectural feature (the window) in Cromwell’s
+    study, serving as a threshold between interior and exterior. It frames Wolsey’s
+    ghostly appearance and Cromwell’s observation of the grounds below, emphasizing
+    themes of isolation and encroaching threats.
+  location_type: Study Window in Private London Residence
+  parent_location_uuid: ger_location_153b0a846468
+  season_appearances:
+  - 2
+  local_uuids:
+    1: location_2ffcb7a72fed
+  first_appearance_season: 2
+  tier: asteroid
+  episode_count: 1
 - fabula_uuid: ger_location_63d9d1e8b706
   global_id: ger_location_63d9d1e8b706
   canonical_name: Windsor Adjacent Hall
@@ -5178,7 +5728,7 @@
     with court intrigue. Footsteps echo softly amid candle flicker, turning the passage
     into a live wire of Tudor ambition just beyond the chamber door.
   location_type: Castle Hall
-  parent_location_uuid: null
+  parent_location_uuid: ger_location_e73b95dec4a1
   season_appearances:
   - 1
   local_uuids:
@@ -5240,7 +5790,7 @@
     personal vendettas and political fractures, turning natural expanse into a stage
     for courtly cruelty and symbolic decay.
   location_type: Royal Deer Park
-  parent_location_uuid: null
+  parent_location_uuid: ger_location_422b545e7571
   season_appearances:
   - 1
   local_uuids:
@@ -5277,7 +5827,7 @@
     shadows before exploding into the open hall. The space traps intimacy amid public
     eyes, heightening vulnerability as diplomacy fractures.
   location_type: Castle Hall Window Recess
-  parent_location_uuid: null
+  parent_location_uuid: ger_location_e73b95dec4a1
   season_appearances:
   - 1
   local_uuids:
@@ -5300,7 +5850,7 @@
     in their power struggle. The corridor's isolation and the chamber's intimacy heighten
     the dramatic climax of the scene.
   location_type: Palace Royal Chamber
-  parent_location_uuid: null
+  parent_location_uuid: ger_location_422b545e7571
   season_appearances:
   - 1
   local_uuids:
@@ -5316,7 +5866,7 @@
     muffled sounds of violent reenactments involving Rafe Sadler, Gregory Cromwell,
     and Thomas Cromwell.
   location_type: Country Estate Upper Hallway
-  parent_location_uuid: null
+  parent_location_uuid: ger_location_d62426af88de
   season_appearances:
   - 1
   local_uuids:
@@ -5331,7 +5881,7 @@
     hallways. Associated with early morning light, royal interactions, and intimate
     moments involving Thomas Cromwell, Jane Seymour, Henry VIII, and Gregory Cromwell.
   location_type: Country Estate Bedroom
-  parent_location_uuid: null
+  parent_location_uuid: ger_location_d62426af88de
   season_appearances:
   - 1
   local_uuids:
@@ -5350,7 +5900,7 @@
     political theater where defiance breaks and fates seal under crowd pressure and
     whispered control.
   location_type: Manor Trial Courtroom
-  parent_location_uuid: null
+  parent_location_uuid: ger_location_d62426af88de
   season_appearances:
   - 1
   local_uuids:
@@ -5366,7 +5916,7 @@
     exchange. Sunlight through high windows casts long shadows, amplifying the pressure
     of their brief interaction.
   location_type: Tudor Manor Corridor
-  parent_location_uuid: null
+  parent_location_uuid: ger_location_d62426af88de
   season_appearances:
   - 1
   local_uuids:
@@ -5389,7 +5939,7 @@
     1: location_34e9d0fdea6a
   first_appearance_season: 1
   tier: asteroid
-  episode_count: 1
+  episode_count: 0
 - fabula_uuid: ger_location_90ea488d9c03
   global_id: ger_location_90ea488d9c03
   canonical_name: Wolf Hall Seymour Family Great Hall
@@ -5397,7 +5947,7 @@
     Jane Seymour stands in silent defiance as Cromwell hesitates. The hall's immensity
     underscores their wordless standoff, symbolizing Jane's unyielding poise.
   location_type: Manor House Great Hall
-  parent_location_uuid: null
+  parent_location_uuid: ger_location_d62426af88de
   season_appearances:
   - 1
   local_uuids:
@@ -5408,18 +5958,21 @@
 - fabula_uuid: ger_location_4cdff6abd6d0
   global_id: ger_location_4cdff6abd6d0
   canonical_name: Wolsey's Chambers
-  description: Located in York Place (London), this setting marks Wolsey's early exile
-    phase, where Cromwell's manipulation and the dismantling of his household symbolize
-    his fading power. Distinct from his later northern residence.
-  location_type: Cardinal's Bedchambers
+  description: Daytime deathbed chambers where Wolsey lies frail amid *faded opulence
+    and tapestries*, distinct from Esher Palace. Focuses on *Cromwell's vigil* and
+    Wolsey's *whispers of devotion to Henry VIII*, emphasizing *betrayal and power's
+    fragility*. Likely located at *York Place* (pre-exile residence).
+  location_type: Private Deathbed Chambers
   parent_location_uuid: null
   season_appearances:
   - 1
+  - 2
   local_uuids:
     1: location_c2a69a6425db
+    2: location_285d114c6ead
   first_appearance_season: 1
-  tier: asteroid
-  episode_count: 1
+  tier: planet
+  episode_count: 2
 - fabula_uuid: ger_location_5696900b75b4
   global_id: ger_location_5696900b75b4
   canonical_name: Wolsey's Northern Exile Residence
@@ -5436,24 +5989,6 @@
   first_appearance_season: 1
   tier: asteroid
   episode_count: 1
-- fabula_uuid: ger_location_c537e02ee935
-  global_id: ger_location_c537e02ee935
-  canonical_name: Wolsey’s Bedroom (Esher Palace)
-  description: A **dying space** at Esher Palace, where Wolsey’s political ruin and
-    physical decay intertwine. This room serves as the site of his final confession,
-    curses against Henry VIII, and a fevered vision later experienced by Cromwell
-    in the Tower, symbolizing the **inevitability of their shared fate**. The chamber’s
-    **tomb-like atmosphere** contrasts with Cromwell’s living private chamber at Hampton
-    Court, emphasizing the **irreversible fall** of Wolsey’s power.
-  location_type: Cardinal's Deathbed Chamber
-  parent_location_uuid: null
-  season_appearances:
-  - 1
-  local_uuids:
-    1: location_604cbc6e731d
-  first_appearance_season: 1
-  tier: planet
-  episode_count: 2
 - fabula_uuid: ger_location_59556dc78247
   global_id: ger_location_59556dc78247
   canonical_name: Wolsey’s Palace at Winchester (Exile Haven)
@@ -5512,7 +6047,7 @@
     where Jane Seymour intercepts Cromwell and Cranmer for a political confession.
     Characterized by confined stone walls and the heavy air of court intrigue.
   location_type: Palace Corridor
-  parent_location_uuid: null
+  parent_location_uuid: ger_location_29eebe28b2df
   season_appearances:
   - 1
   local_uuids:
@@ -5543,7 +6078,7 @@
     Cromwell’s silent vigilance and introspection, contrasting the turmoil outside
     with the quiet interior.
   location_type: Palace Upper Chamber
-  parent_location_uuid: null
+  parent_location_uuid: ger_location_29eebe28b2df
   season_appearances:
   - 1
   local_uuids:
@@ -5582,7 +6117,7 @@
     flow of the palace, serving as a transitional space for political maneuvering
     before formal audiences.
   location_type: Palace Antechambers
-  parent_location_uuid: null
+  parent_location_uuid: ger_location_29eebe28b2df
   season_appearances:
   - 1
   local_uuids:
@@ -5605,6 +6140,24 @@
   first_appearance_season: 1
   tier: planet
   episode_count: 3
+- fabula_uuid: ger_location_3c10e8596d94
+  global_id: ger_location_3c10e8596d94
+  canonical_name: York in the North
+  description: 'York anchors England''s turbulent north as a provincial city distant
+    from London. Cromwell paints it as Wolsey''s dreaded exile: muddy fields lashed
+    by bitter winds, locals blunt and immoral, the place a stark demotion from courtly
+    splendor. Henry registers its fall to rebels as catastrophic betrayal, the city''s
+    surrender amplifying the northern uprising''s threat to his throne and exposing
+    his realm''s fractures.'
+  location_type: Northern Provincial City
+  parent_location_uuid: null
+  season_appearances:
+  - 2
+  local_uuids:
+    1: location_ae78b3701718
+  first_appearance_season: 2
+  tier: asteroid
+  episode_count: 0
 - fabula_uuid: ger_location_ca778786aefc
   global_id: ger_location_ca778786aefc
   canonical_name: Yorkshire

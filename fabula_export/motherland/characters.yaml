@@ -1,5 +1,5 @@
 # Character/Agent Data
-# Generated: 2026-02-10T16:46:00.206292
+# Generated: 2026-02-18T09:55:08.504606
 
 - fabula_uuid: agent_eaf00138aa03
   global_id: null
@@ -33,37 +33,18 @@
     control through eye rolls and terse responses. She excludes outsiders like Liz,
     tolerating her briefly before ostracizing her, and ends overtures with cold stares
     and slammed doors.
-  traits: &id001
+  traits:
   - condescending
   - controlling
   - pragmatic
   - polished
   - exclusionary
-  aliases: &id002 []
+  aliases: []
   character_type: guest
   sphere_of_influence: Alpha mums childcare network and social hosting
   appearance_count: 20
   importance_tier: planet
-  affiliated_organization_uuid: org_6bbb141764bb
-- fabula_uuid: agent_93a466ac1690
-  global_id: null
-  canonical_name: Amanda
-  title_role: null
-  description: Amanda leads the alpha mums, a dominant group of local mothers who
-    orchestrate childcare swaps and casual gatherings like spag bol dinners at her
-    home with husband Johnny. She commands her children Georgie and Manus during crises,
-    such as an Airbnb lockout, and trades favors with Julia to manage her kids. As
-    polished hostess, she greets with double kisses, serves wine and food, and maintains
-    control through eye rolls and terse responses. She excludes outsiders like Liz,
-    tolerating her briefly before ostracizing her, and ends overtures with cold stares
-    and slammed doors.
-  traits: *id001
-  aliases: *id002
-  character_type: guest
-  sphere_of_influence: Alpha mums childcare network and social hosting
-  appearance_count: 20
-  importance_tier: planet
-  affiliated_organization_uuid: org_40ee9df7342b
+  affiliated_organization_uuid: null
 - fabula_uuid: agent_1fe1f762a024
   global_id: null
   canonical_name: Amanda's Children
@@ -125,7 +106,7 @@
   sphere_of_influence: Alpha Mums Social Hierarchy
   appearance_count: 4
   importance_tier: asteroid
-  affiliated_organization_uuid: org_6bbb141764bb
+  affiliated_organization_uuid: null
 - fabula_uuid: agent_fb7213225709
   global_id: null
   canonical_name: Charlie
@@ -138,36 +119,17 @@
     and fixates on an iPad swiped from Amanda's house. His birthday party looms as
     a social obligation, and he grows punchy without food, highlighting the physical
     demands that strain adult alliances.
-  traits: &id003
+  traits:
   - boisterous
   - impulsive
   - playful
   - irritable when hungry
-  aliases: &id004 []
+  aliases: []
   character_type: guest
   sphere_of_influence: childcare playgroups
   appearance_count: 11
   importance_tier: planet
-  affiliated_organization_uuid: org_6bbb141764bb
-- fabula_uuid: agent_fb7213225709
-  global_id: null
-  canonical_name: Charlie
-  title_role: null
-  description: Charlie serves as Liz's young son, a central figure in the chaotic
-    childcare exchanges among mothers like Julia, Amanda, and Liz. He appears as a
-    toddler in a Spiderman outfit with his arm in a cast, embodying restless energy
-    amid playdates. Charlie jumps from windowsills onto mattresses, grabs mini-pizzas
-    after Liz's scolding, hits Manus to spark fights, screams offscreen during gatherings,
-    and fixates on an iPad swiped from Amanda's house. His birthday party looms as
-    a social obligation, and he grows punchy without food, highlighting the physical
-    demands that strain adult alliances.
-  traits: *id003
-  aliases: *id004
-  character_type: guest
-  sphere_of_influence: childcare playgroups
-  appearance_count: 11
-  importance_tier: planet
-  affiliated_organization_uuid: org_40ee9df7342b
+  affiliated_organization_uuid: null
 - fabula_uuid: agent_e622272a4c79
   global_id: null
   canonical_name: Child with the Plait
@@ -452,37 +414,18 @@
     and Georgie. Overwhelmed juggling work calls and four kids, she breaks down publicly
     but accepts Liz's practical help, bonds over wine, assists in crises like Liz's
     injury, and forges a childcare pact with Liz and Kevin after rebuffs.
-  traits: &id005
+  traits:
   - anxious
   - pragmatic
   - overwhelmed
   - strategic
   - persistent
-  aliases: &id006 []
+  aliases: []
   character_type: guest
   sphere_of_influence: Corporate Event Planning and Childcare Networking
   appearance_count: 28
   importance_tier: planet
-  affiliated_organization_uuid: org_6bbb141764bb
-- fabula_uuid: agent_6218b6a46223
-  global_id: null
-  canonical_name: Julia
-  title_role: null
-  description: Julia organizes corporate events, including high-profile gigs like
-    Peter Mandelson's Women in Construction awards. Mother to a five-year-old and
-    nine-year-old, she rejects hiring cleaners for childcare, insisting on maternal
-    or familial upbringing like her own. Married to Paul, she navigates a new community's
-    alpha mums by eavesdropping on swaps and offering to mind Amanda's kids, Manus
-    and Georgie. Overwhelmed juggling work calls and four kids, she breaks down publicly
-    but accepts Liz's practical help, bonds over wine, assists in crises like Liz's
-    injury, and forges a childcare pact with Liz and Kevin after rebuffs.
-  traits: *id005
-  aliases: *id006
-  character_type: guest
-  sphere_of_influence: Corporate Event Planning and Childcare Networking
-  appearance_count: 28
-  importance_tier: planet
-  affiliated_organization_uuid: org_40ee9df7342b
+  affiliated_organization_uuid: null
 - fabula_uuid: agent_2a9d3a5cab11
   global_id: null
   canonical_name: Julia's Children
@@ -548,7 +491,7 @@
   sphere_of_influence: neighborhood parenting logistics
   appearance_count: 17
   importance_tier: planet
-  affiliated_organization_uuid: org_6bbb141764bb
+  affiliated_organization_uuid: null
 - fabula_uuid: agent_6c48e70a359c
   global_id: null
   canonical_name: Kevin's Children
@@ -581,38 +524,19 @@
     with a dish towel and tape, takes a cab to hospital, and returns defiant, airing
     hypocrisies and pledging reciprocal childcare. Her wry commentary and steady competence
     forge an outsider alliance with Julia.'
-  traits: &id007
+  traits:
   - wry
   - practical
   - resilient
   - defiant
   - protective
-  aliases: &id008
+  aliases:
   - LIZ
   character_type: guest
   sphere_of_influence: Informal childcare and maternal alliances
   appearance_count: 23
   importance_tier: planet
-  affiliated_organization_uuid: org_6bbb141764bb
-- fabula_uuid: agent_31c5f3c4cb68
-  global_id: null
-  canonical_name: Liz
-  title_role: null
-  description: 'Liz mothers two children amid social exclusion from the alpha mums,
-    fueled by rumors of affairs and her firing from Citizens Advice over a recorded
-    call. She extends practical aid to Julia: rigs a coin ride with pennies, brews
-    tea in her cluttered kitchen, cooks mini-pizzas, and offers wine-soaked solidarity.
-    After slicing off her finger while prepping frozen bread, she binds the wound
-    with a dish towel and tape, takes a cab to hospital, and returns defiant, airing
-    hypocrisies and pledging reciprocal childcare. Her wry commentary and steady competence
-    forge an outsider alliance with Julia.'
-  traits: *id007
-  aliases: *id008
-  character_type: guest
-  sphere_of_influence: Informal childcare and maternal alliances
-  appearance_count: 23
-  importance_tier: planet
-  affiliated_organization_uuid: org_40ee9df7342b
+  affiliated_organization_uuid: null
 - fabula_uuid: agent_b57669ad1381
   global_id: null
   canonical_name: Manus
@@ -625,36 +549,17 @@
     tolerance. He scraps with Charlie outside Liz's flat and later mesmerizes the
     group with his iPad in Amanda's kitchen, drawing silent attention from peers during
     adult gossip.
-  traits: &id009
+  traits:
   - playful
   - combative
   - mischievous
   - captivating
-  aliases: &id010 []
+  aliases: []
   character_type: guest
   sphere_of_influence: Children's play and childcare dynamics
   appearance_count: 10
   importance_tier: planet
-  affiliated_organization_uuid: org_6bbb141764bb
-- fabula_uuid: agent_b57669ad1381
-  global_id: null
-  canonical_name: Manus
-  title_role: null
-  description: Manus serves as one of Amanda's young sons amid the alpha mums' intricate
-    childcare exchanges. Amanda calls him alongside Georgie during cafe logistics
-    and offers him to Anne or Julia for temporary care. Julia addresses him directly
-    for a crisp amid street chaos. Liz recalls his past friendship with Charlie, ended
-    after the boys showed each other their genitalia, highlighting Amanda's brief
-    tolerance. He scraps with Charlie outside Liz's flat and later mesmerizes the
-    group with his iPad in Amanda's kitchen, drawing silent attention from peers during
-    adult gossip.
-  traits: *id009
-  aliases: *id010
-  character_type: guest
-  sphere_of_influence: Children's play and childcare dynamics
-  appearance_count: 10
-  importance_tier: planet
-  affiliated_organization_uuid: org_40ee9df7342b
+  affiliated_organization_uuid: null
 - fabula_uuid: agent_b1a3b08ec079
   global_id: null
   canonical_name: Melissa's Husband
@@ -757,7 +662,7 @@
   sphere_of_influence: null
   appearance_count: 3
   importance_tier: asteroid
-  affiliated_organization_uuid: org_6bbb141764bb
+  affiliated_organization_uuid: null
 - fabula_uuid: agent_b9261a666638
   global_id: null
   canonical_name: Paul
@@ -800,7 +705,7 @@
   sphere_of_influence: Reality Television
   appearance_count: 3
   importance_tier: asteroid
-  affiliated_organization_uuid: org_6bbb141764bb
+  affiliated_organization_uuid: null
 - fabula_uuid: agent_33409b17cde2
   global_id: null
   canonical_name: Pedestrian
@@ -832,33 +737,16 @@
     networks and intensifies her scheduling conflicts. His role as host positions
     him as a prominent figure whose participation elevates the event's status and
     pressures Julia's work-family balance.
-  traits: &id011
+  traits:
   - prominent
   - influential
   - high-profile
-  aliases: &id012 []
+  aliases: []
   character_type: guest
   sphere_of_influence: professional awards ceremonies
   appearance_count: 4
   importance_tier: asteroid
-  affiliated_organization_uuid: org_6bbb141764bb
-- fabula_uuid: agent_0e459617f6ba
-  global_id: null
-  canonical_name: Peter Mandelson
-  title_role: null
-  description: Peter Mandelson hosts the Women in Construction awards, a high-profile
-    event Julia organizes for Thursday. Julia cites this commitment repeatedly amid
-    her childcare crisis, underscoring how his involvement pulls her into elite professional
-    networks and intensifies her scheduling conflicts. His role as host positions
-    him as a prominent figure whose participation elevates the event's status and
-    pressures Julia's work-family balance.
-  traits: *id011
-  aliases: *id012
-  character_type: guest
-  sphere_of_influence: professional awards ceremonies
-  appearance_count: 4
-  importance_tier: asteroid
-  affiliated_organization_uuid: org_40ee9df7342b
+  affiliated_organization_uuid: null
 - fabula_uuid: agent_3b3427652598
   global_id: null
   canonical_name: Sam
@@ -924,7 +812,7 @@
   sphere_of_influence: Alpha Mothers' Social Circle
   appearance_count: 5
   importance_tier: planet
-  affiliated_organization_uuid: org_6bbb141764bb
+  affiliated_organization_uuid: null
 - fabula_uuid: agent_7fe233f2d4b7
   global_id: null
   canonical_name: The Four Children (Julia's temporary charges)
@@ -980,7 +868,7 @@
   sphere_of_influence: childcare gatherings
   appearance_count: 12
   importance_tier: planet
-  affiliated_organization_uuid: org_6bbb141764bb
+  affiliated_organization_uuid: null
 - fabula_uuid: agent_33f7d145b5f5
   global_id: null
   canonical_name: The Mums (alpha-mum collective)
@@ -1003,7 +891,7 @@
   sphere_of_influence: Neighborhood social gossip
   appearance_count: 4
   importance_tier: asteroid
-  affiliated_organization_uuid: org_6bbb141764bb
+  affiliated_organization_uuid: null
 - fabula_uuid: agent_caf52ba551cd
   global_id: null
   canonical_name: Toddler (Liz's sitting room)
@@ -1027,7 +915,7 @@
   sphere_of_influence: family play
   appearance_count: 3
   importance_tier: asteroid
-  affiliated_organization_uuid: org_6bbb141764bb
+  affiliated_organization_uuid: null
 - fabula_uuid: agent_c333973fd3ff
   global_id: null
   canonical_name: Unnamed Chair-Launching Kid

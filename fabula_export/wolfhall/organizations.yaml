@@ -1,5 +1,5 @@
 # Organization Data
-# Generated: 2026-02-12T21:08:07.334710
+# Generated: 2026-02-20T11:31:53.766884
 
 - fabula_uuid: ger_organization_f1f8aeb21330
   global_id: ger_organization_f1f8aeb21330
@@ -64,6 +64,35 @@
   first_appearance_season: 1
   tier: planet
   episode_count: 2
+- fabula_uuid: ger_organization_0478782b4237
+  global_id: ger_organization_0478782b4237
+  canonical_name: Bavarian Marriage Alliance
+  description: A fictionalized dynastic marriage pact proposed by Thomas Cromwell
+    to secure England's stability through Princess Mary's marriage to Duke Philip
+    of Bavaria. Serves as a tool for Cromwell's internal coercion, focusing on Mary's
+    compliance and dynastic maneuvering rather than external geopolitics.
+  sphere_of_influence: Dynastic Marriage Alliances and Political Security
+  season_appearances:
+  - 2
+  local_uuids:
+    1: org_69a8b1ef80b3
+  first_appearance_season: 2
+  tier: asteroid
+  episode_count: 1
+- fabula_uuid: ger_organization_1cf873920643
+  global_id: ger_organization_1cf873920643
+  canonical_name: Bishop Langland’s Men
+  description: Retainers of Bishop Langland, operating in Lincolnshire during the
+    Horncastle uprising. Their assault by rebels exposes church representatives to
+    local violence and forces Thomas Cromwell to confront the rebellion's momentum.
+  sphere_of_influence: Regional Ecclesiastical Retainers
+  season_appearances:
+  - 2
+  local_uuids:
+    1: org_f395f9b63aeb
+  first_appearance_season: 2
+  tier: asteroid
+  episode_count: 1
 - fabula_uuid: ger_organization_35f0a78ecb6f
   global_id: ger_organization_35f0a78ecb6f
   canonical_name: Blackfriars Priory Court
@@ -182,22 +211,6 @@
   first_appearance_season: 1
   tier: planet
   episode_count: 2
-- fabula_uuid: ger_organization_7bf6024e1323
-  global_id: ger_organization_7bf6024e1323
-  canonical_name: Catholic Church (Institutional Pre-Reformation)
-  description: Centralized, hierarchical institution upholding papal authority and
-    traditional doctrine, including high-profile convents like Shaftesbury and key
-    figures such as Thomas More and Stephen Gardiner. Focused on **state-level resistance**
-    to Henry VIII's reforms, including the dissolution of monasteries and erosion
-    of sacraments.
-  sphere_of_influence: Catholic Rites and Royal Political Legitimization
-  season_appearances:
-  - 1
-  local_uuids:
-    1: org_600195eb7db9
-  first_appearance_season: 1
-  tier: asteroid
-  episode_count: 0
 - fabula_uuid: ger_organization_6af9e3a7ab27
   global_id: ger_organization_6af9e3a7ab27
   canonical_name: Catholic Church (Papal Authority & English Church Faction)
@@ -227,7 +240,7 @@
     2: org_600195eb7db9
   first_appearance_season: 1
   tier: planet
-  episode_count: 4
+  episode_count: 3
 - fabula_uuid: ger_organization_4ae1431e52e9
   global_id: ger_organization_4ae1431e52e9
   canonical_name: Catholic Orthodoxy (Cromwell Household Embodiment)
@@ -254,13 +267,13 @@
     Authority
   season_appearances:
   - 1
-  - 1
+  - 2
   local_uuids:
-    1: org_a2a0ed742801
-    2: org_565a4c282066
+    1: org_565a4c282066
+    2: org_53b18a146eb2
   first_appearance_season: 1
   tier: anchor
-  episode_count: 6
+  episode_count: 7
 - fabula_uuid: ger_organization_34e59842fd5c
   global_id: ger_organization_34e59842fd5c
   canonical_name: Church-Controlled Monasteries
@@ -276,22 +289,79 @@
   first_appearance_season: 1
   tier: asteroid
   episode_count: 0
-- fabula_uuid: ger_organization_a7c2e6c5c851
-  global_id: ger_organization_a7c2e6c5c851
-  canonical_name: Conservative Faction (Norfolk, Gardiner, and Allies)
-  description: The Howard Family deploys patriarch Duke of Norfolk to navigate Tudor
-    court perils. Desperate to sever ties with Anne Boleyn's scandal, they hand over
-    her arrest warrant to Thomas Cromwell, masking vulnerability with insults and
-    threats. This preserves their noble lineage and survival amid shifting royal favor,
-    where ancient blood confronts rising commoner influence.
-  sphere_of_influence: Noble Family Politics in the Tudor Court
+- fabula_uuid: ger_organization_1215ffe5af18
+  global_id: ger_organization_1215ffe5af18
+  canonical_name: Cleves Diplomatic Delegation (Hampton Court Ceremony)
+  description: The specific group of Cleves ambassadors, led by Olisleger, who traveled
+    to England in Episode 5 to formalize Anne of Cleves' betrothal through a Hampton
+    Court ceremony. Their actions—accepting the betrothal ring, signing marriage articles,
+    and delivering Duke Wilhelm's clock—directly drive the episode's central conflict
+    with Henry VIII.
+  sphere_of_influence: Dynastic Marriage Diplomacy and German-English Negotiations
   season_appearances:
-  - 1
+  - 2
   local_uuids:
-    1: org_68f6510ad644
-  first_appearance_season: 1
+    1: org_3f32505e0949
+  first_appearance_season: 2
   tier: asteroid
-  episode_count: 0
+  episode_count: 1
+- fabula_uuid: ger_organization_2784cabb2dc5
+  global_id: ger_organization_2784cabb2dc5
+  canonical_name: Cleves-England Dynastic Alliance (German Alliance)
+  description: The broader political pact between the Duchy of Cleves and England,
+    brokered by Thomas Cromwell to counter French-Imperial threats. While formalized
+    through Anne of Cleves’ marriage, it encompasses **long-term strategic goals**
+    and faces opposition from figures like the Duke of Norfolk. The alliance’s collapse
+    (due to Henry’s annulment of Anne) has **season-wide consequences**, including
+    Cromwell’s downfall.
+  sphere_of_influence: Dynastic Marriage Alliance with Protestant Duchy of Cleves
+  season_appearances:
+  - 2
+  local_uuids:
+    1: org_e46001677338
+  first_appearance_season: 2
+  tier: asteroid
+  episode_count: 1
+- fabula_uuid: ger_organization_169490e4bf01
+  global_id: ger_organization_169490e4bf01
+  canonical_name: Conservative Religious Establishment (English Church Faction)
+  description: A faction within the English Church comprising clergy (including Stephen
+    Gardiner) and noblemen who defend orthodox doctrines against radical Protestant
+    reforms. This group opposes Thomas Cromwell and Thomas Cranmer's reformist agenda,
+    with Gardiner accusing Cromwell of heresy in the Tower of London's Great Hall,
+    framing his pragmatism as ideological corruption. During John Lambert's heresy
+    trial, they occupy seats at Henry VIII's right hand, voicing conservative opposition
+    to Lambert's views on the Eucharist, priestly marriage, and female teaching. Their
+    actions—murmuring outrage, backing Henry VIII's conservative judgment, and pressuring
+    Thomas Cromwell—safeguard traditional authority while amplifying tensions between
+    reformers and traditionalists at court. Their sphere of influence includes orthodox
+    theological defense and royal court influence, positioning them as guardians of
+    doctrinal purity.
+  sphere_of_influence: Conservative Ecclesiastical Authority in Tudor Court Politics
+  season_appearances:
+  - 2
+  local_uuids:
+    1: org_f713fa85b018
+  first_appearance_season: 2
+  tier: asteroid
+  episode_count: 1
+- fabula_uuid: ger_organization_6821c956c45e
+  global_id: ger_organization_6821c956c45e
+  canonical_name: Constable of the Tower
+  description: William Kingston holds the office of Constable of the Tower and arrives
+    at Hampton Court Palace to arrest Thomas Cromwell after councilors assault him
+    for treason. Kingston's intervention enforces royal authority, dragging Cromwell
+    into custody at the Tower of London. The office commands absolute power in detaining
+    high-profile prisoners, signaling irreversible downfall amid court betrayals by
+    figures like Norfolk, Fitzwilliam, and Gardiner.
+  sphere_of_influence: Royal Arrests and Tower of London Imprisonment
+  season_appearances:
+  - 2
+  local_uuids:
+    1: org_cede50ae38fd
+  first_appearance_season: 2
+  tier: asteroid
+  episode_count: 1
 - fabula_uuid: ger_organization_637aef4d627e
   global_id: ger_organization_637aef4d627e
   canonical_name: Convent near Paul’s
@@ -325,6 +395,23 @@
   first_appearance_season: 1
   tier: asteroid
   episode_count: 1
+- fabula_uuid: ger_organization_e879cd5bfa1e
+  global_id: ger_organization_e879cd5bfa1e
+  canonical_name: Court of Augmentations
+  description: The Court of Augmentations manages the dissolution of monasteries and
+    redistributes their assets as part of Henry VIII's reforms. Clerks process paperwork
+    in cramped attic rooms at the Palace of Westminster, sharing space with mice amid
+    squalid conditions that mock the name's promise of increase. Thomas Cromwell drives
+    its operations, dismissing complaints from Richard Riche to focus on the king's
+    demands. This bureaucracy embodies the grind of royal policy execution.
+  sphere_of_influence: Monastic Dissolution Administration and Asset Redistribution
+  season_appearances:
+  - 2
+  local_uuids:
+    1: org_847f1fe3a991
+  first_appearance_season: 2
+  tier: asteroid
+  episode_count: 1
 - fabula_uuid: ger_organization_cc30e96f4fde
   global_id: ger_organization_cc30e96f4fde
   canonical_name: Court of England
@@ -341,32 +428,78 @@
   first_appearance_season: 1
   tier: asteroid
   episode_count: 1
-- fabula_uuid: ger_organization_dc323b65d779
-  global_id: ger_organization_dc323b65d779
-  canonical_name: Cromwell Household (Cromwell Family)
-  description: The Cromwell Household, also referred to as the Cromwell Family, was
-    Thomas Cromwell's domestic base, political inner circle, and military retinue
-    at Austin Friars. It centered on his sons, **Gregory Cromwell** and **Richard
-    Cromwell**, alongside key associates including **Rafe Sadler**, **Richard Riche**,
-    and **Wriothesley**, as well as soldiers in livery. The household functioned as
-    a cohesive unit handling daily routines, strategic deployments (e.g., Richard
-    Cromwell's role in suppressing the Lincolnshire rebellion), security, and political
-    operations. Described by contemporaries as a 'household of a prince' (with up
-    to 3,000 persons), it symbolized Cromwell's power and influence in Henry VIII's
-    court. Following Thomas Cromwell's execution on Tower Hill, the household disintegrated,
-    leaving his sons and associates—**Gregory, Richard, and Rafe**—in a state of shared
-    grief and political vulnerability, their private devastation contrasting with
-    public silence. The term *Cromwell Family* emphasizes the blood ties and emotional
-    bonds among Gregory, Richard, and Thomas, while *Cromwell Household* highlights
-    its broader organizational and political functions.
-  sphere_of_influence: Private Familial, Educational, and Political Management
+- fabula_uuid: ger_organization_e4531529997b
+  global_id: ger_organization_e4531529997b
+  canonical_name: Court of Henry VIII (Hampton Court Palace)
+  description: "\n  The **Court of Henry VIII** is the political and social nexus\
+    \ of Tudor England, centered at **Hampton Court Palace**, where royal authority\
+    \ is wielded through intricate power struggles, factional alliances, and dynastic\
+    \ maneuvering. As the king’s inner circle, it operates as a high-stakes arena\
+    \ where influence is currency—gained through loyalty, manipulation, or calculated\
+    \ betrayal. Key figures like **Thomas Cromwell, Cardinal Wolsey, and the Duke\
+    \ of Norfolk** navigate its treacherous currents, where survival depends on mastering\
+    \ Henry’s volatile whims. The court’s function is both ceremonial and coercive:\
+    \ it enforces royal decrees, dissolves institutions, and reshapes England’s religious\
+    \ and political landscape. Its atmosphere is one of **opulence, paranoia, and\
+    \ performative devotion**, where every gesture—from a whispered counsel to a public\
+    \ display of fealty—carries weight. Hampton Court Palace itself embodies this\
+    \ duality: a gilded stage for royal spectacle and a fortress of statecraft, where\
+    \ the fate of nobles, clergy, and the realm is decided behind closed doors.\n\
+    \  "
+  sphere_of_influence: Royal Governance and Coercive Enforcement
   season_appearances:
-  - 1
+  - 2
+  - 2
   local_uuids:
-    1: org_43f59f3e3164
-  first_appearance_season: 1
-  tier: planet
-  episode_count: 2
+    1: org_cd04e8e1597e
+    2: org_552e9169aacd
+  first_appearance_season: 2
+  tier: anchor
+  episode_count: 5
+- fabula_uuid: ger_organization_6f1e14f786eb
+  global_id: ger_organization_6f1e14f786eb
+  canonical_name: Courtenay Family
+  description: Linked to **Yorkist remnants** and **northern aristocratic factions**,
+    their rebellion in *Episode 3* is framed as part of a **wider anti-Tudor conspiracy**,
+    separate from the Poles’ Catholic dynastic plot.
+  sphere_of_influence: Aristocratic Faction in Anti-Tudor Rebellion
+  season_appearances:
+  - 2
+  local_uuids:
+    1: org_557f17963ac1
+  first_appearance_season: 2
+  tier: asteroid
+  episode_count: 1
+- fabula_uuid: ger_organization_c3cd7843588a
+  global_id: ger_organization_c3cd7843588a
+  canonical_name: Cromwell Faction
+  description: Thomas Cromwell's personal political network, distinct from the Tudor
+    dynasty. Operates as a faction within the Tudor court, focused on Cromwell's individual
+    authority and his vulnerability to Henry VIII's attacks.
+  sphere_of_influence: Tudor Court Factional Politics
+  season_appearances:
+  - 2
+  local_uuids:
+    1: org_9c011a6d055e
+  first_appearance_season: 2
+  tier: asteroid
+  episode_count: 1
+- fabula_uuid: ger_organization_810b538f166e
+  global_id: ger_organization_810b538f166e
+  canonical_name: Cromwell's Faction (King's Council/Administration)
+  description: A **political faction** within Henry VIII's council, led by Thomas
+    Cromwell, focused on **court intrigue, rivalries (e.g., against the Duke of Norfolk),
+    and maintaining Cromwell's influence over royal decisions**. Operates in **public
+    spaces (e.g., Hampton Court)** and interacts with **court figures (e.g., Lady
+    Rochford, Catherine Howard).**
+  sphere_of_influence: Tudor Court Administration and Factional Control
+  season_appearances:
+  - 2
+  local_uuids:
+    1: org_ee8ae178fdb8
+  first_appearance_season: 2
+  tier: asteroid
+  episode_count: 1
 - fabula_uuid: ger_organization_6d32c3cf21cd
   global_id: ger_organization_6d32c3cf21cd
   canonical_name: Cromwell's Political Household (Austin Friars)
@@ -376,14 +509,47 @@
     and strategic hub for Cromwell’s rise to power. Distinct from noble households
     like Brereton’s, as it represents *ministerial authority* rather than aristocratic
     defiance.
-  sphere_of_influence: Political Household and Social Hosting
+  sphere_of_influence: Domestic Management and Political Loyalty
   season_appearances:
   - 1
+  - 2
   local_uuids:
     1: org_71097674d25e
+    2: org_c2ea637d9c42
   first_appearance_season: 1
   tier: anchor
-  episode_count: 5
+  episode_count: 8
+- fabula_uuid: ger_organization_8bc414011419
+  global_id: ger_organization_8bc414011419
+  canonical_name: Cromwell-Gardiner Factional Rivalry
+  description: A **systemic power struggle** between Thomas Cromwell’s reformist faction
+    and Stephen Gardiner’s conservative bloc in Henry VIII’s court, post-Anne Boleyn’s
+    execution. Highlights **external conflicts** (e.g., Wriothesley’s loyalty test,
+    raids on the Pole household) and Cromwell’s efforts to centralize intelligence.
+  sphere_of_influence: Tudor Court Factional Power Struggles
+  season_appearances:
+  - 2
+  local_uuids:
+    1: org_88b897edad40
+  first_appearance_season: 2
+  tier: asteroid
+  episode_count: 1
+- fabula_uuid: ger_organization_40f4ae54d85f
+  global_id: ger_organization_40f4ae54d85f
+  canonical_name: Cromwell’s Administrative Household (Austin Friars)
+  description: The **physical and logistical hub** of Cromwell’s power, where **day-to-day
+    governance** and **crisis management** occur. Serves as a **bureaucratic machine**
+    for channeling Cromwell’s authority, distinct from his **inner political circle**.
+    Key functions include **alliance tracking, threat assessment, and royal portrait
+    logistics** (e.g., Holbein’s commissions).
+  sphere_of_influence: Tudor Household Administration and Political Operations
+  season_appearances:
+  - 2
+  local_uuids:
+    1: org_14503cd0ae84
+  first_appearance_season: 2
+  tier: asteroid
+  episode_count: 1
 - fabula_uuid: ger_organization_ab53cb3709a4
   global_id: ger_organization_ab53cb3709a4
   canonical_name: Cromwell’s Faction (King’s Administration)
@@ -401,26 +567,22 @@
   first_appearance_season: 1
   tier: planet
   episode_count: 2
-- fabula_uuid: ger_organization_f34bc667a9c2
-  global_id: ger_organization_f34bc667a9c2
-  canonical_name: Duke Wilhelm’s Cleves Delegation
-  description: Duke Wilhelm’s Cleves Delegation, representing the Duchy of Cleves,
-    dispatches Olisleger to Hampton Court Palace with a delicate clock as a diplomatic
-    gift for Thomas Cromwell. The delegation embodies the fragile England-Cleves alliance
-    engineered through the king’s marriage to Anne of Cleves. During their presentation,
-    Henry VIII dismisses the gift with indifference and publicly humiliates Anne,
-    undermining the alliance. Wyatt’s diplomatic breakthrough later nullifies the
-    partnership, leaving Cromwell exposed to Norfolk’s attacks and marking the delegation’s
-    overture as futile.
-  sphere_of_influence: Diplomatic Representation and Alliance Negotiation at English
-    Court
+- fabula_uuid: ger_organization_4955c6f0ac4e
+  global_id: ger_organization_4955c6f0ac4e
+  canonical_name: Cromwell’s Reformist Inner Circle
+  description: A **closed political faction** of Cromwell’s most trusted advisors,
+    focused on **ideological consolidation** and **reformist strategy** post-Jane
+    Seymour’s marriage. Their dynamics reveal **internal tensions** over loyalty (e.g.,
+    Cromwell’s secret vow to protect Mary Tudor). Operates as a **decision-making
+    body**, distinct from Cromwell’s broader administrative household.
+  sphere_of_influence: Tudor Court Power Consolidation and Reformist Politics
   season_appearances:
-  - 1
+  - 2
   local_uuids:
-    1: org_34c0ed94523a
-  first_appearance_season: 1
+    1: org_201334eefd92
+  first_appearance_season: 2
   tier: asteroid
-  episode_count: 0
+  episode_count: 1
 - fabula_uuid: ger_organization_86200ede6052
   global_id: ger_organization_86200ede6052
   canonical_name: Duke of Norfolk's Political Bloc
@@ -449,6 +611,24 @@
   first_appearance_season: 1
   tier: asteroid
   episode_count: 1
+- fabula_uuid: ger_organization_d6ad3be95f16
+  global_id: ger_organization_d6ad3be95f16
+  canonical_name: English Diplomacy
+  description: English Diplomacy operates through ambassador Thomas Wyatt's mission
+    in Spain, where he fractures the alliance between France and the Holy Roman Empire.
+    The Council at Hampton Court hails this as proof of England's superior diplomatic
+    skill, deploying the victory to discredit Cromwell's German alliance push and
+    erode his influence amid Henry VIII's growing displeasure. Wyatt's success delivers
+    vital leverage in court power struggles, showcasing targeted foreign interventions
+    that protect English reforms from continental threats.
+  sphere_of_influence: Geopolitical Diplomacy and Alliance Disruption
+  season_appearances:
+  - 2
+  local_uuids:
+    1: org_aa1a4fabd288
+  first_appearance_season: 2
+  tier: asteroid
+  episode_count: 1
 - fabula_uuid: ger_organization_3e7d9ea99d09
   global_id: ger_organization_3e7d9ea99d09
   canonical_name: English Nobility
@@ -465,8 +645,41 @@
   local_uuids:
     1: org_80cb420a67db
   first_appearance_season: 1
-  tier: anchor
-  episode_count: 6
+  tier: planet
+  episode_count: 4
+- fabula_uuid: ger_organization_9aa779bd961b
+  global_id: ger_organization_9aa779bd961b
+  canonical_name: English Parliament
+  description: Richard Riche drafts bills to prosecute treason and scandals. Cromwell
+    channels royal demands through legislation, securing approval for Henry VIII's
+    marriage amid noble opposition. Parliament now receives Cromwell's arrest and
+    downfall in stunned silence, abandoning him politically and confirming his isolation
+    as institutional support evaporates.
+  sphere_of_influence: Tudor Parliamentary Legislation, Royal Investigations, Marriage
+    Legitimation, and Political Endorsement
+  season_appearances:
+  - 2
+  local_uuids:
+    1: org_e8cd732fffb8
+  first_appearance_season: 2
+  tier: planet
+  episode_count: 3
+- fabula_uuid: ger_organization_3389f23441be
+  global_id: ger_organization_3389f23441be
+  canonical_name: English Rebellion
+  description: The English Rebellion threatens Henry VIII's rule by exploiting the
+    lack of a male heir, gaining momentum amid dynastic fears. Courtiers in the Council
+    Chamber celebrate Queen Jane Seymour's pregnancy as the force to collapse it,
+    pounding tables in relief while Cromwell observes. This antagonist group underscores
+    the court's fragile optimism, tying national stability to royal fertility.
+  sphere_of_influence: Dynastic Insurrection Against Tudor Succession
+  season_appearances:
+  - 2
+  local_uuids:
+    1: org_7cb89d707688
+  first_appearance_season: 2
+  tier: asteroid
+  episode_count: 1
 - fabula_uuid: ger_organization_2b4d0acca2b8
   global_id: ger_organization_2b4d0acca2b8
   canonical_name: English Royal Army (Henry VIII’s Forces)
@@ -538,6 +751,23 @@
   first_appearance_season: 1
   tier: asteroid
   episode_count: 0
+- fabula_uuid: ger_organization_d40e5dc8290f
+  global_id: ger_organization_d40e5dc8290f
+  canonical_name: Flemish Guards
+  description: The Flemish Guards escort Don Diego de Mendoza's elaborate carriage
+    into Hampton Court's Base Court. Their mud-splattered uniforms mark the long journey,
+    underscoring the deliberate arrival of Spain's new envoy. They project foreign
+    military strength, bolstering Spain's diplomatic weight against England's court
+    and provoking tension among Cromwell, Riche, and Chapuys. This escort symbolizes
+    imperial support and disrupts local power dynamics.
+  sphere_of_influence: Diplomatic Escort and Foreign Military Projection
+  season_appearances:
+  - 2
+  local_uuids:
+    1: org_24613138ceed
+  first_appearance_season: 2
+  tier: asteroid
+  episode_count: 1
 - fabula_uuid: ger_organization_af68ebc1004f
   global_id: ger_organization_af68ebc1004f
   canonical_name: Florentine Banks
@@ -573,55 +803,36 @@
   first_appearance_season: 1
   tier: asteroid
   episode_count: 1
-- fabula_uuid: ger_organization_a4acafc8ccd1
-  global_id: ger_organization_a4acafc8ccd1
-  canonical_name: Franco-English Alliance
-  description: A diplomatic pact between France and England, where the French King
-    leverages the alliance to demand the removal of Thomas Cromwell as a precondition
-    for continued cooperation. This external pressure is exploited by Cromwell's rivals—Norfolk,
-    Gardiner, Riche, and Wriothesley—to accelerate his downfall through betrayal and
-    attainder. The alliance reflects France's geopolitical alignment with conservative
-    English factions, prioritizing strategic interests over domestic loyalty. The
-    French King's ultimatum forces Henry VIII to withhold intervention in Cromwell's
-    tribunal, despite personal appeals (e.g., via the ruby ring), ultimately contributing
-    to Cromwell's execution.
-  sphere_of_influence: Diplomatic Alliances and Political Leverage in Tudor England
+- fabula_uuid: ger_organization_3bc18d4572ad
+  global_id: ger_organization_3bc18d4572ad
+  canonical_name: Franco-Imperial Alliance
+  description: A real-world historical Franco-Imperial treaty between France (François
+    I) and the Holy Roman Empire (Charles V), posing a direct geopolitical threat
+    to England's Protestant reforms. Fractured by Wyatt's diplomatic mission to Spain,
+    where Charles V's insult to all kings—including France—weakens the alliance, delighting
+    Henry VIII's Council.
+  sphere_of_influence: European Diplomatic and Military Alliances Threatening England
   season_appearances:
-  - 1
+  - 2
   local_uuids:
-    1: org_2633316b774e
-  first_appearance_season: 1
-  tier: asteroid
-  episode_count: 1
-- fabula_uuid: ger_organization_45653cbea973
-  global_id: ger_organization_45653cbea973
-  canonical_name: Franco-Imperial Military-Diplomatic Bloc (1539–1540)
-  description: A temporary coalition between the Kingdom of France (under François
-    I) and the Holy Roman Emperor, formed to counter England’s Protestant reforms
-    and Tudor succession. Dissolved by Wyatt’s diplomatic insults in 1540, this bloc
-    supplied naval and financial support for potential invasions, directly pressuring
-    Cromwell to secure the Cleves marriage alliance. *Distinct from the Kingdom of
-    France, which persisted independently.*
-  sphere_of_influence: Geopolitical Threats and Invasion Funding Against England
-  season_appearances:
-  - 1
-  local_uuids:
-    1: org_294c1ab4d5ae
-  first_appearance_season: 1
+    1: org_fb2263123d87
+  first_appearance_season: 2
   tier: planet
   episode_count: 2
 - fabula_uuid: ger_organization_a89d092b4c48
   global_id: ger_organization_a89d092b4c48
   canonical_name: Franco-Spanish Alliance (French-Spanish Truce)
-  description: A Catholic-dominated truce between France and Spain, announced at Hampton
-    Court Palace, which disrupts Thomas Cromwell's Protestant diplomatic strategy
-    and isolates his position, foreshadowing his political downfall.
-  sphere_of_influence: Continental Diplomacy and Royal Alliances
+  description: A *looming, potential alliance* between France and Spain (Charles V’s
+    Spanish kingship), warned about by Rafe Sadler as a *future geopolitical threat*
+    to England. Unlike the Franco-Imperial Alliance, this pact is not yet sealed but
+    represents a *redirected aggression* from France/Spain toward England, exploiting
+    Tudor vulnerabilities through *coordinated imperial pressure*.
+  sphere_of_influence: Geopolitical Threat and European Alliance Against England
   season_appearances:
-  - 1
+  - 2
   local_uuids:
-    1: org_cff6cacac489
-  first_appearance_season: 1
+    1: org_1a473c764cfc
+  first_appearance_season: 2
   tier: asteroid
   episode_count: 1
 - fabula_uuid: ger_organization_186cc0492f95
@@ -651,27 +862,6 @@
   first_appearance_season: 1
   tier: asteroid
   episode_count: 1
-- fabula_uuid: ger_organization_7dedd4547b17
-  global_id: ger_organization_7dedd4547b17
-  canonical_name: French Monarchy (François I)
-  description: The French Monarchy under King François I (also referred to as the
-    French Crown or King Francis I’s Faction) plays a pivotal geopolitical role in
-    Thomas Cromwell’s downfall. The monarchy operates through high-level diplomatic
-    ultimatums, including accusations of conspiring with Geoffrey Pole to threaten
-    Henry VIII and demands for Cromwell’s removal as a precondition for a Franco-English
-    alliance. These diplomatic pressures, revealed during Cromwell’s Tower interrogation
-    by Richard Riche, Stephen Gardiner, the Duke of Norfolk, and Thomas Wriothesley,
-    provide the decisive leverage for Cromwell’s bill of attainder. The faction’s
-    influence extends to dictating English policy shifts, with no internal structure
-    explicitly detailed in the narrative.
-  sphere_of_influence: Geopolitical Diplomacy and Alliance Preconditions
-  season_appearances:
-  - 1
-  local_uuids:
-    1: org_3c2c5b81ccec
-  first_appearance_season: 1
-  tier: planet
-  episode_count: 4
 - fabula_uuid: ger_organization_5273286ec83a
   global_id: ger_organization_5273286ec83a
   canonical_name: French Monarchy (Valois Court)
@@ -701,12 +891,29 @@
   season_appearances:
   - 1
   - 1
+  - 2
   local_uuids:
     1: org_85242501074c
     2: org_f549182a5326
+    3: org_649042e6cecc
   first_appearance_season: 1
-  tier: planet
-  episode_count: 3
+  tier: anchor
+  episode_count: 6
+- fabula_uuid: ger_organization_8cde405b8ae6
+  global_id: ger_organization_8cde405b8ae6
+  canonical_name: French and Spanish Courts
+  description: A *thematic abstraction* representing the **ten-year truce between
+    France and Spain**, serving as a **geopolitical backdrop** for Tudor tensions
+    rather than a direct plot actor. Distinct from the **active French Court** led
+    by François I, which engages in hostile diplomacy.
+  sphere_of_influence: Geopolitical Diplomacy and European Truces
+  season_appearances:
+  - 2
+  local_uuids:
+    1: org_bea52788bd7a
+  first_appearance_season: 2
+  tier: asteroid
+  episode_count: 1
 - fabula_uuid: ger_organization_b45a7e0da3a7
   global_id: ger_organization_b45a7e0da3a7
   canonical_name: German Mercenaries
@@ -724,6 +931,54 @@
   first_appearance_season: 1
   tier: asteroid
   episode_count: 1
+- fabula_uuid: ger_organization_3c803dd2d2c9
+  global_id: ger_organization_3c803dd2d2c9
+  canonical_name: German Princes and Lutherans
+  description: German Princes and Lutherans face accusation as co-conspirators with
+    Thomas Cromwell in forged letters from Martin Luther and Philipp Melanchthon.
+    Duke of Norfolk, Stephen Gardiner, and Richard Riche wield this charge during
+    Cromwell's Tower interrogation to paint his Protestant ties as disloyalty to King
+    Henry VIII. Cromwell rejects the letters as obvious fakes, exposing the ploy as
+    aristocratic sabotage amid his rivals' coordinated attack.
+  sphere_of_influence: German Protestant Reform Networks and Anti-Catholic Alliances
+  season_appearances:
+  - 2
+  local_uuids:
+    1: org_c5f8f0c2efa0
+  first_appearance_season: 2
+  tier: asteroid
+  episode_count: 0
+- fabula_uuid: ger_organization_aa94ebe1d671
+  global_id: ger_organization_aa94ebe1d671
+  canonical_name: German Principalities (Diplomatic Entity)
+  description: Broad collection of German states considered by Henry VIII for dynastic
+    alliances, distinct from religious factions. Serves as a diplomatic tool for marriage
+    negotiations (e.g., Mary Tudor to the Duke of Bavaria) and reflects Henry’s personal
+    realpolitik, not tied to Protestantism.
+  sphere_of_influence: Dynastic Diplomacy and Marriage Alliances with English Crown
+  season_appearances:
+  - 2
+  local_uuids:
+    1: org_a2ea700fe801
+  first_appearance_season: 2
+  tier: asteroid
+  episode_count: 1
+- fabula_uuid: ger_organization_63d5e5a14f85
+  global_id: ger_organization_63d5e5a14f85
+  canonical_name: German Protestant Princes (Military-Faction Entity)
+  description: Specific faction of German princes aligned with Protestantism, framed
+    by Cromwell as a **military counterbalance** to the Franco-Imperial alliance.
+    Their support is pitched as essential for England’s survival, tied to Anna of
+    Cleves’ marriage and urgent council debates at Hampton Court.
+  sphere_of_influence: Dynastic Alliances and Military Counterbalance to Franco-Imperial
+    Forces
+  season_appearances:
+  - 2
+  local_uuids:
+    1: org_2133794703be
+  first_appearance_season: 2
+  tier: planet
+  episode_count: 2
 - fabula_uuid: ger_organization_8b73b72c0c9e
   global_id: ger_organization_8b73b72c0c9e
   canonical_name: Gray’s Inn Reformist Circle (Tyndale’s Public Followers)
@@ -741,32 +996,6 @@
   first_appearance_season: 1
   tier: asteroid
   episode_count: 1
-- fabula_uuid: ger_organization_def16a50d3ff
-  global_id: ger_organization_def16a50d3ff
-  canonical_name: Henry VIII's Court and Administration
-  description: "\n  The central political apparatus of Tudor England under Henry VIII,\
-    \ encompassing both the **monarchical regime** (the king's absolute authority\
-    \ and ruling ideology) and the **operational court** (the factionalized bureaucracy\
-    \ where power struggles unfold).\n  This entity governs through a volatile mix\
-    \ of **divine-right absolutism** (Henry VIII's justifying speeches and ruthless\
-    \ demands for loyalty) and **courtly intrigue** (factional maneuvering by Gardiner,\
-    \ Norfolk, Wriothesley, and Riche).\n  Key dynamics include:\n  - **Monarchical\
-    \ Authority**: The king's regime demands absolute loyalty, treats human costs\
-    \ (e.g., Gregory Cromwell, Rafe) as expendable, and justifies executions (e.g.,\
-    \ Cromwell's) through ideological speeches.\n  - **Court Politics**: A treacherous\
-    \ arena where Cromwell's downfall is orchestrated through factional agendas, rapid\
-    \ power shifts, and foreign threats (e.g., Chapuys). Loyalty is a depreciating\
-    \ asset amid volatility.\n  - **Institutional Instability**: Cromwell’s ouster\
-    \ sparks infighting and regime instability, exposing the fragility of the system\
-    \ despite its outward ruthlessness.\n  "
-  sphere_of_influence: Royal Political Intrigue and Factional Power Struggles
-  season_appearances:
-  - 1
-  local_uuids:
-    1: org_252ac7b2bf1c
-  first_appearance_season: 1
-  tier: asteroid
-  episode_count: 0
 - fabula_uuid: ger_organization_4a2ea6b08b48
   global_id: ger_organization_4a2ea6b08b48
   canonical_name: Henry VIII's Government (Tudor State Apparatus)
@@ -784,23 +1013,6 @@
   first_appearance_season: 1
   tier: asteroid
   episode_count: 1
-- fabula_uuid: ger_organization_6a4208a4d551
-  global_id: ger_organization_6a4208a4d551
-  canonical_name: Holbein’s Studio
-  description: Holbein’s Studio sends painters to elite patrons like Thomas Cromwell
-    for major commissions, including the mural at his Austin Friars residence. This
-    work highlights Cromwell's cultural patronage, wealth, and political status amid
-    brewing threats from stolen letters and court rumors. The studio maintains a neutral
-    artistic role, appearing only as background detail in household scenes of betrayal
-    and tension.
-  sphere_of_influence: Renaissance Art Workshops and Elite Patronage Commissions
-  season_appearances:
-  - 1
-  local_uuids:
-    1: org_a282890dd947
-  first_appearance_season: 1
-  tier: asteroid
-  episode_count: 0
 - fabula_uuid: ger_organization_a6db66df9349
   global_id: ger_organization_a6db66df9349
   canonical_name: Holy Maid’s Followers
@@ -868,6 +1080,27 @@
   first_appearance_season: 1
   tier: asteroid
   episode_count: 1
+- fabula_uuid: ger_organization_a0965c72bc91
+  global_id: ger_organization_a0965c72bc91
+  canonical_name: Holy Roman Empire (Imperial Court)
+  description: The Holy Roman Empire, governed by Emperor Charles V, advances its
+    political and religious interests in England through its Imperial Court. Key diplomats
+    include Eustace Chapuys and Don Diego de Mendoza, who engage in diplomatic correspondence,
+    negotiations, and marriage proposals (e.g., for Lady Mary) to counter English
+    reforms and secure imperial influence over succession. Cromwell's accusers cite
+    these overtures as evidence of treasonous plotting, framing the Empire as a potential
+    adversary threatening English control over religious and dynastic policy. The
+    court's actions, such as Chapuys's alleged talks with Cromwell about Lady Mary's
+    future, are rejected to preserve domestic alliances (e.g., Cromwell's son's marriage).
+  sphere_of_influence: Imperial Diplomacy, Succession Intrigue, and Catholic Advocacy
+    in Tudor England
+  season_appearances:
+  - 2
+  local_uuids:
+    1: org_2c11043b4882
+  first_appearance_season: 2
+  tier: anchor
+  episode_count: 5
 - fabula_uuid: ger_organization_b41deddb6ca6
   global_id: ger_organization_b41deddb6ca6
   canonical_name: Holy Roman Empire (under Charles V)
@@ -882,32 +1115,53 @@
   first_appearance_season: 1
   tier: planet
   episode_count: 2
+- fabula_uuid: ger_organization_dafdaaa6ef1c
+  global_id: ger_organization_dafdaaa6ef1c
+  canonical_name: House of Cleves
+  description: German noble house tied to the Holy Roman Empire; central to Henry
+    VIII's marriage to Anne of Cleves and diplomatic tensions with the Empire.
+  sphere_of_influence: Dynastic Marriage Alliances and Holy Roman Empire Diplomacy
+  season_appearances:
+  - 2
+  local_uuids:
+    1: org_c268f5be2cc8
+  first_appearance_season: 2
+  tier: asteroid
+  episode_count: 1
 - fabula_uuid: ger_organization_fa7c7a58c8e8
   global_id: ger_organization_fa7c7a58c8e8
   canonical_name: House of Commons
-  description: Lower chamber of Parliament, dominated by MPs and used by Thomas Cromwell
-    to manipulate votes and expose dissenters in support of Henry VIII's reforms.
+  description: Lower chamber of Parliament representing the common people (though
+    dominated by gentry/landowners), distinct from the House of Lords in membership,
+    power, and narrative function. Cromwell’s elevation to the Lords is framed as
+    a strategy to influence this chamber’s legislative debates.
   sphere_of_influence: Tudor Parliamentary Legislation and Political Maneuvering
   season_appearances:
   - 1
+  - 2
   local_uuids:
     1: org_e90b6d87a89e
+    2: org_8f355f9898a5
   first_appearance_season: 1
   tier: asteroid
   episode_count: 1
 - fabula_uuid: ger_organization_16fe01e8ea66
   global_id: ger_organization_16fe01e8ea66
   canonical_name: House of Lords
-  description: Upper chamber of Parliament, controlled by bishops and the old aristocracy,
-    which openly defies Henry VIII's reforms and blocks bills advancing royal supremacy.
+  description: Upper chamber of Parliament composed of hereditary nobles and clergy,
+    separate from the Commons. Acts as a counterbalance to the Commons and a site
+    of aristocratic resistance to Cromwell’s reforms. Cromwell’s elevation here is
+    framed as a means to tame noble opposition, not to merge with the Commons.
   sphere_of_influence: Upper House Legislation and Papal-Aligned Aristocratic Resistance
   season_appearances:
   - 1
+  - 2
   local_uuids:
     1: org_182a514c307e
+    2: org_99ff6972130c
   first_appearance_season: 1
-  tier: asteroid
-  episode_count: 1
+  tier: planet
+  episode_count: 3
 - fabula_uuid: ger_organization_6010f47a27ba
   global_id: ger_organization_6010f47a27ba
   canonical_name: House of Valois (France)
@@ -928,25 +1182,27 @@
 - fabula_uuid: ger_organization_c9d778f020e0
   global_id: ger_organization_c9d778f020e0
   canonical_name: Howard Family
-  description: The Howard Family, a powerful noble house in the Tudor court, hosts
-    Catherine Howard at Lambeth under the supervision of the Duke of Norfolk. Henry
-    VIII visits Catherine nightly by barge after sunset, and the family anticipates
-    her marriage to the king. The Howards leverage their ties to Catherine to undermine
-    Thomas Cromwell's position, using grievances such as the closure of Thetford Priory
-    to amplify their influence. They operate as a key antagonist force, fueling conservative
-    opposition to Cromwell's reforms through personal and institutional leverage,
-    while driving Norfolk's maneuvers to reshape the Tudor monarchy amid court moral
-    decay.
-  sphere_of_influence: Noble Family Politics in the Tudor Court
+  description: |-
+    The Howard Family, led by the Duke of Norfolk, operates as a cohesive political faction (the 'Norfolk Faction' or 'Conservative Faction') to advance dynastic ambitions through strategic marriages, court intrigues, and calculated alliances. This faction includes key allies like Stephen Gardiner and leverages ancestral pride (e.g., Flodden triumphs, Thetford Priory burials) to frame priory dissolutions as personal insults. Their primary pawn is Catherine Howard, deployed to seduce King Henry VIII, undermine Thomas Cromwell's influence, and challenge Anne of Cleves' queenship. The faction's tactics include:
+            - **Calculated introductions**: Positioning Catherine under Norfolk's Lambeth protection.
+            - **Secret royal visits**: Enabling Henry VIII's clandestine nighttime encounters with Catherine.
+            - **Symbolic usurpation**: Catherine wears a defaced girdle book (originally Bess Oughtred's sister Jane's) to appropriate higher-born status.
+            - **French negotiations**: Pursuing alliances to bolster their court dominance.
+            - **Public confrontations**: Directly challenging Cromwell's lowborn origins and lordly title (e.g., accusations in his Austin Friars study).
+            - **Diplomatic leverages**: Using events like the Franco-Spanish truce to strengthen their position.
+          Their actions reflect a unified, ruthless strategy to seize power, with Norfolk as the faction's de facto leader and Catherine as its most visible instrument. The faction embodies class conflict against reformist upstarts and serves as a direct antagonist to Cromwell's bloc in Henry VIII's court.
+  sphere_of_influence: Tudor Court Politics and Dynastic Maneuvering
   season_appearances:
   - 1
-  - 1
+  - 2
+  - 2
   local_uuids:
-    1: org_8474beea88d8
-    2: org_68f6510ad644
+    1: org_68f6510ad644
+    2: org_b989e12db0fb
+    3: org_328760cf914f
   first_appearance_season: 1
   tier: anchor
-  episode_count: 5
+  episode_count: 6
 - fabula_uuid: ger_organization_60a908e16d57
   global_id: ger_organization_60a908e16d57
   canonical_name: Howard Ladies (Inn Scandal)
@@ -961,41 +1217,55 @@
   first_appearance_season: 1
   tier: asteroid
   episode_count: 1
+- fabula_uuid: ger_organization_4ca394794b59
+  global_id: ger_organization_4ca394794b59
+  canonical_name: Imperial Ambassador Network
+  description: Chapuys represents this network of imperial ambassadors and diplomats
+    who spread and confirm political rumors to threaten Cromwell's position. In his
+    Austin Friars garden confrontation, Chapuys deploys their ambiguity to validate
+    the explosive rumor of Henry VIII marrying Cromwell to Princess Mary, exposing
+    alliance strains and external machinations against Tudor reformers amid post-Wolsey
+    power struggles.
+  sphere_of_influence: Imperial Diplomatic Intrigue and Rumor Propagation in Tudor
+    England
+  season_appearances:
+  - 2
+  local_uuids:
+    1: org_855686533543
+  first_appearance_season: 2
+  tier: asteroid
+  episode_count: 1
 - fabula_uuid: ger_organization_668b7982e720
   global_id: ger_organization_668b7982e720
   canonical_name: Imperial Court of the Holy Roman Empire
-  description: "\n    The **Imperial Court of the Holy Roman Empire** (under Emperor\
-    \ Charles V) serves as England's primary Catholic adversary during Henry VIII's\
-    \ reign. Its diplomatic efforts are conducted through **Ambassador Eustace Chapuys**,\
-    \ who acts as the court's representative at Henry's court. The court's actions\
-    \ are framed through two key narrative lenses:\n\n    1. **Diplomatic Engagement**:\
-    \ Chapuys promotes the marriage prospects of **Lady Mary** (Henry VIII’s daughter)\
-    \ to secure political alliances, delivers love letters (e.g., from **Don Diego\
-    \ de Mendoza**), and pressures Mary to submit to Catholic conscience terms. These\
-    \ efforts reflect the court’s strategic interest in England’s religious and political\
-    \ stability.\n\n    2. **Perceived Threat**: English factions (e.g., the **Duke\
-    \ of Norfolk**) weaponize Chapuys’ presence to accuse **Thomas Cromwell** of treasonous\
-    \ collusion, portraying the court as a foreign antagonist exploiting England’s\
-    \ internal divisions. Cromwell’s imprisonment in the Tower highlights the court’s\
-    \ role as a persistent external threat, with Chapuys poised to capitalize on England’s\
-    \ vulnerabilities post-Cromwell.\n\n    The **Imperial Court** and the **Holy\
-    \ Roman Empire** are **interchangeable** in this context, as Chapuys acts as the\
-    \ Empire's diplomatic arm at Henry's court. The court’s influence is **indirect\
-    \ and proxy-driven**, mediated entirely through Chapuys, who serves as both diplomat\
-    \ and spy, advancing Charles V’s interests while navigating Henry VIII’s volatile\
-    \ court. The Empire’s actions are framed through the lens of its court’s political\
-    \ maneuvering, particularly its focus on **Lady Mary’s status** and **Cromwell’s\
-    \ downfall**.\n  "
-  sphere_of_influence: Imperial Diplomacy and Religious Reconciliation Advocacy
+  description: "\n  The **Imperial Court of the Holy Roman Empire** (represented in\
+    \ England by Ambassador Eustace Chapuys) serves as a foreign power actively undermining\
+    \ Thomas Cromwell and Anne Boleyn's political ambitions. Through Chapuys, the\
+    \ court exploits Anne's public emotional instability and pregnancy to erode her\
+    \ support among English nobles, while simultaneously warning Cromwell of growing\
+    \ noble discontent. The embassy's actions—reporting Anne's fragility to the Emperor\
+    \ and forging alliances with resentful nobles—position the Imperial Court as a\
+    \ key antagonist, leveraging internal English fractures to block Anne's coronation\
+    \ and Cromwell's reformist agenda. The court's diplomatic and intelligence operations\
+    \ in England are conducted primarily through Chapuys, who acts as its primary\
+    \ agent in the English court.\n\n  The **Holy Roman Empire** (of which this court\
+    \ is the governing body) tasks Chapuys with ambassadorship to England to safeguard\
+    \ its interests during diplomatic tensions between England and Spain. Chapuys'\
+    \ interventions include alerting Cromwell to noble discontent over Anne's ascent\
+    \ and threatening repercussions unless Cromwell reins her in. The Empire's reliance\
+    \ on fragile alliances is exposed through Chapuys' despair and Cromwell's hollow\
+    \ reassurances, while the court forges ties with resentful English nobles to block\
+    \ Anne's coronation and Cromwell's reformist ambitions. The Empire's precarious\
+    \ position is further underscored by its need to exploit external vulnerabilities\
+    \ to maintain influence.\n  "
+  sphere_of_influence: Diplomatic Surveillance and Political Undermining
   season_appearances:
   - 1
-  - 1
   local_uuids:
-    1: org_06b9e52055ed
-    2: org_40bb96b775bc
+    1: org_40bb96b775bc
   first_appearance_season: 1
-  tier: anchor
-  episode_count: 6
+  tier: asteroid
+  episode_count: 1
 - fabula_uuid: ger_organization_605655d221de
   global_id: ger_organization_605655d221de
   canonical_name: Imperial Embassy (Holy Roman Empire)
@@ -1065,45 +1335,108 @@
   first_appearance_season: 1
   tier: asteroid
   episode_count: 1
+- fabula_uuid: ger_organization_1284f63ed7a0
+  global_id: ger_organization_1284f63ed7a0
+  canonical_name: King's Councillors (Anti-Cromwell Faction)
+  description: A faction within Henry VIII's Privy Council, physically and politically
+    opposed to Thomas Cromwell. This group's violent confrontation with Cromwell in
+    the Council Chamber at Hampton Court Palace foreshadows his 1540 downfall through
+    treason and heresy accusations. Unlike the broader Privy Council, this faction
+    operates as a *temporary alliance* of aristocratic conservatives resisting Cromwell's
+    reforms.
+  sphere_of_influence: Royal Advisory and Anti-Cromwell Factionalism
+  season_appearances:
+  - 2
+  local_uuids:
+    1: org_95b5c0a9e275
+  first_appearance_season: 2
+  tier: asteroid
+  episode_count: 1
+- fabula_uuid: ger_organization_b69d9d33eb94
+  global_id: ger_organization_b69d9d33eb94
+  canonical_name: Kingdom of France
+  description: External diplomatic adversary engaged in betrayal and subversion against
+    English reformers. Directly involved in Cromwell's downfall, with explicit actions
+    like tricking Norfolk and offering Cromwell as a sacrifice. Linked to volatile
+    pacts and enmity toward Protestant shifts, with interactions involving Henry VIII,
+    Norfolk, and Rafe Sadler.
+  sphere_of_influence: Diplomatic Intrigue and Political Subversion
+  season_appearances:
+  - 2
+  local_uuids:
+    1: org_1c0555f3481a
+  first_appearance_season: 2
+  tier: planet
+  episode_count: 2
+- fabula_uuid: ger_organization_56b036c3ea87
+  global_id: ger_organization_56b036c3ea87
+  canonical_name: Kingdom of Ireland
+  description: Internal/regional threat to England, framed as a force of rebellion
+    or resistance that complicates royal diplomacy during Henry VIII's marriage to
+    Anne of Cleves. Mentioned in council debates at Hampton Court as part of Cromwell's
+    faction's vigilance against domestic instability.
+  sphere_of_influence: Political and Military Opposition to Tudor England
+  season_appearances:
+  - 2
+  local_uuids:
+    1: org_2b93a1ad0d2d
+  first_appearance_season: 2
+  tier: asteroid
+  episode_count: 0
+- fabula_uuid: ger_organization_3ed1681d7d62
+  global_id: ger_organization_3ed1681d7d62
+  canonical_name: Kingdom of Scotland
+  description: Northern adversary framed as part of Cromwell’s argument about England’s
+    isolation, positioned alongside French, Imperial, and Irish threats to amplify
+    geopolitical pressures for a German Protestant alliance.
+  sphere_of_influence: Geopolitical Opposition and Northern Border Threat to England
+  season_appearances:
+  - 2
+  local_uuids:
+    1: org_66e538a7eeaa
+  first_appearance_season: 2
+  tier: asteroid
+  episode_count: 0
 - fabula_uuid: ger_organization_ddc0384f08f1
   global_id: ger_organization_ddc0384f08f1
   canonical_name: King’s Council
-  description: Henry VIII’s formal advisory body, known as the **King’s Privy Council**
-    or **King’s Council**, convenes in chambers such as the **King’s Presence Chamber**
-    (e.g., at Hampton Court Palace) to deliberate political, diplomatic, and judicial
-    matters. The council includes nobles and officials like **Stephen Gardiner, Norfolk,
-    Suffolk, Fitzwilliam, Richard Riche, Wriothesley**, and formerly **Thomas Cromwell**.
-    Members exploit public sessions to undermine rivals, expose factional rifts, and
-    issue policy orders. Key events include debates over diplomatic marriages (e.g.,
-    the alliance with Anne of Cleves), reactions to Cromwell’s downfall, and warnings
-    about rising rivals like Norfolk. The council’s sessions reflect the volatile
-    power dynamics of Henry VIII’s court, where factional intrigue determines the
-    fate of advisors and rivals alike.
-  sphere_of_influence: Royal Advisory on Political, Diplomatic, and Judicial Matters
+  description: The King’s Privy Council, also known as Henry VIII’s English Council,
+    convenes in Hampton Court Palace’s council chamber to address royal crises, assess
+    marriage alliances, and manage court politics. The council includes key figures
+    such as Thomas Cromwell, the Duke of Norfolk, the Duke of Suffolk, William Fitzwilliam,
+    and Rafe Sadler, who debate matters of succession, loyalty, and diplomacy. The
+    council’s deliberations expose factional rivalries, shifting alliances, and the
+    king’s authority amid shifting loyalties. Key events include the assessment of
+    Anne of Cleves’ suitability as a royal bride, the defiance of Princess Mary, and
+    the public humiliation of ministers like Cromwell by rivals such as Lord Essex.
+    The council’s decisions shape royal policy and navigate the complexities of Henry
+    VIII’s reign.
+  sphere_of_influence: Royal Advisory on Succession, Political Crises, and Dynastic
+    Loyalty
   season_appearances:
   - 1
-  - 1
+  - 2
   local_uuids:
-    1: org_9b155f6973fd
-    2: org_7c662fe9c63c
+    1: org_7c662fe9c63c
+    2: org_1a7633df9adc
   first_appearance_season: 1
   tier: anchor
-  episode_count: 5
+  episode_count: 10
 - fabula_uuid: ger_organization_b88e5915258b
   global_id: ger_organization_b88e5915258b
   canonical_name: King’s Halberdiers
-  description: King’s Halberdiers function as the monarch's enforcers, deploying brute
-    force to execute royal and council directives. They flood the Council Chamber
-    at Hampton Court Palace, join Norfolk and other nobles in assaulting Thomas Cromwell,
-    and overwhelm him to strip his gold chain of office. Their numbers ensure the
-    Council's ambush succeeds, marking Cromwell's arrest amid betrayal by Fitzwilliam
-    and Gardiner.
-  sphere_of_influence: Royal Enforcement and Palace Security
+  description: King’s Halberdiers act as royal guards who enforce the Crown's authority
+    during violent court confrontations. They flood the Council Chamber at Hampton
+    Court Palace, pin Thomas Cromwell to the ground alongside councillors, strip his
+    chain of office, and secure his arrest under William Kingston's lead for transport
+    to the Tower. Their rapid intervention crushes resistance from fallen statesmen,
+    underscoring the king's unyielding control through armed presence.
+  sphere_of_influence: Royal Palace Security and Arrest Enforcement
   season_appearances:
-  - 1
+  - 2
   local_uuids:
-    1: org_e0b1f27e1d5f
-  first_appearance_season: 1
+    1: org_8b575e63eb76
+  first_appearance_season: 2
   tier: asteroid
   episode_count: 1
 - fabula_uuid: ger_organization_eda90d34c95b
@@ -1140,29 +1473,72 @@
 - fabula_uuid: ger_organization_9fd94b1072b7
   global_id: ger_organization_9fd94b1072b7
   canonical_name: Lincolnshire Rebels (Lincolnshire Rebellion)
-  description: "\n  The Lincolnshire Rebels, also referred to as *The Rebels (Lincolnshire\
-    \ Rebellion)*, are a militant faction that mounts a direct challenge to King Henry\
-    \ VIII's authority and Thomas Cromwell's Reformation policies. Their uprising\
-    \ originates in Lincolnshire, where they assault Bishop Langland's men in Horncastle\
-    \ and spread rumors of the King's death. The Rebels accuse Cromwell of treachery,\
-    \ claiming his policies aim to dismantle the church, impoverish parishioners,\
-    \ and seize the King's daughter (Lady Mary). Their brutality is exemplified by\
-    \ the execution of John Bellowe, who was blinded, flayed alive, sewn into a bull's\
-    \ hide, and torn apart by dogs. This savagery prompts Cromwell to dispatch a platoon\
-    \ under Richard Cromwell to suppress the rebellion.\n\n  The Rebels also approach\
-    \ Lady Mary to exploit her name as a figurehead for their uprising, despite lacking\
-    \ her explicit permission. Their actions spark political instability, forcing\
-    \ Cromwell to navigate tensions between royal loyalty and Reformation-era divisions.\
-    \ The group is first revealed during a tense nighttime confrontation in Mary's\
-    \ bedchamber at Hampton Court, where she discloses their contact to Cromwell.\
-    \ Their activities position them as an immediate antagonistic threat, fueling\
-    \ discussions on loyalty oaths and potential civil unrest.\n  "
-  sphere_of_influence: Regional Anti-Reform Uprising
+  description: The Lincolnshire Rebels are a militant faction opposing King Henry
+    VIII’s rule and Thomas Cromwell’s Reformation policies, rooted in the rural discontent
+    of Lincolnshire. Led by local gentry and commoners, they rally against perceived
+    church dismantlement and economic hardship, framing their rebellion as a defense
+    of traditional faith and royal legitimacy—though their methods include brutal
+    violence, such as the public execution of John Bellowe. While they attempt to
+    co-opt Lady Mary as a symbolic figurehead without her consent, their actions reflect
+    broader resistance to Cromwell’s reforms, forcing the crown to confront regional
+    unrest and the fragility of its authority. Their defiance exposes the tensions
+    between royal power, religious change, and grassroots opposition in early Tudor
+    England.
+  sphere_of_influence: Regional Anti-Reformation Insurrection
   season_appearances:
-  - 1
+  - 2
   local_uuids:
-    1: org_70cec8c847a2
-  first_appearance_season: 1
+    1: org_54ad018e37b2
+  first_appearance_season: 2
+  tier: asteroid
+  episode_count: 1
+- fabula_uuid: ger_organization_3af45b84b258
+  global_id: ger_organization_3af45b84b258
+  canonical_name: Lisles of Calais
+  description: Jane Seymour and Bess Oughtred discuss quails sent by the Lisles of
+    Calais during a private meal. This noble house supplies luxury goods, strengthening
+    ties between French families in English-held Calais and Tudor courtiers through
+    gift exchanges. The conversation highlights their role in courtly reciprocity
+    amid political tensions.
+  sphere_of_influence: Noble Luxury Gift Exchanges
+  season_appearances:
+  - 2
+  local_uuids:
+    1: org_5d28e307c287
+  first_appearance_season: 2
+  tier: asteroid
+  episode_count: 1
+- fabula_uuid: ger_organization_5b59e5939ca8
+  global_id: ger_organization_5b59e5939ca8
+  canonical_name: London Guilds
+  description: Officers of the London Guilds occupy seats in the Tower of London’s
+    Great Hall during John Lambert’s public heresy trial. These representatives embody
+    the city’s trade and craft guilds, which anchor London’s economy and social order.
+    Their attendance draws civic society into the kingdom’s theological and political
+    conflicts, signaling broad implications without direct participation. This passive
+    role underscores the trial’s national significance amid gathered dignitaries.
+  sphere_of_influence: Civic and Economic Representation in London
+  season_appearances:
+  - 2
+  local_uuids:
+    1: org_56561f5d538f
+  first_appearance_season: 2
+  tier: asteroid
+  episode_count: 1
+- fabula_uuid: ger_organization_fc7aa0210215
+  global_id: ger_organization_fc7aa0210215
+  canonical_name: Louth Rebels
+  description: A localized, brutal rebel faction in Louth known for extreme atrocities
+    (e.g., torture/murder of John Bellowe) as terror tactics, operating reactively
+    to Tudor authority and opportunistically exploiting Princess Mary’s name for legitimacy.
+    Their actions are confined to Louth and serve as background tension rather than
+    a direct threat to the crown.
+  sphere_of_influence: Northern Insurrection and Anti-Reformation Violence
+  season_appearances:
+  - 2
+  local_uuids:
+    1: org_a1d42bd716fd
+  first_appearance_season: 2
   tier: asteroid
   episode_count: 1
 - fabula_uuid: ger_organization_6828da9dbd7c
@@ -1206,14 +1582,31 @@
     monastic path he rejected for ambition, offering a bittersweet symbol of unattainable
     redemption amid his downfall. Their presence contrasts the court's machinations,
     highlighting spiritual peace lost to power.
-  sphere_of_influence: Monastic Contemplation and Divine Service
+  sphere_of_influence: Catholic Monastic Refuge Targeted for Dissolution
   season_appearances:
-  - 1
+  - 2
   local_uuids:
-    1: org_3007dd13ed13
-  first_appearance_season: 1
+    1: org_663616dea14f
+  first_appearance_season: 2
   tier: asteroid
   episode_count: 1
+- fabula_uuid: ger_organization_e4ef13a2af57
+  global_id: ger_organization_e4ef13a2af57
+  canonical_name: Monastic Orders
+  description: Thomas Cromwell dissolves the Monasteries, including Battle Abbey,
+    by citing scandals among monks such as selling relics and sexual misconduct. Eustace
+    Chapuys accuses Cromwell of plundering their wealth to bolster his political and
+    economic power. These religious houses stand at the heart of Reformation tensions,
+    where royal policy dismantles longstanding Catholic institutions amid charges
+    of corruption and opportunism.
+  sphere_of_influence: Catholic Monastic Institutions and Ecclesiastical Wealth
+  season_appearances:
+  - 2
+  local_uuids:
+    1: org_a886e4f1fa14
+  first_appearance_season: 2
+  tier: planet
+  episode_count: 2
 - fabula_uuid: ger_organization_1ce01c9aaa19
   global_id: ger_organization_1ce01c9aaa19
   canonical_name: Norfolk-Suffolk Anti-Wolsey Coalition
@@ -1290,26 +1683,13 @@
   sphere_of_influence: Catholic Political Agitation Against Tudor Supremacy
   season_appearances:
   - 1
+  - 2
   local_uuids:
     1: org_8d7c4c1e7ddf
+    2: org_8d7c4c1e7ddf
   first_appearance_season: 1
-  tier: asteroid
-  episode_count: 1
-- fabula_uuid: ger_organization_ca31869a87b6
-  global_id: ger_organization_ca31869a87b6
-  canonical_name: Parish Churches (Local Catholic Resistance)
-  description: Decentralized local churches serving as symbols of Catholic tradition
-    and grassroots resistance to Henry VIII's reforms, particularly in the Lincolnshire
-    uprising. Focused on popular devotion, sacrilege as a catalyst for revolt, and
-    communal defiance against Cromwell's policies.
-  sphere_of_influence: Local Parish Worship and Traditional Catholic Symbols
-  season_appearances:
-  - 1
-  local_uuids:
-    1: org_22d63c644816
-  first_appearance_season: 1
-  tier: asteroid
-  episode_count: 1
+  tier: planet
+  episode_count: 2
 - fabula_uuid: ger_organization_b1bed1c517f5
   global_id: ger_organization_b1bed1c517f5
   canonical_name: Parliament of England (Commons)
@@ -1320,16 +1700,14 @@
     opening in a fortnight, which demands preparation for legislative deadlines and
     risks resistance to bills targeting figures like Thomas More, who holds sway with
     members, as Audley notes.
-  sphere_of_influence: Legislative Representation and Royal Political Control
+  sphere_of_influence: Legislative Authority and Royal Legislation
   season_appearances:
   - 1
-  - 1
   local_uuids:
-    1: org_26f5e1aabd98
-    2: org_5aa6bd88672b
+    1: org_5aa6bd88672b
   first_appearance_season: 1
-  tier: anchor
-  episode_count: 5
+  tier: planet
+  episode_count: 3
 - fabula_uuid: ger_organization_3d28d91abaec
   global_id: ger_organization_3d28d91abaec
   canonical_name: Peers of the Court (George Boleyn’s Trial Jury)
@@ -1348,17 +1726,22 @@
 - fabula_uuid: ger_organization_ec47baeb750a
   global_id: ger_organization_ec47baeb750a
   canonical_name: Percy Family
-  description: Active exclusively in *Wolf Hall* Episode 1, focusing on Harry Percy’s
-    inheritance dispute and early court hierarchies. Resolved before the Seymour Family’s
-    introduction and unrelated to Anne Boleyn’s downfall or Henry VIII’s marital politics.
+  description: Percy Family commands northern estates and retainers. Cromwell crushes
+    Harry Percy's defiance through bankers calling debts at the Mark and the Lion
+    Inn, forcing silence on Anne Boleyn and affirmation of Henry's rule. Later, he
+    exposes their rebel ties via Robert Aske's past business at Gray’s Inn, marking
+    them as dissent hubs amid Grace uprising. Their submission underscores Cromwell's
+    grip on old aristocracy.
   sphere_of_influence: Tudor Court Nobility and Marriage Alliances
   season_appearances:
   - 1
+  - 2
   local_uuids:
     1: org_fc0a36ed1a57
+    2: org_fc0a36ed1a57
   first_appearance_season: 1
-  tier: asteroid
-  episode_count: 1
+  tier: planet
+  episode_count: 2
 - fabula_uuid: ger_organization_114647ae117b
   global_id: ger_organization_114647ae117b
   canonical_name: Percy Household (Mark and the Lion Inn)
@@ -1374,6 +1757,26 @@
   first_appearance_season: 1
   tier: asteroid
   episode_count: 0
+- fabula_uuid: ger_organization_1a3d3b2818be
+  global_id: ger_organization_1a3d3b2818be
+  canonical_name: Plantagenet Faction
+  description: Noble families including the Poles and Courtenays unite as Plantagenet
+    descendants to plot against Tudor rule. They recruit Lady Margaret Pole, Reginald
+    Pole, Lord Exeter, and Sir Nicholas Carew to crown a Pole king, wed Lady Mary
+    into their line, restore Catholic ties to Rome, and support Emperor-backed invasions.
+    Cromwell surveils Reginald's network tied to Princess Mary, raids Pole homes for
+    seditious letters, and brands them arrogant traitors to spark Council fears and
+    justify arrests like Geoffrey Pole's. In his Tower confrontation with Norfolk,
+    Gardiner, Riche, and Wriothesley, Cromwell names the Poles and Courtenays as true
+    conspirators against Henry VIII, deflecting treason charges against himself.
+  sphere_of_influence: Tudor Court Dynastic and Religious Opposition
+  season_appearances:
+  - 2
+  local_uuids:
+    1: org_9e4a40db32f4
+  first_appearance_season: 2
+  tier: anchor
+  episode_count: 6
 - fabula_uuid: ger_organization_4c60f8c31beb
   global_id: ger_organization_4c60f8c31beb
   canonical_name: Plantagenet Loyalists
@@ -1389,8 +1792,8 @@
   local_uuids:
     1: org_9e4a40db32f4
   first_appearance_season: 1
-  tier: planet
-  episode_count: 3
+  tier: asteroid
+  episode_count: 0
 - fabula_uuid: ger_organization_1e1161857ad4
   global_id: ger_organization_1e1161857ad4
   canonical_name: Pole Family (The Poles)
@@ -1402,61 +1805,50 @@
     in Cromwell's power struggles. The family's political maneuvering is central to
     the court's factional dynamics, particularly in their interactions with Cromwell,
     Henry VIII, and other noble families like the Seymours.
-  sphere_of_influence: Tudor Court Political Opposition
+  sphere_of_influence: Tudor Opposition Faction and Dynastic Rebellion
   season_appearances:
   - 1
   - 1
+  - 2
   local_uuids:
     1: org_65f163a7009a
     2: org_ef4ce5c94dbd
+    3: org_b55e06874407
   first_appearance_season: 1
-  tier: anchor
-  episode_count: 5
-- fabula_uuid: ger_organization_ec198d08d3b8
-  global_id: ger_organization_ec198d08d3b8
-  canonical_name: Privy Seal
-  description: A *royal enforcement office* distinct from the Privy Council, wielded
-    by Thomas Cromwell to conduct private interrogations (e.g., Margaret Douglas)
-    and enforce Henry VIII’s will through legal coercion. Operates in closed settings
-    (e.g., Austin Friars study) and involves targeted, secretive actions.
-  sphere_of_influence: Royal Legal Enforcement and Procedural Interrogation
+  tier: planet
+  episode_count: 4
+- fabula_uuid: ger_organization_40f160f6993b
+  global_id: ger_organization_40f160f6993b
+  canonical_name: Privy Council (Henry VIII's Executive Body)
+  description: The *permanent* executive body of Henry VIII's court, distinct from
+    temporary factions. It includes senior nobles (Norfolk), bishops (Gardiner), and
+    legal officials (Riche, Wriothesley), who enforce treason laws, heresy trials,
+    and royal decrees. While the King's Councillors are a faction within this body,
+    the Privy Council itself is the *institutional mechanism* for royal authority,
+    appearing in 48 events across multiple episodes (e.g., Cromwell's arrest, Tower
+    interrogations).
+  sphere_of_influence: Tudor Royal Governance and Treason Enforcement
   season_appearances:
-  - 1
+  - 2
   local_uuids:
-    1: org_2c1c02ca0c5a
-  first_appearance_season: 1
-  tier: asteroid
-  episode_count: 1
-- fabula_uuid: ger_organization_a01c3961031a
-  global_id: ger_organization_a01c3961031a
-  canonical_name: Protestant Alliance of German States (Cleves)
-  description: Protestant coalition led by the Duchy of Cleves, actively courted by
-    Thomas Cromwell as England’s diplomatic partner to counter the Franco-Imperial
-    Catholic bloc. Serves as a bulwark for Protestant dominance and a strategic counterweight
-    to Catholic invasion threats.
-  sphere_of_influence: Protestant German Geopolitical Alliances
+    1: org_10279140890e
+  first_appearance_season: 2
+  tier: planet
+  episode_count: 2
+- fabula_uuid: ger_organization_0a877c40ec78
+  global_id: ger_organization_0a877c40ec78
+  canonical_name: Rebel Army
+  description: 'The Rebel Army fields 50,000 organized men who directly threaten King
+    Henry VIII''s authority through armed insurrection. Their rapid growth and insurmountable
+    size block conventional royal military responses, forcing Cromwell to devise deception:
+    a false truce offering Jane''s coronation in York, a northern parliament, and
+    general pardons, while winter inflicts attrition through starvation and disease.'
+  sphere_of_influence: Armed Insurrection Against the Crown
   season_appearances:
-  - 1
+  - 2
   local_uuids:
-    1: org_824408e2cae6
-  first_appearance_season: 1
-  tier: asteroid
-  episode_count: 1
-- fabula_uuid: ger_organization_90e4930c3bca
-  global_id: ger_organization_90e4930c3bca
-  canonical_name: Protestant Princes of the Holy Roman Empire (Cleves Alliance)
-  description: A **faction of Protestant German princes**, including Anne of Cleves’
-    brother Wilhelm, acting as a **temporary political and military ally** for England
-    against the Holy Roman Emperor. Their support is contingent on Henry VIII’s marriage
-    to Anne and is framed as a **counterweight** to imperial power, not a permanent
-    shift in the Empire’s structure.
-  sphere_of_influence: Political and Military Alliances Countering France and Holy
-    Roman Empire
-  season_appearances:
-  - 1
-  local_uuids:
-    1: org_7afaed126d6c
-  first_appearance_season: 1
+    1: org_a0310cbf5c56
+  first_appearance_season: 2
   tier: asteroid
   episode_count: 1
 - fabula_uuid: ger_organization_37ecc9cb306a
@@ -1476,22 +1868,35 @@
   first_appearance_season: 1
   tier: asteroid
   episode_count: 1
-- fabula_uuid: ger_organization_6e89f22f1e3f
-  global_id: ger_organization_6e89f22f1e3f
-  canonical_name: Reformist Faction (Cromwell-Cranmer Alliance)
-  description: Central to Protestant religious reforms and Henry VIII’s dynastic strategies,
-    this faction is led by Thomas Cromwell and Thomas Cranmer and faces direct opposition
-    from conservative factions like Norfolk and Gardiner. Their power is tied to Henry’s
-    favor but is fragile, as demonstrated by events like the Lambeth Palace Dinner
-    and the John Lambert Trial.
-  sphere_of_influence: Protestant Diplomacy and Religious Reform at the Tudor Court
+- fabula_uuid: ger_organization_b4e4c47c5e35
+  global_id: ger_organization_b4e4c47c5e35
+  canonical_name: Reformist Faction (Cromwell’s Alliance)
+  description: Led by Thomas Cromwell to *defend* reformist policies in Henry VIII's
+    court, this faction is the primary target of the Conservative Faction's challenges.
+    Their strategy emphasizes *cold restraint* and institutional control, contrasting
+    with the Conservative Faction's confrontational tactics.
+  sphere_of_influence: Reformist Politics in Henry VIII's Court
   season_appearances:
-  - 1
+  - 2
   local_uuids:
-    1: org_1503d38acea7
-  first_appearance_season: 1
+    1: org_403194d00011
+  first_appearance_season: 2
+  tier: asteroid
+  episode_count: 1
+- fabula_uuid: ger_organization_f4766bd1f51d
+  global_id: ger_organization_f4766bd1f51d
+  canonical_name: Roman Catholic Church (Rome)
+  description: Foreign-based papal institution and primary adversary to Henry VIII’s
+    reforms, representing the old order and exiled loyalist resistance (e.g., Mary
+    Tudor, Reginald Pole).
+  sphere_of_influence: Pre-Reformation Papal Authority and Traditional Catholic Practices
+  season_appearances:
+  - 2
+  local_uuids:
+    1: org_71eb18a7e52d
+  first_appearance_season: 2
   tier: planet
-  episode_count: 2
+  episode_count: 3
 - fabula_uuid: ger_organization_897ed675e699
   global_id: ger_organization_897ed675e699
   canonical_name: Royal Court (King’s Court) [Permanent Institutional Body]
@@ -1508,52 +1913,39 @@
   first_appearance_season: 1
   tier: planet
   episode_count: 3
-- fabula_uuid: ger_organization_9391bd740cbc
-  global_id: ger_organization_9391bd740cbc
-  canonical_name: Royal Forces (King’s Army)
-  description: Military forces directly commanded by **King Henry VIII of England**,
-    distinct from Scottish or French armies. Central to Tudor-era campaigns, including
-    the 1513 capture of Therouanne and suppression of northern rebellions. Operates
-    under the political influence of Thomas Cromwell and noble factions like the Dukes
-    of Norfolk and Suffolk.
-  sphere_of_influence: Royal Military Campaigns and Rebellion Suppression
-  season_appearances:
-  - 1
-  local_uuids:
-    1: org_6708e0ceba5e
-  first_appearance_season: 1
-  tier: asteroid
-  episode_count: 1
 - fabula_uuid: ger_organization_2a3c9e1cb27c
   global_id: ger_organization_2a3c9e1cb27c
   canonical_name: Schmalkald League
-  description: The Schmalkald League unites German princes who defend against Holy
-    Roman Emperor attacks. Cromwell cites the league repeatedly to push Henry VIII
-    toward pacts with Protestant members like Duke Wilhelm of Cleves, framing it as
-    England's key ally against French-imperial threats. Enemies forge letters claiming
-    Cromwell plotted treason with the league and Martin Luther; he dismisses the charges
-    as absurd, but they justify his arrest as a fabricated Lutheran peril.
-  sphere_of_influence: Defensive Alliance of German Princes Against Holy Roman Imperial
-    Authority
+  description: The Schmalkald League unites German Protestant princes against Holy
+    Roman Emperor attacks. Cromwell pitches it to Henry VIII as England's key ally,
+    secured through marriage to Anna of Cleves, whose brother Duke Wilhelm heads a
+    faction. This counters Catholic threats during England's religious changes. At
+    Hampton Court, their diplomats prompt Norfolk's expulsion demand, which he casts
+    as a security risk to attack Cromwell; Cromwell counters that the alliance remains
+    politically essential.
+  sphere_of_influence: Protestant German Alliances, Dynastic Diplomacy, and Anti-Imperial
+    Coalitions
   season_appearances:
-  - 1
+  - 2
   local_uuids:
-    1: org_86f47de96694
-  first_appearance_season: 1
+    1: org_4aaf3fa9f4da
+  first_appearance_season: 2
   tier: planet
   episode_count: 2
 - fabula_uuid: ger_organization_0d7a8231a1c8
   global_id: ger_organization_0d7a8231a1c8
   canonical_name: Scottish Court
-  description: A *political institution* (royal court) framed as a strategic adversary
-    to England, referenced by Cromwell in S2E6 to exploit internal divisions. Distinct
-    from military forces under its authority.
-  sphere_of_influence: Foreign Dynastic Threat and Border Instability
+  description: Cromwell invokes the Scottish Court during his Tower interrogation
+    as one of the enemies King Henry VIII must confront without Cromwell's leadership.
+    He lists it alongside other threats to warn of chaos under weaker governance.
+    This casts the court as a northern royal center driving opposition, where decisions
+    fuel border risks and political instability amid Tudor power struggles.
+  sphere_of_influence: Foreign Royal Court Intrigue and Northern Threat
   season_appearances:
-  - 1
+  - 2
   local_uuids:
-    1: org_89ff08b1b06d
-  first_appearance_season: 1
+    1: org_d0eb0bb1a73f
+  first_appearance_season: 2
   tier: asteroid
   episode_count: 1
 - fabula_uuid: ger_organization_29541dea3882
@@ -1573,6 +1965,23 @@
   first_appearance_season: 1
   tier: asteroid
   episode_count: 1
+- fabula_uuid: ger_organization_a25d86b28ae0
+  global_id: ger_organization_a25d86b28ae0
+  canonical_name: Scottish Royal Family
+  description: Henry VIII directs Thomas Cromwell to arrange a marriage for Lady Margaret
+    Douglas, his niece and representative of the Scottish Royal Family. He deems her
+    a 'great prize' due to her proximity to the throne, making her a key asset in
+    dynastic politics. This order, issued amid Hampton Court tensions with Wriothesley
+    and Fitzwilliam present, underscores the family's role as a source of leverage
+    in Tudor alliances and succession strategies.
+  sphere_of_influence: Dynastic Marriage Alliances
+  season_appearances:
+  - 2
+  local_uuids:
+    1: org_1052918912d7
+  first_appearance_season: 2
+  tier: asteroid
+  episode_count: 1
 - fabula_uuid: ger_organization_0a20e4c13312
   global_id: ger_organization_0a20e4c13312
   canonical_name: Seymour Family
@@ -1583,43 +1992,60 @@
   sphere_of_influence: Tudor Court Politics and Dynastic Ambition
   season_appearances:
   - 1
+  - 2
   local_uuids:
     1: org_9f0b6bb54028
+    2: org_db511d0c4925
   first_appearance_season: 1
-  tier: anchor
-  episode_count: 6
+  tier: planet
+  episode_count: 3
 - fabula_uuid: ger_organization_ad5d82b1e7de
   global_id: ger_organization_ad5d82b1e7de
   canonical_name: Shaftesbury Convent
-  description: Shaftesbury Convent, founded by King Alfred, operates as a wealthy
-    nunnery and refuge for figures like Dorothea amid Reformation pressures. The Abbess
-    leads defenses of its autonomy during Thomas Cromwell's inquiries into loyalty
-    and finances, positioning it as a symbol of religious resistance to Crown authority.
-    Nuns reside there under threat of dissolution, and it hosts tense confrontations
-    between state power and personal loyalties.
-  sphere_of_influence: Monastic Refuge and Ecclesiastical Autonomy
+  description: |-
+    A wealthy, historically significant Catholic religious house founded by King Alfred, later known as Shaftesbury Convent (formerly Shaftesbury Abbey). The institution operates as a center of monastic resistance against Thomas Cromwell's dissolution of monasteries under King Henry VIII. Led by the Abbess and including nuns such as Dorothea (Wolsey's daughter), the convent defends its community against Crown influence. Key narrative elements include:
+      - **Resistance to Dissolution**: The Abbess and nuns actively oppose Cromwell's orders, embodying Church resistance to royal reforms.
+      - **Political and Personal Conflict**: Cromwell's visits expose his hidden motives, including his ties to Dorothea, creating tension between state power and monastic faith.
+      - **Architectural and Symbolic Significance**: The convent's sunlit cloisters and historical legacy (founded by King Alfred) underscore its cultural and religious importance.
+      - **Defiance and Defiance**: The Abbess confronts Cromwell directly, forcing him to confront personal betrayal amid political maneuvering. Dorothea's rejection of Cromwell's offers of marriage and support highlights the convent's vulnerability and the sisters' fear of destitution if dissolved.
+  sphere_of_influence: Monastic Resistance to Royal Dissolution
   season_appearances:
-  - 1
+  - 2
   local_uuids:
-    1: org_3430e8e72663
-  first_appearance_season: 1
+    1: org_90c8c5f9df29
+  first_appearance_season: 2
   tier: asteroid
   episode_count: 1
 - fabula_uuid: ger_organization_e46b3bcb670f
   global_id: ger_organization_e46b3bcb670f
   canonical_name: Spanish Court
-  description: Represents the **military and dynastic threat** posed by Charles V’s
-    Spain, tied to Catholic rebellion and Mary Tudor’s claim to the throne. Its influence
-    is framed as **imminent and violent**, requiring direct suppression by Cromwell
-    and Wolsey.
-  sphere_of_influence: Geopolitical Threats and Dynastic Alliances
+  description: External imperial power depicted as a provocative adversary to Tudor
+    England, used rhetorically by Cromwell to justify domestic control and reforms.
+    Represents Spain’s geopolitical and economic dominance, with historical grievances
+    (e.g., Wolsey’s imprisonment of Mendoza’s father) serving as narrative leverage.
+  sphere_of_influence: Diplomatic and Economic Rivalry in Tudor England
   season_appearances:
-  - 1
+  - 2
   local_uuids:
-    1: org_2580dfa71d16
-  first_appearance_season: 1
+    1: org_e9d7c313d5c1
+  first_appearance_season: 2
   tier: asteroid
   episode_count: 1
+- fabula_uuid: ger_organization_4f39cd6cbfed
+  global_id: ger_organization_4f39cd6cbfed
+  canonical_name: Spanish Embassy (Hampton Court Mission)
+  description: A localized diplomatic mission led by Don Diego de Mendoza, operating
+    within Tudor England to advance Spain's interests through secret correspondence
+    and gifts. This entity is confined to a single scene at Hampton Court and serves
+    as a tactical extension of the broader Spanish Court.
+  sphere_of_influence: Catholic Diplomatic Support Against Tudor Reforms
+  season_appearances:
+  - 2
+  local_uuids:
+    1: org_47f661a031f6
+  first_appearance_season: 2
+  tier: asteroid
+  episode_count: 0
 - fabula_uuid: ger_organization_45aa839305dd
   global_id: ger_organization_45aa839305dd
   canonical_name: Spanish Inquisition
@@ -1629,12 +2055,12 @@
     make Spain intolerable: they monitor his every move and treat all English as heretics.
     This surveillance body undermines diplomatic trust and endangers agents like Wyatt
     in service to Henry VIII.'
-  sphere_of_influence: Religious Persecution and Espionage
+  sphere_of_influence: Religious Orthodoxy Enforcement and Foreign Surveillance
   season_appearances:
-  - 1
+  - 2
   local_uuids:
-    1: org_a6f51eeedc3a
-  first_appearance_season: 1
+    1: org_e681be09bffe
+  first_appearance_season: 2
   tier: asteroid
   episode_count: 1
 - fabula_uuid: ger_organization_627b35432ac1
@@ -1648,20 +2074,6 @@
   - 1
   local_uuids:
     1: org_489524698830
-  first_appearance_season: 1
-  tier: asteroid
-  episode_count: 1
-- fabula_uuid: ger_organization_572e6ca1e616
-  global_id: ger_organization_572e6ca1e616
-  canonical_name: The Church (Divine Arbiter)
-  description: Metaphysical embodiment of moral judgment and divine absolution, invoked
-    in Thomas Cromwell's final speech as a contrast to human politics and historical
-    condemnation.
-  sphere_of_influence: Divine Moral Authority and Spiritual Absolution
-  season_appearances:
-  - 1
-  local_uuids:
-    1: org_9111d748c97e
   first_appearance_season: 1
   tier: asteroid
   episode_count: 1
@@ -1679,8 +2091,27 @@
   local_uuids:
     1: org_cd04e8e1597e
   first_appearance_season: 1
-  tier: planet
-  episode_count: 2
+  tier: asteroid
+  episode_count: 0
+- fabula_uuid: ger_organization_f51db16dc104
+  global_id: ger_organization_f51db16dc104
+  canonical_name: The Emperor’s Embassy (Imperial Court)
+  description: The Emperor’s Embassy, represented by Eustache Chapuys, serves as the
+    diplomatic arm of the Holy Roman Empire in England. It channels secret correspondence
+    for English Catholic opposition figures (e.g., Geoffrey Pole) and orchestrates
+    intrigues against Henry VIII’s religious reforms. Cromwell exploits its covert
+    communications to dismantle Pole family resistance, using it as a lever in factional
+    court politics. The embassy functions as both a foreign power hub and a conduit
+    for Catholic alliances, with Chapuys acting as the primary liaison between the
+    Imperial Court and English rebels.
+  sphere_of_influence: Imperial Diplomacy and Treasonous Correspondence Networks
+  season_appearances:
+  - 2
+  local_uuids:
+    1: org_148efc7c6f6a
+  first_appearance_season: 2
+  tier: asteroid
+  episode_count: 0
 - fabula_uuid: ger_organization_11ab4bde9a43
   global_id: ger_organization_11ab4bde9a43
   canonical_name: The English Crown (Henry VIII’s Monarchy)
@@ -1700,14 +2131,12 @@
   season_appearances:
   - 1
   - 1
-  - 1
   local_uuids:
-    1: org_8a0b91ab14dc
-    2: org_0de557254a49
-    3: org_e409b6048594
+    1: org_0de557254a49
+    2: org_e409b6048594
   first_appearance_season: 1
   tier: planet
-  episode_count: 3
+  episode_count: 2
 - fabula_uuid: ger_organization_1361571725ba
   global_id: ger_organization_1361571725ba
   canonical_name: The English Reformation (Protestant Movement)
@@ -1723,12 +2152,12 @@
     \ prioritize the movement's endurance over individual risks, even as threats from\
     \ figures like Stephen Gardiner (e.g., Lambert's execution) jeopardize its gains.\n\
     \  "
-  sphere_of_influence: Protestant Religious Reform in England
+  sphere_of_influence: Religious Reform Through Political Power
   season_appearances:
-  - 1
+  - 2
   local_uuids:
-    1: org_a8fc00e7b821
-  first_appearance_season: 1
+    1: org_bd7d1b15a4d0
+  first_appearance_season: 2
   tier: asteroid
   episode_count: 1
 - fabula_uuid: ger_organization_448b9043d4bf
@@ -1764,6 +2193,22 @@
   first_appearance_season: 1
   tier: asteroid
   episode_count: 0
+- fabula_uuid: ger_organization_8fe28b9f162d
+  global_id: ger_organization_8fe28b9f162d
+  canonical_name: The King's Military Forces (Henry VIII's Royal Army)
+  description: A tactical military organization under Henry VIII, distinct from the
+    royal government. Equipped with cannon and provisions, it is led by commanders
+    like Richard Cromwell and deployed to suppress rebellions through direct engagement
+    and deception. Operates as an arm of the Crown but with its own chain of command
+    and logistical infrastructure.
+  sphere_of_influence: Royal Military Suppression and Political Command Authority
+  season_appearances:
+  - 2
+  local_uuids:
+    1: org_4a09df68a668
+  first_appearance_season: 2
+  tier: asteroid
+  episode_count: 1
 - fabula_uuid: ger_organization_a71ec0a6592e
   global_id: ger_organization_a71ec0a6592e
   canonical_name: The Monasteries
@@ -1780,7 +2225,7 @@
     1: org_a886e4f1fa14
   first_appearance_season: 1
   tier: asteroid
-  episode_count: 1
+  episode_count: 0
 - fabula_uuid: ger_organization_542bbce865bf
   global_id: ger_organization_542bbce865bf
   canonical_name: The Monks (Associated with Wolsey)
@@ -1797,6 +2242,23 @@
   first_appearance_season: 1
   tier: asteroid
   episode_count: 1
+- fabula_uuid: ger_organization_b9ebbfce0519
+  global_id: ger_organization_b9ebbfce0519
+  canonical_name: The Nobility
+  description: The Nobility stands as the traditional aristocratic class in Tudor
+    England, represented by Duke of Norfolk during a tense dinner at Lambeth Palace.
+    Norfolk accuses Thomas Cromwell of betraying their interests and values by aligning
+    with lowborn reformers, equating his rise to Wolsey's corruption. This group defends
+    its power and prestige against upstarts who erode aristocratic dominance through
+    political intrigue and reform.
+  sphere_of_influence: Traditional Aristocratic Power and Court Influence
+  season_appearances:
+  - 2
+  local_uuids:
+    1: org_840b096c8f96
+  first_appearance_season: 2
+  tier: asteroid
+  episode_count: 1
 - fabula_uuid: ger_organization_85ab1ffe100f
   global_id: ger_organization_85ab1ffe100f
   canonical_name: The Old Aristocratic Families (Poles, Courtenays, Carew)
@@ -1809,11 +2271,13 @@
   sphere_of_influence: Traditional Aristocratic Power in Tudor Court
   season_appearances:
   - 1
+  - 2
   local_uuids:
     1: org_445cf1b114b2
+    2: org_445cf1b114b2
   first_appearance_season: 1
-  tier: asteroid
-  episode_count: 1
+  tier: planet
+  episode_count: 2
 - fabula_uuid: ger_organization_bf5f7d08fae0
   global_id: ger_organization_bf5f7d08fae0
   canonical_name: The Orthodox Catholic Faction (Thomas More’s Militant Wing)
@@ -1856,8 +2320,8 @@
     1: org_67f8ea1a94a6
     2: org_8acb12ba2890
   first_appearance_season: 1
-  tier: anchor
-  episode_count: 5
+  tier: planet
+  episode_count: 4
 - fabula_uuid: ger_organization_4f3ade481b88
   global_id: ger_organization_4f3ade481b88
   canonical_name: The Seymours
@@ -1871,7 +2335,7 @@
     1: org_db511d0c4925
   first_appearance_season: 1
   tier: planet
-  episode_count: 2
+  episode_count: 4
 - fabula_uuid: ger_organization_6fd62d82b1e3
   global_id: ger_organization_6fd62d82b1e3
   canonical_name: The Tudor Court (Henry VIII’s Royal Court)
@@ -1899,6 +2363,23 @@
   first_appearance_season: 1
   tier: planet
   episode_count: 3
+- fabula_uuid: ger_organization_c25c2dc71078
+  global_id: ger_organization_c25c2dc71078
+  canonical_name: Thetford Priory
+  description: Norfolk positions Thetford Priory's priests as protectors of his family's
+    ancestral legacy. He confronts Cromwell in the King's Presence Chamber, demanding
+    the priory stand "as long as this world endures" against dissolution orders. This
+    defense casts the priory as a bastion of tradition and honor, entangled in rivalries
+    between aristocratic nobles and Cromwell's reformist agenda enforcing Henry VIII's
+    policies. Fitzwilliam's mediation underscores the priory's role as political flashpoint.
+  sphere_of_influence: Monastic Legacy Preservation and Resistance to Dissolution
+  season_appearances:
+  - 2
+  local_uuids:
+    1: org_204a5ad4ef1d
+  first_appearance_season: 2
+  tier: asteroid
+  episode_count: 1
 - fabula_uuid: ger_organization_fd0e80ec23de
   global_id: ger_organization_fd0e80ec23de
   canonical_name: Trial Chamber Spectators
@@ -1932,6 +2413,43 @@
   first_appearance_season: 1
   tier: asteroid
   episode_count: 1
+- fabula_uuid: ger_organization_bc0336e3400b
+  global_id: ger_organization_bc0336e3400b
+  canonical_name: Tudor Court (Henry VIII's Royal Court)
+  description: The Tudor Court, also known as Henry VIII's Royal Court, serves as
+    the political and social epicenter of Tudor England, primarily operating from
+    sites like Hampton Court Palace. This institution is the arena for dynastic strategy,
+    factional conflict, and royal authority displays, where Thomas Cromwell navigates
+    rebellion threats, the Queen's pregnancy, and pressures to secure Henry's remarriage
+    for alliances and heirs. The court's shifting loyalties and scandals demand constant
+    political maneuvering, isolating ambitious figures amid raw power struggles. Key
+    locations include the privy chamber (where Princess Mary confronts Cromwell over
+    finances) and other royal residences, where personal rivalries, diplomatic maneuvers,
+    and status negotiations unfold among nobles, ministers, and royal family members.
+    The court's environment fuels Cromwell's guilt over past betrayals (e.g., Wolsey's
+    fall) and sparks his fantasies of escape to Launde Abbey.
+  sphere_of_influence: Royal Court Politics and Intrigue
+  season_appearances:
+  - 2
+  local_uuids:
+    1: org_325695914f67
+  first_appearance_season: 2
+  tier: planet
+  episode_count: 3
+- fabula_uuid: ger_organization_6230e32ebcf1
+  global_id: ger_organization_6230e32ebcf1
+  canonical_name: Tudor Dynasty
+  description: Central to *Wolf Hall*’s narrative as the ruling dynasty of England
+    under Henry VIII, facing internal Plantagenet rivals and external threats (e.g.,
+    Franco-Imperial alliances).
+  sphere_of_influence: Dynastic Rule and Political Stability
+  season_appearances:
+  - 2
+  local_uuids:
+    1: org_642224cb1ec3
+  first_appearance_season: 2
+  tier: planet
+  episode_count: 3
 - fabula_uuid: ger_organization_a7f7318f002e
   global_id: ger_organization_a7f7318f002e
   canonical_name: Tudor Regime
@@ -1961,23 +2479,6 @@
   first_appearance_season: 1
   tier: planet
   episode_count: 2
-- fabula_uuid: ger_organization_175e462f3b9f
-  global_id: ger_organization_175e462f3b9f
-  canonical_name: Turkish Sect
-  description: The Turkish Sect follows Islamic traditions that permit polygamy, allowing
-    a man to hold multiple wives concurrently. Jane Seymour cites this practice as
-    a model for King Henry VIII, who could marry Anne Boleyn, Katherine of Aragon,
-    herself, Mary Boleyn, and Mary Shelton simultaneously to sire sons and secure
-    his lineage. She deploys the reference as a veiled warning about her precarious
-    queenship amid Henry's expansive desires.
-  sphere_of_influence: Islamic Polygamous Marriage Practices
-  season_appearances:
-  - 1
-  local_uuids:
-    1: org_f7797fd92001
-  first_appearance_season: 1
-  tier: asteroid
-  episode_count: 1
 - fabula_uuid: ger_organization_835695d87559
   global_id: ger_organization_835695d87559
   canonical_name: Tyndale’s Clandestine Smuggling Network
@@ -1995,6 +2496,34 @@
   local_uuids:
     1: org_d384d3b5dd1d
   first_appearance_season: 1
+  tier: planet
+  episode_count: 2
+- fabula_uuid: ger_organization_e44e8d48c6ce
+  global_id: ger_organization_e44e8d48c6ce
+  canonical_name: Vaughan's Communication Network
+  description: A mobile, overseas-based team of agents under Vaughan's command, specialized
+    in relaying messages and providing logistical support for Cromwell's distant allies,
+    including Jenneke in Antwerp.
+  sphere_of_influence: Overseas Communication and Logistical Network
+  season_appearances:
+  - 2
+  local_uuids:
+    1: org_d4e3451ac0a3
+  first_appearance_season: 2
+  tier: asteroid
+  episode_count: 1
+- fabula_uuid: ger_organization_7a2040d5cd59
+  global_id: ger_organization_7a2040d5cd59
+  canonical_name: Vaughan's Household in Antwerp
+  description: A physical residence in Antwerp where Cromwell's illegitimate daughter
+    Jenneke was raised in secrecy by Anselma, serving as a long-term strategic asset
+    for Cromwell's personal and political future.
+  sphere_of_influence: Familial Secrecy and Private Education
+  season_appearances:
+  - 2
+  local_uuids:
+    1: org_604c668218b7
+  first_appearance_season: 2
   tier: planet
   episode_count: 2
 - fabula_uuid: ger_organization_0c3111d0ec29
@@ -2030,5 +2559,21 @@
   local_uuids:
     1: org_4e6fc9dfdbcc
   first_appearance_season: 1
+  tier: asteroid
+  episode_count: 1
+- fabula_uuid: ger_organization_bb1bef3d6d08
+  global_id: ger_organization_bb1bef3d6d08
+  canonical_name: York Rebels
+  description: A **large-scale, organized military rebellion** that successfully captures
+    **York** and topples royal control in northern England, directly threatening Henry
+    VIII’s authority. Their uprising is a **central plot driver**, forcing Cromwell
+    to take urgent action and reshaping the political landscape. Interacts with **high-level
+    figures** (Henry VIII, Thomas Cromwell, Rafe Sadler).
+  sphere_of_influence: Northern English Anti-Crown Insurrection
+  season_appearances:
+  - 2
+  local_uuids:
+    1: org_ece977b78fa1
+  first_appearance_season: 2
   tier: asteroid
   episode_count: 1

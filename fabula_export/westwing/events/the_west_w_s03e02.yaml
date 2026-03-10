@@ -1,5 +1,5 @@
 # Events for Manchester Part II
-# Generated: 2026-02-10T12:17:15.765411
+# Generated: 2026-02-22T16:33:14.986026
 
 episode_uuid: ep_sea_ser_the_west_wing_s03_e02
 episode_title: Manchester Part II
@@ -968,7 +968,7 @@ events:
     - Soft music playing in the background
     - Bed occupied by Abbey reading a book
     global_id: ger_location_921d35bd5b7e
-  - location_uuid: ger_location_9683a885e276
+  - location_uuid: ger_location_dd3228868fe8
     description_of_involvement: Acts as Bartlet's immediate retreat, entered obliviously
       then exited swiftly upon Abbey's call; underscores his flight from intimacy,
       a tiled threshold symbolizing evasion in the face of vulnerability during re-election's
@@ -980,7 +980,7 @@ events:
     key_environmental_details:
     - Tiled threshold as entry/exit point
     - Swift passage implied without internal details
-    global_id: ger_location_9683a885e276
+    global_id: ger_location_dd3228868fe8
   organization_involvements: []
   derived_from_beat_uuids: &id002
   - beat_59c28e6249eb1335
@@ -1003,7 +1003,7 @@ events:
   sequence_in_scene: 8
   key_dialogue: *id001
   is_flashback: true
-  location_uuid: ger_location_9683a885e276
+  location_uuid: ger_location_dd3228868fe8
   theme_uuids: []
   arc_uuids:
   - ger_conflictarc_fccfefb1b284
@@ -1057,7 +1057,7 @@ events:
     - Soft music playing in the background
     - Bed occupied by Abbey reading a book
     global_id: ger_location_921d35bd5b7e
-  - location_uuid: ger_location_9683a885e276
+  - location_uuid: ger_location_dd3228868fe8
     description_of_involvement: Acts as Bartlet's immediate retreat, entered obliviously
       then exited swiftly upon Abbey's call; underscores his flight from intimacy,
       a tiled threshold symbolizing evasion in the face of vulnerability during re-election's
@@ -1069,7 +1069,7 @@ events:
     key_environmental_details:
     - Tiled threshold as entry/exit point
     - Swift passage implied without internal details
-    global_id: ger_location_9683a885e276
+    global_id: ger_location_dd3228868fe8
   organization_involvements: []
   derived_from_beat_uuids: *id002
   source_season: 3
@@ -1388,7 +1388,7 @@ events:
     American heartland... saying we don''t share your values."'
   - 'LEO: "Leave the FDA alone."'
   is_flashback: false
-  location_uuid: ger_location_3d4b26f1de82
+  location_uuid: ger_location_3303871a0689
   theme_uuids: []
   arc_uuids:
   - ger_conflictarc_7740c99fc022
@@ -1464,7 +1464,7 @@ events:
     global_id: ger_agent_dd62525d972a
   object_involvements: []
   location_involvements:
-  - location_uuid: ger_location_3d4b26f1de82
+  - location_uuid: ger_location_3303871a0689
     description_of_involvement: The West Wing hallway serves as an impromptu battleground
       for this heated confrontation at the ladder's shadowed base, its echoing stretch
       amplifying Josh's frantic pursuit and Leo's retreating dismissals, trapping
@@ -1480,7 +1480,7 @@ events:
     key_environmental_details:
     - Bottom of a ladder casting grim shadows
     - Hurried footsteps and sighs in echoing confines
-    global_id: ger_location_3d4b26f1de82
+    global_id: ger_location_3303871a0689
   organization_involvements:
   - organization_uuid: ger_organization_950eecb995e4
     description_of_involvement: The FDA looms as the explosive flashpoint, its imminent
@@ -1550,7 +1550,7 @@ events:
     - absent but central to tension
     importance: primary
     global_id: ger_agent_198649bce78f
-  - character_uuid: ger_agent_1e9e45a7bd44
+  - character_uuid: ger_agent_a340dc1bc0ee
     emotional_state: N/A (mentioned only)
     goals:
     - N/A (not active)
@@ -1565,7 +1565,7 @@ events:
     observed_traits:
     - familial presence
     importance: primary
-    global_id: ger_agent_1e9e45a7bd44
+    global_id: ger_agent_a340dc1bc0ee
   - character_uuid: ger_agent_6a32f10a3ae5
     emotional_state: N/A (mentioned only)
     goals:
@@ -1733,7 +1733,7 @@ events:
     of the MS thing and you won''t be asked questions about it."'
   - 'NANCY: "I don''t feel right about this." LEO: "I don''t care."'
   is_flashback: true
-  location_uuid: ger_location_3d4b26f1de82
+  location_uuid: ger_location_a7206de4780a
   theme_uuids: []
   arc_uuids: []
   participations:
@@ -1832,20 +1832,7 @@ events:
     global_id: ger_agent_0da3c4090800
   object_involvements: []
   location_involvements:
-  - location_uuid: ger_location_3d4b26f1de82
-    description_of_involvement: The West Wing hallway becomes the stark, liminal arena
-      for Leo's terse ambush of Nancy post-meeting, where unbuffered authority clashes
-      with loyalty in hurried whispers, amplifying isolation and raw hierarchy away
-      from the group's eyes.
-    observed_atmosphere: Terse and echoing with urgent confrontation
-    functional_role: Site of private power assertion and dissent suppression
-    symbolic_significance: Power artery exposing fractures in command chain
-    access_restrictions: Semi-public staff corridor, low traffic for intimacy
-    key_environmental_details:
-    - Dim-lit limbo with hurried footsteps
-    - Proximity to Situation Room door
-    global_id: ger_location_3d4b26f1de82
-  - location_uuid: ger_location_68b1dfbaf4dd
+  - location_uuid: ger_location_a7206de4780a
     description_of_involvement: The Situation Room serves as the immediate prelude
       site from which Leo and Nancy exit together, its crisis residue—Haiti negotiations—fueling
       the hallway pivot to press strategy, underscoring seamless transition from geopolitics
@@ -1857,7 +1844,20 @@ events:
     key_environmental_details:
     - Echoing footsteps as they depart
     - Steel door closing behind them
-    global_id: ger_location_68b1dfbaf4dd
+    global_id: ger_location_a7206de4780a
+  - location_uuid: ger_location_3303871a0689
+    description_of_involvement: The West Wing hallway becomes the stark, liminal arena
+      for Leo's terse ambush of Nancy post-meeting, where unbuffered authority clashes
+      with loyalty in hurried whispers, amplifying isolation and raw hierarchy away
+      from the group's eyes.
+    observed_atmosphere: Terse and echoing with urgent confrontation
+    functional_role: Site of private power assertion and dissent suppression
+    symbolic_significance: Power artery exposing fractures in command chain
+    access_restrictions: Semi-public staff corridor, low traffic for intimacy
+    key_environmental_details:
+    - Dim-lit limbo with hurried footsteps
+    - Proximity to Situation Room door
+    global_id: ger_location_3303871a0689
   organization_involvements:
   - organization_uuid: ger_organization_09ab0f33dba1
     description_of_involvement: The White House Press Corps looms as the targeted
@@ -1894,7 +1894,7 @@ events:
   sequence_in_scene: 14
   key_dialogue: *id003
   is_flashback: true
-  location_uuid: ger_location_68b1dfbaf4dd
+  location_uuid: ger_location_3303871a0689
   theme_uuids: []
   arc_uuids: []
   participations:
@@ -1993,20 +1993,7 @@ events:
     global_id: ger_agent_0da3c4090800
   object_involvements: []
   location_involvements:
-  - location_uuid: ger_location_3d4b26f1de82
-    description_of_involvement: The West Wing hallway becomes the stark, liminal arena
-      for Leo's terse ambush of Nancy post-meeting, where unbuffered authority clashes
-      with loyalty in hurried whispers, amplifying isolation and raw hierarchy away
-      from the group's eyes.
-    observed_atmosphere: Terse and echoing with urgent confrontation
-    functional_role: Site of private power assertion and dissent suppression
-    symbolic_significance: Power artery exposing fractures in command chain
-    access_restrictions: Semi-public staff corridor, low traffic for intimacy
-    key_environmental_details:
-    - Dim-lit limbo with hurried footsteps
-    - Proximity to Situation Room door
-    global_id: ger_location_3d4b26f1de82
-  - location_uuid: ger_location_68b1dfbaf4dd
+  - location_uuid: ger_location_a7206de4780a
     description_of_involvement: The Situation Room serves as the immediate prelude
       site from which Leo and Nancy exit together, its crisis residue—Haiti negotiations—fueling
       the hallway pivot to press strategy, underscoring seamless transition from geopolitics
@@ -2018,7 +2005,20 @@ events:
     key_environmental_details:
     - Echoing footsteps as they depart
     - Steel door closing behind them
-    global_id: ger_location_68b1dfbaf4dd
+    global_id: ger_location_a7206de4780a
+  - location_uuid: ger_location_3303871a0689
+    description_of_involvement: The West Wing hallway becomes the stark, liminal arena
+      for Leo's terse ambush of Nancy post-meeting, where unbuffered authority clashes
+      with loyalty in hurried whispers, amplifying isolation and raw hierarchy away
+      from the group's eyes.
+    observed_atmosphere: Terse and echoing with urgent confrontation
+    functional_role: Site of private power assertion and dissent suppression
+    symbolic_significance: Power artery exposing fractures in command chain
+    access_restrictions: Semi-public staff corridor, low traffic for intimacy
+    key_environmental_details:
+    - Dim-lit limbo with hurried footsteps
+    - Proximity to Situation Room door
+    global_id: ger_location_3303871a0689
   organization_involvements:
   - organization_uuid: ger_organization_09ab0f33dba1
     description_of_involvement: The White House Press Corps looms as the targeted
@@ -2141,7 +2141,7 @@ events:
     - Echoes of troop advances and UN crossfire
     - Carrier shadows 60 miles offshore
     global_id: ger_location_5a6bef89e582
-  - location_uuid: ger_location_68b1dfbaf4dd
+  - location_uuid: ger_location_a7206de4780a
     description_of_involvement: The Situation Room is referenced by Margaret as Leo's
       origin point, 'on his way up from the Sit Room,' anchoring the exchange in the
       gravity of recent high-stakes Haiti briefings and underscoring the transition
@@ -2153,7 +2153,7 @@ events:
     key_environmental_details:
     - Fluorescent glare and radio static echoes
     - Scarred conference tables from intense sessions
-    global_id: ger_location_68b1dfbaf4dd
+    global_id: ger_location_a7206de4780a
   organization_involvements: []
   derived_from_beat_uuids: &id006
   - beat_9085eadd42626761
@@ -2177,7 +2177,7 @@ events:
   sequence_in_scene: 15
   key_dialogue: *id005
   is_flashback: false
-  location_uuid: ger_location_68b1dfbaf4dd
+  location_uuid: ger_location_a7206de4780a
   theme_uuids: []
   arc_uuids: []
   participations:
@@ -2259,7 +2259,7 @@ events:
     - Echoes of troop advances and UN crossfire
     - Carrier shadows 60 miles offshore
     global_id: ger_location_5a6bef89e582
-  - location_uuid: ger_location_68b1dfbaf4dd
+  - location_uuid: ger_location_a7206de4780a
     description_of_involvement: The Situation Room is referenced by Margaret as Leo's
       origin point, 'on his way up from the Sit Room,' anchoring the exchange in the
       gravity of recent high-stakes Haiti briefings and underscoring the transition
@@ -2271,7 +2271,7 @@ events:
     key_environmental_details:
     - Fluorescent glare and radio static echoes
     - Scarred conference tables from intense sessions
-    global_id: ger_location_68b1dfbaf4dd
+    global_id: ger_location_a7206de4780a
   organization_involvements: []
   derived_from_beat_uuids: *id006
   source_season: 3
@@ -2365,6 +2365,22 @@ events:
   object_involvements: []
   location_involvements: []
   organization_involvements:
+  - organization_uuid: ger_organization_8d967e5435a5
+    description_of_involvement: The French Government is referenced via State suggestion
+      for praise on Haiti aid, Bartlet's surrender quip skewering their role—narratively
+      underscoring transatlantic tensions and U.S. leadership assertion in Oval sarcasm.
+    active_representation: Through credited crisis aid in diplomatic proposal
+    power_dynamics: External partner lauded but mocked, yielding to U.S. narrative
+      control
+    organizational_goals:
+    - Gain U.S. public acknowledgment for intervention
+    - Strengthen bilateral ties post-resolution
+    influence_mechanisms:
+    - Alliance contributions in Haiti
+    - Leveraging State for praise extraction
+    institutional_impact: Highlights moral ambiguities in victory crediting
+    internal_dynamics: ''
+    global_id: ger_organization_8d967e5435a5
   - organization_uuid: ger_organization_55a49abeab7d
     description_of_involvement: The State Department is invoked by Bartlet as source
       of diplomatic suggestion to praise French aid in Haiti resolution, triggering
@@ -2382,22 +2398,6 @@ events:
     institutional_impact: Exposes friction between State diplomacy and Oval resolve
     internal_dynamics: ''
     global_id: ger_organization_55a49abeab7d
-  - organization_uuid: ger_organization_8d967e5435a5
-    description_of_involvement: The French Government is referenced via State suggestion
-      for praise on Haiti aid, Bartlet's surrender quip skewering their role—narratively
-      underscoring transatlantic tensions and U.S. leadership assertion in Oval sarcasm.
-    active_representation: Through credited crisis aid in diplomatic proposal
-    power_dynamics: External partner lauded but mocked, yielding to U.S. narrative
-      control
-    organizational_goals:
-    - Gain U.S. public acknowledgment for intervention
-    - Strengthen bilateral ties post-resolution
-    influence_mechanisms:
-    - Alliance contributions in Haiti
-    - Leveraging State for praise extraction
-    institutional_impact: Highlights moral ambiguities in victory crediting
-    internal_dynamics: ''
-    global_id: ger_organization_8d967e5435a5
   derived_from_beat_uuids:
   - beat_81b72fc34c085132
   - beat_1f091ad7d2a86694
@@ -2490,6 +2490,22 @@ events:
   object_involvements: []
   location_involvements: []
   organization_involvements:
+  - organization_uuid: ger_organization_8d967e5435a5
+    description_of_involvement: The French Government is the target of State’s proposed
+      praise for crisis aid, rejected by Bartlet’s surrender jab—framing them as tentative
+      allies whose contributions merit skepticism in the narrative of U.S.-led geopolitical
+      triumphs.
+    active_representation: Indirectly via State Department commendation
+    power_dynamics: External partner diminished by presidential humor
+    organizational_goals:
+    - Secure U.S. acknowledgment of Haiti role
+    - Strengthen transatlantic crisis cooperation
+    influence_mechanisms:
+    - Alliance-building through aid provision
+    - Diplomatic flattery via proxies
+    institutional_impact: Reveals irony in victory's alliances amid power asymmetries
+    internal_dynamics: ''
+    global_id: ger_organization_8d967e5435a5
   - organization_uuid: ger_organization_55a49abeab7d
     description_of_involvement: The State Department is cited by Bartlet as the source
       of a diplomatic memo urging praise for French Haiti aid, swiftly dismissed with
@@ -2507,22 +2523,6 @@ events:
       resolve
     internal_dynamics: ''
     global_id: ger_organization_55a49abeab7d
-  - organization_uuid: ger_organization_8d967e5435a5
-    description_of_involvement: The French Government is the target of State’s proposed
-      praise for crisis aid, rejected by Bartlet’s surrender jab—framing them as tentative
-      allies whose contributions merit skepticism in the narrative of U.S.-led geopolitical
-      triumphs.
-    active_representation: Indirectly via State Department commendation
-    power_dynamics: External partner diminished by presidential humor
-    organizational_goals:
-    - Secure U.S. acknowledgment of Haiti role
-    - Strengthen transatlantic crisis cooperation
-    influence_mechanisms:
-    - Alliance-building through aid provision
-    - Diplomatic flattery via proxies
-    institutional_impact: Reveals irony in victory's alliances amid power asymmetries
-    internal_dynamics: ''
-    global_id: ger_organization_8d967e5435a5
   derived_from_beat_uuids:
   - beat_50230b93fa32fc91
   - beat_97ed786f53a72759
@@ -3621,121 +3621,6 @@ events:
   - 'LEO: (annoyed) Get out!'
   - 'MARGARET: (leaving) I''ll jot them down.'
   is_flashback: false
-  location_uuid: ger_location_3d4b26f1de82
-  theme_uuids: []
-  arc_uuids: []
-  participations:
-  - character_uuid: ger_agent_99b4244bf9a3
-    emotional_state: Task-focused impatience overriding pleasantries
-    goals:
-    - Minimize chit-chat post-meeting
-    - Lock in New Hampshire launch logistics
-    what_happened: Returns briskly from Bartlet meeting, dismisses Leo's inquiry with
-      blunt 'Shut up,' outlines war room and event steps, agrees to scout New Hampshire
-      high schools while walking to hallway—driving forward momentum.
-    observed_status: Returns briskly from Bartlet meeting, dismisses Leo's inquiry
-      with blunt 'Shut up,' outlines war room and event steps, agrees to scout New
-      Hampshire high schools while walking to hallway—driving forward momentum.
-    beliefs:
-    - No-nonsense efficiency wins elections
-    - High school venues ignite grassroots fire
-    observed_traits:
-    - blunt
-    - pragmatic
-    - dismissive
-    importance: primary
-    global_id: ger_agent_99b4244bf9a3
-  - character_uuid: ger_agent_dd62525d972a
-    emotional_state: Annoyed impatience strained by mounting pressures
-    goals:
-    - Clear interruption to refocus on campaign
-    - Accelerate re-election launch planning
-    what_happened: Snaps irritably at Margaret to leave after her protocol jab, then
-      queries Bruno curtly on the Bartlet meeting outcome and proposes a two-week
-      New Hampshire event timeline as they stride into the hallway for logistics.
-    observed_status: Snaps irritably at Margaret to leave after her protocol jab,
-      then queries Bruno curtly on the Bartlet meeting outcome and proposes a two-week
-      New Hampshire event timeline as they stride into the hallway for logistics.
-    beliefs:
-    - Crisis demands bending protocols for key allies like Bruno
-    - Swift decisions forge unity amid staff fractures
-    observed_traits:
-    - irritable
-    - authoritative
-    - pragmatic
-    importance: primary
-    global_id: ger_agent_dd62525d972a
-  - character_uuid: ger_agent_3a5efeceb247
-    emotional_state: Sarcastic defiance veiling loyal frustration
-    goals:
-    - Enforce office appointment protocols
-    - Reassert procedural boundaries on Leo
-    what_happened: Confronts Leo with sharp sarcasm about appointment protocols for
-      Bruno's unannounced entry, absorbs his annoyed dismissal, and exits with a pointed,
-      witty retort—asserting her gatekeeper role amid chaos.
-    observed_status: Confronts Leo with sharp sarcasm about appointment protocols
-      for Bruno's unannounced entry, absorbs his annoyed dismissal, and exits with
-      a pointed, witty retort—asserting her gatekeeper role amid chaos.
-    beliefs:
-    - Rules preserve order even for the Chief of Staff
-    - Her vigilance protects Leo from overreach
-    observed_traits:
-    - sarcastic
-    - dutiful
-    - assertive
-    importance: primary
-    global_id: ger_agent_3a5efeceb247
-  object_involvements: []
-  location_involvements:
-  - location_uuid: ger_location_3d4b26f1de82
-    description_of_involvement: Leo and Bruno exit Leo's office into this hallway
-      to continue hashing out campaign logistics—war room setup to New Hampshire event—shifting
-      scene from personal staff clash to high-stakes strategizing, embodying the West
-      Wing's pressurized transit zones.
-    observed_atmosphere: Hurried and tense with echoing footsteps and terse exchanges
-    functional_role: Mobile conference space for on-the-go planning
-    symbolic_significance: Liminal artery channeling re-election urgency from friction
-      to action
-    access_restrictions: Restricted to senior staff
-    key_environmental_details:
-    - Dim-lit corridor
-    - Hurried footsteps
-    global_id: ger_location_3d4b26f1de82
-  - location_uuid: ger_location_2741540692e5
-    description_of_involvement: Bruno proposes scouting this high school as a prime
-      launch venue in New Hampshire two weeks out, crystallizing the event's grassroots
-      kickoff amid re-election scramble—evoking future battleground energy in their
-      hallway pivot.
-    observed_atmosphere: Evoked as vibrant, echoing pep-rally potential
-    functional_role: Prospective site for campaign launch event
-    symbolic_significance: Grassroots citadel symbolizing re-election ignition
-    access_restrictions: ''
-    key_environmental_details:
-    - Linoleum floors scarred by rallies
-    - Looming bleachers
-    global_id: ger_location_2741540692e5
-  organization_involvements: []
-  derived_from_beat_uuids: &id008
-  - beat_2744eb5261bb57e6
-  source_season: 3
-  source_database: westwing.s03
-- fabula_uuid: cand_evt_scene_47fca7dd222999b4_1
-  global_id: null
-  title: Margaret's Protocol Needling Sparks Leo's Snap
-  description: In Leo's office, Margaret sharply reminds Leo of appointment protocols,
-    implying his lapse in allowing Bruno's unannounced access, her pointed 'Are you
-    confused?' goading his frayed nerves under re-election strain. Leo snaps 'Get
-    out!' in mounting irritation, highlighting personal staff tensions amid broader
-    chaos. Margaret exits with a wry 'I'll jot them down,' underscoring her gatekeeper
-    role. Bruno then returns post-Bartlet meeting, brushing off Leo's query with 'Shut
-    up' before they shift to hallway logistics—planning a New Hampshire launch event
-    two weeks out—transitioning from interpersonal friction to urgent campaign mechanics,
-    revealing Leo's protective yet pressured command.
-  episode_uuid: ep_sea_ser_the_west_wing_s03_e02
-  scene_sequence: 19
-  sequence_in_scene: 28
-  key_dialogue: *id007
-  is_flashback: false
   location_uuid: ger_location_2741540692e5
   theme_uuids: []
   arc_uuids: []
@@ -3802,20 +3687,6 @@ events:
     global_id: ger_agent_3a5efeceb247
   object_involvements: []
   location_involvements:
-  - location_uuid: ger_location_3d4b26f1de82
-    description_of_involvement: Leo and Bruno exit Leo's office into this hallway
-      to continue hashing out campaign logistics—war room setup to New Hampshire event—shifting
-      scene from personal staff clash to high-stakes strategizing, embodying the West
-      Wing's pressurized transit zones.
-    observed_atmosphere: Hurried and tense with echoing footsteps and terse exchanges
-    functional_role: Mobile conference space for on-the-go planning
-    symbolic_significance: Liminal artery channeling re-election urgency from friction
-      to action
-    access_restrictions: Restricted to senior staff
-    key_environmental_details:
-    - Dim-lit corridor
-    - Hurried footsteps
-    global_id: ger_location_3d4b26f1de82
   - location_uuid: ger_location_2741540692e5
     description_of_involvement: Bruno proposes scouting this high school as a prime
       launch venue in New Hampshire two weeks out, crystallizing the event's grassroots
@@ -3829,6 +3700,135 @@ events:
     - Linoleum floors scarred by rallies
     - Looming bleachers
     global_id: ger_location_2741540692e5
+  - location_uuid: ger_location_3303871a0689
+    description_of_involvement: Leo and Bruno exit Leo's office into this hallway
+      to continue hashing out campaign logistics—war room setup to New Hampshire event—shifting
+      scene from personal staff clash to high-stakes strategizing, embodying the West
+      Wing's pressurized transit zones.
+    observed_atmosphere: Hurried and tense with echoing footsteps and terse exchanges
+    functional_role: Mobile conference space for on-the-go planning
+    symbolic_significance: Liminal artery channeling re-election urgency from friction
+      to action
+    access_restrictions: Restricted to senior staff
+    key_environmental_details:
+    - Dim-lit corridor
+    - Hurried footsteps
+    global_id: ger_location_3303871a0689
+  organization_involvements: []
+  derived_from_beat_uuids: &id008
+  - beat_2744eb5261bb57e6
+  source_season: 3
+  source_database: westwing.s03
+- fabula_uuid: cand_evt_scene_47fca7dd222999b4_1
+  global_id: null
+  title: Margaret's Protocol Needling Sparks Leo's Snap
+  description: In Leo's office, Margaret sharply reminds Leo of appointment protocols,
+    implying his lapse in allowing Bruno's unannounced access, her pointed 'Are you
+    confused?' goading his frayed nerves under re-election strain. Leo snaps 'Get
+    out!' in mounting irritation, highlighting personal staff tensions amid broader
+    chaos. Margaret exits with a wry 'I'll jot them down,' underscoring her gatekeeper
+    role. Bruno then returns post-Bartlet meeting, brushing off Leo's query with 'Shut
+    up' before they shift to hallway logistics—planning a New Hampshire launch event
+    two weeks out—transitioning from interpersonal friction to urgent campaign mechanics,
+    revealing Leo's protective yet pressured command.
+  episode_uuid: ep_sea_ser_the_west_wing_s03_e02
+  scene_sequence: 19
+  sequence_in_scene: 28
+  key_dialogue: *id007
+  is_flashback: false
+  location_uuid: ger_location_3303871a0689
+  theme_uuids: []
+  arc_uuids: []
+  participations:
+  - character_uuid: ger_agent_99b4244bf9a3
+    emotional_state: Task-focused impatience overriding pleasantries
+    goals:
+    - Minimize chit-chat post-meeting
+    - Lock in New Hampshire launch logistics
+    what_happened: Returns briskly from Bartlet meeting, dismisses Leo's inquiry with
+      blunt 'Shut up,' outlines war room and event steps, agrees to scout New Hampshire
+      high schools while walking to hallway—driving forward momentum.
+    observed_status: Returns briskly from Bartlet meeting, dismisses Leo's inquiry
+      with blunt 'Shut up,' outlines war room and event steps, agrees to scout New
+      Hampshire high schools while walking to hallway—driving forward momentum.
+    beliefs:
+    - No-nonsense efficiency wins elections
+    - High school venues ignite grassroots fire
+    observed_traits:
+    - blunt
+    - pragmatic
+    - dismissive
+    importance: primary
+    global_id: ger_agent_99b4244bf9a3
+  - character_uuid: ger_agent_dd62525d972a
+    emotional_state: Annoyed impatience strained by mounting pressures
+    goals:
+    - Clear interruption to refocus on campaign
+    - Accelerate re-election launch planning
+    what_happened: Snaps irritably at Margaret to leave after her protocol jab, then
+      queries Bruno curtly on the Bartlet meeting outcome and proposes a two-week
+      New Hampshire event timeline as they stride into the hallway for logistics.
+    observed_status: Snaps irritably at Margaret to leave after her protocol jab,
+      then queries Bruno curtly on the Bartlet meeting outcome and proposes a two-week
+      New Hampshire event timeline as they stride into the hallway for logistics.
+    beliefs:
+    - Crisis demands bending protocols for key allies like Bruno
+    - Swift decisions forge unity amid staff fractures
+    observed_traits:
+    - irritable
+    - authoritative
+    - pragmatic
+    importance: primary
+    global_id: ger_agent_dd62525d972a
+  - character_uuid: ger_agent_3a5efeceb247
+    emotional_state: Sarcastic defiance veiling loyal frustration
+    goals:
+    - Enforce office appointment protocols
+    - Reassert procedural boundaries on Leo
+    what_happened: Confronts Leo with sharp sarcasm about appointment protocols for
+      Bruno's unannounced entry, absorbs his annoyed dismissal, and exits with a pointed,
+      witty retort—asserting her gatekeeper role amid chaos.
+    observed_status: Confronts Leo with sharp sarcasm about appointment protocols
+      for Bruno's unannounced entry, absorbs his annoyed dismissal, and exits with
+      a pointed, witty retort—asserting her gatekeeper role amid chaos.
+    beliefs:
+    - Rules preserve order even for the Chief of Staff
+    - Her vigilance protects Leo from overreach
+    observed_traits:
+    - sarcastic
+    - dutiful
+    - assertive
+    importance: primary
+    global_id: ger_agent_3a5efeceb247
+  object_involvements: []
+  location_involvements:
+  - location_uuid: ger_location_2741540692e5
+    description_of_involvement: Bruno proposes scouting this high school as a prime
+      launch venue in New Hampshire two weeks out, crystallizing the event's grassroots
+      kickoff amid re-election scramble—evoking future battleground energy in their
+      hallway pivot.
+    observed_atmosphere: Evoked as vibrant, echoing pep-rally potential
+    functional_role: Prospective site for campaign launch event
+    symbolic_significance: Grassroots citadel symbolizing re-election ignition
+    access_restrictions: ''
+    key_environmental_details:
+    - Linoleum floors scarred by rallies
+    - Looming bleachers
+    global_id: ger_location_2741540692e5
+  - location_uuid: ger_location_3303871a0689
+    description_of_involvement: Leo and Bruno exit Leo's office into this hallway
+      to continue hashing out campaign logistics—war room setup to New Hampshire event—shifting
+      scene from personal staff clash to high-stakes strategizing, embodying the West
+      Wing's pressurized transit zones.
+    observed_atmosphere: Hurried and tense with echoing footsteps and terse exchanges
+    functional_role: Mobile conference space for on-the-go planning
+    symbolic_significance: Liminal artery channeling re-election urgency from friction
+      to action
+    access_restrictions: Restricted to senior staff
+    key_environmental_details:
+    - Dim-lit corridor
+    - Hurried footsteps
+    global_id: ger_location_3303871a0689
   organization_involvements: []
   derived_from_beat_uuids: *id008
   source_season: 3
@@ -3861,122 +3861,6 @@ events:
     LEO: Yeah.
     BRUNO: Okay. We'll scout locations in New Hampshire. Maybe a high school.
   is_flashback: false
-  location_uuid: ger_location_3d4b26f1de82
-  theme_uuids: []
-  arc_uuids: []
-  participations:
-  - character_uuid: ger_agent_99b4244bf9a3
-    emotional_state: Terse intensity fueling unyielding focus
-    goals:
-    - Bypass recaps to lock in campaign timeline
-    - Impose operational discipline on hesitant team
-    what_happened: 'Bruno bursts back into Leo''s office post-tensions, tersely shuts
-      down inquiry with ''Shut up,'' then propels hallway dialogue: mandates team
-      room huddle, event in two weeks, NH high school scouting, dictating pace with
-      profane efficiency.'
-    observed_status: 'Bruno bursts back into Leo''s office post-tensions, tersely
-      shuts down inquiry with ''Shut up,'' then propels hallway dialogue: mandates
-      team room huddle, event in two weeks, NH high school scouting, dictating pace
-      with profane efficiency.'
-    beliefs:
-    - Hesitation loses elections; speed seizes narrative
-    - Staff unity forged through dictated action
-    observed_traits:
-    - ruthless
-    - terse
-    - strategically commanding
-    importance: primary
-    global_id: ger_agent_99b4244bf9a3
-  - character_uuid: ger_agent_dd62525d972a
-    emotional_state: Annoyed by protocol friction but resolute in forward drive
-    goals:
-    - Extract update from Bruno's tensions-handling
-    - Accelerate re-election operational launch
-    what_happened: Leo dismisses Margaret with annoyed command, probes Bruno on prior
-      meeting, then fluidly agrees to logistics blueprint—team convene, two-week event,
-      NH scouting—while transitioning to hallway, adapting to Bruno's tempo.
-    observed_status: Leo dismisses Margaret with annoyed command, probes Bruno on
-      prior meeting, then fluidly agrees to logistics blueprint—team convene, two-week
-      event, NH scouting—while transitioning to hallway, adapting to Bruno's tempo.
-    beliefs:
-    - Bruno's outsider edge is vital for victory
-    - Internal chaos demands swift external focus
-    observed_traits:
-    - pragmatic
-    - decisive
-    - irritable under pressure
-    importance: primary
-    global_id: ger_agent_dd62525d972a
-  - character_uuid: ger_agent_3a5efeceb247
-    emotional_state: Sarcastic exasperation masking loyal frustration
-    goals:
-    - Reinforce scheduling protocols
-    - Reassert authority as Leo's gatekeeper
-    what_happened: Margaret confronts Leo with sarcastic reminder of appointment rules,
-      exits immediately upon his annoyed dismissal, delivering a parting quip 'I'll
-      jot them down' that underscores her gatekeeping role just as Bruno re-enters.
-    observed_status: Margaret confronts Leo with sarcastic reminder of appointment
-      rules, exits immediately upon his annoyed dismissal, delivering a parting quip
-      'I'll jot them down' that underscores her gatekeeping role just as Bruno re-enters.
-    beliefs:
-    - Unscheduled visits disrupt command structure
-    - Leo's impulses require firm boundaries
-    observed_traits:
-    - sarcastic
-    - assertive
-    - protocol-driven
-    importance: primary
-    global_id: ger_agent_3a5efeceb247
-  object_involvements: []
-  location_involvements:
-  - location_uuid: ger_location_3d4b26f1de82
-    description_of_involvement: Leo and Bruno exit Leo's office into this shadowed
-      hallway, continuing their clipped logistics rundown here; it serves as a liminal
-      power corridor where private strategy accelerates amid West Wing urgency, embodying
-      fractured alliances snapping into re-election rhythm.
-    observed_atmosphere: Hurried tension with echoing footsteps and coiled energy
-    functional_role: Mobile discussion space for high-stakes planning
-    symbolic_significance: Artery of command where chaos yields to momentum
-    access_restrictions: Restricted to senior staff
-    key_environmental_details:
-    - Dim-lit stretch amplifying terse exchanges
-    - Hurried footsteps underscoring pivot to action
-    global_id: ger_location_3d4b26f1de82
-  - location_uuid: ger_location_2741540692e5
-    description_of_involvement: Bruno proposes scouting these vaulted gymnasiums and
-      linoleum halls as prime launch sites, framing them as grassroots battlegrounds
-      for the two-week event; it injects campaign geography into the dialogue, symbolizing
-      New Hampshire's electoral primacy and re-election ignition point.
-    observed_atmosphere: Prospective frenzy of pep-rally thunder and vending-machine
-      scorch
-    functional_role: Prospective venue for public launch event
-    symbolic_significance: Heartland citadel launching Bartlet's principled bid
-    access_restrictions: ''
-    key_environmental_details:
-    - Bleachers as terraced battlements
-    - Banners whipping in cross-breezes
-    global_id: ger_location_2741540692e5
-  organization_involvements: []
-  derived_from_beat_uuids: &id010
-  - beat_0c7cf8fbdcc8d706
-  - beat_709742c12a855099
-  source_season: 3
-  source_database: westwing.s03
-- fabula_uuid: cand_evt_scene_47fca7dd222999b4_2
-  global_id: null
-  title: Bruno's Curt Campaign Launch Logistics with Leo
-  description: 'Bruno bursts back into Leo''s office after handling prior tensions,
-    abruptly shutting down Leo''s inquiry about his meeting with a terse ''Shut up.''
-    They shift to the hallway for a clipped, efficient rundown of re-election logistics:
-    convene the team, stage a launch event in two weeks at the earliest possible date,
-    and scout New Hampshire high schools. This exchange reveals Bruno''s ruthless
-    command style, pivoting from internal staff friction to operational momentum,
-    underscoring his win-at-all-costs drive amid fragile team unity.'
-  episode_uuid: ep_sea_ser_the_west_wing_s03_e02
-  scene_sequence: 19
-  sequence_in_scene: 29
-  key_dialogue: *id009
-  is_flashback: false
   location_uuid: ger_location_2741540692e5
   theme_uuids: []
   arc_uuids: []
@@ -4045,19 +3929,6 @@ events:
     global_id: ger_agent_3a5efeceb247
   object_involvements: []
   location_involvements:
-  - location_uuid: ger_location_3d4b26f1de82
-    description_of_involvement: Leo and Bruno exit Leo's office into this shadowed
-      hallway, continuing their clipped logistics rundown here; it serves as a liminal
-      power corridor where private strategy accelerates amid West Wing urgency, embodying
-      fractured alliances snapping into re-election rhythm.
-    observed_atmosphere: Hurried tension with echoing footsteps and coiled energy
-    functional_role: Mobile discussion space for high-stakes planning
-    symbolic_significance: Artery of command where chaos yields to momentum
-    access_restrictions: Restricted to senior staff
-    key_environmental_details:
-    - Dim-lit stretch amplifying terse exchanges
-    - Hurried footsteps underscoring pivot to action
-    global_id: ger_location_3d4b26f1de82
   - location_uuid: ger_location_2741540692e5
     description_of_involvement: Bruno proposes scouting these vaulted gymnasiums and
       linoleum halls as prime launch sites, framing them as grassroots battlegrounds
@@ -4072,6 +3943,135 @@ events:
     - Bleachers as terraced battlements
     - Banners whipping in cross-breezes
     global_id: ger_location_2741540692e5
+  - location_uuid: ger_location_3303871a0689
+    description_of_involvement: Leo and Bruno exit Leo's office into this shadowed
+      hallway, continuing their clipped logistics rundown here; it serves as a liminal
+      power corridor where private strategy accelerates amid West Wing urgency, embodying
+      fractured alliances snapping into re-election rhythm.
+    observed_atmosphere: Hurried tension with echoing footsteps and coiled energy
+    functional_role: Mobile discussion space for high-stakes planning
+    symbolic_significance: Artery of command where chaos yields to momentum
+    access_restrictions: Restricted to senior staff
+    key_environmental_details:
+    - Dim-lit stretch amplifying terse exchanges
+    - Hurried footsteps underscoring pivot to action
+    global_id: ger_location_3303871a0689
+  organization_involvements: []
+  derived_from_beat_uuids: &id010
+  - beat_0c7cf8fbdcc8d706
+  - beat_709742c12a855099
+  source_season: 3
+  source_database: westwing.s03
+- fabula_uuid: cand_evt_scene_47fca7dd222999b4_2
+  global_id: null
+  title: Bruno's Curt Campaign Launch Logistics with Leo
+  description: 'Bruno bursts back into Leo''s office after handling prior tensions,
+    abruptly shutting down Leo''s inquiry about his meeting with a terse ''Shut up.''
+    They shift to the hallway for a clipped, efficient rundown of re-election logistics:
+    convene the team, stage a launch event in two weeks at the earliest possible date,
+    and scout New Hampshire high schools. This exchange reveals Bruno''s ruthless
+    command style, pivoting from internal staff friction to operational momentum,
+    underscoring his win-at-all-costs drive amid fragile team unity.'
+  episode_uuid: ep_sea_ser_the_west_wing_s03_e02
+  scene_sequence: 19
+  sequence_in_scene: 29
+  key_dialogue: *id009
+  is_flashback: false
+  location_uuid: ger_location_3303871a0689
+  theme_uuids: []
+  arc_uuids: []
+  participations:
+  - character_uuid: ger_agent_99b4244bf9a3
+    emotional_state: Terse intensity fueling unyielding focus
+    goals:
+    - Bypass recaps to lock in campaign timeline
+    - Impose operational discipline on hesitant team
+    what_happened: 'Bruno bursts back into Leo''s office post-tensions, tersely shuts
+      down inquiry with ''Shut up,'' then propels hallway dialogue: mandates team
+      room huddle, event in two weeks, NH high school scouting, dictating pace with
+      profane efficiency.'
+    observed_status: 'Bruno bursts back into Leo''s office post-tensions, tersely
+      shuts down inquiry with ''Shut up,'' then propels hallway dialogue: mandates
+      team room huddle, event in two weeks, NH high school scouting, dictating pace
+      with profane efficiency.'
+    beliefs:
+    - Hesitation loses elections; speed seizes narrative
+    - Staff unity forged through dictated action
+    observed_traits:
+    - ruthless
+    - terse
+    - strategically commanding
+    importance: primary
+    global_id: ger_agent_99b4244bf9a3
+  - character_uuid: ger_agent_dd62525d972a
+    emotional_state: Annoyed by protocol friction but resolute in forward drive
+    goals:
+    - Extract update from Bruno's tensions-handling
+    - Accelerate re-election operational launch
+    what_happened: Leo dismisses Margaret with annoyed command, probes Bruno on prior
+      meeting, then fluidly agrees to logistics blueprint—team convene, two-week event,
+      NH scouting—while transitioning to hallway, adapting to Bruno's tempo.
+    observed_status: Leo dismisses Margaret with annoyed command, probes Bruno on
+      prior meeting, then fluidly agrees to logistics blueprint—team convene, two-week
+      event, NH scouting—while transitioning to hallway, adapting to Bruno's tempo.
+    beliefs:
+    - Bruno's outsider edge is vital for victory
+    - Internal chaos demands swift external focus
+    observed_traits:
+    - pragmatic
+    - decisive
+    - irritable under pressure
+    importance: primary
+    global_id: ger_agent_dd62525d972a
+  - character_uuid: ger_agent_3a5efeceb247
+    emotional_state: Sarcastic exasperation masking loyal frustration
+    goals:
+    - Reinforce scheduling protocols
+    - Reassert authority as Leo's gatekeeper
+    what_happened: Margaret confronts Leo with sarcastic reminder of appointment rules,
+      exits immediately upon his annoyed dismissal, delivering a parting quip 'I'll
+      jot them down' that underscores her gatekeeping role just as Bruno re-enters.
+    observed_status: Margaret confronts Leo with sarcastic reminder of appointment
+      rules, exits immediately upon his annoyed dismissal, delivering a parting quip
+      'I'll jot them down' that underscores her gatekeeping role just as Bruno re-enters.
+    beliefs:
+    - Unscheduled visits disrupt command structure
+    - Leo's impulses require firm boundaries
+    observed_traits:
+    - sarcastic
+    - assertive
+    - protocol-driven
+    importance: primary
+    global_id: ger_agent_3a5efeceb247
+  object_involvements: []
+  location_involvements:
+  - location_uuid: ger_location_2741540692e5
+    description_of_involvement: Bruno proposes scouting these vaulted gymnasiums and
+      linoleum halls as prime launch sites, framing them as grassroots battlegrounds
+      for the two-week event; it injects campaign geography into the dialogue, symbolizing
+      New Hampshire's electoral primacy and re-election ignition point.
+    observed_atmosphere: Prospective frenzy of pep-rally thunder and vending-machine
+      scorch
+    functional_role: Prospective venue for public launch event
+    symbolic_significance: Heartland citadel launching Bartlet's principled bid
+    access_restrictions: ''
+    key_environmental_details:
+    - Bleachers as terraced battlements
+    - Banners whipping in cross-breezes
+    global_id: ger_location_2741540692e5
+  - location_uuid: ger_location_3303871a0689
+    description_of_involvement: Leo and Bruno exit Leo's office into this shadowed
+      hallway, continuing their clipped logistics rundown here; it serves as a liminal
+      power corridor where private strategy accelerates amid West Wing urgency, embodying
+      fractured alliances snapping into re-election rhythm.
+    observed_atmosphere: Hurried tension with echoing footsteps and coiled energy
+    functional_role: Mobile discussion space for high-stakes planning
+    symbolic_significance: Artery of command where chaos yields to momentum
+    access_restrictions: Restricted to senior staff
+    key_environmental_details:
+    - Dim-lit stretch amplifying terse exchanges
+    - Hurried footsteps underscoring pivot to action
+    global_id: ger_location_3303871a0689
   organization_involvements: []
   derived_from_beat_uuids: *id010
   source_season: 3
@@ -4694,297 +4694,6 @@ events:
     "Pennsylvania, Michigan, Ohio - three swing states you could have brought over
     with that. That''s an election."'
   is_flashback: true
-  location_uuid: ger_location_3d4b26f1de82
-  theme_uuids:
-  - ger_theme_fad35f8070e2
-  - ger_theme_464abc4f836c
-  arc_uuids:
-  - ger_conflictarc_8f3889a02989
-  participations:
-  - character_uuid: ger_agent_99b4244bf9a3
-    emotional_state: Assured dominance tempered with allied pragmatism
-    goals:
-    - Correct Josh's tactical error for campaign gain
-    - Establish strategic authority over the team
-    what_happened: Bruno declares the announcement debate closed, smiles wryly at
-      Josh's quip, corners him in hallway and office to dismantle the tobacco press
-      blunder, detailing swing-state losses and GOP vulnerabilities while asserting
-      expertise.
-    observed_status: Bruno declares the announcement debate closed, smiles wryly at
-      Josh's quip, corners him in hallway and office to dismantle the tobacco press
-      blunder, detailing swing-state losses and GOP vulnerabilities while asserting
-      expertise.
-    beliefs:
-    - Timing is critical for political leverage
-    - Premature actions waste swing-state opportunities
-    observed_traits:
-    - strategic
-    - blunt
-    - confident
-    - mentoring
-    importance: primary
-    global_id: ger_agent_99b4244bf9a3
-  - character_uuid: ger_agent_a96064ff3873
-    emotional_state: Apprehensive tension amid confrontation
-    goals:
-    - Gauge team dynamics on announcement
-    - Contribute polling insights implicitly
-    what_happened: Joey Lucas sits among strategists in the Roosevelt Room, exchanging
-      apprehensive looks with Toby during Doug's fraud accusation, silently absorbing
-      the escalating clash before packing papers at lunch call.
-    observed_status: Joey Lucas sits among strategists in the Roosevelt Room, exchanging
-      apprehensive looks with Toby during Doug's fraud accusation, silently absorbing
-      the escalating clash before packing papers at lunch call.
-    beliefs:
-    - MS issue remains a vulnerability
-    - Unity essential despite rifts
-    observed_traits:
-    - observant
-    - cautious
-    - professional
-    importance: primary
-    global_id: ger_agent_a96064ff3873
-  - character_uuid: ger_agent_c9d41ae93618
-    emotional_state: Defensive bravado shifting to humbled reflection
-    goals:
-    - Diffuse room tension with lunch break
-    - Defend tobacco strategy and credentials against critique
-    what_happened: Josh defends incumbent advantage, intervenes to call lunch averting
-      Toby's outburst, banters with Bruno, signs a staffer document mid-conversation,
-      touts credentials, justifies press release, then sits pondering Bruno's critique
-      in his office.
-    observed_status: Josh defends incumbent advantage, intervenes to call lunch averting
-      Toby's outburst, banters with Bruno, signs a staffer document mid-conversation,
-      touts credentials, justifies press release, then sits pondering Bruno's critique
-      in his office.
-    beliefs:
-    - Press release would elevate the issue effectively
-    - Congressional experience trumps outsider polling
-    observed_traits:
-    - witty
-    - defensive
-    - experienced
-    - reflective
-    importance: primary
-    global_id: ger_agent_c9d41ae93618
-  - character_uuid: ger_agent_7854a70e34ea
-    emotional_state: Explosive frustration laced with apprehensive defiance
-    goals:
-    - Block any MS apology in the announcement
-    - Uphold the President's dignity against external demands
-    what_happened: Toby repeatedly argues against a formal announcement event, sharply
-      questions Doug's MS apology demand, stares apprehensively at him, and nearly
-      erupts in obscenity before Josh intervenes, embodying defensive fury in the
-      packed Roosevelt Room.
-    observed_status: Toby repeatedly argues against a formal announcement event, sharply
-      questions Doug's MS apology demand, stares apprehensively at him, and nearly
-      erupts in obscenity before Josh intervenes, embodying defensive fury in the
-      packed Roosevelt Room.
-    beliefs:
-    - The President has no need to apologize for MS
-    - Incumbent status negates standard campaign rituals
-    observed_traits:
-    - combative
-    - idealistic
-    - quick-tempered
-    - protective
-    importance: primary
-    global_id: ger_agent_7854a70e34ea
-  - character_uuid: ger_agent_716802c810ea
-    emotional_state: Confrontational disdain fueling righteous insistence
-    goals:
-    - Force a public MS apology to reset campaign narrative
-    - Expose and humble the team's perceived arrogance
-    what_happened: Doug insists on a formal re-election announcement with MS apology,
-      accuses the White House of fraud, provokes Toby regionally, and skewers the
-      team's arrogance post-lunch call, dominating the room's tension before scattering.
-    observed_status: Doug insists on a formal re-election announcement with MS apology,
-      accuses the White House of fraud, provokes Toby regionally, and skewers the
-      team's arrogance post-lunch call, dominating the room's tension before scattering.
-    beliefs:
-    - Apology is essential for voter reconnection
-    - White House committed fraud needing atonement
-    observed_traits:
-    - aggressive
-    - pragmatic
-    - sarcastic
-    - unyielding
-    importance: primary
-    global_id: ger_agent_716802c810ea
-  - character_uuid: ger_agent_b29870aa3178
-    emotional_state: Steady observation under rising tension
-    goals:
-    - Monitor polling implications of debate
-    - Align with team consensus on strategy
-    what_happened: Kenny Lucas attends the Roosevelt Room strategy session with Joey
-      and others, present amid the Toby-Doug eruption and arrogance critique, rising
-      silently as papers are packed for lunch break.
-    observed_status: Kenny Lucas attends the Roosevelt Room strategy session with
-      Joey and others, present amid the Toby-Doug eruption and arrogance critique,
-      rising silently as papers are packed for lunch break.
-    beliefs:
-    - Fresh data needed for decisions
-    - Campaign requires bold resets
-    observed_traits:
-    - composed
-    - supportive
-    - attentive
-    importance: primary
-    global_id: ger_agent_b29870aa3178
-  object_involvements:
-  - object_uuid: ger_object_c043d05053e2
-    description_of_involvement: Meeting papers from Bruno's speech draft folder rustle
-      as everyone packs them at Josh's lunch call, scattered across the table amid
-      clashes, functionally propelling the session's abrupt halt while narratively
-      underscoring fractured strategy drafts under consultant pressure.
-    status_before_event: Spread on Roosevelt Room table
-    status_after_event: Packed and cleared by participants
-    global_id: ger_object_c043d05053e2
-  - object_uuid: ger_object_f9b5045dc5fa
-    description_of_involvement: Josh's Tobacco Subcommittee Press Releases become
-      the fulcrum of Bruno's hallway and office critique, referenced as prematurely
-      sent missives against Kalmbach that elevated profile short-term but squandered
-      fall leverage in swing states, symbolizing impulsive strategy undermining re-election
-      unity.
-    status_before_event: Dispatched and public
-    status_after_event: Revealed as tactical liability, mentally discarded by Josh
-    global_id: ger_object_f9b5045dc5fa
-  - object_uuid: ger_object_738cc709ec22
-    description_of_involvement: A staffer hands Josh the document in the hallway during
-      Bruno's dressing-down; Josh pauses his defense to swiftly sign it with pen slashes,
-      embodying administrative interruptions that punctuate high-stakes strategic
-      confrontations and ground the frenzy in routine.
-    status_before_event: Held by staffer, unsigned
-    status_after_event: Signed by Josh, returned or passed on
-    global_id: ger_object_738cc709ec22
-  location_involvements:
-  - location_uuid: ger_location_3d4b26f1de82
-    description_of_involvement: West Wing Hallway serves as transition for Bruno cornering
-      Josh post-meeting, enabling private evisceration of tobacco blunder amid staffer
-      interruptions, its echoing stretch contrasting room chaos with pointed intimacy
-      leading to Josh's office.
-    observed_atmosphere: Hurried and shadowed with urgent undertones
-    functional_role: Corridor for isolated strategic confrontation
-    symbolic_significance: Liminal space exposing vulnerabilities
-    access_restrictions: White House staff access with fluid movement
-    key_environmental_details:
-    - Echoing footsteps
-    - Staffer interruptions with documents
-    global_id: ger_location_3d4b26f1de82
-  - location_uuid: ger_location_7423b10d7d15
-    description_of_involvement: The Roosevelt Room hosts the explosive strategy session
-      where Toby-Doug clash peaks over MS apology, with strategists hunching over
-      papers before scattering at lunch call, its conference table amplifying verbal
-      combat and apprehensive stares in flashback intensity.
-    observed_atmosphere: Charged with combative tension and simmering hostility
-    functional_role: High-stakes war room for re-election debate
-    symbolic_significance: Microcosm of fracturing campaign unity
-    access_restrictions: Restricted to senior staff and invited pollsters
-    key_environmental_details:
-    - Polished conference table with rustling papers
-    - French doors shadowing Oval proximity
-    global_id: ger_location_7423b10d7d15
-  organization_involvements:
-  - organization_uuid: ger_organization_d033a1b32d4f
-    description_of_involvement: The White House is directly accused by Doug of MS
-      fraud perpetration alongside the campaign, pressuring apology demands and exposing
-      scandal scars in strategy session, central to loyalty rifts and re-election
-      reset debates.
-    active_representation: Via staff and campaign representatives in room
-    power_dynamics: Under siege from internal consultant demands
-    organizational_goals:
-    - Forge unified re-election path
-    - Bury MS without full apology
-    influence_mechanisms:
-    - Institutional legacy defense
-    - Senior staff resistance
-    institutional_impact: Reveals scandal's lingering grip on operations
-    internal_dynamics: Idealist-pragmatist schism emerging
-    global_id: ger_organization_d033a1b32d4f
-  - organization_uuid: ger_organization_e7a9e4ecbb31
-    description_of_involvement: U.S. House of Representatives credentials are brandished
-      by Josh to bolster his tobacco strategy authority, tying legislative directorship
-      experience to current blunder defense amid Bruno's audit.
-    active_representation: Referenced in Josh's professional history
-    power_dynamics: Past mastery invoked against present critique
-    organizational_goals:
-    - Secure funding via issue pressure
-    - Leverage congressional battles
-    influence_mechanisms:
-    - Josh's prior tenure
-    - Subcommittee targeting
-    institutional_impact: ''
-    internal_dynamics: ''
-    global_id: ger_organization_e7a9e4ecbb31
-  - organization_uuid: ger_organization_5278bcf2674a
-    description_of_involvement: Republicans are invoked by Doug as critics of White
-      House arrogance, framing the team's dynamics as underestimated hubris while
-      Bruno eyes their nominees for tobacco nooses, heightening partisan stakes in
-      swing-state calculus.
-    active_representation: Through Doug's referenced accusations
-    power_dynamics: Positioned as external antagonists fueling internal critique
-    organizational_goals:
-    - Exploit MS scandal for attacks
-    - Undermine Bartlet re-election via arrogance narrative
-    influence_mechanisms:
-    - Public rhetoric on arrogance
-    - Nominee vulnerabilities in swing states
-    institutional_impact: Amplifies GOP electoral threats amid Democratic fractures
-    internal_dynamics: ''
-    global_id: ger_organization_5278bcf2674a
-  - organization_uuid: ger_organization_b7fd4a8ac7ff
-    description_of_involvement: Senate floor directorship is cited by Josh alongside
-      House experience to counter Bruno, underscoring congressional wariness in tobacco
-      gambit justification during hallway dissection.
-    active_representation: Through Josh's invoked expertise
-    power_dynamics: Historical asset challenged by campaign strategist
-    organizational_goals:
-    - Influence vote whips on issues
-    - Build on procedural savvy
-    influence_mechanisms:
-    - Floor battle scars
-    - Legislative instincts
-    institutional_impact: ''
-    internal_dynamics: ''
-    global_id: ger_organization_b7fd4a8ac7ff
-  - organization_uuid: ger_organization_45ebe7cbd593
-    description_of_involvement: Tobacco Subcommittee is pinpointed as Josh's premature
-      press target, its funding battle against Kalmbach critiqued by Bruno as lost
-      leverage for swing-state assaults on GOP nominees.
-    active_representation: Via referenced press releases
-    power_dynamics: Targeted for Democratic advantage, now neutralized
-    organizational_goals:
-    - Cut White House tobacco funding
-    - Protect industry donors
-    influence_mechanisms:
-    - Partisan voting blocks
-    - Vulnerable reps like Kalmbach
-    institutional_impact: Highlights budget gridlock stalling anti-tobacco push
-    internal_dynamics: ''
-    global_id: ger_organization_45ebe7cbd593
-  derived_from_beat_uuids: &id014
-  - beat_a6fec089faf7dcb4
-  - beat_9ce60899bc30123d
-  - beat_cc91631d5aab94fc
-  - beat_7c7357d7610de71e
-  source_season: 3
-  source_database: westwing.s03
-- fabula_uuid: cand_evt_scene_71def2d7ed84a0ba_1
-  global_id: null
-  title: Toby-Doug MS Fury Erupts, Exposing Arrogance and Strategic Rifts
-  description: In a heated Roosevelt Room strategy session, Toby resists a formal
-    re-election announcement event, clashing with Doug's demand for President Bartlet
-    to publicly apologize for the MS cover-up fraud. Toby's near-obscenity draws Josh's
-    intervention for lunch, but Doug unleashes on the team's arrogance. Bruno then
-    corners Josh in the hallway and office, brutally critiquing his premature tobacco
-    press release blunder, revealing lost swing-state opportunities and asserting
-    strategic dominance. This turning-point clash fractures team unity, excavating
-    MS scars and Josh's vulnerabilities amid mounting re-election pressures.
-  episode_uuid: ep_sea_ser_the_west_wing_s03_e02
-  scene_sequence: 22
-  sequence_in_scene: 33
-  key_dialogue: *id013
-  is_flashback: true
   location_uuid: ger_location_7423b10d7d15
   theme_uuids:
   - ger_theme_fad35f8070e2
@@ -5149,19 +4858,6 @@ events:
     status_after_event: Signed by Josh, returned or passed on
     global_id: ger_object_738cc709ec22
   location_involvements:
-  - location_uuid: ger_location_3d4b26f1de82
-    description_of_involvement: West Wing Hallway serves as transition for Bruno cornering
-      Josh post-meeting, enabling private evisceration of tobacco blunder amid staffer
-      interruptions, its echoing stretch contrasting room chaos with pointed intimacy
-      leading to Josh's office.
-    observed_atmosphere: Hurried and shadowed with urgent undertones
-    functional_role: Corridor for isolated strategic confrontation
-    symbolic_significance: Liminal space exposing vulnerabilities
-    access_restrictions: White House staff access with fluid movement
-    key_environmental_details:
-    - Echoing footsteps
-    - Staffer interruptions with documents
-    global_id: ger_location_3d4b26f1de82
   - location_uuid: ger_location_7423b10d7d15
     description_of_involvement: The Roosevelt Room hosts the explosive strategy session
       where Toby-Doug clash peaks over MS apology, with strategists hunching over
@@ -5175,23 +4871,20 @@ events:
     - Polished conference table with rustling papers
     - French doors shadowing Oval proximity
     global_id: ger_location_7423b10d7d15
+  - location_uuid: ger_location_3303871a0689
+    description_of_involvement: West Wing Hallway serves as transition for Bruno cornering
+      Josh post-meeting, enabling private evisceration of tobacco blunder amid staffer
+      interruptions, its echoing stretch contrasting room chaos with pointed intimacy
+      leading to Josh's office.
+    observed_atmosphere: Hurried and shadowed with urgent undertones
+    functional_role: Corridor for isolated strategic confrontation
+    symbolic_significance: Liminal space exposing vulnerabilities
+    access_restrictions: White House staff access with fluid movement
+    key_environmental_details:
+    - Echoing footsteps
+    - Staffer interruptions with documents
+    global_id: ger_location_3303871a0689
   organization_involvements:
-  - organization_uuid: ger_organization_d033a1b32d4f
-    description_of_involvement: The White House is directly accused by Doug of MS
-      fraud perpetration alongside the campaign, pressuring apology demands and exposing
-      scandal scars in strategy session, central to loyalty rifts and re-election
-      reset debates.
-    active_representation: Via staff and campaign representatives in room
-    power_dynamics: Under siege from internal consultant demands
-    organizational_goals:
-    - Forge unified re-election path
-    - Bury MS without full apology
-    influence_mechanisms:
-    - Institutional legacy defense
-    - Senior staff resistance
-    institutional_impact: Reveals scandal's lingering grip on operations
-    internal_dynamics: Idealist-pragmatist schism emerging
-    global_id: ger_organization_d033a1b32d4f
   - organization_uuid: ger_organization_e7a9e4ecbb31
     description_of_involvement: U.S. House of Representatives credentials are brandished
       by Josh to bolster his tobacco strategy authority, tying legislative directorship
@@ -5238,6 +4931,313 @@ events:
     institutional_impact: ''
     internal_dynamics: ''
     global_id: ger_organization_b7fd4a8ac7ff
+  - organization_uuid: ger_organization_bb39d5dd403d
+    description_of_involvement: The White House is directly accused by Doug of MS
+      fraud perpetration alongside the campaign, pressuring apology demands and exposing
+      scandal scars in strategy session, central to loyalty rifts and re-election
+      reset debates.
+    active_representation: Via staff and campaign representatives in room
+    power_dynamics: Under siege from internal consultant demands
+    organizational_goals:
+    - Forge unified re-election path
+    - Bury MS without full apology
+    influence_mechanisms:
+    - Institutional legacy defense
+    - Senior staff resistance
+    institutional_impact: Reveals scandal's lingering grip on operations
+    internal_dynamics: Idealist-pragmatist schism emerging
+    global_id: ger_organization_bb39d5dd403d
+  - organization_uuid: ger_organization_45ebe7cbd593
+    description_of_involvement: Tobacco Subcommittee is pinpointed as Josh's premature
+      press target, its funding battle against Kalmbach critiqued by Bruno as lost
+      leverage for swing-state assaults on GOP nominees.
+    active_representation: Via referenced press releases
+    power_dynamics: Targeted for Democratic advantage, now neutralized
+    organizational_goals:
+    - Cut White House tobacco funding
+    - Protect industry donors
+    influence_mechanisms:
+    - Partisan voting blocks
+    - Vulnerable reps like Kalmbach
+    institutional_impact: Highlights budget gridlock stalling anti-tobacco push
+    internal_dynamics: ''
+    global_id: ger_organization_45ebe7cbd593
+  derived_from_beat_uuids: &id014
+  - beat_a6fec089faf7dcb4
+  - beat_9ce60899bc30123d
+  - beat_cc91631d5aab94fc
+  - beat_7c7357d7610de71e
+  source_season: 3
+  source_database: westwing.s03
+- fabula_uuid: cand_evt_scene_71def2d7ed84a0ba_1
+  global_id: null
+  title: Toby-Doug MS Fury Erupts, Exposing Arrogance and Strategic Rifts
+  description: In a heated Roosevelt Room strategy session, Toby resists a formal
+    re-election announcement event, clashing with Doug's demand for President Bartlet
+    to publicly apologize for the MS cover-up fraud. Toby's near-obscenity draws Josh's
+    intervention for lunch, but Doug unleashes on the team's arrogance. Bruno then
+    corners Josh in the hallway and office, brutally critiquing his premature tobacco
+    press release blunder, revealing lost swing-state opportunities and asserting
+    strategic dominance. This turning-point clash fractures team unity, excavating
+    MS scars and Josh's vulnerabilities amid mounting re-election pressures.
+  episode_uuid: ep_sea_ser_the_west_wing_s03_e02
+  scene_sequence: 22
+  sequence_in_scene: 33
+  key_dialogue: *id013
+  is_flashback: true
+  location_uuid: ger_location_3303871a0689
+  theme_uuids:
+  - ger_theme_fad35f8070e2
+  - ger_theme_464abc4f836c
+  arc_uuids:
+  - ger_conflictarc_8f3889a02989
+  participations:
+  - character_uuid: ger_agent_99b4244bf9a3
+    emotional_state: Assured dominance tempered with allied pragmatism
+    goals:
+    - Correct Josh's tactical error for campaign gain
+    - Establish strategic authority over the team
+    what_happened: Bruno declares the announcement debate closed, smiles wryly at
+      Josh's quip, corners him in hallway and office to dismantle the tobacco press
+      blunder, detailing swing-state losses and GOP vulnerabilities while asserting
+      expertise.
+    observed_status: Bruno declares the announcement debate closed, smiles wryly at
+      Josh's quip, corners him in hallway and office to dismantle the tobacco press
+      blunder, detailing swing-state losses and GOP vulnerabilities while asserting
+      expertise.
+    beliefs:
+    - Timing is critical for political leverage
+    - Premature actions waste swing-state opportunities
+    observed_traits:
+    - strategic
+    - blunt
+    - confident
+    - mentoring
+    importance: primary
+    global_id: ger_agent_99b4244bf9a3
+  - character_uuid: ger_agent_a96064ff3873
+    emotional_state: Apprehensive tension amid confrontation
+    goals:
+    - Gauge team dynamics on announcement
+    - Contribute polling insights implicitly
+    what_happened: Joey Lucas sits among strategists in the Roosevelt Room, exchanging
+      apprehensive looks with Toby during Doug's fraud accusation, silently absorbing
+      the escalating clash before packing papers at lunch call.
+    observed_status: Joey Lucas sits among strategists in the Roosevelt Room, exchanging
+      apprehensive looks with Toby during Doug's fraud accusation, silently absorbing
+      the escalating clash before packing papers at lunch call.
+    beliefs:
+    - MS issue remains a vulnerability
+    - Unity essential despite rifts
+    observed_traits:
+    - observant
+    - cautious
+    - professional
+    importance: primary
+    global_id: ger_agent_a96064ff3873
+  - character_uuid: ger_agent_c9d41ae93618
+    emotional_state: Defensive bravado shifting to humbled reflection
+    goals:
+    - Diffuse room tension with lunch break
+    - Defend tobacco strategy and credentials against critique
+    what_happened: Josh defends incumbent advantage, intervenes to call lunch averting
+      Toby's outburst, banters with Bruno, signs a staffer document mid-conversation,
+      touts credentials, justifies press release, then sits pondering Bruno's critique
+      in his office.
+    observed_status: Josh defends incumbent advantage, intervenes to call lunch averting
+      Toby's outburst, banters with Bruno, signs a staffer document mid-conversation,
+      touts credentials, justifies press release, then sits pondering Bruno's critique
+      in his office.
+    beliefs:
+    - Press release would elevate the issue effectively
+    - Congressional experience trumps outsider polling
+    observed_traits:
+    - witty
+    - defensive
+    - experienced
+    - reflective
+    importance: primary
+    global_id: ger_agent_c9d41ae93618
+  - character_uuid: ger_agent_7854a70e34ea
+    emotional_state: Explosive frustration laced with apprehensive defiance
+    goals:
+    - Block any MS apology in the announcement
+    - Uphold the President's dignity against external demands
+    what_happened: Toby repeatedly argues against a formal announcement event, sharply
+      questions Doug's MS apology demand, stares apprehensively at him, and nearly
+      erupts in obscenity before Josh intervenes, embodying defensive fury in the
+      packed Roosevelt Room.
+    observed_status: Toby repeatedly argues against a formal announcement event, sharply
+      questions Doug's MS apology demand, stares apprehensively at him, and nearly
+      erupts in obscenity before Josh intervenes, embodying defensive fury in the
+      packed Roosevelt Room.
+    beliefs:
+    - The President has no need to apologize for MS
+    - Incumbent status negates standard campaign rituals
+    observed_traits:
+    - combative
+    - idealistic
+    - quick-tempered
+    - protective
+    importance: primary
+    global_id: ger_agent_7854a70e34ea
+  - character_uuid: ger_agent_716802c810ea
+    emotional_state: Confrontational disdain fueling righteous insistence
+    goals:
+    - Force a public MS apology to reset campaign narrative
+    - Expose and humble the team's perceived arrogance
+    what_happened: Doug insists on a formal re-election announcement with MS apology,
+      accuses the White House of fraud, provokes Toby regionally, and skewers the
+      team's arrogance post-lunch call, dominating the room's tension before scattering.
+    observed_status: Doug insists on a formal re-election announcement with MS apology,
+      accuses the White House of fraud, provokes Toby regionally, and skewers the
+      team's arrogance post-lunch call, dominating the room's tension before scattering.
+    beliefs:
+    - Apology is essential for voter reconnection
+    - White House committed fraud needing atonement
+    observed_traits:
+    - aggressive
+    - pragmatic
+    - sarcastic
+    - unyielding
+    importance: primary
+    global_id: ger_agent_716802c810ea
+  - character_uuid: ger_agent_b29870aa3178
+    emotional_state: Steady observation under rising tension
+    goals:
+    - Monitor polling implications of debate
+    - Align with team consensus on strategy
+    what_happened: Kenny Lucas attends the Roosevelt Room strategy session with Joey
+      and others, present amid the Toby-Doug eruption and arrogance critique, rising
+      silently as papers are packed for lunch break.
+    observed_status: Kenny Lucas attends the Roosevelt Room strategy session with
+      Joey and others, present amid the Toby-Doug eruption and arrogance critique,
+      rising silently as papers are packed for lunch break.
+    beliefs:
+    - Fresh data needed for decisions
+    - Campaign requires bold resets
+    observed_traits:
+    - composed
+    - supportive
+    - attentive
+    importance: primary
+    global_id: ger_agent_b29870aa3178
+  object_involvements:
+  - object_uuid: ger_object_c043d05053e2
+    description_of_involvement: Meeting papers from Bruno's speech draft folder rustle
+      as everyone packs them at Josh's lunch call, scattered across the table amid
+      clashes, functionally propelling the session's abrupt halt while narratively
+      underscoring fractured strategy drafts under consultant pressure.
+    status_before_event: Spread on Roosevelt Room table
+    status_after_event: Packed and cleared by participants
+    global_id: ger_object_c043d05053e2
+  - object_uuid: ger_object_f9b5045dc5fa
+    description_of_involvement: Josh's Tobacco Subcommittee Press Releases become
+      the fulcrum of Bruno's hallway and office critique, referenced as prematurely
+      sent missives against Kalmbach that elevated profile short-term but squandered
+      fall leverage in swing states, symbolizing impulsive strategy undermining re-election
+      unity.
+    status_before_event: Dispatched and public
+    status_after_event: Revealed as tactical liability, mentally discarded by Josh
+    global_id: ger_object_f9b5045dc5fa
+  - object_uuid: ger_object_738cc709ec22
+    description_of_involvement: A staffer hands Josh the document in the hallway during
+      Bruno's dressing-down; Josh pauses his defense to swiftly sign it with pen slashes,
+      embodying administrative interruptions that punctuate high-stakes strategic
+      confrontations and ground the frenzy in routine.
+    status_before_event: Held by staffer, unsigned
+    status_after_event: Signed by Josh, returned or passed on
+    global_id: ger_object_738cc709ec22
+  location_involvements:
+  - location_uuid: ger_location_7423b10d7d15
+    description_of_involvement: The Roosevelt Room hosts the explosive strategy session
+      where Toby-Doug clash peaks over MS apology, with strategists hunching over
+      papers before scattering at lunch call, its conference table amplifying verbal
+      combat and apprehensive stares in flashback intensity.
+    observed_atmosphere: Charged with combative tension and simmering hostility
+    functional_role: High-stakes war room for re-election debate
+    symbolic_significance: Microcosm of fracturing campaign unity
+    access_restrictions: Restricted to senior staff and invited pollsters
+    key_environmental_details:
+    - Polished conference table with rustling papers
+    - French doors shadowing Oval proximity
+    global_id: ger_location_7423b10d7d15
+  - location_uuid: ger_location_3303871a0689
+    description_of_involvement: West Wing Hallway serves as transition for Bruno cornering
+      Josh post-meeting, enabling private evisceration of tobacco blunder amid staffer
+      interruptions, its echoing stretch contrasting room chaos with pointed intimacy
+      leading to Josh's office.
+    observed_atmosphere: Hurried and shadowed with urgent undertones
+    functional_role: Corridor for isolated strategic confrontation
+    symbolic_significance: Liminal space exposing vulnerabilities
+    access_restrictions: White House staff access with fluid movement
+    key_environmental_details:
+    - Echoing footsteps
+    - Staffer interruptions with documents
+    global_id: ger_location_3303871a0689
+  organization_involvements:
+  - organization_uuid: ger_organization_e7a9e4ecbb31
+    description_of_involvement: U.S. House of Representatives credentials are brandished
+      by Josh to bolster his tobacco strategy authority, tying legislative directorship
+      experience to current blunder defense amid Bruno's audit.
+    active_representation: Referenced in Josh's professional history
+    power_dynamics: Past mastery invoked against present critique
+    organizational_goals:
+    - Secure funding via issue pressure
+    - Leverage congressional battles
+    influence_mechanisms:
+    - Josh's prior tenure
+    - Subcommittee targeting
+    institutional_impact: ''
+    internal_dynamics: ''
+    global_id: ger_organization_e7a9e4ecbb31
+  - organization_uuid: ger_organization_5278bcf2674a
+    description_of_involvement: Republicans are invoked by Doug as critics of White
+      House arrogance, framing the team's dynamics as underestimated hubris while
+      Bruno eyes their nominees for tobacco nooses, heightening partisan stakes in
+      swing-state calculus.
+    active_representation: Through Doug's referenced accusations
+    power_dynamics: Positioned as external antagonists fueling internal critique
+    organizational_goals:
+    - Exploit MS scandal for attacks
+    - Undermine Bartlet re-election via arrogance narrative
+    influence_mechanisms:
+    - Public rhetoric on arrogance
+    - Nominee vulnerabilities in swing states
+    institutional_impact: Amplifies GOP electoral threats amid Democratic fractures
+    internal_dynamics: ''
+    global_id: ger_organization_5278bcf2674a
+  - organization_uuid: ger_organization_b7fd4a8ac7ff
+    description_of_involvement: Senate floor directorship is cited by Josh alongside
+      House experience to counter Bruno, underscoring congressional wariness in tobacco
+      gambit justification during hallway dissection.
+    active_representation: Through Josh's invoked expertise
+    power_dynamics: Historical asset challenged by campaign strategist
+    organizational_goals:
+    - Influence vote whips on issues
+    - Build on procedural savvy
+    influence_mechanisms:
+    - Floor battle scars
+    - Legislative instincts
+    institutional_impact: ''
+    internal_dynamics: ''
+    global_id: ger_organization_b7fd4a8ac7ff
+  - organization_uuid: ger_organization_bb39d5dd403d
+    description_of_involvement: The White House is directly accused by Doug of MS
+      fraud perpetration alongside the campaign, pressuring apology demands and exposing
+      scandal scars in strategy session, central to loyalty rifts and re-election
+      reset debates.
+    active_representation: Via staff and campaign representatives in room
+    power_dynamics: Under siege from internal consultant demands
+    organizational_goals:
+    - Forge unified re-election path
+    - Bury MS without full apology
+    influence_mechanisms:
+    - Institutional legacy defense
+    - Senior staff resistance
+    institutional_impact: Reveals scandal's lingering grip on operations
+    internal_dynamics: Idealist-pragmatist schism emerging
+    global_id: ger_organization_bb39d5dd403d
   - organization_uuid: ger_organization_45ebe7cbd593
     description_of_involvement: Tobacco Subcommittee is pinpointed as Josh's premature
       press target, its funding battle against Kalmbach critiqued by Bruno as lost
@@ -5279,7 +5279,7 @@ events:
   - 'BRUNO: You don''t want the money. You want the issue. You should have waited
     until the fall when the bell rings and then we hammer them with it.'
   is_flashback: true
-  location_uuid: ger_location_3d4b26f1de82
+  location_uuid: ger_location_2a1a15363640
   theme_uuids: []
   arc_uuids: []
   participations:
@@ -5363,7 +5363,7 @@ events:
     observed_traits: []
     importance: secondary
     global_id: ger_agent_7854a70e34ea
-  - character_uuid: ger_agent_64b2a2c10c8f
+  - character_uuid: ger_agent_14f85d554756
     emotional_state: ''
     goals: []
     what_happened: Mentioned alongside others as potential GOP nominees who could
@@ -5373,20 +5373,7 @@ events:
     beliefs: []
     observed_traits: []
     importance: minor
-    global_id: ger_agent_64b2a2c10c8f
-  - character_uuid: ger_agent_6660f4a320e4
-    emotional_state: N/A (mentioned)
-    goals: []
-    what_happened: Referenced extensively as prime target—vulnerable Rep. whose tobacco
-      ties and Route Nine constituency make him ripe for attack, but Josh's leak robbed
-      optimal timing.
-    observed_status: Referenced extensively as prime target—vulnerable Rep. whose
-      tobacco ties and Route Nine constituency make him ripe for attack, but Josh's
-      leak robbed optimal timing.
-    beliefs: []
-    observed_traits: []
-    importance: primary
-    global_id: ger_agent_6660f4a320e4
+    global_id: ger_agent_14f85d554756
   - character_uuid: ger_agent_716802c810ea
     emotional_state: smug
     goals:
@@ -5408,6 +5395,19 @@ events:
     observed_traits: []
     importance: minor
     global_id: ger_agent_b29870aa3178
+  - character_uuid: ger_agent_6660f4a320e4
+    emotional_state: N/A (mentioned)
+    goals: []
+    what_happened: Referenced extensively as prime target—vulnerable Rep. whose tobacco
+      ties and Route Nine constituency make him ripe for attack, but Josh's leak robbed
+      optimal timing.
+    observed_status: Referenced extensively as prime target—vulnerable Rep. whose
+      tobacco ties and Route Nine constituency make him ripe for attack, but Josh's
+      leak robbed optimal timing.
+    beliefs: []
+    observed_traits: []
+    importance: primary
+    global_id: ger_agent_6660f4a320e4
   - character_uuid: ger_agent_2f6b308fdd18
     emotional_state: N/A (mentioned)
     goals: []
@@ -5452,44 +5452,6 @@ events:
     status_after_event: Signed and returned, crinkled in Josh's brief grip
     global_id: ger_object_738cc709ec22
   location_involvements:
-  - location_uuid: ger_location_3d4b26f1de82
-    description_of_involvement: Serves as tense conduit where Bruno pulls Josh post-meeting
-      for initial ambush on press blunder; echoing stretch amplifies verbal sparring,
-      building to office climax amid swirling staff, underscoring vulnerability in
-      this power artery of fractured alliances.
-    observed_atmosphere: Charged with urgent confrontation and interrupted momentum
-    functional_role: Pathway for private tactical evisceration
-    symbolic_significance: Liminal space exposing staff fault lines under outsider
-      scrutiny
-    access_restrictions: Open to senior staff and consultants
-    key_environmental_details:
-    - Hurried footsteps and staffer interjections
-    - Dim-lit limbo fostering raw strategic fire
-    global_id: ger_location_3d4b26f1de82
-  - location_uuid: ger_location_0d29bb24e4a4
-    description_of_involvement: Capped in Bruno's trio as Ohio's razor-edge where
-      factories and farms awaited voter fury from delayed tobacco hammer; premature
-      blunder leaves it cold, teetering Bartlet's bid.
-    observed_atmosphere: Untapped wrath under merciless glare
-    functional_role: Exemplar of electoral self-sabotage
-    symbolic_significance: Election slipping into enemy hands
-    access_restrictions: ''
-    key_environmental_details:
-    - Midnight phone banks silent
-    - Farm town revolts evaporated
-    global_id: ger_location_0d29bb24e4a4
-  - location_uuid: ger_location_45cc544f0e34
-    description_of_involvement: Bruno details Kalmbach's Route Nine vulnerability—tech
-      boom and anti-smoking suburbs primed for assault, now stranded by leak; pulses
-      as evaporated ally bloc in swing-state shadows.
-    observed_atmosphere: Economic boom laced with political peril
-    functional_role: Key to GOP representative's weakness
-    symbolic_significance: Stranded electoral promise
-    access_restrictions: ''
-    key_environmental_details:
-    - Affluent suburban voters
-    - Clean industry influx
-    global_id: ger_location_45cc544f0e34
   - location_uuid: ger_location_2a1a15363640
     description_of_involvement: Bruno spotlights Michigan's swing-state potency for
       garroting GOP via tobacco, now nullified by Josh's haste; merges with prior
@@ -5514,6 +5476,44 @@ events:
     - Voter tides in factory din
     - Precinct teetering on fallout
     global_id: ger_location_0a02b8200293
+  - location_uuid: ger_location_0d29bb24e4a4
+    description_of_involvement: Capped in Bruno's trio as Ohio's razor-edge where
+      factories and farms awaited voter fury from delayed tobacco hammer; premature
+      blunder leaves it cold, teetering Bartlet's bid.
+    observed_atmosphere: Untapped wrath under merciless glare
+    functional_role: Exemplar of electoral self-sabotage
+    symbolic_significance: Election slipping into enemy hands
+    access_restrictions: ''
+    key_environmental_details:
+    - Midnight phone banks silent
+    - Farm town revolts evaporated
+    global_id: ger_location_0d29bb24e4a4
+  - location_uuid: ger_location_45cc544f0e34
+    description_of_involvement: Bruno details Kalmbach's Route Nine vulnerability—tech
+      boom and anti-smoking suburbs primed for assault, now stranded by leak; pulses
+      as evaporated ally bloc in swing-state shadows.
+    observed_atmosphere: Economic boom laced with political peril
+    functional_role: Key to GOP representative's weakness
+    symbolic_significance: Stranded electoral promise
+    access_restrictions: ''
+    key_environmental_details:
+    - Affluent suburban voters
+    - Clean industry influx
+    global_id: ger_location_45cc544f0e34
+  - location_uuid: ger_location_3303871a0689
+    description_of_involvement: Serves as tense conduit where Bruno pulls Josh post-meeting
+      for initial ambush on press blunder; echoing stretch amplifies verbal sparring,
+      building to office climax amid swirling staff, underscoring vulnerability in
+      this power artery of fractured alliances.
+    observed_atmosphere: Charged with urgent confrontation and interrupted momentum
+    functional_role: Pathway for private tactical evisceration
+    symbolic_significance: Liminal space exposing staff fault lines under outsider
+      scrutiny
+    access_restrictions: Open to senior staff and consultants
+    key_environmental_details:
+    - Hurried footsteps and staffer interjections
+    - Dim-lit limbo fostering raw strategic fire
+    global_id: ger_location_3303871a0689
   organization_involvements:
   - organization_uuid: ger_organization_e7a9e4ecbb31
     description_of_involvement: Josh invokes two-year legislative director stint in
@@ -5578,6 +5578,323 @@ events:
     global_id: ger_organization_45ebe7cbd593
   derived_from_beat_uuids: &id016
   - beat_1d5b9e1690f0e56a
+  source_season: 3
+  source_database: westwing.s03
+- fabula_uuid: cand_evt_scene_71def2d7ed84a0ba_2
+  global_id: null
+  title: Bruno Exposes Josh's Costly Tobacco Timing Blunder
+  description: 'In the aftermath of a fractious strategy meeting, Bruno pulls Josh
+    into the hallway en route to his office, bluntly confronting him for prematurely
+    sending tobacco subcommittee press releases. Josh defends the move for gaining
+    money and press against vulnerable Rep. Kalmbach, but Bruno dismantles it: the
+    early leak squandered leverage in swing states like Pennsylvania, Michigan, and
+    Ohio, where timely attacks could have hanged the issue around GOP necks during
+    fall campaigning. This surgical rebuke erodes Josh''s confidence, amplifies staff
+    fractures, and underscores Bruno''s win-at-all-costs dominance, positioning the
+    blunder as a pivotal self-inflicted wound threatening re-election unity.'
+  episode_uuid: ep_sea_ser_the_west_wing_s03_e02
+  scene_sequence: 22
+  sequence_in_scene: 34
+  key_dialogue: *id015
+  is_flashback: true
+  location_uuid: ger_location_0a02b8200293
+  theme_uuids: []
+  arc_uuids: []
+  participations:
+  - character_uuid: ger_agent_99b4244bf9a3
+    emotional_state: Controlled frustration laced with tactical superiority
+    goals:
+    - Correct Josh's tactical error to safeguard re-election strategy
+    - Assert dominance and educate staff on optimal timing for political attacks
+    what_happened: Intercepts Josh post-meeting in hallway, initiates blunt confrontation
+      on press releases with authoritative dissection of strategic flaws, walks to
+      Josh's office, delivers surgical rebuke citing swing states and GOP vulnerabilities,
+      then exits leaving Josh to ponder.
+    observed_status: Intercepts Josh post-meeting in hallway, initiates blunt confrontation
+      on press releases with authoritative dissection of strategic flaws, walks to
+      Josh's office, delivers surgical rebuke citing swing states and GOP vulnerabilities,
+      then exits leaving Josh to ponder.
+    beliefs:
+    - Premature actions forfeit irreplaceable leverage in swing states
+    - Campaign success demands ruthless timing over impulsive wins
+    observed_traits:
+    - pragmatic
+    - incisive
+    - dominant
+    - patronizingly supportive
+    importance: primary
+    global_id: ger_agent_99b4244bf9a3
+  - character_uuid: ger_agent_a96064ff3873
+    emotional_state: apprehensive
+    goals: []
+    what_happened: Present in the strategy meeting, looks apprehensively at Doug alongside
+      Toby.
+    observed_status: Present in the strategy meeting, looks apprehensively at Doug
+      alongside Toby.
+    beliefs: []
+    observed_traits: []
+    importance: minor
+    global_id: ger_agent_a96064ff3873
+  - character_uuid: ger_agent_c9d41ae93618
+    emotional_state: Defensive bravado cracking into humbled doubt
+    goals:
+    - Justify his tobacco gambit as savvy leverage for funds and press
+    - Uphold personal credentials against Bruno's critique
+    what_happened: Walks out with Bruno post-meeting, feigns ignorance then admits
+      sending releases, defends vehemently citing congressional experience and Kalmbach
+      targeting, pauses to sign document, sits in office absorbing rebuke, left pondering
+      its weight.
+    observed_status: Walks out with Bruno post-meeting, feigns ignorance then admits
+      sending releases, defends vehemently citing congressional experience and Kalmbach
+      targeting, pauses to sign document, sits in office absorbing rebuke, left pondering
+      its weight.
+    beliefs:
+    - Immediate action on vulnerabilities like Kalmbach yields quick wins
+    - Legislative tenure equips him to outmaneuver campaign outsiders
+    observed_traits:
+    - defensive
+    - combative
+    - experienced but arrogant
+    - reflective
+    importance: primary
+    global_id: ger_agent_c9d41ae93618
+  - character_uuid: ger_agent_ce2bfab1b21b
+    emotional_state: N/A (mentioned)
+    goals: []
+    what_happened: Cited in Bruno's litany of GOP targets—Steve as nicotine pusher
+      whose nomination path evaporates leverage from Josh's hasty release.
+    observed_status: Cited in Bruno's litany of GOP targets—Steve as nicotine pusher
+      whose nomination path evaporates leverage from Josh's hasty release.
+    beliefs: []
+    observed_traits: []
+    importance: primary
+    global_id: ger_agent_ce2bfab1b21b
+  - character_uuid: ger_agent_7854a70e34ea
+    emotional_state: annoyed
+    goals:
+    - Oppose push for re-election announcement and public apology
+    what_happened: Argues repeatedly against holding an announcement event, defends
+      the President, responds sarcastically to Doug's taunt about arrogance and apology.
+    observed_status: Argues repeatedly against holding an announcement event, defends
+      the President, responds sarcastically to Doug's taunt about arrogance and apology.
+    beliefs: []
+    observed_traits: []
+    importance: secondary
+    global_id: ger_agent_7854a70e34ea
+  - character_uuid: ger_agent_14f85d554756
+    emotional_state: ''
+    goals: []
+    what_happened: Mentioned alongside others as potential GOP nominees who could
+      be targeted with tobacco issue.
+    observed_status: Mentioned alongside others as potential GOP nominees who could
+      be targeted with tobacco issue.
+    beliefs: []
+    observed_traits: []
+    importance: minor
+    global_id: ger_agent_14f85d554756
+  - character_uuid: ger_agent_716802c810ea
+    emotional_state: smug
+    goals:
+    - Advocate for declaration and apology strategy
+    what_happened: Pushes for the President to formally announce re-election and apologize
+      for the MS cover-up, taunts the staff about arrogance.
+    observed_status: Pushes for the President to formally announce re-election and
+      apologize for the MS cover-up, taunts the staff about arrogance.
+    beliefs: []
+    observed_traits: []
+    importance: secondary
+    global_id: ger_agent_716802c810ea
+  - character_uuid: ger_agent_b29870aa3178
+    emotional_state: ''
+    goals: []
+    what_happened: Present with Joey in the strategy meeting.
+    observed_status: Present with Joey in the strategy meeting.
+    beliefs: []
+    observed_traits: []
+    importance: minor
+    global_id: ger_agent_b29870aa3178
+  - character_uuid: ger_agent_6660f4a320e4
+    emotional_state: N/A (mentioned)
+    goals: []
+    what_happened: Referenced extensively as prime target—vulnerable Rep. whose tobacco
+      ties and Route Nine constituency make him ripe for attack, but Josh's leak robbed
+      optimal timing.
+    observed_status: Referenced extensively as prime target—vulnerable Rep. whose
+      tobacco ties and Route Nine constituency make him ripe for attack, but Josh's
+      leak robbed optimal timing.
+    beliefs: []
+    observed_traits: []
+    importance: primary
+    global_id: ger_agent_6660f4a320e4
+  - character_uuid: ger_agent_2f6b308fdd18
+    emotional_state: N/A (mentioned)
+    goals: []
+    what_happened: Invoked by Bruno as potential GOP nominee whose neck could bear
+      the 'nicotine pusher' label in fall assaults, symbolizing squandered swing-state
+      kills.
+    observed_status: Invoked by Bruno as potential GOP nominee whose neck could bear
+      the 'nicotine pusher' label in fall assaults, symbolizing squandered swing-state
+      kills.
+    beliefs: []
+    observed_traits: []
+    importance: primary
+    global_id: ger_agent_2f6b308fdd18
+  - character_uuid: ger_agent_d9485e458a86
+    emotional_state: N/A (mentioned)
+    goals: []
+    what_happened: Named alongside GOP prospects as nominee vulnerable to well-timed
+      tobacco hanging, highlighting Josh's blunder in lost electoral nooses.
+    observed_status: Named alongside GOP prospects as nominee vulnerable to well-timed
+      tobacco hanging, highlighting Josh's blunder in lost electoral nooses.
+    beliefs: []
+    observed_traits: []
+    importance: primary
+    global_id: ger_agent_d9485e458a86
+  object_involvements:
+  - object_uuid: ger_object_f9b5045dc5fa
+    description_of_involvement: Central to confrontation as Josh's prematurely dispatched
+      volleys against Tobacco Subcommittee; Bruno wields them as proof of stupidity,
+      dissecting how their early release vaporized fall leverage against Kalmbach
+      and GOP, turning tactical tool into self-inflicted wound amplifying re-election
+      rifts.
+    status_before_event: Dispatched and public, alerting targets prematurely
+    status_after_event: Recontextualized as squandered ammunition, haunting Josh's
+      reflection
+    global_id: ger_object_f9b5045dc5fa
+  - object_uuid: ger_object_738cc709ec22
+    description_of_involvement: Briefly interrupts hallway clash when staffer thrusts
+      it at Josh for signature; he halts, slashes pen across it amid Bruno's assault,
+      embodying White House frenzy snaring focus from strategic dressing-down to administrative
+      drudgery.
+    status_before_event: Handed unsigned by staffer in hallway
+    status_after_event: Signed and returned, crinkled in Josh's brief grip
+    global_id: ger_object_738cc709ec22
+  location_involvements:
+  - location_uuid: ger_location_2a1a15363640
+    description_of_involvement: Bruno spotlights Michigan's swing-state potency for
+      garroting GOP via tobacco, now nullified by Josh's haste; merges with prior
+      poll woes, propelling MS-scarred critique.
+    observed_atmosphere: Razor-sharp battleground tension
+    functional_role: Illustrative lost opportunity
+    symbolic_significance: Phantom revolt in heartland
+    access_restrictions: ''
+    key_environmental_details:
+    - Rain-slicked pollster echoes
+    - Factory battlegrounds
+    global_id: ger_location_2a1a15363640
+  - location_uuid: ger_location_0a02b8200293
+    description_of_involvement: Invoked by Bruno as swing-state jugular where timed
+      tobacco assaults could flip GOP incumbents; Josh's leak evaporates this factory-suburban
+      battleground's potential, throbbing in rebuke as lost election-maker.
+    observed_atmosphere: Electoral ferocity evoked through strategic calculus
+    functional_role: Strategic battleground in debate
+    symbolic_significance: Represents squandered Democratic leverage
+    access_restrictions: ''
+    key_environmental_details:
+    - Voter tides in factory din
+    - Precinct teetering on fallout
+    global_id: ger_location_0a02b8200293
+  - location_uuid: ger_location_0d29bb24e4a4
+    description_of_involvement: Capped in Bruno's trio as Ohio's razor-edge where
+      factories and farms awaited voter fury from delayed tobacco hammer; premature
+      blunder leaves it cold, teetering Bartlet's bid.
+    observed_atmosphere: Untapped wrath under merciless glare
+    functional_role: Exemplar of electoral self-sabotage
+    symbolic_significance: Election slipping into enemy hands
+    access_restrictions: ''
+    key_environmental_details:
+    - Midnight phone banks silent
+    - Farm town revolts evaporated
+    global_id: ger_location_0d29bb24e4a4
+  - location_uuid: ger_location_45cc544f0e34
+    description_of_involvement: Bruno details Kalmbach's Route Nine vulnerability—tech
+      boom and anti-smoking suburbs primed for assault, now stranded by leak; pulses
+      as evaporated ally bloc in swing-state shadows.
+    observed_atmosphere: Economic boom laced with political peril
+    functional_role: Key to GOP representative's weakness
+    symbolic_significance: Stranded electoral promise
+    access_restrictions: ''
+    key_environmental_details:
+    - Affluent suburban voters
+    - Clean industry influx
+    global_id: ger_location_45cc544f0e34
+  - location_uuid: ger_location_3303871a0689
+    description_of_involvement: Serves as tense conduit where Bruno pulls Josh post-meeting
+      for initial ambush on press blunder; echoing stretch amplifies verbal sparring,
+      building to office climax amid swirling staff, underscoring vulnerability in
+      this power artery of fractured alliances.
+    observed_atmosphere: Charged with urgent confrontation and interrupted momentum
+    functional_role: Pathway for private tactical evisceration
+    symbolic_significance: Liminal space exposing staff fault lines under outsider
+      scrutiny
+    access_restrictions: Open to senior staff and consultants
+    key_environmental_details:
+    - Hurried footsteps and staffer interjections
+    - Dim-lit limbo fostering raw strategic fire
+    global_id: ger_location_3303871a0689
+  organization_involvements:
+  - organization_uuid: ger_organization_e7a9e4ecbb31
+    description_of_involvement: Josh invokes two-year legislative director stint in
+      House as credential buttressing his release; contextualizes his congressional
+      instincts now clashing with Bruno's campaign calculus.
+    active_representation: Via Josh's prior professional experience
+    power_dynamics: Source of Josh's tactical confidence challenged externally
+    organizational_goals:
+    - Navigate committee gauntlets for bills
+    - Forge whips in partisan marathons
+    influence_mechanisms:
+    - Procedural knife-fights
+    - Floor vote infernos
+    institutional_impact: Underscores legislative scars fueling re-election hubris
+    internal_dynamics: Partisan ambushes claiming scalps
+    global_id: ger_organization_e7a9e4ecbb31
+  - organization_uuid: ger_organization_5278bcf2674a
+    description_of_involvement: Cast as antagonists via nominees (Kalmbach, Leder
+      et al.) ripe for 'nicotine pusher' nooses; Bruno's vision of fall savagery choked
+      by Josh's leak, amplifying GOP donor vulnerabilities.
+    active_representation: Through vulnerable congressional and nominee figures
+    power_dynamics: Targeted for Democratic electoral strangling
+    organizational_goals:
+    - Shield tobacco donors
+    - Secure swing-state momentum
+    influence_mechanisms:
+    - Industry bonds
+    - Partisan accusations of arrogance
+    institutional_impact: Exposes Republican piñata status in scandal loops
+    internal_dynamics: Nominee selection tensions
+    global_id: ger_organization_5278bcf2674a
+  - organization_uuid: ger_organization_b7fd4a8ac7ff
+    description_of_involvement: Bolsters Josh's defense with two years as floor director
+      commanding Senate scrums; Bruno implicitly audits this mastery as inadequate
+      for re-election's brutal timing.
+    active_representation: Through Josh's cited tenure and instincts
+    power_dynamics: Past power base validating then undermined
+    organizational_goals:
+    - Whip votes in procedural wars
+    - Control midnight agendas
+    influence_mechanisms:
+    - Floor mastery
+    - Agenda scrums
+    institutional_impact: Highlights transition from legislative to campaign fault
+      lines
+    internal_dynamics: Relentless vote battles
+    global_id: ger_organization_b7fd4a8ac7ff
+  - organization_uuid: ger_organization_45ebe7cbd593
+    description_of_involvement: Epicenter of conflict as subcommittee whose budget
+      Josh targeted via releases; Bruno frames it as mishandled flashpoint for squeezing
+      funds and headlines against tobacco defenders like Kalmbach.
+    active_representation: Through referenced press releases and partisan vote
+    power_dynamics: Being weaponized then neutralized by White House misfire
+    organizational_goals:
+    - Block White House tobacco lawsuit funding
+    - Protect industry donors via 8-7 partisan hold
+    influence_mechanisms:
+    - Budgetary gridlock
+    - Partisan voting blocs
+    institutional_impact: Starves anti-tobacco momentum amid swing-state plays
+    internal_dynamics: ''
+    global_id: ger_organization_45ebe7cbd593
+  derived_from_beat_uuids: *id016
   source_season: 3
   source_database: westwing.s03
 - fabula_uuid: cand_evt_scene_71def2d7ed84a0ba_2
@@ -5681,7 +5998,7 @@ events:
     observed_traits: []
     importance: secondary
     global_id: ger_agent_7854a70e34ea
-  - character_uuid: ger_agent_64b2a2c10c8f
+  - character_uuid: ger_agent_14f85d554756
     emotional_state: ''
     goals: []
     what_happened: Mentioned alongside others as potential GOP nominees who could
@@ -5691,20 +6008,7 @@ events:
     beliefs: []
     observed_traits: []
     importance: minor
-    global_id: ger_agent_64b2a2c10c8f
-  - character_uuid: ger_agent_6660f4a320e4
-    emotional_state: N/A (mentioned)
-    goals: []
-    what_happened: Referenced extensively as prime target—vulnerable Rep. whose tobacco
-      ties and Route Nine constituency make him ripe for attack, but Josh's leak robbed
-      optimal timing.
-    observed_status: Referenced extensively as prime target—vulnerable Rep. whose
-      tobacco ties and Route Nine constituency make him ripe for attack, but Josh's
-      leak robbed optimal timing.
-    beliefs: []
-    observed_traits: []
-    importance: primary
-    global_id: ger_agent_6660f4a320e4
+    global_id: ger_agent_14f85d554756
   - character_uuid: ger_agent_716802c810ea
     emotional_state: smug
     goals:
@@ -5726,6 +6030,19 @@ events:
     observed_traits: []
     importance: minor
     global_id: ger_agent_b29870aa3178
+  - character_uuid: ger_agent_6660f4a320e4
+    emotional_state: N/A (mentioned)
+    goals: []
+    what_happened: Referenced extensively as prime target—vulnerable Rep. whose tobacco
+      ties and Route Nine constituency make him ripe for attack, but Josh's leak robbed
+      optimal timing.
+    observed_status: Referenced extensively as prime target—vulnerable Rep. whose
+      tobacco ties and Route Nine constituency make him ripe for attack, but Josh's
+      leak robbed optimal timing.
+    beliefs: []
+    observed_traits: []
+    importance: primary
+    global_id: ger_agent_6660f4a320e4
   - character_uuid: ger_agent_2f6b308fdd18
     emotional_state: N/A (mentioned)
     goals: []
@@ -5770,44 +6087,6 @@ events:
     status_after_event: Signed and returned, crinkled in Josh's brief grip
     global_id: ger_object_738cc709ec22
   location_involvements:
-  - location_uuid: ger_location_3d4b26f1de82
-    description_of_involvement: Serves as tense conduit where Bruno pulls Josh post-meeting
-      for initial ambush on press blunder; echoing stretch amplifies verbal sparring,
-      building to office climax amid swirling staff, underscoring vulnerability in
-      this power artery of fractured alliances.
-    observed_atmosphere: Charged with urgent confrontation and interrupted momentum
-    functional_role: Pathway for private tactical evisceration
-    symbolic_significance: Liminal space exposing staff fault lines under outsider
-      scrutiny
-    access_restrictions: Open to senior staff and consultants
-    key_environmental_details:
-    - Hurried footsteps and staffer interjections
-    - Dim-lit limbo fostering raw strategic fire
-    global_id: ger_location_3d4b26f1de82
-  - location_uuid: ger_location_0d29bb24e4a4
-    description_of_involvement: Capped in Bruno's trio as Ohio's razor-edge where
-      factories and farms awaited voter fury from delayed tobacco hammer; premature
-      blunder leaves it cold, teetering Bartlet's bid.
-    observed_atmosphere: Untapped wrath under merciless glare
-    functional_role: Exemplar of electoral self-sabotage
-    symbolic_significance: Election slipping into enemy hands
-    access_restrictions: ''
-    key_environmental_details:
-    - Midnight phone banks silent
-    - Farm town revolts evaporated
-    global_id: ger_location_0d29bb24e4a4
-  - location_uuid: ger_location_45cc544f0e34
-    description_of_involvement: Bruno details Kalmbach's Route Nine vulnerability—tech
-      boom and anti-smoking suburbs primed for assault, now stranded by leak; pulses
-      as evaporated ally bloc in swing-state shadows.
-    observed_atmosphere: Economic boom laced with political peril
-    functional_role: Key to GOP representative's weakness
-    symbolic_significance: Stranded electoral promise
-    access_restrictions: ''
-    key_environmental_details:
-    - Affluent suburban voters
-    - Clean industry influx
-    global_id: ger_location_45cc544f0e34
   - location_uuid: ger_location_2a1a15363640
     description_of_involvement: Bruno spotlights Michigan's swing-state potency for
       garroting GOP via tobacco, now nullified by Josh's haste; merges with prior
@@ -5832,6 +6111,44 @@ events:
     - Voter tides in factory din
     - Precinct teetering on fallout
     global_id: ger_location_0a02b8200293
+  - location_uuid: ger_location_0d29bb24e4a4
+    description_of_involvement: Capped in Bruno's trio as Ohio's razor-edge where
+      factories and farms awaited voter fury from delayed tobacco hammer; premature
+      blunder leaves it cold, teetering Bartlet's bid.
+    observed_atmosphere: Untapped wrath under merciless glare
+    functional_role: Exemplar of electoral self-sabotage
+    symbolic_significance: Election slipping into enemy hands
+    access_restrictions: ''
+    key_environmental_details:
+    - Midnight phone banks silent
+    - Farm town revolts evaporated
+    global_id: ger_location_0d29bb24e4a4
+  - location_uuid: ger_location_45cc544f0e34
+    description_of_involvement: Bruno details Kalmbach's Route Nine vulnerability—tech
+      boom and anti-smoking suburbs primed for assault, now stranded by leak; pulses
+      as evaporated ally bloc in swing-state shadows.
+    observed_atmosphere: Economic boom laced with political peril
+    functional_role: Key to GOP representative's weakness
+    symbolic_significance: Stranded electoral promise
+    access_restrictions: ''
+    key_environmental_details:
+    - Affluent suburban voters
+    - Clean industry influx
+    global_id: ger_location_45cc544f0e34
+  - location_uuid: ger_location_3303871a0689
+    description_of_involvement: Serves as tense conduit where Bruno pulls Josh post-meeting
+      for initial ambush on press blunder; echoing stretch amplifies verbal sparring,
+      building to office climax amid swirling staff, underscoring vulnerability in
+      this power artery of fractured alliances.
+    observed_atmosphere: Charged with urgent confrontation and interrupted momentum
+    functional_role: Pathway for private tactical evisceration
+    symbolic_significance: Liminal space exposing staff fault lines under outsider
+      scrutiny
+    access_restrictions: Open to senior staff and consultants
+    key_environmental_details:
+    - Hurried footsteps and staffer interjections
+    - Dim-lit limbo fostering raw strategic fire
+    global_id: ger_location_3303871a0689
   organization_involvements:
   - organization_uuid: ger_organization_e7a9e4ecbb31
     description_of_involvement: Josh invokes two-year legislative director stint in
@@ -5998,7 +6315,7 @@ events:
     observed_traits: []
     importance: secondary
     global_id: ger_agent_7854a70e34ea
-  - character_uuid: ger_agent_64b2a2c10c8f
+  - character_uuid: ger_agent_14f85d554756
     emotional_state: ''
     goals: []
     what_happened: Mentioned alongside others as potential GOP nominees who could
@@ -6008,20 +6325,7 @@ events:
     beliefs: []
     observed_traits: []
     importance: minor
-    global_id: ger_agent_64b2a2c10c8f
-  - character_uuid: ger_agent_6660f4a320e4
-    emotional_state: N/A (mentioned)
-    goals: []
-    what_happened: Referenced extensively as prime target—vulnerable Rep. whose tobacco
-      ties and Route Nine constituency make him ripe for attack, but Josh's leak robbed
-      optimal timing.
-    observed_status: Referenced extensively as prime target—vulnerable Rep. whose
-      tobacco ties and Route Nine constituency make him ripe for attack, but Josh's
-      leak robbed optimal timing.
-    beliefs: []
-    observed_traits: []
-    importance: primary
-    global_id: ger_agent_6660f4a320e4
+    global_id: ger_agent_14f85d554756
   - character_uuid: ger_agent_716802c810ea
     emotional_state: smug
     goals:
@@ -6043,6 +6347,19 @@ events:
     observed_traits: []
     importance: minor
     global_id: ger_agent_b29870aa3178
+  - character_uuid: ger_agent_6660f4a320e4
+    emotional_state: N/A (mentioned)
+    goals: []
+    what_happened: Referenced extensively as prime target—vulnerable Rep. whose tobacco
+      ties and Route Nine constituency make him ripe for attack, but Josh's leak robbed
+      optimal timing.
+    observed_status: Referenced extensively as prime target—vulnerable Rep. whose
+      tobacco ties and Route Nine constituency make him ripe for attack, but Josh's
+      leak robbed optimal timing.
+    beliefs: []
+    observed_traits: []
+    importance: primary
+    global_id: ger_agent_6660f4a320e4
   - character_uuid: ger_agent_2f6b308fdd18
     emotional_state: N/A (mentioned)
     goals: []
@@ -6087,44 +6404,6 @@ events:
     status_after_event: Signed and returned, crinkled in Josh's brief grip
     global_id: ger_object_738cc709ec22
   location_involvements:
-  - location_uuid: ger_location_3d4b26f1de82
-    description_of_involvement: Serves as tense conduit where Bruno pulls Josh post-meeting
-      for initial ambush on press blunder; echoing stretch amplifies verbal sparring,
-      building to office climax amid swirling staff, underscoring vulnerability in
-      this power artery of fractured alliances.
-    observed_atmosphere: Charged with urgent confrontation and interrupted momentum
-    functional_role: Pathway for private tactical evisceration
-    symbolic_significance: Liminal space exposing staff fault lines under outsider
-      scrutiny
-    access_restrictions: Open to senior staff and consultants
-    key_environmental_details:
-    - Hurried footsteps and staffer interjections
-    - Dim-lit limbo fostering raw strategic fire
-    global_id: ger_location_3d4b26f1de82
-  - location_uuid: ger_location_0d29bb24e4a4
-    description_of_involvement: Capped in Bruno's trio as Ohio's razor-edge where
-      factories and farms awaited voter fury from delayed tobacco hammer; premature
-      blunder leaves it cold, teetering Bartlet's bid.
-    observed_atmosphere: Untapped wrath under merciless glare
-    functional_role: Exemplar of electoral self-sabotage
-    symbolic_significance: Election slipping into enemy hands
-    access_restrictions: ''
-    key_environmental_details:
-    - Midnight phone banks silent
-    - Farm town revolts evaporated
-    global_id: ger_location_0d29bb24e4a4
-  - location_uuid: ger_location_45cc544f0e34
-    description_of_involvement: Bruno details Kalmbach's Route Nine vulnerability—tech
-      boom and anti-smoking suburbs primed for assault, now stranded by leak; pulses
-      as evaporated ally bloc in swing-state shadows.
-    observed_atmosphere: Economic boom laced with political peril
-    functional_role: Key to GOP representative's weakness
-    symbolic_significance: Stranded electoral promise
-    access_restrictions: ''
-    key_environmental_details:
-    - Affluent suburban voters
-    - Clean industry influx
-    global_id: ger_location_45cc544f0e34
   - location_uuid: ger_location_2a1a15363640
     description_of_involvement: Bruno spotlights Michigan's swing-state potency for
       garroting GOP via tobacco, now nullified by Josh's haste; merges with prior
@@ -6149,6 +6428,44 @@ events:
     - Voter tides in factory din
     - Precinct teetering on fallout
     global_id: ger_location_0a02b8200293
+  - location_uuid: ger_location_0d29bb24e4a4
+    description_of_involvement: Capped in Bruno's trio as Ohio's razor-edge where
+      factories and farms awaited voter fury from delayed tobacco hammer; premature
+      blunder leaves it cold, teetering Bartlet's bid.
+    observed_atmosphere: Untapped wrath under merciless glare
+    functional_role: Exemplar of electoral self-sabotage
+    symbolic_significance: Election slipping into enemy hands
+    access_restrictions: ''
+    key_environmental_details:
+    - Midnight phone banks silent
+    - Farm town revolts evaporated
+    global_id: ger_location_0d29bb24e4a4
+  - location_uuid: ger_location_45cc544f0e34
+    description_of_involvement: Bruno details Kalmbach's Route Nine vulnerability—tech
+      boom and anti-smoking suburbs primed for assault, now stranded by leak; pulses
+      as evaporated ally bloc in swing-state shadows.
+    observed_atmosphere: Economic boom laced with political peril
+    functional_role: Key to GOP representative's weakness
+    symbolic_significance: Stranded electoral promise
+    access_restrictions: ''
+    key_environmental_details:
+    - Affluent suburban voters
+    - Clean industry influx
+    global_id: ger_location_45cc544f0e34
+  - location_uuid: ger_location_3303871a0689
+    description_of_involvement: Serves as tense conduit where Bruno pulls Josh post-meeting
+      for initial ambush on press blunder; echoing stretch amplifies verbal sparring,
+      building to office climax amid swirling staff, underscoring vulnerability in
+      this power artery of fractured alliances.
+    observed_atmosphere: Charged with urgent confrontation and interrupted momentum
+    functional_role: Pathway for private tactical evisceration
+    symbolic_significance: Liminal space exposing staff fault lines under outsider
+      scrutiny
+    access_restrictions: Open to senior staff and consultants
+    key_environmental_details:
+    - Hurried footsteps and staffer interjections
+    - Dim-lit limbo fostering raw strategic fire
+    global_id: ger_location_3303871a0689
   organization_involvements:
   - organization_uuid: ger_organization_e7a9e4ecbb31
     description_of_involvement: Josh invokes two-year legislative director stint in
@@ -6231,7 +6548,7 @@ events:
   sequence_in_scene: 34
   key_dialogue: *id015
   is_flashback: true
-  location_uuid: ger_location_2a1a15363640
+  location_uuid: ger_location_3303871a0689
   theme_uuids: []
   arc_uuids: []
   participations:
@@ -6315,7 +6632,7 @@ events:
     observed_traits: []
     importance: secondary
     global_id: ger_agent_7854a70e34ea
-  - character_uuid: ger_agent_64b2a2c10c8f
+  - character_uuid: ger_agent_14f85d554756
     emotional_state: ''
     goals: []
     what_happened: Mentioned alongside others as potential GOP nominees who could
@@ -6325,20 +6642,7 @@ events:
     beliefs: []
     observed_traits: []
     importance: minor
-    global_id: ger_agent_64b2a2c10c8f
-  - character_uuid: ger_agent_6660f4a320e4
-    emotional_state: N/A (mentioned)
-    goals: []
-    what_happened: Referenced extensively as prime target—vulnerable Rep. whose tobacco
-      ties and Route Nine constituency make him ripe for attack, but Josh's leak robbed
-      optimal timing.
-    observed_status: Referenced extensively as prime target—vulnerable Rep. whose
-      tobacco ties and Route Nine constituency make him ripe for attack, but Josh's
-      leak robbed optimal timing.
-    beliefs: []
-    observed_traits: []
-    importance: primary
-    global_id: ger_agent_6660f4a320e4
+    global_id: ger_agent_14f85d554756
   - character_uuid: ger_agent_716802c810ea
     emotional_state: smug
     goals:
@@ -6360,6 +6664,19 @@ events:
     observed_traits: []
     importance: minor
     global_id: ger_agent_b29870aa3178
+  - character_uuid: ger_agent_6660f4a320e4
+    emotional_state: N/A (mentioned)
+    goals: []
+    what_happened: Referenced extensively as prime target—vulnerable Rep. whose tobacco
+      ties and Route Nine constituency make him ripe for attack, but Josh's leak robbed
+      optimal timing.
+    observed_status: Referenced extensively as prime target—vulnerable Rep. whose
+      tobacco ties and Route Nine constituency make him ripe for attack, but Josh's
+      leak robbed optimal timing.
+    beliefs: []
+    observed_traits: []
+    importance: primary
+    global_id: ger_agent_6660f4a320e4
   - character_uuid: ger_agent_2f6b308fdd18
     emotional_state: N/A (mentioned)
     goals: []
@@ -6404,44 +6721,6 @@ events:
     status_after_event: Signed and returned, crinkled in Josh's brief grip
     global_id: ger_object_738cc709ec22
   location_involvements:
-  - location_uuid: ger_location_3d4b26f1de82
-    description_of_involvement: Serves as tense conduit where Bruno pulls Josh post-meeting
-      for initial ambush on press blunder; echoing stretch amplifies verbal sparring,
-      building to office climax amid swirling staff, underscoring vulnerability in
-      this power artery of fractured alliances.
-    observed_atmosphere: Charged with urgent confrontation and interrupted momentum
-    functional_role: Pathway for private tactical evisceration
-    symbolic_significance: Liminal space exposing staff fault lines under outsider
-      scrutiny
-    access_restrictions: Open to senior staff and consultants
-    key_environmental_details:
-    - Hurried footsteps and staffer interjections
-    - Dim-lit limbo fostering raw strategic fire
-    global_id: ger_location_3d4b26f1de82
-  - location_uuid: ger_location_0d29bb24e4a4
-    description_of_involvement: Capped in Bruno's trio as Ohio's razor-edge where
-      factories and farms awaited voter fury from delayed tobacco hammer; premature
-      blunder leaves it cold, teetering Bartlet's bid.
-    observed_atmosphere: Untapped wrath under merciless glare
-    functional_role: Exemplar of electoral self-sabotage
-    symbolic_significance: Election slipping into enemy hands
-    access_restrictions: ''
-    key_environmental_details:
-    - Midnight phone banks silent
-    - Farm town revolts evaporated
-    global_id: ger_location_0d29bb24e4a4
-  - location_uuid: ger_location_45cc544f0e34
-    description_of_involvement: Bruno details Kalmbach's Route Nine vulnerability—tech
-      boom and anti-smoking suburbs primed for assault, now stranded by leak; pulses
-      as evaporated ally bloc in swing-state shadows.
-    observed_atmosphere: Economic boom laced with political peril
-    functional_role: Key to GOP representative's weakness
-    symbolic_significance: Stranded electoral promise
-    access_restrictions: ''
-    key_environmental_details:
-    - Affluent suburban voters
-    - Clean industry influx
-    global_id: ger_location_45cc544f0e34
   - location_uuid: ger_location_2a1a15363640
     description_of_involvement: Bruno spotlights Michigan's swing-state potency for
       garroting GOP via tobacco, now nullified by Josh's haste; merges with prior
@@ -6466,275 +6745,6 @@ events:
     - Voter tides in factory din
     - Precinct teetering on fallout
     global_id: ger_location_0a02b8200293
-  organization_involvements:
-  - organization_uuid: ger_organization_e7a9e4ecbb31
-    description_of_involvement: Josh invokes two-year legislative director stint in
-      House as credential buttressing his release; contextualizes his congressional
-      instincts now clashing with Bruno's campaign calculus.
-    active_representation: Via Josh's prior professional experience
-    power_dynamics: Source of Josh's tactical confidence challenged externally
-    organizational_goals:
-    - Navigate committee gauntlets for bills
-    - Forge whips in partisan marathons
-    influence_mechanisms:
-    - Procedural knife-fights
-    - Floor vote infernos
-    institutional_impact: Underscores legislative scars fueling re-election hubris
-    internal_dynamics: Partisan ambushes claiming scalps
-    global_id: ger_organization_e7a9e4ecbb31
-  - organization_uuid: ger_organization_5278bcf2674a
-    description_of_involvement: Cast as antagonists via nominees (Kalmbach, Leder
-      et al.) ripe for 'nicotine pusher' nooses; Bruno's vision of fall savagery choked
-      by Josh's leak, amplifying GOP donor vulnerabilities.
-    active_representation: Through vulnerable congressional and nominee figures
-    power_dynamics: Targeted for Democratic electoral strangling
-    organizational_goals:
-    - Shield tobacco donors
-    - Secure swing-state momentum
-    influence_mechanisms:
-    - Industry bonds
-    - Partisan accusations of arrogance
-    institutional_impact: Exposes Republican piñata status in scandal loops
-    internal_dynamics: Nominee selection tensions
-    global_id: ger_organization_5278bcf2674a
-  - organization_uuid: ger_organization_b7fd4a8ac7ff
-    description_of_involvement: Bolsters Josh's defense with two years as floor director
-      commanding Senate scrums; Bruno implicitly audits this mastery as inadequate
-      for re-election's brutal timing.
-    active_representation: Through Josh's cited tenure and instincts
-    power_dynamics: Past power base validating then undermined
-    organizational_goals:
-    - Whip votes in procedural wars
-    - Control midnight agendas
-    influence_mechanisms:
-    - Floor mastery
-    - Agenda scrums
-    institutional_impact: Highlights transition from legislative to campaign fault
-      lines
-    internal_dynamics: Relentless vote battles
-    global_id: ger_organization_b7fd4a8ac7ff
-  - organization_uuid: ger_organization_45ebe7cbd593
-    description_of_involvement: Epicenter of conflict as subcommittee whose budget
-      Josh targeted via releases; Bruno frames it as mishandled flashpoint for squeezing
-      funds and headlines against tobacco defenders like Kalmbach.
-    active_representation: Through referenced press releases and partisan vote
-    power_dynamics: Being weaponized then neutralized by White House misfire
-    organizational_goals:
-    - Block White House tobacco lawsuit funding
-    - Protect industry donors via 8-7 partisan hold
-    influence_mechanisms:
-    - Budgetary gridlock
-    - Partisan voting blocs
-    institutional_impact: Starves anti-tobacco momentum amid swing-state plays
-    internal_dynamics: ''
-    global_id: ger_organization_45ebe7cbd593
-  derived_from_beat_uuids: *id016
-  source_season: 3
-  source_database: westwing.s03
-- fabula_uuid: cand_evt_scene_71def2d7ed84a0ba_2
-  global_id: null
-  title: Bruno Exposes Josh's Costly Tobacco Timing Blunder
-  description: 'In the aftermath of a fractious strategy meeting, Bruno pulls Josh
-    into the hallway en route to his office, bluntly confronting him for prematurely
-    sending tobacco subcommittee press releases. Josh defends the move for gaining
-    money and press against vulnerable Rep. Kalmbach, but Bruno dismantles it: the
-    early leak squandered leverage in swing states like Pennsylvania, Michigan, and
-    Ohio, where timely attacks could have hanged the issue around GOP necks during
-    fall campaigning. This surgical rebuke erodes Josh''s confidence, amplifies staff
-    fractures, and underscores Bruno''s win-at-all-costs dominance, positioning the
-    blunder as a pivotal self-inflicted wound threatening re-election unity.'
-  episode_uuid: ep_sea_ser_the_west_wing_s03_e02
-  scene_sequence: 22
-  sequence_in_scene: 34
-  key_dialogue: *id015
-  is_flashback: true
-  location_uuid: ger_location_0a02b8200293
-  theme_uuids: []
-  arc_uuids: []
-  participations:
-  - character_uuid: ger_agent_99b4244bf9a3
-    emotional_state: Controlled frustration laced with tactical superiority
-    goals:
-    - Correct Josh's tactical error to safeguard re-election strategy
-    - Assert dominance and educate staff on optimal timing for political attacks
-    what_happened: Intercepts Josh post-meeting in hallway, initiates blunt confrontation
-      on press releases with authoritative dissection of strategic flaws, walks to
-      Josh's office, delivers surgical rebuke citing swing states and GOP vulnerabilities,
-      then exits leaving Josh to ponder.
-    observed_status: Intercepts Josh post-meeting in hallway, initiates blunt confrontation
-      on press releases with authoritative dissection of strategic flaws, walks to
-      Josh's office, delivers surgical rebuke citing swing states and GOP vulnerabilities,
-      then exits leaving Josh to ponder.
-    beliefs:
-    - Premature actions forfeit irreplaceable leverage in swing states
-    - Campaign success demands ruthless timing over impulsive wins
-    observed_traits:
-    - pragmatic
-    - incisive
-    - dominant
-    - patronizingly supportive
-    importance: primary
-    global_id: ger_agent_99b4244bf9a3
-  - character_uuid: ger_agent_a96064ff3873
-    emotional_state: apprehensive
-    goals: []
-    what_happened: Present in the strategy meeting, looks apprehensively at Doug alongside
-      Toby.
-    observed_status: Present in the strategy meeting, looks apprehensively at Doug
-      alongside Toby.
-    beliefs: []
-    observed_traits: []
-    importance: minor
-    global_id: ger_agent_a96064ff3873
-  - character_uuid: ger_agent_c9d41ae93618
-    emotional_state: Defensive bravado cracking into humbled doubt
-    goals:
-    - Justify his tobacco gambit as savvy leverage for funds and press
-    - Uphold personal credentials against Bruno's critique
-    what_happened: Walks out with Bruno post-meeting, feigns ignorance then admits
-      sending releases, defends vehemently citing congressional experience and Kalmbach
-      targeting, pauses to sign document, sits in office absorbing rebuke, left pondering
-      its weight.
-    observed_status: Walks out with Bruno post-meeting, feigns ignorance then admits
-      sending releases, defends vehemently citing congressional experience and Kalmbach
-      targeting, pauses to sign document, sits in office absorbing rebuke, left pondering
-      its weight.
-    beliefs:
-    - Immediate action on vulnerabilities like Kalmbach yields quick wins
-    - Legislative tenure equips him to outmaneuver campaign outsiders
-    observed_traits:
-    - defensive
-    - combative
-    - experienced but arrogant
-    - reflective
-    importance: primary
-    global_id: ger_agent_c9d41ae93618
-  - character_uuid: ger_agent_ce2bfab1b21b
-    emotional_state: N/A (mentioned)
-    goals: []
-    what_happened: Cited in Bruno's litany of GOP targets—Steve as nicotine pusher
-      whose nomination path evaporates leverage from Josh's hasty release.
-    observed_status: Cited in Bruno's litany of GOP targets—Steve as nicotine pusher
-      whose nomination path evaporates leverage from Josh's hasty release.
-    beliefs: []
-    observed_traits: []
-    importance: primary
-    global_id: ger_agent_ce2bfab1b21b
-  - character_uuid: ger_agent_7854a70e34ea
-    emotional_state: annoyed
-    goals:
-    - Oppose push for re-election announcement and public apology
-    what_happened: Argues repeatedly against holding an announcement event, defends
-      the President, responds sarcastically to Doug's taunt about arrogance and apology.
-    observed_status: Argues repeatedly against holding an announcement event, defends
-      the President, responds sarcastically to Doug's taunt about arrogance and apology.
-    beliefs: []
-    observed_traits: []
-    importance: secondary
-    global_id: ger_agent_7854a70e34ea
-  - character_uuid: ger_agent_64b2a2c10c8f
-    emotional_state: ''
-    goals: []
-    what_happened: Mentioned alongside others as potential GOP nominees who could
-      be targeted with tobacco issue.
-    observed_status: Mentioned alongside others as potential GOP nominees who could
-      be targeted with tobacco issue.
-    beliefs: []
-    observed_traits: []
-    importance: minor
-    global_id: ger_agent_64b2a2c10c8f
-  - character_uuid: ger_agent_6660f4a320e4
-    emotional_state: N/A (mentioned)
-    goals: []
-    what_happened: Referenced extensively as prime target—vulnerable Rep. whose tobacco
-      ties and Route Nine constituency make him ripe for attack, but Josh's leak robbed
-      optimal timing.
-    observed_status: Referenced extensively as prime target—vulnerable Rep. whose
-      tobacco ties and Route Nine constituency make him ripe for attack, but Josh's
-      leak robbed optimal timing.
-    beliefs: []
-    observed_traits: []
-    importance: primary
-    global_id: ger_agent_6660f4a320e4
-  - character_uuid: ger_agent_716802c810ea
-    emotional_state: smug
-    goals:
-    - Advocate for declaration and apology strategy
-    what_happened: Pushes for the President to formally announce re-election and apologize
-      for the MS cover-up, taunts the staff about arrogance.
-    observed_status: Pushes for the President to formally announce re-election and
-      apologize for the MS cover-up, taunts the staff about arrogance.
-    beliefs: []
-    observed_traits: []
-    importance: secondary
-    global_id: ger_agent_716802c810ea
-  - character_uuid: ger_agent_b29870aa3178
-    emotional_state: ''
-    goals: []
-    what_happened: Present with Joey in the strategy meeting.
-    observed_status: Present with Joey in the strategy meeting.
-    beliefs: []
-    observed_traits: []
-    importance: minor
-    global_id: ger_agent_b29870aa3178
-  - character_uuid: ger_agent_2f6b308fdd18
-    emotional_state: N/A (mentioned)
-    goals: []
-    what_happened: Invoked by Bruno as potential GOP nominee whose neck could bear
-      the 'nicotine pusher' label in fall assaults, symbolizing squandered swing-state
-      kills.
-    observed_status: Invoked by Bruno as potential GOP nominee whose neck could bear
-      the 'nicotine pusher' label in fall assaults, symbolizing squandered swing-state
-      kills.
-    beliefs: []
-    observed_traits: []
-    importance: primary
-    global_id: ger_agent_2f6b308fdd18
-  - character_uuid: ger_agent_d9485e458a86
-    emotional_state: N/A (mentioned)
-    goals: []
-    what_happened: Named alongside GOP prospects as nominee vulnerable to well-timed
-      tobacco hanging, highlighting Josh's blunder in lost electoral nooses.
-    observed_status: Named alongside GOP prospects as nominee vulnerable to well-timed
-      tobacco hanging, highlighting Josh's blunder in lost electoral nooses.
-    beliefs: []
-    observed_traits: []
-    importance: primary
-    global_id: ger_agent_d9485e458a86
-  object_involvements:
-  - object_uuid: ger_object_f9b5045dc5fa
-    description_of_involvement: Central to confrontation as Josh's prematurely dispatched
-      volleys against Tobacco Subcommittee; Bruno wields them as proof of stupidity,
-      dissecting how their early release vaporized fall leverage against Kalmbach
-      and GOP, turning tactical tool into self-inflicted wound amplifying re-election
-      rifts.
-    status_before_event: Dispatched and public, alerting targets prematurely
-    status_after_event: Recontextualized as squandered ammunition, haunting Josh's
-      reflection
-    global_id: ger_object_f9b5045dc5fa
-  - object_uuid: ger_object_738cc709ec22
-    description_of_involvement: Briefly interrupts hallway clash when staffer thrusts
-      it at Josh for signature; he halts, slashes pen across it amid Bruno's assault,
-      embodying White House frenzy snaring focus from strategic dressing-down to administrative
-      drudgery.
-    status_before_event: Handed unsigned by staffer in hallway
-    status_after_event: Signed and returned, crinkled in Josh's brief grip
-    global_id: ger_object_738cc709ec22
-  location_involvements:
-  - location_uuid: ger_location_3d4b26f1de82
-    description_of_involvement: Serves as tense conduit where Bruno pulls Josh post-meeting
-      for initial ambush on press blunder; echoing stretch amplifies verbal sparring,
-      building to office climax amid swirling staff, underscoring vulnerability in
-      this power artery of fractured alliances.
-    observed_atmosphere: Charged with urgent confrontation and interrupted momentum
-    functional_role: Pathway for private tactical evisceration
-    symbolic_significance: Liminal space exposing staff fault lines under outsider
-      scrutiny
-    access_restrictions: Open to senior staff and consultants
-    key_environmental_details:
-    - Hurried footsteps and staffer interjections
-    - Dim-lit limbo fostering raw strategic fire
-    global_id: ger_location_3d4b26f1de82
   - location_uuid: ger_location_0d29bb24e4a4
     description_of_involvement: Capped in Bruno's trio as Ohio's razor-edge where
       factories and farms awaited voter fury from delayed tobacco hammer; premature
@@ -6759,30 +6769,20 @@ events:
     - Affluent suburban voters
     - Clean industry influx
     global_id: ger_location_45cc544f0e34
-  - location_uuid: ger_location_2a1a15363640
-    description_of_involvement: Bruno spotlights Michigan's swing-state potency for
-      garroting GOP via tobacco, now nullified by Josh's haste; merges with prior
-      poll woes, propelling MS-scarred critique.
-    observed_atmosphere: Razor-sharp battleground tension
-    functional_role: Illustrative lost opportunity
-    symbolic_significance: Phantom revolt in heartland
-    access_restrictions: ''
+  - location_uuid: ger_location_3303871a0689
+    description_of_involvement: Serves as tense conduit where Bruno pulls Josh post-meeting
+      for initial ambush on press blunder; echoing stretch amplifies verbal sparring,
+      building to office climax amid swirling staff, underscoring vulnerability in
+      this power artery of fractured alliances.
+    observed_atmosphere: Charged with urgent confrontation and interrupted momentum
+    functional_role: Pathway for private tactical evisceration
+    symbolic_significance: Liminal space exposing staff fault lines under outsider
+      scrutiny
+    access_restrictions: Open to senior staff and consultants
     key_environmental_details:
-    - Rain-slicked pollster echoes
-    - Factory battlegrounds
-    global_id: ger_location_2a1a15363640
-  - location_uuid: ger_location_0a02b8200293
-    description_of_involvement: Invoked by Bruno as swing-state jugular where timed
-      tobacco assaults could flip GOP incumbents; Josh's leak evaporates this factory-suburban
-      battleground's potential, throbbing in rebuke as lost election-maker.
-    observed_atmosphere: Electoral ferocity evoked through strategic calculus
-    functional_role: Strategic battleground in debate
-    symbolic_significance: Represents squandered Democratic leverage
-    access_restrictions: ''
-    key_environmental_details:
-    - Voter tides in factory din
-    - Precinct teetering on fallout
-    global_id: ger_location_0a02b8200293
+    - Hurried footsteps and staffer interjections
+    - Dim-lit limbo fostering raw strategic fire
+    global_id: ger_location_3303871a0689
   organization_involvements:
   - organization_uuid: ger_organization_e7a9e4ecbb31
     description_of_involvement: Josh invokes two-year legislative director stint in
@@ -6955,14 +6955,14 @@ events:
     importance: primary
     global_id: ger_agent_dd62525d972a
   object_involvements:
-  - object_uuid: ger_object_3aff7eb6fe2f
+  - object_uuid: ger_object_07021da38e0b
     description_of_involvement: Limos drive up to the high school exterior under night
       cover, disgorging Bartlet and Charlie into the scene, their arrival catalyzing
       the surprise encounter with Abbey rehearsing nearby; functionally transports
       the president, narratively frames the intimate thaw against campaign machinery.
     status_before_event: En route to Columbia High School, pulling up outside.
     status_after_event: Parked at the school exterior, post-disembarkation.
-    global_id: ger_object_3aff7eb6fe2f
+    global_id: ger_object_07021da38e0b
   location_involvements:
   - location_uuid: ger_location_171ffe712479
     description_of_involvement: Exterior at night hosts limos' arrival and Abbey's
@@ -7216,7 +7216,7 @@ events:
   - 'TOBY: "I went crazy. I whaled on him in the Oval Office."'
   - 'SAM: "None of us had the chance to do that."'
   is_flashback: false
-  location_uuid: ger_location_3d4b26f1de82
+  location_uuid: ger_location_3303871a0689
   theme_uuids: []
   arc_uuids: []
   participations:
@@ -7281,7 +7281,7 @@ events:
     global_id: ger_agent_7854a70e34ea
   object_involvements: []
   location_involvements:
-  - location_uuid: ger_location_3d4b26f1de82
+  - location_uuid: ger_location_3303871a0689
     description_of_involvement: The West Wing hallway serves as the tense extension
       of their clash, where Sam follows Toby from the office, continuing the raw dialogue
       on betrayal before Toby walks away, symbolizing the path of unresolved tension
@@ -7294,7 +7294,7 @@ events:
     key_environmental_details:
     - Late-night quiet amplifying voices
     - Narrow confines forcing proximity during rift
-    global_id: ger_location_3d4b26f1de82
+    global_id: ger_location_3303871a0689
   organization_involvements: []
   derived_from_beat_uuids:
   - beat_491d7fdb40fe43f3
@@ -8265,7 +8265,7 @@ events:
       momentum.
     internal_dynamics: ''
     global_id: ger_organization_09ab0f33dba1
-  - organization_uuid: ger_organization_e89f085bf2d7
+  - organization_uuid: ger_organization_097bbd620a18
     description_of_involvement: Doug measures staff resentment as surpassing party's
       chill toward Bartlet's lie, framing Democratic Party as milder critic in succession
       whispers; reference galvanizes consultants' urgency, forging win-at-costs unity
@@ -8281,7 +8281,7 @@ events:
     - Party loyalty tested by scandal fallout
     institutional_impact: Reflects broader fractures where pragmatism supplants purity.
     internal_dynamics: Panic-driven successor talks amid deception doubts.
-    global_id: ger_organization_e89f085bf2d7
+    global_id: ger_organization_097bbd620a18
   derived_from_beat_uuids:
   - beat_d36907012a68c7c5
   - beat_aaba7eaaeaf1f587
@@ -8355,7 +8355,7 @@ events:
     - composed under pressure
     importance: primary
     global_id: ger_agent_dd62525d972a
-  - character_uuid: ger_agent_64b2a2c10c8f
+  - character_uuid: ger_agent_14f85d554756
     emotional_state: Responsive determination amid the whirlwind of preparations
     goals:
     - Quickly locate and retrieve Josh as directed
@@ -8374,7 +8374,26 @@ events:
     - loyal
     - efficient
     importance: primary
-    global_id: ger_agent_64b2a2c10c8f
+    global_id: ger_agent_14f85d554756
+  - character_uuid: ger_agent_5b4308511087
+    emotional_state: Implied operational readiness from afar
+    goals:
+    - Secure early positioning at the destination
+    - Facilitate smooth campaign rollout
+    what_happened: Whitley is referenced by Leo as having departed early in the first
+      van and already arrived ahead, underscoring his advance role without physical
+      presence in the room.
+    observed_status: Whitley is referenced by Leo as having departed early in the
+      first van and already arrived ahead, underscoring his advance role without physical
+      presence in the room.
+    beliefs:
+    - Vanguard positioning gains tactical advantage
+    - Punctuality anchors logistical success
+    observed_traits:
+    - reliable
+    - proactive
+    importance: primary
+    global_id: ger_agent_5b4308511087
   - character_uuid: ger_agent_ec6db6090d5a
     emotional_state: Engaged attentiveness under Leo's authoritative oversight
     goals:
@@ -8395,25 +8414,6 @@ events:
     - focused
     importance: primary
     global_id: ger_agent_ec6db6090d5a
-  - character_uuid: ger_agent_5b4308511087
-    emotional_state: Implied operational readiness from afar
-    goals:
-    - Secure early positioning at the destination
-    - Facilitate smooth campaign rollout
-    what_happened: Whitley is referenced by Leo as having departed early in the first
-      van and already arrived ahead, underscoring his advance role without physical
-      presence in the room.
-    observed_status: Whitley is referenced by Leo as having departed early in the
-      first van and already arrived ahead, underscoring his advance role without physical
-      presence in the room.
-    beliefs:
-    - Vanguard positioning gains tactical advantage
-    - Punctuality anchors logistical success
-    observed_traits:
-    - reliable
-    - proactive
-    importance: primary
-    global_id: ger_agent_5b4308511087
   object_involvements:
   - object_uuid: ger_object_f2bbcd2812b0
     description_of_involvement: Visible through the window parked across from the
@@ -8521,7 +8521,7 @@ events:
     observed_traits: []
     importance: secondary
     global_id: ger_agent_198649bce78f
-  - character_uuid: ger_agent_64b2a2c10c8f
+  - character_uuid: ger_agent_14f85d554756
     emotional_state: Concerned worry masking frustration at his inertia and breakdown
     goals:
     - Get Josh prepared and downstairs for the campaign schedule
@@ -8541,7 +8541,7 @@ events:
     - empathetic
     - composed
     importance: primary
-    global_id: ger_agent_64b2a2c10c8f
+    global_id: ger_agent_14f85d554756
   object_involvements:
   - object_uuid: ger_object_19fd71ea3907
     description_of_involvement: RU-486 serves as the explosive catalyst for Josh's
@@ -8589,7 +8589,7 @@ events:
     - Harsh overhead lights clashing with daylight through curtains
     - Strewn papers, unmade bed, littered candy wrappers
     global_id: ger_location_6f84c20e6e4e
-  - location_uuid: ger_location_9683a885e276
+  - location_uuid: ger_location_dd3228868fe8
     description_of_involvement: The bathroom thresholds the climax as Josh smacks
       its doorframe in rage then shuffles inside, slamming the door for scalding shower
       isolation—serving as refuge veiling his unraveling from Donna's gaze in solitary
@@ -8601,7 +8601,7 @@ events:
     key_environmental_details:
     - Wooden doorframe shuddering from impact
     - Door slammed shut behind retreating figure
-    global_id: ger_location_9683a885e276
+    global_id: ger_location_dd3228868fe8
   organization_involvements:
   - organization_uuid: ger_organization_09ab0f33dba1
     description_of_involvement: The White House press corps haunts as adversarial
@@ -8658,7 +8658,7 @@ events:
   sequence_in_scene: 43
   key_dialogue: *id019
   is_flashback: false
-  location_uuid: ger_location_9683a885e276
+  location_uuid: ger_location_dd3228868fe8
   theme_uuids: []
   arc_uuids:
   - ger_conflictarc_7740c99fc022
@@ -8697,7 +8697,7 @@ events:
     observed_traits: []
     importance: secondary
     global_id: ger_agent_198649bce78f
-  - character_uuid: ger_agent_64b2a2c10c8f
+  - character_uuid: ger_agent_14f85d554756
     emotional_state: Concerned worry masking frustration at his inertia and breakdown
     goals:
     - Get Josh prepared and downstairs for the campaign schedule
@@ -8717,7 +8717,7 @@ events:
     - empathetic
     - composed
     importance: primary
-    global_id: ger_agent_64b2a2c10c8f
+    global_id: ger_agent_14f85d554756
   object_involvements:
   - object_uuid: ger_object_19fd71ea3907
     description_of_involvement: RU-486 serves as the explosive catalyst for Josh's
@@ -8765,7 +8765,7 @@ events:
     - Harsh overhead lights clashing with daylight through curtains
     - Strewn papers, unmade bed, littered candy wrappers
     global_id: ger_location_6f84c20e6e4e
-  - location_uuid: ger_location_9683a885e276
+  - location_uuid: ger_location_dd3228868fe8
     description_of_involvement: The bathroom thresholds the climax as Josh smacks
       its doorframe in rage then shuffles inside, slamming the door for scalding shower
       isolation—serving as refuge veiling his unraveling from Donna's gaze in solitary
@@ -8777,7 +8777,7 @@ events:
     key_environmental_details:
     - Wooden doorframe shuddering from impact
     - Door slammed shut behind retreating figure
-    global_id: ger_location_9683a885e276
+    global_id: ger_location_dd3228868fe8
   organization_involvements:
   - organization_uuid: ger_organization_09ab0f33dba1
     description_of_involvement: The White House press corps haunts as adversarial
@@ -9351,6 +9351,23 @@ events:
     - defensive
     importance: primary
     global_id: ger_agent_04bbccb1e352
+  - character_uuid: ger_agent_712491b1f672
+    emotional_state: Taut operational focus
+    goals:
+    - Secure rally venue pre-arrival
+    - Shield principals from threats
+    what_happened: Make last-minute onstage preparations in hallway as band plays
+      and crowd cheers, ensuring security for presidential arrival.
+    observed_status: Make last-minute onstage preparations in hallway as band plays
+      and crowd cheers, ensuring security for presidential arrival.
+    beliefs:
+    - Protocol averts risks
+    - Preparation guarantees safety
+    observed_traits:
+    - precise
+    - vigilant
+    importance: primary
+    global_id: ger_agent_712491b1f672
   - character_uuid: ger_agent_7854a70e34ea
     emotional_state: Weary impatience transforming to steely affirmation
     goals:
@@ -9371,7 +9388,7 @@ events:
     - loyal
     importance: primary
     global_id: ger_agent_7854a70e34ea
-  - character_uuid: ger_agent_64b2a2c10c8f
+  - character_uuid: ger_agent_14f85d554756
     emotional_state: Quiet neutral support
     goals:
     - Observe and assist Josh
@@ -9387,7 +9404,7 @@ events:
     - observant
     - solidarity
     importance: primary
-    global_id: ger_agent_64b2a2c10c8f
+    global_id: ger_agent_14f85d554756
   - character_uuid: ger_agent_716802c810ea
     emotional_state: Frustrated insistence bordering on desperation
     goals:
@@ -9427,31 +9444,7 @@ events:
     - deferential
     importance: primary
     global_id: ger_agent_ec6db6090d5a
-  - character_uuid: ger_agent_1317d7112ef2
-    emotional_state: Taut operational focus
-    goals:
-    - Secure rally venue pre-arrival
-    - Shield principals from threats
-    what_happened: Make last-minute onstage preparations in hallway as band plays
-      and crowd cheers, ensuring security for presidential arrival.
-    observed_status: Make last-minute onstage preparations in hallway as band plays
-      and crowd cheers, ensuring security for presidential arrival.
-    beliefs:
-    - Protocol averts risks
-    - Preparation guarantees safety
-    observed_traits:
-    - precise
-    - vigilant
-    importance: primary
-    global_id: ger_agent_1317d7112ef2
   object_involvements:
-  - object_uuid: ger_object_d55f34509047
-    description_of_involvement: Josh sips from it mid-pacing before stating 'Torpor',
-      droplets catching light as brief reprieve in escalating debate, underscoring
-      his restless impatience before Bartlet's intervention shifts room dynamic.
-    status_before_event: Held by Josh during pacing
-    status_after_event: Consumed partially, set aside post-sip
-    global_id: ger_object_d55f34509047
   - object_uuid: ger_object_98a2b828da2e
     description_of_involvement: Bartlet stands next to it upon entry as focal point
       for rebuke, leans casually against its scarred surface while delivering emotional
@@ -9468,6 +9461,13 @@ events:
     status_before_event: Mounted pristine on classroom wall
     status_after_event: Unchanged, looming over resolved tension
     global_id: ger_object_f22012f6e73e
+  - object_uuid: ger_object_32e02e74ffe7
+    description_of_involvement: Josh sips from it mid-pacing before stating 'Torpor',
+      droplets catching light as brief reprieve in escalating debate, underscoring
+      his restless impatience before Bartlet's intervention shifts room dynamic.
+    status_before_event: Held by Josh during pacing
+    status_after_event: Consumed partially, set aside post-sip
+    global_id: ger_object_32e02e74ffe7
   location_involvements:
   - location_uuid: ger_location_7659d665c093
     description_of_involvement: Hijacked high school classroom serves as pressure-cooker
@@ -9500,7 +9500,7 @@ events:
     - Sweat-laced electric air
     global_id: ger_location_72ced30ac5b6
   organization_involvements:
-  - organization_uuid: ger_organization_a02ef5855109
+  - organization_uuid: ger_organization_9aeb11cd4ff1
     description_of_involvement: Secret Service agents execute final onstage sweeps
       and lockdowns in hallway/classroom adjacency, forging secure perimeter amid
       rally energy, enabling Bartlet's safe transition from tense huddle to podium
@@ -9515,7 +9515,7 @@ events:
     - Protocol-driven holds
     institutional_impact: Underpins campaign optics with invisible security net
     internal_dynamics: Taut chain of command in high-threat public event
-    global_id: ger_organization_a02ef5855109
+    global_id: ger_organization_9aeb11cd4ff1
   derived_from_beat_uuids: &id022
   - beat_7b897635470586a2
   - beat_d19919c7533e3691
@@ -9687,6 +9687,23 @@ events:
     - defensive
     importance: primary
     global_id: ger_agent_04bbccb1e352
+  - character_uuid: ger_agent_712491b1f672
+    emotional_state: Taut operational focus
+    goals:
+    - Secure rally venue pre-arrival
+    - Shield principals from threats
+    what_happened: Make last-minute onstage preparations in hallway as band plays
+      and crowd cheers, ensuring security for presidential arrival.
+    observed_status: Make last-minute onstage preparations in hallway as band plays
+      and crowd cheers, ensuring security for presidential arrival.
+    beliefs:
+    - Protocol averts risks
+    - Preparation guarantees safety
+    observed_traits:
+    - precise
+    - vigilant
+    importance: primary
+    global_id: ger_agent_712491b1f672
   - character_uuid: ger_agent_7854a70e34ea
     emotional_state: Weary impatience transforming to steely affirmation
     goals:
@@ -9707,7 +9724,7 @@ events:
     - loyal
     importance: primary
     global_id: ger_agent_7854a70e34ea
-  - character_uuid: ger_agent_64b2a2c10c8f
+  - character_uuid: ger_agent_14f85d554756
     emotional_state: Quiet neutral support
     goals:
     - Observe and assist Josh
@@ -9723,7 +9740,7 @@ events:
     - observant
     - solidarity
     importance: primary
-    global_id: ger_agent_64b2a2c10c8f
+    global_id: ger_agent_14f85d554756
   - character_uuid: ger_agent_716802c810ea
     emotional_state: Frustrated insistence bordering on desperation
     goals:
@@ -9763,31 +9780,7 @@ events:
     - deferential
     importance: primary
     global_id: ger_agent_ec6db6090d5a
-  - character_uuid: ger_agent_1317d7112ef2
-    emotional_state: Taut operational focus
-    goals:
-    - Secure rally venue pre-arrival
-    - Shield principals from threats
-    what_happened: Make last-minute onstage preparations in hallway as band plays
-      and crowd cheers, ensuring security for presidential arrival.
-    observed_status: Make last-minute onstage preparations in hallway as band plays
-      and crowd cheers, ensuring security for presidential arrival.
-    beliefs:
-    - Protocol averts risks
-    - Preparation guarantees safety
-    observed_traits:
-    - precise
-    - vigilant
-    importance: primary
-    global_id: ger_agent_1317d7112ef2
   object_involvements:
-  - object_uuid: ger_object_d55f34509047
-    description_of_involvement: Josh sips from it mid-pacing before stating 'Torpor',
-      droplets catching light as brief reprieve in escalating debate, underscoring
-      his restless impatience before Bartlet's intervention shifts room dynamic.
-    status_before_event: Held by Josh during pacing
-    status_after_event: Consumed partially, set aside post-sip
-    global_id: ger_object_d55f34509047
   - object_uuid: ger_object_98a2b828da2e
     description_of_involvement: Bartlet stands next to it upon entry as focal point
       for rebuke, leans casually against its scarred surface while delivering emotional
@@ -9804,6 +9797,13 @@ events:
     status_before_event: Mounted pristine on classroom wall
     status_after_event: Unchanged, looming over resolved tension
     global_id: ger_object_f22012f6e73e
+  - object_uuid: ger_object_32e02e74ffe7
+    description_of_involvement: Josh sips from it mid-pacing before stating 'Torpor',
+      droplets catching light as brief reprieve in escalating debate, underscoring
+      his restless impatience before Bartlet's intervention shifts room dynamic.
+    status_before_event: Held by Josh during pacing
+    status_after_event: Consumed partially, set aside post-sip
+    global_id: ger_object_32e02e74ffe7
   location_involvements:
   - location_uuid: ger_location_7659d665c093
     description_of_involvement: Hijacked high school classroom serves as pressure-cooker
@@ -9836,7 +9836,7 @@ events:
     - Sweat-laced electric air
     global_id: ger_location_72ced30ac5b6
   organization_involvements:
-  - organization_uuid: ger_organization_a02ef5855109
+  - organization_uuid: ger_organization_9aeb11cd4ff1
     description_of_involvement: Secret Service agents execute final onstage sweeps
       and lockdowns in hallway/classroom adjacency, forging secure perimeter amid
       rally energy, enabling Bartlet's safe transition from tense huddle to podium
@@ -9851,7 +9851,7 @@ events:
     - Protocol-driven holds
     institutional_impact: Underpins campaign optics with invisible security net
     internal_dynamics: Taut chain of command in high-threat public event
-    global_id: ger_organization_a02ef5855109
+    global_id: ger_organization_9aeb11cd4ff1
   derived_from_beat_uuids: *id022
   source_season: 3
   source_database: westwing.s03
@@ -10055,7 +10055,7 @@ events:
     - loyal
     importance: primary
     global_id: ger_agent_7854a70e34ea
-  - character_uuid: ger_agent_64b2a2c10c8f
+  - character_uuid: ger_agent_14f85d554756
     emotional_state: Observant quiet solidarity
     goals:
     - Monitor team dynamics closely
@@ -10072,7 +10072,7 @@ events:
     - supportive
     - reserved
     importance: primary
-    global_id: ger_agent_64b2a2c10c8f
+    global_id: ger_agent_14f85d554756
   - character_uuid: ger_agent_716802c810ea
     emotional_state: Exasperated defensiveness under mounting impatience
     goals:
@@ -10159,7 +10159,7 @@ events:
     - Podium center stage
     global_id: ger_location_72ced30ac5b6
   organization_involvements:
-  - organization_uuid: ger_organization_a02ef5855109
+  - organization_uuid: ger_organization_9aeb11cd4ff1
     description_of_involvement: Secret Service agents finalize onstage preparations
       in hallway adjacent to classroom during staff debate/apology, ensuring airtight
       security as Bartlet transitions to podium kiss/wave and staff emergence amid
@@ -10174,7 +10174,7 @@ events:
     - Protocol-driven timing
     institutional_impact: Underpins campaign continuity amid political fractures
     internal_dynamics: ''
-    global_id: ger_organization_a02ef5855109
+    global_id: ger_organization_9aeb11cd4ff1
   derived_from_beat_uuids: &id024
   - beat_602dadde74d1e602
   - beat_13d46c8353c2125b
@@ -10373,7 +10373,7 @@ events:
     - loyal
     importance: primary
     global_id: ger_agent_7854a70e34ea
-  - character_uuid: ger_agent_64b2a2c10c8f
+  - character_uuid: ger_agent_14f85d554756
     emotional_state: Observant quiet solidarity
     goals:
     - Monitor team dynamics closely
@@ -10390,7 +10390,7 @@ events:
     - supportive
     - reserved
     importance: primary
-    global_id: ger_agent_64b2a2c10c8f
+    global_id: ger_agent_14f85d554756
   - character_uuid: ger_agent_716802c810ea
     emotional_state: Exasperated defensiveness under mounting impatience
     goals:
@@ -10477,7 +10477,7 @@ events:
     - Podium center stage
     global_id: ger_location_72ced30ac5b6
   organization_involvements:
-  - organization_uuid: ger_organization_a02ef5855109
+  - organization_uuid: ger_organization_9aeb11cd4ff1
     description_of_involvement: Secret Service agents finalize onstage preparations
       in hallway adjacent to classroom during staff debate/apology, ensuring airtight
       security as Bartlet transitions to podium kiss/wave and staff emergence amid
@@ -10492,7 +10492,7 @@ events:
     - Protocol-driven timing
     institutional_impact: Underpins campaign continuity amid political fractures
     internal_dynamics: ''
-    global_id: ger_organization_a02ef5855109
+    global_id: ger_organization_9aeb11cd4ff1
   derived_from_beat_uuids: *id024
   source_season: 3
   source_database: westwing.s03
@@ -10676,7 +10676,7 @@ events:
     - steadfast
     importance: primary
     global_id: ger_agent_7854a70e34ea
-  - character_uuid: ger_agent_64b2a2c10c8f
+  - character_uuid: ger_agent_14f85d554756
     emotional_state: Quiet optimism rising from prior chaos
     goals:
     - Support unity without stealing focus
@@ -10694,7 +10694,7 @@ events:
     - solidarity-driven
     - reliable
     importance: primary
-    global_id: ger_agent_64b2a2c10c8f
+    global_id: ger_agent_14f85d554756
   - character_uuid: ger_agent_716802c810ea
     emotional_state: exasperated
     goals:
@@ -10762,7 +10762,7 @@ events:
     - Podium-lit spot under gymnasium lights
     global_id: ger_location_72ced30ac5b6
   organization_involvements:
-  - organization_uuid: ger_organization_a02ef5855109
+  - organization_uuid: ger_organization_9aeb11cd4ff1
     description_of_involvement: Secret Service ensures airtight stage security during
       Bartlet's hallway-to-podium stride and staff emergence, their pre-arrival sweeps
       enabling vulnerability-free unity display amid volatile rally energy, shielding
@@ -10777,7 +10777,7 @@ events:
     - Pre-event sweeps and holds
     institutional_impact: Embodies unyielding shield for democratic spectacle
     internal_dynamics: ''
-    global_id: ger_organization_a02ef5855109
+    global_id: ger_organization_9aeb11cd4ff1
   derived_from_beat_uuids: &id026
   - beat_654bf0fef7d307fc
   - beat_f5925c72cb402869
@@ -10959,7 +10959,7 @@ events:
     - steadfast
     importance: primary
     global_id: ger_agent_7854a70e34ea
-  - character_uuid: ger_agent_64b2a2c10c8f
+  - character_uuid: ger_agent_14f85d554756
     emotional_state: Quiet optimism rising from prior chaos
     goals:
     - Support unity without stealing focus
@@ -10977,7 +10977,7 @@ events:
     - solidarity-driven
     - reliable
     importance: primary
-    global_id: ger_agent_64b2a2c10c8f
+    global_id: ger_agent_14f85d554756
   - character_uuid: ger_agent_716802c810ea
     emotional_state: exasperated
     goals:
@@ -11045,7 +11045,7 @@ events:
     - Podium-lit spot under gymnasium lights
     global_id: ger_location_72ced30ac5b6
   organization_involvements:
-  - organization_uuid: ger_organization_a02ef5855109
+  - organization_uuid: ger_organization_9aeb11cd4ff1
     description_of_involvement: Secret Service ensures airtight stage security during
       Bartlet's hallway-to-podium stride and staff emergence, their pre-arrival sweeps
       enabling vulnerability-free unity display amid volatile rally energy, shielding
@@ -11060,7 +11060,7 @@ events:
     - Pre-event sweeps and holds
     institutional_impact: Embodies unyielding shield for democratic spectacle
     internal_dynamics: ''
-    global_id: ger_organization_a02ef5855109
+    global_id: ger_organization_9aeb11cd4ff1
   derived_from_beat_uuids: *id026
   source_season: 3
   source_database: westwing.s03

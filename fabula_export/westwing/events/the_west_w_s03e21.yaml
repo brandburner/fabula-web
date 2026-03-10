@@ -1,5 +1,5 @@
 # Events for Posse Comitatus
-# Generated: 2026-02-10T12:17:32.953328
+# Generated: 2026-02-22T16:33:30.028717
 
 episode_uuid: ep_sea_ser_the_west_wing_s03_e21
 episode_title: Posse Comitatus
@@ -117,7 +117,7 @@ events:
     - uncompromising
     importance: primary
     global_id: ger_agent_9eb77e9bc5ec
-  - character_uuid: ger_agent_25c1a764833f
+  - character_uuid: ger_agent_529d5f3497fe
     emotional_state: ''
     goals:
     - inform about congressional notification requirements
@@ -131,28 +131,10 @@ events:
     beliefs: []
     observed_traits: []
     importance: secondary
-    global_id: ger_agent_25c1a764833f
+    global_id: ger_agent_529d5f3497fe
   object_involvements: []
   location_involvements: []
   organization_involvements:
-  - organization_uuid: ger_organization_d033a1b32d4f
-    description_of_involvement: The White House emerges as hypothetical canceller
-      of the Shareef meeting in Fitzwallace's calculus—last-minute axing would spike
-      paranoia—positioning it as unwitting risk vector in Pentagon's scheme, with
-      Leo embodying its protective instincts against self-inflicted exposure.
-    active_representation: Through Leo McGarry's advocacy and referenced cancellation
-      protocols
-    power_dynamics: Subordinate to Pentagon ops in this tactical debate, challenging
-      military non-interference
-    organizational_goals:
-    - Protect Presidential safety and emotional barriers
-    - Scrutinize military scheduling encroachments
-    influence_mechanisms:
-    - Chief of Staff oversight on executive calendar
-    - Moral and personal appeals to operational leaders
-    institutional_impact: Exposes executive vulnerability to allied military maneuvers
-    internal_dynamics: 'null'
-    global_id: ger_organization_d033a1b32d4f
   - organization_uuid: ger_organization_82ca779ef585
     description_of_involvement: The Joint Chiefs of Staff form a silent, imposing
       backdrop in the Situation Room, settled alongside Leo and intel personnel awaiting
@@ -171,6 +153,24 @@ events:
       realpolitik
     internal_dynamics: ''
     global_id: ger_organization_82ca779ef585
+  - organization_uuid: ger_organization_bb39d5dd403d
+    description_of_involvement: The White House emerges as hypothetical canceller
+      of the Shareef meeting in Fitzwallace's calculus—last-minute axing would spike
+      paranoia—positioning it as unwitting risk vector in Pentagon's scheme, with
+      Leo embodying its protective instincts against self-inflicted exposure.
+    active_representation: Through Leo McGarry's advocacy and referenced cancellation
+      protocols
+    power_dynamics: Subordinate to Pentagon ops in this tactical debate, challenging
+      military non-interference
+    organizational_goals:
+    - Protect Presidential safety and emotional barriers
+    - Scrutinize military scheduling encroachments
+    influence_mechanisms:
+    - Chief of Staff oversight on executive calendar
+    - Moral and personal appeals to operational leaders
+    institutional_impact: Exposes executive vulnerability to allied military maneuvers
+    internal_dynamics: 'null'
+    global_id: ger_organization_bb39d5dd403d
   - organization_uuid: ger_organization_19d099a40fb9
     description_of_involvement: The Pentagon stands accused by Leo as the scheduler
       of Bartlet's perilously timed Shareef meeting, with Fitzwallace mounting its
@@ -326,7 +326,7 @@ events:
     - technically precise
     importance: primary
     global_id: ger_agent_9eb77e9bc5ec
-  - character_uuid: ger_agent_25c1a764833f
+  - character_uuid: ger_agent_529d5f3497fe
     emotional_state: Professionally composed amid ethical undercurrents
     goals:
     - Embed recording device via diplomatic gift
@@ -347,8 +347,8 @@ events:
     - tactically opportunistic
     - direct
     importance: primary
-    global_id: ger_agent_25c1a764833f
-  - character_uuid: ger_agent_0c46fe4078a3
+    global_id: ger_agent_529d5f3497fe
+  - character_uuid: ger_agent_e2310869a36b
     emotional_state: Unaware prey in plotters' calculus
     goals:
     - Attend diplomatic summit oblivious (inferred)
@@ -363,7 +363,7 @@ events:
     observed_traits:
     - ruthlessly untouchable (implied)
     importance: primary
-    global_id: ger_agent_0c46fe4078a3
+    global_id: ger_agent_e2310869a36b
   - character_uuid: ger_agent_c8248ecdc4d0
     emotional_state: Neutral operational focus
     goals:
@@ -416,22 +416,6 @@ events:
     - Remote, humid isolation
     global_id: ger_location_66fdaf50f1af
   organization_involvements:
-  - organization_uuid: ger_organization_d033a1b32d4f
-    description_of_involvement: White House frames the covert crucible—Oval meeting
-      site for Shareef gift, Situation Room as decision forge—its schedule preservation
-      (per prior tension) priming the trap, embodying executive isolation in terror
-      calculus.
-    active_representation: As hosting venue and operational hub
-    power_dynamics: Central authority coordinating military input
-    organizational_goals:
-    - Secure presidential buy-in
-    - Compartmentalize lethal intel
-    influence_mechanisms:
-    - Venue control
-    - Staff enforcement
-    institutional_impact: Crystallizes Oval's moral battleground
-    internal_dynamics: Leo-Fitzwallace friction over risks
-    global_id: ger_organization_d033a1b32d4f
   - organization_uuid: ger_organization_82ca779ef585
     description_of_involvement: Joint Chiefs sit entrenched with Leo and intel personnel,
       rising in unison for Bartlet, bolstering Fitzwallace's briefing on non-military
@@ -448,6 +432,22 @@ events:
     institutional_impact: Reinforces military-executive fusion in crisis
     internal_dynamics: ''
     global_id: ger_organization_82ca779ef585
+  - organization_uuid: ger_organization_bb39d5dd403d
+    description_of_involvement: White House frames the covert crucible—Oval meeting
+      site for Shareef gift, Situation Room as decision forge—its schedule preservation
+      (per prior tension) priming the trap, embodying executive isolation in terror
+      calculus.
+    active_representation: As hosting venue and operational hub
+    power_dynamics: Central authority coordinating military input
+    organizational_goals:
+    - Secure presidential buy-in
+    - Compartmentalize lethal intel
+    influence_mechanisms:
+    - Venue control
+    - Staff enforcement
+    institutional_impact: Crystallizes Oval's moral battleground
+    internal_dynamics: Leo-Fitzwallace friction over risks
+    global_id: ger_organization_bb39d5dd403d
   - organization_uuid: ger_organization_19d099a40fb9
     description_of_involvement: Pentagon's scheduling rigidity—preserving Shareef's
       White House visit—echoes in briefing subtext, enabling paranoia-free Gulfstream
@@ -609,7 +609,7 @@ events:
     - militarily disciplined
     importance: primary
     global_id: ger_agent_9eb77e9bc5ec
-  - character_uuid: ger_agent_25c1a764833f
+  - character_uuid: ger_agent_529d5f3497fe
     emotional_state: Professionally detached amid ethical undercurrents
     goals:
     - Secure presidential buy-in for intel-gathering adjunct to kill op
@@ -628,8 +628,8 @@ events:
     - tactically pragmatic
     - unfazed by tension
     importance: primary
-    global_id: ger_agent_25c1a764833f
-  - character_uuid: ger_agent_0c46fe4078a3
+    global_id: ger_agent_529d5f3497fe
+  - character_uuid: ger_agent_e2310869a36b
     emotional_state: ''
     goals: []
     what_happened: discussed extensively as target of covert assassination and intended
@@ -639,7 +639,7 @@ events:
     beliefs: []
     observed_traits: []
     importance: minor
-    global_id: ger_agent_0c46fe4078a3
+    global_id: ger_agent_e2310869a36b
   - character_uuid: ger_agent_c8248ecdc4d0
     emotional_state: Stoically neutral, focused on task execution
     goals:
@@ -708,7 +708,7 @@ events:
     serious about making welfare a second chance and not a way of life, then you have
     to give people job training."'
   is_flashback: false
-  location_uuid: ger_location_e0e6e87abf34
+  location_uuid: ger_location_a4f5ccbbc456
   theme_uuids:
   - ger_theme_7a524d0b6599
   arc_uuids:
@@ -869,7 +869,7 @@ events:
     status_after_event: Ordered and approaching service
     global_id: ger_object_9cd53a9d7567
   location_involvements:
-  - location_uuid: ger_location_e0e6e87abf34
+  - location_uuid: ger_location_a4f5ccbbc456
     description_of_involvement: Tully's Breakfast Place frames Josh and Amy's encounter
       as neutral off-campus ground where ordering and banter fluidly morph into high-stakes
       welfare showdown; diner's everyday hum contrasts explosive policy clash, amplifying
@@ -883,9 +883,9 @@ events:
     - Daylight interior
     - Formica counters and diner hum
     - Clinking silverware backdrop
-    global_id: ger_location_e0e6e87abf34
+    global_id: ger_location_a4f5ccbbc456
   organization_involvements:
-  - organization_uuid: ger_organization_d033a1b32d4f
+  - organization_uuid: ger_organization_bb39d5dd403d
     description_of_involvement: The White House is invoked by Josh as reconciliation
       prize if Amy calls off her group's hunt, positioning it as ultimate stakeholder
       in welfare passage; it underscores his insider leverage against her external
@@ -901,7 +901,7 @@ events:
     institutional_impact: Highlights razor-edge congressional arithmetic threatening
       Bartlet's agenda
     internal_dynamics: Pragmatic staff like Josh bridging external rifts
-    global_id: ger_organization_d033a1b32d4f
+    global_id: ger_organization_bb39d5dd403d
   derived_from_beat_uuids:
   - beat_751bff86ceadfa4a
   - beat_62e8d080780f66b9
@@ -984,7 +984,7 @@ events:
     observed_traits: []
     importance: minor
     global_id: ger_agent_198649bce78f
-  - character_uuid: ger_agent_8511b338f685
+  - character_uuid: ger_agent_1f0b1cae13c5
     emotional_state: ''
     goals: []
     what_happened: Referenced as the previous occupant of the executive assistant
@@ -994,7 +994,7 @@ events:
     beliefs: []
     observed_traits: []
     importance: minor
-    global_id: ger_agent_8511b338f685
+    global_id: ger_agent_1f0b1cae13c5
   - character_uuid: ger_agent_75be8fdec804
     emotional_state: Irritated defiance veiling vulnerability from past betrayal
     goals:
@@ -1067,7 +1067,7 @@ events:
     - Side window for peeking, front door as defensive barrier
     global_id: ger_location_2adbb046e35f
   organization_involvements:
-  - organization_uuid: ger_organization_d033a1b32d4f
+  - organization_uuid: ger_organization_bb39d5dd403d
     description_of_involvement: The White House looms as target institution via known
       address, parking rights, and presidential meeting lure, its machinery's void
       post-Landingham driving Charlie's siege despite Fiderer's firing trauma.
@@ -1081,7 +1081,7 @@ events:
     - Duty's inexorable gravitational force
     institutional_impact: Reveals human voids cracking presidential facade
     internal_dynamics: ''
-    global_id: ger_organization_d033a1b32d4f
+    global_id: ger_organization_bb39d5dd403d
   - organization_uuid: ger_organization_6d0caa9f5a5f
     description_of_involvement: Gannet News invoked via Terrance Hunt's role as Fiderer's
       former managing editor boss, Charlie leveraging its prestige to validate her
@@ -1827,6 +1827,190 @@ events:
   - 'TOBY: "Ted, the President enters the room with his wife and the President of
     China. He doesn''t do it with the governor of Florida."'
   is_flashback: false
+  location_uuid: ger_location_7423b10d7d15
+  theme_uuids:
+  - ger_theme_7a524d0b6599
+  arc_uuids:
+  - ger_conflictarc_6dd369e1778a
+  participations:
+  - character_uuid: ger_agent_198649bce78f
+    emotional_state: Implied steadfast resolve
+    goals:
+    - Secure welfare bill passage honorably
+    - Maintain executive prestige
+    what_happened: President Bartlet referenced repeatedly as the target of the proposed
+      meeting and defender of dignity, central to the standoff without physical presence.
+    observed_status: President Bartlet referenced repeatedly as the target of the
+      proposed meeting and defender of dignity, central to the standoff without physical
+      presence.
+    beliefs:
+    - True leadership rejects theatrical concessions
+    - Policy triumphs over photo-ops
+    observed_traits:
+    - dignified
+    - commanding
+    importance: primary
+    global_id: ger_agent_198649bce78f
+  - character_uuid: ger_agent_04bbccb1e352
+    emotional_state: Bewildered frustration masking tactical poise
+    goals:
+    - Clarify and counter the Congressman's bill concerns
+    - Resist any compromise that undermines presidential stature
+    what_happened: Sam sits engaged in debate, defending the bill's co-sponsorship,
+      expressing genuine confusion over job shortage concerns, and questioning the
+      mechanics of the proposed Ritchie meeting to secure votes.
+    observed_status: Sam sits engaged in debate, defending the bill's co-sponsorship,
+      expressing genuine confusion over job shortage concerns, and questioning the
+      mechanics of the proposed Ritchie meeting to secure votes.
+    beliefs:
+    - Co-sponsorship commits loyalty to the bill
+    - Partisan gimmicks erode genuine legislative progress
+    observed_traits:
+    - analytical
+    - skeptical
+    - principled
+    importance: primary
+    global_id: ger_agent_04bbccb1e352
+  - character_uuid: ger_agent_7854a70e34ea
+    emotional_state: Righteously indignant with coiled aggression
+    goals:
+    - Unmask and neutralize the GOP ambush
+    - Protect Bartlet's image from political debasement
+    what_happened: Toby paces dynamically, swiftly exposing the Congressman's true
+      partisan role, rejecting the staged entrant proposal outright, and invoking
+      the President's high-protocol entrances to affirm dignity.
+    observed_status: Toby paces dynamically, swiftly exposing the Congressman's true
+      partisan role, rejecting the staged entrant proposal outright, and invoking
+      the President's high-protocol entrances to affirm dignity.
+    beliefs:
+    - Presidential gravitas demands elite pairings, not rivals
+    - Florida Republicans prioritize spectacle over policy
+    observed_traits:
+    - incisive
+    - defiant
+    - strategic
+    importance: primary
+    global_id: ger_agent_7854a70e34ea
+  - character_uuid: ger_agent_69979de71a68
+    emotional_state: Implied predatory ambition
+    goals:
+    - Exploit fundraiser for electoral optics
+    - Pressure Bartlet into visible parity
+    what_happened: Governor Ritchie invoked as the rival for joint entrance and private
+      parley, embodying the partisan trap without appearing.
+    observed_status: Governor Ritchie invoked as the rival for joint entrance and
+      private parley, embodying the partisan trap without appearing.
+    beliefs:
+    - Public spectacles sway congressional votes
+    - Rivalry optics weaken incumbents
+    observed_traits:
+    - opportunistic
+    - populist
+    importance: primary
+    global_id: ger_agent_69979de71a68
+  - character_uuid: ger_agent_dd60af05ee45
+    emotional_state: Calculated insistence veiling opportunistic hunger
+    goals:
+    - Leverage five votes via engineered Bartlet-Ritchie optics
+    - Exploit welfare bill vulnerabilities for GOP gain
+    what_happened: Congressman Ted presses insistently, warning of bill failure sans
+      governors, detailing the staged entrance, private talk, and play-watching ploy
+      at the fundraiser to sway five votes.
+    observed_status: Congressman Ted presses insistently, warning of bill failure
+      sans governors, detailing the staged entrance, private talk, and play-watching
+      ploy at the fundraiser to sway five votes.
+    beliefs:
+    - Staged encounters can flip legislative loyalties
+    - Governors' absence dooms Democratic work reforms
+    observed_traits:
+    - tactical
+    - persistent
+    - partisan
+    importance: primary
+    global_id: ger_agent_dd60af05ee45
+  - character_uuid: ger_agent_c084ebed0bc0
+    emotional_state: ''
+    goals: []
+    what_happened: mentioned by Toby as an example of a high-profile figure the President
+      enters events with
+    observed_status: mentioned by Toby as an example of a high-profile figure the
+      President enters events with
+    beliefs: []
+    observed_traits: []
+    importance: minor
+    global_id: ger_agent_c084ebed0bc0
+  object_involvements: []
+  location_involvements:
+  - location_uuid: ger_location_7423b10d7d15
+    description_of_involvement: The Roosevelt Room serves as the charged negotiation
+      arena where Toby paces amid verbal crossfire, Sam probes logically, and Ted
+      unveils his ploy; its formal confines amplify the brinkmanship, turning policy
+      talk into a microcosm of partisan warfare.
+    observed_atmosphere: Taut and confrontational, laced with pacing tension and incredulous
+      queries
+    functional_role: negotiation space
+    symbolic_significance: Embodies White House power clashing with external political
+      incursions
+    access_restrictions: Restricted to senior staff and invited congressional opponents
+    key_environmental_details:
+    - Daylight slicing through windows
+    - Echoes of pacing footsteps on polished floors
+    global_id: ger_location_7423b10d7d15
+  - location_uuid: ger_location_06fcf22f013f
+    description_of_involvement: Catholic fundraiser posited by Ted as the staged battleground
+      for Bartlet-Ritchie's joint entrance, anteroom talk, and play observation, weaponized
+      to dangle five votes; its philanthropic veneer masks raw electoral maneuvering.
+    observed_atmosphere: Anticipated as electric with concealed partisan tension beneath
+      donor gloss
+    functional_role: proposed political stage
+    symbolic_significance: Represents degraded dignity through forced fraternity with
+      rivals
+    access_restrictions: Event-specific entry for donors, politicians, and invitees
+    key_environmental_details:
+    - Grand doors for dramatic entrances
+    - Shadowed anteroom for private reckonings
+    global_id: ger_location_06fcf22f013f
+  organization_involvements:
+  - organization_uuid: ger_organization_96b4a6f023d3
+    description_of_involvement: Florida's Republican Delegation manifests through
+      Ted's leadership, driving the welfare bill sabotage via the Ritchie photo-op
+      demand; Toby's exposure ignites the standoff, framing the group as opportunistic
+      brinkmen fracturing Democratic momentum.
+    active_representation: Through Congressman Ted as de facto leader and spokesman
+    power_dynamics: Challenging White House via vote leverage and staged optics
+    organizational_goals:
+    - Secure five pivotal votes by engineering Bartlet-Ritchie spectacle
+    - Undermine welfare bill through governor-absence fears
+    influence_mechanisms:
+    - Partisan delegation pressure on undecided congressmen
+    - Weaponized public optics and media implications
+    institutional_impact: Exposes congressional brinkmanship eroding bipartisan facades
+    internal_dynamics: Unified under Ted's tactical command
+    global_id: ger_organization_96b4a6f023d3
+  derived_from_beat_uuids: &id004
+  - beat_6cf725cd20cf7182
+  - beat_e37e78c03068108b
+  - beat_22c7fb2c21b3a44d
+  - beat_90860068bc7607fa
+  - beat_1db26075ba765762
+  source_season: 3
+  source_database: westwing.s03
+- fabula_uuid: cand_evt_scene_c30c8169cc101256_1
+  global_id: null
+  title: Toby Unmasks Congressman's Ritchie Ploy for Welfare Votes
+  description: In the Roosevelt Room, Congressman Ted warns Sam and Toby that the
+    welfare bill risks failure without governors' support, but Toby swiftly exposes
+    his true role as Florida Republican leader pushing a partisan agenda. Ted demands
+    President Bartlet meet rival Governor Ritchie at a Catholic fundraiser to sway
+    five undecided votes, envisioning a staged entrance and private talk. Sam and
+    Toby firmly rebuff the ploy, with Toby defending Bartlet's dignity against cheap
+    political theater. This tense standoff reinforces the staff's principled resolve
+    amid legislative brinkmanship, setting up retaliatory sabotage against Ritchie.
+  episode_uuid: ep_sea_ser_the_west_wing_s03_e21
+  scene_sequence: 6
+  sequence_in_scene: 9
+  key_dialogue: *id003
+  is_flashback: false
   location_uuid: ger_location_06fcf22f013f
   theme_uuids:
   - ger_theme_7a524d0b6599
@@ -1891,7 +2075,7 @@ events:
     - strategic
     importance: primary
     global_id: ger_agent_7854a70e34ea
-  - character_uuid: ger_agent_89fd2481c324
+  - character_uuid: ger_agent_69979de71a68
     emotional_state: Implied predatory ambition
     goals:
     - Exploit fundraiser for electoral optics
@@ -1907,7 +2091,7 @@ events:
     - opportunistic
     - populist
     importance: primary
-    global_id: ger_agent_89fd2481c324
+    global_id: ger_agent_69979de71a68
   - character_uuid: ger_agent_dd60af05ee45
     emotional_state: Calculated insistence veiling opportunistic hunger
     goals:
@@ -1941,20 +2125,6 @@ events:
     global_id: ger_agent_c084ebed0bc0
   object_involvements: []
   location_involvements:
-  - location_uuid: ger_location_06fcf22f013f
-    description_of_involvement: Catholic fundraiser posited by Ted as the staged battleground
-      for Bartlet-Ritchie's joint entrance, anteroom talk, and play observation, weaponized
-      to dangle five votes; its philanthropic veneer masks raw electoral maneuvering.
-    observed_atmosphere: Anticipated as electric with concealed partisan tension beneath
-      donor gloss
-    functional_role: proposed political stage
-    symbolic_significance: Represents degraded dignity through forced fraternity with
-      rivals
-    access_restrictions: Event-specific entry for donors, politicians, and invitees
-    key_environmental_details:
-    - Grand doors for dramatic entrances
-    - Shadowed anteroom for private reckonings
-    global_id: ger_location_06fcf22f013f
   - location_uuid: ger_location_7423b10d7d15
     description_of_involvement: The Roosevelt Room serves as the charged negotiation
       arena where Toby paces amid verbal crossfire, Sam probes logically, and Ted
@@ -1970,161 +2140,6 @@ events:
     - Daylight slicing through windows
     - Echoes of pacing footsteps on polished floors
     global_id: ger_location_7423b10d7d15
-  organization_involvements:
-  - organization_uuid: ger_organization_96b4a6f023d3
-    description_of_involvement: Florida's Republican Delegation manifests through
-      Ted's leadership, driving the welfare bill sabotage via the Ritchie photo-op
-      demand; Toby's exposure ignites the standoff, framing the group as opportunistic
-      brinkmen fracturing Democratic momentum.
-    active_representation: Through Congressman Ted as de facto leader and spokesman
-    power_dynamics: Challenging White House via vote leverage and staged optics
-    organizational_goals:
-    - Secure five pivotal votes by engineering Bartlet-Ritchie spectacle
-    - Undermine welfare bill through governor-absence fears
-    influence_mechanisms:
-    - Partisan delegation pressure on undecided congressmen
-    - Weaponized public optics and media implications
-    institutional_impact: Exposes congressional brinkmanship eroding bipartisan facades
-    internal_dynamics: Unified under Ted's tactical command
-    global_id: ger_organization_96b4a6f023d3
-  derived_from_beat_uuids: &id004
-  - beat_6cf725cd20cf7182
-  - beat_e37e78c03068108b
-  - beat_22c7fb2c21b3a44d
-  - beat_90860068bc7607fa
-  - beat_1db26075ba765762
-  source_season: 3
-  source_database: westwing.s03
-- fabula_uuid: cand_evt_scene_c30c8169cc101256_1
-  global_id: null
-  title: Toby Unmasks Congressman's Ritchie Ploy for Welfare Votes
-  description: In the Roosevelt Room, Congressman Ted warns Sam and Toby that the
-    welfare bill risks failure without governors' support, but Toby swiftly exposes
-    his true role as Florida Republican leader pushing a partisan agenda. Ted demands
-    President Bartlet meet rival Governor Ritchie at a Catholic fundraiser to sway
-    five undecided votes, envisioning a staged entrance and private talk. Sam and
-    Toby firmly rebuff the ploy, with Toby defending Bartlet's dignity against cheap
-    political theater. This tense standoff reinforces the staff's principled resolve
-    amid legislative brinkmanship, setting up retaliatory sabotage against Ritchie.
-  episode_uuid: ep_sea_ser_the_west_wing_s03_e21
-  scene_sequence: 6
-  sequence_in_scene: 9
-  key_dialogue: *id003
-  is_flashback: false
-  location_uuid: ger_location_7423b10d7d15
-  theme_uuids:
-  - ger_theme_7a524d0b6599
-  arc_uuids:
-  - ger_conflictarc_6dd369e1778a
-  participations:
-  - character_uuid: ger_agent_198649bce78f
-    emotional_state: Implied steadfast resolve
-    goals:
-    - Secure welfare bill passage honorably
-    - Maintain executive prestige
-    what_happened: President Bartlet referenced repeatedly as the target of the proposed
-      meeting and defender of dignity, central to the standoff without physical presence.
-    observed_status: President Bartlet referenced repeatedly as the target of the
-      proposed meeting and defender of dignity, central to the standoff without physical
-      presence.
-    beliefs:
-    - True leadership rejects theatrical concessions
-    - Policy triumphs over photo-ops
-    observed_traits:
-    - dignified
-    - commanding
-    importance: primary
-    global_id: ger_agent_198649bce78f
-  - character_uuid: ger_agent_04bbccb1e352
-    emotional_state: Bewildered frustration masking tactical poise
-    goals:
-    - Clarify and counter the Congressman's bill concerns
-    - Resist any compromise that undermines presidential stature
-    what_happened: Sam sits engaged in debate, defending the bill's co-sponsorship,
-      expressing genuine confusion over job shortage concerns, and questioning the
-      mechanics of the proposed Ritchie meeting to secure votes.
-    observed_status: Sam sits engaged in debate, defending the bill's co-sponsorship,
-      expressing genuine confusion over job shortage concerns, and questioning the
-      mechanics of the proposed Ritchie meeting to secure votes.
-    beliefs:
-    - Co-sponsorship commits loyalty to the bill
-    - Partisan gimmicks erode genuine legislative progress
-    observed_traits:
-    - analytical
-    - skeptical
-    - principled
-    importance: primary
-    global_id: ger_agent_04bbccb1e352
-  - character_uuid: ger_agent_7854a70e34ea
-    emotional_state: Righteously indignant with coiled aggression
-    goals:
-    - Unmask and neutralize the GOP ambush
-    - Protect Bartlet's image from political debasement
-    what_happened: Toby paces dynamically, swiftly exposing the Congressman's true
-      partisan role, rejecting the staged entrant proposal outright, and invoking
-      the President's high-protocol entrances to affirm dignity.
-    observed_status: Toby paces dynamically, swiftly exposing the Congressman's true
-      partisan role, rejecting the staged entrant proposal outright, and invoking
-      the President's high-protocol entrances to affirm dignity.
-    beliefs:
-    - Presidential gravitas demands elite pairings, not rivals
-    - Florida Republicans prioritize spectacle over policy
-    observed_traits:
-    - incisive
-    - defiant
-    - strategic
-    importance: primary
-    global_id: ger_agent_7854a70e34ea
-  - character_uuid: ger_agent_89fd2481c324
-    emotional_state: Implied predatory ambition
-    goals:
-    - Exploit fundraiser for electoral optics
-    - Pressure Bartlet into visible parity
-    what_happened: Governor Ritchie invoked as the rival for joint entrance and private
-      parley, embodying the partisan trap without appearing.
-    observed_status: Governor Ritchie invoked as the rival for joint entrance and
-      private parley, embodying the partisan trap without appearing.
-    beliefs:
-    - Public spectacles sway congressional votes
-    - Rivalry optics weaken incumbents
-    observed_traits:
-    - opportunistic
-    - populist
-    importance: primary
-    global_id: ger_agent_89fd2481c324
-  - character_uuid: ger_agent_dd60af05ee45
-    emotional_state: Calculated insistence veiling opportunistic hunger
-    goals:
-    - Leverage five votes via engineered Bartlet-Ritchie optics
-    - Exploit welfare bill vulnerabilities for GOP gain
-    what_happened: Congressman Ted presses insistently, warning of bill failure sans
-      governors, detailing the staged entrance, private talk, and play-watching ploy
-      at the fundraiser to sway five votes.
-    observed_status: Congressman Ted presses insistently, warning of bill failure
-      sans governors, detailing the staged entrance, private talk, and play-watching
-      ploy at the fundraiser to sway five votes.
-    beliefs:
-    - Staged encounters can flip legislative loyalties
-    - Governors' absence dooms Democratic work reforms
-    observed_traits:
-    - tactical
-    - persistent
-    - partisan
-    importance: primary
-    global_id: ger_agent_dd60af05ee45
-  - character_uuid: ger_agent_c084ebed0bc0
-    emotional_state: ''
-    goals: []
-    what_happened: mentioned by Toby as an example of a high-profile figure the President
-      enters events with
-    observed_status: mentioned by Toby as an example of a high-profile figure the
-      President enters events with
-    beliefs: []
-    observed_traits: []
-    importance: minor
-    global_id: ger_agent_c084ebed0bc0
-  object_involvements: []
-  location_involvements:
   - location_uuid: ger_location_06fcf22f013f
     description_of_involvement: Catholic fundraiser posited by Ted as the staged battleground
       for Bartlet-Ritchie's joint entrance, anteroom talk, and play observation, weaponized
@@ -2139,21 +2154,6 @@ events:
     - Grand doors for dramatic entrances
     - Shadowed anteroom for private reckonings
     global_id: ger_location_06fcf22f013f
-  - location_uuid: ger_location_7423b10d7d15
-    description_of_involvement: The Roosevelt Room serves as the charged negotiation
-      arena where Toby paces amid verbal crossfire, Sam probes logically, and Ted
-      unveils his ploy; its formal confines amplify the brinkmanship, turning policy
-      talk into a microcosm of partisan warfare.
-    observed_atmosphere: Taut and confrontational, laced with pacing tension and incredulous
-      queries
-    functional_role: negotiation space
-    symbolic_significance: Embodies White House power clashing with external political
-      incursions
-    access_restrictions: Restricted to senior staff and invited congressional opponents
-    key_environmental_details:
-    - Daylight slicing through windows
-    - Echoes of pacing footsteps on polished floors
-    global_id: ger_location_7423b10d7d15
   organization_involvements:
   - organization_uuid: ger_organization_96b4a6f023d3
     description_of_involvement: Florida's Republican Delegation manifests through
@@ -2197,6 +2197,132 @@ events:
   - 'JOSH: "All right. These are three ''no'' votes, right?" MAN 1ST: "Yeah." JOSH:
     "Okay. The President''s gonna call you." MAN 1ST: "Do you know when?" JOSH: "No.
     Sometime during the first intermission."'
+  is_flashback: false
+  location_uuid: ger_location_7423b10d7d15
+  theme_uuids: []
+  arc_uuids: []
+  participations:
+  - character_uuid: ger_agent_c9d41ae93618
+    emotional_state: Wary skepticism blending policy concern with political caution
+    goals:
+    - Highlight bill flaws impacting constituents to negotiate better terms
+    - Test White House commitment before committing to a vote change
+    what_happened: Unidentified Legislator (Man 1st) probes White House priorities
+      on the Broadway vote timing, cites primary pressures, questions women training
+      under 38-hour work rules, confirms 'no' vote, and presses for presidential call
+      timing, sitting to underscore resistance.
+    observed_status: Unidentified Legislator (Man 1st) probes White House priorities
+      on the Broadway vote timing, cites primary pressures, questions women training
+      under 38-hour work rules, confirms 'no' vote, and presses for presidential call
+      timing, sitting to underscore resistance.
+    beliefs:
+    - Work mandates hinder real welfare reform and voter buy-in
+    - Presidential involvement signals serious White House investment worth probing
+    observed_traits:
+    - skeptical
+    - inquisitive
+    - cautious
+    - principled
+    importance: primary
+    global_id: ger_agent_c9d41ae93618
+  - character_uuid: ger_agent_198649bce78f
+    emotional_state: ''
+    goals: []
+    what_happened: referenced by Josh as the one who will personally call the three
+      legislators during the Broadway intermission
+    observed_status: referenced by Josh as the one who will personally call the three
+      legislators during the Broadway intermission
+    beliefs: []
+    observed_traits: []
+    importance: secondary
+    global_id: ger_agent_198649bce78f
+  - character_uuid: ger_agent_3b01f1d856de
+    emotional_state: ''
+    goals: []
+    what_happened: referenced by Man 3rd as a rival source who can provide fundraising
+      aid
+    observed_status: referenced by Man 3rd as a rival source who can provide fundraising
+      aid
+    beliefs: []
+    observed_traits: []
+    importance: secondary
+    global_id: ger_agent_3b01f1d856de
+  - character_uuid: ger_agent_529d5f3497fe
+    emotional_state: Defensive skepticism rooted in electoral self-preservation
+    goals:
+    - Protect campaign viability by avoiding votes alienating key demographics
+    - Extract maximum concessions before considering a flip
+    what_happened: Man 3rd challenges Josh by noting Amy Gardner's competing fundraising
+      offer and lambasts marriage incentives for risking women voters essential to
+      his campaign, embodying legislative skepticism in this high-pressure negotiation.
+    observed_status: Man 3rd challenges Josh by noting Amy Gardner's competing fundraising
+      offer and lambasts marriage incentives for risking women voters essential to
+      his campaign, embodying legislative skepticism in this high-pressure negotiation.
+    beliefs:
+    - Marriage incentives will doom electoral chances without women voters
+    - Alternative fundraisers like Amy Gardner provide leverage against White House
+      pressure
+    observed_traits:
+    - skeptical
+    - pragmatic
+    - politically savvy
+    - voter-focused
+    importance: primary
+    global_id: ger_agent_529d5f3497fe
+  object_involvements: []
+  location_involvements:
+  - location_uuid: ger_location_7423b10d7d15
+    description_of_involvement: The Mural Room serves as the intimate battleground
+      for Josh's urgent wheeling-and-dealing with three recalcitrant legislators,
+      its historic murals looming over rapid-fire exchanges on policy flaws and electoral
+      math, amplifying the claustrophobic intensity of White House brinkmanship.
+    observed_atmosphere: Tense and charged with skeptical probing and pragmatic counteroffers
+    functional_role: Negotiation chamber for flipping legislative holdouts
+    symbolic_significance: Embodies the ornate yet pressured core of executive-legislative
+      power struggles
+    access_restrictions: Restricted to senior White House staff and targeted legislators
+    key_environmental_details:
+    - Daylight flooding mural-covered walls
+    - Close-quarters seating fostering direct confrontation
+    global_id: ger_location_7423b10d7d15
+  - location_uuid: ger_location_00c48391ec2c
+    description_of_involvement: The Broadway Theatre is referenced as the ironic backdrop
+      for President Bartlet's scheduled intermission calls to the holdouts, weaponizing
+      a cultural outing into a tactical presidential intervention amid the vote's
+      frenzy.
+    observed_atmosphere: Evoked as a high-stakes diversion clashing with legislative
+      urgency
+    functional_role: Contextual venue timing the presidential leverage promise
+    symbolic_significance: Contrasts glamorous escape with gritty political horse-trading
+    access_restrictions: ''
+    key_environmental_details:
+    - First intermission timing
+    - Theatrical performance underscoring vote timing irony
+    global_id: ger_location_00c48391ec2c
+  organization_involvements: []
+  derived_from_beat_uuids: &id006
+  - beat_f3558b153ec2f928
+  - beat_42e51f4cd96e0240
+  - beat_b4ac4e45d11c7634
+  - beat_f8471eec6e9b616c
+  source_season: 3
+  source_database: westwing.s03
+- fabula_uuid: cand_evt_scene_f0137631c03b7ba6_1
+  global_id: null
+  title: Josh Pitches Concessions and Promises Bartlet Call to Flip Welfare Bill Holdouts
+  description: In the Mural Room, Josh Lyman urgently woos three recalcitrant legislators
+    blocking the welfare bill, citing their primaries, fundraising needs, and voter
+    backlash over work mandates and marriage incentives alienating women. He counters
+    with promises of child care billions, transportation subsidies, and fundraising
+    aid—differentiating from rival Amy Gardner—yet faces unyielding skepticism. Pivoting
+    decisively, Josh escalates by pledging a personal call from President Bartlet
+    during the Broadway intermission, transforming negotiation into high-stakes presidential
+    leverage. This beat propels the bill's legislative arc, revealing Josh's ruthless
+    pragmatism amid election pressures and foreshadowing ethical costs.
+  episode_uuid: ep_sea_ser_the_west_wing_s03_e21
+  scene_sequence: 7
+  sequence_in_scene: 10
+  key_dialogue: *id005
   is_flashback: false
   location_uuid: ger_location_00c48391ec2c
   theme_uuids: []
@@ -2247,7 +2373,7 @@ events:
     observed_traits: []
     importance: secondary
     global_id: ger_agent_3b01f1d856de
-  - character_uuid: ger_agent_25c1a764833f
+  - character_uuid: ger_agent_529d5f3497fe
     emotional_state: Defensive skepticism rooted in electoral self-preservation
     goals:
     - Protect campaign viability by avoiding votes alienating key demographics
@@ -2268,23 +2394,9 @@ events:
     - politically savvy
     - voter-focused
     importance: primary
-    global_id: ger_agent_25c1a764833f
+    global_id: ger_agent_529d5f3497fe
   object_involvements: []
   location_involvements:
-  - location_uuid: ger_location_00c48391ec2c
-    description_of_involvement: The Broadway Theatre is referenced as the ironic backdrop
-      for President Bartlet's scheduled intermission calls to the holdouts, weaponizing
-      a cultural outing into a tactical presidential intervention amid the vote's
-      frenzy.
-    observed_atmosphere: Evoked as a high-stakes diversion clashing with legislative
-      urgency
-    functional_role: Contextual venue timing the presidential leverage promise
-    symbolic_significance: Contrasts glamorous escape with gritty political horse-trading
-    access_restrictions: ''
-    key_environmental_details:
-    - First intermission timing
-    - Theatrical performance underscoring vote timing irony
-    global_id: ger_location_00c48391ec2c
   - location_uuid: ger_location_7423b10d7d15
     description_of_involvement: The Mural Room serves as the intimate battleground
       for Josh's urgent wheeling-and-dealing with three recalcitrant legislators,
@@ -2299,104 +2411,6 @@ events:
     - Daylight flooding mural-covered walls
     - Close-quarters seating fostering direct confrontation
     global_id: ger_location_7423b10d7d15
-  organization_involvements: []
-  derived_from_beat_uuids: &id006
-  - beat_f3558b153ec2f928
-  - beat_42e51f4cd96e0240
-  - beat_b4ac4e45d11c7634
-  - beat_f8471eec6e9b616c
-  source_season: 3
-  source_database: westwing.s03
-- fabula_uuid: cand_evt_scene_f0137631c03b7ba6_1
-  global_id: null
-  title: Josh Pitches Concessions and Promises Bartlet Call to Flip Welfare Bill Holdouts
-  description: In the Mural Room, Josh Lyman urgently woos three recalcitrant legislators
-    blocking the welfare bill, citing their primaries, fundraising needs, and voter
-    backlash over work mandates and marriage incentives alienating women. He counters
-    with promises of child care billions, transportation subsidies, and fundraising
-    aid—differentiating from rival Amy Gardner—yet faces unyielding skepticism. Pivoting
-    decisively, Josh escalates by pledging a personal call from President Bartlet
-    during the Broadway intermission, transforming negotiation into high-stakes presidential
-    leverage. This beat propels the bill's legislative arc, revealing Josh's ruthless
-    pragmatism amid election pressures and foreshadowing ethical costs.
-  episode_uuid: ep_sea_ser_the_west_wing_s03_e21
-  scene_sequence: 7
-  sequence_in_scene: 10
-  key_dialogue: *id005
-  is_flashback: false
-  location_uuid: ger_location_7423b10d7d15
-  theme_uuids: []
-  arc_uuids: []
-  participations:
-  - character_uuid: ger_agent_c9d41ae93618
-    emotional_state: Wary skepticism blending policy concern with political caution
-    goals:
-    - Highlight bill flaws impacting constituents to negotiate better terms
-    - Test White House commitment before committing to a vote change
-    what_happened: Unidentified Legislator (Man 1st) probes White House priorities
-      on the Broadway vote timing, cites primary pressures, questions women training
-      under 38-hour work rules, confirms 'no' vote, and presses for presidential call
-      timing, sitting to underscore resistance.
-    observed_status: Unidentified Legislator (Man 1st) probes White House priorities
-      on the Broadway vote timing, cites primary pressures, questions women training
-      under 38-hour work rules, confirms 'no' vote, and presses for presidential call
-      timing, sitting to underscore resistance.
-    beliefs:
-    - Work mandates hinder real welfare reform and voter buy-in
-    - Presidential involvement signals serious White House investment worth probing
-    observed_traits:
-    - skeptical
-    - inquisitive
-    - cautious
-    - principled
-    importance: primary
-    global_id: ger_agent_c9d41ae93618
-  - character_uuid: ger_agent_198649bce78f
-    emotional_state: ''
-    goals: []
-    what_happened: referenced by Josh as the one who will personally call the three
-      legislators during the Broadway intermission
-    observed_status: referenced by Josh as the one who will personally call the three
-      legislators during the Broadway intermission
-    beliefs: []
-    observed_traits: []
-    importance: secondary
-    global_id: ger_agent_198649bce78f
-  - character_uuid: ger_agent_3b01f1d856de
-    emotional_state: ''
-    goals: []
-    what_happened: referenced by Man 3rd as a rival source who can provide fundraising
-      aid
-    observed_status: referenced by Man 3rd as a rival source who can provide fundraising
-      aid
-    beliefs: []
-    observed_traits: []
-    importance: secondary
-    global_id: ger_agent_3b01f1d856de
-  - character_uuid: ger_agent_25c1a764833f
-    emotional_state: Defensive skepticism rooted in electoral self-preservation
-    goals:
-    - Protect campaign viability by avoiding votes alienating key demographics
-    - Extract maximum concessions before considering a flip
-    what_happened: Man 3rd challenges Josh by noting Amy Gardner's competing fundraising
-      offer and lambasts marriage incentives for risking women voters essential to
-      his campaign, embodying legislative skepticism in this high-pressure negotiation.
-    observed_status: Man 3rd challenges Josh by noting Amy Gardner's competing fundraising
-      offer and lambasts marriage incentives for risking women voters essential to
-      his campaign, embodying legislative skepticism in this high-pressure negotiation.
-    beliefs:
-    - Marriage incentives will doom electoral chances without women voters
-    - Alternative fundraisers like Amy Gardner provide leverage against White House
-      pressure
-    observed_traits:
-    - skeptical
-    - pragmatic
-    - politically savvy
-    - voter-focused
-    importance: primary
-    global_id: ger_agent_25c1a764833f
-  object_involvements: []
-  location_involvements:
   - location_uuid: ger_location_00c48391ec2c
     description_of_involvement: The Broadway Theatre is referenced as the ironic backdrop
       for President Bartlet's scheduled intermission calls to the holdouts, weaponizing
@@ -2411,20 +2425,6 @@ events:
     - First intermission timing
     - Theatrical performance underscoring vote timing irony
     global_id: ger_location_00c48391ec2c
-  - location_uuid: ger_location_7423b10d7d15
-    description_of_involvement: The Mural Room serves as the intimate battleground
-      for Josh's urgent wheeling-and-dealing with three recalcitrant legislators,
-      its historic murals looming over rapid-fire exchanges on policy flaws and electoral
-      math, amplifying the claustrophobic intensity of White House brinkmanship.
-    observed_atmosphere: Tense and charged with skeptical probing and pragmatic counteroffers
-    functional_role: Negotiation chamber for flipping legislative holdouts
-    symbolic_significance: Embodies the ornate yet pressured core of executive-legislative
-      power struggles
-    access_restrictions: Restricted to senior White House staff and targeted legislators
-    key_environmental_details:
-    - Daylight flooding mural-covered walls
-    - Close-quarters seating fostering direct confrontation
-    global_id: ger_location_7423b10d7d15
   organization_involvements: []
   derived_from_beat_uuids: *id006
   source_season: 3
@@ -2510,7 +2510,7 @@ events:
     - strategic
     importance: primary
     global_id: ger_agent_9eb77e9bc5ec
-  - character_uuid: ger_agent_0c46fe4078a3
+  - character_uuid: ger_agent_e2310869a36b
     emotional_state: Confident poise veiling potential unease in hostile terrain
     goals:
     - Present the symbolic gift to maintain diplomatic facade
@@ -2530,7 +2530,7 @@ events:
     - diplomatic
     - unfazed
     importance: primary
-    global_id: ger_agent_0c46fe4078a3
+    global_id: ger_agent_e2310869a36b
   - character_uuid: ger_agent_069c7e2848ec
     emotional_state: Calm readiness amid rising tension
     goals:
@@ -2698,6 +2698,26 @@ events:
     - aggressive
     importance: primary
     global_id: ger_agent_7854a70e34ea
+  - character_uuid: ger_agent_69979de71a68
+    emotional_state: Implied eagerness masked by strategic absence
+    goals:
+    - Exploit Everglades issue for voter fear
+    - Pressure Bartlet into suboptimal meeting optics
+    what_happened: Targeted in the counter-leak as mistakenly unscheduled while Bartlet
+      prioritizes welfare vote; his campaign leverages Kahn's quote for 'What's Bartlet
+      hiding?' ads twisting Everglades policy.
+    observed_status: Targeted in the counter-leak as mistakenly unscheduled while
+      Bartlet prioritizes welfare vote; his campaign leverages Kahn's quote for 'What's
+      Bartlet hiding?' ads twisting Everglades policy.
+    beliefs:
+    - Bartlet hides damaging policy truths
+    - Populist attacks erode Democratic strongholds
+    observed_traits:
+    - opportunistic
+    - populist
+    - aggressive
+    importance: primary
+    global_id: ger_agent_69979de71a68
   - character_uuid: ger_agent_cead60d7cccd
     emotional_state: Smug provocation through absent aggression
     goals:
@@ -2718,27 +2738,16 @@ events:
     - manipulative
     importance: primary
     global_id: ger_agent_cead60d7cccd
-  - character_uuid: ger_agent_89fd2481c324
-    emotional_state: Implied eagerness masked by strategic absence
-    goals:
-    - Exploit Everglades issue for voter fear
-    - Pressure Bartlet into suboptimal meeting optics
-    what_happened: Targeted in the counter-leak as mistakenly unscheduled while Bartlet
-      prioritizes welfare vote; his campaign leverages Kahn's quote for 'What's Bartlet
-      hiding?' ads twisting Everglades policy.
-    observed_status: Targeted in the counter-leak as mistakenly unscheduled while
-      Bartlet prioritizes welfare vote; his campaign leverages Kahn's quote for 'What's
-      Bartlet hiding?' ads twisting Everglades policy.
-    beliefs:
-    - Bartlet hides damaging policy truths
-    - Populist attacks erode Democratic strongholds
-    observed_traits:
-    - opportunistic
-    - populist
-    - aggressive
-    importance: primary
-    global_id: ger_agent_89fd2481c324
   object_involvements:
+  - object_uuid: ger_object_b75da5527c71
+    description_of_involvement: Toby's pink rubber ball is bounced repeatedly off
+      the window separating his office from Sam's, serving as an improvised, urgent
+      signaling device to draw Sam in for crisis consultation; it embodies their efficient,
+      coded staff communication amid high-pressure plotting, punctuating the rhythm
+      of escalation.
+    status_before_event: In Toby's possession, idle on desk or hand
+    status_after_event: At rest in Toby's office after signaling complete
+    global_id: ger_object_b75da5527c71
   - object_uuid: ger_object_16f5224933f0
     description_of_involvement: Toby grips and reads aloud from this note containing
       Kevin Kahn's leaked AP quote, which twists Bartlet's Everglades plan into an
@@ -2747,15 +2756,6 @@ events:
     status_before_event: Held by Toby on desk amid office clutter
     status_after_event: Discarded or set aside in Toby's office post-reading
     global_id: ger_object_16f5224933f0
-  - object_uuid: ger_object_72713c3cd270
-    description_of_involvement: Toby's pink rubber ball is bounced repeatedly off
-      the window separating his office from Sam's, serving as an improvised, urgent
-      signaling device to draw Sam in for crisis consultation; it embodies their efficient,
-      coded staff communication amid high-pressure plotting, punctuating the rhythm
-      of escalation.
-    status_before_event: In Toby's possession, idle on desk or hand
-    status_after_event: At rest in Toby's office after signaling complete
-    global_id: ger_object_72713c3cd270
   location_involvements: []
   organization_involvements:
   - organization_uuid: ger_organization_e11d93f0316a
@@ -2877,6 +2877,15 @@ events:
     - grief-tempered irascible
     importance: primary
     global_id: ger_agent_198649bce78f
+  - character_uuid: ger_agent_1f0b1cae13c5
+    emotional_state: ''
+    goals: []
+    what_happened: referenced as the secretary Charlie was tasked to replace
+    observed_status: referenced as the secretary Charlie was tasked to replace
+    beliefs: []
+    observed_traits: []
+    importance: minor
+    global_id: ger_agent_1f0b1cae13c5
   - character_uuid: ger_agent_afd29edc5958
     emotional_state: Professionally neutral amid brewing Oval tension
     goals:
@@ -2897,15 +2906,6 @@ events:
     - discreetly commanding
     importance: primary
     global_id: ger_agent_afd29edc5958
-  - character_uuid: ger_agent_8511b338f685
-    emotional_state: ''
-    goals: []
-    what_happened: referenced as the secretary Charlie was tasked to replace
-    observed_status: referenced as the secretary Charlie was tasked to replace
-    beliefs: []
-    observed_traits: []
-    importance: minor
-    global_id: ger_agent_8511b338f685
   - character_uuid: ger_agent_75be8fdec804
     emotional_state: Relaxed haze of intoxication masking mild bemusement at the unfolding
       debacle
@@ -3127,7 +3127,7 @@ events:
     - resolute
     importance: primary
     global_id: ger_agent_9eb77e9bc5ec
-  - character_uuid: ger_agent_25c1a764833f
+  - character_uuid: ger_agent_529d5f3497fe
     emotional_state: Wary suspicion fueling pointed inquiry
     goals:
     - Clarify military's role in the operation
@@ -3147,8 +3147,8 @@ events:
     - tactical
     - pragmatic
     importance: primary
-    global_id: ger_agent_25c1a764833f
-  - character_uuid: ger_agent_0c46fe4078a3
+    global_id: ger_agent_529d5f3497fe
+  - character_uuid: ger_agent_e2310869a36b
     emotional_state: ''
     goals: []
     what_happened: significantly referenced as target on U.S. soil subject to authorized
@@ -3158,7 +3158,7 @@ events:
     beliefs: []
     observed_traits: []
     importance: minor
-    global_id: ger_agent_0c46fe4078a3
+    global_id: ger_agent_e2310869a36b
   object_involvements:
   - object_uuid: ger_object_b7478c140ea6
     description_of_involvement: Copies of the Presidential Finding slam onto the conference
@@ -3664,209 +3664,6 @@ events:
     unto Henry''s death. King Henry the fifth, too famous to live long, virtue he
     had, deserving to command. He ne''er lift up his hand, but conquered."'
   is_flashback: false
-  location_uuid: ger_location_00c48391ec2c
-  theme_uuids: []
-  arc_uuids: []
-  participations:
-  - character_uuid: ger_agent_198649bce78f
-    emotional_state: Stoically contemplative, shadowed by the play's omens of violence.
-    goals:
-    - Absorb the performance's thematic weight
-    - Maintain decorum in VIP vantage
-    what_happened: President occupies the box as the camera pans past during the monologue
-      and balcony action, his presence a silent presidential silhouette amid the unfolding
-      stage and staff intrigue.
-    observed_status: President occupies the box as the camera pans past during the
-      monologue and balcony action, his presence a silent presidential silhouette
-      amid the unfolding stage and staff intrigue.
-    beliefs:
-    - Art mirrors leadership's moral tempests
-    - Public appearances demand poised vigilance
-    observed_traits:
-    - commanding
-    - observant
-    importance: primary
-    global_id: ger_agent_198649bce78f
-  - character_uuid: ger_agent_04bbccb1e352
-    emotional_state: Alert and conspiratorial, blending amusement with focused intent
-      amid the dramatic performance.
-    goals:
-    - Summon Toby to exit without drawing attention
-    - Advance offstage political coordination under theater's camouflage
-    what_happened: Sam ascends to the rearmost balcony amid the rising curtain and
-      monologue, discreetly poking Toby on the shoulder to signal urgent departure,
-      his movement timed to the theatrical swell for maximum cover.
-    observed_status: Sam ascends to the rearmost balcony amid the rising curtain and
-      monologue, discreetly poking Toby on the shoulder to signal urgent departure,
-      his movement timed to the theatrical swell for maximum cover.
-    beliefs:
-    - The play's chaos provides perfect anonymity for staff maneuvers
-    - Swift, silent signals ensure operational security
-    observed_traits:
-    - discreet
-    - strategic
-    - coordinated
-    importance: primary
-    global_id: ger_agent_04bbccb1e352
-  - character_uuid: ger_agent_7854a70e34ea
-    emotional_state: Responsive vigilance, attuned to cues amid the enveloping theatrical
-      portent.
-    goals:
-    - Heed Sam's signal for immediate egress
-    - Maintain seamless coordination away from public eyes
-    what_happened: Toby receives Sam's shoulder poke in the rearmost balcony during
-      the center MAN's sword-raised monologue and trumpet fanfare, promptly standing
-      to follow him out into the shadows.
-    observed_status: Toby receives Sam's shoulder poke in the rearmost balcony during
-      the center MAN's sword-raised monologue and trumpet fanfare, promptly standing
-      to follow him out into the shadows.
-    beliefs:
-    - Subtle gestures trump overt communication in high-stakes settings
-    - Theater's distraction amplifies strategic exits
-    observed_traits:
-    - responsive
-    - disciplined
-    - team-oriented
-    importance: primary
-    global_id: ger_agent_7854a70e34ea
-  - character_uuid: ger_agent_25c1a764833f
-    emotional_state: ''
-    goals:
-    - deliver foreboding Shakespearean monologue to evoke cosmic mourning, upheaval,
-      and symbolic parallel to themes of violence and power
-    what_happened: speaks opening lines 'Hung be the heavens with black, yield day
-      and night'; raises sword center stage and delivers monologue about comets, revolting
-      stars, and King Henry V's death
-    observed_status: speaks opening lines 'Hung be the heavens with black, yield day
-      and night'; raises sword center stage and delivers monologue about comets, revolting
-      stars, and King Henry V's death
-    beliefs: []
-    observed_traits: []
-    importance: primary
-    global_id: ger_agent_25c1a764833f
-  - character_uuid: ger_agent_69160b18619e
-    emotional_state: Tableau-frozen ferocity channeled into the lead's wrathful invocation.
-    goals:
-    - Execute precise opening tableau for dramatic impact
-    - Evoke themes of upheaval and untimely death through monologue
-    what_happened: Stage actors hold rigid poses in period garb as the curtain rises;
-      the center MAN grips and raises his sword, delivering the ominous monologue
-      on comets scourging revolting stars and Henry V's conquests-from-death.
-    observed_status: Stage actors hold rigid poses in period garb as the curtain rises;
-      the center MAN grips and raises his sword, delivering the ominous monologue
-      on comets scourging revolting stars and Henry V's conquests-from-death.
-    beliefs:
-    - Frozen precision heightens Elizabethan menace
-    - Shakespearean verse commands cosmic and political resonance
-    observed_traits:
-    - disciplined
-    - immersive
-    - intense
-    importance: primary
-    global_id: ger_agent_69160b18619e
-  - character_uuid: ger_agent_674c78e01130
-    emotional_state: Electrified anticipation cresting into approving fervor.
-    goals:
-    - Celebrate the Shakespeare Company's overture
-    - Surrender to the drama's mounting tension
-    what_happened: Theater audience erupts in applause as trumpets herald the play's
-      start and the MAN begins his lines, their collective reaction underscoring the
-      performance's grip before the camera shifts to balconies.
-    observed_status: Theater audience erupts in applause as trumpets herald the play's
-      start and the MAN begins his lines, their collective reaction underscoring the
-      performance's grip before the camera shifts to balconies.
-    beliefs:
-    - Applause affirms theatrical excellence
-    - Opening spectacle sets inexorable tragic tone
-    observed_traits:
-    - enthusiastic
-    - responsive
-    - immersed
-    importance: primary
-    global_id: ger_agent_674c78e01130
-  object_involvements:
-  - object_uuid: ger_object_a2c005750018
-    description_of_involvement: The center stage MAN grips and thrusts the prop sword
-      skyward during his monologue, its gleaming arc visually punctuating curses against
-      revolting stars and Henry V's death, amplifying the scene's theme of violent
-      upheaval that foreshadows Bartlet's assassination dilemma.
-    status_before_event: Held at rest center stage by MAN amid frozen actors
-    status_after_event: Remains raised aloft by center MAN as monologue concludes
-    global_id: ger_object_a2c005750018
-  - object_uuid: ger_object_712984840b33
-    description_of_involvement: Shakespeare Company trumpets blast a piercing fanfare
-      coinciding with audience applause and curtain rise, jolting the theater into
-      the play's ominous inception and providing auditory cover for Sam's balcony
-      poke and Toby's exit.
-    status_before_event: Positioned offstage, silent in dim lights
-    status_after_event: Actively sounding, sustaining dramatic momentum
-    global_id: ger_object_712984840b33
-  location_involvements:
-  - location_uuid: ger_location_00c48391ec2c
-    description_of_involvement: The Broadway theater envelops the event in dim stage
-      lights and swelling applause, hosting the Shakespeare Company's Henry VI opener
-      while camera movement reveals layered balconies—merging public spectacle with
-      private political signals in a space rife with assassination-foreshadowing portents.
-    observed_atmosphere: Dimly lit with mounting theatrical tension and audience energy
-    functional_role: Venue for performance and covert staff coordination
-    symbolic_significance: Microcosm of power's stage-managed violence and hidden
-      machinations
-    access_restrictions: Tiered seating with VIP presidential box
-    key_environmental_details:
-    - Dim stage lights casting long shadows
-    - Trumpet fanfare and applause echoing through vaulted space
-    global_id: ger_location_00c48391ec2c
-  - location_uuid: ger_location_c8fc767d114a
-    description_of_involvement: Rearmost balcony serves as secluded vantage for Sam
-      and Toby's discreet exchange—Sam's poke and Toby's stand—elevated above the
-      stage chaos, enabling shadowed exit amid the play's invocation without detection.
-    observed_atmosphere: Hushed and obscured, contrasting stage blaze
-    functional_role: Covert exit point for political aides
-    symbolic_significance: Heightened perch mirroring oversight of chaos below
-    access_restrictions: Remote and less populated, ideal for low-profile movement
-    key_environmental_details:
-    - Dim upper-level shadows
-    - Distant stage sounds filtering upward
-    global_id: ger_location_c8fc767d114a
-  organization_involvements:
-  - organization_uuid: ger_organization_5daa418d0a14
-    description_of_involvement: The Shakespeare Company launches its Henry VI production
-      with trumpet fanfare, rising curtain, frozen actors, and the center MAN's sword-wielding
-      monologue on cosmic revolt and kingly demise, its grim spectacle gripping the
-      audience and unknowingly paralleling the administration's ethical agonies over
-      targeted killing.
-    active_representation: Through ensemble performers executing opening sequence
-    power_dynamics: Cultural authority captivating political elite in shared space
-    organizational_goals:
-    - Immerse audience in Elizabethan tragedy's visceral opener
-    - Establish production's thematic tone of upheaval
-    influence_mechanisms:
-    - Performative spectacle commanding attention
-    - Shakespearean text evoking timeless power struggles
-    institutional_impact: Bridges art and politics, amplifying motifs of moral violence
-    internal_dynamics: ''
-    global_id: ger_organization_5daa418d0a14
-  derived_from_beat_uuids: &id008
-  - beat_3f1adf4e3ae09d00
-  - beat_87316bf201821d81
-  source_season: 3
-  source_database: westwing.s03
-- fabula_uuid: cand_evt_scene_8b0e21d6e0b4f954_1
-  global_id: null
-  title: Foreboding Henry VI Monologue Launches Play as Toby and Sam Slip Away
-  description: 'In the dimly lit Broadway theater, a MAN intones the ominous opening
-    of Shakespeare''s Henry VI: ''Hung be the heavens with black,'' evoking cosmic
-    mourning and upheaval. The audience applauds as trumpets blare and the curtain
-    rises on frozen actors in period garb, the center MAN raising his sword to decry
-    revolting stars and King Henry V''s untimely death—conquest without conquest.
-    The camera sweeps balconies past the President''s box to the rear, where Sam pokes
-    Toby, who follows him out, blending theatrical foreboding with political intrigue
-    and foreshadowing Bartlet''s moral shadows of violence and power.'
-  episode_uuid: ep_sea_ser_the_west_wing_s03_e21
-  scene_sequence: 14
-  sequence_in_scene: 18
-  key_dialogue: *id007
-  is_flashback: false
   location_uuid: ger_location_c8fc767d114a
   theme_uuids: []
   arc_uuids: []
@@ -3932,7 +3729,7 @@ events:
     - team-oriented
     importance: primary
     global_id: ger_agent_7854a70e34ea
-  - character_uuid: ger_agent_25c1a764833f
+  - character_uuid: ger_agent_529d5f3497fe
     emotional_state: ''
     goals:
     - deliver foreboding Shakespearean monologue to evoke cosmic mourning, upheaval,
@@ -3946,7 +3743,7 @@ events:
     beliefs: []
     observed_traits: []
     importance: primary
-    global_id: ger_agent_25c1a764833f
+    global_id: ger_agent_529d5f3497fe
   - character_uuid: ger_agent_69160b18619e
     emotional_state: Tableau-frozen ferocity channeled into the lead's wrathful invocation.
     goals:
@@ -4005,6 +3802,18 @@ events:
     status_after_event: Actively sounding, sustaining dramatic momentum
     global_id: ger_object_712984840b33
   location_involvements:
+  - location_uuid: ger_location_c8fc767d114a
+    description_of_involvement: Rearmost balcony serves as secluded vantage for Sam
+      and Toby's discreet exchange—Sam's poke and Toby's stand—elevated above the
+      stage chaos, enabling shadowed exit amid the play's invocation without detection.
+    observed_atmosphere: Hushed and obscured, contrasting stage blaze
+    functional_role: Covert exit point for political aides
+    symbolic_significance: Heightened perch mirroring oversight of chaos below
+    access_restrictions: Remote and less populated, ideal for low-profile movement
+    key_environmental_details:
+    - Dim upper-level shadows
+    - Distant stage sounds filtering upward
+    global_id: ger_location_c8fc767d114a
   - location_uuid: ger_location_00c48391ec2c
     description_of_involvement: The Broadway theater envelops the event in dim stage
       lights and swelling applause, hosting the Shakespeare Company's Henry VI opener
@@ -4019,6 +3828,183 @@ events:
     - Dim stage lights casting long shadows
     - Trumpet fanfare and applause echoing through vaulted space
     global_id: ger_location_00c48391ec2c
+  organization_involvements:
+  - organization_uuid: ger_organization_5daa418d0a14
+    description_of_involvement: The Shakespeare Company launches its Henry VI production
+      with trumpet fanfare, rising curtain, frozen actors, and the center MAN's sword-wielding
+      monologue on cosmic revolt and kingly demise, its grim spectacle gripping the
+      audience and unknowingly paralleling the administration's ethical agonies over
+      targeted killing.
+    active_representation: Through ensemble performers executing opening sequence
+    power_dynamics: Cultural authority captivating political elite in shared space
+    organizational_goals:
+    - Immerse audience in Elizabethan tragedy's visceral opener
+    - Establish production's thematic tone of upheaval
+    influence_mechanisms:
+    - Performative spectacle commanding attention
+    - Shakespearean text evoking timeless power struggles
+    institutional_impact: Bridges art and politics, amplifying motifs of moral violence
+    internal_dynamics: ''
+    global_id: ger_organization_5daa418d0a14
+  derived_from_beat_uuids: &id008
+  - beat_3f1adf4e3ae09d00
+  - beat_87316bf201821d81
+  source_season: 3
+  source_database: westwing.s03
+- fabula_uuid: cand_evt_scene_8b0e21d6e0b4f954_1
+  global_id: null
+  title: Foreboding Henry VI Monologue Launches Play as Toby and Sam Slip Away
+  description: 'In the dimly lit Broadway theater, a MAN intones the ominous opening
+    of Shakespeare''s Henry VI: ''Hung be the heavens with black,'' evoking cosmic
+    mourning and upheaval. The audience applauds as trumpets blare and the curtain
+    rises on frozen actors in period garb, the center MAN raising his sword to decry
+    revolting stars and King Henry V''s untimely death—conquest without conquest.
+    The camera sweeps balconies past the President''s box to the rear, where Sam pokes
+    Toby, who follows him out, blending theatrical foreboding with political intrigue
+    and foreshadowing Bartlet''s moral shadows of violence and power.'
+  episode_uuid: ep_sea_ser_the_west_wing_s03_e21
+  scene_sequence: 14
+  sequence_in_scene: 18
+  key_dialogue: *id007
+  is_flashback: false
+  location_uuid: ger_location_00c48391ec2c
+  theme_uuids: []
+  arc_uuids: []
+  participations:
+  - character_uuid: ger_agent_198649bce78f
+    emotional_state: Stoically contemplative, shadowed by the play's omens of violence.
+    goals:
+    - Absorb the performance's thematic weight
+    - Maintain decorum in VIP vantage
+    what_happened: President occupies the box as the camera pans past during the monologue
+      and balcony action, his presence a silent presidential silhouette amid the unfolding
+      stage and staff intrigue.
+    observed_status: President occupies the box as the camera pans past during the
+      monologue and balcony action, his presence a silent presidential silhouette
+      amid the unfolding stage and staff intrigue.
+    beliefs:
+    - Art mirrors leadership's moral tempests
+    - Public appearances demand poised vigilance
+    observed_traits:
+    - commanding
+    - observant
+    importance: primary
+    global_id: ger_agent_198649bce78f
+  - character_uuid: ger_agent_04bbccb1e352
+    emotional_state: Alert and conspiratorial, blending amusement with focused intent
+      amid the dramatic performance.
+    goals:
+    - Summon Toby to exit without drawing attention
+    - Advance offstage political coordination under theater's camouflage
+    what_happened: Sam ascends to the rearmost balcony amid the rising curtain and
+      monologue, discreetly poking Toby on the shoulder to signal urgent departure,
+      his movement timed to the theatrical swell for maximum cover.
+    observed_status: Sam ascends to the rearmost balcony amid the rising curtain and
+      monologue, discreetly poking Toby on the shoulder to signal urgent departure,
+      his movement timed to the theatrical swell for maximum cover.
+    beliefs:
+    - The play's chaos provides perfect anonymity for staff maneuvers
+    - Swift, silent signals ensure operational security
+    observed_traits:
+    - discreet
+    - strategic
+    - coordinated
+    importance: primary
+    global_id: ger_agent_04bbccb1e352
+  - character_uuid: ger_agent_7854a70e34ea
+    emotional_state: Responsive vigilance, attuned to cues amid the enveloping theatrical
+      portent.
+    goals:
+    - Heed Sam's signal for immediate egress
+    - Maintain seamless coordination away from public eyes
+    what_happened: Toby receives Sam's shoulder poke in the rearmost balcony during
+      the center MAN's sword-raised monologue and trumpet fanfare, promptly standing
+      to follow him out into the shadows.
+    observed_status: Toby receives Sam's shoulder poke in the rearmost balcony during
+      the center MAN's sword-raised monologue and trumpet fanfare, promptly standing
+      to follow him out into the shadows.
+    beliefs:
+    - Subtle gestures trump overt communication in high-stakes settings
+    - Theater's distraction amplifies strategic exits
+    observed_traits:
+    - responsive
+    - disciplined
+    - team-oriented
+    importance: primary
+    global_id: ger_agent_7854a70e34ea
+  - character_uuid: ger_agent_529d5f3497fe
+    emotional_state: ''
+    goals:
+    - deliver foreboding Shakespearean monologue to evoke cosmic mourning, upheaval,
+      and symbolic parallel to themes of violence and power
+    what_happened: speaks opening lines 'Hung be the heavens with black, yield day
+      and night'; raises sword center stage and delivers monologue about comets, revolting
+      stars, and King Henry V's death
+    observed_status: speaks opening lines 'Hung be the heavens with black, yield day
+      and night'; raises sword center stage and delivers monologue about comets, revolting
+      stars, and King Henry V's death
+    beliefs: []
+    observed_traits: []
+    importance: primary
+    global_id: ger_agent_529d5f3497fe
+  - character_uuid: ger_agent_69160b18619e
+    emotional_state: Tableau-frozen ferocity channeled into the lead's wrathful invocation.
+    goals:
+    - Execute precise opening tableau for dramatic impact
+    - Evoke themes of upheaval and untimely death through monologue
+    what_happened: Stage actors hold rigid poses in period garb as the curtain rises;
+      the center MAN grips and raises his sword, delivering the ominous monologue
+      on comets scourging revolting stars and Henry V's conquests-from-death.
+    observed_status: Stage actors hold rigid poses in period garb as the curtain rises;
+      the center MAN grips and raises his sword, delivering the ominous monologue
+      on comets scourging revolting stars and Henry V's conquests-from-death.
+    beliefs:
+    - Frozen precision heightens Elizabethan menace
+    - Shakespearean verse commands cosmic and political resonance
+    observed_traits:
+    - disciplined
+    - immersive
+    - intense
+    importance: primary
+    global_id: ger_agent_69160b18619e
+  - character_uuid: ger_agent_674c78e01130
+    emotional_state: Electrified anticipation cresting into approving fervor.
+    goals:
+    - Celebrate the Shakespeare Company's overture
+    - Surrender to the drama's mounting tension
+    what_happened: Theater audience erupts in applause as trumpets herald the play's
+      start and the MAN begins his lines, their collective reaction underscoring the
+      performance's grip before the camera shifts to balconies.
+    observed_status: Theater audience erupts in applause as trumpets herald the play's
+      start and the MAN begins his lines, their collective reaction underscoring the
+      performance's grip before the camera shifts to balconies.
+    beliefs:
+    - Applause affirms theatrical excellence
+    - Opening spectacle sets inexorable tragic tone
+    observed_traits:
+    - enthusiastic
+    - responsive
+    - immersed
+    importance: primary
+    global_id: ger_agent_674c78e01130
+  object_involvements:
+  - object_uuid: ger_object_a2c005750018
+    description_of_involvement: The center stage MAN grips and thrusts the prop sword
+      skyward during his monologue, its gleaming arc visually punctuating curses against
+      revolting stars and Henry V's death, amplifying the scene's theme of violent
+      upheaval that foreshadows Bartlet's assassination dilemma.
+    status_before_event: Held at rest center stage by MAN amid frozen actors
+    status_after_event: Remains raised aloft by center MAN as monologue concludes
+    global_id: ger_object_a2c005750018
+  - object_uuid: ger_object_712984840b33
+    description_of_involvement: Shakespeare Company trumpets blast a piercing fanfare
+      coinciding with audience applause and curtain rise, jolting the theater into
+      the play's ominous inception and providing auditory cover for Sam's balcony
+      poke and Toby's exit.
+    status_before_event: Positioned offstage, silent in dim lights
+    status_after_event: Actively sounding, sustaining dramatic momentum
+    global_id: ger_object_712984840b33
+  location_involvements:
   - location_uuid: ger_location_c8fc767d114a
     description_of_involvement: Rearmost balcony serves as secluded vantage for Sam
       and Toby's discreet exchange—Sam's poke and Toby's stand—elevated above the
@@ -4031,6 +4017,20 @@ events:
     - Dim upper-level shadows
     - Distant stage sounds filtering upward
     global_id: ger_location_c8fc767d114a
+  - location_uuid: ger_location_00c48391ec2c
+    description_of_involvement: The Broadway theater envelops the event in dim stage
+      lights and swelling applause, hosting the Shakespeare Company's Henry VI opener
+      while camera movement reveals layered balconies—merging public spectacle with
+      private political signals in a space rife with assassination-foreshadowing portents.
+    observed_atmosphere: Dimly lit with mounting theatrical tension and audience energy
+    functional_role: Venue for performance and covert staff coordination
+    symbolic_significance: Microcosm of power's stage-managed violence and hidden
+      machinations
+    access_restrictions: Tiered seating with VIP presidential box
+    key_environmental_details:
+    - Dim stage lights casting long shadows
+    - Trumpet fanfare and applause echoing through vaulted space
+    global_id: ger_location_00c48391ec2c
   organization_involvements:
   - organization_uuid: ger_organization_5daa418d0a14
     description_of_involvement: The Shakespeare Company launches its Henry VI production
@@ -4145,7 +4145,7 @@ events:
     - partisan firebrand
     importance: primary
     global_id: ger_agent_7854a70e34ea
-  - character_uuid: ger_agent_89fd2481c324
+  - character_uuid: ger_agent_69979de71a68
     emotional_state: N/A (mentioned off-screen target of scorn)
     goals:
     - Leverage Yankees attendance for anti-elite image
@@ -4166,7 +4166,7 @@ events:
     - opportunistic
     - tactically showy
     importance: primary
-    global_id: ger_agent_89fd2481c324
+    global_id: ger_agent_69979de71a68
   object_involvements: []
   location_involvements:
   - location_uuid: ger_location_1ba114cf651b
@@ -4327,7 +4327,7 @@ events:
     - partisan firebrand
     importance: primary
     global_id: ger_agent_7854a70e34ea
-  - character_uuid: ger_agent_89fd2481c324
+  - character_uuid: ger_agent_69979de71a68
     emotional_state: N/A (mentioned off-screen target of scorn)
     goals:
     - Leverage Yankees attendance for anti-elite image
@@ -4348,7 +4348,7 @@ events:
     - opportunistic
     - tactically showy
     importance: primary
-    global_id: ger_agent_89fd2481c324
+    global_id: ger_agent_69979de71a68
   object_involvements: []
   location_involvements:
   - location_uuid: ger_location_1ba114cf651b
@@ -4482,7 +4482,7 @@ events:
     importance: primary
     global_id: ger_agent_7854a70e34ea
   object_involvements:
-  - object_uuid: ger_object_e05004c8f52b
+  - object_uuid: ger_object_990390e0f6ff
     description_of_involvement: Josh's office landline phone, ringing insistently
       on line one, acts as the indispensable nerve center for White House staff linkage;
       Donna announces it, Josh slashes the button to activate, transforming passive
@@ -4490,7 +4490,7 @@ events:
       sabotage thrill, embodying the machinery of nocturnal power plays.
     status_before_event: Ringing on line one, unattended amid office clutter
     status_after_event: Active, connected call in Josh's possession
-    global_id: ger_object_e05004c8f52b
+    global_id: ger_object_990390e0f6ff
   location_involvements: []
   organization_involvements: []
   derived_from_beat_uuids:
@@ -4586,22 +4586,22 @@ events:
     importance: primary
     global_id: ger_agent_7854a70e34ea
   object_involvements:
-  - object_uuid: ger_object_e05004c8f52b
+  - object_uuid: ger_object_990390e0f6ff
     description_of_involvement: The landline phone serves as the vital conduit for
       Toby's real-time pitch to Josh, enabling the sabotage proposal and exposing
       the scheme's vulnerability when Josh demands a reason; it embodies the staff's
       interconnected nerve center, bridging theater intrigue with Oval operations.
     status_before_event: In Toby's hand, active call from Josh's office
     status_after_event: Likely returned to Toby post-call, conversation pivoted
-    global_id: ger_object_e05004c8f52b
-  - object_uuid: ger_object_898bda0552e1
+    global_id: ger_object_990390e0f6ff
+  - object_uuid: ger_object_8fb746e7b3a5
     description_of_involvement: The presidential motorcade is centrally referenced
       as the weaponized target of sabotage, with Toby proposing its reroute to Major
       Deegan gridlock to delay Ritchie; it symbolizes the high-stakes chess move in
       the Ritchie rivalry, turning logistics into political leverage.
     status_before_event: On standard route, primed for redirection
     status_after_event: Pending approval, rationale still needed for reroute
-    global_id: ger_object_898bda0552e1
+    global_id: ger_object_8fb746e7b3a5
   location_involvements:
   - location_uuid: ger_location_1ba114cf651b
     description_of_involvement: The theater hallway hosts this clandestine phone huddle
@@ -4719,22 +4719,22 @@ events:
     importance: primary
     global_id: ger_agent_7854a70e34ea
   object_involvements:
-  - object_uuid: ger_object_e05004c8f52b
+  - object_uuid: ger_object_990390e0f6ff
     description_of_involvement: The landline phone serves as the vital conduit for
       Toby's real-time pitch to Josh, enabling the sabotage proposal and exposing
       the scheme's vulnerability when Josh demands a reason; it embodies the staff's
       interconnected nerve center, bridging theater intrigue with Oval operations.
     status_before_event: In Toby's hand, active call from Josh's office
     status_after_event: Likely returned to Toby post-call, conversation pivoted
-    global_id: ger_object_e05004c8f52b
-  - object_uuid: ger_object_898bda0552e1
+    global_id: ger_object_990390e0f6ff
+  - object_uuid: ger_object_8fb746e7b3a5
     description_of_involvement: The presidential motorcade is centrally referenced
       as the weaponized target of sabotage, with Toby proposing its reroute to Major
       Deegan gridlock to delay Ritchie; it symbolizes the high-stakes chess move in
       the Ritchie rivalry, turning logistics into political leverage.
     status_before_event: On standard route, primed for redirection
     status_after_event: Pending approval, rationale still needed for reroute
-    global_id: ger_object_898bda0552e1
+    global_id: ger_object_8fb746e7b3a5
   location_involvements:
   - location_uuid: ger_location_1ba114cf651b
     description_of_involvement: The theater hallway hosts this clandestine phone huddle
@@ -4860,6 +4860,25 @@ events:
     - politically astute
     importance: primary
     global_id: ger_agent_7854a70e34ea
+  - character_uuid: ger_agent_69979de71a68
+    emotional_state: Implied triumphant antagonism fueling White House desperation
+    goals:
+    - Exploit welfare vote to undermine Bartlet
+    - Amplify smears via media leaks
+    what_happened: Ritchie surfaces in Toby's query about the 'Ritchie meeting and
+      the A.P. quote,' his campaign tactics invoked as external pressure catalyzing
+      Josh's compromise for the welfare bill.
+    observed_status: Ritchie surfaces in Toby's query about the 'Ritchie meeting and
+      the A.P. quote,' his campaign tactics invoked as external pressure catalyzing
+      Josh's compromise for the welfare bill.
+    beliefs:
+    - Conservative attacks fracture Democratic unity
+    - Electoral pressure bends administration compromises
+    observed_traits:
+    - opportunistic rival
+    - partisan saboteur
+    importance: primary
+    global_id: ger_agent_69979de71a68
   - character_uuid: ger_agent_3b01f1d856de
     emotional_state: Implied devastation from job loss, offset by employability
     goals:
@@ -4880,25 +4899,6 @@ events:
     - resilient professional
     importance: primary
     global_id: ger_agent_3b01f1d856de
-  - character_uuid: ger_agent_89fd2481c324
-    emotional_state: Implied triumphant antagonism fueling White House desperation
-    goals:
-    - Exploit welfare vote to undermine Bartlet
-    - Amplify smears via media leaks
-    what_happened: Ritchie surfaces in Toby's query about the 'Ritchie meeting and
-      the A.P. quote,' his campaign tactics invoked as external pressure catalyzing
-      Josh's compromise for the welfare bill.
-    observed_status: Ritchie surfaces in Toby's query about the 'Ritchie meeting and
-      the A.P. quote,' his campaign tactics invoked as external pressure catalyzing
-      Josh's compromise for the welfare bill.
-    beliefs:
-    - Conservative attacks fracture Democratic unity
-    - Electoral pressure bends administration compromises
-    observed_traits:
-    - opportunistic rival
-    - partisan saboteur
-    importance: primary
-    global_id: ger_agent_89fd2481c324
   - character_uuid: ger_agent_a16dbd517dae
     emotional_state: Absent but implied ambition fulfilled through transactional rise
     goals:
@@ -4919,7 +4919,7 @@ events:
     importance: primary
     global_id: ger_agent_a16dbd517dae
   object_involvements:
-  - object_uuid: ger_object_e05004c8f52b
+  - object_uuid: ger_object_990390e0f6ff
     description_of_involvement: Josh's office landline phone serves as the vital conduit
       for Toby's probing call, transmitting confirmation of Brenda's appointment,
       pressure acknowledgments, and Amy's fallout warning; its receiver facilitates
@@ -4928,7 +4928,7 @@ events:
     status_before_event: Idle on desk in Josh's night-drenched office, primed for
       incoming call
     status_after_event: Hung up on desk, silent amid Josh's exit and lingering tension
-    global_id: ger_object_e05004c8f52b
+    global_id: ger_object_990390e0f6ff
   location_involvements: []
   organization_involvements:
   - organization_uuid: ger_organization_e11d93f0316a
@@ -5056,6 +5056,17 @@ events:
     - supportive
     importance: primary
     global_id: ger_agent_7854a70e34ea
+  - character_uuid: ger_agent_69979de71a68
+    emotional_state: ''
+    goals: []
+    what_happened: referenced by Toby in context of pressure from 'the Ritchie meeting
+      and the A.P. quote'
+    observed_status: referenced by Toby in context of pressure from 'the Ritchie meeting
+      and the A.P. quote'
+    beliefs: []
+    observed_traits: []
+    importance: minor
+    global_id: ger_agent_69979de71a68
   - character_uuid: ger_agent_3b01f1d856de
     emotional_state: ''
     goals: []
@@ -5067,17 +5078,6 @@ events:
     observed_traits: []
     importance: secondary
     global_id: ger_agent_3b01f1d856de
-  - character_uuid: ger_agent_89fd2481c324
-    emotional_state: ''
-    goals: []
-    what_happened: referenced by Toby in context of pressure from 'the Ritchie meeting
-      and the A.P. quote'
-    observed_status: referenced by Toby in context of pressure from 'the Ritchie meeting
-      and the A.P. quote'
-    beliefs: []
-    observed_traits: []
-    importance: minor
-    global_id: ger_agent_89fd2481c324
   - character_uuid: ger_agent_a16dbd517dae
     emotional_state: ''
     goals: []
@@ -5090,7 +5090,7 @@ events:
     importance: minor
     global_id: ger_agent_a16dbd517dae
   object_involvements:
-  - object_uuid: ger_object_e05004c8f52b
+  - object_uuid: ger_object_990390e0f6ff
     description_of_involvement: Josh's office landline phone serves as the vital conduit
       for Toby's remote probing and consolation, humming alive amid night-drenched
       clutter to relay confirmations on Brenda, pressure checks, and Amy's prospects;
@@ -5099,7 +5099,7 @@ events:
       aftermath.
     status_before_event: Idle on cluttered desk, primed for urgent staff coordination
     status_after_event: Hung up abruptly, receiver humming silent as Josh departs
-    global_id: ger_object_e05004c8f52b
+    global_id: ger_object_990390e0f6ff
   location_involvements: []
   organization_involvements:
   - organization_uuid: ger_organization_e11d93f0316a
@@ -5234,7 +5234,7 @@ events:
     - witty
     importance: primary
     global_id: ger_agent_7854a70e34ea
-  - character_uuid: ger_agent_89fd2481c324
+  - character_uuid: ger_agent_69979de71a68
     emotional_state: Implicitly frustrated and outmaneuvered by traffic chaos
     goals: []
     what_happened: Referenced indirectly as 'He' whose botched parade route via Yankees
@@ -5246,7 +5246,7 @@ events:
     beliefs: []
     observed_traits: []
     importance: primary
-    global_id: ger_agent_89fd2481c324
+    global_id: ger_agent_69979de71a68
   object_involvements: []
   location_involvements:
   - location_uuid: ger_location_3ee33bf2b9e6
@@ -5411,7 +5411,7 @@ events:
     - witty
     importance: primary
     global_id: ger_agent_7854a70e34ea
-  - character_uuid: ger_agent_89fd2481c324
+  - character_uuid: ger_agent_69979de71a68
     emotional_state: Implicitly frustrated and outmaneuvered by traffic chaos
     goals: []
     what_happened: Referenced indirectly as 'He' whose botched parade route via Yankees
@@ -5423,7 +5423,7 @@ events:
     beliefs: []
     observed_traits: []
     importance: primary
-    global_id: ger_agent_89fd2481c324
+    global_id: ger_agent_69979de71a68
   object_involvements: []
   location_involvements:
   - location_uuid: ger_location_3ee33bf2b9e6
@@ -5819,7 +5819,7 @@ events:
     institutional_impact: Reflects urban policing's role in containing random violence
     internal_dynamics: ''
     global_id: ger_organization_4f75c5bac823
-  - organization_uuid: ger_organization_a02ef5855109
+  - organization_uuid: ger_organization_9aeb11cd4ff1
     description_of_involvement: Simon invokes Secret Service identity twice to compel
       suspect compliance ('I'm Secret Service'), drawing on training for pistol draw,
       subduing, and wrist mic protocol, extending federal authority into street-level
@@ -5836,7 +5836,7 @@ events:
     institutional_impact: Highlights extension of presidential protection ethos to
       civilian encounters
     internal_dynamics: ''
-    global_id: ger_organization_a02ef5855109
+    global_id: ger_organization_9aeb11cd4ff1
   derived_from_beat_uuids:
   - beat_2f5ed6b6a921571f
   - beat_9ba6dc4eb52b4fd7
@@ -6039,7 +6039,7 @@ events:
       individual heroism
     internal_dynamics: ''
     global_id: ger_organization_4f75c5bac823
-  - organization_uuid: ger_organization_a02ef5855109
+  - organization_uuid: ger_organization_9aeb11cd4ff1
     description_of_involvement: U.S. Secret Service manifests through Simon Donovan's
       authoritative self-identification and procedural mastery—drawing pistol, commanding
       compliance, improvising restraints—extending federal protective instincts from
@@ -6056,7 +6056,7 @@ events:
     institutional_impact: Highlights Secret Service's off-duty vigilance blurring
       public-private boundaries
     internal_dynamics: ''
-    global_id: ger_organization_a02ef5855109
+    global_id: ger_organization_9aeb11cd4ff1
   derived_from_beat_uuids:
   - beat_056b93e6e3e26f4c
   - beat_afe5e29a1497fa8d
@@ -6225,7 +6225,7 @@ events:
       delays in random violence containment.
     internal_dynamics: ''
     global_id: ger_organization_4f75c5bac823
-  - organization_uuid: ger_organization_a02ef5855109
+  - organization_uuid: ger_organization_9aeb11cd4ff1
     description_of_involvement: Simon invokes his U.S. Secret Service affiliation
       implicitly through protocol-honed authority in calling backup, his federal training
       manifesting in precise crisis command even off-duty, underscoring the organization's
@@ -6244,7 +6244,7 @@ events:
     institutional_impact: Highlights Secret Service's blurred off-duty boundaries,
       amplifying personal sacrifice in national security ethos.
     internal_dynamics: ''
-    global_id: ger_organization_a02ef5855109
+    global_id: ger_organization_9aeb11cd4ff1
   derived_from_beat_uuids:
   - beat_d242a8310881048d
   - beat_961ff2550f8572ea
@@ -6697,6 +6697,32 @@ events:
     - fervent
     importance: primary
     global_id: ger_agent_c9d41ae93618
+  - character_uuid: ger_agent_69979de71a68
+    emotional_state: N/A (referenced threat)
+    goals: []
+    what_happened: Rob Ritchie invoked by Josh as the dire alternative president whose
+      election would devastate welfare efforts, weaponized to underscore the stakes
+      of Amy's principled stand.
+    observed_status: Rob Ritchie invoked by Josh as the dire alternative president
+      whose election would devastate welfare efforts, weaponized to underscore the
+      stakes of Amy's principled stand.
+    beliefs: []
+    observed_traits: []
+    importance: primary
+    global_id: ger_agent_69979de71a68
+  - character_uuid: ger_agent_5bc99755e445
+    emotional_state: Deceased, impact evoking profound loss
+    goals: []
+    what_happened: Simon Donovan is referenced solely through Amy's phone-delivered
+      news of his fatal shooting, his off-screen death abruptly terminating the argument
+      and plunging Josh and Amy into shared grief.
+    observed_status: Simon Donovan is referenced solely through Amy's phone-delivered
+      news of his fatal shooting, his off-screen death abruptly terminating the argument
+      and plunging Josh and Amy into shared grief.
+    beliefs: []
+    observed_traits: []
+    importance: primary
+    global_id: ger_agent_5bc99755e445
   - character_uuid: ger_agent_3b01f1d856de
     emotional_state: Angrily righteous in her principles, defiant against compromise,
       shifting to gutted sorrow upon learning of Simon's death
@@ -6721,32 +6747,6 @@ events:
     - unyielding
     importance: primary
     global_id: ger_agent_3b01f1d856de
-  - character_uuid: ger_agent_5bc99755e445
-    emotional_state: Deceased, impact evoking profound loss
-    goals: []
-    what_happened: Simon Donovan is referenced solely through Amy's phone-delivered
-      news of his fatal shooting, his off-screen death abruptly terminating the argument
-      and plunging Josh and Amy into shared grief.
-    observed_status: Simon Donovan is referenced solely through Amy's phone-delivered
-      news of his fatal shooting, his off-screen death abruptly terminating the argument
-      and plunging Josh and Amy into shared grief.
-    beliefs: []
-    observed_traits: []
-    importance: primary
-    global_id: ger_agent_5bc99755e445
-  - character_uuid: ger_agent_89fd2481c324
-    emotional_state: N/A (referenced threat)
-    goals: []
-    what_happened: Rob Ritchie invoked by Josh as the dire alternative president whose
-      election would devastate welfare efforts, weaponized to underscore the stakes
-      of Amy's principled stand.
-    observed_status: Rob Ritchie invoked by Josh as the dire alternative president
-      whose election would devastate welfare efforts, weaponized to underscore the
-      stakes of Amy's principled stand.
-    beliefs: []
-    observed_traits: []
-    importance: primary
-    global_id: ger_agent_89fd2481c324
   object_involvements:
   - object_uuid: ger_object_a204bf2f1f18
     description_of_involvement: Amy violently slams the fridge door amid her furious
@@ -6851,6 +6851,44 @@ events:
     - stunned
     importance: primary
     global_id: ger_agent_c9d41ae93618
+  - character_uuid: ger_agent_69979de71a68
+    emotional_state: N/A (absent threat)
+    goals:
+    - N/A (invoked rival)
+    - N/A (electoral menace)
+    what_happened: Rob Ritchie is repeatedly cited by Josh as the dire presidential
+      alternative whose conservative rule would exacerbate policy failures, fueling
+      the argument until Simon's news overrides it.
+    observed_status: Rob Ritchie is repeatedly cited by Josh as the dire presidential
+      alternative whose conservative rule would exacerbate policy failures, fueling
+      the argument until Simon's news overrides it.
+    beliefs:
+    - N/A (not present)
+    - Worse outcomes under his leadership
+    observed_traits:
+    - political specter
+    - conservative boogeyman
+    importance: primary
+    global_id: ger_agent_69979de71a68
+  - character_uuid: ger_agent_5bc99755e445
+    emotional_state: 'Post-mortem: lifeless finality piercing the living'
+    goals:
+    - N/A (deceased)
+    - N/A (referenced impact)
+    what_happened: Simon Donovan is invoked solely through Amy's phone-delivered announcement
+      of his fatal shooting, instantly derailing the argument and thrusting Josh and
+      Amy into shared mourning.
+    observed_status: Simon Donovan is invoked solely through Amy's phone-delivered
+      announcement of his fatal shooting, instantly derailing the argument and thrusting
+      Josh and Amy into shared mourning.
+    beliefs:
+    - N/A (not present)
+    - N/A (symbol of sudden loss)
+    observed_traits:
+    - tragic hero
+    - unforeseen victim
+    importance: primary
+    global_id: ger_agent_5bc99755e445
   - character_uuid: ger_agent_3b01f1d856de
     emotional_state: Righteously angry resolve cracking into hollow devastation
     goals:
@@ -6874,44 +6912,6 @@ events:
     - abruptly somber
     importance: primary
     global_id: ger_agent_3b01f1d856de
-  - character_uuid: ger_agent_5bc99755e445
-    emotional_state: 'Post-mortem: lifeless finality piercing the living'
-    goals:
-    - N/A (deceased)
-    - N/A (referenced impact)
-    what_happened: Simon Donovan is invoked solely through Amy's phone-delivered announcement
-      of his fatal shooting, instantly derailing the argument and thrusting Josh and
-      Amy into shared mourning.
-    observed_status: Simon Donovan is invoked solely through Amy's phone-delivered
-      announcement of his fatal shooting, instantly derailing the argument and thrusting
-      Josh and Amy into shared mourning.
-    beliefs:
-    - N/A (not present)
-    - N/A (symbol of sudden loss)
-    observed_traits:
-    - tragic hero
-    - unforeseen victim
-    importance: primary
-    global_id: ger_agent_5bc99755e445
-  - character_uuid: ger_agent_89fd2481c324
-    emotional_state: N/A (absent threat)
-    goals:
-    - N/A (invoked rival)
-    - N/A (electoral menace)
-    what_happened: Rob Ritchie is repeatedly cited by Josh as the dire presidential
-      alternative whose conservative rule would exacerbate policy failures, fueling
-      the argument until Simon's news overrides it.
-    observed_status: Rob Ritchie is repeatedly cited by Josh as the dire presidential
-      alternative whose conservative rule would exacerbate policy failures, fueling
-      the argument until Simon's news overrides it.
-    beliefs:
-    - N/A (not present)
-    - Worse outcomes under his leadership
-    observed_traits:
-    - political specter
-    - conservative boogeyman
-    importance: primary
-    global_id: ger_agent_89fd2481c324
   object_involvements:
   - object_uuid: ger_object_a204bf2f1f18
     description_of_involvement: Amy crashes her hand against the fridge door in a
@@ -7024,7 +7024,7 @@ events:
     - steely
     importance: primary
     global_id: ger_agent_dd62525d972a
-  - character_uuid: ger_agent_0c46fe4078a3
+  - character_uuid: ger_agent_e2310869a36b
     emotional_state: N/A (referenced entity)
     goals:
     - N/A (referenced entity)
@@ -7042,7 +7042,7 @@ events:
     - ruthless
     - elusive
     importance: primary
-    global_id: ger_agent_0c46fe4078a3
+    global_id: ger_agent_e2310869a36b
   object_involvements: []
   location_involvements:
   - location_uuid: ger_location_1ba114cf651b
@@ -7144,7 +7144,7 @@ events:
     - self-aware
     importance: primary
     global_id: ger_agent_198649bce78f
-  - character_uuid: ger_agent_89fd2481c324
+  - character_uuid: ger_agent_69979de71a68
     emotional_state: Neutral routine transitioning to alert engagement
     goals:
     - Complete personal hygiene before rejoining event
@@ -7163,7 +7163,7 @@ events:
     - oblivious initially
     - approaching confidently
     importance: primary
-    global_id: ger_agent_89fd2481c324
+    global_id: ger_agent_69979de71a68
   - character_uuid: ger_agent_c9b7167d0270
     emotional_state: Calm curiosity with subtle authority
     goals:
@@ -7275,6 +7275,28 @@ events:
     - resolutely vengeful
     importance: primary
     global_id: ger_agent_198649bce78f
+  - character_uuid: ger_agent_69979de71a68
+    emotional_state: Feigned casualness masking defensive smugness
+    goals:
+    - Deflect church controversy lightly
+    - Repel elitism accusations by flipping narrative on Bartlet
+    what_happened: Exits men's bathroom washing hands (shadow visible), approaches
+      Bartlet casually greeting him, discusses play enjoyment and Yankee game traffic
+      delay, defends church remark and populist image, dismisses agent's death glibly,
+      counters with elitist barbs, smiles smugly as Bartlet departs.
+    observed_status: Exits men's bathroom washing hands (shadow visible), approaches
+      Bartlet casually greeting him, discusses play enjoyment and Yankee game traffic
+      delay, defends church remark and populist image, dismisses agent's death glibly,
+      counters with elitist barbs, smiles smugly as Bartlet departs.
+    beliefs:
+    - Populist authenticity trumps intellectualism
+    - Crime is mundane, unworthy of presidential obsession
+    observed_traits:
+    - folksy casual
+    - defensively smug
+    - politically combative
+    importance: primary
+    global_id: ger_agent_69979de71a68
   - character_uuid: ger_agent_5bc99755e445
     emotional_state: Posthumously mourned, fueling others' rage
     goals:
@@ -7297,47 +7319,6 @@ events:
     - tragic
     importance: primary
     global_id: ger_agent_5bc99755e445
-  - character_uuid: ger_agent_89fd2481c324
-    emotional_state: Feigned casualness masking defensive smugness
-    goals:
-    - Deflect church controversy lightly
-    - Repel elitism accusations by flipping narrative on Bartlet
-    what_happened: Exits men's bathroom washing hands (shadow visible), approaches
-      Bartlet casually greeting him, discusses play enjoyment and Yankee game traffic
-      delay, defends church remark and populist image, dismisses agent's death glibly,
-      counters with elitist barbs, smiles smugly as Bartlet departs.
-    observed_status: Exits men's bathroom washing hands (shadow visible), approaches
-      Bartlet casually greeting him, discusses play enjoyment and Yankee game traffic
-      delay, defends church remark and populist image, dismisses agent's death glibly,
-      counters with elitist barbs, smiles smugly as Bartlet departs.
-    beliefs:
-    - Populist authenticity trumps intellectualism
-    - Crime is mundane, unworthy of presidential obsession
-    observed_traits:
-    - folksy casual
-    - defensively smug
-    - politically combative
-    importance: primary
-    global_id: ger_agent_89fd2481c324
-  - character_uuid: ger_agent_c9b7167d0270
-    emotional_state: Quietly amused vigilance
-    goals:
-    - Monitor staff area discreetly
-    - Acknowledge president's rare vulnerability
-    what_happened: Spots Bartlet furtively lighting his cigarette in the dim mess,
-      her piercing gaze prompting his sheepish smiling admission of 'Caught me,' briefly
-      humanizing the president before Ritchie's arrival shifts focus.
-    observed_status: Spots Bartlet furtively lighting his cigarette in the dim mess,
-      her piercing gaze prompting his sheepish smiling admission of 'Caught me,' briefly
-      humanizing the president before Ritchie's arrival shifts focus.
-    beliefs:
-    - Leadership frailties are human and fleeting
-    - White House vigilance includes personal moments
-    observed_traits:
-    - observant
-    - non-judgmental
-    importance: primary
-    global_id: ger_agent_c9b7167d0270
   - character_uuid: ger_agent_17e90563edcf
     emotional_state: Unstated, implied as pivotal neutral arbiter
     goals:
@@ -7357,6 +7338,25 @@ events:
     - conciliatory
     importance: primary
     global_id: ger_agent_17e90563edcf
+  - character_uuid: ger_agent_c9b7167d0270
+    emotional_state: Quietly amused vigilance
+    goals:
+    - Monitor staff area discreetly
+    - Acknowledge president's rare vulnerability
+    what_happened: Spots Bartlet furtively lighting his cigarette in the dim mess,
+      her piercing gaze prompting his sheepish smiling admission of 'Caught me,' briefly
+      humanizing the president before Ritchie's arrival shifts focus.
+    observed_status: Spots Bartlet furtively lighting his cigarette in the dim mess,
+      her piercing gaze prompting his sheepish smiling admission of 'Caught me,' briefly
+      humanizing the president before Ritchie's arrival shifts focus.
+    beliefs:
+    - Leadership frailties are human and fleeting
+    - White House vigilance includes personal moments
+    observed_traits:
+    - observant
+    - non-judgmental
+    importance: primary
+    global_id: ger_agent_c9b7167d0270
   object_involvements:
   - object_uuid: ger_object_189adb9fe95c
     description_of_involvement: Bartlet lights the cigarette upon descending stairs,
@@ -7521,7 +7521,7 @@ events:
   theme_uuids: []
   arc_uuids: []
   participations:
-  - character_uuid: ger_agent_25c1a764833f
+  - character_uuid: ger_agent_529d5f3497fe
     emotional_state: ''
     goals:
     - arming elite snipers for the assassination operation
@@ -7530,7 +7530,7 @@ events:
     beliefs: []
     observed_traits: []
     importance: primary
-    global_id: ger_agent_25c1a764833f
+    global_id: ger_agent_529d5f3497fe
   - character_uuid: ger_agent_9803b2e829b8
     emotional_state: Steely focus veiling suppressed tension of impending kill
     goals:
@@ -7554,7 +7554,7 @@ events:
     importance: primary
     global_id: ger_agent_9803b2e829b8
   object_involvements:
-  - object_uuid: ger_object_37feabd36930
+  - object_uuid: ger_object_f07df971a2c3
     description_of_involvement: Loaded rifles, chambers brimming with death, are methodically
       distributed by a handler into the grips of each elite sniper on the remote strip;
       functionally arming the kill team for Shareef's demise, they narratively weaponize
@@ -7563,7 +7563,7 @@ events:
     status_before_event: Loaded and held by handler, ready for distribution
     status_after_event: Distributed to snipers' possession, shouldered for imminent
       use
-    global_id: ger_object_37feabd36930
+    global_id: ger_object_f07df971a2c3
   location_involvements:
   - location_uuid: ger_location_66fdaf50f1af
     description_of_involvement: This ragged RAF strip, slashed through Bermuda's verdant
@@ -7669,7 +7669,7 @@ events:
     - dutiful
     importance: primary
     global_id: ger_agent_9eb77e9bc5ec
-  - character_uuid: ger_agent_0c46fe4078a3
+  - character_uuid: ger_agent_e2310869a36b
     emotional_state: Completely unaware of impending doom
     goals:
     - Disembark safely from plane
@@ -7687,7 +7687,7 @@ events:
     - unwitting
     - vulnerable
     importance: primary
-    global_id: ger_agent_0c46fe4078a3
+    global_id: ger_agent_e2310869a36b
   - character_uuid: ger_agent_9803b2e829b8
     emotional_state: Clinical detachment in lethal execution
     goals:
@@ -7884,7 +7884,7 @@ events:
     - dutiful
     importance: primary
     global_id: ger_agent_9eb77e9bc5ec
-  - character_uuid: ger_agent_0c46fe4078a3
+  - character_uuid: ger_agent_e2310869a36b
     emotional_state: Completely unaware of impending doom
     goals:
     - Disembark safely from plane
@@ -7902,7 +7902,7 @@ events:
     - unwitting
     - vulnerable
     importance: primary
-    global_id: ger_agent_0c46fe4078a3
+    global_id: ger_agent_e2310869a36b
   - character_uuid: ger_agent_9803b2e829b8
     emotional_state: Clinical detachment in lethal execution
     goals:
@@ -8102,7 +8102,7 @@ events:
     - disciplined
     importance: primary
     global_id: ger_agent_9eb77e9bc5ec
-  - character_uuid: ger_agent_0c46fe4078a3
+  - character_uuid: ger_agent_e2310869a36b
     emotional_state: Unaware complacency shattered instantly
     goals:
     - Disembark safely
@@ -8120,7 +8120,7 @@ events:
     - unwitting
     - vulnerable
     importance: primary
-    global_id: ger_agent_0c46fe4078a3
+    global_id: ger_agent_e2310869a36b
   - character_uuid: ger_agent_9803b2e829b8
     emotional_state: Clinical detachment amid lethal finality
     goals:
@@ -8320,7 +8320,7 @@ events:
     - disciplined
     importance: primary
     global_id: ger_agent_9eb77e9bc5ec
-  - character_uuid: ger_agent_0c46fe4078a3
+  - character_uuid: ger_agent_e2310869a36b
     emotional_state: Unaware complacency shattered instantly
     goals:
     - Disembark safely
@@ -8338,7 +8338,7 @@ events:
     - unwitting
     - vulnerable
     importance: primary
-    global_id: ger_agent_0c46fe4078a3
+    global_id: ger_agent_e2310869a36b
   - character_uuid: ger_agent_9803b2e829b8
     emotional_state: Clinical detachment amid lethal finality
     goals:
@@ -8533,7 +8533,7 @@ events:
     - dutiful
     importance: primary
     global_id: ger_agent_9eb77e9bc5ec
-  - character_uuid: ger_agent_0c46fe4078a3
+  - character_uuid: ger_agent_e2310869a36b
     emotional_state: Unaware complacency shattered in instant
     goals:
     - Disembark safely post-flight
@@ -8549,7 +8549,7 @@ events:
     - confident
     - oblivious
     importance: primary
-    global_id: ger_agent_0c46fe4078a3
+    global_id: ger_agent_e2310869a36b
   - character_uuid: ger_agent_9803b2e829b8
     emotional_state: Cold operational focus devoid of hesitation
     goals:
@@ -8747,7 +8747,7 @@ events:
     - dutiful
     importance: primary
     global_id: ger_agent_9eb77e9bc5ec
-  - character_uuid: ger_agent_0c46fe4078a3
+  - character_uuid: ger_agent_e2310869a36b
     emotional_state: Unaware complacency shattered in instant
     goals:
     - Disembark safely post-flight
@@ -8763,7 +8763,7 @@ events:
     - confident
     - oblivious
     importance: primary
-    global_id: ger_agent_0c46fe4078a3
+    global_id: ger_agent_e2310869a36b
   - character_uuid: ger_agent_9803b2e829b8
     emotional_state: Cold operational focus devoid of hesitation
     goals:

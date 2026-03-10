@@ -1,5 +1,5 @@
 # Events for 100,000 Airplanes
-# Generated: 2026-02-10T12:17:24.019963
+# Generated: 2026-02-22T16:33:22.111287
 
 episode_uuid: ep_sea_ser_the_west_wing_s03_e11
 episode_title: 100,000 Airplanes
@@ -88,27 +88,7 @@ events:
     - festive
     importance: primary
     global_id: ger_agent_94e99eed2b29
-  - character_uuid: ger_agent_ee1587f9941a
-    emotional_state: Delightedly immersed in the celebratory atmosphere
-    goals:
-    - Partake in White House triumph festivities
-    - Network amid political euphoria
-    what_happened: Party Guests integrate seamlessly into the gathering, conversing
-      animatedly with staffers and aides in the festively lit lobby, their presence
-      heightening the communal thrill of SOTU redemption under ambient music.
-    observed_status: Party Guests integrate seamlessly into the gathering, conversing
-      animatedly with staffers and aides in the festively lit lobby, their presence
-      heightening the communal thrill of SOTU redemption under ambient music.
-    beliefs:
-    - Bartlet's address exemplifies presidential greatness
-    - Public support bolsters administration momentum
-    observed_traits:
-    - sociable
-    - admiring
-    - festive
-    importance: primary
-    global_id: ger_agent_ee1587f9941a
-  - character_uuid: ger_agent_14139cef8dfd
+  - character_uuid: ger_agent_7f81f2915789
     emotional_state: Euphorically relieved, basking in shared triumph after tension's
       release
     goals:
@@ -130,7 +110,27 @@ events:
     - loyal
     - euphoric
     importance: primary
-    global_id: ger_agent_14139cef8dfd
+    global_id: ger_agent_7f81f2915789
+  - character_uuid: ger_agent_ee1587f9941a
+    emotional_state: Delightedly immersed in the celebratory atmosphere
+    goals:
+    - Partake in White House triumph festivities
+    - Network amid political euphoria
+    what_happened: Party Guests integrate seamlessly into the gathering, conversing
+      animatedly with staffers and aides in the festively lit lobby, their presence
+      heightening the communal thrill of SOTU redemption under ambient music.
+    observed_status: Party Guests integrate seamlessly into the gathering, conversing
+      animatedly with staffers and aides in the festively lit lobby, their presence
+      heightening the communal thrill of SOTU redemption under ambient music.
+    beliefs:
+    - Bartlet's address exemplifies presidential greatness
+    - Public support bolsters administration momentum
+    observed_traits:
+    - sociable
+    - admiring
+    - festive
+    importance: primary
+    global_id: ger_agent_ee1587f9941a
   object_involvements: []
   location_involvements:
   - location_uuid: ger_location_03a1b20f797d
@@ -456,7 +456,7 @@ events:
     - sharp political analyst
     importance: primary
     global_id: ger_agent_7854a70e34ea
-  - character_uuid: ger_agent_64b2a2c10c8f
+  - character_uuid: ger_agent_14f85d554756
     emotional_state: Amused exasperation laced with defiant humor
     goals:
     - Conquer plane ticket reimbursement red tape
@@ -478,7 +478,7 @@ events:
     - trivia enthusiast
     - empathetic comrade
     importance: primary
-    global_id: ger_agent_64b2a2c10c8f
+    global_id: ger_agent_14f85d554756
   - character_uuid: ger_agent_3b01f1d856de
     emotional_state: ''
     goals: []
@@ -539,16 +539,19 @@ events:
     global_id: ger_object_538d4766fc8e
   location_involvements:
   - location_uuid: ger_location_3d4b26f1de82
-    description_of_involvement: Transition to hallway enables Toby-Josh pie invite
-      and Tandy reveal stride; propels momentum from bullpen stasis to mobile camaraderie,
-      echoing West Wing's whip-crack rhythm toward lobby stairs.
-    observed_atmosphere: Echoing footfalls amplifying distracted vulnerability
-    functional_role: Pathway for escaping talk and deepening subplot
-    symbolic_significance: Corridor of revelations amid motion
-    access_restrictions: White House staff only
+    description_of_involvement: Josh's bullpen serves as chaotic hub where date chatter,
+      teasing, and red-tape rants unfold amid desks and fluorescents; fosters intimate
+      staff bonding through frustration, contrasting high-stakes Oval with everyday
+      grind.
+    observed_atmosphere: Bustling fluorescent-lit frenzy laced with wry humor and
+      defeat
+    functional_role: Workplace hub for banter and bureaucratic battles
+    symbolic_significance: Microcosm of West Wing's relentless personal-political
+      fusion
+    access_restrictions: Restricted to White House staff
     key_environmental_details:
-    - Linoleum floors for slow shuffles
-    - Wall for Toby's leaning pause
+    - Cluttered desks under harsh lights
+    - File cabinets and hulking books dominating space
     global_id: ger_location_3d4b26f1de82
   - location_uuid: ger_location_886fb3d777d9
     description_of_involvement: Wilson's invoked by Josh as date venue, piano player's
@@ -562,8 +565,20 @@ events:
     - Endless piano refrain
     - Amber bar lights and haze
     global_id: ger_location_886fb3d777d9
+  - location_uuid: ger_location_3303871a0689
+    description_of_involvement: Transition to hallway enables Toby-Josh pie invite
+      and Tandy reveal stride; propels momentum from bullpen stasis to mobile camaraderie,
+      echoing West Wing's whip-crack rhythm toward lobby stairs.
+    observed_atmosphere: Echoing footfalls amplifying distracted vulnerability
+    functional_role: Pathway for escaping talk and deepening subplot
+    symbolic_significance: Corridor of revelations amid motion
+    access_restrictions: White House staff only
+    key_environmental_details:
+    - Linoleum floors for slow shuffles
+    - Wall for Toby's leaning pause
+    global_id: ger_location_3303871a0689
   organization_involvements:
-  - organization_uuid: ger_organization_17ce8deabbd6
+  - organization_uuid: ger_organization_511b38c072fd
     description_of_involvement: DPC's welfare-to-work memo requested and delivered
       by Donna to Josh; represents policy engine fueling Bartlet agenda, briefly surfacing
       amid banter to remind of duties before personal tensions dominate.
@@ -578,7 +593,7 @@ events:
     institutional_impact: Underscores administration's overhaul machinery clashing
       with daily chaos
     internal_dynamics: ''
-    global_id: ger_organization_17ce8deabbd6
+    global_id: ger_organization_511b38c072fd
   derived_from_beat_uuids: &id002
   - beat_26b2286e7f7cae9e
   - beat_aace62533b2c1edc
@@ -674,7 +689,7 @@ events:
     - sharp political analyst
     importance: primary
     global_id: ger_agent_7854a70e34ea
-  - character_uuid: ger_agent_64b2a2c10c8f
+  - character_uuid: ger_agent_14f85d554756
     emotional_state: Amused exasperation laced with defiant humor
     goals:
     - Conquer plane ticket reimbursement red tape
@@ -696,7 +711,7 @@ events:
     - trivia enthusiast
     - empathetic comrade
     importance: primary
-    global_id: ger_agent_64b2a2c10c8f
+    global_id: ger_agent_14f85d554756
   - character_uuid: ger_agent_3b01f1d856de
     emotional_state: ''
     goals: []
@@ -757,16 +772,19 @@ events:
     global_id: ger_object_538d4766fc8e
   location_involvements:
   - location_uuid: ger_location_3d4b26f1de82
-    description_of_involvement: Transition to hallway enables Toby-Josh pie invite
-      and Tandy reveal stride; propels momentum from bullpen stasis to mobile camaraderie,
-      echoing West Wing's whip-crack rhythm toward lobby stairs.
-    observed_atmosphere: Echoing footfalls amplifying distracted vulnerability
-    functional_role: Pathway for escaping talk and deepening subplot
-    symbolic_significance: Corridor of revelations amid motion
-    access_restrictions: White House staff only
+    description_of_involvement: Josh's bullpen serves as chaotic hub where date chatter,
+      teasing, and red-tape rants unfold amid desks and fluorescents; fosters intimate
+      staff bonding through frustration, contrasting high-stakes Oval with everyday
+      grind.
+    observed_atmosphere: Bustling fluorescent-lit frenzy laced with wry humor and
+      defeat
+    functional_role: Workplace hub for banter and bureaucratic battles
+    symbolic_significance: Microcosm of West Wing's relentless personal-political
+      fusion
+    access_restrictions: Restricted to White House staff
     key_environmental_details:
-    - Linoleum floors for slow shuffles
-    - Wall for Toby's leaning pause
+    - Cluttered desks under harsh lights
+    - File cabinets and hulking books dominating space
     global_id: ger_location_3d4b26f1de82
   - location_uuid: ger_location_886fb3d777d9
     description_of_involvement: Wilson's invoked by Josh as date venue, piano player's
@@ -780,8 +798,20 @@ events:
     - Endless piano refrain
     - Amber bar lights and haze
     global_id: ger_location_886fb3d777d9
+  - location_uuid: ger_location_3303871a0689
+    description_of_involvement: Transition to hallway enables Toby-Josh pie invite
+      and Tandy reveal stride; propels momentum from bullpen stasis to mobile camaraderie,
+      echoing West Wing's whip-crack rhythm toward lobby stairs.
+    observed_atmosphere: Echoing footfalls amplifying distracted vulnerability
+    functional_role: Pathway for escaping talk and deepening subplot
+    symbolic_significance: Corridor of revelations amid motion
+    access_restrictions: White House staff only
+    key_environmental_details:
+    - Linoleum floors for slow shuffles
+    - Wall for Toby's leaning pause
+    global_id: ger_location_3303871a0689
   organization_involvements:
-  - organization_uuid: ger_organization_17ce8deabbd6
+  - organization_uuid: ger_organization_511b38c072fd
     description_of_involvement: DPC's welfare-to-work memo requested and delivered
       by Donna to Josh; represents policy engine fueling Bartlet agenda, briefly surfacing
       amid banter to remind of duties before personal tensions dominate.
@@ -796,7 +826,235 @@ events:
     institutional_impact: Underscores administration's overhaul machinery clashing
       with daily chaos
     internal_dynamics: ''
-    global_id: ger_organization_17ce8deabbd6
+    global_id: ger_organization_511b38c072fd
+  derived_from_beat_uuids: *id002
+  source_season: 3
+  source_database: westwing.s03
+- fabula_uuid: cand_evt_scene_f31178a08258b487_1
+  global_id: null
+  title: 'Flashback: Josh-Donna Date Tease and Red-Tape Gripes; Toby''s Pie Escape'
+  description: In a flashback two weeks prior, Josh shares excitement about his date
+    with Amy, drawing Donna's sharp teasing on his romantic failures while they bond
+    over maddening airline reimbursement bureaucracy, sighing 'we suck' in shared
+    defeat. Distracted Toby, crushed by speechwriting woes, joins the lament before
+    impulsively inviting Josh for pie—a deft dodge of work talk that injects rare
+    camaraderie and levity, humanizing the staff amid looming tensions and setting
+    up Josh's personal subplot.
+  episode_uuid: ep_sea_ser_the_west_wing_s03_e11
+  scene_sequence: 4
+  sequence_in_scene: 4
+  key_dialogue: *id001
+  is_flashback: true
+  location_uuid: ger_location_3303871a0689
+  theme_uuids:
+  - ger_theme_988dba1b842b
+  arc_uuids: []
+  participations:
+  - character_uuid: ger_agent_85d27b56ea9b
+    emotional_state: ''
+    goals: []
+    what_happened: mentioned via her friends dining with the President
+    observed_status: mentioned via her friends dining with the President
+    beliefs: []
+    observed_traits: []
+    importance: minor
+    global_id: ger_agent_85d27b56ea9b
+  - character_uuid: ger_agent_c9d41ae93618
+    emotional_state: Excited anticipation shifting to shared frustration then intrigued
+      surprise
+    goals:
+    - Secure welfare-to-work memo for policy push
+    - Evade work talk via pie outing with Toby
+    what_happened: Josh strides into the bullpen requesting the DPC memo, eagerly
+      shares his date plans with Amy sparking Donna's teasing, gripes about bureaucracy
+      and Wilson's piano while accepting Toby's pie invite, transitioning to hallway
+      curiosity about Amy's suitor.
+    observed_status: Josh strides into the bullpen requesting the DPC memo, eagerly
+      shares his date plans with Amy sparking Donna's teasing, gripes about bureaucracy
+      and Wilson's piano while accepting Toby's pie invite, transitioning to hallway
+      curiosity about Amy's suitor.
+    beliefs:
+    - Bureaucracy crushes individual spirit
+    - Romantic sparks with Amy hold promise despite history
+    observed_traits:
+    - optimistic romantic
+    - frustrated bureaucrat
+    - loyal colleague
+    - quick-witted defender
+    importance: primary
+    global_id: ger_agent_c9d41ae93618
+  - character_uuid: ger_agent_198649bce78f
+    emotional_state: ''
+    goals: []
+    what_happened: President casually referenced by Toby as dining with Abbey's friends,
+      underscoring his moody evening.
+    observed_status: President casually referenced by Toby as dining with Abbey's
+      friends, underscoring his moody evening.
+    beliefs: []
+    observed_traits: []
+    importance: primary
+    global_id: ger_agent_198649bce78f
+  - character_uuid: ger_agent_7854a70e34ea
+    emotional_state: Distracted fatigue masking deeper speechwriting despair
+    goals:
+    - Escape larva-stage speech torment via pie
+    - Warn Josh about Amy's calculated dating
+    what_happened: Toby shuffles distractedly into bullpen, answers Donna's trivia
+      with precision, leans on wall gazing into Josh's office before inviting him
+      for pie to dodge speech woes, then reveals Amy's Tandy romance as political
+      ploy while walking.
+    observed_status: Toby shuffles distractedly into bullpen, answers Donna's trivia
+      with precision, leans on wall gazing into Josh's office before inviting him
+      for pie to dodge speech woes, then reveals Amy's Tandy romance as political
+      ploy while walking.
+    beliefs:
+    - Personal relationships mask political maneuvers
+    - Creative processes can't be rushed
+    observed_traits:
+    - weary pragmatist
+    - cynical observer
+    - impulsive escapist
+    - sharp political analyst
+    importance: primary
+    global_id: ger_agent_7854a70e34ea
+  - character_uuid: ger_agent_14f85d554756
+    emotional_state: Amused exasperation laced with defiant humor
+    goals:
+    - Conquer plane ticket reimbursement red tape
+    - Lighten Josh's mood through banter
+    what_happened: Donna pores over the regulations book, teases Josh mercilessly
+      about his dating woes and Wilson's tune, wrestles with reimbursement file reading
+      aloud GSA rules, quizzes Toby on word counts, later hands off the DPC memo in
+      the hallway.
+    observed_status: Donna pores over the regulations book, teases Josh mercilessly
+      about his dating woes and Wilson's tune, wrestles with reimbursement file reading
+      aloud GSA rules, quizzes Toby on word counts, later hands off the DPC memo in
+      the hallway.
+    beliefs:
+    - Federal bureaucracy is soul-crushing by design
+    - Josh's charm deficits doom his romances
+    observed_traits:
+    - sardonic teaser
+    - diligent aide
+    - trivia enthusiast
+    - empathetic comrade
+    importance: primary
+    global_id: ger_agent_14f85d554756
+  - character_uuid: ger_agent_3b01f1d856de
+    emotional_state: ''
+    goals: []
+    what_happened: Amy referenced glowingly by Josh as date prospect, later outed
+      by Toby as Tandy's romantic target in voter ploy.
+    observed_status: Amy referenced glowingly by Josh as date prospect, later outed
+      by Toby as Tandy's romantic target in voter ploy.
+    beliefs: []
+    observed_traits: []
+    importance: primary
+    global_id: ger_agent_3b01f1d856de
+  - character_uuid: ger_agent_d3aef18d0b70
+    emotional_state: ''
+    goals: []
+    what_happened: Nan Lieberman invoked by Toby as primary challenger triggering
+      Tandy's defensive romance strategy.
+    observed_status: Nan Lieberman invoked by Toby as primary challenger triggering
+      Tandy's defensive romance strategy.
+    beliefs: []
+    observed_traits: []
+    importance: primary
+    global_id: ger_agent_d3aef18d0b70
+  - character_uuid: ger_agent_66b370549bf3
+    emotional_state: ''
+    goals: []
+    what_happened: Tandy named by Toby as Amy's suitor, portrayed as cynically courting
+      women's votes post-Lieberman challenge.
+    observed_status: Tandy named by Toby as Amy's suitor, portrayed as cynically courting
+      women's votes post-Lieberman challenge.
+    beliefs: []
+    observed_traits: []
+    importance: primary
+    global_id: ger_agent_66b370549bf3
+  object_involvements:
+  - object_uuid: ger_object_d5ac1241c453
+    description_of_involvement: Josh urgently requests the latest DPC welfare-to-work
+      memo from Donna at scene start, receives it later in hallway pass-off; symbolizes
+      policy momentum clashing with personal banter, anchoring work amid romantic
+      and bureaucratic distractions.
+    status_before_event: Stored in Donna's desk clutter
+    status_after_event: Handed to Josh in hallway, now in his possession
+    global_id: ger_object_d5ac1241c453
+  - object_uuid: ger_object_c642e22d68bd
+    description_of_involvement: Donna yanks the thick reimbursement file from cabinet
+      top, scanning it beside Josh to probe Phoenix ticket rules; embodies federal
+      red tape's snarl, catalyzing shared defeat and 'we suck' lament that bonds the
+      duo.
+    status_before_event: Filed in upper cabinet shelf
+    status_after_event: Returned or set aside on desk post-review
+    global_id: ger_object_c642e22d68bd
+  - object_uuid: ger_object_538d4766fc8e
+    description_of_involvement: Donna hunches over the hulking regulations tome, reading
+      aloud GSA airline edicts with sigh; its labyrinthine prose mocks comprehension,
+      fueling spirit-breaking gripe and highlighting absurdity of rules over substance
+      in staff lives.
+    status_before_event: Open on Donna's desk dominating workspace
+    status_after_event: Remains open on desk, unresolved
+    global_id: ger_object_538d4766fc8e
+  location_involvements:
+  - location_uuid: ger_location_3d4b26f1de82
+    description_of_involvement: Josh's bullpen serves as chaotic hub where date chatter,
+      teasing, and red-tape rants unfold amid desks and fluorescents; fosters intimate
+      staff bonding through frustration, contrasting high-stakes Oval with everyday
+      grind.
+    observed_atmosphere: Bustling fluorescent-lit frenzy laced with wry humor and
+      defeat
+    functional_role: Workplace hub for banter and bureaucratic battles
+    symbolic_significance: Microcosm of West Wing's relentless personal-political
+      fusion
+    access_restrictions: Restricted to White House staff
+    key_environmental_details:
+    - Cluttered desks under harsh lights
+    - File cabinets and hulking books dominating space
+    global_id: ger_location_3d4b26f1de82
+  - location_uuid: ger_location_886fb3d777d9
+    description_of_involvement: Wilson's invoked by Josh as date venue, piano player's
+      repetitive 'Surrey' tune drawing shared mockery; foreshadows romantic subplot
+      while underscoring Josh's unease in shadowed, bourbon-hazed intimacy.
+    observed_atmosphere: Imagined as gratingly monotonous hayride vibe
+    functional_role: Off-site romantic stage referenced for contrast
+    symbolic_significance: Flawed refuge mirroring Josh's relational pitfalls
+    access_restrictions: ''
+    key_environmental_details:
+    - Endless piano refrain
+    - Amber bar lights and haze
+    global_id: ger_location_886fb3d777d9
+  - location_uuid: ger_location_3303871a0689
+    description_of_involvement: Transition to hallway enables Toby-Josh pie invite
+      and Tandy reveal stride; propels momentum from bullpen stasis to mobile camaraderie,
+      echoing West Wing's whip-crack rhythm toward lobby stairs.
+    observed_atmosphere: Echoing footfalls amplifying distracted vulnerability
+    functional_role: Pathway for escaping talk and deepening subplot
+    symbolic_significance: Corridor of revelations amid motion
+    access_restrictions: White House staff only
+    key_environmental_details:
+    - Linoleum floors for slow shuffles
+    - Wall for Toby's leaning pause
+    global_id: ger_location_3303871a0689
+  organization_involvements:
+  - organization_uuid: ger_organization_511b38c072fd
+    description_of_involvement: DPC's welfare-to-work memo requested and delivered
+      by Donna to Josh; represents policy engine fueling Bartlet agenda, briefly surfacing
+      amid banter to remind of duties before personal tensions dominate.
+    active_representation: Via policy document handoff
+    power_dynamics: Institutional resource empowering staff initiatives
+    organizational_goals:
+    - Advance welfare reform dispatches
+    - Equip deputies with latest intel
+    influence_mechanisms:
+    - Memoranda as ammunition for skirmishes
+    - Bureaucratic sourcing of reform data
+    institutional_impact: Underscores administration's overhaul machinery clashing
+      with daily chaos
+    internal_dynamics: ''
+    global_id: ger_organization_511b38c072fd
   derived_from_beat_uuids: *id002
   source_season: 3
   source_database: westwing.s03
@@ -815,7 +1073,7 @@ events:
   episode_uuid: ep_sea_ser_the_west_wing_s03_e11
   scene_sequence: 4
   sequence_in_scene: 5
-  key_dialogue:
+  key_dialogue: &id003
   - |-
     TOBY: You know Amy's seeing somebody.
     JOSH: I do know that.
@@ -898,7 +1156,7 @@ events:
     - Direct
     importance: primary
     global_id: ger_agent_7854a70e34ea
-  - character_uuid: ger_agent_64b2a2c10c8f
+  - character_uuid: ger_agent_14f85d554756
     emotional_state: Task-focused professionalism
     goals:
     - Fulfill Josh's memo request promptly amid workflow
@@ -917,7 +1175,7 @@ events:
     - Supportive
     - Precise
     importance: primary
-    global_id: ger_agent_64b2a2c10c8f
+    global_id: ger_agent_14f85d554756
   - character_uuid: ger_agent_3b01f1d856de
     emotional_state: ''
     goals: []
@@ -964,6 +1222,19 @@ events:
     global_id: ger_object_d5ac1241c453
   location_involvements:
   - location_uuid: ger_location_3d4b26f1de82
+    description_of_involvement: Josh's bullpen area launches the duo's walk, with
+      Donna's memo handoff bridging into hallway; cluttered desks and fluorescent
+      glare frame the event's start, grounding relational probe in everyday administrative
+      chaos.
+    observed_atmosphere: Bustling with residual banter tension
+    functional_role: Origin point for staff movement and interactions
+    symbolic_significance: ''
+    access_restrictions: White House staff workspace
+    key_environmental_details:
+    - Cluttered desks under relentless lights
+    - File cabinets and office doors nearby
+    global_id: ger_location_3d4b26f1de82
+  - location_uuid: ger_location_3303871a0689
     description_of_involvement: The West Wing hallway propels Josh and Toby's dynamic
       walk-and-talk, with Donna intercepting mid-stride; its echoing confines amplify
       intimate revelations amid bustling transit toward lobby stairs, embodying the
@@ -977,9 +1248,9 @@ events:
     key_environmental_details:
     - Echoing footfalls during strides
     - Proximity to lobby glow and stairs
-    global_id: ger_location_3d4b26f1de82
+    global_id: ger_location_3303871a0689
   organization_involvements:
-  - organization_uuid: ger_organization_17ce8deabbd6
+  - organization_uuid: ger_organization_511b38c072fd
     description_of_involvement: DPC manifests through the welfare-to-work memo Donna
       delivers to Josh mid-walk, fueling policy discussions and exemplifying the administrative
       machinery that permeates even personal conversations in the West Wing.
@@ -993,138 +1264,206 @@ events:
     - Bureaucratic sourcing for strategic decisions
     institutional_impact: Reinforces welfare overhaul as reelection priority post-censure
     internal_dynamics: ''
-    global_id: ger_organization_17ce8deabbd6
-  derived_from_beat_uuids:
+    global_id: ger_organization_511b38c072fd
+  derived_from_beat_uuids: &id004
   - beat_9851cab1636d170f
   - beat_51c0b970416cbde4
   - beat_80e041b5f5282003
   source_season: 3
   source_database: westwing.s03
-- fabula_uuid: cand_evt_scene_8f3d5ac10f281595_1
+- fabula_uuid: cand_evt_scene_f31178a08258b487_2
   global_id: null
-  title: Toby's Furious Exit and Charge to Sam
-  description: In a charged transitional beat, the camera tracks a man down the West
-    Wing hallway past the Communications Office, then captures Toby storming out of
-    his office. Visibly frustrated by stalled speechwriting progress amid post-censure
-    pressures, he crumples a draft page in his fist—a stark symbol of rejection—and
-    strides purposefully into Sam's office. This kinetic setup escalates tensions,
-    bridging collaborative strife to a raw confrontation that unearths professional
-    deadlock and personal vulnerabilities.
+  title: Toby Exposes Amy's Political Romance with Tandy
+  description: As Josh and Toby walk through the West Wing, Donna hands Josh the welfare
+    memo. Toby casually probes Josh's date with Amy Gardner, then reveals she's dating
+    Congressman John Tandy—a calculated ploy to appeal to women voters ahead of Nan
+    Lieberman's primary challenge in the 20th district. Josh's initial denial crumbles
+    into reluctant agreement, exposing his personal vulnerability amid campaign machinations.
+    Toby caps it with sarcasm about the President's unenviable dinner plans, blending
+    revelation with biting humor to underscore relational and political cynicism.
+    This setup amplifies Josh's emotional conflict, tying personal drama to broader
+    electoral strategy.
   episode_uuid: ep_sea_ser_the_west_wing_s03_e11
-  scene_sequence: 5
-  sequence_in_scene: 6
-  key_dialogue: &id003 []
-  is_flashback: false
-  location_uuid: ger_location_3d4b26f1de82
+  scene_sequence: 4
+  sequence_in_scene: 5
+  key_dialogue: *id003
+  is_flashback: true
+  location_uuid: ger_location_3303871a0689
   theme_uuids:
-  - ger_theme_07c10222f6d0
-  arc_uuids: []
+  - ger_theme_988dba1b842b
+  arc_uuids:
+  - ger_conflictarc_57ee7ad97d57
   participations:
   - character_uuid: ger_agent_c9d41ae93618
+    emotional_state: Defensive optimism crumbling into reluctant disillusionment
+    goals:
+    - Secure latest welfare policy intel for ongoing initiatives
+    - Defend his budding romance against intrusion while seeking validation
+    what_happened: Josh walks briskly with Toby through the hallway, receives the
+      welfare memo from Donna with a quick thank you, boasts initially about his date
+      with Amy before probing for details, denies then reluctantly concedes Toby's
+      cynical read on her Tandy romance, his pauses betraying dawning realization
+      amid forward momentum.
+    observed_status: Josh walks briskly with Toby through the hallway, receives the
+      welfare memo from Donna with a quick thank you, boasts initially about his date
+      with Amy before probing for details, denies then reluctantly concedes Toby's
+      cynical read on her Tandy romance, his pauses betraying dawning realization
+      amid forward momentum.
+    beliefs:
+    - Romantic connections can transcend political cynicism
+    - Toby's insights, though painful, hold electoral truth
+    observed_traits:
+    - Defensive
+    - Reluctant
+    - Vulnerable
+    - Politically astute
+    importance: primary
+    global_id: ger_agent_c9d41ae93618
+  - character_uuid: ger_agent_198649bce78f
     emotional_state: ''
     goals: []
-    what_happened: walks down the hallway and passes the Communications Office
-    observed_status: walks down the hallway and passes the Communications Office
+    what_happened: mentioned by Toby as having dinner with friends of Abbey that night
+    observed_status: mentioned by Toby as having dinner with friends of Abbey that
+      night
     beliefs: []
     observed_traits: []
     importance: minor
-    global_id: ger_agent_c9d41ae93618
-  - character_uuid: ger_agent_04bbccb1e352
-    emotional_state: Anticipatory tension in isolation, braced for Toby's intrusion
-      amid his own speechwriting struggles and heartbreak.
-    goals:
-    - Defend or advance his draft contributions under pressure
-    - Navigate the collaborative crisis without yielding to cynicism
-    what_happened: Sam's office becomes the immediate destination as Toby storms in
-      from the hallway, positioning Sam as the passive recipient of this frustrated
-      intrusion, priming the space for raw dialogue on stalled drafts and personal-professional
-      fractures.
-    observed_status: Sam's office becomes the immediate destination as Toby storms
-      in from the hallway, positioning Sam as the passive recipient of this frustrated
-      intrusion, priming the space for raw dialogue on stalled drafts and personal-professional
-      fractures.
-    beliefs:
-    - Bold pledges like the cancer-cure can redeem the administration despite barriers
-    - Personal vulnerabilities must not derail professional duty
-    observed_traits:
-    - isolated
-    - vulnerable
-    - idealistic
-    importance: primary
-    global_id: ger_agent_04bbccb1e352
+    global_id: ger_agent_198649bce78f
   - character_uuid: ger_agent_7854a70e34ea
-    emotional_state: Visibly frustrated and seething with irritation over speechwriting
-      impasse, masking deeper cynicism with decisive action.
+    emotional_state: Distracted sarcasm veiling frustrated insight
     goals:
-    - Break through the creative deadlock on SOTU drafts
-    - Confront Sam directly to demand progress and accountability
-    what_happened: Toby exits his Communications Office with visible frustration etched
-      on his face, aggressively crumples a speech draft in his fist, and strides purposefully
-      into Sam's office from a distance, embodying stalled momentum and igniting impending
-      confrontation.
-    observed_status: Toby exits his Communications Office with visible frustration
-      etched on his face, aggressively crumples a speech draft in his fist, and strides
-      purposefully into Sam's office from a distance, embodying stalled momentum and
-      igniting impending confrontation.
+    - Expose political machinations in personal relationships to temper Josh's naivety
+    - Lighten speechwriting stress through banter and revelation
+    what_happened: Toby walks alongside Josh, casually initiates probe into Josh's
+      date with Amy, drops revelation of her Tandy relationship as voter ploy tied
+      to Nan Lieberman's challenge, elicits Josh's concession with probing questions,
+      caps with sarcastic quip about the President's dinner, his sighs underscoring
+      weary pragmatism.
+    observed_status: Toby walks alongside Josh, casually initiates probe into Josh's
+      date with Amy, drops revelation of her Tandy relationship as voter ploy tied
+      to Nan Lieberman's challenge, elicits Josh's concession with probing questions,
+      caps with sarcastic quip about the President's dinner, his sighs underscoring
+      weary pragmatism.
     beliefs:
-    - Stalled drafts symbolize broader post-censure failure that must be crushed
-    - Aggressive intervention is essential to salvage the administration's redemption
-      narrative
+    - Romances in D.C. are rarely genuine amid elections
+    - Bartlet's team must pierce illusions for strategic edge
     observed_traits:
-    - frustrated
-    - determined
-    - intense
-    - pragmatic
+    - Sarcastic
+    - Perceptive
+    - Cynical
+    - Direct
     importance: primary
     global_id: ger_agent_7854a70e34ea
+  - character_uuid: ger_agent_14f85d554756
+    emotional_state: Task-focused professionalism
+    goals:
+    - Fulfill Josh's memo request promptly amid workflow
+    - Maintain seamless support during staff movement
+    what_happened: Donna passes Josh and Toby mid-stride in the hallway, thrusting
+      the requested DPC welfare memo into Josh's hands with efficient delivery, her
+      brief intervention punctuating their conversation without halting the flow.
+    observed_status: Donna passes Josh and Toby mid-stride in the hallway, thrusting
+      the requested DPC welfare memo into Josh's hands with efficient delivery, her
+      brief intervention punctuating their conversation without halting the flow.
+    beliefs:
+    - Bureaucratic details enable larger political battles
+    - Anticipating needs keeps the bullpen humming
+    observed_traits:
+    - Efficient
+    - Supportive
+    - Precise
+    importance: primary
+    global_id: ger_agent_14f85d554756
+  - character_uuid: ger_agent_3b01f1d856de
+    emotional_state: ''
+    goals: []
+    what_happened: discussed as Josh's date; revealed by Toby to be dating Congressman
+      John Tandy as a calculated political move to appeal to women voters
+    observed_status: discussed as Josh's date; revealed by Toby to be dating Congressman
+      John Tandy as a calculated political move to appeal to women voters
+    beliefs: []
+    observed_traits: []
+    importance: secondary
+    global_id: ger_agent_3b01f1d856de
+  - character_uuid: ger_agent_d3aef18d0b70
+    emotional_state: ''
+    goals: []
+    what_happened: mentioned by Toby as the candidate making a primary challenge against
+      John Tandy in the 20th district
+    observed_status: mentioned by Toby as the candidate making a primary challenge
+      against John Tandy in the 20th district
+    beliefs: []
+    observed_traits: []
+    importance: minor
+    global_id: ger_agent_d3aef18d0b70
+  - character_uuid: ger_agent_66b370549bf3
+    emotional_state: ''
+    goals: []
+    what_happened: revealed by Toby as Amy Gardner's boyfriend; accused of using the
+      relationship to court women voters ahead of Nan Lieberman's primary challenge
+      in the 20th district
+    observed_status: revealed by Toby as Amy Gardner's boyfriend; accused of using
+      the relationship to court women voters ahead of Nan Lieberman's primary challenge
+      in the 20th district
+    beliefs: []
+    observed_traits: []
+    importance: secondary
+    global_id: ger_agent_66b370549bf3
   object_involvements:
-  - object_uuid: ger_object_6b6deedbe8be
-    description_of_involvement: Toby seizes and crushes Sam's draft of the cancer-cure
-      pledge into a battered fistful, transforming it from a symbol of stalled idealism
-      into a visceral emblem of rejection and frustration; this propulsive act bridges
-      Roosevelt Room deadlock to Sam's office confrontation, underscoring the speechwriters'
-      post-censure creative agony.
-    status_before_event: Intact single sheet, likely held from recent Roosevelt Room
-      work session.
-    status_after_event: Crumpled into a tight fistful, gripped in Toby's hand as he
-      enters Sam's office.
-    global_id: ger_object_6b6deedbe8be
+  - object_uuid: ger_object_d5ac1241c453
+    description_of_involvement: Donna hands Josh the crisp DPC welfare-to-work memo
+      as he walks with Toby, serving as a bureaucratic handoff that momentarily interrupts
+      but underscores the relentless policy grind amid personal revelations, symbolizing
+      the intrusion of work into intimate staff dynamics.
+    status_before_event: In Donna's possession, recently retrieved from desk clutter
+    status_after_event: Transferred to Josh's possession, carried during hallway walk
+    global_id: ger_object_d5ac1241c453
   location_involvements:
   - location_uuid: ger_location_3d4b26f1de82
-    description_of_involvement: The West Wing hallway channels kinetic energy as a
-      man walks past the Communications Office; from a distance, Toby's frustrated
-      exit and crumpling of the draft unfold here, propelling him into Sam's office—
-      a transitional corridor that builds fevered momentum toward interpersonal explosion.
-    observed_atmosphere: Charged with nighttime urgency, echoing strides amplifying
-      isolation and pressure.
-    functional_role: Transitional pathway for observed movement and tension escalation.
-    symbolic_significance: Mirrors the interconnected fractures of political loyalty
-      and personal tempests.
-    access_restrictions: Restricted to West Wing staff, heightening insider intensity.
+    description_of_involvement: Josh's bullpen area launches the duo's walk, with
+      Donna's memo handoff bridging into hallway; cluttered desks and fluorescent
+      glare frame the event's start, grounding relational probe in everyday administrative
+      chaos.
+    observed_atmosphere: Bustling with residual banter tension
+    functional_role: Origin point for staff movement and interactions
+    symbolic_significance: ''
+    access_restrictions: White House staff workspace
     key_environmental_details:
-    - Fevered rush of linoleum underfoot
-    - Distant lobby glow casting long shadows
+    - Cluttered desks under relentless lights
+    - File cabinets and office doors nearby
     global_id: ger_location_3d4b26f1de82
-  - location_uuid: ger_location_7423b10d7d15
-    description_of_involvement: The nighttime Roosevelt Room launches the scene with
-      a tracking shot from inside, following a man into the hallway; its shadowed
-      interior evokes prior speechwriting frustrations, seamlessly transitioning to
-      Toby's outburst and amplifying the late-hour pressure cooker of stalled SOTU
-      progress.
-    observed_atmosphere: Darkness pressing against windows, heavy with unresolved
-      tension and creative stagnation.
-    functional_role: Visual origin point for camera movement and narrative handover
-      to hallway action.
-    symbolic_significance: Embodies the administration's stalled redemption forge
-      amid censure fallout.
-    access_restrictions: ''
+  - location_uuid: ger_location_3303871a0689
+    description_of_involvement: The West Wing hallway propels Josh and Toby's dynamic
+      walk-and-talk, with Donna intercepting mid-stride; its echoing confines amplify
+      intimate revelations amid bustling transit toward lobby stairs, embodying the
+      pressurized fusion of personal and professional spheres in Bartlet's orbit.
+    observed_atmosphere: Urgent, clipped rhythm of footsteps and revelations under
+      fluorescent hum
+    functional_role: Transit corridor for mobile conversation and handoffs
+    symbolic_significance: Channel for unfiltered political candor stripping romantic
+      illusions
+    access_restrictions: Restricted to cleared White House staff
     key_environmental_details:
-    - Tall windows shrouded in night darkness
-    - Scarred tables bearing traces of earlier slammed frustrations
-    global_id: ger_location_7423b10d7d15
-  organization_involvements: []
-  derived_from_beat_uuids: &id004
-  - beat_7c21e4efec3d3cfe
+    - Echoing footfalls during strides
+    - Proximity to lobby glow and stairs
+    global_id: ger_location_3303871a0689
+  organization_involvements:
+  - organization_uuid: ger_organization_511b38c072fd
+    description_of_involvement: DPC manifests through the welfare-to-work memo Donna
+      delivers to Josh mid-walk, fueling policy discussions and exemplifying the administrative
+      machinery that permeates even personal conversations in the West Wing.
+    active_representation: Via policy document handoff
+    power_dynamics: Provides essential resources under White House oversight
+    organizational_goals:
+    - Disseminate updated welfare reform intelligence
+    - Support administration's legislative initiatives
+    influence_mechanisms:
+    - Policy memos as informational leverage
+    - Bureaucratic sourcing for strategic decisions
+    institutional_impact: Reinforces welfare overhaul as reelection priority post-censure
+    internal_dynamics: ''
+    global_id: ger_organization_511b38c072fd
+  derived_from_beat_uuids: *id004
   source_season: 3
   source_database: westwing.s03
 - fabula_uuid: cand_evt_scene_8f3d5ac10f281595_1
@@ -1140,7 +1479,7 @@ events:
   episode_uuid: ep_sea_ser_the_west_wing_s03_e11
   scene_sequence: 5
   sequence_in_scene: 6
-  key_dialogue: *id003
+  key_dialogue: &id005 []
   is_flashback: false
   location_uuid: ger_location_7423b10d7d15
   theme_uuids:
@@ -1217,21 +1556,6 @@ events:
       enters Sam's office.
     global_id: ger_object_6b6deedbe8be
   location_involvements:
-  - location_uuid: ger_location_3d4b26f1de82
-    description_of_involvement: The West Wing hallway channels kinetic energy as a
-      man walks past the Communications Office; from a distance, Toby's frustrated
-      exit and crumpling of the draft unfold here, propelling him into Sam's office—
-      a transitional corridor that builds fevered momentum toward interpersonal explosion.
-    observed_atmosphere: Charged with nighttime urgency, echoing strides amplifying
-      isolation and pressure.
-    functional_role: Transitional pathway for observed movement and tension escalation.
-    symbolic_significance: Mirrors the interconnected fractures of political loyalty
-      and personal tempests.
-    access_restrictions: Restricted to West Wing staff, heightening insider intensity.
-    key_environmental_details:
-    - Fevered rush of linoleum underfoot
-    - Distant lobby glow casting long shadows
-    global_id: ger_location_3d4b26f1de82
   - location_uuid: ger_location_7423b10d7d15
     description_of_involvement: The nighttime Roosevelt Room launches the scene with
       a tracking shot from inside, following a man into the hallway; its shadowed
@@ -1249,8 +1573,150 @@ events:
     - Tall windows shrouded in night darkness
     - Scarred tables bearing traces of earlier slammed frustrations
     global_id: ger_location_7423b10d7d15
+  - location_uuid: ger_location_3303871a0689
+    description_of_involvement: The West Wing hallway channels kinetic energy as a
+      man walks past the Communications Office; from a distance, Toby's frustrated
+      exit and crumpling of the draft unfold here, propelling him into Sam's office—
+      a transitional corridor that builds fevered momentum toward interpersonal explosion.
+    observed_atmosphere: Charged with nighttime urgency, echoing strides amplifying
+      isolation and pressure.
+    functional_role: Transitional pathway for observed movement and tension escalation.
+    symbolic_significance: Mirrors the interconnected fractures of political loyalty
+      and personal tempests.
+    access_restrictions: Restricted to West Wing staff, heightening insider intensity.
+    key_environmental_details:
+    - Fevered rush of linoleum underfoot
+    - Distant lobby glow casting long shadows
+    global_id: ger_location_3303871a0689
   organization_involvements: []
-  derived_from_beat_uuids: *id004
+  derived_from_beat_uuids: &id006
+  - beat_7c21e4efec3d3cfe
+  source_season: 3
+  source_database: westwing.s03
+- fabula_uuid: cand_evt_scene_8f3d5ac10f281595_1
+  global_id: null
+  title: Toby's Furious Exit and Charge to Sam
+  description: In a charged transitional beat, the camera tracks a man down the West
+    Wing hallway past the Communications Office, then captures Toby storming out of
+    his office. Visibly frustrated by stalled speechwriting progress amid post-censure
+    pressures, he crumples a draft page in his fist—a stark symbol of rejection—and
+    strides purposefully into Sam's office. This kinetic setup escalates tensions,
+    bridging collaborative strife to a raw confrontation that unearths professional
+    deadlock and personal vulnerabilities.
+  episode_uuid: ep_sea_ser_the_west_wing_s03_e11
+  scene_sequence: 5
+  sequence_in_scene: 6
+  key_dialogue: *id005
+  is_flashback: false
+  location_uuid: ger_location_3303871a0689
+  theme_uuids:
+  - ger_theme_07c10222f6d0
+  arc_uuids: []
+  participations:
+  - character_uuid: ger_agent_c9d41ae93618
+    emotional_state: ''
+    goals: []
+    what_happened: walks down the hallway and passes the Communications Office
+    observed_status: walks down the hallway and passes the Communications Office
+    beliefs: []
+    observed_traits: []
+    importance: minor
+    global_id: ger_agent_c9d41ae93618
+  - character_uuid: ger_agent_04bbccb1e352
+    emotional_state: Anticipatory tension in isolation, braced for Toby's intrusion
+      amid his own speechwriting struggles and heartbreak.
+    goals:
+    - Defend or advance his draft contributions under pressure
+    - Navigate the collaborative crisis without yielding to cynicism
+    what_happened: Sam's office becomes the immediate destination as Toby storms in
+      from the hallway, positioning Sam as the passive recipient of this frustrated
+      intrusion, priming the space for raw dialogue on stalled drafts and personal-professional
+      fractures.
+    observed_status: Sam's office becomes the immediate destination as Toby storms
+      in from the hallway, positioning Sam as the passive recipient of this frustrated
+      intrusion, priming the space for raw dialogue on stalled drafts and personal-professional
+      fractures.
+    beliefs:
+    - Bold pledges like the cancer-cure can redeem the administration despite barriers
+    - Personal vulnerabilities must not derail professional duty
+    observed_traits:
+    - isolated
+    - vulnerable
+    - idealistic
+    importance: primary
+    global_id: ger_agent_04bbccb1e352
+  - character_uuid: ger_agent_7854a70e34ea
+    emotional_state: Visibly frustrated and seething with irritation over speechwriting
+      impasse, masking deeper cynicism with decisive action.
+    goals:
+    - Break through the creative deadlock on SOTU drafts
+    - Confront Sam directly to demand progress and accountability
+    what_happened: Toby exits his Communications Office with visible frustration etched
+      on his face, aggressively crumples a speech draft in his fist, and strides purposefully
+      into Sam's office from a distance, embodying stalled momentum and igniting impending
+      confrontation.
+    observed_status: Toby exits his Communications Office with visible frustration
+      etched on his face, aggressively crumples a speech draft in his fist, and strides
+      purposefully into Sam's office from a distance, embodying stalled momentum and
+      igniting impending confrontation.
+    beliefs:
+    - Stalled drafts symbolize broader post-censure failure that must be crushed
+    - Aggressive intervention is essential to salvage the administration's redemption
+      narrative
+    observed_traits:
+    - frustrated
+    - determined
+    - intense
+    - pragmatic
+    importance: primary
+    global_id: ger_agent_7854a70e34ea
+  object_involvements:
+  - object_uuid: ger_object_6b6deedbe8be
+    description_of_involvement: Toby seizes and crushes Sam's draft of the cancer-cure
+      pledge into a battered fistful, transforming it from a symbol of stalled idealism
+      into a visceral emblem of rejection and frustration; this propulsive act bridges
+      Roosevelt Room deadlock to Sam's office confrontation, underscoring the speechwriters'
+      post-censure creative agony.
+    status_before_event: Intact single sheet, likely held from recent Roosevelt Room
+      work session.
+    status_after_event: Crumpled into a tight fistful, gripped in Toby's hand as he
+      enters Sam's office.
+    global_id: ger_object_6b6deedbe8be
+  location_involvements:
+  - location_uuid: ger_location_7423b10d7d15
+    description_of_involvement: The nighttime Roosevelt Room launches the scene with
+      a tracking shot from inside, following a man into the hallway; its shadowed
+      interior evokes prior speechwriting frustrations, seamlessly transitioning to
+      Toby's outburst and amplifying the late-hour pressure cooker of stalled SOTU
+      progress.
+    observed_atmosphere: Darkness pressing against windows, heavy with unresolved
+      tension and creative stagnation.
+    functional_role: Visual origin point for camera movement and narrative handover
+      to hallway action.
+    symbolic_significance: Embodies the administration's stalled redemption forge
+      amid censure fallout.
+    access_restrictions: ''
+    key_environmental_details:
+    - Tall windows shrouded in night darkness
+    - Scarred tables bearing traces of earlier slammed frustrations
+    global_id: ger_location_7423b10d7d15
+  - location_uuid: ger_location_3303871a0689
+    description_of_involvement: The West Wing hallway channels kinetic energy as a
+      man walks past the Communications Office; from a distance, Toby's frustrated
+      exit and crumpling of the draft unfold here, propelling him into Sam's office—
+      a transitional corridor that builds fevered momentum toward interpersonal explosion.
+    observed_atmosphere: Charged with nighttime urgency, echoing strides amplifying
+      isolation and pressure.
+    functional_role: Transitional pathway for observed movement and tension escalation.
+    symbolic_significance: Mirrors the interconnected fractures of political loyalty
+      and personal tempests.
+    access_restrictions: Restricted to West Wing staff, heightening insider intensity.
+    key_environmental_details:
+    - Fevered rush of linoleum underfoot
+    - Distant lobby glow casting long shadows
+    global_id: ger_location_3303871a0689
+  organization_involvements: []
+  derived_from_beat_uuids: *id006
   source_season: 3
   source_database: westwing.s03
 - fabula_uuid: cand_evt_scene_5f43348ced86ea18_1
@@ -1279,7 +1745,7 @@ events:
     everybody in.'
   - 'TOBY: This is about the censure.'
   is_flashback: false
-  location_uuid: ger_location_3d4b26f1de82
+  location_uuid: ger_location_3303871a0689
   theme_uuids:
   - ger_theme_07c10222f6d0
   - ger_theme_a24b692535dc
@@ -1418,14 +1884,6 @@ events:
     importance: primary
     global_id: ger_agent_6093e5235332
   object_involvements:
-  - object_uuid: ger_object_e1a4fbf24ad5
-    description_of_involvement: Sam rises to snatch fresh newspaper from outside door,
-      returning to desk where it sprawls amid drafts during Lisa confession; mundane
-      prop grounds vulnerability beat, weathering emotional shrapnel before visionary
-      interruption.
-    status_before_event: Folded/waiting outside Sam's office door
-    status_after_event: Open/sprawled on Sam's desk amid work clutter
-    global_id: ger_object_e1a4fbf24ad5
   - object_uuid: ger_object_18b621c4238a
     description_of_involvement: Toby hurls the viciously balled SOTU economy draft
       like shrapnel upon entering, symbolizing explosive frustration over stalled
@@ -1442,8 +1900,16 @@ events:
     status_before_event: Untouched on office table near desk
     status_after_event: Partially consumed, flakes scattered on table
     global_id: ger_object_6a529a699cc9
+  - object_uuid: ger_object_e1a4fbf24ad5
+    description_of_involvement: Sam rises to snatch fresh newspaper from outside door,
+      returning to desk where it sprawls amid drafts during Lisa confession; mundane
+      prop grounds vulnerability beat, weathering emotional shrapnel before visionary
+      interruption.
+    status_before_event: Folded/waiting outside Sam's office door
+    status_after_event: Open/sprawled on Sam's desk amid work clutter
+    global_id: ger_object_e1a4fbf24ad5
   location_involvements:
-  - location_uuid: ger_location_3d4b26f1de82
+  - location_uuid: ger_location_3303871a0689
     description_of_involvement: Hallway frames Bartlet's determined passage with agent
       toward Communications Office, visible from Sam's doorway where Toby and Sam
       spot him; serves as dynamic transition thrusting external presidential momentum
@@ -1455,7 +1921,7 @@ events:
     key_environmental_details:
     - Gleaming presidential seal nearby
     - Echoing footfalls of entourage
-    global_id: ger_location_3d4b26f1de82
+    global_id: ger_location_3303871a0689
   organization_involvements:
   - organization_uuid: ger_organization_372922cc229d
     description_of_involvement: Bartlet targets Communications Department as rally
@@ -1508,7 +1974,7 @@ events:
     in.'
   - 'TOBY: This is about the censure.'
   is_flashback: false
-  location_uuid: ger_location_3d4b26f1de82
+  location_uuid: ger_location_3303871a0689
   theme_uuids:
   - ger_theme_a24b692535dc
   arc_uuids: []
@@ -1639,7 +2105,7 @@ events:
     global_id: ger_agent_6093e5235332
   object_involvements: []
   location_involvements:
-  - location_uuid: ger_location_3d4b26f1de82
+  - location_uuid: ger_location_3303871a0689
     description_of_involvement: The West Wing hallway serves as conduit for Bartlet's
       dramatic irruption into Sam's doorway, framing the presidential intrusion amid
       late-night bustle, heightening the shock of transition from private confession
@@ -1653,7 +2119,7 @@ events:
     key_environmental_details:
     - Dimly lit late-night corridors
     - Echoing footsteps heralding approach
-    global_id: ger_location_3d4b26f1de82
+    global_id: ger_location_3303871a0689
   organization_involvements:
   - organization_uuid: ger_organization_372922cc229d
     description_of_involvement: The White House Communications Department emerges
@@ -2497,25 +2963,6 @@ events:
   object_involvements: []
   location_involvements: []
   organization_involvements:
-  - organization_uuid: ger_organization_55a49abeab7d
-    description_of_involvement: Congress looms as the existential threat via Toby's
-      invocation of the impending Censure on President Bartlet, framing the cancer-cure
-      pledge as a futile evasion tactic and heightening the debate's stakes amid post-scandal
-      redemption pressures.
-    active_representation: Through referenced institutional action (Congressional
-      Censure)
-    power_dynamics: Wielding punitive oversight authority over the Executive, crushing
-      presidential momentum
-    organizational_goals:
-    - Enforce accountability via historic non-binding rebuke
-    - Diminish Bartlet's political capital post-scandal
-    influence_mechanisms:
-    - Legislative pressure through resolution drafting
-    - Reputation-shattering public condemnation
-    institutional_impact: Amplifies administration's vulnerability, fueling internal
-      pragmatism vs. defiance
-    internal_dynamics: ''
-    global_id: ger_organization_55a49abeab7d
   - organization_uuid: ger_organization_d2811c3286b4
     description_of_involvement: NCI is tied to Samuel Broder's quoted authority by
       Joey, symbolizing elite expertise whose historical leadership critiques federal
@@ -2535,6 +2982,25 @@ events:
       realities
     internal_dynamics: ''
     global_id: ger_organization_d2811c3286b4
+  - organization_uuid: ger_organization_55a49abeab7d
+    description_of_involvement: Congress looms as the existential threat via Toby's
+      invocation of the impending Censure on President Bartlet, framing the cancer-cure
+      pledge as a futile evasion tactic and heightening the debate's stakes amid post-scandal
+      redemption pressures.
+    active_representation: Through referenced institutional action (Congressional
+      Censure)
+    power_dynamics: Wielding punitive oversight authority over the Executive, crushing
+      presidential momentum
+    organizational_goals:
+    - Enforce accountability via historic non-binding rebuke
+    - Diminish Bartlet's political capital post-scandal
+    influence_mechanisms:
+    - Legislative pressure through resolution drafting
+    - Reputation-shattering public condemnation
+    institutional_impact: Amplifies administration's vulnerability, fueling internal
+      pragmatism vs. defiance
+    internal_dynamics: ''
+    global_id: ger_organization_55a49abeab7d
   derived_from_beat_uuids:
   - beat_7d83821fa1998df8
   - beat_38833e7f7887175b
@@ -2556,466 +3022,11 @@ events:
   episode_uuid: ep_sea_ser_the_west_wing_s03_e11
   scene_sequence: 11
   sequence_in_scene: 14
-  key_dialogue: &id005
+  key_dialogue: &id007
   - 'JOSH: "Listen... When the hell are we getting numbers?"'
   - 'KENNY (for JOEY): "You are a pleasure to work for."'
   - 'JOSH: "I hear that a lot. When are we getting numbers?"'
   - 'JOEY: "When I say so."'
-  is_flashback: false
-  location_uuid: ger_location_c05c2fb83a2f
-  theme_uuids:
-  - ger_theme_07c10222f6d0
-  - ger_theme_988dba1b842b
-  arc_uuids: []
-  participations:
-  - character_uuid: ger_agent_a96064ff3873
-    emotional_state: Sardonically authoritative, relishing control over needy Josh
-    goals:
-    - Withhold polling data until analytically ready
-    - Rebuke Josh's impatience sharply
-    what_happened: Walks down hallway signing intently with Kenny, responds to Josh's
-      demand with sarcastic sign language voiced as 'You are a pleasure to work for,'
-      asserts 'When I say so,' and walks away decisively.
-    observed_status: Walks down hallway signing intently with Kenny, responds to Josh's
-      demand with sarcastic sign language voiced as 'You are a pleasure to work for,'
-      asserts 'When I say so,' and walks away decisively.
-    beliefs:
-    - Rushing data undermines integrity and accuracy
-    - Bartlet staff desperation post-censure is palpable but premature
-    observed_traits:
-    - sarcastic
-    - authoritative
-    - pragmatic
-    - unflappable
-    importance: primary
-    global_id: ger_agent_a96064ff3873
-  - character_uuid: ger_agent_c9d41ae93618
-    emotional_state: Anxiously frustrated with undercurrents of jealousy and political
-      skepticism
-    goals:
-    - Secure immediate post-SOTU polling data on cancer pledge
-    - Challenge Amy's relationship with Tandy as political ploy
-    what_happened: Barrels up behind Joey and Kenny demanding poll numbers urgently,
-      banters defensively with Donna's tease, follows Amy to deserted hallway for
-      tense argument on Tandy's motives, shakes hands skeptically with Tandy while
-      muttering doubt.
-    observed_status: Barrels up behind Joey and Kenny demanding poll numbers urgently,
-      banters defensively with Donna's tease, follows Amy to deserted hallway for
-      tense argument on Tandy's motives, shakes hands skeptically with Tandy while
-      muttering doubt.
-    beliefs:
-    - Polls are essential to validate Bartlet's bold SOTU gamble
-    - Tandy's courtship of Amy is strategically cynical
-    observed_traits:
-    - anxious
-    - pushy
-    - defensive
-    - jealous
-    - sarcastic
-    importance: primary
-    global_id: ger_agent_c9d41ae93618
-  - character_uuid: ger_agent_64b2a2c10c8f
-    emotional_state: Amusedly playful with underlying loyalty
-    goals:
-    - Lighten Josh's tension with personal jab
-    - Advocate policy tweak for political gain
-    what_happened: Approaches quietly from behind Josh post-Joey departure, delivers
-      teasing barb on his charm deficit with women, pitches simplifying government
-      manuals as missed political winner.
-    observed_status: Approaches quietly from behind Josh post-Joey departure, delivers
-      teasing barb on his charm deficit with women, pitches simplifying government
-      manuals as missed political winner.
-    beliefs:
-    - Josh's romantic ineptitude is chronic and humorous
-    - Bureaucratic reforms like readable manuals win public favor
-    observed_traits:
-    - witty
-    - teasing
-    - resourceful
-    - observant
-    importance: primary
-    global_id: ger_agent_64b2a2c10c8f
-  - character_uuid: ger_agent_b29870aa3178
-    emotional_state: Calmly supportive amid confrontation
-    goals:
-    - Accurately interpret and voice Joey's responses
-    - Uphold Joey's polling timeline
-    what_happened: Walks alongside Joey signing in conversation, facilitates her signed
-      retorts voiced to Josh during tense exchange, departs with her after rebuff.
-    observed_status: Walks alongside Joey signing in conversation, facilitates her
-      signed retorts voiced to Josh during tense exchange, departs with her after
-      rebuff.
-    beliefs:
-    - Joey's expertise dictates data release
-    - Professional boundaries protect analysis quality
-    observed_traits:
-    - precise
-    - loyal
-    - facilitative
-    - composed
-    importance: primary
-    global_id: ger_agent_b29870aa3178
-  - character_uuid: ger_agent_3b01f1d856de
-    emotional_state: Annoyed defensiveness flaring into passionate advocacy
-    goals:
-    - Vindicate Tandy's feminist bona fides against Josh's cynicism
-    - Prioritize photo-op alliance over personal spat
-    what_happened: Passes behind Josh smacking him hard on head, drags him to deserted
-      hallway, whispers fierce defense of Tandy's feminist legislative record citing
-      specific bills and whips, spars with Josh's insinuations, exchanges loaded looks
-      before joining Tandy.
-    observed_status: Passes behind Josh smacking him hard on head, drags him to deserted
-      hallway, whispers fierce defense of Tandy's feminist legislative record citing
-      specific bills and whips, spars with Josh's insinuations, exchanges loaded looks
-      before joining Tandy.
-    beliefs:
-    - Tandy's record surpasses White House on key women's issues
-    - Josh's critique stems from jealous projection
-    observed_traits:
-    - aggressive
-    - passionate
-    - defensive
-    - ideologically driven
-    importance: primary
-    global_id: ger_agent_3b01f1d856de
-  - character_uuid: ger_agent_66b370549bf3
-    emotional_state: Confidently friendly and politically assured
-    goals:
-    - Leverage Amy for high-profile presidential photo-op
-    - Smooth over tensions with Josh via rapport
-    what_happened: Approaches from opposite end of deserted hallway, greets Josh and
-      Amy casually, compliments night as 'great for us,' shakes Josh's hand, invites
-      Amy for Mural Room photos with President, calls her to follow, congratulates
-      Josh.
-    observed_status: Approaches from opposite end of deserted hallway, greets Josh
-      and Amy casually, compliments night as 'great for us,' shakes Josh's hand, invites
-      Amy for Mural Room photos with President, calls her to follow, congratulates
-      Josh.
-    beliefs:
-    - SOTU success bolsters administration allies like himself
-    - Public optics strengthen electoral position
-    observed_traits:
-    - charming
-    - congenial
-    - strategic
-    - affable
-    importance: primary
-    global_id: ger_agent_66b370549bf3
-  object_involvements: []
-  location_involvements:
-  - location_uuid: ger_location_c05c2fb83a2f
-    description_of_involvement: Serves as primary artery for post-party traffic where
-      Josh intercepts Joey and Kenny for polls amid echoing footsteps, Donna ambushes
-      with teases, and Amy's smack launches the group toward isolation—contrasting
-      festive distant revelry with raw professional and personal friction.
-    observed_atmosphere: Tense and urgent, laced with afterparty echoes and hurried
-      strides
-    functional_role: site of tense interpersonal confrontations
-    symbolic_significance: Hub of colliding political anxiety and romantic fallout
-      amid celebration
-    access_restrictions: Semi-public White House corridor, accessible to staff and
-      invitees
-    key_environmental_details:
-    - Distant party chatter and music
-    - Sharp echoing footsteps
-    - Soft hallway lighting
-    global_id: ger_location_c05c2fb83a2f
-  - location_uuid: ger_location_03a1b20f797d
-    description_of_involvement: Deserted spur off main hallway where Amy hauls Josh
-      for whispered ideological clash over Tandy's credentials, tension peaks until
-      Tandy's entrance redirects to photo-ops, bare walls amplifying betrayal barbs
-      and abrupt relational pivot.
-    observed_atmosphere: Shadowed isolation heightening whispers, slaps, and simmering
-      fury
-    functional_role: Private refuge for heated argument
-    symbolic_significance: Represents fractured personal alliances away from public
-      gaze
-    access_restrictions: ''
-    key_environmental_details:
-    - Bare echoing walls
-    - Stale confined air
-    - Proximity to party roar
-    global_id: ger_location_03a1b20f797d
-  - location_uuid: ger_location_7423b10d7d15
-    description_of_involvement: Referenced by Tandy as immediate photo-op destination
-      with President, luring Amy away mid-argument, underscoring optics' pull over
-      personal drama and tying hallway tensions to broader political theater.
-    observed_atmosphere: Glamorous and expectant, offscreen pulse of alliance-building
-    functional_role: anticipated photo-op venue
-    symbolic_significance: Beacon of institutional redemption and cross-party showmanship
-    access_restrictions: VIP access for congressional allies and staff
-    key_environmental_details:
-    - Presidential portraits looming
-    - Flashbulb-ready setup
-    - Historic resonance
-    global_id: ger_location_7423b10d7d15
-  organization_involvements:
-  - organization_uuid: ger_organization_d033a1b32d4f
-    description_of_involvement: Hosts the SOTU afterparty fueling hallway chaos, where
-      staff scramble for poll validation of Bartlet's cancer pledge amid censure fallout;
-      interpersonal rifts mirror institutional high-wire act of bold redemption gambles
-      and alliance cultivation like Tandy photo-ops.
-    active_representation: Via hosting event and embodied in staff like Josh pursuing
-      polls/policy
-    power_dynamics: Exerts overarching authority, pressuring staff while courted by
-      congressional figures
-    organizational_goals:
-    - Validate SOTU impact through controlled polling intel
-    - Forge optics-boosting alliances with allies like Tandy
-    influence_mechanisms:
-    - High-stakes event hosting drawing key players
-    - Hierarchical impatience for data driving staff actions
-    institutional_impact: Highlights vulnerability in post-censure poll dependency
-      for bold pledges
-    internal_dynamics: Protocol vs. urgency tension, with external pollsters holding
-      leverage
-    global_id: ger_organization_d033a1b32d4f
-  derived_from_beat_uuids: &id006
-  - beat_a05da393141d773d
-  source_season: 3
-  source_database: westwing.s03
-- fabula_uuid: cand_evt_scene_0dcf5500b7629c30_0
-  global_id: null
-  title: Josh Badgers Joey for Post-SOTU Polling Numbers
-  description: At the State of the Union party in the White House hallway, an anxious
-    Josh intercepts deaf pollster Joey Lucas and interpreter Kenny, urgently demanding
-    immediate polling data to measure the impact of President Bartlet's risky cancer-cure
-    pledge. Joey retorts sarcastically via sign language—calling him a 'pleasure to
-    work for'—before curtly declaring she'll release numbers only when ready. This
-    sharp, power-laden clash reveals Josh's post-censure jitters, Joey's authoritative
-    control over vital intel, and the administration's precarious wait for public
-    validation, setting up future polling revelations.
-  episode_uuid: ep_sea_ser_the_west_wing_s03_e11
-  scene_sequence: 11
-  sequence_in_scene: 14
-  key_dialogue: *id005
-  is_flashback: false
-  location_uuid: ger_location_03a1b20f797d
-  theme_uuids:
-  - ger_theme_07c10222f6d0
-  - ger_theme_988dba1b842b
-  arc_uuids: []
-  participations:
-  - character_uuid: ger_agent_a96064ff3873
-    emotional_state: Sardonically authoritative, relishing control over needy Josh
-    goals:
-    - Withhold polling data until analytically ready
-    - Rebuke Josh's impatience sharply
-    what_happened: Walks down hallway signing intently with Kenny, responds to Josh's
-      demand with sarcastic sign language voiced as 'You are a pleasure to work for,'
-      asserts 'When I say so,' and walks away decisively.
-    observed_status: Walks down hallway signing intently with Kenny, responds to Josh's
-      demand with sarcastic sign language voiced as 'You are a pleasure to work for,'
-      asserts 'When I say so,' and walks away decisively.
-    beliefs:
-    - Rushing data undermines integrity and accuracy
-    - Bartlet staff desperation post-censure is palpable but premature
-    observed_traits:
-    - sarcastic
-    - authoritative
-    - pragmatic
-    - unflappable
-    importance: primary
-    global_id: ger_agent_a96064ff3873
-  - character_uuid: ger_agent_c9d41ae93618
-    emotional_state: Anxiously frustrated with undercurrents of jealousy and political
-      skepticism
-    goals:
-    - Secure immediate post-SOTU polling data on cancer pledge
-    - Challenge Amy's relationship with Tandy as political ploy
-    what_happened: Barrels up behind Joey and Kenny demanding poll numbers urgently,
-      banters defensively with Donna's tease, follows Amy to deserted hallway for
-      tense argument on Tandy's motives, shakes hands skeptically with Tandy while
-      muttering doubt.
-    observed_status: Barrels up behind Joey and Kenny demanding poll numbers urgently,
-      banters defensively with Donna's tease, follows Amy to deserted hallway for
-      tense argument on Tandy's motives, shakes hands skeptically with Tandy while
-      muttering doubt.
-    beliefs:
-    - Polls are essential to validate Bartlet's bold SOTU gamble
-    - Tandy's courtship of Amy is strategically cynical
-    observed_traits:
-    - anxious
-    - pushy
-    - defensive
-    - jealous
-    - sarcastic
-    importance: primary
-    global_id: ger_agent_c9d41ae93618
-  - character_uuid: ger_agent_64b2a2c10c8f
-    emotional_state: Amusedly playful with underlying loyalty
-    goals:
-    - Lighten Josh's tension with personal jab
-    - Advocate policy tweak for political gain
-    what_happened: Approaches quietly from behind Josh post-Joey departure, delivers
-      teasing barb on his charm deficit with women, pitches simplifying government
-      manuals as missed political winner.
-    observed_status: Approaches quietly from behind Josh post-Joey departure, delivers
-      teasing barb on his charm deficit with women, pitches simplifying government
-      manuals as missed political winner.
-    beliefs:
-    - Josh's romantic ineptitude is chronic and humorous
-    - Bureaucratic reforms like readable manuals win public favor
-    observed_traits:
-    - witty
-    - teasing
-    - resourceful
-    - observant
-    importance: primary
-    global_id: ger_agent_64b2a2c10c8f
-  - character_uuid: ger_agent_b29870aa3178
-    emotional_state: Calmly supportive amid confrontation
-    goals:
-    - Accurately interpret and voice Joey's responses
-    - Uphold Joey's polling timeline
-    what_happened: Walks alongside Joey signing in conversation, facilitates her signed
-      retorts voiced to Josh during tense exchange, departs with her after rebuff.
-    observed_status: Walks alongside Joey signing in conversation, facilitates her
-      signed retorts voiced to Josh during tense exchange, departs with her after
-      rebuff.
-    beliefs:
-    - Joey's expertise dictates data release
-    - Professional boundaries protect analysis quality
-    observed_traits:
-    - precise
-    - loyal
-    - facilitative
-    - composed
-    importance: primary
-    global_id: ger_agent_b29870aa3178
-  - character_uuid: ger_agent_3b01f1d856de
-    emotional_state: Annoyed defensiveness flaring into passionate advocacy
-    goals:
-    - Vindicate Tandy's feminist bona fides against Josh's cynicism
-    - Prioritize photo-op alliance over personal spat
-    what_happened: Passes behind Josh smacking him hard on head, drags him to deserted
-      hallway, whispers fierce defense of Tandy's feminist legislative record citing
-      specific bills and whips, spars with Josh's insinuations, exchanges loaded looks
-      before joining Tandy.
-    observed_status: Passes behind Josh smacking him hard on head, drags him to deserted
-      hallway, whispers fierce defense of Tandy's feminist legislative record citing
-      specific bills and whips, spars with Josh's insinuations, exchanges loaded looks
-      before joining Tandy.
-    beliefs:
-    - Tandy's record surpasses White House on key women's issues
-    - Josh's critique stems from jealous projection
-    observed_traits:
-    - aggressive
-    - passionate
-    - defensive
-    - ideologically driven
-    importance: primary
-    global_id: ger_agent_3b01f1d856de
-  - character_uuid: ger_agent_66b370549bf3
-    emotional_state: Confidently friendly and politically assured
-    goals:
-    - Leverage Amy for high-profile presidential photo-op
-    - Smooth over tensions with Josh via rapport
-    what_happened: Approaches from opposite end of deserted hallway, greets Josh and
-      Amy casually, compliments night as 'great for us,' shakes Josh's hand, invites
-      Amy for Mural Room photos with President, calls her to follow, congratulates
-      Josh.
-    observed_status: Approaches from opposite end of deserted hallway, greets Josh
-      and Amy casually, compliments night as 'great for us,' shakes Josh's hand, invites
-      Amy for Mural Room photos with President, calls her to follow, congratulates
-      Josh.
-    beliefs:
-    - SOTU success bolsters administration allies like himself
-    - Public optics strengthen electoral position
-    observed_traits:
-    - charming
-    - congenial
-    - strategic
-    - affable
-    importance: primary
-    global_id: ger_agent_66b370549bf3
-  object_involvements: []
-  location_involvements:
-  - location_uuid: ger_location_c05c2fb83a2f
-    description_of_involvement: Serves as primary artery for post-party traffic where
-      Josh intercepts Joey and Kenny for polls amid echoing footsteps, Donna ambushes
-      with teases, and Amy's smack launches the group toward isolation—contrasting
-      festive distant revelry with raw professional and personal friction.
-    observed_atmosphere: Tense and urgent, laced with afterparty echoes and hurried
-      strides
-    functional_role: site of tense interpersonal confrontations
-    symbolic_significance: Hub of colliding political anxiety and romantic fallout
-      amid celebration
-    access_restrictions: Semi-public White House corridor, accessible to staff and
-      invitees
-    key_environmental_details:
-    - Distant party chatter and music
-    - Sharp echoing footsteps
-    - Soft hallway lighting
-    global_id: ger_location_c05c2fb83a2f
-  - location_uuid: ger_location_03a1b20f797d
-    description_of_involvement: Deserted spur off main hallway where Amy hauls Josh
-      for whispered ideological clash over Tandy's credentials, tension peaks until
-      Tandy's entrance redirects to photo-ops, bare walls amplifying betrayal barbs
-      and abrupt relational pivot.
-    observed_atmosphere: Shadowed isolation heightening whispers, slaps, and simmering
-      fury
-    functional_role: Private refuge for heated argument
-    symbolic_significance: Represents fractured personal alliances away from public
-      gaze
-    access_restrictions: ''
-    key_environmental_details:
-    - Bare echoing walls
-    - Stale confined air
-    - Proximity to party roar
-    global_id: ger_location_03a1b20f797d
-  - location_uuid: ger_location_7423b10d7d15
-    description_of_involvement: Referenced by Tandy as immediate photo-op destination
-      with President, luring Amy away mid-argument, underscoring optics' pull over
-      personal drama and tying hallway tensions to broader political theater.
-    observed_atmosphere: Glamorous and expectant, offscreen pulse of alliance-building
-    functional_role: anticipated photo-op venue
-    symbolic_significance: Beacon of institutional redemption and cross-party showmanship
-    access_restrictions: VIP access for congressional allies and staff
-    key_environmental_details:
-    - Presidential portraits looming
-    - Flashbulb-ready setup
-    - Historic resonance
-    global_id: ger_location_7423b10d7d15
-  organization_involvements:
-  - organization_uuid: ger_organization_d033a1b32d4f
-    description_of_involvement: Hosts the SOTU afterparty fueling hallway chaos, where
-      staff scramble for poll validation of Bartlet's cancer pledge amid censure fallout;
-      interpersonal rifts mirror institutional high-wire act of bold redemption gambles
-      and alliance cultivation like Tandy photo-ops.
-    active_representation: Via hosting event and embodied in staff like Josh pursuing
-      polls/policy
-    power_dynamics: Exerts overarching authority, pressuring staff while courted by
-      congressional figures
-    organizational_goals:
-    - Validate SOTU impact through controlled polling intel
-    - Forge optics-boosting alliances with allies like Tandy
-    influence_mechanisms:
-    - High-stakes event hosting drawing key players
-    - Hierarchical impatience for data driving staff actions
-    institutional_impact: Highlights vulnerability in post-censure poll dependency
-      for bold pledges
-    internal_dynamics: Protocol vs. urgency tension, with external pollsters holding
-      leverage
-    global_id: ger_organization_d033a1b32d4f
-  derived_from_beat_uuids: *id006
-  source_season: 3
-  source_database: westwing.s03
-- fabula_uuid: cand_evt_scene_0dcf5500b7629c30_0
-  global_id: null
-  title: Josh Badgers Joey for Post-SOTU Polling Numbers
-  description: At the State of the Union party in the White House hallway, an anxious
-    Josh intercepts deaf pollster Joey Lucas and interpreter Kenny, urgently demanding
-    immediate polling data to measure the impact of President Bartlet's risky cancer-cure
-    pledge. Joey retorts sarcastically via sign language—calling him a 'pleasure to
-    work for'—before curtly declaring she'll release numbers only when ready. This
-    sharp, power-laden clash reveals Josh's post-censure jitters, Joey's authoritative
-    control over vital intel, and the administration's precarious wait for public
-    validation, setting up future polling revelations.
-  episode_uuid: ep_sea_ser_the_west_wing_s03_e11
-  scene_sequence: 11
-  sequence_in_scene: 14
-  key_dialogue: *id005
   is_flashback: false
   location_uuid: ger_location_7423b10d7d15
   theme_uuids:
@@ -3069,7 +3080,7 @@ events:
     - sarcastic
     importance: primary
     global_id: ger_agent_c9d41ae93618
-  - character_uuid: ger_agent_64b2a2c10c8f
+  - character_uuid: ger_agent_14f85d554756
     emotional_state: Amusedly playful with underlying loyalty
     goals:
     - Lighten Josh's tension with personal jab
@@ -3089,7 +3100,7 @@ events:
     - resourceful
     - observant
     importance: primary
-    global_id: ger_agent_64b2a2c10c8f
+    global_id: ger_agent_14f85d554756
   - character_uuid: ger_agent_b29870aa3178
     emotional_state: Calmly supportive amid confrontation
     goals:
@@ -3158,6 +3169,19 @@ events:
     global_id: ger_agent_66b370549bf3
   object_involvements: []
   location_involvements:
+  - location_uuid: ger_location_7423b10d7d15
+    description_of_involvement: Referenced by Tandy as immediate photo-op destination
+      with President, luring Amy away mid-argument, underscoring optics' pull over
+      personal drama and tying hallway tensions to broader political theater.
+    observed_atmosphere: Glamorous and expectant, offscreen pulse of alliance-building
+    functional_role: anticipated photo-op venue
+    symbolic_significance: Beacon of institutional redemption and cross-party showmanship
+    access_restrictions: VIP access for congressional allies and staff
+    key_environmental_details:
+    - Presidential portraits looming
+    - Flashbulb-ready setup
+    - Historic resonance
+    global_id: ger_location_7423b10d7d15
   - location_uuid: ger_location_c05c2fb83a2f
     description_of_involvement: Serves as primary artery for post-party traffic where
       Josh intercepts Joey and Kenny for polls amid echoing footsteps, Donna ambushes
@@ -3191,21 +3215,8 @@ events:
     - Stale confined air
     - Proximity to party roar
     global_id: ger_location_03a1b20f797d
-  - location_uuid: ger_location_7423b10d7d15
-    description_of_involvement: Referenced by Tandy as immediate photo-op destination
-      with President, luring Amy away mid-argument, underscoring optics' pull over
-      personal drama and tying hallway tensions to broader political theater.
-    observed_atmosphere: Glamorous and expectant, offscreen pulse of alliance-building
-    functional_role: anticipated photo-op venue
-    symbolic_significance: Beacon of institutional redemption and cross-party showmanship
-    access_restrictions: VIP access for congressional allies and staff
-    key_environmental_details:
-    - Presidential portraits looming
-    - Flashbulb-ready setup
-    - Historic resonance
-    global_id: ger_location_7423b10d7d15
   organization_involvements:
-  - organization_uuid: ger_organization_d033a1b32d4f
+  - organization_uuid: ger_organization_bb39d5dd403d
     description_of_involvement: Hosts the SOTU afterparty fueling hallway chaos, where
       staff scramble for poll validation of Bartlet's cancer pledge amid censure fallout;
       interpersonal rifts mirror institutional high-wire act of bold redemption gambles
@@ -3224,8 +3235,463 @@ events:
       for bold pledges
     internal_dynamics: Protocol vs. urgency tension, with external pollsters holding
       leverage
-    global_id: ger_organization_d033a1b32d4f
-  derived_from_beat_uuids: *id006
+    global_id: ger_organization_bb39d5dd403d
+  derived_from_beat_uuids: &id008
+  - beat_a05da393141d773d
+  source_season: 3
+  source_database: westwing.s03
+- fabula_uuid: cand_evt_scene_0dcf5500b7629c30_0
+  global_id: null
+  title: Josh Badgers Joey for Post-SOTU Polling Numbers
+  description: At the State of the Union party in the White House hallway, an anxious
+    Josh intercepts deaf pollster Joey Lucas and interpreter Kenny, urgently demanding
+    immediate polling data to measure the impact of President Bartlet's risky cancer-cure
+    pledge. Joey retorts sarcastically via sign language—calling him a 'pleasure to
+    work for'—before curtly declaring she'll release numbers only when ready. This
+    sharp, power-laden clash reveals Josh's post-censure jitters, Joey's authoritative
+    control over vital intel, and the administration's precarious wait for public
+    validation, setting up future polling revelations.
+  episode_uuid: ep_sea_ser_the_west_wing_s03_e11
+  scene_sequence: 11
+  sequence_in_scene: 14
+  key_dialogue: *id007
+  is_flashback: false
+  location_uuid: ger_location_c05c2fb83a2f
+  theme_uuids:
+  - ger_theme_07c10222f6d0
+  - ger_theme_988dba1b842b
+  arc_uuids: []
+  participations:
+  - character_uuid: ger_agent_a96064ff3873
+    emotional_state: Sardonically authoritative, relishing control over needy Josh
+    goals:
+    - Withhold polling data until analytically ready
+    - Rebuke Josh's impatience sharply
+    what_happened: Walks down hallway signing intently with Kenny, responds to Josh's
+      demand with sarcastic sign language voiced as 'You are a pleasure to work for,'
+      asserts 'When I say so,' and walks away decisively.
+    observed_status: Walks down hallway signing intently with Kenny, responds to Josh's
+      demand with sarcastic sign language voiced as 'You are a pleasure to work for,'
+      asserts 'When I say so,' and walks away decisively.
+    beliefs:
+    - Rushing data undermines integrity and accuracy
+    - Bartlet staff desperation post-censure is palpable but premature
+    observed_traits:
+    - sarcastic
+    - authoritative
+    - pragmatic
+    - unflappable
+    importance: primary
+    global_id: ger_agent_a96064ff3873
+  - character_uuid: ger_agent_c9d41ae93618
+    emotional_state: Anxiously frustrated with undercurrents of jealousy and political
+      skepticism
+    goals:
+    - Secure immediate post-SOTU polling data on cancer pledge
+    - Challenge Amy's relationship with Tandy as political ploy
+    what_happened: Barrels up behind Joey and Kenny demanding poll numbers urgently,
+      banters defensively with Donna's tease, follows Amy to deserted hallway for
+      tense argument on Tandy's motives, shakes hands skeptically with Tandy while
+      muttering doubt.
+    observed_status: Barrels up behind Joey and Kenny demanding poll numbers urgently,
+      banters defensively with Donna's tease, follows Amy to deserted hallway for
+      tense argument on Tandy's motives, shakes hands skeptically with Tandy while
+      muttering doubt.
+    beliefs:
+    - Polls are essential to validate Bartlet's bold SOTU gamble
+    - Tandy's courtship of Amy is strategically cynical
+    observed_traits:
+    - anxious
+    - pushy
+    - defensive
+    - jealous
+    - sarcastic
+    importance: primary
+    global_id: ger_agent_c9d41ae93618
+  - character_uuid: ger_agent_14f85d554756
+    emotional_state: Amusedly playful with underlying loyalty
+    goals:
+    - Lighten Josh's tension with personal jab
+    - Advocate policy tweak for political gain
+    what_happened: Approaches quietly from behind Josh post-Joey departure, delivers
+      teasing barb on his charm deficit with women, pitches simplifying government
+      manuals as missed political winner.
+    observed_status: Approaches quietly from behind Josh post-Joey departure, delivers
+      teasing barb on his charm deficit with women, pitches simplifying government
+      manuals as missed political winner.
+    beliefs:
+    - Josh's romantic ineptitude is chronic and humorous
+    - Bureaucratic reforms like readable manuals win public favor
+    observed_traits:
+    - witty
+    - teasing
+    - resourceful
+    - observant
+    importance: primary
+    global_id: ger_agent_14f85d554756
+  - character_uuid: ger_agent_b29870aa3178
+    emotional_state: Calmly supportive amid confrontation
+    goals:
+    - Accurately interpret and voice Joey's responses
+    - Uphold Joey's polling timeline
+    what_happened: Walks alongside Joey signing in conversation, facilitates her signed
+      retorts voiced to Josh during tense exchange, departs with her after rebuff.
+    observed_status: Walks alongside Joey signing in conversation, facilitates her
+      signed retorts voiced to Josh during tense exchange, departs with her after
+      rebuff.
+    beliefs:
+    - Joey's expertise dictates data release
+    - Professional boundaries protect analysis quality
+    observed_traits:
+    - precise
+    - loyal
+    - facilitative
+    - composed
+    importance: primary
+    global_id: ger_agent_b29870aa3178
+  - character_uuid: ger_agent_3b01f1d856de
+    emotional_state: Annoyed defensiveness flaring into passionate advocacy
+    goals:
+    - Vindicate Tandy's feminist bona fides against Josh's cynicism
+    - Prioritize photo-op alliance over personal spat
+    what_happened: Passes behind Josh smacking him hard on head, drags him to deserted
+      hallway, whispers fierce defense of Tandy's feminist legislative record citing
+      specific bills and whips, spars with Josh's insinuations, exchanges loaded looks
+      before joining Tandy.
+    observed_status: Passes behind Josh smacking him hard on head, drags him to deserted
+      hallway, whispers fierce defense of Tandy's feminist legislative record citing
+      specific bills and whips, spars with Josh's insinuations, exchanges loaded looks
+      before joining Tandy.
+    beliefs:
+    - Tandy's record surpasses White House on key women's issues
+    - Josh's critique stems from jealous projection
+    observed_traits:
+    - aggressive
+    - passionate
+    - defensive
+    - ideologically driven
+    importance: primary
+    global_id: ger_agent_3b01f1d856de
+  - character_uuid: ger_agent_66b370549bf3
+    emotional_state: Confidently friendly and politically assured
+    goals:
+    - Leverage Amy for high-profile presidential photo-op
+    - Smooth over tensions with Josh via rapport
+    what_happened: Approaches from opposite end of deserted hallway, greets Josh and
+      Amy casually, compliments night as 'great for us,' shakes Josh's hand, invites
+      Amy for Mural Room photos with President, calls her to follow, congratulates
+      Josh.
+    observed_status: Approaches from opposite end of deserted hallway, greets Josh
+      and Amy casually, compliments night as 'great for us,' shakes Josh's hand, invites
+      Amy for Mural Room photos with President, calls her to follow, congratulates
+      Josh.
+    beliefs:
+    - SOTU success bolsters administration allies like himself
+    - Public optics strengthen electoral position
+    observed_traits:
+    - charming
+    - congenial
+    - strategic
+    - affable
+    importance: primary
+    global_id: ger_agent_66b370549bf3
+  object_involvements: []
+  location_involvements:
+  - location_uuid: ger_location_7423b10d7d15
+    description_of_involvement: Referenced by Tandy as immediate photo-op destination
+      with President, luring Amy away mid-argument, underscoring optics' pull over
+      personal drama and tying hallway tensions to broader political theater.
+    observed_atmosphere: Glamorous and expectant, offscreen pulse of alliance-building
+    functional_role: anticipated photo-op venue
+    symbolic_significance: Beacon of institutional redemption and cross-party showmanship
+    access_restrictions: VIP access for congressional allies and staff
+    key_environmental_details:
+    - Presidential portraits looming
+    - Flashbulb-ready setup
+    - Historic resonance
+    global_id: ger_location_7423b10d7d15
+  - location_uuid: ger_location_c05c2fb83a2f
+    description_of_involvement: Serves as primary artery for post-party traffic where
+      Josh intercepts Joey and Kenny for polls amid echoing footsteps, Donna ambushes
+      with teases, and Amy's smack launches the group toward isolation—contrasting
+      festive distant revelry with raw professional and personal friction.
+    observed_atmosphere: Tense and urgent, laced with afterparty echoes and hurried
+      strides
+    functional_role: site of tense interpersonal confrontations
+    symbolic_significance: Hub of colliding political anxiety and romantic fallout
+      amid celebration
+    access_restrictions: Semi-public White House corridor, accessible to staff and
+      invitees
+    key_environmental_details:
+    - Distant party chatter and music
+    - Sharp echoing footsteps
+    - Soft hallway lighting
+    global_id: ger_location_c05c2fb83a2f
+  - location_uuid: ger_location_03a1b20f797d
+    description_of_involvement: Deserted spur off main hallway where Amy hauls Josh
+      for whispered ideological clash over Tandy's credentials, tension peaks until
+      Tandy's entrance redirects to photo-ops, bare walls amplifying betrayal barbs
+      and abrupt relational pivot.
+    observed_atmosphere: Shadowed isolation heightening whispers, slaps, and simmering
+      fury
+    functional_role: Private refuge for heated argument
+    symbolic_significance: Represents fractured personal alliances away from public
+      gaze
+    access_restrictions: ''
+    key_environmental_details:
+    - Bare echoing walls
+    - Stale confined air
+    - Proximity to party roar
+    global_id: ger_location_03a1b20f797d
+  organization_involvements:
+  - organization_uuid: ger_organization_bb39d5dd403d
+    description_of_involvement: Hosts the SOTU afterparty fueling hallway chaos, where
+      staff scramble for poll validation of Bartlet's cancer pledge amid censure fallout;
+      interpersonal rifts mirror institutional high-wire act of bold redemption gambles
+      and alliance cultivation like Tandy photo-ops.
+    active_representation: Via hosting event and embodied in staff like Josh pursuing
+      polls/policy
+    power_dynamics: Exerts overarching authority, pressuring staff while courted by
+      congressional figures
+    organizational_goals:
+    - Validate SOTU impact through controlled polling intel
+    - Forge optics-boosting alliances with allies like Tandy
+    influence_mechanisms:
+    - High-stakes event hosting drawing key players
+    - Hierarchical impatience for data driving staff actions
+    institutional_impact: Highlights vulnerability in post-censure poll dependency
+      for bold pledges
+    internal_dynamics: Protocol vs. urgency tension, with external pollsters holding
+      leverage
+    global_id: ger_organization_bb39d5dd403d
+  derived_from_beat_uuids: *id008
+  source_season: 3
+  source_database: westwing.s03
+- fabula_uuid: cand_evt_scene_0dcf5500b7629c30_0
+  global_id: null
+  title: Josh Badgers Joey for Post-SOTU Polling Numbers
+  description: At the State of the Union party in the White House hallway, an anxious
+    Josh intercepts deaf pollster Joey Lucas and interpreter Kenny, urgently demanding
+    immediate polling data to measure the impact of President Bartlet's risky cancer-cure
+    pledge. Joey retorts sarcastically via sign language—calling him a 'pleasure to
+    work for'—before curtly declaring she'll release numbers only when ready. This
+    sharp, power-laden clash reveals Josh's post-censure jitters, Joey's authoritative
+    control over vital intel, and the administration's precarious wait for public
+    validation, setting up future polling revelations.
+  episode_uuid: ep_sea_ser_the_west_wing_s03_e11
+  scene_sequence: 11
+  sequence_in_scene: 14
+  key_dialogue: *id007
+  is_flashback: false
+  location_uuid: ger_location_03a1b20f797d
+  theme_uuids:
+  - ger_theme_07c10222f6d0
+  - ger_theme_988dba1b842b
+  arc_uuids: []
+  participations:
+  - character_uuid: ger_agent_a96064ff3873
+    emotional_state: Sardonically authoritative, relishing control over needy Josh
+    goals:
+    - Withhold polling data until analytically ready
+    - Rebuke Josh's impatience sharply
+    what_happened: Walks down hallway signing intently with Kenny, responds to Josh's
+      demand with sarcastic sign language voiced as 'You are a pleasure to work for,'
+      asserts 'When I say so,' and walks away decisively.
+    observed_status: Walks down hallway signing intently with Kenny, responds to Josh's
+      demand with sarcastic sign language voiced as 'You are a pleasure to work for,'
+      asserts 'When I say so,' and walks away decisively.
+    beliefs:
+    - Rushing data undermines integrity and accuracy
+    - Bartlet staff desperation post-censure is palpable but premature
+    observed_traits:
+    - sarcastic
+    - authoritative
+    - pragmatic
+    - unflappable
+    importance: primary
+    global_id: ger_agent_a96064ff3873
+  - character_uuid: ger_agent_c9d41ae93618
+    emotional_state: Anxiously frustrated with undercurrents of jealousy and political
+      skepticism
+    goals:
+    - Secure immediate post-SOTU polling data on cancer pledge
+    - Challenge Amy's relationship with Tandy as political ploy
+    what_happened: Barrels up behind Joey and Kenny demanding poll numbers urgently,
+      banters defensively with Donna's tease, follows Amy to deserted hallway for
+      tense argument on Tandy's motives, shakes hands skeptically with Tandy while
+      muttering doubt.
+    observed_status: Barrels up behind Joey and Kenny demanding poll numbers urgently,
+      banters defensively with Donna's tease, follows Amy to deserted hallway for
+      tense argument on Tandy's motives, shakes hands skeptically with Tandy while
+      muttering doubt.
+    beliefs:
+    - Polls are essential to validate Bartlet's bold SOTU gamble
+    - Tandy's courtship of Amy is strategically cynical
+    observed_traits:
+    - anxious
+    - pushy
+    - defensive
+    - jealous
+    - sarcastic
+    importance: primary
+    global_id: ger_agent_c9d41ae93618
+  - character_uuid: ger_agent_14f85d554756
+    emotional_state: Amusedly playful with underlying loyalty
+    goals:
+    - Lighten Josh's tension with personal jab
+    - Advocate policy tweak for political gain
+    what_happened: Approaches quietly from behind Josh post-Joey departure, delivers
+      teasing barb on his charm deficit with women, pitches simplifying government
+      manuals as missed political winner.
+    observed_status: Approaches quietly from behind Josh post-Joey departure, delivers
+      teasing barb on his charm deficit with women, pitches simplifying government
+      manuals as missed political winner.
+    beliefs:
+    - Josh's romantic ineptitude is chronic and humorous
+    - Bureaucratic reforms like readable manuals win public favor
+    observed_traits:
+    - witty
+    - teasing
+    - resourceful
+    - observant
+    importance: primary
+    global_id: ger_agent_14f85d554756
+  - character_uuid: ger_agent_b29870aa3178
+    emotional_state: Calmly supportive amid confrontation
+    goals:
+    - Accurately interpret and voice Joey's responses
+    - Uphold Joey's polling timeline
+    what_happened: Walks alongside Joey signing in conversation, facilitates her signed
+      retorts voiced to Josh during tense exchange, departs with her after rebuff.
+    observed_status: Walks alongside Joey signing in conversation, facilitates her
+      signed retorts voiced to Josh during tense exchange, departs with her after
+      rebuff.
+    beliefs:
+    - Joey's expertise dictates data release
+    - Professional boundaries protect analysis quality
+    observed_traits:
+    - precise
+    - loyal
+    - facilitative
+    - composed
+    importance: primary
+    global_id: ger_agent_b29870aa3178
+  - character_uuid: ger_agent_3b01f1d856de
+    emotional_state: Annoyed defensiveness flaring into passionate advocacy
+    goals:
+    - Vindicate Tandy's feminist bona fides against Josh's cynicism
+    - Prioritize photo-op alliance over personal spat
+    what_happened: Passes behind Josh smacking him hard on head, drags him to deserted
+      hallway, whispers fierce defense of Tandy's feminist legislative record citing
+      specific bills and whips, spars with Josh's insinuations, exchanges loaded looks
+      before joining Tandy.
+    observed_status: Passes behind Josh smacking him hard on head, drags him to deserted
+      hallway, whispers fierce defense of Tandy's feminist legislative record citing
+      specific bills and whips, spars with Josh's insinuations, exchanges loaded looks
+      before joining Tandy.
+    beliefs:
+    - Tandy's record surpasses White House on key women's issues
+    - Josh's critique stems from jealous projection
+    observed_traits:
+    - aggressive
+    - passionate
+    - defensive
+    - ideologically driven
+    importance: primary
+    global_id: ger_agent_3b01f1d856de
+  - character_uuid: ger_agent_66b370549bf3
+    emotional_state: Confidently friendly and politically assured
+    goals:
+    - Leverage Amy for high-profile presidential photo-op
+    - Smooth over tensions with Josh via rapport
+    what_happened: Approaches from opposite end of deserted hallway, greets Josh and
+      Amy casually, compliments night as 'great for us,' shakes Josh's hand, invites
+      Amy for Mural Room photos with President, calls her to follow, congratulates
+      Josh.
+    observed_status: Approaches from opposite end of deserted hallway, greets Josh
+      and Amy casually, compliments night as 'great for us,' shakes Josh's hand, invites
+      Amy for Mural Room photos with President, calls her to follow, congratulates
+      Josh.
+    beliefs:
+    - SOTU success bolsters administration allies like himself
+    - Public optics strengthen electoral position
+    observed_traits:
+    - charming
+    - congenial
+    - strategic
+    - affable
+    importance: primary
+    global_id: ger_agent_66b370549bf3
+  object_involvements: []
+  location_involvements:
+  - location_uuid: ger_location_7423b10d7d15
+    description_of_involvement: Referenced by Tandy as immediate photo-op destination
+      with President, luring Amy away mid-argument, underscoring optics' pull over
+      personal drama and tying hallway tensions to broader political theater.
+    observed_atmosphere: Glamorous and expectant, offscreen pulse of alliance-building
+    functional_role: anticipated photo-op venue
+    symbolic_significance: Beacon of institutional redemption and cross-party showmanship
+    access_restrictions: VIP access for congressional allies and staff
+    key_environmental_details:
+    - Presidential portraits looming
+    - Flashbulb-ready setup
+    - Historic resonance
+    global_id: ger_location_7423b10d7d15
+  - location_uuid: ger_location_c05c2fb83a2f
+    description_of_involvement: Serves as primary artery for post-party traffic where
+      Josh intercepts Joey and Kenny for polls amid echoing footsteps, Donna ambushes
+      with teases, and Amy's smack launches the group toward isolation—contrasting
+      festive distant revelry with raw professional and personal friction.
+    observed_atmosphere: Tense and urgent, laced with afterparty echoes and hurried
+      strides
+    functional_role: site of tense interpersonal confrontations
+    symbolic_significance: Hub of colliding political anxiety and romantic fallout
+      amid celebration
+    access_restrictions: Semi-public White House corridor, accessible to staff and
+      invitees
+    key_environmental_details:
+    - Distant party chatter and music
+    - Sharp echoing footsteps
+    - Soft hallway lighting
+    global_id: ger_location_c05c2fb83a2f
+  - location_uuid: ger_location_03a1b20f797d
+    description_of_involvement: Deserted spur off main hallway where Amy hauls Josh
+      for whispered ideological clash over Tandy's credentials, tension peaks until
+      Tandy's entrance redirects to photo-ops, bare walls amplifying betrayal barbs
+      and abrupt relational pivot.
+    observed_atmosphere: Shadowed isolation heightening whispers, slaps, and simmering
+      fury
+    functional_role: Private refuge for heated argument
+    symbolic_significance: Represents fractured personal alliances away from public
+      gaze
+    access_restrictions: ''
+    key_environmental_details:
+    - Bare echoing walls
+    - Stale confined air
+    - Proximity to party roar
+    global_id: ger_location_03a1b20f797d
+  organization_involvements:
+  - organization_uuid: ger_organization_bb39d5dd403d
+    description_of_involvement: Hosts the SOTU afterparty fueling hallway chaos, where
+      staff scramble for poll validation of Bartlet's cancer pledge amid censure fallout;
+      interpersonal rifts mirror institutional high-wire act of bold redemption gambles
+      and alliance cultivation like Tandy photo-ops.
+    active_representation: Via hosting event and embodied in staff like Josh pursuing
+      polls/policy
+    power_dynamics: Exerts overarching authority, pressuring staff while courted by
+      congressional figures
+    organizational_goals:
+    - Validate SOTU impact through controlled polling intel
+    - Forge optics-boosting alliances with allies like Tandy
+    influence_mechanisms:
+    - High-stakes event hosting drawing key players
+    - Hierarchical impatience for data driving staff actions
+    institutional_impact: Highlights vulnerability in post-censure poll dependency
+      for bold pledges
+    internal_dynamics: Protocol vs. urgency tension, with external pollsters holding
+      leverage
+    global_id: ger_organization_bb39d5dd403d
+  derived_from_beat_uuids: *id008
   source_season: 3
   source_database: westwing.s03
 - fabula_uuid: cand_evt_scene_0dcf5500b7629c30_1
@@ -3293,7 +3759,7 @@ events:
     - dutiful
     importance: primary
     global_id: ger_agent_c9d41ae93618
-  - character_uuid: ger_agent_64b2a2c10c8f
+  - character_uuid: ger_agent_14f85d554756
     emotional_state: Amused playfulness veiling assertive determination to champion
       her idea
     goals:
@@ -3316,7 +3782,7 @@ events:
     - teasing
     - resourceful
     importance: primary
-    global_id: ger_agent_64b2a2c10c8f
+    global_id: ger_agent_14f85d554756
   - character_uuid: ger_agent_b29870aa3178
     emotional_state: Steady and observant, aligned with Joey's restraint
     goals:
@@ -3383,7 +3849,7 @@ events:
     - Muffled party sounds from nearby
     global_id: ger_location_c05c2fb83a2f
   organization_involvements:
-  - organization_uuid: ger_organization_d033a1b32d4f
+  - organization_uuid: ger_organization_bb39d5dd403d
     description_of_involvement: The White House manifests as the pressurized afterparty
       backdrop where staff navigate poll anxieties and shelved reforms, embodying
       post-censure stakes as Donna invokes bureaucratic flaws like opaque manuals
@@ -3402,7 +3868,7 @@ events:
       reformist critique
     internal_dynamics: Tension between urgent reelection metrics and overlooked accessibility
       efforts
-    global_id: ger_organization_d033a1b32d4f
+    global_id: ger_organization_bb39d5dd403d
   derived_from_beat_uuids:
   - beat_c2f7e6ed243249c1
   source_season: 3
@@ -3422,441 +3888,11 @@ events:
   episode_uuid: ep_sea_ser_the_west_wing_s03_e11
   scene_sequence: 11
   sequence_in_scene: 16
-  key_dialogue: &id007
+  key_dialogue: &id009
   - 'AMY: He happens to be more feminist than the White House.'
   - 'JOSH: I''m not quarreling with his credentials as a lover of women. I happen
     to know he excels in that area. AMY: Look who''s talking.'
   - 'JOSH: (to himself) Hmm. We''ll see.'
-  is_flashback: false
-  location_uuid: ger_location_c05c2fb83a2f
-  theme_uuids:
-  - ger_theme_988dba1b842b
-  arc_uuids:
-  - ger_conflictarc_57ee7ad97d57
-  - ger_conflictarc_671b0351c52a
-  participations:
-  - character_uuid: ger_agent_a96064ff3873
-    emotional_state: playfully defiant
-    goals:
-    - withhold polling numbers until ready
-    what_happened: walks down the hallway with Kenny via signing, curtly withholds
-      polling numbers from Josh
-    observed_status: walks down the hallway with Kenny via signing, curtly withholds
-      polling numbers from Josh
-    beliefs: []
-    observed_traits: []
-    importance: secondary
-    global_id: ger_agent_a96064ff3873
-  - character_uuid: ger_agent_c9d41ae93618
-    emotional_state: Frustrated cynicism masking jealous insecurity and political
-      protectiveness
-    goals:
-    - Expose Tandy's alleged political manipulation of Amy
-    - Reassert White House moral superiority on women's issues
-    what_happened: Josh reacts to Amy's head smack with surprise, excuses Donna, follows
-      her to the deserted hallway, launches skeptical probes into Tandy's motives
-      laced with sarcasm, defends White House positions, exchanges barbed retorts
-      on romance, shakes Tandy's hand curtly, mutters ominous doubt as they depart.
-    observed_status: Josh reacts to Amy's head smack with surprise, excuses Donna,
-      follows her to the deserted hallway, launches skeptical probes into Tandy's
-      motives laced with sarcasm, defends White House positions, exchanges barbed
-      retorts on romance, shakes Tandy's hand curtly, mutters ominous doubt as they
-      depart.
-    beliefs:
-    - Tandy's courtship is a calculated vote-grab exploiting Amy
-    - White House legal caution on laws like abortion protections is prudent
-    observed_traits:
-    - cynical
-    - sarcastic
-    - jealous
-    - defensive
-    importance: primary
-    global_id: ger_agent_c9d41ae93618
-  - character_uuid: ger_agent_198649bce78f
-    emotional_state: Implied presidential gravitas
-    goals:
-    - Host post-SOTU photo-ops for optics
-    what_happened: President referenced by Tandy as key figure for imminent photo-op
-      in Mural Room, pulling Amy away from confrontation.
-    observed_status: President referenced by Tandy as key figure for imminent photo-op
-      in Mural Room, pulling Amy away from confrontation.
-    beliefs:
-    - Photo-ops reinforce administration alliances
-    observed_traits:
-    - authoritative
-    - central
-    importance: primary
-    global_id: ger_agent_198649bce78f
-  - character_uuid: ger_agent_64b2a2c10c8f
-    emotional_state: Amused detachment
-    goals:
-    - Highlight Josh's romantic shortcomings lightly
-    what_happened: Donna stands facing Josh post-tease as Amy smacks him; receives
-      Josh's quick 'Excuse me' before he pursues Amy, remaining in the party hallway.
-    observed_status: Donna stands facing Josh post-tease as Amy smacks him; receives
-      Josh's quick 'Excuse me' before he pursues Amy, remaining in the party hallway.
-    beliefs:
-    - Josh lacks charm with women
-    - Simplifying government manuals aids politics
-    observed_traits:
-    - teasing
-    - observant
-    importance: primary
-    global_id: ger_agent_64b2a2c10c8f
-  - character_uuid: ger_agent_b29870aa3178
-    emotional_state: ''
-    goals: []
-    what_happened: walks and communicates via signing with Joey
-    observed_status: walks and communicates via signing with Joey
-    beliefs: []
-    observed_traits: []
-    importance: minor
-    global_id: ger_agent_b29870aa3178
-  - character_uuid: ger_agent_3b01f1d856de
-    emotional_state: Righteously indignant passion fueling defensive loyalty
-    goals:
-    - Convince Josh of Tandy's authentic feminist record
-    - Repel accusations of personal naivety in her relationship
-    what_happened: Amy passes swiftly, smacks Josh hard on the head, commands him
-      to follow, leads him to deserted hallway, whispers fierce defense of Tandy citing
-      his amendments on abortion violence, parental consent fights, and VAWA despite
-      White House resistance, fires back at Josh's romantic digs, hesitates before
-      joining Tandy.
-    observed_status: Amy passes swiftly, smacks Josh hard on the head, commands him
-      to follow, leads him to deserted hallway, whispers fierce defense of Tandy citing
-      his amendments on abortion violence, parental consent fights, and VAWA despite
-      White House resistance, fires back at Josh's romantic digs, hesitates before
-      joining Tandy.
-    beliefs:
-    - Tandy surpasses White House on progressive women's legislation
-    - Josh's skepticism stems from jealousy, not principle
-    observed_traits:
-    - fierce
-    - passionate
-    - defensive
-    - ideological
-    importance: primary
-    global_id: ger_agent_3b01f1d856de
-  - character_uuid: ger_agent_66b370549bf3
-    emotional_state: Smooth confidence underscoring triumphant poise
-    goals:
-    - Leverage photo-op to solidify alliances with Amy and President
-    - Project positivity to Josh amid underlying tensions
-    what_happened: Tandy enters hallway from opposite end, greets Amy warmly then
-      Josh congenially, congratulates Josh on the night's success, shakes his hand
-      firmly, summons Amy for presidential photos in Mural Room, walks ahead calling
-      her to join, tosses final congratulations over shoulder as they exit.
-    observed_status: Tandy enters hallway from opposite end, greets Amy warmly then
-      Josh congenially, congratulates Josh on the night's success, shakes his hand
-      firmly, summons Amy for presidential photos in Mural Room, walks ahead calling
-      her to join, tosses final congratulations over shoulder as they exit.
-    beliefs:
-    - SOTU was a major win meriting congratulations
-    - Public optics with President bolster his political standing
-    observed_traits:
-    - cordial
-    - confident
-    - politically savvy
-    importance: primary
-    global_id: ger_agent_66b370549bf3
-  object_involvements: []
-  location_involvements:
-  - location_uuid: ger_location_c05c2fb83a2f
-    description_of_involvement: 'Party hallway serves as launchpad for confrontation:
-      Amy smacks Josh amid afterparty foot traffic and echoes, Josh excuses Donna
-      here before trailing to seclusion; distant revelry contrasts intimate eruption,
-      channeling hallway''s transitional energy into relational/political flashpoint.'
-    observed_atmosphere: Buzzing with post-party footsteps and muffled celebration,
-      tense with sudden violence
-    functional_role: Transitional pathway sparking private battle
-    symbolic_significance: Embodies West Wing's blend of public triumph and private
-      fractures
-    access_restrictions: Staff and guests during afterparty
-    key_environmental_details:
-    - Echoing footsteps
-    - Proximity to party roar
-    global_id: ger_location_c05c2fb83a2f
-  - location_uuid: ger_location_03a1b20f797d
-    description_of_involvement: Deserted hallway amplifies whispered fury as Amy hauls
-      Josh here for unfiltered clash over Tandy's record; bare walls heighten intimacy
-      of barbs, Tandy's intrusion shatters tension, underscoring isolation amid White
-      House bustle for raw ideological and romantic exposure.
-    observed_atmosphere: Stale, shadowed tension thick with betrayal whispers
-    functional_role: Confrontation battleground for secrets
-    symbolic_significance: Represents relational isolation amid institutional power
-    access_restrictions: Unsupervised corridor near party
-    key_environmental_details:
-    - Bare walls echoing voices
-    - Distant party pulse
-    global_id: ger_location_03a1b20f797d
-  - location_uuid: ger_location_7423b10d7d15
-    description_of_involvement: Mural Room invoked by Tandy as photo-op destination
-      with President, abruptly terminating argument and whisking Amy away, shifting
-      focus from personal rift to political optics and leaving Josh abandoned.
-    observed_atmosphere: Implied glamorous formality
-    functional_role: Upcoming alliance-sealing site
-    symbolic_significance: Symbolizes presidential endorsement eclipsing staff drama
-    access_restrictions: VIP photo-op exclusive
-    key_environmental_details:
-    - Presidential portraits looming
-    - Flashbulb-ready setup
-    global_id: ger_location_7423b10d7d15
-  organization_involvements:
-  - organization_uuid: ger_organization_d033a1b32d4f
-    description_of_involvement: 'White House looms as ideological battleground in
-      Amy-Josh spat: Amy touts Tandy''s bills trumping its lawyerly caution on abortion
-      violence/VAWA, Josh defends its positions; photo-op pull underscores its gravitational
-      optics power, fueling staff loyalty strains post-SOTU/censure.'
-    active_representation: Via policy objections and presidential photo-ops referenced
-      in dialogue
-    power_dynamics: Challenged ideologically by Tandy's record, exerts pull through
-      presidential access
-    organizational_goals:
-    - Maintain post-SOTU momentum via alliances/photo-ops
-    - Defend legislative pragmatism against activist critiques
-    influence_mechanisms:
-    - Institutional policy friction
-    - Presidential optics and access
-    institutional_impact: Highlights internal progressive tensions bleeding into personal
-      relationships
-    internal_dynamics: Staff divisions over feminist credentials vs. legal caution
-    global_id: ger_organization_d033a1b32d4f
-  derived_from_beat_uuids: &id008
-  - beat_a0307fc625ef300e
-  - beat_298325a71d686ed6
-  - beat_1d1dca4a347e13b7
-  - beat_44eac06944de36ff
-  source_season: 3
-  source_database: westwing.s03
-- fabula_uuid: cand_evt_scene_0dcf5500b7629c30_2
-  global_id: null
-  title: Amy Slaps Down Josh's Cynicism Over Tandy's Feminist Credentials
-  description: At the State of the Union party, Amy forcefully grabs Josh, smacks
-    his head, and drags him to a deserted hallway to fiercely defend Congressman Tandy's
-    progressive record—citing his abortion clinic violence amendment, parental consent
-    fightbacks, and VAWA advocacy—against Josh's skeptical insinuations that Tandy
-    is exploiting her politically. Their banter crackles with personal barbs revealing
-    relational strain and clashing ideologies. Tandy interrupts for a presidential
-    photo-op, whisking Amy away, as Josh mutters foreboding doubt, escalating tensions
-    in their romance and foreshadowing fractures in staff loyalties amid post-censure
-    intrigue.
-  episode_uuid: ep_sea_ser_the_west_wing_s03_e11
-  scene_sequence: 11
-  sequence_in_scene: 16
-  key_dialogue: *id007
-  is_flashback: false
-  location_uuid: ger_location_03a1b20f797d
-  theme_uuids:
-  - ger_theme_988dba1b842b
-  arc_uuids:
-  - ger_conflictarc_57ee7ad97d57
-  - ger_conflictarc_671b0351c52a
-  participations:
-  - character_uuid: ger_agent_a96064ff3873
-    emotional_state: playfully defiant
-    goals:
-    - withhold polling numbers until ready
-    what_happened: walks down the hallway with Kenny via signing, curtly withholds
-      polling numbers from Josh
-    observed_status: walks down the hallway with Kenny via signing, curtly withholds
-      polling numbers from Josh
-    beliefs: []
-    observed_traits: []
-    importance: secondary
-    global_id: ger_agent_a96064ff3873
-  - character_uuid: ger_agent_c9d41ae93618
-    emotional_state: Frustrated cynicism masking jealous insecurity and political
-      protectiveness
-    goals:
-    - Expose Tandy's alleged political manipulation of Amy
-    - Reassert White House moral superiority on women's issues
-    what_happened: Josh reacts to Amy's head smack with surprise, excuses Donna, follows
-      her to the deserted hallway, launches skeptical probes into Tandy's motives
-      laced with sarcasm, defends White House positions, exchanges barbed retorts
-      on romance, shakes Tandy's hand curtly, mutters ominous doubt as they depart.
-    observed_status: Josh reacts to Amy's head smack with surprise, excuses Donna,
-      follows her to the deserted hallway, launches skeptical probes into Tandy's
-      motives laced with sarcasm, defends White House positions, exchanges barbed
-      retorts on romance, shakes Tandy's hand curtly, mutters ominous doubt as they
-      depart.
-    beliefs:
-    - Tandy's courtship is a calculated vote-grab exploiting Amy
-    - White House legal caution on laws like abortion protections is prudent
-    observed_traits:
-    - cynical
-    - sarcastic
-    - jealous
-    - defensive
-    importance: primary
-    global_id: ger_agent_c9d41ae93618
-  - character_uuid: ger_agent_198649bce78f
-    emotional_state: Implied presidential gravitas
-    goals:
-    - Host post-SOTU photo-ops for optics
-    what_happened: President referenced by Tandy as key figure for imminent photo-op
-      in Mural Room, pulling Amy away from confrontation.
-    observed_status: President referenced by Tandy as key figure for imminent photo-op
-      in Mural Room, pulling Amy away from confrontation.
-    beliefs:
-    - Photo-ops reinforce administration alliances
-    observed_traits:
-    - authoritative
-    - central
-    importance: primary
-    global_id: ger_agent_198649bce78f
-  - character_uuid: ger_agent_64b2a2c10c8f
-    emotional_state: Amused detachment
-    goals:
-    - Highlight Josh's romantic shortcomings lightly
-    what_happened: Donna stands facing Josh post-tease as Amy smacks him; receives
-      Josh's quick 'Excuse me' before he pursues Amy, remaining in the party hallway.
-    observed_status: Donna stands facing Josh post-tease as Amy smacks him; receives
-      Josh's quick 'Excuse me' before he pursues Amy, remaining in the party hallway.
-    beliefs:
-    - Josh lacks charm with women
-    - Simplifying government manuals aids politics
-    observed_traits:
-    - teasing
-    - observant
-    importance: primary
-    global_id: ger_agent_64b2a2c10c8f
-  - character_uuid: ger_agent_b29870aa3178
-    emotional_state: ''
-    goals: []
-    what_happened: walks and communicates via signing with Joey
-    observed_status: walks and communicates via signing with Joey
-    beliefs: []
-    observed_traits: []
-    importance: minor
-    global_id: ger_agent_b29870aa3178
-  - character_uuid: ger_agent_3b01f1d856de
-    emotional_state: Righteously indignant passion fueling defensive loyalty
-    goals:
-    - Convince Josh of Tandy's authentic feminist record
-    - Repel accusations of personal naivety in her relationship
-    what_happened: Amy passes swiftly, smacks Josh hard on the head, commands him
-      to follow, leads him to deserted hallway, whispers fierce defense of Tandy citing
-      his amendments on abortion violence, parental consent fights, and VAWA despite
-      White House resistance, fires back at Josh's romantic digs, hesitates before
-      joining Tandy.
-    observed_status: Amy passes swiftly, smacks Josh hard on the head, commands him
-      to follow, leads him to deserted hallway, whispers fierce defense of Tandy citing
-      his amendments on abortion violence, parental consent fights, and VAWA despite
-      White House resistance, fires back at Josh's romantic digs, hesitates before
-      joining Tandy.
-    beliefs:
-    - Tandy surpasses White House on progressive women's legislation
-    - Josh's skepticism stems from jealousy, not principle
-    observed_traits:
-    - fierce
-    - passionate
-    - defensive
-    - ideological
-    importance: primary
-    global_id: ger_agent_3b01f1d856de
-  - character_uuid: ger_agent_66b370549bf3
-    emotional_state: Smooth confidence underscoring triumphant poise
-    goals:
-    - Leverage photo-op to solidify alliances with Amy and President
-    - Project positivity to Josh amid underlying tensions
-    what_happened: Tandy enters hallway from opposite end, greets Amy warmly then
-      Josh congenially, congratulates Josh on the night's success, shakes his hand
-      firmly, summons Amy for presidential photos in Mural Room, walks ahead calling
-      her to join, tosses final congratulations over shoulder as they exit.
-    observed_status: Tandy enters hallway from opposite end, greets Amy warmly then
-      Josh congenially, congratulates Josh on the night's success, shakes his hand
-      firmly, summons Amy for presidential photos in Mural Room, walks ahead calling
-      her to join, tosses final congratulations over shoulder as they exit.
-    beliefs:
-    - SOTU was a major win meriting congratulations
-    - Public optics with President bolster his political standing
-    observed_traits:
-    - cordial
-    - confident
-    - politically savvy
-    importance: primary
-    global_id: ger_agent_66b370549bf3
-  object_involvements: []
-  location_involvements:
-  - location_uuid: ger_location_c05c2fb83a2f
-    description_of_involvement: 'Party hallway serves as launchpad for confrontation:
-      Amy smacks Josh amid afterparty foot traffic and echoes, Josh excuses Donna
-      here before trailing to seclusion; distant revelry contrasts intimate eruption,
-      channeling hallway''s transitional energy into relational/political flashpoint.'
-    observed_atmosphere: Buzzing with post-party footsteps and muffled celebration,
-      tense with sudden violence
-    functional_role: Transitional pathway sparking private battle
-    symbolic_significance: Embodies West Wing's blend of public triumph and private
-      fractures
-    access_restrictions: Staff and guests during afterparty
-    key_environmental_details:
-    - Echoing footsteps
-    - Proximity to party roar
-    global_id: ger_location_c05c2fb83a2f
-  - location_uuid: ger_location_03a1b20f797d
-    description_of_involvement: Deserted hallway amplifies whispered fury as Amy hauls
-      Josh here for unfiltered clash over Tandy's record; bare walls heighten intimacy
-      of barbs, Tandy's intrusion shatters tension, underscoring isolation amid White
-      House bustle for raw ideological and romantic exposure.
-    observed_atmosphere: Stale, shadowed tension thick with betrayal whispers
-    functional_role: Confrontation battleground for secrets
-    symbolic_significance: Represents relational isolation amid institutional power
-    access_restrictions: Unsupervised corridor near party
-    key_environmental_details:
-    - Bare walls echoing voices
-    - Distant party pulse
-    global_id: ger_location_03a1b20f797d
-  - location_uuid: ger_location_7423b10d7d15
-    description_of_involvement: Mural Room invoked by Tandy as photo-op destination
-      with President, abruptly terminating argument and whisking Amy away, shifting
-      focus from personal rift to political optics and leaving Josh abandoned.
-    observed_atmosphere: Implied glamorous formality
-    functional_role: Upcoming alliance-sealing site
-    symbolic_significance: Symbolizes presidential endorsement eclipsing staff drama
-    access_restrictions: VIP photo-op exclusive
-    key_environmental_details:
-    - Presidential portraits looming
-    - Flashbulb-ready setup
-    global_id: ger_location_7423b10d7d15
-  organization_involvements:
-  - organization_uuid: ger_organization_d033a1b32d4f
-    description_of_involvement: 'White House looms as ideological battleground in
-      Amy-Josh spat: Amy touts Tandy''s bills trumping its lawyerly caution on abortion
-      violence/VAWA, Josh defends its positions; photo-op pull underscores its gravitational
-      optics power, fueling staff loyalty strains post-SOTU/censure.'
-    active_representation: Via policy objections and presidential photo-ops referenced
-      in dialogue
-    power_dynamics: Challenged ideologically by Tandy's record, exerts pull through
-      presidential access
-    organizational_goals:
-    - Maintain post-SOTU momentum via alliances/photo-ops
-    - Defend legislative pragmatism against activist critiques
-    influence_mechanisms:
-    - Institutional policy friction
-    - Presidential optics and access
-    institutional_impact: Highlights internal progressive tensions bleeding into personal
-      relationships
-    internal_dynamics: Staff divisions over feminist credentials vs. legal caution
-    global_id: ger_organization_d033a1b32d4f
-  derived_from_beat_uuids: *id008
-  source_season: 3
-  source_database: westwing.s03
-- fabula_uuid: cand_evt_scene_0dcf5500b7629c30_2
-  global_id: null
-  title: Amy Slaps Down Josh's Cynicism Over Tandy's Feminist Credentials
-  description: At the State of the Union party, Amy forcefully grabs Josh, smacks
-    his head, and drags him to a deserted hallway to fiercely defend Congressman Tandy's
-    progressive record—citing his abortion clinic violence amendment, parental consent
-    fightbacks, and VAWA advocacy—against Josh's skeptical insinuations that Tandy
-    is exploiting her politically. Their banter crackles with personal barbs revealing
-    relational strain and clashing ideologies. Tandy interrupts for a presidential
-    photo-op, whisking Amy away, as Josh mutters foreboding doubt, escalating tensions
-    in their romance and foreshadowing fractures in staff loyalties amid post-censure
-    intrigue.
-  episode_uuid: ep_sea_ser_the_west_wing_s03_e11
-  scene_sequence: 11
-  sequence_in_scene: 16
-  key_dialogue: *id007
   is_flashback: false
   location_uuid: ger_location_7423b10d7d15
   theme_uuids:
@@ -3917,7 +3953,7 @@ events:
     - central
     importance: primary
     global_id: ger_agent_198649bce78f
-  - character_uuid: ger_agent_64b2a2c10c8f
+  - character_uuid: ger_agent_14f85d554756
     emotional_state: Amused detachment
     goals:
     - Highlight Josh's romantic shortcomings lightly
@@ -3932,7 +3968,7 @@ events:
     - teasing
     - observant
     importance: primary
-    global_id: ger_agent_64b2a2c10c8f
+    global_id: ger_agent_14f85d554756
   - character_uuid: ger_agent_b29870aa3178
     emotional_state: ''
     goals: []
@@ -3991,6 +4027,18 @@ events:
     global_id: ger_agent_66b370549bf3
   object_involvements: []
   location_involvements:
+  - location_uuid: ger_location_7423b10d7d15
+    description_of_involvement: Mural Room invoked by Tandy as photo-op destination
+      with President, abruptly terminating argument and whisking Amy away, shifting
+      focus from personal rift to political optics and leaving Josh abandoned.
+    observed_atmosphere: Implied glamorous formality
+    functional_role: Upcoming alliance-sealing site
+    symbolic_significance: Symbolizes presidential endorsement eclipsing staff drama
+    access_restrictions: VIP photo-op exclusive
+    key_environmental_details:
+    - Presidential portraits looming
+    - Flashbulb-ready setup
+    global_id: ger_location_7423b10d7d15
   - location_uuid: ger_location_c05c2fb83a2f
     description_of_involvement: 'Party hallway serves as launchpad for confrontation:
       Amy smacks Josh amid afterparty foot traffic and echoes, Josh excuses Donna
@@ -4019,20 +4067,8 @@ events:
     - Bare walls echoing voices
     - Distant party pulse
     global_id: ger_location_03a1b20f797d
-  - location_uuid: ger_location_7423b10d7d15
-    description_of_involvement: Mural Room invoked by Tandy as photo-op destination
-      with President, abruptly terminating argument and whisking Amy away, shifting
-      focus from personal rift to political optics and leaving Josh abandoned.
-    observed_atmosphere: Implied glamorous formality
-    functional_role: Upcoming alliance-sealing site
-    symbolic_significance: Symbolizes presidential endorsement eclipsing staff drama
-    access_restrictions: VIP photo-op exclusive
-    key_environmental_details:
-    - Presidential portraits looming
-    - Flashbulb-ready setup
-    global_id: ger_location_7423b10d7d15
   organization_involvements:
-  - organization_uuid: ger_organization_d033a1b32d4f
+  - organization_uuid: ger_organization_bb39d5dd403d
     description_of_involvement: 'White House looms as ideological battleground in
       Amy-Josh spat: Amy touts Tandy''s bills trumping its lawyerly caution on abortion
       violence/VAWA, Josh defends its positions; photo-op pull underscores its gravitational
@@ -4050,8 +4086,438 @@ events:
     institutional_impact: Highlights internal progressive tensions bleeding into personal
       relationships
     internal_dynamics: Staff divisions over feminist credentials vs. legal caution
-    global_id: ger_organization_d033a1b32d4f
-  derived_from_beat_uuids: *id008
+    global_id: ger_organization_bb39d5dd403d
+  derived_from_beat_uuids: &id010
+  - beat_a0307fc625ef300e
+  - beat_298325a71d686ed6
+  - beat_1d1dca4a347e13b7
+  - beat_44eac06944de36ff
+  source_season: 3
+  source_database: westwing.s03
+- fabula_uuid: cand_evt_scene_0dcf5500b7629c30_2
+  global_id: null
+  title: Amy Slaps Down Josh's Cynicism Over Tandy's Feminist Credentials
+  description: At the State of the Union party, Amy forcefully grabs Josh, smacks
+    his head, and drags him to a deserted hallway to fiercely defend Congressman Tandy's
+    progressive record—citing his abortion clinic violence amendment, parental consent
+    fightbacks, and VAWA advocacy—against Josh's skeptical insinuations that Tandy
+    is exploiting her politically. Their banter crackles with personal barbs revealing
+    relational strain and clashing ideologies. Tandy interrupts for a presidential
+    photo-op, whisking Amy away, as Josh mutters foreboding doubt, escalating tensions
+    in their romance and foreshadowing fractures in staff loyalties amid post-censure
+    intrigue.
+  episode_uuid: ep_sea_ser_the_west_wing_s03_e11
+  scene_sequence: 11
+  sequence_in_scene: 16
+  key_dialogue: *id009
+  is_flashback: false
+  location_uuid: ger_location_c05c2fb83a2f
+  theme_uuids:
+  - ger_theme_988dba1b842b
+  arc_uuids:
+  - ger_conflictarc_57ee7ad97d57
+  - ger_conflictarc_671b0351c52a
+  participations:
+  - character_uuid: ger_agent_a96064ff3873
+    emotional_state: playfully defiant
+    goals:
+    - withhold polling numbers until ready
+    what_happened: walks down the hallway with Kenny via signing, curtly withholds
+      polling numbers from Josh
+    observed_status: walks down the hallway with Kenny via signing, curtly withholds
+      polling numbers from Josh
+    beliefs: []
+    observed_traits: []
+    importance: secondary
+    global_id: ger_agent_a96064ff3873
+  - character_uuid: ger_agent_c9d41ae93618
+    emotional_state: Frustrated cynicism masking jealous insecurity and political
+      protectiveness
+    goals:
+    - Expose Tandy's alleged political manipulation of Amy
+    - Reassert White House moral superiority on women's issues
+    what_happened: Josh reacts to Amy's head smack with surprise, excuses Donna, follows
+      her to the deserted hallway, launches skeptical probes into Tandy's motives
+      laced with sarcasm, defends White House positions, exchanges barbed retorts
+      on romance, shakes Tandy's hand curtly, mutters ominous doubt as they depart.
+    observed_status: Josh reacts to Amy's head smack with surprise, excuses Donna,
+      follows her to the deserted hallway, launches skeptical probes into Tandy's
+      motives laced with sarcasm, defends White House positions, exchanges barbed
+      retorts on romance, shakes Tandy's hand curtly, mutters ominous doubt as they
+      depart.
+    beliefs:
+    - Tandy's courtship is a calculated vote-grab exploiting Amy
+    - White House legal caution on laws like abortion protections is prudent
+    observed_traits:
+    - cynical
+    - sarcastic
+    - jealous
+    - defensive
+    importance: primary
+    global_id: ger_agent_c9d41ae93618
+  - character_uuid: ger_agent_198649bce78f
+    emotional_state: Implied presidential gravitas
+    goals:
+    - Host post-SOTU photo-ops for optics
+    what_happened: President referenced by Tandy as key figure for imminent photo-op
+      in Mural Room, pulling Amy away from confrontation.
+    observed_status: President referenced by Tandy as key figure for imminent photo-op
+      in Mural Room, pulling Amy away from confrontation.
+    beliefs:
+    - Photo-ops reinforce administration alliances
+    observed_traits:
+    - authoritative
+    - central
+    importance: primary
+    global_id: ger_agent_198649bce78f
+  - character_uuid: ger_agent_14f85d554756
+    emotional_state: Amused detachment
+    goals:
+    - Highlight Josh's romantic shortcomings lightly
+    what_happened: Donna stands facing Josh post-tease as Amy smacks him; receives
+      Josh's quick 'Excuse me' before he pursues Amy, remaining in the party hallway.
+    observed_status: Donna stands facing Josh post-tease as Amy smacks him; receives
+      Josh's quick 'Excuse me' before he pursues Amy, remaining in the party hallway.
+    beliefs:
+    - Josh lacks charm with women
+    - Simplifying government manuals aids politics
+    observed_traits:
+    - teasing
+    - observant
+    importance: primary
+    global_id: ger_agent_14f85d554756
+  - character_uuid: ger_agent_b29870aa3178
+    emotional_state: ''
+    goals: []
+    what_happened: walks and communicates via signing with Joey
+    observed_status: walks and communicates via signing with Joey
+    beliefs: []
+    observed_traits: []
+    importance: minor
+    global_id: ger_agent_b29870aa3178
+  - character_uuid: ger_agent_3b01f1d856de
+    emotional_state: Righteously indignant passion fueling defensive loyalty
+    goals:
+    - Convince Josh of Tandy's authentic feminist record
+    - Repel accusations of personal naivety in her relationship
+    what_happened: Amy passes swiftly, smacks Josh hard on the head, commands him
+      to follow, leads him to deserted hallway, whispers fierce defense of Tandy citing
+      his amendments on abortion violence, parental consent fights, and VAWA despite
+      White House resistance, fires back at Josh's romantic digs, hesitates before
+      joining Tandy.
+    observed_status: Amy passes swiftly, smacks Josh hard on the head, commands him
+      to follow, leads him to deserted hallway, whispers fierce defense of Tandy citing
+      his amendments on abortion violence, parental consent fights, and VAWA despite
+      White House resistance, fires back at Josh's romantic digs, hesitates before
+      joining Tandy.
+    beliefs:
+    - Tandy surpasses White House on progressive women's legislation
+    - Josh's skepticism stems from jealousy, not principle
+    observed_traits:
+    - fierce
+    - passionate
+    - defensive
+    - ideological
+    importance: primary
+    global_id: ger_agent_3b01f1d856de
+  - character_uuid: ger_agent_66b370549bf3
+    emotional_state: Smooth confidence underscoring triumphant poise
+    goals:
+    - Leverage photo-op to solidify alliances with Amy and President
+    - Project positivity to Josh amid underlying tensions
+    what_happened: Tandy enters hallway from opposite end, greets Amy warmly then
+      Josh congenially, congratulates Josh on the night's success, shakes his hand
+      firmly, summons Amy for presidential photos in Mural Room, walks ahead calling
+      her to join, tosses final congratulations over shoulder as they exit.
+    observed_status: Tandy enters hallway from opposite end, greets Amy warmly then
+      Josh congenially, congratulates Josh on the night's success, shakes his hand
+      firmly, summons Amy for presidential photos in Mural Room, walks ahead calling
+      her to join, tosses final congratulations over shoulder as they exit.
+    beliefs:
+    - SOTU was a major win meriting congratulations
+    - Public optics with President bolster his political standing
+    observed_traits:
+    - cordial
+    - confident
+    - politically savvy
+    importance: primary
+    global_id: ger_agent_66b370549bf3
+  object_involvements: []
+  location_involvements:
+  - location_uuid: ger_location_7423b10d7d15
+    description_of_involvement: Mural Room invoked by Tandy as photo-op destination
+      with President, abruptly terminating argument and whisking Amy away, shifting
+      focus from personal rift to political optics and leaving Josh abandoned.
+    observed_atmosphere: Implied glamorous formality
+    functional_role: Upcoming alliance-sealing site
+    symbolic_significance: Symbolizes presidential endorsement eclipsing staff drama
+    access_restrictions: VIP photo-op exclusive
+    key_environmental_details:
+    - Presidential portraits looming
+    - Flashbulb-ready setup
+    global_id: ger_location_7423b10d7d15
+  - location_uuid: ger_location_c05c2fb83a2f
+    description_of_involvement: 'Party hallway serves as launchpad for confrontation:
+      Amy smacks Josh amid afterparty foot traffic and echoes, Josh excuses Donna
+      here before trailing to seclusion; distant revelry contrasts intimate eruption,
+      channeling hallway''s transitional energy into relational/political flashpoint.'
+    observed_atmosphere: Buzzing with post-party footsteps and muffled celebration,
+      tense with sudden violence
+    functional_role: Transitional pathway sparking private battle
+    symbolic_significance: Embodies West Wing's blend of public triumph and private
+      fractures
+    access_restrictions: Staff and guests during afterparty
+    key_environmental_details:
+    - Echoing footsteps
+    - Proximity to party roar
+    global_id: ger_location_c05c2fb83a2f
+  - location_uuid: ger_location_03a1b20f797d
+    description_of_involvement: Deserted hallway amplifies whispered fury as Amy hauls
+      Josh here for unfiltered clash over Tandy's record; bare walls heighten intimacy
+      of barbs, Tandy's intrusion shatters tension, underscoring isolation amid White
+      House bustle for raw ideological and romantic exposure.
+    observed_atmosphere: Stale, shadowed tension thick with betrayal whispers
+    functional_role: Confrontation battleground for secrets
+    symbolic_significance: Represents relational isolation amid institutional power
+    access_restrictions: Unsupervised corridor near party
+    key_environmental_details:
+    - Bare walls echoing voices
+    - Distant party pulse
+    global_id: ger_location_03a1b20f797d
+  organization_involvements:
+  - organization_uuid: ger_organization_bb39d5dd403d
+    description_of_involvement: 'White House looms as ideological battleground in
+      Amy-Josh spat: Amy touts Tandy''s bills trumping its lawyerly caution on abortion
+      violence/VAWA, Josh defends its positions; photo-op pull underscores its gravitational
+      optics power, fueling staff loyalty strains post-SOTU/censure.'
+    active_representation: Via policy objections and presidential photo-ops referenced
+      in dialogue
+    power_dynamics: Challenged ideologically by Tandy's record, exerts pull through
+      presidential access
+    organizational_goals:
+    - Maintain post-SOTU momentum via alliances/photo-ops
+    - Defend legislative pragmatism against activist critiques
+    influence_mechanisms:
+    - Institutional policy friction
+    - Presidential optics and access
+    institutional_impact: Highlights internal progressive tensions bleeding into personal
+      relationships
+    internal_dynamics: Staff divisions over feminist credentials vs. legal caution
+    global_id: ger_organization_bb39d5dd403d
+  derived_from_beat_uuids: *id010
+  source_season: 3
+  source_database: westwing.s03
+- fabula_uuid: cand_evt_scene_0dcf5500b7629c30_2
+  global_id: null
+  title: Amy Slaps Down Josh's Cynicism Over Tandy's Feminist Credentials
+  description: At the State of the Union party, Amy forcefully grabs Josh, smacks
+    his head, and drags him to a deserted hallway to fiercely defend Congressman Tandy's
+    progressive record—citing his abortion clinic violence amendment, parental consent
+    fightbacks, and VAWA advocacy—against Josh's skeptical insinuations that Tandy
+    is exploiting her politically. Their banter crackles with personal barbs revealing
+    relational strain and clashing ideologies. Tandy interrupts for a presidential
+    photo-op, whisking Amy away, as Josh mutters foreboding doubt, escalating tensions
+    in their romance and foreshadowing fractures in staff loyalties amid post-censure
+    intrigue.
+  episode_uuid: ep_sea_ser_the_west_wing_s03_e11
+  scene_sequence: 11
+  sequence_in_scene: 16
+  key_dialogue: *id009
+  is_flashback: false
+  location_uuid: ger_location_03a1b20f797d
+  theme_uuids:
+  - ger_theme_988dba1b842b
+  arc_uuids:
+  - ger_conflictarc_57ee7ad97d57
+  - ger_conflictarc_671b0351c52a
+  participations:
+  - character_uuid: ger_agent_a96064ff3873
+    emotional_state: playfully defiant
+    goals:
+    - withhold polling numbers until ready
+    what_happened: walks down the hallway with Kenny via signing, curtly withholds
+      polling numbers from Josh
+    observed_status: walks down the hallway with Kenny via signing, curtly withholds
+      polling numbers from Josh
+    beliefs: []
+    observed_traits: []
+    importance: secondary
+    global_id: ger_agent_a96064ff3873
+  - character_uuid: ger_agent_c9d41ae93618
+    emotional_state: Frustrated cynicism masking jealous insecurity and political
+      protectiveness
+    goals:
+    - Expose Tandy's alleged political manipulation of Amy
+    - Reassert White House moral superiority on women's issues
+    what_happened: Josh reacts to Amy's head smack with surprise, excuses Donna, follows
+      her to the deserted hallway, launches skeptical probes into Tandy's motives
+      laced with sarcasm, defends White House positions, exchanges barbed retorts
+      on romance, shakes Tandy's hand curtly, mutters ominous doubt as they depart.
+    observed_status: Josh reacts to Amy's head smack with surprise, excuses Donna,
+      follows her to the deserted hallway, launches skeptical probes into Tandy's
+      motives laced with sarcasm, defends White House positions, exchanges barbed
+      retorts on romance, shakes Tandy's hand curtly, mutters ominous doubt as they
+      depart.
+    beliefs:
+    - Tandy's courtship is a calculated vote-grab exploiting Amy
+    - White House legal caution on laws like abortion protections is prudent
+    observed_traits:
+    - cynical
+    - sarcastic
+    - jealous
+    - defensive
+    importance: primary
+    global_id: ger_agent_c9d41ae93618
+  - character_uuid: ger_agent_198649bce78f
+    emotional_state: Implied presidential gravitas
+    goals:
+    - Host post-SOTU photo-ops for optics
+    what_happened: President referenced by Tandy as key figure for imminent photo-op
+      in Mural Room, pulling Amy away from confrontation.
+    observed_status: President referenced by Tandy as key figure for imminent photo-op
+      in Mural Room, pulling Amy away from confrontation.
+    beliefs:
+    - Photo-ops reinforce administration alliances
+    observed_traits:
+    - authoritative
+    - central
+    importance: primary
+    global_id: ger_agent_198649bce78f
+  - character_uuid: ger_agent_14f85d554756
+    emotional_state: Amused detachment
+    goals:
+    - Highlight Josh's romantic shortcomings lightly
+    what_happened: Donna stands facing Josh post-tease as Amy smacks him; receives
+      Josh's quick 'Excuse me' before he pursues Amy, remaining in the party hallway.
+    observed_status: Donna stands facing Josh post-tease as Amy smacks him; receives
+      Josh's quick 'Excuse me' before he pursues Amy, remaining in the party hallway.
+    beliefs:
+    - Josh lacks charm with women
+    - Simplifying government manuals aids politics
+    observed_traits:
+    - teasing
+    - observant
+    importance: primary
+    global_id: ger_agent_14f85d554756
+  - character_uuid: ger_agent_b29870aa3178
+    emotional_state: ''
+    goals: []
+    what_happened: walks and communicates via signing with Joey
+    observed_status: walks and communicates via signing with Joey
+    beliefs: []
+    observed_traits: []
+    importance: minor
+    global_id: ger_agent_b29870aa3178
+  - character_uuid: ger_agent_3b01f1d856de
+    emotional_state: Righteously indignant passion fueling defensive loyalty
+    goals:
+    - Convince Josh of Tandy's authentic feminist record
+    - Repel accusations of personal naivety in her relationship
+    what_happened: Amy passes swiftly, smacks Josh hard on the head, commands him
+      to follow, leads him to deserted hallway, whispers fierce defense of Tandy citing
+      his amendments on abortion violence, parental consent fights, and VAWA despite
+      White House resistance, fires back at Josh's romantic digs, hesitates before
+      joining Tandy.
+    observed_status: Amy passes swiftly, smacks Josh hard on the head, commands him
+      to follow, leads him to deserted hallway, whispers fierce defense of Tandy citing
+      his amendments on abortion violence, parental consent fights, and VAWA despite
+      White House resistance, fires back at Josh's romantic digs, hesitates before
+      joining Tandy.
+    beliefs:
+    - Tandy surpasses White House on progressive women's legislation
+    - Josh's skepticism stems from jealousy, not principle
+    observed_traits:
+    - fierce
+    - passionate
+    - defensive
+    - ideological
+    importance: primary
+    global_id: ger_agent_3b01f1d856de
+  - character_uuid: ger_agent_66b370549bf3
+    emotional_state: Smooth confidence underscoring triumphant poise
+    goals:
+    - Leverage photo-op to solidify alliances with Amy and President
+    - Project positivity to Josh amid underlying tensions
+    what_happened: Tandy enters hallway from opposite end, greets Amy warmly then
+      Josh congenially, congratulates Josh on the night's success, shakes his hand
+      firmly, summons Amy for presidential photos in Mural Room, walks ahead calling
+      her to join, tosses final congratulations over shoulder as they exit.
+    observed_status: Tandy enters hallway from opposite end, greets Amy warmly then
+      Josh congenially, congratulates Josh on the night's success, shakes his hand
+      firmly, summons Amy for presidential photos in Mural Room, walks ahead calling
+      her to join, tosses final congratulations over shoulder as they exit.
+    beliefs:
+    - SOTU was a major win meriting congratulations
+    - Public optics with President bolster his political standing
+    observed_traits:
+    - cordial
+    - confident
+    - politically savvy
+    importance: primary
+    global_id: ger_agent_66b370549bf3
+  object_involvements: []
+  location_involvements:
+  - location_uuid: ger_location_7423b10d7d15
+    description_of_involvement: Mural Room invoked by Tandy as photo-op destination
+      with President, abruptly terminating argument and whisking Amy away, shifting
+      focus from personal rift to political optics and leaving Josh abandoned.
+    observed_atmosphere: Implied glamorous formality
+    functional_role: Upcoming alliance-sealing site
+    symbolic_significance: Symbolizes presidential endorsement eclipsing staff drama
+    access_restrictions: VIP photo-op exclusive
+    key_environmental_details:
+    - Presidential portraits looming
+    - Flashbulb-ready setup
+    global_id: ger_location_7423b10d7d15
+  - location_uuid: ger_location_c05c2fb83a2f
+    description_of_involvement: 'Party hallway serves as launchpad for confrontation:
+      Amy smacks Josh amid afterparty foot traffic and echoes, Josh excuses Donna
+      here before trailing to seclusion; distant revelry contrasts intimate eruption,
+      channeling hallway''s transitional energy into relational/political flashpoint.'
+    observed_atmosphere: Buzzing with post-party footsteps and muffled celebration,
+      tense with sudden violence
+    functional_role: Transitional pathway sparking private battle
+    symbolic_significance: Embodies West Wing's blend of public triumph and private
+      fractures
+    access_restrictions: Staff and guests during afterparty
+    key_environmental_details:
+    - Echoing footsteps
+    - Proximity to party roar
+    global_id: ger_location_c05c2fb83a2f
+  - location_uuid: ger_location_03a1b20f797d
+    description_of_involvement: Deserted hallway amplifies whispered fury as Amy hauls
+      Josh here for unfiltered clash over Tandy's record; bare walls heighten intimacy
+      of barbs, Tandy's intrusion shatters tension, underscoring isolation amid White
+      House bustle for raw ideological and romantic exposure.
+    observed_atmosphere: Stale, shadowed tension thick with betrayal whispers
+    functional_role: Confrontation battleground for secrets
+    symbolic_significance: Represents relational isolation amid institutional power
+    access_restrictions: Unsupervised corridor near party
+    key_environmental_details:
+    - Bare walls echoing voices
+    - Distant party pulse
+    global_id: ger_location_03a1b20f797d
+  organization_involvements:
+  - organization_uuid: ger_organization_bb39d5dd403d
+    description_of_involvement: 'White House looms as ideological battleground in
+      Amy-Josh spat: Amy touts Tandy''s bills trumping its lawyerly caution on abortion
+      violence/VAWA, Josh defends its positions; photo-op pull underscores its gravitational
+      optics power, fueling staff loyalty strains post-SOTU/censure.'
+    active_representation: Via policy objections and presidential photo-ops referenced
+      in dialogue
+    power_dynamics: Challenged ideologically by Tandy's record, exerts pull through
+      presidential access
+    organizational_goals:
+    - Maintain post-SOTU momentum via alliances/photo-ops
+    - Defend legislative pragmatism against activist critiques
+    influence_mechanisms:
+    - Institutional policy friction
+    - Presidential optics and access
+    institutional_impact: Highlights internal progressive tensions bleeding into personal
+      relationships
+    internal_dynamics: Staff divisions over feminist credentials vs. legal caution
+    global_id: ger_organization_bb39d5dd403d
+  derived_from_beat_uuids: *id010
   source_season: 3
   source_database: westwing.s03
 - fabula_uuid: cand_evt_scene_5b8fec75da226aec_1

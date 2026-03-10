@@ -1,5 +1,5 @@
 # Events for The Leadership Breakfast
-# Generated: 2026-02-10T12:17:02.484398
+# Generated: 2026-02-22T16:33:02.457731
 
 episode_uuid: ep_sea_ser_the_west_wing_s02_e11
 episode_title: The Leadership Breakfast
@@ -107,7 +107,7 @@ events:
     observed_traits: []
     importance: primary
     global_id: ger_agent_dd62525d972a
-  - character_uuid: ger_agent_64b2a2c10c8f
+  - character_uuid: ger_agent_14f85d554756
     emotional_state: Determined loyalty tempered by deference to hierarchy
     goals:
     - Advocate successfully for Jancowitz's accommodation per Josh
@@ -128,8 +128,8 @@ events:
     - persistent
     - diplomatic
     importance: primary
-    global_id: ger_agent_64b2a2c10c8f
-  - character_uuid: ger_agent_03759f378cab
+    global_id: ger_agent_14f85d554756
+  - character_uuid: ger_agent_3e4578f21f77
     emotional_state: ''
     goals:
     - contribute to complete and precise seating hierarchy
@@ -140,7 +140,7 @@ events:
     beliefs: []
     observed_traits: []
     importance: primary
-    global_id: ger_agent_03759f378cab
+    global_id: ger_agent_3e4578f21f77
   - character_uuid: ger_agent_1a20d464d641
     emotional_state: Vulnerable due to hearing impairment (inferred)
     goals:
@@ -208,7 +208,7 @@ events:
     - Steaming coffee vapors in dim night light
     global_id: ger_location_7423b10d7d15
   organization_involvements:
-  - organization_uuid: ger_organization_d033a1b32d4f
+  - organization_uuid: ger_organization_bb39d5dd403d
     description_of_involvement: The White House manifests through C.J.'s team rigorously
       plotting host-side seating hierarchy—from Leo centrally to peripheral aides—enforcing
       institutional protocol for bipartisan optics; Jancowitz glitch tests its control,
@@ -228,7 +228,7 @@ events:
       dynamics
     internal_dynamics: Chain of command from C.J. to Josh via Donna tested by urgent
       requests
-    global_id: ger_organization_d033a1b32d4f
+    global_id: ger_organization_bb39d5dd403d
   derived_from_beat_uuids:
   - beat_16b4e0e612edca52
   - beat_4df5848740431f13
@@ -306,7 +306,7 @@ events:
     - quick-witted
     importance: primary
     global_id: ger_agent_04bbccb1e352
-  - character_uuid: ger_agent_64b2a2c10c8f
+  - character_uuid: ger_agent_14f85d554756
     emotional_state: Sarcastic exasperation veiling logistical urgency
     goals:
     - Secure quick decision on Whip displacement for Jancowitz seating
@@ -328,7 +328,20 @@ events:
     - assertive
     - loyal
     importance: primary
-    global_id: ger_agent_64b2a2c10c8f
+    global_id: ger_agent_14f85d554756
+  - character_uuid: ger_agent_f82a8fb358b0
+    emotional_state: N/A (mentioned only)
+    goals: []
+    what_happened: Senate Whip named by Donna as alternative displacement for Jancowitz
+      seating, swiftly rejected in favor of House Whip by Josh and Sam's partisan
+      vote.
+    observed_status: Senate Whip named by Donna as alternative displacement for Jancowitz
+      seating, swiftly rejected in favor of House Whip by Josh and Sam's partisan
+      vote.
+    beliefs: []
+    observed_traits: []
+    importance: primary
+    global_id: ger_agent_f82a8fb358b0
   - character_uuid: ger_agent_1a20d464d641
     emotional_state: N/A (mentioned only)
     goals: []
@@ -355,19 +368,6 @@ events:
     observed_traits: []
     importance: primary
     global_id: ger_agent_e74e06fc91aa
-  - character_uuid: ger_agent_f82a8fb358b0
-    emotional_state: N/A (mentioned only)
-    goals: []
-    what_happened: Senate Whip named by Donna as alternative displacement for Jancowitz
-      seating, swiftly rejected in favor of House Whip by Josh and Sam's partisan
-      vote.
-    observed_status: Senate Whip named by Donna as alternative displacement for Jancowitz
-      seating, swiftly rejected in favor of House Whip by Josh and Sam's partisan
-      vote.
-    beliefs: []
-    observed_traits: []
-    importance: primary
-    global_id: ger_agent_f82a8fb358b0
   object_involvements:
   - object_uuid: ger_object_a6c6b9535650
     description_of_involvement: The low stone hearth and grate provide the focal backdrop
@@ -377,6 +377,14 @@ events:
     status_before_event: Cold and empty in Mural Room wall
     status_after_event: Still unlit, tripod positioned before grate
     global_id: ger_object_a6c6b9535650
+  - object_uuid: ger_object_e1a4fbf24ad5
+    description_of_involvement: Sam's newspaper suggested as alternative kindling
+      after dried leaves flop, hailed by Josh as pinnacle of teamwork in exuberant
+      exchange, serving as narrative capstone to their inventive camaraderie and deflection
+      from Donna's intrusion.
+    status_before_event: Absent/unused in Mural Room
+    status_after_event: Proposed but not yet deployed, celebrated in banter
+    global_id: ger_object_e1a4fbf24ad5
   - object_uuid: ger_object_29b396b8a182
     description_of_involvement: Josh and Sam physically stand and slant the three
       rough sticks into a wobbly tripod formation before the fireplace grate, bantering
@@ -394,14 +402,6 @@ events:
     status_before_event: Absent/uncollected in Mural Room
     status_after_event: Still absent, with sarcasm confirming unavailability
     global_id: ger_object_e60a37d0b136
-  - object_uuid: ger_object_e1a4fbf24ad5
-    description_of_involvement: Sam's newspaper suggested as alternative kindling
-      after dried leaves flop, hailed by Josh as pinnacle of teamwork in exuberant
-      exchange, serving as narrative capstone to their inventive camaraderie and deflection
-      from Donna's intrusion.
-    status_before_event: Absent/unused in Mural Room
-    status_after_event: Proposed but not yet deployed, celebrated in banter
-    global_id: ger_object_e1a4fbf24ad5
   location_involvements:
   - location_uuid: ger_location_7423b10d7d15
     description_of_involvement: The Mural Room serves as intimate late-night hub for
@@ -577,7 +577,7 @@ events:
     - disruptive
     importance: primary
     global_id: ger_agent_7854a70e34ea
-  - character_uuid: ger_agent_64b2a2c10c8f
+  - character_uuid: ger_agent_14f85d554756
     emotional_state: Relieved efficiency shifting to alarmed urgency
     goals:
     - Confirm seating completion to wrap up logistics
@@ -596,7 +596,7 @@ events:
     - reactive
     - loyal
     importance: primary
-    global_id: ger_agent_64b2a2c10c8f
+    global_id: ger_agent_14f85d554756
   - character_uuid: ger_agent_60a68a084e0c
     emotional_state: Concerned vigilance detecting hidden danger
     goals:
@@ -615,7 +615,7 @@ events:
     - urgent
     importance: primary
     global_id: ger_agent_60a68a084e0c
-  - character_uuid: ger_agent_03759f378cab
+  - character_uuid: ger_agent_3e4578f21f77
     emotional_state: ''
     goals:
     - support seating finalization
@@ -624,7 +624,7 @@ events:
     beliefs: []
     observed_traits: []
     importance: primary
-    global_id: ger_agent_03759f378cab
+    global_id: ger_agent_3e4578f21f77
   - character_uuid: ger_agent_1a20d464d641
     emotional_state: ''
     goals: []
@@ -712,21 +712,6 @@ events:
   - ger_theme_a40fa463435a
   arc_uuids: []
   participations:
-  - character_uuid: ger_agent_8f058b550daa
-    emotional_state: N/A (historical reference)
-    goals: []
-    what_happened: Andrew Johnson is invoked solely through Sam's reading of the plaque,
-      revealing his historical use of the fireplace for whiskey-sipping reading sessions,
-      contrasting past presidential leisure with present staff folly.
-    observed_status: Andrew Johnson is invoked solely through Sam's reading of the
-      plaque, revealing his historical use of the fireplace for whiskey-sipping reading
-      sessions, contrasting past presidential leisure with present staff folly.
-    beliefs: []
-    observed_traits:
-    - historical
-    - immortalized
-    importance: primary
-    global_id: ger_agent_8f058b550daa
   - character_uuid: ger_agent_54f868bf8265
     emotional_state: Annoyed incredulity escalating to sensory overload
     goals:
@@ -833,7 +818,7 @@ events:
     - authoritative
     importance: primary
     global_id: ger_agent_7854a70e34ea
-  - character_uuid: ger_agent_64b2a2c10c8f
+  - character_uuid: ger_agent_14f85d554756
     emotional_state: Panicked urgency laced with exasperation
     goals:
     - Assess and contain the immediate hazard
@@ -852,7 +837,22 @@ events:
     - efficient
     - alarmist
     importance: primary
-    global_id: ger_agent_64b2a2c10c8f
+    global_id: ger_agent_14f85d554756
+  - character_uuid: ger_agent_5739b948a4e8
+    emotional_state: N/A (historical reference)
+    goals: []
+    what_happened: Andrew Johnson is invoked solely through Sam's reading of the plaque,
+      revealing his historical use of the fireplace for whiskey-sipping reading sessions,
+      contrasting past presidential leisure with present staff folly.
+    observed_status: Andrew Johnson is invoked solely through Sam's reading of the
+      plaque, revealing his historical use of the fireplace for whiskey-sipping reading
+      sessions, contrasting past presidential leisure with present staff folly.
+    beliefs: []
+    observed_traits:
+    - historical
+    - immortalized
+    importance: primary
+    global_id: ger_agent_5739b948a4e8
   object_involvements:
   - object_uuid: ger_object_a6c6b9535650
     description_of_involvement: The antique Mural Room fireplace, with its flue welded
@@ -894,7 +894,7 @@ events:
     - Nighttime shadows from rain-streaked windows
     global_id: ger_location_7423b10d7d15
   organization_involvements:
-  - organization_uuid: ger_organization_a02ef5855109
+  - organization_uuid: ger_organization_9aeb11cd4ff1
     description_of_involvement: Secret Service protocols are invoked by Charlie as
       the alarms blare, mandating the President's awakening regardless of distance;
       this institutional force looms over the comedy, elevating a staff blunder into
@@ -909,7 +909,7 @@ events:
     - Chain-of-command pressure on aides
     institutional_impact: Highlights unyielding security overriding staff convenience
     internal_dynamics: ''
-    global_id: ger_organization_a02ef5855109
+    global_id: ger_organization_9aeb11cd4ff1
   derived_from_beat_uuids:
   - beat_8648164c3a8601e7
   - beat_fb27bf152061fb3b
@@ -1232,191 +1232,6 @@ events:
   - 'SAM: "I don''t do well with Karen." DONNA: "What happens?" SAM: "I become unimpressive."
     DONNA: "You don''t fall down, do you?" SAM: "Once."'
   is_flashback: false
-  location_uuid: ger_location_55e711ff6df2
-  theme_uuids: []
-  arc_uuids:
-  - ger_conflictarc_34e73bbaaf51
-  participations:
-  - character_uuid: ger_agent_dd62525d972a
-    emotional_state: Detached authority
-    goals:
-    - Enforce accountability for staff gaffes
-    - Smooth relations with influential media via apology
-    what_happened: Leo is invoked off-screen as the source of the shoe-mocking gaffe
-      and the authority issuing the dinner apology order to Sam via Donna, underscoring
-      his pragmatic command style.
-    observed_status: Leo is invoked off-screen as the source of the shoe-mocking gaffe
-      and the authority issuing the dinner apology order to Sam via Donna, underscoring
-      his pragmatic command style.
-    beliefs:
-    - Personal slights require swift remediation
-    - Sam is capable of handling delicate tasks
-    observed_traits:
-    - authoritative
-    - pragmatic
-    importance: primary
-    global_id: ger_agent_dd62525d972a
-  - character_uuid: ger_agent_04bbccb1e352
-    emotional_state: Eager excitement shifting to panicked anxiety then resolute determination
-    goals:
-    - Propose creative solution to West Wing overcrowding
-    - Gain reassurance to face Karen Cahill successfully
-    what_happened: Sam enthusiastically pitches his absurd swimming pool reclamation
-      scheme to Donna in his office, nervously receives Leo's apology assignment,
-      confesses vulnerabilities around Karen Cahill including a past fall, stands
-      and paces anxiously before vowing perseverance and heading out.
-    observed_status: Sam enthusiastically pitches his absurd swimming pool reclamation
-      scheme to Donna in his office, nervously receives Leo's apology assignment,
-      confesses vulnerabilities around Karen Cahill including a past fall, stands
-      and paces anxiously before vowing perseverance and heading out.
-    beliefs:
-    - OMB data justifies bold space reclamation
-    - Perseverance will overcome past failures with Cahill
-    observed_traits:
-    - idealistic
-    - gaffe-prone
-    - vulnerable
-    - determined
-    importance: primary
-    global_id: ger_agent_04bbccb1e352
-  - character_uuid: ger_agent_64b2a2c10c8f
-    emotional_state: Amused skepticism blended with genuine encouragement
-    goals:
-    - Shut down Sam's impractical idea
-    - Motivate Sam to fulfill Leo's directive confidently
-    what_happened: Donna enters Sam's office unannounced, instantly critiques his
-      pool logic flaw with dry wit, delivers Leo's precise apology order, follows
-      him out into the hallway for probing questions, and bolsters him with sarcastic
-      yet affirming pep talk on impressiveness.
-    observed_status: Donna enters Sam's office unannounced, instantly critiques his
-      pool logic flaw with dry wit, delivers Leo's precise apology order, follows
-      him out into the hallway for probing questions, and bolsters him with sarcastic
-      yet affirming pep talk on impressiveness.
-    beliefs:
-    - Sam's pool plan is logically flawed
-    - Sam possesses untapped potential to impress despite history
-    observed_traits:
-    - efficient
-    - sarcastic
-    - supportive
-    - perceptive
-    importance: primary
-    global_id: ger_agent_64b2a2c10c8f
-  - character_uuid: ger_agent_1eb0c0bcfa60
-    emotional_state: Unknown (off-screen presence haunts Sam)
-    goals:
-    - Accept apology at dinner (inferred)
-    - Maintain media leverage
-    what_happened: Karen Cahill is referenced extensively as the NYT columnist victim
-      of Leo's shoe mockery, triggering Sam's panic over past unimpressive encounters
-      including a fall, positioning her as a looming personal hurdle.
-    observed_status: Karen Cahill is referenced extensively as the NYT columnist victim
-      of Leo's shoe mockery, triggering Sam's panic over past unimpressive encounters
-      including a fall, positioning her as a looming personal hurdle.
-    beliefs:
-    - Power demands respect from White House (inferred)
-    observed_traits:
-    - formidable
-    - influential
-    importance: primary
-    global_id: ger_agent_1eb0c0bcfa60
-  object_involvements: []
-  location_involvements:
-  - location_uuid: ger_location_55e711ff6df2
-    description_of_involvement: The Press Briefing Room is invoked as the site concealing
-      a historical swimming pool, central to Sam's overcrowded-space pitch; its mention
-      fuels the comedic illogic of relocating reporters to reclaim recreational White
-      House turf amid post-shooting press surge.
-    observed_atmosphere: Imagined as cramped and underutilized, symbolizing bureaucratic
-      waste
-    functional_role: Hypothetical target for Sam's disruptive reclamation scheme
-    symbolic_significance: Embodies White House space wars and forgotten luxuries
-    access_restrictions: Occupied by entrenched Press Corps
-    key_environmental_details:
-    - Submerged swimming pool
-    - Overcrowded with reporters
-    global_id: ger_location_55e711ff6df2
-  - location_uuid: ger_location_2dacb2924dc8
-    description_of_involvement: Ben and Sally's is named as the intimate dinner venue
-      where Sam must deliver Leo's apology to Karen Cahill, heightening his dread
-      and framing the task as a personal proving ground away from office chaos.
-    observed_atmosphere: Anticipated as warmly lit neighborhood refuge for tense reconciliation
-    functional_role: Upcoming site of Sam's redemptive confrontation
-    symbolic_significance: Represents vulnerability outside power corridors
-    access_restrictions: Private dinner invitation only
-    key_environmental_details:
-    - Neighborhood setting
-    - Dinner table intimacy
-    global_id: ger_location_2dacb2924dc8
-  organization_involvements:
-  - organization_uuid: ger_organization_09ab0f33dba1
-    description_of_involvement: The Press Corps is targeted in Sam's bold relocation
-      scheme to free the briefing room pool, portraying them as space-hogging invaders
-      in the post-Rosslyn era, contrasting their scrutiny role with physical encroachment.
-    active_representation: As institutional occupants of White House space
-    power_dynamics: Entrenched rivals resisting eviction for narrative control
-    organizational_goals:
-    - Maintain briefing room access
-    - Sustain coverage proximity
-    influence_mechanisms:
-    - Physical occupation
-    - Media leverage
-    institutional_impact: Highlights tension between administration and fourth estate
-    internal_dynamics: ''
-    global_id: ger_organization_09ab0f33dba1
-  - organization_uuid: ger_organization_d033a1b32d4f
-    description_of_involvement: The White House manifests through West Wing overcrowding
-      stats, framing Sam's pool pitch as a quirky response to institutional bloat
-      while underscoring the high-stakes environment birthing such desperation.
-    active_representation: Via internal logistics and historical comparisons
-    power_dynamics: Overseer of space strained by staff and press
-    organizational_goals:
-    - Optimize workspace efficiency
-    - Manage post-crisis expansions
-    influence_mechanisms:
-    - Hierarchical orders (Leo's)
-    - Facility constraints
-    institutional_impact: Reveals operational pressures amid re-election buildup
-    internal_dynamics: Staff ingenuity clashing with protocol
-    global_id: ger_organization_d033a1b32d4f
-  - organization_uuid: ger_organization_d474908d3b1c
-    description_of_involvement: OMB is cited via its efficiency audit as empirical
-      backing for Sam's pitch on West Wing overcrowding exceeding historical peaks,
-      lending pseudo-official weight to his whimsical pool revival amid fiscal scrutiny.
-    active_representation: Through referenced audit data and statistics
-    power_dynamics: Provides authoritative data challenging White House space status
-      quo
-    organizational_goals:
-    - Promote efficiency in federal operations
-    - Highlight overcrowding via audits
-    influence_mechanisms:
-    - Statistical reports
-    - Efficiency recommendations
-    institutional_impact: Exposes physical constraints fueling internal turf battles
-    internal_dynamics: ''
-    global_id: ger_organization_d474908d3b1c
-  derived_from_beat_uuids: &id002
-  - beat_a831bfd5db2ca922
-  - beat_d1ba1af594ad1069
-  - beat_e02264869869211d
-  source_season: 2
-  source_database: westwing.s02
-- fabula_uuid: cand_evt_scene_ea96365bb55248eb_1
-  global_id: null
-  title: Sam's Pool Pitch Fiasco and Karen Cahill Apology Dread
-  description: 'In a comedic detour from political chaos, Sam pitches relocating the
-    press corps to reclaim a hidden swimming pool under the briefing room, citing
-    historical overcrowding per OMB audit—though Donna instantly spots the illogic.
-    She delivers Leo''s order: apologize to NYT columnist Karen Cahill for mocking
-    her shoes (Leo''s slip). Sam panics, confessing past humiliations where he turns
-    ''unimpressive'' around her, even falling once. Donna''s pep talk steels him with
-    perseverance talk. This breather humanizes Sam''s gaffe-prone vulnerability, contrasting
-    the episode''s partisan warfare while foreshadowing his PR blunders.'
-  episode_uuid: ep_sea_ser_the_west_wing_s02_e11
-  scene_sequence: 8
-  sequence_in_scene: 8
-  key_dialogue: *id001
-  is_flashback: false
   location_uuid: ger_location_2dacb2924dc8
   theme_uuids: []
   arc_uuids:
@@ -1464,7 +1279,7 @@ events:
     - determined
     importance: primary
     global_id: ger_agent_04bbccb1e352
-  - character_uuid: ger_agent_64b2a2c10c8f
+  - character_uuid: ger_agent_14f85d554756
     emotional_state: Amused skepticism blended with genuine encouragement
     goals:
     - Shut down Sam's impractical idea
@@ -1486,7 +1301,7 @@ events:
     - supportive
     - perceptive
     importance: primary
-    global_id: ger_agent_64b2a2c10c8f
+    global_id: ger_agent_14f85d554756
   - character_uuid: ger_agent_1eb0c0bcfa60
     emotional_state: Unknown (off-screen presence haunts Sam)
     goals:
@@ -1507,20 +1322,6 @@ events:
     global_id: ger_agent_1eb0c0bcfa60
   object_involvements: []
   location_involvements:
-  - location_uuid: ger_location_55e711ff6df2
-    description_of_involvement: The Press Briefing Room is invoked as the site concealing
-      a historical swimming pool, central to Sam's overcrowded-space pitch; its mention
-      fuels the comedic illogic of relocating reporters to reclaim recreational White
-      House turf amid post-shooting press surge.
-    observed_atmosphere: Imagined as cramped and underutilized, symbolizing bureaucratic
-      waste
-    functional_role: Hypothetical target for Sam's disruptive reclamation scheme
-    symbolic_significance: Embodies White House space wars and forgotten luxuries
-    access_restrictions: Occupied by entrenched Press Corps
-    key_environmental_details:
-    - Submerged swimming pool
-    - Overcrowded with reporters
-    global_id: ger_location_55e711ff6df2
   - location_uuid: ger_location_2dacb2924dc8
     description_of_involvement: Ben and Sally's is named as the intimate dinner venue
       where Sam must deliver Leo's apology to Karen Cahill, heightening his dread
@@ -1533,6 +1334,20 @@ events:
     - Neighborhood setting
     - Dinner table intimacy
     global_id: ger_location_2dacb2924dc8
+  - location_uuid: ger_location_ba584d0e54df
+    description_of_involvement: The Press Briefing Room is invoked as the site concealing
+      a historical swimming pool, central to Sam's overcrowded-space pitch; its mention
+      fuels the comedic illogic of relocating reporters to reclaim recreational White
+      House turf amid post-shooting press surge.
+    observed_atmosphere: Imagined as cramped and underutilized, symbolizing bureaucratic
+      waste
+    functional_role: Hypothetical target for Sam's disruptive reclamation scheme
+    symbolic_significance: Embodies White House space wars and forgotten luxuries
+    access_restrictions: Occupied by entrenched Press Corps
+    key_environmental_details:
+    - Submerged swimming pool
+    - Overcrowded with reporters
+    global_id: ger_location_ba584d0e54df
   organization_involvements:
   - organization_uuid: ger_organization_09ab0f33dba1
     description_of_involvement: The Press Corps is targeted in Sam's bold relocation
@@ -1549,7 +1364,7 @@ events:
     institutional_impact: Highlights tension between administration and fourth estate
     internal_dynamics: ''
     global_id: ger_organization_09ab0f33dba1
-  - organization_uuid: ger_organization_d033a1b32d4f
+  - organization_uuid: ger_organization_bb39d5dd403d
     description_of_involvement: The White House manifests through West Wing overcrowding
       stats, framing Sam's pool pitch as a quirky response to institutional bloat
       while underscoring the high-stakes environment birthing such desperation.
@@ -1563,7 +1378,192 @@ events:
     - Facility constraints
     institutional_impact: Reveals operational pressures amid re-election buildup
     internal_dynamics: Staff ingenuity clashing with protocol
-    global_id: ger_organization_d033a1b32d4f
+    global_id: ger_organization_bb39d5dd403d
+  - organization_uuid: ger_organization_d474908d3b1c
+    description_of_involvement: OMB is cited via its efficiency audit as empirical
+      backing for Sam's pitch on West Wing overcrowding exceeding historical peaks,
+      lending pseudo-official weight to his whimsical pool revival amid fiscal scrutiny.
+    active_representation: Through referenced audit data and statistics
+    power_dynamics: Provides authoritative data challenging White House space status
+      quo
+    organizational_goals:
+    - Promote efficiency in federal operations
+    - Highlight overcrowding via audits
+    influence_mechanisms:
+    - Statistical reports
+    - Efficiency recommendations
+    institutional_impact: Exposes physical constraints fueling internal turf battles
+    internal_dynamics: ''
+    global_id: ger_organization_d474908d3b1c
+  derived_from_beat_uuids: &id002
+  - beat_a831bfd5db2ca922
+  - beat_d1ba1af594ad1069
+  - beat_e02264869869211d
+  source_season: 2
+  source_database: westwing.s02
+- fabula_uuid: cand_evt_scene_ea96365bb55248eb_1
+  global_id: null
+  title: Sam's Pool Pitch Fiasco and Karen Cahill Apology Dread
+  description: 'In a comedic detour from political chaos, Sam pitches relocating the
+    press corps to reclaim a hidden swimming pool under the briefing room, citing
+    historical overcrowding per OMB audit—though Donna instantly spots the illogic.
+    She delivers Leo''s order: apologize to NYT columnist Karen Cahill for mocking
+    her shoes (Leo''s slip). Sam panics, confessing past humiliations where he turns
+    ''unimpressive'' around her, even falling once. Donna''s pep talk steels him with
+    perseverance talk. This breather humanizes Sam''s gaffe-prone vulnerability, contrasting
+    the episode''s partisan warfare while foreshadowing his PR blunders.'
+  episode_uuid: ep_sea_ser_the_west_wing_s02_e11
+  scene_sequence: 8
+  sequence_in_scene: 8
+  key_dialogue: *id001
+  is_flashback: false
+  location_uuid: ger_location_ba584d0e54df
+  theme_uuids: []
+  arc_uuids:
+  - ger_conflictarc_34e73bbaaf51
+  participations:
+  - character_uuid: ger_agent_dd62525d972a
+    emotional_state: Detached authority
+    goals:
+    - Enforce accountability for staff gaffes
+    - Smooth relations with influential media via apology
+    what_happened: Leo is invoked off-screen as the source of the shoe-mocking gaffe
+      and the authority issuing the dinner apology order to Sam via Donna, underscoring
+      his pragmatic command style.
+    observed_status: Leo is invoked off-screen as the source of the shoe-mocking gaffe
+      and the authority issuing the dinner apology order to Sam via Donna, underscoring
+      his pragmatic command style.
+    beliefs:
+    - Personal slights require swift remediation
+    - Sam is capable of handling delicate tasks
+    observed_traits:
+    - authoritative
+    - pragmatic
+    importance: primary
+    global_id: ger_agent_dd62525d972a
+  - character_uuid: ger_agent_04bbccb1e352
+    emotional_state: Eager excitement shifting to panicked anxiety then resolute determination
+    goals:
+    - Propose creative solution to West Wing overcrowding
+    - Gain reassurance to face Karen Cahill successfully
+    what_happened: Sam enthusiastically pitches his absurd swimming pool reclamation
+      scheme to Donna in his office, nervously receives Leo's apology assignment,
+      confesses vulnerabilities around Karen Cahill including a past fall, stands
+      and paces anxiously before vowing perseverance and heading out.
+    observed_status: Sam enthusiastically pitches his absurd swimming pool reclamation
+      scheme to Donna in his office, nervously receives Leo's apology assignment,
+      confesses vulnerabilities around Karen Cahill including a past fall, stands
+      and paces anxiously before vowing perseverance and heading out.
+    beliefs:
+    - OMB data justifies bold space reclamation
+    - Perseverance will overcome past failures with Cahill
+    observed_traits:
+    - idealistic
+    - gaffe-prone
+    - vulnerable
+    - determined
+    importance: primary
+    global_id: ger_agent_04bbccb1e352
+  - character_uuid: ger_agent_14f85d554756
+    emotional_state: Amused skepticism blended with genuine encouragement
+    goals:
+    - Shut down Sam's impractical idea
+    - Motivate Sam to fulfill Leo's directive confidently
+    what_happened: Donna enters Sam's office unannounced, instantly critiques his
+      pool logic flaw with dry wit, delivers Leo's precise apology order, follows
+      him out into the hallway for probing questions, and bolsters him with sarcastic
+      yet affirming pep talk on impressiveness.
+    observed_status: Donna enters Sam's office unannounced, instantly critiques his
+      pool logic flaw with dry wit, delivers Leo's precise apology order, follows
+      him out into the hallway for probing questions, and bolsters him with sarcastic
+      yet affirming pep talk on impressiveness.
+    beliefs:
+    - Sam's pool plan is logically flawed
+    - Sam possesses untapped potential to impress despite history
+    observed_traits:
+    - efficient
+    - sarcastic
+    - supportive
+    - perceptive
+    importance: primary
+    global_id: ger_agent_14f85d554756
+  - character_uuid: ger_agent_1eb0c0bcfa60
+    emotional_state: Unknown (off-screen presence haunts Sam)
+    goals:
+    - Accept apology at dinner (inferred)
+    - Maintain media leverage
+    what_happened: Karen Cahill is referenced extensively as the NYT columnist victim
+      of Leo's shoe mockery, triggering Sam's panic over past unimpressive encounters
+      including a fall, positioning her as a looming personal hurdle.
+    observed_status: Karen Cahill is referenced extensively as the NYT columnist victim
+      of Leo's shoe mockery, triggering Sam's panic over past unimpressive encounters
+      including a fall, positioning her as a looming personal hurdle.
+    beliefs:
+    - Power demands respect from White House (inferred)
+    observed_traits:
+    - formidable
+    - influential
+    importance: primary
+    global_id: ger_agent_1eb0c0bcfa60
+  object_involvements: []
+  location_involvements:
+  - location_uuid: ger_location_2dacb2924dc8
+    description_of_involvement: Ben and Sally's is named as the intimate dinner venue
+      where Sam must deliver Leo's apology to Karen Cahill, heightening his dread
+      and framing the task as a personal proving ground away from office chaos.
+    observed_atmosphere: Anticipated as warmly lit neighborhood refuge for tense reconciliation
+    functional_role: Upcoming site of Sam's redemptive confrontation
+    symbolic_significance: Represents vulnerability outside power corridors
+    access_restrictions: Private dinner invitation only
+    key_environmental_details:
+    - Neighborhood setting
+    - Dinner table intimacy
+    global_id: ger_location_2dacb2924dc8
+  - location_uuid: ger_location_ba584d0e54df
+    description_of_involvement: The Press Briefing Room is invoked as the site concealing
+      a historical swimming pool, central to Sam's overcrowded-space pitch; its mention
+      fuels the comedic illogic of relocating reporters to reclaim recreational White
+      House turf amid post-shooting press surge.
+    observed_atmosphere: Imagined as cramped and underutilized, symbolizing bureaucratic
+      waste
+    functional_role: Hypothetical target for Sam's disruptive reclamation scheme
+    symbolic_significance: Embodies White House space wars and forgotten luxuries
+    access_restrictions: Occupied by entrenched Press Corps
+    key_environmental_details:
+    - Submerged swimming pool
+    - Overcrowded with reporters
+    global_id: ger_location_ba584d0e54df
+  organization_involvements:
+  - organization_uuid: ger_organization_09ab0f33dba1
+    description_of_involvement: The Press Corps is targeted in Sam's bold relocation
+      scheme to free the briefing room pool, portraying them as space-hogging invaders
+      in the post-Rosslyn era, contrasting their scrutiny role with physical encroachment.
+    active_representation: As institutional occupants of White House space
+    power_dynamics: Entrenched rivals resisting eviction for narrative control
+    organizational_goals:
+    - Maintain briefing room access
+    - Sustain coverage proximity
+    influence_mechanisms:
+    - Physical occupation
+    - Media leverage
+    institutional_impact: Highlights tension between administration and fourth estate
+    internal_dynamics: ''
+    global_id: ger_organization_09ab0f33dba1
+  - organization_uuid: ger_organization_bb39d5dd403d
+    description_of_involvement: The White House manifests through West Wing overcrowding
+      stats, framing Sam's pool pitch as a quirky response to institutional bloat
+      while underscoring the high-stakes environment birthing such desperation.
+    active_representation: Via internal logistics and historical comparisons
+    power_dynamics: Overseer of space strained by staff and press
+    organizational_goals:
+    - Optimize workspace efficiency
+    - Manage post-crisis expansions
+    influence_mechanisms:
+    - Hierarchical orders (Leo's)
+    - Facility constraints
+    institutional_impact: Reveals operational pressures amid re-election buildup
+    internal_dynamics: Staff ingenuity clashing with protocol
+    global_id: ger_organization_bb39d5dd403d
   - organization_uuid: ger_organization_d474908d3b1c
     description_of_involvement: OMB is cited via its efficiency audit as empirical
       backing for Sam's pitch on West Wing overcrowding exceeding historical peaks,
@@ -1615,20 +1615,6 @@ events:
   - ger_theme_2ad75ba27d86
   arc_uuids: []
   participations:
-  - character_uuid: ger_agent_6048b2de0da1
-    emotional_state: N/A (referenced)
-    goals:
-    - N/A (referenced)
-    what_happened: Absent but intimately invoked by Leo as emblem of his own failed
-      marriage, paralleling Toby's warnings against evaded truths.
-    observed_status: Absent but intimately invoked by Leo as emblem of his own failed
-      marriage, paralleling Toby's warnings against evaded truths.
-    beliefs:
-    - N/A (referenced)
-    observed_traits:
-    - Symbol of unspoken love's ruin
-    importance: primary
-    global_id: ger_agent_6048b2de0da1
   - character_uuid: ger_agent_dd62525d972a
     emotional_state: Cautious reluctance veiling deep wariness and wistful regret
     goals:
@@ -1690,6 +1676,20 @@ events:
     - Inexperienced aggression
     importance: primary
     global_id: ger_agent_0d50a35748df
+  - character_uuid: ger_agent_5a304ffb5d2e
+    emotional_state: N/A (referenced)
+    goals:
+    - N/A (referenced)
+    what_happened: Absent but intimately invoked by Leo as emblem of his own failed
+      marriage, paralleling Toby's warnings against evaded truths.
+    observed_status: Absent but intimately invoked by Leo as emblem of his own failed
+      marriage, paralleling Toby's warnings against evaded truths.
+    beliefs:
+    - N/A (referenced)
+    observed_traits:
+    - Symbol of unspoken love's ruin
+    importance: primary
+    global_id: ger_agent_5a304ffb5d2e
   object_involvements: []
   location_involvements: []
   organization_involvements:
@@ -1758,7 +1758,7 @@ events:
   - 'Toby (VO): "I want them to talk about the minimum wage and I want them to talk
     about the Patient''s Bill of Rights."'
   is_flashback: false
-  location_uuid: ger_location_55e711ff6df2
+  location_uuid: ger_location_ba584d0e54df
   theme_uuids: []
   arc_uuids: []
   participations:
@@ -1787,7 +1787,7 @@ events:
     global_id: ger_agent_7854a70e34ea
   object_involvements: []
   location_involvements:
-  - location_uuid: ger_location_55e711ff6df2
+  - location_uuid: ger_location_ba584d0e54df
     description_of_involvement: The White House exterior serves as the opening establishing
       shot on a Tuesday morning, its grand columns and manicured grounds framing Toby's
       voiceover with visual gravitas, symbolizing the epicenter of power where Toby's
@@ -1802,7 +1802,7 @@ events:
     key_environmental_details:
     - Tuesday morning sunlight slashing across towering columns
     - Manicured grounds under brooding skies
-    global_id: ger_location_55e711ff6df2
+    global_id: ger_location_ba584d0e54df
   organization_involvements: []
   derived_from_beat_uuids:
   - beat_bd290943f104eb94
@@ -1831,7 +1831,7 @@ events:
   - 'ANN: "Where''s my present?" TOBY: "([clapping his pockets]) Uh... I don''t have
     one." ANN: "([takes the syrup back]) Then give me my syrup back."'
   is_flashback: false
-  location_uuid: ger_location_55e711ff6df2
+  location_uuid: ger_location_ba584d0e54df
   theme_uuids:
   - ger_theme_1a134d221c5f
   arc_uuids: []
@@ -1861,7 +1861,7 @@ events:
     - composed under pressure
     importance: primary
     global_id: ger_agent_7854a70e34ea
-  - character_uuid: ger_agent_03759f378cab
+  - character_uuid: ger_agent_3e4578f21f77
     emotional_state: Calm neutrality indifferent to surrounding tension
     goals:
     - Efficiently take breakfast orders
@@ -1880,7 +1880,7 @@ events:
     - routine
     - oblivious
     importance: primary
-    global_id: ger_agent_03759f378cab
+    global_id: ger_agent_3e4578f21f77
   - character_uuid: ger_agent_0d50a35748df
     emotional_state: Smug triumph laced with playful aggression and calculated provocation
     goals:
@@ -1923,7 +1923,7 @@ events:
     status_after_event: Reclaimed and held by Ann Stark, unwrapped
     global_id: ger_object_a10b1da58122
   location_involvements:
-  - location_uuid: ger_location_55e711ff6df2
+  - location_uuid: ger_location_ba584d0e54df
     description_of_involvement: The White House Mess hosts Toby and Ann's breakfast
       as neutral ground where diplomatic veneers crack into rivalry; scarred tables
       catch the light during syrup exchanges, mundane kitchen sounds underscoring
@@ -1938,7 +1938,7 @@ events:
     key_environmental_details:
     - Morning light on scarred tables
     - Open kitchen clangs and service approach
-    global_id: ger_location_55e711ff6df2
+    global_id: ger_location_ba584d0e54df
   organization_involvements:
   - organization_uuid: ger_organization_5278bcf2674a
     description_of_involvement: The Republican Party manifests through Ann Stark's
@@ -2312,7 +2312,7 @@ events:
     - self-doubting
     importance: primary
     global_id: ger_agent_04bbccb1e352
-  - character_uuid: ger_agent_64b2a2c10c8f
+  - character_uuid: ger_agent_14f85d554756
     emotional_state: Calm empathy underpinned by instinctive loyalty and optimism
     goals:
     - Reassure Sam to bolster his confidence
@@ -2333,7 +2333,7 @@ events:
     - pragmatic
     - supportive
     importance: primary
-    global_id: ger_agent_64b2a2c10c8f
+    global_id: ger_agent_14f85d554756
   object_involvements: []
   location_involvements:
   - location_uuid: ger_location_3d4b26f1de82
@@ -3287,7 +3287,7 @@ events:
   - 'C.J.: "When did he get a sore throat?" ... C.J.: "She took the Majority Leader
     off the board."'
   is_flashback: false
-  location_uuid: ger_location_55e711ff6df2
+  location_uuid: ger_location_1717096b113d
   theme_uuids:
   - ger_theme_564f177e9c71
   arc_uuids: []
@@ -3539,20 +3539,6 @@ events:
     status_after_event: Continues broadcasting presser, focal point of tense scrutiny
     global_id: ger_object_5cfd9ca36964
   location_involvements:
-  - location_uuid: ger_location_55e711ff6df2
-    description_of_involvement: C.J.'s office within the White House serves as the
-      intimate battleground for Steve's leak ambush and the TV-fueled revelation of
-      GOP tactics, its confines amplifying personal confrontations and rapid intel
-      processing against the broader partisan war, blending routine workspace with
-      high-stakes nerve center.
-    observed_atmosphere: Taut with interrupted urgency and dawning suspicion
-    functional_role: Ambush site and real-time monitoring hub
-    symbolic_significance: Fortress under subtle siege from leaks and remote strikes
-    access_restrictions: Restricted to press staff and inner circle
-    key_environmental_details:
-    - Flickering TV glow dominating the space
-    - Rapid door entries and exits heightening pace
-    global_id: ger_location_55e711ff6df2
   - location_uuid: ger_location_1717096b113d
     description_of_involvement: The Capitol Building Steps host the off-site press
       conference beamed into C.J.'s office via TV, where the surrogate GOP lineup
@@ -3566,6 +3552,20 @@ events:
     - Sun-baked marble steps
     - Thrusting microphones and crackling voices
     global_id: ger_location_1717096b113d
+  - location_uuid: ger_location_ba584d0e54df
+    description_of_involvement: C.J.'s office within the White House serves as the
+      intimate battleground for Steve's leak ambush and the TV-fueled revelation of
+      GOP tactics, its confines amplifying personal confrontations and rapid intel
+      processing against the broader partisan war, blending routine workspace with
+      high-stakes nerve center.
+    observed_atmosphere: Taut with interrupted urgency and dawning suspicion
+    functional_role: Ambush site and real-time monitoring hub
+    symbolic_significance: Fortress under subtle siege from leaks and remote strikes
+    access_restrictions: Restricted to press staff and inner circle
+    key_environmental_details:
+    - Flickering TV glow dominating the space
+    - Rapid door entries and exits heightening pace
+    global_id: ger_location_ba584d0e54df
   organization_involvements: []
   derived_from_beat_uuids: &id012
   - beat_b4aaecbdd0c4faf9
@@ -3589,7 +3589,7 @@ events:
   sequence_in_scene: 19
   key_dialogue: *id011
   is_flashback: false
-  location_uuid: ger_location_1717096b113d
+  location_uuid: ger_location_ba584d0e54df
   theme_uuids:
   - ger_theme_564f177e9c71
   arc_uuids: []
@@ -3841,20 +3841,6 @@ events:
     status_after_event: Continues broadcasting presser, focal point of tense scrutiny
     global_id: ger_object_5cfd9ca36964
   location_involvements:
-  - location_uuid: ger_location_55e711ff6df2
-    description_of_involvement: C.J.'s office within the White House serves as the
-      intimate battleground for Steve's leak ambush and the TV-fueled revelation of
-      GOP tactics, its confines amplifying personal confrontations and rapid intel
-      processing against the broader partisan war, blending routine workspace with
-      high-stakes nerve center.
-    observed_atmosphere: Taut with interrupted urgency and dawning suspicion
-    functional_role: Ambush site and real-time monitoring hub
-    symbolic_significance: Fortress under subtle siege from leaks and remote strikes
-    access_restrictions: Restricted to press staff and inner circle
-    key_environmental_details:
-    - Flickering TV glow dominating the space
-    - Rapid door entries and exits heightening pace
-    global_id: ger_location_55e711ff6df2
   - location_uuid: ger_location_1717096b113d
     description_of_involvement: The Capitol Building Steps host the off-site press
       conference beamed into C.J.'s office via TV, where the surrogate GOP lineup
@@ -3868,6 +3854,20 @@ events:
     - Sun-baked marble steps
     - Thrusting microphones and crackling voices
     global_id: ger_location_1717096b113d
+  - location_uuid: ger_location_ba584d0e54df
+    description_of_involvement: C.J.'s office within the White House serves as the
+      intimate battleground for Steve's leak ambush and the TV-fueled revelation of
+      GOP tactics, its confines amplifying personal confrontations and rapid intel
+      processing against the broader partisan war, blending routine workspace with
+      high-stakes nerve center.
+    observed_atmosphere: Taut with interrupted urgency and dawning suspicion
+    functional_role: Ambush site and real-time monitoring hub
+    symbolic_significance: Fortress under subtle siege from leaks and remote strikes
+    access_restrictions: Restricted to press staff and inner circle
+    key_environmental_details:
+    - Flickering TV glow dominating the space
+    - Rapid door entries and exits heightening pace
+    global_id: ger_location_ba584d0e54df
   organization_involvements: []
   derived_from_beat_uuids: *id012
   source_season: 2
@@ -3889,264 +3889,6 @@ events:
     a sore throat and is unable to join us here, he''s gone back to his office."'
   - 'C.J.: "When did he get a sore throat?"'
   - 'C.J.: "She took the Majority Leader off the board."'
-  is_flashback: false
-  location_uuid: ger_location_55e711ff6df2
-  theme_uuids:
-  - ger_theme_564f177e9c71
-  arc_uuids: []
-  participations:
-  - character_uuid: ger_agent_54f868bf8265
-    emotional_state: Skeptical insight sharpening into righteous certainty
-    goals:
-    - Discern the truth behind the Majority Leader's absence
-    - Alert team to Stark's tactical ambush
-    what_happened: C.J. enters, dismisses Steve with urgency to focus on the TV, freezes
-      at the congressman's announcement of the Majority Leader's sore throat, sharply
-      questions timing, then accuses 'She' (Stark) of sidelining him, piercing the
-      political ruse with incisive command.
-    observed_status: C.J. enters, dismisses Steve with urgency to focus on the TV,
-      freezes at the congressman's announcement of the Majority Leader's sore throat,
-      sharply questions timing, then accuses 'She' (Stark) of sidelining him, piercing
-      the political ruse with incisive command.
-    beliefs:
-    - Republicans use feigned illnesses as deniable power plays
-    - Stark ruthlessly eliminates obstacles to seize narrative control
-    observed_traits:
-    - Skeptical
-    - Insightful
-    - Decisive
-    - Press-savvy
-    importance: primary
-    global_id: ger_agent_54f868bf8265
-  - character_uuid: ger_agent_79dc9fb6a278
-    emotional_state: Alert professionalism tinged with uncertainty
-    goals:
-    - Facilitate C.J.'s focus on the broadcast
-    - Provide any available intel on developments
-    what_happened: Carol enters as Steve exits, crisply announces the press conference
-      start, hovers supportively, then stutters uncertainly when C.J. probes the sore
-      throat timing.
-    observed_status: Carol enters as Steve exits, crisply announces the press conference
-      start, hovers supportively, then stutters uncertainly when C.J. probes the sore
-      throat timing.
-    beliefs:
-    - C.J. needs uninterrupted access to key events
-    - Sudden absences signal deeper maneuvers
-    observed_traits:
-    - Efficient
-    - Tentative under pressure
-    - Loyal assistant
-    importance: primary
-    global_id: ger_agent_79dc9fb6a278
-  - character_uuid: ger_agent_15505a99b94c
-    emotional_state: ''
-    goals: []
-    what_happened: mentioned as source of press room relocation rumor, reportedly
-      called by a pollster
-    observed_status: mentioned as source of press room relocation rumor, reportedly
-      called by a pollster
-    beliefs: []
-    observed_traits: []
-    importance: primary
-    global_id: ger_agent_15505a99b94c
-  - character_uuid: ger_agent_0c47b1e332c7
-    emotional_state: Reportedly ill, strategically isolated (inferred)
-    goals:
-    - Recover from 'sore throat' (apparent)
-    - Rejoin fray post-ambush
-    what_happened: Senate Majority Leader absent from press conference, announced
-      as sidelined by sudden sore throat and returned to office, his void spotlighted
-      by C.J. as Stark's targeted removal.
-    observed_status: Senate Majority Leader absent from press conference, announced
-      as sidelined by sudden sore throat and returned to office, his void spotlighted
-      by C.J. as Stark's targeted removal.
-    beliefs:
-    - Bipartisan events require his presence (subverted)
-    - Health trumps politics momentarily
-    observed_traits:
-    - Vulnerable linchpin
-    - Unwitting pawn
-    importance: primary
-    global_id: ger_agent_0c47b1e332c7
-  - character_uuid: ger_agent_ce2bfab1b21b
-    emotional_state: Determined persistence yielding to reluctant deference
-    goals:
-    - Extract confirmation on press room relocation
-    - Leverage insider leak for story advantage
-    what_happened: Steve lingers persistently in C.J.'s office, pressing on press
-      room rumors sourced from Chris and a GOP pollster despite her deflections, then
-      exits compliantly as she prioritizes the TV broadcast.
-    observed_status: Steve lingers persistently in C.J.'s office, pressing on press
-      room rumors sourced from Chris and a GOP pollster despite her deflections, then
-      exits compliantly as she prioritizes the TV broadcast.
-    beliefs:
-    - White House internal discussions are leaking reliably
-    - Pollster probes signal major policy shifts
-    observed_traits:
-    - Persistent
-    - Dogged
-    - Opportunistic
-    importance: primary
-    global_id: ger_agent_ce2bfab1b21b
-  - character_uuid: ger_agent_0d50a35748df
-    emotional_state: Calculated triumph (inferred from ploy's execution)
-    goals:
-    - Neutralize Majority Leader to control GOP messaging
-    - Avoid direct fingerprints on partisan tactics
-    what_happened: Ann Stark invoked by C.J.'s accusation as the architect behind
-      the Majority Leader's 'sore throat' sidelining, her off-screen ruthlessness
-      exposed as the event's hidden driver.
-    observed_status: Ann Stark invoked by C.J.'s accusation as the architect behind
-      the Majority Leader's 'sore throat' sidelining, her off-screen ruthlessness
-      exposed as the event's hidden driver.
-    beliefs:
-    - Feigned ailments enable clean power grabs
-    - White House vulnerabilities demand aggressive exploitation
-    observed_traits:
-    - Cunning
-    - Ruthless
-    - Manipulative
-    importance: primary
-    global_id: ger_agent_0d50a35748df
-  - character_uuid: ger_agent_fb50249699a6
-    emotional_state: Poised readiness
-    goals:
-    - Fill leadership void effectively
-    - Advance GOP rebranded agenda
-    what_happened: Congressman Dade referenced on TV as present at press conference,
-      bolstering GOP front in Majority Leader's absence.
-    observed_status: Congressman Dade referenced on TV as present at press conference,
-      bolstering GOP front in Majority Leader's absence.
-    beliefs:
-    - Unified front amplifies opposition strength
-    - Absences create exploitable opportunities
-    observed_traits:
-    - Solidarity
-    - Partisan bulwark
-    importance: primary
-    global_id: ger_agent_fb50249699a6
-  - character_uuid: ger_agent_602f8938ed33
-    emotional_state: Composed unity
-    goals:
-    - Project GOP cohesion
-    - Undercut White House via controlled narrative
-    what_happened: Congressman Shallot named on TV broadcast as joining the presser,
-      fortifying Republican lineup sans Majority Leader.
-    observed_status: Congressman Shallot named on TV broadcast as joining the presser,
-      fortifying Republican lineup sans Majority Leader.
-    beliefs:
-    - Collective appearances mask internal shifts
-    - Pressers weaponize absences
-    observed_traits:
-    - Reliable ally
-    - Strategic presence
-    importance: primary
-    global_id: ger_agent_602f8938ed33
-  - character_uuid: ger_agent_4905378b8773
-    emotional_state: Steady resolve
-    goals:
-    - Channel Senate authority into GOP message
-    - Exploit leadership gap
-    what_happened: Senator Hammond cited via TV as participant in the Hill press conference,
-      embodying Senate pushback amid the sore throat ploy.
-    observed_status: Senator Hammond cited via TV as participant in the Hill press
-      conference, embodying Senate pushback amid the sore throat ploy.
-    beliefs:
-    - Republican unity trumps individual presence
-    - Frank exchanges advance partisan goals
-    observed_traits:
-    - Gravitas
-    - Oppositional muscle
-    importance: primary
-    global_id: ger_agent_4905378b8773
-  - character_uuid: ger_agent_dcd9a7b1a236
-    emotional_state: Focused solidarity
-    goals:
-    - Sustain momentum without leader
-    - Rebrand Patients' Bill opposition
-    what_happened: Senator Ford invoked on television as part of the press conference
-      phalanx, tightening GOP ranks in the Majority Leader's stead.
-    observed_status: Senator Ford invoked on television as part of the press conference
-      phalanx, tightening GOP ranks in the Majority Leader's stead.
-    beliefs:
-    - Absences sharpen strategic blades
-    - Collective voice overwhelms rivals
-    observed_traits:
-    - Steadfast
-    - Partisan enforcer
-    importance: primary
-    global_id: ger_agent_dcd9a7b1a236
-  - character_uuid: ger_agent_221eed867dd8
-    emotional_state: formal
-    goals:
-    - open the Republican press conference and explain absences
-    what_happened: speaking on TV during press conference, greets attendees (Congressman
-      Dade, Congressman Shallot, Senator Hammond, Senator Ford), announces Senate
-      Majority Leader's absence due to sore throat
-    observed_status: speaking on TV during press conference, greets attendees (Congressman
-      Dade, Congressman Shallot, Senator Hammond, Senator Ford), announces Senate
-      Majority Leader's absence due to sore throat
-    beliefs: []
-    observed_traits: []
-    importance: primary
-    global_id: ger_agent_221eed867dd8
-  object_involvements:
-  - object_uuid: ger_object_5cfd9ca36964
-    description_of_involvement: C.J.'s office television broadcasts the live Capitol
-      Hill press conference, delivering the First Congressman's announcement of the
-      Majority Leader's sore throat absence and greetings to GOP allies, serving as
-      the revelatory medium that triggers C.J.'s piercing insight into Stark's ploy,
-      transforming passive viewing into active crisis decoding.
-    status_before_event: Powered on, tuned to pre-conference
-    status_after_event: Actively streaming press conference, focal point of room tension
-    global_id: ger_object_5cfd9ca36964
-  location_involvements:
-  - location_uuid: ger_location_55e711ff6df2
-    description_of_involvement: C.J.'s office within the White House serves as command
-      post where she dismisses Steve, absorbs Carol's alert, and watches TV revelation,
-      its confines amplifying urgency as partisan intel crystallizes, positioning
-      the administration's nerve center against Hill ambushes.
-    observed_atmosphere: Tense, hyper-alert with rapid exchanges and stunned pauses
-    functional_role: Observation post for remote political theater
-    symbolic_significance: Bastion of White House spin defense under siege
-    access_restrictions: Restricted to press staff and cleared reporters
-    key_environmental_details:
-    - Glowing TV screen dominating focus
-    - Doorway traffic of entering/exiting personnel
-    global_id: ger_location_55e711ff6df2
-  - location_uuid: ger_location_1717096b113d
-    description_of_involvement: Capitol Building Steps host the off-screen Republican
-      press conference beamed via TV, where GOP figures assemble minus the Majority
-      Leader, their 'frank and productive' facade masking Stark's sideline, fueling
-      C.J.'s remote outrage and White House re-calibration.
-    observed_atmosphere: Public, swarming with reporters and formal posturing (via
-      broadcast)
-    functional_role: Stage for GOP narrative launch and ambush
-    symbolic_significance: Powder keg of congressional brinkmanship
-    access_restrictions: Open to press and congressional figures
-    key_environmental_details:
-    - Microphone thrust amid marble steps
-    - Crackling anticipation in broadcast audio
-    global_id: ger_location_1717096b113d
-  organization_involvements: []
-  derived_from_beat_uuids: &id014
-  - beat_17a616016d8c7e36
-  - beat_cf873f4a399cd7fc
-  source_season: 2
-  source_database: westwing.s02
-- fabula_uuid: cand_evt_scene_465032d7e2445ea1_2
-  global_id: null
-  title: C.J. Unmasks Stark's 'Sore Throat' Tactic
-  description: 'In her office, C.J. dismisses Steve and turns to the TV as the Republican
-    press conference begins. A congressman announces the Senate Majority Leader''s
-    sudden absence due to a ''sore throat,'' prompting C.J. to pierce the facade:
-    this is Ann Stark''s cunning ploy to sideline a key adversary, neutralizing opposition
-    without fingerprints. This revelation crystallizes Stark''s ruthless brinkmanship,
-    escalating the White House''s defensive posture in the partisan war.'
-  episode_uuid: ep_sea_ser_the_west_wing_s02_e11
-  scene_sequence: 17
-  sequence_in_scene: 20
-  key_dialogue: *id013
   is_flashback: false
   location_uuid: ger_location_1717096b113d
   theme_uuids:
@@ -4359,19 +4101,6 @@ events:
     status_after_event: Actively streaming press conference, focal point of room tension
     global_id: ger_object_5cfd9ca36964
   location_involvements:
-  - location_uuid: ger_location_55e711ff6df2
-    description_of_involvement: C.J.'s office within the White House serves as command
-      post where she dismisses Steve, absorbs Carol's alert, and watches TV revelation,
-      its confines amplifying urgency as partisan intel crystallizes, positioning
-      the administration's nerve center against Hill ambushes.
-    observed_atmosphere: Tense, hyper-alert with rapid exchanges and stunned pauses
-    functional_role: Observation post for remote political theater
-    symbolic_significance: Bastion of White House spin defense under siege
-    access_restrictions: Restricted to press staff and cleared reporters
-    key_environmental_details:
-    - Glowing TV screen dominating focus
-    - Doorway traffic of entering/exiting personnel
-    global_id: ger_location_55e711ff6df2
   - location_uuid: ger_location_1717096b113d
     description_of_involvement: Capitol Building Steps host the off-screen Republican
       press conference beamed via TV, where GOP figures assemble minus the Majority
@@ -4386,6 +4115,277 @@ events:
     - Microphone thrust amid marble steps
     - Crackling anticipation in broadcast audio
     global_id: ger_location_1717096b113d
+  - location_uuid: ger_location_ba584d0e54df
+    description_of_involvement: C.J.'s office within the White House serves as command
+      post where she dismisses Steve, absorbs Carol's alert, and watches TV revelation,
+      its confines amplifying urgency as partisan intel crystallizes, positioning
+      the administration's nerve center against Hill ambushes.
+    observed_atmosphere: Tense, hyper-alert with rapid exchanges and stunned pauses
+    functional_role: Observation post for remote political theater
+    symbolic_significance: Bastion of White House spin defense under siege
+    access_restrictions: Restricted to press staff and cleared reporters
+    key_environmental_details:
+    - Glowing TV screen dominating focus
+    - Doorway traffic of entering/exiting personnel
+    global_id: ger_location_ba584d0e54df
+  organization_involvements: []
+  derived_from_beat_uuids: &id014
+  - beat_17a616016d8c7e36
+  - beat_cf873f4a399cd7fc
+  source_season: 2
+  source_database: westwing.s02
+- fabula_uuid: cand_evt_scene_465032d7e2445ea1_2
+  global_id: null
+  title: C.J. Unmasks Stark's 'Sore Throat' Tactic
+  description: 'In her office, C.J. dismisses Steve and turns to the TV as the Republican
+    press conference begins. A congressman announces the Senate Majority Leader''s
+    sudden absence due to a ''sore throat,'' prompting C.J. to pierce the facade:
+    this is Ann Stark''s cunning ploy to sideline a key adversary, neutralizing opposition
+    without fingerprints. This revelation crystallizes Stark''s ruthless brinkmanship,
+    escalating the White House''s defensive posture in the partisan war.'
+  episode_uuid: ep_sea_ser_the_west_wing_s02_e11
+  scene_sequence: 17
+  sequence_in_scene: 20
+  key_dialogue: *id013
+  is_flashback: false
+  location_uuid: ger_location_ba584d0e54df
+  theme_uuids:
+  - ger_theme_564f177e9c71
+  arc_uuids: []
+  participations:
+  - character_uuid: ger_agent_54f868bf8265
+    emotional_state: Skeptical insight sharpening into righteous certainty
+    goals:
+    - Discern the truth behind the Majority Leader's absence
+    - Alert team to Stark's tactical ambush
+    what_happened: C.J. enters, dismisses Steve with urgency to focus on the TV, freezes
+      at the congressman's announcement of the Majority Leader's sore throat, sharply
+      questions timing, then accuses 'She' (Stark) of sidelining him, piercing the
+      political ruse with incisive command.
+    observed_status: C.J. enters, dismisses Steve with urgency to focus on the TV,
+      freezes at the congressman's announcement of the Majority Leader's sore throat,
+      sharply questions timing, then accuses 'She' (Stark) of sidelining him, piercing
+      the political ruse with incisive command.
+    beliefs:
+    - Republicans use feigned illnesses as deniable power plays
+    - Stark ruthlessly eliminates obstacles to seize narrative control
+    observed_traits:
+    - Skeptical
+    - Insightful
+    - Decisive
+    - Press-savvy
+    importance: primary
+    global_id: ger_agent_54f868bf8265
+  - character_uuid: ger_agent_79dc9fb6a278
+    emotional_state: Alert professionalism tinged with uncertainty
+    goals:
+    - Facilitate C.J.'s focus on the broadcast
+    - Provide any available intel on developments
+    what_happened: Carol enters as Steve exits, crisply announces the press conference
+      start, hovers supportively, then stutters uncertainly when C.J. probes the sore
+      throat timing.
+    observed_status: Carol enters as Steve exits, crisply announces the press conference
+      start, hovers supportively, then stutters uncertainly when C.J. probes the sore
+      throat timing.
+    beliefs:
+    - C.J. needs uninterrupted access to key events
+    - Sudden absences signal deeper maneuvers
+    observed_traits:
+    - Efficient
+    - Tentative under pressure
+    - Loyal assistant
+    importance: primary
+    global_id: ger_agent_79dc9fb6a278
+  - character_uuid: ger_agent_15505a99b94c
+    emotional_state: ''
+    goals: []
+    what_happened: mentioned as source of press room relocation rumor, reportedly
+      called by a pollster
+    observed_status: mentioned as source of press room relocation rumor, reportedly
+      called by a pollster
+    beliefs: []
+    observed_traits: []
+    importance: primary
+    global_id: ger_agent_15505a99b94c
+  - character_uuid: ger_agent_0c47b1e332c7
+    emotional_state: Reportedly ill, strategically isolated (inferred)
+    goals:
+    - Recover from 'sore throat' (apparent)
+    - Rejoin fray post-ambush
+    what_happened: Senate Majority Leader absent from press conference, announced
+      as sidelined by sudden sore throat and returned to office, his void spotlighted
+      by C.J. as Stark's targeted removal.
+    observed_status: Senate Majority Leader absent from press conference, announced
+      as sidelined by sudden sore throat and returned to office, his void spotlighted
+      by C.J. as Stark's targeted removal.
+    beliefs:
+    - Bipartisan events require his presence (subverted)
+    - Health trumps politics momentarily
+    observed_traits:
+    - Vulnerable linchpin
+    - Unwitting pawn
+    importance: primary
+    global_id: ger_agent_0c47b1e332c7
+  - character_uuid: ger_agent_ce2bfab1b21b
+    emotional_state: Determined persistence yielding to reluctant deference
+    goals:
+    - Extract confirmation on press room relocation
+    - Leverage insider leak for story advantage
+    what_happened: Steve lingers persistently in C.J.'s office, pressing on press
+      room rumors sourced from Chris and a GOP pollster despite her deflections, then
+      exits compliantly as she prioritizes the TV broadcast.
+    observed_status: Steve lingers persistently in C.J.'s office, pressing on press
+      room rumors sourced from Chris and a GOP pollster despite her deflections, then
+      exits compliantly as she prioritizes the TV broadcast.
+    beliefs:
+    - White House internal discussions are leaking reliably
+    - Pollster probes signal major policy shifts
+    observed_traits:
+    - Persistent
+    - Dogged
+    - Opportunistic
+    importance: primary
+    global_id: ger_agent_ce2bfab1b21b
+  - character_uuid: ger_agent_0d50a35748df
+    emotional_state: Calculated triumph (inferred from ploy's execution)
+    goals:
+    - Neutralize Majority Leader to control GOP messaging
+    - Avoid direct fingerprints on partisan tactics
+    what_happened: Ann Stark invoked by C.J.'s accusation as the architect behind
+      the Majority Leader's 'sore throat' sidelining, her off-screen ruthlessness
+      exposed as the event's hidden driver.
+    observed_status: Ann Stark invoked by C.J.'s accusation as the architect behind
+      the Majority Leader's 'sore throat' sidelining, her off-screen ruthlessness
+      exposed as the event's hidden driver.
+    beliefs:
+    - Feigned ailments enable clean power grabs
+    - White House vulnerabilities demand aggressive exploitation
+    observed_traits:
+    - Cunning
+    - Ruthless
+    - Manipulative
+    importance: primary
+    global_id: ger_agent_0d50a35748df
+  - character_uuid: ger_agent_fb50249699a6
+    emotional_state: Poised readiness
+    goals:
+    - Fill leadership void effectively
+    - Advance GOP rebranded agenda
+    what_happened: Congressman Dade referenced on TV as present at press conference,
+      bolstering GOP front in Majority Leader's absence.
+    observed_status: Congressman Dade referenced on TV as present at press conference,
+      bolstering GOP front in Majority Leader's absence.
+    beliefs:
+    - Unified front amplifies opposition strength
+    - Absences create exploitable opportunities
+    observed_traits:
+    - Solidarity
+    - Partisan bulwark
+    importance: primary
+    global_id: ger_agent_fb50249699a6
+  - character_uuid: ger_agent_602f8938ed33
+    emotional_state: Composed unity
+    goals:
+    - Project GOP cohesion
+    - Undercut White House via controlled narrative
+    what_happened: Congressman Shallot named on TV broadcast as joining the presser,
+      fortifying Republican lineup sans Majority Leader.
+    observed_status: Congressman Shallot named on TV broadcast as joining the presser,
+      fortifying Republican lineup sans Majority Leader.
+    beliefs:
+    - Collective appearances mask internal shifts
+    - Pressers weaponize absences
+    observed_traits:
+    - Reliable ally
+    - Strategic presence
+    importance: primary
+    global_id: ger_agent_602f8938ed33
+  - character_uuid: ger_agent_4905378b8773
+    emotional_state: Steady resolve
+    goals:
+    - Channel Senate authority into GOP message
+    - Exploit leadership gap
+    what_happened: Senator Hammond cited via TV as participant in the Hill press conference,
+      embodying Senate pushback amid the sore throat ploy.
+    observed_status: Senator Hammond cited via TV as participant in the Hill press
+      conference, embodying Senate pushback amid the sore throat ploy.
+    beliefs:
+    - Republican unity trumps individual presence
+    - Frank exchanges advance partisan goals
+    observed_traits:
+    - Gravitas
+    - Oppositional muscle
+    importance: primary
+    global_id: ger_agent_4905378b8773
+  - character_uuid: ger_agent_dcd9a7b1a236
+    emotional_state: Focused solidarity
+    goals:
+    - Sustain momentum without leader
+    - Rebrand Patients' Bill opposition
+    what_happened: Senator Ford invoked on television as part of the press conference
+      phalanx, tightening GOP ranks in the Majority Leader's stead.
+    observed_status: Senator Ford invoked on television as part of the press conference
+      phalanx, tightening GOP ranks in the Majority Leader's stead.
+    beliefs:
+    - Absences sharpen strategic blades
+    - Collective voice overwhelms rivals
+    observed_traits:
+    - Steadfast
+    - Partisan enforcer
+    importance: primary
+    global_id: ger_agent_dcd9a7b1a236
+  - character_uuid: ger_agent_221eed867dd8
+    emotional_state: formal
+    goals:
+    - open the Republican press conference and explain absences
+    what_happened: speaking on TV during press conference, greets attendees (Congressman
+      Dade, Congressman Shallot, Senator Hammond, Senator Ford), announces Senate
+      Majority Leader's absence due to sore throat
+    observed_status: speaking on TV during press conference, greets attendees (Congressman
+      Dade, Congressman Shallot, Senator Hammond, Senator Ford), announces Senate
+      Majority Leader's absence due to sore throat
+    beliefs: []
+    observed_traits: []
+    importance: primary
+    global_id: ger_agent_221eed867dd8
+  object_involvements:
+  - object_uuid: ger_object_5cfd9ca36964
+    description_of_involvement: C.J.'s office television broadcasts the live Capitol
+      Hill press conference, delivering the First Congressman's announcement of the
+      Majority Leader's sore throat absence and greetings to GOP allies, serving as
+      the revelatory medium that triggers C.J.'s piercing insight into Stark's ploy,
+      transforming passive viewing into active crisis decoding.
+    status_before_event: Powered on, tuned to pre-conference
+    status_after_event: Actively streaming press conference, focal point of room tension
+    global_id: ger_object_5cfd9ca36964
+  location_involvements:
+  - location_uuid: ger_location_1717096b113d
+    description_of_involvement: Capitol Building Steps host the off-screen Republican
+      press conference beamed via TV, where GOP figures assemble minus the Majority
+      Leader, their 'frank and productive' facade masking Stark's sideline, fueling
+      C.J.'s remote outrage and White House re-calibration.
+    observed_atmosphere: Public, swarming with reporters and formal posturing (via
+      broadcast)
+    functional_role: Stage for GOP narrative launch and ambush
+    symbolic_significance: Powder keg of congressional brinkmanship
+    access_restrictions: Open to press and congressional figures
+    key_environmental_details:
+    - Microphone thrust amid marble steps
+    - Crackling anticipation in broadcast audio
+    global_id: ger_location_1717096b113d
+  - location_uuid: ger_location_ba584d0e54df
+    description_of_involvement: C.J.'s office within the White House serves as command
+      post where she dismisses Steve, absorbs Carol's alert, and watches TV revelation,
+      its confines amplifying urgency as partisan intel crystallizes, positioning
+      the administration's nerve center against Hill ambushes.
+    observed_atmosphere: Tense, hyper-alert with rapid exchanges and stunned pauses
+    functional_role: Observation post for remote political theater
+    symbolic_significance: Bastion of White House spin defense under siege
+    access_restrictions: Restricted to press staff and cleared reporters
+    key_environmental_details:
+    - Glowing TV screen dominating focus
+    - Doorway traffic of entering/exiting personnel
+    global_id: ger_location_ba584d0e54df
   organization_involvements: []
   derived_from_beat_uuids: *id014
   source_season: 2
@@ -4712,6 +4712,52 @@ events:
     - leaky
     importance: primary
     global_id: ger_agent_7854a70e34ea
+  - character_uuid: ger_agent_533f5b0766b3
+    emotional_state: Calculated aggression masking underlying partisan resolve.
+    goals:
+    - Shift blame from Republicans to Democratic leadership
+    - Pave the way for surrogates to expose White House leaks
+    what_happened: Visible on the press conference monitor, launches a pointed question
+      to the First Congressman about blaming the Majority Leader, setting the trap
+      that leads to Simon's question and the ultimatum reveal, advancing the orchestrated
+      GOP defense.
+    observed_status: Visible on the press conference monitor, launches a pointed question
+      to the First Congressman about blaming the Majority Leader, setting the trap
+      that leads to Simon's question and the ultimatum reveal, advancing the orchestrated
+      GOP defense.
+    beliefs:
+    - Framing questions controls the narrative flow in press scrums
+    - GOP holds moral high ground against White House procedural bullying
+    observed_traits:
+    - tactical
+    - aggressive
+    - strategic
+    - combative
+    importance: primary
+    global_id: ger_agent_533f5b0766b3
+  - character_uuid: ger_agent_5bc99755e445
+    emotional_state: Focused confidence delivering the kill shot with surgical poise.
+    goals:
+    - Amplify the leaked White House threat to rally Republican outrage
+    - Undermine bipartisan negotiations by publicizing aggressive tactics
+    what_happened: Appears on the monitor during the press conference, seizing the
+      moment called by the First Congressman to deliver a razor-sharp verbatim quote
+      of Toby Ziegler's ultimatum—attaching wage hikes 'to everything that moves'—detonating
+      the White House strategy into public shrapnel.
+    observed_status: Appears on the monitor during the press conference, seizing the
+      moment called by the First Congressman to deliver a razor-sharp verbatim quote
+      of Toby Ziegler's ultimatum—attaching wage hikes 'to everything that moves'—detonating
+      the White House strategy into public shrapnel.
+    beliefs:
+    - Quoting adversaries verbatim exposes their true partisan intentions
+    - Press conferences are prime arenas for turning opponent words against them
+    observed_traits:
+    - precise
+    - aggressive
+    - loyal
+    - incisive
+    importance: primary
+    global_id: ger_agent_5bc99755e445
   - character_uuid: ger_agent_0d50a35748df
     emotional_state: Predatory anticipation cresting into exultant triumph, savoring
       the orchestrated political hit.
@@ -4736,29 +4782,6 @@ events:
     - gleeful
     importance: primary
     global_id: ger_agent_0d50a35748df
-  - character_uuid: ger_agent_533f5b0766b3
-    emotional_state: Calculated aggression masking underlying partisan resolve.
-    goals:
-    - Shift blame from Republicans to Democratic leadership
-    - Pave the way for surrogates to expose White House leaks
-    what_happened: Visible on the press conference monitor, launches a pointed question
-      to the First Congressman about blaming the Majority Leader, setting the trap
-      that leads to Simon's question and the ultimatum reveal, advancing the orchestrated
-      GOP defense.
-    observed_status: Visible on the press conference monitor, launches a pointed question
-      to the First Congressman about blaming the Majority Leader, setting the trap
-      that leads to Simon's question and the ultimatum reveal, advancing the orchestrated
-      GOP defense.
-    beliefs:
-    - Framing questions controls the narrative flow in press scrums
-    - GOP holds moral high ground against White House procedural bullying
-    observed_traits:
-    - tactical
-    - aggressive
-    - strategic
-    - combative
-    importance: primary
-    global_id: ger_agent_533f5b0766b3
   - character_uuid: ger_agent_221eed867dd8
     emotional_state: ''
     goals:
@@ -4769,29 +4792,6 @@ events:
     observed_traits: []
     importance: primary
     global_id: ger_agent_221eed867dd8
-  - character_uuid: ger_agent_5bc99755e445
-    emotional_state: Focused confidence delivering the kill shot with surgical poise.
-    goals:
-    - Amplify the leaked White House threat to rally Republican outrage
-    - Undermine bipartisan negotiations by publicizing aggressive tactics
-    what_happened: Appears on the monitor during the press conference, seizing the
-      moment called by the First Congressman to deliver a razor-sharp verbatim quote
-      of Toby Ziegler's ultimatum—attaching wage hikes 'to everything that moves'—detonating
-      the White House strategy into public shrapnel.
-    observed_status: Appears on the monitor during the press conference, seizing the
-      moment called by the First Congressman to deliver a razor-sharp verbatim quote
-      of Toby Ziegler's ultimatum—attaching wage hikes 'to everything that moves'—detonating
-      the White House strategy into public shrapnel.
-    beliefs:
-    - Quoting adversaries verbatim exposes their true partisan intentions
-    - Press conferences are prime arenas for turning opponent words against them
-    observed_traits:
-    - precise
-    - aggressive
-    - loyal
-    - incisive
-    importance: primary
-    global_id: ger_agent_5bc99755e445
   object_involvements:
   - object_uuid: ger_object_9e3a806d4b5c
     description_of_involvement: Functions as the critical viewing portal beaming the
@@ -4819,7 +4819,7 @@ events:
     - Muffled audio of press conference surrogates' voices
     global_id: ger_location_249318ace255
   organization_involvements:
-  - organization_uuid: ger_organization_d033a1b32d4f
+  - organization_uuid: ger_organization_bb39d5dd403d
     description_of_involvement: Cast as the ambush target when Simon quotes Toby Ziegler's
       leaked ultimatum on the monitor, its internal aggressive strategy—attaching
       wage hikes to all bills—publicly dissected and weaponized, eroding bipartisan
@@ -4836,7 +4836,7 @@ events:
     institutional_impact: Highlights dysfunction in bipartisan leadership breakfasts,
       fueling midterm partisan escalation.
     internal_dynamics: ''
-    global_id: ger_organization_d033a1b32d4f
+    global_id: ger_organization_bb39d5dd403d
   derived_from_beat_uuids:
   - beat_3875a384e0bf03d3
   - beat_15312b19fe489739
@@ -4985,7 +4985,7 @@ events:
     global_id: ger_object_5cfd9ca36964
   location_involvements: []
   organization_involvements:
-  - organization_uuid: ger_organization_d033a1b32d4f
+  - organization_uuid: ger_organization_bb39d5dd403d
     description_of_involvement: The White House becomes the direct target of Second
       Congressman's televised broadside, accused of hypocritical pre-Congress media
       ambushes that mock bipartisanship; this ignites C.J., Toby, and staff into defensive
@@ -5005,7 +5005,7 @@ events:
       battle lines ahead of re-election
     internal_dynamics: Toby's seniority assertion tests and reinforces command chain
       under fire
-    global_id: ger_organization_d033a1b32d4f
+    global_id: ger_organization_bb39d5dd403d
   derived_from_beat_uuids:
   - beat_f20ad18104bf665d
   - beat_56873a0825f0baae
@@ -5078,7 +5078,7 @@ events:
   object_involvements: []
   location_involvements: []
   organization_involvements:
-  - organization_uuid: ger_organization_d033a1b32d4f
+  - organization_uuid: ger_organization_bb39d5dd403d
     description_of_involvement: The White House is thrust into the crosshairs as the
       Second Congressman accuses it of rank hypocrisy—professing bipartisanship in
       person while orchestrating media leaks to ambush Republicans—turning Toby's
@@ -5097,7 +5097,7 @@ events:
     institutional_impact: Exposes fault lines in executive-legislative relations,
       fueling re-election tensions
     internal_dynamics: ''
-    global_id: ger_organization_d033a1b32d4f
+    global_id: ger_organization_bb39d5dd403d
   derived_from_beat_uuids:
   - beat_11f85f0c124fedc3
   - beat_1c7f8c4d9d9e965d
@@ -5183,7 +5183,7 @@ events:
     - Quiet, enclosed space heightening personal reverie
     global_id: ger_location_249318ace255
   organization_involvements:
-  - organization_uuid: ger_organization_d033a1b32d4f
+  - organization_uuid: ger_organization_bb39d5dd403d
     description_of_involvement: Directly vilified in the Second Congressman's broadcast
       as the source of duplicitous media ultimatums, transforming their leaked aggressive
       strategy into a public relations catastrophe witnessed by Ann Stark, escalating
@@ -5201,7 +5201,7 @@ events:
     institutional_impact: Fractures public perception of White House leadership, fueling
       re-election vulnerabilities
     internal_dynamics: ''
-    global_id: ger_organization_d033a1b32d4f
+    global_id: ger_organization_bb39d5dd403d
   derived_from_beat_uuids:
   - beat_f7dfc1f6d347a710
   source_season: 2
@@ -5288,7 +5288,7 @@ events:
     - Echoing broadcast audio in confined space
     global_id: ger_location_249318ace255
   organization_involvements:
-  - organization_uuid: ger_organization_d033a1b32d4f
+  - organization_uuid: ger_organization_bb39d5dd403d
     description_of_involvement: The White House stands accused on live TV within Ann
       Stark's office as the target of the Second Congressman's media ambush charge,
       its leaked ultimatums from Toby's strategy now weaponized against it, crystallizing
@@ -5306,7 +5306,7 @@ events:
       midterm re-election pressures
     internal_dynamics: Toby's aggressive leaks test senior staff unity under public
       scrutiny
-    global_id: ger_organization_d033a1b32d4f
+    global_id: ger_organization_bb39d5dd403d
   derived_from_beat_uuids:
   - beat_9704c54c5fdf6934
   source_season: 2
@@ -5330,7 +5330,7 @@ events:
     briefing room in 20 minutes."'
   - 'C.J.: "Henry, get home."'
   is_flashback: false
-  location_uuid: ger_location_55e711ff6df2
+  location_uuid: ger_location_ba584d0e54df
   theme_uuids:
   - ger_theme_564f177e9c71
   arc_uuids: []
@@ -5416,7 +5416,7 @@ events:
     status_after_event: Still active in C.J.'s hand, now linking to Henry
     global_id: ger_object_6c86cfde907c
   location_involvements:
-  - location_uuid: ger_location_55e711ff6df2
+  - location_uuid: ger_location_ba584d0e54df
     description_of_involvement: The Press Briefing Room is invoked as the imminent
       battleground where C.J. must storm the podium in 20 minutes to field questions,
       transforming it from ambush vulnerability into the White House's offensive stronghold
@@ -5428,7 +5428,7 @@ events:
     key_environmental_details:
     - Podium primed for address
     - Reporters poised for questions
-    global_id: ger_location_55e711ff6df2
+    global_id: ger_location_ba584d0e54df
   organization_involvements: []
   derived_from_beat_uuids:
   - beat_6036736df14df416
@@ -5453,7 +5453,7 @@ events:
     briefing room in 20 minutes."'
   - 'C.J.: "Henry, get home."'
   is_flashback: false
-  location_uuid: ger_location_55e711ff6df2
+  location_uuid: ger_location_ba584d0e54df
   theme_uuids: []
   arc_uuids: []
   participations:
@@ -5541,7 +5541,7 @@ events:
     status_after_event: Now linking C.J. to Henry, clutched post-hang-up in her hand
     global_id: ger_object_6c86cfde907c
   location_involvements:
-  - location_uuid: ger_location_55e711ff6df2
+  - location_uuid: ger_location_ba584d0e54df
     description_of_involvement: The Press Briefing Room, referenced as the imminent
       arena for C.J.'s podium assault, functions as the strategic horizon in Toby's
       directive—its reporter-swarmed intensity evoked to underscore the event's escalation
@@ -5555,7 +5555,7 @@ events:
     - Swarming reporters
     - Humming microphones
     - Scarred wooden podium edges
-    global_id: ger_location_55e711ff6df2
+    global_id: ger_location_ba584d0e54df
   organization_involvements: []
   derived_from_beat_uuids:
   - beat_78a740c78718b460
@@ -5815,25 +5815,6 @@ events:
     - Implied distant murmurs of political activity
     global_id: ger_location_1717096b113d
   organization_involvements:
-  - organization_uuid: ger_organization_d033a1b32d4f
-    description_of_involvement: The White House manifests through Press Secretary
-      C.J. Cregg's reported statement, broadcast nationally to counter the Republican
-      breakfast ambush, positioning the administration as aggressively defensive and
-      turning media into a shield against GOP reprisals in the escalating re-election
-      skirmish.
-    active_representation: Through official spokesperson C.J. Cregg's quoted retort
-    power_dynamics: Asserting narrative control via media counterpunch against Republican
-      aggression
-    organizational_goals:
-    - Reframe the leadership breakfast fallout favorably
-    - Bolster public perception amid bipartisan fractures
-    influence_mechanisms:
-    - Leveraging press secretary's platform for rapid response
-    - Shaping news cycle through provocative soundbites
-    institutional_impact: Heightens White House's combative stance, signaling no retreat
-      in policy wars.
-    internal_dynamics: ''
-    global_id: ger_organization_d033a1b32d4f
   - organization_uuid: ger_organization_5278bcf2674a
     description_of_involvement: The Republican Party is directly targeted in the newscaster's
       voice-over relaying C.J.'s 'bizarre' label for their response to the breakfast
@@ -5852,6 +5833,25 @@ events:
       buildup.
     internal_dynamics: ''
     global_id: ger_organization_5278bcf2674a
+  - organization_uuid: ger_organization_bb39d5dd403d
+    description_of_involvement: The White House manifests through Press Secretary
+      C.J. Cregg's reported statement, broadcast nationally to counter the Republican
+      breakfast ambush, positioning the administration as aggressively defensive and
+      turning media into a shield against GOP reprisals in the escalating re-election
+      skirmish.
+    active_representation: Through official spokesperson C.J. Cregg's quoted retort
+    power_dynamics: Asserting narrative control via media counterpunch against Republican
+      aggression
+    organizational_goals:
+    - Reframe the leadership breakfast fallout favorably
+    - Bolster public perception amid bipartisan fractures
+    influence_mechanisms:
+    - Leveraging press secretary's platform for rapid response
+    - Shaping news cycle through provocative soundbites
+    institutional_impact: Heightens White House's combative stance, signaling no retreat
+      in policy wars.
+    internal_dynamics: ''
+    global_id: ger_organization_bb39d5dd403d
   derived_from_beat_uuids:
   - beat_38aea173b9b5d3d6
   source_season: 2
@@ -5993,24 +5993,6 @@ events:
     - Door knocked then burst through abruptly
     global_id: ger_location_249318ace255
   organization_involvements:
-  - organization_uuid: ger_organization_d033a1b32d4f
-    description_of_involvement: The White House is invoked by Toby as sovereign executive
-      power contrasting GOP majority claims, with C.J.'s televised defense broadcast
-      into the fray, underscoring the ambush's fallout and Toby's defense of presidential
-      primacy amid minimum wage and Patients' Bill of Rights clashes.
-    active_representation: Via Toby's confrontation and C.J.'s on-screen rebuttal
-    power_dynamics: Defending constitutional executive authority against congressional
-      overreach
-    organizational_goals:
-    - Uphold issue visibility like minimum wage
-    - Counter GOP narratives of ambush
-    influence_mechanisms:
-    - Direct aide intrusions
-    - Press secretary defenses on air
-    institutional_impact: Reasserts White House as policy debate leader despite minority
-      status
-    internal_dynamics: Unified senior staff pushback against Republican maneuvers
-    global_id: ger_organization_d033a1b32d4f
   - organization_uuid: ger_organization_5278bcf2674a
     description_of_involvement: The Republican Party manifests through Ann Stark's
       smug assertions of congressional majority dominance and confirmation of her
@@ -6030,6 +6012,24 @@ events:
       congressional sovereigns
     internal_dynamics: Hierarchical loyalty shielding leader's ambitions
     global_id: ger_organization_5278bcf2674a
+  - organization_uuid: ger_organization_bb39d5dd403d
+    description_of_involvement: The White House is invoked by Toby as sovereign executive
+      power contrasting GOP majority claims, with C.J.'s televised defense broadcast
+      into the fray, underscoring the ambush's fallout and Toby's defense of presidential
+      primacy amid minimum wage and Patients' Bill of Rights clashes.
+    active_representation: Via Toby's confrontation and C.J.'s on-screen rebuttal
+    power_dynamics: Defending constitutional executive authority against congressional
+      overreach
+    organizational_goals:
+    - Uphold issue visibility like minimum wage
+    - Counter GOP narratives of ambush
+    influence_mechanisms:
+    - Direct aide intrusions
+    - Press secretary defenses on air
+    institutional_impact: Reasserts White House as policy debate leader despite minority
+      status
+    internal_dynamics: Unified senior staff pushback against Republican maneuvers
+    global_id: ger_organization_bb39d5dd403d
   derived_from_beat_uuids:
   - beat_c2377cd0ec1d471f
   - beat_7e0dc694a9a11365

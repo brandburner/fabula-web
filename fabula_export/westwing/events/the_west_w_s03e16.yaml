@@ -1,5 +1,5 @@
 # Events for The U.S. Poet Laureate
-# Generated: 2026-02-10T12:17:28.554234
+# Generated: 2026-02-22T16:33:26.137565
 
 episode_uuid: ep_sea_ser_the_west_wing_s03_e16
 episode_title: The U.S. Poet Laureate
@@ -221,7 +221,7 @@ events:
     something. You''re pretty dumb, did you take offense? Look at that. I did it again."'
   - 'LEO: "Nice." (reacting to C.J.''s TV spin)'
   is_flashback: false
-  location_uuid: ger_location_2e320e916818
+  location_uuid: ger_location_a5f7e5003a20
   theme_uuids:
   - ger_theme_c90b9bacbc27
   arc_uuids: []
@@ -317,7 +317,7 @@ events:
     - skeptical
     importance: primary
     global_id: ger_agent_d1712e582568
-  - character_uuid: ger_agent_14139cef8dfd
+  - character_uuid: ger_agent_7f81f2915789
     emotional_state: Insistently probing with journalistic tenacity
     goals:
     - Extract admissions on campaign negativity
@@ -336,8 +336,8 @@ events:
     - aggressive
     - professional
     importance: primary
-    global_id: ger_agent_14139cef8dfd
-  - character_uuid: ger_agent_89fd2481c324
+    global_id: ger_agent_7f81f2915789
+  - character_uuid: ger_agent_69979de71a68
     emotional_state: ''
     goals: []
     what_happened: significantly referenced as target of Bartlet's '.22 caliber mind'
@@ -347,7 +347,7 @@ events:
     beliefs: []
     observed_traits: []
     importance: secondary
-    global_id: ger_agent_89fd2481c324
+    global_id: ger_agent_69979de71a68
   object_involvements:
   - object_uuid: ger_object_711b17a77b6e
     description_of_involvement: Pan sweeps to TV in outer Oval, beaming live C.J.
@@ -360,7 +360,7 @@ events:
       Leo depart
     global_id: ger_object_711b17a77b6e
   location_involvements:
-  - location_uuid: ger_location_2e320e916818
+  - location_uuid: ger_location_a5f7e5003a20
     description_of_involvement: Looming as tomorrow night's House floor battleground
       for GOP's orchestrated reprimand speeches pummeling Bartlet's gaffe, invoked
       in Leo's briefing to frame partisan peril, heightening Oval tension where defiance
@@ -375,7 +375,7 @@ events:
     key_environmental_details:
     - Thunderous applause and venom-laced salvos
     - Restless crowd hum vibrating wooden expanse
-    global_id: ger_location_2e320e916818
+    global_id: ger_location_a5f7e5003a20
   organization_involvements:
   - organization_uuid: ger_organization_5278bcf2674a
     description_of_involvement: Leo warns of their House floor reprimand lineup via
@@ -455,7 +455,7 @@ events:
   - 'C.J.: ((on T.V.)) The President didn''t realize the camera was hot, and he said
     something he shouldn''t have. Something we all do from time to time.'
   is_flashback: false
-  location_uuid: ger_location_2e320e916818
+  location_uuid: ger_location_a5f7e5003a20
   theme_uuids: []
   arc_uuids: []
   participations:
@@ -555,7 +555,7 @@ events:
     - hypocrisy-hunting
     importance: primary
     global_id: ger_agent_d1712e582568
-  - character_uuid: ger_agent_14139cef8dfd
+  - character_uuid: ger_agent_7f81f2915789
     emotional_state: Insistent scrutiny laced with journalistic courtesy
     goals:
     - Extract admissions on gaffe intent and campaign tone
@@ -574,8 +574,8 @@ events:
     - aggressive
     - professional
     importance: primary
-    global_id: ger_agent_14139cef8dfd
-  - character_uuid: ger_agent_89fd2481c324
+    global_id: ger_agent_7f81f2915789
+  - character_uuid: ger_agent_69979de71a68
     emotional_state: ''
     goals: []
     what_happened: significantly referenced as target of Bartlet's hot-mic gaffe implying
@@ -585,7 +585,7 @@ events:
     beliefs: []
     observed_traits: []
     importance: secondary
-    global_id: ger_agent_89fd2481c324
+    global_id: ger_agent_69979de71a68
   object_involvements:
   - object_uuid: ger_object_711b17a77b6e
     description_of_involvement: Serves as vital conduit in outer Oval, beaming live
@@ -596,7 +596,7 @@ events:
     status_after_event: Remains active in outer Oval as briefing continues post-departure
     global_id: ger_object_711b17a77b6e
   location_involvements:
-  - location_uuid: ger_location_2e320e916818
+  - location_uuid: ger_location_a5f7e5003a20
     description_of_involvement: Looms as imminent battleground invoked in Leo's briefing—site
       of tomorrow's GOP-orchestrated reprimand speeches pummeling Bartlet for 'dumb'
       gaffe; underscores partisan peril fueling Oval defiance, transforming distant
@@ -609,7 +609,7 @@ events:
     key_environmental_details:
     - Thunderous applause or boos in partisan salvos
     - Gavel cracks amid swelling murmurs
-    global_id: ger_location_2e320e916818
+    global_id: ger_location_a5f7e5003a20
   organization_involvements:
   - organization_uuid: ger_organization_5278bcf2674a
     description_of_involvement: Weaponized in Leo's warning as reprimand architects
@@ -779,7 +779,7 @@ events:
     - combative
     importance: primary
     global_id: ger_agent_ee4a55f06784
-  - character_uuid: ger_agent_89fd2481c324
+  - character_uuid: ger_agent_69979de71a68
     emotional_state: Offended yet opportunistic, leveraging insult for advantage
     goals:
     - Secure presidential apology to shift momentum
@@ -798,7 +798,7 @@ events:
     - strategic
     - unapologetic
     importance: primary
-    global_id: ger_agent_89fd2481c324
+    global_id: ger_agent_69979de71a68
   object_involvements:
   - object_uuid: ger_object_86354d9aedd1
     description_of_involvement: Katie spotlights Governor Ritchie's Clean Campaign
@@ -849,6 +849,22 @@ events:
     - Lecture halls of tenured command
     global_id: ger_location_066c34bef4f1
   organization_involvements:
+  - organization_uuid: ger_organization_2a6d7699ad33
+    description_of_involvement: Ritchie Camp aggressively manifests through Katie's
+      revelation of their apology demand and pledge challenge, escalating gaffe into
+      broader campaign purity test, positioning them as moral provocateurs in White
+      House crosshairs.
+    active_representation: Via relayed challenges in press questioning
+    power_dynamics: Challenging presidential authority with public dares
+    organizational_goals:
+    - Extract apology to weaken Bartlet
+    - Force pledge signature for optics advantage
+    influence_mechanisms:
+    - Media amplification of demands
+    - Pledge as entrapment tool
+    institutional_impact: Intensifies partisan brinkmanship in primaries
+    internal_dynamics: ''
+    global_id: ger_organization_2a6d7699ad33
   - organization_uuid: ger_organization_bf767e2d3079
     description_of_involvement: News Organizations actively hunting Ritchie's Florida
       transcripts as Phil reveals, fueling hypocrisy accusations and transcript-as-barometer
@@ -865,22 +881,6 @@ events:
     institutional_impact: Amplifies media's role in electoral fault lines
     internal_dynamics: ''
     global_id: ger_organization_bf767e2d3079
-  - organization_uuid: ger_organization_d1de4e45bced
-    description_of_involvement: Ritchie Camp aggressively manifests through Katie's
-      revelation of their apology demand and pledge challenge, escalating gaffe into
-      broader campaign purity test, positioning them as moral provocateurs in White
-      House crosshairs.
-    active_representation: Via relayed challenges in press questioning
-    power_dynamics: Challenging presidential authority with public dares
-    organizational_goals:
-    - Extract apology to weaken Bartlet
-    - Force pledge signature for optics advantage
-    influence_mechanisms:
-    - Media amplification of demands
-    - Pledge as entrapment tool
-    institutional_impact: Intensifies partisan brinkmanship in primaries
-    internal_dynamics: ''
-    global_id: ger_organization_d1de4e45bced
   derived_from_beat_uuids: &id002
   - beat_1e43b7eeeb4bddca
   - beat_66305966e9cf2771
@@ -990,7 +990,7 @@ events:
     - combative
     importance: primary
     global_id: ger_agent_ee4a55f06784
-  - character_uuid: ger_agent_89fd2481c324
+  - character_uuid: ger_agent_69979de71a68
     emotional_state: Offended yet opportunistic, leveraging insult for advantage
     goals:
     - Secure presidential apology to shift momentum
@@ -1009,7 +1009,7 @@ events:
     - strategic
     - unapologetic
     importance: primary
-    global_id: ger_agent_89fd2481c324
+    global_id: ger_agent_69979de71a68
   object_involvements:
   - object_uuid: ger_object_86354d9aedd1
     description_of_involvement: Katie spotlights Governor Ritchie's Clean Campaign
@@ -1060,6 +1060,22 @@ events:
     - Lecture halls of tenured command
     global_id: ger_location_066c34bef4f1
   organization_involvements:
+  - organization_uuid: ger_organization_2a6d7699ad33
+    description_of_involvement: Ritchie Camp aggressively manifests through Katie's
+      revelation of their apology demand and pledge challenge, escalating gaffe into
+      broader campaign purity test, positioning them as moral provocateurs in White
+      House crosshairs.
+    active_representation: Via relayed challenges in press questioning
+    power_dynamics: Challenging presidential authority with public dares
+    organizational_goals:
+    - Extract apology to weaken Bartlet
+    - Force pledge signature for optics advantage
+    influence_mechanisms:
+    - Media amplification of demands
+    - Pledge as entrapment tool
+    institutional_impact: Intensifies partisan brinkmanship in primaries
+    internal_dynamics: ''
+    global_id: ger_organization_2a6d7699ad33
   - organization_uuid: ger_organization_bf767e2d3079
     description_of_involvement: News Organizations actively hunting Ritchie's Florida
       transcripts as Phil reveals, fueling hypocrisy accusations and transcript-as-barometer
@@ -1076,22 +1092,6 @@ events:
     institutional_impact: Amplifies media's role in electoral fault lines
     internal_dynamics: ''
     global_id: ger_organization_bf767e2d3079
-  - organization_uuid: ger_organization_d1de4e45bced
-    description_of_involvement: Ritchie Camp aggressively manifests through Katie's
-      revelation of their apology demand and pledge challenge, escalating gaffe into
-      broader campaign purity test, positioning them as moral provocateurs in White
-      House crosshairs.
-    active_representation: Via relayed challenges in press questioning
-    power_dynamics: Challenging presidential authority with public dares
-    organizational_goals:
-    - Extract apology to weaken Bartlet
-    - Force pledge signature for optics advantage
-    influence_mechanisms:
-    - Media amplification of demands
-    - Pledge as entrapment tool
-    institutional_impact: Intensifies partisan brinkmanship in primaries
-    internal_dynamics: ''
-    global_id: ger_organization_d1de4e45bced
   derived_from_beat_uuids: *id002
   source_season: 3
   source_database: westwing.s03
@@ -1195,7 +1195,7 @@ events:
     - combative
     importance: primary
     global_id: ger_agent_ee4a55f06784
-  - character_uuid: ger_agent_89fd2481c324
+  - character_uuid: ger_agent_69979de71a68
     emotional_state: Offended yet opportunistic, leveraging insult for advantage
     goals:
     - Secure presidential apology to shift momentum
@@ -1214,7 +1214,7 @@ events:
     - strategic
     - unapologetic
     importance: primary
-    global_id: ger_agent_89fd2481c324
+    global_id: ger_agent_69979de71a68
   object_involvements:
   - object_uuid: ger_object_86354d9aedd1
     description_of_involvement: Katie spotlights Governor Ritchie's Clean Campaign
@@ -1265,6 +1265,22 @@ events:
     - Lecture halls of tenured command
     global_id: ger_location_066c34bef4f1
   organization_involvements:
+  - organization_uuid: ger_organization_2a6d7699ad33
+    description_of_involvement: Ritchie Camp aggressively manifests through Katie's
+      revelation of their apology demand and pledge challenge, escalating gaffe into
+      broader campaign purity test, positioning them as moral provocateurs in White
+      House crosshairs.
+    active_representation: Via relayed challenges in press questioning
+    power_dynamics: Challenging presidential authority with public dares
+    organizational_goals:
+    - Extract apology to weaken Bartlet
+    - Force pledge signature for optics advantage
+    influence_mechanisms:
+    - Media amplification of demands
+    - Pledge as entrapment tool
+    institutional_impact: Intensifies partisan brinkmanship in primaries
+    internal_dynamics: ''
+    global_id: ger_organization_2a6d7699ad33
   - organization_uuid: ger_organization_bf767e2d3079
     description_of_involvement: News Organizations actively hunting Ritchie's Florida
       transcripts as Phil reveals, fueling hypocrisy accusations and transcript-as-barometer
@@ -1281,22 +1297,6 @@ events:
     institutional_impact: Amplifies media's role in electoral fault lines
     internal_dynamics: ''
     global_id: ger_organization_bf767e2d3079
-  - organization_uuid: ger_organization_d1de4e45bced
-    description_of_involvement: Ritchie Camp aggressively manifests through Katie's
-      revelation of their apology demand and pledge challenge, escalating gaffe into
-      broader campaign purity test, positioning them as moral provocateurs in White
-      House crosshairs.
-    active_representation: Via relayed challenges in press questioning
-    power_dynamics: Challenging presidential authority with public dares
-    organizational_goals:
-    - Extract apology to weaken Bartlet
-    - Force pledge signature for optics advantage
-    influence_mechanisms:
-    - Media amplification of demands
-    - Pledge as entrapment tool
-    institutional_impact: Intensifies partisan brinkmanship in primaries
-    internal_dynamics: ''
-    global_id: ger_organization_d1de4e45bced
   derived_from_beat_uuids: *id002
   source_season: 3
   source_database: westwing.s03
@@ -1401,6 +1401,63 @@ events:
     - strategically insulated
     importance: primary
     global_id: ger_agent_7854a70e34ea
+  - character_uuid: ger_agent_7f81f2915789
+    emotional_state: Appreciative and momentarily disarmed after intense scrutiny
+    goals:
+    - Conclude briefing on positive note
+    - Acknowledge effective handling of controversy
+    what_happened: Audibly applauds and collectively thanks C.J. at briefing conclusion,
+      rewarding her quip and poise under gaffe interrogation, marking a professional
+      truce before she exits to private talks.
+    observed_status: Audibly applauds and collectively thanks C.J. at briefing conclusion,
+      rewarding her quip and poise under gaffe interrogation, marking a professional
+      truce before she exits to private talks.
+    beliefs:
+    - Humor humanizes high-pressure exchanges
+    - C.J. adeptly navigated Bartlet gaffe questions
+    observed_traits:
+    - professional
+    - responsive
+    - courteous
+    importance: primary
+    global_id: ger_agent_7f81f2915789
+  - character_uuid: ger_agent_69979de71a68
+    emotional_state: Perceived as defensively entrenched off-screen
+    goals:
+    - Exploit Bartlet's gaffe for campaign gain
+    - Pressure White House into apologetic retreat
+    what_happened: Invoked in hallway dialogue as C.J. and Sam dissect his campaign
+      team's tactical blunder in sustaining the '.22 caliber mind' gaffe controversy
+      unnecessarily.
+    observed_status: Invoked in hallway dialogue as C.J. and Sam dissect his campaign
+      team's tactical blunder in sustaining the '.22 caliber mind' gaffe controversy
+      unnecessarily.
+    beliefs:
+    - Prolonging attack narrative yields advantage
+    - Bartlet's 'mean' slip undermines his stature
+    observed_traits:
+    - politically opportunistic
+    importance: primary
+    global_id: ger_agent_69979de71a68
+  - character_uuid: ger_agent_0fdca8513c4a
+    emotional_state: Neutral off-screen, positioned as asset
+    goals:
+    - Advance in White House role
+    - Demonstrate cross-aisle viability
+    what_happened: Surfaced in Sam's negotiation pivot as the promoted Republican
+      Deputy Counsel whose heightened visibility offers a bipartisan gesture alternative
+      to Wachtell's summit demand.
+    observed_status: Surfaced in Sam's negotiation pivot as the promoted Republican
+      Deputy Counsel whose heightened visibility offers a bipartisan gesture alternative
+      to Wachtell's summit demand.
+    beliefs:
+    - Promotion signals institutional openness
+    - Visibility counters partisan accusations
+    observed_traits:
+    - ideologically sharp
+    - strategically deployable
+    importance: primary
+    global_id: ger_agent_0fdca8513c4a
   - character_uuid: ger_agent_60a68a084e0c
     emotional_state: Calmly professional amid operational urgency
     goals:
@@ -1421,63 +1478,6 @@ events:
     - precise
     importance: primary
     global_id: ger_agent_60a68a084e0c
-  - character_uuid: ger_agent_0fdca8513c4a
-    emotional_state: Neutral off-screen, positioned as asset
-    goals:
-    - Advance in White House role
-    - Demonstrate cross-aisle viability
-    what_happened: Surfaced in Sam's negotiation pivot as the promoted Republican
-      Deputy Counsel whose heightened visibility offers a bipartisan gesture alternative
-      to Wachtell's summit demand.
-    observed_status: Surfaced in Sam's negotiation pivot as the promoted Republican
-      Deputy Counsel whose heightened visibility offers a bipartisan gesture alternative
-      to Wachtell's summit demand.
-    beliefs:
-    - Promotion signals institutional openness
-    - Visibility counters partisan accusations
-    observed_traits:
-    - ideologically sharp
-    - strategically deployable
-    importance: primary
-    global_id: ger_agent_0fdca8513c4a
-  - character_uuid: ger_agent_14139cef8dfd
-    emotional_state: Appreciative and momentarily disarmed after intense scrutiny
-    goals:
-    - Conclude briefing on positive note
-    - Acknowledge effective handling of controversy
-    what_happened: Audibly applauds and collectively thanks C.J. at briefing conclusion,
-      rewarding her quip and poise under gaffe interrogation, marking a professional
-      truce before she exits to private talks.
-    observed_status: Audibly applauds and collectively thanks C.J. at briefing conclusion,
-      rewarding her quip and poise under gaffe interrogation, marking a professional
-      truce before she exits to private talks.
-    beliefs:
-    - Humor humanizes high-pressure exchanges
-    - C.J. adeptly navigated Bartlet gaffe questions
-    observed_traits:
-    - professional
-    - responsive
-    - courteous
-    importance: primary
-    global_id: ger_agent_14139cef8dfd
-  - character_uuid: ger_agent_89fd2481c324
-    emotional_state: Perceived as defensively entrenched off-screen
-    goals:
-    - Exploit Bartlet's gaffe for campaign gain
-    - Pressure White House into apologetic retreat
-    what_happened: Invoked in hallway dialogue as C.J. and Sam dissect his campaign
-      team's tactical blunder in sustaining the '.22 caliber mind' gaffe controversy
-      unnecessarily.
-    observed_status: Invoked in hallway dialogue as C.J. and Sam dissect his campaign
-      team's tactical blunder in sustaining the '.22 caliber mind' gaffe controversy
-      unnecessarily.
-    beliefs:
-    - Prolonging attack narrative yields advantage
-    - Bartlet's 'mean' slip undermines his stature
-    observed_traits:
-    - politically opportunistic
-    importance: primary
-    global_id: ger_agent_89fd2481c324
   object_involvements:
   - object_uuid: ger_object_84c96faf46be
     description_of_involvement: Serves as the hallway monitor broadcasting C.J.'s
@@ -1597,6 +1597,47 @@ events:
     - loyal team protector (via Sam's defense)
     importance: primary
     global_id: ger_agent_7854a70e34ea
+  - character_uuid: ger_agent_7f81f2915789
+    emotional_state: Appreciative closure masking ongoing scrutiny
+    goals:
+    - Conclude briefing with standard protocol
+    - Maintain access for future gaffe probes
+    what_happened: White House Reporters chorus 'Thank you, C.J.' in unison as briefing
+      concludes on monitor, capping the ritual scrum Sam observes before hallway walk—their
+      courtesy punctuating the gaffe-fueled press gauntlet that underscores the event's
+      partisan stakes.
+    observed_status: White House Reporters chorus 'Thank you, C.J.' in unison as briefing
+      concludes on monitor, capping the ritual scrum Sam observes before hallway walk—their
+      courtesy punctuating the gaffe-fueled press gauntlet that underscores the event's
+      partisan stakes.
+    beliefs:
+    - Journalistic ritual balances aggression with decorum
+    - White House owes transparency on scandals
+    observed_traits:
+    - professional
+    - courteous
+    - persistent
+    importance: primary
+    global_id: ger_agent_7f81f2915789
+  - character_uuid: ger_agent_0fdca8513c4a
+    emotional_state: Unaware but poised for elevation (inferred)
+    goals:
+    - Serve as Republican token for optics
+    what_happened: Ainsley Hayes invoked by Sam as prime counterweight—her existing
+      Associate Counsel role fast-tracked to visible Deputy Counsel promotion, pitched
+      to Wachtell as 'slightly to the right of the Kaiser,' approved instantly, her
+      vacation abruptly ended via Ginger to thrust her into spotlight.
+    observed_status: Ainsley Hayes invoked by Sam as prime counterweight—her existing
+      Associate Counsel role fast-tracked to visible Deputy Counsel promotion, pitched
+      to Wachtell as 'slightly to the right of the Kaiser,' approved instantly, her
+      vacation abruptly ended via Ginger to thrust her into spotlight.
+    beliefs:
+    - Her conservatism balances Democratic staff
+    observed_traits:
+    - fiercely partisan
+    - ideologically sharp
+    importance: primary
+    global_id: ger_agent_0fdca8513c4a
   - character_uuid: ger_agent_60a68a084e0c
     emotional_state: Calmly professional amid accelerating frenzy
     goals:
@@ -1620,47 +1661,6 @@ events:
     - unflappable
     importance: primary
     global_id: ger_agent_60a68a084e0c
-  - character_uuid: ger_agent_0fdca8513c4a
-    emotional_state: Unaware but poised for elevation (inferred)
-    goals:
-    - Serve as Republican token for optics
-    what_happened: Ainsley Hayes invoked by Sam as prime counterweight—her existing
-      Associate Counsel role fast-tracked to visible Deputy Counsel promotion, pitched
-      to Wachtell as 'slightly to the right of the Kaiser,' approved instantly, her
-      vacation abruptly ended via Ginger to thrust her into spotlight.
-    observed_status: Ainsley Hayes invoked by Sam as prime counterweight—her existing
-      Associate Counsel role fast-tracked to visible Deputy Counsel promotion, pitched
-      to Wachtell as 'slightly to the right of the Kaiser,' approved instantly, her
-      vacation abruptly ended via Ginger to thrust her into spotlight.
-    beliefs:
-    - Her conservatism balances Democratic staff
-    observed_traits:
-    - fiercely partisan
-    - ideologically sharp
-    importance: primary
-    global_id: ger_agent_0fdca8513c4a
-  - character_uuid: ger_agent_14139cef8dfd
-    emotional_state: Appreciative closure masking ongoing scrutiny
-    goals:
-    - Conclude briefing with standard protocol
-    - Maintain access for future gaffe probes
-    what_happened: White House Reporters chorus 'Thank you, C.J.' in unison as briefing
-      concludes on monitor, capping the ritual scrum Sam observes before hallway walk—their
-      courtesy punctuating the gaffe-fueled press gauntlet that underscores the event's
-      partisan stakes.
-    observed_status: White House Reporters chorus 'Thank you, C.J.' in unison as briefing
-      concludes on monitor, capping the ritual scrum Sam observes before hallway walk—their
-      courtesy punctuating the gaffe-fueled press gauntlet that underscores the event's
-      partisan stakes.
-    beliefs:
-    - Journalistic ritual balances aggression with decorum
-    - White House owes transparency on scandals
-    observed_traits:
-    - professional
-    - courteous
-    - persistent
-    importance: primary
-    global_id: ger_agent_14139cef8dfd
   object_involvements: []
   location_involvements:
   - location_uuid: ger_location_7e771770ee21
@@ -1822,7 +1822,7 @@ events:
     - gaffe-prone under pressure
     importance: primary
     global_id: ger_agent_198649bce78f
-  - character_uuid: ger_agent_89fd2481c324
+  - character_uuid: ger_agent_69979de71a68
     emotional_state: Implied aggrieved victim of the gaffe
     goals:
     - Capitalize on gaffe for primary momentum
@@ -1842,7 +1842,7 @@ events:
     - resilient campaigner
     - media foil to Bartlet
     importance: primary
-    global_id: ger_agent_89fd2481c324
+    global_id: ger_agent_69979de71a68
   object_involvements:
   - object_uuid: ger_object_37717be65ee7
     description_of_involvement: The Press Briefing Room podium anchors C.J.'s visible
@@ -1943,6 +1943,44 @@ events:
     - cynically pragmatic
     importance: primary
     global_id: ger_agent_04bbccb1e352
+  - character_uuid: ger_agent_69979de71a68
+    emotional_state: Offscreen rival under fire
+    goals:
+    - Exploit gaffe for campaign advantage
+    - Challenge Bartlet's elitism
+    what_happened: Governor Ritchie derided by Sam as intellectually shallow ('six
+      journal articles on anything other than athletic support'), foil amplifying
+      Bartlet's presumed depth.
+    observed_status: Governor Ritchie derided by Sam as intellectually shallow ('six
+      journal articles on anything other than athletic support'), foil amplifying
+      Bartlet's presumed depth.
+    beliefs:
+    - Instinct suffices for governance
+    - Academic snobbery alienates voters
+    observed_traits:
+    - unread
+    - instinctual
+    importance: primary
+    global_id: ger_agent_69979de71a68
+  - character_uuid: ger_agent_467d0033476d
+    emotional_state: Neutral offscreen command
+    goals:
+    - Elevate Ainsley to strengthen legal team against political attacks
+    - Align personnel shifts with damage control strategy
+    what_happened: Oliver Babish referenced solely as the authority executing Ainsley's
+      promotion to Deputy Counsel, invoked by Sam to legitimize the maneuver amid
+      her protests.
+    observed_status: Oliver Babish referenced solely as the authority executing Ainsley's
+      promotion to Deputy Counsel, invoked by Sam to legitimize the maneuver amid
+      her protests.
+    beliefs:
+    - Strategic promotions neutralize external criticisms
+    - Republican voices bolster administration defenses
+    observed_traits:
+    - authoritative
+    - decisive
+    importance: primary
+    global_id: ger_agent_467d0033476d
   - character_uuid: ger_agent_0fdca8513c4a
     emotional_state: Annoyed bristling masking intrigued vulnerability
     goals:
@@ -1969,25 +2007,6 @@ events:
     - reluctantly loyal
     importance: primary
     global_id: ger_agent_0fdca8513c4a
-  - character_uuid: ger_agent_467d0033476d
-    emotional_state: Neutral offscreen command
-    goals:
-    - Elevate Ainsley to strengthen legal team against political attacks
-    - Align personnel shifts with damage control strategy
-    what_happened: Oliver Babish referenced solely as the authority executing Ainsley's
-      promotion to Deputy Counsel, invoked by Sam to legitimize the maneuver amid
-      her protests.
-    observed_status: Oliver Babish referenced solely as the authority executing Ainsley's
-      promotion to Deputy Counsel, invoked by Sam to legitimize the maneuver amid
-      her protests.
-    beliefs:
-    - Strategic promotions neutralize external criticisms
-    - Republican voices bolster administration defenses
-    observed_traits:
-    - authoritative
-    - decisive
-    importance: primary
-    global_id: ger_agent_467d0033476d
   - character_uuid: ger_agent_8c41855aa16a
     emotional_state: Informed and cooperative offscreen
     goals:
@@ -2007,25 +2026,6 @@ events:
     - influential
     importance: primary
     global_id: ger_agent_8c41855aa16a
-  - character_uuid: ger_agent_89fd2481c324
-    emotional_state: Offscreen rival under fire
-    goals:
-    - Exploit gaffe for campaign advantage
-    - Challenge Bartlet's elitism
-    what_happened: Governor Ritchie derided by Sam as intellectually shallow ('six
-      journal articles on anything other than athletic support'), foil amplifying
-      Bartlet's presumed depth.
-    observed_status: Governor Ritchie derided by Sam as intellectually shallow ('six
-      journal articles on anything other than athletic support'), foil amplifying
-      Bartlet's presumed depth.
-    beliefs:
-    - Instinct suffices for governance
-    - Academic snobbery alienates voters
-    observed_traits:
-    - unread
-    - instinctual
-    importance: primary
-    global_id: ger_agent_89fd2481c324
   object_involvements:
   - object_uuid: ger_object_d91635c3e7c2
     description_of_involvement: Sam's paper serves as a casual reading prop establishing
@@ -2090,7 +2090,7 @@ events:
     institutional_impact: Integrates Ainsley into defense machinery
     internal_dynamics: ''
     global_id: ger_organization_ef8b0cca7b53
-  - organization_uuid: ger_organization_8ebfbbac1072
+  - organization_uuid: ger_organization_9787122d327a
     description_of_involvement: Ivy League detonates as rhetorical flashpoint, Ainsley
       blasting its 'elitist, geocentric snobbery' disqualifying instinct leaders,
       Sam defending policy bonuses; it anchors duel symbolizing broader gaffe-fueled
@@ -2105,7 +2105,7 @@ events:
     - Credential leverage in governance debates
     institutional_impact: Exposes meritocracy tensions in White House hiring
     internal_dynamics: ''
-    global_id: ger_organization_8ebfbbac1072
+    global_id: ger_organization_9787122d327a
   - organization_uuid: ger_organization_aea2ef387209
     description_of_involvement: Notre Dame counters Ivy elitism as Sam's populist
       exemplar—independent football, Big East basketball embodying instinct grit;
@@ -2270,6 +2270,44 @@ events:
     - cynically pragmatic
     importance: primary
     global_id: ger_agent_04bbccb1e352
+  - character_uuid: ger_agent_69979de71a68
+    emotional_state: Offscreen rival under fire
+    goals:
+    - Exploit gaffe for campaign advantage
+    - Challenge Bartlet's elitism
+    what_happened: Governor Ritchie derided by Sam as intellectually shallow ('six
+      journal articles on anything other than athletic support'), foil amplifying
+      Bartlet's presumed depth.
+    observed_status: Governor Ritchie derided by Sam as intellectually shallow ('six
+      journal articles on anything other than athletic support'), foil amplifying
+      Bartlet's presumed depth.
+    beliefs:
+    - Instinct suffices for governance
+    - Academic snobbery alienates voters
+    observed_traits:
+    - unread
+    - instinctual
+    importance: primary
+    global_id: ger_agent_69979de71a68
+  - character_uuid: ger_agent_467d0033476d
+    emotional_state: Neutral offscreen command
+    goals:
+    - Elevate Ainsley to strengthen legal team against political attacks
+    - Align personnel shifts with damage control strategy
+    what_happened: Oliver Babish referenced solely as the authority executing Ainsley's
+      promotion to Deputy Counsel, invoked by Sam to legitimize the maneuver amid
+      her protests.
+    observed_status: Oliver Babish referenced solely as the authority executing Ainsley's
+      promotion to Deputy Counsel, invoked by Sam to legitimize the maneuver amid
+      her protests.
+    beliefs:
+    - Strategic promotions neutralize external criticisms
+    - Republican voices bolster administration defenses
+    observed_traits:
+    - authoritative
+    - decisive
+    importance: primary
+    global_id: ger_agent_467d0033476d
   - character_uuid: ger_agent_0fdca8513c4a
     emotional_state: Annoyed bristling masking intrigued vulnerability
     goals:
@@ -2296,25 +2334,6 @@ events:
     - reluctantly loyal
     importance: primary
     global_id: ger_agent_0fdca8513c4a
-  - character_uuid: ger_agent_467d0033476d
-    emotional_state: Neutral offscreen command
-    goals:
-    - Elevate Ainsley to strengthen legal team against political attacks
-    - Align personnel shifts with damage control strategy
-    what_happened: Oliver Babish referenced solely as the authority executing Ainsley's
-      promotion to Deputy Counsel, invoked by Sam to legitimize the maneuver amid
-      her protests.
-    observed_status: Oliver Babish referenced solely as the authority executing Ainsley's
-      promotion to Deputy Counsel, invoked by Sam to legitimize the maneuver amid
-      her protests.
-    beliefs:
-    - Strategic promotions neutralize external criticisms
-    - Republican voices bolster administration defenses
-    observed_traits:
-    - authoritative
-    - decisive
-    importance: primary
-    global_id: ger_agent_467d0033476d
   - character_uuid: ger_agent_8c41855aa16a
     emotional_state: Informed and cooperative offscreen
     goals:
@@ -2334,25 +2353,6 @@ events:
     - influential
     importance: primary
     global_id: ger_agent_8c41855aa16a
-  - character_uuid: ger_agent_89fd2481c324
-    emotional_state: Offscreen rival under fire
-    goals:
-    - Exploit gaffe for campaign advantage
-    - Challenge Bartlet's elitism
-    what_happened: Governor Ritchie derided by Sam as intellectually shallow ('six
-      journal articles on anything other than athletic support'), foil amplifying
-      Bartlet's presumed depth.
-    observed_status: Governor Ritchie derided by Sam as intellectually shallow ('six
-      journal articles on anything other than athletic support'), foil amplifying
-      Bartlet's presumed depth.
-    beliefs:
-    - Instinct suffices for governance
-    - Academic snobbery alienates voters
-    observed_traits:
-    - unread
-    - instinctual
-    importance: primary
-    global_id: ger_agent_89fd2481c324
   object_involvements:
   - object_uuid: ger_object_d91635c3e7c2
     description_of_involvement: Sam's paper serves as a casual reading prop establishing
@@ -2417,7 +2417,7 @@ events:
     institutional_impact: Integrates Ainsley into defense machinery
     internal_dynamics: ''
     global_id: ger_organization_ef8b0cca7b53
-  - organization_uuid: ger_organization_8ebfbbac1072
+  - organization_uuid: ger_organization_9787122d327a
     description_of_involvement: Ivy League detonates as rhetorical flashpoint, Ainsley
       blasting its 'elitist, geocentric snobbery' disqualifying instinct leaders,
       Sam defending policy bonuses; it anchors duel symbolizing broader gaffe-fueled
@@ -2432,7 +2432,7 @@ events:
     - Credential leverage in governance debates
     institutional_impact: Exposes meritocracy tensions in White House hiring
     internal_dynamics: ''
-    global_id: ger_organization_8ebfbbac1072
+    global_id: ger_organization_9787122d327a
   - organization_uuid: ger_organization_aea2ef387209
     description_of_involvement: Notre Dame counters Ivy elitism as Sam's populist
       exemplar—independent football, Big East basketball embodying instinct grit;
@@ -2591,6 +2591,44 @@ events:
     - cynically pragmatic
     importance: primary
     global_id: ger_agent_04bbccb1e352
+  - character_uuid: ger_agent_69979de71a68
+    emotional_state: Offscreen rival under fire
+    goals:
+    - Exploit gaffe for campaign advantage
+    - Challenge Bartlet's elitism
+    what_happened: Governor Ritchie derided by Sam as intellectually shallow ('six
+      journal articles on anything other than athletic support'), foil amplifying
+      Bartlet's presumed depth.
+    observed_status: Governor Ritchie derided by Sam as intellectually shallow ('six
+      journal articles on anything other than athletic support'), foil amplifying
+      Bartlet's presumed depth.
+    beliefs:
+    - Instinct suffices for governance
+    - Academic snobbery alienates voters
+    observed_traits:
+    - unread
+    - instinctual
+    importance: primary
+    global_id: ger_agent_69979de71a68
+  - character_uuid: ger_agent_467d0033476d
+    emotional_state: Neutral offscreen command
+    goals:
+    - Elevate Ainsley to strengthen legal team against political attacks
+    - Align personnel shifts with damage control strategy
+    what_happened: Oliver Babish referenced solely as the authority executing Ainsley's
+      promotion to Deputy Counsel, invoked by Sam to legitimize the maneuver amid
+      her protests.
+    observed_status: Oliver Babish referenced solely as the authority executing Ainsley's
+      promotion to Deputy Counsel, invoked by Sam to legitimize the maneuver amid
+      her protests.
+    beliefs:
+    - Strategic promotions neutralize external criticisms
+    - Republican voices bolster administration defenses
+    observed_traits:
+    - authoritative
+    - decisive
+    importance: primary
+    global_id: ger_agent_467d0033476d
   - character_uuid: ger_agent_0fdca8513c4a
     emotional_state: Annoyed bristling masking intrigued vulnerability
     goals:
@@ -2617,25 +2655,6 @@ events:
     - reluctantly loyal
     importance: primary
     global_id: ger_agent_0fdca8513c4a
-  - character_uuid: ger_agent_467d0033476d
-    emotional_state: Neutral offscreen command
-    goals:
-    - Elevate Ainsley to strengthen legal team against political attacks
-    - Align personnel shifts with damage control strategy
-    what_happened: Oliver Babish referenced solely as the authority executing Ainsley's
-      promotion to Deputy Counsel, invoked by Sam to legitimize the maneuver amid
-      her protests.
-    observed_status: Oliver Babish referenced solely as the authority executing Ainsley's
-      promotion to Deputy Counsel, invoked by Sam to legitimize the maneuver amid
-      her protests.
-    beliefs:
-    - Strategic promotions neutralize external criticisms
-    - Republican voices bolster administration defenses
-    observed_traits:
-    - authoritative
-    - decisive
-    importance: primary
-    global_id: ger_agent_467d0033476d
   - character_uuid: ger_agent_8c41855aa16a
     emotional_state: Informed and cooperative offscreen
     goals:
@@ -2655,25 +2674,6 @@ events:
     - influential
     importance: primary
     global_id: ger_agent_8c41855aa16a
-  - character_uuid: ger_agent_89fd2481c324
-    emotional_state: Offscreen rival under fire
-    goals:
-    - Exploit gaffe for campaign advantage
-    - Challenge Bartlet's elitism
-    what_happened: Governor Ritchie derided by Sam as intellectually shallow ('six
-      journal articles on anything other than athletic support'), foil amplifying
-      Bartlet's presumed depth.
-    observed_status: Governor Ritchie derided by Sam as intellectually shallow ('six
-      journal articles on anything other than athletic support'), foil amplifying
-      Bartlet's presumed depth.
-    beliefs:
-    - Instinct suffices for governance
-    - Academic snobbery alienates voters
-    observed_traits:
-    - unread
-    - instinctual
-    importance: primary
-    global_id: ger_agent_89fd2481c324
   object_involvements:
   - object_uuid: ger_object_d91635c3e7c2
     description_of_involvement: Sam's paper serves as a casual reading prop establishing
@@ -2738,7 +2738,7 @@ events:
     institutional_impact: Integrates Ainsley into defense machinery
     internal_dynamics: ''
     global_id: ger_organization_ef8b0cca7b53
-  - organization_uuid: ger_organization_8ebfbbac1072
+  - organization_uuid: ger_organization_9787122d327a
     description_of_involvement: Ivy League detonates as rhetorical flashpoint, Ainsley
       blasting its 'elitist, geocentric snobbery' disqualifying instinct leaders,
       Sam defending policy bonuses; it anchors duel symbolizing broader gaffe-fueled
@@ -2753,7 +2753,7 @@ events:
     - Credential leverage in governance debates
     institutional_impact: Exposes meritocracy tensions in White House hiring
     internal_dynamics: ''
-    global_id: ger_organization_8ebfbbac1072
+    global_id: ger_organization_9787122d327a
   - organization_uuid: ger_organization_aea2ef387209
     description_of_involvement: Notre Dame counters Ivy elitism as Sam's populist
       exemplar—independent football, Big East basketball embodying instinct grit;
@@ -3110,6 +3110,25 @@ events:
     - insightful
     importance: primary
     global_id: ger_agent_198649bce78f
+  - character_uuid: ger_agent_69979de71a68
+    emotional_state: Implicitly irritated through referenced backlash
+    goals:
+    - Capitalize on Bartlet's gaffe for campaign gain
+    - Demand accountability via public pressure
+    what_happened: Invoked by name as the gaffe's target; Bartlet's order positions
+      his Republican allies to complain publicly on camera about the '.22 caliber
+      mind' insult, turning vulnerability into a trap.
+    observed_status: Invoked by name as the gaffe's target; Bartlet's order positions
+      his Republican allies to complain publicly on camera about the '.22 caliber
+      mind' insult, turning vulnerability into a trap.
+    beliefs:
+    - Bartlet's insult undermines his presidential stature
+    - Republican complaints will sway voter perception
+    observed_traits:
+    - politically exposed
+    - rival foil
+    importance: primary
+    global_id: ger_agent_69979de71a68
   - character_uuid: ger_agent_f82a8fb358b0
     emotional_state: Anticipatory alignment with bold command
     goals:
@@ -3129,25 +3148,6 @@ events:
     - directive follower
     importance: primary
     global_id: ger_agent_f82a8fb358b0
-  - character_uuid: ger_agent_89fd2481c324
-    emotional_state: Implicitly irritated through referenced backlash
-    goals:
-    - Capitalize on Bartlet's gaffe for campaign gain
-    - Demand accountability via public pressure
-    what_happened: Invoked by name as the gaffe's target; Bartlet's order positions
-      his Republican allies to complain publicly on camera about the '.22 caliber
-      mind' insult, turning vulnerability into a trap.
-    observed_status: Invoked by name as the gaffe's target; Bartlet's order positions
-      his Republican allies to complain publicly on camera about the '.22 caliber
-      mind' insult, turning vulnerability into a trap.
-    beliefs:
-    - Bartlet's insult undermines his presidential stature
-    - Republican complaints will sway voter perception
-    observed_traits:
-    - politically exposed
-    - rival foil
-    importance: primary
-    global_id: ger_agent_89fd2481c324
   object_involvements: []
   location_involvements: []
   organization_involvements: []
@@ -3248,24 +3248,6 @@ events:
     - observant
     importance: primary
     global_id: ger_agent_7854a70e34ea
-  - character_uuid: ger_agent_60a68a084e0c
-    emotional_state: Neutral professionalism underscoring crisis relay
-    goals:
-    - Escalate external university issue to Toby
-    - Maintain communications flow amid multi-front pressures
-    what_happened: Knocks off-screen at door, relays urgent call from Georgetown University
-      signaling a problem, prompting Toby's attention shift from poet intrigue.
-    observed_status: Knocks off-screen at door, relays urgent call from Georgetown
-      University signaling a problem, prompting Toby's attention shift from poet intrigue.
-    beliefs:
-    - Swift information relay prevents escalation
-    - Institutional calls demand immediate senior response
-    observed_traits:
-    - efficient
-    - vigilant
-    - precise
-    importance: primary
-    global_id: ger_agent_60a68a084e0c
   - character_uuid: ger_agent_0fdca8513c4a
     emotional_state: Challenging defiance softening to reluctant agreement
     goals:
@@ -3289,6 +3271,24 @@ events:
     - self-aware
     importance: primary
     global_id: ger_agent_0fdca8513c4a
+  - character_uuid: ger_agent_60a68a084e0c
+    emotional_state: Neutral professionalism underscoring crisis relay
+    goals:
+    - Escalate external university issue to Toby
+    - Maintain communications flow amid multi-front pressures
+    what_happened: Knocks off-screen at door, relays urgent call from Georgetown University
+      signaling a problem, prompting Toby's attention shift from poet intrigue.
+    observed_status: Knocks off-screen at door, relays urgent call from Georgetown
+      University signaling a problem, prompting Toby's attention shift from poet intrigue.
+    beliefs:
+    - Swift information relay prevents escalation
+    - Institutional calls demand immediate senior response
+    observed_traits:
+    - efficient
+    - vigilant
+    - precise
+    importance: primary
+    global_id: ger_agent_60a68a084e0c
   - character_uuid: ger_agent_05e8f13b6925
     emotional_state: ''
     goals: []
@@ -3443,26 +3443,6 @@ events:
     - empathetic negotiator
     importance: primary
     global_id: ger_agent_7854a70e34ea
-  - character_uuid: ger_agent_60a68a084e0c
-    emotional_state: Urgent professionalism conveying imminent trouble
-    goals:
-    - Relay external crisis promptly to senior staff
-    - Sync institutional disruptions into communications flow
-    what_happened: Knocks urgently off-screen, alerts Toby to incoming Georgetown
-      University call signaling a problem, prompting his pensive absorption and subplot
-      escalation.
-    observed_status: Knocks urgently off-screen, alerts Toby to incoming Georgetown
-      University call signaling a problem, prompting his pensive absorption and subplot
-      escalation.
-    beliefs:
-    - Swift notifications avert subplot compounding
-    - University contacts demand immediate triage
-    observed_traits:
-    - vigilant
-    - precise
-    - efficient
-    importance: primary
-    global_id: ger_agent_60a68a084e0c
   - character_uuid: ger_agent_0fdca8513c4a
     emotional_state: Pleased acknowledgment blending professional satisfaction with
       deference
@@ -3484,6 +3464,26 @@ events:
     - partisan yet collegial
     importance: primary
     global_id: ger_agent_0fdca8513c4a
+  - character_uuid: ger_agent_60a68a084e0c
+    emotional_state: Urgent professionalism conveying imminent trouble
+    goals:
+    - Relay external crisis promptly to senior staff
+    - Sync institutional disruptions into communications flow
+    what_happened: Knocks urgently off-screen, alerts Toby to incoming Georgetown
+      University call signaling a problem, prompting his pensive absorption and subplot
+      escalation.
+    observed_status: Knocks urgently off-screen, alerts Toby to incoming Georgetown
+      University call signaling a problem, prompting his pensive absorption and subplot
+      escalation.
+    beliefs:
+    - Swift notifications avert subplot compounding
+    - University contacts demand immediate triage
+    observed_traits:
+    - vigilant
+    - precise
+    - efficient
+    importance: primary
+    global_id: ger_agent_60a68a084e0c
   - character_uuid: ger_agent_72054058d98f
     emotional_state: Projected hesitation from trauma-tinged inexperience
     goals:
@@ -3575,7 +3575,7 @@ events:
   - 'JOSH: "The Internet people have gone crazy."'
   - 'DONNA: "You''re kidding."'
   is_flashback: false
-  location_uuid: ger_location_3d4b26f1de82
+  location_uuid: ger_location_3303871a0689
   theme_uuids:
   - ger_theme_ef083d61813b
   arc_uuids:
@@ -3605,7 +3605,7 @@ events:
     global_id: ger_agent_c9d41ae93618
   object_involvements: []
   location_involvements:
-  - location_uuid: ger_location_3d4b26f1de82
+  - location_uuid: ger_location_3303871a0689
     description_of_involvement: The West Wing Bullpen serves as the nocturnal collision
       point for Josh's hurried passage and sudden reversal toward Donna, its fluorescent
       expanse amplifying the isolation of his personal crisis within the broader staff
@@ -3619,7 +3619,7 @@ events:
     key_environmental_details:
     - Night-time shadows and fluorescent lighting
     - Clustered desks fostering abrupt encounters
-    global_id: ger_location_3d4b26f1de82
+    global_id: ger_location_3303871a0689
   organization_involvements: []
   derived_from_beat_uuids:
   - beat_0dde5e08b92c6a6e
@@ -3653,7 +3653,7 @@ events:
   - ger_theme_0968bc82d34d
   arc_uuids: []
   participations:
-  - character_uuid: ger_agent_ca5b49a4a863
+  - character_uuid: ger_agent_d4d17e9ca0a4
     emotional_state: Calm attentiveness amid concern
     goals:
     - Guide the inquirer to the poet's exact position
@@ -3671,7 +3671,7 @@ events:
     - direct
     - instinctively helpful
     importance: primary
-    global_id: ger_agent_ca5b49a4a863
+    global_id: ger_agent_d4d17e9ca0a4
   - character_uuid: ger_agent_d2e80f1a9130
     emotional_state: Worried helpfulness tinged with uncertainty
     goals:
@@ -4052,170 +4052,6 @@ events:
     in the area, changes migratory patterns in ways we don''t even understand, increases
     freezing depths of rivers and lakes..."'
   is_flashback: false
-  location_uuid: ger_location_3467d3b33ffc
-  theme_uuids: []
-  arc_uuids: []
-  participations:
-  - character_uuid: ger_agent_54f868bf8265
-    emotional_state: urgent and passionate during education, then insightful and confrontational
-    goals:
-    - educate Charlie on ecological devastation of ANWR drilling (per narrative connection
-      from prior beat)
-    - expose Bartlet's calculated gaffe to shift focus to Ritchie
-    what_happened: educates Charlie on ANWR drilling's environmental impacts including
-      Porcupine Caribou calving grounds, wildlife species, subsistence hunters, migratory
-      patterns, river freezing, emissions, haze, and acid rain; later confronts Bartlet
-      about his intentional gaffe on Ritchie, noting Toby's intel and the gun metaphor
-    observed_status: educates Charlie on ANWR drilling's environmental impacts including
-      Porcupine Caribou calving grounds, wildlife species, subsistence hunters, migratory
-      patterns, river freezing, emissions, haze, and acid rain; later confronts Bartlet
-      about his intentional gaffe on Ritchie, noting Toby's intel and the gun metaphor
-    beliefs: []
-    observed_traits: []
-    importance: primary
-    global_id: ger_agent_54f868bf8265
-  - character_uuid: ger_agent_52e3762c6aed
-    emotional_state: Acknowledging dismay laced with surprised gravity at ecological
-      scale
-    goals:
-    - Absorb and internalize ANWR's full environmental devastation from the document
-    - Contribute factual details to sharpen the policy critique
-    what_happened: Walks through busy corridors reading ANWR document intently, turns
-      top page to reveal species counts, recites precise figures on fish, mammals,
-      and birds aloud, closes it decisively, admits the overwhelming wildlife impact,
-      adds insight on drilling emissions and low oil yield, halts conversation with
-      C.J. as tension builds.
-    observed_status: Walks through busy corridors reading ANWR document intently,
-      turns top page to reveal species counts, recites precise figures on fish, mammals,
-      and birds aloud, closes it decisively, admits the overwhelming wildlife impact,
-      adds insight on drilling emissions and low oil yield, halts conversation with
-      C.J. as tension builds.
-    beliefs:
-    - Wildlife preservation demands recognition beyond economic calculus
-    - Drilling's collateral damage far outweighs its energy benefits
-    observed_traits:
-    - diligent
-    - analytical
-    - conscientious
-    - emerging environmentalist
-    importance: primary
-    global_id: ger_agent_52e3762c6aed
-  - character_uuid: ger_agent_198649bce78f
-    emotional_state: composed and unreadable
-    goals:
-    - transition to press conference (per narrative connection to next beat)
-    - deflect confrontation on gaffe
-    what_happened: approaches with Leo, asks time, thanks staff, compliments C.J.
-      on handling the gaffe, reads while wearing glasses, gives unreadable look when
-      confronted, heads to microphones amid flashing cameras
-    observed_status: approaches with Leo, asks time, thanks staff, compliments C.J.
-      on handling the gaffe, reads while wearing glasses, gives unreadable look when
-      confronted, heads to microphones amid flashing cameras
-    beliefs: []
-    observed_traits: []
-    importance: primary
-    global_id: ger_agent_198649bce78f
-  - character_uuid: ger_agent_7854a70e34ea
-    emotional_state: ''
-    goals: []
-    what_happened: referenced by C.J. as having shared that interviewers wanted to
-      talk about Ritchie
-    observed_status: referenced by C.J. as having shared that interviewers wanted
-      to talk about Ritchie
-    beliefs: []
-    observed_traits: []
-    importance: minor
-    global_id: ger_agent_7854a70e34ea
-  - character_uuid: ger_agent_14139cef8dfd
-    emotional_state: ''
-    goals:
-    - introduce Bartlet for press conference
-    what_happened: announces 'Ladies and gentlemen, the President of the United States'
-      over voiceover
-    observed_status: announces 'Ladies and gentlemen, the President of the United
-      States' over voiceover
-    beliefs: []
-    observed_traits: []
-    importance: minor
-    global_id: ger_agent_14139cef8dfd
-  - character_uuid: ger_agent_89fd2481c324
-    emotional_state: ''
-    goals: []
-    what_happened: significantly referenced in C.J.'s confrontation with Bartlet regarding
-      the gaffe comparing Ritchie's '.22 caliber mind' in a '.357 magnum world' and
-      national discussion of his fitness for presidency
-    observed_status: significantly referenced in C.J.'s confrontation with Bartlet
-      regarding the gaffe comparing Ritchie's '.22 caliber mind' in a '.357 magnum
-      world' and national discussion of his fitness for presidency
-    beliefs: []
-    observed_traits: []
-    importance: secondary
-    global_id: ger_agent_89fd2481c324
-  object_involvements:
-  - object_uuid: ger_object_f9f2e4994e9b
-    description_of_involvement: Charlie carries and actively consults this document
-      while walking, flipping the top page to access tabulated ecological data—36
-      fish, 36 mammals, 160 birds—reciting it to underscore drilling's toll on calving
-      grounds, species, and habitats; it anchors the debate as irrefutable evidence
-      of policy's ethical price, propelling staff awakening.
-    status_before_event: Intact in Charlie's possession, top page unturned during
-      initial walk
-    status_after_event: Closed and folded, still held by Charlie after recitation
-    global_id: ger_object_f9f2e4994e9b
-  location_involvements:
-  - location_uuid: ger_location_3467d3b33ffc
-    description_of_involvement: ANWR dominates as conversational epicenter, C.J. invoking
-      its sacred calving grounds and cascading destructions—species extinctions, hunter
-      livelihoods, frozen waters, toxic skies—while Charlie's document litany makes
-      it palpably fragile; transforms abstract policy into visceral stakes, foreshadowing
-      administration's independence gamble.
-    observed_atmosphere: Evoked as pristine yet doomed wilderness, heavy with impending
-      violation
-    functional_role: Contested ethical terrain fueling corridor confrontation
-    symbolic_significance: Altar of environmental sacrifice for political energy victory
-    access_restrictions: ''
-    key_environmental_details:
-    - Porcupine Caribou calving plains
-    - Tundra rivers prone to deeper freezing
-    - Habitats for diverse fish, mammals, birds
-    global_id: ger_location_3467d3b33ffc
-  - location_uuid: ger_location_0faedf64ea46
-    description_of_involvement: Bustling night corridors host C.J. and Charlie's charged
-      walk-and-talk, halting amid hurrying staff for raw ANWR dissection; embodies
-      White House's underbelly where policy's human costs erupt in private before
-      public spins, amplifying urgency pre-press gauntlet.
-    observed_atmosphere: Hectic and shadowed, pulsing with late-night staff urgency
-      and whispered ethical friction
-    functional_role: Impromptu debate arena amid transit to crisis points
-    symbolic_significance: Corridors of power masking moral fissures in Bartlet's
-      bold agenda
-    access_restrictions: Limited to cleared White House personnel
-    key_environmental_details:
-    - Dim night fluorescents casting long shadows
-    - Constant foot traffic of busy aides
-    - Echoing voices in hurried motion
-    global_id: ger_location_0faedf64ea46
-  organization_involvements: []
-  derived_from_beat_uuids: &id008
-  - beat_e4d387e31e9c4905
-  source_season: 3
-  source_database: westwing.s03
-- fabula_uuid: cand_evt_scene_5f28b5eaba50afb2_1
-  global_id: null
-  title: C.J. Schools Charlie on ANWR Drilling's Ecological Devastation
-  description: In the bustling White House corridors at night, C.J. urgently educates
-    Charlie on the dire environmental consequences of drilling in ANWR, emphasizing
-    the Porcupine Caribou's calving grounds, impacts on 36 fish species, 36 mammals,
-    160 birds, subsistence hunters, migratory patterns, river freezing, emissions,
-    haze, and acid rain—for scant oil reserves. Charlie, reading the document, acknowledges
-    the staggering wildlife toll. This tense exchange exposes internal staff divisions
-    over Bartlet's aggressive energy independence agenda, humanizing ethical conflicts
-    and foreshadowing political risks amid the administration's high-stakes push.
-  episode_uuid: ep_sea_ser_the_west_wing_s03_e16
-  scene_sequence: 16
-  sequence_in_scene: 19
-  key_dialogue: *id007
-  is_flashback: false
   location_uuid: ger_location_0faedf64ea46
   theme_uuids: []
   arc_uuids: []
@@ -4290,7 +4126,7 @@ events:
     observed_traits: []
     importance: minor
     global_id: ger_agent_7854a70e34ea
-  - character_uuid: ger_agent_14139cef8dfd
+  - character_uuid: ger_agent_7f81f2915789
     emotional_state: ''
     goals:
     - introduce Bartlet for press conference
@@ -4301,8 +4137,8 @@ events:
     beliefs: []
     observed_traits: []
     importance: minor
-    global_id: ger_agent_14139cef8dfd
-  - character_uuid: ger_agent_89fd2481c324
+    global_id: ger_agent_7f81f2915789
+  - character_uuid: ger_agent_69979de71a68
     emotional_state: ''
     goals: []
     what_happened: significantly referenced in C.J.'s confrontation with Bartlet regarding
@@ -4314,7 +4150,7 @@ events:
     beliefs: []
     observed_traits: []
     importance: secondary
-    global_id: ger_agent_89fd2481c324
+    global_id: ger_agent_69979de71a68
   object_involvements:
   - object_uuid: ger_object_f9f2e4994e9b
     description_of_involvement: Charlie carries and actively consults this document
@@ -4327,22 +4163,6 @@ events:
     status_after_event: Closed and folded, still held by Charlie after recitation
     global_id: ger_object_f9f2e4994e9b
   location_involvements:
-  - location_uuid: ger_location_3467d3b33ffc
-    description_of_involvement: ANWR dominates as conversational epicenter, C.J. invoking
-      its sacred calving grounds and cascading destructions—species extinctions, hunter
-      livelihoods, frozen waters, toxic skies—while Charlie's document litany makes
-      it palpably fragile; transforms abstract policy into visceral stakes, foreshadowing
-      administration's independence gamble.
-    observed_atmosphere: Evoked as pristine yet doomed wilderness, heavy with impending
-      violation
-    functional_role: Contested ethical terrain fueling corridor confrontation
-    symbolic_significance: Altar of environmental sacrifice for political energy victory
-    access_restrictions: ''
-    key_environmental_details:
-    - Porcupine Caribou calving plains
-    - Tundra rivers prone to deeper freezing
-    - Habitats for diverse fish, mammals, birds
-    global_id: ger_location_3467d3b33ffc
   - location_uuid: ger_location_0faedf64ea46
     description_of_involvement: Bustling night corridors host C.J. and Charlie's charged
       walk-and-talk, halting amid hurrying staff for raw ANWR dissection; embodies
@@ -4359,6 +4179,186 @@ events:
     - Constant foot traffic of busy aides
     - Echoing voices in hurried motion
     global_id: ger_location_0faedf64ea46
+  - location_uuid: ger_location_3467d3b33ffc
+    description_of_involvement: ANWR dominates as conversational epicenter, C.J. invoking
+      its sacred calving grounds and cascading destructions—species extinctions, hunter
+      livelihoods, frozen waters, toxic skies—while Charlie's document litany makes
+      it palpably fragile; transforms abstract policy into visceral stakes, foreshadowing
+      administration's independence gamble.
+    observed_atmosphere: Evoked as pristine yet doomed wilderness, heavy with impending
+      violation
+    functional_role: Contested ethical terrain fueling corridor confrontation
+    symbolic_significance: Altar of environmental sacrifice for political energy victory
+    access_restrictions: ''
+    key_environmental_details:
+    - Porcupine Caribou calving plains
+    - Tundra rivers prone to deeper freezing
+    - Habitats for diverse fish, mammals, birds
+    global_id: ger_location_3467d3b33ffc
+  organization_involvements: []
+  derived_from_beat_uuids: &id008
+  - beat_e4d387e31e9c4905
+  source_season: 3
+  source_database: westwing.s03
+- fabula_uuid: cand_evt_scene_5f28b5eaba50afb2_1
+  global_id: null
+  title: C.J. Schools Charlie on ANWR Drilling's Ecological Devastation
+  description: In the bustling White House corridors at night, C.J. urgently educates
+    Charlie on the dire environmental consequences of drilling in ANWR, emphasizing
+    the Porcupine Caribou's calving grounds, impacts on 36 fish species, 36 mammals,
+    160 birds, subsistence hunters, migratory patterns, river freezing, emissions,
+    haze, and acid rain—for scant oil reserves. Charlie, reading the document, acknowledges
+    the staggering wildlife toll. This tense exchange exposes internal staff divisions
+    over Bartlet's aggressive energy independence agenda, humanizing ethical conflicts
+    and foreshadowing political risks amid the administration's high-stakes push.
+  episode_uuid: ep_sea_ser_the_west_wing_s03_e16
+  scene_sequence: 16
+  sequence_in_scene: 19
+  key_dialogue: *id007
+  is_flashback: false
+  location_uuid: ger_location_3467d3b33ffc
+  theme_uuids: []
+  arc_uuids: []
+  participations:
+  - character_uuid: ger_agent_54f868bf8265
+    emotional_state: urgent and passionate during education, then insightful and confrontational
+    goals:
+    - educate Charlie on ecological devastation of ANWR drilling (per narrative connection
+      from prior beat)
+    - expose Bartlet's calculated gaffe to shift focus to Ritchie
+    what_happened: educates Charlie on ANWR drilling's environmental impacts including
+      Porcupine Caribou calving grounds, wildlife species, subsistence hunters, migratory
+      patterns, river freezing, emissions, haze, and acid rain; later confronts Bartlet
+      about his intentional gaffe on Ritchie, noting Toby's intel and the gun metaphor
+    observed_status: educates Charlie on ANWR drilling's environmental impacts including
+      Porcupine Caribou calving grounds, wildlife species, subsistence hunters, migratory
+      patterns, river freezing, emissions, haze, and acid rain; later confronts Bartlet
+      about his intentional gaffe on Ritchie, noting Toby's intel and the gun metaphor
+    beliefs: []
+    observed_traits: []
+    importance: primary
+    global_id: ger_agent_54f868bf8265
+  - character_uuid: ger_agent_52e3762c6aed
+    emotional_state: Acknowledging dismay laced with surprised gravity at ecological
+      scale
+    goals:
+    - Absorb and internalize ANWR's full environmental devastation from the document
+    - Contribute factual details to sharpen the policy critique
+    what_happened: Walks through busy corridors reading ANWR document intently, turns
+      top page to reveal species counts, recites precise figures on fish, mammals,
+      and birds aloud, closes it decisively, admits the overwhelming wildlife impact,
+      adds insight on drilling emissions and low oil yield, halts conversation with
+      C.J. as tension builds.
+    observed_status: Walks through busy corridors reading ANWR document intently,
+      turns top page to reveal species counts, recites precise figures on fish, mammals,
+      and birds aloud, closes it decisively, admits the overwhelming wildlife impact,
+      adds insight on drilling emissions and low oil yield, halts conversation with
+      C.J. as tension builds.
+    beliefs:
+    - Wildlife preservation demands recognition beyond economic calculus
+    - Drilling's collateral damage far outweighs its energy benefits
+    observed_traits:
+    - diligent
+    - analytical
+    - conscientious
+    - emerging environmentalist
+    importance: primary
+    global_id: ger_agent_52e3762c6aed
+  - character_uuid: ger_agent_198649bce78f
+    emotional_state: composed and unreadable
+    goals:
+    - transition to press conference (per narrative connection to next beat)
+    - deflect confrontation on gaffe
+    what_happened: approaches with Leo, asks time, thanks staff, compliments C.J.
+      on handling the gaffe, reads while wearing glasses, gives unreadable look when
+      confronted, heads to microphones amid flashing cameras
+    observed_status: approaches with Leo, asks time, thanks staff, compliments C.J.
+      on handling the gaffe, reads while wearing glasses, gives unreadable look when
+      confronted, heads to microphones amid flashing cameras
+    beliefs: []
+    observed_traits: []
+    importance: primary
+    global_id: ger_agent_198649bce78f
+  - character_uuid: ger_agent_7854a70e34ea
+    emotional_state: ''
+    goals: []
+    what_happened: referenced by C.J. as having shared that interviewers wanted to
+      talk about Ritchie
+    observed_status: referenced by C.J. as having shared that interviewers wanted
+      to talk about Ritchie
+    beliefs: []
+    observed_traits: []
+    importance: minor
+    global_id: ger_agent_7854a70e34ea
+  - character_uuid: ger_agent_7f81f2915789
+    emotional_state: ''
+    goals:
+    - introduce Bartlet for press conference
+    what_happened: announces 'Ladies and gentlemen, the President of the United States'
+      over voiceover
+    observed_status: announces 'Ladies and gentlemen, the President of the United
+      States' over voiceover
+    beliefs: []
+    observed_traits: []
+    importance: minor
+    global_id: ger_agent_7f81f2915789
+  - character_uuid: ger_agent_69979de71a68
+    emotional_state: ''
+    goals: []
+    what_happened: significantly referenced in C.J.'s confrontation with Bartlet regarding
+      the gaffe comparing Ritchie's '.22 caliber mind' in a '.357 magnum world' and
+      national discussion of his fitness for presidency
+    observed_status: significantly referenced in C.J.'s confrontation with Bartlet
+      regarding the gaffe comparing Ritchie's '.22 caliber mind' in a '.357 magnum
+      world' and national discussion of his fitness for presidency
+    beliefs: []
+    observed_traits: []
+    importance: secondary
+    global_id: ger_agent_69979de71a68
+  object_involvements:
+  - object_uuid: ger_object_f9f2e4994e9b
+    description_of_involvement: Charlie carries and actively consults this document
+      while walking, flipping the top page to access tabulated ecological data—36
+      fish, 36 mammals, 160 birds—reciting it to underscore drilling's toll on calving
+      grounds, species, and habitats; it anchors the debate as irrefutable evidence
+      of policy's ethical price, propelling staff awakening.
+    status_before_event: Intact in Charlie's possession, top page unturned during
+      initial walk
+    status_after_event: Closed and folded, still held by Charlie after recitation
+    global_id: ger_object_f9f2e4994e9b
+  location_involvements:
+  - location_uuid: ger_location_0faedf64ea46
+    description_of_involvement: Bustling night corridors host C.J. and Charlie's charged
+      walk-and-talk, halting amid hurrying staff for raw ANWR dissection; embodies
+      White House's underbelly where policy's human costs erupt in private before
+      public spins, amplifying urgency pre-press gauntlet.
+    observed_atmosphere: Hectic and shadowed, pulsing with late-night staff urgency
+      and whispered ethical friction
+    functional_role: Impromptu debate arena amid transit to crisis points
+    symbolic_significance: Corridors of power masking moral fissures in Bartlet's
+      bold agenda
+    access_restrictions: Limited to cleared White House personnel
+    key_environmental_details:
+    - Dim night fluorescents casting long shadows
+    - Constant foot traffic of busy aides
+    - Echoing voices in hurried motion
+    global_id: ger_location_0faedf64ea46
+  - location_uuid: ger_location_3467d3b33ffc
+    description_of_involvement: ANWR dominates as conversational epicenter, C.J. invoking
+      its sacred calving grounds and cascading destructions—species extinctions, hunter
+      livelihoods, frozen waters, toxic skies—while Charlie's document litany makes
+      it palpably fragile; transforms abstract policy into visceral stakes, foreshadowing
+      administration's independence gamble.
+    observed_atmosphere: Evoked as pristine yet doomed wilderness, heavy with impending
+      violation
+    functional_role: Contested ethical terrain fueling corridor confrontation
+    symbolic_significance: Altar of environmental sacrifice for political energy victory
+    access_restrictions: ''
+    key_environmental_details:
+    - Porcupine Caribou calving plains
+    - Tundra rivers prone to deeper freezing
+    - Habitats for diverse fish, mammals, birds
+    global_id: ger_location_3467d3b33ffc
   organization_involvements: []
   derived_from_beat_uuids: *id008
   source_season: 3
@@ -4479,7 +4479,7 @@ events:
     - communicative
     importance: primary
     global_id: ger_agent_7854a70e34ea
-  - character_uuid: ger_agent_14139cef8dfd
+  - character_uuid: ger_agent_7f81f2915789
     emotional_state: ''
     goals:
     - Signal Bartlet's imminent press conference appearance
@@ -4490,8 +4490,8 @@ events:
     beliefs: []
     observed_traits: []
     importance: minor
-    global_id: ger_agent_14139cef8dfd
-  - character_uuid: ger_agent_89fd2481c324
+    global_id: ger_agent_7f81f2915789
+  - character_uuid: ger_agent_69979de71a68
     emotional_state: Implied intellectual inadequacy under scrutiny
     goals:
     - Contest presidential viability
@@ -4509,7 +4509,7 @@ events:
     - polarizing
     - rivalrous
     importance: primary
-    global_id: ger_agent_89fd2481c324
+    global_id: ger_agent_69979de71a68
   object_involvements:
   - object_uuid: ger_object_bd0fdd90934e
     description_of_involvement: Bartlet slips these glasses onto his nose to peer
@@ -4667,7 +4667,7 @@ events:
     - communicative
     importance: primary
     global_id: ger_agent_7854a70e34ea
-  - character_uuid: ger_agent_14139cef8dfd
+  - character_uuid: ger_agent_7f81f2915789
     emotional_state: ''
     goals:
     - Signal Bartlet's imminent press conference appearance
@@ -4678,8 +4678,8 @@ events:
     beliefs: []
     observed_traits: []
     importance: minor
-    global_id: ger_agent_14139cef8dfd
-  - character_uuid: ger_agent_89fd2481c324
+    global_id: ger_agent_7f81f2915789
+  - character_uuid: ger_agent_69979de71a68
     emotional_state: Implied intellectual inadequacy under scrutiny
     goals:
     - Contest presidential viability
@@ -4697,7 +4697,7 @@ events:
     - polarizing
     - rivalrous
     importance: primary
-    global_id: ger_agent_89fd2481c324
+    global_id: ger_agent_69979de71a68
   object_involvements:
   - object_uuid: ger_object_bd0fdd90934e
     description_of_involvement: Bartlet slips these glasses onto his nose to peer

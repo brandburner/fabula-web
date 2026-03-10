@@ -1,5 +1,5 @@
 # Events for Gone Quiet
-# Generated: 2026-02-10T12:17:19.427567
+# Generated: 2026-02-22T16:33:18.179555
 
 episode_uuid: ep_sea_ser_the_west_wing_s03_e06
 episode_title: Gone Quiet
@@ -1672,159 +1672,6 @@ events:
   - 'TOBY: You''re dissolving the Endowment to give more money to national parks?'
   - 'SAM: He thinks it''s time to run ads. TOBY: With what? SAM: Soft money.'
   is_flashback: false
-  location_uuid: ger_location_3d4b26f1de82
-  theme_uuids:
-  - ger_theme_07c10222f6d0
-  - ger_theme_1a491bf2e892
-  arc_uuids:
-  - ger_conflictarc_4ae943ed6264
-  participations:
-  - character_uuid: ger_agent_04bbccb1e352
-    emotional_state: Urgently focused amid divided priorities
-    goals:
-    - Brief Toby on soft-money ad risks
-    - Rejoin NEA debate post-huddle
-    what_happened: Knocks and interrupts Mural Room debate, greets Tawny lightly,
-      urgently pulls Toby to hallway revealing Bruno's soft-money ads and NEA's $105
-      million scale, returns to room where C.J. intercepts him on campaign gaffe.
-    observed_status: Knocks and interrupts Mural Room debate, greets Tawny lightly,
-      urgently pulls Toby to hallway revealing Bruno's soft-money ads and NEA's $105
-      million scale, returns to room where C.J. intercepts him on campaign gaffe.
-    beliefs:
-    - NEA budget too small to fight over amid bigger threats
-    - Campaign must navigate ethical soft-money loopholes
-    observed_traits:
-    - urgent
-    - pragmatic
-    - witty
-    importance: primary
-    global_id: ger_agent_04bbccb1e352
-  - character_uuid: ger_agent_7854a70e34ea
-    emotional_state: Exasperated defensiveness laced with principled resolve
-    goals:
-    - Defend NEA's existence and budget
-    - Grasp and respond to emerging soft-money campaign threat
-    what_happened: Enters Mural Room to confront Tawny, listens to her litany of provocative
-      NEA art, defends the Endowment by questioning its dissolution for parks, allows
-      Sam to pull him into hallway for soft-money briefing, notes the modest budget.
-    observed_status: Enters Mural Room to confront Tawny, listens to her litany of
-      provocative NEA art, defends the Endowment by questioning its dissolution for
-      parks, allows Sam to pull him into hallway for soft-money briefing, notes the
-      modest budget.
-    beliefs:
-    - NEA's $105 million is negligible yet vital for arts
-    - Cultural funding merits protection over partisan cuts
-    observed_traits:
-    - defensive
-    - principled
-    - frustrated
-    importance: primary
-    global_id: ger_agent_7854a70e34ea
-  - character_uuid: ger_agent_bfa0ec99e6c8
-    emotional_state: Righteously indignant and aggressively persuasive
-    goals:
-    - Convince Toby of NEA's unworthiness
-    - Mobilize support for dissolution and park fund redirection
-    what_happened: Waits in Mural Room, aggressively recites shocking NEA-funded art
-      pieces like dung cheeseburgers and chocolate nudes to Toby and Sam, attributes
-      push to her committee, briefly engages Sam on another artist.
-    observed_status: Waits in Mural Room, aggressively recites shocking NEA-funded
-      art pieces like dung cheeseburgers and chocolate nudes to Toby and Sam, attributes
-      push to her committee, briefly engages Sam on another artist.
-    beliefs:
-    - Taxpayer funds should not subsidize obscenity
-    - Appropriations Committee overrides individual tastes for fiscal reform
-    observed_traits:
-    - confrontational
-    - moralistic
-    - unyielding
-    importance: primary
-    global_id: ger_agent_bfa0ec99e6c8
-  object_involvements: []
-  location_involvements:
-  - location_uuid: ger_location_3d4b26f1de82
-    description_of_involvement: Brief refuge for Sam and Toby's hushed sidebar on
-      soft-money ads, contrasting Mural Room's clamor with urgent whispers that heighten
-      campaign fractures, transitioning staff between public clashes and private strategy
-      amid West Wing's bustling arteries.
-    observed_atmosphere: Hushed and conspiratorial with echoing footsteps
-    functional_role: private discussion spot
-    symbolic_significance: Corridor of tactical pivots amid broader crises
-    access_restrictions: Restricted to White House staff circulation
-    key_environmental_details:
-    - Fluorescent lighting overhead
-    - Linoleum floors amplifying movement
-    global_id: ger_location_3d4b26f1de82
-  - location_uuid: ger_location_7423b10d7d15
-    description_of_involvement: Serves as the primary battleground where Toby enters
-      to face Tawny's assault on NEA via lurid art examples, debate intensifies until
-      Sam's interruption pulls focus to hallway, embodying White House policy skirmishes
-      amid presidential murals symbolizing enduring ideals under siege.
-    observed_atmosphere: Charged with ideological tension and verbal fireworks
-    functional_role: debate site
-    symbolic_significance: Historical witness to clashing cultural and fiscal visions
-    access_restrictions: Private White House meeting space for scheduled confrontations
-    key_environmental_details:
-    - Daylight filtering through windows
-    - Presidential murals looming overhead
-    global_id: ger_location_7423b10d7d15
-  organization_involvements:
-  - organization_uuid: ger_organization_d135ad059cac
-    description_of_involvement: Thrust into crossfire as Tawny catalogs its funded
-      abominations—from dung cheeseburgers to chocolate nudes—prompting Toby's defense
-      of its $105 million mission, framing it as embattled symbol of artistic freedom
-      versus fiscal conservatism.
-    active_representation: Referenced via specific grant-funded projects and leadership
-    power_dynamics: Defenseless under Appropriations threat of dissolution
-    organizational_goals:
-    - Preserve modest $105 million budget
-    - Sustain nationwide artist support
-    influence_mechanisms:
-    - Institutional grants to provocative works
-    - Endowment chairmanship legacy
-    institutional_impact: Exposes vulnerability of federal arts patronage to partisan
-      revulsion
-    internal_dynamics: ''
-    global_id: ger_organization_d135ad059cac
-  - organization_uuid: ger_organization_d550eb0be1a9
-    description_of_involvement: Weaponized by Tawny Cryer as she invokes its authority
-      to dismantle NEA over funded grotesqueries, positioning it as fiscal arbiter
-      redirecting arts dollars to parks, escalating partisan budget wars into White
-      House residence.
-    active_representation: Through member Tawny Cryer articulating committee stance
-    power_dynamics: Exerting budgetary leverage to challenge administration priorities
-    organizational_goals:
-    - Eliminate NEA funding entirely
-    - Reallocate $105 million to national parks
-    influence_mechanisms:
-    - Public outrage over provocative art
-    - Congressional appropriations authority
-    institutional_impact: Highlights congressional override of executive cultural
-      policy
-    internal_dynamics: ''
-    global_id: ger_organization_d550eb0be1a9
-  derived_from_beat_uuids: &id004
-  - beat_e218b7f539bc8c83
-  - beat_4699dd7a12f1935b
-  source_season: 3
-  source_database: westwing.s03
-- fabula_uuid: cand_evt_scene_07ec1c582fd57c7d_1
-  global_id: null
-  title: Toby Spars with Tawny Over NEA Cuts as Sam Pitches Soft Money Ads
-  description: In the Mural Room, Toby Ziegler confronts Congresswoman Tawny Cryer,
-    who weaponizes examples of provocative, NEA-funded art—like chocolate-covered
-    nudity and dung cheeseburgers—to justify the Appropriations Committee's plan to
-    dissolve the Endowment and redirect funds to national parks. Sam Seaborn interrupts,
-    urgently pulling Toby aside to reveal Bruno's push for unregulated soft money
-    issue ads, with Toby noting the NEA's modest $105 million budget. C.J. briefly
-    presses Sam on crafting Bartlet's 'why President?' answer amid a rival's gaffe.
-    This multi-threaded clash excavates ideological purity versus pragmatic politics,
-    escalating campaign strategy tensions and foreshadowing deeper rifts.
-  episode_uuid: ep_sea_ser_the_west_wing_s03_e06
-  scene_sequence: 5
-  sequence_in_scene: 5
-  key_dialogue: *id003
-  is_flashback: false
   location_uuid: ger_location_7423b10d7d15
   theme_uuids:
   - ger_theme_07c10222f6d0
@@ -1895,19 +1742,6 @@ events:
     global_id: ger_agent_bfa0ec99e6c8
   object_involvements: []
   location_involvements:
-  - location_uuid: ger_location_3d4b26f1de82
-    description_of_involvement: Brief refuge for Sam and Toby's hushed sidebar on
-      soft-money ads, contrasting Mural Room's clamor with urgent whispers that heighten
-      campaign fractures, transitioning staff between public clashes and private strategy
-      amid West Wing's bustling arteries.
-    observed_atmosphere: Hushed and conspiratorial with echoing footsteps
-    functional_role: private discussion spot
-    symbolic_significance: Corridor of tactical pivots amid broader crises
-    access_restrictions: Restricted to White House staff circulation
-    key_environmental_details:
-    - Fluorescent lighting overhead
-    - Linoleum floors amplifying movement
-    global_id: ger_location_3d4b26f1de82
   - location_uuid: ger_location_7423b10d7d15
     description_of_involvement: Serves as the primary battleground where Toby enters
       to face Tawny's assault on NEA via lurid art examples, debate intensifies until
@@ -1921,6 +1755,19 @@ events:
     - Daylight filtering through windows
     - Presidential murals looming overhead
     global_id: ger_location_7423b10d7d15
+  - location_uuid: ger_location_3303871a0689
+    description_of_involvement: Brief refuge for Sam and Toby's hushed sidebar on
+      soft-money ads, contrasting Mural Room's clamor with urgent whispers that heighten
+      campaign fractures, transitioning staff between public clashes and private strategy
+      amid West Wing's bustling arteries.
+    observed_atmosphere: Hushed and conspiratorial with echoing footsteps
+    functional_role: private discussion spot
+    symbolic_significance: Corridor of tactical pivots amid broader crises
+    access_restrictions: Restricted to White House staff circulation
+    key_environmental_details:
+    - Fluorescent lighting overhead
+    - Linoleum floors amplifying movement
+    global_id: ger_location_3303871a0689
   organization_involvements:
   - organization_uuid: ger_organization_d135ad059cac
     description_of_involvement: Thrust into crossfire as Tawny catalogs its funded
@@ -1939,7 +1786,7 @@ events:
       revulsion
     internal_dynamics: ''
     global_id: ger_organization_d135ad059cac
-  - organization_uuid: ger_organization_d550eb0be1a9
+  - organization_uuid: ger_organization_eee65f47d855
     description_of_involvement: Weaponized by Tawny Cryer as she invokes its authority
       to dismantle NEA over funded grotesqueries, positioning it as fiscal arbiter
       redirecting arts dollars to parks, escalating partisan budget wars into White
@@ -1955,7 +1802,160 @@ events:
     institutional_impact: Highlights congressional override of executive cultural
       policy
     internal_dynamics: ''
-    global_id: ger_organization_d550eb0be1a9
+    global_id: ger_organization_eee65f47d855
+  derived_from_beat_uuids: &id004
+  - beat_e218b7f539bc8c83
+  - beat_4699dd7a12f1935b
+  source_season: 3
+  source_database: westwing.s03
+- fabula_uuid: cand_evt_scene_07ec1c582fd57c7d_1
+  global_id: null
+  title: Toby Spars with Tawny Over NEA Cuts as Sam Pitches Soft Money Ads
+  description: In the Mural Room, Toby Ziegler confronts Congresswoman Tawny Cryer,
+    who weaponizes examples of provocative, NEA-funded art—like chocolate-covered
+    nudity and dung cheeseburgers—to justify the Appropriations Committee's plan to
+    dissolve the Endowment and redirect funds to national parks. Sam Seaborn interrupts,
+    urgently pulling Toby aside to reveal Bruno's push for unregulated soft money
+    issue ads, with Toby noting the NEA's modest $105 million budget. C.J. briefly
+    presses Sam on crafting Bartlet's 'why President?' answer amid a rival's gaffe.
+    This multi-threaded clash excavates ideological purity versus pragmatic politics,
+    escalating campaign strategy tensions and foreshadowing deeper rifts.
+  episode_uuid: ep_sea_ser_the_west_wing_s03_e06
+  scene_sequence: 5
+  sequence_in_scene: 5
+  key_dialogue: *id003
+  is_flashback: false
+  location_uuid: ger_location_3303871a0689
+  theme_uuids:
+  - ger_theme_07c10222f6d0
+  - ger_theme_1a491bf2e892
+  arc_uuids:
+  - ger_conflictarc_4ae943ed6264
+  participations:
+  - character_uuid: ger_agent_04bbccb1e352
+    emotional_state: Urgently focused amid divided priorities
+    goals:
+    - Brief Toby on soft-money ad risks
+    - Rejoin NEA debate post-huddle
+    what_happened: Knocks and interrupts Mural Room debate, greets Tawny lightly,
+      urgently pulls Toby to hallway revealing Bruno's soft-money ads and NEA's $105
+      million scale, returns to room where C.J. intercepts him on campaign gaffe.
+    observed_status: Knocks and interrupts Mural Room debate, greets Tawny lightly,
+      urgently pulls Toby to hallway revealing Bruno's soft-money ads and NEA's $105
+      million scale, returns to room where C.J. intercepts him on campaign gaffe.
+    beliefs:
+    - NEA budget too small to fight over amid bigger threats
+    - Campaign must navigate ethical soft-money loopholes
+    observed_traits:
+    - urgent
+    - pragmatic
+    - witty
+    importance: primary
+    global_id: ger_agent_04bbccb1e352
+  - character_uuid: ger_agent_7854a70e34ea
+    emotional_state: Exasperated defensiveness laced with principled resolve
+    goals:
+    - Defend NEA's existence and budget
+    - Grasp and respond to emerging soft-money campaign threat
+    what_happened: Enters Mural Room to confront Tawny, listens to her litany of provocative
+      NEA art, defends the Endowment by questioning its dissolution for parks, allows
+      Sam to pull him into hallway for soft-money briefing, notes the modest budget.
+    observed_status: Enters Mural Room to confront Tawny, listens to her litany of
+      provocative NEA art, defends the Endowment by questioning its dissolution for
+      parks, allows Sam to pull him into hallway for soft-money briefing, notes the
+      modest budget.
+    beliefs:
+    - NEA's $105 million is negligible yet vital for arts
+    - Cultural funding merits protection over partisan cuts
+    observed_traits:
+    - defensive
+    - principled
+    - frustrated
+    importance: primary
+    global_id: ger_agent_7854a70e34ea
+  - character_uuid: ger_agent_bfa0ec99e6c8
+    emotional_state: Righteously indignant and aggressively persuasive
+    goals:
+    - Convince Toby of NEA's unworthiness
+    - Mobilize support for dissolution and park fund redirection
+    what_happened: Waits in Mural Room, aggressively recites shocking NEA-funded art
+      pieces like dung cheeseburgers and chocolate nudes to Toby and Sam, attributes
+      push to her committee, briefly engages Sam on another artist.
+    observed_status: Waits in Mural Room, aggressively recites shocking NEA-funded
+      art pieces like dung cheeseburgers and chocolate nudes to Toby and Sam, attributes
+      push to her committee, briefly engages Sam on another artist.
+    beliefs:
+    - Taxpayer funds should not subsidize obscenity
+    - Appropriations Committee overrides individual tastes for fiscal reform
+    observed_traits:
+    - confrontational
+    - moralistic
+    - unyielding
+    importance: primary
+    global_id: ger_agent_bfa0ec99e6c8
+  object_involvements: []
+  location_involvements:
+  - location_uuid: ger_location_7423b10d7d15
+    description_of_involvement: Serves as the primary battleground where Toby enters
+      to face Tawny's assault on NEA via lurid art examples, debate intensifies until
+      Sam's interruption pulls focus to hallway, embodying White House policy skirmishes
+      amid presidential murals symbolizing enduring ideals under siege.
+    observed_atmosphere: Charged with ideological tension and verbal fireworks
+    functional_role: debate site
+    symbolic_significance: Historical witness to clashing cultural and fiscal visions
+    access_restrictions: Private White House meeting space for scheduled confrontations
+    key_environmental_details:
+    - Daylight filtering through windows
+    - Presidential murals looming overhead
+    global_id: ger_location_7423b10d7d15
+  - location_uuid: ger_location_3303871a0689
+    description_of_involvement: Brief refuge for Sam and Toby's hushed sidebar on
+      soft-money ads, contrasting Mural Room's clamor with urgent whispers that heighten
+      campaign fractures, transitioning staff between public clashes and private strategy
+      amid West Wing's bustling arteries.
+    observed_atmosphere: Hushed and conspiratorial with echoing footsteps
+    functional_role: private discussion spot
+    symbolic_significance: Corridor of tactical pivots amid broader crises
+    access_restrictions: Restricted to White House staff circulation
+    key_environmental_details:
+    - Fluorescent lighting overhead
+    - Linoleum floors amplifying movement
+    global_id: ger_location_3303871a0689
+  organization_involvements:
+  - organization_uuid: ger_organization_d135ad059cac
+    description_of_involvement: Thrust into crossfire as Tawny catalogs its funded
+      abominations—from dung cheeseburgers to chocolate nudes—prompting Toby's defense
+      of its $105 million mission, framing it as embattled symbol of artistic freedom
+      versus fiscal conservatism.
+    active_representation: Referenced via specific grant-funded projects and leadership
+    power_dynamics: Defenseless under Appropriations threat of dissolution
+    organizational_goals:
+    - Preserve modest $105 million budget
+    - Sustain nationwide artist support
+    influence_mechanisms:
+    - Institutional grants to provocative works
+    - Endowment chairmanship legacy
+    institutional_impact: Exposes vulnerability of federal arts patronage to partisan
+      revulsion
+    internal_dynamics: ''
+    global_id: ger_organization_d135ad059cac
+  - organization_uuid: ger_organization_eee65f47d855
+    description_of_involvement: Weaponized by Tawny Cryer as she invokes its authority
+      to dismantle NEA over funded grotesqueries, positioning it as fiscal arbiter
+      redirecting arts dollars to parks, escalating partisan budget wars into White
+      House residence.
+    active_representation: Through member Tawny Cryer articulating committee stance
+    power_dynamics: Exerting budgetary leverage to challenge administration priorities
+    organizational_goals:
+    - Eliminate NEA funding entirely
+    - Reallocate $105 million to national parks
+    influence_mechanisms:
+    - Public outrage over provocative art
+    - Congressional appropriations authority
+    institutional_impact: Highlights congressional override of executive cultural
+      policy
+    internal_dynamics: ''
+    global_id: ger_organization_eee65f47d855
   derived_from_beat_uuids: *id004
   source_season: 3
   source_database: westwing.s03
@@ -2097,24 +2097,7 @@ events:
     - Intimate, enclosed space fostering verbal sparring
     global_id: ger_location_4214b2ba3b71
   organization_involvements:
-  - organization_uuid: ger_organization_62dae3e3f451
-    description_of_involvement: American Medical Association's code of ethics weaponized
-      by Babish as core violation in Abbey's spousal prescriptions to President, transcending
-      clinical acts into familial conflict-of-interest breach fueling multi-state
-      probes and congressional taint.
-    active_representation: Cited as authoritative ethical standard breached by Abbey
-    power_dynamics: Imposes unyielding professional norms challenging Abbey's defenses
-    organizational_goals:
-    - Enforce physician conduct prohibiting familial prescribing
-    - Uphold documentation and expertise standards
-    influence_mechanisms:
-    - Ethical codes amplifying legal scrutiny
-    - Professional taboo arming political attacks
-    institutional_impact: Exposes First Lady's dual roles as physician and spouse
-      to institutional judgment
-    internal_dynamics: ''
-    global_id: ger_organization_62dae3e3f451
-  - organization_uuid: ger_organization_7c17cf329978
+  - organization_uuid: ger_organization_711ebdf19d15
     description_of_involvement: House Government Reform and Oversight Committee cast
       as ruthless antagonist lacking direct criminal case against President; Babish
       exposes their strategy to prosecute Abbey's ethics breaches, tainting him by
@@ -2132,7 +2115,7 @@ events:
     institutional_impact: Erodes executive ethical armor, fueling congressional oversight
       as campaign sabotage
     internal_dynamics: ''
-    global_id: ger_organization_7c17cf329978
+    global_id: ger_organization_711ebdf19d15
   - organization_uuid: ger_organization_dc6eb326ea35
     description_of_involvement: New York Superior Court positioned via Judge Nguyen's
       dismissal of Niederlander's suit as Abbey's judicial shield against negligence
@@ -2150,6 +2133,23 @@ events:
       revival
     internal_dynamics: ''
     global_id: ger_organization_dc6eb326ea35
+  - organization_uuid: ger_organization_8e7c83137786
+    description_of_involvement: American Medical Association's code of ethics weaponized
+      by Babish as core violation in Abbey's spousal prescriptions to President, transcending
+      clinical acts into familial conflict-of-interest breach fueling multi-state
+      probes and congressional taint.
+    active_representation: Cited as authoritative ethical standard breached by Abbey
+    power_dynamics: Imposes unyielding professional norms challenging Abbey's defenses
+    organizational_goals:
+    - Enforce physician conduct prohibiting familial prescribing
+    - Uphold documentation and expertise standards
+    influence_mechanisms:
+    - Ethical codes amplifying legal scrutiny
+    - Professional taboo arming political attacks
+    institutional_impact: Exposes First Lady's dual roles as physician and spouse
+      to institutional judgment
+    internal_dynamics: ''
+    global_id: ger_organization_8e7c83137786
   derived_from_beat_uuids:
   - beat_18bed42d7a0bcf6d
   - beat_027028796a9a00d2
@@ -2370,7 +2370,7 @@ events:
   - 'DONNA: Look... JOSH: Signed... DONNA: I was just... JOSH: Do it.'
   - 'DONNA: One of them poured Wheatena on the keyboard.'
   is_flashback: false
-  location_uuid: ger_location_3d4b26f1de82
+  location_uuid: ger_location_3303871a0689
   theme_uuids: []
   arc_uuids: []
   participations:
@@ -2439,7 +2439,7 @@ events:
     status_after_event: In Donna's use, Josh displaced to her station temporarily
     global_id: ger_object_19bd3bb004af
   location_involvements:
-  - location_uuid: ger_location_3d4b26f1de82
+  - location_uuid: ger_location_3303871a0689
     description_of_involvement: West Wing hallway becomes site of C.J. pulling Josh
       from dictation chaos for hushed strategy talk on Majority Leader gaffe and campaign
       answer, providing semi-private pivot from office friction to broader political
@@ -2453,7 +2453,7 @@ events:
     key_environmental_details:
     - Fluorescent lighting casting shadows
     - Linoleum floors echoing footsteps
-    global_id: ger_location_3d4b26f1de82
+    global_id: ger_location_3303871a0689
   organization_involvements:
   - organization_uuid: ger_organization_a94120d3017a
     description_of_involvement: Park Police are referenced in Josh's dictation as
@@ -2502,7 +2502,7 @@ events:
     to be gloating.'
   - 'C.J.: What is it? JOSH: Do we have one? C.J.: Josh!'
   is_flashback: false
-  location_uuid: ger_location_3d4b26f1de82
+  location_uuid: ger_location_3303871a0689
   theme_uuids:
   - ger_theme_07c10222f6d0
   - ger_theme_c90b9bacbc27
@@ -2598,7 +2598,7 @@ events:
     status_after_event: Now at Donna's position, ready for her typing
     global_id: ger_object_19bd3bb004af
   location_involvements:
-  - location_uuid: ger_location_3d4b26f1de82
+  - location_uuid: ger_location_3303871a0689
     description_of_involvement: West Wing hallway serves as semi-private conduit for
       C.J.'s urgent pull of Josh from office chaos, hosting terse exchange on Leader's
       gaffe—its shadowed confinement strips away public facades, forcing raw admission
@@ -2611,7 +2611,7 @@ events:
     - Fluorescent buzz overhead
     - Linoleum under rushed steps
     - Proximity to offices for sudden drags
-    global_id: ger_location_3d4b26f1de82
+    global_id: ger_location_3303871a0689
   organization_involvements:
   - organization_uuid: ger_organization_a94120d3017a
     description_of_involvement: Park Police referenced in Josh's interrupted dictation
@@ -2659,218 +2659,6 @@ events:
   - "TOBY: \"In fact, it's not to subsidize artists - it's to subsidize art.\" \n\
     TAWNY: \"Go ahead and explain that distinction in Topeka.\""
   - 'TAWNY: "Lisa Mulberry, 28, specializes in placing genitalia in anatomically incorrect..."'
-  is_flashback: false
-  location_uuid: ger_location_a2b09a60ea7e
-  theme_uuids:
-  - ger_theme_1a491bf2e892
-  arc_uuids: []
-  participations:
-  - character_uuid: ger_agent_04bbccb1e352
-    emotional_state: Calm urgency overriding the room's chaos
-    goals:
-    - Extract Toby from NEA debate for campaign finance pivot
-    - Enlighten on Supreme Court loophole for strategic response
-    what_happened: Enters abruptly with 'Hi,' interrupts Tawny's Mulberry critique
-      as Toby noises in frustration, politely excuses them, pulls Toby outside to
-      urgently dissect Buckley v. Valeo loophole on soft money ads.
-    observed_status: Enters abruptly with 'Hi,' interrupts Tawny's Mulberry critique
-      as Toby noises in frustration, politely excuses them, pulls Toby outside to
-      urgently dissect Buckley v. Valeo loophole on soft money ads.
-    beliefs:
-    - Legal precedents like Buckley enable pragmatic election tactics
-    - Re-election threats demand immediate staff realignment
-    observed_traits:
-    - decisive
-    - pragmatic
-    - composed
-    importance: primary
-    global_id: ger_agent_04bbccb1e352
-  - character_uuid: ger_agent_7854a70e34ea
-    emotional_state: Building frustration exploding into raw, guttural outrage
-    goals:
-    - Clarify and protect NEA's structural mission
-    - Repel Tawny's cultural revulsion with broader principles
-    what_happened: Defends NEA passionately by clarifying institutional grants over
-      individual ones eliminated by Republicans, admits personal aversion to modern
-      art but rejects veto principle, erupts in loud guttural frustration noise before
-      Sam pulls him outside.
-    observed_status: Defends NEA passionately by clarifying institutional grants over
-      individual ones eliminated by Republicans, admits personal aversion to modern
-      art but rejects veto principle, erupts in loud guttural frustration noise before
-      Sam pulls him outside.
-    beliefs:
-    - Government must fund art without content-based vetoes
-    - Institutional funding shields expression from politics
-    observed_traits:
-    - principled
-    - combative
-    - idealistic
-    importance: primary
-    global_id: ger_agent_7854a70e34ea
-  - character_uuid: ger_agent_bfa0ec99e6c8
-    emotional_state: Smug sarcasm veiling partisan zeal
-    goals:
-    - Discredit NEA subsidies via scandalous examples
-    - Pressure Toby into conceding taxpayer veto rights
-    what_happened: Aggressively challenges Toby on NEA funding, cites Oakenwood's
-      museum backdoor and Lisa Mulberry's explicit art mid-sentence, invokes Topeka
-      voters' disdain, persists sarcastically despite interruption, embodying fiscal
-      hawk assault.
-    observed_status: Aggressively challenges Toby on NEA funding, cites Oakenwood's
-      museum backdoor and Lisa Mulberry's explicit art mid-sentence, invokes Topeka
-      voters' disdain, persists sarcastically despite interruption, embodying fiscal
-      hawk assault.
-    beliefs:
-    - NEA wastes funds on offensive art
-    - Voters in heartland reject such expenditures
-    observed_traits:
-    - sarcastic
-    - aggressive
-    - unyielding
-    importance: primary
-    global_id: ger_agent_bfa0ec99e6c8
-  - character_uuid: ger_agent_57e3a907a780
-    emotional_state: Neutral (mentioned only)
-    goals:
-    - Sustain provocative art funding covertly
-    what_happened: Invoked by Tawny as Toby's friend who bypassed NEA cuts via direct
-      museum donations for controversial exhibits, absent but weaponized in the argument.
-    observed_status: Invoked by Tawny as Toby's friend who bypassed NEA cuts via direct
-      museum donations for controversial exhibits, absent but weaponized in the argument.
-    beliefs:
-    - Private channels protect expression from public veto
-    observed_traits:
-    - resourceful
-    - loyal
-    importance: primary
-    global_id: ger_agent_57e3a907a780
-  - character_uuid: ger_agent_cd4b217baf4c
-    emotional_state: Neutral (mentioned only)
-    goals:
-    - Push artistic boundaries through explicit installations
-    what_happened: Cited by Tawny as 28-year-old artist of anatomically incorrect
-      genitalia works displayed via NEA-funded museums, her explicit art fueling the
-      subsidy indictment before interruption.
-    observed_status: Cited by Tawny as 28-year-old artist of anatomically incorrect
-      genitalia works displayed via NEA-funded museums, her explicit art fueling the
-      subsidy indictment before interruption.
-    beliefs:
-    - Art thrives on unflinching anatomical exploration
-    observed_traits:
-    - provocative
-    - avant-garde
-    importance: primary
-    global_id: ger_agent_cd4b217baf4c
-  object_involvements:
-  - object_uuid: ger_object_8db9d4287cc7
-    description_of_involvement: Sam invokes the 1976 U.S. Supreme Court ruling post-interruption,
-      wielding its 'magic words' loophole—express advocacy terms like 'elect' or 'defeat'—to
-      justify unregulated issue ads in soft-money strategy, yanking debate from cultural
-      policy to electoral pragmatism and exposing White House tensions.
-    status_before_event: Abstract legal precedent, known but dormant in context
-    status_after_event: Activated as tactical weapon in hallway discussion
-    global_id: ger_object_8db9d4287cc7
-  location_involvements:
-  - location_uuid: ger_location_a2b09a60ea7e
-    description_of_involvement: Tawny hurls Topeka as rhetorical spear, mocking NEA
-      distinctions' irrelevance to heartland voters who prioritize roads over 'Piss
-      Christ,' grounding abstract policy in visceral populist revolt.
-    observed_atmosphere: Evoked as folksy, bewildered diner heartland
-    functional_role: Exemplar of taxpayer backlash
-    symbolic_significance: Represents flyover country disdain for elite cultural subsidies
-    access_restrictions: ''
-    key_environmental_details:
-    - Imagined grain silos and Main Street diners
-    - Weathered plains evoking fiscal austerity
-    global_id: ger_location_a2b09a60ea7e
-  - location_uuid: ger_location_7423b10d7d15
-    description_of_involvement: Serves as crucible for explosive NEA debate where
-      Tawny and Toby clash ideologically amid presidential murals, tension mounting
-      through rapid-fire barbs until Toby's roar and Sam's extraction shifts action
-      outside, embodying White House culture-war fault line.
-    observed_atmosphere: Heated, claustrophobic with ideological thunder echoing off
-      muraled walls
-    functional_role: Arena for partisan policy confrontation
-    symbolic_significance: Encapsulates administration's fractured ideals under re-election
-      siege
-    access_restrictions: Restricted to senior staff and congressional visitors
-    key_environmental_details:
-    - Oppressive murals of past presidents
-    - Daylight filtering through windows amplifying verbal intensity
-    global_id: ger_location_7423b10d7d15
-  organization_involvements:
-  - organization_uuid: ger_organization_5278bcf2674a
-    description_of_involvement: Toby cites Republicans' prior NEA defunding push that
-      eliminated individual grants, framing them as repeated assailants on the Endowment,
-      fueling Tawny's current crusade and broader culture-war narrative.
-    active_representation: Via Tawny as Appropriations proxy and historical actions
-    power_dynamics: Wielding congressional budget axe over executive defenders
-    organizational_goals:
-    - Slash NEA for fiscal purity
-    - Exploit cultural scandals for voter appeal
-    influence_mechanisms:
-    - Past legislative victories on grants
-    - Partisan rhetoric amplifying taxpayer revulsion
-    institutional_impact: Locks policy in stasis, mirroring synopsis' congressional
-      barricades
-    internal_dynamics: ''
-    global_id: ger_organization_5278bcf2674a
-  - organization_uuid: ger_organization_d08a731678f5
-    description_of_involvement: Sam leverages the Court's Buckley v. Valeo precedent
-      outside the room, its loophole on 'express terms' advocacy unlocking soft-money
-      issue ads, abruptly redirecting from NEA fray to campaign survival imperatives.
-    active_representation: Through invoked 1976 ruling as legal loophole
-    power_dynamics: Supreme authority enabling pragmatic circumvention of finance
-      laws
-    organizational_goals:
-    - Define electoral speech boundaries
-    - Permit unregulated issue advocacy
-    influence_mechanisms:
-    - Judicial precedent shaping ad regulations
-    - Loophole exploitation in political strategy
-    institutional_impact: Empowers re-election maneuvers against smears in synopsis
-      context
-    internal_dynamics: ''
-    global_id: ger_organization_d08a731678f5
-  - organization_uuid: ger_organization_d135ad059cac
-    description_of_involvement: NEA ignites the core confrontation as Tawny decries
-      its artist-subsidy mission via controversial indirect funding, Toby defends
-      its institutional art nurturing role against past Republican defunding attempts,
-      spotlighting fiscal vs. expressive freedom chasm.
-    active_representation: Through policy debate and cited grants/programs
-    power_dynamics: Under congressional siege, defended by White House idealists
-    organizational_goals:
-    - Sustain nationwide artist support via institutions
-    - Preserve budget from cultural outrage cuts
-    influence_mechanisms:
-    - Indirect museum grants evading direct vetoes
-    - Historical mission invoking global arts legacy
-    institutional_impact: Exposes partisan razor-edge on public arts funding amid
-      re-election
-    internal_dynamics: ''
-    global_id: ger_organization_d135ad059cac
-  derived_from_beat_uuids: &id006
-  - beat_86090bfcd9ebdd9e
-  - beat_f2c79d931bc442da
-  - beat_acb18890dd583a48
-  source_season: 3
-  source_database: westwing.s03
-- fabula_uuid: cand_evt_scene_1211f03710c5677f_1
-  global_id: null
-  title: Tawny Scorches NEA Mission; Toby's Fiery Defense Exposes Ideological Rift
-  description: In the Mural Room, Appropriations member Tawny Cryer lambasts the NEA's
-    mission to subsidize artists as wasteful, citing controversial works like 'Piss
-    Christ' and explicit art by Lisa Mulberry to justify cuts. Toby Ziegler erupts
-    in passionate defense, clarifying the Endowment funds art via institutions, not
-    individuals, and decrying taxpayer vetoes on disliked expenditures. His frustration
-    peaks with a guttural noise as Tawny persists, underscoring deep administration
-    divides on cultural policy versus fiscal pragmatism. Sam interrupts, pulling Toby
-    aside to pivot to campaign finance loopholes, marking this clash as a microcosm
-    of broader re-election tensions and Toby's unyielding idealism.
-  episode_uuid: ep_sea_ser_the_west_wing_s03_e06
-  scene_sequence: 10
-  sequence_in_scene: 11
-  key_dialogue: *id005
   is_flashback: false
   location_uuid: ger_location_7423b10d7d15
   theme_uuids:
@@ -2983,18 +2771,6 @@ events:
     status_after_event: Activated as tactical weapon in hallway discussion
     global_id: ger_object_8db9d4287cc7
   location_involvements:
-  - location_uuid: ger_location_a2b09a60ea7e
-    description_of_involvement: Tawny hurls Topeka as rhetorical spear, mocking NEA
-      distinctions' irrelevance to heartland voters who prioritize roads over 'Piss
-      Christ,' grounding abstract policy in visceral populist revolt.
-    observed_atmosphere: Evoked as folksy, bewildered diner heartland
-    functional_role: Exemplar of taxpayer backlash
-    symbolic_significance: Represents flyover country disdain for elite cultural subsidies
-    access_restrictions: ''
-    key_environmental_details:
-    - Imagined grain silos and Main Street diners
-    - Weathered plains evoking fiscal austerity
-    global_id: ger_location_a2b09a60ea7e
   - location_uuid: ger_location_7423b10d7d15
     description_of_involvement: Serves as crucible for explosive NEA debate where
       Tawny and Toby clash ideologically amid presidential murals, tension mounting
@@ -3010,6 +2786,230 @@ events:
     - Oppressive murals of past presidents
     - Daylight filtering through windows amplifying verbal intensity
     global_id: ger_location_7423b10d7d15
+  - location_uuid: ger_location_a2b09a60ea7e
+    description_of_involvement: Tawny hurls Topeka as rhetorical spear, mocking NEA
+      distinctions' irrelevance to heartland voters who prioritize roads over 'Piss
+      Christ,' grounding abstract policy in visceral populist revolt.
+    observed_atmosphere: Evoked as folksy, bewildered diner heartland
+    functional_role: Exemplar of taxpayer backlash
+    symbolic_significance: Represents flyover country disdain for elite cultural subsidies
+    access_restrictions: ''
+    key_environmental_details:
+    - Imagined grain silos and Main Street diners
+    - Weathered plains evoking fiscal austerity
+    global_id: ger_location_a2b09a60ea7e
+  organization_involvements:
+  - organization_uuid: ger_organization_5278bcf2674a
+    description_of_involvement: Toby cites Republicans' prior NEA defunding push that
+      eliminated individual grants, framing them as repeated assailants on the Endowment,
+      fueling Tawny's current crusade and broader culture-war narrative.
+    active_representation: Via Tawny as Appropriations proxy and historical actions
+    power_dynamics: Wielding congressional budget axe over executive defenders
+    organizational_goals:
+    - Slash NEA for fiscal purity
+    - Exploit cultural scandals for voter appeal
+    influence_mechanisms:
+    - Past legislative victories on grants
+    - Partisan rhetoric amplifying taxpayer revulsion
+    institutional_impact: Locks policy in stasis, mirroring synopsis' congressional
+      barricades
+    internal_dynamics: ''
+    global_id: ger_organization_5278bcf2674a
+  - organization_uuid: ger_organization_d08a731678f5
+    description_of_involvement: Sam leverages the Court's Buckley v. Valeo precedent
+      outside the room, its loophole on 'express terms' advocacy unlocking soft-money
+      issue ads, abruptly redirecting from NEA fray to campaign survival imperatives.
+    active_representation: Through invoked 1976 ruling as legal loophole
+    power_dynamics: Supreme authority enabling pragmatic circumvention of finance
+      laws
+    organizational_goals:
+    - Define electoral speech boundaries
+    - Permit unregulated issue advocacy
+    influence_mechanisms:
+    - Judicial precedent shaping ad regulations
+    - Loophole exploitation in political strategy
+    institutional_impact: Empowers re-election maneuvers against smears in synopsis
+      context
+    internal_dynamics: ''
+    global_id: ger_organization_d08a731678f5
+  - organization_uuid: ger_organization_d135ad059cac
+    description_of_involvement: NEA ignites the core confrontation as Tawny decries
+      its artist-subsidy mission via controversial indirect funding, Toby defends
+      its institutional art nurturing role against past Republican defunding attempts,
+      spotlighting fiscal vs. expressive freedom chasm.
+    active_representation: Through policy debate and cited grants/programs
+    power_dynamics: Under congressional siege, defended by White House idealists
+    organizational_goals:
+    - Sustain nationwide artist support via institutions
+    - Preserve budget from cultural outrage cuts
+    influence_mechanisms:
+    - Indirect museum grants evading direct vetoes
+    - Historical mission invoking global arts legacy
+    institutional_impact: Exposes partisan razor-edge on public arts funding amid
+      re-election
+    internal_dynamics: ''
+    global_id: ger_organization_d135ad059cac
+  derived_from_beat_uuids: &id006
+  - beat_86090bfcd9ebdd9e
+  - beat_f2c79d931bc442da
+  - beat_acb18890dd583a48
+  source_season: 3
+  source_database: westwing.s03
+- fabula_uuid: cand_evt_scene_1211f03710c5677f_1
+  global_id: null
+  title: Tawny Scorches NEA Mission; Toby's Fiery Defense Exposes Ideological Rift
+  description: In the Mural Room, Appropriations member Tawny Cryer lambasts the NEA's
+    mission to subsidize artists as wasteful, citing controversial works like 'Piss
+    Christ' and explicit art by Lisa Mulberry to justify cuts. Toby Ziegler erupts
+    in passionate defense, clarifying the Endowment funds art via institutions, not
+    individuals, and decrying taxpayer vetoes on disliked expenditures. His frustration
+    peaks with a guttural noise as Tawny persists, underscoring deep administration
+    divides on cultural policy versus fiscal pragmatism. Sam interrupts, pulling Toby
+    aside to pivot to campaign finance loopholes, marking this clash as a microcosm
+    of broader re-election tensions and Toby's unyielding idealism.
+  episode_uuid: ep_sea_ser_the_west_wing_s03_e06
+  scene_sequence: 10
+  sequence_in_scene: 11
+  key_dialogue: *id005
+  is_flashback: false
+  location_uuid: ger_location_a2b09a60ea7e
+  theme_uuids:
+  - ger_theme_1a491bf2e892
+  arc_uuids: []
+  participations:
+  - character_uuid: ger_agent_04bbccb1e352
+    emotional_state: Calm urgency overriding the room's chaos
+    goals:
+    - Extract Toby from NEA debate for campaign finance pivot
+    - Enlighten on Supreme Court loophole for strategic response
+    what_happened: Enters abruptly with 'Hi,' interrupts Tawny's Mulberry critique
+      as Toby noises in frustration, politely excuses them, pulls Toby outside to
+      urgently dissect Buckley v. Valeo loophole on soft money ads.
+    observed_status: Enters abruptly with 'Hi,' interrupts Tawny's Mulberry critique
+      as Toby noises in frustration, politely excuses them, pulls Toby outside to
+      urgently dissect Buckley v. Valeo loophole on soft money ads.
+    beliefs:
+    - Legal precedents like Buckley enable pragmatic election tactics
+    - Re-election threats demand immediate staff realignment
+    observed_traits:
+    - decisive
+    - pragmatic
+    - composed
+    importance: primary
+    global_id: ger_agent_04bbccb1e352
+  - character_uuid: ger_agent_7854a70e34ea
+    emotional_state: Building frustration exploding into raw, guttural outrage
+    goals:
+    - Clarify and protect NEA's structural mission
+    - Repel Tawny's cultural revulsion with broader principles
+    what_happened: Defends NEA passionately by clarifying institutional grants over
+      individual ones eliminated by Republicans, admits personal aversion to modern
+      art but rejects veto principle, erupts in loud guttural frustration noise before
+      Sam pulls him outside.
+    observed_status: Defends NEA passionately by clarifying institutional grants over
+      individual ones eliminated by Republicans, admits personal aversion to modern
+      art but rejects veto principle, erupts in loud guttural frustration noise before
+      Sam pulls him outside.
+    beliefs:
+    - Government must fund art without content-based vetoes
+    - Institutional funding shields expression from politics
+    observed_traits:
+    - principled
+    - combative
+    - idealistic
+    importance: primary
+    global_id: ger_agent_7854a70e34ea
+  - character_uuid: ger_agent_bfa0ec99e6c8
+    emotional_state: Smug sarcasm veiling partisan zeal
+    goals:
+    - Discredit NEA subsidies via scandalous examples
+    - Pressure Toby into conceding taxpayer veto rights
+    what_happened: Aggressively challenges Toby on NEA funding, cites Oakenwood's
+      museum backdoor and Lisa Mulberry's explicit art mid-sentence, invokes Topeka
+      voters' disdain, persists sarcastically despite interruption, embodying fiscal
+      hawk assault.
+    observed_status: Aggressively challenges Toby on NEA funding, cites Oakenwood's
+      museum backdoor and Lisa Mulberry's explicit art mid-sentence, invokes Topeka
+      voters' disdain, persists sarcastically despite interruption, embodying fiscal
+      hawk assault.
+    beliefs:
+    - NEA wastes funds on offensive art
+    - Voters in heartland reject such expenditures
+    observed_traits:
+    - sarcastic
+    - aggressive
+    - unyielding
+    importance: primary
+    global_id: ger_agent_bfa0ec99e6c8
+  - character_uuid: ger_agent_57e3a907a780
+    emotional_state: Neutral (mentioned only)
+    goals:
+    - Sustain provocative art funding covertly
+    what_happened: Invoked by Tawny as Toby's friend who bypassed NEA cuts via direct
+      museum donations for controversial exhibits, absent but weaponized in the argument.
+    observed_status: Invoked by Tawny as Toby's friend who bypassed NEA cuts via direct
+      museum donations for controversial exhibits, absent but weaponized in the argument.
+    beliefs:
+    - Private channels protect expression from public veto
+    observed_traits:
+    - resourceful
+    - loyal
+    importance: primary
+    global_id: ger_agent_57e3a907a780
+  - character_uuid: ger_agent_cd4b217baf4c
+    emotional_state: Neutral (mentioned only)
+    goals:
+    - Push artistic boundaries through explicit installations
+    what_happened: Cited by Tawny as 28-year-old artist of anatomically incorrect
+      genitalia works displayed via NEA-funded museums, her explicit art fueling the
+      subsidy indictment before interruption.
+    observed_status: Cited by Tawny as 28-year-old artist of anatomically incorrect
+      genitalia works displayed via NEA-funded museums, her explicit art fueling the
+      subsidy indictment before interruption.
+    beliefs:
+    - Art thrives on unflinching anatomical exploration
+    observed_traits:
+    - provocative
+    - avant-garde
+    importance: primary
+    global_id: ger_agent_cd4b217baf4c
+  object_involvements:
+  - object_uuid: ger_object_8db9d4287cc7
+    description_of_involvement: Sam invokes the 1976 U.S. Supreme Court ruling post-interruption,
+      wielding its 'magic words' loophole—express advocacy terms like 'elect' or 'defeat'—to
+      justify unregulated issue ads in soft-money strategy, yanking debate from cultural
+      policy to electoral pragmatism and exposing White House tensions.
+    status_before_event: Abstract legal precedent, known but dormant in context
+    status_after_event: Activated as tactical weapon in hallway discussion
+    global_id: ger_object_8db9d4287cc7
+  location_involvements:
+  - location_uuid: ger_location_7423b10d7d15
+    description_of_involvement: Serves as crucible for explosive NEA debate where
+      Tawny and Toby clash ideologically amid presidential murals, tension mounting
+      through rapid-fire barbs until Toby's roar and Sam's extraction shifts action
+      outside, embodying White House culture-war fault line.
+    observed_atmosphere: Heated, claustrophobic with ideological thunder echoing off
+      muraled walls
+    functional_role: Arena for partisan policy confrontation
+    symbolic_significance: Encapsulates administration's fractured ideals under re-election
+      siege
+    access_restrictions: Restricted to senior staff and congressional visitors
+    key_environmental_details:
+    - Oppressive murals of past presidents
+    - Daylight filtering through windows amplifying verbal intensity
+    global_id: ger_location_7423b10d7d15
+  - location_uuid: ger_location_a2b09a60ea7e
+    description_of_involvement: Tawny hurls Topeka as rhetorical spear, mocking NEA
+      distinctions' irrelevance to heartland voters who prioritize roads over 'Piss
+      Christ,' grounding abstract policy in visceral populist revolt.
+    observed_atmosphere: Evoked as folksy, bewildered diner heartland
+    functional_role: Exemplar of taxpayer backlash
+    symbolic_significance: Represents flyover country disdain for elite cultural subsidies
+    access_restrictions: ''
+    key_environmental_details:
+    - Imagined grain silos and Main Street diners
+    - Weathered plains evoking fiscal austerity
+    global_id: ger_location_a2b09a60ea7e
   organization_involvements:
   - organization_uuid: ger_organization_5278bcf2674a
     description_of_involvement: Toby cites Republicans' prior NEA defunding push that
@@ -3702,14 +3702,14 @@ events:
     importance: primary
     global_id: ger_agent_13b3919c7717
   object_involvements:
-  - object_uuid: ger_object_0124919666bf
+  - object_uuid: ger_object_e9f4a24ebfd1
     description_of_involvement: Endures Bartlet's repeated forehead slams in visceral
       outburst of frustration against Albie's dire warnings, transforming from executive
       fixture into raw emblem of leadership's breaking point, channeling pent-up crisis
       rage without yielding.
     status_before_event: Intact polished wood in Oval Office centerpiece
     status_after_event: Resonant from impacts, unscathed sentinel of strain
-    global_id: ger_object_0124919666bf
+    global_id: ger_object_e9f4a24ebfd1
   location_involvements:
   - location_uuid: ger_location_7d11167cd436
     description_of_involvement: Conjured by Albie as watery grave of USS Wasp amid
@@ -4203,23 +4203,6 @@ events:
     institutional_impact: ''
     internal_dynamics: ''
     global_id: ger_organization_51fb50229cdd
-  - organization_uuid: ger_organization_55a49abeab7d
-    description_of_involvement: US Congress drives the conflict as the body proposing
-      drastic NEA cuts to $105 million, lambasted by Toby as culturally regressive
-      and defended by Tawny as fiscally sound, positioning it as the epicenter of
-      White House budget trench warfare.
-    active_representation: Via Tawny Cryer as Appropriations Committee advocate
-    power_dynamics: Asserting legislative budgetary supremacy over executive arts
-      defense
-    organizational_goals:
-    - Enforce arts spending austerity
-    - Reallocate funds from cultural programs
-    influence_mechanisms:
-    - Appropriations committee leverage
-    - Fiscal policy mandates
-    institutional_impact: Exposes partisan rifts in federal cultural funding debates
-    internal_dynamics: ''
-    global_id: ger_organization_55a49abeab7d
   - organization_uuid: ger_organization_24914af2b85a
     description_of_involvement: National Parks are thrust forward by Tawny as the
       superior funding priority over arts, with calls for bolstered security framing
@@ -4251,6 +4234,23 @@ events:
     institutional_impact: Exemplifies intra-cultural funding vulnerabilities
     internal_dynamics: ''
     global_id: ger_organization_72d679c6efbc
+  - organization_uuid: ger_organization_55a49abeab7d
+    description_of_involvement: US Congress drives the conflict as the body proposing
+      drastic NEA cuts to $105 million, lambasted by Toby as culturally regressive
+      and defended by Tawny as fiscally sound, positioning it as the epicenter of
+      White House budget trench warfare.
+    active_representation: Via Tawny Cryer as Appropriations Committee advocate
+    power_dynamics: Asserting legislative budgetary supremacy over executive arts
+      defense
+    organizational_goals:
+    - Enforce arts spending austerity
+    - Reallocate funds from cultural programs
+    influence_mechanisms:
+    - Appropriations committee leverage
+    - Fiscal policy mandates
+    institutional_impact: Exposes partisan rifts in federal cultural funding debates
+    internal_dynamics: ''
+    global_id: ger_organization_55a49abeab7d
   derived_from_beat_uuids:
   - beat_67f514033983fc6a
   - beat_430bf4e566556823
@@ -4282,276 +4282,6 @@ events:
   - 'OLIVER: "Truth isn''t a luxury. You''re gonna go in there, you''re gonna swear
     an oath. You''re gonna get asked questions, you''re gonna tell the truth. It''s
     the way you stand up and say ''STOP!''"'
-  is_flashback: false
-  location_uuid: ger_location_4214b2ba3b71
-  theme_uuids: []
-  arc_uuids:
-  - ger_conflictarc_c998eba0810b
-  participations:
-  - character_uuid: ger_agent_85d27b56ea9b
-    emotional_state: persistent and frustrated
-    goals:
-    - Escalate her response to legal jeopardy by offering a humiliating self-sacrifice
-      to end the investigation
-    - Gain Oliver's support to pitch the plan to the President
-    what_happened: Proposes voluntarily suspending her medical license in New Hampshire,
-      Missouri, and Arizona for the duration of Jed's terms, paying a fine, recording
-      the violation in the practitioners' data bank, and resigning from all boards
-      to give opponents a win and halt the investigation; seeks Oliver's opinion and
-      help to convince the President.
-    observed_status: Proposes voluntarily suspending her medical license in New Hampshire,
-      Missouri, and Arizona for the duration of Jed's terms, paying a fine, recording
-      the violation in the practitioners' data bank, and resigning from all boards
-      to give opponents a win and halt the investigation; seeks Oliver's opinion and
-      help to convince the President.
-    beliefs: []
-    observed_traits: []
-    importance: primary
-    global_id: ger_agent_85d27b56ea9b
-  - character_uuid: ger_agent_198649bce78f
-    emotional_state: Determined persistence veiling mounting frustration and desperation
-    goals:
-    - Secure Oliver's support to pitch plan to President
-    - End investigation by granting opponents a symbolic victory
-    what_happened: Wheelchair-bound from injury, Abbey pitches her detailed self-sacrifice
-      plan with urgency, pressing Oliver for endorsement and aid in swaying Jed, bantering
-      wittily amid pushback to mask vulnerability.
-    observed_status: Wheelchair-bound from injury, Abbey pitches her detailed self-sacrifice
-      plan with urgency, pressing Oliver for endorsement and aid in swaying Jed, bantering
-      wittily amid pushback to mask vulnerability.
-    beliefs:
-    - Self-sacrifice can shield Jed's presidency from scandal
-    - Political survival demands pragmatic concessions over purity
-    observed_traits:
-    - persistent
-    - defiant
-    - strategic
-    - frustrated
-    importance: primary
-    global_id: ger_agent_198649bce78f
-  - character_uuid: ger_agent_467d0033476d
-    emotional_state: Morally outraged beneath cool, sarcastic detachment
-    goals:
-    - Reject ethically compromised tactics
-    - Compel Abbey to testify honestly against political weaponization
-    what_happened: Seated in his office, Oliver initially concedes the plan's cunning,
-      then firmly refuses assistance, delivering a principled tirade on truth-telling
-      and politicized probes, capped with sardonic retort.
-    observed_status: Seated in his office, Oliver initially concedes the plan's cunning,
-      then firmly refuses assistance, delivering a principled tirade on truth-telling
-      and politicized probes, capped with sardonic retort.
-    beliefs:
-    - Truth is essential to resist criminalization of dissent
-    - No counsel duty extends to abetting moral shortcuts
-    observed_traits:
-    - principled
-    - sardonic
-    - unyielding
-    - dispassionate
-    importance: primary
-    global_id: ger_agent_467d0033476d
-  object_involvements: []
-  location_involvements:
-  - location_uuid: ger_location_4214b2ba3b71
-    description_of_involvement: The Counsel's office frames the intimate showdown
-      as daylight streams through blinds, casting stark shadows on Abbey's wheelchair
-      and Oliver's desk, amplifying the claustrophobic tension of their ethical duel
-      and underscoring the administration's legal vulnerabilities.
-    observed_atmosphere: Tense and interrogative, charged with sarcasm and defiance
-    functional_role: Arena for private strategic confrontation
-    symbolic_significance: Legal bunker vivisecting principle versus expediency
-    access_restrictions: Restricted to high-level White House personnel
-    key_environmental_details:
-    - Daylight slashing through blinds
-    - Abbey's wheelchair presence
-    - Professional office setup fostering confrontation
-    global_id: ger_location_4214b2ba3b71
-  - location_uuid: ger_location_374d6c6bc467
-    description_of_involvement: Arizona stands as the third state in Abbey's bold
-      proposal for license suspension, fines, data bank notation, and resignations,
-      framed as a distant anvil for self-inflicted blows to halt probes and protect
-      Bartlet's legacy amid scandal.
-    observed_atmosphere: Abstractly arid and punitive in invocation
-    functional_role: Jurisdictional target for voluntary capitulation
-    symbolic_significance: Expansive terrain of calculated ethical hemorrhage
-    access_restrictions: ''
-    key_environmental_details:
-    - Explicitly listed by Abbey
-    - Tied to multi-state gambit
-    global_id: ger_location_374d6c6bc467
-  - location_uuid: ger_location_92789211a8b3
-    description_of_involvement: Missouri emerges as a key jurisdiction in Abbey's
-      triad of sacrificial states, invoked to detail her license suspension gambit—fines,
-      data bank entry, board exits—positioning it as a regulatory battleground where
-      medical ethics yield to political absolution.
-    observed_atmosphere: Remote yet oppressively looming in discussion
-    functional_role: Referential site of proposed regulatory penalty
-    symbolic_significance: Midwestern colossus of bureaucratic sacrifice
-    access_restrictions: ''
-    key_environmental_details:
-    - Named in tense dialogue
-    - Evokes practitioner oversight structures
-    global_id: ger_location_92789211a8b3
-  organization_involvements: []
-  derived_from_beat_uuids: &id008
-  - beat_3fd9bfd13ce37aab
-  - beat_d07bc2ef31cc188c
-  - beat_bc5e4f26251df676
-  - beat_3233ec9e2279df27
-  - beat_a4ed3db1ea969608
-  - beat_d6e6ec205447ab74
-  - beat_0ae3cd97856b5b7d
-  - beat_c8208488ae561728
-  source_season: 3
-  source_database: westwing.s03
-- fabula_uuid: cand_evt_scene_ad26976702bae728_1
-  global_id: null
-  title: Oliver Vehemently Rejects Abbey's License Suspension Ploy
-  description: 'In a tense showdown, First Lady Abbey Bartlet proposes a humiliating
-    self-sacrifice: voluntarily suspending her medical license in three states for
-    the duration of President Bartlet''s terms, paying fines, entering the practitioners''
-    data bank, and resigning all boards to grant opponents a ''win'' and halt the
-    investigation. Oliver Babish coolly concedes its tactical savvy but recoils in
-    moral outrage, refusing to endorse or pitch it to the President. He lambasts it
-    as ethically rancid, insisting Abbey confront the hearing with raw truth to defy
-    the criminalization of politics. This pivotal clash excavates the administration''s
-    fault line—principle versus expediency—escalating Abbey''s crisis while affirming
-    Oliver''s unyielding integrity as a bulwark against corruption.'
-  episode_uuid: ep_sea_ser_the_west_wing_s03_e06
-  scene_sequence: 16
-  sequence_in_scene: 20
-  key_dialogue: *id007
-  is_flashback: false
-  location_uuid: ger_location_374d6c6bc467
-  theme_uuids: []
-  arc_uuids:
-  - ger_conflictarc_c998eba0810b
-  participations:
-  - character_uuid: ger_agent_85d27b56ea9b
-    emotional_state: persistent and frustrated
-    goals:
-    - Escalate her response to legal jeopardy by offering a humiliating self-sacrifice
-      to end the investigation
-    - Gain Oliver's support to pitch the plan to the President
-    what_happened: Proposes voluntarily suspending her medical license in New Hampshire,
-      Missouri, and Arizona for the duration of Jed's terms, paying a fine, recording
-      the violation in the practitioners' data bank, and resigning from all boards
-      to give opponents a win and halt the investigation; seeks Oliver's opinion and
-      help to convince the President.
-    observed_status: Proposes voluntarily suspending her medical license in New Hampshire,
-      Missouri, and Arizona for the duration of Jed's terms, paying a fine, recording
-      the violation in the practitioners' data bank, and resigning from all boards
-      to give opponents a win and halt the investigation; seeks Oliver's opinion and
-      help to convince the President.
-    beliefs: []
-    observed_traits: []
-    importance: primary
-    global_id: ger_agent_85d27b56ea9b
-  - character_uuid: ger_agent_198649bce78f
-    emotional_state: Determined persistence veiling mounting frustration and desperation
-    goals:
-    - Secure Oliver's support to pitch plan to President
-    - End investigation by granting opponents a symbolic victory
-    what_happened: Wheelchair-bound from injury, Abbey pitches her detailed self-sacrifice
-      plan with urgency, pressing Oliver for endorsement and aid in swaying Jed, bantering
-      wittily amid pushback to mask vulnerability.
-    observed_status: Wheelchair-bound from injury, Abbey pitches her detailed self-sacrifice
-      plan with urgency, pressing Oliver for endorsement and aid in swaying Jed, bantering
-      wittily amid pushback to mask vulnerability.
-    beliefs:
-    - Self-sacrifice can shield Jed's presidency from scandal
-    - Political survival demands pragmatic concessions over purity
-    observed_traits:
-    - persistent
-    - defiant
-    - strategic
-    - frustrated
-    importance: primary
-    global_id: ger_agent_198649bce78f
-  - character_uuid: ger_agent_467d0033476d
-    emotional_state: Morally outraged beneath cool, sarcastic detachment
-    goals:
-    - Reject ethically compromised tactics
-    - Compel Abbey to testify honestly against political weaponization
-    what_happened: Seated in his office, Oliver initially concedes the plan's cunning,
-      then firmly refuses assistance, delivering a principled tirade on truth-telling
-      and politicized probes, capped with sardonic retort.
-    observed_status: Seated in his office, Oliver initially concedes the plan's cunning,
-      then firmly refuses assistance, delivering a principled tirade on truth-telling
-      and politicized probes, capped with sardonic retort.
-    beliefs:
-    - Truth is essential to resist criminalization of dissent
-    - No counsel duty extends to abetting moral shortcuts
-    observed_traits:
-    - principled
-    - sardonic
-    - unyielding
-    - dispassionate
-    importance: primary
-    global_id: ger_agent_467d0033476d
-  object_involvements: []
-  location_involvements:
-  - location_uuid: ger_location_4214b2ba3b71
-    description_of_involvement: The Counsel's office frames the intimate showdown
-      as daylight streams through blinds, casting stark shadows on Abbey's wheelchair
-      and Oliver's desk, amplifying the claustrophobic tension of their ethical duel
-      and underscoring the administration's legal vulnerabilities.
-    observed_atmosphere: Tense and interrogative, charged with sarcasm and defiance
-    functional_role: Arena for private strategic confrontation
-    symbolic_significance: Legal bunker vivisecting principle versus expediency
-    access_restrictions: Restricted to high-level White House personnel
-    key_environmental_details:
-    - Daylight slashing through blinds
-    - Abbey's wheelchair presence
-    - Professional office setup fostering confrontation
-    global_id: ger_location_4214b2ba3b71
-  - location_uuid: ger_location_374d6c6bc467
-    description_of_involvement: Arizona stands as the third state in Abbey's bold
-      proposal for license suspension, fines, data bank notation, and resignations,
-      framed as a distant anvil for self-inflicted blows to halt probes and protect
-      Bartlet's legacy amid scandal.
-    observed_atmosphere: Abstractly arid and punitive in invocation
-    functional_role: Jurisdictional target for voluntary capitulation
-    symbolic_significance: Expansive terrain of calculated ethical hemorrhage
-    access_restrictions: ''
-    key_environmental_details:
-    - Explicitly listed by Abbey
-    - Tied to multi-state gambit
-    global_id: ger_location_374d6c6bc467
-  - location_uuid: ger_location_92789211a8b3
-    description_of_involvement: Missouri emerges as a key jurisdiction in Abbey's
-      triad of sacrificial states, invoked to detail her license suspension gambit—fines,
-      data bank entry, board exits—positioning it as a regulatory battleground where
-      medical ethics yield to political absolution.
-    observed_atmosphere: Remote yet oppressively looming in discussion
-    functional_role: Referential site of proposed regulatory penalty
-    symbolic_significance: Midwestern colossus of bureaucratic sacrifice
-    access_restrictions: ''
-    key_environmental_details:
-    - Named in tense dialogue
-    - Evokes practitioner oversight structures
-    global_id: ger_location_92789211a8b3
-  organization_involvements: []
-  derived_from_beat_uuids: *id008
-  source_season: 3
-  source_database: westwing.s03
-- fabula_uuid: cand_evt_scene_ad26976702bae728_1
-  global_id: null
-  title: Oliver Vehemently Rejects Abbey's License Suspension Ploy
-  description: 'In a tense showdown, First Lady Abbey Bartlet proposes a humiliating
-    self-sacrifice: voluntarily suspending her medical license in three states for
-    the duration of President Bartlet''s terms, paying fines, entering the practitioners''
-    data bank, and resigning all boards to grant opponents a ''win'' and halt the
-    investigation. Oliver Babish coolly concedes its tactical savvy but recoils in
-    moral outrage, refusing to endorse or pitch it to the President. He lambasts it
-    as ethically rancid, insisting Abbey confront the hearing with raw truth to defy
-    the criminalization of politics. This pivotal clash excavates the administration''s
-    fault line—principle versus expediency—escalating Abbey''s crisis while affirming
-    Oliver''s unyielding integrity as a bulwark against corruption.'
-  episode_uuid: ep_sea_ser_the_west_wing_s03_e06
-  scene_sequence: 16
-  sequence_in_scene: 20
-  key_dialogue: *id007
   is_flashback: false
   location_uuid: ger_location_92789211a8b3
   theme_uuids: []
@@ -4622,6 +4352,32 @@ events:
     global_id: ger_agent_467d0033476d
   object_involvements: []
   location_involvements:
+  - location_uuid: ger_location_92789211a8b3
+    description_of_involvement: Missouri emerges as a key jurisdiction in Abbey's
+      triad of sacrificial states, invoked to detail her license suspension gambit—fines,
+      data bank entry, board exits—positioning it as a regulatory battleground where
+      medical ethics yield to political absolution.
+    observed_atmosphere: Remote yet oppressively looming in discussion
+    functional_role: Referential site of proposed regulatory penalty
+    symbolic_significance: Midwestern colossus of bureaucratic sacrifice
+    access_restrictions: ''
+    key_environmental_details:
+    - Named in tense dialogue
+    - Evokes practitioner oversight structures
+    global_id: ger_location_92789211a8b3
+  - location_uuid: ger_location_924655239489
+    description_of_involvement: Arizona stands as the third state in Abbey's bold
+      proposal for license suspension, fines, data bank notation, and resignations,
+      framed as a distant anvil for self-inflicted blows to halt probes and protect
+      Bartlet's legacy amid scandal.
+    observed_atmosphere: Abstractly arid and punitive in invocation
+    functional_role: Jurisdictional target for voluntary capitulation
+    symbolic_significance: Expansive terrain of calculated ethical hemorrhage
+    access_restrictions: ''
+    key_environmental_details:
+    - Explicitly listed by Abbey
+    - Tied to multi-state gambit
+    global_id: ger_location_924655239489
   - location_uuid: ger_location_4214b2ba3b71
     description_of_involvement: The Counsel's office frames the intimate showdown
       as daylight streams through blinds, casting stark shadows on Abbey's wheelchair
@@ -4636,19 +4392,105 @@ events:
     - Abbey's wheelchair presence
     - Professional office setup fostering confrontation
     global_id: ger_location_4214b2ba3b71
-  - location_uuid: ger_location_374d6c6bc467
-    description_of_involvement: Arizona stands as the third state in Abbey's bold
-      proposal for license suspension, fines, data bank notation, and resignations,
-      framed as a distant anvil for self-inflicted blows to halt probes and protect
-      Bartlet's legacy amid scandal.
-    observed_atmosphere: Abstractly arid and punitive in invocation
-    functional_role: Jurisdictional target for voluntary capitulation
-    symbolic_significance: Expansive terrain of calculated ethical hemorrhage
-    access_restrictions: ''
-    key_environmental_details:
-    - Explicitly listed by Abbey
-    - Tied to multi-state gambit
-    global_id: ger_location_374d6c6bc467
+  organization_involvements: []
+  derived_from_beat_uuids: &id008
+  - beat_3fd9bfd13ce37aab
+  - beat_d07bc2ef31cc188c
+  - beat_bc5e4f26251df676
+  - beat_3233ec9e2279df27
+  - beat_a4ed3db1ea969608
+  - beat_d6e6ec205447ab74
+  - beat_0ae3cd97856b5b7d
+  - beat_c8208488ae561728
+  source_season: 3
+  source_database: westwing.s03
+- fabula_uuid: cand_evt_scene_ad26976702bae728_1
+  global_id: null
+  title: Oliver Vehemently Rejects Abbey's License Suspension Ploy
+  description: 'In a tense showdown, First Lady Abbey Bartlet proposes a humiliating
+    self-sacrifice: voluntarily suspending her medical license in three states for
+    the duration of President Bartlet''s terms, paying fines, entering the practitioners''
+    data bank, and resigning all boards to grant opponents a ''win'' and halt the
+    investigation. Oliver Babish coolly concedes its tactical savvy but recoils in
+    moral outrage, refusing to endorse or pitch it to the President. He lambasts it
+    as ethically rancid, insisting Abbey confront the hearing with raw truth to defy
+    the criminalization of politics. This pivotal clash excavates the administration''s
+    fault line—principle versus expediency—escalating Abbey''s crisis while affirming
+    Oliver''s unyielding integrity as a bulwark against corruption.'
+  episode_uuid: ep_sea_ser_the_west_wing_s03_e06
+  scene_sequence: 16
+  sequence_in_scene: 20
+  key_dialogue: *id007
+  is_flashback: false
+  location_uuid: ger_location_924655239489
+  theme_uuids: []
+  arc_uuids:
+  - ger_conflictarc_c998eba0810b
+  participations:
+  - character_uuid: ger_agent_85d27b56ea9b
+    emotional_state: persistent and frustrated
+    goals:
+    - Escalate her response to legal jeopardy by offering a humiliating self-sacrifice
+      to end the investigation
+    - Gain Oliver's support to pitch the plan to the President
+    what_happened: Proposes voluntarily suspending her medical license in New Hampshire,
+      Missouri, and Arizona for the duration of Jed's terms, paying a fine, recording
+      the violation in the practitioners' data bank, and resigning from all boards
+      to give opponents a win and halt the investigation; seeks Oliver's opinion and
+      help to convince the President.
+    observed_status: Proposes voluntarily suspending her medical license in New Hampshire,
+      Missouri, and Arizona for the duration of Jed's terms, paying a fine, recording
+      the violation in the practitioners' data bank, and resigning from all boards
+      to give opponents a win and halt the investigation; seeks Oliver's opinion and
+      help to convince the President.
+    beliefs: []
+    observed_traits: []
+    importance: primary
+    global_id: ger_agent_85d27b56ea9b
+  - character_uuid: ger_agent_198649bce78f
+    emotional_state: Determined persistence veiling mounting frustration and desperation
+    goals:
+    - Secure Oliver's support to pitch plan to President
+    - End investigation by granting opponents a symbolic victory
+    what_happened: Wheelchair-bound from injury, Abbey pitches her detailed self-sacrifice
+      plan with urgency, pressing Oliver for endorsement and aid in swaying Jed, bantering
+      wittily amid pushback to mask vulnerability.
+    observed_status: Wheelchair-bound from injury, Abbey pitches her detailed self-sacrifice
+      plan with urgency, pressing Oliver for endorsement and aid in swaying Jed, bantering
+      wittily amid pushback to mask vulnerability.
+    beliefs:
+    - Self-sacrifice can shield Jed's presidency from scandal
+    - Political survival demands pragmatic concessions over purity
+    observed_traits:
+    - persistent
+    - defiant
+    - strategic
+    - frustrated
+    importance: primary
+    global_id: ger_agent_198649bce78f
+  - character_uuid: ger_agent_467d0033476d
+    emotional_state: Morally outraged beneath cool, sarcastic detachment
+    goals:
+    - Reject ethically compromised tactics
+    - Compel Abbey to testify honestly against political weaponization
+    what_happened: Seated in his office, Oliver initially concedes the plan's cunning,
+      then firmly refuses assistance, delivering a principled tirade on truth-telling
+      and politicized probes, capped with sardonic retort.
+    observed_status: Seated in his office, Oliver initially concedes the plan's cunning,
+      then firmly refuses assistance, delivering a principled tirade on truth-telling
+      and politicized probes, capped with sardonic retort.
+    beliefs:
+    - Truth is essential to resist criminalization of dissent
+    - No counsel duty extends to abetting moral shortcuts
+    observed_traits:
+    - principled
+    - sardonic
+    - unyielding
+    - dispassionate
+    importance: primary
+    global_id: ger_agent_467d0033476d
+  object_involvements: []
+  location_involvements:
   - location_uuid: ger_location_92789211a8b3
     description_of_involvement: Missouri emerges as a key jurisdiction in Abbey's
       triad of sacrificial states, invoked to detail her license suspension gambit—fines,
@@ -4662,6 +4504,164 @@ events:
     - Named in tense dialogue
     - Evokes practitioner oversight structures
     global_id: ger_location_92789211a8b3
+  - location_uuid: ger_location_924655239489
+    description_of_involvement: Arizona stands as the third state in Abbey's bold
+      proposal for license suspension, fines, data bank notation, and resignations,
+      framed as a distant anvil for self-inflicted blows to halt probes and protect
+      Bartlet's legacy amid scandal.
+    observed_atmosphere: Abstractly arid and punitive in invocation
+    functional_role: Jurisdictional target for voluntary capitulation
+    symbolic_significance: Expansive terrain of calculated ethical hemorrhage
+    access_restrictions: ''
+    key_environmental_details:
+    - Explicitly listed by Abbey
+    - Tied to multi-state gambit
+    global_id: ger_location_924655239489
+  - location_uuid: ger_location_4214b2ba3b71
+    description_of_involvement: The Counsel's office frames the intimate showdown
+      as daylight streams through blinds, casting stark shadows on Abbey's wheelchair
+      and Oliver's desk, amplifying the claustrophobic tension of their ethical duel
+      and underscoring the administration's legal vulnerabilities.
+    observed_atmosphere: Tense and interrogative, charged with sarcasm and defiance
+    functional_role: Arena for private strategic confrontation
+    symbolic_significance: Legal bunker vivisecting principle versus expediency
+    access_restrictions: Restricted to high-level White House personnel
+    key_environmental_details:
+    - Daylight slashing through blinds
+    - Abbey's wheelchair presence
+    - Professional office setup fostering confrontation
+    global_id: ger_location_4214b2ba3b71
+  organization_involvements: []
+  derived_from_beat_uuids: *id008
+  source_season: 3
+  source_database: westwing.s03
+- fabula_uuid: cand_evt_scene_ad26976702bae728_1
+  global_id: null
+  title: Oliver Vehemently Rejects Abbey's License Suspension Ploy
+  description: 'In a tense showdown, First Lady Abbey Bartlet proposes a humiliating
+    self-sacrifice: voluntarily suspending her medical license in three states for
+    the duration of President Bartlet''s terms, paying fines, entering the practitioners''
+    data bank, and resigning all boards to grant opponents a ''win'' and halt the
+    investigation. Oliver Babish coolly concedes its tactical savvy but recoils in
+    moral outrage, refusing to endorse or pitch it to the President. He lambasts it
+    as ethically rancid, insisting Abbey confront the hearing with raw truth to defy
+    the criminalization of politics. This pivotal clash excavates the administration''s
+    fault line—principle versus expediency—escalating Abbey''s crisis while affirming
+    Oliver''s unyielding integrity as a bulwark against corruption.'
+  episode_uuid: ep_sea_ser_the_west_wing_s03_e06
+  scene_sequence: 16
+  sequence_in_scene: 20
+  key_dialogue: *id007
+  is_flashback: false
+  location_uuid: ger_location_4214b2ba3b71
+  theme_uuids: []
+  arc_uuids:
+  - ger_conflictarc_c998eba0810b
+  participations:
+  - character_uuid: ger_agent_85d27b56ea9b
+    emotional_state: persistent and frustrated
+    goals:
+    - Escalate her response to legal jeopardy by offering a humiliating self-sacrifice
+      to end the investigation
+    - Gain Oliver's support to pitch the plan to the President
+    what_happened: Proposes voluntarily suspending her medical license in New Hampshire,
+      Missouri, and Arizona for the duration of Jed's terms, paying a fine, recording
+      the violation in the practitioners' data bank, and resigning from all boards
+      to give opponents a win and halt the investigation; seeks Oliver's opinion and
+      help to convince the President.
+    observed_status: Proposes voluntarily suspending her medical license in New Hampshire,
+      Missouri, and Arizona for the duration of Jed's terms, paying a fine, recording
+      the violation in the practitioners' data bank, and resigning from all boards
+      to give opponents a win and halt the investigation; seeks Oliver's opinion and
+      help to convince the President.
+    beliefs: []
+    observed_traits: []
+    importance: primary
+    global_id: ger_agent_85d27b56ea9b
+  - character_uuid: ger_agent_198649bce78f
+    emotional_state: Determined persistence veiling mounting frustration and desperation
+    goals:
+    - Secure Oliver's support to pitch plan to President
+    - End investigation by granting opponents a symbolic victory
+    what_happened: Wheelchair-bound from injury, Abbey pitches her detailed self-sacrifice
+      plan with urgency, pressing Oliver for endorsement and aid in swaying Jed, bantering
+      wittily amid pushback to mask vulnerability.
+    observed_status: Wheelchair-bound from injury, Abbey pitches her detailed self-sacrifice
+      plan with urgency, pressing Oliver for endorsement and aid in swaying Jed, bantering
+      wittily amid pushback to mask vulnerability.
+    beliefs:
+    - Self-sacrifice can shield Jed's presidency from scandal
+    - Political survival demands pragmatic concessions over purity
+    observed_traits:
+    - persistent
+    - defiant
+    - strategic
+    - frustrated
+    importance: primary
+    global_id: ger_agent_198649bce78f
+  - character_uuid: ger_agent_467d0033476d
+    emotional_state: Morally outraged beneath cool, sarcastic detachment
+    goals:
+    - Reject ethically compromised tactics
+    - Compel Abbey to testify honestly against political weaponization
+    what_happened: Seated in his office, Oliver initially concedes the plan's cunning,
+      then firmly refuses assistance, delivering a principled tirade on truth-telling
+      and politicized probes, capped with sardonic retort.
+    observed_status: Seated in his office, Oliver initially concedes the plan's cunning,
+      then firmly refuses assistance, delivering a principled tirade on truth-telling
+      and politicized probes, capped with sardonic retort.
+    beliefs:
+    - Truth is essential to resist criminalization of dissent
+    - No counsel duty extends to abetting moral shortcuts
+    observed_traits:
+    - principled
+    - sardonic
+    - unyielding
+    - dispassionate
+    importance: primary
+    global_id: ger_agent_467d0033476d
+  object_involvements: []
+  location_involvements:
+  - location_uuid: ger_location_92789211a8b3
+    description_of_involvement: Missouri emerges as a key jurisdiction in Abbey's
+      triad of sacrificial states, invoked to detail her license suspension gambit—fines,
+      data bank entry, board exits—positioning it as a regulatory battleground where
+      medical ethics yield to political absolution.
+    observed_atmosphere: Remote yet oppressively looming in discussion
+    functional_role: Referential site of proposed regulatory penalty
+    symbolic_significance: Midwestern colossus of bureaucratic sacrifice
+    access_restrictions: ''
+    key_environmental_details:
+    - Named in tense dialogue
+    - Evokes practitioner oversight structures
+    global_id: ger_location_92789211a8b3
+  - location_uuid: ger_location_924655239489
+    description_of_involvement: Arizona stands as the third state in Abbey's bold
+      proposal for license suspension, fines, data bank notation, and resignations,
+      framed as a distant anvil for self-inflicted blows to halt probes and protect
+      Bartlet's legacy amid scandal.
+    observed_atmosphere: Abstractly arid and punitive in invocation
+    functional_role: Jurisdictional target for voluntary capitulation
+    symbolic_significance: Expansive terrain of calculated ethical hemorrhage
+    access_restrictions: ''
+    key_environmental_details:
+    - Explicitly listed by Abbey
+    - Tied to multi-state gambit
+    global_id: ger_location_924655239489
+  - location_uuid: ger_location_4214b2ba3b71
+    description_of_involvement: The Counsel's office frames the intimate showdown
+      as daylight streams through blinds, casting stark shadows on Abbey's wheelchair
+      and Oliver's desk, amplifying the claustrophobic tension of their ethical duel
+      and underscoring the administration's legal vulnerabilities.
+    observed_atmosphere: Tense and interrogative, charged with sarcasm and defiance
+    functional_role: Arena for private strategic confrontation
+    symbolic_significance: Legal bunker vivisecting principle versus expediency
+    access_restrictions: Restricted to high-level White House personnel
+    key_environmental_details:
+    - Daylight slashing through blinds
+    - Abbey's wheelchair presence
+    - Professional office setup fostering confrontation
+    global_id: ger_location_4214b2ba3b71
   organization_involvements: []
   derived_from_beat_uuids: *id008
   source_season: 3

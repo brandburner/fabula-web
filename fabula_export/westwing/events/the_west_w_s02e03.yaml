@@ -1,5 +1,5 @@
 # Events for The Midterms
-# Generated: 2026-02-10T12:16:54.851743
+# Generated: 2026-02-22T16:32:55.505853
 
 episode_uuid: ep_sea_ser_the_west_wing_s02_e03
 episode_title: The Midterms
@@ -1786,6 +1786,25 @@ events:
     - chatty
     importance: primary
     global_id: ger_agent_3a5efeceb247
+  - character_uuid: ger_agent_1f0b1cae13c5
+    emotional_state: Unobserved, but implied practical concern over malfunction.
+    goals:
+    - Resolve computer issues efficiently
+    - Maintain workflow despite absence
+    what_happened: Mrs. Landingham is absent at a funeral, but her request for computer
+      repair is relayed by Margaret to Charlie, emphasizing her reliance on specific
+      technical support.
+    observed_status: Mrs. Landingham is absent at a funeral, but her request for computer
+      repair is relayed by Margaret to Charlie, emphasizing her reliance on specific
+      technical support.
+    beliefs:
+    - Personal trust in technicians like Mackintosh ensures reliability
+    - Duty persists even at personal events like funerals
+    observed_traits:
+    - trusting
+    - particular
+    importance: primary
+    global_id: ger_agent_1f0b1cae13c5
   - character_uuid: ger_agent_04bbccb1e352
     emotional_state: ''
     goals:
@@ -1821,25 +1840,28 @@ events:
     observed_traits: []
     importance: primary
     global_id: ger_agent_ffabce55dee1
-  - character_uuid: ger_agent_8511b338f685
-    emotional_state: Unobserved, but implied practical concern over malfunction.
+  - character_uuid: ger_agent_a340dc1bc0ee
+    emotional_state: Frustrated and sarcastic, masking hurt from feeling sidelined.
     goals:
-    - Resolve computer issues efficiently
-    - Maintain workflow despite absence
-    what_happened: Mrs. Landingham is absent at a funeral, but her request for computer
-      repair is relayed by Margaret to Charlie, emphasizing her reliance on specific
-      technical support.
-    observed_status: Mrs. Landingham is absent at a funeral, but her request for computer
-      repair is relayed by Margaret to Charlie, emphasizing her reliance on specific
-      technical support.
+    - Demand accountability for Charlie's unreturned call
+    - Reassert connection in their strained romance
+    what_happened: Zoey enters seeking Charlie explicitly, banters with Margaret about
+      acalculia, pulls him into the hallway to confront him sharply about ignoring
+      her call from the night before, presses on their nine-month relationship's neglect
+      before he slips away to work.
+    observed_status: Zoey enters seeking Charlie explicitly, banters with Margaret
+      about acalculia, pulls him into the hallway to confront him sharply about ignoring
+      her call from the night before, presses on their nine-month relationship's neglect
+      before he slips away to work.
     beliefs:
-    - Personal trust in technicians like Mackintosh ensures reliability
-    - Duty persists even at personal events like funerals
+    - Relationships require consistent effort despite duties
+    - Direct confrontation yields results over passive waiting
     observed_traits:
-    - trusting
-    - particular
+    - assertive
+    - sarcastic
+    - persistent
     importance: primary
-    global_id: ger_agent_8511b338f685
+    global_id: ger_agent_a340dc1bc0ee
   - character_uuid: ger_agent_89096fbce574
     emotional_state: Unobserved, positioned as reliable fixer.
     goals:
@@ -1868,28 +1890,6 @@ events:
     observed_traits: []
     importance: primary
     global_id: ger_agent_435475374188
-  - character_uuid: ger_agent_1e9e45a7bd44
-    emotional_state: Frustrated and sarcastic, masking hurt from feeling sidelined.
-    goals:
-    - Demand accountability for Charlie's unreturned call
-    - Reassert connection in their strained romance
-    what_happened: Zoey enters seeking Charlie explicitly, banters with Margaret about
-      acalculia, pulls him into the hallway to confront him sharply about ignoring
-      her call from the night before, presses on their nine-month relationship's neglect
-      before he slips away to work.
-    observed_status: Zoey enters seeking Charlie explicitly, banters with Margaret
-      about acalculia, pulls him into the hallway to confront him sharply about ignoring
-      her call from the night before, presses on their nine-month relationship's neglect
-      before he slips away to work.
-    beliefs:
-    - Relationships require consistent effort despite duties
-    - Direct confrontation yields results over passive waiting
-    observed_traits:
-    - assertive
-    - sarcastic
-    - persistent
-    importance: primary
-    global_id: ger_agent_1e9e45a7bd44
   object_involvements:
   - object_uuid: ger_object_21a08ca6bbe6
     description_of_involvement: Charlie's phone serves as the anchor of his divided
@@ -2060,6 +2060,23 @@ events:
     - informative
     importance: primary
     global_id: ger_agent_3a5efeceb247
+  - character_uuid: ger_agent_1f0b1cae13c5
+    emotional_state: Preoccupied by external commitments
+    goals:
+    - Resolve computer glitches via trusted tech
+    - Maintain operational flow
+    what_happened: Mrs. Landingham is absent at a funeral but her computer malfunction
+      prompts the note Charlie delivers to Bartlet for scheduling resolution.
+    observed_status: Mrs. Landingham is absent at a funeral but her computer malfunction
+      prompts the note Charlie delivers to Bartlet for scheduling resolution.
+    beliefs:
+    - Personal tech aides ensure reliability
+    - Absence doesn't halt duties
+    observed_traits:
+    - trusting
+    - routine-oriented
+    importance: primary
+    global_id: ger_agent_1f0b1cae13c5
   - character_uuid: ger_agent_04bbccb1e352
     emotional_state: Solidarity in measured agreement
     goals:
@@ -2111,23 +2128,24 @@ events:
     observed_traits: []
     importance: primary
     global_id: ger_agent_ffabce55dee1
-  - character_uuid: ger_agent_8511b338f685
-    emotional_state: Preoccupied by external commitments
+  - character_uuid: ger_agent_a340dc1bc0ee
+    emotional_state: Frustrated longing from recent exchange
     goals:
-    - Resolve computer glitches via trusted tech
-    - Maintain operational flow
-    what_happened: Mrs. Landingham is absent at a funeral but her computer malfunction
-      prompts the note Charlie delivers to Bartlet for scheduling resolution.
-    observed_status: Mrs. Landingham is absent at a funeral but her computer malfunction
-      prompts the note Charlie delivers to Bartlet for scheduling resolution.
+    - Reconnect amid Charlie's duties
+    - Assert relationship priority
+    what_happened: Zoey is referenced post-meeting by Bartlet via Charlie's note exchange,
+      highlighting her hallway confrontation's ripple into presidential awareness.
+    observed_status: Zoey is referenced post-meeting by Bartlet via Charlie's note
+      exchange, highlighting her hallway confrontation's ripple into presidential
+      awareness.
     beliefs:
-    - Personal tech aides ensure reliability
-    - Absence doesn't halt duties
+    - Duty strains intimacy but love endures
+    - Communication gaps erode bonds
     observed_traits:
-    - trusting
-    - routine-oriented
+    - persistent
+    - affectionate
     importance: primary
-    global_id: ger_agent_8511b338f685
+    global_id: ger_agent_a340dc1bc0ee
   - character_uuid: ger_agent_89096fbce574
     emotional_state: Professionally anticipated
     goals:
@@ -2164,24 +2182,6 @@ events:
     - persistent rival
     importance: primary
     global_id: ger_agent_435475374188
-  - character_uuid: ger_agent_1e9e45a7bd44
-    emotional_state: Frustrated longing from recent exchange
-    goals:
-    - Reconnect amid Charlie's duties
-    - Assert relationship priority
-    what_happened: Zoey is referenced post-meeting by Bartlet via Charlie's note exchange,
-      highlighting her hallway confrontation's ripple into presidential awareness.
-    observed_status: Zoey is referenced post-meeting by Bartlet via Charlie's note
-      exchange, highlighting her hallway confrontation's ripple into presidential
-      awareness.
-    beliefs:
-    - Duty strains intimacy but love endures
-    - Communication gaps erode bonds
-    observed_traits:
-    - persistent
-    - affectionate
-    importance: primary
-    global_id: ger_agent_1e9e45a7bd44
   object_involvements:
   - object_uuid: ger_object_21a08ca6bbe6
     description_of_involvement: Charlie's phone facilitates distracted conversation
@@ -2995,7 +2995,7 @@ events:
     - trauma-driven
     importance: primary
     global_id: ger_agent_7854a70e34ea
-  - character_uuid: ger_agent_64b2a2c10c8f
+  - character_uuid: ger_agent_14f85d554756
     emotional_state: Resolutely protective laced with playful defiance
     goals:
     - Shield Josh's recovery from work intrusions
@@ -3014,7 +3014,7 @@ events:
     - firm
     - witty
     importance: primary
-    global_id: ger_agent_64b2a2c10c8f
+    global_id: ger_agent_14f85d554756
   - character_uuid: ger_agent_60a68a084e0c
     emotional_state: Buoyantly supportive amid office energy
     goals:
@@ -3242,7 +3242,7 @@ events:
     - trauma-driven
     importance: primary
     global_id: ger_agent_7854a70e34ea
-  - character_uuid: ger_agent_64b2a2c10c8f
+  - character_uuid: ger_agent_14f85d554756
     emotional_state: Resolutely protective laced with playful defiance
     goals:
     - Shield Josh's recovery from work intrusions
@@ -3261,7 +3261,7 @@ events:
     - firm
     - witty
     importance: primary
-    global_id: ger_agent_64b2a2c10c8f
+    global_id: ger_agent_14f85d554756
   - character_uuid: ger_agent_60a68a084e0c
     emotional_state: Buoyantly supportive amid office energy
     goals:
@@ -3485,7 +3485,7 @@ events:
     - trauma-driven
     importance: primary
     global_id: ger_agent_7854a70e34ea
-  - character_uuid: ger_agent_64b2a2c10c8f
+  - character_uuid: ger_agent_14f85d554756
     emotional_state: Resolutely protective laced with playful defiance
     goals:
     - Shield Josh's recovery from work intrusions
@@ -3504,7 +3504,7 @@ events:
     - firm
     - witty
     importance: primary
-    global_id: ger_agent_64b2a2c10c8f
+    global_id: ger_agent_14f85d554756
   - character_uuid: ger_agent_60a68a084e0c
     emotional_state: Buoyantly supportive amid office energy
     goals:
@@ -3722,7 +3722,7 @@ events:
     - idealistic
     importance: primary
     global_id: ger_agent_7854a70e34ea
-  - character_uuid: ger_agent_64b2a2c10c8f
+  - character_uuid: ger_agent_14f85d554756
     emotional_state: Firmly authoritative with playful deflection masking deep concern
     goals:
     - Safeguard Josh's physical and mental recovery
@@ -3742,7 +3742,7 @@ events:
     - witty
     - loyal
     importance: primary
-    global_id: ger_agent_64b2a2c10c8f
+    global_id: ger_agent_14f85d554756
   - character_uuid: ger_agent_60a68a084e0c
     emotional_state: Enthusiastically encouraging
     goals:
@@ -3944,7 +3944,7 @@ events:
     - idealistic
     importance: primary
     global_id: ger_agent_7854a70e34ea
-  - character_uuid: ger_agent_64b2a2c10c8f
+  - character_uuid: ger_agent_14f85d554756
     emotional_state: Firmly authoritative with playful deflection masking deep concern
     goals:
     - Safeguard Josh's physical and mental recovery
@@ -3964,7 +3964,7 @@ events:
     - witty
     - loyal
     importance: primary
-    global_id: ger_agent_64b2a2c10c8f
+    global_id: ger_agent_14f85d554756
   - character_uuid: ger_agent_60a68a084e0c
     emotional_state: Enthusiastically encouraging
     goals:
@@ -4168,7 +4168,7 @@ events:
     observed_traits: []
     importance: primary
     global_id: ger_agent_ffabce55dee1
-  - character_uuid: ger_agent_1e9e45a7bd44
+  - character_uuid: ger_agent_a340dc1bc0ee
     emotional_state: Curious insistence laced with familial worry and budding relational
       anxiety
     goals:
@@ -4191,7 +4191,7 @@ events:
     - affectionately challenging
     - vulnerably concerned
     importance: primary
-    global_id: ger_agent_1e9e45a7bd44
+    global_id: ger_agent_a340dc1bc0ee
   object_involvements: []
   location_involvements:
   - location_uuid: ger_location_d1360144f47e
@@ -4326,6 +4326,26 @@ events:
     observed_traits: []
     importance: primary
     global_id: ger_agent_ffabce55dee1
+  - character_uuid: ger_agent_a340dc1bc0ee
+    emotional_state: Hesitant vulnerability amid familial tension
+    goals:
+    - Secure private talk with father about Charlie
+    - Gauge Bartlet's mood for approach
+    what_happened: Zoey enters with Leo, responds hesitantly to Bartlet's query about
+      talking, declines amid his mood, and later requests to discuss Charlie once
+      staff exit.
+    observed_status: Zoey enters with Leo, responds hesitantly to Bartlet's query
+      about talking, declines amid his mood, and later requests to discuss Charlie
+      once staff exit.
+    beliefs:
+    - Personal relationships need protection post-trauma
+    - Father's distraction signals deeper stress
+    observed_traits:
+    - hesitant
+    - affectionate
+    - resilient
+    importance: primary
+    global_id: ger_agent_a340dc1bc0ee
   - character_uuid: ger_agent_435475374188
     emotional_state: ''
     goals:
@@ -4356,26 +4376,6 @@ events:
     - professional
     importance: primary
     global_id: ger_agent_cdf5bb42cd12
-  - character_uuid: ger_agent_1e9e45a7bd44
-    emotional_state: Hesitant vulnerability amid familial tension
-    goals:
-    - Secure private talk with father about Charlie
-    - Gauge Bartlet's mood for approach
-    what_happened: Zoey enters with Leo, responds hesitantly to Bartlet's query about
-      talking, declines amid his mood, and later requests to discuss Charlie once
-      staff exit.
-    observed_status: Zoey enters with Leo, responds hesitantly to Bartlet's query
-      about talking, declines amid his mood, and later requests to discuss Charlie
-      once staff exit.
-    beliefs:
-    - Personal relationships need protection post-trauma
-    - Father's distraction signals deeper stress
-    observed_traits:
-    - hesitant
-    - affectionate
-    - resilient
-    importance: primary
-    global_id: ger_agent_1e9e45a7bd44
   object_involvements:
   - object_uuid: ger_object_f4289c00d292
     description_of_involvement: Brought by the steward into the bedroom, the breakfast
@@ -5915,22 +5915,6 @@ events:
     - Speakerphone enabling fractured team confrontation
     global_id: ger_location_0c21a1ee4177
   organization_involvements:
-  - organization_uuid: ger_organization_d033a1b32d4f
-    description_of_involvement: The White House senior staff enacts cold calculus
-      via speakerphone, abandoning Jordan to evade racism charges, testing loyalties
-      as Sam's outburst accuses it of betrayal, revealing fractures in unity under
-      Leo's command.
-    active_representation: Through key principals (Leo, Josh, Sam) in real-time decision.
-    power_dynamics: Wielding authority to cut support, overriding individual promises.
-    organizational_goals:
-    - Safeguard national image and turnout
-    - Optimize midterm resource deployment
-    influence_mechanisms:
-    - Hierarchical override by Chief of Staff
-    - Strategic abandonment of liabilities
-    institutional_impact: Exposes moral costs of power preservation.
-    internal_dynamics: Loyalty rift between idealism (Sam) and pragmatism (Leo/Josh).
-    global_id: ger_organization_d033a1b32d4f
   - organization_uuid: ger_organization_e7a9e4ecbb31
     description_of_involvement: The U.S. House looms as the paramount strategic prize,
       driving Josh and Leo's ruthless pivot to redirect resources from Jordan's district
@@ -5948,6 +5932,22 @@ events:
     institutional_impact: Highlights triage costs in polarized midterm warfare.
     internal_dynamics: ''
     global_id: ger_organization_e7a9e4ecbb31
+  - organization_uuid: ger_organization_bb39d5dd403d
+    description_of_involvement: The White House senior staff enacts cold calculus
+      via speakerphone, abandoning Jordan to evade racism charges, testing loyalties
+      as Sam's outburst accuses it of betrayal, revealing fractures in unity under
+      Leo's command.
+    active_representation: Through key principals (Leo, Josh, Sam) in real-time decision.
+    power_dynamics: Wielding authority to cut support, overriding individual promises.
+    organizational_goals:
+    - Safeguard national image and turnout
+    - Optimize midterm resource deployment
+    influence_mechanisms:
+    - Hierarchical override by Chief of Staff
+    - Strategic abandonment of liabilities
+    institutional_impact: Exposes moral costs of power preservation.
+    internal_dynamics: Loyalty rift between idealism (Sam) and pragmatism (Leo/Josh).
+    global_id: ger_organization_bb39d5dd403d
   derived_from_beat_uuids:
   - beat_a075048b9e398b17
   - beat_e3f5aac87f8035d9
@@ -6080,21 +6080,6 @@ events:
     - Speakerphone static crackle
     global_id: ger_location_0c21a1ee4177
   organization_involvements:
-  - organization_uuid: ger_organization_d033a1b32d4f
-    description_of_involvement: The White House embodies the betrayal source as Sam
-      accuses it of tacitly branding Jordan racist through silent withdrawal, fueling
-      Sam's loyalty crisis against Leo's enforced pragmatism.
-    active_representation: Via senior staff (Leo/Josh) executing triage policy
-    power_dynamics: Exercising hierarchical authority over campaigns
-    organizational_goals:
-    - Prioritize viable midterm races
-    - Protect presidential agenda via House control
-    influence_mechanisms:
-    - Campaign support cuts
-    - Polling-driven decisions
-    institutional_impact: Tests internal loyalty amid ethical pivots
-    internal_dynamics: Chain of command overriding personal idealism
-    global_id: ger_organization_d033a1b32d4f
   - organization_uuid: ger_organization_e7a9e4ecbb31
     description_of_involvement: The U.S. House looms as the ultimate strategic prize,
       driving Josh and Leo's calculus to abandon Jordan and redirect resources to
@@ -6111,6 +6096,21 @@ events:
       flips
     internal_dynamics: Target of partisan resource wars
     global_id: ger_organization_e7a9e4ecbb31
+  - organization_uuid: ger_organization_bb39d5dd403d
+    description_of_involvement: The White House embodies the betrayal source as Sam
+      accuses it of tacitly branding Jordan racist through silent withdrawal, fueling
+      Sam's loyalty crisis against Leo's enforced pragmatism.
+    active_representation: Via senior staff (Leo/Josh) executing triage policy
+    power_dynamics: Exercising hierarchical authority over campaigns
+    organizational_goals:
+    - Prioritize viable midterm races
+    - Protect presidential agenda via House control
+    influence_mechanisms:
+    - Campaign support cuts
+    - Polling-driven decisions
+    institutional_impact: Tests internal loyalty amid ethical pivots
+    internal_dynamics: Chain of command overriding personal idealism
+    global_id: ger_organization_bb39d5dd403d
   derived_from_beat_uuids:
   - beat_d1e5d7e18a5700e7
   - beat_ac3458ee8c861815
@@ -6251,24 +6251,6 @@ events:
     - Implied quiet amid external frenzy
     global_id: ger_location_d1360144f47e
   organization_involvements:
-  - organization_uuid: ger_organization_d033a1b32d4f
-    description_of_involvement: Toby turns fury inward, blasting the White House itself
-      for not aggressively targeting hate groups, exposing internal fractures where
-      Communications Director prioritizes vengeance over unity amid post-assassination
-      strategy.
-    active_representation: Self-critiqued as dysfunctional entity by senior staffer
-      Toby.
-    power_dynamics: Internal challenge revealing self-inflicted paralysis.
-    organizational_goals:
-    - Secure midterm gains via disciplined messaging
-    - Contain staff trauma to avoid public fractures
-    influence_mechanisms:
-    - Hierarchical oversight on communications duties
-    - Strategic calculus overriding radical pursuits
-    institutional_impact: Underscores White House's ethical tightrope exploiting tragedy
-      while suppressing rage.
-    internal_dynamics: Staff rifts testing loyalty amid operational neglect.
-    global_id: ger_organization_d033a1b32d4f
   - organization_uuid: ger_organization_8f870c015c92
     description_of_involvement: Toby savages the FBI's Director for failing to aggressively
       pursue hate group arrests post-shooting, positioning it as leaden bureaucracy
@@ -6287,6 +6269,24 @@ events:
       midterm pressures.
     internal_dynamics: Implied chain-of-command delays hindering swift action.
     global_id: ger_organization_8f870c015c92
+  - organization_uuid: ger_organization_bb39d5dd403d
+    description_of_involvement: Toby turns fury inward, blasting the White House itself
+      for not aggressively targeting hate groups, exposing internal fractures where
+      Communications Director prioritizes vengeance over unity amid post-assassination
+      strategy.
+    active_representation: Self-critiqued as dysfunctional entity by senior staffer
+      Toby.
+    power_dynamics: Internal challenge revealing self-inflicted paralysis.
+    organizational_goals:
+    - Secure midterm gains via disciplined messaging
+    - Contain staff trauma to avoid public fractures
+    influence_mechanisms:
+    - Hierarchical oversight on communications duties
+    - Strategic calculus overriding radical pursuits
+    institutional_impact: Underscores White House's ethical tightrope exploiting tragedy
+      while suppressing rage.
+    internal_dynamics: Staff rifts testing loyalty amid operational neglect.
+    global_id: ger_organization_bb39d5dd403d
   - organization_uuid: ger_organization_2e127d3720ef
     description_of_involvement: Toby indicts Congress for inaction on hate group crackdowns,
       demanding it join mass arrests, framing partisan halls as complicit in extremism's
@@ -6332,6 +6332,221 @@ events:
   - 'BARTLET: "I don''t care about winning back the House!"'
   - 'C.J.: "Then that''s the way it is. In a democracy, oftentimes, the other people
     win."'
+  is_flashback: false
+  location_uuid: ger_location_a89fe7905ec6
+  theme_uuids: []
+  arc_uuids: []
+  participations:
+  - character_uuid: ger_agent_54f868bf8265
+    emotional_state: Professionally composed yet urgently concerned, masking frustration
+      with poised conviction.
+    goals:
+    - Block unethical presidential intervention in local election
+    - Prioritize midterm House strategy and party unity
+    - Uphold democratic norms and press office integrity
+    what_happened: Enters bedroom, closes door, reports Charlie's relay, explains
+      local coverage limits, sits to argue ethics and political risks, invokes democracy's
+      acceptance of losses, secures concession, and exits gracefully, embodying press
+      secretary's gatekeeping role.
+    observed_status: Enters bedroom, closes door, reports Charlie's relay, explains
+      local coverage limits, sits to argue ethics and political risks, invokes democracy's
+      acceptance of losses, secures concession, and exits gracefully, embodying press
+      secretary's gatekeeping role.
+    beliefs:
+    - Presidential involvement in local races undermines fairness
+    - Democracy demands respecting electoral outcomes, even unfavorable ones
+    - National politics must not sacrifice House recapture goals
+    observed_traits:
+    - principled
+    - strategic
+    - diplomatic
+    - resolute
+    importance: primary
+    global_id: ger_agent_54f868bf8265
+  - character_uuid: ger_agent_52e3762c6aed
+    emotional_state: Undisclosed, dutifully functional in absentia.
+    goals:
+    - Efficiently relay presidential requests to staff
+    - Maintain seamless Oval Office coordination
+    what_happened: Referenced by C.J. as the aide who relayed Bartlet's summons, underscoring
+      his behind-the-scenes facilitation of high-level staff communications in the
+      White House hierarchy.
+    observed_status: Referenced by C.J. as the aide who relayed Bartlet's summons,
+      underscoring his behind-the-scenes facilitation of high-level staff communications
+      in the White House hierarchy.
+    beliefs:
+    - Personal aide loyalty prioritizes President's needs
+    - Discreet messaging preserves operational flow
+    observed_traits:
+    - reliable
+    - dutiful
+    importance: primary
+    global_id: ger_agent_52e3762c6aed
+  - character_uuid: ger_agent_198649bce78f
+    emotional_state: frustrated
+    goals:
+    - secure national press coverage for Elliot Roush
+    - escalate confrontation to express moral fixation over House strategy
+    what_happened: sits reading papers in bedroom, summons C.J., demands national
+      press coverage for Elliot Roush's school board race as human interest story,
+      declares disinterest in retaking the House, reluctantly concedes after C.J.'s
+      argument
+    observed_status: sits reading papers in bedroom, summons C.J., demands national
+      press coverage for Elliot Roush's school board race as human interest story,
+      declares disinterest in retaking the House, reluctantly concedes after C.J.'s
+      argument
+    beliefs: []
+    observed_traits: []
+    importance: primary
+    global_id: ger_agent_198649bce78f
+  - character_uuid: ger_agent_435475374188
+    emotional_state: N/A (absent, but evoked as unworthy threat by Bartlet).
+    goals:
+    - Win New Hampshire school board seat decisively
+    - Leverage polling lead for local authority
+    what_happened: Intensely discussed as Bartlet's former New Hampshire rival now
+      front-running school board race at 53%, catalyst for Bartlet's push for national
+      'human interest' coverage and C.J.'s ethical blockade.
+    observed_status: Intensely discussed as Bartlet's former New Hampshire rival now
+      front-running school board race at 53%, catalyst for Bartlet's push for national
+      'human interest' coverage and C.J.'s ethical blockade.
+    beliefs:
+    - Local races merit national validation via principled ties
+    - Opposition history amplifies story value
+    observed_traits:
+    - polarizing
+    - formidable front-runner
+    importance: primary
+    global_id: ger_agent_435475374188
+  object_involvements: []
+  location_involvements:
+  - location_uuid: ger_location_a89fe7905ec6
+    description_of_involvement: New Hampshire frames the contentious local school
+      board race where Elliot Roush leads at 53%, invoked by Bartlet to justify national
+      press demands and countered by C.J. as off-limits terrain, symbolizing grassroots
+      democracy clashing with D.C. power plays in post-assassination midterm calculus.
+    observed_atmosphere: Distantly provincial and electorally charged, contrasting
+      intimate bedroom tensions.
+    functional_role: Geopolitical context anchoring the debate over local vs. national
+      intervention.
+    symbolic_significance: Embodiment of democratic frontlines testing presidential
+      restraint.
+    access_restrictions: ''
+    key_environmental_details:
+    - Primary battleground for school board election
+    - Site of Roush's surging poll dominance
+    global_id: ger_location_a89fe7905ec6
+  - location_uuid: ger_location_3b5021bae10c
+    description_of_involvement: Adjoins the immediate bedroom setting for this private
+      confrontation, its threshold-like proximity evokes liminal presidential vulnerability
+      where personal moral fixations breach into staff duty, echoing prior tensions
+      but here internalized as Bartlet retreats to papers post-concession.
+    observed_atmosphere: Quietly anticipatory, shadowed by night and duty's pull.
+    functional_role: Boundary marker for elite access to presidential sanctum.
+    symbolic_significance: Threshold between private obsession and public strategy.
+    access_restrictions: Restricted to summoned senior staff like C.J.
+    key_environmental_details:
+    - Polished thresholds in night shadows
+    - Proximity to presidential repose
+    global_id: ger_location_3b5021bae10c
+  organization_involvements:
+  - organization_uuid: ger_organization_e7a9e4ecbb31
+    description_of_involvement: U.S. House recaptures dismissed twice by Bartlet as
+      irrelevant against Roush, clashing with C.J.'s insistence on prioritizing it
+      over local distractions amid balanced midterm flips.
+    active_representation: As ultimate midterm prize and strategic north star.
+    power_dynamics: Deprioritized by President despite staff obsession.
+    organizational_goals:
+    - Resolve power stasis through seat flips
+    - Facilitate Democratic governing majority
+    influence_mechanisms:
+    - Targeted race investments
+    - Incumbent vulnerability exploitation
+    institutional_impact: Highlights irony of unchanged balance post-surge.
+    internal_dynamics: ''
+    global_id: ger_organization_e7a9e4ecbb31
+  - organization_uuid: ger_organization_097bbd620a18
+    description_of_involvement: C.J. cautions that congressional Democrats will view
+      Roush focus as abandonment, eroding faith in White House commitment to their
+      midterm House battles.
+    active_representation: Through 'Democrats in Congress' expectations of solidarity.
+    power_dynamics: Subordinate allies vulnerable to demoralization.
+    organizational_goals:
+    - Secure House majority via key race wins
+    - Sustain White House-partisan coordination
+    influence_mechanisms:
+    - Electoral resource appeals
+    - Loyalty and morale leverage
+    institutional_impact: Risks fracturing party unity in razor-thin races.
+    internal_dynamics: Fissures over perceived neglect.
+    global_id: ger_organization_097bbd620a18
+  - organization_uuid: ger_organization_1cde01a90287
+    description_of_involvement: New Hampshire School Board election becomes the flashpoint,
+      with Roush's 53% lead prompting Bartlet's on-record endorsement bid framed as
+      'human interest,' fiercely rebuffed by C.J. as improper national meddling in
+      local governance.
+    active_representation: Via candidate Elliot Roush's frontrunner status.
+    power_dynamics: Local entity overshadowed by potential presidential amplification.
+    organizational_goals:
+    - Conduct impartial school board elections
+    - Elect community representatives without external sway
+    influence_mechanisms:
+    - Local polling and voter turnout
+    - Policy authority over education
+    institutional_impact: Exposes fragility of local democracy to executive overreach.
+    internal_dynamics: ''
+    global_id: ger_organization_1cde01a90287
+  - organization_uuid: ger_organization_2e127d3720ef
+    description_of_involvement: Congress invoked via its Republicans and Democrats,
+      whose reactions to Bartlet's potential local meddling—C.J.'s warned galvanization
+      and abandonment—underscore broader partisan perils.
+    active_representation: Through factional congressional members.
+    power_dynamics: Reactive to executive ethical choices.
+    organizational_goals:
+    - Preserve legislative balance amid midterms
+    - Counter executive branch influences
+    influence_mechanisms:
+    - Partisan congressional pressure
+    - Electoral retaliation coordination
+    institutional_impact: Amplifies inertia in hate crime responses and power stasis.
+    internal_dynamics: Partisan rifts over White House engagement.
+    global_id: ger_organization_2e127d3720ef
+  - organization_uuid: ger_organization_629b1169251a
+    description_of_involvement: C.J. explicitly warns that Bartlet's intervention
+      will 'galvanize the Republicans,' handing them midterm ammunition to rally against
+      post-assassination Democratic gains.
+    active_representation: Invoked collectively as galvanizable opposition bloc.
+    power_dynamics: Empowered by Democratic ethical stumbles to counterattack.
+    organizational_goals:
+    - Reclaim House seats in midterms
+    - Exploit White House missteps for momentum
+    influence_mechanisms:
+    - Partisan outrage mobilization
+    - National media narrative shaping
+    institutional_impact: Threatens to stall Democratic House flips.
+    internal_dynamics: ''
+    global_id: ger_organization_629b1169251a
+  derived_from_beat_uuids: &id012
+  - beat_3aad1b4585dfeb96
+  - beat_faea03f7d72d2f48
+  source_season: 2
+  source_database: westwing.s02
+- fabula_uuid: cand_evt_scene_5d16b5302be74d9b_1
+  global_id: null
+  title: Bartlet Demands Roush Coverage, Dismisses House Strategy
+  description: In the President's bedroom at night, Bartlet summons C.J. and presses
+    her on the lack of national press for Elliot Roush, his former New Hampshire opponent
+    now leading a school board race at 53%. He pushes for a 'human interest' story
+    with his on-record comments, but C.J. resists, warning of ethical impropriety,
+    Republican galvanization, and abandonment of midterm House goals. Bartlet bluntly
+    declares his disinterest in retaking the House, exposing his moral fixation on
+    Roush over politics. C.J. counters with democratic principle, prompting his reluctant
+    concession. This pivotal clash reveals Bartlet's principled distraction amid post-assassination
+    strategy, escalating staff moral tensions and foreshadowing his concessions.
+  episode_uuid: ep_sea_ser_the_west_wing_s02_e03
+  scene_sequence: 18
+  sequence_in_scene: 28
+  key_dialogue: *id011
   is_flashback: false
   location_uuid: ger_location_3b5021bae10c
   theme_uuids: []
@@ -6420,20 +6635,7 @@ events:
     global_id: ger_agent_435475374188
   object_involvements: []
   location_involvements:
-  - location_uuid: ger_location_3b5021bae10c
-    description_of_involvement: Adjoins the immediate bedroom setting for this private
-      confrontation, its threshold-like proximity evokes liminal presidential vulnerability
-      where personal moral fixations breach into staff duty, echoing prior tensions
-      but here internalized as Bartlet retreats to papers post-concession.
-    observed_atmosphere: Quietly anticipatory, shadowed by night and duty's pull.
-    functional_role: Boundary marker for elite access to presidential sanctum.
-    symbolic_significance: Threshold between private obsession and public strategy.
-    access_restrictions: Restricted to summoned senior staff like C.J.
-    key_environmental_details:
-    - Polished thresholds in night shadows
-    - Proximity to presidential repose
-    global_id: ger_location_3b5021bae10c
-  - location_uuid: ger_location_b5d75b8fe51b
+  - location_uuid: ger_location_a89fe7905ec6
     description_of_involvement: New Hampshire frames the contentious local school
       board race where Elliot Roush leads at 53%, invoked by Bartlet to justify national
       press demands and countered by C.J. as off-limits terrain, symbolizing grassroots
@@ -6448,7 +6650,20 @@ events:
     key_environmental_details:
     - Primary battleground for school board election
     - Site of Roush's surging poll dominance
-    global_id: ger_location_b5d75b8fe51b
+    global_id: ger_location_a89fe7905ec6
+  - location_uuid: ger_location_3b5021bae10c
+    description_of_involvement: Adjoins the immediate bedroom setting for this private
+      confrontation, its threshold-like proximity evokes liminal presidential vulnerability
+      where personal moral fixations breach into staff duty, echoing prior tensions
+      but here internalized as Bartlet retreats to papers post-concession.
+    observed_atmosphere: Quietly anticipatory, shadowed by night and duty's pull.
+    functional_role: Boundary marker for elite access to presidential sanctum.
+    symbolic_significance: Threshold between private obsession and public strategy.
+    access_restrictions: Restricted to summoned senior staff like C.J.
+    key_environmental_details:
+    - Polished thresholds in night shadows
+    - Proximity to presidential repose
+    global_id: ger_location_3b5021bae10c
   organization_involvements:
   - organization_uuid: ger_organization_e7a9e4ecbb31
     description_of_involvement: U.S. House recaptures dismissed twice by Bartlet as
@@ -6465,6 +6680,21 @@ events:
     institutional_impact: Highlights irony of unchanged balance post-surge.
     internal_dynamics: ''
     global_id: ger_organization_e7a9e4ecbb31
+  - organization_uuid: ger_organization_097bbd620a18
+    description_of_involvement: C.J. cautions that congressional Democrats will view
+      Roush focus as abandonment, eroding faith in White House commitment to their
+      midterm House battles.
+    active_representation: Through 'Democrats in Congress' expectations of solidarity.
+    power_dynamics: Subordinate allies vulnerable to demoralization.
+    organizational_goals:
+    - Secure House majority via key race wins
+    - Sustain White House-partisan coordination
+    influence_mechanisms:
+    - Electoral resource appeals
+    - Loyalty and morale leverage
+    institutional_impact: Risks fracturing party unity in razor-thin races.
+    internal_dynamics: Fissures over perceived neglect.
+    global_id: ger_organization_097bbd620a18
   - organization_uuid: ger_organization_1cde01a90287
     description_of_involvement: New Hampshire School Board election becomes the flashpoint,
       with Roush's 53% lead prompting Bartlet's on-record endorsement bid framed as
@@ -6496,236 +6726,6 @@ events:
     institutional_impact: Amplifies inertia in hate crime responses and power stasis.
     internal_dynamics: Partisan rifts over White House engagement.
     global_id: ger_organization_2e127d3720ef
-  - organization_uuid: ger_organization_e89f085bf2d7
-    description_of_involvement: C.J. cautions that congressional Democrats will view
-      Roush focus as abandonment, eroding faith in White House commitment to their
-      midterm House battles.
-    active_representation: Through 'Democrats in Congress' expectations of solidarity.
-    power_dynamics: Subordinate allies vulnerable to demoralization.
-    organizational_goals:
-    - Secure House majority via key race wins
-    - Sustain White House-partisan coordination
-    influence_mechanisms:
-    - Electoral resource appeals
-    - Loyalty and morale leverage
-    institutional_impact: Risks fracturing party unity in razor-thin races.
-    internal_dynamics: Fissures over perceived neglect.
-    global_id: ger_organization_e89f085bf2d7
-  - organization_uuid: ger_organization_629b1169251a
-    description_of_involvement: C.J. explicitly warns that Bartlet's intervention
-      will 'galvanize the Republicans,' handing them midterm ammunition to rally against
-      post-assassination Democratic gains.
-    active_representation: Invoked collectively as galvanizable opposition bloc.
-    power_dynamics: Empowered by Democratic ethical stumbles to counterattack.
-    organizational_goals:
-    - Reclaim House seats in midterms
-    - Exploit White House missteps for momentum
-    influence_mechanisms:
-    - Partisan outrage mobilization
-    - National media narrative shaping
-    institutional_impact: Threatens to stall Democratic House flips.
-    internal_dynamics: ''
-    global_id: ger_organization_629b1169251a
-  derived_from_beat_uuids: &id012
-  - beat_3aad1b4585dfeb96
-  - beat_faea03f7d72d2f48
-  source_season: 2
-  source_database: westwing.s02
-- fabula_uuid: cand_evt_scene_5d16b5302be74d9b_1
-  global_id: null
-  title: Bartlet Demands Roush Coverage, Dismisses House Strategy
-  description: In the President's bedroom at night, Bartlet summons C.J. and presses
-    her on the lack of national press for Elliot Roush, his former New Hampshire opponent
-    now leading a school board race at 53%. He pushes for a 'human interest' story
-    with his on-record comments, but C.J. resists, warning of ethical impropriety,
-    Republican galvanization, and abandonment of midterm House goals. Bartlet bluntly
-    declares his disinterest in retaking the House, exposing his moral fixation on
-    Roush over politics. C.J. counters with democratic principle, prompting his reluctant
-    concession. This pivotal clash reveals Bartlet's principled distraction amid post-assassination
-    strategy, escalating staff moral tensions and foreshadowing his concessions.
-  episode_uuid: ep_sea_ser_the_west_wing_s02_e03
-  scene_sequence: 18
-  sequence_in_scene: 28
-  key_dialogue: *id011
-  is_flashback: false
-  location_uuid: ger_location_b5d75b8fe51b
-  theme_uuids: []
-  arc_uuids: []
-  participations:
-  - character_uuid: ger_agent_54f868bf8265
-    emotional_state: Professionally composed yet urgently concerned, masking frustration
-      with poised conviction.
-    goals:
-    - Block unethical presidential intervention in local election
-    - Prioritize midterm House strategy and party unity
-    - Uphold democratic norms and press office integrity
-    what_happened: Enters bedroom, closes door, reports Charlie's relay, explains
-      local coverage limits, sits to argue ethics and political risks, invokes democracy's
-      acceptance of losses, secures concession, and exits gracefully, embodying press
-      secretary's gatekeeping role.
-    observed_status: Enters bedroom, closes door, reports Charlie's relay, explains
-      local coverage limits, sits to argue ethics and political risks, invokes democracy's
-      acceptance of losses, secures concession, and exits gracefully, embodying press
-      secretary's gatekeeping role.
-    beliefs:
-    - Presidential involvement in local races undermines fairness
-    - Democracy demands respecting electoral outcomes, even unfavorable ones
-    - National politics must not sacrifice House recapture goals
-    observed_traits:
-    - principled
-    - strategic
-    - diplomatic
-    - resolute
-    importance: primary
-    global_id: ger_agent_54f868bf8265
-  - character_uuid: ger_agent_52e3762c6aed
-    emotional_state: Undisclosed, dutifully functional in absentia.
-    goals:
-    - Efficiently relay presidential requests to staff
-    - Maintain seamless Oval Office coordination
-    what_happened: Referenced by C.J. as the aide who relayed Bartlet's summons, underscoring
-      his behind-the-scenes facilitation of high-level staff communications in the
-      White House hierarchy.
-    observed_status: Referenced by C.J. as the aide who relayed Bartlet's summons,
-      underscoring his behind-the-scenes facilitation of high-level staff communications
-      in the White House hierarchy.
-    beliefs:
-    - Personal aide loyalty prioritizes President's needs
-    - Discreet messaging preserves operational flow
-    observed_traits:
-    - reliable
-    - dutiful
-    importance: primary
-    global_id: ger_agent_52e3762c6aed
-  - character_uuid: ger_agent_198649bce78f
-    emotional_state: frustrated
-    goals:
-    - secure national press coverage for Elliot Roush
-    - escalate confrontation to express moral fixation over House strategy
-    what_happened: sits reading papers in bedroom, summons C.J., demands national
-      press coverage for Elliot Roush's school board race as human interest story,
-      declares disinterest in retaking the House, reluctantly concedes after C.J.'s
-      argument
-    observed_status: sits reading papers in bedroom, summons C.J., demands national
-      press coverage for Elliot Roush's school board race as human interest story,
-      declares disinterest in retaking the House, reluctantly concedes after C.J.'s
-      argument
-    beliefs: []
-    observed_traits: []
-    importance: primary
-    global_id: ger_agent_198649bce78f
-  - character_uuid: ger_agent_435475374188
-    emotional_state: N/A (absent, but evoked as unworthy threat by Bartlet).
-    goals:
-    - Win New Hampshire school board seat decisively
-    - Leverage polling lead for local authority
-    what_happened: Intensely discussed as Bartlet's former New Hampshire rival now
-      front-running school board race at 53%, catalyst for Bartlet's push for national
-      'human interest' coverage and C.J.'s ethical blockade.
-    observed_status: Intensely discussed as Bartlet's former New Hampshire rival now
-      front-running school board race at 53%, catalyst for Bartlet's push for national
-      'human interest' coverage and C.J.'s ethical blockade.
-    beliefs:
-    - Local races merit national validation via principled ties
-    - Opposition history amplifies story value
-    observed_traits:
-    - polarizing
-    - formidable front-runner
-    importance: primary
-    global_id: ger_agent_435475374188
-  object_involvements: []
-  location_involvements:
-  - location_uuid: ger_location_3b5021bae10c
-    description_of_involvement: Adjoins the immediate bedroom setting for this private
-      confrontation, its threshold-like proximity evokes liminal presidential vulnerability
-      where personal moral fixations breach into staff duty, echoing prior tensions
-      but here internalized as Bartlet retreats to papers post-concession.
-    observed_atmosphere: Quietly anticipatory, shadowed by night and duty's pull.
-    functional_role: Boundary marker for elite access to presidential sanctum.
-    symbolic_significance: Threshold between private obsession and public strategy.
-    access_restrictions: Restricted to summoned senior staff like C.J.
-    key_environmental_details:
-    - Polished thresholds in night shadows
-    - Proximity to presidential repose
-    global_id: ger_location_3b5021bae10c
-  - location_uuid: ger_location_b5d75b8fe51b
-    description_of_involvement: New Hampshire frames the contentious local school
-      board race where Elliot Roush leads at 53%, invoked by Bartlet to justify national
-      press demands and countered by C.J. as off-limits terrain, symbolizing grassroots
-      democracy clashing with D.C. power plays in post-assassination midterm calculus.
-    observed_atmosphere: Distantly provincial and electorally charged, contrasting
-      intimate bedroom tensions.
-    functional_role: Geopolitical context anchoring the debate over local vs. national
-      intervention.
-    symbolic_significance: Embodiment of democratic frontlines testing presidential
-      restraint.
-    access_restrictions: ''
-    key_environmental_details:
-    - Primary battleground for school board election
-    - Site of Roush's surging poll dominance
-    global_id: ger_location_b5d75b8fe51b
-  organization_involvements:
-  - organization_uuid: ger_organization_e7a9e4ecbb31
-    description_of_involvement: U.S. House recaptures dismissed twice by Bartlet as
-      irrelevant against Roush, clashing with C.J.'s insistence on prioritizing it
-      over local distractions amid balanced midterm flips.
-    active_representation: As ultimate midterm prize and strategic north star.
-    power_dynamics: Deprioritized by President despite staff obsession.
-    organizational_goals:
-    - Resolve power stasis through seat flips
-    - Facilitate Democratic governing majority
-    influence_mechanisms:
-    - Targeted race investments
-    - Incumbent vulnerability exploitation
-    institutional_impact: Highlights irony of unchanged balance post-surge.
-    internal_dynamics: ''
-    global_id: ger_organization_e7a9e4ecbb31
-  - organization_uuid: ger_organization_1cde01a90287
-    description_of_involvement: New Hampshire School Board election becomes the flashpoint,
-      with Roush's 53% lead prompting Bartlet's on-record endorsement bid framed as
-      'human interest,' fiercely rebuffed by C.J. as improper national meddling in
-      local governance.
-    active_representation: Via candidate Elliot Roush's frontrunner status.
-    power_dynamics: Local entity overshadowed by potential presidential amplification.
-    organizational_goals:
-    - Conduct impartial school board elections
-    - Elect community representatives without external sway
-    influence_mechanisms:
-    - Local polling and voter turnout
-    - Policy authority over education
-    institutional_impact: Exposes fragility of local democracy to executive overreach.
-    internal_dynamics: ''
-    global_id: ger_organization_1cde01a90287
-  - organization_uuid: ger_organization_2e127d3720ef
-    description_of_involvement: Congress invoked via its Republicans and Democrats,
-      whose reactions to Bartlet's potential local meddling—C.J.'s warned galvanization
-      and abandonment—underscore broader partisan perils.
-    active_representation: Through factional congressional members.
-    power_dynamics: Reactive to executive ethical choices.
-    organizational_goals:
-    - Preserve legislative balance amid midterms
-    - Counter executive branch influences
-    influence_mechanisms:
-    - Partisan congressional pressure
-    - Electoral retaliation coordination
-    institutional_impact: Amplifies inertia in hate crime responses and power stasis.
-    internal_dynamics: Partisan rifts over White House engagement.
-    global_id: ger_organization_2e127d3720ef
-  - organization_uuid: ger_organization_e89f085bf2d7
-    description_of_involvement: C.J. cautions that congressional Democrats will view
-      Roush focus as abandonment, eroding faith in White House commitment to their
-      midterm House battles.
-    active_representation: Through 'Democrats in Congress' expectations of solidarity.
-    power_dynamics: Subordinate allies vulnerable to demoralization.
-    organizational_goals:
-    - Secure House majority via key race wins
-    - Sustain White House-partisan coordination
-    influence_mechanisms:
-    - Electoral resource appeals
-    - Loyalty and morale leverage
-    institutional_impact: Risks fracturing party unity in razor-thin races.
-    internal_dynamics: Fissures over perceived neglect.
-    global_id: ger_organization_e89f085bf2d7
   - organization_uuid: ger_organization_629b1169251a
     description_of_involvement: C.J. explicitly warns that Bartlet's intervention
       will 'galvanize the Republicans,' handing them midterm ammunition to rally against
@@ -6764,7 +6764,7 @@ events:
   - 'C.J.: "Then that''s the way it is. In a democracy, oftentimes, the other people
     win."'
   is_flashback: false
-  location_uuid: ger_location_b5d75b8fe51b
+  location_uuid: ger_location_a89fe7905ec6
   theme_uuids: []
   arc_uuids:
   - ger_conflictarc_c2fa24567080
@@ -6849,7 +6849,7 @@ events:
     global_id: ger_agent_435475374188
   object_involvements: []
   location_involvements:
-  - location_uuid: ger_location_b5d75b8fe51b
+  - location_uuid: ger_location_a89fe7905ec6
     description_of_involvement: New Hampshire crystallizes as the emotional epicenter,
       site of Elliot Roush's school board race where his 53% lead ignites Bartlet's
       principled fury, elevating a local contest into a test of presidential restraint
@@ -6862,7 +6862,7 @@ events:
     key_environmental_details:
     - Primary battleground for school board polls
     - Echoes of past New Hampshire campaigns
-    global_id: ger_location_b5d75b8fe51b
+    global_id: ger_location_a89fe7905ec6
   organization_involvements:
   - organization_uuid: ger_organization_e7a9e4ecbb31
     description_of_involvement: Bartlet explicitly declares disinterest in 'winning
@@ -6880,6 +6880,22 @@ events:
     institutional_impact: Locks power in ironic equilibrium
     internal_dynamics: ''
     global_id: ger_organization_e7a9e4ecbb31
+  - organization_uuid: ger_organization_097bbd620a18
+    description_of_involvement: C.J. invokes Democrats' fears of abandonment if Bartlet
+      fixates on local race, underscoring party reliance on White House solidarity
+      for midterm gains, where perceived disinterest erodes fragile alliances in razor-edge
+      races.
+    active_representation: Via congressional members' anticipated disillusionment
+    power_dynamics: Dependent allies vulnerable to leadership distraction
+    organizational_goals:
+    - Secure House majority through coordinated effort
+    - Maintain White House commitment to key races
+    influence_mechanisms:
+    - Electoral resource allocation pressure
+    - Party loyalty appeals to leadership
+    institutional_impact: Threatens net-zero midterm outcome
+    internal_dynamics: ''
+    global_id: ger_organization_097bbd620a18
   - organization_uuid: ger_organization_1cde01a90287
     description_of_involvement: The New Hampshire School Board race anchors Bartlet's
       outrage, with Roush's candidacy as seat's frontrunner prompting demands for
@@ -6912,22 +6928,6 @@ events:
     institutional_impact: Inertia amid ethical distractions
     internal_dynamics: Partisan fissures over strategy
     global_id: ger_organization_2e127d3720ef
-  - organization_uuid: ger_organization_e89f085bf2d7
-    description_of_involvement: C.J. invokes Democrats' fears of abandonment if Bartlet
-      fixates on local race, underscoring party reliance on White House solidarity
-      for midterm gains, where perceived disinterest erodes fragile alliances in razor-edge
-      races.
-    active_representation: Via congressional members' anticipated disillusionment
-    power_dynamics: Dependent allies vulnerable to leadership distraction
-    organizational_goals:
-    - Secure House majority through coordinated effort
-    - Maintain White House commitment to key races
-    influence_mechanisms:
-    - Electoral resource allocation pressure
-    - Party loyalty appeals to leadership
-    institutional_impact: Threatens net-zero midterm outcome
-    internal_dynamics: ''
-    global_id: ger_organization_e89f085bf2d7
   - organization_uuid: ger_organization_629b1169251a
     description_of_involvement: C.J. warns that presidential intervention will galvanize
       Republicans, supercharging their midterm opposition and risking House control,
@@ -6994,194 +6994,6 @@ events:
   - 'SAM: "All twelve?"'
   - 'GINGER: "Yes."'
   - 'SAM: "Okay, good...just like that."'
-  is_flashback: false
-  location_uuid: ger_location_cf3149d3740f
-  theme_uuids: []
-  arc_uuids:
-  - ger_conflictarc_4420fce428e2
-  participations:
-  - character_uuid: ger_agent_04bbccb1e352
-    emotional_state: Startled surprise swiftly yielding to pragmatic resolve laced
-      with subtle regret over personal fallout.
-    goals:
-    - Mobilize staff to influence tight Midwest races
-    - Confront Tom and Sarah's expectations with harsh electoral reality
-    - Defend White House's triage decisions to preserve alliances
-    what_happened: Sam bursts into action summoning Ginger for an update, rallies
-      the room to seize phones for Midwest outreach only to find staff already dialing
-      furiously, then startles upon entering his office to face Tom and Sarah, apologizes
-      for lateness, bluntly predicts and contextualizes Tom's loss, defends White
-      House strategy coolly, and offers a parting well-wish amid tension.
-    observed_status: Sam bursts into action summoning Ginger for an update, rallies
-      the room to seize phones for Midwest outreach only to find staff already dialing
-      furiously, then startles upon entering his office to face Tom and Sarah, apologizes
-      for lateness, bluntly predicts and contextualizes Tom's loss, defends White
-      House strategy coolly, and offers a parting well-wish amid tension.
-    beliefs:
-    - White House must prioritize broader midterm victories over individual campaigns
-    - 42% in a swing district represents a solid, respectable effort despite loss
-    observed_traits:
-    - strategic
-    - pragmatic
-    - loyal-yet-ruthless
-    - composed-under-fire
-    importance: primary
-    global_id: ger_agent_04bbccb1e352
-  - character_uuid: ger_agent_60a68a084e0c
-    emotional_state: Steadfast neutrality amid high-stakes electoral pressure.
-    goals:
-    - Provide Sam with accurate, real-time race projections
-    - Support office momentum without injecting personal drama
-    what_happened: Ginger responds crisply to Sam's summons from her station, delivering
-      the gut-punch update that all twelve races remain too close to call, fueling
-      the office's sustained frenzy before pivoting back to her duties amid the phone
-      bank chaos.
-    observed_status: Ginger responds crisply to Sam's summons from her station, delivering
-      the gut-punch update that all twelve races remain too close to call, fueling
-      the office's sustained frenzy before pivoting back to her duties amid the phone
-      bank chaos.
-    beliefs:
-    - Precise reporting sustains strategic decision-making
-    - Team readiness is already optimal in crisis mode
-    observed_traits:
-    - efficient
-    - dutiful
-    - unflappable
-    importance: primary
-    global_id: ger_agent_60a68a084e0c
-  - character_uuid: ger_agent_7e3bacbc0f27
-    emotional_state: Weary resignation masking deeper disappointment in political
-      betrayal.
-    goals:
-    - Absorb the election defeat without escalating conflict
-    - Maintain composure for Sarah's sake amid public loss
-    what_happened: Tom waits tensely with Sarah in Sam's office during the electoral
-      storm, acknowledges the projected 42% vote share in his district loss with quiet
-      resignation, gently reins in Sarah's outburst, and exits silently as lightning
-      flashes, embodying defeated poise.
-    observed_status: Tom waits tensely with Sarah in Sam's office during the electoral
-      storm, acknowledges the projected 42% vote share in his district loss with quiet
-      resignation, gently reins in Sarah's outburst, and exits silently as lightning
-      flashes, embodying defeated poise.
-    beliefs:
-    - 42% validates his campaign's merit despite the rout
-    - Personal loyalty to Sam persists despite institutional abandonment
-    observed_traits:
-    - resigned
-    - measured
-    - supportive
-    importance: primary
-    global_id: ger_agent_7e3bacbc0f27
-  - character_uuid: ger_agent_3c1110435b4d
-    emotional_state: Raw fury boiling over from betrayal, sharpened by personal stakes
-      like pregnancy.
-    goals:
-    - Vent righteous anger at White House abandonment
-    - Warn Sam of future retribution to reclaim agency
-    what_happened: Sarah spars from Sam's office, dismisses staying in the district
-      on election day with bitter sarcasm, disputes the 'respectable' loss framing
-      by citing the 49% Dem lean, erupts in fury over White House silence, issues
-      vengeful threats, and storms out with Tom as lightning cracks.
-    observed_status: Sarah spars from Sam's office, dismisses staying in the district
-      on election day with bitter sarcasm, disputes the 'respectable' loss framing
-      by citing the 49% Dem lean, erupts in fury over White House silence, issues
-      vengeful threats, and storms out with Tom as lightning cracks.
-    beliefs:
-    - White House betrayal demands personal payback
-    - District's Dem lean makes 58-42 an unforgivable failure
-    observed_traits:
-    - fierce
-    - unyielding
-    - protective
-    - vindictive
-    importance: primary
-    global_id: ger_agent_3c1110435b4d
-  object_involvements:
-  - object_uuid: ger_object_de8b3498e359
-    description_of_involvement: The phone banks pulse as the office's lifeline for
-      real-time midterm influence; Sam commands staff to grab lines targeting Midwest
-      powerbrokers, only to realize they are already hammering keypads in proactive
-      frenzy, amplifying tension and underscoring the team's hair-trigger readiness
-      to convert sympathy surges into wins amid razor-thin races.
-    status_before_event: Already actively in use by staff dialing furiously across
-      the bullpen.
-    status_after_event: Continued intense operation, sustaining outreach momentum
-      post-Sam's rally.
-    global_id: ger_object_de8b3498e359
-  location_involvements:
-  - location_uuid: ger_location_cf3149d3740f
-    description_of_involvement: The Communications Office throbs as election night's
-      nerve center, alive with staff on phones, Sam's urgent summons and rally, Ginger's
-      terse report, and transition to his adjacent office for raw confrontation—blending
-      operational frenzy with personal fallout, heightening stakes in the post-assassination
-      midterm push.
-    observed_atmosphere: Electrifically tense with ringing phones, hurried voices,
-      and underlying dread.
-    functional_role: Command hub for race monitoring, mobilization, and private reckonings.
-    symbolic_significance: Embodiment of White House's pragmatic machinery grinding
-      personal loyalties.
-    access_restrictions: Restricted to senior staff and invited allies like the Jordans.
-    key_environmental_details:
-    - Merciless fluorescents over hunched desks
-    - Coiled phone cords snaking across surfaces
-    - Muted TVs replaying election feeds
-    global_id: ger_location_cf3149d3740f
-  - location_uuid: ger_location_b10fa8b0575a
-    description_of_involvement: The Midwest emerges as prime target in Sam's phone
-      rally, its twelve teetering races invoked to channel staff fury into donor calls
-      and brokered deals, sustaining uncertainty and pressure to flip heartland loyalties
-      in the sympathy-fueled midterm scramble.
-    observed_atmosphere: Phantom sprawl of urgent fields and banquet halls humming
-      with midnight bargains.
-    functional_role: Strategic battleground for intervention via phone banks.
-    symbolic_significance: Heartland proving ground for White House opportunism.
-    access_restrictions: ''
-    key_environmental_details:
-    - Dawn coffee and garage grease from endless outreach
-    - Razor-thin county tensions piercing phone lines
-    global_id: ger_location_b10fa8b0575a
-  organization_involvements:
-  - organization_uuid: ger_organization_d033a1b32d4f
-    description_of_involvement: The White House materializes as the silent betrayer
-      in Sarah's tirade and Sam's defense—its tactical withdrawal from tainted campaigns
-      like Tom's exposed as ruthless midterm calculus, prioritizing House gains over
-      personal pacts amid post-shooting highs, fracturing Sam's recruitment loyalty
-      in the office showdown.
-    active_representation: Through Sam's invocation and defense of its operational
-      protocol.
-    power_dynamics: Wielding overriding authority via resource denial, subordinating
-      individual bids to national strategy.
-    organizational_goals:
-    - Secure midterm House seats by triaging weak campaigns
-    - Harness assassination sympathy without ethical taint
-    influence_mechanisms:
-    - Strategic silence and resource withholding
-    - Staff mobilization through phone-bank directives
-    institutional_impact: Reveals cold pragmatism eroding personal alliances for broader
-      power retention.
-    internal_dynamics: Tension between idealism (Sam's promises) and hierarchy (abandonment
-      orders).
-    global_id: ger_organization_d033a1b32d4f
-  derived_from_beat_uuids: &id014
-  - beat_e656230179905ad4
-  - beat_73d950c7389973d7
-  source_season: 2
-  source_database: westwing.s02
-- fabula_uuid: cand_evt_scene_f1ba411493c6d32a_1
-  global_id: null
-  title: Twelve Races Too Close to Call
-  description: Amid election night tension in the communications office, Sam summons
-    Ginger, who reports all twelve key races remain too close to call, prolonging
-    razor-thin uncertainty. Urging staff to seize phones—starting with Midwest contacts—Sam
-    discovers them already furiously dialing, embodying the office's primed urgency.
-    This beat sustains suspense, showcases Sam's strategic leadership and the team's
-    readiness, and escalates pressure to convert post-assassination sympathy into
-    midterm wins, deepening moral and tactical stakes before personal confrontations
-    erupt.
-  episode_uuid: ep_sea_ser_the_west_wing_s02_e03
-  scene_sequence: 20
-  sequence_in_scene: 31
-  key_dialogue: *id013
   is_flashback: false
   location_uuid: ger_location_b10fa8b0575a
   theme_uuids: []
@@ -7297,6 +7109,20 @@ events:
       post-Sam's rally.
     global_id: ger_object_de8b3498e359
   location_involvements:
+  - location_uuid: ger_location_b10fa8b0575a
+    description_of_involvement: The Midwest emerges as prime target in Sam's phone
+      rally, its twelve teetering races invoked to channel staff fury into donor calls
+      and brokered deals, sustaining uncertainty and pressure to flip heartland loyalties
+      in the sympathy-fueled midterm scramble.
+    observed_atmosphere: Phantom sprawl of urgent fields and banquet halls humming
+      with midnight bargains.
+    functional_role: Strategic battleground for intervention via phone banks.
+    symbolic_significance: Heartland proving ground for White House opportunism.
+    access_restrictions: ''
+    key_environmental_details:
+    - Dawn coffee and garage grease from endless outreach
+    - Razor-thin county tensions piercing phone lines
+    global_id: ger_location_b10fa8b0575a
   - location_uuid: ger_location_cf3149d3740f
     description_of_involvement: The Communications Office throbs as election night's
       nerve center, alive with staff on phones, Sam's urgent summons and rally, Ginger's
@@ -7314,22 +7140,8 @@ events:
     - Coiled phone cords snaking across surfaces
     - Muted TVs replaying election feeds
     global_id: ger_location_cf3149d3740f
-  - location_uuid: ger_location_b10fa8b0575a
-    description_of_involvement: The Midwest emerges as prime target in Sam's phone
-      rally, its twelve teetering races invoked to channel staff fury into donor calls
-      and brokered deals, sustaining uncertainty and pressure to flip heartland loyalties
-      in the sympathy-fueled midterm scramble.
-    observed_atmosphere: Phantom sprawl of urgent fields and banquet halls humming
-      with midnight bargains.
-    functional_role: Strategic battleground for intervention via phone banks.
-    symbolic_significance: Heartland proving ground for White House opportunism.
-    access_restrictions: ''
-    key_environmental_details:
-    - Dawn coffee and garage grease from endless outreach
-    - Razor-thin county tensions piercing phone lines
-    global_id: ger_location_b10fa8b0575a
   organization_involvements:
-  - organization_uuid: ger_organization_d033a1b32d4f
+  - organization_uuid: ger_organization_bb39d5dd403d
     description_of_involvement: The White House materializes as the silent betrayer
       in Sarah's tirade and Sam's defense—its tactical withdrawal from tainted campaigns
       like Tom's exposed as ruthless midterm calculus, prioritizing House gains over
@@ -7349,7 +7161,195 @@ events:
       power retention.
     internal_dynamics: Tension between idealism (Sam's promises) and hierarchy (abandonment
       orders).
-    global_id: ger_organization_d033a1b32d4f
+    global_id: ger_organization_bb39d5dd403d
+  derived_from_beat_uuids: &id014
+  - beat_e656230179905ad4
+  - beat_73d950c7389973d7
+  source_season: 2
+  source_database: westwing.s02
+- fabula_uuid: cand_evt_scene_f1ba411493c6d32a_1
+  global_id: null
+  title: Twelve Races Too Close to Call
+  description: Amid election night tension in the communications office, Sam summons
+    Ginger, who reports all twelve key races remain too close to call, prolonging
+    razor-thin uncertainty. Urging staff to seize phones—starting with Midwest contacts—Sam
+    discovers them already furiously dialing, embodying the office's primed urgency.
+    This beat sustains suspense, showcases Sam's strategic leadership and the team's
+    readiness, and escalates pressure to convert post-assassination sympathy into
+    midterm wins, deepening moral and tactical stakes before personal confrontations
+    erupt.
+  episode_uuid: ep_sea_ser_the_west_wing_s02_e03
+  scene_sequence: 20
+  sequence_in_scene: 31
+  key_dialogue: *id013
+  is_flashback: false
+  location_uuid: ger_location_cf3149d3740f
+  theme_uuids: []
+  arc_uuids:
+  - ger_conflictarc_4420fce428e2
+  participations:
+  - character_uuid: ger_agent_04bbccb1e352
+    emotional_state: Startled surprise swiftly yielding to pragmatic resolve laced
+      with subtle regret over personal fallout.
+    goals:
+    - Mobilize staff to influence tight Midwest races
+    - Confront Tom and Sarah's expectations with harsh electoral reality
+    - Defend White House's triage decisions to preserve alliances
+    what_happened: Sam bursts into action summoning Ginger for an update, rallies
+      the room to seize phones for Midwest outreach only to find staff already dialing
+      furiously, then startles upon entering his office to face Tom and Sarah, apologizes
+      for lateness, bluntly predicts and contextualizes Tom's loss, defends White
+      House strategy coolly, and offers a parting well-wish amid tension.
+    observed_status: Sam bursts into action summoning Ginger for an update, rallies
+      the room to seize phones for Midwest outreach only to find staff already dialing
+      furiously, then startles upon entering his office to face Tom and Sarah, apologizes
+      for lateness, bluntly predicts and contextualizes Tom's loss, defends White
+      House strategy coolly, and offers a parting well-wish amid tension.
+    beliefs:
+    - White House must prioritize broader midterm victories over individual campaigns
+    - 42% in a swing district represents a solid, respectable effort despite loss
+    observed_traits:
+    - strategic
+    - pragmatic
+    - loyal-yet-ruthless
+    - composed-under-fire
+    importance: primary
+    global_id: ger_agent_04bbccb1e352
+  - character_uuid: ger_agent_60a68a084e0c
+    emotional_state: Steadfast neutrality amid high-stakes electoral pressure.
+    goals:
+    - Provide Sam with accurate, real-time race projections
+    - Support office momentum without injecting personal drama
+    what_happened: Ginger responds crisply to Sam's summons from her station, delivering
+      the gut-punch update that all twelve races remain too close to call, fueling
+      the office's sustained frenzy before pivoting back to her duties amid the phone
+      bank chaos.
+    observed_status: Ginger responds crisply to Sam's summons from her station, delivering
+      the gut-punch update that all twelve races remain too close to call, fueling
+      the office's sustained frenzy before pivoting back to her duties amid the phone
+      bank chaos.
+    beliefs:
+    - Precise reporting sustains strategic decision-making
+    - Team readiness is already optimal in crisis mode
+    observed_traits:
+    - efficient
+    - dutiful
+    - unflappable
+    importance: primary
+    global_id: ger_agent_60a68a084e0c
+  - character_uuid: ger_agent_7e3bacbc0f27
+    emotional_state: Weary resignation masking deeper disappointment in political
+      betrayal.
+    goals:
+    - Absorb the election defeat without escalating conflict
+    - Maintain composure for Sarah's sake amid public loss
+    what_happened: Tom waits tensely with Sarah in Sam's office during the electoral
+      storm, acknowledges the projected 42% vote share in his district loss with quiet
+      resignation, gently reins in Sarah's outburst, and exits silently as lightning
+      flashes, embodying defeated poise.
+    observed_status: Tom waits tensely with Sarah in Sam's office during the electoral
+      storm, acknowledges the projected 42% vote share in his district loss with quiet
+      resignation, gently reins in Sarah's outburst, and exits silently as lightning
+      flashes, embodying defeated poise.
+    beliefs:
+    - 42% validates his campaign's merit despite the rout
+    - Personal loyalty to Sam persists despite institutional abandonment
+    observed_traits:
+    - resigned
+    - measured
+    - supportive
+    importance: primary
+    global_id: ger_agent_7e3bacbc0f27
+  - character_uuid: ger_agent_3c1110435b4d
+    emotional_state: Raw fury boiling over from betrayal, sharpened by personal stakes
+      like pregnancy.
+    goals:
+    - Vent righteous anger at White House abandonment
+    - Warn Sam of future retribution to reclaim agency
+    what_happened: Sarah spars from Sam's office, dismisses staying in the district
+      on election day with bitter sarcasm, disputes the 'respectable' loss framing
+      by citing the 49% Dem lean, erupts in fury over White House silence, issues
+      vengeful threats, and storms out with Tom as lightning cracks.
+    observed_status: Sarah spars from Sam's office, dismisses staying in the district
+      on election day with bitter sarcasm, disputes the 'respectable' loss framing
+      by citing the 49% Dem lean, erupts in fury over White House silence, issues
+      vengeful threats, and storms out with Tom as lightning cracks.
+    beliefs:
+    - White House betrayal demands personal payback
+    - District's Dem lean makes 58-42 an unforgivable failure
+    observed_traits:
+    - fierce
+    - unyielding
+    - protective
+    - vindictive
+    importance: primary
+    global_id: ger_agent_3c1110435b4d
+  object_involvements:
+  - object_uuid: ger_object_de8b3498e359
+    description_of_involvement: The phone banks pulse as the office's lifeline for
+      real-time midterm influence; Sam commands staff to grab lines targeting Midwest
+      powerbrokers, only to realize they are already hammering keypads in proactive
+      frenzy, amplifying tension and underscoring the team's hair-trigger readiness
+      to convert sympathy surges into wins amid razor-thin races.
+    status_before_event: Already actively in use by staff dialing furiously across
+      the bullpen.
+    status_after_event: Continued intense operation, sustaining outreach momentum
+      post-Sam's rally.
+    global_id: ger_object_de8b3498e359
+  location_involvements:
+  - location_uuid: ger_location_b10fa8b0575a
+    description_of_involvement: The Midwest emerges as prime target in Sam's phone
+      rally, its twelve teetering races invoked to channel staff fury into donor calls
+      and brokered deals, sustaining uncertainty and pressure to flip heartland loyalties
+      in the sympathy-fueled midterm scramble.
+    observed_atmosphere: Phantom sprawl of urgent fields and banquet halls humming
+      with midnight bargains.
+    functional_role: Strategic battleground for intervention via phone banks.
+    symbolic_significance: Heartland proving ground for White House opportunism.
+    access_restrictions: ''
+    key_environmental_details:
+    - Dawn coffee and garage grease from endless outreach
+    - Razor-thin county tensions piercing phone lines
+    global_id: ger_location_b10fa8b0575a
+  - location_uuid: ger_location_cf3149d3740f
+    description_of_involvement: The Communications Office throbs as election night's
+      nerve center, alive with staff on phones, Sam's urgent summons and rally, Ginger's
+      terse report, and transition to his adjacent office for raw confrontation—blending
+      operational frenzy with personal fallout, heightening stakes in the post-assassination
+      midterm push.
+    observed_atmosphere: Electrifically tense with ringing phones, hurried voices,
+      and underlying dread.
+    functional_role: Command hub for race monitoring, mobilization, and private reckonings.
+    symbolic_significance: Embodiment of White House's pragmatic machinery grinding
+      personal loyalties.
+    access_restrictions: Restricted to senior staff and invited allies like the Jordans.
+    key_environmental_details:
+    - Merciless fluorescents over hunched desks
+    - Coiled phone cords snaking across surfaces
+    - Muted TVs replaying election feeds
+    global_id: ger_location_cf3149d3740f
+  organization_involvements:
+  - organization_uuid: ger_organization_bb39d5dd403d
+    description_of_involvement: The White House materializes as the silent betrayer
+      in Sarah's tirade and Sam's defense—its tactical withdrawal from tainted campaigns
+      like Tom's exposed as ruthless midterm calculus, prioritizing House gains over
+      personal pacts amid post-shooting highs, fracturing Sam's recruitment loyalty
+      in the office showdown.
+    active_representation: Through Sam's invocation and defense of its operational
+      protocol.
+    power_dynamics: Wielding overriding authority via resource denial, subordinating
+      individual bids to national strategy.
+    organizational_goals:
+    - Secure midterm House seats by triaging weak campaigns
+    - Harness assassination sympathy without ethical taint
+    influence_mechanisms:
+    - Strategic silence and resource withholding
+    - Staff mobilization through phone-bank directives
+    institutional_impact: Reveals cold pragmatism eroding personal alliances for broader
+      power retention.
+    internal_dynamics: Tension between idealism (Sam's promises) and hierarchy (abandonment
+      orders).
+    global_id: ger_organization_bb39d5dd403d
   derived_from_beat_uuids: *id014
   source_season: 2
   source_database: westwing.s02
@@ -7488,7 +7488,7 @@ events:
     - Sudden lightning flash outside window
     global_id: ger_location_cf3149d3740f
   organization_involvements:
-  - organization_uuid: ger_organization_d033a1b32d4f
+  - organization_uuid: ger_organization_bb39d5dd403d
     description_of_involvement: The White House looms as silent betrayer in Sarah's
       tirade, its abandonment of Tom's tainted campaign fueling vows of retribution;
       Sam defends it as standard triage, exposing moral fractures in midterm strategy
@@ -7504,7 +7504,7 @@ events:
     institutional_impact: Reveals cold calculus eroding personal loyalties for national
       gain
     internal_dynamics: Tension between idealism and pragmatic loyalty tests
-    global_id: ger_organization_d033a1b32d4f
+    global_id: ger_organization_bb39d5dd403d
   derived_from_beat_uuids:
   - beat_9209a418667d6cb1
   - beat_afe1325bcb7f72a5
@@ -9225,7 +9225,7 @@ events:
     observed_traits: []
     importance: primary
     global_id: ger_agent_ffabce55dee1
-  - character_uuid: ger_agent_1e9e45a7bd44
+  - character_uuid: ger_agent_a340dc1bc0ee
     emotional_state: Deeply concerned empathy laced with romantic tenderness and post-trauma
       worry
     goals:
@@ -9250,7 +9250,7 @@ events:
     - affectionate
     - resilient
     importance: primary
-    global_id: ger_agent_1e9e45a7bd44
+    global_id: ger_agent_a340dc1bc0ee
   object_involvements:
   - object_uuid: ger_object_21a08ca6bbe6
     description_of_involvement: Charlie references his pager as a lifeline for contact
@@ -9287,7 +9287,7 @@ events:
     - Proximity to White House enabling quick transitions
     global_id: ger_location_f22d4e79e8a2
   organization_involvements:
-  - organization_uuid: ger_organization_a02ef5855109
+  - organization_uuid: ger_organization_9aeb11cd4ff1
     description_of_involvement: Leo explicitly mandates extra Secret Service protection
       for Charlie's outing, clarifying it's professional security rather than a risqué
       euphemism, injecting post-assassination vigilance into the tender moment and
@@ -9304,7 +9304,7 @@ events:
     institutional_impact: Reinforces White House's fortified posture, blurring personal
       safety with national security
     internal_dynamics: ''
-    global_id: ger_organization_a02ef5855109
+    global_id: ger_organization_9aeb11cd4ff1
   derived_from_beat_uuids:
   - beat_24836c711dde9992
   - beat_663d0f9edc6f3852
@@ -9411,7 +9411,7 @@ events:
     observed_traits: []
     importance: primary
     global_id: ger_agent_ffabce55dee1
-  - character_uuid: ger_agent_1e9e45a7bd44
+  - character_uuid: ger_agent_a340dc1bc0ee
     emotional_state: Sympathetic warmth blending into affectionate vulnerability then
       bemused surprise
     goals:
@@ -9434,7 +9434,7 @@ events:
     - poised
     - perplexed
     importance: primary
-    global_id: ger_agent_1e9e45a7bd44
+    global_id: ger_agent_a340dc1bc0ee
   object_involvements:
   - object_uuid: ger_object_908f68686522
     description_of_involvement: Zoey's book serves as an initial anchor for her solitary
@@ -9464,7 +9464,7 @@ events:
     - Post-reception pursuit under portico night
     global_id: ger_location_f22d4e79e8a2
   organization_involvements:
-  - organization_uuid: ger_organization_a02ef5855109
+  - organization_uuid: ger_organization_9aeb11cd4ff1
     description_of_involvement: Leo mandates extra Secret Service protection for Charlie's
       outing, framing it with humorous clarification against misread innuendo; this
       post-assassination protocol underscores the organization's expanded vigilance
@@ -9483,7 +9483,7 @@ events:
     institutional_impact: Reinforces White House as fortified bubble where personal
       lives bend to security imperatives
     internal_dynamics: ''
-    global_id: ger_organization_a02ef5855109
+    global_id: ger_organization_9aeb11cd4ff1
   derived_from_beat_uuids:
   - beat_2ecc401750ba4cd6
   - beat_cff46d46e2257e59
@@ -9592,7 +9592,7 @@ events:
     - patriotic
     importance: primary
     global_id: ger_agent_7854a70e34ea
-  - character_uuid: ger_agent_64b2a2c10c8f
+  - character_uuid: ger_agent_14f85d554756
     emotional_state: Teasingly affectionate with underlying protective exasperation
     goals:
     - Reinforce recovery boundaries through gentle ribbing
@@ -9612,7 +9612,7 @@ events:
     - exasperated
     - grounded
     importance: primary
-    global_id: ger_agent_64b2a2c10c8f
+    global_id: ger_agent_14f85d554756
   object_involvements:
   - object_uuid: ger_object_6e352575e04a
     description_of_involvement: Toby hands a bottle to C.J., group grips sweating
@@ -9674,7 +9674,7 @@ events:
     institutional_impact: Embodies democratic irony freezing power despite upheaval
     internal_dynamics: Exposed to total incumbent turnover without net shift
     global_id: ger_organization_e7a9e4ecbb31
-  - organization_uuid: ger_organization_e89f085bf2d7
+  - organization_uuid: ger_organization_097bbd620a18
     description_of_involvement: Congressional Democrats' exhaustive efforts scorched
       in Sam's readout—five seats gained from 12 races but matched by Republican flips,
       freezing House unchanged after $400M and four months; revelation guts post-shooting
@@ -9689,7 +9689,7 @@ events:
     - Staff triage abandoning weaker candidates
     institutional_impact: Highlights futility of midterm arithmetic in divided government
     internal_dynamics: ''
-    global_id: ger_organization_e89f085bf2d7
+    global_id: ger_organization_097bbd620a18
   - organization_uuid: ger_organization_629b1169251a
     description_of_involvement: Republicans referenced in Sam's report of seven flips
       in 12 pivotal races alongside five Democratic losses, achieving net-zero House
@@ -9806,7 +9806,7 @@ events:
     - ritualistically unifying
     importance: primary
     global_id: ger_agent_7854a70e34ea
-  - character_uuid: ger_agent_64b2a2c10c8f
+  - character_uuid: ger_agent_14f85d554756
     emotional_state: Quiet stun evolving into shared sardonic resolve
     goals:
     - Process collective disappointment internally
@@ -9825,7 +9825,7 @@ events:
     - loyal
     - stoically sardonic
     importance: primary
-    global_id: ger_agent_64b2a2c10c8f
+    global_id: ger_agent_14f85d554756
   object_involvements:
   - object_uuid: ger_object_6e352575e04a
     description_of_involvement: Long-neck beer bottles, gripped by all senior staff,
@@ -9898,7 +9898,7 @@ events:
     institutional_impact: Highlights democracy's self-protective stasis
     internal_dynamics: Razor-edge partisan flips canceling out
     global_id: ger_organization_e7a9e4ecbb31
-  - organization_uuid: ger_organization_e89f085bf2d7
+  - organization_uuid: ger_organization_097bbd620a18
     description_of_involvement: Congressional Democrats suffer net-zero in Sam's tally—five
       seats gained but matched by Republican flips—frustrating post-shooting surge
       and exhaustive campaigns, fueling staff's stunned realization of futility.
@@ -9912,7 +9912,7 @@ events:
     - Post-assassination momentum mobilization
     institutional_impact: Exposes limits of tragedy-fueled partisanship
     internal_dynamics: ''
-    global_id: ger_organization_e89f085bf2d7
+    global_id: ger_organization_097bbd620a18
   - organization_uuid: ger_organization_629b1169251a
     description_of_involvement: Republicans are invoked via Sam's report of snaring
       seven pivotal races, mirroring Democrats' five gains to lock House balance;
@@ -10020,7 +10020,7 @@ events:
     - ritualistically unifying
     importance: primary
     global_id: ger_agent_7854a70e34ea
-  - character_uuid: ger_agent_64b2a2c10c8f
+  - character_uuid: ger_agent_14f85d554756
     emotional_state: Quiet stun evolving into shared sardonic resolve
     goals:
     - Process collective disappointment internally
@@ -10039,7 +10039,7 @@ events:
     - loyal
     - stoically sardonic
     importance: primary
-    global_id: ger_agent_64b2a2c10c8f
+    global_id: ger_agent_14f85d554756
   object_involvements:
   - object_uuid: ger_object_6e352575e04a
     description_of_involvement: Long-neck beer bottles, gripped by all senior staff,
@@ -10112,7 +10112,7 @@ events:
     institutional_impact: Highlights democracy's self-protective stasis
     internal_dynamics: Razor-edge partisan flips canceling out
     global_id: ger_organization_e7a9e4ecbb31
-  - organization_uuid: ger_organization_e89f085bf2d7
+  - organization_uuid: ger_organization_097bbd620a18
     description_of_involvement: Congressional Democrats suffer net-zero in Sam's tally—five
       seats gained but matched by Republican flips—frustrating post-shooting surge
       and exhaustive campaigns, fueling staff's stunned realization of futility.
@@ -10126,7 +10126,7 @@ events:
     - Post-assassination momentum mobilization
     institutional_impact: Exposes limits of tragedy-fueled partisanship
     internal_dynamics: ''
-    global_id: ger_organization_e89f085bf2d7
+    global_id: ger_organization_097bbd620a18
   - organization_uuid: ger_organization_629b1169251a
     description_of_involvement: Republicans are invoked via Sam's report of snaring
       seven pivotal races, mirroring Democrats' five gains to lock House balance;

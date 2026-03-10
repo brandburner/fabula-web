@@ -1,5 +1,5 @@
 # Events for Night Five
-# Generated: 2026-02-10T12:17:26.368076
+# Generated: 2026-02-22T16:33:24.014059
 
 episode_uuid: ep_sea_ser_the_west_wing_s03_e13
 episode_title: Night Five
@@ -305,179 +305,6 @@ events:
     STANLEY: No.
   - 'STANLEY: ([thoughtfully]) The driver asked me the same question.'
   is_flashback: false
-  location_uuid: ger_location_3d4b26f1de82
-  theme_uuids:
-  - ger_theme_07c10222f6d0
-  - ger_theme_c90b9bacbc27
-  arc_uuids: []
-  participations:
-  - character_uuid: ger_agent_c9d41ae93618
-    emotional_state: Feigned casual enthusiasm masking mounting anxiety over the deception
-      holding.
-    goals:
-    - Prolong the fabricated tour to delay suspicion of the true therapy purpose
-    - Coordinate seamlessly with Sam to reinforce White House normalcy
-    what_happened: Josh energetically leads Stanley from the hallway through double
-      doors into the Roosevelt Room, gesturing broadly to describe the communications
-      bullpen and Old Executive Office Building, introduces him to Sam with a nod,
-      questions Sam's presence, calls after him, and redirects toward Leo's office
-      to sustain the tour ruse.
-    observed_status: Josh energetically leads Stanley from the hallway through double
-      doors into the Roosevelt Room, gesturing broadly to describe the communications
-      bullpen and Old Executive Office Building, introduces him to Sam with a nod,
-      questions Sam's presence, calls after him, and redirects toward Leo's office
-      to sustain the tour ruse.
-    beliefs:
-    - Repetitive casual inquiries will normalize Stanley's visit
-    - Quick staff interactions sell the authenticity of the late-night tour
-    observed_traits:
-    - manipulative
-    - high-energy
-    - loyal
-    - resourceful
-    importance: primary
-    global_id: ger_agent_c9d41ae93618
-  - character_uuid: ger_agent_dd62525d972a
-    emotional_state: Focused on speech review.
-    goals:
-    - Evaluate and approve UN speech draft
-    what_happened: Leo is cited by Sam as currently reading the speech in his office,
-      with Josh gesturing to its private Oval entrance as the tour's pivot point.
-    observed_status: Leo is cited by Sam as currently reading the speech in his office,
-      with Josh gesturing to its private Oval entrance as the tour's pivot point.
-    beliefs:
-    - Precise rhetoric essential for policy impact
-    observed_traits:
-    - authoritative
-    - methodical
-    importance: primary
-    global_id: ger_agent_dd62525d972a
-  - character_uuid: ger_agent_04bbccb1e352
-    emotional_state: Awkward poise veiling awareness of the high-stakes ruse.
-    goals:
-    - Execute the pre-planned 'plane question' to bolster normalcy
-    - Brief Josh on speech status without derailing the tour
-    what_happened: Sam materializes in the Roosevelt Room doorway, delivers the ritual
-      plane crash pleasantries to Stanley amid handshake, updates Josh tersely on
-      Leo reviewing the speech and Toby's agitation, then swiftly exits to avoid prolonging
-      the encounter.
-    observed_status: Sam materializes in the Roosevelt Room doorway, delivers the
-      ritual plane crash pleasantries to Stanley amid handshake, updates Josh tersely
-      on Leo reviewing the speech and Toby's agitation, then swiftly exits to avoid
-      prolonging the encounter.
-    beliefs:
-    - Brief, scripted interaction maintains the therapy deception
-    - Toby's frustration is a believable distraction for late-night activity
-    observed_traits:
-    - cooperative
-    - efficient
-    - wry
-    - dutiful
-    importance: primary
-    global_id: ger_agent_04bbccb1e352
-  - character_uuid: ger_agent_7854a70e34ea
-    emotional_state: Reportedly agitated and frustrated.
-    goals:
-    - Refine UN speech under deadline pressure
-    what_happened: Toby is referenced by Josh as working in the bullpen and by Sam
-      as 'banging around' in frustration over the impending speech release, invoked
-      to paint a picture of routine chaos.
-    observed_status: Toby is referenced by Josh as working in the bullpen and by Sam
-      as 'banging around' in frustration over the impending speech release, invoked
-      to paint a picture of routine chaos.
-    beliefs:
-    - Speech must align perfectly with directives
-    observed_traits:
-    - temperamental
-    - intense
-    importance: primary
-    global_id: ger_agent_7854a70e34ea
-  - character_uuid: ger_agent_77e55d95cd36
-    emotional_state: Calm exterior with emerging thoughtful suspicion toward the orchestrated
-      repetition.
-    goals:
-    - Gauge the authenticity of the tour and interactions
-    - Politely engage while noting inconsistencies in questioning
-    what_happened: Stanley follows Josh compliantly through the hallway and into the
-      Roosevelt Room, shakes hands politely with Sam, responds curtly to flight and
-      plane questions, then thoughtfully observes aloud that the driver posed the
-      identical query, signaling his perceptiveness.
-    observed_status: Stanley follows Josh compliantly through the hallway and into
-      the Roosevelt Room, shakes hands politely with Sam, responds curtly to flight
-      and plane questions, then thoughtfully observes aloud that the driver posed
-      the identical query, signaling his perceptiveness.
-    beliefs:
-    - Repeated plane questions indicate a coordinated deception
-    - True purpose lies beyond this contrived West Wing escort
-    observed_traits:
-    - observant
-    - composed
-    - analytical
-    - patient
-    importance: primary
-    global_id: ger_agent_77e55d95cd36
-  object_involvements: []
-  location_involvements:
-  - location_uuid: ger_location_3d4b26f1de82
-    description_of_involvement: The West Wing Hallway serves as the deceptive tour's
-      starting artery, where Josh propels Stanley through double doors, its shadowed
-      length amplifying the clandestine feel as fabricated explanations unfold amid
-      late-night solitude.
-    observed_atmosphere: Taut with contrived casualness and underlying urgency.
-    functional_role: Transit corridor for the sham tour progression.
-    symbolic_significance: Embodies the labyrinthine secrecy shielding Oval vulnerabilities.
-    access_restrictions: Restricted to cleared staff and escorted guests.
-    key_environmental_details:
-    - Dimly lit for nocturnal operations
-    - Echoing footsteps heightening isolation
-    global_id: ger_location_3d4b26f1de82
-  - location_uuid: ger_location_7423b10d7d15
-    description_of_involvement: Josh leads Stanley into the poised Roosevelt Room
-      confines, where Sam's interruption with plane questions unfolds, the room's
-      polished formality contrasting the awkward pretense and heightening the ruse's
-      fragility.
-    observed_atmosphere: Stilted politeness laced with tension.
-    functional_role: Stage for contrived staff encounter.
-    symbolic_significance: Neutral ground exposing cracks in elite deception.
-    access_restrictions: High-level meetings only.
-    key_environmental_details:
-    - Polished tables in hushed confines
-    - Doorway framing sudden appearances
-    global_id: ger_location_7423b10d7d15
-  - location_uuid: ger_location_c7c52cd4096e
-    description_of_involvement: Josh points across the alley to the hulking Old Executive
-      Office Building as the overflow for speechwriting, layering the tour with logistical
-      depth to mask the urgent, hidden psychiatric intervention.
-    observed_atmosphere: Distant, shadowy operational extension.
-    functional_role: Off-site reference bolstering tour credibility.
-    symbolic_significance: Expands institutional sprawl hiding personal crises.
-    access_restrictions: Government personnel with clearance.
-    key_environmental_details:
-    - Visible across alley in night shadows
-    - Implied clatter of keyboards and debate
-    global_id: ger_location_c7c52cd4096e
-  organization_involvements: []
-  derived_from_beat_uuids: &id004
-  - beat_e22f1919b6bdf6c9
-  - beat_96c54ea0e17a30fe
-  - beat_dbe1d287ac4966bb
-  source_season: 3
-  source_database: westwing.s03
-- fabula_uuid: cand_evt_scene_9f1dd428949df117_1
-  global_id: null
-  title: Josh's Sham West Wing Tour and Stanley's Dawning Suspicion
-  description: Josh perpetuates the deception by leading Stanley on a fabricated West
-    Wing tour, gesturing to the communications bullpen and Roosevelt Room while masking
-    the true purpose of the visit. Sam's awkward interruption delivers the ritual
-    'plane question' pleasantries, amplifying the contrived normalcy. As Josh directs
-    toward Leo's office, Stanley pensively notes the driver's identical query, subtly
-    signaling his emerging awareness of the ruse and escalating tension toward Bartlet's
-    secret therapy session.
-  episode_uuid: ep_sea_ser_the_west_wing_s03_e13
-  scene_sequence: 2
-  sequence_in_scene: 2
-  key_dialogue: *id003
-  is_flashback: false
   location_uuid: ger_location_7423b10d7d15
   theme_uuids:
   - ger_theme_07c10222f6d0
@@ -591,19 +418,6 @@ events:
     global_id: ger_agent_77e55d95cd36
   object_involvements: []
   location_involvements:
-  - location_uuid: ger_location_3d4b26f1de82
-    description_of_involvement: The West Wing Hallway serves as the deceptive tour's
-      starting artery, where Josh propels Stanley through double doors, its shadowed
-      length amplifying the clandestine feel as fabricated explanations unfold amid
-      late-night solitude.
-    observed_atmosphere: Taut with contrived casualness and underlying urgency.
-    functional_role: Transit corridor for the sham tour progression.
-    symbolic_significance: Embodies the labyrinthine secrecy shielding Oval vulnerabilities.
-    access_restrictions: Restricted to cleared staff and escorted guests.
-    key_environmental_details:
-    - Dimly lit for nocturnal operations
-    - Echoing footsteps heightening isolation
-    global_id: ger_location_3d4b26f1de82
   - location_uuid: ger_location_7423b10d7d15
     description_of_involvement: Josh leads Stanley into the poised Roosevelt Room
       confines, where Sam's interruption with plane questions unfolds, the room's
@@ -617,7 +431,20 @@ events:
     - Polished tables in hushed confines
     - Doorway framing sudden appearances
     global_id: ger_location_7423b10d7d15
-  - location_uuid: ger_location_c7c52cd4096e
+  - location_uuid: ger_location_3303871a0689
+    description_of_involvement: The West Wing Hallway serves as the deceptive tour's
+      starting artery, where Josh propels Stanley through double doors, its shadowed
+      length amplifying the clandestine feel as fabricated explanations unfold amid
+      late-night solitude.
+    observed_atmosphere: Taut with contrived casualness and underlying urgency.
+    functional_role: Transit corridor for the sham tour progression.
+    symbolic_significance: Embodies the labyrinthine secrecy shielding Oval vulnerabilities.
+    access_restrictions: Restricted to cleared staff and escorted guests.
+    key_environmental_details:
+    - Dimly lit for nocturnal operations
+    - Echoing footsteps heightening isolation
+    global_id: ger_location_3303871a0689
+  - location_uuid: ger_location_54484ef6da3a
     description_of_involvement: Josh points across the alley to the hulking Old Executive
       Office Building as the overflow for speechwriting, layering the tour with logistical
       depth to mask the urgent, hidden psychiatric intervention.
@@ -628,9 +455,12 @@ events:
     key_environmental_details:
     - Visible across alley in night shadows
     - Implied clatter of keyboards and debate
-    global_id: ger_location_c7c52cd4096e
+    global_id: ger_location_54484ef6da3a
   organization_involvements: []
-  derived_from_beat_uuids: *id004
+  derived_from_beat_uuids: &id004
+  - beat_e22f1919b6bdf6c9
+  - beat_96c54ea0e17a30fe
+  - beat_dbe1d287ac4966bb
   source_season: 3
   source_database: westwing.s03
 - fabula_uuid: cand_evt_scene_9f1dd428949df117_1
@@ -648,7 +478,7 @@ events:
   sequence_in_scene: 2
   key_dialogue: *id003
   is_flashback: false
-  location_uuid: ger_location_c7c52cd4096e
+  location_uuid: ger_location_3303871a0689
   theme_uuids:
   - ger_theme_07c10222f6d0
   - ger_theme_c90b9bacbc27
@@ -761,19 +591,6 @@ events:
     global_id: ger_agent_77e55d95cd36
   object_involvements: []
   location_involvements:
-  - location_uuid: ger_location_3d4b26f1de82
-    description_of_involvement: The West Wing Hallway serves as the deceptive tour's
-      starting artery, where Josh propels Stanley through double doors, its shadowed
-      length amplifying the clandestine feel as fabricated explanations unfold amid
-      late-night solitude.
-    observed_atmosphere: Taut with contrived casualness and underlying urgency.
-    functional_role: Transit corridor for the sham tour progression.
-    symbolic_significance: Embodies the labyrinthine secrecy shielding Oval vulnerabilities.
-    access_restrictions: Restricted to cleared staff and escorted guests.
-    key_environmental_details:
-    - Dimly lit for nocturnal operations
-    - Echoing footsteps heightening isolation
-    global_id: ger_location_3d4b26f1de82
   - location_uuid: ger_location_7423b10d7d15
     description_of_involvement: Josh leads Stanley into the poised Roosevelt Room
       confines, where Sam's interruption with plane questions unfolds, the room's
@@ -787,7 +604,20 @@ events:
     - Polished tables in hushed confines
     - Doorway framing sudden appearances
     global_id: ger_location_7423b10d7d15
-  - location_uuid: ger_location_c7c52cd4096e
+  - location_uuid: ger_location_3303871a0689
+    description_of_involvement: The West Wing Hallway serves as the deceptive tour's
+      starting artery, where Josh propels Stanley through double doors, its shadowed
+      length amplifying the clandestine feel as fabricated explanations unfold amid
+      late-night solitude.
+    observed_atmosphere: Taut with contrived casualness and underlying urgency.
+    functional_role: Transit corridor for the sham tour progression.
+    symbolic_significance: Embodies the labyrinthine secrecy shielding Oval vulnerabilities.
+    access_restrictions: Restricted to cleared staff and escorted guests.
+    key_environmental_details:
+    - Dimly lit for nocturnal operations
+    - Echoing footsteps heightening isolation
+    global_id: ger_location_3303871a0689
+  - location_uuid: ger_location_54484ef6da3a
     description_of_involvement: Josh points across the alley to the hulking Old Executive
       Office Building as the overflow for speechwriting, layering the tour with logistical
       depth to mask the urgent, hidden psychiatric intervention.
@@ -798,7 +628,177 @@ events:
     key_environmental_details:
     - Visible across alley in night shadows
     - Implied clatter of keyboards and debate
-    global_id: ger_location_c7c52cd4096e
+    global_id: ger_location_54484ef6da3a
+  organization_involvements: []
+  derived_from_beat_uuids: *id004
+  source_season: 3
+  source_database: westwing.s03
+- fabula_uuid: cand_evt_scene_9f1dd428949df117_1
+  global_id: null
+  title: Josh's Sham West Wing Tour and Stanley's Dawning Suspicion
+  description: Josh perpetuates the deception by leading Stanley on a fabricated West
+    Wing tour, gesturing to the communications bullpen and Roosevelt Room while masking
+    the true purpose of the visit. Sam's awkward interruption delivers the ritual
+    'plane question' pleasantries, amplifying the contrived normalcy. As Josh directs
+    toward Leo's office, Stanley pensively notes the driver's identical query, subtly
+    signaling his emerging awareness of the ruse and escalating tension toward Bartlet's
+    secret therapy session.
+  episode_uuid: ep_sea_ser_the_west_wing_s03_e13
+  scene_sequence: 2
+  sequence_in_scene: 2
+  key_dialogue: *id003
+  is_flashback: false
+  location_uuid: ger_location_54484ef6da3a
+  theme_uuids:
+  - ger_theme_07c10222f6d0
+  - ger_theme_c90b9bacbc27
+  arc_uuids: []
+  participations:
+  - character_uuid: ger_agent_c9d41ae93618
+    emotional_state: Feigned casual enthusiasm masking mounting anxiety over the deception
+      holding.
+    goals:
+    - Prolong the fabricated tour to delay suspicion of the true therapy purpose
+    - Coordinate seamlessly with Sam to reinforce White House normalcy
+    what_happened: Josh energetically leads Stanley from the hallway through double
+      doors into the Roosevelt Room, gesturing broadly to describe the communications
+      bullpen and Old Executive Office Building, introduces him to Sam with a nod,
+      questions Sam's presence, calls after him, and redirects toward Leo's office
+      to sustain the tour ruse.
+    observed_status: Josh energetically leads Stanley from the hallway through double
+      doors into the Roosevelt Room, gesturing broadly to describe the communications
+      bullpen and Old Executive Office Building, introduces him to Sam with a nod,
+      questions Sam's presence, calls after him, and redirects toward Leo's office
+      to sustain the tour ruse.
+    beliefs:
+    - Repetitive casual inquiries will normalize Stanley's visit
+    - Quick staff interactions sell the authenticity of the late-night tour
+    observed_traits:
+    - manipulative
+    - high-energy
+    - loyal
+    - resourceful
+    importance: primary
+    global_id: ger_agent_c9d41ae93618
+  - character_uuid: ger_agent_dd62525d972a
+    emotional_state: Focused on speech review.
+    goals:
+    - Evaluate and approve UN speech draft
+    what_happened: Leo is cited by Sam as currently reading the speech in his office,
+      with Josh gesturing to its private Oval entrance as the tour's pivot point.
+    observed_status: Leo is cited by Sam as currently reading the speech in his office,
+      with Josh gesturing to its private Oval entrance as the tour's pivot point.
+    beliefs:
+    - Precise rhetoric essential for policy impact
+    observed_traits:
+    - authoritative
+    - methodical
+    importance: primary
+    global_id: ger_agent_dd62525d972a
+  - character_uuid: ger_agent_04bbccb1e352
+    emotional_state: Awkward poise veiling awareness of the high-stakes ruse.
+    goals:
+    - Execute the pre-planned 'plane question' to bolster normalcy
+    - Brief Josh on speech status without derailing the tour
+    what_happened: Sam materializes in the Roosevelt Room doorway, delivers the ritual
+      plane crash pleasantries to Stanley amid handshake, updates Josh tersely on
+      Leo reviewing the speech and Toby's agitation, then swiftly exits to avoid prolonging
+      the encounter.
+    observed_status: Sam materializes in the Roosevelt Room doorway, delivers the
+      ritual plane crash pleasantries to Stanley amid handshake, updates Josh tersely
+      on Leo reviewing the speech and Toby's agitation, then swiftly exits to avoid
+      prolonging the encounter.
+    beliefs:
+    - Brief, scripted interaction maintains the therapy deception
+    - Toby's frustration is a believable distraction for late-night activity
+    observed_traits:
+    - cooperative
+    - efficient
+    - wry
+    - dutiful
+    importance: primary
+    global_id: ger_agent_04bbccb1e352
+  - character_uuid: ger_agent_7854a70e34ea
+    emotional_state: Reportedly agitated and frustrated.
+    goals:
+    - Refine UN speech under deadline pressure
+    what_happened: Toby is referenced by Josh as working in the bullpen and by Sam
+      as 'banging around' in frustration over the impending speech release, invoked
+      to paint a picture of routine chaos.
+    observed_status: Toby is referenced by Josh as working in the bullpen and by Sam
+      as 'banging around' in frustration over the impending speech release, invoked
+      to paint a picture of routine chaos.
+    beliefs:
+    - Speech must align perfectly with directives
+    observed_traits:
+    - temperamental
+    - intense
+    importance: primary
+    global_id: ger_agent_7854a70e34ea
+  - character_uuid: ger_agent_77e55d95cd36
+    emotional_state: Calm exterior with emerging thoughtful suspicion toward the orchestrated
+      repetition.
+    goals:
+    - Gauge the authenticity of the tour and interactions
+    - Politely engage while noting inconsistencies in questioning
+    what_happened: Stanley follows Josh compliantly through the hallway and into the
+      Roosevelt Room, shakes hands politely with Sam, responds curtly to flight and
+      plane questions, then thoughtfully observes aloud that the driver posed the
+      identical query, signaling his perceptiveness.
+    observed_status: Stanley follows Josh compliantly through the hallway and into
+      the Roosevelt Room, shakes hands politely with Sam, responds curtly to flight
+      and plane questions, then thoughtfully observes aloud that the driver posed
+      the identical query, signaling his perceptiveness.
+    beliefs:
+    - Repeated plane questions indicate a coordinated deception
+    - True purpose lies beyond this contrived West Wing escort
+    observed_traits:
+    - observant
+    - composed
+    - analytical
+    - patient
+    importance: primary
+    global_id: ger_agent_77e55d95cd36
+  object_involvements: []
+  location_involvements:
+  - location_uuid: ger_location_7423b10d7d15
+    description_of_involvement: Josh leads Stanley into the poised Roosevelt Room
+      confines, where Sam's interruption with plane questions unfolds, the room's
+      polished formality contrasting the awkward pretense and heightening the ruse's
+      fragility.
+    observed_atmosphere: Stilted politeness laced with tension.
+    functional_role: Stage for contrived staff encounter.
+    symbolic_significance: Neutral ground exposing cracks in elite deception.
+    access_restrictions: High-level meetings only.
+    key_environmental_details:
+    - Polished tables in hushed confines
+    - Doorway framing sudden appearances
+    global_id: ger_location_7423b10d7d15
+  - location_uuid: ger_location_3303871a0689
+    description_of_involvement: The West Wing Hallway serves as the deceptive tour's
+      starting artery, where Josh propels Stanley through double doors, its shadowed
+      length amplifying the clandestine feel as fabricated explanations unfold amid
+      late-night solitude.
+    observed_atmosphere: Taut with contrived casualness and underlying urgency.
+    functional_role: Transit corridor for the sham tour progression.
+    symbolic_significance: Embodies the labyrinthine secrecy shielding Oval vulnerabilities.
+    access_restrictions: Restricted to cleared staff and escorted guests.
+    key_environmental_details:
+    - Dimly lit for nocturnal operations
+    - Echoing footsteps heightening isolation
+    global_id: ger_location_3303871a0689
+  - location_uuid: ger_location_54484ef6da3a
+    description_of_involvement: Josh points across the alley to the hulking Old Executive
+      Office Building as the overflow for speechwriting, layering the tour with logistical
+      depth to mask the urgent, hidden psychiatric intervention.
+    observed_atmosphere: Distant, shadowy operational extension.
+    functional_role: Off-site reference bolstering tour credibility.
+    symbolic_significance: Expands institutional sprawl hiding personal crises.
+    access_restrictions: Government personnel with clearance.
+    key_environmental_details:
+    - Visible across alley in night shadows
+    - Implied clatter of keyboards and debate
+    global_id: ger_location_54484ef6da3a
   organization_involvements: []
   derived_from_beat_uuids: *id004
   source_season: 3
@@ -822,6 +822,124 @@ events:
   - |-
     STANLEY: "His private study?"
     JOSH: "Yeah."
+  is_flashback: false
+  location_uuid: ger_location_8c14f6ec79ae
+  theme_uuids: []
+  arc_uuids: []
+  participations:
+  - character_uuid: ger_agent_c9d41ae93618
+    emotional_state: Feigned casual confidence masking desperate urgency to preserve
+      the insomnia therapy ruse
+    goals:
+    - Deflect Stanley's suspicions through awe of exclusivity
+    - Escort Stanley into the private study without further resistance
+    what_happened: Josh delivers a detailed historical anecdote about Buchanan's renovations
+      to underscore the tour's rarity, emphatically points twice toward the President's
+      private study door, and casually affirms entry, propelling the pair forward
+      with strained bravado.
+    observed_status: Josh delivers a detailed historical anecdote about Buchanan's
+      renovations to underscore the tour's rarity, emphatically points twice toward
+      the President's private study door, and casually affirms entry, propelling the
+      pair forward with strained bravado.
+    beliefs:
+    - Historical trivia and privilege will silence probing questions
+    - Maintaining momentum prevents the deception from unraveling
+    observed_traits:
+    - resourceful
+    - manipulative
+    - urgent
+    - charismatic
+    importance: primary
+    global_id: ger_agent_c9d41ae93618
+  - character_uuid: ger_agent_77e55d95cd36
+    emotional_state: Hesitant suspicion spiked by startled realization of intimate
+      presidential access
+    goals:
+    - Confirm the propriety and safety of proceeding
+    - Assess the true intent behind this unusually privileged escort
+    what_happened: Stanley interrupts with a hesitant query on access legitimacy,
+      reacts with audible surprise to the private study revelation, his wariness palpable
+      as the tour delves deeper into forbidden territory.
+    observed_status: Stanley interrupts with a hesitant query on access legitimacy,
+      reacts with audible surprise to the private study revelation, his wariness palpable
+      as the tour delves deeper into forbidden territory.
+    beliefs:
+    - Such exclusive access signals hidden motives
+    - Josh's bravado may conceal White House intrigue
+    observed_traits:
+    - cautious
+    - perceptive
+    - skeptical
+    importance: primary
+    global_id: ger_agent_77e55d95cd36
+  object_involvements: []
+  location_involvements:
+  - location_uuid: ger_location_8c14f6ec79ae
+    description_of_involvement: Josh dramatically reveals and directs entry into the
+      President's private study via emphatic pointing, transforming it from unseen
+      sanctum to imminent confrontation ground, escalating clandestine stakes as Stanley's
+      surprise underscores the therapy session's raw intimacy.
+    observed_atmosphere: Charged threshold of vulnerability and sealed candor
+    functional_role: clandestine endpoint for therapy revelation
+    symbolic_significance: Nexus of Bartlet's buried trauma and elite fragility
+    access_restrictions: Strictly private, accessible only by presidential invitation
+      or ruse
+    key_environmental_details:
+    - Heavy door as impending barrier
+    - Anticipated scotch-scented seclusion
+    global_id: ger_location_8c14f6ec79ae
+  - location_uuid: ger_location_313db216ee71
+    description_of_involvement: The Hallway in Residence hosts Josh's elaborate Buchanan
+      anecdote and urgent pointing gesture, serving as the tense conduit where deception
+      sharpens and exclusivity is weaponized, bridging public facade to private revelation
+      amid the ruse's precarious momentum.
+    observed_atmosphere: Shadowed intimacy laced with whispered urgency and historical
+      hush
+    functional_role: tour pathway and deception stage
+    symbolic_significance: Vestibule of elite privilege teetering toward psychic sanctum
+    access_restrictions: Off-limits to public tours, reserved for rare White House
+      insiders
+    key_environmental_details:
+    - Continuous nighttime dimness
+    - Echoes of hesitant footsteps
+    global_id: ger_location_313db216ee71
+  - location_uuid: ger_location_30488e98a7bf
+    description_of_involvement: Josh explicitly invokes the second floor Residence
+      hallway's inaccessibility to public tours, amplifying the ruse's awe factor
+      as they traverse its exclusive confines, heightening Stanley's hesitation and
+      the stakes of unauthorized presidential proximity.
+    observed_atmosphere: Rarefied seclusion thick with renovation ghosts and forbidden
+      aura
+    functional_role: exclusive access point underscoring deception
+    symbolic_significance: Barrier of presidential privacy breached by loyalty's gambit
+    access_restrictions: No tours permitted, evoking Buchanan-era secrecy
+    key_environmental_details:
+    - Velvet hush of private quarters
+    - Lingering sense of historical weight
+    global_id: ger_location_30488e98a7bf
+  organization_involvements: []
+  derived_from_beat_uuids: &id006
+  - beat_93abcd4ae288cdaa
+  - beat_3d43a1a3c54f472b
+  - beat_59424642570b0312
+  - beat_c4465b995e4de7b0
+  - beat_55abe70f8a73101c
+  source_season: 3
+  source_database: westwing.s03
+- fabula_uuid: cand_evt_scene_fe7f39e80ac223e5_1
+  global_id: null
+  title: Josh's Exclusive Tour Ends at Bartlet's Private Study
+  description: Josh sustains his elaborate ruse with a historical anecdote about Buchanan's
+    Residence renovations, underscoring the tour's rarity to awe and deflect Stanley's
+    probing suspicions about their privileged access. As Stanley voices hesitation,
+    Josh urgently points them into the President's private study, casually confirming
+    entry despite Stanley's startled reaction. This tense escalation amplifies the
+    clandestine stakes, bridging Josh's deception to the impending therapy revelation
+    while excavating subtextual anxiety over Bartlet's buried trauma.
+  episode_uuid: ep_sea_ser_the_west_wing_s03_e13
+  scene_sequence: 3
+  sequence_in_scene: 3
+  key_dialogue: *id005
   is_flashback: false
   location_uuid: ger_location_313db216ee71
   theme_uuids: []
@@ -874,6 +992,20 @@ events:
     global_id: ger_agent_77e55d95cd36
   object_involvements: []
   location_involvements:
+  - location_uuid: ger_location_8c14f6ec79ae
+    description_of_involvement: Josh dramatically reveals and directs entry into the
+      President's private study via emphatic pointing, transforming it from unseen
+      sanctum to imminent confrontation ground, escalating clandestine stakes as Stanley's
+      surprise underscores the therapy session's raw intimacy.
+    observed_atmosphere: Charged threshold of vulnerability and sealed candor
+    functional_role: clandestine endpoint for therapy revelation
+    symbolic_significance: Nexus of Bartlet's buried trauma and elite fragility
+    access_restrictions: Strictly private, accessible only by presidential invitation
+      or ruse
+    key_environmental_details:
+    - Heavy door as impending barrier
+    - Anticipated scotch-scented seclusion
+    global_id: ger_location_8c14f6ec79ae
   - location_uuid: ger_location_313db216ee71
     description_of_involvement: The Hallway in Residence hosts Josh's elaborate Buchanan
       anecdote and urgent pointing gesture, serving as the tense conduit where deception
@@ -903,27 +1035,8 @@ events:
     - Velvet hush of private quarters
     - Lingering sense of historical weight
     global_id: ger_location_30488e98a7bf
-  - location_uuid: ger_location_8c14f6ec79ae
-    description_of_involvement: Josh dramatically reveals and directs entry into the
-      President's private study via emphatic pointing, transforming it from unseen
-      sanctum to imminent confrontation ground, escalating clandestine stakes as Stanley's
-      surprise underscores the therapy session's raw intimacy.
-    observed_atmosphere: Charged threshold of vulnerability and sealed candor
-    functional_role: clandestine endpoint for therapy revelation
-    symbolic_significance: Nexus of Bartlet's buried trauma and elite fragility
-    access_restrictions: Strictly private, accessible only by presidential invitation
-      or ruse
-    key_environmental_details:
-    - Heavy door as impending barrier
-    - Anticipated scotch-scented seclusion
-    global_id: ger_location_8c14f6ec79ae
   organization_involvements: []
-  derived_from_beat_uuids: &id006
-  - beat_93abcd4ae288cdaa
-  - beat_3d43a1a3c54f472b
-  - beat_59424642570b0312
-  - beat_c4465b995e4de7b0
-  - beat_55abe70f8a73101c
+  derived_from_beat_uuids: *id006
   source_season: 3
   source_database: westwing.s03
 - fabula_uuid: cand_evt_scene_fe7f39e80ac223e5_1
@@ -992,6 +1105,20 @@ events:
     global_id: ger_agent_77e55d95cd36
   object_involvements: []
   location_involvements:
+  - location_uuid: ger_location_8c14f6ec79ae
+    description_of_involvement: Josh dramatically reveals and directs entry into the
+      President's private study via emphatic pointing, transforming it from unseen
+      sanctum to imminent confrontation ground, escalating clandestine stakes as Stanley's
+      surprise underscores the therapy session's raw intimacy.
+    observed_atmosphere: Charged threshold of vulnerability and sealed candor
+    functional_role: clandestine endpoint for therapy revelation
+    symbolic_significance: Nexus of Bartlet's buried trauma and elite fragility
+    access_restrictions: Strictly private, accessible only by presidential invitation
+      or ruse
+    key_environmental_details:
+    - Heavy door as impending barrier
+    - Anticipated scotch-scented seclusion
+    global_id: ger_location_8c14f6ec79ae
   - location_uuid: ger_location_313db216ee71
     description_of_involvement: The Hallway in Residence hosts Josh's elaborate Buchanan
       anecdote and urgent pointing gesture, serving as the tense conduit where deception
@@ -1021,133 +1148,6 @@ events:
     - Velvet hush of private quarters
     - Lingering sense of historical weight
     global_id: ger_location_30488e98a7bf
-  - location_uuid: ger_location_8c14f6ec79ae
-    description_of_involvement: Josh dramatically reveals and directs entry into the
-      President's private study via emphatic pointing, transforming it from unseen
-      sanctum to imminent confrontation ground, escalating clandestine stakes as Stanley's
-      surprise underscores the therapy session's raw intimacy.
-    observed_atmosphere: Charged threshold of vulnerability and sealed candor
-    functional_role: clandestine endpoint for therapy revelation
-    symbolic_significance: Nexus of Bartlet's buried trauma and elite fragility
-    access_restrictions: Strictly private, accessible only by presidential invitation
-      or ruse
-    key_environmental_details:
-    - Heavy door as impending barrier
-    - Anticipated scotch-scented seclusion
-    global_id: ger_location_8c14f6ec79ae
-  organization_involvements: []
-  derived_from_beat_uuids: *id006
-  source_season: 3
-  source_database: westwing.s03
-- fabula_uuid: cand_evt_scene_fe7f39e80ac223e5_1
-  global_id: null
-  title: Josh's Exclusive Tour Ends at Bartlet's Private Study
-  description: Josh sustains his elaborate ruse with a historical anecdote about Buchanan's
-    Residence renovations, underscoring the tour's rarity to awe and deflect Stanley's
-    probing suspicions about their privileged access. As Stanley voices hesitation,
-    Josh urgently points them into the President's private study, casually confirming
-    entry despite Stanley's startled reaction. This tense escalation amplifies the
-    clandestine stakes, bridging Josh's deception to the impending therapy revelation
-    while excavating subtextual anxiety over Bartlet's buried trauma.
-  episode_uuid: ep_sea_ser_the_west_wing_s03_e13
-  scene_sequence: 3
-  sequence_in_scene: 3
-  key_dialogue: *id005
-  is_flashback: false
-  location_uuid: ger_location_8c14f6ec79ae
-  theme_uuids: []
-  arc_uuids: []
-  participations:
-  - character_uuid: ger_agent_c9d41ae93618
-    emotional_state: Feigned casual confidence masking desperate urgency to preserve
-      the insomnia therapy ruse
-    goals:
-    - Deflect Stanley's suspicions through awe of exclusivity
-    - Escort Stanley into the private study without further resistance
-    what_happened: Josh delivers a detailed historical anecdote about Buchanan's renovations
-      to underscore the tour's rarity, emphatically points twice toward the President's
-      private study door, and casually affirms entry, propelling the pair forward
-      with strained bravado.
-    observed_status: Josh delivers a detailed historical anecdote about Buchanan's
-      renovations to underscore the tour's rarity, emphatically points twice toward
-      the President's private study door, and casually affirms entry, propelling the
-      pair forward with strained bravado.
-    beliefs:
-    - Historical trivia and privilege will silence probing questions
-    - Maintaining momentum prevents the deception from unraveling
-    observed_traits:
-    - resourceful
-    - manipulative
-    - urgent
-    - charismatic
-    importance: primary
-    global_id: ger_agent_c9d41ae93618
-  - character_uuid: ger_agent_77e55d95cd36
-    emotional_state: Hesitant suspicion spiked by startled realization of intimate
-      presidential access
-    goals:
-    - Confirm the propriety and safety of proceeding
-    - Assess the true intent behind this unusually privileged escort
-    what_happened: Stanley interrupts with a hesitant query on access legitimacy,
-      reacts with audible surprise to the private study revelation, his wariness palpable
-      as the tour delves deeper into forbidden territory.
-    observed_status: Stanley interrupts with a hesitant query on access legitimacy,
-      reacts with audible surprise to the private study revelation, his wariness palpable
-      as the tour delves deeper into forbidden territory.
-    beliefs:
-    - Such exclusive access signals hidden motives
-    - Josh's bravado may conceal White House intrigue
-    observed_traits:
-    - cautious
-    - perceptive
-    - skeptical
-    importance: primary
-    global_id: ger_agent_77e55d95cd36
-  object_involvements: []
-  location_involvements:
-  - location_uuid: ger_location_313db216ee71
-    description_of_involvement: The Hallway in Residence hosts Josh's elaborate Buchanan
-      anecdote and urgent pointing gesture, serving as the tense conduit where deception
-      sharpens and exclusivity is weaponized, bridging public facade to private revelation
-      amid the ruse's precarious momentum.
-    observed_atmosphere: Shadowed intimacy laced with whispered urgency and historical
-      hush
-    functional_role: tour pathway and deception stage
-    symbolic_significance: Vestibule of elite privilege teetering toward psychic sanctum
-    access_restrictions: Off-limits to public tours, reserved for rare White House
-      insiders
-    key_environmental_details:
-    - Continuous nighttime dimness
-    - Echoes of hesitant footsteps
-    global_id: ger_location_313db216ee71
-  - location_uuid: ger_location_30488e98a7bf
-    description_of_involvement: Josh explicitly invokes the second floor Residence
-      hallway's inaccessibility to public tours, amplifying the ruse's awe factor
-      as they traverse its exclusive confines, heightening Stanley's hesitation and
-      the stakes of unauthorized presidential proximity.
-    observed_atmosphere: Rarefied seclusion thick with renovation ghosts and forbidden
-      aura
-    functional_role: exclusive access point underscoring deception
-    symbolic_significance: Barrier of presidential privacy breached by loyalty's gambit
-    access_restrictions: No tours permitted, evoking Buchanan-era secrecy
-    key_environmental_details:
-    - Velvet hush of private quarters
-    - Lingering sense of historical weight
-    global_id: ger_location_30488e98a7bf
-  - location_uuid: ger_location_8c14f6ec79ae
-    description_of_involvement: Josh dramatically reveals and directs entry into the
-      President's private study via emphatic pointing, transforming it from unseen
-      sanctum to imminent confrontation ground, escalating clandestine stakes as Stanley's
-      surprise underscores the therapy session's raw intimacy.
-    observed_atmosphere: Charged threshold of vulnerability and sealed candor
-    functional_role: clandestine endpoint for therapy revelation
-    symbolic_significance: Nexus of Bartlet's buried trauma and elite fragility
-    access_restrictions: Strictly private, accessible only by presidential invitation
-      or ruse
-    key_environmental_details:
-    - Heavy door as impending barrier
-    - Anticipated scotch-scented seclusion
-    global_id: ger_location_8c14f6ec79ae
   organization_involvements: []
   derived_from_beat_uuids: *id006
   source_season: 3
@@ -1612,7 +1612,7 @@ events:
     observed_traits: []
     importance: primary
     global_id: ger_agent_dd62525d972a
-  - character_uuid: ger_agent_3a11b089b63c
+  - character_uuid: ger_agent_7f81f2915789
     emotional_state: Insistent and probing, undeterred by deflections
     goals:
     - Extract precise release schedule for speech copies
@@ -1631,7 +1631,7 @@ events:
     - sharp
     - professional
     importance: primary
-    global_id: ger_agent_3a11b089b63c
+    global_id: ger_agent_7f81f2915789
   - character_uuid: ger_agent_6085ee276ab6
     emotional_state: Heightened alarm tempered by professional composure
     goals:
@@ -1780,7 +1780,7 @@ events:
     - commanding
     importance: primary
     global_id: ger_agent_dd62525d972a
-  - character_uuid: ger_agent_3a11b089b63c
+  - character_uuid: ger_agent_7f81f2915789
     emotional_state: Insistently probing with professional impatience
     goals:
     - Extract precise timeline for UN speech access
@@ -1801,7 +1801,7 @@ events:
     - interrogative
     - procedural
     importance: primary
-    global_id: ger_agent_3a11b089b63c
+    global_id: ger_agent_7f81f2915789
   - character_uuid: ger_agent_6085ee276ab6
     emotional_state: Urgent desperation laced with grim realism
     goals:
@@ -2051,7 +2051,7 @@ events:
     - commanding
     importance: primary
     global_id: ger_agent_dd62525d972a
-  - character_uuid: ger_agent_3a11b089b63c
+  - character_uuid: ger_agent_7f81f2915789
     emotional_state: Insistently probing with professional impatience
     goals:
     - Extract precise timeline for UN speech access
@@ -2072,7 +2072,7 @@ events:
     - interrogative
     - procedural
     importance: primary
-    global_id: ger_agent_3a11b089b63c
+    global_id: ger_agent_7f81f2915789
   - character_uuid: ger_agent_6085ee276ab6
     emotional_state: Urgent desperation laced with grim realism
     goals:
@@ -2319,7 +2319,7 @@ events:
     - commanding
     importance: primary
     global_id: ger_agent_dd62525d972a
-  - character_uuid: ger_agent_3a11b089b63c
+  - character_uuid: ger_agent_7f81f2915789
     emotional_state: Insistently probing with professional impatience
     goals:
     - Extract precise timeline for UN speech access
@@ -2340,7 +2340,7 @@ events:
     - interrogative
     - procedural
     importance: primary
-    global_id: ger_agent_3a11b089b63c
+    global_id: ger_agent_7f81f2915789
   - character_uuid: ger_agent_6085ee276ab6
     emotional_state: Urgent desperation laced with grim realism
     goals:
@@ -2587,7 +2587,7 @@ events:
     - commanding
     importance: primary
     global_id: ger_agent_dd62525d972a
-  - character_uuid: ger_agent_3a11b089b63c
+  - character_uuid: ger_agent_7f81f2915789
     emotional_state: Insistently probing with professional impatience
     goals:
     - Extract precise timeline for UN speech access
@@ -2608,7 +2608,7 @@ events:
     - interrogative
     - procedural
     importance: primary
-    global_id: ger_agent_3a11b089b63c
+    global_id: ger_agent_7f81f2915789
   - character_uuid: ger_agent_6085ee276ab6
     emotional_state: Urgent desperation laced with grim realism
     goals:
@@ -2916,6 +2916,22 @@ events:
     - loyal
     importance: primary
     global_id: ger_agent_7854a70e34ea
+  - character_uuid: ger_agent_42d70a596952
+    emotional_state: Anticipated anger over Toby's provocative rhetoric.
+    goals:
+    - Challenge the speech's content ideologically
+    - Highlight personal-professional tensions with Toby
+    what_happened: Referenced teasingly by Leo as Toby's 'wife' (corrected to ex-wife)
+      who will react strongly against the speech's boldness.
+    observed_status: Referenced teasingly by Leo as Toby's 'wife' (corrected to ex-wife)
+      who will react strongly against the speech's boldness.
+    beliefs:
+    - Toby's bold language invites unnecessary backlash
+    - Past personal ties amplify policy disagreements
+    observed_traits:
+    - ideologically opposed
+    importance: primary
+    global_id: ger_agent_42d70a596952
   - character_uuid: ger_agent_6085ee276ab6
     emotional_state: Alarmed by reporter's peril.
     goals:
@@ -2933,22 +2949,6 @@ events:
     - persistent
     importance: primary
     global_id: ger_agent_6085ee276ab6
-  - character_uuid: ger_agent_42d70a596952
-    emotional_state: Anticipated anger over Toby's provocative rhetoric.
-    goals:
-    - Challenge the speech's content ideologically
-    - Highlight personal-professional tensions with Toby
-    what_happened: Referenced teasingly by Leo as Toby's 'wife' (corrected to ex-wife)
-      who will react strongly against the speech's boldness.
-    observed_status: Referenced teasingly by Leo as Toby's 'wife' (corrected to ex-wife)
-      who will react strongly against the speech's boldness.
-    beliefs:
-    - Toby's bold language invites unnecessary backlash
-    - Past personal ties amplify policy disagreements
-    observed_traits:
-    - ideologically opposed
-    importance: primary
-    global_id: ger_agent_42d70a596952
   - character_uuid: ger_agent_6a17d1a6689b
     emotional_state: Anticipated tension in crisis confrontation.
     goals:
@@ -3195,6 +3195,22 @@ events:
     - loyal
     importance: primary
     global_id: ger_agent_7854a70e34ea
+  - character_uuid: ger_agent_42d70a596952
+    emotional_state: Anticipated anger over Toby's provocative rhetoric.
+    goals:
+    - Challenge the speech's content ideologically
+    - Highlight personal-professional tensions with Toby
+    what_happened: Referenced teasingly by Leo as Toby's 'wife' (corrected to ex-wife)
+      who will react strongly against the speech's boldness.
+    observed_status: Referenced teasingly by Leo as Toby's 'wife' (corrected to ex-wife)
+      who will react strongly against the speech's boldness.
+    beliefs:
+    - Toby's bold language invites unnecessary backlash
+    - Past personal ties amplify policy disagreements
+    observed_traits:
+    - ideologically opposed
+    importance: primary
+    global_id: ger_agent_42d70a596952
   - character_uuid: ger_agent_6085ee276ab6
     emotional_state: Alarmed by reporter's peril.
     goals:
@@ -3212,22 +3228,6 @@ events:
     - persistent
     importance: primary
     global_id: ger_agent_6085ee276ab6
-  - character_uuid: ger_agent_42d70a596952
-    emotional_state: Anticipated anger over Toby's provocative rhetoric.
-    goals:
-    - Challenge the speech's content ideologically
-    - Highlight personal-professional tensions with Toby
-    what_happened: Referenced teasingly by Leo as Toby's 'wife' (corrected to ex-wife)
-      who will react strongly against the speech's boldness.
-    observed_status: Referenced teasingly by Leo as Toby's 'wife' (corrected to ex-wife)
-      who will react strongly against the speech's boldness.
-    beliefs:
-    - Toby's bold language invites unnecessary backlash
-    - Past personal ties amplify policy disagreements
-    observed_traits:
-    - ideologically opposed
-    importance: primary
-    global_id: ger_agent_42d70a596952
   - character_uuid: ger_agent_6a17d1a6689b
     emotional_state: Anticipated tension in crisis confrontation.
     goals:
@@ -3470,6 +3470,22 @@ events:
     - loyal
     importance: primary
     global_id: ger_agent_7854a70e34ea
+  - character_uuid: ger_agent_42d70a596952
+    emotional_state: Anticipated anger over Toby's provocative rhetoric.
+    goals:
+    - Challenge the speech's content ideologically
+    - Highlight personal-professional tensions with Toby
+    what_happened: Referenced teasingly by Leo as Toby's 'wife' (corrected to ex-wife)
+      who will react strongly against the speech's boldness.
+    observed_status: Referenced teasingly by Leo as Toby's 'wife' (corrected to ex-wife)
+      who will react strongly against the speech's boldness.
+    beliefs:
+    - Toby's bold language invites unnecessary backlash
+    - Past personal ties amplify policy disagreements
+    observed_traits:
+    - ideologically opposed
+    importance: primary
+    global_id: ger_agent_42d70a596952
   - character_uuid: ger_agent_6085ee276ab6
     emotional_state: Alarmed by reporter's peril.
     goals:
@@ -3487,22 +3503,6 @@ events:
     - persistent
     importance: primary
     global_id: ger_agent_6085ee276ab6
-  - character_uuid: ger_agent_42d70a596952
-    emotional_state: Anticipated anger over Toby's provocative rhetoric.
-    goals:
-    - Challenge the speech's content ideologically
-    - Highlight personal-professional tensions with Toby
-    what_happened: Referenced teasingly by Leo as Toby's 'wife' (corrected to ex-wife)
-      who will react strongly against the speech's boldness.
-    observed_status: Referenced teasingly by Leo as Toby's 'wife' (corrected to ex-wife)
-      who will react strongly against the speech's boldness.
-    beliefs:
-    - Toby's bold language invites unnecessary backlash
-    - Past personal ties amplify policy disagreements
-    observed_traits:
-    - ideologically opposed
-    importance: primary
-    global_id: ger_agent_42d70a596952
   - character_uuid: ger_agent_6a17d1a6689b
     emotional_state: Anticipated tension in crisis confrontation.
     goals:
@@ -5790,23 +5790,6 @@ events:
   object_involvements: []
   location_involvements: []
   organization_involvements:
-  - organization_uuid: ger_organization_55a49abeab7d
-    description_of_involvement: The United States is defended by Andy via its Constitution's
-      protection of religious pluralism, countering Toby's speech for allegedly reducing
-      Islam to fanaticism; this anchors her argument against moral arrogance, positioning
-      U.S. foundational values as a bulwark against inflammatory global posturing.
-    active_representation: Via invocation of the Constitution in debate
-    power_dynamics: Institutional pluralism constraining hawkish rhetoric
-    organizational_goals:
-    - Uphold domestic principles of religious tolerance
-    - Avoid rhetoric that fuels international hatred
-    influence_mechanisms:
-    - Constitutional safeguards shaping policy critique
-    - Normative pressure on speech content
-    institutional_impact: Reveals tension between domestic pluralism and assertive
-      foreign policy
-    internal_dynamics: Debate exposes ideological splits in White House strategy
-    global_id: ger_organization_55a49abeab7d
   - organization_uuid: ger_organization_02d60e2d93e3
     description_of_involvement: America is invoked as the central moral actor in the
       heated debate, with Andy denying its monopoly on righteousness and warning of
@@ -5826,6 +5809,23 @@ events:
       pressures
     internal_dynamics: ''
     global_id: ger_organization_02d60e2d93e3
+  - organization_uuid: ger_organization_55a49abeab7d
+    description_of_involvement: The United States is defended by Andy via its Constitution's
+      protection of religious pluralism, countering Toby's speech for allegedly reducing
+      Islam to fanaticism; this anchors her argument against moral arrogance, positioning
+      U.S. foundational values as a bulwark against inflammatory global posturing.
+    active_representation: Via invocation of the Constitution in debate
+    power_dynamics: Institutional pluralism constraining hawkish rhetoric
+    organizational_goals:
+    - Uphold domestic principles of religious tolerance
+    - Avoid rhetoric that fuels international hatred
+    influence_mechanisms:
+    - Constitutional safeguards shaping policy critique
+    - Normative pressure on speech content
+    institutional_impact: Reveals tension between domestic pluralism and assertive
+      foreign policy
+    internal_dynamics: Debate exposes ideological splits in White House strategy
+    global_id: ger_organization_55a49abeab7d
   - organization_uuid: ger_organization_85e130a26b33
     description_of_involvement: Islam emerges as the rhetorical faultline, with Andy
       accusing the speech of reductive fanaticism labeling that violates pluralism,
@@ -6145,7 +6145,7 @@ events:
   key_dialogue:
   - 'Charlie: "Ouch."'
   is_flashback: false
-  location_uuid: ger_location_3d4b26f1de82
+  location_uuid: ger_location_3303871a0689
   theme_uuids: []
   arc_uuids: []
   participations:
@@ -6171,7 +6171,7 @@ events:
     global_id: ger_agent_52e3762c6aed
   object_involvements: []
   location_involvements:
-  - location_uuid: ger_location_3d4b26f1de82
+  - location_uuid: ger_location_3303871a0689
     description_of_involvement: The West Wing Hallway serves as the nocturnal stage
       for Charlie's pained entrance, its double doors swinging open to frame his limping
       passage; dimly lit and echoing with solitude, it contrasts the high-stakes tempests
@@ -6184,7 +6184,7 @@ events:
     key_environmental_details:
     - Double doors as entry portal
     - Nighttime hush amplifying personal sounds
-    global_id: ger_location_3d4b26f1de82
+    global_id: ger_location_3303871a0689
   organization_involvements: []
   derived_from_beat_uuids:
   - beat_4bbed2ed15acfa43
@@ -6213,7 +6213,7 @@ events:
     this, really. She battles with them everyday, but she loves reporters. She''s
     very protective of them and it, it doesn''t matter whether... you know?"'
   is_flashback: false
-  location_uuid: ger_location_3d4b26f1de82
+  location_uuid: ger_location_3303871a0689
   theme_uuids:
   - ger_theme_6065502cd3e4
   arc_uuids: []
@@ -6304,7 +6304,7 @@ events:
       presumably with Donna or unused
     global_id: ger_object_38cc435dd108
   location_involvements:
-  - location_uuid: ger_location_3d4b26f1de82
+  - location_uuid: ger_location_3303871a0689
     description_of_involvement: Serves as the quiet preparatory artery where Donna
       pours coffee amid night shadows pressing close, transitioning seamlessly into
       adjacent C.J.'s office for the core empathetic dialogue; its hushed expanse
@@ -6321,7 +6321,7 @@ events:
     - Dim hallway lighting carving shadows
     - Steaming coffee aroma cutting tension
     - Echoes of distant office activity
-    global_id: ger_location_3d4b26f1de82
+    global_id: ger_location_3303871a0689
   organization_involvements: []
   derived_from_beat_uuids:
   - beat_0079ae0faa0902a3
@@ -6478,7 +6478,7 @@ events:
     that was filming in Goma." C.J.: "(lowering her head) Oh, God." JOSH: "Yeah. He
     was killed in an ambush. Embassy Kinshasa''s going to get the body."'
   is_flashback: false
-  location_uuid: ger_location_3d4b26f1de82
+  location_uuid: ger_location_3303871a0689
   theme_uuids:
   - ger_theme_07c10222f6d0
   arc_uuids: []
@@ -6596,7 +6596,7 @@ events:
     status_after_event: Central clarified element underscoring U.S. principled isolation
     global_id: ger_object_be9b33394d10
   location_involvements:
-  - location_uuid: ger_location_3d4b26f1de82
+  - location_uuid: ger_location_3303871a0689
     description_of_involvement: 'The West Wing Hallway hosts the charged convergence:
       Donna''s relay of confusion, C.J.''s policy explication, Josh''s interruption
       with death news, and doorway witnessing of Janet''s breakdown; its liminal openness
@@ -6612,7 +6612,7 @@ events:
     - Dim overhead lighting casting long shadows
     - Open office doorways framing emotional chaos
     - Eerie quiet broken by footsteps and cries
-    global_id: ger_location_3d4b26f1de82
+    global_id: ger_location_3303871a0689
   - location_uuid: ger_location_8ed7662aa1cc
     description_of_involvement: Congo referenced as Col-Tan's source-rich epicenter,
       its mineral smuggling by foreign armies invoked to justify sanctions, grounding
@@ -6826,7 +6826,7 @@ events:
     status_after_event: Central clarified element underscoring U.S. principled isolation
     global_id: ger_object_be9b33394d10
   location_involvements:
-  - location_uuid: ger_location_3d4b26f1de82
+  - location_uuid: ger_location_3303871a0689
     description_of_involvement: 'The West Wing Hallway hosts the charged convergence:
       Donna''s relay of confusion, C.J.''s policy explication, Josh''s interruption
       with death news, and doorway witnessing of Janet''s breakdown; its liminal openness
@@ -6842,7 +6842,7 @@ events:
     - Dim overhead lighting casting long shadows
     - Open office doorways framing emotional chaos
     - Eerie quiet broken by footsteps and cries
-    global_id: ger_location_3d4b26f1de82
+    global_id: ger_location_3303871a0689
   - location_uuid: ger_location_8ed7662aa1cc
     description_of_involvement: Congo referenced as Col-Tan's source-rich epicenter,
       its mineral smuggling by foreign armies invoked to justify sanctions, grounding
@@ -7054,7 +7054,7 @@ events:
     status_after_event: Central clarified element underscoring U.S. principled isolation
     global_id: ger_object_be9b33394d10
   location_involvements:
-  - location_uuid: ger_location_3d4b26f1de82
+  - location_uuid: ger_location_3303871a0689
     description_of_involvement: 'The West Wing Hallway hosts the charged convergence:
       Donna''s relay of confusion, C.J.''s policy explication, Josh''s interruption
       with death news, and doorway witnessing of Janet''s breakdown; its liminal openness
@@ -7070,7 +7070,7 @@ events:
     - Dim overhead lighting casting long shadows
     - Open office doorways framing emotional chaos
     - Eerie quiet broken by footsteps and cries
-    global_id: ger_location_3d4b26f1de82
+    global_id: ger_location_3303871a0689
   - location_uuid: ger_location_8ed7662aa1cc
     description_of_involvement: Congo referenced as Col-Tan's source-rich epicenter,
       its mineral smuggling by foreign armies invoked to justify sanctions, grounding
@@ -7166,7 +7166,7 @@ events:
     body."'
   - 'JANET: "No, please... No! No. Oh, no. Oh, my... Oh, my God. Oh, God, no..."'
   is_flashback: false
-  location_uuid: ger_location_3d4b26f1de82
+  location_uuid: ger_location_3303871a0689
   theme_uuids:
   - ger_theme_07c10222f6d0
   arc_uuids: []
@@ -7280,7 +7280,7 @@ events:
     status_after_event: Illuminated as crisis catalyst, heightening stakes
     global_id: ger_object_be9b33394d10
   location_involvements:
-  - location_uuid: ger_location_3d4b26f1de82
+  - location_uuid: ger_location_3303871a0689
     description_of_involvement: The West Wing hallway at night hosts the tense convergence
       of Donna, C.J., Wallace, and Josh for rapid briefing on Janet's aid confusion
       and Col-Tan sanctions; doorway frames Donna's witness to Janet's breakdown in
@@ -7294,7 +7294,7 @@ events:
     key_environmental_details:
     - Dim nighttime lighting casting long shadows
     - Muffled screams penetrating from office doorway
-    global_id: ger_location_3d4b26f1de82
+    global_id: ger_location_3303871a0689
   organization_involvements:
   - organization_uuid: ger_organization_c4ebc9a04da8
     description_of_involvement: Embassy in Kinshasa tasked by Josh with body retrieval
@@ -7371,7 +7371,7 @@ events:
     body.'
   - 'JANET: No, please... No! No. Oh, no. Oh, my... Oh, my God. Oh, God, no...'
   is_flashback: false
-  location_uuid: ger_location_3d4b26f1de82
+  location_uuid: ger_location_3303871a0689
   theme_uuids:
   - ger_theme_07c10222f6d0
   arc_uuids:
@@ -7481,7 +7481,7 @@ events:
     global_id: ger_agent_6d41c4015b11
   object_involvements: []
   location_involvements:
-  - location_uuid: ger_location_3d4b26f1de82
+  - location_uuid: ger_location_3303871a0689
     description_of_involvement: The West Wing hallway at night frames the relay of
       Bill Price's death, Janet's echoing cries from the adjacent office, and the
       charged, wordless eye-lock between Donna and Josh, its elongated shadows and
@@ -7498,7 +7498,7 @@ events:
     - Dim nighttime lighting casting long shadows
     - Open doorway transmitting anguished cries
     - Quiet corridor amplifying footsteps and gazes
-    global_id: ger_location_3d4b26f1de82
+    global_id: ger_location_3303871a0689
   organization_involvements:
   - organization_uuid: ger_organization_c4ebc9a04da8
     description_of_involvement: Embassy in Kinshasa is tasked by Josh with retrieving

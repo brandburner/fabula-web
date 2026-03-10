@@ -1,5 +1,5 @@
 # Events for Noel
-# Generated: 2026-02-10T12:17:01.555062
+# Generated: 2026-02-22T16:33:01.686735
 
 episode_uuid: ep_sea_ser_the_west_wing_s02_e10
 episode_title: Noel
@@ -140,7 +140,7 @@ events:
     - Corner chair for silent observer
     global_id: ger_location_1b66e917add9
   organization_involvements:
-  - organization_uuid: ger_organization_d033a1b32d4f
+  - organization_uuid: ger_organization_bb39d5dd403d
     description_of_involvement: Josh invokes his Deputy Chief of Staff role overseeing
       1100 employees reporting to Leo and President, weaponizing institutional power
       to shred therapists' cover and demand transparency in this mandated PTSD probe.
@@ -157,7 +157,7 @@ events:
     institutional_impact: Exposes faultlines in loyalty, vulnerability amid national
       crises
     internal_dynamics: Top-down mandate clashing with deputy's defiant autonomy
-    global_id: ger_organization_d033a1b32d4f
+    global_id: ger_organization_bb39d5dd403d
   - organization_uuid: ger_organization_db0c543e5feb
     description_of_involvement: Stanley pitches ATVA as government-summoned trauma
       experts with examples like pipe bombs and disasters, but Josh dismantles the
@@ -306,7 +306,7 @@ events:
     - Strategic corner chair positioning
     global_id: ger_location_1b66e917add9
   organization_involvements:
-  - organization_uuid: ger_organization_d033a1b32d4f
+  - organization_uuid: ger_organization_bb39d5dd403d
     description_of_involvement: Looms as the hierarchical enforcer behind Josh's compelled
       attendance and Stanley's access, its operational machine contrasted against
       the room's vulnerability, where deputy chief's facade cracks under therapeutic
@@ -321,7 +321,7 @@ events:
     - Internal briefing and surveillance apparatus
     institutional_impact: Highlights tension between power projection and human fragility
     internal_dynamics: Tests loyalty versus mental health imperatives
-    global_id: ger_organization_d033a1b32d4f
+    global_id: ger_organization_bb39d5dd403d
   - organization_uuid: ger_organization_db0c543e5feb
     description_of_involvement: Underlies Stanley's credentials and trainee protocol
       as the facilitating body for government-mandated trauma intervention, enabling
@@ -499,7 +499,7 @@ events:
     - communications anchor
     importance: primary
     global_id: ger_agent_7854a70e34ea
-  - character_uuid: ger_agent_64b2a2c10c8f
+  - character_uuid: ger_agent_14f85d554756
     emotional_state: Neutral - referenced off-screen
     goals:
     - N/A - not actively pursuing in event
@@ -515,7 +515,22 @@ events:
     - loyal
     - supportive
     importance: primary
-    global_id: ger_agent_64b2a2c10c8f
+    global_id: ger_agent_14f85d554756
+  - character_uuid: ger_agent_a340dc1bc0ee
+    emotional_state: N/A - referenced in memory
+    goals:
+    - N/A - not active
+    what_happened: Zoey Bartlet noted by Josh as obviously present at the Rosslyn
+      Town Hall shooting.
+    observed_status: Zoey Bartlet noted by Josh as obviously present at the Rosslyn
+      Town Hall shooting.
+    beliefs:
+    - N/A - not active
+    observed_traits:
+    - presidential daughter
+    - vulnerable
+    importance: primary
+    global_id: ger_agent_a340dc1bc0ee
   - character_uuid: ger_agent_f29e9bec0de0
     emotional_state: N/A - deceased and referenced
     goals:
@@ -547,21 +562,6 @@ events:
     - event attendee
     importance: primary
     global_id: ger_agent_6f0af41cb82a
-  - character_uuid: ger_agent_1e9e45a7bd44
-    emotional_state: N/A - referenced in memory
-    goals:
-    - N/A - not active
-    what_happened: Zoey Bartlet noted by Josh as obviously present at the Rosslyn
-      Town Hall shooting.
-    observed_status: Zoey Bartlet noted by Josh as obviously present at the Rosslyn
-      Town Hall shooting.
-    beliefs:
-    - N/A - not active
-    observed_traits:
-    - presidential daughter
-    - vulnerable
-    importance: primary
-    global_id: ger_agent_1e9e45a7bd44
   object_involvements: []
   location_involvements:
   - location_uuid: ger_location_6403cdd4414e
@@ -790,7 +790,7 @@ events:
     - communications anchor
     importance: primary
     global_id: ger_agent_7854a70e34ea
-  - character_uuid: ger_agent_64b2a2c10c8f
+  - character_uuid: ger_agent_14f85d554756
     emotional_state: Neutral - referenced off-screen
     goals:
     - N/A - not actively pursuing in event
@@ -806,7 +806,22 @@ events:
     - loyal
     - supportive
     importance: primary
-    global_id: ger_agent_64b2a2c10c8f
+    global_id: ger_agent_14f85d554756
+  - character_uuid: ger_agent_a340dc1bc0ee
+    emotional_state: N/A - referenced in memory
+    goals:
+    - N/A - not active
+    what_happened: Zoey Bartlet noted by Josh as obviously present at the Rosslyn
+      Town Hall shooting.
+    observed_status: Zoey Bartlet noted by Josh as obviously present at the Rosslyn
+      Town Hall shooting.
+    beliefs:
+    - N/A - not active
+    observed_traits:
+    - presidential daughter
+    - vulnerable
+    importance: primary
+    global_id: ger_agent_a340dc1bc0ee
   - character_uuid: ger_agent_f29e9bec0de0
     emotional_state: N/A - deceased and referenced
     goals:
@@ -838,21 +853,6 @@ events:
     - event attendee
     importance: primary
     global_id: ger_agent_6f0af41cb82a
-  - character_uuid: ger_agent_1e9e45a7bd44
-    emotional_state: N/A - referenced in memory
-    goals:
-    - N/A - not active
-    what_happened: Zoey Bartlet noted by Josh as obviously present at the Rosslyn
-      Town Hall shooting.
-    observed_status: Zoey Bartlet noted by Josh as obviously present at the Rosslyn
-      Town Hall shooting.
-    beliefs:
-    - N/A - not active
-    observed_traits:
-    - presidential daughter
-    - vulnerable
-    importance: primary
-    global_id: ger_agent_1e9e45a7bd44
   object_involvements: []
   location_involvements:
   - location_uuid: ger_location_6403cdd4414e
@@ -1075,7 +1075,7 @@ events:
     - intense
     importance: primary
     global_id: ger_agent_7854a70e34ea
-  - character_uuid: ger_agent_64b2a2c10c8f
+  - character_uuid: ger_agent_14f85d554756
     emotional_state: Not present; referenced neutrally
     goals:
     - Support Josh in daily duties (inferred ongoing)
@@ -1093,7 +1093,23 @@ events:
     - loyal
     - supportive
     importance: primary
-    global_id: ger_agent_64b2a2c10c8f
+    global_id: ger_agent_14f85d554756
+  - character_uuid: ger_agent_a340dc1bc0ee
+    emotional_state: Not present; symbolizes high stakes
+    goals:
+    - Attend with father securely
+    - Navigate post-shooting fears
+    what_happened: Zoey Bartlet noted by Josh as obviously present at Rosslyn, highlighting
+      presidential family's vulnerability in the attendee roster.
+    observed_status: Zoey Bartlet noted by Josh as obviously present at Rosslyn, highlighting
+      presidential family's vulnerability in the attendee roster.
+    beliefs:
+    - Protection imperfect
+    - Family endures
+    observed_traits:
+    - vulnerable
+    importance: primary
+    global_id: ger_agent_a340dc1bc0ee
   - character_uuid: ger_agent_f29e9bec0de0
     emotional_state: Not present; symbolizes unresolved torment
     goals:
@@ -1131,22 +1147,6 @@ events:
     - peripheral
     importance: primary
     global_id: ger_agent_6f0af41cb82a
-  - character_uuid: ger_agent_1e9e45a7bd44
-    emotional_state: Not present; symbolizes high stakes
-    goals:
-    - Attend with father securely
-    - Navigate post-shooting fears
-    what_happened: Zoey Bartlet noted by Josh as obviously present at Rosslyn, highlighting
-      presidential family's vulnerability in the attendee roster.
-    observed_status: Zoey Bartlet noted by Josh as obviously present at Rosslyn, highlighting
-      presidential family's vulnerability in the attendee roster.
-    beliefs:
-    - Protection imperfect
-    - Family endures
-    observed_traits:
-    - vulnerable
-    importance: primary
-    global_id: ger_agent_1e9e45a7bd44
   object_involvements: []
   location_involvements:
   - location_uuid: ger_location_6403cdd4414e
@@ -1364,7 +1364,7 @@ events:
     - intense
     importance: primary
     global_id: ger_agent_7854a70e34ea
-  - character_uuid: ger_agent_64b2a2c10c8f
+  - character_uuid: ger_agent_14f85d554756
     emotional_state: Not present; referenced neutrally
     goals:
     - Support Josh in daily duties (inferred ongoing)
@@ -1382,7 +1382,23 @@ events:
     - loyal
     - supportive
     importance: primary
-    global_id: ger_agent_64b2a2c10c8f
+    global_id: ger_agent_14f85d554756
+  - character_uuid: ger_agent_a340dc1bc0ee
+    emotional_state: Not present; symbolizes high stakes
+    goals:
+    - Attend with father securely
+    - Navigate post-shooting fears
+    what_happened: Zoey Bartlet noted by Josh as obviously present at Rosslyn, highlighting
+      presidential family's vulnerability in the attendee roster.
+    observed_status: Zoey Bartlet noted by Josh as obviously present at Rosslyn, highlighting
+      presidential family's vulnerability in the attendee roster.
+    beliefs:
+    - Protection imperfect
+    - Family endures
+    observed_traits:
+    - vulnerable
+    importance: primary
+    global_id: ger_agent_a340dc1bc0ee
   - character_uuid: ger_agent_f29e9bec0de0
     emotional_state: Not present; symbolizes unresolved torment
     goals:
@@ -1420,22 +1436,6 @@ events:
     - peripheral
     importance: primary
     global_id: ger_agent_6f0af41cb82a
-  - character_uuid: ger_agent_1e9e45a7bd44
-    emotional_state: Not present; symbolizes high stakes
-    goals:
-    - Attend with father securely
-    - Navigate post-shooting fears
-    what_happened: Zoey Bartlet noted by Josh as obviously present at Rosslyn, highlighting
-      presidential family's vulnerability in the attendee roster.
-    observed_status: Zoey Bartlet noted by Josh as obviously present at Rosslyn, highlighting
-      presidential family's vulnerability in the attendee roster.
-    beliefs:
-    - Protection imperfect
-    - Family endures
-    observed_traits:
-    - vulnerable
-    importance: primary
-    global_id: ger_agent_1e9e45a7bd44
   object_involvements: []
   location_involvements:
   - location_uuid: ger_location_6403cdd4414e
@@ -2322,26 +2322,6 @@ events:
     - pragmatic
     importance: primary
     global_id: ger_agent_11ad3b59331c
-  - character_uuid: ger_agent_ca5b49a4a863
-    emotional_state: Determined and probing, seeking cracks in official narrative
-    goals:
-    - Expose policy risks from congressional opposition
-    - Elicit candid assessment of Didian's leverage
-    what_happened: Female Reporter aggressively interjects twice on Pete Didian's
-      potential to derail IMF-World Bank restrictions post-recess, pressing C.J. for
-      vulnerability assessment in the Prague summit context.
-    observed_status: Female Reporter aggressively interjects twice on Pete Didian's
-      potential to derail IMF-World Bank restrictions post-recess, pressing C.J. for
-      vulnerability assessment in the Prague summit context.
-    beliefs:
-    - Recess doesn't nullify subcommittee influence
-    - Objections can cascade into summit failures
-    observed_traits:
-    - persistent
-    - scrutinizing
-    - direct
-    importance: primary
-    global_id: ger_agent_ca5b49a4a863
   - character_uuid: ger_agent_c9d41ae93618
     emotional_state: approving
     goals:
@@ -2429,6 +2409,26 @@ events:
     - pragmatic
     importance: primary
     global_id: ger_agent_c358f7a4d429
+  - character_uuid: ger_agent_b0a0beb3510d
+    emotional_state: Determined and probing, seeking cracks in official narrative
+    goals:
+    - Expose policy risks from congressional opposition
+    - Elicit candid assessment of Didian's leverage
+    what_happened: Female Reporter aggressively interjects twice on Pete Didian's
+      potential to derail IMF-World Bank restrictions post-recess, pressing C.J. for
+      vulnerability assessment in the Prague summit context.
+    observed_status: Female Reporter aggressively interjects twice on Pete Didian's
+      potential to derail IMF-World Bank restrictions post-recess, pressing C.J. for
+      vulnerability assessment in the Prague summit context.
+    beliefs:
+    - Recess doesn't nullify subcommittee influence
+    - Objections can cascade into summit failures
+    observed_traits:
+    - persistent
+    - scrutinizing
+    - direct
+    importance: primary
+    global_id: ger_agent_b0a0beb3510d
   - character_uuid: ger_agent_0c666c93a87d
     emotional_state: Antagonistic threat (inferred from objections)
     goals:
@@ -2668,26 +2668,6 @@ events:
     - pragmatic
     importance: primary
     global_id: ger_agent_11ad3b59331c
-  - character_uuid: ger_agent_ca5b49a4a863
-    emotional_state: Determined and probing, seeking cracks in official narrative
-    goals:
-    - Expose policy risks from congressional opposition
-    - Elicit candid assessment of Didian's leverage
-    what_happened: Female Reporter aggressively interjects twice on Pete Didian's
-      potential to derail IMF-World Bank restrictions post-recess, pressing C.J. for
-      vulnerability assessment in the Prague summit context.
-    observed_status: Female Reporter aggressively interjects twice on Pete Didian's
-      potential to derail IMF-World Bank restrictions post-recess, pressing C.J. for
-      vulnerability assessment in the Prague summit context.
-    beliefs:
-    - Recess doesn't nullify subcommittee influence
-    - Objections can cascade into summit failures
-    observed_traits:
-    - persistent
-    - scrutinizing
-    - direct
-    importance: primary
-    global_id: ger_agent_ca5b49a4a863
   - character_uuid: ger_agent_c9d41ae93618
     emotional_state: approving
     goals:
@@ -2775,6 +2755,26 @@ events:
     - pragmatic
     importance: primary
     global_id: ger_agent_c358f7a4d429
+  - character_uuid: ger_agent_b0a0beb3510d
+    emotional_state: Determined and probing, seeking cracks in official narrative
+    goals:
+    - Expose policy risks from congressional opposition
+    - Elicit candid assessment of Didian's leverage
+    what_happened: Female Reporter aggressively interjects twice on Pete Didian's
+      potential to derail IMF-World Bank restrictions post-recess, pressing C.J. for
+      vulnerability assessment in the Prague summit context.
+    observed_status: Female Reporter aggressively interjects twice on Pete Didian's
+      potential to derail IMF-World Bank restrictions post-recess, pressing C.J. for
+      vulnerability assessment in the Prague summit context.
+    beliefs:
+    - Recess doesn't nullify subcommittee influence
+    - Objections can cascade into summit failures
+    observed_traits:
+    - persistent
+    - scrutinizing
+    - direct
+    importance: primary
+    global_id: ger_agent_b0a0beb3510d
   - character_uuid: ger_agent_0c666c93a87d
     emotional_state: Antagonistic threat (inferred from objections)
     goals:
@@ -3012,26 +3012,6 @@ events:
     - pragmatic
     importance: primary
     global_id: ger_agent_11ad3b59331c
-  - character_uuid: ger_agent_ca5b49a4a863
-    emotional_state: Determined and probing, seeking cracks in official narrative
-    goals:
-    - Expose policy risks from congressional opposition
-    - Elicit candid assessment of Didian's leverage
-    what_happened: Female Reporter aggressively interjects twice on Pete Didian's
-      potential to derail IMF-World Bank restrictions post-recess, pressing C.J. for
-      vulnerability assessment in the Prague summit context.
-    observed_status: Female Reporter aggressively interjects twice on Pete Didian's
-      potential to derail IMF-World Bank restrictions post-recess, pressing C.J. for
-      vulnerability assessment in the Prague summit context.
-    beliefs:
-    - Recess doesn't nullify subcommittee influence
-    - Objections can cascade into summit failures
-    observed_traits:
-    - persistent
-    - scrutinizing
-    - direct
-    importance: primary
-    global_id: ger_agent_ca5b49a4a863
   - character_uuid: ger_agent_c9d41ae93618
     emotional_state: approving
     goals:
@@ -3119,6 +3099,26 @@ events:
     - pragmatic
     importance: primary
     global_id: ger_agent_c358f7a4d429
+  - character_uuid: ger_agent_b0a0beb3510d
+    emotional_state: Determined and probing, seeking cracks in official narrative
+    goals:
+    - Expose policy risks from congressional opposition
+    - Elicit candid assessment of Didian's leverage
+    what_happened: Female Reporter aggressively interjects twice on Pete Didian's
+      potential to derail IMF-World Bank restrictions post-recess, pressing C.J. for
+      vulnerability assessment in the Prague summit context.
+    observed_status: Female Reporter aggressively interjects twice on Pete Didian's
+      potential to derail IMF-World Bank restrictions post-recess, pressing C.J. for
+      vulnerability assessment in the Prague summit context.
+    beliefs:
+    - Recess doesn't nullify subcommittee influence
+    - Objections can cascade into summit failures
+    observed_traits:
+    - persistent
+    - scrutinizing
+    - direct
+    importance: primary
+    global_id: ger_agent_b0a0beb3510d
   - character_uuid: ger_agent_0c666c93a87d
     emotional_state: Antagonistic threat (inferred from objections)
     goals:
@@ -3342,25 +3342,6 @@ events:
     - discreet
     importance: primary
     global_id: ger_agent_79dc9fb6a278
-  - character_uuid: ger_agent_ca5b49a4a863
-    emotional_state: Aggressive inquisitiveness driving accountability.
-    goals:
-    - Expose vulnerabilities in White House IMF/World Bank strategy
-    - Elicit specifics on congressional roadblocks
-    what_happened: Female Reporter interjects sharply post-C.J.'s IMF statement, pressing
-      on Pete Didian's potential sabotage of World Bank restrictions, persisting 'Yeah
-      after the first' as C.J. clarifies, fueling the briefing's policy tension.
-    observed_status: Female Reporter interjects sharply post-C.J.'s IMF statement,
-      pressing on Pete Didian's potential sabotage of World Bank restrictions, persisting
-      'Yeah after the first' as C.J. clarifies, fueling the briefing's policy tension.
-    beliefs:
-    - Congressional dissent can derail executive foreign policy
-    - Press persistence uncovers hidden procedural threats
-    observed_traits:
-    - persistent
-    - scrutinizing
-    importance: primary
-    global_id: ger_agent_ca5b49a4a863
   - character_uuid: ger_agent_c9d41ae93618
     emotional_state: ''
     goals:
@@ -3437,6 +3418,25 @@ events:
     - light-hearted
     importance: primary
     global_id: ger_agent_c358f7a4d429
+  - character_uuid: ger_agent_b0a0beb3510d
+    emotional_state: Aggressive inquisitiveness driving accountability.
+    goals:
+    - Expose vulnerabilities in White House IMF/World Bank strategy
+    - Elicit specifics on congressional roadblocks
+    what_happened: Female Reporter interjects sharply post-C.J.'s IMF statement, pressing
+      on Pete Didian's potential sabotage of World Bank restrictions, persisting 'Yeah
+      after the first' as C.J. clarifies, fueling the briefing's policy tension.
+    observed_status: Female Reporter interjects sharply post-C.J.'s IMF statement,
+      pressing on Pete Didian's potential sabotage of World Bank restrictions, persisting
+      'Yeah after the first' as C.J. clarifies, fueling the briefing's policy tension.
+    beliefs:
+    - Congressional dissent can derail executive foreign policy
+    - Press persistence uncovers hidden procedural threats
+    observed_traits:
+    - persistent
+    - scrutinizing
+    importance: primary
+    global_id: ger_agent_b0a0beb3510d
   object_involvements:
   - object_uuid: ger_object_05d3ba34466d
     description_of_involvement: Sam's compact SPR policy note, conveying updated intel
@@ -3621,25 +3621,6 @@ events:
     - discreet
     importance: primary
     global_id: ger_agent_79dc9fb6a278
-  - character_uuid: ger_agent_ca5b49a4a863
-    emotional_state: Aggressive inquisitiveness driving accountability.
-    goals:
-    - Expose vulnerabilities in White House IMF/World Bank strategy
-    - Elicit specifics on congressional roadblocks
-    what_happened: Female Reporter interjects sharply post-C.J.'s IMF statement, pressing
-      on Pete Didian's potential sabotage of World Bank restrictions, persisting 'Yeah
-      after the first' as C.J. clarifies, fueling the briefing's policy tension.
-    observed_status: Female Reporter interjects sharply post-C.J.'s IMF statement,
-      pressing on Pete Didian's potential sabotage of World Bank restrictions, persisting
-      'Yeah after the first' as C.J. clarifies, fueling the briefing's policy tension.
-    beliefs:
-    - Congressional dissent can derail executive foreign policy
-    - Press persistence uncovers hidden procedural threats
-    observed_traits:
-    - persistent
-    - scrutinizing
-    importance: primary
-    global_id: ger_agent_ca5b49a4a863
   - character_uuid: ger_agent_c9d41ae93618
     emotional_state: ''
     goals:
@@ -3716,6 +3697,25 @@ events:
     - light-hearted
     importance: primary
     global_id: ger_agent_c358f7a4d429
+  - character_uuid: ger_agent_b0a0beb3510d
+    emotional_state: Aggressive inquisitiveness driving accountability.
+    goals:
+    - Expose vulnerabilities in White House IMF/World Bank strategy
+    - Elicit specifics on congressional roadblocks
+    what_happened: Female Reporter interjects sharply post-C.J.'s IMF statement, pressing
+      on Pete Didian's potential sabotage of World Bank restrictions, persisting 'Yeah
+      after the first' as C.J. clarifies, fueling the briefing's policy tension.
+    observed_status: Female Reporter interjects sharply post-C.J.'s IMF statement,
+      pressing on Pete Didian's potential sabotage of World Bank restrictions, persisting
+      'Yeah after the first' as C.J. clarifies, fueling the briefing's policy tension.
+    beliefs:
+    - Congressional dissent can derail executive foreign policy
+    - Press persistence uncovers hidden procedural threats
+    observed_traits:
+    - persistent
+    - scrutinizing
+    importance: primary
+    global_id: ger_agent_b0a0beb3510d
   object_involvements:
   - object_uuid: ger_object_05d3ba34466d
     description_of_involvement: Sam's compact SPR policy note, conveying updated intel
@@ -3902,18 +3902,6 @@ events:
     observed_traits: []
     importance: primary
     global_id: ger_agent_11ad3b59331c
-  - character_uuid: ger_agent_ca5b49a4a863
-    emotional_state: ''
-    goals:
-    - probe potential policy obstacles
-    what_happened: questions C.J. on Pete Didian's objections potentially impacting
-      IMF/World Bank restrictions
-    observed_status: questions C.J. on Pete Didian's objections potentially impacting
-      IMF/World Bank restrictions
-    beliefs: []
-    observed_traits: []
-    importance: primary
-    global_id: ger_agent_ca5b49a4a863
   - character_uuid: ger_agent_c9d41ae93618
     emotional_state: casual
     goals:
@@ -3970,6 +3958,18 @@ events:
     - lightly amused
     importance: primary
     global_id: ger_agent_04bbccb1e352
+  - character_uuid: ger_agent_b0a0beb3510d
+    emotional_state: ''
+    goals:
+    - probe potential policy obstacles
+    what_happened: questions C.J. on Pete Didian's objections potentially impacting
+      IMF/World Bank restrictions
+    observed_status: questions C.J. on Pete Didian's objections potentially impacting
+      IMF/World Bank restrictions
+    beliefs: []
+    observed_traits: []
+    importance: primary
+    global_id: ger_agent_b0a0beb3510d
   - character_uuid: ger_agent_0c666c93a87d
     emotional_state: ''
     goals: []
@@ -4104,18 +4104,6 @@ events:
     observed_traits: []
     importance: primary
     global_id: ger_agent_11ad3b59331c
-  - character_uuid: ger_agent_ca5b49a4a863
-    emotional_state: ''
-    goals:
-    - probe potential policy obstacles
-    what_happened: questions C.J. on Pete Didian's objections potentially impacting
-      IMF/World Bank restrictions
-    observed_status: questions C.J. on Pete Didian's objections potentially impacting
-      IMF/World Bank restrictions
-    beliefs: []
-    observed_traits: []
-    importance: primary
-    global_id: ger_agent_ca5b49a4a863
   - character_uuid: ger_agent_c9d41ae93618
     emotional_state: casual
     goals:
@@ -4172,6 +4160,18 @@ events:
     - lightly amused
     importance: primary
     global_id: ger_agent_04bbccb1e352
+  - character_uuid: ger_agent_b0a0beb3510d
+    emotional_state: ''
+    goals:
+    - probe potential policy obstacles
+    what_happened: questions C.J. on Pete Didian's objections potentially impacting
+      IMF/World Bank restrictions
+    observed_status: questions C.J. on Pete Didian's objections potentially impacting
+      IMF/World Bank restrictions
+    beliefs: []
+    observed_traits: []
+    importance: primary
+    global_id: ger_agent_b0a0beb3510d
   - character_uuid: ger_agent_0c666c93a87d
     emotional_state: ''
     goals: []
@@ -4268,6 +4268,247 @@ events:
     KEN: "If he doesn't that's when we make a decision."
     BARTLET: "Yeah okay."
     STANLEY ([VO]): "And that's the first time you heard about the pilot?"
+  is_flashback: false
+  location_uuid: ger_location_2082b973d290
+  theme_uuids: []
+  arc_uuids:
+  - ger_conflictarc_d4975b5a1578
+  participations:
+  - character_uuid: ger_agent_7f9de5ea59c5
+    emotional_state: Calm expertise in crisis delivery
+    goals:
+    - Rule out crash scenarios empirically
+    - Coordinate interceptor response logistics
+    what_happened: Man 2nd counters crash theory with electronic signal absence from
+      ground bases and confirms F-16 scrambles from Edwards for visual lock, bolstering
+      the intel chain.
+    observed_status: Man 2nd counters crash theory with electronic signal absence
+      from ground bases and confirms F-16 scrambles from Edwards for visual lock,
+      bolstering the intel chain.
+    beliefs:
+    - Crash beacons are reliably triggered
+    - Interceptors provide definitive visual intel
+    observed_traits:
+    - concise
+    - reliable
+    - technical
+    importance: primary
+    global_id: ger_agent_7f9de5ea59c5
+  - character_uuid: ger_agent_198649bce78f
+    emotional_state: determined
+    goals:
+    - Fully assess the rogue F-16 crisis details
+    - Evaluate threats, options, and contingencies to prepare for escalation
+    what_happened: Enters the Situation Room with Leo, directs everyone to sit, and
+      methodically interrogates military officers about the rogue F-16 pilot's deviation,
+      communication failure, crash possibilities, onboard weapons, intentions, psychological
+      screening, non-lethal options, and response plans.
+    observed_status: Enters the Situation Room with Leo, directs everyone to sit,
+      and methodically interrogates military officers about the rogue F-16 pilot's
+      deviation, communication failure, crash possibilities, onboard weapons, intentions,
+      psychological screening, non-lethal options, and response plans.
+    beliefs: []
+    observed_traits: []
+    importance: primary
+    global_id: ger_agent_198649bce78f
+  - character_uuid: ger_agent_dd62525d972a
+    emotional_state: Steadfast command masking underlying urgency
+    goals:
+    - Gather precise threat intelligence
+    - Facilitate rapid decision-making on aerial crisis
+    what_happened: Leo enters with Bartlet, commands everyone to sit implicitly through
+      presence, clarifies the F-16's single-seat nature, and directs Ken to detail
+      the aircraft's weapons, anchoring the briefing with authoritative calm.
+    observed_status: Leo enters with Bartlet, commands everyone to sit implicitly
+      through presence, clarifies the F-16's single-seat nature, and directs Ken to
+      detail the aircraft's weapons, anchoring the briefing with authoritative calm.
+    beliefs:
+    - Military assets demand immediate hierarchical control
+    - Factual clarity prevents escalation
+    observed_traits:
+    - composed
+    - decisive
+    - strategic
+    importance: primary
+    global_id: ger_agent_dd62525d972a
+  - character_uuid: ger_agent_6bb04a642eac
+    emotional_state: Inquisitive detachment probing psychological layers
+    goals:
+    - Connect external crisis to internal trauma
+    - Elicit revelation on fixation origins
+    what_happened: Stanley Keyworth interjects via voice-over at briefing's end, questioning
+      if this marks the first awareness of the pilot, bridging military crisis to
+      personal therapy session.
+    observed_status: Stanley Keyworth interjects via voice-over at briefing's end,
+      questioning if this marks the first awareness of the pilot, bridging military
+      crisis to personal therapy session.
+    beliefs:
+    - National threats mirror personal fractures
+    - First exposure timings reveal obsessions
+    observed_traits:
+    - probing
+    - analytical
+    - persistent
+    importance: primary
+    global_id: ger_agent_6bb04a642eac
+  - character_uuid: ger_agent_a13459ba5615
+    emotional_state: Professional detachment amid high-stakes briefing
+    goals:
+    - Convey accurate operational status
+    - Advise on tactical impossibilities and contingencies
+    what_happened: Air Force Man (Man 1st) stands upon entry, briefs on F-16 deviation
+      without comms, refutes comms failure likelihood and non-lethal takedown, posits
+      pilot unconsciousness, and details interceptor protocols for visual and landing
+      orders.
+    observed_status: Air Force Man (Man 1st) stands upon entry, briefs on F-16 deviation
+      without comms, refutes comms failure likelihood and non-lethal takedown, posits
+      pilot unconsciousness, and details interceptor protocols for visual and landing
+      orders.
+    beliefs:
+    - Comms redundancy minimizes systemic failure
+    - Visual confirmation is essential before lethal action
+    observed_traits:
+    - precise
+    - professional
+    - unflappable
+    importance: primary
+    global_id: ger_agent_a13459ba5615
+  - character_uuid: ger_agent_d8c7f5e3cac1
+    emotional_state: Focused professionalism under presidential scrutiny
+    goals:
+    - Inventory threats comprehensively
+    - Propose viable containment strategies
+    what_happened: Ken details flight leader's visual of missing tail plane, inventories
+      20mm Vulcan and 7 Sidewinders, affirms pilot's psych screening, proposes Sierra
+      Madres routing, and outlines decision fork if non-compliant.
+    observed_status: Ken details flight leader's visual of missing tail plane, inventories
+      20mm Vulcan and 7 Sidewinders, affirms pilot's psych screening, proposes Sierra
+      Madres routing, and outlines decision fork if non-compliant.
+    beliefs:
+    - Psych screening ensures fitness until proven otherwise
+    - Geographic routing minimizes collateral risk
+    observed_traits:
+    - methodical
+    - forthright
+    - tactical
+    importance: primary
+    global_id: ger_agent_d8c7f5e3cac1
+  object_involvements:
+  - object_uuid: ger_object_70eca605f267
+    description_of_involvement: The single-seat F-16 Falcon is centrally referenced
+      as the rogue aircraft that deviated from Cannon AFB formation without radio
+      response, its isolation and armament driving the entire briefing's urgency and
+      presidential interrogation on takedown imperatives.
+    status_before_event: In rogue flight over unspecified area, armed and non-communicative
+    status_after_event: Routed toward Sierra Madres, pursued by Edwards interceptors
+    global_id: ger_object_70eca605f267
+  - object_uuid: ger_object_cf89aa0fca42
+    description_of_involvement: The 20mm Vulcan cannon is inventoried by Ken as part
+      of the F-16's lethal payload alongside Sidewinders, heightening Bartlet's threat
+      assessment and underscoring non-lethal neutralization's impossibility.
+    status_before_event: Mounted and operational aboard rogue F-16
+    status_after_event: Unchanged, integral to ongoing aerial threat
+    global_id: ger_object_cf89aa0fca42
+  - object_uuid: ger_object_9133760ed2a3
+    description_of_involvement: Seven AIM-9 Sidewinder missiles are detailed by Ken
+      in the F-16's arsenal, amplifying defection or attack fears during Bartlet's
+      probing, reinforcing the high-stakes calculus of potential shoot-down.
+    status_before_event: Loaded and ready on rogue F-16
+    status_after_event: Unchanged, escalating crisis parameters
+    global_id: ger_object_9133760ed2a3
+  location_involvements:
+  - location_uuid: ger_location_2082b973d290
+    description_of_involvement: Edwards Air Force Base is cited for scrambling interceptors
+      to achieve visual on the rogue F-16, enabling cockpit assessment and landing
+      orders in the tactical escalation.
+    observed_atmosphere: High-desert scramble hub pulsing with response urgency
+    functional_role: Interceptor deployment base for pursuit
+    symbolic_significance: Counterforce to rogue deviation from chain
+    access_restrictions: Secure military test facility
+    key_environmental_details:
+    - F-16 scrambles
+    - Visual sighting vectors
+    global_id: ger_location_2082b973d290
+  - location_uuid: ger_location_d7957f093377
+    description_of_involvement: The Situation Room serves as the high-tension command
+      hub where Bartlet and Leo enter to receive clipped military briefings on the
+      rogue F-16, its glowing displays and standing officers amplifying crisis momentum
+      and presidential authority.
+    observed_atmosphere: Charged with urgent deference and tactical precision
+    functional_role: Crisis coordination center for real-time aerial threat response
+    symbolic_significance: Embodies the nexus of national security and executive power
+    access_restrictions: Restricted to President, Chief of Staff, and senior military
+      briefers
+    key_environmental_details:
+    - Everyone standing upon entry
+    - Tactical displays implied in intel flow
+    global_id: ger_location_d7957f093377
+  - location_uuid: ger_location_29338fcb90c0
+    description_of_involvement: Cannon Air Force Base is invoked as the origin of
+      the 27th Fighter Wing's rogue F-16, framing the deviation's departure point
+      and igniting Washington crisis response.
+    observed_atmosphere: Distant operational hub now source of airborne enigma
+    functional_role: Referenced launch site of the threat aircraft
+    symbolic_significance: Highlights vulnerabilities in domestic air command
+    access_restrictions: Military installation, not directly accessed
+    key_environmental_details:
+    - New Mexico base context
+    - Post-exercise return flight
+    global_id: ger_location_29338fcb90c0
+  - location_uuid: ger_location_27f99bfef1f6
+    description_of_involvement: Sierra Madres are proposed by Ken as unpopulated routing
+      to contain the F-16's threat vector, shielding civilians from potential weapons
+      discharge during compliance checks.
+    observed_atmosphere: Barren, desolate sanctuary for peril containment
+    functional_role: Strategic overflight zone to minimize risks
+    symbolic_significance: Represents isolation mirroring pilot's unknown state
+    access_restrictions: Remote wilderness, unsuitable for populated evasion
+    key_environmental_details:
+    - Jagged unpopulated spines
+    - Overflight containment
+    global_id: ger_location_27f99bfef1f6
+  organization_involvements:
+  - organization_uuid: ger_organization_815004c3e362
+    description_of_involvement: The 27th Fighter Wing at Cannon AFB is pinpointed
+      as the unit from which the F-16 deviated post-exercise, its psych-screened pilot's
+      rogue action triggering Situation Room scrutiny on protocols and responses.
+    active_representation: Via military officers briefing on deviation and assets
+    power_dynamics: Subordinate to presidential command, under defensive protocol
+    organizational_goals:
+    - Regain control of deviated asset
+    - Contain threat through intercept and compliance
+    influence_mechanisms:
+    - Psych screening validations
+    - Interceptor scramble resources
+    institutional_impact: Exposes screening limits in crisis invocation
+    internal_dynamics: Formation discipline breached by single pilot
+    global_id: ger_organization_815004c3e362
+  derived_from_beat_uuids: &id014
+  - beat_ac525f3c0b6b8690
+  - beat_a1105f90c1513dda
+  - beat_75deb161fe9720f6
+  - beat_7cb45640c9754dc0
+  - beat_2658796ac090c8fe
+  - beat_a90c4014efa099ac
+  source_season: 2
+  source_database: westwing.s02
+- fabula_uuid: cand_evt_scene_afb8f0cc283dd6e2_1
+  global_id: null
+  title: 'Situation Room: Bartlet Probes Rogue F-16 Crisis'
+  description: President Bartlet and Leo enter the Situation Room, where military
+    officers brief them on an F-16 pilot from Cannon Air Force Base who has deviated
+    from formation without communication. Bartlet methodically interrogates the situation—probing
+    the pilot's solitude, crash possibilities, communication failures, onboard weapons
+    (20mm Vulcan and AIM-9 Sidewinders), defection or attack intentions, psychological
+    screening, and non-lethal neutralization options (deemed impossible). Officers
+    suggest unconsciousness, route him over unpopulated Sierra Madres, and detail
+    scrambled interceptors for visual confirmation and orders. Bartlet acknowledges
+    contingency plans, heightening national stakes that mirror Josh's unraveling PTSD
+    fixation, serving as a pivotal setup linking personal psyche to presidential crisis.
+  episode_uuid: ep_sea_ser_the_west_wing_s02_e10
+  scene_sequence: 5
+  sequence_in_scene: 10
+  key_dialogue: *id013
   is_flashback: false
   location_uuid: ger_location_d7957f093377
   theme_uuids: []
@@ -4417,6 +4658,18 @@ events:
     status_after_event: Unchanged, escalating crisis parameters
     global_id: ger_object_9133760ed2a3
   location_involvements:
+  - location_uuid: ger_location_2082b973d290
+    description_of_involvement: Edwards Air Force Base is cited for scrambling interceptors
+      to achieve visual on the rogue F-16, enabling cockpit assessment and landing
+      orders in the tactical escalation.
+    observed_atmosphere: High-desert scramble hub pulsing with response urgency
+    functional_role: Interceptor deployment base for pursuit
+    symbolic_significance: Counterforce to rogue deviation from chain
+    access_restrictions: Secure military test facility
+    key_environmental_details:
+    - F-16 scrambles
+    - Visual sighting vectors
+    global_id: ger_location_2082b973d290
   - location_uuid: ger_location_d7957f093377
     description_of_involvement: The Situation Room serves as the high-tension command
       hub where Bartlet and Leo enter to receive clipped military briefings on the
@@ -4455,18 +4708,6 @@ events:
     - Jagged unpopulated spines
     - Overflight containment
     global_id: ger_location_27f99bfef1f6
-  - location_uuid: ger_location_2082b973d290
-    description_of_involvement: Edwards Air Force Base is cited for scrambling interceptors
-      to achieve visual on the rogue F-16, enabling cockpit assessment and landing
-      orders in the tactical escalation.
-    observed_atmosphere: High-desert scramble hub pulsing with response urgency
-    functional_role: Interceptor deployment base for pursuit
-    symbolic_significance: Counterforce to rogue deviation from chain
-    access_restrictions: Secure military test facility
-    key_environmental_details:
-    - F-16 scrambles
-    - Visual sighting vectors
-    global_id: ger_location_2082b973d290
   organization_involvements:
   - organization_uuid: ger_organization_815004c3e362
     description_of_involvement: The 27th Fighter Wing at Cannon AFB is pinpointed
@@ -4483,13 +4724,7 @@ events:
     institutional_impact: Exposes screening limits in crisis invocation
     internal_dynamics: Formation discipline breached by single pilot
     global_id: ger_organization_815004c3e362
-  derived_from_beat_uuids: &id014
-  - beat_ac525f3c0b6b8690
-  - beat_a1105f90c1513dda
-  - beat_75deb161fe9720f6
-  - beat_7cb45640c9754dc0
-  - beat_2658796ac090c8fe
-  - beat_a90c4014efa099ac
+  derived_from_beat_uuids: *id014
   source_season: 2
   source_database: westwing.s02
 - fabula_uuid: cand_evt_scene_afb8f0cc283dd6e2_1
@@ -4658,6 +4893,18 @@ events:
     status_after_event: Unchanged, escalating crisis parameters
     global_id: ger_object_9133760ed2a3
   location_involvements:
+  - location_uuid: ger_location_2082b973d290
+    description_of_involvement: Edwards Air Force Base is cited for scrambling interceptors
+      to achieve visual on the rogue F-16, enabling cockpit assessment and landing
+      orders in the tactical escalation.
+    observed_atmosphere: High-desert scramble hub pulsing with response urgency
+    functional_role: Interceptor deployment base for pursuit
+    symbolic_significance: Counterforce to rogue deviation from chain
+    access_restrictions: Secure military test facility
+    key_environmental_details:
+    - F-16 scrambles
+    - Visual sighting vectors
+    global_id: ger_location_2082b973d290
   - location_uuid: ger_location_d7957f093377
     description_of_involvement: The Situation Room serves as the high-tension command
       hub where Bartlet and Leo enter to receive clipped military briefings on the
@@ -4696,18 +4943,6 @@ events:
     - Jagged unpopulated spines
     - Overflight containment
     global_id: ger_location_27f99bfef1f6
-  - location_uuid: ger_location_2082b973d290
-    description_of_involvement: Edwards Air Force Base is cited for scrambling interceptors
-      to achieve visual on the rogue F-16, enabling cockpit assessment and landing
-      orders in the tactical escalation.
-    observed_atmosphere: High-desert scramble hub pulsing with response urgency
-    functional_role: Interceptor deployment base for pursuit
-    symbolic_significance: Counterforce to rogue deviation from chain
-    access_restrictions: Secure military test facility
-    key_environmental_details:
-    - F-16 scrambles
-    - Visual sighting vectors
-    global_id: ger_location_2082b973d290
   organization_involvements:
   - organization_uuid: ger_organization_815004c3e362
     description_of_involvement: The 27th Fighter Wing at Cannon AFB is pinpointed
@@ -4893,6 +5128,18 @@ events:
     status_after_event: Unchanged, escalating crisis parameters
     global_id: ger_object_9133760ed2a3
   location_involvements:
+  - location_uuid: ger_location_2082b973d290
+    description_of_involvement: Edwards Air Force Base is cited for scrambling interceptors
+      to achieve visual on the rogue F-16, enabling cockpit assessment and landing
+      orders in the tactical escalation.
+    observed_atmosphere: High-desert scramble hub pulsing with response urgency
+    functional_role: Interceptor deployment base for pursuit
+    symbolic_significance: Counterforce to rogue deviation from chain
+    access_restrictions: Secure military test facility
+    key_environmental_details:
+    - F-16 scrambles
+    - Visual sighting vectors
+    global_id: ger_location_2082b973d290
   - location_uuid: ger_location_d7957f093377
     description_of_involvement: The Situation Room serves as the high-tension command
       hub where Bartlet and Leo enter to receive clipped military briefings on the
@@ -4931,253 +5178,6 @@ events:
     - Jagged unpopulated spines
     - Overflight containment
     global_id: ger_location_27f99bfef1f6
-  - location_uuid: ger_location_2082b973d290
-    description_of_involvement: Edwards Air Force Base is cited for scrambling interceptors
-      to achieve visual on the rogue F-16, enabling cockpit assessment and landing
-      orders in the tactical escalation.
-    observed_atmosphere: High-desert scramble hub pulsing with response urgency
-    functional_role: Interceptor deployment base for pursuit
-    symbolic_significance: Counterforce to rogue deviation from chain
-    access_restrictions: Secure military test facility
-    key_environmental_details:
-    - F-16 scrambles
-    - Visual sighting vectors
-    global_id: ger_location_2082b973d290
-  organization_involvements:
-  - organization_uuid: ger_organization_815004c3e362
-    description_of_involvement: The 27th Fighter Wing at Cannon AFB is pinpointed
-      as the unit from which the F-16 deviated post-exercise, its psych-screened pilot's
-      rogue action triggering Situation Room scrutiny on protocols and responses.
-    active_representation: Via military officers briefing on deviation and assets
-    power_dynamics: Subordinate to presidential command, under defensive protocol
-    organizational_goals:
-    - Regain control of deviated asset
-    - Contain threat through intercept and compliance
-    influence_mechanisms:
-    - Psych screening validations
-    - Interceptor scramble resources
-    institutional_impact: Exposes screening limits in crisis invocation
-    internal_dynamics: Formation discipline breached by single pilot
-    global_id: ger_organization_815004c3e362
-  derived_from_beat_uuids: *id014
-  source_season: 2
-  source_database: westwing.s02
-- fabula_uuid: cand_evt_scene_afb8f0cc283dd6e2_1
-  global_id: null
-  title: 'Situation Room: Bartlet Probes Rogue F-16 Crisis'
-  description: President Bartlet and Leo enter the Situation Room, where military
-    officers brief them on an F-16 pilot from Cannon Air Force Base who has deviated
-    from formation without communication. Bartlet methodically interrogates the situation—probing
-    the pilot's solitude, crash possibilities, communication failures, onboard weapons
-    (20mm Vulcan and AIM-9 Sidewinders), defection or attack intentions, psychological
-    screening, and non-lethal neutralization options (deemed impossible). Officers
-    suggest unconsciousness, route him over unpopulated Sierra Madres, and detail
-    scrambled interceptors for visual confirmation and orders. Bartlet acknowledges
-    contingency plans, heightening national stakes that mirror Josh's unraveling PTSD
-    fixation, serving as a pivotal setup linking personal psyche to presidential crisis.
-  episode_uuid: ep_sea_ser_the_west_wing_s02_e10
-  scene_sequence: 5
-  sequence_in_scene: 10
-  key_dialogue: *id013
-  is_flashback: false
-  location_uuid: ger_location_2082b973d290
-  theme_uuids: []
-  arc_uuids:
-  - ger_conflictarc_d4975b5a1578
-  participations:
-  - character_uuid: ger_agent_7f9de5ea59c5
-    emotional_state: Calm expertise in crisis delivery
-    goals:
-    - Rule out crash scenarios empirically
-    - Coordinate interceptor response logistics
-    what_happened: Man 2nd counters crash theory with electronic signal absence from
-      ground bases and confirms F-16 scrambles from Edwards for visual lock, bolstering
-      the intel chain.
-    observed_status: Man 2nd counters crash theory with electronic signal absence
-      from ground bases and confirms F-16 scrambles from Edwards for visual lock,
-      bolstering the intel chain.
-    beliefs:
-    - Crash beacons are reliably triggered
-    - Interceptors provide definitive visual intel
-    observed_traits:
-    - concise
-    - reliable
-    - technical
-    importance: primary
-    global_id: ger_agent_7f9de5ea59c5
-  - character_uuid: ger_agent_198649bce78f
-    emotional_state: determined
-    goals:
-    - Fully assess the rogue F-16 crisis details
-    - Evaluate threats, options, and contingencies to prepare for escalation
-    what_happened: Enters the Situation Room with Leo, directs everyone to sit, and
-      methodically interrogates military officers about the rogue F-16 pilot's deviation,
-      communication failure, crash possibilities, onboard weapons, intentions, psychological
-      screening, non-lethal options, and response plans.
-    observed_status: Enters the Situation Room with Leo, directs everyone to sit,
-      and methodically interrogates military officers about the rogue F-16 pilot's
-      deviation, communication failure, crash possibilities, onboard weapons, intentions,
-      psychological screening, non-lethal options, and response plans.
-    beliefs: []
-    observed_traits: []
-    importance: primary
-    global_id: ger_agent_198649bce78f
-  - character_uuid: ger_agent_dd62525d972a
-    emotional_state: Steadfast command masking underlying urgency
-    goals:
-    - Gather precise threat intelligence
-    - Facilitate rapid decision-making on aerial crisis
-    what_happened: Leo enters with Bartlet, commands everyone to sit implicitly through
-      presence, clarifies the F-16's single-seat nature, and directs Ken to detail
-      the aircraft's weapons, anchoring the briefing with authoritative calm.
-    observed_status: Leo enters with Bartlet, commands everyone to sit implicitly
-      through presence, clarifies the F-16's single-seat nature, and directs Ken to
-      detail the aircraft's weapons, anchoring the briefing with authoritative calm.
-    beliefs:
-    - Military assets demand immediate hierarchical control
-    - Factual clarity prevents escalation
-    observed_traits:
-    - composed
-    - decisive
-    - strategic
-    importance: primary
-    global_id: ger_agent_dd62525d972a
-  - character_uuid: ger_agent_6bb04a642eac
-    emotional_state: Inquisitive detachment probing psychological layers
-    goals:
-    - Connect external crisis to internal trauma
-    - Elicit revelation on fixation origins
-    what_happened: Stanley Keyworth interjects via voice-over at briefing's end, questioning
-      if this marks the first awareness of the pilot, bridging military crisis to
-      personal therapy session.
-    observed_status: Stanley Keyworth interjects via voice-over at briefing's end,
-      questioning if this marks the first awareness of the pilot, bridging military
-      crisis to personal therapy session.
-    beliefs:
-    - National threats mirror personal fractures
-    - First exposure timings reveal obsessions
-    observed_traits:
-    - probing
-    - analytical
-    - persistent
-    importance: primary
-    global_id: ger_agent_6bb04a642eac
-  - character_uuid: ger_agent_a13459ba5615
-    emotional_state: Professional detachment amid high-stakes briefing
-    goals:
-    - Convey accurate operational status
-    - Advise on tactical impossibilities and contingencies
-    what_happened: Air Force Man (Man 1st) stands upon entry, briefs on F-16 deviation
-      without comms, refutes comms failure likelihood and non-lethal takedown, posits
-      pilot unconsciousness, and details interceptor protocols for visual and landing
-      orders.
-    observed_status: Air Force Man (Man 1st) stands upon entry, briefs on F-16 deviation
-      without comms, refutes comms failure likelihood and non-lethal takedown, posits
-      pilot unconsciousness, and details interceptor protocols for visual and landing
-      orders.
-    beliefs:
-    - Comms redundancy minimizes systemic failure
-    - Visual confirmation is essential before lethal action
-    observed_traits:
-    - precise
-    - professional
-    - unflappable
-    importance: primary
-    global_id: ger_agent_a13459ba5615
-  - character_uuid: ger_agent_d8c7f5e3cac1
-    emotional_state: Focused professionalism under presidential scrutiny
-    goals:
-    - Inventory threats comprehensively
-    - Propose viable containment strategies
-    what_happened: Ken details flight leader's visual of missing tail plane, inventories
-      20mm Vulcan and 7 Sidewinders, affirms pilot's psych screening, proposes Sierra
-      Madres routing, and outlines decision fork if non-compliant.
-    observed_status: Ken details flight leader's visual of missing tail plane, inventories
-      20mm Vulcan and 7 Sidewinders, affirms pilot's psych screening, proposes Sierra
-      Madres routing, and outlines decision fork if non-compliant.
-    beliefs:
-    - Psych screening ensures fitness until proven otherwise
-    - Geographic routing minimizes collateral risk
-    observed_traits:
-    - methodical
-    - forthright
-    - tactical
-    importance: primary
-    global_id: ger_agent_d8c7f5e3cac1
-  object_involvements:
-  - object_uuid: ger_object_70eca605f267
-    description_of_involvement: The single-seat F-16 Falcon is centrally referenced
-      as the rogue aircraft that deviated from Cannon AFB formation without radio
-      response, its isolation and armament driving the entire briefing's urgency and
-      presidential interrogation on takedown imperatives.
-    status_before_event: In rogue flight over unspecified area, armed and non-communicative
-    status_after_event: Routed toward Sierra Madres, pursued by Edwards interceptors
-    global_id: ger_object_70eca605f267
-  - object_uuid: ger_object_cf89aa0fca42
-    description_of_involvement: The 20mm Vulcan cannon is inventoried by Ken as part
-      of the F-16's lethal payload alongside Sidewinders, heightening Bartlet's threat
-      assessment and underscoring non-lethal neutralization's impossibility.
-    status_before_event: Mounted and operational aboard rogue F-16
-    status_after_event: Unchanged, integral to ongoing aerial threat
-    global_id: ger_object_cf89aa0fca42
-  - object_uuid: ger_object_9133760ed2a3
-    description_of_involvement: Seven AIM-9 Sidewinder missiles are detailed by Ken
-      in the F-16's arsenal, amplifying defection or attack fears during Bartlet's
-      probing, reinforcing the high-stakes calculus of potential shoot-down.
-    status_before_event: Loaded and ready on rogue F-16
-    status_after_event: Unchanged, escalating crisis parameters
-    global_id: ger_object_9133760ed2a3
-  location_involvements:
-  - location_uuid: ger_location_d7957f093377
-    description_of_involvement: The Situation Room serves as the high-tension command
-      hub where Bartlet and Leo enter to receive clipped military briefings on the
-      rogue F-16, its glowing displays and standing officers amplifying crisis momentum
-      and presidential authority.
-    observed_atmosphere: Charged with urgent deference and tactical precision
-    functional_role: Crisis coordination center for real-time aerial threat response
-    symbolic_significance: Embodies the nexus of national security and executive power
-    access_restrictions: Restricted to President, Chief of Staff, and senior military
-      briefers
-    key_environmental_details:
-    - Everyone standing upon entry
-    - Tactical displays implied in intel flow
-    global_id: ger_location_d7957f093377
-  - location_uuid: ger_location_29338fcb90c0
-    description_of_involvement: Cannon Air Force Base is invoked as the origin of
-      the 27th Fighter Wing's rogue F-16, framing the deviation's departure point
-      and igniting Washington crisis response.
-    observed_atmosphere: Distant operational hub now source of airborne enigma
-    functional_role: Referenced launch site of the threat aircraft
-    symbolic_significance: Highlights vulnerabilities in domestic air command
-    access_restrictions: Military installation, not directly accessed
-    key_environmental_details:
-    - New Mexico base context
-    - Post-exercise return flight
-    global_id: ger_location_29338fcb90c0
-  - location_uuid: ger_location_27f99bfef1f6
-    description_of_involvement: Sierra Madres are proposed by Ken as unpopulated routing
-      to contain the F-16's threat vector, shielding civilians from potential weapons
-      discharge during compliance checks.
-    observed_atmosphere: Barren, desolate sanctuary for peril containment
-    functional_role: Strategic overflight zone to minimize risks
-    symbolic_significance: Represents isolation mirroring pilot's unknown state
-    access_restrictions: Remote wilderness, unsuitable for populated evasion
-    key_environmental_details:
-    - Jagged unpopulated spines
-    - Overflight containment
-    global_id: ger_location_27f99bfef1f6
-  - location_uuid: ger_location_2082b973d290
-    description_of_involvement: Edwards Air Force Base is cited for scrambling interceptors
-      to achieve visual on the rogue F-16, enabling cockpit assessment and landing
-      orders in the tactical escalation.
-    observed_atmosphere: High-desert scramble hub pulsing with response urgency
-    functional_role: Interceptor deployment base for pursuit
-    symbolic_significance: Counterforce to rogue deviation from chain
-    access_restrictions: Secure military test facility
-    key_environmental_details:
-    - F-16 scrambles
-    - Visual sighting vectors
-    global_id: ger_location_2082b973d290
   organization_involvements:
   - organization_uuid: ger_organization_815004c3e362
     description_of_involvement: The 27th Fighter Wing at Cannon AFB is pinpointed
@@ -6141,147 +6141,6 @@ events:
   key_dialogue: &id019
   - 'STANLEY (VO): "Well, it wasn''t in the front page of the sports section, so..."'
   is_flashback: true
-  location_uuid: ger_location_5f2dfac477dd
-  theme_uuids: []
-  arc_uuids: []
-  participations:
-  - character_uuid: ger_agent_c9d41ae93618
-    emotional_state: preoccupied
-    goals:
-    - gather precise details about the pilot's crash and final words
-    - understand the incident tied to his trauma
-    what_happened: sitting alone in darkened office fixated on photos of the suicidal
-      pilot, interrupted by Stanley's VO, questioning Leo about crash details, resumes
-      looking through photos
-    observed_status: sitting alone in darkened office fixated on photos of the suicidal
-      pilot, interrupted by Stanley's VO, questioning Leo about crash details, resumes
-      looking through photos
-    beliefs: []
-    observed_traits: []
-    importance: primary
-    global_id: ger_agent_c9d41ae93618
-  - character_uuid: ger_agent_dd62525d972a
-    emotional_state: Matter-of-fact resolve veiling paternal concern for Josh's unraveling
-    goals:
-    - Update Josh on F-16 resolution amid national stakes
-    - Gauge and address subordinate's anomalous preoccupation
-    what_happened: Knocks decisively, enters to declare crisis resolution, delivers
-      precise crash details—mountain impact, pilot's radio survival confirmation and
-      final words—sits authoritatively, then interrogates Josh's pilot knowledge,
-      unwittingly becoming vessel for Stanley's overlay query.
-    observed_status: Knocks decisively, enters to declare crisis resolution, delivers
-      precise crash details—mountain impact, pilot's radio survival confirmation and
-      final words—sits authoritatively, then interrogates Josh's pilot knowledge,
-      unwittingly becoming vessel for Stanley's overlay query.
-    beliefs:
-    - Clear facts stabilize chaos in personal and political crises
-    - Loyalty demands confronting erratic staff behavior
-    observed_traits:
-    - stoic
-    - authoritative
-    - direct
-    - dutiful
-    importance: primary
-    global_id: ger_agent_dd62525d972a
-  - character_uuid: ger_agent_6bb04a642eac
-    emotional_state: Casually intrusive yet relentlessly probing, feigning lightness
-      to pierce defenses
-    goals:
-    - Jolt Josh from obsessive denial into self-awareness
-    - Link pilot fixation to suppressed shooting trauma
-    what_happened: Stanley's voice-over pierces Josh's isolation with casual sarcasm
-      about news placement, then manifests spectrally over Leo's body to demand 'What
-      else?', blurring therapeutic session with real-time crisis dialogue for psychological
-      disruption.
-    observed_status: Stanley's voice-over pierces Josh's isolation with casual sarcasm
-      about news placement, then manifests spectrally over Leo's body to demand 'What
-      else?', blurring therapeutic session with real-time crisis dialogue for psychological
-      disruption.
-    beliefs:
-    - Trivializing intrusions expose buried obsessions
-    - Overlapping realities force therapeutic breakthroughs
-    observed_traits:
-    - persistent
-    - sardonic
-    - unflinching
-    - perceptive
-    importance: primary
-    global_id: ger_agent_6bb04a642eac
-  object_involvements:
-  - object_uuid: ger_object_70eca605f267
-    description_of_involvement: F-16 Falcon anchors dialogue as Leo confirms its destruction,
-      Josh probes survival details, transforming abstract crisis into visceral closure
-      that heightens Josh's personal obsession, mirroring his internal freefall in
-      the episode's PTSD arc.
-    status_before_event: Rogue, crashed into mountain per ongoing reports
-    status_after_event: Officially confirmed destroyed north of Mexico City
-    global_id: ger_object_70eca605f267
-  - object_uuid: ger_object_b08b2e6a9c31
-    description_of_involvement: Photos dominate Josh's solitary focus at event's start,
-      capturing pilot's haunted eyes and cockpit tension; he resumes rifling through
-      them post-report, embodying traumatic fixation that parallels his PTSD, anchoring
-      evasion amid interruptions and revelations.
-    status_before_event: Spread on desk, under Josh's obsessive gaze in darkened office
-    status_after_event: Resumed handling by Josh after brief dialogue diversion
-    global_id: ger_object_b08b2e6a9c31
-  - object_uuid: ger_object_dff6b41f837e
-    description_of_involvement: T-37 trainers invoked by Josh as pilot's Laughlin
-      training craft, showcased in his unnervingly detailed knowledge to Leo, underscoring
-      obsessive research that deflects from self while fueling therapeutic scrutiny
-      in this psyche-blurring moment.
-    status_before_event: Historical training assets at Laughlin AFB
-    status_after_event: Same, merely referenced in backstory disclosure
-    global_id: ger_object_dff6b41f837e
-  location_involvements:
-  - location_uuid: ger_location_5f2dfac477dd
-    description_of_involvement: Leo pinpoints this jagged, remote crash site as F-16's
-      fatal endpoint north of Mexico City, with pilot alive for radio transmission,
-      injecting haunting specificity that amplifies Josh's fixation and echoes his
-      own suppressed shooting trauma in therapeutic overlay.
-    observed_atmosphere: Isolated, unforgiving doom under thin mountain air
-    functional_role: Distant crash locus anchoring crisis resolution report
-    symbolic_significance: Emblem of uncontrollable plunge paralleling Josh's PTSD
-      descent
-    access_restrictions: Inaccessible rugged terrain, post-crash wreckage only
-    key_environmental_details:
-    - Sheer rocky slopes
-    - Debris fireball remnants
-    - Echoing radio static
-    global_id: ger_location_5f2dfac477dd
-  - location_uuid: ger_location_0dea695a45c8
-    description_of_involvement: Josh reluctantly reveals pilot's Tallahassee origins
-      in response to Leo, humanizing the aviator through humid Southern roots, exposing
-      depth of fixation that provokes Stanley's overlaid probe and ties personal loss
-      to national incident.
-    observed_atmosphere: Evoked earthy, humid nostalgia contrasting office tension
-    functional_role: Pilot's hometown backdrop in intel exchange
-    symbolic_significance: Roots grounding anonymous tragedy, mirroring Josh's buried
-      family scars
-    access_restrictions: ''
-    key_environmental_details:
-    - Spanish moss-draped oaks
-    - Red clay soil
-    - Magnolia-shaded streets
-    global_id: ger_location_0dea695a45c8
-  organization_involvements: []
-  derived_from_beat_uuids: &id020
-  - beat_6a6a94419898f47a
-  source_season: 2
-  source_database: westwing.s02
-- fabula_uuid: cand_evt_scene_9e68d826e7f76307_1
-  global_id: null
-  title: Stanley's VO Shatters Josh's Solitary Reverie
-  description: In a flashback three weeks earlier, Josh sits alone in his darkened
-    office, fixated on photos of the suicidal pilot, lost in traumatic fixation. Stanley's
-    casual voice-over abruptly intrudes—'Well, it wasn't in the front page of the
-    sports section, so...'—blurring therapy and reality. This spectral incursion jolts
-    Josh from isolation, inaugurating Stanley's haunting presence in his psyche and
-    heralding the eruption of buried PTSD as Leo knocks, thrusting Josh toward confrontation.
-  episode_uuid: ep_sea_ser_the_west_wing_s02_e10
-  scene_sequence: 11
-  sequence_in_scene: 17
-  key_dialogue: *id019
-  is_flashback: true
   location_uuid: ger_location_0dea695a45c8
   theme_uuids: []
   arc_uuids: []
@@ -6374,21 +6233,6 @@ events:
     status_after_event: Same, merely referenced in backstory disclosure
     global_id: ger_object_dff6b41f837e
   location_involvements:
-  - location_uuid: ger_location_5f2dfac477dd
-    description_of_involvement: Leo pinpoints this jagged, remote crash site as F-16's
-      fatal endpoint north of Mexico City, with pilot alive for radio transmission,
-      injecting haunting specificity that amplifies Josh's fixation and echoes his
-      own suppressed shooting trauma in therapeutic overlay.
-    observed_atmosphere: Isolated, unforgiving doom under thin mountain air
-    functional_role: Distant crash locus anchoring crisis resolution report
-    symbolic_significance: Emblem of uncontrollable plunge paralleling Josh's PTSD
-      descent
-    access_restrictions: Inaccessible rugged terrain, post-crash wreckage only
-    key_environmental_details:
-    - Sheer rocky slopes
-    - Debris fireball remnants
-    - Echoing radio static
-    global_id: ger_location_5f2dfac477dd
   - location_uuid: ger_location_0dea695a45c8
     description_of_involvement: Josh reluctantly reveals pilot's Tallahassee origins
       in response to Leo, humanizing the aviator through humid Southern roots, exposing
@@ -6404,6 +6248,162 @@ events:
     - Red clay soil
     - Magnolia-shaded streets
     global_id: ger_location_0dea695a45c8
+  - location_uuid: ger_location_5f2dfac477dd
+    description_of_involvement: Leo pinpoints this jagged, remote crash site as F-16's
+      fatal endpoint north of Mexico City, with pilot alive for radio transmission,
+      injecting haunting specificity that amplifies Josh's fixation and echoes his
+      own suppressed shooting trauma in therapeutic overlay.
+    observed_atmosphere: Isolated, unforgiving doom under thin mountain air
+    functional_role: Distant crash locus anchoring crisis resolution report
+    symbolic_significance: Emblem of uncontrollable plunge paralleling Josh's PTSD
+      descent
+    access_restrictions: Inaccessible rugged terrain, post-crash wreckage only
+    key_environmental_details:
+    - Sheer rocky slopes
+    - Debris fireball remnants
+    - Echoing radio static
+    global_id: ger_location_5f2dfac477dd
+  organization_involvements: []
+  derived_from_beat_uuids: &id020
+  - beat_6a6a94419898f47a
+  source_season: 2
+  source_database: westwing.s02
+- fabula_uuid: cand_evt_scene_9e68d826e7f76307_1
+  global_id: null
+  title: Stanley's VO Shatters Josh's Solitary Reverie
+  description: In a flashback three weeks earlier, Josh sits alone in his darkened
+    office, fixated on photos of the suicidal pilot, lost in traumatic fixation. Stanley's
+    casual voice-over abruptly intrudes—'Well, it wasn't in the front page of the
+    sports section, so...'—blurring therapy and reality. This spectral incursion jolts
+    Josh from isolation, inaugurating Stanley's haunting presence in his psyche and
+    heralding the eruption of buried PTSD as Leo knocks, thrusting Josh toward confrontation.
+  episode_uuid: ep_sea_ser_the_west_wing_s02_e10
+  scene_sequence: 11
+  sequence_in_scene: 17
+  key_dialogue: *id019
+  is_flashback: true
+  location_uuid: ger_location_5f2dfac477dd
+  theme_uuids: []
+  arc_uuids: []
+  participations:
+  - character_uuid: ger_agent_c9d41ae93618
+    emotional_state: preoccupied
+    goals:
+    - gather precise details about the pilot's crash and final words
+    - understand the incident tied to his trauma
+    what_happened: sitting alone in darkened office fixated on photos of the suicidal
+      pilot, interrupted by Stanley's VO, questioning Leo about crash details, resumes
+      looking through photos
+    observed_status: sitting alone in darkened office fixated on photos of the suicidal
+      pilot, interrupted by Stanley's VO, questioning Leo about crash details, resumes
+      looking through photos
+    beliefs: []
+    observed_traits: []
+    importance: primary
+    global_id: ger_agent_c9d41ae93618
+  - character_uuid: ger_agent_dd62525d972a
+    emotional_state: Matter-of-fact resolve veiling paternal concern for Josh's unraveling
+    goals:
+    - Update Josh on F-16 resolution amid national stakes
+    - Gauge and address subordinate's anomalous preoccupation
+    what_happened: Knocks decisively, enters to declare crisis resolution, delivers
+      precise crash details—mountain impact, pilot's radio survival confirmation and
+      final words—sits authoritatively, then interrogates Josh's pilot knowledge,
+      unwittingly becoming vessel for Stanley's overlay query.
+    observed_status: Knocks decisively, enters to declare crisis resolution, delivers
+      precise crash details—mountain impact, pilot's radio survival confirmation and
+      final words—sits authoritatively, then interrogates Josh's pilot knowledge,
+      unwittingly becoming vessel for Stanley's overlay query.
+    beliefs:
+    - Clear facts stabilize chaos in personal and political crises
+    - Loyalty demands confronting erratic staff behavior
+    observed_traits:
+    - stoic
+    - authoritative
+    - direct
+    - dutiful
+    importance: primary
+    global_id: ger_agent_dd62525d972a
+  - character_uuid: ger_agent_6bb04a642eac
+    emotional_state: Casually intrusive yet relentlessly probing, feigning lightness
+      to pierce defenses
+    goals:
+    - Jolt Josh from obsessive denial into self-awareness
+    - Link pilot fixation to suppressed shooting trauma
+    what_happened: Stanley's voice-over pierces Josh's isolation with casual sarcasm
+      about news placement, then manifests spectrally over Leo's body to demand 'What
+      else?', blurring therapeutic session with real-time crisis dialogue for psychological
+      disruption.
+    observed_status: Stanley's voice-over pierces Josh's isolation with casual sarcasm
+      about news placement, then manifests spectrally over Leo's body to demand 'What
+      else?', blurring therapeutic session with real-time crisis dialogue for psychological
+      disruption.
+    beliefs:
+    - Trivializing intrusions expose buried obsessions
+    - Overlapping realities force therapeutic breakthroughs
+    observed_traits:
+    - persistent
+    - sardonic
+    - unflinching
+    - perceptive
+    importance: primary
+    global_id: ger_agent_6bb04a642eac
+  object_involvements:
+  - object_uuid: ger_object_70eca605f267
+    description_of_involvement: F-16 Falcon anchors dialogue as Leo confirms its destruction,
+      Josh probes survival details, transforming abstract crisis into visceral closure
+      that heightens Josh's personal obsession, mirroring his internal freefall in
+      the episode's PTSD arc.
+    status_before_event: Rogue, crashed into mountain per ongoing reports
+    status_after_event: Officially confirmed destroyed north of Mexico City
+    global_id: ger_object_70eca605f267
+  - object_uuid: ger_object_b08b2e6a9c31
+    description_of_involvement: Photos dominate Josh's solitary focus at event's start,
+      capturing pilot's haunted eyes and cockpit tension; he resumes rifling through
+      them post-report, embodying traumatic fixation that parallels his PTSD, anchoring
+      evasion amid interruptions and revelations.
+    status_before_event: Spread on desk, under Josh's obsessive gaze in darkened office
+    status_after_event: Resumed handling by Josh after brief dialogue diversion
+    global_id: ger_object_b08b2e6a9c31
+  - object_uuid: ger_object_dff6b41f837e
+    description_of_involvement: T-37 trainers invoked by Josh as pilot's Laughlin
+      training craft, showcased in his unnervingly detailed knowledge to Leo, underscoring
+      obsessive research that deflects from self while fueling therapeutic scrutiny
+      in this psyche-blurring moment.
+    status_before_event: Historical training assets at Laughlin AFB
+    status_after_event: Same, merely referenced in backstory disclosure
+    global_id: ger_object_dff6b41f837e
+  location_involvements:
+  - location_uuid: ger_location_0dea695a45c8
+    description_of_involvement: Josh reluctantly reveals pilot's Tallahassee origins
+      in response to Leo, humanizing the aviator through humid Southern roots, exposing
+      depth of fixation that provokes Stanley's overlaid probe and ties personal loss
+      to national incident.
+    observed_atmosphere: Evoked earthy, humid nostalgia contrasting office tension
+    functional_role: Pilot's hometown backdrop in intel exchange
+    symbolic_significance: Roots grounding anonymous tragedy, mirroring Josh's buried
+      family scars
+    access_restrictions: ''
+    key_environmental_details:
+    - Spanish moss-draped oaks
+    - Red clay soil
+    - Magnolia-shaded streets
+    global_id: ger_location_0dea695a45c8
+  - location_uuid: ger_location_5f2dfac477dd
+    description_of_involvement: Leo pinpoints this jagged, remote crash site as F-16's
+      fatal endpoint north of Mexico City, with pilot alive for radio transmission,
+      injecting haunting specificity that amplifies Josh's fixation and echoes his
+      own suppressed shooting trauma in therapeutic overlay.
+    observed_atmosphere: Isolated, unforgiving doom under thin mountain air
+    functional_role: Distant crash locus anchoring crisis resolution report
+    symbolic_significance: Emblem of uncontrollable plunge paralleling Josh's PTSD
+      descent
+    access_restrictions: Inaccessible rugged terrain, post-crash wreckage only
+    key_environmental_details:
+    - Sheer rocky slopes
+    - Debris fireball remnants
+    - Echoing radio static
+    global_id: ger_location_5f2dfac477dd
   organization_involvements: []
   derived_from_beat_uuids: *id020
   source_season: 2
@@ -6430,7 +6430,7 @@ events:
     LEO: "So what do you know?"
     LEO'S BODY, STANLEY: "What else?"
   is_flashback: true
-  location_uuid: ger_location_5f2dfac477dd
+  location_uuid: ger_location_0dea695a45c8
   theme_uuids: []
   arc_uuids: []
   participations:
@@ -6519,6 +6519,19 @@ events:
     status_after_event: Remains invoked detail in conversation, fueling evasion
     global_id: ger_object_dff6b41f837e
   location_involvements:
+  - location_uuid: ger_location_0dea695a45c8
+    description_of_involvement: Josh drops Tallahassee as the pilot's hometown in
+      his evasive response to Leo, grounding the aviator's identity in humid Southern
+      roots and transforming it into a shield against further probing, subtly humanizing
+      the fixation while stalling therapeutic momentum.
+    observed_atmosphere: Evoked humid, moss-draped nostalgia amid office tension
+    functional_role: Biographical anchor in pilot's profile
+    symbolic_significance: Distant personal origins contrasting Josh's DC isolation
+    access_restrictions: ''
+    key_environmental_details:
+    - Spanish moss on live oaks
+    - Red clay soil
+    global_id: ger_location_0dea695a45c8
   - location_uuid: ger_location_5f2dfac477dd
     description_of_involvement: Leo specifies this jagged mountain north of Mexico
       City as the F-16's fatal crash site, where the pilot clung to life for a radio
@@ -6533,19 +6546,6 @@ events:
     - Sheer rocky slopes
     - Thin high-altitude air
     global_id: ger_location_5f2dfac477dd
-  - location_uuid: ger_location_0dea695a45c8
-    description_of_involvement: Josh drops Tallahassee as the pilot's hometown in
-      his evasive response to Leo, grounding the aviator's identity in humid Southern
-      roots and transforming it into a shield against further probing, subtly humanizing
-      the fixation while stalling therapeutic momentum.
-    observed_atmosphere: Evoked humid, moss-draped nostalgia amid office tension
-    functional_role: Biographical anchor in pilot's profile
-    symbolic_significance: Distant personal origins contrasting Josh's DC isolation
-    access_restrictions: ''
-    key_environmental_details:
-    - Spanish moss on live oaks
-    - Red clay soil
-    global_id: ger_location_0dea695a45c8
   organization_involvements: []
   derived_from_beat_uuids: &id022
   - beat_3c1c7c9f205192af
@@ -6569,7 +6569,7 @@ events:
   sequence_in_scene: 18
   key_dialogue: *id021
   is_flashback: true
-  location_uuid: ger_location_0dea695a45c8
+  location_uuid: ger_location_5f2dfac477dd
   theme_uuids: []
   arc_uuids: []
   participations:
@@ -6658,6 +6658,19 @@ events:
     status_after_event: Remains invoked detail in conversation, fueling evasion
     global_id: ger_object_dff6b41f837e
   location_involvements:
+  - location_uuid: ger_location_0dea695a45c8
+    description_of_involvement: Josh drops Tallahassee as the pilot's hometown in
+      his evasive response to Leo, grounding the aviator's identity in humid Southern
+      roots and transforming it into a shield against further probing, subtly humanizing
+      the fixation while stalling therapeutic momentum.
+    observed_atmosphere: Evoked humid, moss-draped nostalgia amid office tension
+    functional_role: Biographical anchor in pilot's profile
+    symbolic_significance: Distant personal origins contrasting Josh's DC isolation
+    access_restrictions: ''
+    key_environmental_details:
+    - Spanish moss on live oaks
+    - Red clay soil
+    global_id: ger_location_0dea695a45c8
   - location_uuid: ger_location_5f2dfac477dd
     description_of_involvement: Leo specifies this jagged mountain north of Mexico
       City as the F-16's fatal crash site, where the pilot clung to life for a radio
@@ -6672,19 +6685,6 @@ events:
     - Sheer rocky slopes
     - Thin high-altitude air
     global_id: ger_location_5f2dfac477dd
-  - location_uuid: ger_location_0dea695a45c8
-    description_of_involvement: Josh drops Tallahassee as the pilot's hometown in
-      his evasive response to Leo, grounding the aviator's identity in humid Southern
-      roots and transforming it into a shield against further probing, subtly humanizing
-      the fixation while stalling therapeutic momentum.
-    observed_atmosphere: Evoked humid, moss-draped nostalgia amid office tension
-    functional_role: Biographical anchor in pilot's profile
-    symbolic_significance: Distant personal origins contrasting Josh's DC isolation
-    access_restrictions: ''
-    key_environmental_details:
-    - Spanish moss on live oaks
-    - Red clay soil
-    global_id: ger_location_0dea695a45c8
   organization_involvements: []
   derived_from_beat_uuids: *id022
   source_season: 2
@@ -6704,6 +6704,136 @@ events:
   - 'Stanley (VO): "Well, it wasn''t in the front page of the sports section, so..."'
   - 'Leo: "He said, \"It wasn''t the plane.\" "'
   - 'Stanley: "What else?"'
+  is_flashback: true
+  location_uuid: ger_location_0dea695a45c8
+  theme_uuids: []
+  arc_uuids:
+  - ger_conflictarc_d4975b5a1578
+  participations:
+  - character_uuid: ger_agent_c9d41ae93618
+    emotional_state: fixated
+    goals:
+    - probe for detailed confirmation on the suicidal pilot's fate and last words
+    what_happened: sitting in his office looking at photos, persistently questions
+      Leo about the F-16 pilot's crash and final radio communication, then evasively
+      resumes examining photos
+    observed_status: sitting in his office looking at photos, persistently questions
+      Leo about the F-16 pilot's crash and final radio communication, then evasively
+      resumes examining photos
+    beliefs: []
+    observed_traits: []
+    importance: primary
+    global_id: ger_agent_c9d41ae93618
+  - character_uuid: ger_agent_dd62525d972a
+    emotional_state: Matter-of-fact command concealing paternal worry over Josh's
+      unraveling
+    goals:
+    - Inform Josh of crisis resolution to refocus him
+    - Gauge and extract Josh's obsessive intel on the pilot
+    what_happened: Knocks and enters abruptly, delivers concise crash report on F-16
+      pilot's final moments and radio transmission, sits to confront Josh directly
+      with 'So what do you know?', probing subordinate's hidden knowledge amid concern.
+    observed_status: Knocks and enters abruptly, delivers concise crash report on
+      F-16 pilot's final moments and radio transmission, sits to confront Josh directly
+      with 'So what do you know?', probing subordinate's hidden knowledge amid concern.
+    beliefs:
+    - Josh's fixation signals operational risk needing intervention
+    - Full disclosure strengthens team loyalty and clarity
+    observed_traits:
+    - authoritative
+    - direct
+    - stoic
+    - superior
+    importance: primary
+    global_id: ger_agent_dd62525d972a
+  - character_uuid: ger_agent_6bb04a642eac
+    emotional_state: Sardonic detachment veiling insistent therapeutic urgency
+    goals:
+    - Expose Josh's fixation as PTSD symptom through layered questioning
+    - Bridge past obsession with present self-awareness via voice-over intrusion
+    what_happened: Delivers opening sarcastic voice-over dismissing news triviality,
+      then overlays Leo's physical form in closing probe 'What else?', bookending
+      the exchange as therapeutic voice from present, catalyzing revelation of evasion.
+    observed_status: Delivers opening sarcastic voice-over dismissing news triviality,
+      then overlays Leo's physical form in closing probe 'What else?', bookending
+      the exchange as therapeutic voice from present, catalyzing revelation of evasion.
+    beliefs:
+    - Evasive details mask deeper trauma connections to the pilot's fate
+    - Sarcasm disarms defenses, forcing unfiltered truth
+    observed_traits:
+    - sardonic
+    - persistent
+    - clinically incisive
+    - unflinching
+    importance: primary
+    global_id: ger_agent_6bb04a642eac
+  object_involvements:
+  - object_uuid: ger_object_70eca605f267
+    description_of_involvement: Central subject of dialogue as crashed F-16, detailed
+      by Leo's report of mountain impact and pilot survival—embodies rogue threat
+      now resolved, yet fuels Josh's obsession, mirroring his internal volatility
+      in therapeutic excavation.
+    status_before_event: Crashed wreckage north of Mexico City
+    status_after_event: Confirmed destroyed, details disseminated verbally
+    global_id: ger_object_70eca605f267
+  - object_uuid: ger_object_b08b2e6a9c31
+    description_of_involvement: Photos of the suicidal pilot dominate Josh's fixation,
+      pored over before Leo's entry, interrogated mid-exchange, and evasively resumed
+      post-report—serving as tactile anchor for trauma projection, visually linking
+      personal ghosts to national crisis.
+    status_before_event: Spread on desk in dimly lit office, under Josh's gaze
+    status_after_event: Resumed examination by Josh, intensifying evasion
+    global_id: ger_object_b08b2e6a9c31
+  - object_uuid: ger_object_dff6b41f837e
+    description_of_involvement: Referenced by Josh as pilot's training aircraft at
+      Laughlin, dropped evasively amid Leo's probe—evokes lethal skill origins, deepening
+      fixation's roots, symbolically paralleling Josh's own 'training' scars from
+      shooting trauma.
+    status_before_event: Historical trainers at Laughlin AFB
+    status_after_event: Invoked in conversation, unchanged physically
+    global_id: ger_object_dff6b41f837e
+  location_involvements:
+  - location_uuid: ger_location_0dea695a45c8
+    description_of_involvement: Dropped by Josh as pilot's hometown amid evasion,
+      humanizing aviator with humid, rooted origins—shifts focus from machine to man,
+      subtly tethering Josh's probing to personal loss echoes in his trauma.
+    observed_atmosphere: Evocative Southern humidity laced with unspoken grief
+    functional_role: Biographical anchor in interrogative exchange
+    symbolic_significance: Grounds abstract crisis in human frailty
+    access_restrictions: ''
+    key_environmental_details:
+    - Sun-scorched streets
+    - Spanish moss-draped oaks
+    global_id: ger_location_0dea695a45c8
+  - location_uuid: ger_location_5f2dfac477dd
+    description_of_involvement: Invoked by Leo as F-16 crash site where pilot met
+      fiery end, pinpointing remote isolation that amplifies tragedy's stark finality—heightens
+      event tension by evoking distant, unforgiving terrain swallowing national threat.
+    observed_atmosphere: Remote, jagged desolation echoing fatal inevitability
+    functional_role: Referenced crash locus anchoring crisis closure
+    symbolic_significance: Manifests uncontrollable chaos mirroring Josh's psyche
+    access_restrictions: ''
+    key_environmental_details:
+    - Sheer rocky slopes
+    - Thin, whipping high-altitude air
+    global_id: ger_location_5f2dfac477dd
+  organization_involvements: []
+  derived_from_beat_uuids: &id024
+  - beat_4d645823e4b10987
+  source_season: 2
+  source_database: westwing.s02
+- fabula_uuid: cand_evt_scene_9e68d826e7f76307_3
+  global_id: null
+  title: Stanley's VO Intrudes on Pilot Fixation Probe
+  description: In this flashback framed by therapy, Stanley's voice-over bookends
+    Josh and Leo's tense exchange about the suicidal pilot's crash, opening with sarcasm
+    on news obscurity and closing by overlaying Leo's body to demand 'What else?'
+    after Josh's evasive details. This blurs past obsession with present reckoning,
+    amplifying Stanley's catalytic role in excavating Josh's PTSD-linked fixation.
+  episode_uuid: ep_sea_ser_the_west_wing_s02_e10
+  scene_sequence: 11
+  sequence_in_scene: 19
+  key_dialogue: *id023
   is_flashback: true
   location_uuid: ger_location_5f2dfac477dd
   theme_uuids: []
@@ -6793,18 +6923,6 @@ events:
     status_after_event: Invoked in conversation, unchanged physically
     global_id: ger_object_dff6b41f837e
   location_involvements:
-  - location_uuid: ger_location_5f2dfac477dd
-    description_of_involvement: Invoked by Leo as F-16 crash site where pilot met
-      fiery end, pinpointing remote isolation that amplifies tragedy's stark finality—heightens
-      event tension by evoking distant, unforgiving terrain swallowing national threat.
-    observed_atmosphere: Remote, jagged desolation echoing fatal inevitability
-    functional_role: Referenced crash locus anchoring crisis closure
-    symbolic_significance: Manifests uncontrollable chaos mirroring Josh's psyche
-    access_restrictions: ''
-    key_environmental_details:
-    - Sheer rocky slopes
-    - Thin, whipping high-altitude air
-    global_id: ger_location_5f2dfac477dd
   - location_uuid: ger_location_0dea695a45c8
     description_of_involvement: Dropped by Josh as pilot's hometown amid evasion,
       humanizing aviator with humid, rooted origins—shifts focus from machine to man,
@@ -6817,112 +6935,6 @@ events:
     - Sun-scorched streets
     - Spanish moss-draped oaks
     global_id: ger_location_0dea695a45c8
-  organization_involvements: []
-  derived_from_beat_uuids: &id024
-  - beat_4d645823e4b10987
-  source_season: 2
-  source_database: westwing.s02
-- fabula_uuid: cand_evt_scene_9e68d826e7f76307_3
-  global_id: null
-  title: Stanley's VO Intrudes on Pilot Fixation Probe
-  description: In this flashback framed by therapy, Stanley's voice-over bookends
-    Josh and Leo's tense exchange about the suicidal pilot's crash, opening with sarcasm
-    on news obscurity and closing by overlaying Leo's body to demand 'What else?'
-    after Josh's evasive details. This blurs past obsession with present reckoning,
-    amplifying Stanley's catalytic role in excavating Josh's PTSD-linked fixation.
-  episode_uuid: ep_sea_ser_the_west_wing_s02_e10
-  scene_sequence: 11
-  sequence_in_scene: 19
-  key_dialogue: *id023
-  is_flashback: true
-  location_uuid: ger_location_0dea695a45c8
-  theme_uuids: []
-  arc_uuids:
-  - ger_conflictarc_d4975b5a1578
-  participations:
-  - character_uuid: ger_agent_c9d41ae93618
-    emotional_state: fixated
-    goals:
-    - probe for detailed confirmation on the suicidal pilot's fate and last words
-    what_happened: sitting in his office looking at photos, persistently questions
-      Leo about the F-16 pilot's crash and final radio communication, then evasively
-      resumes examining photos
-    observed_status: sitting in his office looking at photos, persistently questions
-      Leo about the F-16 pilot's crash and final radio communication, then evasively
-      resumes examining photos
-    beliefs: []
-    observed_traits: []
-    importance: primary
-    global_id: ger_agent_c9d41ae93618
-  - character_uuid: ger_agent_dd62525d972a
-    emotional_state: Matter-of-fact command concealing paternal worry over Josh's
-      unraveling
-    goals:
-    - Inform Josh of crisis resolution to refocus him
-    - Gauge and extract Josh's obsessive intel on the pilot
-    what_happened: Knocks and enters abruptly, delivers concise crash report on F-16
-      pilot's final moments and radio transmission, sits to confront Josh directly
-      with 'So what do you know?', probing subordinate's hidden knowledge amid concern.
-    observed_status: Knocks and enters abruptly, delivers concise crash report on
-      F-16 pilot's final moments and radio transmission, sits to confront Josh directly
-      with 'So what do you know?', probing subordinate's hidden knowledge amid concern.
-    beliefs:
-    - Josh's fixation signals operational risk needing intervention
-    - Full disclosure strengthens team loyalty and clarity
-    observed_traits:
-    - authoritative
-    - direct
-    - stoic
-    - superior
-    importance: primary
-    global_id: ger_agent_dd62525d972a
-  - character_uuid: ger_agent_6bb04a642eac
-    emotional_state: Sardonic detachment veiling insistent therapeutic urgency
-    goals:
-    - Expose Josh's fixation as PTSD symptom through layered questioning
-    - Bridge past obsession with present self-awareness via voice-over intrusion
-    what_happened: Delivers opening sarcastic voice-over dismissing news triviality,
-      then overlays Leo's physical form in closing probe 'What else?', bookending
-      the exchange as therapeutic voice from present, catalyzing revelation of evasion.
-    observed_status: Delivers opening sarcastic voice-over dismissing news triviality,
-      then overlays Leo's physical form in closing probe 'What else?', bookending
-      the exchange as therapeutic voice from present, catalyzing revelation of evasion.
-    beliefs:
-    - Evasive details mask deeper trauma connections to the pilot's fate
-    - Sarcasm disarms defenses, forcing unfiltered truth
-    observed_traits:
-    - sardonic
-    - persistent
-    - clinically incisive
-    - unflinching
-    importance: primary
-    global_id: ger_agent_6bb04a642eac
-  object_involvements:
-  - object_uuid: ger_object_70eca605f267
-    description_of_involvement: Central subject of dialogue as crashed F-16, detailed
-      by Leo's report of mountain impact and pilot survival—embodies rogue threat
-      now resolved, yet fuels Josh's obsession, mirroring his internal volatility
-      in therapeutic excavation.
-    status_before_event: Crashed wreckage north of Mexico City
-    status_after_event: Confirmed destroyed, details disseminated verbally
-    global_id: ger_object_70eca605f267
-  - object_uuid: ger_object_b08b2e6a9c31
-    description_of_involvement: Photos of the suicidal pilot dominate Josh's fixation,
-      pored over before Leo's entry, interrogated mid-exchange, and evasively resumed
-      post-report—serving as tactile anchor for trauma projection, visually linking
-      personal ghosts to national crisis.
-    status_before_event: Spread on desk in dimly lit office, under Josh's gaze
-    status_after_event: Resumed examination by Josh, intensifying evasion
-    global_id: ger_object_b08b2e6a9c31
-  - object_uuid: ger_object_dff6b41f837e
-    description_of_involvement: Referenced by Josh as pilot's training aircraft at
-      Laughlin, dropped evasively amid Leo's probe—evokes lethal skill origins, deepening
-      fixation's roots, symbolically paralleling Josh's own 'training' scars from
-      shooting trauma.
-    status_before_event: Historical trainers at Laughlin AFB
-    status_after_event: Invoked in conversation, unchanged physically
-    global_id: ger_object_dff6b41f837e
-  location_involvements:
   - location_uuid: ger_location_5f2dfac477dd
     description_of_involvement: Invoked by Leo as F-16 crash site where pilot met
       fiery end, pinpointing remote isolation that amplifies tragedy's stark finality—heightens
@@ -6935,18 +6947,6 @@ events:
     - Sheer rocky slopes
     - Thin, whipping high-altitude air
     global_id: ger_location_5f2dfac477dd
-  - location_uuid: ger_location_0dea695a45c8
-    description_of_involvement: Dropped by Josh as pilot's hometown amid evasion,
-      humanizing aviator with humid, rooted origins—shifts focus from machine to man,
-      subtly tethering Josh's probing to personal loss echoes in his trauma.
-    observed_atmosphere: Evocative Southern humidity laced with unspoken grief
-    functional_role: Biographical anchor in interrogative exchange
-    symbolic_significance: Grounds abstract crisis in human frailty
-    access_restrictions: ''
-    key_environmental_details:
-    - Sun-scorched streets
-    - Spanish moss-draped oaks
-    global_id: ger_location_0dea695a45c8
   organization_involvements: []
   derived_from_beat_uuids: *id024
   source_season: 2
@@ -7357,7 +7357,7 @@ events:
     - persistent
     importance: primary
     global_id: ger_agent_7854a70e34ea
-  - character_uuid: ger_agent_64b2a2c10c8f
+  - character_uuid: ger_agent_14f85d554756
     emotional_state: Concerned attentiveness amid colleague's distress
     goals:
     - Assist Josh in his agitated state
@@ -7377,7 +7377,7 @@ events:
     - composed
     - proactive
     importance: primary
-    global_id: ger_agent_64b2a2c10c8f
+    global_id: ger_agent_14f85d554756
   object_involvements:
   - object_uuid: ger_object_a1cc4fcdc0c9
     description_of_involvement: The bagpipes blare relentlessly in the lobby, serving
@@ -7561,7 +7561,7 @@ events:
     - alarmed
     importance: primary
     global_id: ger_agent_7854a70e34ea
-  - character_uuid: ger_agent_64b2a2c10c8f
+  - character_uuid: ger_agent_14f85d554756
     emotional_state: Calm helpfulness tinged with instinctive worry
     goals:
     - Fulfill Josh's immediate work demand
@@ -7581,7 +7581,7 @@ events:
     - responsive
     - loyal
     importance: primary
-    global_id: ger_agent_64b2a2c10c8f
+    global_id: ger_agent_14f85d554756
   - character_uuid: ger_agent_b5af285069bc
     emotional_state: Neutral (referenced indirectly)
     goals:
@@ -7777,7 +7777,7 @@ events:
   - 'JOSH: "It''s the same one that''s hanging outside the Blue Room."'
   - 'DONNA: "Yo-Yo Ma rules!"'
   is_flashback: true
-  location_uuid: ger_location_1cb2a740f08e
+  location_uuid: ger_location_11f90d16b534
   theme_uuids:
   - ger_theme_11689474eff7
   arc_uuids: []
@@ -7821,7 +7821,7 @@ events:
     observed_traits: []
     importance: primary
     global_id: ger_agent_c9d41ae93618
-  - character_uuid: ger_agent_64b2a2c10c8f
+  - character_uuid: ger_agent_14f85d554756
     emotional_state: Buoyantly casual and upbeat, untouched by surrounding friction.
     goals:
     - Lighten hallway mood with pop culture reference
@@ -7840,7 +7840,7 @@ events:
     - oblivious
     - whimsical
     importance: primary
-    global_id: ger_agent_64b2a2c10c8f
+    global_id: ger_agent_14f85d554756
   - character_uuid: ger_agent_f29e9bec0de0
     emotional_state: Posthumously haunting, symbolizing unresolved mental fragility.
     goals:
@@ -7883,7 +7883,7 @@ events:
       nexus.
     global_id: ger_object_b0721882d999
   location_involvements:
-  - location_uuid: ger_location_1cb2a740f08e
+  - location_uuid: ger_location_11f90d16b534
     description_of_involvement: Referenced as site of the matching painting glimpsed
       in C.J.'s photo; its grand doors and opulent interior loom in dialogue as destination
       for her investigation, pulling the office confrontation into presidential shadows
@@ -7898,7 +7898,7 @@ events:
     key_environmental_details:
     - Grand doors looming in collective imagination
     - Blue silks and wall art evoking presidential intimacy
-    global_id: ger_location_1cb2a740f08e
+    global_id: ger_location_11f90d16b534
   organization_involvements:
   - organization_uuid: ger_organization_a68ae4cca07a
     description_of_involvement: Surfaced through Robert Cano's affiliation as 'Air
@@ -8059,7 +8059,7 @@ events:
     - culturally prestigious
     importance: primary
     global_id: ger_agent_e4b2098217a9
-  - character_uuid: ger_agent_64b2a2c10c8f
+  - character_uuid: ger_agent_14f85d554756
     emotional_state: Unaware object of resentment, tied to Josh's agitation.
     goals:
     - N/A (referenced only)
@@ -8075,7 +8075,7 @@ events:
     - chatty
     - loyal aide
     importance: primary
-    global_id: ger_agent_64b2a2c10c8f
+    global_id: ger_agent_14f85d554756
   object_involvements: []
   location_involvements:
   - location_uuid: ger_location_9112058e86ee
@@ -8240,7 +8240,7 @@ events:
     - culturally prestigious
     importance: primary
     global_id: ger_agent_e4b2098217a9
-  - character_uuid: ger_agent_64b2a2c10c8f
+  - character_uuid: ger_agent_14f85d554756
     emotional_state: Unaware object of resentment, tied to Josh's agitation.
     goals:
     - N/A (referenced only)
@@ -8256,7 +8256,7 @@ events:
     - chatty
     - loyal aide
     importance: primary
-    global_id: ger_agent_64b2a2c10c8f
+    global_id: ger_agent_14f85d554756
   object_involvements: []
   location_involvements:
   - location_uuid: ger_location_9112058e86ee
@@ -8422,7 +8422,7 @@ events:
     - virtuosic performer
     importance: primary
     global_id: ger_agent_e4b2098217a9
-  - character_uuid: ger_agent_64b2a2c10c8f
+  - character_uuid: ger_agent_14f85d554756
     emotional_state: Unaware object of frustration
     goals:
     - Support Josh amid crisis (inferred from context)
@@ -8439,7 +8439,7 @@ events:
     - chatterbox
     - loyal aide
     importance: primary
-    global_id: ger_agent_64b2a2c10c8f
+    global_id: ger_agent_14f85d554756
   object_involvements: []
   location_involvements:
   - location_uuid: ger_location_9112058e86ee
@@ -8605,7 +8605,7 @@ events:
     - virtuosic performer
     importance: primary
     global_id: ger_agent_e4b2098217a9
-  - character_uuid: ger_agent_64b2a2c10c8f
+  - character_uuid: ger_agent_14f85d554756
     emotional_state: Unaware object of frustration
     goals:
     - Support Josh amid crisis (inferred from context)
@@ -8622,7 +8622,7 @@ events:
     - chatterbox
     - loyal aide
     importance: primary
-    global_id: ger_agent_64b2a2c10c8f
+    global_id: ger_agent_14f85d554756
   object_involvements: []
   location_involvements:
   - location_uuid: ger_location_9112058e86ee
@@ -8676,7 +8676,7 @@ events:
   - 'SAM (O.S.): "Sir, last year New England had 16.3 million barrels of commercial
     inventory. This year, they have six."'
   is_flashback: false
-  location_uuid: ger_location_858cce624636
+  location_uuid: ger_location_af4858b6d20b
   theme_uuids: []
   arc_uuids: []
   participations:
@@ -8716,7 +8716,7 @@ events:
     global_id: ger_agent_04bbccb1e352
   object_involvements: []
   location_involvements:
-  - location_uuid: ger_location_858cce624636
+  - location_uuid: ger_location_af4858b6d20b
     description_of_involvement: New England is invoked through Sam's off-screen briefing
       as the epicenter of a brewing energy catastrophe, its plummeting commercial
       oil reserves from 16.3 to six million barrels transforming a regional chokepoint
@@ -8731,7 +8731,7 @@ events:
     key_environmental_details:
     - Frigid winds and snow-laced towns
     - Dwindling oil tanks fueling panic
-    global_id: ger_location_858cce624636
+    global_id: ger_location_af4858b6d20b
   organization_involvements: []
   derived_from_beat_uuids:
   - beat_948f1b0a75450d94
@@ -9905,21 +9905,6 @@ events:
       recipients.
     internal_dynamics: ''
     global_id: ger_organization_a94120d3017a
-  - organization_uuid: ger_organization_ae9d1b7687b4
-    description_of_involvement: Invoked in dialogue as the antisemitic regime that
-      stripped Augie Haussmann's property, fueling the painting's plunder chain; its
-      legacy prompts White House apology and restitution, highlighting collaborative
-      evil now confronted.
-    active_representation: Through recounted historical edicts in explanatory narrative.
-    power_dynamics: Past perpetrator whose actions demand present rectification.
-    organizational_goals:
-    - N/A - historical reference
-    influence_mechanisms:
-    - Lingering legacy of confiscation laws
-    - Catalyst for international recovery efforts
-    institutional_impact: Exposes moral imperative for reparative diplomacy.
-    internal_dynamics: ''
-    global_id: ger_organization_ae9d1b7687b4
   - organization_uuid: ger_organization_51fb50229cdd
     description_of_involvement: Cited as the force that sold the looted painting to
       a Swiss dealer after Augie's Auschwitz death, anchoring the artifact's dark
@@ -9935,6 +9920,21 @@ events:
     institutional_impact: Amplifies cultural restitution as anti-atrocity response.
     internal_dynamics: ''
     global_id: ger_organization_51fb50229cdd
+  - organization_uuid: ger_organization_ae9d1b7687b4
+    description_of_involvement: Invoked in dialogue as the antisemitic regime that
+      stripped Augie Haussmann's property, fueling the painting's plunder chain; its
+      legacy prompts White House apology and restitution, highlighting collaborative
+      evil now confronted.
+    active_representation: Through recounted historical edicts in explanatory narrative.
+    power_dynamics: Past perpetrator whose actions demand present rectification.
+    organizational_goals:
+    - N/A - historical reference
+    influence_mechanisms:
+    - Lingering legacy of confiscation laws
+    - Catalyst for international recovery efforts
+    institutional_impact: Exposes moral imperative for reparative diplomacy.
+    internal_dynamics: ''
+    global_id: ger_organization_ae9d1b7687b4
   - organization_uuid: ger_organization_24312973bd20
     description_of_involvement: Named in painting's journey as interim custodian post-Swiss
       dealer, part of the chain from Nazi sale to National Gallery, illustrating institutional
@@ -10279,7 +10279,7 @@ events:
     - Sudden gunshots, screams, ambulance sirens
     global_id: ger_location_b31d71336a4e
   organization_involvements:
-  - organization_uuid: ger_organization_bb39d5dd403d
+  - organization_uuid: ger_organization_362537a34213
     description_of_involvement: White House Senior Staff appears in therapeutic flashbacks
       as the rapt audience to Yo-Yo Ma's performance at the Christmas party, their
       attentive presence underscoring the normalcy shattered by gunshots, linking
@@ -10294,7 +10294,7 @@ events:
     - Cultural programming elevating soft power
     institutional_impact: Highlights how organizational rituals mask underlying vulnerabilities
     internal_dynamics: ''
-    global_id: ger_organization_bb39d5dd403d
+    global_id: ger_organization_362537a34213
   derived_from_beat_uuids: &id030
   - beat_8bae5243c2adc611
   - beat_b7654d7bd969d30e
@@ -10447,7 +10447,7 @@ events:
     - Sudden gunshots, screams, ambulance sirens
     global_id: ger_location_b31d71336a4e
   organization_involvements:
-  - organization_uuid: ger_organization_bb39d5dd403d
+  - organization_uuid: ger_organization_362537a34213
     description_of_involvement: White House Senior Staff appears in therapeutic flashbacks
       as the rapt audience to Yo-Yo Ma's performance at the Christmas party, their
       attentive presence underscoring the normalcy shattered by gunshots, linking
@@ -10462,7 +10462,7 @@ events:
     - Cultural programming elevating soft power
     institutional_impact: Highlights how organizational rituals mask underlying vulnerabilities
     internal_dynamics: ''
-    global_id: ger_organization_bb39d5dd403d
+    global_id: ger_organization_362537a34213
   derived_from_beat_uuids: *id030
   source_season: 2
   source_database: westwing.s02
@@ -10619,7 +10619,7 @@ events:
     - Crowd applause morphing to pandemonium
     global_id: ger_location_b31d71336a4e
   organization_involvements:
-  - organization_uuid: ger_organization_bb39d5dd403d
+  - organization_uuid: ger_organization_362537a34213
     description_of_involvement: White House Senior Staff appears in party flashbacks
       as spellbound audience to Yo-Yo Ma's performance, their attentive presence grounding
       the trauma trigger—elegant listening contextualizes how shooting disrupted inner-circle
@@ -10635,7 +10635,7 @@ events:
     institutional_impact: Underscores how personal trauma ripples into operational
       fitness
     internal_dynamics: Cohesive attentiveness prefiguring post-shooting disarray
-    global_id: ger_organization_bb39d5dd403d
+    global_id: ger_organization_362537a34213
   derived_from_beat_uuids: &id032
   - beat_e380c3c45ba41182
   - beat_d31ad027aae45a6f
@@ -10788,7 +10788,7 @@ events:
     - Crowd applause morphing to pandemonium
     global_id: ger_location_b31d71336a4e
   organization_involvements:
-  - organization_uuid: ger_organization_bb39d5dd403d
+  - organization_uuid: ger_organization_362537a34213
     description_of_involvement: White House Senior Staff appears in party flashbacks
       as spellbound audience to Yo-Yo Ma's performance, their attentive presence grounding
       the trauma trigger—elegant listening contextualizes how shooting disrupted inner-circle
@@ -10804,7 +10804,7 @@ events:
     institutional_impact: Underscores how personal trauma ripples into operational
       fitness
     internal_dynamics: Cohesive attentiveness prefiguring post-shooting disarray
-    global_id: ger_organization_bb39d5dd403d
+    global_id: ger_organization_362537a34213
   derived_from_beat_uuids: *id032
   source_season: 2
   source_database: westwing.s02
@@ -11209,7 +11209,7 @@ events:
     - resolute
     importance: primary
     global_id: ger_agent_dd62525d972a
-  - character_uuid: ger_agent_64b2a2c10c8f
+  - character_uuid: ger_agent_14f85d554756
     emotional_state: Quietly concerned yet professionally resolute
     goals:
     - Facilitate Josh's transport to emergency care
@@ -11229,7 +11229,7 @@ events:
     - efficient
     - loyal
     importance: primary
-    global_id: ger_agent_64b2a2c10c8f
+    global_id: ger_agent_14f85d554756
   object_involvements:
   - object_uuid: ger_object_e6fbc8bcb7ac
     description_of_involvement: Leo deliberately removes his glasses mid-confrontation,
@@ -11326,7 +11326,7 @@ events:
     - tough-love paternal
     importance: primary
     global_id: ger_agent_dd62525d972a
-  - character_uuid: ger_agent_64b2a2c10c8f
+  - character_uuid: ger_agent_14f85d554756
     emotional_state: Quiet determination fused with protective worry
     goals:
     - Facilitate Josh's medical transport without delay
@@ -11345,7 +11345,7 @@ events:
     - caring enforcer
     - efficiently determined
     importance: primary
-    global_id: ger_agent_64b2a2c10c8f
+    global_id: ger_agent_14f85d554756
   object_involvements:
   - object_uuid: ger_object_e6fbc8bcb7ac
     description_of_involvement: Leo lifts his glasses from his face upon spotting
@@ -11440,7 +11440,7 @@ events:
     - familial ferocity
     importance: primary
     global_id: ger_agent_dd62525d972a
-  - character_uuid: ger_agent_64b2a2c10c8f
+  - character_uuid: ger_agent_14f85d554756
     emotional_state: Firm determination laced with underlying worry, channeling care
       into decisive action.
     goals:
@@ -11460,7 +11460,7 @@ events:
     - razor-sharp efficiency
     - cheerful determination under pressure
     importance: primary
-    global_id: ger_agent_64b2a2c10c8f
+    global_id: ger_agent_14f85d554756
   object_involvements:
   - object_uuid: ger_object_e6fbc8bcb7ac
     description_of_involvement: Leo deliberately removes his glasses upon engaging
@@ -11549,7 +11549,7 @@ events:
     observed_traits: []
     importance: primary
     global_id: ger_agent_c9d41ae93618
-  - character_uuid: ger_agent_64b2a2c10c8f
+  - character_uuid: ger_agent_14f85d554756
     emotional_state: Concerned determination masking underlying fear for Josh's fragility
     goals:
     - Force Josh to acknowledge his need for professional help
@@ -11571,7 +11571,7 @@ events:
     - loyal
     - resourceful
     importance: primary
-    global_id: ger_agent_64b2a2c10c8f
+    global_id: ger_agent_14f85d554756
   object_involvements: []
   location_involvements: []
   organization_involvements: []

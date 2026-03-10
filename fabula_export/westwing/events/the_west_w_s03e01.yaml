@@ -1,5 +1,5 @@
 # Events for Manchester Part I
-# Generated: 2026-02-10T12:17:14.652545
+# Generated: 2026-02-22T16:33:13.977252
 
 episode_uuid: ep_sea_ser_the_west_wing_s03_e01
 episode_title: Manchester Part I
@@ -117,27 +117,7 @@ events:
     - predatory
     importance: primary
     global_id: ger_agent_ce2bfab1b21b
-  - character_uuid: ger_agent_bd5d33e933aa
-    emotional_state: Focused and unrelenting in pursuit of clarity
-    goals:
-    - Clarify investigative procedures for public record
-    - Pressure for details on scandal handling
-    what_happened: Joan cuts through the chaos when C.J. calls her name, poisedly
-      questioning the mechanics of the Special Prosecutor process, fueling the procedural
-      crossfire in the frenzied room.
-    observed_status: Joan cuts through the chaos when C.J. calls her name, poisedly
-      questioning the mechanics of the Special Prosecutor process, fueling the procedural
-      crossfire in the frenzied room.
-    beliefs:
-    - Procedural transparency is journalistic duty
-    - White House must face rigorous scrutiny
-    observed_traits:
-    - poised
-    - persistent
-    - incisive
-    importance: primary
-    global_id: ger_agent_bd5d33e933aa
-  - character_uuid: ger_agent_3a11b089b63c
+  - character_uuid: ger_agent_7f81f2915789
     emotional_state: Frenzied and opportunistic amid scandal frenzy
     goals:
     - Uncover specifics on investigation scope
@@ -158,7 +138,27 @@ events:
     - insistent
     - voracious
     importance: primary
-    global_id: ger_agent_3a11b089b63c
+    global_id: ger_agent_7f81f2915789
+  - character_uuid: ger_agent_bd5d33e933aa
+    emotional_state: Focused and unrelenting in pursuit of clarity
+    goals:
+    - Clarify investigative procedures for public record
+    - Pressure for details on scandal handling
+    what_happened: Joan cuts through the chaos when C.J. calls her name, poisedly
+      questioning the mechanics of the Special Prosecutor process, fueling the procedural
+      crossfire in the frenzied room.
+    observed_status: Joan cuts through the chaos when C.J. calls her name, poisedly
+      questioning the mechanics of the Special Prosecutor process, fueling the procedural
+      crossfire in the frenzied room.
+    beliefs:
+    - Procedural transparency is journalistic duty
+    - White House must face rigorous scrutiny
+    observed_traits:
+    - poised
+    - persistent
+    - incisive
+    importance: primary
+    global_id: ger_agent_bd5d33e933aa
   object_involvements:
   - object_uuid: ger_object_37717be65ee7
     description_of_involvement: The scarred oak lectern serves as the central battleground
@@ -188,7 +188,7 @@ events:
     - Rapid camera flashes and overlapping shouts
     global_id: ger_location_7423b10d7d15
   organization_involvements:
-  - organization_uuid: ger_organization_d033a1b32d4f
+  - organization_uuid: ger_organization_bb39d5dd403d
     description_of_involvement: The White House looms as the scandal's epicenter,
       with C.J. openly anticipating subpoenas to its senior staff including herself,
       framing the Special Prosecutor as an external probe into its MS cover-up secrecy,
@@ -207,7 +207,7 @@ events:
       around defiant leadership
     internal_dynamics: Senior staff bracing for subpoenas tests unity under investigative
       vise
-    global_id: ger_organization_d033a1b32d4f
+    global_id: ger_organization_bb39d5dd403d
   derived_from_beat_uuids:
   - beat_152216418c123e34
   - beat_0b80a7ea1e962220
@@ -310,17 +310,7 @@ events:
     observed_traits: []
     importance: secondary
     global_id: ger_agent_ce2bfab1b21b
-  - character_uuid: ger_agent_bd5d33e933aa
-    emotional_state: ''
-    goals:
-    - obtain details on Special Prosecutor selection process
-    what_happened: asks how the Special Prosecutor process will work
-    observed_status: asks how the Special Prosecutor process will work
-    beliefs: []
-    observed_traits: []
-    importance: secondary
-    global_id: ger_agent_bd5d33e933aa
-  - character_uuid: ger_agent_3a11b089b63c
+  - character_uuid: ger_agent_7f81f2915789
     emotional_state: Electrified anticipation bordering on frenzy
     goals:
     - Capture historic announcement visuals
@@ -338,7 +328,17 @@ events:
     - voracious
     - unrelenting
     importance: primary
-    global_id: ger_agent_3a11b089b63c
+    global_id: ger_agent_7f81f2915789
+  - character_uuid: ger_agent_bd5d33e933aa
+    emotional_state: ''
+    goals:
+    - obtain details on Special Prosecutor selection process
+    what_happened: asks how the Special Prosecutor process will work
+    observed_status: asks how the Special Prosecutor process will work
+    beliefs: []
+    observed_traits: []
+    importance: secondary
+    global_id: ger_agent_bd5d33e933aa
   object_involvements:
   - object_uuid: ger_object_37717be65ee7
     description_of_involvement: 'The scarred oak lectern serves as the contested symbolic
@@ -366,7 +366,7 @@ events:
     - Echoing murmurs and residual reporter energy
     global_id: ger_location_7423b10d7d15
   organization_involvements:
-  - organization_uuid: ger_organization_d033a1b32d4f
+  - organization_uuid: ger_organization_bb39d5dd403d
     description_of_involvement: The White House orchestrates this press crucible through
       C.J.'s handoff and Bartlet's podium seizure, publicly steeling against subpoena
       shadows by committing to re-election, transforming institutional crisis into
@@ -383,7 +383,7 @@ events:
     institutional_impact: Rallies staff loyalty while bracing for subpoena dragnet
       on senior ranks
     internal_dynamics: Seamless comms-to-leadership handoff tests operational unity
-    global_id: ger_organization_d033a1b32d4f
+    global_id: ger_organization_bb39d5dd403d
   derived_from_beat_uuids:
   - beat_9832bee7e1b500b8
   - beat_e7e0dd026e79d45d
@@ -530,7 +530,7 @@ events:
     - self-aware
     importance: primary
     global_id: ger_agent_198649bce78f
-  - character_uuid: ger_agent_8511b338f685
+  - character_uuid: ger_agent_1f0b1cae13c5
     emotional_state: ''
     goals: []
     what_happened: significantly mentioned as having been buried that afternoon, used
@@ -540,7 +540,7 @@ events:
     beliefs: []
     observed_traits: []
     importance: minor
-    global_id: ger_agent_8511b338f685
+    global_id: ger_agent_1f0b1cae13c5
   - character_uuid: ger_agent_6a74e54c2552
     emotional_state: Neutral professionalism underscoring national shock
     goals:
@@ -741,7 +741,7 @@ events:
   - 'DONNA: "Have you ever seen anything like this?" JOSH: "No." DONNA: "I''m pumped."
     JOSH: "Me, too." DONNA: "I''m monumentally pumped."'
   is_flashback: false
-  location_uuid: ger_location_3d4b26f1de82
+  location_uuid: ger_location_1d9686e623b8
   theme_uuids: []
   arc_uuids: []
   participations:
@@ -795,7 +795,7 @@ events:
     observed_traits: []
     importance: minor
     global_id: ger_agent_dd62525d972a
-  - character_uuid: ger_agent_64b2a2c10c8f
+  - character_uuid: ger_agent_14f85d554756
     emotional_state: Monumentally pumped thrill blending idealism with campaign fervor
     goals:
     - Support Josh's directives by organizing conference logistics
@@ -819,7 +819,7 @@ events:
     - buoyant
     - precise
     importance: primary
-    global_id: ger_agent_64b2a2c10c8f
+    global_id: ger_agent_14f85d554756
   object_involvements:
   - object_uuid: ger_object_19bd3bb004af
     description_of_involvement: Josh shoulders into his office specifically to divest
@@ -831,6 +831,20 @@ events:
     status_after_event: Draped or hung in Josh's office, abandoned for action
     global_id: ger_object_19bd3bb004af
   location_involvements:
+  - location_uuid: ger_location_1d9686e623b8
+    description_of_involvement: Donna retreats here post-delegation, her cluttered
+      domain—littered with flowers, drafts, and takeout—serving as operational outpost
+      where she will execute Josh's calls; it frames her pivot from exhilarated banter
+      to precise follow-through, underscoring her as the steady anchor in their pumped
+      partnership amid re-election storm.
+    observed_atmosphere: Cluttered focus amid lingering adrenaline hum
+    functional_role: Assistant's task execution zone post-hub interaction
+    symbolic_significance: Sanctuary of loyal precision amid campaign inferno
+    access_restrictions: Personal workspace for Donna and immediate team
+    key_environmental_details:
+    - Lamplit clutter of messages and drafts
+    - Intimate adjacency to Josh's office
+    global_id: ger_location_1d9686e623b8
   - location_uuid: ger_location_3d4b26f1de82
     description_of_involvement: Night-lit nerve center where Josh's explosive entrance
       shatters quiet, fueling rapid-fire banter, delegations, and pumped declarations;
@@ -848,20 +862,6 @@ events:
     - Dim night lighting casting urgent shadows
     - Echoing screams and footsteps in open bullpen space
     global_id: ger_location_3d4b26f1de82
-  - location_uuid: ger_location_1d9686e623b8
-    description_of_involvement: Donna retreats here post-delegation, her cluttered
-      domain—littered with flowers, drafts, and takeout—serving as operational outpost
-      where she will execute Josh's calls; it frames her pivot from exhilarated banter
-      to precise follow-through, underscoring her as the steady anchor in their pumped
-      partnership amid re-election storm.
-    observed_atmosphere: Cluttered focus amid lingering adrenaline hum
-    functional_role: Assistant's task execution zone post-hub interaction
-    symbolic_significance: Sanctuary of loyal precision amid campaign inferno
-    access_restrictions: Personal workspace for Donna and immediate team
-    key_environmental_details:
-    - Lamplit clutter of messages and drafts
-    - Intimate adjacency to Josh's office
-    global_id: ger_location_1d9686e623b8
   organization_involvements:
   - organization_uuid: ger_organization_0055e3ddbe34
     description_of_involvement: Referenced as the elite convoy that ditched Josh at
@@ -957,7 +957,7 @@ events:
   sequence_in_scene: 6
   key_dialogue: *id001
   is_flashback: false
-  location_uuid: ger_location_1d9686e623b8
+  location_uuid: ger_location_3d4b26f1de82
   theme_uuids: []
   arc_uuids: []
   participations:
@@ -1011,7 +1011,7 @@ events:
     observed_traits: []
     importance: minor
     global_id: ger_agent_dd62525d972a
-  - character_uuid: ger_agent_64b2a2c10c8f
+  - character_uuid: ger_agent_14f85d554756
     emotional_state: Monumentally pumped thrill blending idealism with campaign fervor
     goals:
     - Support Josh's directives by organizing conference logistics
@@ -1035,7 +1035,7 @@ events:
     - buoyant
     - precise
     importance: primary
-    global_id: ger_agent_64b2a2c10c8f
+    global_id: ger_agent_14f85d554756
   object_involvements:
   - object_uuid: ger_object_19bd3bb004af
     description_of_involvement: Josh shoulders into his office specifically to divest
@@ -1047,6 +1047,20 @@ events:
     status_after_event: Draped or hung in Josh's office, abandoned for action
     global_id: ger_object_19bd3bb004af
   location_involvements:
+  - location_uuid: ger_location_1d9686e623b8
+    description_of_involvement: Donna retreats here post-delegation, her cluttered
+      domain—littered with flowers, drafts, and takeout—serving as operational outpost
+      where she will execute Josh's calls; it frames her pivot from exhilarated banter
+      to precise follow-through, underscoring her as the steady anchor in their pumped
+      partnership amid re-election storm.
+    observed_atmosphere: Cluttered focus amid lingering adrenaline hum
+    functional_role: Assistant's task execution zone post-hub interaction
+    symbolic_significance: Sanctuary of loyal precision amid campaign inferno
+    access_restrictions: Personal workspace for Donna and immediate team
+    key_environmental_details:
+    - Lamplit clutter of messages and drafts
+    - Intimate adjacency to Josh's office
+    global_id: ger_location_1d9686e623b8
   - location_uuid: ger_location_3d4b26f1de82
     description_of_involvement: Night-lit nerve center where Josh's explosive entrance
       shatters quiet, fueling rapid-fire banter, delegations, and pumped declarations;
@@ -1064,20 +1078,6 @@ events:
     - Dim night lighting casting urgent shadows
     - Echoing screams and footsteps in open bullpen space
     global_id: ger_location_3d4b26f1de82
-  - location_uuid: ger_location_1d9686e623b8
-    description_of_involvement: Donna retreats here post-delegation, her cluttered
-      domain—littered with flowers, drafts, and takeout—serving as operational outpost
-      where she will execute Josh's calls; it frames her pivot from exhilarated banter
-      to precise follow-through, underscoring her as the steady anchor in their pumped
-      partnership amid re-election storm.
-    observed_atmosphere: Cluttered focus amid lingering adrenaline hum
-    functional_role: Assistant's task execution zone post-hub interaction
-    symbolic_significance: Sanctuary of loyal precision amid campaign inferno
-    access_restrictions: Personal workspace for Donna and immediate team
-    key_environmental_details:
-    - Lamplit clutter of messages and drafts
-    - Intimate adjacency to Josh's office
-    global_id: ger_location_1d9686e623b8
   organization_involvements:
   - organization_uuid: ger_organization_0055e3ddbe34
     description_of_involvement: Referenced as the elite convoy that ditched Josh at
@@ -1716,7 +1716,7 @@ events:
     - Massive steel behemoth slicing night swells
     - Flight deck floodlit for helo dumps
     global_id: ger_location_15013d837b78
-  - location_uuid: ger_location_68b1dfbaf4dd
+  - location_uuid: ger_location_a7206de4780a
     description_of_involvement: Serves as nerve center for Operation Swift Fury briefing,
       where officers cram around scarred table under fluorescent glare; Nancy commands
       from head, Bartlet enters to galvanize focus, authorization sparks applause—fusing
@@ -1729,7 +1729,7 @@ events:
     key_environmental_details:
     - Fluorescent lighting scorching conference table
     - Crowded officers rising in deference to President
-    global_id: ger_location_68b1dfbaf4dd
+    global_id: ger_location_a7206de4780a
   organization_involvements: []
   derived_from_beat_uuids: &id004
   - beat_df8e282d4d55cbf2
@@ -1901,7 +1901,7 @@ events:
     - Massive steel behemoth slicing night swells
     - Flight deck floodlit for helo dumps
     global_id: ger_location_15013d837b78
-  - location_uuid: ger_location_68b1dfbaf4dd
+  - location_uuid: ger_location_a7206de4780a
     description_of_involvement: Serves as nerve center for Operation Swift Fury briefing,
       where officers cram around scarred table under fluorescent glare; Nancy commands
       from head, Bartlet enters to galvanize focus, authorization sparks applause—fusing
@@ -1914,7 +1914,7 @@ events:
     key_environmental_details:
     - Fluorescent lighting scorching conference table
     - Crowded officers rising in deference to President
-    global_id: ger_location_68b1dfbaf4dd
+    global_id: ger_location_a7206de4780a
   organization_involvements: []
   derived_from_beat_uuids: *id004
   source_season: 3
@@ -2082,7 +2082,7 @@ events:
     - Massive steel behemoth slicing night swells
     - Flight deck floodlit for helo dumps
     global_id: ger_location_15013d837b78
-  - location_uuid: ger_location_68b1dfbaf4dd
+  - location_uuid: ger_location_a7206de4780a
     description_of_involvement: Serves as nerve center for Operation Swift Fury briefing,
       where officers cram around scarred table under fluorescent glare; Nancy commands
       from head, Bartlet enters to galvanize focus, authorization sparks applause—fusing
@@ -2095,7 +2095,7 @@ events:
     key_environmental_details:
     - Fluorescent lighting scorching conference table
     - Crowded officers rising in deference to President
-    global_id: ger_location_68b1dfbaf4dd
+    global_id: ger_location_a7206de4780a
   organization_involvements: []
   derived_from_beat_uuids: *id004
   source_season: 3
@@ -2116,7 +2116,7 @@ events:
   sequence_in_scene: 10
   key_dialogue: *id003
   is_flashback: false
-  location_uuid: ger_location_68b1dfbaf4dd
+  location_uuid: ger_location_a7206de4780a
   theme_uuids:
   - ger_theme_07c10222f6d0
   arc_uuids:
@@ -2263,7 +2263,7 @@ events:
     - Massive steel behemoth slicing night swells
     - Flight deck floodlit for helo dumps
     global_id: ger_location_15013d837b78
-  - location_uuid: ger_location_68b1dfbaf4dd
+  - location_uuid: ger_location_a7206de4780a
     description_of_involvement: Serves as nerve center for Operation Swift Fury briefing,
       where officers cram around scarred table under fluorescent glare; Nancy commands
       from head, Bartlet enters to galvanize focus, authorization sparks applause—fusing
@@ -2276,7 +2276,7 @@ events:
     key_environmental_details:
     - Fluorescent lighting scorching conference table
     - Crowded officers rising in deference to President
-    global_id: ger_location_68b1dfbaf4dd
+    global_id: ger_location_a7206de4780a
   organization_involvements: []
   derived_from_beat_uuids: *id004
   source_season: 3
@@ -3246,211 +3246,6 @@ events:
     minutes ago."'
   - 'JOSH: "Put a poll in the field."'
   is_flashback: true
-  location_uuid: ger_location_03a1b20f797d
-  theme_uuids:
-  - ger_theme_713f62ba5636
-  - ger_theme_464abc4f836c
-  arc_uuids: []
-  participations:
-  - character_uuid: ger_agent_a96064ff3873
-    emotional_state: Rain-fueled frustration masking fervent conviction
-    goals:
-    - Amplify urgency for new poll data
-    - Vent motorcade betrayal for accountability
-    what_happened: Joey bursts in soaking wet with Kenny, demands another poll passionately,
-      reiterates governor-president and sample flaws, blasts Josh as an 'idiot' for
-      the motorcade snub while praising Bartlet's TV poise, exits after signing exchange.
-    observed_status: Joey bursts in soaking wet with Kenny, demands another poll passionately,
-      reiterates governor-president and sample flaws, blasts Josh as an 'idiot' for
-      the motorcade snub while praising Bartlet's TV poise, exits after signing exchange.
-    beliefs:
-    - Bartlet's TV performance boosts viability
-    - Michigan flaws invalidate prior results
-    observed_traits:
-    - passionate
-    - frustrated
-    - tenacious
-    importance: primary
-    global_id: ger_agent_a96064ff3873
-  - character_uuid: ger_agent_c9d41ae93618
-    emotional_state: Skeptical amusement turning to resolute optimism
-    goals:
-    - Validate poll flaws to build team buy-in
-    - Humorously defuse tension from Joey's arrival
-    what_happened: Josh probes skeptically with 'Yeah?', debates governor dynamics
-      and motorcade abandonment playfully, absorbs Joey's rant lightheartedly, then
-      decisively seals consensus by ordering the new poll into the field.
-    observed_status: Josh probes skeptically with 'Yeah?', debates governor dynamics
-      and motorcade abandonment playfully, absorbs Joey's rant lightheartedly, then
-      decisively seals consensus by ordering the new poll into the field.
-    beliefs:
-    - Incumbent presidents outpoll governors
-    - Comic mishaps strengthen group bonds
-    observed_traits:
-    - skeptical
-    - playful
-    - decisive
-    importance: primary
-    global_id: ger_agent_c9d41ae93618
-  - character_uuid: ger_agent_198649bce78f
-    emotional_state: ''
-    goals: []
-    what_happened: Significantly referenced for high trustworthiness scores, shield
-      from attacks, and strong TV performance post-MS disclosure.
-    observed_status: Significantly referenced for high trustworthiness scores, shield
-      from attacks, and strong TV performance post-MS disclosure.
-    beliefs: []
-    observed_traits: []
-    importance: minor
-    global_id: ger_agent_198649bce78f
-  - character_uuid: ger_agent_dd62525d972a
-    emotional_state: agreeable
-    goals:
-    - Highlight reasons to discount previous poll
-    what_happened: Explains voter preference for incumbent president if country is
-      on right track, notes Bartlet's high trustworthiness scores, admits mistaking
-      Joey's waving for happiness.
-    observed_status: Explains voter preference for incumbent president if country
-      is on right track, notes Bartlet's high trustworthiness scores, admits mistaking
-      Joey's waving for happiness.
-    beliefs: []
-    observed_traits: []
-    importance: secondary
-    global_id: ger_agent_dd62525d972a
-  - character_uuid: ger_agent_04bbccb1e352
-    emotional_state: Assured confidence in data-driven rebuttal
-    goals:
-    - Expose Michigan poll's statistical weaknesses
-    - Bolster Bartlet's image via trustworthiness metrics
-    what_happened: Sam dives in explaining the prior poll's bogus nature, highlights
-      Bartlet's trustworthiness highs and MS non-fatality reveal, affirms Joey's points
-      succinctly to reinforce emerging unity.
-    observed_status: Sam dives in explaining the prior poll's bogus nature, highlights
-      Bartlet's trustworthiness highs and MS non-fatality reveal, affirms Joey's points
-      succinctly to reinforce emerging unity.
-    beliefs:
-    - MS disclosure enhances public trust
-    - Trust scores insulate against scandal fallout
-    observed_traits:
-    - analytical
-    - confident
-    - supportive
-    importance: primary
-    global_id: ger_agent_04bbccb1e352
-  - character_uuid: ger_agent_7854a70e34ea
-    emotional_state: Urgent frustration laced with wry sarcasm
-    goals:
-    - Force immediate agreement on new polling
-    - Cut through staff skepticism to advance re-election data
-    what_happened: Toby kicks off the debate by demanding a new poll, presides over
-      the group's dissection of Michigan flaws with sharp impatience, delivers sarcastic
-      thanks upon consensus, then rises invoking DuPont Circle analogy to punctuate
-      the gridlock-breaking unity.
-    observed_status: Toby kicks off the debate by demanding a new poll, presides over
-      the group's dissection of Michigan flaws with sharp impatience, delivers sarcastic
-      thanks upon consensus, then rises invoking DuPont Circle analogy to punctuate
-      the gridlock-breaking unity.
-    beliefs:
-    - Michigan poll is fundamentally invalid
-    - Bartlet's post-MS strength demands fresh metrics
-    observed_traits:
-    - commanding
-    - sarcastic
-    - impatient
-    importance: primary
-    global_id: ger_agent_7854a70e34ea
-  - character_uuid: ger_agent_b29870aa3178
-    emotional_state: Quiet solidarity amid wet discomfort
-    goals:
-    - Reinforce Joey's polling imperative
-    - Align with staff on data refresh
-    what_happened: Kenny enters drenched alongside Joey, silently supports her poll
-      plea via signing before they depart, embodying the pollsters' soaked frontline
-      urgency.
-    observed_status: Kenny enters drenched alongside Joey, silently supports her poll
-      plea via signing before they depart, embodying the pollsters' soaked frontline
-      urgency.
-    beliefs:
-    - Fresh polls capture post-MS shift
-    - Team consensus drives campaign wins
-    observed_traits:
-    - loyal
-    - urgent
-    - non-verbal
-    importance: primary
-    global_id: ger_agent_b29870aa3178
-  object_involvements: []
-  location_involvements:
-  - location_uuid: ger_location_03a1b20f797d
-    description_of_involvement: The White House Mess serves as the gritty subterranean
-      crucible where staffers huddle amid coffee steam and newspapers, debating poll
-      flaws with rising energy; Joey and Kenny's rain-soaked entrance heightens the
-      chaotic intimacy, transforming it into a forge for re-election resolve amid
-      MS tremors.
-    observed_atmosphere: Tense banter escalating to unified urgency, punctuated by
-      comic relief
-    functional_role: Impromptu war room for polling strategy session
-    symbolic_significance: Underground bunker mirroring campaign's buried tensions
-      surfacing
-    access_restrictions: Restricted to core White House staff and invited pollsters
-    key_environmental_details:
-    - Scarred laminate tables
-    - Dented coffee urns steaming
-    - Fluorescent glare etching faces
-    - Crumpled newspapers on tables
-    global_id: ger_location_03a1b20f797d
-  - location_uuid: ger_location_2a1a15363640
-    description_of_involvement: Michigan is dissected as the flawed poll's origin—its
-      1,170 industrial voters skewing national views on Bartlet versus governors—serving
-      as the debate's punching bag, its weaknesses catalyzing consensus for broader
-      sampling.
-    observed_atmosphere: Evoked as a skeptical shadow over national optimism
-    functional_role: Referenced battleground exposing data invalidity
-    symbolic_significance: Industrial heartland embodying unrepresentative pitfalls
-    access_restrictions: ''
-    key_environmental_details:
-    - Factory-shadowed voter pools
-    - Governor defiance clashing with presidential aura
-    global_id: ger_location_2a1a15363640
-  - location_uuid: ger_location_20326f53beb7
-    description_of_involvement: Toby analogizes the poll deadlock to DuPont Circle's
-      honking gridlock as he rises, cleverly framing the breakthrough consensus as
-      escaped urban snarl, injecting wry levity before Joey's rain complaint echoes
-      the chaos.
-    observed_atmosphere: Mirrored traffic frustration yielding to flow
-    functional_role: Humorous metaphor for resolving debate impasse
-    symbolic_significance: D.C. congestion symbolizing political logjams broken
-    access_restrictions: ''
-    key_environmental_details:
-    - Horns blasting defiance
-    - Engines snarling in commuter vise
-    global_id: ger_location_20326f53beb7
-  organization_involvements: []
-  derived_from_beat_uuids: &id010
-  - beat_2cbdbc99b47c5788
-  - beat_f55ef159f6cb0eb4
-  - beat_ce1c6a37682d92e5
-  - beat_63dce302eef2a966
-  source_season: 3
-  source_database: westwing.s03
-- fabula_uuid: cand_evt_scene_79e0322a836a839d_1
-  global_id: null
-  title: Toby Forces Consensus on Urgent New Poll as Drenched Pollsters Reinforce
-    Plea
-  description: 'In a flashback to the White House Mess four weeks earlier, Toby demands
-    a fresh poll post-MS disclosure, igniting debate among Josh, Sam, C.J., Ed, and
-    Larry on the prior Michigan poll''s flaws: unrepresentative sample, governor-vs-president
-    dynamics, Bartlet''s trustworthiness shield, and MS''s non-fatal nature. Consensus
-    builds. Soaked Joey and Kenny burst in from the rain—abandoned by the motorcade
-    in comic relief courtesy of Josh—passionately echoing the urgency, claiming Bartlet
-    shone on TV. Josh seals unity: ''Put a poll in the field.'' This turning point
-    resolves internal skepticism, injecting cautious optimism into the re-election
-    strategy amid cover-up fallout.'
-  episode_uuid: ep_sea_ser_the_west_wing_s03_e01
-  scene_sequence: 11
-  sequence_in_scene: 15
-  key_dialogue: *id009
-  is_flashback: true
   location_uuid: ger_location_2a1a15363640
   theme_uuids:
   - ger_theme_713f62ba5636
@@ -3586,24 +3381,6 @@ events:
     global_id: ger_agent_b29870aa3178
   object_involvements: []
   location_involvements:
-  - location_uuid: ger_location_03a1b20f797d
-    description_of_involvement: The White House Mess serves as the gritty subterranean
-      crucible where staffers huddle amid coffee steam and newspapers, debating poll
-      flaws with rising energy; Joey and Kenny's rain-soaked entrance heightens the
-      chaotic intimacy, transforming it into a forge for re-election resolve amid
-      MS tremors.
-    observed_atmosphere: Tense banter escalating to unified urgency, punctuated by
-      comic relief
-    functional_role: Impromptu war room for polling strategy session
-    symbolic_significance: Underground bunker mirroring campaign's buried tensions
-      surfacing
-    access_restrictions: Restricted to core White House staff and invited pollsters
-    key_environmental_details:
-    - Scarred laminate tables
-    - Dented coffee urns steaming
-    - Fluorescent glare etching faces
-    - Crumpled newspapers on tables
-    global_id: ger_location_03a1b20f797d
   - location_uuid: ger_location_2a1a15363640
     description_of_involvement: Michigan is dissected as the flawed poll's origin—its
       1,170 industrial voters skewing national views on Bartlet versus governors—serving
@@ -3630,8 +3407,30 @@ events:
     - Horns blasting defiance
     - Engines snarling in commuter vise
     global_id: ger_location_20326f53beb7
+  - location_uuid: ger_location_03a1b20f797d
+    description_of_involvement: The White House Mess serves as the gritty subterranean
+      crucible where staffers huddle amid coffee steam and newspapers, debating poll
+      flaws with rising energy; Joey and Kenny's rain-soaked entrance heightens the
+      chaotic intimacy, transforming it into a forge for re-election resolve amid
+      MS tremors.
+    observed_atmosphere: Tense banter escalating to unified urgency, punctuated by
+      comic relief
+    functional_role: Impromptu war room for polling strategy session
+    symbolic_significance: Underground bunker mirroring campaign's buried tensions
+      surfacing
+    access_restrictions: Restricted to core White House staff and invited pollsters
+    key_environmental_details:
+    - Scarred laminate tables
+    - Dented coffee urns steaming
+    - Fluorescent glare etching faces
+    - Crumpled newspapers on tables
+    global_id: ger_location_03a1b20f797d
   organization_involvements: []
-  derived_from_beat_uuids: *id010
+  derived_from_beat_uuids: &id010
+  - beat_2cbdbc99b47c5788
+  - beat_f55ef159f6cb0eb4
+  - beat_ce1c6a37682d92e5
+  - beat_63dce302eef2a966
   source_season: 3
   source_database: westwing.s03
 - fabula_uuid: cand_evt_scene_79e0322a836a839d_1
@@ -3787,24 +3586,6 @@ events:
     global_id: ger_agent_b29870aa3178
   object_involvements: []
   location_involvements:
-  - location_uuid: ger_location_03a1b20f797d
-    description_of_involvement: The White House Mess serves as the gritty subterranean
-      crucible where staffers huddle amid coffee steam and newspapers, debating poll
-      flaws with rising energy; Joey and Kenny's rain-soaked entrance heightens the
-      chaotic intimacy, transforming it into a forge for re-election resolve amid
-      MS tremors.
-    observed_atmosphere: Tense banter escalating to unified urgency, punctuated by
-      comic relief
-    functional_role: Impromptu war room for polling strategy session
-    symbolic_significance: Underground bunker mirroring campaign's buried tensions
-      surfacing
-    access_restrictions: Restricted to core White House staff and invited pollsters
-    key_environmental_details:
-    - Scarred laminate tables
-    - Dented coffee urns steaming
-    - Fluorescent glare etching faces
-    - Crumpled newspapers on tables
-    global_id: ger_location_03a1b20f797d
   - location_uuid: ger_location_2a1a15363640
     description_of_involvement: Michigan is dissected as the flawed poll's origin—its
       1,170 industrial voters skewing national views on Bartlet versus governors—serving
@@ -3831,6 +3612,225 @@ events:
     - Horns blasting defiance
     - Engines snarling in commuter vise
     global_id: ger_location_20326f53beb7
+  - location_uuid: ger_location_03a1b20f797d
+    description_of_involvement: The White House Mess serves as the gritty subterranean
+      crucible where staffers huddle amid coffee steam and newspapers, debating poll
+      flaws with rising energy; Joey and Kenny's rain-soaked entrance heightens the
+      chaotic intimacy, transforming it into a forge for re-election resolve amid
+      MS tremors.
+    observed_atmosphere: Tense banter escalating to unified urgency, punctuated by
+      comic relief
+    functional_role: Impromptu war room for polling strategy session
+    symbolic_significance: Underground bunker mirroring campaign's buried tensions
+      surfacing
+    access_restrictions: Restricted to core White House staff and invited pollsters
+    key_environmental_details:
+    - Scarred laminate tables
+    - Dented coffee urns steaming
+    - Fluorescent glare etching faces
+    - Crumpled newspapers on tables
+    global_id: ger_location_03a1b20f797d
+  organization_involvements: []
+  derived_from_beat_uuids: *id010
+  source_season: 3
+  source_database: westwing.s03
+- fabula_uuid: cand_evt_scene_79e0322a836a839d_1
+  global_id: null
+  title: Toby Forces Consensus on Urgent New Poll as Drenched Pollsters Reinforce
+    Plea
+  description: 'In a flashback to the White House Mess four weeks earlier, Toby demands
+    a fresh poll post-MS disclosure, igniting debate among Josh, Sam, C.J., Ed, and
+    Larry on the prior Michigan poll''s flaws: unrepresentative sample, governor-vs-president
+    dynamics, Bartlet''s trustworthiness shield, and MS''s non-fatal nature. Consensus
+    builds. Soaked Joey and Kenny burst in from the rain—abandoned by the motorcade
+    in comic relief courtesy of Josh—passionately echoing the urgency, claiming Bartlet
+    shone on TV. Josh seals unity: ''Put a poll in the field.'' This turning point
+    resolves internal skepticism, injecting cautious optimism into the re-election
+    strategy amid cover-up fallout.'
+  episode_uuid: ep_sea_ser_the_west_wing_s03_e01
+  scene_sequence: 11
+  sequence_in_scene: 15
+  key_dialogue: *id009
+  is_flashback: true
+  location_uuid: ger_location_03a1b20f797d
+  theme_uuids:
+  - ger_theme_713f62ba5636
+  - ger_theme_464abc4f836c
+  arc_uuids: []
+  participations:
+  - character_uuid: ger_agent_a96064ff3873
+    emotional_state: Rain-fueled frustration masking fervent conviction
+    goals:
+    - Amplify urgency for new poll data
+    - Vent motorcade betrayal for accountability
+    what_happened: Joey bursts in soaking wet with Kenny, demands another poll passionately,
+      reiterates governor-president and sample flaws, blasts Josh as an 'idiot' for
+      the motorcade snub while praising Bartlet's TV poise, exits after signing exchange.
+    observed_status: Joey bursts in soaking wet with Kenny, demands another poll passionately,
+      reiterates governor-president and sample flaws, blasts Josh as an 'idiot' for
+      the motorcade snub while praising Bartlet's TV poise, exits after signing exchange.
+    beliefs:
+    - Bartlet's TV performance boosts viability
+    - Michigan flaws invalidate prior results
+    observed_traits:
+    - passionate
+    - frustrated
+    - tenacious
+    importance: primary
+    global_id: ger_agent_a96064ff3873
+  - character_uuid: ger_agent_c9d41ae93618
+    emotional_state: Skeptical amusement turning to resolute optimism
+    goals:
+    - Validate poll flaws to build team buy-in
+    - Humorously defuse tension from Joey's arrival
+    what_happened: Josh probes skeptically with 'Yeah?', debates governor dynamics
+      and motorcade abandonment playfully, absorbs Joey's rant lightheartedly, then
+      decisively seals consensus by ordering the new poll into the field.
+    observed_status: Josh probes skeptically with 'Yeah?', debates governor dynamics
+      and motorcade abandonment playfully, absorbs Joey's rant lightheartedly, then
+      decisively seals consensus by ordering the new poll into the field.
+    beliefs:
+    - Incumbent presidents outpoll governors
+    - Comic mishaps strengthen group bonds
+    observed_traits:
+    - skeptical
+    - playful
+    - decisive
+    importance: primary
+    global_id: ger_agent_c9d41ae93618
+  - character_uuid: ger_agent_198649bce78f
+    emotional_state: ''
+    goals: []
+    what_happened: Significantly referenced for high trustworthiness scores, shield
+      from attacks, and strong TV performance post-MS disclosure.
+    observed_status: Significantly referenced for high trustworthiness scores, shield
+      from attacks, and strong TV performance post-MS disclosure.
+    beliefs: []
+    observed_traits: []
+    importance: minor
+    global_id: ger_agent_198649bce78f
+  - character_uuid: ger_agent_dd62525d972a
+    emotional_state: agreeable
+    goals:
+    - Highlight reasons to discount previous poll
+    what_happened: Explains voter preference for incumbent president if country is
+      on right track, notes Bartlet's high trustworthiness scores, admits mistaking
+      Joey's waving for happiness.
+    observed_status: Explains voter preference for incumbent president if country
+      is on right track, notes Bartlet's high trustworthiness scores, admits mistaking
+      Joey's waving for happiness.
+    beliefs: []
+    observed_traits: []
+    importance: secondary
+    global_id: ger_agent_dd62525d972a
+  - character_uuid: ger_agent_04bbccb1e352
+    emotional_state: Assured confidence in data-driven rebuttal
+    goals:
+    - Expose Michigan poll's statistical weaknesses
+    - Bolster Bartlet's image via trustworthiness metrics
+    what_happened: Sam dives in explaining the prior poll's bogus nature, highlights
+      Bartlet's trustworthiness highs and MS non-fatality reveal, affirms Joey's points
+      succinctly to reinforce emerging unity.
+    observed_status: Sam dives in explaining the prior poll's bogus nature, highlights
+      Bartlet's trustworthiness highs and MS non-fatality reveal, affirms Joey's points
+      succinctly to reinforce emerging unity.
+    beliefs:
+    - MS disclosure enhances public trust
+    - Trust scores insulate against scandal fallout
+    observed_traits:
+    - analytical
+    - confident
+    - supportive
+    importance: primary
+    global_id: ger_agent_04bbccb1e352
+  - character_uuid: ger_agent_7854a70e34ea
+    emotional_state: Urgent frustration laced with wry sarcasm
+    goals:
+    - Force immediate agreement on new polling
+    - Cut through staff skepticism to advance re-election data
+    what_happened: Toby kicks off the debate by demanding a new poll, presides over
+      the group's dissection of Michigan flaws with sharp impatience, delivers sarcastic
+      thanks upon consensus, then rises invoking DuPont Circle analogy to punctuate
+      the gridlock-breaking unity.
+    observed_status: Toby kicks off the debate by demanding a new poll, presides over
+      the group's dissection of Michigan flaws with sharp impatience, delivers sarcastic
+      thanks upon consensus, then rises invoking DuPont Circle analogy to punctuate
+      the gridlock-breaking unity.
+    beliefs:
+    - Michigan poll is fundamentally invalid
+    - Bartlet's post-MS strength demands fresh metrics
+    observed_traits:
+    - commanding
+    - sarcastic
+    - impatient
+    importance: primary
+    global_id: ger_agent_7854a70e34ea
+  - character_uuid: ger_agent_b29870aa3178
+    emotional_state: Quiet solidarity amid wet discomfort
+    goals:
+    - Reinforce Joey's polling imperative
+    - Align with staff on data refresh
+    what_happened: Kenny enters drenched alongside Joey, silently supports her poll
+      plea via signing before they depart, embodying the pollsters' soaked frontline
+      urgency.
+    observed_status: Kenny enters drenched alongside Joey, silently supports her poll
+      plea via signing before they depart, embodying the pollsters' soaked frontline
+      urgency.
+    beliefs:
+    - Fresh polls capture post-MS shift
+    - Team consensus drives campaign wins
+    observed_traits:
+    - loyal
+    - urgent
+    - non-verbal
+    importance: primary
+    global_id: ger_agent_b29870aa3178
+  object_involvements: []
+  location_involvements:
+  - location_uuid: ger_location_2a1a15363640
+    description_of_involvement: Michigan is dissected as the flawed poll's origin—its
+      1,170 industrial voters skewing national views on Bartlet versus governors—serving
+      as the debate's punching bag, its weaknesses catalyzing consensus for broader
+      sampling.
+    observed_atmosphere: Evoked as a skeptical shadow over national optimism
+    functional_role: Referenced battleground exposing data invalidity
+    symbolic_significance: Industrial heartland embodying unrepresentative pitfalls
+    access_restrictions: ''
+    key_environmental_details:
+    - Factory-shadowed voter pools
+    - Governor defiance clashing with presidential aura
+    global_id: ger_location_2a1a15363640
+  - location_uuid: ger_location_20326f53beb7
+    description_of_involvement: Toby analogizes the poll deadlock to DuPont Circle's
+      honking gridlock as he rises, cleverly framing the breakthrough consensus as
+      escaped urban snarl, injecting wry levity before Joey's rain complaint echoes
+      the chaos.
+    observed_atmosphere: Mirrored traffic frustration yielding to flow
+    functional_role: Humorous metaphor for resolving debate impasse
+    symbolic_significance: D.C. congestion symbolizing political logjams broken
+    access_restrictions: ''
+    key_environmental_details:
+    - Horns blasting defiance
+    - Engines snarling in commuter vise
+    global_id: ger_location_20326f53beb7
+  - location_uuid: ger_location_03a1b20f797d
+    description_of_involvement: The White House Mess serves as the gritty subterranean
+      crucible where staffers huddle amid coffee steam and newspapers, debating poll
+      flaws with rising energy; Joey and Kenny's rain-soaked entrance heightens the
+      chaotic intimacy, transforming it into a forge for re-election resolve amid
+      MS tremors.
+    observed_atmosphere: Tense banter escalating to unified urgency, punctuated by
+      comic relief
+    functional_role: Impromptu war room for polling strategy session
+    symbolic_significance: Underground bunker mirroring campaign's buried tensions
+      surfacing
+    access_restrictions: Restricted to core White House staff and invited pollsters
+    key_environmental_details:
+    - Scarred laminate tables
+    - Dented coffee urns steaming
+    - Fluorescent glare etching faces
+    - Crumpled newspapers on tables
+    global_id: ger_location_03a1b20f797d
   organization_involvements: []
   derived_from_beat_uuids: *id010
   source_season: 3
@@ -3883,7 +3883,7 @@ events:
     - commanding
     importance: primary
     global_id: ger_agent_c9d41ae93618
-  - character_uuid: ger_agent_64b2a2c10c8f
+  - character_uuid: ger_agent_14f85d554756
     emotional_state: Jubilant idealism swiftly curdling into sarcastic frustration
     goals:
     - Celebrate RU-486 as a progressive women's rights milestone
@@ -3905,7 +3905,7 @@ events:
     - sarcastic
     - loyal
     importance: primary
-    global_id: ger_agent_64b2a2c10c8f
+    global_id: ger_agent_14f85d554756
   object_involvements:
   - object_uuid: ger_object_152aa539118b
     description_of_involvement: The bulky luggage bags, stuffed with campaign gear,
@@ -4033,28 +4033,6 @@ events:
     - experienced
     importance: primary
     global_id: ger_agent_7854a70e34ea
-  - character_uuid: ger_agent_5b1215a53615
-    emotional_state: Curiously detached amusement at outsiders' drama
-    goals:
-    - Serve drinks and facilitate patron comfort
-    - Gauge the evident strain between visitors
-    what_happened: Bartender pours Doug's martini amid light crowd banter, warmly
-      greets Toby taking M&Ms gift, serves Toby's Jack Daniels mid-argument, then
-      probes their friendship post-exit with casual curiosity, threading normalcy
-      through political tension.
-    observed_status: Bartender pours Doug's martini amid light crowd banter, warmly
-      greets Toby taking M&Ms gift, serves Toby's Jack Daniels mid-argument, then
-      probes their friendship post-exit with casual curiosity, threading normalcy
-      through political tension.
-    beliefs:
-    - Political 'circus' brings crowds and tempers
-    - Strangers in bars often mask deeper conflicts
-    observed_traits:
-    - affable
-    - observant
-    - nonchalant
-    importance: primary
-    global_id: ger_agent_5b1215a53615
   - character_uuid: ger_agent_716802c810ea
     emotional_state: Frustrated determination cracking into weary resignation
     goals:
@@ -4078,6 +4056,28 @@ events:
     - resigned
     importance: primary
     global_id: ger_agent_716802c810ea
+  - character_uuid: ger_agent_5b1215a53615
+    emotional_state: Curiously detached amusement at outsiders' drama
+    goals:
+    - Serve drinks and facilitate patron comfort
+    - Gauge the evident strain between visitors
+    what_happened: Bartender pours Doug's martini amid light crowd banter, warmly
+      greets Toby taking M&Ms gift, serves Toby's Jack Daniels mid-argument, then
+      probes their friendship post-exit with casual curiosity, threading normalcy
+      through political tension.
+    observed_status: Bartender pours Doug's martini amid light crowd banter, warmly
+      greets Toby taking M&Ms gift, serves Toby's Jack Daniels mid-argument, then
+      probes their friendship post-exit with casual curiosity, threading normalcy
+      through political tension.
+    beliefs:
+    - Political 'circus' brings crowds and tempers
+    - Strangers in bars often mask deeper conflicts
+    observed_traits:
+    - affable
+    - observant
+    - nonchalant
+    importance: primary
+    global_id: ger_agent_5b1215a53615
   object_involvements:
   - object_uuid: ger_object_8f724fd15c3d
     description_of_involvement: Doug orders and receives the chilled Absolut martini
@@ -4464,7 +4464,7 @@ events:
     - Secure runways awaiting rotors
     - French airspace clearance
     global_id: ger_location_f3e0a2c81a52
-  - location_uuid: ger_location_68b1dfbaf4dd
+  - location_uuid: ger_location_a7206de4780a
     description_of_involvement: The Situation Room pulses as command nexus, its screens
       and radios channeling Dragon's liftoff triumph into applause, then Cobra firefight
       chaos, forging collective emotional surges that test leadership under the fluorescent
@@ -4478,24 +4478,8 @@ events:
     - Fluorescent lighting over scarred conference table
     - Crackling PA speakers broadcasting explosions
     - Humming monitors displaying positions
-    global_id: ger_location_68b1dfbaf4dd
+    global_id: ger_location_a7206de4780a
   organization_involvements:
-  - organization_uuid: ger_organization_289c75896eb4
-    description_of_involvement: Bazan's troops underpin the secured landing zone for
-      Cobras as referenced in prior briefing, their ground hold enabling Dragon pickup
-      amid HNP fire—bolstering the op's perimeter in fractured alliances relayed to
-      the room.
-    active_representation: Via referenced troop positions securing LZ
-    power_dynamics: Cooperative ground force aiding U.S. air ops against mutual foe
-    organizational_goals:
-    - Maintain coup control while facilitating evac
-    - Secure perimeter against HNP counterattacks
-    influence_mechanisms:
-    - Ground troop readiness over LZ
-    - Alliance with U.S. for shared extraction
-    institutional_impact: Highlights tactical pacts in volatile regime change
-    internal_dynamics: Shift from coup aggression to evac support
-    global_id: ger_organization_289c75896eb4
   - organization_uuid: ger_organization_6eb8e9f9a5e3
     description_of_involvement: HNP squads ambush from embassy shadows with light
       machine guns, raking Cobra 1 and wounding crew to derail evac, their ferocity
@@ -4512,6 +4496,22 @@ events:
     institutional_impact: Underscores Haitian instability threatening U.S. intervention
     internal_dynamics: Coordinated squad fire under Bazan coup pressure
     global_id: ger_organization_6eb8e9f9a5e3
+  - organization_uuid: ger_organization_289c75896eb4
+    description_of_involvement: Bazan's troops underpin the secured landing zone for
+      Cobras as referenced in prior briefing, their ground hold enabling Dragon pickup
+      amid HNP fire—bolstering the op's perimeter in fractured alliances relayed to
+      the room.
+    active_representation: Via referenced troop positions securing LZ
+    power_dynamics: Cooperative ground force aiding U.S. air ops against mutual foe
+    organizational_goals:
+    - Maintain coup control while facilitating evac
+    - Secure perimeter against HNP counterattacks
+    influence_mechanisms:
+    - Ground troop readiness over LZ
+    - Alliance with U.S. for shared extraction
+    institutional_impact: Highlights tactical pacts in volatile regime change
+    internal_dynamics: Shift from coup aggression to evac support
+    global_id: ger_organization_289c75896eb4
   derived_from_beat_uuids: &id012
   - beat_fb5c60c6659f4888
   - beat_ea869f79c70f88b1
@@ -4703,7 +4703,7 @@ events:
     - Secure runways awaiting rotors
     - French airspace clearance
     global_id: ger_location_f3e0a2c81a52
-  - location_uuid: ger_location_68b1dfbaf4dd
+  - location_uuid: ger_location_a7206de4780a
     description_of_involvement: The Situation Room pulses as command nexus, its screens
       and radios channeling Dragon's liftoff triumph into applause, then Cobra firefight
       chaos, forging collective emotional surges that test leadership under the fluorescent
@@ -4717,24 +4717,8 @@ events:
     - Fluorescent lighting over scarred conference table
     - Crackling PA speakers broadcasting explosions
     - Humming monitors displaying positions
-    global_id: ger_location_68b1dfbaf4dd
+    global_id: ger_location_a7206de4780a
   organization_involvements:
-  - organization_uuid: ger_organization_289c75896eb4
-    description_of_involvement: Bazan's troops underpin the secured landing zone for
-      Cobras as referenced in prior briefing, their ground hold enabling Dragon pickup
-      amid HNP fire—bolstering the op's perimeter in fractured alliances relayed to
-      the room.
-    active_representation: Via referenced troop positions securing LZ
-    power_dynamics: Cooperative ground force aiding U.S. air ops against mutual foe
-    organizational_goals:
-    - Maintain coup control while facilitating evac
-    - Secure perimeter against HNP counterattacks
-    influence_mechanisms:
-    - Ground troop readiness over LZ
-    - Alliance with U.S. for shared extraction
-    institutional_impact: Highlights tactical pacts in volatile regime change
-    internal_dynamics: Shift from coup aggression to evac support
-    global_id: ger_organization_289c75896eb4
   - organization_uuid: ger_organization_6eb8e9f9a5e3
     description_of_involvement: HNP squads ambush from embassy shadows with light
       machine guns, raking Cobra 1 and wounding crew to derail evac, their ferocity
@@ -4751,6 +4735,22 @@ events:
     institutional_impact: Underscores Haitian instability threatening U.S. intervention
     internal_dynamics: Coordinated squad fire under Bazan coup pressure
     global_id: ger_organization_6eb8e9f9a5e3
+  - organization_uuid: ger_organization_289c75896eb4
+    description_of_involvement: Bazan's troops underpin the secured landing zone for
+      Cobras as referenced in prior briefing, their ground hold enabling Dragon pickup
+      amid HNP fire—bolstering the op's perimeter in fractured alliances relayed to
+      the room.
+    active_representation: Via referenced troop positions securing LZ
+    power_dynamics: Cooperative ground force aiding U.S. air ops against mutual foe
+    organizational_goals:
+    - Maintain coup control while facilitating evac
+    - Secure perimeter against HNP counterattacks
+    influence_mechanisms:
+    - Ground troop readiness over LZ
+    - Alliance with U.S. for shared extraction
+    institutional_impact: Highlights tactical pacts in volatile regime change
+    internal_dynamics: Shift from coup aggression to evac support
+    global_id: ger_organization_289c75896eb4
   derived_from_beat_uuids: *id012
   source_season: 3
   source_database: westwing.s03
@@ -4770,7 +4770,7 @@ events:
   sequence_in_scene: 19
   key_dialogue: *id011
   is_flashback: false
-  location_uuid: ger_location_68b1dfbaf4dd
+  location_uuid: ger_location_a7206de4780a
   theme_uuids:
   - ger_theme_07c10222f6d0
   arc_uuids:
@@ -4937,7 +4937,7 @@ events:
     - Secure runways awaiting rotors
     - French airspace clearance
     global_id: ger_location_f3e0a2c81a52
-  - location_uuid: ger_location_68b1dfbaf4dd
+  - location_uuid: ger_location_a7206de4780a
     description_of_involvement: The Situation Room pulses as command nexus, its screens
       and radios channeling Dragon's liftoff triumph into applause, then Cobra firefight
       chaos, forging collective emotional surges that test leadership under the fluorescent
@@ -4951,24 +4951,8 @@ events:
     - Fluorescent lighting over scarred conference table
     - Crackling PA speakers broadcasting explosions
     - Humming monitors displaying positions
-    global_id: ger_location_68b1dfbaf4dd
+    global_id: ger_location_a7206de4780a
   organization_involvements:
-  - organization_uuid: ger_organization_289c75896eb4
-    description_of_involvement: Bazan's troops underpin the secured landing zone for
-      Cobras as referenced in prior briefing, their ground hold enabling Dragon pickup
-      amid HNP fire—bolstering the op's perimeter in fractured alliances relayed to
-      the room.
-    active_representation: Via referenced troop positions securing LZ
-    power_dynamics: Cooperative ground force aiding U.S. air ops against mutual foe
-    organizational_goals:
-    - Maintain coup control while facilitating evac
-    - Secure perimeter against HNP counterattacks
-    influence_mechanisms:
-    - Ground troop readiness over LZ
-    - Alliance with U.S. for shared extraction
-    institutional_impact: Highlights tactical pacts in volatile regime change
-    internal_dynamics: Shift from coup aggression to evac support
-    global_id: ger_organization_289c75896eb4
   - organization_uuid: ger_organization_6eb8e9f9a5e3
     description_of_involvement: HNP squads ambush from embassy shadows with light
       machine guns, raking Cobra 1 and wounding crew to derail evac, their ferocity
@@ -4985,6 +4969,22 @@ events:
     institutional_impact: Underscores Haitian instability threatening U.S. intervention
     internal_dynamics: Coordinated squad fire under Bazan coup pressure
     global_id: ger_organization_6eb8e9f9a5e3
+  - organization_uuid: ger_organization_289c75896eb4
+    description_of_involvement: Bazan's troops underpin the secured landing zone for
+      Cobras as referenced in prior briefing, their ground hold enabling Dragon pickup
+      amid HNP fire—bolstering the op's perimeter in fractured alliances relayed to
+      the room.
+    active_representation: Via referenced troop positions securing LZ
+    power_dynamics: Cooperative ground force aiding U.S. air ops against mutual foe
+    organizational_goals:
+    - Maintain coup control while facilitating evac
+    - Secure perimeter against HNP counterattacks
+    influence_mechanisms:
+    - Ground troop readiness over LZ
+    - Alliance with U.S. for shared extraction
+    institutional_impact: Highlights tactical pacts in volatile regime change
+    internal_dynamics: Shift from coup aggression to evac support
+    global_id: ger_organization_289c75896eb4
   derived_from_beat_uuids: *id012
   source_season: 3
   source_database: westwing.s03
@@ -5382,216 +5382,6 @@ events:
     CHRIS: "Did the President tell you himself?"
     C.J.: "No. Leo McGarry told me."
   is_flashback: true
-  location_uuid: ger_location_5a6bef89e582
-  theme_uuids:
-  - ger_theme_07c10222f6d0
-  arc_uuids: []
-  participations:
-  - character_uuid: ger_agent_79dc9fb6a278
-    emotional_state: inquisitive
-    goals:
-    - probe Bartlet's emotional state to set up further scrutiny
-    what_happened: asking if the President was briefed on the evacuation after the
-      press conference and probing his state of mind
-    observed_status: asking if the President was briefed on the evacuation after the
-      press conference and probing his state of mind
-    beliefs: []
-    observed_traits: []
-    importance: secondary
-    global_id: ger_agent_79dc9fb6a278
-  - character_uuid: ger_agent_15505a99b94c
-    emotional_state: Intensely focused suspicion bordering on accusation
-    goals:
-    - Determine if Bartlet directly confided in key staff
-    - Amplify doubts on internal communication hierarchies
-    what_happened: Chris follows Steve's probe, sharply asking 'Did the President
-      tell you himself?', pressing the intimacy of Bartlet's revelation as CJ confirms
-      Leo's intermediary role.
-    observed_status: Chris follows Steve's probe, sharply asking 'Did the President
-      tell you himself?', pressing the intimacy of Bartlet's revelation as CJ confirms
-      Leo's intermediary role.
-    beliefs:
-    - Direct presidential disclosure would affirm trust
-    - Indirect relays signal ongoing secrecy
-    observed_traits:
-    - persistent
-    - incisive
-    - unyielding
-    importance: primary
-    global_id: ger_agent_15505a99b94c
-  - character_uuid: ger_agent_198649bce78f
-    emotional_state: Projected as resolute amid imputed strain
-    goals:
-    - Assert unyielding command fitness
-    - Minimize MS as non-debilitating
-    what_happened: President Bartlet looms as absent focal point, savaged via proxies
-      on his MS state, Haiti briefing reception, and disclosure—CJ invokes his commander
-      mindset and annoyance tolerance.
-    observed_status: President Bartlet looms as absent focal point, savaged via proxies
-      on his MS state, Haiti briefing reception, and disclosure—CJ invokes his commander
-      mindset and annoyance tolerance.
-    beliefs:
-    - Personal health irrelevant to duty
-    - Media scrutiny tests but doesn't break resolve
-    observed_traits:
-    - invoked as unflappable
-    - targeted as vulnerable
-    importance: primary
-    global_id: ger_agent_198649bce78f
-  - character_uuid: ger_agent_dd62525d972a
-    emotional_state: Implied as steadfast executor
-    goals:
-    - Control sensitive info flow
-    - Protect presidential inner circle
-    what_happened: Leo McGarry referenced by CJ as her MS informant a week prior,
-      positioning him as gatekeeper in the disclosure chain amid press timeline hounding.
-    observed_status: Leo McGarry referenced by CJ as her MS informant a week prior,
-      positioning him as gatekeeper in the disclosure chain amid press timeline hounding.
-    beliefs:
-    - Strategic timing preserves operations
-    - Chief of Staff buffers direct exposures
-    observed_traits:
-    - invoked as loyal conduit
-    - hierarchical shield
-    importance: primary
-    global_id: ger_agent_dd62525d972a
-  - character_uuid: ger_agent_3a5efeceb247
-    emotional_state: aggressive
-    goals:
-    - escalate questioning to directly challenge Bartlet's command fitness and allege
-      cover-up
-    what_happened: interrupting to challenge if the President was physically and emotionally
-      prepared for life-and-death decisions post-MS revelation, accusing of concealing
-      a life-threatening illness
-    observed_status: interrupting to challenge if the President was physically and
-      emotionally prepared for life-and-death decisions post-MS revelation, accusing
-      of concealing a life-threatening illness
-    beliefs: []
-    observed_traits: []
-    importance: primary
-    global_id: ger_agent_3a5efeceb247
-  - character_uuid: ger_agent_ce2bfab1b21b
-    emotional_state: Relentlessly inquisitive, fueled by skepticism
-    goals:
-    - Uncover exact MS disclosure timeline to staff
-    - Expose potential inconsistencies in White House transparency
-    what_happened: Steve thrusts forward pointedly, demanding 'When did the President
-      tell you about his condition?' after CJ's pivot, embodying the press's timeline
-      excavation amid the rowdy fray.
-    observed_status: Steve thrusts forward pointedly, demanding 'When did the President
-      tell you about his condition?' after CJ's pivot, embodying the press's timeline
-      excavation amid the rowdy fray.
-    beliefs:
-    - Official deflections hide deeper cover-up layers
-    - Personal disclosures reveal command fractures
-    observed_traits:
-    - persistent
-    - aggressive
-    - probing
-    importance: primary
-    global_id: ger_agent_ce2bfab1b21b
-  - character_uuid: ger_agent_3a11b089b63c
-    emotional_state: Frenzied urgency laced with distrustful aggression
-    goals:
-    - Force admissions on Bartlet's post-revelation capacity
-    - Link Haiti decisions to MS vulnerability for headlines
-    what_happened: Reporters erupt in shouts of 'C.J.!', hands stabbing skyward in
-      rowdy clamor; Carl and Mark lead MS assaults on Bartlet's mind/state/fitness,
-      interrupting with cover-up accusations amid the frenzy.
-    observed_status: Reporters erupt in shouts of 'C.J.!', hands stabbing skyward
-      in rowdy clamor; Carl and Mark lead MS assaults on Bartlet's mind/state/fitness,
-      interrupting with cover-up accusations amid the frenzy.
-    beliefs:
-    - MS revelation undermines presidential readiness
-    - White House stonewalls conceal illness severity
-    observed_traits:
-    - eager
-    - rowdy
-    - predatory
-    importance: primary
-    global_id: ger_agent_3a11b089b63c
-  object_involvements: []
-  location_involvements:
-  - location_uuid: ger_location_5a6bef89e582
-    description_of_involvement: Haiti invoked as crisis backdrop—evac ops 60 miles
-      offshore—serving as litmus for Bartlet's disputed command post-MS; reporters
-      weaponize it to question his life-death readiness amid coup chaos.
-    observed_atmosphere: Distant inferno fueling proximate DC frenzy
-    functional_role: Referenced flashpoint tying military action to scandal
-    symbolic_significance: Test of embattled leadership's global reach
-    access_restrictions: ''
-    key_environmental_details:
-    - Coastal turmoil 60 miles out
-    - Embassy evac urgency
-    global_id: ger_location_5a6bef89e582
-  - location_uuid: ger_location_7423b10d7d15
-    description_of_involvement: The Press Conference Room pulses as chaotic battleground
-      where CJ grips podium against reporter barrages; flashing lights and shouts
-      amplify scrutiny, pivoting Haiti brief to MS inquisition, exposing White House
-      fault lines under media glare.
-    observed_atmosphere: Rowdy, tense clamor with urgent shouts and raised hands
-    functional_role: Arena for public accountability and narrative defense
-    symbolic_significance: Emblem of transparency siege, where secrets fracture under
-      lights
-    access_restrictions: Restricted to credentialed press and briefing staff
-    key_environmental_details:
-    - Strobing camera flashes
-    - Echoing shouts of 'C.J.!'
-    - Podium as defensive bastion
-    global_id: ger_location_7423b10d7d15
-  organization_involvements:
-  - organization_uuid: ger_organization_19d099a40fb9
-    description_of_involvement: Pentagon redirected by CJ for troop/equipment specifics
-      on Haiti ops; embodies doctrinal might CJ leans on to quarantine military queries
-      from MS melee, preserving White House narrative firewall.
-    active_representation: Through deferred authority in briefing protocol
-    power_dynamics: Superior logistics expertise constraining press overreach
-    organizational_goals:
-    - Maintain operational secrecy on assets
-    - Coordinate surge without political interference
-    influence_mechanisms:
-    - Jurisdictional handoff
-    - Institutional protocol enforcement
-    institutional_impact: Shields civilian leadership from tactical scrutiny
-    internal_dynamics: ''
-    global_id: ger_organization_19d099a40fb9
-  - organization_uuid: ger_organization_7103a57c620d
-    description_of_involvement: USS Enterprise cited by CJ as Haiti evac launch deck,
-      60 miles offshore; deflects troop details, framing naval might as seamless despite
-      MS doubts, underscoring operational continuity.
-    active_representation: Via CJ's factual briefing reference
-    power_dynamics: Institutional authority invoked to evade press depth
-    organizational_goals:
-    - Execute flawless Haiti rescue logistics
-    - Project unassailable military readiness
-    influence_mechanisms:
-    - Carrier-based operational projection
-    - Referral chain to specialized expertise
-    institutional_impact: Reinforces defense autonomy amid political scandal bleed
-    internal_dynamics: ''
-    global_id: ger_organization_7103a57c620d
-  derived_from_beat_uuids: &id016
-  - beat_9a73fb66a82a49f6
-  - beat_55366ec829fa6425
-  - beat_8385bf2f867395d6
-  - beat_3723a78ce4d628b7
-  source_season: 3
-  source_database: westwing.s03
-- fabula_uuid: cand_evt_scene_eab7dc5d227480e5_2
-  global_id: null
-  title: Press Corps Savages CJ on Bartlet's MS Secrecy and Command Fitness
-  description: Four weeks earlier in the Press Room, amid a Haiti evacuation briefing,
-    reporters Carl, Mark, Steve, and Chris launch a ferocious assault on CJ, probing
-    Bartlet's emotional state, decision-making capacity post-MS revelation, and the
-    timeline of her knowledge. CJ parries with biting sarcasm—insisting his mind was
-    that of Commander-in-Chief, MS non-life-threatening, no cover-up—revealing Leo
-    informed her a week ago. This pivotal clash escalates media distrust, crystallizing
-    the MS fallout's threat to White House credibility and Bartlet's re-election defiance.
-  episode_uuid: ep_sea_ser_the_west_wing_s03_e01
-  scene_sequence: 17
-  sequence_in_scene: 21
-  key_dialogue: *id015
-  is_flashback: true
   location_uuid: ger_location_7423b10d7d15
   theme_uuids:
   - ger_theme_07c10222f6d0
@@ -5700,7 +5490,7 @@ events:
     - probing
     importance: primary
     global_id: ger_agent_ce2bfab1b21b
-  - character_uuid: ger_agent_3a11b089b63c
+  - character_uuid: ger_agent_7f81f2915789
     emotional_state: Frenzied urgency laced with distrustful aggression
     goals:
     - Force admissions on Bartlet's post-revelation capacity
@@ -5719,21 +5509,9 @@ events:
     - rowdy
     - predatory
     importance: primary
-    global_id: ger_agent_3a11b089b63c
+    global_id: ger_agent_7f81f2915789
   object_involvements: []
   location_involvements:
-  - location_uuid: ger_location_5a6bef89e582
-    description_of_involvement: Haiti invoked as crisis backdrop—evac ops 60 miles
-      offshore—serving as litmus for Bartlet's disputed command post-MS; reporters
-      weaponize it to question his life-death readiness amid coup chaos.
-    observed_atmosphere: Distant inferno fueling proximate DC frenzy
-    functional_role: Referenced flashpoint tying military action to scandal
-    symbolic_significance: Test of embattled leadership's global reach
-    access_restrictions: ''
-    key_environmental_details:
-    - Coastal turmoil 60 miles out
-    - Embassy evac urgency
-    global_id: ger_location_5a6bef89e582
   - location_uuid: ger_location_7423b10d7d15
     description_of_involvement: The Press Conference Room pulses as chaotic battleground
       where CJ grips podium against reporter barrages; flashing lights and shouts
@@ -5749,22 +5527,19 @@ events:
     - Echoing shouts of 'C.J.!'
     - Podium as defensive bastion
     global_id: ger_location_7423b10d7d15
+  - location_uuid: ger_location_5a6bef89e582
+    description_of_involvement: Haiti invoked as crisis backdrop—evac ops 60 miles
+      offshore—serving as litmus for Bartlet's disputed command post-MS; reporters
+      weaponize it to question his life-death readiness amid coup chaos.
+    observed_atmosphere: Distant inferno fueling proximate DC frenzy
+    functional_role: Referenced flashpoint tying military action to scandal
+    symbolic_significance: Test of embattled leadership's global reach
+    access_restrictions: ''
+    key_environmental_details:
+    - Coastal turmoil 60 miles out
+    - Embassy evac urgency
+    global_id: ger_location_5a6bef89e582
   organization_involvements:
-  - organization_uuid: ger_organization_19d099a40fb9
-    description_of_involvement: Pentagon redirected by CJ for troop/equipment specifics
-      on Haiti ops; embodies doctrinal might CJ leans on to quarantine military queries
-      from MS melee, preserving White House narrative firewall.
-    active_representation: Through deferred authority in briefing protocol
-    power_dynamics: Superior logistics expertise constraining press overreach
-    organizational_goals:
-    - Maintain operational secrecy on assets
-    - Coordinate surge without political interference
-    influence_mechanisms:
-    - Jurisdictional handoff
-    - Institutional protocol enforcement
-    institutional_impact: Shields civilian leadership from tactical scrutiny
-    internal_dynamics: ''
-    global_id: ger_organization_19d099a40fb9
   - organization_uuid: ger_organization_7103a57c620d
     description_of_involvement: USS Enterprise cited by CJ as Haiti evac launch deck,
       60 miles offshore; deflects troop details, framing naval might as seamless despite
@@ -5780,6 +5555,231 @@ events:
     institutional_impact: Reinforces defense autonomy amid political scandal bleed
     internal_dynamics: ''
     global_id: ger_organization_7103a57c620d
+  - organization_uuid: ger_organization_19d099a40fb9
+    description_of_involvement: Pentagon redirected by CJ for troop/equipment specifics
+      on Haiti ops; embodies doctrinal might CJ leans on to quarantine military queries
+      from MS melee, preserving White House narrative firewall.
+    active_representation: Through deferred authority in briefing protocol
+    power_dynamics: Superior logistics expertise constraining press overreach
+    organizational_goals:
+    - Maintain operational secrecy on assets
+    - Coordinate surge without political interference
+    influence_mechanisms:
+    - Jurisdictional handoff
+    - Institutional protocol enforcement
+    institutional_impact: Shields civilian leadership from tactical scrutiny
+    internal_dynamics: ''
+    global_id: ger_organization_19d099a40fb9
+  derived_from_beat_uuids: &id016
+  - beat_9a73fb66a82a49f6
+  - beat_55366ec829fa6425
+  - beat_8385bf2f867395d6
+  - beat_3723a78ce4d628b7
+  source_season: 3
+  source_database: westwing.s03
+- fabula_uuid: cand_evt_scene_eab7dc5d227480e5_2
+  global_id: null
+  title: Press Corps Savages CJ on Bartlet's MS Secrecy and Command Fitness
+  description: Four weeks earlier in the Press Room, amid a Haiti evacuation briefing,
+    reporters Carl, Mark, Steve, and Chris launch a ferocious assault on CJ, probing
+    Bartlet's emotional state, decision-making capacity post-MS revelation, and the
+    timeline of her knowledge. CJ parries with biting sarcasm—insisting his mind was
+    that of Commander-in-Chief, MS non-life-threatening, no cover-up—revealing Leo
+    informed her a week ago. This pivotal clash escalates media distrust, crystallizing
+    the MS fallout's threat to White House credibility and Bartlet's re-election defiance.
+  episode_uuid: ep_sea_ser_the_west_wing_s03_e01
+  scene_sequence: 17
+  sequence_in_scene: 21
+  key_dialogue: *id015
+  is_flashback: true
+  location_uuid: ger_location_5a6bef89e582
+  theme_uuids:
+  - ger_theme_07c10222f6d0
+  arc_uuids: []
+  participations:
+  - character_uuid: ger_agent_79dc9fb6a278
+    emotional_state: inquisitive
+    goals:
+    - probe Bartlet's emotional state to set up further scrutiny
+    what_happened: asking if the President was briefed on the evacuation after the
+      press conference and probing his state of mind
+    observed_status: asking if the President was briefed on the evacuation after the
+      press conference and probing his state of mind
+    beliefs: []
+    observed_traits: []
+    importance: secondary
+    global_id: ger_agent_79dc9fb6a278
+  - character_uuid: ger_agent_15505a99b94c
+    emotional_state: Intensely focused suspicion bordering on accusation
+    goals:
+    - Determine if Bartlet directly confided in key staff
+    - Amplify doubts on internal communication hierarchies
+    what_happened: Chris follows Steve's probe, sharply asking 'Did the President
+      tell you himself?', pressing the intimacy of Bartlet's revelation as CJ confirms
+      Leo's intermediary role.
+    observed_status: Chris follows Steve's probe, sharply asking 'Did the President
+      tell you himself?', pressing the intimacy of Bartlet's revelation as CJ confirms
+      Leo's intermediary role.
+    beliefs:
+    - Direct presidential disclosure would affirm trust
+    - Indirect relays signal ongoing secrecy
+    observed_traits:
+    - persistent
+    - incisive
+    - unyielding
+    importance: primary
+    global_id: ger_agent_15505a99b94c
+  - character_uuid: ger_agent_198649bce78f
+    emotional_state: Projected as resolute amid imputed strain
+    goals:
+    - Assert unyielding command fitness
+    - Minimize MS as non-debilitating
+    what_happened: President Bartlet looms as absent focal point, savaged via proxies
+      on his MS state, Haiti briefing reception, and disclosure—CJ invokes his commander
+      mindset and annoyance tolerance.
+    observed_status: President Bartlet looms as absent focal point, savaged via proxies
+      on his MS state, Haiti briefing reception, and disclosure—CJ invokes his commander
+      mindset and annoyance tolerance.
+    beliefs:
+    - Personal health irrelevant to duty
+    - Media scrutiny tests but doesn't break resolve
+    observed_traits:
+    - invoked as unflappable
+    - targeted as vulnerable
+    importance: primary
+    global_id: ger_agent_198649bce78f
+  - character_uuid: ger_agent_dd62525d972a
+    emotional_state: Implied as steadfast executor
+    goals:
+    - Control sensitive info flow
+    - Protect presidential inner circle
+    what_happened: Leo McGarry referenced by CJ as her MS informant a week prior,
+      positioning him as gatekeeper in the disclosure chain amid press timeline hounding.
+    observed_status: Leo McGarry referenced by CJ as her MS informant a week prior,
+      positioning him as gatekeeper in the disclosure chain amid press timeline hounding.
+    beliefs:
+    - Strategic timing preserves operations
+    - Chief of Staff buffers direct exposures
+    observed_traits:
+    - invoked as loyal conduit
+    - hierarchical shield
+    importance: primary
+    global_id: ger_agent_dd62525d972a
+  - character_uuid: ger_agent_3a5efeceb247
+    emotional_state: aggressive
+    goals:
+    - escalate questioning to directly challenge Bartlet's command fitness and allege
+      cover-up
+    what_happened: interrupting to challenge if the President was physically and emotionally
+      prepared for life-and-death decisions post-MS revelation, accusing of concealing
+      a life-threatening illness
+    observed_status: interrupting to challenge if the President was physically and
+      emotionally prepared for life-and-death decisions post-MS revelation, accusing
+      of concealing a life-threatening illness
+    beliefs: []
+    observed_traits: []
+    importance: primary
+    global_id: ger_agent_3a5efeceb247
+  - character_uuid: ger_agent_ce2bfab1b21b
+    emotional_state: Relentlessly inquisitive, fueled by skepticism
+    goals:
+    - Uncover exact MS disclosure timeline to staff
+    - Expose potential inconsistencies in White House transparency
+    what_happened: Steve thrusts forward pointedly, demanding 'When did the President
+      tell you about his condition?' after CJ's pivot, embodying the press's timeline
+      excavation amid the rowdy fray.
+    observed_status: Steve thrusts forward pointedly, demanding 'When did the President
+      tell you about his condition?' after CJ's pivot, embodying the press's timeline
+      excavation amid the rowdy fray.
+    beliefs:
+    - Official deflections hide deeper cover-up layers
+    - Personal disclosures reveal command fractures
+    observed_traits:
+    - persistent
+    - aggressive
+    - probing
+    importance: primary
+    global_id: ger_agent_ce2bfab1b21b
+  - character_uuid: ger_agent_7f81f2915789
+    emotional_state: Frenzied urgency laced with distrustful aggression
+    goals:
+    - Force admissions on Bartlet's post-revelation capacity
+    - Link Haiti decisions to MS vulnerability for headlines
+    what_happened: Reporters erupt in shouts of 'C.J.!', hands stabbing skyward in
+      rowdy clamor; Carl and Mark lead MS assaults on Bartlet's mind/state/fitness,
+      interrupting with cover-up accusations amid the frenzy.
+    observed_status: Reporters erupt in shouts of 'C.J.!', hands stabbing skyward
+      in rowdy clamor; Carl and Mark lead MS assaults on Bartlet's mind/state/fitness,
+      interrupting with cover-up accusations amid the frenzy.
+    beliefs:
+    - MS revelation undermines presidential readiness
+    - White House stonewalls conceal illness severity
+    observed_traits:
+    - eager
+    - rowdy
+    - predatory
+    importance: primary
+    global_id: ger_agent_7f81f2915789
+  object_involvements: []
+  location_involvements:
+  - location_uuid: ger_location_7423b10d7d15
+    description_of_involvement: The Press Conference Room pulses as chaotic battleground
+      where CJ grips podium against reporter barrages; flashing lights and shouts
+      amplify scrutiny, pivoting Haiti brief to MS inquisition, exposing White House
+      fault lines under media glare.
+    observed_atmosphere: Rowdy, tense clamor with urgent shouts and raised hands
+    functional_role: Arena for public accountability and narrative defense
+    symbolic_significance: Emblem of transparency siege, where secrets fracture under
+      lights
+    access_restrictions: Restricted to credentialed press and briefing staff
+    key_environmental_details:
+    - Strobing camera flashes
+    - Echoing shouts of 'C.J.!'
+    - Podium as defensive bastion
+    global_id: ger_location_7423b10d7d15
+  - location_uuid: ger_location_5a6bef89e582
+    description_of_involvement: Haiti invoked as crisis backdrop—evac ops 60 miles
+      offshore—serving as litmus for Bartlet's disputed command post-MS; reporters
+      weaponize it to question his life-death readiness amid coup chaos.
+    observed_atmosphere: Distant inferno fueling proximate DC frenzy
+    functional_role: Referenced flashpoint tying military action to scandal
+    symbolic_significance: Test of embattled leadership's global reach
+    access_restrictions: ''
+    key_environmental_details:
+    - Coastal turmoil 60 miles out
+    - Embassy evac urgency
+    global_id: ger_location_5a6bef89e582
+  organization_involvements:
+  - organization_uuid: ger_organization_7103a57c620d
+    description_of_involvement: USS Enterprise cited by CJ as Haiti evac launch deck,
+      60 miles offshore; deflects troop details, framing naval might as seamless despite
+      MS doubts, underscoring operational continuity.
+    active_representation: Via CJ's factual briefing reference
+    power_dynamics: Institutional authority invoked to evade press depth
+    organizational_goals:
+    - Execute flawless Haiti rescue logistics
+    - Project unassailable military readiness
+    influence_mechanisms:
+    - Carrier-based operational projection
+    - Referral chain to specialized expertise
+    institutional_impact: Reinforces defense autonomy amid political scandal bleed
+    internal_dynamics: ''
+    global_id: ger_organization_7103a57c620d
+  - organization_uuid: ger_organization_19d099a40fb9
+    description_of_involvement: Pentagon redirected by CJ for troop/equipment specifics
+      on Haiti ops; embodies doctrinal might CJ leans on to quarantine military queries
+      from MS melee, preserving White House narrative firewall.
+    active_representation: Through deferred authority in briefing protocol
+    power_dynamics: Superior logistics expertise constraining press overreach
+    organizational_goals:
+    - Maintain operational secrecy on assets
+    - Coordinate surge without political interference
+    influence_mechanisms:
+    - Jurisdictional handoff
+    - Institutional protocol enforcement
+    institutional_impact: Shields civilian leadership from tactical scrutiny
+    internal_dynamics: ''
+    global_id: ger_organization_19d099a40fb9
   derived_from_beat_uuids: *id016
   source_season: 3
   source_database: westwing.s03
@@ -6010,341 +6010,6 @@ events:
     elected and instead of sitting in his office he''s sitting on the USS Enterprise.
     To say nothing of the fact that they shot at us, and you don''t get to do that."'
   is_flashback: true
-  location_uuid: ger_location_7be955caabd5
-  theme_uuids:
-  - ger_theme_464abc4f836c
-  arc_uuids: []
-  participations:
-  - character_uuid: ger_agent_85d27b56ea9b
-    emotional_state: ''
-    goals: []
-    what_happened: referenced by Josh and Toby as someone whose temperament they need
-      to check amid tensions
-    observed_status: referenced by Josh and Toby as someone whose temperament they
-      need to check amid tensions
-    beliefs: []
-    observed_traits: []
-    importance: minor
-    global_id: ger_agent_85d27b56ea9b
-  - character_uuid: ger_agent_c9d41ae93618
-    emotional_state: Wary fatigue masking strategic vigilance
-    goals:
-    - Mitigate political fallout from Haiti action
-    - Coordinate messaging to preserve diplomatic flexibility
-    what_happened: Greets President via VO, questions shoot-down risks on planes,
-      lingers post-meeting to caution on invasion optics linking to MS distraction
-      and re-election strength show, agrees on careful public posture with Toby while
-      leaning exhausted on desk.
-    observed_status: Greets President via VO, questions shoot-down risks on planes,
-      lingers post-meeting to caution on invasion optics linking to MS distraction
-      and re-election strength show, agrees on careful public posture with Toby while
-      leaning exhausted on desk.
-    beliefs:
-    - Actions risk MS scandal deflection perception
-    - Public posture must avoid tainting options
-    observed_traits:
-    - cautious
-    - politically astute
-    - loyal
-    importance: primary
-    global_id: ger_agent_c9d41ae93618
-  - character_uuid: ger_agent_198649bce78f
-    emotional_state: Determined resolve edged with annoyance at perceived weakness
-    goals:
-    - Authorize calibrated military/diplomatic response to restore Dessaline
-    - Dismiss political optics to prioritize moral imperative
-    what_happened: Enters Oval Office decisively, probes advisors on force displays
-      and sanctions via opened file, nods thoughtfully to military tech assurances,
-      issues crisp directive for Canadian ultimatum and fly-by consideration, sharply
-      rebuffs Josh/Toby's political cautions, grabs papers and exits abruptly amid
-      rising frustration.
-    observed_status: Enters Oval Office decisively, probes advisors on force displays
-      and sanctions via opened file, nods thoughtfully to military tech assurances,
-      issues crisp directive for Canadian ultimatum and fly-by consideration, sharply
-      rebuffs Josh/Toby's political cautions, grabs papers and exits abruptly amid
-      rising frustration.
-    beliefs:
-    - Sanctions fail against corrupt Haitian structures
-    - Democratic legitimacy and prior attacks demand U.S. action
-    observed_traits:
-    - decisive
-    - impatient
-    - morally resolute
-    - commanding
-    importance: primary
-    global_id: ger_agent_198649bce78f
-  - character_uuid: ger_agent_d880d95088fe
-    emotional_state: Guarded realism from historical precedents
-    goals:
-    - Report sanctions viability honestly
-    - Execute backchannel ultimatum
-    what_happened: Confirms State exploring sanctions but cites past Haiti failures
-      hurting innocents, receives co-order with Nancy for Canadian PM message to Bazan
-      on Dessaline restoration, stands to exit.
-    observed_status: Confirms State exploring sanctions but cites past Haiti failures
-      hurting innocents, receives co-order with Nancy for Canadian PM message to Bazan
-      on Dessaline restoration, stands to exit.
-    beliefs:
-    - Prior sanctions backfired on vulnerable
-    - Diplomacy via allies tests junta without direct escalation
-    observed_traits:
-    - cautious
-    - experienced
-    - diplomatic
-    importance: primary
-    global_id: ger_agent_d880d95088fe
-  - character_uuid: ger_agent_7854a70e34ea
-    emotional_state: Weary pragmatism amid team fatigue
-    goals:
-    - Warn against optics poisoning policy
-    - Enforce messaging discipline on invasion
-    what_happened: Remains post-meeting to echo Josh on optics risks of MS distraction
-      and commander strength ploy, advises Josh's team on guarded Haiti public posture,
-      leans silently on desk acknowledging exhaustion.
-    observed_status: Remains post-meeting to echo Josh on optics risks of MS distraction
-      and commander strength ploy, advises Josh's team on guarded Haiti public posture,
-      leans silently on desk acknowledging exhaustion.
-    beliefs:
-    - Political timing invites skepticism
-    - Diplomacy exhausts before force
-    observed_traits:
-    - pragmatic
-    - sardonic
-    - strategic
-    importance: primary
-    global_id: ger_agent_7854a70e34ea
-  - character_uuid: ger_agent_d1e7a71f951b
-    emotional_state: Concerned precision amid escalating humanitarian crisis
-    goals:
-    - Advocate fly-by to pressure Bazan
-    - Highlight refugee perils to hasten resolution
-    what_happened: Greets President via VO, affirms need for force display to alert
-      Bazan, warns urgently of refugee cutter incidents off Florida Keys risking Guantanamo
-      overload, receives direct orders for Canadian message relay, stands to exit
-      post-meeting.
-    observed_status: Greets President via VO, affirms need for force display to alert
-      Bazan, warns urgently of refugee cutter incidents off Florida Keys risking Guantanamo
-      overload, receives direct orders for Canadian message relay, stands to exit
-      post-meeting.
-    beliefs:
-    - Display of force grabs junta attention
-    - Delayed action floods U.S. borders
-    observed_traits:
-    - strategic
-    - urgent
-    - pragmatic
-    importance: primary
-    global_id: ger_agent_d1e7a71f951b
-  - character_uuid: ger_agent_752ce23e3dda
-    emotional_state: Focused operational zeal
-    goals:
-    - Pitch calibrated show-of-force option
-    - Align military proposal with presidential resolve
-    what_happened: Proposes aggressive Alpha strike of five F-18s buzzing Port-au-Prince
-      to showcase U.S. might against Bazan, sits amid discussion, stands to thank
-      and exit post-directive.
-    observed_status: Proposes aggressive Alpha strike of five F-18s buzzing Port-au-Prince
-      to showcase U.S. might against Bazan, sits amid discussion, stands to thank
-      and exit post-directive.
-    beliefs:
-    - Airpower buzz intimidates without full invasion
-    - Sanctions impotence demands kinetic signaling
-    observed_traits:
-    - aggressive
-    - tactical
-    - confident
-    importance: primary
-    global_id: ger_agent_752ce23e3dda
-  - character_uuid: ger_agent_ba0b7a6094ce
-    emotional_state: Implied precarious exile
-    goals:
-    - Regain presidency via U.S. support
-    - Survive coup violence
-    what_happened: Invoked as democratically elected leader ousted to USS Enterprise
-      safety, focal point of U.S. restoration intent via ultimatum.
-    observed_status: Invoked as democratically elected leader ousted to USS Enterprise
-      safety, focal point of U.S. restoration intent via ultimatum.
-    beliefs:
-    - Democratic mandate justifies intervention
-    - Allied navies shield legitimacy
-    observed_traits:
-    - legitimate
-    - besieged
-    importance: primary
-    global_id: ger_agent_ba0b7a6094ce
-  - character_uuid: ger_agent_0da3c4090800
-    emotional_state: Unseen but implied iron control fracturing under pressure
-    goals:
-    - Maintain junta grip on Haiti
-    - Resist U.S.-backed restoration
-    what_happened: Referenced repeatedly as coup architect targeted by proposed fly-by
-      buzz, Canadian ultimatum demanding withdrawal to restore Dessaline.
-    observed_status: Referenced repeatedly as coup architect targeted by proposed
-      fly-by buzz, Canadian ultimatum demanding withdrawal to restore Dessaline.
-    beliefs:
-    - Military displays bluffable
-    - Sanctions evade true power
-    observed_traits:
-    - defiant
-    - oppressive
-    importance: primary
-    global_id: ger_agent_0da3c4090800
-  - character_uuid: ger_agent_0ec5ceca4dd0
-    emotional_state: ''
-    goals:
-    - ensure safety of US aircraft during fly-by
-    what_happened: explains use of E-2 Hawkeye with radar dome to detect weapons signals
-      before F-18 formation reaches Port-au-Prince
-    observed_status: explains use of E-2 Hawkeye with radar dome to detect weapons
-      signals before F-18 formation reaches Port-au-Prince
-    beliefs: []
-    observed_traits: []
-    importance: secondary
-    global_id: ger_agent_0ec5ceca4dd0
-  object_involvements:
-  - object_uuid: ger_object_4e288b6a0fd1
-    description_of_involvement: Bartlet nods and opens the file splaying sanction
-      breakdowns, Haiti dispatches, refugee projections, and Bazan analyses, using
-      it to pivot discussion from penalties to fly-by resolve; it anchors Oval debate,
-      fueling decisive shift from diplomacy to calibrated force amid MS shadows.
-    status_before_event: Closed on desk or table
-    status_after_event: Opened, consulted, left behind as Bartlet exits
-    global_id: ger_object_4e288b6a0fd1
-  - object_uuid: ger_object_b78686c007cb
-    description_of_involvement: Military Officer details E-2 Hawkeye's radar dome
-      detecting weapons signals pre-flyby arrival over Port-au-Prince, assuaging Josh's
-      shoot-down fears and enabling safe F-18 Alpha strike; it embodies tech safeguard
-      in high-stakes show-of-force calculus.
-    status_before_event: Offshore asset in planning phase
-    status_after_event: Approved for operational integration
-    global_id: ger_object_b78686c007cb
-  - object_uuid: ger_object_c008dd15a2ed
-    description_of_involvement: Mosley proposes five F-18s in Alpha formation buzzing
-      Port-au-Prince to intimidate Bazan; Nancy affirms attention-grabbing, Bartlet
-      greenlights consideration post-ultimatum—narrative fulcrum for resolve without
-      invasion, threading military edge through refugee/moral pressures.
-    status_before_event: Carrier-based, pre-mission
-    status_after_event: Mission-authorized pending fly-by execution
-    global_id: ger_object_c008dd15a2ed
-  location_involvements:
-  - location_uuid: ger_location_7be955caabd5
-    description_of_involvement: Target of proposed F-18 buzz by Mosley, E-2-monitored
-      for threats; evokes coup chaos where Bazan crushes democracy, pulling Oval strategy
-      into its volatile streets as fly-by tests U.S. menace.
-    observed_atmosphere: Implied gunfire-riddled peril
-    functional_role: Military intimidation objective
-    symbolic_significance: Junta defiance nexus
-    access_restrictions: ''
-    key_environmental_details:
-    - Troop-overrun rallies
-    - Weapons-threat skies
-    global_id: ger_location_7be955caabd5
-  - location_uuid: ger_location_5a6bef89e582
-    description_of_involvement: Crisis epicenter dissected via sanctions history,
-      police graft, prior U.S. shootings; Peter's 'down that road' invokes repeated
-      failures, framing fly-by as bold pivot.
-    observed_atmosphere: Coup-boiling volatility
-    functional_role: Geopolitical trigger zone
-    symbolic_significance: Intervention moral testbed
-    access_restrictions: ''
-    key_environmental_details:
-    - Refugee swells
-    - Sanctions impotence
-    global_id: ger_location_5a6bef89e582
-  - location_uuid: ger_location_23687cf01aef
-    description_of_involvement: Nancy cites 12 cutter interceptions of Haitian boats,
-      heightening refugee urgency to force swift Haiti resolution; transforms distant
-      straits into immediate border pressure on Oval decisions.
-    observed_atmosphere: Desperate sea peril
-    functional_role: Humanitarian flashpoint
-    symbolic_significance: Migration crisis frontline
-    access_restrictions: U.S. patrol enforced
-    key_environmental_details:
-    - Overloaded refugee hulls
-    - Patrol light piercings
-    global_id: ger_location_23687cf01aef
-  - location_uuid: ger_location_88fac7338456
-    description_of_involvement: Nancy warns of overload from prolonged crisis, linking
-      Haiti delay to naval base strain; amplifies stakes, pushing Bartlet from sanctions
-      to action amid capacity collapse fears.
-    observed_atmosphere: Buckling under spectral refugee crush
-    functional_role: Potential containment site
-    symbolic_significance: Policy overload emblem
-    access_restrictions: Heavily secured naval perimeter
-    key_environmental_details:
-    - Chain-link strains
-    - Barbed wire horizons
-    global_id: ger_location_88fac7338456
-  organization_involvements:
-  - organization_uuid: ger_organization_55a49abeab7d
-    description_of_involvement: Peter voices sanctioned explorations' past flops hurting
-      innocents; Bartlet tasks him/Nancy with Canadian PM relay demanding Bazan restore
-      Dessaline or face options—manifests diplomatic muscle threading resolve through
-      backchannels.
-    active_representation: Via State operative Peter in Oval
-    power_dynamics: Advisory to presidential command, probing intervention edges
-    organizational_goals:
-    - Test sanctions despite history
-    - Execute allied ultimatum
-    influence_mechanisms:
-    - Historical precedent warnings
-    - Backchannel diplomacy
-    institutional_impact: Anchors U.S. foreign policy pragmatism amid force temptations
-    internal_dynamics: Cautious hierarchy deferring to Oval
-    global_id: ger_organization_55a49abeab7d
-  - organization_uuid: ger_organization_7103a57c620d
-    description_of_involvement: Shelters exiled Dessaline per Bartlet's rationale,
-      symbolizing U.S. asylum steel; contrasts elected leader's displacement with
-      Bazan's impunity, fueling restoration imperative.
-    active_representation: Referenced as safe haven carrier
-    power_dynamics: U.S. naval extension protecting ally
-    organizational_goals:
-    - Secure democratic figurehead
-    - Project offshore power
-    influence_mechanisms:
-    - Embassy evac logistics
-    - F-18 launch platform
-    institutional_impact: Bolsters intervention legitimacy
-    internal_dynamics: ''
-    global_id: ger_organization_7103a57c620d
-  - organization_uuid: ger_organization_2ffdfbd76469
-    description_of_involvement: Bartlet lambasts as contraband profiteers evading
-      sanctions, enriching amid Dessaline ouster; underscores policy futility, justifying
-      shift to fly-by coercion.
-    active_representation: Invoked as corrupt coup enabler
-    power_dynamics: Target of U.S. contempt and strategy
-    organizational_goals:
-    - Profit from smuggling
-    - Enforce junta control
-    influence_mechanisms:
-    - Graft undermining sanctions
-    - Police station sieges
-    institutional_impact: Exposes fragile law enforcement collapse
-    internal_dynamics: ''
-    global_id: ger_organization_2ffdfbd76469
-  derived_from_beat_uuids: &id018
-  - beat_4e4245784000712c
-  - beat_3833191a4fd8b821
-  - beat_6f1f8a88b6c3d4a6
-  - beat_f2f4b86d944c2e1f
-  source_season: 3
-  source_database: westwing.s03
-- fabula_uuid: cand_evt_scene_af764112f1a8dcdb_1
-  global_id: null
-  title: Bartlet Orders Haiti Fly-By and Diplomatic Ultimatum
-  description: 'In the Oval Office, President Bartlet convenes advisors to address
-    Haiti''s coup, debating a risky F-18 fly-by against Bazan versus ineffective sanctions
-    amid refugee warnings. He opts for a calibrated response: a message via Canada
-    signaling intent to restore Dessaline, paired with a carrier fly-by, showcasing
-    resolve without escalation. Josh and Toby later caution against re-election optics
-    tying it to the MS scandal, but Bartlet dismisses political motivations, prioritizing
-    moral urgency and prior U.S. attacks, underscoring his defiant leadership amid
-    domestic pressures.'
-  episode_uuid: ep_sea_ser_the_west_wing_s03_e01
-  scene_sequence: 20
-  sequence_in_scene: 24
-  key_dialogue: *id017
-  is_flashback: true
   location_uuid: ger_location_5a6bef89e582
   theme_uuids:
   - ger_theme_464abc4f836c
@@ -6490,23 +6155,6 @@ events:
     - confident
     importance: primary
     global_id: ger_agent_752ce23e3dda
-  - character_uuid: ger_agent_ba0b7a6094ce
-    emotional_state: Implied precarious exile
-    goals:
-    - Regain presidency via U.S. support
-    - Survive coup violence
-    what_happened: Invoked as democratically elected leader ousted to USS Enterprise
-      safety, focal point of U.S. restoration intent via ultimatum.
-    observed_status: Invoked as democratically elected leader ousted to USS Enterprise
-      safety, focal point of U.S. restoration intent via ultimatum.
-    beliefs:
-    - Democratic mandate justifies intervention
-    - Allied navies shield legitimacy
-    observed_traits:
-    - legitimate
-    - besieged
-    importance: primary
-    global_id: ger_agent_ba0b7a6094ce
   - character_uuid: ger_agent_0da3c4090800
     emotional_state: Unseen but implied iron control fracturing under pressure
     goals:
@@ -6524,6 +6172,23 @@ events:
     - oppressive
     importance: primary
     global_id: ger_agent_0da3c4090800
+  - character_uuid: ger_agent_ba0b7a6094ce
+    emotional_state: Implied precarious exile
+    goals:
+    - Regain presidency via U.S. support
+    - Survive coup violence
+    what_happened: Invoked as democratically elected leader ousted to USS Enterprise
+      safety, focal point of U.S. restoration intent via ultimatum.
+    observed_status: Invoked as democratically elected leader ousted to USS Enterprise
+      safety, focal point of U.S. restoration intent via ultimatum.
+    beliefs:
+    - Democratic mandate justifies intervention
+    - Allied navies shield legitimacy
+    observed_traits:
+    - legitimate
+    - besieged
+    importance: primary
+    global_id: ger_agent_ba0b7a6094ce
   - character_uuid: ger_agent_0ec5ceca4dd0
     emotional_state: ''
     goals:
@@ -6562,18 +6227,6 @@ events:
     status_after_event: Mission-authorized pending fly-by execution
     global_id: ger_object_c008dd15a2ed
   location_involvements:
-  - location_uuid: ger_location_7be955caabd5
-    description_of_involvement: Target of proposed F-18 buzz by Mosley, E-2-monitored
-      for threats; evokes coup chaos where Bazan crushes democracy, pulling Oval strategy
-      into its volatile streets as fly-by tests U.S. menace.
-    observed_atmosphere: Implied gunfire-riddled peril
-    functional_role: Military intimidation objective
-    symbolic_significance: Junta defiance nexus
-    access_restrictions: ''
-    key_environmental_details:
-    - Troop-overrun rallies
-    - Weapons-threat skies
-    global_id: ger_location_7be955caabd5
   - location_uuid: ger_location_5a6bef89e582
     description_of_involvement: Crisis epicenter dissected via sanctions history,
       police graft, prior U.S. shootings; Peter's 'down that road' invokes repeated
@@ -6586,6 +6239,18 @@ events:
     - Refugee swells
     - Sanctions impotence
     global_id: ger_location_5a6bef89e582
+  - location_uuid: ger_location_7be955caabd5
+    description_of_involvement: Target of proposed F-18 buzz by Mosley, E-2-monitored
+      for threats; evokes coup chaos where Bazan crushes democracy, pulling Oval strategy
+      into its volatile streets as fly-by tests U.S. menace.
+    observed_atmosphere: Implied gunfire-riddled peril
+    functional_role: Military intimidation objective
+    symbolic_significance: Junta defiance nexus
+    access_restrictions: ''
+    key_environmental_details:
+    - Troop-overrun rallies
+    - Weapons-threat skies
+    global_id: ger_location_7be955caabd5
   - location_uuid: ger_location_23687cf01aef
     description_of_involvement: Nancy cites 12 cutter interceptions of Haitian boats,
       heightening refugee urgency to force swift Haiti resolution; transforms distant
@@ -6611,6 +6276,21 @@ events:
     - Barbed wire horizons
     global_id: ger_location_88fac7338456
   organization_involvements:
+  - organization_uuid: ger_organization_7103a57c620d
+    description_of_involvement: Shelters exiled Dessaline per Bartlet's rationale,
+      symbolizing U.S. asylum steel; contrasts elected leader's displacement with
+      Bazan's impunity, fueling restoration imperative.
+    active_representation: Referenced as safe haven carrier
+    power_dynamics: U.S. naval extension protecting ally
+    organizational_goals:
+    - Secure democratic figurehead
+    - Project offshore power
+    influence_mechanisms:
+    - Embassy evac logistics
+    - F-18 launch platform
+    institutional_impact: Bolsters intervention legitimacy
+    internal_dynamics: ''
+    global_id: ger_organization_7103a57c620d
   - organization_uuid: ger_organization_55a49abeab7d
     description_of_involvement: Peter voices sanctioned explorations' past flops hurting
       innocents; Bartlet tasks him/Nancy with Canadian PM relay demanding Bazan restore
@@ -6627,6 +6307,310 @@ events:
     institutional_impact: Anchors U.S. foreign policy pragmatism amid force temptations
     internal_dynamics: Cautious hierarchy deferring to Oval
     global_id: ger_organization_55a49abeab7d
+  - organization_uuid: ger_organization_b45e15808c40
+    description_of_involvement: Bartlet lambasts as contraband profiteers evading
+      sanctions, enriching amid Dessaline ouster; underscores policy futility, justifying
+      shift to fly-by coercion.
+    active_representation: Invoked as corrupt coup enabler
+    power_dynamics: Target of U.S. contempt and strategy
+    organizational_goals:
+    - Profit from smuggling
+    - Enforce junta control
+    influence_mechanisms:
+    - Graft undermining sanctions
+    - Police station sieges
+    institutional_impact: Exposes fragile law enforcement collapse
+    internal_dynamics: ''
+    global_id: ger_organization_b45e15808c40
+  derived_from_beat_uuids: &id018
+  - beat_4e4245784000712c
+  - beat_3833191a4fd8b821
+  - beat_6f1f8a88b6c3d4a6
+  - beat_f2f4b86d944c2e1f
+  source_season: 3
+  source_database: westwing.s03
+- fabula_uuid: cand_evt_scene_af764112f1a8dcdb_1
+  global_id: null
+  title: Bartlet Orders Haiti Fly-By and Diplomatic Ultimatum
+  description: 'In the Oval Office, President Bartlet convenes advisors to address
+    Haiti''s coup, debating a risky F-18 fly-by against Bazan versus ineffective sanctions
+    amid refugee warnings. He opts for a calibrated response: a message via Canada
+    signaling intent to restore Dessaline, paired with a carrier fly-by, showcasing
+    resolve without escalation. Josh and Toby later caution against re-election optics
+    tying it to the MS scandal, but Bartlet dismisses political motivations, prioritizing
+    moral urgency and prior U.S. attacks, underscoring his defiant leadership amid
+    domestic pressures.'
+  episode_uuid: ep_sea_ser_the_west_wing_s03_e01
+  scene_sequence: 20
+  sequence_in_scene: 24
+  key_dialogue: *id017
+  is_flashback: true
+  location_uuid: ger_location_7be955caabd5
+  theme_uuids:
+  - ger_theme_464abc4f836c
+  arc_uuids: []
+  participations:
+  - character_uuid: ger_agent_85d27b56ea9b
+    emotional_state: ''
+    goals: []
+    what_happened: referenced by Josh and Toby as someone whose temperament they need
+      to check amid tensions
+    observed_status: referenced by Josh and Toby as someone whose temperament they
+      need to check amid tensions
+    beliefs: []
+    observed_traits: []
+    importance: minor
+    global_id: ger_agent_85d27b56ea9b
+  - character_uuid: ger_agent_c9d41ae93618
+    emotional_state: Wary fatigue masking strategic vigilance
+    goals:
+    - Mitigate political fallout from Haiti action
+    - Coordinate messaging to preserve diplomatic flexibility
+    what_happened: Greets President via VO, questions shoot-down risks on planes,
+      lingers post-meeting to caution on invasion optics linking to MS distraction
+      and re-election strength show, agrees on careful public posture with Toby while
+      leaning exhausted on desk.
+    observed_status: Greets President via VO, questions shoot-down risks on planes,
+      lingers post-meeting to caution on invasion optics linking to MS distraction
+      and re-election strength show, agrees on careful public posture with Toby while
+      leaning exhausted on desk.
+    beliefs:
+    - Actions risk MS scandal deflection perception
+    - Public posture must avoid tainting options
+    observed_traits:
+    - cautious
+    - politically astute
+    - loyal
+    importance: primary
+    global_id: ger_agent_c9d41ae93618
+  - character_uuid: ger_agent_198649bce78f
+    emotional_state: Determined resolve edged with annoyance at perceived weakness
+    goals:
+    - Authorize calibrated military/diplomatic response to restore Dessaline
+    - Dismiss political optics to prioritize moral imperative
+    what_happened: Enters Oval Office decisively, probes advisors on force displays
+      and sanctions via opened file, nods thoughtfully to military tech assurances,
+      issues crisp directive for Canadian ultimatum and fly-by consideration, sharply
+      rebuffs Josh/Toby's political cautions, grabs papers and exits abruptly amid
+      rising frustration.
+    observed_status: Enters Oval Office decisively, probes advisors on force displays
+      and sanctions via opened file, nods thoughtfully to military tech assurances,
+      issues crisp directive for Canadian ultimatum and fly-by consideration, sharply
+      rebuffs Josh/Toby's political cautions, grabs papers and exits abruptly amid
+      rising frustration.
+    beliefs:
+    - Sanctions fail against corrupt Haitian structures
+    - Democratic legitimacy and prior attacks demand U.S. action
+    observed_traits:
+    - decisive
+    - impatient
+    - morally resolute
+    - commanding
+    importance: primary
+    global_id: ger_agent_198649bce78f
+  - character_uuid: ger_agent_d880d95088fe
+    emotional_state: Guarded realism from historical precedents
+    goals:
+    - Report sanctions viability honestly
+    - Execute backchannel ultimatum
+    what_happened: Confirms State exploring sanctions but cites past Haiti failures
+      hurting innocents, receives co-order with Nancy for Canadian PM message to Bazan
+      on Dessaline restoration, stands to exit.
+    observed_status: Confirms State exploring sanctions but cites past Haiti failures
+      hurting innocents, receives co-order with Nancy for Canadian PM message to Bazan
+      on Dessaline restoration, stands to exit.
+    beliefs:
+    - Prior sanctions backfired on vulnerable
+    - Diplomacy via allies tests junta without direct escalation
+    observed_traits:
+    - cautious
+    - experienced
+    - diplomatic
+    importance: primary
+    global_id: ger_agent_d880d95088fe
+  - character_uuid: ger_agent_7854a70e34ea
+    emotional_state: Weary pragmatism amid team fatigue
+    goals:
+    - Warn against optics poisoning policy
+    - Enforce messaging discipline on invasion
+    what_happened: Remains post-meeting to echo Josh on optics risks of MS distraction
+      and commander strength ploy, advises Josh's team on guarded Haiti public posture,
+      leans silently on desk acknowledging exhaustion.
+    observed_status: Remains post-meeting to echo Josh on optics risks of MS distraction
+      and commander strength ploy, advises Josh's team on guarded Haiti public posture,
+      leans silently on desk acknowledging exhaustion.
+    beliefs:
+    - Political timing invites skepticism
+    - Diplomacy exhausts before force
+    observed_traits:
+    - pragmatic
+    - sardonic
+    - strategic
+    importance: primary
+    global_id: ger_agent_7854a70e34ea
+  - character_uuid: ger_agent_d1e7a71f951b
+    emotional_state: Concerned precision amid escalating humanitarian crisis
+    goals:
+    - Advocate fly-by to pressure Bazan
+    - Highlight refugee perils to hasten resolution
+    what_happened: Greets President via VO, affirms need for force display to alert
+      Bazan, warns urgently of refugee cutter incidents off Florida Keys risking Guantanamo
+      overload, receives direct orders for Canadian message relay, stands to exit
+      post-meeting.
+    observed_status: Greets President via VO, affirms need for force display to alert
+      Bazan, warns urgently of refugee cutter incidents off Florida Keys risking Guantanamo
+      overload, receives direct orders for Canadian message relay, stands to exit
+      post-meeting.
+    beliefs:
+    - Display of force grabs junta attention
+    - Delayed action floods U.S. borders
+    observed_traits:
+    - strategic
+    - urgent
+    - pragmatic
+    importance: primary
+    global_id: ger_agent_d1e7a71f951b
+  - character_uuid: ger_agent_752ce23e3dda
+    emotional_state: Focused operational zeal
+    goals:
+    - Pitch calibrated show-of-force option
+    - Align military proposal with presidential resolve
+    what_happened: Proposes aggressive Alpha strike of five F-18s buzzing Port-au-Prince
+      to showcase U.S. might against Bazan, sits amid discussion, stands to thank
+      and exit post-directive.
+    observed_status: Proposes aggressive Alpha strike of five F-18s buzzing Port-au-Prince
+      to showcase U.S. might against Bazan, sits amid discussion, stands to thank
+      and exit post-directive.
+    beliefs:
+    - Airpower buzz intimidates without full invasion
+    - Sanctions impotence demands kinetic signaling
+    observed_traits:
+    - aggressive
+    - tactical
+    - confident
+    importance: primary
+    global_id: ger_agent_752ce23e3dda
+  - character_uuid: ger_agent_0da3c4090800
+    emotional_state: Unseen but implied iron control fracturing under pressure
+    goals:
+    - Maintain junta grip on Haiti
+    - Resist U.S.-backed restoration
+    what_happened: Referenced repeatedly as coup architect targeted by proposed fly-by
+      buzz, Canadian ultimatum demanding withdrawal to restore Dessaline.
+    observed_status: Referenced repeatedly as coup architect targeted by proposed
+      fly-by buzz, Canadian ultimatum demanding withdrawal to restore Dessaline.
+    beliefs:
+    - Military displays bluffable
+    - Sanctions evade true power
+    observed_traits:
+    - defiant
+    - oppressive
+    importance: primary
+    global_id: ger_agent_0da3c4090800
+  - character_uuid: ger_agent_ba0b7a6094ce
+    emotional_state: Implied precarious exile
+    goals:
+    - Regain presidency via U.S. support
+    - Survive coup violence
+    what_happened: Invoked as democratically elected leader ousted to USS Enterprise
+      safety, focal point of U.S. restoration intent via ultimatum.
+    observed_status: Invoked as democratically elected leader ousted to USS Enterprise
+      safety, focal point of U.S. restoration intent via ultimatum.
+    beliefs:
+    - Democratic mandate justifies intervention
+    - Allied navies shield legitimacy
+    observed_traits:
+    - legitimate
+    - besieged
+    importance: primary
+    global_id: ger_agent_ba0b7a6094ce
+  - character_uuid: ger_agent_0ec5ceca4dd0
+    emotional_state: ''
+    goals:
+    - ensure safety of US aircraft during fly-by
+    what_happened: explains use of E-2 Hawkeye with radar dome to detect weapons signals
+      before F-18 formation reaches Port-au-Prince
+    observed_status: explains use of E-2 Hawkeye with radar dome to detect weapons
+      signals before F-18 formation reaches Port-au-Prince
+    beliefs: []
+    observed_traits: []
+    importance: secondary
+    global_id: ger_agent_0ec5ceca4dd0
+  object_involvements:
+  - object_uuid: ger_object_4e288b6a0fd1
+    description_of_involvement: Bartlet nods and opens the file splaying sanction
+      breakdowns, Haiti dispatches, refugee projections, and Bazan analyses, using
+      it to pivot discussion from penalties to fly-by resolve; it anchors Oval debate,
+      fueling decisive shift from diplomacy to calibrated force amid MS shadows.
+    status_before_event: Closed on desk or table
+    status_after_event: Opened, consulted, left behind as Bartlet exits
+    global_id: ger_object_4e288b6a0fd1
+  - object_uuid: ger_object_b78686c007cb
+    description_of_involvement: Military Officer details E-2 Hawkeye's radar dome
+      detecting weapons signals pre-flyby arrival over Port-au-Prince, assuaging Josh's
+      shoot-down fears and enabling safe F-18 Alpha strike; it embodies tech safeguard
+      in high-stakes show-of-force calculus.
+    status_before_event: Offshore asset in planning phase
+    status_after_event: Approved for operational integration
+    global_id: ger_object_b78686c007cb
+  - object_uuid: ger_object_c008dd15a2ed
+    description_of_involvement: Mosley proposes five F-18s in Alpha formation buzzing
+      Port-au-Prince to intimidate Bazan; Nancy affirms attention-grabbing, Bartlet
+      greenlights consideration post-ultimatum—narrative fulcrum for resolve without
+      invasion, threading military edge through refugee/moral pressures.
+    status_before_event: Carrier-based, pre-mission
+    status_after_event: Mission-authorized pending fly-by execution
+    global_id: ger_object_c008dd15a2ed
+  location_involvements:
+  - location_uuid: ger_location_5a6bef89e582
+    description_of_involvement: Crisis epicenter dissected via sanctions history,
+      police graft, prior U.S. shootings; Peter's 'down that road' invokes repeated
+      failures, framing fly-by as bold pivot.
+    observed_atmosphere: Coup-boiling volatility
+    functional_role: Geopolitical trigger zone
+    symbolic_significance: Intervention moral testbed
+    access_restrictions: ''
+    key_environmental_details:
+    - Refugee swells
+    - Sanctions impotence
+    global_id: ger_location_5a6bef89e582
+  - location_uuid: ger_location_7be955caabd5
+    description_of_involvement: Target of proposed F-18 buzz by Mosley, E-2-monitored
+      for threats; evokes coup chaos where Bazan crushes democracy, pulling Oval strategy
+      into its volatile streets as fly-by tests U.S. menace.
+    observed_atmosphere: Implied gunfire-riddled peril
+    functional_role: Military intimidation objective
+    symbolic_significance: Junta defiance nexus
+    access_restrictions: ''
+    key_environmental_details:
+    - Troop-overrun rallies
+    - Weapons-threat skies
+    global_id: ger_location_7be955caabd5
+  - location_uuid: ger_location_23687cf01aef
+    description_of_involvement: Nancy cites 12 cutter interceptions of Haitian boats,
+      heightening refugee urgency to force swift Haiti resolution; transforms distant
+      straits into immediate border pressure on Oval decisions.
+    observed_atmosphere: Desperate sea peril
+    functional_role: Humanitarian flashpoint
+    symbolic_significance: Migration crisis frontline
+    access_restrictions: U.S. patrol enforced
+    key_environmental_details:
+    - Overloaded refugee hulls
+    - Patrol light piercings
+    global_id: ger_location_23687cf01aef
+  - location_uuid: ger_location_88fac7338456
+    description_of_involvement: Nancy warns of overload from prolonged crisis, linking
+      Haiti delay to naval base strain; amplifies stakes, pushing Bartlet from sanctions
+      to action amid capacity collapse fears.
+    observed_atmosphere: Buckling under spectral refugee crush
+    functional_role: Potential containment site
+    symbolic_significance: Policy overload emblem
+    access_restrictions: Heavily secured naval perimeter
+    key_environmental_details:
+    - Chain-link strains
+    - Barbed wire horizons
+    global_id: ger_location_88fac7338456
+  organization_involvements:
   - organization_uuid: ger_organization_7103a57c620d
     description_of_involvement: Shelters exiled Dessaline per Bartlet's rationale,
       symbolizing U.S. asylum steel; contrasts elected leader's displacement with
@@ -6642,7 +6626,23 @@ events:
     institutional_impact: Bolsters intervention legitimacy
     internal_dynamics: ''
     global_id: ger_organization_7103a57c620d
-  - organization_uuid: ger_organization_2ffdfbd76469
+  - organization_uuid: ger_organization_55a49abeab7d
+    description_of_involvement: Peter voices sanctioned explorations' past flops hurting
+      innocents; Bartlet tasks him/Nancy with Canadian PM relay demanding Bazan restore
+      Dessaline or face options—manifests diplomatic muscle threading resolve through
+      backchannels.
+    active_representation: Via State operative Peter in Oval
+    power_dynamics: Advisory to presidential command, probing intervention edges
+    organizational_goals:
+    - Test sanctions despite history
+    - Execute allied ultimatum
+    influence_mechanisms:
+    - Historical precedent warnings
+    - Backchannel diplomacy
+    institutional_impact: Anchors U.S. foreign policy pragmatism amid force temptations
+    internal_dynamics: Cautious hierarchy deferring to Oval
+    global_id: ger_organization_55a49abeab7d
+  - organization_uuid: ger_organization_b45e15808c40
     description_of_involvement: Bartlet lambasts as contraband profiteers evading
       sanctions, enriching amid Dessaline ouster; underscores policy futility, justifying
       shift to fly-by coercion.
@@ -6656,7 +6656,7 @@ events:
     - Police station sieges
     institutional_impact: Exposes fragile law enforcement collapse
     internal_dynamics: ''
-    global_id: ger_organization_2ffdfbd76469
+    global_id: ger_organization_b45e15808c40
   derived_from_beat_uuids: *id018
   source_season: 3
   source_database: westwing.s03
@@ -6821,23 +6821,6 @@ events:
     - confident
     importance: primary
     global_id: ger_agent_752ce23e3dda
-  - character_uuid: ger_agent_ba0b7a6094ce
-    emotional_state: Implied precarious exile
-    goals:
-    - Regain presidency via U.S. support
-    - Survive coup violence
-    what_happened: Invoked as democratically elected leader ousted to USS Enterprise
-      safety, focal point of U.S. restoration intent via ultimatum.
-    observed_status: Invoked as democratically elected leader ousted to USS Enterprise
-      safety, focal point of U.S. restoration intent via ultimatum.
-    beliefs:
-    - Democratic mandate justifies intervention
-    - Allied navies shield legitimacy
-    observed_traits:
-    - legitimate
-    - besieged
-    importance: primary
-    global_id: ger_agent_ba0b7a6094ce
   - character_uuid: ger_agent_0da3c4090800
     emotional_state: Unseen but implied iron control fracturing under pressure
     goals:
@@ -6855,6 +6838,23 @@ events:
     - oppressive
     importance: primary
     global_id: ger_agent_0da3c4090800
+  - character_uuid: ger_agent_ba0b7a6094ce
+    emotional_state: Implied precarious exile
+    goals:
+    - Regain presidency via U.S. support
+    - Survive coup violence
+    what_happened: Invoked as democratically elected leader ousted to USS Enterprise
+      safety, focal point of U.S. restoration intent via ultimatum.
+    observed_status: Invoked as democratically elected leader ousted to USS Enterprise
+      safety, focal point of U.S. restoration intent via ultimatum.
+    beliefs:
+    - Democratic mandate justifies intervention
+    - Allied navies shield legitimacy
+    observed_traits:
+    - legitimate
+    - besieged
+    importance: primary
+    global_id: ger_agent_ba0b7a6094ce
   - character_uuid: ger_agent_0ec5ceca4dd0
     emotional_state: ''
     goals:
@@ -6893,18 +6893,6 @@ events:
     status_after_event: Mission-authorized pending fly-by execution
     global_id: ger_object_c008dd15a2ed
   location_involvements:
-  - location_uuid: ger_location_7be955caabd5
-    description_of_involvement: Target of proposed F-18 buzz by Mosley, E-2-monitored
-      for threats; evokes coup chaos where Bazan crushes democracy, pulling Oval strategy
-      into its volatile streets as fly-by tests U.S. menace.
-    observed_atmosphere: Implied gunfire-riddled peril
-    functional_role: Military intimidation objective
-    symbolic_significance: Junta defiance nexus
-    access_restrictions: ''
-    key_environmental_details:
-    - Troop-overrun rallies
-    - Weapons-threat skies
-    global_id: ger_location_7be955caabd5
   - location_uuid: ger_location_5a6bef89e582
     description_of_involvement: Crisis epicenter dissected via sanctions history,
       police graft, prior U.S. shootings; Peter's 'down that road' invokes repeated
@@ -6917,6 +6905,18 @@ events:
     - Refugee swells
     - Sanctions impotence
     global_id: ger_location_5a6bef89e582
+  - location_uuid: ger_location_7be955caabd5
+    description_of_involvement: Target of proposed F-18 buzz by Mosley, E-2-monitored
+      for threats; evokes coup chaos where Bazan crushes democracy, pulling Oval strategy
+      into its volatile streets as fly-by tests U.S. menace.
+    observed_atmosphere: Implied gunfire-riddled peril
+    functional_role: Military intimidation objective
+    symbolic_significance: Junta defiance nexus
+    access_restrictions: ''
+    key_environmental_details:
+    - Troop-overrun rallies
+    - Weapons-threat skies
+    global_id: ger_location_7be955caabd5
   - location_uuid: ger_location_23687cf01aef
     description_of_involvement: Nancy cites 12 cutter interceptions of Haitian boats,
       heightening refugee urgency to force swift Haiti resolution; transforms distant
@@ -6942,6 +6942,21 @@ events:
     - Barbed wire horizons
     global_id: ger_location_88fac7338456
   organization_involvements:
+  - organization_uuid: ger_organization_7103a57c620d
+    description_of_involvement: Shelters exiled Dessaline per Bartlet's rationale,
+      symbolizing U.S. asylum steel; contrasts elected leader's displacement with
+      Bazan's impunity, fueling restoration imperative.
+    active_representation: Referenced as safe haven carrier
+    power_dynamics: U.S. naval extension protecting ally
+    organizational_goals:
+    - Secure democratic figurehead
+    - Project offshore power
+    influence_mechanisms:
+    - Embassy evac logistics
+    - F-18 launch platform
+    institutional_impact: Bolsters intervention legitimacy
+    internal_dynamics: ''
+    global_id: ger_organization_7103a57c620d
   - organization_uuid: ger_organization_55a49abeab7d
     description_of_involvement: Peter voices sanctioned explorations' past flops hurting
       innocents; Bartlet tasks him/Nancy with Canadian PM relay demanding Bazan restore
@@ -6958,22 +6973,7 @@ events:
     institutional_impact: Anchors U.S. foreign policy pragmatism amid force temptations
     internal_dynamics: Cautious hierarchy deferring to Oval
     global_id: ger_organization_55a49abeab7d
-  - organization_uuid: ger_organization_7103a57c620d
-    description_of_involvement: Shelters exiled Dessaline per Bartlet's rationale,
-      symbolizing U.S. asylum steel; contrasts elected leader's displacement with
-      Bazan's impunity, fueling restoration imperative.
-    active_representation: Referenced as safe haven carrier
-    power_dynamics: U.S. naval extension protecting ally
-    organizational_goals:
-    - Secure democratic figurehead
-    - Project offshore power
-    influence_mechanisms:
-    - Embassy evac logistics
-    - F-18 launch platform
-    institutional_impact: Bolsters intervention legitimacy
-    internal_dynamics: ''
-    global_id: ger_organization_7103a57c620d
-  - organization_uuid: ger_organization_2ffdfbd76469
+  - organization_uuid: ger_organization_b45e15808c40
     description_of_involvement: Bartlet lambasts as contraband profiteers evading
       sanctions, enriching amid Dessaline ouster; underscores policy futility, justifying
       shift to fly-by coercion.
@@ -6987,7 +6987,7 @@ events:
     - Police station sieges
     institutional_impact: Exposes fragile law enforcement collapse
     internal_dynamics: ''
-    global_id: ger_organization_2ffdfbd76469
+    global_id: ger_organization_b45e15808c40
   derived_from_beat_uuids: *id018
   source_season: 3
   source_database: westwing.s03
@@ -7152,23 +7152,6 @@ events:
     - confident
     importance: primary
     global_id: ger_agent_752ce23e3dda
-  - character_uuid: ger_agent_ba0b7a6094ce
-    emotional_state: Implied precarious exile
-    goals:
-    - Regain presidency via U.S. support
-    - Survive coup violence
-    what_happened: Invoked as democratically elected leader ousted to USS Enterprise
-      safety, focal point of U.S. restoration intent via ultimatum.
-    observed_status: Invoked as democratically elected leader ousted to USS Enterprise
-      safety, focal point of U.S. restoration intent via ultimatum.
-    beliefs:
-    - Democratic mandate justifies intervention
-    - Allied navies shield legitimacy
-    observed_traits:
-    - legitimate
-    - besieged
-    importance: primary
-    global_id: ger_agent_ba0b7a6094ce
   - character_uuid: ger_agent_0da3c4090800
     emotional_state: Unseen but implied iron control fracturing under pressure
     goals:
@@ -7186,6 +7169,23 @@ events:
     - oppressive
     importance: primary
     global_id: ger_agent_0da3c4090800
+  - character_uuid: ger_agent_ba0b7a6094ce
+    emotional_state: Implied precarious exile
+    goals:
+    - Regain presidency via U.S. support
+    - Survive coup violence
+    what_happened: Invoked as democratically elected leader ousted to USS Enterprise
+      safety, focal point of U.S. restoration intent via ultimatum.
+    observed_status: Invoked as democratically elected leader ousted to USS Enterprise
+      safety, focal point of U.S. restoration intent via ultimatum.
+    beliefs:
+    - Democratic mandate justifies intervention
+    - Allied navies shield legitimacy
+    observed_traits:
+    - legitimate
+    - besieged
+    importance: primary
+    global_id: ger_agent_ba0b7a6094ce
   - character_uuid: ger_agent_0ec5ceca4dd0
     emotional_state: ''
     goals:
@@ -7224,18 +7224,6 @@ events:
     status_after_event: Mission-authorized pending fly-by execution
     global_id: ger_object_c008dd15a2ed
   location_involvements:
-  - location_uuid: ger_location_7be955caabd5
-    description_of_involvement: Target of proposed F-18 buzz by Mosley, E-2-monitored
-      for threats; evokes coup chaos where Bazan crushes democracy, pulling Oval strategy
-      into its volatile streets as fly-by tests U.S. menace.
-    observed_atmosphere: Implied gunfire-riddled peril
-    functional_role: Military intimidation objective
-    symbolic_significance: Junta defiance nexus
-    access_restrictions: ''
-    key_environmental_details:
-    - Troop-overrun rallies
-    - Weapons-threat skies
-    global_id: ger_location_7be955caabd5
   - location_uuid: ger_location_5a6bef89e582
     description_of_involvement: Crisis epicenter dissected via sanctions history,
       police graft, prior U.S. shootings; Peter's 'down that road' invokes repeated
@@ -7248,6 +7236,18 @@ events:
     - Refugee swells
     - Sanctions impotence
     global_id: ger_location_5a6bef89e582
+  - location_uuid: ger_location_7be955caabd5
+    description_of_involvement: Target of proposed F-18 buzz by Mosley, E-2-monitored
+      for threats; evokes coup chaos where Bazan crushes democracy, pulling Oval strategy
+      into its volatile streets as fly-by tests U.S. menace.
+    observed_atmosphere: Implied gunfire-riddled peril
+    functional_role: Military intimidation objective
+    symbolic_significance: Junta defiance nexus
+    access_restrictions: ''
+    key_environmental_details:
+    - Troop-overrun rallies
+    - Weapons-threat skies
+    global_id: ger_location_7be955caabd5
   - location_uuid: ger_location_23687cf01aef
     description_of_involvement: Nancy cites 12 cutter interceptions of Haitian boats,
       heightening refugee urgency to force swift Haiti resolution; transforms distant
@@ -7273,6 +7273,21 @@ events:
     - Barbed wire horizons
     global_id: ger_location_88fac7338456
   organization_involvements:
+  - organization_uuid: ger_organization_7103a57c620d
+    description_of_involvement: Shelters exiled Dessaline per Bartlet's rationale,
+      symbolizing U.S. asylum steel; contrasts elected leader's displacement with
+      Bazan's impunity, fueling restoration imperative.
+    active_representation: Referenced as safe haven carrier
+    power_dynamics: U.S. naval extension protecting ally
+    organizational_goals:
+    - Secure democratic figurehead
+    - Project offshore power
+    influence_mechanisms:
+    - Embassy evac logistics
+    - F-18 launch platform
+    institutional_impact: Bolsters intervention legitimacy
+    internal_dynamics: ''
+    global_id: ger_organization_7103a57c620d
   - organization_uuid: ger_organization_55a49abeab7d
     description_of_involvement: Peter voices sanctioned explorations' past flops hurting
       innocents; Bartlet tasks him/Nancy with Canadian PM relay demanding Bazan restore
@@ -7289,22 +7304,7 @@ events:
     institutional_impact: Anchors U.S. foreign policy pragmatism amid force temptations
     internal_dynamics: Cautious hierarchy deferring to Oval
     global_id: ger_organization_55a49abeab7d
-  - organization_uuid: ger_organization_7103a57c620d
-    description_of_involvement: Shelters exiled Dessaline per Bartlet's rationale,
-      symbolizing U.S. asylum steel; contrasts elected leader's displacement with
-      Bazan's impunity, fueling restoration imperative.
-    active_representation: Referenced as safe haven carrier
-    power_dynamics: U.S. naval extension protecting ally
-    organizational_goals:
-    - Secure democratic figurehead
-    - Project offshore power
-    influence_mechanisms:
-    - Embassy evac logistics
-    - F-18 launch platform
-    institutional_impact: Bolsters intervention legitimacy
-    internal_dynamics: ''
-    global_id: ger_organization_7103a57c620d
-  - organization_uuid: ger_organization_2ffdfbd76469
+  - organization_uuid: ger_organization_b45e15808c40
     description_of_involvement: Bartlet lambasts as contraband profiteers evading
       sanctions, enriching amid Dessaline ouster; underscores policy futility, justifying
       shift to fly-by coercion.
@@ -7318,7 +7318,7 @@ events:
     - Police station sieges
     institutional_impact: Exposes fragile law enforcement collapse
     internal_dynamics: ''
-    global_id: ger_organization_2ffdfbd76469
+    global_id: ger_organization_b45e15808c40
   derived_from_beat_uuids: *id018
   source_season: 3
   source_database: westwing.s03
@@ -7462,6 +7462,16 @@ events:
     observed_traits: []
     importance: secondary
     global_id: ger_agent_752ce23e3dda
+  - character_uuid: ger_agent_0da3c4090800
+    emotional_state: ''
+    goals: []
+    what_happened: Referenced as Haitian leader targeted by proposed display of force.
+    observed_status: Referenced as Haitian leader targeted by proposed display of
+      force.
+    beliefs: []
+    observed_traits: []
+    importance: minor
+    global_id: ger_agent_0da3c4090800
   - character_uuid: ger_agent_ba0b7a6094ce
     emotional_state: ''
     goals: []
@@ -7473,16 +7483,6 @@ events:
     observed_traits: []
     importance: minor
     global_id: ger_agent_ba0b7a6094ce
-  - character_uuid: ger_agent_0da3c4090800
-    emotional_state: ''
-    goals: []
-    what_happened: Referenced as Haitian leader targeted by proposed display of force.
-    observed_status: Referenced as Haitian leader targeted by proposed display of
-      force.
-    beliefs: []
-    observed_traits: []
-    importance: minor
-    global_id: ger_agent_0da3c4090800
   - character_uuid: ger_agent_0ec5ceca4dd0
     emotional_state: ''
     goals:
@@ -7521,7 +7521,7 @@ events:
     institutional_impact: Anchors U.S. intervention credibility
     internal_dynamics: ''
     global_id: ger_organization_7103a57c620d
-  - organization_uuid: ger_organization_2ffdfbd76469
+  - organization_uuid: ger_organization_b45e15808c40
     description_of_involvement: Haitian National Police lambasted by Bartlet as corrupt
       profiteers evading sanctions via contraband, their graft underscoring intervention
       necessity and rebutting Josh/Toby's optics fears in Oval power play.
@@ -7535,7 +7535,7 @@ events:
     - Police betrayal enabling instability
     institutional_impact: Exposes limits of economic pressure on graft-ridden forces
     internal_dynamics: ''
-    global_id: ger_organization_2ffdfbd76469
+    global_id: ger_organization_b45e15808c40
   derived_from_beat_uuids:
   - beat_e5b64208d120c041
   - beat_23c98f1fcd7c7388
@@ -7717,20 +7717,6 @@ events:
     - Implied gunfire and tension
     global_id: ger_location_7be955caabd5
   organization_involvements:
-  - organization_uuid: ger_organization_55a49abeab7d
-    description_of_involvement: State Department echoed in Toby's 'diplomatic options'
-      mandate, prior sanctions skepticism framing need for untainted public posture.
-    active_representation: Via inferred policy channels
-    power_dynamics: Advisory arm guiding restraint before force
-    organizational_goals:
-    - Exhaust non-military avenues
-    - Preserve negotiation credibility
-    influence_mechanisms:
-    - Historical precedent warnings
-    - Backchannel coordination
-    institutional_impact: Balances hawkish impulses with pragmatism
-    internal_dynamics: ''
-    global_id: ger_organization_55a49abeab7d
   - organization_uuid: ger_organization_7103a57c620d
     description_of_involvement: USS Enterprise invoked as Dessaline's refuge versus
       his stolen office, emblemizing coup's injustice in Bartlet's retort reinforcing
@@ -7745,7 +7731,21 @@ events:
     institutional_impact: Bolsters case against inaction
     internal_dynamics: ''
     global_id: ger_organization_7103a57c620d
-  - organization_uuid: ger_organization_2ffdfbd76469
+  - organization_uuid: ger_organization_55a49abeab7d
+    description_of_involvement: State Department echoed in Toby's 'diplomatic options'
+      mandate, prior sanctions skepticism framing need for untainted public posture.
+    active_representation: Via inferred policy channels
+    power_dynamics: Advisory arm guiding restraint before force
+    organizational_goals:
+    - Exhaust non-military avenues
+    - Preserve negotiation credibility
+    influence_mechanisms:
+    - Historical precedent warnings
+    - Backchannel coordination
+    institutional_impact: Balances hawkish impulses with pragmatism
+    internal_dynamics: ''
+    global_id: ger_organization_55a49abeab7d
+  - organization_uuid: ger_organization_b45e15808c40
     description_of_involvement: Haitian National Police cited by Bartlet as sanctions-evading
       profiteers gorging on contraband, underscoring policy futility and justifying
       resolve in dismissal phase.
@@ -7758,7 +7758,7 @@ events:
     - Enabling junta impunity
     institutional_impact: Highlights failed interventions haunting policy choices
     internal_dynamics: ''
-    global_id: ger_organization_2ffdfbd76469
+    global_id: ger_organization_b45e15808c40
   derived_from_beat_uuids:
   - beat_685e0c398e80e753
   - beat_84237126dfe88255
@@ -7909,22 +7909,6 @@ events:
     - Antique fireplace hulking silent
     global_id: ger_location_7423b10d7d15
   organization_involvements:
-  - organization_uuid: ger_organization_d033a1b32d4f
-    description_of_involvement: Framed as the scrutinized work crucible where Charlie's
-      every presidential brush—from aspirin to tremors—falls under prosecutorial microscope,
-      personalizing institutional loyalty's peril amid MS fallout and re-election
-      storms.
-    active_representation: Via aide Charlie's daily immersion and referenced experiences
-    power_dynamics: Exposed under external legal siege, fracturing internal shields
-    organizational_goals:
-    - Preserve operational continuity amid probes
-    - Protect leadership from health scandal bleed
-    influence_mechanisms:
-    - Hierarchical loyalty binding aides
-    - Proximity enabling intimate observation
-    institutional_impact: Reveals how personal ties amplify cover-up vulnerabilities
-    internal_dynamics: Aides' naive confidence tested by self-inflicted inquiry
-    global_id: ger_organization_d033a1b32d4f
   - organization_uuid: ger_organization_1d132e0ef7b8
     description_of_involvement: Babish unveils its clandestine hammer—secret subpoenas
       slamming unannounced, fueling repetitive hellfire questioning that devours White
@@ -7943,6 +7927,22 @@ events:
       scandal's self-sabotage
     internal_dynamics: Insulated from external pressures, methodically grinding subjects
     global_id: ger_organization_1d132e0ef7b8
+  - organization_uuid: ger_organization_bb39d5dd403d
+    description_of_involvement: Framed as the scrutinized work crucible where Charlie's
+      every presidential brush—from aspirin to tremors—falls under prosecutorial microscope,
+      personalizing institutional loyalty's peril amid MS fallout and re-election
+      storms.
+    active_representation: Via aide Charlie's daily immersion and referenced experiences
+    power_dynamics: Exposed under external legal siege, fracturing internal shields
+    organizational_goals:
+    - Preserve operational continuity amid probes
+    - Protect leadership from health scandal bleed
+    influence_mechanisms:
+    - Hierarchical loyalty binding aides
+    - Proximity enabling intimate observation
+    institutional_impact: Reveals how personal ties amplify cover-up vulnerabilities
+    internal_dynamics: Aides' naive confidence tested by self-inflicted inquiry
+    global_id: ger_organization_bb39d5dd403d
   derived_from_beat_uuids:
   - beat_39950a8ffae7f641
   - beat_02425d37a717b4c1
@@ -8231,7 +8231,7 @@ events:
     observed_traits: []
     importance: minor
     global_id: ger_agent_04bbccb1e352
-  - character_uuid: ger_agent_64b2a2c10c8f
+  - character_uuid: ger_agent_14f85d554756
     emotional_state: Playfully teasing and relaxed
     goals:
     - Tease Josh to lighten tense atmosphere
@@ -8250,7 +8250,7 @@ events:
     - defiant
     - resourceful
     importance: primary
-    global_id: ger_agent_64b2a2c10c8f
+    global_id: ger_agent_14f85d554756
   - character_uuid: ger_agent_716802c810ea
     emotional_state: Determined and emphatic
     goals:
@@ -8513,7 +8513,7 @@ events:
     observed_traits: []
     importance: minor
     global_id: ger_agent_04bbccb1e352
-  - character_uuid: ger_agent_64b2a2c10c8f
+  - character_uuid: ger_agent_14f85d554756
     emotional_state: Playfully teasing and relaxed
     goals:
     - Tease Josh to lighten tense atmosphere
@@ -8532,7 +8532,7 @@ events:
     - defiant
     - resourceful
     importance: primary
-    global_id: ger_agent_64b2a2c10c8f
+    global_id: ger_agent_14f85d554756
   - character_uuid: ger_agent_716802c810ea
     emotional_state: Determined and emphatic
     goals:
@@ -8798,7 +8798,7 @@ events:
     observed_traits: []
     importance: minor
     global_id: ger_agent_04bbccb1e352
-  - character_uuid: ger_agent_64b2a2c10c8f
+  - character_uuid: ger_agent_14f85d554756
     emotional_state: Playfully defiant and relaxed amid rising friction
     goals:
     - Tease Josh to lighten mood
@@ -8817,7 +8817,7 @@ events:
     - impish
     - casual
     importance: primary
-    global_id: ger_agent_64b2a2c10c8f
+    global_id: ger_agent_14f85d554756
   - character_uuid: ger_agent_716802c810ea
     emotional_state: Determined sarcasm masking strategic urgency
     goals:
@@ -9053,7 +9053,7 @@ events:
     observed_traits: []
     importance: minor
     global_id: ger_agent_04bbccb1e352
-  - character_uuid: ger_agent_64b2a2c10c8f
+  - character_uuid: ger_agent_14f85d554756
     emotional_state: playful
     goals:
     - relax and eat during late-night meeting
@@ -9064,7 +9064,7 @@ events:
     beliefs: []
     observed_traits: []
     importance: minor
-    global_id: ger_agent_64b2a2c10c8f
+    global_id: ger_agent_14f85d554756
   - character_uuid: ger_agent_716802c810ea
     emotional_state: Determined focus interrupted by authoritative shutdown
     goals:
@@ -9315,177 +9315,6 @@ events:
   - 'C.J.: "The President''s expressed his gratitude and his concern to the Marines
     and their families."'
   is_flashback: false
-  location_uuid: ger_location_a55df0b08bf4
-  theme_uuids:
-  - ger_theme_713f62ba5636
-  arc_uuids: []
-  participations:
-  - character_uuid: ger_agent_198649bce78f
-    emotional_state: Reported as grateful and concerned, per C.J.'s deflection
-    goals:
-    - Convey empathy through proxies to maintain troop morale
-    - Avoid direct exposure amid scandal pressures
-    what_happened: Not physically present but invoked by C.J.'s response claiming
-      he has expressed gratitude and concern to the Marines and their families.
-    observed_status: Not physically present but invoked by C.J.'s response claiming
-      he has expressed gratitude and concern to the Marines and their families.
-    beliefs:
-    - Symbolic gestures suffice for public perception
-    - Direct involvement risks political exploitation
-    observed_traits:
-    - empathetic
-    - distant
-    importance: primary
-    global_id: ger_agent_198649bce78f
-  - character_uuid: ger_agent_ce2bfab1b21b
-    emotional_state: Accusatory insistence demanding transparency
-    goals:
-    - Expose gaps in presidential outreach to casualties
-    - Amplify human cost of Haiti operation for headlines
-    what_happened: Directly called on by C.J., Steve aggressively questions whether
-      the President has spoken to injured Marines or their families, sharpening focus
-      on personal accountability.
-    observed_status: Directly called on by C.J., Steve aggressively questions whether
-      the President has spoken to injured Marines or their families, sharpening focus
-      on personal accountability.
-    beliefs:
-    - Administration evades direct responsibility for troop welfare
-    - Personal presidential contact reveals true leadership priorities
-    observed_traits:
-    - relentless
-    - interrogative
-    - predatory
-    importance: primary
-    global_id: ger_agent_ce2bfab1b21b
-  - character_uuid: ger_agent_7854a70e34ea
-    emotional_state: Tense apprehension laced with strategic alertness
-    goals:
-    - Assess press vulnerabilities in real-time for damage control
-    - Support C.J.'s narrative containment amid re-election threats
-    what_happened: Watching tensely from the office area at the back of the room as
-      C.J. fields the barrage of questions on military operations and Marine casualties.
-    observed_status: Watching tensely from the office area at the back of the room
-      as C.J. fields the barrage of questions on military operations and Marine casualties.
-    beliefs:
-    - Press corps exploits every weakness to undermine the administration
-    - Tight oversight prevents escalation of military and scandal narratives
-    observed_traits:
-    - tense
-    - vigilant
-    - strategic
-    importance: primary
-    global_id: ger_agent_7854a70e34ea
-  - character_uuid: ger_agent_3a11b089b63c
-    emotional_state: Frenzied eagerness to pierce administration defenses
-    goals:
-    - Interrupt and dominate the briefing flow
-    - Force disclosures on operation casualties
-    what_happened: Erupting in unified shouts of 'C.J.! C.J.!' to seize attention
-      and demand answers during her sparse military briefing.
-    observed_status: Erupting in unified shouts of 'C.J.! C.J.!' to seize attention
-      and demand answers during her sparse military briefing.
-    beliefs:
-    - Collective pressure cracks official opacity
-    - Shouting amplifies public scrutiny on scandals
-    observed_traits:
-    - persistent
-    - aggressive
-    - predatory
-    importance: primary
-    global_id: ger_agent_3a11b089b63c
-  object_involvements:
-  - object_uuid: ger_object_37717be65ee7
-    description_of_involvement: C.J. stands and grips the scarred oak lectern under
-      press room lights as her exhausted platform for delivering sparse F-18 and Hawkeye
-      details, acknowledging Steve, and issuing vague presidential deflections—symbolizing
-      the administration's frontline exposure to media assault.
-    status_before_event: Positioned centrally in Press Room, ready for briefing
-    status_after_event: Unchanged, still focal point post-exchange
-    global_id: ger_object_37717be65ee7
-  - object_uuid: ger_object_b78686c007cb
-    description_of_involvement: Bundled with F-18s in C.J.'s terse disclosure, the
-      E-2 Hawkeye's radar surveillance role is invoked to frame the operation's complexity,
-      inviting scrutiny that ties military assets to Marine injuries and presidential
-      silence.
-    status_before_event: Active in operation, details classified
-    status_after_event: Details minimally declassified via briefing
-    global_id: ger_object_b78686c007cb
-  - object_uuid: ger_object_28f17bd8daf5
-    description_of_involvement: C.J. explicitly names the five F-18 fighters as core
-      to the fog-shrouded operation, their mention underscoring military scale and
-      casualty risks that fuel Steve's probe, heightening narrative tension around
-      Haiti perils and admin accountability.
-    status_before_event: Deployed in Haitian operation, undisclosed publicly
-    status_after_event: Publicly acknowledged in briefing, no change in operational
-      status
-    global_id: ger_object_28f17bd8daf5
-  location_involvements:
-  - location_uuid: ger_location_a55df0b08bf4
-    description_of_involvement: Toby hunkers in the shadowed Press Room Rear Office
-      Area, a tense overlook amplifying his vigilance over C.J.'s defensive exchange,
-      positioning it as a strategic war room amid the forward clamor of casualty probes.
-    observed_atmosphere: Shadowed tension swallowing shouts from main room
-    functional_role: Observation post for staff oversight
-    symbolic_significance: Hidden command perch amid public evisceration
-    access_restrictions: White House staff only, elevated vantage
-    key_environmental_details:
-    - Dimly lit shadows
-    - Audible reporter din
-    - Clenched-jaw proximity to action
-    global_id: ger_location_a55df0b08bf4
-  - location_uuid: ger_location_7423b10d7d15
-    description_of_involvement: Blinding lights and flashing cameras intensify the
-      Press Conference Room as C.J.'s podium stage for sparse military revelations
-      amid reporter shouts, transforming it into a high-stakes arena where admin frailties
-      on MS and Haiti collide with media hunger.
-    observed_atmosphere: Chaotic frenzy of shouts and predatory energy
-    functional_role: Public briefing venue for operational disclosures
-    symbolic_significance: Battleground exposing political vulnerabilities
-    access_restrictions: Restricted to press corps and White House staff
-    key_environmental_details:
-    - Blinding overhead lights
-    - Echoing shouts from reporters
-    - Central podium under scrutiny
-    global_id: ger_location_7423b10d7d15
-  organization_involvements:
-  - organization_uuid: ger_organization_faa3a6a071f0
-    description_of_involvement: Injured Marines anchor Steve's aggressive probe and
-      C.J.'s deflection, their bloodied toll from F-18/Hawkeye ops humanizing Haiti
-      risks and pressuring presidential accountability, weaving military sacrifice
-      into re-election scandal narratives.
-    active_representation: Through reference to injured members and families
-    power_dynamics: Positioned as moral claimants challenging executive opacity
-    organizational_goals:
-    - Secure presidential recognition for casualties
-    - Ensure welfare support for wounded personnel
-    influence_mechanisms:
-    - Casualty reports fueling media pressure
-    - Invocation of troop sacrifice demanding empathy
-    institutional_impact: Highlights chain-of-command gaps in crisis response
-    internal_dynamics: Silent suffering tests admin-Marine relations
-    global_id: ger_organization_faa3a6a071f0
-  derived_from_beat_uuids: &id022
-  - beat_bf16933ac731f6b7
-  - beat_2c1503c279c5b721
-  - beat_6e58ecb1f3888d0f
-  source_season: 3
-  source_database: westwing.s03
-- fabula_uuid: cand_evt_scene_cf4f4a0d89782e24_1
-  global_id: null
-  title: C.J.'s Exhausted Briefing Draws Press Fire on Marine Casualties
-  description: Visibly drained from cascading crises including the MS cover-up and
-    Haiti tensions, C.J. stands at the podium delivering sparse military details on
-    five F-18 fighters and an E-2 Hawkeye involved in the operation. Toby watches
-    tensely from the back as reporters erupt in shouts. C.J. fields Steve's aggressive
-    probe on whether Bartlet has personally contacted injured Marines or their families,
-    responding with a vague expression of presidential gratitude and concern. This
-    defensive exchange exposes the administration's fraying facade, escalating media
-    predation and foreshadowing C.J.'s impending press blunder amid re-election stakes.
-  episode_uuid: ep_sea_ser_the_west_wing_s03_e01
-  scene_sequence: 25
-  sequence_in_scene: 33
-  key_dialogue: *id021
-  is_flashback: false
   location_uuid: ger_location_7423b10d7d15
   theme_uuids:
   - ger_theme_713f62ba5636
@@ -9546,7 +9375,7 @@ events:
     - strategic
     importance: primary
     global_id: ger_agent_7854a70e34ea
-  - character_uuid: ger_agent_3a11b089b63c
+  - character_uuid: ger_agent_7f81f2915789
     emotional_state: Frenzied eagerness to pierce administration defenses
     goals:
     - Interrupt and dominate the briefing flow
@@ -9563,7 +9392,7 @@ events:
     - aggressive
     - predatory
     importance: primary
-    global_id: ger_agent_3a11b089b63c
+    global_id: ger_agent_7f81f2915789
   object_involvements:
   - object_uuid: ger_object_37717be65ee7
     description_of_involvement: C.J. stands and grips the scarred oak lectern under
@@ -9591,19 +9420,6 @@ events:
       status
     global_id: ger_object_28f17bd8daf5
   location_involvements:
-  - location_uuid: ger_location_a55df0b08bf4
-    description_of_involvement: Toby hunkers in the shadowed Press Room Rear Office
-      Area, a tense overlook amplifying his vigilance over C.J.'s defensive exchange,
-      positioning it as a strategic war room amid the forward clamor of casualty probes.
-    observed_atmosphere: Shadowed tension swallowing shouts from main room
-    functional_role: Observation post for staff oversight
-    symbolic_significance: Hidden command perch amid public evisceration
-    access_restrictions: White House staff only, elevated vantage
-    key_environmental_details:
-    - Dimly lit shadows
-    - Audible reporter din
-    - Clenched-jaw proximity to action
-    global_id: ger_location_a55df0b08bf4
   - location_uuid: ger_location_7423b10d7d15
     description_of_involvement: Blinding lights and flashing cameras intensify the
       Press Conference Room as C.J.'s podium stage for sparse military revelations
@@ -9618,8 +9434,21 @@ events:
     - Echoing shouts from reporters
     - Central podium under scrutiny
     global_id: ger_location_7423b10d7d15
+  - location_uuid: ger_location_a55df0b08bf4
+    description_of_involvement: Toby hunkers in the shadowed Press Room Rear Office
+      Area, a tense overlook amplifying his vigilance over C.J.'s defensive exchange,
+      positioning it as a strategic war room amid the forward clamor of casualty probes.
+    observed_atmosphere: Shadowed tension swallowing shouts from main room
+    functional_role: Observation post for staff oversight
+    symbolic_significance: Hidden command perch amid public evisceration
+    access_restrictions: White House staff only, elevated vantage
+    key_environmental_details:
+    - Dimly lit shadows
+    - Audible reporter din
+    - Clenched-jaw proximity to action
+    global_id: ger_location_a55df0b08bf4
   organization_involvements:
-  - organization_uuid: ger_organization_faa3a6a071f0
+  - organization_uuid: ger_organization_6d0b797b0a21
     description_of_involvement: Injured Marines anchor Steve's aggressive probe and
       C.J.'s deflection, their bloodied toll from F-18/Hawkeye ops humanizing Haiti
       risks and pressuring presidential accountability, weaving military sacrifice
@@ -9634,7 +9463,178 @@ events:
     - Invocation of troop sacrifice demanding empathy
     institutional_impact: Highlights chain-of-command gaps in crisis response
     internal_dynamics: Silent suffering tests admin-Marine relations
-    global_id: ger_organization_faa3a6a071f0
+    global_id: ger_organization_6d0b797b0a21
+  derived_from_beat_uuids: &id022
+  - beat_bf16933ac731f6b7
+  - beat_2c1503c279c5b721
+  - beat_6e58ecb1f3888d0f
+  source_season: 3
+  source_database: westwing.s03
+- fabula_uuid: cand_evt_scene_cf4f4a0d89782e24_1
+  global_id: null
+  title: C.J.'s Exhausted Briefing Draws Press Fire on Marine Casualties
+  description: Visibly drained from cascading crises including the MS cover-up and
+    Haiti tensions, C.J. stands at the podium delivering sparse military details on
+    five F-18 fighters and an E-2 Hawkeye involved in the operation. Toby watches
+    tensely from the back as reporters erupt in shouts. C.J. fields Steve's aggressive
+    probe on whether Bartlet has personally contacted injured Marines or their families,
+    responding with a vague expression of presidential gratitude and concern. This
+    defensive exchange exposes the administration's fraying facade, escalating media
+    predation and foreshadowing C.J.'s impending press blunder amid re-election stakes.
+  episode_uuid: ep_sea_ser_the_west_wing_s03_e01
+  scene_sequence: 25
+  sequence_in_scene: 33
+  key_dialogue: *id021
+  is_flashback: false
+  location_uuid: ger_location_a55df0b08bf4
+  theme_uuids:
+  - ger_theme_713f62ba5636
+  arc_uuids: []
+  participations:
+  - character_uuid: ger_agent_198649bce78f
+    emotional_state: Reported as grateful and concerned, per C.J.'s deflection
+    goals:
+    - Convey empathy through proxies to maintain troop morale
+    - Avoid direct exposure amid scandal pressures
+    what_happened: Not physically present but invoked by C.J.'s response claiming
+      he has expressed gratitude and concern to the Marines and their families.
+    observed_status: Not physically present but invoked by C.J.'s response claiming
+      he has expressed gratitude and concern to the Marines and their families.
+    beliefs:
+    - Symbolic gestures suffice for public perception
+    - Direct involvement risks political exploitation
+    observed_traits:
+    - empathetic
+    - distant
+    importance: primary
+    global_id: ger_agent_198649bce78f
+  - character_uuid: ger_agent_ce2bfab1b21b
+    emotional_state: Accusatory insistence demanding transparency
+    goals:
+    - Expose gaps in presidential outreach to casualties
+    - Amplify human cost of Haiti operation for headlines
+    what_happened: Directly called on by C.J., Steve aggressively questions whether
+      the President has spoken to injured Marines or their families, sharpening focus
+      on personal accountability.
+    observed_status: Directly called on by C.J., Steve aggressively questions whether
+      the President has spoken to injured Marines or their families, sharpening focus
+      on personal accountability.
+    beliefs:
+    - Administration evades direct responsibility for troop welfare
+    - Personal presidential contact reveals true leadership priorities
+    observed_traits:
+    - relentless
+    - interrogative
+    - predatory
+    importance: primary
+    global_id: ger_agent_ce2bfab1b21b
+  - character_uuid: ger_agent_7854a70e34ea
+    emotional_state: Tense apprehension laced with strategic alertness
+    goals:
+    - Assess press vulnerabilities in real-time for damage control
+    - Support C.J.'s narrative containment amid re-election threats
+    what_happened: Watching tensely from the office area at the back of the room as
+      C.J. fields the barrage of questions on military operations and Marine casualties.
+    observed_status: Watching tensely from the office area at the back of the room
+      as C.J. fields the barrage of questions on military operations and Marine casualties.
+    beliefs:
+    - Press corps exploits every weakness to undermine the administration
+    - Tight oversight prevents escalation of military and scandal narratives
+    observed_traits:
+    - tense
+    - vigilant
+    - strategic
+    importance: primary
+    global_id: ger_agent_7854a70e34ea
+  - character_uuid: ger_agent_7f81f2915789
+    emotional_state: Frenzied eagerness to pierce administration defenses
+    goals:
+    - Interrupt and dominate the briefing flow
+    - Force disclosures on operation casualties
+    what_happened: Erupting in unified shouts of 'C.J.! C.J.!' to seize attention
+      and demand answers during her sparse military briefing.
+    observed_status: Erupting in unified shouts of 'C.J.! C.J.!' to seize attention
+      and demand answers during her sparse military briefing.
+    beliefs:
+    - Collective pressure cracks official opacity
+    - Shouting amplifies public scrutiny on scandals
+    observed_traits:
+    - persistent
+    - aggressive
+    - predatory
+    importance: primary
+    global_id: ger_agent_7f81f2915789
+  object_involvements:
+  - object_uuid: ger_object_37717be65ee7
+    description_of_involvement: C.J. stands and grips the scarred oak lectern under
+      press room lights as her exhausted platform for delivering sparse F-18 and Hawkeye
+      details, acknowledging Steve, and issuing vague presidential deflections—symbolizing
+      the administration's frontline exposure to media assault.
+    status_before_event: Positioned centrally in Press Room, ready for briefing
+    status_after_event: Unchanged, still focal point post-exchange
+    global_id: ger_object_37717be65ee7
+  - object_uuid: ger_object_b78686c007cb
+    description_of_involvement: Bundled with F-18s in C.J.'s terse disclosure, the
+      E-2 Hawkeye's radar surveillance role is invoked to frame the operation's complexity,
+      inviting scrutiny that ties military assets to Marine injuries and presidential
+      silence.
+    status_before_event: Active in operation, details classified
+    status_after_event: Details minimally declassified via briefing
+    global_id: ger_object_b78686c007cb
+  - object_uuid: ger_object_28f17bd8daf5
+    description_of_involvement: C.J. explicitly names the five F-18 fighters as core
+      to the fog-shrouded operation, their mention underscoring military scale and
+      casualty risks that fuel Steve's probe, heightening narrative tension around
+      Haiti perils and admin accountability.
+    status_before_event: Deployed in Haitian operation, undisclosed publicly
+    status_after_event: Publicly acknowledged in briefing, no change in operational
+      status
+    global_id: ger_object_28f17bd8daf5
+  location_involvements:
+  - location_uuid: ger_location_7423b10d7d15
+    description_of_involvement: Blinding lights and flashing cameras intensify the
+      Press Conference Room as C.J.'s podium stage for sparse military revelations
+      amid reporter shouts, transforming it into a high-stakes arena where admin frailties
+      on MS and Haiti collide with media hunger.
+    observed_atmosphere: Chaotic frenzy of shouts and predatory energy
+    functional_role: Public briefing venue for operational disclosures
+    symbolic_significance: Battleground exposing political vulnerabilities
+    access_restrictions: Restricted to press corps and White House staff
+    key_environmental_details:
+    - Blinding overhead lights
+    - Echoing shouts from reporters
+    - Central podium under scrutiny
+    global_id: ger_location_7423b10d7d15
+  - location_uuid: ger_location_a55df0b08bf4
+    description_of_involvement: Toby hunkers in the shadowed Press Room Rear Office
+      Area, a tense overlook amplifying his vigilance over C.J.'s defensive exchange,
+      positioning it as a strategic war room amid the forward clamor of casualty probes.
+    observed_atmosphere: Shadowed tension swallowing shouts from main room
+    functional_role: Observation post for staff oversight
+    symbolic_significance: Hidden command perch amid public evisceration
+    access_restrictions: White House staff only, elevated vantage
+    key_environmental_details:
+    - Dimly lit shadows
+    - Audible reporter din
+    - Clenched-jaw proximity to action
+    global_id: ger_location_a55df0b08bf4
+  organization_involvements:
+  - organization_uuid: ger_organization_6d0b797b0a21
+    description_of_involvement: Injured Marines anchor Steve's aggressive probe and
+      C.J.'s deflection, their bloodied toll from F-18/Hawkeye ops humanizing Haiti
+      risks and pressuring presidential accountability, weaving military sacrifice
+      into re-election scandal narratives.
+    active_representation: Through reference to injured members and families
+    power_dynamics: Positioned as moral claimants challenging executive opacity
+    organizational_goals:
+    - Secure presidential recognition for casualties
+    - Ensure welfare support for wounded personnel
+    influence_mechanisms:
+    - Casualty reports fueling media pressure
+    - Invocation of troop sacrifice demanding empathy
+    institutional_impact: Highlights chain-of-command gaps in crisis response
+    internal_dynamics: Silent suffering tests admin-Marine relations
+    global_id: ger_organization_6d0b797b0a21
   derived_from_beat_uuids: *id022
   source_season: 3
   source_database: westwing.s03

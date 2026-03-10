@@ -1,5 +1,5 @@
 # Events for War Crimes
-# Generated: 2026-02-10T12:17:18.817794
+# Generated: 2026-02-22T16:33:17.630118
 
 episode_uuid: ep_sea_ser_the_west_wing_s03_e05
 episode_title: War Crimes
@@ -53,7 +53,7 @@ events:
     - aggressive
     importance: primary
     global_id: ger_agent_15505a99b94c
-  - character_uuid: ger_agent_14139cef8dfd
+  - character_uuid: ger_agent_7f81f2915789
     emotional_state: Heightened anticipation laced with predatory focus on unfolding
       crisis details
     goals:
@@ -73,7 +73,7 @@ events:
     - coordinated
     - anticipatory
     importance: primary
-    global_id: ger_agent_14139cef8dfd
+    global_id: ger_agent_7f81f2915789
   object_involvements:
   - object_uuid: ger_object_37717be65ee7
     description_of_involvement: The scarred oak lectern stands as commanding center-stage
@@ -84,7 +84,7 @@ events:
     status_before_event: Stationary under daytime lights in emptying Press Room
     status_after_event: Occupied by C.J., microphone live as briefing details unfold
     global_id: ger_object_37717be65ee7
-  - object_uuid: ger_object_1ba272934806
+  - object_uuid: ger_object_e2e47b991837
     description_of_involvement: The guns from the Texas church shooting, specifically
       the first .38 pistol, are verbally dissected as C.J. confirms its type in response
       to Chris's demand, transforming abstract tragedy into concrete briefing fodder
@@ -93,7 +93,7 @@ events:
     status_before_event: Referenced off-site in massacre reports, unknown to public
       detail
     status_after_event: Publicly specified as .38 pistol, now focal in national discourse
-    global_id: ger_object_1ba272934806
+    global_id: ger_object_e2e47b991837
   location_involvements: []
   organization_involvements:
   - organization_uuid: ger_organization_09ab0f33dba1
@@ -146,6 +146,17 @@ events:
   arc_uuids:
   - ger_conflictarc_be85e9d9211a
   participations:
+  - character_uuid: ger_agent_7f81f2915789
+    emotional_state: ''
+    goals: []
+    what_happened: person transcribing the deposition; referenced as not being a notary
+      public
+    observed_status: person transcribing the deposition; referenced as not being a
+      notary public
+    beliefs: []
+    observed_traits: []
+    importance: minor
+    global_id: ger_agent_7f81f2915789
   - character_uuid: ger_agent_7fab28b971b5
     emotional_state: Coolly commanding with underlying prosecutorial intent
     goals:
@@ -169,17 +180,6 @@ events:
     - relentlessly fair
     importance: primary
     global_id: ger_agent_7fab28b971b5
-  - character_uuid: ger_agent_14139cef8dfd
-    emotional_state: ''
-    goals: []
-    what_happened: person transcribing the deposition; referenced as not being a notary
-      public
-    observed_status: person transcribing the deposition; referenced as not being a
-      notary public
-    beliefs: []
-    observed_traits: []
-    importance: minor
-    global_id: ger_agent_14139cef8dfd
   - character_uuid: ger_agent_90ad82afee42
     emotional_state: Stoically neutral, embodying procedural inevitability
     goals:
@@ -239,7 +239,7 @@ events:
   - 'CLIFF: "Because you were placed under oath, your testimony here today has the
     same force and effect as if you were testifying"'
   is_flashback: false
-  location_uuid: ger_location_68b1dfbaf4dd
+  location_uuid: ger_location_a7206de4780a
   theme_uuids:
   - ger_theme_b8f3b00e8942
   arc_uuids: []
@@ -279,7 +279,7 @@ events:
       oath and legal warning.
     global_id: ger_object_904840469a44
   location_involvements:
-  - location_uuid: ger_location_68b1dfbaf4dd
+  - location_uuid: ger_location_a7206de4780a
     description_of_involvement: This deposition room frames the pivotal oath affirmation
       and legal intimidation beat, its walls packed with hunched observers creating
       a pressure cooker where Donna's terse compliance meets Cliff's onslaught, excavating
@@ -292,7 +292,7 @@ events:
     key_environmental_details:
     - Long table dominated by seated participants and edge-packed observers
     - Stark overhead lights reflecting off polished table surface
-    global_id: ger_location_68b1dfbaf4dd
+    global_id: ger_location_a7206de4780a
   organization_involvements: []
   derived_from_beat_uuids:
   - beat_9375b58c211eb5f0
@@ -455,14 +455,14 @@ events:
     status_before_event: Pending sponsorship, unmentioned
     status_after_event: Pivotal bargaining chip conditioning Appropriations vote
     global_id: ger_object_7548a3e055b9
-  - object_uuid: ger_object_1143d3e00a67
+  - object_uuid: ger_object_e435b52e77b1
     description_of_involvement: Sam aggressively pitches the $30 billion interest-free
       bonds package for 7,000 schools' roofs, wiring, and modernization, plus $1.5B
       repairs, positioning it as needing the Congressman's vote; Terry weaponizes
       it in reversal, tying approval to penny bill support and exposing Sam's concessions.
     status_before_event: Proposed White House initiative
     status_after_event: Contingent on quid pro quo resolution
-    global_id: ger_object_1143d3e00a67
+    global_id: ger_object_e435b52e77b1
   location_involvements:
   - location_uuid: ger_location_7423b10d7d15
     description_of_involvement: The Roosevelt Room hosts the intimate White House
@@ -480,7 +480,7 @@ events:
     - Oak conference table bearing tray and documents
     global_id: ger_location_7423b10d7d15
   organization_involvements:
-  - organization_uuid: ger_organization_d033a1b32d4f
+  - organization_uuid: ger_organization_bb39d5dd403d
     description_of_involvement: The White House's policy muscle is demanded by Terry
       for penny bill backing, with Sam reluctantly pledging a 'good reason' against
       it; this exposes vulnerabilities in Roosevelt Room horse-trading, tying school
@@ -495,7 +495,7 @@ events:
     - Internal rationale fabrication
     institutional_impact: Underscores reelection-era strains on unified front
     internal_dynamics: Staff compelled to fabricate positions for survival
-    global_id: ger_organization_d033a1b32d4f
+    global_id: ger_organization_bb39d5dd403d
   - organization_uuid: ger_organization_e7130cd2949c
     description_of_involvement: Invoked by Terry as recipient of the Mint's 14 billion
       pennies 'dumped in our laps,' portraying the Federal Reserve as burdened by
@@ -776,38 +776,11 @@ events:
     Fitzwallace, the Pentagon, the House and Senate Armed Services, and the House
     and Senate Foreign Relations, it''s a thing of catastrophic proportions.'
   is_flashback: false
-  location_uuid: ger_location_3d4b26f1de82
+  location_uuid: ger_location_3303871a0689
   theme_uuids: []
   arc_uuids:
   - ger_conflictarc_adf2a94ad58f
   participations:
-  - character_uuid: ger_agent_b4362f2b2811
-    emotional_state: Cordial and light-hearted in banter, abruptly turning gravely
-      urgent and oppositional upon revealing the draft.
-    goals:
-    - Convey military discontent over tribunal stance directly to White House leadership
-    - Persuade Leo to influence Bartlet against the draft's direction
-    what_happened: Adamley waits patiently in the lobby, responds to Leo's greeting
-      with big smiles and handshakes, recounts his positive trip details including
-      meetings with Hassan and Aviation Prince plus gift downgrade anecdote while
-      walking hallway to Leo's office, then pulls out and reads from draft file to
-      quote tribunal endorsement and warn vehemently of opposition.
-    observed_status: Adamley waits patiently in the lobby, responds to Leo's greeting
-      with big smiles and handshakes, recounts his positive trip details including
-      meetings with Hassan and Aviation Prince plus gift downgrade anecdote while
-      walking hallway to Leo's office, then pulls out and reads from draft file to
-      quote tribunal endorsement and warn vehemently of opposition.
-    beliefs:
-    - Tribunal endorsement risks catastrophic military and congressional backlash
-    - Bartlet's 'made up mind' signals irreversible policy peril
-    observed_traits:
-    - cordial
-    - anecdotal
-    - passionate
-    - alarmist
-    - resolute
-    importance: primary
-    global_id: ger_agent_b4362f2b2811
   - character_uuid: ger_agent_dd62525d972a
     emotional_state: Warmly friendly and humorous initially, shifting to calmly reassuring
       and deflecting amid rising tension.
@@ -835,6 +808,33 @@ events:
     - strategic
     importance: primary
     global_id: ger_agent_dd62525d972a
+  - character_uuid: ger_agent_c196ab38ba98
+    emotional_state: Cordial and light-hearted in banter, abruptly turning gravely
+      urgent and oppositional upon revealing the draft.
+    goals:
+    - Convey military discontent over tribunal stance directly to White House leadership
+    - Persuade Leo to influence Bartlet against the draft's direction
+    what_happened: Adamley waits patiently in the lobby, responds to Leo's greeting
+      with big smiles and handshakes, recounts his positive trip details including
+      meetings with Hassan and Aviation Prince plus gift downgrade anecdote while
+      walking hallway to Leo's office, then pulls out and reads from draft file to
+      quote tribunal endorsement and warn vehemently of opposition.
+    observed_status: Adamley waits patiently in the lobby, responds to Leo's greeting
+      with big smiles and handshakes, recounts his positive trip details including
+      meetings with Hassan and Aviation Prince plus gift downgrade anecdote while
+      walking hallway to Leo's office, then pulls out and reads from draft file to
+      quote tribunal endorsement and warn vehemently of opposition.
+    beliefs:
+    - Tribunal endorsement risks catastrophic military and congressional backlash
+    - Bartlet's 'made up mind' signals irreversible policy peril
+    observed_traits:
+    - cordial
+    - anecdotal
+    - passionate
+    - alarmist
+    - resolute
+    importance: primary
+    global_id: ger_agent_c196ab38ba98
   object_involvements:
   - object_uuid: ger_object_653c462400df
     description_of_involvement: Adamley holds and reads aloud from this NSC-cabled
@@ -848,7 +848,7 @@ events:
       for further discussion.
     global_id: ger_object_653c462400df
   location_involvements:
-  - location_uuid: ger_location_3d4b26f1de82
+  - location_uuid: ger_location_3303871a0689
     description_of_involvement: They transition into the West Wing Hallway heading
       to Leo's office, where banter about gifts flows seamlessly into Adamley's draft
       revelation and heated warnings; the confined passage intensifies the urgency,
@@ -863,7 +863,7 @@ events:
     key_environmental_details:
     - Echoing footfalls during walk
     - Proximity to offices amplifying strategic whispers
-    global_id: ger_location_3d4b26f1de82
+    global_id: ger_location_3303871a0689
   - location_uuid: ger_location_03a1b20f797d
     description_of_involvement: Northwest Lobby serves as the initial staging ground
       where Adamley waits patiently before Leo's approach, hosting the warm handshake
@@ -883,22 +883,6 @@ events:
     - Patient waiting posture amid echoing space
     global_id: ger_location_03a1b20f797d
   organization_involvements:
-  - organization_uuid: ger_organization_55a49abeab7d
-    description_of_involvement: United Nations is quoted from the draft as a WWII-era
-      U.S.-forged institution symbolizing moral leadership, now at risk of betrayal
-      per Bartlet's stance; Adamley uses it to frame tribunal support as historical
-      continuity under threat.
-    active_representation: Through historical reference in presidential draft language.
-    power_dynamics: Positioned as ethical precedent challenging U.S. military unilateralism.
-    organizational_goals:
-    - Uphold multilateral justice frameworks
-    - Invoke post-WWII legacy for current crises
-    influence_mechanisms:
-    - Symbolic invocation in policy rhetoric
-    - Historical authority pressuring executive decisions
-    institutional_impact: Elevates global norms against domestic hawkish opposition.
-    internal_dynamics: ''
-    global_id: ger_organization_55a49abeab7d
   - organization_uuid: ger_organization_19d099a40fb9
     description_of_involvement: Pentagon is named by Adamley as a core opponent viewing
       tribunal endorsement as catastrophic, alongside Fitzwallace; it looms as institutional
@@ -969,6 +953,22 @@ events:
     institutional_impact: Weaponizes confirmation powers amid reelection vulnerabilities.
     internal_dynamics: Bipartisan hawk consensus against moral crusades.
     global_id: ger_organization_87c0e15cca7c
+  - organization_uuid: ger_organization_55a49abeab7d
+    description_of_involvement: United Nations is quoted from the draft as a WWII-era
+      U.S.-forged institution symbolizing moral leadership, now at risk of betrayal
+      per Bartlet's stance; Adamley uses it to frame tribunal support as historical
+      continuity under threat.
+    active_representation: Through historical reference in presidential draft language.
+    power_dynamics: Positioned as ethical precedent challenging U.S. military unilateralism.
+    organizational_goals:
+    - Uphold multilateral justice frameworks
+    - Invoke post-WWII legacy for current crises
+    influence_mechanisms:
+    - Symbolic invocation in policy rhetoric
+    - Historical authority pressuring executive decisions
+    institutional_impact: Elevates global norms against domestic hawkish opposition.
+    internal_dynamics: ''
+    global_id: ger_organization_55a49abeab7d
   derived_from_beat_uuids: &id002
   - beat_1a63f6025f375e42
   - beat_7858954d341d6195
@@ -997,33 +997,6 @@ events:
   arc_uuids:
   - ger_conflictarc_adf2a94ad58f
   participations:
-  - character_uuid: ger_agent_b4362f2b2811
-    emotional_state: Cordial and light-hearted in banter, abruptly turning gravely
-      urgent and oppositional upon revealing the draft.
-    goals:
-    - Convey military discontent over tribunal stance directly to White House leadership
-    - Persuade Leo to influence Bartlet against the draft's direction
-    what_happened: Adamley waits patiently in the lobby, responds to Leo's greeting
-      with big smiles and handshakes, recounts his positive trip details including
-      meetings with Hassan and Aviation Prince plus gift downgrade anecdote while
-      walking hallway to Leo's office, then pulls out and reads from draft file to
-      quote tribunal endorsement and warn vehemently of opposition.
-    observed_status: Adamley waits patiently in the lobby, responds to Leo's greeting
-      with big smiles and handshakes, recounts his positive trip details including
-      meetings with Hassan and Aviation Prince plus gift downgrade anecdote while
-      walking hallway to Leo's office, then pulls out and reads from draft file to
-      quote tribunal endorsement and warn vehemently of opposition.
-    beliefs:
-    - Tribunal endorsement risks catastrophic military and congressional backlash
-    - Bartlet's 'made up mind' signals irreversible policy peril
-    observed_traits:
-    - cordial
-    - anecdotal
-    - passionate
-    - alarmist
-    - resolute
-    importance: primary
-    global_id: ger_agent_b4362f2b2811
   - character_uuid: ger_agent_dd62525d972a
     emotional_state: Warmly friendly and humorous initially, shifting to calmly reassuring
       and deflecting amid rising tension.
@@ -1051,6 +1024,33 @@ events:
     - strategic
     importance: primary
     global_id: ger_agent_dd62525d972a
+  - character_uuid: ger_agent_c196ab38ba98
+    emotional_state: Cordial and light-hearted in banter, abruptly turning gravely
+      urgent and oppositional upon revealing the draft.
+    goals:
+    - Convey military discontent over tribunal stance directly to White House leadership
+    - Persuade Leo to influence Bartlet against the draft's direction
+    what_happened: Adamley waits patiently in the lobby, responds to Leo's greeting
+      with big smiles and handshakes, recounts his positive trip details including
+      meetings with Hassan and Aviation Prince plus gift downgrade anecdote while
+      walking hallway to Leo's office, then pulls out and reads from draft file to
+      quote tribunal endorsement and warn vehemently of opposition.
+    observed_status: Adamley waits patiently in the lobby, responds to Leo's greeting
+      with big smiles and handshakes, recounts his positive trip details including
+      meetings with Hassan and Aviation Prince plus gift downgrade anecdote while
+      walking hallway to Leo's office, then pulls out and reads from draft file to
+      quote tribunal endorsement and warn vehemently of opposition.
+    beliefs:
+    - Tribunal endorsement risks catastrophic military and congressional backlash
+    - Bartlet's 'made up mind' signals irreversible policy peril
+    observed_traits:
+    - cordial
+    - anecdotal
+    - passionate
+    - alarmist
+    - resolute
+    importance: primary
+    global_id: ger_agent_c196ab38ba98
   object_involvements:
   - object_uuid: ger_object_653c462400df
     description_of_involvement: Adamley holds and reads aloud from this NSC-cabled
@@ -1064,7 +1064,7 @@ events:
       for further discussion.
     global_id: ger_object_653c462400df
   location_involvements:
-  - location_uuid: ger_location_3d4b26f1de82
+  - location_uuid: ger_location_3303871a0689
     description_of_involvement: They transition into the West Wing Hallway heading
       to Leo's office, where banter about gifts flows seamlessly into Adamley's draft
       revelation and heated warnings; the confined passage intensifies the urgency,
@@ -1079,7 +1079,7 @@ events:
     key_environmental_details:
     - Echoing footfalls during walk
     - Proximity to offices amplifying strategic whispers
-    global_id: ger_location_3d4b26f1de82
+    global_id: ger_location_3303871a0689
   - location_uuid: ger_location_03a1b20f797d
     description_of_involvement: Northwest Lobby serves as the initial staging ground
       where Adamley waits patiently before Leo's approach, hosting the warm handshake
@@ -1099,22 +1099,6 @@ events:
     - Patient waiting posture amid echoing space
     global_id: ger_location_03a1b20f797d
   organization_involvements:
-  - organization_uuid: ger_organization_55a49abeab7d
-    description_of_involvement: United Nations is quoted from the draft as a WWII-era
-      U.S.-forged institution symbolizing moral leadership, now at risk of betrayal
-      per Bartlet's stance; Adamley uses it to frame tribunal support as historical
-      continuity under threat.
-    active_representation: Through historical reference in presidential draft language.
-    power_dynamics: Positioned as ethical precedent challenging U.S. military unilateralism.
-    organizational_goals:
-    - Uphold multilateral justice frameworks
-    - Invoke post-WWII legacy for current crises
-    influence_mechanisms:
-    - Symbolic invocation in policy rhetoric
-    - Historical authority pressuring executive decisions
-    institutional_impact: Elevates global norms against domestic hawkish opposition.
-    internal_dynamics: ''
-    global_id: ger_organization_55a49abeab7d
   - organization_uuid: ger_organization_19d099a40fb9
     description_of_involvement: Pentagon is named by Adamley as a core opponent viewing
       tribunal endorsement as catastrophic, alongside Fitzwallace; it looms as institutional
@@ -1185,6 +1169,22 @@ events:
     institutional_impact: Weaponizes confirmation powers amid reelection vulnerabilities.
     internal_dynamics: Bipartisan hawk consensus against moral crusades.
     global_id: ger_organization_87c0e15cca7c
+  - organization_uuid: ger_organization_55a49abeab7d
+    description_of_involvement: United Nations is quoted from the draft as a WWII-era
+      U.S.-forged institution symbolizing moral leadership, now at risk of betrayal
+      per Bartlet's stance; Adamley uses it to frame tribunal support as historical
+      continuity under threat.
+    active_representation: Through historical reference in presidential draft language.
+    power_dynamics: Positioned as ethical precedent challenging U.S. military unilateralism.
+    organizational_goals:
+    - Uphold multilateral justice frameworks
+    - Invoke post-WWII legacy for current crises
+    influence_mechanisms:
+    - Symbolic invocation in policy rhetoric
+    - Historical authority pressuring executive decisions
+    institutional_impact: Elevates global norms against domestic hawkish opposition.
+    internal_dynamics: ''
+    global_id: ger_organization_55a49abeab7d
   derived_from_beat_uuids: *id002
   source_season: 3
   source_database: westwing.s03
@@ -1812,24 +1812,6 @@ events:
   theme_uuids: []
   arc_uuids: []
   participations:
-  - character_uuid: ger_agent_b4362f2b2811
-    emotional_state: Engaged in meeting (inferred)
-    goals:
-    - Discuss tribunal issues with Chief of Staff
-    - Influence administration on war crimes stance
-    what_happened: Adamley noted by Will as present and meeting with Leo, inquired
-      about by Will sparking C.J.'s confirmation, linking to broader military-White
-      House tensions.
-    observed_status: Adamley noted by Will as present and meeting with Leo, inquired
-      about by Will sparking C.J.'s confirmation, linking to broader military-White
-      House tensions.
-    beliefs:
-    - Direct talks resolve strategic rifts
-    - Military concerns demand presidential attention
-    observed_traits:
-    - high-profile visitor
-    importance: primary
-    global_id: ger_agent_b4362f2b2811
   - character_uuid: ger_agent_dd62525d972a
     emotional_state: Focused on diplomacy (inferred)
     goals:
@@ -1864,6 +1846,24 @@ events:
     - newsworthy
     importance: primary
     global_id: ger_agent_7854a70e34ea
+  - character_uuid: ger_agent_c196ab38ba98
+    emotional_state: Engaged in meeting (inferred)
+    goals:
+    - Discuss tribunal issues with Chief of Staff
+    - Influence administration on war crimes stance
+    what_happened: Adamley noted by Will as present and meeting with Leo, inquired
+      about by Will sparking C.J.'s confirmation, linking to broader military-White
+      House tensions.
+    observed_status: Adamley noted by Will as present and meeting with Leo, inquired
+      about by Will sparking C.J.'s confirmation, linking to broader military-White
+      House tensions.
+    beliefs:
+    - Direct talks resolve strategic rifts
+    - Military concerns demand presidential attention
+    observed_traits:
+    - high-profile visitor
+    importance: primary
+    global_id: ger_agent_c196ab38ba98
   - character_uuid: ger_agent_52cb90d7acd0
     emotional_state: Playfully boastful and animated, turning reassuringly sincere
     goals:
@@ -1929,7 +1929,7 @@ events:
     - Tribal feasts and combat ornamentation
     global_id: ger_location_eac638470d40
   organization_involvements:
-  - organization_uuid: ger_organization_d033a1b32d4f
+  - organization_uuid: ger_organization_bb39d5dd403d
     description_of_involvement: White House framed as temporary 'beat' in Will's prior
       quip, probed by C.J. for sincerity; meeting of Adamley-Leo referenced, tying
       event to institutional tensions over leaks, tribunals, loyalty amid reelection.
@@ -1944,7 +1944,7 @@ events:
     - High-level access as incentive
     institutional_impact: Reaffirms unity facade amid internal fractures
     internal_dynamics: Leak probes strain staff-reporter relations
-    global_id: ger_organization_d033a1b32d4f
+    global_id: ger_organization_bb39d5dd403d
   - organization_uuid: ger_organization_073615ea1640
     description_of_involvement: Bau tribe central to Will's recounted deification
       and C.J.'s teased visit; their Palm Pilot awe and garroting customs fuel banter,
@@ -1991,7 +1991,7 @@ events:
   - 'BARTLET: "Last year, gun deaths? 30,708. Alcohol deaths? 35,450. Tobacco deaths?
     400,000. Marijuana deaths? Zero."'
   is_flashback: false
-  location_uuid: ger_location_75ca626fbba9
+  location_uuid: ger_location_21fd71f335d7
   theme_uuids:
   - ger_theme_9c9a9c4964ce
   arc_uuids: []
@@ -2070,32 +2070,7 @@ events:
     status_after_event: Read and held by Bartlet, discarded tension briefly pierced
     global_id: ger_object_74017398d9f1
   location_involvements:
-  - location_uuid: ger_location_75ca626fbba9
-    description_of_involvement: Idaho erupts in Hoynes' ax murder anecdote, a familial
-      slaughter invoked as devil's advocate to equate gun horrors, piercing Bartlet's
-      stats with primal rural dread and broadening the debate's visceral scope.
-    observed_atmosphere: Blood-drenched and isolated via grim reference
-    functional_role: Hypothetical counterexample in moral equivalence argument
-    symbolic_significance: Raw horror beyond firearms to challenge control logic
-    access_restrictions: ''
-    key_environmental_details:
-    - Ax-cleaved family in shadowed cabin
-    - Pregnant wife among victims
-    global_id: ger_location_75ca626fbba9
-  - location_uuid: ger_location_1afe97de3287
-    description_of_involvement: New Jersey is wielded by Bartlet as a contrasting
-      'may issue' bastion where law enforcement discretion reins, sharpening his attack
-      on Texas leniency and underscoring policy variance as leverage in the gun control
-      debate.
-    observed_atmosphere: Restrictive and sheriff-controlled via policy contrast
-    functional_role: Comparative example dismantling 'shall issue' defenses
-    symbolic_significance: Model of controlled carry amid slaughterhouse alternatives
-    access_restrictions: ''
-    key_environmental_details:
-    - Discretionary permit issuance
-    - One-word policy pivot
-    global_id: ger_location_1afe97de3287
-  - location_uuid: ger_location_04822a72be5e
+  - location_uuid: ger_location_21fd71f335d7
     description_of_involvement: Texas looms as the volatile battleground in dialogue,
       its legislature and Abilene church massacre fueling Bartlet's demand for Hoynes'
       speech against 'shall issue' laws, embodying cultural defiance and electoral
@@ -2107,7 +2082,32 @@ events:
     key_environmental_details:
     - Abilene church as gunpowder site
     - Legislative chambers crackling
-    global_id: ger_location_04822a72be5e
+    global_id: ger_location_21fd71f335d7
+  - location_uuid: ger_location_5269e5488015
+    description_of_involvement: New Jersey is wielded by Bartlet as a contrasting
+      'may issue' bastion where law enforcement discretion reins, sharpening his attack
+      on Texas leniency and underscoring policy variance as leverage in the gun control
+      debate.
+    observed_atmosphere: Restrictive and sheriff-controlled via policy contrast
+    functional_role: Comparative example dismantling 'shall issue' defenses
+    symbolic_significance: Model of controlled carry amid slaughterhouse alternatives
+    access_restrictions: ''
+    key_environmental_details:
+    - Discretionary permit issuance
+    - One-word policy pivot
+    global_id: ger_location_5269e5488015
+  - location_uuid: ger_location_344c391a458e
+    description_of_involvement: Idaho erupts in Hoynes' ax murder anecdote, a familial
+      slaughter invoked as devil's advocate to equate gun horrors, piercing Bartlet's
+      stats with primal rural dread and broadening the debate's visceral scope.
+    observed_atmosphere: Blood-drenched and isolated via grim reference
+    functional_role: Hypothetical counterexample in moral equivalence argument
+    symbolic_significance: Raw horror beyond firearms to challenge control logic
+    access_restrictions: ''
+    key_environmental_details:
+    - Ax-cleaved family in shadowed cabin
+    - Pregnant wife among victims
+    global_id: ger_location_344c391a458e
   organization_involvements:
   - organization_uuid: ger_organization_ea7e06529910
     description_of_involvement: The NRA is summoned by Hoynes as looming antagonist,
@@ -2151,7 +2151,7 @@ events:
   sequence_in_scene: 13
   key_dialogue: *id005
   is_flashback: false
-  location_uuid: ger_location_1afe97de3287
+  location_uuid: ger_location_5269e5488015
   theme_uuids:
   - ger_theme_9c9a9c4964ce
   arc_uuids: []
@@ -2230,32 +2230,7 @@ events:
     status_after_event: Read and held by Bartlet, discarded tension briefly pierced
     global_id: ger_object_74017398d9f1
   location_involvements:
-  - location_uuid: ger_location_75ca626fbba9
-    description_of_involvement: Idaho erupts in Hoynes' ax murder anecdote, a familial
-      slaughter invoked as devil's advocate to equate gun horrors, piercing Bartlet's
-      stats with primal rural dread and broadening the debate's visceral scope.
-    observed_atmosphere: Blood-drenched and isolated via grim reference
-    functional_role: Hypothetical counterexample in moral equivalence argument
-    symbolic_significance: Raw horror beyond firearms to challenge control logic
-    access_restrictions: ''
-    key_environmental_details:
-    - Ax-cleaved family in shadowed cabin
-    - Pregnant wife among victims
-    global_id: ger_location_75ca626fbba9
-  - location_uuid: ger_location_1afe97de3287
-    description_of_involvement: New Jersey is wielded by Bartlet as a contrasting
-      'may issue' bastion where law enforcement discretion reins, sharpening his attack
-      on Texas leniency and underscoring policy variance as leverage in the gun control
-      debate.
-    observed_atmosphere: Restrictive and sheriff-controlled via policy contrast
-    functional_role: Comparative example dismantling 'shall issue' defenses
-    symbolic_significance: Model of controlled carry amid slaughterhouse alternatives
-    access_restrictions: ''
-    key_environmental_details:
-    - Discretionary permit issuance
-    - One-word policy pivot
-    global_id: ger_location_1afe97de3287
-  - location_uuid: ger_location_04822a72be5e
+  - location_uuid: ger_location_21fd71f335d7
     description_of_involvement: Texas looms as the volatile battleground in dialogue,
       its legislature and Abilene church massacre fueling Bartlet's demand for Hoynes'
       speech against 'shall issue' laws, embodying cultural defiance and electoral
@@ -2267,7 +2242,32 @@ events:
     key_environmental_details:
     - Abilene church as gunpowder site
     - Legislative chambers crackling
-    global_id: ger_location_04822a72be5e
+    global_id: ger_location_21fd71f335d7
+  - location_uuid: ger_location_5269e5488015
+    description_of_involvement: New Jersey is wielded by Bartlet as a contrasting
+      'may issue' bastion where law enforcement discretion reins, sharpening his attack
+      on Texas leniency and underscoring policy variance as leverage in the gun control
+      debate.
+    observed_atmosphere: Restrictive and sheriff-controlled via policy contrast
+    functional_role: Comparative example dismantling 'shall issue' defenses
+    symbolic_significance: Model of controlled carry amid slaughterhouse alternatives
+    access_restrictions: ''
+    key_environmental_details:
+    - Discretionary permit issuance
+    - One-word policy pivot
+    global_id: ger_location_5269e5488015
+  - location_uuid: ger_location_344c391a458e
+    description_of_involvement: Idaho erupts in Hoynes' ax murder anecdote, a familial
+      slaughter invoked as devil's advocate to equate gun horrors, piercing Bartlet's
+      stats with primal rural dread and broadening the debate's visceral scope.
+    observed_atmosphere: Blood-drenched and isolated via grim reference
+    functional_role: Hypothetical counterexample in moral equivalence argument
+    symbolic_significance: Raw horror beyond firearms to challenge control logic
+    access_restrictions: ''
+    key_environmental_details:
+    - Ax-cleaved family in shadowed cabin
+    - Pregnant wife among victims
+    global_id: ger_location_344c391a458e
   organization_involvements:
   - organization_uuid: ger_organization_ea7e06529910
     description_of_involvement: The NRA is summoned by Hoynes as looming antagonist,
@@ -2306,7 +2306,7 @@ events:
   sequence_in_scene: 13
   key_dialogue: *id005
   is_flashback: false
-  location_uuid: ger_location_04822a72be5e
+  location_uuid: ger_location_344c391a458e
   theme_uuids:
   - ger_theme_9c9a9c4964ce
   arc_uuids: []
@@ -2385,32 +2385,7 @@ events:
     status_after_event: Read and held by Bartlet, discarded tension briefly pierced
     global_id: ger_object_74017398d9f1
   location_involvements:
-  - location_uuid: ger_location_75ca626fbba9
-    description_of_involvement: Idaho erupts in Hoynes' ax murder anecdote, a familial
-      slaughter invoked as devil's advocate to equate gun horrors, piercing Bartlet's
-      stats with primal rural dread and broadening the debate's visceral scope.
-    observed_atmosphere: Blood-drenched and isolated via grim reference
-    functional_role: Hypothetical counterexample in moral equivalence argument
-    symbolic_significance: Raw horror beyond firearms to challenge control logic
-    access_restrictions: ''
-    key_environmental_details:
-    - Ax-cleaved family in shadowed cabin
-    - Pregnant wife among victims
-    global_id: ger_location_75ca626fbba9
-  - location_uuid: ger_location_1afe97de3287
-    description_of_involvement: New Jersey is wielded by Bartlet as a contrasting
-      'may issue' bastion where law enforcement discretion reins, sharpening his attack
-      on Texas leniency and underscoring policy variance as leverage in the gun control
-      debate.
-    observed_atmosphere: Restrictive and sheriff-controlled via policy contrast
-    functional_role: Comparative example dismantling 'shall issue' defenses
-    symbolic_significance: Model of controlled carry amid slaughterhouse alternatives
-    access_restrictions: ''
-    key_environmental_details:
-    - Discretionary permit issuance
-    - One-word policy pivot
-    global_id: ger_location_1afe97de3287
-  - location_uuid: ger_location_04822a72be5e
+  - location_uuid: ger_location_21fd71f335d7
     description_of_involvement: Texas looms as the volatile battleground in dialogue,
       its legislature and Abilene church massacre fueling Bartlet's demand for Hoynes'
       speech against 'shall issue' laws, embodying cultural defiance and electoral
@@ -2422,7 +2397,32 @@ events:
     key_environmental_details:
     - Abilene church as gunpowder site
     - Legislative chambers crackling
-    global_id: ger_location_04822a72be5e
+    global_id: ger_location_21fd71f335d7
+  - location_uuid: ger_location_5269e5488015
+    description_of_involvement: New Jersey is wielded by Bartlet as a contrasting
+      'may issue' bastion where law enforcement discretion reins, sharpening his attack
+      on Texas leniency and underscoring policy variance as leverage in the gun control
+      debate.
+    observed_atmosphere: Restrictive and sheriff-controlled via policy contrast
+    functional_role: Comparative example dismantling 'shall issue' defenses
+    symbolic_significance: Model of controlled carry amid slaughterhouse alternatives
+    access_restrictions: ''
+    key_environmental_details:
+    - Discretionary permit issuance
+    - One-word policy pivot
+    global_id: ger_location_5269e5488015
+  - location_uuid: ger_location_344c391a458e
+    description_of_involvement: Idaho erupts in Hoynes' ax murder anecdote, a familial
+      slaughter invoked as devil's advocate to equate gun horrors, piercing Bartlet's
+      stats with primal rural dread and broadening the debate's visceral scope.
+    observed_atmosphere: Blood-drenched and isolated via grim reference
+    functional_role: Hypothetical counterexample in moral equivalence argument
+    symbolic_significance: Raw horror beyond firearms to challenge control logic
+    access_restrictions: ''
+    key_environmental_details:
+    - Ax-cleaved family in shadowed cabin
+    - Pregnant wife among victims
+    global_id: ger_location_344c391a458e
   organization_involvements:
   - organization_uuid: ger_organization_ea7e06529910
     description_of_involvement: The NRA is summoned by Hoynes as looming antagonist,
@@ -2468,26 +2468,6 @@ events:
   - ger_theme_b8f3b00e8942
   arc_uuids: []
   participations:
-  - character_uuid: ger_agent_b4362f2b2811
-    emotional_state: Skeptical intensity laced with confrontational edge
-    goals:
-    - Invalidate Leo's semantic broadening of tribunal scope
-    - Safeguard Pentagon and military interests from overreach
-    what_happened: Seated opposite Leo, Adamley fires back with military precision,
-      echoing 'Technically?' to dismantle the qualifier, his posture rigid as he probes
-      for argumentative weakness in the heated exchange.
-    observed_status: Seated opposite Leo, Adamley fires back with military precision,
-      echoing 'Technically?' to dismantle the qualifier, his posture rigid as he probes
-      for argumentative weakness in the heated exchange.
-    beliefs:
-    - Tribunal must remain narrowly defined to avoid strategic disaster
-    - Administration's gambit risks alliances and national security
-    observed_traits:
-    - skeptical
-    - incisive
-    - combative
-    importance: primary
-    global_id: ger_agent_b4362f2b2811
   - character_uuid: ger_agent_dd62525d972a
     emotional_state: Assertive resolve veiling tactical caution
     goals:
@@ -2508,6 +2488,26 @@ events:
     - defensive
     importance: primary
     global_id: ger_agent_dd62525d972a
+  - character_uuid: ger_agent_c196ab38ba98
+    emotional_state: Skeptical intensity laced with confrontational edge
+    goals:
+    - Invalidate Leo's semantic broadening of tribunal scope
+    - Safeguard Pentagon and military interests from overreach
+    what_happened: Seated opposite Leo, Adamley fires back with military precision,
+      echoing 'Technically?' to dismantle the qualifier, his posture rigid as he probes
+      for argumentative weakness in the heated exchange.
+    observed_status: Seated opposite Leo, Adamley fires back with military precision,
+      echoing 'Technically?' to dismantle the qualifier, his posture rigid as he probes
+      for argumentative weakness in the heated exchange.
+    beliefs:
+    - Tribunal must remain narrowly defined to avoid strategic disaster
+    - Administration's gambit risks alliances and national security
+    observed_traits:
+    - skeptical
+    - incisive
+    - combative
+    importance: primary
+    global_id: ger_agent_c196ab38ba98
   object_involvements: []
   location_involvements: []
   organization_involvements:
@@ -2558,305 +2558,6 @@ events:
     team... then, there''s the door..."'
   - 'TOBY: "I''m simply gonna say this: you''re my guys. And I''m yours... and there''s
     nothing I wouldn''t do for you."'
-  is_flashback: false
-  location_uuid: ger_location_03a1b20f797d
-  theme_uuids:
-  - ger_theme_d3480dfc7754
-  arc_uuids:
-  - ger_conflictarc_8df53d236c13
-  participations:
-  - character_uuid: ger_agent_99b4244bf9a3
-    emotional_state: Neutral reference
-    goals:
-    - Contextualize leak source
-    what_happened: Bruno mentioned by Toby as co-leading the Roosevelt Room Week Ahead
-      where 'coattails' leak originated.
-    observed_status: Bruno mentioned by Toby as co-leading the Roosevelt Room Week
-      Ahead where 'coattails' leak originated.
-    beliefs:
-    - Pollster discussions fuel internal strategy
-    observed_traits:
-    - strategic
-    importance: primary
-    global_id: ger_agent_99b4244bf9a3
-  - character_uuid: ger_agent_e20d4779e93f
-    emotional_state: Tense anticipation bracing for leadership's raw address
-    goals:
-    - Quiet the group for Toby's speech
-    - Facilitate orderly confrontation
-    what_happened: Unnamed staffer urgently shushes the group into silence as Toby
-      enters and prepares to speak, enforcing focus for the rebuke.
-    observed_status: Unnamed staffer urgently shushes the group into silence as Toby
-      enters and prepares to speak, enforcing focus for the rebuke.
-    beliefs:
-    - Hierarchy demands immediate compliance
-    - Unity requires attentive silence
-    observed_traits:
-    - disciplined
-    - anticipatory
-    - efficient
-    importance: primary
-    global_id: ger_agent_e20d4779e93f
-  - character_uuid: ger_agent_f4503e79854a
-    emotional_state: Neutral reference
-    goals:
-    - Reelection leverage
-    what_happened: VP Hoynes cited as outpolling President in Plains states, source
-      of Toby's leaked 'coattails' remark.
-    observed_status: VP Hoynes cited as outpolling President in Plains states, source
-      of Toby's leaked 'coattails' remark.
-    beliefs:
-    - Regional polls shape strategy
-    observed_traits:
-    - polling strength
-    importance: primary
-    global_id: ger_agent_f4503e79854a
-  - character_uuid: ger_agent_198649bce78f
-    emotional_state: Implied embarrassment
-    goals:
-    - Unified team protection
-    what_happened: President invoked by Toby as team pinnacle embarrassed by leak
-      and re-election coattails dynamic.
-    observed_status: President invoked by Toby as team pinnacle embarrassed by leak
-      and re-election coattails dynamic.
-    beliefs:
-    - Top-down loyalty essential
-    observed_traits:
-    - leadership core
-    importance: primary
-    global_id: ger_agent_198649bce78f
-  - character_uuid: ger_agent_dd62525d972a
-    emotional_state: Neutral reference
-    goals:
-    - Team cohesion
-    what_happened: Leo referenced by Toby as top team member alongside President in
-      unity chain.
-    observed_status: Leo referenced by Toby as top team member alongside President
-      in unity chain.
-    beliefs:
-    - Hierarchy binds success
-    observed_traits:
-    - command anchor
-    importance: primary
-    global_id: ger_agent_dd62525d972a
-  - character_uuid: ger_agent_04bbccb1e352
-    emotional_state: Stern alignment easing to appreciative relief and light-hearted
-      camaraderie
-    goals:
-    - Reinforce Toby's unity plea through visible support
-    - Secure anti-penny bill argument from Toby
-    - Deepen deputy-senior partnership amid crises
-    what_happened: Sam enters sternly, plants in doorway during Toby's speech visually
-      signaling solidarity, follows upstairs chuckling praise for unexpected mercy,
-      seeks and receives Toby's rationale tying penny bill to Illinois Speaker/Lincoln
-      pride on stairs, thanks him twice solidifying bond.
-    observed_status: Sam enters sternly, plants in doorway during Toby's speech visually
-      signaling solidarity, follows upstairs chuckling praise for unexpected mercy,
-      seeks and receives Toby's rationale tying penny bill to Illinois Speaker/Lincoln
-      pride on stairs, thanks him twice solidifying bond.
-    beliefs:
-    - Toby's mercy preserves team strength
-    - State pride like Lincoln's can block bad legislation
-    - Personal loyalty fuels political wins
-    observed_traits:
-    - stern
-    - supportive
-    - appreciative
-    - witty
-    - strategic
-    importance: primary
-    global_id: ger_agent_04bbccb1e352
-  - character_uuid: ger_agent_e1d1575a068e
-    emotional_state: Neutral reference
-    goals:
-    - Legislative control
-    what_happened: Speaker of the House referenced by Toby/Sam as Illinois native
-      blocking penny bill via Lincoln pride.
-    observed_status: Speaker of the House referenced by Toby/Sam as Illinois native
-      blocking penny bill via Lincoln pride.
-    beliefs:
-    - Home-state icons protect bills
-    observed_traits:
-    - partisan pride
-    importance: primary
-    global_id: ger_agent_e1d1575a068e
-  - character_uuid: ger_agent_7854a70e34ea
-    emotional_state: Somber vulnerability masking hurt betrayal, resolute in forging
-      unity
-    goals:
-    - Restore fractured team loyalty post-leak
-    - Prevent witch hunt to maintain morale
-    - Support Sam's legislative push with tactical insight
-    what_happened: Toby strides into the Mess, sits on table edge facing somber staffers,
-      hesitates vulnerably before delivering raw speech owning leaked 'coattails'
-      remark, tracing it to Roosevelt Room with Bruno, rejects witch hunts while affirming
-      team loyalty from President/Leo down, exits with Sam upstairs praising him as
-      deputy and providing Lincoln-penny rationale against Huckleberry Bill on stairs.
-    observed_status: Toby strides into the Mess, sits on table edge facing somber
-      staffers, hesitates vulnerably before delivering raw speech owning leaked 'coattails'
-      remark, tracing it to Roosevelt Room with Bruno, rejects witch hunts while affirming
-      team loyalty from President/Leo down, exits with Sam upstairs praising him as
-      deputy and providing Lincoln-penny rationale against Huckleberry Bill on stairs.
-    beliefs:
-    - Team unity trumps individual scoops
-    - Mutual loyalty defines White House success
-    - Press exploits internal weaknesses destructively
-    observed_traits:
-    - vulnerable
-    - resolute
-    - loyal
-    - strategic
-    - self-deprecating
-    importance: primary
-    global_id: ger_agent_7854a70e34ea
-  - character_uuid: ger_agent_60a68a084e0c
-    emotional_state: Somber anticipation turning to chastised reflection
-    goals:
-    - Listen and internalize Toby's team loyalty directive
-    - Maintain discipline during confrontation
-    what_happened: Ginger stands somberly amid back group of staffers, absorbing Toby's
-      loyalty rebuke alongside quieted peers as unity plea lands.
-    observed_status: Ginger stands somberly amid back group of staffers, absorbing
-      Toby's loyalty rebuke alongside quieted peers as unity plea lands.
-    beliefs:
-    - Leaks undermine collective White House mission
-    - Senior staff wisdom guides junior actions
-    observed_traits:
-    - attentive
-    - loyal
-    - somber
-    importance: primary
-    global_id: ger_agent_60a68a084e0c
-  - character_uuid: ger_agent_00e920cd9d18
-    emotional_state: Neutral reference
-    goals:
-    - Publish scoops
-    what_happened: Tom Johnson implied as White House reporter receiving leaked quote
-      for tomorrow's paper.
-    observed_status: Tom Johnson implied as White House reporter receiving leaked
-      quote for tomorrow's paper.
-    beliefs:
-    - Leaks fuel journalism
-    observed_traits:
-    - persistent
-    importance: primary
-    global_id: ger_agent_00e920cd9d18
-  - character_uuid: ger_agent_14139cef8dfd
-    emotional_state: somber, deflated, chastised
-    goals: []
-    what_happened: 30-40 staffers sitting and standing in the White House Mess, quiet
-      down upon Toby's arrival, listen somberly to his speech, appear deflated and
-      chastised afterward
-    observed_status: 30-40 staffers sitting and standing in the White House Mess,
-      quiet down upon Toby's arrival, listen somberly to his speech, appear deflated
-      and chastised afterward
-    beliefs: []
-    observed_traits: []
-    importance: secondary
-    global_id: ger_agent_14139cef8dfd
-  object_involvements:
-  - object_uuid: ger_object_33d03af90cc4
-    description_of_involvement: 'Lincoln Penny becomes tactical weapon in Sam-Toby
-      stairwell exchange: Toby cues Speaker''s Illinois/Lincoln tie to doom Huckleberry
-      Bill, Sam elaborates on toll machine quirk and etched legacy, transforming coin
-      from policy footnote to state-pride shield blocking modernization, underscoring
-      political symbolism over economics.'
-    status_before_event: Congressional elimination target
-    status_after_event: Rhetorically fortified against axe via Lincoln heritage
-    global_id: ger_object_33d03af90cc4
-  - object_uuid: ger_object_666580303837
-    description_of_involvement: Legal Tender Huckleberry Bill (aka Modernization Bill)
-      surfaces in Sam-Toby post-speech talk as Sam's hurdle; Toby reveals Speaker
-      veto via Illinois roots, Sam clinches dumb-but-good rationale linking penny
-      to Lincoln, positioning bill as doomed by parochial pride in reelection horse-trading.
-    status_before_event: Pending floor threat tied to school bonds
-    status_after_event: Strategically neutralized by Speaker heritage ploy
-    global_id: ger_object_666580303837
-  location_involvements:
-  - location_uuid: ger_location_03a1b20f797d
-    description_of_involvement: 'White House Mess hosts Toby''s tense team rebuke:
-      30-40 staffers cluster somberly as he perches on table edge unleashing loyalty
-      plea amid anticipated lashing, shushed silence amplifying vulnerability; transitions
-      to exit path reinforcing subterranean staff war room as unity crucible amid
-      leak fallout.'
-    observed_atmosphere: Hushed tension with somber anticipation and deflated chastisement
-    functional_role: Gathering place for collective leadership confrontation and morale
-      reset
-    symbolic_significance: Underground heart of White House loyalty fractures
-    access_restrictions: West Wing staff only, senior-called assembly
-    key_environmental_details:
-    - Chatter fading to shushed silence
-    - Table edges for informal perch
-    - Clustered staffers on one side
-    global_id: ger_location_03a1b20f797d
-  - location_uuid: ger_location_7423b10d7d15
-    description_of_involvement: Roosevelt Room invoked by Toby as leak epicenter—site
-      of prior Week Ahead with Bruno where 'coattails' remark on VP Plains polls escaped,
-      framing betrayal's origin and heightening Mess speech's stakes in administration
-      disloyalty narrative.
-    observed_atmosphere: Retrospectively charged strategy hub
-    functional_role: Referenced origin of damaging leak
-    symbolic_significance: Crucible of internal strategy turned fracture point
-    access_restrictions: ''
-    key_environmental_details:
-    - Week Ahead meeting context
-    - Senior discussions
-    global_id: ger_location_7423b10d7d15
-  organization_involvements:
-  - organization_uuid: ger_organization_d033a1b32d4f
-    description_of_involvement: The White House manifests as Toby's invoked 'team'
-      from President/Leo down through staffers, endangered by leaks; speech rallies
-      unity against fractures, with Sam doorway sentinel embodying cohesion, while
-      penny ploy deploys institutional tactics, reflecting executive survival amid
-      reelection/gun control pressures.
-    active_representation: Through assembled staffers and senior duo Toby/Sam
-    power_dynamics: Internal hierarchy enforcing loyalty from top-down
-    organizational_goals:
-    - Quash leaks to protect reelection image
-    - Forge unbreakable team solidarity
-    influence_mechanisms:
-    - Emotional appeals to shared victories/defeats
-    - Hierarchical rebukes and mutual oaths
-    institutional_impact: Reinforces closed ranks against external media erosion
-    internal_dynamics: Leak betrayal tests chain-of-command trust
-    global_id: ger_organization_d033a1b32d4f
-  - organization_uuid: ger_organization_d59c4ba8585f
-    description_of_involvement: The Press cast as treacherous 'constituents' by Toby,
-      luring staff with scoops/quotes; specific White House reporter primed to publish
-      embarrassing 'coattails' item tomorrow, catalyzing speech's anti-leak crusade
-      and underscoring media as unity's existential foe in Bartlet-era scrutiny.
-    active_representation: Via referenced reporter conduit for leaked quote
-    power_dynamics: External predator exploiting internal vulnerabilities
-    organizational_goals:
-    - Amplify scoops for public impact
-    - Penetrate White House opacity
-    influence_mechanisms:
-    - Demand for insider 'skinny'
-    - Publication threat embarrassing leadership
-    institutional_impact: Heightens administration's narrative control battles
-    internal_dynamics: ''
-    global_id: ger_organization_d59c4ba8585f
-  derived_from_beat_uuids: &id008
-  - beat_f0f99bf46c8d6b14
-  - beat_d5f105366ccee57c
-  - beat_264aee810f7d97d5
-  source_season: 3
-  source_database: westwing.s03
-- fabula_uuid: cand_evt_scene_10a5dd4ff433353e_1
-  global_id: null
-  title: Toby's Somber Loyalty Plea, Sam's Silent Solidarity
-  description: 'In the tense White House Mess, Toby confronts 30-40 somber staffers
-    with a raw, vulnerable speech exposing his leaked ''coattails'' remark about VP
-    Hoynes outpolling Bartlet, decrying leaks that betray team unity for press scoops.
-    Sam enters sternly in the doorway, visibly aligning with Toby to reinforce cohesion
-    amid betrayals. Toby rejects witch hunts, affirming mutual loyalty: ''you''re
-    my guys. And I''m yours.'' Chastised staff absorb the rebuke as Toby exits with
-    Sam, who praises the unexpected mercy; Toby reciprocates by equipping Sam with
-    a Lincoln-penny rationale against a pesky bill, solidifying their bond in crisis.'
-  episode_uuid: ep_sea_ser_the_west_wing_s03_e05
-  scene_sequence: 14
-  sequence_in_scene: 15
-  key_dialogue: *id007
   is_flashback: false
   location_uuid: ger_location_7423b10d7d15
   theme_uuids:
@@ -3008,6 +2709,19 @@ events:
     - self-deprecating
     importance: primary
     global_id: ger_agent_7854a70e34ea
+  - character_uuid: ger_agent_7f81f2915789
+    emotional_state: somber, deflated, chastised
+    goals: []
+    what_happened: 30-40 staffers sitting and standing in the White House Mess, quiet
+      down upon Toby's arrival, listen somberly to his speech, appear deflated and
+      chastised afterward
+    observed_status: 30-40 staffers sitting and standing in the White House Mess,
+      quiet down upon Toby's arrival, listen somberly to his speech, appear deflated
+      and chastised afterward
+    beliefs: []
+    observed_traits: []
+    importance: secondary
+    global_id: ger_agent_7f81f2915789
   - character_uuid: ger_agent_60a68a084e0c
     emotional_state: Somber anticipation turning to chastised reflection
     goals:
@@ -3040,19 +2754,6 @@ events:
     - persistent
     importance: primary
     global_id: ger_agent_00e920cd9d18
-  - character_uuid: ger_agent_14139cef8dfd
-    emotional_state: somber, deflated, chastised
-    goals: []
-    what_happened: 30-40 staffers sitting and standing in the White House Mess, quiet
-      down upon Toby's arrival, listen somberly to his speech, appear deflated and
-      chastised afterward
-    observed_status: 30-40 staffers sitting and standing in the White House Mess,
-      quiet down upon Toby's arrival, listen somberly to his speech, appear deflated
-      and chastised afterward
-    beliefs: []
-    observed_traits: []
-    importance: secondary
-    global_id: ger_agent_14139cef8dfd
   object_involvements:
   - object_uuid: ger_object_33d03af90cc4
     description_of_involvement: 'Lincoln Penny becomes tactical weapon in Sam-Toby
@@ -3072,6 +2773,19 @@ events:
     status_after_event: Strategically neutralized by Speaker heritage ploy
     global_id: ger_object_666580303837
   location_involvements:
+  - location_uuid: ger_location_7423b10d7d15
+    description_of_involvement: Roosevelt Room invoked by Toby as leak epicenter—site
+      of prior Week Ahead with Bruno where 'coattails' remark on VP Plains polls escaped,
+      framing betrayal's origin and heightening Mess speech's stakes in administration
+      disloyalty narrative.
+    observed_atmosphere: Retrospectively charged strategy hub
+    functional_role: Referenced origin of damaging leak
+    symbolic_significance: Crucible of internal strategy turned fracture point
+    access_restrictions: ''
+    key_environmental_details:
+    - Week Ahead meeting context
+    - Senior discussions
+    global_id: ger_location_7423b10d7d15
   - location_uuid: ger_location_03a1b20f797d
     description_of_involvement: 'White House Mess hosts Toby''s tense team rebuke:
       30-40 staffers cluster somberly as he perches on table edge unleashing loyalty
@@ -3088,21 +2802,8 @@ events:
     - Table edges for informal perch
     - Clustered staffers on one side
     global_id: ger_location_03a1b20f797d
-  - location_uuid: ger_location_7423b10d7d15
-    description_of_involvement: Roosevelt Room invoked by Toby as leak epicenter—site
-      of prior Week Ahead with Bruno where 'coattails' remark on VP Plains polls escaped,
-      framing betrayal's origin and heightening Mess speech's stakes in administration
-      disloyalty narrative.
-    observed_atmosphere: Retrospectively charged strategy hub
-    functional_role: Referenced origin of damaging leak
-    symbolic_significance: Crucible of internal strategy turned fracture point
-    access_restrictions: ''
-    key_environmental_details:
-    - Week Ahead meeting context
-    - Senior discussions
-    global_id: ger_location_7423b10d7d15
   organization_involvements:
-  - organization_uuid: ger_organization_d033a1b32d4f
+  - organization_uuid: ger_organization_bb39d5dd403d
     description_of_involvement: The White House manifests as Toby's invoked 'team'
       from President/Leo down through staffers, endangered by leaks; speech rallies
       unity against fractures, with Sam doorway sentinel embodying cohesion, while
@@ -3118,7 +2819,306 @@ events:
     - Hierarchical rebukes and mutual oaths
     institutional_impact: Reinforces closed ranks against external media erosion
     internal_dynamics: Leak betrayal tests chain-of-command trust
-    global_id: ger_organization_d033a1b32d4f
+    global_id: ger_organization_bb39d5dd403d
+  - organization_uuid: ger_organization_d59c4ba8585f
+    description_of_involvement: The Press cast as treacherous 'constituents' by Toby,
+      luring staff with scoops/quotes; specific White House reporter primed to publish
+      embarrassing 'coattails' item tomorrow, catalyzing speech's anti-leak crusade
+      and underscoring media as unity's existential foe in Bartlet-era scrutiny.
+    active_representation: Via referenced reporter conduit for leaked quote
+    power_dynamics: External predator exploiting internal vulnerabilities
+    organizational_goals:
+    - Amplify scoops for public impact
+    - Penetrate White House opacity
+    influence_mechanisms:
+    - Demand for insider 'skinny'
+    - Publication threat embarrassing leadership
+    institutional_impact: Heightens administration's narrative control battles
+    internal_dynamics: ''
+    global_id: ger_organization_d59c4ba8585f
+  derived_from_beat_uuids: &id008
+  - beat_f0f99bf46c8d6b14
+  - beat_d5f105366ccee57c
+  - beat_264aee810f7d97d5
+  source_season: 3
+  source_database: westwing.s03
+- fabula_uuid: cand_evt_scene_10a5dd4ff433353e_1
+  global_id: null
+  title: Toby's Somber Loyalty Plea, Sam's Silent Solidarity
+  description: 'In the tense White House Mess, Toby confronts 30-40 somber staffers
+    with a raw, vulnerable speech exposing his leaked ''coattails'' remark about VP
+    Hoynes outpolling Bartlet, decrying leaks that betray team unity for press scoops.
+    Sam enters sternly in the doorway, visibly aligning with Toby to reinforce cohesion
+    amid betrayals. Toby rejects witch hunts, affirming mutual loyalty: ''you''re
+    my guys. And I''m yours.'' Chastised staff absorb the rebuke as Toby exits with
+    Sam, who praises the unexpected mercy; Toby reciprocates by equipping Sam with
+    a Lincoln-penny rationale against a pesky bill, solidifying their bond in crisis.'
+  episode_uuid: ep_sea_ser_the_west_wing_s03_e05
+  scene_sequence: 14
+  sequence_in_scene: 15
+  key_dialogue: *id007
+  is_flashback: false
+  location_uuid: ger_location_03a1b20f797d
+  theme_uuids:
+  - ger_theme_d3480dfc7754
+  arc_uuids:
+  - ger_conflictarc_8df53d236c13
+  participations:
+  - character_uuid: ger_agent_99b4244bf9a3
+    emotional_state: Neutral reference
+    goals:
+    - Contextualize leak source
+    what_happened: Bruno mentioned by Toby as co-leading the Roosevelt Room Week Ahead
+      where 'coattails' leak originated.
+    observed_status: Bruno mentioned by Toby as co-leading the Roosevelt Room Week
+      Ahead where 'coattails' leak originated.
+    beliefs:
+    - Pollster discussions fuel internal strategy
+    observed_traits:
+    - strategic
+    importance: primary
+    global_id: ger_agent_99b4244bf9a3
+  - character_uuid: ger_agent_e20d4779e93f
+    emotional_state: Tense anticipation bracing for leadership's raw address
+    goals:
+    - Quiet the group for Toby's speech
+    - Facilitate orderly confrontation
+    what_happened: Unnamed staffer urgently shushes the group into silence as Toby
+      enters and prepares to speak, enforcing focus for the rebuke.
+    observed_status: Unnamed staffer urgently shushes the group into silence as Toby
+      enters and prepares to speak, enforcing focus for the rebuke.
+    beliefs:
+    - Hierarchy demands immediate compliance
+    - Unity requires attentive silence
+    observed_traits:
+    - disciplined
+    - anticipatory
+    - efficient
+    importance: primary
+    global_id: ger_agent_e20d4779e93f
+  - character_uuid: ger_agent_f4503e79854a
+    emotional_state: Neutral reference
+    goals:
+    - Reelection leverage
+    what_happened: VP Hoynes cited as outpolling President in Plains states, source
+      of Toby's leaked 'coattails' remark.
+    observed_status: VP Hoynes cited as outpolling President in Plains states, source
+      of Toby's leaked 'coattails' remark.
+    beliefs:
+    - Regional polls shape strategy
+    observed_traits:
+    - polling strength
+    importance: primary
+    global_id: ger_agent_f4503e79854a
+  - character_uuid: ger_agent_198649bce78f
+    emotional_state: Implied embarrassment
+    goals:
+    - Unified team protection
+    what_happened: President invoked by Toby as team pinnacle embarrassed by leak
+      and re-election coattails dynamic.
+    observed_status: President invoked by Toby as team pinnacle embarrassed by leak
+      and re-election coattails dynamic.
+    beliefs:
+    - Top-down loyalty essential
+    observed_traits:
+    - leadership core
+    importance: primary
+    global_id: ger_agent_198649bce78f
+  - character_uuid: ger_agent_dd62525d972a
+    emotional_state: Neutral reference
+    goals:
+    - Team cohesion
+    what_happened: Leo referenced by Toby as top team member alongside President in
+      unity chain.
+    observed_status: Leo referenced by Toby as top team member alongside President
+      in unity chain.
+    beliefs:
+    - Hierarchy binds success
+    observed_traits:
+    - command anchor
+    importance: primary
+    global_id: ger_agent_dd62525d972a
+  - character_uuid: ger_agent_04bbccb1e352
+    emotional_state: Stern alignment easing to appreciative relief and light-hearted
+      camaraderie
+    goals:
+    - Reinforce Toby's unity plea through visible support
+    - Secure anti-penny bill argument from Toby
+    - Deepen deputy-senior partnership amid crises
+    what_happened: Sam enters sternly, plants in doorway during Toby's speech visually
+      signaling solidarity, follows upstairs chuckling praise for unexpected mercy,
+      seeks and receives Toby's rationale tying penny bill to Illinois Speaker/Lincoln
+      pride on stairs, thanks him twice solidifying bond.
+    observed_status: Sam enters sternly, plants in doorway during Toby's speech visually
+      signaling solidarity, follows upstairs chuckling praise for unexpected mercy,
+      seeks and receives Toby's rationale tying penny bill to Illinois Speaker/Lincoln
+      pride on stairs, thanks him twice solidifying bond.
+    beliefs:
+    - Toby's mercy preserves team strength
+    - State pride like Lincoln's can block bad legislation
+    - Personal loyalty fuels political wins
+    observed_traits:
+    - stern
+    - supportive
+    - appreciative
+    - witty
+    - strategic
+    importance: primary
+    global_id: ger_agent_04bbccb1e352
+  - character_uuid: ger_agent_e1d1575a068e
+    emotional_state: Neutral reference
+    goals:
+    - Legislative control
+    what_happened: Speaker of the House referenced by Toby/Sam as Illinois native
+      blocking penny bill via Lincoln pride.
+    observed_status: Speaker of the House referenced by Toby/Sam as Illinois native
+      blocking penny bill via Lincoln pride.
+    beliefs:
+    - Home-state icons protect bills
+    observed_traits:
+    - partisan pride
+    importance: primary
+    global_id: ger_agent_e1d1575a068e
+  - character_uuid: ger_agent_7854a70e34ea
+    emotional_state: Somber vulnerability masking hurt betrayal, resolute in forging
+      unity
+    goals:
+    - Restore fractured team loyalty post-leak
+    - Prevent witch hunt to maintain morale
+    - Support Sam's legislative push with tactical insight
+    what_happened: Toby strides into the Mess, sits on table edge facing somber staffers,
+      hesitates vulnerably before delivering raw speech owning leaked 'coattails'
+      remark, tracing it to Roosevelt Room with Bruno, rejects witch hunts while affirming
+      team loyalty from President/Leo down, exits with Sam upstairs praising him as
+      deputy and providing Lincoln-penny rationale against Huckleberry Bill on stairs.
+    observed_status: Toby strides into the Mess, sits on table edge facing somber
+      staffers, hesitates vulnerably before delivering raw speech owning leaked 'coattails'
+      remark, tracing it to Roosevelt Room with Bruno, rejects witch hunts while affirming
+      team loyalty from President/Leo down, exits with Sam upstairs praising him as
+      deputy and providing Lincoln-penny rationale against Huckleberry Bill on stairs.
+    beliefs:
+    - Team unity trumps individual scoops
+    - Mutual loyalty defines White House success
+    - Press exploits internal weaknesses destructively
+    observed_traits:
+    - vulnerable
+    - resolute
+    - loyal
+    - strategic
+    - self-deprecating
+    importance: primary
+    global_id: ger_agent_7854a70e34ea
+  - character_uuid: ger_agent_7f81f2915789
+    emotional_state: somber, deflated, chastised
+    goals: []
+    what_happened: 30-40 staffers sitting and standing in the White House Mess, quiet
+      down upon Toby's arrival, listen somberly to his speech, appear deflated and
+      chastised afterward
+    observed_status: 30-40 staffers sitting and standing in the White House Mess,
+      quiet down upon Toby's arrival, listen somberly to his speech, appear deflated
+      and chastised afterward
+    beliefs: []
+    observed_traits: []
+    importance: secondary
+    global_id: ger_agent_7f81f2915789
+  - character_uuid: ger_agent_60a68a084e0c
+    emotional_state: Somber anticipation turning to chastised reflection
+    goals:
+    - Listen and internalize Toby's team loyalty directive
+    - Maintain discipline during confrontation
+    what_happened: Ginger stands somberly amid back group of staffers, absorbing Toby's
+      loyalty rebuke alongside quieted peers as unity plea lands.
+    observed_status: Ginger stands somberly amid back group of staffers, absorbing
+      Toby's loyalty rebuke alongside quieted peers as unity plea lands.
+    beliefs:
+    - Leaks undermine collective White House mission
+    - Senior staff wisdom guides junior actions
+    observed_traits:
+    - attentive
+    - loyal
+    - somber
+    importance: primary
+    global_id: ger_agent_60a68a084e0c
+  - character_uuid: ger_agent_00e920cd9d18
+    emotional_state: Neutral reference
+    goals:
+    - Publish scoops
+    what_happened: Tom Johnson implied as White House reporter receiving leaked quote
+      for tomorrow's paper.
+    observed_status: Tom Johnson implied as White House reporter receiving leaked
+      quote for tomorrow's paper.
+    beliefs:
+    - Leaks fuel journalism
+    observed_traits:
+    - persistent
+    importance: primary
+    global_id: ger_agent_00e920cd9d18
+  object_involvements:
+  - object_uuid: ger_object_33d03af90cc4
+    description_of_involvement: 'Lincoln Penny becomes tactical weapon in Sam-Toby
+      stairwell exchange: Toby cues Speaker''s Illinois/Lincoln tie to doom Huckleberry
+      Bill, Sam elaborates on toll machine quirk and etched legacy, transforming coin
+      from policy footnote to state-pride shield blocking modernization, underscoring
+      political symbolism over economics.'
+    status_before_event: Congressional elimination target
+    status_after_event: Rhetorically fortified against axe via Lincoln heritage
+    global_id: ger_object_33d03af90cc4
+  - object_uuid: ger_object_666580303837
+    description_of_involvement: Legal Tender Huckleberry Bill (aka Modernization Bill)
+      surfaces in Sam-Toby post-speech talk as Sam's hurdle; Toby reveals Speaker
+      veto via Illinois roots, Sam clinches dumb-but-good rationale linking penny
+      to Lincoln, positioning bill as doomed by parochial pride in reelection horse-trading.
+    status_before_event: Pending floor threat tied to school bonds
+    status_after_event: Strategically neutralized by Speaker heritage ploy
+    global_id: ger_object_666580303837
+  location_involvements:
+  - location_uuid: ger_location_7423b10d7d15
+    description_of_involvement: Roosevelt Room invoked by Toby as leak epicenter—site
+      of prior Week Ahead with Bruno where 'coattails' remark on VP Plains polls escaped,
+      framing betrayal's origin and heightening Mess speech's stakes in administration
+      disloyalty narrative.
+    observed_atmosphere: Retrospectively charged strategy hub
+    functional_role: Referenced origin of damaging leak
+    symbolic_significance: Crucible of internal strategy turned fracture point
+    access_restrictions: ''
+    key_environmental_details:
+    - Week Ahead meeting context
+    - Senior discussions
+    global_id: ger_location_7423b10d7d15
+  - location_uuid: ger_location_03a1b20f797d
+    description_of_involvement: 'White House Mess hosts Toby''s tense team rebuke:
+      30-40 staffers cluster somberly as he perches on table edge unleashing loyalty
+      plea amid anticipated lashing, shushed silence amplifying vulnerability; transitions
+      to exit path reinforcing subterranean staff war room as unity crucible amid
+      leak fallout.'
+    observed_atmosphere: Hushed tension with somber anticipation and deflated chastisement
+    functional_role: Gathering place for collective leadership confrontation and morale
+      reset
+    symbolic_significance: Underground heart of White House loyalty fractures
+    access_restrictions: West Wing staff only, senior-called assembly
+    key_environmental_details:
+    - Chatter fading to shushed silence
+    - Table edges for informal perch
+    - Clustered staffers on one side
+    global_id: ger_location_03a1b20f797d
+  organization_involvements:
+  - organization_uuid: ger_organization_bb39d5dd403d
+    description_of_involvement: The White House manifests as Toby's invoked 'team'
+      from President/Leo down through staffers, endangered by leaks; speech rallies
+      unity against fractures, with Sam doorway sentinel embodying cohesion, while
+      penny ploy deploys institutional tactics, reflecting executive survival amid
+      reelection/gun control pressures.
+    active_representation: Through assembled staffers and senior duo Toby/Sam
+    power_dynamics: Internal hierarchy enforcing loyalty from top-down
+    organizational_goals:
+    - Quash leaks to protect reelection image
+    - Forge unbreakable team solidarity
+    influence_mechanisms:
+    - Emotional appeals to shared victories/defeats
+    - Hierarchical rebukes and mutual oaths
+    institutional_impact: Reinforces closed ranks against external media erosion
+    internal_dynamics: Leak betrayal tests chain-of-command trust
+    global_id: ger_organization_bb39d5dd403d
   - organization_uuid: ger_organization_d59c4ba8585f
     description_of_involvement: The Press cast as treacherous 'constituents' by Toby,
       luring staff with scoops/quotes; specific White House reporter primed to publish
@@ -3292,6 +3292,19 @@ events:
     - loyal
     importance: primary
     global_id: ger_agent_7854a70e34ea
+  - character_uuid: ger_agent_7f81f2915789
+    emotional_state: somber, deflated
+    goals: []
+    what_happened: 30-40 staffers sit and stand in the White House Mess, quiet down
+      on cue, listen somberly to Toby's speech on loyalty, and appear deflated and
+      chastised afterward.
+    observed_status: 30-40 staffers sit and stand in the White House Mess, quiet down
+      on cue, listen somberly to Toby's speech on loyalty, and appear deflated and
+      chastised afterward.
+    beliefs: []
+    observed_traits: []
+    importance: secondary
+    global_id: ger_agent_7f81f2915789
   - character_uuid: ger_agent_60a68a084e0c
     emotional_state: Somber and chastised, absorbing the speech's weight
     goals:
@@ -3320,19 +3333,6 @@ events:
     observed_traits: []
     importance: minor
     global_id: ger_agent_00e920cd9d18
-  - character_uuid: ger_agent_14139cef8dfd
-    emotional_state: somber, deflated
-    goals: []
-    what_happened: 30-40 staffers sit and stand in the White House Mess, quiet down
-      on cue, listen somberly to Toby's speech on loyalty, and appear deflated and
-      chastised afterward.
-    observed_status: 30-40 staffers sit and stand in the White House Mess, quiet down
-      on cue, listen somberly to Toby's speech on loyalty, and appear deflated and
-      chastised afterward.
-    beliefs: []
-    observed_traits: []
-    importance: secondary
-    global_id: ger_agent_14139cef8dfd
   object_involvements:
   - object_uuid: ger_object_33d03af90cc4
     description_of_involvement: The Lincoln penny serves as symbolic core of the Modernization
@@ -3370,7 +3370,7 @@ events:
     - Lingering quiet after shush and speech
     global_id: ger_location_03a1b20f797d
   organization_involvements:
-  - organization_uuid: ger_organization_d033a1b32d4f
+  - organization_uuid: ger_organization_bb39d5dd403d
     description_of_involvement: Embodied in Toby-Sam exchange as 'team' from President
       down, with leak fallout testing loyalty; hallway ascent models repair, advancing
       subplot defenses like school bonds while embodying institutional resilience
@@ -3386,7 +3386,7 @@ events:
     - Team identity invocation against external threats
     institutional_impact: Restores morale fractures for reelection push
     internal_dynamics: Leak-induced witch-hunt aversion favoring mutual loyalty
-    global_id: ger_organization_d033a1b32d4f
+    global_id: ger_organization_bb39d5dd403d
   - organization_uuid: ger_organization_d59c4ba8585f
     description_of_involvement: Invoked via White House reporter set to publish leaked
       quote, representing external threat Toby's speech and subsequent Sam praise
@@ -3432,161 +3432,6 @@ events:
     know if there''s ever been a more important time to be good at what I do. Can
     you imagine how much I don''t give a damn about what Toby said to a staffer?'
   - 'C.J.: You can sit anywhere you want.'
-  is_flashback: false
-  location_uuid: ger_location_3d4b26f1de82
-  theme_uuids:
-  - ger_theme_d3480dfc7754
-  arc_uuids:
-  - ger_conflictarc_8df53d236c13
-  participations:
-  - character_uuid: ger_agent_79dc9fb6a278
-    emotional_state: Neutral (not present)
-    goals: []
-    what_happened: Absent physically, but her desk anchors Will's casual perch at
-      scene start, integrating her workspace into the tense negotiation's spatial
-      dynamics without direct action or dialogue.
-    observed_status: Absent physically, but her desk anchors Will's casual perch at
-      scene start, integrating her workspace into the tense negotiation's spatial
-      dynamics without direct action or dialogue.
-    beliefs: []
-    observed_traits: []
-    importance: primary
-    global_id: ger_agent_79dc9fb6a278
-  - character_uuid: ger_agent_7854a70e34ea
-    emotional_state: Regretful over offhand remark, as conveyed by C.J.
-    goals:
-    - Clarify leak to minimize political damage
-    - Frame statement as non-serious joke
-    what_happened: Absent but invoked centrally as leak source; C.J. frames his polling
-      remark as offhand regretted joke, offers him up for on-record clarification
-      to Will, positioning him as willing participant in damage control.
-    observed_status: Absent but invoked centrally as leak source; C.J. frames his
-      polling remark as offhand regretted joke, offers him up for on-record clarification
-      to Will, positioning him as willing participant in damage control.
-    beliefs:
-    - The polling quip was intended lightly, not substantively
-    - Cooperation with press can contain fallout
-    observed_traits:
-    - regretful
-    - offhandedly indiscreet
-    importance: primary
-    global_id: ger_agent_7854a70e34ea
-  - character_uuid: ger_agent_52cb90d7acd0
-    emotional_state: Firmly principled with mild indignation fueling passionate conviction
-    goals:
-    - Uphold personal journalistic standards by spiking unethical story
-    - Demonstrate substantive reporting ethos to gain strategic access
-    what_happened: Perched casually on edge of Carol's desk, stands to lean in doorway,
-      shrugs off C.J.'s offer with mild indignation, firmly declares no interest in
-      story, passionately articulates anti-gossip stance while walking toward her
-      in hallway, accepts implied reward by heading off hands-in-pockets.
-    observed_status: Perched casually on edge of Carol's desk, stands to lean in doorway,
-      shrugs off C.J.'s offer with mild indignation, firmly declares no interest in
-      story, passionately articulates anti-gossip stance while walking toward her
-      in hallway, accepts implied reward by heading off hands-in-pockets.
-    beliefs:
-    - Toby's remark is trivial gossip, not legitimate news
-    - Contemporary journalism demands substance over stenographic scandal-mongering
-    observed_traits:
-    - principled
-    - resolute
-    - mildly indignant
-    - authentic
-    importance: primary
-    global_id: ger_agent_52cb90d7acd0
-  object_involvements:
-  - object_uuid: ger_object_fb4a4685c659
-    description_of_involvement: C.J. shuffles these papers frantically behind her
-      desk while pitching Toby's clarification, using the tactile activity to ground
-      her urgent explanation and compose amid rejection tension; she gathers them
-      tightly as they exit, transforming clutter into a bundle symbolizing narrative
-      control grasped.
-    status_before_event: Scattered loosely across C.J.'s desk
-    status_after_event: Gathered in C.J.'s hands, carried into hallway
-    global_id: ger_object_fb4a4685c659
-  - object_uuid: ger_object_0d4ee8165f7f
-    description_of_involvement: Will perches on its edge as C.J. enters, establishing
-      relaxed defiance in her assistant's workspace; the desk frames his initial casual
-      posture, anchoring the intimate power negotiation before he vacates it, underscoring
-      transition from perch to principled confrontation.
-    status_before_event: Unoccupied in C.J.'s office periphery
-    status_after_event: Vacated, Will standing/moving to doorway
-    global_id: ger_object_0d4ee8165f7f
-  location_involvements:
-  - location_uuid: ger_location_3d4b26f1de82
-    description_of_involvement: C.J. and Will exit her office into this bustling artery,
-      continuing their pivotal journalism debate with mutual steps toward each other,
-      allowing raw philosophical exchange in semi-private flow amid West Wing velocity;
-      it extends office intimacy into transitional vulnerability before public arenas.
-    observed_atmosphere: Charged with personal revelation and echoing footfalls, blending
-      urgency and intimacy
-    functional_role: Continuation space for deepening dialogue post-office
-    symbolic_significance: Bridge from private negotiation to public accountability
-    access_restrictions: Restricted to White House staff and cleared press
-    key_environmental_details:
-    - Fluorescent-lit corridors
-    - Distant office echoes and foot traffic
-    global_id: ger_location_3d4b26f1de82
-  - location_uuid: ger_location_7423b10d7d15
-    description_of_involvement: C.J. pauses at its door before entering, turning to
-      bestow prime seating reward on Will, positioning it as aspirational prize for
-      his integrity; the threshold marks climax of their accord, teasing imminent
-      press chaos it contains.
-    observed_atmosphere: Anticipatory tension from inner shouts and lights
-    functional_role: Symbolic reward venue and narrative destination
-    symbolic_significance: Arena of journalistic battle Will earns privileged entry
-      to
-    access_restrictions: Press-only with assigned seating privileges
-    key_environmental_details:
-    - Podium lights flaring
-    - Muffled reporter queries seeping out
-    global_id: ger_location_7423b10d7d15
-  organization_involvements:
-  - organization_uuid: ger_organization_d033a1b32d4f
-    description_of_involvement: Looms as contested 'bad beat' in Will's critique of
-      stenographic coverage; represented by C.J.'s leak-management maneuvers and access
-      grants, it navigates internal fractures via press strategy, using the exchange
-      to test and reward external alliances amid reelection pressures.
-    active_representation: Through Press Secretary C.J. wielding narrative control
-      and perks
-    power_dynamics: Exercising informational authority while challenged by reporter's
-      ethical independence
-    organizational_goals:
-    - Quash or reframe damaging internal leak
-    - Cultivate favorable press relationships for narrative dominance
-    influence_mechanisms:
-    - Controlled access to sources like Toby
-    - Privileged seating and insider rewards
-    institutional_impact: Reinforces White House command of story spin amid unity-testing
-      leaks
-    internal_dynamics: Leak fallout exposes vulnerabilities in staff loyalty and comms
-      discipline
-    global_id: ger_organization_d033a1b32d4f
-  derived_from_beat_uuids: &id010
-  - beat_3911371d15bae6da
-  - beat_47fde0c2fe41294d
-  - beat_31693555f8579f6c
-  - beat_70012aec71cf0040
-  - beat_9275e7bbccbb01d6
-  - beat_c3eeb62ae294d5e2
-  source_season: 3
-  source_database: westwing.s03
-- fabula_uuid: cand_evt_scene_9ce2bee5e46b0938_1
-  global_id: null
-  title: Will Spurns Toby Leak, Championing Journalistic Integrity
-  description: In C.J.'s office, she urgently offers Will access to Toby for an on-record
-    clarification of his leaked offhand remark on polling data, framing it as a regretted
-    joke amid escalating White House leak wars. Will surprises her by rejecting it
-    outright, dismissing the story as non-news and unethical gossip unfit for serious
-    journalism. He passionately articulates his aversion to stenography and scandal-chasing,
-    underscoring the era's demand for principled reporting. C.J., visibly impressed
-    by his integrity, responds with a pleased nod and grants him prime briefing room
-    seating, forging a fleeting ethical bond that humanizes their adversarial dynamic
-    and elevates Will's character amid political intrigue.
-  episode_uuid: ep_sea_ser_the_west_wing_s03_e05
-  scene_sequence: 15
-  sequence_in_scene: 17
-  key_dialogue: *id009
   is_flashback: false
   location_uuid: ger_location_7423b10d7d15
   theme_uuids:
@@ -3668,20 +3513,6 @@ events:
     status_after_event: Vacated, Will standing/moving to doorway
     global_id: ger_object_0d4ee8165f7f
   location_involvements:
-  - location_uuid: ger_location_3d4b26f1de82
-    description_of_involvement: C.J. and Will exit her office into this bustling artery,
-      continuing their pivotal journalism debate with mutual steps toward each other,
-      allowing raw philosophical exchange in semi-private flow amid West Wing velocity;
-      it extends office intimacy into transitional vulnerability before public arenas.
-    observed_atmosphere: Charged with personal revelation and echoing footfalls, blending
-      urgency and intimacy
-    functional_role: Continuation space for deepening dialogue post-office
-    symbolic_significance: Bridge from private negotiation to public accountability
-    access_restrictions: Restricted to White House staff and cleared press
-    key_environmental_details:
-    - Fluorescent-lit corridors
-    - Distant office echoes and foot traffic
-    global_id: ger_location_3d4b26f1de82
   - location_uuid: ger_location_7423b10d7d15
     description_of_involvement: C.J. pauses at its door before entering, turning to
       bestow prime seating reward on Will, positioning it as aspirational prize for
@@ -3696,8 +3527,22 @@ events:
     - Podium lights flaring
     - Muffled reporter queries seeping out
     global_id: ger_location_7423b10d7d15
+  - location_uuid: ger_location_3303871a0689
+    description_of_involvement: C.J. and Will exit her office into this bustling artery,
+      continuing their pivotal journalism debate with mutual steps toward each other,
+      allowing raw philosophical exchange in semi-private flow amid West Wing velocity;
+      it extends office intimacy into transitional vulnerability before public arenas.
+    observed_atmosphere: Charged with personal revelation and echoing footfalls, blending
+      urgency and intimacy
+    functional_role: Continuation space for deepening dialogue post-office
+    symbolic_significance: Bridge from private negotiation to public accountability
+    access_restrictions: Restricted to White House staff and cleared press
+    key_environmental_details:
+    - Fluorescent-lit corridors
+    - Distant office echoes and foot traffic
+    global_id: ger_location_3303871a0689
   organization_involvements:
-  - organization_uuid: ger_organization_d033a1b32d4f
+  - organization_uuid: ger_organization_bb39d5dd403d
     description_of_involvement: Looms as contested 'bad beat' in Will's critique of
       stenographic coverage; represented by C.J.'s leak-management maneuvers and access
       grants, it navigates internal fractures via press strategy, using the exchange
@@ -3716,7 +3561,162 @@ events:
       leaks
     internal_dynamics: Leak fallout exposes vulnerabilities in staff loyalty and comms
       discipline
-    global_id: ger_organization_d033a1b32d4f
+    global_id: ger_organization_bb39d5dd403d
+  derived_from_beat_uuids: &id010
+  - beat_3911371d15bae6da
+  - beat_47fde0c2fe41294d
+  - beat_31693555f8579f6c
+  - beat_70012aec71cf0040
+  - beat_9275e7bbccbb01d6
+  - beat_c3eeb62ae294d5e2
+  source_season: 3
+  source_database: westwing.s03
+- fabula_uuid: cand_evt_scene_9ce2bee5e46b0938_1
+  global_id: null
+  title: Will Spurns Toby Leak, Championing Journalistic Integrity
+  description: In C.J.'s office, she urgently offers Will access to Toby for an on-record
+    clarification of his leaked offhand remark on polling data, framing it as a regretted
+    joke amid escalating White House leak wars. Will surprises her by rejecting it
+    outright, dismissing the story as non-news and unethical gossip unfit for serious
+    journalism. He passionately articulates his aversion to stenography and scandal-chasing,
+    underscoring the era's demand for principled reporting. C.J., visibly impressed
+    by his integrity, responds with a pleased nod and grants him prime briefing room
+    seating, forging a fleeting ethical bond that humanizes their adversarial dynamic
+    and elevates Will's character amid political intrigue.
+  episode_uuid: ep_sea_ser_the_west_wing_s03_e05
+  scene_sequence: 15
+  sequence_in_scene: 17
+  key_dialogue: *id009
+  is_flashback: false
+  location_uuid: ger_location_3303871a0689
+  theme_uuids:
+  - ger_theme_d3480dfc7754
+  arc_uuids:
+  - ger_conflictarc_8df53d236c13
+  participations:
+  - character_uuid: ger_agent_79dc9fb6a278
+    emotional_state: Neutral (not present)
+    goals: []
+    what_happened: Absent physically, but her desk anchors Will's casual perch at
+      scene start, integrating her workspace into the tense negotiation's spatial
+      dynamics without direct action or dialogue.
+    observed_status: Absent physically, but her desk anchors Will's casual perch at
+      scene start, integrating her workspace into the tense negotiation's spatial
+      dynamics without direct action or dialogue.
+    beliefs: []
+    observed_traits: []
+    importance: primary
+    global_id: ger_agent_79dc9fb6a278
+  - character_uuid: ger_agent_7854a70e34ea
+    emotional_state: Regretful over offhand remark, as conveyed by C.J.
+    goals:
+    - Clarify leak to minimize political damage
+    - Frame statement as non-serious joke
+    what_happened: Absent but invoked centrally as leak source; C.J. frames his polling
+      remark as offhand regretted joke, offers him up for on-record clarification
+      to Will, positioning him as willing participant in damage control.
+    observed_status: Absent but invoked centrally as leak source; C.J. frames his
+      polling remark as offhand regretted joke, offers him up for on-record clarification
+      to Will, positioning him as willing participant in damage control.
+    beliefs:
+    - The polling quip was intended lightly, not substantively
+    - Cooperation with press can contain fallout
+    observed_traits:
+    - regretful
+    - offhandedly indiscreet
+    importance: primary
+    global_id: ger_agent_7854a70e34ea
+  - character_uuid: ger_agent_52cb90d7acd0
+    emotional_state: Firmly principled with mild indignation fueling passionate conviction
+    goals:
+    - Uphold personal journalistic standards by spiking unethical story
+    - Demonstrate substantive reporting ethos to gain strategic access
+    what_happened: Perched casually on edge of Carol's desk, stands to lean in doorway,
+      shrugs off C.J.'s offer with mild indignation, firmly declares no interest in
+      story, passionately articulates anti-gossip stance while walking toward her
+      in hallway, accepts implied reward by heading off hands-in-pockets.
+    observed_status: Perched casually on edge of Carol's desk, stands to lean in doorway,
+      shrugs off C.J.'s offer with mild indignation, firmly declares no interest in
+      story, passionately articulates anti-gossip stance while walking toward her
+      in hallway, accepts implied reward by heading off hands-in-pockets.
+    beliefs:
+    - Toby's remark is trivial gossip, not legitimate news
+    - Contemporary journalism demands substance over stenographic scandal-mongering
+    observed_traits:
+    - principled
+    - resolute
+    - mildly indignant
+    - authentic
+    importance: primary
+    global_id: ger_agent_52cb90d7acd0
+  object_involvements:
+  - object_uuid: ger_object_fb4a4685c659
+    description_of_involvement: C.J. shuffles these papers frantically behind her
+      desk while pitching Toby's clarification, using the tactile activity to ground
+      her urgent explanation and compose amid rejection tension; she gathers them
+      tightly as they exit, transforming clutter into a bundle symbolizing narrative
+      control grasped.
+    status_before_event: Scattered loosely across C.J.'s desk
+    status_after_event: Gathered in C.J.'s hands, carried into hallway
+    global_id: ger_object_fb4a4685c659
+  - object_uuid: ger_object_0d4ee8165f7f
+    description_of_involvement: Will perches on its edge as C.J. enters, establishing
+      relaxed defiance in her assistant's workspace; the desk frames his initial casual
+      posture, anchoring the intimate power negotiation before he vacates it, underscoring
+      transition from perch to principled confrontation.
+    status_before_event: Unoccupied in C.J.'s office periphery
+    status_after_event: Vacated, Will standing/moving to doorway
+    global_id: ger_object_0d4ee8165f7f
+  location_involvements:
+  - location_uuid: ger_location_7423b10d7d15
+    description_of_involvement: C.J. pauses at its door before entering, turning to
+      bestow prime seating reward on Will, positioning it as aspirational prize for
+      his integrity; the threshold marks climax of their accord, teasing imminent
+      press chaos it contains.
+    observed_atmosphere: Anticipatory tension from inner shouts and lights
+    functional_role: Symbolic reward venue and narrative destination
+    symbolic_significance: Arena of journalistic battle Will earns privileged entry
+      to
+    access_restrictions: Press-only with assigned seating privileges
+    key_environmental_details:
+    - Podium lights flaring
+    - Muffled reporter queries seeping out
+    global_id: ger_location_7423b10d7d15
+  - location_uuid: ger_location_3303871a0689
+    description_of_involvement: C.J. and Will exit her office into this bustling artery,
+      continuing their pivotal journalism debate with mutual steps toward each other,
+      allowing raw philosophical exchange in semi-private flow amid West Wing velocity;
+      it extends office intimacy into transitional vulnerability before public arenas.
+    observed_atmosphere: Charged with personal revelation and echoing footfalls, blending
+      urgency and intimacy
+    functional_role: Continuation space for deepening dialogue post-office
+    symbolic_significance: Bridge from private negotiation to public accountability
+    access_restrictions: Restricted to White House staff and cleared press
+    key_environmental_details:
+    - Fluorescent-lit corridors
+    - Distant office echoes and foot traffic
+    global_id: ger_location_3303871a0689
+  organization_involvements:
+  - organization_uuid: ger_organization_bb39d5dd403d
+    description_of_involvement: Looms as contested 'bad beat' in Will's critique of
+      stenographic coverage; represented by C.J.'s leak-management maneuvers and access
+      grants, it navigates internal fractures via press strategy, using the exchange
+      to test and reward external alliances amid reelection pressures.
+    active_representation: Through Press Secretary C.J. wielding narrative control
+      and perks
+    power_dynamics: Exercising informational authority while challenged by reporter's
+      ethical independence
+    organizational_goals:
+    - Quash or reframe damaging internal leak
+    - Cultivate favorable press relationships for narrative dominance
+    influence_mechanisms:
+    - Controlled access to sources like Toby
+    - Privileged seating and insider rewards
+    institutional_impact: Reinforces White House command of story spin amid unity-testing
+      leaks
+    internal_dynamics: Leak fallout exposes vulnerabilities in staff loyalty and comms
+      discipline
+    global_id: ger_organization_bb39d5dd403d
   derived_from_beat_uuids: *id010
   source_season: 3
   source_database: westwing.s03
@@ -3745,26 +3745,6 @@ events:
   arc_uuids:
   - ger_conflictarc_adf2a94ad58f
   participations:
-  - character_uuid: ger_agent_b4362f2b2811
-    emotional_state: Defiant resolve, armored against persuasion
-    goals:
-    - Reject White House entreaties to preserve military autonomy
-    - Signal unbreakable opposition to tribunal entanglement
-    what_happened: Already seated on the sofa, General Adamley responds to Leo's pressure
-      with a single, unyielding word—'Absolutely'—delivering curt refusal that shuts
-      down negotiation and embodies military defiance without further explanation.
-    observed_status: Already seated on the sofa, General Adamley responds to Leo's
-      pressure with a single, unyielding word—'Absolutely'—delivering curt refusal
-      that shuts down negotiation and embodies military defiance without further explanation.
-    beliefs:
-    - International tribunals threaten core U.S. sovereignty and military prerogative
-    - Participation invites Pentagon revolt and congressional backlash
-    observed_traits:
-    - intransigent
-    - defiant
-    - stoic
-    importance: primary
-    global_id: ger_agent_b4362f2b2811
   - character_uuid: ger_agent_dd62525d972a
     emotional_state: Determined command masking strategic urgency
     goals:
@@ -3787,6 +3767,26 @@ events:
     - resolute
     importance: primary
     global_id: ger_agent_dd62525d972a
+  - character_uuid: ger_agent_c196ab38ba98
+    emotional_state: Defiant resolve, armored against persuasion
+    goals:
+    - Reject White House entreaties to preserve military autonomy
+    - Signal unbreakable opposition to tribunal entanglement
+    what_happened: Already seated on the sofa, General Adamley responds to Leo's pressure
+      with a single, unyielding word—'Absolutely'—delivering curt refusal that shuts
+      down negotiation and embodies military defiance without further explanation.
+    observed_status: Already seated on the sofa, General Adamley responds to Leo's
+      pressure with a single, unyielding word—'Absolutely'—delivering curt refusal
+      that shuts down negotiation and embodies military defiance without further explanation.
+    beliefs:
+    - International tribunals threaten core U.S. sovereignty and military prerogative
+    - Participation invites Pentagon revolt and congressional backlash
+    observed_traits:
+    - intransigent
+    - defiant
+    - stoic
+    importance: primary
+    global_id: ger_agent_c196ab38ba98
   object_involvements: []
   location_involvements: []
   organization_involvements: []
@@ -3818,6 +3818,315 @@ events:
     You know that, right? If I win." HOYNES: "Yeah. And the only way you''re gonna
     win is if I''m on the ticket. You know that, don''t you, sir?"'
   - 'BARTLET: "You''ll go to Texas?" HOYNES: "I want a seat at the table."'
+  is_flashback: false
+  location_uuid: ger_location_7423b10d7d15
+  theme_uuids:
+  - ger_theme_9c9a9c4964ce
+  arc_uuids:
+  - ger_conflictarc_9a20d7e41cc4
+  participations:
+  - character_uuid: ger_agent_52e3762c6aed
+    emotional_state: Professionally neutral amid witnessed volatility
+    goals:
+    - Prompt Bartlet for impending briefing without intrusion
+    - Maintain seamless operational flow
+    what_happened: Knocks decisively then enters threshold, delivers crisp Briefing
+      Room readiness alert to Bartlet, retreats to desk but leaves door ajar, hovering
+      silently as tension lingers between leaders before Hoynes' exit.
+    observed_status: Knocks decisively then enters threshold, delivers crisp Briefing
+      Room readiness alert to Bartlet, retreats to desk but leaves door ajar, hovering
+      silently as tension lingers between leaders before Hoynes' exit.
+    beliefs:
+    - Duty demands unflinching interruption for schedule
+    - Presidential privacy yields to urgent transitions
+    observed_traits:
+    - dutiful sentinel
+    - precisely timed
+    - discreetly observant
+    importance: primary
+    global_id: ger_agent_52e3762c6aed
+  - character_uuid: ger_agent_f4503e79854a
+    emotional_state: Testy defiance erupting into raw anger, subsiding to exhausted
+      pragmatism
+    goals:
+    - Safeguard Texas political viability while conceding minimally
+    - Secure 'seat at the table' for future influence
+    what_happened: Seated leaning forward, sets glass down firmly amid debate, rises
+      testily to approach Bartlet closely, defends Second Amendment wearily then yells
+      furious denials of leak responsibility and mismanagement charges, concedes reelection
+      truths with sigh, nods to Texas speech while demanding influence, exits after
+      post-interruption exchange.
+    observed_status: Seated leaning forward, sets glass down firmly amid debate, rises
+      testily to approach Bartlet closely, defends Second Amendment wearily then yells
+      furious denials of leak responsibility and mismanagement charges, concedes reelection
+      truths with sigh, nods to Texas speech while demanding influence, exits after
+      post-interruption exchange.
+    beliefs:
+    - Gun rights rooted in Second Amendment outweigh control risks
+    - MS disclosure chaos stemmed from White House mismanagement
+    observed_traits:
+    - defensive traditionalist
+    - wearily resilient
+    - politically calculating
+    importance: primary
+    global_id: ger_agent_f4503e79854a
+  - character_uuid: ger_agent_198649bce78f
+    emotional_state: Boiling indignation channeled into strategic fury, cooling to
+      steely determination
+    goals:
+    - Compel Hoynes to deliver pro-gun control speech in Texas
+    - Reestablish dominance over VP amid loyalty breach
+    what_happened: Leaning forward intently on sofa, rises to pace and perch on desk
+      edge for emphasis, unleashes razor-sharp gun logic queries, accuses Hoynes of
+      MS leak betrayal with rising volume, acknowledges mutual reelection leverage
+      calmly, extracts Texas speech commitment while buttoning cuffs sternly post-interruption.
+    observed_status: Leaning forward intently on sofa, rises to pace and perch on
+      desk edge for emphasis, unleashes razor-sharp gun logic queries, accuses Hoynes
+      of MS leak betrayal with rising volume, acknowledges mutual reelection leverage
+      calmly, extracts Texas speech commitment while buttoning cuffs sternly post-interruption.
+    beliefs:
+    - Concealed carry defies deterrence logic and endangers innocents
+    - Hoynes orchestrated MS leak via Nashua to undermine him
+    observed_traits:
+    - intellectually incisive
+    - morally ferocious
+    - pragmatically commanding
+    importance: primary
+    global_id: ger_agent_198649bce78f
+  object_involvements:
+  - object_uuid: ger_object_bd0fdd90934e
+    description_of_involvement: Hoynes grips and slams his tumbler down on the low
+      table between sofas early in the gun debate, its thud punctuating reluctant
+      admission on concealment illogic; the clear-filled glass anchors visceral tension,
+      symbolizing restrained explosiveness amid escalating accusations and power plays.
+    status_before_event: Held firmly in Hoynes' hand during initial lean-forward posture
+    status_after_event: Firmly placed on Oval Office table, contents undisturbed,
+      amid ongoing standoff
+    global_id: ger_object_bd0fdd90934e
+  - object_uuid: ger_object_97ba0765769e
+    description_of_involvement: Bartlet seizes his suit jacket from chair back post-Charlie's
+      interruption and Hoynes' exit, snapping it on with stern resolve as thunder
+      rumbles; it transitions him from private fury to public armor, embodying shift
+      from confrontation to briefing room battle readiness.
+    status_before_event: Draped over back of Oval Office chair during heated debate
+    status_after_event: Donned by Bartlet, carried as he exits toward Briefing Room
+      amid rain-lashed windows
+    global_id: ger_object_97ba0765769e
+  location_involvements:
+  - location_uuid: ger_location_7423b10d7d15
+    description_of_involvement: Charlie invokes the Briefing Room's readiness to shatter
+      Oval standoff, propelling Bartlet from private pact to public scrutiny; it looms
+      as narrative pivot, heightening urgency as door cracks open on awaiting press
+      glare.
+    observed_atmosphere: Anticipatory frenzy implied through Charlie's alert
+    functional_role: Imminent destination signaling transition to transparency battle
+    symbolic_significance: Public gauntlet testing Oval-forged resolutions
+    access_restrictions: White House press corps assembly
+    key_environmental_details:
+    - Podium and lights primed off-screen
+    - Hustling staff preparation
+    global_id: ger_location_7423b10d7d15
+  - location_uuid: ger_location_21fd71f335d7
+    description_of_involvement: Texas crystallizes as battleground when Bartlet secures
+      Hoynes' speech commitment there, invoked amid concealed carry defense rooted
+      in state pride; it embodies cultural flashpoint where national gun policy collides
+      with Southern electoral peril.
+    observed_atmosphere: Hostile legislative winds implied in debate heat
+    functional_role: Future site of high-risk pro-control address
+    symbolic_significance: Loyalty test in Hoynes' home turf inferno
+    access_restrictions: ''
+    key_environmental_details:
+    - Abilene church massacre shadow
+    - Defiant crowds bracing
+    global_id: ger_location_21fd71f335d7
+  - location_uuid: ger_location_0367c6126711
+    description_of_involvement: Nashua erupts as betrayal flashpoint when Bartlet
+      accuses Hoynes' oil titan huddle there of sparking MS leak suspicions; it fuels
+      pivotal yelling volley, yanking New England ambition into Oval recriminations.
+    observed_atmosphere: Duplicitous scheming residue
+    functional_role: Origin of leak scandal catalyzing confrontation
+    symbolic_significance: Primary threat symbol amid alliance strain
+    access_restrictions: ''
+    key_environmental_details:
+    - Semiconductor plants and high-tech corridors
+    - Clandestine oil company conferral
+    global_id: ger_location_0367c6126711
+  organization_involvements: []
+  derived_from_beat_uuids: &id012
+  - beat_cdedbf6d11654687
+  - beat_20916ac06a5c811b
+  - beat_1b9acd909ebdf6fb
+  - beat_c36593aa57057be0
+  - beat_e0d04ff56bac0347
+  source_season: 3
+  source_database: westwing.s03
+- fabula_uuid: cand_evt_scene_186077e712bf1d71_1
+  global_id: null
+  title: Bartlet and Hoynes' Explosive Gun Control Standoff and Leak Reckoning
+  description: In the Oval Office, President Bartlet aggressively debates Vice President
+    Hoynes on concealed carry's illogic post-Texas church shooting, pivoting to accuse
+    him of leaking his MS diagnosis to force a primary run. Amid mutual yells over
+    past betrayals and mismanagement, they acknowledge their reelection interdependence—Bartlet's
+    win secures Hoynes' nomination path, while Hoynes bolsters the ticket. Hoynes
+    reluctantly commits to a pro-gun control speech in Texas, demanding 'a seat at
+    the table,' forging a brittle pact that propels policy momentum but exposes loyalty
+    fractures as a turning point in their alliance.
+  episode_uuid: ep_sea_ser_the_west_wing_s03_e05
+  scene_sequence: 17
+  sequence_in_scene: 19
+  key_dialogue: *id011
+  is_flashback: false
+  location_uuid: ger_location_21fd71f335d7
+  theme_uuids:
+  - ger_theme_9c9a9c4964ce
+  arc_uuids:
+  - ger_conflictarc_9a20d7e41cc4
+  participations:
+  - character_uuid: ger_agent_52e3762c6aed
+    emotional_state: Professionally neutral amid witnessed volatility
+    goals:
+    - Prompt Bartlet for impending briefing without intrusion
+    - Maintain seamless operational flow
+    what_happened: Knocks decisively then enters threshold, delivers crisp Briefing
+      Room readiness alert to Bartlet, retreats to desk but leaves door ajar, hovering
+      silently as tension lingers between leaders before Hoynes' exit.
+    observed_status: Knocks decisively then enters threshold, delivers crisp Briefing
+      Room readiness alert to Bartlet, retreats to desk but leaves door ajar, hovering
+      silently as tension lingers between leaders before Hoynes' exit.
+    beliefs:
+    - Duty demands unflinching interruption for schedule
+    - Presidential privacy yields to urgent transitions
+    observed_traits:
+    - dutiful sentinel
+    - precisely timed
+    - discreetly observant
+    importance: primary
+    global_id: ger_agent_52e3762c6aed
+  - character_uuid: ger_agent_f4503e79854a
+    emotional_state: Testy defiance erupting into raw anger, subsiding to exhausted
+      pragmatism
+    goals:
+    - Safeguard Texas political viability while conceding minimally
+    - Secure 'seat at the table' for future influence
+    what_happened: Seated leaning forward, sets glass down firmly amid debate, rises
+      testily to approach Bartlet closely, defends Second Amendment wearily then yells
+      furious denials of leak responsibility and mismanagement charges, concedes reelection
+      truths with sigh, nods to Texas speech while demanding influence, exits after
+      post-interruption exchange.
+    observed_status: Seated leaning forward, sets glass down firmly amid debate, rises
+      testily to approach Bartlet closely, defends Second Amendment wearily then yells
+      furious denials of leak responsibility and mismanagement charges, concedes reelection
+      truths with sigh, nods to Texas speech while demanding influence, exits after
+      post-interruption exchange.
+    beliefs:
+    - Gun rights rooted in Second Amendment outweigh control risks
+    - MS disclosure chaos stemmed from White House mismanagement
+    observed_traits:
+    - defensive traditionalist
+    - wearily resilient
+    - politically calculating
+    importance: primary
+    global_id: ger_agent_f4503e79854a
+  - character_uuid: ger_agent_198649bce78f
+    emotional_state: Boiling indignation channeled into strategic fury, cooling to
+      steely determination
+    goals:
+    - Compel Hoynes to deliver pro-gun control speech in Texas
+    - Reestablish dominance over VP amid loyalty breach
+    what_happened: Leaning forward intently on sofa, rises to pace and perch on desk
+      edge for emphasis, unleashes razor-sharp gun logic queries, accuses Hoynes of
+      MS leak betrayal with rising volume, acknowledges mutual reelection leverage
+      calmly, extracts Texas speech commitment while buttoning cuffs sternly post-interruption.
+    observed_status: Leaning forward intently on sofa, rises to pace and perch on
+      desk edge for emphasis, unleashes razor-sharp gun logic queries, accuses Hoynes
+      of MS leak betrayal with rising volume, acknowledges mutual reelection leverage
+      calmly, extracts Texas speech commitment while buttoning cuffs sternly post-interruption.
+    beliefs:
+    - Concealed carry defies deterrence logic and endangers innocents
+    - Hoynes orchestrated MS leak via Nashua to undermine him
+    observed_traits:
+    - intellectually incisive
+    - morally ferocious
+    - pragmatically commanding
+    importance: primary
+    global_id: ger_agent_198649bce78f
+  object_involvements:
+  - object_uuid: ger_object_bd0fdd90934e
+    description_of_involvement: Hoynes grips and slams his tumbler down on the low
+      table between sofas early in the gun debate, its thud punctuating reluctant
+      admission on concealment illogic; the clear-filled glass anchors visceral tension,
+      symbolizing restrained explosiveness amid escalating accusations and power plays.
+    status_before_event: Held firmly in Hoynes' hand during initial lean-forward posture
+    status_after_event: Firmly placed on Oval Office table, contents undisturbed,
+      amid ongoing standoff
+    global_id: ger_object_bd0fdd90934e
+  - object_uuid: ger_object_97ba0765769e
+    description_of_involvement: Bartlet seizes his suit jacket from chair back post-Charlie's
+      interruption and Hoynes' exit, snapping it on with stern resolve as thunder
+      rumbles; it transitions him from private fury to public armor, embodying shift
+      from confrontation to briefing room battle readiness.
+    status_before_event: Draped over back of Oval Office chair during heated debate
+    status_after_event: Donned by Bartlet, carried as he exits toward Briefing Room
+      amid rain-lashed windows
+    global_id: ger_object_97ba0765769e
+  location_involvements:
+  - location_uuid: ger_location_7423b10d7d15
+    description_of_involvement: Charlie invokes the Briefing Room's readiness to shatter
+      Oval standoff, propelling Bartlet from private pact to public scrutiny; it looms
+      as narrative pivot, heightening urgency as door cracks open on awaiting press
+      glare.
+    observed_atmosphere: Anticipatory frenzy implied through Charlie's alert
+    functional_role: Imminent destination signaling transition to transparency battle
+    symbolic_significance: Public gauntlet testing Oval-forged resolutions
+    access_restrictions: White House press corps assembly
+    key_environmental_details:
+    - Podium and lights primed off-screen
+    - Hustling staff preparation
+    global_id: ger_location_7423b10d7d15
+  - location_uuid: ger_location_21fd71f335d7
+    description_of_involvement: Texas crystallizes as battleground when Bartlet secures
+      Hoynes' speech commitment there, invoked amid concealed carry defense rooted
+      in state pride; it embodies cultural flashpoint where national gun policy collides
+      with Southern electoral peril.
+    observed_atmosphere: Hostile legislative winds implied in debate heat
+    functional_role: Future site of high-risk pro-control address
+    symbolic_significance: Loyalty test in Hoynes' home turf inferno
+    access_restrictions: ''
+    key_environmental_details:
+    - Abilene church massacre shadow
+    - Defiant crowds bracing
+    global_id: ger_location_21fd71f335d7
+  - location_uuid: ger_location_0367c6126711
+    description_of_involvement: Nashua erupts as betrayal flashpoint when Bartlet
+      accuses Hoynes' oil titan huddle there of sparking MS leak suspicions; it fuels
+      pivotal yelling volley, yanking New England ambition into Oval recriminations.
+    observed_atmosphere: Duplicitous scheming residue
+    functional_role: Origin of leak scandal catalyzing confrontation
+    symbolic_significance: Primary threat symbol amid alliance strain
+    access_restrictions: ''
+    key_environmental_details:
+    - Semiconductor plants and high-tech corridors
+    - Clandestine oil company conferral
+    global_id: ger_location_0367c6126711
+  organization_involvements: []
+  derived_from_beat_uuids: *id012
+  source_season: 3
+  source_database: westwing.s03
+- fabula_uuid: cand_evt_scene_186077e712bf1d71_1
+  global_id: null
+  title: Bartlet and Hoynes' Explosive Gun Control Standoff and Leak Reckoning
+  description: In the Oval Office, President Bartlet aggressively debates Vice President
+    Hoynes on concealed carry's illogic post-Texas church shooting, pivoting to accuse
+    him of leaking his MS diagnosis to force a primary run. Amid mutual yells over
+    past betrayals and mismanagement, they acknowledge their reelection interdependence—Bartlet's
+    win secures Hoynes' nomination path, while Hoynes bolsters the ticket. Hoynes
+    reluctantly commits to a pro-gun control speech in Texas, demanding 'a seat at
+    the table,' forging a brittle pact that propels policy momentum but exposes loyalty
+    fractures as a turning point in their alliance.
+  episode_uuid: ep_sea_ser_the_west_wing_s03_e05
+  scene_sequence: 17
+  sequence_in_scene: 19
+  key_dialogue: *id011
   is_flashback: false
   location_uuid: ger_location_0367c6126711
   theme_uuids:
@@ -3894,15 +4203,6 @@ events:
     importance: primary
     global_id: ger_agent_198649bce78f
   object_involvements:
-  - object_uuid: ger_object_b0ece4147e89
-    description_of_involvement: Bartlet seizes his suit jacket from chair back post-Charlie's
-      interruption and Hoynes' exit, snapping it on with stern resolve as thunder
-      rumbles; it transitions him from private fury to public armor, embodying shift
-      from confrontation to briefing room battle readiness.
-    status_before_event: Draped over back of Oval Office chair during heated debate
-    status_after_event: Donned by Bartlet, carried as he exits toward Briefing Room
-      amid rain-lashed windows
-    global_id: ger_object_b0ece4147e89
   - object_uuid: ger_object_bd0fdd90934e
     description_of_involvement: Hoynes grips and slams his tumbler down on the low
       table between sofas early in the gun debate, its thud punctuating reluctant
@@ -3912,19 +4212,16 @@ events:
     status_after_event: Firmly placed on Oval Office table, contents undisturbed,
       amid ongoing standoff
     global_id: ger_object_bd0fdd90934e
+  - object_uuid: ger_object_97ba0765769e
+    description_of_involvement: Bartlet seizes his suit jacket from chair back post-Charlie's
+      interruption and Hoynes' exit, snapping it on with stern resolve as thunder
+      rumbles; it transitions him from private fury to public armor, embodying shift
+      from confrontation to briefing room battle readiness.
+    status_before_event: Draped over back of Oval Office chair during heated debate
+    status_after_event: Donned by Bartlet, carried as he exits toward Briefing Room
+      amid rain-lashed windows
+    global_id: ger_object_97ba0765769e
   location_involvements:
-  - location_uuid: ger_location_0367c6126711
-    description_of_involvement: Nashua erupts as betrayal flashpoint when Bartlet
-      accuses Hoynes' oil titan huddle there of sparking MS leak suspicions; it fuels
-      pivotal yelling volley, yanking New England ambition into Oval recriminations.
-    observed_atmosphere: Duplicitous scheming residue
-    functional_role: Origin of leak scandal catalyzing confrontation
-    symbolic_significance: Primary threat symbol amid alliance strain
-    access_restrictions: ''
-    key_environmental_details:
-    - Semiconductor plants and high-tech corridors
-    - Clandestine oil company conferral
-    global_id: ger_location_0367c6126711
   - location_uuid: ger_location_7423b10d7d15
     description_of_involvement: Charlie invokes the Briefing Room's readiness to shatter
       Oval standoff, propelling Bartlet from private pact to public scrutiny; it looms
@@ -3938,7 +4235,7 @@ events:
     - Podium and lights primed off-screen
     - Hustling staff preparation
     global_id: ger_location_7423b10d7d15
-  - location_uuid: ger_location_04822a72be5e
+  - location_uuid: ger_location_21fd71f335d7
     description_of_involvement: Texas crystallizes as battleground when Bartlet secures
       Hoynes' speech commitment there, invoked amid concealed carry defense rooted
       in state pride; it embodies cultural flashpoint where national gun policy collides
@@ -3950,126 +4247,7 @@ events:
     key_environmental_details:
     - Abilene church massacre shadow
     - Defiant crowds bracing
-    global_id: ger_location_04822a72be5e
-  organization_involvements: []
-  derived_from_beat_uuids: &id012
-  - beat_cdedbf6d11654687
-  - beat_20916ac06a5c811b
-  - beat_1b9acd909ebdf6fb
-  - beat_c36593aa57057be0
-  - beat_e0d04ff56bac0347
-  source_season: 3
-  source_database: westwing.s03
-- fabula_uuid: cand_evt_scene_186077e712bf1d71_1
-  global_id: null
-  title: Bartlet and Hoynes' Explosive Gun Control Standoff and Leak Reckoning
-  description: In the Oval Office, President Bartlet aggressively debates Vice President
-    Hoynes on concealed carry's illogic post-Texas church shooting, pivoting to accuse
-    him of leaking his MS diagnosis to force a primary run. Amid mutual yells over
-    past betrayals and mismanagement, they acknowledge their reelection interdependence—Bartlet's
-    win secures Hoynes' nomination path, while Hoynes bolsters the ticket. Hoynes
-    reluctantly commits to a pro-gun control speech in Texas, demanding 'a seat at
-    the table,' forging a brittle pact that propels policy momentum but exposes loyalty
-    fractures as a turning point in their alliance.
-  episode_uuid: ep_sea_ser_the_west_wing_s03_e05
-  scene_sequence: 17
-  sequence_in_scene: 19
-  key_dialogue: *id011
-  is_flashback: false
-  location_uuid: ger_location_7423b10d7d15
-  theme_uuids:
-  - ger_theme_9c9a9c4964ce
-  arc_uuids:
-  - ger_conflictarc_9a20d7e41cc4
-  participations:
-  - character_uuid: ger_agent_52e3762c6aed
-    emotional_state: Professionally neutral amid witnessed volatility
-    goals:
-    - Prompt Bartlet for impending briefing without intrusion
-    - Maintain seamless operational flow
-    what_happened: Knocks decisively then enters threshold, delivers crisp Briefing
-      Room readiness alert to Bartlet, retreats to desk but leaves door ajar, hovering
-      silently as tension lingers between leaders before Hoynes' exit.
-    observed_status: Knocks decisively then enters threshold, delivers crisp Briefing
-      Room readiness alert to Bartlet, retreats to desk but leaves door ajar, hovering
-      silently as tension lingers between leaders before Hoynes' exit.
-    beliefs:
-    - Duty demands unflinching interruption for schedule
-    - Presidential privacy yields to urgent transitions
-    observed_traits:
-    - dutiful sentinel
-    - precisely timed
-    - discreetly observant
-    importance: primary
-    global_id: ger_agent_52e3762c6aed
-  - character_uuid: ger_agent_f4503e79854a
-    emotional_state: Testy defiance erupting into raw anger, subsiding to exhausted
-      pragmatism
-    goals:
-    - Safeguard Texas political viability while conceding minimally
-    - Secure 'seat at the table' for future influence
-    what_happened: Seated leaning forward, sets glass down firmly amid debate, rises
-      testily to approach Bartlet closely, defends Second Amendment wearily then yells
-      furious denials of leak responsibility and mismanagement charges, concedes reelection
-      truths with sigh, nods to Texas speech while demanding influence, exits after
-      post-interruption exchange.
-    observed_status: Seated leaning forward, sets glass down firmly amid debate, rises
-      testily to approach Bartlet closely, defends Second Amendment wearily then yells
-      furious denials of leak responsibility and mismanagement charges, concedes reelection
-      truths with sigh, nods to Texas speech while demanding influence, exits after
-      post-interruption exchange.
-    beliefs:
-    - Gun rights rooted in Second Amendment outweigh control risks
-    - MS disclosure chaos stemmed from White House mismanagement
-    observed_traits:
-    - defensive traditionalist
-    - wearily resilient
-    - politically calculating
-    importance: primary
-    global_id: ger_agent_f4503e79854a
-  - character_uuid: ger_agent_198649bce78f
-    emotional_state: Boiling indignation channeled into strategic fury, cooling to
-      steely determination
-    goals:
-    - Compel Hoynes to deliver pro-gun control speech in Texas
-    - Reestablish dominance over VP amid loyalty breach
-    what_happened: Leaning forward intently on sofa, rises to pace and perch on desk
-      edge for emphasis, unleashes razor-sharp gun logic queries, accuses Hoynes of
-      MS leak betrayal with rising volume, acknowledges mutual reelection leverage
-      calmly, extracts Texas speech commitment while buttoning cuffs sternly post-interruption.
-    observed_status: Leaning forward intently on sofa, rises to pace and perch on
-      desk edge for emphasis, unleashes razor-sharp gun logic queries, accuses Hoynes
-      of MS leak betrayal with rising volume, acknowledges mutual reelection leverage
-      calmly, extracts Texas speech commitment while buttoning cuffs sternly post-interruption.
-    beliefs:
-    - Concealed carry defies deterrence logic and endangers innocents
-    - Hoynes orchestrated MS leak via Nashua to undermine him
-    observed_traits:
-    - intellectually incisive
-    - morally ferocious
-    - pragmatically commanding
-    importance: primary
-    global_id: ger_agent_198649bce78f
-  object_involvements:
-  - object_uuid: ger_object_b0ece4147e89
-    description_of_involvement: Bartlet seizes his suit jacket from chair back post-Charlie's
-      interruption and Hoynes' exit, snapping it on with stern resolve as thunder
-      rumbles; it transitions him from private fury to public armor, embodying shift
-      from confrontation to briefing room battle readiness.
-    status_before_event: Draped over back of Oval Office chair during heated debate
-    status_after_event: Donned by Bartlet, carried as he exits toward Briefing Room
-      amid rain-lashed windows
-    global_id: ger_object_b0ece4147e89
-  - object_uuid: ger_object_bd0fdd90934e
-    description_of_involvement: Hoynes grips and slams his tumbler down on the low
-      table between sofas early in the gun debate, its thud punctuating reluctant
-      admission on concealment illogic; the clear-filled glass anchors visceral tension,
-      symbolizing restrained explosiveness amid escalating accusations and power plays.
-    status_before_event: Held firmly in Hoynes' hand during initial lean-forward posture
-    status_after_event: Firmly placed on Oval Office table, contents undisturbed,
-      amid ongoing standoff
-    global_id: ger_object_bd0fdd90934e
-  location_involvements:
+    global_id: ger_location_21fd71f335d7
   - location_uuid: ger_location_0367c6126711
     description_of_involvement: Nashua erupts as betrayal flashpoint when Bartlet
       accuses Hoynes' oil titan huddle there of sparking MS leak suspicions; it fuels
@@ -4082,184 +4260,6 @@ events:
     - Semiconductor plants and high-tech corridors
     - Clandestine oil company conferral
     global_id: ger_location_0367c6126711
-  - location_uuid: ger_location_7423b10d7d15
-    description_of_involvement: Charlie invokes the Briefing Room's readiness to shatter
-      Oval standoff, propelling Bartlet from private pact to public scrutiny; it looms
-      as narrative pivot, heightening urgency as door cracks open on awaiting press
-      glare.
-    observed_atmosphere: Anticipatory frenzy implied through Charlie's alert
-    functional_role: Imminent destination signaling transition to transparency battle
-    symbolic_significance: Public gauntlet testing Oval-forged resolutions
-    access_restrictions: White House press corps assembly
-    key_environmental_details:
-    - Podium and lights primed off-screen
-    - Hustling staff preparation
-    global_id: ger_location_7423b10d7d15
-  - location_uuid: ger_location_04822a72be5e
-    description_of_involvement: Texas crystallizes as battleground when Bartlet secures
-      Hoynes' speech commitment there, invoked amid concealed carry defense rooted
-      in state pride; it embodies cultural flashpoint where national gun policy collides
-      with Southern electoral peril.
-    observed_atmosphere: Hostile legislative winds implied in debate heat
-    functional_role: Future site of high-risk pro-control address
-    symbolic_significance: Loyalty test in Hoynes' home turf inferno
-    access_restrictions: ''
-    key_environmental_details:
-    - Abilene church massacre shadow
-    - Defiant crowds bracing
-    global_id: ger_location_04822a72be5e
-  organization_involvements: []
-  derived_from_beat_uuids: *id012
-  source_season: 3
-  source_database: westwing.s03
-- fabula_uuid: cand_evt_scene_186077e712bf1d71_1
-  global_id: null
-  title: Bartlet and Hoynes' Explosive Gun Control Standoff and Leak Reckoning
-  description: In the Oval Office, President Bartlet aggressively debates Vice President
-    Hoynes on concealed carry's illogic post-Texas church shooting, pivoting to accuse
-    him of leaking his MS diagnosis to force a primary run. Amid mutual yells over
-    past betrayals and mismanagement, they acknowledge their reelection interdependence—Bartlet's
-    win secures Hoynes' nomination path, while Hoynes bolsters the ticket. Hoynes
-    reluctantly commits to a pro-gun control speech in Texas, demanding 'a seat at
-    the table,' forging a brittle pact that propels policy momentum but exposes loyalty
-    fractures as a turning point in their alliance.
-  episode_uuid: ep_sea_ser_the_west_wing_s03_e05
-  scene_sequence: 17
-  sequence_in_scene: 19
-  key_dialogue: *id011
-  is_flashback: false
-  location_uuid: ger_location_04822a72be5e
-  theme_uuids:
-  - ger_theme_9c9a9c4964ce
-  arc_uuids:
-  - ger_conflictarc_9a20d7e41cc4
-  participations:
-  - character_uuid: ger_agent_52e3762c6aed
-    emotional_state: Professionally neutral amid witnessed volatility
-    goals:
-    - Prompt Bartlet for impending briefing without intrusion
-    - Maintain seamless operational flow
-    what_happened: Knocks decisively then enters threshold, delivers crisp Briefing
-      Room readiness alert to Bartlet, retreats to desk but leaves door ajar, hovering
-      silently as tension lingers between leaders before Hoynes' exit.
-    observed_status: Knocks decisively then enters threshold, delivers crisp Briefing
-      Room readiness alert to Bartlet, retreats to desk but leaves door ajar, hovering
-      silently as tension lingers between leaders before Hoynes' exit.
-    beliefs:
-    - Duty demands unflinching interruption for schedule
-    - Presidential privacy yields to urgent transitions
-    observed_traits:
-    - dutiful sentinel
-    - precisely timed
-    - discreetly observant
-    importance: primary
-    global_id: ger_agent_52e3762c6aed
-  - character_uuid: ger_agent_f4503e79854a
-    emotional_state: Testy defiance erupting into raw anger, subsiding to exhausted
-      pragmatism
-    goals:
-    - Safeguard Texas political viability while conceding minimally
-    - Secure 'seat at the table' for future influence
-    what_happened: Seated leaning forward, sets glass down firmly amid debate, rises
-      testily to approach Bartlet closely, defends Second Amendment wearily then yells
-      furious denials of leak responsibility and mismanagement charges, concedes reelection
-      truths with sigh, nods to Texas speech while demanding influence, exits after
-      post-interruption exchange.
-    observed_status: Seated leaning forward, sets glass down firmly amid debate, rises
-      testily to approach Bartlet closely, defends Second Amendment wearily then yells
-      furious denials of leak responsibility and mismanagement charges, concedes reelection
-      truths with sigh, nods to Texas speech while demanding influence, exits after
-      post-interruption exchange.
-    beliefs:
-    - Gun rights rooted in Second Amendment outweigh control risks
-    - MS disclosure chaos stemmed from White House mismanagement
-    observed_traits:
-    - defensive traditionalist
-    - wearily resilient
-    - politically calculating
-    importance: primary
-    global_id: ger_agent_f4503e79854a
-  - character_uuid: ger_agent_198649bce78f
-    emotional_state: Boiling indignation channeled into strategic fury, cooling to
-      steely determination
-    goals:
-    - Compel Hoynes to deliver pro-gun control speech in Texas
-    - Reestablish dominance over VP amid loyalty breach
-    what_happened: Leaning forward intently on sofa, rises to pace and perch on desk
-      edge for emphasis, unleashes razor-sharp gun logic queries, accuses Hoynes of
-      MS leak betrayal with rising volume, acknowledges mutual reelection leverage
-      calmly, extracts Texas speech commitment while buttoning cuffs sternly post-interruption.
-    observed_status: Leaning forward intently on sofa, rises to pace and perch on
-      desk edge for emphasis, unleashes razor-sharp gun logic queries, accuses Hoynes
-      of MS leak betrayal with rising volume, acknowledges mutual reelection leverage
-      calmly, extracts Texas speech commitment while buttoning cuffs sternly post-interruption.
-    beliefs:
-    - Concealed carry defies deterrence logic and endangers innocents
-    - Hoynes orchestrated MS leak via Nashua to undermine him
-    observed_traits:
-    - intellectually incisive
-    - morally ferocious
-    - pragmatically commanding
-    importance: primary
-    global_id: ger_agent_198649bce78f
-  object_involvements:
-  - object_uuid: ger_object_b0ece4147e89
-    description_of_involvement: Bartlet seizes his suit jacket from chair back post-Charlie's
-      interruption and Hoynes' exit, snapping it on with stern resolve as thunder
-      rumbles; it transitions him from private fury to public armor, embodying shift
-      from confrontation to briefing room battle readiness.
-    status_before_event: Draped over back of Oval Office chair during heated debate
-    status_after_event: Donned by Bartlet, carried as he exits toward Briefing Room
-      amid rain-lashed windows
-    global_id: ger_object_b0ece4147e89
-  - object_uuid: ger_object_bd0fdd90934e
-    description_of_involvement: Hoynes grips and slams his tumbler down on the low
-      table between sofas early in the gun debate, its thud punctuating reluctant
-      admission on concealment illogic; the clear-filled glass anchors visceral tension,
-      symbolizing restrained explosiveness amid escalating accusations and power plays.
-    status_before_event: Held firmly in Hoynes' hand during initial lean-forward posture
-    status_after_event: Firmly placed on Oval Office table, contents undisturbed,
-      amid ongoing standoff
-    global_id: ger_object_bd0fdd90934e
-  location_involvements:
-  - location_uuid: ger_location_0367c6126711
-    description_of_involvement: Nashua erupts as betrayal flashpoint when Bartlet
-      accuses Hoynes' oil titan huddle there of sparking MS leak suspicions; it fuels
-      pivotal yelling volley, yanking New England ambition into Oval recriminations.
-    observed_atmosphere: Duplicitous scheming residue
-    functional_role: Origin of leak scandal catalyzing confrontation
-    symbolic_significance: Primary threat symbol amid alliance strain
-    access_restrictions: ''
-    key_environmental_details:
-    - Semiconductor plants and high-tech corridors
-    - Clandestine oil company conferral
-    global_id: ger_location_0367c6126711
-  - location_uuid: ger_location_7423b10d7d15
-    description_of_involvement: Charlie invokes the Briefing Room's readiness to shatter
-      Oval standoff, propelling Bartlet from private pact to public scrutiny; it looms
-      as narrative pivot, heightening urgency as door cracks open on awaiting press
-      glare.
-    observed_atmosphere: Anticipatory frenzy implied through Charlie's alert
-    functional_role: Imminent destination signaling transition to transparency battle
-    symbolic_significance: Public gauntlet testing Oval-forged resolutions
-    access_restrictions: White House press corps assembly
-    key_environmental_details:
-    - Podium and lights primed off-screen
-    - Hustling staff preparation
-    global_id: ger_location_7423b10d7d15
-  - location_uuid: ger_location_04822a72be5e
-    description_of_involvement: Texas crystallizes as battleground when Bartlet secures
-      Hoynes' speech commitment there, invoked amid concealed carry defense rooted
-      in state pride; it embodies cultural flashpoint where national gun policy collides
-      with Southern electoral peril.
-    observed_atmosphere: Hostile legislative winds implied in debate heat
-    functional_role: Future site of high-risk pro-control address
-    symbolic_significance: Loyalty test in Hoynes' home turf inferno
-    access_restrictions: ''
-    key_environmental_details:
-    - Abilene church massacre shadow
-    - Defiant crowds bracing
-    global_id: ger_location_04822a72be5e
   organization_involvements: []
   derived_from_beat_uuids: *id012
   source_season: 3
@@ -4357,14 +4357,14 @@ events:
     importance: primary
     global_id: ger_agent_198649bce78f
   object_involvements:
-  - object_uuid: ger_object_b0ece4147e89
+  - object_uuid: ger_object_97ba0765769e
     description_of_involvement: Bartlet grabs his suit jacket from the chair back,
       snapping it on as a ritual of transformation from raw Oval confrontation to
       armored public readiness; it symbolizes shedding private vulnerability for presidential
       facade, punctuating his shift amid thunderous finality.
     status_before_event: Draped over the back of an Oval Office chair, untouched post-clash
     status_after_event: Donned by Bartlet as he exits toward Briefing Room
-    global_id: ger_object_b0ece4147e89
+    global_id: ger_object_97ba0765769e
   location_involvements:
   - location_uuid: ger_location_7423b10d7d15
     description_of_involvement: The Briefing Room looms as invoked destination via
@@ -4409,7 +4409,7 @@ events:
     \ and 5th?\" \n JOSH: \"([pointing]) You.\" \n CLIFF: \"([nods]) That's fair.\
     \ Thank you.\""
   is_flashback: false
-  location_uuid: ger_location_a81e8eca3f57
+  location_uuid: ger_location_3424443e26b2
   theme_uuids:
   - ger_theme_b8f3b00e8942
   arc_uuids:
@@ -4475,7 +4475,20 @@ events:
       for one-hour review
     global_id: ger_object_8dffaf9bc4eb
   location_involvements:
-  - location_uuid: ger_location_a81e8eca3f57
+  - location_uuid: ger_location_3424443e26b2
+    description_of_involvement: This shrouded D.C. park cradles the clandestine ambush
+      and diary exchange, its post-rain hush amplifying whispers of subpoena and scandal;
+      fountain-veiled shadows and bench intimacy frame the power play, humanizing
+      political brinkmanship where loyalty frays under perjury's gaze.
+    observed_atmosphere: Chill, tense vulnerability laced with dread and exhaustion
+    functional_role: Neutral ground for high-stakes covert handover
+    symbolic_significance: Public exposure underscoring private peril in power's underbelly
+    access_restrictions: Open public space at night, unobserved by passersby
+    key_environmental_details:
+    - Post-rain slickness and damp chill
+    - Murmuring fountain masking approach
+    global_id: ger_location_3424443e26b2
+  - location_uuid: ger_location_927ebb69556d
     description_of_involvement: Weathered slats host Josh and Donna's rigid huddle,
       site of Cliff's intrusion and Josh's benchside command performance; post-exchange,
       it witnesses awkward reassurance, embodying frayed partnership amid the diary's
@@ -4483,11 +4496,11 @@ events:
     observed_atmosphere: Stiff, shivering discomfort heavy with unspoken doubt
     functional_role: Intimate meeting point for tense negotiation
     symbolic_significance: Fragile perch between protection and precipice
-    access_restrictions: Open public space at night, unobserved by passersby
+    access_restrictions: ''
     key_environmental_details:
     - Cold, damp wood under night exposure
     - Proximity to fountain's concealing curve
-    global_id: ger_location_a81e8eca3f57
+    global_id: ger_location_927ebb69556d
   - location_uuid: ger_location_14165d006bc3
     description_of_involvement: Elegant stone curves fracture moonlight, birthing
       Cliff's predatory lunge that shatters the bench duo's fragile wait; its ceaseless
@@ -4519,6 +4532,144 @@ events:
   - beat_91ec98f28fac9b01
   - beat_c633fba0d59b1b94
   - beat_d3a62e6e880481c6
+  source_season: 3
+  source_database: westwing.s03
+- fabula_uuid: cand_evt_scene_dfcbc10a8060dd75_1
+  global_id: null
+  title: Josh Hands Over Donna's Diary to Cliff Under Threat of Mutual Destruction
+  description: 'Cliff emerges from behind the fountain, catching Josh and a tense
+    Donna off-guard on the park bench. Josh confronts him sternly, dictating strict
+    terms: Cliff can review the diary in a nearby coffee shop for one hour, with a
+    subpoena looming if issues arise, and threatens exposure of Cliff''s own secrets
+    from October 4th and 5th entries if any leak occurs. Cliff acquiesces reluctantly,
+    takes the diary, and departs, heightening the stakes of Donna''s perjury and the
+    administration''s vulnerability in this pivotal act of controlled escalation amid
+    political intrigue.'
+  episode_uuid: ep_sea_ser_the_west_wing_s03_e05
+  scene_sequence: 18
+  sequence_in_scene: 21
+  key_dialogue: *id013
+  is_flashback: false
+  location_uuid: ger_location_927ebb69556d
+  theme_uuids:
+  - ger_theme_b8f3b00e8942
+  arc_uuids:
+  - ger_conflictarc_be85e9d9211a
+  participations:
+  - character_uuid: ger_agent_c9d41ae93618
+    emotional_state: Stern resolve veiling shivering anxiety and self-doubt
+    goals:
+    - Impose controlled terms to limit diary's damage
+    - Deter leaks via personal leverage on Cliff
+    what_happened: Josh leaps up from the bench to confront emerging Cliff head-on,
+      sternly dictating review terms—coffee shop, one-hour limit, subpoena threat—and
+      counters with pointed blackmail over October entries, hands over the diary decisively,
+      then returns shivering to reassure Donna with an awkward arm gesture and sigh-laden
+      promise.
+    observed_status: Josh leaps up from the bench to confront emerging Cliff head-on,
+      sternly dictating review terms—coffee shop, one-hour limit, subpoena threat—and
+      counters with pointed blackmail over October entries, hands over the diary decisively,
+      then returns shivering to reassure Donna with an awkward arm gesture and sigh-laden
+      promise.
+    beliefs:
+    - Mutual secrets ensure fair play and compliance
+    - Protecting Donna outweighs immediate risks
+    observed_traits:
+    - strategic
+    - protective
+    - assertive
+    - vulnerable
+    importance: primary
+    global_id: ger_agent_c9d41ae93618
+  - character_uuid: ger_agent_7fab28b971b5
+    emotional_state: Reluctant fairness tinged with predatory opportunism
+    goals:
+    - Secure the diary for immediate scrutiny
+    - Gauge contents without provoking retaliation
+    what_happened: Cliff materializes abruptly from fountain shadows, absorbs Josh's
+      rigid terms with a curt 'Yeah,' probes the cryptic October dates, nods acceptance
+      of the 'fair' counter-threat, clutches the handed diary, and strides away into
+      the night, sealing the tense pact.
+    observed_status: Cliff materializes abruptly from fountain shadows, absorbs Josh's
+      rigid terms with a curt 'Yeah,' probes the cryptic October dates, nods acceptance
+      of the 'fair' counter-threat, clutches the handed diary, and strides away into
+      the night, sealing the tense pact.
+    beliefs:
+    - Reciprocated leverage levels the perjury battlefield
+    - Diary holds keys to Oversight's ammunition
+    observed_traits:
+    - calculating
+    - resigned
+    - pragmatic
+    - acquiescent
+    importance: primary
+    global_id: ger_agent_7fab28b971b5
+  object_involvements:
+  - object_uuid: ger_object_8dffaf9bc4eb
+    description_of_involvement: The creased diary—pulsing with Donna's perjury-veiling
+      secrets and Cliff's own October exposures—serves as the negotiation's nuclear
+      core, handed from Josh's protective grasp to Cliff under draconian terms, transforming
+      from White House shield to Oversight scalpel in this fragile détente amid leak-war
+      escalations.
+    status_before_event: Concealed in Josh's possession while seated on the park bench
+    status_after_event: Transferred to Cliff's possession, en route to coffee shop
+      for one-hour review
+    global_id: ger_object_8dffaf9bc4eb
+  location_involvements:
+  - location_uuid: ger_location_3424443e26b2
+    description_of_involvement: This shrouded D.C. park cradles the clandestine ambush
+      and diary exchange, its post-rain hush amplifying whispers of subpoena and scandal;
+      fountain-veiled shadows and bench intimacy frame the power play, humanizing
+      political brinkmanship where loyalty frays under perjury's gaze.
+    observed_atmosphere: Chill, tense vulnerability laced with dread and exhaustion
+    functional_role: Neutral ground for high-stakes covert handover
+    symbolic_significance: Public exposure underscoring private peril in power's underbelly
+    access_restrictions: Open public space at night, unobserved by passersby
+    key_environmental_details:
+    - Post-rain slickness and damp chill
+    - Murmuring fountain masking approach
+    global_id: ger_location_3424443e26b2
+  - location_uuid: ger_location_927ebb69556d
+    description_of_involvement: Weathered slats host Josh and Donna's rigid huddle,
+      site of Cliff's intrusion and Josh's benchside command performance; post-exchange,
+      it witnesses awkward reassurance, embodying frayed partnership amid the diary's
+      passage and rising White House siege.
+    observed_atmosphere: Stiff, shivering discomfort heavy with unspoken doubt
+    functional_role: Intimate meeting point for tense negotiation
+    symbolic_significance: Fragile perch between protection and precipice
+    access_restrictions: ''
+    key_environmental_details:
+    - Cold, damp wood under night exposure
+    - Proximity to fountain's concealing curve
+    global_id: ger_location_927ebb69556d
+  - location_uuid: ger_location_14165d006bc3
+    description_of_involvement: Elegant stone curves fracture moonlight, birthing
+      Cliff's predatory lunge that shatters the bench duo's fragile wait; its ceaseless
+      cascade veils approach and departure, heightening ambush drama where perjury
+      threats echo against watery indifference.
+    observed_atmosphere: Shadowy, murmuring suspense veiling sudden confrontation
+    functional_role: Concealment spot for ambusher's emergence
+    symbolic_significance: Inexorable flow mirroring unstoppable intrigue
+    access_restrictions: ''
+    key_environmental_details:
+    - Moonlit cascade and looming sentinel bulk
+    - Post-rain mist enhancing shadows
+    global_id: ger_location_14165d006bc3
+  - location_uuid: ger_location_5d5fffcc2d42
+    description_of_involvement: Fluorescent beacon across the slick street, invoked
+      by Josh as the diary's sanctioned dissection arena—one-hour neutral turf under
+      subpoena specter—its distant glow underscores controlled escalation, tethering
+      the park pact to impending Oversight scrutiny.
+    observed_atmosphere: Harshly lit haven thick with ticking tension
+    functional_role: Designated review site for forbidden inspection
+    symbolic_significance: Public refuge amplifying private reckonings
+    access_restrictions: Open late-night establishment, monitored implicitly
+    key_environmental_details:
+    - Steaming urns and clinking mugs
+    - Rain-dampened windows piercing the gloom
+    global_id: ger_location_5d5fffcc2d42
+  organization_involvements: []
+  derived_from_beat_uuids: *id014
   source_season: 3
   source_database: westwing.s03
 - fabula_uuid: cand_evt_scene_dfcbc10a8060dd75_1
@@ -4603,7 +4754,20 @@ events:
       for one-hour review
     global_id: ger_object_8dffaf9bc4eb
   location_involvements:
-  - location_uuid: ger_location_a81e8eca3f57
+  - location_uuid: ger_location_3424443e26b2
+    description_of_involvement: This shrouded D.C. park cradles the clandestine ambush
+      and diary exchange, its post-rain hush amplifying whispers of subpoena and scandal;
+      fountain-veiled shadows and bench intimacy frame the power play, humanizing
+      political brinkmanship where loyalty frays under perjury's gaze.
+    observed_atmosphere: Chill, tense vulnerability laced with dread and exhaustion
+    functional_role: Neutral ground for high-stakes covert handover
+    symbolic_significance: Public exposure underscoring private peril in power's underbelly
+    access_restrictions: Open public space at night, unobserved by passersby
+    key_environmental_details:
+    - Post-rain slickness and damp chill
+    - Murmuring fountain masking approach
+    global_id: ger_location_3424443e26b2
+  - location_uuid: ger_location_927ebb69556d
     description_of_involvement: Weathered slats host Josh and Donna's rigid huddle,
       site of Cliff's intrusion and Josh's benchside command performance; post-exchange,
       it witnesses awkward reassurance, embodying frayed partnership amid the diary's
@@ -4611,11 +4775,11 @@ events:
     observed_atmosphere: Stiff, shivering discomfort heavy with unspoken doubt
     functional_role: Intimate meeting point for tense negotiation
     symbolic_significance: Fragile perch between protection and precipice
-    access_restrictions: Open public space at night, unobserved by passersby
+    access_restrictions: ''
     key_environmental_details:
     - Cold, damp wood under night exposure
     - Proximity to fountain's concealing curve
-    global_id: ger_location_a81e8eca3f57
+    global_id: ger_location_927ebb69556d
   - location_uuid: ger_location_14165d006bc3
     description_of_involvement: Elegant stone curves fracture moonlight, birthing
       Cliff's predatory lunge that shatters the bench duo's fragile wait; its ceaseless
@@ -4728,7 +4892,20 @@ events:
       for one-hour review
     global_id: ger_object_8dffaf9bc4eb
   location_involvements:
-  - location_uuid: ger_location_a81e8eca3f57
+  - location_uuid: ger_location_3424443e26b2
+    description_of_involvement: This shrouded D.C. park cradles the clandestine ambush
+      and diary exchange, its post-rain hush amplifying whispers of subpoena and scandal;
+      fountain-veiled shadows and bench intimacy frame the power play, humanizing
+      political brinkmanship where loyalty frays under perjury's gaze.
+    observed_atmosphere: Chill, tense vulnerability laced with dread and exhaustion
+    functional_role: Neutral ground for high-stakes covert handover
+    symbolic_significance: Public exposure underscoring private peril in power's underbelly
+    access_restrictions: Open public space at night, unobserved by passersby
+    key_environmental_details:
+    - Post-rain slickness and damp chill
+    - Murmuring fountain masking approach
+    global_id: ger_location_3424443e26b2
+  - location_uuid: ger_location_927ebb69556d
     description_of_involvement: Weathered slats host Josh and Donna's rigid huddle,
       site of Cliff's intrusion and Josh's benchside command performance; post-exchange,
       it witnesses awkward reassurance, embodying frayed partnership amid the diary's
@@ -4736,11 +4913,11 @@ events:
     observed_atmosphere: Stiff, shivering discomfort heavy with unspoken doubt
     functional_role: Intimate meeting point for tense negotiation
     symbolic_significance: Fragile perch between protection and precipice
-    access_restrictions: Open public space at night, unobserved by passersby
+    access_restrictions: ''
     key_environmental_details:
     - Cold, damp wood under night exposure
     - Proximity to fountain's concealing curve
-    global_id: ger_location_a81e8eca3f57
+    global_id: ger_location_927ebb69556d
   - location_uuid: ger_location_14165d006bc3
     description_of_involvement: Elegant stone curves fracture moonlight, birthing
       Cliff's predatory lunge that shatters the bench duo's fragile wait; its ceaseless
@@ -4789,7 +4966,7 @@ events:
   - 'JOSH: (shivering, sighs) It''s starting to get cold already.'
   - 'JOSH: It''s gonna be fine.'
   is_flashback: false
-  location_uuid: ger_location_a81e8eca3f57
+  location_uuid: ger_location_3424443e26b2
   theme_uuids:
   - ger_theme_b8f3b00e8942
   arc_uuids:
@@ -4849,7 +5026,21 @@ events:
       the street
     global_id: ger_object_8dffaf9bc4eb
   location_involvements:
-  - location_uuid: ger_location_a81e8eca3f57
+  - location_uuid: ger_location_3424443e26b2
+    description_of_involvement: The shrouded Washington, D.C. park at night frames
+      the diary's final handover and Josh's vulnerable return to Donna on the bench,
+      its post-rain dampness amplifying physical and emotional shivers while providing
+      neutral ground for this clandestine exchange amid political intrigue.
+    observed_atmosphere: Chilled, tense hush with exhaustion and unspoken dread
+    functional_role: Neutral venue for tense negotiation conclusion and private respite
+    symbolic_significance: Exposes the human fragility beneath power games
+    access_restrictions: Public but isolated in late-night shadows
+    key_environmental_details:
+    - Post-rain slickness and chill
+    - Murmuring fountain nearby
+    - Dark, shrouded ambiance
+    global_id: ger_location_3424443e26b2
+  - location_uuid: ger_location_927ebb69556d
     description_of_involvement: The weathered park bench cradles Donna's stiff vigil
       and Josh's shivering return, hosting his awkward arm gesture and faltering reassurance;
       it becomes a fragile sanctuary for their frayed partnership as they sit side-by-side,
@@ -4857,12 +5048,12 @@ events:
     observed_atmosphere: Rigid tension laced with intimate discomfort and doubt
     functional_role: Intimate space for emotional beat post-handover
     symbolic_significance: Emblem of strained loyalty and unspoken support
-    access_restrictions: Public but isolated in late-night shadows
+    access_restrictions: ''
     key_environmental_details:
     - Cold, damp slats
     - Proximity to fountain's veil
     - Exposed yet secluded in night chill
-    global_id: ger_location_a81e8eca3f57
+    global_id: ger_location_927ebb69556d
   - location_uuid: ger_location_5d5fffcc2d42
     description_of_involvement: The coffee shop across the street looms as the designated
       site for Cliff's imminent diary reading, invoked in Josh's prior terms and now
@@ -4880,6 +5071,128 @@ events:
   organization_involvements: []
   derived_from_beat_uuids: &id016
   - beat_37e234474dd5db2f
+  source_season: 3
+  source_database: westwing.s03
+- fabula_uuid: cand_evt_scene_dfcbc10a8060dd75_2
+  global_id: null
+  title: Josh's Awkward, Shivering Comfort for Donna
+  description: 'After handing off Donna''s diary to Cliff under strict terms, Josh
+    returns to the park bench where an exhausted Donna sits stiffly, staring ahead.
+    Shivering in the post-rain chill, he sighs, drapes his arm awkwardly behind her
+    on the bench—not quite around her shoulders—and offers sincere reassurance: "It''s
+    gonna be fine." Both appear unconvinced, her eyes downcast, him self-doubting.
+    This tender, vulnerable beat humanizes their bond amid perjury fallout and political
+    chaos, providing emotional respite while underscoring unresolved tension and Josh''s
+    protective instincts.'
+  episode_uuid: ep_sea_ser_the_west_wing_s03_e05
+  scene_sequence: 18
+  sequence_in_scene: 22
+  key_dialogue: *id015
+  is_flashback: false
+  location_uuid: ger_location_927ebb69556d
+  theme_uuids:
+  - ger_theme_b8f3b00e8942
+  arc_uuids:
+  - ger_conflictarc_be85e9d9211a
+  participations:
+  - character_uuid: ger_agent_c9d41ae93618
+    emotional_state: Self-doubting optimism masking deep anxiety and fatigue
+    goals:
+    - Reassure Donna to ease her tension
+    - Bolster his own faltering confidence in the deal's success
+    what_happened: Josh stands watching Cliff depart with the diary, then walks back
+      to the bench, sits next to Donna shivering and sighing, drapes his arm awkwardly
+      behind her on the backrest as a hesitant gesture of comfort, and delivers two
+      lines of reassurance amid mutual doubt.
+    observed_status: Josh stands watching Cliff depart with the diary, then walks
+      back to the bench, sits next to Donna shivering and sighing, drapes his arm
+      awkwardly behind her on the backrest as a hesitant gesture of comfort, and delivers
+      two lines of reassurance amid mutual doubt.
+    beliefs:
+    - Their partnership can weather the political storm
+    - The diary exchange with Cliff will neutralize the immediate threat
+    observed_traits:
+    - protective
+    - vulnerable
+    - awkwardly tender
+    importance: primary
+    global_id: ger_agent_c9d41ae93618
+  - character_uuid: ger_agent_7fab28b971b5
+    emotional_state: Calm acceptance with underlying strategic calculation
+    goals:
+    - Secure the diary for review under agreed constraints
+    - Maintain a fragile truce to avoid mutual destruction
+    what_happened: Cliff receives the diary from Josh at the handover's conclusion,
+      acknowledges the terms with a nod and 'That's fair. Thank you,' then takes it
+      and walks away into the night, enabling Josh's return to the bench.
+    observed_status: Cliff receives the diary from Josh at the handover's conclusion,
+      acknowledges the terms with a nod and 'That's fair. Thank you,' then takes it
+      and walks away into the night, enabling Josh's return to the bench.
+    beliefs:
+    - The diary's contents provide leverage worth the risk
+    - Josh's counter-threats demand fair play to de-escalate
+    observed_traits:
+    - composed
+    - pragmatic
+    - conciliatory
+    importance: primary
+    global_id: ger_agent_7fab28b971b5
+  object_involvements:
+  - object_uuid: ger_object_8dffaf9bc4eb
+    description_of_involvement: Donna's diary, the explosive evidence of perjury risks
+      and White House secrets, is handed from Josh to Cliff at the event's outset;
+      Cliff clutches it as contraband and carries it away toward the coffee shop for
+      his one-hour scrutiny, shifting possession and escalating the stakes of their
+      blackmail truce.
+    status_before_event: In Josh's hand, just given to Cliff
+    status_after_event: In Cliff's possession, carried away to coffee shop across
+      the street
+    global_id: ger_object_8dffaf9bc4eb
+  location_involvements:
+  - location_uuid: ger_location_3424443e26b2
+    description_of_involvement: The shrouded Washington, D.C. park at night frames
+      the diary's final handover and Josh's vulnerable return to Donna on the bench,
+      its post-rain dampness amplifying physical and emotional shivers while providing
+      neutral ground for this clandestine exchange amid political intrigue.
+    observed_atmosphere: Chilled, tense hush with exhaustion and unspoken dread
+    functional_role: Neutral venue for tense negotiation conclusion and private respite
+    symbolic_significance: Exposes the human fragility beneath power games
+    access_restrictions: Public but isolated in late-night shadows
+    key_environmental_details:
+    - Post-rain slickness and chill
+    - Murmuring fountain nearby
+    - Dark, shrouded ambiance
+    global_id: ger_location_3424443e26b2
+  - location_uuid: ger_location_927ebb69556d
+    description_of_involvement: The weathered park bench cradles Donna's stiff vigil
+      and Josh's shivering return, hosting his awkward arm gesture and faltering reassurance;
+      it becomes a fragile sanctuary for their frayed partnership as they sit side-by-side,
+      waiting out the peril.
+    observed_atmosphere: Rigid tension laced with intimate discomfort and doubt
+    functional_role: Intimate space for emotional beat post-handover
+    symbolic_significance: Emblem of strained loyalty and unspoken support
+    access_restrictions: ''
+    key_environmental_details:
+    - Cold, damp slats
+    - Proximity to fountain's veil
+    - Exposed yet secluded in night chill
+    global_id: ger_location_927ebb69556d
+  - location_uuid: ger_location_5d5fffcc2d42
+    description_of_involvement: The coffee shop across the street looms as the designated
+      site for Cliff's imminent diary reading, invoked in Josh's prior terms and now
+      activated as Cliff departs with it, underscoring the ticking one-hour deadline
+      that heightens the benchside wait's anxiety.
+    observed_atmosphere: Distant fluorescent glare piercing damp night
+    functional_role: Off-site venue for evidence scrutiny
+    symbolic_significance: Neutral ground for unraveling secrets under subpoena threat
+    access_restrictions: Public late-night refuge
+    key_environmental_details:
+    - Steam from urns visible afar
+    - Harsh lighting across slick street
+    - Hum of stragglers implied
+    global_id: ger_location_5d5fffcc2d42
+  organization_involvements: []
+  derived_from_beat_uuids: *id016
   source_season: 3
   source_database: westwing.s03
 - fabula_uuid: cand_evt_scene_dfcbc10a8060dd75_2
@@ -4958,7 +5271,21 @@ events:
       the street
     global_id: ger_object_8dffaf9bc4eb
   location_involvements:
-  - location_uuid: ger_location_a81e8eca3f57
+  - location_uuid: ger_location_3424443e26b2
+    description_of_involvement: The shrouded Washington, D.C. park at night frames
+      the diary's final handover and Josh's vulnerable return to Donna on the bench,
+      its post-rain dampness amplifying physical and emotional shivers while providing
+      neutral ground for this clandestine exchange amid political intrigue.
+    observed_atmosphere: Chilled, tense hush with exhaustion and unspoken dread
+    functional_role: Neutral venue for tense negotiation conclusion and private respite
+    symbolic_significance: Exposes the human fragility beneath power games
+    access_restrictions: Public but isolated in late-night shadows
+    key_environmental_details:
+    - Post-rain slickness and chill
+    - Murmuring fountain nearby
+    - Dark, shrouded ambiance
+    global_id: ger_location_3424443e26b2
+  - location_uuid: ger_location_927ebb69556d
     description_of_involvement: The weathered park bench cradles Donna's stiff vigil
       and Josh's shivering return, hosting his awkward arm gesture and faltering reassurance;
       it becomes a fragile sanctuary for their frayed partnership as they sit side-by-side,
@@ -4966,12 +5293,12 @@ events:
     observed_atmosphere: Rigid tension laced with intimate discomfort and doubt
     functional_role: Intimate space for emotional beat post-handover
     symbolic_significance: Emblem of strained loyalty and unspoken support
-    access_restrictions: Public but isolated in late-night shadows
+    access_restrictions: ''
     key_environmental_details:
     - Cold, damp slats
     - Proximity to fountain's veil
     - Exposed yet secluded in night chill
-    global_id: ger_location_a81e8eca3f57
+    global_id: ger_location_927ebb69556d
   - location_uuid: ger_location_5d5fffcc2d42
     description_of_involvement: The coffee shop across the street looms as the designated
       site for Cliff's imminent diary reading, invoked in Josh's prior terms and now

@@ -1885,7 +1885,7 @@ class Neo4jExporter:
                                 'acts': acts,
                                 'plot_beats': plot_beats,
                             },
-                            f"Events for {episode['title']}"
+                            f"Events for {episode['title'].replace(chr(10), ' - ')}"
                         )
 
             # Export narrative connections

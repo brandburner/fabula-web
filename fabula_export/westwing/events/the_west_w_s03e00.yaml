@@ -1,5 +1,5 @@
 # Events for Isaac and Ishmael
-# Generated: 2026-02-10T12:17:13.704729
+# Generated: 2026-02-22T16:33:13.123396
 
 episode_uuid: ep_sea_ser_the_west_wing_s03_e00
 episode_title: Isaac and Ishmael
@@ -140,7 +140,7 @@ events:
       intel
     internal_dynamics: ''
     global_id: ger_organization_e02f29e03ccc
-  - organization_uuid: ger_organization_a02ef5855109
+  - organization_uuid: ger_organization_9aeb11cd4ff1
     description_of_involvement: Secret Service is invoked via Greg's urgent JOC call
       as the White House alias hit detonates, positioning them as the lockdown enforcers
       in this inciting pivot, their operational center primed to swarm and shield
@@ -157,7 +157,7 @@ events:
     institutional_impact: Exemplifies elite protection merging with broader anti-terror
       apparatus
     internal_dynamics: ''
-    global_id: ger_organization_a02ef5855109
+    global_id: ger_organization_9aeb11cd4ff1
   derived_from_beat_uuids:
   - beat_f615074dff6e67b7
   - beat_e2f3cc5fb2494274
@@ -216,7 +216,7 @@ events:
     - argumentative
     importance: primary
     global_id: ger_agent_c9d41ae93618
-  - character_uuid: ger_agent_64b2a2c10c8f
+  - character_uuid: ger_agent_14f85d554756
     emotional_state: Determined and steady, projecting calm authority amid Josh's
       frayed desperation.
     goals:
@@ -239,7 +239,7 @@ events:
     - organized
     - unflappable
     importance: primary
-    global_id: ger_agent_64b2a2c10c8f
+    global_id: ger_agent_14f85d554756
   - character_uuid: ger_agent_e2cd808af208
     emotional_state: Anticipatory and unaware of impending crisis.
     goals:
@@ -374,7 +374,7 @@ events:
     - argumentative
     importance: primary
     global_id: ger_agent_c9d41ae93618
-  - character_uuid: ger_agent_64b2a2c10c8f
+  - character_uuid: ger_agent_14f85d554756
     emotional_state: Determined and steady, projecting calm authority amid Josh's
       frayed desperation.
     goals:
@@ -397,7 +397,7 @@ events:
     - organized
     - unflappable
     importance: primary
-    global_id: ger_agent_64b2a2c10c8f
+    global_id: ger_agent_14f85d554756
   - character_uuid: ger_agent_e2cd808af208
     emotional_state: Anticipatory and unaware of impending crisis.
     goals:
@@ -560,7 +560,7 @@ events:
     - decisive
     importance: primary
     global_id: ger_agent_712491b1f672
-  - character_uuid: ger_agent_64b2a2c10c8f
+  - character_uuid: ger_agent_14f85d554756
     emotional_state: Calm patience underscoring steady support amid Josh's flubs and
       rising tension.
     goals:
@@ -581,7 +581,7 @@ events:
     - observant
     - loyal
     importance: primary
-    global_id: ger_agent_64b2a2c10c8f
+    global_id: ger_agent_14f85d554756
   - character_uuid: ger_agent_e2cd808af208
     emotional_state: Casual wit turning to wide-eyed fright amid sudden security clampdown.
     goals:
@@ -683,21 +683,6 @@ events:
     - Open expanse amplifying sudden swarm impact
     global_id: ger_location_03a1b20f797d
   organization_involvements:
-  - organization_uuid: ger_organization_d033a1b32d4f
-    description_of_involvement: Northwest Lobby embodies the institution's public
-      antechamber sealed by Code Black, exposing staff-student mingle to federal security
-      lockdown—framing White House as fortress pulsing with hidden threats.
-    active_representation: Via lobby infrastructure and guard station.
-    power_dynamics: Host entity subordinating visitors to protective imperatives.
-    organizational_goals:
-    - Host educational outreach
-    - Respond to internal security breach protocol
-    influence_mechanisms:
-    - Physical plant lockdown capabilities
-    - Integrated guard communications
-    institutional_impact: Balances openness with ironclad defense.
-    internal_dynamics: ''
-    global_id: ger_organization_d033a1b32d4f
   - organization_uuid: ger_organization_f4b5ba73ce7f
     description_of_involvement: Invoked in Josh's self-recited bio as his pre-White
       House crucible—'joined shortly before Iowa Caucus, served as political director'—lending
@@ -712,23 +697,21 @@ events:
     institutional_impact: Links campaign origins to administration continuity.
     internal_dynamics: ''
     global_id: ger_organization_f4b5ba73ce7f
-  - organization_uuid: ger_organization_a02ef5855109
-    description_of_involvement: Agents materialize en masse bursting doors to enforce
-      Code Black, issuing stay-put orders that halt proceedings—manifesting institutional
-      security hammer dropping on civilian routine, underscoring post-9/11 vigilance
-      primacy.
-    active_representation: Through coordinated agent phalanx executing protocol.
-    power_dynamics: Dominant enforcer overriding all civilian movement.
+  - organization_uuid: ger_organization_bb39d5dd403d
+    description_of_involvement: Northwest Lobby embodies the institution's public
+      antechamber sealed by Code Black, exposing staff-student mingle to federal security
+      lockdown—framing White House as fortress pulsing with hidden threats.
+    active_representation: Via lobby infrastructure and guard station.
+    power_dynamics: Host entity subordinating visitors to protective imperatives.
     organizational_goals:
-    - Initiate and maintain building lockdown
-    - Neutralize potential threats via containment
+    - Host educational outreach
+    - Respond to internal security breach protocol
     influence_mechanisms:
-    - Armed personnel deployment
-    - Verbal commands backed by authority
-    institutional_impact: Reasserts protective bulwark around executive amid terror
-      shadows.
-    internal_dynamics: Chain of command from Crash phone to swarm response.
-    global_id: ger_organization_a02ef5855109
+    - Physical plant lockdown capabilities
+    - Integrated guard communications
+    institutional_impact: Balances openness with ironclad defense.
+    internal_dynamics: ''
+    global_id: ger_organization_bb39d5dd403d
   - organization_uuid: ger_organization_86b6344b4342
     description_of_involvement: Elite students represent the program as competitively
       selected visitors primed for Josh's address, their supervisor Marjorie articulating
@@ -746,6 +729,23 @@ events:
     institutional_impact: Highlights youth pipeline into power corridors amid peril.
     internal_dynamics: ''
     global_id: ger_organization_86b6344b4342
+  - organization_uuid: ger_organization_9aeb11cd4ff1
+    description_of_involvement: Agents materialize en masse bursting doors to enforce
+      Code Black, issuing stay-put orders that halt proceedings—manifesting institutional
+      security hammer dropping on civilian routine, underscoring post-9/11 vigilance
+      primacy.
+    active_representation: Through coordinated agent phalanx executing protocol.
+    power_dynamics: Dominant enforcer overriding all civilian movement.
+    organizational_goals:
+    - Initiate and maintain building lockdown
+    - Neutralize potential threats via containment
+    influence_mechanisms:
+    - Armed personnel deployment
+    - Verbal commands backed by authority
+    institutional_impact: Reasserts protective bulwark around executive amid terror
+      shadows.
+    internal_dynamics: Chain of command from Crash phone to swarm response.
+    global_id: ger_organization_9aeb11cd4ff1
   derived_from_beat_uuids:
   - beat_8784d88302ea0c5c
   - beat_c2304613299e50a6
@@ -822,7 +822,7 @@ events:
     - efficient
     importance: primary
     global_id: ger_agent_712491b1f672
-  - character_uuid: ger_agent_64b2a2c10c8f
+  - character_uuid: ger_agent_14f85d554756
     emotional_state: Calm attentiveness amid rising tension
     goals:
     - Redirect Josh's attention to the emerging threat
@@ -841,7 +841,7 @@ events:
     - supportive
     - precise
     importance: primary
-    global_id: ger_agent_64b2a2c10c8f
+    global_id: ger_agent_14f85d554756
   - character_uuid: ger_agent_e2cd808af208
     emotional_state: Startled fear rippling through youthful curiosity
     goals:
@@ -931,22 +931,6 @@ events:
     - Fluorescent lighting exposing wide expanse
     global_id: ger_location_03a1b20f797d
   organization_involvements:
-  - organization_uuid: ger_organization_a02ef5855109
-    description_of_involvement: Secret Service erupts into action via agents storming
-      doors and Guard's phone relay, enforcing 'stay put' amid Code Black, their machined
-      protocol overriding the lobby's casual gathering—core to post-9/11 vigilance
-      priming the episode's lockdown debates on security versus openness.
-    active_representation: Via on-site agents and guard executing instant response
-    power_dynamics: Absolute authority clamping civilians and staff
-    organizational_goals:
-    - Contain potential threat per crash alert
-    - Verify and secure all personnel
-    influence_mechanisms:
-    - Armed physical intervention
-    - Hierarchical command via radio/phone
-    institutional_impact: Exemplifies inter-agency lockdown primacy over daily operations
-    internal_dynamics: Seamless protocol activation, no visible friction
-    global_id: ger_organization_a02ef5855109
   - organization_uuid: ger_organization_86b6344b4342
     description_of_involvement: Presidential Classroom's elite high school cohort
       stands clustered as unwitting captives when Code Black hits, their competitive
@@ -965,6 +949,22 @@ events:
       peril
     internal_dynamics: ''
     global_id: ger_organization_86b6344b4342
+  - organization_uuid: ger_organization_9aeb11cd4ff1
+    description_of_involvement: Secret Service erupts into action via agents storming
+      doors and Guard's phone relay, enforcing 'stay put' amid Code Black, their machined
+      protocol overriding the lobby's casual gathering—core to post-9/11 vigilance
+      priming the episode's lockdown debates on security versus openness.
+    active_representation: Via on-site agents and guard executing instant response
+    power_dynamics: Absolute authority clamping civilians and staff
+    organizational_goals:
+    - Contain potential threat per crash alert
+    - Verify and secure all personnel
+    influence_mechanisms:
+    - Armed physical intervention
+    - Hierarchical command via radio/phone
+    institutional_impact: Exemplifies inter-agency lockdown primacy over daily operations
+    internal_dynamics: Seamless protocol activation, no visible friction
+    global_id: ger_organization_9aeb11cd4ff1
   derived_from_beat_uuids:
   - beat_35e114ba3b5390fe
   - beat_5b671636cc908339
@@ -1040,7 +1040,7 @@ events:
     - authoritative
     importance: primary
     global_id: ger_agent_dd62525d972a
-  - character_uuid: ger_agent_64b2a2c10c8f
+  - character_uuid: ger_agent_14f85d554756
     emotional_state: Composed and reassuring, projecting steady calm to counter rising
       group anxiety.
     goals:
@@ -1063,7 +1063,7 @@ events:
     - sassy
     - loyal
     importance: primary
-    global_id: ger_agent_64b2a2c10c8f
+    global_id: ger_agent_14f85d554756
   - character_uuid: ger_agent_e2cd808af208
     emotional_state: Frightened and disoriented by abrupt security clampdown.
     goals:
@@ -1102,7 +1102,7 @@ events:
   object_involvements: []
   location_involvements: []
   organization_involvements:
-  - organization_uuid: ger_organization_d033a1b32d4f
+  - organization_uuid: ger_organization_bb39d5dd403d
     description_of_involvement: The White House manifests as fortified lockdown epicenter,
       its Mess commandeered as ad-hoc containment for students and staff; Josh explicitly
       names it as President's home, leveraging institutional symbolism to ground fear
@@ -1120,7 +1120,7 @@ events:
     institutional_impact: Highlights post-9/11 vulnerability, blending homey Mess
       with fortress rigidity.
     internal_dynamics: ''
-    global_id: ger_organization_d033a1b32d4f
+    global_id: ger_organization_bb39d5dd403d
   - organization_uuid: ger_organization_d8b7fe8146de
     description_of_involvement: Josh spotlights Executive Branch as White House core
       and 'most powerful' government arm in opening address, using it to pivot students
@@ -1219,7 +1219,7 @@ events:
     observed_traits: []
     importance: minor
     global_id: ger_agent_712491b1f672
-  - character_uuid: ger_agent_64b2a2c10c8f
+  - character_uuid: ger_agent_14f85d554756
     emotional_state: Calm amusement at the unfolding wit
     goals:
     - Monitor situation post-Leo call
@@ -1237,7 +1237,7 @@ events:
     - observant
     - supportive
     importance: primary
-    global_id: ger_agent_64b2a2c10c8f
+    global_id: ger_agent_14f85d554756
   - character_uuid: ger_agent_e2cd808af208
     emotional_state: Wary tension easing into intrigued amusement
     goals:
@@ -1396,7 +1396,7 @@ events:
     - professional
     importance: primary
     global_id: ger_agent_712491b1f672
-  - character_uuid: ger_agent_64b2a2c10c8f
+  - character_uuid: ger_agent_14f85d554756
     emotional_state: calm and sarcastic
     goals:
     - Shepherd and calm nervous students during lockdown
@@ -1410,7 +1410,7 @@ events:
     beliefs: []
     observed_traits: []
     importance: secondary
-    global_id: ger_agent_64b2a2c10c8f
+    global_id: ger_agent_14f85d554756
   - character_uuid: ger_agent_e2cd808af208
     emotional_state: Nervous and scared, seeking reassurance amid lockdown uncertainty
     goals:
@@ -1446,7 +1446,7 @@ events:
   object_involvements: []
   location_involvements: []
   organization_involvements:
-  - organization_uuid: ger_organization_a02ef5855109
+  - organization_uuid: ger_organization_9aeb11cd4ff1
     description_of_involvement: Secret Service exemplifies heroic sacrifice as Josh
       recounts their drills—one agent solely tasked with bullet interception—contrasting
       staff vulnerabilities to underscore professional valor protecting the White
@@ -1462,7 +1462,7 @@ events:
     institutional_impact: Highlights post-9/11 security apparatus as resilient bulwark
       against extremism
     internal_dynamics: ''
-    global_id: ger_organization_a02ef5855109
+    global_id: ger_organization_9aeb11cd4ff1
   derived_from_beat_uuids:
   - beat_f67d56ee90bfa64f
   - beat_c0fd4f0b9431a15d
@@ -1526,7 +1526,7 @@ events:
     - resilient
     importance: primary
     global_id: ger_agent_c9d41ae93618
-  - character_uuid: ger_agent_64b2a2c10c8f
+  - character_uuid: ger_agent_14f85d554756
     emotional_state: Amused agreement blending sass with steady backing.
     goals:
     - Reinforce Josh's pivot to team support
@@ -1545,7 +1545,7 @@ events:
     - witty
     - loyal
     importance: primary
-    global_id: ger_agent_64b2a2c10c8f
+    global_id: ger_agent_14f85d554756
   - character_uuid: ger_agent_e2cd808af208
     emotional_state: Anxious yet hopeful, hunger underscoring human needs amid fear.
     goals:
@@ -1693,383 +1693,6 @@ events:
   - 'RON: "He works in the White House." / LEO: "It was only a matter of time, huh?"
     / RON: "Yeah."'
   is_flashback: false
-  location_uuid: ger_location_fdc8dd330a47
-  theme_uuids:
-  - ger_theme_50bbfb6fbca8
-  arc_uuids:
-  - ger_conflictarc_f17f62e0f87f
-  participations:
-  - character_uuid: ger_agent_dd62525d972a
-    emotional_state: Stunned disbelief masking dawning dread and fatalistic acceptance
-    goals:
-    - Confirm the intel's accuracy and scope
-    - Gauge the immediate security implications for the White House
-    what_happened: Leo enters with Ron, seals the doors to ensure security, listens
-      intently to the briefing, probes sharply with 'Who's the third?', then reacts
-      with visible surprise verging on speechlessness before uttering grim resignation
-      about the inevitable breach.
-    observed_status: Leo enters with Ron, seals the doors to ensure security, listens
-      intently to the briefing, probes sharply with 'Who's the third?', then reacts
-      with visible surprise verging on speechlessness before uttering grim resignation
-      about the inevitable breach.
-    beliefs:
-    - Post-9/11 threats make infiltration inevitable
-    - Swift confirmation prevents wider panic
-    observed_traits:
-    - authoritative
-    - incredulous
-    - resigned
-    importance: primary
-    global_id: ger_agent_dd62525d972a
-  - character_uuid: ger_agent_db4b29be248d
-    emotional_state: Terse professionalism veiling urgent concern
-    goals:
-    - Brief Leo comprehensively on the threat without leaks
-    - Prompt immediate lockdown and response protocols
-    what_happened: Ron enters alongside Leo, methodically waits for doors to seal
-      before delivering precise, chilling intel on Sharif's arrest, Nabi's naming,
-      NCIC aliases, and the White House Raqim Ali match, concluding tersely with agreement
-      to Leo's fatalism.
-    observed_status: Ron enters alongside Leo, methodically waits for doors to seal
-      before delivering precise, chilling intel on Sharif's arrest, Nabi's naming,
-      NCIC aliases, and the White House Raqim Ali match, concluding tersely with agreement
-      to Leo's fatalism.
-    beliefs:
-    - Security intel demands total containment
-    - No breach is coincidence in terror era
-    observed_traits:
-    - methodical
-    - stoic
-    - protocol-driven
-    importance: primary
-    global_id: ger_agent_db4b29be248d
-  - character_uuid: ger_agent_d7cc6c79bb0e
-    emotional_state: Not directly observed; inferred as self-preserving capitulation
-    goals:
-    - Mitigate personal consequences via testimony
-    - Expose network to authorities
-    what_happened: Khuram Sharif is referenced as the recently arrested terrorist
-      at the border, turning state's evidence to name coconspirators including Yaarun
-      Nabi, his actions catalyzing the intel drop that pierces White House security.
-    observed_status: Khuram Sharif is referenced as the recently arrested terrorist
-      at the border, turning state's evidence to name coconspirators including Yaarun
-      Nabi, his actions catalyzing the intel drop that pierces White House security.
-    beliefs:
-    - Betrayal ensures survival
-    - Plot's failure demands damage control
-    observed_traits:
-    - treacherous
-    - cooperative under pressure
-    importance: primary
-    global_id: ger_agent_d7cc6c79bb0e
-  - character_uuid: ger_agent_03eb814eb5dd
-    emotional_state: Not present; positioned as potential innocent under siege
-    goals:
-    - None directly; object of investigation
-    - Maintain routine duties amid shadows
-    what_happened: Raqim Ali emerges as a critical alias match in NCIC data—one of
-      three, specifically the White House staffer—distinguished from innocents in
-      Spokane and LA, thrusting him into suspicion and propelling the crisis forward.
-    observed_status: Raqim Ali emerges as a critical alias match in NCIC data—one
-      of three, specifically the White House staffer—distinguished from innocents
-      in Spokane and LA, thrusting him into suspicion and propelling the crisis forward.
-    beliefs:
-    - Not inferred; focal point of paranoia
-    - Identity overlap breeds peril
-    observed_traits:
-    - unwittingly implicated
-    - profiled by name
-    importance: primary
-    global_id: ger_agent_03eb814eb5dd
-  object_involvements: []
-  location_involvements:
-  - location_uuid: ger_location_fdc8dd330a47
-    description_of_involvement: The Ontario–Vermont Border Crossing is invoked as
-      the site of Khuram Sharif's custody five hours prior, its tactical seizure grounding
-      the intel's recency and emphasizing border vigilance in post-9/11 terror pursuit.
-    observed_atmosphere: Remote and fortified, echoing procedural lockdown
-    functional_role: Arrest site referenced to establish timeline
-    symbolic_significance: Frontier of national security fragility
-    access_restrictions: Heavily patrolled international boundary
-    key_environmental_details:
-    - Chain-link barriers under floodlights
-    - Gravel under tactical boots
-    global_id: ger_location_fdc8dd330a47
-  - location_uuid: ger_location_9c9befe5c7ad
-    description_of_involvement: Spokane is named as home to one innocent Raqim Ali
-      (software designer), providing crucial distinction that narrows suspicion to
-      the White House match amid alias chaos.
-    observed_atmosphere: Distant Pacific anonymity clashing with crisis
-    functional_role: Distinguishing reference for identity vetting
-    symbolic_significance: Everyday normalcy versus terror shadow
-    access_restrictions: ''
-    key_environmental_details:
-    - Night-cloaked urban hush
-    - Roots tangling with paranoia
-    global_id: ger_location_9c9befe5c7ad
-  - location_uuid: ger_location_584c7f0c6b9e
-    description_of_involvement: LaGuardia Airport surfaces as the foiled bombing target
-      under Sharif's warrant, heightening stakes by linking the intel to domestic
-      aviation peril and White House complicity fears.
-    observed_atmosphere: Locked-down terminals pulsing with dread
-    functional_role: Terror target cited for context
-    symbolic_significance: Vulnerable hub of American transit
-    access_restrictions: Federal sweeps and gate freezes
-    key_environmental_details:
-    - Slick runways under security glare
-    - Blared alerts in concourses
-    global_id: ger_location_584c7f0c6b9e
-  - location_uuid: ger_location_3acd527995ce
-    description_of_involvement: Los Angeles is cited for the second innocent Raqim
-      Ali (caterer), further delineating the White House threat and amplifying profiling
-      tensions in the alias revelation.
-    observed_atmosphere: Smog-veiled coastal sprawl harboring peril
-    functional_role: Distinguishing reference for identity vetting
-    symbolic_significance: Urban anonymity fueling misidentification fears
-    access_restrictions: ''
-    key_environmental_details:
-    - Palm-fringed anonymity
-    - Thrumming freeways of potential threat
-    global_id: ger_location_3acd527995ce
-  organization_involvements:
-  - organization_uuid: ger_organization_e02f29e03ccc
-    description_of_involvement: NCIC is queried for Yaarun Nabi, yielding five aliases
-      including Raqim Ali, its database output confirming the White House link and
-      thrusting federal criminal shadows into the administration's core.
-    active_representation: Via preliminary check delivering alias torrent
-    power_dynamics: Exercising informational authority over security response
-    organizational_goals:
-    - Expose terror network aliases accurately
-    - Facilitate rapid cross-agency threat ID
-    influence_mechanisms:
-    - Criminal database linkages
-    - Warrant and alias dissemination
-    institutional_impact: Amplifies post-9/11 vetting scrutiny on staff
-    internal_dynamics: ''
-    global_id: ger_organization_e02f29e03ccc
-  - organization_uuid: ger_organization_dfdeee657abe
-    description_of_involvement: U.S. Attorney receives Sharif's state's evidence,
-      channeling named coconspirators like Nabi into prosecutorial pursuit, its role
-      underscoring legal machinery grinding against the White House breach.
-    active_representation: Recipient of turning evidence from arrest
-    power_dynamics: Wielding prosecutorial vise on informant intel
-    organizational_goals:
-    - Build airtight case from Sharif's testimony
-    - Coordinate with federal security on leads
-    influence_mechanisms:
-    - Evidence intake and distribution
-    - Interagency terror prosecution pressure
-    institutional_impact: Exposes gaps in White House personnel screening
-    internal_dynamics: ''
-    global_id: ger_organization_dfdeee657abe
-  derived_from_beat_uuids: &id004
-  - beat_fc9b5e8f9df6301f
-  - beat_3c4eae9a7590c1d4
-  - beat_57c18ae9218c081b
-  source_season: 3
-  source_database: westwing.s03
-- fabula_uuid: cand_evt_scene_f13dbd468bcf03cd_1
-  global_id: null
-  title: 'Ron Briefs Leo: Raqim Ali Matches Terrorist Alias'
-  description: 'In a hushed Leo''s office at night, Ron Butterfield waits for the
-    doors to seal before delivering chilling intel: terrorist Khuram Sharif, arrested
-    hours earlier, named coconspirator Yaarun Nabi, whose NCIC aliases include Raqim
-    Ali—one a White House staffer. Stunned, Leo probes for confirmation, then resigns
-    grimly to the inevitable breach. Ron''s terse affirmation escalates post-9/11
-    paranoia, catalyzing Raqim''s apprehension and exposing the White House''s vulnerability
-    in this revelation beat that propels the lockdown crisis.'
-  episode_uuid: ep_sea_ser_the_west_wing_s03_e00
-  scene_sequence: 6
-  sequence_in_scene: 10
-  key_dialogue: *id003
-  is_flashback: false
-  location_uuid: ger_location_9c9befe5c7ad
-  theme_uuids:
-  - ger_theme_50bbfb6fbca8
-  arc_uuids:
-  - ger_conflictarc_f17f62e0f87f
-  participations:
-  - character_uuid: ger_agent_dd62525d972a
-    emotional_state: Stunned disbelief masking dawning dread and fatalistic acceptance
-    goals:
-    - Confirm the intel's accuracy and scope
-    - Gauge the immediate security implications for the White House
-    what_happened: Leo enters with Ron, seals the doors to ensure security, listens
-      intently to the briefing, probes sharply with 'Who's the third?', then reacts
-      with visible surprise verging on speechlessness before uttering grim resignation
-      about the inevitable breach.
-    observed_status: Leo enters with Ron, seals the doors to ensure security, listens
-      intently to the briefing, probes sharply with 'Who's the third?', then reacts
-      with visible surprise verging on speechlessness before uttering grim resignation
-      about the inevitable breach.
-    beliefs:
-    - Post-9/11 threats make infiltration inevitable
-    - Swift confirmation prevents wider panic
-    observed_traits:
-    - authoritative
-    - incredulous
-    - resigned
-    importance: primary
-    global_id: ger_agent_dd62525d972a
-  - character_uuid: ger_agent_db4b29be248d
-    emotional_state: Terse professionalism veiling urgent concern
-    goals:
-    - Brief Leo comprehensively on the threat without leaks
-    - Prompt immediate lockdown and response protocols
-    what_happened: Ron enters alongside Leo, methodically waits for doors to seal
-      before delivering precise, chilling intel on Sharif's arrest, Nabi's naming,
-      NCIC aliases, and the White House Raqim Ali match, concluding tersely with agreement
-      to Leo's fatalism.
-    observed_status: Ron enters alongside Leo, methodically waits for doors to seal
-      before delivering precise, chilling intel on Sharif's arrest, Nabi's naming,
-      NCIC aliases, and the White House Raqim Ali match, concluding tersely with agreement
-      to Leo's fatalism.
-    beliefs:
-    - Security intel demands total containment
-    - No breach is coincidence in terror era
-    observed_traits:
-    - methodical
-    - stoic
-    - protocol-driven
-    importance: primary
-    global_id: ger_agent_db4b29be248d
-  - character_uuid: ger_agent_d7cc6c79bb0e
-    emotional_state: Not directly observed; inferred as self-preserving capitulation
-    goals:
-    - Mitigate personal consequences via testimony
-    - Expose network to authorities
-    what_happened: Khuram Sharif is referenced as the recently arrested terrorist
-      at the border, turning state's evidence to name coconspirators including Yaarun
-      Nabi, his actions catalyzing the intel drop that pierces White House security.
-    observed_status: Khuram Sharif is referenced as the recently arrested terrorist
-      at the border, turning state's evidence to name coconspirators including Yaarun
-      Nabi, his actions catalyzing the intel drop that pierces White House security.
-    beliefs:
-    - Betrayal ensures survival
-    - Plot's failure demands damage control
-    observed_traits:
-    - treacherous
-    - cooperative under pressure
-    importance: primary
-    global_id: ger_agent_d7cc6c79bb0e
-  - character_uuid: ger_agent_03eb814eb5dd
-    emotional_state: Not present; positioned as potential innocent under siege
-    goals:
-    - None directly; object of investigation
-    - Maintain routine duties amid shadows
-    what_happened: Raqim Ali emerges as a critical alias match in NCIC data—one of
-      three, specifically the White House staffer—distinguished from innocents in
-      Spokane and LA, thrusting him into suspicion and propelling the crisis forward.
-    observed_status: Raqim Ali emerges as a critical alias match in NCIC data—one
-      of three, specifically the White House staffer—distinguished from innocents
-      in Spokane and LA, thrusting him into suspicion and propelling the crisis forward.
-    beliefs:
-    - Not inferred; focal point of paranoia
-    - Identity overlap breeds peril
-    observed_traits:
-    - unwittingly implicated
-    - profiled by name
-    importance: primary
-    global_id: ger_agent_03eb814eb5dd
-  object_involvements: []
-  location_involvements:
-  - location_uuid: ger_location_fdc8dd330a47
-    description_of_involvement: The Ontario–Vermont Border Crossing is invoked as
-      the site of Khuram Sharif's custody five hours prior, its tactical seizure grounding
-      the intel's recency and emphasizing border vigilance in post-9/11 terror pursuit.
-    observed_atmosphere: Remote and fortified, echoing procedural lockdown
-    functional_role: Arrest site referenced to establish timeline
-    symbolic_significance: Frontier of national security fragility
-    access_restrictions: Heavily patrolled international boundary
-    key_environmental_details:
-    - Chain-link barriers under floodlights
-    - Gravel under tactical boots
-    global_id: ger_location_fdc8dd330a47
-  - location_uuid: ger_location_9c9befe5c7ad
-    description_of_involvement: Spokane is named as home to one innocent Raqim Ali
-      (software designer), providing crucial distinction that narrows suspicion to
-      the White House match amid alias chaos.
-    observed_atmosphere: Distant Pacific anonymity clashing with crisis
-    functional_role: Distinguishing reference for identity vetting
-    symbolic_significance: Everyday normalcy versus terror shadow
-    access_restrictions: ''
-    key_environmental_details:
-    - Night-cloaked urban hush
-    - Roots tangling with paranoia
-    global_id: ger_location_9c9befe5c7ad
-  - location_uuid: ger_location_584c7f0c6b9e
-    description_of_involvement: LaGuardia Airport surfaces as the foiled bombing target
-      under Sharif's warrant, heightening stakes by linking the intel to domestic
-      aviation peril and White House complicity fears.
-    observed_atmosphere: Locked-down terminals pulsing with dread
-    functional_role: Terror target cited for context
-    symbolic_significance: Vulnerable hub of American transit
-    access_restrictions: Federal sweeps and gate freezes
-    key_environmental_details:
-    - Slick runways under security glare
-    - Blared alerts in concourses
-    global_id: ger_location_584c7f0c6b9e
-  - location_uuid: ger_location_3acd527995ce
-    description_of_involvement: Los Angeles is cited for the second innocent Raqim
-      Ali (caterer), further delineating the White House threat and amplifying profiling
-      tensions in the alias revelation.
-    observed_atmosphere: Smog-veiled coastal sprawl harboring peril
-    functional_role: Distinguishing reference for identity vetting
-    symbolic_significance: Urban anonymity fueling misidentification fears
-    access_restrictions: ''
-    key_environmental_details:
-    - Palm-fringed anonymity
-    - Thrumming freeways of potential threat
-    global_id: ger_location_3acd527995ce
-  organization_involvements:
-  - organization_uuid: ger_organization_e02f29e03ccc
-    description_of_involvement: NCIC is queried for Yaarun Nabi, yielding five aliases
-      including Raqim Ali, its database output confirming the White House link and
-      thrusting federal criminal shadows into the administration's core.
-    active_representation: Via preliminary check delivering alias torrent
-    power_dynamics: Exercising informational authority over security response
-    organizational_goals:
-    - Expose terror network aliases accurately
-    - Facilitate rapid cross-agency threat ID
-    influence_mechanisms:
-    - Criminal database linkages
-    - Warrant and alias dissemination
-    institutional_impact: Amplifies post-9/11 vetting scrutiny on staff
-    internal_dynamics: ''
-    global_id: ger_organization_e02f29e03ccc
-  - organization_uuid: ger_organization_dfdeee657abe
-    description_of_involvement: U.S. Attorney receives Sharif's state's evidence,
-      channeling named coconspirators like Nabi into prosecutorial pursuit, its role
-      underscoring legal machinery grinding against the White House breach.
-    active_representation: Recipient of turning evidence from arrest
-    power_dynamics: Wielding prosecutorial vise on informant intel
-    organizational_goals:
-    - Build airtight case from Sharif's testimony
-    - Coordinate with federal security on leads
-    influence_mechanisms:
-    - Evidence intake and distribution
-    - Interagency terror prosecution pressure
-    institutional_impact: Exposes gaps in White House personnel screening
-    internal_dynamics: ''
-    global_id: ger_organization_dfdeee657abe
-  derived_from_beat_uuids: *id004
-  source_season: 3
-  source_database: westwing.s03
-- fabula_uuid: cand_evt_scene_f13dbd468bcf03cd_1
-  global_id: null
-  title: 'Ron Briefs Leo: Raqim Ali Matches Terrorist Alias'
-  description: 'In a hushed Leo''s office at night, Ron Butterfield waits for the
-    doors to seal before delivering chilling intel: terrorist Khuram Sharif, arrested
-    hours earlier, named coconspirator Yaarun Nabi, whose NCIC aliases include Raqim
-    Ali—one a White House staffer. Stunned, Leo probes for confirmation, then resigns
-    grimly to the inevitable breach. Ron''s terse affirmation escalates post-9/11
-    paranoia, catalyzing Raqim''s apprehension and exposing the White House''s vulnerability
-    in this revelation beat that propels the lockdown crisis.'
-  episode_uuid: ep_sea_ser_the_west_wing_s03_e00
-  scene_sequence: 6
-  sequence_in_scene: 10
-  key_dialogue: *id003
-  is_flashback: false
   location_uuid: ger_location_584c7f0c6b9e
   theme_uuids:
   - ger_theme_50bbfb6fbca8
@@ -2160,30 +1783,6 @@ events:
     global_id: ger_agent_03eb814eb5dd
   object_involvements: []
   location_involvements:
-  - location_uuid: ger_location_fdc8dd330a47
-    description_of_involvement: The Ontario–Vermont Border Crossing is invoked as
-      the site of Khuram Sharif's custody five hours prior, its tactical seizure grounding
-      the intel's recency and emphasizing border vigilance in post-9/11 terror pursuit.
-    observed_atmosphere: Remote and fortified, echoing procedural lockdown
-    functional_role: Arrest site referenced to establish timeline
-    symbolic_significance: Frontier of national security fragility
-    access_restrictions: Heavily patrolled international boundary
-    key_environmental_details:
-    - Chain-link barriers under floodlights
-    - Gravel under tactical boots
-    global_id: ger_location_fdc8dd330a47
-  - location_uuid: ger_location_9c9befe5c7ad
-    description_of_involvement: Spokane is named as home to one innocent Raqim Ali
-      (software designer), providing crucial distinction that narrows suspicion to
-      the White House match amid alias chaos.
-    observed_atmosphere: Distant Pacific anonymity clashing with crisis
-    functional_role: Distinguishing reference for identity vetting
-    symbolic_significance: Everyday normalcy versus terror shadow
-    access_restrictions: ''
-    key_environmental_details:
-    - Night-cloaked urban hush
-    - Roots tangling with paranoia
-    global_id: ger_location_9c9befe5c7ad
   - location_uuid: ger_location_584c7f0c6b9e
     description_of_involvement: LaGuardia Airport surfaces as the foiled bombing target
       under Sharif's warrant, heightening stakes by linking the intel to domestic
@@ -2208,6 +1807,30 @@ events:
     - Palm-fringed anonymity
     - Thrumming freeways of potential threat
     global_id: ger_location_3acd527995ce
+  - location_uuid: ger_location_fdc8dd330a47
+    description_of_involvement: The Ontario–Vermont Border Crossing is invoked as
+      the site of Khuram Sharif's custody five hours prior, its tactical seizure grounding
+      the intel's recency and emphasizing border vigilance in post-9/11 terror pursuit.
+    observed_atmosphere: Remote and fortified, echoing procedural lockdown
+    functional_role: Arrest site referenced to establish timeline
+    symbolic_significance: Frontier of national security fragility
+    access_restrictions: Heavily patrolled international boundary
+    key_environmental_details:
+    - Chain-link barriers under floodlights
+    - Gravel under tactical boots
+    global_id: ger_location_fdc8dd330a47
+  - location_uuid: ger_location_9c9befe5c7ad
+    description_of_involvement: Spokane is named as home to one innocent Raqim Ali
+      (software designer), providing crucial distinction that narrows suspicion to
+      the White House match amid alias chaos.
+    observed_atmosphere: Distant Pacific anonymity clashing with crisis
+    functional_role: Distinguishing reference for identity vetting
+    symbolic_significance: Everyday normalcy versus terror shadow
+    access_restrictions: ''
+    key_environmental_details:
+    - Night-cloaked urban hush
+    - Roots tangling with paranoia
+    global_id: ger_location_9c9befe5c7ad
   organization_involvements:
   - organization_uuid: ger_organization_e02f29e03ccc
     description_of_involvement: NCIC is queried for Yaarun Nabi, yielding five aliases
@@ -2239,7 +1862,10 @@ events:
     institutional_impact: Exposes gaps in White House personnel screening
     internal_dynamics: ''
     global_id: ger_organization_dfdeee657abe
-  derived_from_beat_uuids: *id004
+  derived_from_beat_uuids: &id004
+  - beat_fc9b5e8f9df6301f
+  - beat_3c4eae9a7590c1d4
+  - beat_57c18ae9218c081b
   source_season: 3
   source_database: westwing.s03
 - fabula_uuid: cand_evt_scene_f13dbd468bcf03cd_1
@@ -2347,30 +1973,6 @@ events:
     global_id: ger_agent_03eb814eb5dd
   object_involvements: []
   location_involvements:
-  - location_uuid: ger_location_fdc8dd330a47
-    description_of_involvement: The Ontario–Vermont Border Crossing is invoked as
-      the site of Khuram Sharif's custody five hours prior, its tactical seizure grounding
-      the intel's recency and emphasizing border vigilance in post-9/11 terror pursuit.
-    observed_atmosphere: Remote and fortified, echoing procedural lockdown
-    functional_role: Arrest site referenced to establish timeline
-    symbolic_significance: Frontier of national security fragility
-    access_restrictions: Heavily patrolled international boundary
-    key_environmental_details:
-    - Chain-link barriers under floodlights
-    - Gravel under tactical boots
-    global_id: ger_location_fdc8dd330a47
-  - location_uuid: ger_location_9c9befe5c7ad
-    description_of_involvement: Spokane is named as home to one innocent Raqim Ali
-      (software designer), providing crucial distinction that narrows suspicion to
-      the White House match amid alias chaos.
-    observed_atmosphere: Distant Pacific anonymity clashing with crisis
-    functional_role: Distinguishing reference for identity vetting
-    symbolic_significance: Everyday normalcy versus terror shadow
-    access_restrictions: ''
-    key_environmental_details:
-    - Night-cloaked urban hush
-    - Roots tangling with paranoia
-    global_id: ger_location_9c9befe5c7ad
   - location_uuid: ger_location_584c7f0c6b9e
     description_of_involvement: LaGuardia Airport surfaces as the foiled bombing target
       under Sharif's warrant, heightening stakes by linking the intel to domestic
@@ -2395,6 +1997,404 @@ events:
     - Palm-fringed anonymity
     - Thrumming freeways of potential threat
     global_id: ger_location_3acd527995ce
+  - location_uuid: ger_location_fdc8dd330a47
+    description_of_involvement: The Ontario–Vermont Border Crossing is invoked as
+      the site of Khuram Sharif's custody five hours prior, its tactical seizure grounding
+      the intel's recency and emphasizing border vigilance in post-9/11 terror pursuit.
+    observed_atmosphere: Remote and fortified, echoing procedural lockdown
+    functional_role: Arrest site referenced to establish timeline
+    symbolic_significance: Frontier of national security fragility
+    access_restrictions: Heavily patrolled international boundary
+    key_environmental_details:
+    - Chain-link barriers under floodlights
+    - Gravel under tactical boots
+    global_id: ger_location_fdc8dd330a47
+  - location_uuid: ger_location_9c9befe5c7ad
+    description_of_involvement: Spokane is named as home to one innocent Raqim Ali
+      (software designer), providing crucial distinction that narrows suspicion to
+      the White House match amid alias chaos.
+    observed_atmosphere: Distant Pacific anonymity clashing with crisis
+    functional_role: Distinguishing reference for identity vetting
+    symbolic_significance: Everyday normalcy versus terror shadow
+    access_restrictions: ''
+    key_environmental_details:
+    - Night-cloaked urban hush
+    - Roots tangling with paranoia
+    global_id: ger_location_9c9befe5c7ad
+  organization_involvements:
+  - organization_uuid: ger_organization_e02f29e03ccc
+    description_of_involvement: NCIC is queried for Yaarun Nabi, yielding five aliases
+      including Raqim Ali, its database output confirming the White House link and
+      thrusting federal criminal shadows into the administration's core.
+    active_representation: Via preliminary check delivering alias torrent
+    power_dynamics: Exercising informational authority over security response
+    organizational_goals:
+    - Expose terror network aliases accurately
+    - Facilitate rapid cross-agency threat ID
+    influence_mechanisms:
+    - Criminal database linkages
+    - Warrant and alias dissemination
+    institutional_impact: Amplifies post-9/11 vetting scrutiny on staff
+    internal_dynamics: ''
+    global_id: ger_organization_e02f29e03ccc
+  - organization_uuid: ger_organization_dfdeee657abe
+    description_of_involvement: U.S. Attorney receives Sharif's state's evidence,
+      channeling named coconspirators like Nabi into prosecutorial pursuit, its role
+      underscoring legal machinery grinding against the White House breach.
+    active_representation: Recipient of turning evidence from arrest
+    power_dynamics: Wielding prosecutorial vise on informant intel
+    organizational_goals:
+    - Build airtight case from Sharif's testimony
+    - Coordinate with federal security on leads
+    influence_mechanisms:
+    - Evidence intake and distribution
+    - Interagency terror prosecution pressure
+    institutional_impact: Exposes gaps in White House personnel screening
+    internal_dynamics: ''
+    global_id: ger_organization_dfdeee657abe
+  derived_from_beat_uuids: *id004
+  source_season: 3
+  source_database: westwing.s03
+- fabula_uuid: cand_evt_scene_f13dbd468bcf03cd_1
+  global_id: null
+  title: 'Ron Briefs Leo: Raqim Ali Matches Terrorist Alias'
+  description: 'In a hushed Leo''s office at night, Ron Butterfield waits for the
+    doors to seal before delivering chilling intel: terrorist Khuram Sharif, arrested
+    hours earlier, named coconspirator Yaarun Nabi, whose NCIC aliases include Raqim
+    Ali—one a White House staffer. Stunned, Leo probes for confirmation, then resigns
+    grimly to the inevitable breach. Ron''s terse affirmation escalates post-9/11
+    paranoia, catalyzing Raqim''s apprehension and exposing the White House''s vulnerability
+    in this revelation beat that propels the lockdown crisis.'
+  episode_uuid: ep_sea_ser_the_west_wing_s03_e00
+  scene_sequence: 6
+  sequence_in_scene: 10
+  key_dialogue: *id003
+  is_flashback: false
+  location_uuid: ger_location_fdc8dd330a47
+  theme_uuids:
+  - ger_theme_50bbfb6fbca8
+  arc_uuids:
+  - ger_conflictarc_f17f62e0f87f
+  participations:
+  - character_uuid: ger_agent_dd62525d972a
+    emotional_state: Stunned disbelief masking dawning dread and fatalistic acceptance
+    goals:
+    - Confirm the intel's accuracy and scope
+    - Gauge the immediate security implications for the White House
+    what_happened: Leo enters with Ron, seals the doors to ensure security, listens
+      intently to the briefing, probes sharply with 'Who's the third?', then reacts
+      with visible surprise verging on speechlessness before uttering grim resignation
+      about the inevitable breach.
+    observed_status: Leo enters with Ron, seals the doors to ensure security, listens
+      intently to the briefing, probes sharply with 'Who's the third?', then reacts
+      with visible surprise verging on speechlessness before uttering grim resignation
+      about the inevitable breach.
+    beliefs:
+    - Post-9/11 threats make infiltration inevitable
+    - Swift confirmation prevents wider panic
+    observed_traits:
+    - authoritative
+    - incredulous
+    - resigned
+    importance: primary
+    global_id: ger_agent_dd62525d972a
+  - character_uuid: ger_agent_db4b29be248d
+    emotional_state: Terse professionalism veiling urgent concern
+    goals:
+    - Brief Leo comprehensively on the threat without leaks
+    - Prompt immediate lockdown and response protocols
+    what_happened: Ron enters alongside Leo, methodically waits for doors to seal
+      before delivering precise, chilling intel on Sharif's arrest, Nabi's naming,
+      NCIC aliases, and the White House Raqim Ali match, concluding tersely with agreement
+      to Leo's fatalism.
+    observed_status: Ron enters alongside Leo, methodically waits for doors to seal
+      before delivering precise, chilling intel on Sharif's arrest, Nabi's naming,
+      NCIC aliases, and the White House Raqim Ali match, concluding tersely with agreement
+      to Leo's fatalism.
+    beliefs:
+    - Security intel demands total containment
+    - No breach is coincidence in terror era
+    observed_traits:
+    - methodical
+    - stoic
+    - protocol-driven
+    importance: primary
+    global_id: ger_agent_db4b29be248d
+  - character_uuid: ger_agent_d7cc6c79bb0e
+    emotional_state: Not directly observed; inferred as self-preserving capitulation
+    goals:
+    - Mitigate personal consequences via testimony
+    - Expose network to authorities
+    what_happened: Khuram Sharif is referenced as the recently arrested terrorist
+      at the border, turning state's evidence to name coconspirators including Yaarun
+      Nabi, his actions catalyzing the intel drop that pierces White House security.
+    observed_status: Khuram Sharif is referenced as the recently arrested terrorist
+      at the border, turning state's evidence to name coconspirators including Yaarun
+      Nabi, his actions catalyzing the intel drop that pierces White House security.
+    beliefs:
+    - Betrayal ensures survival
+    - Plot's failure demands damage control
+    observed_traits:
+    - treacherous
+    - cooperative under pressure
+    importance: primary
+    global_id: ger_agent_d7cc6c79bb0e
+  - character_uuid: ger_agent_03eb814eb5dd
+    emotional_state: Not present; positioned as potential innocent under siege
+    goals:
+    - None directly; object of investigation
+    - Maintain routine duties amid shadows
+    what_happened: Raqim Ali emerges as a critical alias match in NCIC data—one of
+      three, specifically the White House staffer—distinguished from innocents in
+      Spokane and LA, thrusting him into suspicion and propelling the crisis forward.
+    observed_status: Raqim Ali emerges as a critical alias match in NCIC data—one
+      of three, specifically the White House staffer—distinguished from innocents
+      in Spokane and LA, thrusting him into suspicion and propelling the crisis forward.
+    beliefs:
+    - Not inferred; focal point of paranoia
+    - Identity overlap breeds peril
+    observed_traits:
+    - unwittingly implicated
+    - profiled by name
+    importance: primary
+    global_id: ger_agent_03eb814eb5dd
+  object_involvements: []
+  location_involvements:
+  - location_uuid: ger_location_584c7f0c6b9e
+    description_of_involvement: LaGuardia Airport surfaces as the foiled bombing target
+      under Sharif's warrant, heightening stakes by linking the intel to domestic
+      aviation peril and White House complicity fears.
+    observed_atmosphere: Locked-down terminals pulsing with dread
+    functional_role: Terror target cited for context
+    symbolic_significance: Vulnerable hub of American transit
+    access_restrictions: Federal sweeps and gate freezes
+    key_environmental_details:
+    - Slick runways under security glare
+    - Blared alerts in concourses
+    global_id: ger_location_584c7f0c6b9e
+  - location_uuid: ger_location_3acd527995ce
+    description_of_involvement: Los Angeles is cited for the second innocent Raqim
+      Ali (caterer), further delineating the White House threat and amplifying profiling
+      tensions in the alias revelation.
+    observed_atmosphere: Smog-veiled coastal sprawl harboring peril
+    functional_role: Distinguishing reference for identity vetting
+    symbolic_significance: Urban anonymity fueling misidentification fears
+    access_restrictions: ''
+    key_environmental_details:
+    - Palm-fringed anonymity
+    - Thrumming freeways of potential threat
+    global_id: ger_location_3acd527995ce
+  - location_uuid: ger_location_fdc8dd330a47
+    description_of_involvement: The Ontario–Vermont Border Crossing is invoked as
+      the site of Khuram Sharif's custody five hours prior, its tactical seizure grounding
+      the intel's recency and emphasizing border vigilance in post-9/11 terror pursuit.
+    observed_atmosphere: Remote and fortified, echoing procedural lockdown
+    functional_role: Arrest site referenced to establish timeline
+    symbolic_significance: Frontier of national security fragility
+    access_restrictions: Heavily patrolled international boundary
+    key_environmental_details:
+    - Chain-link barriers under floodlights
+    - Gravel under tactical boots
+    global_id: ger_location_fdc8dd330a47
+  - location_uuid: ger_location_9c9befe5c7ad
+    description_of_involvement: Spokane is named as home to one innocent Raqim Ali
+      (software designer), providing crucial distinction that narrows suspicion to
+      the White House match amid alias chaos.
+    observed_atmosphere: Distant Pacific anonymity clashing with crisis
+    functional_role: Distinguishing reference for identity vetting
+    symbolic_significance: Everyday normalcy versus terror shadow
+    access_restrictions: ''
+    key_environmental_details:
+    - Night-cloaked urban hush
+    - Roots tangling with paranoia
+    global_id: ger_location_9c9befe5c7ad
+  organization_involvements:
+  - organization_uuid: ger_organization_e02f29e03ccc
+    description_of_involvement: NCIC is queried for Yaarun Nabi, yielding five aliases
+      including Raqim Ali, its database output confirming the White House link and
+      thrusting federal criminal shadows into the administration's core.
+    active_representation: Via preliminary check delivering alias torrent
+    power_dynamics: Exercising informational authority over security response
+    organizational_goals:
+    - Expose terror network aliases accurately
+    - Facilitate rapid cross-agency threat ID
+    influence_mechanisms:
+    - Criminal database linkages
+    - Warrant and alias dissemination
+    institutional_impact: Amplifies post-9/11 vetting scrutiny on staff
+    internal_dynamics: ''
+    global_id: ger_organization_e02f29e03ccc
+  - organization_uuid: ger_organization_dfdeee657abe
+    description_of_involvement: U.S. Attorney receives Sharif's state's evidence,
+      channeling named coconspirators like Nabi into prosecutorial pursuit, its role
+      underscoring legal machinery grinding against the White House breach.
+    active_representation: Recipient of turning evidence from arrest
+    power_dynamics: Wielding prosecutorial vise on informant intel
+    organizational_goals:
+    - Build airtight case from Sharif's testimony
+    - Coordinate with federal security on leads
+    influence_mechanisms:
+    - Evidence intake and distribution
+    - Interagency terror prosecution pressure
+    institutional_impact: Exposes gaps in White House personnel screening
+    internal_dynamics: ''
+    global_id: ger_organization_dfdeee657abe
+  derived_from_beat_uuids: *id004
+  source_season: 3
+  source_database: westwing.s03
+- fabula_uuid: cand_evt_scene_f13dbd468bcf03cd_1
+  global_id: null
+  title: 'Ron Briefs Leo: Raqim Ali Matches Terrorist Alias'
+  description: 'In a hushed Leo''s office at night, Ron Butterfield waits for the
+    doors to seal before delivering chilling intel: terrorist Khuram Sharif, arrested
+    hours earlier, named coconspirator Yaarun Nabi, whose NCIC aliases include Raqim
+    Ali—one a White House staffer. Stunned, Leo probes for confirmation, then resigns
+    grimly to the inevitable breach. Ron''s terse affirmation escalates post-9/11
+    paranoia, catalyzing Raqim''s apprehension and exposing the White House''s vulnerability
+    in this revelation beat that propels the lockdown crisis.'
+  episode_uuid: ep_sea_ser_the_west_wing_s03_e00
+  scene_sequence: 6
+  sequence_in_scene: 10
+  key_dialogue: *id003
+  is_flashback: false
+  location_uuid: ger_location_9c9befe5c7ad
+  theme_uuids:
+  - ger_theme_50bbfb6fbca8
+  arc_uuids:
+  - ger_conflictarc_f17f62e0f87f
+  participations:
+  - character_uuid: ger_agent_dd62525d972a
+    emotional_state: Stunned disbelief masking dawning dread and fatalistic acceptance
+    goals:
+    - Confirm the intel's accuracy and scope
+    - Gauge the immediate security implications for the White House
+    what_happened: Leo enters with Ron, seals the doors to ensure security, listens
+      intently to the briefing, probes sharply with 'Who's the third?', then reacts
+      with visible surprise verging on speechlessness before uttering grim resignation
+      about the inevitable breach.
+    observed_status: Leo enters with Ron, seals the doors to ensure security, listens
+      intently to the briefing, probes sharply with 'Who's the third?', then reacts
+      with visible surprise verging on speechlessness before uttering grim resignation
+      about the inevitable breach.
+    beliefs:
+    - Post-9/11 threats make infiltration inevitable
+    - Swift confirmation prevents wider panic
+    observed_traits:
+    - authoritative
+    - incredulous
+    - resigned
+    importance: primary
+    global_id: ger_agent_dd62525d972a
+  - character_uuid: ger_agent_db4b29be248d
+    emotional_state: Terse professionalism veiling urgent concern
+    goals:
+    - Brief Leo comprehensively on the threat without leaks
+    - Prompt immediate lockdown and response protocols
+    what_happened: Ron enters alongside Leo, methodically waits for doors to seal
+      before delivering precise, chilling intel on Sharif's arrest, Nabi's naming,
+      NCIC aliases, and the White House Raqim Ali match, concluding tersely with agreement
+      to Leo's fatalism.
+    observed_status: Ron enters alongside Leo, methodically waits for doors to seal
+      before delivering precise, chilling intel on Sharif's arrest, Nabi's naming,
+      NCIC aliases, and the White House Raqim Ali match, concluding tersely with agreement
+      to Leo's fatalism.
+    beliefs:
+    - Security intel demands total containment
+    - No breach is coincidence in terror era
+    observed_traits:
+    - methodical
+    - stoic
+    - protocol-driven
+    importance: primary
+    global_id: ger_agent_db4b29be248d
+  - character_uuid: ger_agent_d7cc6c79bb0e
+    emotional_state: Not directly observed; inferred as self-preserving capitulation
+    goals:
+    - Mitigate personal consequences via testimony
+    - Expose network to authorities
+    what_happened: Khuram Sharif is referenced as the recently arrested terrorist
+      at the border, turning state's evidence to name coconspirators including Yaarun
+      Nabi, his actions catalyzing the intel drop that pierces White House security.
+    observed_status: Khuram Sharif is referenced as the recently arrested terrorist
+      at the border, turning state's evidence to name coconspirators including Yaarun
+      Nabi, his actions catalyzing the intel drop that pierces White House security.
+    beliefs:
+    - Betrayal ensures survival
+    - Plot's failure demands damage control
+    observed_traits:
+    - treacherous
+    - cooperative under pressure
+    importance: primary
+    global_id: ger_agent_d7cc6c79bb0e
+  - character_uuid: ger_agent_03eb814eb5dd
+    emotional_state: Not present; positioned as potential innocent under siege
+    goals:
+    - None directly; object of investigation
+    - Maintain routine duties amid shadows
+    what_happened: Raqim Ali emerges as a critical alias match in NCIC data—one of
+      three, specifically the White House staffer—distinguished from innocents in
+      Spokane and LA, thrusting him into suspicion and propelling the crisis forward.
+    observed_status: Raqim Ali emerges as a critical alias match in NCIC data—one
+      of three, specifically the White House staffer—distinguished from innocents
+      in Spokane and LA, thrusting him into suspicion and propelling the crisis forward.
+    beliefs:
+    - Not inferred; focal point of paranoia
+    - Identity overlap breeds peril
+    observed_traits:
+    - unwittingly implicated
+    - profiled by name
+    importance: primary
+    global_id: ger_agent_03eb814eb5dd
+  object_involvements: []
+  location_involvements:
+  - location_uuid: ger_location_584c7f0c6b9e
+    description_of_involvement: LaGuardia Airport surfaces as the foiled bombing target
+      under Sharif's warrant, heightening stakes by linking the intel to domestic
+      aviation peril and White House complicity fears.
+    observed_atmosphere: Locked-down terminals pulsing with dread
+    functional_role: Terror target cited for context
+    symbolic_significance: Vulnerable hub of American transit
+    access_restrictions: Federal sweeps and gate freezes
+    key_environmental_details:
+    - Slick runways under security glare
+    - Blared alerts in concourses
+    global_id: ger_location_584c7f0c6b9e
+  - location_uuid: ger_location_3acd527995ce
+    description_of_involvement: Los Angeles is cited for the second innocent Raqim
+      Ali (caterer), further delineating the White House threat and amplifying profiling
+      tensions in the alias revelation.
+    observed_atmosphere: Smog-veiled coastal sprawl harboring peril
+    functional_role: Distinguishing reference for identity vetting
+    symbolic_significance: Urban anonymity fueling misidentification fears
+    access_restrictions: ''
+    key_environmental_details:
+    - Palm-fringed anonymity
+    - Thrumming freeways of potential threat
+    global_id: ger_location_3acd527995ce
+  - location_uuid: ger_location_fdc8dd330a47
+    description_of_involvement: The Ontario–Vermont Border Crossing is invoked as
+      the site of Khuram Sharif's custody five hours prior, its tactical seizure grounding
+      the intel's recency and emphasizing border vigilance in post-9/11 terror pursuit.
+    observed_atmosphere: Remote and fortified, echoing procedural lockdown
+    functional_role: Arrest site referenced to establish timeline
+    symbolic_significance: Frontier of national security fragility
+    access_restrictions: Heavily patrolled international boundary
+    key_environmental_details:
+    - Chain-link barriers under floodlights
+    - Gravel under tactical boots
+    global_id: ger_location_fdc8dd330a47
+  - location_uuid: ger_location_9c9befe5c7ad
+    description_of_involvement: Spokane is named as home to one innocent Raqim Ali
+      (software designer), providing crucial distinction that narrows suspicion to
+      the White House match amid alias chaos.
+    observed_atmosphere: Distant Pacific anonymity clashing with crisis
+    functional_role: Distinguishing reference for identity vetting
+    symbolic_significance: Everyday normalcy versus terror shadow
+    access_restrictions: ''
+    key_environmental_details:
+    - Night-cloaked urban hush
+    - Roots tangling with paranoia
+    global_id: ger_location_9c9befe5c7ad
   organization_involvements:
   - organization_uuid: ger_organization_e02f29e03ccc
     description_of_involvement: NCIC is queried for Yaarun Nabi, yielding five aliases
@@ -2450,199 +2450,6 @@ events:
     did you go to school?" ALI: "Massachusetts Institute of Technology. I have a Bachelor''s
     degree in Applied Mathematics."'
   - 'LEO: "You know who I am?" ALI: "Of course I know who you are."'
-  is_flashback: false
-  location_uuid: ger_location_2bd72bd72d7e
-  theme_uuids:
-  - ger_theme_50bbfb6fbca8
-  arc_uuids: []
-  participations:
-  - character_uuid: ger_agent_dd62525d972a
-    emotional_state: Charged authority masking lockdown-fueled anxiety
-    goals:
-    - Reassert White House command over the probe
-    - Test Ali's recognition to gauge loyalty and awareness
-    what_happened: Leo suddenly enters the room with Ron Butterfield, fixes a commanding
-      gaze on Ali, asserts dominance by questioning if Ali knows his identity, receives
-      confirmation, then nods to the agent to acknowledge or redirect the interrogation.
-    observed_status: Leo suddenly enters the room with Ron Butterfield, fixes a commanding
-      gaze on Ali, asserts dominance by questioning if Ali knows his identity, receives
-      confirmation, then nods to the agent to acknowledge or redirect the interrogation.
-    beliefs:
-    - Chief of Staff oversight trumps field agents in crises
-    - Personal recognition signals staff vetting integrity
-    observed_traits:
-    - authoritative
-    - intense
-    - decisive
-    importance: primary
-    global_id: ger_agent_dd62525d972a
-  - character_uuid: ger_agent_db4b29be248d
-    emotional_state: Steadfast professionalism amid high-stakes tension
-    goals:
-    - Escort and protect Leo during the volatile confrontation
-    - Monitor room dynamics for immediate security threats
-    what_happened: Ron Butterfield accompanies Leo's abrupt entry into the interrogation
-      room, standing in supportive security presence amid the tense questioning without
-      speaking, bolstering the Chief of Staff's authoritative intrusion.
-    observed_status: Ron Butterfield accompanies Leo's abrupt entry into the interrogation
-      room, standing in supportive security presence amid the tense questioning without
-      speaking, bolstering the Chief of Staff's authoritative intrusion.
-    beliefs:
-    - Protocol demands Secret Service shadow in terror interrogations
-    - Lockdown breaches require layered authority presence
-    observed_traits:
-    - stoic
-    - loyal
-    - vigilant
-    importance: primary
-    global_id: ger_agent_db4b29be248d
-  - character_uuid: ger_agent_03eb814eb5dd
-    emotional_state: Calm assurance veiling underlying tension from profiling scrutiny
-    goals:
-    - Establish irrefutable American credentials to counter suspicion
-    - Demonstrate insider knowledge to affirm loyalty
-    what_happened: Seated at the interrogation table, Raqim Ali responds calmly and
-      precisely to FBI questions about Khuram Sharif, affirming awareness of the NY
-      airport plot and Paterson arrest, then reveals his birthplace and MIT degree,
-      culminating in assured recognition of Leo McGarry.
-    observed_status: Seated at the interrogation table, Raqim Ali responds calmly
-      and precisely to FBI questions about Khuram Sharif, affirming awareness of the
-      NY airport plot and Paterson arrest, then reveals his birthplace and MIT degree,
-      culminating in assured recognition of Leo McGarry.
-    beliefs:
-    - His education and birthplace prove unassailable patriotism
-    - Profiling ignores individual merit for ethnic stereotypes
-    observed_traits:
-    - composed
-    - intelligent
-    - resilient
-    importance: primary
-    global_id: ger_agent_03eb814eb5dd
-  - character_uuid: ger_agent_e1f95f2a08f1
-    emotional_state: Focused determination laced with post-9/11 urgency
-    goals:
-    - Uncover any ties between Ali and Sharif's network
-    - Verify Ali's background to rule out or confirm threat
-    what_happened: Several agents encircle the table in rigid vigilance; one directly
-      interrogates Ali on Khuram Sharif's NY airport bombing attempt, Paterson connections,
-      and educational background, probing for terror links until Leo's nod signals
-      pause.
-    observed_status: Several agents encircle the table in rigid vigilance; one directly
-      interrogates Ali on Khuram Sharif's NY airport bombing attempt, Paterson connections,
-      and educational background, probing for terror links until Leo's nod signals
-      pause.
-    beliefs:
-    - Aliases demand exhaustive cross-checks in terror probes
-    - Ethnic and geographic overlaps warrant intense scrutiny
-    observed_traits:
-    - methodical
-    - suspicious
-    - procedural
-    importance: primary
-    global_id: ger_agent_e1f95f2a08f1
-  object_involvements:
-  - object_uuid: ger_object_88b1b7f1f38e
-    description_of_involvement: The White House interrogation table serves as the
-      stark focal point where Raqim Ali hunches seated, facing FBI agents' accusatory
-      questions; it amplifies isolation and power imbalance, grounding the verbal
-      sparring over Sharif, Paterson, and MIT credentials as Leo enters to shift dynamics.
-    status_before_event: Undeclared, positioned centrally in dark office
-    status_after_event: Undeclared, remains central with Leo's nod signaling procedural
-      pivot
-    global_id: ger_object_88b1b7f1f38e
-  location_involvements:
-  - location_uuid: ger_location_2bd72bd72d7e
-    description_of_involvement: Patterson, New Jersey emerges in dialogue as Ali's
-      birthplace and Sharif's arrest site, invoked by FBI to forge suspicious links;
-      its mention bridges Ali's all-American roots against terror shadows, humanizing
-      him in the interrogation's ethnic profiling crucible.
-    observed_atmosphere: Evoked as a tense, scrutinized suburban cradle
-    functional_role: Background check nexus in verbal probe
-    symbolic_significance: Symbol of corrupted innocence under terror scrutiny
-    access_restrictions: ''
-    key_environmental_details:
-    - Paterson's everyday streets now laden with arrest echoes
-    - New Jersey's ordinary backdrop twisted by federal gaze
-    global_id: ger_location_2bd72bd72d7e
-  - location_uuid: ger_location_d24f042777c0
-    description_of_involvement: This shadowed White House office confines the interrogation,
-      its night-cloaked walls heightening claustrophobia as Ali fields probes on Sharif's
-      plot; Leo's sudden entry fractures the tension, transforming it from isolated
-      grill to hierarchical showdown underscoring profiling's human stakes.
-    observed_atmosphere: Oppressively dim and tense, thick with suspicion
-    functional_role: Interrogation chamber for terror vetting
-    symbolic_significance: Microcosm of post-9/11 prejudice clashing with American
-      identity
-    access_restrictions: Locked down to agents, Ali, and senior entry only
-    key_environmental_details:
-    - Dim night lighting casting long shadows
-    - Encircling agents creating a ring of scrutiny
-    global_id: ger_location_d24f042777c0
-  - location_uuid: ger_location_174c225420b9
-    description_of_involvement: New York airports surface in Ali's calm recounting
-      of Sharif's foiled bombing, positioning the terror plot's scale against his
-      credentials; referenced to test complicity, it amplifies post-9/11 stakes, contrasting
-      vast vulnerability with Ali's grounded rebuttal.
-    observed_atmosphere: Phantom chaos of targeted terminals and sirens
-    functional_role: Cited crime scene escalating suspicion
-    symbolic_significance: Emblem of national peril fueling profiling impulse
-    access_restrictions: ''
-    key_environmental_details:
-    - Rain-slicked runways and coiling security lines
-    - Distant Manhattan skyline under threat
-    global_id: ger_location_174c225420b9
-  organization_involvements:
-  - organization_uuid: ger_organization_d033a1b32d4f
-    description_of_involvement: The White House manifests as the lockdown epicenter
-      hosting this internal purge, with Leo's intrusion embodying its executive muscle
-      overriding FBI probes; Ali's staffer status and recognition of Leo highlight
-      institutional vetting fractures amid terror alias panic.
-    active_representation: Via Chief of Staff Leo and security protocols
-    power_dynamics: Exercising hierarchical override over federal investigators
-    organizational_goals:
-    - Purge internal threats to preserve operational integrity
-    - Reassert command in inter-agency terror response
-    influence_mechanisms:
-    - Senior leadership intervention
-    - Lockdown authority restricting access
-    institutional_impact: Exposes profiling risks eroding staff trust
-    internal_dynamics: Tension between security protocol and prejudice awareness
-    global_id: ger_organization_d033a1b32d4f
-  - organization_uuid: ger_organization_332ed0525fa0
-    description_of_involvement: Massachusetts Institute of Technology bolsters Ali's
-      defense as his alma mater for Applied Mathematics, detonating prestige against
-      profiling; its invocation validates intellectual pedigree, momentarily stalling
-      suspicion in the White House's post-9/11 crucible without physical presence.
-    active_representation: Through Ali's cited credential and degree
-    power_dynamics: Lending unimpeachable legitimacy to individual under fire
-    organizational_goals:
-    - Uphold alumni excellence in crisis scrutiny
-    - Counter ethnic bias via academic merit
-    influence_mechanisms:
-    - Prestige as truth anchor
-    - Educational verification defusing probes
-    institutional_impact: Affirms elite institutions' role in humanizing suspects
-    internal_dynamics: ''
-    global_id: ger_organization_332ed0525fa0
-  derived_from_beat_uuids: &id006
-  - beat_3f6664d59eab6757
-  - beat_61fe0c2cbe2b0b57
-  source_season: 3
-  source_database: westwing.s03
-- fabula_uuid: cand_evt_scene_6b54a60e2545f53d_1
-  global_id: null
-  title: Agent Grills Raqim on Sharif Ties as Leo Enters
-  description: In a tense White House interrogation room amid the post-9/11 lockdown,
-    an FBI agent probes Raqim Ali about suspected terrorist Khuram Sharif, linking
-    him to a New York airport bombing plot and Paterson arrests. Raqim calmly reveals
-    his Paterson birthplace and MIT Applied Mathematics degree, underscoring his all-American
-    credentials and humanizing him against ethnic profiling fears. Leo McGarry enters
-    with Ron Butterfield, asserting authority by confirming Raqim's recognition of
-    him, escalating the power dynamic while setting up potential vindication.
-  episode_uuid: ep_sea_ser_the_west_wing_s03_e00
-  scene_sequence: 7
-  sequence_in_scene: 11
-  key_dialogue: *id005
   is_flashback: false
   location_uuid: ger_location_d24f042777c0
   theme_uuids:
@@ -2744,19 +2551,6 @@ events:
       pivot
     global_id: ger_object_88b1b7f1f38e
   location_involvements:
-  - location_uuid: ger_location_2bd72bd72d7e
-    description_of_involvement: Patterson, New Jersey emerges in dialogue as Ali's
-      birthplace and Sharif's arrest site, invoked by FBI to forge suspicious links;
-      its mention bridges Ali's all-American roots against terror shadows, humanizing
-      him in the interrogation's ethnic profiling crucible.
-    observed_atmosphere: Evoked as a tense, scrutinized suburban cradle
-    functional_role: Background check nexus in verbal probe
-    symbolic_significance: Symbol of corrupted innocence under terror scrutiny
-    access_restrictions: ''
-    key_environmental_details:
-    - Paterson's everyday streets now laden with arrest echoes
-    - New Jersey's ordinary backdrop twisted by federal gaze
-    global_id: ger_location_2bd72bd72d7e
   - location_uuid: ger_location_d24f042777c0
     description_of_involvement: This shadowed White House office confines the interrogation,
       its night-cloaked walls heightening claustrophobia as Ali fields probes on Sharif's
@@ -2771,6 +2565,19 @@ events:
     - Dim night lighting casting long shadows
     - Encircling agents creating a ring of scrutiny
     global_id: ger_location_d24f042777c0
+  - location_uuid: ger_location_2bd72bd72d7e
+    description_of_involvement: Patterson, New Jersey emerges in dialogue as Ali's
+      birthplace and Sharif's arrest site, invoked by FBI to forge suspicious links;
+      its mention bridges Ali's all-American roots against terror shadows, humanizing
+      him in the interrogation's ethnic profiling crucible.
+    observed_atmosphere: Evoked as a tense, scrutinized suburban cradle
+    functional_role: Background check nexus in verbal probe
+    symbolic_significance: Symbol of corrupted innocence under terror scrutiny
+    access_restrictions: ''
+    key_environmental_details:
+    - Paterson's everyday streets now laden with arrest echoes
+    - New Jersey's ordinary backdrop twisted by federal gaze
+    global_id: ger_location_2bd72bd72d7e
   - location_uuid: ger_location_174c225420b9
     description_of_involvement: New York airports surface in Ali's calm recounting
       of Sharif's foiled bombing, positioning the terror plot's scale against his
@@ -2785,7 +2592,7 @@ events:
     - Distant Manhattan skyline under threat
     global_id: ger_location_174c225420b9
   organization_involvements:
-  - organization_uuid: ger_organization_d033a1b32d4f
+  - organization_uuid: ger_organization_bb39d5dd403d
     description_of_involvement: The White House manifests as the lockdown epicenter
       hosting this internal purge, with Leo's intrusion embodying its executive muscle
       overriding FBI probes; Ali's staffer status and recognition of Leo highlight
@@ -2800,7 +2607,200 @@ events:
     - Lockdown authority restricting access
     institutional_impact: Exposes profiling risks eroding staff trust
     internal_dynamics: Tension between security protocol and prejudice awareness
-    global_id: ger_organization_d033a1b32d4f
+    global_id: ger_organization_bb39d5dd403d
+  - organization_uuid: ger_organization_332ed0525fa0
+    description_of_involvement: Massachusetts Institute of Technology bolsters Ali's
+      defense as his alma mater for Applied Mathematics, detonating prestige against
+      profiling; its invocation validates intellectual pedigree, momentarily stalling
+      suspicion in the White House's post-9/11 crucible without physical presence.
+    active_representation: Through Ali's cited credential and degree
+    power_dynamics: Lending unimpeachable legitimacy to individual under fire
+    organizational_goals:
+    - Uphold alumni excellence in crisis scrutiny
+    - Counter ethnic bias via academic merit
+    influence_mechanisms:
+    - Prestige as truth anchor
+    - Educational verification defusing probes
+    institutional_impact: Affirms elite institutions' role in humanizing suspects
+    internal_dynamics: ''
+    global_id: ger_organization_332ed0525fa0
+  derived_from_beat_uuids: &id006
+  - beat_3f6664d59eab6757
+  - beat_61fe0c2cbe2b0b57
+  source_season: 3
+  source_database: westwing.s03
+- fabula_uuid: cand_evt_scene_6b54a60e2545f53d_1
+  global_id: null
+  title: Agent Grills Raqim on Sharif Ties as Leo Enters
+  description: In a tense White House interrogation room amid the post-9/11 lockdown,
+    an FBI agent probes Raqim Ali about suspected terrorist Khuram Sharif, linking
+    him to a New York airport bombing plot and Paterson arrests. Raqim calmly reveals
+    his Paterson birthplace and MIT Applied Mathematics degree, underscoring his all-American
+    credentials and humanizing him against ethnic profiling fears. Leo McGarry enters
+    with Ron Butterfield, asserting authority by confirming Raqim's recognition of
+    him, escalating the power dynamic while setting up potential vindication.
+  episode_uuid: ep_sea_ser_the_west_wing_s03_e00
+  scene_sequence: 7
+  sequence_in_scene: 11
+  key_dialogue: *id005
+  is_flashback: false
+  location_uuid: ger_location_2bd72bd72d7e
+  theme_uuids:
+  - ger_theme_50bbfb6fbca8
+  arc_uuids: []
+  participations:
+  - character_uuid: ger_agent_dd62525d972a
+    emotional_state: Charged authority masking lockdown-fueled anxiety
+    goals:
+    - Reassert White House command over the probe
+    - Test Ali's recognition to gauge loyalty and awareness
+    what_happened: Leo suddenly enters the room with Ron Butterfield, fixes a commanding
+      gaze on Ali, asserts dominance by questioning if Ali knows his identity, receives
+      confirmation, then nods to the agent to acknowledge or redirect the interrogation.
+    observed_status: Leo suddenly enters the room with Ron Butterfield, fixes a commanding
+      gaze on Ali, asserts dominance by questioning if Ali knows his identity, receives
+      confirmation, then nods to the agent to acknowledge or redirect the interrogation.
+    beliefs:
+    - Chief of Staff oversight trumps field agents in crises
+    - Personal recognition signals staff vetting integrity
+    observed_traits:
+    - authoritative
+    - intense
+    - decisive
+    importance: primary
+    global_id: ger_agent_dd62525d972a
+  - character_uuid: ger_agent_db4b29be248d
+    emotional_state: Steadfast professionalism amid high-stakes tension
+    goals:
+    - Escort and protect Leo during the volatile confrontation
+    - Monitor room dynamics for immediate security threats
+    what_happened: Ron Butterfield accompanies Leo's abrupt entry into the interrogation
+      room, standing in supportive security presence amid the tense questioning without
+      speaking, bolstering the Chief of Staff's authoritative intrusion.
+    observed_status: Ron Butterfield accompanies Leo's abrupt entry into the interrogation
+      room, standing in supportive security presence amid the tense questioning without
+      speaking, bolstering the Chief of Staff's authoritative intrusion.
+    beliefs:
+    - Protocol demands Secret Service shadow in terror interrogations
+    - Lockdown breaches require layered authority presence
+    observed_traits:
+    - stoic
+    - loyal
+    - vigilant
+    importance: primary
+    global_id: ger_agent_db4b29be248d
+  - character_uuid: ger_agent_03eb814eb5dd
+    emotional_state: Calm assurance veiling underlying tension from profiling scrutiny
+    goals:
+    - Establish irrefutable American credentials to counter suspicion
+    - Demonstrate insider knowledge to affirm loyalty
+    what_happened: Seated at the interrogation table, Raqim Ali responds calmly and
+      precisely to FBI questions about Khuram Sharif, affirming awareness of the NY
+      airport plot and Paterson arrest, then reveals his birthplace and MIT degree,
+      culminating in assured recognition of Leo McGarry.
+    observed_status: Seated at the interrogation table, Raqim Ali responds calmly
+      and precisely to FBI questions about Khuram Sharif, affirming awareness of the
+      NY airport plot and Paterson arrest, then reveals his birthplace and MIT degree,
+      culminating in assured recognition of Leo McGarry.
+    beliefs:
+    - His education and birthplace prove unassailable patriotism
+    - Profiling ignores individual merit for ethnic stereotypes
+    observed_traits:
+    - composed
+    - intelligent
+    - resilient
+    importance: primary
+    global_id: ger_agent_03eb814eb5dd
+  - character_uuid: ger_agent_e1f95f2a08f1
+    emotional_state: Focused determination laced with post-9/11 urgency
+    goals:
+    - Uncover any ties between Ali and Sharif's network
+    - Verify Ali's background to rule out or confirm threat
+    what_happened: Several agents encircle the table in rigid vigilance; one directly
+      interrogates Ali on Khuram Sharif's NY airport bombing attempt, Paterson connections,
+      and educational background, probing for terror links until Leo's nod signals
+      pause.
+    observed_status: Several agents encircle the table in rigid vigilance; one directly
+      interrogates Ali on Khuram Sharif's NY airport bombing attempt, Paterson connections,
+      and educational background, probing for terror links until Leo's nod signals
+      pause.
+    beliefs:
+    - Aliases demand exhaustive cross-checks in terror probes
+    - Ethnic and geographic overlaps warrant intense scrutiny
+    observed_traits:
+    - methodical
+    - suspicious
+    - procedural
+    importance: primary
+    global_id: ger_agent_e1f95f2a08f1
+  object_involvements:
+  - object_uuid: ger_object_88b1b7f1f38e
+    description_of_involvement: The White House interrogation table serves as the
+      stark focal point where Raqim Ali hunches seated, facing FBI agents' accusatory
+      questions; it amplifies isolation and power imbalance, grounding the verbal
+      sparring over Sharif, Paterson, and MIT credentials as Leo enters to shift dynamics.
+    status_before_event: Undeclared, positioned centrally in dark office
+    status_after_event: Undeclared, remains central with Leo's nod signaling procedural
+      pivot
+    global_id: ger_object_88b1b7f1f38e
+  location_involvements:
+  - location_uuid: ger_location_d24f042777c0
+    description_of_involvement: This shadowed White House office confines the interrogation,
+      its night-cloaked walls heightening claustrophobia as Ali fields probes on Sharif's
+      plot; Leo's sudden entry fractures the tension, transforming it from isolated
+      grill to hierarchical showdown underscoring profiling's human stakes.
+    observed_atmosphere: Oppressively dim and tense, thick with suspicion
+    functional_role: Interrogation chamber for terror vetting
+    symbolic_significance: Microcosm of post-9/11 prejudice clashing with American
+      identity
+    access_restrictions: Locked down to agents, Ali, and senior entry only
+    key_environmental_details:
+    - Dim night lighting casting long shadows
+    - Encircling agents creating a ring of scrutiny
+    global_id: ger_location_d24f042777c0
+  - location_uuid: ger_location_2bd72bd72d7e
+    description_of_involvement: Patterson, New Jersey emerges in dialogue as Ali's
+      birthplace and Sharif's arrest site, invoked by FBI to forge suspicious links;
+      its mention bridges Ali's all-American roots against terror shadows, humanizing
+      him in the interrogation's ethnic profiling crucible.
+    observed_atmosphere: Evoked as a tense, scrutinized suburban cradle
+    functional_role: Background check nexus in verbal probe
+    symbolic_significance: Symbol of corrupted innocence under terror scrutiny
+    access_restrictions: ''
+    key_environmental_details:
+    - Paterson's everyday streets now laden with arrest echoes
+    - New Jersey's ordinary backdrop twisted by federal gaze
+    global_id: ger_location_2bd72bd72d7e
+  - location_uuid: ger_location_174c225420b9
+    description_of_involvement: New York airports surface in Ali's calm recounting
+      of Sharif's foiled bombing, positioning the terror plot's scale against his
+      credentials; referenced to test complicity, it amplifies post-9/11 stakes, contrasting
+      vast vulnerability with Ali's grounded rebuttal.
+    observed_atmosphere: Phantom chaos of targeted terminals and sirens
+    functional_role: Cited crime scene escalating suspicion
+    symbolic_significance: Emblem of national peril fueling profiling impulse
+    access_restrictions: ''
+    key_environmental_details:
+    - Rain-slicked runways and coiling security lines
+    - Distant Manhattan skyline under threat
+    global_id: ger_location_174c225420b9
+  organization_involvements:
+  - organization_uuid: ger_organization_bb39d5dd403d
+    description_of_involvement: The White House manifests as the lockdown epicenter
+      hosting this internal purge, with Leo's intrusion embodying its executive muscle
+      overriding FBI probes; Ali's staffer status and recognition of Leo highlight
+      institutional vetting fractures amid terror alias panic.
+    active_representation: Via Chief of Staff Leo and security protocols
+    power_dynamics: Exercising hierarchical override over federal investigators
+    organizational_goals:
+    - Purge internal threats to preserve operational integrity
+    - Reassert command in inter-agency terror response
+    influence_mechanisms:
+    - Senior leadership intervention
+    - Lockdown authority restricting access
+    institutional_impact: Exposes profiling risks eroding staff trust
+    internal_dynamics: Tension between security protocol and prejudice awareness
+    global_id: ger_organization_bb39d5dd403d
   - organization_uuid: ger_organization_332ed0525fa0
     description_of_involvement: Massachusetts Institute of Technology bolsters Ali's
       defense as his alma mater for Applied Mathematics, detonating prestige against
@@ -2935,19 +2935,6 @@ events:
       pivot
     global_id: ger_object_88b1b7f1f38e
   location_involvements:
-  - location_uuid: ger_location_2bd72bd72d7e
-    description_of_involvement: Patterson, New Jersey emerges in dialogue as Ali's
-      birthplace and Sharif's arrest site, invoked by FBI to forge suspicious links;
-      its mention bridges Ali's all-American roots against terror shadows, humanizing
-      him in the interrogation's ethnic profiling crucible.
-    observed_atmosphere: Evoked as a tense, scrutinized suburban cradle
-    functional_role: Background check nexus in verbal probe
-    symbolic_significance: Symbol of corrupted innocence under terror scrutiny
-    access_restrictions: ''
-    key_environmental_details:
-    - Paterson's everyday streets now laden with arrest echoes
-    - New Jersey's ordinary backdrop twisted by federal gaze
-    global_id: ger_location_2bd72bd72d7e
   - location_uuid: ger_location_d24f042777c0
     description_of_involvement: This shadowed White House office confines the interrogation,
       its night-cloaked walls heightening claustrophobia as Ali fields probes on Sharif's
@@ -2962,6 +2949,19 @@ events:
     - Dim night lighting casting long shadows
     - Encircling agents creating a ring of scrutiny
     global_id: ger_location_d24f042777c0
+  - location_uuid: ger_location_2bd72bd72d7e
+    description_of_involvement: Patterson, New Jersey emerges in dialogue as Ali's
+      birthplace and Sharif's arrest site, invoked by FBI to forge suspicious links;
+      its mention bridges Ali's all-American roots against terror shadows, humanizing
+      him in the interrogation's ethnic profiling crucible.
+    observed_atmosphere: Evoked as a tense, scrutinized suburban cradle
+    functional_role: Background check nexus in verbal probe
+    symbolic_significance: Symbol of corrupted innocence under terror scrutiny
+    access_restrictions: ''
+    key_environmental_details:
+    - Paterson's everyday streets now laden with arrest echoes
+    - New Jersey's ordinary backdrop twisted by federal gaze
+    global_id: ger_location_2bd72bd72d7e
   - location_uuid: ger_location_174c225420b9
     description_of_involvement: New York airports surface in Ali's calm recounting
       of Sharif's foiled bombing, positioning the terror plot's scale against his
@@ -2976,7 +2976,7 @@ events:
     - Distant Manhattan skyline under threat
     global_id: ger_location_174c225420b9
   organization_involvements:
-  - organization_uuid: ger_organization_d033a1b32d4f
+  - organization_uuid: ger_organization_bb39d5dd403d
     description_of_involvement: The White House manifests as the lockdown epicenter
       hosting this internal purge, with Leo's intrusion embodying its executive muscle
       overriding FBI probes; Ali's staffer status and recognition of Leo highlight
@@ -2991,7 +2991,7 @@ events:
     - Lockdown authority restricting access
     institutional_impact: Exposes profiling risks eroding staff trust
     internal_dynamics: Tension between security protocol and prejudice awareness
-    global_id: ger_organization_d033a1b32d4f
+    global_id: ger_organization_bb39d5dd403d
   - organization_uuid: ger_organization_332ed0525fa0
     description_of_involvement: Massachusetts Institute of Technology bolsters Ali's
       defense as his alma mater for Applied Mathematics, detonating prestige against
@@ -3139,7 +3139,7 @@ events:
     - Enclosed space heightening claustrophobic intensity
     global_id: ger_location_d24f042777c0
   organization_involvements:
-  - organization_uuid: ger_organization_d033a1b32d4f
+  - organization_uuid: ger_organization_bb39d5dd403d
     description_of_involvement: The White House orchestrates this internal security
       theater through Leo's intervention, embodying its lockdown machinery as Chief
       of Staff overrides FBI momentum, exposing fault lines in loyalty vetting amid
@@ -3155,7 +3155,7 @@ events:
     institutional_impact: Highlights tension between political loyalty and law enforcement
       autonomy.
     internal_dynamics: Testing inter-agency deference under post-9/11 pressure.
-    global_id: ger_organization_d033a1b32d4f
+    global_id: ger_organization_bb39d5dd403d
   derived_from_beat_uuids:
   - beat_2de832d7c1aa494f
   source_season: 3
@@ -3443,7 +3443,7 @@ events:
     - Scarred table as confrontation barrier
     global_id: ger_location_d24f042777c0
   organization_involvements:
-  - organization_uuid: ger_organization_d033a1b32d4f
+  - organization_uuid: ger_organization_bb39d5dd403d
     description_of_involvement: The White House looms as the crisis epicenter, its
       clerical staff roles and security protocols invoked in Leo's probe of Ali's
       demotion from math expertise, framing the interrogation as institutional vetting
@@ -3459,7 +3459,7 @@ events:
     institutional_impact: Highlights tension between pluralism and profiling in Executive
       Branch
     internal_dynamics: Chain of command prioritizes security over individual rights
-    global_id: ger_organization_d033a1b32d4f
+    global_id: ger_organization_bb39d5dd403d
   - organization_uuid: ger_organization_087b1a1ddc7c
     description_of_involvement: Holy Land Defender emerges as flagged peril when Leo
       cites Ali's father's contribution from papers, igniting Ali's fury and marking
@@ -3937,6 +3937,300 @@ events:
     belonging, and usually, an income. But mostly, they give you a sense of dignity...
     They''re walking around saying, ''Man, I''m in a gang. I''m with them.''"'
   is_flashback: false
+  location_uuid: ger_location_2a1a15363640
+  theme_uuids:
+  - ger_theme_e71e271022c5
+  arc_uuids: []
+  participations:
+  - character_uuid: ger_agent_85d27b56ea9b
+    emotional_state: playful
+    goals:
+    - support and lighten President's interaction with students
+    what_happened: enters with President escorted by agents, jokes about ignoring
+      him, stays after he leaves
+    observed_status: enters with President escorted by agents, jokes about ignoring
+      him, stays after he leaves
+    beliefs: []
+    observed_traits: []
+    importance: secondary
+    global_id: ger_agent_85d27b56ea9b
+  - character_uuid: ger_agent_52e3762c6aed
+    emotional_state: Fierce conviction born from personal experience
+    goals:
+    - Humanize terror's appeal through lived analogy
+    - Challenge simplistic poverty narrative with nuance
+    what_happened: Arms crossed in back doorway, interjects sharply 'Which is the
+      same as it is right here,' then elaborates passionately on Southeast D.C. gangs
+      providing dignity and pride, drawing parallels to terrorism while invoking Compton,
+      Detroit, South Bronx.
+    observed_status: Arms crossed in back doorway, interjects sharply 'Which is the
+      same as it is right here,' then elaborates passionately on Southeast D.C. gangs
+      providing dignity and pride, drawing parallels to terrorism while invoking Compton,
+      Detroit, South Bronx.
+    beliefs:
+    - Gang life mirrors terrorism's psychological draw
+    - American urban decay fosters same extremism
+    observed_traits:
+    - passionate
+    - authentic
+    - incisive
+    importance: primary
+    global_id: ger_agent_52e3762c6aed
+  - character_uuid: ger_agent_c9d41ae93618
+    emotional_state: Sarcastic detachment shifting to attentive redirection
+    goals:
+    - Deflect from banter to substantive discussion
+    - Maintain control of room dynamics
+    what_happened: Leans casually on counter next to C.J., acknowledges student's
+      raised hand with 'Yeah?', repeats the question to spotlight it, bridging banter
+      to serious debate without dominating.
+    observed_status: Leans casually on counter next to C.J., acknowledges student's
+      raised hand with 'Yeah?', repeats the question to spotlight it, bridging banter
+      to serious debate without dominating.
+    beliefs:
+    - Humor eases tension but truth demands focus
+    - Students merit direct engagement
+    observed_traits:
+    - sarcastic
+    - facilitative
+    - wry
+    importance: primary
+    global_id: ger_agent_c9d41ae93618
+  - character_uuid: ger_agent_198649bce78f
+    emotional_state: good-natured and authoritative
+    goals:
+    - inspire students by condemning martyrdom and promoting living heroes
+    what_happened: enters escorted by agents with Abbey, stands at front, greets and
+      jokes with students and staff, questions C.J., asks Charlie about apples, distinguishes
+      martyrs from heroes in response to student, exits
+    observed_status: enters escorted by agents with Abbey, stands at front, greets
+      and jokes with students and staff, questions C.J., asks Charlie about apples,
+      distinguishes martyrs from heroes in response to student, exits
+    beliefs: []
+    observed_traits: []
+    importance: primary
+    global_id: ger_agent_198649bce78f
+  - character_uuid: ger_agent_04bbccb1e352
+    emotional_state: Somber gravity underscoring crisis awareness
+    goals:
+    - Educate students on terrorism's socioeconomic roots
+    - Frame extremism as preventable human failing
+    what_happened: Stands by coffee area, delivers grave analysis pinning terrorism
+      to global poverty and despair as crime's incubator, setting stage for Charlie's
+      counterpoint with poised authority.
+    observed_status: Stands by coffee area, delivers grave analysis pinning terrorism
+      to global poverty and despair as crime's incubator, setting stage for Charlie's
+      counterpoint with poised authority.
+    beliefs:
+    - Poverty universally breeds violence
+    - Understanding origins aids prevention
+    observed_traits:
+    - serious
+    - analytical
+    - empathetic
+    importance: primary
+    global_id: ger_agent_04bbccb1e352
+  - character_uuid: ger_agent_712491b1f672
+    emotional_state: ''
+    goals:
+    - provide security escort during lockdown
+    what_happened: several agents open door and walk in, escort President and Abbey,
+      most follow Bartlet out
+    observed_status: several agents open door and walk in, escort President and Abbey,
+      most follow Bartlet out
+    beliefs: []
+    observed_traits: []
+    importance: minor
+    global_id: ger_agent_712491b1f672
+  - character_uuid: ger_agent_7854a70e34ea
+    emotional_state: ''
+    goals: []
+    what_happened: walks out of the mess
+    observed_status: walks out of the mess
+    beliefs: []
+    observed_traits: []
+    importance: minor
+    global_id: ger_agent_7854a70e34ea
+  - character_uuid: ger_agent_e2cd808af208
+    emotional_state: Anxious fascination amid enforced lockdown
+    goals:
+    - Grasp complex roots of global threats
+    - Extract wisdom from trapped leaders
+    what_happened: Gathered attentively as captive audience, one raises hand to probe
+      terrorism origins, collectively turning to Charlie's gang analogy, absorbing
+      the gritty lesson in crisis confines.
+    observed_status: Gathered attentively as captive audience, one raises hand to
+      probe terrorism origins, collectively turning to Charlie's gang analogy, absorbing
+      the gritty lesson in crisis confines.
+    beliefs:
+    - Elite access unlocks profound insights
+    - Crisis reveals leadership truths
+    observed_traits:
+    - engaged
+    - receptive
+    - vulnerable
+    importance: primary
+    global_id: ger_agent_e2cd808af208
+  - character_uuid: ger_agent_1ac3e9868afb
+    emotional_state: ''
+    goals:
+    - enforce protocol for Presidential Classroom students
+    what_happened: whispers to everyone to stand for President
+    observed_status: whispers to everyone to stand for President
+    beliefs: []
+    observed_traits: []
+    importance: minor
+    global_id: ger_agent_1ac3e9868afb
+  - character_uuid: ger_agent_614a4c7fe5e1
+    emotional_state: Intensely curious, undaunted by high-stakes surroundings
+    goals:
+    - Seek truthful insight into terrorism's causes
+    - Engage senior staff in honest discourse
+    what_happened: Raises hand to interrupt staff banter, boldly questions terrorists'
+      origins, then prompts 'Gangs?' in response to Charlie's rundown of urban ills,
+      piercing the room's tension with youthful curiosity amid lockdown stasis.
+    observed_status: Raises hand to interrupt staff banter, boldly questions terrorists'
+      origins, then prompts 'Gangs?' in response to Charlie's rundown of urban ills,
+      piercing the room's tension with youthful curiosity amid lockdown stasis.
+    beliefs:
+    - Extremism has comprehensible human roots
+    - Direct questions yield real answers from leaders
+    observed_traits:
+    - curious
+    - bold
+    - engaged
+    importance: primary
+    global_id: ger_agent_614a4c7fe5e1
+  - character_uuid: ger_agent_4ed2cd709f51
+    emotional_state: ''
+    goals: []
+    what_happened: confirms to President they are stuck here
+    observed_status: confirms to President they are stuck here
+    beliefs: []
+    observed_traits: []
+    importance: minor
+    global_id: ger_agent_4ed2cd709f51
+  object_involvements:
+  - object_uuid: ger_object_b5cf765c8e8f
+    description_of_involvement: C.J. commands the stool at the mess hall's front,
+      legs braced as she leans into her coalition speech, its elevated perch amplifying
+      her voice until student's question redirects focus—symbolizing staff's impromptu
+      lectern in transforming lockdown into teachable seminar.
+    status_before_event: Occupied by C.J. in stable position at room front
+    status_after_event: Still occupied by C.J. as debate continues
+    global_id: ger_object_b5cf765c8e8f
+  - object_uuid: ger_object_657d1c0d26b4
+    description_of_involvement: Josh leans elbows on the worn counter beside C.J.,
+      its surface anchoring his casual posture during banter and question acknowledgment;
+      nearby coffee area positions Sam, the fixture grounding senior staff cluster
+      as debate ignites thematic fire.
+    status_before_event: Bearing Josh's weight, intact in mess hall
+    status_after_event: Unchanged, supporting ongoing staff presence
+    global_id: ger_object_657d1c0d26b4
+  location_involvements:
+  - location_uuid: ger_location_2a1a15363640
+    description_of_involvement: Referenced by Charlie as kin to Southeast D.C.'s gang
+      forge, Detroit amplifies the narrative of urban decay breeding dignity-through-violence,
+      humanizing terror recruitment.
+    observed_atmosphere: Forsaken, siren-wailing despair
+    functional_role: Reinforcing parallel in spoken analogy
+    symbolic_significance: National scope of extremism's seeds
+    access_restrictions: ''
+    key_environmental_details:
+    - Crumbling blocks
+    - Rival gang territories
+    global_id: ger_location_2a1a15363640
+  - location_uuid: ger_location_c76fe57153e3
+    description_of_involvement: Charlie invokes Southeast D.C. as prime example of
+      domestic despair mirroring global terror incubators, detailing dilapidated schools,
+      drugs, guns, and gangs to illuminate extremism's universal psychology in the
+      students' eyes.
+    observed_atmosphere: Evoked as gritty, hopeless underbelly pulsing with survival
+      defiance
+    functional_role: Conceptual parallel drawing foreign threat home
+    symbolic_significance: Bridge between international peril and American failure
+    access_restrictions: ''
+    key_environmental_details:
+    - Dilapidated schools
+    - Drug-infested streets
+    - Gun violence
+    - Gang territories
+    global_id: ger_location_c76fe57153e3
+  - location_uuid: ger_location_be2be3c308f5
+    description_of_involvement: Charlie name-drops Compton alongside Southeast D.C.
+      as gang-ravaged zones offering pride to the desperate, extending poverty-terror
+      analogy to underscore its borderless allure.
+    observed_atmosphere: Shadowed, violent crucible of forged loyalties
+    functional_role: Illustrative example in extremism debate
+    symbolic_significance: Echo of domestic radicalization potential
+    access_restrictions: ''
+    key_environmental_details:
+    - Gang corners
+    - Poverty vise
+    - Brotherhood codes
+    global_id: ger_location_be2be3c308f5
+  - location_uuid: ger_location_f4af8297d94f
+    description_of_involvement: Charlie lists South Bronx with other hellholes, its
+      tenement gangs exemplifying pride wrested from oblivion, capping his urgent
+      equation of street life to jihadist pull.
+    observed_atmosphere: Echoing threats in concrete decay
+    functional_role: Closing example in poverty-gang thesis
+    symbolic_significance: Marginalization's radical forge
+    access_restrictions: ''
+    key_environmental_details:
+    - Tenement husks
+    - Survival codes
+    global_id: ger_location_f4af8297d94f
+  organization_involvements:
+  - organization_uuid: ger_organization_86b6344b4342
+    description_of_involvement: Elite high schoolers from Presidential Classroom drive
+      the debate by questioning terrorism origins, their competitive pedigree invoked
+      by Charlie as 'badge' contrasting gang allure.
+    active_representation: Via trapped student participants probing leaders
+    power_dynamics: Youthful inquiry challenging adult authority
+    organizational_goals:
+    - Expose students to crisis governance
+    - Forge future leaders through real peril
+    influence_mechanisms:
+    - Selection of sharp minds
+    - Structured civic immersion
+    institutional_impact: Transforms field trip into frontline civics lesson
+    internal_dynamics: ''
+    global_id: ger_organization_86b6344b4342
+  - organization_uuid: ger_organization_4fd5b2514cf2
+    description_of_involvement: Charlie equates Southeast D.C. gangs directly to terrorists,
+      portraying them as providers of belonging, income, dignity, and pride to youth
+      denied elsewhere—flipping poverty narrative into seductive brotherhood parallel.
+    active_representation: Through Charlie's personal testimony and vivid analogies
+    power_dynamics: Empowered as psychological magnet rivaling state failure
+    organizational_goals:
+    - Recruit via dignity and family
+    - Instill pride against societal erasure
+    influence_mechanisms:
+    - Offer belonging in despair
+    - Confer status through violence
+    institutional_impact: Highlights governmental neglect fueling domestic extremism
+    internal_dynamics: ''
+    global_id: ger_organization_4fd5b2514cf2
+  derived_from_beat_uuids: &id008
+  - beat_b5becda83fb93675
+  source_season: 3
+  source_database: westwing.s03
+- fabula_uuid: cand_evt_scene_0c7052794fb50051_1
+  global_id: null
+  title: 'Poverty Incubates Terror: Sam and Charlie''s Gang Parallel'
+  description: A student interrupts the C.J.-Josh sparring by asking where terrorists
+    come from, sparking a pivotal debate on extremism's roots. Sam attributes it to
+    abject poverty as a global incubator for crime, but Charlie counters sharply,
+    equating it to inner-city gang life in Southeast D.C.—offering dignity, belonging,
+    and pride to the marginalized. This exchange humanizes terrorism's allure, bridging
+    international threats to American urban decay, deepening thematic layers on despair's
+    universal pull amid lockdown anxiety and setting up contrasts with heroic ideals.
+  episode_uuid: ep_sea_ser_the_west_wing_s03_e00
+  scene_sequence: 12
+  sequence_in_scene: 19
+  key_dialogue: *id007
+  is_flashback: false
   location_uuid: ger_location_c76fe57153e3
   theme_uuids:
   - ger_theme_e71e271022c5
@@ -4128,6 +4422,18 @@ events:
     status_after_event: Unchanged, supporting ongoing staff presence
     global_id: ger_object_657d1c0d26b4
   location_involvements:
+  - location_uuid: ger_location_2a1a15363640
+    description_of_involvement: Referenced by Charlie as kin to Southeast D.C.'s gang
+      forge, Detroit amplifies the narrative of urban decay breeding dignity-through-violence,
+      humanizing terror recruitment.
+    observed_atmosphere: Forsaken, siren-wailing despair
+    functional_role: Reinforcing parallel in spoken analogy
+    symbolic_significance: National scope of extremism's seeds
+    access_restrictions: ''
+    key_environmental_details:
+    - Crumbling blocks
+    - Rival gang territories
+    global_id: ger_location_2a1a15363640
   - location_uuid: ger_location_c76fe57153e3
     description_of_involvement: Charlie invokes Southeast D.C. as prime example of
       domestic despair mirroring global terror incubators, detailing dilapidated schools,
@@ -4169,18 +4475,6 @@ events:
     - Tenement husks
     - Survival codes
     global_id: ger_location_f4af8297d94f
-  - location_uuid: ger_location_2a1a15363640
-    description_of_involvement: Referenced by Charlie as kin to Southeast D.C.'s gang
-      forge, Detroit amplifies the narrative of urban decay breeding dignity-through-violence,
-      humanizing terror recruitment.
-    observed_atmosphere: Forsaken, siren-wailing despair
-    functional_role: Reinforcing parallel in spoken analogy
-    symbolic_significance: National scope of extremism's seeds
-    access_restrictions: ''
-    key_environmental_details:
-    - Crumbling blocks
-    - Rival gang territories
-    global_id: ger_location_2a1a15363640
   organization_involvements:
   - organization_uuid: ger_organization_86b6344b4342
     description_of_involvement: Elite high schoolers from Presidential Classroom drive
@@ -4212,8 +4506,7 @@ events:
     institutional_impact: Highlights governmental neglect fueling domestic extremism
     internal_dynamics: ''
     global_id: ger_organization_4fd5b2514cf2
-  derived_from_beat_uuids: &id008
-  - beat_b5becda83fb93675
+  derived_from_beat_uuids: *id008
   source_season: 3
   source_database: westwing.s03
 - fabula_uuid: cand_evt_scene_0c7052794fb50051_1
@@ -4422,6 +4715,18 @@ events:
     status_after_event: Unchanged, supporting ongoing staff presence
     global_id: ger_object_657d1c0d26b4
   location_involvements:
+  - location_uuid: ger_location_2a1a15363640
+    description_of_involvement: Referenced by Charlie as kin to Southeast D.C.'s gang
+      forge, Detroit amplifies the narrative of urban decay breeding dignity-through-violence,
+      humanizing terror recruitment.
+    observed_atmosphere: Forsaken, siren-wailing despair
+    functional_role: Reinforcing parallel in spoken analogy
+    symbolic_significance: National scope of extremism's seeds
+    access_restrictions: ''
+    key_environmental_details:
+    - Crumbling blocks
+    - Rival gang territories
+    global_id: ger_location_2a1a15363640
   - location_uuid: ger_location_c76fe57153e3
     description_of_involvement: Charlie invokes Southeast D.C. as prime example of
       domestic despair mirroring global terror incubators, detailing dilapidated schools,
@@ -4463,18 +4768,6 @@ events:
     - Tenement husks
     - Survival codes
     global_id: ger_location_f4af8297d94f
-  - location_uuid: ger_location_2a1a15363640
-    description_of_involvement: Referenced by Charlie as kin to Southeast D.C.'s gang
-      forge, Detroit amplifies the narrative of urban decay breeding dignity-through-violence,
-      humanizing terror recruitment.
-    observed_atmosphere: Forsaken, siren-wailing despair
-    functional_role: Reinforcing parallel in spoken analogy
-    symbolic_significance: National scope of extremism's seeds
-    access_restrictions: ''
-    key_environmental_details:
-    - Crumbling blocks
-    - Rival gang territories
-    global_id: ger_location_2a1a15363640
   organization_involvements:
   - organization_uuid: ger_organization_86b6344b4342
     description_of_involvement: Elite high schoolers from Presidential Classroom drive
@@ -4715,6 +5008,18 @@ events:
     status_after_event: Unchanged, supporting ongoing staff presence
     global_id: ger_object_657d1c0d26b4
   location_involvements:
+  - location_uuid: ger_location_2a1a15363640
+    description_of_involvement: Referenced by Charlie as kin to Southeast D.C.'s gang
+      forge, Detroit amplifies the narrative of urban decay breeding dignity-through-violence,
+      humanizing terror recruitment.
+    observed_atmosphere: Forsaken, siren-wailing despair
+    functional_role: Reinforcing parallel in spoken analogy
+    symbolic_significance: National scope of extremism's seeds
+    access_restrictions: ''
+    key_environmental_details:
+    - Crumbling blocks
+    - Rival gang territories
+    global_id: ger_location_2a1a15363640
   - location_uuid: ger_location_c76fe57153e3
     description_of_involvement: Charlie invokes Southeast D.C. as prime example of
       domestic despair mirroring global terror incubators, detailing dilapidated schools,
@@ -4756,311 +5061,6 @@ events:
     - Tenement husks
     - Survival codes
     global_id: ger_location_f4af8297d94f
-  - location_uuid: ger_location_2a1a15363640
-    description_of_involvement: Referenced by Charlie as kin to Southeast D.C.'s gang
-      forge, Detroit amplifies the narrative of urban decay breeding dignity-through-violence,
-      humanizing terror recruitment.
-    observed_atmosphere: Forsaken, siren-wailing despair
-    functional_role: Reinforcing parallel in spoken analogy
-    symbolic_significance: National scope of extremism's seeds
-    access_restrictions: ''
-    key_environmental_details:
-    - Crumbling blocks
-    - Rival gang territories
-    global_id: ger_location_2a1a15363640
-  organization_involvements:
-  - organization_uuid: ger_organization_86b6344b4342
-    description_of_involvement: Elite high schoolers from Presidential Classroom drive
-      the debate by questioning terrorism origins, their competitive pedigree invoked
-      by Charlie as 'badge' contrasting gang allure.
-    active_representation: Via trapped student participants probing leaders
-    power_dynamics: Youthful inquiry challenging adult authority
-    organizational_goals:
-    - Expose students to crisis governance
-    - Forge future leaders through real peril
-    influence_mechanisms:
-    - Selection of sharp minds
-    - Structured civic immersion
-    institutional_impact: Transforms field trip into frontline civics lesson
-    internal_dynamics: ''
-    global_id: ger_organization_86b6344b4342
-  - organization_uuid: ger_organization_4fd5b2514cf2
-    description_of_involvement: Charlie equates Southeast D.C. gangs directly to terrorists,
-      portraying them as providers of belonging, income, dignity, and pride to youth
-      denied elsewhere—flipping poverty narrative into seductive brotherhood parallel.
-    active_representation: Through Charlie's personal testimony and vivid analogies
-    power_dynamics: Empowered as psychological magnet rivaling state failure
-    organizational_goals:
-    - Recruit via dignity and family
-    - Instill pride against societal erasure
-    influence_mechanisms:
-    - Offer belonging in despair
-    - Confer status through violence
-    institutional_impact: Highlights governmental neglect fueling domestic extremism
-    internal_dynamics: ''
-    global_id: ger_organization_4fd5b2514cf2
-  derived_from_beat_uuids: *id008
-  source_season: 3
-  source_database: westwing.s03
-- fabula_uuid: cand_evt_scene_0c7052794fb50051_1
-  global_id: null
-  title: 'Poverty Incubates Terror: Sam and Charlie''s Gang Parallel'
-  description: A student interrupts the C.J.-Josh sparring by asking where terrorists
-    come from, sparking a pivotal debate on extremism's roots. Sam attributes it to
-    abject poverty as a global incubator for crime, but Charlie counters sharply,
-    equating it to inner-city gang life in Southeast D.C.—offering dignity, belonging,
-    and pride to the marginalized. This exchange humanizes terrorism's allure, bridging
-    international threats to American urban decay, deepening thematic layers on despair's
-    universal pull amid lockdown anxiety and setting up contrasts with heroic ideals.
-  episode_uuid: ep_sea_ser_the_west_wing_s03_e00
-  scene_sequence: 12
-  sequence_in_scene: 19
-  key_dialogue: *id007
-  is_flashback: false
-  location_uuid: ger_location_2a1a15363640
-  theme_uuids:
-  - ger_theme_e71e271022c5
-  arc_uuids: []
-  participations:
-  - character_uuid: ger_agent_85d27b56ea9b
-    emotional_state: playful
-    goals:
-    - support and lighten President's interaction with students
-    what_happened: enters with President escorted by agents, jokes about ignoring
-      him, stays after he leaves
-    observed_status: enters with President escorted by agents, jokes about ignoring
-      him, stays after he leaves
-    beliefs: []
-    observed_traits: []
-    importance: secondary
-    global_id: ger_agent_85d27b56ea9b
-  - character_uuid: ger_agent_52e3762c6aed
-    emotional_state: Fierce conviction born from personal experience
-    goals:
-    - Humanize terror's appeal through lived analogy
-    - Challenge simplistic poverty narrative with nuance
-    what_happened: Arms crossed in back doorway, interjects sharply 'Which is the
-      same as it is right here,' then elaborates passionately on Southeast D.C. gangs
-      providing dignity and pride, drawing parallels to terrorism while invoking Compton,
-      Detroit, South Bronx.
-    observed_status: Arms crossed in back doorway, interjects sharply 'Which is the
-      same as it is right here,' then elaborates passionately on Southeast D.C. gangs
-      providing dignity and pride, drawing parallels to terrorism while invoking Compton,
-      Detroit, South Bronx.
-    beliefs:
-    - Gang life mirrors terrorism's psychological draw
-    - American urban decay fosters same extremism
-    observed_traits:
-    - passionate
-    - authentic
-    - incisive
-    importance: primary
-    global_id: ger_agent_52e3762c6aed
-  - character_uuid: ger_agent_c9d41ae93618
-    emotional_state: Sarcastic detachment shifting to attentive redirection
-    goals:
-    - Deflect from banter to substantive discussion
-    - Maintain control of room dynamics
-    what_happened: Leans casually on counter next to C.J., acknowledges student's
-      raised hand with 'Yeah?', repeats the question to spotlight it, bridging banter
-      to serious debate without dominating.
-    observed_status: Leans casually on counter next to C.J., acknowledges student's
-      raised hand with 'Yeah?', repeats the question to spotlight it, bridging banter
-      to serious debate without dominating.
-    beliefs:
-    - Humor eases tension but truth demands focus
-    - Students merit direct engagement
-    observed_traits:
-    - sarcastic
-    - facilitative
-    - wry
-    importance: primary
-    global_id: ger_agent_c9d41ae93618
-  - character_uuid: ger_agent_198649bce78f
-    emotional_state: good-natured and authoritative
-    goals:
-    - inspire students by condemning martyrdom and promoting living heroes
-    what_happened: enters escorted by agents with Abbey, stands at front, greets and
-      jokes with students and staff, questions C.J., asks Charlie about apples, distinguishes
-      martyrs from heroes in response to student, exits
-    observed_status: enters escorted by agents with Abbey, stands at front, greets
-      and jokes with students and staff, questions C.J., asks Charlie about apples,
-      distinguishes martyrs from heroes in response to student, exits
-    beliefs: []
-    observed_traits: []
-    importance: primary
-    global_id: ger_agent_198649bce78f
-  - character_uuid: ger_agent_04bbccb1e352
-    emotional_state: Somber gravity underscoring crisis awareness
-    goals:
-    - Educate students on terrorism's socioeconomic roots
-    - Frame extremism as preventable human failing
-    what_happened: Stands by coffee area, delivers grave analysis pinning terrorism
-      to global poverty and despair as crime's incubator, setting stage for Charlie's
-      counterpoint with poised authority.
-    observed_status: Stands by coffee area, delivers grave analysis pinning terrorism
-      to global poverty and despair as crime's incubator, setting stage for Charlie's
-      counterpoint with poised authority.
-    beliefs:
-    - Poverty universally breeds violence
-    - Understanding origins aids prevention
-    observed_traits:
-    - serious
-    - analytical
-    - empathetic
-    importance: primary
-    global_id: ger_agent_04bbccb1e352
-  - character_uuid: ger_agent_712491b1f672
-    emotional_state: ''
-    goals:
-    - provide security escort during lockdown
-    what_happened: several agents open door and walk in, escort President and Abbey,
-      most follow Bartlet out
-    observed_status: several agents open door and walk in, escort President and Abbey,
-      most follow Bartlet out
-    beliefs: []
-    observed_traits: []
-    importance: minor
-    global_id: ger_agent_712491b1f672
-  - character_uuid: ger_agent_7854a70e34ea
-    emotional_state: ''
-    goals: []
-    what_happened: walks out of the mess
-    observed_status: walks out of the mess
-    beliefs: []
-    observed_traits: []
-    importance: minor
-    global_id: ger_agent_7854a70e34ea
-  - character_uuid: ger_agent_e2cd808af208
-    emotional_state: Anxious fascination amid enforced lockdown
-    goals:
-    - Grasp complex roots of global threats
-    - Extract wisdom from trapped leaders
-    what_happened: Gathered attentively as captive audience, one raises hand to probe
-      terrorism origins, collectively turning to Charlie's gang analogy, absorbing
-      the gritty lesson in crisis confines.
-    observed_status: Gathered attentively as captive audience, one raises hand to
-      probe terrorism origins, collectively turning to Charlie's gang analogy, absorbing
-      the gritty lesson in crisis confines.
-    beliefs:
-    - Elite access unlocks profound insights
-    - Crisis reveals leadership truths
-    observed_traits:
-    - engaged
-    - receptive
-    - vulnerable
-    importance: primary
-    global_id: ger_agent_e2cd808af208
-  - character_uuid: ger_agent_1ac3e9868afb
-    emotional_state: ''
-    goals:
-    - enforce protocol for Presidential Classroom students
-    what_happened: whispers to everyone to stand for President
-    observed_status: whispers to everyone to stand for President
-    beliefs: []
-    observed_traits: []
-    importance: minor
-    global_id: ger_agent_1ac3e9868afb
-  - character_uuid: ger_agent_614a4c7fe5e1
-    emotional_state: Intensely curious, undaunted by high-stakes surroundings
-    goals:
-    - Seek truthful insight into terrorism's causes
-    - Engage senior staff in honest discourse
-    what_happened: Raises hand to interrupt staff banter, boldly questions terrorists'
-      origins, then prompts 'Gangs?' in response to Charlie's rundown of urban ills,
-      piercing the room's tension with youthful curiosity amid lockdown stasis.
-    observed_status: Raises hand to interrupt staff banter, boldly questions terrorists'
-      origins, then prompts 'Gangs?' in response to Charlie's rundown of urban ills,
-      piercing the room's tension with youthful curiosity amid lockdown stasis.
-    beliefs:
-    - Extremism has comprehensible human roots
-    - Direct questions yield real answers from leaders
-    observed_traits:
-    - curious
-    - bold
-    - engaged
-    importance: primary
-    global_id: ger_agent_614a4c7fe5e1
-  - character_uuid: ger_agent_4ed2cd709f51
-    emotional_state: ''
-    goals: []
-    what_happened: confirms to President they are stuck here
-    observed_status: confirms to President they are stuck here
-    beliefs: []
-    observed_traits: []
-    importance: minor
-    global_id: ger_agent_4ed2cd709f51
-  object_involvements:
-  - object_uuid: ger_object_b5cf765c8e8f
-    description_of_involvement: C.J. commands the stool at the mess hall's front,
-      legs braced as she leans into her coalition speech, its elevated perch amplifying
-      her voice until student's question redirects focus—symbolizing staff's impromptu
-      lectern in transforming lockdown into teachable seminar.
-    status_before_event: Occupied by C.J. in stable position at room front
-    status_after_event: Still occupied by C.J. as debate continues
-    global_id: ger_object_b5cf765c8e8f
-  - object_uuid: ger_object_657d1c0d26b4
-    description_of_involvement: Josh leans elbows on the worn counter beside C.J.,
-      its surface anchoring his casual posture during banter and question acknowledgment;
-      nearby coffee area positions Sam, the fixture grounding senior staff cluster
-      as debate ignites thematic fire.
-    status_before_event: Bearing Josh's weight, intact in mess hall
-    status_after_event: Unchanged, supporting ongoing staff presence
-    global_id: ger_object_657d1c0d26b4
-  location_involvements:
-  - location_uuid: ger_location_c76fe57153e3
-    description_of_involvement: Charlie invokes Southeast D.C. as prime example of
-      domestic despair mirroring global terror incubators, detailing dilapidated schools,
-      drugs, guns, and gangs to illuminate extremism's universal psychology in the
-      students' eyes.
-    observed_atmosphere: Evoked as gritty, hopeless underbelly pulsing with survival
-      defiance
-    functional_role: Conceptual parallel drawing foreign threat home
-    symbolic_significance: Bridge between international peril and American failure
-    access_restrictions: ''
-    key_environmental_details:
-    - Dilapidated schools
-    - Drug-infested streets
-    - Gun violence
-    - Gang territories
-    global_id: ger_location_c76fe57153e3
-  - location_uuid: ger_location_be2be3c308f5
-    description_of_involvement: Charlie name-drops Compton alongside Southeast D.C.
-      as gang-ravaged zones offering pride to the desperate, extending poverty-terror
-      analogy to underscore its borderless allure.
-    observed_atmosphere: Shadowed, violent crucible of forged loyalties
-    functional_role: Illustrative example in extremism debate
-    symbolic_significance: Echo of domestic radicalization potential
-    access_restrictions: ''
-    key_environmental_details:
-    - Gang corners
-    - Poverty vise
-    - Brotherhood codes
-    global_id: ger_location_be2be3c308f5
-  - location_uuid: ger_location_f4af8297d94f
-    description_of_involvement: Charlie lists South Bronx with other hellholes, its
-      tenement gangs exemplifying pride wrested from oblivion, capping his urgent
-      equation of street life to jihadist pull.
-    observed_atmosphere: Echoing threats in concrete decay
-    functional_role: Closing example in poverty-gang thesis
-    symbolic_significance: Marginalization's radical forge
-    access_restrictions: ''
-    key_environmental_details:
-    - Tenement husks
-    - Survival codes
-    global_id: ger_location_f4af8297d94f
-  - location_uuid: ger_location_2a1a15363640
-    description_of_involvement: Referenced by Charlie as kin to Southeast D.C.'s gang
-      forge, Detroit amplifies the narrative of urban decay breeding dignity-through-violence,
-      humanizing terror recruitment.
-    observed_atmosphere: Forsaken, siren-wailing despair
-    functional_role: Reinforcing parallel in spoken analogy
-    symbolic_significance: National scope of extremism's seeds
-    access_restrictions: ''
-    key_environmental_details:
-    - Crumbling blocks
-    - Rival gang territories
-    global_id: ger_location_2a1a15363640
   organization_involvements:
   - organization_uuid: ger_organization_86b6344b4342
     description_of_involvement: Elite high schoolers from Presidential Classroom drive
@@ -5361,23 +5361,6 @@ events:
     global_id: ger_object_657d1c0d26b4
   location_involvements: []
   organization_involvements:
-  - organization_uuid: ger_organization_a02ef5855109
-    description_of_involvement: Secret Service manifests through agents opening doors,
-      entering first, escorting Bartlet and Abbey precisely to the front, then trailing
-      most out post-speech, their choreography transforming the Mess from staff-student
-      seminar to secured executive forum amid lockdown.
-    active_representation: Via agents' coordinated entry, escort, and exit protocol
-    power_dynamics: Exercising absolute security authority over room access and movement
-    organizational_goals:
-    - Safeguard presidential principals in high-threat lockdown
-    - Control spatial dynamics to minimize exposure
-    influence_mechanisms:
-    - Physical presence and barked entry
-    - Escort protocols dictating flow
-    institutional_impact: Reinforces post-9/11 vigilance layering crisis education
-      with protection
-    internal_dynamics: ''
-    global_id: ger_organization_a02ef5855109
   - organization_uuid: ger_organization_86b6344b4342
     description_of_involvement: Presidential Classroom's elite high school students
       form the captive audience C.J. introduces to Bartlet, their presence elevating
@@ -5395,6 +5378,23 @@ events:
     institutional_impact: Transforms field trip into post-9/11 pluralism seminar
     internal_dynamics: Hierarchical guidance from Marjorie to students
     global_id: ger_organization_86b6344b4342
+  - organization_uuid: ger_organization_9aeb11cd4ff1
+    description_of_involvement: Secret Service manifests through agents opening doors,
+      entering first, escorting Bartlet and Abbey precisely to the front, then trailing
+      most out post-speech, their choreography transforming the Mess from staff-student
+      seminar to secured executive forum amid lockdown.
+    active_representation: Via agents' coordinated entry, escort, and exit protocol
+    power_dynamics: Exercising absolute security authority over room access and movement
+    organizational_goals:
+    - Safeguard presidential principals in high-threat lockdown
+    - Control spatial dynamics to minimize exposure
+    influence_mechanisms:
+    - Physical presence and barked entry
+    - Escort protocols dictating flow
+    institutional_impact: Reinforces post-9/11 vigilance layering crisis education
+      with protection
+    internal_dynamics: ''
+    global_id: ger_organization_9aeb11cd4ff1
   derived_from_beat_uuids:
   - beat_a45051aade8138b4
   - beat_1c47b648753b5f52
@@ -5624,21 +5624,6 @@ events:
     institutional_impact: Highlights post-9/11 profiling tensions within federal machinery
     internal_dynamics: Inter-agency deference to incoming intel
     global_id: ger_organization_8f870c015c92
-  - organization_uuid: ger_organization_a02ef5855109
-    description_of_involvement: Secret Service agent guards door amid whispers, embodying
-      lockdown perimeter as Ron (lead) processes Germany lead and exits, their vigilance
-      framing the exoneration without intrusion.
-    active_representation: Through door sentinel and Ron's operational role
-    power_dynamics: Overseeing inter-agency security envelope
-    organizational_goals:
-    - Contain interrogation site
-    - Redirect on verified intel
-    influence_mechanisms:
-    - Physical perimeter enforcement
-    - Leadership conferral
-    institutional_impact: Reasserts protective primacy in crisis
-    internal_dynamics: Seamless handoff to pursuit
-    global_id: ger_organization_a02ef5855109
   - organization_uuid: ger_organization_d5f3b8c8e23a
     description_of_involvement: Islamic League of Allston surfaces as Ali's former
       mosque under FBI probe, suspicion lacing questions until clearance exposes reflexive
@@ -5654,6 +5639,21 @@ events:
     institutional_impact: Underscores prejudice against Muslim institutions
     internal_dynamics: ''
     global_id: ger_organization_d5f3b8c8e23a
+  - organization_uuid: ger_organization_9aeb11cd4ff1
+    description_of_involvement: Secret Service agent guards door amid whispers, embodying
+      lockdown perimeter as Ron (lead) processes Germany lead and exits, their vigilance
+      framing the exoneration without intrusion.
+    active_representation: Through door sentinel and Ron's operational role
+    power_dynamics: Overseeing inter-agency security envelope
+    organizational_goals:
+    - Contain interrogation site
+    - Redirect on verified intel
+    influence_mechanisms:
+    - Physical perimeter enforcement
+    - Leadership conferral
+    institutional_impact: Reasserts protective primacy in crisis
+    internal_dynamics: Seamless handoff to pursuit
+    global_id: ger_organization_9aeb11cd4ff1
   derived_from_beat_uuids: &id010
   - beat_42272e58e3726279
   - beat_054f0a65c963a315
@@ -5876,21 +5876,6 @@ events:
     institutional_impact: Highlights post-9/11 profiling tensions within federal machinery
     internal_dynamics: Inter-agency deference to incoming intel
     global_id: ger_organization_8f870c015c92
-  - organization_uuid: ger_organization_a02ef5855109
-    description_of_involvement: Secret Service agent guards door amid whispers, embodying
-      lockdown perimeter as Ron (lead) processes Germany lead and exits, their vigilance
-      framing the exoneration without intrusion.
-    active_representation: Through door sentinel and Ron's operational role
-    power_dynamics: Overseeing inter-agency security envelope
-    organizational_goals:
-    - Contain interrogation site
-    - Redirect on verified intel
-    influence_mechanisms:
-    - Physical perimeter enforcement
-    - Leadership conferral
-    institutional_impact: Reasserts protective primacy in crisis
-    internal_dynamics: Seamless handoff to pursuit
-    global_id: ger_organization_a02ef5855109
   - organization_uuid: ger_organization_d5f3b8c8e23a
     description_of_involvement: Islamic League of Allston surfaces as Ali's former
       mosque under FBI probe, suspicion lacing questions until clearance exposes reflexive
@@ -5906,6 +5891,21 @@ events:
     institutional_impact: Underscores prejudice against Muslim institutions
     internal_dynamics: ''
     global_id: ger_organization_d5f3b8c8e23a
+  - organization_uuid: ger_organization_9aeb11cd4ff1
+    description_of_involvement: Secret Service agent guards door amid whispers, embodying
+      lockdown perimeter as Ron (lead) processes Germany lead and exits, their vigilance
+      framing the exoneration without intrusion.
+    active_representation: Through door sentinel and Ron's operational role
+    power_dynamics: Overseeing inter-agency security envelope
+    organizational_goals:
+    - Contain interrogation site
+    - Redirect on verified intel
+    influence_mechanisms:
+    - Physical perimeter enforcement
+    - Leadership conferral
+    institutional_impact: Reasserts protective primacy in crisis
+    internal_dynamics: Seamless handoff to pursuit
+    global_id: ger_organization_9aeb11cd4ff1
   derived_from_beat_uuids: *id010
   source_season: 3
   source_database: westwing.s03
@@ -6125,21 +6125,6 @@ events:
     institutional_impact: Highlights post-9/11 profiling tensions within federal machinery
     internal_dynamics: Inter-agency deference to incoming intel
     global_id: ger_organization_8f870c015c92
-  - organization_uuid: ger_organization_a02ef5855109
-    description_of_involvement: Secret Service agent guards door amid whispers, embodying
-      lockdown perimeter as Ron (lead) processes Germany lead and exits, their vigilance
-      framing the exoneration without intrusion.
-    active_representation: Through door sentinel and Ron's operational role
-    power_dynamics: Overseeing inter-agency security envelope
-    organizational_goals:
-    - Contain interrogation site
-    - Redirect on verified intel
-    influence_mechanisms:
-    - Physical perimeter enforcement
-    - Leadership conferral
-    institutional_impact: Reasserts protective primacy in crisis
-    internal_dynamics: Seamless handoff to pursuit
-    global_id: ger_organization_a02ef5855109
   - organization_uuid: ger_organization_d5f3b8c8e23a
     description_of_involvement: Islamic League of Allston surfaces as Ali's former
       mosque under FBI probe, suspicion lacing questions until clearance exposes reflexive
@@ -6155,6 +6140,21 @@ events:
     institutional_impact: Underscores prejudice against Muslim institutions
     internal_dynamics: ''
     global_id: ger_organization_d5f3b8c8e23a
+  - organization_uuid: ger_organization_9aeb11cd4ff1
+    description_of_involvement: Secret Service agent guards door amid whispers, embodying
+      lockdown perimeter as Ron (lead) processes Germany lead and exits, their vigilance
+      framing the exoneration without intrusion.
+    active_representation: Through door sentinel and Ron's operational role
+    power_dynamics: Overseeing inter-agency security envelope
+    organizational_goals:
+    - Contain interrogation site
+    - Redirect on verified intel
+    influence_mechanisms:
+    - Physical perimeter enforcement
+    - Leadership conferral
+    institutional_impact: Reasserts protective primacy in crisis
+    internal_dynamics: Seamless handoff to pursuit
+    global_id: ger_organization_9aeb11cd4ff1
   derived_from_beat_uuids: *id010
   source_season: 3
   source_database: westwing.s03
@@ -6374,21 +6374,6 @@ events:
     institutional_impact: Highlights post-9/11 profiling tensions within federal machinery
     internal_dynamics: Inter-agency deference to incoming intel
     global_id: ger_organization_8f870c015c92
-  - organization_uuid: ger_organization_a02ef5855109
-    description_of_involvement: Secret Service agent guards door amid whispers, embodying
-      lockdown perimeter as Ron (lead) processes Germany lead and exits, their vigilance
-      framing the exoneration without intrusion.
-    active_representation: Through door sentinel and Ron's operational role
-    power_dynamics: Overseeing inter-agency security envelope
-    organizational_goals:
-    - Contain interrogation site
-    - Redirect on verified intel
-    influence_mechanisms:
-    - Physical perimeter enforcement
-    - Leadership conferral
-    institutional_impact: Reasserts protective primacy in crisis
-    internal_dynamics: Seamless handoff to pursuit
-    global_id: ger_organization_a02ef5855109
   - organization_uuid: ger_organization_d5f3b8c8e23a
     description_of_involvement: Islamic League of Allston surfaces as Ali's former
       mosque under FBI probe, suspicion lacing questions until clearance exposes reflexive
@@ -6404,6 +6389,21 @@ events:
     institutional_impact: Underscores prejudice against Muslim institutions
     internal_dynamics: ''
     global_id: ger_organization_d5f3b8c8e23a
+  - organization_uuid: ger_organization_9aeb11cd4ff1
+    description_of_involvement: Secret Service agent guards door amid whispers, embodying
+      lockdown perimeter as Ron (lead) processes Germany lead and exits, their vigilance
+      framing the exoneration without intrusion.
+    active_representation: Through door sentinel and Ron's operational role
+    power_dynamics: Overseeing inter-agency security envelope
+    organizational_goals:
+    - Contain interrogation site
+    - Redirect on verified intel
+    influence_mechanisms:
+    - Physical perimeter enforcement
+    - Leadership conferral
+    institutional_impact: Reasserts protective primacy in crisis
+    internal_dynamics: Seamless handoff to pursuit
+    global_id: ger_organization_9aeb11cd4ff1
   derived_from_beat_uuids: *id010
   source_season: 3
   source_database: westwing.s03
@@ -6637,21 +6637,6 @@ events:
     institutional_impact: Highlights inter-agency friction in post-9/11 profiling
     internal_dynamics: ''
     global_id: ger_organization_8f870c015c92
-  - organization_uuid: ger_organization_a02ef5855109
-    description_of_involvement: Secret Service upholds lockdown perimeter with door
-      agent facilitating messenger entry and Ron's exit, anchoring security amid revelation,
-      their presence underscoring protective ramparts during suspicion's collapse.
-    active_representation: Through stationed guard and Ron's leadership
-    power_dynamics: Maintaining override authority on site access
-    organizational_goals:
-    - Secure interrogation integrity
-    - Enable rapid threat pursuit
-    influence_mechanisms:
-    - Physical perimeter control
-    - Command chain coordination
-    institutional_impact: Reaffirms presidential shield in terror lockdown
-    internal_dynamics: ''
-    global_id: ger_organization_a02ef5855109
   - organization_uuid: ger_organization_d5f3b8c8e23a
     description_of_involvement: Islamic League of Allston surfaces in agent's question
       as Ali's former mosque, fueling suspicion of radical ties until clearance exposes
@@ -6666,6 +6651,21 @@ events:
     institutional_impact: Reflects post-9/11 Muslim scrutiny tensions
     internal_dynamics: ''
     global_id: ger_organization_d5f3b8c8e23a
+  - organization_uuid: ger_organization_9aeb11cd4ff1
+    description_of_involvement: Secret Service upholds lockdown perimeter with door
+      agent facilitating messenger entry and Ron's exit, anchoring security amid revelation,
+      their presence underscoring protective ramparts during suspicion's collapse.
+    active_representation: Through stationed guard and Ron's leadership
+    power_dynamics: Maintaining override authority on site access
+    organizational_goals:
+    - Secure interrogation integrity
+    - Enable rapid threat pursuit
+    influence_mechanisms:
+    - Physical perimeter control
+    - Command chain coordination
+    institutional_impact: Reaffirms presidential shield in terror lockdown
+    internal_dynamics: ''
+    global_id: ger_organization_9aeb11cd4ff1
   derived_from_beat_uuids: &id012
   - beat_f476d460fec24c3b
   source_season: 3
@@ -6893,21 +6893,6 @@ events:
     institutional_impact: Highlights inter-agency friction in post-9/11 profiling
     internal_dynamics: ''
     global_id: ger_organization_8f870c015c92
-  - organization_uuid: ger_organization_a02ef5855109
-    description_of_involvement: Secret Service upholds lockdown perimeter with door
-      agent facilitating messenger entry and Ron's exit, anchoring security amid revelation,
-      their presence underscoring protective ramparts during suspicion's collapse.
-    active_representation: Through stationed guard and Ron's leadership
-    power_dynamics: Maintaining override authority on site access
-    organizational_goals:
-    - Secure interrogation integrity
-    - Enable rapid threat pursuit
-    influence_mechanisms:
-    - Physical perimeter control
-    - Command chain coordination
-    institutional_impact: Reaffirms presidential shield in terror lockdown
-    internal_dynamics: ''
-    global_id: ger_organization_a02ef5855109
   - organization_uuid: ger_organization_d5f3b8c8e23a
     description_of_involvement: Islamic League of Allston surfaces in agent's question
       as Ali's former mosque, fueling suspicion of radical ties until clearance exposes
@@ -6922,6 +6907,21 @@ events:
     institutional_impact: Reflects post-9/11 Muslim scrutiny tensions
     internal_dynamics: ''
     global_id: ger_organization_d5f3b8c8e23a
+  - organization_uuid: ger_organization_9aeb11cd4ff1
+    description_of_involvement: Secret Service upholds lockdown perimeter with door
+      agent facilitating messenger entry and Ron's exit, anchoring security amid revelation,
+      their presence underscoring protective ramparts during suspicion's collapse.
+    active_representation: Through stationed guard and Ron's leadership
+    power_dynamics: Maintaining override authority on site access
+    organizational_goals:
+    - Secure interrogation integrity
+    - Enable rapid threat pursuit
+    influence_mechanisms:
+    - Physical perimeter control
+    - Command chain coordination
+    institutional_impact: Reaffirms presidential shield in terror lockdown
+    internal_dynamics: ''
+    global_id: ger_organization_9aeb11cd4ff1
   derived_from_beat_uuids: *id012
   source_season: 3
   source_database: westwing.s03
@@ -7148,21 +7148,6 @@ events:
     institutional_impact: Highlights inter-agency friction in post-9/11 profiling
     internal_dynamics: ''
     global_id: ger_organization_8f870c015c92
-  - organization_uuid: ger_organization_a02ef5855109
-    description_of_involvement: Secret Service upholds lockdown perimeter with door
-      agent facilitating messenger entry and Ron's exit, anchoring security amid revelation,
-      their presence underscoring protective ramparts during suspicion's collapse.
-    active_representation: Through stationed guard and Ron's leadership
-    power_dynamics: Maintaining override authority on site access
-    organizational_goals:
-    - Secure interrogation integrity
-    - Enable rapid threat pursuit
-    influence_mechanisms:
-    - Physical perimeter control
-    - Command chain coordination
-    institutional_impact: Reaffirms presidential shield in terror lockdown
-    internal_dynamics: ''
-    global_id: ger_organization_a02ef5855109
   - organization_uuid: ger_organization_d5f3b8c8e23a
     description_of_involvement: Islamic League of Allston surfaces in agent's question
       as Ali's former mosque, fueling suspicion of radical ties until clearance exposes
@@ -7177,6 +7162,21 @@ events:
     institutional_impact: Reflects post-9/11 Muslim scrutiny tensions
     internal_dynamics: ''
     global_id: ger_organization_d5f3b8c8e23a
+  - organization_uuid: ger_organization_9aeb11cd4ff1
+    description_of_involvement: Secret Service upholds lockdown perimeter with door
+      agent facilitating messenger entry and Ron's exit, anchoring security amid revelation,
+      their presence underscoring protective ramparts during suspicion's collapse.
+    active_representation: Through stationed guard and Ron's leadership
+    power_dynamics: Maintaining override authority on site access
+    organizational_goals:
+    - Secure interrogation integrity
+    - Enable rapid threat pursuit
+    influence_mechanisms:
+    - Physical perimeter control
+    - Command chain coordination
+    institutional_impact: Reaffirms presidential shield in terror lockdown
+    internal_dynamics: ''
+    global_id: ger_organization_9aeb11cd4ff1
   derived_from_beat_uuids: *id012
   source_season: 3
   source_database: westwing.s03
@@ -7403,21 +7403,6 @@ events:
     institutional_impact: Highlights inter-agency friction in post-9/11 profiling
     internal_dynamics: ''
     global_id: ger_organization_8f870c015c92
-  - organization_uuid: ger_organization_a02ef5855109
-    description_of_involvement: Secret Service upholds lockdown perimeter with door
-      agent facilitating messenger entry and Ron's exit, anchoring security amid revelation,
-      their presence underscoring protective ramparts during suspicion's collapse.
-    active_representation: Through stationed guard and Ron's leadership
-    power_dynamics: Maintaining override authority on site access
-    organizational_goals:
-    - Secure interrogation integrity
-    - Enable rapid threat pursuit
-    influence_mechanisms:
-    - Physical perimeter control
-    - Command chain coordination
-    institutional_impact: Reaffirms presidential shield in terror lockdown
-    internal_dynamics: ''
-    global_id: ger_organization_a02ef5855109
   - organization_uuid: ger_organization_d5f3b8c8e23a
     description_of_involvement: Islamic League of Allston surfaces in agent's question
       as Ali's former mosque, fueling suspicion of radical ties until clearance exposes
@@ -7432,6 +7417,21 @@ events:
     institutional_impact: Reflects post-9/11 Muslim scrutiny tensions
     internal_dynamics: ''
     global_id: ger_organization_d5f3b8c8e23a
+  - organization_uuid: ger_organization_9aeb11cd4ff1
+    description_of_involvement: Secret Service upholds lockdown perimeter with door
+      agent facilitating messenger entry and Ron's exit, anchoring security amid revelation,
+      their presence underscoring protective ramparts during suspicion's collapse.
+    active_representation: Through stationed guard and Ron's leadership
+    power_dynamics: Maintaining override authority on site access
+    organizational_goals:
+    - Secure interrogation integrity
+    - Enable rapid threat pursuit
+    influence_mechanisms:
+    - Physical perimeter control
+    - Command chain coordination
+    institutional_impact: Reaffirms presidential shield in terror lockdown
+    internal_dynamics: ''
+    global_id: ger_organization_9aeb11cd4ff1
   derived_from_beat_uuids: *id012
   source_season: 3
   source_database: westwing.s03

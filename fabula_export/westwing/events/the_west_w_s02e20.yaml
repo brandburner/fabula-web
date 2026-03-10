@@ -1,5 +1,5 @@
 # Events for The Fall's Gonna Kill You
-# Generated: 2026-02-10T12:17:10.937295
+# Generated: 2026-02-22T16:33:10.315593
 
 episode_uuid: ep_sea_ser_the_west_wing_s02_e20
 episode_title: The Fall's Gonna Kill You
@@ -69,7 +69,7 @@ events:
     observed_traits: []
     importance: primary
     global_id: ger_agent_dd62525d972a
-  - character_uuid: ger_agent_64b2a2c10c8f
+  - character_uuid: ger_agent_14f85d554756
     emotional_state: Professional poise shattered by primal terror, swiftly shifting
       to exasperated relief
     goals:
@@ -92,7 +92,16 @@ events:
     - vulnerable
     - reactive
     importance: primary
-    global_id: ger_agent_64b2a2c10c8f
+    global_id: ger_agent_14f85d554756
+  - character_uuid: ger_agent_467d0033476d
+    emotional_state: ''
+    goals: []
+    what_happened: referenced as currently meeting with C.J.
+    observed_status: referenced as currently meeting with C.J.
+    beliefs: []
+    observed_traits: []
+    importance: primary
+    global_id: ger_agent_467d0033476d
   - character_uuid: ger_agent_20e4f4853ebe
     emotional_state: amused
     goals:
@@ -106,15 +115,6 @@ events:
     observed_traits: []
     importance: primary
     global_id: ger_agent_20e4f4853ebe
-  - character_uuid: ger_agent_467d0033476d
-    emotional_state: ''
-    goals: []
-    what_happened: referenced as currently meeting with C.J.
-    observed_status: referenced as currently meeting with C.J.
-    beliefs: []
-    observed_traits: []
-    importance: primary
-    global_id: ger_agent_467d0033476d
   - character_uuid: ger_agent_0562ac861826
     emotional_state: Calm and accommodating despite urgent underlying mission
     goals:
@@ -209,7 +209,7 @@ events:
   - 'CONNELLY: "These people perpetrated a fraud against the public."'
   - 'JOSH: "The... tobacco companies."'
   is_flashback: false
-  location_uuid: ger_location_3d4b26f1de82
+  location_uuid: ger_location_d7453cbcb623
   theme_uuids:
   - ger_theme_bc8a35dc4624
   arc_uuids:
@@ -235,7 +235,7 @@ events:
     - tense
     importance: primary
     global_id: ger_agent_7854a70e34ea
-  - character_uuid: ger_agent_64b2a2c10c8f
+  - character_uuid: ger_agent_14f85d554756
     emotional_state: Composed professionalism post-relief from prank distraction
     goals:
     - Smooth Josh's engagement with Connelly
@@ -254,7 +254,16 @@ events:
     - efficient
     - coordinating
     importance: primary
-    global_id: ger_agent_64b2a2c10c8f
+    global_id: ger_agent_14f85d554756
+  - character_uuid: ger_agent_467d0033476d
+    emotional_state: ''
+    goals: []
+    what_happened: Meeting with C.J.
+    observed_status: Meeting with C.J.
+    beliefs: []
+    observed_traits: []
+    importance: primary
+    global_id: ger_agent_467d0033476d
   - character_uuid: ger_agent_20e4f4853ebe
     emotional_state: amused
     goals:
@@ -267,15 +276,6 @@ events:
     observed_traits: []
     importance: primary
     global_id: ger_agent_20e4f4853ebe
-  - character_uuid: ger_agent_467d0033476d
-    emotional_state: ''
-    goals: []
-    what_happened: Meeting with C.J.
-    observed_status: Meeting with C.J.
-    beliefs: []
-    observed_traits: []
-    importance: primary
-    global_id: ger_agent_467d0033476d
   - character_uuid: ger_agent_0562ac861826
     emotional_state: Impassioned urgency veiling defensive frustration
     goals:
@@ -328,6 +328,18 @@ events:
     status_after_event: Retained in Connelly's possession upon departure
     global_id: ger_object_bb4245812b4d
   location_involvements:
+  - location_uuid: ger_location_d7453cbcb623
+    description_of_involvement: Hosts Josh's initial approach and apology to rising
+      Connelly, neutral expanse where DOJ desperation breaches White House orbit—guards
+      oversee as professional ambush ignites funding firestorm.
+    observed_atmosphere: Vigilant hush pierced by urgent greetings
+    functional_role: Approach and standoff zone for visitors
+    symbolic_significance: Threshold of institutional collision
+    access_restrictions: Heavily monitored with armed sentries
+    key_environmental_details:
+    - Marble floors rebounding strides
+    - Rifles snapping in poised silence
+    global_id: ger_location_d7453cbcb623
   - location_uuid: ger_location_3d4b26f1de82
     description_of_involvement: Buzzing hub envelops Connelly's office escort and
       dialogue core, Donna's coordination threading through as Josh absorbs fraud
@@ -352,18 +364,6 @@ events:
     - Fluorescent glare sharpening footfalls
     - Thudding doors echoing closures
     global_id: ger_location_8fd125f6423c
-  - location_uuid: ger_location_d7453cbcb623
-    description_of_involvement: Hosts Josh's initial approach and apology to rising
-      Connelly, neutral expanse where DOJ desperation breaches White House orbit—guards
-      oversee as professional ambush ignites funding firestorm.
-    observed_atmosphere: Vigilant hush pierced by urgent greetings
-    functional_role: Approach and standoff zone for visitors
-    symbolic_significance: Threshold of institutional collision
-    access_restrictions: Heavily monitored with armed sentries
-    key_environmental_details:
-    - Marble floors rebounding strides
-    - Rifles snapping in poised silence
-    global_id: ger_location_d7453cbcb623
   organization_involvements:
   - organization_uuid: ger_organization_e7a9e4ecbb31
     description_of_involvement: Portrayed as obstructionist via HR-260 passage, killing
@@ -446,7 +446,7 @@ events:
   sequence_in_scene: 2
   key_dialogue: *id001
   is_flashback: false
-  location_uuid: ger_location_8fd125f6423c
+  location_uuid: ger_location_3d4b26f1de82
   theme_uuids:
   - ger_theme_bc8a35dc4624
   arc_uuids:
@@ -472,7 +472,7 @@ events:
     - tense
     importance: primary
     global_id: ger_agent_7854a70e34ea
-  - character_uuid: ger_agent_64b2a2c10c8f
+  - character_uuid: ger_agent_14f85d554756
     emotional_state: Composed professionalism post-relief from prank distraction
     goals:
     - Smooth Josh's engagement with Connelly
@@ -491,7 +491,16 @@ events:
     - efficient
     - coordinating
     importance: primary
-    global_id: ger_agent_64b2a2c10c8f
+    global_id: ger_agent_14f85d554756
+  - character_uuid: ger_agent_467d0033476d
+    emotional_state: ''
+    goals: []
+    what_happened: Meeting with C.J.
+    observed_status: Meeting with C.J.
+    beliefs: []
+    observed_traits: []
+    importance: primary
+    global_id: ger_agent_467d0033476d
   - character_uuid: ger_agent_20e4f4853ebe
     emotional_state: amused
     goals:
@@ -504,15 +513,6 @@ events:
     observed_traits: []
     importance: primary
     global_id: ger_agent_20e4f4853ebe
-  - character_uuid: ger_agent_467d0033476d
-    emotional_state: ''
-    goals: []
-    what_happened: Meeting with C.J.
-    observed_status: Meeting with C.J.
-    beliefs: []
-    observed_traits: []
-    importance: primary
-    global_id: ger_agent_467d0033476d
   - character_uuid: ger_agent_0562ac861826
     emotional_state: Impassioned urgency veiling defensive frustration
     goals:
@@ -565,6 +565,18 @@ events:
     status_after_event: Retained in Connelly's possession upon departure
     global_id: ger_object_bb4245812b4d
   location_involvements:
+  - location_uuid: ger_location_d7453cbcb623
+    description_of_involvement: Hosts Josh's initial approach and apology to rising
+      Connelly, neutral expanse where DOJ desperation breaches White House orbit—guards
+      oversee as professional ambush ignites funding firestorm.
+    observed_atmosphere: Vigilant hush pierced by urgent greetings
+    functional_role: Approach and standoff zone for visitors
+    symbolic_significance: Threshold of institutional collision
+    access_restrictions: Heavily monitored with armed sentries
+    key_environmental_details:
+    - Marble floors rebounding strides
+    - Rifles snapping in poised silence
+    global_id: ger_location_d7453cbcb623
   - location_uuid: ger_location_3d4b26f1de82
     description_of_involvement: Buzzing hub envelops Connelly's office escort and
       dialogue core, Donna's coordination threading through as Josh absorbs fraud
@@ -589,18 +601,6 @@ events:
     - Fluorescent glare sharpening footfalls
     - Thudding doors echoing closures
     global_id: ger_location_8fd125f6423c
-  - location_uuid: ger_location_d7453cbcb623
-    description_of_involvement: Hosts Josh's initial approach and apology to rising
-      Connelly, neutral expanse where DOJ desperation breaches White House orbit—guards
-      oversee as professional ambush ignites funding firestorm.
-    observed_atmosphere: Vigilant hush pierced by urgent greetings
-    functional_role: Approach and standoff zone for visitors
-    symbolic_significance: Threshold of institutional collision
-    access_restrictions: Heavily monitored with armed sentries
-    key_environmental_details:
-    - Marble floors rebounding strides
-    - Rifles snapping in poised silence
-    global_id: ger_location_d7453cbcb623
   organization_involvements:
   - organization_uuid: ger_organization_e7a9e4ecbb31
     description_of_involvement: Portrayed as obstructionist via HR-260 passage, killing
@@ -680,7 +680,7 @@ events:
   sequence_in_scene: 2
   key_dialogue: *id001
   is_flashback: false
-  location_uuid: ger_location_d7453cbcb623
+  location_uuid: ger_location_8fd125f6423c
   theme_uuids:
   - ger_theme_bc8a35dc4624
   arc_uuids:
@@ -706,7 +706,7 @@ events:
     - tense
     importance: primary
     global_id: ger_agent_7854a70e34ea
-  - character_uuid: ger_agent_64b2a2c10c8f
+  - character_uuid: ger_agent_14f85d554756
     emotional_state: Composed professionalism post-relief from prank distraction
     goals:
     - Smooth Josh's engagement with Connelly
@@ -725,7 +725,16 @@ events:
     - efficient
     - coordinating
     importance: primary
-    global_id: ger_agent_64b2a2c10c8f
+    global_id: ger_agent_14f85d554756
+  - character_uuid: ger_agent_467d0033476d
+    emotional_state: ''
+    goals: []
+    what_happened: Meeting with C.J.
+    observed_status: Meeting with C.J.
+    beliefs: []
+    observed_traits: []
+    importance: primary
+    global_id: ger_agent_467d0033476d
   - character_uuid: ger_agent_20e4f4853ebe
     emotional_state: amused
     goals:
@@ -738,15 +747,6 @@ events:
     observed_traits: []
     importance: primary
     global_id: ger_agent_20e4f4853ebe
-  - character_uuid: ger_agent_467d0033476d
-    emotional_state: ''
-    goals: []
-    what_happened: Meeting with C.J.
-    observed_status: Meeting with C.J.
-    beliefs: []
-    observed_traits: []
-    importance: primary
-    global_id: ger_agent_467d0033476d
   - character_uuid: ger_agent_0562ac861826
     emotional_state: Impassioned urgency veiling defensive frustration
     goals:
@@ -799,6 +799,18 @@ events:
     status_after_event: Retained in Connelly's possession upon departure
     global_id: ger_object_bb4245812b4d
   location_involvements:
+  - location_uuid: ger_location_d7453cbcb623
+    description_of_involvement: Hosts Josh's initial approach and apology to rising
+      Connelly, neutral expanse where DOJ desperation breaches White House orbit—guards
+      oversee as professional ambush ignites funding firestorm.
+    observed_atmosphere: Vigilant hush pierced by urgent greetings
+    functional_role: Approach and standoff zone for visitors
+    symbolic_significance: Threshold of institutional collision
+    access_restrictions: Heavily monitored with armed sentries
+    key_environmental_details:
+    - Marble floors rebounding strides
+    - Rifles snapping in poised silence
+    global_id: ger_location_d7453cbcb623
   - location_uuid: ger_location_3d4b26f1de82
     description_of_involvement: Buzzing hub envelops Connelly's office escort and
       dialogue core, Donna's coordination threading through as Josh absorbs fraud
@@ -823,18 +835,6 @@ events:
     - Fluorescent glare sharpening footfalls
     - Thudding doors echoing closures
     global_id: ger_location_8fd125f6423c
-  - location_uuid: ger_location_d7453cbcb623
-    description_of_involvement: Hosts Josh's initial approach and apology to rising
-      Connelly, neutral expanse where DOJ desperation breaches White House orbit—guards
-      oversee as professional ambush ignites funding firestorm.
-    observed_atmosphere: Vigilant hush pierced by urgent greetings
-    functional_role: Approach and standoff zone for visitors
-    symbolic_significance: Threshold of institutional collision
-    access_restrictions: Heavily monitored with armed sentries
-    key_environmental_details:
-    - Marble floors rebounding strides
-    - Rifles snapping in poised silence
-    global_id: ger_location_d7453cbcb623
   organization_involvements:
   - organization_uuid: ger_organization_e7a9e4ecbb31
     description_of_involvement: Portrayed as obstructionist via HR-260 passage, killing
@@ -1016,7 +1016,7 @@ events:
     - Loyal but fractious
     importance: primary
     global_id: ger_agent_7854a70e34ea
-  - character_uuid: ger_agent_64b2a2c10c8f
+  - character_uuid: ger_agent_14f85d554756
     emotional_state: Professionally urgent amid routine frenzy
     goals:
     - Alert Josh to incoming external crisis
@@ -1034,7 +1034,7 @@ events:
     - Efficient interrupter
     - Crisis coordinator
     importance: primary
-    global_id: ger_agent_64b2a2c10c8f
+    global_id: ger_agent_14f85d554756
   - character_uuid: ger_agent_0562ac861826
     emotional_state: ''
     goals: []
@@ -1151,232 +1151,6 @@ events:
   - 'DONNA: "A fax was sent to the Press Office from the Office of Space Flight at
     NASA..."'
   is_flashback: false
-  location_uuid: ger_location_3d4b26f1de82
-  theme_uuids:
-  - ger_theme_d656961d2ef1
-  - ger_theme_d75a6559da23
-  arc_uuids: []
-  participations:
-  - character_uuid: ger_agent_a96064ff3873
-    emotional_state: Implied poised competence
-    goals:
-    - Conduct blind polling on MS tolerance
-    - Maintain cover under agricultural pretext
-    what_happened: Referenced by Josh as trusted pollster flying in from California
-      for covert MS 'beets' survey, securing Leo's approval as the safe external option.
-    observed_status: Referenced by Josh as trusted pollster flying in from California
-      for covert MS 'beets' survey, securing Leo's approval as the safe external option.
-    beliefs:
-    - Data-driven insights navigable crises
-    - Subsurface products ruse evades suspicion
-    observed_traits:
-    - reliable
-    - discreet
-    importance: primary
-    global_id: ger_agent_a96064ff3873
-  - character_uuid: ger_agent_198649bce78f
-    emotional_state: ''
-    goals: []
-    what_happened: referenced in discussion about public perceptions of his physical
-      fitness and honesty regarding MS
-    observed_status: referenced in discussion about public perceptions of his physical
-      fitness and honesty regarding MS
-    beliefs: []
-    observed_traits: []
-    importance: primary
-    global_id: ger_agent_198649bce78f
-  - character_uuid: ger_agent_dd62525d972a
-    emotional_state: Wary reluctance veiling operational resolve
-    goals:
-    - Secure covert intelligence on public MS perceptions
-    - Preserve circle of trust in crisis
-    what_happened: Sitting on desk beside Josh and Toby, receives and swiftly returns
-      Margaret's notes twice, probes poll logistics skeptically before grunting reluctant
-      approval to Josh's 'beets' cover story amid MS polling debate.
-    observed_status: Sitting on desk beside Josh and Toby, receives and swiftly returns
-      Margaret's notes twice, probes poll logistics skeptically before grunting reluctant
-      approval to Josh's 'beets' cover story amid MS polling debate.
-    beliefs:
-    - Direct polling risks exposure before press reaction
-    - No internal staff can be fully trusted now
-    observed_traits:
-    - skeptical
-    - pragmatic
-    - authoritative
-    importance: primary
-    global_id: ger_agent_dd62525d972a
-  - character_uuid: ger_agent_3a5efeceb247
-    emotional_state: Focused neutrality amid frenzy
-    goals:
-    - Relay external crises without delay
-    - Minimize disruption to inner sanctum
-    what_happened: Knocks and enters Leo's office twice, delivering urgent notes that
-      Leo immediately returns, her precise interruptions slicing through the polling
-      debate without lingering.
-    observed_status: Knocks and enters Leo's office twice, delivering urgent notes
-      that Leo immediately returns, her precise interruptions slicing through the
-      polling debate without lingering.
-    beliefs:
-    - Urgent messages demand instant relay
-    - Leo's command prioritizes swift handling
-    observed_traits:
-    - efficient
-    - discreet
-    - professional
-    importance: primary
-    global_id: ger_agent_3a5efeceb247
-  - character_uuid: ger_agent_7854a70e34ea
-    emotional_state: Deepening paranoia laced with frustration
-    goals:
-    - Force polling to clarify next strategic move
-    - Expose vulnerabilities in trust amid cover-up
-    what_happened: Presses Leo insistently for polling data on MS fallout perceptions,
-      endorses Josh's Joey Lucas trust, then declares profound distrust and walks
-      off, punctuating the huddle's fracture.
-    observed_status: Presses Leo insistently for polling data on MS fallout perceptions,
-      endorses Josh's Joey Lucas trust, then declares profound distrust and walks
-      off, punctuating the huddle's fracture.
-    beliefs:
-    - Polling essential to navigate dual threats of fitness and honesty
-    - Crisis erodes all reliability in staff
-    observed_traits:
-    - paranoid
-    - insistent
-    - candid
-    importance: primary
-    global_id: ger_agent_7854a70e34ea
-  - character_uuid: ger_agent_64b2a2c10c8f
-    emotional_state: Escalating alarm over satellite threat
-    goals:
-    - Alert Josh to impending external crisis
-    - Divert attention to Press Office alert
-    what_happened: Calls urgently from off-screen to summon Josh immediately after
-      Toby exits, alerting him to the NASA fax arrival at Press Office, her voice
-      yanking him from the strategy room.
-    observed_status: Calls urgently from off-screen to summon Josh immediately after
-      Toby exits, alerting him to the NASA fax arrival at Press Office, her voice
-      yanking him from the strategy room.
-    beliefs:
-    - Satellite fax signals major disruption
-    - Josh must handle bullpen urgencies first
-    observed_traits:
-    - frantic
-    - alert
-    - loyal
-    importance: primary
-    global_id: ger_agent_64b2a2c10c8f
-  - character_uuid: ger_agent_0562ac861826
-    emotional_state: Anticipatory desperation
-    goals:
-    - Secure White House funding lifeline
-    - Press DOJ tobacco fraud case
-    what_happened: Waits in lobby as Josh approaches him post-Donna's call, positioned
-      as next crisis vector amid the satellite diversion.
-    observed_status: Waits in lobby as Josh approaches him post-Donna's call, positioned
-      as next crisis vector amid the satellite diversion.
-    beliefs:
-    - Emergency infusion critical for justice
-    - White House holds fiscal rescue power
-    observed_traits:
-    - urgent
-    - persistent
-    importance: primary
-    global_id: ger_agent_0562ac861826
-  object_involvements:
-  - object_uuid: ger_object_a47309cd1aaf
-    description_of_involvement: Donna urgently references this prank fax from NASA's
-      Byron Talmadge—detailing a Chinese satellite crash—as just received at Press
-      Office, her off-screen alert propelling Josh from Leo's huddle to bullpen and
-      lobby; it injects farcical chaos, diverting from mortal political stakes.
-    status_before_event: Freshly arrived at Press Office via fax machine
-    status_after_event: In Donna's hands or awareness, triggering immediate summons
-    global_id: ger_object_a47309cd1aaf
-  - object_uuid: ger_object_72b8ea3db05e
-    description_of_involvement: Margaret delivers these urgent notes to Leo twice
-      during the polling debate, which he reads briefly and returns each time; they
-      function as rhythmic interruptions symbolizing the White House's relentless
-      external pressures clashing against internal MS secrecy deliberations.
-    status_before_event: Held by Margaret outside Leo's office
-    status_after_event: Returned to Margaret's possession after second delivery
-    global_id: ger_object_72b8ea3db05e
-  location_involvements:
-  - location_uuid: ger_location_3d4b26f1de82
-    description_of_involvement: Donna's off-screen call emanates from Josh's chaotic
-      bullpen, bridging Leo's office huddle to lobby transition; its frenetic energy
-      embodies the West Wing's multi-crisis churn, where satellite hoax erupts amid
-      MS shadows.
-    observed_atmosphere: Frantic and layered with overlapping urgencies
-    functional_role: Interruption and summons hub
-    symbolic_significance: Epitomizes fractured staff attention
-    access_restrictions: Senior staff and aides only
-    key_environmental_details:
-    - Fluorescent buzz over desks
-    - Echoes of calls and movement
-    global_id: ger_location_3d4b26f1de82
-  - location_uuid: ger_location_d7453cbcb623
-    description_of_involvement: Josh strides into the Northwest Lobby post-Donna's
-      alert, approaching waiting Martin Connelly; it serves as abrupt pivot point,
-      channeling satellite panic into DOJ confrontation amid echoing neutrality.
-    observed_atmosphere: Vigilant hush pierced by urgent footsteps
-    functional_role: Transition and ambush zone
-    symbolic_significance: Threshold between strategy and street-level crises
-    access_restrictions: Guarded public access with security oversight
-    key_environmental_details:
-    - Marble floors amplifying strides
-    - Rifles at guard posts
-    global_id: ger_location_d7453cbcb623
-  organization_involvements:
-  - organization_uuid: ger_organization_51fa4a2d6a0a
-    description_of_involvement: NASA originates the satellite alert fax through its
-      Office of Space Flight, referenced urgently by Donna to derail the MS polling
-      session; it underscores external bureaucracies overwhelming internal White House
-      stratagems.
-    active_representation: Through subordinate office's formal alert
-    power_dynamics: Imposing informational dominance via peril warnings
-    organizational_goals:
-    - Mitigate uncontrolled satellite hazards
-    - Mobilize executive awareness
-    influence_mechanisms:
-    - Urgent federal communications
-    - Space tracking authority
-    institutional_impact: Exposes tensions between space ops and political crises
-    internal_dynamics: Hierarchical dispatch from associate administrator
-    global_id: ger_organization_51fa4a2d6a0a
-  - organization_uuid: ger_organization_efdb5b1c015b
-    description_of_involvement: Office of Space Flight manifests via the fax sent
-      to Press Office, cited by Donna to summon Josh; it thrusts orbital peril into
-      political frenzy, amplifying tonal whiplash from MS paranoia to cosmic farce.
-    active_representation: Via official crisis fax dispatch
-    power_dynamics: External authority injecting chaos into White House control
-    organizational_goals:
-    - Alert government to satellite reentry threat
-    - Coordinate federal response protocols
-    influence_mechanisms:
-    - Bureaucratic missives
-    - Technical expertise on space risks
-    institutional_impact: Highlights federal inter-agency frays diverting executive
-      focus
-    internal_dynamics: ''
-    global_id: ger_organization_efdb5b1c015b
-  derived_from_beat_uuids: &id004
-  - beat_48639101b971623f
-  source_season: 2
-  source_database: westwing.s02
-- fabula_uuid: cand_evt_scene_9a8d29607d7035a9_1
-  global_id: null
-  title: Donna's Frantic NASA Fax Interruption
-  description: As Leo reluctantly approves Josh's covert 'beets' poll through Joey
-    Lucas amid Toby's deepening paranoia—'I don't trust anybody right now'—Donna urgently
-    calls Josh from outside Leo's office with a fax from NASA's Office of Space Flight,
-    yanking him toward the lobby and her spiraling obsession with the falling Chinese
-    satellite. This farcical intrusion caps the MS strategy session, diverting focus
-    from existential political peril to absurd external chaos, amplifying the staff's
-    fractured attention and tonal whiplash in a crisis-laden White House.
-  episode_uuid: ep_sea_ser_the_west_wing_s02_e20
-  scene_sequence: 2
-  sequence_in_scene: 4
-  key_dialogue: *id003
-  is_flashback: false
   location_uuid: ger_location_d7453cbcb623
   theme_uuids:
   - ger_theme_d656961d2ef1
@@ -1471,7 +1245,7 @@ events:
     - candid
     importance: primary
     global_id: ger_agent_7854a70e34ea
-  - character_uuid: ger_agent_64b2a2c10c8f
+  - character_uuid: ger_agent_14f85d554756
     emotional_state: Escalating alarm over satellite threat
     goals:
     - Alert Josh to impending external crisis
@@ -1490,7 +1264,7 @@ events:
     - alert
     - loyal
     importance: primary
-    global_id: ger_agent_64b2a2c10c8f
+    global_id: ger_agent_14f85d554756
   - character_uuid: ger_agent_0562ac861826
     emotional_state: Anticipatory desperation
     goals:
@@ -1526,6 +1300,18 @@ events:
     status_after_event: Returned to Margaret's possession after second delivery
     global_id: ger_object_72b8ea3db05e
   location_involvements:
+  - location_uuid: ger_location_d7453cbcb623
+    description_of_involvement: Josh strides into the Northwest Lobby post-Donna's
+      alert, approaching waiting Martin Connelly; it serves as abrupt pivot point,
+      channeling satellite panic into DOJ confrontation amid echoing neutrality.
+    observed_atmosphere: Vigilant hush pierced by urgent footsteps
+    functional_role: Transition and ambush zone
+    symbolic_significance: Threshold between strategy and street-level crises
+    access_restrictions: Guarded public access with security oversight
+    key_environmental_details:
+    - Marble floors amplifying strides
+    - Rifles at guard posts
+    global_id: ger_location_d7453cbcb623
   - location_uuid: ger_location_3d4b26f1de82
     description_of_involvement: Donna's off-screen call emanates from Josh's chaotic
       bullpen, bridging Leo's office huddle to lobby transition; its frenetic energy
@@ -1539,6 +1325,207 @@ events:
     - Fluorescent buzz over desks
     - Echoes of calls and movement
     global_id: ger_location_3d4b26f1de82
+  organization_involvements:
+  - organization_uuid: ger_organization_51fa4a2d6a0a
+    description_of_involvement: NASA originates the satellite alert fax through its
+      Office of Space Flight, referenced urgently by Donna to derail the MS polling
+      session; it underscores external bureaucracies overwhelming internal White House
+      stratagems.
+    active_representation: Through subordinate office's formal alert
+    power_dynamics: Imposing informational dominance via peril warnings
+    organizational_goals:
+    - Mitigate uncontrolled satellite hazards
+    - Mobilize executive awareness
+    influence_mechanisms:
+    - Urgent federal communications
+    - Space tracking authority
+    institutional_impact: Exposes tensions between space ops and political crises
+    internal_dynamics: Hierarchical dispatch from associate administrator
+    global_id: ger_organization_51fa4a2d6a0a
+  - organization_uuid: ger_organization_efdb5b1c015b
+    description_of_involvement: Office of Space Flight manifests via the fax sent
+      to Press Office, cited by Donna to summon Josh; it thrusts orbital peril into
+      political frenzy, amplifying tonal whiplash from MS paranoia to cosmic farce.
+    active_representation: Via official crisis fax dispatch
+    power_dynamics: External authority injecting chaos into White House control
+    organizational_goals:
+    - Alert government to satellite reentry threat
+    - Coordinate federal response protocols
+    influence_mechanisms:
+    - Bureaucratic missives
+    - Technical expertise on space risks
+    institutional_impact: Highlights federal inter-agency frays diverting executive
+      focus
+    internal_dynamics: ''
+    global_id: ger_organization_efdb5b1c015b
+  derived_from_beat_uuids: &id004
+  - beat_48639101b971623f
+  source_season: 2
+  source_database: westwing.s02
+- fabula_uuid: cand_evt_scene_9a8d29607d7035a9_1
+  global_id: null
+  title: Donna's Frantic NASA Fax Interruption
+  description: As Leo reluctantly approves Josh's covert 'beets' poll through Joey
+    Lucas amid Toby's deepening paranoia—'I don't trust anybody right now'—Donna urgently
+    calls Josh from outside Leo's office with a fax from NASA's Office of Space Flight,
+    yanking him toward the lobby and her spiraling obsession with the falling Chinese
+    satellite. This farcical intrusion caps the MS strategy session, diverting focus
+    from existential political peril to absurd external chaos, amplifying the staff's
+    fractured attention and tonal whiplash in a crisis-laden White House.
+  episode_uuid: ep_sea_ser_the_west_wing_s02_e20
+  scene_sequence: 2
+  sequence_in_scene: 4
+  key_dialogue: *id003
+  is_flashback: false
+  location_uuid: ger_location_3d4b26f1de82
+  theme_uuids:
+  - ger_theme_d656961d2ef1
+  - ger_theme_d75a6559da23
+  arc_uuids: []
+  participations:
+  - character_uuid: ger_agent_a96064ff3873
+    emotional_state: Implied poised competence
+    goals:
+    - Conduct blind polling on MS tolerance
+    - Maintain cover under agricultural pretext
+    what_happened: Referenced by Josh as trusted pollster flying in from California
+      for covert MS 'beets' survey, securing Leo's approval as the safe external option.
+    observed_status: Referenced by Josh as trusted pollster flying in from California
+      for covert MS 'beets' survey, securing Leo's approval as the safe external option.
+    beliefs:
+    - Data-driven insights navigable crises
+    - Subsurface products ruse evades suspicion
+    observed_traits:
+    - reliable
+    - discreet
+    importance: primary
+    global_id: ger_agent_a96064ff3873
+  - character_uuid: ger_agent_198649bce78f
+    emotional_state: ''
+    goals: []
+    what_happened: referenced in discussion about public perceptions of his physical
+      fitness and honesty regarding MS
+    observed_status: referenced in discussion about public perceptions of his physical
+      fitness and honesty regarding MS
+    beliefs: []
+    observed_traits: []
+    importance: primary
+    global_id: ger_agent_198649bce78f
+  - character_uuid: ger_agent_dd62525d972a
+    emotional_state: Wary reluctance veiling operational resolve
+    goals:
+    - Secure covert intelligence on public MS perceptions
+    - Preserve circle of trust in crisis
+    what_happened: Sitting on desk beside Josh and Toby, receives and swiftly returns
+      Margaret's notes twice, probes poll logistics skeptically before grunting reluctant
+      approval to Josh's 'beets' cover story amid MS polling debate.
+    observed_status: Sitting on desk beside Josh and Toby, receives and swiftly returns
+      Margaret's notes twice, probes poll logistics skeptically before grunting reluctant
+      approval to Josh's 'beets' cover story amid MS polling debate.
+    beliefs:
+    - Direct polling risks exposure before press reaction
+    - No internal staff can be fully trusted now
+    observed_traits:
+    - skeptical
+    - pragmatic
+    - authoritative
+    importance: primary
+    global_id: ger_agent_dd62525d972a
+  - character_uuid: ger_agent_3a5efeceb247
+    emotional_state: Focused neutrality amid frenzy
+    goals:
+    - Relay external crises without delay
+    - Minimize disruption to inner sanctum
+    what_happened: Knocks and enters Leo's office twice, delivering urgent notes that
+      Leo immediately returns, her precise interruptions slicing through the polling
+      debate without lingering.
+    observed_status: Knocks and enters Leo's office twice, delivering urgent notes
+      that Leo immediately returns, her precise interruptions slicing through the
+      polling debate without lingering.
+    beliefs:
+    - Urgent messages demand instant relay
+    - Leo's command prioritizes swift handling
+    observed_traits:
+    - efficient
+    - discreet
+    - professional
+    importance: primary
+    global_id: ger_agent_3a5efeceb247
+  - character_uuid: ger_agent_7854a70e34ea
+    emotional_state: Deepening paranoia laced with frustration
+    goals:
+    - Force polling to clarify next strategic move
+    - Expose vulnerabilities in trust amid cover-up
+    what_happened: Presses Leo insistently for polling data on MS fallout perceptions,
+      endorses Josh's Joey Lucas trust, then declares profound distrust and walks
+      off, punctuating the huddle's fracture.
+    observed_status: Presses Leo insistently for polling data on MS fallout perceptions,
+      endorses Josh's Joey Lucas trust, then declares profound distrust and walks
+      off, punctuating the huddle's fracture.
+    beliefs:
+    - Polling essential to navigate dual threats of fitness and honesty
+    - Crisis erodes all reliability in staff
+    observed_traits:
+    - paranoid
+    - insistent
+    - candid
+    importance: primary
+    global_id: ger_agent_7854a70e34ea
+  - character_uuid: ger_agent_14f85d554756
+    emotional_state: Escalating alarm over satellite threat
+    goals:
+    - Alert Josh to impending external crisis
+    - Divert attention to Press Office alert
+    what_happened: Calls urgently from off-screen to summon Josh immediately after
+      Toby exits, alerting him to the NASA fax arrival at Press Office, her voice
+      yanking him from the strategy room.
+    observed_status: Calls urgently from off-screen to summon Josh immediately after
+      Toby exits, alerting him to the NASA fax arrival at Press Office, her voice
+      yanking him from the strategy room.
+    beliefs:
+    - Satellite fax signals major disruption
+    - Josh must handle bullpen urgencies first
+    observed_traits:
+    - frantic
+    - alert
+    - loyal
+    importance: primary
+    global_id: ger_agent_14f85d554756
+  - character_uuid: ger_agent_0562ac861826
+    emotional_state: Anticipatory desperation
+    goals:
+    - Secure White House funding lifeline
+    - Press DOJ tobacco fraud case
+    what_happened: Waits in lobby as Josh approaches him post-Donna's call, positioned
+      as next crisis vector amid the satellite diversion.
+    observed_status: Waits in lobby as Josh approaches him post-Donna's call, positioned
+      as next crisis vector amid the satellite diversion.
+    beliefs:
+    - Emergency infusion critical for justice
+    - White House holds fiscal rescue power
+    observed_traits:
+    - urgent
+    - persistent
+    importance: primary
+    global_id: ger_agent_0562ac861826
+  object_involvements:
+  - object_uuid: ger_object_a47309cd1aaf
+    description_of_involvement: Donna urgently references this prank fax from NASA's
+      Byron Talmadge—detailing a Chinese satellite crash—as just received at Press
+      Office, her off-screen alert propelling Josh from Leo's huddle to bullpen and
+      lobby; it injects farcical chaos, diverting from mortal political stakes.
+    status_before_event: Freshly arrived at Press Office via fax machine
+    status_after_event: In Donna's hands or awareness, triggering immediate summons
+    global_id: ger_object_a47309cd1aaf
+  - object_uuid: ger_object_72b8ea3db05e
+    description_of_involvement: Margaret delivers these urgent notes to Leo twice
+      during the polling debate, which he reads briefly and returns each time; they
+      function as rhythmic interruptions symbolizing the White House's relentless
+      external pressures clashing against internal MS secrecy deliberations.
+    status_before_event: Held by Margaret outside Leo's office
+    status_after_event: Returned to Margaret's possession after second delivery
+    global_id: ger_object_72b8ea3db05e
+  location_involvements:
   - location_uuid: ger_location_d7453cbcb623
     description_of_involvement: Josh strides into the Northwest Lobby post-Donna's
       alert, approaching waiting Martin Connelly; it serves as abrupt pivot point,
@@ -1551,6 +1538,19 @@ events:
     - Marble floors amplifying strides
     - Rifles at guard posts
     global_id: ger_location_d7453cbcb623
+  - location_uuid: ger_location_3d4b26f1de82
+    description_of_involvement: Donna's off-screen call emanates from Josh's chaotic
+      bullpen, bridging Leo's office huddle to lobby transition; its frenetic energy
+      embodies the West Wing's multi-crisis churn, where satellite hoax erupts amid
+      MS shadows.
+    observed_atmosphere: Frantic and layered with overlapping urgencies
+    functional_role: Interruption and summons hub
+    symbolic_significance: Epitomizes fractured staff attention
+    access_restrictions: Senior staff and aides only
+    key_environmental_details:
+    - Fluorescent buzz over desks
+    - Echoes of calls and movement
+    global_id: ger_location_3d4b26f1de82
   organization_involvements:
   - organization_uuid: ger_organization_51fa4a2d6a0a
     description_of_involvement: NASA originates the satellite alert fax through its
@@ -1628,7 +1628,7 @@ events:
     observed_traits: []
     importance: primary
     global_id: ger_agent_198649bce78f
-  - character_uuid: ger_agent_64b2a2c10c8f
+  - character_uuid: ger_agent_14f85d554756
     emotional_state: Primal terror veiled as urgent dispatch
     goals:
     - Alert C.J. to impending satellite catastrophe
@@ -1649,7 +1649,22 @@ events:
     - loyal
     - impulsive
     importance: primary
-    global_id: ger_agent_64b2a2c10c8f
+    global_id: ger_agent_14f85d554756
+  - character_uuid: ger_agent_467d0033476d
+    emotional_state: methodical and relentless
+    goals:
+    - surgically dissect C.J.'s pattern of deceptive health statements
+    - expose premeditated complicity in MS cover-up through precise questioning
+    what_happened: plays videotape of C.J.'s press briefing, interrogates C.J. about
+      frequency and process of her health statements on the President, pours himself
+      a glass of water, questions her phrasing for deniability
+    observed_status: plays videotape of C.J.'s press briefing, interrogates C.J. about
+      frequency and process of her health statements on the President, pours himself
+      a glass of water, questions her phrasing for deniability
+    beliefs: []
+    observed_traits: []
+    importance: primary
+    global_id: ger_agent_467d0033476d
   - character_uuid: ger_agent_78d66fdf9ed5
     emotional_state: Composed urgency amid high-stakes intrusion
     goals:
@@ -1672,21 +1687,6 @@ events:
     - unflappable
     importance: primary
     global_id: ger_agent_78d66fdf9ed5
-  - character_uuid: ger_agent_467d0033476d
-    emotional_state: methodical and relentless
-    goals:
-    - surgically dissect C.J.'s pattern of deceptive health statements
-    - expose premeditated complicity in MS cover-up through precise questioning
-    what_happened: plays videotape of C.J.'s press briefing, interrogates C.J. about
-      frequency and process of her health statements on the President, pours himself
-      a glass of water, questions her phrasing for deniability
-    observed_status: plays videotape of C.J.'s press briefing, interrogates C.J. about
-      frequency and process of her health statements on the President, pours himself
-      a glass of water, questions her phrasing for deniability
-    beliefs: []
-    observed_traits: []
-    importance: primary
-    global_id: ger_agent_467d0033476d
   - character_uuid: ger_agent_68a936424090
     emotional_state: Detached clinical neutrality (referenced only)
     goals:
@@ -1793,7 +1793,7 @@ events:
     observed_traits: []
     importance: primary
     global_id: ger_agent_198649bce78f
-  - character_uuid: ger_agent_64b2a2c10c8f
+  - character_uuid: ger_agent_14f85d554756
     emotional_state: Overwhelmed panic laced with desperate immediacy
     goals:
     - Urgently alert C.J. to the satellite crisis
@@ -1812,7 +1812,21 @@ events:
     - alarmist
     - loyal
     importance: primary
-    global_id: ger_agent_64b2a2c10c8f
+    global_id: ger_agent_14f85d554756
+  - character_uuid: ger_agent_467d0033476d
+    emotional_state: persistent and clinical
+    goals:
+    - dissect C.J.'s scripted health briefings for legal deniability
+    what_happened: interrogates C.J. about her past health briefings on the President,
+      turns off the videotape recording, pours himself water, and probes the exact
+      phrasing she uses when questioning the President about his health
+    observed_status: interrogates C.J. about her past health briefings on the President,
+      turns off the videotape recording, pours himself water, and probes the exact
+      phrasing she uses when questioning the President about his health
+    beliefs: []
+    observed_traits: []
+    importance: primary
+    global_id: ger_agent_467d0033476d
   - character_uuid: ger_agent_78d66fdf9ed5
     emotional_state: Composed urgency masking operational focus
     goals:
@@ -1835,20 +1849,6 @@ events:
     - discreet
     importance: primary
     global_id: ger_agent_78d66fdf9ed5
-  - character_uuid: ger_agent_467d0033476d
-    emotional_state: persistent and clinical
-    goals:
-    - dissect C.J.'s scripted health briefings for legal deniability
-    what_happened: interrogates C.J. about her past health briefings on the President,
-      turns off the videotape recording, pours himself water, and probes the exact
-      phrasing she uses when questioning the President about his health
-    observed_status: interrogates C.J. about her past health briefings on the President,
-      turns off the videotape recording, pours himself water, and probes the exact
-      phrasing she uses when questioning the President about his health
-    beliefs: []
-    observed_traits: []
-    importance: primary
-    global_id: ger_agent_467d0033476d
   - character_uuid: ger_agent_68a936424090
     emotional_state: ''
     goals: []
@@ -1940,207 +1940,6 @@ events:
     so." JANE: "They want it in." SAM: "No, no, no... Well, tell them to do their
     own speech. This one''s for the President."'
   is_flashback: false
-  location_uuid: ger_location_8fd125f6423c
-  theme_uuids: []
-  arc_uuids: []
-  participations:
-  - character_uuid: ger_agent_04bbccb1e352
-    emotional_state: Enthusiastically resolute, thrilled by tactical advantage yet
-      unwavering in rejecting subpar rhetoric
-    goals:
-    - Refocus speech on presidential fundamentals to cut through partisan clutter
-    - Secure and leverage CBO data for easier legislative battles
-    - Reject populist insert to maintain high standards of presidential voice
-    what_happened: Sam paces dynamically around the Roosevelt Room table, reading
-      the SME speech draft aloud to a dozen aides while insisting on tax cut fundamentals;
-      steps into the hall to meet Jane and Richard, leads them to his office, celebrates
-      the CBO surplus news with animated relief, reads and rejects the caucus line
-      aloud with firm pauses.
-    observed_status: Sam paces dynamically around the Roosevelt Room table, reading
-      the SME speech draft aloud to a dozen aides while insisting on tax cut fundamentals;
-      steps into the hall to meet Jane and Richard, leads them to his office, celebrates
-      the CBO surplus news with animated relief, reads and rejects the caucus line
-      aloud with firm pauses.
-    beliefs:
-    - Presidential speeches demand precision and poetry, not crude attacks
-    - Lower surplus projections politically empower restraint against tax-cut zealots
-    observed_traits:
-    - commanding
-    - decisive
-    - strategic
-    - eloquent
-    - resolute
-    importance: primary
-    global_id: ger_agent_04bbccb1e352
-  - character_uuid: ger_agent_8c119e071ed1
-    emotional_state: Positive and explanatory, buoyed by news delivery yet pragmatic
-      in advocacy
-    goals:
-    - Deliver CBO windfall to aid Sam's speech strategy
-    - Advocate successfully for caucus populist rhetoric in Chicago address
-    what_happened: Jane intercepts Sam in the hallway with Richard, teases good news,
-      escorts to his office, delivers CBO surplus details excitedly, pushes for Progressive
-      Caucus/ATJ line inclusion post-celebration, acknowledges Sam's caveats with
-      understanding.
-    observed_status: Jane intercepts Sam in the hallway with Richard, teases good
-      news, escorts to his office, delivers CBO surplus details excitedly, pushes
-      for Progressive Caucus/ATJ line inclusion post-celebration, acknowledges Sam's
-      caveats with understanding.
-    beliefs:
-    - CBO downgrade strengthens White House position against GOP tax demands
-    - Populist attacks sharpen class-based messaging for Democratic base
-    observed_traits:
-    - energetic
-    - informative
-    - persistent
-    - team-oriented
-    importance: primary
-    global_id: ger_agent_8c119e071ed1
-  - character_uuid: ger_agent_d06e91a67b84
-    emotional_state: Agreeable and supportive, sharing in excitement over CBO boon
-      while flexibly pitching rhetoric
-    goals:
-    - Convey CBO data accurately to fuel Sam's leverage
-    - Insert or refine caucus attack line into presidential speech
-    what_happened: Richard waits in hallway with Jane, urges privacy away from door,
-      provides precise CBO figures ($200B/400B less), hands Sam the sheet with caucus
-      line, suggests polished alternatives like 'summer homes and sports cars,' exits
-      amiably after rejection.
-    observed_status: Richard waits in hallway with Jane, urges privacy away from door,
-      provides precise CBO figures ($200B/400B less), hands Sam the sheet with caucus
-      line, suggests polished alternatives like 'summer homes and sports cars,' exits
-      amiably after rejection.
-    beliefs:
-    - Fiscal projections from CBO offer nonpartisan political ammunition
-    - Refined populist phrasing can fit presidential delivery without losing edge
-    observed_traits:
-    - precise
-    - supportive
-    - tactical
-    - accommodating
-    importance: primary
-    global_id: ger_agent_d06e91a67b84
-  object_involvements:
-  - object_uuid: ger_object_7112ec08c51b
-    description_of_involvement: Richard hands the sheet bearing the Progressive Caucus's
-      raw populist attack line to Sam in his office; Sam reads it aloud, pauses decisively,
-      and rejects it as bad writing, crumpling its hopes functionally while it highlights
-      intra-party messaging tensions and Sam's gatekeeping of the President's voice.
-    status_before_event: In Richard's possession, carried from hallway
-    status_after_event: Held by Sam in office, dismissed and set aside
-    global_id: ger_object_7112ec08c51b
-  - object_uuid: ger_object_99d2dde0af42
-    description_of_involvement: Sam grips and paces with the SME speech draft, reading
-      it aloud to aides in the Roosevelt Room to demonstrate and enforce a return
-      to tax cut fundamentals; it serves as the narrative battleground where partisan
-      debates are dismissed, and later implicitly contrasted against the rejected
-      caucus insert, embodying Sam's control over presidential messaging.
-    status_before_event: Draft in Sam's possession, being actively read and edited
-      in Roosevelt Room
-    status_after_event: Remains with Sam post-interruption, primed for refinement
-      based on CBO news
-    global_id: ger_object_99d2dde0af42
-  location_involvements:
-  - location_uuid: ger_location_8fd125f6423c
-    description_of_involvement: West Wing hallway serves as urgent interception point
-      where Jane and Richard ambush Sam post-Roosevelt Room, leading around the corner
-      toward his office; its humming tension underscores quick pivots from group brainstorming
-      to private deal-making.
-    observed_atmosphere: Brisk and secretive, with urgent strides and whispers
-    functional_role: Transition corridor for confidential briefings
-    symbolic_significance: Vein of power connecting strategy rooms to personal offices
-    access_restrictions: White House staff only, high-security access
-    key_environmental_details:
-    - Fluorescent lighting sharpening footfalls
-    - Proximity to Leo's office and Oval shadows
-    global_id: ger_location_8fd125f6423c
-  - location_uuid: ger_location_7423b10d7d15
-    description_of_involvement: The Roosevelt Room hosts Sam's commanding pacing and
-      speech reading to aides, establishing intense focus on fundamentals before the
-      knock interrupts; it pulses with strategic tension as aides lean in, contrasting
-      the MS crisis isolation by showcasing routine policy grind.
-    observed_atmosphere: Focused and charged with rhetorical intensity, aides attentive
-      amid rustling pages
-    functional_role: Creative workshop for speech refinement
-    symbolic_significance: Hub of White House messaging discipline amid broader deceptions
-    access_restrictions: Restricted to senior speechwriting aides
-    key_environmental_details:
-    - Polished table with seated aides
-    - French doors hinting at Oval proximity
-    global_id: ger_location_7423b10d7d15
-  organization_involvements:
-  - organization_uuid: ger_organization_48b0c8b33ba1
-    description_of_involvement: CBO's impending surplus downgrade (200B/400B less)
-      is delivered by Jane and Richard, sparking Sam's ecstatic celebration as it
-      eases tax cut floor fights; its nonpartisan authority transforms fiscal bad
-      news into White House gold, fueling speech strategy amid MS secrecy.
-    active_representation: Through analysts Jane and Richard relaying projections
-    power_dynamics: Provides authoritative leverage empowering White House against
-      congressional Republicans
-    organizational_goals:
-    - Issue accurate long-term surplus estimates
-    - Influence budgetary policy via independent forecasts
-    influence_mechanisms:
-    - Nonpartisan data projections shaping legislative debates
-    - Front-page announcements pressuring policy restraint
-    institutional_impact: Bolsters Democratic fiscal hawkishness against GOP tax expansionism
-    internal_dynamics: ''
-    global_id: ger_organization_48b0c8b33ba1
-  - organization_uuid: ger_organization_3f6ae9512a8d
-    description_of_involvement: Progressive Caucus's populist attack line—savaging
-      rich tax cuts for 'swimming pools and private jets'—is thrust via Richard's
-      sheet into Sam's hands, met with firm rejection as unfit for presidential delivery,
-      exposing Democratic left-right messaging fractures.
-    active_representation: Via relayed written proposal from congressional envoys
-    power_dynamics: Pressures White House from intra-party left but overruled by speech
-      team
-    organizational_goals:
-    - Embed class-war rhetoric in Bartlet's Chicago speech
-    - Amplify working-family tax relief against elite benefits
-    influence_mechanisms:
-    - Lobbying through staff intermediaries like Jane/Richard
-    - Draft language proposals for presidential adoption
-    institutional_impact: Highlights Progressive pushback on centrist White House
-      strategy
-    internal_dynamics: Alliance with ATJ amplifying base demands
-    global_id: ger_organization_3f6ae9512a8d
-  - organization_uuid: ger_organization_99820c92df5b
-    description_of_involvement: ATJ co-sponsors the Progressive Caucus's rejected
-      speech insert alongside them, demanding fiery economic antagonism in the SME
-      draft; its advocacy via intermediaries underscores internal Democratic tensions
-      over tone, clashing with Sam's polished vision.
-    active_representation: Joint demand relayed through caucus proposal sheet
-    power_dynamics: External advocate challenging White House messaging control
-    organizational_goals:
-    - Inject populist class critique into presidential rhetoric
-    - Sharpen speech against GOP-favored tax perks for wealthy
-    influence_mechanisms:
-    - Collaborative pressure with Progressive Caucus on speechwriters
-    - Specific phrasing suggestions for adoption
-    institutional_impact: Reveals fault lines in Democratic coalition over economic
-      messaging
-    internal_dynamics: Synergistic with caucus in populist agitation
-    global_id: ger_organization_99820c92df5b
-  derived_from_beat_uuids: &id006
-  - beat_42f619575cadf422
-  source_season: 2
-  source_database: westwing.s02
-- fabula_uuid: cand_evt_scene_d3e1f37af586a7f4_1
-  global_id: null
-  title: Sam Refocuses SME Speech on Fundamentals Amid CBO Boost and Caucus Clash
-  description: In the Roosevelt Room, Sam paces, reading his SME speech draft to aides
-    and insisting on returning to tax cut fundamentals amid partisan debates, signaling
-    his strategic refocus on core messaging. Interrupted, he learns from Jane Gentry
-    and Richard Will of a favorable CBO surplus downgrade—less money eases the floor
-    fight politically. Sam celebrates this pivot, but firmly rejects the Progressive
-    Caucus's populist attack line as poor writing unfit for the President's voice,
-    asserting narrative control. This governance beat contrasts the MS crisis, highlighting
-    Sam's policy savvy and isolation from the inner secret.
-  episode_uuid: ep_sea_ser_the_west_wing_s02_e20
-  scene_sequence: 4
-  sequence_in_scene: 7
-  key_dialogue: *id005
-  is_flashback: false
   location_uuid: ger_location_7423b10d7d15
   theme_uuids: []
   arc_uuids: []
@@ -2222,15 +2021,7 @@ events:
     importance: primary
     global_id: ger_agent_d06e91a67b84
   object_involvements:
-  - object_uuid: ger_object_7112ec08c51b
-    description_of_involvement: Richard hands the sheet bearing the Progressive Caucus's
-      raw populist attack line to Sam in his office; Sam reads it aloud, pauses decisively,
-      and rejects it as bad writing, crumpling its hopes functionally while it highlights
-      intra-party messaging tensions and Sam's gatekeeping of the President's voice.
-    status_before_event: In Richard's possession, carried from hallway
-    status_after_event: Held by Sam in office, dismissed and set aside
-    global_id: ger_object_7112ec08c51b
-  - object_uuid: ger_object_99d2dde0af42
+  - object_uuid: ger_object_e4b23e861b56
     description_of_involvement: Sam grips and paces with the SME speech draft, reading
       it aloud to aides in the Roosevelt Room to demonstrate and enforce a return
       to tax cut fundamentals; it serves as the narrative battleground where partisan
@@ -2240,21 +2031,16 @@ events:
       in Roosevelt Room
     status_after_event: Remains with Sam post-interruption, primed for refinement
       based on CBO news
-    global_id: ger_object_99d2dde0af42
+    global_id: ger_object_e4b23e861b56
+  - object_uuid: ger_object_7112ec08c51b
+    description_of_involvement: Richard hands the sheet bearing the Progressive Caucus's
+      raw populist attack line to Sam in his office; Sam reads it aloud, pauses decisively,
+      and rejects it as bad writing, crumpling its hopes functionally while it highlights
+      intra-party messaging tensions and Sam's gatekeeping of the President's voice.
+    status_before_event: In Richard's possession, carried from hallway
+    status_after_event: Held by Sam in office, dismissed and set aside
+    global_id: ger_object_7112ec08c51b
   location_involvements:
-  - location_uuid: ger_location_8fd125f6423c
-    description_of_involvement: West Wing hallway serves as urgent interception point
-      where Jane and Richard ambush Sam post-Roosevelt Room, leading around the corner
-      toward his office; its humming tension underscores quick pivots from group brainstorming
-      to private deal-making.
-    observed_atmosphere: Brisk and secretive, with urgent strides and whispers
-    functional_role: Transition corridor for confidential briefings
-    symbolic_significance: Vein of power connecting strategy rooms to personal offices
-    access_restrictions: White House staff only, high-security access
-    key_environmental_details:
-    - Fluorescent lighting sharpening footfalls
-    - Proximity to Leo's office and Oval shadows
-    global_id: ger_location_8fd125f6423c
   - location_uuid: ger_location_7423b10d7d15
     description_of_involvement: The Roosevelt Room hosts Sam's commanding pacing and
       speech reading to aides, establishing intense focus on fundamentals before the
@@ -2269,6 +2055,220 @@ events:
     - Polished table with seated aides
     - French doors hinting at Oval proximity
     global_id: ger_location_7423b10d7d15
+  - location_uuid: ger_location_8fd125f6423c
+    description_of_involvement: West Wing hallway serves as urgent interception point
+      where Jane and Richard ambush Sam post-Roosevelt Room, leading around the corner
+      toward his office; its humming tension underscores quick pivots from group brainstorming
+      to private deal-making.
+    observed_atmosphere: Brisk and secretive, with urgent strides and whispers
+    functional_role: Transition corridor for confidential briefings
+    symbolic_significance: Vein of power connecting strategy rooms to personal offices
+    access_restrictions: White House staff only, high-security access
+    key_environmental_details:
+    - Fluorescent lighting sharpening footfalls
+    - Proximity to Leo's office and Oval shadows
+    global_id: ger_location_8fd125f6423c
+  organization_involvements:
+  - organization_uuid: ger_organization_48b0c8b33ba1
+    description_of_involvement: CBO's impending surplus downgrade (200B/400B less)
+      is delivered by Jane and Richard, sparking Sam's ecstatic celebration as it
+      eases tax cut floor fights; its nonpartisan authority transforms fiscal bad
+      news into White House gold, fueling speech strategy amid MS secrecy.
+    active_representation: Through analysts Jane and Richard relaying projections
+    power_dynamics: Provides authoritative leverage empowering White House against
+      congressional Republicans
+    organizational_goals:
+    - Issue accurate long-term surplus estimates
+    - Influence budgetary policy via independent forecasts
+    influence_mechanisms:
+    - Nonpartisan data projections shaping legislative debates
+    - Front-page announcements pressuring policy restraint
+    institutional_impact: Bolsters Democratic fiscal hawkishness against GOP tax expansionism
+    internal_dynamics: ''
+    global_id: ger_organization_48b0c8b33ba1
+  - organization_uuid: ger_organization_3f6ae9512a8d
+    description_of_involvement: Progressive Caucus's populist attack line—savaging
+      rich tax cuts for 'swimming pools and private jets'—is thrust via Richard's
+      sheet into Sam's hands, met with firm rejection as unfit for presidential delivery,
+      exposing Democratic left-right messaging fractures.
+    active_representation: Via relayed written proposal from congressional envoys
+    power_dynamics: Pressures White House from intra-party left but overruled by speech
+      team
+    organizational_goals:
+    - Embed class-war rhetoric in Bartlet's Chicago speech
+    - Amplify working-family tax relief against elite benefits
+    influence_mechanisms:
+    - Lobbying through staff intermediaries like Jane/Richard
+    - Draft language proposals for presidential adoption
+    institutional_impact: Highlights Progressive pushback on centrist White House
+      strategy
+    internal_dynamics: Alliance with ATJ amplifying base demands
+    global_id: ger_organization_3f6ae9512a8d
+  - organization_uuid: ger_organization_99820c92df5b
+    description_of_involvement: ATJ co-sponsors the Progressive Caucus's rejected
+      speech insert alongside them, demanding fiery economic antagonism in the SME
+      draft; its advocacy via intermediaries underscores internal Democratic tensions
+      over tone, clashing with Sam's polished vision.
+    active_representation: Joint demand relayed through caucus proposal sheet
+    power_dynamics: External advocate challenging White House messaging control
+    organizational_goals:
+    - Inject populist class critique into presidential rhetoric
+    - Sharpen speech against GOP-favored tax perks for wealthy
+    influence_mechanisms:
+    - Collaborative pressure with Progressive Caucus on speechwriters
+    - Specific phrasing suggestions for adoption
+    institutional_impact: Reveals fault lines in Democratic coalition over economic
+      messaging
+    internal_dynamics: Synergistic with caucus in populist agitation
+    global_id: ger_organization_99820c92df5b
+  derived_from_beat_uuids: &id006
+  - beat_42f619575cadf422
+  source_season: 2
+  source_database: westwing.s02
+- fabula_uuid: cand_evt_scene_d3e1f37af586a7f4_1
+  global_id: null
+  title: Sam Refocuses SME Speech on Fundamentals Amid CBO Boost and Caucus Clash
+  description: In the Roosevelt Room, Sam paces, reading his SME speech draft to aides
+    and insisting on returning to tax cut fundamentals amid partisan debates, signaling
+    his strategic refocus on core messaging. Interrupted, he learns from Jane Gentry
+    and Richard Will of a favorable CBO surplus downgrade—less money eases the floor
+    fight politically. Sam celebrates this pivot, but firmly rejects the Progressive
+    Caucus's populist attack line as poor writing unfit for the President's voice,
+    asserting narrative control. This governance beat contrasts the MS crisis, highlighting
+    Sam's policy savvy and isolation from the inner secret.
+  episode_uuid: ep_sea_ser_the_west_wing_s02_e20
+  scene_sequence: 4
+  sequence_in_scene: 7
+  key_dialogue: *id005
+  is_flashback: false
+  location_uuid: ger_location_8fd125f6423c
+  theme_uuids: []
+  arc_uuids: []
+  participations:
+  - character_uuid: ger_agent_04bbccb1e352
+    emotional_state: Enthusiastically resolute, thrilled by tactical advantage yet
+      unwavering in rejecting subpar rhetoric
+    goals:
+    - Refocus speech on presidential fundamentals to cut through partisan clutter
+    - Secure and leverage CBO data for easier legislative battles
+    - Reject populist insert to maintain high standards of presidential voice
+    what_happened: Sam paces dynamically around the Roosevelt Room table, reading
+      the SME speech draft aloud to a dozen aides while insisting on tax cut fundamentals;
+      steps into the hall to meet Jane and Richard, leads them to his office, celebrates
+      the CBO surplus news with animated relief, reads and rejects the caucus line
+      aloud with firm pauses.
+    observed_status: Sam paces dynamically around the Roosevelt Room table, reading
+      the SME speech draft aloud to a dozen aides while insisting on tax cut fundamentals;
+      steps into the hall to meet Jane and Richard, leads them to his office, celebrates
+      the CBO surplus news with animated relief, reads and rejects the caucus line
+      aloud with firm pauses.
+    beliefs:
+    - Presidential speeches demand precision and poetry, not crude attacks
+    - Lower surplus projections politically empower restraint against tax-cut zealots
+    observed_traits:
+    - commanding
+    - decisive
+    - strategic
+    - eloquent
+    - resolute
+    importance: primary
+    global_id: ger_agent_04bbccb1e352
+  - character_uuid: ger_agent_8c119e071ed1
+    emotional_state: Positive and explanatory, buoyed by news delivery yet pragmatic
+      in advocacy
+    goals:
+    - Deliver CBO windfall to aid Sam's speech strategy
+    - Advocate successfully for caucus populist rhetoric in Chicago address
+    what_happened: Jane intercepts Sam in the hallway with Richard, teases good news,
+      escorts to his office, delivers CBO surplus details excitedly, pushes for Progressive
+      Caucus/ATJ line inclusion post-celebration, acknowledges Sam's caveats with
+      understanding.
+    observed_status: Jane intercepts Sam in the hallway with Richard, teases good
+      news, escorts to his office, delivers CBO surplus details excitedly, pushes
+      for Progressive Caucus/ATJ line inclusion post-celebration, acknowledges Sam's
+      caveats with understanding.
+    beliefs:
+    - CBO downgrade strengthens White House position against GOP tax demands
+    - Populist attacks sharpen class-based messaging for Democratic base
+    observed_traits:
+    - energetic
+    - informative
+    - persistent
+    - team-oriented
+    importance: primary
+    global_id: ger_agent_8c119e071ed1
+  - character_uuid: ger_agent_d06e91a67b84
+    emotional_state: Agreeable and supportive, sharing in excitement over CBO boon
+      while flexibly pitching rhetoric
+    goals:
+    - Convey CBO data accurately to fuel Sam's leverage
+    - Insert or refine caucus attack line into presidential speech
+    what_happened: Richard waits in hallway with Jane, urges privacy away from door,
+      provides precise CBO figures ($200B/400B less), hands Sam the sheet with caucus
+      line, suggests polished alternatives like 'summer homes and sports cars,' exits
+      amiably after rejection.
+    observed_status: Richard waits in hallway with Jane, urges privacy away from door,
+      provides precise CBO figures ($200B/400B less), hands Sam the sheet with caucus
+      line, suggests polished alternatives like 'summer homes and sports cars,' exits
+      amiably after rejection.
+    beliefs:
+    - Fiscal projections from CBO offer nonpartisan political ammunition
+    - Refined populist phrasing can fit presidential delivery without losing edge
+    observed_traits:
+    - precise
+    - supportive
+    - tactical
+    - accommodating
+    importance: primary
+    global_id: ger_agent_d06e91a67b84
+  object_involvements:
+  - object_uuid: ger_object_e4b23e861b56
+    description_of_involvement: Sam grips and paces with the SME speech draft, reading
+      it aloud to aides in the Roosevelt Room to demonstrate and enforce a return
+      to tax cut fundamentals; it serves as the narrative battleground where partisan
+      debates are dismissed, and later implicitly contrasted against the rejected
+      caucus insert, embodying Sam's control over presidential messaging.
+    status_before_event: Draft in Sam's possession, being actively read and edited
+      in Roosevelt Room
+    status_after_event: Remains with Sam post-interruption, primed for refinement
+      based on CBO news
+    global_id: ger_object_e4b23e861b56
+  - object_uuid: ger_object_7112ec08c51b
+    description_of_involvement: Richard hands the sheet bearing the Progressive Caucus's
+      raw populist attack line to Sam in his office; Sam reads it aloud, pauses decisively,
+      and rejects it as bad writing, crumpling its hopes functionally while it highlights
+      intra-party messaging tensions and Sam's gatekeeping of the President's voice.
+    status_before_event: In Richard's possession, carried from hallway
+    status_after_event: Held by Sam in office, dismissed and set aside
+    global_id: ger_object_7112ec08c51b
+  location_involvements:
+  - location_uuid: ger_location_7423b10d7d15
+    description_of_involvement: The Roosevelt Room hosts Sam's commanding pacing and
+      speech reading to aides, establishing intense focus on fundamentals before the
+      knock interrupts; it pulses with strategic tension as aides lean in, contrasting
+      the MS crisis isolation by showcasing routine policy grind.
+    observed_atmosphere: Focused and charged with rhetorical intensity, aides attentive
+      amid rustling pages
+    functional_role: Creative workshop for speech refinement
+    symbolic_significance: Hub of White House messaging discipline amid broader deceptions
+    access_restrictions: Restricted to senior speechwriting aides
+    key_environmental_details:
+    - Polished table with seated aides
+    - French doors hinting at Oval proximity
+    global_id: ger_location_7423b10d7d15
+  - location_uuid: ger_location_8fd125f6423c
+    description_of_involvement: West Wing hallway serves as urgent interception point
+      where Jane and Richard ambush Sam post-Roosevelt Room, leading around the corner
+      toward his office; its humming tension underscores quick pivots from group brainstorming
+      to private deal-making.
+    observed_atmosphere: Brisk and secretive, with urgent strides and whispers
+    functional_role: Transition corridor for confidential briefings
+    symbolic_significance: Vein of power connecting strategy rooms to personal offices
+    access_restrictions: White House staff only, high-security access
+    key_environmental_details:
+    - Fluorescent lighting sharpening footfalls
+    - Proximity to Leo's office and Oval shadows
+    global_id: ger_location_8fd125f6423c
   organization_involvements:
   - organization_uuid: ger_organization_48b0c8b33ba1
     description_of_involvement: CBO's impending surplus downgrade (200B/400B less)
@@ -2468,479 +2468,6 @@ events:
     for Chicago. That we want to do great things, but our opponents want bigger swimming
     pools and faster private jets." TOBY: "Change the writing."'
   is_flashback: false
-  location_uuid: ger_location_8fd125f6423c
-  theme_uuids: []
-  arc_uuids: []
-  participations:
-  - character_uuid: ger_agent_04bbccb1e352
-    emotional_state: Playfully indulgent then pragmatically excited, shading to concerned
-      attentiveness amid Toby's distraction
-    goals:
-    - Share CBO windfall for tax strategy advantage
-    - Seek guidance on handling Caucus/ATJ rhetoric demands
-    what_happened: Enters Mess spotting Toby, affirms speech reviews positively, engages
-      in light-hearted Batman-Robin pushback, reveals CBO surplus slash and Caucus
-      rhetoric demands during walk to Toby's office, absorbs strategic glee and curt
-      tasking with pragmatic concern.
-    observed_status: Enters Mess spotting Toby, affirms speech reviews positively,
-      engages in light-hearted Batman-Robin pushback, reveals CBO surplus slash and
-      Caucus rhetoric demands during walk to Toby's office, absorbs strategic glee
-      and curt tasking with pragmatic concern.
-    beliefs:
-    - Partnership with Toby yields rhetorical successes like speech reviews
-    - Fiscal data like CBO projections trumps populist barbs in presidential messaging
-    observed_traits:
-    - playful
-    - pragmatic
-    - loyal
-    - strategic
-    importance: primary
-    global_id: ger_agent_04bbccb1e352
-  - character_uuid: ger_agent_7854a70e34ea
-    emotional_state: Exuberantly triumphant and playful, surging to strategic glee
-      before curt deflection veiling deep distraction and anxiety
-    goals:
-    - Celebrate speech triumph reinforcing partnership
-    - Leverage CBO data for tax-cut concessions
-    - Neutralize Caucus/ATJ rhetoric unfit for Bartlet
-    what_happened: Sits alone reading newspaper over coffee, thrusts it up sharing
-      Wachtel rave, tosses paper, grabs pastry refills mug with slurred Batman-Robin
-      glee, erupts in joy at CBO news proposing tax deal en route to office, sighs
-      curtly dismissing Caucus line tasking Sam, hesitates silently distracted before
-      abrupt exit.
-    observed_status: Sits alone reading newspaper over coffee, thrusts it up sharing
-      Wachtel rave, tosses paper, grabs pastry refills mug with slurred Batman-Robin
-      glee, erupts in joy at CBO news proposing tax deal en route to office, sighs
-      curtly dismissing Caucus line tasking Sam, hesitates silently distracted before
-      abrupt exit.
-    beliefs:
-    - He and Sam embody unbeatable Batman-Robin speechwriting duo
-    - Lower surplus empowers disciplined fiscal messaging over class-war jabs
-    - Personal crises like MS must be compartmentalized from work
-    observed_traits:
-    - buoyant
-    - playful
-    - gleeful
-    - curt
-    - distracted
-    importance: primary
-    global_id: ger_agent_7854a70e34ea
-  - character_uuid: ger_agent_8c119e071ed1
-    emotional_state: Assertively influential offscreen
-    goals:
-    - Relay CBO data to shape White House strategy
-    what_happened: Referenced by Sam as having delivered CBO projection news alongside
-      Richard Will prior to this encounter.
-    observed_status: Referenced by Sam as having delivered CBO projection news alongside
-      Richard Will prior to this encounter.
-    beliefs:
-    - CBO revisions provide key leverage in budget fights
-    observed_traits:
-    - aggressive
-    - strategic
-    importance: primary
-    global_id: ger_agent_8c119e071ed1
-  - character_uuid: ger_agent_d06e91a67b84
-    emotional_state: Professionally urgent offscreen
-    goals:
-    - Convey CBO surplus slash for policy impact
-    what_happened: Referenced by Sam as having delivered CBO projection news alongside
-      Jane Gentry prior to this encounter.
-    observed_status: Referenced by Sam as having delivered CBO projection news alongside
-      Jane Gentry prior to this encounter.
-    beliefs:
-    - Nonpartisan data drives congressional-White House negotiations
-    observed_traits:
-    - precise
-    - tactical
-    importance: primary
-    global_id: ger_agent_d06e91a67b84
-  - character_uuid: ger_agent_a8a6a092a464
-    emotional_state: Approvingly impressed offscreen
-    goals:
-    - Validate strong rhetoric publicly
-    what_happened: Invoked via newspaper quote as source of unexpected rave review
-      on commencement speech, amplifying Toby's glee.
-    observed_status: Invoked via newspaper quote as source of unexpected rave review
-      on commencement speech, amplifying Toby's glee.
-    beliefs:
-    - Worthy speeches merit praise regardless of politics
-    observed_traits:
-    - discerning
-    - influential
-    importance: primary
-    global_id: ger_agent_a8a6a092a464
-  object_involvements:
-  - object_uuid: ger_object_575b5f93638b
-    description_of_involvement: Toby reads folded section alone, holds it aloft to
-      spotlight rave reviews including Wachtel's praise for their speech, tosses it
-      casually on table amid banter; functions as tangible proof of triumph, narrative
-      pivot from celebration to policy, underscoring partnership amid MS shadows.
-    status_before_event: Folded section at table, held and read by Toby
-    status_after_event: Tossed and splayed on Mess table, discarded
-    global_id: ger_object_575b5f93638b
-  - object_uuid: ger_object_da7766ee2c3b
-    description_of_involvement: Toby drinks from it initially at table, walks to counter
-      for refill during banter, steam rising as he chews slurringly; casual prop grounding
-      buoyant informality, anchors shift from glee to strategic march, symbolizing
-      routine amid brewing crisis tension.
-    status_before_event: At Toby's table in Mess, containing coffee
-    status_after_event: Refilled with fresh coffee, carried by Toby toward stairs/office
-    global_id: ger_object_da7766ee2c3b
-  - object_uuid: ger_object_681c1da6ff8b
-    description_of_involvement: Toby snatches it from Mess counter while refilling
-      coffee, chews vigorously with slurred speech amplifying playful Batman declarations;
-      fleeting snack prop heightens levity and physicality of celebration, contrasting
-      curt policy pivots, embodies momentary escape before distraction.
-    status_before_event: On Mess counter, untouched
-    status_after_event: Partially eaten, crumbs flaking, held by Toby during walk
-    global_id: ger_object_681c1da6ff8b
-  location_involvements:
-  - location_uuid: ger_location_8fd125f6423c
-    description_of_involvement: Final hallway sees Toby hesitate silently at office
-      door before directing Sam oppositely down corridor; thrumming tension clots
-      air post-dismissal, underscoring distraction's emotional cost in power nexus.
-    observed_atmosphere: Humming with unspoken secrets, fluorescent-sharpened urgency
-    functional_role: Exit path dispersing duo after curt exchange
-    symbolic_significance: Corridor of fraying deceptions en route to crises
-    access_restrictions: Senior staff corridor
-    key_environmental_details:
-    - Linoleum footfalls
-    - Fluorescent glare
-    - Door thud echoes
-    global_id: ger_location_8fd125f6423c
-  - location_uuid: ger_location_55e711ff6df2
-    description_of_involvement: Subterranean Mess hosts Sam's entry and Toby's solo
-      start, fueling initial newspaper reveal, Batman banter over counter refuel;
-      casual hub sparks joy before exit, atmospheric contrast to hallway tension,
-      propels duo into motion revealing subtextual fractures.
-    observed_atmosphere: Buoyantly casual with steam and chatter, humming staff refuge
-    functional_role: Informal refueling spot for partnership banter and news drop
-    symbolic_significance: Fleeting camaraderie oasis amid White House deceit pressures
-    access_restrictions: White House staff only
-    key_environmental_details:
-    - Coffee counter with urns steaming
-    - Scarred laminate tables
-    - Folded newspapers and pastries
-    global_id: ger_location_55e711ff6df2
-  - location_uuid: ger_location_2392fa10fc51
-    description_of_involvement: Duo charges up polished treads from Mess during CBO
-      reveal and tax glee, amplifying triumphant snarls echoing off walls; transitional
-      ascent builds momentum from levity to strategy, heightening rhythm of revelation.
-    observed_atmosphere: Echoing with banter, urgent forward propulsion
-    functional_role: Pathway escalating conversation intensity
-    symbolic_significance: Rising steps mirror strategic elevation via fiscal data
-    access_restrictions: Internal White House staff access
-    key_environmental_details:
-    - Polished treads gleaming fluorescently
-    - Concrete walls ricocheting dialogue
-    global_id: ger_location_2392fa10fc51
-  organization_involvements:
-  - organization_uuid: ger_organization_48b0c8b33ba1
-    description_of_involvement: CBO's revised projection slashing surplus $200B eight
-      years out, relayed via Jane/Richard, ignites Toby/Sam's glee as anti-tax-cut
-      weapon; nonpartisan jolt reshapes speech strategy, narrative boon amid cover-up
-      haze.
-    active_representation: Via congressional analysts' prior delivery to Sam
-    power_dynamics: Empowers White House with authoritative data against GOP
-    organizational_goals:
-    - Deliver accurate long-term fiscal forecasts
-    - Inform policy debates objectively
-    influence_mechanisms:
-    - Independent projections altering budget math
-    - Direct relay by envoys to senior staff
-    institutional_impact: Shifts Democratic leverage in tax fight dynamics
-    internal_dynamics: ''
-    global_id: ger_organization_48b0c8b33ba1
-  - organization_uuid: ger_organization_3f6ae9512a8d
-    description_of_involvement: Progressive Caucus demands 'swimming pools and jets'
-      class-war line for Chicago speech draft, cited by Sam and curtly spiked by Toby
-      tasking outreach; exposes intra-party populist friction against disciplined
-      tone.
-    active_representation: Through relayed rhetoric demands via staff channels
-    power_dynamics: Pressures White House internally but overruled strategically
-    organizational_goals:
-    - Infuse populist attacks sharpening class rhetoric
-    - Influence presidential messaging on inequality
-    influence_mechanisms:
-    - Draft insertions via congressional allies
-    - Base mobilization pressure on speech content
-    institutional_impact: Highlights Democratic left-right messaging tensions
-    internal_dynamics: Factional push for aggressive economic antagonism
-    global_id: ger_organization_3f6ae9512a8d
-  - organization_uuid: ger_organization_99820c92df5b
-    description_of_involvement: ATJ allies with Caucus pushing same crass rhetoric
-      line into speech, dismissed by Toby urging Sam contact; embodies rejected populism
-      clashing presidential polish amid CBO pivot.
-    active_representation: Joint demands relayed through Caucus channels
-    power_dynamics: External ideological pressure deflected by senior staff
-    organizational_goals:
-    - Embed antagonistic tax-cut critiques
-    - Amplify class-war narrative in public address
-    influence_mechanisms:
-    - Policy line insertions in drafts
-    - Coordination with progressive allies
-    institutional_impact: Tests White House base management amid fiscal shifts
-    internal_dynamics: Alliance amplifying intra-Democratic rhetoric battles
-    global_id: ger_organization_99820c92df5b
-  derived_from_beat_uuids: &id008
-  - beat_8892b5d947d8dff1
-  - beat_c94fc99087be26c1
-  - beat_e5e13e9a260c0f9f
-  - beat_b5ebc17fe489cf90
-  - beat_8d73310227fd8a66
-  source_season: 2
-  source_database: westwing.s02
-- fabula_uuid: cand_evt_scene_5a627e7bb8472695_1
-  global_id: null
-  title: 'Batman and Robin: Speech Praise to CBO Edge and Caucus Friction'
-  description: In the White House Mess, Sam joins a buoyant Toby celebrating rave
-    reviews for their commencement speech, indulging in playful 'Batman and Robin'
-    banter that underscores their tight partnership amid brewing crises. As they move
-    to Toby's office, Sam reveals CBO projections slashing the surplus by $200 billion—music
-    to their anti-tax-cut ears, handing them leverage for strategic concessions. Toby's
-    glee sours into curt dismissal of Progressive Caucus demands for class-war rhetoric,
-    tasking Sam to neutralize it, subtly revealing his distraction from the MS cover-up's
-    mounting pressure.
-  episode_uuid: ep_sea_ser_the_west_wing_s02_e20
-  scene_sequence: 6
-  sequence_in_scene: 9
-  key_dialogue: *id007
-  is_flashback: false
-  location_uuid: ger_location_55e711ff6df2
-  theme_uuids: []
-  arc_uuids: []
-  participations:
-  - character_uuid: ger_agent_04bbccb1e352
-    emotional_state: Playfully indulgent then pragmatically excited, shading to concerned
-      attentiveness amid Toby's distraction
-    goals:
-    - Share CBO windfall for tax strategy advantage
-    - Seek guidance on handling Caucus/ATJ rhetoric demands
-    what_happened: Enters Mess spotting Toby, affirms speech reviews positively, engages
-      in light-hearted Batman-Robin pushback, reveals CBO surplus slash and Caucus
-      rhetoric demands during walk to Toby's office, absorbs strategic glee and curt
-      tasking with pragmatic concern.
-    observed_status: Enters Mess spotting Toby, affirms speech reviews positively,
-      engages in light-hearted Batman-Robin pushback, reveals CBO surplus slash and
-      Caucus rhetoric demands during walk to Toby's office, absorbs strategic glee
-      and curt tasking with pragmatic concern.
-    beliefs:
-    - Partnership with Toby yields rhetorical successes like speech reviews
-    - Fiscal data like CBO projections trumps populist barbs in presidential messaging
-    observed_traits:
-    - playful
-    - pragmatic
-    - loyal
-    - strategic
-    importance: primary
-    global_id: ger_agent_04bbccb1e352
-  - character_uuid: ger_agent_7854a70e34ea
-    emotional_state: Exuberantly triumphant and playful, surging to strategic glee
-      before curt deflection veiling deep distraction and anxiety
-    goals:
-    - Celebrate speech triumph reinforcing partnership
-    - Leverage CBO data for tax-cut concessions
-    - Neutralize Caucus/ATJ rhetoric unfit for Bartlet
-    what_happened: Sits alone reading newspaper over coffee, thrusts it up sharing
-      Wachtel rave, tosses paper, grabs pastry refills mug with slurred Batman-Robin
-      glee, erupts in joy at CBO news proposing tax deal en route to office, sighs
-      curtly dismissing Caucus line tasking Sam, hesitates silently distracted before
-      abrupt exit.
-    observed_status: Sits alone reading newspaper over coffee, thrusts it up sharing
-      Wachtel rave, tosses paper, grabs pastry refills mug with slurred Batman-Robin
-      glee, erupts in joy at CBO news proposing tax deal en route to office, sighs
-      curtly dismissing Caucus line tasking Sam, hesitates silently distracted before
-      abrupt exit.
-    beliefs:
-    - He and Sam embody unbeatable Batman-Robin speechwriting duo
-    - Lower surplus empowers disciplined fiscal messaging over class-war jabs
-    - Personal crises like MS must be compartmentalized from work
-    observed_traits:
-    - buoyant
-    - playful
-    - gleeful
-    - curt
-    - distracted
-    importance: primary
-    global_id: ger_agent_7854a70e34ea
-  - character_uuid: ger_agent_8c119e071ed1
-    emotional_state: Assertively influential offscreen
-    goals:
-    - Relay CBO data to shape White House strategy
-    what_happened: Referenced by Sam as having delivered CBO projection news alongside
-      Richard Will prior to this encounter.
-    observed_status: Referenced by Sam as having delivered CBO projection news alongside
-      Richard Will prior to this encounter.
-    beliefs:
-    - CBO revisions provide key leverage in budget fights
-    observed_traits:
-    - aggressive
-    - strategic
-    importance: primary
-    global_id: ger_agent_8c119e071ed1
-  - character_uuid: ger_agent_d06e91a67b84
-    emotional_state: Professionally urgent offscreen
-    goals:
-    - Convey CBO surplus slash for policy impact
-    what_happened: Referenced by Sam as having delivered CBO projection news alongside
-      Jane Gentry prior to this encounter.
-    observed_status: Referenced by Sam as having delivered CBO projection news alongside
-      Jane Gentry prior to this encounter.
-    beliefs:
-    - Nonpartisan data drives congressional-White House negotiations
-    observed_traits:
-    - precise
-    - tactical
-    importance: primary
-    global_id: ger_agent_d06e91a67b84
-  - character_uuid: ger_agent_a8a6a092a464
-    emotional_state: Approvingly impressed offscreen
-    goals:
-    - Validate strong rhetoric publicly
-    what_happened: Invoked via newspaper quote as source of unexpected rave review
-      on commencement speech, amplifying Toby's glee.
-    observed_status: Invoked via newspaper quote as source of unexpected rave review
-      on commencement speech, amplifying Toby's glee.
-    beliefs:
-    - Worthy speeches merit praise regardless of politics
-    observed_traits:
-    - discerning
-    - influential
-    importance: primary
-    global_id: ger_agent_a8a6a092a464
-  object_involvements:
-  - object_uuid: ger_object_575b5f93638b
-    description_of_involvement: Toby reads folded section alone, holds it aloft to
-      spotlight rave reviews including Wachtel's praise for their speech, tosses it
-      casually on table amid banter; functions as tangible proof of triumph, narrative
-      pivot from celebration to policy, underscoring partnership amid MS shadows.
-    status_before_event: Folded section at table, held and read by Toby
-    status_after_event: Tossed and splayed on Mess table, discarded
-    global_id: ger_object_575b5f93638b
-  - object_uuid: ger_object_da7766ee2c3b
-    description_of_involvement: Toby drinks from it initially at table, walks to counter
-      for refill during banter, steam rising as he chews slurringly; casual prop grounding
-      buoyant informality, anchors shift from glee to strategic march, symbolizing
-      routine amid brewing crisis tension.
-    status_before_event: At Toby's table in Mess, containing coffee
-    status_after_event: Refilled with fresh coffee, carried by Toby toward stairs/office
-    global_id: ger_object_da7766ee2c3b
-  - object_uuid: ger_object_681c1da6ff8b
-    description_of_involvement: Toby snatches it from Mess counter while refilling
-      coffee, chews vigorously with slurred speech amplifying playful Batman declarations;
-      fleeting snack prop heightens levity and physicality of celebration, contrasting
-      curt policy pivots, embodies momentary escape before distraction.
-    status_before_event: On Mess counter, untouched
-    status_after_event: Partially eaten, crumbs flaking, held by Toby during walk
-    global_id: ger_object_681c1da6ff8b
-  location_involvements:
-  - location_uuid: ger_location_8fd125f6423c
-    description_of_involvement: Final hallway sees Toby hesitate silently at office
-      door before directing Sam oppositely down corridor; thrumming tension clots
-      air post-dismissal, underscoring distraction's emotional cost in power nexus.
-    observed_atmosphere: Humming with unspoken secrets, fluorescent-sharpened urgency
-    functional_role: Exit path dispersing duo after curt exchange
-    symbolic_significance: Corridor of fraying deceptions en route to crises
-    access_restrictions: Senior staff corridor
-    key_environmental_details:
-    - Linoleum footfalls
-    - Fluorescent glare
-    - Door thud echoes
-    global_id: ger_location_8fd125f6423c
-  - location_uuid: ger_location_55e711ff6df2
-    description_of_involvement: Subterranean Mess hosts Sam's entry and Toby's solo
-      start, fueling initial newspaper reveal, Batman banter over counter refuel;
-      casual hub sparks joy before exit, atmospheric contrast to hallway tension,
-      propels duo into motion revealing subtextual fractures.
-    observed_atmosphere: Buoyantly casual with steam and chatter, humming staff refuge
-    functional_role: Informal refueling spot for partnership banter and news drop
-    symbolic_significance: Fleeting camaraderie oasis amid White House deceit pressures
-    access_restrictions: White House staff only
-    key_environmental_details:
-    - Coffee counter with urns steaming
-    - Scarred laminate tables
-    - Folded newspapers and pastries
-    global_id: ger_location_55e711ff6df2
-  - location_uuid: ger_location_2392fa10fc51
-    description_of_involvement: Duo charges up polished treads from Mess during CBO
-      reveal and tax glee, amplifying triumphant snarls echoing off walls; transitional
-      ascent builds momentum from levity to strategy, heightening rhythm of revelation.
-    observed_atmosphere: Echoing with banter, urgent forward propulsion
-    functional_role: Pathway escalating conversation intensity
-    symbolic_significance: Rising steps mirror strategic elevation via fiscal data
-    access_restrictions: Internal White House staff access
-    key_environmental_details:
-    - Polished treads gleaming fluorescently
-    - Concrete walls ricocheting dialogue
-    global_id: ger_location_2392fa10fc51
-  organization_involvements:
-  - organization_uuid: ger_organization_48b0c8b33ba1
-    description_of_involvement: CBO's revised projection slashing surplus $200B eight
-      years out, relayed via Jane/Richard, ignites Toby/Sam's glee as anti-tax-cut
-      weapon; nonpartisan jolt reshapes speech strategy, narrative boon amid cover-up
-      haze.
-    active_representation: Via congressional analysts' prior delivery to Sam
-    power_dynamics: Empowers White House with authoritative data against GOP
-    organizational_goals:
-    - Deliver accurate long-term fiscal forecasts
-    - Inform policy debates objectively
-    influence_mechanisms:
-    - Independent projections altering budget math
-    - Direct relay by envoys to senior staff
-    institutional_impact: Shifts Democratic leverage in tax fight dynamics
-    internal_dynamics: ''
-    global_id: ger_organization_48b0c8b33ba1
-  - organization_uuid: ger_organization_3f6ae9512a8d
-    description_of_involvement: Progressive Caucus demands 'swimming pools and jets'
-      class-war line for Chicago speech draft, cited by Sam and curtly spiked by Toby
-      tasking outreach; exposes intra-party populist friction against disciplined
-      tone.
-    active_representation: Through relayed rhetoric demands via staff channels
-    power_dynamics: Pressures White House internally but overruled strategically
-    organizational_goals:
-    - Infuse populist attacks sharpening class rhetoric
-    - Influence presidential messaging on inequality
-    influence_mechanisms:
-    - Draft insertions via congressional allies
-    - Base mobilization pressure on speech content
-    institutional_impact: Highlights Democratic left-right messaging tensions
-    internal_dynamics: Factional push for aggressive economic antagonism
-    global_id: ger_organization_3f6ae9512a8d
-  - organization_uuid: ger_organization_99820c92df5b
-    description_of_involvement: ATJ allies with Caucus pushing same crass rhetoric
-      line into speech, dismissed by Toby urging Sam contact; embodies rejected populism
-      clashing presidential polish amid CBO pivot.
-    active_representation: Joint demands relayed through Caucus channels
-    power_dynamics: External ideological pressure deflected by senior staff
-    organizational_goals:
-    - Embed antagonistic tax-cut critiques
-    - Amplify class-war narrative in public address
-    influence_mechanisms:
-    - Policy line insertions in drafts
-    - Coordination with progressive allies
-    institutional_impact: Tests White House base management amid fiscal shifts
-    internal_dynamics: Alliance amplifying intra-Democratic rhetoric battles
-    global_id: ger_organization_99820c92df5b
-  derived_from_beat_uuids: *id008
-  source_season: 2
-  source_database: westwing.s02
-- fabula_uuid: cand_evt_scene_5a627e7bb8472695_1
-  global_id: null
-  title: 'Batman and Robin: Speech Praise to CBO Edge and Caucus Friction'
-  description: In the White House Mess, Sam joins a buoyant Toby celebrating rave
-    reviews for their commencement speech, indulging in playful 'Batman and Robin'
-    banter that underscores their tight partnership amid brewing crises. As they move
-    to Toby's office, Sam reveals CBO projections slashing the surplus by $200 billion—music
-    to their anti-tax-cut ears, handing them leverage for strategic concessions. Toby's
-    glee sours into curt dismissal of Progressive Caucus demands for class-war rhetoric,
-    tasking Sam to neutralize it, subtly revealing his distraction from the MS cover-up's
-    mounting pressure.
-  episode_uuid: ep_sea_ser_the_west_wing_s02_e20
-  scene_sequence: 6
-  sequence_in_scene: 9
-  key_dialogue: *id007
-  is_flashback: false
   location_uuid: ger_location_2392fa10fc51
   theme_uuids: []
   arc_uuids: []
@@ -3069,6 +2596,18 @@ events:
     status_after_event: Partially eaten, crumbs flaking, held by Toby during walk
     global_id: ger_object_681c1da6ff8b
   location_involvements:
+  - location_uuid: ger_location_2392fa10fc51
+    description_of_involvement: Duo charges up polished treads from Mess during CBO
+      reveal and tax glee, amplifying triumphant snarls echoing off walls; transitional
+      ascent builds momentum from levity to strategy, heightening rhythm of revelation.
+    observed_atmosphere: Echoing with banter, urgent forward propulsion
+    functional_role: Pathway escalating conversation intensity
+    symbolic_significance: Rising steps mirror strategic elevation via fiscal data
+    access_restrictions: Internal White House staff access
+    key_environmental_details:
+    - Polished treads gleaming fluorescently
+    - Concrete walls ricocheting dialogue
+    global_id: ger_location_2392fa10fc51
   - location_uuid: ger_location_8fd125f6423c
     description_of_involvement: Final hallway sees Toby hesitate silently at office
       door before directing Sam oppositely down corridor; thrumming tension clots
@@ -3082,7 +2621,7 @@ events:
     - Fluorescent glare
     - Door thud echoes
     global_id: ger_location_8fd125f6423c
-  - location_uuid: ger_location_55e711ff6df2
+  - location_uuid: ger_location_ba584d0e54df
     description_of_involvement: Subterranean Mess hosts Sam's entry and Toby's solo
       start, fueling initial newspaper reveal, Batman banter over counter refuel;
       casual hub sparks joy before exit, atmospheric contrast to hallway tension,
@@ -3095,7 +2634,207 @@ events:
     - Coffee counter with urns steaming
     - Scarred laminate tables
     - Folded newspapers and pastries
-    global_id: ger_location_55e711ff6df2
+    global_id: ger_location_ba584d0e54df
+  organization_involvements:
+  - organization_uuid: ger_organization_48b0c8b33ba1
+    description_of_involvement: CBO's revised projection slashing surplus $200B eight
+      years out, relayed via Jane/Richard, ignites Toby/Sam's glee as anti-tax-cut
+      weapon; nonpartisan jolt reshapes speech strategy, narrative boon amid cover-up
+      haze.
+    active_representation: Via congressional analysts' prior delivery to Sam
+    power_dynamics: Empowers White House with authoritative data against GOP
+    organizational_goals:
+    - Deliver accurate long-term fiscal forecasts
+    - Inform policy debates objectively
+    influence_mechanisms:
+    - Independent projections altering budget math
+    - Direct relay by envoys to senior staff
+    institutional_impact: Shifts Democratic leverage in tax fight dynamics
+    internal_dynamics: ''
+    global_id: ger_organization_48b0c8b33ba1
+  - organization_uuid: ger_organization_3f6ae9512a8d
+    description_of_involvement: Progressive Caucus demands 'swimming pools and jets'
+      class-war line for Chicago speech draft, cited by Sam and curtly spiked by Toby
+      tasking outreach; exposes intra-party populist friction against disciplined
+      tone.
+    active_representation: Through relayed rhetoric demands via staff channels
+    power_dynamics: Pressures White House internally but overruled strategically
+    organizational_goals:
+    - Infuse populist attacks sharpening class rhetoric
+    - Influence presidential messaging on inequality
+    influence_mechanisms:
+    - Draft insertions via congressional allies
+    - Base mobilization pressure on speech content
+    institutional_impact: Highlights Democratic left-right messaging tensions
+    internal_dynamics: Factional push for aggressive economic antagonism
+    global_id: ger_organization_3f6ae9512a8d
+  - organization_uuid: ger_organization_99820c92df5b
+    description_of_involvement: ATJ allies with Caucus pushing same crass rhetoric
+      line into speech, dismissed by Toby urging Sam contact; embodies rejected populism
+      clashing presidential polish amid CBO pivot.
+    active_representation: Joint demands relayed through Caucus channels
+    power_dynamics: External ideological pressure deflected by senior staff
+    organizational_goals:
+    - Embed antagonistic tax-cut critiques
+    - Amplify class-war narrative in public address
+    influence_mechanisms:
+    - Policy line insertions in drafts
+    - Coordination with progressive allies
+    institutional_impact: Tests White House base management amid fiscal shifts
+    internal_dynamics: Alliance amplifying intra-Democratic rhetoric battles
+    global_id: ger_organization_99820c92df5b
+  derived_from_beat_uuids: &id008
+  - beat_8892b5d947d8dff1
+  - beat_c94fc99087be26c1
+  - beat_e5e13e9a260c0f9f
+  - beat_b5ebc17fe489cf90
+  - beat_8d73310227fd8a66
+  source_season: 2
+  source_database: westwing.s02
+- fabula_uuid: cand_evt_scene_5a627e7bb8472695_1
+  global_id: null
+  title: 'Batman and Robin: Speech Praise to CBO Edge and Caucus Friction'
+  description: In the White House Mess, Sam joins a buoyant Toby celebrating rave
+    reviews for their commencement speech, indulging in playful 'Batman and Robin'
+    banter that underscores their tight partnership amid brewing crises. As they move
+    to Toby's office, Sam reveals CBO projections slashing the surplus by $200 billion—music
+    to their anti-tax-cut ears, handing them leverage for strategic concessions. Toby's
+    glee sours into curt dismissal of Progressive Caucus demands for class-war rhetoric,
+    tasking Sam to neutralize it, subtly revealing his distraction from the MS cover-up's
+    mounting pressure.
+  episode_uuid: ep_sea_ser_the_west_wing_s02_e20
+  scene_sequence: 6
+  sequence_in_scene: 9
+  key_dialogue: *id007
+  is_flashback: false
+  location_uuid: ger_location_8fd125f6423c
+  theme_uuids: []
+  arc_uuids: []
+  participations:
+  - character_uuid: ger_agent_04bbccb1e352
+    emotional_state: Playfully indulgent then pragmatically excited, shading to concerned
+      attentiveness amid Toby's distraction
+    goals:
+    - Share CBO windfall for tax strategy advantage
+    - Seek guidance on handling Caucus/ATJ rhetoric demands
+    what_happened: Enters Mess spotting Toby, affirms speech reviews positively, engages
+      in light-hearted Batman-Robin pushback, reveals CBO surplus slash and Caucus
+      rhetoric demands during walk to Toby's office, absorbs strategic glee and curt
+      tasking with pragmatic concern.
+    observed_status: Enters Mess spotting Toby, affirms speech reviews positively,
+      engages in light-hearted Batman-Robin pushback, reveals CBO surplus slash and
+      Caucus rhetoric demands during walk to Toby's office, absorbs strategic glee
+      and curt tasking with pragmatic concern.
+    beliefs:
+    - Partnership with Toby yields rhetorical successes like speech reviews
+    - Fiscal data like CBO projections trumps populist barbs in presidential messaging
+    observed_traits:
+    - playful
+    - pragmatic
+    - loyal
+    - strategic
+    importance: primary
+    global_id: ger_agent_04bbccb1e352
+  - character_uuid: ger_agent_7854a70e34ea
+    emotional_state: Exuberantly triumphant and playful, surging to strategic glee
+      before curt deflection veiling deep distraction and anxiety
+    goals:
+    - Celebrate speech triumph reinforcing partnership
+    - Leverage CBO data for tax-cut concessions
+    - Neutralize Caucus/ATJ rhetoric unfit for Bartlet
+    what_happened: Sits alone reading newspaper over coffee, thrusts it up sharing
+      Wachtel rave, tosses paper, grabs pastry refills mug with slurred Batman-Robin
+      glee, erupts in joy at CBO news proposing tax deal en route to office, sighs
+      curtly dismissing Caucus line tasking Sam, hesitates silently distracted before
+      abrupt exit.
+    observed_status: Sits alone reading newspaper over coffee, thrusts it up sharing
+      Wachtel rave, tosses paper, grabs pastry refills mug with slurred Batman-Robin
+      glee, erupts in joy at CBO news proposing tax deal en route to office, sighs
+      curtly dismissing Caucus line tasking Sam, hesitates silently distracted before
+      abrupt exit.
+    beliefs:
+    - He and Sam embody unbeatable Batman-Robin speechwriting duo
+    - Lower surplus empowers disciplined fiscal messaging over class-war jabs
+    - Personal crises like MS must be compartmentalized from work
+    observed_traits:
+    - buoyant
+    - playful
+    - gleeful
+    - curt
+    - distracted
+    importance: primary
+    global_id: ger_agent_7854a70e34ea
+  - character_uuid: ger_agent_8c119e071ed1
+    emotional_state: Assertively influential offscreen
+    goals:
+    - Relay CBO data to shape White House strategy
+    what_happened: Referenced by Sam as having delivered CBO projection news alongside
+      Richard Will prior to this encounter.
+    observed_status: Referenced by Sam as having delivered CBO projection news alongside
+      Richard Will prior to this encounter.
+    beliefs:
+    - CBO revisions provide key leverage in budget fights
+    observed_traits:
+    - aggressive
+    - strategic
+    importance: primary
+    global_id: ger_agent_8c119e071ed1
+  - character_uuid: ger_agent_d06e91a67b84
+    emotional_state: Professionally urgent offscreen
+    goals:
+    - Convey CBO surplus slash for policy impact
+    what_happened: Referenced by Sam as having delivered CBO projection news alongside
+      Jane Gentry prior to this encounter.
+    observed_status: Referenced by Sam as having delivered CBO projection news alongside
+      Jane Gentry prior to this encounter.
+    beliefs:
+    - Nonpartisan data drives congressional-White House negotiations
+    observed_traits:
+    - precise
+    - tactical
+    importance: primary
+    global_id: ger_agent_d06e91a67b84
+  - character_uuid: ger_agent_a8a6a092a464
+    emotional_state: Approvingly impressed offscreen
+    goals:
+    - Validate strong rhetoric publicly
+    what_happened: Invoked via newspaper quote as source of unexpected rave review
+      on commencement speech, amplifying Toby's glee.
+    observed_status: Invoked via newspaper quote as source of unexpected rave review
+      on commencement speech, amplifying Toby's glee.
+    beliefs:
+    - Worthy speeches merit praise regardless of politics
+    observed_traits:
+    - discerning
+    - influential
+    importance: primary
+    global_id: ger_agent_a8a6a092a464
+  object_involvements:
+  - object_uuid: ger_object_575b5f93638b
+    description_of_involvement: Toby reads folded section alone, holds it aloft to
+      spotlight rave reviews including Wachtel's praise for their speech, tosses it
+      casually on table amid banter; functions as tangible proof of triumph, narrative
+      pivot from celebration to policy, underscoring partnership amid MS shadows.
+    status_before_event: Folded section at table, held and read by Toby
+    status_after_event: Tossed and splayed on Mess table, discarded
+    global_id: ger_object_575b5f93638b
+  - object_uuid: ger_object_da7766ee2c3b
+    description_of_involvement: Toby drinks from it initially at table, walks to counter
+      for refill during banter, steam rising as he chews slurringly; casual prop grounding
+      buoyant informality, anchors shift from glee to strategic march, symbolizing
+      routine amid brewing crisis tension.
+    status_before_event: At Toby's table in Mess, containing coffee
+    status_after_event: Refilled with fresh coffee, carried by Toby toward stairs/office
+    global_id: ger_object_da7766ee2c3b
+  - object_uuid: ger_object_681c1da6ff8b
+    description_of_involvement: Toby snatches it from Mess counter while refilling
+      coffee, chews vigorously with slurred speech amplifying playful Batman declarations;
+      fleeting snack prop heightens levity and physicality of celebration, contrasting
+      curt policy pivots, embodies momentary escape before distraction.
+    status_before_event: On Mess counter, untouched
+    status_after_event: Partially eaten, crumbs flaking, held by Toby during walk
+    global_id: ger_object_681c1da6ff8b
+  location_involvements:
   - location_uuid: ger_location_2392fa10fc51
     description_of_involvement: Duo charges up polished treads from Mess during CBO
       reveal and tax glee, amplifying triumphant snarls echoing off walls; transitional
@@ -3108,6 +2847,267 @@ events:
     - Polished treads gleaming fluorescently
     - Concrete walls ricocheting dialogue
     global_id: ger_location_2392fa10fc51
+  - location_uuid: ger_location_8fd125f6423c
+    description_of_involvement: Final hallway sees Toby hesitate silently at office
+      door before directing Sam oppositely down corridor; thrumming tension clots
+      air post-dismissal, underscoring distraction's emotional cost in power nexus.
+    observed_atmosphere: Humming with unspoken secrets, fluorescent-sharpened urgency
+    functional_role: Exit path dispersing duo after curt exchange
+    symbolic_significance: Corridor of fraying deceptions en route to crises
+    access_restrictions: Senior staff corridor
+    key_environmental_details:
+    - Linoleum footfalls
+    - Fluorescent glare
+    - Door thud echoes
+    global_id: ger_location_8fd125f6423c
+  - location_uuid: ger_location_ba584d0e54df
+    description_of_involvement: Subterranean Mess hosts Sam's entry and Toby's solo
+      start, fueling initial newspaper reveal, Batman banter over counter refuel;
+      casual hub sparks joy before exit, atmospheric contrast to hallway tension,
+      propels duo into motion revealing subtextual fractures.
+    observed_atmosphere: Buoyantly casual with steam and chatter, humming staff refuge
+    functional_role: Informal refueling spot for partnership banter and news drop
+    symbolic_significance: Fleeting camaraderie oasis amid White House deceit pressures
+    access_restrictions: White House staff only
+    key_environmental_details:
+    - Coffee counter with urns steaming
+    - Scarred laminate tables
+    - Folded newspapers and pastries
+    global_id: ger_location_ba584d0e54df
+  organization_involvements:
+  - organization_uuid: ger_organization_48b0c8b33ba1
+    description_of_involvement: CBO's revised projection slashing surplus $200B eight
+      years out, relayed via Jane/Richard, ignites Toby/Sam's glee as anti-tax-cut
+      weapon; nonpartisan jolt reshapes speech strategy, narrative boon amid cover-up
+      haze.
+    active_representation: Via congressional analysts' prior delivery to Sam
+    power_dynamics: Empowers White House with authoritative data against GOP
+    organizational_goals:
+    - Deliver accurate long-term fiscal forecasts
+    - Inform policy debates objectively
+    influence_mechanisms:
+    - Independent projections altering budget math
+    - Direct relay by envoys to senior staff
+    institutional_impact: Shifts Democratic leverage in tax fight dynamics
+    internal_dynamics: ''
+    global_id: ger_organization_48b0c8b33ba1
+  - organization_uuid: ger_organization_3f6ae9512a8d
+    description_of_involvement: Progressive Caucus demands 'swimming pools and jets'
+      class-war line for Chicago speech draft, cited by Sam and curtly spiked by Toby
+      tasking outreach; exposes intra-party populist friction against disciplined
+      tone.
+    active_representation: Through relayed rhetoric demands via staff channels
+    power_dynamics: Pressures White House internally but overruled strategically
+    organizational_goals:
+    - Infuse populist attacks sharpening class rhetoric
+    - Influence presidential messaging on inequality
+    influence_mechanisms:
+    - Draft insertions via congressional allies
+    - Base mobilization pressure on speech content
+    institutional_impact: Highlights Democratic left-right messaging tensions
+    internal_dynamics: Factional push for aggressive economic antagonism
+    global_id: ger_organization_3f6ae9512a8d
+  - organization_uuid: ger_organization_99820c92df5b
+    description_of_involvement: ATJ allies with Caucus pushing same crass rhetoric
+      line into speech, dismissed by Toby urging Sam contact; embodies rejected populism
+      clashing presidential polish amid CBO pivot.
+    active_representation: Joint demands relayed through Caucus channels
+    power_dynamics: External ideological pressure deflected by senior staff
+    organizational_goals:
+    - Embed antagonistic tax-cut critiques
+    - Amplify class-war narrative in public address
+    influence_mechanisms:
+    - Policy line insertions in drafts
+    - Coordination with progressive allies
+    institutional_impact: Tests White House base management amid fiscal shifts
+    internal_dynamics: Alliance amplifying intra-Democratic rhetoric battles
+    global_id: ger_organization_99820c92df5b
+  derived_from_beat_uuids: *id008
+  source_season: 2
+  source_database: westwing.s02
+- fabula_uuid: cand_evt_scene_5a627e7bb8472695_1
+  global_id: null
+  title: 'Batman and Robin: Speech Praise to CBO Edge and Caucus Friction'
+  description: In the White House Mess, Sam joins a buoyant Toby celebrating rave
+    reviews for their commencement speech, indulging in playful 'Batman and Robin'
+    banter that underscores their tight partnership amid brewing crises. As they move
+    to Toby's office, Sam reveals CBO projections slashing the surplus by $200 billion—music
+    to their anti-tax-cut ears, handing them leverage for strategic concessions. Toby's
+    glee sours into curt dismissal of Progressive Caucus demands for class-war rhetoric,
+    tasking Sam to neutralize it, subtly revealing his distraction from the MS cover-up's
+    mounting pressure.
+  episode_uuid: ep_sea_ser_the_west_wing_s02_e20
+  scene_sequence: 6
+  sequence_in_scene: 9
+  key_dialogue: *id007
+  is_flashback: false
+  location_uuid: ger_location_ba584d0e54df
+  theme_uuids: []
+  arc_uuids: []
+  participations:
+  - character_uuid: ger_agent_04bbccb1e352
+    emotional_state: Playfully indulgent then pragmatically excited, shading to concerned
+      attentiveness amid Toby's distraction
+    goals:
+    - Share CBO windfall for tax strategy advantage
+    - Seek guidance on handling Caucus/ATJ rhetoric demands
+    what_happened: Enters Mess spotting Toby, affirms speech reviews positively, engages
+      in light-hearted Batman-Robin pushback, reveals CBO surplus slash and Caucus
+      rhetoric demands during walk to Toby's office, absorbs strategic glee and curt
+      tasking with pragmatic concern.
+    observed_status: Enters Mess spotting Toby, affirms speech reviews positively,
+      engages in light-hearted Batman-Robin pushback, reveals CBO surplus slash and
+      Caucus rhetoric demands during walk to Toby's office, absorbs strategic glee
+      and curt tasking with pragmatic concern.
+    beliefs:
+    - Partnership with Toby yields rhetorical successes like speech reviews
+    - Fiscal data like CBO projections trumps populist barbs in presidential messaging
+    observed_traits:
+    - playful
+    - pragmatic
+    - loyal
+    - strategic
+    importance: primary
+    global_id: ger_agent_04bbccb1e352
+  - character_uuid: ger_agent_7854a70e34ea
+    emotional_state: Exuberantly triumphant and playful, surging to strategic glee
+      before curt deflection veiling deep distraction and anxiety
+    goals:
+    - Celebrate speech triumph reinforcing partnership
+    - Leverage CBO data for tax-cut concessions
+    - Neutralize Caucus/ATJ rhetoric unfit for Bartlet
+    what_happened: Sits alone reading newspaper over coffee, thrusts it up sharing
+      Wachtel rave, tosses paper, grabs pastry refills mug with slurred Batman-Robin
+      glee, erupts in joy at CBO news proposing tax deal en route to office, sighs
+      curtly dismissing Caucus line tasking Sam, hesitates silently distracted before
+      abrupt exit.
+    observed_status: Sits alone reading newspaper over coffee, thrusts it up sharing
+      Wachtel rave, tosses paper, grabs pastry refills mug with slurred Batman-Robin
+      glee, erupts in joy at CBO news proposing tax deal en route to office, sighs
+      curtly dismissing Caucus line tasking Sam, hesitates silently distracted before
+      abrupt exit.
+    beliefs:
+    - He and Sam embody unbeatable Batman-Robin speechwriting duo
+    - Lower surplus empowers disciplined fiscal messaging over class-war jabs
+    - Personal crises like MS must be compartmentalized from work
+    observed_traits:
+    - buoyant
+    - playful
+    - gleeful
+    - curt
+    - distracted
+    importance: primary
+    global_id: ger_agent_7854a70e34ea
+  - character_uuid: ger_agent_8c119e071ed1
+    emotional_state: Assertively influential offscreen
+    goals:
+    - Relay CBO data to shape White House strategy
+    what_happened: Referenced by Sam as having delivered CBO projection news alongside
+      Richard Will prior to this encounter.
+    observed_status: Referenced by Sam as having delivered CBO projection news alongside
+      Richard Will prior to this encounter.
+    beliefs:
+    - CBO revisions provide key leverage in budget fights
+    observed_traits:
+    - aggressive
+    - strategic
+    importance: primary
+    global_id: ger_agent_8c119e071ed1
+  - character_uuid: ger_agent_d06e91a67b84
+    emotional_state: Professionally urgent offscreen
+    goals:
+    - Convey CBO surplus slash for policy impact
+    what_happened: Referenced by Sam as having delivered CBO projection news alongside
+      Jane Gentry prior to this encounter.
+    observed_status: Referenced by Sam as having delivered CBO projection news alongside
+      Jane Gentry prior to this encounter.
+    beliefs:
+    - Nonpartisan data drives congressional-White House negotiations
+    observed_traits:
+    - precise
+    - tactical
+    importance: primary
+    global_id: ger_agent_d06e91a67b84
+  - character_uuid: ger_agent_a8a6a092a464
+    emotional_state: Approvingly impressed offscreen
+    goals:
+    - Validate strong rhetoric publicly
+    what_happened: Invoked via newspaper quote as source of unexpected rave review
+      on commencement speech, amplifying Toby's glee.
+    observed_status: Invoked via newspaper quote as source of unexpected rave review
+      on commencement speech, amplifying Toby's glee.
+    beliefs:
+    - Worthy speeches merit praise regardless of politics
+    observed_traits:
+    - discerning
+    - influential
+    importance: primary
+    global_id: ger_agent_a8a6a092a464
+  object_involvements:
+  - object_uuid: ger_object_575b5f93638b
+    description_of_involvement: Toby reads folded section alone, holds it aloft to
+      spotlight rave reviews including Wachtel's praise for their speech, tosses it
+      casually on table amid banter; functions as tangible proof of triumph, narrative
+      pivot from celebration to policy, underscoring partnership amid MS shadows.
+    status_before_event: Folded section at table, held and read by Toby
+    status_after_event: Tossed and splayed on Mess table, discarded
+    global_id: ger_object_575b5f93638b
+  - object_uuid: ger_object_da7766ee2c3b
+    description_of_involvement: Toby drinks from it initially at table, walks to counter
+      for refill during banter, steam rising as he chews slurringly; casual prop grounding
+      buoyant informality, anchors shift from glee to strategic march, symbolizing
+      routine amid brewing crisis tension.
+    status_before_event: At Toby's table in Mess, containing coffee
+    status_after_event: Refilled with fresh coffee, carried by Toby toward stairs/office
+    global_id: ger_object_da7766ee2c3b
+  - object_uuid: ger_object_681c1da6ff8b
+    description_of_involvement: Toby snatches it from Mess counter while refilling
+      coffee, chews vigorously with slurred speech amplifying playful Batman declarations;
+      fleeting snack prop heightens levity and physicality of celebration, contrasting
+      curt policy pivots, embodies momentary escape before distraction.
+    status_before_event: On Mess counter, untouched
+    status_after_event: Partially eaten, crumbs flaking, held by Toby during walk
+    global_id: ger_object_681c1da6ff8b
+  location_involvements:
+  - location_uuid: ger_location_2392fa10fc51
+    description_of_involvement: Duo charges up polished treads from Mess during CBO
+      reveal and tax glee, amplifying triumphant snarls echoing off walls; transitional
+      ascent builds momentum from levity to strategy, heightening rhythm of revelation.
+    observed_atmosphere: Echoing with banter, urgent forward propulsion
+    functional_role: Pathway escalating conversation intensity
+    symbolic_significance: Rising steps mirror strategic elevation via fiscal data
+    access_restrictions: Internal White House staff access
+    key_environmental_details:
+    - Polished treads gleaming fluorescently
+    - Concrete walls ricocheting dialogue
+    global_id: ger_location_2392fa10fc51
+  - location_uuid: ger_location_8fd125f6423c
+    description_of_involvement: Final hallway sees Toby hesitate silently at office
+      door before directing Sam oppositely down corridor; thrumming tension clots
+      air post-dismissal, underscoring distraction's emotional cost in power nexus.
+    observed_atmosphere: Humming with unspoken secrets, fluorescent-sharpened urgency
+    functional_role: Exit path dispersing duo after curt exchange
+    symbolic_significance: Corridor of fraying deceptions en route to crises
+    access_restrictions: Senior staff corridor
+    key_environmental_details:
+    - Linoleum footfalls
+    - Fluorescent glare
+    - Door thud echoes
+    global_id: ger_location_8fd125f6423c
+  - location_uuid: ger_location_ba584d0e54df
+    description_of_involvement: Subterranean Mess hosts Sam's entry and Toby's solo
+      start, fueling initial newspaper reveal, Batman banter over counter refuel;
+      casual hub sparks joy before exit, atmospheric contrast to hallway tension,
+      propels duo into motion revealing subtextual fractures.
+    observed_atmosphere: Buoyantly casual with steam and chatter, humming staff refuge
+    functional_role: Informal refueling spot for partnership banter and news drop
+    symbolic_significance: Fleeting camaraderie oasis amid White House deceit pressures
+    access_restrictions: White House staff only
+    key_environmental_details:
+    - Coffee counter with urns steaming
+    - Scarred laminate tables
+    - Folded newspapers and pastries
+    global_id: ger_location_ba584d0e54df
   organization_involvements:
   - organization_uuid: ger_organization_48b0c8b33ba1
     description_of_involvement: CBO's revised projection slashing surplus $200B eight
@@ -3287,7 +3287,7 @@ events:
     observed_traits: []
     importance: primary
     global_id: ger_agent_dd62525d972a
-  - character_uuid: ger_agent_1e9e45a7bd44
+  - character_uuid: ger_agent_a340dc1bc0ee
     emotional_state: ''
     goals: []
     what_happened: mentioned in family chit-chat; Bartlet expresses hating her boyfriend
@@ -3295,7 +3295,7 @@ events:
     beliefs: []
     observed_traits: []
     importance: primary
-    global_id: ger_agent_1e9e45a7bd44
+    global_id: ger_agent_a340dc1bc0ee
   - character_uuid: ger_agent_d1f4953f4c83
     emotional_state: Stoically professional
     goals:
@@ -3370,6 +3370,21 @@ events:
     institutional_impact: Fortifies against MS scandal's legal front
     internal_dynamics: ''
     global_id: ger_organization_96cc4ae2f148
+  - organization_uuid: ger_organization_9aeb11cd4ff1
+    description_of_involvement: Blankets portico security flanking limousine, agent
+      opening door for Abbey's tense exit; embodies unobtrusive protection enabling
+      her surge into crisis, underscoring institutional shield amid personal fractures.
+    active_representation: Through uniformed agents executing protocols
+    power_dynamics: Exercising protective authority over First Lady
+    organizational_goals:
+    - Secure principal's safe arrival
+    - Maintain perimeter vigilance
+    influence_mechanisms:
+    - Physical presence and protocols
+    - Trained precision in choreography
+    institutional_impact: Reinforces executive isolation in turmoil
+    internal_dynamics: ''
+    global_id: ger_organization_9aeb11cd4ff1
   - organization_uuid: ger_organization_cee4824d3311
     description_of_involvement: Source of explosive medical form requiring family
       history for Zoey's underage enrollment, signed unwittingly by Abbey to conceal
@@ -3416,21 +3431,6 @@ events:
     institutional_impact: Embeds social policy in elite routine
     internal_dynamics: ''
     global_id: ger_organization_572f8956c138
-  - organization_uuid: ger_organization_a02ef5855109
-    description_of_involvement: Blankets portico security flanking limousine, agent
-      opening door for Abbey's tense exit; embodies unobtrusive protection enabling
-      her surge into crisis, underscoring institutional shield amid personal fractures.
-    active_representation: Through uniformed agents executing protocols
-    power_dynamics: Exercising protective authority over First Lady
-    organizational_goals:
-    - Secure principal's safe arrival
-    - Maintain perimeter vigilance
-    influence_mechanisms:
-    - Physical presence and protocols
-    - Trained precision in choreography
-    institutional_impact: Reinforces executive isolation in turmoil
-    internal_dynamics: ''
-    global_id: ger_organization_a02ef5855109
   derived_from_beat_uuids:
   - beat_e0fd85fa8f388387
   source_season: 2
@@ -3570,7 +3570,7 @@ events:
     - assumptive
     importance: primary
     global_id: ger_agent_dd62525d972a
-  - character_uuid: ger_agent_1e9e45a7bd44
+  - character_uuid: ger_agent_a340dc1bc0ee
     emotional_state: Off-screen familial normalcy anchor
     goals:
     - Navigate personal relationships
@@ -3588,7 +3588,7 @@ events:
     - youthful
     - romantic
     importance: primary
-    global_id: ger_agent_1e9e45a7bd44
+    global_id: ger_agent_a340dc1bc0ee
   - character_uuid: ger_agent_d1f4953f4c83
     emotional_state: Impassive professional focus
     goals:
@@ -3671,6 +3671,21 @@ events:
       fractures
     internal_dynamics: ''
     global_id: ger_organization_96cc4ae2f148
+  - organization_uuid: ger_organization_9aeb11cd4ff1
+    description_of_involvement: Secret Service materializes at portico via agent opening
+      limousine door, blanketing Abbey's arrival with vigilant protocol—unseen steel
+      framing First Lady's path to fury, embodying protection amid deception's unraveling.
+    active_representation: Through uniformed agent's precise choreography
+    power_dynamics: Overarching security dominion enabling elite mobility
+    organizational_goals:
+    - Secure principal transport and ingress
+    - Maintain perimeter vigilance
+    influence_mechanisms:
+    - Operational door protocols
+    - Flanking presence deterrence
+    institutional_impact: Insulates personal crises within fortified executive bubble
+    internal_dynamics: ''
+    global_id: ger_organization_9aeb11cd4ff1
   - organization_uuid: ger_organization_cee4824d3311
     description_of_involvement: Georgetown University catalyzes Oval eruption through
       Zoey's enrollment form mandating family medical history and underage parent
@@ -3722,21 +3737,6 @@ events:
       persisting through scandal
     internal_dynamics: ''
     global_id: ger_organization_572f8956c138
-  - organization_uuid: ger_organization_a02ef5855109
-    description_of_involvement: Secret Service materializes at portico via agent opening
-      limousine door, blanketing Abbey's arrival with vigilant protocol—unseen steel
-      framing First Lady's path to fury, embodying protection amid deception's unraveling.
-    active_representation: Through uniformed agent's precise choreography
-    power_dynamics: Overarching security dominion enabling elite mobility
-    organizational_goals:
-    - Secure principal transport and ingress
-    - Maintain perimeter vigilance
-    influence_mechanisms:
-    - Operational door protocols
-    - Flanking presence deterrence
-    institutional_impact: Insulates personal crises within fortified executive bubble
-    internal_dynamics: ''
-    global_id: ger_organization_a02ef5855109
   derived_from_beat_uuids:
   - beat_d25cea5c8fdae29c
   - beat_01d2f4d9ca3c1418
@@ -4763,7 +4763,7 @@ events:
     observed_traits: []
     importance: primary
     global_id: ger_agent_198649bce78f
-  - character_uuid: ger_agent_64b2a2c10c8f
+  - character_uuid: ger_agent_14f85d554756
     emotional_state: Detached efficiency underscoring ongoing crises
     goals:
     - Contextualize scene transition
@@ -4781,7 +4781,7 @@ events:
     - observant
     - narratively connective
     importance: primary
-    global_id: ger_agent_64b2a2c10c8f
+    global_id: ger_agent_14f85d554756
   object_involvements:
   - object_uuid: ger_object_d7c1c399f54c
     description_of_involvement: Joey seizes and scribbles critical blind poll model—'Governor
@@ -4903,7 +4903,7 @@ events:
     - wry pragmatism
     importance: primary
     global_id: ger_agent_52e3762c6aed
-  - character_uuid: ger_agent_64b2a2c10c8f
+  - character_uuid: ger_agent_14f85d554756
     emotional_state: Rising alarm escalating to primal panic at nuclear revelation
     goals:
     - Brief Charlie fully on satellite threat and justify her proactive calls
@@ -4924,7 +4924,7 @@ events:
     - witty persistence
     - visceral reactivity
     importance: primary
-    global_id: ger_agent_64b2a2c10c8f
+    global_id: ger_agent_14f85d554756
   object_involvements:
   - object_uuid: ger_object_b3675b9497e5
     description_of_involvement: The plutonium-armed Chinese satellite dominates conversation
@@ -4939,6 +4939,24 @@ events:
     global_id: ger_object_b3675b9497e5
   location_involvements: []
   organization_involvements:
+  - organization_uuid: ger_organization_f280b82730e1
+    description_of_involvement: American news networks' eerie silence on the satellite
+      baffles Charlie and Donna, who speculate on motives amid Chinese blackout— their
+      non-coverage heightens White House isolation, positioning media as gatekeepers
+      of public panic in a moment echoing the administration's own MS suppression.
+    active_representation: Through collective editorial blackout withholding coverage
+    power_dynamics: Wielding agenda-setting power independently of White House, fostering
+      suspicion
+    organizational_goals:
+    - Avoid premature panic without confirmed threat details
+    - Prioritize verifiable facts over speculation
+    influence_mechanisms:
+    - Editorial discretion on crisis amplification
+    - National airwave throttling of existential stories
+    institutional_impact: Underscores media's role as panic arbiter, mirroring staff
+      compartmentalization
+    internal_dynamics: ''
+    global_id: ger_organization_f280b82730e1
   - organization_uuid: ger_organization_6967b801a7d4
     description_of_involvement: Chinese Embassy emerges as Donna's indirect contact
       point—'people' called them anonymously for intel on their plummeting satellite—highlighting
@@ -4959,24 +4977,6 @@ events:
       in cover-up era
     internal_dynamics: ''
     global_id: ger_organization_6967b801a7d4
-  - organization_uuid: ger_organization_f280b82730e1
-    description_of_involvement: American news networks' eerie silence on the satellite
-      baffles Charlie and Donna, who speculate on motives amid Chinese blackout— their
-      non-coverage heightens White House isolation, positioning media as gatekeepers
-      of public panic in a moment echoing the administration's own MS suppression.
-    active_representation: Through collective editorial blackout withholding coverage
-    power_dynamics: Wielding agenda-setting power independently of White House, fostering
-      suspicion
-    organizational_goals:
-    - Avoid premature panic without confirmed threat details
-    - Prioritize verifiable facts over speculation
-    influence_mechanisms:
-    - Editorial discretion on crisis amplification
-    - National airwave throttling of existential stories
-    institutional_impact: Underscores media's role as panic arbiter, mirroring staff
-      compartmentalization
-    internal_dynamics: ''
-    global_id: ger_organization_f280b82730e1
   derived_from_beat_uuids:
   - beat_1df0585cfeb115f9
   - beat_956ac0618586b84b
@@ -5071,7 +5071,7 @@ events:
     observed_traits: []
     importance: primary
     global_id: ger_agent_7854a70e34ea
-  - character_uuid: ger_agent_64b2a2c10c8f
+  - character_uuid: ger_agent_14f85d554756
     emotional_state: Hyper-anxious frenzy over satellite doom, oblivious to interpersonal
       subtext
     goals:
@@ -5092,7 +5092,7 @@ events:
     - dutifully informative
     - bluntly urgent
     importance: primary
-    global_id: ger_agent_64b2a2c10c8f
+    global_id: ger_agent_14f85d554756
   - character_uuid: ger_agent_467d0033476d
     emotional_state: ''
     goals:

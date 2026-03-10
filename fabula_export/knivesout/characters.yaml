@@ -1,5 +1,5 @@
 # Character/Agent Data
-# Generated: 2026-02-19T15:55:48.258371
+# Generated: 2026-02-20T17:18:44.534007
 
 - fabula_uuid: agent_fc0e7d2b3b96
   global_id: null
@@ -19,7 +19,7 @@
   sphere_of_influence: Emergency Dispatch
   appearance_count: 2
   importance_tier: asteroid
-  affiliated_organization_uuid: null
+  affiliated_organization_uuid: organization_536ee8d95f4d
 - fabula_uuid: agent_5f50322f3267
   global_id: null
   canonical_name: Alan Stevens
@@ -28,19 +28,55 @@
     Harlan Thrombey's will and resist family pressures. Unlike his assistant Sally,
     Alan Stevens holds legal decision-making power and engages directly with family
     members.
-  traits:
+  traits: &id001
   - professional
   - ethical
   - resolute
   - weary
   - detached
-  aliases:
+  aliases: &id002
   - ALAN
   character_type: Speaking Character
   sphere_of_influence: Thrombey Family Estate Law
   appearance_count: 6
   importance_tier: planet
+  affiliated_organization_uuid: organization_49c73339569b
+- fabula_uuid: agent_5f50322f3267
+  global_id: null
+  canonical_name: Alan Stevens
+  title_role: Attorney
+  description: Primary attorney for the Thrombey estate, with full authority to interpret
+    Harlan Thrombey's will and resist family pressures. Unlike his assistant Sally,
+    Alan Stevens holds legal decision-making power and engages directly with family
+    members.
+  traits: *id001
+  aliases: *id002
+  character_type: Speaking Character
+  sphere_of_influence: Thrombey Family Estate Law
+  appearance_count: 6
+  importance_tier: planet
   affiliated_organization_uuid: organization_a8cd749586bf
+- fabula_uuid: agent_16e8d92fd738
+  global_id: null
+  canonical_name: Alexa
+  title_role: null
+  description: Alexa serves as the voice-activated virtual assistant in Duke Cody's
+    kitchen. Duke and his guests address her for quick tasks like identifying song
+    tunes through Shazam integration. She embodies smart home technology that supports
+    influencer lifestyles, responding to direct voice commands amid casual group interactions.
+    Her presence reveals reliance on seamless devices, prone to user error like mistaken
+    targeting.
+  traits:
+  - voice-activated
+  - task-oriented
+  - household-integrated
+  - command-responsive
+  aliases: []
+  character_type: Non-speaking Character
+  sphere_of_influence: Smart Home Assistance
+  appearance_count: 2
+  importance_tier: asteroid
+  affiliated_organization_uuid: org_74656c6d9fda
 - fabula_uuid: agent_7e895df48d7b
   global_id: null
   canonical_name: Alice Cabrera
@@ -68,36 +104,541 @@
   sphere_of_influence: family dynamics
   appearance_count: 4
   importance_tier: asteroid
+  affiliated_organization_uuid: organization_49c73339569b
+- fabula_uuid: agent_d3a4ebab3bae
+  global_id: null
+  canonical_name: Alpha Cosmos Factory Worker
+  title_role: null
+  description: Internal logistics specialist at Miles Bron's aerospace factory, responsible
+    for transporting wooden puzzle boxes (replicas of elite gifts) within production
+    spaces and delivering them to executive meetings. Operates in high-security factory
+    environments with protective gear and face shields, embodying silent efficiency
+    in Bron's corporate operations.
+  traits:
+  - methodical
+  - silent
+  - efficient
+  - dutiful
+  aliases:
+  - Worker
+  - A Worker
+  character_type: Non-speaking Character
+  sphere_of_influence: Alpha Cosmos factory operations
+  appearance_count: 2
+  importance_tier: asteroid
+  affiliated_organization_uuid: org_ac01d1be561c
+- fabula_uuid: agent_4748d8437547
+  global_id: null
+  canonical_name: Alpha DJ
+  title_role: null
+  description: Alpha DJ serves as the voice-activated music system for Miles Bron's
+    private island parties. Guests like Miles address it directly to cue tracks, and
+    it shifts the lounge's soundtrack on command—delivering upbeat selections amid
+    escalating tensions. This automated interface sustains the festive mood without
+    physical presence, blending into the background as an unobtrusive tool for social
+    manipulation and distraction.
+  traits:
+  - responsive
+  - unobtrusive
+  - efficient
+  aliases: []
+  character_type: Mentioned Only
+  sphere_of_influence: Party Music Control
+  appearance_count: 0
+  importance_tier: asteroid
+  affiliated_organization_uuid: org_e20647eace45
+- fabula_uuid: agent_d1b8e647d426
+  global_id: null
+  canonical_name: Alpha Service Courier
+  title_role: null
+  description: Core delivery agent for the **Alpha service**, handling **Miles Bron’s
+    invitation-linked packages** (e.g., to Claire Debella, Helen Brand). Operates
+    as a **neutral conduit in covert operations**, with deliveries tied to the central
+    mystery.
+  traits:
+  - terse
+  - professional
+  - efficient
+  - neutral
+  aliases:
+  - ALPHA COURIER
+  character_type: Speaking Character
+  sphere_of_influence: Courier Services
+  appearance_count: 2
+  importance_tier: asteroid
+  affiliated_organization_uuid: org_c995fc158adc
+- fabula_uuid: agent_6d70c5a566dc
+  global_id: null
+  canonical_name: Amy (Claire Debella's Campaign Assistant)
+  title_role: Assistant
+  description: Personal assistant and logistics coordinator directly reporting to
+    Governor Claire Debella, specializing in media timing, prop management, and schedule
+    execution during political campaigns.
+  traits:
+  - professional
+  - focused
+  - efficient
+  - attentive
+  - calm
+  aliases:
+  - Assistant
+  - Claire Debella's Assistant
+  - Campaign Logistics Coordinator
+  - Amy
+  character_type: Mentioned Only
+  sphere_of_influence: Campaign Media Preparation
+  appearance_count: 0
+  importance_tier: asteroid
+  affiliated_organization_uuid: org_e20647eace45
+- fabula_uuid: agent_698e1c9b0e52
+  global_id: null
+  canonical_name: Anderson Cooper
+  title_role: null
+  description: Anderson Cooper hosts exclusive parties that attract Miles Bron and
+    his disruptive inner circle. Known as Coop among guests, he maintains a social
+    orbit where high-stakes figures converge, leading to tense encounters like near-misses
+    with luxury vehicles. His events underscore connections among tech moguls, politicians,
+    influencers, and investigators, positioning him as a nexus for elite networking
+    outside formal institutions.
+  traits:
+  - well-connected
+  - socially prominent
+  - hospitable
+  aliases:
+  - Coop
+  character_type: Mentioned Only
+  sphere_of_influence: high-society events
+  appearance_count: 0
+  importance_tier: asteroid
+  affiliated_organization_uuid: null
+- fabula_uuid: agent_ca789efb09b6
+  global_id: null
+  canonical_name: Andino
+  title_role: Captain
+  description: Andino captains the boat that ferries Miles Bron's elite guests to
+    his private Greek island. Burly and grunting through his labors, he loads luggage,
+    navigates tides, and communicates in clipped jargon. His pragmatic focus on maritime
+    realities sets him apart from the guests' intellectual pretensions and social
+    dramas. Dismissive toward queries, he maintains professional distance, embodying
+    stoic efficiency in service to high-profile clientele while ignoring their personal
+    turmoil.
+  traits:
+  - burly
+  - dismissive
+  - pragmatic
+  - stoic
+  - indifferent
+  aliases:
+  - Mr. Andino
+  character_type: Speaking Character
+  sphere_of_influence: Private island maritime transport
+  appearance_count: 9
+  importance_tier: planet
+  affiliated_organization_uuid: org_c82e755c952a
+- fabula_uuid: agent_58c19d5a501f
+  global_id: null
+  canonical_name: Angela Lansbury
+  title_role: null
+  description: Angela Lansbury belongs to Benoit Blanc's inner circle of celebrity
+    friends, convening for online gaming sessions alongside Stephen Sondheim, Kareem
+    Abdul-Jabbar, and Natasha Lyonne. She engages with sharp playfulness, spotting
+    rule breaks and rallying the group toward lighter diversions. Her concern surfaces
+    amid Blanc's detachment, driving efforts to pierce his isolation with camaraderie.
+    This bond reveals her as a loyal confidante who balances wit and warmth beyond
+    the detective's professional orbit.
+  traits:
+  - playful
+  - concerned
+  - supportive
+  - observant
+  aliases: []
+  character_type: Non-speaking Character
+  sphere_of_influence: Celebrity Social Circle
+  appearance_count: 1
+  importance_tier: asteroid
+  affiliated_organization_uuid: org_74656c6d9fda
+- fabula_uuid: agent_ec3a583a86f7
+  global_id: null
+  canonical_name: Anonymous Enforcer of Nat Sharp’s Parish
+  title_role: null
+  description: Anonymous figure tied to Doctor Nat Sharp’s conspiracy circle, operating
+    as an aggressive enforcer who disrupts alliances and advances secretive operations
+    through ritualistic confrontations.
+  traits:
+  - aggressive
+  - insistent
+  - intimidating
+  - determined
+  aliases: []
+  character_type: Non-speaking Character
+  sphere_of_influence: parish conspiracy enforcement
+  appearance_count: 1
+  importance_tier: asteroid
+  affiliated_organization_uuid: null
+- fabula_uuid: agent_dea5e2a5ee85
+  global_id: null
+  canonical_name: Authorities
+  title_role: null
+  description: Authorities operate as the primary responders to remote crime scenes,
+    their voices cutting through chaos with direct commands to pinpoint suspects or
+    evidence. They arrive swiftly via flashlights and shouts, enforcing procedural
+    control amid unfolding violence. Collective and anonymous, they embody official
+    intrusion into personal horror, driving tension through auditory presence alone.
+    Their urgent coordination underscores institutional momentum in investigations
+    of sudden deaths.
+  traits:
+  - Commanding
+  - Urgent
+  - Procedural
+  aliases:
+  - Voices of Authority
+  character_type: Non-speaking Character
+  sphere_of_influence: Law Enforcement Response
+  appearance_count: 2
+  importance_tier: asteroid
+  affiliated_organization_uuid: org_54ad9ab34a65
+- fabula_uuid: agent_cd1c7c616dc3
+  global_id: null
+  canonical_name: Baby Wicks
+  title_role: null
+  description: Baby Wicks is the three-year-old grandson of patriarch Prentice Wicks
+    and son of Grace. He stands as the family's youngest member, caught between generations
+    during formative moments. His participation in grandfatherly tasks reveals a compliant,
+    untroubled presence amid adult conflicts, highlighting his role as an emblem of
+    innocence and continuity in the Wicks lineage.
+  traits:
+  - innocent
+  - engaged
+  - compliant
+  aliases: []
+  character_type: Non-speaking Character
+  sphere_of_influence: null
+  appearance_count: 1
+  importance_tier: asteroid
+  affiliated_organization_uuid: org_90649e54e4f7
+- fabula_uuid: agent_ae731123937d
+  global_id: null
+  canonical_name: Banksy
+  title_role: null
+  description: Banksy enforces environmental protocols on Miles Bron's private island,
+    prioritizing ecological preservation during elite gatherings. They clash with
+    decisive leaders like Benoit Blanc, who override safeguards for urgent action.
+    Banksy's role centers on sustainability advocacy, maintaining strict rules against
+    habitat disruption amid high-stakes crises. Principled and vigilant, Banksy embodies
+    institutional caution rooted in environmental stewardship, influencing operational
+    decisions through protocol adherence.
+  traits:
+  - principled
+  - environmentally vigilant
+  - protocol-driven
+  aliases: []
+  character_type: Mentioned Only
+  sphere_of_influence: Environmental Protocols
+  appearance_count: 0
+  importance_tier: asteroid
+  affiliated_organization_uuid: org_e20647eace45
+- fabula_uuid: agent_8602f7321f5b
+  global_id: null
+  canonical_name: Barbara
+  title_role: null
+  description: Barbara is the mother of Louise, an employee at Steel Wheels Construction.
+    She lives in hospice care, suffering from a terminal brain tumor. Her grave illness
+    and fractured relationship with her daughter weigh heavily on Louise, surfacing
+    during moments of personal crisis and prompting compassion from others like Jud,
+    who prays for reconciliation. Barbara embodies the quiet tragedy of unresolved
+    family bonds amid encroaching death.
+  traits:
+  - gravely ill
+  - estranged
+  - vulnerable
+  aliases:
+  - Louise’s mother
+  character_type: Non-speaking Character
+  sphere_of_influence: family relationships
+  appearance_count: 4
+  importance_tier: asteroid
   affiliated_organization_uuid: null
 - fabula_uuid: agent_f3bf02c48998
   global_id: null
   canonical_name: Benoit Blanc
-  title_role: Private Investigator
-  description: Benoit Blanc is a private investigator hired anonymously to probe Harlan
-    Thrombey's death. He operates independently while shadowing the official police
-    investigation led by Lieutenant Elliott, employing psychological tactics, deductive
-    reasoning, and cryptic metaphors to dismantle alibis and expose secrets. Known
-    for his unflappable calm, Southern drawl, and distinctive habits—such as flipping
-    a silver dollar and lighting cigars—Blanc disarms suspects and allies with Marta
-    Cabrera, Harlan's nurse, to uncover the Thrombey family's greed and lies. His
-    methodical approach and relentless determination position him as the pivotal force
-    in exposing the family's tangled loyalties and institutional blind spots, despite
-    attempts by figures like Ransom Drysdale to downplay his acuity.
-  traits:
+  title_role: Detective
+  description: Benoit Blanc stands as a renowned private detective who tackles convoluted
+    murders in insular communities. He wields Southern charm, theatrical flair, and
+    piercing logic to unravel locked-room enigmas and conspiracies. Blanc builds tense
+    alliances with prime suspects like priests, spars with local police chiefs, and
+    probes physicians and parishioners alike. Skeptical of religious dogma, he prioritizes
+    forensic clues, psychological pressure, and narrative inconsistencies to expose
+    orchestrated deceptions, sustaining cool detachment amid chaos.
+  traits: &id003
   - methodical
-  - observant
-  - calculating
-  - persistent
-  - eloquent
-  aliases:
-  - Linen suit man
+  - theatrical
+  - perceptive
+  - skeptical
+  - strategically empathetic
+  aliases: &id004
+  - Blanc
   - B. Blanc
-  - BLANC
+  - Linen suit man
+  - the strange man in the linen suit
   character_type: Speaking Character
-  sphere_of_influence: Criminal Investigations
-  appearance_count: 119
+  sphere_of_influence: Homicide Investigation
+  appearance_count: 360
   importance_tier: anchor
   affiliated_organization_uuid: organization_536ee8d95f4d
+- fabula_uuid: agent_f3bf02c48998
+  global_id: null
+  canonical_name: Benoit Blanc
+  title_role: Detective
+  description: Benoit Blanc stands as a renowned private detective who tackles convoluted
+    murders in insular communities. He wields Southern charm, theatrical flair, and
+    piercing logic to unravel locked-room enigmas and conspiracies. Blanc builds tense
+    alliances with prime suspects like priests, spars with local police chiefs, and
+    probes physicians and parishioners alike. Skeptical of religious dogma, he prioritizes
+    forensic clues, psychological pressure, and narrative inconsistencies to expose
+    orchestrated deceptions, sustaining cool detachment amid chaos.
+  traits: *id003
+  aliases: *id004
+  character_type: Speaking Character
+  sphere_of_influence: Homicide Investigation
+  appearance_count: 360
+  importance_tier: anchor
+  affiliated_organization_uuid: org_54ad9ab34a65
+- fabula_uuid: agent_9d2382644322
+  global_id: null
+  canonical_name: Birdie Jay
+  title_role: Fashion Designer
+  description: Birdie Jay designs provocative fashion lines like Sweetie Pants while
+    cultivating a defiant public persona as a former model and magazine editor. She
+    depends on Miles Bron for financial rescues amid scandals over sweatshop labor
+    and blood diamonds, which she deflects through claims of ignorance. Assistant
+    Peg reins in her impulses amid chaotic interactions with disruptors including
+    Claire Debella, Lionel Toussaint, and Duke Cody. Birdie chases relevance through
+    manic outbursts, opportunistic alliances, and rigid anti-woke rhetoric, masking
+    vulnerability beneath attention-seeking bravado.
+  traits: &id005
+  - provocative
+  - chaotic
+  - defensive
+  - opportunistic
+  - manic
+  aliases: &id006
+  - BIRDIE
+  character_type: Speaking Character
+  sphere_of_influence: Fashion Industry
+  appearance_count: 82
+  importance_tier: anchor
+  affiliated_organization_uuid: org_74656c6d9fda
+- fabula_uuid: agent_9d2382644322
+  global_id: null
+  canonical_name: Birdie Jay
+  title_role: Fashion Designer
+  description: Birdie Jay designs provocative fashion lines like Sweetie Pants while
+    cultivating a defiant public persona as a former model and magazine editor. She
+    depends on Miles Bron for financial rescues amid scandals over sweatshop labor
+    and blood diamonds, which she deflects through claims of ignorance. Assistant
+    Peg reins in her impulses amid chaotic interactions with disruptors including
+    Claire Debella, Lionel Toussaint, and Duke Cody. Birdie chases relevance through
+    manic outbursts, opportunistic alliances, and rigid anti-woke rhetoric, masking
+    vulnerability beneath attention-seeking bravado.
+  traits: *id005
+  aliases: *id006
+  character_type: Speaking Character
+  sphere_of_influence: Fashion Industry
+  appearance_count: 82
+  importance_tier: anchor
+  affiliated_organization_uuid: org_bb13e4c03dfd
+- fabula_uuid: agent_9d2382644322
+  global_id: null
+  canonical_name: Birdie Jay
+  title_role: Fashion Designer
+  description: Birdie Jay designs provocative fashion lines like Sweetie Pants while
+    cultivating a defiant public persona as a former model and magazine editor. She
+    depends on Miles Bron for financial rescues amid scandals over sweatshop labor
+    and blood diamonds, which she deflects through claims of ignorance. Assistant
+    Peg reins in her impulses amid chaotic interactions with disruptors including
+    Claire Debella, Lionel Toussaint, and Duke Cody. Birdie chases relevance through
+    manic outbursts, opportunistic alliances, and rigid anti-woke rhetoric, masking
+    vulnerability beneath attention-seeking bravado.
+  traits: *id005
+  aliases: *id006
+  character_type: Speaking Character
+  sphere_of_influence: Fashion Industry
+  appearance_count: 82
+  importance_tier: anchor
+  affiliated_organization_uuid: org_4f6db0f2ebbc
+- fabula_uuid: agent_582501a4d890
+  global_id: null
+  canonical_name: Birdie Jay's Entourage
+  title_role: null
+  description: Collective group of models, musicians, authors, designers, and circus
+    performers who serve as a passive, hedonistic backdrop to Birdie Jay's lifestyle,
+    distinct from individual members like the Dancer who have named roles and narrative
+    agency.
+  traits:
+  - carefree
+  - hedonistic
+  - relaxed
+  - indifferent
+  - bohemian
+  aliases:
+  - models
+  - musicians
+  - authors
+  - designers
+  - circus performers
+  character_type: Non-speaking Character
+  sphere_of_influence: Celebrity entourage and bohemian social scene
+  appearance_count: 1
+  importance_tier: asteroid
+  affiliated_organization_uuid: null
+- fabula_uuid: agent_0cbb36862f61
+  global_id: null
+  canonical_name: Bron's Guests (The Suspects)
+  title_role: null
+  description: Bron's Guests (also referred to as 'All the Suspects') form the core
+    group of invitees to Miles Bron's private gathering at the Glass Onion estate,
+    placed under Benoit Blanc's scrutiny amid revelations of Andi Brand's death. Comprising
+    Miles Bron, Duke Cody, Helen Brand, Whiskey, and associated figures, they share
+    tight social bonds and privilege, responding as a unit to shocks with instinctive
+    phone checks for verification. Their collective denial and reactive unity reveal
+    complicity in deception, driven by self-preservation and unease as Blanc dismantles
+    their alibis. The group exhibits traits of anxiety, vulnerability, disorientation,
+    secrecy, and confusion, bound by shared obligations and Bron's imposed unity.
+    They are handpicked by Bron for his elaborate murder mystery game, oscillating
+    between tension and compliance while navigating the game's escalating perils.
+  traits:
+  - anxious
+  - vulnerable
+  - disoriented
+  - secretive
+  - uneasy
+  - shocked
+  - disbelieving
+  - reactive
+  - instinctive
+  - complicit
+  aliases:
+  - guests
+  - suspects
+  - The Guests
+  - Bron's Inner Circle
+  - The Suspects
+  character_type: Non-speaking Character
+  sphere_of_influence: Miles Bron's Mystery Game
+  appearance_count: 6
+  importance_tier: planet
+  affiliated_organization_uuid: org_74656c6d9fda
+- fabula_uuid: agent_8c5a75748e2b
+  global_id: null
+  canonical_name: CNN Anchor
+  title_role: null
+  description: CNN Anchor delivers live interviews and breaking news segments for
+    the network, focusing on political campaigns and corporate funding ties. Conducts
+    on-air discussions with candidates like Claire Debella, notes campaign quirks
+    such as remote interviews from home, and reports revelations about backers like
+    Miles Bron and Alpha Corporation's reach. Maintains professional detachment, providing
+    clear commentary that shapes public perception of political figures without personal
+    involvement.
+  traits:
+  - professional
+  - neutral
+  - authoritative
+  - observant
+  aliases: []
+  character_type: Speaking Character
+  sphere_of_influence: Broadcast Journalism
+  appearance_count: 3
+  importance_tier: asteroid
+  affiliated_organization_uuid: org_8496e52fa5fa
+- fabula_uuid: agent_96b76d1842c6
+  global_id: null
+  canonical_name: Cab Driver
+  title_role: null
+  description: Cab Driver transports passengers through the Grecian port town to the
+    jetty, serving elite guests like Claire Debella amid COVID-19 protocols. Masked
+    and focused, he handles luggage and drop-offs with quiet efficiency, staying outside
+    the social circles of politicians and celebrities he ferries. His role anchors
+    the local service economy that supports the island's arrivals, blending into the
+    background without drawing notice from those he serves.
+  traits:
+  - efficient
+  - professional
+  - discreet
+  aliases: []
+  character_type: Non-speaking Character
+  sphere_of_influence: local transportation
+  appearance_count: 2
+  importance_tier: asteroid
+  affiliated_organization_uuid: org_c82e755c952a
+- fabula_uuid: agent_97d8aed5630a
+  global_id: null
+  canonical_name: Camera (Narrative Device)
+  title_role: null
+  description: The Camera (Narrative Device) shapes audience perception through targeted
+    movements and lighting. It frames key locations like dockside hotels to contrast
+    warmth against encroaching darkness, generating irony that signals hidden dangers.
+    This entity drives narrative tension by emphasizing visual discrepancies between
+    inviting facades and looming threats, aligning viewer focus with emerging conflicts
+    in isolated luxury settings. Its consistent role reinforces themes of deception
+    beneath surface appearances.
+  traits:
+  - deliberate
+  - ironic
+  - foreshadowing
+  - tension-building
+  aliases: []
+  character_type: Non-speaking Character
+  sphere_of_influence: Visual Storytelling
+  appearance_count: 1
+  importance_tier: asteroid
+  affiliated_organization_uuid: null
+- fabula_uuid: agent_05c1f2ad46b9
+  global_id: null
+  canonical_name: Cassandra 'Andi' Brand
+  title_role: null
+  description: Cassandra 'Andi' Brand co-founded the disruptive tech company Alpha
+    with Miles Bron, only to be systematically erased from its history and left financially
+    ruined after he ousted her. She infiltrates Miles' private island retreat as an
+    outsider, dismantling the pretensions of his sycophantic inner circle—Lionel,
+    Claire, Birdie, and Duke—with her signature icy detachment and razor-sharp candor.
+    A defiant and perceptive truth-seeker, Andi thrives on exposing elite hypocrisy
+    and aligns tentatively with skeptics like detective Benoit Blanc. Her unyielding
+    quest for accountability stems from the betrayal that destroyed her career, positioning
+    her as the group's fractured conscience.
+  traits: &id007
+  - blunt
+  - detached
+  - skeptical
+  - confrontational
+  - observant
+  aliases: &id008
+  - Andi
+  - Cassandra Brand
+  character_type: Speaking Character
+  sphere_of_influence: Disruptive Tech
+  appearance_count: 104
+  importance_tier: anchor
+  affiliated_organization_uuid: org_e20647eace45
+- fabula_uuid: agent_05c1f2ad46b9
+  global_id: null
+  canonical_name: Cassandra 'Andi' Brand
+  title_role: null
+  description: Cassandra 'Andi' Brand co-founded the disruptive tech company Alpha
+    with Miles Bron, only to be systematically erased from its history and left financially
+    ruined after he ousted her. She infiltrates Miles' private island retreat as an
+    outsider, dismantling the pretensions of his sycophantic inner circle—Lionel,
+    Claire, Birdie, and Duke—with her signature icy detachment and razor-sharp candor.
+    A defiant and perceptive truth-seeker, Andi thrives on exposing elite hypocrisy
+    and aligns tentatively with skeptics like detective Benoit Blanc. Her unyielding
+    quest for accountability stems from the betrayal that destroyed her career, positioning
+    her as the group's fractured conscience.
+  traits: *id007
+  aliases: *id008
+  character_type: Speaking Character
+  sphere_of_influence: Disruptive Tech
+  appearance_count: 104
+  importance_tier: anchor
+  affiliated_organization_uuid: org_6bc415a233a6
 - fabula_uuid: agent_61c43aa8f78a
   global_id: null
   canonical_name: Caterer
@@ -118,7 +659,126 @@
   sphere_of_influence: Event Catering
   appearance_count: 2
   importance_tier: asteroid
-  affiliated_organization_uuid: null
+  affiliated_organization_uuid: organization_016903361ca2
+- fabula_uuid: agent_0654620d24d5
+  global_id: null
+  canonical_name: Church Crowd
+  title_role: null
+  description: The church crowd comprises local parishioners and residents who assemble
+    outside the church during crises. They stand as silent witnesses, their collective
+    gaze amplifying public pressure on key figures amid investigations. Tense and
+    shocked reactions reveal community bonds strained by violence, positioning them
+    as the unmoving backdrop to confrontations involving detectives, police, and suspects.
+  traits:
+  - observant
+  - tense
+  - shocked
+  aliases:
+  - everyone gathered
+  - the others
+  character_type: Non-speaking Character
+  sphere_of_influence: Local Parish Community
+  appearance_count: 2
+  importance_tier: asteroid
+  affiliated_organization_uuid: org_a053e74003af
+- fabula_uuid: agent_dd1fa1bf1714
+  global_id: null
+  canonical_name: Claire Debella
+  title_role: Governor
+  description: Employer of Amy (Claire Debella's Campaign Assistant); central political
+    figure with independent agency and moral conflicts.
+  traits: &id009
+  - sharp-minded
+  - pragmatic
+  - morally conflicted
+  - image-conscious
+  aliases: &id010
+  - CLAIRE
+  character_type: Speaking Character
+  sphere_of_influence: U.S. Politics
+  appearance_count: 79
+  importance_tier: anchor
+  affiliated_organization_uuid: org_e20647eace45
+- fabula_uuid: agent_dd1fa1bf1714
+  global_id: null
+  canonical_name: Claire Debella
+  title_role: Governor
+  description: Employer of Amy (Claire Debella's Campaign Assistant); central political
+    figure with independent agency and moral conflicts.
+  traits: *id009
+  aliases: *id010
+  character_type: Speaking Character
+  sphere_of_influence: U.S. Politics
+  appearance_count: 79
+  importance_tier: anchor
+  affiliated_organization_uuid: org_74656c6d9fda
+- fabula_uuid: agent_bea5daf92585
+  global_id: null
+  canonical_name: Clark
+  title_role: Deacon
+  description: Lower-ranking deacon known for abrasive, conflict-provoking sermons
+    that challenge church authority. Serves as a catalyst for disciplinary actions
+    (e.g., Jud Duplenticy’s assault) and is widely disdained by superiors, including
+    Bishop Langstrom.
+  traits:
+  - abrasive
+  - provocative
+  - vitriolic
+  - antagonistic
+  aliases: []
+  character_type: Non-speaking Character
+  sphere_of_influence: Church Sermons
+  appearance_count: 6
+  importance_tier: planet
+  affiliated_organization_uuid: org_a053e74003af
+- fabula_uuid: agent_27cbef12deb0
+  global_id: null
+  canonical_name: Congregation of the Local Church
+  title_role: null
+  description: The Congregation of the Local Church represents the collective body
+    of parishioners under the spiritual leadership of Monsignor Wicks. They attend
+    masses, participate in rituals (including funerals and burial processions), and
+    observe public shaming of dissenters without protest. Their collective silence
+    and passive compliance reinforce Wicks' authority, though their loyalty is tested
+    during moments of crisis—such as his death or supernatural disruptions (e.g.,
+    Wicks' echoing voice). Interactions with key figures like Jud, Martha, Doctor
+    Nat Sharp, and Lee reveal a community marked by unease, division, and shock when
+    confronted with moral or supernatural challenges. Their devout nature is tempered
+    by fear and reactive behavior, positioning them as both the collective voice of
+    faith and a group bound by shared complicity.
+  traits:
+  - complicit
+  - observant
+  - passive
+  - divided
+  aliases:
+  - Congregants
+  - Church Parishioners
+  - Local Church Community
+  character_type: Non-speaking Character
+  sphere_of_influence: Church Parish
+  appearance_count: 20
+  importance_tier: planet
+  affiliated_organization_uuid: org_90649e54e4f7
+- fabula_uuid: agent_fffb69fee315
+  global_id: null
+  canonical_name: Cop
+  title_role: Police Officer
+  description: Local police officer who secures barriers at public sites during tense
+    standoffs between congregations and authorities. He fields direct requests from
+    individuals like defiant returnees to summon superiors such as the chief. His
+    frontline position marks him as a neutral gatekeeper, enforcing physical separation
+    while enabling communication in charged moments between exiles and communities.
+  traits:
+  - dutiful
+  - impassive
+  - approachable
+  aliases: []
+  character_type: Speaking Character
+  sphere_of_influence: Perimeter Security
+  appearance_count: 1
+  importance_tier: asteroid
+  affiliated_organization_uuid: org_54ad9ab34a65
 - fabula_uuid: agent_857668893d66
   global_id: null
   canonical_name: Cop (Logistics Officer)
@@ -141,6 +801,130 @@
   appearance_count: 13
   importance_tier: planet
   affiliated_organization_uuid: organization_536ee8d95f4d
+- fabula_uuid: agent_24323dbe1400
+  global_id: null
+  canonical_name: Coroner
+  title_role: Coroner
+  description: The Coroner oversees autopsies and formal identifications at the morgue.
+    He guides family members through body viewings with steady professionalism, confirming
+    causes of death like suicide. His kind demeanor offers quiet support amid grief,
+    positioning him as a calm authority in moments of crisis. Driven by duty, he maintains
+    composure while handling sensitive cases involving prominent figures.
+  traits:
+  - professional
+  - compassionate
+  - kind
+  aliases: []
+  character_type: Non-speaking Character
+  sphere_of_influence: Medical Examiner's Office
+  appearance_count: 1
+  importance_tier: asteroid
+  affiliated_organization_uuid: null
+- fabula_uuid: agent_034101bcb63e
+  global_id: null
+  canonical_name: Crypt Attendants
+  title_role: null
+  description: Crypt attendants manage coffin placement and physical tasks in church
+    crypts during funerals. They perform essential rituals with quiet efficiency,
+    sliding bodies into shelves amid ongoing services. Anonymous figures who support
+    clergy like Monsignor Wicks, they prioritize duty over visibility, blending into
+    the shadows of sacred spaces where deception and faith intersect.
+  traits:
+  - Efficient
+  - Dutiful
+  - Discreet
+  aliases:
+  - The men
+  - Unspecified workers/attendants
+  character_type: Non-speaking Character
+  sphere_of_influence: Church Funeral Rituals
+  appearance_count: 1
+  importance_tier: asteroid
+  affiliated_organization_uuid: null
+- fabula_uuid: agent_43c4ee31959a
+  global_id: null
+  canonical_name: Cy Draven
+  title_role: null
+  description: Failed Republican politician turned radical YouTube influencer (ARMORY
+    OF GOD channel); biological son of Monsignor Jefferson Wicks and adoptive son
+    of Vera Draven. Narcissistic and manipulative, he exploits church authority and
+    family secrets to pursue political power and hidden fortunes.
+  traits: &id011
+  - cynical
+  - opportunistic
+  - narcissistic
+  - manipulative
+  - ambitious
+  aliases: &id012
+  - Cy
+  character_type: Speaking Character
+  sphere_of_influence: Extremist Political Propaganda
+  appearance_count: 51
+  importance_tier: anchor
+  affiliated_organization_uuid: org_a08c10032c76
+- fabula_uuid: agent_43c4ee31959a
+  global_id: null
+  canonical_name: Cy Draven
+  title_role: null
+  description: Failed Republican politician turned radical YouTube influencer (ARMORY
+    OF GOD channel); biological son of Monsignor Jefferson Wicks and adoptive son
+    of Vera Draven. Narcissistic and manipulative, he exploits church authority and
+    family secrets to pursue political power and hidden fortunes.
+  traits: *id011
+  aliases: *id012
+  character_type: Speaking Character
+  sphere_of_influence: Extremist Political Propaganda
+  appearance_count: 51
+  importance_tier: anchor
+  affiliated_organization_uuid: org_279a8e446d3f
+- fabula_uuid: agent_43c4ee31959a
+  global_id: null
+  canonical_name: Cy Draven
+  title_role: null
+  description: Failed Republican politician turned radical YouTube influencer (ARMORY
+    OF GOD channel); biological son of Monsignor Jefferson Wicks and adoptive son
+    of Vera Draven. Narcissistic and manipulative, he exploits church authority and
+    family secrets to pursue political power and hidden fortunes.
+  traits: *id011
+  aliases: *id012
+  character_type: Speaking Character
+  sphere_of_influence: Extremist Political Propaganda
+  appearance_count: 51
+  importance_tier: anchor
+  affiliated_organization_uuid: org_cc0bfd784602
+- fabula_uuid: agent_43c4ee31959a
+  global_id: null
+  canonical_name: Cy Draven
+  title_role: null
+  description: Failed Republican politician turned radical YouTube influencer (ARMORY
+    OF GOD channel); biological son of Monsignor Jefferson Wicks and adoptive son
+    of Vera Draven. Narcissistic and manipulative, he exploits church authority and
+    family secrets to pursue political power and hidden fortunes.
+  traits: *id011
+  aliases: *id012
+  character_type: Speaking Character
+  sphere_of_influence: Extremist Political Propaganda
+  appearance_count: 51
+  importance_tier: anchor
+  affiliated_organization_uuid: org_a5f836a41605
+- fabula_uuid: agent_48c3d48a489e
+  global_id: null
+  canonical_name: Dancer
+  title_role: null
+  description: Named individual within Birdie Jay's entourage, distinct from the broader
+    'Interesting People' collective due to her active role in challenging Birdie's
+    behavior and specific interactions with other characters.
+  traits:
+  - blunt
+  - judgmental
+  - outspoken
+  - direct
+  aliases: []
+  character_type: Non-speaking Character
+  sphere_of_influence: Birdie Jay's Entourage
+  appearance_count: 3
+  importance_tier: asteroid
+  affiliated_organization_uuid: org_74656c6d9fda
 - fabula_uuid: agent_86fb06cbe156
   global_id: null
   canonical_name: Danica McKellar
@@ -153,7 +937,114 @@
   sphere_of_influence: Hallmark Film Acting
   appearance_count: 2
   importance_tier: asteroid
+  affiliated_organization_uuid: organization_0a79c059776d
+- fabula_uuid: agent_6d8dec67f968
+  global_id: null
+  canonical_name: Dark Figure
+  title_role: null
+  description: The Dark Figure operates as an anonymous, enigmatic observer in remote,
+    crisis-laden settings, particularly scenes of violence and disorientation. Armed
+    with a flashlight, this figure advances methodically into these environments,
+    illuminating victims and suspects at critical moments—such as murder sites in
+    forested groves—while maintaining complete anonymity. Their silent, precise movements
+    and calculated timing heighten paranoia, suggesting ties to surveillance, investigation,
+    or manipulation within broader conspiracies. The figure never engages directly
+    or reveals motives, instead operating from the shadows as a persistent, intimidating
+    presence.
+  traits:
+  - enigmatic
+  - persistent
+  - intimidating
+  aliases:
+  - Unseen Pursuer
+  character_type: Non-speaking Character
+  sphere_of_influence: Pursuit and Observation in Conspiracy
+  appearance_count: 2
+  importance_tier: asteroid
   affiliated_organization_uuid: null
+- fabula_uuid: agent_3a2229e95f7c
+  global_id: null
+  canonical_name: Darla
+  title_role: null
+  description: Darla marries Doctor Nat Sharp. Her vivacious energy lights up their
+    partnership, setting her apart from his unassuming nature. She forms the emotional
+    core of his existence, shaping his priorities and loyalties in their shared life.
+  traits:
+  - vivacious
+  - energetic
+  - lively
+  aliases: []
+  character_type: Non-speaking Character
+  sphere_of_influence: personal relationships
+  appearance_count: 1
+  importance_tier: asteroid
+  affiliated_organization_uuid: null
+- fabula_uuid: agent_3fa3bfb632c5
+  global_id: null
+  canonical_name: Delancy
+  title_role: Father
+  description: Father Delancy evaluates priestly candidates during church disciplinary
+    proceedings. He collaborates with Bishop Langstrom and other senior clergy like
+    Father Frank to assess fitness for ordination. Delancy challenges aspirants on
+    their pasts and theological commitments, using metaphors of shepherds confronting
+    wolves to test resolve against personal violence. His approach demands doctrinal
+    purity and redemption through non-aggression, positioning him as a gatekeeper
+    of clerical standards amid tensions between forgiveness and institutional judgment.
+  traits:
+  - authoritative
+  - skeptical
+  - probing
+  - doctrinal
+  aliases:
+  - Father Delancy
+  character_type: Speaking Character
+  sphere_of_influence: Ecclesiastical Discipline
+  appearance_count: 2
+  importance_tier: asteroid
+  affiliated_organization_uuid: org_a053e74003af
+- fabula_uuid: agent_21bd48a5403c
+  global_id: null
+  canonical_name: Derol
+  title_role: null
+  description: Derol occupies a cluttered villa on Miles Bron's private island, where
+    he lingers as a tolerated outsider amid elite guests. Dismissed by Miles as peripheral
+    and 'going through some stuff,' he drifts through social scenes in bathrobes or
+    with casual drinks, interjecting self-deprecating quips like 'Ignore me' or 'I'm
+    not here.' His unshakable calm and cryptic invitations, such as to Helen, mark
+    him as a detached observer who amuses himself at the edges of power plays and
+    pretension.
+  traits:
+  - nonchalant
+  - self-effacing
+  - composed
+  - detached
+  - cryptic
+  aliases: []
+  character_type: Speaking Character
+  sphere_of_influence: Miles Bron's private island periphery
+  appearance_count: 11
+  importance_tier: planet
+  affiliated_organization_uuid: null
+- fabula_uuid: agent_980a7b1b2a97
+  global_id: null
+  canonical_name: Devon
+  title_role: null
+  description: Devon acts as husband to Governor Claire Debella and father to their
+    three children. He manages daily household tasks—sorting paperwork, wrangling
+    kids—while displaying enthusiasm for packages from Miles Bron and curiosity about
+    his puzzle invitations. Laid-back in a Greenpeace t-shirt, he bridges Claire's
+    political world and domestic reality with supportive energy.
+  traits:
+  - enthusiastic
+  - curious
+  - resourceful
+  - laid-back
+  aliases: []
+  character_type: Speaking Character
+  sphere_of_influence: household management
+  appearance_count: 11
+  importance_tier: planet
+  affiliated_organization_uuid: org_cf794c125ae0
 - fabula_uuid: agent_bc61dc66e59a
   global_id: null
   canonical_name: Donna Thrombey (née Gumley)
@@ -184,29 +1075,200 @@
   appearance_count: 7
   importance_tier: planet
   affiliated_organization_uuid: organization_49c73339569b
+- fabula_uuid: agent_0d76eb7f6705
+  global_id: null
+  canonical_name: Donnie
+  title_role: Video Technician
+  description: Donnie operates as the police department's video technician, synchronizing
+    footage, overlaying timestamps, and dissecting glitches to clarify timelines in
+    murder investigations. He supports detectives including Benoit Blanc and Chief
+    Geraldine Scott by operating media equipment and explaining technical details
+    with direct precision. His work exposes contradictions in suspect theories and
+    implicates key figures through security clips. Professional and data-focused,
+    Donnie delivers evidence neutrally, advancing cases amid tense interrogations
+    without injecting personal bias.
+  traits:
+  - professional
+  - precise
+  - methodical
+  - technical
+  aliases: []
+  character_type: Speaking Character
+  sphere_of_influence: Forensic Video Analysis
+  appearance_count: 4
+  importance_tier: asteroid
+  affiliated_organization_uuid: org_54ad9ab34a65
+- fabula_uuid: agent_2a70299c417f
+  global_id: null
+  canonical_name: Draven (Vera Draven's Father)
+  title_role: Attorney
+  description: Draven, Vera Draven's late father, was a respected attorney who founded
+    the Draven family law practice and served as Monsignor Wicks' personal attorney.
+    Known for his close drinking friendship with Wicks, he was a commanding paternal
+    figure who instilled expectations in Vera, driving her to maintain the practice
+    and honor his ties to the church despite personal sacrifices. His enduring influence
+    shapes the Draven family's legal legacy and emotional tensions, marking him as
+    the patriarchal force behind their deceptions and devotions.
+  traits: &id013
+  - respected
+  - influential
+  - sociable
+  aliases: &id014
+  - Vera’s Dad
+  - Dad
+  character_type: Non-speaking Character
+  sphere_of_influence: Legal practice
+  appearance_count: 2
+  importance_tier: asteroid
+  affiliated_organization_uuid: org_90649e54e4f7
+- fabula_uuid: agent_2a70299c417f
+  global_id: null
+  canonical_name: Draven (Vera Draven's Father)
+  title_role: Attorney
+  description: Draven, Vera Draven's late father, was a respected attorney who founded
+    the Draven family law practice and served as Monsignor Wicks' personal attorney.
+    Known for his close drinking friendship with Wicks, he was a commanding paternal
+    figure who instilled expectations in Vera, driving her to maintain the practice
+    and honor his ties to the church despite personal sacrifices. His enduring influence
+    shapes the Draven family's legal legacy and emotional tensions, marking him as
+    the patriarchal force behind their deceptions and devotions.
+  traits: *id013
+  aliases: *id014
+  character_type: Non-speaking Character
+  sphere_of_influence: Legal practice
+  appearance_count: 2
+  importance_tier: asteroid
+  affiliated_organization_uuid: org_279a8e446d3f
+- fabula_uuid: agent_409c41388f0e
+  global_id: null
+  canonical_name: Duke Cody
+  title_role: null
+  description: Duke Cody anchors a Twitch channel built around video game tournaments,
+    emerging from Andi Brand's original circle of friends alongside Birdie Jay, Lionel
+    Toh, and Claire Debella. Miles Bron elevates his profile with career support,
+    binding Duke to the group's transformed loyalties. He travels with girlfriend
+    Whiskey, displays impulsive energy in seizing opportunities, and wields a taunting
+    edge in tense exchanges. His brash confidence and quick-triggered actions reflect
+    dependence on Miles' influence and readiness to back allies like Claire amid escalating
+    conflicts.
+  traits: &id015
+  - impulsive
+  - brash
+  - enthusiastic
+  - taunting
+  aliases: &id016
+  - Duke
+  character_type: Speaking Character
+  sphere_of_influence: Twitch Streaming
+  appearance_count: 77
+  importance_tier: anchor
+  affiliated_organization_uuid: org_e1125c062977
+- fabula_uuid: agent_409c41388f0e
+  global_id: null
+  canonical_name: Duke Cody
+  title_role: null
+  description: Duke Cody anchors a Twitch channel built around video game tournaments,
+    emerging from Andi Brand's original circle of friends alongside Birdie Jay, Lionel
+    Toh, and Claire Debella. Miles Bron elevates his profile with career support,
+    binding Duke to the group's transformed loyalties. He travels with girlfriend
+    Whiskey, displays impulsive energy in seizing opportunities, and wields a taunting
+    edge in tense exchanges. His brash confidence and quick-triggered actions reflect
+    dependence on Miles' influence and readiness to back allies like Claire amid escalating
+    conflicts.
+  traits: *id015
+  aliases: *id016
+  character_type: Speaking Character
+  sphere_of_influence: Twitch Streaming
+  appearance_count: 77
+  importance_tier: anchor
+  affiliated_organization_uuid: org_74656c6d9fda
+- fabula_uuid: agent_23e5019fb7af
+  global_id: null
+  canonical_name: Eddie
+  title_role: null
+  description: Eddie operates as a customer at Il Diavolo Pizza. He provokes reactions
+    from bar owner Nikolai and patrons like Jud through loud playback of media on
+    his phone. His glances toward groups reveal awareness of surrounding tensions.
+    Indifferent to disruptions he causes, Eddie embodies the intrusive bystander whose
+    casual actions heighten existing conflicts in public spaces. Nikolai shouts direct
+    commands to stop his behavior, underscoring Eddie's role as an agitator amid charged
+    interactions.
+  traits:
+  - intrusive
+  - indifferent
+  - disruptive
+  aliases:
+  - Customer
+  - Customer (Eddie)
+  character_type: Non-speaking Character
+  sphere_of_influence: Public Social Spaces
+  appearance_count: 5
+  importance_tier: planet
+  affiliated_organization_uuid: null
+- fabula_uuid: agent_620a122aaf5d
+  global_id: null
+  canonical_name: Efficient Man
+  title_role: null
+  description: The Efficient Man handles guest arrivals for Miles Bron's private island
+    gatherings in Greece. He drives a black SUV to the jetty, administers a mandatory
+    throat spray with a gun-shaped device, distributes white rubber wristbands, and
+    directs guests to board the boat. Dressed in sportswear, he ignores questions
+    from outsiders like Benoit Blanc and enforces protocols without emotion. His clinical
+    precision and authority maintain control over Bron's elite circle, including Birdie
+    Jay, Lionel Toussaint, Duke Cody, Peg, and Whiskey.
+  traits:
+  - efficient
+  - unemotional
+  - authoritative
+  - clinical
+  - professional
+  aliases: []
+  character_type: Speaking Character
+  sphere_of_influence: Guest intake protocols
+  appearance_count: 3
+  importance_tier: asteroid
+  affiliated_organization_uuid: org_c82e755c952a
+- fabula_uuid: agent_3dbec274db9e
+  global_id: null
+  canonical_name: Elite Social Courier
+  title_role: null
+  description: Generic **elite package delivery agent** in Manhattan’s high-society
+    circles, handling shipments for **tech entrepreneurs, fashion insiders, and socialites**
+    (e.g., Birdie Jay, Peg). Operates in **social/atmospheric contexts** rather than
+    covert schemes.
+  traits:
+  - Discreet
+  - Efficient
+  - Unobtrusive
+  aliases: []
+  character_type: Non-speaking Character
+  sphere_of_influence: Package Delivery
+  appearance_count: 1
+  importance_tier: asteroid
+  affiliated_organization_uuid: org_c82e755c952a
 - fabula_uuid: agent_bf8519d0d232
   global_id: null
   canonical_name: Elliott
   title_role: Detective Lieutenant
-  description: Detective Lieutenant Elliott directs the local police investigation
-    into Harlan Thrombey's death. In his thirties and sharp at his job, he partners
-    with Trooper Wagner to interview Thrombey family members, probe alibis, and scrutinize
-    timelines through methodical questioning and voiceover narration. He clashes with
-    consultant Benoit Blanc over procedural versus intuitive approaches, starting
-    dismissive of murder theories but shifting to pursue evidence like footprints
-    and tapes. His sarcasm cuts family tensions, and he coordinates forensics, chases,
-    and arrests while balancing skepticism with adaptability.
+  description: Detective Lieutenant Elliott directs local homicide investigations
+    with sharp focus and procedural discipline. In his thirties, he partners with
+    troopers like Wagner and consultants such as Benoit Blanc across multiple cases.
+    Methodical interviews, forensic coordination, and evidence analysis mark his work.
+    Sarcasm tempers his skepticism toward alibis and family claims, while adaptability
+    drives him to pursue leads like footprints and recordings. Professional detachment
+    keeps him effective amid tense dynamics and elite suspects.
   traits:
   - methodical
-  - professional
-  - skeptical
   - sarcastic
+  - skeptical
   - adaptable
+  - professional
   aliases:
   - Lieutenant Elliott
+  - Detective Elliott
   character_type: Speaking Character
-  sphere_of_influence: Homicide Investigations
-  appearance_count: 67
+  sphere_of_influence: Homicide Investigation
+  appearance_count: 69
   importance_tier: anchor
   affiliated_organization_uuid: organization_536ee8d95f4d
 - fabula_uuid: agent_34b6f60721bd
@@ -247,7 +1309,28 @@
   sphere_of_influence: Hospital Emergency Care
   appearance_count: 2
   importance_tier: asteroid
-  affiliated_organization_uuid: null
+  affiliated_organization_uuid: organization_536ee8d95f4d
+- fabula_uuid: agent_abae48639867
+  global_id: null
+  canonical_name: Flock
+  title_role: null
+  description: The Flock comprises Wicks' core followers who assemble in the rectory
+    under his direction. Excluding Sam, they form a tight-knit group that turns as
+    one toward threats, their faces hardening into unified masks of anger. Devoted
+    to Wicks, they channel hostility toward dissenters like Jud, bolstering his authority
+    through silent solidarity and shared outrage.
+  traits:
+  - loyal
+  - united
+  - hostile
+  - angry
+  aliases:
+  - Flock (minus Sam)
+  character_type: Non-speaking Character
+  sphere_of_influence: Wicks' Congregation
+  appearance_count: 2
+  importance_tier: asteroid
+  affiliated_organization_uuid: org_a08c10032c76
 - fabula_uuid: agent_744fc6fe55be
   global_id: null
   canonical_name: Fran
@@ -295,6 +1378,135 @@
   appearance_count: 2
   importance_tier: asteroid
   affiliated_organization_uuid: organization_0918affd6cca
+- fabula_uuid: agent_3f1cf397195a
+  global_id: null
+  canonical_name: Frank
+  title_role: Father
+  description: Father Frank operates as a senior priest within the church hierarchy.
+    He joins Father Delancy and Bishop Langstrom in evaluating clerical candidates
+    through disciplinary hearings. Frank delivers precise accounts of incidents, bolstering
+    cases against unfit aspirants like former fighters. Committed to doctrinal rigor,
+    he embodies institutional loyalty and calm authority, ensuring facts guide judgments
+    on redemption and fitness for priesthood.
+  traits:
+  - factual
+  - supportive
+  - impartial
+  aliases:
+  - Father Frank
+  character_type: Speaking Character
+  sphere_of_influence: Church Disciplinary Proceedings
+  appearance_count: 2
+  importance_tier: asteroid
+  affiliated_organization_uuid: org_a053e74003af
+- fabula_uuid: agent_7776b07b0cb3
+  global_id: null
+  canonical_name: Gay Couple
+  title_role: null
+  description: The Gay Couple attends Monsignor Wicks's church services as parishioners
+    but rejects his divisive sermons targeting their relationship. Clean-cut and united,
+    they storm out in protest, embodying principled dissent within a complicit congregation.
+    Their actions highlight intolerance for bigotry, positioning them as moral outliers
+    amid Wicks's cult-like control and the flock's silence.
+  traits:
+  - defiant
+  - principled
+  - reactive
+  aliases: []
+  character_type: Non-speaking Character
+  sphere_of_influence: Church congregation dissent
+  appearance_count: 2
+  importance_tier: asteroid
+  affiliated_organization_uuid: org_90649e54e4f7
+- fabula_uuid: agent_69cf17ccbb77
+  global_id: null
+  canonical_name: Geraldine Scott
+  title_role: Chief
+  description: Geraldine Scott, Chief of the local police department, leads homicide
+    investigations in a rural town shaken by church murders and other crises. She
+    coordinates with deputies, analyzes forensics (e.g., security footage, fingerprints),
+    and confronts suspects with blunt authority. Exhausted by public pressure and
+    viral scandals, she grudgingly collaborates with Detective Benoit Blanc despite
+    clashing over his unorthodox methods. Her relationships with community figures—including
+    Priest Jud, Martha Delacroix, and Samson Holt—center on tense interrogations,
+    perimeter control, and crisis management. Driven by duty, she pushes for arrests
+    amid evidentiary dead ends and conspiracy shadows, balancing professionalism with
+    the weight of her role as the town’s key law enforcement authority.
+  traits:
+  - methodical
+  - weary
+  - authoritative
+  - impatient
+  - professional
+  aliases:
+  - Geraldine
+  - Chief Geraldine
+  character_type: Speaking Character
+  sphere_of_influence: Police Investigations
+  appearance_count: 51
+  importance_tier: anchor
+  affiliated_organization_uuid: org_54ad9ab34a65
+- fabula_uuid: agent_07351c9510f4
+  global_id: null
+  canonical_name: Geraldine Scott's Deputies (Collective)
+  title_role: Deputies
+  description: Generic group of deputies under Chief Geraldine Scott, functioning
+    as a disciplined, operational unit during investigations. Focuses on collective
+    actions such as executing search orders, accompanying the chief into locations,
+    and reinforcing institutional authority. Lacks individualization and serves as
+    a background element to support the sheriff's department's procedural thoroughness.
+  traits:
+  - disciplined
+  - obedient
+  - efficient
+  - professional
+  aliases:
+  - deputies
+  character_type: Non-speaking Character
+  sphere_of_influence: Local Law Enforcement
+  appearance_count: 2
+  importance_tier: asteroid
+  affiliated_organization_uuid: org_54ad9ab34a65
+- fabula_uuid: agent_9513135fae8e
+  global_id: null
+  canonical_name: Gillian Flynn
+  title_role: null
+  description: Gillian Flynn is a renowned screenwriter specializing in intricate
+    psychological thrillers. Miles Bron hires her to design the murder mystery game
+    for his private island retreat, paying a premium for her expertise in crafting
+    puzzles and motives that drive high-stakes deceptions. Her role underscores Miles'
+    strategy of enlisting top talent to elevate his gatherings, blending celebrity
+    collaboration with narrative ingenuity. Flynn's background in dark, twist-filled
+    stories positions her as the unseen architect behind the weekend's central diversion.
+  traits:
+  - acclaimed
+  - ingenious
+  - professional
+  aliases: []
+  character_type: Non-speaking Character
+  sphere_of_influence: Thriller Screenwriting
+  appearance_count: 2
+  importance_tier: asteroid
+  affiliated_organization_uuid: org_e20647eace45
+- fabula_uuid: agent_23cce93af662
+  global_id: null
+  canonical_name: Grace Wicks
+  title_role: null
+  description: Historical figure from the past whose youthful rebellion and pregnancy
+    by a drifter created the generational shame exploited by Monsignor Wicks. Never
+    appears in the present timeline but is invoked as a symbol of hypocrisy and family
+    scandal.
+  traits:
+  - rebellious
+  - transgressive
+  - nonconformist
+  aliases:
+  - GRACE
+  character_type: Speaking Character
+  sphere_of_influence: Wicks Family Legacy
+  appearance_count: 15
+  importance_tier: planet
+  affiliated_organization_uuid: org_a08c10032c76
 - fabula_uuid: agent_82dbfec72515
   global_id: null
   canonical_name: Harlan Thrombey
@@ -303,13 +1515,13 @@
     exercises ultimate control over family finances, adaptations, and legacy. His
     relationships are defined by trust in outsiders (e.g., Marta Cabrera) and strategic
     confrontations with his children, particularly Walt.
-  traits: &id001
+  traits: &id017
   - authoritative
   - confrontational
   - manipulative
   - pragmatic
   - paternal
-  aliases: &id002
+  aliases: &id018
   - Harlan
   character_type: Speaking Character
   sphere_of_influence: Publishing Empire and Family Leadership
@@ -324,13 +1536,31 @@
     exercises ultimate control over family finances, adaptations, and legacy. His
     relationships are defined by trust in outsiders (e.g., Marta Cabrera) and strategic
     confrontations with his children, particularly Walt.
-  traits: *id001
-  aliases: *id002
+  traits: *id017
+  aliases: *id018
   character_type: Speaking Character
   sphere_of_influence: Publishing Empire and Family Leadership
   appearance_count: 93
   importance_tier: anchor
   affiliated_organization_uuid: organization_49c73339569b
+- fabula_uuid: agent_34fa8d085e50
+  global_id: null
+  canonical_name: Intervening Men
+  title_role: null
+  description: Act as impromptu protectors within the church community, prioritizing
+    physical intervention to safeguard children and sacred spaces. Operate independently
+    during crises.
+  traits:
+  - protective
+  - decisive
+  - vigilant
+  - physically capable
+  aliases: []
+  character_type: Non-speaking Character
+  sphere_of_influence: Church community protection
+  appearance_count: 2
+  importance_tier: asteroid
+  affiliated_organization_uuid: org_a053e74003af
 - fabula_uuid: agent_48cae7532951
   global_id: null
   canonical_name: Jacob Thrombey
@@ -356,6 +1586,144 @@
   appearance_count: 28
   importance_tier: planet
   affiliated_organization_uuid: organization_49c73339569b
+- fabula_uuid: agent_cd95aa19a579
+  global_id: null
+  canonical_name: James
+  title_role: null
+  description: James handles forklift orders and operations at Steel Wheels Construction
+    with his sister Louise. He delivers equipment for specialized tasks like crypt
+    openings and confirms order details directly with clients such as Monsignor Wicks.
+    James extends quiet support to Jud amid accusations, dismissing online rumors
+    and sharing receipts as gestures of belief in his innocence. Reliable in his role,
+    he phones key figures like Martha Delacroix with precise information, blending
+    professional duty with personal empathy rooted in community ties.
+  traits:
+  - supportive
+  - reliable
+  - professional
+  - empathetic
+  - discreet
+  aliases: []
+  character_type: Speaking Character
+  sphere_of_influence: Construction Equipment Orders and Operations
+  appearance_count: 7
+  importance_tier: planet
+  affiliated_organization_uuid: org_fbf06ff25370
+- fabula_uuid: agent_9c22c6a8ac6b
+  global_id: null
+  canonical_name: Jared Leto
+  title_role: null
+  description: Jared Leto maintains connections in Miles Bron's elite circle as an
+    off-screen acquaintance who sends exclusive hard kombucha to the private island
+    gathering. His gift arrives as a casual status symbol, offered by Miles to guests
+    like Benoit Blanc and Duke Cody, signaling shared tastes among high-profile disruptors
+    and influencers.
+  traits:
+  - sociable
+  - generous
+  - well-connected
+  aliases: []
+  character_type: Non-speaking Character
+  sphere_of_influence: Elite Social Networks
+  appearance_count: 2
+  importance_tier: asteroid
+  affiliated_organization_uuid: org_74656c6d9fda
+- fabula_uuid: agent_4f46ecd5857f
+  global_id: null
+  canonical_name: Jefferson Wicks (Monsignor Wicks)
+  title_role: Monsignor
+  description: Present-day antagonist and parish priest of Our Lady of Perpetual Fortitude.
+    Uses his mother Grace Wicks' scandal as a tool to justify his control over the
+    congregation. Active plot driver with direct relationships, alliances, and conflicts
+    in the present timeline.
+  traits: &id019
+  - volatile
+  - manipulative
+  - paranoid
+  - dominant
+  - calculating
+  aliases: &id020
+  - Wicks
+  - Monsignor Wicks
+  - Jefferson
+  - Jefferson Wicks
+  character_type: Speaking Character
+  sphere_of_influence: Parish Leadership
+  appearance_count: 124
+  importance_tier: anchor
+  affiliated_organization_uuid: org_90649e54e4f7
+- fabula_uuid: agent_4f46ecd5857f
+  global_id: null
+  canonical_name: Jefferson Wicks (Monsignor Wicks)
+  title_role: Monsignor
+  description: Present-day antagonist and parish priest of Our Lady of Perpetual Fortitude.
+    Uses his mother Grace Wicks' scandal as a tool to justify his control over the
+    congregation. Active plot driver with direct relationships, alliances, and conflicts
+    in the present timeline.
+  traits: *id019
+  aliases: *id020
+  character_type: Speaking Character
+  sphere_of_influence: Parish Leadership
+  appearance_count: 124
+  importance_tier: anchor
+  affiliated_organization_uuid: org_a08c10032c76
+- fabula_uuid: agent_cb8daa5a877d
+  global_id: null
+  canonical_name: Jesus Christ
+  title_role: null
+  description: Jesus Christ anchors Christian theology as the divine savior and source
+    of moral guidance. Jud invokes him repeatedly in prayer, seeking salvation amid
+    personal torment and loss of faith. This figure represents hope, direction, and
+    redemption for believers like Jud, while drawing skepticism from outsiders like
+    Benoit Blanc, who rejects the surrounding religious narratives as fabricated stories
+    laced with flaws.
+  traits: &id021
+  - merciful
+  - guiding
+  - redemptive
+  - symbolic
+  aliases: &id022
+  - Jesus
+  - Christ
+  character_type: Non-speaking Character
+  sphere_of_influence: Christian Faith and Salvation
+  appearance_count: 6
+  importance_tier: planet
+  affiliated_organization_uuid: org_a053e74003af
+- fabula_uuid: agent_cb8daa5a877d
+  global_id: null
+  canonical_name: Jesus Christ
+  title_role: null
+  description: Jesus Christ anchors Christian theology as the divine savior and source
+    of moral guidance. Jud invokes him repeatedly in prayer, seeking salvation amid
+    personal torment and loss of faith. This figure represents hope, direction, and
+    redemption for believers like Jud, while drawing skepticism from outsiders like
+    Benoit Blanc, who rejects the surrounding religious narratives as fabricated stories
+    laced with flaws.
+  traits: *id021
+  aliases: *id022
+  character_type: Non-speaking Character
+  sphere_of_influence: Christian Faith and Salvation
+  appearance_count: 6
+  importance_tier: planet
+  affiliated_organization_uuid: org_90649e54e4f7
+- fabula_uuid: agent_cb8daa5a877d
+  global_id: null
+  canonical_name: Jesus Christ
+  title_role: null
+  description: Jesus Christ anchors Christian theology as the divine savior and source
+    of moral guidance. Jud invokes him repeatedly in prayer, seeking salvation amid
+    personal torment and loss of faith. This figure represents hope, direction, and
+    redemption for believers like Jud, while drawing skepticism from outsiders like
+    Benoit Blanc, who rejects the surrounding religious narratives as fabricated stories
+    laced with flaws.
+  traits: *id021
+  aliases: *id022
+  character_type: Non-speaking Character
+  sphere_of_influence: Christian Faith and Salvation
+  appearance_count: 6
+  importance_tier: planet
+  affiliated_organization_uuid: org_a08c10032c76
 - fabula_uuid: agent_ea37919c5c20
   global_id: null
   canonical_name: Joni Thrombey
@@ -401,6 +1769,193 @@
   appearance_count: 1
   importance_tier: asteroid
   affiliated_organization_uuid: organization_c6954d4df8ea
+- fabula_uuid: agent_b9f81e84842e
+  global_id: null
+  canonical_name: Jud Duplenticy
+  title_role: Priest
+  description: Jud Duplenticy (also known as 'Father Jud'), a priest in his 30s, bears
+    the physical scars of his boxing past—taut muscles and a neck tattoo visible above
+    his clerical collar. He channels disciplined strength into his spiritual role
+    while battling a latent capacity for violence that erupts under provocation, particularly
+    from church figures like Deacon Clark. Immediate remorse follows his outbursts,
+    revealing a man torn between redemptive faith and destructive impulses. Jud serves
+    under Monsignor Wicks in a local church, maintaining intimate knowledge of the
+    Draven family's secrets, including Cy Draven's true parentage and Vera's role
+    in the deception. He probes loyalties, confronts moral dilemmas, and acts decisively
+    in crises—concealing evidence or intervening swiftly—while forging ties with outsiders
+    like Benoit Blanc. His motivations center on balancing ecclesiastical duty, personal
+    conscience, and protection of those entangled in church scandals. His tense interactions
+    expose institutional frictions that test his fragile self-control.
+  traits: &id023
+  - impatient
+  - volatile
+  - remorseful
+  - physically imposing
+  - self-disciplined
+  aliases: &id024
+  - Father Jud
+  - JUD
+  character_type: Speaking Character
+  sphere_of_influence: Church Ministry
+  appearance_count: 22
+  importance_tier: planet
+  affiliated_organization_uuid: org_a053e74003af
+- fabula_uuid: agent_b9f81e84842e
+  global_id: null
+  canonical_name: Jud Duplenticy
+  title_role: Priest
+  description: Jud Duplenticy (also known as 'Father Jud'), a priest in his 30s, bears
+    the physical scars of his boxing past—taut muscles and a neck tattoo visible above
+    his clerical collar. He channels disciplined strength into his spiritual role
+    while battling a latent capacity for violence that erupts under provocation, particularly
+    from church figures like Deacon Clark. Immediate remorse follows his outbursts,
+    revealing a man torn between redemptive faith and destructive impulses. Jud serves
+    under Monsignor Wicks in a local church, maintaining intimate knowledge of the
+    Draven family's secrets, including Cy Draven's true parentage and Vera's role
+    in the deception. He probes loyalties, confronts moral dilemmas, and acts decisively
+    in crises—concealing evidence or intervening swiftly—while forging ties with outsiders
+    like Benoit Blanc. His motivations center on balancing ecclesiastical duty, personal
+    conscience, and protection of those entangled in church scandals. His tense interactions
+    expose institutional frictions that test his fragile self-control.
+  traits: *id023
+  aliases: *id024
+  character_type: Speaking Character
+  sphere_of_influence: Church Ministry
+  appearance_count: 22
+  importance_tier: planet
+  affiliated_organization_uuid: org_a08c10032c76
+- fabula_uuid: agent_52125d3ebb43
+  global_id: null
+  canonical_name: Judge
+  title_role: Judge
+  description: The Judge presides over civil trials involving elite figures from tech,
+    politics, fashion, and science, such as Miles Bron and his associates. He enforces
+    courtroom discipline, directing counsel to control disruptive clients and silencing
+    outbursts to preserve order. Firm in authority, he maintains procedural neutrality
+    amid high-stakes testimony and betrayals, prioritizing decorum and fairness. His
+    role centers on judicial oversight of disputes over intellectual property and
+    corporate exclusion, navigating tensions among powerful witnesses.
+  traits:
+  - authoritative
+  - impartial
+  - decisive
+  - neutral
+  aliases: []
+  character_type: Non-speaking Character
+  sphere_of_influence: Courtroom Proceedings
+  appearance_count: 3
+  importance_tier: asteroid
+  affiliated_organization_uuid: org_e20647eace45
+- fabula_uuid: agent_449fd22ef5bb
+  global_id: null
+  canonical_name: Kareem Abdul-Jabbar
+  title_role: null
+  description: Kareem Abdul-Jabbar ranks among Benoit Blanc's inner circle of celebrity
+    friends, joining virtual gaming sessions alongside Angela Lansbury, Stephen Sondheim,
+    and Natasha Lyonne. The basketball legend brings playful energy to their lockdown
+    hangouts, teasing Blanc's missteps while voicing sharp concern for his friend's
+    isolation and well-being. His blend of humor and loyalty reveals a steadfast companion
+    who balances lighthearted ribbing with genuine care, anchoring Blanc's social
+    world amid professional droughts.
+  traits:
+  - playful
+  - concerned
+  - loyal
+  - teasing
+  - observant
+  aliases: []
+  character_type: Non-speaking Character
+  sphere_of_influence: Benoit Blanc's social and gaming circle
+  appearance_count: 1
+  importance_tier: asteroid
+  affiliated_organization_uuid: null
+- fabula_uuid: agent_d928902e9e73
+  global_id: null
+  canonical_name: Langstrom
+  title_role: Bishop
+  description: High-ranking bishop who presides over clergy disciplinary hearings,
+    including cases involving Deacon Clark. Prioritizes institutional stability and
+    pragmatic reassignments over punitive measures, embodying a judicial and administrative
+    role within the diocese.
+  traits:
+  - skeptical
+  - pragmatic
+  - cautious
+  - reserved
+  - mentoring
+  aliases: []
+  character_type: Speaking Character
+  sphere_of_influence: Diocesan Clergy Discipline
+  appearance_count: 8
+  importance_tier: planet
+  affiliated_organization_uuid: org_a053e74003af
+- fabula_uuid: agent_e20afe94e205
+  global_id: null
+  canonical_name: Lead Deputy (Geraldine Scott's Team)
+  title_role: Deputy
+  description: Individual deputy under Chief Geraldine Scott, distinguished by technical
+    observance (e.g., hidden cameras, fingerprint analysis) and direct interactions
+    with key characters like Benoit Blanc and Simone Vivane. Acts as a bridge between
+    the sheriff's department and external investigators, with a focus on forensic
+    evidence gathering and perimeter security.
+  traits:
+  - dutiful
+  - professional
+  - observant
+  - discreet
+  - efficient
+  aliases: []
+  character_type: Speaking Character
+  sphere_of_influence: Local Law Enforcement
+  appearance_count: 5
+  importance_tier: planet
+  affiliated_organization_uuid: org_54ad9ab34a65
+- fabula_uuid: agent_323b22c4fd18
+  global_id: null
+  canonical_name: Lee Ross
+  title_role: null
+  description: Lee Ross stands as Chimney Rock's rugged sci-fi author, once celebrated
+    for selling over a million copies of The Crescent Limbo. Now facing plummeting
+    sales and a fringe survivalist readership, he clings to Monsignor Jefferson Wicks
+    as a spiritual anchor, penning a desperate hagiography titled The Holy Man And
+    The Troubadour to escape obscurity. Boisterous and crude, he displays performative
+    machismo amid growing paranoia—digging defensive moats around his home—and binds
+    tightly to Wicks' inner circle of warriors, including Doctor Nat Sharp, Simone
+    Vivane, and Jud. His loyalty fractures under humiliation, revealing volatile skepticism
+    toward opportunists like Cy Draven.
+  traits: &id025
+  - volatile
+  - paranoid
+  - devoted
+  - boisterous
+  - skeptical
+  aliases: &id026
+  - Lee
+  character_type: Speaking Character
+  sphere_of_influence: Church congregation and sci-fi authorship
+  appearance_count: 44
+  importance_tier: planet
+  affiliated_organization_uuid: org_90649e54e4f7
+- fabula_uuid: agent_323b22c4fd18
+  global_id: null
+  canonical_name: Lee Ross
+  title_role: null
+  description: Lee Ross stands as Chimney Rock's rugged sci-fi author, once celebrated
+    for selling over a million copies of The Crescent Limbo. Now facing plummeting
+    sales and a fringe survivalist readership, he clings to Monsignor Jefferson Wicks
+    as a spiritual anchor, penning a desperate hagiography titled The Holy Man And
+    The Troubadour to escape obscurity. Boisterous and crude, he displays performative
+    machismo amid growing paranoia—digging defensive moats around his home—and binds
+    tightly to Wicks' inner circle of warriors, including Doctor Nat Sharp, Simone
+    Vivane, and Jud. His loyalty fractures under humiliation, revealing volatile skepticism
+    toward opportunists like Cy Draven.
+  traits: *id025
+  aliases: *id026
+  character_type: Speaking Character
+  sphere_of_influence: Church congregation and sci-fi authorship
+  appearance_count: 44
+  importance_tier: planet
+  affiliated_organization_uuid: org_a08c10032c76
 - fabula_uuid: agent_380d3195b3c1
   global_id: null
   canonical_name: Linda Thrombey Drysdale
@@ -411,15 +1966,16 @@
     poise and hidden resentments to maintain control over family secrets and status.
     Her dynamic with Harlan is marked by a game-like demand for equality, while her
     marriage to Richard is fraught with unspoken tensions.
-  traits: &id003
+  traits: &id027
   - guarded
   - assertive
   - controlling
   - sharp-witted
   - resentful
-  aliases: &id004
+  aliases: &id028
   - Linda
   - Linda Thrombey
+  - Linda Drysdale
   character_type: Speaking Character
   sphere_of_influence: Real Estate and Thrombey Family Dynamics
   appearance_count: 48
@@ -435,13 +1991,76 @@
     poise and hidden resentments to maintain control over family secrets and status.
     Her dynamic with Harlan is marked by a game-like demand for equality, while her
     marriage to Richard is fraught with unspoken tensions.
-  traits: *id003
-  aliases: *id004
+  traits: *id027
+  aliases: *id028
   character_type: Speaking Character
   sphere_of_influence: Real Estate and Thrombey Family Dynamics
   appearance_count: 48
   importance_tier: planet
   affiliated_organization_uuid: organization_49c73339569b
+- fabula_uuid: agent_255be174ca75
+  global_id: null
+  canonical_name: Lionel Toussaint
+  title_role: null
+  description: Lionel Toussaint ranks as a lead scientist among Miles Bron's circle
+    of disruptors, greenlighting hazardous projects like KLEAR-fueled rockets despite
+    grave risks. Claire Debella's partner, he blends political proximity with technical
+    expertise, defending Bron's erratic genius amid career threats. Puzzle mastery
+    defines his intellect, unlocking layered mechanisms through logic and persistence.
+    Pragmatic loyalty wars with moral unease, pushing him to conceal data, mediate
+    tensions, and betray allies under pressure. Composed yet inwardly torn, he prioritizes
+    survival in webs of blackmail and deception.
+  traits: &id029
+  - methodical
+  - intellectual
+  - conflicted
+  - pragmatic
+  - composed
+  aliases: &id030
+  - LIONEL
+  character_type: Speaking Character
+  sphere_of_influence: Experimental Technology and Disruptor Projects
+  appearance_count: 79
+  importance_tier: anchor
+  affiliated_organization_uuid: org_e20647eace45
+- fabula_uuid: agent_255be174ca75
+  global_id: null
+  canonical_name: Lionel Toussaint
+  title_role: null
+  description: Lionel Toussaint ranks as a lead scientist among Miles Bron's circle
+    of disruptors, greenlighting hazardous projects like KLEAR-fueled rockets despite
+    grave risks. Claire Debella's partner, he blends political proximity with technical
+    expertise, defending Bron's erratic genius amid career threats. Puzzle mastery
+    defines his intellect, unlocking layered mechanisms through logic and persistence.
+    Pragmatic loyalty wars with moral unease, pushing him to conceal data, mediate
+    tensions, and betray allies under pressure. Composed yet inwardly torn, he prioritizes
+    survival in webs of blackmail and deception.
+  traits: *id029
+  aliases: *id030
+  character_type: Speaking Character
+  sphere_of_influence: Experimental Technology and Disruptor Projects
+  appearance_count: 79
+  importance_tier: anchor
+  affiliated_organization_uuid: org_74656c6d9fda
+- fabula_uuid: agent_255be174ca75
+  global_id: null
+  canonical_name: Lionel Toussaint
+  title_role: null
+  description: Lionel Toussaint ranks as a lead scientist among Miles Bron's circle
+    of disruptors, greenlighting hazardous projects like KLEAR-fueled rockets despite
+    grave risks. Claire Debella's partner, he blends political proximity with technical
+    expertise, defending Bron's erratic genius amid career threats. Puzzle mastery
+    defines his intellect, unlocking layered mechanisms through logic and persistence.
+    Pragmatic loyalty wars with moral unease, pushing him to conceal data, mediate
+    tensions, and betray allies under pressure. Composed yet inwardly torn, he prioritizes
+    survival in webs of blackmail and deception.
+  traits: *id029
+  aliases: *id030
+  character_type: Speaking Character
+  sphere_of_influence: Experimental Technology and Disruptor Projects
+  appearance_count: 79
+  importance_tier: anchor
+  affiliated_organization_uuid: org_d99f6a087fdf
 - fabula_uuid: agent_d44da24d6eb5
   global_id: null
   canonical_name: Local News Field Reporters
@@ -479,6 +2098,45 @@
   appearance_count: 0
   importance_tier: asteroid
   affiliated_organization_uuid: organization_c6954d4df8ea
+- fabula_uuid: agent_2ceabeb9b2a8
+  global_id: null
+  canonical_name: Louise
+  title_role: null
+  description: Louise runs Steel Wheels Construction alongside her brother, managing
+    equipment orders and customer calls with steady efficiency. Her terminally ill
+    mother, Barbara, weighs on her through a fractured relationship marked by guilt
+    and loneliness, drawing her to seek prayer and solace from Father Jud. Grief pierces
+    her professional shell, yet she offers blessings and concern in return, balancing
+    personal turmoil with dutiful reliability.
+  traits:
+  - professional
+  - vulnerable
+  - compassionate
+  - devout
+  aliases: []
+  character_type: Speaking Character
+  sphere_of_influence: Construction equipment operations
+  appearance_count: 7
+  importance_tier: planet
+  affiliated_organization_uuid: org_fbf06ff25370
+- fabula_uuid: agent_22010715f089
+  global_id: null
+  canonical_name: Ma
+  title_role: null
+  description: Fictional character and Duke Cody's mother in *Knives Out*; distinct
+    from the real-world cellist Yo-Yo Ma.
+  traits:
+  - authoritative
+  - resourceful
+  - assertive
+  - matter-of-fact
+  aliases:
+  - Duke's Mother
+  character_type: Speaking Character
+  sphere_of_influence: Household Authority
+  appearance_count: 8
+  importance_tier: planet
+  affiliated_organization_uuid: org_e1125c062977
 - fabula_uuid: agent_879a028f2e90
   global_id: null
   canonical_name: Marta Cabrera
@@ -499,7 +2157,7 @@
   sphere_of_influence: Private Nursing
   appearance_count: 168
   importance_tier: anchor
-  affiliated_organization_uuid: organization_49c73339569b
+  affiliated_organization_uuid: organization_016903361ca2
 - fabula_uuid: agent_4fe617eac03e
   global_id: null
   canonical_name: Marta Cabrera's Mother
@@ -522,6 +2180,41 @@
   appearance_count: 11
   importance_tier: planet
   affiliated_organization_uuid: null
+- fabula_uuid: agent_110a636c31c7
+  global_id: null
+  canonical_name: Martha Delacroix (Church Administrator)
+  title_role: null
+  description: Stern adult administrator of Our Lady of Perpetual Fortitude, enforcing
+    church hierarchy through records, rituals, and surveillance. Devoted to institutional
+    legacy, with no connection to Young Martha’s antagonistic role.
+  traits: &id031
+  - severe
+  - authoritative
+  - meticulous
+  - devoted
+  - calculating
+  aliases: &id032
+  - Martha
+  - Martha Delacroix
+  character_type: Non-speaking Character
+  sphere_of_influence: Church administration and hierarchy
+  appearance_count: 126
+  importance_tier: anchor
+  affiliated_organization_uuid: org_90649e54e4f7
+- fabula_uuid: agent_110a636c31c7
+  global_id: null
+  canonical_name: Martha Delacroix (Church Administrator)
+  title_role: null
+  description: Stern adult administrator of Our Lady of Perpetual Fortitude, enforcing
+    church hierarchy through records, rituals, and surveillance. Devoted to institutional
+    legacy, with no connection to Young Martha’s antagonistic role.
+  traits: *id031
+  aliases: *id032
+  character_type: Non-speaking Character
+  sphere_of_influence: Church administration and hierarchy
+  appearance_count: 126
+  importance_tier: anchor
+  affiliated_organization_uuid: org_a08c10032c76
 - fabula_uuid: agent_583e51cc92fa
   global_id: null
   canonical_name: Medical Examiner
@@ -551,35 +2244,369 @@
     with relatives such as Ransom Drysdale and Jacob Thrombey. Empathy drives fierce
     defenses and nurturing gestures, yet family loyalty triggers conflicted betrayals
     and tearful reconciliations, marking her as the clan's volatile moral outlier.
-  traits: &id005
+  traits:
   - empathetic
   - outspoken
   - conflicted
   - protective
-  aliases: &id006
+  aliases:
   - MEG
   character_type: Speaking Character
   sphere_of_influence: Thrombey Family Dynamics
   appearance_count: 38
   importance_tier: planet
-  affiliated_organization_uuid: organization_0a79c059776d
-- fabula_uuid: agent_afd5ad8773b4
-  global_id: null
-  canonical_name: Meg Thrombey
-  title_role: null
-  description: Meg Thrombey is the college-aged daughter of Joni Thrombey and granddaughter
-    of Harlan Thrombey. A Smith College student, she champions friends like Marta
-    Cabrera against family entitlement. Her progressive values fuel sharp clashes
-    with relatives such as Ransom Drysdale and Jacob Thrombey. Empathy drives fierce
-    defenses and nurturing gestures, yet family loyalty triggers conflicted betrayals
-    and tearful reconciliations, marking her as the clan's volatile moral outlier.
-  traits: *id005
-  aliases: *id006
-  character_type: Speaking Character
-  sphere_of_influence: Thrombey Family Dynamics
-  appearance_count: 38
-  importance_tier: planet
   affiliated_organization_uuid: organization_49c73339569b
+- fabula_uuid: agent_a5e932746451
+  global_id: null
+  canonical_name: Miles Bron
+  title_role: null
+  description: Miles Bron reigns as a flamboyant tech billionaire who founded Alpha
+    alongside Andi Brand before ousting her. He summons his cadre of 'disruptors'—Lionel
+    Toussaint, Claire Debella, Duke Cody, Birdie Jay—to his private Greek island for
+    elaborate games that mask his manipulative designs. Guitar in hand, he delivers
+    grand monologues on innovation and legacy, unveiling treasures like the Mona Lisa
+    and volatile KLEAR fuel. His charisma conceals deep insecurity and a compulsion
+    to orchestrate loyalty amid reckless ambition.
+  traits: &id033
+  - charismatic
+  - manipulative
+  - grandiose
+  - vulnerable
+  - ambitious
+  aliases: &id034
+  - Miles
+  - Bron
+  character_type: Speaking Character
+  sphere_of_influence: Tech Innovation and Elite Social Circles
+  appearance_count: 119
+  importance_tier: anchor
+  affiliated_organization_uuid: org_e20647eace45
+- fabula_uuid: agent_a5e932746451
+  global_id: null
+  canonical_name: Miles Bron
+  title_role: null
+  description: Miles Bron reigns as a flamboyant tech billionaire who founded Alpha
+    alongside Andi Brand before ousting her. He summons his cadre of 'disruptors'—Lionel
+    Toussaint, Claire Debella, Duke Cody, Birdie Jay—to his private Greek island for
+    elaborate games that mask his manipulative designs. Guitar in hand, he delivers
+    grand monologues on innovation and legacy, unveiling treasures like the Mona Lisa
+    and volatile KLEAR fuel. His charisma conceals deep insecurity and a compulsion
+    to orchestrate loyalty amid reckless ambition.
+  traits: *id033
+  aliases: *id034
+  character_type: Speaking Character
+  sphere_of_influence: Tech Innovation and Elite Social Circles
+  appearance_count: 119
+  importance_tier: anchor
+  affiliated_organization_uuid: org_74656c6d9fda
+- fabula_uuid: agent_a5e932746451
+  global_id: null
+  canonical_name: Miles Bron
+  title_role: null
+  description: Miles Bron reigns as a flamboyant tech billionaire who founded Alpha
+    alongside Andi Brand before ousting her. He summons his cadre of 'disruptors'—Lionel
+    Toussaint, Claire Debella, Duke Cody, Birdie Jay—to his private Greek island for
+    elaborate games that mask his manipulative designs. Guitar in hand, he delivers
+    grand monologues on innovation and legacy, unveiling treasures like the Mona Lisa
+    and volatile KLEAR fuel. His charisma conceals deep insecurity and a compulsion
+    to orchestrate loyalty amid reckless ambition.
+  traits: *id033
+  aliases: *id034
+  character_type: Speaking Character
+  sphere_of_influence: Tech Innovation and Elite Social Circles
+  appearance_count: 119
+  importance_tier: anchor
+  affiliated_organization_uuid: org_d99f6a087fdf
+- fabula_uuid: agent_4d0d1c11a063
+  global_id: null
+  canonical_name: Model
+  title_role: null
+  description: Model forms part of Birdie Jay's chaotic entourage of models, musicians,
+    and performers who gather in her Manhattan apartment during the pandemic. She
+    observes the fashion designer's outbursts and interactions with her assistant
+    Peg, voicing simple questions that reveal mild curiosity about household rules
+    like phone confiscation. Her presence underscores the eclectic, indulgent social
+    circle orbiting Birdie, where she blends into the background yet briefly engages
+    in conversations touching privilege and control.
+  traits:
+  - curious
+  - inquisitive
+  - observant
+  aliases: []
+  character_type: Non-speaking Character
+  sphere_of_influence: Birdie Jay's entourage
+  appearance_count: 3
+  importance_tier: asteroid
+  affiliated_organization_uuid: org_74656c6d9fda
+- fabula_uuid: agent_e38370320a72
+  global_id: null
+  canonical_name: Mona Lisa
+  title_role: null
+  description: Mona Lisa hangs as the central portrait in Miles Bron's mansion atrium.
+    Its eyes track the gatherings below, creating constant surveillance. A mechanized
+    glass panel descends to obscure the gaze at intervals. This fixture anchors the
+    estate's theme of hidden scrutiny, silently dominating interactions among Bron's
+    guests. Impassive and ever-present, it heightens tension without intervention.
+  traits:
+  - watchful
+  - enigmatic
+  - impassive
+  aliases: []
+  character_type: Non-speaking Character
+  sphere_of_influence: Mansion Atrium Observation
+  appearance_count: 2
+  importance_tier: asteroid
+  affiliated_organization_uuid: null
+- fabula_uuid: agent_986aa586ec25
+  global_id: null
+  canonical_name: Mourners
+  title_role: null
+  description: The Mourners gather as a collective at Prentice's funeral in the church
+    graveyard. They surround young Martha, forming a silent ring of communal support
+    amid the pine coffin's descent into the crypt. Rooted in the church community,
+    they embody solemn rituals of loss, their presence reinforcing family ties to
+    the deceased and the institution's traditions of mourning. Loyal observers, they
+    witness key moments without intrusion, highlighting dynamics of grief, secrecy,
+    and devotion within ecclesiastical circles.
+  traits:
+  - solemn
+  - supportive
+  - observant
+  aliases: []
+  character_type: Non-speaking Character
+  sphere_of_influence: Church funeral rituals
+  appearance_count: 1
+  importance_tier: asteroid
+  affiliated_organization_uuid: null
+- fabula_uuid: agent_a9f44f0d6201
+  global_id: null
+  canonical_name: Nat Sharp
+  title_role: Doctor
+  description: Nat Sharp (also known as 'Nat') is a physician practicing medicine
+    in a tight-knit church community under Monsignor Jefferson Wicks' leadership.
+    As one of Wicks' trusted inner circle—alongside Jud, Martha Delacroix, Lee Ross,
+    Cy, Samson, and others—he serves as both the parish doctor and a reluctant participant
+    in the congregation's secrecy. His emotional stability hinges on his relationship
+    with his wife, Darla, whose abandonment triggers alcoholism, desperation, and
+    aggressive outbursts. While authoritative in crises and skilled in medical emergencies,
+    his personal failures, greed for hidden fortunes, and complicity in betrayals
+    erode his restraint. Torn between duty and fear of institutional fallout, he voices
+    unease over the group's deceptions but remains entangled in their web of lies,
+    reflecting a man bound by loyalty yet fraying under paranoia and exposure.
+  traits: &id035
+  - vulnerable
+  - desperate
+  - alcoholic
+  - authoritative
+  - aggressive
+  aliases: &id036
+  - Nat
+  - Sharp
+  character_type: Speaking Character
+  sphere_of_influence: Medical Practice and Church Intrigue
+  appearance_count: 66
+  importance_tier: anchor
+  affiliated_organization_uuid: org_90649e54e4f7
+- fabula_uuid: agent_a9f44f0d6201
+  global_id: null
+  canonical_name: Nat Sharp
+  title_role: Doctor
+  description: Nat Sharp (also known as 'Nat') is a physician practicing medicine
+    in a tight-knit church community under Monsignor Jefferson Wicks' leadership.
+    As one of Wicks' trusted inner circle—alongside Jud, Martha Delacroix, Lee Ross,
+    Cy, Samson, and others—he serves as both the parish doctor and a reluctant participant
+    in the congregation's secrecy. His emotional stability hinges on his relationship
+    with his wife, Darla, whose abandonment triggers alcoholism, desperation, and
+    aggressive outbursts. While authoritative in crises and skilled in medical emergencies,
+    his personal failures, greed for hidden fortunes, and complicity in betrayals
+    erode his restraint. Torn between duty and fear of institutional fallout, he voices
+    unease over the group's deceptions but remains entangled in their web of lies,
+    reflecting a man bound by loyalty yet fraying under paranoia and exposure.
+  traits: *id035
+  aliases: *id036
+  character_type: Speaking Character
+  sphere_of_influence: Medical Practice and Church Intrigue
+  appearance_count: 66
+  importance_tier: anchor
+  affiliated_organization_uuid: org_a08c10032c76
+- fabula_uuid: agent_d38c94020a55
+  global_id: null
+  canonical_name: Natasha Lyonne
+  title_role: null
+  description: Natasha Lyonne counts among Benoit Blanc's close celebrity friends,
+    alongside Angela Lansbury, Stephen Sondheim, and Kareem Abdul-Jabbar. She joins
+    their online gaming sessions, where she proposes simpler games to accommodate
+    confusion and voices concern for Blanc's well-being during his isolation. Her
+    presence strengthens the group's supportive dynamic, balancing playfulness with
+    genuine care amid professional slumps.
+  traits:
+  - supportive
+  - concerned
+  - resourceful
+  aliases: []
+  character_type: Speaking Character
+  sphere_of_influence: Benoit Blanc's personal circle
+  appearance_count: 1
+  importance_tier: asteroid
+  affiliated_organization_uuid: null
+- fabula_uuid: agent_2d876f8710f6
+  global_id: null
+  canonical_name: Nikolai
+  title_role: null
+  description: Owner of *Il Diavolo Pizza* in *Glass Onion* (Episode 3), a devil-themed
+    bar where he mediates conflicts and aids investigations.
+  traits:
+  - calm
+  - authoritative
+  - compassionate
+  - protective
+  - observant
+  aliases: []
+  character_type: Speaking Character
+  sphere_of_influence: Bar ownership and local mediation
+  appearance_count: 7
+  importance_tier: planet
+  affiliated_organization_uuid: null
+- fabula_uuid: agent_ad908b925b17
+  global_id: null
+  canonical_name: Nikos
+  title_role: Bellhop
+  description: Bellhop at a Grecian port hotel in *Knives Out* (Episode 2), ferrying
+    guests and observing elite dynamics.
+  traits:
+  - curious
+  - professional
+  - observant
+  aliases:
+  - Bellhop
+  character_type: Speaking Character
+  sphere_of_influence: Hotel Hospitality
+  appearance_count: 1
+  importance_tier: asteroid
+  affiliated_organization_uuid: org_c82e755c952a
+- fabula_uuid: agent_73f3c980e78c
+  global_id: null
+  canonical_name: Norwegian Chemist
+  title_role: Chemist
+  description: The Norwegian Chemist pitches high-risk hydrogen fuel projects to tech
+    entrepreneurs like Miles at unconventional events, such as ayahuasca ceremonies
+    in Peru. He operates as an independent innovator in alternative energy, leveraging
+    persuasive pitches to secure funding for unproven technologies. His sketchy reputation
+    stems from bold, boundary-pushing methods that blend scientific ambition with
+    entrepreneurial hustle. Key relationships form around potential investors in the
+    hydrogen sector, where he positions himself as a visionary outsider challenging
+    conventional energy paradigms.
+  traits:
+  - persuasive
+  - audacious
+  - unconventional
+  aliases:
+  - sketchy Norwegian chemist
+  character_type: Non-speaking Character
+  sphere_of_influence: Hydrogen Fuel Technology
+  appearance_count: 1
+  importance_tier: asteroid
+  affiliated_organization_uuid: org_e20647eace45
+- fabula_uuid: agent_cc2ba9b21dd3
+  global_id: null
+  canonical_name: Other Men
+  title_role: null
+  description: Operate under Doctor Nat Sharp’s direction in clandestine operations,
+    emphasizing discretion and physical support for deception (e.g., coffin security).
+    Distinct from community-based protectors.
+  traits:
+  - discreet
+  - efficient
+  - compliant
+  - practical
+  aliases: []
+  character_type: Non-speaking Character
+  sphere_of_influence: Clandestine Operations Support
+  appearance_count: 1
+  importance_tier: asteroid
+  affiliated_organization_uuid: org_279a8e446d3f
+- fabula_uuid: agent_51c3a30df0e1
+  global_id: null
+  canonical_name: Parish Townsfolk
+  title_role: null
+  description: Dozen local residents with deep ties to *Our Lady of Perpetual Fortitude
+    parish*, forming a *charged collective* around institutional revelations. Their
+    role extends beyond funerals to include *parish politics*, *hidden dynamics*,
+    and *collective guilt* over corruption.
+  traits:
+  - tense
+  - complicit
+  - guilty
+  - invested
+  - watchful
+  aliases:
+  - dozen townsfolk
+  - people from town
+  character_type: Non-speaking Character
+  sphere_of_influence: Parish Community Affairs
+  appearance_count: 1
+  importance_tier: asteroid
+  affiliated_organization_uuid: org_90649e54e4f7
+- fabula_uuid: agent_825eba9697a9
+  global_id: null
+  canonical_name: Peg
+  title_role: Personal Assistant
+  description: Peg works as personal assistant to fashion designer Birdie Jay. She
+    manages Birdie's phone to block inflammatory tweets, delivers packages like Miles
+    Bron's puzzle box, and joins group efforts to solve its mechanisms. Peg pushes
+    Birdie to seek financial help from Miles, linking her career stability to Birdie's
+    fortunes. She confronts Birdie over scandals, storms out in frustration, yet stays
+    loyal through crises, offering practical support amid chaos. Her actions mix exasperation
+    with duty, positioning her as Birdie's anchor in elite social circles.
+  traits: &id037
+  - dutiful
+  - exasperated
+  - practical
+  - loyal
+  - resourceful
+  aliases: &id038 []
+  character_type: Speaking Character
+  sphere_of_influence: Personal Assistance
+  appearance_count: 54
+  importance_tier: anchor
+  affiliated_organization_uuid: org_74656c6d9fda
+- fabula_uuid: agent_825eba9697a9
+  global_id: null
+  canonical_name: Peg
+  title_role: Personal Assistant
+  description: Peg works as personal assistant to fashion designer Birdie Jay. She
+    manages Birdie's phone to block inflammatory tweets, delivers packages like Miles
+    Bron's puzzle box, and joins group efforts to solve its mechanisms. Peg pushes
+    Birdie to seek financial help from Miles, linking her career stability to Birdie's
+    fortunes. She confronts Birdie over scandals, storms out in frustration, yet stays
+    loyal through crises, offering practical support amid chaos. Her actions mix exasperation
+    with duty, positioning her as Birdie's anchor in elite social circles.
+  traits: *id037
+  aliases: *id038
+  character_type: Speaking Character
+  sphere_of_influence: Personal Assistance
+  appearance_count: 54
+  importance_tier: anchor
+  affiliated_organization_uuid: org_c82e755c952a
+- fabula_uuid: agent_f7e2e31ef450
+  global_id: null
+  canonical_name: Phillip
+  title_role: null
+  description: Phillip manages Benoit Blanc's apartment, answering doors, screening
+    visitors, and monitoring personal habits. He acts with caution, donning masks
+    and probing intentions, while spotting key items like puzzle boxes. Loyal and
+    attuned to Blanc's routines, he bridges domestic normalcy with intrusions from
+    Blanc's investigative world.
+  traits:
+  - guarded
+  - observant
+  - dutiful
+  aliases: []
+  character_type: Speaking Character
+  sphere_of_influence: Household Management for Benoit Blanc
+  appearance_count: 5
+  importance_tier: planet
+  affiliated_organization_uuid: org_c82e755c952a
 - fabula_uuid: agent_0818a177f3ab
   global_id: null
   canonical_name: Phyllis
@@ -659,6 +2686,54 @@
   appearance_count: 6
   importance_tier: planet
   affiliated_organization_uuid: organization_536ee8d95f4d
+- fabula_uuid: agent_52252a25e20e
+  global_id: null
+  canonical_name: Police Officers (Local Law Enforcement)
+  title_role: null
+  description: Local law enforcement officers operating under Chief Geraldine Scott
+    during investigations into church-related murders and conspiracies. They handle
+    initial response to violent crimes in community settings, securing perimeters
+    (e.g., church exterior after Monsignor Wicks's death), providing armed backup
+    in confrontations, enforcing blockades against agitators, and assisting in emergencies
+    like poison responses. Methodical and disciplined, they maintain order without
+    drawing focus, reinforcing institutional control amid civilian hysteria and suspect
+    defiance. Key ties include frequent coordination with Geraldine Scott and proximity
+    to investigators like Benoit Blanc. Their presence underscores institutional authority
+    in unfolding conspiracies tied to religious and personal conflicts.
+  traits:
+  - professional
+  - disciplined
+  - obedient
+  aliases:
+  - cops
+  - police
+  - law enforcement officers
+  character_type: Non-speaking Character
+  sphere_of_influence: Local Crime Scene Response
+  appearance_count: 11
+  importance_tier: planet
+  affiliated_organization_uuid: org_54ad9ab34a65
+- fabula_uuid: agent_e3a8577332c4
+  global_id: null
+  canonical_name: Prentice Wicks
+  title_role: null
+  description: Prentice Wicks founded Our Lady of Perpetual Fortitude, establishing
+    its core religious institution. Father to Grace Wicks, he embodied stern piety
+    that clashed with family scandal when she became pregnant out of wedlock, his
+    shame reaction fueling lasting hypocrisy accusations. His legacy defines a lineage
+    marked by public virtue and private failings, anchoring the church's moral tensions
+    through rigid authority and unyielding judgment.
+  traits:
+  - judgmental
+  - hypocritical
+  - devout
+  aliases:
+  - Prentice
+  character_type: Speaking Character
+  sphere_of_influence: Religious Institution Founding
+  appearance_count: 23
+  importance_tier: planet
+  affiliated_organization_uuid: org_90649e54e4f7
 - fabula_uuid: agent_83e2b3e0d663
   global_id: null
   canonical_name: Proofroc
@@ -682,6 +2757,27 @@
   appearance_count: 2
   importance_tier: asteroid
   affiliated_organization_uuid: organization_49c73339569b
+- fabula_uuid: agent_69dc4f3cfc30
+  global_id: null
+  canonical_name: Prowlers
+  title_role: null
+  description: Prowlers operate as a loose group haunting church grounds during crises
+    tied to Monsignor Wicks. They position alongside police to barricade roads, blocking
+    devotees like Lee Ross, Cy Draven, and Simone Vivane. Their silent presence fuels
+    standoffs, marking them as vigilant enforcers of restricted access. Motives remain
+    opaque, but they anchor the perimeter amid unraveling faith and institutional
+    lockdown, clashing indirectly with prayerful figures such as Martha Delacroix.
+  traits:
+  - vigilant
+  - persistent
+  - enigmatic
+  aliases:
+  - prowlers
+  character_type: Non-speaking Character
+  sphere_of_influence: Church Perimeter Blockades
+  appearance_count: 1
+  importance_tier: asteroid
+  affiliated_organization_uuid: org_90649e54e4f7
 - fabula_uuid: agent_7a756396e512
   global_id: null
   canonical_name: Ransom Drysdale Thrombey
@@ -723,19 +2819,63 @@
     His confrontational and passive-aggressive demeanor masks deep-seated insecurities
     about his financial standing and fidelity, which he compensates for with performative
     gestures and nativist rhetoric.
-  traits:
+  traits: &id039
   - blunt
   - dismissive
   - resentful
   - confrontational
   - passive-aggressive
-  aliases:
+  aliases: &id040
   - Richard
   character_type: Speaking Character
   sphere_of_influence: Real Estate and Thrombey Family Dynamics
   appearance_count: 46
   importance_tier: planet
+  affiliated_organization_uuid: organization_4f89c063f686
+- fabula_uuid: agent_578d69587bc9
+  global_id: null
+  canonical_name: Richard Drysdale
+  title_role: null
+  description: Son-in-law to Harlan Thrombey and co-owner of the Thrombey family’s
+    real estate firm (partnered with his wife, Linda Thrombey Drysdale). Father to
+    Ransom Drysdale Thrombey, he occupies a tenuous position as an **entitled outsider**
+    within the Thrombey clan, marked by blunt disdain for Harlan’s self-made empire.
+    His confrontational and passive-aggressive demeanor masks deep-seated insecurities
+    about his financial standing and fidelity, which he compensates for with performative
+    gestures and nativist rhetoric.
+  traits: *id039
+  aliases: *id040
+  character_type: Speaking Character
+  sphere_of_influence: Real Estate and Thrombey Family Dynamics
+  appearance_count: 46
+  importance_tier: planet
   affiliated_organization_uuid: organization_49c73339569b
+- fabula_uuid: agent_adbfa85faef5
+  global_id: null
+  canonical_name: Ricky Jay
+  title_role: null
+  description: Ricky Jay is a masterful artisan and mentor in the world of mechanical
+    puzzles and bespoke enigmas. He mentors elite puzzle-makers, including the craftsman
+    behind Miles Bron's intricate invitation boxes, and personally crafts high-end
+    puzzle boxes for Bron's exclusive events. His work—ranging from intricate invitation
+    boxes to five custom puzzle boxes delivered to Miles' guests—demonstrates his
+    precision, reliability, and authority in the field. Jay's influence extends beyond
+    craftsmanship, shaping the standards of high-end puzzle design for exclusive clientele
+    and supporting Miles Bron's elaborate murder mystery games. His reputation as
+    a top-tier artisan positions him as a key figure in Bron's circle of influencers
+    and eccentrics.
+  traits:
+  - renowned
+  - masterful
+  - influential
+  aliases:
+  - Miles' puzzle guy
+  - puzzle guy
+  character_type: Mentioned Only
+  sphere_of_influence: Puzzle Craftsmanship
+  appearance_count: 0
+  importance_tier: asteroid
+  affiliated_organization_uuid: org_99d97c65821f
 - fabula_uuid: agent_a8e159ede89a
   global_id: null
   canonical_name: Sally (Alan Stevens' Assistant)
@@ -749,12 +2889,242 @@
   - helpful
   - efficient
   - neutral
-  aliases: []
+  aliases:
+  - SALLY
   character_type: Non-speaking Character
   sphere_of_influence: Legal Proceedings Support
   appearance_count: 2
   importance_tier: asteroid
+  affiliated_organization_uuid: organization_a8cd749586bf
+- fabula_uuid: agent_6773cecd3303
+  global_id: null
+  canonical_name: Sam
+  title_role: null
+  description: Sam serves as a parishioner in Jud's church, singled out as the rare
+    figure of sobriety and redemption amid parish corruption. Jud praises his transformation
+    as proof that genuine change endures. He owns practical tools for woodworking
+    and a television tuned to luxury ads, marking him as an ordinary man with everyday
+    resources. His story bolsters Jud's faith in moral renewal, positioning Sam as
+    a steadfast symbol of hope and quiet virtue within the community's decay.
+  traits:
+  - sober
+  - redeemed
+  - virtuous
+  - practical
+  aliases: []
+  character_type: Non-speaking Character
+  sphere_of_influence: church parish
+  appearance_count: 44
+  importance_tier: planet
+  affiliated_organization_uuid: org_a053e74003af
+- fabula_uuid: agent_1a368cccbadb
+  global_id: null
+  canonical_name: Scientist One (Skeptical Peer)
+  title_role: Scientist
+  description: An individual scientist and member of Lionel Toussaint’s professional
+    peer group, known for his skeptical stance and direct confrontations with colleagues.
+    Unlike the collective 'Scientists' entity, he is a named individual with distinct
+    traits (e.g., 'exasperated', 'principled') and specific interactions (e.g., confronting
+    colleagues over unproven ideas).
+  traits:
+  - skeptical
+  - critical
+  - exasperated
+  - principled
+  aliases:
+  - SCIENTIST ONE
+  character_type: Speaking Character
+  sphere_of_influence: Scientific Peer Review
+  appearance_count: 1
+  importance_tier: asteroid
+  affiliated_organization_uuid: org_8a0a969dada7
+- fabula_uuid: agent_a5352f29c2b1
+  global_id: null
+  canonical_name: Scientist Three (Authoritative Peer Reviewer)
+  title_role: Scientist
+  description: Distinct from Scientist Two by focusing on **authoritative, evidence-based
+    interventions** in conference settings, urging colleagues to prioritize **professional
+    standards over loyalty to innovators**. His role is **stern and pragmatic**, framing
+    debates around **integrity and risk assessments** to protect careers through **blunt,
+    direct assessments**.
+  traits:
+  - stern
+  - authoritative
+  - pragmatic
+  - integrity-driven
+  aliases:
+  - SCIENTIST THREE
+  character_type: Speaking Character
+  sphere_of_influence: Scientific Peer Review
+  appearance_count: 1
+  importance_tier: asteroid
+  affiliated_organization_uuid: org_8a0a969dada7
+- fabula_uuid: agent_e1860624fffe
+  global_id: null
+  canonical_name: Scientist Two (Safety Advocate)
+  title_role: null
+  description: Distinct from Scientist Three by focusing on **collaborative caution**
+    and **direct alerts about physical dangers** (e.g., volatile substances) in experiments,
+    with a role as a **voice of restraint in debates** among peers. Prioritizes **career/life
+    protection** and **ethical risk mitigation** in high-stakes scientific ventures.
+  traits:
+  - cautious
+  - concerned
+  - skeptical
+  - forthright
+  aliases:
+  - SCIENTIST TWO
+  character_type: Non-speaking Character
+  sphere_of_influence: Experimental Science Safety
+  appearance_count: 1
+  importance_tier: asteroid
+  affiliated_organization_uuid: org_8a0a969dada7
+- fabula_uuid: agent_dd9aa08fa44f
+  global_id: null
+  canonical_name: Scientists
+  title_role: null
+  description: A collective body of scientists in Lionel Toussaint’s professional
+    network, distinct from individual members like Scientist One. This group operates
+    as a systemic force, enforcing shared standards and monitoring peer alignments,
+    while individual scientists (e.g., Scientist One, Scientist Two) may hold unique
+    roles or perspectives within it.
+  traits:
+  - skeptical
+  - exasperated
+  - concerned
+  - pragmatic
+  aliases: []
+  character_type: Mentioned Only
+  sphere_of_influence: Scientific Research
+  appearance_count: 0
+  importance_tier: asteroid
+  affiliated_organization_uuid: org_8a0a969dada7
+- fabula_uuid: agent_64041e1a8347
+  global_id: null
+  canonical_name: Serena Williams
+  title_role: null
+  description: Serena Williams stands as a tennis legend who hosts live interactive
+    fitness sessions on gym screens. She invites participants directly into her workouts,
+    delivers prompts with professional ease, and shrugs off refusals with dry wit
+    before returning to her book. Her presence blends athletic authority with casual
+    detachment, marking her as an approachable celebrity in wellness spaces.
+  traits:
+  - professional
+  - pragmatic
+  - laid-back
+  - witty
+  aliases: []
+  character_type: Non-speaking Character
+  sphere_of_influence: Fitness Training
+  appearance_count: 2
+  importance_tier: asteroid
   affiliated_organization_uuid: null
+- fabula_uuid: agent_cebdbe8e16dd
+  global_id: null
+  canonical_name: Server
+  title_role: null
+  description: Server works hotel terrace staff during high-stakes gatherings near
+    Miles Bron's island events. They attend guests like Benoit Blanc and Helen Brand,
+    offering drinks and handling unusual requests such as coffee amid alcohol service.
+    Attentive to cues, they shift quickly from confusion to action, maintaining efficiency
+    in tense, nocturnal settings. Their role supports discreet conversations among
+    investigators and disruptors, embodying the unobtrusive hospitality that facilitates
+    elite retreats.
+  traits:
+  - attentive
+  - adaptable
+  - enthusiastic
+  aliases:
+  - A server
+  character_type: Non-speaking Character
+  sphere_of_influence: Hospitality Service
+  appearance_count: 4
+  importance_tier: asteroid
+  affiliated_organization_uuid: org_c82e755c952a
+- fabula_uuid: agent_35c3529b1509
+  global_id: null
+  canonical_name: Simone Vivane
+  title_role: null
+  description: Simone Vivane serves as a devoted congregant in Monsignor Wicks' church,
+    a former world-class cellist forced to retire early by undiagnosed chronic pain
+    that confines her to a wheelchair. She bonds with Father Jud over shared disillusionment,
+    joins Lee Ross and others in Wicks' inner circle of 'warriors,' and navigates
+    relationships with Martha Delacroix and Doctor Nat Sharp. Cynical toward exploitative
+    faith healers yet desperately hopeful for miracles, her emotional vulnerability
+    and physical struggles fuel a quest for healing amid betrayal by spiritual leaders.
+  traits: &id041
+  - cynical
+  - emotionally vulnerable
+  - desperately hopeful
+  - devout
+  - resilient
+  aliases: &id042
+  - SIMONE
+  character_type: Speaking Character
+  sphere_of_influence: Monsignor Wicks' Church Congregation
+  appearance_count: 31
+  importance_tier: planet
+  affiliated_organization_uuid: org_90649e54e4f7
+- fabula_uuid: agent_35c3529b1509
+  global_id: null
+  canonical_name: Simone Vivane
+  title_role: null
+  description: Simone Vivane serves as a devoted congregant in Monsignor Wicks' church,
+    a former world-class cellist forced to retire early by undiagnosed chronic pain
+    that confines her to a wheelchair. She bonds with Father Jud over shared disillusionment,
+    joins Lee Ross and others in Wicks' inner circle of 'warriors,' and navigates
+    relationships with Martha Delacroix and Doctor Nat Sharp. Cynical toward exploitative
+    faith healers yet desperately hopeful for miracles, her emotional vulnerability
+    and physical struggles fuel a quest for healing amid betrayal by spiritual leaders.
+  traits: *id041
+  aliases: *id042
+  character_type: Speaking Character
+  sphere_of_influence: Monsignor Wicks' Church Congregation
+  appearance_count: 31
+  importance_tier: planet
+  affiliated_organization_uuid: org_a08c10032c76
+- fabula_uuid: agent_3474473085c9
+  global_id: null
+  canonical_name: Single Mother
+  title_role: null
+  description: Single Mother attends Monsignor Wicks's church services with her toddler.
+    She represents vulnerable parishioners caught in his public shaming tactics over
+    personal choices like raising a child out of wedlock. Her swift exit under the
+    congregation's silent gaze underscores emotional sensitivity and maternal protectiveness
+    amid communal judgment.
+  traits:
+  - vulnerable
+  - emotional
+  - protective
+  aliases: []
+  character_type: Non-speaking Character
+  sphere_of_influence: Church Parishioner
+  appearance_count: 1
+  importance_tier: asteroid
+  affiliated_organization_uuid: org_90649e54e4f7
+- fabula_uuid: agent_e64527e65b45
+  global_id: null
+  canonical_name: Soothing Robot Voice
+  title_role: null
+  description: The Soothing Robot Voice operates as the automated announcement system
+    on Miles Bron's private island estate. It monitors and enforces environmental
+    rules in areas like the smokeless garden and protected water features, activating
+    alarms and delivering calm reprimands for violations such as smoking or pollution.
+    Programmed for precision and repetition, it functions without human input, underscoring
+    the island's rigid surveillance and control. Its serene tone persists through
+    disruptions, from minor infractions to explosive chaos, maintaining protocol amid
+    guest interactions with figures like Benoit Blanc.
+  traits:
+  - soothing
+  - persistent
+  - mechanical
+  - unwavering
+  aliases: []
+  character_type: Speaking Character
+  sphere_of_influence: Island Environmental Enforcement
+  appearance_count: 4
+  importance_tier: asteroid
+  affiliated_organization_uuid: org_c82e755c952a
 - fabula_uuid: agent_2f21f0f0601e
   global_id: null
   canonical_name: Spider
@@ -776,6 +3146,77 @@
   appearance_count: 1
   importance_tier: asteroid
   affiliated_organization_uuid: null
+- fabula_uuid: agent_0fc2513627e1
+  global_id: null
+  canonical_name: Stephen Sondheim
+  title_role: null
+  description: Stephen Sondheim forms part of Benoit Blanc's tight-knit circle of
+    friends, alongside Angela Lansbury, Natasha Lyonne, and Kareem Abdul-Jabbar. He
+    joins online games during lockdown isolation, delivering rule explanations in
+    a direct, unflinching style. His patience holds firm against confusion, tempered
+    by quiet exasperation, marking him as a reliable anchor who favors clear logic
+    and shared play over chaos. Loyalty drives him to engage Blanc's withdrawal, blending
+    composure with subtle insistence on participation.
+  traits:
+  - matter-of-fact
+  - patient
+  - composed
+  - loyal
+  - exasperated
+  aliases: []
+  character_type: Non-speaking Character
+  sphere_of_influence: Benoit Blanc's personal circle
+  appearance_count: 1
+  importance_tier: asteroid
+  affiliated_organization_uuid: org_74656c6d9fda
+- fabula_uuid: agent_6ae3742cc39f
+  global_id: null
+  canonical_name: Tammy
+  title_role: Morgue Attendant
+  description: Tammy works as a morgue attendant in the hospital morgue. She manages
+    cadavers with unflappable routine, flipping bodies on request and responding to
+    instructions from detectives like Benoit Blanc. Her casual attitude shines through
+    as she munches a granola bar amid grim tasks. Detached and efficient, she treats
+    death's mechanics as everyday work, showing no emotional disturbance.
+  traits:
+  - nonchalant
+  - indifferent
+  - casual
+  - efficient
+  - pragmatic
+  aliases:
+  - morgue attendant
+  character_type: Speaking Character
+  sphere_of_influence: Morgue Operations
+  appearance_count: 2
+  importance_tier: asteroid
+  affiliated_organization_uuid: org_c57e8f13fe13
+- fabula_uuid: agent_ccb987d0a7a0
+  global_id: null
+  canonical_name: The Disruptors
+  title_role: null
+  description: Miles Bron's exclusive cadre of tech moguls, politicians, media figures,
+    and influencers—united by a shared bar meeting a decade ago and bound by loyalty
+    to Bron and mutual ambition. They pursue bold disruption through private retreats
+    and collaborations, maintaining a facade of cohesion and charisma while shielding
+    their collective interests with ruthless pragmatism. External scrutiny reveals
+    opportunism, ethical lapses, and a tendency to dismiss inconsistencies in Bron's
+    vision, underscoring their suggestibility and vulnerability under pressure.
+  traits:
+  - influential
+  - ambitious
+  - fractious
+  aliases:
+  - Disruptors
+  - The Group
+  - the group
+  - group
+  - Unseen Group
+  character_type: Non-speaking Character
+  sphere_of_influence: Technological and cultural disruption
+  appearance_count: 4
+  importance_tier: asteroid
+  affiliated_organization_uuid: org_74656c6d9fda
 - fabula_uuid: agent_72471873814d
   global_id: null
   canonical_name: Thrombey Estate
@@ -864,7 +3305,66 @@
   sphere_of_influence: Hospital Patient Care
   appearance_count: 0
   importance_tier: asteroid
-  affiliated_organization_uuid: null
+  affiliated_organization_uuid: organization_49c73339569b
+- fabula_uuid: agent_1ea50599fada
+  global_id: null
+  canonical_name: Toddler
+  title_role: null
+  description: The Toddler serves as the young child of the Single Mother within the
+    church congregation. This silent presence underscores the family unit targeted
+    by Monsignor Wicks's shaming rhetoric on unwed motherhood. Dependent on the mother
+    for mobility and protection, the child embodies innocence amid divisive sermons
+    that provoke departures and polarize the flock through moral judgment.
+  traits:
+  - vulnerable
+  - passive
+  - dependent
+  aliases: []
+  character_type: Non-speaking Character
+  sphere_of_influence: Church Congregation
+  appearance_count: 2
+  importance_tier: asteroid
+  affiliated_organization_uuid: org_90649e54e4f7
+- fabula_uuid: agent_093e83280ecf
+  global_id: null
+  canonical_name: Town Funeral Residents
+  title_role: null
+  description: Group of local residents participating specifically in funeral processions,
+    distinct from the broader parish community. Their role is limited to ritualistic
+    support for the deceased, reflecting the town's traditional mourning practices.
+  traits:
+  - solemn
+  - respectful
+  - dutiful
+  aliases:
+  - a few others from the town
+  character_type: Non-speaking Character
+  sphere_of_influence: Local Community Rituals
+  appearance_count: 1
+  importance_tier: asteroid
+  affiliated_organization_uuid: org_90649e54e4f7
+- fabula_uuid: agent_fb5c1148c6b7
+  global_id: null
+  canonical_name: Townspeople of Chimney Rock
+  title_role: null
+  description: The Townspeople of Chimney Rock reside in this isolated rural community,
+    bound by shared suspicion amid storms, conspiracies, and unsolved murders like
+    that of Monsignor Wicks. They move through daily life with caution, their wariness
+    honed by lurking threats such as wolves and hidden cabals. Collective tension
+    defines their interactions, as they survey surroundings for danger while maintaining
+    fragile routines in a town where calm masks deeper dread.
+  traits:
+  - cautious
+  - anxious
+  - wary
+  - tense
+  aliases:
+  - townspeople
+  character_type: Non-speaking Character
+  sphere_of_influence: Chimney Rock community
+  appearance_count: 1
+  importance_tier: asteroid
+  affiliated_organization_uuid: org_90649e54e4f7
 - fabula_uuid: agent_f3c7726d4c3e
   global_id: null
   canonical_name: Unknown Porsche Owner
@@ -886,6 +3386,176 @@
   appearance_count: 1
   importance_tier: asteroid
   affiliated_organization_uuid: null
+- fabula_uuid: agent_72544bb6940f
+  global_id: null
+  canonical_name: Unnamed Speaker
+  title_role: null
+  description: A guest in an exclusive circle of influencers and elites. Navigates
+    conversations by echoing neologisms from leading figures, blending enthusiasm
+    with linguistic imprecision. Faces scrutiny from perceptive investigators like
+    Benoit Blanc, exposing tendencies toward imitation over originality. Maintains
+    composure amid challenges to credibility, driven by desire to align with group
+    dynamics and innovative ideas.
+  traits:
+  - imitative
+  - linguistically imprecise
+  - defensive
+  aliases: []
+  character_type: Non-speaking Character
+  sphere_of_influence: Elite Social Circles
+  appearance_count: 1
+  importance_tier: asteroid
+  affiliated_organization_uuid: null
+- fabula_uuid: agent_009559f0a781
+  global_id: null
+  canonical_name: Unseen Assailant
+  title_role: null
+  description: The Unseen Assailant lurks in shadows during nocturnal chases at church
+    grounds, delivering knockout blows to halt pursuits. This silent operative protects
+    figures like Samson and Monsignor Wicks by striking threats such as Jud with brutal
+    precision—a muddy fist to the face—then vanishes without exposure. Loyalty drives
+    interventions amid conspiracies involving crypts and hidden lamps, marking the
+    assailant as a decisive guardian of secrets in sacred, rain-soaked terrain.
+  traits:
+  - stealthy
+  - ruthless
+  - decisive
+  - protective
+  aliases: []
+  character_type: Non-speaking Character
+  sphere_of_influence: Covert protection at sacred sites
+  appearance_count: 2
+  importance_tier: asteroid
+  affiliated_organization_uuid: org_90649e54e4f7
+- fabula_uuid: agent_fe9eb340793a
+  global_id: null
+  canonical_name: Unseen Intruder (Estate Interior)
+  title_role: null
+  description: A stealthy, non-lethal presence within the Glass Onion estate, observed
+    moving through hidden corners and tampering with kitchen tools. Evades Benoit
+    Blanc but does not engage in violence; role is tied to household intrigue and
+    unresolved mysteries.
+  traits:
+  - elusive
+  - stealthy
+  - evasive
+  aliases:
+  - dark shape
+  character_type: Non-speaking Character
+  sphere_of_influence: Covert Intrusion
+  appearance_count: 1
+  importance_tier: asteroid
+  affiliated_organization_uuid: null
+- fabula_uuid: agent_de3f91556cda
+  global_id: null
+  canonical_name: Unseen Sniper / Unidentified Killer
+  title_role: null
+  description: A covert assassin operating within the *Glass Onion* conspiracy, this
+    unidentified killer specializes in high-precision, long-range attacks from concealed
+    positions. Their actions—targeting key figures like Cassandra 'Andi' Brand and
+    Helen Brand—serve to bury secrets and protect the elite circle surrounding Miles
+    Bron. The killer’s signature includes flawless marksmanship, ruthless efficiency,
+    and a reliance on anonymity, though their hasty retreat after the attack on Helen
+    Brand reveals overconfidence. Their interactions with investigators like Benoit
+    Blanc and other Glass Onion attendees (Claire Debella, Duke Cody) suggest a role
+    as a volatile enforcer for the group’s hidden motives. The killer’s identity remains
+    unknown, and their methods escalate the narrative’s tension by blurring the line
+    between justice and secrecy.
+  traits:
+  - aggressive
+  - hostile
+  - elusive
+  - overconfident
+  - ruthless
+  - precise
+  - lethal
+  aliases:
+  - Unidentified Killer
+  - Unseen Sniper
+  - Killer (unidentified)
+  - Covert Assassin (Glass Onion)
+  character_type: Non-speaking Character
+  sphere_of_influence: Covert Assassinations
+  appearance_count: 3
+  importance_tier: asteroid
+  affiliated_organization_uuid: org_74656c6d9fda
+- fabula_uuid: agent_8ce7b9ae22ef
+  global_id: null
+  canonical_name: Unspecified Men
+  title_role: null
+  description: Unspecified men operate as immediate interveners in the church setting.
+    They charge into crises to physically separate aggressors from victims, wrenching
+    Grace away from Young Martha to halt violence. Alarmed and reactive, they enforce
+    order amid desecration and emotional chaos, driven by a protective duty to safeguard
+    individuals and preserve the sanctity of the space. Their swift actions position
+    them as communal responders who prioritize safety over hesitation.
+  traits:
+  - protective
+  - reactive
+  - decisive
+  aliases: []
+  character_type: Mentioned Only
+  sphere_of_influence: Church order and safety
+  appearance_count: 0
+  importance_tier: asteroid
+  affiliated_organization_uuid: org_90649e54e4f7
+- fabula_uuid: agent_b3c4f72dbf52
+  global_id: null
+  canonical_name: Vampire in Tuxedo
+  title_role: null
+  description: Vampire in Tuxedo belongs to Birdie Jay's eccentric Manhattan social
+    circle, appearing at her chaotic gatherings amid models, dancers, and performers.
+    His formal tuxedo and pale styling create a vampiric flair that fits the scene's
+    performative excess. He aligns closely with Birdie, voicing terse support for
+    her rants against 'woke' culture through sarcastic affirmations. Detached yet
+    loyal, he reinforces her ideological bubble while navigating interactions with
+    her assistant Peg, politician Claire Debella, and the surrounding crowd.
+  traits:
+  - sarcastic
+  - supportive
+  - detached
+  aliases: []
+  character_type: Non-speaking Character
+  sphere_of_influence: Birdie Jay's social gatherings
+  appearance_count: 3
+  importance_tier: asteroid
+  affiliated_organization_uuid: org_74656c6d9fda
+- fabula_uuid: agent_316f402a532c
+  global_id: null
+  canonical_name: Vera Draven
+  title_role: Attorney
+  description: Sharp attorney running Draven & Draven Legal and devoted congregant
+    at the local church; adoptive mother of Cy Draven and biological half-sister of
+    Monsignor Jefferson Wicks. Balances legal acumen, church loyalty, and familial
+    duty, often in tension with Cy’s actions.
+  traits: &id043
+  - sharp-witted
+  - weary
+  - loyal
+  - resentful
+  - determined
+  aliases: &id044
+  - VERA
+  character_type: Speaking Character
+  sphere_of_influence: Legal practice and church community
+  appearance_count: 34
+  importance_tier: planet
+  affiliated_organization_uuid: org_a08c10032c76
+- fabula_uuid: agent_316f402a532c
+  global_id: null
+  canonical_name: Vera Draven
+  title_role: Attorney
+  description: Sharp attorney running Draven & Draven Legal and devoted congregant
+    at the local church; adoptive mother of Cy Draven and biological half-sister of
+    Monsignor Jefferson Wicks. Balances legal acumen, church loyalty, and familial
+    duty, often in tension with Cy’s actions.
+  traits: *id043
+  aliases: *id044
+  character_type: Speaking Character
+  sphere_of_influence: Legal practice and church community
+  appearance_count: 34
+  importance_tier: planet
+  affiliated_organization_uuid: org_279a8e446d3f
 - fabula_uuid: agent_fe59812461de
   global_id: null
   canonical_name: Wagner
@@ -937,12 +3607,12 @@
   description: Harlan Thrombey's younger son and operator of the family's publishing
     company; resents Harlan's control and seeks to gain independence. His personality
     is boastful, resentful, and manipulative, masking insecurity with bravado.
-  traits: &id007
+  traits: &id045
   - boastful
   - resentful
   - manipulative
   - defensive
-  aliases: &id008
+  aliases: &id046
   - Walter Thrombey
   - WALT
   character_type: Speaking Character
@@ -957,8 +3627,8 @@
   description: Harlan Thrombey's younger son and operator of the family's publishing
     company; resents Harlan's control and seeks to gain independence. His personality
     is boastful, resentful, and manipulative, masking insecurity with bravado.
-  traits: *id007
-  aliases: *id008
+  traits: *id045
+  aliases: *id046
   character_type: Speaking Character
   sphere_of_influence: Publishing
   appearance_count: 57
@@ -986,3 +3656,107 @@
   appearance_count: 10
   importance_tier: planet
   affiliated_organization_uuid: organization_49c73339569b
+- fabula_uuid: agent_b5082a3fd5a8
+  global_id: null
+  canonical_name: Whiskey
+  title_role: null
+  description: Whiskey functions as Duke Cody's girlfriend and live-stream partner,
+    amplifying his alpha-male influencer brand through provocative outfits, supplement
+    pitches, and theatrical antics like firing guns on motorcycles. She flirts with
+    Miles Bron to extract favors, such as media access for Duke, while navigating
+    elite gatherings with bold curiosity and emotional intensity. Her accusations
+    against rivals and grief-stricken breakdowns reveal ambition tangled with volatile
+    loyalty, positioning her as a survivor in toxic dynamics driven by status, intimacy,
+    and survival among Miles Bron's disruptive circle.
+  traits: &id047
+  - provocative
+  - impulsive
+  - volatile
+  - ambitious
+  - loyal
+  aliases: &id048 []
+  character_type: Speaking Character
+  sphere_of_influence: Social media influencing
+  appearance_count: 54
+  importance_tier: anchor
+  affiliated_organization_uuid: org_e1125c062977
+- fabula_uuid: agent_b5082a3fd5a8
+  global_id: null
+  canonical_name: Whiskey
+  title_role: null
+  description: Whiskey functions as Duke Cody's girlfriend and live-stream partner,
+    amplifying his alpha-male influencer brand through provocative outfits, supplement
+    pitches, and theatrical antics like firing guns on motorcycles. She flirts with
+    Miles Bron to extract favors, such as media access for Duke, while navigating
+    elite gatherings with bold curiosity and emotional intensity. Her accusations
+    against rivals and grief-stricken breakdowns reveal ambition tangled with volatile
+    loyalty, positioning her as a survivor in toxic dynamics driven by status, intimacy,
+    and survival among Miles Bron's disruptive circle.
+  traits: *id047
+  aliases: *id048
+  character_type: Speaking Character
+  sphere_of_influence: Social media influencing
+  appearance_count: 54
+  importance_tier: anchor
+  affiliated_organization_uuid: org_74656c6d9fda
+- fabula_uuid: agent_ad822da9844b
+  global_id: null
+  canonical_name: Woman in N-95 Mask
+  title_role: null
+  description: Woman in N-95 Mask attends masses at Monsignor Wicks's church as a
+    regular parishioner. She wears her mask consistently during services and responds
+    viscerally to Wicks's provocative homilies that shame personal choices. Her tearful
+    walkouts signal intolerance for his divisive rhetoric, marking her as one of the
+    dissenters he targets to polarize the congregation. Jud notes her departure alongside
+    those of a single mother and gay couple, underscoring her place among the vulnerable
+    flock challenging Wicks's control.
+  traits:
+  - sensitive
+  - emotional
+  - principled
+  aliases:
+  - Masked Woman
+  character_type: Non-speaking Character
+  sphere_of_influence: Church Congregation
+  appearance_count: 2
+  importance_tier: asteroid
+  affiliated_organization_uuid: org_90649e54e4f7
+- fabula_uuid: agent_0b8e560b1c80
+  global_id: null
+  canonical_name: Yo-Yo Ma (cellist)
+  title_role: null
+  description: Real-world cellist portrayed in *Knives Out*; distinct from the fictional
+    character Ma (Duke’s mother).
+  traits:
+  - knowledgeable
+  - calm
+  - insightful
+  - helpful
+  - casual
+  aliases:
+  - YO-YO MA
+  character_type: Speaking Character
+  sphere_of_influence: classical music analysis
+  appearance_count: 2
+  importance_tier: asteroid
+  affiliated_organization_uuid: null
+- fabula_uuid: agent_39addf5d74ec
+  global_id: null
+  canonical_name: Young Martha (Child Antagonist)
+  title_role: null
+  description: A pious, fanatical child who taunts Grace Wicks with knowledge of Prentice's
+    hidden diamond, sparking violent confrontations. Positions herself as a guardian
+    of church secrets, foreshadowing a lifelong obsession with sin and redemption.
+  traits:
+  - condescending
+  - defiant
+  - self-righteous
+  - mocking
+  - judgmental
+  aliases:
+  - Young Martha
+  character_type: Speaking Character
+  sphere_of_influence: church secrets and religious judgment
+  appearance_count: 4
+  importance_tier: asteroid
+  affiliated_organization_uuid: org_90649e54e4f7

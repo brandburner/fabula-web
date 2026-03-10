@@ -1,5 +1,5 @@
 # Events for And It's Surely To Their Credit
-# Generated: 2026-02-10T12:16:57.189754
+# Generated: 2026-02-22T16:32:57.848574
 
 episode_uuid: ep_sea_ser_the_west_wing_s02_e05
 episode_title: And It's Surely To Their Credit
@@ -30,118 +30,6 @@ events:
     JOSH: Okay. Uh, there's fifty thousand dollars worth of hospital bills they're saying they don't cover. You know what that means?
     SAM: You may have to get yourself a job mowing lawns after school.
   is_flashback: false
-  location_uuid: ger_location_3d4b26f1de82
-  theme_uuids:
-  - ger_theme_92610376ea5a
-  - ger_theme_a40fa463435a
-  - ger_theme_7d2d7424f1d6
-  arc_uuids:
-  - ger_conflictarc_24fa9cdc3637
-  participations:
-  - character_uuid: ger_agent_04bbccb1e352
-    emotional_state: Feigned casual levity masking empathetic concern for Josh's plight
-    goals:
-    - Diffuse Josh's panic with humor and prior action reassurance
-    - Shift focus to maintain workflow amid radio prep
-    what_happened: Sam responds promptly to Josh's shout in the bullpen, casually
-      dismisses the worry, mentions calling an insurance contact, deflects tension
-      with dark humor about Josh mowing lawns, reassures him repeatedly, then chats
-      lightly with Donna in the hallway en route to the Mural Room.
-    observed_status: Sam responds promptly to Josh's shout in the bullpen, casually
-      dismisses the worry, mentions calling an insurance contact, deflects tension
-      with dark humor about Josh mowing lawns, reassures him repeatedly, then chats
-      lightly with Donna in the hallway en route to the Mural Room.
-    beliefs:
-    - The insurance issue is surmountable through connections
-    - Humor preserves camaraderie under personal strain
-    observed_traits:
-    - Witty
-    - Supportive
-    - Nonchalant
-    importance: primary
-    global_id: ger_agent_04bbccb1e352
-  - character_uuid: ger_agent_64b2a2c10c8f
-    emotional_state: Exasperated concern tempering frustration with underlying loyalty
-    goals:
-    - De-escalate Josh's public outburst to maintain professionalism
-    - Understand and address the root of his distress
-    what_happened: Donna walks alongside Josh from his office into the bullpen, repeatedly
-      admonishes him not to shout with pointed reminders and questions the problem
-      directly, pleads again after his bellow for Sam, then transitions by walking
-      with Sam toward the hallway.
-    observed_status: Donna walks alongside Josh from his office into the bullpen,
-      repeatedly admonishes him not to shout with pointed reminders and questions
-      the problem directly, pleads again after his bellow for Sam, then transitions
-      by walking with Sam toward the hallway.
-    beliefs:
-    - Shouting undermines team decorum in the high-stakes bullpen
-    - Josh's vulnerability requires her steadying intervention
-    observed_traits:
-    - Protective
-    - Pragmatic
-    - Patient
-    importance: primary
-    global_id: ger_agent_64b2a2c10c8f
-  object_involvements:
-  - object_uuid: ger_object_bade9261ad76
-    description_of_involvement: Josh clutches and reads directly from this single-sheet
-      denial letter in the bullpen, quoting its damning language on $50K owed for
-      shooting recovery, code 4336 exclusion, and credit blacklist threat—propelling
-      his explosive rant, embodying institutional betrayal's tangible sting, and catalyzing
-      vulnerability amid professional chaos.
-    status_before_event: Newly received and held clutched in Josh's hand upon exiting
-      office
-    status_after_event: Remains in Josh's possession as he drifts dazed from the confrontation
-    global_id: ger_object_bade9261ad76
-  location_involvements:
-  - location_uuid: ger_location_3d4b26f1de82
-    description_of_involvement: Josh erupts from his office into this bustling nerve
-      center, waving and reading the letter amid desks and staff, where his shouts
-      for Sam echo and raw trauma collides with daily grind—amplifying emotional exposure
-      in the White House's high-pressure work hub.
-    observed_atmosphere: Tense and chaotic, pierced by shouts amid ambient staff activity
-    functional_role: Arena for spontaneous personal confrontation and emotional outburst
-    symbolic_significance: Exposes hidden costs of public service within institutional
-      machinery
-    access_restrictions: Open to West Wing staff, semi-public bullpen visibility
-    key_environmental_details:
-    - Desks shuddering under activity
-    - Open layout broadcasting shouts
-    global_id: ger_location_3d4b26f1de82
-  - location_uuid: ger_location_7423b10d7d15
-    description_of_involvement: Donna and Sam arrive outside this pre-address staging
-      area with 20 waiting guests, where she preps her joke intro and gestures Sam
-      to wait—framing the event's close as pivot to public performance amid personal
-      undercurrents.
-    observed_atmosphere: Anticipatory hush with buzzing guests against rain-streaked
-      windows
-    functional_role: Staging threshold for radio event entry
-    symbolic_significance: Contrasts intimate trauma with performative duties
-    access_restrictions: Guests queued outside, controlled entry for staff
-    key_environmental_details:
-    - Murals looming overhead
-    - Crowd of 20 guests pressing doors
-    global_id: ger_location_7423b10d7d15
-  organization_involvements: []
-  derived_from_beat_uuids: &id002
-  - beat_863833db7881eec9
-  - beat_f2d51d1c7a3bb927
-  source_season: 2
-  source_database: westwing.s02
-- fabula_uuid: cand_evt_scene_8cc6065180e9331d_1
-  global_id: null
-  title: Josh's Fury at $50K Gunshot Bill Denial
-  description: Josh storms from his office, waving a $50,000 hospital bill tied to
-    his past shooting recovery, snapping at Donna amid her futile pleas against shouting.
-    He bellows for Sam, ranting about insurance code 4336's denial and looming credit
-    ruin. Sam deflects with gallows humor about Josh mowing lawns post-White House,
-    revealing the deputy's raw financial trauma and personal toll of service, setting
-    up his KKK lawsuit arc while contrasting bullpen levity.
-  episode_uuid: ep_sea_ser_the_west_wing_s02_e05
-  scene_sequence: 1
-  sequence_in_scene: 1
-  key_dialogue: *id001
-  is_flashback: false
   location_uuid: ger_location_7423b10d7d15
   theme_uuids:
   - ger_theme_92610376ea5a
@@ -172,7 +60,7 @@ events:
     - Nonchalant
     importance: primary
     global_id: ger_agent_04bbccb1e352
-  - character_uuid: ger_agent_64b2a2c10c8f
+  - character_uuid: ger_agent_14f85d554756
     emotional_state: Exasperated concern tempering frustration with underlying loyalty
     goals:
     - De-escalate Josh's public outburst to maintain professionalism
@@ -193,7 +81,7 @@ events:
     - Pragmatic
     - Patient
     importance: primary
-    global_id: ger_agent_64b2a2c10c8f
+    global_id: ger_agent_14f85d554756
   object_involvements:
   - object_uuid: ger_object_bade9261ad76
     description_of_involvement: Josh clutches and reads directly from this single-sheet
@@ -206,20 +94,6 @@ events:
     status_after_event: Remains in Josh's possession as he drifts dazed from the confrontation
     global_id: ger_object_bade9261ad76
   location_involvements:
-  - location_uuid: ger_location_3d4b26f1de82
-    description_of_involvement: Josh erupts from his office into this bustling nerve
-      center, waving and reading the letter amid desks and staff, where his shouts
-      for Sam echo and raw trauma collides with daily grind—amplifying emotional exposure
-      in the White House's high-pressure work hub.
-    observed_atmosphere: Tense and chaotic, pierced by shouts amid ambient staff activity
-    functional_role: Arena for spontaneous personal confrontation and emotional outburst
-    symbolic_significance: Exposes hidden costs of public service within institutional
-      machinery
-    access_restrictions: Open to West Wing staff, semi-public bullpen visibility
-    key_environmental_details:
-    - Desks shuddering under activity
-    - Open layout broadcasting shouts
-    global_id: ger_location_3d4b26f1de82
   - location_uuid: ger_location_7423b10d7d15
     description_of_involvement: Donna and Sam arrive outside this pre-address staging
       area with 20 waiting guests, where she preps her joke intro and gestures Sam
@@ -234,6 +108,132 @@ events:
     - Murals looming overhead
     - Crowd of 20 guests pressing doors
     global_id: ger_location_7423b10d7d15
+  - location_uuid: ger_location_3d4b26f1de82
+    description_of_involvement: Josh erupts from his office into this bustling nerve
+      center, waving and reading the letter amid desks and staff, where his shouts
+      for Sam echo and raw trauma collides with daily grind—amplifying emotional exposure
+      in the White House's high-pressure work hub.
+    observed_atmosphere: Tense and chaotic, pierced by shouts amid ambient staff activity
+    functional_role: Arena for spontaneous personal confrontation and emotional outburst
+    symbolic_significance: Exposes hidden costs of public service within institutional
+      machinery
+    access_restrictions: Open to West Wing staff, semi-public bullpen visibility
+    key_environmental_details:
+    - Desks shuddering under activity
+    - Open layout broadcasting shouts
+    global_id: ger_location_3d4b26f1de82
+  organization_involvements: []
+  derived_from_beat_uuids: &id002
+  - beat_863833db7881eec9
+  - beat_f2d51d1c7a3bb927
+  source_season: 2
+  source_database: westwing.s02
+- fabula_uuid: cand_evt_scene_8cc6065180e9331d_1
+  global_id: null
+  title: Josh's Fury at $50K Gunshot Bill Denial
+  description: Josh storms from his office, waving a $50,000 hospital bill tied to
+    his past shooting recovery, snapping at Donna amid her futile pleas against shouting.
+    He bellows for Sam, ranting about insurance code 4336's denial and looming credit
+    ruin. Sam deflects with gallows humor about Josh mowing lawns post-White House,
+    revealing the deputy's raw financial trauma and personal toll of service, setting
+    up his KKK lawsuit arc while contrasting bullpen levity.
+  episode_uuid: ep_sea_ser_the_west_wing_s02_e05
+  scene_sequence: 1
+  sequence_in_scene: 1
+  key_dialogue: *id001
+  is_flashback: false
+  location_uuid: ger_location_3d4b26f1de82
+  theme_uuids:
+  - ger_theme_92610376ea5a
+  - ger_theme_a40fa463435a
+  - ger_theme_7d2d7424f1d6
+  arc_uuids:
+  - ger_conflictarc_24fa9cdc3637
+  participations:
+  - character_uuid: ger_agent_04bbccb1e352
+    emotional_state: Feigned casual levity masking empathetic concern for Josh's plight
+    goals:
+    - Diffuse Josh's panic with humor and prior action reassurance
+    - Shift focus to maintain workflow amid radio prep
+    what_happened: Sam responds promptly to Josh's shout in the bullpen, casually
+      dismisses the worry, mentions calling an insurance contact, deflects tension
+      with dark humor about Josh mowing lawns, reassures him repeatedly, then chats
+      lightly with Donna in the hallway en route to the Mural Room.
+    observed_status: Sam responds promptly to Josh's shout in the bullpen, casually
+      dismisses the worry, mentions calling an insurance contact, deflects tension
+      with dark humor about Josh mowing lawns, reassures him repeatedly, then chats
+      lightly with Donna in the hallway en route to the Mural Room.
+    beliefs:
+    - The insurance issue is surmountable through connections
+    - Humor preserves camaraderie under personal strain
+    observed_traits:
+    - Witty
+    - Supportive
+    - Nonchalant
+    importance: primary
+    global_id: ger_agent_04bbccb1e352
+  - character_uuid: ger_agent_14f85d554756
+    emotional_state: Exasperated concern tempering frustration with underlying loyalty
+    goals:
+    - De-escalate Josh's public outburst to maintain professionalism
+    - Understand and address the root of his distress
+    what_happened: Donna walks alongside Josh from his office into the bullpen, repeatedly
+      admonishes him not to shout with pointed reminders and questions the problem
+      directly, pleads again after his bellow for Sam, then transitions by walking
+      with Sam toward the hallway.
+    observed_status: Donna walks alongside Josh from his office into the bullpen,
+      repeatedly admonishes him not to shout with pointed reminders and questions
+      the problem directly, pleads again after his bellow for Sam, then transitions
+      by walking with Sam toward the hallway.
+    beliefs:
+    - Shouting undermines team decorum in the high-stakes bullpen
+    - Josh's vulnerability requires her steadying intervention
+    observed_traits:
+    - Protective
+    - Pragmatic
+    - Patient
+    importance: primary
+    global_id: ger_agent_14f85d554756
+  object_involvements:
+  - object_uuid: ger_object_bade9261ad76
+    description_of_involvement: Josh clutches and reads directly from this single-sheet
+      denial letter in the bullpen, quoting its damning language on $50K owed for
+      shooting recovery, code 4336 exclusion, and credit blacklist threat—propelling
+      his explosive rant, embodying institutional betrayal's tangible sting, and catalyzing
+      vulnerability amid professional chaos.
+    status_before_event: Newly received and held clutched in Josh's hand upon exiting
+      office
+    status_after_event: Remains in Josh's possession as he drifts dazed from the confrontation
+    global_id: ger_object_bade9261ad76
+  location_involvements:
+  - location_uuid: ger_location_7423b10d7d15
+    description_of_involvement: Donna and Sam arrive outside this pre-address staging
+      area with 20 waiting guests, where she preps her joke intro and gestures Sam
+      to wait—framing the event's close as pivot to public performance amid personal
+      undercurrents.
+    observed_atmosphere: Anticipatory hush with buzzing guests against rain-streaked
+      windows
+    functional_role: Staging threshold for radio event entry
+    symbolic_significance: Contrasts intimate trauma with performative duties
+    access_restrictions: Guests queued outside, controlled entry for staff
+    key_environmental_details:
+    - Murals looming overhead
+    - Crowd of 20 guests pressing doors
+    global_id: ger_location_7423b10d7d15
+  - location_uuid: ger_location_3d4b26f1de82
+    description_of_involvement: Josh erupts from his office into this bustling nerve
+      center, waving and reading the letter amid desks and staff, where his shouts
+      for Sam echo and raw trauma collides with daily grind—amplifying emotional exposure
+      in the White House's high-pressure work hub.
+    observed_atmosphere: Tense and chaotic, pierced by shouts amid ambient staff activity
+    functional_role: Arena for spontaneous personal confrontation and emotional outburst
+    symbolic_significance: Exposes hidden costs of public service within institutional
+      machinery
+    access_restrictions: Open to West Wing staff, semi-public bullpen visibility
+    key_environmental_details:
+    - Desks shuddering under activity
+    - Open layout broadcasting shouts
+    global_id: ger_location_3d4b26f1de82
   organization_involvements: []
   derived_from_beat_uuids: *id002
   source_season: 2
@@ -257,104 +257,6 @@ events:
   - 'DONNA: "Yeah, but I''m adding a joke."'
   - 'SAM: "I''m sure it''s great."'
   is_flashback: false
-  location_uuid: ger_location_3d4b26f1de82
-  theme_uuids: []
-  arc_uuids: []
-  participations:
-  - character_uuid: ger_agent_04bbccb1e352
-    emotional_state: Weary but affectionately indulgent
-    goals:
-    - Humor Donna without committing deeply
-    - Maintain easy rapport amid heavier concerns
-    what_happened: Sam walks with Donna into the hallway outside the Mural Room, engages
-      in light banter about the radio topic, offers a perfunctory 'Knock 'em dead'
-      and reluctant 'I'm sure it's great,' then lingers outside as she enters, providing
-      understated camaraderie.
-    observed_status: Sam walks with Donna into the hallway outside the Mural Room,
-      engages in light banter about the radio topic, offers a perfunctory 'Knock 'em
-      dead' and reluctant 'I'm sure it's great,' then lingers outside as she enters,
-      providing understated camaraderie.
-    beliefs:
-    - Donna's initiative deserves gentle encouragement
-    - The trivial event offers harmless levity
-    observed_traits:
-    - supportive
-    - wryly humorous
-    - fatigued
-    importance: primary
-    global_id: ger_agent_04bbccb1e352
-  - character_uuid: ger_agent_64b2a2c10c8f
-    emotional_state: Buoyantly confident with eager anticipation
-    goals:
-    - Secure Sam's supportive presence for her performance
-    - Demonstrate her growing competence in event coordination
-    what_happened: Donna proactively intercepts Sam in the hallway, enthusiastically
-      announces her role in the radio event on 'leaves turning,' insists he witness
-      her updated intro with a new joke, gestures toward the Mural Room, and strides
-      in confidently, leaving him outside.
-    observed_status: Donna proactively intercepts Sam in the hallway, enthusiastically
-      announces her role in the radio event on 'leaves turning,' insists he witness
-      her updated intro with a new joke, gestures toward the Mural Room, and strides
-      in confidently, leaving him outside.
-    beliefs:
-    - Her new joke will impress and elevate the intro
-    - Sam's endorsement validates her professional growth
-    observed_traits:
-    - assertive
-    - playful
-    - poised
-    importance: primary
-    global_id: ger_agent_64b2a2c10c8f
-  object_involvements: []
-  location_involvements:
-  - location_uuid: ger_location_3d4b26f1de82
-    description_of_involvement: Josh's Bullpen Area lingers as the immediate backdrop
-      from which Josh emerges frustrated and drifts away, propelling Donna and Sam
-      into the hallway; its chaotic energy contrasts the ensuing lighter beat, framing
-      the event as relief from personal crisis.
-    observed_atmosphere: Residual tension from prior shouting
-    functional_role: Origin point for emotional spillover
-    symbolic_significance: Nerve center of staff vulnerabilities
-    access_restrictions: Core staff workspace, high traffic
-    key_environmental_details:
-    - Desks and bullpen bustle fading
-    - Echoes of Josh's shouts
-    global_id: ger_location_3d4b26f1de82
-  - location_uuid: ger_location_7423b10d7d15
-    description_of_involvement: The Mural Room looms as the event's destination, packed
-      with 20 radio guests waiting expectantly; Donna gestures toward it confidently
-      before entering, while Sam lingers outside, heightening her poised transition
-      into performance space and teasing the radio subplot's levity.
-    observed_atmosphere: Hushed anticipation amid gathering crowd
-    functional_role: Staging ground for Donna's intro performance
-    symbolic_significance: Crossroads of public presidential levity and private staff
-      dynamics
-    access_restrictions: Reserved for event participants and invited staff
-    key_environmental_details:
-    - Murmuring guests pressed near doors
-    - Rain-streaked windows adding introspective mood
-    global_id: ger_location_7423b10d7d15
-  organization_involvements: []
-  derived_from_beat_uuids: &id004
-  - beat_fb93cc3e7d219e5e
-  source_season: 2
-  source_database: westwing.s02
-- fabula_uuid: cand_evt_scene_8cc6065180e9331d_2
-  global_id: null
-  title: Donna Auditions New Joke on Weary Sam
-  description: After Josh drifts off in frustration, Donna pulls Sam aside in the
-    hallway outside the Mural Room, where radio address guests wait. She announces
-    she's coordinating today's event—banally on 'leaves turning'—and insists he witness
-    her updated intro, complete with a new joke. Sam's reluctant encouragement ('I'm
-    sure it's great') underscores their easy camaraderie, providing levity amid bullpen
-    chaos while spotlighting Donna's growing poise in managing presidential public
-    events. Donna enters confidently; Sam lingers outside. This breath moment humanizes
-    staff dynamics and setups the radio subplot.
-  episode_uuid: ep_sea_ser_the_west_wing_s02_e05
-  scene_sequence: 1
-  sequence_in_scene: 2
-  key_dialogue: *id003
-  is_flashback: false
   location_uuid: ger_location_7423b10d7d15
   theme_uuids: []
   arc_uuids: []
@@ -381,7 +283,7 @@ events:
     - fatigued
     importance: primary
     global_id: ger_agent_04bbccb1e352
-  - character_uuid: ger_agent_64b2a2c10c8f
+  - character_uuid: ger_agent_14f85d554756
     emotional_state: Buoyantly confident with eager anticipation
     goals:
     - Secure Sam's supportive presence for her performance
@@ -402,22 +304,9 @@ events:
     - playful
     - poised
     importance: primary
-    global_id: ger_agent_64b2a2c10c8f
+    global_id: ger_agent_14f85d554756
   object_involvements: []
   location_involvements:
-  - location_uuid: ger_location_3d4b26f1de82
-    description_of_involvement: Josh's Bullpen Area lingers as the immediate backdrop
-      from which Josh emerges frustrated and drifts away, propelling Donna and Sam
-      into the hallway; its chaotic energy contrasts the ensuing lighter beat, framing
-      the event as relief from personal crisis.
-    observed_atmosphere: Residual tension from prior shouting
-    functional_role: Origin point for emotional spillover
-    symbolic_significance: Nerve center of staff vulnerabilities
-    access_restrictions: Core staff workspace, high traffic
-    key_environmental_details:
-    - Desks and bullpen bustle fading
-    - Echoes of Josh's shouts
-    global_id: ger_location_3d4b26f1de82
   - location_uuid: ger_location_7423b10d7d15
     description_of_involvement: The Mural Room looms as the event's destination, packed
       with 20 radio guests waiting expectantly; Donna gestures toward it confidently
@@ -432,6 +321,117 @@ events:
     - Murmuring guests pressed near doors
     - Rain-streaked windows adding introspective mood
     global_id: ger_location_7423b10d7d15
+  - location_uuid: ger_location_3d4b26f1de82
+    description_of_involvement: Josh's Bullpen Area lingers as the immediate backdrop
+      from which Josh emerges frustrated and drifts away, propelling Donna and Sam
+      into the hallway; its chaotic energy contrasts the ensuing lighter beat, framing
+      the event as relief from personal crisis.
+    observed_atmosphere: Residual tension from prior shouting
+    functional_role: Origin point for emotional spillover
+    symbolic_significance: Nerve center of staff vulnerabilities
+    access_restrictions: Core staff workspace, high traffic
+    key_environmental_details:
+    - Desks and bullpen bustle fading
+    - Echoes of Josh's shouts
+    global_id: ger_location_3d4b26f1de82
+  organization_involvements: []
+  derived_from_beat_uuids: &id004
+  - beat_fb93cc3e7d219e5e
+  source_season: 2
+  source_database: westwing.s02
+- fabula_uuid: cand_evt_scene_8cc6065180e9331d_2
+  global_id: null
+  title: Donna Auditions New Joke on Weary Sam
+  description: After Josh drifts off in frustration, Donna pulls Sam aside in the
+    hallway outside the Mural Room, where radio address guests wait. She announces
+    she's coordinating today's event—banally on 'leaves turning'—and insists he witness
+    her updated intro, complete with a new joke. Sam's reluctant encouragement ('I'm
+    sure it's great') underscores their easy camaraderie, providing levity amid bullpen
+    chaos while spotlighting Donna's growing poise in managing presidential public
+    events. Donna enters confidently; Sam lingers outside. This breath moment humanizes
+    staff dynamics and setups the radio subplot.
+  episode_uuid: ep_sea_ser_the_west_wing_s02_e05
+  scene_sequence: 1
+  sequence_in_scene: 2
+  key_dialogue: *id003
+  is_flashback: false
+  location_uuid: ger_location_3d4b26f1de82
+  theme_uuids: []
+  arc_uuids: []
+  participations:
+  - character_uuid: ger_agent_04bbccb1e352
+    emotional_state: Weary but affectionately indulgent
+    goals:
+    - Humor Donna without committing deeply
+    - Maintain easy rapport amid heavier concerns
+    what_happened: Sam walks with Donna into the hallway outside the Mural Room, engages
+      in light banter about the radio topic, offers a perfunctory 'Knock 'em dead'
+      and reluctant 'I'm sure it's great,' then lingers outside as she enters, providing
+      understated camaraderie.
+    observed_status: Sam walks with Donna into the hallway outside the Mural Room,
+      engages in light banter about the radio topic, offers a perfunctory 'Knock 'em
+      dead' and reluctant 'I'm sure it's great,' then lingers outside as she enters,
+      providing understated camaraderie.
+    beliefs:
+    - Donna's initiative deserves gentle encouragement
+    - The trivial event offers harmless levity
+    observed_traits:
+    - supportive
+    - wryly humorous
+    - fatigued
+    importance: primary
+    global_id: ger_agent_04bbccb1e352
+  - character_uuid: ger_agent_14f85d554756
+    emotional_state: Buoyantly confident with eager anticipation
+    goals:
+    - Secure Sam's supportive presence for her performance
+    - Demonstrate her growing competence in event coordination
+    what_happened: Donna proactively intercepts Sam in the hallway, enthusiastically
+      announces her role in the radio event on 'leaves turning,' insists he witness
+      her updated intro with a new joke, gestures toward the Mural Room, and strides
+      in confidently, leaving him outside.
+    observed_status: Donna proactively intercepts Sam in the hallway, enthusiastically
+      announces her role in the radio event on 'leaves turning,' insists he witness
+      her updated intro with a new joke, gestures toward the Mural Room, and strides
+      in confidently, leaving him outside.
+    beliefs:
+    - Her new joke will impress and elevate the intro
+    - Sam's endorsement validates her professional growth
+    observed_traits:
+    - assertive
+    - playful
+    - poised
+    importance: primary
+    global_id: ger_agent_14f85d554756
+  object_involvements: []
+  location_involvements:
+  - location_uuid: ger_location_7423b10d7d15
+    description_of_involvement: The Mural Room looms as the event's destination, packed
+      with 20 radio guests waiting expectantly; Donna gestures toward it confidently
+      before entering, while Sam lingers outside, heightening her poised transition
+      into performance space and teasing the radio subplot's levity.
+    observed_atmosphere: Hushed anticipation amid gathering crowd
+    functional_role: Staging ground for Donna's intro performance
+    symbolic_significance: Crossroads of public presidential levity and private staff
+      dynamics
+    access_restrictions: Reserved for event participants and invited staff
+    key_environmental_details:
+    - Murmuring guests pressed near doors
+    - Rain-streaked windows adding introspective mood
+    global_id: ger_location_7423b10d7d15
+  - location_uuid: ger_location_3d4b26f1de82
+    description_of_involvement: Josh's Bullpen Area lingers as the immediate backdrop
+      from which Josh emerges frustrated and drifts away, propelling Donna and Sam
+      into the hallway; its chaotic energy contrasts the ensuing lighter beat, framing
+      the event as relief from personal crisis.
+    observed_atmosphere: Residual tension from prior shouting
+    functional_role: Origin point for emotional spillover
+    symbolic_significance: Nerve center of staff vulnerabilities
+    access_restrictions: Core staff workspace, high traffic
+    key_environmental_details:
+    - Desks and bullpen bustle fading
+    - Echoes of Josh's shouts
+    global_id: ger_location_3d4b26f1de82
   organization_involvements: []
   derived_from_beat_uuids: *id004
   source_season: 2
@@ -460,277 +460,6 @@ events:
   - 'C.J.: I need to see General Barrie. I want you to go to the Pentagon and get
     him and I don''t want him anywhere near a press line when he comes into the West
     Wing.'
-  is_flashback: false
-  location_uuid: ger_location_cec0297c9bc5
-  theme_uuids:
-  - ger_theme_a40fa463435a
-  arc_uuids:
-  - ger_conflictarc_490609e12cce
-  - ger_conflictarc_a539e8fa9b45
-  participations:
-  - character_uuid: ger_agent_54f868bf8265
-    emotional_state: Defensive conviction evolving into focused authoritative resolve
-      amid rising crisis tension
-    goals:
-    - Publicly affirm support for Ainsley and call out sexism
-    - Immediately neutralize General Barrie's media threat through direct retrieval
-    what_happened: CJ strides purposefully through the hallway toward her office,
-      intercepted by Toby; she passionately defends Ainsley Hayes against staff bias,
-      absorbs Barrie media blitz intel with escalating urgency, summons Carol from
-      outside with authoritative instructions to fetch the general incognito, banters
-      lightly about Tribbey's reaction.
-    observed_status: CJ strides purposefully through the hallway toward her office,
-      intercepted by Toby; she passionately defends Ainsley Hayes against staff bias,
-      absorbs Barrie media blitz intel with escalating urgency, summons Carol from
-      outside with authoritative instructions to fetch the general incognito, banters
-      lightly about Tribbey's reaction.
-    beliefs:
-    - Staff hostility toward Ainsley stems from sexist resentment of a capable Republican
-      woman
-    - White House chain-of-command supersedes military autonomy in public critiques
-      of the President
-    observed_traits:
-    - principled
-    - decisive
-    - loyal
-    - assertive
-    importance: primary
-    global_id: ger_agent_54f868bf8265
-  - character_uuid: ger_agent_79dc9fb6a278
-    emotional_state: Professional focus with mild logistical concern
-    goals:
-    - Accurately record and execute CJ's retrieval directive
-    - Clarify operational feasibility given Barrie's rank
-    what_happened: Carol responds from outside CJ's office, enters promptly, takes
-      detailed notes on instructions to retrieve General Barrie from the Pentagon
-      incognito avoiding press, questions logistics dutifully, affirms Army hierarchy
-      concern before departing to execute the order.
-    observed_status: Carol responds from outside CJ's office, enters promptly, takes
-      detailed notes on instructions to retrieve General Barrie from the Pentagon
-      incognito avoiding press, questions logistics dutifully, affirms Army hierarchy
-      concern before departing to execute the order.
-    beliefs:
-    - Chain-of-command requires swift aide compliance despite target seniority
-    - Incognito transport minimizes media escalation risks
-    observed_traits:
-    - dutiful
-    - professional
-    - precise
-    importance: primary
-    global_id: ger_agent_79dc9fb6a278
-  - character_uuid: ger_agent_dd62525d972a
-    emotional_state: ''
-    goals: []
-    what_happened: briefly mentioned in context of whether he has informed Tribbey
-      about Ainsley Hayes
-    observed_status: briefly mentioned in context of whether he has informed Tribbey
-      about Ainsley Hayes
-    beliefs: []
-    observed_traits: []
-    importance: primary
-    global_id: ger_agent_dd62525d972a
-  - character_uuid: ger_agent_04bbccb1e352
-    emotional_state: ''
-    goals: []
-    what_happened: briefly referenced as source of information on Barrie's schedule
-      via Mark Gottfried
-    observed_status: briefly referenced as source of information on Barrie's schedule
-      via Mark Gottfried
-    beliefs: []
-    observed_traits: []
-    importance: primary
-    global_id: ger_agent_04bbccb1e352
-  - character_uuid: ger_agent_7854a70e34ea
-    emotional_state: Calm persistence masking urgent alarm, shifting to complimentary
-      camaraderie
-    goals:
-    - Gauge and address staff fractures over Ainsley Hayes
-    - Alert CJ to Barrie's media schedule to enable rapid response
-    what_happened: Toby catches up to CJ in the hallway, patiently probes her views
-      on Ainsley despite interruptions, delivers urgent intel on Barrie's Sunday show
-      blitz sourced from Sam and Mark Gottfried, compliments her insightfully, offers
-      assistance she declines, banters wryly about Tribbey's volatility before exiting.
-    observed_status: Toby catches up to CJ in the hallway, patiently probes her views
-      on Ainsley despite interruptions, delivers urgent intel on Barrie's Sunday show
-      blitz sourced from Sam and Mark Gottfried, compliments her insightfully, offers
-      assistance she declines, banters wryly about Tribbey's volatility before exiting.
-    beliefs:
-    - Ainsley combination of traits challenges staff norms but merits fair integration
-    - DOD opacity on Barrie's appearances signals deliberate administration sabotage
-    observed_traits:
-    - patient
-    - urgent
-    - wry
-    - supportive
-    importance: primary
-    global_id: ger_agent_7854a70e34ea
-  - character_uuid: ger_agent_0fdca8513c4a
-    emotional_state: ''
-    goals: []
-    what_happened: significantly discussed as new Republican hire facing staff sexist
-      resentment
-    observed_status: significantly discussed as new Republican hire facing staff sexist
-      resentment
-    beliefs: []
-    observed_traits: []
-    importance: primary
-    global_id: ger_agent_0fdca8513c4a
-  - character_uuid: ger_agent_73f0ed78a5c8
-    emotional_state: ''
-    goals: []
-    what_happened: briefly mentioned as not yet informed about new Associate Counsel
-      Ainsley Hayes, anticipated explosive reaction
-    observed_status: briefly mentioned as not yet informed about new Associate Counsel
-      Ainsley Hayes, anticipated explosive reaction
-    beliefs: []
-    observed_traits: []
-    importance: primary
-    global_id: ger_agent_73f0ed78a5c8
-  object_involvements: []
-  location_involvements:
-  - location_uuid: ger_location_cec0297c9bc5
-    description_of_involvement: CJ's office within the West Wing becomes the command
-      center for crisis mobilization, where she issues orders to Carol for Barrie's
-      incognito retrieval and banters with Toby; it anchors the shift from discussion
-      to action in shadowed executive power corridors.
-    observed_atmosphere: Focused intensity with door thresholds marking authority
-      shifts
-    functional_role: Decision-making hub for press strategy and retrieval ops
-    symbolic_significance: Represents insulated executive resolve against external
-      threats
-    access_restrictions: Private to senior staff and aides
-    key_environmental_details:
-    - Office door as entry/exit barrier
-    - Interior space for confidential directives
-    global_id: ger_location_cec0297c9bc5
-  - location_uuid: ger_location_10d933feec2e
-    description_of_involvement: The Pentagon is designated as the retrieval target
-      for General Barrie, with Carol dispatched incognito to extract him amid its
-      granite-walled security; it looms as the fortified source of the brewing media
-      mutiny.
-    observed_atmosphere: Off-screen but implied fortified tension
-    functional_role: Origin point for military antagonist retrieval
-    symbolic_significance: Symbolizes clashing civil-military power structures
-    access_restrictions: Heavily secured military installation
-    key_environmental_details:
-    - Five-sided granite corridors
-    - Classified secure lairs
-    global_id: ger_location_10d933feec2e
-  organization_involvements:
-  - organization_uuid: ger_organization_ef8b0cca7b53
-    description_of_involvement: Capitol Beat rounds out Barrie's blitz itinerary,
-      its inclusion in Toby's alert underscores the scale of the onslaught, catalyzing
-      CJ's dispatch of Carol to preempt the damage.
-    active_representation: As confirmed booking in crisis intel
-    power_dynamics: Empowers retiring general's rogue narrative
-    organizational_goals:
-    - Air razor-edged political debates
-    - Attract high-profile military guests
-    influence_mechanisms:
-    - Sunday morning dominance
-    - Live national exposure
-    institutional_impact: ''
-    internal_dynamics: ''
-    global_id: ger_organization_ef8b0cca7b53
-  - organization_uuid: ger_organization_d033a1b32d4f
-    description_of_involvement: The White House permeates as the institutional battleground,
-      with staff like CJ asserting presidential primacy over Barrie, integrating Ainsley
-      tensions into operational cohesion amid hazing and crises.
-    active_representation: Via communications team protocols and hierarchy
-    power_dynamics: Reasserts executive command over military
-    organizational_goals:
-    - Contain internal ideological fractures
-    - Neutralize external media threats
-    influence_mechanisms:
-    - Direct aide dispatches
-    - Chain-of-command invocation
-    institutional_impact: Fortifies loyalty amid partisan infusions
-    internal_dynamics: Sexist resentments testing unity
-    global_id: ger_organization_d033a1b32d4f
-  - organization_uuid: ger_organization_e08bb61f7c87
-    description_of_involvement: Department of Defense underlies Barrie's actions and
-      press office evasion, with its retiring brass exploiting media for readiness
-      critiques tied to budget wars, positioning it as adversarial to White House
-      PR control.
-    active_representation: Through subordinate press office and general's schedule
-    power_dynamics: Exerts autonomy against presidential oversight
-    organizational_goals:
-    - Publicize perceived shortfalls for funding
-    - Shield internal media maneuvers
-    influence_mechanisms:
-    - General officer platforms
-    - Bureaucratic information control
-    institutional_impact: Escalates partisan civil-military tensions
-    internal_dynamics: Retiring leadership vs. administration alignment
-    global_id: ger_organization_e08bb61f7c87
-  - organization_uuid: ger_organization_0502fdd0ba0a
-    description_of_involvement: Meet the Press is flagged as Barrie's Sunday launchpad
-      for administration broadsides, part of his blitz intel that alarms Toby and
-      mobilizes CJ, thrusting the show into the narrative as a high-stakes battleground.
-    active_representation: As referenced media platform in intel relay
-    power_dynamics: Amplifies military critique beyond White House control
-    organizational_goals:
-    - Host explosive political confrontations
-    - Secure ratings via controversial guests
-    influence_mechanisms:
-    - National broadcast reach
-    - Guest booking autonomy
-    institutional_impact: ''
-    internal_dynamics: ''
-    global_id: ger_organization_0502fdd0ba0a
-  - organization_uuid: ger_organization_8b17f6c87afe
-    description_of_involvement: DOD Press Office stonewalls White House inquiries,
-      refusing to confirm General Barrie's Sunday media blitz, forcing CJ to bypass
-      protocol with direct Pentagon retrieval; it exemplifies bureaucratic evasion
-      fueling the crisis.
-    active_representation: Through institutional non-confirmation and opacity
-    power_dynamics: Withholds information, challenging White House authority
-    organizational_goals:
-    - Protect military schedules from executive scrutiny
-    - Enable Barrie's unchallenged public critique
-    influence_mechanisms:
-    - Information blackout
-    - Chain-of-command gatekeeping
-    institutional_impact: Highlights civil-military friction in public messaging
-    internal_dynamics: Protocol-driven evasion amid partisan budget pressures
-    global_id: ger_organization_8b17f6c87afe
-  - organization_uuid: ger_organization_105ca7876282
-    description_of_involvement: Late Edition is listed in Barrie's aggressive schedule
-      alongside Sam and Cokie, heightening the perceived threat of synchronized media
-      attacks on readiness claims, prompting immediate White House countermeasures.
-    active_representation: Via scheduled appearance intel
-    power_dynamics: Platforms external challenges to administration
-    organizational_goals:
-    - Deliver live policy dissections
-    - Boost viewership with brass confrontations
-    influence_mechanisms:
-    - Talk show format for unfiltered critique
-    - Multi-network synergy
-    institutional_impact: ''
-    internal_dynamics: ''
-    global_id: ger_organization_105ca7876282
-  derived_from_beat_uuids: &id006
-  - beat_c24795063eabd82d
-  - beat_1304bb3a381ea18a
-  source_season: 2
-  source_database: westwing.s02
-- fabula_uuid: cand_evt_scene_ad8a1ec1cd8919d8_1
-  global_id: null
-  title: CJ Calls Out Sexist Resentment Toward Ainsley as Toby Alerts on General Barrie
-  description: 'Toby intercepts CJ in the hallway en route to her office, probing
-    the staff''s lingering hostility toward new hire Ainsley Hayes. CJ admits her
-    initial rage but declares her support, sharply diagnosing the bias as sexist resentment
-    against a capable Republican woman. Toby acknowledges her point with a pointed
-    compliment before pivoting to urgent news: retiring General Barrie is launching
-    a media blitz against the administration. CJ decisively summons Barrie via Carol,
-    brushing off Toby''s help while bantering about Tribbey''s reaction to Ainsley.
-    This charged exchange reveals deepening staff fractures, CJ''s evolved loyalty,
-    and propels the Barrie confrontation subplot, heightening tensions amid Ainsley''s
-    integration.'
-  episode_uuid: ep_sea_ser_the_west_wing_s02_e05
-  scene_sequence: 2
-  sequence_in_scene: 3
-  key_dialogue: *id005
   is_flashback: false
   location_uuid: ger_location_10d933feec2e
   theme_uuids:
@@ -859,6 +588,19 @@ events:
     global_id: ger_agent_73f0ed78a5c8
   object_involvements: []
   location_involvements:
+  - location_uuid: ger_location_10d933feec2e
+    description_of_involvement: The Pentagon is designated as the retrieval target
+      for General Barrie, with Carol dispatched incognito to extract him amid its
+      granite-walled security; it looms as the fortified source of the brewing media
+      mutiny.
+    observed_atmosphere: Off-screen but implied fortified tension
+    functional_role: Origin point for military antagonist retrieval
+    symbolic_significance: Symbolizes clashing civil-military power structures
+    access_restrictions: Heavily secured military installation
+    key_environmental_details:
+    - Five-sided granite corridors
+    - Classified secure lairs
+    global_id: ger_location_10d933feec2e
   - location_uuid: ger_location_cec0297c9bc5
     description_of_involvement: CJ's office within the West Wing becomes the command
       center for crisis mobilization, where she issues orders to Carol for Barrie's
@@ -874,19 +616,6 @@ events:
     - Office door as entry/exit barrier
     - Interior space for confidential directives
     global_id: ger_location_cec0297c9bc5
-  - location_uuid: ger_location_10d933feec2e
-    description_of_involvement: The Pentagon is designated as the retrieval target
-      for General Barrie, with Carol dispatched incognito to extract him amid its
-      granite-walled security; it looms as the fortified source of the brewing media
-      mutiny.
-    observed_atmosphere: Off-screen but implied fortified tension
-    functional_role: Origin point for military antagonist retrieval
-    symbolic_significance: Symbolizes clashing civil-military power structures
-    access_restrictions: Heavily secured military installation
-    key_environmental_details:
-    - Five-sided granite corridors
-    - Classified secure lairs
-    global_id: ger_location_10d933feec2e
   organization_involvements:
   - organization_uuid: ger_organization_ef8b0cca7b53
     description_of_involvement: Capitol Beat rounds out Barrie's blitz itinerary,
@@ -903,21 +632,6 @@ events:
     institutional_impact: ''
     internal_dynamics: ''
     global_id: ger_organization_ef8b0cca7b53
-  - organization_uuid: ger_organization_d033a1b32d4f
-    description_of_involvement: The White House permeates as the institutional battleground,
-      with staff like CJ asserting presidential primacy over Barrie, integrating Ainsley
-      tensions into operational cohesion amid hazing and crises.
-    active_representation: Via communications team protocols and hierarchy
-    power_dynamics: Reasserts executive command over military
-    organizational_goals:
-    - Contain internal ideological fractures
-    - Neutralize external media threats
-    influence_mechanisms:
-    - Direct aide dispatches
-    - Chain-of-command invocation
-    institutional_impact: Fortifies loyalty amid partisan infusions
-    internal_dynamics: Sexist resentments testing unity
-    global_id: ger_organization_d033a1b32d4f
   - organization_uuid: ger_organization_e08bb61f7c87
     description_of_involvement: Department of Defense underlies Barrie's actions and
       press office evasion, with its retiring brass exploiting media for readiness
@@ -934,6 +648,292 @@ events:
     institutional_impact: Escalates partisan civil-military tensions
     internal_dynamics: Retiring leadership vs. administration alignment
     global_id: ger_organization_e08bb61f7c87
+  - organization_uuid: ger_organization_bb39d5dd403d
+    description_of_involvement: The White House permeates as the institutional battleground,
+      with staff like CJ asserting presidential primacy over Barrie, integrating Ainsley
+      tensions into operational cohesion amid hazing and crises.
+    active_representation: Via communications team protocols and hierarchy
+    power_dynamics: Reasserts executive command over military
+    organizational_goals:
+    - Contain internal ideological fractures
+    - Neutralize external media threats
+    influence_mechanisms:
+    - Direct aide dispatches
+    - Chain-of-command invocation
+    institutional_impact: Fortifies loyalty amid partisan infusions
+    internal_dynamics: Sexist resentments testing unity
+    global_id: ger_organization_bb39d5dd403d
+  - organization_uuid: ger_organization_0502fdd0ba0a
+    description_of_involvement: Meet the Press is flagged as Barrie's Sunday launchpad
+      for administration broadsides, part of his blitz intel that alarms Toby and
+      mobilizes CJ, thrusting the show into the narrative as a high-stakes battleground.
+    active_representation: As referenced media platform in intel relay
+    power_dynamics: Amplifies military critique beyond White House control
+    organizational_goals:
+    - Host explosive political confrontations
+    - Secure ratings via controversial guests
+    influence_mechanisms:
+    - National broadcast reach
+    - Guest booking autonomy
+    institutional_impact: ''
+    internal_dynamics: ''
+    global_id: ger_organization_0502fdd0ba0a
+  - organization_uuid: ger_organization_8b17f6c87afe
+    description_of_involvement: DOD Press Office stonewalls White House inquiries,
+      refusing to confirm General Barrie's Sunday media blitz, forcing CJ to bypass
+      protocol with direct Pentagon retrieval; it exemplifies bureaucratic evasion
+      fueling the crisis.
+    active_representation: Through institutional non-confirmation and opacity
+    power_dynamics: Withholds information, challenging White House authority
+    organizational_goals:
+    - Protect military schedules from executive scrutiny
+    - Enable Barrie's unchallenged public critique
+    influence_mechanisms:
+    - Information blackout
+    - Chain-of-command gatekeeping
+    institutional_impact: Highlights civil-military friction in public messaging
+    internal_dynamics: Protocol-driven evasion amid partisan budget pressures
+    global_id: ger_organization_8b17f6c87afe
+  - organization_uuid: ger_organization_105ca7876282
+    description_of_involvement: Late Edition is listed in Barrie's aggressive schedule
+      alongside Sam and Cokie, heightening the perceived threat of synchronized media
+      attacks on readiness claims, prompting immediate White House countermeasures.
+    active_representation: Via scheduled appearance intel
+    power_dynamics: Platforms external challenges to administration
+    organizational_goals:
+    - Deliver live policy dissections
+    - Boost viewership with brass confrontations
+    influence_mechanisms:
+    - Talk show format for unfiltered critique
+    - Multi-network synergy
+    institutional_impact: ''
+    internal_dynamics: ''
+    global_id: ger_organization_105ca7876282
+  derived_from_beat_uuids: &id006
+  - beat_c24795063eabd82d
+  - beat_1304bb3a381ea18a
+  source_season: 2
+  source_database: westwing.s02
+- fabula_uuid: cand_evt_scene_ad8a1ec1cd8919d8_1
+  global_id: null
+  title: CJ Calls Out Sexist Resentment Toward Ainsley as Toby Alerts on General Barrie
+  description: 'Toby intercepts CJ in the hallway en route to her office, probing
+    the staff''s lingering hostility toward new hire Ainsley Hayes. CJ admits her
+    initial rage but declares her support, sharply diagnosing the bias as sexist resentment
+    against a capable Republican woman. Toby acknowledges her point with a pointed
+    compliment before pivoting to urgent news: retiring General Barrie is launching
+    a media blitz against the administration. CJ decisively summons Barrie via Carol,
+    brushing off Toby''s help while bantering about Tribbey''s reaction to Ainsley.
+    This charged exchange reveals deepening staff fractures, CJ''s evolved loyalty,
+    and propels the Barrie confrontation subplot, heightening tensions amid Ainsley''s
+    integration.'
+  episode_uuid: ep_sea_ser_the_west_wing_s02_e05
+  scene_sequence: 2
+  sequence_in_scene: 3
+  key_dialogue: *id005
+  is_flashback: false
+  location_uuid: ger_location_cec0297c9bc5
+  theme_uuids:
+  - ger_theme_a40fa463435a
+  arc_uuids:
+  - ger_conflictarc_490609e12cce
+  - ger_conflictarc_a539e8fa9b45
+  participations:
+  - character_uuid: ger_agent_54f868bf8265
+    emotional_state: Defensive conviction evolving into focused authoritative resolve
+      amid rising crisis tension
+    goals:
+    - Publicly affirm support for Ainsley and call out sexism
+    - Immediately neutralize General Barrie's media threat through direct retrieval
+    what_happened: CJ strides purposefully through the hallway toward her office,
+      intercepted by Toby; she passionately defends Ainsley Hayes against staff bias,
+      absorbs Barrie media blitz intel with escalating urgency, summons Carol from
+      outside with authoritative instructions to fetch the general incognito, banters
+      lightly about Tribbey's reaction.
+    observed_status: CJ strides purposefully through the hallway toward her office,
+      intercepted by Toby; she passionately defends Ainsley Hayes against staff bias,
+      absorbs Barrie media blitz intel with escalating urgency, summons Carol from
+      outside with authoritative instructions to fetch the general incognito, banters
+      lightly about Tribbey's reaction.
+    beliefs:
+    - Staff hostility toward Ainsley stems from sexist resentment of a capable Republican
+      woman
+    - White House chain-of-command supersedes military autonomy in public critiques
+      of the President
+    observed_traits:
+    - principled
+    - decisive
+    - loyal
+    - assertive
+    importance: primary
+    global_id: ger_agent_54f868bf8265
+  - character_uuid: ger_agent_79dc9fb6a278
+    emotional_state: Professional focus with mild logistical concern
+    goals:
+    - Accurately record and execute CJ's retrieval directive
+    - Clarify operational feasibility given Barrie's rank
+    what_happened: Carol responds from outside CJ's office, enters promptly, takes
+      detailed notes on instructions to retrieve General Barrie from the Pentagon
+      incognito avoiding press, questions logistics dutifully, affirms Army hierarchy
+      concern before departing to execute the order.
+    observed_status: Carol responds from outside CJ's office, enters promptly, takes
+      detailed notes on instructions to retrieve General Barrie from the Pentagon
+      incognito avoiding press, questions logistics dutifully, affirms Army hierarchy
+      concern before departing to execute the order.
+    beliefs:
+    - Chain-of-command requires swift aide compliance despite target seniority
+    - Incognito transport minimizes media escalation risks
+    observed_traits:
+    - dutiful
+    - professional
+    - precise
+    importance: primary
+    global_id: ger_agent_79dc9fb6a278
+  - character_uuid: ger_agent_dd62525d972a
+    emotional_state: ''
+    goals: []
+    what_happened: briefly mentioned in context of whether he has informed Tribbey
+      about Ainsley Hayes
+    observed_status: briefly mentioned in context of whether he has informed Tribbey
+      about Ainsley Hayes
+    beliefs: []
+    observed_traits: []
+    importance: primary
+    global_id: ger_agent_dd62525d972a
+  - character_uuid: ger_agent_04bbccb1e352
+    emotional_state: ''
+    goals: []
+    what_happened: briefly referenced as source of information on Barrie's schedule
+      via Mark Gottfried
+    observed_status: briefly referenced as source of information on Barrie's schedule
+      via Mark Gottfried
+    beliefs: []
+    observed_traits: []
+    importance: primary
+    global_id: ger_agent_04bbccb1e352
+  - character_uuid: ger_agent_7854a70e34ea
+    emotional_state: Calm persistence masking urgent alarm, shifting to complimentary
+      camaraderie
+    goals:
+    - Gauge and address staff fractures over Ainsley Hayes
+    - Alert CJ to Barrie's media schedule to enable rapid response
+    what_happened: Toby catches up to CJ in the hallway, patiently probes her views
+      on Ainsley despite interruptions, delivers urgent intel on Barrie's Sunday show
+      blitz sourced from Sam and Mark Gottfried, compliments her insightfully, offers
+      assistance she declines, banters wryly about Tribbey's volatility before exiting.
+    observed_status: Toby catches up to CJ in the hallway, patiently probes her views
+      on Ainsley despite interruptions, delivers urgent intel on Barrie's Sunday show
+      blitz sourced from Sam and Mark Gottfried, compliments her insightfully, offers
+      assistance she declines, banters wryly about Tribbey's volatility before exiting.
+    beliefs:
+    - Ainsley combination of traits challenges staff norms but merits fair integration
+    - DOD opacity on Barrie's appearances signals deliberate administration sabotage
+    observed_traits:
+    - patient
+    - urgent
+    - wry
+    - supportive
+    importance: primary
+    global_id: ger_agent_7854a70e34ea
+  - character_uuid: ger_agent_0fdca8513c4a
+    emotional_state: ''
+    goals: []
+    what_happened: significantly discussed as new Republican hire facing staff sexist
+      resentment
+    observed_status: significantly discussed as new Republican hire facing staff sexist
+      resentment
+    beliefs: []
+    observed_traits: []
+    importance: primary
+    global_id: ger_agent_0fdca8513c4a
+  - character_uuid: ger_agent_73f0ed78a5c8
+    emotional_state: ''
+    goals: []
+    what_happened: briefly mentioned as not yet informed about new Associate Counsel
+      Ainsley Hayes, anticipated explosive reaction
+    observed_status: briefly mentioned as not yet informed about new Associate Counsel
+      Ainsley Hayes, anticipated explosive reaction
+    beliefs: []
+    observed_traits: []
+    importance: primary
+    global_id: ger_agent_73f0ed78a5c8
+  object_involvements: []
+  location_involvements:
+  - location_uuid: ger_location_10d933feec2e
+    description_of_involvement: The Pentagon is designated as the retrieval target
+      for General Barrie, with Carol dispatched incognito to extract him amid its
+      granite-walled security; it looms as the fortified source of the brewing media
+      mutiny.
+    observed_atmosphere: Off-screen but implied fortified tension
+    functional_role: Origin point for military antagonist retrieval
+    symbolic_significance: Symbolizes clashing civil-military power structures
+    access_restrictions: Heavily secured military installation
+    key_environmental_details:
+    - Five-sided granite corridors
+    - Classified secure lairs
+    global_id: ger_location_10d933feec2e
+  - location_uuid: ger_location_cec0297c9bc5
+    description_of_involvement: CJ's office within the West Wing becomes the command
+      center for crisis mobilization, where she issues orders to Carol for Barrie's
+      incognito retrieval and banters with Toby; it anchors the shift from discussion
+      to action in shadowed executive power corridors.
+    observed_atmosphere: Focused intensity with door thresholds marking authority
+      shifts
+    functional_role: Decision-making hub for press strategy and retrieval ops
+    symbolic_significance: Represents insulated executive resolve against external
+      threats
+    access_restrictions: Private to senior staff and aides
+    key_environmental_details:
+    - Office door as entry/exit barrier
+    - Interior space for confidential directives
+    global_id: ger_location_cec0297c9bc5
+  organization_involvements:
+  - organization_uuid: ger_organization_ef8b0cca7b53
+    description_of_involvement: Capitol Beat rounds out Barrie's blitz itinerary,
+      its inclusion in Toby's alert underscores the scale of the onslaught, catalyzing
+      CJ's dispatch of Carol to preempt the damage.
+    active_representation: As confirmed booking in crisis intel
+    power_dynamics: Empowers retiring general's rogue narrative
+    organizational_goals:
+    - Air razor-edged political debates
+    - Attract high-profile military guests
+    influence_mechanisms:
+    - Sunday morning dominance
+    - Live national exposure
+    institutional_impact: ''
+    internal_dynamics: ''
+    global_id: ger_organization_ef8b0cca7b53
+  - organization_uuid: ger_organization_e08bb61f7c87
+    description_of_involvement: Department of Defense underlies Barrie's actions and
+      press office evasion, with its retiring brass exploiting media for readiness
+      critiques tied to budget wars, positioning it as adversarial to White House
+      PR control.
+    active_representation: Through subordinate press office and general's schedule
+    power_dynamics: Exerts autonomy against presidential oversight
+    organizational_goals:
+    - Publicize perceived shortfalls for funding
+    - Shield internal media maneuvers
+    influence_mechanisms:
+    - General officer platforms
+    - Bureaucratic information control
+    institutional_impact: Escalates partisan civil-military tensions
+    internal_dynamics: Retiring leadership vs. administration alignment
+    global_id: ger_organization_e08bb61f7c87
+  - organization_uuid: ger_organization_bb39d5dd403d
+    description_of_involvement: The White House permeates as the institutional battleground,
+      with staff like CJ asserting presidential primacy over Barrie, integrating Ainsley
+      tensions into operational cohesion amid hazing and crises.
+    active_representation: Via communications team protocols and hierarchy
+    power_dynamics: Reasserts executive command over military
+    organizational_goals:
+    - Contain internal ideological fractures
+    - Neutralize external media threats
+    influence_mechanisms:
+    - Direct aide dispatches
+    - Chain-of-command invocation
+    institutional_impact: Fortifies loyalty amid partisan infusions
+    internal_dynamics: Sexist resentments testing unity
+    global_id: ger_organization_bb39d5dd403d
   - organization_uuid: ger_organization_0502fdd0ba0a
     description_of_involvement: Meet the Press is flagged as Barrie's Sunday launchpad
       for administration broadsides, part of his blitz intel that alarms Toby and
@@ -1011,7 +1011,7 @@ events:
     TOBY: "I'll check the wire to see if any maimings have been reported, but I don't think he's told him yet."
     C.J.: "Should be some decent dinner theater."
   is_flashback: false
-  location_uuid: ger_location_cec0297c9bc5
+  location_uuid: ger_location_10d933feec2e
   theme_uuids:
   - ger_theme_a40fa463435a
   - ger_theme_08d4bfe62366
@@ -1127,23 +1127,6 @@ events:
     - supportive
     importance: primary
     global_id: ger_agent_7854a70e34ea
-  - character_uuid: ger_agent_c358f7a4d429
-    emotional_state: Pragmatic conduit
-    goals:
-    - Maintain show flow intel
-    - Facilitate guest bookings
-    what_happened: Mark Gottfried credited as Toby/Sam's broadcast intel pipeline
-      leaking Barrie's Sunday lineup.
-    observed_status: Mark Gottfried credited as Toby/Sam's broadcast intel pipeline
-      leaking Barrie's Sunday lineup.
-    beliefs:
-    - Schedules are public leverage
-    - Aides extract amid chaos
-    observed_traits:
-    - unflappable
-    - informative
-    importance: primary
-    global_id: ger_agent_c358f7a4d429
   - character_uuid: ger_agent_0fdca8513c4a
     emotional_state: Resilient amid hazing (inferred from defense)
     goals:
@@ -1163,6 +1146,23 @@ events:
     - outsider
     importance: primary
     global_id: ger_agent_0fdca8513c4a
+  - character_uuid: ger_agent_c358f7a4d429
+    emotional_state: Pragmatic conduit
+    goals:
+    - Maintain show flow intel
+    - Facilitate guest bookings
+    what_happened: Mark Gottfried credited as Toby/Sam's broadcast intel pipeline
+      leaking Barrie's Sunday lineup.
+    observed_status: Mark Gottfried credited as Toby/Sam's broadcast intel pipeline
+      leaking Barrie's Sunday lineup.
+    beliefs:
+    - Schedules are public leverage
+    - Aides extract amid chaos
+    observed_traits:
+    - unflappable
+    - informative
+    importance: primary
+    global_id: ger_agent_c358f7a4d429
   - character_uuid: ger_agent_20e4f4853ebe
     emotional_state: Defiant antagonism toward administration
     goals:
@@ -1219,19 +1219,6 @@ events:
     global_id: ger_agent_3b99b42235cc
   object_involvements: []
   location_involvements:
-  - location_uuid: ger_location_cec0297c9bc5
-    description_of_involvement: West Wing positioned as confrontation arena where
-      Carol must deliver Barrie press-free, its shadowed back channels and locked
-      doors pulsing with executive resolve to shatter the general's evasion in raw
-      power nexus.
-    observed_atmosphere: Charged hush of impending showdown
-    functional_role: Secure dragnet destination for reckoning
-    symbolic_significance: Executive nerve center enforcing loyalty
-    access_restrictions: Cloaked urgency dodges press lines
-    key_environmental_details:
-    - Echoing footsteps in corridors
-    - Locked offices bracing for brass
-    global_id: ger_location_cec0297c9bc5
   - location_uuid: ger_location_10d933feec2e
     description_of_involvement: Pentagon invoked as Barrie's fortress and Carol's
       mission target, its granite halls and classified lairs framed for incognito
@@ -1245,6 +1232,19 @@ events:
     - Five-sided granite walls
     - Flickering monitors in secure lairs
     global_id: ger_location_10d933feec2e
+  - location_uuid: ger_location_cec0297c9bc5
+    description_of_involvement: West Wing positioned as confrontation arena where
+      Carol must deliver Barrie press-free, its shadowed back channels and locked
+      doors pulsing with executive resolve to shatter the general's evasion in raw
+      power nexus.
+    observed_atmosphere: Charged hush of impending showdown
+    functional_role: Secure dragnet destination for reckoning
+    symbolic_significance: Executive nerve center enforcing loyalty
+    access_restrictions: Cloaked urgency dodges press lines
+    key_environmental_details:
+    - Echoing footsteps in corridors
+    - Locked offices bracing for brass
+    global_id: ger_location_cec0297c9bc5
   organization_involvements:
   - organization_uuid: ger_organization_ef8b0cca7b53
     description_of_involvement: Capitol Beat caps Toby's blitz rundown as third prong
@@ -1344,7 +1344,7 @@ events:
   sequence_in_scene: 4
   key_dialogue: *id007
   is_flashback: false
-  location_uuid: ger_location_10d933feec2e
+  location_uuid: ger_location_cec0297c9bc5
   theme_uuids:
   - ger_theme_a40fa463435a
   - ger_theme_08d4bfe62366
@@ -1460,23 +1460,6 @@ events:
     - supportive
     importance: primary
     global_id: ger_agent_7854a70e34ea
-  - character_uuid: ger_agent_c358f7a4d429
-    emotional_state: Pragmatic conduit
-    goals:
-    - Maintain show flow intel
-    - Facilitate guest bookings
-    what_happened: Mark Gottfried credited as Toby/Sam's broadcast intel pipeline
-      leaking Barrie's Sunday lineup.
-    observed_status: Mark Gottfried credited as Toby/Sam's broadcast intel pipeline
-      leaking Barrie's Sunday lineup.
-    beliefs:
-    - Schedules are public leverage
-    - Aides extract amid chaos
-    observed_traits:
-    - unflappable
-    - informative
-    importance: primary
-    global_id: ger_agent_c358f7a4d429
   - character_uuid: ger_agent_0fdca8513c4a
     emotional_state: Resilient amid hazing (inferred from defense)
     goals:
@@ -1496,6 +1479,23 @@ events:
     - outsider
     importance: primary
     global_id: ger_agent_0fdca8513c4a
+  - character_uuid: ger_agent_c358f7a4d429
+    emotional_state: Pragmatic conduit
+    goals:
+    - Maintain show flow intel
+    - Facilitate guest bookings
+    what_happened: Mark Gottfried credited as Toby/Sam's broadcast intel pipeline
+      leaking Barrie's Sunday lineup.
+    observed_status: Mark Gottfried credited as Toby/Sam's broadcast intel pipeline
+      leaking Barrie's Sunday lineup.
+    beliefs:
+    - Schedules are public leverage
+    - Aides extract amid chaos
+    observed_traits:
+    - unflappable
+    - informative
+    importance: primary
+    global_id: ger_agent_c358f7a4d429
   - character_uuid: ger_agent_20e4f4853ebe
     emotional_state: Defiant antagonism toward administration
     goals:
@@ -1552,19 +1552,6 @@ events:
     global_id: ger_agent_3b99b42235cc
   object_involvements: []
   location_involvements:
-  - location_uuid: ger_location_cec0297c9bc5
-    description_of_involvement: West Wing positioned as confrontation arena where
-      Carol must deliver Barrie press-free, its shadowed back channels and locked
-      doors pulsing with executive resolve to shatter the general's evasion in raw
-      power nexus.
-    observed_atmosphere: Charged hush of impending showdown
-    functional_role: Secure dragnet destination for reckoning
-    symbolic_significance: Executive nerve center enforcing loyalty
-    access_restrictions: Cloaked urgency dodges press lines
-    key_environmental_details:
-    - Echoing footsteps in corridors
-    - Locked offices bracing for brass
-    global_id: ger_location_cec0297c9bc5
   - location_uuid: ger_location_10d933feec2e
     description_of_involvement: Pentagon invoked as Barrie's fortress and Carol's
       mission target, its granite halls and classified lairs framed for incognito
@@ -1578,6 +1565,19 @@ events:
     - Five-sided granite walls
     - Flickering monitors in secure lairs
     global_id: ger_location_10d933feec2e
+  - location_uuid: ger_location_cec0297c9bc5
+    description_of_involvement: West Wing positioned as confrontation arena where
+      Carol must deliver Barrie press-free, its shadowed back channels and locked
+      doors pulsing with executive resolve to shatter the general's evasion in raw
+      power nexus.
+    observed_atmosphere: Charged hush of impending showdown
+    functional_role: Secure dragnet destination for reckoning
+    symbolic_significance: Executive nerve center enforcing loyalty
+    access_restrictions: Cloaked urgency dodges press lines
+    key_environmental_details:
+    - Echoing footsteps in corridors
+    - Locked offices bracing for brass
+    global_id: ger_location_cec0297c9bc5
   organization_involvements:
   - organization_uuid: ger_organization_ef8b0cca7b53
     description_of_involvement: Capitol Beat caps Toby's blitz rundown as third prong
@@ -1835,7 +1835,7 @@ events:
     global_id: ger_object_7a47e9702bcf
   location_involvements: []
   organization_involvements:
-  - organization_uuid: ger_organization_d033a1b32d4f
+  - organization_uuid: ger_organization_bb39d5dd403d
     description_of_involvement: The White House manifests as the high-stakes workplace
       arena for Leo's calculated deception, Ainsley's anxious integration, and Tribbey's
       explosive reaction to internal testimony failures—highlighting its legal fractures,
@@ -1853,7 +1853,7 @@ events:
     institutional_impact: Exposes vulnerability to oversight scrutiny and ideological
       infusion challenges
     internal_dynamics: Chain of command strained by unsanctioned hires and staff incompetence
-    global_id: ger_organization_d033a1b32d4f
+    global_id: ger_organization_bb39d5dd403d
   - organization_uuid: ger_organization_b1ab343c51b4
     description_of_involvement: Governmental Affairs Committee looms as the oversight
       antagonist via Tribbey's rant over its hearing where White House staff perjured
@@ -1928,7 +1928,7 @@ events:
     observed_traits: []
     importance: primary
     global_id: ger_agent_198649bce78f
-  - character_uuid: ger_agent_64b2a2c10c8f
+  - character_uuid: ger_agent_14f85d554756
     emotional_state: Alarmed shock blending exasperation with the unfolding farce
     goals:
     - Ensure successful completion of the radio address taping
@@ -1947,7 +1947,7 @@ events:
     - alarmed
     - loyal
     importance: primary
-    global_id: ger_agent_64b2a2c10c8f
+    global_id: ger_agent_14f85d554756
   - character_uuid: ger_agent_73f0ed78a5c8
     emotional_state: Hysterical outrage pivoting to humiliated chagrin
     goals:
@@ -2021,7 +2021,7 @@ events:
     global_id: ger_object_4bce4595a483
   location_involvements: []
   organization_involvements:
-  - organization_uuid: ger_organization_e89f085bf2d7
+  - organization_uuid: ger_organization_097bbd620a18
     description_of_involvement: The Democratic Party manifests through its major donors
       as silent witnesses in the Oval, their presence invoked by Bartlet to check
       Tribbey's rampage, highlighting fundraising optics that temper internal volatility
@@ -2037,7 +2037,7 @@ events:
     - Silent scrutiny enforcing behavioral restraint
     institutional_impact: Reveals donor money as arbiter of White House decorum
     internal_dynamics: Partisan resistance to Republican hires tests unity
-    global_id: ger_organization_e89f085bf2d7
+    global_id: ger_organization_097bbd620a18
   derived_from_beat_uuids:
   - beat_bc37378fb01b8cb7
   - beat_f978255d1562b96c
@@ -2192,7 +2192,7 @@ events:
     observed_traits: []
     importance: primary
     global_id: ger_agent_198649bce78f
-  - character_uuid: ger_agent_64b2a2c10c8f
+  - character_uuid: ger_agent_14f85d554756
     emotional_state: Amused and conspiratorial
     goals:
     - Update Josh on Oval Office radio address progress
@@ -2213,7 +2213,7 @@ events:
     - Proactive informant
     - Loyal aide
     importance: primary
-    global_id: ger_agent_64b2a2c10c8f
+    global_id: ger_agent_14f85d554756
   object_involvements:
   - object_uuid: ger_object_d26177ee2896
     description_of_involvement: Josh cradles his steaming coffee mug while seated
@@ -2304,7 +2304,7 @@ events:
     - strategic
     importance: primary
     global_id: ger_agent_04bbccb1e352
-  - character_uuid: ger_agent_64b2a2c10c8f
+  - character_uuid: ger_agent_14f85d554756
     emotional_state: Concerned efficiency driving behind-the-scenes urgency
     goals:
     - Guarantee Josh's attendance at budget deliberations
@@ -2323,7 +2323,7 @@ events:
     - tenacious
     - organized
     importance: primary
-    global_id: ger_agent_64b2a2c10c8f
+    global_id: ger_agent_14f85d554756
   - character_uuid: ger_agent_60a68a084e0c
     emotional_state: Professionally urgent, unflappably composed amid staff intensity
     goals:
@@ -2413,413 +2413,6 @@ events:
   - 'BARTLET: New Hampshire is an hour and a half away by plane. I don''t think I
     have that kind of time.'
   is_flashback: false
-  location_uuid: ger_location_d1360144f47e
-  theme_uuids: []
-  arc_uuids: []
-  participations:
-  - character_uuid: ger_agent_52e3762c6aed
-    emotional_state: Bewildered confusion laced with professional poise
-    goals:
-    - Precisely relay Abbey's cryptic message without error
-    - Avoid disrupting the President's critical advisor meeting
-    what_happened: Sits behind desk, stands to greet Abbey warmly, grabs pen and notepad
-      to record her bizarre 'vitals' message with visible confusion, questions phrasing
-      earnestly, then bolts urgently to deliver it, sparking Bartlet's entrance.
-    observed_status: Sits behind desk, stands to greet Abbey warmly, grabs pen and
-      notepad to record her bizarre 'vitals' message with visible confusion, questions
-      phrasing earnestly, then bolts urgently to deliver it, sparking Bartlet's entrance.
-    beliefs:
-    - First Lady's instructions demand immediate, unquestioning action
-    - Medical jargon applies literally to the recipient unless clarified
-    observed_traits:
-    - dutiful
-    - earnest
-    - literal-minded
-    importance: primary
-    global_id: ger_agent_52e3762c6aed
-  - character_uuid: ger_agent_198649bce78f
-    emotional_state: Amused playfulness veiling affectionate control
-    goals:
-    - Convey all-clear for intimacy via clever code to evade eavesdroppers
-    - Balance Bartlet's urges against plutonium crisis and her 6 PM flight
-    what_happened: Enters from portico purposefully, dictates playful coded vitals
-      to Charlie signaling intimacy resumption, sits casually on desk chatting with
-      Landingham, leads excited Bartlet into Oval for flirty banter on locations and
-      time constraints, reins him with work reminders, teases with kiss before dashing
-      out.
-    observed_status: Enters from portico purposefully, dictates playful coded vitals
-      to Charlie signaling intimacy resumption, sits casually on desk chatting with
-      Landingham, leads excited Bartlet into Oval for flirty banter on locations and
-      time constraints, reins him with work reminders, teases with kiss before dashing
-      out.
-    beliefs:
-    - Duty must temper passion, but stolen moments sustain them
-    - Coded discretion protects private needs in public spaces
-    observed_traits:
-    - playful
-    - authoritative
-    - composed
-    importance: primary
-    global_id: ger_agent_198649bce78f
-  - character_uuid: ger_agent_dd62525d972a
-    emotional_state: Neutral (off-screen)
-    goals: []
-    what_happened: Absent but invoked by Landingham's offer to inform him of advisors'
-      meeting end, underscoring his role in crisis coordination.
-    observed_status: Absent but invoked by Landingham's offer to inform him of advisors'
-      meeting end, underscoring his role in crisis coordination.
-    beliefs: []
-    observed_traits: []
-    importance: primary
-    global_id: ger_agent_dd62525d972a
-  - character_uuid: ger_agent_967eb6cb648e
-    emotional_state: Neutral (off-screen)
-    goals: []
-    what_happened: Absent but named by Abbey as her schedule coordinator for carving
-      out intimacy slot before Cochran's Mills.
-    observed_status: Absent but named by Abbey as her schedule coordinator for carving
-      out intimacy slot before Cochran's Mills.
-    beliefs: []
-    observed_traits: []
-    importance: primary
-    global_id: ger_agent_967eb6cb648e
-  - character_uuid: ger_agent_8511b338f685
-    emotional_state: Calm professionalism tinged with gentle amusement
-    goals:
-    - Facilitate smooth transition from meeting by alerting key staff
-    - Gauge and address President's evident tension
-    what_happened: Enters Outer Oval cordially greeting Abbey, offers assistance politely,
-      greets Bartlet warmly but probes his tension, follows toward Oval suggesting
-      to notify McGarry and advisors, shut out by slammed door with wry observation
-      on his state.
-    observed_status: Enters Outer Oval cordially greeting Abbey, offers assistance
-      politely, greets Bartlet warmly but probes his tension, follows toward Oval
-      suggesting to notify McGarry and advisors, shut out by slammed door with wry
-      observation on his state.
-    beliefs:
-    - Presidential needs override protocol but require discreet support
-    - Routine inquiries maintain operational flow amid personal moments
-    observed_traits:
-    - professional
-    - observant
-    - ' unflappable'
-    importance: primary
-    global_id: ger_agent_8511b338f685
-  object_involvements:
-  - object_uuid: ger_object_43e9fc68517c
-    description_of_involvement: Bartlet urgently queries if Oval Office curtains close,
-      eyeing them desperately as hasty privacy barricade for immediate intimacy, symbolizing
-      futile grasp for seclusion amid Oval's exposure; Abbey nixes the idea, heightening
-      comedic frustration of duty's intrusion on desire.
-    status_before_event: Open, filtering daylight in Oval Office
-    status_after_event: Unchanged, still open as couple postpones tryst
-    global_id: ger_object_43e9fc68517c
-  location_involvements:
-  - location_uuid: ger_location_d1360144f47e
-    description_of_involvement: The Residence's bedroom pitched by Abbey as viable
-      on-site haven for their liaison, eagerly embraced by Bartlet as 'smart' proximity
-      solution before schedules intervene, teasing feasible escape within White House
-      bounds.
-    observed_atmosphere: Imagined sanctuary of hushed domesticity
-    functional_role: Proposed tryst venue
-    symbolic_significance: Rare private refuge amid institutional glare
-    access_restrictions: Accessible upstairs, coordinated via staff
-    key_environmental_details:
-    - Sheets implying urgent reunion
-    - Proximity to Oval easing logistics
-    global_id: ger_location_d1360144f47e
-  - location_uuid: ger_location_454b89d82ef1
-    description_of_involvement: Korea hurled by Abbey as plutonium flashpoint tying
-      Bartlet to Roosevelt Room, weaponizing geopolitics to douse his fire, blending
-      bedroom farce with nuclear peril.
-    observed_atmosphere: Shadowed crisis specter
-    functional_role: Policy anchor halting passion
-    symbolic_significance: Global threats invading intimate space
-    access_restrictions: Distant but invasively relevant
-    key_environmental_details:
-    - Plutonium pipeline menace
-    - Summit imperilment echoes
-    global_id: ger_location_454b89d82ef1
-  - location_uuid: ger_location_6f4d206272dc
-    description_of_involvement: Cochran's Mills, Pennsylvania looms as Abbey's 6 PM
-      flight deadline, compressing their window to 'find time' via Charlie and Lilly,
-      fracturing reunion with First Lady obligations.
-    observed_atmosphere: Ticking-clock rural urgency
-    functional_role: Upcoming commitment constraint
-    symbolic_significance: Duty's inexorable pull on personal joy
-    access_restrictions: Demands departure post-6 PM
-    key_environmental_details:
-    - Modest mill-town evocation
-    - Flight logistics pressure
-    global_id: ger_location_6f4d206272dc
-  - location_uuid: ger_location_b5d75b8fe51b
-    description_of_involvement: New Hampshire jokingly dismissed by Bartlet as too
-      distant for quick plane hop, underscoring time's tyranny on their starved passion
-      amid primary shadows.
-    observed_atmosphere: Remote, impractical chill
-    functional_role: Rejected distant venue option
-    symbolic_significance: Political heartland too far for human needs
-    access_restrictions: Hour-and-half flight away
-    key_environmental_details:
-    - New England frost metaphorically distant
-    - Primary battleground irrelevance here
-    global_id: ger_location_b5d75b8fe51b
-  - location_uuid: ger_location_7423b10d7d15
-    description_of_involvement: Roosevelt Room referenced as site of Bartlet's ongoing
-      plutonium crisis huddle with Far East Advisors, anchoring duty's pull that Abbey
-      invokes to halt his advances, contrasting policy gravity with personal frolic.
-    observed_atmosphere: Off-screen tension of geopolitical stakes
-    functional_role: Prior obligation barrier to intimacy
-    symbolic_significance: Realm of world crises eclipsing marital needs
-    access_restrictions: Occupied by advisors, not to be interrupted
-    key_environmental_details:
-    - Conference table for advisor briefings
-    - Echoes of policy debate
-    global_id: ger_location_7423b10d7d15
-  organization_involvements:
-  - organization_uuid: ger_organization_857f15228dd0
-    description_of_involvement: Far East Advisors hold Bartlet in Roosevelt Room throes
-      over Korea plutonium, invoked repeatedly as unbreakable duty chain—Abbey and
-      Landingham reference ending their session via McGarry, framing institutional
-      drag on personal life.
-    active_representation: Via ongoing meeting occupancy and staff protocol for dismissal
-    power_dynamics: Exerting advisory constraint on President's availability
-    organizational_goals:
-    - Brief President on proliferation risks from Korea
-    - Secure policy alignment on plutonium response
-    influence_mechanisms:
-    - Occupying time in critical venue
-    - Triggering chain notifications through McGarry
-    institutional_impact: Highlights White House machinery prioritizing security over
-      humanity
-    internal_dynamics: ''
-    global_id: ger_organization_857f15228dd0
-  derived_from_beat_uuids: &id010
-  - beat_c34acdc0fc3502fa
-  - beat_7fe9906bffeacda9
-  - beat_a11e9795ef0eb225
-  - beat_d6bc38e9708a270b
-  - beat_c81b80570a62c5ee
-  source_season: 2
-  source_database: westwing.s02
-- fabula_uuid: cand_evt_scene_f3175fccd0c5cbf6_1
-  global_id: null
-  title: Abbey Relays Coded Intimacy All-Clear via Charlie
-  description: In a playful coded exchange, Abbey instructs Charlie to inform Bartlet
-    that his 'blood pressure is 120/80' and other 'medical' vitals are normal—subtext
-    for resuming intimacy after 14 weeks of abstinence due to health concerns. Charlie
-    urgently delivers it, prompting Bartlet's eager entrance into the Outer Oval.
-    Amid Mrs. Landingham's interruptions and duty reminders, the couple banters excitedly
-    about stolen moments, but Abbey reins him in, prioritizing work and plutonium
-    talks before a teasing kiss and her exit. This comedic respite humanizes the President,
-    contrasting raw personal longing with Oval Office demands, providing relief amid
-    episode chaos.
-  episode_uuid: ep_sea_ser_the_west_wing_s02_e05
-  scene_sequence: 8
-  sequence_in_scene: 10
-  key_dialogue: *id009
-  is_flashback: false
-  location_uuid: ger_location_454b89d82ef1
-  theme_uuids: []
-  arc_uuids: []
-  participations:
-  - character_uuid: ger_agent_52e3762c6aed
-    emotional_state: Bewildered confusion laced with professional poise
-    goals:
-    - Precisely relay Abbey's cryptic message without error
-    - Avoid disrupting the President's critical advisor meeting
-    what_happened: Sits behind desk, stands to greet Abbey warmly, grabs pen and notepad
-      to record her bizarre 'vitals' message with visible confusion, questions phrasing
-      earnestly, then bolts urgently to deliver it, sparking Bartlet's entrance.
-    observed_status: Sits behind desk, stands to greet Abbey warmly, grabs pen and
-      notepad to record her bizarre 'vitals' message with visible confusion, questions
-      phrasing earnestly, then bolts urgently to deliver it, sparking Bartlet's entrance.
-    beliefs:
-    - First Lady's instructions demand immediate, unquestioning action
-    - Medical jargon applies literally to the recipient unless clarified
-    observed_traits:
-    - dutiful
-    - earnest
-    - literal-minded
-    importance: primary
-    global_id: ger_agent_52e3762c6aed
-  - character_uuid: ger_agent_198649bce78f
-    emotional_state: Amused playfulness veiling affectionate control
-    goals:
-    - Convey all-clear for intimacy via clever code to evade eavesdroppers
-    - Balance Bartlet's urges against plutonium crisis and her 6 PM flight
-    what_happened: Enters from portico purposefully, dictates playful coded vitals
-      to Charlie signaling intimacy resumption, sits casually on desk chatting with
-      Landingham, leads excited Bartlet into Oval for flirty banter on locations and
-      time constraints, reins him with work reminders, teases with kiss before dashing
-      out.
-    observed_status: Enters from portico purposefully, dictates playful coded vitals
-      to Charlie signaling intimacy resumption, sits casually on desk chatting with
-      Landingham, leads excited Bartlet into Oval for flirty banter on locations and
-      time constraints, reins him with work reminders, teases with kiss before dashing
-      out.
-    beliefs:
-    - Duty must temper passion, but stolen moments sustain them
-    - Coded discretion protects private needs in public spaces
-    observed_traits:
-    - playful
-    - authoritative
-    - composed
-    importance: primary
-    global_id: ger_agent_198649bce78f
-  - character_uuid: ger_agent_dd62525d972a
-    emotional_state: Neutral (off-screen)
-    goals: []
-    what_happened: Absent but invoked by Landingham's offer to inform him of advisors'
-      meeting end, underscoring his role in crisis coordination.
-    observed_status: Absent but invoked by Landingham's offer to inform him of advisors'
-      meeting end, underscoring his role in crisis coordination.
-    beliefs: []
-    observed_traits: []
-    importance: primary
-    global_id: ger_agent_dd62525d972a
-  - character_uuid: ger_agent_967eb6cb648e
-    emotional_state: Neutral (off-screen)
-    goals: []
-    what_happened: Absent but named by Abbey as her schedule coordinator for carving
-      out intimacy slot before Cochran's Mills.
-    observed_status: Absent but named by Abbey as her schedule coordinator for carving
-      out intimacy slot before Cochran's Mills.
-    beliefs: []
-    observed_traits: []
-    importance: primary
-    global_id: ger_agent_967eb6cb648e
-  - character_uuid: ger_agent_8511b338f685
-    emotional_state: Calm professionalism tinged with gentle amusement
-    goals:
-    - Facilitate smooth transition from meeting by alerting key staff
-    - Gauge and address President's evident tension
-    what_happened: Enters Outer Oval cordially greeting Abbey, offers assistance politely,
-      greets Bartlet warmly but probes his tension, follows toward Oval suggesting
-      to notify McGarry and advisors, shut out by slammed door with wry observation
-      on his state.
-    observed_status: Enters Outer Oval cordially greeting Abbey, offers assistance
-      politely, greets Bartlet warmly but probes his tension, follows toward Oval
-      suggesting to notify McGarry and advisors, shut out by slammed door with wry
-      observation on his state.
-    beliefs:
-    - Presidential needs override protocol but require discreet support
-    - Routine inquiries maintain operational flow amid personal moments
-    observed_traits:
-    - professional
-    - observant
-    - ' unflappable'
-    importance: primary
-    global_id: ger_agent_8511b338f685
-  object_involvements:
-  - object_uuid: ger_object_43e9fc68517c
-    description_of_involvement: Bartlet urgently queries if Oval Office curtains close,
-      eyeing them desperately as hasty privacy barricade for immediate intimacy, symbolizing
-      futile grasp for seclusion amid Oval's exposure; Abbey nixes the idea, heightening
-      comedic frustration of duty's intrusion on desire.
-    status_before_event: Open, filtering daylight in Oval Office
-    status_after_event: Unchanged, still open as couple postpones tryst
-    global_id: ger_object_43e9fc68517c
-  location_involvements:
-  - location_uuid: ger_location_d1360144f47e
-    description_of_involvement: The Residence's bedroom pitched by Abbey as viable
-      on-site haven for their liaison, eagerly embraced by Bartlet as 'smart' proximity
-      solution before schedules intervene, teasing feasible escape within White House
-      bounds.
-    observed_atmosphere: Imagined sanctuary of hushed domesticity
-    functional_role: Proposed tryst venue
-    symbolic_significance: Rare private refuge amid institutional glare
-    access_restrictions: Accessible upstairs, coordinated via staff
-    key_environmental_details:
-    - Sheets implying urgent reunion
-    - Proximity to Oval easing logistics
-    global_id: ger_location_d1360144f47e
-  - location_uuid: ger_location_454b89d82ef1
-    description_of_involvement: Korea hurled by Abbey as plutonium flashpoint tying
-      Bartlet to Roosevelt Room, weaponizing geopolitics to douse his fire, blending
-      bedroom farce with nuclear peril.
-    observed_atmosphere: Shadowed crisis specter
-    functional_role: Policy anchor halting passion
-    symbolic_significance: Global threats invading intimate space
-    access_restrictions: Distant but invasively relevant
-    key_environmental_details:
-    - Plutonium pipeline menace
-    - Summit imperilment echoes
-    global_id: ger_location_454b89d82ef1
-  - location_uuid: ger_location_6f4d206272dc
-    description_of_involvement: Cochran's Mills, Pennsylvania looms as Abbey's 6 PM
-      flight deadline, compressing their window to 'find time' via Charlie and Lilly,
-      fracturing reunion with First Lady obligations.
-    observed_atmosphere: Ticking-clock rural urgency
-    functional_role: Upcoming commitment constraint
-    symbolic_significance: Duty's inexorable pull on personal joy
-    access_restrictions: Demands departure post-6 PM
-    key_environmental_details:
-    - Modest mill-town evocation
-    - Flight logistics pressure
-    global_id: ger_location_6f4d206272dc
-  - location_uuid: ger_location_b5d75b8fe51b
-    description_of_involvement: New Hampshire jokingly dismissed by Bartlet as too
-      distant for quick plane hop, underscoring time's tyranny on their starved passion
-      amid primary shadows.
-    observed_atmosphere: Remote, impractical chill
-    functional_role: Rejected distant venue option
-    symbolic_significance: Political heartland too far for human needs
-    access_restrictions: Hour-and-half flight away
-    key_environmental_details:
-    - New England frost metaphorically distant
-    - Primary battleground irrelevance here
-    global_id: ger_location_b5d75b8fe51b
-  - location_uuid: ger_location_7423b10d7d15
-    description_of_involvement: Roosevelt Room referenced as site of Bartlet's ongoing
-      plutonium crisis huddle with Far East Advisors, anchoring duty's pull that Abbey
-      invokes to halt his advances, contrasting policy gravity with personal frolic.
-    observed_atmosphere: Off-screen tension of geopolitical stakes
-    functional_role: Prior obligation barrier to intimacy
-    symbolic_significance: Realm of world crises eclipsing marital needs
-    access_restrictions: Occupied by advisors, not to be interrupted
-    key_environmental_details:
-    - Conference table for advisor briefings
-    - Echoes of policy debate
-    global_id: ger_location_7423b10d7d15
-  organization_involvements:
-  - organization_uuid: ger_organization_857f15228dd0
-    description_of_involvement: Far East Advisors hold Bartlet in Roosevelt Room throes
-      over Korea plutonium, invoked repeatedly as unbreakable duty chain—Abbey and
-      Landingham reference ending their session via McGarry, framing institutional
-      drag on personal life.
-    active_representation: Via ongoing meeting occupancy and staff protocol for dismissal
-    power_dynamics: Exerting advisory constraint on President's availability
-    organizational_goals:
-    - Brief President on proliferation risks from Korea
-    - Secure policy alignment on plutonium response
-    influence_mechanisms:
-    - Occupying time in critical venue
-    - Triggering chain notifications through McGarry
-    institutional_impact: Highlights White House machinery prioritizing security over
-      humanity
-    internal_dynamics: ''
-    global_id: ger_organization_857f15228dd0
-  derived_from_beat_uuids: *id010
-  source_season: 2
-  source_database: westwing.s02
-- fabula_uuid: cand_evt_scene_f3175fccd0c5cbf6_1
-  global_id: null
-  title: Abbey Relays Coded Intimacy All-Clear via Charlie
-  description: In a playful coded exchange, Abbey instructs Charlie to inform Bartlet
-    that his 'blood pressure is 120/80' and other 'medical' vitals are normal—subtext
-    for resuming intimacy after 14 weeks of abstinence due to health concerns. Charlie
-    urgently delivers it, prompting Bartlet's eager entrance into the Outer Oval.
-    Amid Mrs. Landingham's interruptions and duty reminders, the couple banters excitedly
-    about stolen moments, but Abbey reins him in, prioritizing work and plutonium
-    talks before a teasing kiss and her exit. This comedic respite humanizes the President,
-    contrasting raw personal longing with Oval Office demands, providing relief amid
-    episode chaos.
-  episode_uuid: ep_sea_ser_the_west_wing_s02_e05
-  scene_sequence: 8
-  sequence_in_scene: 10
-  key_dialogue: *id009
-  is_flashback: false
   location_uuid: ger_location_6f4d206272dc
   theme_uuids: []
   arc_uuids: []
@@ -2890,7 +2483,7 @@ events:
     observed_traits: []
     importance: primary
     global_id: ger_agent_967eb6cb648e
-  - character_uuid: ger_agent_8511b338f685
+  - character_uuid: ger_agent_1f0b1cae13c5
     emotional_state: Calm professionalism tinged with gentle amusement
     goals:
     - Facilitate smooth transition from meeting by alerting key staff
@@ -2911,7 +2504,7 @@ events:
     - observant
     - ' unflappable'
     importance: primary
-    global_id: ger_agent_8511b338f685
+    global_id: ger_agent_1f0b1cae13c5
   object_involvements:
   - object_uuid: ger_object_43e9fc68517c
     description_of_involvement: Bartlet urgently queries if Oval Office curtains close,
@@ -2922,6 +2515,30 @@ events:
     status_after_event: Unchanged, still open as couple postpones tryst
     global_id: ger_object_43e9fc68517c
   location_involvements:
+  - location_uuid: ger_location_6f4d206272dc
+    description_of_involvement: Cochran's Mills, Pennsylvania looms as Abbey's 6 PM
+      flight deadline, compressing their window to 'find time' via Charlie and Lilly,
+      fracturing reunion with First Lady obligations.
+    observed_atmosphere: Ticking-clock rural urgency
+    functional_role: Upcoming commitment constraint
+    symbolic_significance: Duty's inexorable pull on personal joy
+    access_restrictions: Demands departure post-6 PM
+    key_environmental_details:
+    - Modest mill-town evocation
+    - Flight logistics pressure
+    global_id: ger_location_6f4d206272dc
+  - location_uuid: ger_location_7423b10d7d15
+    description_of_involvement: Roosevelt Room referenced as site of Bartlet's ongoing
+      plutonium crisis huddle with Far East Advisors, anchoring duty's pull that Abbey
+      invokes to halt his advances, contrasting policy gravity with personal frolic.
+    observed_atmosphere: Off-screen tension of geopolitical stakes
+    functional_role: Prior obligation barrier to intimacy
+    symbolic_significance: Realm of world crises eclipsing marital needs
+    access_restrictions: Occupied by advisors, not to be interrupted
+    key_environmental_details:
+    - Conference table for advisor briefings
+    - Echoes of policy debate
+    global_id: ger_location_7423b10d7d15
   - location_uuid: ger_location_d1360144f47e
     description_of_involvement: The Residence's bedroom pitched by Abbey as viable
       on-site haven for their liaison, eagerly embraced by Bartlet as 'smart' proximity
@@ -2935,6 +2552,18 @@ events:
     - Sheets implying urgent reunion
     - Proximity to Oval easing logistics
     global_id: ger_location_d1360144f47e
+  - location_uuid: ger_location_a89fe7905ec6
+    description_of_involvement: New Hampshire jokingly dismissed by Bartlet as too
+      distant for quick plane hop, underscoring time's tyranny on their starved passion
+      amid primary shadows.
+    observed_atmosphere: Remote, impractical chill
+    functional_role: Rejected distant venue option
+    symbolic_significance: Political heartland too far for human needs
+    access_restrictions: Hour-and-half flight away
+    key_environmental_details:
+    - New England frost metaphorically distant
+    - Primary battleground irrelevance here
+    global_id: ger_location_a89fe7905ec6
   - location_uuid: ger_location_454b89d82ef1
     description_of_involvement: Korea hurled by Abbey as plutonium flashpoint tying
       Bartlet to Roosevelt Room, weaponizing geopolitics to douse his fire, blending
@@ -2947,42 +2576,6 @@ events:
     - Plutonium pipeline menace
     - Summit imperilment echoes
     global_id: ger_location_454b89d82ef1
-  - location_uuid: ger_location_6f4d206272dc
-    description_of_involvement: Cochran's Mills, Pennsylvania looms as Abbey's 6 PM
-      flight deadline, compressing their window to 'find time' via Charlie and Lilly,
-      fracturing reunion with First Lady obligations.
-    observed_atmosphere: Ticking-clock rural urgency
-    functional_role: Upcoming commitment constraint
-    symbolic_significance: Duty's inexorable pull on personal joy
-    access_restrictions: Demands departure post-6 PM
-    key_environmental_details:
-    - Modest mill-town evocation
-    - Flight logistics pressure
-    global_id: ger_location_6f4d206272dc
-  - location_uuid: ger_location_b5d75b8fe51b
-    description_of_involvement: New Hampshire jokingly dismissed by Bartlet as too
-      distant for quick plane hop, underscoring time's tyranny on their starved passion
-      amid primary shadows.
-    observed_atmosphere: Remote, impractical chill
-    functional_role: Rejected distant venue option
-    symbolic_significance: Political heartland too far for human needs
-    access_restrictions: Hour-and-half flight away
-    key_environmental_details:
-    - New England frost metaphorically distant
-    - Primary battleground irrelevance here
-    global_id: ger_location_b5d75b8fe51b
-  - location_uuid: ger_location_7423b10d7d15
-    description_of_involvement: Roosevelt Room referenced as site of Bartlet's ongoing
-      plutonium crisis huddle with Far East Advisors, anchoring duty's pull that Abbey
-      invokes to halt his advances, contrasting policy gravity with personal frolic.
-    observed_atmosphere: Off-screen tension of geopolitical stakes
-    functional_role: Prior obligation barrier to intimacy
-    symbolic_significance: Realm of world crises eclipsing marital needs
-    access_restrictions: Occupied by advisors, not to be interrupted
-    key_environmental_details:
-    - Conference table for advisor briefings
-    - Echoes of policy debate
-    global_id: ger_location_7423b10d7d15
   organization_involvements:
   - organization_uuid: ger_organization_857f15228dd0
     description_of_involvement: Far East Advisors hold Bartlet in Roosevelt Room throes
@@ -3001,208 +2594,12 @@ events:
       humanity
     internal_dynamics: ''
     global_id: ger_organization_857f15228dd0
-  derived_from_beat_uuids: *id010
-  source_season: 2
-  source_database: westwing.s02
-- fabula_uuid: cand_evt_scene_f3175fccd0c5cbf6_1
-  global_id: null
-  title: Abbey Relays Coded Intimacy All-Clear via Charlie
-  description: In a playful coded exchange, Abbey instructs Charlie to inform Bartlet
-    that his 'blood pressure is 120/80' and other 'medical' vitals are normal—subtext
-    for resuming intimacy after 14 weeks of abstinence due to health concerns. Charlie
-    urgently delivers it, prompting Bartlet's eager entrance into the Outer Oval.
-    Amid Mrs. Landingham's interruptions and duty reminders, the couple banters excitedly
-    about stolen moments, but Abbey reins him in, prioritizing work and plutonium
-    talks before a teasing kiss and her exit. This comedic respite humanizes the President,
-    contrasting raw personal longing with Oval Office demands, providing relief amid
-    episode chaos.
-  episode_uuid: ep_sea_ser_the_west_wing_s02_e05
-  scene_sequence: 8
-  sequence_in_scene: 10
-  key_dialogue: *id009
-  is_flashback: false
-  location_uuid: ger_location_b5d75b8fe51b
-  theme_uuids: []
-  arc_uuids: []
-  participations:
-  - character_uuid: ger_agent_52e3762c6aed
-    emotional_state: Bewildered confusion laced with professional poise
-    goals:
-    - Precisely relay Abbey's cryptic message without error
-    - Avoid disrupting the President's critical advisor meeting
-    what_happened: Sits behind desk, stands to greet Abbey warmly, grabs pen and notepad
-      to record her bizarre 'vitals' message with visible confusion, questions phrasing
-      earnestly, then bolts urgently to deliver it, sparking Bartlet's entrance.
-    observed_status: Sits behind desk, stands to greet Abbey warmly, grabs pen and
-      notepad to record her bizarre 'vitals' message with visible confusion, questions
-      phrasing earnestly, then bolts urgently to deliver it, sparking Bartlet's entrance.
-    beliefs:
-    - First Lady's instructions demand immediate, unquestioning action
-    - Medical jargon applies literally to the recipient unless clarified
-    observed_traits:
-    - dutiful
-    - earnest
-    - literal-minded
-    importance: primary
-    global_id: ger_agent_52e3762c6aed
-  - character_uuid: ger_agent_198649bce78f
-    emotional_state: Amused playfulness veiling affectionate control
-    goals:
-    - Convey all-clear for intimacy via clever code to evade eavesdroppers
-    - Balance Bartlet's urges against plutonium crisis and her 6 PM flight
-    what_happened: Enters from portico purposefully, dictates playful coded vitals
-      to Charlie signaling intimacy resumption, sits casually on desk chatting with
-      Landingham, leads excited Bartlet into Oval for flirty banter on locations and
-      time constraints, reins him with work reminders, teases with kiss before dashing
-      out.
-    observed_status: Enters from portico purposefully, dictates playful coded vitals
-      to Charlie signaling intimacy resumption, sits casually on desk chatting with
-      Landingham, leads excited Bartlet into Oval for flirty banter on locations and
-      time constraints, reins him with work reminders, teases with kiss before dashing
-      out.
-    beliefs:
-    - Duty must temper passion, but stolen moments sustain them
-    - Coded discretion protects private needs in public spaces
-    observed_traits:
-    - playful
-    - authoritative
-    - composed
-    importance: primary
-    global_id: ger_agent_198649bce78f
-  - character_uuid: ger_agent_dd62525d972a
-    emotional_state: Neutral (off-screen)
-    goals: []
-    what_happened: Absent but invoked by Landingham's offer to inform him of advisors'
-      meeting end, underscoring his role in crisis coordination.
-    observed_status: Absent but invoked by Landingham's offer to inform him of advisors'
-      meeting end, underscoring his role in crisis coordination.
-    beliefs: []
-    observed_traits: []
-    importance: primary
-    global_id: ger_agent_dd62525d972a
-  - character_uuid: ger_agent_967eb6cb648e
-    emotional_state: Neutral (off-screen)
-    goals: []
-    what_happened: Absent but named by Abbey as her schedule coordinator for carving
-      out intimacy slot before Cochran's Mills.
-    observed_status: Absent but named by Abbey as her schedule coordinator for carving
-      out intimacy slot before Cochran's Mills.
-    beliefs: []
-    observed_traits: []
-    importance: primary
-    global_id: ger_agent_967eb6cb648e
-  - character_uuid: ger_agent_8511b338f685
-    emotional_state: Calm professionalism tinged with gentle amusement
-    goals:
-    - Facilitate smooth transition from meeting by alerting key staff
-    - Gauge and address President's evident tension
-    what_happened: Enters Outer Oval cordially greeting Abbey, offers assistance politely,
-      greets Bartlet warmly but probes his tension, follows toward Oval suggesting
-      to notify McGarry and advisors, shut out by slammed door with wry observation
-      on his state.
-    observed_status: Enters Outer Oval cordially greeting Abbey, offers assistance
-      politely, greets Bartlet warmly but probes his tension, follows toward Oval
-      suggesting to notify McGarry and advisors, shut out by slammed door with wry
-      observation on his state.
-    beliefs:
-    - Presidential needs override protocol but require discreet support
-    - Routine inquiries maintain operational flow amid personal moments
-    observed_traits:
-    - professional
-    - observant
-    - ' unflappable'
-    importance: primary
-    global_id: ger_agent_8511b338f685
-  object_involvements:
-  - object_uuid: ger_object_43e9fc68517c
-    description_of_involvement: Bartlet urgently queries if Oval Office curtains close,
-      eyeing them desperately as hasty privacy barricade for immediate intimacy, symbolizing
-      futile grasp for seclusion amid Oval's exposure; Abbey nixes the idea, heightening
-      comedic frustration of duty's intrusion on desire.
-    status_before_event: Open, filtering daylight in Oval Office
-    status_after_event: Unchanged, still open as couple postpones tryst
-    global_id: ger_object_43e9fc68517c
-  location_involvements:
-  - location_uuid: ger_location_d1360144f47e
-    description_of_involvement: The Residence's bedroom pitched by Abbey as viable
-      on-site haven for their liaison, eagerly embraced by Bartlet as 'smart' proximity
-      solution before schedules intervene, teasing feasible escape within White House
-      bounds.
-    observed_atmosphere: Imagined sanctuary of hushed domesticity
-    functional_role: Proposed tryst venue
-    symbolic_significance: Rare private refuge amid institutional glare
-    access_restrictions: Accessible upstairs, coordinated via staff
-    key_environmental_details:
-    - Sheets implying urgent reunion
-    - Proximity to Oval easing logistics
-    global_id: ger_location_d1360144f47e
-  - location_uuid: ger_location_454b89d82ef1
-    description_of_involvement: Korea hurled by Abbey as plutonium flashpoint tying
-      Bartlet to Roosevelt Room, weaponizing geopolitics to douse his fire, blending
-      bedroom farce with nuclear peril.
-    observed_atmosphere: Shadowed crisis specter
-    functional_role: Policy anchor halting passion
-    symbolic_significance: Global threats invading intimate space
-    access_restrictions: Distant but invasively relevant
-    key_environmental_details:
-    - Plutonium pipeline menace
-    - Summit imperilment echoes
-    global_id: ger_location_454b89d82ef1
-  - location_uuid: ger_location_6f4d206272dc
-    description_of_involvement: Cochran's Mills, Pennsylvania looms as Abbey's 6 PM
-      flight deadline, compressing their window to 'find time' via Charlie and Lilly,
-      fracturing reunion with First Lady obligations.
-    observed_atmosphere: Ticking-clock rural urgency
-    functional_role: Upcoming commitment constraint
-    symbolic_significance: Duty's inexorable pull on personal joy
-    access_restrictions: Demands departure post-6 PM
-    key_environmental_details:
-    - Modest mill-town evocation
-    - Flight logistics pressure
-    global_id: ger_location_6f4d206272dc
-  - location_uuid: ger_location_b5d75b8fe51b
-    description_of_involvement: New Hampshire jokingly dismissed by Bartlet as too
-      distant for quick plane hop, underscoring time's tyranny on their starved passion
-      amid primary shadows.
-    observed_atmosphere: Remote, impractical chill
-    functional_role: Rejected distant venue option
-    symbolic_significance: Political heartland too far for human needs
-    access_restrictions: Hour-and-half flight away
-    key_environmental_details:
-    - New England frost metaphorically distant
-    - Primary battleground irrelevance here
-    global_id: ger_location_b5d75b8fe51b
-  - location_uuid: ger_location_7423b10d7d15
-    description_of_involvement: Roosevelt Room referenced as site of Bartlet's ongoing
-      plutonium crisis huddle with Far East Advisors, anchoring duty's pull that Abbey
-      invokes to halt his advances, contrasting policy gravity with personal frolic.
-    observed_atmosphere: Off-screen tension of geopolitical stakes
-    functional_role: Prior obligation barrier to intimacy
-    symbolic_significance: Realm of world crises eclipsing marital needs
-    access_restrictions: Occupied by advisors, not to be interrupted
-    key_environmental_details:
-    - Conference table for advisor briefings
-    - Echoes of policy debate
-    global_id: ger_location_7423b10d7d15
-  organization_involvements:
-  - organization_uuid: ger_organization_857f15228dd0
-    description_of_involvement: Far East Advisors hold Bartlet in Roosevelt Room throes
-      over Korea plutonium, invoked repeatedly as unbreakable duty chain—Abbey and
-      Landingham reference ending their session via McGarry, framing institutional
-      drag on personal life.
-    active_representation: Via ongoing meeting occupancy and staff protocol for dismissal
-    power_dynamics: Exerting advisory constraint on President's availability
-    organizational_goals:
-    - Brief President on proliferation risks from Korea
-    - Secure policy alignment on plutonium response
-    influence_mechanisms:
-    - Occupying time in critical venue
-    - Triggering chain notifications through McGarry
-    institutional_impact: Highlights White House machinery prioritizing security over
-      humanity
-    internal_dynamics: ''
-    global_id: ger_organization_857f15228dd0
-  derived_from_beat_uuids: *id010
+  derived_from_beat_uuids: &id010
+  - beat_c34acdc0fc3502fa
+  - beat_7fe9906bffeacda9
+  - beat_a11e9795ef0eb225
+  - beat_d6bc38e9708a270b
+  - beat_c81b80570a62c5ee
   source_season: 2
   source_database: westwing.s02
 - fabula_uuid: cand_evt_scene_f3175fccd0c5cbf6_1
@@ -3292,7 +2689,7 @@ events:
     observed_traits: []
     importance: primary
     global_id: ger_agent_967eb6cb648e
-  - character_uuid: ger_agent_8511b338f685
+  - character_uuid: ger_agent_1f0b1cae13c5
     emotional_state: Calm professionalism tinged with gentle amusement
     goals:
     - Facilitate smooth transition from meeting by alerting key staff
@@ -3313,7 +2710,7 @@ events:
     - observant
     - ' unflappable'
     importance: primary
-    global_id: ger_agent_8511b338f685
+    global_id: ger_agent_1f0b1cae13c5
   object_involvements:
   - object_uuid: ger_object_43e9fc68517c
     description_of_involvement: Bartlet urgently queries if Oval Office curtains close,
@@ -3324,6 +2721,30 @@ events:
     status_after_event: Unchanged, still open as couple postpones tryst
     global_id: ger_object_43e9fc68517c
   location_involvements:
+  - location_uuid: ger_location_6f4d206272dc
+    description_of_involvement: Cochran's Mills, Pennsylvania looms as Abbey's 6 PM
+      flight deadline, compressing their window to 'find time' via Charlie and Lilly,
+      fracturing reunion with First Lady obligations.
+    observed_atmosphere: Ticking-clock rural urgency
+    functional_role: Upcoming commitment constraint
+    symbolic_significance: Duty's inexorable pull on personal joy
+    access_restrictions: Demands departure post-6 PM
+    key_environmental_details:
+    - Modest mill-town evocation
+    - Flight logistics pressure
+    global_id: ger_location_6f4d206272dc
+  - location_uuid: ger_location_7423b10d7d15
+    description_of_involvement: Roosevelt Room referenced as site of Bartlet's ongoing
+      plutonium crisis huddle with Far East Advisors, anchoring duty's pull that Abbey
+      invokes to halt his advances, contrasting policy gravity with personal frolic.
+    observed_atmosphere: Off-screen tension of geopolitical stakes
+    functional_role: Prior obligation barrier to intimacy
+    symbolic_significance: Realm of world crises eclipsing marital needs
+    access_restrictions: Occupied by advisors, not to be interrupted
+    key_environmental_details:
+    - Conference table for advisor briefings
+    - Echoes of policy debate
+    global_id: ger_location_7423b10d7d15
   - location_uuid: ger_location_d1360144f47e
     description_of_involvement: The Residence's bedroom pitched by Abbey as viable
       on-site haven for their liaison, eagerly embraced by Bartlet as 'smart' proximity
@@ -3337,6 +2758,18 @@ events:
     - Sheets implying urgent reunion
     - Proximity to Oval easing logistics
     global_id: ger_location_d1360144f47e
+  - location_uuid: ger_location_a89fe7905ec6
+    description_of_involvement: New Hampshire jokingly dismissed by Bartlet as too
+      distant for quick plane hop, underscoring time's tyranny on their starved passion
+      amid primary shadows.
+    observed_atmosphere: Remote, impractical chill
+    functional_role: Rejected distant venue option
+    symbolic_significance: Political heartland too far for human needs
+    access_restrictions: Hour-and-half flight away
+    key_environmental_details:
+    - New England frost metaphorically distant
+    - Primary battleground irrelevance here
+    global_id: ger_location_a89fe7905ec6
   - location_uuid: ger_location_454b89d82ef1
     description_of_involvement: Korea hurled by Abbey as plutonium flashpoint tying
       Bartlet to Roosevelt Room, weaponizing geopolitics to douse his fire, blending
@@ -3349,6 +2782,146 @@ events:
     - Plutonium pipeline menace
     - Summit imperilment echoes
     global_id: ger_location_454b89d82ef1
+  organization_involvements:
+  - organization_uuid: ger_organization_857f15228dd0
+    description_of_involvement: Far East Advisors hold Bartlet in Roosevelt Room throes
+      over Korea plutonium, invoked repeatedly as unbreakable duty chain—Abbey and
+      Landingham reference ending their session via McGarry, framing institutional
+      drag on personal life.
+    active_representation: Via ongoing meeting occupancy and staff protocol for dismissal
+    power_dynamics: Exerting advisory constraint on President's availability
+    organizational_goals:
+    - Brief President on proliferation risks from Korea
+    - Secure policy alignment on plutonium response
+    influence_mechanisms:
+    - Occupying time in critical venue
+    - Triggering chain notifications through McGarry
+    institutional_impact: Highlights White House machinery prioritizing security over
+      humanity
+    internal_dynamics: ''
+    global_id: ger_organization_857f15228dd0
+  derived_from_beat_uuids: *id010
+  source_season: 2
+  source_database: westwing.s02
+- fabula_uuid: cand_evt_scene_f3175fccd0c5cbf6_1
+  global_id: null
+  title: Abbey Relays Coded Intimacy All-Clear via Charlie
+  description: In a playful coded exchange, Abbey instructs Charlie to inform Bartlet
+    that his 'blood pressure is 120/80' and other 'medical' vitals are normal—subtext
+    for resuming intimacy after 14 weeks of abstinence due to health concerns. Charlie
+    urgently delivers it, prompting Bartlet's eager entrance into the Outer Oval.
+    Amid Mrs. Landingham's interruptions and duty reminders, the couple banters excitedly
+    about stolen moments, but Abbey reins him in, prioritizing work and plutonium
+    talks before a teasing kiss and her exit. This comedic respite humanizes the President,
+    contrasting raw personal longing with Oval Office demands, providing relief amid
+    episode chaos.
+  episode_uuid: ep_sea_ser_the_west_wing_s02_e05
+  scene_sequence: 8
+  sequence_in_scene: 10
+  key_dialogue: *id009
+  is_flashback: false
+  location_uuid: ger_location_d1360144f47e
+  theme_uuids: []
+  arc_uuids: []
+  participations:
+  - character_uuid: ger_agent_52e3762c6aed
+    emotional_state: Bewildered confusion laced with professional poise
+    goals:
+    - Precisely relay Abbey's cryptic message without error
+    - Avoid disrupting the President's critical advisor meeting
+    what_happened: Sits behind desk, stands to greet Abbey warmly, grabs pen and notepad
+      to record her bizarre 'vitals' message with visible confusion, questions phrasing
+      earnestly, then bolts urgently to deliver it, sparking Bartlet's entrance.
+    observed_status: Sits behind desk, stands to greet Abbey warmly, grabs pen and
+      notepad to record her bizarre 'vitals' message with visible confusion, questions
+      phrasing earnestly, then bolts urgently to deliver it, sparking Bartlet's entrance.
+    beliefs:
+    - First Lady's instructions demand immediate, unquestioning action
+    - Medical jargon applies literally to the recipient unless clarified
+    observed_traits:
+    - dutiful
+    - earnest
+    - literal-minded
+    importance: primary
+    global_id: ger_agent_52e3762c6aed
+  - character_uuid: ger_agent_198649bce78f
+    emotional_state: Amused playfulness veiling affectionate control
+    goals:
+    - Convey all-clear for intimacy via clever code to evade eavesdroppers
+    - Balance Bartlet's urges against plutonium crisis and her 6 PM flight
+    what_happened: Enters from portico purposefully, dictates playful coded vitals
+      to Charlie signaling intimacy resumption, sits casually on desk chatting with
+      Landingham, leads excited Bartlet into Oval for flirty banter on locations and
+      time constraints, reins him with work reminders, teases with kiss before dashing
+      out.
+    observed_status: Enters from portico purposefully, dictates playful coded vitals
+      to Charlie signaling intimacy resumption, sits casually on desk chatting with
+      Landingham, leads excited Bartlet into Oval for flirty banter on locations and
+      time constraints, reins him with work reminders, teases with kiss before dashing
+      out.
+    beliefs:
+    - Duty must temper passion, but stolen moments sustain them
+    - Coded discretion protects private needs in public spaces
+    observed_traits:
+    - playful
+    - authoritative
+    - composed
+    importance: primary
+    global_id: ger_agent_198649bce78f
+  - character_uuid: ger_agent_dd62525d972a
+    emotional_state: Neutral (off-screen)
+    goals: []
+    what_happened: Absent but invoked by Landingham's offer to inform him of advisors'
+      meeting end, underscoring his role in crisis coordination.
+    observed_status: Absent but invoked by Landingham's offer to inform him of advisors'
+      meeting end, underscoring his role in crisis coordination.
+    beliefs: []
+    observed_traits: []
+    importance: primary
+    global_id: ger_agent_dd62525d972a
+  - character_uuid: ger_agent_967eb6cb648e
+    emotional_state: Neutral (off-screen)
+    goals: []
+    what_happened: Absent but named by Abbey as her schedule coordinator for carving
+      out intimacy slot before Cochran's Mills.
+    observed_status: Absent but named by Abbey as her schedule coordinator for carving
+      out intimacy slot before Cochran's Mills.
+    beliefs: []
+    observed_traits: []
+    importance: primary
+    global_id: ger_agent_967eb6cb648e
+  - character_uuid: ger_agent_1f0b1cae13c5
+    emotional_state: Calm professionalism tinged with gentle amusement
+    goals:
+    - Facilitate smooth transition from meeting by alerting key staff
+    - Gauge and address President's evident tension
+    what_happened: Enters Outer Oval cordially greeting Abbey, offers assistance politely,
+      greets Bartlet warmly but probes his tension, follows toward Oval suggesting
+      to notify McGarry and advisors, shut out by slammed door with wry observation
+      on his state.
+    observed_status: Enters Outer Oval cordially greeting Abbey, offers assistance
+      politely, greets Bartlet warmly but probes his tension, follows toward Oval
+      suggesting to notify McGarry and advisors, shut out by slammed door with wry
+      observation on his state.
+    beliefs:
+    - Presidential needs override protocol but require discreet support
+    - Routine inquiries maintain operational flow amid personal moments
+    observed_traits:
+    - professional
+    - observant
+    - ' unflappable'
+    importance: primary
+    global_id: ger_agent_1f0b1cae13c5
+  object_involvements:
+  - object_uuid: ger_object_43e9fc68517c
+    description_of_involvement: Bartlet urgently queries if Oval Office curtains close,
+      eyeing them desperately as hasty privacy barricade for immediate intimacy, symbolizing
+      futile grasp for seclusion amid Oval's exposure; Abbey nixes the idea, heightening
+      comedic frustration of duty's intrusion on desire.
+    status_before_event: Open, filtering daylight in Oval Office
+    status_after_event: Unchanged, still open as couple postpones tryst
+    global_id: ger_object_43e9fc68517c
+  location_involvements:
   - location_uuid: ger_location_6f4d206272dc
     description_of_involvement: Cochran's Mills, Pennsylvania looms as Abbey's 6 PM
       flight deadline, compressing their window to 'find time' via Charlie and Lilly,
@@ -3361,18 +2934,6 @@ events:
     - Modest mill-town evocation
     - Flight logistics pressure
     global_id: ger_location_6f4d206272dc
-  - location_uuid: ger_location_b5d75b8fe51b
-    description_of_involvement: New Hampshire jokingly dismissed by Bartlet as too
-      distant for quick plane hop, underscoring time's tyranny on their starved passion
-      amid primary shadows.
-    observed_atmosphere: Remote, impractical chill
-    functional_role: Rejected distant venue option
-    symbolic_significance: Political heartland too far for human needs
-    access_restrictions: Hour-and-half flight away
-    key_environmental_details:
-    - New England frost metaphorically distant
-    - Primary battleground irrelevance here
-    global_id: ger_location_b5d75b8fe51b
   - location_uuid: ger_location_7423b10d7d15
     description_of_involvement: Roosevelt Room referenced as site of Bartlet's ongoing
       plutonium crisis huddle with Far East Advisors, anchoring duty's pull that Abbey
@@ -3385,6 +2946,445 @@ events:
     - Conference table for advisor briefings
     - Echoes of policy debate
     global_id: ger_location_7423b10d7d15
+  - location_uuid: ger_location_d1360144f47e
+    description_of_involvement: The Residence's bedroom pitched by Abbey as viable
+      on-site haven for their liaison, eagerly embraced by Bartlet as 'smart' proximity
+      solution before schedules intervene, teasing feasible escape within White House
+      bounds.
+    observed_atmosphere: Imagined sanctuary of hushed domesticity
+    functional_role: Proposed tryst venue
+    symbolic_significance: Rare private refuge amid institutional glare
+    access_restrictions: Accessible upstairs, coordinated via staff
+    key_environmental_details:
+    - Sheets implying urgent reunion
+    - Proximity to Oval easing logistics
+    global_id: ger_location_d1360144f47e
+  - location_uuid: ger_location_a89fe7905ec6
+    description_of_involvement: New Hampshire jokingly dismissed by Bartlet as too
+      distant for quick plane hop, underscoring time's tyranny on their starved passion
+      amid primary shadows.
+    observed_atmosphere: Remote, impractical chill
+    functional_role: Rejected distant venue option
+    symbolic_significance: Political heartland too far for human needs
+    access_restrictions: Hour-and-half flight away
+    key_environmental_details:
+    - New England frost metaphorically distant
+    - Primary battleground irrelevance here
+    global_id: ger_location_a89fe7905ec6
+  - location_uuid: ger_location_454b89d82ef1
+    description_of_involvement: Korea hurled by Abbey as plutonium flashpoint tying
+      Bartlet to Roosevelt Room, weaponizing geopolitics to douse his fire, blending
+      bedroom farce with nuclear peril.
+    observed_atmosphere: Shadowed crisis specter
+    functional_role: Policy anchor halting passion
+    symbolic_significance: Global threats invading intimate space
+    access_restrictions: Distant but invasively relevant
+    key_environmental_details:
+    - Plutonium pipeline menace
+    - Summit imperilment echoes
+    global_id: ger_location_454b89d82ef1
+  organization_involvements:
+  - organization_uuid: ger_organization_857f15228dd0
+    description_of_involvement: Far East Advisors hold Bartlet in Roosevelt Room throes
+      over Korea plutonium, invoked repeatedly as unbreakable duty chain—Abbey and
+      Landingham reference ending their session via McGarry, framing institutional
+      drag on personal life.
+    active_representation: Via ongoing meeting occupancy and staff protocol for dismissal
+    power_dynamics: Exerting advisory constraint on President's availability
+    organizational_goals:
+    - Brief President on proliferation risks from Korea
+    - Secure policy alignment on plutonium response
+    influence_mechanisms:
+    - Occupying time in critical venue
+    - Triggering chain notifications through McGarry
+    institutional_impact: Highlights White House machinery prioritizing security over
+      humanity
+    internal_dynamics: ''
+    global_id: ger_organization_857f15228dd0
+  derived_from_beat_uuids: *id010
+  source_season: 2
+  source_database: westwing.s02
+- fabula_uuid: cand_evt_scene_f3175fccd0c5cbf6_1
+  global_id: null
+  title: Abbey Relays Coded Intimacy All-Clear via Charlie
+  description: In a playful coded exchange, Abbey instructs Charlie to inform Bartlet
+    that his 'blood pressure is 120/80' and other 'medical' vitals are normal—subtext
+    for resuming intimacy after 14 weeks of abstinence due to health concerns. Charlie
+    urgently delivers it, prompting Bartlet's eager entrance into the Outer Oval.
+    Amid Mrs. Landingham's interruptions and duty reminders, the couple banters excitedly
+    about stolen moments, but Abbey reins him in, prioritizing work and plutonium
+    talks before a teasing kiss and her exit. This comedic respite humanizes the President,
+    contrasting raw personal longing with Oval Office demands, providing relief amid
+    episode chaos.
+  episode_uuid: ep_sea_ser_the_west_wing_s02_e05
+  scene_sequence: 8
+  sequence_in_scene: 10
+  key_dialogue: *id009
+  is_flashback: false
+  location_uuid: ger_location_a89fe7905ec6
+  theme_uuids: []
+  arc_uuids: []
+  participations:
+  - character_uuid: ger_agent_52e3762c6aed
+    emotional_state: Bewildered confusion laced with professional poise
+    goals:
+    - Precisely relay Abbey's cryptic message without error
+    - Avoid disrupting the President's critical advisor meeting
+    what_happened: Sits behind desk, stands to greet Abbey warmly, grabs pen and notepad
+      to record her bizarre 'vitals' message with visible confusion, questions phrasing
+      earnestly, then bolts urgently to deliver it, sparking Bartlet's entrance.
+    observed_status: Sits behind desk, stands to greet Abbey warmly, grabs pen and
+      notepad to record her bizarre 'vitals' message with visible confusion, questions
+      phrasing earnestly, then bolts urgently to deliver it, sparking Bartlet's entrance.
+    beliefs:
+    - First Lady's instructions demand immediate, unquestioning action
+    - Medical jargon applies literally to the recipient unless clarified
+    observed_traits:
+    - dutiful
+    - earnest
+    - literal-minded
+    importance: primary
+    global_id: ger_agent_52e3762c6aed
+  - character_uuid: ger_agent_198649bce78f
+    emotional_state: Amused playfulness veiling affectionate control
+    goals:
+    - Convey all-clear for intimacy via clever code to evade eavesdroppers
+    - Balance Bartlet's urges against plutonium crisis and her 6 PM flight
+    what_happened: Enters from portico purposefully, dictates playful coded vitals
+      to Charlie signaling intimacy resumption, sits casually on desk chatting with
+      Landingham, leads excited Bartlet into Oval for flirty banter on locations and
+      time constraints, reins him with work reminders, teases with kiss before dashing
+      out.
+    observed_status: Enters from portico purposefully, dictates playful coded vitals
+      to Charlie signaling intimacy resumption, sits casually on desk chatting with
+      Landingham, leads excited Bartlet into Oval for flirty banter on locations and
+      time constraints, reins him with work reminders, teases with kiss before dashing
+      out.
+    beliefs:
+    - Duty must temper passion, but stolen moments sustain them
+    - Coded discretion protects private needs in public spaces
+    observed_traits:
+    - playful
+    - authoritative
+    - composed
+    importance: primary
+    global_id: ger_agent_198649bce78f
+  - character_uuid: ger_agent_dd62525d972a
+    emotional_state: Neutral (off-screen)
+    goals: []
+    what_happened: Absent but invoked by Landingham's offer to inform him of advisors'
+      meeting end, underscoring his role in crisis coordination.
+    observed_status: Absent but invoked by Landingham's offer to inform him of advisors'
+      meeting end, underscoring his role in crisis coordination.
+    beliefs: []
+    observed_traits: []
+    importance: primary
+    global_id: ger_agent_dd62525d972a
+  - character_uuid: ger_agent_967eb6cb648e
+    emotional_state: Neutral (off-screen)
+    goals: []
+    what_happened: Absent but named by Abbey as her schedule coordinator for carving
+      out intimacy slot before Cochran's Mills.
+    observed_status: Absent but named by Abbey as her schedule coordinator for carving
+      out intimacy slot before Cochran's Mills.
+    beliefs: []
+    observed_traits: []
+    importance: primary
+    global_id: ger_agent_967eb6cb648e
+  - character_uuid: ger_agent_1f0b1cae13c5
+    emotional_state: Calm professionalism tinged with gentle amusement
+    goals:
+    - Facilitate smooth transition from meeting by alerting key staff
+    - Gauge and address President's evident tension
+    what_happened: Enters Outer Oval cordially greeting Abbey, offers assistance politely,
+      greets Bartlet warmly but probes his tension, follows toward Oval suggesting
+      to notify McGarry and advisors, shut out by slammed door with wry observation
+      on his state.
+    observed_status: Enters Outer Oval cordially greeting Abbey, offers assistance
+      politely, greets Bartlet warmly but probes his tension, follows toward Oval
+      suggesting to notify McGarry and advisors, shut out by slammed door with wry
+      observation on his state.
+    beliefs:
+    - Presidential needs override protocol but require discreet support
+    - Routine inquiries maintain operational flow amid personal moments
+    observed_traits:
+    - professional
+    - observant
+    - ' unflappable'
+    importance: primary
+    global_id: ger_agent_1f0b1cae13c5
+  object_involvements:
+  - object_uuid: ger_object_43e9fc68517c
+    description_of_involvement: Bartlet urgently queries if Oval Office curtains close,
+      eyeing them desperately as hasty privacy barricade for immediate intimacy, symbolizing
+      futile grasp for seclusion amid Oval's exposure; Abbey nixes the idea, heightening
+      comedic frustration of duty's intrusion on desire.
+    status_before_event: Open, filtering daylight in Oval Office
+    status_after_event: Unchanged, still open as couple postpones tryst
+    global_id: ger_object_43e9fc68517c
+  location_involvements:
+  - location_uuid: ger_location_6f4d206272dc
+    description_of_involvement: Cochran's Mills, Pennsylvania looms as Abbey's 6 PM
+      flight deadline, compressing their window to 'find time' via Charlie and Lilly,
+      fracturing reunion with First Lady obligations.
+    observed_atmosphere: Ticking-clock rural urgency
+    functional_role: Upcoming commitment constraint
+    symbolic_significance: Duty's inexorable pull on personal joy
+    access_restrictions: Demands departure post-6 PM
+    key_environmental_details:
+    - Modest mill-town evocation
+    - Flight logistics pressure
+    global_id: ger_location_6f4d206272dc
+  - location_uuid: ger_location_7423b10d7d15
+    description_of_involvement: Roosevelt Room referenced as site of Bartlet's ongoing
+      plutonium crisis huddle with Far East Advisors, anchoring duty's pull that Abbey
+      invokes to halt his advances, contrasting policy gravity with personal frolic.
+    observed_atmosphere: Off-screen tension of geopolitical stakes
+    functional_role: Prior obligation barrier to intimacy
+    symbolic_significance: Realm of world crises eclipsing marital needs
+    access_restrictions: Occupied by advisors, not to be interrupted
+    key_environmental_details:
+    - Conference table for advisor briefings
+    - Echoes of policy debate
+    global_id: ger_location_7423b10d7d15
+  - location_uuid: ger_location_d1360144f47e
+    description_of_involvement: The Residence's bedroom pitched by Abbey as viable
+      on-site haven for their liaison, eagerly embraced by Bartlet as 'smart' proximity
+      solution before schedules intervene, teasing feasible escape within White House
+      bounds.
+    observed_atmosphere: Imagined sanctuary of hushed domesticity
+    functional_role: Proposed tryst venue
+    symbolic_significance: Rare private refuge amid institutional glare
+    access_restrictions: Accessible upstairs, coordinated via staff
+    key_environmental_details:
+    - Sheets implying urgent reunion
+    - Proximity to Oval easing logistics
+    global_id: ger_location_d1360144f47e
+  - location_uuid: ger_location_a89fe7905ec6
+    description_of_involvement: New Hampshire jokingly dismissed by Bartlet as too
+      distant for quick plane hop, underscoring time's tyranny on their starved passion
+      amid primary shadows.
+    observed_atmosphere: Remote, impractical chill
+    functional_role: Rejected distant venue option
+    symbolic_significance: Political heartland too far for human needs
+    access_restrictions: Hour-and-half flight away
+    key_environmental_details:
+    - New England frost metaphorically distant
+    - Primary battleground irrelevance here
+    global_id: ger_location_a89fe7905ec6
+  - location_uuid: ger_location_454b89d82ef1
+    description_of_involvement: Korea hurled by Abbey as plutonium flashpoint tying
+      Bartlet to Roosevelt Room, weaponizing geopolitics to douse his fire, blending
+      bedroom farce with nuclear peril.
+    observed_atmosphere: Shadowed crisis specter
+    functional_role: Policy anchor halting passion
+    symbolic_significance: Global threats invading intimate space
+    access_restrictions: Distant but invasively relevant
+    key_environmental_details:
+    - Plutonium pipeline menace
+    - Summit imperilment echoes
+    global_id: ger_location_454b89d82ef1
+  organization_involvements:
+  - organization_uuid: ger_organization_857f15228dd0
+    description_of_involvement: Far East Advisors hold Bartlet in Roosevelt Room throes
+      over Korea plutonium, invoked repeatedly as unbreakable duty chain—Abbey and
+      Landingham reference ending their session via McGarry, framing institutional
+      drag on personal life.
+    active_representation: Via ongoing meeting occupancy and staff protocol for dismissal
+    power_dynamics: Exerting advisory constraint on President's availability
+    organizational_goals:
+    - Brief President on proliferation risks from Korea
+    - Secure policy alignment on plutonium response
+    influence_mechanisms:
+    - Occupying time in critical venue
+    - Triggering chain notifications through McGarry
+    institutional_impact: Highlights White House machinery prioritizing security over
+      humanity
+    internal_dynamics: ''
+    global_id: ger_organization_857f15228dd0
+  derived_from_beat_uuids: *id010
+  source_season: 2
+  source_database: westwing.s02
+- fabula_uuid: cand_evt_scene_f3175fccd0c5cbf6_1
+  global_id: null
+  title: Abbey Relays Coded Intimacy All-Clear via Charlie
+  description: In a playful coded exchange, Abbey instructs Charlie to inform Bartlet
+    that his 'blood pressure is 120/80' and other 'medical' vitals are normal—subtext
+    for resuming intimacy after 14 weeks of abstinence due to health concerns. Charlie
+    urgently delivers it, prompting Bartlet's eager entrance into the Outer Oval.
+    Amid Mrs. Landingham's interruptions and duty reminders, the couple banters excitedly
+    about stolen moments, but Abbey reins him in, prioritizing work and plutonium
+    talks before a teasing kiss and her exit. This comedic respite humanizes the President,
+    contrasting raw personal longing with Oval Office demands, providing relief amid
+    episode chaos.
+  episode_uuid: ep_sea_ser_the_west_wing_s02_e05
+  scene_sequence: 8
+  sequence_in_scene: 10
+  key_dialogue: *id009
+  is_flashback: false
+  location_uuid: ger_location_454b89d82ef1
+  theme_uuids: []
+  arc_uuids: []
+  participations:
+  - character_uuid: ger_agent_52e3762c6aed
+    emotional_state: Bewildered confusion laced with professional poise
+    goals:
+    - Precisely relay Abbey's cryptic message without error
+    - Avoid disrupting the President's critical advisor meeting
+    what_happened: Sits behind desk, stands to greet Abbey warmly, grabs pen and notepad
+      to record her bizarre 'vitals' message with visible confusion, questions phrasing
+      earnestly, then bolts urgently to deliver it, sparking Bartlet's entrance.
+    observed_status: Sits behind desk, stands to greet Abbey warmly, grabs pen and
+      notepad to record her bizarre 'vitals' message with visible confusion, questions
+      phrasing earnestly, then bolts urgently to deliver it, sparking Bartlet's entrance.
+    beliefs:
+    - First Lady's instructions demand immediate, unquestioning action
+    - Medical jargon applies literally to the recipient unless clarified
+    observed_traits:
+    - dutiful
+    - earnest
+    - literal-minded
+    importance: primary
+    global_id: ger_agent_52e3762c6aed
+  - character_uuid: ger_agent_198649bce78f
+    emotional_state: Amused playfulness veiling affectionate control
+    goals:
+    - Convey all-clear for intimacy via clever code to evade eavesdroppers
+    - Balance Bartlet's urges against plutonium crisis and her 6 PM flight
+    what_happened: Enters from portico purposefully, dictates playful coded vitals
+      to Charlie signaling intimacy resumption, sits casually on desk chatting with
+      Landingham, leads excited Bartlet into Oval for flirty banter on locations and
+      time constraints, reins him with work reminders, teases with kiss before dashing
+      out.
+    observed_status: Enters from portico purposefully, dictates playful coded vitals
+      to Charlie signaling intimacy resumption, sits casually on desk chatting with
+      Landingham, leads excited Bartlet into Oval for flirty banter on locations and
+      time constraints, reins him with work reminders, teases with kiss before dashing
+      out.
+    beliefs:
+    - Duty must temper passion, but stolen moments sustain them
+    - Coded discretion protects private needs in public spaces
+    observed_traits:
+    - playful
+    - authoritative
+    - composed
+    importance: primary
+    global_id: ger_agent_198649bce78f
+  - character_uuid: ger_agent_dd62525d972a
+    emotional_state: Neutral (off-screen)
+    goals: []
+    what_happened: Absent but invoked by Landingham's offer to inform him of advisors'
+      meeting end, underscoring his role in crisis coordination.
+    observed_status: Absent but invoked by Landingham's offer to inform him of advisors'
+      meeting end, underscoring his role in crisis coordination.
+    beliefs: []
+    observed_traits: []
+    importance: primary
+    global_id: ger_agent_dd62525d972a
+  - character_uuid: ger_agent_967eb6cb648e
+    emotional_state: Neutral (off-screen)
+    goals: []
+    what_happened: Absent but named by Abbey as her schedule coordinator for carving
+      out intimacy slot before Cochran's Mills.
+    observed_status: Absent but named by Abbey as her schedule coordinator for carving
+      out intimacy slot before Cochran's Mills.
+    beliefs: []
+    observed_traits: []
+    importance: primary
+    global_id: ger_agent_967eb6cb648e
+  - character_uuid: ger_agent_1f0b1cae13c5
+    emotional_state: Calm professionalism tinged with gentle amusement
+    goals:
+    - Facilitate smooth transition from meeting by alerting key staff
+    - Gauge and address President's evident tension
+    what_happened: Enters Outer Oval cordially greeting Abbey, offers assistance politely,
+      greets Bartlet warmly but probes his tension, follows toward Oval suggesting
+      to notify McGarry and advisors, shut out by slammed door with wry observation
+      on his state.
+    observed_status: Enters Outer Oval cordially greeting Abbey, offers assistance
+      politely, greets Bartlet warmly but probes his tension, follows toward Oval
+      suggesting to notify McGarry and advisors, shut out by slammed door with wry
+      observation on his state.
+    beliefs:
+    - Presidential needs override protocol but require discreet support
+    - Routine inquiries maintain operational flow amid personal moments
+    observed_traits:
+    - professional
+    - observant
+    - ' unflappable'
+    importance: primary
+    global_id: ger_agent_1f0b1cae13c5
+  object_involvements:
+  - object_uuid: ger_object_43e9fc68517c
+    description_of_involvement: Bartlet urgently queries if Oval Office curtains close,
+      eyeing them desperately as hasty privacy barricade for immediate intimacy, symbolizing
+      futile grasp for seclusion amid Oval's exposure; Abbey nixes the idea, heightening
+      comedic frustration of duty's intrusion on desire.
+    status_before_event: Open, filtering daylight in Oval Office
+    status_after_event: Unchanged, still open as couple postpones tryst
+    global_id: ger_object_43e9fc68517c
+  location_involvements:
+  - location_uuid: ger_location_6f4d206272dc
+    description_of_involvement: Cochran's Mills, Pennsylvania looms as Abbey's 6 PM
+      flight deadline, compressing their window to 'find time' via Charlie and Lilly,
+      fracturing reunion with First Lady obligations.
+    observed_atmosphere: Ticking-clock rural urgency
+    functional_role: Upcoming commitment constraint
+    symbolic_significance: Duty's inexorable pull on personal joy
+    access_restrictions: Demands departure post-6 PM
+    key_environmental_details:
+    - Modest mill-town evocation
+    - Flight logistics pressure
+    global_id: ger_location_6f4d206272dc
+  - location_uuid: ger_location_7423b10d7d15
+    description_of_involvement: Roosevelt Room referenced as site of Bartlet's ongoing
+      plutonium crisis huddle with Far East Advisors, anchoring duty's pull that Abbey
+      invokes to halt his advances, contrasting policy gravity with personal frolic.
+    observed_atmosphere: Off-screen tension of geopolitical stakes
+    functional_role: Prior obligation barrier to intimacy
+    symbolic_significance: Realm of world crises eclipsing marital needs
+    access_restrictions: Occupied by advisors, not to be interrupted
+    key_environmental_details:
+    - Conference table for advisor briefings
+    - Echoes of policy debate
+    global_id: ger_location_7423b10d7d15
+  - location_uuid: ger_location_d1360144f47e
+    description_of_involvement: The Residence's bedroom pitched by Abbey as viable
+      on-site haven for their liaison, eagerly embraced by Bartlet as 'smart' proximity
+      solution before schedules intervene, teasing feasible escape within White House
+      bounds.
+    observed_atmosphere: Imagined sanctuary of hushed domesticity
+    functional_role: Proposed tryst venue
+    symbolic_significance: Rare private refuge amid institutional glare
+    access_restrictions: Accessible upstairs, coordinated via staff
+    key_environmental_details:
+    - Sheets implying urgent reunion
+    - Proximity to Oval easing logistics
+    global_id: ger_location_d1360144f47e
+  - location_uuid: ger_location_a89fe7905ec6
+    description_of_involvement: New Hampshire jokingly dismissed by Bartlet as too
+      distant for quick plane hop, underscoring time's tyranny on their starved passion
+      amid primary shadows.
+    observed_atmosphere: Remote, impractical chill
+    functional_role: Rejected distant venue option
+    symbolic_significance: Political heartland too far for human needs
+    access_restrictions: Hour-and-half flight away
+    key_environmental_details:
+    - New England frost metaphorically distant
+    - Primary battleground irrelevance here
+    global_id: ger_location_a89fe7905ec6
+  - location_uuid: ger_location_454b89d82ef1
+    description_of_involvement: Korea hurled by Abbey as plutonium flashpoint tying
+      Bartlet to Roosevelt Room, weaponizing geopolitics to douse his fire, blending
+      bedroom farce with nuclear peril.
+    observed_atmosphere: Shadowed crisis specter
+    functional_role: Policy anchor halting passion
+    symbolic_significance: Global threats invading intimate space
+    access_restrictions: Distant but invasively relevant
+    key_environmental_details:
+    - Plutonium pipeline menace
+    - Summit imperilment echoes
+    global_id: ger_location_454b89d82ef1
   organization_involvements:
   - organization_uuid: ger_organization_857f15228dd0
     description_of_involvement: Far East Advisors hold Bartlet in Roosevelt Room throes
@@ -3667,7 +3667,7 @@ events:
     - Faint echoes of footsteps
     global_id: ger_location_60870a3e6f70
   organization_involvements:
-  - organization_uuid: ger_organization_d033a1b32d4f
+  - organization_uuid: ger_organization_bb39d5dd403d
     description_of_involvement: The White House manifests through its Chief of Staff
       Leo personally escorting new Associate Counsel Ainsley to her basement office,
       a top-down gesture of inclusion that counters staff skepticism, highlights resource
@@ -3685,7 +3685,7 @@ events:
     institutional_impact: Signals willingness to absorb Republican talent despite
       internal fractures.
     internal_dynamics: Top-level decency navigating brewing resentments toward outsider.
-    global_id: ger_organization_d033a1b32d4f
+    global_id: ger_organization_bb39d5dd403d
   derived_from_beat_uuids:
   - beat_755d778a451281ce
   - beat_ca62497185cca0ee
@@ -3939,11 +3939,11 @@ events:
   - 'DONNA: "Okay, quiet kids."'
   - 'TECHNICIAN: "Saturday morning radio address, take 21."'
   is_flashback: false
-  location_uuid: ger_location_55e711ff6df2
+  location_uuid: ger_location_ba584d0e54df
   theme_uuids: []
   arc_uuids: []
   participations:
-  - character_uuid: ger_agent_64b2a2c10c8f
+  - character_uuid: ger_agent_14f85d554756
     emotional_state: Urgently commanding amid mounting frustration
     goals:
     - Silence the disruptive children immediately
@@ -3964,7 +3964,7 @@ events:
     - authoritative
     - resourceful
     importance: primary
-    global_id: ger_agent_64b2a2c10c8f
+    global_id: ger_agent_14f85d554756
   - character_uuid: ger_agent_6fc8bd02043e
     emotional_state: Taut professionalism masking procedural strain
     goals:
@@ -3987,7 +3987,7 @@ events:
     global_id: ger_agent_6fc8bd02043e
   object_involvements: []
   location_involvements:
-  - location_uuid: ger_location_55e711ff6df2
+  - location_uuid: ger_location_ba584d0e54df
     description_of_involvement: The White House exterior serves as the chaotic foreground
       to the radio address recording, where disruptive children cluster under daylight,
       their noise clashing with the invisible interior precision; it embodies the
@@ -4002,7 +4002,7 @@ events:
     key_environmental_details:
     - Scorching daylight on columns
     - Clustering unruly children outside
-    global_id: ger_location_55e711ff6df2
+    global_id: ger_location_ba584d0e54df
   organization_involvements: []
   derived_from_beat_uuids:
   - beat_2f53c9854da2cc6a
@@ -4110,7 +4110,7 @@ events:
     - silent
     importance: primary
     global_id: ger_agent_906fb58bcdc9
-  - character_uuid: ger_agent_64b2a2c10c8f
+  - character_uuid: ger_agent_14f85d554756
     emotional_state: Optimistic anticipation curdling into resigned empathy for Bartlet's
       frustration
     goals:
@@ -4133,7 +4133,7 @@ events:
     - resigned
     - proactive
     importance: primary
-    global_id: ger_agent_64b2a2c10c8f
+    global_id: ger_agent_14f85d554756
   - character_uuid: ger_agent_6fc8bd02043e
     emotional_state: Calm professionalism amid controlled chaos
     goals:
@@ -4394,119 +4394,6 @@ events:
   - 'WOMAN: "Steve, Mark."'
   - 'AINSLEY: "Thanks."'
   is_flashback: false
-  location_uuid: ger_location_55e711ff6df2
-  theme_uuids: []
-  arc_uuids: []
-  participations:
-  - character_uuid: ger_agent_cbddbaae2323
-    emotional_state: Neutral and unflappable routine efficiency
-    goals:
-    - Direct Ainsley to the requested staffers promptly
-    - Maintain operational flow in the late-night office environment
-    what_happened: The unidentified woman, stationed in the office, responds curtly
-      and efficiently to Ainsley's inquiry by calling out 'Steve, Mark,' facilitating
-      the direction without hesitation or elaboration in the nocturnal bustle.
-    observed_status: The unidentified woman, stationed in the office, responds curtly
-      and efficiently to Ainsley's inquiry by calling out 'Steve, Mark,' facilitating
-      the direction without hesitation or elaboration in the nocturnal bustle.
-    beliefs:
-    - Standard protocol requires quick assistance to colleagues and newcomers
-    - The West Wing's high-pressure rhythm demands terse, effective communication
-    observed_traits:
-    - efficient
-    - concise
-    - professional
-    importance: primary
-    global_id: ger_agent_cbddbaae2323
-  - character_uuid: ger_agent_0fdca8513c4a
-    emotional_state: Steadfast determination laced with underlying defiance against
-      prior hazing
-    goals:
-    - Locate Steve Joyce and Mark Brookline to confront or engage them directly
-    - Demonstrate her initiative and integration into the White House team despite
-      skepticism
-    what_happened: Ainsley Hayes enters the office with purposeful strides, directly
-      approaches the woman at her desk, and clearly articulates her search for Steve
-      Joyce and Mark Brookline, expressing gratitude upon response, her posture exuding
-      focused intent amid the late-night quiet.
-    observed_status: Ainsley Hayes enters the office with purposeful strides, directly
-      approaches the woman at her desk, and clearly articulates her search for Steve
-      Joyce and Mark Brookline, expressing gratitude upon response, her posture exuding
-      focused intent amid the late-night quiet.
-    beliefs:
-    - Facing her hazers head-on will prove her mettle and earn respect
-    - Her conservative outsider status demands bold action to claim her place
-    observed_traits:
-    - determined
-    - assertive
-    - resilient
-    - proactive
-    importance: primary
-    global_id: ger_agent_0fdca8513c4a
-  - character_uuid: ger_agent_802cdc902827
-    emotional_state: Unknown (off-screen)
-    goals: []
-    what_happened: Steve Joyce is not physically present but explicitly sought by
-      Ainsley Hayes in her direct inquiry to the staffer, positioning him as a key
-      target of her proactive pursuit amid the unfolding staff tensions.
-    observed_status: Steve Joyce is not physically present but explicitly sought by
-      Ainsley Hayes in her direct inquiry to the staffer, positioning him as a key
-      target of her proactive pursuit amid the unfolding staff tensions.
-    beliefs: []
-    observed_traits: []
-    importance: primary
-    global_id: ger_agent_802cdc902827
-  object_involvements: []
-  location_involvements:
-  - location_uuid: ger_location_55e711ff6df2
-    description_of_involvement: The White House envelops the entire event in its nighttime
-      fortress aura, with interiors pulsing under late shadows as Ainsley's hunt unfolds,
-      underscoring the high-stakes integration battle within Bartlet's ideological
-      bastion amid broader crises.
-    observed_atmosphere: Nocturnal pressure cooker of political intensity
-    functional_role: Overarching workplace framing the interpersonal clash
-    symbolic_significance: Fortress of power dynamics where outsider steel tests insider
-      walls
-    access_restrictions: Highly secure government premises limited to cleared personnel
-    key_environmental_details:
-    - Night-engulfed interiors with urgent shadows
-    - Institutional hush amplifying personal resolve
-    global_id: ger_location_55e711ff6df2
-  - location_uuid: ger_location_b5f0c56a9db2
-    description_of_involvement: The White House Staff Office contracts into a tense
-      proving ground as Ainsley surges through the door and approaches the woman amid
-      glowing lamps and crisis-cluttered desks, transforming the functional workspace
-      into the site of her resolute inquiry and symbolic claim on team space.
-    observed_atmosphere: Dimly lit hush pierced by purposeful intrusion and terse
-      exchange
-    functional_role: Site of inquiry and staffer location
-    symbolic_significance: Embodies the heart of skeptical insider loyalty Ainsley
-      boldly invades
-    access_restrictions: Staff-only domain breached by determined newcomer
-    key_environmental_details:
-    - Glowing lamps illuminating desks buried in files
-    - Contracted space echoing footsteps of resolve
-    global_id: ger_location_b5f0c56a9db2
-  organization_involvements: []
-  derived_from_beat_uuids: &id012
-  - beat_ac48daea864da66e
-  source_season: 2
-  source_database: westwing.s02
-- fabula_uuid: cand_evt_scene_b0b4e8312f72e7b4_1
-  global_id: null
-  title: Ainsley's Determined Search for Joyce and Brookline
-  description: Amid the late-night bustle of the White House, newly hired Republican
-    lawyer Ainsley Hayes strides purposefully into an office, approaching a female
-    staffer with unyielding resolve. She seeks out Steve Joyce and Mark Brookline—staffers
-    who previously hazed her—signaling her proactive initiative to confront challenges
-    head-on, prove her mettle despite skepticism, and plunge deeper into the escalating
-    Capitol Hill crisis. The brief exchange underscores her tenacity, marking a turning
-    point in her integration into the team.
-  episode_uuid: ep_sea_ser_the_west_wing_s02_e05
-  scene_sequence: 16
-  sequence_in_scene: 18
-  key_dialogue: *id011
-  is_flashback: false
   location_uuid: ger_location_b5f0c56a9db2
   theme_uuids: []
   arc_uuids: []
@@ -4571,20 +4458,6 @@ events:
     global_id: ger_agent_802cdc902827
   object_involvements: []
   location_involvements:
-  - location_uuid: ger_location_55e711ff6df2
-    description_of_involvement: The White House envelops the entire event in its nighttime
-      fortress aura, with interiors pulsing under late shadows as Ainsley's hunt unfolds,
-      underscoring the high-stakes integration battle within Bartlet's ideological
-      bastion amid broader crises.
-    observed_atmosphere: Nocturnal pressure cooker of political intensity
-    functional_role: Overarching workplace framing the interpersonal clash
-    symbolic_significance: Fortress of power dynamics where outsider steel tests insider
-      walls
-    access_restrictions: Highly secure government premises limited to cleared personnel
-    key_environmental_details:
-    - Night-engulfed interiors with urgent shadows
-    - Institutional hush amplifying personal resolve
-    global_id: ger_location_55e711ff6df2
   - location_uuid: ger_location_b5f0c56a9db2
     description_of_involvement: The White House Staff Office contracts into a tense
       proving ground as Ainsley surges through the door and approaches the woman amid
@@ -4600,6 +4473,133 @@ events:
     - Glowing lamps illuminating desks buried in files
     - Contracted space echoing footsteps of resolve
     global_id: ger_location_b5f0c56a9db2
+  - location_uuid: ger_location_ba584d0e54df
+    description_of_involvement: The White House envelops the entire event in its nighttime
+      fortress aura, with interiors pulsing under late shadows as Ainsley's hunt unfolds,
+      underscoring the high-stakes integration battle within Bartlet's ideological
+      bastion amid broader crises.
+    observed_atmosphere: Nocturnal pressure cooker of political intensity
+    functional_role: Overarching workplace framing the interpersonal clash
+    symbolic_significance: Fortress of power dynamics where outsider steel tests insider
+      walls
+    access_restrictions: Highly secure government premises limited to cleared personnel
+    key_environmental_details:
+    - Night-engulfed interiors with urgent shadows
+    - Institutional hush amplifying personal resolve
+    global_id: ger_location_ba584d0e54df
+  organization_involvements: []
+  derived_from_beat_uuids: &id012
+  - beat_ac48daea864da66e
+  source_season: 2
+  source_database: westwing.s02
+- fabula_uuid: cand_evt_scene_b0b4e8312f72e7b4_1
+  global_id: null
+  title: Ainsley's Determined Search for Joyce and Brookline
+  description: Amid the late-night bustle of the White House, newly hired Republican
+    lawyer Ainsley Hayes strides purposefully into an office, approaching a female
+    staffer with unyielding resolve. She seeks out Steve Joyce and Mark Brookline—staffers
+    who previously hazed her—signaling her proactive initiative to confront challenges
+    head-on, prove her mettle despite skepticism, and plunge deeper into the escalating
+    Capitol Hill crisis. The brief exchange underscores her tenacity, marking a turning
+    point in her integration into the team.
+  episode_uuid: ep_sea_ser_the_west_wing_s02_e05
+  scene_sequence: 16
+  sequence_in_scene: 18
+  key_dialogue: *id011
+  is_flashback: false
+  location_uuid: ger_location_ba584d0e54df
+  theme_uuids: []
+  arc_uuids: []
+  participations:
+  - character_uuid: ger_agent_cbddbaae2323
+    emotional_state: Neutral and unflappable routine efficiency
+    goals:
+    - Direct Ainsley to the requested staffers promptly
+    - Maintain operational flow in the late-night office environment
+    what_happened: The unidentified woman, stationed in the office, responds curtly
+      and efficiently to Ainsley's inquiry by calling out 'Steve, Mark,' facilitating
+      the direction without hesitation or elaboration in the nocturnal bustle.
+    observed_status: The unidentified woman, stationed in the office, responds curtly
+      and efficiently to Ainsley's inquiry by calling out 'Steve, Mark,' facilitating
+      the direction without hesitation or elaboration in the nocturnal bustle.
+    beliefs:
+    - Standard protocol requires quick assistance to colleagues and newcomers
+    - The West Wing's high-pressure rhythm demands terse, effective communication
+    observed_traits:
+    - efficient
+    - concise
+    - professional
+    importance: primary
+    global_id: ger_agent_cbddbaae2323
+  - character_uuid: ger_agent_0fdca8513c4a
+    emotional_state: Steadfast determination laced with underlying defiance against
+      prior hazing
+    goals:
+    - Locate Steve Joyce and Mark Brookline to confront or engage them directly
+    - Demonstrate her initiative and integration into the White House team despite
+      skepticism
+    what_happened: Ainsley Hayes enters the office with purposeful strides, directly
+      approaches the woman at her desk, and clearly articulates her search for Steve
+      Joyce and Mark Brookline, expressing gratitude upon response, her posture exuding
+      focused intent amid the late-night quiet.
+    observed_status: Ainsley Hayes enters the office with purposeful strides, directly
+      approaches the woman at her desk, and clearly articulates her search for Steve
+      Joyce and Mark Brookline, expressing gratitude upon response, her posture exuding
+      focused intent amid the late-night quiet.
+    beliefs:
+    - Facing her hazers head-on will prove her mettle and earn respect
+    - Her conservative outsider status demands bold action to claim her place
+    observed_traits:
+    - determined
+    - assertive
+    - resilient
+    - proactive
+    importance: primary
+    global_id: ger_agent_0fdca8513c4a
+  - character_uuid: ger_agent_802cdc902827
+    emotional_state: Unknown (off-screen)
+    goals: []
+    what_happened: Steve Joyce is not physically present but explicitly sought by
+      Ainsley Hayes in her direct inquiry to the staffer, positioning him as a key
+      target of her proactive pursuit amid the unfolding staff tensions.
+    observed_status: Steve Joyce is not physically present but explicitly sought by
+      Ainsley Hayes in her direct inquiry to the staffer, positioning him as a key
+      target of her proactive pursuit amid the unfolding staff tensions.
+    beliefs: []
+    observed_traits: []
+    importance: primary
+    global_id: ger_agent_802cdc902827
+  object_involvements: []
+  location_involvements:
+  - location_uuid: ger_location_b5f0c56a9db2
+    description_of_involvement: The White House Staff Office contracts into a tense
+      proving ground as Ainsley surges through the door and approaches the woman amid
+      glowing lamps and crisis-cluttered desks, transforming the functional workspace
+      into the site of her resolute inquiry and symbolic claim on team space.
+    observed_atmosphere: Dimly lit hush pierced by purposeful intrusion and terse
+      exchange
+    functional_role: Site of inquiry and staffer location
+    symbolic_significance: Embodies the heart of skeptical insider loyalty Ainsley
+      boldly invades
+    access_restrictions: Staff-only domain breached by determined newcomer
+    key_environmental_details:
+    - Glowing lamps illuminating desks buried in files
+    - Contracted space echoing footsteps of resolve
+    global_id: ger_location_b5f0c56a9db2
+  - location_uuid: ger_location_ba584d0e54df
+    description_of_involvement: The White House envelops the entire event in its nighttime
+      fortress aura, with interiors pulsing under late shadows as Ainsley's hunt unfolds,
+      underscoring the high-stakes integration battle within Bartlet's ideological
+      bastion amid broader crises.
+    observed_atmosphere: Nocturnal pressure cooker of political intensity
+    functional_role: Overarching workplace framing the interpersonal clash
+    symbolic_significance: Fortress of power dynamics where outsider steel tests insider
+      walls
+    access_restrictions: Highly secure government premises limited to cleared personnel
+    key_environmental_details:
+    - Night-engulfed interiors with urgent shadows
+    - Institutional hush amplifying personal resolve
+    global_id: ger_location_ba584d0e54df
   organization_involvements: []
   derived_from_beat_uuids: *id012
   source_season: 2
@@ -4654,6 +4654,17 @@ events:
     observed_traits: []
     importance: primary
     global_id: ger_agent_198649bce78f
+  - character_uuid: ger_agent_1f0b1cae13c5
+    emotional_state: ''
+    goals: []
+    what_happened: jokingly referenced by Bartlet as someone he threatens to get drunk
+      if Abbey delays
+    observed_status: jokingly referenced by Bartlet as someone he threatens to get
+      drunk if Abbey delays
+    beliefs: []
+    observed_traits: []
+    importance: primary
+    global_id: ger_agent_1f0b1cae13c5
   - character_uuid: ger_agent_d85dfd6aefa0
     emotional_state: Professionally detached with subtle amusement at the President's
       levity
@@ -4675,17 +4686,6 @@ events:
     - dutiful
     importance: primary
     global_id: ger_agent_d85dfd6aefa0
-  - character_uuid: ger_agent_8511b338f685
-    emotional_state: ''
-    goals: []
-    what_happened: jokingly referenced by Bartlet as someone he threatens to get drunk
-      if Abbey delays
-    observed_status: jokingly referenced by Bartlet as someone he threatens to get
-      drunk if Abbey delays
-    beliefs: []
-    observed_traits: []
-    importance: primary
-    global_id: ger_agent_8511b338f685
   - character_uuid: ger_agent_d7111ce9d46a
     emotional_state: ''
     goals: []
@@ -4728,7 +4728,7 @@ events:
     - Agents' rigid postures evoking silent threat
     global_id: ger_location_d1360144f47e
   organization_involvements:
-  - organization_uuid: ger_organization_a02ef5855109
+  - organization_uuid: ger_organization_9aeb11cd4ff1
     description_of_involvement: Secret Service manifests as twin sentinels outside
       the bedroom, their protocol-bound exchange with Bartlet highlighting the organization's
       omnipresent shield against peril, enabling his fleeting personal reprieve while
@@ -4744,7 +4744,7 @@ events:
     institutional_impact: Reinforces the presidency's armored isolation amid human
       needs
     internal_dynamics: ''
-    global_id: ger_organization_a02ef5855109
+    global_id: ger_organization_9aeb11cd4ff1
   derived_from_beat_uuids:
   - beat_0959e2da30279430
   source_season: 2
@@ -4773,208 +4773,6 @@ events:
     it."'
   - 'BARTLET: "She sounds like an incredible woman, Abbey. I''m particularly impressed
     that she beat a fictional record. [...] Let''s have sex."'
-  is_flashback: false
-  location_uuid: ger_location_d1360144f47e
-  theme_uuids: []
-  arc_uuids: []
-  participations:
-  - character_uuid: ger_agent_52e3762c6aed
-    emotional_state: Absent but trusted in reference
-    goals:
-    - N/A (mentioned only)
-    - N/A (mentioned only)
-    what_happened: Offhandedly suggested by Bartlet as capable of handling statue
-      dedication invitations, underscoring his reliable aide role amid Bartlet's dismissal
-      of Abbey's event.
-    observed_status: Offhandedly suggested by Bartlet as capable of handling statue
-      dedication invitations, underscoring his reliable aide role amid Bartlet's dismissal
-      of Abbey's event.
-    beliefs:
-    - N/A (mentioned only)
-    - N/A (mentioned only)
-    observed_traits:
-    - competent
-    - dependable
-    importance: primary
-    global_id: ger_agent_52e3762c6aed
-  - character_uuid: ger_agent_198649bce78f
-    emotional_state: Playfully assertive, blending flirtation with authoritative control
-    goals:
-    - Heighten anticipation through denial
-    - Educate Bartlet on overlooked women's achievements
-    what_happened: Seated on the couch in the bedroom, teases Bartlet with randy admission
-      and special garment promise, retreats to bathroom only to return shoeless, commandeering
-      conversation with vivid lessons on Nellie Bly and Elizabeth Blackwell while
-      accepting a drink.
-    observed_status: Seated on the couch in the bedroom, teases Bartlet with randy
-      admission and special garment promise, retreats to bathroom only to return shoeless,
-      commandeering conversation with vivid lessons on Nellie Bly and Elizabeth Blackwell
-      while accepting a drink.
-    beliefs:
-    - Intellectual stimulation trumps immediate physical gratification
-    - Historical heroines deserve recognition in their marriage
-    observed_traits:
-    - playful
-    - assertive
-    - intellectually dominant
-    - teasing
-    importance: primary
-    global_id: ger_agent_198649bce78f
-  - character_uuid: ger_agent_d85dfd6aefa0
-    emotional_state: Professionally detached and unflappable
-    goals:
-    - Maintain security perimeter
-    - Grant President's privacy request without question
-    what_happened: Stands rigidly outside the bedroom door with another agent, delivering
-      a crisp greeting to Bartlet and affirming his request for no interruptions with
-      professional 'Yes sir,' enforcing privacy before Bartlet enters.
-    observed_status: Stands rigidly outside the bedroom door with another agent, delivering
-      a crisp greeting to Bartlet and affirming his request for no interruptions with
-      professional 'Yes sir,' enforcing privacy before Bartlet enters.
-    beliefs:
-    - Duty overrides all personal intrusion
-    - President's safety is paramount even in private moments
-    observed_traits:
-    - disciplined
-    - stoic
-    - dutiful
-    importance: primary
-    global_id: ger_agent_d85dfd6aefa0
-  - character_uuid: ger_agent_8511b338f685
-    emotional_state: Absent but warmly referenced in humor
-    goals:
-    - N/A (mentioned only)
-    - N/A (mentioned only)
-    what_happened: Hyperbolically invoked by Bartlet in jest as he'd 'get her drunk'
-      to force Abbey's compliance, highlighting her familiar, unflappable presence
-      in his frustrated exaggeration.
-    observed_status: Hyperbolically invoked by Bartlet in jest as he'd 'get her drunk'
-      to force Abbey's compliance, highlighting her familiar, unflappable presence
-      in his frustrated exaggeration.
-    beliefs:
-    - N/A (mentioned only)
-    - N/A (mentioned only)
-    observed_traits:
-    - loyal
-    - unflappable
-    importance: primary
-    global_id: ger_agent_8511b338f685
-  - character_uuid: ger_agent_d7111ce9d46a
-    emotional_state: Idealized as inspirational icon
-    goals:
-    - N/A (discussed only)
-    - N/A (discussed only)
-    what_happened: Vividly detailed by Abbey as pioneering journalist who exposed
-      asylum abuses and circumnavigated the globe in 72 days, beating Verne's record,
-      elevating the conversation from intimacy to legacy.
-    observed_status: Vividly detailed by Abbey as pioneering journalist who exposed
-      asylum abuses and circumnavigated the globe in 72 days, beating Verne's record,
-      elevating the conversation from intimacy to legacy.
-    beliefs:
-    - N/A (discussed only)
-    - N/A (discussed only)
-    observed_traits:
-    - audacious
-    - trailblazing
-    importance: primary
-    global_id: ger_agent_d7111ce9d46a
-  - character_uuid: ger_agent_bc31aa573a83
-    emotional_state: Revered as historical exemplar
-    goals:
-    - N/A (discussed only)
-    - N/A (discussed only)
-    what_happened: Cited by Abbey as first American woman M.D. who founded Women's
-      Medical College, extending her litany of overlooked women to challenge Bartlet's
-      impatience.
-    observed_status: Cited by Abbey as first American woman M.D. who founded Women's
-      Medical College, extending her litany of overlooked women to challenge Bartlet's
-      impatience.
-    beliefs:
-    - N/A (discussed only)
-    - N/A (discussed only)
-    observed_traits:
-    - pioneering
-    - resilient
-    importance: primary
-    global_id: ger_agent_bc31aa573a83
-  object_involvements:
-  - object_uuid: ger_object_1daf37bc91a1
-    description_of_involvement: Abbey teases its deployment as a seductive prop by
-      promising to change into it in the bathroom, building erotic tension; her return
-      without it subverts expectation, shifting focus to intellectual discourse and
-      underscoring her control in their dynamic.
-    status_before_event: Hypothetically stored or imagined in bathroom
-    status_after_event: Remains undonned and unmaterialized, a phantom tease
-    global_id: ger_object_1daf37bc91a1
-  location_involvements:
-  - location_uuid: ger_location_d1360144f47e
-    description_of_involvement: Serves as intimate sanctuary for the Bartlets' charged
-      reunion, with bedroom couch and bathroom enabling playful undressing ritual
-      and history lesson, walls muffling presidential vulnerability from West Wing
-      chaos.
-    observed_atmosphere: Dimly lit, hushed intimacy laced with frustrated desire and
-      wry intellect
-    functional_role: Private refuge for marital reconnection
-    symbolic_significance: Sanctum where power yields to personal humanity
-    access_restrictions: Guarded by Secret Service, President and First Lady only
-    key_environmental_details:
-    - Soft couch seating
-    - Bathroom offshoot for tease
-    - Nighttime shadows enhancing seclusion
-    global_id: ger_location_d1360144f47e
-  - location_uuid: ger_location_6f4d206272dc
-    description_of_involvement: Referenced as site of Abbey's recent Nellie Bly statue
-      dedication, pulling her from Bartlet's grasp and fueling the conversation pivot
-      to women's unsung legacies.
-    observed_atmosphere: Evoked as rural, historically resonant backdrop
-    functional_role: Catalyzing reference point for dialogue shift
-    symbolic_significance: Beacon of overlooked history intruding on present passion
-    access_restrictions: N/A (mentioned off-site)
-    key_environmental_details:
-    - Mills and statues in Pennsylvania countryside
-    - 6 PM urgency
-    global_id: ger_location_6f4d206272dc
-  organization_involvements:
-  - organization_uuid: ger_organization_a02ef5855109
-    description_of_involvement: Manifests through agents stationed outside the bedroom,
-      greeting Bartlet and affirming his hour of uninterrupted privacy, enabling the
-      intimate scene while symbolizing unyielding protection amid personal vulnerability.
-    active_representation: Through uniformed agents enforcing perimeter
-    power_dynamics: Exercising protective authority subordinated to President's whims
-    organizational_goals:
-    - Ensure zero threats during private time
-    - Uphold protocol for executive seclusion
-    influence_mechanisms:
-    - Physical guardianship
-    - Immediate compliance with leader's request
-    institutional_impact: Balances ironclad security with human needs of protected
-      figure
-    internal_dynamics: ''
-    global_id: ger_organization_a02ef5855109
-  derived_from_beat_uuids: &id014
-  - beat_4f6ab8a5608fd705
-  - beat_a1010a61ab5488c6
-  - beat_56726671d441059e
-  - beat_28b6134c7486033a
-  - beat_29ad9cfa8facbb46
-  source_season: 2
-  source_database: westwing.s02
-- fabula_uuid: cand_evt_scene_4a937c5fd852e67f_2
-  global_id: null
-  title: Abbey's Tease Turns to Nellie Bly History Lesson
-  description: Eager for intimacy after a long day, President Bartlet enters the bedroom
-    where Abbey playfully admits she's 'a little randy' and teases him with a promised
-    'special garment,' heightening anticipation. As he prepares drinks, conversation
-    shifts to her recent statue dedication for Nellie Bly, prompting Abbey to school
-    him on the journalist's groundbreaking exploits and other overlooked women like
-    Elizabeth Blackwell. Bartlet's frustrated pleas for sex underscore Abbey's intellectual
-    dominance in their dynamic, planting seeds for his later inspired radio address
-    on women's historical contributions—a pivot from carnal to cerebral that costs
-    him immediate gratification but enriches his worldview.
-  episode_uuid: ep_sea_ser_the_west_wing_s02_e05
-  scene_sequence: 17
-  sequence_in_scene: 20
-  key_dialogue: *id013
   is_flashback: false
   location_uuid: ger_location_6f4d206272dc
   theme_uuids: []
@@ -5022,6 +4820,25 @@ events:
     - teasing
     importance: primary
     global_id: ger_agent_198649bce78f
+  - character_uuid: ger_agent_1f0b1cae13c5
+    emotional_state: Absent but warmly referenced in humor
+    goals:
+    - N/A (mentioned only)
+    - N/A (mentioned only)
+    what_happened: Hyperbolically invoked by Bartlet in jest as he'd 'get her drunk'
+      to force Abbey's compliance, highlighting her familiar, unflappable presence
+      in his frustrated exaggeration.
+    observed_status: Hyperbolically invoked by Bartlet in jest as he'd 'get her drunk'
+      to force Abbey's compliance, highlighting her familiar, unflappable presence
+      in his frustrated exaggeration.
+    beliefs:
+    - N/A (mentioned only)
+    - N/A (mentioned only)
+    observed_traits:
+    - loyal
+    - unflappable
+    importance: primary
+    global_id: ger_agent_1f0b1cae13c5
   - character_uuid: ger_agent_d85dfd6aefa0
     emotional_state: Professionally detached and unflappable
     goals:
@@ -5042,25 +4859,6 @@ events:
     - dutiful
     importance: primary
     global_id: ger_agent_d85dfd6aefa0
-  - character_uuid: ger_agent_8511b338f685
-    emotional_state: Absent but warmly referenced in humor
-    goals:
-    - N/A (mentioned only)
-    - N/A (mentioned only)
-    what_happened: Hyperbolically invoked by Bartlet in jest as he'd 'get her drunk'
-      to force Abbey's compliance, highlighting her familiar, unflappable presence
-      in his frustrated exaggeration.
-    observed_status: Hyperbolically invoked by Bartlet in jest as he'd 'get her drunk'
-      to force Abbey's compliance, highlighting her familiar, unflappable presence
-      in his frustrated exaggeration.
-    beliefs:
-    - N/A (mentioned only)
-    - N/A (mentioned only)
-    observed_traits:
-    - loyal
-    - unflappable
-    importance: primary
-    global_id: ger_agent_8511b338f685
   - character_uuid: ger_agent_d7111ce9d46a
     emotional_state: Idealized as inspirational icon
     goals:
@@ -5109,6 +4907,18 @@ events:
     status_after_event: Remains undonned and unmaterialized, a phantom tease
     global_id: ger_object_1daf37bc91a1
   location_involvements:
+  - location_uuid: ger_location_6f4d206272dc
+    description_of_involvement: Referenced as site of Abbey's recent Nellie Bly statue
+      dedication, pulling her from Bartlet's grasp and fueling the conversation pivot
+      to women's unsung legacies.
+    observed_atmosphere: Evoked as rural, historically resonant backdrop
+    functional_role: Catalyzing reference point for dialogue shift
+    symbolic_significance: Beacon of overlooked history intruding on present passion
+    access_restrictions: N/A (mentioned off-site)
+    key_environmental_details:
+    - Mills and statues in Pennsylvania countryside
+    - 6 PM urgency
+    global_id: ger_location_6f4d206272dc
   - location_uuid: ger_location_d1360144f47e
     description_of_involvement: Serves as intimate sanctuary for the Bartlets' charged
       reunion, with bedroom couch and bathroom enabling playful undressing ritual
@@ -5124,20 +4934,8 @@ events:
     - Bathroom offshoot for tease
     - Nighttime shadows enhancing seclusion
     global_id: ger_location_d1360144f47e
-  - location_uuid: ger_location_6f4d206272dc
-    description_of_involvement: Referenced as site of Abbey's recent Nellie Bly statue
-      dedication, pulling her from Bartlet's grasp and fueling the conversation pivot
-      to women's unsung legacies.
-    observed_atmosphere: Evoked as rural, historically resonant backdrop
-    functional_role: Catalyzing reference point for dialogue shift
-    symbolic_significance: Beacon of overlooked history intruding on present passion
-    access_restrictions: N/A (mentioned off-site)
-    key_environmental_details:
-    - Mills and statues in Pennsylvania countryside
-    - 6 PM urgency
-    global_id: ger_location_6f4d206272dc
   organization_involvements:
-  - organization_uuid: ger_organization_a02ef5855109
+  - organization_uuid: ger_organization_9aeb11cd4ff1
     description_of_involvement: Manifests through agents stationed outside the bedroom,
       greeting Bartlet and affirming his hour of uninterrupted privacy, enabling the
       intimate scene while symbolizing unyielding protection amid personal vulnerability.
@@ -5152,7 +4950,209 @@ events:
     institutional_impact: Balances ironclad security with human needs of protected
       figure
     internal_dynamics: ''
-    global_id: ger_organization_a02ef5855109
+    global_id: ger_organization_9aeb11cd4ff1
+  derived_from_beat_uuids: &id014
+  - beat_4f6ab8a5608fd705
+  - beat_a1010a61ab5488c6
+  - beat_56726671d441059e
+  - beat_28b6134c7486033a
+  - beat_29ad9cfa8facbb46
+  source_season: 2
+  source_database: westwing.s02
+- fabula_uuid: cand_evt_scene_4a937c5fd852e67f_2
+  global_id: null
+  title: Abbey's Tease Turns to Nellie Bly History Lesson
+  description: Eager for intimacy after a long day, President Bartlet enters the bedroom
+    where Abbey playfully admits she's 'a little randy' and teases him with a promised
+    'special garment,' heightening anticipation. As he prepares drinks, conversation
+    shifts to her recent statue dedication for Nellie Bly, prompting Abbey to school
+    him on the journalist's groundbreaking exploits and other overlooked women like
+    Elizabeth Blackwell. Bartlet's frustrated pleas for sex underscore Abbey's intellectual
+    dominance in their dynamic, planting seeds for his later inspired radio address
+    on women's historical contributions—a pivot from carnal to cerebral that costs
+    him immediate gratification but enriches his worldview.
+  episode_uuid: ep_sea_ser_the_west_wing_s02_e05
+  scene_sequence: 17
+  sequence_in_scene: 20
+  key_dialogue: *id013
+  is_flashback: false
+  location_uuid: ger_location_d1360144f47e
+  theme_uuids: []
+  arc_uuids: []
+  participations:
+  - character_uuid: ger_agent_52e3762c6aed
+    emotional_state: Absent but trusted in reference
+    goals:
+    - N/A (mentioned only)
+    - N/A (mentioned only)
+    what_happened: Offhandedly suggested by Bartlet as capable of handling statue
+      dedication invitations, underscoring his reliable aide role amid Bartlet's dismissal
+      of Abbey's event.
+    observed_status: Offhandedly suggested by Bartlet as capable of handling statue
+      dedication invitations, underscoring his reliable aide role amid Bartlet's dismissal
+      of Abbey's event.
+    beliefs:
+    - N/A (mentioned only)
+    - N/A (mentioned only)
+    observed_traits:
+    - competent
+    - dependable
+    importance: primary
+    global_id: ger_agent_52e3762c6aed
+  - character_uuid: ger_agent_198649bce78f
+    emotional_state: Playfully assertive, blending flirtation with authoritative control
+    goals:
+    - Heighten anticipation through denial
+    - Educate Bartlet on overlooked women's achievements
+    what_happened: Seated on the couch in the bedroom, teases Bartlet with randy admission
+      and special garment promise, retreats to bathroom only to return shoeless, commandeering
+      conversation with vivid lessons on Nellie Bly and Elizabeth Blackwell while
+      accepting a drink.
+    observed_status: Seated on the couch in the bedroom, teases Bartlet with randy
+      admission and special garment promise, retreats to bathroom only to return shoeless,
+      commandeering conversation with vivid lessons on Nellie Bly and Elizabeth Blackwell
+      while accepting a drink.
+    beliefs:
+    - Intellectual stimulation trumps immediate physical gratification
+    - Historical heroines deserve recognition in their marriage
+    observed_traits:
+    - playful
+    - assertive
+    - intellectually dominant
+    - teasing
+    importance: primary
+    global_id: ger_agent_198649bce78f
+  - character_uuid: ger_agent_1f0b1cae13c5
+    emotional_state: Absent but warmly referenced in humor
+    goals:
+    - N/A (mentioned only)
+    - N/A (mentioned only)
+    what_happened: Hyperbolically invoked by Bartlet in jest as he'd 'get her drunk'
+      to force Abbey's compliance, highlighting her familiar, unflappable presence
+      in his frustrated exaggeration.
+    observed_status: Hyperbolically invoked by Bartlet in jest as he'd 'get her drunk'
+      to force Abbey's compliance, highlighting her familiar, unflappable presence
+      in his frustrated exaggeration.
+    beliefs:
+    - N/A (mentioned only)
+    - N/A (mentioned only)
+    observed_traits:
+    - loyal
+    - unflappable
+    importance: primary
+    global_id: ger_agent_1f0b1cae13c5
+  - character_uuid: ger_agent_d85dfd6aefa0
+    emotional_state: Professionally detached and unflappable
+    goals:
+    - Maintain security perimeter
+    - Grant President's privacy request without question
+    what_happened: Stands rigidly outside the bedroom door with another agent, delivering
+      a crisp greeting to Bartlet and affirming his request for no interruptions with
+      professional 'Yes sir,' enforcing privacy before Bartlet enters.
+    observed_status: Stands rigidly outside the bedroom door with another agent, delivering
+      a crisp greeting to Bartlet and affirming his request for no interruptions with
+      professional 'Yes sir,' enforcing privacy before Bartlet enters.
+    beliefs:
+    - Duty overrides all personal intrusion
+    - President's safety is paramount even in private moments
+    observed_traits:
+    - disciplined
+    - stoic
+    - dutiful
+    importance: primary
+    global_id: ger_agent_d85dfd6aefa0
+  - character_uuid: ger_agent_d7111ce9d46a
+    emotional_state: Idealized as inspirational icon
+    goals:
+    - N/A (discussed only)
+    - N/A (discussed only)
+    what_happened: Vividly detailed by Abbey as pioneering journalist who exposed
+      asylum abuses and circumnavigated the globe in 72 days, beating Verne's record,
+      elevating the conversation from intimacy to legacy.
+    observed_status: Vividly detailed by Abbey as pioneering journalist who exposed
+      asylum abuses and circumnavigated the globe in 72 days, beating Verne's record,
+      elevating the conversation from intimacy to legacy.
+    beliefs:
+    - N/A (discussed only)
+    - N/A (discussed only)
+    observed_traits:
+    - audacious
+    - trailblazing
+    importance: primary
+    global_id: ger_agent_d7111ce9d46a
+  - character_uuid: ger_agent_bc31aa573a83
+    emotional_state: Revered as historical exemplar
+    goals:
+    - N/A (discussed only)
+    - N/A (discussed only)
+    what_happened: Cited by Abbey as first American woman M.D. who founded Women's
+      Medical College, extending her litany of overlooked women to challenge Bartlet's
+      impatience.
+    observed_status: Cited by Abbey as first American woman M.D. who founded Women's
+      Medical College, extending her litany of overlooked women to challenge Bartlet's
+      impatience.
+    beliefs:
+    - N/A (discussed only)
+    - N/A (discussed only)
+    observed_traits:
+    - pioneering
+    - resilient
+    importance: primary
+    global_id: ger_agent_bc31aa573a83
+  object_involvements:
+  - object_uuid: ger_object_1daf37bc91a1
+    description_of_involvement: Abbey teases its deployment as a seductive prop by
+      promising to change into it in the bathroom, building erotic tension; her return
+      without it subverts expectation, shifting focus to intellectual discourse and
+      underscoring her control in their dynamic.
+    status_before_event: Hypothetically stored or imagined in bathroom
+    status_after_event: Remains undonned and unmaterialized, a phantom tease
+    global_id: ger_object_1daf37bc91a1
+  location_involvements:
+  - location_uuid: ger_location_6f4d206272dc
+    description_of_involvement: Referenced as site of Abbey's recent Nellie Bly statue
+      dedication, pulling her from Bartlet's grasp and fueling the conversation pivot
+      to women's unsung legacies.
+    observed_atmosphere: Evoked as rural, historically resonant backdrop
+    functional_role: Catalyzing reference point for dialogue shift
+    symbolic_significance: Beacon of overlooked history intruding on present passion
+    access_restrictions: N/A (mentioned off-site)
+    key_environmental_details:
+    - Mills and statues in Pennsylvania countryside
+    - 6 PM urgency
+    global_id: ger_location_6f4d206272dc
+  - location_uuid: ger_location_d1360144f47e
+    description_of_involvement: Serves as intimate sanctuary for the Bartlets' charged
+      reunion, with bedroom couch and bathroom enabling playful undressing ritual
+      and history lesson, walls muffling presidential vulnerability from West Wing
+      chaos.
+    observed_atmosphere: Dimly lit, hushed intimacy laced with frustrated desire and
+      wry intellect
+    functional_role: Private refuge for marital reconnection
+    symbolic_significance: Sanctum where power yields to personal humanity
+    access_restrictions: Guarded by Secret Service, President and First Lady only
+    key_environmental_details:
+    - Soft couch seating
+    - Bathroom offshoot for tease
+    - Nighttime shadows enhancing seclusion
+    global_id: ger_location_d1360144f47e
+  organization_involvements:
+  - organization_uuid: ger_organization_9aeb11cd4ff1
+    description_of_involvement: Manifests through agents stationed outside the bedroom,
+      greeting Bartlet and affirming his hour of uninterrupted privacy, enabling the
+      intimate scene while symbolizing unyielding protection amid personal vulnerability.
+    active_representation: Through uniformed agents enforcing perimeter
+    power_dynamics: Exercising protective authority subordinated to President's whims
+    organizational_goals:
+    - Ensure zero threats during private time
+    - Uphold protocol for executive seclusion
+    influence_mechanisms:
+    - Physical guardianship
+    - Immediate compliance with leader's request
+    institutional_impact: Balances ironclad security with human needs of protected
+      figure
+    internal_dynamics: ''
+    global_id: ger_organization_9aeb11cd4ff1
   derived_from_beat_uuids: *id014
   source_season: 2
   source_database: westwing.s02
@@ -6083,7 +6083,7 @@ events:
     she argued a case in front of the U.S. Supreme Court in 1879, decades before she''d
     have the right to vote."'
   is_flashback: false
-  location_uuid: ger_location_55e711ff6df2
+  location_uuid: ger_location_ba584d0e54df
   theme_uuids: []
   arc_uuids: []
   participations:
@@ -6124,7 +6124,7 @@ events:
     global_id: ger_agent_30ec02b2ed93
   object_involvements: []
   location_involvements:
-  - location_uuid: ger_location_55e711ff6df2
+  - location_uuid: ger_location_ba584d0e54df
     description_of_involvement: The White House exterior serves as a tranquil visual
       canvas for Bartlet's contemplative voiceover tribute to Belva Lockwood, its
       morning glow symbolizing institutional power now amplifying forgotten pioneers'
@@ -6137,7 +6137,7 @@ events:
     key_environmental_details:
     - Gentle morning sunlight on columns
     - Quiet Saturday ambiance evoking contemplation
-    global_id: ger_location_55e711ff6df2
+    global_id: ger_location_ba584d0e54df
   organization_involvements: []
   derived_from_beat_uuids:
   - beat_f886b6bac5db5e4e

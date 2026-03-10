@@ -1,5 +1,5 @@
 # Events for Post Hoc, Ergo Propter Hoc
-# Generated: 2026-02-10T12:16:21.042037
+# Generated: 2026-02-22T16:31:54.803008
 
 episode_uuid: ep_sea_ser_the_west_wing_s01_e02
 episode_title: Post Hoc, Ergo Propter Hoc
@@ -226,7 +226,7 @@ events:
     - Charismatic
     importance: primary
     global_id: ger_agent_c9d41ae93618
-  - character_uuid: ger_agent_64b2a2c10c8f
+  - character_uuid: ger_agent_14f85d554756
     emotional_state: Resigned exhaustion masking affectionate exasperation
     goals:
     - Temper Josh's overconfidence with sobering reality
@@ -245,7 +245,7 @@ events:
     - Weary realism
     - Loyal but unflinching
     importance: primary
-    global_id: ger_agent_64b2a2c10c8f
+    global_id: ger_agent_14f85d554756
   object_involvements:
   - object_uuid: ger_object_b5d44e5fef59
     description_of_involvement: 'Donna''s fitted jacket functions as a staging prop:
@@ -410,12 +410,12 @@ events:
   - 'TOBY: "Can I have a cookie?" / MRS. LANDINGHAM: "No."'
   - 'C.J.: "It''s because of the joke."'
   is_flashback: false
-  location_uuid: ger_location_a2459f7fa7b7
+  location_uuid: ger_location_0ee064f77f91
   theme_uuids:
   - ger_theme_883870ecbff5
   arc_uuids: []
   participations:
-  - character_uuid: ger_agent_3a5efeceb247
+  - character_uuid: ger_agent_1f0b1cae13c5
     emotional_state: Smugly authoritative with affectionate favoritism
     goals:
     - Shield the President's schedule from untimely interruptions
@@ -437,7 +437,7 @@ events:
     - authoritative
     - playfully selective
     importance: primary
-    global_id: ger_agent_3a5efeceb247
+    global_id: ger_agent_1f0b1cae13c5
   - character_uuid: ger_agent_220975afb6db
     emotional_state: Neutral cultural reference (offscreen)
     goals: []
@@ -515,6 +515,22 @@ events:
       by communications staff.
     global_id: ger_object_3f1e3ecc43d0
   location_involvements:
+  - location_uuid: ger_location_0ee064f77f91
+    description_of_involvement: The portico functions as the liminal threshold through
+      which Bartlet and Leo enter during the pivot from private to public business;
+      their arrival via the portico signals a movement from informal to formal proceedings.
+    observed_atmosphere: Briefly transitional — fresh air and movement punctuating
+      the change in tempo.
+    functional_role: Entrance staging area that visually underscores the shift into
+      executive mode.
+    symbolic_significance: Marks the crossing from outside counsel to inside command.
+    access_restrictions: Used by senior principals and authorized staff moving into
+      the Oval.
+    key_environmental_details:
+    - Colonnaded stone porch visuals
+    - Sound of footsteps entering from outside
+    - Momentary pause before they step into the Oval
+    global_id: ger_location_0ee064f77f91
   - location_uuid: ger_location_a2459f7fa7b7
     description_of_involvement: The Oval Office is the destination and immediate next
       stage — the staff walks into it to escalate the issue. It functions as the institutional
@@ -532,22 +548,6 @@ events:
     - Portico entry traffic (Bartlet and Leo arriving)
     - Schedules and briefing materials being exchanged
     global_id: ger_location_a2459f7fa7b7
-  - location_uuid: ger_location_0ee064f77f91
-    description_of_involvement: The portico functions as the liminal threshold through
-      which Bartlet and Leo enter during the pivot from private to public business;
-      their arrival via the portico signals a movement from informal to formal proceedings.
-    observed_atmosphere: Briefly transitional — fresh air and movement punctuating
-      the change in tempo.
-    functional_role: Entrance staging area that visually underscores the shift into
-      executive mode.
-    symbolic_significance: Marks the crossing from outside counsel to inside command.
-    access_restrictions: Used by senior principals and authorized staff moving into
-      the Oval.
-    key_environmental_details:
-    - Colonnaded stone porch visuals
-    - Sound of footsteps entering from outside
-    - Momentary pause before they step into the Oval
-    global_id: ger_location_0ee064f77f91
   organization_involvements: []
   derived_from_beat_uuids: &id002
   - beat_a44828cdeec7003c
@@ -571,12 +571,12 @@ events:
   sequence_in_scene: 4
   key_dialogue: *id001
   is_flashback: false
-  location_uuid: ger_location_0ee064f77f91
+  location_uuid: ger_location_a2459f7fa7b7
   theme_uuids:
   - ger_theme_883870ecbff5
   arc_uuids: []
   participations:
-  - character_uuid: ger_agent_3a5efeceb247
+  - character_uuid: ger_agent_1f0b1cae13c5
     emotional_state: Smugly authoritative with affectionate favoritism
     goals:
     - Shield the President's schedule from untimely interruptions
@@ -598,7 +598,7 @@ events:
     - authoritative
     - playfully selective
     importance: primary
-    global_id: ger_agent_3a5efeceb247
+    global_id: ger_agent_1f0b1cae13c5
   - character_uuid: ger_agent_220975afb6db
     emotional_state: Neutral cultural reference (offscreen)
     goals: []
@@ -676,6 +676,22 @@ events:
       by communications staff.
     global_id: ger_object_3f1e3ecc43d0
   location_involvements:
+  - location_uuid: ger_location_0ee064f77f91
+    description_of_involvement: The portico functions as the liminal threshold through
+      which Bartlet and Leo enter during the pivot from private to public business;
+      their arrival via the portico signals a movement from informal to formal proceedings.
+    observed_atmosphere: Briefly transitional — fresh air and movement punctuating
+      the change in tempo.
+    functional_role: Entrance staging area that visually underscores the shift into
+      executive mode.
+    symbolic_significance: Marks the crossing from outside counsel to inside command.
+    access_restrictions: Used by senior principals and authorized staff moving into
+      the Oval.
+    key_environmental_details:
+    - Colonnaded stone porch visuals
+    - Sound of footsteps entering from outside
+    - Momentary pause before they step into the Oval
+    global_id: ger_location_0ee064f77f91
   - location_uuid: ger_location_a2459f7fa7b7
     description_of_involvement: The Oval Office is the destination and immediate next
       stage — the staff walks into it to escalate the issue. It functions as the institutional
@@ -693,22 +709,6 @@ events:
     - Portico entry traffic (Bartlet and Leo arriving)
     - Schedules and briefing materials being exchanged
     global_id: ger_location_a2459f7fa7b7
-  - location_uuid: ger_location_0ee064f77f91
-    description_of_involvement: The portico functions as the liminal threshold through
-      which Bartlet and Leo enter during the pivot from private to public business;
-      their arrival via the portico signals a movement from informal to formal proceedings.
-    observed_atmosphere: Briefly transitional — fresh air and movement punctuating
-      the change in tempo.
-    functional_role: Entrance staging area that visually underscores the shift into
-      executive mode.
-    symbolic_significance: Marks the crossing from outside counsel to inside command.
-    access_restrictions: Used by senior principals and authorized staff moving into
-      the Oval.
-    key_environmental_details:
-    - Colonnaded stone porch visuals
-    - Sound of footsteps entering from outside
-    - Momentary pause before they step into the Oval
-    global_id: ger_location_0ee064f77f91
   organization_involvements: []
   derived_from_beat_uuids: *id002
   source_season: 1
@@ -819,7 +819,7 @@ events:
     - Supportive
     importance: primary
     global_id: ger_agent_dd62525d972a
-  - character_uuid: ger_agent_3a5efeceb247
+  - character_uuid: ger_agent_1f0b1cae13c5
     emotional_state: Steadfast poise amid sudden crisis
     goals:
     - Maintain presidential schedule continuity
@@ -840,7 +840,7 @@ events:
     - Maternal
     - Imperturbable
     importance: primary
-    global_id: ger_agent_3a5efeceb247
+    global_id: ger_agent_1f0b1cae13c5
   - character_uuid: ger_agent_7854a70e34ea
     emotional_state: Calm exterior veiling rising professional anxiety
     goals:
@@ -863,7 +863,7 @@ events:
     - Professionally restrained
     importance: primary
     global_id: ger_agent_7854a70e34ea
-  - character_uuid: ger_agent_64b2a2c10c8f
+  - character_uuid: ger_agent_14f85d554756
     emotional_state: Amused tolerance for Josh's ego
     goals:
     - Manage Josh's triumphant entry optics
@@ -882,7 +882,7 @@ events:
     - Loyal
     - Observant
     importance: primary
-    global_id: ger_agent_64b2a2c10c8f
+    global_id: ger_agent_14f85d554756
   object_involvements:
   - object_uuid: ger_object_226baafc16e6
     description_of_involvement: Bill 443 is mentioned by Josh as a political talking
@@ -952,7 +952,7 @@ events:
     - Sound of footsteps and shifting staff positions
     - Visual cue of Bartlet and Leo entering the scene
     global_id: ger_location_0ee064f77f91
-  - location_uuid: ger_location_04822a72be5e
+  - location_uuid: ger_location_21fd71f335d7
     description_of_involvement: Texas is referenced verbally as an electorally dangerous
       terrain; its invocation converts a private joke into measurable political consequence
       and anchors the team's fear that small gaffes produce electoral losses.
@@ -966,7 +966,7 @@ events:
     key_environmental_details:
     - Mention of past losses and campaigning
     - Serves as a rhetorical battleground rather than a physical place
-    global_id: ger_location_04822a72be5e
+    global_id: ger_location_21fd71f335d7
   organization_involvements: []
   derived_from_beat_uuids: &id004
   - beat_24ea94b1550cd991
@@ -991,7 +991,7 @@ events:
   sequence_in_scene: 5
   key_dialogue: *id003
   is_flashback: false
-  location_uuid: ger_location_04822a72be5e
+  location_uuid: ger_location_21fd71f335d7
   theme_uuids:
   - ger_theme_883870ecbff5
   arc_uuids: []
@@ -1077,7 +1077,7 @@ events:
     - Supportive
     importance: primary
     global_id: ger_agent_dd62525d972a
-  - character_uuid: ger_agent_3a5efeceb247
+  - character_uuid: ger_agent_1f0b1cae13c5
     emotional_state: Steadfast poise amid sudden crisis
     goals:
     - Maintain presidential schedule continuity
@@ -1098,7 +1098,7 @@ events:
     - Maternal
     - Imperturbable
     importance: primary
-    global_id: ger_agent_3a5efeceb247
+    global_id: ger_agent_1f0b1cae13c5
   - character_uuid: ger_agent_7854a70e34ea
     emotional_state: Calm exterior veiling rising professional anxiety
     goals:
@@ -1121,7 +1121,7 @@ events:
     - Professionally restrained
     importance: primary
     global_id: ger_agent_7854a70e34ea
-  - character_uuid: ger_agent_64b2a2c10c8f
+  - character_uuid: ger_agent_14f85d554756
     emotional_state: Amused tolerance for Josh's ego
     goals:
     - Manage Josh's triumphant entry optics
@@ -1140,7 +1140,7 @@ events:
     - Loyal
     - Observant
     importance: primary
-    global_id: ger_agent_64b2a2c10c8f
+    global_id: ger_agent_14f85d554756
   object_involvements:
   - object_uuid: ger_object_226baafc16e6
     description_of_involvement: Bill 443 is mentioned by Josh as a political talking
@@ -1210,7 +1210,7 @@ events:
     - Sound of footsteps and shifting staff positions
     - Visual cue of Bartlet and Leo entering the scene
     global_id: ger_location_0ee064f77f91
-  - location_uuid: ger_location_04822a72be5e
+  - location_uuid: ger_location_21fd71f335d7
     description_of_involvement: Texas is referenced verbally as an electorally dangerous
       terrain; its invocation converts a private joke into measurable political consequence
       and anchors the team's fear that small gaffes produce electoral losses.
@@ -1224,7 +1224,7 @@ events:
     key_environmental_details:
     - Mention of past losses and campaigning
     - Serves as a rhetorical battleground rather than a physical place
-    global_id: ger_location_04822a72be5e
+    global_id: ger_location_21fd71f335d7
   organization_involvements: []
   derived_from_beat_uuids: *id004
   source_season: 1
@@ -2603,6 +2603,28 @@ events:
     - politically literate
     importance: primary
     global_id: ger_agent_54f868bf8265
+  - character_uuid: ger_agent_f1cb1901fcba
+    emotional_state: Businesslike and steady, focused on maintaining briefing room
+      decorum despite nearby commotion.
+    goals:
+    - Bring the room to order so the briefing can begin on schedule.
+    - Provide a neutral procedural backdrop that allows communicators to control the
+      message.
+    what_happened: Janet, offstage through the public address system, reasserts procedural
+      order by calling reporters to take their seats, signaling the transition from
+      hallway drama to an official briefing space.
+    observed_status: Janet, offstage through the public address system, reasserts
+      procedural order by calling reporters to take their seats, signaling the transition
+      from hallway drama to an official briefing space.
+    beliefs:
+    - Order and timing in the press room limit chaotic narratives.
+    - Staff should separate personal scuffles in the hall from official press operations.
+    observed_traits:
+    - professional
+    - unflappable
+    - procedural
+    importance: mentioned
+    global_id: ger_agent_f1cb1901fcba
   - character_uuid: ger_agent_c9d41ae93618
     emotional_state: Anxious, borderline frantic — public embarrassment translates
       into existential fear about competence and political survival.
@@ -2671,7 +2693,7 @@ events:
     - wry
     importance: primary
     global_id: ger_agent_7854a70e34ea
-  - character_uuid: ger_agent_64b2a2c10c8f
+  - character_uuid: ger_agent_14f85d554756
     emotional_state: Casual and teasing on the surface, confident in social control
       of the moment.
     goals:
@@ -2694,29 +2716,7 @@ events:
     - playful
     - practical
     importance: primary
-    global_id: ger_agent_64b2a2c10c8f
-  - character_uuid: ger_agent_db47e425284c
-    emotional_state: Businesslike and steady, focused on maintaining briefing room
-      decorum despite nearby commotion.
-    goals:
-    - Bring the room to order so the briefing can begin on schedule.
-    - Provide a neutral procedural backdrop that allows communicators to control the
-      message.
-    what_happened: Janet, offstage through the public address system, reasserts procedural
-      order by calling reporters to take their seats, signaling the transition from
-      hallway drama to an official briefing space.
-    observed_status: Janet, offstage through the public address system, reasserts
-      procedural order by calling reporters to take their seats, signaling the transition
-      from hallway drama to an official briefing space.
-    beliefs:
-    - Order and timing in the press room limit chaotic narratives.
-    - Staff should separate personal scuffles in the hall from official press operations.
-    observed_traits:
-    - professional
-    - unflappable
-    - procedural
-    importance: mentioned
-    global_id: ger_agent_db47e425284c
+    global_id: ger_agent_14f85d554756
   object_involvements:
   - object_uuid: ger_object_7ca8c0c4c2c7
     description_of_involvement: 'The college football pool functions as the inciting,
@@ -2763,7 +2763,7 @@ events:
     - Doorway conversation location
     - Proximity to briefing room and hallway traffic
     global_id: ger_location_8fd125f6423c
-  - location_uuid: ger_location_1afe97de3287
+  - location_uuid: ger_location_5269e5488015
     description_of_involvement: New Jersey is invoked verbally as a shorthand for
       a prior public gaffe; it functions as a symbolic location that compresses embarrassment
       into a two-syllable justification for aggressive media action.
@@ -2777,7 +2777,7 @@ events:
     key_environmental_details:
     - Used only in dialogue as a reputational shorthand
     - Not physically present in the scene
-    global_id: ger_location_1afe97de3287
+    global_id: ger_location_5269e5488015
   organization_involvements: []
   derived_from_beat_uuids: &id010
   - beat_584df35e27afc939
@@ -2800,7 +2800,7 @@ events:
   sequence_in_scene: 10
   key_dialogue: *id009
   is_flashback: false
-  location_uuid: ger_location_1afe97de3287
+  location_uuid: ger_location_5269e5488015
   theme_uuids:
   - ger_theme_fba3a4918420
   - ger_theme_883870ecbff5
@@ -2829,6 +2829,28 @@ events:
     - politically literate
     importance: primary
     global_id: ger_agent_54f868bf8265
+  - character_uuid: ger_agent_f1cb1901fcba
+    emotional_state: Businesslike and steady, focused on maintaining briefing room
+      decorum despite nearby commotion.
+    goals:
+    - Bring the room to order so the briefing can begin on schedule.
+    - Provide a neutral procedural backdrop that allows communicators to control the
+      message.
+    what_happened: Janet, offstage through the public address system, reasserts procedural
+      order by calling reporters to take their seats, signaling the transition from
+      hallway drama to an official briefing space.
+    observed_status: Janet, offstage through the public address system, reasserts
+      procedural order by calling reporters to take their seats, signaling the transition
+      from hallway drama to an official briefing space.
+    beliefs:
+    - Order and timing in the press room limit chaotic narratives.
+    - Staff should separate personal scuffles in the hall from official press operations.
+    observed_traits:
+    - professional
+    - unflappable
+    - procedural
+    importance: mentioned
+    global_id: ger_agent_f1cb1901fcba
   - character_uuid: ger_agent_c9d41ae93618
     emotional_state: Anxious, borderline frantic — public embarrassment translates
       into existential fear about competence and political survival.
@@ -2897,7 +2919,7 @@ events:
     - wry
     importance: primary
     global_id: ger_agent_7854a70e34ea
-  - character_uuid: ger_agent_64b2a2c10c8f
+  - character_uuid: ger_agent_14f85d554756
     emotional_state: Casual and teasing on the surface, confident in social control
       of the moment.
     goals:
@@ -2920,29 +2942,7 @@ events:
     - playful
     - practical
     importance: primary
-    global_id: ger_agent_64b2a2c10c8f
-  - character_uuid: ger_agent_db47e425284c
-    emotional_state: Businesslike and steady, focused on maintaining briefing room
-      decorum despite nearby commotion.
-    goals:
-    - Bring the room to order so the briefing can begin on schedule.
-    - Provide a neutral procedural backdrop that allows communicators to control the
-      message.
-    what_happened: Janet, offstage through the public address system, reasserts procedural
-      order by calling reporters to take their seats, signaling the transition from
-      hallway drama to an official briefing space.
-    observed_status: Janet, offstage through the public address system, reasserts
-      procedural order by calling reporters to take their seats, signaling the transition
-      from hallway drama to an official briefing space.
-    beliefs:
-    - Order and timing in the press room limit chaotic narratives.
-    - Staff should separate personal scuffles in the hall from official press operations.
-    observed_traits:
-    - professional
-    - unflappable
-    - procedural
-    importance: mentioned
-    global_id: ger_agent_db47e425284c
+    global_id: ger_agent_14f85d554756
   object_involvements:
   - object_uuid: ger_object_7ca8c0c4c2c7
     description_of_involvement: 'The college football pool functions as the inciting,
@@ -2989,7 +2989,7 @@ events:
     - Doorway conversation location
     - Proximity to briefing room and hallway traffic
     global_id: ger_location_8fd125f6423c
-  - location_uuid: ger_location_1afe97de3287
+  - location_uuid: ger_location_5269e5488015
     description_of_involvement: New Jersey is invoked verbally as a shorthand for
       a prior public gaffe; it functions as a symbolic location that compresses embarrassment
       into a two-syllable justification for aggressive media action.
@@ -3003,7 +3003,7 @@ events:
     key_environmental_details:
     - Used only in dialogue as a reputational shorthand
     - Not physically present in the scene
-    global_id: ger_location_1afe97de3287
+    global_id: ger_location_5269e5488015
   organization_involvements: []
   derived_from_beat_uuids: *id010
   source_season: 1
@@ -3065,6 +3065,28 @@ events:
     - self-aware
     importance: primary
     global_id: ger_agent_54f868bf8265
+  - character_uuid: ger_agent_f1cb1901fcba
+    emotional_state: Professional and focused—task-oriented, using steady procedural
+      cues to impose order.
+    goals:
+    - Begin the briefing on schedule and ensure a controlled media environment.
+    - Provide the logistical rhythm that allows communicators to execute the prepared
+      frame.
+    what_happened: Janet speaks into the public-address system to call reporters to
+      their seats, signaling the formal start of the briefing and shifting the hallway's
+      energy from planning to performance preparation.
+    observed_status: Janet speaks into the public-address system to call reporters
+      to their seats, signaling the formal start of the briefing and shifting the
+      hallway's energy from planning to performance preparation.
+    beliefs:
+    - Order and timing are essential to maintaining press-room control.
+    - Small procedural acts (calling seats) materially affect optics and discipline.
+    observed_traits:
+    - businesslike
+    - authoritative
+    - procedural
+    importance: primary
+    global_id: ger_agent_f1cb1901fcba
   - character_uuid: ger_agent_c9d41ae93618
     emotional_state: Flustered and insecure—panic about reputation masks a deep need
       to control optics and protect the President and team.
@@ -3142,7 +3164,7 @@ events:
     - director-like
     importance: primary
     global_id: ger_agent_7854a70e34ea
-  - character_uuid: ger_agent_64b2a2c10c8f
+  - character_uuid: ger_agent_14f85d554756
     emotional_state: Teasing and amused on the surface, deliberately disarming to
       puncture tension and expose truth.
     goals:
@@ -3164,29 +3186,7 @@ events:
     - practical
     - emotionally blunt
     importance: primary
-    global_id: ger_agent_64b2a2c10c8f
-  - character_uuid: ger_agent_db47e425284c
-    emotional_state: Professional and focused—task-oriented, using steady procedural
-      cues to impose order.
-    goals:
-    - Begin the briefing on schedule and ensure a controlled media environment.
-    - Provide the logistical rhythm that allows communicators to execute the prepared
-      frame.
-    what_happened: Janet speaks into the public-address system to call reporters to
-      their seats, signaling the formal start of the briefing and shifting the hallway's
-      energy from planning to performance preparation.
-    observed_status: Janet speaks into the public-address system to call reporters
-      to their seats, signaling the formal start of the briefing and shifting the
-      hallway's energy from planning to performance preparation.
-    beliefs:
-    - Order and timing are essential to maintaining press-room control.
-    - Small procedural acts (calling seats) materially affect optics and discipline.
-    observed_traits:
-    - businesslike
-    - authoritative
-    - procedural
-    importance: primary
-    global_id: ger_agent_db47e425284c
+    global_id: ger_agent_14f85d554756
   object_involvements:
   - object_uuid: ger_object_7ca8c0c4c2c7
     description_of_involvement: The college football pool is verbally invoked when
@@ -3238,7 +3238,7 @@ events:
     - Quick, clipped exchanges and passing movement
     - Proximity to the briefing room and PA system
     global_id: ger_location_8fd125f6423c
-  - location_uuid: ger_location_1afe97de3287
+  - location_uuid: ger_location_5269e5488015
     description_of_involvement: New Jersey is invoked as a shorthand location of prior
       embarrassment (a reputational scar). It functions narratively as a compressed
       memory that intensifies present urgency about optics and media fallout.
@@ -3252,7 +3252,7 @@ events:
     key_environmental_details:
     - Mentioned offstage as a loaded place-name
     - Functions through memory and shorthand rather than physical description
-    global_id: ger_location_1afe97de3287
+    global_id: ger_location_5269e5488015
   organization_involvements: []
   derived_from_beat_uuids: &id012
   - beat_14d9bd832d1731f8
@@ -3275,7 +3275,7 @@ events:
   sequence_in_scene: 11
   key_dialogue: *id011
   is_flashback: false
-  location_uuid: ger_location_1afe97de3287
+  location_uuid: ger_location_5269e5488015
   theme_uuids:
   - ger_theme_fba3a4918420
   - ger_theme_c1a7486b8841
@@ -3308,6 +3308,28 @@ events:
     - self-aware
     importance: primary
     global_id: ger_agent_54f868bf8265
+  - character_uuid: ger_agent_f1cb1901fcba
+    emotional_state: Professional and focused—task-oriented, using steady procedural
+      cues to impose order.
+    goals:
+    - Begin the briefing on schedule and ensure a controlled media environment.
+    - Provide the logistical rhythm that allows communicators to execute the prepared
+      frame.
+    what_happened: Janet speaks into the public-address system to call reporters to
+      their seats, signaling the formal start of the briefing and shifting the hallway's
+      energy from planning to performance preparation.
+    observed_status: Janet speaks into the public-address system to call reporters
+      to their seats, signaling the formal start of the briefing and shifting the
+      hallway's energy from planning to performance preparation.
+    beliefs:
+    - Order and timing are essential to maintaining press-room control.
+    - Small procedural acts (calling seats) materially affect optics and discipline.
+    observed_traits:
+    - businesslike
+    - authoritative
+    - procedural
+    importance: primary
+    global_id: ger_agent_f1cb1901fcba
   - character_uuid: ger_agent_c9d41ae93618
     emotional_state: Flustered and insecure—panic about reputation masks a deep need
       to control optics and protect the President and team.
@@ -3385,7 +3407,7 @@ events:
     - director-like
     importance: primary
     global_id: ger_agent_7854a70e34ea
-  - character_uuid: ger_agent_64b2a2c10c8f
+  - character_uuid: ger_agent_14f85d554756
     emotional_state: Teasing and amused on the surface, deliberately disarming to
       puncture tension and expose truth.
     goals:
@@ -3407,29 +3429,7 @@ events:
     - practical
     - emotionally blunt
     importance: primary
-    global_id: ger_agent_64b2a2c10c8f
-  - character_uuid: ger_agent_db47e425284c
-    emotional_state: Professional and focused—task-oriented, using steady procedural
-      cues to impose order.
-    goals:
-    - Begin the briefing on schedule and ensure a controlled media environment.
-    - Provide the logistical rhythm that allows communicators to execute the prepared
-      frame.
-    what_happened: Janet speaks into the public-address system to call reporters to
-      their seats, signaling the formal start of the briefing and shifting the hallway's
-      energy from planning to performance preparation.
-    observed_status: Janet speaks into the public-address system to call reporters
-      to their seats, signaling the formal start of the briefing and shifting the
-      hallway's energy from planning to performance preparation.
-    beliefs:
-    - Order and timing are essential to maintaining press-room control.
-    - Small procedural acts (calling seats) materially affect optics and discipline.
-    observed_traits:
-    - businesslike
-    - authoritative
-    - procedural
-    importance: primary
-    global_id: ger_agent_db47e425284c
+    global_id: ger_agent_14f85d554756
   object_involvements:
   - object_uuid: ger_object_7ca8c0c4c2c7
     description_of_involvement: The college football pool is verbally invoked when
@@ -3481,7 +3481,7 @@ events:
     - Quick, clipped exchanges and passing movement
     - Proximity to the briefing room and PA system
     global_id: ger_location_8fd125f6423c
-  - location_uuid: ger_location_1afe97de3287
+  - location_uuid: ger_location_5269e5488015
     description_of_involvement: New Jersey is invoked as a shorthand location of prior
       embarrassment (a reputational scar). It functions narratively as a compressed
       memory that intensifies present urgency about optics and media fallout.
@@ -3495,7 +3495,7 @@ events:
     key_environmental_details:
     - Mentioned offstage as a loaded place-name
     - Functions through memory and shorthand rather than physical description
-    global_id: ger_location_1afe97de3287
+    global_id: ger_location_5269e5488015
   organization_involvements: []
   derived_from_beat_uuids: *id012
   source_season: 1
@@ -3578,6 +3578,26 @@ events:
     - Professionally composed
     importance: primary
     global_id: ger_agent_54f868bf8265
+  - character_uuid: ger_agent_f1cb1901fcba
+    emotional_state: Steadfast professionalism amid routine chaos.
+    goals:
+    - Restore order to enable smooth briefing start
+    - Support C.J.'s entry with logistical control
+    what_happened: Operates P.A. system offstage, repeatedly broadcasting calm, insistent
+      calls for reporters to take seats as C.J. and Toby enter and approach podium,
+      facilitating orderly transition to briefing.
+    observed_status: Operates P.A. system offstage, repeatedly broadcasting calm,
+      insistent calls for reporters to take seats as C.J. and Toby enter and approach
+      podium, facilitating orderly transition to briefing.
+    beliefs:
+    - Discipline in seating ensures effective public communications
+    - P.A. protocol is foundational to institutional briefings
+    observed_traits:
+    - Efficient
+    - Procedural
+    - Authoritative in routine
+    importance: mentioned
+    global_id: ger_agent_f1cb1901fcba
   - character_uuid: ger_agent_55a1162812e2
     emotional_state: Insistently probing with focused skepticism.
     goals:
@@ -3640,26 +3660,6 @@ events:
     - Reserved
     importance: primary
     global_id: ger_agent_7854a70e34ea
-  - character_uuid: ger_agent_db47e425284c
-    emotional_state: Steadfast professionalism amid routine chaos.
-    goals:
-    - Restore order to enable smooth briefing start
-    - Support C.J.'s entry with logistical control
-    what_happened: Operates P.A. system offstage, repeatedly broadcasting calm, insistent
-      calls for reporters to take seats as C.J. and Toby enter and approach podium,
-      facilitating orderly transition to briefing.
-    observed_status: Operates P.A. system offstage, repeatedly broadcasting calm,
-      insistent calls for reporters to take seats as C.J. and Toby enter and approach
-      podium, facilitating orderly transition to briefing.
-    beliefs:
-    - Discipline in seating ensures effective public communications
-    - P.A. protocol is foundational to institutional briefings
-    observed_traits:
-    - Efficient
-    - Procedural
-    - Authoritative in routine
-    importance: mentioned
-    global_id: ger_agent_db47e425284c
   object_involvements:
   - object_uuid: ger_object_f1c530a40e83
     description_of_involvement: The A3-C3 coordinate functions as the topical fulcrum
@@ -3813,26 +3813,6 @@ events:
     - analytical
     importance: primary
     global_id: ger_agent_55a1162812e2
-  - character_uuid: ger_agent_e98562bb3248
-    emotional_state: Eagerly confrontational
-    goals:
-    - Force administration accountability on President's joke
-    - Secure on-record apology commitment
-    what_happened: Rising immediately after C.J.'s joke and question solicitation,
-      the reporter links the sports snub to the President's prior quip, demanding
-      an explicit apology and reigniting the core controversy.
-    observed_status: Rising immediately after C.J.'s joke and question solicitation,
-      the reporter links the sports snub to the President's prior quip, demanding
-      an explicit apology and reigniting the core controversy.
-    beliefs:
-    - Jokes carry policy repercussions warranting correction
-    - Press must connect disparate dots for public clarity
-    observed_traits:
-    - opportunistic
-    - aggressive
-    - accountability-driven
-    importance: primary
-    global_id: ger_agent_e98562bb3248
   - character_uuid: ger_agent_de3f8f714667
     emotional_state: Casually engaged and corrective
     goals:
@@ -3872,6 +3852,26 @@ events:
     - composed
     importance: primary
     global_id: ger_agent_7854a70e34ea
+  - character_uuid: ger_agent_7f81f2915789
+    emotional_state: Eagerly confrontational
+    goals:
+    - Force administration accountability on President's joke
+    - Secure on-record apology commitment
+    what_happened: Rising immediately after C.J.'s joke and question solicitation,
+      the reporter links the sports snub to the President's prior quip, demanding
+      an explicit apology and reigniting the core controversy.
+    observed_status: Rising immediately after C.J.'s joke and question solicitation,
+      the reporter links the sports snub to the President's prior quip, demanding
+      an explicit apology and reigniting the core controversy.
+    beliefs:
+    - Jokes carry policy repercussions warranting correction
+    - Press must connect disparate dots for public clarity
+    observed_traits:
+    - opportunistic
+    - aggressive
+    - accountability-driven
+    importance: primary
+    global_id: ger_agent_7f81f2915789
   object_involvements:
   - object_uuid: ger_object_4a51aa0a0a3f
     description_of_involvement: Mike uses a small stack of notes to quote the Vice
@@ -3993,7 +3993,7 @@ events:
     - sarcastic under pressure
     importance: primary
     global_id: ger_agent_c9d41ae93618
-  - character_uuid: ger_agent_64b2a2c10c8f
+  - character_uuid: ger_agent_14f85d554756
     emotional_state: Curious suspicion laced with professional detachment
     goals:
     - Enforce Josh's schedule amid brewing crisis
@@ -4013,7 +4013,7 @@ events:
     - loyal
     - efficient
     importance: primary
-    global_id: ger_agent_64b2a2c10c8f
+    global_id: ger_agent_14f85d554756
   object_involvements:
   - object_uuid: ger_object_4c064d7fd6f9
     description_of_involvement: The bullpen television broadcasts C.J.'s briefing
@@ -4203,7 +4203,7 @@ events:
     - institutional gatekeeper
     importance: primary
     global_id: ger_agent_dd62525d972a
-  - character_uuid: ger_agent_64b2a2c10c8f
+  - character_uuid: ger_agent_14f85d554756
     emotional_state: Mildly amused with professional focus; impatient to restore schedule
       and order.
     goals:
@@ -4228,7 +4228,7 @@ events:
     - terse with affection
     - agenda-driven
     importance: primary
-    global_id: ger_agent_64b2a2c10c8f
+    global_id: ger_agent_14f85d554756
   object_involvements:
   - object_uuid: ger_object_4c064d7fd6f9
     description_of_involvement: The bullpen television is broadcasting C.J.'s on-air
@@ -6912,7 +6912,7 @@ events:
     - competent but risky
     importance: mentioned
     global_id: ger_agent_ed71fa88be96
-  - character_uuid: ger_agent_64b2a2c10c8f
+  - character_uuid: ger_agent_14f85d554756
     emotional_state: Lighthearted and amused at first; mildly reproachful about Josh's
       cavalier attitude; quietly attentive as professional business intrudes.
     goals:
@@ -6935,7 +6935,7 @@ events:
     - practical
     - socially attuned
     importance: primary
-    global_id: ger_agent_64b2a2c10c8f
+    global_id: ger_agent_14f85d554756
   object_involvements: []
   location_involvements:
   - location_uuid: ger_location_3d4b26f1de82
@@ -7104,7 +7104,7 @@ events:
     - polarizing
     importance: mentioned
     global_id: ger_agent_ed71fa88be96
-  - character_uuid: ger_agent_64b2a2c10c8f
+  - character_uuid: ger_agent_14f85d554756
     emotional_state: Amused and relaxed during banter; quietly alert and deferential
       when the work matter intrudes.
     goals:
@@ -7127,7 +7127,7 @@ events:
     - sociable
     - situationally aware
     importance: primary
-    global_id: ger_agent_64b2a2c10c8f
+    global_id: ger_agent_14f85d554756
   object_involvements: []
   location_involvements:
   - location_uuid: ger_location_3d4b26f1de82
@@ -7286,261 +7286,6 @@ events:
   - 'TOBY: "So it''s just me, you, the hooker, the President''s deputy chief of staff,
     and The Wall Street Journal!"'
   - 'JOSH: "Who among us hasn''t known forbidden love, Toby? Why spring break alone..."'
-  is_flashback: false
-  location_uuid: ger_location_8fd125f6423c
-  theme_uuids:
-  - ger_theme_fba3a4918420
-  - ger_theme_c1a7486b8841
-  - ger_theme_883870ecbff5
-  - ger_theme_93ff0780ae2e
-  arc_uuids:
-  - ger_conflictarc_7056d65ad92f
-  participations:
-  - character_uuid: ger_agent_3b656c0551eb
-    emotional_state: Neutral observer (inferred from context; not present)
-    goals:
-    - Pursue story angles on Josh/Mary Marsh (contextual)
-    - Report ethically on observed events
-    what_happened: Referenced indirectly as eyewitness to Sam's early evening with
-      call girl at Four Seasons, before departing; his WSJ affiliation detonates Toby's
-      risk assessment, elevating confession to press exposure threat.
-    observed_status: Referenced indirectly as eyewitness to Sam's early evening with
-      call girl at Four Seasons, before departing; his WSJ affiliation detonates Toby's
-      risk assessment, elevating confession to press exposure threat.
-    beliefs:
-    - Proximity to power yields scoops
-    - Political gossip fuels journalism
-    observed_traits: []
-    importance: primary
-    global_id: ger_agent_3b656c0551eb
-  - character_uuid: ger_agent_54f868bf8265
-    emotional_state: Amused satisfaction at Josh's discomfort amid professional alignment
-    goals:
-    - Reinforce Leo's directive through subtle ribbing
-    - Advance staffing for press challenges
-    what_happened: Already assembled in Leo's office for meeting, punctuates Mandy
-      hiring announcement with sarcastic applause mocking Josh's role in her unemployment,
-      remains silent otherwise as decision solidifies.
-    observed_status: Already assembled in Leo's office for meeting, punctuates Mandy
-      hiring announcement with sarcastic applause mocking Josh's role in her unemployment,
-      remains silent otherwise as decision solidifies.
-    beliefs:
-    - Team friction resolves through decisive leadership
-    - Past staff churn enables fresh utility
-    observed_traits:
-    - Wryly supportive
-    - Schadenfreude-tinged
-    - Loyal to hierarchy
-    importance: primary
-    global_id: ger_agent_54f868bf8265
-  - character_uuid: ger_agent_c9d41ae93618
-    emotional_state: Irritated nonchalance over scandal feigning deeper blindsided
-      fury at ex's return
-    goals:
-    - Downplay Sam's issue to refocus on business
-    - Block or control Mandy's integration to preserve authority
-    what_happened: Bursts into Toby's office mid-confession confrontation, dodges
-      Toby's probe with flippant humor about 'forbidden love,' signals Sam to move
-      on, leads group to Leo's office, vehemently objects to Mandy's hiring as ambush
-      citing personal history, vows to enforce chain-of-command via chart.
-    observed_status: Bursts into Toby's office mid-confession confrontation, dodges
-      Toby's probe with flippant humor about 'forbidden love,' signals Sam to move
-      on, leads group to Leo's office, vehemently objects to Mandy's hiring as ambush
-      citing personal history, vows to enforce chain-of-command via chart.
-    beliefs:
-    - Past relationships poison professional dynamics
-    - Personal scandals fade if not fed oxygen
-    observed_traits:
-    - Defensive
-    - Flippantly evasive
-    - Combative in personal turf wars
-    - Team-oriented under duress
-    importance: primary
-    global_id: ger_agent_c9d41ae93618
-  - character_uuid: ger_agent_ed161dcf5390
-    emotional_state: Vulnerable yet autonomous (defended by Sam)
-    goals:
-    - Maintain post-encounter boundaries
-    - Graduate law school without exploitation
-    what_happened: Humanized by Sam's defense against Toby's 'hooker' label; positioned
-      as law student undeserving of stigma, central to scandal's moral framing despite
-      absence.
-    observed_status: Humanized by Sam's defense against Toby's 'hooker' label; positioned
-      as law student undeserving of stigma, central to scandal's moral framing despite
-      absence.
-    beliefs:
-    - Personal choices needn't define worth
-    - Power imbalances distort judgments
-    observed_traits: []
-    importance: primary
-    global_id: ger_agent_ed161dcf5390
-  - character_uuid: ger_agent_dd62525d972a
-    emotional_state: Calmly commanding, relishing override of Josh's resistance with
-      dry finality
-    goals:
-    - Secure immediate media expertise for PR crises like Ryder Cup
-    - Force team unity by overriding personal grudges
-    what_happened: Presides over tight three-minute meeting in his office with C.J.,
-      deftly redirects from economic woes to media consultant hire, unilaterally names
-      Mandy despite Josh's protests, dismisses personal objections, secures President's
-      buy-in reveal, wraps decisively.
-    observed_status: Presides over tight three-minute meeting in his office with C.J.,
-      deftly redirects from economic woes to media consultant hire, unilaterally names
-      Mandy despite Josh's protests, dismisses personal objections, secures President's
-      buy-in reveal, wraps decisively.
-    beliefs:
-    - Institutional needs trump personal histories
-    - Rapid tactical hires avert larger damages
-    observed_traits:
-    - Authoritative
-    - Pragmatic dealmaker
-    - Unsentimental
-    - Ambushes for efficiency
-    importance: primary
-    global_id: ger_agent_dd62525d972a
-  - character_uuid: ger_agent_ed71fa88be96
-    emotional_state: Employable opportunist (inferred)
-    goals:
-    - Re-enter White House orbit
-    - Leverage optics expertise
-    what_happened: Absent but pivotally appointed by Leo as media consultant for Ryder
-      Cup crisis; her recent unemployment lauded, sparking Josh's ambush accusation
-      and ex-relationship reveal.
-    observed_status: Absent but pivotally appointed by Leo as media consultant for
-      Ryder Cup crisis; her recent unemployment lauded, sparking Josh's ambush accusation
-      and ex-relationship reveal.
-    beliefs:
-    - Media savvy trumps personal baggage
-    - Unemployment is temporary leverage
-    observed_traits: []
-    importance: primary
-    global_id: ger_agent_ed71fa88be96
-  - character_uuid: ger_agent_7854a70e34ea
-    emotional_state: Shock hardening into urgent alarm, laced with exasperated sarcasm
-      masking institutional panic
-    goals:
-    - Quantify and contain political-legal exposure from Sam's indiscretion
-    - Block any actions that could amplify scandal, like Sam contacting the woman
-    what_happened: Sits at desk processing end-of-meeting briefings, slowly looks
-      up in disbelief at Sam's confession, interrogates details with sharp sarcasm
-      about the Four Seasons encounter and Kenworthy's presence, demands to know who
-      else is aware, halts Sam's reformist impulses, confronts Josh outside, joins
-      Leo's ambush on hiring Mandy.
-    observed_status: Sits at desk processing end-of-meeting briefings, slowly looks
-      up in disbelief at Sam's confession, interrogates details with sharp sarcasm
-      about the Four Seasons encounter and Kenworthy's presence, demands to know who
-      else is aware, halts Sam's reformist impulses, confronts Josh outside, joins
-      Leo's ambush on hiring Mandy.
-    beliefs:
-    - Personal vulnerabilities instantly become public liabilities in Washington
-    - Scandals self-destruct administrations without opposition help
-    observed_traits:
-    - Skeptical
-    - Pragmatic
-    - Intensely protective of administration
-    - Sardonic under pressure
-    importance: primary
-    global_id: ger_agent_7854a70e34ea
-  object_involvements:
-  - object_uuid: ger_object_8c7b9b549a75
-    description_of_involvement: 'A ringing telephone initiates the scene: Cathy answers
-      a call (Danny). The phone call establishes daily press pressure and sets the
-      office in motion; the device is the small logistical engine that moves Sam''s
-      draft and triggers normal communications rhythms against which the confession
-      feels extra consequential.'
-    status_before_event: Ringing outside Sam's office; available and active.
-    status_after_event: Answered and handled by Cathy; call concluded or transferred,
-      phone returns to idle but the communications flow continues.
-    global_id: ger_object_8c7b9b549a75
-  - object_uuid: ger_object_9f90ed441f87
-    description_of_involvement: The 'Hilton Head Draft' is the finished speech Sam
-      carries and ultimately hands off to Cathy to be delivered to C.J.; it frames
-      the scene's opening (Sam's exit) and signals he has completed substantive work
-      before confessing, anchoring his credibility even as his personal lapse threatens
-      it.
-    status_before_event: Completed by Sam, sitting in his office; polished and double-checked;
-      Sam prepares to hand it over.
-    status_after_event: Carried by Cathy toward C.J.'s office and then acknowledged
-      by C.J. in Leo's meeting; remains a functioning policy draft in circulation.
-    global_id: ger_object_9f90ed441f87
-  location_involvements:
-  - location_uuid: ger_location_8fd125f6423c
-    description_of_involvement: 'The Communications Office / C.J.''s Office functions
-      as the event''s primary stage: an operational hub where a private confession
-      collides with institutional procedure. It is where Sam exits, Cathy handles
-      calls and papers, Toby triages, and staff convene—compressing personal and political
-      business into a cramped workspace.'
-    observed_atmosphere: Claustrophobic, businesslike, and tension-filled; ordinary
-      office noise undercuts the sudden moral panic.
-    functional_role: Meeting place for triage, staging area for message control, and
-      the locus where private mistakes become public problems.
-    symbolic_significance: Symbolizes the porous boundary between private human error
-      and the institutional machine that must process scandal.
-    access_restrictions: Restricted to staff and aides; informal but effectively limited
-      to communications team and senior aides during triage.
-    key_environmental_details:
-    - Ringing phone at the outset
-    - Papers (speech draft) being carried between offices
-    - Doors opening and closing as staff flow through
-    global_id: ger_location_8fd125f6423c
-  - location_uuid: ger_location_4f126047bdcc
-    description_of_involvement: The Four Seasons Bar is referenced as the site where
-      Sam met the woman; it functions as the origin point of scandal and the physical
-      locus connecting Sam's private behavior to potential press exposure (Bill Kenworthy
-      had been there).
-    observed_atmosphere: Stylish, semi-public, and ripe for overheard conversations—an
-      ambiguous space between anonymity and exposure.
-    functional_role: Source location that creates media vulnerability; it ties Sam's
-      personal action to public actors.
-    symbolic_significance: Represents the thin line between private life and public
-      accountability.
-    access_restrictions: Public venue; anyone (reporters, officials) can be present.
-    key_environmental_details:
-    - Low lamplight and background conversation (implied)
-    - A public bar setting where a reporter and a staffer could plausibly cross paths
-    global_id: ger_location_4f126047bdcc
-  - location_uuid: ger_location_0ee064f77f91
-    description_of_involvement: 'Leo''s office is the authoritative locus where the
-      private confession translates into a managerial decision: Leo green-lights hiring
-      Mandy and reframes the narrative toward staffing and policy priorities, moving
-      the scene from exposure to executive control.'
-    observed_atmosphere: Authoritative, brisk, slightly distracted (Leo juggles optics
-      and policy); the air tightens into decision-making focus.
-    functional_role: Decision point and power center where staff proposals are authorized
-      and reporting lines clarified.
-    symbolic_significance: Embodies institutional power and the ability to convert
-      scandal into bureaucratic solutions.
-    access_restrictions: Restricted to senior staff; invitation-only meeting space.
-    key_environmental_details:
-    - Polished wood desk and quick consultation tone
-    - Rapid shifting of agenda between personal scandal and economic metrics
-    global_id: ger_location_0ee064f77f91
-  organization_involvements: []
-  derived_from_beat_uuids: &id022
-  - beat_4ef5d5b05631b857
-  - beat_e069f731fe5acbf1
-  - beat_c97d49dc8eadebf9
-  - beat_fa8e3d7dfea9413b
-  - beat_7732798c3ab5c447
-  - beat_c31b735eb3c36e74
-  source_season: 1
-  source_database: westwing.s01
-- fabula_uuid: cand_evt_scene_899a0d3c27fd2e00_1
-  global_id: null
-  title: 'Sam''s Confession: Private Mistake, Public Threat'
-  description: After finishing a speech draft, Sam pulls Toby aside and confesses
-    he "accidentally" slept with a call girl. What Sam intends as a contrite, personal
-    admission immediately becomes a political liability when Toby realizes Bill Kenworthy
-    of The Wall Street Journal was there and Josh already knows. Toby instantly reframes
-    the moment as legal and messaging risk; Sam tries to humanize the woman, while
-    Toby triages damage control. The scene pivots into administration politics when
-    Leo announces Mandy as an outside media consultant, exposing fissures between
-    Josh and the team and turning private embarrassment into a catalyst for internal
-    power maneuvering.
-  episode_uuid: ep_sea_ser_the_west_wing_s01_e02
-  scene_sequence: 14
-  sequence_in_scene: 23
-  key_dialogue: *id021
   is_flashback: false
   location_uuid: ger_location_4f126047bdcc
   theme_uuids:
@@ -7719,25 +7464,6 @@ events:
       by C.J. in Leo's meeting; remains a functioning policy draft in circulation.
     global_id: ger_object_9f90ed441f87
   location_involvements:
-  - location_uuid: ger_location_8fd125f6423c
-    description_of_involvement: 'The Communications Office / C.J.''s Office functions
-      as the event''s primary stage: an operational hub where a private confession
-      collides with institutional procedure. It is where Sam exits, Cathy handles
-      calls and papers, Toby triages, and staff convene—compressing personal and political
-      business into a cramped workspace.'
-    observed_atmosphere: Claustrophobic, businesslike, and tension-filled; ordinary
-      office noise undercuts the sudden moral panic.
-    functional_role: Meeting place for triage, staging area for message control, and
-      the locus where private mistakes become public problems.
-    symbolic_significance: Symbolizes the porous boundary between private human error
-      and the institutional machine that must process scandal.
-    access_restrictions: Restricted to staff and aides; informal but effectively limited
-      to communications team and senior aides during triage.
-    key_environmental_details:
-    - Ringing phone at the outset
-    - Papers (speech draft) being carried between offices
-    - Doors opening and closing as staff flow through
-    global_id: ger_location_8fd125f6423c
   - location_uuid: ger_location_4f126047bdcc
     description_of_involvement: The Four Seasons Bar is referenced as the site where
       Sam met the woman; it functions as the origin point of scandal and the physical
@@ -7770,8 +7496,33 @@ events:
     - Polished wood desk and quick consultation tone
     - Rapid shifting of agenda between personal scandal and economic metrics
     global_id: ger_location_0ee064f77f91
+  - location_uuid: ger_location_8fd125f6423c
+    description_of_involvement: 'The Communications Office / C.J.''s Office functions
+      as the event''s primary stage: an operational hub where a private confession
+      collides with institutional procedure. It is where Sam exits, Cathy handles
+      calls and papers, Toby triages, and staff convene—compressing personal and political
+      business into a cramped workspace.'
+    observed_atmosphere: Claustrophobic, businesslike, and tension-filled; ordinary
+      office noise undercuts the sudden moral panic.
+    functional_role: Meeting place for triage, staging area for message control, and
+      the locus where private mistakes become public problems.
+    symbolic_significance: Symbolizes the porous boundary between private human error
+      and the institutional machine that must process scandal.
+    access_restrictions: Restricted to staff and aides; informal but effectively limited
+      to communications team and senior aides during triage.
+    key_environmental_details:
+    - Ringing phone at the outset
+    - Papers (speech draft) being carried between offices
+    - Doors opening and closing as staff flow through
+    global_id: ger_location_8fd125f6423c
   organization_involvements: []
-  derived_from_beat_uuids: *id022
+  derived_from_beat_uuids: &id022
+  - beat_4ef5d5b05631b857
+  - beat_e069f731fe5acbf1
+  - beat_c97d49dc8eadebf9
+  - beat_fa8e3d7dfea9413b
+  - beat_7732798c3ab5c447
+  - beat_c31b735eb3c36e74
   source_season: 1
   source_database: westwing.s01
 - fabula_uuid: cand_evt_scene_899a0d3c27fd2e00_1
@@ -7968,25 +7719,6 @@ events:
       by C.J. in Leo's meeting; remains a functioning policy draft in circulation.
     global_id: ger_object_9f90ed441f87
   location_involvements:
-  - location_uuid: ger_location_8fd125f6423c
-    description_of_involvement: 'The Communications Office / C.J.''s Office functions
-      as the event''s primary stage: an operational hub where a private confession
-      collides with institutional procedure. It is where Sam exits, Cathy handles
-      calls and papers, Toby triages, and staff convene—compressing personal and political
-      business into a cramped workspace.'
-    observed_atmosphere: Claustrophobic, businesslike, and tension-filled; ordinary
-      office noise undercuts the sudden moral panic.
-    functional_role: Meeting place for triage, staging area for message control, and
-      the locus where private mistakes become public problems.
-    symbolic_significance: Symbolizes the porous boundary between private human error
-      and the institutional machine that must process scandal.
-    access_restrictions: Restricted to staff and aides; informal but effectively limited
-      to communications team and senior aides during triage.
-    key_environmental_details:
-    - Ringing phone at the outset
-    - Papers (speech draft) being carried between offices
-    - Doors opening and closing as staff flow through
-    global_id: ger_location_8fd125f6423c
   - location_uuid: ger_location_4f126047bdcc
     description_of_involvement: The Four Seasons Bar is referenced as the site where
       Sam met the woman; it functions as the origin point of scandal and the physical
@@ -8019,6 +7751,274 @@ events:
     - Polished wood desk and quick consultation tone
     - Rapid shifting of agenda between personal scandal and economic metrics
     global_id: ger_location_0ee064f77f91
+  - location_uuid: ger_location_8fd125f6423c
+    description_of_involvement: 'The Communications Office / C.J.''s Office functions
+      as the event''s primary stage: an operational hub where a private confession
+      collides with institutional procedure. It is where Sam exits, Cathy handles
+      calls and papers, Toby triages, and staff convene—compressing personal and political
+      business into a cramped workspace.'
+    observed_atmosphere: Claustrophobic, businesslike, and tension-filled; ordinary
+      office noise undercuts the sudden moral panic.
+    functional_role: Meeting place for triage, staging area for message control, and
+      the locus where private mistakes become public problems.
+    symbolic_significance: Symbolizes the porous boundary between private human error
+      and the institutional machine that must process scandal.
+    access_restrictions: Restricted to staff and aides; informal but effectively limited
+      to communications team and senior aides during triage.
+    key_environmental_details:
+    - Ringing phone at the outset
+    - Papers (speech draft) being carried between offices
+    - Doors opening and closing as staff flow through
+    global_id: ger_location_8fd125f6423c
+  organization_involvements: []
+  derived_from_beat_uuids: *id022
+  source_season: 1
+  source_database: westwing.s01
+- fabula_uuid: cand_evt_scene_899a0d3c27fd2e00_1
+  global_id: null
+  title: 'Sam''s Confession: Private Mistake, Public Threat'
+  description: After finishing a speech draft, Sam pulls Toby aside and confesses
+    he "accidentally" slept with a call girl. What Sam intends as a contrite, personal
+    admission immediately becomes a political liability when Toby realizes Bill Kenworthy
+    of The Wall Street Journal was there and Josh already knows. Toby instantly reframes
+    the moment as legal and messaging risk; Sam tries to humanize the woman, while
+    Toby triages damage control. The scene pivots into administration politics when
+    Leo announces Mandy as an outside media consultant, exposing fissures between
+    Josh and the team and turning private embarrassment into a catalyst for internal
+    power maneuvering.
+  episode_uuid: ep_sea_ser_the_west_wing_s01_e02
+  scene_sequence: 14
+  sequence_in_scene: 23
+  key_dialogue: *id021
+  is_flashback: false
+  location_uuid: ger_location_8fd125f6423c
+  theme_uuids:
+  - ger_theme_fba3a4918420
+  - ger_theme_c1a7486b8841
+  - ger_theme_883870ecbff5
+  - ger_theme_93ff0780ae2e
+  arc_uuids:
+  - ger_conflictarc_7056d65ad92f
+  participations:
+  - character_uuid: ger_agent_3b656c0551eb
+    emotional_state: Neutral observer (inferred from context; not present)
+    goals:
+    - Pursue story angles on Josh/Mary Marsh (contextual)
+    - Report ethically on observed events
+    what_happened: Referenced indirectly as eyewitness to Sam's early evening with
+      call girl at Four Seasons, before departing; his WSJ affiliation detonates Toby's
+      risk assessment, elevating confession to press exposure threat.
+    observed_status: Referenced indirectly as eyewitness to Sam's early evening with
+      call girl at Four Seasons, before departing; his WSJ affiliation detonates Toby's
+      risk assessment, elevating confession to press exposure threat.
+    beliefs:
+    - Proximity to power yields scoops
+    - Political gossip fuels journalism
+    observed_traits: []
+    importance: primary
+    global_id: ger_agent_3b656c0551eb
+  - character_uuid: ger_agent_54f868bf8265
+    emotional_state: Amused satisfaction at Josh's discomfort amid professional alignment
+    goals:
+    - Reinforce Leo's directive through subtle ribbing
+    - Advance staffing for press challenges
+    what_happened: Already assembled in Leo's office for meeting, punctuates Mandy
+      hiring announcement with sarcastic applause mocking Josh's role in her unemployment,
+      remains silent otherwise as decision solidifies.
+    observed_status: Already assembled in Leo's office for meeting, punctuates Mandy
+      hiring announcement with sarcastic applause mocking Josh's role in her unemployment,
+      remains silent otherwise as decision solidifies.
+    beliefs:
+    - Team friction resolves through decisive leadership
+    - Past staff churn enables fresh utility
+    observed_traits:
+    - Wryly supportive
+    - Schadenfreude-tinged
+    - Loyal to hierarchy
+    importance: primary
+    global_id: ger_agent_54f868bf8265
+  - character_uuid: ger_agent_c9d41ae93618
+    emotional_state: Irritated nonchalance over scandal feigning deeper blindsided
+      fury at ex's return
+    goals:
+    - Downplay Sam's issue to refocus on business
+    - Block or control Mandy's integration to preserve authority
+    what_happened: Bursts into Toby's office mid-confession confrontation, dodges
+      Toby's probe with flippant humor about 'forbidden love,' signals Sam to move
+      on, leads group to Leo's office, vehemently objects to Mandy's hiring as ambush
+      citing personal history, vows to enforce chain-of-command via chart.
+    observed_status: Bursts into Toby's office mid-confession confrontation, dodges
+      Toby's probe with flippant humor about 'forbidden love,' signals Sam to move
+      on, leads group to Leo's office, vehemently objects to Mandy's hiring as ambush
+      citing personal history, vows to enforce chain-of-command via chart.
+    beliefs:
+    - Past relationships poison professional dynamics
+    - Personal scandals fade if not fed oxygen
+    observed_traits:
+    - Defensive
+    - Flippantly evasive
+    - Combative in personal turf wars
+    - Team-oriented under duress
+    importance: primary
+    global_id: ger_agent_c9d41ae93618
+  - character_uuid: ger_agent_ed161dcf5390
+    emotional_state: Vulnerable yet autonomous (defended by Sam)
+    goals:
+    - Maintain post-encounter boundaries
+    - Graduate law school without exploitation
+    what_happened: Humanized by Sam's defense against Toby's 'hooker' label; positioned
+      as law student undeserving of stigma, central to scandal's moral framing despite
+      absence.
+    observed_status: Humanized by Sam's defense against Toby's 'hooker' label; positioned
+      as law student undeserving of stigma, central to scandal's moral framing despite
+      absence.
+    beliefs:
+    - Personal choices needn't define worth
+    - Power imbalances distort judgments
+    observed_traits: []
+    importance: primary
+    global_id: ger_agent_ed161dcf5390
+  - character_uuid: ger_agent_dd62525d972a
+    emotional_state: Calmly commanding, relishing override of Josh's resistance with
+      dry finality
+    goals:
+    - Secure immediate media expertise for PR crises like Ryder Cup
+    - Force team unity by overriding personal grudges
+    what_happened: Presides over tight three-minute meeting in his office with C.J.,
+      deftly redirects from economic woes to media consultant hire, unilaterally names
+      Mandy despite Josh's protests, dismisses personal objections, secures President's
+      buy-in reveal, wraps decisively.
+    observed_status: Presides over tight three-minute meeting in his office with C.J.,
+      deftly redirects from economic woes to media consultant hire, unilaterally names
+      Mandy despite Josh's protests, dismisses personal objections, secures President's
+      buy-in reveal, wraps decisively.
+    beliefs:
+    - Institutional needs trump personal histories
+    - Rapid tactical hires avert larger damages
+    observed_traits:
+    - Authoritative
+    - Pragmatic dealmaker
+    - Unsentimental
+    - Ambushes for efficiency
+    importance: primary
+    global_id: ger_agent_dd62525d972a
+  - character_uuid: ger_agent_ed71fa88be96
+    emotional_state: Employable opportunist (inferred)
+    goals:
+    - Re-enter White House orbit
+    - Leverage optics expertise
+    what_happened: Absent but pivotally appointed by Leo as media consultant for Ryder
+      Cup crisis; her recent unemployment lauded, sparking Josh's ambush accusation
+      and ex-relationship reveal.
+    observed_status: Absent but pivotally appointed by Leo as media consultant for
+      Ryder Cup crisis; her recent unemployment lauded, sparking Josh's ambush accusation
+      and ex-relationship reveal.
+    beliefs:
+    - Media savvy trumps personal baggage
+    - Unemployment is temporary leverage
+    observed_traits: []
+    importance: primary
+    global_id: ger_agent_ed71fa88be96
+  - character_uuid: ger_agent_7854a70e34ea
+    emotional_state: Shock hardening into urgent alarm, laced with exasperated sarcasm
+      masking institutional panic
+    goals:
+    - Quantify and contain political-legal exposure from Sam's indiscretion
+    - Block any actions that could amplify scandal, like Sam contacting the woman
+    what_happened: Sits at desk processing end-of-meeting briefings, slowly looks
+      up in disbelief at Sam's confession, interrogates details with sharp sarcasm
+      about the Four Seasons encounter and Kenworthy's presence, demands to know who
+      else is aware, halts Sam's reformist impulses, confronts Josh outside, joins
+      Leo's ambush on hiring Mandy.
+    observed_status: Sits at desk processing end-of-meeting briefings, slowly looks
+      up in disbelief at Sam's confession, interrogates details with sharp sarcasm
+      about the Four Seasons encounter and Kenworthy's presence, demands to know who
+      else is aware, halts Sam's reformist impulses, confronts Josh outside, joins
+      Leo's ambush on hiring Mandy.
+    beliefs:
+    - Personal vulnerabilities instantly become public liabilities in Washington
+    - Scandals self-destruct administrations without opposition help
+    observed_traits:
+    - Skeptical
+    - Pragmatic
+    - Intensely protective of administration
+    - Sardonic under pressure
+    importance: primary
+    global_id: ger_agent_7854a70e34ea
+  object_involvements:
+  - object_uuid: ger_object_8c7b9b549a75
+    description_of_involvement: 'A ringing telephone initiates the scene: Cathy answers
+      a call (Danny). The phone call establishes daily press pressure and sets the
+      office in motion; the device is the small logistical engine that moves Sam''s
+      draft and triggers normal communications rhythms against which the confession
+      feels extra consequential.'
+    status_before_event: Ringing outside Sam's office; available and active.
+    status_after_event: Answered and handled by Cathy; call concluded or transferred,
+      phone returns to idle but the communications flow continues.
+    global_id: ger_object_8c7b9b549a75
+  - object_uuid: ger_object_9f90ed441f87
+    description_of_involvement: The 'Hilton Head Draft' is the finished speech Sam
+      carries and ultimately hands off to Cathy to be delivered to C.J.; it frames
+      the scene's opening (Sam's exit) and signals he has completed substantive work
+      before confessing, anchoring his credibility even as his personal lapse threatens
+      it.
+    status_before_event: Completed by Sam, sitting in his office; polished and double-checked;
+      Sam prepares to hand it over.
+    status_after_event: Carried by Cathy toward C.J.'s office and then acknowledged
+      by C.J. in Leo's meeting; remains a functioning policy draft in circulation.
+    global_id: ger_object_9f90ed441f87
+  location_involvements:
+  - location_uuid: ger_location_4f126047bdcc
+    description_of_involvement: The Four Seasons Bar is referenced as the site where
+      Sam met the woman; it functions as the origin point of scandal and the physical
+      locus connecting Sam's private behavior to potential press exposure (Bill Kenworthy
+      had been there).
+    observed_atmosphere: Stylish, semi-public, and ripe for overheard conversations—an
+      ambiguous space between anonymity and exposure.
+    functional_role: Source location that creates media vulnerability; it ties Sam's
+      personal action to public actors.
+    symbolic_significance: Represents the thin line between private life and public
+      accountability.
+    access_restrictions: Public venue; anyone (reporters, officials) can be present.
+    key_environmental_details:
+    - Low lamplight and background conversation (implied)
+    - A public bar setting where a reporter and a staffer could plausibly cross paths
+    global_id: ger_location_4f126047bdcc
+  - location_uuid: ger_location_0ee064f77f91
+    description_of_involvement: 'Leo''s office is the authoritative locus where the
+      private confession translates into a managerial decision: Leo green-lights hiring
+      Mandy and reframes the narrative toward staffing and policy priorities, moving
+      the scene from exposure to executive control.'
+    observed_atmosphere: Authoritative, brisk, slightly distracted (Leo juggles optics
+      and policy); the air tightens into decision-making focus.
+    functional_role: Decision point and power center where staff proposals are authorized
+      and reporting lines clarified.
+    symbolic_significance: Embodies institutional power and the ability to convert
+      scandal into bureaucratic solutions.
+    access_restrictions: Restricted to senior staff; invitation-only meeting space.
+    key_environmental_details:
+    - Polished wood desk and quick consultation tone
+    - Rapid shifting of agenda between personal scandal and economic metrics
+    global_id: ger_location_0ee064f77f91
+  - location_uuid: ger_location_8fd125f6423c
+    description_of_involvement: 'The Communications Office / C.J.''s Office functions
+      as the event''s primary stage: an operational hub where a private confession
+      collides with institutional procedure. It is where Sam exits, Cathy handles
+      calls and papers, Toby triages, and staff convene—compressing personal and political
+      business into a cramped workspace.'
+    observed_atmosphere: Claustrophobic, businesslike, and tension-filled; ordinary
+      office noise undercuts the sudden moral panic.
+    functional_role: Meeting place for triage, staging area for message control, and
+      the locus where private mistakes become public problems.
+    symbolic_significance: Symbolizes the porous boundary between private human error
+      and the institutional machine that must process scandal.
+    access_restrictions: Restricted to staff and aides; informal but effectively limited
+      to communications team and senior aides during triage.
+    key_environmental_details:
+    - Ringing phone at the outset
+    - Papers (speech draft) being carried between offices
+    - Doors opening and closing as staff flow through
+    global_id: ger_location_8fd125f6423c
   organization_involvements: []
   derived_from_beat_uuids: *id022
   source_season: 1
@@ -8041,211 +8041,6 @@ events:
   - 'JOSH: She used to be my girlfriend!'
   - 'JOSH: As long as she understands that she answers to me and she answers to Toby.
     I don''t want to have to go 15 rounds with her in the Oval Office.'
-  is_flashback: false
-  location_uuid: ger_location_8fd125f6423c
-  theme_uuids:
-  - ger_theme_03f5dc10d61b
-  - ger_theme_3d014bd97b80
-  - ger_theme_93ff0780ae2e
-  arc_uuids: []
-  participations:
-  - character_uuid: ger_agent_54f868bf8265
-    emotional_state: Amused and professionally detached — enjoying the interpersonal
-      theater while staying ready to execute messaging implications.
-    goals:
-    - Signal support for practical staffing choices
-    - Maintain press operations unaffected by internal disputes
-    what_happened: C.J. is present and adds a wry aside about Mandy's unemployment
-      and Josh's credit; she stands inside the doorway, observes the negotiation,
-      and then moves to her office as the meeting ends.
-    observed_status: C.J. is present and adds a wry aside about Mandy's unemployment
-      and Josh's credit; she stands inside the doorway, observes the negotiation,
-      and then moves to her office as the meeting ends.
-    beliefs:
-    - Staffing decisions are often personal yet must be treated as functional
-    - A degree of levity helps defuse internal tension without sacrificing effectiveness
-    observed_traits:
-    - witty
-    - observant
-    - politically savvy
-    - measured
-    importance: primary
-    global_id: ger_agent_54f868bf8265
-  - character_uuid: ger_agent_c9d41ae93618
-    emotional_state: Irritated and exposed; surface team-player posture masking personal
-      discomfort and a fear of losing control over workplace dynamics.
-    goals:
-    - Prevent Mandy from operating without clear reporting lines
-    - Avoid public or Oval Office confrontations with Mandy
-    - Protect his professional authority and managerial jurisdiction
-    what_happened: Josh is verbally ambushed by Leo's decision to rehire Mandy; he
-      objects on personal grounds, insists on formal reporting lines, threatens to
-      draw a chart to enforce authority, and departs still agitated.
-    observed_status: Josh is verbally ambushed by Leo's decision to rehire Mandy;
-      he objects on personal grounds, insists on formal reporting lines, threatens
-      to draw a chart to enforce authority, and departs still agitated.
-    beliefs:
-    - Personal history with staffers affects workplace effectiveness and must be contained
-    - Clear hierarchical lines reduce conflict and preserve the administration's focus
-    observed_traits:
-    - territorial about chain-of-command
-    - defensive
-    - performatively moralistic
-    - protective of institutional order
-    importance: primary
-    global_id: ger_agent_c9d41ae93618
-  - character_uuid: ger_agent_dd62525d972a
-    emotional_state: Calmly impatient — focused on the operational solution and mildly
-      amused by staff theatrics, but unwilling to be derailed.
-    goals:
-    - Fill an urgent communications gap quickly
-    - Keep the staff united behind a single, practical fix
-    - Minimize drama while maximizing tactical outcomes
-    what_happened: Leo initiates the tactical hire, frames it as necessary and pragmatic,
-      sidelines Josh's personal objection with blunt managerial authority, and pushes
-      the team to accept the consultant to solve the communications problem.
-    observed_status: Leo initiates the tactical hire, frames it as necessary and pragmatic,
-      sidelines Josh's personal objection with blunt managerial authority, and pushes
-      the team to accept the consultant to solve the communications problem.
-    beliefs:
-    - Institutional needs trump personal discomfort
-    - Hiring competent help is preferable to internal hand‑wringing
-    observed_traits:
-    - decisive
-    - pragmatic
-    - blunt
-    - institutionally focused
-    importance: primary
-    global_id: ger_agent_dd62525d972a
-  - character_uuid: ger_agent_ed71fa88be96
-    emotional_state: Not present to display emotion; inferred as confident and politically
-      useful given staff willingness to overlook personal complications.
-    goals:
-    - Presumably secure the consultancy role and exercise influence over media narratives
-    - Leverage past relationships to regain foothold in White House communications
-    what_happened: Mandy is invoked as the consultant to be rehired; she does not
-      speak or appear physically in the scene, but her reputation, past relationship
-      with Josh, and presumed competence drive the negotiation and the consequent
-      imposition of reporting lines.
-    observed_status: Mandy is invoked as the consultant to be rehired; she does not
-      speak or appear physically in the scene, but her reputation, past relationship
-      with Josh, and presumed competence drive the negotiation and the consequent
-      imposition of reporting lines.
-    beliefs:
-    - Her effectiveness will be judged by results rather than by workplace niceties
-    - The administration needs competent media operatives even at the cost of interpersonal
-      friction
-    observed_traits:
-    - influential by reputation
-    - disruptive to male staff egos
-    - media‑savvy
-    importance: mentioned
-    global_id: ger_agent_ed71fa88be96
-  - character_uuid: ger_agent_7854a70e34ea
-    emotional_state: Controlled and procedural — privately aware of the potential
-      for mess but outwardly cooperative and solution‑oriented.
-    goals:
-    - Ensure the communications function has a clear chain of responsibility
-    - Avoid future public messaging clashes triggered by interpersonal rivalry
-    what_happened: Toby supports the hire once it is framed as operationally necessary;
-      he accepts Josh's chain‑of‑command demand and helps close the agreement, demonstrating
-      message discipline over personal entanglement.
-    observed_status: Toby supports the hire once it is framed as operationally necessary;
-      he accepts Josh's chain‑of‑command demand and helps close the agreement, demonstrating
-      message discipline over personal entanglement.
-    beliefs:
-    - Clear lines of authority prevent mixed signals from leaking to the press
-    - Professionalism can be enforced through defined reporting structures
-    observed_traits:
-    - disciplined
-    - pragmatic
-    - measured
-    - protective of message control
-    importance: primary
-    global_id: ger_agent_7854a70e34ea
-  object_involvements:
-  - object_uuid: ger_object_9f90ed441f87
-    description_of_involvement: Sam's 'Hilton Head' draft is present as tangible proof
-      of the team's ongoing work. Mentioned and complimented in Leo's office, it functions
-      as a legitimizing artifact that reminds the group of substantive policy work
-      even as they triage PR problems.
-    status_before_event: In Sam's possession, recently completed and being carried
-      toward C.J.'s office; pages checked one last time.
-    status_after_event: Still with staff (delivered toward C.J.'s office) and acknowledged
-      by colleagues; remains a background work product rather than central to the
-      hiring decision.
-    global_id: ger_object_9f90ed441f87
-  - object_uuid: ger_object_d9bb54060f1e
-    description_of_involvement: 'An organizational chart is invoked by Josh as the
-      immediate remedy for potential confusion: he promises to ''draw a chart'' with
-      lines and arrows to codify that Mandy answers to him and Toby. The chart is
-      a narrative instrument — a future physicalization of authority to prevent Oval
-      confrontations.'
-    status_before_event: Not yet drawn; only a conceptual tool referenced by Josh
-      as a solution to expected friction.
-    status_after_event: Planned and delegated to Josh to create; transforms from idea
-      to an impending artifact meant to regulate behavior.
-    global_id: ger_object_d9bb54060f1e
-  location_involvements:
-  - location_uuid: ger_location_8fd125f6423c
-    description_of_involvement: The Communications Office functions as the operational
-      staging ground where Sam's phone call, his completed draft, and the initial
-      confessions occur. It serves as the nervous, transitional space from which staff
-      travel to Leo's office to escalate the problem.
-    observed_atmosphere: Claustrophobic, busy, and slightly frazzled — phones ringing,
-      staff moving between offices with an undercurrent of urgency.
-    functional_role: 'Staging area and nerve center for rapid-response: where problems
-      are triaged and staff assemble before briefing senior leadership.'
-    symbolic_significance: 'Represents the administration''s front‑line vulnerability:
-      public perception is manufactured here and small mistakes escalate quickly.'
-    access_restrictions: Open to communications staff and immediate aides; not public
-      but frequented by multiple junior and senior staff.
-    key_environmental_details:
-    - Fluorescent lighting and the hum of electronics
-    - Ringing telephones and paper in hands (Sam's draft)
-    - Quick, clipped exchanges and movement toward senior offices
-    global_id: ger_location_8fd125f6423c
-  - location_uuid: ger_location_0ee064f77f91
-    description_of_involvement: Leo's office (the Outer Oval threshold) is the authoritative
-      forum where the hire is proposed and ratified. Its proximity to the President
-      and senior staff makes it the place to settle strategy and personnel decisions,
-      and it is where personal history collides with institutional needs.
-    observed_atmosphere: 'Ordered but tense: brisk, businesslike exchanges punctuated
-      by flashes of personal heat as Josh objects; the room carries institutional
-      weight.'
-    functional_role: Meeting place for senior decision‑making and personnel arbitration;
-      final arbiter of tactical moves.
-    symbolic_significance: Embodies institutional power and the necessity of subordinating
-      personal grievance to presidential priorities.
-    access_restrictions: Restricted to senior staff and invited personnel; not a public
-      space.
-    key_environmental_details:
-    - Polished wood and modest desk creating an authoritative threshold
-    - Brief, clipped time pressure ('You have three minutes')
-    - A small group of senior staff in close quarters, amplifying interpersonal dynamics
-    global_id: ger_location_0ee064f77f91
-  organization_involvements: []
-  derived_from_beat_uuids: &id024
-  - beat_a0a269034cf8ca2f
-  - beat_9aedde3fa1d18fa9
-  - beat_d27b79542f99e149
-  - beat_e37bb23fa818ae01
-  source_season: 1
-  source_database: westwing.s01
-- fabula_uuid: cand_evt_scene_899a0d3c27fd2e00_2
-  global_id: null
-  title: Mandy Returns — Drawing the Lines
-  description: 'In the communications war room, Leo cold‑calls a fixer: Mandy. Her
-    appointment immediately fractures the team''s calm — Josh reacts as if ambushed
-    because Mandy is his ex. What should be a tactical hire to steady a brewing communications
-    crisis becomes personal: Josh only accepts her if formal authority lines are drawn
-    and she explicitly answers to him and Toby. The scene functions as a turning point
-    — it solves a tactical need while seeding interpersonal rivalry that will slow
-    and complicate the administration''s crisis response.'
-  episode_uuid: ep_sea_ser_the_west_wing_s01_e02
-  scene_sequence: 14
-  sequence_in_scene: 24
-  key_dialogue: *id023
   is_flashback: false
   location_uuid: ger_location_0ee064f77f91
   theme_uuids:
@@ -8392,24 +8187,6 @@ events:
       to an impending artifact meant to regulate behavior.
     global_id: ger_object_d9bb54060f1e
   location_involvements:
-  - location_uuid: ger_location_8fd125f6423c
-    description_of_involvement: The Communications Office functions as the operational
-      staging ground where Sam's phone call, his completed draft, and the initial
-      confessions occur. It serves as the nervous, transitional space from which staff
-      travel to Leo's office to escalate the problem.
-    observed_atmosphere: Claustrophobic, busy, and slightly frazzled — phones ringing,
-      staff moving between offices with an undercurrent of urgency.
-    functional_role: 'Staging area and nerve center for rapid-response: where problems
-      are triaged and staff assemble before briefing senior leadership.'
-    symbolic_significance: 'Represents the administration''s front‑line vulnerability:
-      public perception is manufactured here and small mistakes escalate quickly.'
-    access_restrictions: Open to communications staff and immediate aides; not public
-      but frequented by multiple junior and senior staff.
-    key_environmental_details:
-    - Fluorescent lighting and the hum of electronics
-    - Ringing telephones and paper in hands (Sam's draft)
-    - Quick, clipped exchanges and movement toward senior offices
-    global_id: ger_location_8fd125f6423c
   - location_uuid: ger_location_0ee064f77f91
     description_of_involvement: Leo's office (the Outer Oval threshold) is the authoritative
       forum where the hire is proposed and ratified. Its proximity to the President
@@ -8429,6 +8206,229 @@ events:
     - Brief, clipped time pressure ('You have three minutes')
     - A small group of senior staff in close quarters, amplifying interpersonal dynamics
     global_id: ger_location_0ee064f77f91
+  - location_uuid: ger_location_8fd125f6423c
+    description_of_involvement: The Communications Office functions as the operational
+      staging ground where Sam's phone call, his completed draft, and the initial
+      confessions occur. It serves as the nervous, transitional space from which staff
+      travel to Leo's office to escalate the problem.
+    observed_atmosphere: Claustrophobic, busy, and slightly frazzled — phones ringing,
+      staff moving between offices with an undercurrent of urgency.
+    functional_role: 'Staging area and nerve center for rapid-response: where problems
+      are triaged and staff assemble before briefing senior leadership.'
+    symbolic_significance: 'Represents the administration''s front‑line vulnerability:
+      public perception is manufactured here and small mistakes escalate quickly.'
+    access_restrictions: Open to communications staff and immediate aides; not public
+      but frequented by multiple junior and senior staff.
+    key_environmental_details:
+    - Fluorescent lighting and the hum of electronics
+    - Ringing telephones and paper in hands (Sam's draft)
+    - Quick, clipped exchanges and movement toward senior offices
+    global_id: ger_location_8fd125f6423c
+  organization_involvements: []
+  derived_from_beat_uuids: &id024
+  - beat_a0a269034cf8ca2f
+  - beat_9aedde3fa1d18fa9
+  - beat_d27b79542f99e149
+  - beat_e37bb23fa818ae01
+  source_season: 1
+  source_database: westwing.s01
+- fabula_uuid: cand_evt_scene_899a0d3c27fd2e00_2
+  global_id: null
+  title: Mandy Returns — Drawing the Lines
+  description: 'In the communications war room, Leo cold‑calls a fixer: Mandy. Her
+    appointment immediately fractures the team''s calm — Josh reacts as if ambushed
+    because Mandy is his ex. What should be a tactical hire to steady a brewing communications
+    crisis becomes personal: Josh only accepts her if formal authority lines are drawn
+    and she explicitly answers to him and Toby. The scene functions as a turning point
+    — it solves a tactical need while seeding interpersonal rivalry that will slow
+    and complicate the administration''s crisis response.'
+  episode_uuid: ep_sea_ser_the_west_wing_s01_e02
+  scene_sequence: 14
+  sequence_in_scene: 24
+  key_dialogue: *id023
+  is_flashback: false
+  location_uuid: ger_location_8fd125f6423c
+  theme_uuids:
+  - ger_theme_03f5dc10d61b
+  - ger_theme_3d014bd97b80
+  - ger_theme_93ff0780ae2e
+  arc_uuids: []
+  participations:
+  - character_uuid: ger_agent_54f868bf8265
+    emotional_state: Amused and professionally detached — enjoying the interpersonal
+      theater while staying ready to execute messaging implications.
+    goals:
+    - Signal support for practical staffing choices
+    - Maintain press operations unaffected by internal disputes
+    what_happened: C.J. is present and adds a wry aside about Mandy's unemployment
+      and Josh's credit; she stands inside the doorway, observes the negotiation,
+      and then moves to her office as the meeting ends.
+    observed_status: C.J. is present and adds a wry aside about Mandy's unemployment
+      and Josh's credit; she stands inside the doorway, observes the negotiation,
+      and then moves to her office as the meeting ends.
+    beliefs:
+    - Staffing decisions are often personal yet must be treated as functional
+    - A degree of levity helps defuse internal tension without sacrificing effectiveness
+    observed_traits:
+    - witty
+    - observant
+    - politically savvy
+    - measured
+    importance: primary
+    global_id: ger_agent_54f868bf8265
+  - character_uuid: ger_agent_c9d41ae93618
+    emotional_state: Irritated and exposed; surface team-player posture masking personal
+      discomfort and a fear of losing control over workplace dynamics.
+    goals:
+    - Prevent Mandy from operating without clear reporting lines
+    - Avoid public or Oval Office confrontations with Mandy
+    - Protect his professional authority and managerial jurisdiction
+    what_happened: Josh is verbally ambushed by Leo's decision to rehire Mandy; he
+      objects on personal grounds, insists on formal reporting lines, threatens to
+      draw a chart to enforce authority, and departs still agitated.
+    observed_status: Josh is verbally ambushed by Leo's decision to rehire Mandy;
+      he objects on personal grounds, insists on formal reporting lines, threatens
+      to draw a chart to enforce authority, and departs still agitated.
+    beliefs:
+    - Personal history with staffers affects workplace effectiveness and must be contained
+    - Clear hierarchical lines reduce conflict and preserve the administration's focus
+    observed_traits:
+    - territorial about chain-of-command
+    - defensive
+    - performatively moralistic
+    - protective of institutional order
+    importance: primary
+    global_id: ger_agent_c9d41ae93618
+  - character_uuid: ger_agent_dd62525d972a
+    emotional_state: Calmly impatient — focused on the operational solution and mildly
+      amused by staff theatrics, but unwilling to be derailed.
+    goals:
+    - Fill an urgent communications gap quickly
+    - Keep the staff united behind a single, practical fix
+    - Minimize drama while maximizing tactical outcomes
+    what_happened: Leo initiates the tactical hire, frames it as necessary and pragmatic,
+      sidelines Josh's personal objection with blunt managerial authority, and pushes
+      the team to accept the consultant to solve the communications problem.
+    observed_status: Leo initiates the tactical hire, frames it as necessary and pragmatic,
+      sidelines Josh's personal objection with blunt managerial authority, and pushes
+      the team to accept the consultant to solve the communications problem.
+    beliefs:
+    - Institutional needs trump personal discomfort
+    - Hiring competent help is preferable to internal hand‑wringing
+    observed_traits:
+    - decisive
+    - pragmatic
+    - blunt
+    - institutionally focused
+    importance: primary
+    global_id: ger_agent_dd62525d972a
+  - character_uuid: ger_agent_ed71fa88be96
+    emotional_state: Not present to display emotion; inferred as confident and politically
+      useful given staff willingness to overlook personal complications.
+    goals:
+    - Presumably secure the consultancy role and exercise influence over media narratives
+    - Leverage past relationships to regain foothold in White House communications
+    what_happened: Mandy is invoked as the consultant to be rehired; she does not
+      speak or appear physically in the scene, but her reputation, past relationship
+      with Josh, and presumed competence drive the negotiation and the consequent
+      imposition of reporting lines.
+    observed_status: Mandy is invoked as the consultant to be rehired; she does not
+      speak or appear physically in the scene, but her reputation, past relationship
+      with Josh, and presumed competence drive the negotiation and the consequent
+      imposition of reporting lines.
+    beliefs:
+    - Her effectiveness will be judged by results rather than by workplace niceties
+    - The administration needs competent media operatives even at the cost of interpersonal
+      friction
+    observed_traits:
+    - influential by reputation
+    - disruptive to male staff egos
+    - media‑savvy
+    importance: mentioned
+    global_id: ger_agent_ed71fa88be96
+  - character_uuid: ger_agent_7854a70e34ea
+    emotional_state: Controlled and procedural — privately aware of the potential
+      for mess but outwardly cooperative and solution‑oriented.
+    goals:
+    - Ensure the communications function has a clear chain of responsibility
+    - Avoid future public messaging clashes triggered by interpersonal rivalry
+    what_happened: Toby supports the hire once it is framed as operationally necessary;
+      he accepts Josh's chain‑of‑command demand and helps close the agreement, demonstrating
+      message discipline over personal entanglement.
+    observed_status: Toby supports the hire once it is framed as operationally necessary;
+      he accepts Josh's chain‑of‑command demand and helps close the agreement, demonstrating
+      message discipline over personal entanglement.
+    beliefs:
+    - Clear lines of authority prevent mixed signals from leaking to the press
+    - Professionalism can be enforced through defined reporting structures
+    observed_traits:
+    - disciplined
+    - pragmatic
+    - measured
+    - protective of message control
+    importance: primary
+    global_id: ger_agent_7854a70e34ea
+  object_involvements:
+  - object_uuid: ger_object_9f90ed441f87
+    description_of_involvement: Sam's 'Hilton Head' draft is present as tangible proof
+      of the team's ongoing work. Mentioned and complimented in Leo's office, it functions
+      as a legitimizing artifact that reminds the group of substantive policy work
+      even as they triage PR problems.
+    status_before_event: In Sam's possession, recently completed and being carried
+      toward C.J.'s office; pages checked one last time.
+    status_after_event: Still with staff (delivered toward C.J.'s office) and acknowledged
+      by colleagues; remains a background work product rather than central to the
+      hiring decision.
+    global_id: ger_object_9f90ed441f87
+  - object_uuid: ger_object_d9bb54060f1e
+    description_of_involvement: 'An organizational chart is invoked by Josh as the
+      immediate remedy for potential confusion: he promises to ''draw a chart'' with
+      lines and arrows to codify that Mandy answers to him and Toby. The chart is
+      a narrative instrument — a future physicalization of authority to prevent Oval
+      confrontations.'
+    status_before_event: Not yet drawn; only a conceptual tool referenced by Josh
+      as a solution to expected friction.
+    status_after_event: Planned and delegated to Josh to create; transforms from idea
+      to an impending artifact meant to regulate behavior.
+    global_id: ger_object_d9bb54060f1e
+  location_involvements:
+  - location_uuid: ger_location_0ee064f77f91
+    description_of_involvement: Leo's office (the Outer Oval threshold) is the authoritative
+      forum where the hire is proposed and ratified. Its proximity to the President
+      and senior staff makes it the place to settle strategy and personnel decisions,
+      and it is where personal history collides with institutional needs.
+    observed_atmosphere: 'Ordered but tense: brisk, businesslike exchanges punctuated
+      by flashes of personal heat as Josh objects; the room carries institutional
+      weight.'
+    functional_role: Meeting place for senior decision‑making and personnel arbitration;
+      final arbiter of tactical moves.
+    symbolic_significance: Embodies institutional power and the necessity of subordinating
+      personal grievance to presidential priorities.
+    access_restrictions: Restricted to senior staff and invited personnel; not a public
+      space.
+    key_environmental_details:
+    - Polished wood and modest desk creating an authoritative threshold
+    - Brief, clipped time pressure ('You have three minutes')
+    - A small group of senior staff in close quarters, amplifying interpersonal dynamics
+    global_id: ger_location_0ee064f77f91
+  - location_uuid: ger_location_8fd125f6423c
+    description_of_involvement: The Communications Office functions as the operational
+      staging ground where Sam's phone call, his completed draft, and the initial
+      confessions occur. It serves as the nervous, transitional space from which staff
+      travel to Leo's office to escalate the problem.
+    observed_atmosphere: Claustrophobic, busy, and slightly frazzled — phones ringing,
+      staff moving between offices with an undercurrent of urgency.
+    functional_role: 'Staging area and nerve center for rapid-response: where problems
+      are triaged and staff assemble before briefing senior leadership.'
+    symbolic_significance: 'Represents the administration''s front‑line vulnerability:
+      public perception is manufactured here and small mistakes escalate quickly.'
+    access_restrictions: Open to communications staff and immediate aides; not public
+      but frequented by multiple junior and senior staff.
+    key_environmental_details:
+    - Fluorescent lighting and the hum of electronics
+    - Ringing telephones and paper in hands (Sam's draft)
+    - Quick, clipped exchanges and movement toward senior offices
+    global_id: ger_location_8fd125f6423c
   organization_involvements: []
   derived_from_beat_uuids: *id024
   source_season: 1
@@ -8578,7 +8578,7 @@ events:
     - charismatically humorous
     importance: primary
     global_id: ger_agent_198649bce78f
-  - character_uuid: ger_agent_3a5efeceb247
+  - character_uuid: ger_agent_1f0b1cae13c5
     emotional_state: Calmly resolute with affectionate firmness masking quiet amusement
     goals:
     - Enforce Dr. Tolliver's health directives without yielding
@@ -8602,7 +8602,7 @@ events:
     - dryly authoritative
     - patiently indulgent
     importance: primary
-    global_id: ger_agent_3a5efeceb247
+    global_id: ger_agent_1f0b1cae13c5
   object_involvements:
   - object_uuid: ger_object_fb6127ff1363
     description_of_involvement: President Bartlet is packing his well‑worn briefcase
@@ -9026,135 +9026,6 @@ events:
   - Give this President anything less than your full-throated support, and you're
     going to find out exactly how long.
   is_flashback: false
-  location_uuid: ger_location_c484c15171e3
-  theme_uuids: []
-  arc_uuids:
-  - ger_conflictarc_2e82359cf857
-  participations:
-  - character_uuid: ger_agent_f4503e79854a
-    emotional_state: Smoldering indignation erupting into open challenge
-    goals:
-    - Assert personal autonomy against perceived slights
-    - Vent long-held grievances over diminished role
-    what_happened: Enters casually, banters lightly about New York and Margaret, then
-      stands defensively to vent resentment, mocks Leo's authority with constitutional
-      jab, rises to leave twice amid escalating barbs, exits after final warning.
-    observed_status: Enters casually, banters lightly about New York and Margaret,
-      then stands defensively to vent resentment, mocks Leo's authority with constitutional
-      jab, rises to leave twice amid escalating barbs, exits after final warning.
-    beliefs:
-    - Vice-presidential stature demands equal deference
-    - Bartlet-Leo duo unjustly sidelines his influence
-    observed_traits:
-    - Defensive resentment
-    - Sarcastic defiance
-    - Entitled frustration
-    - Calculated retreat
-    importance: primary
-    global_id: ger_agent_f4503e79854a
-  - character_uuid: ger_agent_dd62525d972a
-    emotional_state: Controlled fury laced with resolute certainty
-    goals:
-    - Enforce chain-of-command respect for C.J. and staff
-    - Secure Hoynes' unqualified loyalty to Bartlet
-    what_happened: Seated and reading paperwork initially, Leo rises to confrontation,
-      delivers pointed rebuke over C.J., invokes presidential authority with rising
-      intensity, issues stark ultimatum, then resumes reading stoically after Hoynes
-      departs.
-    observed_status: Seated and reading paperwork initially, Leo rises to confrontation,
-      delivers pointed rebuke over C.J., invokes presidential authority with rising
-      intensity, issues stark ultimatum, then resumes reading stoically after Hoynes
-      departs.
-    beliefs:
-    - White House directives carry unbreakable weight
-    - Disloyalty invites swift political destruction
-    observed_traits:
-    - Unyielding authority
-    - Institutional loyalty
-    - Calculated intimidation
-    - Blunt pragmatism
-    importance: primary
-    global_id: ger_agent_dd62525d972a
-  - character_uuid: ger_agent_3a5efeceb247
-    emotional_state: Calm and neutral
-    goals:
-    - Execute Leo's scheduling logistics seamlessly
-    - Preserve confidentiality of high-level meeting
-    what_happened: Enters briefly to announce Hoynes' arrival with polite interruption,
-      exits promptly at Leo's thanks, facilitating the private confrontation without
-      further involvement.
-    observed_status: Enters briefly to announce Hoynes' arrival with polite interruption,
-      exits promptly at Leo's thanks, facilitating the private confrontation without
-      further involvement.
-    beliefs:
-    - Routine announcements enable senior operations
-    - Intrusions must be minimal in power spaces
-    observed_traits:
-    - Efficient professionalism
-    - Discreet loyalty
-    importance: primary
-    global_id: ger_agent_3a5efeceb247
-  object_involvements: []
-  location_involvements:
-  - location_uuid: ger_location_c484c15171e3
-    description_of_involvement: The West Wing men's room is invoked by Hoynes as a
-      sarcastic rhetorical device (Article Two / men's room quip) to ridicule Leo's
-      attempt to treat C.J.'s information as a directive. The reference functions
-      as a comic undercut and a means for Hoynes to challenge institutional overreach.
-    observed_atmosphere: Momentarily flippant and irreverent—Hoynes uses humor to
-      mask deeper grievance and to puncture Leo's authority.
-    functional_role: Rhetorical touchstone and boundary marker—Hoynes' joke reframes
-      the power conversation as petty and questions Leo's jurisdiction.
-    symbolic_significance: Undermines institutional formality; symbolizes Hoynes'
-      attempt to reduce the confrontation to absurdity rather than confront its seriousness.
-    access_restrictions: ''
-    key_environmental_details:
-    - Sarcastic invocation of Article Two of the Constitution
-    - Casual, irreverent language about a private facility
-    - Verbal jibe used to deflect an assertion of authority
-    global_id: ger_location_c484c15171e3
-  - location_uuid: ger_location_5e2e1d56cd7d
-    description_of_involvement: New York City is referenced by Hoynes to frame his
-      trip as important (Standard & Poor's raising the city's credit rating), serving
-      as offstage prestige that Hoynes uses to assert relevance and deflect Leo's
-      interrogation. The city functions as contextual leverage for Hoynes' ego and
-      standing.
-    observed_atmosphere: Implied external prestige and bustle intruding into a private
-      confrontation—an offstage spectacle that heightens Hoynes' sense of importance.
-    functional_role: Contextual amplifier—provides Hoynes rhetorical cover and underscores
-      the political stakes of his schedule and reputation.
-    symbolic_significance: Represents external validation and metropolitan prestige
-      that Hoynes leans on to shore up his status.
-    access_restrictions: ''
-    key_environmental_details:
-    - Verbal mention of Standard & Poor's upward action
-    - Implied fundraiser/press circuit momentum
-    - Offstage city prestige used rhetorically
-    global_id: ger_location_5e2e1d56cd7d
-  organization_involvements: []
-  derived_from_beat_uuids: &id026
-  - beat_e6400cadd4f290f8
-  - beat_1941a8f33754083c
-  - beat_cdff52adf2376e55
-  - beat_4a9501ebe623abce
-  - beat_0dbc3459cd8e8367
-  source_season: 1
-  source_database: westwing.s01
-- fabula_uuid: cand_evt_scene_b434c581114ef81f_1
-  global_id: null
-  title: Hoynes Tests Leo — A Quiet Power Play
-  description: 'In Leo''s office at night Vice President John Hoynes pays a civil
-    visit that quickly curdles into a test of authority. When Leo confronts him for
-    snubbing C.J., Hoynes pushes back, airing long-smoldering resentment about his
-    diminished role. Leo answers not with persuasion but with a stark, political ultimatum:
-    full-throated support or exile to irrelevance. The exchange crystallizes their
-    power dynamic — brittle, personal, and politically dangerous — and functions as
-    a turning point that raises the stakes for loyalty within the administration.'
-  episode_uuid: ep_sea_ser_the_west_wing_s01_e02
-  scene_sequence: 17
-  sequence_in_scene: 29
-  key_dialogue: *id025
-  is_flashback: false
   location_uuid: ger_location_5e2e1d56cd7d
   theme_uuids: []
   arc_uuids:
@@ -9225,23 +9096,6 @@ events:
     global_id: ger_agent_3a5efeceb247
   object_involvements: []
   location_involvements:
-  - location_uuid: ger_location_c484c15171e3
-    description_of_involvement: The West Wing men's room is invoked by Hoynes as a
-      sarcastic rhetorical device (Article Two / men's room quip) to ridicule Leo's
-      attempt to treat C.J.'s information as a directive. The reference functions
-      as a comic undercut and a means for Hoynes to challenge institutional overreach.
-    observed_atmosphere: Momentarily flippant and irreverent—Hoynes uses humor to
-      mask deeper grievance and to puncture Leo's authority.
-    functional_role: Rhetorical touchstone and boundary marker—Hoynes' joke reframes
-      the power conversation as petty and questions Leo's jurisdiction.
-    symbolic_significance: Undermines institutional formality; symbolizes Hoynes'
-      attempt to reduce the confrontation to absurdity rather than confront its seriousness.
-    access_restrictions: ''
-    key_environmental_details:
-    - Sarcastic invocation of Article Two of the Constitution
-    - Casual, irreverent language about a private facility
-    - Verbal jibe used to deflect an assertion of authority
-    global_id: ger_location_c484c15171e3
   - location_uuid: ger_location_5e2e1d56cd7d
     description_of_involvement: New York City is referenced by Hoynes to frame his
       trip as important (Standard & Poor's raising the city's credit rating), serving
@@ -9260,6 +9114,152 @@ events:
     - Implied fundraiser/press circuit momentum
     - Offstage city prestige used rhetorically
     global_id: ger_location_5e2e1d56cd7d
+  - location_uuid: ger_location_c484c15171e3
+    description_of_involvement: The West Wing men's room is invoked by Hoynes as a
+      sarcastic rhetorical device (Article Two / men's room quip) to ridicule Leo's
+      attempt to treat C.J.'s information as a directive. The reference functions
+      as a comic undercut and a means for Hoynes to challenge institutional overreach.
+    observed_atmosphere: Momentarily flippant and irreverent—Hoynes uses humor to
+      mask deeper grievance and to puncture Leo's authority.
+    functional_role: Rhetorical touchstone and boundary marker—Hoynes' joke reframes
+      the power conversation as petty and questions Leo's jurisdiction.
+    symbolic_significance: Undermines institutional formality; symbolizes Hoynes'
+      attempt to reduce the confrontation to absurdity rather than confront its seriousness.
+    access_restrictions: ''
+    key_environmental_details:
+    - Sarcastic invocation of Article Two of the Constitution
+    - Casual, irreverent language about a private facility
+    - Verbal jibe used to deflect an assertion of authority
+    global_id: ger_location_c484c15171e3
+  organization_involvements: []
+  derived_from_beat_uuids: &id026
+  - beat_e6400cadd4f290f8
+  - beat_1941a8f33754083c
+  - beat_cdff52adf2376e55
+  - beat_4a9501ebe623abce
+  - beat_0dbc3459cd8e8367
+  source_season: 1
+  source_database: westwing.s01
+- fabula_uuid: cand_evt_scene_b434c581114ef81f_1
+  global_id: null
+  title: Hoynes Tests Leo — A Quiet Power Play
+  description: 'In Leo''s office at night Vice President John Hoynes pays a civil
+    visit that quickly curdles into a test of authority. When Leo confronts him for
+    snubbing C.J., Hoynes pushes back, airing long-smoldering resentment about his
+    diminished role. Leo answers not with persuasion but with a stark, political ultimatum:
+    full-throated support or exile to irrelevance. The exchange crystallizes their
+    power dynamic — brittle, personal, and politically dangerous — and functions as
+    a turning point that raises the stakes for loyalty within the administration.'
+  episode_uuid: ep_sea_ser_the_west_wing_s01_e02
+  scene_sequence: 17
+  sequence_in_scene: 29
+  key_dialogue: *id025
+  is_flashback: false
+  location_uuid: ger_location_c484c15171e3
+  theme_uuids: []
+  arc_uuids:
+  - ger_conflictarc_2e82359cf857
+  participations:
+  - character_uuid: ger_agent_f4503e79854a
+    emotional_state: Smoldering indignation erupting into open challenge
+    goals:
+    - Assert personal autonomy against perceived slights
+    - Vent long-held grievances over diminished role
+    what_happened: Enters casually, banters lightly about New York and Margaret, then
+      stands defensively to vent resentment, mocks Leo's authority with constitutional
+      jab, rises to leave twice amid escalating barbs, exits after final warning.
+    observed_status: Enters casually, banters lightly about New York and Margaret,
+      then stands defensively to vent resentment, mocks Leo's authority with constitutional
+      jab, rises to leave twice amid escalating barbs, exits after final warning.
+    beliefs:
+    - Vice-presidential stature demands equal deference
+    - Bartlet-Leo duo unjustly sidelines his influence
+    observed_traits:
+    - Defensive resentment
+    - Sarcastic defiance
+    - Entitled frustration
+    - Calculated retreat
+    importance: primary
+    global_id: ger_agent_f4503e79854a
+  - character_uuid: ger_agent_dd62525d972a
+    emotional_state: Controlled fury laced with resolute certainty
+    goals:
+    - Enforce chain-of-command respect for C.J. and staff
+    - Secure Hoynes' unqualified loyalty to Bartlet
+    what_happened: Seated and reading paperwork initially, Leo rises to confrontation,
+      delivers pointed rebuke over C.J., invokes presidential authority with rising
+      intensity, issues stark ultimatum, then resumes reading stoically after Hoynes
+      departs.
+    observed_status: Seated and reading paperwork initially, Leo rises to confrontation,
+      delivers pointed rebuke over C.J., invokes presidential authority with rising
+      intensity, issues stark ultimatum, then resumes reading stoically after Hoynes
+      departs.
+    beliefs:
+    - White House directives carry unbreakable weight
+    - Disloyalty invites swift political destruction
+    observed_traits:
+    - Unyielding authority
+    - Institutional loyalty
+    - Calculated intimidation
+    - Blunt pragmatism
+    importance: primary
+    global_id: ger_agent_dd62525d972a
+  - character_uuid: ger_agent_3a5efeceb247
+    emotional_state: Calm and neutral
+    goals:
+    - Execute Leo's scheduling logistics seamlessly
+    - Preserve confidentiality of high-level meeting
+    what_happened: Enters briefly to announce Hoynes' arrival with polite interruption,
+      exits promptly at Leo's thanks, facilitating the private confrontation without
+      further involvement.
+    observed_status: Enters briefly to announce Hoynes' arrival with polite interruption,
+      exits promptly at Leo's thanks, facilitating the private confrontation without
+      further involvement.
+    beliefs:
+    - Routine announcements enable senior operations
+    - Intrusions must be minimal in power spaces
+    observed_traits:
+    - Efficient professionalism
+    - Discreet loyalty
+    importance: primary
+    global_id: ger_agent_3a5efeceb247
+  object_involvements: []
+  location_involvements:
+  - location_uuid: ger_location_5e2e1d56cd7d
+    description_of_involvement: New York City is referenced by Hoynes to frame his
+      trip as important (Standard & Poor's raising the city's credit rating), serving
+      as offstage prestige that Hoynes uses to assert relevance and deflect Leo's
+      interrogation. The city functions as contextual leverage for Hoynes' ego and
+      standing.
+    observed_atmosphere: Implied external prestige and bustle intruding into a private
+      confrontation—an offstage spectacle that heightens Hoynes' sense of importance.
+    functional_role: Contextual amplifier—provides Hoynes rhetorical cover and underscores
+      the political stakes of his schedule and reputation.
+    symbolic_significance: Represents external validation and metropolitan prestige
+      that Hoynes leans on to shore up his status.
+    access_restrictions: ''
+    key_environmental_details:
+    - Verbal mention of Standard & Poor's upward action
+    - Implied fundraiser/press circuit momentum
+    - Offstage city prestige used rhetorically
+    global_id: ger_location_5e2e1d56cd7d
+  - location_uuid: ger_location_c484c15171e3
+    description_of_involvement: The West Wing men's room is invoked by Hoynes as a
+      sarcastic rhetorical device (Article Two / men's room quip) to ridicule Leo's
+      attempt to treat C.J.'s information as a directive. The reference functions
+      as a comic undercut and a means for Hoynes to challenge institutional overreach.
+    observed_atmosphere: Momentarily flippant and irreverent—Hoynes uses humor to
+      mask deeper grievance and to puncture Leo's authority.
+    functional_role: Rhetorical touchstone and boundary marker—Hoynes' joke reframes
+      the power conversation as petty and questions Leo's jurisdiction.
+    symbolic_significance: Undermines institutional formality; symbolizes Hoynes'
+      attempt to reduce the confrontation to absurdity rather than confront its seriousness.
+    access_restrictions: ''
+    key_environmental_details:
+    - Sarcastic invocation of Article Two of the Constitution
+    - Casual, irreverent language about a private facility
+    - Verbal jibe used to deflect an assertion of authority
+    global_id: ger_location_c484c15171e3
   organization_involvements: []
   derived_from_beat_uuids: *id026
   source_season: 1
@@ -9286,30 +9286,6 @@ events:
   theme_uuids: []
   arc_uuids: []
   participations:
-  - character_uuid: ger_agent_ca5b49a4a863
-    emotional_state: Nervous and slightly defensive — trying to avoid escalation while
-      shielding Laurie and herself from entanglement.
-    goals:
-    - Avoid drawing attention or creating a scene at the bar.
-    - Protect Laurie from an intrusive stranger and from public exposure.
-    - Deflect responsibility and close the interaction quickly.
-    what_happened: The woman at the bar initially denies knowing Laurie, then, under
-      Sam's insistence and a revealing line, acknowledges recognition and directs
-      him to 'the back,' remaining guarded and emphasizing Laurie's busyness.
-    observed_status: The woman at the bar initially denies knowing Laurie, then, under
-      Sam's insistence and a revealing line, acknowledges recognition and directs
-      him to 'the back,' remaining guarded and emphasizing Laurie's busyness.
-    beliefs:
-    - There is risk in engaging with someone who knows personal details about Laurie.
-    - Minimizing conversation will reduce the chance of further intrusion or publicity.
-    - Laurie’s privacy is worth protecting even if it requires a small deception.
-    observed_traits:
-    - evasive
-    - protective
-    - guarded
-    - economical with answers
-    importance: primary
-    global_id: ger_agent_ca5b49a4a863
   - character_uuid: ger_agent_ed161dcf5390
     emotional_state: Not directly observed; implied anxiety or desire for privacy
       and containment given the attention being directed toward her.
@@ -9355,6 +9331,30 @@ events:
     - disciplined (as perceived by Sam)
     importance: primary
     global_id: ger_agent_7854a70e34ea
+  - character_uuid: ger_agent_f9d71fd78831
+    emotional_state: Nervous and slightly defensive — trying to avoid escalation while
+      shielding Laurie and herself from entanglement.
+    goals:
+    - Avoid drawing attention or creating a scene at the bar.
+    - Protect Laurie from an intrusive stranger and from public exposure.
+    - Deflect responsibility and close the interaction quickly.
+    what_happened: The woman at the bar initially denies knowing Laurie, then, under
+      Sam's insistence and a revealing line, acknowledges recognition and directs
+      him to 'the back,' remaining guarded and emphasizing Laurie's busyness.
+    observed_status: The woman at the bar initially denies knowing Laurie, then, under
+      Sam's insistence and a revealing line, acknowledges recognition and directs
+      him to 'the back,' remaining guarded and emphasizing Laurie's busyness.
+    beliefs:
+    - There is risk in engaging with someone who knows personal details about Laurie.
+    - Minimizing conversation will reduce the chance of further intrusion or publicity.
+    - Laurie’s privacy is worth protecting even if it requires a small deception.
+    observed_traits:
+    - evasive
+    - protective
+    - guarded
+    - economical with answers
+    importance: primary
+    global_id: ger_agent_f9d71fd78831
   object_involvements: []
   location_involvements: []
   organization_involvements: []
@@ -9390,28 +9390,6 @@ events:
   arc_uuids:
   - ger_conflictarc_7056d65ad92f
   participations:
-  - character_uuid: ger_agent_ca5b49a4a863
-    emotional_state: Curiously engaged, sensing potential story amid social facade
-    goals:
-    - Uncover personal details linking Sam to the group's 'Brittany'
-    - Gauge dynamics for professional impressions in elite circles
-    what_happened: Seated among the private group, joins laughter at Hongkong remark;
-      directly probes Sam's connection by asking 'How do you know Brittany?' sparking
-      the alias reveal, then observes the escalating threat and Laurie's abrupt departure
-      without further comment.
-    observed_status: Seated among the private group, joins laughter at Hongkong remark;
-      directly probes Sam's connection by asking 'How do you know Brittany?' sparking
-      the alias reveal, then observes the escalating threat and Laurie's abrupt departure
-      without further comment.
-    beliefs:
-    - Casual questions can reveal valuable interpersonal intel
-    - Proximity to power players demands opportunistic observation
-    observed_traits:
-    - inquisitive
-    - professionally alert
-    - discreetly probing
-    importance: primary
-    global_id: ger_agent_ca5b49a4a863
   - character_uuid: ger_agent_ed161dcf5390
     emotional_state: Humiliated and cornered, feigning composure over rising fury
       and betrayal
@@ -9478,6 +9456,28 @@ events:
     - discretionary enforcer
     importance: mentioned
     global_id: ger_agent_11ad467a4189
+  - character_uuid: ger_agent_f9d71fd78831
+    emotional_state: Curiously engaged, sensing potential story amid social facade
+    goals:
+    - Uncover personal details linking Sam to the group's 'Brittany'
+    - Gauge dynamics for professional impressions in elite circles
+    what_happened: Seated among the private group, joins laughter at Hongkong remark;
+      directly probes Sam's connection by asking 'How do you know Brittany?' sparking
+      the alias reveal, then observes the escalating threat and Laurie's abrupt departure
+      without further comment.
+    observed_status: Seated among the private group, joins laughter at Hongkong remark;
+      directly probes Sam's connection by asking 'How do you know Brittany?' sparking
+      the alias reveal, then observes the escalating threat and Laurie's abrupt departure
+      without further comment.
+    beliefs:
+    - Casual questions can reveal valuable interpersonal intel
+    - Proximity to power players demands opportunistic observation
+    observed_traits:
+    - inquisitive
+    - professionally alert
+    - discreetly probing
+    importance: primary
+    global_id: ger_agent_f9d71fd78831
   object_involvements:
   - object_uuid: ger_object_bbe14d97fac2
     description_of_involvement: Sam's drink (a Dewar's on the rocks) functions narratively
@@ -9568,28 +9568,6 @@ events:
   arc_uuids:
   - ger_conflictarc_7056d65ad92f
   participations:
-  - character_uuid: ger_agent_ca5b49a4a863
-    emotional_state: Curiously engaged, sensing potential story amid social facade
-    goals:
-    - Uncover personal details linking Sam to the group's 'Brittany'
-    - Gauge dynamics for professional impressions in elite circles
-    what_happened: Seated among the private group, joins laughter at Hongkong remark;
-      directly probes Sam's connection by asking 'How do you know Brittany?' sparking
-      the alias reveal, then observes the escalating threat and Laurie's abrupt departure
-      without further comment.
-    observed_status: Seated among the private group, joins laughter at Hongkong remark;
-      directly probes Sam's connection by asking 'How do you know Brittany?' sparking
-      the alias reveal, then observes the escalating threat and Laurie's abrupt departure
-      without further comment.
-    beliefs:
-    - Casual questions can reveal valuable interpersonal intel
-    - Proximity to power players demands opportunistic observation
-    observed_traits:
-    - inquisitive
-    - professionally alert
-    - discreetly probing
-    importance: primary
-    global_id: ger_agent_ca5b49a4a863
   - character_uuid: ger_agent_ed161dcf5390
     emotional_state: Humiliated and cornered, feigning composure over rising fury
       and betrayal
@@ -9656,6 +9634,28 @@ events:
     - discretionary enforcer
     importance: mentioned
     global_id: ger_agent_11ad467a4189
+  - character_uuid: ger_agent_f9d71fd78831
+    emotional_state: Curiously engaged, sensing potential story amid social facade
+    goals:
+    - Uncover personal details linking Sam to the group's 'Brittany'
+    - Gauge dynamics for professional impressions in elite circles
+    what_happened: Seated among the private group, joins laughter at Hongkong remark;
+      directly probes Sam's connection by asking 'How do you know Brittany?' sparking
+      the alias reveal, then observes the escalating threat and Laurie's abrupt departure
+      without further comment.
+    observed_status: Seated among the private group, joins laughter at Hongkong remark;
+      directly probes Sam's connection by asking 'How do you know Brittany?' sparking
+      the alias reveal, then observes the escalating threat and Laurie's abrupt departure
+      without further comment.
+    beliefs:
+    - Casual questions can reveal valuable interpersonal intel
+    - Proximity to power players demands opportunistic observation
+    observed_traits:
+    - inquisitive
+    - professionally alert
+    - discreetly probing
+    importance: primary
+    global_id: ger_agent_f9d71fd78831
   object_involvements:
   - object_uuid: ger_object_bbe14d97fac2
     description_of_involvement: Sam's drink (a Dewar's on the rocks) functions narratively
@@ -11322,204 +11322,6 @@ events:
   - 'BARTLET: I am not frightened. I''m gonna blow them off the face of the earth
     with the fury of God''s own thunder.'
   is_flashback: false
-  location_uuid: ger_location_d7957f093377
-  theme_uuids:
-  - ger_theme_3d014bd97b80
-  arc_uuids:
-  - ger_conflictarc_f9707ba919e2
-  participations:
-  - character_uuid: ger_agent_198649bce78f
-    emotional_state: Grief-stricken fury erupting from measured leadership
-    goals:
-    - Grasp operational details for retaliation
-    - Honor Tolliver personally before unleashing military response
-    what_happened: Leaning on his desk, Bartlet reels from the news, pauses in stunned
-      silence, fires targeted questions on Syrian time/ambassador and allies, sighs
-      heavily, instructs on personal call and meeting, then summons Leo back with
-      a biblical vow of total destruction, sits to dial Tolliver's wife amid lingering
-      tension.
-    observed_status: Leaning on his desk, Bartlet reels from the news, pauses in stunned
-      silence, fires targeted questions on Syrian time/ambassador and allies, sighs
-      heavily, instructs on personal call and meeting, then summons Leo back with
-      a biblical vow of total destruction, sits to dial Tolliver's wife amid lingering
-      tension.
-    beliefs:
-    - Attacks on Americans demand overwhelming retribution
-    - Personal loyalty transcends political games
-    observed_traits:
-    - commanding intellect
-    - fierce protector of his people
-    - biblically wrathful
-    importance: primary
-    global_id: ger_agent_198649bce78f
-  - character_uuid: ger_agent_dd62525d972a
-    emotional_state: Steady professionalism veiling deep concern for Bartlet's rage
-    goals:
-    - Inform President accurately to enable swift decisions
-    - Protect presidential focus by prepping briefings and commanders
-    what_happened: Leo enters slowly, delivers the precise, devastating intelligence
-      on Tolliver's death and the Syrian-attributed airstrike with unflinching detail,
-      answers Bartlet's rapid queries on timelines and locations, shows visible concern
-      at the President's fury, then exits to marshal resources as ordered.
-    observed_status: Leo enters slowly, delivers the precise, devastating intelligence
-      on Tolliver's death and the Syrian-attributed airstrike with unflinching detail,
-      answers Bartlet's rapid queries on timelines and locations, shows visible concern
-      at the President's fury, then exits to marshal resources as ordered.
-    beliefs:
-    - Institutional protocol demands unflinching truth in crisis
-    - Presidential resolve must be channeled, not unchecked
-    observed_traits:
-    - composed under pressure
-    - loyal procedural anchor
-    - empathetic observer
-    importance: primary
-    global_id: ger_agent_dd62525d972a
-  object_involvements:
-  - object_uuid: ger_object_4dbafee7d092
-    description_of_involvement: The President's secure phone line is the instrument
-      Bartlet uses to place a private condolence call to Morris Tolliver's wife. It
-      functions as a conduit for intimate, presidential-level grief and as a pause
-      before converting sorrow into command.
-    status_before_event: Resting on the Oval Office desk, available for secure calls
-      and within immediate reach of the President.
-    status_after_event: Picked up and used by Bartlet to make the condolence call;
-      subsequently returned to the desk as he rises to meet staff in the Situation
-      Room.
-    global_id: ger_object_4dbafee7d092
-  location_involvements:
-  - location_uuid: ger_location_d7957f093377
-    description_of_involvement: The Situation Room is invoked as the operational hub
-      where Brodie readies briefing materials and where commanders and DoD liaisons
-      will assemble; it represents the immediate site for translating Bartlet’s fury
-      into tactical options and orders.
-    observed_atmosphere: Tense, efficient, and electrically expectant — low light,
-      screens and maps ready, staff poised for rapid movement.
-    functional_role: Briefing and command center for immediate operational response.
-    symbolic_significance: Embodies the institutional conversion of emotion into strategy;
-      where grief is formalized into state action.
-    access_restrictions: Restricted to senior staff, military liaisons, and authorized
-      briefers.
-    key_environmental_details:
-    - Glowing projection screens and laminated maps
-    - Phones and secure lines ready for rapid contact
-    - Taste of late coffee and compressed urgency
-    global_id: ger_location_d7957f093377
-  - location_uuid: ger_location_877ad27aa211
-    description_of_involvement: The Amman Teaching Hospital is the intended destination
-      of the destroyed transport; its involvement converts the loss into a humanitarian
-      catastrophe — doctors meant to teach and treat instead become casualties whose
-      deaths sharpen moral outrage.
-    observed_atmosphere: Clinical and now symbolically besieged — the hospital stands
-      as the thwarted mission of aid and education.
-    functional_role: Target/recipient of the humanitarian mission that was attacked.
-    symbolic_significance: Represents the humanitarian purpose violated by the attack,
-      making the loss not just political but moral.
-    access_restrictions: ''
-    key_environmental_details:
-    - 'Hospital mission context: trainees, monitors, clinical urgency'
-    - Imagined arrival point turned into site of absence
-    global_id: ger_location_877ad27aa211
-  - location_uuid: ger_location_93c67602295c
-    description_of_involvement: Damascus is used as a time-zone reference ('It's 10:38
-      in Damascus') that orients decision-makers to the foreign clock and underlines
-      the immediacy of diplomatic and military coordination across time boundaries.
-    observed_atmosphere: Off-stage yet urgent — a distant capital whose hours matter
-      to policy pacing.
-    functional_role: Temporal anchor for foreign contact and synchronized response.
-    symbolic_significance: Represents the foreign political center implicated in the
-      attack and timing of reactions.
-    access_restrictions: ''
-    key_environmental_details:
-    - Time reference that shortens decision windows
-    - Implied smoke-and-dust imagery as moral subtext
-    global_id: ger_location_93c67602295c
-  - location_uuid: ger_location_0ee064f77f91
-    description_of_involvement: 'The Portico (Oval Office threshold) frames the scene
-      visually: Bartlet is seen from the portico as he paces and sits behind his desk
-      after the announcement, providing a liminal space that marks the shift from
-      private reaction to public command.'
-    observed_atmosphere: Quiet, liminal, heavy with aftermath — a cool threshold that
-      intensifies the President's solitude before action.
-    functional_role: Visual and emotional beat that transitions the President from
-      private grief to public command.
-    symbolic_significance: Represents the narrow border between personal sorrow and
-      institutional power; the threshold where private feeling is transformed into
-      state action.
-    access_restrictions: Typically restricted to senior staff and visitors to the
-      Oval; functions as a controlled, reverent margin.
-    key_environmental_details:
-    - Columns and stone-flagged porch visible as a composed frame
-    - Silence punctuated by the President’s footsteps and the quiet rustle of movement
-    - Low light emphasizing mood rather than ceremony
-    global_id: ger_location_0ee064f77f91
-  - location_uuid: ger_location_10d933feec2e
-    description_of_involvement: The Pentagon is the origin point for Baker and Lennox;
-      evoked as the institutional source of military authority and the place from
-      which liaison officers are dispatched to the White House.
-    observed_atmosphere: Procedural, operationally ready — a distant but authoritative
-      nerve center.
-    functional_role: Military command origin and source of DoD liaisons.
-    symbolic_significance: Embodies the organized, institutional muscle the President
-      will call upon.
-    access_restrictions: ''
-    key_environmental_details:
-    - Clipped radio cadence and headsets implied
-    - Rapid staff movement and communications flow
-    global_id: ger_location_10d933feec2e
-  - location_uuid: ger_location_9f279d472ae2
-    description_of_involvement: The Syrian Ambassador’s residence is the diplomatic
-      node mentioned by Leo — a secure, controlled place where the ambassador conducts
-      state communications, making him reachable but insulated during the crisis.
-    observed_atmosphere: Formal, calm on the surface, diplomatically sealed and monitored.
-    functional_role: Point of contact for diplomatic engagement and accountability
-      queries to the Syrian side.
-    symbolic_significance: Represents the distance and official separation between
-      U.S. moral outrage and Syrian state posture.
-    access_restrictions: Controlled access, communications via secure line only.
-    key_environmental_details:
-    - Marble entryways and hushed reception rooms
-    - A secure communications alcove wired for encrypted calls
-    global_id: ger_location_9f279d472ae2
-  - location_uuid: ger_location_4492b170992b
-    description_of_involvement: Tartus is invoked as the geographic reference point
-      — the transport exploded about 150 miles north of Tartus — anchoring the event
-      spatially and directing operational lines of inquiry and potential military
-      options.
-    observed_atmosphere: Distant, geopolitical — a coastal point that helps convert
-      abstract intelligence into a map of response.
-    functional_role: Geographic reference for situational awareness and operational
-      planning.
-    symbolic_significance: Marks the foreign horizon where U.S. moral and military
-      reach will have to extend.
-    access_restrictions: ''
-    key_environmental_details:
-    - Sea-washed coastline as a map marker
-    - Distances measured in miles that convert to operational timelines
-    global_id: ger_location_4492b170992b
-  organization_involvements: []
-  derived_from_beat_uuids: &id034
-  - beat_8d7e2c2de345f9d0
-  - beat_6d4f4e189da66c0a
-  - beat_f3e51250fc90024f
-  - beat_67087f551947dacf
-  source_season: 1
-  source_database: westwing.s01
-- fabula_uuid: cand_evt_scene_6167373c36c0a6cc_1
-  global_id: null
-  title: Tolliver Killed — Presidential Crisis
-  description: 'Leo delivers devastating intelligence: an air transport carrying Dr.
-    Morris Tolliver and dozens of aid workers has been destroyed, and hard evidence
-    points to an order from the Syrian defense ministry. The news collapses the room
-    into a personal emergency — Bartlet pauses, then moves from measured president
-    to a man who vows fierce, immediate retaliation. He demands locations and timelines,
-    sends for the commanders, and prepares a private condolence call to Tolliver''s
-    wife. This beat pivots the episode from political embarrassment to a moral and
-    military turning point driven by intimate loss.'
-  episode_uuid: ep_sea_ser_the_west_wing_s01_e02
-  scene_sequence: 24
-  sequence_in_scene: 39
-  key_dialogue: *id033
-  is_flashback: false
   location_uuid: ger_location_877ad27aa211
   theme_uuids:
   - ger_theme_3d014bd97b80
@@ -11585,23 +11387,6 @@ events:
       Room.
     global_id: ger_object_4dbafee7d092
   location_involvements:
-  - location_uuid: ger_location_d7957f093377
-    description_of_involvement: The Situation Room is invoked as the operational hub
-      where Brodie readies briefing materials and where commanders and DoD liaisons
-      will assemble; it represents the immediate site for translating Bartlet’s fury
-      into tactical options and orders.
-    observed_atmosphere: Tense, efficient, and electrically expectant — low light,
-      screens and maps ready, staff poised for rapid movement.
-    functional_role: Briefing and command center for immediate operational response.
-    symbolic_significance: Embodies the institutional conversion of emotion into strategy;
-      where grief is formalized into state action.
-    access_restrictions: Restricted to senior staff, military liaisons, and authorized
-      briefers.
-    key_environmental_details:
-    - Glowing projection screens and laminated maps
-    - Phones and secure lines ready for rapid contact
-    - Taste of late coffee and compressed urgency
-    global_id: ger_location_d7957f093377
   - location_uuid: ger_location_877ad27aa211
     description_of_involvement: The Amman Teaching Hospital is the intended destination
       of the destroyed transport; its involvement converts the loss into a humanitarian
@@ -11694,8 +11479,29 @@ events:
     - Sea-washed coastline as a map marker
     - Distances measured in miles that convert to operational timelines
     global_id: ger_location_4492b170992b
+  - location_uuid: ger_location_d7957f093377
+    description_of_involvement: The Situation Room is invoked as the operational hub
+      where Brodie readies briefing materials and where commanders and DoD liaisons
+      will assemble; it represents the immediate site for translating Bartlet’s fury
+      into tactical options and orders.
+    observed_atmosphere: Tense, efficient, and electrically expectant — low light,
+      screens and maps ready, staff poised for rapid movement.
+    functional_role: Briefing and command center for immediate operational response.
+    symbolic_significance: Embodies the institutional conversion of emotion into strategy;
+      where grief is formalized into state action.
+    access_restrictions: Restricted to senior staff, military liaisons, and authorized
+      briefers.
+    key_environmental_details:
+    - Glowing projection screens and laminated maps
+    - Phones and secure lines ready for rapid contact
+    - Taste of late coffee and compressed urgency
+    global_id: ger_location_d7957f093377
   organization_involvements: []
-  derived_from_beat_uuids: *id034
+  derived_from_beat_uuids: &id034
+  - beat_8d7e2c2de345f9d0
+  - beat_6d4f4e189da66c0a
+  - beat_f3e51250fc90024f
+  - beat_67087f551947dacf
   source_season: 1
   source_database: westwing.s01
 - fabula_uuid: cand_evt_scene_6167373c36c0a6cc_1
@@ -11779,23 +11585,6 @@ events:
       Room.
     global_id: ger_object_4dbafee7d092
   location_involvements:
-  - location_uuid: ger_location_d7957f093377
-    description_of_involvement: The Situation Room is invoked as the operational hub
-      where Brodie readies briefing materials and where commanders and DoD liaisons
-      will assemble; it represents the immediate site for translating Bartlet’s fury
-      into tactical options and orders.
-    observed_atmosphere: Tense, efficient, and electrically expectant — low light,
-      screens and maps ready, staff poised for rapid movement.
-    functional_role: Briefing and command center for immediate operational response.
-    symbolic_significance: Embodies the institutional conversion of emotion into strategy;
-      where grief is formalized into state action.
-    access_restrictions: Restricted to senior staff, military liaisons, and authorized
-      briefers.
-    key_environmental_details:
-    - Glowing projection screens and laminated maps
-    - Phones and secure lines ready for rapid contact
-    - Taste of late coffee and compressed urgency
-    global_id: ger_location_d7957f093377
   - location_uuid: ger_location_877ad27aa211
     description_of_involvement: The Amman Teaching Hospital is the intended destination
       of the destroyed transport; its involvement converts the loss into a humanitarian
@@ -11888,6 +11677,23 @@ events:
     - Sea-washed coastline as a map marker
     - Distances measured in miles that convert to operational timelines
     global_id: ger_location_4492b170992b
+  - location_uuid: ger_location_d7957f093377
+    description_of_involvement: The Situation Room is invoked as the operational hub
+      where Brodie readies briefing materials and where commanders and DoD liaisons
+      will assemble; it represents the immediate site for translating Bartlet’s fury
+      into tactical options and orders.
+    observed_atmosphere: Tense, efficient, and electrically expectant — low light,
+      screens and maps ready, staff poised for rapid movement.
+    functional_role: Briefing and command center for immediate operational response.
+    symbolic_significance: Embodies the institutional conversion of emotion into strategy;
+      where grief is formalized into state action.
+    access_restrictions: Restricted to senior staff, military liaisons, and authorized
+      briefers.
+    key_environmental_details:
+    - Glowing projection screens and laminated maps
+    - Phones and secure lines ready for rapid contact
+    - Taste of late coffee and compressed urgency
+    global_id: ger_location_d7957f093377
   organization_involvements: []
   derived_from_beat_uuids: *id034
   source_season: 1
@@ -11973,23 +11779,6 @@ events:
       Room.
     global_id: ger_object_4dbafee7d092
   location_involvements:
-  - location_uuid: ger_location_d7957f093377
-    description_of_involvement: The Situation Room is invoked as the operational hub
-      where Brodie readies briefing materials and where commanders and DoD liaisons
-      will assemble; it represents the immediate site for translating Bartlet’s fury
-      into tactical options and orders.
-    observed_atmosphere: Tense, efficient, and electrically expectant — low light,
-      screens and maps ready, staff poised for rapid movement.
-    functional_role: Briefing and command center for immediate operational response.
-    symbolic_significance: Embodies the institutional conversion of emotion into strategy;
-      where grief is formalized into state action.
-    access_restrictions: Restricted to senior staff, military liaisons, and authorized
-      briefers.
-    key_environmental_details:
-    - Glowing projection screens and laminated maps
-    - Phones and secure lines ready for rapid contact
-    - Taste of late coffee and compressed urgency
-    global_id: ger_location_d7957f093377
   - location_uuid: ger_location_877ad27aa211
     description_of_involvement: The Amman Teaching Hospital is the intended destination
       of the destroyed transport; its involvement converts the loss into a humanitarian
@@ -12082,6 +11871,23 @@ events:
     - Sea-washed coastline as a map marker
     - Distances measured in miles that convert to operational timelines
     global_id: ger_location_4492b170992b
+  - location_uuid: ger_location_d7957f093377
+    description_of_involvement: The Situation Room is invoked as the operational hub
+      where Brodie readies briefing materials and where commanders and DoD liaisons
+      will assemble; it represents the immediate site for translating Bartlet’s fury
+      into tactical options and orders.
+    observed_atmosphere: Tense, efficient, and electrically expectant — low light,
+      screens and maps ready, staff poised for rapid movement.
+    functional_role: Briefing and command center for immediate operational response.
+    symbolic_significance: Embodies the institutional conversion of emotion into strategy;
+      where grief is formalized into state action.
+    access_restrictions: Restricted to senior staff, military liaisons, and authorized
+      briefers.
+    key_environmental_details:
+    - Glowing projection screens and laminated maps
+    - Phones and secure lines ready for rapid contact
+    - Taste of late coffee and compressed urgency
+    global_id: ger_location_d7957f093377
   organization_involvements: []
   derived_from_beat_uuids: *id034
   source_season: 1
@@ -12167,23 +11973,6 @@ events:
       Room.
     global_id: ger_object_4dbafee7d092
   location_involvements:
-  - location_uuid: ger_location_d7957f093377
-    description_of_involvement: The Situation Room is invoked as the operational hub
-      where Brodie readies briefing materials and where commanders and DoD liaisons
-      will assemble; it represents the immediate site for translating Bartlet’s fury
-      into tactical options and orders.
-    observed_atmosphere: Tense, efficient, and electrically expectant — low light,
-      screens and maps ready, staff poised for rapid movement.
-    functional_role: Briefing and command center for immediate operational response.
-    symbolic_significance: Embodies the institutional conversion of emotion into strategy;
-      where grief is formalized into state action.
-    access_restrictions: Restricted to senior staff, military liaisons, and authorized
-      briefers.
-    key_environmental_details:
-    - Glowing projection screens and laminated maps
-    - Phones and secure lines ready for rapid contact
-    - Taste of late coffee and compressed urgency
-    global_id: ger_location_d7957f093377
   - location_uuid: ger_location_877ad27aa211
     description_of_involvement: The Amman Teaching Hospital is the intended destination
       of the destroyed transport; its involvement converts the loss into a humanitarian
@@ -12276,6 +12065,23 @@ events:
     - Sea-washed coastline as a map marker
     - Distances measured in miles that convert to operational timelines
     global_id: ger_location_4492b170992b
+  - location_uuid: ger_location_d7957f093377
+    description_of_involvement: The Situation Room is invoked as the operational hub
+      where Brodie readies briefing materials and where commanders and DoD liaisons
+      will assemble; it represents the immediate site for translating Bartlet’s fury
+      into tactical options and orders.
+    observed_atmosphere: Tense, efficient, and electrically expectant — low light,
+      screens and maps ready, staff poised for rapid movement.
+    functional_role: Briefing and command center for immediate operational response.
+    symbolic_significance: Embodies the institutional conversion of emotion into strategy;
+      where grief is formalized into state action.
+    access_restrictions: Restricted to senior staff, military liaisons, and authorized
+      briefers.
+    key_environmental_details:
+    - Glowing projection screens and laminated maps
+    - Phones and secure lines ready for rapid contact
+    - Taste of late coffee and compressed urgency
+    global_id: ger_location_d7957f093377
   organization_involvements: []
   derived_from_beat_uuids: *id034
   source_season: 1
@@ -12361,23 +12167,6 @@ events:
       Room.
     global_id: ger_object_4dbafee7d092
   location_involvements:
-  - location_uuid: ger_location_d7957f093377
-    description_of_involvement: The Situation Room is invoked as the operational hub
-      where Brodie readies briefing materials and where commanders and DoD liaisons
-      will assemble; it represents the immediate site for translating Bartlet’s fury
-      into tactical options and orders.
-    observed_atmosphere: Tense, efficient, and electrically expectant — low light,
-      screens and maps ready, staff poised for rapid movement.
-    functional_role: Briefing and command center for immediate operational response.
-    symbolic_significance: Embodies the institutional conversion of emotion into strategy;
-      where grief is formalized into state action.
-    access_restrictions: Restricted to senior staff, military liaisons, and authorized
-      briefers.
-    key_environmental_details:
-    - Glowing projection screens and laminated maps
-    - Phones and secure lines ready for rapid contact
-    - Taste of late coffee and compressed urgency
-    global_id: ger_location_d7957f093377
   - location_uuid: ger_location_877ad27aa211
     description_of_involvement: The Amman Teaching Hospital is the intended destination
       of the destroyed transport; its involvement converts the loss into a humanitarian
@@ -12470,6 +12259,23 @@ events:
     - Sea-washed coastline as a map marker
     - Distances measured in miles that convert to operational timelines
     global_id: ger_location_4492b170992b
+  - location_uuid: ger_location_d7957f093377
+    description_of_involvement: The Situation Room is invoked as the operational hub
+      where Brodie readies briefing materials and where commanders and DoD liaisons
+      will assemble; it represents the immediate site for translating Bartlet’s fury
+      into tactical options and orders.
+    observed_atmosphere: Tense, efficient, and electrically expectant — low light,
+      screens and maps ready, staff poised for rapid movement.
+    functional_role: Briefing and command center for immediate operational response.
+    symbolic_significance: Embodies the institutional conversion of emotion into strategy;
+      where grief is formalized into state action.
+    access_restrictions: Restricted to senior staff, military liaisons, and authorized
+      briefers.
+    key_environmental_details:
+    - Glowing projection screens and laminated maps
+    - Phones and secure lines ready for rapid contact
+    - Taste of late coffee and compressed urgency
+    global_id: ger_location_d7957f093377
   organization_involvements: []
   derived_from_beat_uuids: *id034
   source_season: 1
@@ -12555,23 +12361,6 @@ events:
       Room.
     global_id: ger_object_4dbafee7d092
   location_involvements:
-  - location_uuid: ger_location_d7957f093377
-    description_of_involvement: The Situation Room is invoked as the operational hub
-      where Brodie readies briefing materials and where commanders and DoD liaisons
-      will assemble; it represents the immediate site for translating Bartlet’s fury
-      into tactical options and orders.
-    observed_atmosphere: Tense, efficient, and electrically expectant — low light,
-      screens and maps ready, staff poised for rapid movement.
-    functional_role: Briefing and command center for immediate operational response.
-    symbolic_significance: Embodies the institutional conversion of emotion into strategy;
-      where grief is formalized into state action.
-    access_restrictions: Restricted to senior staff, military liaisons, and authorized
-      briefers.
-    key_environmental_details:
-    - Glowing projection screens and laminated maps
-    - Phones and secure lines ready for rapid contact
-    - Taste of late coffee and compressed urgency
-    global_id: ger_location_d7957f093377
   - location_uuid: ger_location_877ad27aa211
     description_of_involvement: The Amman Teaching Hospital is the intended destination
       of the destroyed transport; its involvement converts the loss into a humanitarian
@@ -12664,6 +12453,217 @@ events:
     - Sea-washed coastline as a map marker
     - Distances measured in miles that convert to operational timelines
     global_id: ger_location_4492b170992b
+  - location_uuid: ger_location_d7957f093377
+    description_of_involvement: The Situation Room is invoked as the operational hub
+      where Brodie readies briefing materials and where commanders and DoD liaisons
+      will assemble; it represents the immediate site for translating Bartlet’s fury
+      into tactical options and orders.
+    observed_atmosphere: Tense, efficient, and electrically expectant — low light,
+      screens and maps ready, staff poised for rapid movement.
+    functional_role: Briefing and command center for immediate operational response.
+    symbolic_significance: Embodies the institutional conversion of emotion into strategy;
+      where grief is formalized into state action.
+    access_restrictions: Restricted to senior staff, military liaisons, and authorized
+      briefers.
+    key_environmental_details:
+    - Glowing projection screens and laminated maps
+    - Phones and secure lines ready for rapid contact
+    - Taste of late coffee and compressed urgency
+    global_id: ger_location_d7957f093377
+  organization_involvements: []
+  derived_from_beat_uuids: *id034
+  source_season: 1
+  source_database: westwing.s01
+- fabula_uuid: cand_evt_scene_6167373c36c0a6cc_1
+  global_id: null
+  title: Tolliver Killed — Presidential Crisis
+  description: 'Leo delivers devastating intelligence: an air transport carrying Dr.
+    Morris Tolliver and dozens of aid workers has been destroyed, and hard evidence
+    points to an order from the Syrian defense ministry. The news collapses the room
+    into a personal emergency — Bartlet pauses, then moves from measured president
+    to a man who vows fierce, immediate retaliation. He demands locations and timelines,
+    sends for the commanders, and prepares a private condolence call to Tolliver''s
+    wife. This beat pivots the episode from political embarrassment to a moral and
+    military turning point driven by intimate loss.'
+  episode_uuid: ep_sea_ser_the_west_wing_s01_e02
+  scene_sequence: 24
+  sequence_in_scene: 39
+  key_dialogue: *id033
+  is_flashback: false
+  location_uuid: ger_location_d7957f093377
+  theme_uuids:
+  - ger_theme_3d014bd97b80
+  arc_uuids:
+  - ger_conflictarc_f9707ba919e2
+  participations:
+  - character_uuid: ger_agent_198649bce78f
+    emotional_state: Grief-stricken fury erupting from measured leadership
+    goals:
+    - Grasp operational details for retaliation
+    - Honor Tolliver personally before unleashing military response
+    what_happened: Leaning on his desk, Bartlet reels from the news, pauses in stunned
+      silence, fires targeted questions on Syrian time/ambassador and allies, sighs
+      heavily, instructs on personal call and meeting, then summons Leo back with
+      a biblical vow of total destruction, sits to dial Tolliver's wife amid lingering
+      tension.
+    observed_status: Leaning on his desk, Bartlet reels from the news, pauses in stunned
+      silence, fires targeted questions on Syrian time/ambassador and allies, sighs
+      heavily, instructs on personal call and meeting, then summons Leo back with
+      a biblical vow of total destruction, sits to dial Tolliver's wife amid lingering
+      tension.
+    beliefs:
+    - Attacks on Americans demand overwhelming retribution
+    - Personal loyalty transcends political games
+    observed_traits:
+    - commanding intellect
+    - fierce protector of his people
+    - biblically wrathful
+    importance: primary
+    global_id: ger_agent_198649bce78f
+  - character_uuid: ger_agent_dd62525d972a
+    emotional_state: Steady professionalism veiling deep concern for Bartlet's rage
+    goals:
+    - Inform President accurately to enable swift decisions
+    - Protect presidential focus by prepping briefings and commanders
+    what_happened: Leo enters slowly, delivers the precise, devastating intelligence
+      on Tolliver's death and the Syrian-attributed airstrike with unflinching detail,
+      answers Bartlet's rapid queries on timelines and locations, shows visible concern
+      at the President's fury, then exits to marshal resources as ordered.
+    observed_status: Leo enters slowly, delivers the precise, devastating intelligence
+      on Tolliver's death and the Syrian-attributed airstrike with unflinching detail,
+      answers Bartlet's rapid queries on timelines and locations, shows visible concern
+      at the President's fury, then exits to marshal resources as ordered.
+    beliefs:
+    - Institutional protocol demands unflinching truth in crisis
+    - Presidential resolve must be channeled, not unchecked
+    observed_traits:
+    - composed under pressure
+    - loyal procedural anchor
+    - empathetic observer
+    importance: primary
+    global_id: ger_agent_dd62525d972a
+  object_involvements:
+  - object_uuid: ger_object_4dbafee7d092
+    description_of_involvement: The President's secure phone line is the instrument
+      Bartlet uses to place a private condolence call to Morris Tolliver's wife. It
+      functions as a conduit for intimate, presidential-level grief and as a pause
+      before converting sorrow into command.
+    status_before_event: Resting on the Oval Office desk, available for secure calls
+      and within immediate reach of the President.
+    status_after_event: Picked up and used by Bartlet to make the condolence call;
+      subsequently returned to the desk as he rises to meet staff in the Situation
+      Room.
+    global_id: ger_object_4dbafee7d092
+  location_involvements:
+  - location_uuid: ger_location_877ad27aa211
+    description_of_involvement: The Amman Teaching Hospital is the intended destination
+      of the destroyed transport; its involvement converts the loss into a humanitarian
+      catastrophe — doctors meant to teach and treat instead become casualties whose
+      deaths sharpen moral outrage.
+    observed_atmosphere: Clinical and now symbolically besieged — the hospital stands
+      as the thwarted mission of aid and education.
+    functional_role: Target/recipient of the humanitarian mission that was attacked.
+    symbolic_significance: Represents the humanitarian purpose violated by the attack,
+      making the loss not just political but moral.
+    access_restrictions: ''
+    key_environmental_details:
+    - 'Hospital mission context: trainees, monitors, clinical urgency'
+    - Imagined arrival point turned into site of absence
+    global_id: ger_location_877ad27aa211
+  - location_uuid: ger_location_93c67602295c
+    description_of_involvement: Damascus is used as a time-zone reference ('It's 10:38
+      in Damascus') that orients decision-makers to the foreign clock and underlines
+      the immediacy of diplomatic and military coordination across time boundaries.
+    observed_atmosphere: Off-stage yet urgent — a distant capital whose hours matter
+      to policy pacing.
+    functional_role: Temporal anchor for foreign contact and synchronized response.
+    symbolic_significance: Represents the foreign political center implicated in the
+      attack and timing of reactions.
+    access_restrictions: ''
+    key_environmental_details:
+    - Time reference that shortens decision windows
+    - Implied smoke-and-dust imagery as moral subtext
+    global_id: ger_location_93c67602295c
+  - location_uuid: ger_location_0ee064f77f91
+    description_of_involvement: 'The Portico (Oval Office threshold) frames the scene
+      visually: Bartlet is seen from the portico as he paces and sits behind his desk
+      after the announcement, providing a liminal space that marks the shift from
+      private reaction to public command.'
+    observed_atmosphere: Quiet, liminal, heavy with aftermath — a cool threshold that
+      intensifies the President's solitude before action.
+    functional_role: Visual and emotional beat that transitions the President from
+      private grief to public command.
+    symbolic_significance: Represents the narrow border between personal sorrow and
+      institutional power; the threshold where private feeling is transformed into
+      state action.
+    access_restrictions: Typically restricted to senior staff and visitors to the
+      Oval; functions as a controlled, reverent margin.
+    key_environmental_details:
+    - Columns and stone-flagged porch visible as a composed frame
+    - Silence punctuated by the President’s footsteps and the quiet rustle of movement
+    - Low light emphasizing mood rather than ceremony
+    global_id: ger_location_0ee064f77f91
+  - location_uuid: ger_location_10d933feec2e
+    description_of_involvement: The Pentagon is the origin point for Baker and Lennox;
+      evoked as the institutional source of military authority and the place from
+      which liaison officers are dispatched to the White House.
+    observed_atmosphere: Procedural, operationally ready — a distant but authoritative
+      nerve center.
+    functional_role: Military command origin and source of DoD liaisons.
+    symbolic_significance: Embodies the organized, institutional muscle the President
+      will call upon.
+    access_restrictions: ''
+    key_environmental_details:
+    - Clipped radio cadence and headsets implied
+    - Rapid staff movement and communications flow
+    global_id: ger_location_10d933feec2e
+  - location_uuid: ger_location_9f279d472ae2
+    description_of_involvement: The Syrian Ambassador’s residence is the diplomatic
+      node mentioned by Leo — a secure, controlled place where the ambassador conducts
+      state communications, making him reachable but insulated during the crisis.
+    observed_atmosphere: Formal, calm on the surface, diplomatically sealed and monitored.
+    functional_role: Point of contact for diplomatic engagement and accountability
+      queries to the Syrian side.
+    symbolic_significance: Represents the distance and official separation between
+      U.S. moral outrage and Syrian state posture.
+    access_restrictions: Controlled access, communications via secure line only.
+    key_environmental_details:
+    - Marble entryways and hushed reception rooms
+    - A secure communications alcove wired for encrypted calls
+    global_id: ger_location_9f279d472ae2
+  - location_uuid: ger_location_4492b170992b
+    description_of_involvement: Tartus is invoked as the geographic reference point
+      — the transport exploded about 150 miles north of Tartus — anchoring the event
+      spatially and directing operational lines of inquiry and potential military
+      options.
+    observed_atmosphere: Distant, geopolitical — a coastal point that helps convert
+      abstract intelligence into a map of response.
+    functional_role: Geographic reference for situational awareness and operational
+      planning.
+    symbolic_significance: Marks the foreign horizon where U.S. moral and military
+      reach will have to extend.
+    access_restrictions: ''
+    key_environmental_details:
+    - Sea-washed coastline as a map marker
+    - Distances measured in miles that convert to operational timelines
+    global_id: ger_location_4492b170992b
+  - location_uuid: ger_location_d7957f093377
+    description_of_involvement: The Situation Room is invoked as the operational hub
+      where Brodie readies briefing materials and where commanders and DoD liaisons
+      will assemble; it represents the immediate site for translating Bartlet’s fury
+      into tactical options and orders.
+    observed_atmosphere: Tense, efficient, and electrically expectant — low light,
+      screens and maps ready, staff poised for rapid movement.
+    functional_role: Briefing and command center for immediate operational response.
+    symbolic_significance: Embodies the institutional conversion of emotion into strategy;
+      where grief is formalized into state action.
+    access_restrictions: Restricted to senior staff, military liaisons, and authorized
+      briefers.
+    key_environmental_details:
+    - Glowing projection screens and laminated maps
+    - Phones and secure lines ready for rapid contact
+    - Taste of late coffee and compressed urgency
+    global_id: ger_location_d7957f093377
   organization_involvements: []
   derived_from_beat_uuids: *id034
   source_season: 1
@@ -12687,187 +12687,6 @@ events:
   - 'BARTLET: What time is it?'
   - 'BARTLET: I am not frightened. I''m gonna blow them off the face of the earth
     with the fury of God''s own thunder.'
-  is_flashback: false
-  location_uuid: ger_location_d7957f093377
-  theme_uuids:
-  - ger_theme_03f5dc10d61b
-  - ger_theme_3d014bd97b80
-  arc_uuids:
-  - ger_conflictarc_f9707ba919e2
-  participations:
-  - character_uuid: ger_agent_198649bce78f
-    emotional_state: Intimate devastation collapsing into righteous, thunderous fury
-    goals:
-    - Honor Tolliver through personal notification to his wife
-    - Mandate overwhelming retaliation against perpetrators
-    what_happened: Leans heavily on desk absorbing shock, pauses in stunned silence,
-      queries Damascus time, ambassador's status, and allied readiness; sighs profoundly,
-      prioritizes calling Tolliver's widow, recalls Leo for thunderous vow of total
-      destruction before sitting to dial.
-    observed_status: Leans heavily on desk absorbing shock, pauses in stunned silence,
-      queries Damascus time, ambassador's status, and allied readiness; sighs profoundly,
-      prioritizes calling Tolliver's widow, recalls Leo for thunderous vow of total
-      destruction before sitting to dial.
-    beliefs:
-    - Personal loyalty demands merciless justice for betrayal
-    - Presidential power must channel grief into decisive force
-    observed_traits:
-    - grieving
-    - resolute
-    - authoritative
-    - fiercely protective
-    importance: primary
-    global_id: ger_agent_198649bce78f
-  - character_uuid: ger_agent_dd62525d972a
-    emotional_state: Steady professionalism masking sorrowful urgency and quiet alarm
-      at escalating rhetoric
-    goals:
-    - Brief President with unfiltered intelligence to enable rapid decisions
-    - Coordinate incoming military liaisons and Situation Room readiness
-    what_happened: Enters slowly, stands before the desk, delivers precise casualty
-      details, crash forensics, attribution shifts, and incoming briefer updates;
-      answers Bartlet's operational queries with crisp efficiency, registers visible
-      concern at the President's explosive vow before exiting deliberately.
-    observed_status: Enters slowly, stands before the desk, delivers precise casualty
-      details, crash forensics, attribution shifts, and incoming briefer updates;
-      answers Bartlet's operational queries with crisp efficiency, registers visible
-      concern at the President's explosive vow before exiting deliberately.
-    beliefs:
-    - Truthful intel protects presidential judgment amid crisis
-    - Restraint tempers righteous anger in command chain
-    observed_traits:
-    - composed
-    - loyal
-    - procedural
-    - protective
-    importance: primary
-    global_id: ger_agent_dd62525d972a
-  object_involvements:
-  - object_uuid: ger_object_3cfe2980aa37
-    description_of_involvement: 'A heavy executive desk (canonical as Leo''s desk)
-      functions as the physical anchor of the opening image: the President leaning
-      on a desk while receiving the briefing. The desk visually grounds Bartlet''s
-      exhaustion and authority and becomes the staging point before he walks to his
-      chair and uses the secure line.'
-    status_before_event: In place as an authoritative work surface within the Oval
-      Office vicinity, bearing briefing pages and the President's posture.
-    status_after_event: Remains in place; serves as the physical site from which Bartlet
-      makes his private call and composes himself.
-    global_id: ger_object_3cfe2980aa37
-  - object_uuid: ger_object_4dbafee7d092
-    description_of_involvement: The President's Secure Phone Line is the intimate
-      conduit Bartlet uses to place a private condolence call to Morris Tolliver's
-      wife. Functionally it converts the public intelligence briefing into a private,
-      human moment and underscores the personal stakes that immediately propel the
-      administration toward reprisal.
-    status_before_event: Installed in the Oval Office and available for secure calls;
-      unused at the start of the exchange.
-    status_after_event: Picked up and used by the President for a private call; the
-      call completes and the line returns to standby.
-    global_id: ger_object_4dbafee7d092
-  location_involvements:
-  - location_uuid: ger_location_d7957f093377
-    description_of_involvement: The Situation Room is the operational destination
-      for the President's next action; Leo reports Brodie is preparing the briefing
-      there and that Baker and Lennox are en route to present military and technical
-      options once Bartlet arrives.
-    observed_atmosphere: Concentrated, low-lit, tense with late-night urgency and
-      the hum of preparatory logistics.
-    functional_role: Crisis coordination center where grief will be translated into
-      strategic and military decisions.
-    symbolic_significance: Embodies institutional response and the machinery of state
-      that will execute the President's moral will.
-    access_restrictions: Restricted to senior staff, military liaisons, and vested
-      advisers.
-    key_environmental_details:
-    - Glow of projection screens and satellite imagery
-    - An oval table with phones and maps
-    - Late coffee and a sense of compressed time
-    global_id: ger_location_d7957f093377
-  - location_uuid: ger_location_877ad27aa211
-    description_of_involvement: The Amman Teaching Hospital is the intended destination
-      of the destroyed transport; its mention converts the casualty list from abstract
-      numbers into a concrete humanitarian mission interrupted by violence.
-    observed_atmosphere: Offstage but freighted with tragedy — a clinical, humanitarian
-      site now associated with loss and moral urgency.
-    functional_role: Target/beneficiary of the humanitarian mission, the proximate
-      reason for the transport's voyage.
-    symbolic_significance: Represents the humanitarian purpose that amplifies the
-      moral outrage of the attack.
-    access_restrictions: ''
-    key_environmental_details:
-    - Clinical teaching wards implied by the mission
-    - Humanitarian activity and international personnel movement
-    - Now the focal point of diplomatic and investigative attention
-    global_id: ger_location_877ad27aa211
-  - location_uuid: ger_location_93c67602295c
-    description_of_involvement: Damascus is evoked via Leo's timing point — 'It's
-      10:38 in Damascus' — bringing a foreign clock into the Oval and reminding the
-      President that actions will be judged on an international timetable.
-    observed_atmosphere: Offstage but temporally present, lending an urgency calibrated
-      to a foreign time zone.
-    functional_role: Time-zone reference that frames response windows and diplomatic
-      ripple effects.
-    symbolic_significance: Represents the foreign state's capital and the political
-      center implicated in attribution.
-    access_restrictions: ''
-    key_environmental_details:
-    - Explicit time stamp linking Washington to a foreign clock
-    - Implication of transnational consequences and diplomatic schedules
-    global_id: ger_location_93c67602295c
-  - location_uuid: ger_location_0ee064f77f91
-    description_of_involvement: The Portico (Oval Office Threshold) provides a visual
-      beat as Bartlet exits and moves behind the desk; it frames his movement from
-      public space to private action and allows the camera to register the President's
-      solitude before he sits to call Tolliver's wife.
-    observed_atmosphere: A cool, liminal hush — quiet and transitional, charging the
-      moment with intimacy after the briefing.
-    functional_role: Staging area and transitional threshold between Oval chamber
-      and the interior; a visual cue of movement from counsel to solitary resolve.
-    symbolic_significance: Represents the threshold between institutional duty and
-      private grief, a place where public persona gives way to personal response.
-    access_restrictions: Restricted to senior staff and immediate visitors; not public.
-    key_environmental_details:
-    - Stone-flagged porch visible from the Oval Office
-    - Striped light across columns, creating a cool, contemplative visual
-    - Quiet corridor sounds distinct from the Oval's briefed intensity
-    global_id: ger_location_0ee064f77f91
-  - location_uuid: ger_location_4492b170992b
-    description_of_involvement: Tartus is invoked as the geographic reference point
-      — the explosion occurred about 150 miles north of it — anchoring the incident
-      in Syrian coastal geography and shaping military and diplomatic plotting.
-    observed_atmosphere: Geographic marker — distant, strategic, and implicated in
-      operational calculations.
-    functional_role: Geographic reference that situates the incident for targeting,
-      reconnaissance, and regional response.
-    symbolic_significance: Serves as a strategic coordinate that quickly converts
-      tragedy into calculable military geography.
-    access_restrictions: ''
-    key_environmental_details:
-    - Salt-stung coastal imagery implicit in the name
-    - Proximity used to calculate flight paths and attribution
-    global_id: ger_location_4492b170992b
-  organization_involvements: []
-  derived_from_beat_uuids: &id036
-  - beat_8879bc5b312a754d
-  - beat_24a784a363743c93
-  source_season: 1
-  source_database: westwing.s01
-- fabula_uuid: cand_evt_scene_6167373c36c0a6cc_2
-  global_id: null
-  title: Private Condolence and Quiet Fury
-  description: 'In the Oval Office, Leo delivers devastating intelligence: Morris
-    Tolliver and dozens of medical personnel died when their transport exploded, with
-    hard data pointing at the Syrian defense ministry. The news collapses Bartlet
-    from political frustration into intimate grief. He pauses, asks for precise timing,
-    then chooses to make a private call to Tolliver''s wife before joining the Situation
-    Room. His offhand vow — a whispered promise of merciless retaliation — converts
-    personal mourning into an immediate, morally charged mandate for action, turning
-    grief into the engine of the administration''s response.'
-  episode_uuid: ep_sea_ser_the_west_wing_s01_e02
-  scene_sequence: 24
-  sequence_in_scene: 40
-  key_dialogue: *id035
   is_flashback: false
   location_uuid: ger_location_877ad27aa211
   theme_uuids:
@@ -12947,24 +12766,6 @@ events:
       call completes and the line returns to standby.
     global_id: ger_object_4dbafee7d092
   location_involvements:
-  - location_uuid: ger_location_d7957f093377
-    description_of_involvement: The Situation Room is the operational destination
-      for the President's next action; Leo reports Brodie is preparing the briefing
-      there and that Baker and Lennox are en route to present military and technical
-      options once Bartlet arrives.
-    observed_atmosphere: Concentrated, low-lit, tense with late-night urgency and
-      the hum of preparatory logistics.
-    functional_role: Crisis coordination center where grief will be translated into
-      strategic and military decisions.
-    symbolic_significance: Embodies institutional response and the machinery of state
-      that will execute the President's moral will.
-    access_restrictions: Restricted to senior staff, military liaisons, and vested
-      advisers.
-    key_environmental_details:
-    - Glow of projection screens and satellite imagery
-    - An oval table with phones and maps
-    - Late coffee and a sense of compressed time
-    global_id: ger_location_d7957f093377
   - location_uuid: ger_location_877ad27aa211
     description_of_involvement: The Amman Teaching Hospital is the intended destination
       of the destroyed transport; its mention converts the casualty list from abstract
@@ -13028,8 +12829,28 @@ events:
     - Salt-stung coastal imagery implicit in the name
     - Proximity used to calculate flight paths and attribution
     global_id: ger_location_4492b170992b
+  - location_uuid: ger_location_d7957f093377
+    description_of_involvement: The Situation Room is the operational destination
+      for the President's next action; Leo reports Brodie is preparing the briefing
+      there and that Baker and Lennox are en route to present military and technical
+      options once Bartlet arrives.
+    observed_atmosphere: Concentrated, low-lit, tense with late-night urgency and
+      the hum of preparatory logistics.
+    functional_role: Crisis coordination center where grief will be translated into
+      strategic and military decisions.
+    symbolic_significance: Embodies institutional response and the machinery of state
+      that will execute the President's moral will.
+    access_restrictions: Restricted to senior staff, military liaisons, and vested
+      advisers.
+    key_environmental_details:
+    - Glow of projection screens and satellite imagery
+    - An oval table with phones and maps
+    - Late coffee and a sense of compressed time
+    global_id: ger_location_d7957f093377
   organization_involvements: []
-  derived_from_beat_uuids: *id036
+  derived_from_beat_uuids: &id036
+  - beat_8879bc5b312a754d
+  - beat_24a784a363743c93
   source_season: 1
   source_database: westwing.s01
 - fabula_uuid: cand_evt_scene_6167373c36c0a6cc_2
@@ -13126,24 +12947,6 @@ events:
       call completes and the line returns to standby.
     global_id: ger_object_4dbafee7d092
   location_involvements:
-  - location_uuid: ger_location_d7957f093377
-    description_of_involvement: The Situation Room is the operational destination
-      for the President's next action; Leo reports Brodie is preparing the briefing
-      there and that Baker and Lennox are en route to present military and technical
-      options once Bartlet arrives.
-    observed_atmosphere: Concentrated, low-lit, tense with late-night urgency and
-      the hum of preparatory logistics.
-    functional_role: Crisis coordination center where grief will be translated into
-      strategic and military decisions.
-    symbolic_significance: Embodies institutional response and the machinery of state
-      that will execute the President's moral will.
-    access_restrictions: Restricted to senior staff, military liaisons, and vested
-      advisers.
-    key_environmental_details:
-    - Glow of projection screens and satellite imagery
-    - An oval table with phones and maps
-    - Late coffee and a sense of compressed time
-    global_id: ger_location_d7957f093377
   - location_uuid: ger_location_877ad27aa211
     description_of_involvement: The Amman Teaching Hospital is the intended destination
       of the destroyed transport; its mention converts the casualty list from abstract
@@ -13207,6 +13010,24 @@ events:
     - Salt-stung coastal imagery implicit in the name
     - Proximity used to calculate flight paths and attribution
     global_id: ger_location_4492b170992b
+  - location_uuid: ger_location_d7957f093377
+    description_of_involvement: The Situation Room is the operational destination
+      for the President's next action; Leo reports Brodie is preparing the briefing
+      there and that Baker and Lennox are en route to present military and technical
+      options once Bartlet arrives.
+    observed_atmosphere: Concentrated, low-lit, tense with late-night urgency and
+      the hum of preparatory logistics.
+    functional_role: Crisis coordination center where grief will be translated into
+      strategic and military decisions.
+    symbolic_significance: Embodies institutional response and the machinery of state
+      that will execute the President's moral will.
+    access_restrictions: Restricted to senior staff, military liaisons, and vested
+      advisers.
+    key_environmental_details:
+    - Glow of projection screens and satellite imagery
+    - An oval table with phones and maps
+    - Late coffee and a sense of compressed time
+    global_id: ger_location_d7957f093377
   organization_involvements: []
   derived_from_beat_uuids: *id036
   source_season: 1
@@ -13305,24 +13126,6 @@ events:
       call completes and the line returns to standby.
     global_id: ger_object_4dbafee7d092
   location_involvements:
-  - location_uuid: ger_location_d7957f093377
-    description_of_involvement: The Situation Room is the operational destination
-      for the President's next action; Leo reports Brodie is preparing the briefing
-      there and that Baker and Lennox are en route to present military and technical
-      options once Bartlet arrives.
-    observed_atmosphere: Concentrated, low-lit, tense with late-night urgency and
-      the hum of preparatory logistics.
-    functional_role: Crisis coordination center where grief will be translated into
-      strategic and military decisions.
-    symbolic_significance: Embodies institutional response and the machinery of state
-      that will execute the President's moral will.
-    access_restrictions: Restricted to senior staff, military liaisons, and vested
-      advisers.
-    key_environmental_details:
-    - Glow of projection screens and satellite imagery
-    - An oval table with phones and maps
-    - Late coffee and a sense of compressed time
-    global_id: ger_location_d7957f093377
   - location_uuid: ger_location_877ad27aa211
     description_of_involvement: The Amman Teaching Hospital is the intended destination
       of the destroyed transport; its mention converts the casualty list from abstract
@@ -13386,6 +13189,24 @@ events:
     - Salt-stung coastal imagery implicit in the name
     - Proximity used to calculate flight paths and attribution
     global_id: ger_location_4492b170992b
+  - location_uuid: ger_location_d7957f093377
+    description_of_involvement: The Situation Room is the operational destination
+      for the President's next action; Leo reports Brodie is preparing the briefing
+      there and that Baker and Lennox are en route to present military and technical
+      options once Bartlet arrives.
+    observed_atmosphere: Concentrated, low-lit, tense with late-night urgency and
+      the hum of preparatory logistics.
+    functional_role: Crisis coordination center where grief will be translated into
+      strategic and military decisions.
+    symbolic_significance: Embodies institutional response and the machinery of state
+      that will execute the President's moral will.
+    access_restrictions: Restricted to senior staff, military liaisons, and vested
+      advisers.
+    key_environmental_details:
+    - Glow of projection screens and satellite imagery
+    - An oval table with phones and maps
+    - Late coffee and a sense of compressed time
+    global_id: ger_location_d7957f093377
   organization_involvements: []
   derived_from_beat_uuids: *id036
   source_season: 1
@@ -13484,24 +13305,6 @@ events:
       call completes and the line returns to standby.
     global_id: ger_object_4dbafee7d092
   location_involvements:
-  - location_uuid: ger_location_d7957f093377
-    description_of_involvement: The Situation Room is the operational destination
-      for the President's next action; Leo reports Brodie is preparing the briefing
-      there and that Baker and Lennox are en route to present military and technical
-      options once Bartlet arrives.
-    observed_atmosphere: Concentrated, low-lit, tense with late-night urgency and
-      the hum of preparatory logistics.
-    functional_role: Crisis coordination center where grief will be translated into
-      strategic and military decisions.
-    symbolic_significance: Embodies institutional response and the machinery of state
-      that will execute the President's moral will.
-    access_restrictions: Restricted to senior staff, military liaisons, and vested
-      advisers.
-    key_environmental_details:
-    - Glow of projection screens and satellite imagery
-    - An oval table with phones and maps
-    - Late coffee and a sense of compressed time
-    global_id: ger_location_d7957f093377
   - location_uuid: ger_location_877ad27aa211
     description_of_involvement: The Amman Teaching Hospital is the intended destination
       of the destroyed transport; its mention converts the casualty list from abstract
@@ -13565,6 +13368,203 @@ events:
     - Salt-stung coastal imagery implicit in the name
     - Proximity used to calculate flight paths and attribution
     global_id: ger_location_4492b170992b
+  - location_uuid: ger_location_d7957f093377
+    description_of_involvement: The Situation Room is the operational destination
+      for the President's next action; Leo reports Brodie is preparing the briefing
+      there and that Baker and Lennox are en route to present military and technical
+      options once Bartlet arrives.
+    observed_atmosphere: Concentrated, low-lit, tense with late-night urgency and
+      the hum of preparatory logistics.
+    functional_role: Crisis coordination center where grief will be translated into
+      strategic and military decisions.
+    symbolic_significance: Embodies institutional response and the machinery of state
+      that will execute the President's moral will.
+    access_restrictions: Restricted to senior staff, military liaisons, and vested
+      advisers.
+    key_environmental_details:
+    - Glow of projection screens and satellite imagery
+    - An oval table with phones and maps
+    - Late coffee and a sense of compressed time
+    global_id: ger_location_d7957f093377
+  organization_involvements: []
+  derived_from_beat_uuids: *id036
+  source_season: 1
+  source_database: westwing.s01
+- fabula_uuid: cand_evt_scene_6167373c36c0a6cc_2
+  global_id: null
+  title: Private Condolence and Quiet Fury
+  description: 'In the Oval Office, Leo delivers devastating intelligence: Morris
+    Tolliver and dozens of medical personnel died when their transport exploded, with
+    hard data pointing at the Syrian defense ministry. The news collapses Bartlet
+    from political frustration into intimate grief. He pauses, asks for precise timing,
+    then chooses to make a private call to Tolliver''s wife before joining the Situation
+    Room. His offhand vow — a whispered promise of merciless retaliation — converts
+    personal mourning into an immediate, morally charged mandate for action, turning
+    grief into the engine of the administration''s response.'
+  episode_uuid: ep_sea_ser_the_west_wing_s01_e02
+  scene_sequence: 24
+  sequence_in_scene: 40
+  key_dialogue: *id035
+  is_flashback: false
+  location_uuid: ger_location_d7957f093377
+  theme_uuids:
+  - ger_theme_03f5dc10d61b
+  - ger_theme_3d014bd97b80
+  arc_uuids:
+  - ger_conflictarc_f9707ba919e2
+  participations:
+  - character_uuid: ger_agent_198649bce78f
+    emotional_state: Intimate devastation collapsing into righteous, thunderous fury
+    goals:
+    - Honor Tolliver through personal notification to his wife
+    - Mandate overwhelming retaliation against perpetrators
+    what_happened: Leans heavily on desk absorbing shock, pauses in stunned silence,
+      queries Damascus time, ambassador's status, and allied readiness; sighs profoundly,
+      prioritizes calling Tolliver's widow, recalls Leo for thunderous vow of total
+      destruction before sitting to dial.
+    observed_status: Leans heavily on desk absorbing shock, pauses in stunned silence,
+      queries Damascus time, ambassador's status, and allied readiness; sighs profoundly,
+      prioritizes calling Tolliver's widow, recalls Leo for thunderous vow of total
+      destruction before sitting to dial.
+    beliefs:
+    - Personal loyalty demands merciless justice for betrayal
+    - Presidential power must channel grief into decisive force
+    observed_traits:
+    - grieving
+    - resolute
+    - authoritative
+    - fiercely protective
+    importance: primary
+    global_id: ger_agent_198649bce78f
+  - character_uuid: ger_agent_dd62525d972a
+    emotional_state: Steady professionalism masking sorrowful urgency and quiet alarm
+      at escalating rhetoric
+    goals:
+    - Brief President with unfiltered intelligence to enable rapid decisions
+    - Coordinate incoming military liaisons and Situation Room readiness
+    what_happened: Enters slowly, stands before the desk, delivers precise casualty
+      details, crash forensics, attribution shifts, and incoming briefer updates;
+      answers Bartlet's operational queries with crisp efficiency, registers visible
+      concern at the President's explosive vow before exiting deliberately.
+    observed_status: Enters slowly, stands before the desk, delivers precise casualty
+      details, crash forensics, attribution shifts, and incoming briefer updates;
+      answers Bartlet's operational queries with crisp efficiency, registers visible
+      concern at the President's explosive vow before exiting deliberately.
+    beliefs:
+    - Truthful intel protects presidential judgment amid crisis
+    - Restraint tempers righteous anger in command chain
+    observed_traits:
+    - composed
+    - loyal
+    - procedural
+    - protective
+    importance: primary
+    global_id: ger_agent_dd62525d972a
+  object_involvements:
+  - object_uuid: ger_object_3cfe2980aa37
+    description_of_involvement: 'A heavy executive desk (canonical as Leo''s desk)
+      functions as the physical anchor of the opening image: the President leaning
+      on a desk while receiving the briefing. The desk visually grounds Bartlet''s
+      exhaustion and authority and becomes the staging point before he walks to his
+      chair and uses the secure line.'
+    status_before_event: In place as an authoritative work surface within the Oval
+      Office vicinity, bearing briefing pages and the President's posture.
+    status_after_event: Remains in place; serves as the physical site from which Bartlet
+      makes his private call and composes himself.
+    global_id: ger_object_3cfe2980aa37
+  - object_uuid: ger_object_4dbafee7d092
+    description_of_involvement: The President's Secure Phone Line is the intimate
+      conduit Bartlet uses to place a private condolence call to Morris Tolliver's
+      wife. Functionally it converts the public intelligence briefing into a private,
+      human moment and underscores the personal stakes that immediately propel the
+      administration toward reprisal.
+    status_before_event: Installed in the Oval Office and available for secure calls;
+      unused at the start of the exchange.
+    status_after_event: Picked up and used by the President for a private call; the
+      call completes and the line returns to standby.
+    global_id: ger_object_4dbafee7d092
+  location_involvements:
+  - location_uuid: ger_location_877ad27aa211
+    description_of_involvement: The Amman Teaching Hospital is the intended destination
+      of the destroyed transport; its mention converts the casualty list from abstract
+      numbers into a concrete humanitarian mission interrupted by violence.
+    observed_atmosphere: Offstage but freighted with tragedy — a clinical, humanitarian
+      site now associated with loss and moral urgency.
+    functional_role: Target/beneficiary of the humanitarian mission, the proximate
+      reason for the transport's voyage.
+    symbolic_significance: Represents the humanitarian purpose that amplifies the
+      moral outrage of the attack.
+    access_restrictions: ''
+    key_environmental_details:
+    - Clinical teaching wards implied by the mission
+    - Humanitarian activity and international personnel movement
+    - Now the focal point of diplomatic and investigative attention
+    global_id: ger_location_877ad27aa211
+  - location_uuid: ger_location_93c67602295c
+    description_of_involvement: Damascus is evoked via Leo's timing point — 'It's
+      10:38 in Damascus' — bringing a foreign clock into the Oval and reminding the
+      President that actions will be judged on an international timetable.
+    observed_atmosphere: Offstage but temporally present, lending an urgency calibrated
+      to a foreign time zone.
+    functional_role: Time-zone reference that frames response windows and diplomatic
+      ripple effects.
+    symbolic_significance: Represents the foreign state's capital and the political
+      center implicated in attribution.
+    access_restrictions: ''
+    key_environmental_details:
+    - Explicit time stamp linking Washington to a foreign clock
+    - Implication of transnational consequences and diplomatic schedules
+    global_id: ger_location_93c67602295c
+  - location_uuid: ger_location_0ee064f77f91
+    description_of_involvement: The Portico (Oval Office Threshold) provides a visual
+      beat as Bartlet exits and moves behind the desk; it frames his movement from
+      public space to private action and allows the camera to register the President's
+      solitude before he sits to call Tolliver's wife.
+    observed_atmosphere: A cool, liminal hush — quiet and transitional, charging the
+      moment with intimacy after the briefing.
+    functional_role: Staging area and transitional threshold between Oval chamber
+      and the interior; a visual cue of movement from counsel to solitary resolve.
+    symbolic_significance: Represents the threshold between institutional duty and
+      private grief, a place where public persona gives way to personal response.
+    access_restrictions: Restricted to senior staff and immediate visitors; not public.
+    key_environmental_details:
+    - Stone-flagged porch visible from the Oval Office
+    - Striped light across columns, creating a cool, contemplative visual
+    - Quiet corridor sounds distinct from the Oval's briefed intensity
+    global_id: ger_location_0ee064f77f91
+  - location_uuid: ger_location_4492b170992b
+    description_of_involvement: Tartus is invoked as the geographic reference point
+      — the explosion occurred about 150 miles north of it — anchoring the incident
+      in Syrian coastal geography and shaping military and diplomatic plotting.
+    observed_atmosphere: Geographic marker — distant, strategic, and implicated in
+      operational calculations.
+    functional_role: Geographic reference that situates the incident for targeting,
+      reconnaissance, and regional response.
+    symbolic_significance: Serves as a strategic coordinate that quickly converts
+      tragedy into calculable military geography.
+    access_restrictions: ''
+    key_environmental_details:
+    - Salt-stung coastal imagery implicit in the name
+    - Proximity used to calculate flight paths and attribution
+    global_id: ger_location_4492b170992b
+  - location_uuid: ger_location_d7957f093377
+    description_of_involvement: The Situation Room is the operational destination
+      for the President's next action; Leo reports Brodie is preparing the briefing
+      there and that Baker and Lennox are en route to present military and technical
+      options once Bartlet arrives.
+    observed_atmosphere: Concentrated, low-lit, tense with late-night urgency and
+      the hum of preparatory logistics.
+    functional_role: Crisis coordination center where grief will be translated into
+      strategic and military decisions.
+    symbolic_significance: Embodies institutional response and the machinery of state
+      that will execute the President's moral will.
+    access_restrictions: Restricted to senior staff, military liaisons, and vested
+      advisers.
+    key_environmental_details:
+    - Glow of projection screens and satellite imagery
+    - An oval table with phones and maps
+    - Late coffee and a sense of compressed time
+    global_id: ger_location_d7957f093377
   organization_involvements: []
   derived_from_beat_uuids: *id036
   source_season: 1

@@ -37,7 +37,7 @@ from .models import (
     ConnectionType, LocationInvolvement, OrganizationInvolvement,
     OrganizationPage, ObjectPage, ObjectInvolvement,
     CharacterIndexPage, OrganizationIndexPage, ObjectIndexPage, EventIndexPage,
-    SeriesIndexPage, Act, EventBeatLink, EngagementSignal,
+    SeriesIndexPage, SeasonPage, Act, EventBeatLink, EngagementSignal,
 )
 
 logger = logging.getLogger(__name__)
@@ -188,6 +188,66 @@ class SeriesScopedMixin:
         """Add series context to all templates."""
         context = super().get_context_data(**kwargs)
         context['current_series'] = self.get_series()
+        return context
+
+
+# =============================================================================
+# SEASON FILTER MIXIN
+# =============================================================================
+
+class SeasonFilterMixin:
+    """
+    Mixin that adds ?season=N filtering to index views.
+
+    Subclasses must implement get_season_counts(series) returning a queryset
+    of dicts with 'season_number' and 'count' keys.
+    """
+
+    def get_season_counts(self, series):
+        """Return list of {'season_number': N, 'count': M} dicts. Override per view."""
+        raise NotImplementedError
+
+    def get_selected_season(self):
+        """Parse ?season=N from request, validate against available seasons."""
+        if not hasattr(self, '_season_context'):
+            self._build_season_context()
+        return self._season_context['selected_season']
+
+    def _build_season_context(self):
+        series = self.get_series()
+        if not series:
+            self._season_context = {
+                'available_seasons': [],
+                'selected_season': None,
+            }
+            return
+
+        raw_stats = self.get_season_counts(series)
+        available_seasons = [
+            {'number': s['season_number'], 'count': s['count']}
+            for s in raw_stats if s['season_number'] is not None
+        ]
+
+        season_numbers = [s['number'] for s in available_seasons]
+        requested = self.request.GET.get('season')
+        if requested and requested.isdigit() and int(requested) in season_numbers:
+            selected_season = int(requested)
+        elif season_numbers:
+            selected_season = season_numbers[0]
+        else:
+            selected_season = None
+
+        self._season_context = {
+            'available_seasons': available_seasons,
+            'selected_season': selected_season,
+        }
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        if not hasattr(self, '_season_context'):
+            self._build_season_context()
+        context['available_seasons'] = self._season_context['available_seasons']
+        context['selected_season'] = self._season_context['selected_season']
         return context
 
 
@@ -423,36 +483,51 @@ class ArcDetailView(FlexibleIdentifierMixin, DetailView):
 # LOCATIONS
 # =============================================================================
 
-class LocationIndexView(SeriesScopedMixin, ListView):
+class LocationIndexView(SeasonFilterMixin, SeriesScopedMixin, ListView):
     """
-    Browse all locations, organized by type.
+    Browse all locations, organized by type, filterable by season.
     When accessed via series-scoped URL, filters to locations used in that series.
     """
     model = Location
     template_name = 'narrative/location_index.html'
     context_object_name = 'locations'
 
-    def get_queryset(self):
-        from django.db.models import Count
+    def get_season_counts(self, series):
+        base_inv = LocationInvolvement.objects.all()
+        if series:
+            series_events = EventPage.objects.live().descendant_of(series)
+            base_inv = base_inv.filter(event__in=series_events)
+        return list(
+            base_inv.values(season_number=models.F('event__episode__season_number'))
+            .annotate(count=Count('location_id', distinct=True))
+            .order_by('season_number')
+        )
 
+    def get_queryset(self):
         series = self.get_series()
+        selected = self.get_selected_season()
 
         if series:
-            # Get events in this series
             series_events = EventPage.objects.live().descendant_of(series)
-            # Get locations that have involvements in those events
-            location_ids = LocationInvolvement.objects.filter(
-                event__in=series_events
-            ).values_list('location_id', flat=True).distinct()
+            inv_filter = Q(event_involvements__event__in=series_events)
 
-            # Filter and annotate with count for this series only
+            if selected is not None:
+                inv_filter &= Q(event_involvements__event__episode__season_number=selected)
+                location_ids = LocationInvolvement.objects.filter(
+                    event__in=series_events,
+                    event__episode__season_number=selected,
+                ).values_list('location_id', flat=True).distinct()
+            else:
+                location_ids = LocationInvolvement.objects.filter(
+                    event__in=series_events
+                ).values_list('location_id', flat=True).distinct()
+
             return Location.objects.filter(
                 id__in=location_ids
             ).annotate(
-                event_count=Count('event_involvements', filter=Q(event_involvements__event__in=series_events))
+                event_count=Count('event_involvements', filter=inv_filter)
             ).order_by('-event_count')
         else:
-            # Global view - all locations
             return Location.objects.annotate(
                 event_count=Count('event_involvements')
             ).order_by('-event_count')
@@ -515,18 +590,29 @@ class LocationDetailView(FlexibleIdentifierMixin, DetailView):
 # WAGTAIL PAGE VIEWS (served via global_id for stable URLs)
 # =============================================================================
 
-class CharacterIndexView(SeriesScopedMixin, ListView):
-    """Browse all characters, ordered by importance tier and appearance count."""
+class CharacterIndexView(SeasonFilterMixin, SeriesScopedMixin, ListView):
+    """Browse all characters, ordered by importance tier and appearance count, filterable by season."""
     model = CharacterPage
     template_name = 'narrative/character_index_page.html'
     context_object_name = 'characters'
+
+    def get_season_counts(self, series):
+        base_parts = EventParticipation.objects.all()
+        if series:
+            series_events = EventPage.objects.live().descendant_of(series)
+            base_parts = base_parts.filter(event__in=series_events)
+        return list(
+            base_parts.values(season_number=models.F('event__episode__season_number'))
+            .annotate(count=Count('character_id', distinct=True))
+            .order_by('season_number')
+        )
 
     def get_queryset(self):
         from django.db.models import Case, When, Value, IntegerField
 
         series = self.get_series()
+        selected = self.get_selected_season()
 
-        # Custom ordering: anchor=0, planet=1, asteroid=2 (ascending = anchor first)
         tier_order = Case(
             When(importance_tier='anchor', then=Value(0)),
             When(importance_tier='planet', then=Value(1)),
@@ -536,11 +622,12 @@ class CharacterIndexView(SeriesScopedMixin, ListView):
         )
 
         if series:
-            # Get events in this series
             series_events = EventPage.objects.live().descendant_of(series)
-            # Get characters that have participations in those events
+            parts_filter = Q(event__in=series_events)
+            if selected is not None:
+                parts_filter &= Q(event__episode__season_number=selected)
             character_ids = EventParticipation.objects.filter(
-                event__in=series_events
+                parts_filter
             ).values_list('character_id', flat=True).distinct()
 
             return CharacterPage.objects.live().filter(
@@ -549,7 +636,6 @@ class CharacterIndexView(SeriesScopedMixin, ListView):
                 tier_order=tier_order
             ).order_by('tier_order', '-appearance_count', 'canonical_name')
         else:
-            # Global view - all characters
             return CharacterPage.objects.live().annotate(
                 tier_order=tier_order
             ).order_by('tier_order', '-appearance_count', 'canonical_name')
@@ -622,21 +708,37 @@ class CharacterDetailView(FlexibleIdentifierMixin, DetailView):
         return context
 
 
-class OrganizationIndexView(SeriesScopedMixin, ListView):
-    """Browse all organizations, tiered by narrative importance."""
+class OrganizationIndexView(SeasonFilterMixin, SeriesScopedMixin, ListView):
+    """Browse all organizations, tiered by narrative importance, filterable by season."""
     model = OrganizationPage
     template_name = 'narrative/organization_index_page.html'
     context_object_name = 'organizations'
 
+    def get_season_counts(self, series):
+        base_inv = OrganizationInvolvement.objects.all()
+        if series:
+            series_events = EventPage.objects.live().descendant_of(series)
+            base_inv = base_inv.filter(event__in=series_events)
+        return list(
+            base_inv.values(season_number=models.F('event__episode__season_number'))
+            .annotate(count=Count('organization_id', distinct=True))
+            .order_by('season_number')
+        )
+
     def get_queryset(self):
         series = self.get_series()
+        selected = self.get_selected_season()
 
         base_qs = OrganizationPage.objects.live()
         if series:
             base_qs = base_qs.descendant_of(series)
 
+        inv_filter = Q()
+        if selected is not None:
+            inv_filter = Q(event_involvements__event__episode__season_number=selected)
+
         return base_qs.annotate(
-            involvement_count=Count('event_involvements'),
+            involvement_count=Count('event_involvements', filter=inv_filter),
             member_count=Count(
                 'affiliated_characters',
                 filter=Q(affiliated_characters__live=True),
@@ -648,13 +750,21 @@ class OrganizationIndexView(SeriesScopedMixin, ListView):
         context = super().get_context_data(**kwargs)
         orgs = list(self.get_queryset())
 
-        # Tier thresholds
-        key_orgs = [o for o in orgs if o.involvement_count >= 10]
-        active_orgs = [o for o in orgs if 1 <= o.involvement_count < 10]
-        connected_orgs = [o for o in orgs
-                          if o.involvement_count == 0 and o.member_count > 0]
-        minor_orgs = [o for o in orgs
-                      if o.involvement_count == 0 and o.member_count == 0]
+        selected = self.get_selected_season()
+
+        if selected is not None:
+            # When filtering by season, only show orgs with involvement in that season
+            key_orgs = [o for o in orgs if o.involvement_count >= 10]
+            active_orgs = [o for o in orgs if 1 <= o.involvement_count < 10]
+            connected_orgs = []
+            minor_orgs = []
+        else:
+            key_orgs = [o for o in orgs if o.involvement_count >= 10]
+            active_orgs = [o for o in orgs if 1 <= o.involvement_count < 10]
+            connected_orgs = [o for o in orgs
+                              if o.involvement_count == 0 and o.member_count > 0]
+            minor_orgs = [o for o in orgs
+                          if o.involvement_count == 0 and o.member_count == 0]
 
         context['key_orgs'] = key_orgs
         context['active_orgs'] = active_orgs
@@ -706,30 +816,48 @@ class OrganizationDetailView(FlexibleIdentifierMixin, DetailView):
         return context
 
 
-class ObjectIndexView(SeriesScopedMixin, ListView):
-    """Browse all narrative objects."""
+class ObjectIndexView(SeasonFilterMixin, SeriesScopedMixin, ListView):
+    """Browse all narrative objects, filterable by season."""
     model = ObjectPage
     template_name = 'narrative/object_index_page.html'
     context_object_name = 'objects'
 
+    def get_season_counts(self, series):
+        base_inv = ObjectInvolvement.objects.all()
+        if series:
+            series_events = EventPage.objects.live().descendant_of(series)
+            base_inv = base_inv.filter(event__in=series_events)
+        return list(
+            base_inv.values(season_number=models.F('event__episode__season_number'))
+            .annotate(count=Count('object_id', distinct=True))
+            .order_by('season_number')
+        )
+
     def get_queryset(self):
         series = self.get_series()
+        selected = self.get_selected_season()
 
         if series:
-            # Get events in this series
             series_events = EventPage.objects.live().descendant_of(series)
-            # Get objects that have involvements in those events
-            object_ids = ObjectInvolvement.objects.filter(
-                event__in=series_events
-            ).values_list('object_id', flat=True).distinct()
+            inv_filter = Q(event_involvements__event__in=series_events)
+            if selected is not None:
+                inv_filter &= Q(event_involvements__event__episode__season_number=selected)
+                # Also narrow object_ids to those appearing in this season
+                object_ids = ObjectInvolvement.objects.filter(
+                    event__in=series_events,
+                    event__episode__season_number=selected,
+                ).values_list('object_id', flat=True).distinct()
+            else:
+                object_ids = ObjectInvolvement.objects.filter(
+                    event__in=series_events
+                ).values_list('object_id', flat=True).distinct()
 
             return ObjectPage.objects.live().filter(
                 id__in=object_ids
             ).annotate(
-                involvement_count=Count('event_involvements', filter=Q(event_involvements__event__in=series_events))
+                involvement_count=Count('event_involvements', filter=inv_filter)
             ).order_by('-involvement_count', 'canonical_name')
         else:
-            # Global view - all objects
             return ObjectPage.objects.live().annotate(
                 involvement_count=Count('event_involvements')
             ).order_by('-involvement_count', 'canonical_name')
@@ -761,25 +889,37 @@ class ObjectDetailView(FlexibleIdentifierMixin, DetailView):
         return context
 
 
-class EventIndexView(SeriesScopedMixin, ListView):
-    """Browse all events, organized by episode."""
+class EventIndexView(SeasonFilterMixin, SeriesScopedMixin, ListView):
+    """Browse all events, organized by episode, filterable by season."""
     model = EventPage
     template_name = 'narrative/event_index_page.html'
     context_object_name = 'events'
 
+    def get_season_counts(self, series):
+        base_qs = EventPage.objects.live()
+        if series:
+            base_qs = base_qs.descendant_of(series)
+        return list(
+            base_qs.values(season_number=models.F('episode__season_number'))
+            .annotate(count=Count('id'))
+            .order_by('season_number')
+        )
+
     def get_queryset(self):
         series = self.get_series()
+        selected = self.get_selected_season()
 
         base_qs = EventPage.objects.live().select_related(
             'episode', 'location'
         )
 
         if series:
-            # Filter to events within this series
-            return base_qs.descendant_of(series).order_by('episode__path', 'scene_sequence')
-        else:
-            # Global view - all events
-            return base_qs.order_by('episode__path', 'scene_sequence')
+            base_qs = base_qs.descendant_of(series)
+
+        if selected is not None:
+            base_qs = base_qs.filter(episode__season_number=selected)
+
+        return base_qs.order_by('episode__path', 'scene_sequence')
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)

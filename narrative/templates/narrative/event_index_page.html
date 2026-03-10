@@ -27,6 +27,8 @@
     </div>
 
     <div class="max-w-6xl mx-auto px-6 pt-8">
+        {% include "narrative/includes/_season_tabs.html" %}
+
         {% for ep_group in episodes_with_events %}
         {# Series separator #}
         {% ifchanged ep_group.series %}
@@ -123,6 +125,8 @@
     </div>
 
     <div class="max-w-6xl mx-auto px-6 mt-8">
+        {% include "narrative/includes/_season_tabs.html" %}
+
         {% for ep_group in episodes_with_events %}
         {# Series separator - show when series changes #}
         {% ifchanged ep_group.series %}

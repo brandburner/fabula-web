@@ -1,5 +1,5 @@
 # Events for Somebody's Going to Emergency, Somebody's Going to Jail
-# Generated: 2026-02-10T12:17:07.639684
+# Generated: 2026-02-22T16:33:07.287863
 
 episode_uuid: ep_sea_ser_the_west_wing_s02_e16
 episode_title: Somebody's Going to Emergency, Somebody's Going to Jail
@@ -96,7 +96,7 @@ events:
   theme_uuids: []
   arc_uuids: []
   participations:
-  - character_uuid: ger_agent_da94cfdc6e6c
+  - character_uuid: ger_agent_d43e0de6fe8b
     emotional_state: Unyielding professionalism masking underlying tension from national
       crisis
     goals:
@@ -116,7 +116,7 @@ events:
     - efficient
     - stoic
     importance: primary
-    global_id: ger_agent_da94cfdc6e6c
+    global_id: ger_agent_d43e0de6fe8b
   object_involvements: []
   location_involvements:
   - location_uuid: ger_location_d7453cbcb623
@@ -135,7 +135,7 @@ events:
     - Shadowed expanse with rifle snaps
     global_id: ger_location_d7453cbcb623
   organization_involvements:
-  - organization_uuid: ger_organization_d033a1b32d4f
+  - organization_uuid: ger_organization_bb39d5dd403d
     description_of_involvement: The White House manifests through its guards' shift
       change, enforcing relentless security protocols in the Northwest Lobby, a microcosm
       of the organization's machinery grinding on despite the pardon scandal's revelations
@@ -151,7 +151,7 @@ events:
     institutional_impact: Reinforces the presidency's insulated core against external
       betrayals
     internal_dynamics: ''
-    global_id: ger_organization_d033a1b32d4f
+    global_id: ger_organization_bb39d5dd403d
   derived_from_beat_uuids:
   - beat_aa8d568dedec4bdd
   source_season: 2
@@ -389,7 +389,7 @@ events:
     observed_traits: []
     importance: primary
     global_id: ger_agent_198649bce78f
-  - character_uuid: ger_agent_64b2a2c10c8f
+  - character_uuid: ger_agent_14f85d554756
     emotional_state: Warmly amused and confidently hospitable, effortlessly diffusing
       awkwardness
     goals:
@@ -413,7 +413,7 @@ events:
     - resourceful
     - hospitable
     importance: primary
-    global_id: ger_agent_64b2a2c10c8f
+    global_id: ger_agent_14f85d554756
   - character_uuid: ger_agent_e613c5a420b2
     emotional_state: Awestruck anxiety laced with polite deference and building relief
     goals:
@@ -522,7 +522,7 @@ events:
     observed_traits: []
     importance: primary
     global_id: ger_agent_198649bce78f
-  - character_uuid: ger_agent_64b2a2c10c8f
+  - character_uuid: ger_agent_14f85d554756
     emotional_state: Warmly amused and confidently hospitable, effortlessly diffusing
       awkwardness
     goals:
@@ -546,7 +546,7 @@ events:
     - resourceful
     - hospitable
     importance: primary
-    global_id: ger_agent_64b2a2c10c8f
+    global_id: ger_agent_14f85d554756
   - character_uuid: ger_agent_e613c5a420b2
     emotional_state: Awestruck anxiety laced with polite deference and building relief
     goals:
@@ -672,7 +672,7 @@ events:
     - presidential confidant
     importance: primary
     global_id: ger_agent_04bbccb1e352
-  - character_uuid: ger_agent_64b2a2c10c8f
+  - character_uuid: ger_agent_14f85d554756
     emotional_state: Empathetic resolve tempered by cautious reluctance to impose
       favors
     goals:
@@ -697,7 +697,18 @@ events:
     - strategic
     - warmly pragmatic
     importance: primary
-    global_id: ger_agent_64b2a2c10c8f
+    global_id: ger_agent_14f85d554756
+  - character_uuid: ger_agent_bfac2340c342
+    emotional_state: ''
+    goals: []
+    what_happened: Referenced in Donna's historical explanation of the Big Block of
+      Cheese tradition during his presidency.
+    observed_status: Referenced in Donna's historical explanation of the Big Block
+      of Cheese tradition during his presidency.
+    beliefs: []
+    observed_traits: []
+    importance: primary
+    global_id: ger_agent_bfac2340c342
   - character_uuid: ger_agent_e613c5a420b2
     emotional_state: Raw desperation softened by dawning hope and apologetic vulnerability
     goals:
@@ -721,19 +732,8 @@ events:
     - naive to insider tactics
     importance: primary
     global_id: ger_agent_e613c5a420b2
-  - character_uuid: ger_agent_bfac2340c342
-    emotional_state: ''
-    goals: []
-    what_happened: Referenced in Donna's historical explanation of the Big Block of
-      Cheese tradition during his presidency.
-    observed_status: Referenced in Donna's historical explanation of the Big Block
-      of Cheese tradition during his presidency.
-    beliefs: []
-    observed_traits: []
-    importance: primary
-    global_id: ger_agent_bfac2340c342
   object_involvements:
-  - object_uuid: ger_object_e05004c8f52b
+  - object_uuid: ger_object_990390e0f6ff
     description_of_involvement: Donna lunges across Josh's cluttered desk to snatch
       the landline handset, stabbing buttons with precision before clamping it to
       her ear—bridging bureaucratic whimsy to urgent mercy as she requests time with
@@ -741,7 +741,7 @@ events:
     status_before_event: Idle on Josh's desk, readily accessible in the office clutter
     status_after_event: Receiver lifted and in active use, line connected for call
       to Sam
-    global_id: ger_object_e05004c8f52b
+    global_id: ger_object_990390e0f6ff
   location_involvements:
   - location_uuid: ger_location_0c4d33a33fa6
     description_of_involvement: Donna vividly recounts the Grand Foyer's role as site
@@ -760,7 +760,7 @@ events:
     - Echoey expanse with Dolly Madison's stare and surging tourist packs
     global_id: ger_location_0c4d33a33fa6
   organization_involvements:
-  - organization_uuid: ger_organization_d033a1b32d4f
+  - organization_uuid: ger_organization_bb39d5dd403d
     description_of_involvement: The White House looms as institutional backdrop, its
       senior staff protocols invoked via Leo's Big Block of Cheese Day designation—framing
       Donna's aid as subversion of ordinary access barriers, propelling Stephanie's
@@ -778,7 +778,7 @@ events:
     institutional_impact: Balances compassion with protocol, foreshadowing tension
       between mercy and security
     internal_dynamics: Senior staff burdens like Sam's bad week strain ritual compliance
-    global_id: ger_organization_d033a1b32d4f
+    global_id: ger_organization_bb39d5dd403d
   derived_from_beat_uuids:
   - beat_dc57d2aae67adf48
   - beat_78a771e6f3fdc704
@@ -868,6 +868,18 @@ events:
     - earnest
     importance: primary
     global_id: ger_agent_78d66fdf9ed5
+  - character_uuid: ger_agent_048c05cf6ceb
+    emotional_state: ''
+    goals:
+    - resolve the presidential library site selection issue
+    what_happened: significantly mentioned as the President's brother who sent a fax
+      and has been speaking with Neda Wallin about the library site
+    observed_status: significantly mentioned as the President's brother who sent a
+      fax and has been speaking with Neda Wallin about the library site
+    beliefs: []
+    observed_traits: []
+    importance: primary
+    global_id: ger_agent_048c05cf6ceb
   - character_uuid: ger_agent_9fde91978e6e
     emotional_state: ''
     goals: []
@@ -881,18 +893,6 @@ events:
     observed_traits: []
     importance: primary
     global_id: ger_agent_9fde91978e6e
-  - character_uuid: ger_agent_6e33493cd9b1
-    emotional_state: ''
-    goals:
-    - resolve the presidential library site selection issue
-    what_happened: significantly mentioned as the President's brother who sent a fax
-      and has been speaking with Neda Wallin about the library site
-    observed_status: significantly mentioned as the President's brother who sent a
-      fax and has been speaking with Neda Wallin about the library site
-    beliefs: []
-    observed_traits: []
-    importance: primary
-    global_id: ger_agent_6e33493cd9b1
   object_involvements:
   - object_uuid: ger_object_4d14c88d3241
     description_of_involvement: Staffer clutches and presents the dense sheaf of decade-spanning
@@ -1030,6 +1030,25 @@ events:
     observed_traits: []
     importance: primary
     global_id: ger_agent_78d66fdf9ed5
+  - character_uuid: ger_agent_048c05cf6ceb
+    emotional_state: Determined advocacy inferred through proactive intel relay
+    goals:
+    - Expose library site legal flaw to force presidential review
+    - Push for swift approval on alternate site
+    what_happened: Jonathan Bartlet invoked as fax sender who consulted Neda Wallin
+      on violation, catalyzing Oval confrontation; Bartlet tasked Charlie to relay
+      stall message back to him.
+    observed_status: Jonathan Bartlet invoked as fax sender who consulted Neda Wallin
+      on violation, catalyzing Oval confrontation; Bartlet tasked Charlie to relay
+      stall message back to him.
+    beliefs:
+    - Family legacy merits bending preservation rules
+    - Presidential oversight can override gubernatorial legacies
+    observed_traits:
+    - resourceful
+    - persistent
+    importance: primary
+    global_id: ger_agent_048c05cf6ceb
   - character_uuid: ger_agent_9fde91978e6e
     emotional_state: Professionally insistent on legal compliance
     goals:
@@ -1049,25 +1068,6 @@ events:
     - institutionally rigorous
     importance: primary
     global_id: ger_agent_9fde91978e6e
-  - character_uuid: ger_agent_6e33493cd9b1
-    emotional_state: Determined advocacy inferred through proactive intel relay
-    goals:
-    - Expose library site legal flaw to force presidential review
-    - Push for swift approval on alternate site
-    what_happened: Jonathan Bartlet invoked as fax sender who consulted Neda Wallin
-      on violation, catalyzing Oval confrontation; Bartlet tasked Charlie to relay
-      stall message back to him.
-    observed_status: Jonathan Bartlet invoked as fax sender who consulted Neda Wallin
-      on violation, catalyzing Oval confrontation; Bartlet tasked Charlie to relay
-      stall message back to him.
-    beliefs:
-    - Family legacy merits bending preservation rules
-    - Presidential oversight can override gubernatorial legacies
-    observed_traits:
-    - resourceful
-    - persistent
-    importance: primary
-    global_id: ger_agent_6e33493cd9b1
   object_involvements:
   - object_uuid: ger_object_b1e9b71db68c
     description_of_involvement: Charlie flags the incoming fax from Jonathan Bartlet
@@ -1184,7 +1184,7 @@ events:
     - tunnel-visioned
     importance: primary
     global_id: ger_agent_04bbccb1e352
-  - character_uuid: ger_agent_64b2a2c10c8f
+  - character_uuid: ger_agent_14f85d554756
     emotional_state: Determined and slightly hesitant, bridging personal plea to institutional
       access
     goals:
@@ -1204,7 +1204,7 @@ events:
     - loyal
     - persistent
     importance: primary
-    global_id: ger_agent_64b2a2c10c8f
+    global_id: ger_agent_14f85d554756
   - character_uuid: ger_agent_e613c5a420b2
     emotional_state: Awestruck deference laced with mounting desperation for paternal
       pardon
@@ -1355,7 +1355,7 @@ events:
     - Overwhelmed
     importance: primary
     global_id: ger_agent_04bbccb1e352
-  - character_uuid: ger_agent_64b2a2c10c8f
+  - character_uuid: ger_agent_14f85d554756
     emotional_state: Determined compassion driving intervention
     goals:
     - Introduce Stephanie to Sam for her father's pardon appeal
@@ -1374,7 +1374,7 @@ events:
     - Empathetic
     - Diplomatic
     importance: primary
-    global_id: ger_agent_64b2a2c10c8f
+    global_id: ger_agent_14f85d554756
   - character_uuid: ger_agent_e613c5a420b2
     emotional_state: Awestruck desperation shadowed by familial peril
     goals:
@@ -1588,7 +1588,7 @@ events:
     so long to...'
   - 'JOSH: They''re not going to be happy about it. SAM: No kidding.'
   is_flashback: false
-  location_uuid: ger_location_55e711ff6df2
+  location_uuid: ger_location_ba584d0e54df
   theme_uuids:
   - ger_theme_185759ad3d50
   arc_uuids: []
@@ -1630,7 +1630,7 @@ events:
     - pragmatic
     importance: primary
     global_id: ger_agent_04bbccb1e352
-  - character_uuid: ger_agent_64b2a2c10c8f
+  - character_uuid: ger_agent_14f85d554756
     emotional_state: Calm attentiveness amid surrounding distress
     goals:
     - Maintain Josh's schedule to avoid disruptions
@@ -1649,7 +1649,7 @@ events:
     - supportive
     - observant
     importance: primary
-    global_id: ger_agent_64b2a2c10c8f
+    global_id: ger_agent_14f85d554756
   - character_uuid: ger_agent_e613c5a420b2
     emotional_state: Distressed urgency veiled by deferential hope
     goals:
@@ -1672,7 +1672,7 @@ events:
     global_id: ger_agent_e613c5a420b2
   object_involvements: []
   location_involvements:
-  - location_uuid: ger_location_55e711ff6df2
+  - location_uuid: ger_location_ba584d0e54df
     description_of_involvement: Hosts intimate table confab in the Mess where pardon
       stakes unfold intimately, fluidly transitioning to stark stairs for private
       FBI plotting and trivia deflection, amplifying isolation as personal mercy collides
@@ -1686,7 +1686,7 @@ events:
     - Sparse daytime Mess tables fostering intimacy
     - Echoing concrete stairs for urgent asides
     - Overhead lighting casting shadowed vulnerability
-    global_id: ger_location_55e711ff6df2
+    global_id: ger_location_ba584d0e54df
   organization_involvements:
   - organization_uuid: ger_organization_8f870c015c92
     description_of_involvement: Sam vows direct Justice Department contact via FBI
@@ -1764,7 +1764,7 @@ events:
     have a lot of fun? Seriously. Sit in on C.J.''s meeting with the Organization
     of Cartographers for Social Equality."'
   is_flashback: false
-  location_uuid: ger_location_55e711ff6df2
+  location_uuid: ger_location_ba584d0e54df
   theme_uuids: []
   arc_uuids: []
   participations:
@@ -1824,7 +1824,7 @@ events:
     - knowledgeable
     importance: primary
     global_id: ger_agent_04bbccb1e352
-  - character_uuid: ger_agent_64b2a2c10c8f
+  - character_uuid: ger_agent_14f85d554756
     emotional_state: Calmly professional amid White House frenzy
     goals:
     - Keep Josh on schedule for external meeting
@@ -1843,7 +1843,7 @@ events:
     - efficient
     - supportive
     importance: primary
-    global_id: ger_agent_64b2a2c10c8f
+    global_id: ger_agent_14f85d554756
   - character_uuid: ger_agent_e613c5a420b2
     emotional_state: Hopeful desperation tinged with vulnerability for dying relative
     goals:
@@ -1866,7 +1866,7 @@ events:
     global_id: ger_agent_e613c5a420b2
   object_involvements: []
   location_involvements:
-  - location_uuid: ger_location_55e711ff6df2
+  - location_uuid: ger_location_ba584d0e54df
     description_of_involvement: The stairs transition Sam and Josh from the Mess's
       intimate table talk to action-oriented movement, hosting rapid-fire banter on
       pardons, trivia, and FBI contacts; footsteps echo as humor clashes with gravity,
@@ -1881,7 +1881,7 @@ events:
     key_environmental_details:
     - Stark concrete confines amplifying echoes
     - Dim overhead glow fostering shadowed intimacy
-    global_id: ger_location_55e711ff6df2
+    global_id: ger_location_ba584d0e54df
   organization_involvements:
   - organization_uuid: ger_organization_8f870c015c92
     description_of_involvement: Sam vows to give the FBI a heads-up on the Gault pardon
@@ -2085,7 +2085,7 @@ events:
     - Tight walls heightening pressure
     global_id: ger_location_b4ea73f3e222
   organization_involvements:
-  - organization_uuid: ger_organization_d033a1b32d4f
+  - organization_uuid: ger_organization_bb39d5dd403d
     description_of_involvement: The White House asserts dominance through Toby's credentials
       as Communications Director and policy advisor, invoked to legitimize his crowd
       seizure and narrative spin, framing the meeting as controlled amid protest volatility
@@ -2101,7 +2101,7 @@ events:
     - Exploiting opponents' tactical errors
     institutional_impact: Reinforces White House command in public clashes
     internal_dynamics: ''
-    global_id: ger_organization_d033a1b32d4f
+    global_id: ger_organization_bb39d5dd403d
   derived_from_beat_uuids:
   - beat_f2539f62049aeab5
   source_season: 2
@@ -2255,7 +2255,7 @@ events:
     - Sweat-heavy air of frontline pandemonium
     global_id: ger_location_b4ea73f3e222
   organization_involvements:
-  - organization_uuid: ger_organization_d033a1b32d4f
+  - organization_uuid: ger_organization_bb39d5dd403d
     description_of_involvement: Toby invokes White House authority via official titles
       in his raised-voice introduction, reclaiming narrative control from protest
       bedlam by framing the standoff as structured dialogue, underscoring institutional
@@ -2273,7 +2273,7 @@ events:
     institutional_impact: Reinforces White House command of public spaces amid policy
       clashes
     internal_dynamics: ''
-    global_id: ger_organization_d033a1b32d4f
+    global_id: ger_organization_bb39d5dd403d
   derived_from_beat_uuids:
   - beat_0f2b1568d7d4732a
   - beat_2edc22dcff2c46ef
@@ -2642,7 +2642,7 @@ events:
     SAM: They shouldn't be talking to him now about the library, anyway. We're not going anywhere for a few years, right?
     CHARLIE: Well, I think that's what's got him in a mood.
   is_flashback: false
-  location_uuid: ger_location_3d4b26f1de82
+  location_uuid: ger_location_d7453cbcb623
   theme_uuids: []
   arc_uuids: []
   participations:
@@ -2747,19 +2747,6 @@ events:
     global_id: ger_agent_60a68a084e0c
   object_involvements: []
   location_involvements:
-  - location_uuid: ger_location_3d4b26f1de82
-    description_of_involvement: Sam enters the Communications Office as the scene's
-      pivot point, where Ginger intercepts him with the NSA call, transforming a hoped-for
-      refuge into another crisis nexus and illustrating the bullpen's role as an unyielding
-      hub for urgent relays in the administration's frenetic core.
-    observed_atmosphere: Bustling and interruptive, charged with immediate demands
-    functional_role: message relay and interception point
-    symbolic_significance: Nerve center where personal exhaustion collides with duty
-    access_restrictions: Open to senior communications staff
-    key_environmental_details:
-    - Harsh fluorescent lighting
-    - Implied surrounding desks and phones
-    global_id: ger_location_3d4b26f1de82
   - location_uuid: ger_location_d7453cbcb623
     description_of_involvement: The Northwest Lobby facilitates Sam and Charlie's
       clipped walk-and-talk, serving as a high-traffic transitional space where executive
@@ -2775,6 +2762,19 @@ events:
     - Echoing footsteps on cold marble floors
     - Presence of vigilant guards executing shift changes
     global_id: ger_location_d7453cbcb623
+  - location_uuid: ger_location_3d4b26f1de82
+    description_of_involvement: Sam enters the Communications Office as the scene's
+      pivot point, where Ginger intercepts him with the NSA call, transforming a hoped-for
+      refuge into another crisis nexus and illustrating the bullpen's role as an unyielding
+      hub for urgent relays in the administration's frenetic core.
+    observed_atmosphere: Bustling and interruptive, charged with immediate demands
+    functional_role: message relay and interception point
+    symbolic_significance: Nerve center where personal exhaustion collides with duty
+    access_restrictions: Open to senior communications staff
+    key_environmental_details:
+    - Harsh fluorescent lighting
+    - Implied surrounding desks and phones
+    global_id: ger_location_3d4b26f1de82
   organization_involvements: []
   derived_from_beat_uuids: &id004
   - beat_ce520ecb8a921c5a
@@ -2801,7 +2801,7 @@ events:
   sequence_in_scene: 20
   key_dialogue: *id003
   is_flashback: false
-  location_uuid: ger_location_d7453cbcb623
+  location_uuid: ger_location_3d4b26f1de82
   theme_uuids: []
   arc_uuids: []
   participations:
@@ -2906,19 +2906,6 @@ events:
     global_id: ger_agent_60a68a084e0c
   object_involvements: []
   location_involvements:
-  - location_uuid: ger_location_3d4b26f1de82
-    description_of_involvement: Sam enters the Communications Office as the scene's
-      pivot point, where Ginger intercepts him with the NSA call, transforming a hoped-for
-      refuge into another crisis nexus and illustrating the bullpen's role as an unyielding
-      hub for urgent relays in the administration's frenetic core.
-    observed_atmosphere: Bustling and interruptive, charged with immediate demands
-    functional_role: message relay and interception point
-    symbolic_significance: Nerve center where personal exhaustion collides with duty
-    access_restrictions: Open to senior communications staff
-    key_environmental_details:
-    - Harsh fluorescent lighting
-    - Implied surrounding desks and phones
-    global_id: ger_location_3d4b26f1de82
   - location_uuid: ger_location_d7453cbcb623
     description_of_involvement: The Northwest Lobby facilitates Sam and Charlie's
       clipped walk-and-talk, serving as a high-traffic transitional space where executive
@@ -2934,6 +2921,19 @@ events:
     - Echoing footsteps on cold marble floors
     - Presence of vigilant guards executing shift changes
     global_id: ger_location_d7453cbcb623
+  - location_uuid: ger_location_3d4b26f1de82
+    description_of_involvement: Sam enters the Communications Office as the scene's
+      pivot point, where Ginger intercepts him with the NSA call, transforming a hoped-for
+      refuge into another crisis nexus and illustrating the bullpen's role as an unyielding
+      hub for urgent relays in the administration's frenetic core.
+    observed_atmosphere: Bustling and interruptive, charged with immediate demands
+    functional_role: message relay and interception point
+    symbolic_significance: Nerve center where personal exhaustion collides with duty
+    access_restrictions: Open to senior communications staff
+    key_environmental_details:
+    - Harsh fluorescent lighting
+    - Implied surrounding desks and phones
+    global_id: ger_location_3d4b26f1de82
   organization_involvements: []
   derived_from_beat_uuids: *id004
   source_season: 2
@@ -2956,152 +2956,6 @@ events:
   - 'SAM: "Ginger, do me a favor and catch the calls. I''m going to lie down in Toby''s
     office for a few minutes."'
   - 'GINGER: "Sam, it was the National Security Advisor."'
-  is_flashback: false
-  location_uuid: ger_location_3d4b26f1de82
-  theme_uuids: []
-  arc_uuids: []
-  participations:
-  - character_uuid: ger_agent_52e3762c6aed
-    emotional_state: Neutral professionalism veiling concern
-    goals:
-    - Inform Sam of Bartlet's disposition promptly
-    - Maintain seamless relay of Oval intel
-    what_happened: Charlie strides into Northwest Lobby alongside Sam, delivers concise
-      update on President's library site loss and resultant bad mood, continues walking
-      as Sam veers toward Communications Office—his steady presence a brief anchor
-      before parting.
-    observed_status: Charlie strides into Northwest Lobby alongside Sam, delivers
-      concise update on President's library site loss and resultant bad mood, continues
-      walking as Sam veers toward Communications Office—his steady presence a brief
-      anchor before parting.
-    beliefs:
-    - President's moods demand preemptive awareness
-    - Site setbacks compound re-election pressures
-    observed_traits:
-    - deferential efficiency
-    - quiet competence
-    importance: primary
-    global_id: ger_agent_52e3762c6aed
-  - character_uuid: ger_agent_198649bce78f
-    emotional_state: frustrated
-    goals: []
-    what_happened: Reportedly lost his first choice of site for the library due to
-      an 18th century farmhouse and is in a mood.
-    observed_status: Reportedly lost his first choice of site for the library due
-      to an 18th century farmhouse and is in a mood.
-    beliefs: []
-    observed_traits: []
-    importance: primary
-    global_id: ger_agent_198649bce78f
-  - character_uuid: ger_agent_678d94c28190
-    emotional_state: Commanding imperative
-    goals:
-    - Pull Sam into Gault spy crisis deliberations
-    - Sync communications with national security imperatives
-    what_happened: National Security Advisor referenced offscreen via Ginger's relay
-      as the recent caller, their proactive summons injecting espionage gravity into
-      Sam's respite bid without physical presence.
-    observed_status: National Security Advisor referenced offscreen via Ginger's relay
-      as the recent caller, their proactive summons injecting espionage gravity into
-      Sam's respite bid without physical presence.
-    beliefs:
-    - Pardon push risks exposing Soviet betrayal
-    - Truth overrides compassion in state secrets
-    observed_traits:
-    - targeted urgency
-    - executive vigilance
-    importance: primary
-    global_id: ger_agent_678d94c28190
-  - character_uuid: ger_agent_04bbccb1e352
-    emotional_state: Crumbling exhaustion pierced by jolting urgency
-    goals:
-    - Secure momentary rest to recharge amid grind
-    - Defer interruptions to preserve fragile sanity
-    what_happened: Sam enters the lobby with Charlie, absorbs news of the President's
-      library frustration, then pivots into Communications Office; pleads with Ginger
-      to field calls while he seeks collapse in Toby's office, but snaps alert at
-      NSA mention, his body language shifting from slump to tense readiness.
-    observed_status: Sam enters the lobby with Charlie, absorbs news of the President's
-      library frustration, then pivots into Communications Office; pleads with Ginger
-      to field calls while he seeks collapse in Toby's office, but snaps alert at
-      NSA mention, his body language shifting from slump to tense readiness.
-    beliefs:
-    - Crises will wait briefly for human limits
-    - Senior staff like Toby offer rare refuge
-    observed_traits:
-    - exhausted vulnerability
-    - dutiful resilience
-    - wry deflection
-    importance: primary
-    global_id: ger_agent_04bbccb1e352
-  - character_uuid: ger_agent_60a68a084e0c
-    emotional_state: Insistent professionalism overriding deference
-    goals:
-    - Ensure critical security intel reaches Sam undelayed
-    - Block Sam's retreat amid operational frenzy
-    what_happened: Ginger intercepts Sam at Communications Office threshold, urgently
-      flags the incoming call despite his plea to screen, insists on revealing the
-      caller's identity—her poised insistence transforming the bullpen into crisis
-      vector.
-    observed_status: Ginger intercepts Sam at Communications Office threshold, urgently
-      flags the incoming call despite his plea to screen, insists on revealing the
-      caller's identity—her poised insistence transforming the bullpen into crisis
-      vector.
-    beliefs:
-    - NSA summonses demand instant senior staff action
-    - Bullpen cannot afford downtime in crises
-    observed_traits:
-    - sharp-eyed urgency
-    - duty-hardened immediacy
-    importance: primary
-    global_id: ger_agent_60a68a084e0c
-  object_involvements: []
-  location_involvements:
-  - location_uuid: ger_location_3d4b26f1de82
-    description_of_involvement: 'Communications Office bullpen erupts as interruption
-      epicenter: Sam invades seeking Toby''s refuge, but Ginger''s NSA reveal detonates
-      his rest, underscoring the space''s role as relentless crisis nerve where exhaustion
-      collides with duty''s drumbeat.'
-    observed_atmosphere: Frantic hush pierced by urgent summons
-    functional_role: site of pivotal interruption
-    symbolic_significance: Emblem of White House's merciless pace
-    access_restrictions: Senior staff and aides only
-    key_environmental_details:
-    - Cluttered desks under fluorescent glare
-    - Implied shrilling phones in bustle
-    global_id: ger_location_3d4b26f1de82
-  - location_uuid: ger_location_d7453cbcb623
-    description_of_involvement: Northwest Lobby serves as swift transit nexus where
-      Sam and Charlie exchange Oval intel on Bartlet's library ire, its marble expanse
-      echoing their clipped walk-and-talk before Sam diverts to bullpen—framing vulnerability
-      amid vigilant hush as crises encroach.
-    observed_atmosphere: Efficiently tense with purposeful strides
-    functional_role: transit and conversation space
-    symbolic_significance: Threshold between outer duties and inner sanctums
-    access_restrictions: Restricted to cleared White House personnel
-    key_environmental_details:
-    - Rebounding marble floors under boots
-    - Shadowed doorways hinting at lurking fractures
-    global_id: ger_location_d7453cbcb623
-  organization_involvements: []
-  derived_from_beat_uuids: &id006
-  - beat_5dcdcd7205114586
-  source_season: 2
-  source_database: westwing.s02
-- fabula_uuid: cand_evt_scene_a56589bc327e57d2_2
-  global_id: null
-  title: Ginger Jolts Exhausted Sam with NSA Call Alert
-  description: Exhausted from relentless White House pressures, Sam enters the Communications
-    Office seeking brief respite in Toby's office, instructing Ginger to field calls.
-    Ginger urgently reveals the caller was the National Security Advisor, shattering
-    his momentary relief and thrusting him back into the escalating Gault espionage
-    crisis. This pivotal interruption underscores the merciless pace of crises, transforming
-    a personal beat of vulnerability into a high-stakes turning point that foreshadows
-    shattering revelations.
-  episode_uuid: ep_sea_ser_the_west_wing_s02_e16
-  scene_sequence: 16
-  sequence_in_scene: 21
-  key_dialogue: *id005
   is_flashback: false
   location_uuid: ger_location_d7453cbcb623
   theme_uuids: []
@@ -3203,19 +3057,6 @@ events:
     global_id: ger_agent_60a68a084e0c
   object_involvements: []
   location_involvements:
-  - location_uuid: ger_location_3d4b26f1de82
-    description_of_involvement: 'Communications Office bullpen erupts as interruption
-      epicenter: Sam invades seeking Toby''s refuge, but Ginger''s NSA reveal detonates
-      his rest, underscoring the space''s role as relentless crisis nerve where exhaustion
-      collides with duty''s drumbeat.'
-    observed_atmosphere: Frantic hush pierced by urgent summons
-    functional_role: site of pivotal interruption
-    symbolic_significance: Emblem of White House's merciless pace
-    access_restrictions: Senior staff and aides only
-    key_environmental_details:
-    - Cluttered desks under fluorescent glare
-    - Implied shrilling phones in bustle
-    global_id: ger_location_3d4b26f1de82
   - location_uuid: ger_location_d7453cbcb623
     description_of_involvement: Northwest Lobby serves as swift transit nexus where
       Sam and Charlie exchange Oval intel on Bartlet's library ire, its marble expanse
@@ -3229,6 +3070,165 @@ events:
     - Rebounding marble floors under boots
     - Shadowed doorways hinting at lurking fractures
     global_id: ger_location_d7453cbcb623
+  - location_uuid: ger_location_3d4b26f1de82
+    description_of_involvement: 'Communications Office bullpen erupts as interruption
+      epicenter: Sam invades seeking Toby''s refuge, but Ginger''s NSA reveal detonates
+      his rest, underscoring the space''s role as relentless crisis nerve where exhaustion
+      collides with duty''s drumbeat.'
+    observed_atmosphere: Frantic hush pierced by urgent summons
+    functional_role: site of pivotal interruption
+    symbolic_significance: Emblem of White House's merciless pace
+    access_restrictions: Senior staff and aides only
+    key_environmental_details:
+    - Cluttered desks under fluorescent glare
+    - Implied shrilling phones in bustle
+    global_id: ger_location_3d4b26f1de82
+  organization_involvements: []
+  derived_from_beat_uuids: &id006
+  - beat_5dcdcd7205114586
+  source_season: 2
+  source_database: westwing.s02
+- fabula_uuid: cand_evt_scene_a56589bc327e57d2_2
+  global_id: null
+  title: Ginger Jolts Exhausted Sam with NSA Call Alert
+  description: Exhausted from relentless White House pressures, Sam enters the Communications
+    Office seeking brief respite in Toby's office, instructing Ginger to field calls.
+    Ginger urgently reveals the caller was the National Security Advisor, shattering
+    his momentary relief and thrusting him back into the escalating Gault espionage
+    crisis. This pivotal interruption underscores the merciless pace of crises, transforming
+    a personal beat of vulnerability into a high-stakes turning point that foreshadows
+    shattering revelations.
+  episode_uuid: ep_sea_ser_the_west_wing_s02_e16
+  scene_sequence: 16
+  sequence_in_scene: 21
+  key_dialogue: *id005
+  is_flashback: false
+  location_uuid: ger_location_3d4b26f1de82
+  theme_uuids: []
+  arc_uuids: []
+  participations:
+  - character_uuid: ger_agent_52e3762c6aed
+    emotional_state: Neutral professionalism veiling concern
+    goals:
+    - Inform Sam of Bartlet's disposition promptly
+    - Maintain seamless relay of Oval intel
+    what_happened: Charlie strides into Northwest Lobby alongside Sam, delivers concise
+      update on President's library site loss and resultant bad mood, continues walking
+      as Sam veers toward Communications Office—his steady presence a brief anchor
+      before parting.
+    observed_status: Charlie strides into Northwest Lobby alongside Sam, delivers
+      concise update on President's library site loss and resultant bad mood, continues
+      walking as Sam veers toward Communications Office—his steady presence a brief
+      anchor before parting.
+    beliefs:
+    - President's moods demand preemptive awareness
+    - Site setbacks compound re-election pressures
+    observed_traits:
+    - deferential efficiency
+    - quiet competence
+    importance: primary
+    global_id: ger_agent_52e3762c6aed
+  - character_uuid: ger_agent_198649bce78f
+    emotional_state: frustrated
+    goals: []
+    what_happened: Reportedly lost his first choice of site for the library due to
+      an 18th century farmhouse and is in a mood.
+    observed_status: Reportedly lost his first choice of site for the library due
+      to an 18th century farmhouse and is in a mood.
+    beliefs: []
+    observed_traits: []
+    importance: primary
+    global_id: ger_agent_198649bce78f
+  - character_uuid: ger_agent_678d94c28190
+    emotional_state: Commanding imperative
+    goals:
+    - Pull Sam into Gault spy crisis deliberations
+    - Sync communications with national security imperatives
+    what_happened: National Security Advisor referenced offscreen via Ginger's relay
+      as the recent caller, their proactive summons injecting espionage gravity into
+      Sam's respite bid without physical presence.
+    observed_status: National Security Advisor referenced offscreen via Ginger's relay
+      as the recent caller, their proactive summons injecting espionage gravity into
+      Sam's respite bid without physical presence.
+    beliefs:
+    - Pardon push risks exposing Soviet betrayal
+    - Truth overrides compassion in state secrets
+    observed_traits:
+    - targeted urgency
+    - executive vigilance
+    importance: primary
+    global_id: ger_agent_678d94c28190
+  - character_uuid: ger_agent_04bbccb1e352
+    emotional_state: Crumbling exhaustion pierced by jolting urgency
+    goals:
+    - Secure momentary rest to recharge amid grind
+    - Defer interruptions to preserve fragile sanity
+    what_happened: Sam enters the lobby with Charlie, absorbs news of the President's
+      library frustration, then pivots into Communications Office; pleads with Ginger
+      to field calls while he seeks collapse in Toby's office, but snaps alert at
+      NSA mention, his body language shifting from slump to tense readiness.
+    observed_status: Sam enters the lobby with Charlie, absorbs news of the President's
+      library frustration, then pivots into Communications Office; pleads with Ginger
+      to field calls while he seeks collapse in Toby's office, but snaps alert at
+      NSA mention, his body language shifting from slump to tense readiness.
+    beliefs:
+    - Crises will wait briefly for human limits
+    - Senior staff like Toby offer rare refuge
+    observed_traits:
+    - exhausted vulnerability
+    - dutiful resilience
+    - wry deflection
+    importance: primary
+    global_id: ger_agent_04bbccb1e352
+  - character_uuid: ger_agent_60a68a084e0c
+    emotional_state: Insistent professionalism overriding deference
+    goals:
+    - Ensure critical security intel reaches Sam undelayed
+    - Block Sam's retreat amid operational frenzy
+    what_happened: Ginger intercepts Sam at Communications Office threshold, urgently
+      flags the incoming call despite his plea to screen, insists on revealing the
+      caller's identity—her poised insistence transforming the bullpen into crisis
+      vector.
+    observed_status: Ginger intercepts Sam at Communications Office threshold, urgently
+      flags the incoming call despite his plea to screen, insists on revealing the
+      caller's identity—her poised insistence transforming the bullpen into crisis
+      vector.
+    beliefs:
+    - NSA summonses demand instant senior staff action
+    - Bullpen cannot afford downtime in crises
+    observed_traits:
+    - sharp-eyed urgency
+    - duty-hardened immediacy
+    importance: primary
+    global_id: ger_agent_60a68a084e0c
+  object_involvements: []
+  location_involvements:
+  - location_uuid: ger_location_d7453cbcb623
+    description_of_involvement: Northwest Lobby serves as swift transit nexus where
+      Sam and Charlie exchange Oval intel on Bartlet's library ire, its marble expanse
+      echoing their clipped walk-and-talk before Sam diverts to bullpen—framing vulnerability
+      amid vigilant hush as crises encroach.
+    observed_atmosphere: Efficiently tense with purposeful strides
+    functional_role: transit and conversation space
+    symbolic_significance: Threshold between outer duties and inner sanctums
+    access_restrictions: Restricted to cleared White House personnel
+    key_environmental_details:
+    - Rebounding marble floors under boots
+    - Shadowed doorways hinting at lurking fractures
+    global_id: ger_location_d7453cbcb623
+  - location_uuid: ger_location_3d4b26f1de82
+    description_of_involvement: 'Communications Office bullpen erupts as interruption
+      epicenter: Sam invades seeking Toby''s refuge, but Ginger''s NSA reveal detonates
+      his rest, underscoring the space''s role as relentless crisis nerve where exhaustion
+      collides with duty''s drumbeat.'
+    observed_atmosphere: Frantic hush pierced by urgent summons
+    functional_role: site of pivotal interruption
+    symbolic_significance: Emblem of White House's merciless pace
+    access_restrictions: Senior staff and aides only
+    key_environmental_details:
+    - Cluttered desks under fluorescent glare
+    - Implied shrilling phones in bustle
+    global_id: ger_location_3d4b26f1de82
   organization_involvements: []
   derived_from_beat_uuids: *id006
   source_season: 2
@@ -4563,7 +4563,7 @@ events:
     trade mission named Shaba Demsky. She was murdered in 1952." DONNA: "Sam... You
     meant grandfather."'
   is_flashback: false
-  location_uuid: ger_location_55e711ff6df2
+  location_uuid: ger_location_ba584d0e54df
   theme_uuids:
   - ger_theme_185759ad3d50
   arc_uuids:
@@ -4618,7 +4618,7 @@ events:
     - Unyielding in principle
     importance: primary
     global_id: ger_agent_04bbccb1e352
-  - character_uuid: ger_agent_64b2a2c10c8f
+  - character_uuid: ger_agent_14f85d554756
     emotional_state: Nervous desperation laced with compassion, masking fear of irreversible
       harm
     goals:
@@ -4641,7 +4641,7 @@ events:
     - Nervously deferential
     - Empathetic mediator
     importance: primary
-    global_id: ger_agent_64b2a2c10c8f
+    global_id: ger_agent_14f85d554756
   - character_uuid: ger_agent_e613c5a420b2
     emotional_state: Unaware vulnerability implied through others' debate
     goals:
@@ -4681,7 +4681,7 @@ events:
       out, bearing witness to unresolved tension
     global_id: ger_object_2883b110bca9
   location_involvements:
-  - location_uuid: ger_location_55e711ff6df2
+  - location_uuid: ger_location_ba584d0e54df
     description_of_involvement: The stairs from the Mess become the vertical battleground
       where Donna chases Sam, his revelations escalating into a thunderous monologue
       on treason; ricocheting footsteps and ragged breaths heighten the claustrophobic
@@ -4696,9 +4696,9 @@ events:
     key_environmental_details:
     - Staccato clatter of footsteps on concrete
     - Dim overhead lighting casting stark shadows
-    global_id: ger_location_55e711ff6df2
+    global_id: ger_location_ba584d0e54df
   organization_involvements:
-  - organization_uuid: ger_organization_d033a1b32d4f
+  - organization_uuid: ger_organization_bb39d5dd403d
     description_of_involvement: The White House manifests as both event locus (Mess
       and stairs) and espionage victim through leaked documents, with Sam's access
       to the President invoked as the manipulation pivot; it frames the clash between
@@ -4716,7 +4716,7 @@ events:
     institutional_impact: Reinforces protocol against historical betrayals infiltrating
       modern operations
     internal_dynamics: Fracture between staff loyalty and patriotic duty
-    global_id: ger_organization_d033a1b32d4f
+    global_id: ger_organization_bb39d5dd403d
   - organization_uuid: ger_organization_8c1c7ce5be6d
     description_of_involvement: National Recovery Administration exposed in Sam's
       litany as harboring communists per Black Water's leaked lists, its New Deal

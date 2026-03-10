@@ -159,23 +159,27 @@ class Command(BaseCommand):
         )
 
     def handle(self, *args, **options):
+        # Disable Wagtail's automatic reference index updates IMMEDIATELY,
+        # before any model operations or output.  This prevents stale
+        # reference-index tasks (queued by ImmediateBackend during Django
+        # startup) from firing DoesNotExist errors for WritingCredits
+        # that were deleted between runs.
+        from django.conf import settings
+        original_autoupdate = getattr(settings, 'WAGTAIL_REFERENCE_INDEX_AUTOUPDATE', True)
+        settings.WAGTAIL_REFERENCE_INDEX_AUTOUPDATE = False
+
         self.dry_run = options['dry_run']
         self.verbose = options['verbose']
         self.cleanup = options.get('cleanup', False)
         data_dir = Path(options['data_dir'])
 
         if not data_dir.exists():
+            settings.WAGTAIL_REFERENCE_INDEX_AUTOUPDATE = original_autoupdate
             raise CommandError(f"Data directory does not exist: {data_dir}")
 
         self.stdout.write(self.style.SUCCESS(
             f"{'[DRY RUN] ' if self.dry_run else ''}Starting Fabula import from {data_dir}"
         ))
-
-        # Disable Wagtail's automatic reference index updates during bulk import
-        # This dramatically speeds up imports by preventing per-save indexing
-        from django.conf import settings
-        original_autoupdate = getattr(settings, 'WAGTAIL_REFERENCE_INDEX_AUTOUPDATE', True)
-        settings.WAGTAIL_REFERENCE_INDEX_AUTOUPDATE = False
         self.stdout.write("Disabled automatic reference index updates for bulk import")
 
         try:
@@ -257,6 +261,20 @@ class Command(BaseCommand):
             # Restore original setting
             settings.WAGTAIL_REFERENCE_INDEX_AUTOUPDATE = original_autoupdate
             self.stdout.write("Restored automatic reference index updates")
+
+            # Rebuild the reference index to clear any stale entries left
+            # by delete+recreate cycles (e.g. WritingCredits) and to index
+            # all newly imported content in one pass.
+            if not self.dry_run:
+                try:
+                    from wagtail.models import ReferenceIndex
+                    self.stdout.write("Rebuilding reference index...")
+                    ReferenceIndex.rebuild()
+                    self.stdout.write("Reference index rebuilt successfully")
+                except Exception as e:
+                    self.stdout.write(self.style.WARNING(
+                        f"Reference index rebuild failed (non-fatal): {e}"
+                    ))
 
     def load_global_id_caches(self):
         """
@@ -1820,7 +1838,7 @@ class Command(BaseCommand):
             if connection:
                 # Update existing
                 connection.strength = conn_data.get('strength') or 'medium'
-                connection.description = conn_data.get('description', '')
+                connection.description = conn_data.get('description') or ''
                 if fabula_uuid:
                     connection.fabula_uuid = fabula_uuid
                 if global_id:
@@ -1838,7 +1856,7 @@ class Command(BaseCommand):
                     to_event=to_event,
                     connection_type=conn_type,
                     strength=conn_data.get('strength') or 'medium',
-                    description=conn_data.get('description', ''),
+                    description=conn_data.get('description') or '',
                 )
 
                 if not self.dry_run:

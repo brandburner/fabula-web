@@ -1,5 +1,5 @@
 # Events for Dead Irish Writers
-# Generated: 2026-02-10T12:17:27.894131
+# Generated: 2026-02-22T16:33:25.602722
 
 episode_uuid: ep_sea_ser_the_west_wing_s03_e15
 episode_title: Dead Irish Writers
@@ -1694,7 +1694,7 @@ events:
     - Champagne fizzes and elegant banter implied
     global_id: ger_location_c0b78bd71914
   organization_involvements:
-  - organization_uuid: ger_organization_a02ef5855109
+  - organization_uuid: ger_organization_9aeb11cd4ff1
     description_of_involvement: The Secret Service's routine guest list background
       check detonates Donna's crisis, flagging her ambiguously and barring party access,
       thrusting job-threatening uncertainty into the bullpen; it embodies institutional
@@ -1711,7 +1711,7 @@ events:
     institutional_impact: Highlights friction between security imperatives and staff
       loyalty in high-stakes environments
     internal_dynamics: ''
-    global_id: ger_organization_a02ef5855109
+    global_id: ger_organization_9aeb11cd4ff1
   derived_from_beat_uuids: &id006
   - beat_dcd791efa1654524
   - beat_c0176c498df51732
@@ -1838,7 +1838,7 @@ events:
     - Champagne fizzes and elegant banter implied
     global_id: ger_location_c0b78bd71914
   organization_involvements:
-  - organization_uuid: ger_organization_a02ef5855109
+  - organization_uuid: ger_organization_9aeb11cd4ff1
     description_of_involvement: The Secret Service's routine guest list background
       check detonates Donna's crisis, flagging her ambiguously and barring party access,
       thrusting job-threatening uncertainty into the bullpen; it embodies institutional
@@ -1855,7 +1855,7 @@ events:
     institutional_impact: Highlights friction between security imperatives and staff
       loyalty in high-stakes environments
     internal_dynamics: ''
-    global_id: ger_organization_a02ef5855109
+    global_id: ger_organization_9aeb11cd4ff1
   derived_from_beat_uuids: *id006
   source_season: 3
   source_database: westwing.s03
@@ -1988,7 +1988,7 @@ events:
     importance: primary
     global_id: ger_agent_7854a70e34ea
   object_involvements:
-  - object_uuid: ger_object_207ae93af932
+  - object_uuid: ger_object_c17f77ab506a
     description_of_involvement: Held firmly by Bartlet as he stands watch amid romantic
       music and Abbey's photo ops, serving as a prop for presidential poise during
       Charlie recruitment and Leo discussion; he takes a deliberate sip after Leo
@@ -1997,7 +1997,7 @@ events:
     status_before_event: Full, gripped in Bartlet's hand while standing nearby Abbey
     status_after_event: Partially consumed, still held as he gazes at Abbey post-music
       fade
-    global_id: ger_object_207ae93af932
+    global_id: ger_object_c17f77ab506a
   location_involvements: []
   organization_involvements: []
   derived_from_beat_uuids:
@@ -2132,7 +2132,7 @@ events:
     importance: primary
     global_id: ger_agent_7854a70e34ea
   object_involvements:
-  - object_uuid: ger_object_207ae93af932
+  - object_uuid: ger_object_c17f77ab506a
     description_of_involvement: Held firmly by Bartlet throughout the exchanges as
       a grounding prop amid gala distractions, culminating in a deliberate sip after
       Leo's departure; it anchors his solitary vigil watching Abbey, symbolizing restrained
@@ -2142,7 +2142,7 @@ events:
       hall
     status_after_event: Partially consumed after sip, still held by Bartlet as he
       observes Abbey
-    global_id: ger_object_207ae93af932
+    global_id: ger_object_c17f77ab506a
   location_involvements: []
   organization_involvements: []
   derived_from_beat_uuids:
@@ -2171,7 +2171,7 @@ events:
     I live in Washington. What the hell happened?'
   - 'DONNA: Go away. JOSH: All right. DONNA: Give me the olives.'
   is_flashback: false
-  location_uuid: ger_location_03402792986e
+  location_uuid: ger_location_2f2e9fc751a8
   theme_uuids: []
   arc_uuids:
   - ger_conflictarc_b6d6a561f079
@@ -2233,32 +2233,7 @@ events:
     status_after_event: In Donna's hands, napkins being torn open for consumption
     global_id: ger_object_811fa728eea8
   location_involvements:
-  - location_uuid: ger_location_03402792986e
-    description_of_involvement: Donna cites Wisconsin as family refuge post-Minnesota,
-      bolstering her residency history against the non-citizen flag, its prairie grit
-      invoked in desperate litany to affirm voting and tax-paying legitimacy during
-      office confrontation.
-    observed_atmosphere: Recalled icy small-town resilience amid urban crisis
-    functional_role: Supporting evidence in citizenship argument
-    symbolic_significance: Migration stability reinforcing national belonging
-    access_restrictions: ''
-    key_environmental_details:
-    - Frozen small towns and prairies
-    - Family home memories
-    global_id: ger_location_03402792986e
-  - location_uuid: ger_location_756aaae559bc
-    description_of_involvement: Donna asserts Washington, D.C. as current home turf—taxes
-      filed, votes cast—relocating her identity anchor boldly against INS error, the
-      capital's power pulse framing her life in this White House orbit crisis.
-    observed_atmosphere: Pulsing D.C. intensity amplifying personal stakes
-    functional_role: Current residency proof in defense
-    symbolic_significance: Heart of power validating her place in it
-    access_restrictions: ''
-    key_environmental_details:
-    - Urban political machinery
-    - Residency-forged battlegrounds
-    global_id: ger_location_756aaae559bc
-  - location_uuid: ger_location_faf0fdbdfce1
+  - location_uuid: ger_location_2f2e9fc751a8
     description_of_involvement: Donna invokes Minnesota as her ironclad birthplace,
       hurling it like proof against the INS absurdity in Josh's tense office, its
       Midwestern solidity anchoring her citizenship claim amid White House shadows
@@ -2271,25 +2246,34 @@ events:
     key_environmental_details:
     - Imagined prairies and frozen lakes
     - Midwestern birth hospital echoes
-    global_id: ger_location_faf0fdbdfce1
+    global_id: ger_location_2f2e9fc751a8
+  - location_uuid: ger_location_5a0d05c50d5e
+    description_of_involvement: Donna cites Wisconsin as family refuge post-Minnesota,
+      bolstering her residency history against the non-citizen flag, its prairie grit
+      invoked in desperate litany to affirm voting and tax-paying legitimacy during
+      office confrontation.
+    observed_atmosphere: Recalled icy small-town resilience amid urban crisis
+    functional_role: Supporting evidence in citizenship argument
+    symbolic_significance: Migration stability reinforcing national belonging
+    access_restrictions: ''
+    key_environmental_details:
+    - Frozen small towns and prairies
+    - Family home memories
+    global_id: ger_location_5a0d05c50d5e
+  - location_uuid: ger_location_756aaae559bc
+    description_of_involvement: Donna asserts Washington, D.C. as current home turf—taxes
+      filed, votes cast—relocating her identity anchor boldly against INS error, the
+      capital's power pulse framing her life in this White House orbit crisis.
+    observed_atmosphere: Pulsing D.C. intensity amplifying personal stakes
+    functional_role: Current residency proof in defense
+    symbolic_significance: Heart of power validating her place in it
+    access_restrictions: ''
+    key_environmental_details:
+    - Urban political machinery
+    - Residency-forged battlegrounds
+    global_id: ger_location_756aaae559bc
   organization_involvements:
-  - organization_uuid: ger_organization_b4db0b1655fd
-    description_of_involvement: 'INS notation ''U.S. Citizen: N''—tied to a bizarre
-      border redraw affecting Donna''s Minnesota hometown—lies at the crisis core,
-      Josh framing it as fixable error while she rages over her proven citizenship,
-      fueling the night''s staff absurdities.'
-    active_representation: Through erroneous database notation
-    power_dynamics: Imposing bureaucratic verdict challenged by personal testimony
-    organizational_goals:
-    - Maintain accurate citizenship records via border policies
-    - Enforce immigration status via notations and clauses
-    influence_mechanisms:
-    - Database flagging and verification requirements
-    - Grandfather clauses for resolution
-    institutional_impact: Exposes red-tape tyranny clashing with American self-evidence
-    internal_dynamics: Historical border adjustment errors surfacing
-    global_id: ger_organization_b4db0b1655fd
-  - organization_uuid: ger_organization_a02ef5855109
+  - organization_uuid: ger_organization_9aeb11cd4ff1
     description_of_involvement: Secret Service's routine gala guest vetting uncovers
       the INS notation on Donna, triggering White House panic; Josh relays their discovery
       as the spark for her citizenship freakout, embodying protocol's unyielding intrusion
@@ -2304,12 +2288,181 @@ events:
     - Referral to INS for verification
     institutional_impact: Highlights security's reach into personal bureaucratic histories
     internal_dynamics: ''
-    global_id: ger_organization_a02ef5855109
+    global_id: ger_organization_9aeb11cd4ff1
+  - organization_uuid: ger_organization_326ee3fa1f1f
+    description_of_involvement: 'INS notation ''U.S. Citizen: N''—tied to a bizarre
+      border redraw affecting Donna''s Minnesota hometown—lies at the crisis core,
+      Josh framing it as fixable error while she rages over her proven citizenship,
+      fueling the night''s staff absurdities.'
+    active_representation: Through erroneous database notation
+    power_dynamics: Imposing bureaucratic verdict challenged by personal testimony
+    organizational_goals:
+    - Maintain accurate citizenship records via border policies
+    - Enforce immigration status via notations and clauses
+    influence_mechanisms:
+    - Database flagging and verification requirements
+    - Grandfather clauses for resolution
+    institutional_impact: Exposes red-tape tyranny clashing with American self-evidence
+    internal_dynamics: Historical border adjustment errors surfacing
+    global_id: ger_organization_326ee3fa1f1f
   derived_from_beat_uuids: &id008
   - beat_0bbfd5efcee7a065
   - beat_2426556685d5e8b1
   - beat_a905f5636173cf97
   - beat_8d6fffc566a856ce
+  source_season: 3
+  source_database: westwing.s03
+- fabula_uuid: cand_evt_scene_a0a3c03e91eaeb2a_0
+  global_id: null
+  title: Josh Drops Donna's Shocking Non-Citizen Bombshell
+  description: In Josh's office amid the gala chaos, Donna plays solitaire in her
+    dress when Josh enters with food and reveals a bizarre INS notation flagging her
+    as a non-U.S. citizen, stemming from Secret Service checks. Shocked, Donna vehemently
+    asserts her Minnesota birth, voting record, and taxes as proof. Josh reassures
+    her it's a fixable bureaucratic error, diffusing tension with olives; she snaps
+    'go away' but snatches them, underscoring their sibling-like bond and injecting
+    absurd humor into her personal crisis, a key thread in the night's escalating
+    staff meltdowns.
+  episode_uuid: ep_sea_ser_the_west_wing_s03_e15
+  scene_sequence: 7
+  sequence_in_scene: 11
+  key_dialogue: *id007
+  is_flashback: false
+  location_uuid: ger_location_5a0d05c50d5e
+  theme_uuids: []
+  arc_uuids:
+  - ger_conflictarc_b6d6a561f079
+  participations:
+  - character_uuid: ger_agent_c9d41ae93618
+    emotional_state: Feigned casual reassurance masking underlying concern over the
+      escalating absurdity
+    goals:
+    - Comfort and reassure Donna amid her personal crisis
+    - Diffuse tension with familiar rituals like olive offerings
+    what_happened: Josh enters his office carrying food, casually greets Donna, reveals
+      the bizarre INS non-citizen notation flagged by Secret Service, repeatedly reassures
+      her it's a sortable mistake while fishing olives from his pockets, wraps and
+      hands them over despite her snap, then exits as she unwraps them.
+    observed_status: Josh enters his office carrying food, casually greets Donna,
+      reveals the bizarre INS non-citizen notation flagged by Secret Service, repeatedly
+      reassures her it's a sortable mistake while fishing olives from his pockets,
+      wraps and hands them over despite her snap, then exits as she unwraps them.
+    beliefs:
+    - Bureaucratic errors are inevitably fixable with White House pull
+    - Their sibling-like bond withstands any chaos, even identity crises
+    observed_traits:
+    - reassuring
+    - awkwardly protective
+    - bumblingly affectionate
+    - crisis-savvy
+    importance: primary
+    global_id: ger_agent_c9d41ae93618
+  object_involvements:
+  - object_uuid: ger_object_f91313b422c9
+    description_of_involvement: Donna hunches over Josh's office computer, immersed
+      in a solitary game of solitaire that serves as her digital escape from missing
+      the gala and the unfolding citizenship nightmare, its bluish glow contrasting
+      her formal dress and highlighting her isolation until Josh's entrance shatters
+      the trance, symbolizing retreat from real-world turmoil.
+    status_before_event: Powered on Josh's desk, displaying solitaire game in use
+      by Donna
+    status_after_event: Abandoned mid-game on desk as conversation and olives take
+      precedence
+    global_id: ger_object_f91313b422c9
+  - object_uuid: ger_object_727396c55350
+    description_of_involvement: Josh rummages deep into his pockets to extract olives
+      bundled in crumpled napkins, thrusting the greasy parcel as a peace offering
+      to pierce Donna's distress over the INS flag; she snarls rejection yet snatches
+      it desperately, their bickering ritual under fluorescents injecting absurd humor
+      into her citizenship meltdown.
+    status_before_event: Bundled in crumpled napkins inside Josh's pockets
+    status_after_event: Transferred to Donna's possession, partially unwrapped as
+      Josh exits
+    global_id: ger_object_727396c55350
+  - object_uuid: ger_object_811fa728eea8
+    description_of_involvement: Josh clutches and presents olives wrapped in napkins
+      to interrupt Donna's solitaire stupor and bureaucratic horror, the makeshift
+      bundle shattering tension into familiar snark; her lunge and unwrapping amid
+      office shadows underscore their bond, turning potential meltdown into comedic
+      sibling shorthand.
+    status_before_event: Wrapped in Josh's napkins, held in his hands after pocket
+      extraction
+    status_after_event: In Donna's hands, napkins being torn open for consumption
+    global_id: ger_object_811fa728eea8
+  location_involvements:
+  - location_uuid: ger_location_2f2e9fc751a8
+    description_of_involvement: Donna invokes Minnesota as her ironclad birthplace,
+      hurling it like proof against the INS absurdity in Josh's tense office, its
+      Midwestern solidity anchoring her citizenship claim amid White House shadows
+      and gala echoes.
+    observed_atmosphere: Evoked heartland stability clashing with D.C. bureaucratic
+      frenzy
+    functional_role: Verbal anchor of origin for citizenship defense
+    symbolic_significance: Unshakable roots symbolizing authentic American identity
+    access_restrictions: ''
+    key_environmental_details:
+    - Imagined prairies and frozen lakes
+    - Midwestern birth hospital echoes
+    global_id: ger_location_2f2e9fc751a8
+  - location_uuid: ger_location_5a0d05c50d5e
+    description_of_involvement: Donna cites Wisconsin as family refuge post-Minnesota,
+      bolstering her residency history against the non-citizen flag, its prairie grit
+      invoked in desperate litany to affirm voting and tax-paying legitimacy during
+      office confrontation.
+    observed_atmosphere: Recalled icy small-town resilience amid urban crisis
+    functional_role: Supporting evidence in citizenship argument
+    symbolic_significance: Migration stability reinforcing national belonging
+    access_restrictions: ''
+    key_environmental_details:
+    - Frozen small towns and prairies
+    - Family home memories
+    global_id: ger_location_5a0d05c50d5e
+  - location_uuid: ger_location_756aaae559bc
+    description_of_involvement: Donna asserts Washington, D.C. as current home turf—taxes
+      filed, votes cast—relocating her identity anchor boldly against INS error, the
+      capital's power pulse framing her life in this White House orbit crisis.
+    observed_atmosphere: Pulsing D.C. intensity amplifying personal stakes
+    functional_role: Current residency proof in defense
+    symbolic_significance: Heart of power validating her place in it
+    access_restrictions: ''
+    key_environmental_details:
+    - Urban political machinery
+    - Residency-forged battlegrounds
+    global_id: ger_location_756aaae559bc
+  organization_involvements:
+  - organization_uuid: ger_organization_9aeb11cd4ff1
+    description_of_involvement: Secret Service's routine gala guest vetting uncovers
+      the INS notation on Donna, triggering White House panic; Josh relays their discovery
+      as the spark for her citizenship freakout, embodying protocol's unyielding intrusion
+      into staff lives.
+    active_representation: Via flagged notation from security checks
+    power_dynamics: Exercising oversight authority over White House personnel
+    organizational_goals:
+    - Vet and secure gala guest lists rigorously
+    - Protect presidential orbit from internal identity risks
+    influence_mechanisms:
+    - Institutional protocol enforcement
+    - Referral to INS for verification
+    institutional_impact: Highlights security's reach into personal bureaucratic histories
+    internal_dynamics: ''
+    global_id: ger_organization_9aeb11cd4ff1
+  - organization_uuid: ger_organization_326ee3fa1f1f
+    description_of_involvement: 'INS notation ''U.S. Citizen: N''—tied to a bizarre
+      border redraw affecting Donna''s Minnesota hometown—lies at the crisis core,
+      Josh framing it as fixable error while she rages over her proven citizenship,
+      fueling the night''s staff absurdities.'
+    active_representation: Through erroneous database notation
+    power_dynamics: Imposing bureaucratic verdict challenged by personal testimony
+    organizational_goals:
+    - Maintain accurate citizenship records via border policies
+    - Enforce immigration status via notations and clauses
+    influence_mechanisms:
+    - Database flagging and verification requirements
+    - Grandfather clauses for resolution
+    institutional_impact: Exposes red-tape tyranny clashing with American self-evidence
+    internal_dynamics: Historical border adjustment errors surfacing
+    global_id: ger_organization_326ee3fa1f1f
+  derived_from_beat_uuids: *id008
   source_season: 3
   source_database: westwing.s03
 - fabula_uuid: cand_evt_scene_a0a3c03e91eaeb2a_0
@@ -2390,32 +2543,7 @@ events:
     status_after_event: In Donna's hands, napkins being torn open for consumption
     global_id: ger_object_811fa728eea8
   location_involvements:
-  - location_uuid: ger_location_03402792986e
-    description_of_involvement: Donna cites Wisconsin as family refuge post-Minnesota,
-      bolstering her residency history against the non-citizen flag, its prairie grit
-      invoked in desperate litany to affirm voting and tax-paying legitimacy during
-      office confrontation.
-    observed_atmosphere: Recalled icy small-town resilience amid urban crisis
-    functional_role: Supporting evidence in citizenship argument
-    symbolic_significance: Migration stability reinforcing national belonging
-    access_restrictions: ''
-    key_environmental_details:
-    - Frozen small towns and prairies
-    - Family home memories
-    global_id: ger_location_03402792986e
-  - location_uuid: ger_location_756aaae559bc
-    description_of_involvement: Donna asserts Washington, D.C. as current home turf—taxes
-      filed, votes cast—relocating her identity anchor boldly against INS error, the
-      capital's power pulse framing her life in this White House orbit crisis.
-    observed_atmosphere: Pulsing D.C. intensity amplifying personal stakes
-    functional_role: Current residency proof in defense
-    symbolic_significance: Heart of power validating her place in it
-    access_restrictions: ''
-    key_environmental_details:
-    - Urban political machinery
-    - Residency-forged battlegrounds
-    global_id: ger_location_756aaae559bc
-  - location_uuid: ger_location_faf0fdbdfce1
+  - location_uuid: ger_location_2f2e9fc751a8
     description_of_involvement: Donna invokes Minnesota as her ironclad birthplace,
       hurling it like proof against the INS absurdity in Josh's tense office, its
       Midwestern solidity anchoring her citizenship claim amid White House shadows
@@ -2428,25 +2556,34 @@ events:
     key_environmental_details:
     - Imagined prairies and frozen lakes
     - Midwestern birth hospital echoes
-    global_id: ger_location_faf0fdbdfce1
+    global_id: ger_location_2f2e9fc751a8
+  - location_uuid: ger_location_5a0d05c50d5e
+    description_of_involvement: Donna cites Wisconsin as family refuge post-Minnesota,
+      bolstering her residency history against the non-citizen flag, its prairie grit
+      invoked in desperate litany to affirm voting and tax-paying legitimacy during
+      office confrontation.
+    observed_atmosphere: Recalled icy small-town resilience amid urban crisis
+    functional_role: Supporting evidence in citizenship argument
+    symbolic_significance: Migration stability reinforcing national belonging
+    access_restrictions: ''
+    key_environmental_details:
+    - Frozen small towns and prairies
+    - Family home memories
+    global_id: ger_location_5a0d05c50d5e
+  - location_uuid: ger_location_756aaae559bc
+    description_of_involvement: Donna asserts Washington, D.C. as current home turf—taxes
+      filed, votes cast—relocating her identity anchor boldly against INS error, the
+      capital's power pulse framing her life in this White House orbit crisis.
+    observed_atmosphere: Pulsing D.C. intensity amplifying personal stakes
+    functional_role: Current residency proof in defense
+    symbolic_significance: Heart of power validating her place in it
+    access_restrictions: ''
+    key_environmental_details:
+    - Urban political machinery
+    - Residency-forged battlegrounds
+    global_id: ger_location_756aaae559bc
   organization_involvements:
-  - organization_uuid: ger_organization_b4db0b1655fd
-    description_of_involvement: 'INS notation ''U.S. Citizen: N''—tied to a bizarre
-      border redraw affecting Donna''s Minnesota hometown—lies at the crisis core,
-      Josh framing it as fixable error while she rages over her proven citizenship,
-      fueling the night''s staff absurdities.'
-    active_representation: Through erroneous database notation
-    power_dynamics: Imposing bureaucratic verdict challenged by personal testimony
-    organizational_goals:
-    - Maintain accurate citizenship records via border policies
-    - Enforce immigration status via notations and clauses
-    influence_mechanisms:
-    - Database flagging and verification requirements
-    - Grandfather clauses for resolution
-    institutional_impact: Exposes red-tape tyranny clashing with American self-evidence
-    internal_dynamics: Historical border adjustment errors surfacing
-    global_id: ger_organization_b4db0b1655fd
-  - organization_uuid: ger_organization_a02ef5855109
+  - organization_uuid: ger_organization_9aeb11cd4ff1
     description_of_involvement: Secret Service's routine gala guest vetting uncovers
       the INS notation on Donna, triggering White House panic; Josh relays their discovery
       as the spark for her citizenship freakout, embodying protocol's unyielding intrusion
@@ -2461,129 +2598,8 @@ events:
     - Referral to INS for verification
     institutional_impact: Highlights security's reach into personal bureaucratic histories
     internal_dynamics: ''
-    global_id: ger_organization_a02ef5855109
-  derived_from_beat_uuids: *id008
-  source_season: 3
-  source_database: westwing.s03
-- fabula_uuid: cand_evt_scene_a0a3c03e91eaeb2a_0
-  global_id: null
-  title: Josh Drops Donna's Shocking Non-Citizen Bombshell
-  description: In Josh's office amid the gala chaos, Donna plays solitaire in her
-    dress when Josh enters with food and reveals a bizarre INS notation flagging her
-    as a non-U.S. citizen, stemming from Secret Service checks. Shocked, Donna vehemently
-    asserts her Minnesota birth, voting record, and taxes as proof. Josh reassures
-    her it's a fixable bureaucratic error, diffusing tension with olives; she snaps
-    'go away' but snatches them, underscoring their sibling-like bond and injecting
-    absurd humor into her personal crisis, a key thread in the night's escalating
-    staff meltdowns.
-  episode_uuid: ep_sea_ser_the_west_wing_s03_e15
-  scene_sequence: 7
-  sequence_in_scene: 11
-  key_dialogue: *id007
-  is_flashback: false
-  location_uuid: ger_location_faf0fdbdfce1
-  theme_uuids: []
-  arc_uuids:
-  - ger_conflictarc_b6d6a561f079
-  participations:
-  - character_uuid: ger_agent_c9d41ae93618
-    emotional_state: Feigned casual reassurance masking underlying concern over the
-      escalating absurdity
-    goals:
-    - Comfort and reassure Donna amid her personal crisis
-    - Diffuse tension with familiar rituals like olive offerings
-    what_happened: Josh enters his office carrying food, casually greets Donna, reveals
-      the bizarre INS non-citizen notation flagged by Secret Service, repeatedly reassures
-      her it's a sortable mistake while fishing olives from his pockets, wraps and
-      hands them over despite her snap, then exits as she unwraps them.
-    observed_status: Josh enters his office carrying food, casually greets Donna,
-      reveals the bizarre INS non-citizen notation flagged by Secret Service, repeatedly
-      reassures her it's a sortable mistake while fishing olives from his pockets,
-      wraps and hands them over despite her snap, then exits as she unwraps them.
-    beliefs:
-    - Bureaucratic errors are inevitably fixable with White House pull
-    - Their sibling-like bond withstands any chaos, even identity crises
-    observed_traits:
-    - reassuring
-    - awkwardly protective
-    - bumblingly affectionate
-    - crisis-savvy
-    importance: primary
-    global_id: ger_agent_c9d41ae93618
-  object_involvements:
-  - object_uuid: ger_object_f91313b422c9
-    description_of_involvement: Donna hunches over Josh's office computer, immersed
-      in a solitary game of solitaire that serves as her digital escape from missing
-      the gala and the unfolding citizenship nightmare, its bluish glow contrasting
-      her formal dress and highlighting her isolation until Josh's entrance shatters
-      the trance, symbolizing retreat from real-world turmoil.
-    status_before_event: Powered on Josh's desk, displaying solitaire game in use
-      by Donna
-    status_after_event: Abandoned mid-game on desk as conversation and olives take
-      precedence
-    global_id: ger_object_f91313b422c9
-  - object_uuid: ger_object_727396c55350
-    description_of_involvement: Josh rummages deep into his pockets to extract olives
-      bundled in crumpled napkins, thrusting the greasy parcel as a peace offering
-      to pierce Donna's distress over the INS flag; she snarls rejection yet snatches
-      it desperately, their bickering ritual under fluorescents injecting absurd humor
-      into her citizenship meltdown.
-    status_before_event: Bundled in crumpled napkins inside Josh's pockets
-    status_after_event: Transferred to Donna's possession, partially unwrapped as
-      Josh exits
-    global_id: ger_object_727396c55350
-  - object_uuid: ger_object_811fa728eea8
-    description_of_involvement: Josh clutches and presents olives wrapped in napkins
-      to interrupt Donna's solitaire stupor and bureaucratic horror, the makeshift
-      bundle shattering tension into familiar snark; her lunge and unwrapping amid
-      office shadows underscore their bond, turning potential meltdown into comedic
-      sibling shorthand.
-    status_before_event: Wrapped in Josh's napkins, held in his hands after pocket
-      extraction
-    status_after_event: In Donna's hands, napkins being torn open for consumption
-    global_id: ger_object_811fa728eea8
-  location_involvements:
-  - location_uuid: ger_location_03402792986e
-    description_of_involvement: Donna cites Wisconsin as family refuge post-Minnesota,
-      bolstering her residency history against the non-citizen flag, its prairie grit
-      invoked in desperate litany to affirm voting and tax-paying legitimacy during
-      office confrontation.
-    observed_atmosphere: Recalled icy small-town resilience amid urban crisis
-    functional_role: Supporting evidence in citizenship argument
-    symbolic_significance: Migration stability reinforcing national belonging
-    access_restrictions: ''
-    key_environmental_details:
-    - Frozen small towns and prairies
-    - Family home memories
-    global_id: ger_location_03402792986e
-  - location_uuid: ger_location_756aaae559bc
-    description_of_involvement: Donna asserts Washington, D.C. as current home turf—taxes
-      filed, votes cast—relocating her identity anchor boldly against INS error, the
-      capital's power pulse framing her life in this White House orbit crisis.
-    observed_atmosphere: Pulsing D.C. intensity amplifying personal stakes
-    functional_role: Current residency proof in defense
-    symbolic_significance: Heart of power validating her place in it
-    access_restrictions: ''
-    key_environmental_details:
-    - Urban political machinery
-    - Residency-forged battlegrounds
-    global_id: ger_location_756aaae559bc
-  - location_uuid: ger_location_faf0fdbdfce1
-    description_of_involvement: Donna invokes Minnesota as her ironclad birthplace,
-      hurling it like proof against the INS absurdity in Josh's tense office, its
-      Midwestern solidity anchoring her citizenship claim amid White House shadows
-      and gala echoes.
-    observed_atmosphere: Evoked heartland stability clashing with D.C. bureaucratic
-      frenzy
-    functional_role: Verbal anchor of origin for citizenship defense
-    symbolic_significance: Unshakable roots symbolizing authentic American identity
-    access_restrictions: ''
-    key_environmental_details:
-    - Imagined prairies and frozen lakes
-    - Midwestern birth hospital echoes
-    global_id: ger_location_faf0fdbdfce1
-  organization_involvements:
-  - organization_uuid: ger_organization_b4db0b1655fd
+    global_id: ger_organization_9aeb11cd4ff1
+  - organization_uuid: ger_organization_326ee3fa1f1f
     description_of_involvement: 'INS notation ''U.S. Citizen: N''—tied to a bizarre
       border redraw affecting Donna''s Minnesota hometown—lies at the crisis core,
       Josh framing it as fixable error while she rages over her proven citizenship,
@@ -2598,23 +2614,7 @@ events:
     - Grandfather clauses for resolution
     institutional_impact: Exposes red-tape tyranny clashing with American self-evidence
     internal_dynamics: Historical border adjustment errors surfacing
-    global_id: ger_organization_b4db0b1655fd
-  - organization_uuid: ger_organization_a02ef5855109
-    description_of_involvement: Secret Service's routine gala guest vetting uncovers
-      the INS notation on Donna, triggering White House panic; Josh relays their discovery
-      as the spark for her citizenship freakout, embodying protocol's unyielding intrusion
-      into staff lives.
-    active_representation: Via flagged notation from security checks
-    power_dynamics: Exercising oversight authority over White House personnel
-    organizational_goals:
-    - Vet and secure gala guest lists rigorously
-    - Protect presidential orbit from internal identity risks
-    influence_mechanisms:
-    - Institutional protocol enforcement
-    - Referral to INS for verification
-    institutional_impact: Highlights security's reach into personal bureaucratic histories
-    internal_dynamics: ''
-    global_id: ger_organization_a02ef5855109
+    global_id: ger_organization_326ee3fa1f1f
   derived_from_beat_uuids: *id008
   source_season: 3
   source_database: westwing.s03
@@ -3036,7 +3036,7 @@ events:
     observed_traits: []
     importance: primary
     global_id: ger_agent_198649bce78f
-  - character_uuid: ger_agent_9460baa658f1
+  - character_uuid: ger_agent_4cb57d9d3054
     emotional_state: cheerful
     goals:
     - greet and wish Abbey happy birthday
@@ -3047,7 +3047,7 @@ events:
     beliefs: []
     observed_traits: []
     importance: minor
-    global_id: ger_agent_9460baa658f1
+    global_id: ger_agent_4cb57d9d3054
   object_involvements:
   - object_uuid: ger_object_162ffa519020
     description_of_involvement: Abbey thrusts this crisp list of skilled female candidates
@@ -3164,6 +3164,15 @@ events:
     observed_traits: []
     importance: primary
     global_id: ger_agent_198649bce78f
+  - character_uuid: ger_agent_4cb57d9d3054
+    emotional_state: festive
+    goals: []
+    what_happened: greets Abbey off-screen with 'Happy birthday'
+    observed_status: greets Abbey off-screen with 'Happy birthday'
+    beliefs: []
+    observed_traits: []
+    importance: minor
+    global_id: ger_agent_4cb57d9d3054
   - character_uuid: ger_agent_ce5968940af3
     emotional_state: Detached ethical resolve amid implied external pressures
     goals:
@@ -3185,15 +3194,6 @@ events:
     - discreet
     importance: primary
     global_id: ger_agent_ce5968940af3
-  - character_uuid: ger_agent_9460baa658f1
-    emotional_state: festive
-    goals: []
-    what_happened: greets Abbey off-screen with 'Happy birthday'
-    observed_status: greets Abbey off-screen with 'Happy birthday'
-    beliefs: []
-    observed_traits: []
-    importance: minor
-    global_id: ger_agent_9460baa658f1
   object_involvements: []
   location_involvements: []
   organization_involvements:
@@ -3558,20 +3558,7 @@ events:
     - resigned idealist
     importance: primary
     global_id: ger_agent_7854a70e34ea
-  - character_uuid: ger_agent_4b291b1ddcd8
-    emotional_state: ''
-    goals: []
-    what_happened: Sinn Fein leader centrally debated as the figure Toby wants to
-      invite to the White House for legitimacy, whom Marbury insists cannot come due
-      to IRA ties
-    observed_status: Sinn Fein leader centrally debated as the figure Toby wants to
-      invite to the White House for legitimacy, whom Marbury insists cannot come due
-      to IRA ties
-    beliefs: []
-    observed_traits: []
-    importance: secondary
-    global_id: ger_agent_4b291b1ddcd8
-  - character_uuid: ger_agent_9460baa658f1
+  - character_uuid: ger_agent_4cb57d9d3054
     emotional_state: Detached neutrality
     goals:
     - Serve drinks efficiently
@@ -3589,7 +3576,20 @@ events:
     - stoic
     - professional
     importance: primary
-    global_id: ger_agent_9460baa658f1
+    global_id: ger_agent_4cb57d9d3054
+  - character_uuid: ger_agent_4b291b1ddcd8
+    emotional_state: ''
+    goals: []
+    what_happened: Sinn Fein leader centrally debated as the figure Toby wants to
+      invite to the White House for legitimacy, whom Marbury insists cannot come due
+      to IRA ties
+    observed_status: Sinn Fein leader centrally debated as the figure Toby wants to
+      invite to the White House for legitimacy, whom Marbury insists cannot come due
+      to IRA ties
+    beliefs: []
+    observed_traits: []
+    importance: secondary
+    global_id: ger_agent_4b291b1ddcd8
   object_involvements:
   - object_uuid: ger_object_3e2433043a9f
     description_of_involvement: Drinks poured by the bartender serve as props anchoring
@@ -3728,18 +3728,7 @@ events:
     - resilient under pressure
     importance: primary
     global_id: ger_agent_7854a70e34ea
-  - character_uuid: ger_agent_4b291b1ddcd8
-    emotional_state: ''
-    goals: []
-    what_happened: central figure in debate as Sinn Fein/IRA representative proposed
-      for White House invitation
-    observed_status: central figure in debate as Sinn Fein/IRA representative proposed
-      for White House invitation
-    beliefs: []
-    observed_traits: []
-    importance: secondary
-    global_id: ger_agent_4b291b1ddcd8
-  - character_uuid: ger_agent_9460baa658f1
+  - character_uuid: ger_agent_4cb57d9d3054
     emotional_state: Steadily detached amid diplomatic heat
     goals:
     - Serve drinks efficiently
@@ -3757,7 +3746,18 @@ events:
     - calmly professional
     - observant neutral party
     importance: primary
-    global_id: ger_agent_9460baa658f1
+    global_id: ger_agent_4cb57d9d3054
+  - character_uuid: ger_agent_4b291b1ddcd8
+    emotional_state: ''
+    goals: []
+    what_happened: central figure in debate as Sinn Fein/IRA representative proposed
+      for White House invitation
+    observed_status: central figure in debate as Sinn Fein/IRA representative proposed
+      for White House invitation
+    beliefs: []
+    observed_traits: []
+    importance: secondary
+    global_id: ger_agent_4b291b1ddcd8
   object_involvements:
   - object_uuid: ger_object_3e2433043a9f
     description_of_involvement: 'Drinks serve as the perfect narrative pivot prop:
@@ -3907,18 +3907,7 @@ events:
     - resilient under pressure
     importance: primary
     global_id: ger_agent_7854a70e34ea
-  - character_uuid: ger_agent_4b291b1ddcd8
-    emotional_state: ''
-    goals: []
-    what_happened: central figure in debate as Sinn Fein/IRA representative proposed
-      for White House invitation
-    observed_status: central figure in debate as Sinn Fein/IRA representative proposed
-      for White House invitation
-    beliefs: []
-    observed_traits: []
-    importance: secondary
-    global_id: ger_agent_4b291b1ddcd8
-  - character_uuid: ger_agent_9460baa658f1
+  - character_uuid: ger_agent_4cb57d9d3054
     emotional_state: Steadily detached amid diplomatic heat
     goals:
     - Serve drinks efficiently
@@ -3936,7 +3925,18 @@ events:
     - calmly professional
     - observant neutral party
     importance: primary
-    global_id: ger_agent_9460baa658f1
+    global_id: ger_agent_4cb57d9d3054
+  - character_uuid: ger_agent_4b291b1ddcd8
+    emotional_state: ''
+    goals: []
+    what_happened: central figure in debate as Sinn Fein/IRA representative proposed
+      for White House invitation
+    observed_status: central figure in debate as Sinn Fein/IRA representative proposed
+      for White House invitation
+    beliefs: []
+    observed_traits: []
+    importance: secondary
+    global_id: ger_agent_4b291b1ddcd8
   object_involvements:
   - object_uuid: ger_object_3e2433043a9f
     description_of_involvement: 'Drinks serve as the perfect narrative pivot prop:
@@ -4032,6 +4032,262 @@ events:
   - 'AMY: "He''s, you know, he''s adjusting."'
   - 'ABBEY: "Well, let him adjust faster. Jackass."'
   is_flashback: false
+  location_uuid: ger_location_2f2e9fc751a8
+  theme_uuids: []
+  arc_uuids: []
+  participations:
+  - character_uuid: ger_agent_85d27b56ea9b
+    emotional_state: playful
+    goals:
+    - seek refuge from gala chaos
+    - tease Jed via anecdote
+    - urge Amy to push Josh on faster hiring adjustment
+    what_happened: enters red room with wine bottles and glasses, quotes and ribs
+      Jed about his house, describes wine knowledgeably, notices Amy rifling drawer
+      and questions her, discusses Josh's campaign hiring resistance with Amy, invites
+      Donna to stay and have wine
+    observed_status: enters red room with wine bottles and glasses, quotes and ribs
+      Jed about his house, describes wine knowledgeably, notices Amy rifling drawer
+      and questions her, discusses Josh's campaign hiring resistance with Amy, invites
+      Donna to stay and have wine
+    beliefs: []
+    observed_traits: []
+    importance: primary
+    global_id: ger_agent_85d27b56ea9b
+  - character_uuid: ger_agent_54f868bf8265
+    emotional_state: frustrated but humorous
+    goals:
+    - open the wine for the group
+    - participate in respite
+    what_happened: enters red room, attempts to open wine bottle with corkscrew struggling
+      humorously, decants wine as group parties
+    observed_status: enters red room, attempts to open wine bottle with corkscrew
+      struggling humorously, decants wine as group parties
+    beliefs: []
+    observed_traits: []
+    importance: primary
+    global_id: ger_agent_54f868bf8265
+  - character_uuid: ger_agent_c9d41ae93618
+    emotional_state: Frustrated by external pressure on hiring choices
+    goals:
+    - Locate Amy amid gala chaos
+    - Maintain control over campaign staffing decisions
+    what_happened: Josh referenced by Donna as actively searching Red Room for Amy;
+      scrutinized by Abbey and Amy for 'nutty' resistance to her campaign hiring involvement,
+      portrayed as slowly 'adjusting' amid feminist pressure.
+    observed_status: Josh referenced by Donna as actively searching Red Room for Amy;
+      scrutinized by Abbey and Amy for 'nutty' resistance to her campaign hiring involvement,
+      portrayed as slowly 'adjusting' amid feminist pressure.
+    beliefs:
+    - Traditional hiring merits outweigh rushed parity mandates
+    - Personal relationships complicate professional adjustments
+    observed_traits:
+    - resistant
+    - bureaucratic
+    - slow to adapt
+    importance: primary
+    global_id: ger_agent_c9d41ae93618
+  - character_uuid: ger_agent_198649bce78f
+    emotional_state: Fondly mocked in absentia for endearing eccentricities
+    goals:
+    - Impress with erudite house anecdotes (past)
+    - Share wine knowledge (implied)
+    what_happened: Jed invoked through Abbey's vivid quote of his pretentious 'Awasiwi
+      Odinak' house mantra, derided affectionately as a 'jackass' for showy isolation
+      lore; his wine expertise indirectly echoed in Abbey's Zinfandel spiel.
+    observed_status: Jed invoked through Abbey's vivid quote of his pretentious 'Awasiwi
+      Odinak' house mantra, derided affectionately as a 'jackass' for showy isolation
+      lore; his wine expertise indirectly echoed in Abbey's Zinfandel spiel.
+    beliefs:
+    - Seclusion enhances profound intimacy
+    - Cultural phrases elevate personal narratives
+    observed_traits:
+    - pretentious
+    - verbose
+    - romantically quirky
+    importance: primary
+    global_id: ger_agent_198649bce78f
+  - character_uuid: ger_agent_3b01f1d856de
+    emotional_state: Sneaky caution yielding to relaxed camaraderie and sly amusement
+    goals:
+    - Covertly search drawer for notes without detection
+    - Advocate subtly for accelerated gender-balanced campaign hiring via Abbey
+    what_happened: Amy enters Red Room with wine bottle and glasses, covertly gazes
+      at large painting while slowly opening drawer below for notes, denies snooping
+      by claiming need for writing tools, sits with group, defends Josh's hiring adjustment
+      pace, teases Donna's new Canadian status lightly.
+    observed_status: Amy enters Red Room with wine bottle and glasses, covertly gazes
+      at large painting while slowly opening drawer below for notes, denies snooping
+      by claiming need for writing tools, sits with group, defends Josh's hiring adjustment
+      pace, teases Donna's new Canadian status lightly.
+    beliefs:
+    - Josh's resistance to feminist hires is temporary adjustment
+    - White House women banding together amplifies personal and political leverage
+    observed_traits:
+    - cunning
+    - flirtatious
+    - strategic
+    - teasing
+    importance: primary
+    global_id: ger_agent_3b01f1d856de
+  object_involvements:
+  - object_uuid: ger_object_289bfc9e5e42
+    description_of_involvement: Abbey, C.J., and Amy clutch wine bottles tightly upon
+      entering Red Room as escape from gala frenzy, serving as props for communal
+      refreshment and bonding; they anchor the group's respite, sloshing urgently
+      amid banter before uncorking begins.
+    status_before_event: Full, cool, carried from reception hall by women
+    status_after_event: Set down in Red Room, one in process of opening by C.J.
+    global_id: ger_object_289bfc9e5e42
+  - object_uuid: ger_object_f0b372856aba
+    description_of_involvement: Wine glasses accompany bottles into Red Room, positioned
+      for decanting as symbols of intimate party formation; they brim with Zinfandel
+      post-struggle, facilitating sips that seal women's circle amid hiring jabs and
+      citizenship woes.
+    status_before_event: Empty, carried from gala by group
+    status_after_event: Filled with decanted '95 Zinfandel, held during emerging party
+    global_id: ger_object_f0b372856aba
+  - object_uuid: ger_object_8ce5dfc12562
+    description_of_involvement: C.J. wields corkscrew on Zinfandel bottle, fumbling
+      repeatedly with slipping twists that ignite comic relief—'power steering' sarcasm
+      to outright 'sucks' frustration—punctuating tension release and transforming
+      awkwardness into laughter-fueled sisterhood.
+    status_before_event: Available in Red Room, unused
+    status_after_event: Struggled with, cork partially or fully removed for decanting
+    global_id: ger_object_8ce5dfc12562
+  - object_uuid: ger_object_163c079103df
+    description_of_involvement: Towering painting dominates wall above drawer, drawing
+      Amy's lingering gaze as deliberate distraction to mask her furtive rifling below;
+      its elegant grandeur blends into room's sophistication, veiling covert actions
+      amid oblivious chatter.
+    status_before_event: Fixed on Red Room wall, undisturbed
+    status_after_event: Still fixed, indirectly aiding Amy's stealth
+    global_id: ger_object_163c079103df
+  - object_uuid: ger_object_c9a33b792b75
+    description_of_involvement: Amy stealthily opens Red Room drawer beneath painting,
+      probing furtively for notes until spotted by Abbey; it embodies hidden secrets
+      in the opulent space, heightening intrigue before conversation shifts to hiring
+      politics.
+    status_before_event: Closed in Red Room cabinetry
+    status_after_event: Briefly opened and closed, contents unchecked onscreen
+    global_id: ger_object_c9a33b792b75
+  - object_uuid: ger_object_55271c417877
+    description_of_involvement: Abbey praises '95 Old Vine Zinfandel from Hog Cellars
+      as royal vintage ideal for jackass anagrams, while C.J. battles cork to decant
+      it into glasses; it fuels the impromptu party, crimson elixir binding women
+      through sips and shared crises.
+    status_before_event: Corked inside bottles carried into room
+    status_after_event: Decanted into glasses, flowing freely as party ignites
+    global_id: ger_object_55271c417877
+  location_involvements:
+  - location_uuid: ger_location_2f2e9fc751a8
+    description_of_involvement: Donna cites her Minnesota birthplace in Warroad as
+      citizenship anchor, shattered by border shift—core to her upset revelation that
+      draws group empathy and banter, weaving personal identity crisis into respite.
+    observed_atmosphere: Heartland stability turned bureaucratic loss
+    functional_role: Origin point fueling citizenship conflict discussion
+    symbolic_significance: Represents eroded American roots
+    access_restrictions: ''
+    key_environmental_details:
+    - Prairies and frozen lakes
+    - Warroad as border town
+    global_id: ger_location_2f2e9fc751a8
+  - location_uuid: ger_location_6f9beffc7e0c
+    description_of_involvement: Abbey conjures Jed's isolated house 25 miles from
+      civilization, quoting his 'Awasiwi Odinak' phrase to lampoon his pretension,
+      injecting personal marital wit that humanizes the President amid wine-fueled
+      unwind.
+    observed_atmosphere: Evoked as remote, wind-swept seclusion contrasting Red Room
+      intimacy
+    functional_role: anecdotal reference sparking affectionate ribbing
+    symbolic_significance: Embodies Jed's quirky intellectual escapism
+    access_restrictions: ''
+    key_environmental_details:
+    - 25 miles from nearest civilization
+    - Foggy earth roads and distant rooster calls
+    global_id: ger_location_6f9beffc7e0c
+  - location_uuid: ger_location_46c19f8626f5
+    description_of_involvement: Manitoba invoked as INS-redrawn territory swallowing
+      Donna's hometown, stripping her U.S. citizenship and prompting calm-yet-resigned
+      jokes about Queen loyalty and pennies—catalyzing inclusive group dynamics.
+    observed_atmosphere: Vast prairie expanse as identity thief
+    functional_role: Antagonist location in citizenship anecdote
+    symbolic_significance: Bureaucratic border as arbitrary fate
+    access_restrictions: ''
+    key_environmental_details:
+    - Provincial Canadian grip
+    - Border clarification shockwave
+    global_id: ger_location_46c19f8626f5
+  organization_involvements:
+  - organization_uuid: ger_organization_9aeb11cd4ff1
+    description_of_involvement: Secret Service enforces protocol by detaining Donna
+      over INS citizenship flag, compelling her INS consultation before party access;
+      their vigilance underscores internal security amid gala, prompting her Red Room
+      intrusion.
+    active_representation: Via on-site credential checks and access denial
+    power_dynamics: Imposes restrictions on even trusted staff until verified
+    organizational_goals:
+    - Vetting guest lists for presidential protection
+    - Coordinate with INS on identity discrepancies
+    influence_mechanisms:
+    - Immediate physical restraint and ID probes
+    - Protocol-driven escalation to external agencies
+    institutional_impact: Heightens insider threat awareness in Residence events
+    internal_dynamics: ''
+    global_id: ger_organization_9aeb11cd4ff1
+  - organization_uuid: ger_organization_326ee3fa1f1f
+    description_of_involvement: INS detonates Donna's crisis via border clarification
+      relocating Warroad to Manitoba, branding her non-citizen and mandating resolution;
+      its red-tape tyranny surfaces in her explanation, blending humor with real stakes
+      amid wine solace.
+    active_representation: Through referenced bureaucratic decree and file notation
+    power_dynamics: Wields absolute authority over personal citizenship identities
+    organizational_goals:
+    - Enforce precise U.S.-Canada border delineations
+    - Verify and correct citizenship statuses via documentation
+    influence_mechanisms:
+    - Border redefinition policy
+    - Identity file updates triggering access blocks
+    institutional_impact: Exposes vulnerabilities in White House staff credentials
+      during high-security gala
+    internal_dynamics: ''
+    global_id: ger_organization_326ee3fa1f1f
+  - organization_uuid: ger_organization_edcbe276323e
+    description_of_involvement: Hog Cellars' '95 Old Vine Zinfandel elevates the scene
+      as Abbey's regal vintage lore—once King Baudouin's—ties to jackass anagrams,
+      alchemizing tension into sophisticated indulgence that cements the women's bond.
+    active_representation: Through premium wine bottles supplied to White House
+    power_dynamics: Provides elite refreshment without direct presence
+    organizational_goals:
+    - Supply rare vintages to elite clientele
+    - Maintain prestige via royal provenance
+    influence_mechanisms:
+    - Product quality fostering refined social rituals
+    - Historical pedigree enhancing conversational prestige
+    institutional_impact: ''
+    internal_dynamics: ''
+    global_id: ger_organization_edcbe276323e
+  derived_from_beat_uuids: &id012
+  - beat_8ee3d2cac9dd3b47
+  - beat_7cc19baff26d9025
+  - beat_d08c9c2330476c77
+  source_season: 3
+  source_database: westwing.s03
+- fabula_uuid: cand_evt_scene_5fe6a81c6aeddd61_1
+  global_id: null
+  title: 'Red Room Respite: Jed Jabs to Josh''s Hiring Resistance'
+  description: Abbey, C.J., and Amy seek refuge in the elegantly appointed red room
+    with wine bottles and glasses, escaping the gala's chaos. Abbey ribs Jed's pretentious
+    house quote and wine lore, dubbing him a 'jackass,' while C.J. fumbles hilariously
+    with the corkscrew. Spotting Amy covertly rifling a drawer for 'notes,' Abbey
+    pivots sharply to Josh's resistance hiring Amy for the campaign, urging faster
+    adjustment. This witty interlude reveals relational tensions and Amy's feminist
+    push amid broader crises, blending humor with subtextual conflict.
+  episode_uuid: ep_sea_ser_the_west_wing_s03_e15
+  scene_sequence: 14
+  sequence_in_scene: 20
+  key_dialogue: *id011
+  is_flashback: false
   location_uuid: ger_location_6f9beffc7e0c
   theme_uuids: []
   arc_uuids: []
@@ -4180,6 +4436,18 @@ events:
     status_after_event: Decanted into glasses, flowing freely as party ignites
     global_id: ger_object_55271c417877
   location_involvements:
+  - location_uuid: ger_location_2f2e9fc751a8
+    description_of_involvement: Donna cites her Minnesota birthplace in Warroad as
+      citizenship anchor, shattered by border shift—core to her upset revelation that
+      draws group empathy and banter, weaving personal identity crisis into respite.
+    observed_atmosphere: Heartland stability turned bureaucratic loss
+    functional_role: Origin point fueling citizenship conflict discussion
+    symbolic_significance: Represents eroded American roots
+    access_restrictions: ''
+    key_environmental_details:
+    - Prairies and frozen lakes
+    - Warroad as border town
+    global_id: ger_location_2f2e9fc751a8
   - location_uuid: ger_location_6f9beffc7e0c
     description_of_involvement: Abbey conjures Jed's isolated house 25 miles from
       civilization, quoting his 'Awasiwi Odinak' phrase to lampoon his pretension,
@@ -4206,20 +4474,24 @@ events:
     - Provincial Canadian grip
     - Border clarification shockwave
     global_id: ger_location_46c19f8626f5
-  - location_uuid: ger_location_faf0fdbdfce1
-    description_of_involvement: Donna cites her Minnesota birthplace in Warroad as
-      citizenship anchor, shattered by border shift—core to her upset revelation that
-      draws group empathy and banter, weaving personal identity crisis into respite.
-    observed_atmosphere: Heartland stability turned bureaucratic loss
-    functional_role: Origin point fueling citizenship conflict discussion
-    symbolic_significance: Represents eroded American roots
-    access_restrictions: ''
-    key_environmental_details:
-    - Prairies and frozen lakes
-    - Warroad as border town
-    global_id: ger_location_faf0fdbdfce1
   organization_involvements:
-  - organization_uuid: ger_organization_b4db0b1655fd
+  - organization_uuid: ger_organization_9aeb11cd4ff1
+    description_of_involvement: Secret Service enforces protocol by detaining Donna
+      over INS citizenship flag, compelling her INS consultation before party access;
+      their vigilance underscores internal security amid gala, prompting her Red Room
+      intrusion.
+    active_representation: Via on-site credential checks and access denial
+    power_dynamics: Imposes restrictions on even trusted staff until verified
+    organizational_goals:
+    - Vetting guest lists for presidential protection
+    - Coordinate with INS on identity discrepancies
+    influence_mechanisms:
+    - Immediate physical restraint and ID probes
+    - Protocol-driven escalation to external agencies
+    institutional_impact: Heightens insider threat awareness in Residence events
+    internal_dynamics: ''
+    global_id: ger_organization_9aeb11cd4ff1
+  - organization_uuid: ger_organization_326ee3fa1f1f
     description_of_involvement: INS detonates Donna's crisis via border clarification
       relocating Warroad to Manitoba, branding her non-citizen and mandating resolution;
       its red-tape tyranny surfaces in her explanation, blending humor with real stakes
@@ -4235,23 +4507,7 @@ events:
     institutional_impact: Exposes vulnerabilities in White House staff credentials
       during high-security gala
     internal_dynamics: ''
-    global_id: ger_organization_b4db0b1655fd
-  - organization_uuid: ger_organization_a02ef5855109
-    description_of_involvement: Secret Service enforces protocol by detaining Donna
-      over INS citizenship flag, compelling her INS consultation before party access;
-      their vigilance underscores internal security amid gala, prompting her Red Room
-      intrusion.
-    active_representation: Via on-site credential checks and access denial
-    power_dynamics: Imposes restrictions on even trusted staff until verified
-    organizational_goals:
-    - Vetting guest lists for presidential protection
-    - Coordinate with INS on identity discrepancies
-    influence_mechanisms:
-    - Immediate physical restraint and ID probes
-    - Protocol-driven escalation to external agencies
-    institutional_impact: Heightens insider threat awareness in Residence events
-    internal_dynamics: ''
-    global_id: ger_organization_a02ef5855109
+    global_id: ger_organization_326ee3fa1f1f
   - organization_uuid: ger_organization_edcbe276323e
     description_of_involvement: Hog Cellars' '95 Old Vine Zinfandel elevates the scene
       as Abbey's regal vintage lore—once King Baudouin's—ties to jackass anagrams,
@@ -4267,10 +4523,7 @@ events:
     institutional_impact: ''
     internal_dynamics: ''
     global_id: ger_organization_edcbe276323e
-  derived_from_beat_uuids: &id012
-  - beat_8ee3d2cac9dd3b47
-  - beat_7cc19baff26d9025
-  - beat_d08c9c2330476c77
+  derived_from_beat_uuids: *id012
   source_season: 3
   source_database: westwing.s03
 - fabula_uuid: cand_evt_scene_5fe6a81c6aeddd61_1
@@ -4436,6 +4689,18 @@ events:
     status_after_event: Decanted into glasses, flowing freely as party ignites
     global_id: ger_object_55271c417877
   location_involvements:
+  - location_uuid: ger_location_2f2e9fc751a8
+    description_of_involvement: Donna cites her Minnesota birthplace in Warroad as
+      citizenship anchor, shattered by border shift—core to her upset revelation that
+      draws group empathy and banter, weaving personal identity crisis into respite.
+    observed_atmosphere: Heartland stability turned bureaucratic loss
+    functional_role: Origin point fueling citizenship conflict discussion
+    symbolic_significance: Represents eroded American roots
+    access_restrictions: ''
+    key_environmental_details:
+    - Prairies and frozen lakes
+    - Warroad as border town
+    global_id: ger_location_2f2e9fc751a8
   - location_uuid: ger_location_6f9beffc7e0c
     description_of_involvement: Abbey conjures Jed's isolated house 25 miles from
       civilization, quoting his 'Awasiwi Odinak' phrase to lampoon his pretension,
@@ -4462,20 +4727,24 @@ events:
     - Provincial Canadian grip
     - Border clarification shockwave
     global_id: ger_location_46c19f8626f5
-  - location_uuid: ger_location_faf0fdbdfce1
-    description_of_involvement: Donna cites her Minnesota birthplace in Warroad as
-      citizenship anchor, shattered by border shift—core to her upset revelation that
-      draws group empathy and banter, weaving personal identity crisis into respite.
-    observed_atmosphere: Heartland stability turned bureaucratic loss
-    functional_role: Origin point fueling citizenship conflict discussion
-    symbolic_significance: Represents eroded American roots
-    access_restrictions: ''
-    key_environmental_details:
-    - Prairies and frozen lakes
-    - Warroad as border town
-    global_id: ger_location_faf0fdbdfce1
   organization_involvements:
-  - organization_uuid: ger_organization_b4db0b1655fd
+  - organization_uuid: ger_organization_9aeb11cd4ff1
+    description_of_involvement: Secret Service enforces protocol by detaining Donna
+      over INS citizenship flag, compelling her INS consultation before party access;
+      their vigilance underscores internal security amid gala, prompting her Red Room
+      intrusion.
+    active_representation: Via on-site credential checks and access denial
+    power_dynamics: Imposes restrictions on even trusted staff until verified
+    organizational_goals:
+    - Vetting guest lists for presidential protection
+    - Coordinate with INS on identity discrepancies
+    influence_mechanisms:
+    - Immediate physical restraint and ID probes
+    - Protocol-driven escalation to external agencies
+    institutional_impact: Heightens insider threat awareness in Residence events
+    internal_dynamics: ''
+    global_id: ger_organization_9aeb11cd4ff1
+  - organization_uuid: ger_organization_326ee3fa1f1f
     description_of_involvement: INS detonates Donna's crisis via border clarification
       relocating Warroad to Manitoba, branding her non-citizen and mandating resolution;
       its red-tape tyranny surfaces in her explanation, blending humor with real stakes
@@ -4491,276 +4760,7 @@ events:
     institutional_impact: Exposes vulnerabilities in White House staff credentials
       during high-security gala
     internal_dynamics: ''
-    global_id: ger_organization_b4db0b1655fd
-  - organization_uuid: ger_organization_a02ef5855109
-    description_of_involvement: Secret Service enforces protocol by detaining Donna
-      over INS citizenship flag, compelling her INS consultation before party access;
-      their vigilance underscores internal security amid gala, prompting her Red Room
-      intrusion.
-    active_representation: Via on-site credential checks and access denial
-    power_dynamics: Imposes restrictions on even trusted staff until verified
-    organizational_goals:
-    - Vetting guest lists for presidential protection
-    - Coordinate with INS on identity discrepancies
-    influence_mechanisms:
-    - Immediate physical restraint and ID probes
-    - Protocol-driven escalation to external agencies
-    institutional_impact: Heightens insider threat awareness in Residence events
-    internal_dynamics: ''
-    global_id: ger_organization_a02ef5855109
-  - organization_uuid: ger_organization_edcbe276323e
-    description_of_involvement: Hog Cellars' '95 Old Vine Zinfandel elevates the scene
-      as Abbey's regal vintage lore—once King Baudouin's—ties to jackass anagrams,
-      alchemizing tension into sophisticated indulgence that cements the women's bond.
-    active_representation: Through premium wine bottles supplied to White House
-    power_dynamics: Provides elite refreshment without direct presence
-    organizational_goals:
-    - Supply rare vintages to elite clientele
-    - Maintain prestige via royal provenance
-    influence_mechanisms:
-    - Product quality fostering refined social rituals
-    - Historical pedigree enhancing conversational prestige
-    institutional_impact: ''
-    internal_dynamics: ''
-    global_id: ger_organization_edcbe276323e
-  derived_from_beat_uuids: *id012
-  source_season: 3
-  source_database: westwing.s03
-- fabula_uuid: cand_evt_scene_5fe6a81c6aeddd61_1
-  global_id: null
-  title: 'Red Room Respite: Jed Jabs to Josh''s Hiring Resistance'
-  description: Abbey, C.J., and Amy seek refuge in the elegantly appointed red room
-    with wine bottles and glasses, escaping the gala's chaos. Abbey ribs Jed's pretentious
-    house quote and wine lore, dubbing him a 'jackass,' while C.J. fumbles hilariously
-    with the corkscrew. Spotting Amy covertly rifling a drawer for 'notes,' Abbey
-    pivots sharply to Josh's resistance hiring Amy for the campaign, urging faster
-    adjustment. This witty interlude reveals relational tensions and Amy's feminist
-    push amid broader crises, blending humor with subtextual conflict.
-  episode_uuid: ep_sea_ser_the_west_wing_s03_e15
-  scene_sequence: 14
-  sequence_in_scene: 20
-  key_dialogue: *id011
-  is_flashback: false
-  location_uuid: ger_location_faf0fdbdfce1
-  theme_uuids: []
-  arc_uuids: []
-  participations:
-  - character_uuid: ger_agent_85d27b56ea9b
-    emotional_state: playful
-    goals:
-    - seek refuge from gala chaos
-    - tease Jed via anecdote
-    - urge Amy to push Josh on faster hiring adjustment
-    what_happened: enters red room with wine bottles and glasses, quotes and ribs
-      Jed about his house, describes wine knowledgeably, notices Amy rifling drawer
-      and questions her, discusses Josh's campaign hiring resistance with Amy, invites
-      Donna to stay and have wine
-    observed_status: enters red room with wine bottles and glasses, quotes and ribs
-      Jed about his house, describes wine knowledgeably, notices Amy rifling drawer
-      and questions her, discusses Josh's campaign hiring resistance with Amy, invites
-      Donna to stay and have wine
-    beliefs: []
-    observed_traits: []
-    importance: primary
-    global_id: ger_agent_85d27b56ea9b
-  - character_uuid: ger_agent_54f868bf8265
-    emotional_state: frustrated but humorous
-    goals:
-    - open the wine for the group
-    - participate in respite
-    what_happened: enters red room, attempts to open wine bottle with corkscrew struggling
-      humorously, decants wine as group parties
-    observed_status: enters red room, attempts to open wine bottle with corkscrew
-      struggling humorously, decants wine as group parties
-    beliefs: []
-    observed_traits: []
-    importance: primary
-    global_id: ger_agent_54f868bf8265
-  - character_uuid: ger_agent_c9d41ae93618
-    emotional_state: Frustrated by external pressure on hiring choices
-    goals:
-    - Locate Amy amid gala chaos
-    - Maintain control over campaign staffing decisions
-    what_happened: Josh referenced by Donna as actively searching Red Room for Amy;
-      scrutinized by Abbey and Amy for 'nutty' resistance to her campaign hiring involvement,
-      portrayed as slowly 'adjusting' amid feminist pressure.
-    observed_status: Josh referenced by Donna as actively searching Red Room for Amy;
-      scrutinized by Abbey and Amy for 'nutty' resistance to her campaign hiring involvement,
-      portrayed as slowly 'adjusting' amid feminist pressure.
-    beliefs:
-    - Traditional hiring merits outweigh rushed parity mandates
-    - Personal relationships complicate professional adjustments
-    observed_traits:
-    - resistant
-    - bureaucratic
-    - slow to adapt
-    importance: primary
-    global_id: ger_agent_c9d41ae93618
-  - character_uuid: ger_agent_198649bce78f
-    emotional_state: Fondly mocked in absentia for endearing eccentricities
-    goals:
-    - Impress with erudite house anecdotes (past)
-    - Share wine knowledge (implied)
-    what_happened: Jed invoked through Abbey's vivid quote of his pretentious 'Awasiwi
-      Odinak' house mantra, derided affectionately as a 'jackass' for showy isolation
-      lore; his wine expertise indirectly echoed in Abbey's Zinfandel spiel.
-    observed_status: Jed invoked through Abbey's vivid quote of his pretentious 'Awasiwi
-      Odinak' house mantra, derided affectionately as a 'jackass' for showy isolation
-      lore; his wine expertise indirectly echoed in Abbey's Zinfandel spiel.
-    beliefs:
-    - Seclusion enhances profound intimacy
-    - Cultural phrases elevate personal narratives
-    observed_traits:
-    - pretentious
-    - verbose
-    - romantically quirky
-    importance: primary
-    global_id: ger_agent_198649bce78f
-  - character_uuid: ger_agent_3b01f1d856de
-    emotional_state: Sneaky caution yielding to relaxed camaraderie and sly amusement
-    goals:
-    - Covertly search drawer for notes without detection
-    - Advocate subtly for accelerated gender-balanced campaign hiring via Abbey
-    what_happened: Amy enters Red Room with wine bottle and glasses, covertly gazes
-      at large painting while slowly opening drawer below for notes, denies snooping
-      by claiming need for writing tools, sits with group, defends Josh's hiring adjustment
-      pace, teases Donna's new Canadian status lightly.
-    observed_status: Amy enters Red Room with wine bottle and glasses, covertly gazes
-      at large painting while slowly opening drawer below for notes, denies snooping
-      by claiming need for writing tools, sits with group, defends Josh's hiring adjustment
-      pace, teases Donna's new Canadian status lightly.
-    beliefs:
-    - Josh's resistance to feminist hires is temporary adjustment
-    - White House women banding together amplifies personal and political leverage
-    observed_traits:
-    - cunning
-    - flirtatious
-    - strategic
-    - teasing
-    importance: primary
-    global_id: ger_agent_3b01f1d856de
-  object_involvements:
-  - object_uuid: ger_object_289bfc9e5e42
-    description_of_involvement: Abbey, C.J., and Amy clutch wine bottles tightly upon
-      entering Red Room as escape from gala frenzy, serving as props for communal
-      refreshment and bonding; they anchor the group's respite, sloshing urgently
-      amid banter before uncorking begins.
-    status_before_event: Full, cool, carried from reception hall by women
-    status_after_event: Set down in Red Room, one in process of opening by C.J.
-    global_id: ger_object_289bfc9e5e42
-  - object_uuid: ger_object_f0b372856aba
-    description_of_involvement: Wine glasses accompany bottles into Red Room, positioned
-      for decanting as symbols of intimate party formation; they brim with Zinfandel
-      post-struggle, facilitating sips that seal women's circle amid hiring jabs and
-      citizenship woes.
-    status_before_event: Empty, carried from gala by group
-    status_after_event: Filled with decanted '95 Zinfandel, held during emerging party
-    global_id: ger_object_f0b372856aba
-  - object_uuid: ger_object_8ce5dfc12562
-    description_of_involvement: C.J. wields corkscrew on Zinfandel bottle, fumbling
-      repeatedly with slipping twists that ignite comic relief—'power steering' sarcasm
-      to outright 'sucks' frustration—punctuating tension release and transforming
-      awkwardness into laughter-fueled sisterhood.
-    status_before_event: Available in Red Room, unused
-    status_after_event: Struggled with, cork partially or fully removed for decanting
-    global_id: ger_object_8ce5dfc12562
-  - object_uuid: ger_object_163c079103df
-    description_of_involvement: Towering painting dominates wall above drawer, drawing
-      Amy's lingering gaze as deliberate distraction to mask her furtive rifling below;
-      its elegant grandeur blends into room's sophistication, veiling covert actions
-      amid oblivious chatter.
-    status_before_event: Fixed on Red Room wall, undisturbed
-    status_after_event: Still fixed, indirectly aiding Amy's stealth
-    global_id: ger_object_163c079103df
-  - object_uuid: ger_object_c9a33b792b75
-    description_of_involvement: Amy stealthily opens Red Room drawer beneath painting,
-      probing furtively for notes until spotted by Abbey; it embodies hidden secrets
-      in the opulent space, heightening intrigue before conversation shifts to hiring
-      politics.
-    status_before_event: Closed in Red Room cabinetry
-    status_after_event: Briefly opened and closed, contents unchecked onscreen
-    global_id: ger_object_c9a33b792b75
-  - object_uuid: ger_object_55271c417877
-    description_of_involvement: Abbey praises '95 Old Vine Zinfandel from Hog Cellars
-      as royal vintage ideal for jackass anagrams, while C.J. battles cork to decant
-      it into glasses; it fuels the impromptu party, crimson elixir binding women
-      through sips and shared crises.
-    status_before_event: Corked inside bottles carried into room
-    status_after_event: Decanted into glasses, flowing freely as party ignites
-    global_id: ger_object_55271c417877
-  location_involvements:
-  - location_uuid: ger_location_6f9beffc7e0c
-    description_of_involvement: Abbey conjures Jed's isolated house 25 miles from
-      civilization, quoting his 'Awasiwi Odinak' phrase to lampoon his pretension,
-      injecting personal marital wit that humanizes the President amid wine-fueled
-      unwind.
-    observed_atmosphere: Evoked as remote, wind-swept seclusion contrasting Red Room
-      intimacy
-    functional_role: anecdotal reference sparking affectionate ribbing
-    symbolic_significance: Embodies Jed's quirky intellectual escapism
-    access_restrictions: ''
-    key_environmental_details:
-    - 25 miles from nearest civilization
-    - Foggy earth roads and distant rooster calls
-    global_id: ger_location_6f9beffc7e0c
-  - location_uuid: ger_location_46c19f8626f5
-    description_of_involvement: Manitoba invoked as INS-redrawn territory swallowing
-      Donna's hometown, stripping her U.S. citizenship and prompting calm-yet-resigned
-      jokes about Queen loyalty and pennies—catalyzing inclusive group dynamics.
-    observed_atmosphere: Vast prairie expanse as identity thief
-    functional_role: Antagonist location in citizenship anecdote
-    symbolic_significance: Bureaucratic border as arbitrary fate
-    access_restrictions: ''
-    key_environmental_details:
-    - Provincial Canadian grip
-    - Border clarification shockwave
-    global_id: ger_location_46c19f8626f5
-  - location_uuid: ger_location_faf0fdbdfce1
-    description_of_involvement: Donna cites her Minnesota birthplace in Warroad as
-      citizenship anchor, shattered by border shift—core to her upset revelation that
-      draws group empathy and banter, weaving personal identity crisis into respite.
-    observed_atmosphere: Heartland stability turned bureaucratic loss
-    functional_role: Origin point fueling citizenship conflict discussion
-    symbolic_significance: Represents eroded American roots
-    access_restrictions: ''
-    key_environmental_details:
-    - Prairies and frozen lakes
-    - Warroad as border town
-    global_id: ger_location_faf0fdbdfce1
-  organization_involvements:
-  - organization_uuid: ger_organization_b4db0b1655fd
-    description_of_involvement: INS detonates Donna's crisis via border clarification
-      relocating Warroad to Manitoba, branding her non-citizen and mandating resolution;
-      its red-tape tyranny surfaces in her explanation, blending humor with real stakes
-      amid wine solace.
-    active_representation: Through referenced bureaucratic decree and file notation
-    power_dynamics: Wields absolute authority over personal citizenship identities
-    organizational_goals:
-    - Enforce precise U.S.-Canada border delineations
-    - Verify and correct citizenship statuses via documentation
-    influence_mechanisms:
-    - Border redefinition policy
-    - Identity file updates triggering access blocks
-    institutional_impact: Exposes vulnerabilities in White House staff credentials
-      during high-security gala
-    internal_dynamics: ''
-    global_id: ger_organization_b4db0b1655fd
-  - organization_uuid: ger_organization_a02ef5855109
-    description_of_involvement: Secret Service enforces protocol by detaining Donna
-      over INS citizenship flag, compelling her INS consultation before party access;
-      their vigilance underscores internal security amid gala, prompting her Red Room
-      intrusion.
-    active_representation: Via on-site credential checks and access denial
-    power_dynamics: Imposes restrictions on even trusted staff until verified
-    organizational_goals:
-    - Vetting guest lists for presidential protection
-    - Coordinate with INS on identity discrepancies
-    influence_mechanisms:
-    - Immediate physical restraint and ID probes
-    - Protocol-driven escalation to external agencies
-    institutional_impact: Heightens insider threat awareness in Residence events
-    internal_dynamics: ''
-    global_id: ger_organization_a02ef5855109
+    global_id: ger_organization_326ee3fa1f1f
   - organization_uuid: ger_organization_edcbe276323e
     description_of_involvement: Hog Cellars' '95 Old Vine Zinfandel elevates the scene
       as Abbey's regal vintage lore—once King Baudouin's—ties to jackass anagrams,
@@ -4800,6 +4800,193 @@ events:
     "Missed it by four miles."'
   - 'ABBEY: "Why don''t you stay and have some wine with us?" DONNA: "Really?"'
   is_flashback: false
+  location_uuid: ger_location_2f2e9fc751a8
+  theme_uuids:
+  - ger_theme_3e1be137fc9f
+  arc_uuids: []
+  participations:
+  - character_uuid: ger_agent_54f868bf8265
+    emotional_state: amused and surprised
+    goals:
+    - open the wine to facilitate the gathering
+    what_happened: walks in with bottles and glasses, attempts to open wine bottle
+      with corkscrew and struggles, reacts with surprise to Donna's citizenship revelation,
+      decants the wine as party forms
+    observed_status: walks in with bottles and glasses, attempts to open wine bottle
+      with corkscrew and struggles, reacts with surprise to Donna's citizenship revelation,
+      decants the wine as party forms
+    beliefs: []
+    observed_traits: []
+    importance: secondary
+    global_id: ger_agent_54f868bf8265
+  - character_uuid: ger_agent_c9d41ae93618
+    emotional_state: Implied frustration from afar
+    goals:
+    - Locate Amy for unresolved business
+    - Keep staff aligned during turmoil
+    what_happened: Josh is referenced indirectly as the one dispatching Donna to locate
+      Amy, underscoring his ongoing staff management amid broader crises, pulling
+      personal errands into the night's chaos without physical presence.
+    observed_status: Josh is referenced indirectly as the one dispatching Donna to
+      locate Amy, underscoring his ongoing staff management amid broader crises, pulling
+      personal errands into the night's chaos without physical presence.
+    beliefs:
+    - Delegation maintains control in chaos
+    - Personal crises must yield to duty
+    observed_traits:
+    - task-oriented
+    - protective of team
+    importance: primary
+    global_id: ger_agent_c9d41ae93618
+  - character_uuid: ger_agent_198649bce78f
+    emotional_state: Fondly ribbed in absentia
+    goals:
+    - Impart personal lore for intimacy
+    what_happened: Jed is invoked through Abbey's earlier recounting of his 'Awasiwi
+      Odinak' phrase about their secluded house, framing the room's respite as an
+      echo of his quirky romanticism, though absent physically.
+    observed_status: Jed is invoked through Abbey's earlier recounting of his 'Awasiwi
+      Odinak' phrase about their secluded house, framing the room's respite as an
+      echo of his quirky romanticism, though absent physically.
+    beliefs:
+    - Seclusion fosters true connection
+    - Wit masks deeper vulnerabilities
+    observed_traits:
+    - verbose
+    - romantically pretentious
+    importance: primary
+    global_id: ger_agent_198649bce78f
+  - character_uuid: ger_agent_3b01f1d856de
+    emotional_state: Amused curiosity laced with light-hearted schadenfreude
+    goals:
+    - Lighten the mood with teasing humor
+    - Integrate Donna into the group's dynamic
+    what_happened: Amy sits with the group, observes Donna's entrance and revelation
+      calmly, teases her about being Canadian and feeling funnier, injecting playful
+      banter that helps normalize the crisis and build group rapport during the unfolding
+      party.
+    observed_status: Amy sits with the group, observes Donna's entrance and revelation
+      calmly, teases her about being Canadian and feeling funnier, injecting playful
+      banter that helps normalize the crisis and build group rapport during the unfolding
+      party.
+    beliefs:
+    - Humor disarms personal crises
+    - Shared vulnerability strengthens alliances
+    observed_traits:
+    - playful
+    - teasing
+    - observant
+    importance: primary
+    global_id: ger_agent_3b01f1d856de
+  object_involvements:
+  - object_uuid: ger_object_289bfc9e5e42
+    description_of_involvement: Abbey, Amy, and C.J.'s wine bottles serve as props
+      anchoring the informal gathering, clutched earlier upon entry and now central
+      as the party forms post-Donna's inclusion, symbolizing liquid escape and female
+      solidarity amid revelations.
+    status_before_event: Carried into room by women, unopened on table
+    status_after_event: In process of decanting as group settles
+    global_id: ger_object_289bfc9e5e42
+  - object_uuid: ger_object_f0b372856aba
+    description_of_involvement: Wine glasses are prepared for the expanding circle
+      including Donna, channeling the shift from tension to party as C.J. decants,
+      embodying harmonious toasts that paper over citizenship shock with shared indulgence.
+    status_before_event: Brought into room, empty and ready
+    status_after_event: Filled with decanted Zinfandel, in hands of party
+    global_id: ger_object_f0b372856aba
+  - object_uuid: ger_object_8ce5dfc12562
+    description_of_involvement: C.J.'s corkscrew, previously fumbled, continues as
+      comic foil during Donna's revelation; its struggles punctuate the dialogue,
+      culminating in successful decanting that seals the invitation and party vibe.
+    status_before_event: In C.J.'s hand, partially engaged with cork
+    status_after_event: Successfully used, wine decanted
+    global_id: ger_object_8ce5dfc12562
+  - object_uuid: ger_object_55271c417877
+    description_of_involvement: The '95 Old Vine Zinfandel lubricates the emotional
+      pivot, decanted post-revelation to welcome Donna, its royal pedigree (King Baudouin)
+      contrasting mundane crisis, facilitating humor and bond-forming sips.
+    status_before_event: Unopened in bottles
+    status_after_event: Decanted into glasses for consumption
+    global_id: ger_object_55271c417877
+  location_involvements:
+  - location_uuid: ger_location_2f2e9fc751a8
+    description_of_involvement: Minnesota is cited as Donna's supposed birthplace
+      in Warroad, its heartland solidity invoked to heighten irony of border shift,
+      grounding her identity crisis in geographic betrayal during the intimate reveal.
+    observed_atmosphere: Evoked as lost anchor of Americana
+    functional_role: Origin point fueling citizenship debate
+    symbolic_significance: Represents revoked belonging
+    access_restrictions: ''
+    key_environmental_details:
+    - Prairies and frozen lakes implied
+    - Midwestern soil turned foreign
+    global_id: ger_location_2f2e9fc751a8
+  - location_uuid: ger_location_46c19f8626f5
+    description_of_involvement: Manitoba emerges as the villainous thief of Donna's
+      citizenship via INS border clarification, its prairie expanse haunting her humor
+      about pennies and Queen loyalty, amplifying bureaucratic absurdity in the room.
+    observed_atmosphere: Foreign and invasive shadow
+    functional_role: Catalyst for status revelation
+    symbolic_significance: Embodies arbitrary exclusion
+    access_restrictions: ''
+    key_environmental_details:
+    - Vast provincial grip
+    - Border redrawn four miles over
+    global_id: ger_location_46c19f8626f5
+  organization_involvements:
+  - organization_uuid: ger_organization_9aeb11cd4ff1
+    description_of_involvement: Secret Service intervenes due to Donna's flagged status,
+      detaining her for INS consultation and barring party access until resolved,
+      their protocol injecting external authority into the private respite and heightening
+      stakes.
+    active_representation: Via institutional protocol and access enforcement
+    power_dynamics: Exercising security authority over White House staff
+    organizational_goals:
+    - Enforce guest vetting and credential checks
+    - Mitigate internal access risks
+    influence_mechanisms:
+    - Physical restraint and ID verification
+    - Coordination with INS on identity issues
+    institutional_impact: Highlights tensions between presidential intimacy and security
+      rigidity
+    internal_dynamics: ''
+    global_id: ger_organization_9aeb11cd4ff1
+  - organization_uuid: ger_organization_326ee3fa1f1f
+    description_of_involvement: INS's border clarification revokes Donna's citizenship
+      by reclassifying Warroad into Manitoba, triggering Secret Service action and
+      her disclosure, embodying bureaucratic overreach that personalizes national
+      policy absurdities.
+    active_representation: Through clarified border policy and file notations
+    power_dynamics: Imposing federal redefinition on individual identity
+    organizational_goals:
+    - Maintain accurate citizenship records
+    - Enforce border integrity via updates
+    influence_mechanisms:
+    - Policy decrees altering geography
+    - Data updates triggering security flags
+    institutional_impact: Exposes vulnerability of citizenship to red tape
+    internal_dynamics: ''
+    global_id: ger_organization_326ee3fa1f1f
+  derived_from_beat_uuids: &id014
+  - beat_085c54946ccba62f
+  - beat_8ae51245e02f6970
+  source_season: 3
+  source_database: westwing.s03
+- fabula_uuid: cand_evt_scene_5fe6a81c6aeddd61_2
+  global_id: null
+  title: Donna's Citizenship Bombshell Lightens Chaos with Humor
+  description: Donna wanders into the women's private gathering, revealing her shocking
+    non-citizenship status—born just across the newly clarified U.S.-Canada border—forcing
+    Secret Service intervention amid the night's crises. Her self-deprecating humor
+    about Canadian pennies and the Queen diffuses tension, prompting Abbey to invite
+    her to join the wine session. This revelation amplifies staff turmoil while forging
+    unexpected camaraderie, serving as a brief emotional respite and setup for deeper
+    vulnerabilities.
+  episode_uuid: ep_sea_ser_the_west_wing_s03_e15
+  scene_sequence: 14
+  sequence_in_scene: 21
+  key_dialogue: *id013
+  is_flashback: false
   location_uuid: ger_location_46c19f8626f5
   theme_uuids:
   - ger_theme_3e1be137fc9f
@@ -4909,6 +5096,18 @@ events:
     status_after_event: Decanted into glasses for consumption
     global_id: ger_object_55271c417877
   location_involvements:
+  - location_uuid: ger_location_2f2e9fc751a8
+    description_of_involvement: Minnesota is cited as Donna's supposed birthplace
+      in Warroad, its heartland solidity invoked to heighten irony of border shift,
+      grounding her identity crisis in geographic betrayal during the intimate reveal.
+    observed_atmosphere: Evoked as lost anchor of Americana
+    functional_role: Origin point fueling citizenship debate
+    symbolic_significance: Represents revoked belonging
+    access_restrictions: ''
+    key_environmental_details:
+    - Prairies and frozen lakes implied
+    - Midwestern soil turned foreign
+    global_id: ger_location_2f2e9fc751a8
   - location_uuid: ger_location_46c19f8626f5
     description_of_involvement: Manitoba emerges as the villainous thief of Donna's
       citizenship via INS border clarification, its prairie expanse haunting her humor
@@ -4921,36 +5120,8 @@ events:
     - Vast provincial grip
     - Border redrawn four miles over
     global_id: ger_location_46c19f8626f5
-  - location_uuid: ger_location_faf0fdbdfce1
-    description_of_involvement: Minnesota is cited as Donna's supposed birthplace
-      in Warroad, its heartland solidity invoked to heighten irony of border shift,
-      grounding her identity crisis in geographic betrayal during the intimate reveal.
-    observed_atmosphere: Evoked as lost anchor of Americana
-    functional_role: Origin point fueling citizenship debate
-    symbolic_significance: Represents revoked belonging
-    access_restrictions: ''
-    key_environmental_details:
-    - Prairies and frozen lakes implied
-    - Midwestern soil turned foreign
-    global_id: ger_location_faf0fdbdfce1
   organization_involvements:
-  - organization_uuid: ger_organization_b4db0b1655fd
-    description_of_involvement: INS's border clarification revokes Donna's citizenship
-      by reclassifying Warroad into Manitoba, triggering Secret Service action and
-      her disclosure, embodying bureaucratic overreach that personalizes national
-      policy absurdities.
-    active_representation: Through clarified border policy and file notations
-    power_dynamics: Imposing federal redefinition on individual identity
-    organizational_goals:
-    - Maintain accurate citizenship records
-    - Enforce border integrity via updates
-    influence_mechanisms:
-    - Policy decrees altering geography
-    - Data updates triggering security flags
-    institutional_impact: Exposes vulnerability of citizenship to red tape
-    internal_dynamics: ''
-    global_id: ger_organization_b4db0b1655fd
-  - organization_uuid: ger_organization_a02ef5855109
+  - organization_uuid: ger_organization_9aeb11cd4ff1
     description_of_involvement: Secret Service intervenes due to Donna's flagged status,
       detaining her for INS consultation and barring party access until resolved,
       their protocol injecting external authority into the private respite and heightening
@@ -4966,162 +5137,8 @@ events:
     institutional_impact: Highlights tensions between presidential intimacy and security
       rigidity
     internal_dynamics: ''
-    global_id: ger_organization_a02ef5855109
-  derived_from_beat_uuids: &id014
-  - beat_085c54946ccba62f
-  - beat_8ae51245e02f6970
-  source_season: 3
-  source_database: westwing.s03
-- fabula_uuid: cand_evt_scene_5fe6a81c6aeddd61_2
-  global_id: null
-  title: Donna's Citizenship Bombshell Lightens Chaos with Humor
-  description: Donna wanders into the women's private gathering, revealing her shocking
-    non-citizenship status—born just across the newly clarified U.S.-Canada border—forcing
-    Secret Service intervention amid the night's crises. Her self-deprecating humor
-    about Canadian pennies and the Queen diffuses tension, prompting Abbey to invite
-    her to join the wine session. This revelation amplifies staff turmoil while forging
-    unexpected camaraderie, serving as a brief emotional respite and setup for deeper
-    vulnerabilities.
-  episode_uuid: ep_sea_ser_the_west_wing_s03_e15
-  scene_sequence: 14
-  sequence_in_scene: 21
-  key_dialogue: *id013
-  is_flashback: false
-  location_uuid: ger_location_faf0fdbdfce1
-  theme_uuids:
-  - ger_theme_3e1be137fc9f
-  arc_uuids: []
-  participations:
-  - character_uuid: ger_agent_54f868bf8265
-    emotional_state: amused and surprised
-    goals:
-    - open the wine to facilitate the gathering
-    what_happened: walks in with bottles and glasses, attempts to open wine bottle
-      with corkscrew and struggles, reacts with surprise to Donna's citizenship revelation,
-      decants the wine as party forms
-    observed_status: walks in with bottles and glasses, attempts to open wine bottle
-      with corkscrew and struggles, reacts with surprise to Donna's citizenship revelation,
-      decants the wine as party forms
-    beliefs: []
-    observed_traits: []
-    importance: secondary
-    global_id: ger_agent_54f868bf8265
-  - character_uuid: ger_agent_c9d41ae93618
-    emotional_state: Implied frustration from afar
-    goals:
-    - Locate Amy for unresolved business
-    - Keep staff aligned during turmoil
-    what_happened: Josh is referenced indirectly as the one dispatching Donna to locate
-      Amy, underscoring his ongoing staff management amid broader crises, pulling
-      personal errands into the night's chaos without physical presence.
-    observed_status: Josh is referenced indirectly as the one dispatching Donna to
-      locate Amy, underscoring his ongoing staff management amid broader crises, pulling
-      personal errands into the night's chaos without physical presence.
-    beliefs:
-    - Delegation maintains control in chaos
-    - Personal crises must yield to duty
-    observed_traits:
-    - task-oriented
-    - protective of team
-    importance: primary
-    global_id: ger_agent_c9d41ae93618
-  - character_uuid: ger_agent_198649bce78f
-    emotional_state: Fondly ribbed in absentia
-    goals:
-    - Impart personal lore for intimacy
-    what_happened: Jed is invoked through Abbey's earlier recounting of his 'Awasiwi
-      Odinak' phrase about their secluded house, framing the room's respite as an
-      echo of his quirky romanticism, though absent physically.
-    observed_status: Jed is invoked through Abbey's earlier recounting of his 'Awasiwi
-      Odinak' phrase about their secluded house, framing the room's respite as an
-      echo of his quirky romanticism, though absent physically.
-    beliefs:
-    - Seclusion fosters true connection
-    - Wit masks deeper vulnerabilities
-    observed_traits:
-    - verbose
-    - romantically pretentious
-    importance: primary
-    global_id: ger_agent_198649bce78f
-  - character_uuid: ger_agent_3b01f1d856de
-    emotional_state: Amused curiosity laced with light-hearted schadenfreude
-    goals:
-    - Lighten the mood with teasing humor
-    - Integrate Donna into the group's dynamic
-    what_happened: Amy sits with the group, observes Donna's entrance and revelation
-      calmly, teases her about being Canadian and feeling funnier, injecting playful
-      banter that helps normalize the crisis and build group rapport during the unfolding
-      party.
-    observed_status: Amy sits with the group, observes Donna's entrance and revelation
-      calmly, teases her about being Canadian and feeling funnier, injecting playful
-      banter that helps normalize the crisis and build group rapport during the unfolding
-      party.
-    beliefs:
-    - Humor disarms personal crises
-    - Shared vulnerability strengthens alliances
-    observed_traits:
-    - playful
-    - teasing
-    - observant
-    importance: primary
-    global_id: ger_agent_3b01f1d856de
-  object_involvements:
-  - object_uuid: ger_object_289bfc9e5e42
-    description_of_involvement: Abbey, Amy, and C.J.'s wine bottles serve as props
-      anchoring the informal gathering, clutched earlier upon entry and now central
-      as the party forms post-Donna's inclusion, symbolizing liquid escape and female
-      solidarity amid revelations.
-    status_before_event: Carried into room by women, unopened on table
-    status_after_event: In process of decanting as group settles
-    global_id: ger_object_289bfc9e5e42
-  - object_uuid: ger_object_f0b372856aba
-    description_of_involvement: Wine glasses are prepared for the expanding circle
-      including Donna, channeling the shift from tension to party as C.J. decants,
-      embodying harmonious toasts that paper over citizenship shock with shared indulgence.
-    status_before_event: Brought into room, empty and ready
-    status_after_event: Filled with decanted Zinfandel, in hands of party
-    global_id: ger_object_f0b372856aba
-  - object_uuid: ger_object_8ce5dfc12562
-    description_of_involvement: C.J.'s corkscrew, previously fumbled, continues as
-      comic foil during Donna's revelation; its struggles punctuate the dialogue,
-      culminating in successful decanting that seals the invitation and party vibe.
-    status_before_event: In C.J.'s hand, partially engaged with cork
-    status_after_event: Successfully used, wine decanted
-    global_id: ger_object_8ce5dfc12562
-  - object_uuid: ger_object_55271c417877
-    description_of_involvement: The '95 Old Vine Zinfandel lubricates the emotional
-      pivot, decanted post-revelation to welcome Donna, its royal pedigree (King Baudouin)
-      contrasting mundane crisis, facilitating humor and bond-forming sips.
-    status_before_event: Unopened in bottles
-    status_after_event: Decanted into glasses for consumption
-    global_id: ger_object_55271c417877
-  location_involvements:
-  - location_uuid: ger_location_46c19f8626f5
-    description_of_involvement: Manitoba emerges as the villainous thief of Donna's
-      citizenship via INS border clarification, its prairie expanse haunting her humor
-      about pennies and Queen loyalty, amplifying bureaucratic absurdity in the room.
-    observed_atmosphere: Foreign and invasive shadow
-    functional_role: Catalyst for status revelation
-    symbolic_significance: Embodies arbitrary exclusion
-    access_restrictions: ''
-    key_environmental_details:
-    - Vast provincial grip
-    - Border redrawn four miles over
-    global_id: ger_location_46c19f8626f5
-  - location_uuid: ger_location_faf0fdbdfce1
-    description_of_involvement: Minnesota is cited as Donna's supposed birthplace
-      in Warroad, its heartland solidity invoked to heighten irony of border shift,
-      grounding her identity crisis in geographic betrayal during the intimate reveal.
-    observed_atmosphere: Evoked as lost anchor of Americana
-    functional_role: Origin point fueling citizenship debate
-    symbolic_significance: Represents revoked belonging
-    access_restrictions: ''
-    key_environmental_details:
-    - Prairies and frozen lakes implied
-    - Midwestern soil turned foreign
-    global_id: ger_location_faf0fdbdfce1
-  organization_involvements:
-  - organization_uuid: ger_organization_b4db0b1655fd
+    global_id: ger_organization_9aeb11cd4ff1
+  - organization_uuid: ger_organization_326ee3fa1f1f
     description_of_involvement: INS's border clarification revokes Donna's citizenship
       by reclassifying Warroad into Manitoba, triggering Secret Service action and
       her disclosure, embodying bureaucratic overreach that personalizes national
@@ -5136,24 +5153,7 @@ events:
     - Data updates triggering security flags
     institutional_impact: Exposes vulnerability of citizenship to red tape
     internal_dynamics: ''
-    global_id: ger_organization_b4db0b1655fd
-  - organization_uuid: ger_organization_a02ef5855109
-    description_of_involvement: Secret Service intervenes due to Donna's flagged status,
-      detaining her for INS consultation and barring party access until resolved,
-      their protocol injecting external authority into the private respite and heightening
-      stakes.
-    active_representation: Via institutional protocol and access enforcement
-    power_dynamics: Exercising security authority over White House staff
-    organizational_goals:
-    - Enforce guest vetting and credential checks
-    - Mitigate internal access risks
-    influence_mechanisms:
-    - Physical restraint and ID verification
-    - Coordination with INS on identity issues
-    institutional_impact: Highlights tensions between presidential intimacy and security
-      rigidity
-    internal_dynamics: ''
-    global_id: ger_organization_a02ef5855109
+    global_id: ger_organization_326ee3fa1f1f
   derived_from_beat_uuids: *id014
   source_season: 3
   source_database: westwing.s03
@@ -5176,6 +5176,247 @@ events:
   - 'ABBEY: Yeah.'
   - 'AMY: You feel funnier?'
   - 'DONNA: No, but I am developing a massive inferiority complex.'
+  is_flashback: false
+  location_uuid: ger_location_2f2e9fc751a8
+  theme_uuids: []
+  arc_uuids: []
+  participations:
+  - character_uuid: ger_agent_54f868bf8265
+    emotional_state: frustrated with corkscrew, surprised
+    goals:
+    - open the wine bottle
+    - participate in the ladies' night respite
+    what_happened: enters with bottles and glasses, attempts to open wine bottle with
+      corkscrew but struggles repeatedly, reacts with surprise to Donna's citizenship
+      revelation, helps turn gathering into a party
+    observed_status: enters with bottles and glasses, attempts to open wine bottle
+      with corkscrew but struggles repeatedly, reacts with surprise to Donna's citizenship
+      revelation, helps turn gathering into a party
+    beliefs: []
+    observed_traits: []
+    importance: primary
+    global_id: ger_agent_54f868bf8265
+  - character_uuid: ger_agent_c9d41ae93618
+    emotional_state: Frustrated and adjusting under pressure
+    goals:
+    - Navigate campaign hiring cautiously
+    - Locate Amy for confrontation
+    what_happened: Josh is invoked by Donna as sending her to find Amy and by Abbey
+      questioning Amy about his 'nutty' over campaign hiring, with Abbey demanding
+      he 'adjust faster,' highlighting his off-screen friction amid the women's respite.
+    observed_status: Josh is invoked by Donna as sending her to find Amy and by Abbey
+      questioning Amy about his 'nutty' over campaign hiring, with Abbey demanding
+      he 'adjust faster,' highlighting his off-screen friction amid the women's respite.
+    beliefs:
+    - Rapid parity hires risk quality
+    - Personal adjustments take time amid chaos
+    observed_traits:
+    - resistant
+    - overwhelmed
+    - stubborn
+    importance: primary
+    global_id: ger_agent_c9d41ae93618
+  - character_uuid: ger_agent_198649bce78f
+    emotional_state: Fondly ridiculed in absentia
+    goals:
+    - Romanticize personal history
+    - Inspire awe through erudition
+    what_happened: Jed is vividly quoted by Abbey reciting 'Awasiwi Odinak. Far from
+      the things of man' about his remote house, repeatedly labeled a 'jackass' in
+      affectionate jest tied to wine lore and hiring impatience, humanizing him through
+      spousal ribbing.
+    observed_status: Jed is vividly quoted by Abbey reciting 'Awasiwi Odinak. Far
+      from the things of man' about his remote house, repeatedly labeled a 'jackass'
+      in affectionate jest tied to wine lore and hiring impatience, humanizing him
+      through spousal ribbing.
+    beliefs:
+    - Seclusion enhances profundity
+    - Intellectual flourishes bond intimately
+    observed_traits:
+    - pretentious
+    - endearingly quirky
+    - romantic
+    importance: primary
+    global_id: ger_agent_198649bce78f
+  - character_uuid: ger_agent_3b01f1d856de
+    emotional_state: Playfully curious with underlying determination
+    goals:
+    - Procure note-taking supplies covertly
+    - Strengthen alliance with Abbey on gender hiring pushes
+    what_happened: Amy enters carrying a wine bottle and glass, gazes at the large
+      painting then furtively opens the drawer below it for note-taking materials
+      when questioned, sits to join banter on Josh's hiring resistance, and teases
+      Donna about her new Canadian identity, blending seamlessly into the group's
+      levity.
+    observed_status: Amy enters carrying a wine bottle and glass, gazes at the large
+      painting then furtively opens the drawer below it for note-taking materials
+      when questioned, sits to join banter on Josh's hiring resistance, and teases
+      Donna about her new Canadian identity, blending seamlessly into the group's
+      levity.
+    beliefs:
+    - Josh's resistance to female hires must accelerate
+    - Humor disarms personal crises effectively
+    observed_traits:
+    - sly
+    - resourceful
+    - witty
+    - inclusive
+    importance: primary
+    global_id: ger_agent_3b01f1d856de
+  object_involvements:
+  - object_uuid: ger_object_289bfc9e5e42
+    description_of_involvement: Abbey, C.J., and Amy enter clutching wine bottles
+      slick with condensation, which serve as talismans of escape and bonding; they
+      anchor the ritual of unwinding, sloshing urgently as the trio settles, symbolizing
+      liquid relief from license woes and political fires.
+    status_before_event: Carried intact by women entering the room
+    status_after_event: Set down in room, positioned for uncorking and pouring
+    global_id: ger_object_289bfc9e5e42
+  - object_uuid: ger_object_f0b372856aba
+    description_of_involvement: Crystal-stemmed wine glasses accompany bottles into
+      the room, brim with decanted Zinfandel during corkscrew chaos and citizenship
+      reveal; they facilitate sips amid barbs, channeling tension into harmonious
+      toasts and sisterhood in this intimate haven.
+    status_before_event: Empty, carried by entrants
+    status_after_event: Filled with wine, held during emerging party
+    global_id: ger_object_f0b372856aba
+  - object_uuid: ger_object_8ce5dfc12562
+    description_of_involvement: C.J. wields the uncooperative corkscrew against a
+      Zinfandel cork, twisting futilely amid sarcastic praise turning to curses; its
+      resistance sparks comic relief, punctuating laughter that bonds the group and
+      diffuses Donna's entry shock into party vibe.
+    status_before_event: Available in room
+    status_after_event: Successfully used after struggles, wine decanted
+    global_id: ger_object_8ce5dfc12562
+  - object_uuid: ger_object_163c079103df
+    description_of_involvement: The towering painting dominates the wall above the
+      drawer; Amy fixates on it post-entry as diversionary cover while slyly probing
+      below, its static elegance contrasting furtive ambition and providing backdrop
+      to banter in the velvet-lit respite.
+    status_before_event: Mounted on Red Room wall
+    status_after_event: Unchanged, serving as visual anchor
+    global_id: ger_object_163c079103df
+  - object_uuid: ger_object_c9a33b792b75
+    description_of_involvement: Amy cautiously opens the shadowed drawer beneath the
+      painting, rifling for notes when spotted by Abbey; it embodies covert strategy
+      amid relaxation, fracturing the unwind with hints of ongoing hiring intrigue
+      before laughter reclaims the space.
+    status_before_event: Closed in elegant cabinetry
+    status_after_event: Peeked into, contents unchecked, closed
+    global_id: ger_object_c9a33b792b75
+  - object_uuid: ger_object_55271c417877
+    description_of_involvement: Abbey touts the '95 Old Vine Zinfandel's royal Hog
+      Cellars pedigree, best for jackass anagrams; C.J. battles to uncork it, decanting
+      ruby elixir into glasses as Donna joins—its flow catalyzes jokes, citizenship
+      catharsis, and party metamorphosis.
+    status_before_event: Bottled within carried vessels
+    status_after_event: Decanted into glasses, being sipped
+    global_id: ger_object_55271c417877
+  location_involvements:
+  - location_uuid: ger_location_2f2e9fc751a8
+    description_of_involvement: Donna cites her Warroad, Minnesota birth as anchor
+      of identity, shattered by INS border tweak; it ignites surprise and jokes, humanizing
+      bureaucratic absurdity and forging empathy in the wine circle.
+    observed_atmosphere: Heartland solid turned precarious
+    functional_role: Origin point in citizenship dispute
+    symbolic_significance: Lost American bedrock
+    access_restrictions: ''
+    key_environmental_details:
+    - Prairies and frozen lakes
+    - Four miles from border
+    global_id: ger_location_2f2e9fc751a8
+  - location_uuid: ger_location_6f9beffc7e0c
+    description_of_involvement: Abbey invokes Jed's remote house as 'Awasiwi Odinak,
+      far from the things of man' in a quoted romantic overture turned jackass jab,
+      weaving nostalgic intimacy into wine ritual and underscoring spousal quirks
+      amid White House frenzy.
+    observed_atmosphere: Romantically isolated and pretentious in memory
+    functional_role: Nostalgic reference fueling banter
+    symbolic_significance: Counterpoint of rural seclusion to DC chaos
+    access_restrictions: ''
+    key_environmental_details:
+    - 25 miles from civilization
+    - Fog-shrouded earth roads
+    global_id: ger_location_6f9beffc7e0c
+  - location_uuid: ger_location_46c19f8626f5
+    description_of_involvement: INS reassigns Donna's birthplace to Manitoba's prairie
+      expanse, evoking Queen loyalty jabs and penny-tossing guilt; it sparks calm
+      upset and inferiority quips, transforming exile threat into humorous inclusion.
+    observed_atmosphere: Foreign and expansive intruder
+    functional_role: New 'homeland' in identity crisis
+    symbolic_significance: Bureaucratic thief of citizenship
+    access_restrictions: ''
+    key_environmental_details:
+    - Vast prairies
+    - Borderline ambiguity
+    global_id: ger_location_46c19f8626f5
+  organization_involvements:
+  - organization_uuid: ger_organization_9aeb11cd4ff1
+    description_of_involvement: Secret Service flags Donna's INS notation during guest
+      vetting, compelling her INS consultation and interrupting the gathering; their
+      protocol rigor underscores residence security amid citizenship glitch, prompting
+      her sheepish entry.
+    active_representation: Via security enforcement and ID protocols
+    power_dynamics: Overseeing access, deferring to First Lady
+    organizational_goals:
+    - Vetting gala guests rigorously
+    - Mitigate internal identity risks
+    influence_mechanisms:
+    - Credential checks
+    - Referral to INS
+    institutional_impact: Tightens White House perimeter against bureaucratic leaks
+    internal_dynamics: ''
+    global_id: ger_organization_9aeb11cd4ff1
+  - organization_uuid: ger_organization_326ee3fa1f1f
+    description_of_involvement: 'INS''s border clarification relocates Warroad to
+      Manitoba, nullifying Donna''s citizenship (''U.S. Citizen: N''); this bombshell
+      dominates her entrance, fueling calm outrage and group reassurance in a pivot
+      from tension to levity.'
+    active_representation: Through recent bureaucratic ruling
+    power_dynamics: Sovereign arbiter over borders and status
+    organizational_goals:
+    - Accurate territorial enforcement
+    - Update citizenship registries
+    influence_mechanisms:
+    - Border redraws
+    - Status revocations
+    institutional_impact: Exposes personal fallout from national cartography
+    internal_dynamics: ''
+    global_id: ger_organization_326ee3fa1f1f
+  - organization_uuid: ger_organization_edcbe276323e
+    description_of_involvement: Hog Cellars supplies the vaunted '95 Zinfandel, once
+      King Baudouin's, which Abbey lauds for jackass-sipping; its prestige elevates
+      the unwind, decanting into glasses as comic prop and bonding elixir.
+    active_representation: Via wine provenance lore
+    power_dynamics: Elevates casual ritual with elite pedigree
+    organizational_goals:
+    - Supply premium vintages
+    - Maintain royal-tier reputation
+    influence_mechanisms:
+    - Vintage exclusivity
+    - Historical anecdotes
+    institutional_impact: ''
+    internal_dynamics: ''
+    global_id: ger_organization_edcbe276323e
+  derived_from_beat_uuids: &id016
+  - beat_a1ed48651833c7ad
+  - beat_85c413d5a94bfbce
+  source_season: 3
+  source_database: westwing.s03
+- fabula_uuid: cand_evt_scene_5fe6a81c6aeddd61_3
+  global_id: null
+  title: 'Wine-Fueled Respite: Abbey Welcomes Donna to Ladies'' Night'
+  description: In a private White House room, Abbey, C.J., and Amy unwind with '95
+    Zinfandel, trading witty barbs about Jed's quirks and Josh's adjustments amid
+    Abbey's subtextual strain from her license woes. Donna enters post-citizenship
+    bombshell; Abbey warmly insists she stay, sparking jokes about her Canadian roots
+    and inferiority complex. C.J. battles the corkscrew as they decant wine, morphing
+    crisis tension into lively party camaraderie—a vital emotional breather fostering
+    unexpected bonds and support for Abbey before deeper confrontations.
+  episode_uuid: ep_sea_ser_the_west_wing_s03_e15
+  scene_sequence: 14
+  sequence_in_scene: 22
+  key_dialogue: *id015
   is_flashback: false
   location_uuid: ger_location_6f9beffc7e0c
   theme_uuids: []
@@ -5313,6 +5554,18 @@ events:
     status_after_event: Decanted into glasses, being sipped
     global_id: ger_object_55271c417877
   location_involvements:
+  - location_uuid: ger_location_2f2e9fc751a8
+    description_of_involvement: Donna cites her Warroad, Minnesota birth as anchor
+      of identity, shattered by INS border tweak; it ignites surprise and jokes, humanizing
+      bureaucratic absurdity and forging empathy in the wine circle.
+    observed_atmosphere: Heartland solid turned precarious
+    functional_role: Origin point in citizenship dispute
+    symbolic_significance: Lost American bedrock
+    access_restrictions: ''
+    key_environmental_details:
+    - Prairies and frozen lakes
+    - Four miles from border
+    global_id: ger_location_2f2e9fc751a8
   - location_uuid: ger_location_6f9beffc7e0c
     description_of_involvement: Abbey invokes Jed's remote house as 'Awasiwi Odinak,
       far from the things of man' in a quoted romantic overture turned jackass jab,
@@ -5338,36 +5591,8 @@ events:
     - Vast prairies
     - Borderline ambiguity
     global_id: ger_location_46c19f8626f5
-  - location_uuid: ger_location_faf0fdbdfce1
-    description_of_involvement: Donna cites her Warroad, Minnesota birth as anchor
-      of identity, shattered by INS border tweak; it ignites surprise and jokes, humanizing
-      bureaucratic absurdity and forging empathy in the wine circle.
-    observed_atmosphere: Heartland solid turned precarious
-    functional_role: Origin point in citizenship dispute
-    symbolic_significance: Lost American bedrock
-    access_restrictions: ''
-    key_environmental_details:
-    - Prairies and frozen lakes
-    - Four miles from border
-    global_id: ger_location_faf0fdbdfce1
   organization_involvements:
-  - organization_uuid: ger_organization_b4db0b1655fd
-    description_of_involvement: 'INS''s border clarification relocates Warroad to
-      Manitoba, nullifying Donna''s citizenship (''U.S. Citizen: N''); this bombshell
-      dominates her entrance, fueling calm outrage and group reassurance in a pivot
-      from tension to levity.'
-    active_representation: Through recent bureaucratic ruling
-    power_dynamics: Sovereign arbiter over borders and status
-    organizational_goals:
-    - Accurate territorial enforcement
-    - Update citizenship registries
-    influence_mechanisms:
-    - Border redraws
-    - Status revocations
-    institutional_impact: Exposes personal fallout from national cartography
-    internal_dynamics: ''
-    global_id: ger_organization_b4db0b1655fd
-  - organization_uuid: ger_organization_a02ef5855109
+  - organization_uuid: ger_organization_9aeb11cd4ff1
     description_of_involvement: Secret Service flags Donna's INS notation during guest
       vetting, compelling her INS consultation and interrupting the gathering; their
       protocol rigor underscores residence security amid citizenship glitch, prompting
@@ -5382,7 +5607,23 @@ events:
     - Referral to INS
     institutional_impact: Tightens White House perimeter against bureaucratic leaks
     internal_dynamics: ''
-    global_id: ger_organization_a02ef5855109
+    global_id: ger_organization_9aeb11cd4ff1
+  - organization_uuid: ger_organization_326ee3fa1f1f
+    description_of_involvement: 'INS''s border clarification relocates Warroad to
+      Manitoba, nullifying Donna''s citizenship (''U.S. Citizen: N''); this bombshell
+      dominates her entrance, fueling calm outrage and group reassurance in a pivot
+      from tension to levity.'
+    active_representation: Through recent bureaucratic ruling
+    power_dynamics: Sovereign arbiter over borders and status
+    organizational_goals:
+    - Accurate territorial enforcement
+    - Update citizenship registries
+    influence_mechanisms:
+    - Border redraws
+    - Status revocations
+    institutional_impact: Exposes personal fallout from national cartography
+    internal_dynamics: ''
+    global_id: ger_organization_326ee3fa1f1f
   - organization_uuid: ger_organization_edcbe276323e
     description_of_involvement: Hog Cellars supplies the vaunted '95 Zinfandel, once
       King Baudouin's, which Abbey lauds for jackass-sipping; its prestige elevates
@@ -5398,9 +5639,7 @@ events:
     institutional_impact: ''
     internal_dynamics: ''
     global_id: ger_organization_edcbe276323e
-  derived_from_beat_uuids: &id016
-  - beat_a1ed48651833c7ad
-  - beat_85c413d5a94bfbce
+  derived_from_beat_uuids: *id016
   source_season: 3
   source_database: westwing.s03
 - fabula_uuid: cand_evt_scene_5fe6a81c6aeddd61_3
@@ -5554,6 +5793,18 @@ events:
     status_after_event: Decanted into glasses, being sipped
     global_id: ger_object_55271c417877
   location_involvements:
+  - location_uuid: ger_location_2f2e9fc751a8
+    description_of_involvement: Donna cites her Warroad, Minnesota birth as anchor
+      of identity, shattered by INS border tweak; it ignites surprise and jokes, humanizing
+      bureaucratic absurdity and forging empathy in the wine circle.
+    observed_atmosphere: Heartland solid turned precarious
+    functional_role: Origin point in citizenship dispute
+    symbolic_significance: Lost American bedrock
+    access_restrictions: ''
+    key_environmental_details:
+    - Prairies and frozen lakes
+    - Four miles from border
+    global_id: ger_location_2f2e9fc751a8
   - location_uuid: ger_location_6f9beffc7e0c
     description_of_involvement: Abbey invokes Jed's remote house as 'Awasiwi Odinak,
       far from the things of man' in a quoted romantic overture turned jackass jab,
@@ -5579,36 +5830,8 @@ events:
     - Vast prairies
     - Borderline ambiguity
     global_id: ger_location_46c19f8626f5
-  - location_uuid: ger_location_faf0fdbdfce1
-    description_of_involvement: Donna cites her Warroad, Minnesota birth as anchor
-      of identity, shattered by INS border tweak; it ignites surprise and jokes, humanizing
-      bureaucratic absurdity and forging empathy in the wine circle.
-    observed_atmosphere: Heartland solid turned precarious
-    functional_role: Origin point in citizenship dispute
-    symbolic_significance: Lost American bedrock
-    access_restrictions: ''
-    key_environmental_details:
-    - Prairies and frozen lakes
-    - Four miles from border
-    global_id: ger_location_faf0fdbdfce1
   organization_involvements:
-  - organization_uuid: ger_organization_b4db0b1655fd
-    description_of_involvement: 'INS''s border clarification relocates Warroad to
-      Manitoba, nullifying Donna''s citizenship (''U.S. Citizen: N''); this bombshell
-      dominates her entrance, fueling calm outrage and group reassurance in a pivot
-      from tension to levity.'
-    active_representation: Through recent bureaucratic ruling
-    power_dynamics: Sovereign arbiter over borders and status
-    organizational_goals:
-    - Accurate territorial enforcement
-    - Update citizenship registries
-    influence_mechanisms:
-    - Border redraws
-    - Status revocations
-    institutional_impact: Exposes personal fallout from national cartography
-    internal_dynamics: ''
-    global_id: ger_organization_b4db0b1655fd
-  - organization_uuid: ger_organization_a02ef5855109
+  - organization_uuid: ger_organization_9aeb11cd4ff1
     description_of_involvement: Secret Service flags Donna's INS notation during guest
       vetting, compelling her INS consultation and interrupting the gathering; their
       protocol rigor underscores residence security amid citizenship glitch, prompting
@@ -5623,215 +5846,8 @@ events:
     - Referral to INS
     institutional_impact: Tightens White House perimeter against bureaucratic leaks
     internal_dynamics: ''
-    global_id: ger_organization_a02ef5855109
-  - organization_uuid: ger_organization_edcbe276323e
-    description_of_involvement: Hog Cellars supplies the vaunted '95 Zinfandel, once
-      King Baudouin's, which Abbey lauds for jackass-sipping; its prestige elevates
-      the unwind, decanting into glasses as comic prop and bonding elixir.
-    active_representation: Via wine provenance lore
-    power_dynamics: Elevates casual ritual with elite pedigree
-    organizational_goals:
-    - Supply premium vintages
-    - Maintain royal-tier reputation
-    influence_mechanisms:
-    - Vintage exclusivity
-    - Historical anecdotes
-    institutional_impact: ''
-    internal_dynamics: ''
-    global_id: ger_organization_edcbe276323e
-  derived_from_beat_uuids: *id016
-  source_season: 3
-  source_database: westwing.s03
-- fabula_uuid: cand_evt_scene_5fe6a81c6aeddd61_3
-  global_id: null
-  title: 'Wine-Fueled Respite: Abbey Welcomes Donna to Ladies'' Night'
-  description: In a private White House room, Abbey, C.J., and Amy unwind with '95
-    Zinfandel, trading witty barbs about Jed's quirks and Josh's adjustments amid
-    Abbey's subtextual strain from her license woes. Donna enters post-citizenship
-    bombshell; Abbey warmly insists she stay, sparking jokes about her Canadian roots
-    and inferiority complex. C.J. battles the corkscrew as they decant wine, morphing
-    crisis tension into lively party camaraderie—a vital emotional breather fostering
-    unexpected bonds and support for Abbey before deeper confrontations.
-  episode_uuid: ep_sea_ser_the_west_wing_s03_e15
-  scene_sequence: 14
-  sequence_in_scene: 22
-  key_dialogue: *id015
-  is_flashback: false
-  location_uuid: ger_location_faf0fdbdfce1
-  theme_uuids: []
-  arc_uuids: []
-  participations:
-  - character_uuid: ger_agent_54f868bf8265
-    emotional_state: frustrated with corkscrew, surprised
-    goals:
-    - open the wine bottle
-    - participate in the ladies' night respite
-    what_happened: enters with bottles and glasses, attempts to open wine bottle with
-      corkscrew but struggles repeatedly, reacts with surprise to Donna's citizenship
-      revelation, helps turn gathering into a party
-    observed_status: enters with bottles and glasses, attempts to open wine bottle
-      with corkscrew but struggles repeatedly, reacts with surprise to Donna's citizenship
-      revelation, helps turn gathering into a party
-    beliefs: []
-    observed_traits: []
-    importance: primary
-    global_id: ger_agent_54f868bf8265
-  - character_uuid: ger_agent_c9d41ae93618
-    emotional_state: Frustrated and adjusting under pressure
-    goals:
-    - Navigate campaign hiring cautiously
-    - Locate Amy for confrontation
-    what_happened: Josh is invoked by Donna as sending her to find Amy and by Abbey
-      questioning Amy about his 'nutty' over campaign hiring, with Abbey demanding
-      he 'adjust faster,' highlighting his off-screen friction amid the women's respite.
-    observed_status: Josh is invoked by Donna as sending her to find Amy and by Abbey
-      questioning Amy about his 'nutty' over campaign hiring, with Abbey demanding
-      he 'adjust faster,' highlighting his off-screen friction amid the women's respite.
-    beliefs:
-    - Rapid parity hires risk quality
-    - Personal adjustments take time amid chaos
-    observed_traits:
-    - resistant
-    - overwhelmed
-    - stubborn
-    importance: primary
-    global_id: ger_agent_c9d41ae93618
-  - character_uuid: ger_agent_198649bce78f
-    emotional_state: Fondly ridiculed in absentia
-    goals:
-    - Romanticize personal history
-    - Inspire awe through erudition
-    what_happened: Jed is vividly quoted by Abbey reciting 'Awasiwi Odinak. Far from
-      the things of man' about his remote house, repeatedly labeled a 'jackass' in
-      affectionate jest tied to wine lore and hiring impatience, humanizing him through
-      spousal ribbing.
-    observed_status: Jed is vividly quoted by Abbey reciting 'Awasiwi Odinak. Far
-      from the things of man' about his remote house, repeatedly labeled a 'jackass'
-      in affectionate jest tied to wine lore and hiring impatience, humanizing him
-      through spousal ribbing.
-    beliefs:
-    - Seclusion enhances profundity
-    - Intellectual flourishes bond intimately
-    observed_traits:
-    - pretentious
-    - endearingly quirky
-    - romantic
-    importance: primary
-    global_id: ger_agent_198649bce78f
-  - character_uuid: ger_agent_3b01f1d856de
-    emotional_state: Playfully curious with underlying determination
-    goals:
-    - Procure note-taking supplies covertly
-    - Strengthen alliance with Abbey on gender hiring pushes
-    what_happened: Amy enters carrying a wine bottle and glass, gazes at the large
-      painting then furtively opens the drawer below it for note-taking materials
-      when questioned, sits to join banter on Josh's hiring resistance, and teases
-      Donna about her new Canadian identity, blending seamlessly into the group's
-      levity.
-    observed_status: Amy enters carrying a wine bottle and glass, gazes at the large
-      painting then furtively opens the drawer below it for note-taking materials
-      when questioned, sits to join banter on Josh's hiring resistance, and teases
-      Donna about her new Canadian identity, blending seamlessly into the group's
-      levity.
-    beliefs:
-    - Josh's resistance to female hires must accelerate
-    - Humor disarms personal crises effectively
-    observed_traits:
-    - sly
-    - resourceful
-    - witty
-    - inclusive
-    importance: primary
-    global_id: ger_agent_3b01f1d856de
-  object_involvements:
-  - object_uuid: ger_object_289bfc9e5e42
-    description_of_involvement: Abbey, C.J., and Amy enter clutching wine bottles
-      slick with condensation, which serve as talismans of escape and bonding; they
-      anchor the ritual of unwinding, sloshing urgently as the trio settles, symbolizing
-      liquid relief from license woes and political fires.
-    status_before_event: Carried intact by women entering the room
-    status_after_event: Set down in room, positioned for uncorking and pouring
-    global_id: ger_object_289bfc9e5e42
-  - object_uuid: ger_object_f0b372856aba
-    description_of_involvement: Crystal-stemmed wine glasses accompany bottles into
-      the room, brim with decanted Zinfandel during corkscrew chaos and citizenship
-      reveal; they facilitate sips amid barbs, channeling tension into harmonious
-      toasts and sisterhood in this intimate haven.
-    status_before_event: Empty, carried by entrants
-    status_after_event: Filled with wine, held during emerging party
-    global_id: ger_object_f0b372856aba
-  - object_uuid: ger_object_8ce5dfc12562
-    description_of_involvement: C.J. wields the uncooperative corkscrew against a
-      Zinfandel cork, twisting futilely amid sarcastic praise turning to curses; its
-      resistance sparks comic relief, punctuating laughter that bonds the group and
-      diffuses Donna's entry shock into party vibe.
-    status_before_event: Available in room
-    status_after_event: Successfully used after struggles, wine decanted
-    global_id: ger_object_8ce5dfc12562
-  - object_uuid: ger_object_163c079103df
-    description_of_involvement: The towering painting dominates the wall above the
-      drawer; Amy fixates on it post-entry as diversionary cover while slyly probing
-      below, its static elegance contrasting furtive ambition and providing backdrop
-      to banter in the velvet-lit respite.
-    status_before_event: Mounted on Red Room wall
-    status_after_event: Unchanged, serving as visual anchor
-    global_id: ger_object_163c079103df
-  - object_uuid: ger_object_c9a33b792b75
-    description_of_involvement: Amy cautiously opens the shadowed drawer beneath the
-      painting, rifling for notes when spotted by Abbey; it embodies covert strategy
-      amid relaxation, fracturing the unwind with hints of ongoing hiring intrigue
-      before laughter reclaims the space.
-    status_before_event: Closed in elegant cabinetry
-    status_after_event: Peeked into, contents unchecked, closed
-    global_id: ger_object_c9a33b792b75
-  - object_uuid: ger_object_55271c417877
-    description_of_involvement: Abbey touts the '95 Old Vine Zinfandel's royal Hog
-      Cellars pedigree, best for jackass anagrams; C.J. battles to uncork it, decanting
-      ruby elixir into glasses as Donna joins—its flow catalyzes jokes, citizenship
-      catharsis, and party metamorphosis.
-    status_before_event: Bottled within carried vessels
-    status_after_event: Decanted into glasses, being sipped
-    global_id: ger_object_55271c417877
-  location_involvements:
-  - location_uuid: ger_location_6f9beffc7e0c
-    description_of_involvement: Abbey invokes Jed's remote house as 'Awasiwi Odinak,
-      far from the things of man' in a quoted romantic overture turned jackass jab,
-      weaving nostalgic intimacy into wine ritual and underscoring spousal quirks
-      amid White House frenzy.
-    observed_atmosphere: Romantically isolated and pretentious in memory
-    functional_role: Nostalgic reference fueling banter
-    symbolic_significance: Counterpoint of rural seclusion to DC chaos
-    access_restrictions: ''
-    key_environmental_details:
-    - 25 miles from civilization
-    - Fog-shrouded earth roads
-    global_id: ger_location_6f9beffc7e0c
-  - location_uuid: ger_location_46c19f8626f5
-    description_of_involvement: INS reassigns Donna's birthplace to Manitoba's prairie
-      expanse, evoking Queen loyalty jabs and penny-tossing guilt; it sparks calm
-      upset and inferiority quips, transforming exile threat into humorous inclusion.
-    observed_atmosphere: Foreign and expansive intruder
-    functional_role: New 'homeland' in identity crisis
-    symbolic_significance: Bureaucratic thief of citizenship
-    access_restrictions: ''
-    key_environmental_details:
-    - Vast prairies
-    - Borderline ambiguity
-    global_id: ger_location_46c19f8626f5
-  - location_uuid: ger_location_faf0fdbdfce1
-    description_of_involvement: Donna cites her Warroad, Minnesota birth as anchor
-      of identity, shattered by INS border tweak; it ignites surprise and jokes, humanizing
-      bureaucratic absurdity and forging empathy in the wine circle.
-    observed_atmosphere: Heartland solid turned precarious
-    functional_role: Origin point in citizenship dispute
-    symbolic_significance: Lost American bedrock
-    access_restrictions: ''
-    key_environmental_details:
-    - Prairies and frozen lakes
-    - Four miles from border
-    global_id: ger_location_faf0fdbdfce1
-  organization_involvements:
-  - organization_uuid: ger_organization_b4db0b1655fd
+    global_id: ger_organization_9aeb11cd4ff1
+  - organization_uuid: ger_organization_326ee3fa1f1f
     description_of_involvement: 'INS''s border clarification relocates Warroad to
       Manitoba, nullifying Donna''s citizenship (''U.S. Citizen: N''); this bombshell
       dominates her entrance, fueling calm outrage and group reassurance in a pivot
@@ -5846,23 +5862,7 @@ events:
     - Status revocations
     institutional_impact: Exposes personal fallout from national cartography
     internal_dynamics: ''
-    global_id: ger_organization_b4db0b1655fd
-  - organization_uuid: ger_organization_a02ef5855109
-    description_of_involvement: Secret Service flags Donna's INS notation during guest
-      vetting, compelling her INS consultation and interrupting the gathering; their
-      protocol rigor underscores residence security amid citizenship glitch, prompting
-      her sheepish entry.
-    active_representation: Via security enforcement and ID protocols
-    power_dynamics: Overseeing access, deferring to First Lady
-    organizational_goals:
-    - Vetting gala guests rigorously
-    - Mitigate internal identity risks
-    influence_mechanisms:
-    - Credential checks
-    - Referral to INS
-    institutional_impact: Tightens White House perimeter against bureaucratic leaks
-    internal_dynamics: ''
-    global_id: ger_organization_a02ef5855109
+    global_id: ger_organization_326ee3fa1f1f
   - organization_uuid: ger_organization_edcbe276323e
     description_of_involvement: Hog Cellars supplies the vaunted '95 Zinfandel, once
       King Baudouin's, which Abbey lauds for jackass-sipping; its prestige elevates
@@ -7361,7 +7361,7 @@ events:
     global_id: ger_object_2758b82095f4
   location_involvements: []
   organization_involvements:
-  - organization_uuid: ger_organization_b4db0b1655fd
+  - organization_uuid: ger_organization_326ee3fa1f1f
     description_of_involvement: INS manifests as bureaucratic savior when Josh cites
       its grandfather clause—literacy test, history exam, one-page form—restoring
       Donna's citizenship in a swift reveal, punctuating the event with red-tape mercy
@@ -7378,7 +7378,7 @@ events:
     institutional_impact: Highlights immigration bureaucracy's rigid yet navigable
       humanity in political elite context
     internal_dynamics: ''
-    global_id: ger_organization_b4db0b1655fd
+    global_id: ger_organization_326ee3fa1f1f
   derived_from_beat_uuids:
   - beat_ca0aa5f015335aa0
   - beat_2d4f852805741fb3
@@ -7636,7 +7636,7 @@ events:
     global_id: ger_object_2758b82095f4
   location_involvements: []
   organization_involvements:
-  - organization_uuid: ger_organization_b4db0b1655fd
+  - organization_uuid: ger_organization_326ee3fa1f1f
     description_of_involvement: INS looms as referenced bureaucratic force behind
       Donna's citizenship chaos, fueling the ironic anthem and flags that backdrop
       Bartlets' crisis talk, contrasting administrative pettiness with presidential
@@ -7651,7 +7651,7 @@ events:
     - Grandfather clauses as minimal concessions
     institutional_impact: Highlights federal inertia clashing with political expediency
     internal_dynamics: ''
-    global_id: ger_organization_b4db0b1655fd
+    global_id: ger_organization_326ee3fa1f1f
   derived_from_beat_uuids:
   - beat_cee028c6df640791
   - beat_6721843161873498

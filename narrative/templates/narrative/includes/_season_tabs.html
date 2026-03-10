@@ -1,0 +1,34 @@
+{# Season filter tabs - include in any index page with available_seasons and selected_season context #}
+{% if available_seasons|length > 1 %}
+{% if fabula_theme == 'writerly' %}
+<div class="flex flex-wrap gap-2 mb-8">
+    {% for season in available_seasons %}
+    <a href="?season={{ season.number }}"
+       class="px-4 py-2 text-sm font-medium rounded-md transition-all duration-200"
+       style="{% if season.number == selected_season %}
+           background: var(--f-accent-green-bg); color: var(--f-accent-green-fg); border: 1px solid color-mix(in srgb, var(--f-accent-green) 30%, transparent);
+       {% else %}
+           background: var(--f-bg-elevated); color: var(--f-fg-tertiary); border: 1px solid var(--f-border-light);
+       {% endif %}">
+        Season {{ season.number }}
+        <span class="ml-1 opacity-60">({{ season.count }})</span>
+    </a>
+    {% endfor %}
+</div>
+{% else %}
+<div class="flex flex-wrap gap-2 mb-8">
+    {% for season in available_seasons %}
+    <a href="?season={{ season.number }}"
+       class="px-4 py-2 text-sm font-medium rounded-md transition-all duration-200
+              {% if season.number == selected_season %}
+                  bg-emerald-500/15 text-emerald-400 border border-emerald-500/30
+              {% else %}
+                  bg-slate-800/50 text-slate-400 border border-slate-700 hover:border-slate-600
+              {% endif %}">
+        Season {{ season.number }}
+        <span class="ml-1 opacity-60">({{ season.count }})</span>
+    </a>
+    {% endfor %}
+</div>
+{% endif %}
+{% endif %}
