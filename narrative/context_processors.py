@@ -5,6 +5,8 @@ Provides theme selection via session or query parameter.
 Switch themes by appending ?theme=writerly or ?theme=dark to any URL.
 """
 
+from django.conf import settings
+
 
 def theme_context(request):
     """
@@ -26,4 +28,6 @@ def theme_context(request):
         'fabula_theme': theme,
         'is_dark_theme': theme == 'dark',
         'is_writerly_theme': theme == 'writerly',
+        'umami_url': getattr(settings, 'UMAMI_SCRIPT_URL', ''),
+        'umami_website_id': getattr(settings, 'UMAMI_WEBSITE_ID', ''),
     }

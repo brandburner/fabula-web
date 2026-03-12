@@ -231,6 +231,10 @@
     </style>
 
     {% block extra_css %}{% endblock %}
+
+    {% if umami_url and umami_website_id %}
+    <script defer src="{{ umami_url }}" data-website-id="{{ umami_website_id }}"></script>
+    {% endif %}
 </head>
 
 {% if fabula_theme == 'writerly' %}

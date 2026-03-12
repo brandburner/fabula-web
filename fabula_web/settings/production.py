@@ -34,6 +34,10 @@ STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 # Wagtail
 WAGTAILADMIN_BASE_URL = os.environ.get('WAGTAILADMIN_BASE_URL', 'https://fabula.up.railway.app')
 
+# Umami Analytics (set these env vars after deploying Umami on Railway)
+UMAMI_SCRIPT_URL = os.environ.get('UMAMI_SCRIPT_URL', '')
+UMAMI_WEBSITE_ID = os.environ.get('UMAMI_WEBSITE_ID', '')
+
 # Logging
 LOGGING = {
     'version': 1,
