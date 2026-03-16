@@ -1,7 +1,11 @@
 {% extends "base.html" %}
 {% load wagtailcore_tags wagtailimages_tags narrative_tags %}
 
-{% block title %}{{ page.canonical_name }}{% endblock %}
+{% block title %}{{ page.canonical_name }} — Significant Object{% endblock %}
+
+{% block meta_description %}
+<meta name="description" content="{% if page.description %}{{ page.description|striptags|truncatewords:30 }}{% else %}Analysis of {{ page.canonical_name }} — its narrative significance and connections to characters and events.{% endif %}">
+{% endblock %}
 
 {% block series_context %}
 {% if fabula_theme == 'writerly' %}

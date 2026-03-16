@@ -5,14 +5,43 @@ URL configuration for Fabula Web.
 from django.conf import settings
 from django.conf.urls.static import static
 from django.contrib import admin
+from django.contrib.sitemaps.views import sitemap
 from django.urls import path, include
-from django.http import JsonResponse
+from django.http import HttpResponse, JsonResponse
+from django.views.decorators.cache import cache_page
 import os
 from pathlib import Path
 
 from wagtail.admin import urls as wagtailadmin_urls
 from wagtail import urls as wagtail_urls
+from wagtail.contrib.sitemaps import Sitemap as WagtailSitemap
 from wagtail.documents import urls as wagtaildocs_urls
+
+from narrative.sitemaps import (
+    ConnectionSitemap, ThemeSitemap, ArcSitemap, LocationSitemap,
+)
+
+sitemaps = {
+    'wagtail': WagtailSitemap,
+    'connections': ConnectionSitemap,
+    'themes': ThemeSitemap,
+    'arcs': ArcSitemap,
+    'locations': LocationSitemap,
+}
+
+
+def robots_txt(request):
+    """Serve robots.txt with sitemap reference."""
+    lines = [
+        "User-agent: *",
+        "Allow: /",
+        "",
+        "Disallow: /admin/",
+        "Disallow: /django-admin/",
+        "",
+        f"Sitemap: {request.scheme}://{request.get_host()}/sitemap.xml",
+    ]
+    return HttpResponse("\n".join(lines), content_type="text/plain")
 
 
 def health_check(request):
@@ -84,6 +113,8 @@ def trigger_import(request):
 
 
 urlpatterns = [
+    path('robots.txt', robots_txt, name='robots_txt'),
+    path('sitemap.xml', cache_page(3600)(sitemap), {'sitemaps': sitemaps}, name='sitemap'),
     path('health/', health_check, name='health_check'),
     path('diagnostics/', diagnostics, name='diagnostics'),
     path('trigger-import/', trigger_import, name='trigger_import'),

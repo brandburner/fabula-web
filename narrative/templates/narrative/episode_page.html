@@ -1,7 +1,17 @@
 {% extends "base.html" %}
-{% load wagtailcore_tags narrative_tags %}
+{% load wagtailcore_tags narrative_tags seo_tags %}
 
-{% block title %}{{ page.title|md_plain }}{% endblock %}
+{% block title %}{{ page.title|md_plain }} — S{{ page.season_number }}E{{ page.episode_number }}{% endblock %}
+
+{% block meta_description %}
+<meta name="description" content="{% if page.logline %}{{ page.logline|truncatewords:30 }}{% elif page.high_level_summary %}{{ page.high_level_summary|truncatewords:30 }}{% else %}{{ page.title|md_plain }} — Season {{ page.season_number }}, Episode {{ page.episode_number }}. Narrative analysis with events, characters, and connections.{% endif %}">
+{% endblock %}
+
+{% block og_type %}video.episode{% endblock %}
+
+{% block structured_data %}
+{% episode_jsonld page %}
+{% endblock %}
 
 {% block series_context %}
 {% if fabula_theme == 'writerly' %}

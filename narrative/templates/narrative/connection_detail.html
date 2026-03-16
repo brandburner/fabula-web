@@ -1,7 +1,15 @@
 {% extends "base.html" %}
-{% load wagtailcore_tags narrative_tags %}
+{% load wagtailcore_tags narrative_tags seo_tags %}
 
-{% block title %}{{ connection.get_connection_type_display }} Connection{% endblock %}
+{% block title %}{{ connection.get_connection_type_display }}: {{ connection.from_event.title|md_plain }} → {{ connection.to_event.title|md_plain }}{% endblock %}
+
+{% block meta_description %}
+<meta name="description" content="{% if connection.description %}{{ connection.description|striptags|truncatewords:30 }}{% else %}{{ connection.get_connection_type_display }} connection between narrative events. Explore how story elements are linked.{% endif %}">
+{% endblock %}
+
+{% block structured_data %}
+{% connection_jsonld connection %}
+{% endblock %}
 
 {% block series_context %}
 {% if fabula_theme == 'writerly' %}

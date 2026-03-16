@@ -1,7 +1,11 @@
 {% extends "base.html" %}
 {% load wagtailcore_tags narrative_tags %}
 
-{% block title %}{{ page.title|md_plain }}{% endblock %}
+{% block title %}{{ page.title|md_plain }} — Organization{% endblock %}
+
+{% block meta_description %}
+<meta name="description" content="{% if page.description %}{{ page.description|striptags|truncatewords:30 }}{% else %}Organization analysis: {{ page.title|md_plain }}. Explore members, influence, and narrative connections.{% endif %}">
+{% endblock %}
 
 {% block content %}
 {% if fabula_theme == 'writerly' %}

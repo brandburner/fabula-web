@@ -1,7 +1,17 @@
 {% extends "base.html" %}
-{% load wagtailcore_tags wagtailimages_tags narrative_tags %}
+{% load wagtailcore_tags wagtailimages_tags narrative_tags seo_tags %}
 
-{% block title %}{{ page.canonical_name }}{% endblock %}
+{% block title %}{{ page.canonical_name }} — Character Analysis{% endblock %}
+
+{% block meta_description %}
+<meta name="description" content="{% if page.description %}{{ page.description|striptags|truncatewords:30 }}{% else %}Character analysis of {{ page.canonical_name }}{% if page.title_role %} ({{ page.title_role }}){% endif %}. {{ page.appearance_count }} appearances. Explore their journey, relationships, and narrative connections.{% endif %}">
+{% endblock %}
+
+{% block og_type %}profile{% endblock %}
+
+{% block structured_data %}
+{% character_jsonld page %}
+{% endblock %}
 
 {% block series_context %}
 {% if fabula_theme == 'writerly' %}

@@ -1,7 +1,17 @@
 {% extends "base.html" %}
-{% load wagtailcore_tags wagtailimages_tags narrative_tags %}
+{% load wagtailcore_tags wagtailimages_tags narrative_tags seo_tags %}
 
 {% block title %}{{ page.title|md_plain }}{% endblock %}
+
+{% block meta_description %}
+<meta name="description" content="{% if page.description %}{{ page.description|striptags|truncatewords:30 }}{% else %}Narrative event analysis: {{ page.title|md_plain }}. Explore character participation, narrative connections, and thematic significance.{% endif %}">
+{% endblock %}
+
+{% block og_type %}article{% endblock %}
+
+{% block structured_data %}
+{% event_jsonld page %}
+{% endblock %}
 
 {% block series_context %}
 {% if fabula_theme == 'writerly' %}

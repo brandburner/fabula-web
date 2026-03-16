@@ -1,7 +1,17 @@
 {% extends "base.html" %}
-{% load wagtailcore_tags narrative_tags %}
+{% load wagtailcore_tags narrative_tags seo_tags %}
 
 {% block title %}{{ page.title|md_plain }}{% endblock %}
+
+{% block meta_description %}
+<meta name="description" content="{{ page.search_description|default_if_none:'' }}{% if not page.search_description %}Explore the narrative graph of {{ page.title|md_plain }} — characters, episodes, events, themes, and the connections between them.{% endif %}">
+{% endblock %}
+
+{% block og_type %}video.tv_show{% endblock %}
+
+{% block structured_data %}
+{% series_jsonld page %}
+{% endblock %}
 
 {% block content %}
 {% if fabula_theme == 'writerly' %}

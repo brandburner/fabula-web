@@ -4,19 +4,51 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{% block title %}{{ page.title }}{% endblock %} | Fabula</title>
+    <title>{% block title %}{{ page.seo_title|default:page.title }}{% endblock %} | Fabula</title>
+
+    {# SEO Meta Tags #}
     {% if page.meta_description %}
     <meta name="description" content="{{ page.meta_description }}">
+    {% elif page.search_description %}
+    <meta name="description" content="{{ page.search_description }}">
     {% endif %}
+    <link rel="canonical" href="{% block canonical_url %}{{ request.scheme }}://{{ request.get_host }}{{ request.path }}{% endblock %}">
 
     {# Open Graph #}
-    <meta property="og:title" content="{{ page.title }} | Fabula">
+    <meta property="og:type" content="{% block og_type %}website{% endblock %}">
+    <meta property="og:title" content="{{ page.seo_title|default:page.title }} | Fabula">
+    <meta property="og:url" content="{{ request.scheme }}://{{ request.get_host }}{{ request.path }}">
+    <meta property="og:site_name" content="Fabula">
     {% if page.meta_description %}
     <meta property="og:description" content="{{ page.meta_description }}">
+    {% elif page.search_description %}
+    <meta property="og:description" content="{{ page.search_description }}">
     {% endif %}
     {% if page.og_image %}
-    <meta property="og:image" content="{{ page.og_image.url }}">
+    <meta property="og:image" content="{{ request.scheme }}://{{ request.get_host }}{{ page.og_image.url }}">
+    {% else %}
+    <meta property="og:image" content="{{ request.scheme }}://{{ request.get_host }}{% static 'narrative/images/fabula-og-default.png' %}">
     {% endif %}
+
+    {# Twitter Card #}
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="{{ page.seo_title|default:page.title }} | Fabula">
+    {% if page.meta_description %}
+    <meta name="twitter:description" content="{{ page.meta_description }}">
+    {% endif %}
+
+    {# Structured Data #}
+    {% block structured_data %}
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Organization",
+        "name": "Fabula",
+        "url": "{{ request.scheme }}://{{ request.get_host }}/",
+        "description": "Narrative intelligence for production — the story bible that updates itself."
+    }
+    </script>
+    {% endblock %}
 
     {# Design System Tokens #}
     <link rel="stylesheet" href="{% static 'narrative/css/theme-tokens.css' %}">
@@ -112,6 +144,10 @@
     </style>
 
     {% block extra_css %}{% endblock %}
+
+    {% if umami_url and umami_website_id %}
+    <script defer src="{{ umami_url }}" data-website-id="{{ umami_website_id }}"></script>
+    {% endif %}
 </head>
 
 {% if fabula_theme == 'dark' %}
@@ -146,7 +182,7 @@
                     <a href="?theme=writerly" class="hidden md:flex items-center px-2 py-1.5 text-sm text-slate-500 hover:text-white border border-slate-700/50 rounded-md transition-all duration-200" title="Switch to writerly theme">
                         <i data-lucide="sun" class="w-4 h-4"></i>
                     </a>
-                    <a href="/early-access/" class="px-4 py-2 text-sm font-medium rounded-lg bg-gradient-to-r from-amber-500 to-orange-500 text-white hover:from-amber-400 hover:to-orange-400 transition-all duration-300 shadow-lg shadow-amber-500/25">
+                    <a href="/early-access/" class="px-4 py-2 text-sm font-medium rounded-lg bg-gradient-to-r from-amber-500 to-orange-500 text-white hover:from-amber-400 hover:to-orange-400 transition-all duration-300 shadow-lg shadow-amber-500/25" data-umami-event="cta-early-access" data-umami-event-location="header">
                         Early Access
                     </a>
                     <button class="md:hidden p-2 text-slate-400 hover:text-white" x-data @click="$dispatch('toggle-mobile-menu')">
@@ -184,7 +220,7 @@
                     <a href="?theme=dark" class="hidden md:flex items-center px-2 py-1.5 text-sm rounded-md transition-all duration-200" style="color: var(--f-fg-tertiary); border: 1px solid var(--f-border-light);" title="Switch to dark theme">
                         <i data-lucide="moon" class="w-4 h-4"></i>
                     </a>
-                    <a href="/early-access/" class="f-btn-primary" style="padding: 0.5rem 1.25rem; font-size: 0.875rem;">
+                    <a href="/early-access/" class="f-btn-primary" style="padding: 0.5rem 1.25rem; font-size: 0.875rem;" data-umami-event="cta-early-access" data-umami-event-location="header">
                         Early Access
                     </a>
                     <button class="md:hidden p-2" style="color: var(--f-fg-tertiary);" x-data @click="$dispatch('toggle-mobile-menu')">
@@ -348,6 +384,52 @@
     <script>
         lucide.createIcons();
     </script>
+
+    {# Umami event tracking for marketing pages #}
+    {% if umami_url and umami_website_id %}
+    <script>
+    (function() {
+        var path = location.pathname;
+        var pageType = 'marketing';
+        if (path === '/') pageType = 'home';
+        else if (path.startsWith('/for-production')) pageType = 'for-production';
+        else if (path.startsWith('/about')) pageType = 'about';
+        else if (path.startsWith('/platform')) pageType = 'platform';
+        else if (path.startsWith('/early-access')) pageType = 'early-access';
+        else if (path.startsWith('/benchmarks')) pageType = 'benchmarks';
+
+        if (typeof umami !== 'undefined') {
+            umami.track('pageview-typed', { type: pageType });
+        }
+
+        document.addEventListener('click', function(e) {
+            var link = e.target.closest('a[href]');
+            if (!link || typeof umami === 'undefined') return;
+            var href = link.getAttribute('href') || '';
+
+            // CTA buttons (class-based detection)
+            if (link.classList.contains('f-btn-primary')) {
+                umami.track('cta-primary', { from: pageType, target: href });
+            }
+            else if (link.classList.contains('f-btn-secondary')) {
+                umami.track('cta-secondary', { from: pageType, target: href });
+            }
+            // Explore / catalog link
+            else if (href.match(/\/explore/)) {
+                umami.track('nav-explore', { from: pageType });
+            }
+            // Contact
+            else if (href.startsWith('mailto:')) {
+                umami.track('contact-click', { from: pageType });
+            }
+            // External (blog, etc)
+            else if (href.startsWith('http') && !href.includes(location.host)) {
+                umami.track('external-link', { url: href, from: pageType });
+            }
+        });
+    })();
+    </script>
+    {% endif %}
 
     {% block extra_js %}{% endblock %}
 </body>

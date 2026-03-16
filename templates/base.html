@@ -4,7 +4,58 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{% block title %}{{ page.title|md_plain }}{% endblock %} | Fabula</title>
+    <title>{% block title %}{{ page.seo_title|default:page.title|md_plain }}{% endblock %} | Fabula</title>
+
+    {# SEO Meta Tags #}
+    {% block meta_description %}
+    {% if page.search_description %}
+    <meta name="description" content="{{ page.search_description }}">
+    {% elif page_description %}
+    <meta name="description" content="{{ page_description }}">
+    {% endif %}
+    {% endblock %}
+    <link rel="canonical" href="{% block canonical_url %}{{ request.scheme }}://{{ request.get_host }}{{ request.path }}{% endblock %}">
+
+    {# Open Graph #}
+    <meta property="og:type" content="{% block og_type %}website{% endblock %}">
+    <meta property="og:title" content="{% block og_title %}{{ page.seo_title|default:page.title|md_plain }} | Fabula{% endblock %}">
+    <meta property="og:url" content="{{ request.scheme }}://{{ request.get_host }}{{ request.path }}">
+    <meta property="og:site_name" content="Fabula">
+    {% block og_description %}
+    {% if page.search_description %}
+    <meta property="og:description" content="{{ page.search_description }}">
+    {% elif page_description %}
+    <meta property="og:description" content="{{ page_description }}">
+    {% endif %}
+    {% endblock %}
+    {% block og_image %}
+    <meta property="og:image" content="{{ request.scheme }}://{{ request.get_host }}{% static 'narrative/images/fabula-og-default.png' %}">
+    {% endblock %}
+
+    {# Twitter Card #}
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="{{ page.seo_title|default:page.title|md_plain }} | Fabula">
+    {% if page.search_description %}
+    <meta name="twitter:description" content="{{ page.search_description }}">
+    {% endif %}
+
+    {# Structured Data #}
+    {% block structured_data %}
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebSite",
+        "name": "Fabula",
+        "url": "{{ request.scheme }}://{{ request.get_host }}/",
+        "description": "Narrative intelligence platform — explore the connections between characters, events, and themes in your favorite TV shows.",
+        "publisher": {
+            "@type": "Organization",
+            "name": "Fabula",
+            "url": "{{ request.scheme }}://{{ request.get_host }}/"
+        }
+    }
+    </script>
+    {% endblock %}
 
     {# Tailwind CSS via CDN - replace with compiled CSS in production #}
     <script src="https://cdn.tailwindcss.com"></script>
@@ -387,6 +438,72 @@
     <script>
         lucide.createIcons();
     </script>
+
+    {# Umami event tracking via delegation #}
+    {% if umami_url and umami_website_id %}
+    <script>
+    (function() {
+        // Classify page type from URL path
+        var path = location.pathname;
+        var pageType = 'other';
+        if (path === '/') pageType = 'home';
+        else if (path.startsWith('/explore/') && path.split('/').length === 3) pageType = 'catalog';
+        else if (path.match(/\/explore\/[^/]+\/$/)) pageType = 'series';
+        else if (path.match(/\/episodes\//)) pageType = 'episode';
+        else if (path.match(/\/characters\//)) pageType = 'character';
+        else if (path.match(/\/events\//)) pageType = 'event';
+        else if (path.match(/\/connections\//)) pageType = 'connection';
+        else if (path.match(/\/graph/)) pageType = 'graph';
+        else if (path.match(/\/organizations\//)) pageType = 'organization';
+        else if (path.match(/\/themes\//)) pageType = 'theme';
+
+        // Track page type as a custom event for segmentation
+        if (typeof umami !== 'undefined') {
+            umami.track('pageview-typed', { type: pageType });
+        }
+
+        // Delegate click tracking for key interactions
+        document.addEventListener('click', function(e) {
+            var link = e.target.closest('a[href]');
+            if (!link || typeof umami === 'undefined') return;
+            var href = link.getAttribute('href') || '';
+
+            // Graph view clicks
+            if (href.match(/\/graph/) || link.textContent.trim().match(/^(Graph|View Graph|View Journey)$/)) {
+                umami.track('graph-view', { from: pageType, target: href });
+            }
+            // Episode navigation
+            else if (href.match(/\/episodes\//)) {
+                umami.track('episode-click', { from: pageType });
+            }
+            // Character navigation
+            else if (href.match(/\/characters\//)) {
+                umami.track('character-click', { from: pageType });
+            }
+            // Connection clicks
+            else if (href.match(/\/connections\//)) {
+                umami.track('connection-click', { from: pageType });
+            }
+            // Series catalog clicks
+            else if (href.match(/\/explore\/[^/]+\/$/)) {
+                umami.track('series-click', { series: href });
+            }
+            // Event clicks
+            else if (href.match(/\/events\//)) {
+                umami.track('event-click', { from: pageType });
+            }
+            // CTA clicks
+            else if (href.match(/\/early-access/)) {
+                umami.track('cta-early-access', { from: pageType });
+            }
+            // External links (blog, contact)
+            else if (href.startsWith('http') && !href.includes(location.host)) {
+                umami.track('external-link', { url: href });
+            }
+        });
+    })();
+    </script>
+    {% endif %}
 
     {% block extra_js %}{% endblock %}
 </body>
