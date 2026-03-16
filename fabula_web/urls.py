@@ -112,7 +112,16 @@ def trigger_import(request):
         }, status=500)
 
 
+def google_verification(request):
+    """Google Search Console verification file."""
+    return HttpResponse(
+        "google-site-verification: googlea62b51e71cd21b69.html",
+        content_type="text/html",
+    )
+
+
 urlpatterns = [
+    path('googlea62b51e71cd21b69.html', google_verification),
     path('robots.txt', robots_txt, name='robots_txt'),
     path('sitemap.xml', cache_page(3600)(sitemap), {'sitemaps': sitemaps}, name='sitemap'),
     path('health/', health_check, name='health_check'),
