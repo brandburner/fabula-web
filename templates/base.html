@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="google-site-verification" content="jo0A9F53a_dYjXqIcmY6Q3EtiTAGYsQf_FvFwSyxy8M">
-    <title>{% block title %}{{ page.seo_title|default:page.title|md_plain }}{% endblock %} | Fabula</title>
+    <title>{% block title %}{% if page %}{{ page.seo_title|default:page.title|md_plain }}{% else %}Fabula{% endif %}{% endblock %} | Fabula</title>
 
     {# SEO Meta Tags #}
     {% block meta_description %}
@@ -19,7 +19,7 @@
 
     {# Open Graph #}
     <meta property="og:type" content="{% block og_type %}website{% endblock %}">
-    <meta property="og:title" content="{% block og_title %}{{ page.seo_title|default:page.title|md_plain }} | Fabula{% endblock %}">
+    <meta property="og:title" content="{% block og_title %}{% if page %}{{ page.seo_title|default:page.title|md_plain }} | {% endif %}Fabula{% endblock %}">
     <meta property="og:url" content="{{ request.scheme }}://{{ request.get_host }}{{ request.path }}">
     <meta property="og:site_name" content="Fabula">
     {% block og_description %}
@@ -35,7 +35,7 @@
 
     {# Twitter Card #}
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="{{ page.seo_title|default:page.title|md_plain }} | Fabula">
+    <meta name="twitter:title" content="{% if page %}{{ page.seo_title|default:page.title|md_plain }} | {% endif %}Fabula">
     {% if page.search_description %}
     <meta name="twitter:description" content="{{ page.search_description }}">
     {% endif %}

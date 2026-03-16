@@ -5,27 +5,27 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="google-site-verification" content="jo0A9F53a_dYjXqIcmY6Q3EtiTAGYsQf_FvFwSyxy8M">
-    <title>{% block title %}{{ page.seo_title|default:page.title }}{% endblock %} | Fabula</title>
+    <title>{% block title %}{% if page %}{{ page.seo_title|default:page.title }}{% else %}Fabula{% endif %}{% endblock %} | Fabula</title>
 
     {# SEO Meta Tags #}
-    {% if page.meta_description %}
+    {% if page and page.meta_description %}
     <meta name="description" content="{{ page.meta_description }}">
-    {% elif page.search_description %}
+    {% elif page and page.search_description %}
     <meta name="description" content="{{ page.search_description }}">
     {% endif %}
     <link rel="canonical" href="{% block canonical_url %}{{ request.scheme }}://{{ request.get_host }}{{ request.path }}{% endblock %}">
 
     {# Open Graph #}
     <meta property="og:type" content="{% block og_type %}website{% endblock %}">
-    <meta property="og:title" content="{{ page.seo_title|default:page.title }} | Fabula">
+    <meta property="og:title" content="{% if page %}{{ page.seo_title|default:page.title }} | {% endif %}Fabula">
     <meta property="og:url" content="{{ request.scheme }}://{{ request.get_host }}{{ request.path }}">
     <meta property="og:site_name" content="Fabula">
-    {% if page.meta_description %}
+    {% if page and page.meta_description %}
     <meta property="og:description" content="{{ page.meta_description }}">
-    {% elif page.search_description %}
+    {% elif page and page.search_description %}
     <meta property="og:description" content="{{ page.search_description }}">
     {% endif %}
-    {% if page.og_image %}
+    {% if page and page.og_image %}
     <meta property="og:image" content="{{ request.scheme }}://{{ request.get_host }}{{ page.og_image.url }}">
     {% else %}
     <meta property="og:image" content="{{ request.scheme }}://{{ request.get_host }}{% static 'narrative/images/fabula-og-default.png' %}">
@@ -33,8 +33,8 @@
 
     {# Twitter Card #}
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="{{ page.seo_title|default:page.title }} | Fabula">
-    {% if page.meta_description %}
+    <meta name="twitter:title" content="{% if page %}{{ page.seo_title|default:page.title }} | {% endif %}Fabula">
+    {% if page and page.meta_description %}
     <meta name="twitter:description" content="{{ page.meta_description }}">
     {% endif %}
 
