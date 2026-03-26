@@ -700,6 +700,45 @@ class CharacterPage(Page):
         identifier = self.global_id or self.fabula_uuid or self.pk
         return f"/characters/{identifier}/"
 
+    def get_context(self, request, *args, **kwargs):
+        context = super().get_context(request, *args, **kwargs)
+
+        all_participations = self.get_participations()
+        context['total_participation_count'] = all_participations.count()
+
+        # Build available seasons with counts
+        season_counts = {}
+        for p in all_participations.values_list(
+            'event__episode__season_number', flat=True
+        ):
+            season_counts[p] = season_counts.get(p, 0) + 1
+
+        available_seasons = sorted([
+            {'number': num, 'count': count}
+            for num, count in season_counts.items()
+            if num is not None
+        ], key=lambda s: s['number'])
+        context['available_seasons'] = available_seasons
+
+        # Filter by selected season
+        selected_season = request.GET.get('season')
+        if selected_season:
+            selected_season = int(selected_season)
+            participations = all_participations.filter(
+                event__episode__season_number=selected_season
+            )
+        elif available_seasons:
+            selected_season = available_seasons[0]['number']
+            participations = all_participations.filter(
+                event__episode__season_number=selected_season
+            )
+        else:
+            participations = all_participations
+
+        context['selected_season'] = selected_season
+        context['participations'] = participations
+        return context
+
 
 class CharacterIndexPage(Page):
     """Index page listing all characters."""
@@ -1836,6 +1875,31 @@ class EngagementSignal(models.Model):
 
     def __str__(self):
         return f"{self.action} — {self.series_slug} @ {self.created_at:%Y-%m-%d %H:%M}"
+
+
+class AgentMiss(models.Model):
+    """
+    Logs 404 requests from AI agents/bots.
+
+    Tracks which URLs agents hallucinate — useful for informing
+    information architecture, redirects, and documentation gaps.
+    """
+    path = models.CharField(max_length=2000, db_index=True)
+    user_agent = models.TextField(blank=True)
+    referer = models.URLField(max_length=2000, blank=True)
+    created_at = models.DateTimeField(auto_now_add=True)
+
+    class Meta:
+        indexes = [
+            models.Index(fields=['created_at']),
+            models.Index(fields=['path', 'created_at']),
+        ]
+        ordering = ['-created_at']
+        verbose_name = 'Agent 404 miss'
+        verbose_name_plural = 'Agent 404 misses'
+
+    def __str__(self):
+        return f"{self.path} — {self.created_at:%Y-%m-%d %H:%M}"
 
 
 class ThemeIndexPage(Page):
