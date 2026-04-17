@@ -22,7 +22,7 @@ Context:
             {# Left: pipeline steps #}
             <div class="space-y-4">
                 {% for step in section.steps %}
-                <div class="f-card p-6" style="border-left: 3px solid {{ step.color|accent_color }};">
+                <div class="f-card p-6" style="border-top: 2px solid {{ step.color|accent_color }}; background: color-mix(in srgb, {{ step.color|accent_color }} 4%, var(--f-bg-surface));">
                     <div class="flex items-start gap-4">
                         <div class="w-10 h-10 rounded-lg flex items-center justify-center shrink-0" style="background: {{ step.color|accent_bg }};">
                             <span class="text-sm font-semibold" style="color: {{ step.color|accent_color }};">{{ step.number }}</span>
