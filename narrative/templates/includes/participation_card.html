@@ -120,7 +120,7 @@
         {# Link to character page #}
         <a href="{% narrative_url participation.character %}"
            class="group inline-flex items-center gap-2 px-4 py-2 text-sm font-medium rounded-md transition-all duration-200 f-hover-bg-accent"
-           style="color: var(--f-accent-green); background: var(--f-accent-green-bg); border: 1px solid color-mix(in srgb, var(--f-accent-green) 20%, transparent);"
+           style="color: var(--f-accent-green); background: var(--f-accent-green-bg); border: 1px solid color-mix(in srgb, var(--f-accent-green) 20%, transparent);">
             <span>Follow {{ participation.character.canonical_name|truncatewords:2 }}'s journey</span>
             <i data-lucide="arrow-right" class="w-4 h-4 group-hover:translate-x-1 transition-transform"></i>
         </a>

@@ -28,10 +28,8 @@
     <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-24">
         {% for item in series_list %}
         <a href="{% url 'series_landing' series_slug=item.series.slug %}"
-           class="group block rounded-lg overflow-hidden transition-all duration-300"
-           style="background: var(--f-card-bg); border: 1px solid var(--f-card-border); box-shadow: var(--f-card-shadow);"
-           onmouseover="this.style.boxShadow='var(--f-card-shadow-hover)'; this.style.borderColor='var(--f-card-border-hover)'; this.style.transform='translateY(-2px)'"
-           onmouseout="this.style.boxShadow='var(--f-card-shadow)'; this.style.borderColor='var(--f-card-border)'; this.style.transform='translateY(0)'">
+           class="group block rounded-lg overflow-hidden transition-all duration-300 f-hover-card"
+           style="background: var(--f-card-bg); border: 1px solid var(--f-card-border); box-shadow: var(--f-card-shadow);">
 
             {# Top accent line #}
             <div class="h-0.5" style="background: linear-gradient(90deg, var(--f-accent-primary), var(--f-accent-cyan));"></div>
@@ -50,7 +48,7 @@
                 {# Description #}
                 {% if item.series.description %}
                 <p class="mb-6 line-clamp-2" style="color: var(--f-fg-secondary); font-size: 0.9rem; line-height: 1.6;">
-                    {{ item.series.description|striptags|truncatewords:30 }}
+                    {{ item.series.description|md_plain|truncatewords:30 }}
                 </p>
                 {% endif %}
 
@@ -158,7 +156,7 @@
                 {# Description #}
                 {% if item.series.description %}
                 <div class="text-slate-400 text-sm mb-6 line-clamp-2">
-                    {{ item.series.description|striptags|truncatewords:30 }}
+                    {{ item.series.description|md_plain|truncatewords:30 }}
                 </div>
                 {% endif %}
 

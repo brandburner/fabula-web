@@ -22,7 +22,7 @@ Context:
             {# Left: card list #}
             <div class="space-y-4">
                 {% for card in section.cards %}
-                <div class="f-card p-6"{% if card.border == 'left' %} style="border-top: 2px solid {{ card.color|accent_color }}; background: color-mix(in srgb, {{ card.color|accent_color }} 4%, var(--f-bg-surface));"{% elif card.border == 'top' %} style="border-top: 2px solid {{ card.color|accent_color }}; background: color-mix(in srgb, {{ card.color|accent_color }} 4%, var(--f-bg-surface));"{% endif %}>
+                <div class="f-card p-6"{% if card.border == 'left' or card.border == 'top' %} style="background: color-mix(in srgb, {{ card.color|accent_color }} 4%, var(--f-bg-surface));"{% endif %}>
                     <div class="flex items-start gap-4">
                         <div class="w-9 h-9 rounded-lg flex items-center justify-center shrink-0" style="background: {{ card.color|accent_bg }};">
                             <i data-lucide="{{ card.icon }}" class="w-4 h-4" style="color: {{ card.color|accent_color }};"></i>

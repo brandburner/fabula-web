@@ -496,6 +496,12 @@ html.theme-transitioning * {
 }
 
 
+/* --- Form inputs --- */
+.f-form-input:focus {
+  border-color: var(--f-accent-primary) !important;
+  outline: none;
+}
+
 /* ============================================================================
  * FOCUS INDICATORS — WCAG AAA
  * ============================================================================ */

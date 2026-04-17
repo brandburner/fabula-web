@@ -1,5 +1,6 @@
 {% comment %}
 Messaging matrix section — two-column audience translation table.
+Desktop: table layout. Mobile: stacked cards.
 
 Context:
   section: dict with label, headline, intro, rows[{concept, hollywood, investor}]
@@ -18,19 +19,20 @@ Context:
             {% endif %}
         </div>
 
-        <div class="f-card overflow-hidden">
+        {# Desktop: table layout #}
+        <div class="f-card overflow-hidden hidden sm:block">
             <div class="overflow-x-auto">
                 <table class="w-full text-sm">
                     <thead>
                         <tr style="background: var(--f-bg-elevated); border-bottom: 1px solid var(--f-border-default);">
-                            <th class="px-6 py-4 text-left font-semibold f-heading" style="min-width: 160px;">Concept</th>
-                            <th class="px-6 py-4 text-left font-semibold f-heading" style="min-width: 240px;">
+                            <th class="px-6 py-4 text-left font-semibold f-heading">Concept</th>
+                            <th class="px-6 py-4 text-left font-semibold f-heading">
                                 <span class="flex items-center gap-2">
                                     <i data-lucide="clapperboard" class="w-3.5 h-3.5" style="color: var(--f-accent-primary);"></i>
                                     Hollywood Says
                                 </span>
                             </th>
-                            <th class="px-6 py-4 text-left font-semibold f-heading" style="min-width: 240px;">
+                            <th class="px-6 py-4 text-left font-semibold f-heading">
                                 <span class="flex items-center gap-2">
                                     <i data-lucide="trending-up" class="w-3.5 h-3.5" style="color: var(--f-accent-cyan);"></i>
                                     Investor Says
@@ -49,6 +51,31 @@ Context:
                     </tbody>
                 </table>
             </div>
+        </div>
+
+        {# Mobile: stacked cards #}
+        <div class="space-y-4 sm:hidden">
+            {% for row in section.rows %}
+            <div class="f-card p-5">
+                <h3 class="font-semibold mb-3 f-heading">{{ row.concept|safe }}</h3>
+                <div class="space-y-3">
+                    <div>
+                        <div class="flex items-center gap-2 mb-1">
+                            <i data-lucide="clapperboard" class="w-3 h-3" style="color: var(--f-accent-primary);"></i>
+                            <span class="text-xs font-medium uppercase tracking-wide" style="color: var(--f-fg-placeholder);">Hollywood</span>
+                        </div>
+                        <p class="text-sm" style="color: var(--f-fg-secondary);">{{ row.hollywood|safe }}</p>
+                    </div>
+                    <div>
+                        <div class="flex items-center gap-2 mb-1">
+                            <i data-lucide="trending-up" class="w-3 h-3" style="color: var(--f-accent-cyan);"></i>
+                            <span class="text-xs font-medium uppercase tracking-wide" style="color: var(--f-fg-placeholder);">Investor</span>
+                        </div>
+                        <p class="text-sm" style="color: var(--f-fg-secondary);">{{ row.investor|safe }}</p>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
         </div>
     </div>
 </section>

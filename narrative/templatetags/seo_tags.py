@@ -287,7 +287,7 @@ def episode_jsonld(context, page):
                 continue
             credit_node = {
                 "@type": "Person",
-                "name": c.writer.name,
+                "name": c.writer.canonical_name,
             }
             if c.credit_type:
                 credit_node["fabula:creditType"] = c.credit_type

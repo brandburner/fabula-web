@@ -2,9 +2,8 @@
 {% with conn_type=connection.connection_type|lower|slugify %}
 {% if fabula_theme == 'writerly' %}
 {# ===== WRITERLY CONNECTION CARD ===== #}
-<div class="group relative p-5 rounded-lg transition-all duration-200 cursor-pointer conn-{{ conn_type }} conn-card f-hover-card"
-     style="background: var(--f-card-bg); border: 2px solid var(--f-card-border); box-shadow: var(--f-card-shadow);"
-     onclick="window.location='{% if direction == 'incoming' %}{% narrative_url connection.from_event %}{% else %}{% narrative_url connection.to_event %}{% endif %}'"
+<div class="group relative p-5 rounded-lg transition-all duration-200 conn-{{ conn_type }} conn-card f-hover-card"
+     style="background: var(--f-card-bg); border: 2px solid var(--f-card-border); box-shadow: var(--f-card-shadow);">
 
     {# Background accent line #}
     <div class="absolute top-0 left-0 right-0 h-0.5 rounded-t-lg opacity-40 group-hover:opacity-80 transition-opacity"
@@ -12,11 +11,11 @@
 
     {# Connection type badge #}
     <div class="flex items-center gap-3 mb-3">
-        <span class="conn-badge inline-flex items-center gap-2 px-3 py-1.5 text-xs font-medium rounded-md capitalize transition-transform hover:scale-105"
-              onclick="event.stopPropagation(); window.location='{{ connection.get_absolute_url }}'">
+        <a href="{{ connection.get_absolute_url }}"
+           class="conn-badge inline-flex items-center gap-2 px-3 py-1.5 text-xs font-medium rounded-md capitalize transition-transform hover:scale-105 no-underline relative z-10">
             {% include "includes/connection_icon.html" with conn_type=connection.connection_type %}
             {{ connection.get_connection_type_display }}
-        </span>
+        </a>
 
         {% if connection.strength != 'strong' %}
         <span class="text-xs font-medium px-2 py-1 rounded" style="background: var(--f-bg-elevated); color: var(--f-fg-placeholder);">{{ connection.strength }}</span>
@@ -28,8 +27,9 @@
         "{{ connection.description|md }}"
     </p>
 
-    {# Target event link #}
-    <div class="flex items-center gap-2 text-sm mb-2">
+    {# Target event link — this is the primary card action #}
+    <a href="{% if direction == 'incoming' %}{% narrative_url connection.from_event %}{% else %}{% narrative_url connection.to_event %}{% endif %}"
+       class="flex items-center gap-2 text-sm mb-2 no-underline">
         {% if direction == "incoming" %}
             <i data-lucide="arrow-left" class="w-4 h-4 shrink-0" style="color: var(--conn-color)"></i>
             <span class="font-medium" style="color: var(--f-fg-heading);">
@@ -41,7 +41,10 @@
                 {{ connection.to_event.title|md }}
             </span>
         {% endif %}
-    </div>
+
+        {# Hover indicator #}
+        <i data-lucide="arrow-right" class="w-4 h-4 ml-auto opacity-0 group-hover:opacity-100 transition-all duration-200 group-hover:translate-x-1" style="color: var(--conn-color)"></i>
+    </a>
 
     {# Episode context #}
     <div class="text-xs" style="color: var(--f-fg-placeholder); font-family: var(--f-font-mono);">
@@ -51,18 +54,12 @@
             S{{ connection.to_event.episode.season_number }}E{{ connection.to_event.episode.episode_number }} · {{ connection.to_event.episode.title|truncatewords:5 }}
         {% endif %}
     </div>
-
-    {# Hover indicator #}
-    <div class="absolute right-5 top-1/2 -translate-y-1/2 opacity-0 group-hover:opacity-100 transition-all duration-200 group-hover:translate-x-1">
-        <i data-lucide="arrow-right" class="w-5 h-5" style="color: var(--conn-color)"></i>
-    </div>
 </div>
 
 {% else %}
 {# ===== DARK CONNECTION CARD (original) ===== #}
-<div class="group relative p-5 rounded-xl border-2 transition-all duration-300 cursor-pointer
-            conn-{{ conn_type }} conn-card hover:shadow-2xl"
-     onclick="window.location='{% if direction == 'incoming' %}{% narrative_url connection.from_event %}{% else %}{% narrative_url connection.to_event %}{% endif %}'">
+<div class="group relative p-5 rounded-xl border-2 transition-all duration-300
+            conn-{{ conn_type }} conn-card hover:shadow-2xl">
 
     {# Background accent line #}
     <div class="absolute top-0 left-0 right-0 h-1 rounded-t-xl opacity-50 group-hover:opacity-100 transition-opacity"
@@ -70,11 +67,11 @@
 
     {# Connection type badge #}
     <div class="flex items-center gap-3 mb-3">
-        <span class="conn-badge inline-flex items-center gap-2 px-3 py-1.5 text-xs font-semibold border-2 rounded-lg capitalize hover:scale-105 transition-transform"
-              onclick="event.stopPropagation(); window.location='{{ connection.get_absolute_url }}'">
+        <a href="{{ connection.get_absolute_url }}"
+           class="conn-badge inline-flex items-center gap-2 px-3 py-1.5 text-xs font-semibold border-2 rounded-lg capitalize hover:scale-105 transition-transform no-underline relative z-10">
             {% include "includes/connection_icon.html" with conn_type=connection.connection_type %}
             {{ connection.get_connection_type_display }}
-        </span>
+        </a>
 
         {% if connection.strength != 'strong' %}
         <span class="text-xs text-slate-500 font-medium px-2 py-1 bg-slate-800/50 rounded">{{ connection.strength }}</span>
@@ -86,8 +83,9 @@
         "{{ connection.description|md }}"
     </p>
 
-    {# Target event link #}
-    <div class="flex items-center gap-2 text-sm mb-2">
+    {# Target event link — this is the primary card action #}
+    <a href="{% if direction == 'incoming' %}{% narrative_url connection.from_event %}{% else %}{% narrative_url connection.to_event %}{% endif %}"
+       class="flex items-center gap-2 text-sm mb-2 no-underline">
         {% if direction == "incoming" %}
             <i data-lucide="arrow-left" class="w-4 h-4 shrink-0" style="color: var(--conn-color)"></i>
             <span class="font-semibold text-slate-200 group-hover:text-white transition-colors">
@@ -99,7 +97,10 @@
                 {{ connection.to_event.title|md }}
             </span>
         {% endif %}
-    </div>
+
+        {# Hover indicator #}
+        <i data-lucide="arrow-right" class="w-5 h-5 ml-auto opacity-0 group-hover:opacity-100 transition-all duration-300 group-hover:translate-x-1" style="color: var(--conn-color)"></i>
+    </a>
 
     {# Episode context #}
     <div class="text-xs text-slate-500 font-mono">
@@ -108,11 +109,6 @@
         {% else %}
             S{{ connection.to_event.episode.season_number }}E{{ connection.to_event.episode.episode_number }} · {{ connection.to_event.episode.title|truncatewords:5 }}
         {% endif %}
-    </div>
-
-    {# Hover indicator #}
-    <div class="absolute right-5 top-1/2 -translate-y-1/2 opacity-0 group-hover:opacity-100 transition-all duration-300 group-hover:translate-x-1">
-        <i data-lucide="arrow-right" class="w-6 h-6" style="color: var(--conn-color)"></i>
     </div>
 </div>
 {% endif %}

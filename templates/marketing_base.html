@@ -70,7 +70,7 @@
     </script>
 
     {# Lucide Icons #}
-    <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
+    <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js" defer></script>
 
     {# Alpine.js for interactivity #}
     <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
@@ -254,7 +254,7 @@
             <a href="/platform/" class="block text-slate-300 hover:text-white">Investors</a>
         </nav>
         {% else %}
-        <div class="absolute inset-0" style="background: rgba(250, 248, 244, 0.9);" @click="open = false"></div>
+        <div class="absolute inset-0" style="background: color-mix(in srgb, var(--f-bg-page) 90%, transparent);" @click="open = false"></div>
         <nav class="absolute top-16 left-0 right-0 glass p-6 space-y-4" style="border-bottom: 1px solid var(--f-border-light);" aria-label="Mobile navigation">
             <a href="/for-production/" class="block" style="color: var(--f-fg-secondary);">For Production</a>
             <a href="{% url 'catalog' %}" class="block" style="color: var(--f-fg-secondary);">Explore</a>
@@ -381,9 +381,9 @@
     </footer>
     {% endif %}
 
-    {# Initialize Lucide icons #}
+    {# Initialize Lucide icons (after deferred script loads) #}
     <script>
-        lucide.createIcons();
+        document.addEventListener('DOMContentLoaded', () => lucide.createIcons());
     </script>
 
     {# Umami event tracking for marketing pages #}

@@ -19,7 +19,7 @@ Context:
         <div class="grid md:grid-cols-2 gap-6 mb-10">
             {# Left column #}
             {% if section.left %}
-            <div class="f-card p-8" style="border-top: 3px solid {{ section.left.color|accent_color }};">
+            <div class="f-card p-8" style="background: color-mix(in srgb, {{ section.left.color|accent_color }} 4%, var(--f-bg-surface));">
                 <h3 class="text-lg font-semibold mb-6 f-heading flex items-center gap-2">
                     {% if section.left.icon %}
                     <i data-lucide="{{ section.left.icon }}" class="w-5 h-5" style="color: {{ section.left.color|accent_color }};"></i>
@@ -39,7 +39,7 @@ Context:
 
             {# Right column #}
             {% if section.right %}
-            <div class="f-card p-8" style="border-top: 3px solid {{ section.right.color|accent_color }};">
+            <div class="f-card p-8" style="background: color-mix(in srgb, {{ section.right.color|accent_color }} 4%, var(--f-bg-surface));">
                 <h3 class="text-lg font-semibold mb-6 f-heading flex items-center gap-2">
                     {% if section.right.icon %}
                     <i data-lucide="{{ section.right.icon }}" class="w-5 h-5" style="color: {{ section.right.color|accent_color }};"></i>

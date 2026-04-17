@@ -33,10 +33,8 @@ Context:
                             type="{{ field.type }}"
                             name="{{ field.name }}"
                             {% if field.required %}required{% endif %}
-                            class="w-full px-4 py-3 rounded-lg text-sm"
-                            style="background: var(--f-bg-elevated); border: 1px solid var(--f-border-default); color: var(--f-fg-primary); font-family: var(--f-font-body);"
-                            onfocus="this.style.borderColor='var(--f-accent-primary)'"
-                            onblur="this.style.borderColor='var(--f-border-default)'">
+                            class="w-full px-4 py-3 rounded-lg text-sm f-form-input"
+                            style="background: var(--f-bg-elevated); border: 1px solid var(--f-border-default); color: var(--f-fg-primary); font-family: var(--f-font-body);">
 
                         {% elif field.type == 'select' %}
                         <select
@@ -55,10 +53,8 @@ Context:
                             name="{{ field.name }}"
                             rows="4"
                             {% if field.required %}required{% endif %}
-                            class="w-full px-4 py-3 rounded-lg text-sm"
-                            style="background: var(--f-bg-elevated); border: 1px solid var(--f-border-default); color: var(--f-fg-primary); font-family: var(--f-font-body); resize: vertical;"
-                            onfocus="this.style.borderColor='var(--f-accent-primary)'"
-                            onblur="this.style.borderColor='var(--f-border-default)'"></textarea>
+                            class="w-full px-4 py-3 rounded-lg text-sm f-form-input"
+                            style="background: var(--f-bg-elevated); border: 1px solid var(--f-border-default); color: var(--f-fg-primary); font-family: var(--f-font-body); resize: vertical;"></textarea>
 
                         {% elif field.type == 'checkbox_group' %}
                         <div class="space-y-2">

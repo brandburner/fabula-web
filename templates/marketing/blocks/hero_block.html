@@ -8,7 +8,7 @@
     {% if self.background_style == 'image' and self.background_image %}
     <div class="absolute inset-0">
         {% image self.background_image fill-1920x1080 as bg_image %}
-        <img src="{{ bg_image.url }}" alt="" class="w-full h-full object-cover opacity-20">
+        <img src="{{ bg_image.url }}" alt="" class="w-full h-full object-cover opacity-20" loading="lazy" aria-hidden="true">
         <div class="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/80 to-transparent"></div>
     </div>
     {% endif %}

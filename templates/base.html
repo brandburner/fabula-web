@@ -76,7 +76,7 @@
     </script>
 
     {# Lucide Icons #}
-    <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
+    <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js" defer></script>
 
     {# Alpine.js for interactivity #}
     <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
@@ -331,7 +331,7 @@
                 {% block header_actions %}
                 {% contextual_graph_url as graph_url %}
                 <a href="{{ graph_url }}"
-                   class="group flex items-center gap-2 px-3 py-1.5 text-sm rounded-md transition-all duration-200"
+                   class="group flex items-center gap-2 px-3 py-1.5 min-h-[44px] min-w-[44px] justify-center text-sm rounded-md transition-all duration-200"
                    style="color: var(--f-accent-cyan); border: 1px solid var(--f-border-default);"
                    title="View in graph context">
                     <i data-lucide="git-branch" class="w-4 h-4"></i>
@@ -435,9 +435,9 @@
     </footer>
     {% endif %}
 
-    {# Initialize Lucide icons #}
+    {# Initialize Lucide icons (after deferred script loads) #}
     <script>
-        lucide.createIcons();
+        document.addEventListener('DOMContentLoaded', () => lucide.createIcons());
     </script>
 
     {# Umami event tracking via delegation #}

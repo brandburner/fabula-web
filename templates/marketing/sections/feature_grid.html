@@ -22,7 +22,7 @@ Context:
         {% if section.features %}
         <div class="grid grid-cols-2 md:grid-cols-{{ section.features|length|default:3 }} gap-4 mb-12">
             {% for feature in section.features %}
-            <div class="f-card p-6 text-center{% if forloop.last and section.features|length|divisibleby:2 %} col-span-2 md:col-span-1{% endif %}" style="border-top: 3px solid {{ feature.color|accent_color }};">
+            <div class="f-card p-6 text-center{% if forloop.last and section.features|length|divisibleby:2 %} col-span-2 md:col-span-1{% endif %}" style="background: color-mix(in srgb, {{ feature.color|accent_color }} 4%, var(--f-bg-surface));">
                 <div class="w-10 h-10 rounded-full flex items-center justify-center mx-auto mb-3" style="background: {{ feature.color|accent_bg }};">
                     <i data-lucide="{{ feature.icon }}" class="w-5 h-5" style="color: {{ feature.color|accent_color }};"></i>
                 </div>
@@ -94,7 +94,7 @@ Context:
         {% if section.footer_cards %}
         <div class="grid md:grid-cols-{{ section.footer_cards|length }} gap-6 mt-12">
             {% for card in section.footer_cards %}
-            <div class="f-card p-6 text-center" style="border-top: 3px solid {{ card.color|accent_color }};">
+            <div class="f-card p-6 text-center" style="background: color-mix(in srgb, {{ card.color|accent_color }} 4%, var(--f-bg-surface));">
                 <div class="w-10 h-10 rounded-lg flex items-center justify-center mx-auto mb-3" style="background: {{ card.color|accent_bg }};">
                     <i data-lucide="{{ card.icon }}" class="w-5 h-5" style="color: {{ card.color|accent_color }};"></i>
                 </div>

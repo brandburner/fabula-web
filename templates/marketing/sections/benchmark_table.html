@@ -1,5 +1,6 @@
 {% comment %}
 Benchmark table section — metric tables with dual-audience "What This Means" columns.
+Desktop: table layout. Mobile: stacked cards.
 
 Context:
   section: dict with label, headline, intro, metrics[{metric, result, hollywood_meaning, investor_meaning}]
@@ -18,20 +19,21 @@ Context:
             {% endif %}
         </div>
 
-        <div class="f-card overflow-hidden">
+        {# Desktop: table layout #}
+        <div class="f-card overflow-hidden hidden sm:block">
             <div class="overflow-x-auto">
                 <table class="w-full text-sm">
                     <thead>
                         <tr style="background: var(--f-bg-elevated); border-bottom: 1px solid var(--f-border-default);">
-                            <th class="px-6 py-4 text-left font-semibold f-heading" style="min-width: 160px;">Metric</th>
-                            <th class="px-6 py-4 text-left font-semibold f-heading" style="min-width: 120px;">Result</th>
-                            <th class="px-6 py-4 text-left font-semibold f-heading" style="min-width: 200px;">
+                            <th class="px-6 py-4 text-left font-semibold f-heading">Metric</th>
+                            <th class="px-6 py-4 text-left font-semibold f-heading">Result</th>
+                            <th class="px-6 py-4 text-left font-semibold f-heading">
                                 <span class="flex items-center gap-2">
                                     <i data-lucide="clapperboard" class="w-3.5 h-3.5" style="color: var(--f-accent-primary);"></i>
                                     For Production
                                 </span>
                             </th>
-                            <th class="px-6 py-4 text-left font-semibold f-heading" style="min-width: 200px;">
+                            <th class="px-6 py-4 text-left font-semibold f-heading">
                                 <span class="flex items-center gap-2">
                                     <i data-lucide="trending-up" class="w-3.5 h-3.5" style="color: var(--f-accent-cyan);"></i>
                                     For Investors
@@ -51,6 +53,34 @@ Context:
                     </tbody>
                 </table>
             </div>
+        </div>
+
+        {# Mobile: stacked cards #}
+        <div class="space-y-4 sm:hidden">
+            {% for row in section.metrics %}
+            <div class="f-card p-5">
+                <div class="flex items-baseline justify-between mb-3">
+                    <h3 class="font-semibold f-heading">{{ row.metric|safe }}</h3>
+                    <span class="text-lg font-semibold f-heading" style="color: var(--f-accent-primary);">{{ row.result|safe }}</span>
+                </div>
+                <div class="space-y-3">
+                    <div>
+                        <div class="flex items-center gap-2 mb-1">
+                            <i data-lucide="clapperboard" class="w-3 h-3" style="color: var(--f-accent-primary);"></i>
+                            <span class="text-xs font-medium uppercase tracking-wide" style="color: var(--f-fg-placeholder);">Production</span>
+                        </div>
+                        <p class="text-sm" style="color: var(--f-fg-secondary);">{{ row.hollywood_meaning|safe }}</p>
+                    </div>
+                    <div>
+                        <div class="flex items-center gap-2 mb-1">
+                            <i data-lucide="trending-up" class="w-3 h-3" style="color: var(--f-accent-cyan);"></i>
+                            <span class="text-xs font-medium uppercase tracking-wide" style="color: var(--f-fg-placeholder);">Investors</span>
+                        </div>
+                        <p class="text-sm" style="color: var(--f-fg-secondary);">{{ row.investor_meaning|safe }}</p>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
         </div>
 
         {% if section.blockquote %}

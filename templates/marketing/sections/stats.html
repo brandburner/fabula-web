@@ -20,7 +20,7 @@ Context:
 
         <div class="grid md:grid-cols-{{ section.stats|length|default:3 }} gap-6 mb-12">
             {% for stat in section.stats %}
-            <div class="f-card p-8" style="border-top: 3px solid {{ stat.color|accent_color }};">
+            <div class="f-card p-8" style="background: color-mix(in srgb, {{ stat.color|accent_color }} 4%, var(--f-bg-surface));">
                 <div class="text-3xl font-semibold mb-2 f-heading" style="font-family: var(--f-font-display); color: {{ stat.color|accent_color }};">{{ stat.value|safe }}</div>
                 <h3 class="font-semibold mb-3 f-heading">{{ stat.title|safe }}</h3>
                 <p class="text-sm" style="color: var(--f-fg-secondary);">
