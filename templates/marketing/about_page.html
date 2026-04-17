@@ -155,43 +155,44 @@
             <h2 class="text-3xl md:text-4xl font-semibold f-heading">The Work So Far</h2>
         </div>
 
-        {# Stats #}
+        {# Stats — hero stat gets prominence, others are secondary #}
         <div class="grid grid-cols-2 md:grid-cols-4 gap-6 mb-12">
-            <div class="f-card p-6 text-center">
-                <div class="text-3xl md:text-4xl font-semibold mb-1 f-heading" style="font-family: var(--f-font-display);">726</div>
-                <div class="text-sm" style="color: var(--f-fg-tertiary);">Canonical Entities</div>
+            <div class="f-card p-6 text-center col-span-2 md:col-span-1 md:row-span-2" style="background: color-mix(in srgb, var(--f-accent-green) 6%, var(--f-bg-surface)); border-top: 2px solid var(--f-accent-green); display: flex; flex-direction: column; justify-content: center;">
+                <div class="text-5xl md:text-6xl font-semibold mb-2 f-heading" style="font-family: var(--f-font-display); color: var(--f-accent-green);">0</div>
+                <div class="text-sm font-medium" style="color: var(--f-fg-secondary);">Entity Drift Errors</div>
+                <div class="text-xs mt-2" style="color: var(--f-fg-tertiary);">Pilot to series finale</div>
             </div>
-            <div class="f-card p-6 text-center">
-                <div class="text-3xl md:text-4xl font-semibold mb-1 f-heading" style="font-family: var(--f-font-display);">87ms</div>
-                <div class="text-sm" style="color: var(--f-fg-tertiary);">Avg Query Latency</div>
+            <div class="f-card p-5 text-center">
+                <div class="text-2xl md:text-3xl font-semibold mb-1 f-heading" style="font-family: var(--f-font-display);">726</div>
+                <div class="text-xs" style="color: var(--f-fg-tertiary);">Canonical Entities</div>
             </div>
-            <div class="f-card p-6 text-center">
-                <div class="text-3xl md:text-4xl font-semibold mb-1 f-heading" style="font-family: var(--f-font-display);">90%+</div>
-                <div class="text-sm" style="color: var(--f-fg-tertiary);">Entity Resolution Accuracy</div>
+            <div class="f-card p-5 text-center">
+                <div class="text-2xl md:text-3xl font-semibold mb-1 f-heading" style="font-family: var(--f-font-display);">87ms</div>
+                <div class="text-xs" style="color: var(--f-fg-tertiary);">Avg Query Latency</div>
             </div>
-            <div class="f-card p-6 text-center">
-                <div class="text-3xl md:text-4xl font-semibold mb-1 f-heading" style="font-family: var(--f-font-display);">0</div>
-                <div class="text-sm" style="color: var(--f-fg-tertiary);">Entity Drift Errors</div>
+            <div class="f-card p-5 text-center">
+                <div class="text-2xl md:text-3xl font-semibold mb-1 f-heading" style="font-family: var(--f-font-display);">90%+</div>
+                <div class="text-xs" style="color: var(--f-fg-tertiary);">Entity Resolution Accuracy</div>
             </div>
         </div>
 
         {# Show cards #}
         <div class="grid md:grid-cols-3 gap-6 mb-12">
-            <div class="f-card p-8 text-center" style="border-top: 3px solid var(--f-accent-primary);">
+            <div class="f-card p-8 text-center" style="border-top: 2px solid var(--f-accent-primary); background: color-mix(in srgb, var(--f-accent-primary) 4%, var(--f-bg-surface));">
                 <h3 class="text-lg font-semibold mb-2 f-heading">Star Trek: TNG</h3>
                 <p class="text-sm mb-4" style="color: var(--f-fg-secondary);">
                     Seven seasons, 178 episodes. Alias resolution across ranks, titles, and intimate address forms. Multi-species naming conventions.
                 </p>
                 <span class="f-badge">Coming Soon</span>
             </div>
-            <div class="f-card p-8 text-center" style="border-top: 3px solid var(--f-accent-violet);">
+            <div class="f-card p-8 text-center" style="border-top: 2px solid var(--f-accent-violet); background: color-mix(in srgb, var(--f-accent-violet) 4%, var(--f-bg-surface));">
                 <h3 class="text-lg font-semibold mb-2 f-heading">Doctor Who</h3>
                 <p class="text-sm mb-4" style="color: var(--f-fg-secondary);">
                     Multi-incarnation timelines. Regeneration as identity continuity. The most complex entity resolution problem in television.
                 </p>
                 <span class="f-badge">Coming Soon</span>
             </div>
-            <div class="f-card p-8 text-center" style="border-top: 3px solid var(--f-accent-cyan);">
+            <div class="f-card p-8 text-center" style="border-top: 2px solid var(--f-accent-cyan); background: color-mix(in srgb, var(--f-accent-cyan) 4%, var(--f-bg-surface));">
                 <h3 class="text-lg font-semibold mb-2 f-heading">The West Wing</h3>
                 <p class="text-sm mb-4" style="color: var(--f-fg-secondary);">
                     Dense political hierarchies, overlapping professional and personal relationships, 50+ recurring characters.
