@@ -79,7 +79,7 @@
     {# Writerly fonts #}
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,300;1,9..40,400&family=Newsreader:ital,opsz,wght@0,6..72,300;0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,300;1,6..72,400&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Literata:ital,opsz,wght@0,7..72,200..900;1,7..72,200..900&family=Figtree:wght@300..900&display=swap" rel="stylesheet">
     {% endif %}
 
     <style>
@@ -170,7 +170,7 @@
                     </div>
                     <span class="font-bold tracking-tight text-white text-lg">FABULA</span>
                 </a>
-                <nav class="hidden md:flex items-center gap-8">
+                <nav class="hidden md:flex items-center gap-8" aria-label="Main navigation">
                     <a href="/for-production/" class="text-sm text-slate-400 hover:text-white transition-colors">For Production</a>
                     <a href="{% url 'catalog' %}" class="text-sm text-slate-400 hover:text-white transition-colors flex items-center gap-1.5">
                         <i data-lucide="compass" class="w-4 h-4"></i>
@@ -180,13 +180,13 @@
                     <a href="/platform/" class="text-sm text-slate-400 hover:text-white transition-colors">Investors</a>
                 </nav>
                 <div class="flex items-center gap-4">
-                    <a href="?theme=writerly" class="hidden md:flex items-center px-2 py-1.5 text-sm text-slate-500 hover:text-white border border-slate-700/50 rounded-md transition-all duration-200" title="Switch to writerly theme">
+                    <a href="?theme=writerly" class="hidden md:flex items-center p-3 text-sm text-slate-500 hover:text-white border border-slate-700/50 rounded-md transition-all duration-200" aria-label="Switch theme" title="Switch to writerly theme">
                         <i data-lucide="sun" class="w-4 h-4"></i>
                     </a>
                     <a href="/early-access/" class="px-4 py-2 text-sm font-medium rounded-lg bg-gradient-to-r from-amber-500 to-orange-500 text-white hover:from-amber-400 hover:to-orange-400 transition-all duration-300 shadow-lg shadow-amber-500/25" data-umami-event="cta-early-access" data-umami-event-location="header">
                         Early Access
                     </a>
-                    <button class="md:hidden p-2 text-slate-400 hover:text-white" x-data @click="$dispatch('toggle-mobile-menu')">
+                    <button class="md:hidden p-3 text-slate-400 hover:text-white" x-data @click="$dispatch('toggle-mobile-menu')" aria-label="Open navigation menu">
                         <i data-lucide="menu" class="w-5 h-5"></i>
                     </button>
                 </div>
@@ -206,25 +206,25 @@
                 </a>
 
                 {# Desktop nav #}
-                <nav class="hidden md:flex items-center gap-8">
-                    <a href="/for-production/" class="text-sm transition-colors" style="color: var(--f-fg-tertiary);" onmouseover="this.style.color='var(--f-fg-heading)'" onmouseout="this.style.color='var(--f-fg-tertiary)'">For Production</a>
-                    <a href="{% url 'catalog' %}" class="text-sm transition-colors flex items-center gap-1.5" style="color: var(--f-fg-tertiary);" onmouseover="this.style.color='var(--f-fg-heading)'" onmouseout="this.style.color='var(--f-fg-tertiary)'">
+                <nav class="hidden md:flex items-center gap-8" aria-label="Main navigation">
+                    <a href="/for-production/" class="text-sm transition-colors f-hover-accent" style="color: var(--f-fg-tertiary);">For Production</a>
+                    <a href="{% url 'catalog' %}" class="text-sm transition-colors flex items-center gap-1.5 f-hover-accent" style="color: var(--f-fg-tertiary);">
                         <i data-lucide="compass" class="w-4 h-4"></i>
                         Explore
                     </a>
-                    <a href="/about/" class="text-sm transition-colors" style="color: var(--f-fg-tertiary);" onmouseover="this.style.color='var(--f-fg-heading)'" onmouseout="this.style.color='var(--f-fg-tertiary)'">About</a>
-                    <a href="/platform/" class="text-sm transition-colors" style="color: var(--f-fg-tertiary);" onmouseover="this.style.color='var(--f-fg-heading)'" onmouseout="this.style.color='var(--f-fg-tertiary)'">Investors</a>
+                    <a href="/about/" class="text-sm transition-colors f-hover-accent" style="color: var(--f-fg-tertiary);">About</a>
+                    <a href="/platform/" class="text-sm transition-colors f-hover-accent" style="color: var(--f-fg-tertiary);">Investors</a>
                 </nav>
 
                 {# Right side: theme toggle + CTA + mobile menu #}
                 <div class="flex items-center gap-4">
-                    <a href="?theme=dark" class="hidden md:flex items-center px-2 py-1.5 text-sm rounded-md transition-all duration-200" style="color: var(--f-fg-tertiary); border: 1px solid var(--f-border-light);" title="Switch to dark theme">
+                    <a href="?theme=dark" class="hidden md:flex items-center p-3 text-sm rounded-md transition-all duration-200 f-hover-accent" style="color: var(--f-fg-tertiary); border: 1px solid var(--f-border-light);" aria-label="Switch theme" title="Switch to dark theme">
                         <i data-lucide="moon" class="w-4 h-4"></i>
                     </a>
                     <a href="/early-access/" class="f-btn-primary" style="padding: 0.5rem 1.25rem; font-size: 0.875rem;" data-umami-event="cta-early-access" data-umami-event-location="header">
                         Early Access
                     </a>
-                    <button class="md:hidden p-2" style="color: var(--f-fg-tertiary);" x-data @click="$dispatch('toggle-mobile-menu')">
+                    <button class="md:hidden p-3" style="color: var(--f-fg-tertiary);" x-data @click="$dispatch('toggle-mobile-menu')" aria-label="Open navigation menu">
                         <i data-lucide="menu" class="w-5 h-5"></i>
                     </button>
                 </div>
@@ -247,7 +247,7 @@
          style="display: none;">
         {% if fabula_theme == 'dark' %}
         <div class="absolute inset-0 bg-slate-950/90" @click="open = false"></div>
-        <nav class="absolute top-16 left-0 right-0 glass border-b border-slate-800/50 p-6 space-y-4">
+        <nav class="absolute top-16 left-0 right-0 glass border-b border-slate-800/50 p-6 space-y-4" aria-label="Mobile navigation">
             <a href="/for-production/" class="block text-slate-300 hover:text-white">For Production</a>
             <a href="{% url 'catalog' %}" class="block text-slate-300 hover:text-white">Explore</a>
             <a href="/about/" class="block text-slate-300 hover:text-white">About</a>
@@ -255,7 +255,7 @@
         </nav>
         {% else %}
         <div class="absolute inset-0" style="background: rgba(250, 248, 244, 0.9);" @click="open = false"></div>
-        <nav class="absolute top-16 left-0 right-0 glass p-6 space-y-4" style="border-bottom: 1px solid var(--f-border-light);">
+        <nav class="absolute top-16 left-0 right-0 glass p-6 space-y-4" style="border-bottom: 1px solid var(--f-border-light);" aria-label="Mobile navigation">
             <a href="/for-production/" class="block" style="color: var(--f-fg-secondary);">For Production</a>
             <a href="{% url 'catalog' %}" class="block" style="color: var(--f-fg-secondary);">Explore</a>
             <a href="/about/" class="block" style="color: var(--f-fg-secondary);">About</a>
@@ -273,7 +273,7 @@
     {# FOOTER                                                            #}
     {# ================================================================ #}
     {% if fabula_theme == 'dark' %}
-    <footer class="border-t border-slate-800/50 mt-20 bg-slate-950">
+    <footer class="border-t border-slate-800/50 mt-20 bg-slate-950" aria-label="Footer navigation">
         <div class="max-w-7xl mx-auto px-6 py-16">
             <div class="grid grid-cols-1 md:grid-cols-4 gap-12">
                 <div class="md:col-span-1">
@@ -322,7 +322,7 @@
 
     {% else %}
     {# Writerly footer #}
-    <footer style="border-top: 1px solid var(--f-border-default);" class="mt-20">
+    <footer style="border-top: 1px solid var(--f-border-default);" class="mt-20" aria-label="Footer navigation">
         <div class="max-w-7xl mx-auto px-6 py-16">
             <div class="grid grid-cols-1 md:grid-cols-4 gap-12">
                 {# Brand #}

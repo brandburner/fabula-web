@@ -85,10 +85,10 @@
     <link rel="stylesheet" href="{% static 'narrative/css/theme-tokens.css' %}">
 
     {% if fabula_theme == 'writerly' %}
-    {# Writerly typography: Newsreader for display, DM Sans for body #}
+    {# Writerly typography: Literata for display, Figtree for body #}
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,300;1,9..40,400&family=Newsreader:ital,opsz,wght@0,6..72,300;0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,300;1,6..72,400&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Literata:ital,opsz,wght@0,7..72,200..900;1,7..72,200..900&family=Figtree:wght@300..900&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
     {% endif %}
 
     <style>
@@ -265,7 +265,7 @@
 
         /* Episode summary prose styling */
         .episode-summary {
-            font-family: 'DM Sans', system-ui, sans-serif;
+            font-family: 'Figtree', system-ui, sans-serif;
             line-height: 1.7;
         }
         .episode-summary p { margin-bottom: 1.25em; }
@@ -304,10 +304,9 @@
                 </a>
                 <span style="color: var(--f-border-strong);" class="hidden sm:inline">|</span>
                 <button onclick="history.back()"
-                        class="flex items-center gap-1.5 px-2 py-1.5 text-sm rounded-md transition-all duration-200"
+                        class="flex items-center gap-1.5 p-3 text-sm rounded-md transition-all duration-200 f-hover-accent"
                         style="color: var(--f-fg-tertiary);"
-                        onmouseover="this.style.color='var(--f-fg-primary)'"
-                        onmouseout="this.style.color='var(--f-fg-tertiary)'"
+                        aria-label="Go back"
                         title="Go back">
                     <i data-lucide="chevron-left" class="w-4 h-4"></i>
                     <span class="hidden sm:inline">Back</span>
@@ -340,7 +339,7 @@
                 </a>
                 {% endblock %}
                 {# Theme toggle #}
-                <a href="?theme=dark" class="flex items-center px-2 py-1.5 text-sm rounded-md transition-all duration-200" style="color: var(--f-fg-tertiary); border: 1px solid var(--f-border-light);" title="Switch to dark theme">
+                <a href="?theme=dark" class="flex items-center p-3 text-sm rounded-md transition-all duration-200 f-hover-accent" style="color: var(--f-fg-tertiary); border: 1px solid var(--f-border-light);" aria-label="Switch theme" title="Switch to dark theme">
                     <i data-lucide="moon" class="w-4 h-4"></i>
                 </a>
             </div>
@@ -362,7 +361,8 @@
                 </a>
                 <span class="text-slate-700 hidden sm:inline">|</span>
                 <button onclick="history.back()"
-                        class="flex items-center gap-1.5 px-2.5 py-1.5 text-sm text-slate-400 hover:text-white hover:bg-slate-800/50 rounded-md transition-all duration-200"
+                        class="flex items-center gap-1.5 p-3 text-sm text-slate-400 hover:text-white hover:bg-slate-800/50 rounded-md transition-all duration-200"
+                        aria-label="Go back"
                         title="Go back">
                     <i data-lucide="chevron-left" class="w-4 h-4"></i>
                     <span class="hidden sm:inline">Back</span>
@@ -393,7 +393,7 @@
                 </a>
                 {% endblock %}
                 {# Theme toggle #}
-                <a href="?theme=writerly" class="flex items-center px-2 py-1.5 text-sm text-slate-500 hover:text-white border border-slate-700/50 rounded-lg transition-all duration-200" title="Switch to writerly theme">
+                <a href="?theme=writerly" class="flex items-center p-3 text-sm text-slate-500 hover:text-white border border-slate-700/50 rounded-lg transition-all duration-200" aria-label="Switch theme" title="Switch to writerly theme">
                     <i data-lucide="sun" class="w-4 h-4"></i>
                 </a>
             </div>
@@ -408,7 +408,7 @@
 
     {# Footer #}
     {% if fabula_theme == 'writerly' %}
-    <footer style="border-top: 1px solid var(--f-border-default);" class="mt-20 py-10">
+    <footer style="border-top: 1px solid var(--f-border-default);" class="mt-20 py-10" aria-label="Footer">
         <div class="max-w-4xl mx-auto px-6 text-center">
             <p class="text-sm mb-4" style="color: var(--f-fg-tertiary);">
                 Narrative analysis powered by
@@ -421,7 +421,7 @@
         </div>
     </footer>
     {% else %}
-    <footer class="border-t border-slate-800/50 mt-20 py-10 relative overflow-hidden">
+    <footer class="border-t border-slate-800/50 mt-20 py-10 relative overflow-hidden" aria-label="Footer">
         <div class="absolute inset-0 bg-gradient-to-b from-transparent to-slate-950/50"></div>
         <div class="relative max-w-4xl mx-auto px-6 text-center">
             <p class="text-sm text-slate-500 mb-4">
