@@ -11,9 +11,7 @@
         </div>
         <div class="flex-1 min-w-0">
             <a href="{% narrative_url involvement.object %}"
-               class="font-medium transition-colors" style="color: var(--f-fg-heading);"
-               onmouseover="this.style.color='var(--f-accent-orange)'"
-               onmouseout="this.style.color='var(--f-fg-heading)'">
+               class="font-medium transition-colors f-hover-accent" style="color: var(--f-fg-heading);"
                 {{ involvement.object.canonical_name }}
             </a>
 
@@ -42,7 +40,8 @@
                     <button @click="expanded = !expanded"
                             class="p-1 rounded transition-colors"
                             style="color: var(--f-fg-placeholder);"
-                            :title="expanded ? 'Collapse' : 'Expand full text'">
+                            :title="expanded ? 'Collapse' : 'Expand full text'"
+                            aria-label="Toggle object status details">
                         <i data-lucide="chevron-down" class="w-3.5 h-3.5 transition-transform" :class="expanded && 'rotate-180'"></i>
                     </button>
                 </div>
@@ -103,7 +102,8 @@
                     {% endif %}
                     <button @click="expanded = !expanded"
                             class="p-1 rounded hover:bg-slate-700/50 text-slate-500 hover:text-amber-400 transition-colors"
-                            :title="expanded ? 'Collapse' : 'Expand full text'">
+                            :title="expanded ? 'Collapse' : 'Expand full text'"
+                            aria-label="Toggle object status details">
                         <i data-lucide="chevron-down" class="w-3.5 h-3.5 transition-transform" :class="expanded && 'rotate-180'"></i>
                     </button>
                 </div>

@@ -66,10 +66,8 @@
                     })
                 }).then(() => { sent = true; }).catch(() => { sending = false; });
             "
-            class="text-xs font-medium px-3 py-1.5 rounded-md transition-all duration-200 cursor-pointer"
+            class="text-xs font-medium px-3 py-1.5 rounded-md transition-all duration-200 cursor-pointer f-hover-bg-accent"
             style="color: var(--f-accent-primary-fg); background: var(--f-accent-primary-bg); border: 1px solid var(--f-border-accent);"
-            onmouseover="this.style.background='var(--f-border-accent)'; this.style.color='var(--f-fg-inverse)'"
-            onmouseout="this.style.background='var(--f-accent-primary-bg)'; this.style.color='var(--f-accent-primary-fg)'"
             x-bind:disabled="sending"
         >
             <span x-show="!sending">Request this season</span>

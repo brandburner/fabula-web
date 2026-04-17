@@ -26,10 +26,9 @@
             {% endif %}
 
             <button @click="isOpen = !isOpen"
-                    class="p-2 rounded-md transition-all duration-200"
+                    class="p-2 rounded-md transition-all duration-200 f-hover-bg"
                     style="color: var(--f-fg-tertiary);"
-                    onmouseover="this.style.background='var(--f-bg-elevated)'"
-                    onmouseout="this.style.background='transparent'">
+                    aria-label="Toggle details">
                 <i data-lucide="chevron-down"
                    class="w-5 h-5 transition-transform duration-300"
                    :class="{ 'rotate-180': isOpen }"></i>
@@ -120,10 +119,8 @@
 
         {# Link to character page #}
         <a href="{% narrative_url participation.character %}"
-           class="group inline-flex items-center gap-2 px-4 py-2 text-sm font-medium rounded-md transition-all duration-200"
+           class="group inline-flex items-center gap-2 px-4 py-2 text-sm font-medium rounded-md transition-all duration-200 f-hover-bg-accent"
            style="color: var(--f-accent-green); background: var(--f-accent-green-bg); border: 1px solid color-mix(in srgb, var(--f-accent-green) 20%, transparent);"
-           onmouseover="this.style.background='color-mix(in srgb, var(--f-accent-green) 12%, transparent)'"
-           onmouseout="this.style.background='var(--f-accent-green-bg)'">
             <span>Follow {{ participation.character.canonical_name|truncatewords:2 }}'s journey</span>
             <i data-lucide="arrow-right" class="w-4 h-4 group-hover:translate-x-1 transition-transform"></i>
         </a>
@@ -163,7 +160,8 @@
             {% endif %}
 
             <button @click="isOpen = !isOpen"
-                    class="p-2 rounded-lg hover:bg-slate-800 transition-all duration-200 hover:scale-110">
+                    class="p-2 rounded-lg hover:bg-slate-800 transition-all duration-200 hover:scale-110"
+                    aria-label="Toggle details">
                 <i data-lucide="chevron-down"
                    class="w-5 h-5 text-slate-400 transition-transform duration-300"
                    :class="{ 'rotate-180': isOpen }"></i>

@@ -50,9 +50,7 @@
                     </span>
                 </div>
                 <a href="{% narrative_url ep_group.episode %}" class="flex-1 min-w-0 group">
-                    <h3 class="font-medium truncate transition-colors" style="font-family: var(--f-font-display); color: var(--f-fg-heading); font-size: 1.1rem;"
-                        onmouseover="this.style.color='var(--f-accent-primary)'"
-                        onmouseout="this.style.color='var(--f-fg-heading)'">
+                    <h3 class="font-medium truncate transition-colors f-hover-accent" style="font-family: var(--f-font-display); color: var(--f-fg-heading); font-size: 1.1rem;">
                         {{ ep_group.episode.title }}
                     </h3>
                 </a>
@@ -63,10 +61,8 @@
             <div class="grid gap-2 pl-4" style="border-left: 2px solid color-mix(in srgb, var(--f-accent-primary) 25%, transparent);">
                 {% for event in ep_group.events %}
                 <a href="{% narrative_url event %}"
-                   class="block p-4 rounded-lg transition-all duration-200 group"
-                   style="background: var(--f-card-bg); border: 1px solid var(--f-card-border);"
-                   onmouseover="this.style.borderColor='var(--f-accent-primary)'; this.style.boxShadow='var(--f-card-shadow-hover)'"
-                   onmouseout="this.style.borderColor='var(--f-card-border)'; this.style.boxShadow='none'">
+                   class="block p-4 rounded-lg transition-all duration-200 group f-hover-card"
+                   style="background: var(--f-card-bg); border: 1px solid var(--f-card-border);">
                     <div class="flex items-start gap-4">
                         <div class="flex-shrink-0 w-12 text-center">
                             <span class="text-xs block" style="color: var(--f-fg-placeholder);">Scene</span>

@@ -54,10 +54,8 @@
                     </span>
                     <span class="text-sm" style="color: var(--f-fg-placeholder);">{{ connections.count }} connections</span>
                     <a href="{% url 'connection_type_list' conn_type.0|lower %}"
-                       class="ml-auto text-sm transition-colors"
-                       style="color: var(--f-fg-secondary);"
-                       onmouseover="this.style.color='var(--f-accent-cyan)'"
-                       onmouseout="this.style.color='var(--f-fg-secondary)'">
+                       class="ml-auto text-sm transition-colors f-hover-accent"
+                       style="color: var(--f-fg-secondary);">
                         View all &rarr;
                     </a>
                 </div>
@@ -85,10 +83,8 @@
                 <div class="space-y-2">
                     {% for connection in connections %}
                     <a href="{{ connection.get_absolute_url }}"
-                       class="flex items-center gap-3 p-3 rounded-lg transition-all duration-200 group"
-                       style="background: var(--f-card-bg); border: 1px solid var(--f-card-border);"
-                       onmouseover="this.style.borderColor='color-mix(in srgb, var(--f-accent-cyan) 40%, transparent)'; this.style.boxShadow='0 1px 4px color-mix(in srgb, var(--f-accent-cyan) 6%, transparent)'"
-                       onmouseout="this.style.borderColor='var(--f-card-border)'; this.style.boxShadow='none'">
+                       class="flex items-center gap-3 p-3 rounded-lg transition-all duration-200 group f-hover-card"
+                       style="background: var(--f-card-bg); border: 1px solid var(--f-card-border);">
                         <span class="text-sm flex-1 truncate" style="color: var(--f-fg-secondary);">
                             {{ connection.from_event.title|md }}
                         </span>

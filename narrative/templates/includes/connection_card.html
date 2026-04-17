@@ -2,11 +2,9 @@
 {% with conn_type=connection.connection_type|lower|slugify %}
 {% if fabula_theme == 'writerly' %}
 {# ===== WRITERLY CONNECTION CARD ===== #}
-<div class="group relative p-5 rounded-lg transition-all duration-200 cursor-pointer conn-{{ conn_type }} conn-card"
+<div class="group relative p-5 rounded-lg transition-all duration-200 cursor-pointer conn-{{ conn_type }} conn-card f-hover-card"
      style="background: var(--f-card-bg); border: 2px solid var(--f-card-border); box-shadow: var(--f-card-shadow);"
      onclick="window.location='{% if direction == 'incoming' %}{% narrative_url connection.from_event %}{% else %}{% narrative_url connection.to_event %}{% endif %}'"
-     onmouseover="this.style.boxShadow='var(--f-card-shadow-hover)'"
-     onmouseout="this.style.boxShadow='var(--f-card-shadow)'">
 
     {# Background accent line #}
     <div class="absolute top-0 left-0 right-0 h-0.5 rounded-t-lg opacity-40 group-hover:opacity-80 transition-opacity"

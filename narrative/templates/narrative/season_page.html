@@ -11,11 +11,9 @@
     <div class="py-14" style="background: var(--f-bg-hero);">
         <div class="max-w-4xl mx-auto px-6">
             {# Breadcrumb #}
-            <nav class="mb-6" style="font-size: 0.875rem; color: var(--f-fg-placeholder);">
-                <a href="{% narrative_url page.get_parent %}" class="transition-colors duration-200"
-                   style="color: var(--f-fg-placeholder);"
-                   onmouseover="this.style.color='var(--f-fg-secondary)'"
-                   onmouseout="this.style.color='var(--f-fg-placeholder)'">
+            <nav class="mb-6" aria-label="Breadcrumb" style="font-size: 0.875rem; color: var(--f-fg-placeholder);">
+                <a href="{% narrative_url page.get_parent %}" class="transition-colors duration-200 f-hover-accent"
+                   style="color: var(--f-fg-placeholder);">
                     {{ page.get_parent.title }}
                 </a>
                 <span class="mx-2">/</span>
@@ -57,10 +55,8 @@
             <div class="space-y-3">
                 {% for episode in page.get_children.live.specific %}
                 <a href="{% narrative_url episode %}"
-                   class="block p-4 rounded-lg transition-all duration-200 group"
-                   style="background: var(--f-card-bg); border: 1px solid var(--f-card-border); box-shadow: var(--f-card-shadow);"
-                   onmouseover="this.style.boxShadow='var(--f-card-shadow-hover)'; this.style.borderColor='var(--f-accent-blue)'"
-                   onmouseout="this.style.boxShadow='var(--f-card-shadow)'; this.style.borderColor='var(--f-card-border)'">
+                   class="block p-4 rounded-lg transition-all duration-200 group f-hover-card"
+                   style="background: var(--f-card-bg); border: 1px solid var(--f-card-border); box-shadow: var(--f-card-shadow);">
                     <div class="flex items-center gap-4">
                         <div class="flex-shrink-0 w-12 h-12 rounded-lg flex items-center justify-center"
                              style="background: var(--f-accent-blue-bg); border: 1px solid color-mix(in srgb, var(--f-accent-blue) 20%, transparent);">
@@ -99,7 +95,7 @@
         <div class="absolute inset-0 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-blue-900/10 via-transparent to-transparent"></div>
 
         <div class="relative max-w-4xl mx-auto px-6 pt-12 pb-8">
-            <nav class="text-sm text-slate-500 mb-6">
+            <nav class="text-sm text-slate-500 mb-6" aria-label="Breadcrumb">
                 <a href="{% narrative_url page.get_parent %}" class="hover:text-slate-300 transition-colors">
                     {{ page.get_parent.title }}
                 </a>

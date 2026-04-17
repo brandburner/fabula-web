@@ -10,10 +10,9 @@
     <div class="py-14" style="background: var(--f-bg-hero);">
         <div class="max-w-4xl mx-auto px-6">
             <div class="flex items-center gap-2 text-sm mb-4">
-                <a href="{% url 'connection_index' %}" class="transition-colors"
+                <a href="{% url 'connection_index' %}" class="transition-colors f-hover-accent"
                    style="color: var(--f-fg-secondary);"
-                   onmouseover="this.style.color='var(--f-accent-cyan)'"
-                   onmouseout="this.style.color='var(--f-fg-secondary)'">
+                   aria-label="All connections">
                     <i data-lucide="link-2" class="w-4 h-4"></i>
                 </a>
                 <span style="color: var(--f-fg-placeholder);">/</span>
@@ -31,10 +30,8 @@
 
         <div class="space-y-4">
             {% for connection in connections %}
-            <div class="p-4 rounded-lg transition-all duration-200"
-                 style="background: var(--f-card-bg); border: 1px solid var(--f-card-border);"
-                 onmouseover="this.style.borderColor='color-mix(in srgb, var(--f-accent-cyan) 40%, transparent)'; this.style.boxShadow='0 2px 8px color-mix(in srgb, var(--f-accent-cyan) 6%, transparent)'"
-                 onmouseout="this.style.borderColor='var(--f-card-border)'; this.style.boxShadow='none'">
+            <div class="p-4 rounded-lg transition-all duration-200 f-hover-card"
+                 style="background: var(--f-card-bg); border: 1px solid var(--f-card-border);">
                 <div class="flex items-start gap-4">
                     <div class="flex-1 min-w-0">
                         <div class="flex items-center gap-2 text-xs mb-2" style="color: var(--f-fg-placeholder);">
@@ -48,9 +45,7 @@
                         </div>
 
                         <h3 class="font-medium mb-2" style="color: var(--f-fg-heading);">
-                            <a href="{{ connection.get_absolute_url }}" class="transition-colors"
-                               onmouseover="this.style.color='var(--f-accent-cyan)'"
-                               onmouseout="this.style.color='var(--f-fg-heading)'">
+                            <a href="{{ connection.get_absolute_url }}" class="transition-colors f-hover-accent">
                                 {{ connection.from_event.title|md|striptags|truncatechars:50 }}
                                 <span style="color: var(--f-fg-placeholder);"> &rarr; </span>
                                 {{ connection.to_event.title|md|striptags|truncatechars:50 }}
@@ -73,13 +68,11 @@
         </div>
 
         {% if is_paginated %}
-        <nav class="flex justify-center gap-2 mt-8">
+        <nav class="flex justify-center gap-2 mt-8" aria-label="Pagination">
             {% if page_obj.has_previous %}
             <a href="?page={{ page_obj.previous_page_number }}"
-               class="px-4 py-2 rounded transition-colors"
-               style="background: var(--f-bg-elevated); color: var(--f-fg-secondary); border: 1px solid var(--f-border-default);"
-               onmouseover="this.style.borderColor='var(--f-accent-cyan)'"
-               onmouseout="this.style.borderColor='var(--f-border-default)'">
+               class="px-4 py-2 rounded transition-colors f-hover-border"
+               style="background: var(--f-bg-elevated); color: var(--f-fg-secondary); border: 1px solid var(--f-border-default);">
                 Previous
             </a>
             {% endif %}
@@ -90,10 +83,8 @@
 
             {% if page_obj.has_next %}
             <a href="?page={{ page_obj.next_page_number }}"
-               class="px-4 py-2 rounded transition-colors"
-               style="background: var(--f-bg-elevated); color: var(--f-fg-secondary); border: 1px solid var(--f-border-default);"
-               onmouseover="this.style.borderColor='var(--f-accent-cyan)'"
-               onmouseout="this.style.borderColor='var(--f-border-default)'">
+               class="px-4 py-2 rounded transition-colors f-hover-border"
+               style="background: var(--f-bg-elevated); color: var(--f-fg-secondary); border: 1px solid var(--f-border-default);">
                 Next
             </a>
             {% endif %}
@@ -110,7 +101,7 @@
 
         <div class="relative max-w-4xl mx-auto px-6 pt-12 pb-8">
             <div class="flex items-center gap-2 text-sm text-slate-400 mb-4">
-                <a href="{% url 'connection_index' %}" class="hover:text-cyan-400 transition-colors">
+                <a href="{% url 'connection_index' %}" class="hover:text-cyan-400 transition-colors" aria-label="All connections">
                     <i data-lucide="link-2" class="w-4 h-4"></i>
                 </a>
                 <span class="text-slate-600">/</span>
@@ -165,7 +156,7 @@
         </div>
 
         {% if is_paginated %}
-        <nav class="flex justify-center gap-2 mt-8">
+        <nav class="flex justify-center gap-2 mt-8" aria-label="Pagination">
             {% if page_obj.has_previous %}
             <a href="?page={{ page_obj.previous_page_number }}"
                class="px-4 py-2 bg-slate-800 text-slate-300 rounded hover:bg-slate-700 transition-colors">

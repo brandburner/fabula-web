@@ -30,10 +30,8 @@
                 </div>
                 {% if page.potential_owner %}
                 <a href="{% narrative_url page.potential_owner %}"
-                   class="flex items-center gap-2 px-3 py-1.5 rounded-md transition-colors"
-                   style="background: color-mix(in srgb, var(--f-accent-green) 8%, transparent); border: 1px solid color-mix(in srgb, var(--f-accent-green) 25%, transparent);"
-                   onmouseover="this.style.background='color-mix(in srgb, var(--f-accent-green) 15%, transparent)'"
-                   onmouseout="this.style.background='color-mix(in srgb, var(--f-accent-green) 8%, transparent)'">
+                   class="flex items-center gap-2 px-3 py-1.5 rounded-md transition-colors f-hover-bg-accent"
+                   style="background: color-mix(in srgb, var(--f-accent-green) 8%, transparent); border: 1px solid color-mix(in srgb, var(--f-accent-green) 25%, transparent);">
                     <i data-lucide="user" class="w-4 h-4" style="color: var(--f-accent-green);"></i>
                     <span class="text-sm font-medium" style="color: var(--f-accent-green);">{{ page.potential_owner.canonical_name }}</span>
                 </a>
@@ -124,10 +122,8 @@
 
                         {# Event card #}
                         <a href="{% narrative_url involvement.event %}"
-                           class="block p-5 rounded-lg transition-all duration-200"
-                           style="background: var(--f-card-bg); border: 1px solid var(--f-card-border); box-shadow: var(--f-card-shadow);"
-                           onmouseover="this.style.boxShadow='var(--f-card-shadow-hover)'; this.style.borderColor='var(--f-accent-orange)'"
-                           onmouseout="this.style.boxShadow='var(--f-card-shadow)'; this.style.borderColor='var(--f-card-border)'">
+                           class="block p-5 rounded-lg transition-all duration-200 f-hover-card"
+                           style="background: var(--f-card-bg); border: 1px solid var(--f-card-border); box-shadow: var(--f-card-shadow);">
 
                             {# Episode context #}
                             <div class="flex items-center gap-2 text-xs mb-2" style="color: var(--f-fg-placeholder); font-family: var(--f-font-mono);">

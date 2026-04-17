@@ -40,50 +40,40 @@
         {# Quick Navigation - subtle grid #}
         <div class="grid grid-cols-2 md:grid-cols-3 gap-3 mb-14">
             <a href="{% url 'series_event_index' series_slug=page.slug %}"
-               class="group p-5 rounded-lg text-center transition-all duration-200"
-               style="background: var(--f-card-bg); border: 1px solid var(--f-card-border); box-shadow: var(--f-card-shadow);"
-               onmouseover="this.style.boxShadow='var(--f-card-shadow-hover)'; this.style.borderColor='var(--f-border-accent)'"
-               onmouseout="this.style.boxShadow='var(--f-card-shadow)'; this.style.borderColor='var(--f-card-border)'">
+               class="group p-5 rounded-lg text-center transition-all duration-200 f-hover-card"
+               style="background: var(--f-card-bg); border: 1px solid var(--f-card-border); box-shadow: var(--f-card-shadow);">
                 <i data-lucide="zap" class="w-6 h-6 mx-auto mb-2" style="color: var(--f-accent-primary);"></i>
                 <div class="font-medium text-sm" style="color: var(--f-fg-heading);">Events</div>
                 <div class="text-xs mt-0.5" style="color: var(--f-fg-placeholder);">Story moments</div>
             </a>
 
             <a href="{% url 'series_character_index' series_slug=page.slug %}"
-               class="group p-5 rounded-lg text-center transition-all duration-200"
-               style="background: var(--f-card-bg); border: 1px solid var(--f-card-border); box-shadow: var(--f-card-shadow);"
-               onmouseover="this.style.boxShadow='var(--f-card-shadow-hover)'; this.style.borderColor='var(--f-accent-green)'"
-               onmouseout="this.style.boxShadow='var(--f-card-shadow)'; this.style.borderColor='var(--f-card-border)'">
+               class="group p-5 rounded-lg text-center transition-all duration-200 f-hover-card"
+               style="background: var(--f-card-bg); border: 1px solid var(--f-card-border); box-shadow: var(--f-card-shadow);">
                 <i data-lucide="users" class="w-6 h-6 mx-auto mb-2" style="color: var(--f-accent-green);"></i>
                 <div class="font-medium text-sm" style="color: var(--f-fg-heading);">Characters</div>
                 <div class="text-xs mt-0.5" style="color: var(--f-fg-placeholder);">Who's who</div>
             </a>
 
             <a href="{% url 'series_organization_index' series_slug=page.slug %}"
-               class="group p-5 rounded-lg text-center transition-all duration-200"
-               style="background: var(--f-card-bg); border: 1px solid var(--f-card-border); box-shadow: var(--f-card-shadow);"
-               onmouseover="this.style.boxShadow='var(--f-card-shadow-hover)'; this.style.borderColor='var(--f-accent-violet)'"
-               onmouseout="this.style.boxShadow='var(--f-card-shadow)'; this.style.borderColor='var(--f-card-border)'">
+               class="group p-5 rounded-lg text-center transition-all duration-200 f-hover-card"
+               style="background: var(--f-card-bg); border: 1px solid var(--f-card-border); box-shadow: var(--f-card-shadow);">
                 <i data-lucide="building-2" class="w-6 h-6 mx-auto mb-2" style="color: var(--f-accent-violet);"></i>
                 <div class="font-medium text-sm" style="color: var(--f-fg-heading);">Organizations</div>
                 <div class="text-xs mt-0.5" style="color: var(--f-fg-placeholder);">Power structures</div>
             </a>
 
             <a href="{% url 'series_object_index' series_slug=page.slug %}"
-               class="group p-5 rounded-lg text-center transition-all duration-200"
-               style="background: var(--f-card-bg); border: 1px solid var(--f-card-border); box-shadow: var(--f-card-shadow);"
-               onmouseover="this.style.boxShadow='var(--f-card-shadow-hover)'; this.style.borderColor='var(--f-accent-orange)'"
-               onmouseout="this.style.boxShadow='var(--f-card-shadow)'; this.style.borderColor='var(--f-card-border)'">
+               class="group p-5 rounded-lg text-center transition-all duration-200 f-hover-card"
+               style="background: var(--f-card-bg); border: 1px solid var(--f-card-border); box-shadow: var(--f-card-shadow);">
                 <i data-lucide="box" class="w-6 h-6 mx-auto mb-2" style="color: var(--f-accent-orange);"></i>
                 <div class="font-medium text-sm" style="color: var(--f-fg-heading);">Objects</div>
                 <div class="text-xs mt-0.5" style="color: var(--f-fg-placeholder);">Significant items</div>
             </a>
 
             <a href="{% url 'series_location_index' series_slug=page.slug %}"
-               class="group p-5 rounded-lg text-center transition-all duration-200"
-               style="background: var(--f-card-bg); border: 1px solid var(--f-card-border); box-shadow: var(--f-card-shadow);"
-               onmouseover="this.style.boxShadow='var(--f-card-shadow-hover)'; this.style.borderColor='var(--f-accent-blue)'"
-               onmouseout="this.style.boxShadow='var(--f-card-shadow)'; this.style.borderColor='var(--f-card-border)'">
+               class="group p-5 rounded-lg text-center transition-all duration-200 f-hover-card"
+               style="background: var(--f-card-bg); border: 1px solid var(--f-card-border); box-shadow: var(--f-card-shadow);">
                 <i data-lucide="map-pin" class="w-6 h-6 mx-auto mb-2" style="color: var(--f-accent-blue);"></i>
                 <div class="font-medium text-sm" style="color: var(--f-fg-heading);">Locations</div>
                 <div class="text-xs mt-0.5" style="color: var(--f-fg-placeholder);">Story geography</div>
@@ -116,10 +106,8 @@
                     <div class="mt-4 grid grid-cols-2 md:grid-cols-4 gap-2">
                         {% for episode in season.get_children.specific %}
                         <a href="{% url 'series_episode_detail' series_slug=page.slug identifier=episode.fabula_uuid|default:episode.pk %}"
-                           class="p-2.5 text-sm rounded transition-all duration-150"
-                           style="background: var(--f-bg-elevated); border: 1px solid var(--f-border-light);"
-                           onmouseover="this.style.borderColor='var(--f-border-accent)'"
-                           onmouseout="this.style.borderColor='var(--f-border-light)'">
+                           class="p-2.5 text-sm rounded transition-all duration-150 f-hover-border"
+                           style="background: var(--f-bg-elevated); border: 1px solid var(--f-border-light);">
                             <span style="color: var(--f-fg-placeholder); font-family: var(--f-font-mono); font-size: 0.75rem;">E{{ episode.episode_number }}</span>
                             <span class="ml-1" style="color: var(--f-fg-primary);">{{ episode.title|truncatewords:3 }}</span>
                         </a>

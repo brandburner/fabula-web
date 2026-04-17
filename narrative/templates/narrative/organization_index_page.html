@@ -69,10 +69,8 @@
             <div class="space-y-3">
                 {% for org in key_orgs %}
                 <a href="{% narrative_url org %}"
-                   class="block p-5 rounded-lg transition-all duration-200 group"
-                   style="background: var(--f-card-bg); border: 1px solid var(--f-card-border); box-shadow: var(--f-card-shadow);"
-                   onmouseover="this.style.boxShadow='var(--f-card-shadow-hover)'; this.style.borderColor='var(--f-accent-violet)'"
-                   onmouseout="this.style.boxShadow='var(--f-card-shadow)'; this.style.borderColor='var(--f-card-border)'">
+                   class="block p-5 rounded-lg transition-all duration-200 group f-hover-card"
+                   style="background: var(--f-card-bg); border: 1px solid var(--f-card-border); box-shadow: var(--f-card-shadow);">
                     <div class="flex items-start justify-between gap-4">
                         <div class="flex-1 min-w-0">
                             <div class="font-medium text-lg" style="font-family: var(--f-font-display); color: var(--f-fg-heading);">
@@ -116,10 +114,8 @@
             <div class="grid gap-3 sm:grid-cols-2">
                 {% for org in active_orgs %}
                 <a href="{% narrative_url org %}"
-                   class="p-4 rounded-lg transition-all duration-200 group"
-                   style="background: var(--f-card-bg); border: 1px solid var(--f-card-border);"
-                   onmouseover="this.style.borderColor='var(--f-accent-violet)'"
-                   onmouseout="this.style.borderColor='var(--f-card-border)'">
+                   class="p-4 rounded-lg transition-all duration-200 group f-hover-border"
+                   style="background: var(--f-card-bg); border: 1px solid var(--f-card-border);">
                     <div class="flex items-start justify-between gap-3 mb-1">
                         <div class="font-medium" style="color: var(--f-fg-heading); font-family: var(--f-font-display);">
                             {{ org.canonical_name }}
@@ -155,10 +151,8 @@
                 <div class="grid gap-2 sm:grid-cols-2 lg:grid-cols-3">
                     {% for org in connected_orgs %}
                     <a href="{% narrative_url org %}"
-                       class="px-3 py-2 rounded transition-all group"
-                       style="background: var(--f-bg-elevated); border: 1px solid var(--f-border-light);"
-                       onmouseover="this.style.borderColor='var(--f-accent-violet)'"
-                       onmouseout="this.style.borderColor='var(--f-border-light)'">
+                       class="px-3 py-2 rounded transition-all group f-hover-border"
+                       style="background: var(--f-bg-elevated); border: 1px solid var(--f-border-light);">
                         <div class="font-medium text-sm truncate" style="color: var(--f-fg-heading);">
                             {{ org.canonical_name }}
                         </div>
@@ -186,9 +180,7 @@
                 <div class="columns-2 sm:columns-3 gap-x-4">
                     {% for org in minor_orgs %}
                     <a href="{% narrative_url org %}"
-                       class="block py-1 text-sm transition-colors truncate" style="color: var(--f-fg-tertiary);"
-                       onmouseover="this.style.color='var(--f-accent-violet)'"
-                       onmouseout="this.style.color='var(--f-fg-tertiary)'">
+                       class="block py-1 text-sm transition-colors truncate f-hover-accent" style="color: var(--f-fg-tertiary);">
                         {{ org.canonical_name }}
                     </a>
                     {% endfor %}
