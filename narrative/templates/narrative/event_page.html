@@ -41,9 +41,7 @@
                     </span>
                 </div>
                 <span style="color: var(--f-border-default);">·</span>
-                <a href="{% narrative_url page.episode %}" class="transition-colors" style="color: var(--f-fg-tertiary);"
-                   onmouseover="this.style.color='var(--f-accent-primary)'"
-                   onmouseout="this.style.color='var(--f-fg-tertiary)'">
+                <a href="{% narrative_url page.episode %}" class="transition-colors f-hover-accent" style="color: var(--f-fg-tertiary);">
                     {{ page.episode.title }}
                 </a>
                 {% if page.is_flashback %}
@@ -192,9 +190,7 @@
                 <div x-show="showMentioned" x-collapse class="space-y-3">
                     {% for participation in parts.mentioned %}
                     <div class="p-4 rounded-lg opacity-75" style="background: var(--f-bg-elevated); border: 1px solid var(--f-border-light);">
-                        <a href="{% narrative_url participation.character %}" class="font-medium transition-colors" style="color: var(--f-fg-heading);"
-                           onmouseover="this.style.color='var(--f-accent-green)'"
-                           onmouseout="this.style.color='var(--f-fg-heading)'">
+                        <a href="{% narrative_url participation.character %}" class="font-medium transition-colors f-hover-accent" style="color: var(--f-fg-heading);">
                             {{ participation.character.canonical_name }}
                         </a>
                         {% if participation.what_happened %}
@@ -365,10 +361,8 @@
             <div class="grid md:grid-cols-2 gap-4">
                 {% for theme in page.themes.all %}
                 <a href="{{ theme.get_absolute_url }}"
-                   class="group block p-5 rounded-lg transition-all duration-200"
-                   style="background: var(--f-card-bg); border: 1px solid var(--f-card-border); box-shadow: var(--f-card-shadow);"
-                   onmouseover="this.style.boxShadow='var(--f-card-shadow-hover)'; this.style.borderColor='var(--f-accent-violet)'"
-                   onmouseout="this.style.boxShadow='var(--f-card-shadow)'; this.style.borderColor='var(--f-card-border)'">
+                   class="group block p-5 rounded-lg transition-all duration-200 f-hover-card"
+                   style="background: var(--f-card-bg); border: 1px solid var(--f-card-border); box-shadow: var(--f-card-shadow);">
                     <div class="flex items-start justify-between gap-4 mb-3">
                         <div class="font-medium leading-snug" style="color: var(--f-fg-heading); font-family: var(--f-font-display);">
                             {{ theme.name }}
@@ -399,10 +393,8 @@
             <div class="flex flex-wrap gap-2">
                 {% for arc in page.arcs.all %}
                 <a href="{{ arc.get_absolute_url }}"
-                   class="px-3 py-1.5 text-sm rounded-md transition-colors"
-                   style="border: 1px solid color-mix(in srgb, var(--f-accent-orange) 30%, transparent); color: var(--f-accent-orange); background: color-mix(in srgb, var(--f-accent-orange) 5%, transparent);"
-                   onmouseover="this.style.background='color-mix(in srgb, var(--f-accent-orange) 10%, transparent)'"
-                   onmouseout="this.style.background='color-mix(in srgb, var(--f-accent-orange) 5%, transparent)'">
+                   class="px-3 py-1.5 text-sm rounded-md transition-colors f-hover-bg-accent"
+                   style="border: 1px solid color-mix(in srgb, var(--f-accent-orange) 30%, transparent); color: var(--f-accent-orange); background: color-mix(in srgb, var(--f-accent-orange) 5%, transparent);">
                     {{ arc.title }}
                 </a>
                 {% endfor %}

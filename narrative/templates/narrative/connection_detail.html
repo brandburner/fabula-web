@@ -56,10 +56,8 @@
         <div class="relative py-10">
             {# From event - Source #}
             <a href="{% narrative_url connection.from_event %}"
-               class="group block p-6 rounded-xl transition-all duration-200 mb-6"
-               style="background: var(--f-card-bg); border: 2px solid var(--f-card-border); box-shadow: var(--f-card-shadow);"
-               onmouseover="this.style.boxShadow='var(--f-card-shadow-hover)'; this.style.borderColor='color-mix(in srgb, var(--conn-color) 40%, var(--f-card-border))'"
-               onmouseout="this.style.boxShadow='var(--f-card-shadow)'; this.style.borderColor='var(--f-card-border)'">
+               class="group block p-6 rounded-xl transition-all duration-200 mb-6 f-hover-card"
+               style="background: var(--f-card-bg); border: 2px solid var(--f-card-border); box-shadow: var(--f-card-shadow);">
                 <div class="flex items-center gap-2 mb-3">
                     <div class="text-xs font-bold uppercase tracking-wider px-2 py-1 rounded"
                          style="color: var(--f-fg-placeholder); background: var(--f-bg-elevated); letter-spacing: 0.1em;">From</div>
@@ -87,10 +85,8 @@
 
             {# To event - Target #}
             <a href="{% narrative_url connection.to_event %}"
-               class="group block p-6 rounded-xl transition-all duration-200 mt-6"
-               style="background: var(--f-card-bg); border: 2px solid var(--f-card-border); box-shadow: var(--f-card-shadow);"
-               onmouseover="this.style.boxShadow='var(--f-card-shadow-hover)'; this.style.borderColor='color-mix(in srgb, var(--conn-color) 40%, var(--f-card-border))'"
-               onmouseout="this.style.boxShadow='var(--f-card-shadow)'; this.style.borderColor='var(--f-card-border)'">
+               class="group block p-6 rounded-xl transition-all duration-200 mt-6 f-hover-card"
+               style="background: var(--f-card-bg); border: 2px solid var(--f-card-border); box-shadow: var(--f-card-shadow);">
                 <div class="flex items-center gap-2 mb-3">
                     <div class="text-xs font-bold uppercase tracking-wider px-2 py-1 rounded"
                          style="color: var(--f-fg-placeholder); background: var(--f-bg-elevated); letter-spacing: 0.1em;">To</div>
@@ -198,10 +194,8 @@
                 {% for other in from_connections %}
                 {% if other.pk != connection.pk %}
                 <a href="{{ other.get_absolute_url }}"
-                   class="p-3 rounded-lg transition-all duration-200 text-sm"
-                   style="background: var(--f-card-bg); border: 1px solid var(--f-card-border);"
-                   onmouseover="this.style.borderColor='var(--f-border-default)'"
-                   onmouseout="this.style.borderColor='var(--f-card-border)'">
+                   class="p-3 rounded-lg transition-all duration-200 text-sm f-hover-border"
+                   style="background: var(--f-card-bg); border: 1px solid var(--f-card-border);">
                     <div class="flex items-center gap-2 mb-1">
                         <span class="conn-{{ other.connection_type|lower|slugify }} conn-badge px-1.5 py-0.5 text-xs border rounded">
                             {{ other.get_connection_type_display }}
@@ -218,10 +212,8 @@
                 {% for other in to_connections %}
                 {% if other.pk != connection.pk %}
                 <a href="{{ other.get_absolute_url }}"
-                   class="p-3 rounded-lg transition-all duration-200 text-sm"
-                   style="background: var(--f-card-bg); border: 1px solid var(--f-card-border);"
-                   onmouseover="this.style.borderColor='var(--f-border-default)'"
-                   onmouseout="this.style.borderColor='var(--f-card-border)'">
+                   class="p-3 rounded-lg transition-all duration-200 text-sm f-hover-border"
+                   style="background: var(--f-card-bg); border: 1px solid var(--f-card-border);">
                     <div class="flex items-center gap-2 mb-1">
                         <span class="conn-{{ other.connection_type|lower|slugify }} conn-badge px-1.5 py-0.5 text-xs border rounded">
                             {{ other.get_connection_type_display }}

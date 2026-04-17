@@ -40,10 +40,8 @@
                 </div>
                 {% endif %}
                 <a href="{% url 'character_graph' page.global_id|default:page.fabula_uuid|default:page.pk %}"
-                   class="flex items-center gap-2 px-3 py-1.5 rounded-md transition-colors"
-                   style="background: var(--f-accent-blue-bg); border: 1px solid color-mix(in srgb, var(--f-accent-blue) 25%, transparent);"
-                   onmouseover="this.style.background='color-mix(in srgb, var(--f-accent-blue) 15%, transparent)'"
-                   onmouseout="this.style.background='var(--f-accent-blue-bg)'">
+                   class="flex items-center gap-2 px-3 py-1.5 rounded-md transition-colors f-hover-bg-accent"
+                   style="background: var(--f-accent-blue-bg); border: 1px solid color-mix(in srgb, var(--f-accent-blue) 25%, transparent);">
                     <i data-lucide="git-branch" class="w-4 h-4" style="color: var(--f-accent-blue);"></i>
                     <span class="text-sm font-medium" style="color: var(--f-accent-blue);">View Journey</span>
                 </a>
@@ -121,12 +119,8 @@
             <div class="flex flex-wrap gap-2 mb-8">
                 {% for season in available_seasons %}
                 <a href="?season={{ season.number }}"
-                   class="px-4 py-2 text-sm font-medium rounded-md transition-all duration-200"
-                   style="{% if season.number == selected_season %}background: var(--f-accent-green-bg); color: var(--f-accent-green-fg); border: 1px solid color-mix(in srgb, var(--f-accent-green) 40%, transparent);{% else %}background: var(--f-bg-elevated); color: var(--f-fg-tertiary); border: 1px solid var(--f-border-light);{% endif %}"
-                   {% if season.number != selected_season %}
-                   onmouseover="this.style.borderColor='var(--f-accent-green)'; this.style.color='var(--f-fg-primary)'"
-                   onmouseout="this.style.borderColor='var(--f-border-light)'; this.style.color='var(--f-fg-tertiary)'"
-                   {% endif %}>
+                   class="px-4 py-2 text-sm font-medium rounded-md transition-all duration-200{% if season.number != selected_season %} f-hover-border{% endif %}"
+                   style="{% if season.number == selected_season %}background: var(--f-accent-green-bg); color: var(--f-accent-green-fg); border: 1px solid color-mix(in srgb, var(--f-accent-green) 40%, transparent);{% else %}background: var(--f-bg-elevated); color: var(--f-fg-tertiary); border: 1px solid var(--f-border-light);{% endif %}">
                     Season {{ season.number }}
                     <span class="ml-1 opacity-60">({{ season.count }})</span>
                 </a>
@@ -150,10 +144,8 @@
 
                         {# Event card #}
                         <a href="{% narrative_url participation.event %}"
-                           class="block p-5 rounded-lg transition-all duration-200"
-                           style="background: var(--f-card-bg); border: 1px solid var(--f-card-border); box-shadow: var(--f-card-shadow);"
-                           onmouseover="this.style.boxShadow='var(--f-card-shadow-hover)'; this.style.borderColor='var(--f-accent-green)'"
-                           onmouseout="this.style.boxShadow='var(--f-card-shadow)'; this.style.borderColor='var(--f-card-border)'">
+                           class="block p-5 rounded-lg transition-all duration-200 f-hover-card"
+                           style="background: var(--f-card-bg); border: 1px solid var(--f-card-border); box-shadow: var(--f-card-shadow);">
 
                             {# Episode context #}
                             <div class="flex items-center gap-2 text-xs mb-2" style="color: var(--f-fg-placeholder); font-family: var(--f-font-mono);">
@@ -214,10 +206,8 @@
             </div>
 
             <a href="{% narrative_url page.affiliated_organization %}"
-               class="block p-4 rounded-lg transition-all duration-200 group"
-               style="background: var(--f-card-bg); border: 1px solid var(--f-card-border);"
-               onmouseover="this.style.borderColor='var(--f-accent-violet)'"
-               onmouseout="this.style.borderColor='var(--f-card-border)'">
+               class="block p-4 rounded-lg transition-all duration-200 group f-hover-border"
+               style="background: var(--f-card-bg); border: 1px solid var(--f-card-border);">
                 <div class="font-medium" style="color: var(--f-fg-heading); font-family: var(--f-font-display);">
                     {{ page.affiliated_organization.canonical_name }}
                 </div>
@@ -243,9 +233,7 @@
             <div class="space-y-3">
                 {% for profile in page.episode_profiles.all %}
                 <div class="p-4 rounded-lg" style="background: var(--f-card-bg); border: 1px solid var(--f-card-border);">
-                    <a href="{% narrative_url profile.episode %}" class="font-medium transition-colors" style="color: var(--f-fg-heading);"
-                       onmouseover="this.style.color='var(--f-accent-primary)'"
-                       onmouseout="this.style.color='var(--f-fg-heading)'">
+                    <a href="{% narrative_url profile.episode %}" class="font-medium transition-colors f-hover-accent" style="color: var(--f-fg-heading);">
                         {{ profile.episode.title }}
                     </a>
                     {% if profile.description_in_episode %}

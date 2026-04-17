@@ -31,10 +31,8 @@
                 {% endif %}
                 {% if location.parent_location %}
                 <a href="{{ location.parent_location.get_absolute_url }}"
-                   class="flex items-center gap-2 px-3 py-1.5 rounded-md transition-colors"
-                   style="background: var(--f-accent-cyan-bg); border: 1px solid color-mix(in srgb, var(--f-accent-cyan) 25%, transparent);"
-                   onmouseover="this.style.background='color-mix(in srgb, var(--f-accent-cyan) 15%, transparent)'"
-                   onmouseout="this.style.background='var(--f-accent-cyan-bg)'">
+                   class="flex items-center gap-2 px-3 py-1.5 rounded-md transition-colors f-hover-bg-accent"
+                   style="background: var(--f-accent-cyan-bg); border: 1px solid color-mix(in srgb, var(--f-accent-cyan) 25%, transparent);">
                     <i data-lucide="map" class="w-4 h-4" style="color: var(--f-accent-cyan);"></i>
                     <span class="text-sm font-medium" style="color: var(--f-accent-cyan);">{{ location.parent_location.canonical_name }}</span>
                 </a>
@@ -91,10 +89,8 @@
             <div class="grid sm:grid-cols-2 gap-3">
                 {% for child in child_locations %}
                 <a href="{{ child.get_absolute_url }}"
-                   class="p-4 rounded-lg transition-all duration-200 group"
-                   style="background: var(--f-card-bg); border: 1px solid var(--f-card-border); box-shadow: var(--f-card-shadow);"
-                   onmouseover="this.style.boxShadow='var(--f-card-shadow-hover)'; this.style.borderColor='var(--f-accent-violet)'"
-                   onmouseout="this.style.boxShadow='var(--f-card-shadow)'; this.style.borderColor='var(--f-card-border)'">
+                   class="p-4 rounded-lg transition-all duration-200 group f-hover-card"
+                   style="background: var(--f-card-bg); border: 1px solid var(--f-card-border); box-shadow: var(--f-card-shadow);">
                     <div class="font-medium" style="color: var(--f-fg-heading); font-family: var(--f-font-display);">
                         {{ child.canonical_name }}
                     </div>
@@ -124,10 +120,8 @@
 
             <div class="space-y-6">
                 {% for involvement in involvements %}
-                <div class="p-5 rounded-lg transition-all duration-200"
+                <div class="p-5 rounded-lg transition-all duration-200 f-hover-card"
                      style="background: var(--f-card-bg); border: 1px solid var(--f-card-border); box-shadow: var(--f-card-shadow);"
-                     onmouseover="this.style.borderColor='var(--f-accent-cyan)'; this.style.boxShadow='var(--f-card-shadow-hover)'"
-                     onmouseout="this.style.borderColor='var(--f-card-border)'; this.style.boxShadow='var(--f-card-shadow)'">
                     {# Event link #}
                     <a href="{% narrative_url involvement.event %}" class="group">
                         <div class="flex items-center gap-2 text-xs mb-2" style="color: var(--f-fg-placeholder); font-family: var(--f-font-mono);">
@@ -225,10 +219,8 @@
             <div class="space-y-3">
                 {% for event in events %}
                 <a href="{% narrative_url event %}"
-                   class="block p-4 rounded-lg transition-all duration-200 group"
-                   style="background: var(--f-card-bg); border: 1px solid var(--f-card-border); box-shadow: var(--f-card-shadow);"
-                   onmouseover="this.style.boxShadow='var(--f-card-shadow-hover)'; this.style.borderColor='var(--f-accent-blue)'"
-                   onmouseout="this.style.boxShadow='var(--f-card-shadow)'; this.style.borderColor='var(--f-card-border)'">
+                   class="block p-4 rounded-lg transition-all duration-200 group f-hover-card"
+                   style="background: var(--f-card-bg); border: 1px solid var(--f-card-border); box-shadow: var(--f-card-shadow);">
                     <div class="flex items-center gap-2 text-xs mb-2" style="color: var(--f-fg-placeholder); font-family: var(--f-font-mono);">
                         <span class="px-2 py-0.5 rounded" style="background: var(--f-bg-elevated);">
                             S{{ event.episode.season_number }}E{{ event.episode.episode_number }}

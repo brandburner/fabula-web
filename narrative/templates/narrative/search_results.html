@@ -26,15 +26,11 @@
                 <div class="flex gap-2">
                     <input type="text" name="q" value="{{ query }}"
                            placeholder="Search events, characters, themes..."
-                           class="flex-1 px-4 py-3 rounded-md focus:outline-none"
-                           style="background: var(--f-bg-elevated); border: 1px solid var(--f-border-default); color: var(--f-fg-heading); font-family: var(--f-font-body);"
-                           onfocus="this.style.borderColor='var(--f-accent-cyan)'; this.style.boxShadow='0 0 0 2px color-mix(in srgb, var(--f-accent-cyan) 15%, transparent)'"
-                           onblur="this.style.borderColor='var(--f-border-default)'; this.style.boxShadow='none'">
+                           class="flex-1 px-4 py-3 rounded-md focus:outline-none f-focus-ring"
+                           style="background: var(--f-bg-elevated); border: 1px solid var(--f-border-default); color: var(--f-fg-heading); font-family: var(--f-font-body);">
                     <button type="submit"
-                            class="px-6 py-3 rounded-md font-medium transition-colors"
+                            class="px-6 py-3 rounded-md font-medium transition-colors f-hover-reveal"
                             style="background: var(--f-accent-primary); color: var(--f-fg-inverse);"
-                            onmouseover="this.style.opacity='0.9'"
-                            onmouseout="this.style.opacity='1'">
                         Search
                     </button>
                 </div>
@@ -55,10 +51,8 @@
                 <div class="space-y-3">
                     {% for character in character_results %}
                     <a href="{{ character.get_absolute_url }}"
-                       class="block p-4 rounded-lg transition-all duration-200"
-                       style="background: var(--f-card-bg); border: 1px solid var(--f-card-border); box-shadow: var(--f-card-shadow);"
-                       onmouseover="this.style.boxShadow='var(--f-card-shadow-hover)'; this.style.borderColor='var(--f-accent-orange)'"
-                       onmouseout="this.style.boxShadow='var(--f-card-shadow)'; this.style.borderColor='var(--f-card-border)'">
+                       class="block p-4 rounded-lg transition-all duration-200 f-hover-card"
+                       style="background: var(--f-card-bg); border: 1px solid var(--f-card-border); box-shadow: var(--f-card-shadow);">
                         <h3 class="font-medium" style="color: var(--f-fg-heading); font-family: var(--f-font-display);">{{ character.title }}</h3>
                         {% if character.role %}
                         <p class="text-sm mt-1" style="color: var(--f-fg-tertiary);">{{ character.role }}</p>
@@ -78,10 +72,8 @@
                 <div class="space-y-3">
                     {% for theme in theme_results %}
                     <a href="{{ theme.get_absolute_url }}"
-                       class="block p-4 rounded-lg transition-all duration-200"
-                       style="background: var(--f-card-bg); border: 1px solid var(--f-card-border); box-shadow: var(--f-card-shadow);"
-                       onmouseover="this.style.boxShadow='var(--f-card-shadow-hover)'; this.style.borderColor='var(--f-accent-violet)'"
-                       onmouseout="this.style.boxShadow='var(--f-card-shadow)'; this.style.borderColor='var(--f-card-border)'">
+                       class="block p-4 rounded-lg transition-all duration-200 f-hover-card"
+                       style="background: var(--f-card-bg); border: 1px solid var(--f-card-border); box-shadow: var(--f-card-shadow);">
                         <h3 class="font-medium" style="color: var(--f-fg-heading); font-family: var(--f-font-display);">{{ theme.name }}</h3>
                         {% if theme.description %}
                         <p class="text-sm mt-1 line-clamp-2" style="color: var(--f-fg-tertiary);">{{ theme.description|md }}</p>
@@ -100,10 +92,8 @@
                 <div class="space-y-3">
                     {% for event in results %}
                     <a href="{{ event.get_absolute_url }}"
-                       class="block p-4 rounded-lg transition-all duration-200"
-                       style="background: var(--f-card-bg); border: 1px solid var(--f-card-border); box-shadow: var(--f-card-shadow);"
-                       onmouseover="this.style.boxShadow='var(--f-card-shadow-hover)'; this.style.borderColor='var(--f-accent-cyan)'"
-                       onmouseout="this.style.boxShadow='var(--f-card-shadow)'; this.style.borderColor='var(--f-card-border)'">
+                       class="block p-4 rounded-lg transition-all duration-200 f-hover-card"
+                       style="background: var(--f-card-bg); border: 1px solid var(--f-card-border); box-shadow: var(--f-card-shadow);">
                         <div class="flex items-center gap-2 text-xs mb-1" style="color: var(--f-fg-placeholder); font-family: var(--f-font-mono);">
                             {% if event.episode %}
                             <span>{{ event.episode.title }}</span>
@@ -121,13 +111,11 @@
             </section>
 
             {% if is_paginated %}
-            <nav class="flex justify-center gap-2 mt-8">
+            <nav class="flex justify-center gap-2 mt-8" aria-label="Pagination">
                 {% if page_obj.has_previous %}
                 <a href="?q={{ query }}&page={{ page_obj.previous_page_number }}"
-                   class="px-4 py-2 rounded-md transition-colors"
-                   style="background: var(--f-bg-elevated); color: var(--f-fg-secondary); border: 1px solid var(--f-border-default);"
-                   onmouseover="this.style.borderColor='var(--f-accent-primary)'"
-                   onmouseout="this.style.borderColor='var(--f-border-default)'">
+                   class="px-4 py-2 rounded-md transition-colors f-hover-border"
+                   style="background: var(--f-bg-elevated); color: var(--f-fg-secondary); border: 1px solid var(--f-border-default);">
                     Previous
                 </a>
                 {% endif %}
@@ -138,10 +126,8 @@
 
                 {% if page_obj.has_next %}
                 <a href="?q={{ query }}&page={{ page_obj.next_page_number }}"
-                   class="px-4 py-2 rounded-md transition-colors"
-                   style="background: var(--f-bg-elevated); color: var(--f-fg-secondary); border: 1px solid var(--f-border-default);"
-                   onmouseover="this.style.borderColor='var(--f-accent-primary)'"
-                   onmouseout="this.style.borderColor='var(--f-border-default)'">
+                   class="px-4 py-2 rounded-md transition-colors f-hover-border"
+                   style="background: var(--f-bg-elevated); color: var(--f-fg-secondary); border: 1px solid var(--f-border-default);">
                     Next
                 </a>
                 {% endif %}
@@ -261,7 +247,7 @@
             </section>
 
             {% if is_paginated %}
-            <nav class="flex justify-center gap-2 mt-8">
+            <nav class="flex justify-center gap-2 mt-8" aria-label="Pagination">
                 {% if page_obj.has_previous %}
                 <a href="?q={{ query }}&page={{ page_obj.previous_page_number }}"
                    class="px-4 py-2 bg-slate-800 text-slate-300 rounded hover:bg-slate-700 transition-colors">

@@ -2,10 +2,8 @@
 {% if fabula_theme == 'writerly' %}
 {# ===== WRITERLY EVENT CARD ===== #}
 <a href="{% narrative_url event %}"
-   class="block p-4 rounded-lg transition-all duration-200 group"
+   class="block p-4 rounded-lg transition-all duration-200 group f-hover-card"
    style="background: var(--f-card-bg); border: 1px solid var(--f-card-border);"
-   onmouseover="this.style.borderColor='var(--f-accent-primary)'; this.style.boxShadow='var(--f-card-shadow-hover)'"
-   onmouseout="this.style.borderColor='var(--f-card-border)'; this.style.boxShadow='none'">
 
     {% if show_episode %}
     <div class="text-xs mb-1" style="color: var(--f-fg-placeholder); font-family: var(--f-font-mono);">
