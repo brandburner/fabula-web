@@ -227,14 +227,20 @@ cta:
   background: hero
   headline: "Step Into the Graph"
   body: >
-    Mrs. Landingham was one character. The graph holds hundreds more, each
-    with the same depth. Browse the live catalog and see what a show looks
-    like when its structure is finally visible. Or follow our thinking on
-    why we built it.
+    Mrs. Landingham was one character. The graph holds hundreds more in
+    <em>The West Wing</em> alone&mdash;and nearly four thousand more across
+    twenty-six seasons of classic <em>Doctor Who</em>, the largest narrative
+    knowledge graph ever built. Browse either live catalog and see what a
+    show looks like when its structure is finally visible. Or follow our
+    thinking on why we built it.
   ctas:
     - label: "Explore The West Wing"
       url: "/explore/"
       style: primary
+      icon: arrow-right
+    - label: "Explore Doctor Who (26 Seasons)"
+      url: "/explore/doctor-who/"
+      style: secondary
       icon: arrow-right
     - label: "Read Our Substack"
       url: "https://storygraph.substack.com"

@@ -168,10 +168,15 @@ sections:
       <br><br>
       What that ninety percent covers: 726 canonical entities across four seasons
       of <em>The West Wing</em>&mdash;from heads of state to walk-on characters
-      who appear once and might return three seasons later. 80+ episodes across
-      five series with different narrative structures, different temporal patterns,
-      different ratios of dialogue to action. 15,000+ graph relationships with
-      dense connectivity across causal, thematic, temporal, and emotional edges.
+      who appear once and might return three seasons later. And then, at a scale
+      nothing else has tried: the complete 1963&ndash;1989 run of classic
+      <em>Doctor Who</em>&mdash;703 episodes, 26 seasons, 3,948 characters, 20,497
+      events, 5,819 locations, 15,986 objects, 1,452 organizations,
+      <strong>337,795 typed relationships</strong> in a single unified graph. The
+      largest narrative knowledge graph ever built, and still deterministic, still
+      queryable in under 100ms, still measured against the same 96.3% annotator
+      baseline. Multiple series, multiple genres, multiple temporal patterns. Dense
+      connectivity across causal, thematic, temporal, and emotional edges.
       <br><br>
       And zero entity drift. Process the same episode twice, get the same graph.
       Process it a third time six months later, get the same graph again. The same
@@ -238,8 +243,8 @@ cta:
     what these metrics feel like when you&rsquo;re tracing a character through
     four seasons of television. Or read the architecture behind them.
   ctas:
-    - label: "Explore The West Wing"
-      url: "/explore/"
+    - label: "Explore Doctor Who (26 Seasons)"
+      url: "/explore/doctor-who/"
       style: primary
       icon: arrow-right
     - label: "Read the Architecture"

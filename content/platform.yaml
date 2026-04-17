@@ -70,7 +70,7 @@ hero:
     no memory, no structure. Fabula decomposes narrative into a typed knowledge graph with
     five core node types, dual temporal indices, and hallucination-guarded entity extraction
     from unstructured sources at scale. The architecture is the argument.
-  footnote: "Engineered over 18 months. Tested on 60+ episodes across Star Trek TNG, The West Wing, Doctor Who, and more."
+  footnote: "Engineered over 18 months. Tested across seven series and 800+ episodes&mdash;including the complete 26-season, 703-episode run of classic <em>Doctor Who</em>, the largest narrative knowledge graph ever built."
   ctas:
     - label: "Register Your Interest"
       url: "/early-access/"
@@ -589,10 +589,12 @@ sections:
     label: "Entity Resolution"
     headline: "Zero Entity Drift. From Pilot to Series Finale."
     intro: >
-      The hardest problem in narrative extraction isn't finding entities&mdash;it's keeping
-      them consistent across sixty episodes and five years of production. We handle this with
-      a hybrid GraphRAG architecture: Neo4j for structural queries and relationship traversal,
-      ChromaDB for semantic similarity and fuzzy matching.
+      The hardest problem in narrative extraction isn&rsquo;t finding entities&mdash;it&rsquo;s
+      keeping them consistent across seven hundred episodes and twenty-six years of production.
+      We proved it on the full classic run of <em>Doctor Who</em>: 46,364 canonical entries,
+      50,353 auto-linked instances, zero drift. Hybrid GraphRAG architecture makes it possible:
+      Neo4j for structural queries and relationship traversal, ChromaDB for semantic similarity
+      and fuzzy matching.
 
     before:
       title: "Before Entity Resolution"
@@ -619,14 +621,14 @@ sections:
           - "Number One (by Lwaxana)"
 
     stats:
-      - value: "Hundreds"
+      - value: "46,364"
         color: primary
         title: "Canonical Entities"
-        description: "Resolved across 60+ episodes of television"
+        description: "Resolved across 703 episodes of classic Doctor Who"
       - value: "0"
         color: green
         title: "Entity Drift"
-        description: "Zero drift from pilot to finale"
+        description: "Zero drift across twenty-six seasons"
       - value: "<100ms"
         color: cyan
         title: "Query Latency"
@@ -883,9 +885,10 @@ sections:
         title: "Investors"
         description: >
           Production-validated context graph infrastructure for entertainment IP.
-          Entity extraction, resolution, and graph construction tested across five
-          series and 60+ episodes. Horizontal applicability with entertainment as
-          the proving ground.
+          Entity extraction, resolution, and graph construction tested across seven
+          series and 800+ episodes&mdash;including the complete 26-season run of
+          classic <em>Doctor Who</em>, the largest narrative knowledge graph ever
+          built. Horizontal applicability with entertainment as the proving ground.
         border: top
 
 # =============================================

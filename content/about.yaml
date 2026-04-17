@@ -191,26 +191,35 @@ sections:
     type: prose
     background: page
     label: "Architecture"
-    headline: "Spreadsheets List. Wikis Describe. Only Graphs Answer."
+    headline: "The Memory Twenty-Six Seasons of Television Never Had of Themselves"
     body: >
-      Consider the Doctor. Not a specific Doctor&mdash;the Doctor. A character who has changed
-      face, personality, voice, and actor fifteen times while remaining canonically the same
-      entity. The Tenth Doctor and the Eleventh Doctor are not different characters. They are
-      the same Character node with different participation states. When the Eleventh Doctor
-      references the Time War&mdash;an event the Tenth Doctor experienced, which the War Doctor
-      fought in, which the First Doctor fled from&mdash;the graph must track continuity across
-      incarnation. It must know that the grief the Eleventh Doctor carries in a quiet scene on
-      Trenzalore is causally connected to a decision the Tenth Doctor made on the Crucible, which
-      is itself a consequence of something the Time Lords did before the character had this face.
-      That is not a metadata problem. It is a graph traversal across identity states.
+      We processed all twenty-six classic seasons of <em>Doctor Who</em>&mdash;1963 to 1989,
+      seven Doctors, 703 episodes&mdash;into a single unified graph. 3,948 characters.
+      20,497 events. 5,819 locations. 15,986 objects. 1,452 organizations. 3,144 conflict arcs.
+      337,795 typed relationships. The largest narrative knowledge graph ever built, and the
+      first time the show&rsquo;s twenty-six-year canon has existed as a computable object
+      rather than a fan wiki held together by goodwill.
       <br><br>
-      It gets harder. &ldquo;John Smith&rdquo; is an alias the Doctor uses across multiple
-      incarnations. John Smith in 1913 is the Tenth Doctor in a human disguise. John Smith in
-      2007 is also the Tenth Doctor, in a different context. But in the expanded canon, other
-      incarnations have used the same alias. The entity resolution system must understand that
-      John Smith is always the Doctor, even when the faces are different and the contexts are
-      decades apart. This is the kind of problem that breaks document-shaped tools completely.
-      A wiki page for &ldquo;The Doctor&rdquo; either picks one incarnation as primary or
+      Consider the Doctor inside that graph. Not a specific Doctor&mdash;the Doctor. A character
+      who has changed face, personality, voice, and actor seven times across the classic run
+      while remaining canonically the same entity. The First Doctor and the Seventh Doctor are
+      not different characters. They are the same Character node with different participation
+      states. When the Fourth Doctor references an event the First Doctor witnessed, the graph
+      must track continuity across incarnation&mdash;across decades of broadcast, across
+      regenerations, across showrunners who never spoke to each other. That is not a metadata
+      problem. It is a graph traversal across identity states.
+      <br><br>
+      It gets harder. &ldquo;The Master ate Padmasambhava&rdquo; is a sentence the
+      <em>Doctor Who</em> canon produces in perfect seriousness&mdash;a villain absorbing
+      another entity&rsquo;s body across serials. &ldquo;Captain&rdquo; spans fourteen seasons
+      and refers to dozens of different men. The word &ldquo;Doctor&rdquo; alone, in naive
+      extraction, becomes a black hole that swallows every reference to every physician on the
+      show. Our Golden Entity Registry resolves all of it: 46,364 canonical entries, 50,353
+      auto-linked instances, 1,151 flagged for human review. The Brigadier&rsquo;s thirteen-season
+      arc&mdash;Colonel, Brigadier, retiree at Carbury&mdash;holds together as one node with a
+      synthesized cross-season description. Seven incarnations of the Doctor stay distinct
+      participation states of one canonical identity. This is the kind of problem that breaks
+      document-shaped tools completely. A wiki either picks one incarnation as primary or
       becomes an unnavigable wall of text. A graph preserves every incarnation as a distinct
       participation state while maintaining canonical identity across all of them.
       <br><br>
@@ -218,10 +227,11 @@ sections:
       <em>identity</em> from <em>state</em>. A Character node represents who someone
       is&mdash;their canonical identity, their aliases, their persistent attributes. An
       EventParticipation represents who they are <em>in a specific moment</em>&mdash;their
-      emotional state, their goals, what they did. The Doctor is one node. The Doctor has
-      hundreds of participations, spread across incarnations, centuries of in-world time, and
-      fifty years of broadcast history. Each participation preserves the specific state of the
-      character at that moment without overwriting any other. Documents flatten. Graphs preserve.
+      emotional state, their goals, what they did. The Doctor is one node with hundreds of
+      participations, spread across incarnations, centuries of in-world time, and
+      twenty-six years of broadcast history. Each participation preserves the specific state of
+      the character at that moment without overwriting any other. Documents flatten.
+      Graphs preserve. The graph is the memory twenty-six seasons never had of themselves.
     blog_links:
       - text: "Read: The Computational Problem of Narrative Memory"
         url: "https://storygraph.substack.com/p/the-computational-problem-of-narrative"
@@ -258,10 +268,12 @@ sections:
       Every series we processed taught us something the previous one couldn&rsquo;t.
       That&rsquo;s why we chose them.
       <br><br>
-      <em>Doctor Who</em> broke identity continuity. A protagonist who changes face,
-      personality, and actor while remaining canonically the same entity forced the
-      architecture to separate who a character <em>is</em> from who they are <em>right
-      now</em>.
+      <em>Doctor Who</em> broke identity continuity and broke scale at the same time.
+      Twenty-six seasons. 703 episodes. 337,795 typed relationships in one graph. A
+      protagonist who changes face, personality, and actor while remaining canonically
+      the same entity forced the architecture to separate who a character <em>is</em>
+      from who they are <em>right now</em>. And the twenty-six-year canon forced it to
+      hold together at a scale no story bible has ever reached.
       <br><br>
       <em>Star Trek: The Next Generation</em> broke alias resolution. One character,
       seven seasons, five canonical names. The system had to learn that rank changes
@@ -351,8 +363,8 @@ cta:
     told&mdash;live in a queryable graph you can explore. Browse the live catalog and see
     the architecture thinking. Or read the arguments behind it.
   ctas:
-    - label: "Explore the Catalog"
-      url: "/explore/"
+    - label: "Explore Doctor Who (26 Seasons)"
+      url: "/explore/doctor-who/"
       style: primary
       icon: arrow-right
     - label: "Read Our Substack"
