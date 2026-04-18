@@ -33,8 +33,10 @@ db.sqlite3
 *.pyc
 
 # Static files
+# Only the collectstatic OUTPUT is ignored. Source static dirs (per-app
+# `<app>/static/` and the root `/static/` used in STATICFILES_DIRS) are
+# tracked so the template's {% static %} refs resolve after deploy.
 staticfiles/
-static/
 
 # Media files
 media/
