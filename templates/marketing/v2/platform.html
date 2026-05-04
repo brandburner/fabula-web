@@ -1,0 +1,249 @@
+{% extends "marketing/v2/_base.html" %}
+
+{% block title %}fabula. — the platform{% endblock %}
+{% block meta_description %}How Fabula extracts character belief, intention, and causal structure from screenplays — with every claim traceable to a line of script.{% endblock %}
+
+{% block content %}
+
+  <section class="section hero">
+    <div class="container">
+      <p class="eyebrow">The platform</p>
+      <h1 style="max-width: 22ch;">Ask any question about your show. Get a sourced answer in milliseconds.</h1>
+      <p class="hero__deck">
+        Underneath: 25 node labels, 44 relationship types, per-character belief and intention state recorded at every event — every character a traversable arc, with a pointer back to the line of script that produced each claim. Stress-tested across 800+ episodes.
+      </p>
+      <p class="hero__deck" style="font-style: italic; color: var(--ink-2);">
+        What that gets you: the questions you currently can't get answered — because they require rereading three seasons — become queries you can run between meetings.
+      </p>
+      <div class="ctas">
+        <a class="cta cta--primary" href="{% url 'catalog' %}">explore the live catalog</a>
+        <a class="cta" href="#world-model">read the architecture</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section--tight">
+    <div class="container">
+<pre class="console" data-lang="json" data-path="fabula://bdi/the-west-wing/s2/bartlet">// BDI extraction · The West Wing S2 · Bartlet concealing MS
+
+{
+  "incarnation_identifier":
+    "as the President Concealing a Chronic Illness",
+  "emotional_state_at_event":
+    "Resolute but conflicted, carrying the weight of public deception
+     against personal integrity",
+  "goals_at_event": [
+    "Reveal the MS diagnosis on his own terms before it becomes a scandal",
+    "Protect Abbey from the fallout of the concealment"
+  ],
+  "beliefs_at_event": [
+    "The American people deserve honesty from their President",
+    "Disclosure now, while he controls the narrative, is less damaging
+      than disclosure later"
+  ],
+  "importance_to_event": "primary",
+  "confidence": 0.96
+}</pre>
+      <p style="color: var(--ink-2); margin-top: 1.5rem; max-width: 64ch;">
+        Each <span style="font-family: var(--mono); font-size: 0.92em;">EventParticipation</span> records a character as they appear in <em>this scene</em>, not as a fixed dossier. The incarnation field marks how their public face differs from their canonical identity — in this case, a President hiding a diagnosis. With this in the graph, queries like <em>&ldquo;where do Bartlet's stated beliefs contradict his goals?&rdquo;</em> become a traversal, not a viewing.
+      </p>
+    </div>
+  </section>
+
+  <!-- JUST THE RIGHT CONTEXT -->
+  <section class="section section--paper2">
+    <div class="container">
+      <p class="section-mark">&sect; 01 — context economy</p>
+      <h2 style="max-width: 26ch; margin-bottom: 1.5rem;">
+        The naive approach is to put the whole episode in the prompt.
+      </h2>
+      <p style="color: var(--ink-2); max-width: 60ch;">
+        It works, more or less. It also costs forty cents a call, gets slower as the show goes on, and hallucinates more the longer the context. Fabula sends each model call only the few thousand tokens it actually needs for that decision — which scenes are upstream, which entities are in play, which prior claims constrain this one. The numbers below are the result.
+      </p>
+
+      <table class="spec-table" style="margin-top: 2.5rem;">
+        <thead>
+          <tr><th>What</th><th>How much</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>Per-call payload</td><td class="num">~2 KB <span style="color:var(--ink-3)">(vs. 50 KB+ for a full episode)</span></td></tr>
+          <tr><td>Token reduction on conflict preprocessing</td><td class="num">80%</td></tr>
+          <tr><td>Context reduction on entity synthesis</td><td class="num">98%</td></tr>
+          <tr><td>Fewer LLM harmonisation calls (smart pre-filter)</td><td class="num">72%</td></tr>
+          <tr><td>Candidate pairs eliminated before reaching an LLM</td><td class="num">99%</td></tr>
+          <tr><td>Cost per episode (cached re-run)</td><td class="num">~$0.01</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <!-- WORLD MODEL -->
+  <section class="section section--dark" id="world-model">
+    <div class="container">
+      <p class="section-mark">&sect; 02 — the world model layer</p>
+      <h2 style="max-width: 22ch;">A graph that tracks state, not text.</h2>
+      <div class="grid-2" style="margin-top: 2.5rem;">
+        <div>
+          <p>
+            What an LLM does well — predicting plausible next tokens — is not what a script supervisor needs. A script supervisor needs to know what is true in the show right now, and what was true three episodes ago, and what each character knew when they made a decision.
+          </p>
+          <p>
+            Where most tools collapse a show into a single timeline of dialogue, Fabula gives every character, location, organisation, and object a queryable journey. Every event a character participates in carries that character's beliefs, goals, and emotional state at that moment — a stack of psychological states down each character's spine, all anchored in the Episode &rarr; Act &rarr; Scene &rarr; Beat structure of the show.
+          </p>
+          <p style="font-style: italic;">
+            &ldquo;What did Bartlet believe when he made this decision?&rdquo;<br/>
+            &ldquo;What had he done by this point in the season?&rdquo;<br/>
+            &ldquo;What changed in him between this season and the next?&rdquo;
+          </p>
+          <p>
+            Different operations. All answerable on the same per-entity arc.
+          </p>
+        </div>
+        <div>
+<pre class="console console--inline" data-lang="json" data-path="fabula://schema/labels">// Schema · 25 node labels, 44 relationship types
+
+{
+  "entities":   ["Agent", "Location", "Object", "Organization"],
+  "events":     ["Event", "PARTICIPATED_AS edge with BDI state",
+                 "EventBeatLink"],
+  "structure":  ["Series", "Season", "Episode", "Act",
+                 "SceneBoundary", "PlotBeat"],
+  "narrative":  ["Theme", "ConflictArc",
+                 "NarrativeConnection (typed: CAUSAL,
+                  FORESHADOWING, THEMATIC_PARALLEL, ESCALATION,
+                  CALLBACK, EMOTIONAL_ECHO, ...)"],
+  "synthesis":  ["AgentEpisodeProfile",
+                 "AgentSeasonProfile",
+                 "cross-season arc on the canonical Agent"],
+  "provenance": "Every node, every edge, every BDI field carries
+                 a pointer to the line of script that produced it."
+}</pre>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- RUNS FOR DAYS -->
+  <section class="section">
+    <div class="container">
+      <p class="section-mark">&sect; 03 — at scale</p>
+      <h2 style="max-width: 18ch; margin-bottom: 1rem;">Runs for days. Doesn't fall over.</h2>
+      <p style="color: var(--ink-2); max-width: 60ch; margin-bottom: 2rem;">
+        &ldquo;Failures&rdquo; below means episodes that exited the run unfinished or with corrupt graph state. Retried-and-recovered model calls aren't counted as failures — those are normal; we expect them. The point is that none of these runs needed a human to step in and restart it.
+      </p>
+
+      <table class="spec-table">
+        <thead>
+          <tr><th>Series</th><th>Episodes</th><th>Duration</th><th>Failures</th><th>Notes</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>Star Trek: TNG</td><td class="num">177</td><td class="num">~430 hr</td><td class="num">0</td><td>seven seasons, alias-heavy</td></tr>
+          <tr><td>The West Wing</td><td class="num">154</td><td class="num">~370 hr</td><td class="num">0</td><td>relationship density stress test</td></tr>
+          <tr><td>Doctor Who</td><td class="num">300+</td><td class="num">classic + new</td><td class="num">0</td><td>26 seasons, identity continuity</td></tr>
+          <tr><td>Wolf Hall</td><td class="num">12</td><td class="num">~28 hr</td><td class="num">0</td><td>historical, dense ensemble</td></tr>
+          <tr><td>Happy Valley</td><td class="num">18</td><td class="num">~16 hr</td><td class="num">0</td><td>realist ontology</td></tr>
+          <tr><td>Indiana Jones</td><td class="num">5</td><td class="num">~10 hr</td><td class="num">0</td><td>cinematic time, flashbacks</td></tr>
+          <tr><td>Motherland: Fort Salem</td><td class="num">30</td><td class="num">~22 hr</td><td class="num">0</td><td>realist-fantastical hybrid</td></tr>
+        </tbody>
+      </table>
+
+      <p style="margin-top: 2rem; color: var(--ink-2); max-width: 60ch;">
+        Atomic checkpointing after every episode. Three-level error recovery.
+        Bounded async concurrency. Circuit breakers with model fallback.
+      </p>
+    </div>
+  </section>
+
+  <!-- MODEL AGNOSTIC -->
+  <section class="section section--dark">
+    <div class="container">
+      <p class="section-mark">&sect; 04 — model selection</p>
+      <div class="grid-2">
+        <div>
+          <h2 style="max-width: 18ch;">Each step picks its own model.</h2>
+          <p style="color: var(--night-ink-2); margin-top: 1.5rem;">
+            Different parts of the pipeline have different shapes of failure. Scene decomposition is mostly structural and runs cheaply on Flash. Entity adjudication needs better judgement and runs on Sonnet, with a fallback to GPT-4 when Sonnet's confidence drops below threshold. Theme analysis runs on whichever model produces the most useful output for that show — we benchmark per-genre.
+          </p>
+          <p style="color: var(--night-ink-2);">
+            Because the prompt for each step gets a tight, engineered context rather than the whole episode, the cheaper models do well at their job. The expensive ones only run where they earn it.
+          </p>
+        </div>
+        <div>
+<pre class="console console--inline" data-lang="yaml" data-path="fabula://config/models">scene_decomposition:
+  model:    gemini-2.5-flash
+  context:  ~1.8KB
+  cost:     $0.0008 / call
+
+entity_adjudication:
+  model:    claude-sonnet-4
+  context:  ~2.4KB
+  cost:     $0.0042 / call
+  fallback: gpt-4o
+
+bdi_extraction:
+  model:    claude-sonnet-4
+  context:  ~3.1KB
+  cost:     $0.0061 / call
+
+theme_analysis:
+  model:    gemini-2.5-pro
+  context:  ~2.0KB
+  cost:     $0.0034 / call</pre>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- WALLED GARDEN / RAILWAY -->
+  <section class="section section--paper2" id="exports">
+    <div class="container">
+      <p class="section-mark">&sect; 05 — open by default</p>
+      <h2 style="max-width: 22ch; margin-bottom: 1.5rem;">
+        The catalogue graphs are private. The story graph shouldn't be.
+      </h2>
+      <div class="grid-2">
+        <div>
+          <p>
+            Streaming platforms keep their entertainment knowledge graphs internal because their value is in recommendation — ranking titles you might watch next. That's a reasonable choice for that data.
+          </p>
+          <p>
+            The graph <em>inside</em> the show is different. It's reference material. Production teams need to be able to take it with them between studios. AI builders need to be able to retrieve from it with their own infrastructure. Game studios need to be able to bulk-export it into their own pipelines. So Fabula's data leaves the platform, in formats people already use: Parquet for analytics, Cypher for Neo4j, plain JSON for everything else.
+          </p>
+          <p style="font-style: italic; color: var(--ink-2);">
+            Why openness, in plain economic terms: the value compounds when the same graph powers a writers'-room query, a chatbot's retrieval, and a game's canon export. Lock it in and that compounding stops at our user count. Let it out and the network of teams using it grows the dataset itself.
+          </p>
+          <p>
+            Forty-eight datasets are already published openly under
+            <a href="https://huggingface.co/brandburner" style="font-family: var(--mono); font-size: 0.92em;">brandburner</a> on Hugging Face. The example below is the export command that produced one of them.
+          </p>
+        </div>
+        <div>
+<pre class="console" data-lang="plain" data-path="fabula://export/the-west-wing/s4">$ fabula export the_west_wing --season 4 --format parquet
+
+dataset_export/the_west_wing_s4/
+&#9500;&#9472;&#9472; nodes.parquet      # All graph nodes
+&#9500;&#9472;&#9472; edges.parquet      # All relationships
+&#9500;&#9472;&#9472; positions.parquet  # 3D layout coordinates
+&#9500;&#9472;&#9472; meta.json          # Series info, entity counts
+&#9492;&#9472;&#9472; README.md          # HuggingFace dataset card
+
+&#10003; 4,127 nodes
+&#10003; 18,402 edges
+&#10003; exported in 11.3s</pre>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <p class="eyebrow">closing</p>
+      <h2 style="max-width: 22ch; margin-bottom: 1.5rem;">If you've read this far, the next step is the catalog.</h2>
+      <div class="ctas">
+        <a class="cta cta--primary" href="{% url 'catalog' %}">explore the live catalog</a>
+        <a class="cta" href="mailto:engineering@fabula.productions">talk to engineering</a>
+      </div>
+    </div>
+  </section>
+
+{% endblock %}

@@ -1,0 +1,181 @@
+{% extends "marketing/v2/_base.html" %}
+
+{% block title %}fabula. — about{% endblock %}
+{% block meta_description %}Most tools track when the audience saw a thing. Fabula also tracks who knew it, who acted on it, and who carried it forward.{% endblock %}
+
+{% block content %}
+
+  <section class="section hero">
+    <div class="container">
+      <p class="eyebrow">About</p>
+      <h1 style="max-width: 22ch;">The story you told is not the story that happened.</h1>
+      <p class="hero__deck">
+        That's a hundred-year-old observation, not an accusation. The Russian formalists named the gap in 1925: <em>fabula</em> is what happened in the world of the story, <em>syuzhet</em> is the order in which the storyteller chose to reveal it. Every flashback exploits the gap. Every cold open assumes it.
+      </p>
+      <p class="hero__deck">
+        It's a useful distinction, and a hard one to encode. The system most tools build tracks one side — when the audience saw a thing. Fabula also tracks who knew it at that moment, who acted on it, and who carried it forward into the next scene.
+      </p>
+      <p class="hero__deck" style="font-style: italic; color: var(--ink-2);">
+        Why this matters in plain terms: when a writers' room asks <em>&ldquo;what does this character believe right now?&rdquo;</em> and a continuity supervisor asks <em>&ldquo;what has this character already done by this point?&rdquo;</em>, they're asking different questions of the same show. Most tools collapse them into one timeline of dialogue. We don't.
+      </p>
+    </div>
+  </section>
+
+  <!-- DUAL TIME -->
+  <section class="section section--dark">
+    <div class="container">
+      <p class="section-mark">&sect; 01 — every entity, a queryable journey</p>
+      <div class="grid-2">
+        <div>
+          <h2 style="max-width: 22ch;">Every character a traversable arc.</h2>
+          <p style="color: var(--night-ink-2); margin-top: 1.5rem;">
+            Where most tools collapse a show into one timeline of dialogue, Fabula gives every character (and every location, organisation, and persistent object) its own queryable journey. Every event the entity participates in carries that entity's state at that moment — for a character, that's beliefs, goals, emotional state, and what was observed in the scene.
+          </p>
+          <p style="color: var(--night-ink-2);">
+            A spine of psychological state runs down each character, anchored in the Episode &rarr; Act &rarr; Scene &rarr; Beat structure of the show. Cross-episode profiles synthesise role, dilemma, and key relationships per episode and per season; cross-season arcs roll up onto the canonical entity itself. That's how the Brigadier reads as one continuous person across thirteen seasons of <em>Doctor Who</em>.
+          </p>
+          <p style="color: var(--night-ink-2); font-style: italic;">
+            &ldquo;What did Bartlet believe in this scene?&rdquo;<br/>
+            &ldquo;What had he done by this episode?&rdquo;<br/>
+            &ldquo;What changed in him between this season and the next?&rdquo;<br/>
+            Different operations. All answerable on the same per-entity arc.
+          </p>
+        </div>
+        <div>
+<pre class="console console--inline" data-lang="json" data-path="fabula://arc/the-west-wing/s2/bartlet/e22">// Per-entity event participation · Bartlet · S2E22
+
+{
+  "agent": "President Josiah Bartlet",
+  "scene_anchor": "S2E22 · 'Two Cathedrals' · Act IV",
+  "incarnation_identifier":
+    "as the President Concealing a Chronic Illness",
+  "beliefs_at_event": [
+    "The American people deserve honesty from their President",
+    "Disclosure now, while he controls the narrative,
+     is less damaging than disclosure later"
+  ],
+  "goals_at_event": [
+    "Reveal the MS diagnosis on his own terms before scandal",
+    "Protect Abbey from the fallout of the concealment"
+  ],
+  "emotional_state_at_event":
+    "Resolute but conflicted, carrying the weight of public
+     deception against personal integrity",
+  "observed_status":
+    "Stands alone in the National Cathedral after Mrs.
+     Landingham's funeral; addresses the divine in Latin",
+  "importance_to_event": "primary",
+  "season_arc_link": "agent_season_profile/wing/s2/bartlet"
+}</pre>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FIVE SHOWS -->
+  <section class="section">
+    <div class="container">
+      <p class="section-mark">&sect; 02 — we picked shows that would break us</p>
+      <h2 style="max-width: 22ch; margin-bottom: 2rem;">Five series. Five things we knew would break.</h2>
+      <p style="color: var(--ink-2); max-width: 60ch; margin-bottom: 2.5rem;">
+        Most extraction systems demo on a single film with a small cast. We picked five long-running, structurally awkward shows and ran them through the pipeline knowing each one would expose a different failure. Then we fixed each failure. The table below is the catalogue of those.
+      </p>
+
+      <table class="ledger">
+        <thead>
+          <tr><th>Show</th><th>What it broke</th><th>What we built to fix it</th></tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Doctor Who</td>
+            <td>Identity continuity</td>
+            <td>One canonical Doctor across seven actors and 26 seasons of Classic Who. Regeneration as a tracked transition on the same entity, not a new character.</td>
+          </tr>
+          <tr>
+            <td>Star Trek: TNG</td>
+            <td>Alias resolution</td>
+            <td>&ldquo;Picard,&rdquo; &ldquo;The Captain,&rdquo; &ldquo;Jean-Luc,&rdquo; &ldquo;Locutus.&rdquo; Promotions, ranks, possessions. Cross-season identity preserved across 177 episodes.</td>
+          </tr>
+          <tr>
+            <td>The West Wing</td>
+            <td>Relationship density</td>
+            <td>Dialogue-heavy ensemble where every relationship has a state. Typed edges. Per-event BDI. Mrs. Landingham reverberating across two seasons after her death works at all because of this.</td>
+          </tr>
+          <tr>
+            <td>Motherland: Fort Salem</td>
+            <td>Realist ontology</td>
+            <td>Magic that obeys consistent rules requires the graph to track world-internal physics. Soft constraints, hard contradictions.</td>
+          </tr>
+          <tr>
+            <td>Indiana Jones</td>
+            <td>Episode boundaries</td>
+            <td>Not a series. Three films, decades apart. One entity graph spans them — the same Indy, the same Marion, the same Sallah, resolved across releases instead of treated as separate productions.</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <p style="color: var(--ink-2); max-width: 60ch; margin-top: 2.5rem; font-style: italic;">
+        We didn't pick easy material and call the system general. We picked material that would break a brittle system, and built one that didn't break on these shows. &ldquo;Didn't break&rdquo; means: ran end-to-end without human intervention, produced a queryable graph, survived a manual continuity audit on a sampled subset of episodes. Things still go wrong on a new show; we expect that, which is why the pipeline checkpoints and recovers instead of trusting first runs.
+      </p>
+    </div>
+  </section>
+
+  <!-- WHAT WE BELIEVE -->
+  <section class="section section--paper2">
+    <div class="container">
+      <p class="section-mark">&sect; 03 — what we believe</p>
+      <h2 style="max-width: 22ch; margin-bottom: 2rem;">Three convictions you can hold us to.</h2>
+
+      <div class="beliefs">
+        <div class="belief">
+          <span class="belief__num">01.</span>
+          <p class="belief__text">
+            A story is a web of typed relationships. A spreadsheet is a list of rows. Pretending the second can do the job of the first is what produces story bibles that drift.
+          </p>
+        </div>
+        <div class="belief">
+          <span class="belief__num">02.</span>
+          <p class="belief__text">
+            Tracking <em>only</em> the order events arrive on screen gets you something that looks correct and quietly isn't. Each character also has to carry their own beliefs, their own goals, and a record of what they've done — separately, queryably, and with provenance.
+          </p>
+        </div>
+        <div class="belief">
+          <span class="belief__num">03.</span>
+          <p class="belief__text">
+            Hallucination is an engineering problem, not a fundamental one. Schema enforcement, provenance pointers, confidence scoring, and rejection on disagreement solve most of it. We won't claim it's solved — but the shape of the work is engineering, not prayer, and that's what lets a writers' room actually trust the answer.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- WHO WE ARE / contact -->
+  <section class="section">
+    <div class="container">
+      <p class="section-mark">&sect; 04 — contact</p>
+      <div class="grid-2">
+        <div>
+          <h2 style="max-width: 22ch; margin-bottom: 1.5rem;">Small team. Long memory.</h2>
+          <p>
+            Fabula is a small engineering group building one thing carefully. We came out of production, research, and infrastructure. We've watched too much television; we took good notes.
+          </p>
+          <p>
+            Most of what's worth reading is already published. Forty-eight datasets are public on <a href="https://huggingface.co/brandburner" style="font-family: var(--mono); font-size: 0.92em;">brandburner</a>. The catalog at <a href="{% url 'catalog' %}">/explore</a> is live. The platform docs are on this site. Read what's there first; we'll move faster when you do.
+          </p>
+        </div>
+        <div>
+          <table class="spec-table">
+            <tbody>
+              <tr><td>Production teams</td><td><a href="mailto:production@fabula.productions">production@fabula.productions</a></td></tr>
+              <tr><td>AI builders</td><td><a href="mailto:platform@fabula.productions">platform@fabula.productions</a></td></tr>
+              <tr><td>Game studios</td><td><a href="mailto:games@fabula.productions">games@fabula.productions</a></td></tr>
+              <tr><td>Press</td><td><a href="mailto:press@fabula.productions">press@fabula.productions</a></td></tr>
+              <tr><td>Investors</td><td><a href="mailto:investors@fabula.productions">investors@fabula.productions</a></td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </section>
+
+{% endblock %}

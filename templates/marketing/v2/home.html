@@ -1,0 +1,416 @@
+{% extends "marketing/v2/_base.html" %}
+{% load static %}
+
+{% block title %}fabula. — the context graph for narrative production{% endblock %}
+{% block meta_description %}Turn screenplays into queryable knowledge graphs. Every character a traversable arc, every event tied to the line of script that justifies it — across hundred-episode story worlds.{% endblock %}
+
+{% block content %}
+
+  <!-- HERO -->
+  <section class="section hero">
+    <div class="container">
+      <p class="eyebrow">For shows that have to remember themselves</p>
+      <h1>Turn screenplays into<br/>queryable knowledge graphs.</h1>
+      <p class="hero__deck">
+        Give Fabula a screenplay and it returns a graph: every character with a stable identity, every scene tied to the events that caused it, every claim traceable to the line of script that justifies it. The graph holds across a hundred episodes.
+      </p>
+      <p class="hero__deck" style="font-style: italic; color: var(--ink-2);">
+        What that gets you: the answer to <em>&ldquo;have we said this before, and did it match?&rdquo;</em> in the time it takes to type the question — instead of the time it takes to rewatch six seasons.
+      </p>
+      <div class="ctas">
+        <a class="cta cta--primary" href="{% url 'catalog' %}">explore the live catalog</a>
+        <a class="cta" href="{% url 'v2_platform' %}">read the platform docs</a>
+        <a class="cta" href="#access">get early access</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- HERO CONSOLE -->
+  <section class="section section--tight">
+    <div class="container">
+<pre class="console" data-lang="json" data-path="fabula://extract/dracula/s01e01">// Event extraction · Dracula S01E01 · "The Blood's Betrayal"
+
+{
+  "title": "The Blood's Betrayal: Reading the Soul's Ink",
+  "description": "In the dim, candlelit confines of Jonathan Harker's
+    convent room, Sister Agatha's relentless interrogation peels back
+    the layers of his trauma, revealing a horror more intimate than
+    physical violation. When Jonathan insists Dracula knew private
+    details about Mina—her hair 'entangled in the sunlight'—a detail
+    he'd never shared, even with her, Sister Agatha delivers the
+    chilling revelation: 'Perhaps stories flow in our veins, if you
+    know how to read them.' The implication is devastating: Dracula
+    didn't just drink Jonathan's blood—he read it.",
+
+  "key_dialogue": [
+    "SISTER AGATHA: You are quite certain? He did not say blood is life
+      —he said blood is lives.",
+    "JONATHAN: I have held that thought in my heart. I have never
+      shared it. Not even with Mina.",
+    "SISTER AGATHA: Perhaps stories flow in our veins, if you know how
+      to read them. Blood is lives."
+  ],
+  "confidence": 0.97
+}</pre>
+    </div>
+  </section>
+
+  <!-- TRUST STRIP -->
+  <section class="section section--tight">
+    <div class="container">
+      <div class="trust">
+        <span><span class="num">800+</span> episodes across 7 series</span>
+        <span><span class="num">26</span> seasons of <em>Doctor Who</em></span>
+        <span><span class="num">27,205</span> canonical entities, one megagraph</span>
+        <span>cross-season identity preserved on Worf, 177 episodes</span>
+        <span><span class="num">59.6</span> hours unattended, zero failures</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- THREE VERBS (DARK) -->
+  <section class="section section--dark" id="verbs">
+    <div class="container">
+      <p class="section-mark">&sect; 01 — three verbs</p>
+      <h2 style="margin-bottom: 0.5rem">Parse <span style="color:var(--night-ink-3)">&middot;</span> Resolve <span style="color:var(--night-ink-3)">&middot;</span> Reason</h2>
+      <p style="color:var(--night-ink-2); max-width: 60ch; margin-top: 1rem; margin-bottom: 1rem;">
+        These are the three things Fabula does. Pick one to see the actual output.
+      </p>
+      <p style="color:var(--night-ink-3); max-width: 60ch; margin-bottom: 3rem; font-style: italic;">
+        What that gets you: the script supervisor's question, the AI agent's retrieval, and the writers' room's precedent search are answered against the same record — with the line of script that justifies each answer attached.
+      </p>
+
+      <div class="verbs" data-verbs>
+        <div class="verbs__nav" role="tablist">
+          <button class="verbs__btn" role="tab" aria-selected="true" data-verb="parse">
+            <span class="num">01</span>Parse
+          </button>
+          <button class="verbs__btn" role="tab" aria-selected="false" data-verb="resolve">
+            <span class="num">02</span>Resolve
+          </button>
+          <button class="verbs__btn" role="tab" aria-selected="false" data-verb="reason">
+            <span class="num">03</span>Reason
+          </button>
+        </div>
+
+        <div class="verbs__panels">
+          <div class="verbs__panel" data-verb="parse" data-active>
+            <p>
+              Plain text, Fountain, PDF. No reformatting, no template. Fabula reads scenes, beats, dialogue, and unspoken stage business in a single pass.
+            </p>
+            <p>
+              <em>Saturday Night</em> (2024) doesn't use <span style="font-family:var(--mono); font-size:0.85em;">INT/EXT</span> headings at all — most parsers fail on it. Fabula pulled out <strong>53 scenes, 199 beats, 55 characters</strong> on the first run, with no per-show configuration.<sup class="fn">&sup1;</sup>
+            </p>
+<pre class="console console--inline" data-lang="plain" data-path="fabula://parse/saturday-night">[parser] reading       &rarr; saturday_night_2024.fountain
+[parser] format         &rarr; fountain (no INT/EXT markers)
+[parser] scenes         &rarr; 53
+[parser] beats          &rarr; 199
+[parser] characters     &rarr; 55
+[parser] dialogue lines &rarr; 1,284
+[parser] elapsed        &rarr; 4.2s</pre>
+          </div>
+
+          <div class="verbs__panel" data-verb="resolve">
+            <p>
+              The script calls Picard "The Captain" in one scene and "Jean-Luc" in the next. Worf gets promoted twice. The Doctor changes face seven times across Classic Who. Fabula keeps each of them as one entity, with the rank changes and regenerations recorded as transitions on that entity rather than as new ones.
+            </p>
+            <p>
+              When two entities really are different — two characters who happen to share a name, or two ships called <em>Enterprise</em> — Fabula makes the call explicitly and records why, with a confidence score. Adjudication, not vector similarity.
+            </p>
+            <p style="font-style: italic; color: var(--ink-2); font-size: 0.95rem;">
+              <em>Doctor Who</em> seasons 1&ndash;26 covers seven incarnations; the megagraph holds them as one canonical entity, with regenerations recorded as transitions on that entity rather than as new ones.
+            </p>
+<pre class="console console--inline" data-lang="json" data-path="fabula://adjudicate/tng">// Entity adjudication · Star Trek TNG · KEEP_SEPARATE
+
+{
+  "decision": "KEEP_SEPARATE",
+  "confidence": 0.98,
+  "reasoning": "The source entity ('Enterprise Crew's First Magma
+    Pocket Lights') is a portable, artificial light source deployed
+    inside the First Magma Pocket during a critical mission. The
+    target entity ('Enterprise Engineering Emergency Lights') is a
+    fixed, embedded lighting system in Engineering that activates
+    during a warp core malfunction. These are distinct entities
+    serving different functional and narrative roles in separate
+    contexts.",
+  "distinction_clarifications": [{
+    "suggested_name_refinement":
+      "Enterprise Crew's Portable Magma Pocket Illumination Lights",
+    "key_distinguishing_features": [
+      "Portable and manually deployed by the crew",
+      "Used during a plasma infusion mission",
+      "Symbolically isolates characters and heightens tension"
+    ]
+  }]
+}</pre>
+          </div>
+
+          <div class="verbs__panel" data-verb="reason">
+            <p>
+              For every event, Fabula records what each participating character believed, wanted, and intended <em>at that moment</em> — not as overall character traits, but as a per-scene state that changes when the show changes it. That's what lets you ask why a decision was made, not just what happened.
+            </p>
+            <p>
+              Every belief, goal, and connection comes back with a pointer to the specific lines of script that justified it. If you don't trust the claim, click through and read the source.
+            </p>
+<pre class="console console--inline" data-lang="json" data-path="fabula://reason/tng/geordi">// BDI extraction · Star Trek TNG · Geordi La Forge
+
+{
+  "agent_name_mention": "Geordi",
+  "observed_status": "Reports Riker's capture and a casualty to Data
+    via coms, noting the sudden cessation of com jamming. Reacts with
+    surprise to the restored communications.",
+  "emotional_state_at_event":
+    "tense, relieved (at restored coms), concerned (for Riker)",
+  "goals_at_event": [
+    "Communicate the away team's status to the Enterprise bridge",
+    "Ensure Data is aware of Riker's capture and the mercenaries' escape"
+  ],
+  "importance_to_event": "primary",
+  "confidence": 0.94
+}</pre>
+          </div>
+        </div>
+      </div>
+
+      <p style="font-family: var(--mono); font-size: 0.72rem; color: var(--night-ink-3); margin-top: 3rem;">
+        <sup class="fn">&sup1;</sup> See catalog entry for <em>Saturday Night</em> in the
+        <a href="{% url 'catalog' %}">live catalog</a>.
+      </p>
+    </div>
+  </section>
+
+  <!-- DECISION LINEAGE -->
+  <section class="section">
+    <div class="container">
+      <p class="section-mark">&sect; 02 — events have reasons</p>
+      <h2 style="max-width: 22ch; margin-bottom: 1.8rem;">Most extraction stops at <em>what happened</em>.</h2>
+      <div style="max-width: 64ch;">
+        <p>
+          Fabula keeps going. For every event in the show it records the connections to other events — typed, not just inferred from proximity. A connection is <em>causal</em>, or it carries a character forward, or it parallels a different event thematically, or it reverses one. Each connection is its own claim, with its own justification.
+        </p>
+        <p>
+          That's the difference between a transcript and a graph. A transcript can tell you Q showed up and Picard demanded his identity. The graph can tell you the second event happened <em>because</em> of the first, and that the same pattern — institutional authority confronted by individual conviction — recurs four other times across the season.
+        </p>
+        <p style="font-style: italic; color: var(--ink-2);">
+          What that gets you: you can ask <em>&ldquo;where else have we set up this confrontation, and how did it pay off?&rdquo;</em> and get four cited scenes back — instead of a writer's room trying to remember.
+        </p>
+      </div>
+
+<pre class="console" data-lang="yaml" data-path="fabula://connections/tng" style="margin-top: 2.5rem;"># Typed narrative connections · Star Trek TNG
+
+- connection_type: CAUSAL
+  strength: 0.91
+  description: "Q's abrupt appearance and assertion of authority on the
+    bridge leads directly to his ultimatum commanding humanity's
+    retreat, provoking Picard's demand for Q's identity and Conn's
+    readiness to fight."
+
+- connection_type: CHARACTER_CONTINUITY
+  strength: 0.88
+  description: "Picard's immediate reaction to Conn being frozen
+    — administering orders for medical aid and confronting Q —
+    reflects his steadfast leadership and moral resolve."
+
+- connection_type: THEMATIC_PARALLEL
+  strength: 0.74
+  description: "Both events stage a confrontation between institutional
+    authority and individual moral conviction, with the bridge serving
+    as contested ground."</pre>
+
+      <div style="max-width: 64ch; margin-top: 2rem;">
+        <p style="color: var(--ink-2); font-size: 0.98rem;">
+          Every connection has a type, a strength, and a sentence saying what the connection actually consists of. The connections are extracted, scored, and traced back to the lines that support them; we don't editorialize on top. Where the scoring is uncertain, the strength score reflects that — connections below 0.7 surface for human review rather than landing in the canonical graph silently. The interesting question becomes what you want to ask.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- VERTICALS -->
+  <section class="section section--paper2">
+    <div class="container">
+      <p class="section-mark">&sect; 03 — verticals</p>
+      <h2 style="max-width: 22ch; margin-bottom: 0.8rem;">Same graph, different questions.</h2>
+      <p style="color: var(--ink-2); margin-bottom: 0.6rem; max-width: 60ch;">Four kinds of team have a question they can't answer fast enough today. Each row is the question, and what changes when it's a query.</p>
+      <p style="color: var(--ink-3); margin-bottom: 2.5rem; max-width: 60ch; font-style: italic;">
+        We're in pilots and conversations with each of these. Pick the one closest to your job.
+      </p>
+
+      <div class="verticals">
+        <article class="vertical">
+          <span class="vertical__tag">/for-production/</span>
+          <h3>Production teams</h3>
+          <p><em>&ldquo;Have we said this before, and did it match?&rdquo;</em> Today: an assistant rereads three seasons over the weekend. With Fabula: the disagreeing lines are quoted back before lunch.</p>
+          <a href="{% url 'v2_production' %}">production &rarr;</a>
+        </article>
+        <article class="vertical">
+          <span class="vertical__tag">/for-ai/</span>
+          <h3>AI builders</h3>
+          <p><em>&ldquo;Where does this claim come from?&rdquo;</em> Today: your model can't answer that. With Fabula: every result carries the line of script behind it, so your agent has something to cite instead of confabulate.</p>
+          <a href="{% url 'v2_platform' %}">platform &rarr;</a>
+        </article>
+        <article class="vertical">
+          <span class="vertical__tag">/for-games/</span>
+          <h3>Game studios</h3>
+          <p><em>&ldquo;What is canon for this character?&rdquo;</em> Today: a junior writer rereads every script for six months. With Fabula: the canon — characters, relationships, locations, timelines — exports to whatever your engine reads.</p>
+          <a href="{% url 'v2_platform' %}#exports">exports &rarr;</a>
+        </article>
+        <article class="vertical">
+          <span class="vertical__tag">/investors/</span>
+          <h3>Investors</h3>
+          <p><em>&ldquo;Why hasn't anyone built this already?&rdquo;</em> Short answer: because the entity-resolution problem inside long-form story is hard, and most teams give up at episode forty. We didn't.</p>
+          <a href="{% url 'v2_investors' %}">thesis &rarr;</a>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- LANDINGHAM -->
+  <section class="section">
+    <div class="container">
+      <p class="section-mark">&sect; 04 — one worked example</p>
+      <div class="grid-2">
+        <div>
+          <h2 style="max-width: 22ch; margin-bottom: 1.5rem;">
+            Mrs. Landingham dies at the end of Season 2. She does not stop changing the show.
+          </h2>
+          <p>
+            Her relationship with Bartlet predates his political career. When she dies in &ldquo;Two Cathedrals,&rdquo; the next two seasons keep responding to that death — six subsequent episodes name her in dialogue, not as plot, but as the thing redirecting other characters' decisions.
+          </p>
+          <p>
+            A spreadsheet of characters loses all of this. The graph keeps it: her death is the source node for behavioural changes in other characters that propagate across S3 and into S4, each change carrying a pointer back to the line of script that justified it.
+          </p>
+          <p>
+            That's a query, not an essay. We can show you the cypher.
+          </p>
+          <p style="font-style: italic; color: var(--ink-2);">
+            What that gets you: you can ask the show <em>&ldquo;which death is doing the most work right now?&rdquo;</em> in a writers' room — and answer it before the meeting ends.
+          </p>
+          <div class="ctas" style="margin-top: 2rem;">
+            <a class="cta" href="/explore/west-wing/">explore <em>The West Wing</em></a>
+          </div>
+        </div>
+
+        <!-- focal mini graph -->
+        <figure style="margin: 0;">
+          <svg viewBox="0 0 480 420" class="minigraph" role="img" aria-label="A graph showing Mrs. Landingham as a central node with edges connecting to characters and episodes.">
+            <defs>
+              <marker id="arr" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+                <path d="M0,0 L10,5 L0,10 z" fill="oklch(45% 0.12 25)"/>
+              </marker>
+            </defs>
+            <g stroke="oklch(60% 0.014 60)" stroke-width="1" fill="none" opacity="0.45">
+              <line x1="240" y1="210" x2="90"  y2="80"/>
+              <line x1="240" y1="210" x2="380" y2="70"/>
+              <line x1="240" y1="210" x2="80"  y2="200"/>
+              <line x1="240" y1="210" x2="400" y2="180"/>
+              <line x1="240" y1="210" x2="100" y2="320"/>
+              <line x1="240" y1="210" x2="380" y2="330"/>
+              <line x1="240" y1="210" x2="240" y2="60"/>
+              <line x1="240" y1="210" x2="240" y2="370"/>
+            </g>
+            <g stroke="oklch(45% 0.12 25)" stroke-width="1.4" fill="none" opacity="0.85">
+              <path d="M240 210 Q 320 130 380 70" marker-end="url(#arr)"/>
+              <path d="M240 210 Q 160 130 90 80"  marker-end="url(#arr)"/>
+              <path d="M240 210 Q 340 290 380 330" marker-end="url(#arr)"/>
+              <path d="M240 210 Q 140 280 100 320" marker-end="url(#arr)"/>
+            </g>
+            <g font-family="JetBrains Mono, monospace" font-size="9.5" fill="oklch(38% 0.014 60)">
+              <g><circle cx="90"  cy="80"  r="5" fill="oklch(45% 0.12 25)"/><text x="100" y="84">President Bartlet</text></g>
+              <g><circle cx="380" cy="70"  r="5" fill="oklch(45% 0.12 25)"/><text x="370" y="60" text-anchor="end">Leo McGarry</text></g>
+              <g><circle cx="80"  cy="200" r="4" fill="oklch(60% 0.014 60)"/><text x="90"  y="204">CJ Cregg</text></g>
+              <g><circle cx="400" cy="180" r="4" fill="oklch(60% 0.014 60)"/><text x="395" y="184" text-anchor="end">Charlie Young</text></g>
+              <g><circle cx="100" cy="320" r="4" fill="oklch(45% 0.12 25)"/><text x="110" y="324">Toby Ziegler</text></g>
+              <g><circle cx="380" cy="330" r="4" fill="oklch(45% 0.12 25)"/><text x="370" y="334" text-anchor="end">Sam Seaborn</text></g>
+              <g><circle cx="240" cy="60"  r="3.5" fill="oklch(60% 0.014 60)"/><text x="250" y="55">S2E22 — "Two Cathedrals"</text></g>
+              <g><circle cx="240" cy="370" r="3.5" fill="oklch(60% 0.014 60)"/><text x="240" y="390" text-anchor="middle">S3E01 &middot; S3E02 &middot; S3E03 &middot; S3E04</text></g>
+            </g>
+            <g>
+              <circle cx="240" cy="210" r="14" fill="oklch(20% 0.012 60)"/>
+              <circle cx="240" cy="210" r="20" fill="none" stroke="oklch(45% 0.12 25)" stroke-width="1"/>
+              <text x="240" y="247" text-anchor="middle" font-family="EB Garamond, serif" font-style="italic" font-size="14" fill="oklch(20% 0.012 60)">Mrs. Landingham</text>
+            </g>
+          </svg>
+          <figcaption style="font-family: var(--mono); font-size: 0.72rem; color: var(--ink-3); margin-top: 0.7rem; text-align: right;">
+            fig. 04 — eight typed edges, four causal, four continuity
+          </figcaption>
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <!-- ENGINEERING RIGOR (DARK) -->
+  <section class="section section--dark">
+    <div class="container">
+      <p class="section-mark">&sect; 05 — engineering</p>
+      <div class="grid-2">
+        <div>
+          <h2 style="max-width: 18ch;">It has to run unattended for days.</h2>
+          <p style="color: var(--night-ink-2); margin-top: 1.5rem;">
+            One season of <em>TNG</em> is sixty hours of LLM calls. If episode 14 fails halfway through, you don't want to start over. Fabula checkpoints after every episode and resumes from the last good state. Failed model calls retry, then fall back to a different model, then surface as a flagged extraction — they don't crash the run.
+          </p>
+          <p style="color: var(--night-ink-2);">
+            The log on the right is one such run: TNG Season 6, 26 episodes, 59.6 unattended hours, no episode-level failures. We make the same kind of report available for every season we process; ask and we'll send you others.
+          </p>
+        </div>
+        <div>
+<pre class="console" data-lang="plain" data-path="fabula://batch/tng/s06" data-chrome="off">================================================================================
+BATCH PROCESSING COMPLETE
+================================================================================
+Batch: Star Trek TNG S06
+Series: Star Trek: The Next Generation - Season 6
+
+Episodes Processed: 26
+  Completed: 26
+  Failed:    0
+  Partial:   0
+  Skipped:   0
+
+Total Processing Time: 59.60 hours
+Average Episode Duration: 137.5 minutes
+================================================================================
+Batch completed successfully!</pre>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- OPEN FORMATS -->
+  <section class="section">
+    <div class="container">
+      <p class="section-mark">&sect; 06 — exports</p>
+      <h2 style="max-width: 18ch; margin-bottom: 1.2rem;">The graph is yours, in any format you read.</h2>
+      <p style="color: var(--ink-2); max-width: 60ch; margin-bottom: 2.5rem;">
+        Every published dataset ships as Parquet for analytics workflows, with a Cypher load script for Neo4j and the underlying graph in plain JSON for everything else. The directory below is the actual export of <em>The West Wing</em> Season 4.
+      </p>
+<pre class="console" data-lang="plain" data-path="fabula://export/the-west-wing/s4">dataset_export/the_west_wing_s4/
+&#9500;&#9472;&#9472; nodes.parquet      # All graph nodes (id, label, name, description, properties)
+&#9500;&#9472;&#9472; edges.parquet      # All relationships (source, target, type, properties)
+&#9500;&#9472;&#9472; positions.parquet  # 3D layout coordinates with sizing and RGB colors
+&#9500;&#9472;&#9472; meta.json          # Dataset metadata: series info, entity counts
+&#9492;&#9472;&#9472; README.md          # HuggingFace dataset card (auto-generated)</pre>
+      <p style="margin-top: 2rem; color: var(--ink-2); max-width: 60ch;">
+        Forty-eight of these are already public on the
+        <a href="https://huggingface.co/brandburner"><span style="font-family:var(--mono); font-size:0.92em;">brandburner</span></a>
+        org on Hugging Face — the full <em>Doctor Who</em> megagraph, every TNG and West Wing season we've processed, plus Wolf Hall, Happy Valley, Indiana Jones, Dracula, and Knives Out. If you want to see what one looks like before talking to us, that's the easiest way.
+      </p>
+    </div>
+  </section>
+
+  <!-- CLOSING CTA -->
+  <section class="section section--paper2" id="access">
+    <div class="container" style="text-align: left;">
+      <p class="eyebrow">closing</p>
+      <h2 style="max-width: 22ch; margin-bottom: 1.5rem;">
+        You've read the description.<br/>Go read the graph.
+      </h2>
+      <p style="max-width: 56ch; color: var(--ink-2);">
+        The catalog has every show we've processed, with the entities, events, and connections all queryable. Pick one you know and look at how it broke down.
+      </p>
+      <div class="ctas">
+        <a class="cta cta--primary" href="{% url 'catalog' %}">walk the graph</a>
+        <a class="cta" href="mailto:hello@fabula.productions?subject=Early%20access">get early access</a>
+      </div>
+    </div>
+  </section>
+
+{% endblock %}

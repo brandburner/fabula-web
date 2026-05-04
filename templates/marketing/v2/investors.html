@@ -1,0 +1,244 @@
+{% extends "marketing/v2/_base.html" %}
+
+{% block title %}fabula. — for investors{% endblock %}
+{% block meta_description %}The reference graph for an industry that runs on continuity but doesn't have a canonical record. Production-validated, AI-native, embedded in creative workflows from day one.{% endblock %}
+
+{% block content %}
+
+  <section class="section hero">
+    <div class="container">
+      <p class="eyebrow">For investors</p>
+      <h1 style="max-width: 22ch;">The reference graph for the largest industry that doesn't have one yet.</h1>
+      <p class="hero__deck">
+        Bloomberg sits underneath finance. LexisNexis sits underneath law. Epic sits underneath healthcare. Each one is a canonical, queryable record that the workflow above it depends on. Television production has the workflow but not the record — continuity decisions still live in PDFs and a script supervisor's memory. We're building the record.
+      </p>
+      <p class="hero__deck">
+        Fabula is the graph layer underneath script-based production: characters, events, beliefs, causal chains, and provenance, indexed across hundreds of episodes. Production teams use it to answer continuity questions in milliseconds. AI builders use it as a retrieval target. The same data, two markets, one architecture.
+      </p>
+      <div class="ctas">
+        <a class="cta cta--primary" href="mailto:investors@fabula.productions?subject=Deck%20request">request the deck</a>
+        <a class="cta" href="{% url 'catalog' %}">explore the catalog</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section--tight">
+    <div class="container">
+<pre class="console" data-lang="json" data-path="fabula://canonical/tng/picard">// Canonical character synthesis · Star Trek TNG
+
+{
+  "canonical_name": "Jean-Luc Picard",
+  "title": "Captain",
+  "aliases": ["Locutus", "Captain Picard", "Jean-Luc Picard"],
+  "foundational_description": "Jean-Luc Picard captains the USS
+    Enterprise-D, leading Starfleet's flagship through galactic
+    threats. The Borg Collective assimilates him, designating him
+    Locutus as their human spokesperson to negotiate humanity's
+    surrender. Implants suppress his will, yet his core intellect
+    and loyalty to the crew endure. He shares command bonds with
+    First Officer Riker, Counselor Troi, Lieutenant Commander Data,
+    and Lieutenant Worf, drawing on resolve and strategic insight
+    to counter existential dangers.",
+  "foundational_traits": ["resilient", "resourceful", "loyal",
+    "strategic"],
+  "sphere_of_influence": "Starfleet Command",
+  "source_candidate_uuids": [
+    "cand_agent_scene_94cd_1",
+    "cand_agent_scene_94cd_5",
+    "cand_agent_scene_94df_2"
+    // ...46 more
+  ],
+  "resolution_confidence": 1.0
+}</pre>
+    </div>
+  </section>
+
+  <!-- THREE THESES -->
+  <section class="section">
+    <div class="container">
+      <p class="section-mark">&sect; 01 — three theses, one company</p>
+      <h2 style="max-width: 22ch; margin-bottom: 1rem;">Three investable categories. One product.</h2>
+      <p style="color: var(--ink-2); max-width: 60ch; margin-bottom: 1rem;">
+        Fabula is intelligible to investors looking at any of these three theses. The same engineering serves all three; we don't have to pick which one to be.
+      </p>
+      <p style="color: var(--ink-3); max-width: 60ch; margin-bottom: 2.5rem; font-style: italic;">
+        We're aware these read like trend alignment. The honest version: the engineering decisions we made to solve continuity — stable identities, typed connections, per-event belief state, source provenance — happen to be exactly what each of these adjacent markets needs. We didn't pivot to fit them; the same graph fits.
+      </p>
+
+      <div class="thesis">
+        <article class="thesis__cell">
+          <h4>Thesis 01</h4>
+          <h3>Context Graph</h3>
+          <p>
+            Foundation Capital's late-2025 thesis on context graphs argued that the next layer of AI infrastructure is the graph that captures <em>why</em> a decision was made, not just what was decided. Fabula is that graph for the entertainment vertical.
+          </p>
+        </article>
+        <article class="thesis__cell">
+          <h4>Thesis 02</h4>
+          <h3>Vertical Knowledge Graph</h3>
+          <p>
+            Knowledge graphs underpin most large software companies you can name. The Semantic Knowledge Graphing market grows at 14.2% CAGR through 2030. Television production is the largest vertical without a canonical graph; we're the first credible attempt at one.
+          </p>
+        </article>
+        <article class="thesis__cell">
+          <h4>Thesis 03</h4>
+          <h3>World Model</h3>
+          <p>
+            World models are the prediction targets behind the next generation of AI agents. Fabula extracts a narrative-state world model from existing material — belief, goal, and intention transitions per character per scene — which is the input most agents over story material need and don't have.
+          </p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ONE LAYER BELOW -->
+  <section class="section section--paper2">
+    <div class="container">
+      <p class="section-mark">&sect; 02 — not the same graph as Netflix's</p>
+      <h2 style="max-width: 24ch; margin-bottom: 2rem;">
+        We operate one layer below the catalogue graphs.
+      </h2>
+
+      <div class="grid-2">
+        <div>
+          <p>
+            The streaming platforms have invested heavily in catalogue knowledge graphs — titles, talent, genres, ratings. Those graphs power recommendation, discovery, and rights management. They are good at the questions a viewer or a programmer asks.
+          </p>
+          <p>
+            They cannot answer questions <em>inside</em> a single show. The catalogue knows that <em>The West Wing</em> stars Allison Janney; it does not know that her character was promoted to Press Secretary in S2E03. That second kind of knowledge is what a writers' room, a continuity supervisor, and a story-aware AI all need, and it's where Fabula sits.
+          </p>
+          <p style="color: var(--ink-2); font-style: italic;">
+            Catalogue graphs serve consumption. Story graphs serve production. They don't compete; they don't even ask the same questions.
+          </p>
+        </div>
+
+        <figure style="margin: 0;">
+          <svg viewBox="0 0 480 360" class="minigraph" role="img" aria-label="Two horizontal layers showing catalogue graph above story-internal graph, with Fabula operating in the lower layer.">
+            <g font-family="JetBrains Mono, monospace" font-size="9.5" fill="oklch(38% 0.014 60)">
+              <text x="24" y="40" font-size="10" letter-spacing="1">CATALOGUE LAYER</text>
+              <line x1="24" y1="48" x2="456" y2="48" stroke="oklch(85% 0.012 70)"/>
+              <g>
+                <circle cx="80" cy="100" r="6" fill="oklch(60% 0.014 60)"/>
+                <text x="80" y="120" text-anchor="middle">Title</text>
+                <circle cx="180" cy="100" r="6" fill="oklch(60% 0.014 60)"/>
+                <text x="180" y="120" text-anchor="middle">Talent</text>
+                <circle cx="280" cy="100" r="6" fill="oklch(60% 0.014 60)"/>
+                <text x="280" y="120" text-anchor="middle">Genre</text>
+                <circle cx="380" cy="100" r="6" fill="oklch(60% 0.014 60)"/>
+                <text x="380" y="120" text-anchor="middle">Studio</text>
+                <line x1="80" y1="100" x2="180" y2="100" stroke="oklch(70% 0.012 70)"/>
+                <line x1="180" y1="100" x2="280" y2="100" stroke="oklch(70% 0.012 70)"/>
+                <line x1="280" y1="100" x2="380" y2="100" stroke="oklch(70% 0.012 70)"/>
+              </g>
+
+              <text x="24" y="180" font-size="10" letter-spacing="1" fill="oklch(45% 0.12 25)">STORY-INTERNAL LAYER &middot; fabula</text>
+              <line x1="24" y1="188" x2="456" y2="188" stroke="oklch(45% 0.12 25)"/>
+              <g>
+                <circle cx="60"  cy="240" r="5" fill="oklch(45% 0.12 25)"/>
+                <text x="60"  y="258" text-anchor="middle">Character</text>
+                <circle cx="140" cy="270" r="5" fill="oklch(45% 0.12 25)"/>
+                <text x="140" y="288" text-anchor="middle">Event</text>
+                <circle cx="220" cy="240" r="5" fill="oklch(45% 0.12 25)"/>
+                <text x="220" y="258" text-anchor="middle">Belief</text>
+                <circle cx="300" cy="270" r="5" fill="oklch(45% 0.12 25)"/>
+                <text x="300" y="288" text-anchor="middle">Causal link</text>
+                <circle cx="380" cy="240" r="5" fill="oklch(45% 0.12 25)"/>
+                <text x="380" y="258" text-anchor="middle">Scene</text>
+                <circle cx="430" cy="280" r="5" fill="oklch(45% 0.12 25)"/>
+                <text x="430" y="298" text-anchor="middle">Provenance</text>
+                <line x1="60"  y1="240" x2="140" y2="270" stroke="oklch(45% 0.12 25)" opacity="0.5"/>
+                <line x1="140" y1="270" x2="220" y2="240" stroke="oklch(45% 0.12 25)" opacity="0.5"/>
+                <line x1="220" y1="240" x2="300" y2="270" stroke="oklch(45% 0.12 25)" opacity="0.5"/>
+                <line x1="300" y1="270" x2="380" y2="240" stroke="oklch(45% 0.12 25)" opacity="0.5"/>
+                <line x1="380" y1="240" x2="430" y2="280" stroke="oklch(45% 0.12 25)" opacity="0.5"/>
+                <line x1="60"  y1="240" x2="220" y2="240" stroke="oklch(45% 0.12 25)" opacity="0.3"/>
+                <line x1="140" y1="270" x2="300" y2="270" stroke="oklch(45% 0.12 25)" opacity="0.3"/>
+              </g>
+            </g>
+          </svg>
+          <figcaption style="font-family: var(--mono); font-size: 0.72rem; color: var(--ink-3); margin-top: 0.7rem; text-align: right;">
+            fig. 02 — catalogue graphs above, story graphs below
+          </figcaption>
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <!-- WEDGE / PLATFORM -->
+  <section class="section section--dark">
+    <div class="container">
+      <p class="section-mark">&sect; 03 — markets, three of them</p>
+      <h2 style="max-width: 24ch;">A small market we can serve now, opening into a much larger one.</h2>
+      <p style="color: var(--night-ink-2); max-width: 60ch; margin-top: 1.5rem;">
+        The TAM numbers below are sized to specific buyers, not the entire entertainment industry. We are selling into the first today; the second and third are how the same architecture grows. We've avoided summing them.
+      </p>
+
+      <div class="tam-strip" style="margin-top: 3rem; border-color: var(--night-rule);">
+        <div style="border-color: var(--night-rule);">
+          <span class="label" style="color: var(--night-ink-3);">Today &middot; production</span>
+          <span class="num">$500M</span>
+          <p style="color: var(--night-ink-2); margin: 0;">
+            Sized to script supervision, story bibles, and continuity software across active scripted production globally. We're selling into this market now.
+          </p>
+        </div>
+        <div style="border-color: var(--night-rule);">
+          <span class="label" style="color: var(--night-ink-3);">Next &middot; ai retrieval</span>
+          <span class="num">$5B</span>
+          <p style="color: var(--night-ink-2); margin: 0;">
+            Sized to AI tooling spend on retrieval over IP libraries: game adaptation pipelines, video grounding, virtual production prep. The graph is the input layer most of these tools need.
+          </p>
+        </div>
+        <div>
+          <span class="label" style="color: var(--night-ink-3);">Long-run &middot; synthetic media</span>
+          <span class="num">$50B+</span>
+          <p style="color: var(--night-ink-2); margin: 0;">
+            Sized to AI-assisted content creation if it scales as forecast. The bottleneck for any system generating long-form story is having a queryable canonical record. We make that record.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- MOAT -->
+  <section class="section">
+    <div class="container">
+      <p class="section-mark">&sect; 04 — what's hard to copy</p>
+      <h2 style="max-width: 22ch; margin-bottom: 2.5rem;">Three things any competitor would need to replicate.</h2>
+
+      <div class="grid-3">
+        <div>
+          <h3 style="margin-bottom: 0.8rem;">The pipeline</h3>
+          <p>
+            Ten months of compositional-extraction R&amp;D. 25 node labels, 44 relationship types, model-fallback logic, a per-step prompt library tuned by genre. Most of the difficulty is in the joins between steps; that's where the LLM-only approaches break.
+          </p>
+        </div>
+        <div>
+          <h3 style="margin-bottom: 0.8rem;">The corpus</h3>
+          <p>
+            Seven series, 800+ episodes, deliberately picked to cover the failure modes (regeneration, alias drift, dense ensemble, magic, deep flashback). The pipeline has been hardened against each of these. A new entrant rebuilding from scratch would have to repeat that breaking-and-fixing work.
+          </p>
+        </div>
+        <div>
+          <h3 style="margin-bottom: 0.8rem;">The position in the workflow</h3>
+          <p>
+            Built for the writers' room and the continuity-supervision step — that's where the canonical record gets built. Once a show is on Fabula, the canonical record <em>is</em> the Fabula graph. Switching cost compounds with episode count.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section--paper2">
+    <div class="container">
+      <p class="eyebrow">closing</p>
+      <h2 style="max-width: 26ch; margin-bottom: 1.2rem;">
+        We have the deck and the data room. Email and we'll send both.
+      </h2>
+      <div class="ctas">
+        <a class="cta cta--primary" href="mailto:investors@fabula.productions?subject=Deck%20%26%20data%20room">request the deck</a>
+        <a class="cta" href="{% url 'v2_platform' %}">read the architecture</a>
+      </div>
+    </div>
+  </section>
+
+{% endblock %}

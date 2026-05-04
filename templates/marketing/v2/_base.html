@@ -1,0 +1,98 @@
+{% load static %}<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>{% block title %}fabula. — the context graph for narrative production{% endblock %}</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="{% block meta_description %}Turn screenplays into queryable knowledge graphs. Decision lineage, causal chains, and persistent entity state — embedded in production workflows today.{% endblock %}" />
+  <link rel="canonical" href="{{ request.scheme }}://{{ request.get_host }}{{ request.path }}" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=JetBrains+Mono:wght@400;500&display=swap" />
+  <link rel="stylesheet" href="{% static 'marketing/v2/css/site.css' %}" />
+  {% block extra_head %}{% endblock %}
+</head>
+<body{% block body_attrs %}{% endblock %}>
+
+<!-- NAV -->
+<header class="nav">
+  <div class="nav__inner">
+    <a class="wordmark" href="{% url 'v2_home' %}">fabula<span class="dot">.</span></a>
+    <nav class="nav__links" aria-label="Primary">
+      <a href="{% url 'v2_platform' %}"{% if active_nav == 'platform' %} aria-current="page"{% endif %}>platform</a>
+      <a href="{% url 'v2_production' %}"{% if active_nav == 'production' %} aria-current="page"{% endif %}>production</a>
+      <a href="{% url 'v2_production' %}#ai">ai builders</a>
+      <a href="{% url 'catalog' %}">catalog</a>
+      <a href="{% url 'v2_about' %}"{% if active_nav == 'about' %} aria-current="page"{% endif %}>about</a>
+      <a href="{% url 'v2_investors' %}"{% if active_nav == 'investors' %} aria-current="page"{% endif %}>investors</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+{% block content %}{% endblock %}
+</main>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer__grid">
+      <div>
+        <a class="wordmark" href="{% url 'v2_home' %}" style="font-size: 1.6rem;">fabula<span class="dot">.</span></a>
+        <p class="footer__essay" style="margin-top: 1rem;">
+          The Russian formalists named the gap in 1925: <em>fabula</em> is what
+          happened, <em>syuzhet</em> is how it's told. We built infrastructure
+          to represent both sides.
+        </p>
+      </div>
+      <div>
+        <h4>product</h4>
+        <ul>
+          <li><a href="{% url 'v2_platform' %}">platform</a></li>
+          <li><a href="{% url 'v2_production' %}">for production</a></li>
+          <li><a href="{% url 'catalog' %}">live catalog</a></li>
+          <li><a href="{% url 'v2_platform' %}#exports">exports</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>company</h4>
+        <ul>
+          <li><a href="{% url 'v2_about' %}">about</a></li>
+          <li><a href="{% url 'v2_investors' %}">investors</a></li>
+          <li><a href="https://huggingface.co/brandburner">datasets</a></li>
+          <li><a href="mailto:hello@fabula.productions">contact</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>colophon</h4>
+        <ul>
+          <li>EB Garamond — Octavio Pardo</li>
+          <li>JetBrains Mono — JetBrains</li>
+          <li>Set in 19px / 1.55</li>
+          <li>Built without a CMS</li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer__colophon">
+      <span>&copy; {% now "Y" %} Fabula. All rights reserved.</span>
+      <span>v4.0 &middot; build <span style="color: var(--accent);">&#9679;</span> live</span>
+      <span>fabula.productions</span>
+    </div>
+  </div>
+</footer>
+
+<script src="{% static 'marketing/v2/js/console.js' %}"></script>
+<script src="{% static 'marketing/v2/js/nav.js' %}"></script>
+<script>
+const TWEAK_DEFAULTS = {
+  "accent": "#7a2a26",
+  "consoleAnim": true,
+  "marginalia": true,
+  "scale": "comfortable",
+  "denseTrustStrip": false
+};
+</script>
+<script src="{% static 'marketing/v2/js/tweaks.js' %}"></script>
+{% block extra_scripts %}{% endblock %}
+</body>
+</html>

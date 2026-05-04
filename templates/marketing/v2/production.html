@@ -1,0 +1,225 @@
+{% extends "marketing/v2/_base.html" %}
+
+{% block title %}fabula. — for production teams{% endblock %}
+{% block meta_description %}The story bible, but it cannot drift. A self-updating canonical record of your show — every character, every relationship, every fact.{% endblock %}
+
+{% block content %}
+
+  <section class="section hero">
+    <div class="container">
+      <p class="eyebrow">For production teams</p>
+      <h1 style="max-width: 18ch;">The story bible, but it cannot drift.</h1>
+      <p class="hero__deck">
+        Fabula reads your scripts and builds a canonical record of the show as you go — every character, every relationship, every fact, every reference, with the line of script that justifies each one. The story bible is generated from the graph instead of maintained alongside it. New pages arrive; the bible updates.
+      </p>
+      <div class="ctas">
+        <a class="cta cta--primary" href="mailto:hello@fabula.productions?subject=Pilot">start a pilot</a>
+        <a class="cta" href="{% url 'catalog' %}">explore an example show</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section--tight">
+    <div class="container">
+      <div class="trust">
+        <span><span class="num">80-script</span> rewatch &rarr; one graph query</span>
+        <span>Friday afternoon read &rarr; Friday morning query</span>
+        <span>Story bible drift &rarr; caught at every merge</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- DIAGNOSIS -->
+  <section class="section">
+    <div class="container">
+      <p class="section-mark">&sect; 01 — four ways shows lose the plot</p>
+      <h2 style="max-width: 22ch; margin-bottom: 2.5rem;">Four failures every long-running show inherits.</h2>
+
+      <div class="diagnosis">
+        <p class="diagnosis__num">failure 01</p>
+        <h3>The silence in the room.</h3>
+        <p>
+          A continuity question lands in the writers' room. Someone is sure the answer is in Season 2. Someone else is sure it isn't. The room goes quiet while three people open three different documents.
+        </p>
+        <p>
+          The cost isn't the minute. It's the decisions that get made <em>without</em> waiting for the answer.
+        </p>
+      </div>
+
+      <div class="diagnosis">
+        <p class="diagnosis__num">failure 02</p>
+        <h3>The eighty-episode rewatch.</h3>
+        <p>
+          When the question is real and the stakes are real, someone has to actually go and watch. Or read. Or both. Eighty episodes of prior material, to confirm a single relationship state — a fact you already had on the page when the script was written, but no longer have on tap.
+        </p>
+      </div>
+
+      <div class="diagnosis">
+        <p class="diagnosis__num">failure 03</p>
+        <h3>The expensive contradiction.</h3>
+        <p>
+          The scene shoots. The contradiction surfaces in dailies. Or in the edit. Or, in the unfortunate case, in the cut after a critic notices. Reshoots, ADR, retroactive rewrites: the cost of a continuity problem caught after the money has been spent.
+        </p>
+      </div>
+
+      <div class="diagnosis">
+        <p class="diagnosis__num">failure 04</p>
+        <h3>The Friday afternoon read.</h3>
+        <p>
+          A new draft arrives at 4pm. Notes are due Monday. Nobody has time to re-read seventeen prior episodes to give them properly. So the notes go in based on memory, vibe, and whatever the assistant could pull together over the weekend.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- WORF -->
+  <section class="section section--dark">
+    <div class="container">
+      <p class="section-mark">&sect; 02 — alias resolution</p>
+      <h2 style="max-width: 30ch; margin-bottom: 2rem;">
+        Lieutenant Worf. Worf, Son of Mogh. Ambassador Worf. One person.
+      </h2>
+
+      <div class="grid-2">
+        <div>
+          <p>
+            The script says &ldquo;The Captain.&rdquo; Later it says &ldquo;Picard.&rdquo; Later still, &ldquo;Jean-Luc.&rdquo; Your script coordinator knows these are the same person. Most extraction systems don't — they create three entries and call the problem solved.
+          </p>
+          <p>
+            Fabula resolves aliases against a living graph rather than re-running entity recognition for each script. Promotions don't create new characters. Klingon naming conventions don't create new characters. An ambassadorial appointment doesn't create a new character.
+          </p>
+          <p style="font-style: italic; color: var(--night-ink-2);">
+            Across seven seasons and 177 episodes of <em>TNG</em>: cross-season identity preserved on Worf.
+          </p>
+        </div>
+
+        <div>
+<pre class="console console--inline" data-lang="json" data-path="fabula://resolve/tng/worf">// Alias resolution · Lieutenant Worf
+
+{
+  "canonical_id": "char_tng_worf",
+  "canonical_name": "Worf, Son of Mogh",
+  "aliases_resolved": [
+    "Worf",
+    "Lieutenant Worf",
+    "Lt. Worf",
+    "Ambassador Worf",
+    "Worf, Son of Mogh",
+    "Mr. Worf",
+    "Commander Worf"
+  ],
+  "promotions_tracked": [
+    { "episode": "S03E01", "from": "Lieutenant", "to": "Lt. Commander" },
+    { "episode": "S07E26", "from": "Lt. Commander", "to": "Commander" }
+  ],
+  "appearances": 277,
+  "resolution_confidence": 1.0
+}</pre>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- AI BUILDERS section -->
+  <section class="section section--paper2" id="ai">
+    <div class="container">
+      <p class="section-mark">&sect; 03 — for ai builders</p>
+      <div class="grid-2">
+        <div>
+          <h2 style="max-width: 22ch; margin-bottom: 1.5rem;">
+            If you're building over story, here is your retrieval target.
+          </h2>
+          <p>
+            Every result Fabula returns carries a confidence score and a pointer to the line of script that supports it. That's the bit most graph products skip, and it's what makes the data usable for any agent that has to cite its sources.
+          </p>
+          <p>
+            The hybrid graph-vector backend means you can ask <em>&ldquo;what episodes thematically parallel S2E14?&rdquo;</em> and <em>&ldquo;what is Picard's belief state in this scene?&rdquo;</em> with the same client. One does vector retrieval over scene embeddings; the other does a graph traversal over BDI states. The shape of the answer is the same.
+          </p>
+          <p style="color: var(--ink-2);">
+            Self-host the embeddings, self-host the graph, or use the API. Mix and match.
+          </p>
+        </div>
+        <div>
+<pre class="console" data-lang="plain" data-path="fabula://api/query">$ curl https://api.fabula.productions/v1/query \
+    -H "Authorization: Bearer $FABULA_KEY" \
+    -d '{
+      "series": "the_west_wing",
+      "query": "scenes where Bartlet conceals the MS",
+      "include": ["bdi", "provenance", "connections"]
+    }'
+
+{
+  "results": 14,
+  "scenes": [...],
+  "latency_ms": 87,
+  "provenance_links": 14,
+  "avg_confidence": 0.93
+}</pre>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- WHAT YOU GET -->
+  <section class="section">
+    <div class="container">
+      <p class="section-mark">&sect; 04 — what you get</p>
+      <h2 style="max-width: 22ch; margin-bottom: 2.5rem;">In practice, on a real show.</h2>
+
+      <div class="grid-3">
+        <div>
+          <h3 style="margin-bottom: 0.8rem;">Story bible, generated</h3>
+          <p>
+            The bible comes out of the graph. Every character, every relationship, every fact, every reference, with episode citations. It refreshes after every new script lands.
+          </p>
+        </div>
+        <div>
+          <h3 style="margin-bottom: 0.8rem;">Continuity validation</h3>
+          <p>
+            New draft in. Conflicts surfaced before the table read: <em>&ldquo;this line contradicts S2E14, scene 4.&rdquo;</em> Caught Friday, fixed Monday.
+          </p>
+        </div>
+        <div>
+          <h3 style="margin-bottom: 0.8rem;">Asset inventories</h3>
+          <p>
+            Every prop, location, costume, and reference, scoped by episode. Production design queries the graph instead of cross-referencing seventeen documents.
+          </p>
+        </div>
+        <div>
+          <h3 style="margin-bottom: 0.8rem;">Character breakdowns</h3>
+          <p>
+            Casting briefs come out of the graph. Every speaking line, every beat, every relationship turn, with full episode and scene citations.
+          </p>
+        </div>
+        <div>
+          <h3 style="margin-bottom: 0.8rem;">Precedent search</h3>
+          <p>
+            <em>&ldquo;Have we resolved a similar arc before?&rdquo;</em> Searchable across every episode the graph has ingested, including older shows you onboard later.
+          </p>
+        </div>
+        <div>
+          <h3 style="margin-bottom: 0.8rem;">Audit trail</h3>
+          <p>
+            Every fact in the graph traces back to the line of script that produced it. The same provenance serves the writers' room, standards & practices, and legal.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- BRIDGE TO PLATFORM -->
+  <section class="section section--dark">
+    <div class="container">
+      <p class="section-mark">&sect; 05 — underneath</p>
+      <h2 style="max-width: 22ch; margin-bottom: 1.5rem;">Underneath: a context graph.</h2>
+      <p style="color: var(--night-ink-2); max-width: 60ch;">
+        Everything above runs on the same graph platform AI builders use directly. The production-team interface is a thin layer over a system that's also exposed as an API and an export pipeline. If you want the engineering details, the platform page has them.
+      </p>
+      <div class="ctas">
+        <a class="cta" href="{% url 'v2_platform' %}">read the platform docs</a>
+        <a class="cta cta--primary" href="mailto:hello@fabula.productions?subject=Pilot">start a pilot</a>
+      </div>
+    </div>
+  </section>
+
+{% endblock %}
