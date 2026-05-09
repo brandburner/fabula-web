@@ -26,8 +26,9 @@
 {% endblock %}
 
 {% block content %}
-{% if fabula_theme == 'writerly' %}
-{# ===== WRITERLY EPISODE PAGE ===== #}
+{# Token-driven body — same template serves writerly and dark via tokens. #}
+{% if fabula_theme|default:"writerly" %}
+{# ===== TOKEN-DRIVEN EPISODE PAGE ===== #}
 <article class="min-h-screen pb-16 fade-in">
     {# Hero section #}
     <div class="py-16" style="background: var(--f-bg-hero);">

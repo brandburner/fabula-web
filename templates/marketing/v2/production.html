@@ -188,7 +188,7 @@ bureaucracy and time itself.
             The Fabula graph has 25 node types, 44 relationships, and links every data point to its original script line. Events connect through 10 narrative relations—<span style="font-family:var(--mono); font-size:0.88em;">CAUSAL</span>, <span style="font-family:var(--mono); font-size:0.88em;">FORESHADOWING</span>, <span style="font-family:var(--mono); font-size:0.88em;">THEMATIC_PARALLEL</span>, <span style="font-family:var(--mono); font-size:0.88em;">CALLBACK</span>, <span style="font-family:var(--mono); font-size:0.88em;">ESCALATION</span>, and others. Each connection records its type, strength, and a short explanation—making story logic queryable in ways transcripts and embeddings alone can’t.
           </p>
           <p>
-            Characters’ beliefs, goals, emotions, and states are tracked per event, not just in aggregate—so LLMs receive focused, sourced context for any question, not just raw transcripts. For GraphRAG: the Parquet loads directly into Neo4j, typed edges included. For data science: just open the Parquet in your notebook and start exploring.
+            Characters' beliefs, goals, emotions, and states are tracked per event, not just in aggregate &mdash; so LLMs receive focused, sourced context for any question, not raw transcripts. That distinction matters more than it used to. Long-context LLMs degrade across long inputs in ways that are hard to detect and harder to audit; structured retrieval over a typed graph sidesteps the problem by never asking a single call to hold the whole show in mind. For GraphRAG: the Parquet loads directly into Neo4j, typed edges included. For data science: just open the Parquet in your notebook and start exploring.
           </p>
           <p style="color: var(--ink-2);">
             56 datasets live on the
@@ -261,15 +261,15 @@ ORDER BY c.strength DESC;
     </div>
   </section>
 
-  <!-- BRIDGE TO PLATFORM -->
+  <!-- BRIDGE TO ENGINE -->
   <section class="section section--dark">
     <div class="container">
       <p class="section-mark">&sect; 05 — underneath</p>
       <h2 style="max-width: 22ch; margin-bottom: 1.5rem;">Underneath: a context graph.</h2>
       <p style="color: var(--night-ink-2); max-width: 60ch;">
-        Everything above runs on the same graph platform AI builders use directly. The production-team interface is a thin layer over a system that can even be exposed as an API.
+        Everything above runs on the same graph engine AI builders use directly. The production-team interface is a thin layer over a system that can even be exposed as an API.
       <div class="ctas">
-        <a class="cta" href="{% url 'v2_platform' %}">read the platform docs</a>
+        <a class="cta" href="{% url 'v2_engine' %}">read the engine docs</a>
         <a class="cta cta--primary" href="mailto:hello@fabula.productions?subject=Pilot">start a pilot</a>
       </div>
     </div>

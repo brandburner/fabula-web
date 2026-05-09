@@ -1,13 +1,13 @@
 {% extends "marketing/v2/_base.html" %}
 
-{% block title %}fabula. — the platform{% endblock %}
+{% block title %}fabula. — the engine{% endblock %}
 {% block meta_description %}How Fabula extracts character belief, intention, and causal structure from screenplays — with every claim traceable to a line of script.{% endblock %}
 
 {% block content %}
 
   <section class="section hero">
     <div class="container">
-      <p class="eyebrow">The platform</p>
+      <p class="eyebrow">The engine</p>
       <h1 style="max-width: 22ch;">Ask any question about your show. Get a sourced answer in milliseconds.</h1>
       <p class="hero__deck">
         Underneath: 25 node labels, 44 relationship types, per-character belief and intention state recorded at every event &mdash; every character a traversable arc, with a pointer back to the line of script that produced each claim. Stress-tested across 800+ episodes.
@@ -55,7 +55,10 @@
       <div class="grid-2" style="margin-top: 2.5rem;">
         <div>
           <p>
-            What an LLM does well — predicting plausible next tokens — is not what a script supervisor needs. A script supervisor needs to know what is true in the show right now, and what was true three episodes ago, and what each character knew when they made a decision.
+            What an LLM does well &mdash; predicting plausible next tokens &mdash; is not what a script supervisor needs. A script supervisor needs to know what is true in the show right now, and what was true three episodes ago, and what each character knew when they made a decision.
+          </p>
+          <p>
+            There's a second mismatch underneath the first. Long-context LLMs lose accuracy as the input grows: facts in the middle get forgotten, claims at the start get contradicted by claims at the end, and there is no audit trail when they do. Asking one model call to keep a hundred episodes straight is a reliability problem, not a feasibility problem. The whole engine is shaped around never asking that question.
           </p>
           <p>
             Where most tools collapse a show into a single timeline of dialogue, Fabula gives every character, location, organisation, and object a queryable journey. Every event a character participates in carries that character's beliefs, goals, and emotional state at that moment — a stack of psychological states down each character's spine, all anchored in the Episode &rarr; Act &rarr; Scene &rarr; Beat structure of the show.
@@ -165,6 +168,9 @@
       </table>
 
       <p style="margin-top: 2rem; color: var(--ink-2); max-width: 60ch;">
+        What lets these runs hold their accuracy across hundreds of episodes is also what lets them hold their cost: no single model call ever sees more than a couple of kilobytes of carefully assembled context. Whole-show coherence lives in the graph, not in any prompt. Each step is small, the model does a small thing well, and the audit trail accumulates underneath. There is no megaprompt to drift inside.
+      </p>
+      <p style="color: var(--ink-2); max-width: 60ch;">
         Atomic checkpointing after every episode. Three-level error recovery.
         Bounded async concurrency. Circuit breakers with model fallback. Throughput sits at roughly twenty minutes of wall-clock per twenty-five-minute Classic <em>Doctor Who</em> episode &mdash; faster on simpler half-hours, slower on dense hour-longs &mdash; which is mostly a function of keeping each per-call context tight. (We wrote up the work that got us there: <a href="https://storygraph.substack.com/p/from-5-hours-to-83-minutes-speeding">from five hours to 83 minutes</a>.)
       </p>
@@ -188,7 +194,7 @@
             The same property that lets cheap cloud models pass — small focused tasks, small focused payloads — lets <em>local</em> open-weight models stand in. For studios whose unfilmed scripts can't leave the building, any step in the pipeline can be pointed at a Llama, Mistral, or Qwen model running on-prem. The schema doesn't change; the audit trail doesn't change; the only thing that changes is where the inference happens.
           </p>
           <p style="color: var(--night-ink-2);">
-            And it's the same property that lets the platform compound with the field. Models ship every few weeks; one of them is going to be sharper at scene segmentation, another better at disambiguating which <em>John</em> walked into the room, another better at writing a per-episode synopsis a human will actually read. Each of those upgrades is a config line, not a rewrite — schema unchanged, audit trail unchanged, the extractions and linkages and prose all tighter than the run before. Designing for the next model is how a system avoids dating itself to the one it shipped on.
+            And it's the same property that lets the engine compound with the field. Models ship every few weeks; one of them is going to be sharper at scene segmentation, another better at disambiguating which <em>John</em> walked into the room, another better at writing a per-episode synopsis a human will actually read. Each of those upgrades is a config line, not a rewrite — schema unchanged, audit trail unchanged, the extractions and linkages and prose all tighter than the run before. Designing for the next model is how a system avoids dating itself to the one it shipped on.
           </p>
         </div>
         <div>
@@ -237,7 +243,7 @@ theme_analysis:
             Streaming platforms keep their entertainment knowledge graphs internal because their value is in recommendation — ranking titles you might watch next. That's a reasonable choice for that data.
           </p>
           <p>
-            The graph <em>inside</em> the show is different. It's reference material. Production teams need to be able to take it with them between studios. AI builders need to be able to retrieve from it with their own infrastructure. Game studios need to be able to bulk-export it into their own pipelines. So Fabula's data leaves the platform, in formats people already use: Parquet for analytics, Cypher for Neo4j, plain JSON for everything else.
+            The graph <em>inside</em> the show is different. It's reference material. Production teams need to be able to take it with them between studios. AI builders need to be able to retrieve from it with their own infrastructure. Game studios need to be able to bulk-export it into their own pipelines. So Fabula's data leaves the engine, in formats people already use: Parquet for analytics, Cypher for Neo4j, plain JSON for everything else.
           </p>
           <p>
             Fifty-six datasets are already published openly under
@@ -264,6 +270,22 @@ dataset_export/the_west_wing_s4/
 &#10003; 18,402 edges
 &#10003; exported in 11.3s</pre>
         </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- BEYOND ENTERTAINMENT -->
+  <section class="section section--dark">
+    <div class="container">
+      <p class="section-mark">&sect; 05 &mdash; the trick generalises</p>
+      <h2 style="max-width: 26ch; margin-bottom: 1.5rem;">Story is the testbed. It isn't the limit.</h2>
+      <div style="max-width: 64ch;">
+        <p style="color: var(--night-ink-2);">
+          The engineering claim &mdash; long, structured material processed through small, evidence-bounded model calls &mdash; isn't specific to screenplays. The same shape of pipeline works on any long corpus where claims have to trace back to the source: court records, regulatory filings, scientific literature, archival journalism, biographical material, codebases, clinical notes.
+        </p>
+        <p style="color: var(--night-ink-2);">
+          Story is a hard testbed for the technique, not a narrow one. High-cardinality entities, identity persisting across decades, named-relation density, dialogue ambiguity, deliberate concealment from the audience &mdash; if the engine holds those, it holds the easier corpora too. The architecture is horizontal; entertainment is where we proved it.
+        </p>
       </div>
     </div>
   </section>

@@ -9,17 +9,18 @@
   <!-- HERO -->
   <section class="section hero">
     <div class="container">
-      <p class="eyebrow">For shows that have to remember themselves</p>
+      <p class="eyebrow">The context graph for narrative production</p>
       <h1>Turn screenplays into<br/>queryable knowledge graphs.</h1>
       <p class="hero__deck">
-        Give Fabula a screenplay and it returns a graph: every character with a stable identity, every scene tied to the events that caused it, every claim traceable to the line of script that justifies it. One episode or hundreds — the graph holds.
+        Convert screenplays into interactive knowledge graphs—track every character, object, and event, and maintain continuity across your entire story universe.
+   
       </p>
       <p class="hero__deck" style="font-style: italic; color: var(--ink-2);">
-        Structured, typed, provenance-attached data — tailor-made for AI consumption. The shape an agent needs in order to cite a source instead of confabulating one.
+        Structured, typed, and audited data for television, game, and AI production.
       </p>
       <div class="ctas">
         <a class="cta cta--primary" href="{% url 'catalog' %}">explore the live catalog</a>
-        <a class="cta" href="{% url 'v2_platform' %}">read the platform docs</a>
+        <a class="cta" href="{% url 'v2_engine' %}">read the engine docs</a>
         <a class="cta" href="#access">get early access</a>
       </div>
     </div>
@@ -149,37 +150,77 @@
 
           <div class="verbs__panel" data-verb="reason">
             <p>
-              For every event, Fabula records what each participating character believed, wanted, and intended <em>at that moment</em> — not as overall character traits, but as a per-scene state that changes when the show changes it. That's what lets you ask why a decision was made, not just what happened.
+              For every event, Fabula records what each participating character believed, wanted, and intended <em>at that moment</em> &mdash; per-scene state that changes when the show changes it. That's what lets you ask why a decision was made, not just what happened. The reasoning is not the model riffing from training data; it's the model adjudicating over an evidence packet built specifically for this step.
             </p>
             <p>
-              Every belief, goal, and connection comes back with a pointer to the specific lines of script that justified it. If you don't trust the claim, click through and read the source.
+              That packet is what we mean by <em>context engineering</em>: each pipeline step assembles a tight payload &mdash; the scene text, the entities already resolved, the prior state the character carried in &mdash; and forces the model's judgement onto what's in front of it. Every belief, goal, and connection in the output is grounded in those inputs and traceable back to the line of script that produced them.
             </p>
-<pre class="console console--inline" data-lang="json" data-path="fabula://reason/happy-valley/s01e01/cawood">// BDI extraction · Happy Valley S01E01 · Sgt. Catherine Cawood
+<pre class="console console--inline" data-lang="json" data-path="fabula://reason/the-night-manager/s01e03/input">// Step: event finalization &middot; The Night Manager S01E03 &middot; Pine in Roper's office
+// INPUT &mdash; the precise evidence packet, assembled from prior pipeline steps
 
 {
-  "agent_name_mention": "Catherine",
-  "scene_anchor": "S01E01 · Newsagent, Hebden Bridge · Sc. 1",
-  "observed_status": "Strides into the newsagent tooled up — truncheon,
-    cuffs, radio, vest — and asks for a fire extinguisher with the same
-    polite efficiency as asking for a newspaper. Buys sunglasses on the
-    way out. Hands steady.",
-  "emotional_state_at_event":
-    "Feigned calm masking deep anxiety and unresolved grief; steely
-     determination to maintain control",
-  "goals_at_event": [
-    "Secure the tools to intervene in the self-immolation threat
-     without escalating panic",
-    "Project unshakable authority to stabilise the shopkeeper and
-     the eyewitness"
-  ],
-  "beliefs_at_event": [
-    "Her professional composure is the only thing standing between
-     chaos and order in this moment",
-    "Showing vulnerability — even for a second — would unravel the
-     fragile control she has over her emotions and the situation"
-  ],
-  "importance_to_event": "primary"
+  "scene_text":
+    "INT. MALLORCA. ROPER VILLA. ROPER'S PRIVATE OFFICE. DAY.
+     The alarm test continues. PINE knows he has to move fast. ...
+     He stares at some papers labelled 'Tradepass'. He takes each
+     paper from the tray, and photographs them with Danny's camera,
+     then replaces them precisely. ... Then he sees it. On the desk.
+     A long blonde hair. A woman's. He carefully picks it up. ...
+     JED (O.S): Take him to his room. I'll change and be straight there.",
+
+  "candidate_event_description":
+    "Under the guise of an alarm check, Pine exploits the villa's
+     brief vulnerability to access Roper's private office. ...
+     A single blonde hair on the desk raises his suspicions about
+     an internal informant.",
+
+  "resolved_entities_context": [
+    "Jonathan Pine &mdash; undercover operative, masking trauma,
+       infiltrating Roper's empire from the inside ...",
+    "Jed Marshall &mdash; Roper's mistress, gilded prison, brittle charm",
+    "Daniel Roper &mdash; Roper's compliant teenage son",
+    "Tabby &mdash; Roper's head of security",
+    "Tradepass Documents &mdash; names and figures linked to arms deals",
+    "Roper's Private Office &mdash; quietly dangerous, criminal sanctum"
+    // ... 6 more entities, each with the foundational description
+    //     produced by upstream resolution + adjudication steps
+  ]
 }</pre>
+<pre class="console console--inline" data-lang="json" data-path="fabula://reason/the-night-manager/s01e03/output">// OUTPUT &mdash; the structured event, every claim grounded in the input above
+
+{
+  "title": "Pine photographs Tradepass documents under duress",
+  "agent_participations": [{
+    "agent": "Jonathan Pine",
+    "observed_status":
+      "Pine infiltrates Roper's private office under the guise of an
+       alarm check, photographs incriminating Tradepass documents,
+       pockets a blonde hair as evidence, then meticulously restores
+       the scene to its original state.",
+    "emotional_state_at_event":
+      "Tense focus masking a rising unease; composed on the surface
+       but internally strained by proximity to detection",
+    "goals_at_event": [
+      "Secure tangible evidence of Roper's illegal arms deals",
+      "Evade detection and leave no trace of his intrusion"
+    ],
+    "beliefs_at_event": [
+      "Roper's empire can only be dismantled from within by
+       infiltrating its most secure spaces",
+      "Each missed detail risks blowing his cover"
+    ]
+  } /* ...Jed, Daniel, Tabby */ ],
+  "object_involvements": [{
+    "object": "Tradepass Documents",
+    "status_after_event":
+      "Restored to original position; Pine concealed a blonde hair
+       within their midst as a clue"
+  } /* ...Danny's camera, the handkerchief, the peppermint tin */ ]
+}
+
+// "Tense focus masking a rising unease" reads from the script
+// lines and Pine's prior context. Nothing is recalled from
+// training data &mdash; the model never gets to.</pre>
           </div>
         </div>
       </div>
@@ -197,7 +238,8 @@
           Fabula keeps going. For every event in the show it records the connections to other events — typed, not just inferred from proximity. A connection is <em>causal</em>, or it carries a character forward, or it parallels a different event thematically, or it reverses one. Each connection is its own claim, with its own justification.
         </p>
         <p>
-          That's the difference between a transcript and a graph. A transcript can tell you Q showed up and Picard demanded his identity. The graph can tell you the second event happened <em>because</em> of the first, and that the same pattern &mdash; institutional authority confronted by individual conviction &mdash; recurs four other times across the season. The query for those four scenes is one line of Cypher, and every result carries the script lines that justify the connection.
+          A transcript tells you what happened; a graph tells you why—and shows patterns across the season, with each connection backed by the script.
+     
         </p>
       </div>
 
@@ -224,7 +266,8 @@
 
       <div style="max-width: 64ch; margin-top: 2rem;">
         <p style="color: var(--ink-2); font-size: 0.98rem;">
-          Every connection has a type, a strength, and a sentence saying what the connection actually consists of. The connections are extracted, scored, and traced back to the lines that support them; we don't editorialize on top. Where the scoring is uncertain, the strength score reflects that — connections below 0.7 surface for human review rather than landing in the canonical graph silently. The interesting question becomes what you want to ask.
+          Each connection has a type, strength, and a supporting sentence—automatically extracted and scored. Low-confidence links go to human review. The graph lets you ask deeper questions.
+     
         </p>
       </div>
     </div>
@@ -251,13 +294,13 @@
           <span class="vertical__tag">/for-ai/</span>
           <h3>AI builders</h3>
           <p><em>&ldquo;Where does this claim come from?&rdquo;</em> Today: your model can't answer that. With Fabula: every result carries the line of script behind it, so your agent has something to cite instead of confabulate.</p>
-          <a href="{% url 'v2_platform' %}">platform &rarr;</a>
+          <a href="{% url 'v2_engine' %}">engine &rarr;</a>
         </article>
         <article class="vertical">
           <span class="vertical__tag">/for-games/</span>
           <h3>Game studios</h3>
           <p><em>&ldquo;What is canon for this character?&rdquo;</em> Today: a junior writer rereads every script for six months. With Fabula: the canon — characters, relationships, locations, timelines — exports to whatever your engine reads.</p>
-          <a href="{% url 'v2_platform' %}#exports">exports &rarr;</a>
+          <a href="{% url 'v2_engine' %}#exports">exports &rarr;</a>
         </article>
         <article class="vertical">
           <span class="vertical__tag">/investors/</span>
@@ -269,76 +312,6 @@
     </div>
   </section>
 
-  <!-- LANDINGHAM -->
-  <section class="section">
-    <div class="container">
-      <p class="section-mark">&sect; 04 — one worked example</p>
-      <div class="grid-2">
-        <div>
-          <h2 style="max-width: 22ch; margin-bottom: 1.5rem;">
-            Mrs. Landingham dies at the end of Season 2. She does not stop changing the show.
-          </h2>
-          <p>
-            Her relationship with Bartlet predates his political career. When she dies in &ldquo;Two Cathedrals,&rdquo; the next two seasons keep responding to that death — six subsequent episodes name her in dialogue, not as plot, but as the thing redirecting other characters' decisions.
-          </p>
-          <p>
-            A spreadsheet of characters loses all of this. The graph keeps it: her death is the source node for behavioural changes in other characters that propagate across S3 and into S4, each change carrying a pointer back to the line of script that justified it.
-          </p>
-          <p>
-            That's a query, not an essay. We can show you the cypher.
-          </p>
-          <div class="ctas" style="margin-top: 2rem;">
-            <a class="cta" href="/explore/west-wing/">explore <em>The West Wing</em></a>
-          </div>
-        </div>
-
-        <!-- focal mini graph -->
-        <figure style="margin: 0;">
-          <svg viewBox="0 0 480 420" class="minigraph" role="img" aria-label="A graph showing Mrs. Landingham as a central node with edges connecting to characters and episodes.">
-            <defs>
-              <marker id="arr" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto">
-                <path d="M0,0 L10,5 L0,10 z" fill="oklch(45% 0.12 25)"/>
-              </marker>
-            </defs>
-            <g stroke="oklch(60% 0.014 60)" stroke-width="1" fill="none" opacity="0.45">
-              <line x1="240" y1="210" x2="90"  y2="80"/>
-              <line x1="240" y1="210" x2="380" y2="70"/>
-              <line x1="240" y1="210" x2="80"  y2="200"/>
-              <line x1="240" y1="210" x2="400" y2="180"/>
-              <line x1="240" y1="210" x2="100" y2="320"/>
-              <line x1="240" y1="210" x2="380" y2="330"/>
-              <line x1="240" y1="210" x2="240" y2="60"/>
-              <line x1="240" y1="210" x2="240" y2="370"/>
-            </g>
-            <g stroke="oklch(45% 0.12 25)" stroke-width="1.4" fill="none" opacity="0.85">
-              <path d="M240 210 Q 320 130 380 70" marker-end="url(#arr)"/>
-              <path d="M240 210 Q 160 130 90 80"  marker-end="url(#arr)"/>
-              <path d="M240 210 Q 340 290 380 330" marker-end="url(#arr)"/>
-              <path d="M240 210 Q 140 280 100 320" marker-end="url(#arr)"/>
-            </g>
-            <g font-family="JetBrains Mono, monospace" font-size="9.5" fill="oklch(38% 0.014 60)">
-              <g><circle cx="90"  cy="80"  r="5" fill="oklch(45% 0.12 25)"/><text x="100" y="84">President Bartlet</text></g>
-              <g><circle cx="380" cy="70"  r="5" fill="oklch(45% 0.12 25)"/><text x="370" y="60" text-anchor="end">Leo McGarry</text></g>
-              <g><circle cx="80"  cy="200" r="4" fill="oklch(60% 0.014 60)"/><text x="90"  y="204">CJ Cregg</text></g>
-              <g><circle cx="400" cy="180" r="4" fill="oklch(60% 0.014 60)"/><text x="395" y="184" text-anchor="end">Charlie Young</text></g>
-              <g><circle cx="100" cy="320" r="4" fill="oklch(45% 0.12 25)"/><text x="110" y="324">Toby Ziegler</text></g>
-              <g><circle cx="380" cy="330" r="4" fill="oklch(45% 0.12 25)"/><text x="370" y="334" text-anchor="end">Sam Seaborn</text></g>
-              <g><circle cx="240" cy="60"  r="3.5" fill="oklch(60% 0.014 60)"/><text x="250" y="55">S2E22 — "Two Cathedrals"</text></g>
-              <g><circle cx="240" cy="370" r="3.5" fill="oklch(60% 0.014 60)"/><text x="240" y="390" text-anchor="middle">S3E01 &middot; S3E02 &middot; S3E03 &middot; S3E04</text></g>
-            </g>
-            <g>
-              <circle cx="240" cy="210" r="14" fill="oklch(20% 0.012 60)"/>
-              <circle cx="240" cy="210" r="20" fill="none" stroke="oklch(45% 0.12 25)" stroke-width="1"/>
-              <text x="240" y="247" text-anchor="middle" font-family="EB Garamond, serif" font-style="italic" font-size="14" fill="oklch(20% 0.012 60)">Mrs. Landingham</text>
-            </g>
-          </svg>
-          <figcaption style="font-family: var(--mono); font-size: 0.72rem; color: var(--ink-3); margin-top: 0.7rem; text-align: right;">
-            fig. 04 — eight typed edges, four causal, four continuity
-          </figcaption>
-        </figure>
-      </div>
-    </div>
-  </section>
 
   <!-- ENGINEERING RIGOR (DARK) -->
   <section class="section section--dark">
@@ -346,13 +319,14 @@
       <p class="section-mark">&sect; 05 — engineering</p>
       <div class="grid-2">
         <div>
-          <h2 style="max-width: 18ch;">It has to run unattended for days.</h2>
+          <h2 style="max-width: 18ch;">A self-correcting harness that can run unattended for days.</h2>
           <p style="color: var(--night-ink-2); margin-top: 1.5rem;">
-            One season of <em>TNG</em> is sixty hours of LLM calls. If episode 14 fails halfway through, you don't want to start over. Fabula checkpoints after every episode and resumes from the last good state. Failed model calls retry, then fall back to a different model, then surface as a flagged extraction — they don't crash the run.
+            Fabula checkpoints after every episode and always resumes where it left off—no reprocessing needed. Failed model calls automatically retry, switch models, or flag the output, never crashing the run.
           </p>
           <p style="color: var(--night-ink-2);">
-            The log on the right is one such run: TNG Season 6, 26 episodes, 59.6 unattended hours, no episode-level failures. We make the same kind of report available for every season we process; ask and we'll send you others.
+            The log at right: TNG Season 6, 26 episodes, 59.6 unattended hours, zero failures. Want another report? Just ask.
           </p>
+ 
         </div>
         <div>
 <pre class="console" data-lang="plain" data-path="fabula://batch/tng/s06" data-chrome="off">================================================================================
@@ -415,7 +389,7 @@ Batch completed successfully!</pre>
     <div class="container" style="text-align: left;">
       <p class="eyebrow">closing</p>
       <h2 style="max-width: 22ch; margin-bottom: 1.5rem;">
-        You've read the description.<br/>Go read the graph.
+        You've read the description.<br/>Go read our graphs.
       </h2>
       <p style="max-width: 56ch; color: var(--ink-2);">
         The catalog has every show we've processed, with the entities, events, and connections all queryable. Pick one you know and look at how it broke down.

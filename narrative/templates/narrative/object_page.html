@@ -16,7 +16,7 @@
 {% endblock %}
 
 {% block content %}
-{% if fabula_theme == 'writerly' %}
+{% if fabula_theme|default:"writerly" %}
 {# ===== WRITERLY OBJECT DETAIL ===== #}
 <article class="min-h-screen pb-16">
     {# Hero section #}

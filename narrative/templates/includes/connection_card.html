@@ -1,6 +1,6 @@
 {% load wagtailcore_tags narrative_tags %}
 {% with conn_type=connection.connection_type|lower|slugify %}
-{% if fabula_theme == 'writerly' %}
+{% if fabula_theme|default:"writerly" %}
 {# ===== WRITERLY CONNECTION CARD ===== #}
 <div class="group relative p-5 rounded-lg transition-all duration-200 conn-{{ conn_type }} conn-card f-hover-card"
      style="background: var(--f-card-bg); border: 2px solid var(--f-card-border); box-shadow: var(--f-card-shadow);">

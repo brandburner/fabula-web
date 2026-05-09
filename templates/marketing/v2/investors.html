@@ -7,9 +7,6 @@
 
   <section class="section hero">
     <div class="container">
-      <aside class="aside aside--float">
-        Netflix's 2024 <em>AI Breakdown Assistant</em> talk described an in-house build aimed at exactly this wedge. We've been building the cross-studio version of it for two years.
-      </aside>
       <p class="eyebrow">For investors</p>
       <h1 style="max-width: 22ch;">The reference graph for the largest industry that doesn't have one yet.</h1>
       <p class="hero__deck">
@@ -70,10 +67,10 @@
       <aside class="aside aside--float aside--alt">
         This might read like trend alignment, but the engineering decisions we made to solve continuity &mdash; stable identities, typed connections, per-event belief state, source provenance &mdash; happen to be exactly what each of these adjacent markets needs. We didn't pivot to fit them; the same graph fits.
       </aside>
-      <p class="section-mark">&sect; 01 — three theses, one company</p>
-      <h2 style="max-width: 22ch; margin-bottom: 1rem;">Three investable categories. One product.</h2>
+      <p class="section-mark">&sect; 01 — four theses, one company</p>
+      <h2 style="max-width: 22ch; margin-bottom: 1rem;">Four investable categories. One product.</h2>
       <p style="color: var(--ink-2); max-width: 60ch; margin-bottom: 2rem;">
-        Fabula is intelligible to investors looking at any of these three theses. The same engineering serves all three; we don't have to pick which one to be.
+        Fabula is intelligible to investors looking at any of these four theses. The same engineering serves all of them; we don't have to pick which one to be.
       </p>
 
       <div class="thesis">
@@ -95,7 +92,14 @@
           <h4>Thesis 03</h4>
           <h3>World Model</h3>
           <p>
-            World models are the prediction targets behind the next generation of AI agents. Fabula extracts a narrative-state world model from existing material — belief, goal, and intention transitions per character per scene — which is the input most agents over story material need and don't have.
+            World models are the prediction targets behind the next generation of AI agents. Fabula extracts a narrative-state world model from existing material &mdash; belief, goal, and intention transitions per character per scene &mdash; which is the input most agents over story material need and don't have. We get there by sidestepping the long-context limitation that bites every team that tries to ask one model to hold a hundred episodes in mind: no single call ever sees more than a few kilobytes.
+          </p>
+        </article>
+        <article class="thesis__cell">
+          <h4>Thesis 04</h4>
+          <h3>Synthetic Training Data</h3>
+          <p>
+            The synthetic data market sat near <strong>$600M in 2024</strong> and is forecast past <strong>$10B by the mid-2030s</strong> on a 30%+ CAGR. The drivers aren't going anywhere: privacy law, the cost of acquiring real data, and the data wall every foundation-model team is now staring at. Fabula makes a particular flavour of synthetic data &mdash; structured, sourced, adjudicated against evidence &mdash; from material that's hard to scrape and harder still to interpret correctly. We already publish it: the catalogue sits on Hugging Face today.
           </p>
         </article>
       </div>
@@ -120,6 +124,9 @@
           </p>
           <p style="color: var(--ink-2); font-style: italic;">
             Catalogue graphs serve consumption. Story graphs serve production. They don't compete; they don't even ask the same questions.
+          </p>
+          <p style="margin-top: 1.5rem;">
+            And the engineering shape of the problem &mdash; extracting a coherent record from material that's far longer than any single model call can reliably handle &mdash; is what makes the architecture transferable. Same pipeline shape, applied to court records, regulatory filings, scientific corpora, archival journalism. Entertainment is where we proved it; it isn't the limit of where it goes.
           </p>
         </div>
 
@@ -175,6 +182,30 @@
     </div>
   </section>
 
+  <!-- DATA WALL -->
+  <section class="section">
+    <div class="container">
+      <p class="section-mark">&sect; 02a &mdash; the data wall, and what we make instead</p>
+      <h2 style="max-width: 28ch; margin-bottom: 1.5rem;">
+        High-quality text is exhausted. Scraping a second time around makes it worse.
+      </h2>
+      <div style="max-width: 64ch;">
+        <p>
+          Two findings, both 2024, define the headwind coming for foundation models. Epoch AI's <a href="https://arxiv.org/abs/2211.04325">data-scaling analysis</a> projects high-quality language data exhausted between 2026 and 2032 &mdash; the well isn't dry, but it's measurable. And in Nature, Shumailov et al. show that <a href="https://www.nature.com/articles/s41586-024-07566-y">models trained recursively on their own output collapse</a>: tails of the distribution disappear, generations degenerate, the original signal is lost. Their canonical demonstration: feed the model text on medieval architecture; by the ninth generation it's outputting a list of jackrabbits.
+        </p>
+        <p>
+          The implication has flowed downstream pretty quickly. The next decade of training depends on synthetic data that <em>isn't</em> a re-roll of the model's prior output. Structured. Sourced. Adjudicated against evidence. Built deliberately, not scraped from a web that's increasingly the model's own exhaust.
+        </p>
+        <p>
+          That's the shape of what Fabula produces. Every event, every character, every connection carries a pointer back to the line of script it came from. Belief and intention states aren't free-form generation; they're inferred from dialogue under explicit policy, pinned to a specific scene. The output is a typed graph of narrative facts &mdash; structurally distinct from the screenplay it was extracted from, sitting in our schema, generated by our pipeline, organised by our taxonomy. The source was someone else's. The record is ours. We've been publishing portions of it as <a href="https://huggingface.co/brandburner">open datasets on Hugging Face</a> since 2024.
+        </p>
+        <p style="font-style: italic; color: var(--ink-2); margin-top: 1.5rem; max-width: 56ch;">
+          Existing material in. New, structured, queryable data out &mdash; data that didn't exist before we made it. That's the asset.
+        </p>
+      </div>
+    </div>
+  </section>
+
   <!-- WEDGE / PLATFORM -->
   <section class="section section--dark">
     <div class="container">
@@ -189,7 +220,7 @@
           <span class="label" style="color: var(--night-ink-3);">Today &middot; pre-production</span>
           <span class="num">$500M</span>
           <p style="color: var(--night-ink-2); margin: 0;">
-            Sized to script breakdown, draft comparison, and per-department production-planning tooling across active scripted production globally. Netflix's 2024 <em>AI Breakdown Assistant</em> talk is the public artefact of how seriously the largest buyer takes this wedge. We're selling the cross-studio version of it now: every department head gets their slice, every new draft produces a computable diff, every VFX bid starts from a typed inventory of shots rather than a PDF.
+            Sized to script breakdown, draft comparison, and per-department production-planning tooling across active scripted production globally.
           </p>
         </div>
         <div style="border-color: var(--night-rule);">
@@ -220,7 +251,7 @@
       </h2>
       <div class="ctas">
         <a class="cta cta--primary" href="mailto:investors@fabula.productions?subject=Deck%20%26%20data%20room">request the deck</a>
-        <a class="cta" href="{% url 'v2_platform' %}">read the architecture</a>
+        <a class="cta" href="{% url 'v2_engine' %}">read the architecture</a>
       </div>
     </div>
   </section>

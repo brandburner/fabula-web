@@ -327,30 +327,30 @@
     to { transform: rotate(360deg); }
 }
 
-/* ===== Writerly theme overrides ===== */
+/* ===== Writerly theme overrides (matches marketing v2 paper palette) ===== */
 [data-theme="writerly"] #graph-container {
-    background: linear-gradient(135deg, #f5f3ee 0%, #ece8e1 100%);
+    background: var(--f-bg-page);
 }
 
 [data-theme="writerly"] .graph-stats,
 [data-theme="writerly"] .graph-legend {
-    background: rgba(250, 248, 244, 0.97);
+    background: var(--f-bg-nav);
     border-color: var(--f-border-default);
-    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+    box-shadow: 0 1px 0 var(--f-border-default);
 }
 
 [data-theme="writerly"] .graph-control-btn {
-    background: rgba(250, 248, 244, 0.97);
+    background: var(--f-bg-nav);
     border-color: var(--f-border-default);
     color: var(--f-fg-tertiary);
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+    box-shadow: none;
 }
 
 [data-theme="writerly"] .graph-control-btn:hover {
     background: var(--f-bg-elevated);
-    color: var(--f-fg-heading);
+    color: var(--f-accent-primary);
     border-color: var(--f-accent-primary);
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    box-shadow: none;
 }
 
 [data-theme="writerly"] .graph-control-btn.active {

@@ -21,7 +21,7 @@
 
 {% block content %}
 {% with conn_type=connection.connection_type|lower|slugify %}
-{% if fabula_theme == 'writerly' %}
+{% if fabula_theme|default:"writerly" %}
 {# ===== WRITERLY CONNECTION DETAIL ===== #}
 <article class="min-h-screen pb-16 conn-{{ conn_type }} fade-in">
     {# Hero section #}

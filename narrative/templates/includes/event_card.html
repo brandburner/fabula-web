@@ -1,5 +1,5 @@
 {% load wagtailcore_tags narrative_tags %}
-{% if fabula_theme == 'writerly' %}
+{% if fabula_theme|default:"writerly" %}
 {# ===== WRITERLY EVENT CARD ===== #}
 <a href="{% narrative_url event %}"
    class="block p-4 rounded-lg transition-all duration-200 group f-hover-card"

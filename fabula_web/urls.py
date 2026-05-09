@@ -294,6 +294,11 @@ urlpatterns = [
     # Narrative custom views (connections, themes, arcs, graph)
     path('', include('narrative.urls')),
 
+    # v2 marketing site (static templates: home, engine, production, about, investors).
+    # Mounted before Wagtail's catch-all so '/' serves the new home instead of
+    # the legacy MarketingHomePage tree.
+    path('', include('marketing.urls')),
+
     # Wagtail page serving (catch-all, must be last)
     path('', include(wagtail_urls)),
 ]

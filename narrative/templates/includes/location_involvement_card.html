@@ -1,7 +1,7 @@
 {# Location involvement card - shows a location's rich role in an event #}
 {% load narrative_tags %}
 
-{% if fabula_theme == 'writerly' %}
+{% if fabula_theme|default:"writerly" %}
 {# ===== WRITERLY LOCATION INVOLVEMENT CARD ===== #}
 <div class="p-4 rounded-lg transition-all group"
      style="background: var(--f-card-bg); border: 1px solid var(--f-card-border);">

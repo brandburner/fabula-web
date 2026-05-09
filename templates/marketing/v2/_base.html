@@ -9,7 +9,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=JetBrains+Mono:wght@400;500&display=swap" />
-  <link rel="stylesheet" href="{% static 'marketing/v2/css/site.css' %}" />
+  <link rel="stylesheet" href="{% static 'marketing/v2/css/site.css' %}?v=20260509b" />
   {% block extra_head %}{% endblock %}
 </head>
 <body{% block body_attrs %}{% endblock %}>
@@ -19,7 +19,7 @@
   <div class="nav__inner">
     <a class="wordmark" href="{% url 'v2_home' %}">fabula<span class="dot">.</span></a>
     <nav class="nav__links" aria-label="Primary">
-      <a href="{% url 'v2_platform' %}"{% if active_nav == 'platform' %} aria-current="page"{% endif %}>platform</a>
+      <a href="{% url 'v2_engine' %}"{% if active_nav == 'engine' %} aria-current="page"{% endif %}>engine</a>
       <a href="{% url 'v2_production' %}"{% if active_nav == 'production' %} aria-current="page"{% endif %}>production</a>
       <a href="{% url 'v2_production' %}#ai">ai builders</a>
       <a href="{% url 'catalog' %}">catalog</a>
@@ -48,10 +48,10 @@
       <div>
         <h4>product</h4>
         <ul>
-          <li><a href="{% url 'v2_platform' %}">platform</a></li>
+          <li><a href="{% url 'v2_engine' %}">engine</a></li>
           <li><a href="{% url 'v2_production' %}">for production</a></li>
           <li><a href="{% url 'catalog' %}">live catalog</a></li>
-          <li><a href="{% url 'v2_platform' %}#exports">exports</a></li>
+          <li><a href="{% url 'v2_engine' %}#exports">exports</a></li>
         </ul>
       </div>
       <div>

@@ -1,5 +1,5 @@
 {% load wagtailcore_tags narrative_tags %}
-{% if fabula_theme == 'writerly' %}
+{% if fabula_theme|default:"writerly" %}
 {# ===== WRITERLY PARTICIPATION CARD ===== #}
 <div class="rounded-lg overflow-hidden transition-all duration-200"
      style="background: var(--f-card-bg); border: 2px solid var(--f-card-border); box-shadow: var(--f-card-shadow);"

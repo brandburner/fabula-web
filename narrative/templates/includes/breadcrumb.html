@@ -1,7 +1,7 @@
 {% load wagtailcore_tags narrative_tags %}
 {# Breadcrumb navigation showing current location in the narrative web #}
 
-{% if fabula_theme == 'writerly' %}
+{% if fabula_theme|default:"writerly" %}
 {# ===== WRITERLY BREADCRUMB ===== #}
 <div class="flex items-center gap-3">
     <button onclick="history.back()"

@@ -81,15 +81,18 @@
     {# Alpine.js for interactivity #}
     <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
 
+    {# Marketing v2 stylesheet — provides .nav, .wordmark, .container, .footer, .cta primitives. #}
+    <link rel="stylesheet" href="{% static 'marketing/v2/css/site.css' %}">
+
     {# Design System Tokens #}
     <link rel="stylesheet" href="{% static 'narrative/css/theme-tokens.css' %}">
 
-    {% if fabula_theme == 'writerly' %}
-    {# Writerly typography: Literata for display, Figtree for body #}
+    {# Typography: EB Garamond + JetBrains Mono — used by both writerly and dark, #}
+    {# so the warm-night theme reads as the same brand voice as the paper theme. #}
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Literata:ital,opsz,wght@0,7..72,200..900;1,7..72,200..900&family=Figtree:wght@300..900&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
-    {% endif %}
+    <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <style>html, body { font-family: var(--f-font-body); }</style>
 
     <style>
         {% if fabula_theme == 'dark' %}
@@ -265,8 +268,8 @@
 
         /* Episode summary prose styling */
         .episode-summary {
-            font-family: 'Figtree', system-ui, sans-serif;
-            line-height: 1.7;
+            font-family: var(--f-font-body);
+            line-height: var(--f-line-height-body);
         }
         .episode-summary p { margin-bottom: 1.25em; }
         .episode-summary p:last-child { margin-bottom: 0; }
@@ -289,151 +292,120 @@
     {% endif %}
 </head>
 
-{% if fabula_theme == 'writerly' %}
-{# ===== WRITERLY BODY ===== #}
-<body class="min-h-screen antialiased" style="background-color: var(--f-bg-page); color: var(--f-fg-secondary); font-family: var(--f-font-body);">
-    {# Header #}
-    <header class="fixed top-0 left-0 right-0 z-50 glass" style="border-bottom: 1px solid var(--f-border-light);">
-        <div class="flex items-center justify-between px-6 h-14 max-w-5xl mx-auto">
-            {# Left: Logo + Back #}
-            <div class="flex items-center gap-3">
-                <a href="{% url 'wagtail_serve' '' %}" class="flex items-center gap-2.5 group transition-all duration-200">
-                    <span class="text-lg tracking-tight font-semibold transition-colors" style="font-family: var(--f-font-display); color: var(--f-fg-heading);">
-                        Fabula
-                    </span>
-                </a>
-                <span style="color: var(--f-border-strong);" class="hidden sm:inline">|</span>
-                <button onclick="history.back()"
-                        class="flex items-center gap-1.5 p-3 text-sm rounded-md transition-all duration-200 f-hover-accent"
-                        style="color: var(--f-fg-tertiary);"
-                        aria-label="Go back"
-                        title="Go back">
-                    <i data-lucide="chevron-left" class="w-4 h-4"></i>
-                    <span class="hidden sm:inline">Back</span>
-                </button>
-            </div>
+<body{% if fabula_theme == 'dark' %} class="dark"{% endif %}>
 
-            {# Center: Context #}
-            <div class="flex-1 flex justify-center">
-                {% block series_context %}
-                {% if current_series %}
-                <a href="{% url 'series_landing' series_slug=current_series.slug %}" class="text-sm transition-colors" style="color: var(--f-fg-tertiary); font-family: var(--f-font-display);">
-                    {{ current_series.title }}
-                </a>
-                {% else %}
-                <span class="text-sm" style="color: var(--f-fg-tertiary); font-family: var(--f-font-display);">{{ request.site.site_name|default:"Narrative Web" }}</span>
-                {% endif %}
-                {% endblock %}
-            </div>
-
-            {# Right: Graph + Theme toggle #}
-            <div class="flex items-center gap-2">
-                {% block header_actions %}
-                {% contextual_graph_url as graph_url %}
-                <a href="{{ graph_url }}"
-                   class="group flex items-center gap-2 px-3 py-1.5 min-h-[44px] min-w-[44px] justify-center text-sm rounded-md transition-all duration-200"
-                   style="color: var(--f-accent-cyan); border: 1px solid var(--f-border-default);"
-                   title="View in graph context">
-                    <i data-lucide="git-branch" class="w-4 h-4"></i>
-                    <span class="hidden sm:inline">Graph</span>
-                </a>
-                {% endblock %}
-                {# Theme toggle #}
-                <a href="?theme=dark" class="flex items-center p-3 text-sm rounded-md transition-all duration-200 f-hover-accent" style="color: var(--f-fg-tertiary); border: 1px solid var(--f-border-light);" aria-label="Switch theme" title="Switch to dark theme">
-                    <i data-lucide="moon" class="w-4 h-4"></i>
-                </a>
-            </div>
-        </div>
+    {# ============================================================ #}
+    {# NAV — shared marketing v2 chrome (catalog reads as part of    #}
+    {# the same site as fabula.productions's marketing pages).        #}
+    {# ============================================================ #}
+    <header class="nav">
+      <div class="nav__inner">
+        <a class="wordmark" href="/">fabula<span class="dot">.</span></a>
+        <nav class="nav__links" aria-label="Primary">
+          <a href="{% url 'v2_platform' %}">platform</a>
+          <a href="{% url 'v2_production' %}">production</a>
+          <a href="{% url 'v2_production' %}#ai">ai builders</a>
+          <a href="{% url 'catalog' %}" aria-current="page">catalog</a>
+          <a href="{% url 'v2_about' %}">about</a>
+          <a href="{% url 'v2_investors' %}">investors</a>
+          {% if fabula_theme == 'dark' %}
+          <a class="nav__theme" href="?theme=writerly" aria-label="Switch to writerly theme" title="Switch to writerly">paper</a>
+          {% else %}
+          <a class="nav__theme" href="?theme=dark" aria-label="Switch to dark theme" title="Switch to dark">night</a>
+          {% endif %}
+        </nav>
+      </div>
     </header>
-{% else %}
-{# ===== DARK BODY (original, preserved exactly) ===== #}
-<body class="min-h-screen bg-slate-950 text-slate-100 antialiased">
-    {# Header #}
-    <header class="fixed top-0 left-0 right-0 z-50 glass border-b border-slate-800/50">
-        <div class="flex items-center justify-between px-6 h-14">
-            {# Left: Logo + Back button #}
-            <div class="flex items-center gap-3">
-                <a href="{% url 'wagtail_serve' '' %}" class="flex items-center gap-2.5 group transition-all duration-300">
-                    <div class="w-8 h-8 rounded-lg bg-gradient-to-br from-amber-500 via-orange-500 to-amber-600 flex items-center justify-center shadow-lg shadow-amber-500/20 group-hover:shadow-amber-500/35 group-hover:scale-105 transition-all duration-300">
-                        <i data-lucide="zap" class="w-4 h-4 text-white"></i>
-                    </div>
-                    <span class="font-bold tracking-tight text-white text-base group-hover:text-amber-400 transition-colors hidden sm:inline">FABULA</span>
-                </a>
-                <span class="text-slate-700 hidden sm:inline">|</span>
-                <button onclick="history.back()"
-                        class="flex items-center gap-1.5 p-3 text-sm text-slate-400 hover:text-white hover:bg-slate-800/50 rounded-md transition-all duration-200"
-                        aria-label="Go back"
-                        title="Go back">
-                    <i data-lucide="chevron-left" class="w-4 h-4"></i>
-                    <span class="hidden sm:inline">Back</span>
-                </button>
-            </div>
 
-            {# Center: Context (series/episode info) - uses same block as writerly #}
-            <div class="flex-1 flex justify-center">
-                {# series_context block is defined in writerly branch above; dark uses its default #}
-                {% if current_series %}
-                <a href="{% url 'series_landing' series_slug=current_series.slug %}" class="text-slate-500 text-sm font-medium hover:text-amber-400 transition-colors">
-                    {{ current_series.title }}
-                </a>
-                {% else %}
-                <span class="text-slate-500 text-sm font-medium">{{ request.site.site_name|default:"Narrative Web" }}</span>
-                {% endif %}
-            </div>
+    {# Thin contextual strip: series breadcrumb + Back + Graph button. #}
+    {% if current_series or page %}
+    <div class="catalog-strip">
+      <div class="catalog-strip__inner">
+        <button onclick="history.back()"
+                class="catalog-strip__back"
+                aria-label="Go back"
+                title="Go back">
+          <i data-lucide="chevron-left" class="w-4 h-4"></i>
+          <span>back</span>
+        </button>
+        {% block series_context %}
+        <span class="catalog-strip__crumb">
+          {% if current_series %}
+          <a href="{% url 'series_landing' series_slug=current_series.slug %}">{{ current_series.title }}</a>
+          {% else %}
+          {{ request.site.site_name|default:"the catalog" }}
+          {% endif %}
+        </span>
+        {% endblock %}
+        {% block header_actions %}
+        {% contextual_graph_url as graph_url %}
+        <a href="{{ graph_url }}"
+           class="catalog-strip__graph"
+           title="View in graph context">
+          <i data-lucide="git-branch" class="w-4 h-4"></i>
+          <span>graph</span>
+        </a>
+        {% endblock %}
+      </div>
+    </div>
+    {% endif %}
 
-            {# Right: Graph View + Theme toggle #}
-            <div class="flex items-center gap-2">
-                {% block header_actions_dark %}
-                {% contextual_graph_url as graph_url %}
-                <a href="{{ graph_url }}"
-                   class="group flex items-center gap-2 px-3 py-1.5 text-sm font-medium rounded-lg bg-slate-800/60 text-slate-400 hover:text-white border border-slate-700/50 hover:border-cyan-500/30 hover:bg-cyan-500/10 transition-all duration-300"
-                   title="View in graph context">
-                    <i data-lucide="git-branch" class="w-4 h-4 text-cyan-400"></i>
-                    <span class="hidden sm:inline">Graph</span>
-                </a>
-                {% endblock %}
-                {# Theme toggle #}
-                <a href="?theme=writerly" class="flex items-center p-3 text-sm text-slate-500 hover:text-white border border-slate-700/50 rounded-lg transition-all duration-200" aria-label="Switch theme" title="Switch to writerly theme">
-                    <i data-lucide="sun" class="w-4 h-4"></i>
-                </a>
-            </div>
-        </div>
-    </header>
-{% endif %}
-
-    {# Main content - single block definition #}
-    <main class="pt-14">
+    {# Main content #}
+    <main>
         {% block content %}{% endblock %}
     </main>
 
-    {# Footer #}
-    {% if fabula_theme == 'writerly' %}
-    <footer style="border-top: 1px solid var(--f-border-default);" class="mt-20 py-10" aria-label="Footer">
-        <div class="max-w-4xl mx-auto px-6 text-center">
-            <p class="text-sm mb-4" style="color: var(--f-fg-tertiary);">
-                Narrative analysis powered by
-                <a href="#" class="transition-colors font-medium" style="color: var(--f-accent-primary);">Fabula</a>
+    {# ============================================================ #}
+    {# FOOTER — shared marketing v2 footer.                          #}
+    {# ============================================================ #}
+    <footer class="footer">
+      <div class="container">
+        <div class="footer__grid">
+          <div>
+            <a class="wordmark" href="/" style="font-size: 1.6rem;">fabula<span class="dot">.</span></a>
+            <p class="footer__essay" style="margin-top: 1rem;">
+              The Russian formalists named the gap in 1925: <em>fabula</em> is what
+              happened, <em>syuzhet</em> is how it's told. We built infrastructure
+              to represent both sides.
             </p>
-            <div class="flex items-center justify-center gap-2 text-xs" style="color: var(--f-fg-placeholder);">
-                <span>Mapping the narrative web of</span>
-                <span style="color: var(--f-accent-primary);">{% if current_series %}{{ current_series.title }}{% else %}your story{% endif %}</span>
-            </div>
+          </div>
+          <div>
+            <h4>product</h4>
+            <ul>
+              <li><a href="{% url 'v2_platform' %}">platform</a></li>
+              <li><a href="{% url 'v2_production' %}">for production</a></li>
+              <li><a href="{% url 'catalog' %}">live catalog</a></li>
+              <li><a href="{% url 'v2_platform' %}#exports">exports</a></li>
+            </ul>
+          </div>
+          <div>
+            <h4>company</h4>
+            <ul>
+              <li><a href="{% url 'v2_about' %}">about</a></li>
+              <li><a href="{% url 'v2_investors' %}">investors</a></li>
+              <li><a href="https://huggingface.co/brandburner">datasets</a></li>
+              <li><a href="mailto:hello@fabula.productions">contact</a></li>
+            </ul>
+          </div>
+          <div>
+            <h4>colophon</h4>
+            <ul>
+              <li>EB Garamond — Octavio Pardo</li>
+              <li>JetBrains Mono — JetBrains</li>
+              <li>Set in 19px / 1.55</li>
+              <li>Built without a CMS</li>
+            </ul>
+          </div>
         </div>
-    </footer>
-    {% else %}
-    <footer class="border-t border-slate-800/50 mt-20 py-10 relative overflow-hidden" aria-label="Footer">
-        <div class="absolute inset-0 bg-gradient-to-b from-transparent to-slate-950/50"></div>
-        <div class="relative max-w-4xl mx-auto px-6 text-center">
-            <p class="text-sm text-slate-500 mb-4">
-                Narrative analysis powered by <a href="#" class="text-amber-500 hover:text-amber-400 transition-colors font-medium">Fabula</a>
-            </p>
-            <div class="flex items-center justify-center gap-2 text-xs text-slate-600">
-                <span>Mapping the narrative web of</span>
-                <span class="text-amber-500/70">{% if current_series %}{{ current_series.title }}{% else %}your story{% endif %}</span>
-            </div>
+        <div class="footer__colophon">
+          <span>&copy; {% now "Y" %} Fabula. All rights reserved.</span>
+          {% if current_series %}
+          <span>walking <em>{{ current_series.title }}</em></span>
+          {% endif %}
+          <span>fabula.productions</span>
         </div>
+      </div>
     </footer>
-    {% endif %}
 
     {# Initialize Lucide icons (after deferred script loads) #}
     <script>

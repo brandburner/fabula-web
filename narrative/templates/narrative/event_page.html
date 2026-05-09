@@ -26,8 +26,11 @@
 {% endblock %}
 
 {% block content %}
-{% if fabula_theme == 'writerly' %}
-{# ===== WRITERLY EVENT DETAIL ===== #}
+{# Token-driven body — the same template now serves writerly and dark, with #}
+{# theme-tokens.css handling the chrome. The legacy `{% else %}` branch     #}
+{# below is dead code retained for reference until the cleanup pass.        #}
+{% if fabula_theme|default:"writerly" %}
+{# ===== TOKEN-DRIVEN EVENT DETAIL ===== #}
 <article class="min-h-screen pb-16">
     {# Hero section #}
     <div class="py-14" style="background: var(--f-bg-hero);">

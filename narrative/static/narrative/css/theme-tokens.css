@@ -27,49 +27,49 @@
  */
 
 /* ----- WRITERLY THEME (default) ----------------------------------------- */
-/* Aesthetic: The Paris Review meets Stripe                                    */
-/* Warm cream paper, refined serif headings, clean geometric sans body,        */
-/* muted earthy accents, typographic hierarchy like a literary journal.         */
+/* Aesthetic: marketing v2 — EB Garamond + JetBrains Mono on warm paper,        */
+/* oxblood accent. Mirrors the tokens defined in static/marketing/v2/css/site.css */
+/* so the catalog reads as a continuation of the marketing site.                */
 
 [data-theme="writerly"] {
-  /* --- Typography --- */
-  --f-font-display: 'Literata', Georgia, serif;
-  --f-font-body: 'Figtree', system-ui, sans-serif;
-  --f-font-mono: 'JetBrains Mono', 'Fira Code', ui-monospace, monospace;
-  --f-font-size-base: 16px;
-  --f-line-height-body: 1.7;
-  --f-line-height-heading: 1.2;
-  --f-letter-spacing-heading: -0.025em;
-  --f-letter-spacing-label: 0.06em;
+  /* --- Typography (mirrors v2) --- */
+  --f-font-display: 'EB Garamond', 'Sorts Mill Goudy', Georgia, serif;
+  --f-font-body: 'EB Garamond', 'Sorts Mill Goudy', Georgia, serif;
+  --f-font-mono: 'JetBrains Mono', ui-monospace, 'SF Mono', Menlo, monospace;
+  --f-font-size-base: 17px;          /* marketing uses 19px; catalog stays a touch denser */
+  --f-line-height-body: 1.55;
+  --f-line-height-heading: 1.12;
+  --f-letter-spacing-heading: -0.012em;
+  --f-letter-spacing-label: 0.18em;  /* mono eyebrows / labels */
 
-  /* --- Page backgrounds --- */
-  --f-bg-page: #faf8f4;            /* warm cream */
-  --f-bg-surface: #ffffff;          /* clean white cards */
-  --f-bg-elevated: #f5f2ec;         /* slightly darker cream */
-  --f-bg-inset: #efeae2;            /* recessed areas */
-  --f-bg-hero: linear-gradient(180deg, #f0ebe3 0%, #faf8f4 100%);
-  --f-bg-nav: rgba(250, 248, 244, 0.92);
+  /* --- Page backgrounds (v2 paper / paper-2) --- */
+  --f-bg-page: oklch(97.5% 0.008 75);
+  --f-bg-surface: oklch(98.5% 0.006 75);
+  --f-bg-elevated: oklch(95% 0.010 75);
+  --f-bg-inset: oklch(93% 0.012 75);
+  --f-bg-hero: oklch(97.5% 0.008 75);
+  --f-bg-nav: oklch(97.5% 0.008 75 / 0.92);
 
-  /* --- Text colors --- */
-  --f-fg-primary: #1a1815;          /* near-black, warm */
-  --f-fg-secondary: #5c564d;        /* warm gray body text — 7.2:1 on #faf8f4 */
-  --f-fg-tertiary: #6b6459;         /* muted annotations — 5.0:1 on #faf8f4 (AAA small text) */
-  --f-fg-placeholder: #8a8378;      /* placeholders — 4.5:1 on #faf8f4 */
-  --f-fg-heading: #2c2824;          /* slightly warmer than primary */
-  --f-fg-link: #5a4228;             /* warm brown links — 8.5:1 on #faf8f4 (AAA) */
-  --f-fg-link-hover: #3d2a15;       /* darker on hover — 12:1 on #faf8f4 */
-  --f-fg-inverse: #faf8f4;          /* light text on dark bg */
+  /* --- Text colors (v2 ink scale) --- */
+  --f-fg-primary: oklch(20% 0.012 60);
+  --f-fg-secondary: oklch(38% 0.014 60);
+  --f-fg-tertiary: oklch(55% 0.014 60);
+  --f-fg-placeholder: oklch(60% 0.014 60);
+  --f-fg-heading: oklch(20% 0.012 60);
+  --f-fg-link: oklch(20% 0.012 60);              /* v2: anchors are ink with rule underline */
+  --f-fg-link-hover: oklch(45% 0.12 25);         /* v2: oxblood on hover */
+  --f-fg-inverse: oklch(92% 0.010 80);
 
-  /* --- Borders --- */
-  --f-border-default: #e3ded5;      /* subtle warm border */
-  --f-border-light: #eeebe4;        /* very subtle */
-  --f-border-strong: #c9c2b6;       /* stronger separator */
-  --f-border-accent: #c4a97d;       /* accent border */
+  /* --- Borders (v2 paper-rule) --- */
+  --f-border-default: oklch(85% 0.012 70);
+  --f-border-light: oklch(90% 0.010 75);
+  --f-border-strong: oklch(75% 0.014 70);
+  --f-border-accent: oklch(45% 0.12 25 / 0.45);
 
-  /* --- Accent colors (muted earth tones) --- */
-  --f-accent-primary: #8b6b3d;      /* warm amber-brown */
-  --f-accent-primary-bg: #f5efe5;   /* very light amber bg */
-  --f-accent-primary-fg: #6b4f28;   /* readable amber text */
+  /* --- Primary accent (v2 oxblood) --- */
+  --f-accent-primary: oklch(45% 0.12 25);
+  --f-accent-primary-bg: oklch(45% 0.12 25 / 0.10);
+  --f-accent-primary-fg: oklch(38% 0.12 25);
 
   --f-accent-green: #4a7c59;        /* sage green (characters) */
   --f-accent-green-bg: #eef4f0;
@@ -99,31 +99,31 @@
   --f-accent-orange-bg: #f5f0e5;
   --f-accent-orange-fg: #6b4f28;
 
-  /* --- Card styling --- */
-  --f-card-bg: #ffffff;
-  --f-card-bg-hover: #fdfcfa;
-  --f-card-border: #e3ded5;
-  --f-card-border-hover: #c4a97d;
-  --f-card-shadow: 0 1px 3px rgba(26, 24, 21, 0.04), 0 1px 2px rgba(26, 24, 21, 0.02);
-  --f-card-shadow-hover: 0 4px 12px rgba(26, 24, 21, 0.08), 0 2px 4px rgba(26, 24, 21, 0.04);
-  --f-card-radius: 8px;
+  /* --- Card styling (paper-on-paper, very subtle shadows) --- */
+  --f-card-bg: oklch(98.5% 0.006 75);
+  --f-card-bg-hover: oklch(99% 0.005 75);
+  --f-card-border: oklch(85% 0.012 70);
+  --f-card-border-hover: oklch(45% 0.12 25 / 0.55);
+  --f-card-shadow: 0 1px 2px oklch(20% 0.012 60 / 0.04);
+  --f-card-shadow-hover: 0 2px 6px oklch(20% 0.012 60 / 0.08);
+  --f-card-radius: 6px;
 
   /* --- Badge / tag styling --- */
-  --f-badge-bg: #f0ebe3;
-  --f-badge-fg: #5c564d;
-  --f-badge-border: #e3ded5;
+  --f-badge-bg: oklch(95% 0.010 75);
+  --f-badge-fg: oklch(38% 0.014 60);
+  --f-badge-border: oklch(85% 0.012 70);
 
   /* --- Scrollbar --- */
-  --f-scrollbar-track: #f0ebe3;
-  --f-scrollbar-thumb: #c9c2b6;
-  --f-scrollbar-thumb-hover: #a8a198;
+  --f-scrollbar-track: oklch(95% 0.010 75);
+  --f-scrollbar-thumb: oklch(75% 0.014 70);
+  --f-scrollbar-thumb-hover: oklch(60% 0.014 60);
 
   /* --- Decorative --- */
-  --f-rule-color: #e3ded5;
-  --f-rule-accent: #c4a97d;
-  --f-blockquote-border: #c4a97d;
-  --f-blockquote-bg: #f5f0e5;
-  --f-selection-bg: rgba(196, 169, 125, 0.2);
+  --f-rule-color: oklch(85% 0.012 70);
+  --f-rule-accent: oklch(45% 0.12 25);
+  --f-blockquote-border: oklch(45% 0.12 25);
+  --f-blockquote-bg: oklch(95% 0.010 75);
+  --f-selection-bg: oklch(45% 0.12 25 / 0.10);
 
   /* --- Transitions --- */
   --f-transition-fast: 150ms ease;
@@ -143,107 +143,120 @@
 }
 
 
-/* ----- DARK THEME (original) -------------------------------------------- */
-/* Preserves the existing cyberpunk aesthetic with neon accents.                */
+/* ----- DARK THEME (warm-night, v2-aligned) ------------------------------ */
+/* Aesthetic: same EB Garamond + JetBrains Mono voice as writerly, on the v2 */
+/* `--night-*` warm near-black palette, with a brightened oxblood accent.    */
+/* Pairs cleanly with the marketing site's `.section--dark` blocks.          */
 
 [data-theme="dark"] {
-  --f-font-display: system-ui, -apple-system, sans-serif;
-  --f-font-body: system-ui, -apple-system, sans-serif;
-  --f-font-mono: ui-monospace, 'Cascadia Code', monospace;
-  --f-font-size-base: 16px;
-  --f-line-height-body: 1.6;
-  --f-line-height-heading: 1.15;
-  --f-letter-spacing-heading: -0.025em;
-  --f-letter-spacing-label: 0.05em;
+  /* --- Typography (mirrors writerly so the brand voice carries) --- */
+  --f-font-display: 'EB Garamond', 'Sorts Mill Goudy', Georgia, serif;
+  --f-font-body: 'EB Garamond', 'Sorts Mill Goudy', Georgia, serif;
+  --f-font-mono: 'JetBrains Mono', ui-monospace, 'SF Mono', Menlo, monospace;
+  --f-font-size-base: 17px;
+  --f-line-height-body: 1.55;
+  --f-line-height-heading: 1.12;
+  --f-letter-spacing-heading: -0.012em;
+  --f-letter-spacing-label: 0.18em;
 
-  --f-bg-page: #0a0a0f;
-  --f-bg-surface: rgba(15, 23, 42, 0.5);
-  --f-bg-elevated: rgba(15, 23, 42, 0.8);
-  --f-bg-inset: rgba(15, 23, 42, 0.3);
-  --f-bg-hero: linear-gradient(180deg, rgba(30, 41, 59, 0.3) 0%, #0a0a0f 100%);
-  --f-bg-nav: rgba(15, 23, 42, 0.8);
+  /* --- Page backgrounds (v2 night scale) --- */
+  --f-bg-page: oklch(18% 0.010 65);
+  --f-bg-surface: oklch(22% 0.012 65);
+  --f-bg-elevated: oklch(25% 0.014 65);
+  --f-bg-inset: oklch(15% 0.008 65);
+  --f-bg-hero: oklch(18% 0.010 65);
+  --f-bg-nav: oklch(18% 0.010 65 / 0.92);
 
-  --f-fg-primary: #f1f5f9;
-  --f-fg-secondary: #94a3b8;        /* 8.5:1 on #0a0a0f — passes AAA */
-  --f-fg-tertiary: #94a3b8;         /* lightened from #64748b — 8.5:1 on #0a0a0f (AAA) */
-  --f-fg-placeholder: #475569;
-  --f-fg-heading: #ffffff;
-  --f-fg-link: #22d3ee;
-  --f-fg-link-hover: #67e8f9;
-  --f-fg-inverse: #0a0a0f;
+  /* --- Text (warm off-whites) --- */
+  --f-fg-primary: oklch(92% 0.010 80);
+  --f-fg-secondary: oklch(72% 0.012 75);
+  --f-fg-tertiary: oklch(60% 0.014 70);
+  --f-fg-placeholder: oklch(48% 0.014 70);
+  --f-fg-heading: oklch(94% 0.010 80);
+  --f-fg-link: oklch(92% 0.010 80);
+  --f-fg-link-hover: oklch(62% 0.13 25);          /* brightened oxblood */
+  --f-fg-inverse: oklch(20% 0.012 60);
 
-  --f-border-default: rgba(51, 65, 85, 0.5);
-  --f-border-light: rgba(51, 65, 85, 0.3);
-  --f-border-strong: #475569;
-  --f-border-accent: rgba(34, 211, 238, 0.3);
+  /* --- Borders --- */
+  --f-border-default: oklch(32% 0.014 65);
+  --f-border-light: oklch(28% 0.012 65);
+  --f-border-strong: oklch(45% 0.014 65);
+  --f-border-accent: oklch(55% 0.12 25 / 0.45);
 
-  --f-accent-primary: #f59e0b;
-  --f-accent-primary-bg: rgba(245, 158, 11, 0.1);
-  --f-accent-primary-fg: #fbbf24;
+  /* --- Primary accent (brightened oxblood for dark backgrounds) --- */
+  --f-accent-primary: oklch(62% 0.13 25);
+  --f-accent-primary-bg: oklch(55% 0.12 25 / 0.14);
+  --f-accent-primary-fg: oklch(70% 0.13 25);
 
-  --f-accent-green: #10b981;
-  --f-accent-green-bg: rgba(16, 185, 129, 0.1);
-  --f-accent-green-fg: #34d399;
+  /* --- Entity accents: muted, warm-shifted to sit on warm-black --- */
+  --f-accent-green: oklch(70% 0.10 150);          /* sage */
+  --f-accent-green-bg: oklch(70% 0.10 150 / 0.12);
+  --f-accent-green-fg: oklch(78% 0.10 150);
 
-  --f-accent-blue: #3b82f6;
-  --f-accent-blue-bg: rgba(59, 130, 246, 0.1);
-  --f-accent-blue-fg: #60a5fa;
+  --f-accent-blue: oklch(70% 0.08 240);           /* steel */
+  --f-accent-blue-bg: oklch(70% 0.08 240 / 0.12);
+  --f-accent-blue-fg: oklch(78% 0.08 240);
 
-  --f-accent-violet: #8b5cf6;
-  --f-accent-violet-bg: rgba(139, 92, 246, 0.1);
-  --f-accent-violet-fg: #a78bfa;
+  --f-accent-violet: oklch(70% 0.09 300);         /* dusk */
+  --f-accent-violet-bg: oklch(70% 0.09 300 / 0.12);
+  --f-accent-violet-fg: oklch(78% 0.09 300);
 
-  --f-accent-rose: #ec4899;
-  --f-accent-rose-bg: rgba(236, 72, 153, 0.05);
-  --f-accent-rose-fg: #f472b6;
+  --f-accent-rose: oklch(70% 0.10 15);            /* rose */
+  --f-accent-rose-bg: oklch(70% 0.10 15 / 0.12);
+  --f-accent-rose-fg: oklch(78% 0.10 15);
 
-  --f-accent-indigo: #6366f1;
-  --f-accent-indigo-bg: rgba(99, 102, 241, 0.1);
-  --f-accent-indigo-fg: #818cf8;
+  --f-accent-indigo: oklch(70% 0.08 270);
+  --f-accent-indigo-bg: oklch(70% 0.08 270 / 0.12);
+  --f-accent-indigo-fg: oklch(78% 0.08 270);
 
-  --f-accent-cyan: #22d3ee;
-  --f-accent-cyan-bg: rgba(34, 211, 238, 0.1);
-  --f-accent-cyan-fg: #67e8f9;
+  --f-accent-cyan: oklch(72% 0.08 195);
+  --f-accent-cyan-bg: oklch(72% 0.08 195 / 0.12);
+  --f-accent-cyan-fg: oklch(80% 0.08 195);
 
-  --f-accent-orange: #f59e0b;
-  --f-accent-orange-bg: rgba(245, 158, 11, 0.1);
-  --f-accent-orange-fg: #fbbf24;
+  --f-accent-orange: oklch(75% 0.10 70);          /* warm amber */
+  --f-accent-orange-bg: oklch(75% 0.10 70 / 0.12);
+  --f-accent-orange-fg: oklch(82% 0.10 70);
 
-  --f-card-bg: rgba(15, 23, 42, 0.5);
-  --f-card-bg-hover: rgba(15, 23, 42, 0.7);
-  --f-card-border: rgba(51, 65, 85, 0.5);
-  --f-card-border-hover: rgba(34, 211, 238, 0.3);
-  --f-card-shadow: none;
-  --f-card-shadow-hover: 0 8px 24px rgba(0, 0, 0, 0.3);
-  --f-card-radius: 12px;
+  /* --- Card styling (opaque night-2 — no transparency bleed) --- */
+  --f-card-bg: oklch(22% 0.012 65);
+  --f-card-bg-hover: oklch(25% 0.014 65);
+  --f-card-border: oklch(32% 0.014 65);
+  --f-card-border-hover: oklch(55% 0.12 25 / 0.55);
+  --f-card-shadow: 0 1px 2px oklch(0% 0 0 / 0.30);
+  --f-card-shadow-hover: 0 4px 12px oklch(0% 0 0 / 0.40);
+  --f-card-radius: 6px;
 
-  --f-badge-bg: rgba(51, 65, 85, 0.5);
-  --f-badge-fg: #94a3b8;
-  --f-badge-border: rgba(51, 65, 85, 0.5);
+  /* --- Badge / tag --- */
+  --f-badge-bg: oklch(25% 0.014 65);
+  --f-badge-fg: oklch(72% 0.012 75);
+  --f-badge-border: oklch(32% 0.014 65);
 
-  --f-scrollbar-track: #0f172a;
-  --f-scrollbar-thumb: #334155;
-  --f-scrollbar-thumb-hover: #475569;
+  /* --- Scrollbar --- */
+  --f-scrollbar-track: oklch(15% 0.008 65);
+  --f-scrollbar-thumb: oklch(32% 0.014 65);
+  --f-scrollbar-thumb-hover: oklch(45% 0.014 65);
 
-  --f-rule-color: rgba(51, 65, 85, 0.5);
-  --f-rule-accent: rgba(245, 158, 11, 0.3);
-  --f-blockquote-border: #475569;
-  --f-blockquote-bg: rgba(15, 23, 42, 0.5);
-  --f-selection-bg: rgba(34, 211, 238, 0.2);
+  /* --- Decorative --- */
+  --f-rule-color: oklch(32% 0.014 65);
+  --f-rule-accent: oklch(55% 0.12 25);
+  --f-blockquote-border: oklch(55% 0.12 25);
+  --f-blockquote-bg: oklch(22% 0.012 65);
+  --f-selection-bg: oklch(55% 0.12 25 / 0.25);
 
   --f-transition-fast: 150ms ease;
-  --f-transition-base: 300ms cubic-bezier(0.4, 0, 0.2, 1);
+  --f-transition-base: 250ms ease;
   --f-transition-slow: 400ms cubic-bezier(0.4, 0, 0.2, 1);
 
-  --conn-color-causal: #22d3ee;
-  --conn-color-foreshadowing: #a855f7;
-  --conn-color-thematic-parallel: #f59e0b;
-  --conn-color-character-continuity: #10b981;
-  --conn-color-escalation: #ef4444;
-  --conn-color-callback: #3b82f6;
-  --conn-color-emotional-echo: #ec4899;
-  --conn-color-symbolic-parallel: #8b5cf6;
-  --conn-color-temporal: #6366f1;
+  /* --- Connection type colors (brightened a touch for dark) --- */
+  --conn-color-causal: oklch(72% 0.08 195);
+  --conn-color-foreshadowing: oklch(70% 0.10 300);
+  --conn-color-thematic-parallel: oklch(75% 0.10 70);
+  --conn-color-character-continuity: oklch(70% 0.10 150);
+  --conn-color-escalation: oklch(65% 0.14 25);
+  --conn-color-callback: oklch(70% 0.08 240);
+  --conn-color-emotional-echo: oklch(70% 0.10 15);
+  --conn-color-symbolic-parallel: oklch(70% 0.09 300);
+  --conn-color-temporal: oklch(70% 0.08 270);
 }
 
 
@@ -252,6 +265,13 @@
  * These resolve to different values per theme via CSS custom properties.
  * ============================================================================ */
 
+/* --- Document-wide background follows the active theme. --- */
+/* Without this, <body> stays white and dark mode "leaks" the paper bg.   */
+html[data-theme] body {
+  background-color: var(--f-bg-page);
+  color: var(--f-fg-secondary);
+}
+
 /* --- Page-level --- */
 .f-page {
   background-color: var(--f-bg-page);
@@ -259,6 +279,54 @@
   font-family: var(--f-font-body);
   font-size: var(--f-font-size-base);
   line-height: var(--f-line-height-body);
+}
+
+/* --- Marketing v2 chrome (.nav / .footer / .wordmark) re-skinned for dark. --- */
+/* These mirror the rules in marketing_base.html so the catalog gets the same   */
+/* warm-night chrome without duplicating per-template styles.                   */
+[data-theme="dark"] .nav {
+  background: color-mix(in srgb, var(--f-bg-page) 92%, transparent);
+  border-bottom-color: var(--f-border-default);
+}
+[data-theme="dark"] .nav__links a {
+  color: var(--f-fg-secondary);
+}
+[data-theme="dark"] .nav__links a:hover,
+[data-theme="dark"] .nav__links a[aria-current="page"] {
+  color: var(--f-fg-primary);
+  border-bottom-color: var(--f-accent-primary);
+}
+[data-theme="dark"] .wordmark {
+  color: var(--f-fg-primary);
+}
+[data-theme="dark"] .wordmark .dot {
+  color: var(--f-accent-primary);
+}
+[data-theme="dark"] .nav__theme {
+  color: var(--f-fg-secondary);
+  border-color: var(--f-border-default);
+}
+[data-theme="dark"] .nav__theme:hover {
+  color: var(--f-accent-primary);
+  border-color: var(--f-accent-primary);
+}
+[data-theme="dark"] .footer {
+  background: var(--f-bg-page);
+  border-top-color: var(--f-border-default);
+  color: var(--f-fg-secondary);
+}
+[data-theme="dark"] .footer h4 { color: var(--f-fg-primary); }
+[data-theme="dark"] .footer a {
+  color: var(--f-fg-secondary);
+  border-bottom-color: var(--f-border-default);
+}
+[data-theme="dark"] .footer a:hover {
+  color: var(--f-accent-primary);
+  border-bottom-color: var(--f-accent-primary);
+}
+[data-theme="dark"] .footer__colophon {
+  color: var(--f-fg-tertiary);
+  border-top-color: var(--f-border-default);
 }
 
 .f-heading {
