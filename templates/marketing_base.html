@@ -153,7 +153,7 @@
       <div class="nav__inner">
         <a class="wordmark" href="/">fabula<span class="dot">.</span></a>
         <nav class="nav__links" aria-label="Primary">
-          <a href="{% url 'v2_platform' %}"{% if active_nav == 'platform' %} aria-current="page"{% endif %}>platform</a>
+          <a href="{% url 'v2_engine' %}"{% if active_nav == 'engine' %} aria-current="page"{% endif %}>engine</a>
           <a href="{% url 'v2_production' %}"{% if active_nav == 'production' %} aria-current="page"{% endif %}>production</a>
           <a href="{% url 'v2_production' %}#ai">ai builders</a>
           <a href="{% url 'catalog' %}"{% if active_nav == 'catalog' %} aria-current="page"{% endif %}>catalog</a>
@@ -190,10 +190,10 @@
           <div>
             <h4>product</h4>
             <ul>
-              <li><a href="{% url 'v2_platform' %}">platform</a></li>
+              <li><a href="{% url 'v2_engine' %}">engine</a></li>
               <li><a href="{% url 'v2_production' %}">for production</a></li>
               <li><a href="{% url 'catalog' %}">live catalog</a></li>
-              <li><a href="{% url 'v2_platform' %}#exports">exports</a></li>
+              <li><a href="{% url 'v2_engine' %}#exports">exports</a></li>
             </ul>
           </div>
           <div>
