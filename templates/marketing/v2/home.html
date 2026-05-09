@@ -12,10 +12,10 @@
       <p class="eyebrow">For shows that have to remember themselves</p>
       <h1>Turn screenplays into<br/>queryable knowledge graphs.</h1>
       <p class="hero__deck">
-        Give Fabula a screenplay and it returns a graph: every character with a stable identity, every scene tied to the events that caused it, every claim traceable to the line of script that justifies it. The graph holds across a hundred episodes.
+        Give Fabula a screenplay and it returns a graph: every character with a stable identity, every scene tied to the events that caused it, every claim traceable to the line of script that justifies it. One episode or hundreds — the graph holds.
       </p>
       <p class="hero__deck" style="font-style: italic; color: var(--ink-2);">
-        What that gets you: the answer to <em>&ldquo;have we said this before, and did it match?&rdquo;</em> in the time it takes to type the question — instead of the time it takes to rewatch six seasons.
+        Structured, typed, provenance-attached data — tailor-made for AI consumption. The shape an agent needs in order to cite a source instead of confabulating one.
       </p>
       <div class="ctas">
         <a class="cta cta--primary" href="{% url 'catalog' %}">explore the live catalog</a>
@@ -55,29 +55,13 @@
     </div>
   </section>
 
-  <!-- TRUST STRIP -->
-  <section class="section section--tight">
-    <div class="container">
-      <div class="trust">
-        <span><span class="num">800+</span> episodes across 7 series</span>
-        <span><span class="num">26</span> seasons of <em>Doctor Who</em></span>
-        <span><span class="num">27,205</span> canonical entities, one megagraph</span>
-        <span>cross-season identity preserved on Worf, 177 episodes</span>
-        <span><span class="num">59.6</span> hours unattended, zero failures</span>
-      </div>
-    </div>
-  </section>
-
-  <!-- THREE VERBS (DARK) -->
+<!-- THREE VERBS (DARK) -->
   <section class="section section--dark" id="verbs">
     <div class="container">
       <p class="section-mark">&sect; 01 — three verbs</p>
       <h2 style="margin-bottom: 0.5rem">Parse <span style="color:var(--night-ink-3)">&middot;</span> Resolve <span style="color:var(--night-ink-3)">&middot;</span> Reason</h2>
-      <p style="color:var(--night-ink-2); max-width: 60ch; margin-top: 1rem; margin-bottom: 1rem;">
+      <p style="color:var(--night-ink-2); max-width: 60ch; margin-top: 1rem; margin-bottom: 3rem;">
         These are the three things Fabula does. Pick one to see the actual output.
-      </p>
-      <p style="color:var(--night-ink-3); max-width: 60ch; margin-bottom: 3rem; font-style: italic;">
-        What that gets you: the script supervisor's question, the AI agent's retrieval, and the writers' room's precedent search are answered against the same record — with the line of script that justifies each answer attached.
       </p>
 
       <div class="verbs" data-verbs>
@@ -96,29 +80,47 @@
         <div class="verbs__panels">
           <div class="verbs__panel" data-verb="parse" data-active>
             <p>
-              Plain text, Fountain, PDF. No reformatting, no template. Fabula reads scenes, beats, dialogue, and unspoken stage business in a single pass.
+              Plain text, Fountain, PDF. No reformatting, no template. Fabula reads credits, scene headings, dialogue, action lines, and the smaller-than-a-scene unit that does the actual work — the beat.
             </p>
             <p>
-              <em>Saturday Night</em> (2024) doesn't use <span style="font-family:var(--mono); font-size:0.85em;">INT/EXT</span> headings at all — most parsers fail on it. Fabula pulled out <strong>53 scenes, 199 beats, 55 characters</strong> on the first run, with no per-show configuration.<sup class="fn">&sup1;</sup>
+              A beat is one small movement inside a scene: someone enters, a request is made, a mood turns. Each one comes back with the characters involved, the objects in play, the setting, and the emotional shift it produces. That's the unit the rest of the graph hangs off.
             </p>
-<pre class="console console--inline" data-lang="plain" data-path="fabula://parse/saturday-night">[parser] reading       &rarr; saturday_night_2024.fountain
-[parser] format         &rarr; fountain (no INT/EXT markers)
-[parser] scenes         &rarr; 53
-[parser] beats          &rarr; 199
-[parser] characters     &rarr; 55
-[parser] dialogue lines &rarr; 1,284
-[parser] elapsed        &rarr; 4.2s</pre>
+<pre class="console console--inline" data-lang="json" data-path="fabula://parse/the-night-manager/s01e01">// Beat extraction · The Night Manager · Cairo · Nefertiti Hotel
+
+[
+  {
+    "beat_uuid": "beat-1",
+    "sequence_in_scene": 1,
+    "action_description": "Jonathan Pine answers the phone and
+      receives a request from Sophie Alekan to bring a scotch and
+      soda to her room.",
+    "involved_character_mentions": ["PINE", "SOPHIE"],
+    "key_objects_mentioned": ["phone", "scotch and soda"],
+    "setting_details": ["Nefertiti Hotel, Foyer, Night"],
+    "emotional_shift": "neutral to attentive"
+  },
+  {
+    "beat_uuid": "beat-2",
+    "sequence_in_scene": 2,
+    "action_description": "Sophie Alekan asserts her familiarity
+      with the hotel and her preference for Jonathan Pine to
+      personally bring the drink, establishing a direct and
+      intimate request.",
+    "involved_character_mentions": ["SOPHIE", "PINE"],
+    "emotional_shift": "attentive to intrigued"
+  }
+]</pre>
           </div>
 
           <div class="verbs__panel" data-verb="resolve">
             <p>
-              The script calls Picard "The Captain" in one scene and "Jean-Luc" in the next. Worf gets promoted twice. The Doctor changes face seven times across Classic Who. Fabula keeps each of them as one entity, with the rank changes and regenerations recorded as transitions on that entity rather than as new ones.
+              The script calls Picard &ldquo;The Captain&rdquo; in one scene and &ldquo;Jean-Luc&rdquo; in the next. Worf gets promoted twice. Brigadier Lethbridge-Stewart returns across thirteen seasons of <em>Doctor Who</em> with new ranks, retirements, and multi-year gaps between appearances. Fabula keeps each of them as one entity, with the rank changes and absences recorded as transitions on that entity rather than as new ones.
             </p>
             <p>
               When two entities really are different — two characters who happen to share a name, or two ships called <em>Enterprise</em> — Fabula makes the call explicitly and records why, with a confidence score. Adjudication, not vector similarity.
             </p>
             <p style="font-style: italic; color: var(--ink-2); font-size: 0.95rem;">
-              <em>Doctor Who</em> seasons 1&ndash;26 covers seven incarnations; the megagraph holds them as one canonical entity, with regenerations recorded as transitions on that entity rather than as new ones.
+              The Brigadier first appears in 1968 and last appears in 1989. Across that span — different uniforms, different writers, different Doctors beside him — the megagraph holds him as one canonical person.
             </p>
 <pre class="console console--inline" data-lang="json" data-path="fabula://adjudicate/tng">// Entity adjudication · Star Trek TNG · KEEP_SEPARATE
 
@@ -152,30 +154,36 @@
             <p>
               Every belief, goal, and connection comes back with a pointer to the specific lines of script that justified it. If you don't trust the claim, click through and read the source.
             </p>
-<pre class="console console--inline" data-lang="json" data-path="fabula://reason/tng/geordi">// BDI extraction · Star Trek TNG · Geordi La Forge
+<pre class="console console--inline" data-lang="json" data-path="fabula://reason/happy-valley/s01e01/cawood">// BDI extraction · Happy Valley S01E01 · Sgt. Catherine Cawood
 
 {
-  "agent_name_mention": "Geordi",
-  "observed_status": "Reports Riker's capture and a casualty to Data
-    via coms, noting the sudden cessation of com jamming. Reacts with
-    surprise to the restored communications.",
+  "agent_name_mention": "Catherine",
+  "scene_anchor": "S01E01 · Newsagent, Hebden Bridge · Sc. 1",
+  "observed_status": "Strides into the newsagent tooled up — truncheon,
+    cuffs, radio, vest — and asks for a fire extinguisher with the same
+    polite efficiency as asking for a newspaper. Buys sunglasses on the
+    way out. Hands steady.",
   "emotional_state_at_event":
-    "tense, relieved (at restored coms), concerned (for Riker)",
+    "Feigned calm masking deep anxiety and unresolved grief; steely
+     determination to maintain control",
   "goals_at_event": [
-    "Communicate the away team's status to the Enterprise bridge",
-    "Ensure Data is aware of Riker's capture and the mercenaries' escape"
+    "Secure the tools to intervene in the self-immolation threat
+     without escalating panic",
+    "Project unshakable authority to stabilise the shopkeeper and
+     the eyewitness"
   ],
-  "importance_to_event": "primary",
-  "confidence": 0.94
+  "beliefs_at_event": [
+    "Her professional composure is the only thing standing between
+     chaos and order in this moment",
+    "Showing vulnerability — even for a second — would unravel the
+     fragile control she has over her emotions and the situation"
+  ],
+  "importance_to_event": "primary"
 }</pre>
           </div>
         </div>
       </div>
 
-      <p style="font-family: var(--mono); font-size: 0.72rem; color: var(--night-ink-3); margin-top: 3rem;">
-        <sup class="fn">&sup1;</sup> See catalog entry for <em>Saturday Night</em> in the
-        <a href="{% url 'catalog' %}">live catalog</a>.
-      </p>
     </div>
   </section>
 
@@ -189,10 +197,7 @@
           Fabula keeps going. For every event in the show it records the connections to other events — typed, not just inferred from proximity. A connection is <em>causal</em>, or it carries a character forward, or it parallels a different event thematically, or it reverses one. Each connection is its own claim, with its own justification.
         </p>
         <p>
-          That's the difference between a transcript and a graph. A transcript can tell you Q showed up and Picard demanded his identity. The graph can tell you the second event happened <em>because</em> of the first, and that the same pattern — institutional authority confronted by individual conviction — recurs four other times across the season.
-        </p>
-        <p style="font-style: italic; color: var(--ink-2);">
-          What that gets you: you can ask <em>&ldquo;where else have we set up this confrontation, and how did it pay off?&rdquo;</em> and get four cited scenes back — instead of a writer's room trying to remember.
+          That's the difference between a transcript and a graph. A transcript can tell you Q showed up and Picard demanded his identity. The graph can tell you the second event happened <em>because</em> of the first, and that the same pattern &mdash; institutional authority confronted by individual conviction &mdash; recurs four other times across the season. The query for those four scenes is one line of Cypher, and every result carries the script lines that justify the connection.
         </p>
       </div>
 
@@ -281,9 +286,6 @@
           </p>
           <p>
             That's a query, not an essay. We can show you the cypher.
-          </p>
-          <p style="font-style: italic; color: var(--ink-2);">
-            What that gets you: you can ask the show <em>&ldquo;which death is doing the most work right now?&rdquo;</em> in a writers' room — and answer it before the meeting ends.
           </p>
           <div class="ctas" style="margin-top: 2rem;">
             <a class="cta" href="/explore/west-wing/">explore <em>The West Wing</em></a>
@@ -389,9 +391,21 @@ Batch completed successfully!</pre>
 &#9500;&#9472;&#9472; meta.json          # Dataset metadata: series info, entity counts
 &#9492;&#9472;&#9472; README.md          # HuggingFace dataset card (auto-generated)</pre>
       <p style="margin-top: 2rem; color: var(--ink-2); max-width: 60ch;">
-        Forty-eight of these are already public on the
+        Fifty-six of these are already public on the
         <a href="https://huggingface.co/brandburner"><span style="font-family:var(--mono); font-size:0.92em;">brandburner</span></a>
-        org on Hugging Face — the full <em>Doctor Who</em> megagraph, every TNG and West Wing season we've processed, plus Wolf Hall, Happy Valley, Indiana Jones, Dracula, and Knives Out. If you want to see what one looks like before talking to us, that's the easiest way.
+        org on Hugging Face &mdash; the full
+        <a href="https://huggingface.co/datasets/brandburner/doctorwho-mega-narrative-kg"><em>Doctor Who</em> megagraph</a>,
+        the
+        <a href="https://huggingface.co/datasets/brandburner/startrektng-mega-narrative-kg">TNG megagraph</a>
+        and
+        <a href="https://huggingface.co/datasets/brandburner/westwing-mega-narrative-kg">West Wing megagraph</a>,
+        plus
+        <a href="https://huggingface.co/datasets/brandburner/wolfhall-mega-narrative-kg">Wolf Hall</a>,
+        <a href="https://huggingface.co/datasets/brandburner/happyvalley2-mega-narrative-kg">Happy Valley</a>,
+        <a href="https://huggingface.co/datasets/brandburner/indianajones-s01-narrative-kg">Indiana Jones</a>,
+        <a href="https://huggingface.co/datasets/brandburner/dracula-s01-narrative-kg">Dracula</a>,
+        <a href="https://huggingface.co/datasets/brandburner/knivesout-s01-narrative-kg">Knives Out</a>, and
+        <a href="https://huggingface.co/datasets/brandburner/i-claudius-narrative-kg"><em>I, Claudius</em></a>. If you want to see what one looks like before talking to us, that's the easiest way.
       </p>
     </div>
   </section>

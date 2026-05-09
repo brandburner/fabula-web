@@ -102,7 +102,7 @@ hr {
   padding-right: var(--pad-x);
 }
 
-.section { padding-block: clamp(3.5rem, 7vw, 6rem); }
+.section { padding-block: clamp(3.5rem, 7vw, 6rem); display: flow-root; }
 .section--tight { padding-block: clamp(2rem, 4vw, 3rem); }
 
 .section--dark {
@@ -704,6 +704,19 @@ html[data-marginalia="off"] .section-mark + h3 { margin-top: 0; }
   margin: 0;
   max-width: 30ch;
 }
+.belief__credit {
+  grid-column: 2;
+  font-family: var(--mono);
+  font-size: 0.78rem;
+  line-height: 1.55;
+  color: var(--ink-3);
+  margin: 1rem 0 0;
+  max-width: 56ch;
+}
+.belief__credit a {
+  color: var(--ink-2);
+  text-decoration-thickness: 0.5px;
+}
 
 /* --- Five shows ledger ---------------------------------------- */
 .ledger {
@@ -837,4 +850,69 @@ html[data-marginalia="off"] .section-mark + h3 { margin-top: 0; }
 :focus-visible {
   outline: 2px solid var(--accent);
   outline-offset: 2px;
+}
+
+/* --- Aside (margin sticky-note) ------------------------------- */
+.aside {
+  display: block;
+  position: relative;
+  max-width: 38ch;
+  margin: 2rem 0;
+  padding: 1.05rem 1.3rem 1.1rem;
+  background: oklch(94% 0.045 92);
+  color: oklch(22% 0.020 60);
+  font-family: var(--serif);
+  font-style: italic;
+  font-size: 1rem;
+  line-height: 1.55;
+  border: 1px solid oklch(86% 0.040 90);
+  box-shadow:
+    0 1px 1px rgba(0,0,0,0.05),
+    0 6px 14px rgba(0,0,0,0.08),
+    0 18px 32px rgba(0,0,0,0.07);
+  transform: rotate(-0.8deg);
+  transform-origin: 14% 50%;
+}
+.aside + .aside,
+.grid-2 .aside,
+.aside.aside--alt {
+  transform: rotate(0.7deg);
+  transform-origin: 86% 50%;
+}
+.aside p {
+  margin: 0 0 0.5rem;
+}
+.aside p:last-child { margin-bottom: 0; }
+.aside em { font-style: normal; }
+
+/* Floats into the right gutter on wide layouts */
+.aside--float {
+  float: right;
+  margin: 0.4rem 0 1rem 1.6rem;
+  shape-outside: margin-box;
+}
+
+/* Plays well over dark sections — paper still lands as warm */
+.section--dark .aside {
+  border-color: oklch(60% 0.040 90);
+  box-shadow:
+    0 2px 4px rgba(0,0,0,0.35),
+    0 12px 28px rgba(0,0,0,0.55);
+}
+.section--dark .aside::before {
+  color: oklch(35% 0.07 55);
+}
+
+@media (max-width: 720px) {
+  .aside,
+  .aside--float {
+    float: none;
+    max-width: 100%;
+    margin: 1.5rem 0;
+    transform: none;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .aside { transform: none; }
 }

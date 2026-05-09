@@ -1,16 +1,17 @@
 {% extends "marketing/v2/_base.html" %}
 
 {% block title %}fabula. — for production teams{% endblock %}
-{% block meta_description %}The story bible, but it cannot drift. A self-updating canonical record of your show — every character, every relationship, every fact.{% endblock %}
+{% block meta_description %}A script breakdown that doesn't end at the script. Generated breakdowns, VFX scene identification, cross-department inventories — with entity continuity preserved across episodes.{% endblock %}
 
 {% block content %}
 
   <section class="section hero">
     <div class="container">
       <p class="eyebrow">For production teams</p>
-      <h1 style="max-width: 18ch;">The story bible, but it cannot drift.</h1>
+      <h1 style="max-width: 22ch;">A script breakdown that doesn't end at the script.</h1>
       <p class="hero__deck">
-        Fabula reads your scripts and builds a canonical record of the show as you go — every character, every relationship, every fact, every reference, with the line of script that justifies each one. The story bible is generated from the graph instead of maintained alongside it. New pages arrive; the bible updates.
+        Fabula turns every script into a dynamic, searchable breakdown—tracking all characters, props, locations, and VFX across episodes. Continuity is automatic, so the breakdown becomes a live record for every department.
+   
       </p>
       <div class="ctas">
         <a class="cta cta--primary" href="mailto:hello@fabula.productions?subject=Pilot">start a pilot</a>
@@ -19,54 +20,67 @@
     </div>
   </section>
 
-  <section class="section section--tight">
-    <div class="container">
-      <div class="trust">
-        <span><span class="num">80-script</span> rewatch &rarr; one graph query</span>
-        <span>Friday afternoon read &rarr; Friday morning query</span>
-        <span>Story bible drift &rarr; caught at every merge</span>
-      </div>
-    </div>
-  </section>
-
-  <!-- DIAGNOSIS -->
+<!-- DIAGNOSIS -->
   <section class="section">
     <div class="container">
-      <p class="section-mark">&sect; 01 — four ways shows lose the plot</p>
-      <h2 style="max-width: 22ch; margin-bottom: 2.5rem;">Four failures every long-running show inherits.</h2>
+      <p class="section-mark">&sect; 01 — four pre-production failures</p>
+      <h2 style="max-width: 26ch; margin-bottom: 2.5rem;">Four failures every long-form production inherits.</h2>
 
       <div class="diagnosis">
         <p class="diagnosis__num">failure 01</p>
-        <h3>The silence in the room.</h3>
+        <h3>The eight-week breakdown.</h3>
         <p>
-          A continuity question lands in the writers' room. Someone is sure the answer is in Season 2. Someone else is sure it isn't. The room goes quiet while three people open three different documents.
-        </p>
-        <p>
-          The cost isn't the minute. It's the decisions that get made <em>without</em> waiting for the answer.
+          Script breakdowns are manual and slow. Every department re-tags the script for their own needs, duplicating work and missing each other's notes.
+     
         </p>
       </div>
 
       <div class="diagnosis">
         <p class="diagnosis__num">failure 02</p>
-        <h3>The eighty-episode rewatch.</h3>
+        <h3>The VFX bid.</h3>
         <p>
-          When the question is real and the stakes are real, someone has to actually go and watch. Or read. Or both. Eighty episodes of prior material, to confirm a single relationship state — a fact you already had on the page when the script was written, but no longer have on tap.
+          Vendors quote from shot lists made by manually scanning each scene. Miss a VFX need, and unexpected costs appear; over-tag, and the show seems more expensive than it is. Getting this wrong is costly.
+     
         </p>
       </div>
 
       <div class="diagnosis">
         <p class="diagnosis__num">failure 03</p>
-        <h3>The expensive contradiction.</h3>
+        <h3>The siloed deliverable.</h3>
         <p>
-          The scene shoots. The contradiction surfaces in dailies. Or in the edit. Or, in the unfortunate case, in the cut after a critic notices. Reshoots, ADR, retroactive rewrites: the cost of a continuity problem caught after the money has been spent.
+          Each department gets a flat CSV; there’s no shared identity layer. Every revision, teams redo their own breakdowns, losing cross-scene and cross-episode connections each time.
+     
         </p>
       </div>
 
       <div class="diagnosis">
         <p class="diagnosis__num">failure 04</p>
-        <h3>The Friday afternoon read.</h3>
+        <h3>The draft-comparison gap.</h3>
         <p>
-          A new draft arrives at 4pm. Notes are due Monday. Nobody has time to re-read seventeen prior episodes to give them properly. So the notes go in based on memory, vibe, and whatever the assistant could pull together over the weekend.
+          New drafts show page changes, but not shifts in <em>continuity</em>—like missing props or changed character states. These unseen gaps appear during production.
+     
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- NETFLIX VALIDATION -->
+  <section class="section section--paper2">
+    <div class="container">
+      <div style="max-width: 64ch;">
+        <p class="section-mark">&sect; 01a — what the streamers are already building</p>
+        <h2 style="max-width: 22ch; margin-bottom: 1.5rem;">The major streamers are investing engineering here.</h2>
+        <p>
+          Netflix presented its <em>AI Breakdown Assistant</em> in 2024 &mdash; a scene-level VFX classifier and an algorithmic complexity-tier model that takes shot media attributes, script embeddings, and scene understanding as inputs to budget estimation. Their own headline benefits, on the slide:
+        </p>
+        <ul style="margin-top: 1rem; margin-bottom: 1rem; padding-left: 1.2rem; color: var(--ink-2);">
+          <li>Production time savings via reduced manual work</li>
+          <li>Standardised taxonomy for metrics engineering to measure production complexity</li>
+          <li>More accurate budget estimations, leading to better production planning</li>
+          <li>Connected data to inform creative departments downstream</li>
+        </ul>
+        <p>
+          That's the brief. Fabula does the deeper version of it: entity continuity preserved across episodes and seasons (not just within a script), per-event character state attached to every participation, narrative connections typed and queryable, every claim traceable to the line of script that justified it. If your studio isn't building this internally, the alternative is buying a pre-built version that's run end-to-end on 800+ episodes already.
         </p>
       </div>
     </div>
@@ -83,13 +97,16 @@
       <div class="grid-2">
         <div>
           <p>
-            The script says &ldquo;The Captain.&rdquo; Later it says &ldquo;Picard.&rdquo; Later still, &ldquo;Jean-Luc.&rdquo; Your script coordinator knows these are the same person. Most extraction systems don't — they create three entries and call the problem solved.
-          </p>
-          <p>
-            Fabula resolves aliases against a living graph rather than re-running entity recognition for each script. Promotions don't create new characters. Klingon naming conventions don't create new characters. An ambassadorial appointment doesn't create a new character.
+            Fabula keeps all aliases and promotions tied to a single character in a live graph, so continuity stays intact across scripts.
+       
           </p>
           <p style="font-style: italic; color: var(--night-ink-2);">
-            Across seven seasons and 177 episodes of <em>TNG</em>: cross-season identity preserved on Worf.
+            Across seven seasons of <em>TNG</em>: Worf’s rank changes tracked as transitions—one character, not many.
+       
+          </p>
+          <p style="color: var(--night-ink-2); font-size: 0.94rem; margin-top: 1.2rem;">
+            The same logic works for any material. Cromwell's rise in <em>Wolf Hall</em>, Catherine Cawood's roles in <em>Happy Valley</em>, or Indiana Jones and Marion across decades—one entity per character, every alias and title resolved across productions.
+       
           </p>
         </div>
 
@@ -120,6 +137,44 @@
     </div>
   </section>
 
+  <!-- READABLE SYNTHESIS -->
+  <section class="section">
+    <div class="container">
+      <p class="section-mark">&sect; 02a — synthesis you'd actually circulate</p>
+      <h2 style="max-width: 32ch; margin-bottom: 1.5rem;">Coverage that updates with the draft, sourced to the line.</h2>
+      <div class="grid-2">
+        <div>
+          <p>
+            Most AI coverage tools summarise your script in one pass—useful for triage, but not for ongoing work. Any revision means starting over.
+          </p>
+          <p>
+            Fabula builds from the graph instead: episode synopses, season arcs, and character summaries all draw from structured events and cite script lines underneath. Update a draft and only the changed sections regenerate.
+          </p>
+          <p>
+            In development meetings, you get defensible prose: if someone asks <em>what changes about Cromwell between seasons?</em>, the answer traces back to the page.
+          </p>
+        </div>
+        <div>
+<pre class="console" data-lang="prose" data-path="fabula://synthesis/doctor-who/lethbridge-stewart">// Cross-series synthesis · Brigadier Lethbridge-Stewart
+// Composed from 13 Classic Who season profiles
+
+Elevated from Colonel commanding troops at Goodge Street Fortress
+to Brigadier overseeing UNIT's global operations, Lethbridge-Stewart
+evolved from disciplined pragmatist to wise institutional anchor;
+his arc traces from absolute faith in chain-of-command protocol to
+a measured trust in unconventional expertise, tempered by decades
+of impossible encounters and a drier, more resigned stance toward
+bureaucracy and time itself.
+
+// every clause traces back to the events that justify it,
+// down to the scene anchor and the line of script.
+// the per-episode and per-season layers underneath are queryable
+// in the same way; this paragraph is just the top of the stack.</pre>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <!-- AI BUILDERS section -->
   <section class="section section--paper2" id="ai">
     <div class="container">
@@ -127,34 +182,51 @@
       <div class="grid-2">
         <div>
           <h2 style="max-width: 22ch; margin-bottom: 1.5rem;">
-            If you're building over story, here is your retrieval target.
+            Building AI over stories? Here’s your retrieval target.
           </h2>
           <p>
-            Every result Fabula returns carries a confidence score and a pointer to the line of script that supports it. That's the bit most graph products skip, and it's what makes the data usable for any agent that has to cite its sources.
+            The Fabula graph has 25 node types, 44 relationships, and links every data point to its original script line. Events connect through 10 narrative relations—<span style="font-family:var(--mono); font-size:0.88em;">CAUSAL</span>, <span style="font-family:var(--mono); font-size:0.88em;">FORESHADOWING</span>, <span style="font-family:var(--mono); font-size:0.88em;">THEMATIC_PARALLEL</span>, <span style="font-family:var(--mono); font-size:0.88em;">CALLBACK</span>, <span style="font-family:var(--mono); font-size:0.88em;">ESCALATION</span>, and others. Each connection records its type, strength, and a short explanation—making story logic queryable in ways transcripts and embeddings alone can’t.
           </p>
           <p>
-            The hybrid graph-vector backend means you can ask <em>&ldquo;what episodes thematically parallel S2E14?&rdquo;</em> and <em>&ldquo;what is Picard's belief state in this scene?&rdquo;</em> with the same client. One does vector retrieval over scene embeddings; the other does a graph traversal over BDI states. The shape of the answer is the same.
+            Characters’ beliefs, goals, emotions, and states are tracked per event, not just in aggregate—so LLMs receive focused, sourced context for any question, not just raw transcripts. For GraphRAG: the Parquet loads directly into Neo4j, typed edges included. For data science: just open the Parquet in your notebook and start exploring.
           </p>
           <p style="color: var(--ink-2);">
-            Self-host the embeddings, self-host the graph, or use the API. Mix and match.
+            56 datasets live on the
+            <a href="https://huggingface.co/brandburner"><span style="font-family:var(--mono); font-size:0.92em;">brandburner</span></a>
+            org on Hugging Face &mdash; the full
+            <a href="https://huggingface.co/datasets/brandburner/doctorwho-mega-narrative-kg">Doctor Who megagraph</a>
+            (703 episodes), the
+            <a href="https://huggingface.co/datasets/brandburner/startrektng-mega-narrative-kg">TNG megagraph</a>,
+            the
+            <a href="https://huggingface.co/datasets/brandburner/westwing-mega-narrative-kg">West Wing megagraph</a>,
+            and per-series exports for
+            <a href="https://huggingface.co/datasets/brandburner/wolfhall-mega-narrative-kg">Wolf Hall</a>,
+            <a href="https://huggingface.co/datasets/brandburner/happyvalley2-mega-narrative-kg">Happy Valley</a>,
+            <a href="https://huggingface.co/datasets/brandburner/indianajones-s01-narrative-kg">Indiana Jones</a>,
+            <a href="https://huggingface.co/datasets/brandburner/dracula-s01-narrative-kg">Dracula</a>,
+            <a href="https://huggingface.co/datasets/brandburner/knivesout-s01-narrative-kg">Knives Out</a>, and
+            <a href="https://huggingface.co/datasets/brandburner/i-claudius-narrative-kg"><em>I, Claudius</em></a>.
+            Query the hosted Parquet directly via the Datasets Server (DuckDB / Polars / SQL), or download once and load into whatever stack you're running. There's no Fabula API to depend on; the graph is the artefact.
           </p>
         </div>
         <div>
-<pre class="console" data-lang="plain" data-path="fabula://api/query">$ curl https://api.fabula.productions/v1/query \
-    -H "Authorization: Bearer $FABULA_KEY" \
-    -d '{
-      "series": "the_west_wing",
-      "query": "scenes where Bartlet conceals the MS",
-      "include": ["bdi", "provenance", "connections"]
-    }'
+<pre class="console" data-lang="cypher" data-path="fabula://graphrag/the-west-wing">// GraphRAG retrieval · The West Wing · typed connections + provenance
 
-{
-  "results": 14,
-  "scenes": [...],
-  "latency_ms": 87,
-  "provenance_links": 14,
-  "avg_confidence": 0.93
-}</pre>
+MATCH (anchor:Event {scene_anchor: 'S2E14 · Act III'})
+      -[c:THEMATIC_PARALLEL|CALLBACK|EMOTIONAL_ECHO]-(echo:Event)
+      -[:OCCURS_IN]->(ep:Episode)
+RETURN ep.code              AS episode,
+       echo.scene_anchor    AS scene,
+       type(c)               AS connection,
+       c.strength            AS strength,
+       c.description         AS why,
+       echo.script_lines     AS provenance
+ORDER BY c.strength DESC;
+
+// One typed traversal returns the scenes an LLM should read to
+// answer "where else has the show set this up, and how did it pay
+// off?" — not via vector similarity, via the show's own narrative
+// architecture. Every row cites the script lines verbatim.</pre>
         </div>
       </div>
     </div>
@@ -164,43 +236,25 @@
   <section class="section">
     <div class="container">
       <p class="section-mark">&sect; 04 — what you get</p>
-      <h2 style="max-width: 22ch; margin-bottom: 2.5rem;">In practice, on a real show.</h2>
+      <h2 style="max-width: 26ch; margin-bottom: 2.5rem;">Production deliverables</h2>
 
       <div class="grid-3">
         <div>
-          <h3 style="margin-bottom: 0.8rem;">Story bible, generated</h3>
+          <h3 style="margin-bottom: 0.8rem;">Script breakdown, generated</h3>
           <p>
-            The bible comes out of the graph. Every character, every relationship, every fact, every reference, with episode citations. It refreshes after every new script lands.
+            Every scene returns a structured breakdown: characters, props, locations, vehicles, special action. With entity continuity, so a prop that appears in three episodes is one prop, not three. Refreshes whenever new pages land.
           </p>
         </div>
         <div>
-          <h3 style="margin-bottom: 0.8rem;">Continuity validation</h3>
+          <h3 style="margin-bottom: 0.8rem;">Character breakdowns for casting</h3>
           <p>
-            New draft in. Conflicts surfaced before the table read: <em>&ldquo;this line contradicts S2E14, scene 4.&rdquo;</em> Caught Friday, fixed Monday.
-          </p>
-        </div>
-        <div>
-          <h3 style="margin-bottom: 0.8rem;">Asset inventories</h3>
-          <p>
-            Every prop, location, costume, and reference, scoped by episode. Production design queries the graph instead of cross-referencing seventeen documents.
-          </p>
-        </div>
-        <div>
-          <h3 style="margin-bottom: 0.8rem;">Character breakdowns</h3>
-          <p>
-            Casting briefs come out of the graph. Every speaking line, every beat, every relationship turn, with full episode and scene citations.
-          </p>
-        </div>
-        <div>
-          <h3 style="margin-bottom: 0.8rem;">Precedent search</h3>
-          <p>
-            <em>&ldquo;Have we resolved a similar arc before?&rdquo;</em> Searchable across every episode the graph has ingested, including older shows you onboard later.
+            Casting briefs come out of the graph. Every speaking line, every beat, every relationship turn, with full episode and scene citations. The same record serves the costume designer's continuity questions later.
           </p>
         </div>
         <div>
           <h3 style="margin-bottom: 0.8rem;">Audit trail</h3>
           <p>
-            Every fact in the graph traces back to the line of script that produced it. The same provenance serves the writers' room, standards & practices, and legal.
+            Every fact in the graph traces back to the line of script that produced it. The same provenance serves production accounting, standards &amp; practices, and legal.
           </p>
         </div>
       </div>
@@ -213,8 +267,7 @@
       <p class="section-mark">&sect; 05 — underneath</p>
       <h2 style="max-width: 22ch; margin-bottom: 1.5rem;">Underneath: a context graph.</h2>
       <p style="color: var(--night-ink-2); max-width: 60ch;">
-        Everything above runs on the same graph platform AI builders use directly. The production-team interface is a thin layer over a system that's also exposed as an API and an export pipeline. If you want the engineering details, the platform page has them.
-      </p>
+        Everything above runs on the same graph platform AI builders use directly. The production-team interface is a thin layer over a system that can even be exposed as an API.
       <div class="ctas">
         <a class="cta" href="{% url 'v2_platform' %}">read the platform docs</a>
         <a class="cta cta--primary" href="mailto:hello@fabula.productions?subject=Pilot">start a pilot</a>

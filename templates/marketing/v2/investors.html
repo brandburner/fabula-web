@@ -7,13 +7,18 @@
 
   <section class="section hero">
     <div class="container">
+      <aside class="aside aside--float">
+        Netflix's 2024 <em>AI Breakdown Assistant</em> talk described an in-house build aimed at exactly this wedge. We've been building the cross-studio version of it for two years.
+      </aside>
       <p class="eyebrow">For investors</p>
       <h1 style="max-width: 22ch;">The reference graph for the largest industry that doesn't have one yet.</h1>
       <p class="hero__deck">
-        Bloomberg sits underneath finance. LexisNexis sits underneath law. Epic sits underneath healthcare. Each one is a canonical, queryable record that the workflow above it depends on. Television production has the workflow but not the record — continuity decisions still live in PDFs and a script supervisor's memory. We're building the record.
+        Finance has Bloomberg. Law has LexisNexis. Healthcare has Epic. Scripted production has the workflow, but not the record — so breakdowns happen manually and each department rebuilds the same data.
+   
       </p>
       <p class="hero__deck">
-        Fabula is the graph layer underneath script-based production: characters, events, beliefs, causal chains, and provenance, indexed across hundreds of episodes. Production teams use it to answer continuity questions in milliseconds. AI builders use it as a retrieval target. The same data, two markets, one architecture.
+        Fabula is the graph for script-based production: every character, location, and event is extracted, connected, and sourced from the script. Breakdowns are automatic, changes are tracked, and departments query what they need. One architecture, two markets.
+   
       </p>
       <div class="ctas">
         <a class="cta cta--primary" href="mailto:investors@fabula.productions?subject=Deck%20request">request the deck</a>
@@ -24,29 +29,35 @@
 
   <section class="section section--tight">
     <div class="container">
-<pre class="console" data-lang="json" data-path="fabula://canonical/tng/picard">// Canonical character synthesis · Star Trek TNG
+<pre class="console" data-lang="json" data-path="fabula://canonical/wolf-hall/cromwell">// Canonical character synthesis · Wolf Hall
 
 {
-  "canonical_name": "Jean-Luc Picard",
-  "title": "Captain",
-  "aliases": ["Locutus", "Captain Picard", "Jean-Luc Picard"],
-  "foundational_description": "Jean-Luc Picard captains the USS
-    Enterprise-D, leading Starfleet's flagship through galactic
-    threats. The Borg Collective assimilates him, designating him
-    Locutus as their human spokesperson to negotiate humanity's
-    surrender. Implants suppress his will, yet his core intellect
-    and loyalty to the crew endure. He shares command bonds with
-    First Officer Riker, Counselor Troi, Lieutenant Commander Data,
-    and Lieutenant Worf, drawing on resolve and strategic insight
-    to counter existential dangers.",
-  "foundational_traits": ["resilient", "resourceful", "loyal",
-    "strategic"],
-  "sphere_of_influence": "Starfleet Command",
+  "canonical_name": "Thomas Cromwell",
+  "title_role": "Secretary to the King",
+  "aliases": ["Cromwell", "Master Cromwell", "Crumb", "Cremuel",
+    "Young Thomas Cromwell", "Thomas Cromwell (Patriarch)"],
+  "foundational_description": "Thomas Cromwell, born the son of a
+    blacksmith, rises to become Henry VIII's chief minister and Earl
+    of Essex. A master strategist of the English Reformation, he
+    dissolves monasteries, engineers royal marriages (Anne of Cleves),
+    and advances evangelical reforms while navigating the volatile
+    Tudor court. His pragmatic intellect and political acumen allow
+    him to mentor loyal aides like Rafe Sadler and Thomas Wriothesley,
+    but his ambition and temper expose him to the perils of court
+    survival. Key rivals include the Duke of Norfolk, Bishop Gardiner,
+    and Princess Mary. His past loyalty to Cardinal Wolsey and
+    strategic silences further complicate his position amid shifting
+    royal whims and factional dangers.",
+  "foundational_traits": ["resilient", "astute", "pragmatic",
+    "calculating", "paternal", "protective"],
+  "sphere_of_influence": "Tudor court politics and diplomacy",
+  "appearance_count": 480,
+  "importance_tier": "anchor",
   "source_candidate_uuids": [
-    "cand_agent_scene_94cd_1",
-    "cand_agent_scene_94cd_5",
-    "cand_agent_scene_94df_2"
-    // ...46 more
+    "cand_agent_scene_03a1_1",
+    "cand_agent_scene_03a1_4",
+    "cand_agent_scene_0412_2"
+    // ...477 more
   ],
   "resolution_confidence": 1.0
 }</pre>
@@ -56,13 +67,13 @@
   <!-- THREE THESES -->
   <section class="section">
     <div class="container">
+      <aside class="aside aside--float aside--alt">
+        This might read like trend alignment, but the engineering decisions we made to solve continuity &mdash; stable identities, typed connections, per-event belief state, source provenance &mdash; happen to be exactly what each of these adjacent markets needs. We didn't pivot to fit them; the same graph fits.
+      </aside>
       <p class="section-mark">&sect; 01 — three theses, one company</p>
       <h2 style="max-width: 22ch; margin-bottom: 1rem;">Three investable categories. One product.</h2>
-      <p style="color: var(--ink-2); max-width: 60ch; margin-bottom: 1rem;">
+      <p style="color: var(--ink-2); max-width: 60ch; margin-bottom: 2rem;">
         Fabula is intelligible to investors looking at any of these three theses. The same engineering serves all three; we don't have to pick which one to be.
-      </p>
-      <p style="color: var(--ink-3); max-width: 60ch; margin-bottom: 2.5rem; font-style: italic;">
-        We're aware these read like trend alignment. The honest version: the engineering decisions we made to solve continuity — stable identities, typed connections, per-event belief state, source provenance — happen to be exactly what each of these adjacent markets needs. We didn't pivot to fit them; the same graph fits.
       </p>
 
       <div class="thesis">
@@ -70,7 +81,7 @@
           <h4>Thesis 01</h4>
           <h3>Context Graph</h3>
           <p>
-            Foundation Capital's late-2025 thesis on context graphs argued that the next layer of AI infrastructure is the graph that captures <em>why</em> a decision was made, not just what was decided. Fabula is that graph for the entertainment vertical.
+            <a href="https://foundationcapital.com/ideas/context-graphs-ais-trillion-dollar-opportunity">Foundation Capital's late-2025 thesis on context graphs</a> argued that the next layer of AI infrastructure is the graph that captures <em>why</em> a decision was made, not just what was decided. Fabula is that graph for the entertainment vertical.
           </p>
         </article>
         <article class="thesis__cell">
@@ -105,7 +116,7 @@
             The streaming platforms have invested heavily in catalogue knowledge graphs — titles, talent, genres, ratings. Those graphs power recommendation, discovery, and rights management. They are good at the questions a viewer or a programmer asks.
           </p>
           <p>
-            They cannot answer questions <em>inside</em> a single show. The catalogue knows that <em>The West Wing</em> stars Allison Janney; it does not know that her character was promoted to Press Secretary in S2E03. That second kind of knowledge is what a writers' room, a continuity supervisor, and a story-aware AI all need, and it's where Fabula sits.
+            They cannot answer questions <em>inside</em> a single script. The catalogue knows that <em>The West Wing</em> stars Allison Janney; it does not know that her character has 17 scenes in this draft, gained 3 since the last revision, and triggers two new locations the location department has not yet scouted. That second kind of knowledge is what a line producer, a 1st AD, a VFX coordinator, and a department head all need on the same morning, and it's where Fabula sits.
           </p>
           <p style="color: var(--ink-2); font-style: italic;">
             Catalogue graphs serve consumption. Story graphs serve production. They don't compete; they don't even ask the same questions.
@@ -175,10 +186,10 @@
 
       <div class="tam-strip" style="margin-top: 3rem; border-color: var(--night-rule);">
         <div style="border-color: var(--night-rule);">
-          <span class="label" style="color: var(--night-ink-3);">Today &middot; production</span>
+          <span class="label" style="color: var(--night-ink-3);">Today &middot; pre-production</span>
           <span class="num">$500M</span>
           <p style="color: var(--night-ink-2); margin: 0;">
-            Sized to script supervision, story bibles, and continuity software across active scripted production globally. We're selling into this market now.
+            Sized to script breakdown, draft comparison, and per-department production-planning tooling across active scripted production globally. Netflix's 2024 <em>AI Breakdown Assistant</em> talk is the public artefact of how seriously the largest buyer takes this wedge. We're selling the cross-studio version of it now: every department head gets their slice, every new draft produces a computable diff, every VFX bid starts from a typed inventory of shots rather than a PDF.
           </p>
         </div>
         <div style="border-color: var(--night-rule);">
@@ -199,34 +210,7 @@
     </div>
   </section>
 
-  <!-- MOAT -->
-  <section class="section">
-    <div class="container">
-      <p class="section-mark">&sect; 04 — what's hard to copy</p>
-      <h2 style="max-width: 22ch; margin-bottom: 2.5rem;">Three things any competitor would need to replicate.</h2>
 
-      <div class="grid-3">
-        <div>
-          <h3 style="margin-bottom: 0.8rem;">The pipeline</h3>
-          <p>
-            Ten months of compositional-extraction R&amp;D. 25 node labels, 44 relationship types, model-fallback logic, a per-step prompt library tuned by genre. Most of the difficulty is in the joins between steps; that's where the LLM-only approaches break.
-          </p>
-        </div>
-        <div>
-          <h3 style="margin-bottom: 0.8rem;">The corpus</h3>
-          <p>
-            Seven series, 800+ episodes, deliberately picked to cover the failure modes (regeneration, alias drift, dense ensemble, magic, deep flashback). The pipeline has been hardened against each of these. A new entrant rebuilding from scratch would have to repeat that breaking-and-fixing work.
-          </p>
-        </div>
-        <div>
-          <h3 style="margin-bottom: 0.8rem;">The position in the workflow</h3>
-          <p>
-            Built for the writers' room and the continuity-supervision step — that's where the canonical record gets built. Once a show is on Fabula, the canonical record <em>is</em> the Fabula graph. Switching cost compounds with episode count.
-          </p>
-        </div>
-      </div>
-    </div>
-  </section>
 
   <section class="section section--paper2">
     <div class="container">

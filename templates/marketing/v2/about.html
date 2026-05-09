@@ -13,10 +13,7 @@
         That's a hundred-year-old observation, not an accusation. The Russian formalists named the gap in 1925: <em>fabula</em> is what happened in the world of the story, <em>syuzhet</em> is the order in which the storyteller chose to reveal it. Every flashback exploits the gap. Every cold open assumes it.
       </p>
       <p class="hero__deck">
-        It's a useful distinction, and a hard one to encode. The system most tools build tracks one side — when the audience saw a thing. Fabula also tracks who knew it at that moment, who acted on it, and who carried it forward into the next scene.
-      </p>
-      <p class="hero__deck" style="font-style: italic; color: var(--ink-2);">
-        Why this matters in plain terms: when a writers' room asks <em>&ldquo;what does this character believe right now?&rdquo;</em> and a continuity supervisor asks <em>&ldquo;what has this character already done by this point?&rdquo;</em>, they're asking different questions of the same show. Most tools collapse them into one timeline of dialogue. We don't.
+        It's a useful distinction, and a hard one to encode. The system most tools build tracks one side &mdash; when the audience saw a thing. Fabula also tracks who knew it at that moment, who acted on it, and who carried it forward into the next scene.
       </p>
     </div>
   </section>
@@ -29,43 +26,51 @@
         <div>
           <h2 style="max-width: 22ch;">Every character a traversable arc.</h2>
           <p style="color: var(--night-ink-2); margin-top: 1.5rem;">
-            Where most tools collapse a show into one timeline of dialogue, Fabula gives every character (and every location, organisation, and persistent object) its own queryable journey. Every event the entity participates in carries that entity's state at that moment — for a character, that's beliefs, goals, emotional state, and what was observed in the scene.
+            Most tools give one timeline. Fabula gives every character (and every entity) their own, tracking state—beliefs, goals, emotions—at each event.
+       
           </p>
           <p style="color: var(--night-ink-2);">
-            A spine of psychological state runs down each character, anchored in the Episode &rarr; Act &rarr; Scene &rarr; Beat structure of the show. Cross-episode profiles synthesise role, dilemma, and key relationships per episode and per season; cross-season arcs roll up onto the canonical entity itself. That's how the Brigadier reads as one continuous person across thirteen seasons of <em>Doctor Who</em>.
+            A spine of psychological state runs down each character, anchored in the Episode &rarr; Act &rarr; Scene &rarr; Beat structure of the show. Cross-episode profiles synthesise role, dilemma, and key relationships per episode and per season; cross-season arcs roll up onto the canonical entity itself. That's how the Brigadier reads as one continuous person across thirteen seasons of <em>Doctor Who</em>, or how Thomas Cromwell carries one private set of loyalties across six episodes of <em>Wolf Hall</em> while wearing a different one in court. (Engineering detail: <a href="https://storygraph.substack.com/p/from-episodes-to-arcs-cross-episode" style="color: var(--night-ink-2);">how we roll episode profiles up into season profiles up into the canonical arc</a>.)
+          </p>
+          <p style="color: var(--night-ink-2);">
+            And because identity lives on the canonical entity rather than the show that introduced it, the spine extends past the boundary of any one production. Sarah Jane Smith picks up in <em>The Sarah Jane Adventures</em> as the same agent who left the TARDIS in 1976, with thirty years of belief and circumstance carried forward into a separate series in the same universe. Spin-offs, crossovers, and shared-universe sequels stop being a continuity problem and start being a graph traversal.
           </p>
           <p style="color: var(--night-ink-2); font-style: italic;">
-            &ldquo;What did Bartlet believe in this scene?&rdquo;<br/>
+            &ldquo;What did Cromwell believe in this scene?&rdquo;<br/>
             &ldquo;What had he done by this episode?&rdquo;<br/>
             &ldquo;What changed in him between this season and the next?&rdquo;<br/>
             Different operations. All answerable on the same per-entity arc.
           </p>
         </div>
         <div>
-<pre class="console console--inline" data-lang="json" data-path="fabula://arc/the-west-wing/s2/bartlet/e22">// Per-entity event participation · Bartlet · S2E22
+<pre class="console console--inline" data-lang="json" data-path="fabula://arc/wolf-hall/s1e01/cromwell">// Per-entity event participation · Cromwell · S1E01
 
 {
-  "agent": "President Josiah Bartlet",
-  "scene_anchor": "S2E22 · 'Two Cathedrals' · Act IV",
+  "agent": "Thomas Cromwell",
+  "scene_anchor": "S1E01 · York Place · Sc. 1 (the upper chamber)",
   "incarnation_identifier":
-    "as the President Concealing a Chronic Illness",
+    "as Wolsey's man, watching the storm",
   "beliefs_at_event": [
-    "The American people deserve honesty from their President",
-    "Disclosure now, while he controls the narrative,
-     is less damaging than disclosure later"
+    "Loyalty to Wolsey is a strategic necessity, but survival
+     in the court demands adaptability",
+    "The storm outside is a metaphor for the chaos within
+     the palace, and only the vigilant will thrive"
   ],
   "goals_at_event": [
-    "Reveal the MS diagnosis on his own terms before scandal",
-    "Protect Abbey from the fallout of the concealment"
+    "Assess the fragility of Wolsey's power and the shifting
+     dynamics of the court",
+    "Position himself to navigate the impending political
+     storm and secure his own future"
   ],
   "emotional_state_at_event":
-    "Resolute but conflicted, carrying the weight of public
-     deception against personal integrity",
+    "Stoic and calculating, with an undercurrent of quiet
+     determination; stillness masking a mind racing with
+     anticipation of the upheaval to come",
   "observed_status":
-    "Stands alone in the National Cathedral after Mrs.
-     Landingham's funeral; addresses the divine in Latin",
+    "Cloaked and motionless at the upper-chamber window,
+     back to the viewer, framed against rain-lashed York Place",
   "importance_to_event": "primary",
-  "season_arc_link": "agent_season_profile/wing/s2/bartlet"
+  "season_arc_link": "agent_season_profile/wolf-hall/s1/cromwell"
 }</pre>
         </div>
       </div>
@@ -76,9 +81,9 @@
   <section class="section">
     <div class="container">
       <p class="section-mark">&sect; 02 — we picked shows that would break us</p>
-      <h2 style="max-width: 22ch; margin-bottom: 2rem;">Five series. Five things we knew would break.</h2>
+      <h2 style="max-width: 22ch; margin-bottom: 2rem;">Four series. Four things we knew would break.</h2>
       <p style="color: var(--ink-2); max-width: 60ch; margin-bottom: 2.5rem;">
-        Most extraction systems demo on a single film with a small cast. We picked five long-running, structurally awkward shows and ran them through the pipeline knowing each one would expose a different failure. Then we fixed each failure. The table below is the catalogue of those.
+        Most extraction systems demo on a single film with a small cast. We picked four long-running, structurally awkward shows and ran them through the pipeline knowing each one would expose a different failure. Then we fixed each failure. The table below is the catalogue of those.
       </p>
 
       <table class="ledger">
@@ -88,8 +93,8 @@
         <tbody>
           <tr>
             <td>Doctor Who</td>
-            <td>Identity continuity</td>
-            <td>One canonical Doctor across seven actors and 26 seasons of Classic Who. Regeneration as a tracked transition on the same entity, not a new character.</td>
+            <td>Long-running ensemble identity</td>
+            <td>Brigadier Lethbridge-Stewart resolved as one canonical entity across thirteen seasons of Classic Who, despite rank changes, retirements, and multi-year gaps between appearances.</td>
           </tr>
           <tr>
             <td>Star Trek: TNG</td>
@@ -102,11 +107,6 @@
             <td>Dialogue-heavy ensemble where every relationship has a state. Typed edges. Per-event BDI. Mrs. Landingham reverberating across two seasons after her death works at all because of this.</td>
           </tr>
           <tr>
-            <td>Motherland: Fort Salem</td>
-            <td>Realist ontology</td>
-            <td>Magic that obeys consistent rules requires the graph to track world-internal physics. Soft constraints, hard contradictions.</td>
-          </tr>
-          <tr>
             <td>Indiana Jones</td>
             <td>Episode boundaries</td>
             <td>Not a series. Three films, decades apart. One entity graph spans them — the same Indy, the same Marion, the same Sallah, resolved across releases instead of treated as separate productions.</td>
@@ -115,7 +115,8 @@
       </table>
 
       <p style="color: var(--ink-2); max-width: 60ch; margin-top: 2.5rem; font-style: italic;">
-        We didn't pick easy material and call the system general. We picked material that would break a brittle system, and built one that didn't break on these shows. &ldquo;Didn't break&rdquo; means: ran end-to-end without human intervention, produced a queryable graph, survived a manual continuity audit on a sampled subset of episodes. Things still go wrong on a new show; we expect that, which is why the pipeline checkpoints and recovers instead of trusting first runs.
+        We chose shows that would break a brittle system, and built one that didn’t. That means it ran end-to-end, passed a manual check, and produced a usable graph — with pipeline checkpoints to handle the unexpected.
+   
       </p>
     </div>
   </section>
@@ -132,6 +133,9 @@
           <p class="belief__text">
             A story is a web of typed relationships. A spreadsheet is a list of rows. Pretending the second can do the job of the first is what produces story bibles that drift.
           </p>
+          <p class="belief__credit">
+            The &ldquo;web&rdquo; framing we owe to <a href="https://www.youtube.com/watch?v=Ttl6RyB2YDc">Paul Rissen</a>, whose work on the BBC's Mythology Engine and his subsequent <a href="https://medium.com/@r4isstatic/a-three-part-model-for-understanding-stories-d0933f4d7460">three-part model for understanding stories</a> sketched the shape of this argument a decade before we picked up the thread.
+          </p>
         </div>
         <div class="belief">
           <span class="belief__num">02.</span>
@@ -142,7 +146,7 @@
         <div class="belief">
           <span class="belief__num">03.</span>
           <p class="belief__text">
-            Hallucination is an engineering problem, not a fundamental one. Schema enforcement, provenance pointers, confidence scoring, and rejection on disagreement solve most of it. We won't claim it's solved — but the shape of the work is engineering, not prayer, and that's what lets a writers' room actually trust the answer.
+            Hallucination is an engineering problem, not a fundamental one. Schema enforcement, provenance pointers, confidence scoring, and rejection on disagreement solve most of it. We won't claim it's solved &mdash; but the shape of the work is engineering, not prayer, and that's what lets a continuity supervisor, a VFX bidder, or an LLM actually trust the answer.
           </p>
         </div>
       </div>
@@ -160,7 +164,7 @@
             Fabula is a small engineering group building one thing carefully. We came out of production, research, and infrastructure. We've watched too much television; we took good notes.
           </p>
           <p>
-            Most of what's worth reading is already published. Forty-eight datasets are public on <a href="https://huggingface.co/brandburner" style="font-family: var(--mono); font-size: 0.92em;">brandburner</a>. The catalog at <a href="{% url 'catalog' %}">/explore</a> is live. The platform docs are on this site. Read what's there first; we'll move faster when you do.
+            Most of what's worth reading is already published. Fifty-six datasets are public on <a href="https://huggingface.co/brandburner" style="font-family: var(--mono); font-size: 0.92em;">brandburner</a>. The catalog at <a href="{% url 'catalog' %}">/explore</a> is live. The platform docs are on this site. We also write about the engineering as we build it at <a href="https://storygraph.substack.com">storygraph.substack.com</a> &mdash; entries including <a href="https://storygraph.substack.com/p/the-graph-is-the-story">the graph is the story</a>, <a href="https://storygraph.substack.com/p/the-architecture-of-dramatic-irony">epistemic isolation</a>, <a href="https://storygraph.substack.com/p/community-detection-in-the-tardis">community detection in the TARDIS</a>, and <a href="https://storygraph.substack.com/p/teaching-a-knowledge-graph-to-learn">teaching a knowledge graph to learn from &ldquo;no.&rdquo;</a> Read what's there first; we'll move faster when you do.
           </p>
         </div>
         <div>

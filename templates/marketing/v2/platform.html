@@ -10,10 +10,7 @@
       <p class="eyebrow">The platform</p>
       <h1 style="max-width: 22ch;">Ask any question about your show. Get a sourced answer in milliseconds.</h1>
       <p class="hero__deck">
-        Underneath: 25 node labels, 44 relationship types, per-character belief and intention state recorded at every event — every character a traversable arc, with a pointer back to the line of script that produced each claim. Stress-tested across 800+ episodes.
-      </p>
-      <p class="hero__deck" style="font-style: italic; color: var(--ink-2);">
-        What that gets you: the questions you currently can't get answered — because they require rereading three seasons — become queries you can run between meetings.
+        Underneath: 25 node labels, 44 relationship types, per-character belief and intention state recorded at every event &mdash; every character a traversable arc, with a pointer back to the line of script that produced each claim. Stress-tested across 800+ episodes.
       </p>
       <div class="ctas">
         <a class="cta cta--primary" href="{% url 'catalog' %}">explore the live catalog</a>
@@ -45,42 +42,15 @@
   "confidence": 0.96
 }</pre>
       <p style="color: var(--ink-2); margin-top: 1.5rem; max-width: 64ch;">
-        Each <span style="font-family: var(--mono); font-size: 0.92em;">EventParticipation</span> records a character as they appear in <em>this scene</em>, not as a fixed dossier. The incarnation field marks how their public face differs from their canonical identity — in this case, a President hiding a diagnosis. With this in the graph, queries like <em>&ldquo;where do Bartlet's stated beliefs contradict his goals?&rdquo;</em> become a traversal, not a viewing.
+        Each <span style="font-family: var(--mono); font-size: 0.92em;">EventParticipation</span> shows a character's state in this scene. The incarnation marks how they differ from their core identity. With this, you can ask where Bartlet's beliefs and goals conflict&mdash;and the answer is just a graph traversal. We've written about why this layer matters in <a href="https://storygraph.substack.com/p/the-architecture-of-dramatic-irony">the architecture of dramatic irony</a> and <a href="https://storygraph.substack.com/p/the-doctors-doxastic-web">the doctor's doxastic web</a>.
       </p>
-    </div>
-  </section>
-
-  <!-- JUST THE RIGHT CONTEXT -->
-  <section class="section section--paper2">
-    <div class="container">
-      <p class="section-mark">&sect; 01 — context economy</p>
-      <h2 style="max-width: 26ch; margin-bottom: 1.5rem;">
-        The naive approach is to put the whole episode in the prompt.
-      </h2>
-      <p style="color: var(--ink-2); max-width: 60ch;">
-        It works, more or less. It also costs forty cents a call, gets slower as the show goes on, and hallucinates more the longer the context. Fabula sends each model call only the few thousand tokens it actually needs for that decision — which scenes are upstream, which entities are in play, which prior claims constrain this one. The numbers below are the result.
-      </p>
-
-      <table class="spec-table" style="margin-top: 2.5rem;">
-        <thead>
-          <tr><th>What</th><th>How much</th></tr>
-        </thead>
-        <tbody>
-          <tr><td>Per-call payload</td><td class="num">~2 KB <span style="color:var(--ink-3)">(vs. 50 KB+ for a full episode)</span></td></tr>
-          <tr><td>Token reduction on conflict preprocessing</td><td class="num">80%</td></tr>
-          <tr><td>Context reduction on entity synthesis</td><td class="num">98%</td></tr>
-          <tr><td>Fewer LLM harmonisation calls (smart pre-filter)</td><td class="num">72%</td></tr>
-          <tr><td>Candidate pairs eliminated before reaching an LLM</td><td class="num">99%</td></tr>
-          <tr><td>Cost per episode (cached re-run)</td><td class="num">~$0.01</td></tr>
-        </tbody>
-      </table>
     </div>
   </section>
 
   <!-- WORLD MODEL -->
   <section class="section section--dark" id="world-model">
     <div class="container">
-      <p class="section-mark">&sect; 02 — the world model layer</p>
+      <p class="section-mark">&sect; 01 — the world model layer</p>
       <h2 style="max-width: 22ch;">A graph that tracks state, not text.</h2>
       <div class="grid-2" style="margin-top: 2.5rem;">
         <div>
@@ -123,10 +93,57 @@
     </div>
   </section>
 
+  <!-- UNIVERSAL BY CONSTRUCTION -->
+  <section class="section section--paper2">
+    <div class="container">
+      <p class="section-mark">&sect; 01a — universal by construction</p>
+      <h2 style="max-width: 30ch; margin-bottom: 1.5rem;">Works on a show the model has never heard of.</h2>
+      <div class="grid-2">
+        <div>
+          <p>
+            The schema was designed before any show was loaded, and it's the same schema for every show that's gone through since &mdash; no per-series fine-tune, no genre-specific config, no &ldquo;this works because the model has already read the Wikipedia article.&rdquo; Every model call gets only the narrative evidence presented in context: excerpts of script, prior graph state, the shape of the question. The judgement is forced onto what's on the page.
+          </p>
+          <p>
+            That matters in two directions. For an unaired pilot, a niche drama in a language with no English-language coverage, or any show the model couldn't possibly know &mdash; the system performs the same as it does on <em>TNG</em>. For high-profile IP that <em>is</em> in training data &mdash; the model can't quietly lean on what it remembers from the internet. Either a claim is justified by the lines of script Fabula handed it, or it isn't.
+          </p>
+          <p>
+            The entity adjudicator works the same way. When it has to decide whether two similarly-named characters are the same person, it reads the lines around each, looks at graph state for both, and writes a paragraph of reasoning. If the evidence is ambiguous, it keeps them separate and flags it for review. It does not infer from training-data familiarity. (We've written about the design of this loop at length: <a href="https://storygraph.substack.com/p/teaching-a-knowledge-graph-to-learn">teaching a knowledge graph to learn from &ldquo;no.&rdquo;</a>)
+          </p>
+        </div>
+        <div>
+<pre class="console console--inline" data-lang="json" data-path="fabula://adjudicate/keep-separate">// Entity adjudication · evidence-only reasoning
+
+{
+  "decision": "KEEP_SEPARATE",
+  "confidence": 0.98,
+  "reasoning":
+    "The source entity ('Enterprise Crew's First Magma
+     Pocket Lights') is a portable light source deployed
+     inside the First Magma Pocket. The target entity
+     ('Enterprise Engineering Emergency Lights') is a
+     fixed, embedded lighting system in Engineering that
+     activates during a warp core malfunction. These are
+     distinct entities serving different functional and
+     narrative roles in separate contexts.",
+  "distinguishing_features": [
+    "Portable and manually deployed by the crew",
+    "Used during a plasma infusion mission",
+    "Symbolically isolates characters and heightens tension"
+  ]
+}
+
+// every word of the reasoning derives from the script
+// lines handed to the model in context; nothing comes
+// from its general knowledge of TNG.</pre>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <!-- RUNS FOR DAYS -->
   <section class="section">
     <div class="container">
-      <p class="section-mark">&sect; 03 — at scale</p>
+      <p class="section-mark">&sect; 02 — at scale</p>
       <h2 style="max-width: 18ch; margin-bottom: 1rem;">Runs for days. Doesn't fall over.</h2>
       <p style="color: var(--ink-2); max-width: 60ch; margin-bottom: 2rem;">
         &ldquo;Failures&rdquo; below means episodes that exited the run unfinished or with corrupt graph state. Retried-and-recovered model calls aren't counted as failures — those are normal; we expect them. The point is that none of these runs needed a human to step in and restart it.
@@ -149,7 +166,7 @@
 
       <p style="margin-top: 2rem; color: var(--ink-2); max-width: 60ch;">
         Atomic checkpointing after every episode. Three-level error recovery.
-        Bounded async concurrency. Circuit breakers with model fallback.
+        Bounded async concurrency. Circuit breakers with model fallback. Throughput sits at roughly twenty minutes of wall-clock per twenty-five-minute Classic <em>Doctor Who</em> episode &mdash; faster on simpler half-hours, slower on dense hour-longs &mdash; which is mostly a function of keeping each per-call context tight. (We wrote up the work that got us there: <a href="https://storygraph.substack.com/p/from-5-hours-to-83-minutes-speeding">from five hours to 83 minutes</a>.)
       </p>
     </div>
   </section>
@@ -157,15 +174,21 @@
   <!-- MODEL AGNOSTIC -->
   <section class="section section--dark">
     <div class="container">
-      <p class="section-mark">&sect; 04 — model selection</p>
+      <p class="section-mark">&sect; 03 — model selection</p>
       <div class="grid-2">
         <div>
-          <h2 style="max-width: 18ch;">Each step picks its own model.</h2>
+          <h2 style="max-width: 18ch;">The best model for each job.</h2>
           <p style="color: var(--night-ink-2); margin-top: 1.5rem;">
             Different parts of the pipeline have different shapes of failure. Scene decomposition is mostly structural and runs cheaply on Flash. Entity adjudication needs better judgement and runs on Sonnet, with a fallback to GPT-4 when Sonnet's confidence drops below threshold. Theme analysis runs on whichever model produces the most useful output for that show — we benchmark per-genre.
           </p>
           <p style="color: var(--night-ink-2);">
-            Because the prompt for each step gets a tight, engineered context rather than the whole episode, the cheaper models do well at their job. The expensive ones only run where they earn it.
+            Because the prompt for each step gets a tight, engineered context rather than the whole episode, the cheaper models do well at their job. The expensive ones only run where they earn it. (More on what happens after the model returns, in <a href="https://storygraph.substack.com/p/after-the-parse-post-processing-as" style="color: var(--night-ink-2);">post-processing as ontology maintenance</a>.)
+          </p>
+          <p style="color: var(--night-ink-2);">
+            The same property that lets cheap cloud models pass — small focused tasks, small focused payloads — lets <em>local</em> open-weight models stand in. For studios whose unfilmed scripts can't leave the building, any step in the pipeline can be pointed at a Llama, Mistral, or Qwen model running on-prem. The schema doesn't change; the audit trail doesn't change; the only thing that changes is where the inference happens.
+          </p>
+          <p style="color: var(--night-ink-2);">
+            And it's the same property that lets the platform compound with the field. Models ship every few weeks; one of them is going to be sharper at scene segmentation, another better at disambiguating which <em>John</em> walked into the room, another better at writing a per-episode synopsis a human will actually read. Each of those upgrades is a config line, not a rewrite — schema unchanged, audit trail unchanged, the extractions and linkages and prose all tighter than the run before. Designing for the next model is how a system avoids dating itself to the one it shipped on.
           </p>
         </div>
         <div>
@@ -188,7 +211,14 @@ bdi_extraction:
 theme_analysis:
   model:    gemini-2.5-pro
   context:  ~2.0KB
-  cost:     $0.0034 / call</pre>
+  cost:     $0.0034 / call
+
+# offline mode — same schema, same audit trail
+# any step can be pointed at a local open-weight model:
+# entity_adjudication:
+#   model:    llama-3.1-70b-instruct (local)
+#   runtime:  on-prem GPU
+#   cost:     $0.00 / call</pre>
         </div>
       </div>
     </div>
@@ -197,7 +227,7 @@ theme_analysis:
   <!-- WALLED GARDEN / RAILWAY -->
   <section class="section section--paper2" id="exports">
     <div class="container">
-      <p class="section-mark">&sect; 05 — open by default</p>
+      <p class="section-mark">&sect; 04 — open by default</p>
       <h2 style="max-width: 22ch; margin-bottom: 1.5rem;">
         The catalogue graphs are private. The story graph shouldn't be.
       </h2>
@@ -209,12 +239,15 @@ theme_analysis:
           <p>
             The graph <em>inside</em> the show is different. It's reference material. Production teams need to be able to take it with them between studios. AI builders need to be able to retrieve from it with their own infrastructure. Game studios need to be able to bulk-export it into their own pipelines. So Fabula's data leaves the platform, in formats people already use: Parquet for analytics, Cypher for Neo4j, plain JSON for everything else.
           </p>
-          <p style="font-style: italic; color: var(--ink-2);">
-            Why openness, in plain economic terms: the value compounds when the same graph powers a writers'-room query, a chatbot's retrieval, and a game's canon export. Lock it in and that compounding stops at our user count. Let it out and the network of teams using it grows the dataset itself.
-          </p>
           <p>
-            Forty-eight datasets are already published openly under
-            <a href="https://huggingface.co/brandburner" style="font-family: var(--mono); font-size: 0.92em;">brandburner</a> on Hugging Face. The example below is the export command that produced one of them.
+            Fifty-six datasets are already published openly under
+            <a href="https://huggingface.co/brandburner" style="font-family: var(--mono); font-size: 0.92em;">brandburner</a> on Hugging Face &mdash; including the
+            <a href="https://huggingface.co/datasets/brandburner/doctorwho-mega-narrative-kg">Doctor Who megagraph</a>
+            (703 episodes, 337,795 relationships) and per-series megagraphs for
+            <a href="https://huggingface.co/datasets/brandburner/startrektng-mega-narrative-kg">TNG</a>,
+            <a href="https://huggingface.co/datasets/brandburner/westwing-mega-narrative-kg">The West Wing</a>,
+            <a href="https://huggingface.co/datasets/brandburner/wolfhall-mega-narrative-kg">Wolf Hall</a>, and
+            <a href="https://huggingface.co/datasets/brandburner/happyvalley2-mega-narrative-kg">Happy Valley</a>. The example below is the export command that produced one of them.
           </p>
         </div>
         <div>
