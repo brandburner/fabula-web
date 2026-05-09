@@ -1026,6 +1026,11 @@ class ScopedGraphMixin:
     """
     template_name = 'narrative/graph_view.html'
 
+    # Cross-season scopes (character, theme, location, etc.) gate to one
+    # season at a time so big megagraphs don't time out the request.
+    # Single-scope views (one episode, one event) override to False.
+    season_scopable = True
+
     def get_graph_title(self):
         """Override in subclasses to provide a descriptive title."""
         return "Narrative Graph"
@@ -1037,6 +1042,40 @@ class ScopedGraphMixin:
     def get_events_queryset(self):
         """Override to return the filtered events for this scope."""
         raise NotImplementedError
+
+    def _apply_season_gate(self, events):
+        """
+        Compute the available seasons from `events`, pick a selected season
+        (from ?season=N or the lowest available), and return:
+          (filtered_events, available_seasons, selected_season)
+
+        `available_seasons` is a list of {'number': N, 'count': M} dicts so the
+        template can render a selector with per-season event counts.
+        """
+        season_stats = list(
+            events.values('episode__season_number')
+            .annotate(count=models.Count('pk'))
+            .order_by('episode__season_number')
+        )
+        available_seasons = [
+            {'number': s['episode__season_number'], 'count': s['count']}
+            for s in season_stats
+            if s['episode__season_number'] is not None
+        ]
+        season_numbers = [s['number'] for s in available_seasons]
+
+        requested = self.request.GET.get('season')
+        if requested and requested.isdigit() and int(requested) in season_numbers:
+            selected_season = int(requested)
+        elif season_numbers:
+            selected_season = season_numbers[0]
+        else:
+            selected_season = None
+
+        if selected_season is not None:
+            events = events.filter(episode__season_number=selected_season)
+
+        return events, available_seasons, selected_season
 
     def build_graph_data(self, events):
         """
@@ -1329,6 +1368,15 @@ class ScopedGraphMixin:
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
         events = self.get_events_queryset()
+
+        if self.season_scopable:
+            events, available_seasons, selected_season = self._apply_season_gate(events)
+            context['available_seasons'] = available_seasons
+            context['selected_season'] = selected_season
+        else:
+            context['available_seasons'] = []
+            context['selected_season'] = None
+
         # Serialize to JSON string for safe JavaScript embedding
         context['graph_data'] = json.dumps(self.build_graph_data(events))
         context['graph_title'] = self.get_graph_title()
@@ -1343,6 +1391,7 @@ class EpisodeGraphView(FlexibleIdentifierMixin, ScopedGraphMixin, DetailView):
     Uses flexible identifier lookup (fabula_uuid or pk - episodes don't have global_id).
     """
     model = EpisodePage
+    season_scopable = False
 
     def get_graph_title(self):
         episode = self.get_object()
@@ -1495,6 +1544,7 @@ class EventGraphView(FlexibleIdentifierMixin, ScopedGraphMixin, DetailView):
     Uses flexible identifier lookup (global_id, fabula_uuid, or pk).
     """
     model = EventPage
+    season_scopable = False
 
     def get_graph_title(self):
         return f"Event: {_clean_title(self.get_object().title)}"

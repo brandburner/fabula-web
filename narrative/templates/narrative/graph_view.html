@@ -89,6 +89,21 @@
             <div class="text-xs text-slate-500">Edges</div>
         </div>
     </div>
+    {% if available_seasons|length > 1 %}
+    <div class="border-t border-slate-700/50 pt-3 mb-3">
+        <div class="stats-toggle-label text-xs text-slate-500 mb-2">Season:</div>
+        <div class="stats-toggles flex flex-wrap gap-1.5">
+            {% for season in available_seasons %}
+            <a href="?season={{ season.number }}"
+               class="node-toggle {% if season.number == selected_season %}active{% endif %}"
+               style="--toggle-color: #94a3b8;"
+               title="Season {{ season.number }} &middot; {{ season.count }} events">
+                S{{ season.number }}
+            </a>
+            {% endfor %}
+        </div>
+    </div>
+    {% endif %}
     <div class="border-t border-slate-700/50 pt-3">
         <div class="stats-toggle-label text-xs text-slate-500 mb-2">Show/Hide:</div>
         <div class="stats-toggles flex flex-wrap gap-2">
