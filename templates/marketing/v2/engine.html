@@ -7,10 +7,10 @@
 
   <section class="section hero">
     <div class="container">
-      <p class="eyebrow">The engine</p>
-      <h1 style="max-width: 22ch;">Ask any question about your show. Get a sourced answer in milliseconds.</h1>
+      <p class="eyebrow">Behind the scenes</p>
+      <h1 style="max-width: 22ch;">Ask your show a question. Get the line that answers it.</h1>
       <p class="hero__deck">
-        Underneath: 25 node labels, 44 relationship types, per-character belief and intention state recorded at every event &mdash; every character a traversable arc, with a pointer back to the line of script that produced each claim. Stress-tested across 800+ episodes.
+        Fabula turns your script archive into <em>connected canon</em>: a living show bible that remembers the line, the motivation, the object, the relationship, and the consequence — then traces every answer back to the page. It comes pre-tested across 800+ episodes of continuity-supervisor nightmare fuel.
       </p>
       <div class="ctas">
         <a class="cta cta--primary" href="{% url 'catalog' %}">explore the live catalog</a>
@@ -50,27 +50,25 @@
   <!-- WORLD MODEL -->
   <section class="section section--dark" id="world-model">
     <div class="container">
-      <p class="section-mark">&sect; 01 — the world model layer</p>
-      <h2 style="max-width: 22ch;">A graph that tracks state, not text.</h2>
+      <p class="eyebrow">Rashomon for databases</p>
+      <h2 style="max-width: 22ch;">A graph that tracks state, not strings.</h2>
       <div class="grid-2" style="margin-top: 2.5rem;">
         <div>
           <p>
-            What an LLM does well &mdash; predicting plausible next tokens &mdash; is not what a script supervisor needs. A script supervisor needs to know what is true in the show right now, and what was true three episodes ago, and what each character knew when they made a decision.
+            LLMs can improv the next line, but a writer’s room needs to know what’s *actually true* in the story right now. Who knew what, when? What did they believe? You can’t trust a language model to keep track of a decade of canon. Fabula never tries. Instead, it builds a structured, auditable scaffold from the ground up.
           </p>
           <p>
-            There's a second mismatch underneath the first. Long-context LLMs lose accuracy as the input grows: facts in the middle get forgotten, claims at the start get contradicted by claims at the end, and there is no audit trail when they do. Asking one model call to keep a hundred episodes straight is a reliability problem, not a feasibility problem. The whole engine is shaped around never asking that question.
+            Long-context LLMs grow unreliable as input expands: middle facts are lost, earlier claims contradicted, and there’s no audit trail. Relying on a single model call to “remember” a hundred episodes is not just hard—it's fundamentally unstable. Fabula solves this by never asking the model to do it.
           </p>
           <p>
-            Where most tools collapse a show into a single timeline of dialogue, Fabula gives every character, location, organisation, and object a queryable journey. Every event a character participates in carries that character's beliefs, goals, and emotional state at that moment — a stack of psychological states down each character's spine, all anchored in the Episode &rarr; Act &rarr; Scene &rarr; Beat structure of the show.
+            Most tools flatten a show to a single timeline of dialogue. Fabula goes deeper: every character, location, group &mdash; and every <a href="https://fabula.productions/explore/the-adventures-of-indiana-jones/objects/object_0a803b809f3e/" target="_blank" rel="noopener">Ark of the Covenant</a> &mdash; gets a traversable journey. Each event logs the participant&rsquo;s beliefs, goals, and emotional state at that moment, mapped to the Episode &rarr; Act &rarr; Scene &rarr; Beat structure.
           </p>
           <p style="font-style: italic;">
-            &ldquo;What did Bartlet believe when he made this decision?&rdquo;<br/>
-            &ldquo;What had he done by this point in the season?&rdquo;<br/>
-            &ldquo;What changed in him between this season and the next?&rdquo;
+            &ldquo;What did Bartlet believe here?&rdquo;<br/>
+            &ldquo;Where was he in his journey this season?&rdquo;<br/>
+            &ldquo;What changed between seasons?&rdquo;
           </p>
-          <p>
-            Different operations. All answerable on the same per-entity arc.
-          </p>
+          <p>All of these are easy to query directly from the per-entity arc.</p>
         </div>
         <div>
 <pre class="console console--inline" data-lang="json" data-path="fabula://schema/labels">// Schema · 25 node labels, 44 relationship types
@@ -99,80 +97,69 @@
   <!-- UNIVERSAL BY CONSTRUCTION -->
   <section class="section section--paper2">
     <div class="container">
-      <p class="section-mark">&sect; 01a — universal by construction</p>
-      <h2 style="max-width: 30ch; margin-bottom: 1.5rem;">Works on a show the model has never heard of.</h2>
+      <p class="eyebrow">any genre, any era</p>
+      <h2 style="max-width: 30ch; margin-bottom: 1.5rem;">Even for the pilot that never aired.</h2>
       <div class="grid-2">
         <div>
           <p>
-            The schema was designed before any show was loaded, and it's the same schema for every show that's gone through since &mdash; no per-series fine-tune, no genre-specific config, no &ldquo;this works because the model has already read the Wikipedia article.&rdquo; Every model call gets only the narrative evidence presented in context: excerpts of script, prior graph state, the shape of the question. The judgement is forced onto what's on the page.
+            Universality (dare we say *multiversality*?) wasn't an afterthought—it was the only way to survive our own development hell. We built it to handle the show that changes showrunners every season, the pilot that gets rewritten seven times and still doesn't get picked up, the feature film with twelve credited writers. Its ontology doesn't care about your drama; it cares about the drama *in the script*.
           </p>
           <p>
-            That matters in two directions. For an unaired pilot, a niche drama in a language with no English-language coverage, or any show the model couldn't possibly know &mdash; the system performs the same as it does on <em>TNG</em>. For high-profile IP that <em>is</em> in training data &mdash; the model can't quietly lean on what it remembers from the internet. Either a claim is justified by the lines of script Fabula handed it, or it isn't.
+            Whether it’s a blockbuster franchise or that trunk script you're still developing, Fabula works the same. The model can’t rely on internet memory or training data—each call gets exactly the context needed: script, graph, schema. It has to play the scene as written.
           </p>
           <p>
-            The entity adjudicator works the same way. When it has to decide whether two similarly-named characters are the same person, it reads the lines around each, looks at graph state for both, and writes a paragraph of reasoning. If the evidence is ambiguous, it keeps them separate and flags it for review. It does not infer from training-data familiarity. (We've written about the design of this loop at length: <a href="https://storygraph.substack.com/p/teaching-a-knowledge-graph-to-learn">teaching a knowledge graph to learn from &ldquo;no.&rdquo;</a>)
+            Same with our entity-resolving LLM judges—adjudication based on just the facts, never guesswork. When entities have similar names, the model checks script lines and each graph footprint, then explains its reasoning like a script supervisor. If the evidence is unclear, it keeps them separate and flags for review. No assumptions, just citations. (<a href="https://storygraph.substack.com/p/teaching-a-knowledge-graph-to-learn">More details: teaching a knowledge graph to learn from &ldquo;no.&rdquo;</a>)
           </p>
         </div>
         <div>
-<pre class="console console--inline" data-lang="json" data-path="fabula://adjudicate/keep-separate">// Entity adjudication · evidence-only reasoning
+<pre class="console console--inline" data-lang="json" data-path="fabula://adjudicate/wolf-hall/merge">// Entity adjudication · Wolf Hall · MERGE
 
 {
-  "decision": "KEEP_SEPARATE",
-  "confidence": 0.98,
+  "decision": "MERGE",
+  "confidence": 0.94,
   "reasoning":
-    "The source entity ('Enterprise Crew's First Magma
-     Pocket Lights') is a portable light source deployed
-     inside the First Magma Pocket. The target entity
-     ('Enterprise Engineering Emergency Lights') is a
-     fixed, embedded lighting system in Engineering that
-     activates during a warp core malfunction. These are
-     distinct entities serving different functional and
-     narrative roles in separate contexts.",
-  "distinguishing_features": [
-    "Portable and manually deployed by the crew",
-    "Used during a plasma infusion mission",
-    "Symbolically isolates characters and heightens tension"
+    "The source entity ('Master Cromwell') and target entity
+     ('Crumb') both refer to a man addressed by Cardinal
+     Wolsey's household and the King's privy chamber across
+     the same scenes; both are described as Wolsey's lawyer
+     turned royal fixer; their script footprints overlap on
+     the same locations and interlocutors in S1E01 and S1E02.
+     'Crumb' reads as a deliberate diminutive used by hostile
+     courtiers, not a separate person.",
+  "merged_aliases": [
+    "Master Cromwell",
+    "Crumb",
+    "Cremuel",
+    "Thomas Cromwell"
   ]
 }
 
 // every word of the reasoning derives from the script
 // lines handed to the model in context; nothing comes
-// from its general knowledge of TNG.</pre>
+// from training-data knowledge of Tudor history.</pre>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- RUNS FOR DAYS -->
+  <!-- RUNS UNATTENDED -->
   <section class="section">
     <div class="container">
-      <p class="section-mark">&sect; 02 — at scale</p>
-      <h2 style="max-width: 18ch; margin-bottom: 1rem;">Runs for days. Doesn't fall over.</h2>
-      <p style="color: var(--ink-2); max-width: 60ch; margin-bottom: 2rem;">
-        &ldquo;Failures&rdquo; below means episodes that exited the run unfinished or with corrupt graph state. Retried-and-recovered model calls aren't counted as failures — those are normal; we expect them. The point is that none of these runs needed a human to step in and restart it.
+      <p class="eyebrow">shoot day</p>
+      <h2 style="max-width: 22ch; margin-bottom: 1rem;">The engine drives the model, not the other way around.</h2>
+      <p style="color: var(--ink-2); max-width: 60ch; margin-bottom: 1.5rem;">
+        A 26-episode season is a cron job. The shell script below processed <a href="https://fabula.productions/explore/doctor-who/"><em>Doctor Who</em></a> Season 20 end-to-end and unattended &mdash; twenty-two episodes, six writers, every entity reconciled against everything in the prior nineteen seasons:
       </p>
 
-      <table class="spec-table">
-        <thead>
-          <tr><th>Series</th><th>Episodes</th><th>Duration</th><th>Failures</th><th>Notes</th></tr>
-        </thead>
-        <tbody>
-          <tr><td>Star Trek: TNG</td><td class="num">177</td><td class="num">~430 hr</td><td class="num">0</td><td>seven seasons, alias-heavy</td></tr>
-          <tr><td>The West Wing</td><td class="num">154</td><td class="num">~370 hr</td><td class="num">0</td><td>relationship density stress test</td></tr>
-          <tr><td>Doctor Who</td><td class="num">300+</td><td class="num">classic + new</td><td class="num">0</td><td>26 seasons, identity continuity</td></tr>
-          <tr><td>Wolf Hall</td><td class="num">12</td><td class="num">~28 hr</td><td class="num">0</td><td>historical, dense ensemble</td></tr>
-          <tr><td>Happy Valley</td><td class="num">18</td><td class="num">~16 hr</td><td class="num">0</td><td>realist ontology</td></tr>
-          <tr><td>Indiana Jones</td><td class="num">5</td><td class="num">~10 hr</td><td class="num">0</td><td>cinematic time, flashbacks</td></tr>
-          <tr><td>Motherland: Fort Salem</td><td class="num">30</td><td class="num">~22 hr</td><td class="num">0</td><td>realist-fantastical hybrid</td></tr>
-        </tbody>
-      </table>
+<pre class="console" data-lang="plain" data-chrome="off">$ SERIES_ID=doctorwho SEASON_NUMBER=20 PROCESSING_MODE=full_async \
+    python -m app.scripts.batch_process \
+    --config config/batch_configs/doctorwho_s20.json</pre>
 
-      <p style="margin-top: 2rem; color: var(--ink-2); max-width: 60ch;">
-        What lets these runs hold their accuracy across hundreds of episodes is also what lets them hold their cost: no single model call ever sees more than a couple of kilobytes of carefully assembled context. Whole-show coherence lives in the graph, not in any prompt. Each step is small, the model does a small thing well, and the audit trail accumulates underneath. There is no megaprompt to drift inside.
+      <p style="color: var(--ink-2); max-width: 60ch; margin-top: 1.5rem;">
+        Started Tuesday evening. Picked up a completed graph for the entire season Wednesday lunchtime. No babysitting.
       </p>
       <p style="color: var(--ink-2); max-width: 60ch;">
-        Atomic checkpointing after every episode. Three-level error recovery.
-        Bounded async concurrency. Circuit breakers with model fallback. Throughput sits at roughly twenty minutes of wall-clock per twenty-five-minute Classic <em>Doctor Who</em> episode &mdash; faster on simpler half-hours, slower on dense hour-longs &mdash; which is mostly a function of keeping each per-call context tight. (We wrote up the work that got us there: <a href="https://storygraph.substack.com/p/from-5-hours-to-83-minutes-speeding">from five hours to 83 minutes</a>.)
+        Fabula runs the pipeline. Models are called only for a precise task, bound to a strict schema, never allowed to wander. The engine handles all the heavy lifting: it builds context, manages caching, guarantees stable identifiers (no hallucinated UUIDs), and always routes calls to the right model. Failures are rerouted or logged—never allowed to halt a run. Every result is checked and saved instantly; nothing waits for a risky end-of-batch commit. Crash partway through? Previous episodes are already locked down. Fabula's deterministic harness keeps AI disciplined, reliable, and grounded.
       </p>
     </div>
   </section>
@@ -180,21 +167,21 @@
   <!-- MODEL AGNOSTIC -->
   <section class="section section--dark">
     <div class="container">
-      <p class="section-mark">&sect; 03 — model selection</p>
+      <p class="eyebrow">casting</p>
       <div class="grid-2">
         <div>
-          <h2 style="max-width: 18ch;">The best model for each job.</h2>
+          <h2 style="max-width: 18ch;">Best model for each job.</h2>
           <p style="color: var(--night-ink-2); margin-top: 1.5rem;">
-            Different parts of the pipeline have different shapes of failure. Scene decomposition is mostly structural and runs cheaply on Flash. Entity adjudication needs better judgement and runs on Sonnet, with a fallback to GPT-4 when Sonnet's confidence drops below threshold. Theme analysis runs on whichever model produces the most useful output for that show — we benchmark per-genre.
+            Each pipeline step gets the LLM most suited to its task. Structural scenes run fast and cheap on Gemini Flash; while Sonnet is a reliable judge, with GPT 5 Mini as backup. Each request includes a tailored context dossier with all the  evidence needed for a grounded answer.
           </p>
           <p style="color: var(--night-ink-2);">
-            Because the prompt for each step gets a tight, engineered context rather than the whole episode, the cheaper models do well at their job. The expensive ones only run where they earn it. (More on what happens after the model returns, in <a href="https://storygraph.substack.com/p/after-the-parse-post-processing-as" style="color: var(--night-ink-2);">post-processing as ontology maintenance</a>.)
+            Small, focused prompts mean cheaper models can handle most work, while expensive ones step in only when truly needed. (<a href="https://storygraph.substack.com/p/after-the-parse-post-processing-as" style="color: var(--night-ink-2);">More: post-processing as ontology maintenance</a>.)
           </p>
           <p style="color: var(--night-ink-2);">
-            The same property that lets cheap cloud models pass — small focused tasks, small focused payloads — lets <em>local</em> open-weight models stand in. For studios whose unfilmed scripts can't leave the building, any step in the pipeline can be pointed at a Llama, Mistral, or Qwen model running on-prem. The schema doesn't change; the audit trail doesn't change; the only thing that changes is where the inference happens.
+            The same structure lets local open-weight models stand in anywhere. If scripts must stay on-premise, point a step at Llama, Mistral, or Qwen—schema and audit trail stay identical; only the inference location changes.
           </p>
           <p style="color: var(--night-ink-2);">
-            And it's the same property that lets the engine compound with the field. Models ship every few weeks; one of them is going to be sharper at scene segmentation, another better at disambiguating which <em>John</em> walked into the room, another better at writing a per-episode synopsis a human will actually read. Each of those upgrades is a config line, not a rewrite — schema unchanged, audit trail unchanged, the extractions and linkages and prose all tighter than the run before. Designing for the next model is how a system avoids dating itself to the one it shipped on.
+            Model upgrades are easy: new models slot in for any task with a config change &mdash; no disruptions, no legacy baggage. Schema and audit log stay stable, so the system keeps moving forward.
           </p>
         </div>
         <div>
@@ -207,7 +194,7 @@ entity_adjudication:
   model:    claude-sonnet-4
   context:  ~2.4KB
   cost:     $0.0042 / call
-  fallback: gpt-4o
+  fallback: gpt-5-mini
 
 bdi_extraction:
   model:    claude-sonnet-4
@@ -233,27 +220,25 @@ theme_analysis:
   <!-- WALLED GARDEN / RAILWAY -->
   <section class="section section--paper2" id="exports">
     <div class="container">
-      <p class="section-mark">&sect; 04 — open by default</p>
+      <p class="eyebrow">wrap party</p>
       <h2 style="max-width: 22ch; margin-bottom: 1.5rem;">
-        The catalogue graphs are private. The story graph shouldn't be.
+        No proprietary lock-in. Open data, open standards.
       </h2>
       <div class="grid-2">
         <div>
           <p>
-            Streaming platforms keep their entertainment knowledge graphs internal because their value is in recommendation — ranking titles you might watch next. That's a reasonable choice for that data.
+            The data you create should work wherever you need it. Fabula uses open standards &mdash; never proprietary formats &mdash; so your story graphs integrate cleanly into your pipelines, databases, and tools.
           </p>
           <p>
-            The graph <em>inside</em> the show is different. It's reference material. Production teams need to be able to take it with them between studios. AI builders need to be able to retrieve from it with their own infrastructure. Game studios need to be able to bulk-export it into their own pipelines. So Fabula's data leaves the engine, in formats people already use: Parquet for analytics, Cypher for Neo4j, plain JSON for everything else.
+            Plain JSON, Parquet, Cypher, and more. Standard formats that play nicely in any modern stack, whether you&rsquo;re building AI apps, running analytics, or feeding a production pipeline.
           </p>
           <p>
-            Fifty-six datasets are already published openly under
-            <a href="https://huggingface.co/brandburner" style="font-family: var(--mono); font-size: 0.92em;">brandburner</a> on Hugging Face &mdash; including the
-            <a href="https://huggingface.co/datasets/brandburner/doctorwho-mega-narrative-kg">Doctor Who megagraph</a>
-            (703 episodes, 337,795 relationships) and per-series megagraphs for
-            <a href="https://huggingface.co/datasets/brandburner/startrektng-mega-narrative-kg">TNG</a>,
-            <a href="https://huggingface.co/datasets/brandburner/westwing-mega-narrative-kg">The West Wing</a>,
-            <a href="https://huggingface.co/datasets/brandburner/wolfhall-mega-narrative-kg">Wolf Hall</a>, and
-            <a href="https://huggingface.co/datasets/brandburner/happyvalley2-mega-narrative-kg">Happy Valley</a>. The example below is the export command that produced one of them.
+            Try the data yourself. Demo datasets sit on Hugging Face under <a href="https://huggingface.co/brandburner"><span style="font-family:var(--mono); font-size:0.92em;">brandburner</span></a> &mdash; including the full
+            <a href="https://huggingface.co/datasets/brandburner/doctorwho-mega-narrative-kg">Doctor Who</a>,
+            <a href="https://huggingface.co/datasets/brandburner/startrektng-mega-narrative-kg">Star Trek: The Next Generation</a>, and
+            <a href="https://huggingface.co/datasets/brandburner/westwing-mega-narrative-kg">West Wing</a> megagraphs alongside per-series exports for
+            <a href="https://huggingface.co/datasets/brandburner/wolfhall-mega-narrative-kg">Wolf Hall</a> and
+            <a href="https://huggingface.co/datasets/brandburner/happyvalley2-mega-narrative-kg">Happy Valley</a>.
           </p>
         </div>
         <div>
@@ -277,14 +262,14 @@ dataset_export/the_west_wing_s4/
   <!-- BEYOND ENTERTAINMENT -->
   <section class="section section--dark">
     <div class="container">
-      <p class="section-mark">&sect; 05 &mdash; the trick generalises</p>
-      <h2 style="max-width: 26ch; margin-bottom: 1.5rem;">Story is the testbed. It isn't the limit.</h2>
+      <p class="eyebrow">next season</p>
+      <h2 style="max-width: 26ch; margin-bottom: 1.5rem;">Story is our first chapter.</h2>
       <div style="max-width: 64ch;">
         <p style="color: var(--night-ink-2);">
-          The engineering claim &mdash; long, structured material processed through small, evidence-bounded model calls &mdash; isn't specific to screenplays. The same shape of pipeline works on any long corpus where claims have to trace back to the source: court records, regulatory filings, scientific literature, archival journalism, biographical material, codebases, clinical notes.
+          Fabula&rsquo;s breakthrough &mdash; rendering long-context documents as intricate graph data &mdash; works beyond screenplays. The same need for auditable, computable claims now reaches legislation, science, data journalism, and academic publishing.
         </p>
         <p style="color: var(--night-ink-2);">
-          Story is a hard testbed for the technique, not a narrow one. High-cardinality entities, identity persisting across decades, named-relation density, dialogue ambiguity, deliberate concealment from the audience &mdash; if the engine holds those, it holds the easier corpora too. The architecture is horizontal; entertainment is where we proved it.
+          Built for dense relations, persistent and mutable identities, ambiguity, and withheld truths. Sometimes stranger than fiction.
         </p>
       </div>
     </div>
@@ -292,8 +277,8 @@ dataset_export/the_west_wing_s4/
 
   <section class="section">
     <div class="container">
-      <p class="eyebrow">closing</p>
-      <h2 style="max-width: 22ch; margin-bottom: 1.5rem;">If you've read this far, the next step is the catalog.</h2>
+      <p class="eyebrow">end credits</p>
+      <h2 style="max-width: 22ch; margin-bottom: 1.5rem;">If you&rsquo;ve read this far, the next step is the catalog.</h2>
       <div class="ctas">
         <a class="cta cta--primary" href="{% url 'catalog' %}">explore the live catalog</a>
         <a class="cta" href="mailto:engineering@fabula.productions">talk to engineering</a>

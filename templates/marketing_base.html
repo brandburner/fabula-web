@@ -52,16 +52,18 @@
     {% endblock %}
 
     {# Marketing v2 stylesheet — provides .nav, .wordmark, .container, .footer, .cta primitives. #}
-    <link rel="stylesheet" href="{% static 'marketing/v2/css/site.css' %}">
+    <link rel="stylesheet" href="{% static 'marketing/v2/css/site.css' %}?v=20260510a">
 
     {# Design System Tokens — overlays --f-* tokens used by per-page narrative content. #}
-    <link rel="stylesheet" href="{% static 'narrative/css/theme-tokens.css' %}">
+    <link rel="stylesheet" href="{% static 'narrative/css/theme-tokens.css' %}?v=20260510a">
 
-    {# Tailwind CSS via CDN (layout utilities only) #}
-    <script src="https://cdn.tailwindcss.com"></script>
+    {# Tailwind CSS via CDN (layout utilities only) — preflight disabled so it doesn't repaint over v2 site.css after load. #}
     <script>
-        tailwind.config = {
+        // Configure Tailwind BEFORE the CDN script loads so corePlugins is honoured.
+        window.tailwind = window.tailwind || {};
+        window.tailwind.config = {
             darkMode: 'class',
+            corePlugins: { preflight: false },
             theme: {
                 extend: {
                     colors: {
@@ -69,8 +71,9 @@
                     }
                 }
             }
-        }
+        };
     </script>
+    <script src="https://cdn.tailwindcss.com"></script>
 
     {# Lucide Icons #}
     <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js" defer></script>

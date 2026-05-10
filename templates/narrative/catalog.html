@@ -1,227 +1,93 @@
-{% extends "marketing_base.html" %}
+{% extends "marketing/v2/_base.html" %}
 {% load static wagtailcore_tags narrative_tags %}
 
 {% block title %}Walk the Graph — Fabula Catalog{% endblock %}
+{% block meta_description %}Every character, every relationship, every narrative connection — extracted from the scripts and published as a knowledge graph you can explore.{% endblock %}
+
+{% block extra_head %}
+<style>
+  /* Catalog-only grid: auto-fit so single items take full width and no empty cells render. */
+  .catalog-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 1px;
+    background: var(--paper-rule);
+    border: 1px solid var(--paper-rule);
+    margin-top: 2rem;
+  }
+  .catalog-grid > .vertical { background: var(--paper); }
+  @media (max-width: 760px) {
+    .catalog-grid { grid-template-columns: 1fr; }
+  }
+</style>
+{% endblock %}
 
 {% block content %}
-{% if fabula_theme == 'writerly' %}
-{# ===== WRITERLY CATALOG ===== #}
-<div class="max-w-5xl mx-auto px-6 py-20">
-    {# Page Header - Editorial style #}
-    <header class="mb-20 text-center">
-        <div class="mb-6" style="color: var(--f-fg-placeholder);">
-            <div class="w-12 h-px mx-auto mb-6" style="background: var(--f-border-accent);"></div>
-            <span class="text-xs font-medium tracking-widest uppercase" style="font-family: var(--f-font-body); letter-spacing: 0.15em;">The Catalog</span>
-        </div>
-        <h1 class="mb-6" style="font-family: var(--f-font-display); color: var(--f-fg-heading); font-size: clamp(2.25rem, 5vw, 3.5rem); line-height: 1.1; letter-spacing: -0.03em; font-weight: 400;">
-            Walk the Graph
-        </h1>
-        <p class="max-w-xl mx-auto leading-relaxed" style="color: var(--f-fg-secondary); font-size: 1.125rem; line-height: 1.7;">
-            Every character, relationship, and narrative connection &mdash;
-            extracted from scripts, resolved into a knowledge graph,
-            and published here for you to explore. Choose a series. Follow the edges.
-        </p>
-    </header>
 
-    {% if series_list %}
-    {# Series Cards - Clean editorial grid #}
-    <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-24">
+  <!-- HERO -->
+  <section class="section hero">
+    <div class="container">
+      <p class="eyebrow">The catalog</p>
+      <h1 style="max-width: 18ch;">Walk the graph.</h1>
+      <p class="hero__deck">
+        Every character, every relationship, every narrative connection &mdash; extracted from the scripts, resolved into a knowledge graph, and published here for you to explore. Choose a series. Follow the edges.
+      </p>
+    </div>
+  </section>
+
+  {% if series_list %}
+  <!-- SERIES GRID -->
+  <section class="section">
+    <div class="container">
+      <p class="section-mark">&sect; 01 &mdash; processed series</p>
+
+      <div class="catalog-grid">
         {% for item in series_list %}
-        <a href="{% url 'series_landing' series_slug=item.series.slug %}"
-           class="group block rounded-lg overflow-hidden transition-all duration-300 f-hover-card"
-           style="background: var(--f-card-bg); border: 1px solid var(--f-card-border); box-shadow: var(--f-card-shadow);">
-
-            {# Top accent line #}
-            <div class="h-0.5" style="background: linear-gradient(90deg, var(--f-accent-primary), var(--f-accent-cyan));"></div>
-
-            <div class="p-8">
-                {# Series label #}
-                <div class="flex items-baseline gap-3 mb-4">
-                    <span class="text-xs font-medium tracking-widest uppercase" style="color: var(--f-fg-placeholder); letter-spacing: 0.12em;">Series</span>
-                </div>
-
-                {# Title #}
-                <h2 class="mb-3 transition-colors duration-200" style="font-family: var(--f-font-display); color: var(--f-fg-heading); font-size: 1.75rem; line-height: 1.2; letter-spacing: -0.02em; font-weight: 400;">
-                    {{ item.series.title }}
-                </h2>
-
-                {# Description #}
-                {% if item.series.description %}
-                <p class="mb-6 line-clamp-2" style="color: var(--f-fg-secondary); font-size: 0.9rem; line-height: 1.6;">
-                    {{ item.series.description|md_plain|truncatewords:30 }}
-                </p>
-                {% endif %}
-
-                {# Stats - understated horizontal layout #}
-                <div class="flex items-center gap-6 mb-6 pb-6" style="border-bottom: 1px solid var(--f-border-light);">
-                    <div>
-                        <div class="text-2xl font-light tabular-nums" style="color: var(--f-fg-heading); font-family: var(--f-font-display);">{{ item.event_count|default:0 }}</div>
-                        <div class="text-xs mt-0.5" style="color: var(--f-fg-placeholder); letter-spacing: 0.05em;">Events</div>
-                    </div>
-                    <div style="width: 1px; height: 2rem; background: var(--f-border-light);"></div>
-                    <div>
-                        <div class="text-2xl font-light tabular-nums" style="color: var(--f-fg-heading); font-family: var(--f-font-display);">{{ item.character_count|default:0 }}</div>
-                        <div class="text-xs mt-0.5" style="color: var(--f-fg-placeholder); letter-spacing: 0.05em;">Characters</div>
-                    </div>
-                    <div style="width: 1px; height: 2rem; background: var(--f-border-light);"></div>
-                    <div>
-                        <div class="text-2xl font-light tabular-nums" style="color: var(--f-fg-heading); font-family: var(--f-font-display);">{{ item.connection_count|default:0 }}</div>
-                        <div class="text-xs mt-0.5" style="color: var(--f-fg-placeholder); letter-spacing: 0.05em;">Connections</div>
-                    </div>
-                </div>
-
-                {# Explore link #}
-                <div class="flex items-center gap-2 text-sm transition-colors duration-200" style="color: var(--f-accent-primary);">
-                    <span style="font-family: var(--f-font-display); font-style: italic;">Walk this graph</span>
-                    <i data-lucide="arrow-right" class="w-4 h-4 group-hover:translate-x-1 transition-transform duration-200"></i>
-                </div>
-            </div>
-        </a>
+        <article class="vertical">
+          <span class="vertical__tag">/explore/{{ item.series.slug }}/</span>
+          <h3>{{ item.series.title }}</h3>
+          {% if item.series.description %}
+          <p>{{ item.series.description|md_plain|truncatewords:30 }}</p>
+          {% endif %}
+          <p style="font-family: var(--mono); font-size: 0.82rem; color: var(--ink-3); margin-top: 0.4rem;">
+            <span style="color: var(--ink-2);">{{ item.event_count|default:0 }}</span> events
+            &middot;
+            <span style="color: var(--ink-2);">{{ item.character_count|default:0 }}</span> characters
+            &middot;
+            <span style="color: var(--ink-2);">{{ item.connection_count|default:0 }}</span> connections
+          </p>
+          <a href="{% url 'series_landing' series_slug=item.series.slug %}">walk this graph &rarr;</a>
+        </article>
         {% endfor %}
+      </div>
     </div>
-    {% else %}
-    {# Empty State #}
-    <div class="text-center py-20">
-        <div class="w-12 h-px mx-auto mb-8" style="background: var(--f-border-accent);"></div>
-        <h2 class="mb-3" style="font-family: var(--f-font-display); color: var(--f-fg-heading); font-size: 1.5rem;">No Graphs Yet</h2>
-        <p style="color: var(--f-fg-tertiary); max-width: 28rem;" class="mx-auto">
-            We&rsquo;re building the first production-grade knowledge graphs from television scripts. Check back soon.
-        </p>
+  </section>
+  {% else %}
+  <!-- EMPTY -->
+  <section class="section">
+    <div class="container">
+      <p class="section-mark">&sect; 01 &mdash; nothing here yet</p>
+      <h2 style="max-width: 28ch; margin-bottom: 1.2rem;">No graphs yet.</h2>
+      <p style="max-width: 60ch; color: var(--ink-2);">
+        We&rsquo;re building the first production-grade knowledge graphs from television scripts. Check back soon.
+      </p>
     </div>
-    {% endif %}
+  </section>
+  {% endif %}
 
-    {# Coming Soon - quiet, editorial #}
-    <div class="text-center mb-20">
-        <div class="w-12 h-px mx-auto mb-6" style="background: var(--f-border-default);"></div>
-        <p class="text-xs font-medium tracking-widest uppercase mb-5" style="color: var(--f-fg-placeholder); letter-spacing: 0.15em;">In the Pipeline</p>
-        <div class="flex flex-wrap justify-center gap-3">
-            <span class="px-4 py-2 rounded-md text-sm" style="background: var(--f-bg-elevated); color: var(--f-fg-tertiary); border: 1px solid var(--f-border-light);">Breaking Bad</span>
-            <span class="px-4 py-2 rounded-md text-sm" style="background: var(--f-bg-elevated); color: var(--f-fg-tertiary); border: 1px solid var(--f-border-light);">I, Claudius</span>
-            <span class="px-4 py-2 rounded-md text-sm" style="background: var(--f-bg-elevated); color: var(--f-fg-tertiary); border: 1px solid var(--f-border-light);">Doctor Who</span>
-        </div>
+  <!-- CTA -->
+  <section class="section section--dark">
+    <div class="container">
+      <p class="section-mark">&sect; 02 &mdash; closing</p>
+      <h2 style="max-width: 22ch; margin-bottom: 1.5rem;">Your show could be next.</h2>
+      <p style="color: var(--night-ink-2); max-width: 60ch;">
+        We&rsquo;re opening early access to production teams working on series television. If your scripts are sitting in a shared drive while your writers&rsquo; room relies on memory, we should talk.
+      </p>
+      <div class="ctas">
+        <a class="cta cta--primary" href="/early-access/">join early access</a>
+        <a class="cta" href="{% url 'v2_engine' %}">read the engine docs</a>
+      </div>
     </div>
+  </section>
 
-    {# CTA - Fabula voice #}
-    <div class="text-center rounded-lg p-12" style="background: var(--f-bg-elevated); border: 1px solid var(--f-border-default);">
-        <h3 class="mb-4" style="font-family: var(--f-font-display); color: var(--f-fg-heading); font-size: 1.5rem; font-weight: 400;">Your Show Could Be Next</h3>
-        <p class="mb-8 max-w-lg mx-auto" style="color: var(--f-fg-secondary); line-height: 1.7;">
-            We&rsquo;re opening early access to production teams working on series television.
-            If your scripts are sitting in a shared drive while your writers&rsquo; room relies on memory,
-            we should talk.
-        </p>
-        <a href="/early-access/"
-           class="f-btn-primary">
-            Join Early Access
-            <i data-lucide="arrow-right" class="w-4 h-4"></i>
-        </a>
-    </div>
-</div>
-
-{% else %}
-{# ===== DARK CATALOG ===== #}
-<div class="max-w-7xl mx-auto px-6 py-16">
-    {# Page Header #}
-    <div class="text-center mb-16">
-        <div class="w-16 h-16 rounded-2xl bg-cyan-500/10 flex items-center justify-center mx-auto mb-6">
-            <i data-lucide="compass" class="w-8 h-8 text-cyan-400"></i>
-        </div>
-        <h1 class="text-4xl md:text-5xl font-bold text-white mb-4">Walk the Graph</h1>
-        <p class="text-xl text-slate-400 max-w-2xl mx-auto">
-            Every character, relationship, and narrative connection &mdash;
-            extracted from scripts, resolved into a knowledge graph,
-            and published here for you to explore. Choose a series. Follow the edges.
-        </p>
-    </div>
-
-    {% if series_list %}
-    {# Series Cards #}
-    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-        {% for item in series_list %}
-        <a href="{% url 'series_landing' series_slug=item.series.slug %}"
-           class="group relative rounded-2xl border border-slate-800 bg-slate-900/50 overflow-hidden hover:border-cyan-500/30 transition-all duration-300">
-            {# Background gradient #}
-            <div class="absolute inset-0 bg-gradient-to-br from-cyan-500/5 to-purple-500/5 opacity-0 group-hover:opacity-100 transition-opacity"></div>
-
-            <div class="relative p-8">
-                {# Series Icon #}
-                <div class="w-14 h-14 rounded-xl bg-gradient-to-br from-cyan-500/20 to-purple-500/20 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
-                    <i data-lucide="git-branch" class="w-7 h-7 text-cyan-400"></i>
-                </div>
-
-                {# Series Title #}
-                <h2 class="text-2xl font-bold text-white mb-3 group-hover:text-cyan-400 transition-colors">
-                    {{ item.series.title }}
-                </h2>
-
-                {# Description #}
-                {% if item.series.description %}
-                <div class="text-slate-400 text-sm mb-6 line-clamp-2">
-                    {{ item.series.description|md_plain|truncatewords:30 }}
-                </div>
-                {% endif %}
-
-                {# Stats Grid #}
-                <div class="grid grid-cols-3 gap-3 mb-6">
-                    <div class="rounded-lg bg-slate-800/50 p-3 text-center">
-                        <div class="text-2xl font-bold text-white">{{ item.event_count|default:0 }}</div>
-                        <div class="text-xs text-slate-500">Events</div>
-                    </div>
-                    <div class="rounded-lg bg-slate-800/50 p-3 text-center">
-                        <div class="text-2xl font-bold text-white">{{ item.character_count|default:0 }}</div>
-                        <div class="text-xs text-slate-500">Characters</div>
-                    </div>
-                    <div class="rounded-lg bg-slate-800/50 p-3 text-center">
-                        <div class="text-2xl font-bold text-white">{{ item.connection_count|default:0 }}</div>
-                        <div class="text-xs text-slate-500">Connections</div>
-                    </div>
-                </div>
-
-                {# Explore Button #}
-                <div class="flex items-center gap-2 text-sm text-cyan-400 group-hover:text-cyan-300">
-                    <span>Walk this graph</span>
-                    <i data-lucide="arrow-right" class="w-4 h-4 group-hover:translate-x-1 transition-transform"></i>
-                </div>
-            </div>
-        </a>
-        {% endfor %}
-    </div>
-    {% else %}
-    {# Empty State #}
-    <div class="text-center py-20">
-        <div class="w-20 h-20 rounded-full bg-slate-800/50 flex items-center justify-center mx-auto mb-6">
-            <i data-lucide="database" class="w-10 h-10 text-slate-600"></i>
-        </div>
-        <h2 class="text-2xl font-bold text-white mb-3">No Graphs Yet</h2>
-        <p class="text-slate-400 max-w-md mx-auto">
-            We&rsquo;re building the first production-grade knowledge graphs from television scripts. Check back soon.
-        </p>
-    </div>
-    {% endif %}
-
-    {# Coming Soon Section #}
-    <div class="mt-20 text-center">
-        <h3 class="text-lg font-medium text-slate-500 mb-6">In the Pipeline</h3>
-        <div class="flex flex-wrap justify-center gap-4">
-            <span class="px-4 py-2 rounded-full bg-slate-800/50 text-slate-500 text-sm">Breaking Bad</span>
-            <span class="px-4 py-2 rounded-full bg-slate-800/50 text-slate-500 text-sm">I, Claudius</span>
-            <span class="px-4 py-2 rounded-full bg-slate-800/50 text-slate-500 text-sm">Doctor Who</span>
-        </div>
-    </div>
-
-    {# CTA #}
-    <div class="mt-20 text-center rounded-2xl border border-slate-800 bg-gradient-to-br from-slate-900 to-slate-900/50 p-12">
-        <h3 class="text-2xl font-bold text-white mb-4">Your Show Could Be Next</h3>
-        <p class="text-slate-400 mb-8 max-w-lg mx-auto">
-            We&rsquo;re opening early access to production teams working on series television.
-            If your scripts are sitting in a shared drive while your writers&rsquo; room relies on memory,
-            we should talk.
-        </p>
-        <a href="/early-access/"
-           class="inline-flex items-center gap-2 px-6 py-3 text-base font-medium rounded-xl bg-gradient-to-r from-amber-500 to-orange-500 text-white hover:from-amber-400 hover:to-orange-400 transition-all duration-300 shadow-lg shadow-amber-500/25">
-            Join Early Access
-            <i data-lucide="arrow-right" class="w-5 h-5"></i>
-        </a>
-    </div>
-</div>
-{% endif %}
 {% endblock %}

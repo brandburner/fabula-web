@@ -7,11 +7,13 @@
     <title>{% block title %}Explore{% endblock %} | Fabula</title>
     <meta name="description" content="Explore interactive narrative graphs from iconic TV series.">
 
-    {# Tailwind CSS via CDN #}
-    <script src="https://cdn.tailwindcss.com"></script>
+    {# Tailwind CSS via CDN — preflight disabled so it doesn't clobber v2 base styles. #}
     <script>
-        tailwind.config = {
+        // Config must be set BEFORE the CDN script loads.
+        window.tailwind = window.tailwind || {};
+        window.tailwind.config = {
             darkMode: 'class',
+            corePlugins: { preflight: false },
             theme: {
                 extend: {
                     colors: {
@@ -21,8 +23,9 @@
                     }
                 }
             }
-        }
+        };
     </script>
+    <script src="https://cdn.tailwindcss.com"></script>
 
     {# Lucide Icons #}
     <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js" defer></script>
@@ -31,7 +34,7 @@
     <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
 
     {# Design System Tokens #}
-    <link rel="stylesheet" href="{% static 'narrative/css/theme-tokens.css' %}">
+    <link rel="stylesheet" href="{% static 'narrative/css/theme-tokens.css' %}?v=20260510a">
 
     {% if fabula_theme == 'writerly' %}
     <link rel="preconnect" href="https://fonts.googleapis.com">
