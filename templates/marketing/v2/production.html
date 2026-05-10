@@ -9,12 +9,12 @@
   <section class="section hero">
     <div class="container">
       <p class="eyebrow">the writers' room</p>
-      <h1 style="max-width: 24ch;">Your show&rsquo;s memory keeps fading out.</h1>
+      <h1 style="max-width: 24ch;">Don&rsquo;t let your show&rsquo;s memory fade out.</h1>
       <p class="hero__deck">
-        Script coordinators, supervisors, key crew &mdash; the people who hold a show&rsquo;s canon in their heads &mdash; leave. The institutional memory leaves with them, and the next person rebuilds it from scratch.
+        Script coordinators, supervisors, writers, producers, and key crew carry impossible amounts of canon in their heads. Then people leave, seasons pass, pages change, and the next team has to reconstruct the truth from old bibles, notes, emails, and panic.
       </p>
       <p class="hero__deck">
-        Fabula reads every script and builds the canonical record underneath: every character, every relationship, every event, every connection &mdash; each one cited to the line of script behind it. A graph that holds what your team holds, and stays.
+        Fabula turns every script into connected canon for production: a canonical record of characters, relationships, events, objects, and consequences, with each claim traced back to the line that proves it. So when the room asks &ldquo;did we already do this?&rdquo;, the answer does not depend on someone remembering.
       </p>
       <div class="ctas">
         <a class="cta cta--primary" href="mailto:hello@fabula.productions?subject=Pilot">start a pilot</a>
@@ -63,56 +63,53 @@
     </div>
   </section>
 
-  <!-- WORF -->
+  <!-- PICARD -->
   <section class="section section--dark">
     <div class="container">
-      <p class="eyebrow">the name of the doctor</p>
+      <p class="eyebrow">the name of the captain</p>
       <h2 style="max-width: 30ch; margin-bottom: 2rem;">
-        Lieutenant Worf. Worf, Son of Mogh. Ambassador Worf. Same Klingon. Different season.
+        Captain Jean-Luc Picard. Galen. Locutus of Borg. Same man. Different circumstance.
       </h2>
 
       <div class="grid-2">
         <div>
           <p>
-            One character, seven names: &ldquo;Worf,&rdquo; &ldquo;Mr. Worf,&rdquo; &ldquo;Lt. Commander Worf,&rdquo; &ldquo;Worf, Son of Mogh,&rdquo; &ldquo;Ambassador Worf&rdquo; &mdash; all the same person. A reader knows that. A spreadsheet doesn&rsquo;t. Automated systems that spawn a new entry for each variant just move the problem; they don&rsquo;t solve it.
+            One character, many names: &ldquo;Jean-Luc Picard,&rdquo; &ldquo;Captain Picard,&rdquo; &ldquo;Galen,&rdquo; &ldquo;Locutus of Borg,&rdquo; &ldquo;Dixon Hill,&rdquo; &ldquo;Kamin&rdquo; &mdash; all the same person. A viewer knows that. A spreadsheet doesn&rsquo;t. Automated systems that spawn a new entry for each identity just move the problem; they don&rsquo;t solve it.
           </p>
           <p>
-            Fabula resolves every alias to a single canonical entity. Rank changes, naming conventions, and role shifts aren&rsquo;t separate records &mdash; they&rsquo;re tracked as per-event state on the edge linking Worf to each appearance.
+            Fabula resolves every alias to a single canonical entity. Identity shifts, undercover missions, and holodeck personas aren&rsquo;t separate records &mdash; they&rsquo;re tracked as per-event state on the edge linking Picard to each appearance.
           </p>
           <p style="font-style: italic; color: var(--night-ink-2);">
-            Seven seasons of <a href="https://fabula.productions/explore/star-trek-the-next-generation/" style="color: var(--night-ink-2);"><em>TNG</em></a>: one Worf, every name unified, every step tracked.
+            Seven seasons of <a href="https://fabula.productions/explore/star-trek-the-next-generation/" style="color: var(--night-ink-2);"><em>TNG</em></a>: one Picard, every name unified, every transformation tracked.
           </p>
           <p style="color: var(--night-ink-2); font-size: 0.94rem; margin-top: 1.2rem;">
-            The same approach works everywhere: Cromwell in <a href="https://fabula.productions/explore/wolf-hall/" style="color: var(--night-ink-2);"><em>Wolf Hall</em></a>, Catherine Cawood in <a href="https://fabula.productions/explore/happy-valley/" style="color: var(--night-ink-2);"><em>Happy Valley</em></a>, the Brigadier in <a href="https://fabula.productions/explore/doctor-who/" style="color: var(--night-ink-2);"><em>Doctor Who</em></a>. One entity per character, every alias resolved, every shift pinned to the moment it happened.
+            The same approach works everywhere: Cromwell in <a href="https://fabula.productions/explore/wolf-hall/" style="color: var(--night-ink-2);"><em>Wolf Hall</em></a>, Catherine Cawood in <a href="https://fabula.productions/explore/happy-valley/" style="color: var(--night-ink-2);"><em>Happy Valley</em></a>, the Brigadier in <a href="https://fabula.productions/explore/doctor-who/" style="color: var(--night-ink-2);"><em>Doctor Who</em></a>. One entity per character, every alias resolved, every transformation pinned to the episode or moment it happened.
           </p>
         </div>
 
         <div>
-<pre class="console console--inline" data-lang="json" data-path="fabula://resolve/tng/worf">// Alias resolution &middot; Lieutenant Worf
+<pre class="console console--inline" data-lang="json" data-path="fabula://resolve/tng/picard">// Alias resolution &middot; Captain Jean-Luc Picard
 
 {
-  "canonical_id": "char_tng_worf",
-  "canonical_name": "Worf, Son of Mogh",
+  "canonical_id": "char_tng_picard",
+  "canonical_name": "Jean-Luc Picard",
   "aliases_resolved": [
-    "Worf",
-    "Lieutenant Worf",
-    "Lt. Worf",
-    "Mr. Worf",
-    "Lt. Commander Worf",
-    "Commander Worf",
-    "Ambassador Worf"
+    "Jean-Luc Picard",
+    "Captain Picard",
+    "Galen",
+    "Locutus of Borg",
+    "Dixon Hill",
+    "Kamin"
   ],
-  "episode_appearances": 177,
+  "episode_appearances": 178,
   "resolution_confidence": 1.0
 }
 
-// Rank, role, and cultural-name shifts aren't a separate
-// index. They register as per-event state on the
-// PARTICIPATED_AS edge linking Worf to each event &mdash; the
-// observed_status field reads "Promoted to Lt. Commander;
-// assumes head of security..." for the episode where it
-// happens, the way the script records it. The graph carries
-// the canonical identity; the journey lives on the edges.</pre>
+// Command rank, undercover missions, forced personas, and holodeck avatars aren’t a separate index.
+// They register as per-event state on the PARTICIPATED_AS edge linking Picard to each episode or event —
+// the observed_status field reads "Posing as Galen," "Assimilated as Locutus of Borg," "Acts as Dixon Hill," or
+// "Life as Kamin," for the installments where it happens, just as the script records them.
+// The graph carries the canonical identity; the journey lives on the edges.</pre>
         </div>
       </div>
     </div>
@@ -163,16 +160,16 @@ bureaucracy and time itself.
     <div class="grid-2">
       <div>
         <h2 style="max-width: 24ch; margin-bottom: 1.5rem;">
-          Give your agents something better than a pile of scripts.
+          Give your AI agents something better than a pile of PDFs.
         </h2>
         <p>
-          The same graph that powers the product ships as data your team can use: Parquet for analytics workflows, a Cypher loader for Neo4j, and structured JSON for everything else. Under the hood: 25 node types, 44 relationship types, and every claim cited to the line of script that produced it. Events connect through typed narrative relations &mdash; <span style="font-family:var(--mono); font-size:0.88em;">CAUSAL</span>, <span style="font-family:var(--mono); font-size:0.88em;">FORESHADOWING</span>, <span style="font-family:var(--mono); font-size:0.88em;">THEMATIC_PARALLEL</span>, <span style="font-family:var(--mono); font-size:0.88em;">CALLBACK</span>, <span style="font-family:var(--mono); font-size:0.88em;">ESCALATION</span>, and others &mdash; each with a strength score and a short justification.
+          The same graph behind Fabula ships as usable data: Parquet for analytics, Cypher for Neo4j, and structured JSON for everything else. Beneath it: 25 node types, 44 relationship types, every claim cited to its script line. Events link via narrative types—<span style="font-family:var(--mono); font-size:0.88em;">CAUSAL</span>, <span style="font-family:var(--mono); font-size:0.88em;">FORESHADOWING</span>, <span style="font-family:var(--mono); font-size:0.88em;">THEMATIC_PARALLEL</span>, <span style="font-family:var(--mono); font-size:0.88em;">CALLBACK</span>, <span style="font-family:var(--mono); font-size:0.88em;">ESCALATION</span>, and more—each with a score and a reason.
         </p>
         <p>
-          Per-event character state &mdash; beliefs, goals, emotions, observed status &mdash; lives on the edge between a character and an event. It is not flattened into a vague character summary. That means a retrieval call can return the exact context for a specific moment: who was there, what they believed, what changed, what earlier scene it echoes, and which line proves it.
+          Character state—beliefs, goals, emotions, status—lives on the edge between character and event. Nothing is flattened or vague. Retrieval returns the exact moment: who was there, what they believed, what changed, what earlier scene it echoes, and which line proves it.
         </p>
         <p>
-          That distinction matters. Long-context prompting asks one model call to hold the whole show in its head and hope nothing important falls out in the middle. Fabula does the opposite: structured retrieval over a typed graph, so the model sees only the evidence it needs and every answer can be traced back to source.
+          That’s the difference. Long-context prompting asks one model call to hold the whole show in its head. Fabula flips the script: precise retrieval from a structured graph, so the model gets only what it needs and every answer cites its source.
         </p>
         <p style="color: var(--ink-2);">
           56 datasets are public on the
