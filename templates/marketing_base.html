@@ -3,7 +3,7 @@
 <html lang="en" data-theme="{{ fabula_theme|default:'writerly' }}"{% if fabula_theme == 'dark' %} class="dark"{% endif %}>
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, viewport-fit=cover">
     <meta name="google-site-verification" content="jo0A9F53a_dYjXqIcmY6Q3EtiTAGYsQf_FvFwSyxy8M">
     <title>{% block title %}{% if page %}{{ page.seo_title|default:page.title }}{% else %}Fabula{% endif %}{% endblock %} | Fabula</title>
 
