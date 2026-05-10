@@ -181,6 +181,8 @@ hr {
 .wordmark .dot { color: var(--accent); }
 .nav__links {
   display: flex;
+  flex-wrap: wrap;
+  row-gap: 0.4rem;
   gap: clamp(1rem, 2.5vw, 2rem);
   font-family: var(--mono);
   font-size: 0.78rem;
@@ -192,6 +194,7 @@ hr {
   color: var(--ink-2);
   position: relative;
   padding-block: 0.25rem;
+  white-space: nowrap;
 }
 .nav__links a:hover { color: var(--accent); }
 .nav__links a[aria-current="page"] {
@@ -313,9 +316,6 @@ hr {
   .console {
     font-size: 0.78rem;
     padding: 0.9rem 1rem 1rem;
-    white-space: pre-wrap;
-    overflow-wrap: anywhere;
-    word-break: break-word;
   }
 }
 .console--inline { background: var(--night-2); }
@@ -381,6 +381,7 @@ hr {
 @media (max-width: 880px) {
   .grid-2, .grid-3 { grid-template-columns: minmax(0, 1fr); }
 }
+.grid-2 > *, .grid-3 > * { min-width: 0; }
 
 /* Verbs */
 .verbs {
