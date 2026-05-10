@@ -158,7 +158,6 @@
         <nav class="nav__links" aria-label="Primary">
           <a href="{% url 'v2_engine' %}"{% if active_nav == 'engine' %} aria-current="page"{% endif %}>engine</a>
           <a href="{% url 'v2_production' %}"{% if active_nav == 'production' %} aria-current="page"{% endif %}>production</a>
-          <a href="{% url 'v2_production' %}#ai">ai builders</a>
           <a href="{% url 'catalog' %}"{% if active_nav == 'catalog' %} aria-current="page"{% endif %}>catalog</a>
           <a href="{% url 'v2_about' %}"{% if active_nav == 'about' %} aria-current="page"{% endif %}>about</a>
           <a href="{% url 'v2_investors' %}"{% if active_nav == 'investors' %} aria-current="page"{% endif %}>investors</a>
