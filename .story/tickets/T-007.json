@@ -1,0 +1,13 @@
+{
+  "blockedBy": [],
+  "claimedBySession": "6df034a0-a7cf-41bf-b896-dceceec6bf8c",
+  "completedDate": "2026-05-14",
+  "createdDate": "2026-05-14",
+  "description": "Graph view node-type toggles (visibleNodeTypes Set in ScopedGraphMixin) currently reset between scoped views. Persist selection in URL params or localStorage so users keep their filter context when navigating between season-scoped graphs. Touches narrative/views.py and the toggle-button JS.",
+  "id": "T-007",
+  "order": 10,
+  "phase": "graph-ux",
+  "status": "complete",
+  "title": "Graph node-type filter persistence across navigation",
+  "type": "task"
+}

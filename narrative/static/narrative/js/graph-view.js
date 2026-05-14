@@ -47,7 +47,44 @@ const CONNECTION_CONFIG = {
 };
 
 // Node type visibility state
-const visibleNodeTypes = new Set(['event', 'character', 'location', 'organization', 'act']);
+// Persisted in localStorage so the user's filter survives navigation
+// between scoped graph views. Schema-versioned so future changes to the
+// node-type vocabulary can invalidate stale saved values.
+const VISIBLE_NODE_TYPES_STORAGE_KEY = 'fabula:graph:visibleNodeTypes';
+const VISIBLE_NODE_TYPES_SCHEMA_VERSION = 1;
+const DEFAULT_VISIBLE_NODE_TYPES = ['event', 'character', 'location', 'organization', 'act'];
+// Union of every node type the UI can currently render. Used to filter
+// stale entries out of restored localStorage values — a saved "theme"
+// from a removed node type shouldn't silently linger in the Set.
+const KNOWN_NODE_TYPES = new Set([
+    'event', 'character', 'location', 'organization', 'act', 'plotbeat',
+]);
+
+function loadVisibleNodeTypes() {
+    try {
+        const raw = localStorage.getItem(VISIBLE_NODE_TYPES_STORAGE_KEY);
+        if (!raw) return new Set(DEFAULT_VISIBLE_NODE_TYPES);
+        const parsed = JSON.parse(raw);
+        if (parsed && parsed.v === VISIBLE_NODE_TYPES_SCHEMA_VERSION && Array.isArray(parsed.types)) {
+            return new Set(parsed.types.filter(t => KNOWN_NODE_TYPES.has(t)));
+        }
+    } catch (_) {
+        // localStorage can throw in private-mode Safari or when JSON is corrupt;
+        // fall through to the default and let the next toggle overwrite.
+    }
+    return new Set(DEFAULT_VISIBLE_NODE_TYPES);
+}
+
+function persistVisibleNodeTypes(typeSet) {
+    try {
+        localStorage.setItem(VISIBLE_NODE_TYPES_STORAGE_KEY, JSON.stringify({
+            v: VISIBLE_NODE_TYPES_SCHEMA_VERSION,
+            types: [...typeSet],
+        }));
+    } catch (_) { /* private-mode Safari etc. — silently skip */ }
+}
+
+const visibleNodeTypes = loadVisibleNodeTypes();
 
 // Transform data for 3d-force-graph (uses 'source'/'target' not 'from'/'to')
 const allNodes = graphData.nodes.map(n => ({
@@ -511,8 +548,22 @@ setTimeout(() => {
     Graph.zoomToFit(600, 100);
 }, 500);
 
-// Node type toggle handlers
-document.querySelectorAll('.node-toggle').forEach(btn => {
+// Sync toggle button .active state with the (possibly restored-from-
+// localStorage) visibleNodeTypes Set. The template hardcodes a sensible
+// default for first-paint, but localStorage may have overridden it.
+document.querySelectorAll('.node-toggle[data-type]').forEach(btn => {
+    if (visibleNodeTypes.has(btn.dataset.type)) {
+        btn.classList.add('active');
+    } else {
+        btn.classList.remove('active');
+    }
+});
+
+// Node type toggle handlers. Scoped to [data-type] so the season-selector
+// anchors (also .node-toggle for shared styling, but they navigate via
+// href rather than toggling type visibility) don't pollute visibleNodeTypes
+// with `undefined`.
+document.querySelectorAll('.node-toggle[data-type]').forEach(btn => {
     btn.addEventListener('click', function() {
         const nodeType = this.dataset.type;
 
@@ -523,6 +574,8 @@ document.querySelectorAll('.node-toggle').forEach(btn => {
             visibleNodeTypes.add(nodeType);
             this.classList.add('active');
         }
+
+        persistVisibleNodeTypes(visibleNodeTypes);
 
         // Update graph with filtered data
         const newData = getFilteredGraphData();
