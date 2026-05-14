@@ -1,0 +1,15 @@
+{
+  "blockedBy": [
+    "T-001"
+  ],
+  "claimedBySession": "6df034a0-a7cf-41bf-b896-dceceec6bf8c",
+  "completedDate": "2026-05-14",
+  "createdDate": "2026-05-14",
+  "description": "Capture the validated multi-series workflow in docs/: import each series without --cleanup, only cleanup after all series are loaded. Include the two-stage series deletion procedure (delete EventPages first due to PROTECT FK on EventPage.episode). Should land after the cleanup audit so the doc reflects the new safe flow.",
+  "id": "T-002",
+  "order": 20,
+  "phase": "data-pipeline",
+  "status": "complete",
+  "title": "Document validated multi-series import workflow",
+  "type": "chore"
+}

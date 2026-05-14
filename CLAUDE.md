@@ -74,6 +74,9 @@ python manage.py import_fabula ./fabula_export --cleanup --dry-run
 python export_to_yaml.py --output ./fabula_export --series "The West Wing"
 ```
 
+Full operator runbook (multi-series imports, --cleanup with preview,
+series-tree deletion, prod transfer): see `docs/import-workflow.md`.
+
 ## Model Relationships
 
 ```

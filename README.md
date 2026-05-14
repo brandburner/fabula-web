@@ -51,6 +51,10 @@ python manage.py export_from_neo4j --output ./fabula_export
 python manage.py import_fabula ./fabula_export
 ```
 
+See [`docs/import-workflow.md`](docs/import-workflow.md) for the
+full operator runbook: multi-series imports, `--cleanup` with
+dry-run preview, series-tree deletion, and production transfer.
+
 ## Connection Types
 
 | Type | Color | Description |
