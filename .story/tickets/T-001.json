@@ -1,0 +1,13 @@
+{
+  "blockedBy": [],
+  "claimedBySession": "6df034a0-a7cf-41bf-b896-dceceec6bf8c",
+  "completedDate": "2026-05-14",
+  "createdDate": "2026-05-14",
+  "description": "The import_fabula --cleanup flag currently deletes ALL series not in the current export, which makes it unsafe for single-series imports. Add either a --scope-to-series flag, a confirmation prompt listing what would be deleted, or rework cleanup to only target the series being imported. Reference feedback_cleanup_flag.md.",
+  "id": "T-001",
+  "order": 10,
+  "phase": "data-pipeline",
+  "status": "complete",
+  "title": "Audit --cleanup flag UX to prevent cross-series deletion",
+  "type": "task"
+}

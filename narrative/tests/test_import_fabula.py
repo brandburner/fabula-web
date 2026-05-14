@@ -562,6 +562,81 @@ class CleanupScopingTest(TestCase):
         )
         self.chars_b.add_child(instance=self.char_b)
 
+        # Organization pages live under series_a's OrganizationIndexPage
+        self.orgs_a = OrganizationIndexPage(title="Orgs A", slug="orgs-a")
+        self.series_a.add_child(instance=self.orgs_a)
+        self.org_keep = OrganizationPage(
+            title="Org Keep A",
+            slug="org-keep-a",
+            canonical_name="Org Keep A",
+            description="<p>x</p>",
+            fabula_uuid="org-keep-a",
+        )
+        self.orgs_a.add_child(instance=self.org_keep)
+        self.org_drop = OrganizationPage(
+            title="Org Drop A",
+            slug="org-drop-a",
+            canonical_name="Org Drop A",
+            description="<p>x</p>",
+            fabula_uuid="org-drop-a",
+        )
+        self.orgs_a.add_child(instance=self.org_drop)
+
+        # Season -> Episode -> Event tree under series_a
+        self.season_keep = SeasonPage(
+            title="Season 1 A",
+            slug="s1-a",
+            season_number=1,
+            fabula_uuid="season-keep-a",
+        )
+        self.series_a.add_child(instance=self.season_keep)
+        self.season_drop = SeasonPage(
+            title="Season 99 A",
+            slug="s99-a",
+            season_number=99,
+            fabula_uuid="season-drop-a",
+        )
+        self.series_a.add_child(instance=self.season_drop)
+
+        self.ep_keep = EpisodePage(
+            title="Episode Keep",
+            slug="ep-keep-a",
+            episode_number=1,
+            fabula_uuid="ep-keep-a",
+        )
+        self.season_keep.add_child(instance=self.ep_keep)
+        self.ep_drop = EpisodePage(
+            title="Episode Drop",
+            slug="ep-drop-a",
+            episode_number=2,
+            fabula_uuid="ep-drop-a",
+        )
+        self.season_keep.add_child(instance=self.ep_drop)
+
+        # Events live under an EventIndexPage (not under episodes), but
+        # are FK-linked to episode. For the cleanup test we only need them
+        # under SOMETHING with series_a in its tree path.
+        self.events_idx_a = EventIndexPage(title="Events A", slug="events-a")
+        self.series_a.add_child(instance=self.events_idx_a)
+        self.event_keep = EventPage(
+            title="Event Keep",
+            slug="event-keep-a",
+            episode=self.ep_keep,
+            description="<p>x</p>",
+            fabula_uuid="event-keep-a",
+        )
+        self.events_idx_a.add_child(instance=self.event_keep)
+        # Deprecated event is linked to a deprecated episode so cascade
+        # deletion can happen without ProtectedError from a canonical event.
+        self.event_drop = EventPage(
+            title="Event Drop",
+            slug="event-drop-a",
+            episode=self.ep_drop,
+            description="<p>x</p>",
+            fabula_uuid="event-drop-a",
+        )
+        self.events_idx_a.add_child(instance=self.event_drop)
+
         self.loc_a = Location.objects.create(
             fabula_uuid="loc-keep-a",
             canonical_name="Loc Keep A",
@@ -581,19 +656,38 @@ class CleanupScopingTest(TestCase):
             series=self.series_b,
         )
 
-    def _run_cleanup_for_series_a(self, char_uuids=("char-keep-a",), loc_uuids=("loc-keep-a",)):
+    def _run_cleanup_for_series_a(
+        self,
+        char_uuids=("char-keep-a",),
+        loc_uuids=("loc-keep-a",),
+        org_uuids=("org-keep-a",),
+        season_uuids=("season-keep-a",),
+        episode_uuids=("ep-keep-a",),
+        event_uuids=("event-keep-a",),
+    ):
         series_data = [{
             "fabula_uuid": "series-a-uuid",
             "title": "Series A",
-            "seasons": [],
+            "seasons": [
+                {
+                    "fabula_uuid": s,
+                    "episodes": [
+                        {"fabula_uuid": e}
+                        for e in episode_uuids
+                    ] if s == "season-keep-a" else [],
+                }
+                for s in season_uuids
+            ],
         }]
         characters_data = [{"fabula_uuid": u} for u in char_uuids]
         locations_data = [{"fabula_uuid": u} for u in loc_uuids]
+        organizations_data = [{"fabula_uuid": u} for u in org_uuids]
+        events_data = [{"events": [{"fabula_uuid": u} for u in event_uuids]}]
         self.cmd.run_cleanup(
             series_data=series_data,
-            events_data=[],
+            events_data=events_data,
             characters_data=characters_data,
-            organizations_data=[],
+            organizations_data=organizations_data,
             locations_data=locations_data,
         )
 
@@ -618,6 +712,331 @@ class CleanupScopingTest(TestCase):
         self._run_cleanup_for_series_a()
         self.assertFalse(Location.objects.filter(pk=self.loc_a_drop.pk).exists())
         self.assertTrue(Location.objects.filter(pk=self.loc_a.pk).exists())
+
+    def test_cleanup_dry_run_deletes_nothing(self):
+        """T-001: --cleanup --dry-run must build the plan but not delete anything."""
+        self.cmd.dry_run = True
+        self._run_cleanup_for_series_a()
+        # All in-scope deprecated rows must survive a dry-run cleanup.
+        self.assertTrue(CharacterPage.objects.filter(pk=self.char_drop.pk).exists())
+        self.assertTrue(CharacterPage.objects.filter(pk=self.char_keep.pk).exists())
+        self.assertTrue(CharacterPage.objects.filter(pk=self.char_b.pk).exists())
+        self.assertTrue(Location.objects.filter(pk=self.loc_a_drop.pk).exists())
+        self.assertTrue(Location.objects.filter(pk=self.loc_a.pk).exists())
+        # And the summary block was printed.
+        self.assertIn("Planned deletions", self.cmd.stdout.getvalue())
+        self.assertIn("[DRY RUN]", self.cmd.stdout.getvalue())
+
+    def test_build_cleanup_plan_is_read_only(self):
+        """T-001: build_cleanup_plan is a pure read — no rows are deleted."""
+        before = {
+            'chars_a_drop': CharacterPage.objects.filter(pk=self.char_drop.pk).exists(),
+            'chars_a_keep': CharacterPage.objects.filter(pk=self.char_keep.pk).exists(),
+            'chars_b': CharacterPage.objects.filter(pk=self.char_b.pk).exists(),
+            'loc_a_drop': Location.objects.filter(pk=self.loc_a_drop.pk).exists(),
+            'loc_a': Location.objects.filter(pk=self.loc_a.pk).exists(),
+            'loc_b': Location.objects.filter(pk=self.loc_b.pk).exists(),
+        }
+        plan = self.cmd.build_cleanup_plan(
+            series_data=[{
+                "fabula_uuid": "series-a-uuid",
+                "title": "Series A",
+                "seasons": [],
+            }],
+            events_data=[],
+            characters_data=[{"fabula_uuid": "char-keep-a"}],
+            organizations_data=[],
+            locations_data=[{"fabula_uuid": "loc-keep-a"}],
+        )
+        # Structural sanity on the plan itself.
+        self.assertIsNotNone(plan)
+        labels = {e['label'] for e in plan['entries']}
+        self.assertEqual(
+            labels,
+            {'events', 'episodes', 'seasons', 'characters', 'organizations', 'locations'},
+        )
+        # Content sanity: characters entry contains char_drop and NOT char_keep / char_b.
+        chars_entry = next(e for e in plan['entries'] if e['label'] == 'characters')
+        self.assertEqual(
+            {o.pk for o in chars_entry['deprecated']},
+            {self.char_drop.pk},
+        )
+        # And the Series B character must not appear in ANY entry.
+        all_deprecated_pks = {
+            o.pk
+            for e in plan['entries']
+            for o in e['deprecated']
+        }
+        self.assertNotIn(self.char_b.pk, all_deprecated_pks)
+        self.assertNotIn(self.loc_b.pk, all_deprecated_pks)
+        # Pure-read: every row still exists.
+        for key, value in before.items():
+            self.assertEqual(
+                value,
+                {
+                    'chars_a_drop': CharacterPage.objects.filter(pk=self.char_drop.pk).exists(),
+                    'chars_a_keep': CharacterPage.objects.filter(pk=self.char_keep.pk).exists(),
+                    'chars_b': CharacterPage.objects.filter(pk=self.char_b.pk).exists(),
+                    'loc_a_drop': Location.objects.filter(pk=self.loc_a_drop.pk).exists(),
+                    'loc_a': Location.objects.filter(pk=self.loc_a.pk).exists(),
+                    'loc_b': Location.objects.filter(pk=self.loc_b.pk).exists(),
+                }[key],
+                f"build_cleanup_plan mutated row '{key}'",
+            )
+
+    def test_cleanup_plan_totals_match_actual_deletions(self):
+        """T-001: per-model 'deprecated' counts in the plan must equal the
+        number of rows actually deleted when --cleanup runs."""
+        char_qs_before = CharacterPage.objects.count()
+        loc_qs_before = Location.objects.count()
+        plan = self.cmd.build_cleanup_plan(
+            series_data=[{
+                "fabula_uuid": "series-a-uuid",
+                "title": "Series A",
+                "seasons": [],
+            }],
+            events_data=[],
+            characters_data=[{"fabula_uuid": "char-keep-a"}],
+            organizations_data=[],
+            locations_data=[{"fabula_uuid": "loc-keep-a"}],
+        )
+        planned = {e['label']: len(e['deprecated']) for e in plan['entries']}
+
+        self._run_cleanup_for_series_a()
+
+        char_deleted = char_qs_before - CharacterPage.objects.count()
+        loc_deleted = loc_qs_before - Location.objects.count()
+        self.assertEqual(planned['characters'], char_deleted)
+        self.assertEqual(planned['locations'], loc_deleted)
+
+    def test_cleanup_deletes_deprecated_across_all_six_entry_types(self):
+        """T-001: plan totals must equal actual deletions for ALL six entry types."""
+        counts_before = {
+            'events': EventPage.objects.count(),
+            'episodes': EpisodePage.objects.count(),
+            'seasons': SeasonPage.objects.count(),
+            'characters': CharacterPage.objects.count(),
+            'organizations': OrganizationPage.objects.count(),
+            'locations': Location.objects.count(),
+        }
+        # Pre-flight: build the plan and capture its per-entry deprecated counts.
+        plan = self.cmd.build_cleanup_plan(
+            series_data=[{
+                "fabula_uuid": "series-a-uuid",
+                "title": "Series A",
+                "seasons": [{
+                    "fabula_uuid": "season-keep-a",
+                    "episodes": [{"fabula_uuid": "ep-keep-a"}],
+                }],
+            }],
+            events_data=[{"events": [{"fabula_uuid": "event-keep-a"}]}],
+            characters_data=[{"fabula_uuid": "char-keep-a"}],
+            organizations_data=[{"fabula_uuid": "org-keep-a"}],
+            locations_data=[{"fabula_uuid": "loc-keep-a"}],
+        )
+        planned = {e['label']: len(e['deprecated']) for e in plan['entries']}
+
+        # Each entry type should have exactly one deprecated row in the fixture.
+        for label in ('events', 'episodes', 'seasons', 'characters', 'organizations', 'locations'):
+            self.assertEqual(planned[label], 1, f"expected 1 deprecated {label}")
+
+        self._run_cleanup_for_series_a()
+
+        counts_after = {
+            'events': EventPage.objects.count(),
+            'episodes': EpisodePage.objects.count(),
+            'seasons': SeasonPage.objects.count(),
+            'characters': CharacterPage.objects.count(),
+            'organizations': OrganizationPage.objects.count(),
+            'locations': Location.objects.count(),
+        }
+        for label in counts_before:
+            self.assertEqual(
+                planned[label],
+                counts_before[label] - counts_after[label],
+                f"planned[{label}] != actual deletions",
+            )
+
+    def test_cleanup_empty_plan_when_all_canonical(self):
+        """T-001: if the import covers every in-scope row, the plan has zero
+        deprecated entries and run_cleanup deletes nothing."""
+        plan = self.cmd.build_cleanup_plan(
+            series_data=[{
+                "fabula_uuid": "series-a-uuid",
+                "title": "Series A",
+                "seasons": [{
+                    "fabula_uuid": "season-keep-a",
+                    "episodes": [
+                        {"fabula_uuid": "ep-keep-a"},
+                        {"fabula_uuid": "ep-drop-a"},
+                    ],
+                }, {
+                    "fabula_uuid": "season-drop-a",
+                    "episodes": [],
+                }],
+            }],
+            events_data=[{"events": [
+                {"fabula_uuid": "event-keep-a"},
+                {"fabula_uuid": "event-drop-a"},
+            ]}],
+            characters_data=[
+                {"fabula_uuid": "char-keep-a"},
+                {"fabula_uuid": "char-drop-a"},
+            ],
+            organizations_data=[
+                {"fabula_uuid": "org-keep-a"},
+                {"fabula_uuid": "org-drop-a"},
+            ],
+            locations_data=[
+                {"fabula_uuid": "loc-keep-a"},
+                {"fabula_uuid": "loc-drop-a"},
+            ],
+        )
+        # Every entry should report zero deprecated rows.
+        for entry in plan['entries']:
+            self.assertEqual(
+                len(entry['deprecated']), 0,
+                f"{entry['label']}: expected empty deprecated, got {entry['deprecated']}",
+            )
+
+        before = CharacterPage.objects.count() + EventPage.objects.count()
+        # Run the same canonical-covers-everything call as a full cleanup.
+        self._run_cleanup_for_series_a(
+            char_uuids=("char-keep-a", "char-drop-a"),
+            loc_uuids=("loc-keep-a", "loc-drop-a"),
+            org_uuids=("org-keep-a", "org-drop-a"),
+            season_uuids=("season-keep-a", "season-drop-a"),
+            episode_uuids=("ep-keep-a", "ep-drop-a"),
+            event_uuids=("event-keep-a", "event-drop-a"),
+        )
+        # Nothing changed.
+        self.assertEqual(
+            before,
+            CharacterPage.objects.count() + EventPage.objects.count(),
+        )
+
+    def test_cleanup_handles_multiple_imported_series(self):
+        """T-001: run_cleanup must accept a list of series and scope deletion
+        to all of them, while still preserving any series NOT in the list."""
+        # Promote series_b to "imported" — give it a stale character so we
+        # can prove the multi-series path actually deletes B's stale rows
+        # too, not just A's.
+        chars_b_drop = CharacterPage(
+            title="Drop B",
+            slug="drop-b",
+            canonical_name="Drop B",
+            description="<p>placeholder</p>",
+            fabula_uuid="char-drop-b",
+        )
+        self.chars_b.add_child(instance=chars_b_drop)
+
+        # And a third series that must survive the cleanup untouched.
+        root = Page.objects.get(depth=1)
+        series_c = SeriesIndexPage(
+            title="Series C",
+            slug="series-c",
+            fabula_uuid="series-c-uuid",
+        )
+        root.add_child(instance=series_c)
+        chars_c = CharacterIndexPage(title="Characters C", slug="chars-c")
+        series_c.add_child(instance=chars_c)
+        char_c = CharacterPage(
+            title="Bystander C",
+            slug="bystander-c",
+            canonical_name="Bystander C",
+            description="<p>placeholder</p>",
+            fabula_uuid="char-c",
+        )
+        chars_c.add_child(instance=char_c)
+
+        self.cmd.run_cleanup(
+            series_data=[
+                {"fabula_uuid": "series-a-uuid", "title": "A", "seasons": []},
+                {"fabula_uuid": "series-b-uuid", "title": "B", "seasons": []},
+            ],
+            events_data=[],
+            characters_data=[
+                {"fabula_uuid": "char-keep-a"},
+                {"fabula_uuid": "char-b"},
+            ],
+            organizations_data=[],
+            locations_data=[
+                {"fabula_uuid": "loc-keep-a"},
+                {"fabula_uuid": "loc-b"},
+            ],
+        )
+
+        # Series A: deprecated char dropped, keeper survives.
+        self.assertFalse(CharacterPage.objects.filter(pk=self.char_drop.pk).exists())
+        self.assertTrue(CharacterPage.objects.filter(pk=self.char_keep.pk).exists())
+        # Series B: deprecated char dropped, keeper survives.
+        self.assertFalse(CharacterPage.objects.filter(pk=chars_b_drop.pk).exists())
+        self.assertTrue(CharacterPage.objects.filter(pk=self.char_b.pk).exists())
+        # Series C: completely untouched.
+        self.assertTrue(CharacterPage.objects.filter(pk=char_c.pk).exists())
+
+    def test_cleanup_rolls_back_on_failure(self):
+        """T-001 / F1+F2: a ProtectedError mid-delete must roll back the whole
+        cleanup phase, including deletes from PRIOR entries.
+
+        Setup: add a second EventPage pinned to ep_drop. Mark THAT event
+        canonical so it survives the events pass, while event_drop is
+        deprecated and gets deleted in the events pass. The subsequent
+        episodes pass tries to delete ep_drop but the canonical
+        event_second still PROTECTs it -> ProtectedError -> rollback must
+        restore event_drop (deleted earlier in the same transaction).
+        """
+        event_second = EventPage(
+            title="Event Second",
+            slug="event-second-a",
+            episode=self.ep_drop,
+            description="<p>x</p>",
+            fabula_uuid="event-second-a",
+        )
+        self.events_idx_a.add_child(instance=event_second)
+
+        events_before = set(EventPage.objects.values_list('pk', flat=True))
+        chars_before = set(CharacterPage.objects.values_list('pk', flat=True))
+        locs_before = set(Location.objects.values_list('pk', flat=True))
+
+        with self.assertRaises(Exception):
+            self.cmd.run_cleanup(
+                series_data=[{
+                    "fabula_uuid": "series-a-uuid",
+                    "title": "Series A",
+                    "seasons": [{
+                        "fabula_uuid": "season-keep-a",
+                        "episodes": [{"fabula_uuid": "ep-keep-a"}],
+                    }],
+                }],
+                # event_drop is NOT canonical -> events pass deletes it.
+                # event-second-a IS canonical -> still PROTECTs ep_drop in
+                # the episodes pass, triggering rollback.
+                events_data=[{"events": [
+                    {"fabula_uuid": "event-keep-a"},
+                    {"fabula_uuid": "event-second-a"},
+                ]}],
+                characters_data=[{"fabula_uuid": "char-keep-a"}],
+                organizations_data=[{"fabula_uuid": "org-keep-a"}],
+                locations_data=[{"fabula_uuid": "loc-keep-a"}],
+            )
+
+        # Roll-back guarantee: the prior events/characters/locations pass
+        # touched event_drop; if transaction.atomic() is doing its job that
+        # delete must have been undone alongside everything else.
+        self.assertEqual(
+            events_before,
+            set(EventPage.objects.values_list('pk', flat=True)),
+            "transaction.atomic should have rolled back the prior event delete",
+        )
+        self.assertEqual(
+            chars_before,
+            set(CharacterPage.objects.values_list('pk', flat=True)),
+        )
+        self.assertEqual(
+            locs_before,
+            set(Location.objects.values_list('pk', flat=True)),
+        )
 
     def test_cleanup_aborts_when_series_unresolvable(self):
         """

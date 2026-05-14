@@ -245,8 +245,11 @@ class Command(BaseCommand):
                     f"\n{'[DRY RUN] ' if self.dry_run else ''}Import completed successfully!"
                 ))
 
-            # Run cleanup if requested (delete entities not in export)
-            if self.cleanup and not self.dry_run:
+            # Run cleanup if requested. On dry-run we still build and print
+            # the cleanup plan so the operator can preview scope before
+            # committing -- `run_cleanup` short-circuits before deletion when
+            # self.dry_run is True.
+            if self.cleanup:
                 self.run_cleanup(
                     series_data,
                     events_data,
@@ -1906,15 +1909,69 @@ class Command(BaseCommand):
         considered for deletion. Entities from other series in the same
         database are never touched -- this is the fix for ISS-001 where a
         single-series import with ``--cleanup`` would nuke every other series.
+
+        When ``self.dry_run`` is True, the cleanup plan is computed and the
+        consolidated summary is printed, but no deletes are issued. This is
+        the documented ``--cleanup --dry-run`` preview path.
         """
         self.stdout.write("\n" + "=" * 60)
         self.stdout.write("Cleanup Phase: Removing deprecated entities (series-scoped)")
         self.stdout.write("=" * 60)
 
-        # Resolve imported series_data to actual SeriesIndexPage objects.
-        # Without at least one matching series, we have no scope and MUST NOT
-        # run cleanup -- the previous behaviour treated "no scope" as
-        # "everything" and is exactly the bug we're fixing.
+        plan = self.build_cleanup_plan(
+            series_data, events_data, characters_data,
+            organizations_data, locations_data,
+        )
+        if plan is None:
+            # build_cleanup_plan has already explained why on stdout.
+            return
+
+        self._print_cleanup_summary(plan)
+
+        if self.dry_run:
+            self.stdout.write(self.style.WARNING(
+                "[DRY RUN] No entities were deleted. Re-run without --dry-run to apply."
+            ))
+            return
+
+        # Wrap the whole delete phase in a transaction so a mid-loop failure
+        # (e.g. ProtectedError when a canonical EventPage still references a
+        # deprecated EpisodePage) rolls back to the pre-cleanup state instead
+        # of leaving half-deleted data behind. CLAUDE.md documents Wagtail
+        # PROTECT-FK delete failures as a realistic hazard.
+        total_deleted = 0
+        try:
+            with transaction.atomic():
+                for entry in plan['entries']:
+                    total_deleted += self._delete_cleanup_entry(entry)
+        except Exception as exc:  # noqa: BLE001 — surfaced to operator
+            self.stdout.write(self.style.ERROR(
+                f"Cleanup aborted and rolled back: {exc.__class__.__name__}: {exc}"
+            ))
+            raise
+
+        self.stdout.write("=" * 60)
+        self.stdout.write(self.style.SUCCESS(
+            f"Cleanup complete: deleted {total_deleted} deprecated entities"
+        ))
+
+    def build_cleanup_plan(
+        self,
+        series_data,
+        events_data: List[Dict],
+        characters_data: List[Dict],
+        organizations_data: List[Dict],
+        locations_data: List[Dict],
+    ):
+        """
+        Compute what ``run_cleanup`` would delete, without touching the DB.
+
+        Returns a structured dict ``{ 'series_pages': [...], 'entries':
+        [...] }`` where each entry has ``label``, ``model``, ``canonical``,
+        ``in_scope``, ``deprecated`` (list of model instances), and
+        ``sample_names``. Returns ``None`` when no imported series can be
+        resolved (caller must abort cleanup in that case).
+        """
         series_list = series_data if isinstance(series_data, list) else [series_data]
         imported_series_uuids = {
             s.get('fabula_uuid') for s in series_list if s.get('fabula_uuid')
@@ -1928,12 +1985,8 @@ class Command(BaseCommand):
                 "Cleanup skipped: no imported series resolved to existing "
                 "SeriesIndexPage records. Refusing to delete unscoped data."
             ))
-            return
+            return None
 
-        series_titles = ", ".join(p.title for p in imported_series_pages)
-        self.stdout.write(f"Scope: {series_titles}")
-
-        # Episode and season UUIDs come from the series hierarchy.
         season_uuids = set()
         episode_uuids = set()
         for series in series_list:
@@ -1954,45 +2007,101 @@ class Command(BaseCommand):
         org_uuids = {o.get('fabula_uuid') for o in organizations_data if o.get('fabula_uuid')}
         loc_uuids = {l.get('fabula_uuid') for l in locations_data if l.get('fabula_uuid')}
 
-        # For Page-based models, scope = pages whose tree path lies under one
-        # of the imported series pages. This is the Wagtail-native way to ask
-        # "everything that belongs to this series".
         page_scope = self._descendants_of(imported_series_pages)
-
-        total_deleted = 0
-
-        # Events first -- FK to episodes, episodes FK to seasons, seasons FK
-        # to series, so deepest-first avoids PROTECT cascade failures.
-        total_deleted += self._cleanup_queryset(
-            page_scope(EventPage), event_uuids, 'events'
-        )
-        total_deleted += self._cleanup_queryset(
-            page_scope(EpisodePage), episode_uuids, 'episodes'
-        )
-        total_deleted += self._cleanup_queryset(
-            page_scope(SeasonPage), season_uuids, 'seasons'
-        )
-        # SeriesIndexPage itself is intentionally NOT pruned -- if you didn't
-        # include a series in this import, removing it is a separate operation
-        # and not something --cleanup should do for you.
-
-        total_deleted += self._cleanup_queryset(
-            page_scope(CharacterPage), char_uuids, 'characters'
-        )
-        total_deleted += self._cleanup_queryset(
-            page_scope(OrganizationPage), org_uuids, 'organizations'
-        )
-
-        # Location is a snippet with a direct series FK; scope by that FK.
         location_scope = Location.objects.filter(series__in=imported_series_pages)
-        total_deleted += self._cleanup_queryset(
-            location_scope, loc_uuids, 'locations'
-        )
 
-        self.stdout.write("=" * 60)
+        # Order: deepest-first for FK PROTECT safety when deletion runs.
+        scoped_specs = [
+            ('events', page_scope(EventPage), event_uuids),
+            ('episodes', page_scope(EpisodePage), episode_uuids),
+            ('seasons', page_scope(SeasonPage), season_uuids),
+            ('characters', page_scope(CharacterPage), char_uuids),
+            ('organizations', page_scope(OrganizationPage), org_uuids),
+            ('locations', location_scope, loc_uuids),
+        ]
+
+        entries = []
+        for label, scoped_qs, canonical_uuids in scoped_specs:
+            deprecated_qs = scoped_qs.exclude(
+                fabula_uuid__in=canonical_uuids
+            ).exclude(fabula_uuid='')
+            deprecated = list(deprecated_qs)
+            entries.append({
+                'label': label,
+                'model': scoped_qs.model.__name__,
+                'canonical': len(canonical_uuids),
+                'in_scope': scoped_qs.count(),
+                'deprecated': deprecated,
+                'sample_names': [self._display_name(o) for o in deprecated[:3]],
+            })
+
+        return {
+            'series_pages': imported_series_pages,
+            'entries': entries,
+        }
+
+    def _print_cleanup_summary(self, plan):
+        """Print the consolidated up-front cleanup plan so the operator can
+        Ctrl-C before any deletion fires."""
+        series_titles = ", ".join(p.title for p in plan['series_pages'])
+        self.stdout.write(f"Scope: {series_titles}")
+        self.stdout.write("")
+        self.stdout.write("Planned deletions (per model):")
+        for entry in plan['entries']:
+            self.stdout.write(
+                f"  {entry['model']:<18} "
+                f"canonical={entry['canonical']:<5} "
+                f"in_scope={entry['in_scope']:<5} "
+                f"deprecated={len(entry['deprecated'])}"
+            )
+        total = sum(len(e['deprecated']) for e in plan['entries'])
+        self.stdout.write(f"  {'TOTAL':<18} deprecated={total}")
+        self.stdout.write("")
+
+    def _delete_cleanup_entry(self, entry) -> int:
+        """Apply a single CleanupPlan entry. Mirrors the legacy per-model
+        output (header + sample names + Deleted N line)."""
+        deprecated = entry['deprecated']
+        self.stdout.write(f"\n{entry['model']}:")
+        self.stdout.write(f"  Canonical in export: {entry['canonical']}")
+        self.stdout.write(f"  In scope (this series): {entry['in_scope']}")
+        self.stdout.write(f"  Deprecated (deleting): {len(deprecated)}")
+        if not deprecated:
+            return 0
+        for name in entry['sample_names']:
+            self.stdout.write(f"    - {name}")
+        if len(deprecated) > len(entry['sample_names']):
+            self.stdout.write(
+                f"    ... and {len(deprecated) - len(entry['sample_names'])} more"
+            )
+        from django.db.models.deletion import ProtectedError
+
+        for obj in deprecated:
+            try:
+                obj.delete()
+            except ProtectedError as exc:
+                # Surface the offending row so the operator can fix the
+                # YAML (or relax the PROTECT FK) — then re-raise so the
+                # surrounding transaction.atomic() rolls back the whole
+                # cleanup phase.
+                self.stdout.write(self.style.ERROR(
+                    f"  ProtectedError deleting {self._display_name(obj)} "
+                    f"({entry['label']}): {exc}"
+                ))
+                raise
         self.stdout.write(self.style.SUCCESS(
-            f"Cleanup complete: deleted {total_deleted} deprecated entities"
+            f"  Deleted {len(deprecated)} {entry['label']}"
         ))
+        return len(deprecated)
+
+    @staticmethod
+    def _display_name(obj) -> str:
+        return (
+            getattr(obj, 'canonical_name', None)
+            or getattr(obj, 'name', None)
+            or getattr(obj, 'title', None)
+            or str(obj)
+        )
 
     def _descendants_of(self, series_pages: List['SeriesIndexPage']):
         """
@@ -2007,39 +2116,7 @@ class Command(BaseCommand):
             path_filter |= Q(path__startswith=series_page.path)
 
         def scope(model_class):
-            # ``depth__gt=series.depth`` excludes the series root pages
-            # themselves; we only want their descendants.
             min_depth = min(p.depth for p in series_pages)
             return model_class.objects.filter(path_filter, depth__gt=min_depth)
 
         return scope
-
-    def _cleanup_queryset(self, scoped_qs, canonical_uuids: set, label: str) -> int:
-        """Delete objects in ``scoped_qs`` whose fabula_uuid is not in ``canonical_uuids``."""
-        model_name = scoped_qs.model.__name__
-        in_scope_count = scoped_qs.count()
-        deprecated_qs = scoped_qs.exclude(fabula_uuid__in=canonical_uuids).exclude(fabula_uuid='')
-        deprecated = list(deprecated_qs)
-
-        self.stdout.write(f"\n{model_name}:")
-        self.stdout.write(f"  Canonical in export: {len(canonical_uuids)}")
-        self.stdout.write(f"  In scope (this series): {in_scope_count}")
-        self.stdout.write(f"  Deprecated (deleting): {len(deprecated)}")
-
-        if deprecated:
-            for obj in deprecated[:3]:
-                name = (
-                    getattr(obj, 'canonical_name', None)
-                    or getattr(obj, 'name', None)
-                    or getattr(obj, 'title', str(obj))
-                )
-                self.stdout.write(f"    - {name}")
-            if len(deprecated) > 3:
-                self.stdout.write(f"    ... and {len(deprecated) - 3} more")
-
-            for obj in deprecated:
-                obj.delete()
-
-            self.stdout.write(self.style.SUCCESS(f"  Deleted {len(deprecated)} {label}"))
-
-        return len(deprecated)

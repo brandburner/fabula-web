@@ -64,6 +64,12 @@ python manage.py import_fabula ./fabula_export
 # Dry-run import (validate without saving)
 python manage.py import_fabula ./fabula_export --dry-run
 
+# Import with cleanup: deletes deprecated entities WITHIN the imported series
+# (series-scoped as of ISS-001 / commit 9bec766 — other series in the DB are
+# never touched). Pair with --dry-run to preview the deletion plan only.
+python manage.py import_fabula ./fabula_export --cleanup
+python manage.py import_fabula ./fabula_export --cleanup --dry-run
+
 # Export from Neo4j to YAML
 python export_to_yaml.py --output ./fabula_export --series "The West Wing"
 ```
