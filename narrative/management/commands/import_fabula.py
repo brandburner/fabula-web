@@ -155,7 +155,11 @@ class Command(BaseCommand):
         parser.add_argument(
             '--cleanup',
             action='store_true',
-            help='Delete entities not in the export (removes deprecated items)'
+            help=(
+                'Delete deprecated entities WITHIN the imported series '
+                '(scoped: other series in the database are never touched). '
+                'See ISS-001 for the prior unscoped-deletion bug this replaces.'
+            )
         )
 
     def handle(self, *args, **options):
@@ -1896,26 +1900,43 @@ class Command(BaseCommand):
         locations_data: List[Dict]
     ):
         """
-        Delete entities from the database that are not in the export.
+        Delete deprecated entities within the series being imported.
 
-        This removes deprecated entities that were previously imported
-        but are no longer in the canonical export.
+        Scope: only entities that belong to one of the imported series are
+        considered for deletion. Entities from other series in the same
+        database are never touched -- this is the fix for ISS-001 where a
+        single-series import with ``--cleanup`` would nuke every other series.
         """
         self.stdout.write("\n" + "=" * 60)
-        self.stdout.write("Cleanup Phase: Removing deprecated entities")
+        self.stdout.write("Cleanup Phase: Removing deprecated entities (series-scoped)")
         self.stdout.write("=" * 60)
 
-        total_deleted = 0
-
-        # Extract UUIDs from series hierarchy
+        # Resolve imported series_data to actual SeriesIndexPage objects.
+        # Without at least one matching series, we have no scope and MUST NOT
+        # run cleanup -- the previous behaviour treated "no scope" as
+        # "everything" and is exactly the bug we're fixing.
         series_list = series_data if isinstance(series_data, list) else [series_data]
-        series_uuids = set()
+        imported_series_uuids = {
+            s.get('fabula_uuid') for s in series_list if s.get('fabula_uuid')
+        }
+        imported_series_pages = list(
+            SeriesIndexPage.objects.filter(fabula_uuid__in=imported_series_uuids)
+        )
+
+        if not imported_series_pages:
+            self.stdout.write(self.style.WARNING(
+                "Cleanup skipped: no imported series resolved to existing "
+                "SeriesIndexPage records. Refusing to delete unscoped data."
+            ))
+            return
+
+        series_titles = ", ".join(p.title for p in imported_series_pages)
+        self.stdout.write(f"Scope: {series_titles}")
+
+        # Episode and season UUIDs come from the series hierarchy.
         season_uuids = set()
         episode_uuids = set()
-
         for series in series_list:
-            if series.get('fabula_uuid'):
-                series_uuids.add(series['fabula_uuid'])
             for season in series.get('seasons', []):
                 if season.get('fabula_uuid'):
                     season_uuids.add(season['fabula_uuid'])
@@ -1923,74 +1944,99 @@ class Command(BaseCommand):
                     if episode.get('fabula_uuid'):
                         episode_uuids.add(episode['fabula_uuid'])
 
-        # Extract event UUIDs from events data (list of episode event files)
         event_uuids = set()
         for episode_events in events_data:
             for event in episode_events.get('events', []):
                 if event.get('fabula_uuid'):
                     event_uuids.add(event['fabula_uuid'])
 
-        # Cleanup Events first (they reference Episodes)
-        deleted = self._cleanup_model(EventPage, 'fabula_uuid', event_uuids, 'events')
-        total_deleted += deleted
-
-        # Cleanup Episodes (they reference Seasons)
-        deleted = self._cleanup_model(EpisodePage, 'fabula_uuid', episode_uuids, 'episodes')
-        total_deleted += deleted
-
-        # Cleanup Seasons (they reference Series)
-        deleted = self._cleanup_model(SeasonPage, 'fabula_uuid', season_uuids, 'seasons')
-        total_deleted += deleted
-
-        # Cleanup Series
-        deleted = self._cleanup_model(SeriesIndexPage, 'fabula_uuid', series_uuids, 'series')
-        total_deleted += deleted
-
-        # Cleanup Characters
         char_uuids = {c.get('fabula_uuid') for c in characters_data if c.get('fabula_uuid')}
-        deleted = self._cleanup_model(CharacterPage, 'fabula_uuid', char_uuids, 'characters')
-        total_deleted += deleted
-
-        # Cleanup Organizations
         org_uuids = {o.get('fabula_uuid') for o in organizations_data if o.get('fabula_uuid')}
-        deleted = self._cleanup_model(OrganizationPage, 'fabula_uuid', org_uuids, 'organizations')
-        total_deleted += deleted
-
-        # Cleanup Locations
         loc_uuids = {l.get('fabula_uuid') for l in locations_data if l.get('fabula_uuid')}
-        deleted = self._cleanup_model(Location, 'fabula_uuid', loc_uuids, 'locations')
-        total_deleted += deleted
+
+        # For Page-based models, scope = pages whose tree path lies under one
+        # of the imported series pages. This is the Wagtail-native way to ask
+        # "everything that belongs to this series".
+        page_scope = self._descendants_of(imported_series_pages)
+
+        total_deleted = 0
+
+        # Events first -- FK to episodes, episodes FK to seasons, seasons FK
+        # to series, so deepest-first avoids PROTECT cascade failures.
+        total_deleted += self._cleanup_queryset(
+            page_scope(EventPage), event_uuids, 'events'
+        )
+        total_deleted += self._cleanup_queryset(
+            page_scope(EpisodePage), episode_uuids, 'episodes'
+        )
+        total_deleted += self._cleanup_queryset(
+            page_scope(SeasonPage), season_uuids, 'seasons'
+        )
+        # SeriesIndexPage itself is intentionally NOT pruned -- if you didn't
+        # include a series in this import, removing it is a separate operation
+        # and not something --cleanup should do for you.
+
+        total_deleted += self._cleanup_queryset(
+            page_scope(CharacterPage), char_uuids, 'characters'
+        )
+        total_deleted += self._cleanup_queryset(
+            page_scope(OrganizationPage), org_uuids, 'organizations'
+        )
+
+        # Location is a snippet with a direct series FK; scope by that FK.
+        location_scope = Location.objects.filter(series__in=imported_series_pages)
+        total_deleted += self._cleanup_queryset(
+            location_scope, loc_uuids, 'locations'
+        )
 
         self.stdout.write("=" * 60)
-        self.stdout.write(self.style.SUCCESS(f"Cleanup complete: deleted {total_deleted} deprecated entities"))
+        self.stdout.write(self.style.SUCCESS(
+            f"Cleanup complete: deleted {total_deleted} deprecated entities"
+        ))
 
-    def _cleanup_model(self, model_class, uuid_field: str, canonical_uuids: set, label: str) -> int:
-        """Delete objects whose UUID is not in the canonical set."""
-        model_name = model_class.__name__
+    def _descendants_of(self, series_pages: List['SeriesIndexPage']):
+        """
+        Build a callable that scopes a Page model queryset to descendants of
+        the given series pages. Uses ``treebeard``'s materialised-path query
+        so a single SQL filter covers all descendants of all series at once.
+        """
+        from django.db.models import Q
 
-        all_objects = model_class.objects.all()
-        total_count = all_objects.count()
+        path_filter = Q()
+        for series_page in series_pages:
+            path_filter |= Q(path__startswith=series_page.path)
 
-        deprecated = []
-        for obj in all_objects:
-            obj_uuid = getattr(obj, uuid_field, None)
-            if obj_uuid and obj_uuid not in canonical_uuids:
-                deprecated.append(obj)
+        def scope(model_class):
+            # ``depth__gt=series.depth`` excludes the series root pages
+            # themselves; we only want their descendants.
+            min_depth = min(p.depth for p in series_pages)
+            return model_class.objects.filter(path_filter, depth__gt=min_depth)
+
+        return scope
+
+    def _cleanup_queryset(self, scoped_qs, canonical_uuids: set, label: str) -> int:
+        """Delete objects in ``scoped_qs`` whose fabula_uuid is not in ``canonical_uuids``."""
+        model_name = scoped_qs.model.__name__
+        in_scope_count = scoped_qs.count()
+        deprecated_qs = scoped_qs.exclude(fabula_uuid__in=canonical_uuids).exclude(fabula_uuid='')
+        deprecated = list(deprecated_qs)
 
         self.stdout.write(f"\n{model_name}:")
         self.stdout.write(f"  Canonical in export: {len(canonical_uuids)}")
-        self.stdout.write(f"  Total in database: {total_count}")
+        self.stdout.write(f"  In scope (this series): {in_scope_count}")
         self.stdout.write(f"  Deprecated (deleting): {len(deprecated)}")
 
         if deprecated:
-            # Show first few
             for obj in deprecated[:3]:
-                name = getattr(obj, 'canonical_name', None) or getattr(obj, 'name', None) or getattr(obj, 'title', str(obj))
+                name = (
+                    getattr(obj, 'canonical_name', None)
+                    or getattr(obj, 'name', None)
+                    or getattr(obj, 'title', str(obj))
+                )
                 self.stdout.write(f"    - {name}")
             if len(deprecated) > 3:
                 self.stdout.write(f"    ... and {len(deprecated) - 3} more")
 
-            # Delete them
             for obj in deprecated:
                 obj.delete()
 

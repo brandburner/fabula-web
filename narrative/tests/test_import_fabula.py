@@ -494,3 +494,146 @@ class ImportCommandErrorsTest(TestCase):
             out = StringIO()
             with self.assertRaises(CommandError):
                 call_command('import_fabula', tmpdir, stdout=out, stderr=out)
+
+
+class CleanupScopingTest(TestCase):
+    """
+    Regression tests for ISS-001: ``run_cleanup`` must never touch series
+    that were not part of the current import.
+    """
+
+    def setUp(self):
+        self.cmd = Command()
+        self.cmd.stdout = StringIO()
+        self.cmd.stderr = StringIO()
+        self.cmd.verbose = False
+        self.cmd.dry_run = False
+
+        root = Page.objects.get(depth=1)
+
+        # Series A: the one we're "importing" cleanup for.
+        self.series_a = SeriesIndexPage(
+            title="Series A",
+            slug="series-a",
+            fabula_uuid="series-a-uuid",
+        )
+        root.add_child(instance=self.series_a)
+
+        self.chars_a = CharacterIndexPage(title="Characters A", slug="chars-a")
+        self.series_a.add_child(instance=self.chars_a)
+
+        # Keeper: still in canonical_uuids on next import.
+        self.char_keep = CharacterPage(
+            title="Keeper A",
+            slug="keep-a",
+            canonical_name="Keeper A",
+            description="<p>placeholder</p>",
+            fabula_uuid="char-keep-a",
+        )
+        self.chars_a.add_child(instance=self.char_keep)
+
+        # Deprecated: not in canonical_uuids -- should be deleted.
+        self.char_drop = CharacterPage(
+            title="Drop A",
+            slug="drop-a",
+            canonical_name="Drop A",
+            description="<p>placeholder</p>",
+            fabula_uuid="char-drop-a",
+        )
+        self.chars_a.add_child(instance=self.char_drop)
+
+        # Series B: a completely separate series that must survive.
+        self.series_b = SeriesIndexPage(
+            title="Series B",
+            slug="series-b",
+            fabula_uuid="series-b-uuid",
+        )
+        root.add_child(instance=self.series_b)
+
+        self.chars_b = CharacterIndexPage(title="Characters B", slug="chars-b")
+        self.series_b.add_child(instance=self.chars_b)
+
+        self.char_b = CharacterPage(
+            title="Bystander B",
+            slug="bystander-b",
+            canonical_name="Bystander B",
+            description="<p>placeholder</p>",
+            fabula_uuid="char-b",
+        )
+        self.chars_b.add_child(instance=self.char_b)
+
+        self.loc_a = Location.objects.create(
+            fabula_uuid="loc-keep-a",
+            canonical_name="Loc Keep A",
+            description="",
+            series=self.series_a,
+        )
+        self.loc_a_drop = Location.objects.create(
+            fabula_uuid="loc-drop-a",
+            canonical_name="Loc Drop A",
+            description="",
+            series=self.series_a,
+        )
+        self.loc_b = Location.objects.create(
+            fabula_uuid="loc-b",
+            canonical_name="Loc B",
+            description="",
+            series=self.series_b,
+        )
+
+    def _run_cleanup_for_series_a(self, char_uuids=("char-keep-a",), loc_uuids=("loc-keep-a",)):
+        series_data = [{
+            "fabula_uuid": "series-a-uuid",
+            "title": "Series A",
+            "seasons": [],
+        }]
+        characters_data = [{"fabula_uuid": u} for u in char_uuids]
+        locations_data = [{"fabula_uuid": u} for u in loc_uuids]
+        self.cmd.run_cleanup(
+            series_data=series_data,
+            events_data=[],
+            characters_data=characters_data,
+            organizations_data=[],
+            locations_data=locations_data,
+        )
+
+    def test_cleanup_preserves_other_series_characters(self):
+        """ISS-001 regression: a Series A import must NEVER delete Series B characters."""
+        self._run_cleanup_for_series_a()
+        self.assertTrue(CharacterPage.objects.filter(pk=self.char_b.pk).exists())
+
+    def test_cleanup_deletes_deprecated_in_imported_series(self):
+        """Deprecated characters within the imported series ARE pruned."""
+        self._run_cleanup_for_series_a()
+        self.assertFalse(CharacterPage.objects.filter(pk=self.char_drop.pk).exists())
+        self.assertTrue(CharacterPage.objects.filter(pk=self.char_keep.pk).exists())
+
+    def test_cleanup_preserves_other_series_locations(self):
+        """ISS-001 regression: locations on a different series must survive."""
+        self._run_cleanup_for_series_a()
+        self.assertTrue(Location.objects.filter(pk=self.loc_b.pk).exists())
+
+    def test_cleanup_deletes_deprecated_locations_in_scope(self):
+        """Deprecated locations within the imported series ARE pruned."""
+        self._run_cleanup_for_series_a()
+        self.assertFalse(Location.objects.filter(pk=self.loc_a_drop.pk).exists())
+        self.assertTrue(Location.objects.filter(pk=self.loc_a.pk).exists())
+
+    def test_cleanup_aborts_when_series_unresolvable(self):
+        """
+        If the imported series_data doesn't match any SeriesIndexPage record,
+        run_cleanup MUST refuse to delete anything (the old behaviour treated
+        this as 'wipe everything').
+        """
+        bogus_series = [{"fabula_uuid": "no-such-series", "title": "Ghost"}]
+        self.cmd.run_cleanup(
+            series_data=bogus_series,
+            events_data=[],
+            characters_data=[],
+            organizations_data=[],
+            locations_data=[],
+        )
+        self.assertTrue(CharacterPage.objects.filter(pk=self.char_b.pk).exists())
+        self.assertTrue(CharacterPage.objects.filter(pk=self.char_keep.pk).exists())
+        self.assertTrue(CharacterPage.objects.filter(pk=self.char_drop.pk).exists())
+        self.assertTrue(Location.objects.filter(pk=self.loc_b.pk).exists())

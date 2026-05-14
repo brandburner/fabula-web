@@ -1,0 +1,18 @@
+{
+  "components": [
+    "narrative/management/commands/import_fabula.py"
+  ],
+  "discoveredDate": "2026-05-14",
+  "id": "ISS-001",
+  "impact": "Running --cleanup during a single-series import nukes every other series in the database. Easy to mis-use; has bitten before. Need scoping, confirmation, or rework before recommending to anyone.",
+  "location": [],
+  "phase": "data-pipeline",
+  "relatedTickets": [
+    "T-001"
+  ],
+  "resolution": "Scoped --cleanup to only the imported series via Wagtail page tree (path__startswith on imported SeriesIndexPage records) for Page models and series__in for Location snippets. Cleanup now refuses to run when no imported series resolves to an existing SeriesIndexPage, eliminating the prior \"no scope = wipe everything\" failure mode. SeriesIndexPage itself is no longer pruned by --cleanup. Added 5 regression tests in narrative/tests/test_import_fabula.py::CleanupScopingTest covering the cross-series preservation guarantee and the unresolvable-scope abort path.",
+  "resolvedDate": "2026-05-14",
+  "severity": "high",
+  "status": "resolved",
+  "title": "import_fabula --cleanup deletes ALL non-exported series"
+}
