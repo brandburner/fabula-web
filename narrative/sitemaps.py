@@ -270,16 +270,10 @@ class MarketingTreeSitemap(Sitemap):
         return "/" + page.url_path[len(root_url_path):]
 
     def items(self):
-        from django.contrib.contenttypes.models import ContentType
-        from marketing.models import UseCasePage
-
         root = self._root()
         self._root_url_path = root.url_path
         pages = (
             root.get_descendants(inclusive=True).live().public()
-            # UseCasePage detail pages currently 500 on prod — never sitemap a
-            # broken URL. The /use-cases/ index (UseCasesIndexPage) is fine.
-            .exclude(content_type=ContentType.objects.get_for_model(UseCasePage))
             .only("url_path", "last_published_at", "latest_revision_created_at")
             .order_by("path")
         )
