@@ -6,7 +6,7 @@ from django.conf import settings
 from django.conf.urls.static import static
 from django.contrib import admin
 from django.contrib.admin.views.decorators import staff_member_required
-from django.contrib.sitemaps.views import sitemap
+from django.contrib.sitemaps.views import index, sitemap
 from django.urls import path, include
 from django.http import HttpResponse, JsonResponse
 from django.views.decorators.cache import cache_page
@@ -17,20 +17,49 @@ from pathlib import Path
 
 from wagtail.admin import urls as wagtailadmin_urls
 from wagtail import urls as wagtail_urls
-from wagtail.contrib.sitemaps import Sitemap as WagtailSitemap
 from wagtail.documents import urls as wagtaildocs_urls
 
 from narrative.sitemaps import (
+    StaticViewSitemap, MarketingTreeSitemap,
+    SeriesSitemap, EpisodeSitemap, CharacterSitemap, OrganizationSitemap,
+    ObjectSitemap, EventSitemap,
     ConnectionSitemap, ThemeSitemap, ArcSitemap, LocationSitemap,
 )
 
 sitemaps = {
-    'wagtail': WagtailSitemap,
+    # Marketing
+    'pages': StaticViewSitemap,
+    'marketing': MarketingTreeSitemap,
+    # Navigable content (served by custom views via get_absolute_url)
+    'series': SeriesSitemap,
+    'episodes': EpisodeSitemap,
+    'characters': CharacterSitemap,
+    'organizations': OrganizationSitemap,
+    'objects': ObjectSitemap,
+    'events': EventSitemap,
+    # Connections + snippet content
     'connections': ConnectionSitemap,
     'themes': ThemeSitemap,
     'arcs': ArcSitemap,
     'locations': LocationSitemap,
 }
+
+# Canonical host for sitemap URLs. The site has no SITE_ID / Sites framework, so
+# Django's sitemap views derive the <loc> domain from the *request host*
+# (get_current_site -> RequestSite). Prod ALLOWED_HOSTS includes www. and the
+# Railway domain, and cache_page keys on path only (no Vary: Host) — so a single
+# cache-miss request via a non-canonical host would otherwise bake that domain
+# into the sitemap Googlebot reads. We pin the host before rendering so every
+# emitted URL is https://fabula.productions/... regardless of how it was fetched.
+CANONICAL_HOST = os.environ.get('RAILWAY_PUBLIC_DOMAIN', 'fabula.productions')
+
+
+def _canonical_host(view):
+    def wrapped(request, *args, **kwargs):
+        request.META['HTTP_HOST'] = CANONICAL_HOST
+        request.META.pop('HTTP_X_FORWARDED_HOST', None)
+        return view(request, *args, **kwargs)
+    return wrapped
 
 
 def robots_txt(request):
@@ -303,7 +332,15 @@ urlpatterns = [
     path('googlea62b51e71cd21b69.html', google_verification),
     path('robots.txt', robots_txt, name='robots_txt'),
     path('sitemap.md', sitemap_md, name='sitemap_md'),
-    path('sitemap.xml', cache_page(3600)(sitemap), {'sitemaps': sitemaps}, name='sitemap'),
+    # Sitemap **index** at /sitemap.xml — the site has ~165k URLs, far over the
+    # 50k-per-file spec limit, so a flat sitemap silently dropped everything
+    # past page 1 of each section. The index points at per-section child
+    # sitemaps (/sitemap-<section>.xml[?p=N]), each cached independently.
+    path('sitemap.xml', cache_page(3600)(_canonical_host(index)),
+         {'sitemaps': sitemaps, 'sitemap_url_name': 'sitemap_section'},
+         name='sitemap'),
+    path('sitemap-<section>.xml', cache_page(3600)(_canonical_host(sitemap)),
+         {'sitemaps': sitemaps}, name='sitemap_section'),
     path('health/', health_check, name='health_check'),
     path('diagnostics/', diagnostics, name='diagnostics'),
     path('trigger-import/', trigger_import, name='trigger_import'),
