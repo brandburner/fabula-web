@@ -5,6 +5,7 @@ URL configuration for Fabula Web.
 from django.conf import settings
 from django.conf.urls.static import static
 from django.contrib import admin
+from django.contrib.admin.views.decorators import staff_member_required
 from django.contrib.sitemaps.views import sitemap
 from django.urls import path, include
 from django.http import HttpResponse, JsonResponse
@@ -51,8 +52,10 @@ def health_check(request):
     return JsonResponse({'status': 'ok'})
 
 
+@staff_member_required
 def diagnostics(request):
-    """Diagnostic endpoint to check data import status."""
+    """Diagnostic endpoint to check data import status. Staff-only — leaks
+    page tree, site config, and server filesystem paths."""
     from wagtail.models import Page, Site
 
     data_dir = Path('fabula_export')
@@ -81,8 +84,10 @@ def diagnostics(request):
     })
 
 
+@staff_member_required
 def trigger_import(request):
-    """Trigger data import (one-time use endpoint)."""
+    """Trigger data import (one-time use endpoint). Staff-only — runs a
+    management command; prefer the CLI importer for normal operations."""
     from django.core.management import call_command
     from wagtail.models import Page
     from io import StringIO
