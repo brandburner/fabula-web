@@ -582,50 +582,20 @@ def narrative_url(context, page):
         if current_series:
             series_slug = current_series.slug
 
-    # Map page types to URL names
-    url_map = {
-        'EventPage': ('series_event_detail', 'event_detail'),
-        'CharacterPage': ('series_character_detail', 'character_detail'),
-        'EpisodePage': ('series_episode_detail', None),  # Episodes always need series context
-        'OrganizationPage': ('series_organization_detail', 'organization_detail'),
-        'ObjectPage': ('series_object_detail', 'object_detail'),
-    }
+    # Detail + index + series URLs share one format helper (url_utils) so the
+    # canonical tag and sitemaps can't drift from internal links.
+    from narrative.url_utils import build_entity_url
 
-    if page_class in url_map:
-        series_url_name, global_url_name = url_map[page_class]
-
-        if series_slug:
-            # Series-scoped URL
-            return reverse(series_url_name, kwargs={
-                'series_slug': series_slug,
-                'identifier': identifier
-            })
-        elif global_url_name:
-            # Global URL fallback
-            return reverse(global_url_name, kwargs={'identifier': identifier})
-
-    # For SeriesIndexPage
     if page_class == 'SeriesIndexPage':
         return reverse('series_landing', kwargs={'series_slug': page.slug})
 
-    # For SeasonPage - link to first episode or series landing
-    if page_class == 'SeasonPage':
-        if series_slug:
-            return reverse('series_landing', kwargs={'series_slug': series_slug})
+    url = build_entity_url(page_class, series_slug, identifier)
+    if url:
+        return url
 
-    # For index pages (OrganizationIndexPage, CharacterIndexPage, etc.)
-    index_url_map = {
-        'OrganizationIndexPage': ('series_organization_index', 'organization_index'),
-        'CharacterIndexPage': ('series_character_index', 'character_index'),
-        'ObjectIndexPage': ('series_object_index', 'object_index'),
-        'LocationIndexPage': ('series_location_index', 'location_index'),
-    }
-    if page_class in index_url_map:
-        series_url_name, global_url_name = index_url_map[page_class]
-        if series_slug:
-            return reverse(series_url_name, kwargs={'series_slug': series_slug})
-        else:
-            return reverse(global_url_name)
+    # For SeasonPage - link to series landing
+    if page_class == 'SeasonPage' and series_slug:
+        return reverse('series_landing', kwargs={'series_slug': series_slug})
 
     # Fallback to Wagtail's URL if available
     if hasattr(page, 'url') and page.url:

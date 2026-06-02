@@ -137,6 +137,31 @@ class FlexibleIdentifierMixin:
 
 
 # =============================================================================
+# CANONICAL URL MIXIN
+# =============================================================================
+
+class CanonicalURLMixin:
+    """Set `canonical_path` so every entity has ONE canonical URL regardless of
+    which of its two URLs (series-scoped or global) was requested.
+
+    Tree pages (event/character/object/organization/episode/series) canonicalise
+    to their series-scoped URL — the primary form used by internal navigation.
+    Cross-series snippets (connection/theme/arc/location) canonicalise to their
+    global `get_absolute_url()`. base.html renders `canonical_path` (falling back
+    to the request path when absent). See narrative/url_utils.py."""
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        from narrative.url_utils import canonical_path_for
+        obj = getattr(self, 'object', None)
+        if obj is not None:
+            path = canonical_path_for(obj)
+            if path:
+                context['canonical_path'] = path
+        return context
+
+
+# =============================================================================
 # SERIES SCOPING MIXIN
 # =============================================================================
 
@@ -360,7 +385,7 @@ class ConnectionIndexView(ListView):
         return context
 
 
-class ConnectionDetailView(FlexibleIdentifierMixin, DetailView):
+class ConnectionDetailView(FlexibleIdentifierMixin, CanonicalURLMixin, DetailView):
     """
     View a single narrative connection as first-class content.
     Uses flexible identifier lookup (global_id, fabula_uuid, or pk).
@@ -413,7 +438,7 @@ class ThemeIndexView(ListView):
         ).order_by('-event_count')
 
 
-class ThemeDetailView(FlexibleIdentifierMixin, DetailView):
+class ThemeDetailView(FlexibleIdentifierMixin, CanonicalURLMixin, DetailView):
     """
     View a single theme with all events that exemplify it.
     Uses flexible identifier lookup (global_id, fabula_uuid, or pk).
@@ -460,7 +485,7 @@ class ArcIndexView(ListView):
         ).order_by('-event_count')
 
 
-class ArcDetailView(FlexibleIdentifierMixin, DetailView):
+class ArcDetailView(FlexibleIdentifierMixin, CanonicalURLMixin, DetailView):
     """
     View a single conflict arc with all related events.
     Uses flexible identifier lookup (global_id, fabula_uuid, or pk).
@@ -548,7 +573,7 @@ class LocationIndexView(SeasonFilterMixin, SeriesScopedMixin, ListView):
         return context
 
 
-class LocationDetailView(FlexibleIdentifierMixin, DetailView):
+class LocationDetailView(FlexibleIdentifierMixin, CanonicalURLMixin, DetailView):
     """
     View a single location with all events that occur there.
     Shows both simple FK events and rich involvement events.
@@ -642,7 +667,7 @@ class CharacterIndexView(SeasonFilterMixin, SeriesScopedMixin, ListView):
 
 
 @method_decorator(cache_page(60 * 60 * 24), name='dispatch')  # 24h cache; data changes only on import
-class CharacterDetailView(FlexibleIdentifierMixin, DetailView):
+class CharacterDetailView(FlexibleIdentifierMixin, CanonicalURLMixin, DetailView):
     """
     View a single character with their event participations and journey.
     Uses flexible identifier lookup (global_id, fabula_uuid, or pk).
@@ -774,7 +799,7 @@ class OrganizationIndexView(SeasonFilterMixin, SeriesScopedMixin, ListView):
         return context
 
 
-class OrganizationDetailView(FlexibleIdentifierMixin, DetailView):
+class OrganizationDetailView(FlexibleIdentifierMixin, CanonicalURLMixin, DetailView):
     """
     View a single organization with related characters and events.
     Uses flexible identifier lookup (global_id, fabula_uuid, or pk).
@@ -863,7 +888,7 @@ class ObjectIndexView(SeasonFilterMixin, SeriesScopedMixin, ListView):
             ).order_by('-involvement_count', 'canonical_name')
 
 
-class ObjectDetailView(FlexibleIdentifierMixin, DetailView):
+class ObjectDetailView(FlexibleIdentifierMixin, CanonicalURLMixin, DetailView):
     """
     View a single object with its event involvements.
     Uses flexible identifier lookup (global_id, fabula_uuid, or pk).
@@ -958,7 +983,7 @@ class EventIndexView(SeasonFilterMixin, SeriesScopedMixin, ListView):
         return context
 
 
-class EventDetailView(FlexibleIdentifierMixin, DetailView):
+class EventDetailView(FlexibleIdentifierMixin, CanonicalURLMixin, DetailView):
     """
     View a single event with participations and connections.
     Uses flexible identifier lookup (global_id, fabula_uuid, or pk).
@@ -987,7 +1012,7 @@ class EventDetailView(FlexibleIdentifierMixin, DetailView):
         return context
 
 
-class EpisodeDetailView(FlexibleIdentifierMixin, DetailView):
+class EpisodeDetailView(FlexibleIdentifierMixin, CanonicalURLMixin, DetailView):
     """
     View a single episode with its events.
     Uses flexible identifier lookup (fabula_uuid or pk).

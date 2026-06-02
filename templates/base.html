@@ -15,12 +15,12 @@
     <meta name="description" content="{{ page_description }}">
     {% endif %}
     {% endblock %}
-    <link rel="canonical" href="{% block canonical_url %}{{ request.scheme }}://{{ request.get_host }}{{ request.path }}{% endblock %}">
+    <link rel="canonical" href="{% block canonical_url %}{{ request.scheme }}://{{ request.get_host }}{{ canonical_path|default:request.path }}{% endblock %}">
 
     {# Open Graph #}
     <meta property="og:type" content="{% block og_type %}website{% endblock %}">
     <meta property="og:title" content="{% block og_title %}{% if page %}{{ page.seo_title|default:page.title|md_plain }} | {% endif %}Fabula{% endblock %}">
-    <meta property="og:url" content="{{ request.scheme }}://{{ request.get_host }}{{ request.path }}">
+    <meta property="og:url" content="{{ request.scheme }}://{{ request.get_host }}{{ canonical_path|default:request.path }}">
     <meta property="og:site_name" content="Fabula">
     {% block og_description %}
     {% if page.search_description %}

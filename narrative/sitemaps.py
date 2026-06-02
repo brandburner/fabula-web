@@ -27,6 +27,7 @@ from django.contrib.sitemaps import Sitemap
 from django.db.models import Max
 from django.urls import reverse
 
+from .url_utils import build_entity_url, entity_identifier
 from .models import (
     NarrativeConnection, Theme, ConflictArc, Location,
     SeriesIndexPage, EpisodePage, CharacterPage, OrganizationPage,
@@ -39,8 +40,11 @@ from .models import (
 # ---------------------------------------------------------------------------
 
 class _PageSitemap(Sitemap):
-    """Base for live Wagtail pages whose canonical URL comes from
-    `get_absolute_url()` (global_id-based), not the page tree."""
+    """Base for live Wagtail pages. Emits the **series-scoped** canonical URL
+    (matching the canonical tag and internal links — see narrative/url_utils.py),
+    NOT the legacy global `get_absolute_url()`. The owning series is resolved by
+    Wagtail tree-path prefix from a dict built once per render — never a
+    per-item `get_ancestors` query."""
 
     protocol = "https"
     changefreq = "monthly"
@@ -48,18 +52,30 @@ class _PageSitemap(Sitemap):
     model = None  # set by subclass
 
     def items(self):
+        self._series_by_path = {
+            s.path: s.slug
+            for s in SeriesIndexPage.objects.live().only("path", "slug")
+        }
         return (
             self.model.objects.live()
-            .only("global_id", "fabula_uuid",
+            .only("path", "global_id", "fabula_uuid",
                   "last_published_at", "latest_revision_created_at")
-            .order_by("pk")
+            .order_by("path")  # stable for pagination + prefix matching
         )
 
     def lastmod(self, obj):
         return obj.last_published_at or obj.latest_revision_created_at
 
     def location(self, obj):
-        return obj.get_absolute_url()
+        series_slug = next(
+            (slug for path, slug in self._series_by_path.items()
+             if obj.path.startswith(path)),
+            None,
+        )
+        url = build_entity_url(
+            self.model.__name__, series_slug, entity_identifier(obj))
+        # No resolvable series -> global URL is the canonical for it too.
+        return url or obj.get_absolute_url()
 
     def get_latest_lastmod(self):
         return self.model.objects.live().aggregate(m=Max("last_published_at"))["m"]
