@@ -139,6 +139,15 @@ AGENT_UA_PATTERNS = re.compile(
     re.IGNORECASE,
 )
 
+# Paths that identify automated vulnerability scanners probing for WordPress/PHP
+# backdoors. This is a Django site, so these always 404 — logging each one to the
+# DB is pure noise and, under a scanner flood, a write-amplification DoS vector.
+JUNK_SCAN_PATTERNS = re.compile(
+    r'(\.php\b|/wp-|/xmlrpc|/vendor/|/cgi-bin/|\.env\b|/\.git|'
+    r'/phpunit|autoload_classmap|eval-stdin)',
+    re.IGNORECASE,
+)
+
 
 def _is_agent(request):
     """Return True if the request looks like an AI agent or bot."""
@@ -162,6 +171,12 @@ def agent_friendly_404(request, exception=None):
     from narrative.models import AgentMiss
 
     if _is_agent(request):
+        # Drop obvious vulnerability-scan / backdoor probes fast: no DB write,
+        # no markdown build. Keeps scanner floods off the hot path and out of
+        # the AgentMiss table.
+        if JUNK_SCAN_PATTERNS.search(request.path):
+            return HttpResponse('Not Found', content_type='text/plain', status=404)
+
         # Log the miss
         ua = request.META.get('HTTP_USER_AGENT', '')[:2000]
         referer = request.META.get('HTTP_REFERER', '')[:2000]
