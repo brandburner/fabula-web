@@ -1521,11 +1521,158 @@ class ContractVersionGateTest(TestCase):
             out = StringIO()
             call_command('import_fabula', tmpdir, '--dry-run', stdout=out)
             self.assertIn('v2.4.0 shapes validated', out.getvalue())
-            self.assertIn('T-028', out.getvalue())
+            self.assertIn('nothing imported', out.getvalue())
+        self.assertFalse(
+            SeriesIndexPage.objects.filter(fabula_uuid='ser_1').exists())
 
-    def test_v24_real_import_refused_until_t028(self):
+    def test_v24_real_import_succeeds(self):
+        # T-028: the real v2.4.0 import path now runs (empty scope, so no
+        # confirmation gate fires).
         with tempfile.TemporaryDirectory() as tmpdir:
             self._write_v24_export(tmpdir)
             out = StringIO()
-            with self.assertRaises(CommandError):
-                call_command('import_fabula', tmpdir, stdout=out)
+            call_command('import_fabula', tmpdir, stdout=out)
+        self.assertTrue(
+            SeriesIndexPage.objects.filter(fabula_uuid='ser_1').exists())
+
+
+class ConnectionPurgeScopingTest(TestCase):
+    """T-028 spec point (2)+(5): the v2.4.0 purge is scoped to the imported
+    series — a sibling series' connections must survive (the ISS-001
+    failure class, connections edition)."""
+
+    def setUp(self):
+        self.cmd = Command()
+        self.cmd.stdout = StringIO()
+        self.cmd.stderr = StringIO()
+        self.cmd.verbose = False
+        self.cmd.dry_run = False
+        self.cmd.stats = ImportStats()
+        self.cmd.events_cache = {}
+        self.cmd.episodes_cache = {}
+
+        root = Page.objects.get(depth=1)
+        self.pages = {}
+        for slug in ('alpha', 'beta'):
+            series = SeriesIndexPage(
+                title=f"Series {slug}", slug=f"series-{slug}",
+                fabula_uuid=f"ser_{slug}",
+            )
+            root.add_child(instance=series)
+            idx = EventIndexPage(title=f"Events {slug}", slug=f"events-{slug}")
+            series.add_child(instance=idx)
+            season = SeasonPage(title='S1', slug=f's1-{slug}', season_number=1,
+                                fabula_uuid=f'season_{slug}')
+            series.add_child(instance=season)
+            episode = EpisodePage(title='E1', slug=f'e1-{slug}',
+                                  episode_number=1, season_number=1,
+                                  fabula_uuid=f'ep_{slug}')
+            season.add_child(instance=episode)
+            events = []
+            for n in (1, 2):
+                ev = EventPage(
+                    title=f'Event {slug} {n}', slug=f'event-{slug}-{n}',
+                    episode=episode, description='<p>x</p>',
+                    fabula_uuid=f'evt_{slug}_{n}',
+                )
+                idx.add_child(instance=ev)
+                events.append(ev)
+                self.cmd.events_cache[ev.fabula_uuid] = ev
+            self.cmd.episodes_cache[episode.fabula_uuid] = episode
+            self.pages[slug] = {'series': series, 'events': events,
+                                'episode': episode}
+            NarrativeConnection.objects.create(
+                from_event=events[0], to_event=events[1],
+                connection_type='CAUSAL', strength='strong',
+                description=f'legacy {slug}',
+                fabula_uuid=f'conn_legacy_{slug}',
+                global_id=f'ger_narrativeconnection_{slug}',
+            )
+
+    def _v24_rows(self, slug):
+        ep = {'uuid': f'ep_{slug}', 'season': 1, 'number': 1, 'ordinal': 101}
+        return [
+            {   # event-layer row
+                'fabula_uuid': f'conn_new_{slug}', 'global_id': None,
+                'from_event_uuid': f'evt_{slug}_1',
+                'to_event_uuid': f'evt_{slug}_2',
+                'connection_type': 'FORESHADOWING', 'strength': 'medium',
+                'description': 'new event row', 'layer': 'event',
+                'scope': 'intra_episode', 'inferred_by': 'llm_cross_episode_arc',
+                'cross_episode_reasoning': None,
+                'from_episode': ep, 'to_episode': ep,
+            },
+            {   # beat-layer row matching the legacy triple — keeps identity
+                'fabula_uuid': f'conn_legacy_{slug}',
+                'global_id': f'ger_narrativeconnection_{slug}',
+                'from_event_uuid': f'evt_{slug}_1',
+                'to_event_uuid': f'evt_{slug}_2',
+                'connection_type': 'CAUSAL', 'strength': 'moderate',
+                'description': 'beat row', 'layer': 'beat',
+                'scope': 'intra_episode',
+                'from_episode': ep, 'to_episode': ep,
+            },
+        ]
+
+    def test_purge_scoped_to_imported_series(self):
+        self.cmd.import_connections_v24(
+            self._v24_rows('alpha'), [self.pages['alpha']['series']])
+        # Series beta's legacy connection is untouched.
+        self.assertTrue(NarrativeConnection.objects.filter(
+            fabula_uuid='conn_legacy_beta').exists())
+        # Series alpha now carries exactly the v2.4.0 set.
+        alpha_conns = NarrativeConnection.objects.filter(
+            from_event__in=[e.pk for e in self.pages['alpha']['events']])
+        self.assertEqual(alpha_conns.count(), 2)
+        self.assertEqual(
+            set(alpha_conns.values_list('layer', flat=True)), {'event', 'beat'})
+
+    def test_strength_normalized_and_episode_fks_set(self):
+        self.cmd.import_connections_v24(
+            self._v24_rows('alpha'), [self.pages['alpha']['series']])
+        beat = NarrativeConnection.objects.get(fabula_uuid='conn_legacy_alpha')
+        self.assertEqual(beat.strength, 'medium')  # moderate -> medium (R4)
+        self.assertEqual(beat.from_episode, self.pages['alpha']['episode'])
+        self.assertEqual(beat.to_episode, self.pages['alpha']['episode'])
+
+    def test_collision_event_layer_wins(self):
+        rows = self._v24_rows('alpha')
+        # Make the beat row collide with the event row's triple.
+        rows[1]['connection_type'] = 'FORESHADOWING'
+        self.cmd.import_connections_v24(rows, [self.pages['alpha']['series']])
+        survivors = NarrativeConnection.objects.filter(
+            from_event=self.pages['alpha']['events'][0],
+            to_event=self.pages['alpha']['events'][1],
+            connection_type='FORESHADOWING',
+        )
+        self.assertEqual(survivors.count(), 1)
+        self.assertEqual(survivors.first().layer, 'event')
+        self.assertIn('event layer wins', self.cmd.stdout.getvalue())
+
+    def test_reimport_is_idempotent(self):
+        for _ in range(2):
+            self.cmd.import_connections_v24(
+                self._v24_rows('alpha'), [self.pages['alpha']['series']])
+        alpha_conns = NarrativeConnection.objects.filter(
+            from_event__in=[e.pk for e in self.pages['alpha']['events']])
+        self.assertEqual(alpha_conns.count(), 2)
+
+    def test_redirect_map_written_for_dead_urls(self):
+        from wagtail.contrib.redirects.models import Redirect
+        rows = self._v24_rows('alpha')
+        # Remove the beat row so the legacy CAUSAL triple dies entirely.
+        rows = [rows[0]]
+        self.cmd.import_connections_v24(rows, [self.pages['alpha']['series']])
+        redirect = Redirect.objects.get(
+            old_path='/connections/ger_narrativeconnection_alpha')
+        # Unmatched -> points at the from-event page.
+        self.assertEqual(redirect.redirect_page_id,
+                         self.pages['alpha']['events'][0].pk)
+
+    def test_surviving_identity_gets_no_redirect(self):
+        from wagtail.contrib.redirects.models import Redirect
+        self.cmd.import_connections_v24(
+            self._v24_rows('alpha'), [self.pages['alpha']['series']])
+        # The beat row kept its global_id -> same URL -> no redirect row.
+        self.assertFalse(Redirect.objects.filter(
+            old_path__contains='ger_narrativeconnection_alpha').exists())

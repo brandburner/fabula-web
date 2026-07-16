@@ -46,6 +46,9 @@ from narrative.models import (
     NarrativeConnection,
     EventParticipation,
     CharacterEpisodeProfile,
+    CharacterSeasonProfile,
+    ArcEventMembership,
+    ThemeEventMembership,
     ObjectInvolvement,
     LocationInvolvement,
     OrganizationInvolvement,
@@ -228,12 +231,14 @@ class Command(BaseCommand):
             self.log_info(f"Loaded {len(data.events)} event files")
             self.log_info(f"Export contract: {'.'.join(str(v) for v in version)}")
 
-            if version >= (2, 4, 0):
-                self._enforce_v24_gate(data)
-                return
-
+            contract_v24 = version >= (2, 4, 0)
+            if contract_v24:
+                if not self._enforce_v24_gate(data):
+                    return
+                with transaction.atomic():
+                    self.run_import(data, contract_v24=True)
             # Legacy (< 2.4.0) path — run import in transaction (unless dry run)
-            if self.dry_run:
+            elif self.dry_run:
                 self.run_import(data)
             else:
                 with transaction.atomic():
@@ -372,9 +377,11 @@ class Command(BaseCommand):
     })
     V24_ARC_ROLES = frozenset({'START', 'CLIMAX', 'RESOLUTION'})
 
-    def _enforce_v24_gate(self, data: ImportData):
-        """v2.4.0 gate (T-019): validate the new shapes; report on --dry-run;
-        refuse real imports until the consuming phases land (T-028)."""
+    def _enforce_v24_gate(self, data: ImportData) -> bool:
+        """v2.4.0 gate (T-019): validate the new shapes; print the
+        connection-purge preview; on a real import, require confirmation
+        before the purge fires (T-028 spec point c). Returns True when the
+        import should proceed."""
         errors = self.validate_v24_shapes(data)
         if errors:
             for err in errors[:20]:
@@ -390,17 +397,55 @@ class Command(BaseCommand):
             "v2.4.0 shapes validated (connections layers, arc/theme "
             "memberships, episode ordinals)"
         ))
+
+        # Purge preview (read-only): the v2.4.0 connection import replaces
+        # the series' connection set wholesale, so show what that means.
+        purge_count = self._count_purgeable_connections(data.series)
+        self.stdout.write(
+            f"Connection import will replace {purge_count} existing "
+            f"connection row(s) in the imported series' scope with "
+            f"{len(data.connections)} rows from this export "
+            f"(matching rows keep their identity via the redirect map)."
+        )
+
         if self.dry_run:
             self.stdout.write(self.style.WARNING(
-                "[DRY RUN] v2.4.0 export validated. Importing the new "
-                "shapes lands with T-028."
+                "[DRY RUN] v2.4.0 export validated; nothing imported."
             ))
-            return
-        raise CommandError(
-            "This export uses contract v2.4.0; importing its new shapes "
-            "is not supported yet (lands with T-028). Use --dry-run to "
-            "validate the export."
-        )
+            return False
+
+        # Confirmation window (same flow as --cleanup, ISS-007): the purge
+        # is destructive and must never fire unconditionally.
+        if purge_count and not getattr(self, 'assume_yes', False):
+            if not sys.stdin.isatty():
+                raise CommandError(
+                    "Refusing to replace existing connections without "
+                    "confirmation in a non-interactive run. Pass --yes to "
+                    "proceed."
+                )
+            answer = input(
+                "Type 'import' to proceed with the v2.4.0 import "
+                "(anything else aborts): "
+            )
+            if answer.strip().lower() != 'import':
+                self.stdout.write(self.style.WARNING(
+                    "Import aborted by operator. Nothing was changed."
+                ))
+                return False
+        return True
+
+    def _count_purgeable_connections(self, series_data) -> int:
+        """How many existing NarrativeConnection rows fall inside the
+        imported series' scope (read-only; scoped like --cleanup)."""
+        series_list = series_data if isinstance(series_data, list) else [series_data]
+        series_uuids = {s.get('fabula_uuid') for s in series_list if s.get('fabula_uuid')}
+        series_pages = list(SeriesIndexPage.objects.filter(fabula_uuid__in=series_uuids))
+        if not series_pages:
+            return 0
+        scope_events = self._descendants_of(series_pages)(EventPage)
+        return NarrativeConnection.objects.filter(
+            from_event__in=scope_events
+        ).count()
 
     def load_import_data(self, data_dir: Path) -> ImportData:
         """Load one export directory into an ImportData bundle, driven by
@@ -530,8 +575,11 @@ class Command(BaseCommand):
                 self._check_episode_block(member.get('episode'), mwhere, errors)
         return errors
 
-    def run_import(self, data: ImportData):
-        """Execute the import in dependency order."""
+    def run_import(self, data: ImportData, contract_v24: bool = False):
+        """Execute the import in dependency order. contract_v24 switches on
+        the v2.4.0 phases (storyline memberships, layered connections with
+        purge + redirects, profiles) — decided once here, per the
+        dispatch-point rule."""
         series_data = data.series
         themes_data = data.themes
         arcs_data = data.arcs
@@ -563,9 +611,12 @@ class Command(BaseCommand):
         org_index = None
         object_index = None
         event_index = None
+        imported_series_pages = []
 
         for single_series in series_list:
             series_page, char_idx, org_idx, obj_idx, event_idx = self.import_series_structure(single_series)
+            if series_page is not None:
+                imported_series_pages.append(series_page)
             # Use The West Wing as primary, otherwise use first series
             if single_series.get('title') == 'The West Wing' or main_series_page is None:
                 main_series_page = series_page
@@ -604,8 +655,21 @@ class Command(BaseCommand):
         self.log_progress("Phase 6b: Linking events to plot beats")
         self.import_event_beat_links(events_data)
 
-        self.log_progress("Phase 7: Creating narrative connections")
-        self.import_connections(connections_data)
+        if contract_v24:
+            self.log_progress("Phase 6c: Storyline memberships (arcs/themes)")
+            self.import_storyline_memberships(arcs_data, themes_data, events_data)
+
+            self.log_progress("Phase 7: Layered narrative connections (v2.4.0)")
+            self.import_connections_v24(connections_data, imported_series_pages)
+
+            self.log_progress("Phase 7b: Character episode profiles")
+            self.import_character_episode_profiles(data.character_episode_profiles)
+
+            self.log_progress("Phase 7c: Character season profiles")
+            self.import_season_profiles(data.season_profiles)
+        else:
+            self.log_progress("Phase 7: Creating narrative connections")
+            self.import_connections(connections_data)
 
         self.log_progress("Phase 8: Configuring Wagtail Site")
         self.configure_site(main_series_page)
@@ -821,7 +885,10 @@ class Command(BaseCommand):
         for arc_data in arcs_data:
             fabula_uuid = arc_data.get('fabula_uuid') or arc_data.get('arc_uuid', '')
             global_id = arc_data.get('global_id', '')
-            title = self.truncate_field(arc_data['title'], 255)
+            # v2.4.0 exports carry 'name' (identity, distinct from the
+            # description prose); legacy exports carry 'title'.
+            title = self.truncate_field(
+                arc_data.get('name') or arc_data.get('title') or 'Unknown', 255)
 
             # Cross-season resolution: first try to find by global_id
             arc = None
@@ -2065,6 +2132,345 @@ class Command(BaseCommand):
                 self.stats.record_created('NarrativeConnection')
 
             self.log_detail(f"    {'Updated' if connection.pk else 'Created'} {conn_type} connection")
+
+    # =========================================================================
+    # v2.4.0 Phases (T-028) — storyline memberships, layered connections
+    # with purge + redirect map, character profiles
+    # =========================================================================
+
+    def import_storyline_memberships(self, arcs_data: List[Dict],
+                                     themes_data: List[Dict],
+                                     events_data: List[Dict]):
+        """Set series FKs, build Arc/ThemeEventMembership from the v2.4.0
+        membership lists (reconciled union+warn against the per-event
+        arc_uuids/theme_uuids), and attach character links."""
+        series_by_uuid = {
+            p.fabula_uuid: p
+            for p in SeriesIndexPage.objects.exclude(fabula_uuid='')
+        }
+
+        # Per-event storyline sets from the event files (the redundant
+        # cross-check channel the contract keeps on purpose).
+        event_arcs: Dict[str, set] = {}
+        event_themes: Dict[str, set] = {}
+        for episode_events in events_data:
+            for ev in episode_events.get('events', []):
+                uuid = ev.get('fabula_uuid')
+                if not uuid:
+                    continue
+                event_arcs[uuid] = set(ev.get('arc_uuids') or [])
+                event_themes[uuid] = set(ev.get('theme_uuids') or [])
+
+        self._import_memberships_for(
+            arcs_data, self.arcs_cache, ArcEventMembership, 'arc',
+            event_sets=event_arcs, series_by_uuid=series_by_uuid,
+            character_field='involved_character_uuids',
+            character_attr='involved_characters', roles=True,
+        )
+        self._import_memberships_for(
+            themes_data, self.themes_cache, ThemeEventMembership, 'theme',
+            event_sets=event_themes, series_by_uuid=series_by_uuid,
+            character_field='related_character_uuids',
+            character_attr='related_characters', roles=False,
+        )
+
+    def _import_memberships_for(self, rows, snippet_cache, membership_model,
+                                fk_name, event_sets, series_by_uuid,
+                                character_field, character_attr, roles):
+        created = 0
+        for row in rows:
+            fabula_uuid = row.get('fabula_uuid') or ''
+            snippet = snippet_cache.get(fabula_uuid)
+            if snippet is None:
+                self.stats.record_error(
+                    f"Storyline {fabula_uuid} not in cache for memberships")
+                continue
+
+            series_page = series_by_uuid.get(row.get('series_uuid'))
+            if series_page is not None:
+                snippet.series = series_page
+
+            members = {}
+            for member in row.get('events') or []:
+                event = self.events_cache.get(member.get('event_uuid'))
+                if event is None:
+                    continue
+                episode_block = member.get('episode') or {}
+                members[event.pk] = dict(
+                    event=event,
+                    role=member.get('role') if roles else None,
+                    episode_ordinal=episode_block.get('ordinal'),
+                )
+
+            # Reconcile: per-event arc/theme uuids may name this storyline
+            # for events the membership list missed (union, warn).
+            for event_uuid, storyline_uuids in event_sets.items():
+                if fabula_uuid in storyline_uuids:
+                    event = self.events_cache.get(event_uuid)
+                    if event is not None and event.pk not in members:
+                        self.log_detail(
+                            f"    Reconciled {fk_name} membership from "
+                            f"per-event uuids: {event_uuid} ∈ {fabula_uuid}")
+                        ordinal = None
+                        if event.episode_id:
+                            ordinal = (event.episode.season_number * 100
+                                       + event.episode.episode_number)
+                        members[event.pk] = dict(
+                            event=event, role=None, episode_ordinal=ordinal)
+
+            if not self.dry_run:
+                snippet.save()
+                # Idempotent: replace this storyline's membership set.
+                membership_model.objects.filter(**{fk_name: snippet}).delete()
+                membership_model.objects.bulk_create([
+                    membership_model(
+                        **{fk_name: snippet},
+                        event=m['event'],
+                        episode_ordinal=m['episode_ordinal'],
+                        **({'role': m['role']} if roles else {}),
+                    )
+                    for m in members.values()
+                ], batch_size=500)
+                created += len(members)
+
+                # Character evidence links
+                characters = []
+                for char_uuid in row.get(character_field) or []:
+                    character = (self.characters_cache.get(char_uuid)
+                                 or self.characters_by_global_id.get(char_uuid))
+                    if character is not None:
+                        characters.append(character)
+                getattr(snippet, character_attr).set(characters)
+
+        self.log_progress(f"  {created} {fk_name} memberships")
+
+    def import_connections_v24(self, connections_data: List[Dict],
+                               series_pages: List['SeriesIndexPage']):
+        """Replace the imported series' connection set with the v2.4.0
+        layered rows (T-028 five-point spec):
+
+        Runs inside run_import's transaction — a failed insert rolls the
+        purge back. Scope reuses _descendants_of (never a second
+        hand-rolled series scope). Every purged row's identifiers are
+        logged before deletion, and a redirect map re-points old URLs.
+        """
+        # --- Purge (audit-logged) ---
+        old_rows = []
+        if series_pages:
+            scope_events = self._descendants_of(series_pages)(EventPage)
+            purge_qs = NarrativeConnection.objects.filter(
+                from_event__in=scope_events
+            ).select_related('from_event', 'to_event')
+            for old in purge_qs.iterator(chunk_size=500):
+                old_rows.append({
+                    'pk': old.pk,
+                    'fabula_uuid': old.fabula_uuid,
+                    'global_id': old.global_id,
+                    'from_uuid': old.from_event.fabula_uuid,
+                    'to_uuid': old.to_event.fabula_uuid,
+                    'type': old.connection_type,
+                    'from_event_id': old.from_event_id,
+                })
+                self.log_detail(
+                    f"    PURGE connection pk={old.pk} "
+                    f"fabula_uuid={old.fabula_uuid or '-'} "
+                    f"global_id={old.global_id or '-'} "
+                    f"{old.from_event.fabula_uuid} -> "
+                    f"{old.to_event.fabula_uuid} [{old.connection_type}]"
+                )
+            if not self.dry_run and old_rows:
+                purge_qs.delete()
+            self.log_progress(
+                f"  Purged {len(old_rows)} pre-v2.4.0 connection rows "
+                f"(identifiers logged above)")
+
+        # --- Insert: event layer first so it wins (from, to, type)
+        #     collisions; colliding beat rows are skipped and logged (R2). ---
+        ordered = sorted(connections_data,
+                         key=lambda c: 0 if c.get('layer') == 'event' else 1)
+        seen_triples = {}
+        created = 0
+        skipped_beat_collisions = 0
+        new_by_triple = {}
+
+        for conn_data in ordered:
+            from_uuid = conn_data['from_event_uuid']
+            to_uuid = conn_data['to_event_uuid']
+            from_event = self.events_cache.get(from_uuid)
+            to_event = self.events_cache.get(to_uuid)
+            if not from_event or not to_event:
+                self.stats.record_error(
+                    f"Events not found for connection: {from_uuid} -> {to_uuid}")
+                continue
+
+            conn_type = conn_data['connection_type']
+            triple = (from_event.pk, to_event.pk, conn_type)
+            if triple in seen_triples:
+                if conn_data.get('layer') == 'beat':
+                    skipped_beat_collisions += 1
+                    self.log_detail(
+                        f"    Skipped beat row (event layer wins): "
+                        f"{from_uuid} -> {to_uuid} [{conn_type}]")
+                else:
+                    self.stats.record_error(
+                        f"Duplicate event-layer triple: {from_uuid} -> "
+                        f"{to_uuid} [{conn_type}]")
+                continue
+            seen_triples[triple] = True
+
+            # Strength: one vocabulary in the DB (R4 — beat layer says
+            # 'moderate', the model says 'medium').
+            strength = conn_data.get('strength') or 'medium'
+            if strength == 'moderate':
+                strength = 'medium'
+
+            from_ep_block = conn_data.get('from_episode') or {}
+            to_ep_block = conn_data.get('to_episode') or {}
+            connection = NarrativeConnection(
+                fabula_uuid=conn_data.get('fabula_uuid') or '',
+                global_id=conn_data.get('global_id'),
+                from_event=from_event,
+                to_event=to_event,
+                connection_type=conn_type,
+                strength=strength,
+                description=conn_data.get('description') or '',
+                layer=conn_data.get('layer'),
+                scope=conn_data.get('scope'),
+                inferred_by=conn_data.get('inferred_by') or '',
+                cross_episode_reasoning=conn_data.get('cross_episode_reasoning') or '',
+                from_episode=self.episodes_cache.get(from_ep_block.get('uuid')),
+                to_episode=self.episodes_cache.get(to_ep_block.get('uuid')),
+            )
+            if not self.dry_run:
+                connection.save()
+            new_by_triple[(from_uuid, to_uuid, conn_type)] = connection
+            created += 1
+            self.stats.record_created('NarrativeConnection')
+
+        if skipped_beat_collisions:
+            self.log_progress(
+                f"  Skipped {skipped_beat_collisions} beat rows colliding "
+                f"with event-layer triples (event layer wins)")
+        self.log_progress(f"  Created {created} layered connections")
+
+        # --- Redirect map (R1): old URL identifiers -> surviving rows ---
+        if not self.dry_run:
+            self._write_connection_redirects(old_rows, new_by_triple)
+
+    def _write_connection_redirects(self, old_rows: List[Dict],
+                                    new_by_triple: Dict):
+        """Re-point purged connection URLs: to the matching new connection
+        when (from, to, type) survives, else to the from-event page."""
+        from wagtail.contrib.redirects.models import Redirect
+
+        created = 0
+        unmatched = 0
+        for old in old_rows:
+            old_identifier = old['global_id'] or old['fabula_uuid'] or old['pk']
+            old_path = Redirect.normalise_path(f"/connections/{old_identifier}/")
+
+            match = new_by_triple.get(
+                (old['from_uuid'], old['to_uuid'], old['type']))
+            if match is not None:
+                new_identifier = (match.global_id or match.fabula_uuid
+                                  or match.pk)
+                if str(new_identifier) == str(old_identifier):
+                    continue  # URL unchanged — no redirect needed
+                redirect_kwargs = {'redirect_link': match.get_absolute_url()}
+            else:
+                unmatched += 1
+                self.log_detail(
+                    f"    No surviving match for old connection "
+                    f"{old_identifier} ({old['from_uuid']} -> "
+                    f"{old['to_uuid']} [{old['type']}]) — redirecting to "
+                    f"its from-event")
+                redirect_kwargs = {'redirect_page_id': old['from_event_id']}
+
+            _, was_created = Redirect.objects.update_or_create(
+                old_path=old_path,
+                site=None,
+                defaults={'is_permanent': True, 'redirect_page': None,
+                          'redirect_link': '', **redirect_kwargs},
+            )
+            created += 1 if was_created else 0
+        self.log_progress(
+            f"  Redirect map: {created} redirects written "
+            f"({unmatched} unmatched rows point at their from-event)")
+
+    def import_character_episode_profiles(self, profiles_data: List[Dict]):
+        """v2.4.0 optional file → CharacterEpisodeProfile, keyed on the
+        model's (character, episode) unique constraint. Lights up the
+        already-built template blocks (G6)."""
+        if not profiles_data:
+            self.log_progress("  No character episode profiles in export")
+            return
+
+        created = updated = skipped = 0
+        for row in profiles_data:
+            character = (self.characters_cache.get(row.get('character_uuid'))
+                         or self.characters_by_global_id.get(row.get('character_uuid')))
+            episode = self.episodes_cache.get(row.get('episode_uuid'))
+            if character is None or episode is None:
+                skipped += 1
+                continue
+
+            # The model carries one prose field; compose the contract's
+            # three prose facets into it (plan: model needs no change).
+            parts = [row.get('description_in_episode') or '']
+            if row.get('core_dilemma'):
+                parts.append(f"Core dilemma: {row['core_dilemma']}")
+            if row.get('change_or_stasis'):
+                parts.append(f"Change or stasis: {row['change_or_stasis']}")
+            description = '\n\n'.join(p for p in parts if p)
+
+            if not self.dry_run:
+                _, was_created = CharacterEpisodeProfile.objects.update_or_create(
+                    character=character,
+                    episode=episode,
+                    defaults={
+                        'fabula_uuid': f"cep_{row.get('character_uuid')}_{row.get('episode_uuid')}",
+                        'description_in_episode': description,
+                        'traits_in_episode': row.get('traits_in_episode') or [],
+                        'contradictions': row.get('contradictions') or [],
+                    },
+                )
+                created += 1 if was_created else 0
+                updated += 0 if was_created else 1
+        self.log_progress(
+            f"  Episode profiles: {created} created, {updated} updated, "
+            f"{skipped} skipped (unresolved character/episode)")
+
+    def import_season_profiles(self, profiles_data: List[Dict]):
+        """v2.4.0 optional file (megagraphs) → CharacterSeasonProfile.
+        Non-character entity types are deferred until a surface needs
+        them (plan §2.3)."""
+        if not profiles_data:
+            self.log_progress("  No season profiles in export")
+            return
+
+        created = updated = skipped = 0
+        for row in profiles_data:
+            if row.get('entity_type') != 'character':
+                continue
+            character = self.characters_by_global_id.get(row.get('entity_global_id'))
+            if character is None or row.get('season_number') is None:
+                skipped += 1
+                continue
+            if not self.dry_run:
+                _, was_created = CharacterSeasonProfile.objects.update_or_create(
+                    character=character,
+                    season_number=row['season_number'],
+                    defaults={
+                        'description': row.get('description') or '',
+                        'tier': row.get('tier') or '',
+                        'source_database': row.get('source_database') or '',
+                    },
+                )
+                created += 1 if was_created else 0
+                updated += 0 if was_created else 1
+        self.log_progress(
+            f"  Season profiles: {created} created, {updated} updated, "
+            f"{skipped} skipped")
 
     # =========================================================================
     # Utilities
