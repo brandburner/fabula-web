@@ -4,7 +4,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## Project Overview
 
-Fabula Web is a Wagtail 7.2 / Django 5.1 application that publishes narrative graph analysis. The core challenge it solves: **connections between narrative events are first-class content**, not just navigation links. Each connection (causal, foreshadowing, thematic parallel, etc.) has its own URL, description, and semantic weight.
+Fabula Web is a Wagtail 7.2 / Django 5.2 application that publishes narrative graph analysis. The core challenge it solves: **connections between narrative events are first-class content**, not just navigation links. Each connection (causal, foreshadowing, thematic parallel, etc.) has its own URL, description, and semantic weight.
 
 **Data flow**: Neo4j (analysis) → YAML (curation) → Wagtail (publication)
 
@@ -31,49 +31,56 @@ The app supports three navigation modes:
 ## Project Structure
 
 ```
-wagtail_models/           # Django app
+narrative/                # Django app (the models live HERE, not wagtail_models/)
 ├── models.py             # All Wagtail pages, snippets, and Django models
 ├── views.py              # Custom views for connections, themes, arcs, graph
 ├── urls.py               # Non-page URL routes
-├── templatetags/         # Custom filters and inclusion tags
-│   └── narrative_tags.py
-└── management/commands/
-    ├── import_fabula.py  # YAML → Wagtail import (idempotent via fabula_uuid)
-    └── export_to_yaml.py # Neo4j → YAML export
-
-wagtail_templates/
-├── base.html             # Master template (Tailwind CSS, Alpine.js, Lucide)
-├── narrative/            # Page-type templates
+├── templatetags/
+│   └── narrative_tags.py # Custom filters and inclusion tags
+├── templates/narrative/  # Page-type templates (writerly + dark variants)
 │   ├── event_page.html
 │   ├── character_page.html
-│   ├── episode_page.html
 │   ├── connection_detail.html
-│   └── graph_view.html   # D3.js force-directed graph
-└── includes/             # Reusable components
-    ├── connection_card.html
-    ├── participation_card.html
-    └── event_card.html
+│   ├── graph_view.html   # 3d-force-graph view
+│   └── includes/         # connection_card, participation_card, pagination, …
+├── tests/                # ALL tests live here (never narrative/tests.py or
+│                         # inside management/commands/ — see ISS-004)
+└── management/commands/
+    ├── import_fabula.py     # YAML → Wagtail import (idempotent via fabula_uuid)
+    ├── export_from_neo4j.py # Neo4j → YAML export (--megagraph for megas)
+    └── delete_series.py     # Two-stage series-tree deletion (PROTECT-safe)
+
+templates/base.html       # Master template (Tailwind CSS, Alpine.js, Lucide)
+marketing/                # Marketing site app (serves the site root)
+fabula_web/               # Settings (base.py/dev.py/production.py), root urls
+docs/YAML_CONTRACT.md     # Versioned YAML interchange contract (v2.4.0)
 ```
 
 ## Common Commands
 
 ```bash
-# Import narrative data from YAML
-python manage.py import_fabula ./fabula_export
+# Export from Neo4j to YAML (megagraph mode for .mega databases)
+python manage.py export_from_neo4j --database wolfhall.mega --megagraph --output ./fabula_export/wolfhall -y
 
-# Dry-run import (validate without saving)
-python manage.py import_fabula ./fabula_export --dry-run
+# Import narrative data from YAML (single-series directory)
+python manage.py import_fabula ./fabula_export/<series>
+
+# Dry-run import (validate without saving; v2.4.0 exports get shape validation)
+python manage.py import_fabula ./fabula_export/<series> --dry-run
 
 # Import with cleanup: deletes deprecated entities WITHIN the imported series
-# (series-scoped as of ISS-001 / commit 9bec766 — other series in the DB are
-# never touched). Pair with --dry-run to preview the deletion plan only.
-python manage.py import_fabula ./fabula_export --cleanup
-python manage.py import_fabula ./fabula_export --cleanup --dry-run
+# (series-scoped; other series never touched). Asks for confirmation; pass
+# --yes in scripts. Pair with --dry-run to preview the deletion plan only.
+python manage.py import_fabula ./fabula_export/<series> --cleanup --dry-run
+python manage.py import_fabula ./fabula_export/<series> --cleanup --yes
 
-# Export from Neo4j to YAML
-python export_to_yaml.py --output ./fabula_export --series "The West Wing"
+# Delete a whole series tree safely (events first — PROTECT FK — then tree)
+python manage.py delete_series <slug-or-fabula_uuid> --dry-run
 ```
 
+All manage.py commands need `DJANGO_SETTINGS_MODULE=fabula_web.settings.dev`.
+The YAML format is a versioned contract (`docs/YAML_CONTRACT.md`); the manifest
+carries `fabula_version` and the importer refuses shapes it doesn't understand.
 Full operator runbook (multi-series imports, --cleanup with preview,
 series-tree deletion, prod transfer): see `docs/import-workflow.md`.
 

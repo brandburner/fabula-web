@@ -222,6 +222,13 @@ def agent_friendly_404(request, exception=None):
         logger.info("Agent 404: %s (UA: %s)", request.path, ua[:100])
 
         host = request.build_absolute_uri('/')[:-1]  # strip trailing /
+        # MAINTENANCE: this URL-pattern table is hand-written and duplicated
+        # in sitemap_md() below. It is part of the machine-readable contract
+        # agents consume — any change to the connection/storyline URL surface
+        # (plan Phases 2-3: layer/scope split, redirects for collapsed
+        # beat-layer URLs, /explore/<series>/storylines/) MUST update both
+        # tables, or better, derive them from urlpatterns. See
+        # docs/STORYLINE_IMPLEMENTATION_PLAN.md §1.8.
         body = (
             f"# 404 — Page Not Found\n\n"
             f"The path `{request.path}` does not exist on this site.\n\n"

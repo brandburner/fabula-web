@@ -14,7 +14,7 @@ from django.core.management import call_command
 from django.core.management.base import CommandError
 from wagtail.models import Page
 
-from narrative.management.commands.import_fabula import Command, ImportStats
+from narrative.management.commands.import_fabula import Command, ImportData, ImportStats
 from narrative.models import (
     Theme, ConflictArc, Location,
     SeriesIndexPage, SeasonPage, EpisodePage,
@@ -1267,3 +1267,162 @@ class DeleteSeriesCommandTest(TestCase):
         with self.assertRaises(CommandError):
             call_command('delete_series', 'doomed')
         self.assertTrue(SeriesIndexPage.objects.filter(slug='doomed').exists())
+
+
+class ContractVersionGateTest(TestCase):
+    """T-019: manifest version gate + v2.4.0 shape validation."""
+
+    def setUp(self):
+        self.cmd = Command()
+        self.cmd.stdout = StringIO()
+        self.cmd.stderr = StringIO()
+        self.cmd.verbose = False
+
+    # --- parse_contract_version ---
+
+    def test_missing_manifest_refused(self):
+        with self.assertRaises(CommandError):
+            self.cmd.parse_contract_version(None)
+
+    def test_missing_version_refused(self):
+        with self.assertRaises(CommandError):
+            self.cmd.parse_contract_version({'export_date': 'x'})
+
+    def test_unparseable_version_refused(self):
+        with self.assertRaises(CommandError):
+            self.cmd.parse_contract_version({'fabula_version': 'banana'})
+
+    def test_newer_contract_refused(self):
+        with self.assertRaises(CommandError):
+            self.cmd.parse_contract_version({'fabula_version': '3.0.0'})
+
+    def test_legacy_version_parses(self):
+        self.assertEqual(
+            self.cmd.parse_contract_version({'fabula_version': '2.3.0'}),
+            (2, 3, 0),
+        )
+
+    def test_v24_parses(self):
+        self.assertEqual(
+            self.cmd.parse_contract_version({'fabula_version': '2.4.0'}),
+            (2, 4, 0),
+        )
+
+    # --- validate_v24_shapes ---
+
+    def _v24_data(self, **overrides):
+        ep1 = {'uuid': 'ep_1', 'season': 1, 'number': 5, 'ordinal': 105}
+        ep2 = {'uuid': 'ep_2', 'season': 2, 'number': 1, 'ordinal': 201}
+        base = dict(
+            manifest={'fabula_version': '2.4.0'},
+            series=[],
+            themes=[{
+                'fabula_uuid': 'theme_1', 'name': 'Power',
+                'series_uuid': 'ser_1',
+                'events': [{'event_uuid': 'evt_1', 'episode': ep1}],
+            }],
+            arcs=[{
+                'fabula_uuid': 'arc_1', 'name': 'The rise',
+                'arc_type': 'SOCIETAL', 'description': 'x',
+                'series_uuid': 'ser_1',
+                'events': [
+                    {'event_uuid': 'evt_1', 'role': 'START', 'episode': ep1},
+                    {'event_uuid': 'evt_2', 'role': None, 'episode': ep2},
+                ],
+            }],
+            locations=[], characters=[], organizations=[], objects=[],
+            writers=[],
+            connections=[
+                {
+                    'fabula_uuid': 'conn_1', 'global_id': None,
+                    'from_event_uuid': 'evt_1', 'to_event_uuid': 'evt_2',
+                    'connection_type': 'FORESHADOWING', 'strength': 'medium',
+                    'description': 'x', 'layer': 'event',
+                    'scope': 'cross_episode',
+                    'inferred_by': 'llm_cross_episode_arc',
+                    'cross_episode_reasoning': 'y',
+                    'from_episode': ep1, 'to_episode': ep2,
+                },
+                {
+                    'fabula_uuid': 'conn_2', 'global_id': 'ger_narrativeconnection_2',
+                    'from_event_uuid': 'evt_1', 'to_event_uuid': 'evt_3',
+                    'connection_type': 'CAUSAL', 'strength': 'strong',
+                    'description': 'x', 'layer': 'beat',
+                    'scope': 'intra_episode',
+                    'from_episode': ep1, 'to_episode': ep1,
+                },
+            ],
+            events=[],
+            character_episode_profiles=[], season_profiles=[],
+        )
+        base.update(overrides)
+        return ImportData(**base)
+
+    def test_valid_v24_shapes_pass(self):
+        self.assertEqual(self.cmd.validate_v24_shapes(self._v24_data()), [])
+
+    def test_bad_layer_rejected(self):
+        data = self._v24_data()
+        data.connections[0]['layer'] = 'plasma'
+        errors = self.cmd.validate_v24_shapes(data)
+        self.assertTrue(any('layer' in e for e in errors))
+
+    def test_backwards_event_edge_rejected(self):
+        data = self._v24_data()
+        data.connections[0]['from_episode'], data.connections[0]['to_episode'] = (
+            data.connections[0]['to_episode'], data.connections[0]['from_episode']
+        )
+        errors = self.cmd.validate_v24_shapes(data)
+        self.assertTrue(any('backwards' in e for e in errors))
+
+    def test_beat_row_requires_global_id(self):
+        data = self._v24_data()
+        data.connections[1]['global_id'] = None
+        errors = self.cmd.validate_v24_shapes(data)
+        self.assertTrue(any('global_id' in e for e in errors))
+
+    def test_arc_missing_series_uuid_rejected(self):
+        data = self._v24_data()
+        del data.arcs[0]['series_uuid']
+        errors = self.cmd.validate_v24_shapes(data)
+        self.assertTrue(any('series_uuid' in e for e in errors))
+
+    def test_unknown_connection_type_rejected(self):
+        data = self._v24_data()
+        data.connections[0]['connection_type'] = 'VIBES'
+        errors = self.cmd.validate_v24_shapes(data)
+        self.assertTrue(any('connection_type' in e for e in errors))
+
+    # --- end-to-end gate through handle() ---
+
+    def _write_v24_export(self, tmpdir):
+        """Minimal on-disk v2.4.0 export: valid shapes, no events."""
+        d = Path(tmpdir)
+        (d / 'events').mkdir()
+        files = {
+            'manifest.yaml': {'fabula_version': '2.4.0', 'export_date': 'x'},
+            'series.yaml': [{'fabula_uuid': 'ser_1', 'title': 'Gate Test', 'seasons': []}],
+            'themes.yaml': [],
+            'arcs.yaml': [],
+            'locations.yaml': [],
+            'characters.yaml': [],
+            'connections.yaml': [],
+        }
+        for name, content in files.items():
+            with open(d / name, 'w') as fh:
+                yaml.dump(content, fh)
+
+    def test_v24_dry_run_validates_and_stops(self):
+        with tempfile.TemporaryDirectory() as tmpdir:
+            self._write_v24_export(tmpdir)
+            out = StringIO()
+            call_command('import_fabula', tmpdir, '--dry-run', stdout=out)
+            self.assertIn('v2.4.0 shapes validated', out.getvalue())
+            self.assertIn('T-028', out.getvalue())
+
+    def test_v24_real_import_refused_until_t028(self):
+        with tempfile.TemporaryDirectory() as tmpdir:
+            self._write_v24_export(tmpdir)
+            out = StringIO()
+            with self.assertRaises(CommandError):
+                call_command('import_fabula', tmpdir, stdout=out)

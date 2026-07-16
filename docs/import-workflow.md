@@ -70,6 +70,18 @@ done
 > If you find that warning in old git/issue history, this is why
 > it no longer applies.
 
+## Contract versions
+
+The YAML format is a versioned contract — `docs/YAML_CONTRACT.md` is the
+source of truth. The manifest's `fabula_version` gates the import:
+
+- `< 2.4.0` — legacy path, imports as always.
+- `2.4.x` — the importer validates the new shapes (connection layers,
+  arc/theme memberships, episode ordinals). `--dry-run` reports validation;
+  full import support for the new shapes lands with T-028.
+- missing / unparseable / newer than supported — refused with an
+  explanation. Re-export with a current exporter.
+
 ## Pruning deprecated rows with `--cleanup`
 
 `--cleanup` deletes deprecated rows *within the series being

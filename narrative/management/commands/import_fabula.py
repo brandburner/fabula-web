@@ -12,6 +12,7 @@ Usage:
 
 import os
 import sys
+from dataclasses import dataclass
 from pathlib import Path
 from typing import Dict, List, Any, Optional, Tuple
 
@@ -51,6 +52,30 @@ from narrative.models import (
     PlotBeat,
     EventBeatLink,
 )
+
+
+@dataclass
+class ImportData:
+    """Everything one export directory contains, loaded and deduplicated.
+
+    Replaces the former 11-positional-argument run_import() signature; new
+    contract versions add fields here and rows to Command.LOAD_SPECS instead
+    of threading more parameters through handle().
+    """
+    manifest: Optional[Dict]
+    series: Any  # Dict or List[Dict]
+    themes: List[Dict]
+    arcs: List[Dict]
+    locations: List[Dict]
+    characters: List[Dict]
+    organizations: List[Dict]
+    objects: List[Dict]
+    writers: List[Dict]
+    connections: List[Dict]
+    events: List[Dict]
+    # v2.4.0 optional files (docs/YAML_CONTRACT.md); empty on older exports
+    character_episode_profiles: List[Dict]
+    season_profiles: List[Dict]
 
 
 class ImportStats:
@@ -196,51 +221,47 @@ class Command(BaseCommand):
         self.stdout.write("Disabled automatic reference index updates for bulk import")
 
         try:
-            # Load all YAML files
-            manifest = self.load_yaml(data_dir / 'manifest.yaml')
-            series_data = self.load_yaml(data_dir / 'series.yaml')
-            themes_data = self.unwrap_data(self.load_yaml(data_dir / 'themes.yaml'), 'themes')
-            arcs_data = self.unwrap_data(self.load_yaml(data_dir / 'arcs.yaml'), 'arcs')
-            locations_data = self.unwrap_data(self.load_yaml(data_dir / 'locations.yaml'), 'locations')
-            characters_data = self.unwrap_data(self.load_yaml(data_dir / 'characters.yaml'), 'characters')
-            organizations_data_raw = self.load_yaml(data_dir / 'organizations.yaml', required=False)
-            organizations_data = self.unwrap_data(organizations_data_raw, 'organizations') if organizations_data_raw else None
-            objects_data_raw = self.load_yaml(data_dir / 'objects.yaml', required=False)
-            objects_data = self.unwrap_data(objects_data_raw, 'objects') if objects_data_raw else []
-            writers_data_raw = self.load_yaml(data_dir / 'writers.yaml', required=False)
-            writers_data = self.unwrap_data(writers_data_raw, 'writers') if writers_data_raw else []
-            connections_data = self.unwrap_data(self.load_yaml(data_dir / 'connections.yaml'), 'connections')
+            data = self.load_import_data(data_dir)
+            version = self.parse_contract_version(data.manifest)
+            self.log_info(f"Loaded {len(data.events)} event files")
+            self.log_info(f"Export contract: {'.'.join(str(v) for v in version)}")
 
-            # Deduplicate entities that may have duplicate entries in YAML
-            # (e.g., same character with different organization affiliations from JOIN queries)
-            characters_data = self.dedupe_by_global_id(characters_data, 'characters')
-            if organizations_data:
-                organizations_data = self.dedupe_by_global_id(organizations_data, 'organizations')
-            objects_data = self.dedupe_by_global_id(objects_data, 'objects')
-            locations_data = self.dedupe_by_global_id(locations_data, 'locations')
-            themes_data = self.dedupe_by_global_id(themes_data, 'themes')
-            arcs_data = self.dedupe_by_global_id(arcs_data, 'arcs')
-
-            # Load event files
-            events_dir = data_dir / 'events'
-            events_data = self.load_events(events_dir)
-
-            self.log_info(f"Loaded {len(events_data)} event files")
-
-            # Run import in transaction (unless dry run)
-            if self.dry_run:
-                self.run_import(
-                    manifest, series_data, themes_data, arcs_data, locations_data,
-                    characters_data, organizations_data, objects_data, events_data, connections_data,
-                    writers_data
+            if version >= (2, 4, 0):
+                # v2.4.0 gate (T-019): the new shapes are validated here;
+                # the import phases that consume them land with T-028.
+                errors = self.validate_v24_shapes(data)
+                if errors:
+                    for err in errors[:20]:
+                        self.stdout.write(self.style.ERROR(f"  {err}"))
+                    if len(errors) > 20:
+                        self.stdout.write(self.style.ERROR(
+                            f"  ... and {len(errors) - 20} more"
+                        ))
+                    raise CommandError(
+                        f"v2.4.0 shape validation failed with {len(errors)} error(s)"
+                    )
+                self.stdout.write(self.style.SUCCESS(
+                    "v2.4.0 shapes validated (connections layers, arc/theme "
+                    "memberships, episode ordinals)"
+                ))
+                if self.dry_run:
+                    self.stdout.write(self.style.WARNING(
+                        "[DRY RUN] v2.4.0 export validated. Importing the new "
+                        "shapes lands with T-028."
+                    ))
+                    return
+                raise CommandError(
+                    "This export uses contract v2.4.0; importing its new shapes "
+                    "is not supported yet (lands with T-028). Use --dry-run to "
+                    "validate the export."
                 )
+
+            # Legacy (< 2.4.0) path — run import in transaction (unless dry run)
+            if self.dry_run:
+                self.run_import(data)
             else:
                 with transaction.atomic():
-                    self.run_import(
-                        manifest, series_data, themes_data, arcs_data, locations_data,
-                        characters_data, organizations_data, objects_data, events_data, connections_data,
-                        writers_data
-                    )
+                    self.run_import(data)
 
             # Print summary
             self.stdout.write(self.style.SUCCESS(self.stats.summary()))
@@ -260,11 +281,11 @@ class Command(BaseCommand):
             # self.dry_run is True.
             if self.cleanup:
                 self.run_cleanup(
-                    series_data,
-                    events_data,
-                    characters_data,
-                    organizations_data or [],
-                    locations_data
+                    data.series,
+                    data.events,
+                    data.characters,
+                    data.organizations,
+                    data.locations,
                 )
 
         except Exception as e:
@@ -342,21 +363,169 @@ class Command(BaseCommand):
         )
         self.log_info(f"  Total entities with GER global_id: {total}")
 
-    def run_import(
-        self,
-        manifest: Dict,
-        series_data,  # Can be Dict or List[Dict]
-        themes_data: List[Dict],
-        arcs_data: List[Dict],
-        locations_data: List[Dict],
-        characters_data: List[Dict],
-        organizations_data: Optional[List[Dict]],
-        objects_data: List[Dict],
-        events_data: List[Dict],
-        connections_data: List[Dict],
-        writers_data: Optional[List[Dict]] = None
-    ):
+    # One row per flat YAML file: (field, filename, unwrap_key, required, dedupe).
+    # This table is the single dispatch point for what an export contains —
+    # new contract versions add rows here, not ad-hoc load_yaml calls (T-019).
+    LOAD_SPECS = [
+        ('themes', 'themes.yaml', 'themes', True, True),
+        ('arcs', 'arcs.yaml', 'arcs', True, True),
+        ('locations', 'locations.yaml', 'locations', True, True),
+        ('characters', 'characters.yaml', 'characters', True, True),
+        ('organizations', 'organizations.yaml', 'organizations', False, True),
+        ('objects', 'objects.yaml', 'objects', False, True),
+        ('writers', 'writers.yaml', 'writers', False, False),
+        ('connections', 'connections.yaml', 'connections', True, False),
+        # v2.4.0 optional files (docs/YAML_CONTRACT.md)
+        ('character_episode_profiles', 'character_episode_profiles.yaml',
+         'character_episode_profiles', False, False),
+        ('season_profiles', 'season_profiles.yaml', 'season_profiles', False, False),
+    ]
+
+    # Highest (major, minor) contract this importer understands.
+    SUPPORTED_CONTRACT = (2, 4)
+
+    V24_CONNECTION_TYPES = frozenset({
+        'CAUSAL', 'CHARACTER_CONTINUITY', 'THEMATIC_PARALLEL',
+        'SYMBOLIC_PARALLEL', 'EMOTIONAL_ECHO', 'ESCALATION', 'CALLBACK',
+        'FORESHADOWING', 'TEMPORAL', 'NARRATIVELY_FOLLOWS',
+    })
+    V24_ARC_TYPES = frozenset({'INTERNAL', 'INTERPERSONAL', 'SOCIETAL'})
+    V24_ARC_ROLES = frozenset({'START', 'CLIMAX', 'RESOLUTION'})
+
+    def load_import_data(self, data_dir: Path) -> ImportData:
+        """Load one export directory into an ImportData bundle, driven by
+        LOAD_SPECS (dedupe applied where the spec says so)."""
+        manifest = self.load_yaml(data_dir / 'manifest.yaml', required=False)
+        series = self.load_yaml(data_dir / 'series.yaml')
+
+        loaded = {}
+        for field_name, filename, key, required, dedupe in self.LOAD_SPECS:
+            raw = self.load_yaml(data_dir / filename, required=required)
+            rows = self.unwrap_data(raw, key) if raw else []
+            if dedupe and rows:
+                # Collapses Cypher JOIN fan-out (same entity emitted once per
+                # affiliation/participation row).
+                rows = self.dedupe_by_global_id(rows, key)
+            loaded[field_name] = rows
+
+        events = self.load_events(data_dir / 'events')
+        return ImportData(manifest=manifest, series=series, events=events, **loaded)
+
+    def parse_contract_version(self, manifest: Optional[Dict]) -> Tuple[int, int, int]:
+        """Read and validate the manifest's fabula_version.
+
+        Refuses missing/unparseable versions and versions newer than
+        SUPPORTED_CONTRACT — importing a shape we don't understand silently
+        is exactly how G1–G3 happened upstream.
+        """
+        if not manifest or not manifest.get('fabula_version'):
+            raise CommandError(
+                "manifest.yaml is missing a fabula_version — cannot determine "
+                "the export contract. Re-export with a current exporter "
+                "(see docs/YAML_CONTRACT.md)."
+            )
+        raw = str(manifest['fabula_version'])
+        parts = raw.split('.')
+        try:
+            major = int(parts[0])
+            minor = int(parts[1]) if len(parts) > 1 else 0
+            patch = int(parts[2]) if len(parts) > 2 else 0
+        except ValueError:
+            raise CommandError(f"Unparseable fabula_version '{raw}' in manifest.yaml")
+        if (major, minor) > self.SUPPORTED_CONTRACT:
+            raise CommandError(
+                f"Export contract {raw} is newer than this importer supports "
+                f"(max {self.SUPPORTED_CONTRACT[0]}.{self.SUPPORTED_CONTRACT[1]}.x). "
+                "Update the site code before importing."
+            )
+        return (major, minor, patch)
+
+    def validate_v24_shapes(self, data: ImportData) -> List[str]:
+        """Structural validation of the v2.4.0 shapes (docs/YAML_CONTRACT.md).
+
+        Returns a list of error strings (empty = valid). Checks the pieces
+        the v2.4 import phases (T-028) will rely on; runs on --dry-run so an
+        export can be validated before any import support exists.
+        """
+        errors = []
+
+        def check_episode_block(block, where):
+            if not isinstance(block, dict):
+                errors.append(f"{where}: missing episode block")
+                return
+            for key in ('uuid', 'season', 'number', 'ordinal'):
+                if block.get(key) is None:
+                    errors.append(f"{where}: episode block missing '{key}'")
+
+        for i, conn in enumerate(data.connections):
+            where = f"connections[{i}] ({conn.get('fabula_uuid') or conn.get('global_id') or '?'})"
+            layer = conn.get('layer')
+            if layer not in ('event', 'beat'):
+                errors.append(f"{where}: layer must be event|beat, got {layer!r}")
+                continue
+            if conn.get('scope') not in ('intra_episode', 'cross_episode'):
+                errors.append(f"{where}: bad scope {conn.get('scope')!r}")
+            if conn.get('connection_type') not in self.V24_CONNECTION_TYPES:
+                errors.append(f"{where}: unknown connection_type {conn.get('connection_type')!r}")
+            if not conn.get('from_event_uuid') or not conn.get('to_event_uuid'):
+                errors.append(f"{where}: missing endpoint uuid(s)")
+            if layer == 'event' and not conn.get('fabula_uuid'):
+                errors.append(f"{where}: event-layer row missing fabula_uuid (connection_uuid)")
+            if layer == 'beat' and not conn.get('global_id'):
+                errors.append(f"{where}: beat-layer row missing global_id (URL continuity)")
+            check_episode_block(conn.get('from_episode'), f"{where}.from_episode")
+            check_episode_block(conn.get('to_episode'), f"{where}.to_episode")
+            # Direction invariant: earlier → later under the composite ordinal
+            # (including CALLBACK — the later event does the calling back).
+            if layer == 'event':
+                f_ord = (conn.get('from_episode') or {}).get('ordinal')
+                t_ord = (conn.get('to_episode') or {}).get('ordinal')
+                if f_ord is not None and t_ord is not None and f_ord > t_ord:
+                    errors.append(f"{where}: backwards edge ({f_ord} -> {t_ord})")
+
+        for i, arc in enumerate(data.arcs):
+            where = f"arcs[{i}] ({arc.get('fabula_uuid') or '?'})"
+            if not arc.get('name'):
+                errors.append(f"{where}: missing name")
+            if arc.get('arc_type') not in self.V24_ARC_TYPES:
+                errors.append(f"{where}: arc_type must be one of {sorted(self.V24_ARC_TYPES)}")
+            if not arc.get('series_uuid'):
+                errors.append(f"{where}: missing series_uuid")
+            for j, member in enumerate(arc.get('events') or []):
+                mwhere = f"{where}.events[{j}]"
+                if not member.get('event_uuid'):
+                    errors.append(f"{mwhere}: missing event_uuid")
+                role = member.get('role')
+                if role is not None and role not in self.V24_ARC_ROLES:
+                    errors.append(f"{mwhere}: bad role {role!r}")
+                check_episode_block(member.get('episode'), mwhere)
+
+        for i, theme in enumerate(data.themes):
+            where = f"themes[{i}] ({theme.get('fabula_uuid') or '?'})"
+            if not theme.get('name'):
+                errors.append(f"{where}: missing name")
+            if not theme.get('series_uuid'):
+                errors.append(f"{where}: missing series_uuid")
+            for j, member in enumerate(theme.get('events') or []):
+                mwhere = f"{where}.events[{j}]"
+                if not member.get('event_uuid'):
+                    errors.append(f"{mwhere}: missing event_uuid")
+                check_episode_block(member.get('episode'), mwhere)
+
+        return errors
+
+    def run_import(self, data: ImportData):
         """Execute the import in dependency order."""
+        series_data = data.series
+        themes_data = data.themes
+        arcs_data = data.arcs
+        locations_data = data.locations
+        characters_data = data.characters
+        organizations_data = data.organizations
+        objects_data = data.objects
+        events_data = data.events
+        connections_data = data.connections
+        writers_data = data.writers
 
         # Load existing entities with global_id for cross-season resolution
         self.load_global_id_caches()

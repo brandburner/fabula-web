@@ -1,6 +1,12 @@
 """
 Django management command to export narrative data from Neo4j to YAML files.
 
+CONTRACT: the YAML this command emits is a versioned interchange format —
+see docs/YAML_CONTRACT.md (currently v2.4.0). The graph schema it reads is
+pinned to fabula_v2/docs/FABULA_SCHEMA_GROUND_TRUTH.md v1.2.0 (2026-07-05);
+if the upstream schema moves, update the contract doc and the manifest
+version together, never silently.
+
 This command connects to a Neo4j database (individual season or megagraph) and
 exports it to a structured YAML format suitable for import into Wagtail.
 
