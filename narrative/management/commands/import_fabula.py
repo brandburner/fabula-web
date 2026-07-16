@@ -23,6 +23,8 @@ from django.utils.text import slugify
 from wagtail.models import Page, Site
 
 from narrative.models import (
+    # Enums
+    ConnectionType,
     # Snippets
     Theme,
     ConflictArc,
@@ -227,34 +229,8 @@ class Command(BaseCommand):
             self.log_info(f"Export contract: {'.'.join(str(v) for v in version)}")
 
             if version >= (2, 4, 0):
-                # v2.4.0 gate (T-019): the new shapes are validated here;
-                # the import phases that consume them land with T-028.
-                errors = self.validate_v24_shapes(data)
-                if errors:
-                    for err in errors[:20]:
-                        self.stdout.write(self.style.ERROR(f"  {err}"))
-                    if len(errors) > 20:
-                        self.stdout.write(self.style.ERROR(
-                            f"  ... and {len(errors) - 20} more"
-                        ))
-                    raise CommandError(
-                        f"v2.4.0 shape validation failed with {len(errors)} error(s)"
-                    )
-                self.stdout.write(self.style.SUCCESS(
-                    "v2.4.0 shapes validated (connections layers, arc/theme "
-                    "memberships, episode ordinals)"
-                ))
-                if self.dry_run:
-                    self.stdout.write(self.style.WARNING(
-                        "[DRY RUN] v2.4.0 export validated. Importing the new "
-                        "shapes lands with T-028."
-                    ))
-                    return
-                raise CommandError(
-                    "This export uses contract v2.4.0; importing its new shapes "
-                    "is not supported yet (lands with T-028). Use --dry-run to "
-                    "validate the export."
-                )
+                self._enforce_v24_gate(data)
+                return
 
             # Legacy (< 2.4.0) path — run import in transaction (unless dry run)
             if self.dry_run:
@@ -384,11 +360,9 @@ class Command(BaseCommand):
     # Highest (major, minor) contract this importer understands.
     SUPPORTED_CONTRACT = (2, 4)
 
-    V24_CONNECTION_TYPES = frozenset({
-        'CAUSAL', 'CHARACTER_CONTINUITY', 'THEMATIC_PARALLEL',
-        'SYMBOLIC_PARALLEL', 'EMOTIONAL_ECHO', 'ESCALATION', 'CALLBACK',
-        'FORESHADOWING', 'TEMPORAL', 'NARRATIVELY_FOLLOWS',
-    })
+    # Derived from the canonical enum so a taxonomy change can't silently
+    # diverge between model, importer, and exporter.
+    V24_CONNECTION_TYPES = frozenset(ConnectionType.values)
     # Canonical vocabulary (schema v1.2.0) plus legacy values that older
     # graphs carry and the model keeps readable (plan verification note 2;
     # 'UNKNOWN' = deliberately unclassified on partial-enrichment graphs).
@@ -397,6 +371,36 @@ class Command(BaseCommand):
         'ENVIRONMENTAL', 'TECHNOLOGICAL', 'UNKNOWN',
     })
     V24_ARC_ROLES = frozenset({'START', 'CLIMAX', 'RESOLUTION'})
+
+    def _enforce_v24_gate(self, data: ImportData):
+        """v2.4.0 gate (T-019): validate the new shapes; report on --dry-run;
+        refuse real imports until the consuming phases land (T-028)."""
+        errors = self.validate_v24_shapes(data)
+        if errors:
+            for err in errors[:20]:
+                self.stdout.write(self.style.ERROR(f"  {err}"))
+            if len(errors) > 20:
+                self.stdout.write(self.style.ERROR(
+                    f"  ... and {len(errors) - 20} more"
+                ))
+            raise CommandError(
+                f"v2.4.0 shape validation failed with {len(errors)} error(s)"
+            )
+        self.stdout.write(self.style.SUCCESS(
+            "v2.4.0 shapes validated (connections layers, arc/theme "
+            "memberships, episode ordinals)"
+        ))
+        if self.dry_run:
+            self.stdout.write(self.style.WARNING(
+                "[DRY RUN] v2.4.0 export validated. Importing the new "
+                "shapes lands with T-028."
+            ))
+            return
+        raise CommandError(
+            "This export uses contract v2.4.0; importing its new shapes "
+            "is not supported yet (lands with T-028). Use --dry-run to "
+            "validate the export."
+        )
 
     def load_import_data(self, data_dir: Path) -> ImportData:
         """Load one export directory into an ImportData bundle, driven by
@@ -453,17 +457,24 @@ class Command(BaseCommand):
         the v2.4 import phases (T-028) will rely on; runs on --dry-run so an
         export can be validated before any import support exists.
         """
-        errors = []
+        return (
+            self._validate_v24_connections(data.connections)
+            + self._validate_v24_storylines(data.arcs, 'arcs', roles=True)
+            + self._validate_v24_storylines(data.themes, 'themes', roles=False)
+        )
 
-        def check_episode_block(block, where):
-            if not isinstance(block, dict):
-                errors.append(f"{where}: missing episode block")
-                return
-            for key in ('uuid', 'season', 'number', 'ordinal'):
-                if block.get(key) is None:
-                    errors.append(f"{where}: episode block missing '{key}'")
+    @staticmethod
+    def _check_episode_block(block, where: str, errors: List[str]):
+        if not isinstance(block, dict):
+            errors.append(f"{where}: missing episode block")
+            return
+        for key in ('uuid', 'season', 'number', 'ordinal'):
+            if block.get(key) is None:
+                errors.append(f"{where}: episode block missing '{key}'")
 
-        for i, conn in enumerate(data.connections):
+    def _validate_v24_connections(self, connections: List[Dict]) -> List[str]:
+        errors: List[str] = []
+        for i, conn in enumerate(connections):
             where = f"connections[{i}] ({conn.get('fabula_uuid') or conn.get('global_id') or '?'})"
             layer = conn.get('layer')
             if layer not in ('event', 'beat'):
@@ -479,48 +490,44 @@ class Command(BaseCommand):
                 errors.append(f"{where}: event-layer row missing fabula_uuid (connection_uuid)")
             if layer == 'beat' and not conn.get('global_id'):
                 errors.append(f"{where}: beat-layer row missing global_id (URL continuity)")
-            check_episode_block(conn.get('from_episode'), f"{where}.from_episode")
-            check_episode_block(conn.get('to_episode'), f"{where}.to_episode")
+            from_ep, to_ep = conn.get('from_episode'), conn.get('to_episode')
+            self._check_episode_block(from_ep, f"{where}.from_episode", errors)
+            self._check_episode_block(to_ep, f"{where}.to_episode", errors)
             # Direction invariant: earlier → later under the composite ordinal
             # (including CALLBACK — the later event does the calling back).
-            if layer == 'event':
-                f_ord = (conn.get('from_episode') or {}).get('ordinal')
-                t_ord = (conn.get('to_episode') or {}).get('ordinal')
+            # Guarded on dict-ness: a truthy non-dict block already produced
+            # an error above and must not crash the validation run.
+            if layer == 'event' and isinstance(from_ep, dict) and isinstance(to_ep, dict):
+                f_ord, t_ord = from_ep.get('ordinal'), to_ep.get('ordinal')
                 if f_ord is not None and t_ord is not None and f_ord > t_ord:
                     errors.append(f"{where}: backwards edge ({f_ord} -> {t_ord})")
+        return errors
 
-        for i, arc in enumerate(data.arcs):
-            where = f"arcs[{i}] ({arc.get('fabula_uuid') or '?'})"
-            if not arc.get('name'):
+    def _validate_v24_storylines(self, rows: List[Dict], label: str,
+                                 roles: bool) -> List[str]:
+        """Shared arc/theme validation — identical shapes except arcs carry
+        arc_type and member roles."""
+        errors: List[str] = []
+        for i, row in enumerate(rows):
+            where = f"{label}[{i}] ({row.get('fabula_uuid') or '?'})"
+            if not row.get('name'):
                 errors.append(f"{where}: missing name")
-            if arc.get('arc_type') not in self.V24_ARC_TYPES:
+            if roles and row.get('arc_type') not in self.V24_ARC_TYPES:
                 errors.append(
-                    f"{where}: arc_type {arc.get('arc_type')!r} not in the "
+                    f"{where}: arc_type {row.get('arc_type')!r} not in the "
                     f"canonical or legacy vocabulary {sorted(self.V24_ARC_TYPES)}"
                 )
-            if not arc.get('series_uuid'):
+            if not row.get('series_uuid'):
                 errors.append(f"{where}: missing series_uuid")
-            for j, member in enumerate(arc.get('events') or []):
+            for j, member in enumerate(row.get('events') or []):
                 mwhere = f"{where}.events[{j}]"
                 if not member.get('event_uuid'):
                     errors.append(f"{mwhere}: missing event_uuid")
-                role = member.get('role')
-                if role is not None and role not in self.V24_ARC_ROLES:
-                    errors.append(f"{mwhere}: bad role {role!r}")
-                check_episode_block(member.get('episode'), mwhere)
-
-        for i, theme in enumerate(data.themes):
-            where = f"themes[{i}] ({theme.get('fabula_uuid') or '?'})"
-            if not theme.get('name'):
-                errors.append(f"{where}: missing name")
-            if not theme.get('series_uuid'):
-                errors.append(f"{where}: missing series_uuid")
-            for j, member in enumerate(theme.get('events') or []):
-                mwhere = f"{where}.events[{j}]"
-                if not member.get('event_uuid'):
-                    errors.append(f"{mwhere}: missing event_uuid")
-                check_episode_block(member.get('episode'), mwhere)
-
+                if roles:
+                    role = member.get('role')
+                    if role is not None and role not in self.V24_ARC_ROLES:
+                        errors.append(f"{mwhere}: bad role {role!r}")
+                self._check_episode_block(member.get('episode'), mwhere, errors)
         return errors
 
     def run_import(self, data: ImportData):

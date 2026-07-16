@@ -37,6 +37,7 @@ When exporting from a megagraph database, entities include additional fields:
 - Events include source_season and source_database fields
 """
 
+from collections import Counter
 from datetime import datetime
 from pathlib import Path
 from typing import Dict, List, Any, Optional, Set
@@ -46,6 +47,8 @@ import sys
 from django.core.management.base import BaseCommand, CommandError
 from django.conf import settings
 from django.utils.text import slugify
+
+from narrative.models import ConnectionType
 
 import yaml
 from neo4j import GraphDatabase, Driver
@@ -1046,7 +1049,7 @@ class Neo4jExporter:
         # series_uuid (present on schema v1.2.0 graphs); fall back to
         # deriving it from member events.
         data['series_uuid'] = data.get('series_uuid') or (
-            max(set(member_series), key=member_series.count)
+            Counter(member_series).most_common(1)[0][0]
             if member_series else None
         )
         data['season_appearances'] = (
@@ -1722,13 +1725,18 @@ class Neo4jExporter:
     # Export Narrative Connections
     # =========================================================================
 
-    # The 10-type connection vocabulary, shared by both layers
-    # (docs/YAML_CONTRACT.md v2.4.0).
-    CONNECTION_TYPES = [
-        'CAUSAL', 'CHARACTER_CONTINUITY', 'THEMATIC_PARALLEL',
-        'SYMBOLIC_PARALLEL', 'EMOTIONAL_ECHO', 'ESCALATION',
-        'CALLBACK', 'FORESHADOWING', 'TEMPORAL', 'NARRATIVELY_FOLLOWS'
-    ]
+    # The 10-type connection vocabulary, shared by both layers — derived
+    # from the canonical model enum so a taxonomy change can't silently
+    # diverge between model, importer, and exporter (v2.4.0).
+    CONNECTION_TYPES = list(ConnectionType.values)
+
+    def _index_event_episode_and_beats(self, events: List[Dict], episode_uuid: str):
+        """Record event -> episode and beat -> event lookups for the
+        connection exporters (which run after the event pass)."""
+        for ev in events:
+            self.event_episode_map[ev['fabula_uuid']] = episode_uuid
+            for beat_uuid in ev.get('derived_from_beat_uuids') or []:
+                self.beat_event_map[beat_uuid] = ev['fabula_uuid']
 
     def _episode_block(self, event_uuid: str) -> Optional[Dict]:
         """Denormalized episode reference for an exported event, or None if
@@ -2237,12 +2245,7 @@ class Neo4jExporter:
                         acts = self.export_acts_by_episode(episode_uuid, scene_number_map)
                         plot_beats = self.export_plot_beats_by_episode(episode_uuid, scene_number_map)
 
-                        # Event -> episode and beat -> event lookups for the
-                        # connection exporters (run after this loop).
-                        for ev in events:
-                            self.event_episode_map[ev['fabula_uuid']] = episode_uuid
-                            for beat_uuid in ev.get('derived_from_beat_uuids') or []:
-                                self.beat_event_map[beat_uuid] = ev['fabula_uuid']
+                        self._index_event_episode_and_beats(events, episode_uuid)
 
                         self.write_yaml(
                             events_dir / filename,

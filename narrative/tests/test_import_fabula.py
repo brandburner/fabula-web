@@ -1387,6 +1387,96 @@ class ContractVersionGateTest(TestCase):
         errors = self.cmd.validate_v24_shapes(data)
         self.assertTrue(any('series_uuid' in e for e in errors))
 
+    def test_theme_missing_name_rejected(self):
+        data = self._v24_data()
+        del data.themes[0]['name']
+        errors = self.cmd.validate_v24_shapes(data)
+        self.assertTrue(any('themes[0]' in e and 'missing name' in e for e in errors))
+
+    def test_theme_missing_series_uuid_rejected(self):
+        data = self._v24_data()
+        del data.themes[0]['series_uuid']
+        errors = self.cmd.validate_v24_shapes(data)
+        self.assertTrue(any('themes[0]' in e and 'series_uuid' in e for e in errors))
+
+    def test_theme_member_missing_event_uuid_rejected(self):
+        data = self._v24_data()
+        del data.themes[0]['events'][0]['event_uuid']
+        errors = self.cmd.validate_v24_shapes(data)
+        self.assertTrue(any('themes[0]' in e and 'events[0]' in e and 'event_uuid' in e for e in errors))
+
+    def test_theme_member_bad_episode_block_rejected(self):
+        data = self._v24_data()
+        data.themes[0]['events'][0]['episode'] = 'not-a-dict'
+        errors = self.cmd.validate_v24_shapes(data)
+        self.assertTrue(any('themes[0]' in e and 'events[0]' in e and 'episode block' in e for e in errors))
+
+    def test_nondict_episode_block_does_not_crash_ordinal_check(self):
+        # Review finding: a truthy non-dict episode block must produce an
+        # error, not an AttributeError from the backwards-edge comparison.
+        data = self._v24_data()
+        data.connections[0]['from_episode'] = 'ep-as-string'
+        errors = self.cmd.validate_v24_shapes(data)
+        self.assertTrue(any('from_episode' in e for e in errors))
+
+    def test_load_import_data_dedupe_wiring(self):
+        # Review finding: assert the LOAD_SPECS dedupe flags reach the right
+        # entities — characters (dedupe=True) collapse, connections
+        # (dedupe=False) don't.
+        with tempfile.TemporaryDirectory() as tmpdir:
+            d = Path(tmpdir)
+            (d / 'events').mkdir()
+            dup_char = {'fabula_uuid': 'char_1', 'global_id': 'ger_char_1', 'canonical_name': 'Jane'}
+            files = {
+                'manifest.yaml': {'fabula_version': '2.3.0'},
+                'series.yaml': [],
+                'themes.yaml': [],
+                'arcs.yaml': [],
+                'locations.yaml': [],
+                'characters.yaml': [dup_char, dict(dup_char)],
+                'connections.yaml': [
+                    {'fabula_uuid': 'c1', 'global_id': 'g1', 'from_event_uuid': 'a', 'to_event_uuid': 'b'},
+                    {'fabula_uuid': 'c2', 'global_id': 'g2', 'from_event_uuid': 'a', 'to_event_uuid': 'b'},
+                ],
+            }
+            for name, content in files.items():
+                with open(d / name, 'w') as fh:
+                    yaml.dump(content, fh)
+            data = self.cmd.load_import_data(d)
+        self.assertEqual(len(data.characters), 1)   # deduped
+        self.assertEqual(len(data.connections), 2)  # NOT deduped
+        self.assertEqual(data.organizations, [])    # optional missing -> []
+
+    def test_bad_scope_rejected(self):
+        data = self._v24_data()
+        data.connections[0]['scope'] = 'interdimensional'
+        errors = self.cmd.validate_v24_shapes(data)
+        self.assertTrue(any('bad scope' in e for e in errors))
+
+    def test_missing_endpoint_uuid_rejected(self):
+        data = self._v24_data()
+        data.connections[0]['to_event_uuid'] = None
+        errors = self.cmd.validate_v24_shapes(data)
+        self.assertTrue(any('missing endpoint' in e for e in errors))
+
+    def test_event_row_missing_fabula_uuid_rejected(self):
+        data = self._v24_data()
+        data.connections[0]['fabula_uuid'] = None
+        errors = self.cmd.validate_v24_shapes(data)
+        self.assertTrue(any('missing fabula_uuid' in e for e in errors))
+
+    def test_episode_block_missing_keys_rejected(self):
+        for key in ('uuid', 'season', 'number', 'ordinal'):
+            data = self._v24_data()
+            block = dict(data.connections[0]['from_episode'])
+            block[key] = None
+            data.connections[0]['from_episode'] = block
+            errors = self.cmd.validate_v24_shapes(data)
+            self.assertTrue(
+                any(f"episode block missing '{key}'" in e for e in errors),
+                f"no error for missing episode key {key}",
+            )
+
     def test_legacy_arc_type_accepted(self):
         # Pre-v1.2.0 graphs carry UNKNOWN / ENVIRONMENTAL / TECHNOLOGICAL;
         # they pass through verbatim (plan verification note 2).

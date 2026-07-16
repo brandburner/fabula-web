@@ -211,7 +211,7 @@ class TestQueryExecution(TestCase):
 # Test Character Export
 # =============================================================================
 
-@skip("Stale v2.0 exporter contract (old node property names / return shapes); the exporter moved to v2.3 megagraph shapes and is being rewritten for the v2.4.0 contract. Rewrite these fixtures with T-020..T-023 (ISS-004).")
+@skip("Stale v2.0 fixtures (old node property names / return shapes) for exporters NOT rewritten by the v2.4.0 contract work; fixture rewrite tracked as ISS-013.")
 class TestCharacterExport(TestCase):
     """Test character/agent data export."""
 
@@ -283,7 +283,7 @@ class TestCharacterExport(TestCase):
 # Test Event Export
 # =============================================================================
 
-@skip("Stale v2.0 exporter contract (old node property names / return shapes); the exporter moved to v2.3 megagraph shapes and is being rewritten for the v2.4.0 contract. Rewrite these fixtures with T-020..T-023 (ISS-004).")
+@skip("Stale v2.0 fixtures (old node property names / return shapes) for exporters NOT rewritten by the v2.4.0 contract work; fixture rewrite tracked as ISS-013.")
 class TestEventExport(TestCase):
     """Test event data export."""
 
@@ -427,7 +427,7 @@ class TestEventExport(TestCase):
 # Test Series Export
 # =============================================================================
 
-@skip("Stale v2.0 exporter contract (old node property names / return shapes); the exporter moved to v2.3 megagraph shapes and is being rewritten for the v2.4.0 contract. Rewrite these fixtures with T-020..T-023 (ISS-004).")
+@skip("Stale v2.0 fixtures (old node property names / return shapes) for exporters NOT rewritten by the v2.4.0 contract work; fixture rewrite tracked as ISS-013.")
 class TestSeriesExport(TestCase):
     """Test series/season/episode hierarchy export."""
 
@@ -498,49 +498,6 @@ class TestSeriesExport(TestCase):
 # =============================================================================
 # Test Connection Export
 # =============================================================================
-
-@skip("Stale v2.0 exporter contract (old node property names / return shapes); the exporter moved to v2.3 megagraph shapes and is being rewritten for the v2.4.0 contract. Rewrite these fixtures with T-020..T-023 (ISS-004).")
-class TestConnectionExport(TestCase):
-    """Test narrative connection export."""
-
-    def setUp(self):
-        """Set up exporter with mocked driver."""
-        self.exporter = Neo4jExporter('bolt://localhost:7689', 'neo4j', 'password', Path('/tmp'))
-        self.mock_driver = MagicMock()
-        self.exporter.driver = self.mock_driver
-
-    def test_export_connections(self):
-        """Test exporting narrative connections."""
-        mock_session = Mock()
-        mock_result = [
-            {
-                'from_uuid': 'event_1',
-                'to_uuid': 'event_2',
-                'connection_type': 'CAUSAL',
-                'strength': 'strong',
-                'description': 'Event 1 caused Event 2',
-                'connection_uuid': 'conn_123'
-            },
-            {
-                'from_uuid': 'event_2',
-                'to_uuid': 'event_3',
-                'connection_type': 'FORESHADOWING',
-                'strength': 'medium',
-                'description': 'Event 2 foreshadows Event 3',
-                'connection_uuid': 'conn_456'
-            }
-        ]
-
-        self.mock_driver.session.return_value.__enter__.return_value = mock_session
-        mock_session.run.return_value = mock_result
-
-        connections = self.exporter.export_connections()
-
-        self.assertEqual(len(connections), 2)
-        self.assertEqual(connections[0]['connection_type'], 'CAUSAL')
-        self.assertEqual(connections[1]['connection_type'], 'FORESHADOWING')
-        self.assertEqual(self.exporter.stats['connection_count'], 2)
-
 
 # =============================================================================
 # Test File Writing
@@ -613,30 +570,39 @@ class TestFileWriting(TestCase):
 # Test Manifest Creation
 # =============================================================================
 
-@skip("Stale v2.0 exporter contract (old node property names / return shapes); the exporter moved to v2.3 megagraph shapes and is being rewritten for the v2.4.0 contract. Rewrite these fixtures with T-020..T-023 (ISS-004).")
 class TestManifestCreation(TestCase):
-    """Test export manifest creation."""
+    """create_manifest with the v2.4.0 contract shape (review finding tq-02:
+    this diff changed create_manifest with zero active coverage)."""
 
-    def test_create_manifest(self):
-        """Test manifest contains correct metadata."""
+    def test_create_manifest_v24(self):
         exporter = Neo4jExporter('bolt://localhost:7689', 'neo4j', 'password', Path('/tmp'))
 
-        # Set some stats
-        exporter.stats['season_count'] = 1
-        exporter.stats['episode_count'] = 22
-        exporter.stats['event_count'] = 500
-        exporter.stats['character_count'] = 50
+        exporter.stats['season_count'] = 0  # derived from series data below
+        exporter.stats['episode_count'] = 12
+        exporter.stats['event_count'] = 1134
+        exporter.stats['character_count'] = 585
+        exporter.stats['connection_count'] = 2164
+        exporter.stats['event_connection_count'] = 1814
+        exporter.stats['beat_connection_count'] = 350
 
-        series_data = {'title': 'The West Wing'}
+        all_series = [{
+            'fabula_uuid': 'ser_wolf_hall',
+            'title': 'Wolf Hall',
+            'seasons': [{'season_number': 1, 'episodes': []},
+                        {'season_number': 2, 'episodes': []}],
+        }]
 
-        manifest = exporter.create_manifest(series_data)
+        manifest = exporter.create_manifest(all_series)
 
-        self.assertEqual(manifest['fabula_version'], '2.0.0')
-        self.assertEqual(manifest['series_title'], 'The West Wing')
-        self.assertEqual(manifest['season_count'], 1)
-        self.assertEqual(manifest['episode_count'], 22)
-        self.assertEqual(manifest['event_count'], 500)
-        self.assertEqual(manifest['character_count'], 50)
+        self.assertEqual(manifest['fabula_version'], '2.4.0')
+        self.assertEqual(manifest['series_titles'], ['Wolf Hall'])
+        self.assertEqual(manifest['season_count'], 2)
+        self.assertEqual(manifest['episode_count'], 12)
+        self.assertEqual(manifest['event_count'], 1134)
+        self.assertEqual(manifest['character_count'], 585)
+        self.assertEqual(manifest['connection_count'], 2164)
+        self.assertEqual(manifest['event_connection_count'], 1814)
+        self.assertEqual(manifest['beat_connection_count'], 350)
         self.assertIn('export_date', manifest)
         self.assertIn('source_graph', manifest)
 
@@ -970,3 +936,75 @@ class ArcThemeStorylineExportTest(TestCase):
         )
         arc = self.exporter.export_arcs()[0]
         self.assertEqual([m['event_uuid'] for m in arc['events']], ['evt_1'])
+
+
+class ProfileExportTest(TestCase):
+    """T-023 profile exporters (code-review major: previously untested)."""
+
+    def setUp(self):
+        self.exporter = Neo4jExporter('bolt://localhost:7689', 'neo4j', 'password', Path('/tmp'))
+        self.exporter.megagraph_mode = True
+        self.exporter.episode_info = {
+            'ep_1': {'uuid': 'ep_1', 'season': 1, 'number': 1, 'ordinal': 101},
+        }
+
+    def test_episode_profiles_skipped_when_label_absent(self):
+        self.exporter.execute_query = Mock(return_value=[{'label': 'Agent'}, {'label': 'Event'}])
+        self.assertEqual(self.exporter.export_character_episode_profiles(), [])
+        # Only the labels query ran — no profile query against a graph
+        # that has no profile nodes.
+        self.assertEqual(self.exporter.execute_query.call_count, 1)
+
+    def test_episode_profiles_exported_with_fallback_uuids(self):
+        labels = [{'label': 'AgentEpisodeProfile'}]
+        rows = [
+            {   # linked via relationships
+                'p': {'role_in_episode': 'Antagonist emerges',
+                      'core_dilemma_or_conflict_in_episode': 'Loyalty vs power',
+                      'significant_change_or_stasis_in_episode': 'Turns',
+                      'traits_in_episode': ['cunning'], 'contradictions': []},
+                'agent_uuid': 'agent_1', 'episode_uuid': 'ep_1',
+            },
+            {   # unresolvable episode -> skipped
+                'p': {'role_in_episode': 'x'},
+                'agent_uuid': 'agent_2', 'episode_uuid': 'ep_unknown',
+            },
+            {   # missing agent -> skipped
+                'p': {'role_in_episode': 'x'},
+                'agent_uuid': None, 'episode_uuid': 'ep_1',
+            },
+        ]
+        self.exporter.execute_query = Mock(side_effect=[labels, rows])
+        profiles = self.exporter.export_character_episode_profiles()
+        self.assertEqual(len(profiles), 1)
+        p = profiles[0]
+        self.assertEqual(p['character_uuid'], 'agent_1')
+        self.assertEqual(p['episode_uuid'], 'ep_1')
+        self.assertEqual(p['description_in_episode'], 'Antagonist emerges')
+        self.assertEqual(p['core_dilemma'], 'Loyalty vs power')
+        self.assertEqual(p['traits_in_episode'], ['cunning'])
+
+    def test_season_profiles_only_query_present_labels(self):
+        labels = [{'label': 'AgentSeasonProfile'}, {'label': 'Agent'}]
+        rows = [
+            {'p': {'season_number': 1, 'description': 'S1 portrait',
+                   'tier': 'anchor', 'source_database': 'wolfhall_s01',
+                   'ger_global_id': None},
+             'owner_ger_global_id': 'ger_agent_1'},
+            {'p': {'season_number': None, 'description': 'x'},  # no season -> skipped
+             'owner_ger_global_id': 'ger_agent_2'},
+        ]
+        self.exporter.execute_query = Mock(side_effect=[labels, rows])
+        profiles = self.exporter.export_season_profiles()
+        # labels query + ONE profile query (only AgentSeasonProfile present)
+        self.assertEqual(self.exporter.execute_query.call_count, 2)
+        self.assertEqual(len(profiles), 1)
+        self.assertEqual(profiles[0]['entity_global_id'], 'ger_agent_1')
+        self.assertEqual(profiles[0]['entity_type'], 'character')
+        self.assertEqual(profiles[0]['season_number'], 1)
+
+    def test_season_profiles_skipped_on_single_season_export(self):
+        self.exporter.megagraph_mode = False
+        self.exporter.execute_query = Mock()
+        self.assertEqual(self.exporter.export_season_profiles(), [])
+        self.exporter.execute_query.assert_not_called()
