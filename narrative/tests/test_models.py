@@ -22,6 +22,7 @@ from narrative.models import (
     ObjectInvolvement, LocationInvolvement, OrganizationInvolvement,
     # Structure
     Act, PlotBeat, EventBeatLink,
+    ArcRole, ArcEventMembership, ThemeEventMembership,
     # Index pages
     ThemeIndexPage, ConnectionIndexPage,
 )
@@ -1014,3 +1015,42 @@ class ConnectionStorylineFieldsTest(WagtailTestMixin, TestCase):
         )
         self.assertEqual(bridges.count(), 1)
         self.assertEqual(bridges.first().fabula_uuid, 'conn_bridge')
+
+
+class MembershipJunctionTest(WagtailTestMixin, TestCase):
+    """T-026: ArcEventMembership / ThemeEventMembership junctions."""
+
+    def test_arc_membership_with_role_and_ordinal(self):
+        m = ArcEventMembership.objects.create(
+            event=self.event1, arc=self.arc, role=ArcRole.START,
+            episode_ordinal=101,
+        )
+        self.assertEqual(m.role, 'START')
+        self.assertEqual(self.arc.event_memberships.count(), 1)
+        self.assertEqual(self.event1.arc_memberships.count(), 1)
+
+    def test_membership_unique_per_pair(self):
+        ArcEventMembership.objects.create(
+            event=self.event1, arc=self.arc, episode_ordinal=101,
+        )
+        with self.assertRaises(IntegrityError):
+            ArcEventMembership.objects.create(
+                event=self.event1, arc=self.arc, role=ArcRole.CLIMAX,
+            )
+
+    def test_memberships_order_by_ordinal(self):
+        ThemeEventMembership.objects.create(
+            event=self.event3, theme=self.theme, episode_ordinal=102,
+        )
+        ThemeEventMembership.objects.create(
+            event=self.event1, theme=self.theme, episode_ordinal=101,
+        )
+        ordinals = list(self.theme.event_memberships.values_list(
+            'episode_ordinal', flat=True))
+        self.assertEqual(ordinals, [101, 102])
+
+    def test_involved_characters_m2m(self):
+        self.arc.involved_characters.add(self.character1)
+        self.theme.related_characters.add(self.character2)
+        self.assertIn(self.arc, self.character1.involved_arcs.all())
+        self.assertIn(self.theme, self.character2.related_themes.all())

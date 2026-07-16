@@ -143,6 +143,12 @@ class Theme(index.Indexed, ClusterableModel):
         related_name='themes',
         help_text="Series this theme belongs to (for multi-graph scoping)"
     )
+    related_characters = models.ManyToManyField(
+        'narrative.CharacterPage',
+        blank=True,
+        related_name='related_themes',
+        help_text="Characters related to this theme (RELATED_TO_THEME evidence)"
+    )
 
     # Metadata
     created_at = models.DateTimeField(auto_now_add=True)
@@ -212,6 +218,12 @@ class ConflictArc(index.Indexed, ClusterableModel):
         on_delete=models.CASCADE,
         related_name='conflict_arcs',
         help_text="Series this arc belongs to (for multi-graph scoping)"
+    )
+    involved_characters = models.ManyToManyField(
+        'narrative.CharacterPage',
+        blank=True,
+        related_name='involved_arcs',
+        help_text="Characters involved in this arc (INVOLVED_IN_ARC evidence)"
     )
 
     # Metadata
@@ -1891,6 +1903,86 @@ class EventBeatLink(models.Model):
 
     def __str__(self):
         return f"{self.event.title} ← Beat {self.plot_beat.fabula_uuid}"
+
+
+class ArcRole(models.TextChoices):
+    """An event's structural role within a conflict arc (PART_OF_ARC.role)."""
+    START = 'START', 'Start'
+    CLIMAX = 'CLIMAX', 'Climax'
+    RESOLUTION = 'RESOLUTION', 'Resolution'
+
+
+class ArcEventMembership(models.Model):
+    """Junction linking events to the conflict arcs they belong to, with
+    edge data (contract v2.4.0: PART_OF_ARC evidence).
+
+    Plain junction model on the EventBeatLink precedent — modelcluster's
+    ParentalManyToManyField (EventPage.arcs) does not support through
+    models. The legacy M2M stays as a read path until Phase 3 cuts every
+    consumer over to this table.
+    """
+    event = models.ForeignKey(
+        EventPage,
+        on_delete=models.CASCADE,
+        related_name='arc_memberships',
+    )
+    arc = models.ForeignKey(
+        ConflictArc,
+        on_delete=models.CASCADE,
+        related_name='event_memberships',
+    )
+    role = models.CharField(
+        max_length=20,
+        choices=ArcRole.choices,
+        null=True,
+        blank=True,
+        help_text="Structural role: START | CLIMAX | RESOLUTION (nullable)"
+    )
+    episode_ordinal = models.PositiveIntegerField(
+        null=True,
+        blank=True,
+        db_index=True,
+        help_text="season*100+episode of the event's episode — makes "
+                  "timeline ordering index-friendly"
+    )
+
+    class Meta:
+        unique_together = ['event', 'arc']
+        ordering = ['episode_ordinal']
+
+    def __str__(self):
+        return f"{self.event.title} ∈ {self.arc.title}" + (
+            f" [{self.role}]" if self.role else ""
+        )
+
+
+class ThemeEventMembership(models.Model):
+    """Junction linking events to the themes they exemplify
+    (EXEMPLIFIES_THEME evidence). Symmetric with ArcEventMembership minus
+    roles (themes have none)."""
+    event = models.ForeignKey(
+        EventPage,
+        on_delete=models.CASCADE,
+        related_name='theme_memberships',
+    )
+    theme = models.ForeignKey(
+        Theme,
+        on_delete=models.CASCADE,
+        related_name='event_memberships',
+    )
+    episode_ordinal = models.PositiveIntegerField(
+        null=True,
+        blank=True,
+        db_index=True,
+        help_text="season*100+episode of the event's episode"
+    )
+
+    class Meta:
+        unique_together = ['event', 'theme']
+        ordering = ['episode_ordinal']
+
+    def __str__(self):
+        return f"{self.event.title} ∈ {self.theme.name}"
 
 
 # =============================================================================
