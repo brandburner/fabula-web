@@ -19,6 +19,7 @@ from narrative.models import (
     EventPage, EventIndexPage, CharacterIndexPage,
     # Relationships
     EventParticipation, NarrativeConnection, CharacterEpisodeProfile,
+    CharacterSeasonProfile,
     ObjectInvolvement, LocationInvolvement, OrganizationInvolvement,
     # Structure
     Act, PlotBeat, EventBeatLink,
@@ -1054,3 +1055,36 @@ class MembershipJunctionTest(WagtailTestMixin, TestCase):
         self.theme.related_characters.add(self.character2)
         self.assertIn(self.arc, self.character1.involved_arcs.all())
         self.assertIn(self.theme, self.character2.related_themes.all())
+
+
+class CharacterSeasonProfileTest(WagtailTestMixin, TestCase):
+    """T-027: per-season character portraits + arc_summary."""
+
+    def test_season_profile_unique_per_season(self):
+        CharacterSeasonProfile.objects.create(
+            character=self.character1, season_number=1,
+            description='S1 portrait', tier='anchor',
+            source_database='test_s01',
+        )
+        with self.assertRaises(IntegrityError):
+            CharacterSeasonProfile.objects.create(
+                character=self.character1, season_number=1,
+                description='duplicate',
+            )
+
+    def test_season_profiles_ordered_by_season(self):
+        CharacterSeasonProfile.objects.create(
+            character=self.character1, season_number=2, description='S2')
+        CharacterSeasonProfile.objects.create(
+            character=self.character1, season_number=1, description='S1')
+        self.assertEqual(
+            list(self.character1.season_profiles.values_list(
+                'season_number', flat=True)),
+            [1, 2],
+        )
+
+    def test_arc_summary_field(self):
+        self.character1.arc_summary = 'Rises, falls, rises again.'
+        self.character1.save()
+        self.character1.refresh_from_db()
+        self.assertEqual(self.character1.arc_summary, 'Rises, falls, rises again.')

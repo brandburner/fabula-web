@@ -611,6 +611,11 @@ class CharacterPage(Page):
         default=0,
         help_text="Number of event appearances"
     )
+    arc_summary = models.TextField(
+        blank=True,
+        help_text="LLM cross-season arc summary (megagraph entity extra, "
+                  "contract v2.4.0)"
+    )
 
     # Graph Gravity tiering fields
     episode_count = models.PositiveIntegerField(
@@ -1769,6 +1774,43 @@ class CharacterEpisodeProfile(models.Model):
 
     def __str__(self):
         return f"{self.character} in {self.episode}"
+
+
+class CharacterSeasonProfile(models.Model):
+    """
+    A character's verbatim per-season portrait (contract v2.4.0,
+    megagraph *SeasonProfile nodes). Mirrors CharacterEpisodeProfile at
+    season granularity for template symmetry.
+    """
+    character = models.ForeignKey(
+        CharacterPage,
+        on_delete=models.CASCADE,
+        related_name='season_profiles'
+    )
+    season_number = models.PositiveIntegerField()
+    description = models.TextField(
+        blank=True,
+        help_text="Verbatim per-season portrait from the season's own analysis"
+    )
+    tier = models.CharField(
+        max_length=20,
+        blank=True,
+        help_text="Importance tier within that season"
+    )
+    source_database = models.CharField(
+        max_length=100,
+        blank=True,
+        help_text="Season database this portrait came from (e.g. wolfhall_s01)"
+    )
+
+    class Meta:
+        unique_together = ['character', 'season_number']
+        ordering = ['season_number']
+        verbose_name = "Character Season Profile"
+        verbose_name_plural = "Character Season Profiles"
+
+    def __str__(self):
+        return f"{self.character} in season {self.season_number}"
 
 
 # =============================================================================
