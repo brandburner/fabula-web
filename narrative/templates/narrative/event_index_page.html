@@ -21,7 +21,7 @@
             {% endif %}
 
             <div class="mt-4 text-sm" style="color: var(--f-fg-placeholder);">
-                {{ events|length }} events across {{ episodes_with_events|length }} episodes
+                {% if page_obj %}{{ page_obj.paginator.count }}{% else %}{{ events|length }}{% endif %} events
             </div>
         </div>
     </div>
@@ -46,7 +46,7 @@
             <div class="flex items-center gap-3 mb-4">
                 <div class="flex-shrink-0 px-3 py-1.5 rounded-md" style="background: var(--f-accent-primary-bg); border: 1px solid color-mix(in srgb, var(--f-accent-primary) 25%, transparent);">
                     <span style="color: var(--f-accent-primary); font-family: var(--f-font-mono); font-weight: 600;">
-                        S{{ ep_group.season.season_number }}E{{ ep_group.episode.episode_number }}
+                        S{{ ep_group.episode.season_number }}E{{ ep_group.episode.episode_number }}
                     </span>
                 </div>
                 <a href="{% narrative_url ep_group.episode %}" class="flex-1 min-w-0 group">
@@ -92,6 +92,7 @@
             <p>No events found</p>
         </div>
         {% endfor %}
+        {% include "narrative/includes/pagination.html" %}
     </div>
 </article>
 
@@ -115,7 +116,7 @@
             {% endif %}
 
             <div class="mt-4 text-slate-500 text-sm">
-                {{ events|length }} events across {{ episodes_with_events|length }} episodes
+                {% if page_obj %}{{ page_obj.paginator.count }}{% else %}{{ events|length }}{% endif %} events
             </div>
         </div>
     </div>
@@ -140,7 +141,7 @@
             <div class="flex items-center gap-3 mb-4">
                 <div class="flex-shrink-0 px-3 py-1.5 bg-amber-500/10 border border-amber-500/20 rounded-lg">
                     <span class="text-amber-400 font-mono font-semibold">
-                        S{{ ep_group.season.season_number }}E{{ ep_group.episode.episode_number }}
+                        S{{ ep_group.episode.season_number }}E{{ ep_group.episode.episode_number }}
                     </span>
                 </div>
                 <a href="{% narrative_url ep_group.episode %}" class="flex-1 min-w-0 group">
@@ -185,6 +186,7 @@
             <p>No events found</p>
         </div>
         {% endfor %}
+        {% include "narrative/includes/pagination.html" %}
     </div>
 </article>
 {% endif %}

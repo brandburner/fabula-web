@@ -430,7 +430,8 @@ class ThemeIndexView(ListView):
     model = Theme
     template_name = 'narrative/theme_index.html'
     context_object_name = 'themes'
-    
+    paginate_by = 48
+
     def get_queryset(self):
         from django.db.models import Count
         return Theme.objects.annotate(
@@ -477,7 +478,8 @@ class ArcIndexView(ListView):
     model = ConflictArc
     template_name = 'narrative/arc_index.html'
     context_object_name = 'arcs'
-    
+    paginate_by = 48
+
     def get_queryset(self):
         from django.db.models import Count
         return ConflictArc.objects.annotate(
@@ -560,16 +562,18 @@ class LocationIndexView(SeasonFilterMixin, SeriesScopedMixin, ListView):
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
 
-        # Group locations by type
+        # Group locations by type off the view's own object list — grouping
+        # and counting previously re-ran the queryset two more times.
+        locations = list(context['locations'])
         locations_by_type = {}
-        for location in self.get_queryset():
+        for location in locations:
             loc_type = location.location_type or 'Other'
             if loc_type not in locations_by_type:
                 locations_by_type[loc_type] = []
             locations_by_type[loc_type].append(location)
 
         context['locations_by_type'] = locations_by_type
-        context['total_count'] = self.get_queryset().count()
+        context['total_count'] = len(locations)
         return context
 
 
@@ -621,6 +625,7 @@ class CharacterIndexView(SeasonFilterMixin, SeriesScopedMixin, ListView):
     model = CharacterPage
     template_name = 'narrative/character_index_page.html'
     context_object_name = 'characters'
+    paginate_by = 60
 
     def get_season_counts(self, series):
         base_parts = EventParticipation.objects.all()
@@ -848,6 +853,7 @@ class ObjectIndexView(SeasonFilterMixin, SeriesScopedMixin, ListView):
     model = ObjectPage
     template_name = 'narrative/object_index_page.html'
     context_object_name = 'objects'
+    paginate_by = 60
 
     def get_season_counts(self, series):
         base_inv = ObjectInvolvement.objects.all()
@@ -921,6 +927,7 @@ class EventIndexView(SeasonFilterMixin, SeriesScopedMixin, ListView):
     model = EventPage
     template_name = 'narrative/event_index_page.html'
     context_object_name = 'events'
+    paginate_by = 100
 
     def get_season_counts(self, series):
         base_qs = EventPage.objects.live()
@@ -953,23 +960,15 @@ class EventIndexView(SeasonFilterMixin, SeriesScopedMixin, ListView):
         from itertools import groupby
 
         series = self.get_series()
-        events = list(context['events'])
+        # Only the current page's events are materialized; the queryset is
+        # already SQL-ordered so groupby sees episodes contiguously. Season
+        # labels come from the denormalized EpisodePage.season_number.
+        events = context['events']
 
-        # Build episode→season map
-        episode_pks = set(e.episode_id for e in events if e.episode_id)
-        episode_season = {}
-        for ep in EpisodePage.objects.filter(pk__in=episode_pks):
-            season = ep.get_parent()
-            if season:
-                episode_season[ep.pk] = season.specific
-
-        # Group events by episode
         episodes_with_events = []
         for episode, episode_events in groupby(events, key=lambda e: e.episode):
-            season = episode_season.get(episode.pk) if episode else None
             episodes_with_events.append({
                 'episode': episode,
-                'season': season,
                 'series': series,
                 'events': list(episode_events),
             })

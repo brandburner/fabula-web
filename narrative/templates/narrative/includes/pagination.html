@@ -1,0 +1,29 @@
+{% comment %}
+Shared pagination controls for paginated ListViews.
+Expects `page_obj` / `is_paginated` in context (Django ListView contract).
+Uses {% querystring %} so filter params (e.g. ?season=N) survive page moves.
+Styled with theme tokens, so it renders correctly in writerly and dark.
+{% endcomment %}
+{% if is_paginated %}
+<nav class="flex justify-center items-center gap-4 mt-12" aria-label="Pagination">
+    {% if page_obj.has_previous %}
+    <a href="{% querystring page=page_obj.previous_page_number %}"
+       class="px-4 py-2 rounded transition-colors f-hover-border"
+       style="background: var(--f-bg-elevated); color: var(--f-fg-secondary); border: 1px solid var(--f-border-default);">
+        Previous
+    </a>
+    {% endif %}
+
+    <span class="px-4 py-2" style="color: var(--f-fg-placeholder);">
+        Page {{ page_obj.number }} of {{ page_obj.paginator.num_pages }}
+    </span>
+
+    {% if page_obj.has_next %}
+    <a href="{% querystring page=page_obj.next_page_number %}"
+       class="px-4 py-2 rounded transition-colors f-hover-border"
+       style="background: var(--f-bg-elevated); color: var(--f-fg-secondary); border: 1px solid var(--f-border-default);">
+        Next
+    </a>
+    {% endif %}
+</nav>
+{% endif %}

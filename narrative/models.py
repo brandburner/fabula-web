@@ -1238,42 +1238,24 @@ class EventIndexPage(Page):
 
         series_page = self.get_parent().specific
 
-        # Scope to events in THIS series only (children of this index page)
-        events = list(
-            EventPage.objects.child_of(self).live().select_related('episode')
-        )
-
-        # Batch-fetch season info for all unique episodes (avoids N+1)
-        episode_pks = set(e.episode_id for e in events if e.episode_id)
-        episode_season = {}
-        for ep in EpisodePage.objects.filter(pk__in=episode_pks):
-            season = ep.get_parent()
-            if season:
-                episode_season[ep.pk] = season.specific
-
-        def sort_key(event):
-            if not event.episode_id:
-                return (0, 0, 0, 0)
-            season = episode_season.get(event.episode_id)
-            season_num = getattr(season, 'season_number', 0) if season else 0
-            return (season_num, event.episode.episode_number, event.scene_sequence, event.sequence_in_scene)
-
-        sorted_events = sorted(events, key=sort_key)
+        # Scope to events in THIS series only (children of this index page).
+        # EventPage.Meta.ordering is season-aware, so the queryset arrives in
+        # (season, episode, scene, sequence) order — no Python re-sort needed;
+        # season labels come from the denormalized EpisodePage.season_number.
+        events = EventPage.objects.child_of(self).live().select_related('episode')
 
         # Group events by episode for template rendering
         from itertools import groupby
         episodes_with_events = []
-        for episode, episode_events in groupby(sorted_events, key=lambda e: e.episode):
-            season = episode_season.get(episode.pk) if episode else None
+        for episode, episode_events in groupby(events, key=lambda e: e.episode):
             episodes_with_events.append({
                 'episode': episode,
-                'season': season,
                 'series': series_page,
                 'events': list(episode_events)
             })
 
         context['episodes_with_events'] = episodes_with_events
-        context['events'] = sorted_events
+        context['events'] = events
         return context
 
 
