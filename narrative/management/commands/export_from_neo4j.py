@@ -45,6 +45,7 @@ import sys
 
 from django.core.management.base import BaseCommand, CommandError
 from django.conf import settings
+from django.utils.text import slugify
 
 import yaml
 from neo4j import GraphDatabase, Driver
@@ -141,6 +142,8 @@ class Neo4jExporter:
             'theme_count': 0,
             'arc_count': 0,
             'connection_count': 0,
+            'event_connection_count': 0,
+            'beat_connection_count': 0,
             'act_count': 0,
             'plot_beat_count': 0,
             'writer_count': 0,
@@ -148,6 +151,15 @@ class Neo4jExporter:
             'ger_linked_count': 0,
             'cross_season_entities': 0,
         }
+
+        # Populated during export_all's event pass; consumed by the
+        # connection exporters (docs/YAML_CONTRACT.md v2.4.0):
+        #   episode_info: episode_uuid -> {uuid, season, number, ordinal}
+        #   event_episode_map: event_uuid -> episode_uuid
+        #   beat_event_map: beat_uuid -> event_uuid (via derived_from_beat_uuids)
+        self.episode_info: Dict[str, Dict] = {}
+        self.event_episode_map: Dict[str, str] = {}
+        self.beat_event_map: Dict[str, str] = {}
 
     def connect(self):
         """Establish connection to Neo4j."""
@@ -1594,85 +1606,208 @@ class Neo4jExporter:
     # Export Narrative Connections
     # =========================================================================
 
-    def export_connections(self) -> List[Dict]:
+    # The 10-type connection vocabulary, shared by both layers
+    # (docs/YAML_CONTRACT.md v2.4.0).
+    CONNECTION_TYPES = [
+        'CAUSAL', 'CHARACTER_CONTINUITY', 'THEMATIC_PARALLEL',
+        'SYMBOLIC_PARALLEL', 'EMOTIONAL_ECHO', 'ESCALATION',
+        'CALLBACK', 'FORESHADOWING', 'TEMPORAL', 'NARRATIVELY_FOLLOWS'
+    ]
+
+    def _episode_block(self, event_uuid: str) -> Optional[Dict]:
+        """Denormalized episode reference for an exported event, or None if
+        the event wasn't part of this export (non-canonical/filtered)."""
+        episode_uuid = self.event_episode_map.get(event_uuid)
+        if not episode_uuid:
+            return None
+        return self.episode_info.get(episode_uuid)
+
+    def export_event_layer_connections(self) -> List[Dict]:
         """
-        Export all narrative connections between events.
+        Export the native Event→Event connection layer (docs/YAML_CONTRACT.md
+        v2.4.0) — the product of fabula_v2's cross-episode enrichment. No
+        scene re-projection, no fan-out: one row per graph edge.
 
-        Connections are stored as relationships between PlotBeat nodes:
-        (:PlotBeat)-[:CAUSAL|THEMATIC_PARALLEL|etc]->(:PlotBeat)
-
-        We map beats to events via FK property join + SceneBoundary path:
-        PlotBeat.scene_uuid_fk → SceneBoundary.scene_uuid ← Event -[:OCCURS_IN]-> SceneBoundary
-
-        Returns:
-            List of connection dictionaries
+        Requires event_episode_map/episode_info (built during the event
+        export pass), so export_all must run this after events.
         """
-        print("Exporting narrative connections...")
+        print("Exporting event-layer narrative connections...")
 
-        # Query all PlotBeat relationship types with direct event mapping
-        # Path: Event -> SceneBoundary -> PlotBeat
-        connection_types = [
-            'CAUSAL', 'CHARACTER_CONTINUITY', 'THEMATIC_PARALLEL',
-            'SYMBOLIC_PARALLEL', 'EMOTIONAL_ECHO', 'ESCALATION',
-            'CALLBACK', 'FORESHADOWING', 'TEMPORAL', 'NARRATIVELY_FOLLOWS'
-        ]
-
-        # Query connections with event UUIDs resolved via FK property joins
-        # PlotBeat.scene_uuid_fk → SceneBoundary.scene_uuid
-        # Event -[:OCCURS_IN]-> SceneBoundary
         query = """
-        MATCH (from_pb:PlotBeat)-[r]->(to_pb:PlotBeat)
+        MATCH (from_e:Event)-[r]->(to_e:Event)
         WHERE type(r) IN $connection_types
-        OPTIONAL MATCH (sb1:SceneBoundary) WHERE sb1.scene_uuid = from_pb.scene_uuid_fk
-        OPTIONAL MATCH (from_e:Event)-[:OCCURS_IN]->(sb1)
-        OPTIONAL MATCH (sb2:SceneBoundary) WHERE sb2.scene_uuid = to_pb.scene_uuid_fk
-        OPTIONAL MATCH (to_e:Event)-[:OCCURS_IN]->(sb2)
-        RETURN from_pb.beat_uuid as from_beat,
-               to_pb.beat_uuid as to_beat,
-               from_e.event_uuid as from_event,
+        RETURN from_e.event_uuid as from_event,
                to_e.event_uuid as to_event,
                type(r) as connection_type,
                r.strength as strength,
                r.description as description,
                r.connection_uuid as connection_uuid,
-               r.global_id as global_id
+               r.global_id as global_id,
+               r.inferred_by as inferred_by,
+               r.cross_episode_reasoning as cross_episode_reasoning,
+               [(from_e)-[:PART_OF_ARC]->(a1:ConflictArc) | a1.arc_uuid] as from_arcs,
+               [(to_e)-[:PART_OF_ARC]->(a2:ConflictArc) | a2.arc_uuid] as to_arcs
         """
 
-        results = self.execute_query(query, {'connection_types': connection_types})
+        results = self.execute_query(query, {'connection_types': self.CONNECTION_TYPES})
         connections = []
-        seen = set()  # Avoid duplicate event connections
+        skipped_unresolved = 0
+        backwards = []
 
         for record in results:
             from_event = record.get('from_event')
             to_event = record.get('to_event')
 
-            # Skip if events couldn't be resolved (orphaned beats)
-            if not from_event or not to_event:
+            from_ep = self._episode_block(from_event) if from_event else None
+            to_ep = self._episode_block(to_event) if to_event else None
+            if not from_ep or not to_ep:
+                # Endpoint outside the exported event set (non-canonical, or
+                # filtered by --series). Counted, not silently swallowed.
+                skipped_unresolved += 1
                 continue
 
-            # Skip self-referential connections (same event)
-            # This happens when two PlotBeats in the same SceneBoundary have a relationship
-            if from_event == to_event:
+            # Direction invariant: every edge points earlier -> later under
+            # the composite ordinal (fabula_v2 852c584). A backwards edge is
+            # an upstream data bug — exclude it so the export stays
+            # importable, and report loudly below.
+            if from_ep['ordinal'] > to_ep['ordinal']:
+                backwards.append((record.get('connection_uuid'), from_event, to_event))
                 continue
 
-            # Create unique key to avoid duplicates (multiple beats may map to same event)
-            conn_key = (from_event, to_event, record.get('connection_type'))
-            if conn_key in seen:
-                continue
-            seen.add(conn_key)
+            # Arc attribution: intersect the endpoints' PART_OF_ARC
+            # memberships (workaround until fabula_v2 stamps arc_uuid on
+            # enrichment edges — brief §7.1).
+            from_arcs = set(a for a in (record.get('from_arcs') or []) if a)
+            to_arcs = set(a for a in (record.get('to_arcs') or []) if a)
+            arc_uuids = sorted(from_arcs & to_arcs)
 
-            connection = {
+            scope = ('intra_episode' if from_ep['uuid'] == to_ep['uuid']
+                     else 'cross_episode')
+
+            connections.append({
                 'fabula_uuid': record.get('connection_uuid', ''),
                 'global_id': record.get('global_id'),
                 'from_event_uuid': from_event,
                 'to_event_uuid': to_event,
                 'connection_type': record.get('connection_type', 'CAUSAL'),
-                'strength': record.get('strength', 'medium'),
-                'description': record.get('description', '')
-            }
-
-            connections.append(connection)
+                'strength': record.get('strength') or 'medium',
+                'description': record.get('description', ''),
+                'layer': 'event',
+                'scope': scope,
+                'inferred_by': record.get('inferred_by'),
+                'cross_episode_reasoning': (
+                    record.get('cross_episode_reasoning')
+                    if scope == 'cross_episode' else None
+                ),
+                'arc_uuids': arc_uuids,
+                'from_episode': from_ep,
+                'to_episode': to_ep,
+            })
+            self.stats['event_connection_count'] += 1
             self.stats['connection_count'] += 1
+
+        if skipped_unresolved:
+            print(f"  ! Skipped {skipped_unresolved} event-layer edges with "
+                  f"endpoints outside the exported event set")
+        if backwards:
+            print(f"  !! WARNING: excluded {len(backwards)} BACKWARDS event-layer "
+                  f"edges (later -> earlier under the composite ordinal). This is "
+                  f"an upstream graph bug — re-run the enrichment audit. Examples:")
+            for conn_uuid, f, t in backwards[:5]:
+                print(f"     {conn_uuid}: {f} -> {t}")
+
+        return connections
+
+    def export_connections(self) -> List[Dict]:
+        """
+        Export beat-layer narrative connections (intra-episode texture).
+
+        Connections are stored as relationships between PlotBeat nodes:
+        (:PlotBeat)-[:CAUSAL|THEMATIC_PARALLEL|etc]->(:PlotBeat)
+
+        Beats map to events via the events' own derived_from_beat_uuids
+        (exact, built during the event export pass) — NOT the old
+        scene-based cartesian join, which fanned each beat edge out onto
+        every co-located event pair (~3.4x). GER global_ids are preserved
+        so existing site URLs survive (plan R1/Q2).
+        """
+        print("Exporting beat-layer narrative connections...")
+
+        query = """
+        MATCH (from_pb:PlotBeat)-[r]->(to_pb:PlotBeat)
+        WHERE type(r) IN $connection_types
+        RETURN from_pb.beat_uuid as from_beat,
+               to_pb.beat_uuid as to_beat,
+               type(r) as connection_type,
+               r.strength as strength,
+               r.description as description,
+               r.connection_uuid as connection_uuid,
+               r.global_id as global_id
+        ORDER BY from_pb.beat_uuid, to_pb.beat_uuid
+        """
+
+        results = self.execute_query(query, {'connection_types': self.CONNECTION_TYPES})
+        connections = []
+        seen = {}  # (from_event, to_event, type) -> first row's connection_uuid
+        skipped_unmapped = 0
+        skipped_self = 0
+        collapsed = 0
+
+        for record in results:
+            from_event = self.beat_event_map.get(record.get('from_beat'))
+            to_event = self.beat_event_map.get(record.get('to_beat'))
+
+            # Beat not derived into any exported event (orphaned/filtered).
+            if not from_event or not to_event:
+                skipped_unmapped += 1
+                continue
+
+            # Both beats derived into the same event — not a connection at
+            # the event level.
+            if from_event == to_event:
+                skipped_self += 1
+                continue
+
+            # Distinct beat edges can still collapse onto one event triple;
+            # the site's unique constraint holds one row per triple, so keep
+            # the first (deterministic via ORDER BY) and count the rest.
+            # Dropped global_ids are re-pointed by the Phase 2.5 redirect map.
+            conn_key = (from_event, to_event, record.get('connection_type'))
+            if conn_key in seen:
+                collapsed += 1
+                continue
+            seen[conn_key] = record.get('connection_uuid')
+
+            from_ep = self._episode_block(from_event)
+            to_ep = self._episode_block(to_event)
+            scope = ('cross_episode'
+                     if from_ep and to_ep and from_ep['uuid'] != to_ep['uuid']
+                     else 'intra_episode')
+
+            connections.append({
+                'fabula_uuid': record.get('connection_uuid', ''),
+                'global_id': record.get('global_id'),
+                'from_event_uuid': from_event,
+                'to_event_uuid': to_event,
+                'connection_type': record.get('connection_type', 'CAUSAL'),
+                'strength': record.get('strength') or 'medium',
+                'description': record.get('description', ''),
+                'layer': 'beat',
+                'scope': scope,
+                'from_episode': from_ep,
+                'to_episode': to_ep,
+            })
+            self.stats['beat_connection_count'] += 1
+            self.stats['connection_count'] += 1
+
+        if skipped_unmapped:
+            print(f"  Skipped {skipped_unmapped} beat edges not derived into "
+                  f"any exported event")
+        if skipped_self:
+            print(f"  Skipped {skipped_self} beat edges internal to one event")
+        if collapsed:
+            print(f"  Collapsed {collapsed} beat edges onto existing "
+                  f"(from, to, type) triples (redirect map re-points their URLs)")
 
         return connections
 
@@ -1871,15 +2006,33 @@ class Neo4jExporter:
                         season_num = season['season_number']
                         episode_num = episode['episode_number']
 
-                        # Use series-specific prefix to avoid collisions
-                        series_prefix = series_data['fabula_uuid'].replace('ser_', '')[:10]
-                        filename = f"{series_prefix}_s{season_num:02d}e{episode_num:02d}.yaml"
+                        # Denormalized episode reference used by connection
+                        # rows and membership lists (contract v2.4.0).
+                        self.episode_info[episode_uuid] = {
+                            'uuid': episode_uuid,
+                            'season': season_num,
+                            'number': episode_num,
+                            'ordinal': season_num * 100 + episode_num,
+                        }
+
+                        # Full series slug + composite ordinal — the former
+                        # {series_uuid[:10]} truncation was a collision
+                        # hazard (plan R6).
+                        series_slug = slugify(series_data['fabula_uuid'].replace('ser_', '')) or 'series'
+                        filename = f"{series_slug}_s{season_num:02d}e{episode_num:02d}.yaml"
 
                         print(f"Exporting events for {series_title} - {episode['title']}...")
                         scene_number_map = self._build_scene_number_map(episode_uuid)
                         events = self.export_events_by_episode(episode_uuid, scene_number_map)
                         acts = self.export_acts_by_episode(episode_uuid, scene_number_map)
                         plot_beats = self.export_plot_beats_by_episode(episode_uuid, scene_number_map)
+
+                        # Event -> episode and beat -> event lookups for the
+                        # connection exporters (run after this loop).
+                        for ev in events:
+                            self.event_episode_map[ev['fabula_uuid']] = episode_uuid
+                            for beat_uuid in ev.get('derived_from_beat_uuids') or []:
+                                self.beat_event_map[beat_uuid] = ev['fabula_uuid']
 
                         self.write_yaml(
                             events_dir / filename,
@@ -1894,12 +2047,17 @@ class Neo4jExporter:
                             f"Events for {episode['title'].replace(chr(10), ' - ')}"
                         )
 
-            # Export narrative connections
-            connections = self.export_connections()
+            # Export narrative connections: the native event layer first
+            # (the storyline product), then the beat layer (intra-episode
+            # texture). Both carry layer/scope/episode blocks (v2.4.0).
+            connections = (
+                self.export_event_layer_connections()
+                + self.export_connections()
+            )
             self.write_yaml(
                 self.output_dir / 'connections.yaml',
                 connections,
-                'Narrative Connections Between Events'
+                'Narrative Connections Between Events (event + beat layers)'
             )
 
             # Create and write manifest
@@ -1927,7 +2085,9 @@ class Neo4jExporter:
             print(f"  Organizations: {self.stats['organization_count']}")
             print(f"  Themes: {self.stats['theme_count']}")
             print(f"  Conflict Arcs: {self.stats['arc_count']}")
-            print(f"  Narrative Connections: {self.stats['connection_count']}")
+            print(f"  Narrative Connections: {self.stats['connection_count']} "
+                  f"(event layer: {self.stats['event_connection_count']}, "
+                  f"beat layer: {self.stats['beat_connection_count']})")
             print(f"  Acts: {self.stats['act_count']}")
             print(f"  Plot Beats: {self.stats['plot_beat_count']}")
             print(f"  Writers: {self.stats['writer_count']}")

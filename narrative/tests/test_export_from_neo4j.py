@@ -732,3 +732,127 @@ class TestNeo4jIntegration(TestCase):
 
 if __name__ == '__main__':
     pytest.main([__file__, '-v'])
+
+
+# =============================================================================
+# v2.4.0 Connection Export (T-020 / T-021) — replaces the skipped
+# TestConnectionExport above, which asserted the v2.0 fan-out contract.
+# =============================================================================
+
+class EventLayerConnectionExportTest(TestCase):
+    """export_event_layer_connections: native Event->Event edges."""
+
+    def setUp(self):
+        self.exporter = Neo4jExporter('bolt://localhost:7689', 'neo4j', 'password', Path('/tmp'))
+        self.exporter.episode_info = {
+            'ep_s1e5': {'uuid': 'ep_s1e5', 'season': 1, 'number': 5, 'ordinal': 105},
+            'ep_s2e1': {'uuid': 'ep_s2e1', 'season': 2, 'number': 1, 'ordinal': 201},
+        }
+        self.exporter.event_episode_map = {
+            'evt_a': 'ep_s1e5',
+            'evt_b': 'ep_s2e1',
+            'evt_c': 'ep_s1e5',
+        }
+
+    def _row(self, **overrides):
+        row = {
+            'from_event': 'evt_a', 'to_event': 'evt_b',
+            'connection_type': 'FORESHADOWING', 'strength': 'medium',
+            'description': 'seeded early', 'connection_uuid': 'conn_1',
+            'global_id': None, 'inferred_by': 'llm_cross_episode_arc',
+            'cross_episode_reasoning': 'pays off later',
+            'from_arcs': ['arc_1', 'arc_2'], 'to_arcs': ['arc_2', 'arc_3'],
+        }
+        row.update(overrides)
+        return row
+
+    def test_cross_episode_row_shape(self):
+        self.exporter.execute_query = Mock(return_value=[self._row()])
+        rows = self.exporter.export_event_layer_connections()
+        self.assertEqual(len(rows), 1)
+        row = rows[0]
+        self.assertEqual(row['layer'], 'event')
+        self.assertEqual(row['scope'], 'cross_episode')
+        self.assertEqual(row['fabula_uuid'], 'conn_1')
+        self.assertEqual(row['cross_episode_reasoning'], 'pays off later')
+        self.assertEqual(row['arc_uuids'], ['arc_2'])  # intersection
+        self.assertEqual(row['from_episode']['ordinal'], 105)
+        self.assertEqual(row['to_episode']['ordinal'], 201)
+
+    def test_intra_episode_scope_and_null_reasoning(self):
+        self.exporter.execute_query = Mock(return_value=[
+            self._row(to_event='evt_c', cross_episode_reasoning='should be nulled')
+        ])
+        rows = self.exporter.export_event_layer_connections()
+        self.assertEqual(rows[0]['scope'], 'intra_episode')
+        self.assertIsNone(rows[0]['cross_episode_reasoning'])
+
+    def test_backwards_edge_excluded(self):
+        self.exporter.execute_query = Mock(return_value=[
+            self._row(from_event='evt_b', to_event='evt_a')  # 201 -> 105
+        ])
+        rows = self.exporter.export_event_layer_connections()
+        self.assertEqual(rows, [])
+
+    def test_unresolved_endpoint_skipped(self):
+        self.exporter.execute_query = Mock(return_value=[
+            self._row(to_event='evt_unknown')
+        ])
+        rows = self.exporter.export_event_layer_connections()
+        self.assertEqual(rows, [])
+
+
+class BeatLayerConnectionExportTest(TestCase):
+    """export_connections: beat layer via derived_from_beat_uuids, no fan-out."""
+
+    def setUp(self):
+        self.exporter = Neo4jExporter('bolt://localhost:7689', 'neo4j', 'password', Path('/tmp'))
+        self.exporter.episode_info = {
+            'ep_1': {'uuid': 'ep_1', 'season': 1, 'number': 1, 'ordinal': 101},
+        }
+        self.exporter.event_episode_map = {'evt_a': 'ep_1', 'evt_b': 'ep_1'}
+        self.exporter.beat_event_map = {
+            'beat_1': 'evt_a', 'beat_2': 'evt_b',
+            'beat_3': 'evt_a', 'beat_4': 'evt_b',
+            'beat_same_1': 'evt_a', 'beat_same_2': 'evt_a',
+        }
+
+    def _row(self, from_beat, to_beat, conn_uuid, gid, conn_type='CAUSAL'):
+        return {
+            'from_beat': from_beat, 'to_beat': to_beat,
+            'connection_type': conn_type, 'strength': 'strong',
+            'description': 'x', 'connection_uuid': conn_uuid, 'global_id': gid,
+        }
+
+    def test_one_row_per_beat_edge_with_global_id(self):
+        self.exporter.execute_query = Mock(return_value=[
+            self._row('beat_1', 'beat_2', 'conn_1', 'ger_narrativeconnection_1'),
+        ])
+        rows = self.exporter.export_connections()
+        self.assertEqual(len(rows), 1)
+        self.assertEqual(rows[0]['layer'], 'beat')
+        self.assertEqual(rows[0]['scope'], 'intra_episode')
+        self.assertEqual(rows[0]['global_id'], 'ger_narrativeconnection_1')
+        self.assertEqual(rows[0]['from_episode']['ordinal'], 101)
+
+    def test_collapsing_triples_keeps_first(self):
+        # Two distinct beat edges mapping to the same (evt_a, evt_b, CAUSAL)
+        self.exporter.execute_query = Mock(return_value=[
+            self._row('beat_1', 'beat_2', 'conn_1', 'ger_1'),
+            self._row('beat_3', 'beat_4', 'conn_2', 'ger_2'),
+        ])
+        rows = self.exporter.export_connections()
+        self.assertEqual(len(rows), 1)
+        self.assertEqual(rows[0]['fabula_uuid'], 'conn_1')
+
+    def test_same_event_beats_skipped(self):
+        self.exporter.execute_query = Mock(return_value=[
+            self._row('beat_same_1', 'beat_same_2', 'conn_x', 'ger_x'),
+        ])
+        self.assertEqual(self.exporter.export_connections(), [])
+
+    def test_unmapped_beat_skipped(self):
+        self.exporter.execute_query = Mock(return_value=[
+            self._row('beat_orphan', 'beat_2', 'conn_y', 'ger_y'),
+        ])
+        self.assertEqual(self.exporter.export_connections(), [])
