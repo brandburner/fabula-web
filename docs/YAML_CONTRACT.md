@@ -94,7 +94,9 @@ row is skipped and logged.
 - fabula_uuid: arc_4476355656a7
   global_id: ger_conflictarc_…             # may be null
   name: "Cromwell's rise against the old nobility"   # ConflictArc.name — short stable identity
-  arc_type: SOCIETAL                       # INTERNAL | INTERPERSONAL | SOCIETAL
+  arc_type: SOCIETAL                       # canonical: INTERNAL | INTERPERSONAL | SOCIETAL
+                                           # legacy graphs may carry ENVIRONMENTAL |
+                                           # TECHNOLOGICAL | UNKNOWN (passed through verbatim)
   description: "…"                         # conflict_description — distinct from name
   series_uuid: ser_wolf_hall
   season_appearances: [1, 2]               # deduplicated

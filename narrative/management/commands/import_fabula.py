@@ -389,7 +389,13 @@ class Command(BaseCommand):
         'SYMBOLIC_PARALLEL', 'EMOTIONAL_ECHO', 'ESCALATION', 'CALLBACK',
         'FORESHADOWING', 'TEMPORAL', 'NARRATIVELY_FOLLOWS',
     })
-    V24_ARC_TYPES = frozenset({'INTERNAL', 'INTERPERSONAL', 'SOCIETAL'})
+    # Canonical vocabulary (schema v1.2.0) plus legacy values that older
+    # graphs carry and the model keeps readable (plan verification note 2;
+    # 'UNKNOWN' = deliberately unclassified on partial-enrichment graphs).
+    V24_ARC_TYPES = frozenset({
+        'INTERNAL', 'INTERPERSONAL', 'SOCIETAL',
+        'ENVIRONMENTAL', 'TECHNOLOGICAL', 'UNKNOWN',
+    })
     V24_ARC_ROLES = frozenset({'START', 'CLIMAX', 'RESOLUTION'})
 
     def load_import_data(self, data_dir: Path) -> ImportData:
@@ -488,7 +494,10 @@ class Command(BaseCommand):
             if not arc.get('name'):
                 errors.append(f"{where}: missing name")
             if arc.get('arc_type') not in self.V24_ARC_TYPES:
-                errors.append(f"{where}: arc_type must be one of {sorted(self.V24_ARC_TYPES)}")
+                errors.append(
+                    f"{where}: arc_type {arc.get('arc_type')!r} not in the "
+                    f"canonical or legacy vocabulary {sorted(self.V24_ARC_TYPES)}"
+                )
             if not arc.get('series_uuid'):
                 errors.append(f"{where}: missing series_uuid")
             for j, member in enumerate(arc.get('events') or []):

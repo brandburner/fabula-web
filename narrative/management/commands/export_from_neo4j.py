@@ -362,6 +362,8 @@ class Neo4jExporter:
                         episode_data = {
                             'fabula_uuid': episode_uuid,
                             'episode_number': episode_num,
+                            'season_number': season_num,
+                            'sort_ordinal': season_num * 100 + episode_num,
                             'title': self.safe_get(episode_node, 'title') or self.safe_get(episode_node, 'episode_title', 'Untitled'),
                             'logline': self.safe_get(episode_node, 'logline', ''),
                             'high_level_summary': self.safe_get(episode_node, 'high_level_summary', ''),
@@ -922,6 +924,7 @@ class Neo4jExporter:
             RETURN t.theme_uuid as theme_uuid,
                    t.global_id as global_id,
                    t.ger_global_id as ger_global_id,
+                   t.series_uuid as series_uuid,
                    coalesce(t.canonical_name, t.name) as name,
                    coalesce(t.foundational_description, t.description) as description,
                    t.season_appearances as season_appearances,
@@ -933,6 +936,7 @@ class Neo4jExporter:
             MATCH (t:Theme)
             RETURN t.theme_uuid as theme_uuid,
                    t.global_id as global_id,
+                   t.series_uuid as series_uuid,
                    t.name as name,
                    t.description as description
             ORDER BY t.name
@@ -968,7 +972,8 @@ class Neo4jExporter:
                 'fabula_uuid': fabula_uuid,
                 'global_id': global_id,
                 'name': record.get('name', 'Unknown'),
-                'description': record.get('description', '')
+                'description': record.get('description', ''),
+                'series_uuid': record.get('series_uuid'),
             }
             self._attach_membership_fields(
                 theme_data, fabula_uuid, event_members, character_members,
@@ -1037,9 +1042,10 @@ class Neo4jExporter:
             if ep in self.episode_series_map
         ]
         # A consolidated storyline belongs to exactly one series (its UUID is
-        # deterministic on (series_uuid, name)); membership is the ground
-        # truth for which one.
-        data['series_uuid'] = (
+        # deterministic on (series_uuid, name)). Prefer the node's own
+        # series_uuid (present on schema v1.2.0 graphs); fall back to
+        # deriving it from member events.
+        data['series_uuid'] = data.get('series_uuid') or (
             max(set(member_series), key=member_series.count)
             if member_series else None
         )
@@ -1076,6 +1082,7 @@ class Neo4jExporter:
             RETURN arc.arc_uuid as arc_uuid,
                    arc.global_id as global_id,
                    arc.ger_global_id as ger_global_id,
+                   arc.series_uuid as series_uuid,
                    coalesce(arc.name, arc.canonical_name, arc.conflict_description) as name,
                    coalesce(arc.conflict_description, arc.foundational_description, '') as description,
                    coalesce(arc.type, 'INTERPERSONAL') as arc_type,
@@ -1088,6 +1095,7 @@ class Neo4jExporter:
             MATCH (arc:ConflictArc)
             RETURN arc.arc_uuid as arc_uuid,
                    arc.global_id as global_id,
+                   arc.series_uuid as series_uuid,
                    coalesce(arc.name, arc.conflict_description) as name,
                    coalesce(arc.conflict_description, '') as description,
                    coalesce(arc.type, 'INTERPERSONAL') as arc_type
@@ -1126,6 +1134,7 @@ class Neo4jExporter:
                 'name': record.get('name') or 'Unknown',
                 'description': record.get('description') or '',
                 'arc_type': record.get('arc_type', 'INTERPERSONAL'),
+                'series_uuid': record.get('series_uuid'),
             }
             self._attach_membership_fields(
                 arc_data, fabula_uuid, event_members, character_members,
@@ -1919,6 +1928,109 @@ class Neo4jExporter:
         return connections
 
     # =========================================================================
+    # Export Character/Season Profiles (contract v2.4.0, optional files)
+    # =========================================================================
+
+    def _graph_labels(self) -> Set[str]:
+        """Node labels present in the source database. Profile labels only
+        exist on schema-v1.2.0 graphs (e.g. wolfhall.mega); older graphs
+        simply skip the profile files."""
+        return {r['label'] for r in self.execute_query(
+            'CALL db.labels() YIELD label RETURN label'
+        )}
+
+    def export_character_episode_profiles(self) -> List[Dict]:
+        """Export AgentEpisodeProfile nodes (all DBs on schema v1.2.0) —
+        per-episode character state for CharacterEpisodeProfile (G6)."""
+        if 'AgentEpisodeProfile' not in self._graph_labels():
+            print("No AgentEpisodeProfile nodes in this graph — skipping "
+                  "character_episode_profiles.yaml")
+            return []
+
+        print("Exporting character episode profiles...")
+        query = """
+        MATCH (p:AgentEpisodeProfile)
+        OPTIONAL MATCH (a:Agent)-[:HAS_EPISODE_PROFILE]->(p)
+        OPTIONAL MATCH (p)-[:PROFILE_OF_EPISODE]->(ep:Episode)
+        RETURN p,
+               coalesce(a.agent_uuid, p.agent_uuid, p.agent_uuid_fk) as agent_uuid,
+               coalesce(ep.episode_uuid, p.episode_uuid, p.episode_uuid_fk) as episode_uuid
+        """
+        profiles = []
+        skipped = 0
+        for record in self.execute_query(query):
+            node = record['p']
+            agent_uuid = record.get('agent_uuid')
+            episode_uuid = record.get('episode_uuid')
+            if not agent_uuid or not episode_uuid or episode_uuid not in self.episode_info:
+                skipped += 1
+                continue
+            profiles.append({
+                'character_uuid': agent_uuid,
+                'episode_uuid': episode_uuid,
+                'description_in_episode': self.safe_get(node, 'role_in_episode', ''),
+                'core_dilemma': self.safe_get(
+                    node, 'core_dilemma_or_conflict_in_episode', ''),
+                'change_or_stasis': self.safe_get(
+                    node, 'significant_change_or_stasis_in_episode', ''),
+                'traits_in_episode': self.safe_get(node, 'traits_in_episode', []) or [],
+                'contradictions': self.safe_get(node, 'contradictions', []) or [],
+            })
+        if skipped:
+            print(f"  Skipped {skipped} profiles without resolvable "
+                  f"agent/episode links")
+        print(f"  Exported {len(profiles)} character episode profiles")
+        return profiles
+
+    def export_season_profiles(self) -> List[Dict]:
+        """Export *SeasonProfile nodes (megagraph, schema v1.2.0) — verbatim
+        per-season entity portraits keyed by (entity global_id, season)."""
+        if not self.megagraph_mode:
+            return []
+
+        labels = self._graph_labels()
+        label_types = [
+            ('AgentSeasonProfile', 'character'),
+            ('LocationSeasonProfile', 'location'),
+            ('ObjectSeasonProfile', 'object'),
+            ('OrgSeasonProfile', 'organization'),
+        ]
+        present = [(l, t) for l, t in label_types if l in labels]
+        if not present:
+            print("No *SeasonProfile nodes in this graph — skipping "
+                  "season_profiles.yaml")
+            return []
+
+        print("Exporting season profiles...")
+        profiles = []
+        for label, entity_type in present:
+            query = f"""
+            MATCH (p:{label})
+            OPTIONAL MATCH (owner)-[:HAS_SEASON_PROFILE]->(p)
+            RETURN p, owner.ger_global_id as owner_ger_global_id
+            """
+            for record in self.execute_query(query):
+                node = record['p']
+                entity_global_id = (
+                    record.get('owner_ger_global_id')
+                    or self.safe_get(node, 'ger_global_id')
+                    or self.safe_get(node, 'global_id')
+                )
+                season_number = self.safe_get(node, 'season_number')
+                if not entity_global_id or season_number is None:
+                    continue
+                profiles.append({
+                    'entity_global_id': entity_global_id,
+                    'entity_type': entity_type,
+                    'season_number': season_number,
+                    'description': self.safe_get(node, 'description', ''),
+                    'tier': self.safe_get(node, 'tier', ''),
+                    'source_database': self.safe_get(node, 'source_database', ''),
+                })
+        print(f"  Exported {len(profiles)} season profiles")
+        return profiles
+
+    # =========================================================================
     # Export Manifest
     # =========================================================================
 
@@ -1938,7 +2050,7 @@ class Neo4jExporter:
         total_seasons = sum(len(s.get('seasons', [])) for s in all_series)
 
         manifest = {
-            'fabula_version': '2.3.0',
+            'fabula_version': '2.4.0',  # docs/YAML_CONTRACT.md
             'export_date': datetime.now().isoformat(),
             'source_graph': self.uri,
             'source_database': self.database,
@@ -1958,6 +2070,8 @@ class Neo4jExporter:
             'theme_count': self.stats['theme_count'],
             'arc_count': self.stats['arc_count'],
             'connection_count': self.stats['connection_count'],
+            'event_connection_count': self.stats['event_connection_count'],
+            'beat_connection_count': self.stats['beat_connection_count'],
             'act_count': self.stats['act_count'],
             'plot_beat_count': self.stats['plot_beat_count'],
             'writer_count': self.stats['writer_count'],
@@ -1967,9 +2081,9 @@ class Neo4jExporter:
         # Add megagraph-specific stats
         if self.megagraph_mode:
             manifest['cross_season_entities'] = self.stats['cross_season_entities']
-            manifest['notes'] = 'Export generated by Django management command export_from_neo4j (v2.3 megagraph mode with unified cross-season entities)'
+            manifest['notes'] = 'Export generated by export_from_neo4j (contract v2.4.0, megagraph mode with unified cross-season entities)'
         else:
-            manifest['notes'] = 'Export generated by Django management command export_from_neo4j (v2.3 with GER cross-season support)'
+            manifest['notes'] = 'Export generated by export_from_neo4j (contract v2.4.0 with GER cross-season support)'
 
         return manifest
 
@@ -2171,6 +2285,23 @@ class Neo4jExporter:
                 connections,
                 'Narrative Connections Between Events (event + beat layers)'
             )
+
+            # Optional v2.4.0 profile files — only written when the graph
+            # has the (schema v1.2.0) profile nodes.
+            episode_profiles = self.export_character_episode_profiles()
+            if episode_profiles:
+                self.write_yaml(
+                    self.output_dir / 'character_episode_profiles.yaml',
+                    episode_profiles,
+                    'Per-Episode Character Profiles (AgentEpisodeProfile)'
+                )
+            season_profiles = self.export_season_profiles()
+            if season_profiles:
+                self.write_yaml(
+                    self.output_dir / 'season_profiles.yaml',
+                    season_profiles,
+                    'Per-Season Entity Profiles (*SeasonProfile)'
+                )
 
             # Create and write manifest
             manifest = self.create_manifest(all_series)

@@ -1387,6 +1387,19 @@ class ContractVersionGateTest(TestCase):
         errors = self.cmd.validate_v24_shapes(data)
         self.assertTrue(any('series_uuid' in e for e in errors))
 
+    def test_legacy_arc_type_accepted(self):
+        # Pre-v1.2.0 graphs carry UNKNOWN / ENVIRONMENTAL / TECHNOLOGICAL;
+        # they pass through verbatim (plan verification note 2).
+        data = self._v24_data()
+        data.arcs[0]['arc_type'] = 'UNKNOWN'
+        self.assertEqual(self.cmd.validate_v24_shapes(data), [])
+
+    def test_garbage_arc_type_rejected(self):
+        data = self._v24_data()
+        data.arcs[0]['arc_type'] = 'SPICY'
+        errors = self.cmd.validate_v24_shapes(data)
+        self.assertTrue(any('arc_type' in e for e in errors))
+
     def test_unknown_connection_type_rejected(self):
         data = self._v24_data()
         data.connections[0]['connection_type'] = 'VIBES'
