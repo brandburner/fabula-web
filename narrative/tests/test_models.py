@@ -4,6 +4,7 @@ Tests for narrative models - pages, snippets, and relationship models.
 from django.test import TestCase
 from django.core.exceptions import ValidationError
 from django.db import IntegrityError
+from django.db.models import F
 
 from wagtail.models import Page
 
@@ -253,7 +254,9 @@ class EnumTest(TestCase):
     def test_connection_type_values(self):
         self.assertEqual(ConnectionType.CAUSAL, 'CAUSAL')
         self.assertEqual(ConnectionType.FORESHADOWING, 'FORESHADOWING')
-        self.assertEqual(len(ConnectionType.choices), 9)
+        # Full 10-type vocabulary as of contract v2.4.0 (T-025)
+        self.assertEqual(ConnectionType.NARRATIVELY_FOLLOWS, 'NARRATIVELY_FOLLOWS')
+        self.assertEqual(len(ConnectionType.choices), 10)
 
     def test_connection_strength_values(self):
         self.assertEqual(len(ConnectionStrength.choices), 3)
@@ -960,3 +963,54 @@ class CrossSeasonOrderingTest(WagtailTestMixin, TestCase):
             )
         )
         self.assertEqual(events, [self.event_s1e13, self.event_s2e1])
+
+
+class ConnectionStorylineFieldsTest(WagtailTestMixin, TestCase):
+    """T-025: layer/scope/provenance/episode FKs on NarrativeConnection."""
+
+    def test_legacy_defaults(self):
+        # Rows created without the new fields (legacy path) default to the
+        # beat layer / intra-episode scope with null episode FKs.
+        conn = NarrativeConnection.objects.create(
+            from_event=self.event1, to_event=self.event2,
+            connection_type=ConnectionType.NARRATIVELY_FOLLOWS,
+            strength=ConnectionStrength.WEAK,
+            description='x', fabula_uuid='conn_nf_1',
+        )
+        conn.refresh_from_db()
+        self.assertEqual(conn.layer, 'beat')
+        self.assertEqual(conn.scope, 'intra_episode')
+        self.assertEqual(conn.inferred_by, '')
+        self.assertEqual(conn.cross_episode_reasoning, '')
+        self.assertIsNone(conn.from_episode)
+        self.assertIsNone(conn.to_episode)
+
+    def test_season_bridge_query_via_episode_fks(self):
+        season2 = SeasonPage(
+            title='Season 2', slug='season-2-conn', season_number=2,
+            fabula_uuid='season_conn_2',
+        )
+        self.series.add_child(instance=season2)
+        s2e1 = EpisodePage(
+            title='S2 Opener', slug='s2-opener-conn', episode_number=1,
+            season_number=2, fabula_uuid='ep_conn_s2e1',
+        )
+        season2.add_child(instance=s2e1)
+
+        NarrativeConnection.objects.create(
+            from_event=self.event1, to_event=self.event2,
+            connection_type=ConnectionType.FORESHADOWING,
+            description='bridges seasons', fabula_uuid='conn_bridge',
+            layer='event', scope='cross_episode',
+            inferred_by='llm_cross_episode_arc',
+            cross_episode_reasoning='seeded early, pays off later',
+            from_episode=self.episode, to_episode=s2e1,
+        )
+        # The denormalized FKs make "bridges seasons" one indexed query.
+        bridges = NarrativeConnection.objects.filter(
+            scope='cross_episode',
+        ).exclude(
+            from_episode__season_number=F('to_episode__season_number'),
+        )
+        self.assertEqual(bridges.count(), 1)
+        self.assertEqual(bridges.first().fabula_uuid, 'conn_bridge')

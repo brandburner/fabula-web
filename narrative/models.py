@@ -36,7 +36,8 @@ from modelcluster.models import ClusterableModel
 # =============================================================================
 
 class ConnectionType(models.TextChoices):
-    """Narrative connection types from Fabula's PlotBeat relationships."""
+    """Narrative connection types — the 10-type vocabulary shared by the
+    beat and event layers (docs/YAML_CONTRACT.md v2.4.0)."""
     CAUSAL = 'CAUSAL', 'Causal'
     FORESHADOWING = 'FORESHADOWING', 'Foreshadowing'
     THEMATIC_PARALLEL = 'THEMATIC_PARALLEL', 'Thematic Parallel'
@@ -46,6 +47,25 @@ class ConnectionType(models.TextChoices):
     EMOTIONAL_ECHO = 'EMOTIONAL_ECHO', 'Emotional Echo'
     SYMBOLIC_PARALLEL = 'SYMBOLIC_PARALLEL', 'Symbolic Parallel'
     TEMPORAL = 'TEMPORAL', 'Temporal'
+    NARRATIVELY_FOLLOWS = 'NARRATIVELY_FOLLOWS', 'Narratively Follows'
+
+
+class ConnectionLayer(models.TextChoices):
+    """Which analysis layer a connection came from (contract v2.4.0).
+
+    Beat: intra-episode texture projected from PlotBeat edges (the only
+    layer that existed before v2.4.0 — hence the legacy default).
+    Event: native Event→Event edges from cross-episode enrichment — the
+    storyline product.
+    """
+    EVENT = 'event', 'Event layer'
+    BEAT = 'beat', 'Beat layer'
+
+
+class ConnectionScope(models.TextChoices):
+    """Whether a connection's endpoints share an episode."""
+    INTRA_EPISODE = 'intra_episode', 'Within an episode'
+    CROSS_EPISODE = 'cross_episode', 'Across episodes'
 
 
 class ConnectionStrength(models.TextChoices):
@@ -1510,10 +1530,12 @@ class OrganizationInvolvement(Orderable):
 class NarrativeConnection(models.Model):
     """
     A narrative connection between two events.
-    
-    From Fabula: PlotBeat relationships like CAUSAL, FORESHADOWING,
-    THEMATIC_PARALLEL, CHARACTER_CONTINUITY, etc.
-    
+
+    Two layers share this model (docs/YAML_CONTRACT.md v2.4.0): beat-layer
+    rows projected from PlotBeat relationships (intra-episode texture) and
+    event-layer rows from native Event→Event cross-episode enrichment
+    edges (the storyline product).
+
     This is first-class content - connections have their own pages.
     The 'description' field contains the narrative assertion explaining
     WHY these events connect, not just THAT they connect.
@@ -1521,7 +1543,9 @@ class NarrativeConnection(models.Model):
     fabula_uuid = models.CharField(
         max_length=100,
         blank=True,
-        help_text="UUID from Fabula graph (connection_uuid)"
+        db_index=True,
+        help_text="UUID from Fabula graph (connection_uuid) — the "
+                  "event-layer import key"
     )
     global_id = models.CharField(
         max_length=100,
@@ -1551,13 +1575,54 @@ class NarrativeConnection(models.Model):
         choices=ConnectionStrength.choices,
         default=ConnectionStrength.MEDIUM
     )
-    
+
     # THE KEY FIELD: the narrative assertion explaining the connection
     description = models.TextField(
         help_text="The narrative assertion explaining WHY these events connect. "
                   "This is the 'content' of the connection - the edge carries meaning."
     )
-    
+
+    # Storyline fields (contract v2.4.0). Legacy rows default to the beat
+    # layer — the only layer that existed before the v2.4.0 import.
+    layer = models.CharField(
+        max_length=10,
+        choices=ConnectionLayer.choices,
+        default=ConnectionLayer.BEAT,
+        help_text="Analysis layer: native event edge or beat projection"
+    )
+    scope = models.CharField(
+        max_length=20,
+        choices=ConnectionScope.choices,
+        default=ConnectionScope.INTRA_EPISODE,
+        help_text="Whether the endpoints share an episode"
+    )
+    inferred_by = models.CharField(
+        max_length=100,
+        blank=True,
+        help_text="Provenance passthrough (e.g. llm_cross_episode_arc)"
+    )
+    cross_episode_reasoning = models.TextField(
+        blank=True,
+        help_text="Why this connection matters across episodes "
+                  "(event layer, cross-episode scope only)"
+    )
+    # Denormalized episode endpoints — make 'connections that bridge
+    # seasons' one indexed query instead of a four-join traversal.
+    from_episode = models.ForeignKey(
+        EpisodePage,
+        on_delete=models.SET_NULL,
+        null=True,
+        blank=True,
+        related_name='outgoing_episode_connections'
+    )
+    to_episode = models.ForeignKey(
+        EpisodePage,
+        on_delete=models.SET_NULL,
+        null=True,
+        blank=True,
+        related_name='incoming_episode_connections'
+    )
+
     # Metadata
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
@@ -1565,6 +1630,9 @@ class NarrativeConnection(models.Model):
     class Meta:
         unique_together = ['from_event', 'to_event', 'connection_type']
         ordering = ['connection_type', '-strength']
+        indexes = [
+            models.Index(fields=['scope', 'connection_type']),
+        ]
 
     def __str__(self):
         return f"{self.from_event.title} → [{self.connection_type}] → {self.to_event.title}"

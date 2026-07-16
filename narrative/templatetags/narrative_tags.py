@@ -113,6 +113,7 @@ def connection_color(connection_type):
         'EMOTIONAL_ECHO': '#ec4899',
         'SYMBOLIC_PARALLEL': '#8b5cf6',
         'TEMPORAL': '#6366f1',
+        'NARRATIVELY_FOLLOWS': '#94a3b8',
     }
     return colors.get(connection_type, '#64748b')
 
@@ -199,6 +200,7 @@ def connection_icon(connection_type):
         'EMOTIONAL_ECHO': 'heart',
         'SYMBOLIC_PARALLEL': 'equal',
         'TEMPORAL': 'clock',
+        'NARRATIVELY_FOLLOWS': 'arrow-down',
     }
     return icons.get(connection_type, 'link')
 
