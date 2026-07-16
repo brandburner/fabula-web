@@ -1,6 +1,7 @@
 """
 Tests for narrative views - catalog, detail, index, and graph views.
 """
+from django.core.cache import cache
 from django.test import TestCase, Client
 from django.urls import reverse
 
@@ -19,6 +20,14 @@ from narrative.models import (
 
 class ViewTestMixin:
     """Mixin to create test data for view tests."""
+
+    def setUp(self):
+        # Some views (e.g. CharacterDetailView) are wrapped in cache_page;
+        # LocMemCache survives across tests in-process, so a URL hit by an
+        # earlier test would otherwise return a cached response with
+        # response.context == None.
+        cache.clear()
+        super().setUp()
 
     @classmethod
     def setUpTestData(cls):
@@ -193,10 +202,11 @@ class ViewTestMixin:
 
 class CatalogViewTest(ViewTestMixin, TestCase):
 
-    def test_catalog_home(self):
-        response = self.client.get(reverse('home'))
+    def test_site_root_home(self):
+        # The site root is the marketing home ('v2_home'); the narrative
+        # catalog lives at the 'catalog' route (see test_catalog_has_series).
+        response = self.client.get(reverse('v2_home'))
         self.assertEqual(response.status_code, 200)
-        self.assertIn('series_list', response.context)
 
     def test_catalog_explore(self):
         response = self.client.get(reverse('catalog'))
@@ -373,8 +383,11 @@ class CharacterDetailViewTest(ViewTestMixin, TestCase):
         response = self.client.get(reverse('character_detail', kwargs={'identifier': 'agent_001'}))
         self.assertEqual(response.status_code, 200)
         self.assertEqual(response.context['character'], self.character)
-        self.assertIn('participations_by_importance', response.context)
-        self.assertIn('emotional_journey', response.context)
+        # Season-paginated participation contract (replaced the old
+        # participations_by_importance / emotional_journey context).
+        self.assertIn('participations', response.context)
+        self.assertIn('available_seasons', response.context)
+        self.assertIn('selected_season', response.context)
 
     def test_by_global_id(self):
         response = self.client.get(reverse('character_detail', kwargs={'identifier': 'ger_agent_001'}))

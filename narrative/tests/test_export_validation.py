@@ -79,9 +79,10 @@ class TestSchemaPropertyNames(TestCase):
 
         exporter = Neo4jExporter('bolt://test', 'neo4j', 'test', Path('/tmp'))
 
-        # Read the export_events_by_episode method to check query
+        # The participation query lives in _get_event_participations
+        # (extracted from export_events_by_episode in the megagraph refactor)
         import inspect
-        source = inspect.getsource(exporter.export_events_by_episode)
+        source = inspect.getsource(exporter._get_event_participations)
 
         # Should use correct property names
         self.assertIn('p.emotional_state_at_event', source,
@@ -103,7 +104,7 @@ class TestSchemaPropertyNames(TestCase):
         exporter = Neo4jExporter('bolt://test', 'neo4j', 'test', Path('/tmp'))
 
         import inspect
-        source = inspect.getsource(exporter.export_events_by_episode)
+        source = inspect.getsource(exporter._get_event_participations)
 
         # Check for incorrect patterns (exact match to avoid false positives)
         # We need to be careful - 'p.emotional_state' could match 'p.emotional_state_at_event'
