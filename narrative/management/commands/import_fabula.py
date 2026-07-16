@@ -161,6 +161,14 @@ class Command(BaseCommand):
                 'See ISS-001 for the prior unscoped-deletion bug this replaces.'
             )
         )
+        parser.add_argument(
+            '--yes',
+            action='store_true',
+            help=(
+                'Skip the interactive confirmation before --cleanup deletes. '
+                'Required for non-interactive (scripted/CI) cleanup runs.'
+            )
+        )
 
     def handle(self, *args, **options):
         # Disable Wagtail's automatic reference index updates IMMEDIATELY,
@@ -175,6 +183,7 @@ class Command(BaseCommand):
         self.dry_run = options['dry_run']
         self.verbose = options['verbose']
         self.cleanup = options.get('cleanup', False)
+        self.assume_yes = options.get('yes', False)
         data_dir = Path(options['data_dir'])
 
         if not data_dir.exists():
@@ -1934,6 +1943,39 @@ class Command(BaseCommand):
             ))
             return
 
+        # Preflight (ISS-005): a CANONICAL EventPage referencing a deprecated
+        # EpisodePage would raise ProtectedError mid-transaction. Detect it
+        # up front and abort with an actionable message instead.
+        if plan['blockers']:
+            self.stdout.write(self.style.ERROR(
+                f"Cleanup aborted: {len(plan['blockers'])} canonical event(s) still "
+                f"reference deprecated episodes (PROTECT FK). This usually means "
+                f"the export's episode UUIDs changed while its events did not — "
+                f"re-export the series or fix the YAML. Nothing was deleted."
+            ))
+            for event in plan['blockers'][:5]:
+                self.stdout.write(
+                    f"  - event '{self._display_name(event)}' -> "
+                    f"episode '{self._display_name(event.episode)}'"
+                )
+            if len(plan['blockers']) > 5:
+                self.stdout.write(f"  ... and {len(plan['blockers']) - 5} more")
+            return
+
+        # Confirmation window (ISS-007): the docstring has always promised
+        # one, but deletion previously fired immediately after the summary.
+        if not getattr(self, 'assume_yes', False):
+            if not sys.stdin.isatty():
+                self.stdout.write(self.style.ERROR(
+                    "Cleanup aborted: refusing to delete without confirmation "
+                    "in a non-interactive run. Pass --yes to proceed."
+                ))
+                return
+            answer = input("Type 'delete' to apply the plan above (anything else aborts): ")
+            if answer.strip().lower() != 'delete':
+                self.stdout.write(self.style.WARNING("Cleanup aborted by operator. Nothing was deleted."))
+                return
+
         # Wrap the whole delete phase in a transaction so a mid-loop failure
         # (e.g. ProtectedError when a canonical EventPage still references a
         # deprecated EpisodePage) rolls back to the pre-cleanup state instead
@@ -2029,15 +2071,31 @@ class Command(BaseCommand):
             entries.append({
                 'label': label,
                 'model': scoped_qs.model.__name__,
+                'model_class': scoped_qs.model,
                 'canonical': len(canonical_uuids),
                 'in_scope': scoped_qs.count(),
                 'deprecated': deprecated,
                 'sample_names': [self._display_name(o) for o in deprecated[:3]],
             })
 
+        # ISS-005 preflight: canonical events pointing at deprecated episodes
+        # via the PROTECT FK. Deepest-first ordering only protects between
+        # deprecated rows; these cross-references would abort mid-delete.
+        entries_by_label = {e['label']: e for e in entries}
+        blockers = []
+        deprecated_episode_pks = [o.pk for o in entries_by_label['episodes']['deprecated']]
+        if deprecated_episode_pks:
+            deprecated_event_pks = [o.pk for o in entries_by_label['events']['deprecated']]
+            blockers = list(
+                EventPage.objects.filter(episode_id__in=deprecated_episode_pks)
+                .exclude(pk__in=deprecated_event_pks)
+                .select_related('episode')
+            )
+
         return {
             'series_pages': imported_series_pages,
             'entries': entries,
+            'blockers': blockers,
         }
 
     def _print_cleanup_summary(self, plan):
@@ -2056,6 +2114,11 @@ class Command(BaseCommand):
             )
         total = sum(len(e['deprecated']) for e in plan['entries'])
         self.stdout.write(f"  {'TOTAL':<18} deprecated={total}")
+        if plan['blockers']:
+            self.stdout.write(self.style.WARNING(
+                f"  WARNING: {len(plan['blockers'])} canonical event(s) reference "
+                f"deprecated episodes — cleanup will refuse to run until resolved."
+            ))
         self.stdout.write("")
 
     def _delete_cleanup_entry(self, entry) -> int:
@@ -2076,19 +2139,34 @@ class Command(BaseCommand):
             )
         from django.db.models.deletion import ProtectedError
 
-        for obj in deprecated:
+        model_class = entry['model_class']
+        if not issubclass(model_class, Page):
+            # Plain Django models (e.g. Location) can be deleted in one
+            # queryset call (ISS-008); Wagtail Pages stay per-instance so
+            # treebeard keeps parent counters and the tree consistent.
             try:
-                obj.delete()
+                model_class.objects.filter(
+                    pk__in=[o.pk for o in deprecated]
+                ).delete()
             except ProtectedError as exc:
-                # Surface the offending row so the operator can fix the
-                # YAML (or relax the PROTECT FK) — then re-raise so the
-                # surrounding transaction.atomic() rolls back the whole
-                # cleanup phase.
                 self.stdout.write(self.style.ERROR(
-                    f"  ProtectedError deleting {self._display_name(obj)} "
-                    f"({entry['label']}): {exc}"
+                    f"  ProtectedError bulk-deleting {entry['label']}: {exc}"
                 ))
                 raise
+        else:
+            for obj in deprecated:
+                try:
+                    obj.delete()
+                except ProtectedError as exc:
+                    # Surface the offending row so the operator can fix the
+                    # YAML (or relax the PROTECT FK) — then re-raise so the
+                    # surrounding transaction.atomic() rolls back the whole
+                    # cleanup phase.
+                    self.stdout.write(self.style.ERROR(
+                        f"  ProtectedError deleting {self._display_name(obj)} "
+                        f"({entry['label']}): {exc}"
+                    ))
+                    raise
         self.stdout.write(self.style.SUCCESS(
             f"  Deleted {len(deprecated)} {entry['label']}"
         ))

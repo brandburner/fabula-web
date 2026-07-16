@@ -22,6 +22,7 @@ from narrative.models import (
     OrganizationPage, OrganizationIndexPage,
     ObjectPage, ObjectIndexPage,
     EventPage, EventIndexPage,
+    NarrativeConnection,
 )
 
 
@@ -508,6 +509,9 @@ class CleanupScopingTest(TestCase):
         self.cmd.stderr = StringIO()
         self.cmd.verbose = False
         self.cmd.dry_run = False
+        # Tests run non-interactively; without this the ISS-007 confirmation
+        # gate aborts every non-dry-run cleanup (covered by its own test).
+        self.cmd.assume_yes = True
 
         root = Page.objects.get(depth=1)
 
@@ -975,16 +979,11 @@ class CleanupScopingTest(TestCase):
         # Series C: completely untouched.
         self.assertTrue(CharacterPage.objects.filter(pk=char_c.pk).exists())
 
-    def test_cleanup_rolls_back_on_failure(self):
-        """T-001 / F1+F2: a ProtectedError mid-delete must roll back the whole
-        cleanup phase, including deletes from PRIOR entries.
-
-        Setup: add a second EventPage pinned to ep_drop. Mark THAT event
-        canonical so it survives the events pass, while event_drop is
-        deprecated and gets deleted in the events pass. The subsequent
-        episodes pass tries to delete ep_drop but the canonical
-        event_second still PROTECTs it -> ProtectedError -> rollback must
-        restore event_drop (deleted earlier in the same transaction).
+    def test_cleanup_preflight_catches_protect_conflict(self):
+        """T-001 F1+F2, upgraded by ISS-005: a canonical event PROTECTing a
+        deprecated episode used to raise ProtectedError mid-transaction (and
+        rely on rollback). The blocker preflight now aborts BEFORE any
+        delete — same guarantee (nothing half-deleted), no exception.
         """
         event_second = EventPage(
             title="Event Second",
@@ -999,35 +998,32 @@ class CleanupScopingTest(TestCase):
         chars_before = set(CharacterPage.objects.values_list('pk', flat=True))
         locs_before = set(Location.objects.values_list('pk', flat=True))
 
-        with self.assertRaises(Exception):
-            self.cmd.run_cleanup(
-                series_data=[{
-                    "fabula_uuid": "series-a-uuid",
-                    "title": "Series A",
-                    "seasons": [{
-                        "fabula_uuid": "season-keep-a",
-                        "episodes": [{"fabula_uuid": "ep-keep-a"}],
-                    }],
+        self.cmd.run_cleanup(
+            series_data=[{
+                "fabula_uuid": "series-a-uuid",
+                "title": "Series A",
+                "seasons": [{
+                    "fabula_uuid": "season-keep-a",
+                    "episodes": [{"fabula_uuid": "ep-keep-a"}],
                 }],
-                # event_drop is NOT canonical -> events pass deletes it.
-                # event-second-a IS canonical -> still PROTECTs ep_drop in
-                # the episodes pass, triggering rollback.
-                events_data=[{"events": [
-                    {"fabula_uuid": "event-keep-a"},
-                    {"fabula_uuid": "event-second-a"},
-                ]}],
-                characters_data=[{"fabula_uuid": "char-keep-a"}],
-                organizations_data=[{"fabula_uuid": "org-keep-a"}],
-                locations_data=[{"fabula_uuid": "loc-keep-a"}],
-            )
+            }],
+            # event_drop is NOT canonical; event-second-a IS canonical and
+            # PROTECTs ep_drop — the preflight must refuse to start.
+            events_data=[{"events": [
+                {"fabula_uuid": "event-keep-a"},
+                {"fabula_uuid": "event-second-a"},
+            ]}],
+            characters_data=[{"fabula_uuid": "char-keep-a"}],
+            organizations_data=[{"fabula_uuid": "org-keep-a"}],
+            locations_data=[{"fabula_uuid": "loc-keep-a"}],
+        )
 
-        # Roll-back guarantee: the prior events/characters/locations pass
-        # touched event_drop; if transaction.atomic() is doing its job that
-        # delete must have been undone alongside everything else.
+        self.assertIn("Cleanup aborted", self.cmd.stdout.getvalue())
+        # Nothing at all was deleted — including entries BEFORE episodes.
         self.assertEqual(
             events_before,
             set(EventPage.objects.values_list('pk', flat=True)),
-            "transaction.atomic should have rolled back the prior event delete",
+            "blocker preflight must abort before any deletion",
         )
         self.assertEqual(
             chars_before,
@@ -1036,6 +1032,56 @@ class CleanupScopingTest(TestCase):
         self.assertEqual(
             locs_before,
             set(Location.objects.values_list('pk', flat=True)),
+        )
+
+    def test_cleanup_rolls_back_on_failure(self):
+        """T-001 / F1+F2: an unexpected mid-delete failure must roll back the
+        whole cleanup phase, including deletes from PRIOR entries. (The
+        PROTECT case is now caught up-front — see the preflight test — so
+        this injects a failure to exercise the transaction guarantee.)
+        """
+        events_before = set(EventPage.objects.values_list('pk', flat=True))
+        chars_before = set(CharacterPage.objects.values_list('pk', flat=True))
+
+        original = self.cmd._delete_cleanup_entry
+        calls = {'n': 0}
+
+        def failing_entry(entry):
+            calls['n'] += 1
+            if calls['n'] >= 3:  # let events + episodes delete, then blow up
+                raise RuntimeError("injected mid-cleanup failure")
+            return original(entry)
+
+        self.cmd._delete_cleanup_entry = failing_entry
+        try:
+            with self.assertRaises(RuntimeError):
+                self.cmd.run_cleanup(
+                    series_data=[{
+                        "fabula_uuid": "series-a-uuid",
+                        "title": "Series A",
+                        "seasons": [{
+                            "fabula_uuid": "season-keep-a",
+                            "episodes": [{"fabula_uuid": "ep-keep-a"}],
+                        }],
+                    }],
+                    events_data=[{"events": [{"fabula_uuid": "event-keep-a"}]}],
+                    characters_data=[{"fabula_uuid": "char-keep-a"}],
+                    organizations_data=[{"fabula_uuid": "org-keep-a"}],
+                    locations_data=[{"fabula_uuid": "loc-keep-a"}],
+                )
+        finally:
+            self.cmd._delete_cleanup_entry = original
+
+        # The events entry ran (and deleted event_drop) before the injected
+        # failure; rollback must have restored it.
+        self.assertEqual(
+            events_before,
+            set(EventPage.objects.values_list('pk', flat=True)),
+            "transaction.atomic should have rolled back the prior event delete",
+        )
+        self.assertEqual(
+            chars_before,
+            set(CharacterPage.objects.values_list('pk', flat=True)),
         )
 
     def test_cleanup_aborts_when_series_unresolvable(self):
@@ -1056,3 +1102,168 @@ class CleanupScopingTest(TestCase):
         self.assertTrue(CharacterPage.objects.filter(pk=self.char_keep.pk).exists())
         self.assertTrue(CharacterPage.objects.filter(pk=self.char_drop.pk).exists())
         self.assertTrue(Location.objects.filter(pk=self.loc_b.pk).exists())
+
+
+class CleanupSafetyGatesTest(TestCase):
+    """ISS-005 (PROTECT-FK preflight) and ISS-007 (confirmation gate)."""
+
+    def setUp(self):
+        self.cmd = Command()
+        self.cmd.stdout = StringIO()
+        self.cmd.stderr = StringIO()
+        self.cmd.verbose = False
+        self.cmd.dry_run = False
+        self.cmd.assume_yes = True
+
+        root = Page.objects.get(depth=1)
+        self.series = SeriesIndexPage(
+            title="Series G", slug="series-g", fabula_uuid="series-g-uuid",
+        )
+        root.add_child(instance=self.series)
+        self.season = SeasonPage(
+            title="S1", slug="s1-g", season_number=1, fabula_uuid="season-g",
+        )
+        self.series.add_child(instance=self.season)
+        self.ep_keep = EpisodePage(
+            title="Ep Keep", slug="ep-keep-g", episode_number=1,
+            fabula_uuid="ep-keep-g",
+        )
+        self.season.add_child(instance=self.ep_keep)
+        # This episode will be deprecated but a CANONICAL event points at it.
+        self.ep_drop = EpisodePage(
+            title="Ep Drop", slug="ep-drop-g", episode_number=2,
+            fabula_uuid="ep-drop-g",
+        )
+        self.season.add_child(instance=self.ep_drop)
+        self.events_idx = EventIndexPage(title="Events G", slug="events-g")
+        self.series.add_child(instance=self.events_idx)
+        self.event_keep = EventPage(
+            title="Event Keep", slug="event-keep-g", episode=self.ep_drop,
+            description="<p>x</p>", fabula_uuid="event-keep-g",
+        )
+        self.events_idx.add_child(instance=self.event_keep)
+
+    def _cleanup_kwargs(self):
+        return dict(
+            series_data=[{
+                "fabula_uuid": "series-g-uuid",
+                "title": "Series G",
+                "seasons": [{
+                    "fabula_uuid": "season-g",
+                    "episodes": [{"fabula_uuid": "ep-keep-g"}],
+                }],
+            }],
+            events_data=[{"events": [{"fabula_uuid": "event-keep-g"}]}],
+            characters_data=[],
+            organizations_data=[],
+            locations_data=[],
+        )
+
+    def test_blocker_preflight_aborts_before_deleting(self):
+        """ISS-005: a canonical event referencing a deprecated episode must
+        abort the cleanup up-front — nothing at all is deleted."""
+        self.cmd.run_cleanup(**self._cleanup_kwargs())
+        out = self.cmd.stdout.getvalue()
+        self.assertIn("Cleanup aborted", out)
+        self.assertIn("canonical event", out)
+        # The deprecated episode AND the canonical event both survive.
+        self.assertTrue(EpisodePage.objects.filter(pk=self.ep_drop.pk).exists())
+        self.assertTrue(EventPage.objects.filter(pk=self.event_keep.pk).exists())
+
+    def test_plan_reports_blockers(self):
+        plan = self.cmd.build_cleanup_plan(**self._cleanup_kwargs())
+        self.assertEqual([b.pk for b in plan['blockers']], [self.event_keep.pk])
+
+    def test_confirmation_gate_aborts_non_interactive_runs(self):
+        """ISS-007: without --yes, a non-interactive cleanup must refuse."""
+        # Re-point the event at the kept episode so no blockers fire and the
+        # confirmation gate is what aborts.
+        self.event_keep.episode = self.ep_keep
+        self.event_keep.save()
+        self.cmd.assume_yes = False
+        self.cmd.run_cleanup(**self._cleanup_kwargs())
+        out = self.cmd.stdout.getvalue()
+        self.assertIn("Pass --yes to proceed", out)
+        # The deprecated episode survives the refused cleanup.
+        self.assertTrue(EpisodePage.objects.filter(pk=self.ep_drop.pk).exists())
+
+
+class DeleteSeriesCommandTest(TestCase):
+    """ISS-002: two-stage series-tree deletion via the delete_series command."""
+
+    def setUp(self):
+        root = Page.objects.get(depth=1)
+        # Two-season series with events — the exact shape series.delete()
+        # used to choke on (PROTECT FK from EventPage.episode).
+        self.series = SeriesIndexPage(
+            title="Doomed", slug="doomed", fabula_uuid="series-doomed",
+        )
+        root.add_child(instance=self.series)
+        self.events_idx = EventIndexPage(title="Events", slug="events-doomed")
+        self.series.add_child(instance=self.events_idx)
+        for s in (1, 2):
+            season = SeasonPage(
+                title=f"S{s}", slug=f"s{s}-doomed", season_number=s,
+                fabula_uuid=f"season-doomed-{s}",
+            )
+            self.series.add_child(instance=season)
+            episode = EpisodePage(
+                title=f"S{s}E1", slug=f"s{s}e1-doomed", episode_number=1,
+                season_number=s, fabula_uuid=f"ep-doomed-{s}",
+            )
+            season.add_child(instance=episode)
+            event = EventPage(
+                title=f"Event S{s}", slug=f"event-s{s}-doomed",
+                episode=episode, description="<p>x</p>",
+                fabula_uuid=f"event-doomed-{s}",
+            )
+            self.events_idx.add_child(instance=event)
+        events = list(EventPage.objects.descendant_of(self.series))
+        self.connection = NarrativeConnection.objects.create(
+            from_event=events[0], to_event=events[1],
+            connection_type="CAUSAL", strength="strong",
+            description="doomed connection", fabula_uuid="conn-doomed",
+        )
+        Location.objects.create(
+            fabula_uuid="loc-doomed", canonical_name="Doomed Manor",
+            description="", series=self.series,
+        )
+
+        # A bystander series that must survive.
+        self.other = SeriesIndexPage(
+            title="Survivor", slug="survivor", fabula_uuid="series-survivor",
+        )
+        root.add_child(instance=self.other)
+
+    def test_dry_run_deletes_nothing(self):
+        out = StringIO()
+        call_command('delete_series', 'doomed', '--dry-run', stdout=out)
+        self.assertIn("[DRY RUN]", out.getvalue())
+        self.assertTrue(SeriesIndexPage.objects.filter(slug='doomed').exists())
+        self.assertEqual(EventPage.objects.descendant_of(self.series).count(), 2)
+
+    def test_two_stage_delete_removes_whole_tree(self):
+        out = StringIO()
+        call_command('delete_series', 'doomed', '--yes', stdout=out)
+        self.assertFalse(SeriesIndexPage.objects.filter(slug='doomed').exists())
+        self.assertEqual(EventPage.objects.count(), 0)
+        self.assertEqual(EpisodePage.objects.count(), 0)
+        self.assertEqual(SeasonPage.objects.count(), 0)
+        self.assertFalse(NarrativeConnection.objects.filter(pk=self.connection.pk).exists())
+        self.assertFalse(Location.objects.filter(fabula_uuid="loc-doomed").exists())
+        # Bystander series untouched.
+        self.assertTrue(SeriesIndexPage.objects.filter(slug='survivor').exists())
+
+    def test_lookup_by_fabula_uuid(self):
+        out = StringIO()
+        call_command('delete_series', 'series-doomed', '--yes', stdout=out)
+        self.assertFalse(SeriesIndexPage.objects.filter(slug='doomed').exists())
+
+    def test_unknown_identifier_errors(self):
+        with self.assertRaises(CommandError):
+            call_command('delete_series', 'no-such-series', '--yes')
+
+    def test_non_interactive_without_yes_refuses(self):
+        with self.assertRaises(CommandError):
+            call_command('delete_series', 'doomed')
+        self.assertTrue(SeriesIndexPage.objects.filter(slug='doomed').exists())

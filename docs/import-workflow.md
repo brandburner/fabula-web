@@ -93,10 +93,24 @@ When the numbers look right, apply:
 python manage.py import_fabula ./fabula_export/<series> --cleanup
 ```
 
-The delete phase runs inside a single `transaction.atomic()`: a
-mid-loop failure (for example a `ProtectedError` because a
-canonical row still references a deprecated one) rolls back the
-*entire* cleanup phase. You will not see a half-cleaned database.
+After printing the plan, the command asks you to type `delete` to
+confirm. Non-interactive runs (scripts, CI) must pass `--yes` or the
+cleanup refuses and exits without deleting:
+
+```bash
+python manage.py import_fabula ./fabula_export/<series> --cleanup --yes
+```
+
+Before deleting, a preflight checks for canonical events that still
+reference deprecated episodes (the `PROTECT` FK would abort the
+transaction mid-way). If any exist, cleanup refuses up-front, lists
+the offending events, and deletes nothing — usually this means the
+export's episode UUIDs changed while its events did not; re-export
+the series.
+
+The delete phase runs inside a single `transaction.atomic()`: an
+unexpected mid-loop failure rolls back the *entire* cleanup phase.
+You will not see a half-cleaned database.
 
 ## Verifying the import
 
@@ -130,29 +144,25 @@ URLs.
 
 ## Deleting a whole series tree
 
-`series.delete()` on its own will fail because `EventPage.episode`
-is a `PROTECT` foreign key — Django refuses to cascade through it.
-Delete events first, then the series page tree. Snippets
-(`Location`, `Theme`, `ConflictArc`) cascade automatically via
-`series` `on_delete=CASCADE`.
+Use the `delete_series` command — it handles the two-stage order
+(`series.delete()` alone fails because `EventPage.episode` is a
+`PROTECT` foreign key; events must go first). Snippets (`Location`,
+`Theme`, `ConflictArc`) cascade automatically via `series`
+`on_delete=CASCADE`, and connections/participations/profiles cascade
+from events and episodes.
 
-```python
-# manage.py shell -c "..."
-from narrative.models import EventPage, SeriesIndexPage
+```bash
+# Preview what would be deleted (per-model counts):
+python manage.py delete_series <slug-or-fabula_uuid> --dry-run
 
-series = SeriesIndexPage.objects.get(fabula_uuid='<series-uuid>')
-
-# 1. Delete the protected children first.
-events_qs = EventPage.objects.filter(path__startswith=series.path)
-print(f'Deleting {events_qs.count()} events...')
-events_qs.delete()
-
-# 2. Now the series tree (cascades to Season / Episode / index pages
-#    and to Location / Theme / ConflictArc snippets).
-series.delete()
-
-print(f"Series tree gone. Remaining series: {SeriesIndexPage.objects.count()}")
+# Apply (interactive: asks you to type the series slug to confirm;
+# non-interactive runs require --yes):
+python manage.py delete_series <slug-or-fabula_uuid> --yes
 ```
+
+Both stages run inside one `transaction.atomic()` — a failure
+anywhere rolls the whole deletion back. Other series are never
+touched.
 
 If you only need to prune *deprecated* rows within a series rather
 than delete the whole series, use `--cleanup` instead — it's safer
