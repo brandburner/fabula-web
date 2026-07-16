@@ -516,7 +516,7 @@ class EpisodePage(Page):
     parent_page_types = ['narrative.SeasonPage']
 
     class Meta:
-        ordering = ['episode_number']
+        ordering = ['season_number', 'episode_number']
 
     def get_events(self):
         """Get all events in this episode, ordered by sequence."""
@@ -997,6 +997,7 @@ class ObjectPage(Page):
         return ObjectInvolvement.objects.filter(
             object=self
         ).select_related('event', 'event__episode').order_by(
+            'event__episode__season_number',
             'event__episode__episode_number',
             'event__scene_sequence'
         )
@@ -1131,7 +1132,7 @@ class EventPage(Page):
     subpage_types = []
 
     class Meta:
-        ordering = ['episode__episode_number', 'scene_sequence', 'sequence_in_scene']
+        ordering = ['episode__season_number', 'episode__episode_number', 'scene_sequence', 'sequence_in_scene']
 
     def get_participations_by_importance(self):
         """
@@ -1328,7 +1329,7 @@ class EventParticipation(Orderable):
         help_text="Character traits observable in this event"
     )
     importance = models.CharField(
-        max_length=50,
+        max_length=255,
         blank=True,
         help_text="primary, secondary, background, etc."
     )
@@ -1700,6 +1701,7 @@ class CharacterEpisodeProfile(models.Model):
 
     class Meta:
         unique_together = ['character', 'episode']
+        ordering = ['episode__season_number', 'episode__episode_number']
         verbose_name = "Character Episode Profile"
         verbose_name_plural = "Character Episode Profiles"
 

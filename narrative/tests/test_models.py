@@ -866,3 +866,97 @@ class ObjectIndexPageTest(WagtailTestMixin, TestCase):
     def test_get_objects(self):
         objects = self.obj_index.get_objects()
         self.assertEqual(objects.count(), 1)
+
+
+class CrossSeasonOrderingTest(WagtailTestMixin, TestCase):
+    """
+    Regression for the episode-ordering hazard (G5 / fabula_v2 852c584):
+    on multi-season data every season has an "episode 1", so any ordering
+    by bare episode_number interleaves seasons. Default orderings must use
+    (season_number, episode_number).
+    """
+
+    @classmethod
+    def setUpTestData(cls):
+        super().setUpTestData()
+        cls.season2 = SeasonPage(
+            title='Season 2',
+            slug='season-2',
+            season_number=2,
+            fabula_uuid='season_002',
+        )
+        cls.series.add_child(instance=cls.season2)
+
+        # Late season-1 episode: bare episode_number ordering would sort
+        # S2E1 (number 1) before this (number 13).
+        cls.s1e13 = EpisodePage(
+            title='Season One Finale',
+            slug='season-one-finale',
+            episode_number=13,
+            season_number=1,
+            fabula_uuid='episode_s1e13',
+        )
+        cls.season.add_child(instance=cls.s1e13)
+
+        cls.s2e1 = EpisodePage(
+            title='Season Two Premiere',
+            slug='season-two-premiere',
+            episode_number=1,
+            season_number=2,
+            fabula_uuid='episode_s2e01',
+        )
+        cls.season2.add_child(instance=cls.s2e1)
+
+        cls.event_s1e13 = EventPage(
+            title='Finale Event',
+            slug='finale-event',
+            episode=cls.s1e13,
+            scene_sequence=1,
+            sequence_in_scene=1,
+            description='<p>Season one closes</p>',
+            fabula_uuid='event_s1e13_1',
+        )
+        cls.event_index.add_child(instance=cls.event_s1e13)
+
+        cls.event_s2e1 = EventPage(
+            title='Premiere Event',
+            slug='premiere-event',
+            episode=cls.s2e1,
+            scene_sequence=1,
+            sequence_in_scene=1,
+            description='<p>Season two opens</p>',
+            fabula_uuid='event_s2e1_1',
+        )
+        cls.event_index.add_child(instance=cls.event_s2e1)
+
+    def test_episode_default_ordering_is_season_aware(self):
+        ordering = list(
+            EpisodePage.objects.live().values_list('season_number', 'episode_number')
+        )
+        self.assertEqual(ordering, sorted(ordering))
+        self.assertLess(
+            ordering.index((1, 13)),
+            ordering.index((2, 1)),
+            "S2E1 must sort after S1E13",
+        )
+
+    def test_event_default_ordering_is_season_aware(self):
+        events = list(EventPage.objects.live())
+        self.assertLess(
+            events.index(self.event_s1e13),
+            events.index(self.event_s2e1),
+            "Events in S2E1 must sort after events in S1E13",
+        )
+
+    def test_theme_events_ordered_across_seasons(self):
+        # Mirrors the ThemeDetailView / ArcDetailView querysets.
+        self.event_s1e13.themes.add(self.theme)
+        self.event_s2e1.themes.add(self.theme)
+        self.event_s1e13.save()
+        self.event_s2e1.save()
+        events = list(
+            self.theme.events.all().order_by(
+                'episode__season_number', 'episode__episode_number', 'scene_sequence'
+            )
+        )
+        self.assertEqual(events, [self.event_s1e13, self.event_s2e1])

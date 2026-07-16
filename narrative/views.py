@@ -454,7 +454,7 @@ class ThemeDetailView(FlexibleIdentifierMixin, CanonicalURLMixin, DetailView):
         # Get events for this theme
         context['events'] = self.object.events.all().select_related(
             'episode', 'location'
-        ).order_by('episode__episode_number', 'scene_sequence')
+        ).order_by('episode__season_number', 'episode__episode_number', 'scene_sequence')
 
         # Get other themes for exploration
         context['other_themes'] = Theme.objects.exclude(
@@ -499,7 +499,7 @@ class ArcDetailView(FlexibleIdentifierMixin, CanonicalURLMixin, DetailView):
 
         context['events'] = self.object.events.all().select_related(
             'episode', 'location'
-        ).order_by('episode__episode_number', 'scene_sequence')
+        ).order_by('episode__season_number', 'episode__episode_number', 'scene_sequence')
 
         return context
 
@@ -590,6 +590,7 @@ class LocationDetailView(FlexibleIdentifierMixin, CanonicalURLMixin, DetailView)
         involvements = LocationInvolvement.objects.filter(
             location=self.object
         ).select_related('event', 'event__episode').order_by(
+            'event__episode__season_number',
             'event__episode__episode_number',
             'event__scene_sequence'
         )
@@ -600,7 +601,7 @@ class LocationDetailView(FlexibleIdentifierMixin, CanonicalURLMixin, DetailView)
         context['events'] = EventPage.objects.live().filter(
             Q(location=self.object) | Q(pk__in=involvement_event_ids)
         ).distinct().select_related('episode').order_by(
-            'episode__episode_number', 'scene_sequence'
+            'episode__season_number', 'episode__episode_number', 'scene_sequence'
         )
 
         # Get child locations
@@ -826,6 +827,7 @@ class OrganizationDetailView(FlexibleIdentifierMixin, CanonicalURLMixin, DetailV
         involvements = OrganizationInvolvement.objects.filter(
             organization=org
         ).select_related('event', 'event__episode').order_by(
+            'event__episode__season_number',
             'event__episode__episode_number',
             'event__scene_sequence'
         )
