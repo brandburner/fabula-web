@@ -1692,35 +1692,47 @@ def record_engagement(request):
 
 class NarrativeSearchView(ListView):
     """
-    Search across events, characters, and themes.
+    Search across events, characters, themes, arcs, and connections.
     """
     template_name = 'narrative/search_results.html'
     context_object_name = 'results'
     paginate_by = 20
-    
+
     def get_queryset(self):
         query = self.request.GET.get('q', '')
-        
+
         if not query:
             return EventPage.objects.none()
-        
+
         # Search events
         return EventPage.objects.live().search(query)
-    
+
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
         query = self.request.GET.get('q', '')
         context['query'] = query
-        
+
         if query:
             # Also search characters
             context['character_results'] = CharacterPage.objects.live().search(query)[:5]
-            
+
             # And themes
             context['theme_results'] = Theme.objects.filter(
-                name__icontains=query
-            ) | Theme.objects.filter(
+                Q(name__icontains=query) | Q(description__icontains=query)
+            )[:8]
+
+            # Conflict arcs (storylines)
+            context['arc_results'] = ConflictArc.objects.filter(
+                Q(title__icontains=query) | Q(description__icontains=query)
+            )[:8]
+
+            # Narrative connections — the analytical claims are prose and
+            # highly searchable (cross_episode_reasoning joins in Phase 2)
+            context['connection_results'] = NarrativeConnection.objects.filter(
                 description__icontains=query
-            )
-        
+            ).select_related(
+                'from_event', 'to_event',
+                'from_event__episode', 'to_event__episode',
+            )[:8]
+
         return context

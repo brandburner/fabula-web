@@ -648,3 +648,13 @@ class SearchViewTest(ViewTestMixin, TestCase):
             {'q': 'meeting'}
         )
         self.assertEqual(response.status_code, 200)
+
+    def test_search_covers_arcs(self):
+        response = self.client.get(reverse('narrative_search'), {'q': 'struggles'})
+        self.assertEqual(response.status_code, 200)
+        self.assertIn(self.arc, response.context['arc_results'])
+
+    def test_search_covers_connections(self):
+        response = self.client.get(reverse('narrative_search'), {'q': 'confrontation'})
+        self.assertEqual(response.status_code, 200)
+        self.assertIn(self.connection, response.context['connection_results'])
