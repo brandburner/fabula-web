@@ -856,3 +856,117 @@ class BeatLayerConnectionExportTest(TestCase):
             self._row('beat_orphan', 'beat_2', 'conn_y', 'ger_y'),
         ])
         self.assertEqual(self.exporter.export_connections(), [])
+
+
+# =============================================================================
+# v2.4.0 Arc/Theme Export (T-022) — replaces the stub shapes (G3/G4).
+# =============================================================================
+
+class ArcThemeStorylineExportTest(TestCase):
+    """export_arcs / export_themes with membership evidence (v2.4.0)."""
+
+    def setUp(self):
+        self.exporter = Neo4jExporter('bolt://localhost:7689', 'neo4j', 'password', Path('/tmp'))
+        self.exporter.episode_info = {
+            'ep_s1e1': {'uuid': 'ep_s1e1', 'season': 1, 'number': 1, 'ordinal': 101},
+            'ep_s2e3': {'uuid': 'ep_s2e3', 'season': 2, 'number': 3, 'ordinal': 203},
+        }
+        self.exporter.episode_series_map = {
+            'ep_s1e1': 'ser_wolf_hall', 'ep_s2e3': 'ser_wolf_hall',
+        }
+        self.exporter.event_episode_map = {
+            'evt_1': 'ep_s1e1', 'evt_2': 'ep_s2e3',
+        }
+
+    def _mock_queries(self, node_rows, member_rows, character_rows):
+        """execute_query is called three times: nodes, memberships, characters."""
+        self.exporter.execute_query = Mock(side_effect=[node_rows, member_rows, character_rows])
+
+    def test_arc_name_description_split_and_memberships(self):
+        self._mock_queries(
+            node_rows=[{
+                'arc_uuid': 'arc_1', 'global_id': None, 'ger_global_id': None,
+                'name': "Cromwell's rise", 'description': 'Long analytical prose',
+                'arc_type': 'SOCIETAL', 'season_appearances': [1, 1, 2],
+                'episode_count': None,
+            }],
+            member_rows=[
+                # Deliberately out of order: ordering is by ordinal
+                {'owner_uuid': 'arc_1', 'event_uuid': 'evt_2', 'role': 'CLIMAX'},
+                {'owner_uuid': 'arc_1', 'event_uuid': 'evt_1', 'role': 'START'},
+            ],
+            character_rows=[
+                {'owner_uuid': 'arc_1', 'agent_uuid': 'agent_2'},
+                {'owner_uuid': 'arc_1', 'agent_uuid': 'agent_1'},
+                {'owner_uuid': 'arc_1', 'agent_uuid': 'agent_1'},
+            ],
+        )
+        arcs = self.exporter.export_arcs()
+        self.assertEqual(len(arcs), 1)
+        arc = arcs[0]
+        self.assertEqual(arc['name'], "Cromwell's rise")
+        self.assertEqual(arc['description'], 'Long analytical prose')
+        self.assertNotEqual(arc['name'], arc['description'])
+        self.assertEqual(arc['arc_type'], 'SOCIETAL')
+        self.assertEqual(arc['series_uuid'], 'ser_wolf_hall')
+        # Members ordered by ordinal, roles carried, episode blocks attached
+        self.assertEqual([m['event_uuid'] for m in arc['events']], ['evt_1', 'evt_2'])
+        self.assertEqual([m['role'] for m in arc['events']], ['START', 'CLIMAX'])
+        self.assertEqual(arc['events'][0]['episode']['ordinal'], 101)
+        # Derived from members: deduped seasons, distinct episode count
+        self.assertEqual(arc['season_appearances'], [1, 2])
+        self.assertEqual(arc['episode_count'], 2)
+        self.assertEqual(arc['involved_character_uuids'], ['agent_1', 'agent_2'])
+
+    def test_arc_without_members_falls_back_to_node_fields(self):
+        self._mock_queries(
+            node_rows=[{
+                'arc_uuid': 'arc_lonely', 'global_id': None, 'ger_global_id': None,
+                'name': 'Unwitnessed struggle', 'description': 'x',
+                'arc_type': 'INTERNAL', 'season_appearances': [2, 2],
+                'episode_count': 3,
+            }],
+            member_rows=[], character_rows=[],
+        )
+        arc = self.exporter.export_arcs()[0]
+        self.assertIsNone(arc['series_uuid'])
+        self.assertEqual(arc['season_appearances'], [2])  # deduped node fallback
+        self.assertEqual(arc['episode_count'], 3)
+        self.assertEqual(arc['events'], [])
+
+    def test_theme_memberships_and_series(self):
+        self._mock_queries(
+            node_rows=[{
+                'theme_uuid': 'theme_1', 'global_id': None, 'ger_global_id': None,
+                'name': 'Power', 'description': 'The nature of power',
+                'season_appearances': None, 'episode_count': None,
+            }],
+            member_rows=[
+                {'owner_uuid': 'theme_1', 'event_uuid': 'evt_1', 'role': None},
+            ],
+            character_rows=[
+                {'owner_uuid': 'theme_1', 'agent_uuid': 'agent_9'},
+            ],
+        )
+        theme = self.exporter.export_themes()[0]
+        self.assertEqual(theme['series_uuid'], 'ser_wolf_hall')
+        self.assertEqual(theme['events'][0]['event_uuid'], 'evt_1')
+        self.assertIsNone(theme['events'][0]['role'])
+        self.assertEqual(theme['related_character_uuids'], ['agent_9'])
+        self.assertEqual(theme['season_appearances'], [1])
+
+    def test_member_events_outside_export_dropped(self):
+        self._mock_queries(
+            node_rows=[{
+                'arc_uuid': 'arc_1', 'global_id': None, 'ger_global_id': None,
+                'name': 'n', 'description': 'd', 'arc_type': 'SOCIETAL',
+                'season_appearances': None, 'episode_count': None,
+            }],
+            member_rows=[
+                {'owner_uuid': 'arc_1', 'event_uuid': 'evt_unknown', 'role': None},
+                {'owner_uuid': 'arc_1', 'event_uuid': 'evt_1', 'role': None},
+            ],
+            character_rows=[],
+        )
+        arc = self.exporter.export_arcs()[0]
+        self.assertEqual([m['event_uuid'] for m in arc['events']], ['evt_1'])

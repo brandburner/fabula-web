@@ -153,11 +153,13 @@ class Neo4jExporter:
         }
 
         # Populated during export_all's event pass; consumed by the
-        # connection exporters (docs/YAML_CONTRACT.md v2.4.0):
+        # connection and arc/theme exporters (docs/YAML_CONTRACT.md v2.4.0):
         #   episode_info: episode_uuid -> {uuid, season, number, ordinal}
+        #   episode_series_map: episode_uuid -> series_uuid
         #   event_episode_map: event_uuid -> episode_uuid
         #   beat_event_map: beat_uuid -> event_uuid (via derived_from_beat_uuids)
         self.episode_info: Dict[str, Dict] = {}
+        self.episode_series_map: Dict[str, str] = {}
         self.event_episode_map: Dict[str, str] = {}
         self.beat_event_map: Dict[str, str] = {}
 
@@ -937,8 +939,24 @@ class Neo4jExporter:
             """
 
         results = self.execute_query(query)
-        themes = []
 
+        # Membership evidence edges (contract v2.4.0). Requires the event
+        # export pass to have run first (export_all ordering).
+        event_members = self._fetch_memberships(
+            """
+            MATCH (e:Event)-[:EXEMPLIFIES_THEME]->(t:Theme)
+            RETURN t.theme_uuid as owner_uuid, e.event_uuid as event_uuid,
+                   null as role
+            """
+        )
+        character_members = self._fetch_character_links(
+            """
+            MATCH (a:Agent)-[:RELATED_TO_THEME]->(t:Theme)
+            RETURN t.theme_uuid as owner_uuid, a.agent_uuid as agent_uuid
+            """
+        )
+
+        themes = []
         for record in results:
             fabula_uuid = record.get('theme_uuid', '')
             # Read global_id directly from Theme node (propagated by GER)
@@ -952,19 +970,87 @@ class Neo4jExporter:
                 'name': record.get('name', 'Unknown'),
                 'description': record.get('description', '')
             }
+            self._attach_membership_fields(
+                theme_data, fabula_uuid, event_members, character_members,
+                character_field='related_character_uuids',
+                node_seasons=record.get('season_appearances'),
+                node_episode_count=record.get('episode_count'),
+            )
 
-            # Add megagraph-specific fields for themes
-            if self.megagraph_mode:
-                season_appearances = record.get('season_appearances') or []
-                theme_data['season_appearances'] = season_appearances
-                theme_data['episode_count'] = record.get('episode_count', 0)
-                if len(season_appearances) > 1:
-                    self.stats['cross_season_entities'] += 1
+            if self.megagraph_mode and len(theme_data.get('season_appearances') or []) > 1:
+                self.stats['cross_season_entities'] += 1
 
             themes.append(theme_data)
             self.stats['theme_count'] += 1
 
         return themes
+
+    def _fetch_memberships(self, query: str) -> Dict[str, List[Dict]]:
+        """Run an owner<-event evidence query and group member events by
+        owner uuid, each with role and episode block, ordered by ordinal.
+        Events outside the exported set are dropped (counted per owner is
+        overkill; the totals reconcile against per-event arc/theme uuids at
+        import time)."""
+        members: Dict[str, List[Dict]] = {}
+        for record in self.execute_query(query):
+            owner = record.get('owner_uuid')
+            event_uuid = record.get('event_uuid')
+            if not owner or not event_uuid:
+                continue
+            episode = self._episode_block(event_uuid)
+            if not episode:
+                continue
+            entry = {'event_uuid': event_uuid, 'role': record.get('role'),
+                     'episode': episode}
+            members.setdefault(owner, []).append(entry)
+        for owner in members:
+            members[owner].sort(key=lambda m: (m['episode']['ordinal'], m['event_uuid']))
+        return members
+
+    def _fetch_character_links(self, query: str) -> Dict[str, List[str]]:
+        """Run an owner<-agent evidence query and group agent uuids by owner."""
+        links: Dict[str, List[str]] = {}
+        for record in self.execute_query(query):
+            owner = record.get('owner_uuid')
+            agent_uuid = record.get('agent_uuid')
+            if owner and agent_uuid:
+                links.setdefault(owner, []).append(agent_uuid)
+        for owner in links:
+            links[owner] = sorted(set(links[owner]))
+        return links
+
+    def _attach_membership_fields(self, data: Dict, fabula_uuid: str,
+                                  event_members: Dict, character_members: Dict,
+                                  character_field: str,
+                                  node_seasons=None, node_episode_count=None):
+        """Attach events/characters/series_uuid/season fields derived from
+        membership evidence; node-property values are the fallback when a
+        storyline has no exported member events."""
+        members = event_members.get(fabula_uuid, [])
+        data['events'] = members
+        data[character_field] = character_members.get(fabula_uuid, [])
+
+        member_episodes = {m['episode']['uuid'] for m in members}
+        member_seasons = sorted({m['episode']['season'] for m in members})
+        member_series = [
+            self.episode_series_map[ep] for ep in member_episodes
+            if ep in self.episode_series_map
+        ]
+        # A consolidated storyline belongs to exactly one series (its UUID is
+        # deterministic on (series_uuid, name)); membership is the ground
+        # truth for which one.
+        data['series_uuid'] = (
+            max(set(member_series), key=member_series.count)
+            if member_series else None
+        )
+        data['season_appearances'] = (
+            member_seasons if member_seasons
+            else sorted(set(node_seasons or []))
+        )
+        data['episode_count'] = (
+            len(member_episodes) if member_episodes
+            else (node_episode_count or 0)
+        )
 
     # =========================================================================
     # Export Conflict Arcs
@@ -979,34 +1065,54 @@ class Neo4jExporter:
         """
         print("Exporting conflict arcs...")
 
+        # Schema v1.2.0 (ISS-036): ConflictArc.name is the short stable
+        # storyline identity; conflict_description is distinct prose. The
+        # old export coalesced them into title==description stubs (G3).
         if self.megagraph_mode:
-            # Megagraph uses canonical_name and foundational_description
-            # Filter out season-unique arcs with no description
             query = """
             MATCH (arc:ConflictArc)
-            WHERE arc.canonical_name IS NOT NULL OR arc.conflict_description IS NOT NULL
+            WHERE arc.name IS NOT NULL OR arc.canonical_name IS NOT NULL
+               OR arc.conflict_description IS NOT NULL
             RETURN arc.arc_uuid as arc_uuid,
                    arc.global_id as global_id,
                    arc.ger_global_id as ger_global_id,
-                   coalesce(arc.canonical_name, arc.conflict_description) as conflict_description,
+                   coalesce(arc.name, arc.canonical_name, arc.conflict_description) as name,
+                   coalesce(arc.conflict_description, arc.foundational_description, '') as description,
                    coalesce(arc.type, 'INTERPERSONAL') as arc_type,
                    arc.season_appearances as season_appearances,
                    arc.episode_count as episode_count
-            ORDER BY conflict_description
+            ORDER BY name
             """
         else:
             query = """
             MATCH (arc:ConflictArc)
             RETURN arc.arc_uuid as arc_uuid,
                    arc.global_id as global_id,
-                   arc.conflict_description as conflict_description,
-                   arc.type as arc_type
-            ORDER BY arc.conflict_description
+                   coalesce(arc.name, arc.conflict_description) as name,
+                   coalesce(arc.conflict_description, '') as description,
+                   coalesce(arc.type, 'INTERPERSONAL') as arc_type
+            ORDER BY name
             """
 
         results = self.execute_query(query)
-        arcs = []
 
+        # Membership evidence edges (contract v2.4.0): PART_OF_ARC carries
+        # the storyline role (START | CLIMAX | RESOLUTION, nullable).
+        event_members = self._fetch_memberships(
+            """
+            MATCH (e:Event)-[r:PART_OF_ARC]->(arc:ConflictArc)
+            RETURN arc.arc_uuid as owner_uuid, e.event_uuid as event_uuid,
+                   r.role as role
+            """
+        )
+        character_members = self._fetch_character_links(
+            """
+            MATCH (a:Agent)-[:INVOLVED_IN_ARC]->(arc:ConflictArc)
+            RETURN arc.arc_uuid as owner_uuid, a.agent_uuid as agent_uuid
+            """
+        )
+
+        arcs = []
         for record in results:
             fabula_uuid = record.get('arc_uuid', '')
             # Read global_id directly from ConflictArc node (propagated by GER)
@@ -1017,18 +1123,19 @@ class Neo4jExporter:
             arc_data = {
                 'fabula_uuid': fabula_uuid,
                 'global_id': global_id,
-                'title': record.get('conflict_description', 'Unknown'),
-                'description': record.get('conflict_description', ''),
-                'arc_type': record.get('arc_type', 'INTERPERSONAL')
+                'name': record.get('name') or 'Unknown',
+                'description': record.get('description') or '',
+                'arc_type': record.get('arc_type', 'INTERPERSONAL'),
             }
+            self._attach_membership_fields(
+                arc_data, fabula_uuid, event_members, character_members,
+                character_field='involved_character_uuids',
+                node_seasons=record.get('season_appearances'),
+                node_episode_count=record.get('episode_count'),
+            )
 
-            # Add megagraph-specific fields for arcs
-            if self.megagraph_mode:
-                season_appearances = record.get('season_appearances') or []
-                arc_data['season_appearances'] = season_appearances
-                arc_data['episode_count'] = record.get('episode_count', 0)
-                if len(season_appearances) > 1:
-                    self.stats['cross_season_entities'] += 1
+            if self.megagraph_mode and len(arc_data.get('season_appearances') or []) > 1:
+                self.stats['cross_season_entities'] += 1
 
             arcs.append(arc_data)
             self.stats['arc_count'] += 1
@@ -1964,21 +2071,9 @@ class Neo4jExporter:
                 'Object Data'
             )
 
-            # Export themes
-            themes = self.export_themes()
-            self.write_yaml(
-                self.output_dir / 'themes.yaml',
-                themes,
-                'Theme Data'
-            )
-
-            # Export conflict arcs
-            arcs = self.export_arcs()
-            self.write_yaml(
-                self.output_dir / 'arcs.yaml',
-                arcs,
-                'Conflict Arc Data'
-            )
+            # NOTE: themes and arcs are exported AFTER the event pass (below)
+            # — their v2.4.0 membership lists need the episode/event maps the
+            # event loop builds.
 
             # Export writers
             writers = self.export_writers()
@@ -2014,6 +2109,7 @@ class Neo4jExporter:
                             'number': episode_num,
                             'ordinal': season_num * 100 + episode_num,
                         }
+                        self.episode_series_map[episode_uuid] = series_data['fabula_uuid']
 
                         # Full series slug + composite ordinal — the former
                         # {series_uuid[:10]} truncation was a collision
@@ -2046,6 +2142,22 @@ class Neo4jExporter:
                             },
                             f"Events for {episode['title'].replace(chr(10), ' - ')}"
                         )
+
+            # Export themes and conflict arcs (after the event pass — the
+            # membership lists join through the episode/event maps).
+            themes = self.export_themes()
+            self.write_yaml(
+                self.output_dir / 'themes.yaml',
+                themes,
+                'Theme Data'
+            )
+
+            arcs = self.export_arcs()
+            self.write_yaml(
+                self.output_dir / 'arcs.yaml',
+                arcs,
+                'Conflict Arc Data'
+            )
 
             # Export narrative connections: the native event layer first
             # (the storyline product), then the beat layer (intra-episode
