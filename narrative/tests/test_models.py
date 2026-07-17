@@ -414,24 +414,6 @@ class CharacterPageTest(WagtailTestMixin, TestCase):
         self.assertEqual(parts.count(), 1)
         self.assertEqual(parts[0].event, self.event1)
 
-    def test_get_emotional_journey(self):
-        journey = self.character1.get_emotional_journey()
-        self.assertEqual(journey.count(), 1)
-        self.assertEqual(journey[0].emotional_state, 'Determined')
-
-    def test_get_emotional_journey_excludes_empty(self):
-        """Characters with empty emotional_state should be excluded."""
-        EventParticipation.objects.create(
-            event=self.event2,
-            character=self.character1,
-            emotional_state='',
-            importance='primary',
-            sort_order=0,
-        )
-        journey = self.character1.get_emotional_journey()
-        # Should only include the one with emotional_state
-        self.assertEqual(journey.count(), 1)
-
     def test_get_absolute_url_with_fabula_uuid(self):
         self.assertEqual(self.character1.get_absolute_url(), '/characters/char_001/')
 

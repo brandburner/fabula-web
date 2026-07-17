@@ -134,7 +134,45 @@
                 <div class="absolute left-[15px] top-4 bottom-4 w-px" style="background: linear-gradient(to bottom, var(--f-accent-green), color-mix(in srgb, var(--f-accent-green) 20%, transparent));"></div>
 
                 <div class="space-y-6">
-                    {% for participation in participations %}
+                    {% for item in journey_items %}
+                    {% if item.kind == 'profile' %}
+                    {% with profile=item.profile %}
+                    <div class="relative pl-12">
+                        {# Timeline dot — episode marker #}
+                        <div class="absolute left-0 top-3 w-8 h-8 rounded-full flex items-center justify-center"
+                             style="background: var(--f-bg-page); border: 2px solid color-mix(in srgb, var(--f-accent-blue) 50%, transparent);">
+                            <i data-lucide="film" class="w-3.5 h-3.5" style="color: var(--f-accent-blue);"></i>
+                        </div>
+
+                        {# Episode profile card — the character's state entering this episode #}
+                        <div class="p-5 rounded-lg" style="background: color-mix(in srgb, var(--f-accent-blue) 4%, var(--f-card-bg)); border: 1px solid color-mix(in srgb, var(--f-accent-blue) 20%, var(--f-card-border));">
+                            <div class="flex items-center gap-2 text-xs mb-2" style="color: var(--f-fg-placeholder); font-family: var(--f-font-mono);">
+                                <span class="px-2 py-0.5 rounded" style="background: var(--f-bg-elevated);">
+                                    S{{ profile.episode.season_number }}E{{ profile.episode.episode_number }}
+                                </span>
+                                <span style="color: var(--f-border-default);">·</span>
+                                <a href="{% narrative_url profile.episode %}" class="line-clamp-1 transition-colors f-hover-accent">{{ profile.episode.title }}</a>
+                            </div>
+                            <div class="text-xs font-medium uppercase tracking-wider mb-2" style="color: var(--f-accent-blue); letter-spacing: 0.08em;">
+                                In this episode
+                            </div>
+                            {% if profile.description_in_episode %}
+                            <p class="text-sm leading-relaxed" style="color: var(--f-fg-secondary);">
+                                {{ profile.description_in_episode|md }}
+                            </p>
+                            {% endif %}
+                            {% if profile.traits_in_episode %}
+                            <div class="flex flex-wrap gap-1 mt-3">
+                                {% for trait in profile.traits_in_episode %}
+                                <span class="px-2 py-0.5 text-xs rounded" style="background: var(--f-bg-elevated); color: var(--f-fg-tertiary); border: 1px solid var(--f-border-light);">{{ trait }}</span>
+                                {% endfor %}
+                            </div>
+                            {% endif %}
+                        </div>
+                    </div>
+                    {% endwith %}
+                    {% else %}
+                    {% with participation=item.participation %}
                     <div class="relative pl-12 group">
                         {# Timeline dot #}
                         <div class="absolute left-0 top-3 w-8 h-8 rounded-full flex items-center justify-center transition-all duration-200"
@@ -185,6 +223,8 @@
                             </div>
                         </a>
                     </div>
+                    {% endwith %}
+                    {% endif %}
                     {% empty %}
                     <div class="text-sm p-8 rounded-lg text-center" style="color: var(--f-fg-tertiary); background: var(--f-bg-elevated); border: 1px solid var(--f-border-light);">
                         <i data-lucide="calendar-x" class="w-10 h-10 mx-auto mb-3" style="color: var(--f-fg-placeholder);"></i>
@@ -221,36 +261,88 @@
         {% endif %}
 
         {# ============================================================= #}
-        {# EPISODE PROFILES #}
+        {# ACROSS THE SEASONS — arc summary + per-season portrait tabs #}
+        {# (megagraph series; gated on data presence)                   #}
         {# ============================================================= #}
-        {% if page.episode_profiles.exists %}
+        {% if page.arc_summary or season_profiles %}
         <section class="mt-10">
             <div class="flex items-center gap-2 mb-6">
-                <i data-lucide="film" class="w-5 h-5" style="color: var(--f-fg-tertiary);"></i>
-                <h2 style="font-family: var(--f-font-display); color: var(--f-fg-heading); font-size: 1.15rem; font-weight: 400;">Per-Episode Profiles</h2>
+                <i data-lucide="milestone" class="w-5 h-5" style="color: var(--f-accent-blue);"></i>
+                <div class="flex-1">
+                    <h2 style="font-family: var(--f-font-display); color: var(--f-fg-heading); font-size: 1.15rem; font-weight: 400;">Across the Seasons</h2>
+                    <p class="text-sm mt-0.5" style="color: var(--f-fg-placeholder);">How this character reads at season scale</p>
+                </div>
             </div>
 
-            <div class="space-y-3">
-                {% for profile in page.episode_profiles.all %}
-                <div class="p-4 rounded-lg" style="background: var(--f-card-bg); border: 1px solid var(--f-card-border);">
-                    <a href="{% narrative_url profile.episode %}" class="font-medium transition-colors f-hover-accent" style="color: var(--f-fg-heading);">
-                        {{ profile.episode.title }}
-                    </a>
-                    {% if profile.description_in_episode %}
-                    <p class="text-sm mt-2" style="color: var(--f-fg-tertiary);">
-                        {{ profile.description_in_episode }}
-                    </p>
-                    {% endif %}
-                    {% if profile.traits_in_episode %}
-                    <div class="flex flex-wrap gap-1 mt-2">
-                        {% for trait in profile.traits_in_episode %}
-                        <span class="px-2 py-0.5 text-xs rounded" style="background: var(--f-bg-elevated); color: var(--f-fg-tertiary); border: 1px solid var(--f-border-light);">{{ trait }}</span>
-                        {% endfor %}
+            {% if page.arc_summary %}
+            <div class="p-6 rounded-xl mb-6" style="background: var(--f-card-bg); border: 1px solid var(--f-card-border);">
+                <p class="leading-relaxed" style="color: var(--f-fg-secondary); font-size: 1.02rem; line-height: 1.7;">
+                    {{ page.arc_summary|md }}
+                </p>
+            </div>
+            {% endif %}
+
+            {% if season_profiles %}
+            {# WAI-ARIA Tabs pattern: roving tabindex, arrow-key + Home/End
+               navigation, aria-selected/aria-controls wiring. Initial
+               state is server-rendered (first season selected) so the
+               markup is correct before Alpine hydrates. #}
+            <div x-data="{
+                    seasons: [{% for sp in season_profiles %}{{ sp.season_number }}{% if not forloop.last %},{% endif %}{% endfor %}],
+                    selected: {{ season_profiles.0.season_number }},
+                    select(n) { this.selected = n; this.$nextTick(() => this.$refs['tab' + n].focus()); },
+                    move(delta) {
+                        const i = this.seasons.indexOf(this.selected);
+                        this.select(this.seasons[(i + delta + this.seasons.length) % this.seasons.length]);
+                    },
+                 }">
+                <div role="tablist" aria-label="Per-season portraits" class="flex flex-wrap gap-2 mb-4"
+                     @keydown.arrow-right.prevent="move(1)"
+                     @keydown.arrow-left.prevent="move(-1)"
+                     @keydown.home.prevent="select(seasons[0])"
+                     @keydown.end.prevent="select(seasons[seasons.length - 1])">
+                    {% for sp in season_profiles %}
+                    <button type="button"
+                            role="tab"
+                            id="season-profile-tab-{{ sp.season_number }}"
+                            aria-controls="season-profile-panel-{{ sp.season_number }}"
+                            aria-selected="{% if forloop.first %}true{% else %}false{% endif %}"
+                            tabindex="{% if forloop.first %}0{% else %}-1{% endif %}"
+                            x-ref="tab{{ sp.season_number }}"
+                            :aria-selected="selected === {{ sp.season_number }} ? 'true' : 'false'"
+                            :tabindex="selected === {{ sp.season_number }} ? 0 : -1"
+                            @click="select({{ sp.season_number }})"
+                            class="px-4 py-2 text-sm font-medium rounded-md transition-all duration-200"
+                            style="outline-offset: 2px;"
+                            :style="selected === {{ sp.season_number }}
+                                ? 'outline-offset: 2px; background: var(--f-accent-blue-bg); color: var(--f-accent-blue-fg); border: 1px solid color-mix(in srgb, var(--f-accent-blue) 40%, transparent);'
+                                : 'outline-offset: 2px; background: var(--f-bg-elevated); color: var(--f-fg-tertiary); border: 1px solid var(--f-border-light);'">
+                        Season {{ sp.season_number }}
+                    </button>
+                    {% endfor %}
+                </div>
+
+                {% for sp in season_profiles %}
+                <div role="tabpanel"
+                     id="season-profile-panel-{{ sp.season_number }}"
+                     aria-labelledby="season-profile-tab-{{ sp.season_number }}"
+                     tabindex="0"
+                     {% if not forloop.first %}hidden{% endif %}
+                     :hidden="selected !== {{ sp.season_number }}"
+                     class="p-6 rounded-xl"
+                     style="background: color-mix(in srgb, var(--f-accent-blue) 4%, var(--f-card-bg)); border: 1px solid color-mix(in srgb, var(--f-accent-blue) 20%, var(--f-card-border)); outline-offset: 2px;">
+                    {% if sp.tier %}
+                    <div class="text-xs font-medium uppercase tracking-wider mb-3" style="color: var(--f-accent-blue); letter-spacing: 0.08em;">
+                        Season {{ sp.season_number }} · {{ sp.tier }}
                     </div>
                     {% endif %}
+                    <p class="leading-relaxed" style="color: var(--f-fg-secondary); line-height: 1.7;">
+                        {{ sp.description|md }}
+                    </p>
                 </div>
                 {% endfor %}
             </div>
+            {% endif %}
         </section>
         {% endif %}
 

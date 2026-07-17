@@ -726,12 +726,6 @@ class CharacterPage(Page):
             'event__scene_sequence'
         )
 
-    def get_emotional_journey(self):
-        """Get participations with emotional state for journey view."""
-        return self.get_participations().exclude(
-            emotional_state=''
-        )
-
     def get_absolute_url(self):
         """Return URL using global_id for stable cross-season links."""
         identifier = self.global_id or self.fabula_uuid or self.pk

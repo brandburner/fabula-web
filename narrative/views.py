@@ -34,6 +34,7 @@ from django.db.models import Q, Count, F, Min, Max
 from .models import (
     NarrativeConnection, Theme, ConflictArc, Location,
     EventPage, CharacterPage, EpisodePage, EventParticipation,
+    CharacterEpisodeProfile,
     ConnectionType, ConnectionScope, LocationInvolvement, OrganizationInvolvement,
     OrganizationPage, ObjectPage, ObjectInvolvement,
     CharacterIndexPage, OrganizationIndexPage, ObjectIndexPage, EventIndexPage,
@@ -925,14 +926,38 @@ class CharacterDetailView(FlexibleIdentifierMixin, CanonicalURLMixin, DetailView
 
         # Filter participations to selected season
         if selected_season is not None:
-            context['participations'] = base_parts.filter(
+            participations = base_parts.filter(
                 event__episode__season_number=selected_season
             ).order_by(
                 'event__episode__episode_number',
                 'event__scene_sequence'
             )
         else:
-            context['participations'] = base_parts.none()
+            participations = base_parts.none()
+        context['participations'] = participations
+
+        # Interleave episode-profile cards into the journey (T-033):
+        # each episode's portrait leads its participations. Sort key is
+        # (episode, profile-before-events, scene).
+        profiles = CharacterEpisodeProfile.objects.filter(
+            character=character,
+            episode__season_number=selected_season,
+        ).select_related('episode') if selected_season is not None else []
+        items = [
+            (p.episode.episode_number, 0, 0, {'kind': 'profile', 'profile': p})
+            for p in profiles
+        ]
+        items += [
+            (part.event.episode.episode_number, 1, part.event.scene_sequence or 0,
+             {'kind': 'participation', 'participation': part})
+            for part in participations
+        ]
+        items.sort(key=lambda entry: entry[:3])
+        context['journey_items'] = [entry[3] for entry in items]
+
+        # Cross-season layer (megagraph series): arc summary text lives on
+        # the page; per-season portraits drive the ARIA tabs.
+        context['season_profiles'] = list(character.season_profiles.all())
 
         return context
 

@@ -16,6 +16,7 @@ from narrative.models import (
     EventPage, EventIndexPage, CharacterIndexPage,
     EventParticipation, NarrativeConnection,
     ArcEventMembership, ThemeEventMembership,
+    CharacterEpisodeProfile, CharacterSeasonProfile,
     LocationInvolvement, ObjectInvolvement, OrganizationInvolvement,
 )
 
@@ -552,6 +553,102 @@ class StorylineIndexViewTest(SeriesScopedStorylineTestMixin, TestCase):
         self.assertContains(response, self.arc.get_absolute_url())
         self.assertContains(response, 'Conflict Arc')
         self.assertContains(response, 'Theme')
+
+
+class CharacterJourneyEnrichmentTest(StorylineTimelineFixtureMixin, TestCase):
+    """T-033: episode-profile cards interleaved into the journey,
+    arc_summary + WAI-ARIA season-profile tabs."""
+
+    @classmethod
+    def setUpTestData(cls):
+        super().setUpTestData()
+        cls.character.arc_summary = (
+            'From operative to institution: a two-season slide into power.')
+        cls.character.save()
+
+        # Second-season participation so ?season= filtering has data
+        cls.s2_participation = EventParticipation.objects.create(
+            event=cls.event3, character=cls.character,
+            emotional_state='Resolute', what_happened='Faced the reckoning',
+            importance='primary', sort_order=0,
+        )
+        cls.profile_s1 = CharacterEpisodeProfile.objects.create(
+            character=cls.character, episode=cls.episode,
+            description_in_episode='Confident and untested.',
+            traits_in_episode=['confident'],
+        )
+        cls.profile_s2 = CharacterEpisodeProfile.objects.create(
+            character=cls.character, episode=cls.episode2,
+            description_in_episode='Hardened by the fallout.',
+            traits_in_episode=['guarded'],
+        )
+        CharacterSeasonProfile.objects.create(
+            character=cls.character, season_number=1,
+            description='An eager fixer on the rise.', tier='anchor',
+        )
+        CharacterSeasonProfile.objects.create(
+            character=cls.character, season_number=2,
+            description='A power broker running out of friends.', tier='anchor',
+        )
+
+    def _get(self, season=None):
+        url = reverse('character_detail', kwargs={'identifier': 'agent_001'})
+        if season:
+            url += f'?season={season}'
+        return self.client.get(url)
+
+    def test_journey_interleaves_profile_before_events(self):
+        response = self._get(season=1)
+        items = response.context['journey_items']
+        self.assertEqual(items[0]['kind'], 'profile')
+        self.assertEqual(items[0]['profile'].pk, self.profile_s1.pk)
+        self.assertEqual(items[1]['kind'], 'participation')
+        self.assertContains(response, 'Confident and untested.')
+
+    def test_journey_profiles_are_season_filtered(self):
+        response = self._get(season=2)
+        items = response.context['journey_items']
+        profile_pks = [i['profile'].pk for i in items if i['kind'] == 'profile']
+        self.assertEqual(profile_pks, [self.profile_s2.pk])
+        self.assertNotContains(response, 'Confident and untested.')
+        self.assertContains(response, 'Hardened by the fallout.')
+
+    def test_arc_summary_renders(self):
+        response = self._get()
+        self.assertContains(
+            response, 'From operative to institution: a two-season slide into power.')
+
+    def test_season_tabs_aria_wiring(self):
+        response = self._get()
+        html = response.content.decode()
+        self.assertContains(response, 'role="tablist"')
+        # Tab ↔ panel wiring
+        self.assertContains(response, 'id="season-profile-tab-1"')
+        self.assertContains(response, 'aria-controls="season-profile-panel-1"')
+        self.assertContains(response, 'id="season-profile-panel-2"')
+        self.assertContains(response, 'aria-labelledby="season-profile-tab-2"')
+        self.assertContains(response, 'role="tabpanel"', count=2)
+        # Initial roving tabindex: first season selected on load
+        self.assertContains(response, 'aria-selected="true"', count=1)
+        self.assertContains(response, 'aria-selected="false"', count=1)
+        self.assertContains(response, 'tabindex="-1"', count=1)
+        # Second panel hidden until its tab is selected
+        panel2 = html.split('id="season-profile-panel-2"')[1][:300]
+        self.assertIn('hidden', panel2)
+        panel1 = html.split('id="season-profile-panel-1"')[1][:200]
+        self.assertNotIn(' hidden\n', panel1)
+
+    def test_no_season_profiles_hides_tablist(self):
+        bare = CharacterPage(
+            title='Donna Moss', slug='donna-moss', canonical_name='Donna Moss',
+            description='<p>Assistant</p>', character_type=CharacterType.MAIN,
+            fabula_uuid='agent_bare',
+        )
+        self.char_index.add_child(instance=bare)
+        response = self.client.get(
+            reverse('character_detail', kwargs={'identifier': 'agent_bare'}))
+        self.assertEqual(response.status_code, 200)
+        self.assertNotContains(response, 'role="tablist"')
 
 
 class ThemeTimelineViewTest(StorylineTimelineFixtureMixin, TestCase):
