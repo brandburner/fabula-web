@@ -78,6 +78,14 @@
                 <div class="font-medium text-sm" style="color: var(--f-fg-heading);">Locations</div>
                 <div class="text-xs mt-0.5" style="color: var(--f-fg-placeholder);">Story geography</div>
             </a>
+
+            <a href="{% url 'series_storyline_index' series_slug=page.slug %}"
+               class="group p-5 rounded-lg text-center transition-all duration-200 f-hover-card"
+               style="background: var(--f-card-bg); border: 1px solid var(--f-card-border); box-shadow: var(--f-card-shadow);">
+                <i data-lucide="route" class="w-6 h-6 mx-auto mb-2" style="color: var(--f-accent-rose);"></i>
+                <div class="font-medium text-sm" style="color: var(--f-fg-heading);">Storylines</div>
+                <div class="text-xs mt-0.5" style="color: var(--f-fg-placeholder);">Arcs & themes</div>
+            </a>
         </div>
 
         <hr style="border-color: var(--f-rule-color);" class="mb-10">

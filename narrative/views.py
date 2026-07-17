@@ -29,7 +29,7 @@ from django.views.decorators.http import require_POST
 from django.views.generic import ListView, DetailView, TemplateView, View
 
 from django.db import models
-from django.db.models import Q, Count, F
+from django.db.models import Q, Count, F, Min, Max
 
 from .models import (
     NarrativeConnection, Theme, ConflictArc, Location,
@@ -521,9 +521,10 @@ class StorylineTimelineMixin:
 # THEMES
 # =============================================================================
 
-class ThemeIndexView(ListView):
+class ThemeIndexView(SeriesScopedMixin, ListView):
     """
-    Browse all themes, ordered by event count.
+    Browse themes, ordered by event count. Series-scoped on
+    /explore/<series>/themes/ (T-031 — the route used to render global data).
     """
     model = Theme
     template_name = 'narrative/theme_index.html'
@@ -531,9 +532,8 @@ class ThemeIndexView(ListView):
     paginate_by = 48
 
     def get_queryset(self):
-        from django.db.models import Count
-        return Theme.objects.annotate(
-            event_count=Count('events')
+        return self.get_series_queryset(Theme.objects.all()).annotate(
+            event_count=Count('event_memberships')
         ).order_by('-event_count')
 
 
@@ -577,9 +577,10 @@ class ThemeDetailView(StorylineTimelineMixin, FlexibleIdentifierMixin,
 # CONFLICT ARCS
 # =============================================================================
 
-class ArcIndexView(ListView):
+class ArcIndexView(SeriesScopedMixin, ListView):
     """
-    Browse all conflict arcs.
+    Browse conflict arcs. Series-scoped on /explore/<series>/arcs/
+    (T-031 — the route used to render global data).
     """
     model = ConflictArc
     template_name = 'narrative/arc_index.html'
@@ -587,9 +588,8 @@ class ArcIndexView(ListView):
     paginate_by = 48
 
     def get_queryset(self):
-        from django.db.models import Count
-        return ConflictArc.objects.annotate(
-            event_count=Count('events')
+        return self.get_series_queryset(ConflictArc.objects.all()).annotate(
+            event_count=Count('event_memberships')
         ).order_by('-event_count')
 
 
@@ -620,6 +620,63 @@ class ArcDetailView(StorylineTimelineMixin, FlexibleIdentifierMixin,
         ).order_by('episode__season_number', 'episode__episode_number', 'scene_sequence')
 
         return context
+
+
+# =============================================================================
+# STORYLINES INDEX (arcs + themes interleaved)
+# =============================================================================
+
+class StorylineIndexView(SeriesScopedMixin, TemplateView):
+    """
+    /explore/<series>/storylines/ — conflict arcs and themes interleaved
+    as one storyline catalog (T-031; presentation-only, no new model).
+    Cards carry membership counts and season spans from the junction
+    tables, sorted by event count.
+    """
+    template_name = 'narrative/storyline_index.html'
+    paginate_by = 48
+
+    def get_context_data(self, **kwargs):
+        from django.core.paginator import Paginator
+        context = super().get_context_data(**kwargs)
+
+        span_annotations = dict(
+            event_count=Count('event_memberships'),
+            ordinal_lo=Min('event_memberships__episode_ordinal'),
+            ordinal_hi=Max('event_memberships__episode_ordinal'),
+        )
+        arcs = self.get_series_queryset(
+            ConflictArc.objects.all()).annotate(**span_annotations)
+        themes = self.get_series_queryset(
+            Theme.objects.all()).annotate(**span_annotations)
+
+        storylines = []
+        for arc in arcs:
+            storylines.append(self._card('arc', arc, arc.title))
+        for theme in themes:
+            storylines.append(self._card('theme', theme, theme.name))
+        storylines.sort(key=lambda s: (-s['event_count'], s['title'].lower()))
+
+        paginator = Paginator(storylines, self.paginate_by)
+        page_obj = paginator.get_page(self.request.GET.get('page'))
+        context['storylines'] = page_obj.object_list
+        context['page_obj'] = page_obj
+        context['is_paginated'] = page_obj.has_other_pages()
+        context['arc_count'] = len(arcs)
+        context['theme_count'] = len(themes)
+        return context
+
+    @staticmethod
+    def _card(kind, obj, title):
+        # episode_ordinal is season*100+episode, so ordinal//100 = season
+        return {
+            'kind': kind,
+            'obj': obj,
+            'title': title,
+            'event_count': obj.event_count,
+            'season_lo': obj.ordinal_lo // 100 if obj.ordinal_lo else None,
+            'season_hi': obj.ordinal_hi // 100 if obj.ordinal_hi else None,
+        }
 
 
 # =============================================================================

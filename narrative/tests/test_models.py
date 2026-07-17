@@ -1057,6 +1057,45 @@ class MembershipJunctionTest(WagtailTestMixin, TestCase):
         self.assertIn(self.theme, self.character2.related_themes.all())
 
 
+class StorylineSeriesBackfillTest(WagtailTestMixin, TestCase):
+    """Migration 0025 (ISS-015): legacy storylines get their series FK
+    inferred from membership evidence; orphans stay NULL."""
+
+    def _run_backfill(self):
+        import importlib
+        from django.apps import apps
+        migration = importlib.import_module(
+            'narrative.migrations.0025_backfill_storyline_series')
+        migration.backfill(apps, None)
+
+    def test_backfill_sets_series_from_memberships(self):
+        Theme.objects.filter(pk=self.theme.pk).update(series=None)
+        ConflictArc.objects.filter(pk=self.arc.pk).update(series=None)
+        ThemeEventMembership.objects.create(
+            event=self.event1, theme=self.theme, episode_ordinal=101)
+        ArcEventMembership.objects.create(
+            event=self.event2, arc=self.arc, episode_ordinal=101)
+
+        self._run_backfill()
+
+        self.theme.refresh_from_db()
+        self.arc.refresh_from_db()
+        self.assertEqual(self.theme.series_id, self.series.pk)
+        self.assertEqual(self.arc.series_id, self.series.pk)
+
+    def test_backfill_leaves_orphans_and_scoped_rows_alone(self):
+        orphan = Theme.objects.create(
+            fabula_uuid='theme_orphan', name='Orphan', description='x')
+
+        self._run_backfill()
+
+        orphan.refresh_from_db()
+        self.theme.refresh_from_db()
+        self.assertIsNone(orphan.series)
+        # Already-scoped rows keep their FK untouched
+        self.assertEqual(self.theme.series_id, self.series.pk)
+
+
 class CharacterSeasonProfileTest(WagtailTestMixin, TestCase):
     """T-027: per-season character portraits + arc_summary."""
 

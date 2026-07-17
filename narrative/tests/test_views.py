@@ -452,6 +452,105 @@ class ArcTimelineViewTest(StorylineTimelineFixtureMixin, TestCase):
         self.assertContains(response, 'Involved Characters')
 
 
+class SeriesScopedStorylineTestMixin(ViewTestMixin):
+    """A second series with its own theme/arc, to prove scoping (T-031)."""
+
+    @classmethod
+    def setUpTestData(cls):
+        super().setUpTestData()
+        root = Page.objects.get(depth=1)
+        cls.series2 = SeriesIndexPage(
+            title='Other Series', slug='other-series', fabula_uuid='series_002',
+        )
+        root.add_child(instance=cls.series2)
+        cls.other_theme = Theme.objects.create(
+            fabula_uuid='theme_other', name='Loyalty',
+            description='Loyalty under pressure', series=cls.series2,
+        )
+        cls.other_arc = ConflictArc.objects.create(
+            fabula_uuid='arc_other', title='Border Dispute',
+            description='A territorial conflict',
+            arc_type=ArcType.INTERPERSONAL, series=cls.series2,
+        )
+        # Junction rows so counts/spans have data in the first series
+        ArcEventMembership.objects.create(
+            event=cls.event1, arc=cls.arc, episode_ordinal=101)
+        ThemeEventMembership.objects.create(
+            event=cls.event1, theme=cls.theme, episode_ordinal=101)
+        ThemeEventMembership.objects.create(
+            event=cls.event2, theme=cls.theme, episode_ordinal=101)
+
+
+class SeriesScopedIndexViewTest(SeriesScopedStorylineTestMixin, TestCase):
+    """T-031: /explore/<series>/themes|arcs/ filter by series FK
+    (the routes existed but rendered global data)."""
+
+    def test_series_theme_index_scopes(self):
+        response = self.client.get(
+            reverse('series_theme_index', kwargs={'series_slug': 'test-series'}))
+        self.assertEqual(response.status_code, 200)
+        self.assertEqual(
+            [t.pk for t in response.context['themes']], [self.theme.pk])
+
+        response = self.client.get(
+            reverse('series_theme_index', kwargs={'series_slug': 'other-series'}))
+        self.assertEqual(
+            [t.pk for t in response.context['themes']], [self.other_theme.pk])
+
+    def test_series_arc_index_scopes(self):
+        response = self.client.get(
+            reverse('series_arc_index', kwargs={'series_slug': 'test-series'}))
+        self.assertEqual(response.status_code, 200)
+        self.assertEqual(
+            [a.pk for a in response.context['arcs']], [self.arc.pk])
+
+        response = self.client.get(
+            reverse('series_arc_index', kwargs={'series_slug': 'other-series'}))
+        self.assertEqual(
+            [a.pk for a in response.context['arcs']], [self.other_arc.pk])
+
+    def test_unknown_series_404s(self):
+        response = self.client.get(
+            reverse('series_theme_index', kwargs={'series_slug': 'no-such-series'}))
+        self.assertEqual(response.status_code, 404)
+
+
+class StorylineIndexViewTest(SeriesScopedStorylineTestMixin, TestCase):
+    """T-031: /explore/<series>/storylines/ interleaves arcs + themes."""
+
+    def test_interleaves_by_event_count(self):
+        response = self.client.get(
+            reverse('series_storyline_index', kwargs={'series_slug': 'test-series'}))
+        self.assertEqual(response.status_code, 200)
+        storylines = response.context['storylines']
+        # theme has 2 memberships, arc has 1 — count-descending interleave
+        self.assertEqual(
+            [(s['kind'], s['event_count']) for s in storylines],
+            [('theme', 2), ('arc', 1)],
+        )
+        self.assertEqual(response.context['arc_count'], 1)
+        self.assertEqual(response.context['theme_count'], 1)
+        # Single-season span computed from episode_ordinal
+        self.assertEqual(storylines[0]['season_lo'], 1)
+        self.assertEqual(storylines[0]['season_hi'], 1)
+
+    def test_scopes_to_series(self):
+        response = self.client.get(
+            reverse('series_storyline_index', kwargs={'series_slug': 'other-series'}))
+        self.assertEqual(response.status_code, 200)
+        pks = {(s['kind'], s['obj'].pk) for s in response.context['storylines']}
+        self.assertEqual(
+            pks, {('theme', self.other_theme.pk), ('arc', self.other_arc.pk)})
+
+    def test_renders_cards_as_links(self):
+        response = self.client.get(
+            reverse('series_storyline_index', kwargs={'series_slug': 'test-series'}))
+        self.assertContains(response, self.theme.get_absolute_url())
+        self.assertContains(response, self.arc.get_absolute_url())
+        self.assertContains(response, 'Conflict Arc')
+        self.assertContains(response, 'Theme')
+
+
 class ThemeTimelineViewTest(StorylineTimelineFixtureMixin, TestCase):
 
     def test_timeline_groups_across_seasons(self):

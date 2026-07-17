@@ -1,0 +1,99 @@
+{% extends "base.html" %}
+{% load narrative_tags %}
+
+{% block title %}Storylines — {{ current_series.title|md_plain }}{% endblock %}
+
+{% block series_context %}
+<span class="text-sm" style="color: var(--f-fg-placeholder); font-size: 0.875rem; font-weight: 500;">Storylines</span>
+{% endblock %}
+
+{% block content %}
+<article class="min-h-screen pb-16">
+    {# Hero section #}
+    <div class="py-14" style="background: var(--f-bg-hero);">
+        <div class="max-w-4xl mx-auto px-6">
+            <div class="flex items-center gap-2 text-sm mb-4">
+                <i data-lucide="route" class="w-4 h-4" style="color: var(--f-accent-orange);"></i>
+                <span class="font-medium" style="color: var(--f-accent-orange);">Storylines</span>
+            </div>
+
+            <h1 class="mb-4 leading-tight" style="font-family: var(--f-font-display); color: var(--f-fg-heading); font-size: clamp(2rem, 4vw, 2.5rem); letter-spacing: -0.02em; font-weight: 400;">
+                Storylines in {{ current_series.title|md_plain }}
+            </h1>
+
+            <p class="leading-relaxed max-w-3xl" style="color: var(--f-fg-tertiary); font-size: 1.1rem; line-height: 1.7;">
+                The conflicts and themes that run through the narrative — each one
+                traceable across episodes and seasons, event by event.
+            </p>
+
+            <div class="flex items-center gap-4 mt-6 flex-wrap">
+                <div class="flex items-center gap-2">
+                    <i data-lucide="trending-up" class="w-4 h-4" style="color: var(--f-accent-orange);"></i>
+                    <span class="text-sm" style="color: var(--f-fg-tertiary);">{{ arc_count }} conflict arc{{ arc_count|pluralize }}</span>
+                </div>
+                <div class="flex items-center gap-2">
+                    <i data-lucide="sparkles" class="w-4 h-4" style="color: var(--f-accent-violet);"></i>
+                    <span class="text-sm" style="color: var(--f-fg-tertiary);">{{ theme_count }} theme{{ theme_count|pluralize }}</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="max-w-4xl mx-auto px-6 pt-6">
+        <hr style="border-color: var(--f-rule-color);" class="mb-8">
+
+        <div class="space-y-4">
+            {% for storyline in storylines %}
+            <a href="{{ storyline.obj.get_absolute_url }}"
+               class="block p-5 rounded-lg transition-all duration-200 group f-hover-card"
+               style="background: var(--f-card-bg); border: 1px solid var(--f-card-border);">
+                <div class="flex items-start justify-between gap-4 mb-3">
+                    <div class="flex items-center gap-3 flex-wrap">
+                        {% if storyline.kind == 'arc' %}
+                        <span class="flex items-center gap-1.5 px-2 py-0.5 text-xs font-medium rounded"
+                              style="background: color-mix(in srgb, var(--f-accent-orange) 8%, transparent); color: var(--f-accent-orange); border: 1px solid color-mix(in srgb, var(--f-accent-orange) 20%, transparent);">
+                            <i data-lucide="trending-up" class="w-3.5 h-3.5" aria-hidden="true"></i>
+                            Conflict Arc
+                        </span>
+                        {% else %}
+                        <span class="flex items-center gap-1.5 px-2 py-0.5 text-xs font-medium rounded"
+                              style="background: color-mix(in srgb, var(--f-accent-violet) 8%, transparent); color: var(--f-accent-violet); border: 1px solid color-mix(in srgb, var(--f-accent-violet) 20%, transparent);">
+                            <i data-lucide="sparkles" class="w-3.5 h-3.5" aria-hidden="true"></i>
+                            Theme
+                        </span>
+                        {% endif %}
+                        <h2 class="text-lg font-medium transition-colors" style="font-family: var(--f-font-display); color: var(--f-fg-heading);">
+                            {{ storyline.title|md }}
+                        </h2>
+                        {% if storyline.kind == 'arc' %}
+                        <span class="px-2 py-0.5 text-xs rounded" style="background: var(--f-bg-elevated); color: var(--f-fg-secondary); border: 1px solid var(--f-border-light);">
+                            {{ storyline.obj.get_arc_type_display }}
+                        </span>
+                        {% endif %}
+                    </div>
+                    <div class="shrink-0 flex items-center gap-2">
+                        {% if storyline.season_lo %}
+                        <span class="px-2 py-0.5 text-xs rounded" style="background: var(--f-bg-elevated); color: var(--f-fg-secondary); border: 1px solid var(--f-border-light); font-family: var(--f-font-mono);">
+                            {% if storyline.season_lo == storyline.season_hi %}S{{ storyline.season_lo }}{% else %}S{{ storyline.season_lo }}–S{{ storyline.season_hi }}{% endif %}
+                        </span>
+                        {% endif %}
+                        <span class="px-2 py-0.5 text-xs rounded" style="background: color-mix(in srgb, var(--f-accent-orange) 8%, transparent); color: var(--f-accent-orange);">
+                            {{ storyline.event_count }} event{{ storyline.event_count|pluralize }}
+                        </span>
+                    </div>
+                </div>
+
+                <p class="leading-relaxed" style="color: var(--f-fg-tertiary);">
+                    {{ storyline.obj.description|md_plain|truncatewords:40 }}
+                </p>
+            </a>
+            {% empty %}
+            <div class="text-sm p-4 rounded-lg" style="background: var(--f-bg-elevated); border: 1px solid var(--f-border-light); color: var(--f-fg-placeholder);">
+                No storylines found for this series
+            </div>
+            {% endfor %}
+            {% include "narrative/includes/pagination.html" %}
+        </div>
+    </div>
+</article>
+{% endblock %}

@@ -79,6 +79,11 @@ series_patterns = [
          views.ConnectionTypeView.as_view(),
          name='series_connection_type_list'),
 
+    # Storylines (arcs + themes interleaved)
+    path('storylines/',
+         views.StorylineIndexView.as_view(),
+         name='series_storyline_index'),
+
     # Themes
     path('themes/',
          views.ThemeIndexView.as_view(),
