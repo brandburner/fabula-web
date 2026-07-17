@@ -314,9 +314,10 @@
                             @click="select({{ sp.season_number }})"
                             class="px-4 py-2 text-sm font-medium rounded-md transition-all duration-200"
                             style="outline-offset: 2px;"
+                            {# unselected label uses --f-fg-secondary: --f-fg-tertiary computes ~4.2:1 on --f-bg-elevated, under WCAG AA (lens review) #}
                             :style="selected === {{ sp.season_number }}
                                 ? 'outline-offset: 2px; background: var(--f-accent-blue-bg); color: var(--f-accent-blue-fg); border: 1px solid color-mix(in srgb, var(--f-accent-blue) 40%, transparent);'
-                                : 'outline-offset: 2px; background: var(--f-bg-elevated); color: var(--f-fg-tertiary); border: 1px solid var(--f-border-light);'">
+                                : 'outline-offset: 2px; background: var(--f-bg-elevated); color: var(--f-fg-secondary); border: 1px solid var(--f-border-light);'">
                         Season {{ sp.season_number }}
                     </button>
                     {% endfor %}

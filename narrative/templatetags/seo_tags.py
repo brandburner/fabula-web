@@ -122,9 +122,22 @@ def _fabula_context():
 
 
 def _jsonld(data):
-    """Render a JSON-LD script tag."""
+    """Render a JSON-LD script tag.
+
+    json.dumps leaves '<', '>' and '&' intact, so a value containing
+    '</script>' would otherwise break out of the block (mark_safe
+    disables Django's auto-escaping). Escaping them as \\uXXXX keeps
+    the payload identical after JSON parsing while making breakout
+    impossible regardless of field provenance.
+    """
+    payload = json.dumps(data, indent=2)
+    payload = (
+        payload.replace('&', '\\u0026')
+        .replace('<', '\\u003c')
+        .replace('>', '\\u003e')
+    )
     return mark_safe(
-        f'<script type="application/ld+json">\n{json.dumps(data, indent=2)}\n</script>'
+        f'<script type="application/ld+json">\n{payload}\n</script>'
     )
 
 
@@ -658,7 +671,7 @@ def connection_jsonld(context, connection):
             connection.cross_episode_reasoning)
 
     if connection.inferred_by:
-        conn_node["fabula:inferredBy"] = connection.inferred_by
+        conn_node["fabula:inferredBy"] = _strip_html(connection.inferred_by)
 
     if connection.description:
         conn_node["description"] = _truncate(connection.description)

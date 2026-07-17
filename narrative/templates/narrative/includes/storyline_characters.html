@@ -1,0 +1,21 @@
+{% comment %}
+Character-evidence chip rail for storyline detail pages (arc + theme).
+Params: characters (queryset), heading (e.g. "Involved Characters").
+{% endcomment %}
+{% load narrative_tags %}
+{% if characters %}
+<div class="mt-6">
+    <h2 class="text-xs uppercase tracking-wide mb-2" style="color: var(--f-fg-placeholder); letter-spacing: 0.08em;">{{ heading }}</h2>
+    <ul class="flex flex-wrap gap-2 list-none p-0 m-0">
+        {% for character in characters %}
+        <li>
+            <a href="{% narrative_url character %}"
+               class="inline-block px-3 py-1.5 text-sm rounded-md transition-colors f-hover-bg-accent"
+               style="background: color-mix(in srgb, var(--f-accent-green) 8%, transparent); color: var(--f-accent-green); border: 1px solid color-mix(in srgb, var(--f-accent-green) 20%, transparent);">
+                {{ character.canonical_name|default:character.title }}
+            </a>
+        </li>
+        {% endfor %}
+    </ul>
+</div>
+{% endif %}

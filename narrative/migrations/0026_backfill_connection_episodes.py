@@ -8,14 +8,19 @@
 # for generality — prod or other legacy DBs may differ.
 
 from django.db import migrations
-from django.db.models import F, OuterRef, Subquery
+from django.db.models import F, OuterRef, Q, Subquery
 
 
 def backfill(apps, schema_editor):
     NarrativeConnection = apps.get_model('narrative', 'NarrativeConnection')
     EventPage = apps.get_model('narrative', 'EventPage')
 
-    NarrativeConnection.objects.filter(from_episode__isnull=True).update(
+    # Select rows with EITHER endpoint missing (an asymmetric state can
+    # exist after a partial episode deletion); recomputing a
+    # already-set FK from its event is a no-op, so setting both is safe.
+    NarrativeConnection.objects.filter(
+        Q(from_episode__isnull=True) | Q(to_episode__isnull=True)
+    ).update(
         from_episode=Subquery(
             EventPage.objects.filter(pk=OuterRef('from_event')).values('episode')[:1]),
         to_episode=Subquery(

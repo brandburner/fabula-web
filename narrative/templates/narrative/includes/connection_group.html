@@ -1,0 +1,20 @@
+{% comment %}
+One labeled group of connection cards on the event page (T-032 split
+renders four of these: within/across x incoming/outgoing).
+Params: connections (queryset), label, icon (Lucide name),
+        icon_accent (CSS var name), direction ('incoming'|'outgoing').
+{% endcomment %}
+{% if connections %}
+<div class="mb-8">
+    <div class="flex items-center gap-2 text-sm font-medium mb-4 uppercase tracking-wider" style="color: var(--f-fg-placeholder); letter-spacing: 0.08em;">
+        <i data-lucide="{{ icon }}" class="w-4 h-4" style="color: var({{ icon_accent }});"></i>
+        <span>{{ label }}</span>
+        <span class="px-2 py-0.5 text-xs rounded" style="background: var(--f-bg-elevated); color: var(--f-fg-placeholder);">{{ connections.count }}</span>
+    </div>
+    <div class="space-y-3">
+        {% for connection in connections %}
+            {% include "includes/connection_card.html" with connection=connection direction=direction %}
+        {% endfor %}
+    </div>
+</div>
+{% endif %}

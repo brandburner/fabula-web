@@ -1,0 +1,93 @@
+{% comment %}
+Season → episode → event timeline for storyline detail pages (arc + theme).
+Params:
+  timeline_seasons / unplaced_memberships — from StorylineTimelineMixin
+  id_prefix  — 'arc' | 'theme' (heading ids for aria-labelledby)
+  heading    — section heading text
+  icon       — Lucide icon name for the heading
+  accent     — CSS custom property name, e.g. '--f-accent-orange'
+  empty_message — text when the storyline has no events
+  show_roles — arc only: render START/CLIMAX/RESOLUTION badges
+{% endcomment %}
+{% load narrative_tags %}
+<section aria-labelledby="{{ id_prefix }}-timeline-heading">
+    <div class="flex items-center gap-2 mb-6">
+        <i data-lucide="{{ icon }}" class="w-5 h-5" style="color: var({{ accent }});"></i>
+        <h2 id="{{ id_prefix }}-timeline-heading" style="font-family: var(--f-font-display); color: var(--f-fg-heading); font-size: 1.15rem; font-weight: 400;">{{ heading }}</h2>
+    </div>
+
+    {% for season in timeline_seasons %}
+    <section class="mb-10" aria-labelledby="{{ id_prefix }}-season-{{ season.number }}-heading">
+        <div class="flex items-baseline gap-3 mb-4">
+            <h3 id="{{ id_prefix }}-season-{{ season.number }}-heading" style="font-family: var(--f-font-display); color: var(--f-fg-heading); font-size: 1rem; font-weight: 500;">Season {{ season.number }}</h3>
+            <span class="text-xs" style="color: var(--f-fg-placeholder);">{{ season.count }} event{{ season.count|pluralize }}</span>
+        </div>
+
+        {% for group in season.episodes %}
+        <div class="mb-6 pl-4" style="border-left: 2px solid color-mix(in srgb, var({{ accent }}) 25%, transparent);">
+            <a href="{% narrative_url group.episode %}"
+               class="text-xs font-medium transition-colors f-hover-accent"
+               style="color: var(--f-fg-placeholder); font-family: var(--f-font-mono);">
+                S{{ season.number }}E{{ group.episode.episode_number }} · {{ group.episode.title }}
+            </a>
+            <div class="mt-2 space-y-3">
+                {% for membership in group.memberships %}
+                <a href="{% narrative_url membership.event %}"
+                   class="block p-4 rounded-lg transition-all duration-200 group f-hover-card"
+                   style="background: var(--f-card-bg); border: 1px solid var(--f-card-border); box-shadow: var(--f-card-shadow);">
+                    <div class="flex items-start justify-between gap-4">
+                        <div class="flex-1">
+                            <div class="font-medium mb-2 leading-snug" style="font-family: var(--f-font-display); color: var(--f-fg-heading);">
+                                {{ membership.event.title|md }}
+                            </div>
+                            <p class="text-sm line-clamp-2" style="color: var(--f-fg-tertiary);">
+                                {{ membership.event.description|md|striptags|truncatewords:30 }}
+                            </p>
+                        </div>
+                        {% if show_roles %}
+                        {% if membership.role == 'START' %}
+                        <span class="shrink-0 px-2 py-0.5 text-xs font-medium rounded" aria-label="Arc role: Start"
+                              style="background: var(--f-accent-green-bg); color: var(--f-accent-green-fg); border: 1px solid color-mix(in srgb, var(--f-accent-green) 25%, transparent);">Start</span>
+                        {% elif membership.role == 'CLIMAX' %}
+                        <span class="shrink-0 px-2 py-0.5 text-xs font-medium rounded" aria-label="Arc role: Climax"
+                              style="background: var(--f-accent-rose-bg); color: var(--f-accent-rose-fg); border: 1px solid color-mix(in srgb, var(--f-accent-rose) 25%, transparent);">Climax</span>
+                        {% elif membership.role == 'RESOLUTION' %}
+                        <span class="shrink-0 px-2 py-0.5 text-xs font-medium rounded" aria-label="Arc role: Resolution"
+                              style="background: var(--f-accent-blue-bg); color: var(--f-accent-blue-fg); border: 1px solid color-mix(in srgb, var(--f-accent-blue) 25%, transparent);">Resolution</span>
+                        {% endif %}
+                        {% endif %}
+                    </div>
+                </a>
+                {% endfor %}
+            </div>
+        </div>
+        {% endfor %}
+    </section>
+    {% empty %}
+    <div class="text-sm p-4 rounded-lg text-center" style="color: var(--f-fg-tertiary); background: var(--f-bg-elevated); border: 1px solid var(--f-border-light);">
+        {{ empty_message }}
+    </div>
+    {% endfor %}
+
+    {% if unplaced_memberships %}
+    <section class="mb-10" aria-labelledby="{{ id_prefix }}-unplaced-heading">
+        <div class="flex items-baseline gap-3 mb-4">
+            <h3 id="{{ id_prefix }}-unplaced-heading" style="font-family: var(--f-font-display); color: var(--f-fg-heading); font-size: 1rem; font-weight: 500;">Not yet placed in an episode</h3>
+        </div>
+        <div class="space-y-3">
+            {% for membership in unplaced_memberships %}
+            <a href="{% narrative_url membership.event %}"
+               class="block p-4 rounded-lg transition-all duration-200 f-hover-card"
+               style="background: var(--f-card-bg); border: 1px solid var(--f-card-border); box-shadow: var(--f-card-shadow);">
+                <div class="font-medium mb-2 leading-snug" style="font-family: var(--f-font-display); color: var(--f-fg-heading);">
+                    {{ membership.event.title|md }}
+                </div>
+                <p class="text-sm line-clamp-2" style="color: var(--f-fg-tertiary);">
+                    {{ membership.event.description|md|striptags|truncatewords:30 }}
+                </p>
+            </a>
+            {% endfor %}
+        </div>
+    </section>
+    {% endif %}
+</section>

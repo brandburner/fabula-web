@@ -1124,8 +1124,34 @@ class ConnectionEpisodeBackfillTest(WagtailTestMixin, TestCase):
 
         row.refresh_from_db()
         # Deliberately "wrong" FKs prove the update never touches
-        # rows whose from_episode is already populated
+        # rows whose episode FKs are both already populated
         self.assertEqual(row.from_episode_id, self.episode2.pk)
+
+    def test_backfill_repairs_asymmetric_null_fks(self):
+        # Lens review (Phase 3): a row with only ONE endpoint missing —
+        # the state a partial episode deletion leaves behind — must be
+        # selected and repaired, in both directions.
+        to_null = NarrativeConnection.objects.create(
+            from_event=self.event1, to_event=self.event3,
+            connection_type=ConnectionType.CALLBACK,
+            description='from set, to missing',
+            from_episode=self.episode, to_episode=None,
+        )
+        from_null = NarrativeConnection.objects.create(
+            from_event=self.event2, to_event=self.event3,
+            connection_type=ConnectionType.TEMPORAL,
+            description='from missing, to set',
+            from_episode=None, to_episode=self.episode2,
+        )
+
+        self._run_backfill()
+
+        to_null.refresh_from_db()
+        from_null.refresh_from_db()
+        self.assertEqual(to_null.to_episode_id, self.episode2.pk)
+        self.assertEqual(to_null.scope, 'cross_episode')
+        self.assertEqual(from_null.from_episode_id, self.episode.pk)
+        self.assertEqual(from_null.scope, 'cross_episode')
 
 
 class CharacterSeasonProfileTest(WagtailTestMixin, TestCase):

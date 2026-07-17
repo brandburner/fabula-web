@@ -180,12 +180,21 @@ class SeriesScopedMixin:
     """
 
     def get_series(self):
-        """Get the current series from URL kwargs or return first available."""
-        series_slug = self.kwargs.get('series_slug')
-        if series_slug:
-            return get_object_or_404(SeriesIndexPage.objects.live(), slug=series_slug)
-        # Fallback to first series if no slug provided
-        return SeriesIndexPage.objects.live().first()
+        """Get the current series from URL kwargs or return first available.
+
+        Memoized per request — views call this from get_queryset,
+        get_context_data, and queryset helpers, and each call would
+        otherwise repeat the same SeriesIndexPage lookup.
+        """
+        if not hasattr(self, '_series'):
+            series_slug = self.kwargs.get('series_slug')
+            if series_slug:
+                self._series = get_object_or_404(
+                    SeriesIndexPage.objects.live(), slug=series_slug)
+            else:
+                # Fallback to first series if no slug provided
+                self._series = SeriesIndexPage.objects.live().first()
+        return self._series
 
     def get_series_queryset(self, base_queryset):
         """
@@ -652,12 +661,18 @@ class ArcDetailView(StorylineTimelineMixin, FlexibleIdentifierMixin,
 # STORYLINES INDEX (arcs + themes interleaved)
 # =============================================================================
 
+@method_decorator(cache_page(60 * 60 * 24), name='dispatch')  # 24h cache; data changes only on import
 class StorylineIndexView(SeriesScopedMixin, TemplateView):
     """
     /explore/<series>/storylines/ — conflict arcs and themes interleaved
     as one storyline catalog (T-031; presentation-only, no new model).
     Cards carry membership counts and season spans from the junction
     tables, sorted by event count.
+
+    The interleave materializes both querysets and paginates in memory:
+    storylines are curated (tens per series, not thousands), so the
+    cross-model sort is cheaper done in Python than as a DB merge, and
+    the 24h cache bounds the per-request cost.
     """
     template_name = 'narrative/storyline_index.html'
     paginate_by = 48
@@ -937,29 +952,41 @@ class CharacterDetailView(FlexibleIdentifierMixin, CanonicalURLMixin, DetailView
         context['participations'] = participations
 
         # Interleave episode-profile cards into the journey (T-033):
-        # each episode's portrait leads its participations. Sort key is
-        # (episode, profile-before-events, scene).
+        # each episode's portrait leads its participations.
         profiles = CharacterEpisodeProfile.objects.filter(
             character=character,
             episode__season_number=selected_season,
         ).select_related('episode') if selected_season is not None else []
-        items = [
-            (p.episode.episode_number, 0, 0, {'kind': 'profile', 'profile': p})
-            for p in profiles
-        ]
-        items += [
-            (part.event.episode.episode_number, 1, part.event.scene_sequence or 0,
-             {'kind': 'participation', 'participation': part})
-            for part in participations
-        ]
-        items.sort(key=lambda entry: entry[:3])
-        context['journey_items'] = [entry[3] for entry in items]
+        context['journey_items'] = self._build_journey_items(
+            profiles, participations)
 
         # Cross-season layer (megagraph series): arc summary text lives on
         # the page; per-season portraits drive the ARIA tabs.
         context['season_profiles'] = list(character.season_profiles.all())
 
         return context
+
+    @staticmethod
+    def _build_journey_items(profiles, participations):
+        """Merge episode profiles and participations into one timeline,
+        ordered by episode with each episode's profile card leading its
+        participations (which keep scene order)."""
+        def ordering(episode_number, profile_leads, scene):
+            return (episode_number, 0 if profile_leads else 1, scene)
+
+        items = [
+            (ordering(p.episode.episode_number, True, 0),
+             {'kind': 'profile', 'profile': p})
+            for p in profiles
+        ]
+        items += [
+            (ordering(part.event.episode.episode_number, False,
+                      part.event.scene_sequence or 0),
+             {'kind': 'participation', 'participation': part})
+            for part in participations
+        ]
+        items.sort(key=lambda entry: entry[0])
+        return [payload for _, payload in items]
 
 
 class OrganizationIndexView(SeasonFilterMixin, SeriesScopedMixin, ListView):

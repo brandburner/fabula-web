@@ -28,3 +28,14 @@ EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 
 # Simplified static files for dev
 STATICFILES_STORAGE = 'django.contrib.staticfiles.storage.StaticFilesStorage'
+
+# Dev keeps the (per-process) local-memory cache: the test runner would
+# need a cache table created inside every test database for the
+# production DatabaseCache backend, and dev correctness doesn't depend
+# on cross-process invalidation — restart runserver after an import if
+# a cache_page view looks stale.
+CACHES = {
+    'default': {
+        'BACKEND': 'django.core.cache.backends.locmem.LocMemCache',
+    }
+}

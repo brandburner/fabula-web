@@ -271,10 +271,22 @@ class Command(BaseCommand):
 
             # Detail views are wrapped in cache_page(24h) on the premise
             # that data only changes on import — so imports must clear it.
+            # Reaches serving workers only on a shared backend (production
+            # uses DatabaseCache); dev's LocMemCache is per-process, so a
+            # separate runserver keeps its own cache until restarted.
             if not self.dry_run:
                 from django.core.cache import cache
+                backend = type(cache).__name__
                 cache.clear()
-                self.stdout.write("Cleared page cache (cached views will rebuild)")
+                if backend == 'LocMemCache':
+                    self.stdout.write(
+                        "Cleared this process's page cache (LocMemCache is "
+                        "per-process — restart any separate serving process "
+                        "to drop its cached pages)")
+                else:
+                    self.stdout.write(
+                        f"Cleared shared page cache ({backend}); cached "
+                        "views will rebuild")
 
         except Exception as e:
             self.stdout.write(self.style.ERROR(f"\nImport failed: {str(e)}"))

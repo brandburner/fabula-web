@@ -1233,7 +1233,7 @@ class EventPage(Page):
             'incoming': self.get_connections_to(),
         }
 
-    def connections_by_scope(self):
+    def get_connections_by_scope(self):
         """Incoming/outgoing connections split into within-episode vs
         across-episode groups (T-032 — the storyline surfaces read the
         scope discriminator, not raw related managers)."""

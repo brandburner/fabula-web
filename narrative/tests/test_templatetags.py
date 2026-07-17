@@ -315,3 +315,22 @@ class TemplateRenderingTest(TestCase):
         template = Template('{% load narrative_tags %}{{ value|replace:"_: " }}')
         result = template.render(Context({'value': 'hello_world'}))
         self.assertEqual(result.strip(), 'hello world')
+
+
+class JsonldSinkEscapeTest(TestCase):
+    """Lens review (Phase 3): no field value may close the JSON-LD
+    <script> block — json.dumps leaves '<' and '>' intact, so the
+    _jsonld sink escapes them as \\uXXXX (identical after JSON parse)."""
+
+    def test_jsonld_escapes_breakout_characters(self):
+        import json as json_mod
+        from narrative.templatetags.seo_tags import _jsonld
+
+        payload = '</script><img src=x onerror=alert(1)>'
+        html = _jsonld({'x': payload})
+
+        self.assertNotIn('</script><img', html)
+        self.assertIn('\\u003c/script\\u003e', html)
+        # The escaped payload round-trips identically after JSON parsing
+        inner = html.split('>', 1)[1].rsplit('<', 1)[0]
+        self.assertEqual(json_mod.loads(inner)['x'], payload)

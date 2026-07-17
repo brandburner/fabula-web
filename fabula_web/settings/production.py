@@ -52,3 +52,17 @@ LOGGING = {
         'level': 'INFO',
     },
 }
+
+# Page cache shared across processes (lens review, Phase 3). cache_page
+# entries must be reachable by BOTH gunicorn workers and by management
+# commands (import_fabula clears the cache after every import) — the
+# default LocMemCache is per-process, so a CLI clear never reached the
+# serving workers and pages stayed stale for up to 24h. DatabaseCache
+# rides the existing PostgreSQL instance; the table is created by
+# `createcachetable` in the deploy startCommand (idempotent).
+CACHES = {
+    'default': {
+        'BACKEND': 'django.core.cache.backends.db.DatabaseCache',
+        'LOCATION': 'django_cache',
+    }
+}

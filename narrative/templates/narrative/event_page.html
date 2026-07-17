@@ -301,7 +301,7 @@
                 </div>
             </div>
 
-            {% with conns=page.connections_by_scope %}
+            {% with conns=page.get_connections_by_scope %}
             {% with within_in=conns.within.incoming within_out=conns.within.outgoing across_in=conns.across.incoming across_out=conns.across.outgoing %}
 
             {# Within this episode #}
@@ -311,36 +311,8 @@
                     <i data-lucide="circle-dot" class="w-4 h-4" style="color: var(--f-accent-primary);" aria-hidden="true"></i>
                     Within this episode
                 </h3>
-
-                {% if within_in %}
-                <div class="mb-8">
-                    <div class="flex items-center gap-2 text-sm font-medium mb-4 uppercase tracking-wider" style="color: var(--f-fg-placeholder); letter-spacing: 0.08em;">
-                        <i data-lucide="arrow-down" class="w-4 h-4" style="color: var(--f-accent-cyan);"></i>
-                        <span>What led here</span>
-                        <span class="px-2 py-0.5 text-xs rounded" style="background: var(--f-bg-elevated); color: var(--f-fg-placeholder);">{{ within_in.count }}</span>
-                    </div>
-                    <div class="space-y-3">
-                        {% for connection in within_in %}
-                            {% include "includes/connection_card.html" with connection=connection direction="incoming" %}
-                        {% endfor %}
-                    </div>
-                </div>
-                {% endif %}
-
-                {% if within_out %}
-                <div class="mb-6">
-                    <div class="flex items-center gap-2 text-sm font-medium mb-4 uppercase tracking-wider" style="color: var(--f-fg-placeholder); letter-spacing: 0.08em;">
-                        <i data-lucide="arrow-up" class="w-4 h-4" style="color: var(--f-accent-primary);"></i>
-                        <span>What this causes</span>
-                        <span class="px-2 py-0.5 text-xs rounded" style="background: var(--f-bg-elevated); color: var(--f-fg-placeholder);">{{ within_out.count }}</span>
-                    </div>
-                    <div class="space-y-3">
-                        {% for connection in within_out %}
-                            {% include "includes/connection_card.html" with connection=connection direction="outgoing" %}
-                        {% endfor %}
-                    </div>
-                </div>
-                {% endif %}
+                {% include "narrative/includes/connection_group.html" with connections=within_in label="What led here" icon="arrow-down" icon_accent="--f-accent-cyan" direction="incoming" %}
+                {% include "narrative/includes/connection_group.html" with connections=within_out label="What this causes" icon="arrow-up" icon_accent="--f-accent-primary" direction="outgoing" %}
             </div>
             {% endif %}
 
@@ -351,36 +323,8 @@
                     <i data-lucide="git-branch" class="w-4 h-4" style="color: var(--f-accent-cyan);" aria-hidden="true"></i>
                     Across episodes
                 </h3>
-
-                {% if across_in %}
-                <div class="mb-8">
-                    <div class="flex items-center gap-2 text-sm font-medium mb-4 uppercase tracking-wider" style="color: var(--f-fg-placeholder); letter-spacing: 0.08em;">
-                        <i data-lucide="arrow-down" class="w-4 h-4" style="color: var(--f-accent-cyan);"></i>
-                        <span>Threads arriving here</span>
-                        <span class="px-2 py-0.5 text-xs rounded" style="background: var(--f-bg-elevated); color: var(--f-fg-placeholder);">{{ across_in.count }}</span>
-                    </div>
-                    <div class="space-y-3">
-                        {% for connection in across_in %}
-                            {% include "includes/connection_card.html" with connection=connection direction="incoming" %}
-                        {% endfor %}
-                    </div>
-                </div>
-                {% endif %}
-
-                {% if across_out %}
-                <div class="mb-6">
-                    <div class="flex items-center gap-2 text-sm font-medium mb-4 uppercase tracking-wider" style="color: var(--f-fg-placeholder); letter-spacing: 0.08em;">
-                        <i data-lucide="arrow-up" class="w-4 h-4" style="color: var(--f-accent-primary);"></i>
-                        <span>Threads leading onward</span>
-                        <span class="px-2 py-0.5 text-xs rounded" style="background: var(--f-bg-elevated); color: var(--f-fg-placeholder);">{{ across_out.count }}</span>
-                    </div>
-                    <div class="space-y-3">
-                        {% for connection in across_out %}
-                            {% include "includes/connection_card.html" with connection=connection direction="outgoing" %}
-                        {% endfor %}
-                    </div>
-                </div>
-                {% endif %}
+                {% include "narrative/includes/connection_group.html" with connections=across_in label="Threads arriving here" icon="arrow-down" icon_accent="--f-accent-cyan" direction="incoming" %}
+                {% include "narrative/includes/connection_group.html" with connections=across_out label="Threads leading onward" icon="arrow-up" icon_accent="--f-accent-primary" direction="outgoing" %}
             </div>
             {% endif %}
 

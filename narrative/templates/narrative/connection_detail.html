@@ -38,22 +38,12 @@
                     {{ connection.strength }} strength
                 </span>
                 {% if connection.scope == 'cross_episode' and connection.from_episode and connection.to_episode %}
-                {% if connection.connection_type == 'FORESHADOWING' %}
+                {% with from_ep=connection.from_episode to_ep=connection.to_episode %}
                 <span class="px-3 py-1.5 text-sm font-medium rounded-lg"
                       style="background: var(--f-bg-elevated); color: var(--f-fg-secondary); border: 1px solid var(--f-border-default); font-family: var(--f-font-mono);">
-                    Seeded in S{{ connection.from_episode.season_number }}E{{ connection.from_episode.episode_number }} → pays off in S{{ connection.to_episode.season_number }}E{{ connection.to_episode.episode_number }}
+                    {% if connection.connection_type == 'FORESHADOWING' %}Seeded in S{{ from_ep.season_number }}E{{ from_ep.episode_number }} → pays off in S{{ to_ep.season_number }}E{{ to_ep.episode_number }}{% elif connection.connection_type == 'CALLBACK' %}Set in S{{ from_ep.season_number }}E{{ from_ep.episode_number }} → called back in S{{ to_ep.season_number }}E{{ to_ep.episode_number }}{% else %}S{{ from_ep.season_number }}E{{ from_ep.episode_number }} → S{{ to_ep.season_number }}E{{ to_ep.episode_number }}{% endif %}
                 </span>
-                {% elif connection.connection_type == 'CALLBACK' %}
-                <span class="px-3 py-1.5 text-sm font-medium rounded-lg"
-                      style="background: var(--f-bg-elevated); color: var(--f-fg-secondary); border: 1px solid var(--f-border-default); font-family: var(--f-font-mono);">
-                    Set in S{{ connection.from_episode.season_number }}E{{ connection.from_episode.episode_number }} → called back in S{{ connection.to_episode.season_number }}E{{ connection.to_episode.episode_number }}
-                </span>
-                {% else %}
-                <span class="px-3 py-1.5 text-sm font-medium rounded-lg"
-                      style="background: var(--f-bg-elevated); color: var(--f-fg-secondary); border: 1px solid var(--f-border-default); font-family: var(--f-font-mono);">
-                    S{{ connection.from_episode.season_number }}E{{ connection.from_episode.episode_number }} → S{{ connection.to_episode.season_number }}E{{ connection.to_episode.episode_number }}
-                </span>
-                {% endif %}
+                {% endwith %}
                 {% endif %}
             </div>
 

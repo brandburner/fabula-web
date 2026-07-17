@@ -710,7 +710,7 @@ class ConnectionScopeSurfacesTest(StorylineTimelineFixtureMixin, TestCase):
 
     def test_event_page_splits_by_scope(self):
         # event2: intra incoming (from event1), cross outgoing (bridge)
-        split = self.event2.connections_by_scope()
+        split = self.event2.get_connections_by_scope()
         self.assertEqual(
             [c.pk for c in split['within']['incoming']], [self.connection.pk])
         self.assertEqual(
@@ -807,6 +807,17 @@ class ConnectionJsonldTest(StorylineTimelineFixtureMixin, TestCase):
         self.assertContains(response, 'intra_episode')
         self.assertNotContains(response, 'fabula:crossEpisodeReasoning')
         self.assertNotContains(response, 'fabula:inferredBy')
+
+    def test_jsonld_script_breakout_neutralized(self):
+        # Lens review (Phase 3): a hostile inferred_by must not close
+        # the JSON-LD <script> block on the public connection page.
+        NarrativeConnection.objects.filter(pk=self.bridge.pk).update(
+            inferred_by='</script><img src=x onerror=alert(1)>',
+        )
+        response = self.client.get(reverse(
+            'connection_detail', kwargs={'identifier': 'conn_bridge_001'}))
+        self.assertEqual(response.status_code, 200)
+        self.assertNotContains(response, '</script><img')
 
 
 # =============================================================================
