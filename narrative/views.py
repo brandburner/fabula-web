@@ -359,29 +359,54 @@ class SeriesLandingView(View):
 # NARRATIVE CONNECTIONS
 # =============================================================================
 
-class ConnectionIndexView(ListView):
+class ConnectionIndexView(SeriesScopedMixin, ListView):
     """
-    Browse all narrative connections, grouped by type.
+    Browse narrative connections, grouped by type. Series-scoped on
+    /explore/<series>/connections/ via the denormalized episode FKs
+    (T-032 — the route used to render global data), with a ?scope=
+    within|across filter.
     """
     model = NarrativeConnection
     template_name = 'narrative/connection_index.html'
     context_object_name = 'connections'
-    
+
+    SCOPE_FILTERS = {
+        'within': ConnectionScope.INTRA_EPISODE,
+        'across': ConnectionScope.CROSS_EPISODE,
+    }
+
+    def get_selected_scope(self):
+        requested = self.request.GET.get('scope', '')
+        return requested if requested in self.SCOPE_FILTERS else ''
+
+    def get_base_queryset(self):
+        qs = NarrativeConnection.objects.all()
+        series = self.get_series()
+        if series:
+            qs = qs.filter(
+                from_episode__in=EpisodePage.objects.live().descendant_of(series))
+        selected = self.get_selected_scope()
+        if selected:
+            qs = qs.filter(scope=self.SCOPE_FILTERS[selected])
+        return qs
+
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
-        
+        base = self.get_base_queryset()
+
         # Group connections by type
         connections_by_type = {}
         for conn_type in ConnectionType.choices:
-            connections = NarrativeConnection.objects.filter(
+            connections = base.filter(
                 connection_type=conn_type[0]
             ).select_related('from_event', 'to_event')[:10]
-            
+
             if connections.exists():
                 connections_by_type[conn_type] = connections
-        
+
         context['connections_by_type'] = connections_by_type
-        context['total_count'] = NarrativeConnection.objects.count()
+        context['total_count'] = base.count()
+        context['selected_scope'] = self.get_selected_scope()
         return context
 
 
@@ -1900,9 +1925,11 @@ class NarrativeSearchView(ListView):
             )[:8]
 
             # Narrative connections — the analytical claims are prose and
-            # highly searchable (cross_episode_reasoning joins in Phase 2)
+            # highly searchable. Interim capped icontains; ISS tracks the
+            # move to the Wagtail search index before the fleet rollout.
             context['connection_results'] = NarrativeConnection.objects.filter(
-                description__icontains=query
+                Q(description__icontains=query)
+                | Q(cross_episode_reasoning__icontains=query)
             ).select_related(
                 'from_event', 'to_event',
                 'from_event__episode', 'to_event__episode',

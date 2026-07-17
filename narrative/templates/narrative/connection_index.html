@@ -36,6 +36,28 @@
                 <i data-lucide="git-branch" class="w-4 h-4" style="color: var(--f-accent-cyan);"></i>
                 <span>{{ total_count }} connections mapped</span>
             </div>
+
+            {# Scope filter — links are keyboard-operable; aria-current announces the active filter #}
+            <nav class="flex items-center gap-2 mt-5 flex-wrap" aria-label="Connection scope filter">
+                <a href="{% querystring scope=None %}"
+                   {% if not selected_scope %}aria-current="true"{% endif %}
+                   class="px-3 py-1.5 text-sm rounded-md transition-colors"
+                   style="outline-offset: 2px; {% if not selected_scope %}background: color-mix(in srgb, var(--f-accent-cyan) 12%, transparent); color: var(--f-accent-cyan); border: 1px solid color-mix(in srgb, var(--f-accent-cyan) 35%, transparent);{% else %}background: var(--f-bg-elevated); color: var(--f-fg-secondary); border: 1px solid var(--f-border-light);{% endif %}">
+                    All
+                </a>
+                <a href="{% querystring scope='within' %}"
+                   {% if selected_scope == 'within' %}aria-current="true"{% endif %}
+                   class="px-3 py-1.5 text-sm rounded-md transition-colors"
+                   style="outline-offset: 2px; {% if selected_scope == 'within' %}background: color-mix(in srgb, var(--f-accent-cyan) 12%, transparent); color: var(--f-accent-cyan); border: 1px solid color-mix(in srgb, var(--f-accent-cyan) 35%, transparent);{% else %}background: var(--f-bg-elevated); color: var(--f-fg-secondary); border: 1px solid var(--f-border-light);{% endif %}">
+                    Within episodes
+                </a>
+                <a href="{% querystring scope='across' %}"
+                   {% if selected_scope == 'across' %}aria-current="true"{% endif %}
+                   class="px-3 py-1.5 text-sm rounded-md transition-colors"
+                   style="outline-offset: 2px; {% if selected_scope == 'across' %}background: color-mix(in srgb, var(--f-accent-cyan) 12%, transparent); color: var(--f-accent-cyan); border: 1px solid color-mix(in srgb, var(--f-accent-cyan) 35%, transparent);{% else %}background: var(--f-bg-elevated); color: var(--f-fg-secondary); border: 1px solid var(--f-border-light);{% endif %}">
+                    Across episodes
+                </a>
+            </nav>
         </div>
     </div>
 
@@ -96,6 +118,12 @@
                     {% endfor %}
                 </div>
             </section>
+            {% empty %}
+            <div class="text-sm p-8 rounded-lg text-center" style="background: var(--f-bg-elevated); border: 1px solid var(--f-border-light); color: var(--f-fg-tertiary);">
+                <i data-lucide="link-2-off" class="w-10 h-10 mx-auto mb-3" style="color: var(--f-fg-placeholder);"></i>
+                <p class="font-medium">No connections match this filter</p>
+                <p class="text-xs mt-1" style="color: var(--f-fg-placeholder);">Try a different scope, or check back after the next analysis import</p>
+            </div>
             {% endfor %}
         </div>
 

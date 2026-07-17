@@ -166,7 +166,8 @@ class ViewTestMixin:
             sort_order=0,
         )
 
-        # Connections
+        # Connections (episode FKs filled — migration 0026 guarantees
+        # this for every real row)
         cls.connection = NarrativeConnection.objects.create(
             from_event=cls.event1,
             to_event=cls.event2,
@@ -175,6 +176,8 @@ class ViewTestMixin:
             description='Meeting leads to confrontation',
             fabula_uuid='conn_001',
             global_id='ger_conn_001',
+            from_episode=cls.episode,
+            to_episode=cls.episode,
         )
 
         # Involvements
@@ -569,6 +572,93 @@ class ThemeTimelineViewTest(StorylineTimelineFixtureMixin, TestCase):
             reverse('theme_detail', kwargs={'identifier': 'theme_001'}))
         self.assertEqual(list(response.context['season_bridges']), [])
         self.assertNotContains(response, 'Season Bridges')
+
+
+class ConnectionScopeSurfacesTest(StorylineTimelineFixtureMixin, TestCase):
+    """T-032: scoped connection index with ?scope filter, event-page
+    within/across split, detail-page reasoning/provenance/framing."""
+
+    def test_series_connection_index_scopes(self):
+        response = self.client.get(reverse(
+            'series_connection_index', kwargs={'series_slug': 'test-series'}))
+        self.assertEqual(response.status_code, 200)
+        # intra conn + season bridge; the null-episode-FK row is excluded
+        self.assertEqual(response.context['total_count'], 2)
+
+    def test_scope_filter_across(self):
+        response = self.client.get(
+            reverse('series_connection_index',
+                    kwargs={'series_slug': 'test-series'}) + '?scope=across')
+        self.assertEqual(response.context['total_count'], 1)
+        self.assertEqual(response.context['selected_scope'], 'across')
+        self.assertContains(response, 'aria-current="true"')
+        groups = response.context['connections_by_type']
+        types = [t[0] for t in groups]
+        self.assertEqual(types, [ConnectionType.ESCALATION])
+
+    def test_scope_filter_within(self):
+        response = self.client.get(
+            reverse('series_connection_index',
+                    kwargs={'series_slug': 'test-series'}) + '?scope=within')
+        self.assertEqual(response.context['total_count'], 1)
+        types = [t[0] for t in response.context['connections_by_type']]
+        self.assertEqual(types, [ConnectionType.CAUSAL])
+
+    def test_bogus_scope_ignored(self):
+        response = self.client.get(
+            reverse('series_connection_index',
+                    kwargs={'series_slug': 'test-series'}) + '?scope=sideways')
+        self.assertEqual(response.context['total_count'], 2)
+        self.assertEqual(response.context['selected_scope'], '')
+
+    def test_event_page_splits_by_scope(self):
+        # event2: intra incoming (from event1), cross outgoing (bridge)
+        split = self.event2.connections_by_scope()
+        self.assertEqual(
+            [c.pk for c in split['within']['incoming']], [self.connection.pk])
+        self.assertEqual(
+            [c.pk for c in split['across']['outgoing']], [self.bridge.pk])
+
+        response = self.client.get(
+            reverse('event_detail', kwargs={'identifier': 'event_002'}))
+        self.assertEqual(response.status_code, 200)
+        self.assertContains(response, 'Within this episode')
+        self.assertContains(response, 'Across episodes')
+
+    def test_connection_detail_reasoning_and_provenance(self):
+        NarrativeConnection.objects.filter(pk=self.bridge.pk).update(
+            cross_episode_reasoning='The stakes compound across the season boundary.',
+            inferred_by='llm_cross_episode_arc',
+        )
+        response = self.client.get(reverse(
+            'connection_detail', kwargs={'identifier': 'conn_bridge_001'}))
+        self.assertEqual(response.status_code, 200)
+        self.assertContains(response, 'Why This Matters Across Episodes')
+        self.assertContains(response, 'The stakes compound across the season boundary.')
+        self.assertContains(response, 'llm_cross_episode_arc')
+
+    def test_foreshadowing_directional_framing(self):
+        NarrativeConnection.objects.filter(pk=self.null_fk_conn.pk).update(
+            from_episode=self.episode)
+        response = self.client.get(reverse(
+            'connection_detail', kwargs={'identifier': 'conn_bridge_002'}))
+        self.assertContains(
+            response, 'Seeded in S1E1 → pays off in S2E1')
+
+    def test_framing_omitted_without_episode_fk(self):
+        # null_fk_conn keeps its null from_episode — no chip, no error
+        response = self.client.get(reverse(
+            'connection_detail', kwargs={'identifier': 'conn_bridge_002'}))
+        self.assertEqual(response.status_code, 200)
+        self.assertNotContains(response, 'pays off in')
+
+    def test_search_matches_cross_episode_reasoning(self):
+        NarrativeConnection.objects.filter(pk=self.bridge.pk).update(
+            cross_episode_reasoning='zugzwang pressure compounds')
+        response = self.client.get(reverse('narrative_search'), {'q': 'zugzwang'})
+        self.assertEqual(
+            [c.pk for c in response.context['connection_results']],
+            [self.bridge.pk])
 
 
 # =============================================================================

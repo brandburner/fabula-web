@@ -37,6 +37,24 @@
                       style="background: var(--f-bg-elevated); color: var(--f-fg-secondary); border: 1px solid var(--f-border-default);">
                     {{ connection.strength }} strength
                 </span>
+                {% if connection.scope == 'cross_episode' and connection.from_episode and connection.to_episode %}
+                {% if connection.connection_type == 'FORESHADOWING' %}
+                <span class="px-3 py-1.5 text-sm font-medium rounded-lg"
+                      style="background: var(--f-bg-elevated); color: var(--f-fg-secondary); border: 1px solid var(--f-border-default); font-family: var(--f-font-mono);">
+                    Seeded in S{{ connection.from_episode.season_number }}E{{ connection.from_episode.episode_number }} → pays off in S{{ connection.to_episode.season_number }}E{{ connection.to_episode.episode_number }}
+                </span>
+                {% elif connection.connection_type == 'CALLBACK' %}
+                <span class="px-3 py-1.5 text-sm font-medium rounded-lg"
+                      style="background: var(--f-bg-elevated); color: var(--f-fg-secondary); border: 1px solid var(--f-border-default); font-family: var(--f-font-mono);">
+                    Set in S{{ connection.from_episode.season_number }}E{{ connection.from_episode.episode_number }} → called back in S{{ connection.to_episode.season_number }}E{{ connection.to_episode.episode_number }}
+                </span>
+                {% else %}
+                <span class="px-3 py-1.5 text-sm font-medium rounded-lg"
+                      style="background: var(--f-bg-elevated); color: var(--f-fg-secondary); border: 1px solid var(--f-border-default); font-family: var(--f-font-mono);">
+                    S{{ connection.from_episode.season_number }}E{{ connection.from_episode.episode_number }} → S{{ connection.to_episode.season_number }}E{{ connection.to_episode.episode_number }}
+                </span>
+                {% endif %}
+                {% endif %}
             </div>
 
             {# Page title #}
@@ -127,7 +145,35 @@
                     "{{ connection.description|md }}"
                 </p>
             </div>
+            {% if connection.inferred_by %}
+            <p class="text-xs mt-3 text-right" style="color: var(--f-fg-placeholder); font-family: var(--f-font-mono);">
+                inferred by {{ connection.inferred_by }}
+            </p>
+            {% endif %}
         </section>
+
+        {# ============================================================= #}
+        {# WHY THIS MATTERS ACROSS EPISODES (event layer, cross-episode) #}
+        {# ============================================================= #}
+        {% if connection.cross_episode_reasoning %}
+        <section class="mb-12">
+            <div class="flex items-center gap-3 mb-6">
+                <div class="p-2 rounded-lg" style="background: color-mix(in srgb, var(--f-accent-cyan) 12%, transparent);">
+                    <i data-lucide="git-branch" class="w-6 h-6" style="color: var(--f-accent-cyan);"></i>
+                </div>
+                <div class="flex-1">
+                    <h2 style="font-family: var(--f-font-display); color: var(--f-fg-heading); font-size: 1.5rem; font-weight: 400;">Why This Matters Across Episodes</h2>
+                    <p class="text-sm mt-0.5" style="color: var(--f-fg-placeholder);">The longer arc this connection carries</p>
+                </div>
+            </div>
+
+            <div class="p-6 rounded-xl" style="background: var(--f-card-bg); border: 1px solid var(--f-card-border);">
+                <p class="leading-relaxed text-lg" style="color: var(--f-fg-secondary);">
+                    {{ connection.cross_episode_reasoning|md }}
+                </p>
+            </div>
+        </section>
+        {% endif %}
 
         {# ============================================================= #}
         {# CONNECTION TYPE EXPLANATION #}

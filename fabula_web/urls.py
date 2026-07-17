@@ -245,6 +245,7 @@ def agent_friendly_404(request, exception=None):
             f"| `/explore/<series-slug>/graph/` | Force-directed graph view |\n"
             f"| `/explore/<series-slug>/events/` | Events in a series |\n"
             f"| `/explore/<series-slug>/connections/` | Narrative connections |\n"
+            f"| `/explore/<series-slug>/storylines/` | Storylines (arcs + themes) |\n"
             f"| `/explore/<series-slug>/themes/` | Themes |\n"
             f"| `/connections/<id>/` | Single connection detail |\n"
             f"| `/characters/<id>/` | Single character detail |\n"
@@ -294,6 +295,7 @@ def sitemap_md(request):
             lines.append(f"- [Characters]({host}/explore/{slug}/characters/)")
             lines.append(f"- [Events]({host}/explore/{slug}/events/)")
             lines.append(f"- [Connections]({host}/explore/{slug}/connections/)")
+            lines.append(f"- [Storylines]({host}/explore/{slug}/storylines/)")
             lines.append(f"- [Themes]({host}/explore/{slug}/themes/)")
             lines.append(f"- [Conflict Arcs]({host}/explore/{slug}/arcs/)")
             lines.append(f"- [Locations]({host}/explore/{slug}/locations/)")
@@ -310,8 +312,9 @@ def sitemap_md(request):
         "| `/explore/<series-slug>/characters/<id>/` | Character detail |",
         "| `/explore/<series-slug>/events/` | Events index |",
         "| `/explore/<series-slug>/events/<id>/` | Event detail |",
-        "| `/explore/<series-slug>/connections/` | Connections index |",
+        "| `/explore/<series-slug>/connections/` | Connections index (?scope=within|across) |",
         "| `/explore/<series-slug>/connections/<id>/` | Connection detail |",
+        "| `/explore/<series-slug>/storylines/` | Storylines index (arcs + themes) |",
         "| `/explore/<series-slug>/themes/` | Themes index |",
         "| `/explore/<series-slug>/themes/<id>/` | Theme detail |",
         "| `/explore/<series-slug>/arcs/` | Conflict arcs index |",

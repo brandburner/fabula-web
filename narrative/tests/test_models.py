@@ -1096,6 +1096,56 @@ class StorylineSeriesBackfillTest(WagtailTestMixin, TestCase):
         self.assertEqual(self.theme.series_id, self.series.pk)
 
 
+class ConnectionEpisodeBackfillTest(WagtailTestMixin, TestCase):
+    """Migration 0026 (T-032): legacy connections get episode FKs from
+    their events, and scope flips to cross_episode where episodes differ."""
+
+    def _run_backfill(self):
+        import importlib
+        from django.apps import apps
+        migration = importlib.import_module(
+            'narrative.migrations.0026_backfill_connection_episodes')
+        migration.backfill(apps, None)
+
+    def test_backfill_fills_fks_and_corrects_scope(self):
+        intra = NarrativeConnection.objects.create(
+            from_event=self.event1, to_event=self.event2,
+            connection_type=ConnectionType.CHARACTER_CONTINUITY,
+            description='same-episode legacy row',
+        )
+        cross = NarrativeConnection.objects.create(
+            from_event=self.event1, to_event=self.event3,
+            connection_type=ConnectionType.FORESHADOWING,
+            description='cross-episode legacy row mislabeled intra',
+        )
+
+        self._run_backfill()
+
+        intra.refresh_from_db()
+        cross.refresh_from_db()
+        self.assertEqual(intra.from_episode_id, self.episode.pk)
+        self.assertEqual(intra.to_episode_id, self.episode.pk)
+        self.assertEqual(intra.scope, 'intra_episode')
+        self.assertEqual(cross.from_episode_id, self.episode.pk)
+        self.assertEqual(cross.to_episode_id, self.episode2.pk)
+        self.assertEqual(cross.scope, 'cross_episode')
+
+    def test_backfill_leaves_populated_fks_alone(self):
+        row = NarrativeConnection.objects.create(
+            from_event=self.event1, to_event=self.event3,
+            connection_type=ConnectionType.ESCALATION,
+            description='v2.4.0 row with FKs already set',
+            from_episode=self.episode2, to_episode=self.episode2,
+        )
+
+        self._run_backfill()
+
+        row.refresh_from_db()
+        # Deliberately "wrong" FKs prove the update never touches
+        # rows whose from_episode is already populated
+        self.assertEqual(row.from_episode_id, self.episode2.pk)
+
+
 class CharacterSeasonProfileTest(WagtailTestMixin, TestCase):
     """T-027: per-season character portraits + arc_summary."""
 

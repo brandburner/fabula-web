@@ -1239,6 +1239,23 @@ class EventPage(Page):
             'incoming': self.get_connections_to(),
         }
 
+    def connections_by_scope(self):
+        """Incoming/outgoing connections split into within-episode vs
+        across-episode groups (T-032 — the storyline surfaces read the
+        scope discriminator, not raw related managers)."""
+        incoming = self.get_connections_to()
+        outgoing = self.get_connections_from()
+        return {
+            'within': {
+                'incoming': incoming.filter(scope=ConnectionScope.INTRA_EPISODE),
+                'outgoing': outgoing.filter(scope=ConnectionScope.INTRA_EPISODE),
+            },
+            'across': {
+                'incoming': incoming.filter(scope=ConnectionScope.CROSS_EPISODE),
+                'outgoing': outgoing.filter(scope=ConnectionScope.CROSS_EPISODE),
+            },
+        }
+
     def primary_location_has_involvement(self):
         """
         Check if the primary location FK also has a LocationInvolvement record.
