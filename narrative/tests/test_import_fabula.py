@@ -1535,6 +1535,24 @@ class ContractVersionGateTest(TestCase):
         self.assertTrue(
             SeriesIndexPage.objects.filter(fabula_uuid='ser_1').exists())
 
+    def test_real_import_clears_page_cache(self):
+        # T-030: detail views are cache_page'd on the premise that data
+        # only changes on import — a completed import must clear the cache.
+        from django.core.cache import cache
+        cache.set('sentinel', 'stale')
+        with tempfile.TemporaryDirectory() as tmpdir:
+            self._write_v24_export(tmpdir)
+            call_command('import_fabula', tmpdir, stdout=StringIO())
+        self.assertIsNone(cache.get('sentinel'))
+
+    def test_dry_run_keeps_page_cache(self):
+        from django.core.cache import cache
+        cache.set('sentinel', 'kept')
+        with tempfile.TemporaryDirectory() as tmpdir:
+            self._write_v24_export(tmpdir)
+            call_command('import_fabula', tmpdir, '--dry-run', stdout=StringIO())
+        self.assertEqual(cache.get('sentinel'), 'kept')
+
 
 class ConnectionPurgeScopingTest(TestCase):
     """T-028 spec point (2)+(5): the v2.4.0 purge is scoped to the imported

@@ -9,11 +9,13 @@ from wagtail.models import Page
 
 from narrative.models import (
     ConnectionType, ConnectionStrength, CharacterType, ImportanceTier, ArcType,
+    ConnectionLayer, ConnectionScope, ArcRole,
     Theme, ConflictArc, Location,
     SeriesIndexPage, SeasonPage, EpisodePage, CharacterPage,
     OrganizationPage, OrganizationIndexPage, ObjectPage, ObjectIndexPage,
     EventPage, EventIndexPage, CharacterIndexPage,
     EventParticipation, NarrativeConnection,
+    ArcEventMembership, ThemeEventMembership,
     LocationInvolvement, ObjectInvolvement, OrganizationInvolvement,
 )
 
@@ -328,6 +330,146 @@ class ArcDetailViewTest(ViewTestMixin, TestCase):
         self.assertEqual(response.status_code, 200)
         self.assertEqual(response.context['arc'], self.arc)
         self.assertIn('events', response.context)
+
+
+# =============================================================================
+# STORYLINE TIMELINES (T-030)
+# =============================================================================
+
+class StorylineTimelineFixtureMixin(ViewTestMixin):
+    """Second season + junction rows for arc/theme timeline tests."""
+
+    @classmethod
+    def setUpTestData(cls):
+        super().setUpTestData()
+
+        cls.season2 = SeasonPage(
+            title='Season 2', slug='season-2', season_number=2,
+        )
+        cls.series.add_child(instance=cls.season2)
+
+        cls.episode2 = EpisodePage(
+            title='Return', slug='return',
+            episode_number=1, season_number=2,
+            logline='Season two opens.', fabula_uuid='ep_002',
+        )
+        cls.season2.add_child(instance=cls.episode2)
+
+        cls.event3 = EventPage(
+            title='Reckoning', slug='reckoning',
+            episode=cls.episode2, scene_sequence=1, sequence_in_scene=1,
+            description='<p>The reckoning</p>', fabula_uuid='event_003',
+        )
+        cls.event_index.add_child(instance=cls.event3)
+
+        # Arc memberships: two S1 events, one S2 event, roles on the ends
+        ArcEventMembership.objects.create(
+            event=cls.event1, arc=cls.arc, role=ArcRole.START, episode_ordinal=101)
+        ArcEventMembership.objects.create(
+            event=cls.event2, arc=cls.arc, episode_ordinal=101)
+        ArcEventMembership.objects.create(
+            event=cls.event3, arc=cls.arc, role=ArcRole.CLIMAX, episode_ordinal=201)
+
+        ThemeEventMembership.objects.create(
+            event=cls.event1, theme=cls.theme, episode_ordinal=101)
+        ThemeEventMembership.objects.create(
+            event=cls.event3, theme=cls.theme, episode_ordinal=201)
+
+        # A real season bridge: S1 event → S2 event, episode FKs present
+        cls.bridge = NarrativeConnection.objects.create(
+            from_event=cls.event2, to_event=cls.event3,
+            connection_type=ConnectionType.ESCALATION,
+            strength=ConnectionStrength.STRONG,
+            description='The confrontation escalates into the reckoning',
+            layer=ConnectionLayer.EVENT, scope=ConnectionScope.CROSS_EPISODE,
+            from_episode=cls.episode, to_episode=cls.episode2,
+            fabula_uuid='conn_bridge_001',
+        )
+        # Cross-episode row missing an episode FK (SET_NULL after an
+        # episode deletion) — excluded from bridges without raising
+        cls.null_fk_conn = NarrativeConnection.objects.create(
+            from_event=cls.event1, to_event=cls.event3,
+            connection_type=ConnectionType.FORESHADOWING,
+            strength=ConnectionStrength.MEDIUM,
+            description='The meeting foreshadows the reckoning',
+            layer=ConnectionLayer.EVENT, scope=ConnectionScope.CROSS_EPISODE,
+            from_episode=None, to_episode=cls.episode2,
+            fabula_uuid='conn_bridge_002',
+        )
+
+
+class ArcTimelineViewTest(StorylineTimelineFixtureMixin, TestCase):
+
+    def _get(self):
+        return self.client.get(reverse('arc_detail', kwargs={'identifier': 'arc_001'}))
+
+    def test_timeline_groups_and_orders_across_seasons(self):
+        response = self._get()
+        self.assertEqual(response.status_code, 200)
+        seasons = response.context['timeline_seasons']
+        self.assertEqual([s['number'] for s in seasons], [1, 2])
+        s1_episodes = seasons[0]['episodes']
+        self.assertEqual([g['episode'].pk for g in s1_episodes], [self.episode.pk])
+        # Events within an episode keep scene order
+        self.assertEqual(
+            [m.event_id for m in s1_episodes[0]['memberships']],
+            [self.event1.pk, self.event2.pk],
+        )
+        self.assertEqual(seasons[0]['count'], 2)
+        self.assertEqual(seasons[1]['count'], 1)
+        self.assertEqual(response.context['membership_total'], 3)
+
+    def test_role_badges_have_aria_labels(self):
+        response = self._get()
+        self.assertContains(response, 'aria-label="Arc role: Start"')
+        self.assertContains(response, 'aria-label="Arc role: Climax"')
+
+    def test_season_bridges_single_row_null_fk_excluded(self):
+        response = self._get()
+        bridges = response.context['season_bridges']
+        self.assertEqual([b.pk for b in bridges], [self.bridge.pk])
+        self.assertContains(response, 'Season Bridges')
+
+    def test_single_season_arc_gates_bridges_off(self):
+        arc2 = ConflictArc.objects.create(
+            fabula_uuid='arc_002', title='Solo-season arc',
+            description='One season only', arc_type=ArcType.INTERNAL,
+            series=self.series,
+        )
+        ArcEventMembership.objects.create(
+            event=self.event1, arc=arc2, episode_ordinal=101)
+        response = self.client.get(
+            reverse('arc_detail', kwargs={'identifier': 'arc_002'}))
+        self.assertEqual(response.status_code, 200)
+        self.assertEqual(response.context['season_bridges'], [])
+        self.assertNotContains(response, 'Season Bridges')
+
+    def test_involved_characters_rail(self):
+        self.arc.involved_characters.add(self.character)
+        response = self._get()
+        characters = list(response.context['storyline_characters'])
+        self.assertEqual([c.pk for c in characters], [self.character.pk])
+        self.assertContains(response, 'Involved Characters')
+
+
+class ThemeTimelineViewTest(StorylineTimelineFixtureMixin, TestCase):
+
+    def test_timeline_groups_across_seasons(self):
+        response = self.client.get(
+            reverse('theme_detail', kwargs={'identifier': 'theme_001'}))
+        self.assertEqual(response.status_code, 200)
+        seasons = response.context['timeline_seasons']
+        self.assertEqual([s['number'] for s in seasons], [1, 2])
+        self.assertEqual(response.context['membership_total'], 2)
+
+    def test_theme_bridges_require_both_endpoints_in_theme(self):
+        # Theme members are {event1, event3}: the only intact bridge runs
+        # event2→event3 (from-endpoint outside the theme) and the
+        # event1→event3 row has a null episode FK — so no bridges render.
+        response = self.client.get(
+            reverse('theme_detail', kwargs={'identifier': 'theme_001'}))
+        self.assertEqual(list(response.context['season_bridges']), [])
+        self.assertNotContains(response, 'Season Bridges')
 
 
 # =============================================================================

@@ -29,12 +29,12 @@ from django.views.decorators.http import require_POST
 from django.views.generic import ListView, DetailView, TemplateView, View
 
 from django.db import models
-from django.db.models import Q, Count
+from django.db.models import Q, Count, F
 
 from .models import (
     NarrativeConnection, Theme, ConflictArc, Location,
     EventPage, CharacterPage, EpisodePage, EventParticipation,
-    ConnectionType, LocationInvolvement, OrganizationInvolvement,
+    ConnectionType, ConnectionScope, LocationInvolvement, OrganizationInvolvement,
     OrganizationPage, ObjectPage, ObjectInvolvement,
     CharacterIndexPage, OrganizationIndexPage, ObjectIndexPage, EventIndexPage,
     SeriesIndexPage, SeasonPage, Act, EventBeatLink, EngagementSignal,
@@ -420,6 +420,104 @@ class ConnectionTypeView(ListView):
 
 
 # =============================================================================
+# STORYLINE TIMELINES (shared by theme + arc detail)
+# =============================================================================
+
+class StorylineTimelineMixin:
+    """Season→episode timeline context for arc/theme detail pages.
+
+    Reads from the membership junction tables (ArcEventMembership /
+    ThemeEventMembership) rather than the legacy bare M2Ms, so role and
+    episode_ordinal edge data are available to templates.
+    """
+
+    def get_memberships(self):
+        """Membership rows ordered for timeline display (episode_ordinal
+        is indexed; NULLs — events without an episode — sort last)."""
+        return (
+            self.object.event_memberships
+            .select_related('event', 'event__episode')
+            .order_by(
+                F('episode_ordinal').asc(nulls_last=True),
+                'event__scene_sequence',
+                'event__sequence_in_scene',
+            )
+        )
+
+    @staticmethod
+    def build_timeline(memberships):
+        """Group ordered memberships into season → episode buckets.
+
+        Returns (seasons, unplaced): seasons is a list of
+        {'number', 'episodes': [{'episode', 'memberships'}], 'count'};
+        unplaced collects memberships whose event has no episode.
+        """
+        seasons = []
+        season_by_number = {}
+        unplaced = []
+        for membership in memberships:
+            episode = membership.event.episode
+            if episode is None:
+                unplaced.append(membership)
+                continue
+            season = season_by_number.get(episode.season_number)
+            if season is None:
+                season = {'number': episode.season_number, 'episodes': [], 'count': 0}
+                season_by_number[episode.season_number] = season
+                seasons.append(season)
+            if season['episodes'] and season['episodes'][-1]['episode'].pk == episode.pk:
+                episode_group = season['episodes'][-1]
+            else:
+                episode_group = {'episode': episode, 'memberships': []}
+                season['episodes'].append(episode_group)
+            episode_group['memberships'].append(membership)
+            season['count'] += 1
+        return seasons, unplaced
+
+    @staticmethod
+    def get_season_bridges(member_event_ids):
+        """Cross-season connections with both endpoints in this storyline.
+
+        One set-based query over the denormalized episode FKs; connections
+        with a null episode endpoint are excluded rather than raised on.
+        """
+        return (
+            NarrativeConnection.objects
+            .filter(
+                from_event_id__in=member_event_ids,
+                to_event_id__in=member_event_ids,
+                scope=ConnectionScope.CROSS_EPISODE,
+            )
+            .exclude(from_episode=None)
+            .exclude(to_episode=None)
+            .exclude(from_episode__season_number=F('to_episode__season_number'))
+            .select_related('from_event', 'to_event', 'from_episode', 'to_episode')
+            .order_by(
+                'from_episode__season_number', 'from_episode__episode_number',
+                'to_episode__season_number', 'to_episode__episode_number',
+            )
+        )
+
+    def get_timeline_context(self):
+        memberships = list(self.get_memberships())
+        seasons, unplaced = self.build_timeline(memberships)
+        # Bridges only exist across seasons — a single-season storyline
+        # gates the rail off without querying (partial-enrichment series
+        # must not render an empty promise).
+        if len(seasons) > 1:
+            member_ids = {m.event_id for m in memberships}
+            season_bridges = list(self.get_season_bridges(member_ids))
+        else:
+            season_bridges = []
+        return {
+            'timeline_seasons': seasons,
+            'unplaced_memberships': unplaced,
+            'membership_total': len(memberships),
+            'season_bridges': season_bridges,
+        }
+
+
+# =============================================================================
 # THEMES
 # =============================================================================
 
@@ -439,20 +537,28 @@ class ThemeIndexView(ListView):
         ).order_by('-event_count')
 
 
-class ThemeDetailView(FlexibleIdentifierMixin, CanonicalURLMixin, DetailView):
+@method_decorator(cache_page(60 * 60 * 24), name='dispatch')  # 24h cache; data changes only on import
+class ThemeDetailView(StorylineTimelineMixin, FlexibleIdentifierMixin,
+                      CanonicalURLMixin, DetailView):
     """
-    View a single theme with all events that exemplify it.
+    View a single theme as a season→episode timeline with season bridges.
     Uses flexible identifier lookup (global_id, fabula_uuid, or pk).
     """
     model = Theme
     template_name = 'narrative/theme_detail.html'
     context_object_name = 'theme'
-    
+
     def get_context_data(self, **kwargs):
         from django.db.models import Count
         context = super().get_context_data(**kwargs)
 
-        # Get events for this theme
+        context.update(self.get_timeline_context())
+        context['storyline_characters'] = (
+            self.object.related_characters.live()
+            .order_by('-appearance_count', 'canonical_name')
+        )
+
+        # Legacy flat event list — still read by the dark template variant
         context['events'] = self.object.events.all().select_related(
             'episode', 'location'
         ).order_by('episode__season_number', 'episode__episode_number', 'scene_sequence')
@@ -487,9 +593,12 @@ class ArcIndexView(ListView):
         ).order_by('-event_count')
 
 
-class ArcDetailView(FlexibleIdentifierMixin, CanonicalURLMixin, DetailView):
+@method_decorator(cache_page(60 * 60 * 24), name='dispatch')  # 24h cache; data changes only on import
+class ArcDetailView(StorylineTimelineMixin, FlexibleIdentifierMixin,
+                    CanonicalURLMixin, DetailView):
     """
-    View a single conflict arc with all related events.
+    View a single conflict arc as a season→episode timeline with
+    START/CLIMAX/RESOLUTION role badges and season bridges.
     Uses flexible identifier lookup (global_id, fabula_uuid, or pk).
     """
     model = ConflictArc
@@ -499,6 +608,13 @@ class ArcDetailView(FlexibleIdentifierMixin, CanonicalURLMixin, DetailView):
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
 
+        context.update(self.get_timeline_context())
+        context['storyline_characters'] = (
+            self.object.involved_characters.live()
+            .order_by('-appearance_count', 'canonical_name')
+        )
+
+        # Legacy flat event list — still read by the dark template variant
         context['events'] = self.object.events.all().select_related(
             'episode', 'location'
         ).order_by('episode__season_number', 'episode__episode_number', 'scene_sequence')

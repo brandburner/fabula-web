@@ -269,6 +269,13 @@ class Command(BaseCommand):
                     data.locations,
                 )
 
+            # Detail views are wrapped in cache_page(24h) on the premise
+            # that data only changes on import — so imports must clear it.
+            if not self.dry_run:
+                from django.core.cache import cache
+                cache.clear()
+                self.stdout.write("Cleared page cache (cached views will rebuild)")
+
         except Exception as e:
             self.stdout.write(self.style.ERROR(f"\nImport failed: {str(e)}"))
             if self.verbose:
