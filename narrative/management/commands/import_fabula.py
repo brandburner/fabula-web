@@ -275,8 +275,9 @@ class Command(BaseCommand):
             # uses DatabaseCache); dev's LocMemCache is per-process, so a
             # separate runserver keeps its own cache until restarted.
             if not self.dry_run:
-                from django.core.cache import cache
-                backend = type(cache).__name__
+                from django.core.cache import caches
+                cache = caches['default']  # the module-level `cache` is a
+                backend = type(cache).__name__  # proxy; resolve the backend
                 cache.clear()
                 if backend == 'LocMemCache':
                     self.stdout.write(
@@ -313,43 +314,64 @@ class Command(BaseCommand):
                         f"Reference index rebuild failed (non-fatal): {e}"
                     ))
 
-    def load_global_id_caches(self):
-        """
-        Pre-load existing entities with global_id into caches for cross-season resolution.
+    def _scoped_snippets(self, model):
+        """Snippet queryset scoped to the series being imported (or
+        legacy rows with no series FK). Cross-series fabula_uuid
+        matches must never resolve — GER-merged upstream entities can
+        carry the same ids in unrelated series' exports."""
+        from django.db.models import Q
+        return model.objects.filter(
+            Q(series__fabula_uuid__in=getattr(self, 'importing_series_uuids', []))
+            | Q(series__isnull=True))
 
-        This enables GER-based cross-season matching: when importing S2 data,
-        entities with matching global_id will UPDATE the existing S1 entity
-        rather than creating duplicates.
+    def load_global_id_caches(self, series_uuids=()):
+        """
+        Pre-load existing entities with global_id into caches for
+        cross-SEASON resolution, scoped to the series being imported.
+
+        GER global_ids are only trusted within one series: distinct
+        series' graphs can mint colliding ger_* ids for unrelated
+        entities (the wave-2 gate caught an indianajones import
+        capturing and overwriting wolf-hall character pages this way),
+        so entities from other series must never be match candidates.
+        A first import of a new series correctly loads empty caches.
         """
         self.log_progress("Loading GER global_id caches for cross-season resolution...")
 
-        # Load themes with global_id
-        for theme in Theme.objects.exclude(global_id__isnull=True).exclude(global_id=''):
+        series_pages = list(SeriesIndexPage.objects.filter(
+            fabula_uuid__in=[uuid for uuid in series_uuids if uuid]))
+
+        def _page_qs(model):
+            qs = model.objects.none()
+            for series_page in series_pages:
+                qs = qs | model.objects.descendant_of(series_page)
+            return qs.exclude(global_id__isnull=True).exclude(global_id='')
+
+        def _snippet_qs(model):
+            return model.objects.filter(series__in=series_pages).exclude(
+                global_id__isnull=True).exclude(global_id='')
+
+        for theme in _snippet_qs(Theme):
             self.themes_by_global_id[theme.global_id] = theme
         self.log_detail(f"  Loaded {len(self.themes_by_global_id)} themes with global_id")
 
-        # Load conflict arcs with global_id
-        for arc in ConflictArc.objects.exclude(global_id__isnull=True).exclude(global_id=''):
+        for arc in _snippet_qs(ConflictArc):
             self.arcs_by_global_id[arc.global_id] = arc
         self.log_detail(f"  Loaded {len(self.arcs_by_global_id)} arcs with global_id")
 
-        # Load locations with global_id
-        for location in Location.objects.exclude(global_id__isnull=True).exclude(global_id=''):
+        for location in _snippet_qs(Location):
             self.locations_by_global_id[location.global_id] = location
         self.log_detail(f"  Loaded {len(self.locations_by_global_id)} locations with global_id")
 
-        # Load characters with global_id
-        for char in CharacterPage.objects.exclude(global_id__isnull=True).exclude(global_id=''):
+        for char in _page_qs(CharacterPage):
             self.characters_by_global_id[char.global_id] = char
         self.log_detail(f"  Loaded {len(self.characters_by_global_id)} characters with global_id")
 
-        # Load organizations with global_id
-        for org in OrganizationPage.objects.exclude(global_id__isnull=True).exclude(global_id=''):
+        for org in _page_qs(OrganizationPage):
             self.organizations_by_global_id[org.global_id] = org
         self.log_detail(f"  Loaded {len(self.organizations_by_global_id)} organizations with global_id")
 
-        # Load objects with global_id
-        for obj in ObjectPage.objects.exclude(global_id__isnull=True).exclude(global_id=''):
+        for obj in _page_qs(ObjectPage):
             self.objects_by_global_id[obj.global_id] = obj
         self.log_detail(f"  Loaded {len(self.objects_by_global_id)} objects with global_id")
 
@@ -610,8 +632,12 @@ class Command(BaseCommand):
         connections_data = data.connections
         writers_data = data.writers
 
-        # Load existing entities with global_id for cross-season resolution
-        self.load_global_id_caches()
+        # Load existing entities with global_id for cross-season
+        # resolution, scoped to the imported series (GER ids collide
+        # across series — never match another series' entities)
+        self.importing_series_uuids = [
+            row.get('fabula_uuid') for row in (data.series or []) if row.get('fabula_uuid')]
+        self.load_global_id_caches(series_uuids=self.importing_series_uuids)
 
         self.log_progress("Phase 1: Importing snippets (themes, arcs, locations, writers)")
         self.import_themes(themes_data)
@@ -863,7 +889,8 @@ class Command(BaseCommand):
 
             # Fall back to fabula_uuid lookup
             if not theme:
-                theme = Theme.objects.filter(fabula_uuid=fabula_uuid).first()
+                theme = self._scoped_snippets(Theme).filter(
+                    fabula_uuid=fabula_uuid).first()
 
             created = False
             if theme:
@@ -919,7 +946,8 @@ class Command(BaseCommand):
 
             # Fall back to fabula_uuid lookup
             if not arc:
-                arc = ConflictArc.objects.filter(fabula_uuid=fabula_uuid).first()
+                arc = self._scoped_snippets(ConflictArc).filter(
+                    fabula_uuid=fabula_uuid).first()
 
             created = False
             if arc:
@@ -974,7 +1002,8 @@ class Command(BaseCommand):
 
             # Fall back to fabula_uuid lookup
             if not location:
-                location = Location.objects.filter(fabula_uuid=fabula_uuid).first()
+                location = self._scoped_snippets(Location).filter(
+                    fabula_uuid=fabula_uuid).first()
 
             created = False
             if location:
@@ -1195,7 +1224,8 @@ class Command(BaseCommand):
         season_uuid = season_data.get('fabula_uuid') or season_data.get('season_uuid', '')
         season_number = season_data['season_number']
 
-        season_page = SeasonPage.objects.filter(fabula_uuid=season_uuid).first()
+        season_page = SeasonPage.objects.descendant_of(
+            series_page).filter(fabula_uuid=season_uuid).first()
 
         if season_page:
             season_page.season_number = season_number
@@ -1228,7 +1258,8 @@ class Command(BaseCommand):
         episode_number = episode_data['episode_number']
         title = episode_data['title']
 
-        episode_page = EpisodePage.objects.filter(fabula_uuid=episode_uuid).first()
+        episode_page = EpisodePage.objects.descendant_of(
+            season_page).filter(fabula_uuid=episode_uuid).first()
 
         if episode_page:
             episode_page.title = title
@@ -1316,7 +1347,8 @@ class Command(BaseCommand):
 
             # Fall back to fabula_uuid lookup
             if not org_page:
-                org_page = OrganizationPage.objects.filter(fabula_uuid=org_uuid).first()
+                org_page = OrganizationPage.objects.descendant_of(
+                    org_index).filter(fabula_uuid=org_uuid).first()
 
             created = False
             if org_page:
@@ -1387,7 +1419,8 @@ class Command(BaseCommand):
 
             # Fall back to fabula_uuid lookup
             if not char_page:
-                char_page = CharacterPage.objects.filter(fabula_uuid=char_uuid).first()
+                char_page = CharacterPage.objects.descendant_of(
+                    char_index).filter(fabula_uuid=char_uuid).first()
 
             # Get organization if specified
             org = None
@@ -1477,7 +1510,8 @@ class Command(BaseCommand):
 
             # Fall back to fabula_uuid lookup
             if not obj_page:
-                obj_page = ObjectPage.objects.filter(fabula_uuid=obj_uuid).first()
+                obj_page = ObjectPage.objects.descendant_of(
+                    object_index).filter(fabula_uuid=obj_uuid).first()
 
             # Get potential owner if specified
             owner = None
@@ -1569,7 +1603,8 @@ class Command(BaseCommand):
                 if loc_uuid := event_data.get('location_uuid'):
                     location = self.locations_cache.get(loc_uuid)
 
-                event_page = EventPage.objects.filter(fabula_uuid=event_uuid).first()
+                event_page = EventPage.objects.descendant_of(
+                    event_index).filter(fabula_uuid=event_uuid).first()
 
                 # Generate title from description or use a default
                 title = event_data.get('title') or f"Event {event_data.get('scene_sequence', 0)}.{event_data.get('sequence_in_scene', 0)}"

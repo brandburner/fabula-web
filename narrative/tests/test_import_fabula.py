@@ -1554,6 +1554,63 @@ class ContractVersionGateTest(TestCase):
         self.assertEqual(cache.get('sentinel'), 'kept')
 
 
+class GerCacheSeriesScopingTest(TestCase):
+    """Wave-2 gate regression (T-035): GER global_id caches must only
+    contain entities from the series being imported. Distinct series'
+    graphs can mint colliding ger_* ids for unrelated entities — an
+    indianajones import captured and overwrote wolf-hall character
+    pages before this scoping."""
+
+    def setUp(self):
+        self.cmd = Command()
+        self.cmd.stdout = StringIO()
+        self.cmd.stderr = StringIO()
+        self.cmd.verbose = False
+
+        root = Page.objects.get(depth=1)
+        self.series_a = SeriesIndexPage(
+            title='Series A', slug='series-a', fabula_uuid='ser_a')
+        root.add_child(instance=self.series_a)
+        chars_a = CharacterIndexPage(title='Characters A', slug='chars-a')
+        self.series_a.add_child(instance=chars_a)
+        self.char_a = CharacterPage(
+            title='Original A Character', slug='orig-a',
+            canonical_name='Original A Character',
+            description='<p>Series A character</p>',
+            fabula_uuid='agent_a_1', global_id='ger_agent_collide',
+        )
+        chars_a.add_child(instance=self.char_a)
+        self.theme_a = Theme.objects.create(
+            fabula_uuid='theme_a_1', global_id='ger_theme_collide',
+            name='A Theme', description='x', series=self.series_a)
+
+        self.series_b = SeriesIndexPage(
+            title='Series B', slug='series-b', fabula_uuid='ser_b')
+        root.add_child(instance=self.series_b)
+
+    def test_other_series_entities_never_match_candidates(self):
+        # Importing series B: A's colliding ids must not be in the caches
+        self.cmd.load_global_id_caches(series_uuids=['ser_b'])
+        self.assertNotIn('ger_agent_collide', self.cmd.characters_by_global_id)
+        self.assertNotIn('ger_theme_collide', self.cmd.themes_by_global_id)
+
+    def test_same_series_entities_still_match(self):
+        # Importing series A again: its own entities resolve for
+        # cross-season identity
+        self.cmd.load_global_id_caches(series_uuids=['ser_a'])
+        self.assertEqual(
+            self.cmd.characters_by_global_id.get('ger_agent_collide'),
+            self.char_a)
+        self.assertEqual(
+            self.cmd.themes_by_global_id.get('ger_theme_collide'),
+            self.theme_a)
+
+    def test_first_import_of_new_series_loads_empty(self):
+        self.cmd.load_global_id_caches(series_uuids=['ser_never_seen'])
+        self.assertEqual(self.cmd.characters_by_global_id, {})
+        self.assertEqual(self.cmd.themes_by_global_id, {})
+
+
 class ConnectionPurgeScopingTest(TestCase):
     """T-028 spec point (2)+(5): the v2.4.0 purge is scoped to the imported
     series — a sibling series' connections must survive (the ISS-001
