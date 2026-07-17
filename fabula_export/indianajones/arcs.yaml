@@ -1,156 +1,277 @@
 # Conflict Arc Data
-# Generated: 2026-02-18T09:55:01.817240
+# Generated: 2026-07-17T11:03:26.082764
 
-- fabula_uuid: arc_8f9ac261a837
-  global_id: null
-  title: Elsa Schneider's conflicting loyalties and ultimate betrayal of Indiana Jones
-    in pursuit of the Holy Grail.
-  description: Elsa Schneider's conflicting loyalties and ultimate betrayal of Indiana
-    Jones in pursuit of the Holy Grail.
+- fabula_uuid: arc_9f7741b92309
+  global_id: ger_conflictarc_56e03ed5c5d7
+  name: Adventure in Shanghai
+  description: A chaotic mission in Shanghai pits Indiana Jones against Kao Kan and
+    Lao Che, involving aerial dogfights, narrow escapes, and the inclusion of Short
+    Round, Willie Scott, and a DC-3 aircraft within the dangerous operation.
   arc_type: INTERPERSONAL
-- fabula_uuid: arc_9f3697b27b86
-  global_id: null
-  title: Indiana Jones and his companions versus the Nazis, who seek the Holy Grail
-    for their own sinister purposes.
-  description: Indiana Jones and his companions versus the Nazis, who seek the Holy
-    Grail for their own sinister purposes.
+  series_uuid: ser_indianajones
+  events: []
+  involved_character_uuids:
+  - ger_agent_29d4d48d9df2
+  - ger_agent_44354bd1c066
+  - ger_agent_56cddffbba1c
+  - ger_agent_7bd0a45a77d6
+  - ger_agent_84b119bfd0a5
+  - ger_agent_a155bf4bca11
+  - ger_agent_ebd4363f56fd
+  season_appearances:
+  - 1
+  episode_count: 0
+- fabula_uuid: arc_bbb035e154f6
+  global_id: ger_conflictarc_b012bea36d76
+  name: Alliance with Satipo
+  description: An early adventure featuring Indiana Jones in a perilous expedition
+    in South America, where his partnership with the treacherous guide Satipo is tested
+    as survival and betrayal become central themes.
   arc_type: INTERPERSONAL
-- fabula_uuid: arc_c48a19aa7d17
-  global_id: null
-  title: Indiana Jones' struggle against the Thuggee Cult to recover the Sankara Stones,
-    rescue enslaved children, and prevent their evil plans.
-  description: Indiana Jones' struggle against the Thuggee Cult to recover the Sankara
-    Stones, rescue enslaved children, and prevent their evil plans.
-  arc_type: SUPERNATURAL
-- fabula_uuid: arc_d587023df058
-  global_id: null
-  title: Indiana Jones' struggle with the responsibility and cost of living up to
-    his father's expectations while embarking on the adventurous quest for the Holy
-    Grail; balancing his thirst for knowledge with his familial duty and seeking his
-    father’s approval.
-  description: Indiana Jones' struggle with the responsibility and cost of living
-    up to his father's expectations while embarking on the adventurous quest for the
-    Holy Grail; balancing his thirst for knowledge with his familial duty and seeking
-    his father’s approval.
+  series_uuid: ser_indianajones
+  events:
+  - event_uuid: cand_evt_scene_117ed7be9706487d_1
+    role: START
+    episode: &id001
+      uuid: ep_sea_ser_indianajones_s01_e01
+      season: 1
+      number: 1
+      ordinal: 101
+  - event_uuid: cand_evt_scene_6c6d885ac180a159_1
+    role: CLIMAX
+    episode: *id001
+  - event_uuid: cand_evt_scene_84315b43c7ee9a7e_1
+    role: RESOLUTION
+    episode: *id001
+  involved_character_uuids:
+  - ger_agent_56cddffbba1c
+  - ger_agent_c345d55b1dd2
+  season_appearances:
+  - 1
+  episode_count: 1
+- fabula_uuid: arc_a300ae549ddc
+  global_id: ger_conflictarc_1ebb982e3272
+  name: Elsa Schneider's betrayal
+  description: Elsa Schneider, initially an ally, betrays Indiana Jones and his allies
+    during the quest for the Holy Grail, driven by ambition and self-interest, contributing
+    to the moral conflicts faced by him.
+  arc_type: INTERPERSONAL
+  series_uuid: ser_indianajones
+  events:
+  - event_uuid: cand_evt_scene_3029c1778fc73d54_01
+    role: RESOLUTION
+    episode: &id002
+      uuid: ep_sea_ser_indianajones_s01_e03
+      season: 1
+      number: 3
+      ordinal: 103
+  - event_uuid: cand_evt_scene_695f78dac1fe1973_02
+    role: START
+    episode: *id002
+  - event_uuid: cand_evt_scene_b6b44e9f0648d4f4_01
+    role: CLIMAX
+    episode: *id002
+  involved_character_uuids:
+  - ger_agent_b49149550b39
+  season_appearances:
+  - 1
+  episode_count: 1
+- fabula_uuid: arc_f61f590c343a
+  global_id: ger_conflictarc_2bcafcbdcde3
+  name: Family bond with Henry Jones Sr.
+  description: A recurring storyline showcasing the complex relationship between Indiana
+    Jones and his father, Professor Henry Jones Sr., punctuated by mutual respect,
+    generational friction, and shared goals.
+  arc_type: INTERPERSONAL
+  series_uuid: ser_indianajones
+  events: []
+  involved_character_uuids:
+  - ger_agent_0d242065c61a
+  - ger_agent_56cddffbba1c
+  season_appearances:
+  - 1
+  episode_count: 0
+- fabula_uuid: arc_ac7c55010c8d
+  global_id: ger_conflictarc_26567b8bf95e
+  name: Isolated administrative conflict
+  description: A single record referencing an isolated conflict involving unknown
+    agents and lacking context, remaining a standalone entity without further continuation
+    or integration into broader themes.
   arc_type: INTERNAL
-- fabula_uuid: arc_c81fe0febab8
-  global_id: null
-  title: Indiana Jones's evolving relationship with his father, Henry Jones Sr., marked
-    by estrangement, reconciliation, and mutual respect.
-  description: Indiana Jones's evolving relationship with his father, Henry Jones
-    Sr., marked by estrangement, reconciliation, and mutual respect.
+  series_uuid: ser_indianajones
+  events:
+  - event_uuid: cand_evt_scene_56f7c24df48814a6_01
+    role: CLIMAX
+    episode: *id002
+  - event_uuid: cand_evt_scene_695f78dac1fe1973_01
+    role: START
+    episode: *id002
+  - event_uuid: cand_evt_scene_d43251fec053b4f9_01
+    role: RESOLUTION
+    episode: *id002
+  involved_character_uuids: []
+  season_appearances:
+  - 1
+  episode_count: 1
+- fabula_uuid: arc_a78cfb566bc8
+  global_id: ger_conflictarc_4fc3b3e496f2
+  name: Journey to find the Holy Grail
+  description: Indiana Jones races against Nazis and other adversaries to locate the
+    Holy Grail, facing family conflicts and moral dilemmas with Professor Henry Jones
+    Sr. and Elsa Schneider along the way.
   arc_type: INTERPERSONAL
-- fabula_uuid: arc_6420f021063b
-  global_id: null
-  title: Indiana Jones's internal struggle between his skepticism and his growing
-    acceptance of the supernatural and his responsibility to help those in need.
-  description: Indiana Jones's internal struggle between his skepticism and his growing
-    acceptance of the supernatural and his responsibility to help those in need.
-  arc_type: INTERNAL
-- fabula_uuid: arc_359abc2aeb00
-  global_id: null
-  title: 'Indy''s Internal Struggle: Balancing Pragmatism and Morality in the Pursuit
-    of the Ark.'
-  description: 'Indy''s Internal Struggle: Balancing Pragmatism and Morality in the
-    Pursuit of the Ark.'
-  arc_type: INTERNAL
-- fabula_uuid: arc_ed4995535b53
-  global_id: null
-  title: Lao Che's relentless pursuit of Indiana Jones to reclaim Nurhachi's ashes
-    and seek revenge for betrayal.
-  description: Lao Che's relentless pursuit of Indiana Jones to reclaim Nurhachi's
-    ashes and seek revenge for betrayal.
-  arc_type: INTERPERSONAL
-- fabula_uuid: arc_e45f3aee6f1f
-  global_id: null
-  title: 'Marion Ravenwood''s Struggle for Agency: Resisting Nazi Oppression and Asserting
-    Independence.'
-  description: 'Marion Ravenwood''s Struggle for Agency: Resisting Nazi Oppression
-    and Asserting Independence.'
-  arc_type: INTERPERSONAL
-- fabula_uuid: arc_a766eb0c9b8d
-  global_id: null
-  title: Short Round's journey to prove his worth and loyalty to Indiana Jones in
-    the wake of Wu Han's death and to protect Indy and his friends.
-  description: Short Round's journey to prove his worth and loyalty to Indiana Jones
-    in the wake of Wu Han's death and to protect Indy and his friends.
-  arc_type: INTERNAL
-- fabula_uuid: arc_b2550891952b
-  global_id: null
-  title: 'Supernatural vs. Human: The Perils of Disturbing the Sacred.'
-  description: 'Supernatural vs. Human: The Perils of Disturbing the Sacred.'
-  arc_type: SUPERNATURAL
-- fabula_uuid: arc_5a141c4a45bf
-  global_id: null
-  title: 'The Clash of Cultures: Hok''s Court vs. Nazi Ambitions.'
-  description: 'The Clash of Cultures: Hok''s Court vs. Nazi Ambitions.'
+  series_uuid: ser_indianajones
+  events: []
+  involved_character_uuids:
+  - ger_agent_0d242065c61a
+  - ger_agent_56cddffbba1c
+  - ger_agent_8f6d40510b85
+  - ger_agent_9637766f0ca1
+  - ger_agent_b49149550b39
+  season_appearances:
+  - 1
+  episode_count: 0
+- fabula_uuid: arc_5bb48ece122b
+  global_id: ger_conflictarc_fd130a718dfe
+  name: Mayapore villagers' plight
+  description: Indiana Jones assists or confronts the villagers of Mayapore, indicating
+    a struggle tied to a larger societal issue affecting the community, where his
+    role appears as a defender or solver of local problems.
   arc_type: SOCIETAL
-- fabula_uuid: arc_ab7057c2a870
-  global_id: null
-  title: 'The Corrupting Influence of the Ark: Belloq''s Descent into Heresy.'
-  description: 'The Corrupting Influence of the Ark: Belloq''s Descent into Heresy.'
+  series_uuid: ser_indianajones
+  events: []
+  involved_character_uuids:
+  - ger_agent_1d392071514b
+  - ger_agent_56cddffbba1c
+  season_appearances:
+  - 1
+  episode_count: 0
+- fabula_uuid: arc_49b4285022ea
+  global_id: ger_conflictarc_ce1dd19de901
+  name: Personal survival struggles
+  description: Portions of Indiana Jones' journey where he faces isolation or survival
+    challenges without clear allies, representing internal growth or self-reliance
+    amid dangerous scenarios.
   arc_type: INTERNAL
-- fabula_uuid: arc_c9425e7cf8ee
-  global_id: null
-  title: 'The Price of Betrayal: The Downfall of Barranca and Satipo.'
-  description: 'The Price of Betrayal: The Downfall of Barranca and Satipo.'
+  series_uuid: ser_indianajones
+  events:
+  - event_uuid: cand_evt_scene_159d9fdff473d475_1
+    role: RESOLUTION
+    episode: *id001
+  - event_uuid: cand_evt_scene_a2b57dd6802de495_1
+    role: START
+    episode: *id001
+  - event_uuid: cand_evt_scene_05734835e6f23653_01
+    role: RESOLUTION
+    episode: *id002
+  - event_uuid: cand_evt_scene_380e3061d05adea7_02
+    role: RESOLUTION
+    episode: *id002
+  - event_uuid: cand_evt_scene_695f78dac1fe1973_01
+    role: START
+    episode: *id002
+  - event_uuid: cand_evt_scene_9b0aa9afc553c80f_01
+    role: CLIMAX
+    episode: *id002
+  - event_uuid: cand_evt_scene_d3d9bbe0a37da65a_01
+    role: START
+    episode: *id002
+  involved_character_uuids:
+  - ger_agent_56cddffbba1c
+  season_appearances:
+  - 1
+  episode_count: 2
+- fabula_uuid: arc_08d4e218d644
+  global_id: ger_conflictarc_a25d59bb4afe
+  name: Pursuit by Nazi agents
+  description: Indiana Jones evades and confronts Nazi operatives, including Vogel
+    and the Man in the Panama Hat, who seek to capture or eliminate him due to his
+    actions against their objectives.
   arc_type: INTERPERSONAL
-- fabula_uuid: arc_c167cd969f2e
-  global_id: null
-  title: 'The Race for the Ark: Indiana Jones vs. René Belloq and the Nazis.'
-  description: 'The Race for the Ark: Indiana Jones vs. René Belloq and the Nazis.'
+  series_uuid: ser_indianajones
+  events:
+  - event_uuid: cand_evt_scene_3029c1778fc73d54_01
+    role: RESOLUTION
+    episode: *id002
+  - event_uuid: cand_evt_scene_695f78dac1fe1973_02
+    role: START
+    episode: *id002
+  - event_uuid: cand_evt_scene_755ddb2fd9ddf4a0_01
+    role: CLIMAX
+    episode: *id002
+  involved_character_uuids:
+  - ger_agent_0151c95abeaa
+  - ger_agent_56cddffbba1c
+  - ger_agent_9637766f0ca1
+  season_appearances:
+  - 1
+  episode_count: 1
+- fabula_uuid: arc_122d5b6a04d2
+  global_id: ger_conflictarc_1304b688884b
+  name: Rivalry with René Belloq
+  description: Indiana Jones faces his academic rival René Belloq, whose ambitions
+    lead to direct conflict over shared objectives. Their rivalry escalates as Belloq
+    aligns with external threats like the Nazi collaborator Belzig, demonstrating
+    their continuous struggle for dominance and the same artifacts.
   arc_type: INTERPERSONAL
-- fabula_uuid: arc_39d476042bda
-  global_id: null
-  title: The battle between Indiana Jones and the Nazi regime to secure the Holy Grail
-    before it can be exploited for their nefarious purposes, reflecting the ideological
-    struggle against oppression and the preservation of historical artifacts from
-    falling into the wrong hands.
-  description: The battle between Indiana Jones and the Nazi regime to secure the
-    Holy Grail before it can be exploited for their nefarious purposes, reflecting
-    the ideological struggle against oppression and the preservation of historical
-    artifacts from falling into the wrong hands.
-  arc_type: SOCIETAL
-- fabula_uuid: arc_026c9ffe0154
-  global_id: null
-  title: The pursuit of the Cross of Coronado and the establishment of a rivalry between
-    Indiana Jones, Fedora, and their respective factions.
-  description: The pursuit of the Cross of Coronado and the establishment of a rivalry
-    between Indiana Jones, Fedora, and their respective factions.
+  series_uuid: ser_indianajones
+  events:
+  - event_uuid: cand_evt_scene_10450a477e769c89_1
+    role: START
+    episode: *id001
+  - event_uuid: cand_evt_scene_3185a9b7e679ec06_2
+    role: CLIMAX
+    episode: *id001
+  - event_uuid: cand_evt_scene_853cc9ce74b2ef03_2
+    role: CLIMAX
+    episode: *id001
+  - event_uuid: cand_evt_scene_fd97be365289797e_1
+    role: START
+    episode: *id001
+  involved_character_uuids:
+  - ger_agent_56cddffbba1c
+  - ger_agent_d3d683ae6415
+  - ger_agent_fa777291f06b
+  season_appearances:
+  - 1
+  episode_count: 1
+- fabula_uuid: arc_127dba74e694
+  global_id: ger_conflictarc_7a43eaab91bd
+  name: Romance with Marion Ravenwood
+  description: Indiana Jones navigates a turbulent relationship with Marion Ravenwood,
+    marked by deep emotional ties, mutual respect, and the challenges of their shared
+    risky profession.
   arc_type: INTERPERSONAL
-- fabula_uuid: arc_3a68388961e5
-  global_id: null
-  title: The quest for the Holy Grail, involving Indiana Jones, Walter Donovan, Elsa
-    Schneider, and the Brotherhood of the Cruciform Sword, each with their own motivations
-    and agendas.
-  description: The quest for the Holy Grail, involving Indiana Jones, Walter Donovan,
-    Elsa Schneider, and the Brotherhood of the Cruciform Sword, each with their own
-    motivations and agendas.
+  series_uuid: ser_indianajones
+  events:
+  - event_uuid: cand_evt_scene_40baf337f6ff7416_1
+    role: CLIMAX
+    episode: *id001
+  - event_uuid: cand_evt_scene_40baf337f6ff7416_2
+    role: RESOLUTION
+    episode: *id001
+  - event_uuid: cand_evt_scene_77a8194cfb16f7a4_1
+    role: START
+    episode: *id001
+  involved_character_uuids:
+  - ger_agent_56cddffbba1c
+  - ger_agent_d774ea3c4ab1
+  season_appearances:
+  - 1
+  episode_count: 1
+- fabula_uuid: arc_035d17daa29a
+  global_id: ger_conflictarc_90d9e301964b
+  name: Willie and Short Round's journey
+  description: Willie Scott and Short Round become involved in Indiana Jones' adventures,
+    facing their own challenges and growth alongside him, highlighting friendship
+    and teamwork through perilous events.
   arc_type: INTERPERSONAL
-- fabula_uuid: arc_c2dfce2f82ca
-  global_id: null
-  title: The tense and fluctuating dynamic between Indiana Jones and Elsa Schneider,
-    defined by mutual attraction and betrayal, reflecting the struggle between trust
-    and manipulation as they compete for the Holy Grail.
-  description: The tense and fluctuating dynamic between Indiana Jones and Elsa Schneider,
-    defined by mutual attraction and betrayal, reflecting the struggle between trust
-    and manipulation as they compete for the Holy Grail.
-  arc_type: INTERPERSONAL
-- fabula_uuid: arc_f7647cf3996d
-  global_id: null
-  title: Walter Donovan's desperate and ruthless pursuit of immortality through the
-    Holy Grail, motivated by insatiable greed and a willingness to exploit and sacrifice
-    others for personal gain, culminating in his ultimate demise as a consequence
-    of his own hubris.
-  description: Walter Donovan's desperate and ruthless pursuit of immortality through
-    the Holy Grail, motivated by insatiable greed and a willingness to exploit and
-    sacrifice others for personal gain, culminating in his ultimate demise as a consequence
-    of his own hubris.
-  arc_type: INTERNAL
-- fabula_uuid: arc_f7c39a9ef168
-  global_id: null
-  title: Willie Scott's transformation from a self-centered nightclub singer to a
-    courageous and empathetic ally.
-  description: Willie Scott's transformation from a self-centered nightclub singer
-    to a courageous and empathetic ally.
-  arc_type: INTERNAL
+  series_uuid: ser_indianajones
+  events: []
+  involved_character_uuids:
+  - ger_agent_29d4d48d9df2
+  - ger_agent_56cddffbba1c
+  - ger_agent_ebd4363f56fd
+  season_appearances:
+  - 1
+  episode_count: 0

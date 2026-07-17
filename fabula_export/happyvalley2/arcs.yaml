@@ -1,0 +1,709 @@
+# Conflict Arc Data
+# Generated: 2026-07-17T10:53:02.101039
+
+- fabula_uuid: arc_6313b06175ab
+  global_id: ger_conflictarc_0863c5fd359a
+  name: Alison and Daryl Garrs' Marital Struggle
+  description: Domestic conflict between Alison and Daryl Garrs, likely involving
+    abuse or coercive control.
+  arc_type: INTERPERSONAL
+  series_uuid: ser_happy_valley
+  events:
+  - event_uuid: cand_evt_scene_0ff278eec2672f08_01
+    role: START
+    episode: &id001
+      uuid: ep_sea_ser_happy_valley_s02_e05
+      season: 2
+      number: 5
+      ordinal: 205
+  - event_uuid: cand_evt_scene_acbe140b3581e93a_01
+    role: RESOLUTION
+    episode: *id001
+  involved_character_uuids:
+  - ger_agent_594d3770cd23
+  - ger_agent_e0814528bcf4
+  season_appearances:
+  - 2
+  episode_count: 1
+- fabula_uuid: arc_9362e212dfbe
+  global_id: ger_conflictarc_06bf85f83fda
+  name: Andy and Alison's Conflicted Alliance
+  description: Andy Shepherd's turbulent or professionally fraught relationship with
+    Alison Garrs, potentially stemming from shared investigative or marital tensions.
+  arc_type: INTERPERSONAL
+  series_uuid: ser_happy_valley
+  events:
+  - event_uuid: cand_evt_scene_637e070e6d64d1dc_03
+    role: RESOLUTION
+    episode: &id002
+      uuid: ep_sea_ser_happy_valley_s02_e06
+      season: 2
+      number: 6
+      ordinal: 206
+  - event_uuid: cand_evt_scene_77e5a2fad19bfb6f_01
+    role: CLIMAX
+    episode: *id002
+  - event_uuid: cand_evt_scene_8af3ee73273be234_01
+    role: START
+    episode: *id002
+  involved_character_uuids:
+  - ger_agent_594d3770cd23
+  - ger_agent_6ac87f086f92
+  season_appearances:
+  - 2
+  episode_count: 1
+- fabula_uuid: arc_5c74edf8f40b
+  global_id: ger_conflictarc_b4da640a7a90
+  name: Cawood's Personal Isolation
+  description: Catherine Cawood's internal emotional isolation and melancholy following
+    family trauma, marked by withdrawal and introspective moments of grief.
+  arc_type: INTERNAL
+  series_uuid: ser_happy_valley
+  events:
+  - event_uuid: cand_evt_scene_234c715074783ff3_01
+    role: START
+    episode: &id003
+      uuid: ep_sea_ser_happy_valley_s01_e02
+      season: 1
+      number: 2
+      ordinal: 102
+  - event_uuid: cand_evt_scene_fe00487baac2fe41_01
+    role: CLIMAX
+    episode: *id003
+  - event_uuid: cand_evt_scene_5c12603026323eb9_02
+    role: CLIMAX
+    episode: &id007
+      uuid: ep_sea_ser_happy_valley_s02_e03
+      season: 2
+      number: 3
+      ordinal: 203
+  - event_uuid: cand_evt_scene_516e4e7fd965d1f8_01
+    role: START
+    episode: *id001
+  - event_uuid: cand_evt_scene_ffac8be8f7e96338_02
+    role: CLIMAX
+    episode: *id001
+  involved_character_uuids:
+  - ger_agent_283d6fdb0b6b
+  - ger_agent_7e114a90dce7
+  season_appearances:
+  - 1
+  - 2
+  episode_count: 3
+- fabula_uuid: arc_f40ed0d4bb24
+  global_id: ger_conflictarc_390bcc2117de
+  name: Clare Cartwright's Domestic Turmoil
+  description: Clare Cartwright's exposure to or involvement in domestic conflict,
+    possibly centered around Ryan or Catherine Cawood.
+  arc_type: INTERPERSONAL
+  series_uuid: ser_happy_valley
+  events:
+  - event_uuid: cand_evt_scene_57ff779b1633a756_02
+    role: RESOLUTION
+    episode: &id004
+      uuid: ep_sea_ser_happy_valley_s01_e06
+      season: 1
+      number: 6
+      ordinal: 106
+  - event_uuid: cand_evt_scene_bf973307a5ebb1f2_01
+    role: START
+    episode: *id004
+  - event_uuid: cand_evt_scene_c4f3ea689d1c3f72_01
+    role: CLIMAX
+    episode: *id004
+  - event_uuid: cand_evt_scene_8d688e7454fe0493_01
+    role: START
+    episode: &id005
+      uuid: ep_sea_ser_happy_valley_s02_e01
+      season: 2
+      number: 1
+      ordinal: 201
+  - event_uuid: cand_evt_scene_f39bd5af3e1b1f3b_02
+    role: CLIMAX
+    episode: *id005
+  - event_uuid: cand_evt_scene_937ae3f78bea82aa_01
+    role: START
+    episode: &id006
+      uuid: ep_sea_ser_happy_valley_s02_e02
+      season: 2
+      number: 2
+      ordinal: 202
+  - event_uuid: cand_evt_scene_c6ee5ef8d29104c8_01
+    role: CLIMAX
+    episode: *id006
+  - event_uuid: cand_evt_scene_ca11ff9967ccce2d_02
+    role: RESOLUTION
+    episode: *id006
+  - event_uuid: cand_evt_scene_83c0a4c1d309ff7f_01
+    role: CLIMAX
+    episode: *id007
+  - event_uuid: cand_evt_scene_e6ade398d4e3498a_01
+    role: START
+    episode: *id007
+  involved_character_uuids:
+  - ger_agent_283d6fdb0b6b
+  - ger_agent_302085e608d0
+  - ger_agent_f6109542f858
+  season_appearances:
+  - 1
+  - 2
+  episode_count: 4
+- fabula_uuid: arc_d1f82fd03e28
+  global_id: ger_conflictarc_4b3a57ac39d6
+  name: Gallagher Family Strife
+  description: Nevison Gallagher's violent and coercive behavior destabilizes his
+    family, involving Ann Gallagher and Ashley Cowgill in escalating domestic conflict
+    and abuse.
+  arc_type: INTERPERSONAL
+  series_uuid: ser_happy_valley
+  events:
+  - event_uuid: cand_evt_scene_06765043e563017f_01
+    role: START
+    episode: &id008
+      uuid: ep_sea_ser_happy_valley_s01_e01
+      season: 1
+      number: 1
+      ordinal: 101
+  - event_uuid: cand_evt_scene_74686111e596eb0b_04
+    role: CLIMAX
+    episode: *id008
+  - event_uuid: cand_evt_scene_7714b1e1cd1b2243_02
+    role: RESOLUTION
+    episode: *id004
+  - event_uuid: cand_evt_scene_acc13c35b551509b_02
+    role: CLIMAX
+    episode: *id004
+  - event_uuid: cand_evt_scene_af1482378624b701_01
+    role: START
+    episode: *id004
+  involved_character_uuids:
+  - ger_agent_531df2f5a9ca
+  - ger_agent_95590ecb61fa
+  - ger_agent_a87316c0bf8b
+  season_appearances:
+  - 1
+  episode_count: 2
+- fabula_uuid: arc_4fdccb82c6a1
+  global_id: ger_conflictarc_11508eddbf6a
+  name: Kevin Weatherill's Descent
+  description: Kevin Weatherill's personal deterioration or moral unraveling, possibly
+    tied to coercion or manipulation in a criminal context.
+  arc_type: INTERNAL
+  series_uuid: ser_happy_valley
+  events:
+  - event_uuid: cand_evt_scene_5d427b5e6f7528bd_01
+    role: CLIMAX
+    episode: *id003
+  - event_uuid: cand_evt_scene_76c50435a591c050_01
+    role: START
+    episode: *id003
+  - event_uuid: cand_evt_scene_a29ee3a0cbdeec9e_01
+    role: CLIMAX
+    episode: &id009
+      uuid: ep_sea_ser_happy_valley_s01_e05
+      season: 1
+      number: 5
+      ordinal: 105
+  - event_uuid: cand_evt_scene_aca127023776d909_01
+    role: START
+    episode: *id009
+  - event_uuid: cand_evt_scene_f5cde78d2e46d09b_03
+    role: RESOLUTION
+    episode: *id009
+  involved_character_uuids:
+  - ger_agent_3640227cffc2
+  season_appearances:
+  - 1
+  episode_count: 2
+- fabula_uuid: arc_7607a35ea323
+  global_id: ger_conflictarc_fa036ba5c9fb
+  name: Kidnapping and Captivity
+  description: A coordinated abduction involving Ann Gallagher and Ash Cowgill, orchestrated
+    by Tommy Lee Royce with assistance from Kevin Weatherill and Lewis Whippey, culminating
+    in a prolonged captivity situation.
+  arc_type: INTERPERSONAL
+  series_uuid: ser_happy_valley
+  events:
+  - event_uuid: cand_evt_scene_48958a4048e9a5df_01
+    role: CLIMAX
+    episode: *id003
+  - event_uuid: cand_evt_scene_76c50435a591c050_01
+    role: START
+    episode: *id003
+  - event_uuid: cand_evt_scene_086c975539398599_01
+    role: START
+    episode: &id010
+      uuid: ep_sea_ser_happy_valley_s01_e03
+      season: 1
+      number: 3
+      ordinal: 103
+  - event_uuid: cand_evt_scene_4cd2ac97b39600ca_01
+    role: START
+    episode: *id010
+  - event_uuid: cand_evt_scene_6244eaa2b63020f1_03
+    role: CLIMAX
+    episode: *id010
+  - event_uuid: cand_evt_scene_efb563132e9e2f3c_01
+    role: CLIMAX
+    episode: *id010
+  involved_character_uuids:
+  - ger_agent_3640227cffc2
+  - ger_agent_531df2f5a9ca
+  - ger_agent_755778b655f3
+  - ger_agent_a384a35f643f
+  - ger_agent_a87316c0bf8b
+  - ger_agent_d972e3ecad41
+  season_appearances:
+  - 1
+  episode_count: 2
+- fabula_uuid: arc_7484fa8f2f7b
+  global_id: ger_conflictarc_4fde6384edf0
+  name: Lewis Whippey's Involvement in Crime
+  description: Lewis Whippey's participation in illicit activities alongside Tommy
+    Lee Royce and others in a kidnapping and extortion scheme.
+  arc_type: INTERPERSONAL
+  series_uuid: ser_happy_valley
+  events:
+  - event_uuid: cand_evt_scene_5ccaad93849c873c_01
+    role: START
+    episode: *id010
+  - event_uuid: cand_evt_scene_ffbde5956ef42bf6_01
+    role: CLIMAX
+    episode: *id010
+  involved_character_uuids:
+  - ger_agent_a384a35f643f
+  season_appearances:
+  - 1
+  episode_count: 1
+- fabula_uuid: arc_9f1473909bbc
+  global_id: ger_conflictarc_2b6e6e8a2760
+  name: Royce's Threat to the Cawood Family
+  description: Catherine Cawood's ongoing struggle against Tommy Lee Royce, who repeatedly
+    threatens her family—Ryan and Rebecca Cawood—and herself through various direct
+    acts of violence, coercion, and intimidation across multiple encounters.
+  arc_type: INTERPERSONAL
+  series_uuid: ser_happy_valley
+  events:
+  - event_uuid: cand_evt_scene_3f06aff7cfdb86d1_02
+    role: CLIMAX
+    episode: *id008
+  - event_uuid: cand_evt_scene_ffc768223fafbacd_01
+    role: START
+    episode: *id008
+  - event_uuid: cand_evt_scene_611bc8d16e331cb0_02
+    role: CLIMAX
+    episode: *id010
+  - event_uuid: cand_evt_scene_bed68dd597fc8b10_01
+    role: START
+    episode: *id010
+  - event_uuid: cand_evt_scene_27b5cf207428cc9e_01
+    role: RESOLUTION
+    episode: &id011
+      uuid: ep_sea_ser_happy_valley_s01_e04
+      season: 1
+      number: 4
+      ordinal: 104
+  - event_uuid: cand_evt_scene_94d87d07181861a7_02
+    role: CLIMAX
+    episode: *id011
+  - event_uuid: cand_evt_scene_975187d4e0eb928d_01
+    role: START
+    episode: *id011
+  - event_uuid: cand_evt_scene_66b7bba89e2a5dd6_01
+    role: CLIMAX
+    episode: *id009
+  - event_uuid: cand_evt_scene_fc13871304c23f06_01
+    role: START
+    episode: *id009
+  - event_uuid: cand_evt_scene_40b581baf80f97af_01
+    role: START
+    episode: *id004
+  - event_uuid: cand_evt_scene_45fb40426dda4117_01
+    role: START
+    episode: *id004
+  - event_uuid: cand_evt_scene_57ff779b1633a756_02
+    role: RESOLUTION
+    episode: *id004
+  - event_uuid: cand_evt_scene_d6c4027d7bb9bbb2_01
+    role: CLIMAX
+    episode: *id004
+  - event_uuid: cand_evt_scene_fdd29e942ae392af_01
+    role: RESOLUTION
+    episode: *id004
+  - event_uuid: cand_evt_scene_3d4e3bfbbb899a91_01
+    role: START
+    episode: *id005
+  - event_uuid: cand_evt_scene_63733c266b80035f_01
+    role: CLIMAX
+    episode: *id005
+  - event_uuid: cand_evt_scene_0f9b34abc06ebddf_01
+    role: CLIMAX
+    episode: *id006
+  - event_uuid: cand_evt_scene_937ae3f78bea82aa_01
+    role: START
+    episode: *id006
+  - event_uuid: cand_evt_scene_ca11ff9967ccce2d_01
+    role: RESOLUTION
+    episode: *id006
+  - event_uuid: cand_evt_scene_79ee23d18302b5e4_02
+    role: CLIMAX
+    episode: *id007
+  - event_uuid: cand_evt_scene_a0b41c6d02e80734_01
+    role: CLIMAX
+    episode: *id007
+  - event_uuid: cand_evt_scene_e6ade398d4e3498a_01
+    role: START
+    episode: *id007
+  - event_uuid: cand_evt_scene_714260ca570e8314_01
+    role: RESOLUTION
+    episode: &id012
+      uuid: ep_sea_ser_happy_valley_s02_e04
+      season: 2
+      number: 4
+      ordinal: 204
+  - event_uuid: cand_evt_scene_bcace2f00280e185_01
+    role: START
+    episode: *id012
+  - event_uuid: cand_evt_scene_f144b82ce5e88308_01
+    role: CLIMAX
+    episode: *id012
+  - event_uuid: cand_evt_scene_1942bdb8bdcfed90_01
+    role: START
+    episode: *id001
+  - event_uuid: cand_evt_scene_79648d3acf1f3d6c_02
+    role: CLIMAX
+    episode: *id001
+  - event_uuid: cand_evt_scene_39a1b8da94832d24_01
+    role: START
+    episode: *id002
+  - event_uuid: cand_evt_scene_637e070e6d64d1dc_01
+    role: RESOLUTION
+    episode: *id002
+  - event_uuid: cand_evt_scene_7f0628ab95b5f778_01
+    role: CLIMAX
+    episode: *id002
+  - event_uuid: cand_evt_scene_86cb399fe4e98f4a_01
+    role: CLIMAX
+    episode: *id002
+  - event_uuid: cand_evt_scene_9a10c35e1daac132_01
+    role: START
+    episode: *id002
+  - event_uuid: cand_evt_scene_a069fb8b2f946259_02
+    role: RESOLUTION
+    episode: *id002
+  involved_character_uuids:
+  - ger_agent_283d6fdb0b6b
+  - ger_agent_302085e608d0
+  - ger_agent_6ac87f086f92
+  - ger_agent_90dc6f12c776
+  - ger_agent_d972e3ecad41
+  - ger_agent_fb4c55d6d3a3
+  season_appearances:
+  - 1
+  - 2
+  episode_count: 11
+- fabula_uuid: arc_936a9fac0a32
+  global_id: ger_conflictarc_132e62ff0288
+  name: Sean Balmforth's Isolated Issue
+  description: Sean Balmforth's isolated conflict or personal crisis, not revealed
+    within other arcs.
+  arc_type: INTERNAL
+  series_uuid: ser_happy_valley
+  events:
+  - event_uuid: cand_evt_scene_0086af2e2ab8b1d9_01
+    role: START
+    episode: *id012
+  - event_uuid: cand_evt_scene_4e7d67358c9fd3f8_03
+    role: RESOLUTION
+    episode: *id012
+  - event_uuid: cand_evt_scene_c20668a2dad08d30_01
+    role: CLIMAX
+    episode: *id012
+  involved_character_uuids:
+  - ger_agent_86c3d2e8b0a8
+  season_appearances:
+  - 2
+  episode_count: 1
+- fabula_uuid: arc_3525b8d87185
+  global_id: ger_conflictarc_cce4c0cae524
+  name: Steph and Annette's Support Conflict
+  description: Tension or interpersonal friction between Steph and Annette within
+    a caregiving or support network for Catherine Cawood.
+  arc_type: INTERPERSONAL
+  series_uuid: ser_happy_valley
+  events:
+  - event_uuid: cand_evt_scene_75ab423e9fdd50b3_01
+    role: START
+    episode: *id012
+  - event_uuid: cand_evt_scene_ab130564a4dbafbd_01
+    role: RESOLUTION
+    episode: *id012
+  involved_character_uuids:
+  - ger_agent_01832e55658d
+  - ger_agent_283d6fdb0b6b
+  - ger_agent_676c26bac5ac
+  - ger_agent_fce00b04e4af
+  season_appearances:
+  - 2
+  episode_count: 1
+- fabula_uuid: arc_daa62c1c7850
+  global_id: ger_conflictarc_36ccf2631b18
+  name: Tommy Lee Royce's Imprisonment and Isolation
+  description: Tommy Lee Royce's physical and existential confinement, marked by anxiety
+    and paranoia.
+  arc_type: INTERNAL
+  series_uuid: ser_happy_valley
+  events:
+  - event_uuid: cand_evt_scene_63733c266b80035f_01
+    role: CLIMAX
+    episode: *id005
+  - event_uuid: cand_evt_scene_6bae8e224a01320e_01
+    role: START
+    episode: *id005
+  - event_uuid: cand_evt_scene_cdb267441e986390_01
+    role: START
+    episode: *id006
+  - event_uuid: cand_evt_scene_dd5477608962bd35_03
+    role: CLIMAX
+    episode: *id006
+  involved_character_uuids:
+  - ger_agent_d972e3ecad41
+  season_appearances:
+  - 2
+  episode_count: 2
+- fabula_uuid: arc_e16bb3b0769d
+  global_id: ger_conflictarc_62fd67538654
+  name: Unspecified Individual Conflicts
+  description: Various one-off or isolated internal conflicts for unnamed or minimally
+    described characters.
+  arc_type: INTERNAL
+  series_uuid: ser_happy_valley
+  events:
+  - event_uuid: cand_evt_scene_87e160a0e47a8598_01
+    role: CLIMAX
+    episode: *id008
+  - event_uuid: cand_evt_scene_aff4e04b05ad6b93_01
+    role: START
+    episode: *id008
+  - event_uuid: cand_evt_scene_487ecb860e9b152a_01
+    role: START
+    episode: *id003
+  - event_uuid: cand_evt_scene_48958a4048e9a5df_01
+    role: CLIMAX
+    episode: *id003
+  - event_uuid: cand_evt_scene_665fce680e29ef56_01
+    role: CLIMAX
+    episode: *id003
+  - event_uuid: cand_evt_scene_99c910f700ba09d1_01
+    role: RESOLUTION
+    episode: *id003
+  - event_uuid: cand_evt_scene_b0ddce241e0ce33d_01
+    role: START
+    episode: *id003
+  - event_uuid: cand_evt_scene_8ebc2b9478798634_01
+    role: START
+    episode: *id010
+  - event_uuid: cand_evt_scene_efb563132e9e2f3c_01
+    role: CLIMAX
+    episode: *id010
+  - event_uuid: cand_evt_scene_12338af28ae62fbc_01
+    role: RESOLUTION
+    episode: *id011
+  - event_uuid: cand_evt_scene_a0b2e3040eed6f83_01
+    role: CLIMAX
+    episode: *id011
+  - event_uuid: cand_evt_scene_b8c264a89be48d62_01
+    role: START
+    episode: *id011
+  - event_uuid: cand_evt_scene_c20f368c487b9614_01
+    role: START
+    episode: *id011
+  - event_uuid: cand_evt_scene_fcd60ed8845a0e45_03
+    role: CLIMAX
+    episode: *id011
+  - event_uuid: cand_evt_scene_66b7bba89e2a5dd6_01
+    role: CLIMAX
+    episode: *id009
+  - event_uuid: cand_evt_scene_6ca79c0b421ae571_01
+    role: CLIMAX
+    episode: *id009
+  - event_uuid: cand_evt_scene_7714ac4db8fb9a91_02
+    role: START
+    episode: *id009
+  - event_uuid: cand_evt_scene_8d2749e2c9679174_01
+    role: START
+    episode: *id009
+  - event_uuid: cand_evt_scene_d1f1dcab83648ea7_01
+    role: RESOLUTION
+    episode: *id009
+  - event_uuid: cand_evt_scene_d441a18fa1623839_01
+    role: CLIMAX
+    episode: *id009
+  - event_uuid: cand_evt_scene_fc13871304c23f06_01
+    role: START
+    episode: *id009
+  - event_uuid: cand_evt_scene_4006dc26500a4b38_01
+    role: START
+    episode: *id012
+  - event_uuid: cand_evt_scene_4fd6b33c3aa78495_02
+    role: RESOLUTION
+    episode: *id012
+  - event_uuid: cand_evt_scene_6653e2684cdaf98e_01
+    role: START
+    episode: *id012
+  - event_uuid: cand_evt_scene_6653e2684cdaf98e_03
+    role: CLIMAX
+    episode: *id012
+  - event_uuid: cand_evt_scene_8a8e2699e0eee233_01
+    role: CLIMAX
+    episode: *id012
+  - event_uuid: cand_evt_scene_f851630c028de74e_02
+    role: RESOLUTION
+    episode: *id012
+  - event_uuid: cand_evt_scene_8a53a80180d35cde_02
+    role: CLIMAX
+    episode: *id001
+  - event_uuid: cand_evt_scene_df61ebbb7f513468_01
+    role: START
+    episode: *id001
+  involved_character_uuids: []
+  season_appearances:
+  - 1
+  - 2
+  episode_count: 7
+- fabula_uuid: arc_3b0e20b66933
+  global_id: ger_conflictarc_214a85dc6250
+  name: Vicky and Mike's Dispute
+  description: A marital or partnership conflict between Mike Taylor and Vicky Fleming,
+    characterized by interpersonal tension and disagreement.
+  arc_type: INTERPERSONAL
+  series_uuid: ser_happy_valley
+  events:
+  - event_uuid: cand_evt_scene_27b5cf207428cc9e_01
+    role: RESOLUTION
+    episode: *id011
+  - event_uuid: cand_evt_scene_94d87d07181861a7_02
+    role: CLIMAX
+    episode: *id011
+  - event_uuid: cand_evt_scene_bf335f1d2e936283_01
+    role: START
+    episode: *id011
+  - event_uuid: cand_evt_scene_64fb103a9f18cfb3_02
+    role: START
+    episode: *id007
+  - event_uuid: cand_evt_scene_d1f9d0c400c1571f_01
+    role: RESOLUTION
+    episode: *id007
+  - event_uuid: cand_evt_scene_d40d86da5a405410_02
+    role: CLIMAX
+    episode: *id007
+  involved_character_uuids:
+  - ger_agent_8136d455f6b2
+  - ger_agent_ec31c869516e
+  season_appearances:
+  - 1
+  - 2
+  episode_count: 2
+- fabula_uuid: arc_70aa1f080935
+  global_id: ger_conflictarc_b9463f4e5fbb
+  name: Wadsworth and Fleming Partnership Fallout
+  description: John Wadsworth's strained collaboration or conflict with Vicky Fleming,
+    potentially stemming from professional or personal partnership issues.
+  arc_type: INTERPERSONAL
+  series_uuid: ser_happy_valley
+  events:
+  - event_uuid: cand_evt_scene_0f832f71f9a9f067_01
+    role: START
+    episode: *id005
+  - event_uuid: cand_evt_scene_7f6ffdcaa0a5244c_01
+    role: CLIMAX
+    episode: *id005
+  - event_uuid: cand_evt_scene_58d5f9ffd53c3af7_02
+    role: CLIMAX
+    episode: *id006
+  - event_uuid: cand_evt_scene_778eed62f1ebdc14_01
+    role: START
+    episode: *id006
+  - event_uuid: cand_evt_scene_ca547a3a063dbb10_01
+    role: RESOLUTION
+    episode: *id006
+  involved_character_uuids:
+  - ger_agent_8136d455f6b2
+  - ger_agent_eba286353a62
+  season_appearances:
+  - 2
+  episode_count: 2
+- fabula_uuid: arc_5440656d0f44
+  global_id: ger_conflictarc_8b6605565d74
+  name: Winnie's Personal Struggle
+  description: Winnie's private emotional or social conflict, with no clear interpersonal
+    antagonist.
+  arc_type: INTERNAL
+  series_uuid: ser_happy_valley
+  events:
+  - event_uuid: cand_evt_scene_62fb3e8d759cc8cd_01
+    role: CLIMAX
+    episode: *id006
+  - event_uuid: cand_evt_scene_937ae3f78bea82aa_01
+    role: START
+    episode: *id006
+  involved_character_uuids:
+  - ger_agent_2f91af7f2e24
+  season_appearances:
+  - 2
+  episode_count: 1
+- fabula_uuid: arc_24ac3cdda43e
+  global_id: ger_conflictarc_1f2bcdd06348
+  name: ger_conflictarc_1f2bcdd06348
+  description: ''
+  arc_type: UNKNOWN
+  series_uuid: ser_happy_valley
+  events:
+  - event_uuid: cand_evt_scene_657dd659cc089df7_01
+    role: CLIMAX
+    episode: *id001
+  - event_uuid: cand_evt_scene_df61ebbb7f513468_01
+    role: START
+    episode: *id001
+  involved_character_uuids:
+  - ger_agent_eba286353a62
+  season_appearances:
+  - 2
+  episode_count: 1
+- fabula_uuid: arc_867cef0a3ba7
+  global_id: ger_conflictarc_282b50e72e2e
+  name: ger_conflictarc_282b50e72e2e
+  description: ''
+  arc_type: UNKNOWN
+  series_uuid: ser_happy_valley
+  events:
+  - event_uuid: cand_evt_scene_0f62860231c14843_01
+    role: CLIMAX
+    episode: *id005
+  - event_uuid: cand_evt_scene_fe54e7812f2bf444_01
+    role: START
+    episode: *id005
+  involved_character_uuids: []
+  season_appearances:
+  - 2
+  episode_count: 1
+- fabula_uuid: arc_3e50f9bd50ad
+  global_id: ger_conflictarc_91ef0dcb8b83
+  name: ger_conflictarc_91ef0dcb8b83
+  description: ''
+  arc_type: UNKNOWN
+  series_uuid: ser_happy_valley
+  events:
+  - event_uuid: cand_evt_scene_11b7430c345213de_01
+    role: CLIMAX
+    episode: *id002
+  - event_uuid: cand_evt_scene_3eaabf83a4f16775_01
+    role: RESOLUTION
+    episode: *id002
+  - event_uuid: cand_evt_scene_8af3ee73273be234_01
+    role: START
+    episode: *id002
+  involved_character_uuids: []
+  season_appearances:
+  - 2
+  episode_count: 1

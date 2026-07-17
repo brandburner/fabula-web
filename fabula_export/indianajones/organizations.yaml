@@ -1,359 +1,1135 @@
 # Organization Data
-# Generated: 2026-02-18T09:55:01.472297
+# Generated: 2026-07-17T11:03:11.513395
 
-- fabula_uuid: organization_15009111199f
-  global_id: null
+- fabula_uuid: ger_organization_997ae6a8ddb0
+  global_id: ger_organization_997ae6a8ddb0
   canonical_name: Academic Community
-  description: Scholars like Professor Henry Jones Sr. form the Academic Community,
-    pursuing deep research into historical artifacts such as the Holy Grail. Indy
-    calls his father an academic and bookworm, underscoring ties to this world of
-    meticulous study. Henry's ransacked house, filled with Grail diary and legend
-    paintings, points to urgent searches by intruders possibly linked to this group,
-    drawing academia into the violent Grail hunt alongside figures like Marcus Brody.
-  sphere_of_influence: Scholarly Research on Mythological Artifacts
-- fabula_uuid: organization_58cca6814885
-  global_id: null
-  canonical_name: Barnett College
-  description: Academic institution in *The Adventures of Indiana Jones* animated
-    series (1992), operating in a separate continuity from the live-action films.
-  sphere_of_influence: Archaeological Education and Academic Administration
-- fabula_uuid: organization_69236cc8031a
-  global_id: null
-  canonical_name: Boy Scouts
-  description: The Boy Scouts troop marches into the American Southwest desert on
-    horseback, their uniforms and saddles mimicking Army Cavalry precision until dismounting
-    exposes their youth and self-serious demeanor. Scoutmaster Havelock leads, issuing
-    warnings about miles-long passageways in the cliff pueblo. Herman vomits, drawing
-    mockery from peers until a blond scout comforts him. Two scouts scale the cliff
-    base, cracking group unity. They project fragile frontier order amid looming wilderness
-    chaos.
-  sphere_of_influence: Youth Scouting and Wilderness Exploration
-- fabula_uuid: organization_582252858748
-  global_id: null
-  canonical_name: British Colonial Administration (1935 India)
-  description: A *bureaucratic governing body* of British colonial rule in 1935 India,
-    portrayed as **indifferent and unresponsive** to indigenous crises (e.g., famine,
-    drought, theft of the Sivalinga). Unlike the military, it lacks **operational
-    power** and is **symbolic of colonial neglect**, referenced in **multiple scenes**
-    as a distant, ineffective institution.
-  sphere_of_influence: Colonial Administration in India
-- fabula_uuid: organization_b3dc231c07b1
-  global_id: null
-  canonical_name: British Colonial Military (Pankot Palace)
-  description: Operates exclusively within the British colonial administration in
-    1935 India, with no ties to Japanese military forces or Chinese territories. Focused
-    on ceremonial and bureaucratic functions rather than direct security operations.
-  sphere_of_influence: Colonial Military Authority in British India
-- fabula_uuid: organization_fea6ee0a3229
-  global_id: null
+  description: Henry Jones Sr. anchors this community of scholars through his role
+    as an academic and bookworm. Indy stresses his father's deep connections, forged
+    in pursuits that produce works like the Grail Diary. The ransacked house signals
+    risks from rival academics or Grail seekers who target such research. Scholars
+    here document ancient mysteries, their work blending intellectual rigor with exposure
+    to theft and violence from competitors.
+  sphere_of_influence: Historical Scholarship and Artifact Research
+  season_appearances:
+  - 1
+  local_uuids:
+    1: org_6203e0a91387
+  first_appearance_season: 1
+  tier: asteroid
+  episode_count: 1
+- fabula_uuid: ger_organization_ca77504b8a1c
+  global_id: ger_organization_ca77504b8a1c
+  canonical_name: Arab Bar Patrons (Cairo bar crowd)
+  description: 'Local Arab patrons crowd the smoke-filled Cairo bar during Indiana
+    Jones''s tense standoff with Belloq and German henchmen. They maintain a watchful
+    nonintervention—ignoring what they call ''white men''s business''—but are prepared
+    to react when violence threatens: they declare neutrality initially, grab weapons
+    as the situation escalates, and later take part in the sequence that allows Sallah''s
+    children to extract Indy. Their behavior illustrates volatile crowd dynamics in
+    the establishment.'
+  sphere_of_influence: Cairo Bar Patronage and Neutral Crowd Oversight
+  season_appearances:
+  - 1
+  local_uuids:
+    1: org_d530cb90b66a
+  first_appearance_season: 1
+  tier: asteroid
+  episode_count: 1
+- fabula_uuid: ger_organization_b2cac6f0a060
+  global_id: ger_organization_b2cac6f0a060
+  canonical_name: Arab Diggers (Tanis excavation)
+  description: Local Arab diggers who form the manual excavation workforce at the
+    Tanis dig site during the Nazi-led Ark search. They perform hauling, rope-work,
+    and shaft-lowering (including three diggers who assist Sallah directly), operate
+    around the camp and truck beds, and work under German supervision while also providing
+    local cover and covert support to Sallah and Omar. They appear clustered around
+    command tents watching the crated Ark and later rush toward the airstrip explosion,
+    leaving the site exposed.
+  sphere_of_influence: Desert Excavation Labor and Site Operations
+  season_appearances:
+  - 1
+  local_uuids:
+    1: org_b9dd3fd81946
+  first_appearance_season: 1
+  tier: asteroid
+  episode_count: 1
+- fabula_uuid: ger_organization_fc8a5a8cc1fa
+  global_id: ger_organization_fc8a5a8cc1fa
+  canonical_name: Army Intelligence
+  description: Army Intelligence dispatches operatives like Buzz Kehoe to locate Abner
+    Ravenwood, bypassing archaeological concerns like the missing idol. Brody names
+    them as the force searching for Abner, escalating private worries into an official
+    mission that pulls Indy in. Kehoe asserts authority by introducing himself and
+    Bang Chow during a high-speed alliance at Shanghai airport, where they detain
+    German agents ahead of Indy's arrival. Their actions propel the plot through government-backed
+    intelligence operations against foreign threats.
+  sphere_of_influence: Military Intelligence and Counter-Espionage Operations
+  season_appearances:
+  - 1
+  local_uuids:
+    1: org_4d844d40e284
+  first_appearance_season: 1
+  tier: asteroid
+  episode_count: 1
+- fabula_uuid: ger_organization_094f36dff312
+  global_id: ger_organization_094f36dff312
+  canonical_name: Aryan Supermen
+  description: Nazi boarders termed Aryan Supermen overrun the Bantu Wind. They herd
+    Captain Katanga's Black pirate crew forward, abusing them physically and verbally
+    to assert racial domination while enforcing tactical control. Soldiers smash open
+    the hold door, pour inside, and grin at the crated Ark of the Covenant before
+    seizing it. This raid transfers the artifact into Nazi hands and escalates pursuit
+    stakes. No internal hierarchy appears.
+  sphere_of_influence: Nazi Military Raiding and Racial Supremacy Enforcement
+  season_appearances:
+  - 1
+  local_uuids:
+    1: org_e70a723e5b2c
+  first_appearance_season: 1
+  tier: asteroid
+  episode_count: 1
+- fabula_uuid: ger_organization_d66f8859cfcd
+  global_id: ger_organization_d66f8859cfcd
+  canonical_name: Bad Arabs
+  description: Bad Arabs operate as local thugs and escorts in the small bazaar. They
+    transport the basket concealing Marion Ravenwood while at least one pursuer harasses
+    Indiana Jones during his frantic chase. Indy targets the last Bad Arab with his
+    whip to break through panicked crowds. This antagonist group enforces kidnapping
+    through direct physical pursuit and evasion tactics.
+  sphere_of_influence: Bazaar Pursuit and Kidnapping Enforcement
+  season_appearances:
+  - 1
+  local_uuids:
+    1: org_bb43335a087b
+  first_appearance_season: 1
+  tier: asteroid
+  episode_count: 1
+- fabula_uuid: ger_organization_1b673caaaf86
+  global_id: ger_organization_1b673caaaf86
+  canonical_name: Black African Pirates (crew of the Bantu Wind)
+  description: 'The crew of the Bantu Wind are the personnel who man Katanga''s smuggling
+    vessel, the Bantu Wind. In the narrative they appear in multiple scenes and roles:
+    during the Ark handover they are overpowered and held at gunpoint by Nazis on
+    the bridge and used by Captain Katanga as victimized leverage to barter Marion''s
+    custody; in a separate naval confrontation they cluster on the ship''s bow—standing
+    defiantly and being labeled a pirate crew—drawing aggressive attention from the
+    German U‑boat Wurrfler and heightening the stakes of that standoff. These descriptions
+    represent the same organization (the vessel''s crew) across distinct episodes
+    of action.'
+  sphere_of_influence: Maritime Smuggling and Coerced Shipboard Operations
+  season_appearances:
+  - 1
+  - 1
+  local_uuids:
+    1: org_0c5f29f1e519
+    2: org_d503ea8f1316
+  first_appearance_season: 1
+  tier: asteroid
+  episode_count: 1
+- fabula_uuid: ger_organization_f6e40166c2b6
+  global_id: ger_organization_f6e40166c2b6
+  canonical_name: Boy Scouts of America (Havelock's Troop)
+  description: A Boy Scouts of America troop led by Scoutmaster Havelock, featuring
+    young members such as Indiana Jones and Herman. The troop operates in the American
+    Southwest, emphasizing discipline, adventure, and civic duty. Key activities include
+    formation marching, outdoor expeditions, and community protection (e.g., rallying
+    authorities to stop grave robbers). The troop's dynamics highlight tensions between
+    obedience, curiosity, and group values, with members like Herman facing peer pressure
+    and unnamed scouts occasionally disobeying orders (e.g., climbing rocks). The
+    troop is positioned as a source of moral authority in the community.
+  sphere_of_influence: Youth Outdoor Training and Discipline
+  season_appearances:
+  - 1
+  local_uuids:
+    1: org_69cea0b826af
+  first_appearance_season: 1
+  tier: asteroid
+  episode_count: 1
+- fabula_uuid: ger_organization_96aac50613c8
+  global_id: ger_organization_96aac50613c8
+  canonical_name: British Army (Imperial Forces in India)
+  description: Represents the overarching British Imperial military apparatus in India,
+    distinct from specific units like the Cavalry at Pankot Palace. Focuses on large-scale
+    operations such as storming mines, coordinating with local rulers, and suppressing
+    cults like the Thuggees across the subcontinent.
+  sphere_of_influence: Colonial Military Suppression and Territorial Control
+  season_appearances:
+  - 1
+  local_uuids:
+    1: org_225687c2a0a6
+  first_appearance_season: 1
+  tier: asteroid
+  episode_count: 0
+- fabula_uuid: ger_organization_9a8bccf05e73
+  global_id: ger_organization_9a8bccf05e73
+  canonical_name: British Cavalry Unit (Pankot Palace Inspection Tour)
+  description: A specialized British military unit led by Captain Blumburtt, deployed
+    during a temporary inspection tour to Pankot Palace. Their actions are confined
+    to a single episode, where they initially dismiss supernatural threats but later
+    provide critical tactical support to Indiana Jones and allies during a Thuggee
+    ambush. Unlike the broader Imperial Forces, this unit operates on a localized
+    scale with direct interactions with the protagonists.
+  sphere_of_influence: Colonial Military Garrison and Battlefield Reinforcement
+  season_appearances:
+  - 1
+  local_uuids:
+    1: org_e876a26f9862
+  first_appearance_season: 1
+  tier: asteroid
+  episode_count: 1
+- fabula_uuid: ger_organization_e27c5e4c2eab
+  global_id: ger_organization_e27c5e4c2eab
+  canonical_name: British Colonial Authority (British Empire/Military)
+  description: The British Colonial Authority, embodied by Captain Blumburtt, represents
+    the British Empire's military and administrative presence in India during the
+    1930s. Stationed at Pankot Palace, this authority conducts inspection tours, dismisses
+    local superstitions (e.g., Thuggee cult resurgence, supernatural threats), and
+    positions itself as a neutral but obstructive force. Its skepticism toward Indiana
+    Jones's warnings highlights the tension between colonial oversight and indigenous
+    beliefs, while its pragmatic dismissal of local horrors isolates protagonists
+    amid escalating supernatural threats. The authority's actions reflect broader
+    imperial policies of suppression and indifference to cultural/religious practices.
+  sphere_of_influence: Colonial Governance and Security in India
+  season_appearances:
+  - 1
+  local_uuids:
+    1: org_118a4fb0887c
+  first_appearance_season: 1
+  tier: asteroid
+  episode_count: 1
+- fabula_uuid: ger_organization_7d7ddf501841
+  global_id: ger_organization_7d7ddf501841
   canonical_name: Brotherhood of the Cruciform Sword
-  description: The Brotherhood of the Cruciform Sword operates as a secret society
-    sworn to protect the Holy Grail's secrets for a thousand years. Led by figures
-    like Kazim, who commands armed men bearing the cruciform sword symbol, they employ
-    ruthless tactics—igniting catacomb fires to trap intruders, ambushing Nazi convoys,
-    attacking perceived looters like Indiana Jones and Elsa Schneider, and spying
-    on negotiations—to thwart selfish quests. Their mission targets threats including
-    Nazis and grave robbers, as seen in Kazim's dying warning to Donovan. The Grail
-    Knight represents their ancient guardian legacy, enforcing the Grail's trials
-    against the unworthy.
-  sphere_of_influence: Secret Protection of the Holy Grail
-- fabula_uuid: organization_87ffefca5244
-  global_id: null
-  canonical_name: College of Archaeology’s Museum of Spanish Colonial Artifacts
-  description: Academic repository affiliated with a college, specializing in the
-    preservation of **legally recovered Spanish colonial-era relics** (e.g., the Cross
-    of Coronado). Serves as a **neutral custodian** for expedition finds and a bridge
-    between **adventure archaeology and scholarly research**. **No ties to Nazi propaganda
-    or occult artifacts.**
-  sphere_of_influence: Cultural Artifact Curation and Historical Preservation
-- fabula_uuid: organization_d4827355c332
-  global_id: null
-  canonical_name: Crusaders (Byzantium Sack)
-  description: Generic medieval Christian warriors whose sack of Byzantium led to
-    the installation of marble columns in the Venetian library. Their stained-glass
-    depiction (with Roman numerals) serves as a **separate clue** from the Alexandretta
-    siege, guiding Indy and Brody to the Grail’s hiding place in Venice.
-  sphere_of_influence: Medieval Crusades and Holy Grail Origins
-- fabula_uuid: organization_f2a5896ffc45
-  global_id: null
+  description: A secretive religious order dedicated to guarding the Holy Grail's
+    secrets from unworthy seekers, particularly the Nazis. Led by Kazim, they operate
+    as fierce antagonists, employing ambush tactics and armed resistance. Their most
+    notable action is a desperate firefight against Donovan's convoy in a desert valley,
+    where they suffer heavy casualties. Before dying, Kazim issues a final warning
+    of 'everlasting damnation' to deter the Grail quest, reinforcing their role as
+    protectors of the Grail's sacred mysteries.
+  sphere_of_influence: Grail Guardianship and Anti-Nazi Resistance
+  season_appearances:
+  - 1
+  local_uuids:
+    1: org_eefd94d0ce9b
+  first_appearance_season: 1
+  tier: asteroid
+  episode_count: 1
+- fabula_uuid: ger_organization_d77836a6107f
+  global_id: ger_organization_d77836a6107f
+  canonical_name: Brunwald Family
+  description: The Brunwald Family owns Castle Brunwald, a jagged fortress in the
+    Austrian mountains that serves as their stronghold. They collect famous art, a
+    reputation Indiana Jones probes upon arrival with Elsa Schneider amid gathering
+    storms. Elsa's vague deflection about their status hints at Nazi complicity or
+    buried secrets in their holdings, casting the family as potential allies or hidden
+    threats in the Grail quest.
+  sphere_of_influence: Art Collecting and Austrian Aristocratic Estate Management
+  season_appearances:
+  - 1
+  local_uuids:
+    1: org_e3fddd2a32ee
+  first_appearance_season: 1
+  tier: asteroid
+  episode_count: 1
+- fabula_uuid: ger_organization_6db26b370974
+  global_id: ger_organization_6db26b370974
+  canonical_name: Club Obi-Wan Orchestra and Chorus (House Band at Lao Che's Club,
+    Shanghai)
+  description: The house orchestra and chorus at Club Obi-Wan, the Shanghai nightclub
+    associated with Lao Che. This ensemble provides live music and vocal performance
+    during the Shanghai ballroom scene in Raiders of the Lost Ark—supplying ambient
+    tunes, precise musical cues (crescendo, gong strikes), and exotic motifs that
+    heighten tension during negotiations over the Eye of the Raven diamond and continue
+    through the subsequent gunfire and escape.
+  sphere_of_influence: Nightclub Live Music and Dramatic Action Timing
+  season_appearances:
+  - 1
+  local_uuids:
+    1: org_95ac79c6075e
+  first_appearance_season: 1
+  tier: asteroid
+  episode_count: 0
+- fabula_uuid: ger_organization_58ea7efccfce
+  global_id: ger_organization_58ea7efccfce
+  canonical_name: College Students
+  description: College students swarm Berlin's Nazi book-burning rally. They hurl
+    books into flames and cheer wildly, their fervor proving deep indoctrination into
+    Nazi ideology. This youthful mob amplifies the event's chaotic energy, bolstering
+    regime propaganda as Indy and others navigate the crowd. They embody the Nazis'
+    success in radicalizing academia against 'degenerate' knowledge.
+  sphere_of_influence: Nazi Rally Mobilization and Youth Indoctrination
+  season_appearances:
+  - 1
+  local_uuids:
+    1: org_e681baff9c0e
+  first_appearance_season: 1
+  tier: asteroid
+  episode_count: 1
+- fabula_uuid: ger_organization_804fdd067dbb
+  global_id: ger_organization_804fdd067dbb
+  canonical_name: Crusaders
+  description: Medieval Christian warriors who sacked Byzantium during the Crusades
+    and carried off spoils like the Venetian library's columns. A stained-glass window
+    depicts one of their Knights, underscoring their conquests. The library began
+    as a Crusader church, embedding their military legacy in Venice's architecture
+    and artifacts. Their campaigns tie historical violence to the site's enduring
+    features.
+  sphere_of_influence: Medieval Crusading Campaigns and Conquest
+  season_appearances:
+  - 1
+  local_uuids:
+    1: org_124b190adc1f
+  first_appearance_season: 1
+  tier: asteroid
+  episode_count: 1
+- fabula_uuid: ger_organization_fa93f1ce871a
+  global_id: ger_organization_fa93f1ce871a
+  canonical_name: Der Fuhrer
+  description: Der Fuhrer directs Belloq as his subordinate in the quest for the Ark
+    of the Covenant. This higher authority deploys German henchmen to support Belloq's
+    operations in places like smoke-filled Cairo bars. Belloq coordinates with these
+    enforcers while promising delivery of the Ark—a device he calls a transmitter
+    to God—for Der Fuhrer's possession. The structure places Der Fuhrer at the apex,
+    channeling efforts through Belloq toward wielding the artifact's apocalyptic power.
+  sphere_of_influence: Supernatural Artifact Procurement and Antagonist Command
+  season_appearances:
+  - 1
+  local_uuids:
+    1: org_9041d40362dc
+  first_appearance_season: 1
+  tier: asteroid
+  episode_count: 1
+- fabula_uuid: ger_organization_3d66fd19f141
+  global_id: ger_organization_3d66fd19f141
   canonical_name: Donovan Corporation
-  description: Walter Donovan's **Donovan Corporation** (also referred to as 'Donovan
-    Corporate') funds and supplies private airliners marked with its logo to transport
-    Indiana Jones, Marcus Brody, and allies to Venice for the Grail quest. The organization
-    provides financial backing, logistical support, and strategic resources, including
-    a dedicated apartment in Venice for mission operations. While publicly positioned
-    as a mission enabler, the corporation conceals deeper ties to Nazi collaboration,
-    functioning as a front that masks antagonistic intentions amid the race for the
-    Holy Grail. The entity's operations are directed by Walter Donovan and are intertwined
-    with Nazi-aligned activities, including the deployment of resources for Grail
-    retrieval and prisoner capture operations.
-  sphere_of_influence: Private Funding and Logistics for Artifact Quests
-- fabula_uuid: organization_cd4ae68711f7
-  global_id: null
-  canonical_name: Donovan's Nazi-Aligned Grail Pursuit Convoy
-  description: A joint Nazi-Turkish expedition force led by American financier Walter
-    Donovan, archaeologist Elsa Schneider, and Nazi Colonel Vogel. This heavily armed,
-    militarized task force operates as an armored convoy through desert canyons, deploying
-    tanks and superior firepower to aggressively pursue, capture, and engage in combat
-    during the Grail quest. The group suffers losses from ambushes by Kazim's Brethren
-    of the Cruciform Sword and sabotage by Indiana Jones during the tank battle, while
-    targeting allies such as Marcus Brody and Professor Henry Jones Sr.
-  sphere_of_influence: Grail Retrieval and Prisoner Capture Operations
-- fabula_uuid: organization_40a38f654899
-  global_id: null
-  canonical_name: Donovan’s Grail Tablet Excavation Team (Mountains North of Ankara)
-  description: Non-combat, engineer-led archaeological team responsible for recovering
-    the Grail Tablet in the mountains north of Ankara. Their work precedes the militarized
-    pursuit phase and provides the initial clues for Donovan’s Grail quest. Operates
-    in a pre-combat, intellectual context.
-  sphere_of_influence: Archaeological Excavation and Artifact Recovery in Anatolia
-- fabula_uuid: organization_2b7f31f2c7b8
-  global_id: null
-  canonical_name: Donovan’s Nazi-Aligned Grail Pursuit Convoy (Desert Canyons)
-  description: Heavily armed, militarized task force deployed for aggressive pursuit,
-    capture, and combat during the Grail quest. Operates in desert canyons with tanks
-    and superior firepower, engaging in ambushes and firefights against Indy’s allies
-    and Kazim’s Brethren. Represents the combat phase of Donovan’s Grail quest, succeeding
-    the Excavation Team.
-  sphere_of_influence: Desert Warfare and Grail Quest Escorts
-- fabula_uuid: organization_2507c8ae7ece
-  global_id: null
-  canonical_name: Fedora's Gang
-  description: A **morally ambiguous, opportunistic treasure-hunting crew** operating
-    in **New Mexico (USA) during the 1930s**, specializing in **plundering sacred
-    Native American sites** (e.g., Kiva chamber) and **historical relics** (e.g.,
-    Cross of Coronado) for **personal profit**. Led by **Fedora**, a **boisterous,
-    greedy treasure hunter**, the gang consists of a small, **loosely structured crew**
-    (**Roscoe, Halfbreed, Rough Rider**) who **collude with local authorities** (e.g.,
-    Sheriff) to achieve their goals. Their operations are characterized by **chaotic,
-    opportunistic violence** rather than organized criminal structure. The gang ultimately
-    **hands off loot to the Man in the Panama Hat**, a shadowy patron, rather than
-    controlling illicit trades directly. Key activities include **pursuing young Indiana
-    Jones aboard a circus train and through town streets**, seizing relics via **Sheriff
-    collusion**, and operating as **artifact thieves for shadowy patrons**.
-  sphere_of_influence: Artifact Looting and Treasure Hunting
-- fabula_uuid: organization_da154e1df014
-  global_id: null
+  description: Donovan Corporation, led by executive Walter Donovan, is a private
+    firm that sponsors archaeological expeditions, including the Holy Grail Quest
+    Project. The corporation provides logistical support—such as a private airliner,
+    a Venice apartment as an operational base, and Dr. Elsa Schneider as a local contact—while
+    funding the recovery of the Holy Grail. Donovan’s backing is accompanied by ambiguous
+    motives, as evidenced by private warnings to Indiana Jones about distrusting others.
+    The project follows clues from an Anatolian stone tablet, leading to the Canyon
+    of the Crescent Moon, and is initially led by Henry Jones Sr. before his disappearance
+    stalls progress. Indiana Jones is later recruited to resume the quest amid Nazi
+    threats.
+  sphere_of_influence: Expedition Sponsorship and Private Air Transport
+  season_appearances:
+  - 1
+  local_uuids:
+    1: org_348cbddc3f91
+  first_appearance_season: 1
+  tier: asteroid
+  episode_count: 1
+- fabula_uuid: ger_organization_8cca6d5df601
+  global_id: ger_organization_8cca6d5df601
+  canonical_name: Donovan’s Ankara Excavation Team
+  description: A preliminary research team digging for copper in the mountain region
+    north of Ankara, responsible for uncovering the 12th-century sandstone tablet
+    with Grail directions. This team operates **before** the desert expedition and
+    is **not affiliated** with the military Expedition Party.
+  sphere_of_influence: Anatolian Excavation and Grail Artifact Recovery
+  season_appearances:
+  - 1
+  local_uuids:
+    1: org_22f602a26c7c
+  first_appearance_season: 1
+  tier: asteroid
+  episode_count: 0
+- fabula_uuid: ger_organization_6f0a0257b06d
+  global_id: ger_organization_6f0a0257b06d
+  canonical_name: Donovan’s Desert Expedition Party
+  description: A **military expedition** led by Walter Donovan, Elsa Schneider, and
+    Major Vogel, including captive Marcus Brody, Turkish soldiers, and a Nazi tank
+    crew. They travel the desert to the Canyon of the Crescent Moon in search of the
+    Holy Grail, engaging in **direct conflict** with Indiana Jones. This group is
+    **formed after** the Ankara excavation and represents the **primary antagonist
+    force** in the Grail quest.
+  sphere_of_influence: Holy Grail Pursuit and Desert Armored Assault
+  season_appearances:
+  - 1
+  local_uuids:
+    1: org_0fe580ade43d
+  first_appearance_season: 1
+  tier: asteroid
+  episode_count: 1
+- fabula_uuid: ger_organization_e85358569bbe
+  global_id: ger_organization_e85358569bbe
+  canonical_name: Donovan’s Nazi Forces (Convoy & Combat Unit)
+  description: |-
+    Donovan’s Nazi Forces, a militarized unit led by Walter Donovan and Colonel Vogel with Dr. Elsa Schneider present, serve as the primary antagonists in the Grail quest. They operate in two distinct but interconnected capacities:
+      1. **Convoy Defense**: During the desert ambush, they form Donovan’s Convoy, deploying machine guns, grenades, and a tank to repel Kazim’s Brethren fighters. Their disciplined firepower and armored support allow them to retain control, capture Marcus Brody, and torture him via water immersion on Vogel’s order.
+      2. **Offensive Assaults**: In a separate desert valley firefight, they lead assaults to capture the Holy Grail, hurling hand grenades to kill Kazim’s Brethren and provide cover during intense combat. Donovan and Vogel direct operations from the front lines, targeting Indiana Jones for elimination while battling the Brethren in a chaotic three-way clash.
+
+      Their tactics reveal brutal interrogation methods, disciplined firepower, and ruthless militancy, all aimed at safeguarding assets and advancing the Grail quest.
+  sphere_of_influence: Desert Convoy Security and Counterinsurgency Operations
+  season_appearances:
+  - 1
+  local_uuids:
+    1: org_b4b23ce290ec
+  first_appearance_season: 1
+  tier: asteroid
+  episode_count: 1
+- fabula_uuid: ger_organization_562f37c1d964
+  global_id: ger_organization_562f37c1d964
+  canonical_name: Dragon's Club Underworld Network
+  description: Criminal syndicate operating under the guise of a Shanghai nightclub
+    (Dragon's Club), led by the Tuxedo Man. Uses violent enforcement and opulent glamour
+    as a front for deeper conspiracies. Appears in *Temple of Doom* (S01E02).
+  sphere_of_influence: Criminal Enforcement and Hidden Power in Shanghai Nightclubs
+  season_appearances:
+  - 1
+  local_uuids:
+    1: org_5f355102badc
+  first_appearance_season: 1
+  tier: asteroid
+  episode_count: 1
+- fabula_uuid: ger_organization_f827ce7307f1
+  global_id: ger_organization_f827ce7307f1
+  canonical_name: Friends of Omar
+  description: Friends of Omar form a local Arab network loyal to Omar. They swiftly
+    unfurl tents, position fruit carts and baskets, and deploy two boys to sweep Indy's
+    tire tracks from Omar’s square. This practiced camouflage hides his truck in the
+    garage, erases his trail, and thwarts pursuers like Belloq and Shliemann. Their
+    communal tactics buy Indy escape time and shift chase momentum through marketplace
+    improvisation.
+  sphere_of_influence: Bazaar Camouflage and Evasion Support
+  season_appearances:
+  - 1
+  local_uuids:
+    1: org_f8e26c2d06c2
+  first_appearance_season: 1
+  tier: asteroid
+  episode_count: 1
+- fabula_uuid: ger_organization_922740c40cc0
+  global_id: ger_organization_922740c40cc0
+  canonical_name: G-Men (Government Agents)
+  description: Three G-Men emerge from a sleek black Packard sedan to intercept Indiana
+    Jones outside his college. Tailored suits and synchronized movements mark them
+    as government agents. The first man calls 'Doctor Jones' from behind with chilling
+    precision, issuing an official summons. Their deliberate actions transform the
+    sidewalk into a site of authority, pulling Indy from academic routine into urgent
+    federal business.
+  sphere_of_influence: Federal Government Summons and Official Recruitment
+  season_appearances:
+  - 1
+  local_uuids:
+    1: org_09bc3b3df968
+  first_appearance_season: 1
+  tier: asteroid
+  episode_count: 1
+- fabula_uuid: ger_organization_83604b308ce3
+  global_id: ger_organization_83604b308ce3
+  canonical_name: German Luftwaffe (Nazi Germany)
+  description: The aerial warfare branch of Nazi Germany, known as the Luftwaffe,
+    deploys Messerschmitt fighter bombers and pilots to aggressively pursue Indiana
+    Jones and Henry Jones Sr. during a mid-air skirmish. Two Luftwaffe planes ambush
+    the protagonists' biplane, forcing evasive maneuvers and exposing them to relentless
+    pursuit. The attack escalates to ground strafing at the crash site and beach,
+    where the pilots continue their assault, driving the protagonists into desperate
+    countermeasures (e.g., seagull swarms). This antagonistic force exemplifies the
+    Luftwaffe's role as the Nazi regime's agile and ruthless aerial enforcers, creating
+    tension through coordinated attacks and relentless pursuit.
+  sphere_of_influence: Aerial Warfare and Fighter Bomber Operations
+  season_appearances:
+  - 1
+  local_uuids:
+    1: org_32061c344918
+  first_appearance_season: 1
+  tier: asteroid
+  episode_count: 1
+- fabula_uuid: ger_organization_a5fa4b5c8c99
+  global_id: ger_organization_a5fa4b5c8c99
+  canonical_name: German Officers
+  description: Three German officers stand with General Tengtu Hok on the second-floor
+    walkway of his palace. They stare at a Mercedes burning below, their presence
+    recasts the blaze as a tactical provocation with political stakes. Hok registers
+    concern and shame before rushing to his museum, underscoring how the officers
+    amplify the incident's threat to his authority and the Ark.
+  sphere_of_influence: Foreign Military Liaison and Political Escalation
+  season_appearances:
+  - 1
+  local_uuids:
+    1: org_3672be059c31
+  first_appearance_season: 1
+  tier: asteroid
+  episode_count: 1
+- fabula_uuid: ger_organization_7f2ca165e4d3
+  global_id: ger_organization_7f2ca165e4d3
+  canonical_name: German Wolf Submarines
+  description: German Wolf Submarines deploy as ten vessels in semicircle formation
+    around the Bantu Wind. Deck guns lock on target while heavily-armed boarding parties
+    close for seizure. Nazis command this force to overwhelm the freighter, prompting
+    Captain Katanga to conceal Indy and Marion. They execute precise naval blockade
+    and assault coordination, embodying relentless pursuit tactics.
+  sphere_of_influence: Naval Blockade and Boarding Assaults
+  season_appearances:
+  - 1
+  local_uuids:
+    1: org_8782f6e7f0ad
+  first_appearance_season: 1
+  tier: asteroid
+  episode_count: 1
+- fabula_uuid: ger_organization_b367dda79fc7
+  global_id: ger_organization_b367dda79fc7
+  canonical_name: Gestapo
+  description: 'The Gestapo enforces the Nazi regime''s pursuit of Indiana Jones and
+    Henry Jones Sr. aboard the zeppelin. Vogel and a Gestapo agent board the passenger
+    compartment, scan tickets, and spot Indy''s disguise. Their confrontation triggers
+    violence: Indy punches Vogel and throws him out the window. This action eliminates
+    a leader but exposes Indy to the remaining Nazis, turning the aircraft into a
+    mobile trap. The Gestapo drives relentless antagonism through direct intervention
+    and scrutiny.'
+  sphere_of_influence: Nazi Secret Police Pursuit and Enforcement
+  season_appearances:
+  - 1
+  local_uuids:
+    1: org_4c82ee2289aa
+  first_appearance_season: 1
+  tier: asteroid
+  episode_count: 1
+- fabula_uuid: ger_organization_c772fd5a6f37
+  global_id: ger_organization_c772fd5a6f37
   canonical_name: Hovitos
-  description: The Hovitos (also referred to as the Hovito Tribe) are a fierce Peruvian
-    indigenous group that patrols jungle territories around the Chachapoyan temple
-    and the Urubamba River. They use poisoned darts and spears to defend their sacred
-    lands and artifacts, including the golden idol, from intruders like Indiana Jones
-    and Belloq. The tribe plays a dual role as both a territorial antagonist and a
-    cultural force exploited by Belloq, who manipulates their beliefs by posing as
-    divine. Their aggressive pursuit of Indy's party forces him to flee into the Urubamba
-    River and board Jock's plane. The Hovitos' actions serve as a moral and physical
-    obstacle in the quest for the Ark of the Covenant.
-  sphere_of_influence: Tribal Defense of Jungle Territories and Sacred Relics
-- fabula_uuid: organization_e9a4bb2bcee0
-  global_id: null
+  description: 'The Hovitos are an indigenous Peruvian tribe who guard an ancient
+    temple and serve as antagonists in the opening sequence of Indiana Jones: they
+    surround Indiana Jones after he claims the golden idol, enforce Belloq''s authority,
+    and pursue him into the jungle, attacking intruders with poisoned darts and spears.'
+  sphere_of_influence: Tribal Temple Guardianship and Jungle Warfare
+  season_appearances:
+  - 1
+  local_uuids:
+    1: org_7639ffaa6a58
+  first_appearance_season: 1
+  tier: asteroid
+  episode_count: 1
+- fabula_uuid: ger_organization_98f6c2431e43
+  global_id: ger_organization_98f6c2431e43
+  canonical_name: Indy's Class
+  description: Indy's Class gathers in the college lecture hall as the immediate audience
+    for Professor Indiana Jones's archaeology lecture. Indy writes 'FACT' on the board
+    and declares the discipline a search for facts, not truth, prompting student laughter
+    that affirms his direct, empirical approach and charismatic authority. Doctor
+    Tyree attends alongside the group, which provides real-time feedback during this
+    character-establishing classroom moment.
+  sphere_of_influence: College Archaeology Lecture Audience
+  season_appearances:
+  - 1
+  local_uuids:
+    1: org_384d096305d2
+  first_appearance_season: 1
+  tier: asteroid
+  episode_count: 0
+- fabula_uuid: ger_organization_5538a054a30b
+  global_id: ger_organization_5538a054a30b
+  canonical_name: Indy's Group
+  description: Indy's Group includes Indiana Jones, Henry Jones Sr., and Sallah. They
+    form the protagonist side in a three-way desert valley firefight against Donovan's
+    Nazis and Kazim's Brethren. From a vantage point, they observe the chaos, reject
+    Sallah's camel plan for speed, and act when Indy steals a Turkish soldier's horse,
+    knocking down foes to secure fast escape. Their opportunistic tactics drive survival
+    amid bullets and grenades.
+  sphere_of_influence: Desert Combat Evasion and Opportunistic Escape Operations
+  season_appearances:
+  - 1
+  local_uuids:
+    1: org_f17038588901
+  first_appearance_season: 1
+  tier: asteroid
+  episode_count: 1
+- fabula_uuid: ger_organization_7b06746275a6
+  global_id: ger_organization_7b06746275a6
+  canonical_name: Indy’s Alliance
+  description: Indy’s Alliance unites Indiana Jones, Henry Jones Sr., and Sallah in
+    a desperate bid to rescue Marcus Brody from Walter Donovan’s Nazi convoy. They
+    scout from concealed desert ridges, plotting a stealthy interception amid trucks,
+    camels, and a tank. When binoculars expose their position, Donovan orders a shell
+    that destroys their supply car, forcing retreat. The group favors cunning maneuvers
+    and quick adaptation over firepower, embodying underdog resistance against mechanized
+    foes in the Grail hunt.
+  sphere_of_influence: Ad-Hoc Rescue and Evasion Against Nazi Forces
+  season_appearances:
+  - 1
+  local_uuids:
+    1: org_5e6de27ba85c
+  first_appearance_season: 1
+  tier: asteroid
+  episode_count: 1
+- fabula_uuid: ger_organization_7638439e1181
+  global_id: ger_organization_7638439e1181
   canonical_name: Institute of Aryan Culture
-  description: The Institute of Aryan Culture hosts Nazi rallies that demand attendance
-    from key figures like Elsa Schneider, summoned directly from Berlin at the 'highest
-    level' for platform appearances. This underscores its central role in the regime's
-    ideological machinery, promoting Aryan supremacy through public spectacles and
-    cultural propaganda. Vogel relays the urgent message amid castle interrogations,
-    positioning the institute as a symbol of Nazi political control and Elsa's elevated
-    status within their hierarchy.
-  sphere_of_influence: Nazi Cultural Propaganda and Ideological Rallies
-- fabula_uuid: organization_bdc0fbded65d
-  global_id: null
-  canonical_name: Knights of the First Crusade
-  description: Critical to the Grail’s origin narrative; their siege of Alexandretta
-    (Iskenderun) is the first marked location on Henry Jones Sr.’s reconstructed map,
-    directly linking medieval conquest to the modern quest. Distinct from broader
-    Crusader references in the Venetian library.
-  sphere_of_influence: Crusader Military Sieges and Holy Grail Historical Guardianship
-- fabula_uuid: organization_8042f08c5598
-  global_id: null
-  canonical_name: Lao She’s Crime Syndicate
-  description: Operates from **Shanghai’s The Dragon nightclub**, specializing in
-    **illicit artifact trades** (e.g., Nurhachi’s ashes) and **large-scale criminal
-    operations** (e.g., ambushes, blockades, aerial pursuits). Led by **Lao She**,
-    a **ruthless crime lord**, with a **hierarchical structure** including his **sons
-    (Chen, Kao Kan)** and **henchmen/staff (doorman, waiters)**. **Violent and politically
-    connected**, engaging in **premeditated betrayals** (e.g., poisoned champagne,
-    gunning down Wu Han) and **sparking brawls with gunfire**. **Controls Shanghai’s
-    underworld** and is a **major antagonist in *Indiana Jones and the Temple of Doom*
-    (S1E2)**.
-  sphere_of_influence: Shanghai Underworld Criminal Operations
-- fabula_uuid: organization_760f66fc9399
-  global_id: null
-  canonical_name: Local Law Enforcement (Sheriff's Office)
-  description: The Local Law Enforcement (Sheriff's Office) upholds rural authority
-    but turns corrupt when the Sheriff colludes with Fedora to seize the Cross of
-    Coronado from Indiana Jones at his father's house. Posing as legitimate enforcers,
-    they confiscate the artifact and hand it directly to the Man in the Panama Hat,
-    prioritizing theft over justice. This betrayal exposes a structure where the Sheriff
-    wields badge-backed power for criminal ends, allying with artifact collectors
-    against young Indy.
-  sphere_of_influence: Corrupt Rural Law Enforcement
-- fabula_uuid: organization_2fa0cf0a0df3
-  global_id: null
-  canonical_name: Looters and Corrupt Local Authorities
-  description: Looters and Corrupt Local Authorities form an informal criminal alliance
-    led by the Sheriff and Fedora Man, with Roscoe and Herman as key accomplices.
-    They target the Cross of Coronado, betraying young Indiana Jones after his pursuit
-    on the train. The group executes the theft through coordinated ambush and seizure
-    at Professor Henry Jones Sr.'s house, blending the Sheriff's official position
-    with opportunistic looting to claim the artifact.
-  sphere_of_influence: Artifact Theft and Local Law Enforcement Corruption
-- fabula_uuid: organization_89eba30adf2a
-  global_id: null
-  canonical_name: Luftwaffe
-  description: Nazi Germany's Luftwaffe deploys Messerschmitt pilots who pursue Indiana
-    Jones and Henry Jones Sr. in fighter planes. The pilots chase their car through
-    a mountain tunnel, bomb the road to force a crater landing, and attack on a deserted
-    beach until seagulls swarm and crash the aircraft. These operations support the
-    regime's aggressive quest to seize the Holy Grail amid World War II.
-  sphere_of_influence: Aerial Warfare and Pursuit in Holy Grail Acquisition
-- fabula_uuid: organization_4e05c0618045
-  global_id: null
-  canonical_name: Marshall College
-  description: Academic institution in *Indiana Jones and the Last Crusade* (1989
-    live-action film), operating in a separate continuity from the animated series.
-  sphere_of_influence: University Education and Archaeology Scholarship
-- fabula_uuid: organization_af1cd11bfaae
-  global_id: null
-  canonical_name: Nang Tao Airfield Imperial Japanese Military Police
-  description: Operates under **Imperial Japanese military command** in Chinese-occupied
-    territory, with a focus on **airfield security and direct conflict resolution**.
-    Directly involved in the central plot of *Temple of Doom* through interactions
-    with Indiana Jones and Willie Scott.
-  sphere_of_influence: Airfield Security and Law Enforcement
-- fabula_uuid: organization_e81c74f3be42
-  global_id: null
-  canonical_name: Nazi Brownshirts (SA - Sturmabteilung)
-  description: Nazi Brownshirts, or Sturmabteilung (SA), act as paramilitary enforcers
-    at Berlin rallies. They organize book-burnings to destroy forbidden texts, control
-    crowds to prevent disruptions, and position themselves beside Adolf Hitler on
-    the podium. Their presence bolsters Nazi authority, projects disciplined hierarchy,
-    and intimidates onlookers including disguised opponents like Indiana Jones.
-  sphere_of_influence: Nazi Rally Security and Propaganda Enforcement
-- fabula_uuid: organization_969a73c6cc14
-  global_id: null
-  canonical_name: Nazi Germany (Nazi Regime)
-  description: A macroscopic political and military entity encompassing all Nazi-affiliated
-    operations, leadership, and ideological frameworks across multiple timelines (e.g.,
-    1912 relic hunts, WWII-era operations). The regime deploys agents—including the
-    Sinister Man, Second Man, and high-ranking officers like Shliemann, Gobler, and
-    Belzig—to capture key figures (e.g., Marcus Brody) and secure occult artifacts
-    (e.g., the Ark of the Covenant) through tactics such as ambushes, interrogations,
-    and chases. Affiliated units include the Nazi Military Tank Crew and Infantry,
-    with operations spanning dig sites, museums, and global conflicts to achieve military
-    dominance and supernatural power.
-  sphere_of_influence: Relic Pursuit Operations and Authoritarian Military Coordination
-- fabula_uuid: organization_61f1f97f8906
-  global_id: null
-  canonical_name: Nazi Tank Convoy (Desert Siege)
-  description: A **specialized tactical unit** consisting of tank crew and infantry,
-    operating under Colonel Vogel’s command during the desert tank siege in *Indiana
-    Jones and the Last Crusade*. This unit is a **subset of the broader Nazi Regime
-    (organization_969a73c6cc14)** and is deployed as part of Walter Donovan’s armored
-    convoy to assault Indiana Jones and his allies.
-  sphere_of_influence: WWII Armored Convoy Assault and Close-Quarters Combat
-- fabula_uuid: organization_694e4d8ce474
-  global_id: null
-  canonical_name: Nazi-Aligned College Students
-  description: Nazi-aligned college students actively participate in the book-burning
-    at Berlin's Nazi rally, chanting amid flames and swastikas to purge literature
-    deemed un-German. Their fervor demonstrates deep indoctrination into the regime's
-    ideology, positioning them as youthful supporters who amplify fascist propaganda
-    through public destruction and spectacle. They operate as an informal group within
-    the rally's crowd, endorsing the Third Reich's cultural purge alongside figures
-    like Adolf Hitler.
-  sphere_of_influence: Nazi Propaganda and Youth Indoctrination
-- fabula_uuid: organization_ededff951e09
-  global_id: null
-  canonical_name: Portuguese Cargo Ship Crew
-  description: The Portuguese Cargo Ship Crew mans a cargo vessel navigating stormy
-    Atlantic waters at night. Sailors including two Portuguese sailors and additional
-    crew members follow orders from the Man in the Panama Hat. They ambush Indiana
-    Jones on deck, grapple with him in physical combat, and attempt to hurl him overboard
-    during his chase to reclaim the Cross of Coronado. Their coordinated hostility
-    aids the Panama Hat's escape with the artifact, turning the ship into a battleground
-    amid crashing waves and exploding fuel drums. This crew enforces loyalty through
-    brute force against intruders threatening their commander's prize.
-  sphere_of_influence: Maritime Cargo Operations and Onboard Enforcer Duties
-- fabula_uuid: organization_bb1f70e3f582
-  global_id: null
-  canonical_name: Reich Museum of Occult Artifacts (Nazi Propaganda Repository)
-  description: Central repository for **Nazi-acquired occult artifacts**, including
-    those tied to the **Holy Grail quest**. Serves as a **tool for cultural propaganda
-    and occult legitimization** of the Nazi regime. **Key site for Elsa Schneider’s
-    delivery of the Grail Diary**, a critical plot point in the Nazi occult subplot.
-  sphere_of_influence: Nazi Cultural Propaganda and Occult Artifact Display
-- fabula_uuid: organization_a32a7ce5f40e
-  global_id: null
-  canonical_name: Republic of Hatay
-  description: The Republic of Hatay governs the region that includes the mosque and
-    surrounding territories key to the Holy Grail quest. It frames the political environment
-    where Indiana Jones navigates Nazi incursions, Brotherhood operations, and his
-    own movements. Though absent from direct action, its authority shapes the geopolitical
-    tensions driving the narrative, underscoring local sovereignty amid international
-    relic hunts.
-  sphere_of_influence: Regional Governance and Political Authority
-- fabula_uuid: organization_1b60c3acd608
-  global_id: null
-  canonical_name: Tengtu Hok’s Palace Imperial Japanese Ceremonial Security
-  description: Imperial Japanese Army soldiers providing neutral ceremonial security
-    at Tengtu Hok’s palace during the Nazi-Allied standoff over the Ark of the Covenant
-    in *Raiders of the Lost Ark*. Their role is purely geopolitical and non-combatant,
-    with no involvement in espionage or artifact recovery.
-  sphere_of_influence: Ceremonial Security and Local Force Protection
-- fabula_uuid: organization_f42022192010
-  global_id: null
+  description: The Institute of Aryan Culture hosts Nazi rallies in Berlin, functioning
+    as a central venue for the regime's ideological propaganda and cultural promotion.
+    Elsa Schneider receives a direct request to attend one such event, which positions
+    the institute within the Nazi hierarchy's political maneuvering and highlights
+    its role in reinforcing Aryan supremacy through public gatherings and symbolic
+    displays of regime power.
+  sphere_of_influence: Nazi Cultural and Ideological Propaganda
+  season_appearances:
+  - 1
+  local_uuids:
+    1: org_c1f1dd9a4eda
+  first_appearance_season: 1
+  tier: asteroid
+  episode_count: 0
+- fabula_uuid: ger_organization_a2d6caa73527
+  global_id: ger_organization_a2d6caa73527
+  canonical_name: Japanese
+  description: Brody flags the Japanese as a dangerous group tied to General Hok,
+    the Wild Boar, a tough Shanghai operator. This affiliation threatens Indy's plan
+    to seize the Ark headpiece from Hok before Nazis track Marion Ravenwood to the
+    Well of the Souls. Indy shrugs off the warning, prioritizing the Nazi race. The
+    Japanese emerge as a shadowy foreign faction amplifying risks in the Shanghai
+    leg of the quest.
+  sphere_of_influence: Foreign Alliances in Shanghai Intrigue
+  season_appearances:
+  - 1
+  local_uuids:
+    1: org_b1417179f568
+  first_appearance_season: 1
+  tier: asteroid
+  episode_count: 1
+- fabula_uuid: ger_organization_521e8f70f957
+  global_id: ger_organization_521e8f70f957
+  canonical_name: Japanese Soldiers
+  description: Japanese Soldiers act as uniformed military escorts and guards for
+    General Tengtu Hok. They flank him during bombastic entrances into his palace
+    entry hall, performing ceremonial bows alongside a robed Chinese advisor. Their
+    presence enforces Hok's dominance, compels foreign dignitaries like the three
+    Germans to join the ritual, and underscores his blend of cultural theater and
+    brute authority in diplomatic encounters.
+  sphere_of_influence: Palace Ceremonial Escort and Security
+  season_appearances:
+  - 1
+  local_uuids:
+    1: org_feeee3a5c840
+  first_appearance_season: 1
+  tier: asteroid
+  episode_count: 1
+- fabula_uuid: ger_organization_ceaab7d84c27
+  global_id: ger_organization_ceaab7d84c27
+  canonical_name: Kali Worshippers
+  description: Kali Worshippers chant in the temple's rear chamber during a sacrificial
+    ritual on the altar, where Mola Ram extracts hearts and suspends victims over
+    lava. They act as cult supporters and ritual participants under Thuggee priests
+    like Chattar Lal. When Short Round burns Indiana Jones to break his hypnotic trance,
+    sparking a battle that saves Willie Scott and dooms Chattar Lal, the worshippers
+    notice the chaos and signal their ritual's disruption.
+  sphere_of_influence: Thuggee Cult Rituals and Sacrifices
+  season_appearances:
+  - 1
+  local_uuids:
+    1: org_1199ee46df33
+  first_appearance_season: 1
+  tier: asteroid
+  episode_count: 1
+- fabula_uuid: ger_organization_efb5d6f30d8e
+  global_id: ger_organization_efb5d6f30d8e
+  canonical_name: Lao Che's Ballroom Entourage
+  description: A **small, scene-specific group** of four suited men who flank Lao
+    Che during the Ark negotiation in his nightclub ballroom, serving as silent intimidators
+    during the tense exchange that culminates in Wu Han's death.
+  sphere_of_influence: Criminal Intimidation and Gang Enforcement
+  season_appearances:
+  - 1
+  local_uuids:
+    1: org_f88f3525d358
+  first_appearance_season: 1
+  tier: asteroid
+  episode_count: 0
+- fabula_uuid: ger_organization_a038e5c73ebc
+  global_id: ger_organization_a038e5c73ebc
+  canonical_name: Lao Che's Crime Syndicate
+  description: A broad criminal organization encompassing all of Lao Che's armed enforcers,
+    including but not limited to the ballroom entourage, street-level thugs, and his
+    sons Chen and Kao Kan. Operates across Shanghai with tactics ranging from poisonings
+    to high-speed chases.
+  sphere_of_influence: Shanghai Underworld Criminal Enforcement and Pursuit
+  season_appearances:
+  - 1
+  local_uuids:
+    1: org_e012f9544dd3
+  first_appearance_season: 1
+  tier: asteroid
+  episode_count: 1
+- fabula_uuid: ger_organization_9f6030001e1f
+  global_id: ger_organization_9f6030001e1f
+  canonical_name: Local Arabs
+  description: Local Arabs are the indigenous population encountered around Tanis
+    and in Cairo in the narrative. They appear as dig workers at the Nazi excavation
+    (providing manual labor, hauling dirt, operating ropes, and with a small group
+    directly assisting Sallah), as bystanders at the airstrip who witness the Flying
+    Wing crash and Ark transport, and as bar patrons in Cairo who generally avoid
+    involvement unless directly threatened. Sallah and other characters note that
+    the occupying forces struggle to distinguish among these local groups.
+  sphere_of_influence: Civilian Labor and Neutral Observation in Egyptian Excavations
+  season_appearances:
+  - 1
+  local_uuids:
+    1: org_db4bc6c7444a
+  first_appearance_season: 1
+  tier: asteroid
+  episode_count: 1
+- fabula_uuid: ger_organization_c2b73afbe968
+  global_id: ger_organization_c2b73afbe968
+  canonical_name: Marcus Brody's Museum
+  description: The museum institution represented by Curator Marcus Brody that acquires
+    archaeological artifacts from Indiana Jones. The institution functions as an institutional
+    beneficiary and buyer—providing academic legitimacy and a formal repository for
+    recovered items, and framing expeditions as preservation-driven rather than private
+    collection.
+  sphere_of_influence: Archaeological Artifact Acquisition and Cultural Preservation
+  season_appearances:
+  - 1
+  local_uuids:
+    1: org_6aaa56c59328
+  first_appearance_season: 1
+  tier: asteroid
+  episode_count: 1
+- fabula_uuid: ger_organization_a32d5260c5e6
+  global_id: ger_organization_a32d5260c5e6
+  canonical_name: Mountain Climbers
+  description: International mountain climbers patronize the Raven Saloon in Patan,
+    Nepal, alongside Sherpas, locals, and fugitives. They populate Marion Ravenwood's
+    rough bar, establishing a Himalayan outpost vibe. Climbers carry ice axes and
+    gear that Marion and fighters wield as weapons during brawls to clear the house.
+    This group underscores the perilous mix of adventurers Marion manages amid tense
+    negotiations and personal vendettas.
+  sphere_of_influence: Nepalese Saloon Patrons and Mountaineering Equipment Users
+  season_appearances:
+  - 1
+  local_uuids:
+    1: org_768c1d0b4540
+  first_appearance_season: 1
+  tier: asteroid
+  episode_count: 1
+- fabula_uuid: ger_organization_80876bcff324
+  global_id: ger_organization_80876bcff324
+  canonical_name: Museum of Antiquities
+  description: The Museum of Antiquities serves as a fabricated front deployed by
+    Nazi agents, including the Sinister Man, to lure Marcus Brody under the pretense
+    of providing transport at Iskenderun's train station. Sinister Man claims the
+    organization sent a car for Brody, but Sallah exposes the deception, sparking
+    a violent escape attempt that ends with Brody's accidental capture in a Nazi troop
+    truck. This ruse exploits Brody's scholarly connections and isolation, highlighting
+    Nazi tactics that mimic legitimate archaeological institutions to ensnare targets
+    in chaotic environments. No real structure or staff appear; it exists solely as
+    a verbal ploy in the Nazis' abduction scheme.
+  sphere_of_influence: Nazi Deception and Target Acquisition
+  season_appearances:
+  - 1
+  local_uuids:
+    1: org_b4d45aa290b6
+  first_appearance_season: 1
+  tier: asteroid
+  episode_count: 1
+- fabula_uuid: ger_organization_736ff6267a13
+  global_id: ger_organization_736ff6267a13
+  canonical_name: Nang Tao Airfield Military Police
+  description: Government/military law enforcement unit responsible for securing Nang
+    Tao Airfield and enforcing access control during night operations. Their actions
+    are adversarial toward Indiana Jones' group initially but later facilitate the
+    protagonists' escape by confronting Lao Che's armed forces.
+  sphere_of_influence: Airfield Security and Access Control
+  season_appearances:
+  - 1
+  local_uuids:
+    1: org_bad051671cb5
+  first_appearance_season: 1
+  tier: asteroid
+  episode_count: 1
+- fabula_uuid: ger_organization_30ac94953f2b
+  global_id: ger_organization_30ac94953f2b
+  canonical_name: Nang Tao Airfield Passenger Flight Service
+  description: Private commercial passenger flight service operated by Weber from
+    Nang Tao Airfield. Known for tolerating delays for Indiana Jones and facilitating
+    escapes, as demonstrated by the delayed DC-3 flight to Siam. Distinct from the
+    airfield's military police.
+  sphere_of_influence: Commercial Passenger Aviation and Airfield Operations
+  season_appearances:
+  - 1
+  local_uuids:
+    1: org_fca95dce15cd
+  first_appearance_season: 1
+  tier: asteroid
+  episode_count: 1
+- fabula_uuid: ger_organization_8af6470e3f54
+  global_id: ger_organization_8af6470e3f54
+  canonical_name: Nazi Brownshirts (Berlin Book-Burning Rally)
+  description: Paramilitary enforcement unit deployed at the 1933 Berlin book-burning
+    rally in *Indiana Jones and the Last Crusade* (1989). Functions as intimidation
+    tools for the regime, with no command authority or strategic role.
+  sphere_of_influence: Nazi Rally Enforcement and Cultural Suppression
+  season_appearances:
+  - 1
+  local_uuids:
+    1: org_adb76491047e
+  first_appearance_season: 1
+  tier: asteroid
+  episode_count: 1
+- fabula_uuid: ger_organization_f860b4ccc1d9
+  global_id: ger_organization_f860b4ccc1d9
+  canonical_name: Nazi Flying Wing Crew (Tanis airstrip)
+  description: Scene-specific operational crew (mechanics and pilot) at the Tanis
+    airstrip who service the flying wing, load the Ark, and directly engage Indiana
+    Jones and Marion Ravenwood to protect the aircraft in that scene.
+  sphere_of_influence: Nazi Aircraft Maintenance and Cargo Security
+  season_appearances:
+  - 1
+  local_uuids:
+    1: org_32813eedef7d
+  first_appearance_season: 1
+  tier: asteroid
+  episode_count: 1
+- fabula_uuid: ger_organization_11268fb82cc3
+  global_id: ger_organization_11268fb82cc3
+  canonical_name: Nazi High Command (Berlin)
+  description: Central Berlin-based strategic leadership body for Nazi operations,
+    distinct from frontline units. Directs high-ranking officers (e.g., Shliemann,
+    Gobler) and issues orders for critical missions (e.g., Ark recovery). Operates
+    in *Raiders of the Lost Ark* (1981).
+  sphere_of_influence: Nazi Central Command and Strategic Enforcement
+  season_appearances:
+  - 1
+  local_uuids:
+    1: org_937606ae245d
+  first_appearance_season: 1
+  tier: asteroid
+  episode_count: 1
+- fabula_uuid: ger_organization_6682f9dc20cf
+  global_id: ger_organization_6682f9dc20cf
+  canonical_name: Nazi Regime (Military & Political Apparatus)
+  description: "\n  The Nazi Regime represents the overarching political and military\
+    \ apparatus of Nazi Germany, functioning as the primary antagonist force in the\
+    \ quest for the Holy Grail. It operates through:\n  - **Political Structures**:\
+    \ Controls institutions like the Reich Museum, Institute of Aryan Culture, and\
+    \ Berlin rallies, leveraging ideological campaigns and propaganda (e.g., leaflets\
+    \ for identification).\n  - **Military Operations**: Deploys soldiers, guards,\
+    \ officers (e.g., Vogel), radiomen, tank crews, and infantry across strongholds\
+    \ (e.g., Castle Brunwald) and desert convoys. Uses mechanized weaponry (tanks,\
+    \ troop carriers, zeppelins) and coordinated brute-force tactics.\n  - **Tactics**:\
+    \ Engages in psychological taunting, hostage-taking (e.g., Marcus Brody, Henry\
+    \ Jones Sr.), and aggressive swarming of targets. Directly clashes with protagonists\
+    \ through searches, chases, and assaults.\n  - **Key Figures**: Includes military\
+    \ leaders (Vogel), political agents (Elsa Schneider), and collaborators (Walter\
+    \ Donovan), all aligned under the regime's sinister ideological campaign.\n  "
+  sphere_of_influence: Military Occupation and Holy Grail Acquisition in Europe
+  season_appearances:
+  - 1
+  local_uuids:
+    1: org_b593dc525347
+  first_appearance_season: 1
+  tier: planet
+  episode_count: 2
+- fabula_uuid: ger_organization_2d54265ef402
+  global_id: ger_organization_2d54265ef402
+  canonical_name: Nepalese Native Patrons
+  description: Nepalese natives patronize The Raven saloon in Patan, Nepal, as one
+    distinct demographic within a diverse crowd that includes Sherpa guides, smugglers,
+    fugitives, and climbers. Marion Ravenwood violently clears them from the bar amid
+    her confrontation with Indiana Jones, scattering the locals during a tense negotiation
+    over a bronze sun medallion. Their presence fills the saloon, amplifying the chaotic
+    atmosphere of this remote outpost.
+  sphere_of_influence: Local Saloon Patronage in Rural Nepal
+  season_appearances:
+  - 1
+  local_uuids:
+    1: org_72313366c37b
+  first_appearance_season: 1
+  tier: asteroid
+  episode_count: 1
+- fabula_uuid: ger_organization_9a763e26821e
+  global_id: ger_organization_9a763e26821e
+  canonical_name: Omar's Men
+  description: Omar leads this group of local diggers who ally with Indiana Jones
+    and Sallah during the dig-site operation. They park their truck at the desert
+    dune ridge and stand ready to deliver transport across the sands and provide cover
+    against pursuers. Their arrival accelerates the shift from reconnaissance to extraction,
+    bolstering Indy's team with essential local manpower and vehicles in a high-stakes
+    pivot.
+  sphere_of_influence: Local Desert Transport and Expedition Security
+  season_appearances:
+  - 1
+  local_uuids:
+    1: org_a9133e3bf64c
+  first_appearance_season: 1
+  tier: asteroid
+  episode_count: 1
+- fabula_uuid: ger_organization_03645675527a
+  global_id: ger_organization_03645675527a
+  canonical_name: Pan Am
+  description: Pan Am runs the Clipper aircraft that flies Indiana Jones across the
+    Pacific Ocean. This single flight compresses day into night over ocean and clouds,
+    linking distant action sites and speeding the shift from planning to Nazi pursuit.
+    The airline brands the plane and delivers transpacific passenger transport, marking
+    reliable commercial aviation in the adventure's global chase.
+  sphere_of_influence: Commercial Aviation and Transpacific Passenger Transport
+  season_appearances:
+  - 1
+  local_uuids:
+    1: org_e24a3850bdfa
+  first_appearance_season: 1
+  tier: asteroid
+  episode_count: 1
+- fabula_uuid: ger_organization_47e0127f350d
+  global_id: ger_organization_47e0127f350d
+  canonical_name: Pankot Palace (Symbolic Antagonist)
+  description: The palace as a **mythic and symbolic force of evil**, blamed by villagers
+    in Mayapore for stealing the sacred Sankara Stone (sivalinga). This act is declared
+    the root cause of regional suffering (drought, famine, childlessness, death),
+    and the shaman mandates Indiana Jones to infiltrate the palace to retrieve the
+    artifact. The palace functions as a **passive, almost supernatural antagonist**,
+    driving the quest through its association with divine retribution.
+  sphere_of_influence: Regional Despotic Authority and Sacred Artifact Theft
+  season_appearances:
+  - 1
+  local_uuids:
+    1: org_c39d73cf9df3
+  first_appearance_season: 1
+  tier: asteroid
+  episode_count: 0
+- fabula_uuid: ger_organization_b1177555eae7
+  global_id: ger_organization_b1177555eae7
+  canonical_name: Pankot Palace Ruling Court
+  description: The administrative and political body governing Pankot Palace, consisting
+    of the Maharajah (Zalim Singh), Prime Minister Chattar Lal, and their ministers.
+    This entity is responsible for the palace's operations, including the Pleasure
+    Pavilion, and serves as the primary antagonist in Indiana Jones's quest, deflecting
+    blame for Thuggee cult activities and Sankara Stone theft while masking its complicity
+    in regional atrocities.
+  sphere_of_influence: Regional Palace Governance and Thuggee Cult Complicity
+  season_appearances:
+  - 1
+  local_uuids:
+    1: org_c39d2b3cf9df3
+  first_appearance_season: 1
+  tier: asteroid
+  episode_count: 1
+- fabula_uuid: ger_organization_8093ebcc95a6
+  global_id: ger_organization_8093ebcc95a6
+  canonical_name: Rajput Guards
+  description: Rajput guards line the marble bridge to Pankot Palace, spears at rest.
+    They snap to attention in a domino sequence as Indiana Jones, Willie Scott, and
+    Short Round cross, projecting the palace's rigid discipline. This coordinated
+    display enforces ceremonial protocol on arrivals, blending security with theatrical
+    authority to set expectations for encounters inside.
+  sphere_of_influence: Pankot Palace Ceremonial Security and Protocol Enforcement
+  season_appearances:
+  - 1
+  local_uuids:
+    1: org_759490c7b576
+  first_appearance_season: 1
+  tier: asteroid
+  episode_count: 0
+- fabula_uuid: ger_organization_3abeffcae980
+  global_id: ger_organization_3abeffcae980
+  canonical_name: Reich Museum (Berlin)
+  description: The Reich Museum in Berlin serves as the central Nazi repository for
+    artifacts tied to the Holy Grail quest. Established as a state-controlled collection
+    under the Nazi regime, it functions as a repository for supernatural relics and
+    historical treasures central to Nazi ideological pursuits. Elsa Schneider delivers
+    Henry Jones Sr.'s Grail Diary to the museum to prove progress in the Holy Grail
+    search to Nazi leaders like Walter Donovan and Vogel. The museum is guarded by
+    Nazi personnel and symbolizes the regime's authority over historical and supernatural
+    artifacts, including those tied to the quest for immortality and the Grail's secrets.
+  sphere_of_influence: Nazi Artifact Acquisition and Mythological Exploitation
+  season_appearances:
+  - 1
+  local_uuids:
+    1: org_f8630618047d
+  first_appearance_season: 1
+  tier: asteroid
+  episode_count: 0
+- fabula_uuid: ger_organization_a2864c9241ce
+  global_id: ger_organization_a2864c9241ce
+  canonical_name: Sallah's Household
+  description: Sallah's household gathers in Old Cairo's crowded dining room, where
+    Fayah quiets nine boisterous children and a pet monkey that charms guests Marion
+    and Indy. Sallah steers hospitality, turning chaos into respite that softens Marion's
+    wariness and builds communal bonds. This family unit acts as ally and safe haven,
+    humanizing outsiders amid peril.
+  sphere_of_influence: Domestic Hospitality and Safe Haven in Cairo
+  season_appearances:
+  - 1
+  local_uuids:
+    1: org_b589163c2429
+  first_appearance_season: 1
+  tier: asteroid
+  episode_count: 1
+- fabula_uuid: ger_organization_b0ff96021c2c
+  global_id: ger_organization_b0ff96021c2c
+  canonical_name: Shanghai Airport Customs
+  description: Government-run border control authority at Shanghai Airport, responsible
+    for screening international travelers and detaining threats. Operates in the legal
+    domain and interacts with Indiana Jones and Nazi agents in *Raiders of the Lost
+    Ark* (S01E01).
+  sphere_of_influence: Airport Border Control and Traveler Detention
+  season_appearances:
+  - 1
+  local_uuids:
+    1: org_5448d194deee
+  first_appearance_season: 1
+  tier: asteroid
+  episode_count: 1
+- fabula_uuid: ger_organization_75b6aa14c4ab
+  global_id: ger_organization_75b6aa14c4ab
+  canonical_name: Sherpa Mountain Guides
+  description: Sherpa mountain guides gather as patrons in Marion Ravenwood's saloon
+    in Patan, Nepal, alongside Nepalese natives, smugglers, fugitives, and climbers.
+    They contribute to the bar's rowdy atmosphere, with one Sherpa joining a brawl
+    as Marion clears the room. This loose group of rugged locals and expedition experts
+    frequents the remote outpost, blending guiding expertise with participation in
+    saloon scraps and daily transactions.
+  sphere_of_influence: Mountain Guiding and Saloon Patronage in Nepal
+  season_appearances:
+  - 1
+  local_uuids:
+    1: org_8db260326ca3
+  first_appearance_season: 1
+  tier: asteroid
+  episode_count: 1
+- fabula_uuid: ger_organization_48d8ff3b7c5f
+  global_id: ger_organization_48d8ff3b7c5f
+  canonical_name: Sleazy International Smugglers and Fugitives
+  description: This patron group populates The Raven saloon in Patan, Nepal, as rough
+    clientele of international smugglers and fugitives. They generate menace in the
+    background crowd during tense negotiations, like Indy's deal with Marion Ravenwood
+    for her father's medallion. Their presence marks the saloon as a seedy hub for
+    shadowy figures—Sherpa, Climber, Mahdlo—where fists fly and deals turn personal
+    amid constant threat.
+  sphere_of_influence: Criminal Patronage in Nepalese Smuggler Saloons
+  season_appearances:
+  - 1
+  local_uuids:
+    1: org_287dc2a6f297
+  first_appearance_season: 1
+  tier: asteroid
+  episode_count: 1
+- fabula_uuid: ger_organization_3d41ca6a4293
+  global_id: ger_organization_3d41ca6a4293
+  canonical_name: Small Eastern College
+  description: Indy teaches here; college provides his office, stocked with Peruvian
+    trinkets, as workplace hub. Teaching assistant Phil delivers reference books and
+    fields student queries; two coeds appear routinely. It anchors academic duties
+    amid intrusions like Army Intelligence summons for Abner Ravenwood, blending campus
+    normalcy with external pressures.
+  sphere_of_influence: Higher Education and Academic Instruction
+  season_appearances:
+  - 1
+  local_uuids:
+    1: org_ad3f8344076d
+  first_appearance_season: 1
+  tier: asteroid
+  episode_count: 1
+- fabula_uuid: ger_organization_62d2e032ce38
+  global_id: ger_organization_62d2e032ce38
+  canonical_name: The Bad Guys
+  description: The Bad Guys control a Nazi-directed basket and rush it through crowded
+    urban streets, slipping past Indy's pursuit amid narrow alleys and human tides.
+    They drive the chase antagonism, forcing Indy to abandon direct runs for high-ground
+    pivots and intercepts. Their coordinated speed and crowd leverage maintain escape
+    momentum against his resourcefulness.
+  sphere_of_influence: Urban Evasion and Antagonistic Pursuit Operations
+  season_appearances:
+  - 1
+  local_uuids:
+    1: org_db5a59930b92
+  first_appearance_season: 1
+  tier: asteroid
+  episode_count: 1
+- fabula_uuid: ger_organization_4600e879d578
+  global_id: ger_organization_4600e879d578
+  canonical_name: The Dragon Nightclub
+  description: An opulent nightclub called The Dragon (The Dragon Nightclub) that
+    stages extravagant, choreographed performances centered on a massive Chinese gong
+    and an art‑deco pagoda stage. Signature set pieces include the Silver Stairway
+    spectacle (women in lamé gowns descending in choir‑like harmony) and a dramatic
+    gong sequence that anchors action — in one sequence the gong smashes through glass
+    and sends characters across the roof into the street. The venue functions as a
+    site of social display, power negotiation, seduction, and sudden violence; patrons
+    in key scenes include Indiana Jones and Willie Scott.
+  sphere_of_influence: Exotic Nightclub Performances and Social Power Venue
+  season_appearances:
+  - 1
+  local_uuids:
+    1: org_21eb7d663d30
+  first_appearance_season: 1
+  tier: asteroid
+  episode_count: 0
+- fabula_uuid: ger_organization_8013babf3685
+  global_id: ger_organization_8013babf3685
+  canonical_name: Third Reich (Nazi Party)
+  description: The Third Reich (Nazi Party) is the totalitarian regime ruling Germany,
+    characterized by its enforcement of ideological purity through public spectacles
+    like the Berlin book-burning rallies. High-ranking officers, Brownshirts, and
+    Adolf Hitler orchestrate these events, where swastika banners dominate and crowds
+    cheer the destruction of books. The regime stations guards at airfields to secure
+    territory, projects omnipresence through silent sentinels, and aggressively pursues
+    the Holy Grail diary as part of its quest for ancient power. Elsa Schneider aligns
+    with its goals, positioning the Third Reich as the central antagonist force against
+    Indiana Jones, Henry Jones Sr., and their allies. The regime's actions—blending
+    propaganda, ideological suppression, and aggressive quests—create a hostile backdrop
+    for the protagonists' confrontation with its ideology.
+  sphere_of_influence: Totalitarian Regime and Ideological Enforcement
+  season_appearances:
+  - 1
+  local_uuids:
+    1: org_9f264291e03b
+  first_appearance_season: 1
+  tier: asteroid
+  episode_count: 1
+- fabula_uuid: ger_organization_d9c3995d2b2f
+  global_id: ger_organization_d9c3995d2b2f
   canonical_name: Thuggee Cult
-  description: The Thuggee Cult worships Kali through heart-ripping human sacrifices
-    led by High Priest Mola Ram in Pankot Palace's Temple of Death. Members abduct
-    Mayapore children, enslave them in hidden mines to extract Sankara Stones, and
-    hypnotize the young Maharajah Zalim Singh to seize palace control. Chattar Lal
-    serves as their agent. Guards ambush intruders, activate deadly traps like spike
-    chambers and insect pits, and pursue heroes through tunnels and rope bridges.
-    Their rituals corrupt victims with 'blood of Kali,' fueling quests for supernatural
-    power to overthrow religions. Villagers suffer droughts and starvation from the
-    cult's curse, which heroes shatter by reclaiming the stones.
-  sphere_of_influence: Kali Worship, Human Sacrifice, and Child Enslavement in Pankot
-    Palace
-- fabula_uuid: organization_048d9e0d443e
-  global_id: null
+  description: Mola Ram leads the Thuggee Cult in Kali worship through human sacrifices
+    in Pankot's Temple of Death, brainwashing converts like the Maharajah and Indiana
+    Jones to extract Sankara Stones from child slaves in hidden mines. Guards ambush
+    intruders with rifles, arrows, and traps like spike chambers; priests chant to
+    ignite stones' power. They steal artifacts from villages, send assassins to palaces,
+    and pursue heroes in mine carts and bridge battles, aiming to unleash Kali's dominion
+    worldwide.
+  sphere_of_influence: Kali-Devoted Rituals, Human Sacrifice, and Sankara Stone Acquisition
+  season_appearances:
+  - 1
+  local_uuids:
+    1: org_4364bfaace4a
+  first_appearance_season: 1
+  tier: asteroid
+  episode_count: 1
+- fabula_uuid: ger_organization_a371c40463b6
+  global_id: ger_organization_a371c40463b6
   canonical_name: Turkish Soldiers
-  description: Turkish Soldiers support Walter Donovan’s convoy in a desert valley
-    ambush by charging on camels against attackers from Kazim’s men in the Brotherhood
-    of the Cruciform Sword. They fire on enemies and bolster the Nazi-led group's
-    defense during the chaotic multi-sided battle. Indiana Jones kills or incapacitates
-    several soldiers amid his assault on the tank, highlighting their role as local
-    muscle in the escalating Grail quest.
-  sphere_of_influence: Desert Convoy Escort and Combat Support
-- fabula_uuid: organization_5a8ee4e38cc0
-  global_id: null
-  canonical_name: U.S. Army Intelligence (Army Intelligence Division)
-  description: U.S. military intelligence division specializing in supernatural artifact
-    recovery and Nazi counterintelligence during World War II. Key personnel (Colonel
-    Musgrove, Major Eaton, Buzz Kehoe, and partner Bang Chow) deploy officers to track
-    targets like Abner Ravenwood, interrogate experts such as Indiana Jones on Ark
-    lore, and delay Nazi agents pursuing biblical superweapons (e.g., the Staff of
-    Ra and Ark of the Covenant). Operations blend formal briefings (e.g., lecture
-    halls) with field tactics (e.g., airport interventions) to block Axis acquisition
-    of artifacts. Indy joins reluctantly after recruitment reveals intercepted Nazi
-    plans for Tanis. Distinct from neutral security forces like the Japanese Military.
-  sphere_of_influence: U.S. Military Intelligence Operations
-- fabula_uuid: organization_324270414d68
-  global_id: null
-  canonical_name: U.S. Army Intelligence (Army Intelligence Division)
-  description: U.S. military intelligence division specializing in supernatural artifact
-    recovery and Nazi counterintelligence during WWII. Key personnel (Colonel Musgrove,
-    Major Eaton) recruit Indiana Jones, obstruct Nazi progress, and manage high-risk
-    artifacts like the Ark of the Covenant—distinct from neutral security forces like
-    the Japanese Military.
-  sphere_of_influence: Military Intelligence and Classified Artifact Management
-- fabula_uuid: organization_8843bdcf5b30
-  global_id: null
-  canonical_name: U.S. Government
-  description: Agents of the U.S. Government track Indiana Jones and confront him
-    outside a college building after his escape. Three men arrive in a black Packard
-    sedan, encircle him with synchronized precision, and address him as 'Doctor Jones,'
-    revealing detailed surveillance of his identity and actions linked to his father's
-    research. Their coordinated professionalism projects bureaucratic authority and
-    systemic control, marking the organization as a shadowy antagonist in Indy's quest.
-  sphere_of_influence: Federal Surveillance and Bureaucratic Control
+  description: Turkish Soldiers charge on horseback into the desert valley battle
+    pitting Kazim’s Brethren against Donovan’s Nazi forces. They function as neutral
+    combatants, possibly aligned with the Brethren, providing cavalry support amid
+    the chaos. Indy targets one, dismounting the rider to seize his horse for escape.
+    Their presence heightens the skirmish's desperation, clashing with mounted Nazis
+    and rifle-armed Brethren in a fight over the Grail convoy.
+  sphere_of_influence: Regional Military Cavalry in Desert Conflicts
+  season_appearances:
+  - 1
+  local_uuids:
+    1: org_8eafdd90cbb1
+  first_appearance_season: 1
+  tier: asteroid
+  episode_count: 0
+- fabula_uuid: ger_organization_18e54783c8ff
+  global_id: ger_organization_18e54783c8ff
+  canonical_name: Wurrfler Crew
+  description: Crew of the Nazi U-boat Wurrfler responsible for manning the conning
+    tower, periscope, turrets, and dive procedures during the submarine's covert transport
+    of the Ark of the Covenant. Under their captain's direction they prioritize evasion
+    (ordering dives and departure) over unprovoked attacks, execute radioman and aide
+    duties during engagements and docking at the sub base, and participate in Ark
+    unloading operations—events during which they nearly detect Indiana Jones. The
+    unit's actions are described across the same sea-encounter scenes (including interactions
+    observed by Shliemann and the presence of Katanga).
+  sphere_of_influence: Nazi Submarine Operations and Covert Maritime Transport
+  season_appearances:
+  - 1
+  local_uuids:
+    1: org_5e0268cd87cb
+  first_appearance_season: 1
+  tier: asteroid
+  episode_count: 1
