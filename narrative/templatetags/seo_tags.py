@@ -648,6 +648,18 @@ def connection_jsonld(context, connection):
         },
     }
 
+    # Storyline dimension (contract v2.4.0): layer + scope always,
+    # cross-episode reasoning and provenance when present
+    conn_node["fabula:layer"] = connection.layer
+    conn_node["fabula:scope"] = connection.scope
+
+    if connection.cross_episode_reasoning:
+        conn_node["fabula:crossEpisodeReasoning"] = _truncate(
+            connection.cross_episode_reasoning)
+
+    if connection.inferred_by:
+        conn_node["fabula:inferredBy"] = connection.inferred_by
+
     if connection.description:
         conn_node["description"] = _truncate(connection.description)
 

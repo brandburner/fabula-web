@@ -1536,6 +1536,7 @@ class ScopedGraphMixin:
                 'type': conn.connection_type,
                 'label': conn.get_connection_type_display(),
                 'strength': conn.strength,
+                'scope': conn.scope,
                 'description': desc,
                 'pk': conn.pk,
             })

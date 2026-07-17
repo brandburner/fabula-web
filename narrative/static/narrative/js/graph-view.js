@@ -99,10 +99,17 @@ const allLinks = graphData.edges.map(e => ({
     type: e.type,
     label: e.label,
     strength: e.strength,
+    // Connection edges carry 'intra_episode' | 'cross_episode';
+    // participation/involvement edges have no scope
+    scope: e.scope || null,
     description: e.description || '',
     pk: e.pk,
     color: CONNECTION_CONFIG[e.type]?.color || '#64748b'
 }));
+
+// Cross-episode bridges are the storyline product — render them wider
+// and keep their particles alive so they read as highlighted threads.
+const isBridge = link => link.scope === 'cross_episode';
 
 // Count connections per node
 const nodeMap = new Map(allNodes.map(n => [n.id, n]));
@@ -261,12 +268,13 @@ const Graph = ForceGraph3D()(container)
     // Link configuration - adaptive for performance
     .linkColor(link => link.color)
     .linkWidth(link => {
-        // Thinner lines for large graphs
+        // Thinner lines for large graphs; bridges stay visibly heavier
         const scale = forceGraphData.links.length > 1000 ? 0.6 : 1;
+        const bridge = isBridge(link) ? 1.7 : 1;
         switch(link.strength) {
-            case 'strong': return 2 * scale;
-            case 'medium': return 1.2 * scale;
-            default: return 0.6 * scale;
+            case 'strong': return 2 * scale * bridge;
+            case 'medium': return 1.2 * scale * bridge;
+            default: return 0.6 * scale * bridge;
         }
     })
     .linkOpacity(forceGraphData.links.length > 1000 ? 0.5 : 0.7)
@@ -276,8 +284,13 @@ const Graph = ForceGraph3D()(container)
     .linkDirectionalArrowColor(link => link.color)
     // Straight lines for large graphs (faster)
     .linkCurvature(forceGraphData.links.length > 1000 ? 0 : 0.1)
-    // Pulsing particles for small graphs (eye candy but expensive)
+    // Pulsing particles for small graphs (eye candy but expensive);
+    // cross-episode bridges keep theirs on mid-size graphs so the
+    // storyline threads stay animated
     .linkDirectionalParticles(link => {
+        if (isBridge(link)) {
+            return forceGraphData.links.length > 1000 ? 0 : 2;
+        }
         if (forceGraphData.links.length > 300) return 0;
         return link.strength === 'strong' ? 2 : 1;
     })
@@ -404,7 +417,8 @@ function showEdgeTooltip(link) {
 
     tooltipEdgeFrom.textContent = sourceNode?.label || link.source;
     tooltipEdgeTo.textContent = targetNode?.label || link.target;
-    tooltipEdgeStrength.textContent = `Strength: ${link.strength || 'medium'}`;
+    tooltipEdgeStrength.textContent = `Strength: ${link.strength || 'medium'}`
+        + (isBridge(link) ? ' · cross-episode bridge' : '');
 
     // Update link
     if (link.pk) {
@@ -598,7 +612,8 @@ function applyPerformanceMode(enabled) {
         Graph
             .nodeResolution(6)
             .linkOpacity(0.4)
-            .linkWidth(0.5)
+            // Bridges stay distinguishable even in performance mode
+            .linkWidth(link => isBridge(link) ? 1.1 : 0.5)
             .linkDirectionalArrowLength(0)
             .linkDirectionalParticles(0)
             .linkCurvature(0)
@@ -609,14 +624,16 @@ function applyPerformanceMode(enabled) {
             .nodeResolution(16)
             .linkOpacity(0.7)
             .linkWidth(link => {
+                const bridge = isBridge(link) ? 1.7 : 1;
                 switch(link.strength) {
-                    case 'strong': return 2;
-                    case 'medium': return 1.2;
-                    default: return 0.6;
+                    case 'strong': return 2 * bridge;
+                    case 'medium': return 1.2 * bridge;
+                    default: return 0.6 * bridge;
                 }
             })
             .linkDirectionalArrowLength(4)
-            .linkDirectionalParticles(link => link.strength === 'strong' ? 2 : 1)
+            .linkDirectionalParticles(link =>
+                isBridge(link) ? 2 : (link.strength === 'strong' ? 2 : 1))
             .linkCurvature(0.1)
             .d3AlphaDecay(0.02)
             .d3VelocityDecay(0.3);

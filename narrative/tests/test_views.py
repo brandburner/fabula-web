@@ -758,6 +758,57 @@ class ConnectionScopeSurfacesTest(StorylineTimelineFixtureMixin, TestCase):
             [self.bridge.pk])
 
 
+class GraphScopeEdgeTest(StorylineTimelineFixtureMixin, TestCase):
+    """T-034: connection edges in graph data carry scope so the client
+    can style/filter cross-episode bridges."""
+
+    def test_connection_edges_carry_scope(self):
+        from narrative.views import ScopedGraphMixin
+        events = EventPage.objects.live().filter(
+            pk__in=[self.event1.pk, self.event2.pk, self.event3.pk])
+        data = ScopedGraphMixin().build_graph_data(events)
+
+        conn_edges = {e['pk']: e for e in data['edges'] if e.get('pk')}
+        self.assertEqual(conn_edges[self.bridge.pk]['scope'], 'cross_episode')
+        self.assertEqual(conn_edges[self.connection.pk]['scope'], 'intra_episode')
+
+    def test_participation_edges_have_no_scope(self):
+        from narrative.views import ScopedGraphMixin
+        events = EventPage.objects.live().filter(pk=self.event1.pk)
+        data = ScopedGraphMixin().build_graph_data(events)
+        participation_edges = [
+            e for e in data['edges'] if e['type'] == 'PARTICIPATED_AS']
+        self.assertTrue(participation_edges)
+        self.assertTrue(all('scope' not in e for e in participation_edges))
+
+
+class ConnectionJsonldTest(StorylineTimelineFixtureMixin, TestCase):
+    """T-034: connection_jsonld carries the storyline dimension."""
+
+    def test_jsonld_carries_storyline_fields(self):
+        NarrativeConnection.objects.filter(pk=self.bridge.pk).update(
+            cross_episode_reasoning='Season-spanning consequence.',
+            inferred_by='llm_cross_episode_arc',
+        )
+        response = self.client.get(reverse(
+            'connection_detail', kwargs={'identifier': 'conn_bridge_001'}))
+        self.assertContains(response, 'fabula:layer')
+        self.assertContains(response, 'fabula:scope')
+        self.assertContains(response, 'cross_episode')
+        self.assertContains(response, 'fabula:crossEpisodeReasoning')
+        self.assertContains(response, 'Season-spanning consequence.')
+        self.assertContains(response, 'fabula:inferredBy')
+
+    def test_jsonld_omits_blank_optional_fields(self):
+        # Base fixture connection has no reasoning/provenance
+        response = self.client.get(reverse(
+            'connection_detail', kwargs={'identifier': 'conn_001'}))
+        self.assertContains(response, 'fabula:scope')
+        self.assertContains(response, 'intra_episode')
+        self.assertNotContains(response, 'fabula:crossEpisodeReasoning')
+        self.assertNotContains(response, 'fabula:inferredBy')
+
+
 # =============================================================================
 # LOCATION VIEWS
 # =============================================================================
