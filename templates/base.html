@@ -63,9 +63,10 @@
 
     {# Lucide icons — self-hosted pinned build (ed501fe) #}
     <script src="{% static 'vendor/lucide.min.js' %}" defer></script>
+    <script defer src="{% static 'vendor/lucide-init.js' %}"></script>
 
     {# Alpine.js for interactivity #}
-    <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
+    <script defer src="{% static 'vendor/alpine.min.js' %}"></script>
 
     {# Marketing v2 stylesheet — provides .nav, .wordmark, .container, .footer, .cta primitives. #}
     <link rel="stylesheet" href="{% static 'marketing/v2/css/site.css' %}">
@@ -390,9 +391,6 @@
     </footer>
 
     {# Initialize Lucide icons (after deferred script loads) #}
-    <script>
-        document.addEventListener('DOMContentLoaded', () => lucide.createIcons());
-    </script>
 
     {# Umami event tracking via delegation #}
     {% if umami_url and umami_website_id %}
