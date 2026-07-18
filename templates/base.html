@@ -58,15 +58,10 @@
     </script>
     {% endblock %}
 
-    {# Tailwind CSS via CDN - replace with compiled CSS in production #}
-    {# Tailwind — compiled build (ISS-021); config in tailwind.config.js,
-       rebuild command in that file's header. Replaced the Play CDN, which
-       generated the stylesheet in-browser at runtime on every load. #}
+    {# Compiled Tailwind (ISS-021) — rebuild command in tailwind.config.js #}
     <link rel="stylesheet" href="{% static 'vendor/tailwind.css' %}">
 
-    {# Lucide Icons — self-hosted pinned build (v0.525.0); unpkg @latest was a
-       615KB unminified fetch behind a short-cache redirect, so icons appeared
-       seconds late on cold visits #}
+    {# Lucide icons — self-hosted pinned build (ed501fe) #}
     <script src="{% static 'vendor/lucide.min.js' %}" defer></script>
 
     {# Alpine.js for interactivity #}
@@ -78,11 +73,8 @@
     {# Design System Tokens #}
     <link rel="stylesheet" href="{% static 'narrative/css/theme-tokens.css' %}">
 
-    {# Typography: EB Garamond + JetBrains Mono — used by both writerly and dark, #}
-    {# so the warm-night theme reads as the same brand voice as the paper theme. #}
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    {# Typography: EB Garamond + JetBrains Mono, both themes. Self-hosted fonts (see static/vendor/fonts.css) — replaces render-blocking fonts.googleapis.com #}
+    <link rel="stylesheet" href="{% static 'vendor/fonts.css' %}">
     <style>html, body { font-family: var(--f-font-body); }</style>
 
     <style>

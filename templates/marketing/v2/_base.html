@@ -6,9 +6,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, viewport-fit=cover" />
   <meta name="description" content="{% block meta_description %}Turn screenplays into queryable knowledge graphs. Every character, every event, every connection &mdash; cited to the line of script behind it.{% endblock %}" />
   <link rel="canonical" href="{{ request.scheme }}://{{ request.get_host }}{{ request.path }}" />
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=JetBrains+Mono:wght@400;500&display=swap" />
+  {# Self-hosted fonts (see static/vendor/fonts.css) — replaces render-blocking fonts.googleapis.com #}
+  <link rel="stylesheet" href="{% static 'vendor/fonts.css' %}" />
   <link rel="stylesheet" href="{% static 'marketing/v2/css/site.css' %}?v=20260510a" />
   {% block extra_head %}{% endblock %}
 </head>

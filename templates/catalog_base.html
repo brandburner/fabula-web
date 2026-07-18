@@ -7,8 +7,7 @@
     <title>{% block title %}Explore{% endblock %} | Fabula</title>
     <meta name="description" content="Explore interactive narrative graphs from iconic TV series.">
 
-    {# Tailwind — compiled no-preflight build (ISS-021): utilities only, no
-       reset, so v2 base styles stay intact. Config: tailwind.nopreflight.config.js #}
+    {# Compiled no-preflight Tailwind (ISS-021) — utilities only, v2 base styles stay intact #}
     <link rel="stylesheet" href="{% static 'vendor/tailwind-nopreflight.css' %}">
 
     {# Lucide Icons — self-hosted pinned build (see base.html / commit ed501fe) #}
@@ -21,9 +20,8 @@
     <link rel="stylesheet" href="{% static 'narrative/css/theme-tokens.css' %}?v=20260510a">
 
     {% if fabula_theme == 'writerly' %}
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    {# Self-hosted fonts (see static/vendor/fonts.css) — replaces render-blocking fonts.googleapis.com #}
+    <link rel="stylesheet" href="{% static 'vendor/fonts.css' %}">
     {% endif %}
 
     <style>

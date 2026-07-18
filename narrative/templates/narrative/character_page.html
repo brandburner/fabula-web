@@ -283,10 +283,7 @@
             {% endif %}
 
             {% if season_profiles %}
-            {# WAI-ARIA Tabs pattern: roving tabindex, arrow-key + Home/End
-               navigation, aria-selected/aria-controls wiring. Initial
-               state is server-rendered (first season selected) so the
-               markup is correct before Alpine hydrates. #}
+            {# WAI-ARIA Tabs: roving tabindex, arrow/Home/End keys, server-rendered initial selection #}
             <div x-data="{
                     seasons: [{% for sp in season_profiles %}{{ sp.season_number }}{% if not forloop.last %},{% endif %}{% endfor %}],
                     selected: {{ season_profiles.0.season_number }},
