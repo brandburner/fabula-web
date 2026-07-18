@@ -272,7 +272,16 @@
     {% block extra_css %}{% endblock %}
 
     {% if umami_url and umami_website_id %}
-    <script defer src="{{ umami_url }}" data-website-id="{{ umami_website_id }}"></script>
+    {# Analytics injects after window.load so a slow/down Umami can never hold the page-load spinner #}
+    <script>
+        window.addEventListener('load', function () {
+            var s = document.createElement('script');
+            s.defer = true;
+            s.src = '{{ umami_url|escapejs }}';
+            s.setAttribute('data-website-id', '{{ umami_website_id|escapejs }}');
+            document.head.appendChild(s);
+        });
+    </script>
     {% endif %}
 </head>
 
