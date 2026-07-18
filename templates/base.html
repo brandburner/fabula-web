@@ -75,8 +75,10 @@
         }
     </script>
 
-    {# Lucide Icons #}
-    <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js" defer></script>
+    {# Lucide Icons — self-hosted pinned build (v0.525.0); unpkg @latest was a
+       615KB unminified fetch behind a short-cache redirect, so icons appeared
+       seconds late on cold visits #}
+    <script src="{% static 'vendor/lucide.min.js' %}" defer></script>
 
     {# Alpine.js for interactivity #}
     <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
