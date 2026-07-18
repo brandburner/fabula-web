@@ -7,28 +7,12 @@
     <title>{% block title %}Explore{% endblock %} | Fabula</title>
     <meta name="description" content="Explore interactive narrative graphs from iconic TV series.">
 
-    {# Tailwind CSS via CDN — preflight disabled so it doesn't clobber v2 base styles. #}
-    <script>
-        // Config must be set BEFORE the CDN script loads.
-        window.tailwind = window.tailwind || {};
-        window.tailwind.config = {
-            darkMode: 'class',
-            corePlugins: { preflight: false },
-            theme: {
-                extend: {
-                    colors: {
-                        slate: {
-                            950: '#0a0a0f',
-                        }
-                    }
-                }
-            }
-        };
-    </script>
-    <script src="https://cdn.tailwindcss.com"></script>
+    {# Tailwind — compiled no-preflight build (ISS-021): utilities only, no
+       reset, so v2 base styles stay intact. Config: tailwind.nopreflight.config.js #}
+    <link rel="stylesheet" href="{% static 'vendor/tailwind-nopreflight.css' %}">
 
-    {# Lucide Icons #}
-    <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js" defer></script>
+    {# Lucide Icons — self-hosted pinned build (see base.html / commit ed501fe) #}
+    <script src="{% static 'vendor/lucide.min.js' %}" defer></script>
 
     {# Alpine.js for interactivity #}
     <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>

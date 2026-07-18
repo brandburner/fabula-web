@@ -59,21 +59,10 @@
     {% endblock %}
 
     {# Tailwind CSS via CDN - replace with compiled CSS in production #}
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script>
-        tailwind.config = {
-            darkMode: 'class',
-            theme: {
-                extend: {
-                    colors: {
-                        slate: {
-                            950: '#0a0a0f',
-                        }
-                    }
-                }
-            }
-        }
-    </script>
+    {# Tailwind — compiled build (ISS-021); config in tailwind.config.js,
+       rebuild command in that file's header. Replaced the Play CDN, which
+       generated the stylesheet in-browser at runtime on every load. #}
+    <link rel="stylesheet" href="{% static 'vendor/tailwind.css' %}">
 
     {# Lucide Icons — self-hosted pinned build (v0.525.0); unpkg @latest was a
        615KB unminified fetch behind a short-cache redirect, so icons appeared
