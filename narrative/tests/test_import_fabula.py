@@ -757,7 +757,8 @@ class CleanupScopingTest(TestCase):
         labels = {e['label'] for e in plan['entries']}
         self.assertEqual(
             labels,
-            {'events', 'episodes', 'seasons', 'characters', 'organizations', 'locations'},
+            {'events', 'episodes', 'seasons', 'characters', 'organizations',
+             'locations', 'themes', 'arcs'},
         )
         # Content sanity: characters entry contains char_drop and NOT char_keep / char_b.
         chars_entry = next(e for e in plan['entries'] if e['label'] == 'characters')
@@ -812,6 +813,106 @@ class CleanupScopingTest(TestCase):
         loc_deleted = loc_qs_before - Location.objects.count()
         self.assertEqual(planned['characters'], char_deleted)
         self.assertEqual(planned['locations'], loc_deleted)
+
+    # -- Storyline cleanup (ISS-020 / UP-004, contract v2.5.0) ------------
+
+    def _make_arc(self, fabula_uuid, series, global_id=None):
+        return ConflictArc.objects.create(
+            fabula_uuid=fabula_uuid,
+            global_id=global_id,
+            title=fabula_uuid,
+            description='',
+            series=series,
+        )
+
+    def _storyline_cleanup(self, arcs_data=(), themes_data=()):
+        self.cmd.run_cleanup(
+            series_data=[{
+                "fabula_uuid": "series-a-uuid",
+                "title": "Series A",
+                "seasons": [],
+            }],
+            events_data=[],
+            characters_data=[{"fabula_uuid": "char-keep-a"}],
+            organizations_data=[],
+            locations_data=[{"fabula_uuid": "loc-keep-a"}],
+            themes_data=list(themes_data),
+            arcs_data=list(arcs_data),
+        )
+
+    def test_cleanup_prunes_stale_and_superseded_arcs(self):
+        """v2.5.0: arcs matching neither current ids nor surviving lineage
+        are deleted; uuid-matched and global_id-matched rows survive."""
+        arc_keep = self._make_arc('arc-current', self.series_a)
+        arc_gid_keep = self._make_arc('arc-legacy-uuid', self.series_a,
+                                      global_id='ger-arc-1')
+        arc_superseded = self._make_arc('arc-absorbed', self.series_a)
+        arc_stale = self._make_arc('arc-old-generation', self.series_a)
+        arc_b = self._make_arc('arc-series-b', self.series_b)
+
+        self._storyline_cleanup(arcs_data=[{
+            'fabula_uuid': 'arc-current',
+            'global_id': 'ger-arc-1',
+            'superseded_uuids': ['arc-absorbed'],
+            'superseded_global_ids': [],
+        }])
+
+        self.assertTrue(ConflictArc.objects.filter(pk=arc_keep.pk).exists())
+        self.assertTrue(ConflictArc.objects.filter(pk=arc_gid_keep.pk).exists())
+        self.assertFalse(ConflictArc.objects.filter(pk=arc_superseded.pk).exists())
+        self.assertFalse(ConflictArc.objects.filter(pk=arc_stale.pk).exists())
+        # ISS-001 invariant extends to storylines: other series untouched.
+        self.assertTrue(ConflictArc.objects.filter(pk=arc_b.pk).exists())
+
+    def test_cleanup_prunes_arc_by_superseded_global_id(self):
+        arc = self._make_arc('arc-x', self.series_a, global_id='ger-arc-old')
+        self._storyline_cleanup(arcs_data=[{
+            'fabula_uuid': 'arc-new',
+            'global_id': 'ger-arc-new',
+            'superseded_uuids': [],
+            'superseded_global_ids': ['ger-arc-old'],
+        }])
+        self.assertFalse(ConflictArc.objects.filter(pk=arc.pk).exists())
+
+    def test_cleanup_prunes_stale_themes(self):
+        theme_keep = Theme.objects.create(
+            fabula_uuid='theme-current', name='T1', description='',
+            series=self.series_a)
+        theme_stale = Theme.objects.create(
+            fabula_uuid='theme-old', name='T2', description='',
+            series=self.series_a)
+        theme_b = Theme.objects.create(
+            fabula_uuid='theme-b', name='TB', description='',
+            series=self.series_b)
+
+        self._storyline_cleanup(themes_data=[{
+            'fabula_uuid': 'theme-current',
+            'superseded_uuids': [],
+            'superseded_global_ids': [],
+        }])
+
+        self.assertTrue(Theme.objects.filter(pk=theme_keep.pk).exists())
+        self.assertFalse(Theme.objects.filter(pk=theme_stale.pk).exists())
+        self.assertTrue(Theme.objects.filter(pk=theme_b.pk).exists())
+
+    def test_cleanup_without_storyline_data_leaves_storylines_alone(self):
+        """Legacy call shape (no themes/arcs args): storylines in scope
+        survive — an empty export list means 'no information', and the
+        entries just show zero canonical/zero deprecated only when rows
+        match; here absence of data must not delete everything."""
+        arc = self._make_arc('arc-untouched', self.series_a)
+        self.cmd.run_cleanup(
+            series_data=[{
+                "fabula_uuid": "series-a-uuid",
+                "title": "Series A",
+                "seasons": [],
+            }],
+            events_data=[],
+            characters_data=[{"fabula_uuid": "char-keep-a"}],
+            organizations_data=[],
+            locations_data=[{"fabula_uuid": "loc-keep-a"}],
+        )
+        self.assertTrue(ConflictArc.objects.filter(pk=arc.pk).exists())
 
     def test_cleanup_deletes_deprecated_across_all_six_entry_types(self):
         """T-001: plan totals must equal actual deletions for ALL six entry types."""

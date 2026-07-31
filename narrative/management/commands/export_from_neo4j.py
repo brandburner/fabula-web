@@ -2,7 +2,7 @@
 Django management command to export narrative data from Neo4j to YAML files.
 
 CONTRACT: the YAML this command emits is a versioned interchange format —
-see docs/YAML_CONTRACT.md (currently v2.4.0). The graph schema it reads is
+see docs/YAML_CONTRACT.md (currently v2.5.0). The graph schema it reads is
 pinned to fabula_v2/docs/FABULA_SCHEMA_GROUND_TRUTH.md v1.2.0 (2026-07-05);
 if the upstream schema moves, update the contract doc and the manifest
 version together, never silently.
@@ -127,6 +127,10 @@ class Neo4jExporter:
 
         # Cache of event UUIDs in the filtered series (populated if series_filter is set)
         self.series_event_uuids: set = set()
+
+        # Set by export_series when the graph holds exactly one series;
+        # series_uuid fallback for storylines with no exported member events.
+        self.default_series_uuid: Optional[str] = None
 
         # GER global_id mappings (local_uuid -> global_id)
         self.ger_mappings: Dict[str, str] = {}
@@ -391,6 +395,13 @@ class Neo4jExporter:
 
         # Return all series as a list
         series_list = list(series_map.values())
+        # Single-series export (the normal case; megagraphs are per-series):
+        # remember the series so storylines with no exported member events —
+        # e.g. character-only arcs (INVOLVED_IN_ARC but zero PART_OF_ARC
+        # events) — still get a series_uuid, which the v2.4+ importer
+        # requires on every storyline row.
+        if len(series_map) == 1:
+            self.default_series_uuid = next(iter(series_map))
         return series_list
 
     # =========================================================================
@@ -931,7 +942,9 @@ class Neo4jExporter:
                    coalesce(t.canonical_name, t.name) as name,
                    coalesce(t.foundational_description, t.description) as description,
                    t.season_appearances as season_appearances,
-                   t.episode_count as episode_count
+                   t.episode_count as episode_count,
+                   t.superseded_uuids as superseded_uuids,
+                   t.superseded_global_ids as superseded_global_ids
             ORDER BY name
             """
         else:
@@ -941,7 +954,9 @@ class Neo4jExporter:
                    t.global_id as global_id,
                    t.series_uuid as series_uuid,
                    t.name as name,
-                   t.description as description
+                   t.description as description,
+                   t.superseded_uuids as superseded_uuids,
+                   t.superseded_global_ids as superseded_global_ids
             ORDER BY t.name
             """
 
@@ -977,6 +992,11 @@ class Neo4jExporter:
                 'name': record.get('name', 'Unknown'),
                 'description': record.get('description', ''),
                 'series_uuid': record.get('series_uuid'),
+                # Merge lineage (contract v2.5.0): ids this storyline absorbed
+                # across rebuilds/consolidation — the importer's deterministic
+                # prune list for stale rows (UP-004).
+                'superseded_uuids': sorted(record.get('superseded_uuids') or []),
+                'superseded_global_ids': sorted(record.get('superseded_global_ids') or []),
             }
             self._attach_membership_fields(
                 theme_data, fabula_uuid, event_members, character_members,
@@ -1051,7 +1071,7 @@ class Neo4jExporter:
         data['series_uuid'] = data.get('series_uuid') or (
             Counter(member_series).most_common(1)[0][0]
             if member_series else None
-        )
+        ) or self.default_series_uuid
         data['season_appearances'] = (
             member_seasons if member_seasons
             else sorted(set(node_seasons or []))
@@ -1090,7 +1110,9 @@ class Neo4jExporter:
                    coalesce(arc.conflict_description, arc.foundational_description, '') as description,
                    coalesce(arc.type, 'INTERPERSONAL') as arc_type,
                    arc.season_appearances as season_appearances,
-                   arc.episode_count as episode_count
+                   arc.episode_count as episode_count,
+                   arc.superseded_uuids as superseded_uuids,
+                   arc.superseded_global_ids as superseded_global_ids
             ORDER BY name
             """
         else:
@@ -1101,7 +1123,9 @@ class Neo4jExporter:
                    arc.series_uuid as series_uuid,
                    coalesce(arc.name, arc.conflict_description) as name,
                    coalesce(arc.conflict_description, '') as description,
-                   coalesce(arc.type, 'INTERPERSONAL') as arc_type
+                   coalesce(arc.type, 'INTERPERSONAL') as arc_type,
+                   arc.superseded_uuids as superseded_uuids,
+                   arc.superseded_global_ids as superseded_global_ids
             ORDER BY name
             """
 
@@ -1138,6 +1162,9 @@ class Neo4jExporter:
                 'description': record.get('description') or '',
                 'arc_type': record.get('arc_type', 'INTERPERSONAL'),
                 'series_uuid': record.get('series_uuid'),
+                # Merge lineage (contract v2.5.0) — see export_themes.
+                'superseded_uuids': sorted(record.get('superseded_uuids') or []),
+                'superseded_global_ids': sorted(record.get('superseded_global_ids') or []),
             }
             self._attach_membership_fields(
                 arc_data, fabula_uuid, event_members, character_members,
@@ -1246,7 +1273,6 @@ class Neo4jExporter:
         Export all events for a specific episode with all involvements.
 
         In megagraph mode, includes source_season and source_database fields.
-        Megagraph events link to episodes via SceneBoundary, not directly.
 
         Args:
             episode_uuid: Episode UUID to filter events
@@ -1260,21 +1286,29 @@ class Neo4jExporter:
             scene_number_map = self._build_scene_number_map(episode_uuid)
 
 
-        # Main event query - megagraph mode includes source tracking fields
-        # Megagraph: Event-[:OCCURS_IN]->SceneBoundary-[:BELONGS_TO_EPISODE]->Episode
+        # Main event query - megagraph mode includes source tracking fields.
+        # Megagraph events link to episodes natively via PART_OF_EPISODE since
+        # the T-032 merger fix / T-005 rebuilds — the old OCCURS_IN->
+        # BELONGS_TO_EPISODE route (an ISS-040 workaround) row-multiplied on
+        # N:N scenes x IN_EVENT locations (~37% duplicate event rows on
+        # doctorwho.mega). One row per event: earliest scene wins, one
+        # location representative.
         if self.megagraph_mode:
             event_query = """
-            MATCH (e:Event)-[:OCCURS_IN]->(sb:SceneBoundary)-[:BELONGS_TO_EPISODE]->(ep:Episode {episode_uuid: $episode_uuid})
-            OPTIONAL MATCH (loc:Location)-[:IN_EVENT]->(e)
+            MATCH (e:Event)-[:PART_OF_EPISODE]->(ep:Episode {episode_uuid: $episode_uuid})
+            OPTIONAL MATCH (e)-[:OCCURS_IN]->(sb:SceneBoundary)
+            WITH e, sb ORDER BY sb.scene_number, sb.scene_uuid
+            WITH e, head(collect(sb.scene_uuid)) as scene_uuid,
+                 head(collect(sb.scene_number)) as scene_number
             RETURN e,
-                   sb.scene_uuid as scene_uuid,
-                   loc.location_uuid as location_uuid,
+                   scene_uuid,
+                   head([(loc:Location)-[:IN_EVENT]->(e) | loc.location_uuid]) as location_uuid,
                    [(e)-[:EXEMPLIFIES_THEME]->(t:Theme) | t.theme_uuid] as theme_uuids,
                    [(e)-[:PART_OF_ARC]->(a:ConflictArc) | a.arc_uuid] as arc_uuids,
                    e.source_season as source_season,
                    e.source_database as source_database,
                    e.entity_status as entity_status
-            ORDER BY sb.scene_number, e.sequence_in_scene
+            ORDER BY scene_number, e.sequence_in_scene
             """
         else:
             event_query = """
@@ -2031,7 +2065,12 @@ class Neo4jExporter:
                     'entity_global_id': entity_global_id,
                     'entity_type': entity_type,
                     'season_number': season_number,
-                    'description': self.safe_get(node, 'description', ''),
+                    # The portrait lives in `foundational_description` on
+                    # *SeasonProfile nodes (UP-002); `description` is legacy.
+                    'description': (
+                        self.safe_get(node, 'foundational_description', '')
+                        or self.safe_get(node, 'description', '')
+                    ),
                     'tier': self.safe_get(node, 'tier', ''),
                     'source_database': self.safe_get(node, 'source_database', ''),
                 })
@@ -2058,7 +2097,7 @@ class Neo4jExporter:
         total_seasons = sum(len(s.get('seasons', [])) for s in all_series)
 
         manifest = {
-            'fabula_version': '2.4.0',  # docs/YAML_CONTRACT.md
+            'fabula_version': '2.5.0',  # docs/YAML_CONTRACT.md
             'export_date': datetime.now().isoformat(),
             'source_graph': self.uri,
             'source_database': self.database,
@@ -2089,7 +2128,7 @@ class Neo4jExporter:
         # Add megagraph-specific stats
         if self.megagraph_mode:
             manifest['cross_season_entities'] = self.stats['cross_season_entities']
-            manifest['notes'] = 'Export generated by export_from_neo4j (contract v2.4.0, megagraph mode with unified cross-season entities)'
+            manifest['notes'] = 'Export generated by export_from_neo4j (contract v2.5.0, megagraph mode with unified cross-season entities and storyline merge lineage)'
         else:
             manifest['notes'] = 'Export generated by export_from_neo4j (contract v2.4.0 with GER cross-season support)'
 

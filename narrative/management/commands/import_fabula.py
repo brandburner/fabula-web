@@ -234,6 +234,20 @@ class Command(BaseCommand):
             contract_v24 = version >= (2, 4, 0)
             if contract_v24:
                 if not self._enforce_v24_gate(data):
+                    # On dry-run the gate stops before import by design, but
+                    # the operator still needs the --cleanup preview (ISS-020:
+                    # this used to exit before the planner ran). Operator
+                    # aborts (non-dry-run) really do stop everything.
+                    if self.dry_run and self.cleanup:
+                        self.run_cleanup(
+                            data.series,
+                            data.events,
+                            data.characters,
+                            data.organizations,
+                            data.locations,
+                            data.themes,
+                            data.arcs,
+                        )
                     return
                 with transaction.atomic():
                     self.run_import(data, contract_v24=True)
@@ -267,6 +281,8 @@ class Command(BaseCommand):
                     data.characters,
                     data.organizations,
                     data.locations,
+                    data.themes,
+                    data.arcs,
                 )
 
             # Detail views are wrapped in cache_page(24h) on the premise
@@ -404,7 +420,7 @@ class Command(BaseCommand):
     ]
 
     # Highest (major, minor) contract this importer understands.
-    SUPPORTED_CONTRACT = (2, 4)
+    SUPPORTED_CONTRACT = (2, 5)
 
     # Derived from the canonical enum so a taxonomy change can't silently
     # diverge between model, importer, and exporter.
@@ -2554,7 +2570,9 @@ class Command(BaseCommand):
         events_data: List[Dict],
         characters_data: List[Dict],
         organizations_data: List[Dict],
-        locations_data: List[Dict]
+        locations_data: List[Dict],
+        themes_data: Optional[List[Dict]] = None,
+        arcs_data: Optional[List[Dict]] = None,
     ):
         """
         Delete deprecated entities within the series being imported.
@@ -2563,6 +2581,11 @@ class Command(BaseCommand):
         considered for deletion. Entities from other series in the same
         database are never touched -- this is the fix for ISS-001 where a
         single-series import with ``--cleanup`` would nuke every other series.
+
+        Storylines (Theme/ConflictArc) are covered too (ISS-020/UP-004):
+        stale rows are pruned deterministically via the export's
+        ``superseded_uuids``/``superseded_global_ids`` lineage (contract
+        v2.5.0), with the match-neither-id heuristic as fallback.
 
         When ``self.dry_run`` is True, the cleanup plan is computed and the
         consolidated summary is printed, but no deletes are issued. This is
@@ -2575,6 +2598,7 @@ class Command(BaseCommand):
         plan = self.build_cleanup_plan(
             series_data, events_data, characters_data,
             organizations_data, locations_data,
+            themes_data or [], arcs_data or [],
         )
         if plan is None:
             # build_cleanup_plan has already explained why on stdout.
@@ -2649,6 +2673,8 @@ class Command(BaseCommand):
         characters_data: List[Dict],
         organizations_data: List[Dict],
         locations_data: List[Dict],
+        themes_data: Optional[List[Dict]] = None,
+        arcs_data: Optional[List[Dict]] = None,
     ):
         """
         Compute what ``run_cleanup`` would delete, without touching the DB.
@@ -2723,6 +2749,55 @@ class Command(BaseCommand):
                 'sample_names': [self._display_name(o) for o in deprecated[:3]],
             })
 
+        # Storylines (ISS-020/UP-004): megagraph rebuilds mint new arc/theme
+        # identities, so rows from a prior import can match nothing in the
+        # new export. Contract v2.5.0 ships the winners' merge lineage
+        # (superseded_uuids/superseded_global_ids) — the deterministic prune
+        # list. Precedence per in-scope row:
+        #   keep    fabula_uuid in the export (imported/updated this run)
+        #   keep    global_id in the export (in-place upgrade rows retain a
+        #           legacy fabula_uuid by design — see import_themes)
+        #   delete  either id appears in a superseded list (merged away)
+        #   delete  matches nothing in the export (stale generation)
+        for label, model_class, rows in (
+            ('themes', Theme, themes_data or []),
+            ('arcs', ConflictArc, arcs_data or []),
+        ):
+            current_uuids = {r.get('fabula_uuid') for r in rows if r.get('fabula_uuid')}
+            current_gids = {r.get('global_id') for r in rows if r.get('global_id')}
+            superseded_uuids = set()
+            superseded_gids = set()
+            for r in rows:
+                superseded_uuids.update(r.get('superseded_uuids') or [])
+                superseded_gids.update(r.get('superseded_global_ids') or [])
+
+            scoped_qs = model_class.objects.filter(series__in=imported_series_pages)
+            deprecated = []
+            # No storyline rows in the export = no information (legacy
+            # export or storyline-free graph) — never treat that as
+            # "everything is stale".
+            lineage_confirmed = 0
+            if rows:
+                for obj in scoped_qs.exclude(fabula_uuid=''):
+                    if obj.fabula_uuid in current_uuids:
+                        continue
+                    if obj.global_id and obj.global_id in current_gids:
+                        continue
+                    deprecated.append(obj)
+                    if (obj.fabula_uuid in superseded_uuids
+                            or (obj.global_id and obj.global_id in superseded_gids)):
+                        lineage_confirmed += 1
+            entries.append({
+                'label': label,
+                'model': model_class.__name__,
+                'model_class': model_class,
+                'canonical': len(current_uuids),
+                'in_scope': scoped_qs.count(),
+                'deprecated': deprecated,
+                'sample_names': [self._display_name(o) for o in deprecated[:3]],
+                'lineage_confirmed': lineage_confirmed,
+            })
+
         # ISS-005 preflight: canonical events pointing at deprecated episodes
         # via the PROTECT FK. Deepest-first ordering only protects between
         # deprecated rows; these cross-references would abort mid-delete.
@@ -2751,12 +2826,16 @@ class Command(BaseCommand):
         self.stdout.write("")
         self.stdout.write("Planned deletions (per model):")
         for entry in plan['entries']:
-            self.stdout.write(
+            line = (
                 f"  {entry['model']:<18} "
                 f"canonical={entry['canonical']:<5} "
                 f"in_scope={entry['in_scope']:<5} "
                 f"deprecated={len(entry['deprecated'])}"
             )
+            if entry.get('lineage_confirmed') is not None and entry['deprecated']:
+                line += (f" (lineage-confirmed={entry['lineage_confirmed']}, "
+                         f"unmatched={len(entry['deprecated']) - entry['lineage_confirmed']})")
+            self.stdout.write(line)
         total = sum(len(e['deprecated']) for e in plan['entries'])
         self.stdout.write(f"  {'TOTAL':<18} deprecated={total}")
         if plan['blockers']:

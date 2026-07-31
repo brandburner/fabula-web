@@ -1,6 +1,6 @@
 # Fabula YAML Contract
 
-> **Contract version**: 2.4.0 (this document is the source of truth for the
+> **Contract version**: 2.5.0 (this document is the source of truth for the
 > Neo4j → YAML → Wagtail interchange format)
 > **Graph schema**: pinned to `fabula_v2/docs/FABULA_SCHEMA_GROUND_TRUTH.md` v1.2.0
 > **Producer**: `narrative/management/commands/export_from_neo4j.py` (this repo,
@@ -16,7 +16,8 @@
 | Version | Change |
 |---|---|
 | 2.3.0 | Megagraph mode: unified cross-season entities, `season_appearances`, `local_uuids`, acts/plot beats |
-| 2.4.0 | **This document.** Event-layer connections (native, no fan-out), beat layer de-fan-out with `layer`/`scope`, full arcs/themes storyline shape, episode ordinals everywhere, optional `character_episode_profiles.yaml` and `season_profiles.yaml` |
+| 2.4.0 | Event-layer connections (native, no fan-out), beat layer de-fan-out with `layer`/`scope`, full arcs/themes storyline shape, episode ordinals everywhere, optional `character_episode_profiles.yaml` and `season_profiles.yaml` |
+| 2.5.0 | **This document.** Storyline merge lineage: arcs/themes carry `superseded_uuids`/`superseded_global_ids` (winner-side ids absorbed across rebuilds/consolidation — upstream ec35ea1, UP-004), giving the importer a deterministic prune list; `--cleanup` covers Theme/ConflictArc |
 
 ## Manifest (`manifest.yaml`)
 
@@ -106,9 +107,16 @@ row is skipped and logged.
     - {event_uuid: cand_evt_…, role: null,    episode: {…}}
     - {event_uuid: cand_evt_…, role: CLIMAX,  episode: {…}}
   involved_character_uuids: [agent_…, agent_…]        # from INVOLVED_IN_ARC
+  superseded_uuids: [arc_…, arc_…]         # v2.5.0: arc_uuids this storyline absorbed
+                                           # (consolidation/rebuild lineage; may be [])
+  superseded_global_ids: [ger_conflictarc_…]  # v2.5.0: absorbed GER ids (may be [])
 ```
 
 `role` ∈ `START | CLIMAX | RESOLUTION` (nullable).
+
+The superseded lists are the importer's deterministic prune signal: a stored
+row whose ids match neither the export's current ids nor survive the lineage
+check is a stale generation and `--cleanup` deletes it (see guarantees below).
 
 ## `themes.yaml`
 
@@ -125,6 +133,8 @@ Same treatment as arcs, minus roles:
   events:                                  # from EXEMPLIFIES_THEME, with episode blocks
     - {event_uuid: cand_evt_…, episode: {…}}
   related_character_uuids: [agent_…]       # from RELATED_TO_THEME
+  superseded_uuids: [theme_…]              # v2.5.0 — as arcs.yaml
+  superseded_global_ids: [ger_theme_…]     # v2.5.0 — as arcs.yaml
 ```
 
 Per-event `arc_uuids` / `theme_uuids` remain on the event files too —
@@ -168,7 +178,7 @@ carry `arc_summary` (LLM cross-season arc summary) and `season_appearances`:
   source_database: wolfhall_s01
 ```
 
-## Importer guarantees (v2.4.0)
+## Importer guarantees (v2.4.0+)
 
 - Event-layer rows keyed on `fabula_uuid` (`connection_uuid`), with
   `(from, to, type)` fallback; beat rows keyed on `global_id`.
@@ -177,3 +187,13 @@ carry `arc_summary` (LLM cross-season arc summary) and `season_appearances`:
   transaction as the inserts, scoped via `_descendants_of()`, gated by
   dry-run/`--yes`, with every deleted identifier logged first.
 - Re-import is idempotent: same export twice → no changes on the second run.
+
+## Importer guarantees (v2.5.0)
+
+- `--cleanup` covers Theme/ConflictArc (ISS-020), series-scoped. Per-row
+  precedence: keep on `fabula_uuid` match; keep on `global_id` match
+  (in-place upgrades retain legacy `fabula_uuid`s by design); otherwise
+  delete — whether named in a superseded list (deterministic lineage) or
+  matching nothing (stale generation).
+- `--cleanup --dry-run` on a ≥2.4.0 export prints the full cleanup plan
+  (previously the v2.4 shape gate exited before the planner ran — ISS-020).

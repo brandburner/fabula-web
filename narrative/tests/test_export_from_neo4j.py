@@ -594,7 +594,7 @@ class TestManifestCreation(TestCase):
 
         manifest = exporter.create_manifest(all_series)
 
-        self.assertEqual(manifest['fabula_version'], '2.4.0')
+        self.assertEqual(manifest['fabula_version'], '2.5.0')
         self.assertEqual(manifest['series_titles'], ['Wolf Hall'])
         self.assertEqual(manifest['season_count'], 2)
         self.assertEqual(manifest['episode_count'], 12)
@@ -987,9 +987,13 @@ class ProfileExportTest(TestCase):
     def test_season_profiles_only_query_present_labels(self):
         labels = [{'label': 'AgentSeasonProfile'}, {'label': 'Agent'}]
         rows = [
-            {'p': {'season_number': 1, 'description': 'S1 portrait',
+            {'p': {'season_number': 1,
+                   'foundational_description': 'S1 portrait',
+                   'description': 'legacy text',
                    'tier': 'anchor', 'source_database': 'wolfhall_s01',
                    'ger_global_id': None},
+             'owner_ger_global_id': 'ger_agent_1'},
+            {'p': {'season_number': 2, 'description': 'S2 legacy portrait'},
              'owner_ger_global_id': 'ger_agent_1'},
             {'p': {'season_number': None, 'description': 'x'},  # no season -> skipped
              'owner_ger_global_id': 'ger_agent_2'},
@@ -998,10 +1002,13 @@ class ProfileExportTest(TestCase):
         profiles = self.exporter.export_season_profiles()
         # labels query + ONE profile query (only AgentSeasonProfile present)
         self.assertEqual(self.exporter.execute_query.call_count, 2)
-        self.assertEqual(len(profiles), 1)
+        self.assertEqual(len(profiles), 2)
         self.assertEqual(profiles[0]['entity_global_id'], 'ger_agent_1')
         self.assertEqual(profiles[0]['entity_type'], 'character')
         self.assertEqual(profiles[0]['season_number'], 1)
+        # foundational_description wins over legacy description (UP-002)
+        self.assertEqual(profiles[0]['description'], 'S1 portrait')
+        self.assertEqual(profiles[1]['description'], 'S2 legacy portrait')
 
     def test_season_profiles_skipped_on_single_season_export(self):
         self.exporter.megagraph_mode = False

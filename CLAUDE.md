@@ -53,7 +53,10 @@ narrative/                # Django app (the models live HERE, not wagtail_models
 templates/base.html       # Master template (Tailwind CSS, Alpine.js, Lucide)
 marketing/                # Marketing site app (serves the site root)
 fabula_web/               # Settings (base.py/dev.py/production.py), root urls
-docs/YAML_CONTRACT.md     # Versioned YAML interchange contract (v2.4.0)
+docs/YAML_CONTRACT.md     # Versioned YAML interchange contract (v2.5.0)
+docs/UPSTREAM_ISSUES.md   # Running journal of data bugs owned by the main
+                          # fabula project (Neo4j/megagraph/GER) — append here
+                          # when a website bug traces to upstream data
 ```
 
 ## Common Commands
