@@ -2655,6 +2655,9 @@ class Command(BaseCommand):
             with transaction.atomic():
                 for entry in plan['entries']:
                     total_deleted += self._delete_cleanup_entry(entry)
+                # Inside the same transaction as the deletes: a rollback must
+                # not leave redirects for rows that still exist.
+                self._write_storyline_redirects(plan)
         except Exception as exc:  # noqa: BLE001 — surfaced to operator
             self.stdout.write(self.style.ERROR(
                 f"Cleanup aborted and rolled back: {exc.__class__.__name__}: {exc}"
@@ -2765,14 +2768,23 @@ class Command(BaseCommand):
         ):
             current_uuids = {r.get('fabula_uuid') for r in rows if r.get('fabula_uuid')}
             current_gids = {r.get('global_id') for r in rows if r.get('global_id')}
-            superseded_uuids = set()
-            superseded_gids = set()
+            # Lineage index: which surviving row absorbed each retired id.
+            # Doubles as the redirect map's target lookup (ISS-023).
+            successor_by_uuid = {}
+            successor_by_gid = {}
             for r in rows:
-                superseded_uuids.update(r.get('superseded_uuids') or [])
-                superseded_gids.update(r.get('superseded_global_ids') or [])
+                winner = r.get('fabula_uuid')
+                if not winner:
+                    continue
+                for old in r.get('superseded_uuids') or []:
+                    successor_by_uuid.setdefault(old, winner)
+                for old in r.get('superseded_global_ids') or []:
+                    successor_by_gid.setdefault(old, winner)
 
-            scoped_qs = model_class.objects.filter(series__in=imported_series_pages)
+            scoped_qs = model_class.objects.filter(
+                series__in=imported_series_pages).select_related('series')
             deprecated = []
+            successors = {}
             # No storyline rows in the export = no information (legacy
             # export or storyline-free graph) — never treat that as
             # "everything is stale".
@@ -2784,8 +2796,13 @@ class Command(BaseCommand):
                     if obj.global_id and obj.global_id in current_gids:
                         continue
                     deprecated.append(obj)
-                    if (obj.fabula_uuid in superseded_uuids
-                            or (obj.global_id and obj.global_id in superseded_gids)):
+                    successor = (
+                        successor_by_uuid.get(obj.fabula_uuid)
+                        or (successor_by_gid.get(obj.global_id)
+                            if obj.global_id else None)
+                    )
+                    if successor:
+                        successors[obj.pk] = successor
                         lineage_confirmed += 1
             entries.append({
                 'label': label,
@@ -2796,6 +2813,10 @@ class Command(BaseCommand):
                 'deprecated': deprecated,
                 'sample_names': [self._display_name(o) for o in deprecated[:3]],
                 'lineage_confirmed': lineage_confirmed,
+                # Redirect inputs (ISS-023): '/arcs/…' and '/themes/…' are
+                # indexed URLs, so pruned rows must not become hard 404s.
+                'url_prefix': label,
+                'successors': successors,
             })
 
         # ISS-005 preflight: canonical events pointing at deprecated episodes
@@ -2836,6 +2857,15 @@ class Command(BaseCommand):
                 line += (f" (lineage-confirmed={entry['lineage_confirmed']}, "
                          f"unmatched={len(entry['deprecated']) - entry['lineage_confirmed']})")
             self.stdout.write(line)
+            if entry.get('url_prefix') and entry['deprecated']:
+                # Every pruned storyline is an indexed URL about to die; say
+                # up front which ones get an exact 301 and which get the
+                # series index fallback.
+                unmatched = len(entry['deprecated']) - entry['lineage_confirmed']
+                self.stdout.write(
+                    f"    -> redirects: {entry['lineage_confirmed']} exact, "
+                    f"{unmatched} to the series storyline index"
+                )
         total = sum(len(e['deprecated']) for e in plan['entries'])
         self.stdout.write(f"  {'TOTAL':<18} deprecated={total}")
         if plan['blockers']:
@@ -2895,6 +2925,120 @@ class Command(BaseCommand):
             f"  Deleted {len(deprecated)} {entry['label']}"
         ))
         return len(deprecated)
+
+    # URL names for the two shapes each storyline is served under.
+    STORYLINE_URL_NAMES = {
+        'themes': ('theme_detail', 'series_theme_detail'),
+        'arcs': ('arc_detail', 'series_arc_detail'),
+    }
+
+    def _write_storyline_redirects(self, plan):
+        """Re-point pruned storyline URLs instead of leaving hard 404s.
+
+        A megagraph rebuild retires whole generations of Theme/ConflictArc
+        rows (UP-004) whose ``/themes/<id>/`` and ``/arcs/<id>/`` URLs are
+        indexed and externally linked. Contract v2.5.0's merge lineage names
+        the surviving row for each id it absorbed — those get an exact 301.
+        Rows the lineage doesn't reach (a rebuild can rename and re-mint a
+        storyline with no recorded ancestry) fall back to their series'
+        storyline index, which is a weaker destination but not a dead one.
+
+        Both URL shapes are written: the canonical global form that
+        ``get_absolute_url()`` emits, and the series-scoped form that
+        ``series_theme_detail``/``series_arc_detail`` also serve.
+        """
+        from wagtail.contrib.redirects.models import Redirect
+
+        snippet_caches = {'themes': self.themes_cache, 'arcs': self.arcs_cache}
+        written = exact = fallback = unroutable = 0
+
+        for entry in plan['entries']:
+            prefix = entry.get('url_prefix')
+            if not prefix or not entry['deprecated']:
+                continue
+            cache = snippet_caches.get(prefix) or {}
+            for obj in entry['deprecated']:
+                identifier = obj.global_id or obj.fabula_uuid or obj.pk
+                successor_uuid = entry['successors'].get(obj.pk)
+                successor = cache.get(successor_uuid) if successor_uuid else None
+
+                if successor is not None and successor.pk:
+                    link = successor.get_absolute_url()
+                    exact += 1
+                else:
+                    link = self._storyline_index_url(obj.series)
+                    if link is None:
+                        # No series slug to fall back to — a hard 404 is
+                        # honest here; a redirect would have nowhere to go.
+                        unroutable += 1
+                        continue
+                    fallback += 1
+
+                normalised_target = Redirect.normalise_path(link)
+                for old_path in self._storyline_old_paths(
+                        prefix, identifier, obj.series):
+                    if old_path == normalised_target:
+                        continue  # never point a path at itself
+                    Redirect.objects.update_or_create(
+                        old_path=old_path,
+                        site=None,
+                        defaults={'is_permanent': True,
+                                  'redirect_page': None,
+                                  'redirect_link': link},
+                    )
+                    written += 1
+
+        if not written and not unroutable:
+            return
+        self.stdout.write(
+            f"  Storyline redirects: {written} paths written "
+            f"({exact} to the surviving storyline via merge lineage, "
+            f"{fallback} to their series' storyline index)"
+        )
+        if unroutable:
+            self.stdout.write(self.style.WARNING(
+                f"  {unroutable} pruned storyline(s) had no series slug to "
+                f"fall back to — those URLs will 404."
+            ))
+        if fallback:
+            self.stdout.write(self.style.WARNING(
+                f"  {fallback} of those are index fallbacks: the export's "
+                f"merge lineage did not name a successor. Search engines "
+                f"read mass redirects to one index page as soft 404s — see "
+                f"docs/UPSTREAM_ISSUES.md (UP-005)."
+            ))
+
+    def _storyline_old_paths(self, prefix, identifier, series):
+        """Every URL shape a now-deleted storyline used to answer on."""
+        from django.urls import NoReverseMatch, reverse
+        from wagtail.contrib.redirects.models import Redirect
+
+        global_name, scoped_name = self.STORYLINE_URL_NAMES[prefix]
+        specs = [(global_name, {'identifier': identifier})]
+        if series is not None and series.slug:
+            specs.append((scoped_name, {'identifier': identifier,
+                                        'series_slug': series.slug}))
+        paths = []
+        for name, kwargs in specs:
+            try:
+                paths.append(Redirect.normalise_path(reverse(name, kwargs=kwargs)))
+            except NoReverseMatch:
+                continue
+        return paths
+
+    @staticmethod
+    def _storyline_index_url(series):
+        """Fallback target: the series' storyline index, or None when the
+        row carries no usable series."""
+        from django.urls import NoReverseMatch, reverse
+
+        if series is None or not series.slug:
+            return None
+        try:
+            return reverse('series_storyline_index',
+                           kwargs={'series_slug': series.slug})
+        except NoReverseMatch:
+            return None
 
     @staticmethod
     def _display_name(obj) -> str:

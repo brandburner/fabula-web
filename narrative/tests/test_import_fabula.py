@@ -914,6 +914,138 @@ class CleanupScopingTest(TestCase):
         )
         self.assertTrue(ConflictArc.objects.filter(pk=arc.pk).exists())
 
+    # -- Storyline redirects (ISS-023) ------------------------------------
+
+    def test_pruned_arc_redirects_to_lineage_successor(self):
+        """The absorbed arc's URL 301s to the surviving arc, in both the
+        global and the series-scoped shape."""
+        from wagtail.contrib.redirects.models import Redirect
+
+        survivor = self._make_arc('arc-current', self.series_a)
+        self.cmd.arcs_cache['arc-current'] = survivor
+        absorbed = self._make_arc('arc-absorbed', self.series_a)
+
+        self._storyline_cleanup(arcs_data=[{
+            'fabula_uuid': 'arc-current',
+            'superseded_uuids': ['arc-absorbed'],
+            'superseded_global_ids': [],
+        }])
+
+        self.assertFalse(ConflictArc.objects.filter(pk=absorbed.pk).exists())
+        for path in ('/arcs/arc-absorbed',
+                     '/explore/series-a/arcs/arc-absorbed'):
+            redirect = Redirect.objects.get(old_path=path)
+            self.assertEqual(redirect.redirect_link,
+                             survivor.get_absolute_url())
+            self.assertTrue(redirect.is_permanent)
+
+    def test_pruned_arc_url_keys_on_global_id_when_present(self):
+        """get_absolute_url() prefers global_id, so the dead URL does too."""
+        from wagtail.contrib.redirects.models import Redirect
+
+        survivor = self._make_arc('arc-current', self.series_a)
+        self.cmd.arcs_cache['arc-current'] = survivor
+        self._make_arc('arc-old', self.series_a, global_id='ger-arc-old')
+
+        self._storyline_cleanup(arcs_data=[{
+            'fabula_uuid': 'arc-current',
+            'superseded_uuids': [],
+            'superseded_global_ids': ['ger-arc-old'],
+        }])
+
+        self.assertTrue(
+            Redirect.objects.filter(old_path='/arcs/ger-arc-old').exists())
+        self.assertFalse(
+            Redirect.objects.filter(old_path='/arcs/arc-old').exists())
+
+    def test_pruned_storyline_without_lineage_falls_back_to_index(self):
+        """A rebuild can re-mint a storyline with no recorded ancestry; the
+        dead URL still must not 404."""
+        from wagtail.contrib.redirects.models import Redirect
+
+        survivor = self._make_arc('arc-current', self.series_a)
+        self.cmd.arcs_cache['arc-current'] = survivor
+        self._make_arc('arc-orphan', self.series_a)
+
+        self._storyline_cleanup(arcs_data=[{
+            'fabula_uuid': 'arc-current',
+            'superseded_uuids': [],
+            'superseded_global_ids': [],
+        }])
+
+        redirect = Redirect.objects.get(old_path='/arcs/arc-orphan')
+        self.assertEqual(redirect.redirect_link, '/explore/series-a/storylines/')
+        self.assertIn('index fallbacks', self.cmd.stdout.getvalue())
+
+    def test_pruned_theme_redirects_to_lineage_successor(self):
+        from wagtail.contrib.redirects.models import Redirect
+
+        survivor = Theme.objects.create(
+            fabula_uuid='theme-current', name='T1', description='',
+            series=self.series_a)
+        self.cmd.themes_cache['theme-current'] = survivor
+        Theme.objects.create(
+            fabula_uuid='theme-old', name='T2', description='',
+            series=self.series_a)
+
+        self._storyline_cleanup(themes_data=[{
+            'fabula_uuid': 'theme-current',
+            'superseded_uuids': ['theme-old'],
+            'superseded_global_ids': [],
+        }])
+
+        redirect = Redirect.objects.get(old_path='/themes/theme-old')
+        self.assertEqual(redirect.redirect_link, survivor.get_absolute_url())
+
+    def test_surviving_storylines_get_no_redirect(self):
+        from wagtail.contrib.redirects.models import Redirect
+
+        survivor = self._make_arc('arc-current', self.series_a)
+        self.cmd.arcs_cache['arc-current'] = survivor
+
+        self._storyline_cleanup(arcs_data=[{
+            'fabula_uuid': 'arc-current',
+            'superseded_uuids': [],
+            'superseded_global_ids': [],
+        }])
+
+        self.assertFalse(Redirect.objects.exists())
+
+    def test_dry_run_previews_redirects_without_writing_them(self):
+        from wagtail.contrib.redirects.models import Redirect
+
+        self.cmd.dry_run = True
+        survivor = self._make_arc('arc-current', self.series_a)
+        self.cmd.arcs_cache['arc-current'] = survivor
+        self._make_arc('arc-absorbed', self.series_a)
+
+        self._storyline_cleanup(arcs_data=[{
+            'fabula_uuid': 'arc-current',
+            'superseded_uuids': ['arc-absorbed'],
+            'superseded_global_ids': [],
+        }])
+
+        self.assertIn('redirects: 1 exact', self.cmd.stdout.getvalue())
+        self.assertFalse(Redirect.objects.exists())
+        self.assertTrue(
+            ConflictArc.objects.filter(fabula_uuid='arc-absorbed').exists())
+
+    def test_redirects_are_idempotent_across_reimports(self):
+        from wagtail.contrib.redirects.models import Redirect
+
+        survivor = self._make_arc('arc-current', self.series_a)
+        self.cmd.arcs_cache['arc-current'] = survivor
+        rows = [{'fabula_uuid': 'arc-current',
+                 'superseded_uuids': ['arc-absorbed'],
+                 'superseded_global_ids': []}]
+
+        for _ in range(2):
+            self._make_arc('arc-absorbed', self.series_a)
+            self._storyline_cleanup(arcs_data=rows)
+
+        self.assertEqual(
+            Redirect.objects.filter(old_path='/arcs/arc-absorbed').count(), 1)
+
     def test_cleanup_deletes_deprecated_across_all_six_entry_types(self):
         """T-001: plan totals must equal actual deletions for ALL six entry types."""
         counts_before = {

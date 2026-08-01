@@ -124,6 +124,44 @@ The delete phase runs inside a single `transaction.atomic()`: an
 unexpected mid-loop failure rolls back the *entire* cleanup phase.
 You will not see a half-cleaned database.
 
+### Storyline redirects (pruned `/arcs/…` and `/themes/…` URLs)
+
+Storylines are the one cleanup target whose URLs are indexed and
+externally linked, and a megagraph rebuild retires whole generations
+of them at once. So the cleanup phase writes a Wagtail redirect for
+every pruned `Theme`/`ConflictArc`, in both URL shapes it answered on
+(`/arcs/<id>/` and `/explore/<series>/arcs/<id>/`):
+
+- **Exact 301** when contract v2.5.0 merge lineage
+  (`superseded_uuids` / `superseded_global_ids`) names the surviving
+  storyline that absorbed the retired id.
+- **Series storyline index** (`/explore/<series>/storylines/`) when it
+  doesn't. A rebuild can re-mint and rename a storyline with no
+  recorded ancestry; the fallback keeps the URL alive but is a weaker
+  destination, and search engines read a mass redirect to one index
+  page as a soft 404. The dry-run prints the exact/fallback split per
+  model so you see the ratio before applying.
+
+**The map is only as good as the database you build it against.** The
+redirects are derived from the rows actually present at import time,
+and production is updated by `pg_dump | pg_restore` (below), not by
+running the importer against prod. If you import into a database that
+doesn't hold the *currently published* storyline generation, the map
+comes out empty and the restore ships prod a set of dead URLs. Import
+into a restore of current prod, verify the redirect counts, then dump.
+
+Measured for the Doctor Who v2.5.0 rebuild against the live prod
+generation, after the upstream published-lineage backfill (2026-07-31
+re-export; commit `06d00a7` lives in the main fabula project, not this
+repo): 3,730 storylines pruned → **3,524 exact**
+(1,337 arcs, 2,187 themes), 206 index fallbacks, 7,460 redirect rows.
+
+Before that backfill the same export produced 335 exact / 3,395
+fallbacks — the arc lineage tracked only intra-rebuild churn and never
+reached the published ids. If you re-export and the exact/fallback
+ratio collapses again, that's the regression to look for; see UP-005
+in [UPSTREAM_ISSUES.md](UPSTREAM_ISSUES.md).
+
 ## Verifying the import
 
 Quick post-import sanity:

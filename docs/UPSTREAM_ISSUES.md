@@ -17,6 +17,114 @@ mitigation live, upstream fix still needed), `fixed-upstream`
 
 ---
 
+## UP-005 — Arc merge lineage doesn't reach the published generation (fixed-upstream, verified)
+
+> **Status detail**: the current export is repaired and downstream-verified
+> (numbers below). It stays open rather than closed because the repair is a
+> one-off backfill script, not a pipeline change — the next rebuild would
+> regress without it. Closes when a rebuild produces the lineage unaided
+> (upstream ISS-044).
+
+**Raised**: 2026-07-31 · **Series**: doctorwho · **Cross-ref**: UP-004
+(the lineage this depends on), ISS-023 (the downstream mitigation)
+
+**Downstream symptom**: the v2.5.0 merge lineage that UP-004 shipped
+prunes stale storylines deterministically, but it can only *redirect*
+a retired URL when it names the survivor that absorbed it. For arcs it
+almost never does, so 1,508 of 1,509 pruned Doctor Who arc URLs fall
+back to the series storyline index instead of the arc that replaced
+them. A mass 301 to one index page reads as a soft 404 to Google — on
+URLs that are in the sitemap and indexed today.
+
+**Evidence** (rebuilt `doctorwho.mega`, 2026-07-31, checked against the
+live prod row set):
+
+| | in scope | pruned | exact redirect | index fallback |
+|---|---|---|---|---|
+| arcs | 1,509 | 1,509 | **1** | 1,508 |
+| themes | 2,221 | 2,221 | 334 | 1,887 |
+
+The lineage is present but points elsewhere: 1,614 of 1,616 arcs carry
+non-empty `superseded_uuids` — 3,473 retired ids in total — yet only 4
+of them appear in the previous export, and the graph holds exactly
+**one** `superseded_global_ids` entry across all 1,616 arcs
+(`MATCH (n:ConflictArc) RETURN sum(size(coalesce(n.superseded_global_ids,[])))`
+→ 1). Themes are the counter-example that shows the mechanism works
+when the ids are recorded: 334 non-empty `superseded_global_ids`, all
+334 matching published rows.
+
+So arc lineage is being accumulated across *intra-rebuild* generations
+that were never published, while the id the website actually keys on —
+the `ger_conflictarc_*` global_id of the previously exported
+generation — is dropped. Also note the rebuilt graph carries **no**
+winner global_ids at all (`count(n.global_id)` = 0 for both labels,
+`ger_linked_count: 0` in the manifest), so the importer's global_id
+match path can't fire either; every storyline is a new identity.
+
+**Upstream ask**: when a rebuild supersedes a storyline that had a
+`ger_*` global_id, record that global_id in the winner's
+`superseded_global_ids` (as the theme path already does). Prior-
+generation global_ids are the only ids downstream URLs are keyed on;
+intermediate `arc_*` uuids that never left the graph are not
+actionable. Separately, propagating winner `global_id`s onto rebuilt
+storylines would let the importer match in place and avoid the churn
+entirely.
+
+**Downstream mitigation (shipped, ISS-023)**: `--cleanup` writes a
+Wagtail redirect for every pruned storyline — exact when lineage names
+a successor, series storyline index otherwise — in both the global and
+series-scoped URL shapes. The fallback ratio is printed in the
+`--cleanup --dry-run` preview. This keeps the URLs alive; it does not
+make them good destinations, which is what this entry asks for.
+
+**Fixed upstream (2026-07-31, published-lineage backfill — commit
+`06d00a7` in the **main fabula project**, not this repo)**:
+`app/scripts/backfill_storyline_published_lineage.py` maps each
+published YAML row onto its rebuilt survivor by **membership
+containment** — event UUIDs turn out to be 100% stable across rebuilds
+(9,226/9,226 theme and 7,220/7,225 arc member events survived) — and
+stamps the published ids into `superseded_uuids` /
+`superseded_global_ids`, additive-only. Applied to `doctorwho.mega`;
+`fabula_export/doctorwho_v25/` re-exported 2026-07-31T20:47 with the
+lineage in, all 18 shape checks still passing.
+
+Verified downstream by running the real
+`import_fabula ./fabula_export/doctorwho_v25 --cleanup --yes`
+end-to-end (full 20,497-event import, caches populated by
+`import_arcs`/`import_themes`, not by a harness) against a throwaway
+database seeded with the live prod row set:
+
+| | published | kept in place | exact 301 | index fallback |
+|---|---|---|---|---|
+| arcs | 1,509 | 0 | 1,337 | 172 |
+| themes | 2,221 | 0 | 2,187 | 34 |
+
+**3,524 of 3,730 (94.5%)** now land on the storyline that replaced
+them, up from 335 (9%). Soft-404 mass drops from 3,395 to 206.
+
+**Reading the arc row**: upstream's own table shows arcs as 4 kept /
+1,336 exact / 169 fallback. The 4-row difference is the identity basis,
+not a discrepancy — upstream computes against the previous **YAML
+export's** ids (`arc_*` uuid + `ger_conflictarc_*` global_id), while the
+redirect map is built from the **database rows**, where 1,264 of 1,509
+arcs carry `fabula_uuid == global_id == ger_conflictarc_*` (the GER id
+was promoted into the uuid slot at import). So the 4 arcs whose `arc_*`
+uuid survives into the new export — "The Celestial Toymaker's games",
+"The Dalek Civil War", "The Kraal Invasion", "The Vulcan Colony Crisis"
+— aren't recognised in place and get pruned + redirected instead (1
+exact, 3 fallback). Reproduced both ways from the same export.
+
+**Residue**: 206 fallbacks (ambiguous or membership-poor published
+rows, itemized upstream in
+`data/ger_dedup/doctorwho_mega_published_lineage_report.json`), and the
+backfill is a repair tool, not a guarantee — upstream ISS-044 owns
+making rebuilds stamp the winner `global_id` so the importer matches in
+place with zero churn, and ISS-045 tracks 7 duplicate `arc_uuid` twin
+pairs that consolidation re-keying minted in the mega. Closes when a
+rebuild needs no backfill.
+
+---
+
 ## UP-004 — Storyline identity churn across megagraph rebuilds strands legacy arcs/themes (closed)
 
 **Raised**: 2026-07-18 (retro-logged; discovered 2026-07-17 during the
