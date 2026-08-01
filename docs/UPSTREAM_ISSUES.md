@@ -333,3 +333,33 @@ Taskforce)" organization; the Brigadier fans out to 8 affiliation rows
 "Brigade Leader" is a separate persona by design). The single-FK
 multi-affiliation limitation stays a **local** roadmap item (M2M +
 contract v2.6, importer, templates) — not an upstream issue.
+
+**Local half done (2026-08-01, ISS-025 / contract v2.6.0)**: the M2M
+landed. Two findings worth recording, because the first one changes what
+this entry claimed:
+
+1. **The published symptom was worse than described above.** This entry
+   says the Brigadier shows "Ministry of Defence". Production actually
+   showed **Time Lords** — an `AFFILIATED_WITH` edge whose own reasoning
+   says "though not indicating direct membership". The org that wins is
+   simply the first row Neo4j emits, and that changes between exports;
+   no downstream heuristic could have salvaged it.
+
+2. **The graph was never the problem — the exporter was.** Every
+   `AFFILIATED_WITH` edge already carries `relationship_type`,
+   `confidence` and `reasoning` (4,606 of 4,607 edges in
+   `doctorwho.mega` have all three). The exporter matched the edge but
+   projected only `org.org_uuid`, discarding the rest. So the graph knew
+   all along that the Brigadier *leads* UNIT (0.90) and is merely an
+   *ally* of the Time Lords (0.80); the website threw that away and then
+   picked wrong.
+
+Scale of the loss on the shipped v2.5.0 doctorwho export: 5,459 rows
+collapsed to 3,992 characters — **1,467 affiliation facts discarded for
+1,039 characters**, 26% of the cast.
+
+No upstream ask follows from this. `relationship_type` is free text with
+a 69-value long tail (`member` 2,118, `employee` 1,013, `leader` 639,
+`representative` 491, `ally` 202, then singletons like `omen-bearing`);
+that tail is fine and should not be normalised into an enum — the
+importer stores it verbatim for exactly that reason.

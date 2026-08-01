@@ -1,0 +1,31 @@
+{
+  "components": [
+    "narrative/models.py",
+    "export_from_neo4j",
+    "import_fabula",
+    "character_page.html",
+    "seo_tags",
+    "chat/tools.py"
+  ],
+  "createdBy": "claude-code",
+  "dedupeKey": "character-affiliation-m2m-up001",
+  "discoveredDate": "2026-08-01",
+  "id": "ISS-025",
+  "impact": "CharacterPage.affiliated_organization was a single FK, but the graph gives characters many AFFILIATED_WITH edges. The exporter fanned them out as duplicate character rows and dedupe_by_global_id kept whichever Neo4j emitted first, so the published affiliation was arbitrary and unstable across exports. Brigadier Lethbridge-Stewart published as \"Time Lords\" (an edge whose own reasoning says \"not indicating direct membership\") instead of UNIT, which he commands. On the shipped v2.5.0 doctorwho export: 5,459 rows collapsed to 3,992 characters, discarding 1,467 affiliation facts for 1,039 characters (26% of the cast). Organization pages also under-listed their membership, since the FK only held each character's primary tie.\n\nRoot cause was the exporter, not the graph: every AFFILIATED_WITH edge already carries relationship_type, confidence and reasoning (4,606/4,607 edges in doctorwho.mega), but the Cypher projected only org.org_uuid.\n\nFixed under contract v2.6.0: exporter collects ranked affiliations with edge data; new CharacterAffiliation junction model; importer writes all of them and keeps the FK as the ranked head; character page, JSON-LD affiliation array, chat tool payload, org member_count and get_related_characters all read the junction. Pre-v2.6.0 exports still gain affiliations via a pre-dedupe harvest (org identity only, no edge data).",
+  "location": [
+    "narrative/models.py",
+    "narrative/management/commands/export_from_neo4j.py",
+    "narrative/management/commands/import_fabula.py",
+    "narrative/templates/narrative/character_page.html",
+    "narrative/templatetags/seo_tags.py",
+    "chat/tools.py",
+    "narrative/views.py"
+  ],
+  "phase": null,
+  "relatedTickets": [],
+  "resolution": null,
+  "resolvedDate": null,
+  "severity": "high",
+  "status": "open",
+  "title": "Character affiliations were single-FK: 1,467 facts discarded, wrong org published"
+}

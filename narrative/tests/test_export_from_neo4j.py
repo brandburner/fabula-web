@@ -237,7 +237,11 @@ class TestCharacterExport(TestCase):
                     'sphere_of_influence': 'Legislative affairs',
                     'appearance_count': 443
                 },
-                'org_uuid': 'org_white_house'
+                'affiliations': [{'org_uuid': 'org_white_house',
+                                  'relationship_type': 'employee',
+                                  'confidence': 0.9,
+                                  'reasoning': 'Serves on the senior staff.',
+                                  'org_season_breadth': 4}]
             }
         ]
 
@@ -266,7 +270,7 @@ class TestCharacterExport(TestCase):
                     'character_type': 'guest',
                     'appearance_count': 5
                 },
-                'org_uuid': None
+                'affiliations': []
             }
         ]
 
@@ -594,7 +598,7 @@ class TestManifestCreation(TestCase):
 
         manifest = exporter.create_manifest(all_series)
 
-        self.assertEqual(manifest['fabula_version'], '2.5.0')
+        self.assertEqual(manifest['fabula_version'], '2.6.0')
         self.assertEqual(manifest['series_titles'], ['Wolf Hall'])
         self.assertEqual(manifest['season_count'], 2)
         self.assertEqual(manifest['episode_count'], 12)
@@ -1015,3 +1019,68 @@ class ProfileExportTest(TestCase):
         self.exporter.execute_query = Mock()
         self.assertEqual(self.exporter.export_season_profiles(), [])
         self.exporter.execute_query.assert_not_called()
+
+
+# =============================================================================
+# Affiliation ranking (contract v2.6.0 / UP-001)
+# =============================================================================
+
+class TestAffiliationRanking(TestCase):
+    """The exporter decides which of a character's many organizations is
+    primary. Neo4j row order carries no meaning, so the ranking has to.
+    """
+
+    def _aff(self, uuid, rel, confidence, breadth):
+        return {'org_uuid': uuid, 'relationship_type': rel,
+                'confidence': confidence, 'org_season_breadth': breadth}
+
+    def test_role_tier_beats_confidence(self):
+        """Leading an organization outranks being its high-confidence ally."""
+        ranked = Neo4jExporter.rank_affiliations([
+            self._aff('timelords', 'ally', 0.99, 13),
+            self._aff('unit', 'leader', 0.5, 12),
+        ])
+        self.assertEqual(ranked[0]['org_uuid'], 'unit')
+
+    def test_breadth_breaks_ties_inside_a_tier(self):
+        """The Brigadier leads both UNIT and a one-episode HQ detachment;
+        UNIT spans the series, so UNIT wins despite lower confidence."""
+        ranked = Neo4jExporter.rank_affiliations([
+            self._aff('goodge-street', 'leader', 0.95, 1),
+            self._aff('unit', 'leader', 0.90, 12),
+        ])
+        self.assertEqual(ranked[0]['org_uuid'], 'unit')
+
+    def test_confidence_breaks_ties_inside_equal_breadth(self):
+        ranked = Neo4jExporter.rank_affiliations([
+            self._aff('b', 'member', 0.4, 3),
+            self._aff('a', 'member', 0.8, 3),
+        ])
+        self.assertEqual(ranked[0]['org_uuid'], 'a')
+
+    def test_ranking_is_stable_for_identical_rows(self):
+        """Re-exports must not shuffle the primary affiliation."""
+        rows = [self._aff('zulu', 'member', 0.7, 1),
+                self._aff('alpha', 'member', 0.7, 1)]
+        self.assertEqual([r['org_uuid'] for r in Neo4jExporter.rank_affiliations(rows)],
+                         ['alpha', 'zulu'])
+        self.assertEqual([r['org_uuid'] for r in Neo4jExporter.rank_affiliations(rows[::-1])],
+                         ['alpha', 'zulu'])
+
+    def test_unknown_role_sorts_between_representative_and_ally(self):
+        """69 distinct relationship_type values exist; the tail must not
+        outrank a leader nor sink below an explicit ally."""
+        ranked = Neo4jExporter.rank_affiliations([
+            self._aff('ally-org', 'ally', 0.9, 9),
+            self._aff('odd-org', 'omen-bearing', 0.9, 9),
+            self._aff('leader-org', 'leader', 0.9, 9),
+        ])
+        self.assertEqual([r['org_uuid'] for r in ranked],
+                         ['leader-org', 'odd-org', 'ally-org'])
+
+    def test_missing_edge_data_does_not_crash(self):
+        ranked = Neo4jExporter.rank_affiliations([
+            {'org_uuid': 'bare'},
+            self._aff('full', 'leader', 0.9, 2),
+        ])
+        self.assertEqual(ranked[0]['org_uuid'], 'full')

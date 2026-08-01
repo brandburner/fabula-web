@@ -18,6 +18,7 @@ from narrative.models import (
     ObjectInvolvement,
     LocationInvolvement,
     OrganizationInvolvement,
+    CharacterAffiliation,
 )
 
 
@@ -207,7 +208,20 @@ class Command(BaseCommand):
                             inv.organization = canonical_org
                             inv.save()
 
-                    # Update character affiliations
+                    # Update character affiliations — junction rows first,
+                    # skipping any character already tied to the canonical
+                    # org (unique_together would reject the duplicate),
+                    # then the denormalised FK.
+                    for aff in CharacterAffiliation.objects.filter(
+                            organization=dup_org):
+                        if CharacterAffiliation.objects.filter(
+                                character_id=aff.character_id,
+                                organization=canonical_org).exists():
+                            aff.delete()
+                        else:
+                            aff.organization = canonical_org
+                            aff.save()
+
                     CharacterPage.objects.filter(affiliated_organization=dup_org).update(
                         affiliated_organization=canonical_org
                     )

@@ -1,6 +1,6 @@
 # Fabula YAML Contract
 
-> **Contract version**: 2.5.0 (this document is the source of truth for the
+> **Contract version**: 2.6.0 (this document is the source of truth for the
 > Neo4j → YAML → Wagtail interchange format)
 > **Graph schema**: pinned to `fabula_v2/docs/FABULA_SCHEMA_GROUND_TRUTH.md` v1.2.0
 > **Producer**: `narrative/management/commands/export_from_neo4j.py` (this repo,
@@ -17,7 +17,8 @@
 |---|---|
 | 2.3.0 | Megagraph mode: unified cross-season entities, `season_appearances`, `local_uuids`, acts/plot beats |
 | 2.4.0 | Event-layer connections (native, no fan-out), beat layer de-fan-out with `layer`/`scope`, full arcs/themes storyline shape, episode ordinals everywhere, optional `character_episode_profiles.yaml` and `season_profiles.yaml` |
-| 2.5.0 | **This document.** Storyline merge lineage: arcs/themes carry `superseded_uuids`/`superseded_global_ids` (winner-side ids absorbed across rebuilds/consolidation — upstream ec35ea1, UP-004), giving the importer a deterministic prune list; `--cleanup` covers Theme/ConflictArc |
+| 2.5.0 | Storyline merge lineage: arcs/themes carry `superseded_uuids`/`superseded_global_ids` (winner-side ids absorbed across rebuilds/consolidation — upstream ec35ea1, UP-004), giving the importer a deterministic prune list; `--cleanup` covers Theme/ConflictArc |
+| 2.6.0 | **This document.** Character affiliations become a list: `characters[].affiliations[]` carries every `AFFILIATED_WITH` edge with `relationship_type`, `confidence` and `reasoning`, ranked strongest-tie-first (UP-001, ISS-025). The scalar `affiliated_organization_uuid` survives as the head of that list |
 
 ## Manifest (`manifest.yaml`)
 
@@ -141,6 +142,52 @@ Per-event `arc_uuids` / `theme_uuids` remain on the event files too —
 redundancy is cheap and lets the importer cross-check (union, warn on
 disagreement).
 
+## `characters.yaml` — affiliations (v2.6.0)
+
+A character belongs to as many organizations as the graph ties them to.
+Pre-2.6.0 exports expressed that as **row fan-out** — one duplicate
+character row per `AFFILIATED_WITH` edge, differing only in
+`affiliated_organization_uuid` — and the importer's dedupe kept whichever
+came first, which is Neo4j row order and therefore meaningless. That is
+how Brigadier Lethbridge-Stewart published as a Time Lord (UP-001).
+
+v2.6.0 emits one row per character with the edges collected:
+
+```yaml
+- fabula_uuid: ger_agent_d5e52d5a4263
+  global_id: ger_agent_d5e52d5a4263
+  canonical_name: Brigadier Alistair Lethbridge-Stewart
+  affiliated_organization_uuid: ger_organization_5904e0e523f6   # = affiliations[0]
+  affiliations:                            # ranked, strongest tie first
+    - organization_uuid: ger_organization_5904e0e523f6
+      relationship_type: leader            # free text — see below
+      confidence: 0.9                      # 0-1, from the upstream inference pass
+      reasoning: "Commands UNIT's field operations…"
+    - organization_uuid: ger_organization_022800f6bc78
+      relationship_type: ally
+      confidence: 0.8
+      reasoning: "…though not indicating direct membership…"
+```
+
+`relationship_type` is **free text, never an enum**. Doctor Who alone has
+69 distinct values: `member`, `employee`, `leader`, `representative` and
+`ally` cover 97% of edges, but the tail (`omen-bearing`, `gatekeeper`,
+`ex-member`) is real and a choices field would fail the import on it.
+
+**Ranking** (`Neo4jExporter.rank_affiliations`, so producer and consumer
+can't disagree): role tier first — tier 0 leader/founder/commander,
+tier 1 member/employee/operative/agent/soldier/lieutenant/subordinate,
+tier 2 representative *and anything unrecognised*, tier 3 ally/former
+member — then the organization's season breadth descending, then
+confidence descending,
+then `organization_uuid` for stability. Breadth outranks confidence
+deliberately: the Brigadier leads both UNIT (0.90, 12 seasons) and a
+one-episode Goodge Street detachment (0.95), and UNIT is the answer a
+reader expects.
+
+`affiliated_organization_uuid` is retained so pre-2.6.0 importers keep
+working; it is `affiliations[0].organization_uuid`, never an arbitrary row.
+
 ## `series.yaml` and event files
 
 Every episode entry carries `season_number` and `sort_ordinal` in addition to
@@ -197,3 +244,19 @@ carry `arc_summary` (LLM cross-season arc summary) and `season_appearances`:
   matching nothing (stale generation).
 - `--cleanup --dry-run` on a ≥2.4.0 export prints the full cleanup plan
   (previously the v2.4 shape gate exited before the planner ran — ISS-020).
+
+## Importer guarantees (v2.6.0)
+
+- Every affiliation lands in `CharacterAffiliation` (character,
+  organization, relationship_type, confidence, reasoning, rank,
+  is_primary), keyed on `(character, organization)`.
+- `CharacterPage.affiliated_organization` stays populated as the
+  denormalised head of that list — admin, search and older code keep
+  working — but it is now `rank=0`, not "first row in the file".
+- **Pre-2.6.0 exports still gain affiliations.** The loader harvests the
+  fan-out rows before dedupe discards them, so the other series get their
+  full membership without a re-export. Those rows carry org identity
+  only: no `relationship_type`, no `confidence`, no `reasoning`, and a
+  flat rank, because file order means nothing.
+- Re-import prunes affiliations the export no longer asserts, so an
+  upstream org merge doesn't leave orphaned ties behind.

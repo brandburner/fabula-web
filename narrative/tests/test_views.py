@@ -1148,3 +1148,72 @@ class SearchViewTest(ViewTestMixin, TestCase):
         response = self.client.get(reverse('narrative_search'), {'q': 'confrontation'})
         self.assertEqual(response.status_code, 200)
         self.assertIn(self.connection, response.context['connection_results'])
+
+
+class CharacterAffiliationRenderTest(TestCase):
+    """The character page shows every organization, not just the primary."""
+
+    @classmethod
+    def setUpTestData(cls):
+        from narrative.models import CharacterAffiliation
+        root = Page.objects.get(depth=1)
+        cls.series = SeriesIndexPage(
+            title='Doctor Who', slug='dw-render', fabula_uuid='ser_dw_render')
+        root.add_child(instance=cls.series)
+        cls.char_index = CharacterIndexPage(title='Characters', slug='dw-r-chars')
+        cls.series.add_child(instance=cls.char_index)
+        cls.org_index = OrganizationIndexPage(title='Orgs', slug='dw-r-orgs')
+        cls.series.add_child(instance=cls.org_index)
+
+        cls.unit = OrganizationPage(
+            title='UNIT', slug='dw-r-unit', canonical_name='UNIT',
+            description='<p>x</p>', fabula_uuid='org_unit_r')
+        cls.org_index.add_child(instance=cls.unit)
+        cls.timelords = OrganizationPage(
+            title='Time Lords', slug='dw-r-tl', canonical_name='Time Lords',
+            description='<p>x</p>', fabula_uuid='org_tl_r')
+        cls.org_index.add_child(instance=cls.timelords)
+
+        cls.brigadier = CharacterPage(
+            title='Brigadier', slug='dw-r-brig',
+            canonical_name='Brigadier Lethbridge-Stewart',
+            description='<p>x</p>', character_type=CharacterType.MAIN,
+            fabula_uuid='agent_brig_r',
+            affiliated_organization=cls.unit)
+        cls.char_index.add_child(instance=cls.brigadier)
+
+        CharacterAffiliation.objects.create(
+            character=cls.brigadier, organization=cls.unit,
+            relationship_type='leader', confidence=0.9, rank=0,
+            is_primary=True, reasoning='Commands UNIT field operations.')
+        CharacterAffiliation.objects.create(
+            character=cls.brigadier, organization=cls.timelords,
+            relationship_type='ally', confidence=0.8, rank=1,
+            reasoning='An ally, not a member.')
+
+    def test_page_lists_every_affiliation(self):
+        response = self.client.get(
+            reverse('character_detail', kwargs={'identifier': 'agent_brig_r'}))
+        self.assertEqual(response.status_code, 200)
+        self.assertContains(response, 'UNIT')
+        self.assertContains(response, 'Time Lords')
+
+    def test_page_shows_the_relationship_role(self):
+        """'ally' is what keeps Time Lords from reading as membership."""
+        response = self.client.get(
+            reverse('character_detail', kwargs={'identifier': 'agent_brig_r'}))
+        self.assertContains(response, 'ally')
+        self.assertContains(response, 'An ally, not a member.')
+
+    def test_heading_pluralises(self):
+        response = self.client.get(
+            reverse('character_detail', kwargs={'identifier': 'agent_brig_r'}))
+        self.assertContains(response, 'Affiliations')
+
+    def test_jsonld_emits_every_affiliation(self):
+        response = self.client.get(
+            reverse('character_detail', kwargs={'identifier': 'agent_brig_r'}))
+        html = response.content.decode()
+        self.assertIn('"affiliation"', html)
+        self.assertIn('Time Lords', html)
+        self.assertIn('UNIT', html)

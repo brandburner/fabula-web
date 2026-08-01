@@ -12,7 +12,7 @@ Usage:
 
 import os
 import sys
-from dataclasses import dataclass
+from dataclasses import dataclass, field
 from pathlib import Path
 from typing import Dict, List, Any, Optional, Tuple
 
@@ -49,6 +49,7 @@ from narrative.models import (
     CharacterSeasonProfile,
     ArcEventMembership,
     ThemeEventMembership,
+    CharacterAffiliation,
     ObjectInvolvement,
     LocationInvolvement,
     OrganizationInvolvement,
@@ -81,6 +82,11 @@ class ImportData:
     # v2.4.0 optional files (docs/YAML_CONTRACT.md); empty on older exports
     character_episode_profiles: List[Dict]
     season_profiles: List[Dict]
+    # Affiliations recovered from the pre-dedupe character rows, keyed by
+    # global_id or fabula_uuid. Only used for pre-v2.6.0 exports, where
+    # the AFFILIATED_WITH fan-out is the only record of a character's
+    # other organizations and dedupe would otherwise discard it.
+    affiliation_fallback: Dict[str, List[str]] = field(default_factory=dict)
 
 
 class ImportStats:
@@ -420,7 +426,7 @@ class Command(BaseCommand):
     ]
 
     # Highest (major, minor) contract this importer understands.
-    SUPPORTED_CONTRACT = (2, 5)
+    SUPPORTED_CONTRACT = (2, 6)
 
     # Derived from the canonical enum so a taxonomy change can't silently
     # diverge between model, importer, and exporter.
@@ -511,9 +517,16 @@ class Command(BaseCommand):
         series = self.load_yaml(data_dir / 'series.yaml')
 
         loaded = {}
+        affiliation_fallback = {}
         for field_name, filename, key, required, dedupe in self.LOAD_SPECS:
             raw = self.load_yaml(data_dir / filename, required=required)
             rows = self.unwrap_data(raw, key) if raw else []
+            if field_name == 'characters' and rows:
+                # Harvest the fan-out before dedupe throws it away. On
+                # pre-v2.6.0 exports the duplicate rows *are* the
+                # affiliation list; keeping only the first is what
+                # published the Brigadier as a Time Lord (UP-001).
+                affiliation_fallback = self.collect_affiliation_fallback(rows)
             if dedupe and rows:
                 # Collapses Cypher JOIN fan-out (same entity emitted once per
                 # affiliation/participation row).
@@ -521,7 +534,28 @@ class Command(BaseCommand):
             loaded[field_name] = rows
 
         events = self.load_events(data_dir / 'events')
-        return ImportData(manifest=manifest, series=series, events=events, **loaded)
+        return ImportData(manifest=manifest, series=series, events=events,
+                          affiliation_fallback=affiliation_fallback, **loaded)
+
+    @staticmethod
+    def collect_affiliation_fallback(rows: List[Dict]) -> Dict[str, List[str]]:
+        """Every org uuid each character row mentions, in file order.
+
+        Order is Neo4j's, which carries no meaning — so this path can only
+        say *which* organizations a character belongs to, never which tie
+        is strongest. v2.6.0 exports ship a ranked `affiliations` list and
+        don't need this.
+        """
+        by_character = {}
+        for row in rows:
+            key = row.get('global_id') or row.get('fabula_uuid')
+            org_uuid = row.get('affiliated_organization_uuid')
+            if not key or not org_uuid:
+                continue
+            orgs = by_character.setdefault(key, [])
+            if org_uuid not in orgs:
+                orgs.append(org_uuid)
+        return by_character
 
     def parse_contract_version(self, manifest: Optional[Dict]) -> Tuple[int, int, int]:
         """Read and validate the manifest's fabula_version.
@@ -692,6 +726,9 @@ class Command(BaseCommand):
         if objects_data:
             self.import_objects(objects_data, object_index)
         self.import_characters(characters_data, character_index)
+
+        self.log_progress("Phase 3b: Linking character affiliations")
+        self.import_character_affiliations(characters_data, data.affiliation_fallback)
 
         self.log_progress("Phase 4: Importing events")
         self.import_events(events_data, event_index)
@@ -1507,6 +1544,89 @@ class Command(BaseCommand):
                 self.characters_by_global_id[global_id] = char_page
 
             self.log_detail(f"    {'Created' if created else 'Updated'} character: {char_page.canonical_name}")
+
+    def import_character_affiliations(self, characters_data: List[Dict],
+                                      fallback: Dict[str, List[str]]):
+        """Write one CharacterAffiliation row per organization a character
+        belongs to (contract v2.6.0).
+
+        Two input shapes. v2.6.0 exports carry a ranked `affiliations` list
+        with relationship_type / confidence / reasoning. Older exports carry
+        only the fanned-out `affiliated_organization_uuid` rows, harvested
+        into `fallback` before dedupe — those give org identity but no edge
+        data and no meaningful order, so their rank is left flat at 0.
+
+        Idempotent: rows are matched on (character, organization) and the
+        character's stale affiliations are pruned, so a re-import after an
+        upstream org merge doesn't leave orphans behind.
+        """
+        if self.dry_run:
+            planned = sum(
+                len(c.get('affiliations') or
+                    fallback.get(c.get('global_id') or c.get('fabula_uuid'), []))
+                for c in characters_data
+            )
+            self.log_progress(f"  [DRY RUN] would link {planned} character affiliations")
+            return
+
+        linked = pruned = unresolved = rich = 0
+        for char_data in characters_data:
+            char_uuid = char_data.get('fabula_uuid') or char_data.get('agent_uuid', '')
+            global_id = char_data.get('global_id', '')
+            char_page = (self.characters_by_global_id.get(global_id) if global_id
+                         else None) or self.characters_cache.get(char_uuid)
+            if not char_page or not char_page.pk:
+                continue
+
+            rows = char_data.get('affiliations')
+            if rows:
+                rich += 1
+            else:
+                # Pre-v2.6.0: identity only, no edge data, no ranking.
+                rows = [{'organization_uuid': org_uuid}
+                        for org_uuid in fallback.get(global_id or char_uuid, [])]
+
+            seen_org_pks = []
+            for rank, row in enumerate(rows):
+                org = self.organizations_cache.get(row.get('organization_uuid'))
+                if org is None or not org.pk:
+                    # Org pruned upstream or absent from this export.
+                    unresolved += 1
+                    continue
+                confidence = row.get('confidence')
+                CharacterAffiliation.objects.update_or_create(
+                    character=char_page,
+                    organization=org,
+                    defaults={
+                        'relationship_type': (row.get('relationship_type') or '')[:64],
+                        'confidence': float(confidence) if confidence is not None else None,
+                        'reasoning': row.get('reasoning') or '',
+                        'rank': rank,
+                        'is_primary': not seen_org_pks,
+                    },
+                )
+                seen_org_pks.append(org.pk)
+                linked += 1
+
+            stale = CharacterAffiliation.objects.filter(
+                character=char_page).exclude(organization_id__in=seen_org_pks)
+            pruned += stale.count()
+            stale.delete()
+
+            # Keep the denormalised FK pointing at rank 0 rather than at
+            # whichever row happened to come first in the file.
+            primary = (CharacterAffiliation.objects
+                       .filter(character=char_page, is_primary=True)
+                       .select_related('organization').first())
+            new_org = primary.organization if primary else None
+            if char_page.affiliated_organization_id != (new_org.pk if new_org else None):
+                char_page.affiliated_organization = new_org
+                char_page.save_revision().publish()
+
+        self.log_progress(
+            f"  Linked {linked} character affiliations "
+            f"({rich} characters from ranked v2.6.0 data, "
+            f"{pruned} stale removed, {unresolved} unresolved org refs)")
 
     def import_objects(self, objects_data: List[Dict], object_index: ObjectIndexPage):
         """Import objects with GER cross-season resolution."""

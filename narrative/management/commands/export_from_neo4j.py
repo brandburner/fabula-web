@@ -408,6 +408,58 @@ class Neo4jExporter:
     # Export Characters
     # =========================================================================
 
+    # Shared by all four export_characters queries. Collapses the
+    # AFFILIATED_WITH fan-out into one row per agent and carries the edge
+    # data (relationship_type / confidence / reasoning) that makes an
+    # affiliation an assertion rather than a link — contract v2.6.0.
+    # participation_count is aggregated *before* the affiliation match so
+    # the org fan-out can't multiply it.
+    AFFILIATION_CLAUSE = """
+                OPTIONAL MATCH (a)-[p:PARTICIPATED_AS]->(:Event)
+                WITH a, count(p) as participation_count
+                OPTIONAL MATCH (a)-[r:AFFILIATED_WITH]->(org:Organization)
+                WITH a, participation_count, [x IN collect({
+                         org_uuid: org.org_uuid,
+                         relationship_type: r.relationship_type,
+                         confidence: r.confidence,
+                         reasoning: r.reasoning,
+                         org_season_breadth: size(coalesce(org.season_appearances, []))
+                     }) WHERE x.org_uuid IS NOT NULL] as affiliations"""
+
+    # Primacy tiers for picking the single `affiliated_organization_uuid`
+    # kept for backwards compatibility. Lower sorts first. Anything not
+    # listed lands in the fallback tier: the graph carries 69 distinct
+    # relationship_type values, most of them one-offs.
+    AFFILIATION_TIERS = {
+        'leader': 0, 'founder': 0, 'former leader': 0, 'commander': 0,
+        'member': 1, 'employee': 1, 'operative': 1, 'agent': 1,
+        'soldier': 1, 'lieutenant': 1, 'subordinate': 1,
+        'representative': 2,
+        'ally': 3, 'former member': 3, 'ex-member': 3,
+    }
+    AFFILIATION_FALLBACK_TIER = 2
+
+    @classmethod
+    def rank_affiliations(cls, affiliations: List[Dict]) -> List[Dict]:
+        """Order a character's affiliations strongest-tie-first.
+
+        Role tier first (you *lead* an organization more strongly than you
+        are its *ally*), then how much of the series the organization spans,
+        then confidence, then name for stability. Breadth beats confidence
+        deliberately: Brigadier Lethbridge-Stewart leads both UNIT (0.90,
+        12 seasons) and a one-episode Goodge Street HQ detachment (0.95),
+        and UNIT is the answer a reader expects.
+        """
+        def sort_key(aff):
+            rel = (aff.get('relationship_type') or '').strip().lower()
+            return (
+                cls.AFFILIATION_TIERS.get(rel, cls.AFFILIATION_FALLBACK_TIER),
+                -(aff.get('org_season_breadth') or 0),
+                -(aff.get('confidence') or 0),
+                aff.get('org_uuid') or '',
+            )
+        return sorted(affiliations, key=sort_key)
+
     def export_characters(self) -> List[Dict]:
         """
         Export all characters/agents with their metadata.
@@ -433,11 +485,9 @@ class Neo4jExporter:
                 WHERE e.event_uuid IN $event_uuids
                   AND (a.status = 'canonical' OR a.entity_status = 'canonical')
                 WITH DISTINCT a
-                OPTIONAL MATCH (a)-[:AFFILIATED_WITH]->(org:Organization)
-                OPTIONAL MATCH (a)-[p:PARTICIPATED_AS]->(:Event)
-                WITH a, org, count(p) as participation_count
+                """ + self.AFFILIATION_CLAUSE + """
                 RETURN a,
-                       org.org_uuid as org_uuid,
+                       affiliations,
                        a.ger_global_id as ger_global_id,
                        a.season_appearances as season_appearances,
                        a.local_uuids as local_uuids,
@@ -453,10 +503,8 @@ class Neo4jExporter:
                 WHERE e.event_uuid IN $event_uuids
                   AND a.status = 'canonical'
                 WITH DISTINCT a
-                OPTIONAL MATCH (a)-[:AFFILIATED_WITH]->(org:Organization)
-                OPTIONAL MATCH (a)-[p:PARTICIPATED_AS]->(:Event)
-                WITH a, org, count(p) as participation_count
-                RETURN a, org.org_uuid as org_uuid, participation_count
+                """ + self.AFFILIATION_CLAUSE + """
+                RETURN a, affiliations, participation_count
                 ORDER BY a.canonical_name
                 """
             results = self.execute_query(query, {'event_uuids': list(self.series_event_uuids)})
@@ -467,11 +515,9 @@ class Neo4jExporter:
                 query = """
                 MATCH (a:Agent)
                 WHERE a.status = 'canonical' OR a.entity_status = 'canonical'
-                OPTIONAL MATCH (a)-[:AFFILIATED_WITH]->(org:Organization)
-                OPTIONAL MATCH (a)-[p:PARTICIPATED_AS]->(:Event)
-                WITH a, org, count(p) as participation_count
+                """ + self.AFFILIATION_CLAUSE + """
                 RETURN a,
-                       org.org_uuid as org_uuid,
+                       affiliations,
                        a.ger_global_id as ger_global_id,
                        a.season_appearances as season_appearances,
                        a.local_uuids as local_uuids,
@@ -485,10 +531,8 @@ class Neo4jExporter:
                 query = """
                 MATCH (a:Agent)
                 WHERE a.status = 'canonical'
-                OPTIONAL MATCH (a)-[:AFFILIATED_WITH]->(org:Organization)
-                OPTIONAL MATCH (a)-[p:PARTICIPATED_AS]->(:Event)
-                WITH a, org, count(p) as participation_count
-                RETURN a, org.org_uuid as org_uuid, participation_count
+                """ + self.AFFILIATION_CLAUSE + """
+                RETURN a, affiliations, participation_count
                 ORDER BY a.canonical_name
                 """
             results = self.execute_query(query)
@@ -496,7 +540,16 @@ class Neo4jExporter:
 
         for record in results:
             agent = record['a']
-            org_uuid = record.get('org_uuid')
+
+            # v2.6.0: every affiliation, strongest tie first. The legacy
+            # single `affiliated_organization_uuid` is the head of that
+            # ranking rather than whatever row Neo4j happened to emit
+            # first — see UP-001 / ISS-025.
+            affiliations = self.rank_affiliations(record.get('affiliations') or [])
+            org_uuid = affiliations[0]['org_uuid'] if affiliations else None
+            if len(affiliations) > 1:
+                self.stats['multi_affiliation_agents'] = \
+                    self.stats.get('multi_affiliation_agents', 0) + 1
 
             # Parse traits and aliases (may be stored as strings or lists)
             traits = self.safe_get(agent, 'foundational_traits', [])
@@ -541,7 +594,17 @@ class Neo4jExporter:
                 'sphere_of_influence': self.safe_get(agent, 'sphere_of_influence'),
                 'appearance_count': appearance_count,
                 'importance_tier': computed_tier,
-                'affiliated_organization_uuid': org_uuid
+                # Kept for pre-v2.6.0 importers: the head of `affiliations`.
+                'affiliated_organization_uuid': org_uuid,
+                'affiliations': [
+                    {
+                        'organization_uuid': a['org_uuid'],
+                        'relationship_type': a.get('relationship_type') or '',
+                        'confidence': a.get('confidence'),
+                        'reasoning': a.get('reasoning') or '',
+                    }
+                    for a in affiliations
+                ],
             }
 
             # Add megagraph-specific fields
@@ -2097,7 +2160,7 @@ class Neo4jExporter:
         total_seasons = sum(len(s.get('seasons', [])) for s in all_series)
 
         manifest = {
-            'fabula_version': '2.5.0',  # docs/YAML_CONTRACT.md
+            'fabula_version': '2.6.0',  # docs/YAML_CONTRACT.md
             'export_date': datetime.now().isoformat(),
             'source_graph': self.uri,
             'source_database': self.database,

@@ -669,6 +669,10 @@ class CharacterPage(Page):
     )
 
     # Relationships
+    # Denormalised head of `affiliations` (CharacterAffiliation, rank=0).
+    # Kept so admin, search and older code keep working; anything that
+    # displays affiliations should read `affiliations` instead, since a
+    # character routinely belongs to several organizations at once.
     affiliated_organization = models.ForeignKey(
         'narrative.OrganizationPage',
         null=True,
@@ -725,6 +729,17 @@ class CharacterPage(Page):
             'event__episode__episode_number',
             'event__scene_sequence'
         )
+
+    def get_affiliations(self):
+        """Every organization this character belongs to, strongest tie first.
+
+        Characters routinely belong to several organizations at once — the
+        Brigadier leads UNIT, answers to the Ministry of Defence and is
+        merely an ally of the Time Lords — so templates should read this
+        rather than the single `affiliated_organization` FK.
+        """
+        return self.affiliations.select_related('organization').filter(
+            organization__live=True)
 
     def get_absolute_url(self):
         """Return URL using global_id for stable cross-season links."""
@@ -877,8 +892,19 @@ class OrganizationPage(Page):
         return terms
 
     def get_related_characters(self, limit=20):
-        """Get characters affiliated with this organization."""
-        return self.affiliated_characters.filter(live=True).order_by('canonical_name')[:limit]
+        """Get characters affiliated with this organization.
+
+        Reads the junction, not `affiliated_characters`: the FK only holds
+        each character's primary affiliation, so UNIT's page used to omit
+        the Brigadier entirely on the strength of one arbitrary row.
+        Leaders and members surface ahead of mere allies.
+        """
+        return CharacterPage.objects.filter(
+            live=True,
+            affiliations__organization=self,
+        ).annotate(
+            tie_rank=models.Min('affiliations__rank'),
+        ).order_by('tie_rank', 'canonical_name').distinct()[:limit]
 
     def get_related_events(self, limit=30):
         """Find events whose description mentions this organization."""
@@ -2036,6 +2062,71 @@ class ThemeEventMembership(models.Model):
 
     def __str__(self):
         return f"{self.event.title} ∈ {self.theme.name}"
+
+
+class CharacterAffiliation(models.Model):
+    """Junction linking a character to every organization they belong to,
+    with the edge data that makes the tie an assertion (contract v2.6.0:
+    AFFILIATED_WITH evidence).
+
+    Replaces the single `CharacterPage.affiliated_organization` FK, which
+    could only hold one of the (often many) affiliations the graph knows
+    about — the importer's dedupe kept whichever row Neo4j emitted first,
+    so Brigadier Lethbridge-Stewart published as a Time Lord rather than
+    UNIT's commanding officer. See UP-001 in docs/UPSTREAM_ISSUES.md.
+
+    The FK survives as a denormalised "primary" pointing at `rank`-order
+    position 0; `is_primary` marks the same row here.
+    """
+    character = models.ForeignKey(
+        'narrative.CharacterPage',
+        on_delete=models.CASCADE,
+        related_name='affiliations',
+    )
+    organization = models.ForeignKey(
+        'narrative.OrganizationPage',
+        on_delete=models.CASCADE,
+        related_name='character_affiliations',
+    )
+    relationship_type = models.CharField(
+        max_length=64,
+        blank=True,
+        db_index=True,
+        help_text="How the character relates to the organization: leader, "
+                  "member, employee, representative, ally… Free text, not "
+                  "choices — the graph carries a long tail of one-off roles "
+                  "('omen-bearing', 'gatekeeper') and rejecting them would "
+                  "fail the import."
+    )
+    confidence = models.FloatField(
+        null=True,
+        blank=True,
+        help_text="Extraction confidence 0-1 from the upstream inference pass"
+    )
+    reasoning = models.TextField(
+        blank=True,
+        help_text="Why the graph asserts this affiliation — the narrative "
+                  "claim, in the same spirit as NarrativeConnection.description"
+    )
+    rank = models.PositiveIntegerField(
+        default=0,
+        db_index=True,
+        help_text="Display order, strongest tie first (0 = primary). Set by "
+                  "the exporter's ranking: role tier, then how much of the "
+                  "series the organization spans, then confidence."
+    )
+    is_primary = models.BooleanField(
+        default=False,
+        help_text="Mirrors CharacterPage.affiliated_organization"
+    )
+
+    class Meta:
+        unique_together = ['character', 'organization']
+        ordering = ['rank', 'organization__canonical_name']
+
+    def __str__(self):
+        role = f" ({self.relationship_type})" if self.relationship_type else ""
+        return f"{self.character.canonical_name} → {self.organization.canonical_name}{role}"
 
 
 # =============================================================================

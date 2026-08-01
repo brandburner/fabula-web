@@ -1984,3 +1984,165 @@ class ConnectionPurgeScopingTest(TestCase):
         # The beat row kept its global_id -> same URL -> no redirect row.
         self.assertFalse(Redirect.objects.filter(
             old_path__contains='ger_narrativeconnection_alpha').exists())
+
+
+# =============================================================================
+# CHARACTER AFFILIATIONS (contract v2.6.0 / UP-001)
+# =============================================================================
+
+class CharacterAffiliationImportTest(TestCase):
+    """A character belongs to every organization the graph ties them to.
+
+    Before v2.6.0 the importer kept one affiliation per character —
+    whichever row Neo4j emitted first — which published Brigadier
+    Lethbridge-Stewart as a Time Lord rather than UNIT's commander.
+    """
+
+    def setUp(self):
+        from narrative.models import CharacterAffiliation
+        self.CharacterAffiliation = CharacterAffiliation
+
+        self.cmd = Command()
+        self.cmd.stdout = StringIO()
+        self.cmd.stderr = StringIO()
+        self.cmd.verbose = False
+        self.cmd.dry_run = False
+
+        root = Page.objects.get(depth=1)
+        self.series = SeriesIndexPage(
+            title="Doctor Who", slug="dw", fabula_uuid="series-dw")
+        root.add_child(instance=self.series)
+
+        self.chars = CharacterIndexPage(title="Characters", slug="dw-chars")
+        self.series.add_child(instance=self.chars)
+        self.orgs = OrganizationIndexPage(title="Orgs", slug="dw-orgs")
+        self.series.add_child(instance=self.orgs)
+
+        self.brigadier = CharacterPage(
+            title="Brigadier", slug="brigadier",
+            canonical_name="Brigadier Lethbridge-Stewart",
+            description="<p>x</p>",
+            fabula_uuid="ger_agent_brig", global_id="ger_agent_brig")
+        self.chars.add_child(instance=self.brigadier)
+
+        self.unit = self._org("UNIT", "org-unit")
+        self.timelords = self._org("Time Lords", "org-timelords")
+        self.mod = self._org("Ministry of Defence", "org-mod")
+
+        self.cmd.characters_cache = {"ger_agent_brig": self.brigadier}
+        self.cmd.characters_by_global_id = {"ger_agent_brig": self.brigadier}
+        self.cmd.organizations_cache = {
+            "org-unit": self.unit,
+            "org-timelords": self.timelords,
+            "org-mod": self.mod,
+        }
+
+    def _org(self, name, uuid):
+        org = OrganizationPage(
+            title=name, slug=uuid, canonical_name=name,
+            description="<p>x</p>", fabula_uuid=uuid)
+        self.orgs.add_child(instance=org)
+        return org
+
+    def _rich_row(self):
+        """A v2.6.0 character row: ranked affiliations with edge data."""
+        return {
+            'fabula_uuid': 'ger_agent_brig',
+            'global_id': 'ger_agent_brig',
+            'affiliated_organization_uuid': 'org-unit',
+            'affiliations': [
+                {'organization_uuid': 'org-unit', 'relationship_type': 'leader',
+                 'confidence': 0.9, 'reasoning': 'Commands UNIT field operations.'},
+                {'organization_uuid': 'org-mod', 'relationship_type': 'member',
+                 'confidence': 0.7, 'reasoning': 'Takes direction from the MoD.'},
+                {'organization_uuid': 'org-timelords', 'relationship_type': 'ally',
+                 'confidence': 0.8, 'reasoning': 'An ally, not a member.'},
+            ],
+        }
+
+    def test_every_affiliation_is_stored(self):
+        self.cmd.import_character_affiliations([self._rich_row()], {})
+        self.assertEqual(
+            self.CharacterAffiliation.objects.filter(
+                character=self.brigadier).count(), 3)
+
+    def test_edge_data_survives_the_import(self):
+        self.cmd.import_character_affiliations([self._rich_row()], {})
+        ally = self.CharacterAffiliation.objects.get(
+            character=self.brigadier, organization=self.timelords)
+        self.assertEqual(ally.relationship_type, 'ally')
+        self.assertAlmostEqual(ally.confidence, 0.8)
+        self.assertEqual(ally.reasoning, 'An ally, not a member.')
+
+    def test_primary_is_the_ranked_head_not_the_first_row(self):
+        self.cmd.import_character_affiliations([self._rich_row()], {})
+        self.brigadier.refresh_from_db()
+        self.assertEqual(self.brigadier.affiliated_organization_id, self.unit.pk)
+        primary = self.CharacterAffiliation.objects.get(
+            character=self.brigadier, is_primary=True)
+        self.assertEqual(primary.organization_id, self.unit.pk)
+
+    def test_ordering_follows_export_rank(self):
+        self.cmd.import_character_affiliations([self._rich_row()], {})
+        names = [a.organization.canonical_name
+                 for a in self.brigadier.get_affiliations()]
+        self.assertEqual(names, ["UNIT", "Ministry of Defence", "Time Lords"])
+
+    def test_pre_v26_export_falls_back_to_the_fan_out(self):
+        """Older exports carry affiliations only as duplicate rows."""
+        row = {'fabula_uuid': 'ger_agent_brig', 'global_id': 'ger_agent_brig',
+               'affiliated_organization_uuid': 'org-timelords'}
+        fallback = {'ger_agent_brig': ['org-timelords', 'org-unit', 'org-mod']}
+        self.cmd.import_character_affiliations([row], fallback)
+        self.assertEqual(
+            self.CharacterAffiliation.objects.filter(
+                character=self.brigadier).count(), 3)
+
+    def test_fallback_map_harvests_rows_before_dedupe(self):
+        rows = [
+            {'global_id': 'ger_agent_brig', 'affiliated_organization_uuid': 'org-timelords'},
+            {'global_id': 'ger_agent_brig', 'affiliated_organization_uuid': 'org-unit'},
+            {'global_id': 'ger_agent_brig', 'affiliated_organization_uuid': 'org-unit'},
+            {'global_id': 'other', 'affiliated_organization_uuid': None},
+        ]
+        harvested = Command.collect_affiliation_fallback(rows)
+        self.assertEqual(harvested['ger_agent_brig'],
+                         ['org-timelords', 'org-unit'])
+        self.assertNotIn('other', harvested)
+
+    def test_reimport_is_idempotent(self):
+        self.cmd.import_character_affiliations([self._rich_row()], {})
+        self.cmd.import_character_affiliations([self._rich_row()], {})
+        self.assertEqual(
+            self.CharacterAffiliation.objects.filter(
+                character=self.brigadier).count(), 3)
+
+    def test_dropped_affiliations_are_pruned_on_reimport(self):
+        self.cmd.import_character_affiliations([self._rich_row()], {})
+        shrunk = self._rich_row()
+        shrunk['affiliations'] = shrunk['affiliations'][:1]
+        self.cmd.import_character_affiliations([shrunk], {})
+        remaining = list(self.CharacterAffiliation.objects.filter(
+            character=self.brigadier).values_list('organization_id', flat=True))
+        self.assertEqual(remaining, [self.unit.pk])
+
+    def test_unresolvable_org_is_skipped_not_fatal(self):
+        row = self._rich_row()
+        row['affiliations'].append(
+            {'organization_uuid': 'org-pruned-upstream',
+             'relationship_type': 'member'})
+        self.cmd.import_character_affiliations([row], {})
+        self.assertEqual(
+            self.CharacterAffiliation.objects.filter(
+                character=self.brigadier).count(), 3)
+
+    def test_dry_run_writes_nothing(self):
+        self.cmd.dry_run = True
+        self.cmd.import_character_affiliations([self._rich_row()], {})
+        self.assertEqual(self.CharacterAffiliation.objects.count(), 0)
+
+    def test_organization_lists_every_affiliated_character(self):
+        """UNIT's page used to omit anyone whose primary tie was elsewhere."""
+        self.cmd.import_character_affiliations([self._rich_row()], {})
+        members = self.mod.get_related_characters()
+        self.assertIn(self.brigadier, members)

@@ -238,27 +238,45 @@
         {# ============================================================= #}
         {# AFFILIATED ORGANIZATION #}
         {# ============================================================= #}
-        {% if page.affiliated_organization %}
+        {% with affiliations=page.get_affiliations %}
+        {% if affiliations %}
         <section class="mt-10">
             <div class="flex items-center gap-2 mb-6">
                 <i data-lucide="building-2" class="w-5 h-5" style="color: var(--f-accent-violet);"></i>
-                <h2 style="font-family: var(--f-font-display); color: var(--f-fg-heading); font-size: 1.15rem; font-weight: 400;">Affiliation</h2>
+                <h2 style="font-family: var(--f-font-display); color: var(--f-fg-heading); font-size: 1.15rem; font-weight: 400;">Affiliation{{ affiliations|length|pluralize }}</h2>
             </div>
 
-            <a href="{% narrative_url page.affiliated_organization %}"
-               class="block p-4 rounded-lg transition-all duration-200 group f-hover-border"
-               style="background: var(--f-card-bg); border: 1px solid var(--f-card-border);">
-                <div class="font-medium" style="color: var(--f-fg-heading); font-family: var(--f-font-display);">
-                    {{ page.affiliated_organization.canonical_name }}
-                </div>
-                {% if page.affiliated_organization.sphere_of_influence %}
-                <div class="text-sm mt-1" style="color: var(--f-fg-tertiary);">
-                    {{ page.affiliated_organization.sphere_of_influence }}
-                </div>
-                {% endif %}
-            </a>
+            <div class="space-y-3">
+                {% for affiliation in affiliations %}
+                <a href="{% narrative_url affiliation.organization %}"
+                   class="block p-4 rounded-lg transition-all duration-200 group f-hover-border"
+                   style="background: var(--f-card-bg); border: 1px solid var(--f-card-border);">
+                    <div class="flex items-baseline justify-between gap-3">
+                        <div class="font-medium" style="color: var(--f-fg-heading); font-family: var(--f-font-display);">
+                            {{ affiliation.organization.canonical_name }}
+                        </div>
+                        {% if affiliation.relationship_type %}
+                        <span class="text-xs uppercase tracking-wide shrink-0" style="color: var(--f-accent-violet);">
+                            {{ affiliation.relationship_type }}
+                        </span>
+                        {% endif %}
+                    </div>
+                    {% if affiliation.organization.sphere_of_influence %}
+                    <div class="text-sm mt-1" style="color: var(--f-fg-tertiary);">
+                        {{ affiliation.organization.sphere_of_influence }}
+                    </div>
+                    {% endif %}
+                    {% if affiliation.reasoning %}
+                    <p class="text-sm mt-2 leading-relaxed" style="color: var(--f-fg-secondary);">
+                        {{ affiliation.reasoning }}
+                    </p>
+                    {% endif %}
+                </a>
+                {% endfor %}
+            </div>
         </section>
         {% endif %}
+        {% endwith %}
 
         {# ============================================================= #}
         {# ACROSS THE SEASONS — arc summary + per-season portrait tabs #}
@@ -535,26 +553,44 @@
         {# ============================================================= #}
         {# AFFILIATED ORGANIZATION #}
         {# ============================================================= #}
-        {% if page.affiliated_organization %}
+        {% with affiliations=page.get_affiliations %}
+        {% if affiliations %}
         <section class="mt-10">
             <div class="flex items-center gap-2 mb-6">
                 <i data-lucide="building-2" class="w-5 h-5 text-blue-400"></i>
-                <h2 class="text-lg font-semibold text-white">Affiliation</h2>
+                <h2 class="text-lg font-semibold text-white">Affiliation{{ affiliations|length|pluralize }}</h2>
             </div>
 
-            <a href="{% narrative_url page.affiliated_organization %}"
-               class="block p-4 bg-slate-900/50 border border-slate-800 rounded-lg hover:border-blue-500/30 transition-colors group">
-                <div class="font-medium text-slate-200 group-hover:text-blue-300">
-                    {{ page.affiliated_organization.canonical_name }}
-                </div>
-                {% if page.affiliated_organization.sphere_of_influence %}
-                <div class="text-sm text-slate-500 mt-1">
-                    {{ page.affiliated_organization.sphere_of_influence }}
-                </div>
-                {% endif %}
-            </a>
+            <div class="space-y-3">
+                {% for affiliation in affiliations %}
+                <a href="{% narrative_url affiliation.organization %}"
+                   class="block p-4 bg-slate-900/50 border border-slate-800 rounded-lg hover:border-blue-500/30 transition-colors group">
+                    <div class="flex items-baseline justify-between gap-3">
+                        <div class="font-medium text-slate-200 group-hover:text-blue-300">
+                            {{ affiliation.organization.canonical_name }}
+                        </div>
+                        {% if affiliation.relationship_type %}
+                        <span class="text-xs uppercase tracking-wide text-blue-400 shrink-0">
+                            {{ affiliation.relationship_type }}
+                        </span>
+                        {% endif %}
+                    </div>
+                    {% if affiliation.organization.sphere_of_influence %}
+                    <div class="text-sm text-slate-500 mt-1">
+                        {{ affiliation.organization.sphere_of_influence }}
+                    </div>
+                    {% endif %}
+                    {% if affiliation.reasoning %}
+                    <p class="text-sm mt-2 leading-relaxed text-slate-400">
+                        {{ affiliation.reasoning }}
+                    </p>
+                    {% endif %}
+                </a>
+                {% endfor %}
+            </div>
         </section>
         {% endif %}
+        {% endwith %}
 
         {# ============================================================= #}
         {# EPISODE PROFILES (if any) #}

@@ -353,16 +353,24 @@ def character_jsonld(context, page):
     if hasattr(page, 'appearance_count'):
         char_node["fabula:appearances"] = page.appearance_count
 
-    # Affiliation as linked Organization
-    if page.affiliated_organization:
-        org_id = _url(request, page.affiliated_organization.url)
-        char_node["affiliation"] = {"@id": org_id}
+    # Affiliations as linked Organizations. schema.org/affiliation takes a
+    # list, so emit every organization rather than the single primary —
+    # a character who leads one body and advises another is both.
+    affiliation_ids = []
+    for affiliation in page.get_affiliations():
+        org = affiliation.organization
+        org_id = _url(request, org.url)
+        if org_id in affiliation_ids:
+            continue
+        affiliation_ids.append(org_id)
         graph.append({
             "@type": "Organization",
             "@id": org_id,
-            "name": _strip_html(page.affiliated_organization.canonical_name),
+            "name": _strip_html(org.canonical_name),
             "url": org_id,
         })
+    if affiliation_ids:
+        char_node["affiliation"] = [{"@id": oid} for oid in affiliation_ids]
 
     graph.insert(0, char_node)
     return _jsonld({"@context": _fabula_context(), "@graph": graph})

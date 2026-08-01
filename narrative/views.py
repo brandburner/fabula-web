@@ -1020,9 +1020,12 @@ class OrganizationIndexView(SeasonFilterMixin, SeriesScopedMixin, ListView):
 
         return base_qs.annotate(
             involvement_count=Count('event_involvements', filter=inv_filter),
+            # Counts the junction, not the primary-affiliation FK: an
+            # organization's membership is everyone tied to it, not just
+            # those for whom it ranked first.
             member_count=Count(
-                'affiliated_characters',
-                filter=Q(affiliated_characters__live=True),
+                'character_affiliations',
+                filter=Q(character_affiliations__character__live=True),
                 distinct=True,
             ),
         ).order_by('-involvement_count', '-member_count', 'canonical_name')
