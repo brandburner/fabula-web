@@ -106,8 +106,14 @@ def _truncate(text, max_len=300):
 
 
 def _url(request, path):
-    """Build absolute URL from request and path."""
-    return f"{request.scheme}://{request.get_host}{path}"
+    """Build absolute URL from request and path.
+
+    get_host is a method — calling it is the whole point. Without the
+    parentheses every @id in every JSON-LD block on the site read
+    "https://<bound method HttpRequest.get_host of <WSGIRequest...>>",
+    which no consumer can resolve.
+    """
+    return f"{request.scheme}://{request.get_host()}{path}"
 
 
 def _fabula_context():
@@ -328,7 +334,10 @@ def character_jsonld(context, page):
     request = context['request']
     graph = []
 
-    char_id = _url(request, page.url)
+    # get_absolute_url, not .url — see _url()'s note; narrative pages are
+    # routed by custom views, so Page.url is None and the @id the
+    # affiliations hang off would be unresolvable.
+    char_id = _url(request, page.get_absolute_url())
     char_node = {
         "@type": "FictionalCharacter",
         "@id": char_id,
@@ -359,7 +368,9 @@ def character_jsonld(context, page):
     affiliation_ids = []
     for affiliation in page.get_affiliations():
         org = affiliation.organization
-        org_id = _url(request, org.url)
+        # get_absolute_url, not .url: narrative pages are served by custom
+        # views rather than Wagtail routing, so Page.url is None for them.
+        org_id = _url(request, org.get_absolute_url())
         if org_id in affiliation_ids:
             continue
         affiliation_ids.append(org_id)

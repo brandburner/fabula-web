@@ -1217,3 +1217,20 @@ class CharacterAffiliationRenderTest(TestCase):
         self.assertIn('"affiliation"', html)
         self.assertIn('Time Lords', html)
         self.assertIn('UNIT', html)
+
+    def test_jsonld_ids_are_resolvable_urls(self):
+        """Regression: _url() used request.get_host without calling it, so
+        every @id on the site read "https://<bound method ...>None"."""
+        import json, re
+        response = self.client.get(
+            reverse('character_detail', kwargs={'identifier': 'agent_brig_r'}))
+        block = re.search(
+            r'<script type="application/ld\+json">(.*?)</script>',
+            response.content.decode(), re.S).group(1)
+        self.assertNotIn('bound method', block)
+        graph = json.loads(block).get('@graph', [])
+        orgs = [n for n in graph if n.get('@type') == 'Organization']
+        self.assertEqual(len(orgs), 2)
+        for node in graph:
+            self.assertNotIn('None', str(node.get('@id', '')))
+            self.assertRegex(str(node.get('@id', '')), r'^https?://[^/]+/\S')

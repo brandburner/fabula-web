@@ -1,0 +1,23 @@
+{
+  "components": [
+    "narrative/templatetags/seo_tags.py"
+  ],
+  "createdBy": "claude-code",
+  "dedupeKey": "jsonld-unresolvable-ids-get-host",
+  "discoveredDate": "2026-08-02",
+  "id": "ISS-026",
+  "impact": "Two bugs made every structured-data @id and url on the site unusable, defeating the SEO strategy that structured data exists to serve (rich snippets, Knowledge Graph, AI answer engines).\n\n1. _url() in narrative/templatetags/seo_tags.py built \"{scheme}://{request.get_host}{path}\" — get_host without parentheses, so every @id read \"https://<bound method HttpRequest.get_host of <WSGIRequest: GET '...'>>\". 136 occurrences on a single series page. FIXED.\n\n2. Narrative pages are served by custom views in narrative/urls.py rather than Wagtail page routing, so Page.url returns None for them; get_absolute_url() is the correct accessor. Roughly half the call sites already used get_absolute_url(); the rest passed .url and produced \"https://hostNone\". Fixed for character_jsonld (the character node and its affiliation Organization nodes) because the v2.6.0 affiliation work depends on it.\n\nREMAINING: 20 call sites still pass .url — page.url in the series/season/episode/event tags, season.url, s.url, ancestor.url, p.character.url, page.episode.url, conn.from_event.url / conn.to_event.url, connection.from_event.url / connection.to_event.url. Each emits an @id ending in \"None\". They need the same .url -> get_absolute_url() treatment, plus a test asserting no @id contains \"None\" and every @id matches ^https?://[^/]+/. Worth auditing with Google's Rich Results Test afterwards, and re-checking Search Console once recrawled.",
+  "location": [
+    "narrative/templatetags/seo_tags.py:108",
+    "narrative/templatetags/seo_tags.py:168",
+    "narrative/templatetags/seo_tags.py:519",
+    "narrative/templatetags/seo_tags.py:676"
+  ],
+  "phase": null,
+  "relatedTickets": [],
+  "resolution": null,
+  "resolvedDate": null,
+  "severity": "high",
+  "status": "open",
+  "title": "JSON-LD @ids are unresolvable sitewide: get_host not called, and .url is None for narrative pages"
+}
