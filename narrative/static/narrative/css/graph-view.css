@@ -108,7 +108,7 @@
     z-index: 10;
 }
 
-/* Tooltip - follows mouse cursor */
+/* Tooltip - anchored near the hovered node or edge */
 .graph-tooltip {
     position: fixed;
     background: rgba(15, 23, 42, 0.97);
@@ -121,7 +121,6 @@
     z-index: 100;
     opacity: 0;
     pointer-events: none;
-    transform: translate(16px, 16px);
     transition: opacity 0.15s ease-out;
 }
 

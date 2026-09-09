@@ -173,14 +173,11 @@ let mouseY = 0;
 let hideTooltipTimeout = null;
 let isMouseOverTooltip = false;
 
+// Track the cursor, but position the card only when showing a node or edge.
+// Keeping it anchored lets the pointer reach its links.
 document.addEventListener('mousemove', (e) => {
     mouseX = e.clientX;
     mouseY = e.clientY;
-
-    // Update tooltip position if visible
-    if (tooltip.classList.contains('visible')) {
-        positionTooltip();
-    }
 });
 
 // Keep tooltip visible when mouse enters it
@@ -306,7 +303,7 @@ const Graph = ForceGraph3D()(container)
             cancelHideTooltip();
             showNodeTooltip(node);
         } else if (!tooltip.classList.contains('edge-tooltip')) {
-            scheduleHideTooltip(200);
+            scheduleHideTooltip();
         }
     })
 
@@ -325,7 +322,7 @@ const Graph = ForceGraph3D()(container)
             cancelHideTooltip();
             showEdgeTooltip(link);
         } else if (!tooltip.classList.contains('node-tooltip')) {
-            scheduleHideTooltip(200);
+            scheduleHideTooltip();
         }
     })
 
@@ -437,7 +434,8 @@ function hideTooltip() {
     tooltip.classList.remove('visible', 'node-tooltip', 'edge-tooltip');
 }
 
-function scheduleHideTooltip(delay = 200) {
+// Allow time to cross the gap from a graph element to its tooltip.
+function scheduleHideTooltip(delay = 500) {
     if (isMouseOverTooltip) return;
 
     if (hideTooltipTimeout) {
