@@ -31,6 +31,7 @@ from django.views.generic import ListView, DetailView, TemplateView, View
 from django.db import models
 from django.db.models import Q, Count, F, Min, Max
 
+from .url_utils import canonical_path_for
 from .models import (
     NarrativeConnection, Theme, ConflictArc, Location,
     EventPage, CharacterPage, EpisodePage, EventParticipation,
@@ -1577,7 +1578,8 @@ class ScopedGraphMixin:
         episode_ids = set(
             e.episode_id for e in event_list if e.episode_id
         )
-        acts = Act.objects.filter(episode_id__in=episode_ids)
+        acts = Act.objects.filter(episode_id__in=episode_ids).select_related('episode')
+        episode_urls = {}
 
         for act in acts:
             act_node_id = f"act_{act.pk}"
@@ -1591,6 +1593,9 @@ class ScopedGraphMixin:
             # Only add act node if it connects to at least one event in the graph
             if act_edges and act_node_id not in seen_nodes:
                 seen_nodes.add(act_node_id)
+                if act.episode_id not in episode_urls:
+                    episode_urls[act.episode_id] = canonical_path_for(act.episode)
+                episode_url = episode_urls[act.episode_id]
                 nodes.append({
                     'id': act_node_id,
                     'nodeType': 'act',
@@ -1598,6 +1603,8 @@ class ScopedGraphMixin:
                     'fullTitle': f"Act {act.number}" + (f": {act.summary[:60]}..." if act.summary and len(act.summary) > 60 else f": {act.summary}" if act.summary else ""),
                     'actNumber': act.number,
                     'sceneNumbers': act.scene_numbers,
+                    'episode': act.episode.title,
+                    'url': f"{episode_url}#act-{act.number}" if episode_url else None,
                 })
 
                 for event_node_id in act_edges:

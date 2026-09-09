@@ -101,7 +101,7 @@
                 {% get_episode_acts page as acts_data %}
                 {% if acts_data %}
                 {% for act_group in acts_data %}
-                <div class="relative">
+                <div id="act-{{ act_group.act.number }}" class="relative" style="scroll-margin-top: 6rem;">
                     {# Act header #}
                     <div class="flex items-center gap-3 mb-6">
                         <div class="flex items-center gap-2 px-4 py-2 rounded" style="background: var(--f-accent-indigo-bg); border: 1px solid color-mix(in srgb, var(--f-accent-indigo) 25%, transparent);">
@@ -362,7 +362,7 @@
                 {% get_episode_acts page as acts_data %}
                 {% if acts_data %}
                 {% for act_group in acts_data %}
-                <div class="relative">
+                <div id="act-{{ act_group.act.number }}" class="relative" style="scroll-margin-top: 6rem;">
                     <div class="flex items-center gap-3 mb-6">
                         <div class="flex items-center gap-2 px-4 py-2 bg-indigo-500/10 border border-indigo-500/20 rounded-lg">
                             <i data-lucide="bookmark" class="w-4 h-4 text-indigo-400"></i>
