@@ -1108,6 +1108,20 @@ class Command(BaseCommand):
             if parent_uuid := loc_data.get('parent_location_uuid'):
                 loc_uuid = loc_data.get('fabula_uuid') or loc_data.get('location_uuid', '')
                 location = self.locations_cache[loc_uuid]
+                if parent_uuid == loc_uuid:
+                    # A location cannot contain itself (UP-012: megagraph
+                    # PART_OF self-loops). Refuse the row AND repair a row
+                    # poisoned by an earlier import. Only this exact case is
+                    # cleared — an absent parent is left alone because
+                    # cross-series snippets may get their parent from another
+                    # series' export.
+                    self.log_info(
+                        f"    Location '{location.canonical_name}' lists itself "
+                        f"as parent — ignoring (UP-012)")
+                    if location.parent_location_id is not None and not self.dry_run:
+                        location.parent_location = None
+                        location.save(update_fields=['parent_location'])
+                    continue
                 parent = self.locations_cache.get(parent_uuid)
                 if parent:
                     location.parent_location = parent

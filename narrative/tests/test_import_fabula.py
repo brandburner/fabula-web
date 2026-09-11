@@ -476,6 +476,48 @@ class ImportLocationsTest(TestCase):
         loc = Location.objects.get(fabula_uuid='loc_test_002')
         self.assertEqual(loc.canonical_name, 'New Name')
 
+    def test_self_parented_location_is_refused(self):
+        # UP-012: megagraph PART_OF self-loops export as parent == self.
+        locations_data = [
+            {
+                'fabula_uuid': 'loc_self_001',
+                'canonical_name': 'Shuttle Interior',
+                'parent_location_uuid': 'loc_self_001',
+            },
+        ]
+        self.cmd.import_locations(locations_data)
+        loc = Location.objects.get(fabula_uuid='loc_self_001')
+        self.assertIsNone(loc.parent_location)
+        self.assertIn('lists itself as parent', self.cmd.stdout.getvalue())
+
+    def test_self_parented_location_is_repaired_on_reimport(self):
+        loc = Location.objects.create(
+            fabula_uuid='loc_self_002', canonical_name='Science Station Two')
+        Location.objects.filter(pk=loc.pk).update(parent_location=loc)
+        self.cmd.import_locations([
+            {
+                'fabula_uuid': 'loc_self_002',
+                'canonical_name': 'Science Station Two',
+                'parent_location_uuid': 'loc_self_002',
+            },
+        ])
+        loc.refresh_from_db()
+        self.assertIsNone(loc.parent_location)
+
+    def test_absent_parent_does_not_clear_existing_parent(self):
+        # Cross-series snippets may get their parent from another series'
+        # export; a row with no parent_location_uuid must leave it alone.
+        parent = Location.objects.create(
+            fabula_uuid='loc_par', canonical_name='Enterprise-D')
+        child = Location.objects.create(
+            fabula_uuid='loc_child', canonical_name='Main Bridge',
+            parent_location=parent)
+        self.cmd.import_locations([
+            {'fabula_uuid': 'loc_child', 'canonical_name': 'Main Bridge'},
+        ])
+        child.refresh_from_db()
+        self.assertEqual(child.parent_location, parent)
+
 
 # =============================================================================
 # COMMAND INTEGRATION TESTS

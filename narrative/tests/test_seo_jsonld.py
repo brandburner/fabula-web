@@ -120,3 +120,15 @@ class JsonLdIdTests(ViewTestMixin, TestCase):
             from narrative.templatetags.seo_tags import _series_slug
             self.assertEqual(
                 _series_slug({"series_slug": "x"}, self.event1), "x")
+
+    def test_event_skips_place_contained_in_itself(self):
+        # UP-012 data fault: a location whose parent is itself.
+        from narrative.models import Location
+        Location.objects.filter(pk=self.location.pk).update(
+            parent_location=self.location)
+        self.event1.location = Location.objects.get(pk=self.location.pk)
+        data = self._render("event_jsonld", self.event1)
+        places = [n for n in data["@graph"] if n.get("@type") == "Place"]
+        self.assertTrue(places)
+        for place in places:
+            self.assertNotIn("containedInPlace", place)

@@ -652,6 +652,9 @@ class Neo4jExporter:
         print("Exporting locations...")
 
         # If filtering by series, only get locations involved in series events
+        # `WHERE parent <> loc`: the megagraph hierarchy step emits PART_OF
+        # self-loops (UP-012), which exported as parent_location_uuid == own
+        # uuid and rendered as a Place containedInPlace itself.
         if self.series_filter and self.series_event_uuids:
             print(f"  Filtering to locations involved in {len(self.series_event_uuids)} series events...")
             if self.megagraph_mode:
@@ -660,7 +663,7 @@ class Neo4jExporter:
                 WHERE e.event_uuid IN $event_uuids
                   AND (loc.status = 'canonical' OR loc.entity_status = 'canonical')
                 WITH DISTINCT loc
-                OPTIONAL MATCH (loc)-[:PART_OF]->(parent:Location)
+                OPTIONAL MATCH (loc)-[:PART_OF]->(parent:Location) WHERE parent <> loc
                 RETURN loc,
                        parent.location_uuid as parent_uuid,
                        loc.ger_global_id as ger_global_id,
@@ -676,7 +679,7 @@ class Neo4jExporter:
                 WHERE e.event_uuid IN $event_uuids
                   AND loc.status = 'canonical'
                 WITH DISTINCT loc
-                OPTIONAL MATCH (loc)-[:PART_OF]->(parent:Location)
+                OPTIONAL MATCH (loc)-[:PART_OF]->(parent:Location) WHERE parent <> loc
                 RETURN loc, parent.location_uuid as parent_uuid
                 ORDER BY loc.canonical_name
                 """
@@ -687,7 +690,7 @@ class Neo4jExporter:
                 query = """
                 MATCH (loc:Location)
                 WHERE loc.status = 'canonical' OR loc.entity_status = 'canonical'
-                OPTIONAL MATCH (loc)-[:PART_OF]->(parent:Location)
+                OPTIONAL MATCH (loc)-[:PART_OF]->(parent:Location) WHERE parent <> loc
                 RETURN loc,
                        parent.location_uuid as parent_uuid,
                        loc.ger_global_id as ger_global_id,
@@ -701,7 +704,7 @@ class Neo4jExporter:
                 query = """
                 MATCH (loc:Location)
                 WHERE loc.status = 'canonical'
-                OPTIONAL MATCH (loc)-[:PART_OF]->(parent:Location)
+                OPTIONAL MATCH (loc)-[:PART_OF]->(parent:Location) WHERE parent <> loc
                 RETURN loc, parent.location_uuid as parent_uuid
                 ORDER BY loc.canonical_name
                 """

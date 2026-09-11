@@ -482,8 +482,9 @@ def event_jsonld(context, page):
             "name": _strip_html(page.location.canonical_name),
             "url": loc_id,
         }
-        if hasattr(page.location, 'parent_location') and page.location.parent_location:
-            parent = page.location.parent_location
+        parent = getattr(page.location, 'parent_location', None)
+        # A Place contained in itself is a data fault (UP-012), not a hierarchy.
+        if parent and parent.pk != page.location.pk:
             parent_id = _url(request, parent.get_absolute_url())
             loc_node["containedInPlace"] = {
                 "@type": "Place",

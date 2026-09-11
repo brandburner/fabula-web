@@ -17,6 +17,58 @@ mitigation live, upstream fix still needed), `fixed-upstream`
 
 ---
 
+## UP-012 — Megagraph location hierarchy emits `PART_OF` self-loops (workaround-shipped)
+
+**Raised**: 2026-09-11 · **Series**: all rebuilt megas (doctorwho 176, happyvalley 11, wolfhall 9, westwing 6, startrektng 3 self-parented rows in the current exports) · **Cross-ref**: ISS-032
+
+**Symptom**: `narrative_location.parent_location_id = id` for 182 rows on prod.
+Every event page at one of those locations emitted a schema.org `Place` whose
+`containedInPlace` was **itself** (seen on validator.schema.org for
+`cand_evt_scene_151bd8255a44e1a4_1`, "Leo McGarry's House"). Location detail
+pages linked to themselves as their parent.
+
+**Evidence (graph, not export)** — `startrektng.mega`, queried 2026-09-11:
+
+```cypher
+MATCH (l:Location)-[r:PART_OF]->(l) RETURN count(r)   // 3
+```
+
+| `ger_global_id` | name | `inferred_by` | `confidence` | other real parents |
+|---|---|---|---|---|
+| `ger_location_46b6db2c3500` | Shuttle Interior | `llm_location_hierarchy` | 0.8 | Shuttlecraft Five Interior |
+| `ger_location_b4bcbe9177a9` | Holodeck Dixon Hill San Francisco Simulation | `materialized_from_property` | 1.0 | — |
+| `ger_location_c2adc7b066bd` | Science Station Two | `llm_location_hierarchy` | 0.95 | Outpost Delta 05; Federation Medical Collection Station; Main Bridge of the USS Enterprise-D |
+
+The `reasoning` on the first edge compares "Shuttle Cockpit" with "Shuttle
+Interior" — i.e. the hierarchy LLM was handed two names that GER had already
+merged into one canonical node, and the edge landed on that node twice. The
+`materialized_from_property` edge means `part_of_location_uuid` was set to the
+entity's own uuid during synthesis. So two upstream steps produce the loop:
+**`llm_location_hierarchy`** and **`materialized_from_property`**.
+
+**Related observation (not fixed here)**: 30 TNG locations carry **more than
+one** `PART_OF` edge (Science Station Two has three). The exporter's
+`OPTIONAL MATCH ... PART_OF` fans those out into duplicate YAML rows and
+`dedupe_by_global_id` keeps an arbitrary first one, so the published parent is
+whichever row Cypher returned first. Multi-parent containment needs either a
+single-parent rule upstream or a ranked `parents:` list in the contract.
+
+**Upstream fix needed**: the hierarchy step must reject `PART_OF` edges whose
+endpoints resolve to the same canonical node (post-GER), and property
+materialisation must skip `part_of_location_uuid == location_uuid`.
+
+**Downstream workaround (shipped 2026-09-11)**:
+- exporter: `OPTIONAL MATCH (loc)-[:PART_OF]->(parent:Location) WHERE parent <> loc`
+- importer: refuses `parent_location_uuid == fabula_uuid`, logs it, and nulls a
+  previously-poisoned row on re-import
+- migration `0028_clear_self_parented_locations` cleared the 182 prod rows
+- `event_jsonld` skips `containedInPlace` when parent == self
+
+Closes when a re-export of any rebuilt mega shows 0 self-parented rows in
+`locations.yaml` without the exporter filter.
+
+---
+
 ## UP-005 — Arc merge lineage doesn't reach the published generation (fixed-upstream, verified)
 
 > **Status detail**: the current export is repaired and downstream-verified
