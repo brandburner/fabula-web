@@ -9,7 +9,7 @@ The key insight: Fabula's data IS a knowledge graph. These tags don't just
 add SEO markup — they publish the graph as linked data on the open web.
 
 Vocabulary:
-    schema.org:     TVSeries, TVSeason, TVEpisode, FictionalCharacter, Place, etc.
+    schema.org:     TVSeries, TVSeason, TVEpisode, Person (characters), Place, etc.
     fabula:         NarrativeConnection, EventParticipation, Theme, ConflictArc
 
 Usage:
@@ -108,6 +108,15 @@ def _truncate(text, max_len=300):
     if len(text) <= max_len:
         return text
     return text[:max_len].rsplit(' ', 1)[0] + '...'
+
+
+# schema.org has no FictionalCharacter type (schema.org/FictionalCharacter is a
+# 404). Its model is a Person linked from a CreativeWork via the `character`
+# property ("Fictional person connected with a creative work"). Emitting a bare
+# "FictionalCharacter" made validator.schema.org error on every character node
+# and left schema.org consumers with an untyped node (ISS-031). Person carries
+# the schema.org meaning; the ontology term keeps Fabula's.
+CHARACTER_TYPE = ["Person", "fabula:FictionalCharacter"]
 
 
 def _url(request, path):
@@ -262,7 +271,7 @@ def series_jsonld(context, page):
 @register.simple_tag(takes_context=True)
 def episode_jsonld(context, page):
     """
-    Emit a @graph: the episode, its characters as FictionalCharacters,
+    Emit a @graph: the episode, its characters as Person nodes,
     locations as Places, and writing credits.
     """
     request = context['request']
@@ -302,7 +311,7 @@ def episode_jsonld(context, page):
             }
             break
 
-    # Characters — use FictionalCharacter, link by @id
+    # Characters — Person + fabula:FictionalCharacter, link by @id
     profiles = list(page.character_profiles.select_related('character')[:20])
     if profiles:
         episode_node["character"] = []
@@ -312,7 +321,7 @@ def episode_jsonld(context, page):
             char_id = _entity_url(request, p.character, series_slug)
             episode_node["character"].append({"@id": char_id})
             char_node = {
-                "@type": "FictionalCharacter",
+                "@type": CHARACTER_TYPE,
                 "@id": char_id,
                 "name": _strip_html(p.character.canonical_name),
                 "url": char_id,
@@ -362,13 +371,13 @@ def episode_jsonld(context, page):
 
 
 # =============================================================================
-# CHARACTER — FictionalCharacter @graph with affiliations and journey stats
+# CHARACTER — Person @graph with affiliations and journey stats
 # =============================================================================
 
 @register.simple_tag(takes_context=True)
 def character_jsonld(context, page):
     """
-    Emit a @graph: the character as FictionalCharacter, their organization
+    Emit a @graph: the character as a Person, their organization
     affiliation, and narrative statistics.
     """
     request = context['request']
@@ -377,7 +386,7 @@ def character_jsonld(context, page):
 
     char_id = _entity_url(request, page, series_slug)
     char_node = {
-        "@type": "FictionalCharacter",
+        "@type": CHARACTER_TYPE,
         "@id": char_id,
         "name": _strip_html(page.canonical_name),
         "url": char_id,
@@ -528,7 +537,7 @@ def event_jsonld(context, page):
 
             # Also emit the character as a node
             graph.append({
-                "@type": "FictionalCharacter",
+                "@type": CHARACTER_TYPE,
                 "@id": char_id,
                 "name": _strip_html(p.character.canonical_name),
                 "url": char_id,

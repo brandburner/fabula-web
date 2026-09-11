@@ -43,6 +43,24 @@ class JsonLdIdTests(ViewTestMixin, TestCase):
                 self._walk_ids(i, out)
         return out
 
+    def _walk_types(self, node, out):
+        if isinstance(node, dict):
+            if "@type" in node:
+                out.append(node["@type"])
+            for v in node.values():
+                self._walk_types(v, out)
+        elif isinstance(node, list):
+            for i in node:
+                self._walk_types(i, out)
+        return out
+
+    def _assert_schema_org_character_typing(self, data):
+        """schema.org has no FictionalCharacter type; character nodes must be
+        Person (schema.org meaning) + fabula:FictionalCharacter (ISS-031)."""
+        types = self._walk_types(data, [])
+        self.assertNotIn("FictionalCharacter", types)
+        self.assertIn(["Person", "fabula:FictionalCharacter"], types)
+
     def _assert_resolvable(self, data, page):
         ids = self._walk_ids(data, [])
         self.assertTrue(ids)
@@ -71,10 +89,12 @@ class JsonLdIdTests(ViewTestMixin, TestCase):
     def test_character(self):
         data = self._render("character_jsonld", self.character)
         self._assert_resolvable(data, self.character)
+        self._assert_schema_org_character_typing(data)
 
     def test_event(self):
         data = self._render("event_jsonld", self.event1)
         ids = self._assert_resolvable(data, self.event1)
+        self._assert_schema_org_character_typing(data)
         # Connection endpoint and participant ids are series-scoped too.
         self.assertIn(
             "https://fabula.productions" + canonical_path_for(self.event2), ids)
