@@ -26,7 +26,12 @@ import json
 import re
 
 from django import template
+from django.conf import settings
 from django.utils.safestring import mark_safe
+
+from narrative.url_utils import (
+    build_entity_url, entity_identifier, series_slug_from_ancestry,
+)
 
 register = template.Library()
 
@@ -106,14 +111,48 @@ def _truncate(text, max_len=300):
 
 
 def _url(request, path):
-    """Build absolute URL from request and path.
+    """Build an absolute URL from a path.
 
-    get_host is a method — calling it is the whole point. Without the
-    parentheses every @id in every JSON-LD block on the site read
-    "https://<bound method HttpRequest.get_host of <WSGIRequest...>>",
-    which no consumer can resolve.
+    The origin comes from WAGTAILADMIN_BASE_URL when it is set (the apex in
+    production), falling back to the request. Several detail views sit under a
+    24h cache_page keyed on path only, so a request-derived origin would bake
+    whichever alias host first missed the cache into every @id Google reads
+    (the ISS-030 failure class). get_host is a method — call it (ISS-026).
     """
-    return f"{request.scheme}://{request.get_host()}{path}"
+    base = (getattr(settings, 'WAGTAILADMIN_BASE_URL', '') or '').rstrip('/')
+    if not base:
+        base = f"{request.scheme}://{request.get_host()}"
+    return f"{base}{path}"
+
+
+def _series_slug(context, page):
+    """Owning series slug, resolved ONCE per tag: from the view context when
+    the series-scoped view already put it there, else one ancestry query."""
+    return context.get('series_slug') or series_slug_from_ancestry(page)
+
+
+def _entity_url(request, obj, series_slug):
+    """Absolute, canonical @id for an entity — the same series-scoped path the
+    <link rel=canonical> and the sitemap emit (narrative/url_utils.py).
+
+    NEVER `obj.url`: narrative pages are served by custom views rather than
+    Wagtail routing, so Page.url is None and the @id ended in "None" (ISS-026).
+    Snippets (theme/arc/location/connection) have no scoped form and fall back
+    to their global get_absolute_url().
+    """
+    class_name = type(obj).__name__
+    # Series landing pages are addressed by slug, not by global_id/fabula_uuid.
+    identifier = obj.slug if class_name == 'SeriesIndexPage' else entity_identifier(obj)
+    path = build_entity_url(class_name, series_slug, identifier)
+    if path is None:
+        path = obj.get_absolute_url()
+    return _url(request, path)
+
+
+def _season_id(series_id, season):
+    """Seasons have no page of their own on the site (no route), so their
+    node is a fragment on the series URL rather than an invented URL that 404s."""
+    return f"{series_id}#season-{season.season_number}"
 
 
 def _fabula_context():
@@ -163,11 +202,12 @@ def series_jsonld(context, page):
     graph = []
 
     # The series itself
+    series_id = _entity_url(request, page, None)
     series_node = {
         "@type": "TVSeries",
-        "@id": _url(request, page.url),
+        "@id": series_id,
         "name": _strip_html(page.title),
-        "url": _url(request, page.url),
+        "url": series_id,
         "description": _truncate(page.description) if page.description else (
             f"Narrative graph analysis of {_strip_html(page.title)} "
             f"— characters, events, themes, and the connections between them."
@@ -178,7 +218,7 @@ def series_jsonld(context, page):
     if seasons:
         series_node["numberOfSeasons"] = len(seasons)
         series_node["containsSeason"] = [
-            {"@id": _url(request, s.url)} for s in seasons
+            {"@id": _season_id(series_id, s)} for s in seasons
         ]
 
     graph.append(series_node)
@@ -187,11 +227,10 @@ def series_jsonld(context, page):
     for season in seasons:
         season_node = {
             "@type": "TVSeason",
-            "@id": _url(request, season.url),
+            "@id": _season_id(series_id, season),
             "name": f"Season {season.season_number}",
             "seasonNumber": season.season_number,
-            "url": _url(request, season.url),
-            "partOfSeries": {"@id": _url(request, page.url)},
+            "partOfSeries": {"@id": series_id},
         }
         episode_count = season.get_children().count()
         if episode_count:
@@ -228,9 +267,10 @@ def episode_jsonld(context, page):
     """
     request = context['request']
     graph = []
+    series_slug = _series_slug(context, page)
 
     # The episode
-    ep_id = _url(request, page.url)
+    ep_id = _entity_url(request, page, series_slug)
     episode_node = {
         "@type": "TVEpisode",
         "@id": ep_id,
@@ -257,7 +297,7 @@ def episode_jsonld(context, page):
         if hasattr(ancestor, 'fabula_uuid') and hasattr(ancestor, 'description'):
             episode_node["partOfSeries"] = {
                 "@type": "TVSeries",
-                "@id": _url(request, ancestor.url),
+                "@id": _entity_url(request, ancestor, None),
                 "name": _strip_html(ancestor.title),
             }
             break
@@ -269,7 +309,7 @@ def episode_jsonld(context, page):
         for p in profiles:
             if not p.character:
                 continue
-            char_id = _url(request, p.character.url)
+            char_id = _entity_url(request, p.character, series_slug)
             episode_node["character"].append({"@id": char_id})
             char_node = {
                 "@type": "FictionalCharacter",
@@ -333,11 +373,9 @@ def character_jsonld(context, page):
     """
     request = context['request']
     graph = []
+    series_slug = _series_slug(context, page)
 
-    # get_absolute_url, not .url — see _url()'s note; narrative pages are
-    # routed by custom views, so Page.url is None and the @id the
-    # affiliations hang off would be unresolvable.
-    char_id = _url(request, page.get_absolute_url())
+    char_id = _entity_url(request, page, series_slug)
     char_node = {
         "@type": "FictionalCharacter",
         "@id": char_id,
@@ -368,9 +406,7 @@ def character_jsonld(context, page):
     affiliation_ids = []
     for affiliation in page.get_affiliations():
         org = affiliation.organization
-        # get_absolute_url, not .url: narrative pages are served by custom
-        # views rather than Wagtail routing, so Page.url is None for them.
-        org_id = _url(request, org.get_absolute_url())
+        org_id = _entity_url(request, org, series_slug)
         if org_id in affiliation_ids:
             continue
         affiliation_ids.append(org_id)
@@ -402,8 +438,9 @@ def event_jsonld(context, page):
     """
     request = context['request']
     graph = []
+    series_slug = _series_slug(context, page)
 
-    event_id = _url(request, page.url)
+    event_id = _entity_url(request, page, series_slug)
     event_node = {
         "@type": ["CreativeWork", "fabula:NarrativeEvent"],
         "@id": event_id,
@@ -412,7 +449,7 @@ def event_jsonld(context, page):
         "isPartOf": {
             "@type": "TVEpisode",
             "name": _strip_html(page.episode.title) if page.episode else "Unknown",
-            "url": _url(request, page.episode.url) if page.episode else None,
+            "url": _entity_url(request, page.episode, series_slug) if page.episode else None,
         },
         "publisher": {"@type": "Organization", "name": "Fabula"},
     }
@@ -455,7 +492,7 @@ def event_jsonld(context, page):
         for p in participations:
             if not p.character:
                 continue
-            char_id = _url(request, p.character.url)
+            char_id = _entity_url(request, p.character, series_slug)
             participation = {
                 "@type": "fabula:EventParticipation",
                 "fabula:character": {"@id": char_id},
@@ -516,7 +553,7 @@ def event_jsonld(context, page):
             "fabula:connectionLabel": conn_type.get('label', conn.connection_type),
             "fabula:fromEvent": {"@id": event_id},
             "fabula:toEvent": {
-                "@id": _url(request, conn.to_event.url),
+                "@id": _entity_url(request, conn.to_event, series_slug),
                 "name": _strip_html(conn.to_event.title),
             },
             "fabula:strength": conn.strength,
@@ -533,7 +570,7 @@ def event_jsonld(context, page):
             "fabula:connectionType": conn_type.get('uri', conn.connection_type),
             "fabula:connectionLabel": conn_type.get('label', conn.connection_type),
             "fabula:fromEvent": {
-                "@id": _url(request, conn.from_event.url),
+                "@id": _entity_url(request, conn.from_event, series_slug),
                 "name": _strip_html(conn.from_event.title),
             },
             "fabula:toEvent": {"@id": event_id},
@@ -583,7 +620,7 @@ def event_jsonld(context, page):
             for oi in obj_involvements:
                 if not oi.object:
                     continue
-                obj_id = _url(request, oi.object.get_absolute_url())
+                obj_id = _entity_url(request, oi.object, series_slug)
                 involvement = {
                     "@type": "fabula:ObjectInvolvement",
                     "fabula:object": {"@id": obj_id},
@@ -610,7 +647,7 @@ def event_jsonld(context, page):
             for oi in org_involvements:
                 if not oi.organization:
                     continue
-                org_id = _url(request, oi.organization.get_absolute_url())
+                org_id = _entity_url(request, oi.organization, series_slug)
                 involvement = {
                     "@type": "fabula:OrganizationInvolvement",
                     "fabula:organization": {"@id": org_id},
@@ -659,6 +696,12 @@ def connection_jsonld(context, connection):
 
     graph = []
 
+    # Both endpoints live in the same series (each series is its own import),
+    # so resolve the slug once from from_event rather than twice.
+    series_slug = _series_slug(context, connection.from_event)
+    from_id = _entity_url(request, connection.from_event, series_slug)
+    to_id = _entity_url(request, connection.to_event, series_slug)
+
     # The connection itself
     conn_node = {
         "@type": ["fabula:NarrativeConnection", "Claim"],
@@ -672,12 +715,8 @@ def connection_jsonld(context, connection):
         "fabula:connectionType": conn_type.get('uri', connection.connection_type),
         "fabula:connectionLabel": conn_type.get('label', connection.connection_type),
         "fabula:strength": connection.strength,
-        "fabula:fromEvent": {
-            "@id": _url(request, connection.from_event.url),
-        },
-        "fabula:toEvent": {
-            "@id": _url(request, connection.to_event.url),
-        },
+        "fabula:fromEvent": {"@id": from_id},
+        "fabula:toEvent": {"@id": to_id},
     }
 
     # Storyline dimension (contract v2.4.0): layer + scope always,
@@ -703,15 +742,15 @@ def connection_jsonld(context, connection):
     # The two events as linked nodes
     graph.append({
         "@type": ["CreativeWork", "fabula:NarrativeEvent"],
-        "@id": _url(request, connection.from_event.url),
+        "@id": from_id,
         "name": _strip_html(connection.from_event.title),
-        "url": _url(request, connection.from_event.url),
+        "url": from_id,
     })
     graph.append({
         "@type": ["CreativeWork", "fabula:NarrativeEvent"],
-        "@id": _url(request, connection.to_event.url),
+        "@id": to_id,
         "name": _strip_html(connection.to_event.title),
-        "url": _url(request, connection.to_event.url),
+        "url": to_id,
     })
 
     return _jsonld({"@context": _fabula_context(), "@graph": graph})
