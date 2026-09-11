@@ -51,12 +51,21 @@ sitemaps = {
 # cache-miss request via a non-canonical host would otherwise bake that domain
 # into the sitemap Googlebot reads. We pin the host before rendering so every
 # emitted URL is https://fabula.productions/... regardless of how it was fetched.
-CANONICAL_HOST = os.environ.get('RAILWAY_PUBLIC_DOMAIN', 'fabula.productions')
+#
+# The host comes from WAGTAILADMIN_BASE_URL (the apex in production settings),
+# NOT from RAILWAY_PUBLIC_DOMAIN: Railway sets that to the first custom domain,
+# which is www.fabula.productions — the host WwwRedirectMiddleware 301s away.
+# For three months every sitemap <loc> was on www., Search Console treated the
+# children as out of scope for the apex property, and discovered 0 pages (ISS-030).
+def canonical_host():
+    from urllib.parse import urlparse
+    netloc = urlparse(getattr(settings, 'WAGTAILADMIN_BASE_URL', '') or '').netloc
+    return netloc or 'fabula.productions'
 
 
 def _canonical_host(view):
     def wrapped(request, *args, **kwargs):
-        request.META['HTTP_HOST'] = CANONICAL_HOST
+        request.META['HTTP_HOST'] = canonical_host()
         request.META.pop('HTTP_X_FORWARDED_HOST', None)
         return view(request, *args, **kwargs)
     return wrapped
