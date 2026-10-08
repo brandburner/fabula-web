@@ -59,9 +59,13 @@ def write_object(slug, selected_backend=None):
 
 
 def interpret(command, actions, selected_backend=None):
+    return choose(command, parser.candidates(command, actions), selected_backend)
+
+
+def choose(command, choices, selected_backend=None):
+    """Pick one of the supplied typed choices for an unfamiliar phrasing, or nothing."""
     if (selected_backend or backend()) != 'openrouter':
         return None
-    choices = parser.candidates(command, actions)
     if not choices:
         return None
     answer = completion(

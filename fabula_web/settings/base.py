@@ -163,3 +163,8 @@ CHAT_RATE_LIMIT_PER_HOUR = int(os.environ.get('CHAT_RATE_LIMIT_PER_HOUR', 60))
 ADVENTURE_ENABLED = os.environ.get('ADVENTURE_ENABLED', '0') == '1'
 ADVENTURE_AUTHOR_BACKEND = os.environ.get('ADVENTURE_AUTHOR_BACKEND', 'local')
 ADVENTURE_MODEL = os.environ.get('ADVENTURE_MODEL', CHAT_MODEL)
+# Projected worlds: episodes read straight from the narrative graph into a
+# walkable terminal world (adventure/projection.py). Slug -> published episode.
+ADVENTURE_WORLDS = [
+    {'slug': 'wolf-hall-e1', 'series': 'wolf-hall', 'season': 1, 'episode': 1, 'number': '002'},
+]

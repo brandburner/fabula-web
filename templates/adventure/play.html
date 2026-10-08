@@ -1,12 +1,12 @@
 {% extends "marketing/v2/_base.html" %}{% load static %}
-{% block title %}Enter the story — fabula.{% endblock %}
-{% block meta_description %}A playable story-world experiment. Enter Dracula, follow a memory, and discover what connects it all.{% endblock %}
+{% block title %}{{ meta.page_title }}{% endblock %}
+{% block meta_description %}{{ meta.description }}{% endblock %}
 {% block extra_head %}<link rel="stylesheet" href="{% static 'adventure/terminal.css' %}"><meta name="robots" content="noindex">{% endblock %}
 {% block content %}
 <div class="story-page">
-  <div class="story-hero"><div><p class="story-kicker">FABULA LABS <span>/</span> PLAYABLE WORLDS · 001</p><h1>Enter the story.</h1><p class="story-intro">Every place holds a memory.<br>Every memory has a connection.</p></div><div class="story-brief"><span class="brief-label">YOUR PART IN THIS</span><p>You are Jonathan Harker. The Count knew a thought you had never shared. Sister Agatha is waiting for your account.</p><p class="brief-goal">Find out how he knew.</p></div></div>
+  <div class="story-hero"><div><p class="story-kicker">{{ meta.kicker|safe }}</p><h1>{{ meta.title }}</h1><p class="story-intro">{{ meta.intro|safe }}</p></div><div class="story-brief"><span class="brief-label">YOUR PART IN THIS</span><p>{{ meta.brief }}</p><p class="brief-goal">{{ meta.goal }}</p></div></div>
   {% include "adventure/component.html" %}
-  <p class="story-caption">A small, authored investigation seeded from Fabula’s narrative graph. Explore in your own words. Your story is saved in this browser’s session.</p>
+  <p class="story-caption">{{ meta.caption }}</p>
 </div>
 <script src="{% static 'adventure/terminal.js' %}" defer></script>
 {% endblock %}

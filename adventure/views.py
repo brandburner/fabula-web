@@ -15,30 +15,30 @@ from django.views.decorators.http import require_GET, require_POST
 
 from chat.llm import LLMError
 from chat.ratelimit import check_rate_limit
-from . import author, engine, parser
+from . import author, scenarios
 from .models import Playthrough, Turn
-from .scenario import REVISION
 
 
-def enabled():
+def enabled(slug):
     if not settings.ADVENTURE_ENABLED:
         raise Http404
+    return scenarios.get(slug)
 
 
-def current_run(request):
-    run_id = request.session.get('adventure_run')
+def current_run(request, scenario):
+    run_id = request.session.get(scenario.session_key)
     run = Playthrough.objects.filter(pk=run_id).first() if run_id else None
     if run is None:
-        run = Playthrough.objects.create(state=engine.new_state())
-        request.session['adventure_run'] = str(run.pk)
-    if run.scenario_revision != REVISION:
+        run = Playthrough.objects.create(state=scenario.new_state(), scenario_revision=scenario.revision)
+        request.session[scenario.session_key] = str(run.pk)
+    if run.scenario_revision != scenario.revision:
         raise Http404('This prototype save belongs to a different scenario revision.')
     return run
 
 
-def snapshot(run):
-    result = engine.public_state(run.state, run.version, run.pk,
-                                 run.state.get('author_backend', author.backend()))
+def snapshot(run, scenario):
+    result = scenario.public_state(run.state, run.version, run.pk,
+                                   run.state.get('author_backend', author.backend()))
     result['llm_available'] = bool(settings.CHAT_OPENROUTER_API_KEY)
     return result
 
@@ -47,80 +47,98 @@ class AuthorBudgetExceeded(Exception):
     pass
 
 
-def prepare(run, command):
+def prepare(run, command, scenario):
     proposed = copy.deepcopy(run.state)
-    clean = engine.normalize(command)
+    clean = scenario_normalize(command)
     calls = 0
     mode = proposed.get('author_backend', author.backend())
     if clean in ('use live author', 'use local author'):
         if clean == 'use live author' and not settings.CHAT_OPENROUTER_API_KEY:
             raise LLMError('No author key is configured.')
         proposed['author_backend'] = 'openrouter' if clean == 'use live author' else 'local'
-        blocks = [engine.block('Live LLM author selected. New descriptions and unfamiliar command interpretation use the configured OpenRouter key. Existing passages are still replayed.' if clean == 'use live author' else 'Local author selected. New details use prepared prose; no model calls.', 'system')]
+        blocks = [block('Live LLM author selected. New passages and unfamiliar command interpretation use the configured OpenRouter key. Existing passages are still replayed.' if clean == 'use live author' else 'Local author selected. New passages use the source record directly; no model calls.', 'system')]
     elif clean in ('freeze world', 'enable author'):
         proposed['frozen'] = clean == 'freeze world'
-        blocks = [engine.block('World frozen. Every available passage now runs without an author.' if proposed['frozen'] else 'Author enabled. Unwritten details can be filled in as you explore.', 'system')]
+        blocks = [block('World frozen. Every written passage now runs without an author.' if proposed['frozen'] else 'Author enabled. Unwritten passages can be filled in as you explore.', 'system')]
     elif clean == 'restart story':
-        fresh = engine.new_state()
-        fresh.update({k: proposed[k] for k in ('objects', 'authored', 'model_calls', 'frozen')})
-        fresh['parser_aliases'] = proposed.get('parser_aliases', {})
-        fresh['author_backend'] = mode
-        proposed = fresh
+        proposed = scenario.restart(proposed)
+        proposed['author_backend'] = mode
         blocks = []
     else:
-        action = engine.resolve(command, proposed)
-        if (action is None and not proposed['frozen'] and mode == 'openrouter'
-                and proposed['model_calls'] < 12
-                and parser.candidates(clean, engine.available(proposed))):
-            calls += 1
-            action = author.interpret(clean, engine.available(proposed), selected_backend=mode)
+        status, payload = scenario.resolve(command, proposed)
+        action = payload if status == 'action' else None
+        if (action is None and status == 'unknown' and not proposed['frozen'] and mode == 'openrouter'
+                and proposed['model_calls'] < 12):
+            choices = scenario.candidates(clean, proposed)
+            if choices:
+                calls += 1
+                action = author.choose(clean, choices, selected_backend=mode)
         if calls and action is not None:
-            proposed.setdefault('parser_aliases', {}).setdefault(proposed['scene'], {})[clean] = action
-        slot = engine.gap(proposed, action)
+            # Dracula scopes learned phrases per scene; projected worlds scope them per world.
+            if scenario.slug == 'dracula':
+                proposed.setdefault('parser_aliases', {}).setdefault(proposed['scene'], {})[clean] = action
+            else:
+                proposed.setdefault('parser_aliases', {})[clean] = action
+        slot = scenario.gap(proposed, action) if action else None
         written = None
         if slot:
             if mode == 'openrouter' and proposed['model_calls'] + calls >= 12:
                 raise AuthorBudgetExceeded
-            written = author.write_object(slot, selected_backend=mode)
+            written = scenario.write(slot, proposed, mode)
             calls += int(mode == 'openrouter')
-        proposed, blocks = engine.transition(proposed, action, written)
         if action is None:
-            blocks = [engine.block(parser.refusal(clean), 'system'),
-                      engine.block('Try ' + ', '.join(engine.suggestions(proposed)) + '.', 'hint')]
+            blocks = scenario.refusal(proposed, status, payload, clean)
+        else:
+            proposed, blocks = scenario.transition(proposed, action, written)
     proposed['model_calls'] += calls
     if clean != 'restart story':
-        proposed['transcript'] += [engine.block(command, 'command'), *blocks]
+        proposed['transcript'] += [block(command, 'command'), *blocks]
     proposed['transcript'] = proposed['transcript'][-300:]
     return proposed, blocks
 
 
-@never_cache
-@ensure_csrf_cookie
-@require_GET
-def play(request):
-    enabled()
-    return render(request, 'adventure/play.html', {'embedded': False})
+def block(text, kind='narration'):
+    return {'text': text, 'kind': kind}
+
+
+def scenario_normalize(command):
+    from .engine import normalize
+    return normalize(command)
+
+
+def page_context(scenario, embedded):
+    return {'embedded': embedded, 'scenario': scenario, 'meta': scenario.meta,
+            'api_base': '/play/api/' if scenario.slug == 'dracula' else f'/play/{scenario.slug}/api/',
+            'download_url': f'/play/{scenario.slug}/download/'}
 
 
 @never_cache
 @ensure_csrf_cookie
 @require_GET
-def embed(request):
-    enabled()
-    return render(request, 'adventure/embed.html', {'embedded': True})
+def play(request, slug='dracula'):
+    scenario = enabled(slug)
+    return render(request, 'adventure/play.html', page_context(scenario, False))
+
+
+@never_cache
+@ensure_csrf_cookie
+@require_GET
+def embed(request, slug='dracula'):
+    scenario = enabled(slug)
+    return render(request, 'adventure/embed.html', page_context(scenario, True))
 
 
 @never_cache
 @require_GET
-def state(request):
-    enabled()
-    return JsonResponse(snapshot(current_run(request)))
+def state(request, slug='dracula'):
+    scenario = enabled(slug)
+    return JsonResponse(snapshot(current_run(request, scenario), scenario))
 
 
 @never_cache
 @require_POST
-def turn(request):
-    enabled()
+def turn(request, slug='dracula'):
+    scenario = enabled(slug)
     if len(request.body) > 4096:
         return JsonResponse({'error': 'Command request is too large.'}, status=400)
     try:
@@ -136,16 +154,16 @@ def turn(request):
         command = command.strip()
     except (ValueError, TypeError, KeyError, AttributeError, UnicodeDecodeError):
         return JsonResponse({'error': 'A command, state version and request ID are required.'}, status=400)
-    run = current_run(request)
+    run = current_run(request, scenario)
     receipt = run.turns.filter(request_id=request_id).first()
     if receipt:
         if receipt.command != command:
             return JsonResponse({'error': 'This request ID belongs to another command.'}, status=409)
         # Return current authoritative state, never roll a client back to an
         # old receipt. The command is not executed or billed again.
-        return JsonResponse(snapshot(run))
+        return JsonResponse(snapshot(run, scenario))
     if run.version != version:
-        return JsonResponse({'error': 'Your story advanced in another tab. The latest save is loaded.', 'state': snapshot(run)}, status=409)
+        return JsonResponse({'error': 'Your story advanced in another tab. The latest save is loaded.', 'state': snapshot(run, scenario)}, status=409)
     allowed, retry = check_rate_limit(request)
     if not allowed:
         response = JsonResponse({'error': 'A moment, please. Try this command again shortly.'}, status=429)
@@ -162,9 +180,9 @@ def turn(request):
         if receipt:
             if receipt.command != command:
                 return JsonResponse({'error': 'This request ID belongs to another command.'}, status=409)
-            return JsonResponse(snapshot(locked))
+            return JsonResponse(snapshot(locked, scenario))
         if locked.version != version:
-            return JsonResponse({'error': 'The latest save is loaded. Try your command again.', 'state': snapshot(locked)}, status=409)
+            return JsonResponse({'error': 'The latest save is loaded. Try your command again.', 'state': snapshot(locked, scenario)}, status=409)
         if locked.pending_until and locked.pending_until > timezone.now():
             return JsonResponse({'error': 'Another action is being written. Wait a moment, then retry.'}, status=409)
         locked.pending_token = token
@@ -172,7 +190,7 @@ def turn(request):
         locked.save(update_fields=['pending_token', 'pending_until'])
     try:
         try:
-            proposed, blocks = prepare(locked, command)
+            proposed, blocks = prepare(locked, command, scenario)
         except LLMError:
             return JsonResponse({'error': 'The author could not finish this passage. Your position is unchanged; retry or freeze the world.'}, status=503)
         except AuthorBudgetExceeded:
@@ -180,7 +198,7 @@ def turn(request):
         with transaction.atomic():
             locked = Playthrough.objects.select_for_update().get(pk=run.pk)
             if locked.version != version or locked.pending_token != token:
-                return JsonResponse({'error': 'The latest save is loaded. Try your command again.', 'state': snapshot(locked)}, status=409)
+                return JsonResponse({'error': 'The latest save is loaded. Try your command again.', 'state': snapshot(locked, scenario)}, status=409)
             locked.state = proposed
             locked.version += 1
             locked.pending_token = None
@@ -188,25 +206,25 @@ def turn(request):
             locked.save(update_fields=['state', 'version', 'updated_at', 'pending_token', 'pending_until'])
             Turn.objects.create(playthrough=locked, request_id=request_id, command=command,
                                 response={'version': locked.version, 'blocks': blocks})
-        return JsonResponse(snapshot(locked))
+        return JsonResponse(snapshot(locked, scenario))
     finally:
         Playthrough.objects.filter(pk=run.pk, pending_token=token).update(pending_token=None, pending_until=None)
 
 
 @never_cache
 @require_GET
-def export(request):
-    enabled()
-    run = current_run(request)
-    compiled = engine.compile_world(run.state)
+def export(request, slug='dracula'):
+    scenario = enabled(slug)
+    run = current_run(request, scenario)
+    compiled = scenario.compile_world(run.state)
     compiled['export_id'] = str(run.pk)
     # Inline only our own static assets; json_script safely escapes content.
     root = settings.BASE_DIR / 'static' / 'adventure'
     html = render_to_string('adventure/offline.html', {
-        'compiled': compiled,
+        **page_context(scenario, True), 'compiled': compiled,
         'css': (root / 'terminal.css').read_text(),
         'js': (root / 'terminal.js').read_text(),
     })
     response = HttpResponse(html, content_type='text/html; charset=utf-8')
-    response['Content-Disposition'] = 'attachment; filename="fabula-dracula-written-world.html"'
+    response['Content-Disposition'] = f'attachment; filename="{scenario.meta["filename"]}"'
     return response

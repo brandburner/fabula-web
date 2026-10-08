@@ -9,6 +9,7 @@
   const transcript = $('[data-transcript]');
   const errorBox = $('[data-error]');
   const compiledNode = $('#compiled-world');
+  const apiBase = terminal.dataset.api || '/play/api/';
   const compiled = compiledNode ? JSON.parse(compiledNode.textContent) : null;
   let state = null;
   let busy = false;
@@ -94,7 +95,8 @@
       ? (state.transcript.some(item => item.kind === 'command') ? transcript.scrollHeight : 0)
       : (nearBottom ? transcript.scrollHeight : previousScroll);
     $('[data-location]').textContent = state.scene.name;
-    $('[data-moment]').textContent = state.scene.time + ' · Jonathan Harker';
+    $('[data-moment]').textContent = state.scene.time + (state.viewpoint ? ' · ' + state.viewpoint : '');
+    $('[data-discoveries-label]').textContent = apiBase === '/play/api/' ? 'discoveries' : 'moments reached';
     $('[data-discoveries]').textContent = state.discoveries.length;
     $('[data-moves]').textContent = state.moves;
     $('[data-written]').textContent = state.authored;
@@ -106,8 +108,8 @@
     $('[data-backend]').textContent = compiled
       ? 'Offline edition. These passages are already written; there is no author or model connection.'
       : state.author_backend === 'local'
-        ? 'Local author: selects prepared prose variants. No LLM calls. This mode tests writing, persistence and replay without an API key.'
-        : 'LLM author: OpenRouter writes bounded object descriptions and interprets unfamiliar phrasing. Accepted passages are saved. Narrative text is game adaptation.';
+        ? 'Local author: writes from prepared prose or the source record itself. No LLM calls. This mode tests writing, persistence and replay without an API key.'
+        : 'LLM author: OpenRouter writes bounded passages from the supplied record and interprets unfamiliar phrasing. Accepted passages are saved. Narrative text is game adaptation.';
     const suggestions = $('[data-suggestions]');
     suggestions.replaceChildren();
     for (const command of state.suggestions) {
@@ -171,7 +173,7 @@
         next = offlineTurn(command);
       } else {
         const token = document.cookie.split('; ').find(row => row.startsWith('csrftoken='));
-        const response = await fetch('/play/api/turn/', {
+        const response = await fetch(apiBase + 'turn/', {
           method: 'POST', credentials: 'same-origin',
           headers: {'Content-Type': 'application/json', 'X-CSRFToken': token ? decodeURIComponent(token.slice(10)) : ''},
           body: JSON.stringify(request)
@@ -211,7 +213,7 @@
   $('[data-freeze]').addEventListener('click', () => submit(state.frozen ? 'enable author' : 'freeze world'));
   $('[data-author-switch]').addEventListener('click', () => submit(state.author_backend === 'local' ? 'use live author' : 'use local author'));
   $('[data-restart]').addEventListener('click', () => {
-    if (!busy && state && confirm('Start the investigation again? Your written object descriptions will be kept.')) submit('restart story');
+    if (!busy && state && confirm(terminal.dataset.restartConfirm || 'Start again? Written passages will be kept.')) submit('restart story');
   });
 
   async function boot() {
@@ -220,7 +222,7 @@
     try {
       if (compiled) render(offlineLoad(), true);
       else {
-        const response = await fetch('/play/api/state/', {credentials: 'same-origin'});
+        const response = await fetch(apiBase + 'state/', {credentials: 'same-origin'});
         if (!response.ok) throw new Error('The story is unavailable. Reload or try again.');
         render(await response.json(), true);
       }

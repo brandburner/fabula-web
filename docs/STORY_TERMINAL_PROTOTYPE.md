@@ -10,6 +10,13 @@ direction was not approved. This runbook describes the experimental running game
 no runtime changes follow from the design revision. Its `current_run()` returns
 404 on revision mismatch: playable old-version dispatch/migration is not implemented.
 
+## Update 2026-10-08: projected worlds
+
+The engine now also runs worlds projected straight from the narrative graph with
+no hand authoring; see [the Wolf Hall projection results](WOLF_HALL_PROJECTION.md).
+Dracula's routes, session key and saves are unchanged. Projected worlds are
+registered in `settings.ADVENTURE_WORLDS` and served at `/play/<slug>/`.
+
 ## Play
 
 - Page: `http://127.0.0.1:8766/play/dracula/`

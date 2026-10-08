@@ -1,7 +1,7 @@
-<section class="story-terminal" aria-label="Dracula interactive story" data-story-terminal>
-  <div class="terminal-address"><span><i aria-hidden="true"></i> fabula://play/dracula/s01e01</span><span class="save-state" data-save role="status">opening story</span></div>
-  <div class="terminal-status"><span data-location>CONVENT ROOM</span><span><span data-discoveries>0</span> discoveries <span class="status-divider">/</span> <span data-moves>0</span> moves</span></div>
-  <div class="terminal-moment" data-moment>The interview · Jonathan Harker</div>
+<section class="story-terminal" aria-label="Interactive story" data-story-terminal data-api="{{ api_base }}" data-restart-confirm="{{ meta.restart_confirm }}">
+  <div class="terminal-address"><span><i aria-hidden="true"></i> {{ meta.address }}</span><span class="save-state" data-save role="status">opening story</span></div>
+  <div class="terminal-status"><span data-location></span><span><span data-discoveries>0</span> <span data-discoveries-label>discoveries</span> <span class="status-divider">/</span> <span data-moves>0</span> moves</span></div>
+  <div class="terminal-moment" data-moment></div>
   <div class="terminal-transcript" data-transcript tabindex="0" aria-label="Story transcript"></div>
   <div class="sr-only" data-announcement aria-live="polite" aria-atomic="true"></div>
   <form class="terminal-prompt" data-command-form>
@@ -14,15 +14,15 @@
   <div class="terminal-suggestions" aria-label="Suggested actions"><span class="try-label">try</span><div data-suggestions></div></div>
   <div class="terminal-footer"><span data-author-label>Persistent story · prototype</span><button type="button" data-action="help">help</button><button type="button" data-action="journal">journal</button><button type="button" data-action="map">map</button></div>
 </section>
-<div class="story-underbar"><span>DRACULA / 01 <span class="underbar-dot">·</span> THE THINGS WE CARRY</span><button type="button" data-restart>start again ↺</button></div>
+<div class="story-underbar"><span>{{ meta.underbar|safe }}</span><button type="button" data-restart>start again ↺</button></div>
 <details class="story-workshop">
   <summary>The writing room <span>watch this world become written</span></summary>
   <div class="workshop-body">
-    <p>Some details are unfinished. Examine the window or Agatha’s bag here; the fireplace or dresser in the castle. The bag contains a manuscript, stake and hammer. Read the manuscript to write a passage you can revisit. Each accepted passage becomes a permanent part of this playthrough.</p>
-    <div class="workshop-stats"><div><strong data-written>0</strong><span>details written / <span data-slot-count>7</span></span></div><div><strong data-replays>0</strong><span>saved passages replayed</span></div><div><strong data-model-calls>0</strong><span>LLM calls</span></div></div>
+    <p>{{ meta.workshop }}</p>
+    <div class="workshop-stats"><div><strong data-written>0</strong><span>{{ meta.slot_label }} / <span data-slot-count>0</span></span></div><div><strong data-replays>0</strong><span>saved passages replayed</span></div><div><strong data-model-calls>0</strong><span>LLM calls</span></div></div>
     <p class="workshop-backend" data-backend></p>
     <ul class="written-objects" data-objects></ul>
-    <div class="workshop-actions"><button type="button" data-author-switch hidden>use live LLM author</button><button type="button" data-freeze>freeze this world</button><a href="{% url 'adventure:export' %}" data-download>download playable HTML ↓</a></div>
-    <p class="workshop-note">Freezing keeps the investigation and written details playable. The download contains the written world and runs without a server or model. Starting again resets discoveries and keeps written details.</p>
+    <div class="workshop-actions"><button type="button" data-author-switch hidden>use live LLM author</button><button type="button" data-freeze>freeze this world</button><a href="{{ download_url }}" data-download>download playable HTML ↓</a></div>
+    <p class="workshop-note">Freezing keeps the written passages playable. The download contains the written world and runs without a server or model. Starting again resets your position and keeps written passages.</p>
   </div>
 </details>

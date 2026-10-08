@@ -88,6 +88,9 @@ class OpenRouterClient:
         # index -> {'id': ..., 'name': ..., 'arguments': str}
         tool_calls = {}
 
+        # OpenRouter streams text/event-stream without a charset; requests then
+        # guesses ISO-8859-1 and curly quotes arrive as mojibake. SSE is UTF-8.
+        response.encoding = 'utf-8'
         for raw_line in response.iter_lines(decode_unicode=True):
             if not raw_line or not raw_line.startswith('data:'):
                 continue
