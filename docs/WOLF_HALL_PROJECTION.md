@@ -20,7 +20,7 @@ alone. The weaknesses are in the data's identity and granularity, not in the mec
 Play at `/play/wolf-hall-e1/` (dev only; `ADVENTURE_ENABLED` is off in production). The same
 terminal, writing room, freeze, restart and offline download work as for Dracula.
 
-Tests: 113 pass after the shared passage store (26 new in `adventure/tests/test_projection.py` on a fixture episode with nested
+Tests: 119 pass after the grounding check and retire command (32 new in `adventure/tests/test_projection.py` on a fixture episode with nested
 locations, a feature-only place, a flashback, an identity collision and an unpublished event).
 
 ## What the graph supplies for S01E01
@@ -151,6 +151,48 @@ Limits of the store:
 - Learned LLM command phrasings are still saved per visitor, not per world.
 - Local-author passages are stored too, though they could be recomputed. Storing them keeps one
   path for both backends and makes the offline edition complete.
+
+## Grounding check and retiring passages (added 2026-10-08)
+
+Auto-accept now sits behind a check, and any shared passage can be retired.
+
+**The grounding check** runs on every LLM passage before it joins the world. A paraphrase may
+reword its packet; it may not add to it. The check is lexical and flags:
+
+- a capitalised name, mid-sentence, that the packet doesn't contain;
+- interpretive vocabulary such as "symbol", "foreshadow" or "testament", unless the record itself
+  already uses it;
+- numbers the packet doesn't contain;
+- a single-word name used as a common noun ("a patch" for Wolsey's mule), unless the record does
+  the same;
+- drift: fewer than 70% of the passage's content words sharing a five-letter stem with the packet.
+
+A refused passage is stored already retired, with its reasons, for review. The visitor gets the
+local author's verbatim record and a line saying why. Each slot gets two LLM attempts per version
+of its record (`ADVENTURE_LLM_ATTEMPTS_PER_SLOT`); after that the record serves the slot until it
+changes, so a hard slot cannot drain the world budget. Refused attempts count against that budget.
+
+Calibration, all against real data:
+
+| Passage | Result |
+| --- | --- |
+| Four faithful live Wolf Hall passages from earlier in the day | All pass |
+| The Esher `look` that leaked later events | Refused on five counts: invented names, "symbol", Patch as a common noun, drift |
+| The Wolsey passage ending "a testament to his ruin" | Passes: that wording is the record's own |
+| A Dracula-style invented leather cover | Refused: an invented place name and drift |
+| Every local verbatim passage in Wolf Hall E1 | 701 of 731 pass. The 30 others are the engine's stock line for an empty record, and local passages are never checked |
+| Five new live Happy Valley passages | All accepted; all read as faithful |
+
+What it cannot catch: invented detail phrased in the record's own words, and misattribution, such
+as giving one person's action to another. It checks vocabulary, not meaning. Those cases need the
+retire command, or a model-based check later.
+
+**Retiring.** `python manage.py retire_passage <world> …` lists passages (`--list`, `--grep`,
+`--retired`), retires one by key or row id, or sweeps live LLM passages through the grounding
+check (`--check`). Nothing changes without `--apply`. A retired passage stays as history and
+stops serving anyone; the next visitor to ask writes a fresh one. Uniqueness now applies only to
+live rows, so a retired slot can be rewritten. Retiring a local passage is allowed but warns that
+the rewrite will be identical unless the record has changed.
 
 ## Live narrator sample (six OpenRouter calls, capped at six in advance)
 

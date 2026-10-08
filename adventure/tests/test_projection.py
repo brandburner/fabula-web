@@ -6,10 +6,37 @@ import uuid
 from django.core.management import call_command
 from django.test import Client, TestCase, override_settings
 
-from adventure import explore, narrator, projection
+from django.core.management import CommandError
+
+from adventure import explore, narrator, projection, store
 from adventure.models import Playthrough, WorldPassage
 from narrative.models import LocationInvolvement
 from adventure.tests import world_fixture
+
+
+class GroundingTests(TestCase):
+    DATA = {'kind': 'look', 'room': 'Great Hall', 'present': ['Alice Ward'], 'objects': ['Patch'],
+            'places': [{'name': 'Great Hall', 'primary': True, 'atmosphere': 'Quiet and cold.', 'access': '',
+                        'details': ['a cold hearth', 'rain on the glass']}]}
+
+    def problems(self, text, data=None):
+        return narrator.grounding_problems(text, data or self.DATA)
+
+    def test_a_faithful_paraphrase_passes(self):
+        self.assertEqual(self.problems('You are in the Great Hall. It is quiet and cold; rain runs down the glass '
+                                       'beside a cold hearth. Alice Ward is here, and Patch.'), [])
+
+    def test_additions_are_named(self):
+        self.assertIn('names what the record does not: Henry', self.problems('Alice Ward waits for Henry in the hall.')[0])
+        self.assertIn('interprets: symbol', self.problems('The cold hearth is a symbol of her loss.'))
+        self.assertIn('numbers not in the record: 3', self.problems('Rain on the glass at 3 in the hall.'))
+        self.assertIn('treats the name Patch as a common noun', self.problems('Alice Ward is here. There is also a patch.'))
+        self.assertTrue(self.problems('Velvet tapestries, gilded mirrors and a roaring banquet fill the chamber.')[-1]
+                        .startswith('drifts from the record'))
+
+    def test_wording_the_record_already_uses_is_not_an_addition(self):
+        data = {**self.DATA, 'places': [{**self.DATA['places'][0], 'atmosphere': 'A symbol of decay; the patch of damp spreads.'}]}
+        self.assertEqual(self.problems('The Great Hall is a symbol of decay. The patch of damp spreads.', data), [])
 
 
 class ProjectionTests(TestCase):
@@ -323,6 +350,63 @@ class ProjectionViewTests(TestCase):
         self.command('look')
         body = Client().get(self.base + 'download/').content.decode()
         self.assertIn('Quiet in Great Hall', body)
+
+    # ------------------------------------------- grounding check and retiring
+    def test_a_refused_llm_passage_falls_back_to_the_record_and_attempts_are_capped(self):
+        from unittest.mock import patch
+        bad = 'You are in the Great Hall. Henry the Eighth waits beside a velvet throne under gilded banners.'
+        with override_settings(CHAT_OPENROUTER_API_KEY='test-key'), \
+                patch('adventure.narrator.render_openrouter', return_value=bad) as llm:
+            visitors = [self.client, Client(), Client()]
+            for n, visitor in enumerate(visitors):
+                self.state = visitor.get(self.base + 'api/state/').json()
+                self.command('use live author', client=visitor)
+                self.command('look', client=visitor)
+                text = '\n'.join(b['text'] for b in self.state['transcript'][-4:])
+                self.assertIn('Quiet in Great Hall', text)              # the record itself
+                self.assertNotIn('Henry', text)
+                if n < 2:
+                    self.assertIn('added to the record', text)
+            self.assertEqual(llm.call_count, 2)                          # third visitor: attempts exhausted
+        refused = WorldPassage.objects.filter(backend='openrouter')
+        self.assertEqual(refused.count(), 2)
+        self.assertTrue(all(r.retired_at and r.retired_reason.startswith('grounding: names') for r in refused))
+        self.assertEqual(WorldPassage.objects.filter(backend='local', retired_at__isnull=True).count(), 1)
+
+    def test_retire_command_dry_run_apply_and_rewrite(self):
+        import io
+        from django.core.management import call_command
+        self.command('look')
+        key = 'look:evt_1'
+        out = io.StringIO()
+        call_command('retire_passage', 'test-show-e1', key, stdout=out, skip_checks=False)   # the real CLI path
+        self.assertIn('Dry run', out.getvalue())
+        self.assertEqual(WorldPassage.objects.filter(retired_at__isnull=True).count(), 1)
+        call_command('retire_passage', 'test-show-e1', key, '--reason', 'test', '--apply', stdout=out)
+        self.assertEqual(WorldPassage.objects.get().retired_reason, 'test')
+        self.command('look')                                             # rewritten on next request
+        self.assertEqual(self.state['transcript'][-3]['kind'], 'written')
+        self.assertEqual((WorldPassage.objects.count(), WorldPassage.objects.filter(retired_at__isnull=True).count()), (2, 1))
+        listing = io.StringIO()
+        call_command('retire_passage', 'test-show-e1', '--list', '--retired', stdout=listing)
+        self.assertIn('retired · test', listing.getvalue())
+
+    def test_retire_command_check_sweeps_ungrounded_llm_passages(self):
+        import io
+        from django.core.management import call_command
+        world = projection.load_world(world_fixture.WORLD)
+        explore.ensure_index(world)
+        store.save('test-show-e1', world, 'look:evt_1', {'text': 'You see King Henry at a velvet throne.', 'backend': 'openrouter',
+                                                         'kind': 'look', 'sources': []})
+        store.save('test-show-e1', world, 'watch:evt_1', {'text': 'Alice Ward does something in the hall.', 'backend': 'openrouter',
+                                                          'kind': 'watch', 'sources': []})
+        out = io.StringIO()
+        call_command('retire_passage', 'test-show-e1', '--check', stdout=out)
+        self.assertIn('1 of 2 live LLM passage(s) fail', out.getvalue())
+        call_command('retire_passage', 'test-show-e1', '--check', '--apply', stdout=out)
+        self.assertEqual(list(store.live('test-show-e1').values_list('key', flat=True)), ['watch:evt_1'])
+        with self.assertRaises(CommandError):
+            call_command('retire_passage', 'dracula', '--list', stdout=io.StringIO())
 
     def test_unpublished_episode_is_not_a_world(self):
         with override_settings(ADVENTURE_WORLDS=[{'slug': 'hidden', 'series': 'test-show', 'season': 1, 'episode': 2}]):

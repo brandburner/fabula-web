@@ -167,6 +167,9 @@ ADVENTURE_MODEL = os.environ.get('ADVENTURE_MODEL', CHAT_MODEL)
 # all source revisions). Each slot is written once per backend, so a world's
 # natural ceiling is its passage_slots count; this caps spend below that.
 ADVENTURE_WORLD_LLM_BUDGET = int(os.environ.get('ADVENTURE_WORLD_LLM_BUDGET', 1000))
+# LLM attempts per passage slot before the grounding check gives up and the
+# local author's verbatim record serves that slot (until the record changes).
+ADVENTURE_LLM_ATTEMPTS_PER_SLOT = int(os.environ.get('ADVENTURE_LLM_ATTEMPTS_PER_SLOT', 2))
 # Projected worlds: episodes read straight from the narrative graph into a
 # walkable terminal world (adventure/projection.py). Slug -> published episode.
 ADVENTURE_WORLDS = [

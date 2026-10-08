@@ -10,6 +10,7 @@ import json
 
 from django.conf import settings
 from django.db import IntegrityError, transaction
+from django.utils import timezone
 
 from . import narrator
 from .models import WorldPassage
@@ -37,6 +38,10 @@ def current_hashes(world):
     return world['hashes']
 
 
+def live(slug):
+    return WorldPassage.objects.filter(world=slug, retired_at__isnull=True)
+
+
 def as_passage(row):
     return {'text': row.text, 'backend': row.backend, 'sources': row.sources, 'kind': row.kind, 'id': row.pk}
 
@@ -44,8 +49,7 @@ def as_passage(row):
 def lookup(slug, world, key, prefer, exact=False):
     """The world's current passage for key: the preferred backend first,
     then (unless exact) any other backend."""
-    rows = list(WorldPassage.objects.filter(world=slug, key=key, packet_hash=current_hashes(world)[key])
-                .order_by('created_at'))
+    rows = list(live(slug).filter(key=key, packet_hash=current_hashes(world)[key]).order_by('created_at'))
     for row in rows:
         if row.backend == prefer:
             return as_passage(row)
@@ -63,14 +67,33 @@ def save(slug, world, key, passage, playthrough=None):
                 world=slug, key=key, packet_hash=fingerprint, backend=passage['backend'], kind=passage['kind'],
                 text=passage['text'], sources=passage['sources'], written_by=playthrough)
     except IntegrityError:
-        row = WorldPassage.objects.get(world=slug, key=key, packet_hash=fingerprint, backend=passage['backend'])
+        row = live(slug).get(key=key, packet_hash=fingerprint, backend=passage['backend'])
     return as_passage(row)
+
+
+def save_rejected(slug, world, key, passage, problems, playthrough=None):
+    """Keep a candidate the grounding check refused, already retired, for review."""
+    WorldPassage.objects.create(
+        world=slug, key=key, packet_hash=current_hashes(world)[key], backend=passage['backend'], kind=passage['kind'],
+        text=passage['text'], sources=passage['sources'], written_by=playthrough, retired_at=timezone.now(),
+        retired_reason=('grounding: ' + '; '.join(problems))[:300])
+
+
+def llm_exhausted(slug, world, key):
+    """True once this slot's LLM attempts have all been refused for the current record."""
+    refused = WorldPassage.objects.filter(world=slug, key=key, packet_hash=current_hashes(world)[key],
+                                          backend='openrouter', retired_reason__startswith='grounding')
+    return refused.count() >= settings.ADVENTURE_LLM_ATTEMPTS_PER_SLOT
+
+
+def retire(rows, reason):
+    """Retire live rows. They stay as history; the next request writes afresh."""
+    return rows.filter(retired_at__isnull=True).update(retired_at=timezone.now(), retired_reason=reason[:300])
 
 
 def current_rows(slug, world):
     hashes = current_hashes(world)
-    return [row for row in WorldPassage.objects.filter(world=slug).order_by('created_at')
-            if hashes.get(row.key) == row.packet_hash]
+    return [row for row in live(slug).order_by('created_at') if hashes.get(row.key) == row.packet_hash]
 
 
 def passages_for(slug, world, prefer):
@@ -90,5 +113,6 @@ def stats(slug, world):
 
 
 def llm_budget_left(slug):
+    # Every LLM row cost a call, including retired and refused ones.
     used = WorldPassage.objects.filter(world=slug, backend='openrouter').count()
     return used < settings.ADVENTURE_WORLD_LLM_BUDGET

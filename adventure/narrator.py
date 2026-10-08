@@ -7,6 +7,7 @@ person; shape is validated, fidelity is not proven. Both persist the
 packet's source pointers alongside the text.
 """
 import json
+import re
 
 from django.conf import settings
 
@@ -154,12 +155,75 @@ def render_openrouter(data):
     return text.strip()
 
 
+# ------------------------------------------------------------ grounding
+# A paraphrase may reword the packet; it may not add to it. These checks are
+# lexical, so they catch additions that leave a trace in the words: a name,
+# a number, an interpretive term or a vocabulary drift the record lacks.
+SENTENCE_START = re.compile(r'(^|[.!?:;"“”\n]\s*|—\s*)$')
+INTERPRETIVE = ('symbol', 'metaphor', 'foreshadow', 'masterclass', 'testament', 'embod', 'signif',
+                'underscor', 'juxtapos', 'allegor', 'portent', 'harbinger', 'represent', 'emblem')
+FUNCTION_WORDS = set("""a an the and but or nor so yet for of in on at to from by with without into onto over under
+    about above below across after before behind beside between beyond during inside outside through toward towards
+    upon within along around against among is are was were be been being has have had do does did will would can
+    could may might must shall should not no it its it's this that these those there here then than as if when while
+    where which who whom whose what how why he she they them their his her him you your yours we our us i me my
+    one ones some any each every all both either neither other another such very more most less least much many
+    still just only even also again already now once ever never too quite rather almost nearly yet further own same
+    stand stands standing sees see seen look looks looking seems seem appear appears sits sit sitting moves move""".split())
+DRIFT_THRESHOLD = 0.7
+
+
+def _words(text):
+    return re.findall(r"[a-z][a-z'\-]+", text.lower().replace('’', "'"))
+
+
+def _prefix(word):
+    return word.removesuffix("'s")[:5]
+
+
+def grounding_problems(text, data):
+    """Reasons an LLM passage adds to its packet, or [] if none are found."""
+    corpus_text = json.dumps(data, ensure_ascii=False).replace('’', "'")
+    corpus = set(_words(corpus_text))
+    corpus |= {w.removesuffix("'s") for w in corpus}
+    prefixes = {_prefix(w) for w in corpus}
+    problems = []
+    names = set()
+    for m in re.finditer(r"[A-Z][\w’'\-]*", text):
+        if SENTENCE_START.search(text[:m.start()]):
+            continue
+        word = m.group().lower().replace('’', "'").removesuffix("'s")
+        if len(word) > 1 and word not in corpus and word not in FUNCTION_WORDS:
+            names.add(m.group())
+    if names:
+        problems.append('names what the record does not: ' + ', '.join(sorted(names)))
+    added = [w for w in INTERPRETIVE if any(t.startswith(w) for t in _words(text)) and not any(c.startswith(w) for c in corpus)]
+    if added:
+        problems.append('interprets: ' + ', '.join(added))
+    numbers = sorted(set(re.findall(r'\d+', text)) - set(re.findall(r'\d+', corpus_text)))
+    if numbers:
+        problems.append('numbers not in the record: ' + ', '.join(numbers))
+    for name in [data.get('name', '')] + list(data.get('present', [])) + list(data.get('objects', [])):
+        common = r'\b(a|an|the)\s+' + re.escape(name.lower()) + r'\b'
+        if name and ' ' not in name.strip() and name[:1].isupper() and name not in text \
+                and re.search(common, text) and not re.search(common, corpus_text):
+            problems.append(f'treats the name {name} as a common noun')
+    content = [w for w in _words(text) if len(w) >= 4 and w not in FUNCTION_WORDS]
+    if content:
+        unsupported = [w for w in content if _prefix(w) not in prefixes]
+        if 1 - len(unsupported) / len(content) < DRIFT_THRESHOLD:
+            problems.append('drifts from the record: ' + ', '.join(sorted(set(unsupported))[:8]))
+    return problems
+
+
 def write(world, key, backend):
     data, sources = packet(world, key)
     if backend == 'local':
         text = render_local(data)
     elif backend == 'openrouter':
         text = render_openrouter(data)
+        return {'text': text, 'backend': backend, 'sources': sources, 'kind': data['kind'],
+                'problems': grounding_problems(text, data)}
     else:
         raise LLMError('Unknown narrator backend.')
     return {'text': text, 'backend': backend, 'sources': sources, 'kind': data['kind']}

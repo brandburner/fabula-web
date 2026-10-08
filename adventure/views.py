@@ -85,7 +85,7 @@ def prepare(run, command, scenario):
             if mode == 'openrouter' and scenario.budget_exceeded(proposed, calls):
                 raise AuthorBudgetExceeded
             written = scenario.write(slot, proposed, mode, run)
-            calls += int(mode == 'openrouter')
+            calls += int(written.pop('llm_call', mode == 'openrouter'))
         if action is None:
             blocks = scenario.refusal(proposed, status, payload, clean)
         else:

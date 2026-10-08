@@ -139,17 +139,32 @@ class ProjectionScenario:
     def mode(state):
         return state.get('author_backend', author.backend())
 
+    def effective(self, key, mode):
+        """A slot whose LLM attempts were all refused is served by the local author."""
+        return 'local' if mode == 'openrouter' and store.llm_exhausted(self.slug, self.world, key) else mode
+
     def gap(self, state, action):
         """A key to write only if the world lacks a passage in this visitor's
         backend. Frozen visitors never write; they read whatever exists."""
         key = explore.needs_passage(self.world, state, action)
         if not key or state['frozen']:
             return None
-        return None if store.lookup(self.slug, self.world, key, self.mode(state), exact=True) else key
+        mode = self.effective(key, self.mode(state))
+        return None if store.lookup(self.slug, self.world, key, mode, exact=True) else key
 
     def write(self, key, state, backend, run=None):
-        """Auto-accept: the written passage joins the world for every visitor."""
-        return store.save(self.slug, self.world, key, narrator.write(self.world, key, backend), run)
+        """Auto-accept behind the grounding check. A passing passage joins the
+        world for every visitor. A refused one is kept retired for review, and
+        the visitor gets the local author's verbatim record instead."""
+        backend = self.effective(key, backend)
+        candidate = narrator.write(self.world, key, backend)
+        problems = candidate.pop('problems', [])
+        if not problems:
+            return {**store.save(self.slug, self.world, key, candidate, run), 'llm_call': backend == 'openrouter'}
+        store.save_rejected(self.slug, self.world, key, candidate, problems, run)
+        existing = store.lookup(self.slug, self.world, key, 'local', exact=True)
+        fallback = existing or store.save(self.slug, self.world, key, narrator.write(self.world, key, 'local'), run)
+        return {**fallback, 'llm_call': True, 'rejected': problems, 'reused': existing is not None}
 
     def budget_exceeded(self, state, calls):
         return not store.llm_budget_left(self.slug)            # per world, all visitors
@@ -157,7 +172,11 @@ class ProjectionScenario:
     def transition(self, state, action, written=None):
         key = explore.needs_passage(self.world, state, action)
         passage = written or (store.lookup(self.slug, self.world, key, self.mode(state)) if key else None)
-        return explore.transition(self.world, state, action, passage, fresh=written is not None)
+        fresh = written is not None and not written.get('reused')
+        state, blocks = explore.transition(self.world, state, action, passage, fresh=fresh)
+        if written and written.get('rejected'):
+            blocks.append(explore.block('The LLM author’s version added to the record, so this is the record itself.', 'hint'))
+        return state, blocks
 
     def suggestions(self, state):
         return explore.suggestions(self.world, state)

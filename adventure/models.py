@@ -44,8 +44,13 @@ class WorldPassage(models.Model):
     written_by = models.ForeignKey(Playthrough, null=True, blank=True, on_delete=models.SET_NULL,
                                    related_name='world_passages')
     created_at = models.DateTimeField(auto_now_add=True)
+    # A retired passage no longer serves anyone; the next request writes a new
+    # one. Rows rejected by the grounding check are stored already retired.
+    retired_at = models.DateTimeField(null=True, blank=True)
+    retired_reason = models.CharField(max_length=300, blank=True)
 
     class Meta:
         constraints = [models.UniqueConstraint(
-            fields=['world', 'key', 'packet_hash', 'backend'], name='adventure_world_passage_once')]
+            fields=['world', 'key', 'packet_hash', 'backend'], condition=models.Q(retired_at__isnull=True),
+            name='adventure_world_passage_live_once')]
         indexes = [models.Index(fields=['world', 'key'], name='adventure_world_key')]
