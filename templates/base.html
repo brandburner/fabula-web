@@ -1,4 +1,4 @@
-{% load static wagtailcore_tags narrative_tags %}
+{% load static wagtailcore_tags narrative_tags chat_tags %}
 <!DOCTYPE html>
 <html lang="en" data-theme="{{ fabula_theme|default:'writerly' }}"{% if fabula_theme == 'dark' %} class="dark"{% endif %}>
 <head>
@@ -466,6 +466,10 @@
     })();
     </script>
     {% endif %}
+
+    {# Ask the Archive — context-aware chat over the narrative graph. #}
+    {# Renders nothing unless CHAT_ENABLED (OPENROUTER_API_KEY or fake backend). #}
+    {% chat_widget %}
 
     {% block extra_js %}{% endblock %}
 </body>

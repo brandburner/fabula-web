@@ -1,0 +1,5 @@
+{% if chat_enabled %}{% load static %}
+{{ chat_context|json_script:"fabula-chat-context" }}
+<link rel="stylesheet" href="{% static 'chat/chat-widget.css' %}">
+<script src="{% static 'chat/chat-widget.js' %}" defer></script>
+{% endif %}

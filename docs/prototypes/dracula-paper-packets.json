@@ -1,0 +1,221 @@
+{
+  "status": "paper prototype; 23 selected values; mandatory unfamiliar-reader gate pending; not published claims",
+  "source_file": "fabula_export/dracula/events/dracula_s01e01.yaml",
+  "source_sha256": "20ee25f26fd1491a17d14aa2485a149e766e424aaca520e99ad8e1c1cfefc0f4",
+  "contract": "2.3.0",
+  "export_date": "2026-02-18",
+  "packets": [
+    {
+      "id": "interview",
+      "event_uuid": "cand_evt_scene_547a363fb2331333_01",
+      "scene_sequence": 1,
+      "sequence_in_scene": 1,
+      "references": [
+        {
+          "ref": "interview.room",
+          "json_pointer": "/events/0/location_involvements/0/key_environmental_details/0",
+          "entity_ref": "location_c44efc782b7b",
+          "raw_value": "Sunlight streaming through the window, casting sharp shadows",
+          "raw_value_sha256": "e163afae65bb2d0121817583629038b50ad7043c62c6c12c57ec6c5ce94f158b",
+          "quality": "unverified graph extraction; dialogue is not independently screenplay-verified"
+        },
+        {
+          "ref": "interview.hammer",
+          "json_pointer": "/events/0/object_involvements/0/status_before_event",
+          "entity_ref": "object_24bccae12e12",
+          "raw_value": "Stored in Agatha’s bag, paired with the stake.",
+          "raw_value_sha256": "15b59986d4c90451e8860c352a58915ba9e25b2255630cdfc3a64efd6666c4b2",
+          "quality": "unverified graph extraction; dialogue is not independently screenplay-verified"
+        },
+        {
+          "ref": "interview.bag",
+          "json_pointer": "/events/0/object_involvements/1/status_after_event",
+          "entity_ref": "object_24bccae12e12",
+          "raw_value": "Opened on the table, stake and hammer revealed, manuscript removed for interrogation. The bag remains within reach, a constant reminder of Agatha’s lethal intent.",
+          "raw_value_sha256": "57ed33ebf24b6df7d1420b73b26df644aaff9498adee16770ed01798521cee7b",
+          "quality": "unverified graph extraction; dialogue is not independently screenplay-verified"
+        },
+        {
+          "ref": "interview.stake",
+          "json_pointer": "/events/0/object_involvements/2/status_before_event",
+          "entity_ref": "object_24bccae12e12",
+          "raw_value": "Concealed in Agatha’s bag, alongside a hammer.",
+          "raw_value_sha256": "26330ee7525bf11f0ae443663423a4227775f129fbbca20847403c43dfbf8f44",
+          "quality": "unverified graph extraction; dialogue is not independently screenplay-verified"
+        },
+        {
+          "ref": "interview.manuscript",
+          "json_pointer": "/events/0/object_involvements/3/status_after_event",
+          "entity_ref": "object_5de8e37e880c",
+          "raw_value": "Laid open on the table, consulted during the interrogation. Its contents remain a point of contention between Jonathan and Agatha.",
+          "raw_value_sha256": "2c3c2ddb6b0d4b06920ebaa36a9552f2bf04ca9d7660f7b706d44869c10962ef",
+          "quality": "unverified graph extraction; dialogue is not independently screenplay-verified"
+        },
+        {
+          "ref": "interview.agatha_goal",
+          "json_pointer": "/events/0/participations/1/goals/0",
+          "entity_ref": "agent_09ee5fad16ae",
+          "raw_value": "Extract the full truth of Jonathan’s experiences with Dracula",
+          "raw_value_sha256": "f7ba104b79f8ed1b8825df3e2141e3cd75963fdebcb5e9eff6a5a6c9e8a23f7f",
+          "quality": "unverified graph extraction; dialogue is not independently screenplay-verified"
+        },
+        {
+          "ref": "interview.agatha_assessment",
+          "json_pointer": "/events/0/participations/1/goals/1",
+          "entity_ref": "agent_09ee5fad16ae",
+          "raw_value": "Assess whether Jonathan is still human or already corrupted",
+          "raw_value_sha256": "6f4ae0590147e90706db61dc47bdc53f38889b2e0b3e509a29693ec6cf482332",
+          "quality": "unverified graph extraction; dialogue is not independently screenplay-verified"
+        },
+        {
+          "ref": "interview.fly_sound",
+          "json_pointer": "/events/0/location_involvements/0/key_environmental_details/1",
+          "entity_ref": "location_c44efc782b7b",
+          "raw_value": "The buzzing of the fly, the only persistent sound",
+          "raw_value_sha256": "a0c639e6e0f81879af523211f21fac48005d9a180793427274aa966c4f1a9c60",
+          "quality": "unverified graph extraction; dialogue is not independently screenplay-verified"
+        },
+        {
+          "ref": "interview.fly_on_harker",
+          "json_pointer": "/events/0/participations/0/observed_status",
+          "entity_ref": "agent_e0c9af46ae1c",
+          "raw_value": "Jonathan Harker sits emaciated and hollow-eyed on the edge of his bed, his skeletal frame barely covered by disheveled bedclothes. His unblinking gaze tracks a fly crawling across his face and into his eye, his robotic detachment suggesting he is no longer fully human. When Sister Agatha enters, he hesitates to engage, avoiding direct answers about his time with Dracula. His physical decay—bald head, sunken cheeks, trembling hands—contrasts with his eerie calm, and his evasive responses to Agatha’s probing about 'intimate moments' with the Count reveal his internal conflict between humanity and corruption.",
+          "raw_value_sha256": "ffe1c993243012bbd89a26f69fc2a4a95e1f8991bb7f61d051cb121163008804",
+          "quality": "unverified graph extraction; dialogue is not independently screenplay-verified"
+        },
+        {
+          "ref": "interview.nun_reaction",
+          "json_pointer": "/events/0/participations/3/observed_status",
+          "entity_ref": "agent_0b056e208e33",
+          "raw_value": "The chaperone nun enters reluctantly, her hands clasped and eyes averted, serving as a silent witness to Agatha’s interrogation. She reacts with visible horror to the fly crawling on Jonathan’s face and eye, her submissive posture betraying her deep discomfort. Though she does not speak, her presence amplifies the tension, acting as a moral counterpoint to Agatha’s pragmatism and Jonathan’s detachment. Her horror at the fly’s behavior underscores the unnaturalness of the scene.",
+          "raw_value_sha256": "5b984f31ce42b011fec8142443d2bf50c4ca735b6d48d9bb92d40375e3476a54",
+          "quality": "unverified graph extraction; dialogue is not independently screenplay-verified"
+        },
+        {
+          "ref": "interview.nun_role",
+          "json_pointer": "/events/0/participations/3/goals/0",
+          "entity_ref": "agent_0b056e208e33",
+          "raw_value": "Fulfill her duty as chaperone (though visibly distressed)",
+          "raw_value_sha256": "d51b2d91769e927822e47c228821392b002497ac12b4e259822492d1346401bf",
+          "quality": "unverified graph extraction; dialogue is not independently screenplay-verified"
+        },
+        {
+          "ref": "interview.crucifix",
+          "json_pointer": "/events/0/object_involvements/4/status_before_event",
+          "entity_ref": "object_2bc06cc75d00",
+          "raw_value": "Hanging on the wall, untouched but visible.",
+          "raw_value_sha256": "8e87b9f8f20b487491b8ab57aa8592357dba2830d180a3f9a8b04b2a91936123",
+          "quality": "unverified graph extraction; dialogue is not independently screenplay-verified"
+        }
+      ],
+      "navigation": "editorially selected paper route; no NarrativeConnection edge asserted"
+    },
+    {
+      "id": "bedroom",
+      "event_uuid": "cand_evt_scene_fbdfed5d901968f6_03",
+      "scene_sequence": 18,
+      "sequence_in_scene": 27,
+      "references": [
+        {
+          "ref": "bedroom.fire",
+          "json_pointer": "/events/26/location_involvements/0/key_environmental_details/0",
+          "entity_ref": "location_7cdbbae65f48",
+          "raw_value": "Warm fireplace casting deceptive glow",
+          "raw_value_sha256": "9697972a0f59d68449e272304387ade9ade6ee23e136aeaebfae38fc9d06ed5b",
+          "quality": "unverified graph extraction; dialogue is not independently screenplay-verified"
+        },
+        {
+          "ref": "bedroom.photograph",
+          "json_pointer": "/events/26/object_involvements/1/status_before_event",
+          "entity_ref": "object_377bddce8996",
+          "raw_value": "Placed on the dresser by Jonathan, intact and symbolizing his connection to Mina.",
+          "raw_value_sha256": "09491930f6984aa81b26982491899d4022e4e2d647531f8c42fd9ccfd6129ba5",
+          "quality": "unverified graph extraction; dialogue is not independently screenplay-verified"
+        },
+        {
+          "ref": "bedroom.mirror",
+          "json_pointer": "/events/26/object_involvements/2/description_of_involvement",
+          "entity_ref": "object_fc887008b852",
+          "raw_value": "The shaving mirror is deliberately shattered by Dracula, symbolizing the destruction of self-reflection and truth. Its fragments become a weapon of psychological terror, cutting Jonathan’s thumb and drawing blood that Dracula fixates on. The mirror’s absence (as Dracula claims not to possess any) underscores his vampiric nature—he has no reflection, and thus no need for vanity. The shattered glass becomes a literal and metaphorical tool for Dracula’s predation.",
+          "raw_value_sha256": "698e8f4fdcf3af4444e0cf800ae41eacbba8f1fc179018ac190bbfc143d1d19d",
+          "quality": "unverified graph extraction; dialogue is not independently screenplay-verified"
+        },
+        {
+          "ref": "bedroom.mina_memory",
+          "json_pointer": "/events/26/key_dialogue/1",
+          "entity_ref": null,
+          "raw_value": "DRACULA: *It was summer when you met. Her hair was golden and it seemed to you that it floated, as if entangled in the sunlight.*",
+          "raw_value_sha256": "f3a35db3f383fc2c5a88233822704dbf324a307e263ff0d07763bd9e06ee362a",
+          "quality": "unverified graph extraction; dialogue is not independently screenplay-verified"
+        },
+        {
+          "ref": "bedroom.blood_words",
+          "json_pointer": "/events/26/key_dialogue/2",
+          "entity_ref": null,
+          "raw_value": "DRACULA: *Blood is not nothing. Blood is lives.*",
+          "raw_value_sha256": "1b3c687e806cd94587e7481fe740987b90ae9826545f7b9f1e99fcd4e68ce559",
+          "quality": "unverified graph extraction; dialogue is not independently screenplay-verified"
+        },
+        {
+          "ref": "bedroom.harker",
+          "json_pointer": "/events/26/participations/0/observed_status",
+          "entity_ref": "agent_e0c9af46ae1c",
+          "raw_value": "Jonathan Harker, visibly shaken, reacts with shock and horror as Dracula deliberately shatters his shaving mirror, cutting his thumb on the glass. He attempts to maintain composure as a guest but is visibly unnerved, especially when Dracula recites intimate, private memories of Mina that Jonathan insists he never shared aloud. His emotional state oscillates between confusion, dread, and a growing sense of violation as he realizes the depth of Dracula’s psychic intrusion.",
+          "raw_value_sha256": "14934a279bf00286a8a5daf5cbfb60cffaba3017c17aad930a3c5be42c59c364",
+          "quality": "unverified graph extraction; dialogue is not independently screenplay-verified"
+        },
+        {
+          "ref": "bedroom.blood",
+          "json_pointer": "/events/26/object_involvements/5/status_after_event",
+          "entity_ref": "object_aaae4eafb196",
+          "raw_value": "Spilled onto the floor, now a tool for Dracula’s psychological and physical domination.",
+          "raw_value_sha256": "fafa6a5bc2e5cbd7d137154a88857b88ce7889e6ad02e3392f86425b53e64b0c",
+          "quality": "unverified graph extraction; dialogue is not independently screenplay-verified"
+        }
+      ],
+      "navigation": "editorially selected paper route; no NarrativeConnection edge asserted"
+    },
+    {
+      "id": "return",
+      "event_uuid": "cand_evt_scene_a4860661882bc3e2_01",
+      "scene_sequence": 19,
+      "sequence_in_scene": 28,
+      "references": [
+        {
+          "ref": "return.correction",
+          "json_pointer": "/events/27/key_dialogue/0",
+          "entity_ref": null,
+          "raw_value": "SISTER AGATHA: You are quite certain? He did not say *blood is life*—he said *blood is lives*.",
+          "raw_value_sha256": "46aeb99c270d6ddd5a7054e9b33fcc5c113302538f76c120ae584882c889fd94",
+          "quality": "unverified graph extraction; dialogue is not independently screenplay-verified"
+        },
+        {
+          "ref": "return.private_memory",
+          "json_pointer": "/events/27/key_dialogue/1",
+          "entity_ref": null,
+          "raw_value": "JONATHAN: I never mentioned Mina at dinner. I’m certain of it. / SISTER AGATHA: And yet he knew about her. Her hair entangled in the sunlight. / JONATHA: I have held that thought in my heart. I have never shared it. Not even with Mina.",
+          "raw_value_sha256": "abfcc6bf10f65e9c461af2a1bd03965f6bccd05d297d4a10ca04d79b7ae8ad45",
+          "quality": "unverified graph extraction; dialogue is not independently screenplay-verified"
+        },
+        {
+          "ref": "return.hypothesis",
+          "json_pointer": "/events/27/key_dialogue/2",
+          "entity_ref": null,
+          "raw_value": "SISTER AGATHA: A dog can sniff stories on the slightest breeze, while we are blind in the wind. / JONATHAN: He smelled my thoughts in the air? / SISTER AGATHA: No, Mr. Harker, that would be ridiculous—but perhaps in your blood. Perhaps stories flow in our veins, if you know how to read them. *Blood is lives*.",
+          "raw_value_sha256": "06421ab50ccf3e89ebf3642bbd15063a0af7bc11b09db598090afbbc3f66be82",
+          "quality": "unverified graph extraction; dialogue is not independently screenplay-verified"
+        },
+        {
+          "ref": "return.goal",
+          "json_pointer": "/events/27/participations/0/goals/0",
+          "entity_ref": "agent_e0c9af46ae1c",
+          "raw_value": "To understand how Dracula could have known his private thoughts about Mina.",
+          "raw_value_sha256": "33f1c29f22a1fec681036c1931a9e5c17479b65c629aed46acb296c240524272",
+          "quality": "unverified graph extraction; dialogue is not independently screenplay-verified"
+        }
+      ],
+      "navigation": "editorially selected paper route; no NarrativeConnection edge asserted"
+    }
+  ],
+  "selected_source_values": 23
+}

@@ -1,0 +1,2695 @@
+# Character/Agent Data
+# Generated: 2026-02-18T09:54:33.740005
+
+- fabula_uuid: agent_eda659a30222
+  global_id: null
+  canonical_name: Abramoff
+  title_role: null
+  description: Abramoff works as a deckhand aboard the Demeter. His duties include
+    standing watch at the wheel, serving as an impromptu waiter in the passenger lounge,
+    guarding doors during crises, and reporting passenger disappearances to Captain
+    Sokolov. He fixates on Dorabella, Lord Ruthven's wife, which distracts him from
+    tasks and exposes his vulnerability. Frequent interactions with crew like Portmann,
+    Olgaren, and Old Valentin, plus passengers such as Lord Ruthven and Dr. Sharma,
+    pull him into the ship's escalating tensions. Dutiful at core, his growing suspicions
+    and injuries highlight his place amid the supernatural unraveling.
+  traits:
+  - lovesick
+  - dutiful
+  - distracted
+  - suspicious
+  - vulnerable
+  aliases: []
+  character_type: Speaking Character
+  sphere_of_influence: Demeter Crew Operations
+  appearance_count: 20
+  importance_tier: planet
+  affiliated_organization_uuid: organization_35df59e9d646
+- fabula_uuid: agent_6ce9168f2b55
+  global_id: null
+  canonical_name: Adisa
+  title_role: null
+  description: Adisa acts as personal servant to Lord and Lady Ruthven aboard the
+    Demeter. He shows fierce loyalty to Dorabella, whom he treats as family, while
+    nursing deep resentment toward Ruthven for exploiting her. Quick to spot omens
+    like flies and sense unnatural threats, he mutters warnings and confronts predators
+    directly. His sharp wit emerges in banter with Dr. Sharma, and suppressed rage
+    fuels defiance against Dracula's manipulations. Skeptical of supernatural excuses,
+    grief over losses drives his bold interruptions and final reckless stand.
+  traits:
+  - resentful
+  - observant
+  - skeptical
+  - defiant
+  - witty
+  aliases: []
+  character_type: Speaking Character
+  sphere_of_influence: Ruthven Household Service
+  appearance_count: 13
+  importance_tier: planet
+  affiliated_organization_uuid: organization_08f3333c936a
+- fabula_uuid: agent_09ee5fad16ae
+  global_id: null
+  canonical_name: Agatha Van Helsing
+  title_role: Sister
+  description: 19th-century Van Helsing family member; ancestor of Zoe Helsing; spectral
+    guide embedded in Dracula's bloodline.
+  traits: &id001
+  - defiant
+  - insightful
+  - sacrificial
+  - resolute
+  - cryptic
+  aliases: &id002
+  - Sister Agatha
+  - AGATHA
+  character_type: Speaking Character
+  sphere_of_influence: Van Helsing Occult Vampire Defenses
+  appearance_count: 119
+  importance_tier: anchor
+  affiliated_organization_uuid: organization_0bd325a8f98c
+- fabula_uuid: agent_09ee5fad16ae
+  global_id: null
+  canonical_name: Agatha Van Helsing
+  title_role: Sister
+  description: 19th-century Van Helsing family member; ancestor of Zoe Helsing; spectral
+    guide embedded in Dracula's bloodline.
+  traits: *id001
+  aliases: *id002
+  character_type: Speaking Character
+  sphere_of_influence: Van Helsing Occult Vampire Defenses
+  appearance_count: 119
+  importance_tier: anchor
+  affiliated_organization_uuid: organization_71503e7aa4d7
+- fabula_uuid: agent_1c6f80738c23
+  global_id: null
+  canonical_name: Alice
+  title_role: null
+  description: Alice forms part of Lucy Westenra's close friend group, alongside Sam
+    and Zev. She drives social energy through excited squeals, playful teasing, and
+    curious intrusions into group banter. Her naive questions often disrupt tense
+    moments, revealing an obliviousness to hidden conflicts. Loyal enough to attend
+    Lucy's funeral in the front row, Alice prioritizes fun and camaraderie, probing
+    phones and photos with eager amusement while missing deeper distress signals.
+  traits:
+  - playful
+  - curious
+  - naive
+  - excited
+  - teasing
+  aliases: []
+  character_type: Speaking Character
+  sphere_of_influence: Lucy Westenra's friend group
+  appearance_count: 6
+  importance_tier: planet
+  affiliated_organization_uuid: null
+- fabula_uuid: agent_d9feb282ba9a
+  global_id: null
+  canonical_name: Andrea
+  title_role: Guard
+  description: Andrea works as a guard in a security team monitoring supernatural
+    threats like Dracula. She operates under The Commander's direct orders, prioritizing
+    documentation and discipline. Her resolve shines against fear, committing to duty
+    even outnumbered by ancient evil. Ties to Zoe Helsing's unit place her in the
+    frontlines of bloodline conflicts, where human courage meets immortal predation.
+  traits:
+  - dutiful
+  - resolute
+  - nervous
+  aliases: []
+  character_type: Non-speaking Character
+  sphere_of_influence: Security and Surveillance
+  appearance_count: 5
+  importance_tier: planet
+  affiliated_organization_uuid: organization_71503e7aa4d7
+- fabula_uuid: agent_5d0c96f1360d
+  global_id: null
+  canonical_name: Andy
+  title_role: null
+  description: Andy operates as a crematorium worker at Dellside Crematorium. In his
+    30s, he cuts a smart, trim figure that contrasts with stereotypes of his profession.
+    Weary from underpaid labor, he approaches duties with clinical detachment, often
+    distracted by his phone amid monotonous shifts. Curiosity compels him to probe
+    disturbances, exposing him to supernatural threats beyond his mundane world. His
+    routine existence anchors the horror of reanimation in everyday banality.
+  traits:
+  - weary
+  - detached
+  - curious
+  - professional
+  aliases: []
+  character_type: Speaking Character
+  sphere_of_influence: Crematorium Operations
+  appearance_count: 4
+  importance_tier: asteroid
+  affiliated_organization_uuid: organization_71503e7aa4d7
+- fabula_uuid: agent_9ef02d638a86
+  global_id: null
+  canonical_name: Angela
+  title_role: Sister
+  description: Nun who serves as a **moral and emotional anchor** within the convent,
+    embodying **quiet piety** and **communal support**. Her role is **reactive and
+    humanistic**, focusing on **recovery and bonds** rather than supernatural conflict.
+  traits:
+  - pious
+  - moral
+  - supportive
+  aliases: []
+  character_type: Non-speaking Character
+  sphere_of_influence: Convent religious community
+  appearance_count: 1
+  importance_tier: asteroid
+  affiliated_organization_uuid: organization_0bd325a8f98c
+- fabula_uuid: agent_697b938ce93e
+  global_id: null
+  canonical_name: Baby (Unseen)
+  title_role: null
+  description: An infant whose cries echo unheard through Dracula's castle, the baby
+    stands as a symbol of overlooked human fragility. Ignored by the vampire lord,
+    it underscores the predation that spares no life, its distant wails a constant
+    undercurrent to the castle's horrors.
+  traits:
+  - helpless
+  - distressed
+  - innocent
+  aliases: []
+  character_type: Non-speaking Character
+  sphere_of_influence: null
+  appearance_count: 5
+  importance_tier: planet
+  affiliated_organization_uuid: null
+- fabula_uuid: agent_2b4bb308b3b3
+  global_id: null
+  canonical_name: Barmaid at the Rose and Crown
+  title_role: Barmaid
+  description: The barmaid at the Rose and Crown works in the village pub, serving
+    patrons amid local social life. Mina Harker names her among potential rivals for
+    Jonathan Harker's affections, marking her as an attractive figure in their community.
+    She embodies everyday temptations that test romantic commitments in provincial
+    England.
+  traits:
+  - attractive
+  - sociable
+  - approachable
+  aliases: []
+  character_type: Non-speaking Character
+  sphere_of_influence: Village pub hospitality
+  appearance_count: 1
+  importance_tier: asteroid
+  affiliated_organization_uuid: null
+- fabula_uuid: agent_e1407e539a96
+  global_id: null
+  canonical_name: Barnaby
+  title_role: null
+  description: Barnaby counts among Jonathan Harker's friends and moves in his social
+    circle. Mina Harker observes his consistent pleasure when encountering her, a
+    detail that marks his approachable nature. She invokes his name alongside other
+    acquaintances to tease Jonathan about potential rivals, revealing Barnaby's position
+    as an affable figure whose warmth adds tension to their relationship dynamics.
+  traits:
+  - sociable
+  - attentive
+  - charming
+  aliases: []
+  character_type: Non-speaking Character
+  sphere_of_influence: personal relationships
+  appearance_count: 1
+  importance_tier: asteroid
+  affiliated_organization_uuid: null
+- fabula_uuid: agent_0023ccd42317
+  global_id: null
+  canonical_name: Bavarian Helmsman (Demeter Crew)
+  title_role: Helmsman
+  description: Historical sailor aboard the original *Demeter* voyage (19th century)
+    who mans the ship’s wheel. Defined by his Bavarian accent and mundane role in
+    ship operations, serving as atmospheric world-building rather than a plot-critical
+    character. Interacts with historical figures (Agatha Van Helsing, Duchess Valeryia).
+  traits:
+  - charming
+  - unremarkable
+  - dutiful
+  aliases:
+  - Bavarian Crew Member
+  character_type: Non-speaking Character
+  sphere_of_influence: Ship Navigation
+  appearance_count: 3
+  importance_tier: asteroid
+  affiliated_organization_uuid: organization_35df59e9d646
+- fabula_uuid: agent_0136ad2242a1
+  global_id: null
+  canonical_name: Benedict Cumberbatch
+  title_role: null
+  description: Benedict Cumberbatch stands as a prominent actor within London's cultural
+    elite. He mingles effortlessly with high-society figures, including Dracula, in
+    glossy magazine spreads that capture his laughter and poise amid models and celebrities.
+    His associations position him as a bridge between artistic acclaim and glamorous
+    social circles, where charisma draws him into the orbit of influential predators
+    and prey alike. Affable and camera-ready, he embodies the allure of modern fame
+    that vampires exploit for camouflage.
+  traits:
+  - charismatic
+  - sociable
+  - prominent
+  aliases: []
+  character_type: Non-speaking Character
+  sphere_of_influence: Cultural Elite
+  appearance_count: 1
+  importance_tier: asteroid
+  affiliated_organization_uuid: organization_7858b1418867
+- fabula_uuid: agent_90cbb9d2eeb3
+  global_id: null
+  canonical_name: Bloxham
+  title_role: null
+  description: 'Senior operative in the Jonathan Harker Foundation specializing in
+    both **supernatural wreck exploration** (e.g., Demeter shipwreck) and **vampire
+    containment protocols**. Lost her thumb to Dracula during his revival aboard the
+    *Demeter*, a defining trauma that fuels her dual roles: (1) **fieldwork** (diving,
+    artifact recovery, firsthand confrontation with supernatural threats) and (2)
+    **operational leadership** (briefing recruits, overseeing isolation protocols,
+    mediating legal crises like those involving Frank Renfield). Known for her **clinical
+    pragmatism**, **dark humor**, and **authoritative demeanor**, she bridges the
+    gap between frontline horror and bureaucratic strategy. Key relationships include
+    **Zoe Helsing** (tensions between fieldwork and bureaucracy) and **Jack Seward**
+    (vampire-hunting network), with her work anchored in translating perilous discoveries
+    into actionable intelligence for the Foundation.'
+  traits:
+  - professional
+  - pragmatic
+  - authoritative
+  - detached
+  - darkly humorous
+  aliases:
+  - Diver
+  - Senior Operative (Jonathan Harker Foundation)
+  - Containment Director (Dracula Task Force)
+  character_type: Speaking Character
+  sphere_of_influence: Jonathan Harker Foundation Containment Operations
+  appearance_count: 11
+  importance_tier: planet
+  affiliated_organization_uuid: organization_71503e7aa4d7
+- fabula_uuid: agent_28a0d85b9c76
+  global_id: null
+  canonical_name: Bob
+  title_role: null
+  description: 'Bob stands as Kathleen''s husband, a figure whose physical abuse toward
+    her emerges from memories Dracula consumes. He endures Dracula''s predation: crammed
+    alive into a fridge with contorted limbs, killed yet reanimated into a clawing
+    corpse that strains against confinement and begs Zoe Helsing for death. His restless
+    undeath marks him as a victim caught between domestic strife and vampiric horror,
+    his final pleas revealing raw desperation amid manipulation by the ancient predator.'
+  traits:
+  - abusive
+  - desperate
+  - tormented
+  aliases: []
+  character_type: Speaking Character
+  sphere_of_influence: null
+  appearance_count: 6
+  importance_tier: planet
+  affiliated_organization_uuid: null
+- fabula_uuid: agent_67f20f56d50a
+  global_id: null
+  canonical_name: Boys
+  title_role: null
+  description: Living, human young men serving as background figures in nightlife
+    scenes, with no supernatural or plot-relevant traits. Distinct from any spectral
+    or monstrous entities.
+  traits:
+  - discreet
+  - passionate
+  - youthful
+  aliases: []
+  character_type: Mentioned Only
+  sphere_of_influence: Urban Nightlife
+  appearance_count: 0
+  importance_tier: asteroid
+  affiliated_organization_uuid: null
+- fabula_uuid: agent_7c91aa18a44e
+  global_id: null
+  canonical_name: Butcher's Boy
+  title_role: null
+  description: Young tradesman in a small English town, apprenticed to the local butcher.
+    He handles meat delivery and shop duties, anchoring him in working-class routines.
+    Eligible as a bachelor among townsfolk, he catches notice in social jests for
+    his proximity and availability, contrasting with wealthier suitors. Steady presence
+    in daily community life defines his role, untouched by grand ambitions or distant
+    travels.
+  traits:
+  - unpretentious
+  - approachable
+  - dependable
+  aliases:
+  - the butcher’s boy
+  character_type: Mentioned Only
+  sphere_of_influence: Local Commerce
+  appearance_count: 0
+  importance_tier: asteroid
+  affiliated_organization_uuid: null
+- fabula_uuid: agent_b46aa2ffc148
+  global_id: null
+  canonical_name: Carriage Driver (Dracula's Agent)
+  title_role: Carriage Driver
+  description: Singular, ominous figure with supernatural ties to Count Dracula. Acts
+    as a ferryman for Jonathan Harker, issuing prophetic warnings and later abandoning
+    him at Castle Dracula. Reappears in a hearse-like carriage, exhibiting predatory
+    behavior and a cat-like eye gleam. Acknowledged by Dracula, positioning him as
+    a key supernatural agent in the plot.
+  traits:
+  - silent
+  - predatory
+  - ominous
+  - detached
+  aliases:
+  - DRIVER
+  character_type: Speaking Character
+  sphere_of_influence: Conveyance to Castle Dracula
+  appearance_count: 6
+  importance_tier: planet
+  affiliated_organization_uuid: organization_bc2eb00b9abf
+- fabula_uuid: agent_c7216d2e7f7b
+  global_id: null
+  canonical_name: Carriage Passengers
+  title_role: null
+  description: Anonymous collective of rural Transylvanian locals serving as passive
+    witnesses to supernatural tensions. Their role is atmospheric, emphasizing the
+    communal unease and wariness of the region's hidden dangers. Confined to a single
+    scene and interact only as silent observers.
+  traits:
+  - observant
+  - curious
+  - suspicious
+  - uneasy
+  aliases:
+  - Passengers (in the carriage)
+  - Other passengers
+  character_type: Non-speaking Character
+  sphere_of_influence: Transylvanian Travelers
+  appearance_count: 2
+  importance_tier: asteroid
+  affiliated_organization_uuid: null
+- fabula_uuid: agent_1ce572860f34
+  global_id: null
+  canonical_name: Chaperone Nun
+  title_role: Nun
+  description: Young nun stationed at the Hungarian convent in 1897. She chaperones
+    senior Sister Agatha during questioning of outsiders like Jonathan Harker, ensuring
+    propriety in tense encounters. Meek and silent, she clasps her hands and averts
+    her eyes, her unease betraying a deep sensitivity to unnatural disturbances. Obedient
+    to superiors, her presence heightens the room's strain without a word, reflecting
+    the convent's vigilant order against encroaching evil.
+  traits:
+  - meek
+  - submissive
+  - obedient
+  - visibly disturbed
+  aliases:
+  - Nun (Chaperone)
+  - Nun (chaperone)
+  character_type: Non-speaking Character
+  sphere_of_influence: Convent Chaperone Duties
+  appearance_count: 3
+  importance_tier: asteroid
+  affiliated_organization_uuid: organization_0bd325a8f98c
+- fabula_uuid: agent_5b812335fa3d
+  global_id: null
+  canonical_name: Civilian Volunteer Blood Donors (Jonathan Harker Foundation)
+  title_role: null
+  description: Non-combatant civilians recruited as potential blood donors and test
+    subjects for the Foundation. Wearing pajamas and blood-type badges, they undergo
+    briefings on vampire threats (e.g., Dracula) under leaders like Bloxham. Their
+    reactions—ranging from curiosity to fear—highlight the personal risks of civilian
+    involvement in anti-supernatural operations.
+  traits:
+  - impressionable
+  - apprehensive
+  - attentive
+  aliases:
+  - Audience
+  character_type: Non-speaking Character
+  sphere_of_influence: Jonathan Harker Foundation anti-vampire research
+  appearance_count: 1
+  importance_tier: asteroid
+  affiliated_organization_uuid: organization_71503e7aa4d7
+- fabula_uuid: agent_e85c7920ee84
+  global_id: null
+  canonical_name: Club Patrons
+  title_role: null
+  description: A faceless, energetic collective of nightclub attendees who serve as
+    a narrative backdrop, amplifying Lucy Westenra's charisma through their chaotic,
+    high-energy behavior. Unlike individual characters, they lack distinct identities,
+    interactions, or symbolic roles beyond their atmospheric function.
+  traits:
+  - excited
+  - energetic
+  - hysterical
+  aliases: []
+  character_type: Mentioned Only
+  sphere_of_influence: Nightclub Social Scene
+  appearance_count: 0
+  importance_tier: asteroid
+  affiliated_organization_uuid: null
+- fabula_uuid: agent_0ca2f96c0d26
+  global_id: null
+  canonical_name: Commander
+  title_role: null
+  description: The Commander directs a military security unit combating supernatural
+    threats like Dracula in modern England. He oversees high-stakes operations on
+    sites such as Whitby Beach, issuing orders to guards and coordinating with Harker
+    Foundation operatives including Zoe Helsing and Bloxham. Older and senior, he
+    maintains authority amid chaos, observing foes warily while prioritizing containment
+    protocols and institutional warnings about untrustworthy enemies. His disciplined
+    leadership enforces human defenses against ancient evils.
+  traits:
+  - authoritative
+  - wary
+  - stern
+  - alert
+  - disciplined
+  aliases: []
+  character_type: Speaking Character
+  sphere_of_influence: Supernatural Threat Containment
+  appearance_count: 6
+  importance_tier: planet
+  affiliated_organization_uuid: organization_71503e7aa4d7
+- fabula_uuid: agent_f95a9ab24eed
+  global_id: null
+  canonical_name: Convent Nuns
+  title_role: null
+  description: The Convent Nuns comprise a sisterhood in a Hungarian convent, bound
+    by faith and duty to safeguard their sanctuary. They serve under the leadership
+    of Sister Agatha and the Mother Superior, confronting supernatural threats with
+    sharpened stakes, holy symbols, and fervent prayers. Their collective actions
+    reveal a deep piety tempered by resolve, as they unite in defense against encroaching
+    evil. Fearful yet defiant, they embody communal strength, their vigilance protecting
+    arrivals like Jonathan Harker from vampiric corruption. Their actions are driven
+    by faith and communal resolve, marking them as frontline warriors in spiritual
+    battles.
+  traits:
+  - devout
+  - resolute
+  - defiant
+  - protective
+  - communal
+  aliases:
+  - Nuns
+  - The Nuns
+  character_type: Non-speaking Character
+  sphere_of_influence: Convent Defense Against Supernatural Threats
+  appearance_count: 22
+  importance_tier: planet
+  affiliated_organization_uuid: organization_0bd325a8f98c
+- fabula_uuid: agent_41a00d1a1fca
+  global_id: null
+  canonical_name: Creature 2 (Shambling Figure 1/2)
+  title_role: null
+  description: 'Creature 2 (formerly known as Shambling Figure 1 and Shambling Figure
+    2) serves as one of Dracula''s reanimated corpses, confined for years in twisted
+    poses within Castle Dracula''s crates. This undead figure exhibits two distinct
+    but related forms: one with a broken neck (head flopped along one shoulder) that
+    shambles forward with jerky, unnatural steps, and another that crawls on its knees
+    with one leg bent forward at an unnatural angle. Both variants repeat the plea
+    ''Omoara-ma'' in a rusty whisper, imploring death from any living intruder they
+    pursue. These undead figures embody the count''s dehumanizing curse, relentlessly
+    advancing as part of the castle''s rising horrors. They interact with Jonathan
+    Harker, the Old Woman Creature, and other reanimated corpses, forming a coordinated
+    undead contingent under Dracula''s command.'
+  traits:
+  - desperate
+  - persistent
+  - grotesque
+  - unnatural
+  - contorted
+  - imploring
+  aliases:
+  - Shambling Figure 1
+  - Creature 3
+  - Shambling Figure 2
+  - CREATURE 2
+  character_type: Speaking Character
+  sphere_of_influence: Undead Servitude in Castle Dracula
+  appearance_count: 5
+  importance_tier: planet
+  affiliated_organization_uuid: organization_bc2eb00b9abf
+- fabula_uuid: agent_47f7d48fe23d
+  global_id: null
+  canonical_name: Creature 3
+  title_role: Reanimated Corpse
+  description: Part of Dracula's undead horde, distinguished by its slouching, limping
+    gait and lack of grotesque facial deformities. Operates as a coordinated unit
+    with other reanimated corpses, enforcing the castle's barriers through collective
+    movement.
+  traits:
+  - tormented
+  - pleading
+  - shambling
+  - persistent
+  aliases:
+  - box creature
+  - reanimated corpse
+  character_type: Speaking Character
+  sphere_of_influence: Dracula's Castle Undead Horde
+  appearance_count: 1
+  importance_tier: asteroid
+  affiliated_organization_uuid: organization_bc2eb00b9abf
+- fabula_uuid: agent_5541c83e8aa6
+  global_id: null
+  canonical_name: Crew of the Demeter
+  title_role: null
+  description: Sailors and officers man the merchant ship *Demeter* under Captain
+    Sokolov. The crew includes both named figures (e.g., Old Valentin, Olgaren, Abramoff)
+    and unnamed members who support shipboard operations during crises. Old Valentin
+    stirs their ranks with xenophobic fervor, while figures like Lord Ruthven steer
+    their actions. Supernatural horrors aboard erode their discipline, sparking paranoia
+    that binds them into a desperate collective. They guard doors, bind suspects,
+    rush injured crewmates to quarters, and demand confessions with raised fists—embodying
+    the breakdown of sailors' discipline when isolation meets the uncanny. The crew
+    functions as a unified, if fractured, entity, with some members (e.g., the Bavarian
+    helmsman) standing out briefly for individual traits (e.g., accent, role) but
+    ultimately serving the collective.
+  traits:
+  - paranoid
+  - frenzied
+  - violent
+  - fear-driven
+  - desperate
+  - panicked
+  - cooperative
+  - dutiful
+  aliases:
+  - Unnamed Crew Members
+  - Other Crew
+  - The Mob
+  character_type: Non-speaking Character
+  sphere_of_influence: Shipboard Survival
+  appearance_count: 4
+  importance_tier: asteroid
+  affiliated_organization_uuid: organization_35df59e9d646
+- fabula_uuid: agent_26b337cc5e37
+  global_id: null
+  canonical_name: Crewmen and Passengers (Supernatural Mob)
+  title_role: null
+  description: A fractured collective of sailors and civilians aboard the *Demeter*
+    who, after witnessing supernatural events, descend into mob violence, turning
+    on each other in panic. Their erratic behavior serves as both a threat to survivors
+    and a manifestation of Dracula’s psychological influence.
+  traits: &id003
+  - fearful
+  - desperate
+  - violent
+  - impulsive
+  aliases: &id004
+  - the crewmen and passengers (mob)
+  - the mob
+  character_type: Non-speaking Character
+  sphere_of_influence: Demeter Shipboard Dynamics
+  appearance_count: 1
+  importance_tier: asteroid
+  affiliated_organization_uuid: organization_35df59e9d646
+- fabula_uuid: agent_26b337cc5e37
+  global_id: null
+  canonical_name: Crewmen and Passengers (Supernatural Mob)
+  title_role: null
+  description: A fractured collective of sailors and civilians aboard the *Demeter*
+    who, after witnessing supernatural events, descend into mob violence, turning
+    on each other in panic. Their erratic behavior serves as both a threat to survivors
+    and a manifestation of Dracula’s psychological influence.
+  traits: *id003
+  aliases: *id004
+  character_type: Non-speaking Character
+  sphere_of_influence: Demeter Shipboard Dynamics
+  appearance_count: 1
+  importance_tier: asteroid
+  affiliated_organization_uuid: organization_08f3333c936a
+- fabula_uuid: agent_3e9007ec1902
+  global_id: null
+  canonical_name: Deck-Hands (Pre-Departure Crew)
+  title_role: null
+  description: A subgroup of professional sailors responsible for outfitting the *Demeter*
+    before departure. Their laborious, routine-focused work contrasts with the later
+    supernatural chaos, serving as a **grounding element** in the early episodes.
+  traits:
+  - professional
+  - busy
+  - tense
+  - pragmatic
+  aliases: []
+  character_type: Non-speaking Character
+  sphere_of_influence: Ship Outfitting and Provisions
+  appearance_count: 2
+  importance_tier: asteroid
+  affiliated_organization_uuid: organization_35df59e9d646
+- fabula_uuid: agent_f1e2bf95440a
+  global_id: null
+  canonical_name: Deeper Voice Undead Man
+  title_role: null
+  description: One of Dracula's undead victims manifests as a disembodied voice rising
+    from the grave. This deeper-voiced man endures the vampire curse's full horror,
+    his identity eroded to fragments as he pleads for his lost face. He joins other
+    tormented souls in a chorus of agony, driven by desperate longing for wholeness
+    and release. His cries expose the disintegration at undeath's core, serving as
+    testament to Dracula's power over the dead.
+  traits:
+  - desperate
+  - tormented
+  - imploring
+  - fragmented
+  aliases:
+  - Deeper Voice
+  - Undead Man
+  character_type: Non-speaking Character
+  sphere_of_influence: Dracula's Undead
+  appearance_count: 2
+  importance_tier: asteroid
+  affiliated_organization_uuid: organization_bc2eb00b9abf
+- fabula_uuid: agent_cf5cabcaba69
+  global_id: null
+  canonical_name: Dockside Provisioning Women (Varna Port)
+  title_role: null
+  description: Local women at the Varna docks (and other Black Sea ports) load provisions
+    into baskets for departing ships like the *Demeter*. They work steadily amid crew
+    sign-ons and cargo transfers, providing essential supplies. Anonymous and collective,
+    they sustain maritime operations through routine labor, operating outside aristocratic
+    or crew hierarchies. Their neutral professionalism contrasts the scene's growing
+    unease without direct involvement. Old Valentin cites them in proverbs warning
+    of bad luck from women aboard, reflecting sailor superstitions.
+  traits:
+  - diligent
+  - professional
+  - efficient
+  aliases:
+  - Women Loading Provisions (Varna)
+  - Dockside Provisioning Crew (Black Sea Ports)
+  - Anonymous Provisioning Workers
+  character_type: Mentioned Only
+  sphere_of_influence: Dockside Provisioning
+  appearance_count: 0
+  importance_tier: asteroid
+  affiliated_organization_uuid: null
+- fabula_uuid: agent_06e035e4cbb0
+  global_id: null
+  canonical_name: Doctor
+  title_role: Doctor
+  description: The doctor operates as a hospital physician in a Russian medical facility,
+    handling end-of-life protocols amid family grief and clerical presence. He coordinates
+    with nurses and stands by during moments of crisis involving patients like Piotr,
+    maintaining clinical distance. His actions define the medical boundary before
+    supernatural intrusions, driven by duty to procedure over emotional entanglement.
+    Relationships center on medical staff (nurses) and peripheral figures (priests,
+    parents).
+  traits:
+  - professional
+  - clinical
+  - detached
+  aliases: []
+  character_type: Non-speaking Character
+  sphere_of_influence: Hospital Medicine
+  appearance_count: 2
+  importance_tier: asteroid
+  affiliated_organization_uuid: organization_71503e7aa4d7
+- fabula_uuid: agent_25ceb4d5dd1c
+  global_id: null
+  canonical_name: Dorabella Ruthven
+  title_role: Lady Ruthven
+  description: Dorabella Ruthven is the beautiful and naive newlywed wife of Lord
+    Ruthven, an aristocratic couple among the *Demeter*'s passengers bound for America.
+    She exudes excitement over her recent marriage and dreams of building a family
+    in the new world, embodying aristocratic innocence and romantic optimism. Her
+    trusting nature and openness draw admiration from crewman Abramoff, while her
+    restlessness and vulnerability position her as an early target in the ship's supernatural
+    ordeal. Despite her husband's status, her naivety leaves her blind to the encroaching
+    horrors aboard the vessel, culminating in a fatal encounter with Count Dracula.
+    Her interactions with the captain, crew, and servant Adisa highlight her role
+    as a bridge between aristocratic privilege and the perilous realities of the journey.
+  traits:
+  - naive
+  - excitable
+  - romantic
+  - trusting
+  - flirtatious
+  aliases:
+  - Dorabella
+  - Lady Dorabella
+  - Lady Ruthven
+  character_type: Speaking Character
+  sphere_of_influence: null
+  appearance_count: 16
+  importance_tier: planet
+  affiliated_organization_uuid: organization_08f3333c936a
+- fabula_uuid: agent_adfd4b67136a
+  global_id: null
+  canonical_name: Dr. Abraham Helsing
+  title_role: Doctor
+  description: Modern-era doctor and operational leader of the Harker Foundation;
+    mentor to Jack Seward; no direct connection to 19th-century Van Helsing lineage.
+  traits:
+  - Secretive
+  - Authoritative
+  - Mentoring
+  aliases:
+  - Dr. Helsing
+  character_type: Speaking Character
+  sphere_of_influence: Harker Foundation Operations
+  appearance_count: 1
+  importance_tier: asteroid
+  affiliated_organization_uuid: organization_71503e7aa4d7
+- fabula_uuid: agent_a53a9c548239
+  global_id: null
+  canonical_name: Dracula
+  title_role: Count
+  description: Dracula rules as the ancient vampire count of Transylvania, launching
+    his invasion of England aboard the Demeter. He feeds on crew and passengers to
+    sustain his power, concealing bloodlust behind refined charm and verbal duels.
+    Sister Agatha serves as his chief intellectual rival in chess-like mind games,
+    while he seduces aristocrats like Lord Ruthven and the Grand Duchess Valeryia,
+    dominates scientists like Dr. Sharma, and toys with crew like Olgaren and Piotr.
+    Driven by addiction to blood and conquest, he blends aristocratic poise with monstrous
+    savagery.
+  traits:
+  - manipulative
+  - predatory
+  - charming
+  - calculating
+  - arrogant
+  aliases:
+  - Count Dracula
+  - Balaur
+  - Mr. Balaur
+  - Dracula
+  character_type: Speaking Character
+  sphere_of_influence: Vampiric predation and psychological domination
+  appearance_count: 231
+  importance_tier: anchor
+  affiliated_organization_uuid: organization_bc2eb00b9abf
+- fabula_uuid: agent_1f1562601ea9
+  global_id: null
+  canonical_name: Dracula's Brides
+  title_role: null
+  description: 'Dracula''s Brides are three undead vampire women enslaved in Count
+    Dracula''s Transylvanian castle. Bound eternally to his will, they function as
+    his thralls, haunting chambers with mocking laughter and seductive whispers that
+    herald his arrival. Their existence blends seduction and suffering: they torment
+    captives like Jonathan Harker while occasionally revealing glimpses of trapped
+    autonomy (e.g., one bride warns Harker at personal peril before Dracula destroys
+    her). As predatory enforcers in Dracula''s hierarchy, they embody his absolute
+    control over the supernatural, their peripheral presence amplifying his psychological
+    dominance. Their feral grace masks their role as disposable instruments of eternal
+    corruption, driven by savage hunger for fresh blood and their master''s favor.'
+  traits: &id005
+  - mocking
+  - sinister
+  - tormented
+  - enslaved
+  - predatory
+  - seductive
+  - eerily silent
+  - menacing
+  aliases: &id006
+  - the brides
+  - Dracula’s brides
+  - Vampire Brides
+  character_type: Speaking Character
+  sphere_of_influence: Vampiric Thrall Service
+  appearance_count: 3
+  importance_tier: asteroid
+  affiliated_organization_uuid: organization_bc2eb00b9abf
+- fabula_uuid: agent_1f1562601ea9
+  global_id: null
+  canonical_name: Dracula's Brides
+  title_role: null
+  description: 'Dracula''s Brides are three undead vampire women enslaved in Count
+    Dracula''s Transylvanian castle. Bound eternally to his will, they function as
+    his thralls, haunting chambers with mocking laughter and seductive whispers that
+    herald his arrival. Their existence blends seduction and suffering: they torment
+    captives like Jonathan Harker while occasionally revealing glimpses of trapped
+    autonomy (e.g., one bride warns Harker at personal peril before Dracula destroys
+    her). As predatory enforcers in Dracula''s hierarchy, they embody his absolute
+    control over the supernatural, their peripheral presence amplifying his psychological
+    dominance. Their feral grace masks their role as disposable instruments of eternal
+    corruption, driven by savage hunger for fresh blood and their master''s favor.'
+  traits: *id005
+  aliases: *id006
+  character_type: Speaking Character
+  sphere_of_influence: Vampiric Thrall Service
+  appearance_count: 3
+  importance_tier: asteroid
+  affiliated_organization_uuid: organization_c308034fb7d9
+- fabula_uuid: agent_37b6e33c1da1
+  global_id: null
+  canonical_name: Dracula's Harbinger Wolf
+  title_role: null
+  description: A massive, supernatural wolf that serves as Count Dracula's omen, positioning
+    itself outside sacred boundaries to signal his approach. Unlike the Eviscerated
+    Wolf, this entity is a living, impassive beast embodying quiet menace and testing
+    human faith through its presence alone.
+  traits:
+  - impassive
+  - ominous
+  - patient
+  - intimidating
+  aliases: []
+  character_type: Non-speaking Character
+  sphere_of_influence: Supernatural Omens
+  appearance_count: 1
+  importance_tier: asteroid
+  affiliated_organization_uuid: organization_bc2eb00b9abf
+- fabula_uuid: agent_ef2e9f106a10
+  global_id: null
+  canonical_name: Dracula's Herald Bat (Tactical Familiar)
+  title_role: null
+  description: A **singular, physical, predatory familiar** acting as Dracula’s precision
+    weapon—distinct from the Swarm of Bats. Functions as a **breaching agent**, **wounding
+    instrument**, and **swarm trigger**, operating with individual agency to herald
+    Dracula’s arrival and erode defenses through targeted actions.
+  traits:
+  - predatory
+  - loyal
+  - supernatural
+  - aggressive
+  - heraldic
+  aliases: []
+  character_type: Non-speaking Character
+  sphere_of_influence: Vampiric Incursions
+  appearance_count: 2
+  importance_tier: asteroid
+  affiliated_organization_uuid: organization_bc2eb00b9abf
+- fabula_uuid: agent_68447839f209
+  global_id: null
+  canonical_name: Dracula's High-Society Escorts
+  title_role: null
+  description: Glamorous, poised women who accompany Dracula at elite events and in
+    fashion media, amplifying his charismatic infiltration of modern high society.
+    Serve as visual extensions of his public image, masking his predatory nature with
+    an aura of untouchable allure.
+  traits:
+  - glamorous
+  - poised
+  - enigmatic
+  aliases: []
+  character_type: Non-speaking Character
+  sphere_of_influence: High-Society Fashion
+  appearance_count: 1
+  importance_tier: asteroid
+  affiliated_organization_uuid: organization_bc2eb00b9abf
+- fabula_uuid: agent_92a7562866b5
+  global_id: null
+  canonical_name: Dracula's Swarm of Bats (Collective Familiar)
+  title_role: null
+  description: A **mass of screeching, flapping creatures** serving as Dracula’s collective
+    familiar—distinct from the Herald Bat. Operates through **sheer numbers and chaos**,
+    overwhelming targets, disorienting enemies, and forming living barriers to enforce
+    Dracula’s supremacy. Triggered by the Herald Bat or Dracula’s presence, it lacks
+    individual agency and acts as a **force multiplier** rather than a precision instrument.
+  traits:
+  - coordinated
+  - predatory
+  - disorienting
+  - relentless
+  - instinct-driven
+  aliases:
+  - bats
+  - black ivy
+  - bat mass
+  character_type: Non-speaking Character
+  sphere_of_influence: Dracula's Tactical Distractions
+  appearance_count: 5
+  importance_tier: planet
+  affiliated_organization_uuid: organization_bc2eb00b9abf
+- fabula_uuid: agent_565a3613c686
+  global_id: null
+  canonical_name: Dracula's Victims
+  title_role: null
+  description: Disembodied spectral echoes of Dracula's past victims, manifesting
+    as unending screams that erode sanity and serve as passive weapons in his defense.
+    Lack physical form or individual agency, functioning purely as an atmospheric
+    and psychological threat.
+  traits:
+  - agonized
+  - despairing
+  - relentless
+  aliases: []
+  character_type: Non-speaking Character
+  sphere_of_influence: null
+  appearance_count: 1
+  importance_tier: asteroid
+  affiliated_organization_uuid: organization_bc2eb00b9abf
+- fabula_uuid: agent_9c1c3fadbbf2
+  global_id: null
+  canonical_name: Dracula's Wolves Pack
+  title_role: null
+  description: A feral, supernatural pack of wolves bound to Count Dracula's will,
+    serving as his instruments of terror and extensions of his power. The pack embodies
+    raw predatory instinct and feral obedience, launching coordinated assaults on
+    Dracula's enemies—particularly targeting vulnerable foes in sacred or defended
+    spaces. Their synchronized howls herald Dracula's arrival, shattering human sanctuaries
+    and symbolically corrupting resistance. The pack operates as both a vanguard in
+    his nocturnal conquests and an omen of the boundary where nature bends to darkness,
+    amplifying terror and underscoring the fragility of opposition to vampiric forces.
+  traits:
+  - feral
+  - obedient
+  - savage
+  - predatory
+  aliases:
+  - Wolves Pack
+  - The Wolves
+  - Dracula's Feral Pack
+  - Supernatural Wolves of Dracula
+  character_type: Non-speaking Character
+  sphere_of_influence: Supernatural predation
+  appearance_count: 5
+  importance_tier: planet
+  affiliated_organization_uuid: organization_bc2eb00b9abf
+- fabula_uuid: agent_e79bc1e564fd
+  global_id: null
+  canonical_name: Driver
+  title_role: null
+  description: Driver works as a chauffeur who provides discreet transportation for
+    Jack. He arrives in a black car during key moments outside social venues like
+    the club, opening the door with professional efficiency. His silent presence hints
+    at ties to Jack's hidden world, positioning him as a facilitator in networks of
+    secrecy and influence.
+  traits:
+  - discreet
+  - professional
+  - efficient
+  aliases: []
+  character_type: Speaking Character
+  sphere_of_influence: Private Transportation
+  appearance_count: 2
+  importance_tier: asteroid
+  affiliated_organization_uuid: organization_71503e7aa4d7
+- fabula_uuid: agent_d444ad8e7681
+  global_id: null
+  canonical_name: Drunk Club Girl (Gutter)
+  title_role: null
+  description: A specific, unnamed young woman who collapses intoxicated outside the
+    nightclub, symbolizing the physical and emotional toll of hedonism. Unlike the
+    anonymous Club Patrons, she is an individual character with defined interactions
+    (e.g., with Jack Seward, Lucy Westenra) and a clear narrative role as a foil to
+    Lucy's vitality.
+  traits:
+  - intoxicated
+  - vulnerable
+  - hedonistic
+  aliases:
+  - Girl
+  - a Girl
+  character_type: Speaking Character
+  sphere_of_influence: Urban Nightlife
+  appearance_count: 1
+  importance_tier: asteroid
+  affiliated_organization_uuid: null
+- fabula_uuid: agent_767aa74b1ed8
+  global_id: null
+  canonical_name: Edwin
+  title_role: null
+  description: Edwin colleagues with Jonathan Harker in his professional office. Mina
+    Harker singles him out as a handsome coworker whose warm greetings brighten her
+    days. She invokes his name to stir jealousy in Jonathan, positioning Edwin as
+    an unwitting symbol of romantic temptation amid marital strain. His presence underscores
+    the everyday allure that tests absent lovers' bonds.
+  traits:
+  - charming
+  - affable
+  - attentive
+  aliases: []
+  character_type: Non-speaking Character
+  sphere_of_influence: Jonathan Harker's office
+  appearance_count: 1
+  importance_tier: asteroid
+  affiliated_organization_uuid: organization_22b096bbfbb0
+- fabula_uuid: agent_8c6161526ea6
+  global_id: null
+  canonical_name: Elena
+  title_role: null
+  description: One of Count Dracula's vampiric brides, imprisoned in the Bridal Chamber
+    of his Transylvanian castle. Unlike human victims or peasants, she is already
+    a vampire and part of Dracula's undead hierarchy.
+  traits: &id007
+  - childlike
+  - predatory
+  - playful
+  - manipulative
+  - hungry
+  aliases: &id008 []
+  character_type: Speaking Character
+  sphere_of_influence: Dracula's Vampiric Thralls
+  appearance_count: 6
+  importance_tier: planet
+  affiliated_organization_uuid: organization_bc2eb00b9abf
+- fabula_uuid: agent_8c6161526ea6
+  global_id: null
+  canonical_name: Elena
+  title_role: null
+  description: One of Count Dracula's vampiric brides, imprisoned in the Bridal Chamber
+    of his Transylvanian castle. Unlike human victims or peasants, she is already
+    a vampire and part of Dracula's undead hierarchy.
+  traits: *id007
+  aliases: *id008
+  character_type: Speaking Character
+  sphere_of_influence: Dracula's Vampiric Thralls
+  appearance_count: 6
+  importance_tier: planet
+  affiliated_organization_uuid: organization_c308034fb7d9
+- fabula_uuid: agent_bacb7036d670
+  global_id: null
+  canonical_name: Eviscerated Wolf
+  title_role: null
+  description: The eviscerated lupine remnant left behind after Count Dracula's transformation
+    into a vampire, symbolizing the grotesque and painful cost of his rebirth. Unlike
+    the Huge Wolf, this entity is a discarded husk—twitching, whimpering, and alive
+    in agony—rather than a supernatural harbinger.
+  traits:
+  - agonized
+  - pitiful
+  - helplessly twitching
+  aliases:
+  - wolf (eviscerated)
+  - emptied wolf hide
+  character_type: Non-speaking Character
+  sphere_of_influence: null
+  appearance_count: 2
+  importance_tier: asteroid
+  affiliated_organization_uuid: null
+- fabula_uuid: agent_ea336c79c36c
+  global_id: null
+  canonical_name: Fishermen
+  title_role: null
+  description: The Fishermen operate as a cohesive group of local seafarers trawling
+    coastal waters near the convent. They rescue maritime anomalies, as seen in their
+    handling of unusual survivors, and deliver them promptly to religious authorities
+    like Sister Agatha. Pragmatic and alert to the extraordinary, they connect everyday
+    labor to larger supernatural disruptions, serving as unwitting bridges between
+    the ordinary world and cloistered sanctuaries.
+  traits:
+  - observant
+  - dutiful
+  - pragmatic
+  aliases:
+  - the fishermen
+  character_type: Non-speaking Character
+  sphere_of_influence: coastal fishing and maritime rescue
+  appearance_count: 1
+  importance_tier: asteroid
+  affiliated_organization_uuid: organization_0bd325a8f98c
+- fabula_uuid: agent_0b056e208e33
+  global_id: null
+  canonical_name: Fly
+  title_role: null
+  description: A single fly that embodies Dracula's vampiric corruption. It moves
+    with unnatural purpose across the faces of his victims, landing on cheeks, perching
+    on unblinking eyes, vanishing into them, or emerging from slack mouths. Present
+    amid the dying and undead, from convent beds to private bedrooms, it signals irreversible
+    supernatural decay and the count's insidious reach. Nuns and companions recoil
+    from its deliberate path, which transforms a common insect into a vector of horror
+    and eternal curse.
+  traits:
+  - unnatural
+  - insidious
+  - persistent
+  - grotesque
+  aliases:
+  - the fly
+  - a fly
+  character_type: Non-speaking Character
+  sphere_of_influence: Vampiric Corruption
+  appearance_count: 5
+  importance_tier: planet
+  affiliated_organization_uuid: organization_bc2eb00b9abf
+- fabula_uuid: agent_05618ea8e881
+  global_id: null
+  canonical_name: Frank Renfield
+  title_role: Solicitor
+  description: Frank Renfield serves as Count Dracula's solicitor through the firm
+    Hawkins & Wentworth, representing him since 1896. His fanatical devotion drives
+    him to dismantle adversaries like the Jonathan Harker Foundation using legal loopholes
+    and bureaucratic precision. As advisor, scribe, and driver, he presses Dracula
+    toward world-domination goals despite frustration with his client's distractions.
+    Calm and manipulative, Renfield blends professional detachment with obsessive
+    loyalty, shielding ancient power through modern law.
+  traits:
+  - devoted
+  - professional
+  - manipulative
+  - obsessive
+  - exasperated
+  aliases:
+  - FRANK
+  character_type: Speaking Character
+  sphere_of_influence: Legal Representation
+  appearance_count: 15
+  importance_tier: planet
+  affiliated_organization_uuid: organization_3c5844212cba
+- fabula_uuid: agent_6334a8bc85e9
+  global_id: null
+  canonical_name: Girl from Klausenberg
+  title_role: null
+  description: A thin, odd young woman from Klausenberg who warns travelers of Count
+    Dracula's dangers. She approaches strangers like Jonathan Harker during carriage
+    rides to share local knowledge of the vampire's perils, embodying the superstitious
+    caution of Transylvanian villagers. Dismissed by Dracula as narrow-minded, she
+    represents the folk wisdom that outsiders ignore at their peril. Her brief but
+    pointed interventions highlight the cultural chasm between locals and foreigners.
+  traits:
+  - perceptive
+  - superstitious
+  - outspoken
+  aliases:
+  - Girl (from Klausenberg)
+  character_type: Non-speaking Character
+  sphere_of_influence: Transylvanian folklore and local warnings
+  appearance_count: 3
+  importance_tier: asteroid
+  affiliated_organization_uuid: null
+- fabula_uuid: agent_2a6ae7db0a2b
+  global_id: null
+  canonical_name: Glamorous Woman
+  title_role: null
+  description: The Glamorous Woman navigates high society as Dracula's escort, her
+    stylish presence featured on gossip programs. She wears trendy outfits like the
+    praised peach skirt dress and appears amid models and celebrities such as Benedict
+    Cumberbatch. Poised and alluring, she bolsters the Count's infiltration of modern
+    elite circles, her glamour masking his predatory reach.
+  traits:
+  - glamorous
+  - fashionable
+  - poised
+  aliases: []
+  character_type: Non-speaking Character
+  sphere_of_influence: High Society Fashion
+  appearance_count: 1
+  importance_tier: asteroid
+  affiliated_organization_uuid: organization_bc2eb00b9abf
+- fabula_uuid: agent_ab464f0d76f3
+  global_id: null
+  canonical_name: Guards
+  title_role: null
+  description: Guards secure sites tied to supernatural threats. They surround figures
+    like Zoe Helsing, wear hard hats for protection, and join larger teams that oversee
+    operations. They assist workmen with equipment such as diggers while coordinating
+    near military leaders like the Commander and officials like Bloxham. Disciplined
+    and integrated into containment efforts, they blend security vigilance with hands-on
+    support to manage hazardous areas amid chaos and grief.
+  traits:
+  - vigilant
+  - practical
+  - disciplined
+  - cooperative
+  aliases: []
+  character_type: Non-speaking Character
+  sphere_of_influence: Site Security and Containment
+  appearance_count: 7
+  importance_tier: planet
+  affiliated_organization_uuid: organization_71503e7aa4d7
+- fabula_uuid: agent_a280a69d414a
+  global_id: null
+  canonical_name: Gupta
+  title_role: null
+  description: Gupta works as a grave-robber in Calcutta alongside Khan. The pair
+    targets suspicious graves, such as those marked by unnatural weeping, and delivers
+    the exhumed coffins to scientists like Dr. Sharma. Gupta complies with instructions
+    but hesitates before handling dangerous contents. His nervous demeanor and quick
+    slide into terror reveal a man out of his depth when grave-robbing unearths active
+    supernatural threats. Khan serves as his steady partner in this grim trade.
+  traits:
+  - nervous
+  - hesitant
+  - compliant
+  - fearful
+  aliases: []
+  character_type: Speaking Character
+  sphere_of_influence: Grave-robbing
+  appearance_count: 3
+  importance_tier: asteroid
+  affiliated_organization_uuid: null
+- fabula_uuid: agent_5a6725cbe219
+  global_id: null
+  canonical_name: Harker Foundation Security Team
+  title_role: null
+  description: Elite multi-tiered security force under the Harker Foundation’s mandate,
+    specializing in supernatural containment. **Distinct from Jonathan Harker, the
+    individual whose name the Foundation bears.** Operatives include stealth-focused
+    infiltrators and uniformed guards, equipped with advanced containment technology.
+    Their operations prioritize capture over confrontation, blending modern tactics
+    with ancient threat mitigation.
+  traits:
+  - stealthy
+  - professional
+  - evasive
+  - prepared
+  aliases:
+  - Unseen Threat
+  - Guard (Harker Foundation)
+  - Harker Foundation operative
+  - Uniformed guard
+  character_type: Non-speaking Character
+  sphere_of_influence: Supernatural Containment Operations
+  appearance_count: 2
+  importance_tier: asteroid
+  affiliated_organization_uuid: organization_71503e7aa4d7
+- fabula_uuid: agent_f43f6f126655
+  global_id: null
+  canonical_name: Hawkins
+  title_role: null
+  description: Hawkins directs Jonathan Harker as a senior partner in a London law
+    firm. He assigns solicitors to property deals abroad, including Count Dracula's
+    castle transaction. Professional duty to superiors like Hawkins anchors Harker's
+    obligations, positioning Hawkins as a key authority in the firm's international
+    operations.
+  traits:
+  - authoritative
+  - professional
+  - distant
+  aliases:
+  - Mr. Hawkins
+  character_type: Non-speaking Character
+  sphere_of_influence: Law Firm Management
+  appearance_count: 2
+  importance_tier: asteroid
+  affiliated_organization_uuid: organization_22b096bbfbb0
+- fabula_uuid: agent_c2c475181fb2
+  global_id: null
+  canonical_name: Holmwood
+  title_role: Dr.
+  description: Dr. Holmwood practices medicine among the acquaintances of Jonathan
+    Harker and Mina Murray. Mina names him first among eligible bachelors in her teasing
+    letter to Jonathan, calling him very handsome and pairing him with mutual friends
+    Reggie and Barnaby. He embodies the romantic competition Mina invokes to test
+    Jonathan's devotion during his absence, marking him as a prominent figure in their
+    social world whose mere mention stirs jealousy.
+  traits:
+  - handsome
+  - socially prominent
+  - romantically eligible
+  aliases: []
+  character_type: Mentioned Only
+  sphere_of_influence: Medical Practice
+  appearance_count: 0
+  importance_tier: asteroid
+  affiliated_organization_uuid: organization_7858b1418867
+- fabula_uuid: agent_ecabbc6be283
+  global_id: null
+  canonical_name: Jack Seward
+  title_role: Junior Doctor
+  description: Jack Seward serves as a junior doctor pursuing mental health specialization.
+    Heir to the Van Helsing legacy through ties to Jonathan Harker, he grapples with
+    suppressing that heritage while entangled in his love for Lucy Westenra. Precise
+    and disciplined in his ordered world, he maintains clinical detachment amid rivals
+    like Quincey Morris and colleagues such as Zoe Helsing. Cynicism toward privilege
+    masks vulnerability, driving him to protect loved ones from supernatural threats
+    even at personal cost.
+  traits:
+  - precise
+  - detached
+  - conflicted
+  - cynical
+  - vulnerable
+  aliases:
+  - Jack
+  character_type: Speaking Character
+  sphere_of_influence: Psychiatric Medicine
+  appearance_count: 30
+  importance_tier: planet
+  affiliated_organization_uuid: organization_71503e7aa4d7
+- fabula_uuid: agent_15ab6364a96a
+  global_id: null
+  canonical_name: Jeff
+  title_role: null
+  description: Jeff ranks among the front-row recruits in the Jonathan Harker Foundation's
+    briefing room, where teams prepare to confront Dracula's resurgent threat. He
+    shares blood-type labels with peers and maintains levity amid grim revelations
+    about the Demeter's horrors. Quick to spot arrivals like Jack Seward, Jeff deploys
+    sharp humor—dubbing neutral blood 'Vanilla'—to draw laughter from tense audiences.
+    His wit positions him as a morale booster, forging bonds through shared defiance
+    against supernatural dread.
+  traits:
+  - playful
+  - humorous
+  - observant
+  aliases: []
+  character_type: Non-speaking Character
+  sphere_of_influence: Foundation Recruit Training
+  appearance_count: 2
+  importance_tier: asteroid
+  affiliated_organization_uuid: organization_71503e7aa4d7
+- fabula_uuid: agent_e0c9af46ae1c
+  global_id: null
+  canonical_name: Jonathan Harker
+  title_role: Solicitor
+  description: Individual human and symbolic figurehead of the anti-vampire resistance;
+    his survival of Dracula's castle and engagement to Mina Murray make him a foundational
+    figure in the war against the undead. **Not to be confused with the Harker Foundation,
+    the organization named in his honor.**
+  traits:
+  - professional
+  - resilient
+  - persistent
+  - dutiful
+  aliases:
+  - Jonathan
+  - Mr. Harker
+  - Jonny
+  character_type: Speaking Character
+  sphere_of_influence: Anti-vampire foundations and legal networks
+  appearance_count: 139
+  importance_tier: anchor
+  affiliated_organization_uuid: organization_71503e7aa4d7
+- fabula_uuid: agent_8f34a5dca58f
+  global_id: null
+  canonical_name: Jonathan Harker Foundation Nurse
+  title_role: Nurse
+  description: Institutional gatekeeper at the Jonathan Harker Foundation, specializing
+    in patient intake, administrative containment protocols, and high-security case
+    management (e.g., Dracula, Frank Renfield). Interacts with Foundation staff and
+    patients, including Jack Seward and Zoe Helsing, and demonstrates awareness of
+    institutional risks.
+  traits:
+  - efficient
+  - observant
+  - detached
+  - professional
+  - ominous
+  aliases:
+  - Nurse
+  character_type: Speaking Character
+  sphere_of_influence: Jonathan Harker Foundation Medical Operations
+  appearance_count: 6
+  importance_tier: planet
+  affiliated_organization_uuid: organization_71503e7aa4d7
+- fabula_uuid: agent_f82039762dfc
+  global_id: null
+  canonical_name: Kathleen
+  title_role: null
+  description: Kathleen, an ordinary woman in her early thirties, shares a shabby
+    suburban home with her abusive husband Bob. Her cross necklace reveals underlying
+    faith that subtly shields her from supernatural threats. She navigates daily life
+    marked by marital strife until Dracula invades her world, forcing her to confront
+    horror through raw panic and desperate acts of resistance. Her bonds tie her to
+    Bob's cruelty and Dracula's predation, while her hysteria exposes profound emotional
+    fragility amid loss.
+  traits:
+  - fearful
+  - resilient
+  - hysterical
+  - devout
+  aliases: []
+  character_type: Speaking Character
+  sphere_of_influence: Domestic Civilian Life
+  appearance_count: 11
+  importance_tier: planet
+  affiliated_organization_uuid: null
+- fabula_uuid: agent_65d4f1aca08b
+  global_id: null
+  canonical_name: Khan
+  title_role: null
+  description: Khan partners with Gupta as a grave-robber in Calcutta, hauling exhumed
+    coffins to scientists like Dr. Sharma. He survived a prior vampiric attack as
+    a crewman, where the creature killed Gupta while he struggled in its grasp. Compliant
+    yet hesitant, he shares nervous glances with his partner before facing coffin
+    horrors. Fear grips him as shadows rise, positioning him as a bridge between the
+    curse's bloody past and its fresh threat.
+  traits:
+  - nervous
+  - hesitant
+  - compliant
+  - fearful
+  - silent
+  aliases: []
+  character_type: Non-speaking Character
+  sphere_of_influence: Grave-robbing and supernatural procurement
+  appearance_count: 3
+  importance_tier: asteroid
+  affiliated_organization_uuid: organization_35df59e9d646
+- fabula_uuid: agent_70e92a64a7bc
+  global_id: null
+  canonical_name: Krasnaya Rubashka
+  title_role: null
+  description: Krasnaya Rubashka crews the Demeter, a sailing ship bound for England.
+    She shares Old Valentin's conviction that supernatural forces curse the vessel,
+    listening intently to his warnings and recruiting fellow sailors who harbor similar
+    fears. Her ties to crewmates like Olgaren and passengers such as Dr. Sharma, Lord
+    Ruthven, and Adisa place her at the heart of mounting tensions. Cautious and pragmatic,
+    Krasnaya channels unease into action, bridging superstition and survival instincts
+    amid the voyage's unraveling order.
+  traits:
+  - superstitious
+  - cautious
+  - receptive
+  - pragmatic
+  aliases:
+  - Krasnaya
+  character_type: Non-speaking Character
+  sphere_of_influence: Demeter Deck Crew
+  appearance_count: 9
+  importance_tier: planet
+  affiliated_organization_uuid: organization_35df59e9d646
+- fabula_uuid: agent_ba24a63f13a1
+  global_id: null
+  canonical_name: London Detective
+  title_role: Detective
+  description: London-based detective in British law enforcement. Specializes in tracing
+    missing persons and fugitives across international borders. Collaborates with
+    religious authorities like Sister Agatha on cases blending routine policing with
+    hints of the supernatural. Resourceful investigator whose work enables recovery
+    of trauma survivors linked to distant threats.
+  traits:
+  - resourceful
+  - diligent
+  - collaborative
+  aliases:
+  - A Detective (in London)
+  character_type: Mentioned Only
+  sphere_of_influence: Criminal Investigation
+  appearance_count: 0
+  importance_tier: asteroid
+  affiliated_organization_uuid: organization_d7cf5e34107a
+- fabula_uuid: agent_6aa1fdfa8000
+  global_id: null
+  canonical_name: Lucy Westenra
+  title_role: null
+  description: Lucy Westenra commands attention as a charismatic social media influencer
+    and nightlife socialite. She draws rivals Jack Seward and Quincey Morris into
+    flirtatious pursuits while sharing a home with roommate Meg and camaraderie with
+    Zev. Dracula singles her out as his predatory ideal, binding her through shared
+    isolation. Her manipulative charm and performative cheer conceal exhaustion and
+    a defiant pull toward intense, forbidden experiences that promise escape from
+    mediocrity.
+  traits:
+  - manipulative
+  - performative
+  - haunted
+  - defiant
+  aliases:
+  - LW
+  - Luce
+  - Bloofer lady
+  - LUCY
+  character_type: Speaking Character
+  sphere_of_influence: Social Media and Nightlife Circles
+  appearance_count: 50
+  importance_tier: anchor
+  affiliated_organization_uuid: null
+- fabula_uuid: agent_16ac8ef675a0
+  global_id: null
+  canonical_name: Man in a Suit
+  title_role: null
+  description: Representative of the Jonathan Harker Foundation who comforts families
+    devastated by supernatural encounters. He projects steady professionalism amid
+    chaos, offering solace to the hysterical like Kathleen while coordinating with
+    military and institutional figures such as Bloxham and the Commander. His role
+    anchors the foundation's human response to Dracula's aftermath, blending empathy
+    with bureaucratic duty.
+  traits:
+  - supportive
+  - professional
+  - calm
+  - empathetic
+  aliases:
+  - Man in a suit
+  character_type: Non-speaking Character
+  sphere_of_influence: Jonathan Harker Foundation crisis response
+  appearance_count: 1
+  importance_tier: asteroid
+  affiliated_organization_uuid: organization_71503e7aa4d7
+- fabula_uuid: agent_c9cd542ff259
+  global_id: null
+  canonical_name: Marius
+  title_role: null
+  description: Marius poses as crewman Piotr on the Demeter, a young runaway from
+    Bistritz chasing seafaring dreams. Inexperienced yet earnest, he bonds with first
+    mate Olgaren, sharing his true name amid shipboard perils. His wide-eyed curiosity
+    draws him into crew dynamics and exposes him to Dracula's manipulations. Loyal
+    in crises, he aids Olgaren against mutinous actions while grappling with vulnerability
+    and a longing for belonging at sea.
+  traits:
+  - naive
+  - earnest
+  - vulnerable
+  - loyal
+  - aspirational
+  aliases:
+  - Piotr
+  character_type: Speaking Character
+  sphere_of_influence: Demeter Crew
+  appearance_count: 25
+  importance_tier: planet
+  affiliated_organization_uuid: organization_35df59e9d646
+- fabula_uuid: agent_c1aab027b045
+  global_id: null
+  canonical_name: Meg
+  title_role: null
+  description: Meg acts as Lucy Westenra's roommate and steadfast friend, voicing
+    concern over Lucy's erratic sleep and well-being with offers of tea and gentle
+    scoldings. Her loyalty surfaces in protective interruptions and unwavering presence
+    at Lucy's funeral, where grief leaves her pole-axed and sobbing amid friends like
+    Zev and Jack Seward. Bonds with Lucy's circle define her world, her raw vulnerability
+    highlighting ordinary lives caught in supernatural crossfire.
+  traits:
+  - caring
+  - protective
+  - loyal
+  - emotionally vulnerable
+  aliases: []
+  character_type: Speaking Character
+  sphere_of_influence: Lucy's Friendship Circle
+  appearance_count: 8
+  importance_tier: planet
+  affiliated_organization_uuid: null
+- fabula_uuid: agent_7615dd57c4b4
+  global_id: null
+  canonical_name: Mina Murray
+  title_role: null
+  description: Mina Murray stands as Jonathan Harker's fiancée and closest ally against
+    Dracula's threats. She poses as a silent nun in a Transylvanian convent, tending
+    his recovery from the castle horrors with intimate knowledge and subtle care.
+    Her English accent betrays her origins, while she balances restraint and empathy
+    in the face of trauma. Devout and resilient, Mina guards vital secrets entrusted
+    by Sister Agatha, driven by love, faith, and determination to resist supernatural
+    darkness.
+  traits: &id009
+  - resilient
+  - devout
+  - empathetic
+  - restrained
+  - secretive
+  aliases: &id010
+  - Mina
+  - The Nun
+  - Silent Nun
+  character_type: Speaking Character
+  sphere_of_influence: Convent-based anti-vampire resistance
+  appearance_count: 47
+  importance_tier: planet
+  affiliated_organization_uuid: organization_0bd325a8f98c
+- fabula_uuid: agent_7615dd57c4b4
+  global_id: null
+  canonical_name: Mina Murray
+  title_role: null
+  description: Mina Murray stands as Jonathan Harker's fiancée and closest ally against
+    Dracula's threats. She poses as a silent nun in a Transylvanian convent, tending
+    his recovery from the castle horrors with intimate knowledge and subtle care.
+    Her English accent betrays her origins, while she balances restraint and empathy
+    in the face of trauma. Devout and resilient, Mina guards vital secrets entrusted
+    by Sister Agatha, driven by love, faith, and determination to resist supernatural
+    darkness.
+  traits: *id009
+  aliases: *id010
+  character_type: Speaking Character
+  sphere_of_influence: Convent-based anti-vampire resistance
+  appearance_count: 47
+  importance_tier: planet
+  affiliated_organization_uuid: organization_71503e7aa4d7
+- fabula_uuid: agent_aa870c652f1c
+  global_id: null
+  canonical_name: Modern Diver (Demeter Wreck Expedition)
+  title_role: Diver
+  description: 'Part of a contemporary archaeological team that discovers the *Demeter*
+    wreck and directly interacts with Dracula’s coffin, triggering his reanimation.
+    Operates in an underwater environment and is tied to the modern narrative timeline
+    (Episode 3: *The Dark Compass*).'
+  traits:
+  - investigative
+  - bold
+  - vulnerable
+  aliases:
+  - Demeter Wreck Diver
+  character_type: Non-speaking Character
+  sphere_of_influence: Underwater Wreck Exploration
+  appearance_count: 1
+  importance_tier: asteroid
+  affiliated_organization_uuid: organization_35df59e9d646
+- fabula_uuid: agent_d17f778ca6d3
+  global_id: null
+  canonical_name: Mother Superior
+  title_role: Mother Superior
+  description: Mother Superior heads the Hungarian convent that shelters fugitives
+    from Dracula's castle. She wields authority over Sister Agatha and the nuns, enforcing
+    convent discipline and upholding traditional Catholic faith. Skeptical of supernatural
+    threats and unorthodox inquiries, she questions disturbances and dismisses warnings
+    as temptations or folly. Her leadership maintains the community's spiritual order
+    amid encroaching evil, clashing with Agatha's pragmatic instincts. Devoted to
+    sanctity, she anchors the nuns' resolve through prayer and routine, blind at first
+    to the vampire's true peril.
+  traits:
+  - authoritative
+  - skeptical
+  - incredulous
+  - devout
+  - protective
+  aliases: []
+  character_type: Speaking Character
+  sphere_of_influence: Convent leadership
+  appearance_count: 11
+  importance_tier: planet
+  affiliated_organization_uuid: organization_0bd325a8f98c
+- fabula_uuid: agent_8dda4d851a68
+  global_id: null
+  canonical_name: Mourners
+  title_role: null
+  description: The Mourners comprise an anonymous group attending Lucy Westenra's
+    funeral at Dellsid Crematorium. Dressed in black, they form a slow procession
+    into the chapel, their deliberate silence underscoring collective grief over her
+    death. They stand as communal witnesses to loss, bound by shared mourning in a
+    world touched by supernatural forces, their presence evoking the fragility of
+    human bonds against looming darkness.
+  traits:
+  - somber
+  - silent
+  - grieving
+  aliases: []
+  character_type: Non-speaking Character
+  sphere_of_influence: Communal Mourning
+  appearance_count: 1
+  importance_tier: asteroid
+  affiliated_organization_uuid: null
+- fabula_uuid: agent_117a939d1199
+  global_id: null
+  canonical_name: Mummified Man
+  title_role: null
+  description: The Mummified Man serves as one of Dracula's reanimated corpses, confined
+    to a packing crate in the castle storage room amid personal belongings. Twisted
+    and crushed to fit the space, he animates with a shudder, his single bloodshot
+    eye fixing on intruders and his clawed hand grasping outward. He moves with other
+    undead in a shambling pursuit, their shared whispers of 'Omoara-ma' revealing
+    pleas for death amid eternal torment. His decayed form underscores Dracula's command
+    over the dead, turning victims into instruments of horror.
+  traits:
+  - agonized
+  - unnatural
+  - persistent
+  - grotesque
+  aliases:
+  - Creature 1
+  - Creature 1 (Mummified Man)
+  character_type: Mentioned Only
+  sphere_of_influence: Dracula's Castle Undead
+  appearance_count: 0
+  importance_tier: asteroid
+  affiliated_organization_uuid: organization_bc2eb00b9abf
+- fabula_uuid: agent_3d7b1508ae0b
+  global_id: null
+  canonical_name: Mysterious Caller
+  title_role: null
+  description: Anonymous operative who contacts humans via phone to counter Dracula's
+    threats. Calls target Kathleen at her home, spurring her flight as the vampire
+    confronts his reflection and wounds heal. Ties to secure coffin/phone setup suggest
+    Harker Foundation backing, positioning the caller as tech-savvy disruptor in modern
+    anti-vampire resistance. Precise identity and full motives stay hidden, defined
+    by covert precision over direct confrontation.
+  traits:
+  - enigmatic
+  - calculated
+  - disruptive
+  aliases:
+  - Unseen Caller
+  character_type: Non-speaking Character
+  sphere_of_influence: Covert Intervention
+  appearance_count: 3
+  importance_tier: asteroid
+  affiliated_organization_uuid: organization_71503e7aa4d7
+- fabula_uuid: agent_807056bcac13
+  global_id: null
+  canonical_name: Newborn Vampire
+  title_role: null
+  description: The Newborn Vampire is Count Dracula's experimental creation, the first
+    infant undead born from his alchemical tampering with reproduction. Pale-skinned
+    with a cat's-eye stare and protruding fangs, it moves on all fours and giggles
+    amid predatory advances. This entity merges childlike playfulness with vampiric
+    hunger, targeting victims through glass barriers with slapping hands. It signals
+    the curse's spread to new generations, corrupting innocence into monstrosity within
+    Dracula's domain.
+  traits:
+  - predatory
+  - playful
+  - instinctive
+  - feral
+  aliases:
+  - infant vampire
+  - baby vampire
+  - tiny creature
+  character_type: Non-speaking Character
+  sphere_of_influence: Vampiric Reproduction
+  appearance_count: 2
+  importance_tier: asteroid
+  affiliated_organization_uuid: organization_bc2eb00b9abf
+- fabula_uuid: agent_1344b0b46e32
+  global_id: null
+  canonical_name: Old Valentin
+  title_role: null
+  description: Old Valentin stands as a grizzled veteran crewman aboard the Demeter,
+    steeped in maritime superstitions that shape his worldview. He blames women and
+    foreigners for curses, offers gruff reassurance to young sailors like Piotr, and
+    spots omens such as dead seagulls and unnatural fog. His paranoia drives escape
+    plots with Krasnaya and fuels mob rants against perceived evils, positioning him
+    as a voice of dread within the crew. Relationships with Olgaren and Abramoff highlight
+    his place among hardened deckhands facing supernatural threats.
+  traits:
+  - superstitious
+  - misogynistic
+  - xenophobic
+  - paranoid
+  - grim
+  aliases:
+  - VALENTIN
+  character_type: Speaking Character
+  sphere_of_influence: Demeter crew superstitions
+  appearance_count: 15
+  importance_tier: planet
+  affiliated_organization_uuid: organization_35df59e9d646
+- fabula_uuid: agent_1822fe010607
+  global_id: null
+  canonical_name: Old Woman Creature
+  title_role: null
+  description: A uniquely grotesque reanimated corpse with a 180-degree twisted neck,
+    blind white eyes, and a skull-like grin. Unlike other horde members, she is described
+    as an isolated figure with a 'tiny shriveled body' and 'flaking fingernails',
+    emphasizing her individual torment.
+  traits:
+  - desperate
+  - grotesque
+  - persistent
+  - haunting
+  aliases:
+  - OLD WOMAN
+  character_type: Speaking Character
+  sphere_of_influence: Dracula's Undead Victims
+  appearance_count: 3
+  importance_tier: asteroid
+  affiliated_organization_uuid: organization_bc2eb00b9abf
+- fabula_uuid: agent_e0b34998ef78
+  global_id: null
+  canonical_name: Old Woman on the Dock
+  title_role: null
+  description: An elderly dockside local, she stands as a folk sentinel attuned to
+    supernatural omens. Her piety drives her to cross herself against unnatural cargo
+    and presences. She directs silent headshakes of warning to young sailors nearby,
+    blending horror, fascination, and foreboding instinct. Rooted in regional superstition,
+    she cautions the unwary through gesture, her vigilance a quiet counter to encroaching
+    evil.
+  traits:
+  - superstitious
+  - perceptive
+  - pious
+  - foreboding
+  aliases:
+  - Old Woman
+  character_type: Speaking Character
+  sphere_of_influence: Dockside Supernatural Warnings
+  appearance_count: 1
+  importance_tier: asteroid
+  affiliated_organization_uuid: null
+- fabula_uuid: agent_c492f93b70c6
+  global_id: null
+  canonical_name: Olgaren
+  title_role: First Mate
+  description: Olgaren serves as first mate aboard the Demeter under Captain Sokolov.
+    A burly, bearded veteran sailor, he wears an iron spike prosthetic where his hand
+    once was, scarred from a prior shipwreck that ties him to Sokolov through guilt
+    and trust. Boisterous yet gruff, he banters with crew like Piotr and Old Valentin,
+    cooks in the galley, and probes ship oddities with keen curiosity. Loyal and resilient,
+    he protects comrades, wields his spike in combat against vampires, and drives
+    survival efforts from mutiny to escape.
+  traits:
+  - boisterous
+  - loyal
+  - gruff
+  - resilient
+  - protective
+  aliases: []
+  character_type: Speaking Character
+  sphere_of_influence: Demeter Crew Operations
+  appearance_count: 33
+  importance_tier: planet
+  affiliated_organization_uuid: organization_35df59e9d646
+- fabula_uuid: agent_fd2b13a8a46c
+  global_id: null
+  canonical_name: Petruvio
+  title_role: Architect
+  description: Petruvio the widower built Castle Dracula, engineering its twisting
+    passages and inescapable layout to control movement and foster dread. His designs
+    align with the Count's predatory instincts, turning architecture into a weapon
+    of entrapment. Marked by personal tragedy, Petruvio's legacy carries a shadow
+    of loss, evoked in tales that unsettle castle visitors.
+  traits:
+  - ingenious
+  - shadowy
+  - tragic
+  - methodical
+  aliases:
+  - Petruvio the widower
+  - the widower
+  character_type: Non-speaking Character
+  sphere_of_influence: Castle Architecture
+  appearance_count: 1
+  importance_tier: asteroid
+  affiliated_organization_uuid: organization_bc2eb00b9abf
+- fabula_uuid: agent_b48fb553c35b
+  global_id: null
+  canonical_name: Piotr's Mother
+  title_role: null
+  description: Piotr's mother anchors her identity in fierce devotion to her young
+    son, a boy who dreamed of sea adventures. Father Stepashin guides her through
+    grief into ritual action against vampiric corruption. Her love clashes with horror
+    as she wields stake and hammer, embodying parental resolve that demands unthinkable
+    violence to reclaim a child's soul from darkness. Trembling hands and wrenching
+    sobs reveal her as an ordinary woman forged into an instrument of mercy amid supernatural
+    dread.
+  traits:
+  - devoted
+  - grief-stricken
+  - resolute
+  - conflicted
+  - horrified
+  aliases:
+  - Mother
+  character_type: Speaking Character
+  sphere_of_influence: Maternal Protection against Vampirism
+  appearance_count: 2
+  importance_tier: asteroid
+  affiliated_organization_uuid: organization_0bd325a8f98c
+- fabula_uuid: agent_cf84101ec0b5
+  global_id: null
+  canonical_name: Portmann
+  title_role: null
+  description: Portmann is a grizzled crewman on the Demeter, tasked with dispensing
+    rum and enforcing discipline among sailors. His German accent and Bavarian heritage
+    mark him as a sharp-tongued veteran who chides distractions and guards secrets.
+    He maintains order through gruff authority, interacts closely with Abramoff and
+    Piotr, and shows subservience to superiors like Captain Sokolov and Dracula. Fear
+    drives his complicity in hiding horrors, blending pragmatic seamanship with mounting
+    dread in the ship's tense hierarchy.
+  traits:
+  - gruff
+  - no-nonsense
+  - sharp-tongued
+  - fearful
+  - pragmatic
+  aliases: []
+  character_type: Speaking Character
+  sphere_of_influence: Demeter Crew Operations
+  appearance_count: 13
+  importance_tier: planet
+  affiliated_organization_uuid: organization_35df59e9d646
+- fabula_uuid: agent_a4f774506b03
+  global_id: null
+  canonical_name: Possessed Peasant Girl from Transylvania
+  title_role: null
+  description: A seventeen-year-old human peasant from rural Transylvania who falls
+    under Dracula's demonic possession during her journey by coach. Unlike vampiric
+    brides, she is a living human and a victim of Dracula's influence, not part of
+    his undead hierarchy.
+  traits:
+  - desperate
+  - compassionate
+  - possessed
+  - aggressive
+  aliases:
+  - Girl
+  - Transylvanian Peasant Girl
+  character_type: Speaking Character
+  sphere_of_influence: Transylvanian Countryside
+  appearance_count: 2
+  importance_tier: asteroid
+  affiliated_organization_uuid: null
+- fabula_uuid: agent_b34c88bfc447
+  global_id: null
+  canonical_name: Presenter
+  title_role: null
+  description: Presenter hosts a gossip program on television, delivering light commentary
+    on fashion and celebrity events. She spotlights high-society figures like Dracula
+    alongside glamorous women and celebrities such as Benedict Cumberbatch, focusing
+    on details like affordable dresses and peach skirts. Her role underscores ironic
+    detachment from deeper horrors, as her superficial prattle contrasts Zoe Helsing's
+    suffering. Oblivious to supernatural undercurrents, she embodies media's fixation
+    on surface glamour amid encroaching dread.
+  traits:
+  - vacuous
+  - superficial
+  - chatty
+  - oblivious
+  aliases: []
+  character_type: Speaking Character
+  sphere_of_influence: Gossip Television
+  appearance_count: 1
+  importance_tier: asteroid
+  affiliated_organization_uuid: organization_3a08d2902067
+- fabula_uuid: agent_839573fbd4e1
+  global_id: null
+  canonical_name: Quincey Morris
+  title_role: null
+  description: Quincey Morris, a wealthy American from Texas, pursues Lucy Westenra
+    as her fiancé within her vibrant social circle. He projects confident charm in
+    group settings, bantering playfully with friends like Alice, Sam, and Zev while
+    clashing with rival Jack Seward. Beneath the bravado lies insecurity about his
+    fortune's role in affections, fostering a cynical, transactional outlook on relationships.
+    His calculated detachment surfaces in moments of crisis, favoring self-preservation
+    over group loyalty.
+  traits:
+  - confident
+  - cynical
+  - insecure
+  - detached
+  - performative
+  aliases:
+  - Quince
+  - QUINCEY
+  character_type: Speaking Character
+  sphere_of_influence: Romantic and social dynamics
+  appearance_count: 11
+  importance_tier: planet
+  affiliated_organization_uuid: null
+- fabula_uuid: agent_041277c60e1c
+  global_id: null
+  canonical_name: Reanimated Corpses (Dracula's Undead Victims)
+  title_role: null
+  description: The Reanimated Corpses are Dracula's undead victims, confined as desiccated,
+    mummified figures in packing cases and throughout his castle. These tormented
+    entities endure eternal agony from his vampiric curse, cornering intruders (e.g.,
+    Jonathan Harker) while pleading 'Omoara-ma' ('kill me') in Romanian. Their suffering
+    manifests in grotesque physical contortions (e.g., kneeling with forward-bent
+    legs) and relentless, imploring whispers. As a collective, they embody Dracula's
+    power to inflict prolonged torment, haunting survivors with their inescapable
+    horror of undeath. Individual specimens may exhibit unique postures or movements
+    (e.g., the Kneeling Corpse) but share the same origin, curse, and narrative function.
+  traits:
+  - tormented
+  - desperate
+  - pleading
+  - persistent
+  aliases:
+  - undead creatures
+  - desiccated figures
+  - mummified figures
+  - dead and walking
+  - Dracula's reanimated victims
+  - tormented undead
+  - vampiric sufferers
+  character_type: Non-speaking Character
+  sphere_of_influence: Dracula's vampiric victims
+  appearance_count: 8
+  importance_tier: planet
+  affiliated_organization_uuid: organization_bc2eb00b9abf
+- fabula_uuid: agent_5a1d3677b121
+  global_id: null
+  canonical_name: Recruits
+  title_role: null
+  description: Recruits comprise the latest group of young trainees inducted into
+    a covert operation against Dracula. They wear pyjamas and blood-type badges that
+    signal their utility in blood-dependent missions. Briefed by figures like Bloxham,
+    they process footage of the vampire's revival through collective reactions of
+    shock and fascination. Nervous laughter reveals their mix of apprehension and
+    intrigue toward supernatural threats. These operatives represent fresh human resources
+    in the fight, their inexperience offset by institutional preparation.
+  traits:
+  - nervous
+  - shocked
+  - morbidly fascinated
+  aliases: []
+  character_type: Mentioned Only
+  sphere_of_influence: Anti-Vampire Training and Briefing
+  appearance_count: 0
+  importance_tier: asteroid
+  affiliated_organization_uuid: organization_71503e7aa4d7
+- fabula_uuid: agent_fb2bcaa81e38
+  global_id: null
+  canonical_name: Reedy-Voiced Undead Woman
+  title_role: null
+  description: A singular undead entity with a reedy, pleading voice, distinct from
+    the collective Undead Voices Chorus but contributing to it as an individual participant.
+  traits:
+  - desperate
+  - tormented
+  - imploring
+  aliases:
+  - Reedy Voice
+  character_type: Non-speaking Character
+  sphere_of_influence: Dracula's Undead Victims
+  appearance_count: 2
+  importance_tier: asteroid
+  affiliated_organization_uuid: organization_bc2eb00b9abf
+- fabula_uuid: agent_4f7d5c4c2b40
+  global_id: null
+  canonical_name: Reggie
+  title_role: null
+  description: Reggie counts among Jonathan Harker's close friends. Mina Harker recognizes
+    him from their shared social circle and notes his consistent pleasure at seeing
+    her. She invokes his name in a teasing letter to Jonathan, casting him as a potential
+    romantic rival to provoke reassurance and highlight the attentiveness he shows
+    toward her.
+  traits:
+  - sociable
+  - attentive
+  - friendly
+  aliases: []
+  character_type: Non-speaking Character
+  sphere_of_influence: Jonathan Harker's social circle
+  appearance_count: 1
+  importance_tier: asteroid
+  affiliated_organization_uuid: organization_7858b1418867
+- fabula_uuid: agent_2eda32ddc4b1
+  global_id: null
+  canonical_name: Ruthven
+  title_role: Lord
+  description: Ruthven is a handsome young English aristocrat honeymooning on the
+    Demeter with his bride Dorabella and servant Adisa. He depends on his mysterious
+    sponsor Balaur—who proves to be Dracula—for financial support and the voyage itself.
+    Proud of his status, he preens before mirrors and leverages his rank to sway others
+    amid shipboard tensions. Vain yet emotionally fragile, he swings from forced joviality
+    to grief-stricken hysteria, rendering him easy prey for Dracula's seductive manipulations
+    that erode his will and turn him into an unwitting pawn.
+  traits:
+  - vain
+  - proud
+  - volatile
+  - susceptible
+  - dependent
+  aliases:
+  - Lord Ruthven
+  character_type: Speaking Character
+  sphere_of_influence: Shipboard Aristocracy
+  appearance_count: 31
+  importance_tier: planet
+  affiliated_organization_uuid: organization_08f3333c936a
+- fabula_uuid: agent_c839088dc2e1
+  global_id: null
+  canonical_name: Sam
+  title_role: null
+  description: Sam anchors Lucy Westenra's close friend group. He banters during her
+    hen night, teasing Quincey Morris about his cowboy roots and griping over Jaeger
+    bomb hangovers while pulling plain crisps from a bag. Practical and observant,
+    he questions group progress and notes Lucy's untouched food amid chatter. Loyal
+    to the circle, he attends her funeral in the front row with Alice, Zev, and others,
+    sharing their grief silently.
+  traits:
+  - playful
+  - self-deprecating
+  - observant
+  - loyal
+  - practical
+  aliases: []
+  character_type: Speaking Character
+  sphere_of_influence: Lucy's friend group
+  appearance_count: 6
+  importance_tier: planet
+  affiliated_organization_uuid: organization_7858b1418867
+- fabula_uuid: agent_b23090f0280d
+  global_id: null
+  canonical_name: Servants
+  title_role: null
+  description: Servants staff Castle Dracula, managing its daily operations under
+    Count Dracula's authority. They vanish at night, leaving the halls empty and amplifying
+    the estate's isolating dread. Bound to their master, they function as unseen labor,
+    their absence sharpening suspicions of the household's unnatural order. Loyal
+    and unobtrusive, they anchor the count's dominion through quiet efficiency.
+  traits:
+  - elusive
+  - loyal
+  - silent
+  aliases: []
+  character_type: Non-speaking Character
+  sphere_of_influence: Castle Dracula household operations
+  appearance_count: 1
+  importance_tier: asteroid
+  affiliated_organization_uuid: organization_bc2eb00b9abf
+- fabula_uuid: agent_07ca7015a2b9
+  global_id: null
+  canonical_name: Shadow
+  title_role: null
+  description: The Shadow is an elusive entity that inhabits the dim corridors of
+    Castle Dracula. It manifests as a brief flicker before vanishing like smoke, signaling
+    the presence of another being amid the castle's isolation. Neither confirmed human
+    nor fully supernatural, it shares the space with figures like Jonathan Harker,
+    eroding their sense of security through ambiguous glimpses. Its role amplifies
+    the castle's oppressive atmosphere, forcing inhabitants to question lurking threats
+    beyond known dangers.
+  traits:
+  - elusive
+  - enigmatic
+  - ephemeral
+  - ominous
+  aliases:
+  - Unseen Presence
+  character_type: Non-speaking Character
+  sphere_of_influence: Castle Dracula's corridors
+  appearance_count: 1
+  importance_tier: asteroid
+  affiliated_organization_uuid: null
+- fabula_uuid: agent_3070d8fbe333
+  global_id: null
+  canonical_name: Sharma
+  title_role: Doctor
+  description: Sharma directs a Calcutta laboratory where he confronts empirical mysteries,
+    including exhumed coffins bearing marks of the undead. Scarred on his cheek from
+    a prior vampiric attack that killed his assistants Gupta and Khan, he protects
+    his 12-year-old deaf daughter Yamini. Sponsored by the shadowy Mr. Balaur to travel
+    aboard the Demeter, his scientific rigor battles mounting evidence of supernatural
+    horror. Observant amid shipboard tensions, he banters wryly with passengers like
+    Adisa, rationalizes peril with dry logic, and vows to shield Yamini from monsters
+    despite his skepticism.
+  traits:
+  - skeptical
+  - protective
+  - observant
+  - wry
+  - resilient
+  aliases:
+  - Dr. Sharma
+  character_type: Speaking Character
+  sphere_of_influence: Forensic Pathology and Supernatural Inquiry
+  appearance_count: 36
+  importance_tier: planet
+  affiliated_organization_uuid: organization_35df59e9d646
+- fabula_uuid: agent_4cfa7489e0a8
+  global_id: null
+  canonical_name: Sokolov
+  title_role: Captain
+  description: 'Captain Sokolov commands the Demeter, steering his crew through a
+    nightmare voyage haunted by Dracula. He maintains order amid mutiny and supernatural
+    assault, forging tense bonds with Olgaren, Piotr, Adisa, and Agatha. Sokolov defends
+    the vulnerable, questions loyalties, and confronts the vampire directly. Duty
+    drives him: he rejects mob justice, tests protective rituals, and sacrifices himself
+    to ignite the ship''s destruction, ensuring Dracula''s hindrance at the cost of
+    his life.'
+  traits:
+  - resolute
+  - dutiful
+  - compassionate
+  - determined
+  - self-sacrificing
+  aliases: []
+  character_type: Speaking Character
+  sphere_of_influence: Demeter Command
+  appearance_count: 35
+  importance_tier: planet
+  affiliated_organization_uuid: organization_35df59e9d646
+- fabula_uuid: agent_0f102b67e18c
+  global_id: null
+  canonical_name: Spectral Little Boy
+  title_role: null
+  description: A grotesque undead child with skeletal hands and hollow eyes, serving
+    as a harbinger of vampiric corruption. Directly tied to Dracula’s schemes and
+    Lucy Westenra’s haunting, with eerie sing-songs and supernatural emergence patterns.
+  traits:
+  - taunting
+  - playful
+  - menacing
+  - eerie
+  - grotesque
+  aliases: []
+  character_type: Speaking Character
+  sphere_of_influence: Spectral hauntings
+  appearance_count: 3
+  importance_tier: asteroid
+  affiliated_organization_uuid: organization_bc2eb00b9abf
+- fabula_uuid: agent_0c1cda61497c
+  global_id: null
+  canonical_name: Stepashin
+  title_role: Father
+  description: Stepashin acts as a priest who confronts vampiric possession with ritual
+    precision. He directs families to stake the hearts of the infected dead, positioning
+    the act as merciful love that returns souls to the light. His grave demeanor masks
+    deep knowledge of supernatural resurrection, and he forges bonds with doctors,
+    nurses, and grieving mothers during these ordeals. Resolute faith drives him to
+    shoulder the dread of eternal darkness, ensuring the living prevail over the undead.
+  traits:
+  - solemn
+  - resolute
+  - authoritative
+  - burdened
+  - compassionate
+  aliases: []
+  character_type: Speaking Character
+  sphere_of_influence: Rituals Against Vampirism
+  appearance_count: 2
+  importance_tier: asteroid
+  affiliated_organization_uuid: organization_0bd325a8f98c
+- fabula_uuid: agent_57773741c210
+  global_id: null
+  canonical_name: Tactical Anti-Supernatural Response Unit
+  title_role: Soldiers
+  description: Highly trained military unit specializing in rapid deployment against
+    supernatural threats. Equipped with machine guns and supported by helicopter assets,
+    they establish perimeters and enforce containment strategies (e.g., around Dracula).
+    Operate under strict discipline, bridging human firepower with emerging anti-vampire
+    tactics. Loyal to operational command, they are the frontline defenders in modern
+    England's defense against ancient evils.
+  traits:
+  - alert
+  - aggressive
+  - disciplined
+  aliases:
+  - Soldiers
+  character_type: Non-speaking Character
+  sphere_of_influence: Supernatural Threat Containment
+  appearance_count: 2
+  importance_tier: asteroid
+  affiliated_organization_uuid: organization_22a19f20fa56
+- fabula_uuid: agent_f3a2429c70a0
+  global_id: null
+  canonical_name: The Audience
+  title_role: null
+  description: The Audience functions as the narrative's direct participant, aligned
+    with characters like Sister Agatha, Mina, Mother Superior, Jonathan Harker, and
+    Count Dracula. Narrative cuts target them to disrupt orientation, forcing confrontation
+    with the supernatural as a physical force. They question perceptions amid blurring
+    realities, their immersion mirroring the characters' psychological strain. This
+    collective entity drives thematic exploration of inescapable horror and perceptual
+    doubt, shifting from detached observers to engaged witnesses whose reactions amplify
+    the story's stakes.
+  traits:
+  - disoriented
+  - unsettled
+  - engaged
+  aliases: []
+  character_type: Non-speaking Character
+  sphere_of_influence: Narrative Perception
+  appearance_count: 1
+  importance_tier: asteroid
+  affiliated_organization_uuid: null
+- fabula_uuid: agent_e0a811419ac4
+  global_id: null
+  canonical_name: The Night
+  title_role: null
+  description: An **abstract, sentient force** representing darkness and the supernatural
+    ambiance of Dracula’s realm. Unlike The Bat, it **lacks physical agency** and
+    instead **reacts to oaths/transformations** (e.g., howling) to amplify gothic
+    themes (e.g., vengeance, damnation).
+  traits:
+  - ominous
+  - responsive
+  - supernatural
+  - primal
+  aliases: []
+  character_type: Non-speaking Character
+  sphere_of_influence: Supernatural Atmosphere
+  appearance_count: 1
+  importance_tier: asteroid
+  affiliated_organization_uuid: null
+- fabula_uuid: agent_ce58d1c34e82
+  global_id: null
+  canonical_name: Undead Voices Chorus
+  title_role: null
+  description: A collective entity composed of multiple undead voices, including the
+    Reedy-Voiced Undead Woman, a Deeper Voice Undead Man, and a spectral child, serving
+    as a **grouped, atmospheric force** of vampiric torment.
+  traits:
+  - agonized
+  - pleading
+  - persistent
+  - tormented
+  - eerie
+  aliases:
+  - Undead Voices
+  - Chorus
+  character_type: Non-speaking Character
+  sphere_of_influence: Vampiric Torment
+  appearance_count: 2
+  importance_tier: asteroid
+  affiliated_organization_uuid: organization_bc2eb00b9abf
+- fabula_uuid: agent_793c44e12e5b
+  global_id: null
+  canonical_name: Unidentified Caller
+  title_role: null
+  description: Anonymous operative who contacts targets via telephone during crises
+    involving Dracula. Likely tied to the Harker Foundation, this caller monitors
+    events remotely and intervenes at critical moments to disrupt vampiric control.
+    Their actions rely on surveillance networks and precise timing, positioning them
+    as a covert ally in containing supernatural threats through technological means.
+    Precise motives stay hidden, but calls consistently enable escape opportunities
+    against immortal predators.
+  traits:
+  - covert
+  - strategic
+  - timely
+  aliases:
+  - Unidentified Caller (via Phone)
+  character_type: Mentioned Only
+  sphere_of_influence: Surveillance and Intervention
+  appearance_count: 0
+  importance_tier: asteroid
+  affiliated_organization_uuid: organization_71503e7aa4d7
+- fabula_uuid: agent_d728cb8ee4b2
+  global_id: null
+  canonical_name: Unidentified Guard
+  title_role: Guard
+  description: Unidentified Guard works on Zoe Helsing's team hunting Dracula. He
+    deploys traps exploiting vampire weaknesses and escapes detection through quick
+    maneuvers. His role demands stealth, positioning, and rapid extraction in high-risk
+    operations. Loyal to the team's mission, he prioritizes survival and tactical
+    advantage over direct confrontation.
+  traits:
+  - agile
+  - cautious
+  - loyal
+  - stealthy
+  aliases: []
+  character_type: Non-speaking Character
+  sphere_of_influence: Anti-Vampire Operations
+  appearance_count: 4
+  importance_tier: asteroid
+  affiliated_organization_uuid: organization_71503e7aa4d7
+- fabula_uuid: agent_94455c82f29f
+  global_id: null
+  canonical_name: Uniformed Guard
+  title_role: null
+  description: Uniformed Guard provides security for Harker Foundation operations
+    in civilian sites like private homes. He watches high-value assets such as custom
+    coffins amid supernatural incursions. Alert to danger, he escapes via windows
+    to regroup, underscoring the Foundation's blend of surveillance and survival tactics
+    against vampires like Dracula.
+  traits:
+  - evasive
+  - alert
+  - professional
+  aliases:
+  - Unseen Guard
+  character_type: Non-speaking Character
+  sphere_of_influence: Harker Foundation Security
+  appearance_count: 3
+  importance_tier: asteroid
+  affiliated_organization_uuid: organization_71503e7aa4d7
+- fabula_uuid: agent_0775b4744520
+  global_id: null
+  canonical_name: Unknown Ally
+  title_role: null
+  description: Unknown Ally operates as a covert supporter in the fight against Dracula.
+    They contact targets like Kathleen by phone, delivering timely instructions that
+    prompt escape attempts. Their anonymity preserves operational security, while
+    their knowledge of Dracula's presence and weaknesses indicates insider awareness.
+    This figure maintains distance, intervening remotely to disrupt the vampire's
+    control without direct exposure. Their actions reveal a calculated commitment
+    to resistance, bridging isolated victims with broader opposition networks.
+  traits:
+  - discreet
+  - strategic
+  - resourceful
+  aliases:
+  - Unknown Ally (via phone call)
+  character_type: Non-speaking Character
+  sphere_of_influence: covert resistance against Dracula
+  appearance_count: 2
+  importance_tier: asteroid
+  affiliated_organization_uuid: organization_71503e7aa4d7
+- fabula_uuid: agent_d0b98a56d640
+  global_id: null
+  canonical_name: Unnamed Baby
+  title_role: null
+  description: An infant confined to the shadowed halls of Dracula's castle, the Unnamed
+    Baby represents fragile human innocence under the vampire's corrupting shadow.
+    Its cries echo through the castle, a persistent sign of distress that underscores
+    the horror infiltrating even the youngest lives. Helpless amid supernatural terror,
+    the baby maintains no direct relationships or agency, yet its presence amplifies
+    the Count's inhuman domain and the peril to purity.
+  traits:
+  - distressed
+  - vulnerable
+  - innocent
+  aliases:
+  - Baby
+  character_type: Non-speaking Character
+  sphere_of_influence: Dracula's Castle
+  appearance_count: 1
+  importance_tier: asteroid
+  affiliated_organization_uuid: null
+- fabula_uuid: agent_12695a443e2c
+  global_id: null
+  canonical_name: Unnamed Hospital Nurse
+  title_role: Nurse
+  description: Provides grief support in a medical context, distinct from religious
+    or ceremonial roles, and operates within the hospital’s institutional response
+    to trauma.
+  traits:
+  - empathetic
+  - compassionate
+  - supportive
+  - steady
+  aliases: []
+  character_type: Non-speaking Character
+  sphere_of_influence: Hospital Grief Support
+  appearance_count: 2
+  importance_tier: asteroid
+  affiliated_organization_uuid: organization_71503e7aa4d7
+- fabula_uuid: agent_f05d73d9d0e2
+  global_id: null
+  canonical_name: Unnamed Nun
+  title_role: Nun
+  description: A nun at the convent sheltering Jonathan Harker. She maintains a silent,
+    watchful presence among the sisters, her concern evident in subtle expressions
+    as she observes those recovering from trauma. Her role supports the convent's
+    care for the afflicted, aligning with Sister Agatha's interrogations without direct
+    speech.
+  traits:
+  - observant
+  - concerned
+  - watchful
+  - silent
+  aliases:
+  - The Nun
+  character_type: Speaking Character
+  sphere_of_influence: Convent care
+  appearance_count: 2
+  importance_tier: asteroid
+  affiliated_organization_uuid: organization_0bd325a8f98c
+- fabula_uuid: agent_d89642d71fe0
+  global_id: null
+  canonical_name: Unnamed Vicar
+  title_role: Vicar
+  description: Represents the ecclesiastical institution's role in funeral rites and
+    supernatural threats, distinct from medical care providers.
+  traits:
+  - solemn
+  - dutiful
+  - ritualistic
+  - composed
+  aliases:
+  - VICAR
+  character_type: Speaking Character
+  sphere_of_influence: Funeral Rites
+  appearance_count: 2
+  importance_tier: asteroid
+  affiliated_organization_uuid: organization_8973ff81d918
+- fabula_uuid: agent_80783a4bb070
+  global_id: null
+  canonical_name: Unseen Presence
+  title_role: null
+  description: Vampiric entity that lurks unseen in disturbed graves, emerging to
+    overshadow intruders with rattling breath and predatory shadow. Embodies an ancient
+    undead curse that defies time, targeting those who unearth its resting place.
+    Its core drive pulses with hunger for manifestation and propagation of horror,
+    forging tense confrontations with scientists and opportunists alike. Operates
+    as a bridge between forgotten predations and immediate dread, its presence eroding
+    rational defenses.
+  traits:
+  - predatory
+  - ominous
+  - insidious
+  - relentless
+  aliases: []
+  character_type: Non-speaking Character
+  sphere_of_influence: Vampiric Manifestation
+  appearance_count: 2
+  importance_tier: asteroid
+  affiliated_organization_uuid: organization_bc2eb00b9abf
+- fabula_uuid: agent_a062785f2df6
+  global_id: null
+  canonical_name: Valeryia of Augsburg (Duchess Valeryia)
+  title_role: Grand Duchess
+  description: 'Valeryia of Augsburg (Duchess Valeryia) embodies the tragic intersection
+    of Bavarian aristocracy and supernatural horror. A widowed noblewoman burdened
+    by financial hardship and personal loss—including her husband''s death and her
+    mother''s mysterious disappearance—she navigates a world where aristocratic decorum
+    clashes with repressed childhood trauma tied to Dracula. Her vulnerability is
+    tempered by nostalgic warmth and a desperate search for buried truths, while her
+    flirtatious responses to flattery mask deep loneliness. Key relationships define
+    her conflict: Dracula exploits her past for control, while Sister Agatha Van Helsing
+    represents moral opposition. Her identity oscillates between faded grandeur and
+    supernatural dread, unified by her quest to reclaim agency amid isolation.'
+  traits:
+  - lonely
+  - vulnerable
+  - nostalgic
+  - aristocratic
+  - flirtatious
+  aliases:
+  - Duchess Valeryia
+  - Valeryia
+  - Duchess of Augsburg
+  character_type: Non-speaking Character
+  sphere_of_influence: Bavarian Nobility
+  appearance_count: 15
+  importance_tier: planet
+  affiliated_organization_uuid: organization_7858b1418867
+- fabula_uuid: agent_e2c45c246699
+  global_id: null
+  canonical_name: Viktor
+  title_role: null
+  description: Viktor crews the Demeter and aligns with survivors including Piotr,
+    Olgaren, Sokolov, and Agatha in their fight against Dracula. Piotr cites him as
+    a potential ally and witness during tense interrogations, placing Viktor at the
+    heart of the group's trust dynamics. His position inside the protective circle
+    marks his stake in their collective resistance, fueled by raw survival drive and
+    loyalty to the crew's remnants.
+  traits:
+  - loyal
+  - resilient
+  - observant
+  aliases: []
+  character_type: Mentioned Only
+  sphere_of_influence: Demeter crew survival
+  appearance_count: 0
+  importance_tier: asteroid
+  affiliated_organization_uuid: organization_35df59e9d646
+- fabula_uuid: agent_563b17b2f30e
+  global_id: null
+  canonical_name: Westenra Family
+  title_role: null
+  description: Lucy Westenra's immediate relatives grieve her loss with quiet intensity,
+    anchoring family bonds amid tragedy. They attend memorials unobtrusively behind
+    her friends, their stunned silence reflecting deep devotion and emotional restraint.
+    Positioned as supportive kin, they embody the personal stakes of her circle without
+    drawing focus.
+  traits:
+  - devastated
+  - stunned
+  - reserved
+  aliases:
+  - Lucy’s family
+  - family
+  character_type: Mentioned Only
+  sphere_of_influence: Familial grief and support
+  appearance_count: 0
+  importance_tier: asteroid
+  affiliated_organization_uuid: null
+- fabula_uuid: agent_da36371ea629
+  global_id: null
+  canonical_name: Workmen
+  title_role: null
+  description: Workmen form a collective of skilled laborers who support emergency
+    operations at secured sites. They handle heavy equipment like diggers during cleanup
+    and investigation phases. Task-oriented and equipped with hard hats, they integrate
+    civilian expertise into high-security responses, working alongside guards and
+    officials without drawing attention to themselves. Their steady labor maintains
+    site access and safety amid crises.
+  traits:
+  - diligent
+  - practical
+  - professional
+  aliases:
+  - workmen
+  character_type: Mentioned Only
+  sphere_of_influence: Site cleanup and heavy equipment operations
+  appearance_count: 0
+  importance_tier: asteroid
+  affiliated_organization_uuid: organization_71503e7aa4d7
+- fabula_uuid: agent_09d5bf7172cb
+  global_id: null
+  canonical_name: Yamini
+  title_role: null
+  description: Yamini serves as the 12-year-old deaf daughter of Dr. Sharma, a passenger
+    aboard the Demeter. She communicates through sign language and stands out for
+    her sharp observation of people and events around her. Her intuitive grasp of
+    threats sets her apart from other passengers and crew, often sensing dangers her
+    father confronts directly. Bound closely to Sharma, she draws strength from their
+    relationship amid the ship's tensions, her silence amplifying her perceptive presence
+    in group dynamics.
+  traits:
+  - observant
+  - intuitive
+  - perceptive
+  - resilient
+  - expressive
+  aliases: []
+  character_type: Speaking Character
+  sphere_of_influence: Demeter Passengers
+  appearance_count: 23
+  importance_tier: planet
+  affiliated_organization_uuid: organization_08f3333c936a
+- fabula_uuid: agent_f5e8f81611ab
+  global_id: null
+  canonical_name: Young Duchess
+  title_role: Duchess
+  description: Young Duchess travels as high-ranking nobility aboard Dracula-haunted
+    vessels. Her youth exposes her to vampiric seduction, eyes betraying entrancement
+    amid aristocratic peril. She orbits figures like Ruthven and Dracula, her status
+    amplifying the Count's predatory reach into society's elite. Vulnerable yet emblematic
+    of innocence corrupted, she embodies the fragility of human hierarchy against
+    supernatural hunger.
+  traits:
+  - entranced
+  - susceptible
+  - aristocratic
+  - vulnerable
+  aliases:
+  - DUCHESS
+  character_type: Speaking Character
+  sphere_of_influence: Shipboard Aristocracy
+  appearance_count: 3
+  importance_tier: asteroid
+  affiliated_organization_uuid: organization_7858b1418867
+- fabula_uuid: agent_3100bbe1fdbd
+  global_id: null
+  canonical_name: Zev
+  title_role: null
+  description: Zev anchors Lucy Westenra's core friend group alongside Sam and Alice.
+    He delivers sharp, playful teasing about her flirtations, secretive habits, and
+    romantic risks, veiling genuine worry over her safety and choices. Awkward in
+    direct overtures, as with Jack Seward, he exposes personal vulnerabilities amid
+    group energy. Impulsive loyalty drives him to intervene in dangers, seek aid from
+    her contacts, and offer physical comfort to grieving friends like Meg, blending
+    camaraderie with hints of jealousy and abandonment fears.
+  traits:
+  - teasing
+  - protective
+  - awkward
+  - loyal
+  - impulsive
+  aliases: []
+  character_type: Speaking Character
+  sphere_of_influence: Lucy's friend group
+  appearance_count: 17
+  importance_tier: planet
+  affiliated_organization_uuid: null
+- fabula_uuid: agent_e8c5e5cb0feb
+  global_id: null
+  canonical_name: Zoe Van Helsing
+  title_role: Harker Foundation Operative
+  description: Zoe Van Helsing descends from Sister Agatha Van Helsing and leads Harker
+    Foundation operations against vampires in modern Whitby. She commands tactical
+    teams blending ancient lore with technology to trap and study Dracula after his
+    awakening. Terminally ill with cancer, she confronts him with clinical precision,
+    defiant resolve, and ruthless strategy. Her bloodline curses her with visions
+    and toxicity to vampires, forging a fraught rivalry with Dracula. Ties to Jack
+    Seward reveal pragmatic leadership amid personal fragility, while clashes with
+    Frank Renfield expose institutional tensions. Duty to her legacy drives her through
+    mortality's toll.
+  traits:
+  - defiant
+  - strategic
+  - clinical
+  - ruthless
+  - resolute
+  aliases:
+  - ZOE
+  - Zoe Helsing
+  character_type: Speaking Character
+  sphere_of_influence: Vampire Containment Operations
+  appearance_count: 70
+  importance_tier: anchor
+  affiliated_organization_uuid: organization_71503e7aa4d7
+- fabula_uuid: agent_9697493ad450
+  global_id: null
+  canonical_name: Zoe's Logistics Contact
+  title_role: null
+  description: A behind-the-scenes operative in Zoe Van Helsing's Van Helsing network,
+    specializing in urgent medical transport and operational mobility support. Never
+    appears onscreen but is critical to Zoe's ability to defy medical restrictions.
+  traits:
+  - responsive
+  - reliable
+  - discreet
+  aliases: []
+  character_type: Non-speaking Character
+  sphere_of_influence: Logistics Support
+  appearance_count: 1
+  importance_tier: asteroid
+  affiliated_organization_uuid: organization_71503e7aa4d7

@@ -1,0 +1,177 @@
+{
+  "source": "local YAML export; not an audit of production or screenplay truth",
+  "series_events": 348,
+  "pilot_events": 144,
+  "locations": 129,
+  "locations_with_parent": 0,
+  "pilot_primary_location_set": 0,
+  "pilot_location_involvements": 143,
+  "pilot_object_involvements": 120,
+  "connection_rows": 430,
+  "unique_connection_uuids": 97,
+  "connection_uuids_reused": 75,
+  "connections_with_missing_series_endpoint": 0,
+  "seed_anchor_connections": [],
+  "source_hashes": {
+    "fabula_export/dracula/locations.yaml": "d7608792044d44238a61d960e9c4b928814909b1e1c15db5c4c7810028ffd4d9",
+    "fabula_export/dracula/connections.yaml": "5a49d80113c1408216910a8bb36714951e4eea3eed3f7b6e1d79a024cb2c827d",
+    "fabula_export/dracula/events/dracula_s01e01.yaml": "20ee25f26fd1491a17d14aa2485a149e766e424aaca520e99ad8e1c1cfefc0f4",
+    "fabula_export/dracula/manifest.yaml": "59b427adb0f4a9d790b25c3ce7a9ab40e68cac0ad8c30ea8aa521f283c7fa739"
+  },
+  "manifest": {
+    "fabula_version": "2.3.0",
+    "export_date": "2026-02-18T09:54:42.024235",
+    "source_database": "dracula.s01",
+    "theme_count": 0,
+    "arc_count": 13
+  },
+  "reused_uuid_groups_entirely_within_one_scene": 31,
+  "sample_clique": {
+    "uuid": "conn_3fc2ea6be93d",
+    "rows": 12,
+    "events": 4,
+    "ordered_pairs": 12,
+    "distinct_descriptions": 1
+  },
+  "missing_connection_fields": {
+    "layer": 430,
+    "scope": 430,
+    "inferred_by": 430,
+    "cross_episode_reasoning": 430
+  },
+  "pilot_involvement_rows": {
+    "participations": 439,
+    "object_involvements": 347,
+    "location_involvements": 195
+  },
+  "duplicate_object_involvements": {
+    "duplicate_groups": 16,
+    "rows_in_duplicate_groups": 37,
+    "excess_rows_beyond_first": 21,
+    "groups": [
+      {
+        "event_uuid": "cand_evt_scene_547a363fb2331333_01",
+        "event_index": 0,
+        "object_uuid": "object_24bccae12e12",
+        "rows": 3
+      },
+      {
+        "event_uuid": "cand_evt_scene_547a363fb2331333_02",
+        "event_index": 1,
+        "object_uuid": "object_24bccae12e12",
+        "rows": 3
+      },
+      {
+        "event_uuid": "cand_evt_scene_547a363fb2331333_03",
+        "event_index": 2,
+        "object_uuid": "object_24bccae12e12",
+        "rows": 3
+      },
+      {
+        "event_uuid": "cand_evt_scene_547a363fb2331333_04",
+        "event_index": 3,
+        "object_uuid": "object_24bccae12e12",
+        "rows": 3
+      },
+      {
+        "event_uuid": "cand_evt_scene_ad7683730a31812b_01",
+        "event_index": 50,
+        "object_uuid": "object_6957c1ff5e4e",
+        "rows": 2
+      },
+      {
+        "event_uuid": "cand_evt_scene_c8d0cb4b85a46795_01",
+        "event_index": 74,
+        "object_uuid": "object_bf03e56176d6",
+        "rows": 3
+      },
+      {
+        "event_uuid": "cand_evt_scene_6df7d605b282801b_01",
+        "event_index": 76,
+        "object_uuid": "object_38ae324d6766",
+        "rows": 2
+      },
+      {
+        "event_uuid": "cand_evt_scene_6df7d605b282801b_02",
+        "event_index": 77,
+        "object_uuid": "object_38ae324d6766",
+        "rows": 2
+      },
+      {
+        "event_uuid": "cand_evt_scene_669727b2a8dc5c1a_01",
+        "event_index": 98,
+        "object_uuid": "object_ed523cad6165",
+        "rows": 2
+      },
+      {
+        "event_uuid": "cand_evt_scene_b7e8429616e685ef_01",
+        "event_index": 105,
+        "object_uuid": "object_24bccae12e12",
+        "rows": 2
+      },
+      {
+        "event_uuid": "cand_evt_scene_b7e8429616e685ef_01",
+        "event_index": 105,
+        "object_uuid": "object_5de8e37e880c",
+        "rows": 2
+      },
+      {
+        "event_uuid": "cand_evt_scene_b7e8429616e685ef_02",
+        "event_index": 106,
+        "object_uuid": "object_24bccae12e12",
+        "rows": 2
+      },
+      {
+        "event_uuid": "cand_evt_scene_b7e8429616e685ef_02",
+        "event_index": 106,
+        "object_uuid": "object_5de8e37e880c",
+        "rows": 2
+      },
+      {
+        "event_uuid": "cand_evt_scene_b7e8429616e685ef_03",
+        "event_index": 107,
+        "object_uuid": "object_24bccae12e12",
+        "rows": 2
+      },
+      {
+        "event_uuid": "cand_evt_scene_b7e8429616e685ef_03",
+        "event_index": 107,
+        "object_uuid": "object_5de8e37e880c",
+        "rows": 2
+      },
+      {
+        "event_uuid": "cand_evt_scene_03bd8c39655566c2_01",
+        "event_index": 122,
+        "object_uuid": "object_c4f854da56ad",
+        "rows": 2
+      }
+    ]
+  },
+  "caveat": "Fan-out and merged object identity are defect candidates, not validated graph semantics; current Neo4j verification recorded separately. Importer preserves endpoint/type clique rows and skips repeated event/object involvements.",
+  "mixed_presentation_frame_candidate": {
+    "upstream_id": "UP-009",
+    "status": "export defect observed; current upstream origin unverified",
+    "event_uuid": "cand_evt_scene_fbdfed5d901968f6_03",
+    "source_file": "fabula_export/dracula/events/dracula_s01e01.yaml",
+    "source_sha256": "20ee25f26fd1491a17d14aa2485a149e766e424aaca520e99ad8e1c1cfefc0f4",
+    "flashback_pointer": "/events/26/is_flashback",
+    "is_flashback": false,
+    "agatha_participation": {
+      "ref": "diagnostic.agatha_in_bedroom",
+      "json_pointer": "/events/26/participations/1/observed_status",
+      "entity_ref": "agent_09ee5fad16ae",
+      "raw_value": "Sister Agatha interrupts the scene with a single-word reaction ('Lives?') to Dracula’s statement about blood, implying her awareness of the supernatural implications. Her presence underscores the stakes and her role as a skeptic/investigator of dark forces, though she remains peripheral to the core interaction between Jonathan and Dracula.",
+      "raw_value_sha256": "6f0e0ddebdbcc3022ce3c409a102c8011a505b8c73df8546bab40d444a0df191",
+      "quality": "unverified graph extraction; dialogue is not independently screenplay-verified"
+    },
+    "castle_location": {
+      "ref": "diagnostic.castle_location",
+      "json_pointer": "/events/26/location_involvements/0/description_of_involvement",
+      "entity_ref": "location_7cdbbae65f48",
+      "raw_value": "Jonathan’s bedroom in Castle Dracula functions as a false haven, its opulent decor and warm fireplace creating a deceptive sense of comfort. The thick curtains mute the howling outside, but they also seal Jonathan in with Dracula’s predation. The room’s claustrophobic confines amplify the psychological horror as Dracula shatters the mirror and fixates on Jonathan’s blood, turning the bedroom into a battleground for Jonathan’s sanity. The stained-glass window’s projected shadows ('HELP US') foreshadow the room’s role as a trap.",
+      "raw_value_sha256": "a1497b29f9580748e1ff3a5c454a7512192fdd30fa3e3bbe42ae5748d2a5438d",
+      "quality": "unverified graph extraction; dialogue is not independently screenplay-verified"
+    },
+    "consequence": "The exported event fuses the framing interview reaction with recalled castle action. Participation is not co-presence; is_flashback=false cannot establish a single temporal frame. Segmentation/frame attribution requires source and graph verification, not merely a flag flip."
+  }
+}

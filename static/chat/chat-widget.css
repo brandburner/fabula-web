@@ -1,0 +1,318 @@
+/*
+ * Ask the Archive — chat widget.
+ * All colors/typography ride the site's design tokens (--f-*, defined in
+ * narrative/css/theme-tokens.css) so the widget follows the writerly and
+ * dark themes with no theme logic of its own.
+ */
+
+.fchat-launcher {
+  position: fixed;
+  right: 1.25rem;
+  bottom: 1.25rem;
+  z-index: 60;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.6rem 1rem;
+  border: 1px solid var(--f-border-strong);
+  border-radius: 999px;
+  background: var(--f-card-bg);
+  color: var(--f-fg-primary);
+  font-family: var(--f-font-mono);
+  font-size: 0.72rem;
+  letter-spacing: var(--f-letter-spacing-label);
+  text-transform: uppercase;
+  cursor: pointer;
+  box-shadow: var(--f-card-shadow-hover);
+  transition: border-color 200ms ease, transform 200ms ease;
+}
+.fchat-launcher:hover {
+  border-color: var(--f-accent-primary);
+  transform: translateY(-1px);
+}
+.fchat-launcher svg {
+  width: 1rem;
+  height: 1rem;
+  stroke: var(--f-accent-primary);
+}
+.fchat-launcher[hidden] { display: none; }
+
+.fchat-panel {
+  position: fixed;
+  right: 1.25rem;
+  bottom: 1.25rem;
+  z-index: 70;
+  display: flex;
+  flex-direction: column;
+  width: min(26rem, calc(100vw - 2rem));
+  height: min(38rem, calc(100dvh - 6rem));
+  border: 1px solid var(--f-border-strong);
+  border-radius: var(--f-card-radius);
+  background: var(--f-bg-page);
+  box-shadow: 0 12px 40px oklch(20% 0.012 60 / 0.22);
+  overflow: hidden;
+}
+.fchat-panel[hidden] { display: none; }
+
+@media (max-width: 480px) {
+  .fchat-panel {
+    right: 0;
+    bottom: 0;
+    width: 100vw;
+    height: 92dvh;
+    border-radius: var(--f-card-radius) var(--f-card-radius) 0 0;
+  }
+}
+
+/* ---- header ---- */
+.fchat-header {
+  display: flex;
+  align-items: baseline;
+  gap: 0.6rem;
+  padding: 0.85rem 1rem 0.7rem;
+  border-bottom: 1px solid var(--f-border-default);
+  background: var(--f-bg-surface);
+}
+.fchat-header__eyebrow {
+  font-family: var(--f-font-mono);
+  font-size: 0.66rem;
+  letter-spacing: var(--f-letter-spacing-label);
+  text-transform: uppercase;
+  color: var(--f-accent-primary);
+  white-space: nowrap;
+}
+.fchat-header__series {
+  flex: 1;
+  font-family: var(--f-font-display);
+  font-style: italic;
+  font-size: 0.95rem;
+  color: var(--f-fg-secondary);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.fchat-close {
+  border: none;
+  background: none;
+  color: var(--f-fg-tertiary);
+  cursor: pointer;
+  padding: 0.15rem;
+  line-height: 0;
+}
+.fchat-close:hover { color: var(--f-fg-primary); }
+.fchat-close svg { width: 1.05rem; height: 1.05rem; }
+
+/* ---- messages ---- */
+.fchat-messages {
+  flex: 1;
+  overflow-y: auto;
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  scrollbar-width: thin;
+  scrollbar-color: var(--f-scrollbar-thumb) var(--f-scrollbar-track);
+}
+
+.fchat-msg {
+  max-width: 88%;
+  padding: 0.6rem 0.85rem;
+  border-radius: var(--f-card-radius);
+  font-family: var(--f-font-body);
+  font-size: 0.95rem;
+  line-height: 1.5;
+  overflow-wrap: break-word;
+}
+.fchat-msg--user {
+  align-self: flex-end;
+  background: var(--f-accent-primary-bg);
+  border: 1px solid var(--f-border-accent);
+  color: var(--f-fg-primary);
+}
+.fchat-msg--assistant {
+  align-self: flex-start;
+  background: var(--f-card-bg);
+  border: 1px solid var(--f-card-border);
+  color: var(--f-fg-primary);
+}
+.fchat-msg--error {
+  align-self: flex-start;
+  background: var(--f-accent-rose-bg);
+  border: 1px solid var(--f-accent-rose);
+  color: var(--f-accent-rose-fg);
+}
+.fchat-msg p { margin: 0 0 0.6em; }
+.fchat-msg p:last-child { margin-bottom: 0; }
+.fchat-msg ul { margin: 0.3em 0 0.6em; padding-left: 1.1em; }
+.fchat-msg li { margin-bottom: 0.25em; }
+.fchat-msg code {
+  font-family: var(--f-font-mono);
+  font-size: 0.82em;
+  background: var(--f-bg-inset);
+  padding: 0.08em 0.3em;
+  border-radius: 3px;
+}
+.fchat-msg a {
+  color: var(--f-fg-link);
+  text-decoration: underline;
+  text-decoration-color: var(--f-border-accent);
+  text-underline-offset: 2px;
+}
+.fchat-msg a:hover { color: var(--f-fg-link-hover); }
+
+/* streaming caret */
+.fchat-msg--streaming::after {
+  content: '▍';
+  color: var(--f-accent-primary);
+  animation: fchat-blink 1s steps(1) infinite;
+}
+@keyframes fchat-blink { 50% { opacity: 0; } }
+
+/* ---- tool activity ---- */
+.fchat-activity {
+  align-self: flex-start;
+  display: flex;
+  align-items: center;
+  gap: 0.45rem;
+  font-family: var(--f-font-mono);
+  font-size: 0.7rem;
+  color: var(--f-fg-tertiary);
+  padding: 0.1rem 0.2rem;
+}
+.fchat-activity::before {
+  content: '';
+  width: 0.45rem;
+  height: 0.45rem;
+  border-radius: 50%;
+  background: var(--f-accent-cyan);
+  animation: fchat-pulse 1.2s ease-in-out infinite;
+}
+@keyframes fchat-pulse {
+  0%, 100% { opacity: 0.35; transform: scale(0.85); }
+  50% { opacity: 1; transform: scale(1.1); }
+}
+
+/* ---- rich link cards ---- */
+.fchat-links {
+  align-self: stretch;
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+.fchat-link-card {
+  display: block;
+  padding: 0.45rem 0.7rem;
+  border: 1px solid var(--f-card-border);
+  border-left: 3px solid var(--f-accent-cyan);
+  border-radius: var(--f-card-radius);
+  background: var(--f-card-bg);
+  text-decoration: none;
+  transition: border-color 180ms ease, background 180ms ease;
+}
+.fchat-link-card:hover {
+  border-color: var(--f-card-border-hover);
+  background: var(--f-card-bg-hover);
+}
+.fchat-link-card__kind {
+  font-family: var(--f-font-mono);
+  font-size: 0.62rem;
+  letter-spacing: var(--f-letter-spacing-label);
+  text-transform: uppercase;
+  color: var(--f-fg-tertiary);
+}
+.fchat-link-card__title {
+  font-family: var(--f-font-body);
+  font-size: 0.88rem;
+  color: var(--f-fg-primary);
+  line-height: 1.3;
+}
+.fchat-link-card__sub {
+  font-family: var(--f-font-mono);
+  font-size: 0.68rem;
+  color: var(--f-fg-tertiary);
+}
+.fchat-link-card--character { border-left-color: var(--f-accent-green); }
+.fchat-link-card--event { border-left-color: var(--f-accent-cyan); }
+.fchat-link-card--connection { border-left-color: var(--f-accent-cyan); }
+.fchat-link-card--arc { border-left-color: var(--f-accent-violet); }
+.fchat-link-card--theme { border-left-color: var(--f-accent-rose); }
+.fchat-link-card--organization { border-left-color: var(--f-accent-violet); }
+.fchat-link-card--location { border-left-color: var(--f-accent-orange); }
+.fchat-link-card--series { border-left-color: var(--f-accent-primary); }
+
+/* ---- chips ---- */
+.fchat-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+  padding: 0.5rem 1rem;
+  border-top: 1px solid var(--f-border-light);
+  background: var(--f-bg-surface);
+}
+.fchat-chips:empty { display: none; }
+.fchat-chip {
+  border: 1px solid var(--f-border-default);
+  border-radius: 999px;
+  background: var(--f-badge-bg);
+  color: var(--f-badge-fg);
+  font-family: var(--f-font-body);
+  font-size: 0.8rem;
+  padding: 0.28rem 0.75rem;
+  cursor: pointer;
+  text-decoration: none;
+  transition: border-color 180ms ease, color 180ms ease;
+}
+.fchat-chip:hover {
+  border-color: var(--f-accent-primary);
+  color: var(--f-accent-primary-fg);
+}
+
+/* ---- composer ---- */
+.fchat-composer {
+  display: flex;
+  align-items: flex-end;
+  gap: 0.5rem;
+  padding: 0.7rem 1rem 0.85rem;
+  border-top: 1px solid var(--f-border-default);
+  background: var(--f-bg-surface);
+}
+.fchat-input {
+  flex: 1;
+  resize: none;
+  border: 1px solid var(--f-border-default);
+  border-radius: var(--f-card-radius);
+  background: var(--f-bg-page);
+  color: var(--f-fg-primary);
+  font-family: var(--f-font-body);
+  font-size: 0.92rem;
+  line-height: 1.4;
+  padding: 0.5rem 0.7rem;
+  max-height: 6.5rem;
+}
+.fchat-input:focus {
+  outline: none;
+  border-color: var(--f-accent-primary);
+}
+.fchat-input::placeholder { color: var(--f-fg-placeholder); }
+.fchat-send {
+  border: 1px solid var(--f-border-strong);
+  border-radius: var(--f-card-radius);
+  background: var(--f-card-bg);
+  color: var(--f-accent-primary);
+  cursor: pointer;
+  padding: 0.5rem 0.6rem;
+  line-height: 0;
+  transition: border-color 180ms ease;
+}
+.fchat-send:hover:not(:disabled) { border-color: var(--f-accent-primary); }
+.fchat-send:disabled { opacity: 0.45; cursor: default; }
+.fchat-send svg { width: 1rem; height: 1rem; }
+
+/* intro note */
+.fchat-intro {
+  font-family: var(--f-font-body);
+  font-size: 0.88rem;
+  color: var(--f-fg-secondary);
+  border-left: 2px solid var(--f-border-accent);
+  padding-left: 0.75rem;
+}

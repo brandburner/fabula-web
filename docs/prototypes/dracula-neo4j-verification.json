@@ -1,0 +1,26 @@
+{
+  "database": "dracula.s01",
+  "mode": "read-only, explicit database, no start/stop/switch/import operations",
+  "queries": [],
+  "status": "unavailable",
+  "error_type": "ClientError",
+  "error_code": "Neo.ClientError.Database.DatabaseNotFound",
+  "planned_queries": [
+    {
+      "name": "connection_properties",
+      "query": "MATCH (a:PlotBeat)-[r:CHARACTER_CONTINUITY]->(b:PlotBeat) RETURN a.beat_uuid AS from_beat, b.beat_uuid AS to_beat, properties(r) AS properties LIMIT 3",
+      "params": {}
+    },
+    {
+      "name": "kit_relationship_properties",
+      "query": "MATCH (o:Object {object_uuid: $uuid})-[r]-(n) RETURN labels(n) AS neighbor_labels, type(r) AS relationship_type, properties(r) AS properties LIMIT 3",
+      "params": {
+        "uuid": "object_24bccae12e12"
+      }
+    }
+  ],
+  "attempted_query_names": [
+    "connection_properties"
+  ],
+  "completed_query_names": []
+}

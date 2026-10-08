@@ -1,0 +1,50 @@
+/* Opt-in smoke test: makes two billable calls: manuscript prose and a learned parser alias. */
+const {chromium} = require('playwright');
+const assert = require('node:assert/strict');
+const base = process.env.STORY_TEST_BASE_URL || 'http://127.0.0.1:8766';
+let browser;
+(async () => {
+  browser = await chromium.launch({headless: true, executablePath: '/Applications/Google Chrome.app/Contents/MacOS/Google Chrome'});
+  const page = await browser.newPage();
+  await page.goto(base + '/play/dracula/');
+  const ready = () => page.waitForFunction(() => !document.querySelector('#story-command').disabled);
+  await ready();
+  await page.locator('.story-workshop summary').click();
+  const switched = page.waitForResponse(r => r.url().endsWith('/play/api/turn/'));
+  await page.locator('[data-author-switch]').click();
+  assert.equal((await (await switched).json()).author_backend, 'openrouter');
+  await ready();
+  async function command(text) {
+    await page.locator('#story-command').fill(text);
+    const response = page.waitForResponse(r => r.url().endsWith('/play/api/turn/'), {timeout: 120000});
+    await page.locator('#story-command').press('Enter');
+    const result = await response;
+    assert.equal(result.status(), 200, await result.text());
+    await ready();
+    return result.json();
+  }
+  const started = Date.now();
+  const written = await command('read manuscript');
+  const duration = Date.now() - started;
+  assert.equal(written.model_calls, 1);
+  assert.equal(written.objects[0].backend, 'openrouter');
+  const text = written.transcript[written.transcript.length - 2].text;
+  await page.reload();
+  await ready();
+  const replayed = await command('read manuscript');
+  assert.equal(replayed.model_calls, 1);
+  assert.equal(replayed.replays, 1);
+  assert.equal(replayed.transcript[replayed.transcript.length - 2].text, text);
+  const learned = await command('peruse manuscript');
+  assert.equal(learned.model_calls, 2);
+  assert.equal(learned.props.manuscript_read, true);
+  assert.equal((await command('peruse manuscript')).model_calls, 2);
+  assert.equal((await command('take babel fish')).model_calls, 2);
+  await command('freeze world');
+  const cached = await command('peruse manuscript');
+  assert.equal(cached.model_calls, 2);
+  assert.equal(cached.transcript.at(-2).text, text);
+  const frozen = await command('build an entirely new castle');
+  assert.equal(frozen.model_calls, 2);
+  console.log(JSON.stringify({liveAuthor: 'passed', persistedAcrossReload: true, exactReplay: true, modelCalls: frozen.model_calls, generationMilliseconds: duration, frozenParser: 'saved aliases replayed without model', manuscript: 'persisted and readable'}, null, 2));
+})().catch(error => {console.error(error); process.exitCode = 1;}).finally(async () => {if (browser) await browser.close();});

@@ -44,6 +44,8 @@ INSTALLED_APPS = [
     # Project apps
     'narrative',
     'marketing',
+    'chat',
+    'adventure',
 ]
 
 MIDDLEWARE = [
@@ -76,6 +78,7 @@ TEMPLATES = [
                 'django.contrib.messages.context_processors.messages',
                 'marketing.context_processors.series_context',
                 'narrative.context_processors.theme_context',
+                'chat.context_processors.chat_settings',
             ],
         },
     },
@@ -137,3 +140,26 @@ TIER_PLANET_MIN_EPISODES = int(os.environ.get('TIER_PLANET_MIN_EPISODES', 2))
 TIER_PLANET_MIN_RELATIONSHIPS = int(os.environ.get('TIER_PLANET_MIN_RELATIONSHIPS', 5))
 
 # Asteroid tier: Everything below Planet thresholds (default tier)
+
+# =============================================================================
+# ASK THE ARCHIVE — conversational layer over the narrative graph
+# =============================================================================
+# docs/CHAT_INTERACTIVITY_ARCHITECTURE_BRIEF.md. The endpoint is disabled
+# unless a key is configured (or the fake backend is selected for local
+# widget development / tests). Spend cap lives on the OpenRouter key itself
+# — set it BEFORE exposing the endpoint publicly (brief §4.6).
+CHAT_OPENROUTER_API_KEY = os.environ.get('OPENROUTER_API_KEY', '')
+CHAT_LLM_BACKEND = os.environ.get('CHAT_LLM_BACKEND', 'openrouter')
+CHAT_ENABLED = bool(CHAT_OPENROUTER_API_KEY) or CHAT_LLM_BACKEND == 'fake'
+CHAT_MODEL = os.environ.get('CHAT_MODEL', 'google/gemini-2.5-flash')
+CHAT_MAX_TOKENS = int(os.environ.get('CHAT_MAX_TOKENS', 2048))
+# Narrative prose breathes a little more than compliance answers (~0.5 vs
+# the prior art's 0.3); facts stay grounded by tool discipline, not temp.
+CHAT_TEMPERATURE = float(os.environ.get('CHAT_TEMPERATURE', 0.5))
+CHAT_RATE_LIMIT_PER_MINUTE = int(os.environ.get('CHAT_RATE_LIMIT_PER_MINUTE', 10))
+CHAT_RATE_LIMIT_PER_HOUR = int(os.environ.get('CHAT_RATE_LIMIT_PER_HOUR', 60))
+
+# Local story-terminal prototype. Production requires explicit enablement.
+ADVENTURE_ENABLED = os.environ.get('ADVENTURE_ENABLED', '0') == '1'
+ADVENTURE_AUTHOR_BACKEND = os.environ.get('ADVENTURE_AUTHOR_BACKEND', 'local')
+ADVENTURE_MODEL = os.environ.get('ADVENTURE_MODEL', CHAT_MODEL)

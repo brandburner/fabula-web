@@ -367,6 +367,10 @@ urlpatterns = [
     path('admin/', include(wagtailadmin_urls)),
     path('documents/', include(wagtaildocs_urls)),
 
+    # Ask the Archive — conversational layer (SSE chat + suggestion chips)
+    path('api/chat/', include('chat.urls')),
+    path('play/', include('adventure.urls')),
+
     # Narrative custom views (connections, themes, arcs, graph)
     path('', include('narrative.urls')),
 

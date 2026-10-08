@@ -5,6 +5,7 @@ Development settings for Fabula Web.
 from .base import *
 
 DEBUG = True
+ADVENTURE_ENABLED = os.environ.get('ADVENTURE_ENABLED', '1') == '1'
 
 ALLOWED_HOSTS = ['localhost', '127.0.0.1']
 
