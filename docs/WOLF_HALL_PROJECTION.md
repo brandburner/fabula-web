@@ -20,7 +20,7 @@ alone. The weaknesses are in the data's identity and granularity, not in the mec
 Play at `/play/wolf-hall-e1/` (dev only; `ADVENTURE_ENABLED` is off in production). The same
 terminal, writing room, freeze, restart and offline download work as for Dracula.
 
-Tests: 119 pass after the grounding check and retire command (32 new in `adventure/tests/test_projection.py` on a fixture episode with nested
+Tests: 123 pass after carry-forward and the budget window (36 new in `adventure/tests/test_projection.py` on a fixture episode with nested
 locations, a feature-only place, a flashback, an identity collision and an unpublished event).
 
 ## What the graph supplies for S01E01
@@ -193,6 +193,37 @@ check (`--check`). Nothing changes without `--apply`. A retired passage stays as
 stops serving anyone; the next visitor to ask writes a fresh one. Uniqueness now applies only to
 live rows, so a retired slot can be rewritten. Retiring a local passage is allowed but warns that
 the rewrite will be identical unless the record has changed.
+
+## Record changes, rebuilds and the budget window (added 2026-10-08)
+
+Each shared passage is fingerprinted by the packet it was written from, so it stops matching when
+the record is reworded or when the code changes what the narrator receives. Two measures stop
+that from re-costing a world:
+
+- **Carry-forward.** When a slot has no LLM passage for the current record, its most recent LLM
+  passage is re-checked against the new packet with the grounding check. If it passes, it is
+  adopted under the new fingerprint at no cost and linked to its original (`carried_from`). If it
+  fails, it is retired as stale with the reasons, so it is never re-checked. Local passages are
+  never carried; they are the record verbatim and are re-rendered free.
+  `retire_passage <world> --carry-forward [--apply]` sweeps a whole world at once, for use after a
+  re-import or a narrator change. In a simulation on Happy Valley's five real LLM passages, two
+  plausible packet changes (dropping the access field; reordering atmosphere wording) left all
+  five carried forward. Carry-forward shares the check's limit: it judges vocabulary, so a passage
+  can survive a change that removed a field it mentioned in passing.
+- **A rolling budget.** `ADVENTURE_WORLD_LLM_BUDGET` (default 1000) now applies per
+  `ADVENTURE_WORLD_LLM_WINDOW_DAYS` (default 30). Every LLM call counts, including refused and
+  later-retired passages; carried passages don't. Old spend ages out, so a rewrite or rebuild no
+  longer stops the LLM author for good. The hard backstop is still a spend cap on the OpenRouter
+  key, which the launch plan requires and which has not been set.
+
+**A rebuild is a new edition.** Re-exporting the same analysis is safe: the importer is
+idempotent and fingerprints match. A rebuild of the analysis is different. Comparing the committed
+and rebuilt Doctor Who S12E11 exports, none of the 19 old event ids appear among the 20 new ones,
+titles were rewritten, and character and location ids moved to the GER namespace. Passage keys are
+built from those ids, so a rebuilt world starts unwritten and its old passages simply serve no
+one. The sweep reports them as orphaned. Mapping old events to new ones is a lineage problem like
+the storyline backfill (UP-005) and is not attempted. If rebuild cost matters, give each rebuild its
+own world slug so its history and budget start fresh.
 
 ## Live narrator sample (six OpenRouter calls, capped at six in advance)
 

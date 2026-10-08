@@ -7,6 +7,7 @@ passage is written on next request. Old rows remain as history.
 """
 import hashlib
 import json
+from datetime import timedelta
 
 from django.conf import settings
 from django.db import IntegrityError, transaction
@@ -48,14 +49,46 @@ def as_passage(row):
 
 def lookup(slug, world, key, prefer, exact=False):
     """The world's current passage for key: the preferred backend first,
-    then (unless exact) any other backend."""
+    then (unless exact) any other backend. An LLM passage written for an
+    earlier version of the record is carried forward if it still passes."""
     rows = list(live(slug).filter(key=key, packet_hash=current_hashes(world)[key]).order_by('created_at'))
     for row in rows:
         if row.backend == prefer:
             return as_passage(row)
+    if prefer == 'openrouter' or not exact:
+        if not any(row.backend == 'openrouter' for row in rows):
+            carried = carry_forward(slug, world, key)
+            if carried and (prefer == 'openrouter' or not rows):
+                return carried
     if rows and not exact:
         return as_passage(rows[0])
     return None
+
+
+def carry_forward(slug, world, key):
+    """Re-check the latest stale LLM passage for key against the current record.
+    If it still passes the grounding check, adopt it under the new fingerprint at
+    no cost; if not, retire it so it is never checked again. Local passages are
+    never carried: they are the record verbatim, so they are simply re-rendered."""
+    fingerprint = current_hashes(world)[key]
+    stale = (live(slug).filter(key=key, backend='openrouter').exclude(packet_hash=fingerprint)
+             .order_by('-created_at').first())
+    if stale is None:
+        return None
+    data, sources = narrator.packet(world, key)
+    problems = narrator.grounding_problems(stale.text, data)
+    if problems:
+        retire(WorldPassage.objects.filter(pk=stale.pk),
+               'stale: no longer grounded in the updated record; ' + '; '.join(problems))
+        return None
+    try:
+        with transaction.atomic():
+            row = WorldPassage.objects.create(
+                world=slug, key=key, packet_hash=fingerprint, backend='openrouter', kind=stale.kind,
+                text=stale.text, sources=sources, written_by=stale.written_by, carried_from=stale)
+    except IntegrityError:
+        row = live(slug).get(key=key, packet_hash=fingerprint, backend='openrouter')
+    return as_passage(row)
 
 
 def save(slug, world, key, passage, playthrough=None):
@@ -112,7 +145,13 @@ def stats(slug, world):
             'recent': [(row.key, row.backend) for row in rows[-12:]][::-1]}
 
 
+def llm_spent(slug):
+    """LLM calls in the current window. Every LLM row cost a call, including
+    retired and refused ones, except carried rows, which re-used a passage."""
+    since = timezone.now() - timedelta(days=settings.ADVENTURE_WORLD_LLM_WINDOW_DAYS)
+    return WorldPassage.objects.filter(world=slug, backend='openrouter', carried_from__isnull=True,
+                                       created_at__gte=since).count()
+
+
 def llm_budget_left(slug):
-    # Every LLM row cost a call, including retired and refused ones.
-    used = WorldPassage.objects.filter(world=slug, backend='openrouter').count()
-    return used < settings.ADVENTURE_WORLD_LLM_BUDGET
+    return llm_spent(slug) < settings.ADVENTURE_WORLD_LLM_BUDGET

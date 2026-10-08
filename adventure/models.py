@@ -48,6 +48,10 @@ class WorldPassage(models.Model):
     # one. Rows rejected by the grounding check are stored already retired.
     retired_at = models.DateTimeField(null=True, blank=True)
     retired_reason = models.CharField(max_length=300, blank=True)
+    # Set when this row re-uses an earlier passage that still passed the
+    # grounding check after its record changed. A carried row cost no call.
+    carried_from = models.ForeignKey('self', null=True, blank=True, on_delete=models.SET_NULL,
+                                     related_name='carried_to')
 
     class Meta:
         constraints = [models.UniqueConstraint(

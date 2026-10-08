@@ -12,6 +12,10 @@ visitor to ask writes a fresh passage. Nothing changes without --apply.
 
     # sweep live LLM passages through the grounding check; --apply retires failures
     python manage.py retire_passage wolf-hall-e1 --check
+
+    # after a re-import or a change to what the narrator is sent: carry LLM
+    # passages forward to the new record where they still pass, retire the rest
+    python manage.py retire_passage wolf-hall-e1 --carry-forward --apply
 """
 from django.core.management.base import BaseCommand, CommandError
 from django.db.models import Q
@@ -34,6 +38,8 @@ class Command(BaseCommand):
         parser.add_argument('--grep', help='With --list: only keys or text containing this.')
         parser.add_argument('--retired', action='store_true', help='With --list: include retired rows.')
         parser.add_argument('--check', action='store_true', help='Run the grounding check over live LLM passages.')
+        parser.add_argument('--carry-forward', action='store_true',
+                            help='Re-check stale LLM passages against the current record; adopt or retire them.')
         parser.add_argument('--apply', action='store_true', help='Actually retire. Without it, only report.')
 
     def handle(self, *args, **opts):
@@ -50,6 +56,8 @@ class Command(BaseCommand):
             return self.list_passages(slug, hashes, opts)
         if opts['check']:
             return self.check_grounding(slug, world, hashes, opts)
+        if opts['carry_forward']:
+            return self.carry_forward(slug, world, hashes, opts)
         if not opts['key'] and not opts['id']:
             raise CommandError('Give a passage key, --id, --list or --check.')
         rows = store.live(slug)
@@ -88,6 +96,30 @@ class Command(BaseCommand):
         for row in rows:
             self.stdout.write(self.describe(row, hashes))
         self.stdout.write(f'{len(rows)} passage(s).')
+
+    def carry_forward(self, slug, world, hashes, opts):
+        current = set(store.live(slug).filter(backend='openrouter').values_list('key', 'packet_hash'))
+        current_keys = {k for k, h in current if hashes.get(k) == h}
+        stale_keys = sorted({k for k, h in current if k in hashes and hashes[k] != h} - current_keys)
+        orphaned = sorted({k for k, h in current if k not in hashes})
+        adopted = refused = 0
+        for key in stale_keys:
+            if opts['apply']:
+                ok = store.carry_forward(slug, world, key) is not None
+            else:
+                stale = (store.live(slug).filter(key=key, backend='openrouter').exclude(packet_hash=hashes[key])
+                         .order_by('-created_at').first())
+                ok = not narrator.grounding_problems(stale.text, narrator.packet(world, key)[0])
+            adopted += ok
+            refused += not ok
+        verb = ('carried forward', 'retired as stale') if opts['apply'] else ('would carry forward', 'would retire as stale')
+        self.stdout.write(f'{len(stale_keys)} LLM passage(s) were written for an older version of their record: '
+                          f'{adopted} {verb[0]}, {refused} {verb[1]}.')
+        if orphaned:
+            self.stdout.write(f'{len(orphaned)} live LLM passage(s) belong to keys this world no longer has '
+                              '(a rebuild re-minted its ids); they serve no one and can be retired with --id.')
+        if stale_keys and not opts['apply']:
+            self.stdout.write('Dry run. Add --apply.')
 
     # Not named check(): that would override BaseCommand.check, Django's system checks.
     def check_grounding(self, slug, world, hashes, opts):

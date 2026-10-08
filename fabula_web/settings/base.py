@@ -163,10 +163,13 @@ CHAT_RATE_LIMIT_PER_HOUR = int(os.environ.get('CHAT_RATE_LIMIT_PER_HOUR', 60))
 ADVENTURE_ENABLED = os.environ.get('ADVENTURE_ENABLED', '0') == '1'
 ADVENTURE_AUTHOR_BACKEND = os.environ.get('ADVENTURE_AUTHOR_BACKEND', 'local')
 ADVENTURE_MODEL = os.environ.get('ADVENTURE_MODEL', CHAT_MODEL)
-# LLM-written passages a projected world may accumulate (all visitors together,
-# all source revisions). Each slot is written once per backend, so a world's
-# natural ceiling is its passage_slots count; this caps spend below that.
+# LLM passages a projected world may write per rolling window, across all
+# visitors. Every call counts, including refused attempts and passages later
+# retired; carried-forward passages cost nothing and don't count. Old spend
+# ages out, so a rebuild or rewrite doesn't stop the author for good. The
+# hard backstop is the spend cap on the OpenRouter key itself.
 ADVENTURE_WORLD_LLM_BUDGET = int(os.environ.get('ADVENTURE_WORLD_LLM_BUDGET', 1000))
+ADVENTURE_WORLD_LLM_WINDOW_DAYS = int(os.environ.get('ADVENTURE_WORLD_LLM_WINDOW_DAYS', 30))
 # LLM attempts per passage slot before the grounding check gives up and the
 # local author's verbatim record serves that slot (until the record changes).
 ADVENTURE_LLM_ATTEMPTS_PER_SLOT = int(os.environ.get('ADVENTURE_LLM_ATTEMPTS_PER_SLOT', 2))

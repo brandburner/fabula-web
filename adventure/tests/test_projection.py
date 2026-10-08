@@ -408,6 +408,68 @@ class ProjectionViewTests(TestCase):
         with self.assertRaises(CommandError):
             call_command('retire_passage', 'dracula', '--list', stdout=io.StringIO())
 
+    # ------------------------------------------- carry-forward and the budget window
+    GROUNDED = 'You are in the Great Hall. It is quiet; rain is on the glass beside a cold hearth.'
+
+    def llm_passage(self, text=None):
+        world = projection.load_world(world_fixture.WORLD)
+        explore.ensure_index(world)
+        return store.save('test-show-e1', world, 'look:evt_1', {'text': text or self.GROUNDED, 'backend': 'openrouter',
+                                                                'kind': 'look', 'sources': []})
+
+    def change_record(self, **fields):
+        LocationInvolvement.objects.filter(event__fabula_uuid='evt_1').update(**fields)
+        projection.cached_world.cache_clear()
+
+    def test_a_passage_that_still_fits_a_changed_record_is_carried_forward_free(self):
+        from unittest.mock import patch
+        original = self.llm_passage()
+        self.change_record(observed_atmosphere='Quiet and still in the hall.')
+        with override_settings(CHAT_OPENROUTER_API_KEY='test-key'), \
+                patch('adventure.narrator.render_openrouter') as llm:
+            self.command('use live author')
+            self.command('look')
+            self.assertEqual(llm.call_count, 0)
+        self.assertEqual(self.state['transcript'][-2]['text'], self.GROUNDED)
+        carried = WorldPassage.objects.get(carried_from__isnull=False)
+        self.assertEqual(carried.carried_from_id, original['id'])
+        self.assertNotEqual(carried.packet_hash, WorldPassage.objects.get(pk=original['id']).packet_hash)
+        self.assertEqual(store.llm_spent('test-show-e1'), 1)            # the carry cost nothing
+
+    def test_a_passage_that_no_longer_fits_is_retired_and_rewritten(self):
+        from unittest.mock import patch
+        original = self.llm_passage()
+        self.change_record(observed_atmosphere='Loud with music.', key_environmental_details=['a roaring fire', 'dancers'])
+        with override_settings(CHAT_OPENROUTER_API_KEY='test-key'), \
+                patch('adventure.narrator.render_openrouter', return_value='You are in the Great Hall. It is loud with music; dancers turn by a roaring fire.') as llm:
+            self.command('use live author')
+            self.command('look')
+            self.assertEqual(llm.call_count, 1)
+        self.assertIn('dancers', self.state['transcript'][-2]['text'])
+        self.assertTrue(WorldPassage.objects.get(pk=original['id']).retired_reason.startswith('stale: no longer grounded'))
+
+    def test_the_budget_is_a_rolling_window(self):
+        from datetime import timedelta
+        from django.utils import timezone
+        self.llm_passage()
+        with override_settings(ADVENTURE_WORLD_LLM_BUDGET=1, ADVENTURE_WORLD_LLM_WINDOW_DAYS=30):
+            self.assertFalse(store.llm_budget_left('test-show-e1'))
+            WorldPassage.objects.update(created_at=timezone.now() - timedelta(days=31))
+            self.assertTrue(store.llm_budget_left('test-show-e1'))
+
+    def test_carry_forward_sweep(self):
+        import io
+        from django.core.management import call_command
+        self.llm_passage()
+        self.change_record(observed_atmosphere='Quiet and still in the hall.')
+        out = io.StringIO()
+        call_command('retire_passage', 'test-show-e1', '--carry-forward', stdout=out)
+        self.assertIn('1 would carry forward, 0 would retire as stale', out.getvalue())
+        self.assertFalse(WorldPassage.objects.filter(carried_from__isnull=False).exists())
+        call_command('retire_passage', 'test-show-e1', '--carry-forward', '--apply', stdout=out)
+        self.assertIn('1 carried forward, 0 retired as stale', out.getvalue())
+        self.assertTrue(WorldPassage.objects.filter(carried_from__isnull=False).exists())
+
     def test_unpublished_episode_is_not_a_world(self):
         with override_settings(ADVENTURE_WORLDS=[{'slug': 'hidden', 'series': 'test-show', 'season': 1, 'episode': 2}]):
             self.assertEqual(self.client.get('/play/hidden/api/state/').status_code, 404)
