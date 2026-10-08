@@ -69,6 +69,215 @@ Closes when a re-export of any rebuilt mega shows 0 self-parented rows in
 
 ---
 
+## UP-011 — startrektng rebuild emits `arc_type: SUPERNATURAL`, outside the contract vocabulary (workaround-shipped)
+
+**Raised**: 2026-09-07 · **Series**: startrektng · **Cross-ref**: TNG 2026-09-07 re-export
+
+**Symptom**: `import_fabula --dry-run` on the 2026-09-07 `startrektng.mega`
+export failed v2.4 shape validation on 30 of 430 arcs:
+`arc_type 'SUPERNATURAL' not in the canonical or legacy vocabulary`.
+`docs/YAML_CONTRACT.md` / schema v1.2.0 define INTERNAL, INTERPERSONAL,
+SOCIETAL, ENVIRONMENTAL, TECHNOLOGICAL (+ UNKNOWN).
+
+**Evidence**: `fabula_export/startrektng/arcs.yaml` distribution:
+INTERPERSONAL 150, SOCIETAL 146, INTERNAL 102, **SUPERNATURAL 30**,
+TECHNOLOGICAL 2. Prod already carries 9 SUPERNATURAL arcs (Dracula 7,
+Encanto 1, 1 unattributed) from pre-validation imports, so the value has
+been leaking out of the classifier for a while; TNG is just the first
+export to hit the gate with it.
+
+**Downstream workaround**: `SUPERNATURAL` added to the importer's
+`V24_ARC_TYPES` legacy set. The model's `ArcType` choices are unchanged,
+so `get_arc_type_display` renders the raw string ("SUPERNATURAL
+Conflict"). Not a migration.
+
+**Upstream ask**: either add SUPERNATURAL to the canonical arc-type
+vocabulary in the schema (and tell this repo so the model choices and
+contract get updated together), or have the arc classifier map it onto
+an existing type. Pick one; the two sides must agree.
+
+---
+
+## UP-010 — Rebuild mints beat-layer connections without GER `global_id` (workaround-shipped)
+
+**Raised**: 2026-09-07 · **Series**: startrektng · **Cross-ref**: TNG 2026-09-07 re-export
+
+**Symptom**: `import_fabula --dry-run` failed v2.4 shape validation with
+76 × `beat-layer row missing global_id (URL continuity)`.
+
+**Evidence** (queried on `startrektng.mega`, bolt 7689):
+
+- 5,519 `(:PlotBeat)-[r]->(:PlotBeat)` narrative edges; **119 have no
+  `global_id`**, every one of them `created_at` = 2026-09-06 (the rebuild
+  day). Every edge with a `global_id` predates the rebuild
+  (2025-07-29 … 2026-03-06). So the rebuild's new beat edges are minted
+  with `connection_uuid` but never pass through GER id stamping.
+- Types affected: CAUSAL 52, CHARACTER_CONTINUITY 18, THEMATIC_PARALLEL
+  17, ESCALATION 8, FORESHADOWING 8, NARRATIVELY_FOLLOWS 5,
+  EMOTIONAL_ECHO 4, CALLBACK 4, SYMBOLIC_PARALLEL 3. 76 survive the
+  exporter's beat→event mapping.
+- On a restore of prod, **0** of the 76 exported rows match an existing
+  TNG `NarrativeConnection` by `(from_event, to_event, type)`: they are
+  all fresh rows, so no live URL depends on the missing id.
+
+**Downstream workaround**: the validator now reports missing beat
+`global_id` as a counted warning instead of a fatal error. The import
+phase already matched beat rows by `global_id` → `(from, to, type)` →
+create, so behaviour is unchanged for rows that have one. Residual risk:
+if a future rebuild re-mints an *existing* edge without its id and moves
+an endpoint, that row is created as new and the old one is purged with
+no redirect.
+
+**Upstream ask**: run GER id assignment over beat-layer connection edges
+created during a rebuild (same pass that stamps `global_id` on the
+pre-existing edges), so `r.global_id` is never null on exported edges.
+
+---
+
+## UP-009 — Dracula recollection and framing interview fused in one event (open)
+
+**Raised**: 2026-09-06 · **Series**: dracula · **Cross-ref**: T-040, packet 2
+
+**Confidence/ownership**: defect observed in the February export; current upstream
+origin and owner unverified. Like UP-007/008, this is a tracked candidate. An open
+UP number records unresolved work; it does not assert a verified live graph fault.
+
+**Evidence**: in `fabula_export/dracula/events/dracula_s01e01.yaml`, event
+`cand_evt_scene_fbdfed5d901968f6_03` has:
+
+- `/events/26/is_flashback`: `false`.
+- `/events/26/participations/1/character_uuid`: `agent_09ee5fad16ae` (Agatha).
+- `/events/26/participations/1/observed_status`: “Sister Agatha interrupts the
+  scene with a single-word reaction ('Lives?') to Dracula’s statement about blood”.
+  The row then describes her as peripheral to Jonathan and Dracula's interaction.
+- `/events/26/location_involvements/0/location_uuid`: `location_7cdbbae65f48`.
+  Its description places the mirror and blood action in Jonathan's castle bedroom.
+
+The [hashed audit](prototypes/dracula-adapter-data-audit.json) stores the full
+participation/location values and pointers under `mixed_presentation_frame_candidate`.
+Episode file SHA-256: `20ee25f26fd1491a17d14aa2485a149e766e424aaca520e99ad8e1c1cfefc0f4`.
+
+**Downstream consequence**: the extraction has fused the remembered castle action
+with the interview that frames it. “An event at a place” cannot supply a room's
+occupants or a single time frame here. The unset flashback flag fails to distinguish
+the presentation layers. Filtering Agatha from a cast list only hides the symptom;
+flipping the flag alone would still leave the two frames fused.
+
+**Next verification**: inspect this event, its derived beats and participation
+relationships with `properties(r)` in the correct Dracula database, then compare
+with source scene boundaries. Establish where segmentation/frame attribution was
+lost before assigning an extraction, export or contract fix. Verify that repaired
+records distinguish a character's framing reaction from physical participation in
+the recalled action; do not fabricate Agatha's presence or a time split downstream.
+
+**Paper treatment**: explicitly authored recollection label; no automated placement
+from this event. This is a local presentation choice, not a data repair. No runtime
+workaround has shipped for this defect.
+
+---
+
+## UP-008 — Dracula kit identity collapses noun-specific involvements (open)
+
+**Raised**: 2026-09-06 · **Series**: dracula · **Cross-ref**: T-040
+
+**Confidence/ownership**: observed export/import behavior; upstream origin unverified,
+owner unassigned. Previously labelled DRA-OBJECT-IDENTITY without a tracking number.
+
+`object_24bccae12e12`, “Sister Agatha's Hammer and Stake Kit,” represents hammer,
+bag and stake in three different interview involvement rows. Episode one has
+16 repeated event/object groups containing 37 rows (**21 rows beyond the first
+per group**). The importer skips later rows of a repeated object within an event,
+so noun-specific involvement descriptions can be lost.
+
+Paper packets preserve raw row pointers without manufacturing canonical child
+objects. Inspect object identity, node/relationship properties and their export
+transformation before assigning this to extraction, consolidation, export or import.
+A genuine multi-involvement representation may require a contract/import change;
+do not assume merging or splitting is correct without the source.
+
+**Verification status**: current Dracula graph unavailable on the configured
+server; see UP-007. [Hashed export audit](prototypes/dracula-adapter-data-audit.json).
+No runtime workaround or upstream fix is claimed.
+
+---
+
+## UP-007 — Legacy Dracula connection export fans scene edges into cliques (open)
+
+**Raised**: 2026-09-06 · **Series**: dracula · **Cross-ref**: T-040
+
+**Confidence/ownership**: observed legacy export pattern; current graph relationship
+properties unverified, owner unassigned. Previously DRA-CONNECTION-FANOUT.
+
+75 connection UUIDs recur; 31 groups remain within one scene. `conn_3fc2ea6be93d`
+occurs as all 12 ordered pairs of four events, with one identical
+CHARACTER_CONTINUITY description. This matches the scene-level Cartesian fan-out.
+The current exporter explicitly documents replacing that join with beat-to-event
+derivation. The legacy importer still stores distinct endpoint/type pairs, so it
+preserves those 12 rows rather than repairing the clique.
+
+Do not expose these as independent leads or invent shared-projection provenance
+as an adapter feature. Confirm current `properties(r)` and beat/event mapping when
+the correct database is available; determine whether the existing exporter fix
+plus re-export suffices before asking for a new upstream change.
+
+**Shared verification status for UP-007–009**: February 18 contract v2.3.0 export.
+The required read-only `properties(r)` attempt explicitly against `dracula.s01`
+returned `Neo.ClientError.Database.DatabaseNotFound` on the configured server.
+No database was started/stopped/switched and no TNG query was made. This records
+the previous attempt, not a fresh check for this revision. See
+[attempt and planned queries](prototypes/dracula-neo4j-verification.json) and
+[hashed export audit](prototypes/dracula-adapter-data-audit.json).
+
+All three issues remain open pending source verification while Neo4j serves TNG
+remediation. The [paper gate](DRACULA_PAPER_PLAYTEST.md) can proceed on the inspected
+file; automated traversal, entity placement and object spawning cannot use these
+defects as evidence of valid world structure.
+
+---
+
+## UP-006 — GER merged two unrelated "Master" characters into the Time Lord (open)
+
+**Raised**: 2026-09-03 · **Series**: doctorwho · **Cross-ref**: none yet
+
+**Downstream symptom**: the investor deck's cross-season identity slide
+showcased `ger_agent_the_master_timelord` and its own text disproved
+the headline. The entity carries Season 6 (the Master of the Land of
+Fiction, *The Mind Robber*, an unrelated character) and Season 16 (the
+Shadow, the Black Guardian's agent in *The Armageddon Factor*), and its
+alias list includes "Cyber Leader", "Cyberman Leader" and "Shadow". The
+synthesized description bakes the error into prose ("commanding the
+Master Brain in the Land of Fiction"). The Time Lord first appears in
+Season 8.
+
+**Evidence** (`fabula_export/doctorwho/characters.yaml`, export of
+2026-07-17):
+
+- `season_appearances: [6, 8, 9, 10, 14, 14, 16, 18, 19, 20, 21, 22, 23, 26]`
+  — seasons 6 and 16 are false; 14 is duplicated.
+- aliases include `Cyber Leader`, `Cyberman Leader`, `Shadow`, `LEADER`.
+- The graph already holds a separate `Master Brain` entity (Season 6),
+  so the harmoniser merged the Land of Fiction's Master *across* an
+  entity it had correctly kept apart.
+- Contrast: `Brigadier Alistair Lethbridge-Stewart` (`ger_agent_d5e52d5a4263`)
+  resolves cleanly across seasons 5–26 while the parallel-Earth
+  `Brigade Leader Lethbridge-Stewart` (`ger_agent_ec987a1066fb`, Season 7)
+  is correctly kept separate. The deck now uses that example instead.
+- Related fragmentation, not yet filed: the Doctor is seven entities
+  (`The First Doctor` … `The Seventh Doctor`, plus duplicate `Second Doctor`
+  and `Third Doctor`), so "one protagonist across six regenerations" is
+  not currently true of the graph either.
+
+**What upstream needs to change**: the cross-season merge accepts a
+name-token match ("Master", "Leader", "Shadow") without a
+season-adjacency or organisation check. A title-word shared with a
+one-off villain should not outweigh a 15-season gap and a different
+affiliation.
+
+**Downstream workaround**: none. The website publishes the merged entity
+as-is.
+
+---
+
 ## UP-005 — Arc merge lineage doesn't reach the published generation (fixed-upstream, verified)
 
 > **Status detail**: the current export is repaired and downstream-verified
