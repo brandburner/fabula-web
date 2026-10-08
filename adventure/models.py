@@ -24,3 +24,28 @@ class Turn(models.Model):
     class Meta:
         constraints = [models.UniqueConstraint(
             fields=['playthrough', 'request_id'], name='adventure_turn_once')]
+
+
+class WorldPassage(models.Model):
+    """An accepted passage that belongs to a projected world, not to one visitor.
+
+    The first accepted passage for (world, key, packet_hash, backend) serves
+    every later visitor. packet_hash fingerprints the source record the
+    passage was written from, so a changed record yields a new hash and the
+    old passage simply stops matching: it is retired, not overwritten.
+    """
+    world = models.CharField(max_length=64)
+    key = models.CharField(max_length=200)
+    packet_hash = models.CharField(max_length=64)
+    backend = models.CharField(max_length=20)
+    kind = models.CharField(max_length=20)
+    text = models.TextField()
+    sources = models.JSONField(default=list)
+    written_by = models.ForeignKey(Playthrough, null=True, blank=True, on_delete=models.SET_NULL,
+                                   related_name='world_passages')
+    created_at = models.DateTimeField(auto_now_add=True)
+
+    class Meta:
+        constraints = [models.UniqueConstraint(
+            fields=['world', 'key', 'packet_hash', 'backend'], name='adventure_world_passage_once')]
+        indexes = [models.Index(fields=['world', 'key'], name='adventure_world_key')]

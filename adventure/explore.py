@@ -83,7 +83,7 @@ def opening(world):
 def new_state(world):
     first = world['events'][0]
     ep = world['episode']
-    return {'event': first['uuid'], 'visited': [first['uuid']], 'passages': {}, 'frozen': False,
+    return {'event': first['uuid'], 'visited': [first['uuid']], 'seen': [], 'frozen': False,
             'parser_aliases': {}, 'moves': 0, 'model_calls': 0, 'authored': 0, 'replays': 0,
             'transcript': [block(f"{world['series']['title'].upper()}\n{ep['title']} · S{ep['season']:02d}E{ep['number']:02d}", 'title'),
                            block(opening(world)), block(header(world, first))]}
@@ -136,11 +136,16 @@ def passage_label(world, key):
     return pool[target]['name'] + ' · ' + event['title']
 
 
-def gap(world, state, action):
+def needs_passage(world, state, action):
+    """The passage key an action reads, if it reads one. Passages belong to
+    the world (see store.py); a visitor's state only records which it has seen."""
     key = passage_key(state, action)
-    if key and action in available(world, state) and key not in state['passages'] and not state['frozen']:
-        return key
-    return None
+    return key if key and action in available(world, state) else None
+
+
+def seen(state):
+    # Saves from before shared passages kept text per visitor under 'passages'.
+    return set(state.get('seen') or ()) | set(state.get('passages') or ())
 
 
 def destination(world, event, loc_uuid):
@@ -156,7 +161,7 @@ def destination(world, event, loc_uuid):
 
 def suggestions(world, state):
     event = event_of(world, state)
-    passages = state['passages']
+    passages = seen(state)
     if f"look:{event['uuid']}" not in passages:
         return ['look', 'who is here', 'map']
     if f"watch:{event['uuid']}" not in passages:
@@ -197,8 +202,14 @@ def map_text(world, state):
     return '\n'.join(lines)
 
 
-def transition(world, state, action, authored=None):
+def transition(world, state, action, passage=None, fresh=False):
+    """passage: the world's passage for this action, if it reads one (None if
+    unwritten). fresh: this visitor's turn is the one that wrote it."""
     state = copy.deepcopy(state)
+    if 'passages' in state:
+        state['seen'] = sorted(seen(state))
+        del state['passages']
+    state.setdefault('seen', [])
     out = []
     event = event_of(world, state)
 
@@ -224,19 +235,20 @@ def transition(world, state, action, authored=None):
         state['moves'] += 1
     key = passage_key(state, action)
     if key:
-        if key not in state['passages']:
+        if passage is None:
             if state['frozen']:
-                say('This passage has not been written. The world is frozen; written passages and the record still work. Enable the author to write it.', 'system')
+                say('This passage has not been written yet. The world is frozen; written passages and the record still work. Enable the author to write it.', 'system')
                 state['moves'] -= 1
                 return state, out
-            if authored is None:
-                raise ValueError('A passage must be written before committing this action.')
-            state['passages'][key] = authored
+            raise ValueError('A passage must be written before committing this action.')
+        if fresh:
             state['authored'] += 1
-            say('A passage becomes part of this playthrough · ' + passage_label(world, key), 'written')
+            say('A passage becomes part of this world · ' + passage_label(world, key), 'written')
         else:
             state['replays'] += 1
-        say(state['passages'][key]['text'])
+        if key not in state['seen']:
+            state['seen'].append(key)
+        say(passage['text'])
         if action == 'look':
             names = [stem_of(p['name']) for p in event['participants'][:2]] + [stem_of(o['name']) for o in event['objects'][:1]]
             say('You can watch what happens here' + (', or examine ' + ' / '.join(names) if names else '') + '.', 'hint')
@@ -325,7 +337,13 @@ def _chain(world, uuid):
     return out
 
 
-def public_state(world, state, version, run_id, author_backend):
+NO_STATS = {'written': 0, 'llm': 0, 'recent': []}
+
+
+def public_state(world, state, version, run_id, author_backend, stats=None):
+    """stats: the world's shared passage counts (store.stats); the writing
+    room reports the world, not one visitor."""
+    stats = stats or NO_STATS
     event = event_of(world, state)
     index = ensure_index(world)['index']
     return {'version': version, 'run_id': str(run_id), 'revision': world['revision'],
@@ -335,15 +353,15 @@ def public_state(world, state, version, run_id, author_backend):
                              'text': (room_of(world, world['events'][index[u]]) or {'name': ''})['name']} for u in state['visited']],
             'transcript': state['transcript'], 'suggestions': suggestions(world, state),
             'frozen': state['frozen'], 'author_backend': author_backend,
-            'authored': state['authored'], 'slot_count': world['report']['passage_slots'], 'replays': state['replays'],
-            'model_calls': state['model_calls'],
-            'objects': [{'id': key, 'name': passage_label(world, key), 'backend': value['backend']}
-                        for key, value in state['passages'].items()]}
+            'authored': stats['written'], 'slot_count': world['report']['passage_slots'], 'replays': state['replays'],
+            'model_calls': stats['llm'], 'seen': len(seen(state)),
+            'objects': [{'id': key, 'name': passage_label(world, key), 'backend': backend}
+                        for key, backend in stats['recent']]}
 
 
 def restart(world, state):
     fresh = new_state(world)
-    fresh.update({k: state[k] for k in ('passages', 'authored', 'model_calls', 'frozen', 'parser_aliases')})
+    fresh.update({k: state[k] for k in ('authored', 'model_calls', 'frozen', 'parser_aliases') if k in state})
     return fresh
 
 
@@ -539,8 +557,10 @@ def aliases(world):
     return table
 
 
-def compile_world(world, state):
-    """Finite transition table: one state per moment; passages as written so far."""
+def compile_world(world, state, passages=None, stats=None):
+    """Finite transition table: one state per moment, with the world's
+    shared passages as written so far (passages: key -> passage)."""
+    passages = passages or {}
     states = {}
     for event in world['events']:
         sample = copy.deepcopy(state)
@@ -548,7 +568,7 @@ def compile_world(world, state):
         acts = available(world, sample)
         actions = {}
         for action in acts:
-            after, response = transition(world, sample, action)
+            after, response = transition(world, sample, action, passages.get(passage_key(sample, action) or ''))
             actions[action] = {'next': state_key(after), 'blocks': response, 'move': after['moves'], 'replay': after['replays']}
         local = {}
         for part in event['participants']:
@@ -562,5 +582,5 @@ def compile_world(world, state):
         states[event['uuid']] = {'scene': scene_of(world, event), 'discoveries': [], 'props': {},
                                  'aliases': local, 'suggestions': suggestions(world, sample), 'actions': actions}
     return {'states': states, 'aliases': aliases(world),
-            'initial': public_state(world, new_state(world), 0, 'offline', 'disabled'),
-            'saved': public_state(world, state, 0, 'offline', 'disabled'), 'revision': world['revision']}
+            'initial': public_state(world, new_state(world), 0, 'offline', 'disabled', stats),
+            'saved': public_state(world, state, 0, 'offline', 'disabled', stats), 'revision': world['revision']}

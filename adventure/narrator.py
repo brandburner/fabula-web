@@ -15,8 +15,10 @@ from chat.llm import LLMError, OpenRouterClient
 MIN_LEN, MAX_LEN = 40, 1600
 
 
-def event_of(world, state):
-    return world['events'][world['index'][state['event']]]
+def event_for(world, key):
+    """The moment a passage key belongs to: 'look:EVT', 'char:UUID@EVT'."""
+    rest = key.partition(':')[2]
+    return world['events'][world['index'][rest.partition('@')[2] or rest]]
 
 
 def chain(world, uuid):
@@ -29,11 +31,12 @@ def chain(world, uuid):
     return names
 
 
-def packet(world, state, key):
+def packet(world, key):
     """Observational fields only. EventPage.description (retrospective
-    analysis) is deliberately excluded; it is shown under `evidence`."""
+    analysis) is deliberately excluded; it is shown under `evidence`.
+    Depends only on the key and the record, never on a visitor."""
     kind, _, rest = key.partition(':')
-    event = event_of(world, state)
+    event = event_for(world, key)
     sources = [{'model': 'EventPage', 'uuid': event['uuid'], 'field': 'participations'}]
     if kind == 'look':
         places = sorted(event['places'], key=lambda p: not p['primary'])
@@ -151,8 +154,8 @@ def render_openrouter(data):
     return text.strip()
 
 
-def write(world, state, key, backend):
-    data, sources = packet(world, state, key)
+def write(world, key, backend):
+    data, sources = packet(world, key)
     if backend == 'local':
         text = render_local(data)
     elif backend == 'openrouter':

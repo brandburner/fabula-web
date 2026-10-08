@@ -7,7 +7,7 @@ Every other slug is a projected world read from the narrative graph
 from django.conf import settings
 from django.http import Http404
 
-from . import author, engine, explore, narrator, parser, projection
+from . import author, engine, explore, narrator, parser, projection, store
 from .scenario import REVISION as DRACULA_REVISION
 
 
@@ -49,8 +49,11 @@ class DraculaScenario:
     def gap(self, state, action):
         return engine.gap(state, action)
 
-    def write(self, slot, state, backend):
+    def write(self, slot, state, backend, run=None):
         return author.write_object(slot, selected_backend=backend)
+
+    def budget_exceeded(self, state, calls):
+        return state['model_calls'] + calls >= 12              # per save, as before
 
     def transition(self, state, action, authored=None):
         return engine.transition(state, action, authored)
@@ -108,10 +111,11 @@ class ProjectionScenario:
             'address': f"fabula://play/{self.slug}/{code.lower()}",
             'underbar': f"{world['series']['title'].upper()} / {ep['number']:02d} <span class=\"underbar-dot\">·</span> {ep['title'].upper()}",
             'caption': 'An experiment: the episode’s locations, events, people and objects projected straight from Fabula’s graph into a walkable world. Your position is saved in this browser’s session.',
-            'workshop': f"Every passage is unwritten until you ask. Look, watch, and examine people and objects at each moment; "
-                        f"{rep['passage_slots']} passages are possible across {rep['events']} moments. "
-                        'The local author renders the source record verbatim; the LLM author paraphrases it. Each accepted passage is kept for this playthrough.',
-            'slot_label': 'passages written', 'restart_confirm': 'Return to the first moment? Written passages will be kept.',
+            'workshop': f"This world writes itself as people explore it. Every passage is unwritten until someone asks: "
+                        f"{rep['passage_slots']} are possible across {rep['events']} moments. The first accepted passage "
+                        'becomes part of the world for every visitor after. The local author renders the source record '
+                        'verbatim; the LLM author paraphrases it. If the record changes, its passages are written afresh.',
+            'slot_label': 'passages in this world', 'calls_label': 'written by the LLM author', 'restart_confirm': 'Return to the first moment? Written passages will be kept.',
             'filename': f'fabula-{self.slug}-written-world.html', 'page_title': f"{world['series']['title']} {code} — fabula.",
             'description': f"Walk {world['series']['title']} {code} as a text adventure projected from Fabula’s narrative graph.",
         }
@@ -131,23 +135,40 @@ class ProjectionScenario:
     def refusal(self, state, status, payload, clean):
         return explore.refusal(self.world, state, status, payload)
 
+    @staticmethod
+    def mode(state):
+        return state.get('author_backend', author.backend())
+
     def gap(self, state, action):
-        return explore.gap(self.world, state, action)
+        """A key to write only if the world lacks a passage in this visitor's
+        backend. Frozen visitors never write; they read whatever exists."""
+        key = explore.needs_passage(self.world, state, action)
+        if not key or state['frozen']:
+            return None
+        return None if store.lookup(self.slug, self.world, key, self.mode(state), exact=True) else key
 
-    def write(self, key, state, backend):
-        return narrator.write(self.world, state, key, backend)
+    def write(self, key, state, backend, run=None):
+        """Auto-accept: the written passage joins the world for every visitor."""
+        return store.save(self.slug, self.world, key, narrator.write(self.world, key, backend), run)
 
-    def transition(self, state, action, authored=None):
-        return explore.transition(self.world, state, action, authored)
+    def budget_exceeded(self, state, calls):
+        return not store.llm_budget_left(self.slug)            # per world, all visitors
+
+    def transition(self, state, action, written=None):
+        key = explore.needs_passage(self.world, state, action)
+        passage = written or (store.lookup(self.slug, self.world, key, self.mode(state)) if key else None)
+        return explore.transition(self.world, state, action, passage, fresh=written is not None)
 
     def suggestions(self, state):
         return explore.suggestions(self.world, state)
 
     def public_state(self, state, version, run_id, backend):
-        return explore.public_state(self.world, state, version, run_id, backend)
+        return explore.public_state(self.world, state, version, run_id, backend, store.stats(self.slug, self.world))
 
     def compile_world(self, state):
-        return explore.compile_world(self.world, state)
+        """The offline edition is the shared world as written so far."""
+        return explore.compile_world(self.world, state, store.passages_for(self.slug, self.world, self.mode(state)),
+                                     store.stats(self.slug, self.world))
 
     def restart(self, state):
         return explore.restart(self.world, state)

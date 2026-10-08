@@ -19,7 +19,7 @@
   <summary>The writing room <span>watch this world become written</span></summary>
   <div class="workshop-body">
     <p>{{ meta.workshop }}</p>
-    <div class="workshop-stats"><div><strong data-written>0</strong><span>{{ meta.slot_label }} / <span data-slot-count>0</span></span></div><div><strong data-replays>0</strong><span>saved passages replayed</span></div><div><strong data-model-calls>0</strong><span>LLM calls</span></div></div>
+    <div class="workshop-stats"><div><strong data-written>0</strong><span>{{ meta.slot_label }} / <span data-slot-count>0</span></span></div><div><strong data-replays>0</strong><span>saved passages replayed</span></div><div><strong data-model-calls>0</strong><span>{{ meta.calls_label|default:"LLM calls" }}</span></div></div>
     <p class="workshop-backend" data-backend></p>
     <ul class="written-objects" data-objects></ul>
     <div class="workshop-actions"><button type="button" data-author-switch hidden>use live LLM author</button><button type="button" data-freeze>freeze this world</button><a href="{{ download_url }}" data-download>download playable HTML ↓</a></div>

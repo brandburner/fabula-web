@@ -82,9 +82,9 @@ def prepare(run, command, scenario):
         slot = scenario.gap(proposed, action) if action else None
         written = None
         if slot:
-            if mode == 'openrouter' and proposed['model_calls'] + calls >= 12:
+            if mode == 'openrouter' and scenario.budget_exceeded(proposed, calls):
                 raise AuthorBudgetExceeded
-            written = scenario.write(slot, proposed, mode)
+            written = scenario.write(slot, proposed, mode, run)
             calls += int(mode == 'openrouter')
         if action is None:
             blocks = scenario.refusal(proposed, status, payload, clean)
@@ -194,7 +194,7 @@ def turn(request, slug='dracula'):
         except LLMError:
             return JsonResponse({'error': 'The author could not finish this passage. Your position is unchanged; retry or freeze the world.'}, status=503)
         except AuthorBudgetExceeded:
-            return JsonResponse({'error': 'The author-call budget for this save is used. Freeze and play the written world.'}, status=429)
+            return JsonResponse({'error': 'The author budget is used up. Freeze and play the written world, or switch to the local author.'}, status=429)
         with transaction.atomic():
             locked = Playthrough.objects.select_for_update().get(pk=run.pk)
             if locked.version != version or locked.pending_token != token:

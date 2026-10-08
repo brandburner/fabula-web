@@ -20,7 +20,7 @@ alone. The weaknesses are in the data's identity and granularity, not in the mec
 Play at `/play/wolf-hall-e1/` (dev only; `ADVENTURE_ENABLED` is off in production). The same
 terminal, writing room, freeze, restart and offline download work as for Dracula.
 
-Tests: 108 pass after the Happy Valley run (21 new in `adventure/tests/test_projection.py` on a fixture episode with nested
+Tests: 113 pass after the shared passage store (26 new in `adventure/tests/test_projection.py` on a fixture episode with nested
 locations, a feature-only place, a flashback, an identity collision and an unpublished event).
 
 ## What the graph supplies for S01E01
@@ -118,6 +118,40 @@ What the second series showed:
 - **The offline download scales badly.** At 6.2 MB it is now a practical limit: every moment
   carries the arrival text of every place it can jump to. Sharing those blocks is the fix.
 
+## Shared, durable passages (added 2026-10-08)
+
+The world now writes itself for everyone. Passages belong to the world, not to a visitor.
+
+- **Auto-accept.** The first passage written for a slot is stored in `WorldPassage` and serves
+  every later visitor. A visitor's save keeps only position, visited moments and which passages
+  they have seen.
+- **Fingerprinted by the record.** Each row stores a hash of the source packet it was written
+  from. If a reimport changes that record, the hash no longer matches, the old row is retired and
+  kept as history, and the next request writes a fresh passage.
+- **Two editions per slot.** Each slot is written at most once per backend: the local author's
+  verbatim record, and the LLM author's telling. Visitors get their chosen backend's passage, or
+  the other one if theirs isn't written. A frozen visitor reads whatever exists and writes nothing.
+- **The LLM budget belongs to the world.** `ADVENTURE_WORLD_LLM_BUDGET`, default 1000, caps the
+  LLM passages a world may accumulate across all visitors. A world's natural ceiling is its slot
+  count, about 750 per episode, since nothing is written twice. Command interpretation by the LLM
+  keeps its per-save cap of 12.
+- **The offline edition is the shared world** as written so far, not one visitor's slice.
+- **Attribution.** Each row records the playthrough that wrote it.
+
+Verified with two separate sessions on Wolf Hall: the second visitor, frozen, replayed the first
+visitor's passages with no new rows. The record-change, budget, frozen and export paths are
+covered by tests. 113 tests pass.
+
+Limits of the store:
+
+- Two visitors asking for the same unwritten LLM passage at the same moment can both pay for it.
+  The first row stands and the second is discarded. A per-slot lease would prevent that.
+- The projected world is cached per process. After a reimport, every web worker must restart
+  before the new fingerprints apply everywhere; a stale worker would keep serving retired passages.
+- Learned LLM command phrasings are still saved per visitor, not per world.
+- Local-author passages are stored too, though they could be recomputed. Storing them keeps one
+  path for both backends and makes the offline edition complete.
+
 ## Live narrator sample (six OpenRouter calls, capped at six in advance)
 
 Five passages at moments 1 and 24 were planned; a sixth call confirmed the encoding fix. Cost was
@@ -135,13 +169,6 @@ The LLM rendered "Patch" as "a patch", which is finding 7 reaching the player.
 
 ## Known limits of this experiment
 
-- **The world does not yet write itself for everyone.** Accepted passages are stored in one
-  visitor's playthrough, tied to their browser session. A second visitor starts with all 700-plus
-  passages unwritten. With the LLM author on, every visitor pays for the same passages again,
-  under a cap of 12 model calls per save. This is the central gap against the concept of a game
-  that writes itself into durable existence. Local-author passages are a pure function of the
-  record, so the gap bites for LLM passages. The fix is a shared, world-level passage store; see
-  the next steps.
 - The offline edition compiles one state per moment, so its journal shows only the exported
   position and its "moments reached" counter stays at 0. Online play is complete. The download
   was checked for content and JS syntax only; it was **not browser-tested** on this world (the
@@ -153,12 +180,6 @@ The LLM rendered "Patch" as "a patch", which is finding 7 reaching the player.
 
 ## Suggested next steps
 
-- Make accepted passages shared and durable at world level. A passage table keyed by world, passage
-  key and a hash of its source packet would let the first accepted passage serve every visitor,
-  with playthroughs keeping only position and visits. A changed source record changes the hash and
-  retires the passage. LLM passages need an acceptance policy, either automatic or reviewed, and
-  the model-call budget moves from each save to the world. The offline edition would then export
-  the shared world.
 - Shrink the offline edition by sharing repeated blocks across states.
 - Decide whether position should stay "moment" or become "room at a moment" with idle narration.
 - File the identity splits (finding 3) and the object/character misclass (finding 7) upstream
