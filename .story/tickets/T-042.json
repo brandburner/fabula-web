@@ -1,0 +1,13 @@
+{
+  "blockedBy": [],
+  "completedDate": "2026-10-08",
+  "createdDate": "2026-10-08",
+  "description": "Closes the central gap recorded in T-041: passages were saved per visitor, so the world never wrote itself into one shared, durable game. Michael chose auto-accept on 2026-10-08.\n\nBuilt: WorldPassage model (migration adventure 0002) keyed by world, passage key, source-packet hash and backend. adventure/store.py looks up, saves (race-safe; first row stands), lists and counts current passages. The engine stays pure: visitor state keeps position, visits and seen keys; ProjectionScenario joins it to the store. Narrator packets now depend only on the key and the record. A changed source record changes the hash, retiring the old passage (kept as history) and writing a fresh one on next request. Each slot is written at most once per backend (local verbatim record, LLM telling); frozen visitors read whatever exists. LLM spend moves to a world budget, ADVENTURE_WORLD_LLM_BUDGET (default 1000; natural ceiling is the slot count, about 750 per episode); LLM command interpretation keeps its 12-per-save cap. The offline download exports the shared world. Writing-room stats report the world. Old saves with per-visitor passages are upgraded on their next turn. Dracula unchanged.\n\nVerification: 113 adventure+chat tests pass (5 new: cross-visitor replay, frozen read-only, record change retires, once-per-backend plus world budget, shared export). Two separate sessions on Wolf Hall in dev: the second, frozen, replayed the first's passages with no new rows. Migration applied to the dev DB only. No live LLM calls in this round.\n\nLimits (docs/WOLF_HALL_PROJECTION.md): simultaneous requests for one unwritten LLM passage can both pay; per-process world cache means all workers must restart after a reimport; learned LLM phrasings remain per visitor.",
+  "displayId": "T-042",
+  "id": "T-042",
+  "order": 60,
+  "phase": null,
+  "status": "complete",
+  "title": "Shared world passages: projected worlds write themselves once for every visitor",
+  "type": "feature"
+}

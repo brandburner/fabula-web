@@ -1,0 +1,13 @@
+{
+  "blockedBy": [],
+  "completedDate": "2026-10-08",
+  "createdDate": "2026-10-08",
+  "description": "Follows T-043. Re-imports and narrator-packet changes alter passage fingerprints, which would re-cost a world, and the world LLM budget counted every call forever. Michael asked for both fixes on 2026-10-08.\n\nCarry-forward (adventure/store.py carry_forward, called from lookup): when a slot has no LLM passage for the current record, its latest stale LLM passage is re-checked with the grounding check against the new packet. Pass: adopted under the new fingerprint at no cost, linked via WorldPassage.carried_from (migration 0004). Fail: retired as \"stale: no longer grounded\" with reasons, never re-checked. Local passages are never carried (re-rendered free). retire_passage <world> --carry-forward [--apply] sweeps a world and reports orphaned keys left by a rebuild.\n\nRolling budget: ADVENTURE_WORLD_LLM_BUDGET (default 1000) per ADVENTURE_WORLD_LLM_WINDOW_DAYS (default 30). Counts every LLM call including refused and retired rows; carried rows don't count. The OpenRouter key spend cap remains the required hard backstop and is not yet set.\n\nRebuilds: measured on Doctor Who S12E11, none of 19 event ids survived a rebuild (titles rewritten, character/location ids moved to GER), so passage keys change and a rebuilt world starts unwritten. Documented as a new edition; no old-to-new mapping attempted (UP-005-style lineage problem).\n\nVerification: 123 adventure+chat tests pass (4 new). Migration 0004 applied to dev only. Simulated packet changes on Happy Valley's five real LLM passages carried all five forward. No live LLM calls this round. Limit: carry-forward judges vocabulary like the check, so a passage can survive a change that removed a field it mentioned in passing.",
+  "displayId": "T-044",
+  "id": "T-044",
+  "order": 80,
+  "phase": null,
+  "status": "complete",
+  "title": "Carry shared passages forward across record changes; make the LLM budget a rolling window",
+  "type": "feature"
+}

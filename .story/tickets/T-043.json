@@ -1,0 +1,13 @@
+{
+  "blockedBy": [],
+  "completedDate": "2026-10-08",
+  "createdDate": "2026-10-08",
+  "description": "Follows T-042. With auto-accept, a bad LLM passage would serve every visitor and could not be removed. Michael asked on 2026-10-08 for a retire command and a grounding check before enabling adventure in production.\n\nGrounding check (adventure/narrator.py grounding_problems): lexical; flags mid-sentence names absent from the packet, interpretive vocabulary the record doesn't use, numbers not in the packet, a single-word name used as a common noun unless the record does so, and drift below 70% stem overlap. Runs on every LLM passage before it joins the world. A refused passage is stored retired with its reasons; the visitor gets the local verbatim record plus a line explaining why. ADVENTURE_LLM_ATTEMPTS_PER_SLOT (default 2) caps LLM attempts per slot per record version; refused attempts count against the world budget.\n\nRetire: WorldPassage gains retired_at and retired_reason (migration 0003); uniqueness applies to live rows only, so a retired slot can be rewritten. manage.py retire_passage <world> lists (--list/--grep/--retired), retires by key or --id, or sweeps live LLM passages through the check (--check). Dry run unless --apply.\n\nCalibration on real data: four faithful live Wolf Hall passages pass; the earlier Esher leak is refused on five counts; the Wolsey \"testament\" wording passes because it is the record's own; a Dracula-style invented leather cover is refused; 701 of 731 local Wolf Hall passages pass (the rest are the engine's stock empty-record line, and local passages are never checked); five new live Happy Valley passages were all accepted and read as faithful. Limits: it checks vocabulary, not meaning, so invented detail in the record's own words and misattribution get through; those need retire_passage or a later model-based check.\n\nVerification: 119 adventure+chat tests pass. Command exercised on Wolf Hall's real rows in dev, including the real CLI path; a method named check() had shadowed Django's system checks and was renamed. Migrations 0002-0003 applied to dev only. Five live OpenRouter calls in this round.",
+  "displayId": "T-043",
+  "id": "T-043",
+  "order": 70,
+  "phase": null,
+  "status": "complete",
+  "title": "Grounding check before auto-accept, and a command to retire shared passages",
+  "type": "feature"
+}
