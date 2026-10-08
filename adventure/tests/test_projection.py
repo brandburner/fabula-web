@@ -44,7 +44,7 @@ class ProjectionTests(TestCase):
         self.assertEqual(rep['rooms'], 3)
         self.assertEqual(rep['feature_locations'], 1)
         self.assertEqual(rep['events_without_location_involvement'], 1)
-        self.assertEqual(rep['events_without_objects'], 2)
+        self.assertEqual(rep['events_without_objects'], 1)
         self.assertEqual(rep['flashbacks'], 1)
         self.assertEqual(rep['rooms_with_parent'], 2)
         self.assertEqual(rep['ancestors_outside_episode'], 1)
@@ -112,6 +112,26 @@ class ProjectionTests(TestCase):
         state['event'] = 'evt_4'
         self.assertEqual(explore.parse(self.world, state, 'examine cloak')[0], 'ambiguous')
         self.assertEqual(explore.parse(self.world, state, 'examine the dark cloak'), ('action', 'obj:object_cloak'))
+
+    def test_an_owner_name_never_identifies_the_thing(self):
+        state = explore.new_state(self.world)
+        state['event'] = 'evt_3'                                    # Bob has Alice's Ledger at the inn; Alice is absent
+        self.assertEqual(explore.parse(self.world, state, 'examine alice'), ('absent', 'alice'))
+        self.assertEqual(explore.parse(self.world, state, 'examine ledger'), ('action', 'obj:object_ledger'))
+        self.assertEqual(explore.parse(self.world, state, "examine alice's ledger"), ('action', 'obj:object_ledger'))
+        state['event'] = 'evt_1'
+        self.assertEqual(explore.parse(self.world, state, 'go to ward'), ('action', 'go:loc_study'))   # places accept owners
+
+    def test_dash_prefix_names_the_container_not_the_thing(self):
+        vs = explore.variants('York Place - Upper Chamber (Stormy Night)')
+        self.assertIn('upper chamber', vs)
+        self.assertNotIn('york place', vs)
+
+    def test_containment_breaks_ties_between_places(self):
+        found = [('go:loc_yard', 'Stable Yard (The Crown Inn)'), ('go:loc_inn', 'The Crown Inn')]
+        self.assertEqual(explore.container_of(self.world, found), [('go:loc_inn', 'The Crown Inn')])
+        unrelated = [('go:loc_yard', 'Stable Yard (The Crown Inn)'), ('go:loc_study', "Ward's Study (Ashby Manor)")]
+        self.assertEqual(explore.container_of(self.world, unrelated), unrelated)
 
     def test_mind_is_labelled_interpretation_and_needs_no_passage(self):
         state = explore.new_state(self.world)

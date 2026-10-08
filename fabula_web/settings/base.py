@@ -167,4 +167,5 @@ ADVENTURE_MODEL = os.environ.get('ADVENTURE_MODEL', CHAT_MODEL)
 # walkable terminal world (adventure/projection.py). Slug -> published episode.
 ADVENTURE_WORLDS = [
     {'slug': 'wolf-hall-e1', 'series': 'wolf-hall', 'season': 1, 'episode': 1, 'number': '002'},
+    {'slug': 'happy-valley-e1', 'series': 'happy-valley', 'season': 1, 'episode': 1, 'number': '003'},
 ]

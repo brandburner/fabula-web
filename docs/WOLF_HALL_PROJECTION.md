@@ -20,7 +20,7 @@ alone. The weaknesses are in the data's identity and granularity, not in the mec
 Play at `/play/wolf-hall-e1/` (dev only; `ADVENTURE_ENABLED` is off in production). The same
 terminal, writing room, freeze, restart and offline download work as for Dracula.
 
-Tests: 105 pass (18 new in `adventure/tests/test_projection.py` on a fixture episode with nested
+Tests: 108 pass after the Happy Valley run (21 new in `adventure/tests/test_projection.py` on a fixture episode with nested
 locations, a feature-only place, a flashback, an identity collision and an unpublished event).
 
 ## What the graph supplies for S01E01
@@ -76,6 +76,48 @@ locations, a feature-only place, a flashback, an identity collision and an unpub
 8. **Goals and beliefs are interpretation.** They are exposed through `what does X want`, labelled
    as the record's reading, and never fed to the narrator.
 
+## Second series by configuration: Happy Valley S01E01
+
+Added 2026-10-08 with one line in `settings.ADVENTURE_WORLDS` and no change to the projection,
+engine or narrator. Playable at `/play/happy-valley-e1/`.
+
+| Measure | Wolf Hall S01E01 | Happy Valley S01E01 |
+| --- | --- | --- |
+| Moments | 87 | 85 |
+| Rooms / single-moment rooms | 27 / 14 | 43 / 25 |
+| Moments in the busiest room | 25 | 6 |
+| Rooms with a parent / with children | 11 / 4 | 13 / 5 |
+| Feature locations | 15 | 22 |
+| Flashbacks | 5 | 0 |
+| Moments without participants / objects | 0 / 18 | 1 / 8 |
+| Characters / objects | 59 / 73 | 46 / 106 |
+| Passages possible | 731 | 754 |
+| Offline download | 4.3 MB | 6.2 MB |
+
+What the second series showed:
+
+- **The claim holds for projection and play.** Every command family worked on the first run.
+- **Happy Valley's primary locations are finer.** No room acts as a bucket: the busiest holds 6
+  moments, against Wolf Hall's 25. The cost is more fragmentation: 25 of 43 rooms hold a single
+  moment, which strengthens finding 1. The spine is events at places.
+- **Possessive names broke the parser, and the fixes are general.** Happy Valley names places
+  and things after people ("Catherine's House", "Catherine's Cheap Sunglasses"). Three defects
+  surfaced, none Wolf Hall specific. An owner name no longer identifies the thing, so
+  "examine catherine" when she is absent says so instead of offering her sunglasses. For places,
+  an owner name still counts, so "go to catherine" asks among her nine places. When one candidate
+  contains all the others, containment decides: "go to the farm" means the farm, not its yard.
+  The part before a dash ("York Place - Upper Chamber") now names the container rather than the
+  room. Wolf Hall replays unchanged, except "go to york place" now asks rather than guessing.
+- **Identity splits recur.** "Mrs. Beresford's Office (Ryan's School)" and "Mrs. Beresford's
+  Office (St. Marks Junior School)" are two Location rows that look like one place. Same class as
+  finding 3.
+- **Presence looks fused across scenes.** Moments 22 and 23 sit in the school office with a second
+  involvement at Catherine's rear doorstep. They list "70-Year-Old Community Witness (Hebden
+  Bridge)" from the opening newsagent scene among those present. This looks like the fused-frame
+  pattern recorded for Dracula as UP-009, and needs graph verification before it is filed.
+- **The offline download scales badly.** At 6.2 MB it is now a practical limit: every moment
+  carries the arrival text of every place it can jump to. Sharing those blocks is the fix.
+
 ## Live narrator sample (six OpenRouter calls, capped at six in advance)
 
 Five passages at moments 1 and 24 were planned; a sixth call confirmed the encoding fix. Cost was
@@ -93,12 +135,17 @@ The LLM rendered "Patch" as "a patch", which is finding 7 reaching the player.
 
 ## Known limits of this experiment
 
+- **The world does not yet write itself for everyone.** Accepted passages are stored in one
+  visitor's playthrough, tied to their browser session. A second visitor starts with all 700-plus
+  passages unwritten. With the LLM author on, every visitor pays for the same passages again,
+  under a cap of 12 model calls per save. This is the central gap against the concept of a game
+  that writes itself into durable existence. Local-author passages are a pure function of the
+  record, so the gap bites for LLM passages. The fix is a shared, world-level passage store; see
+  the next steps.
 - The offline edition compiles one state per moment, so its journal shows only the exported
   position and its "moments reached" counter stays at 0. Online play is complete. The download
   was checked for content and JS syntax only; it was **not browser-tested** on this world (the
   Playwright setup from September is gone from /tmp).
-- The compiled download is about 4 MB for 87 moments because each state carries the header text
-  of every `go` destination. Fine for an experiment; shareable blocks would halve it.
 - The world is cached per process; a reimport needs a server restart.
 - Learned LLM parser aliases are scoped per world (Dracula's are per scene).
 - Only `live` pages are read. Snippet locations have no live flag and are read whenever an event links them.
@@ -106,8 +153,13 @@ The LLM rendered "Patch" as "a patch", which is finding 7 reaching the player.
 
 ## Suggested next steps
 
-- Run a second series by configuration only (Happy Valley has similar hierarchy coverage) and
-  compare the report. The claim is that nothing in the code is Wolf Hall specific.
+- Make accepted passages shared and durable at world level. A passage table keyed by world, passage
+  key and a hash of its source packet would let the first accepted passage serve every visitor,
+  with playthroughs keeping only position and visits. A changed source record changes the hash and
+  retires the passage. LLM passages need an acceptance policy, either automatic or reviewed, and
+  the model-call budget moves from each save to the world. The offline edition would then export
+  the shared world.
+- Shrink the offline edition by sharing repeated blocks across states.
 - Decide whether position should stay "moment" or become "room at a moment" with idle narration.
 - File the identity splits (finding 3) and the object/character misclass (finding 7) upstream
   once the graph can be queried, with `properties()` evidence as the journal requires.

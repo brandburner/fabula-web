@@ -60,7 +60,7 @@ def build():
         # uuid, title, scene, location, flashback, participants, objects, involvements, dialogue
         ('evt_1', '**"Arrival at the Hall"**', 1, hall, False, [alice, bob], [ledger], [hall, study], ['Alice: Where is it?']),
         ('evt_2', 'The Study, Remembered', 2, study, True, [alice], [ledger], [study], []),
-        ('evt_3', 'A Drink at the Crown', 3, inn, False, [bob, keeper], [], [inn, yard], ['(No direct dialogue occurs.)']),
+        ('evt_3', 'A Drink at the Crown', 3, inn, False, [bob, keeper], [ledger], [inn, yard], ['(No direct dialogue occurs.)']),
         ('evt_4', 'A Stranger in the Hall', 4, hall, False, [alice, bob, cloaked], [ledger, cloak], [hall], ['Bob: Who are you?']),
         ('evt_5', 'Closing Time', 5, inn, False, [bob], [], [], []),
     ]

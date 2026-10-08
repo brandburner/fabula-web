@@ -358,9 +358,12 @@ def variants(name):
     for phrase in list(out):
         out.add(re.sub(r'^(the|a|an)\s+', '', phrase))
         out.add(re.sub(r"^[^']+'s\s+", '', phrase))        # "cromwell's dark cloak" -> "dark cloak"
-        out.add(re.sub(r'\s+-\s+.*$', '', phrase))          # "york place - upper chamber" -> "york place"
-        out.add(re.sub(r'^.*\s+-\s+', '', phrase))          # ... -> "upper chamber"
-    words = [w for w in re.findall(r"[a-z0-9']+", stem) if w not in STOPWORDS]
+        # "york place - upper chamber": the part before the dash is the container,
+        # like an owner, so only the part after it names the thing.
+        out.add(re.sub(r'^.*\s+-\s+', '', phrase))          # -> "upper chamber"
+    # Shortcut words come from the thing itself, never its owner:
+    # "catherine cawood's terrace house" offers "terrace house", not "catherine".
+    words = [w for w in re.findall(r"[a-z0-9']+", thing_part(stem)) if w not in STOPWORDS]
     if words:
         out.add(words[-1])
         if len(words) > 1:
@@ -370,21 +373,35 @@ def variants(name):
     return {v.strip() for v in out if len(v.strip()) >= 3}
 
 
+OWNER = re.compile(r"[a-z0-9 .\-]+'s\s+")
+
+
+def thing_part(text):
+    """Drop possessive owner phrases: "clare's mug (from catherine's pot)" -> "mug (pot)"."""
+    return re.sub(r'\s+', ' ', OWNER.sub(' ', text)).strip()
+
+
 def core_names(name):
     lowered = name.lower().replace('’', "'")
     return {lowered, stem_of(lowered), re.sub(r'^(the|a|an)\s+', '', stem_of(lowered))}
 
 
-def match(noun, entities):
-    """entities: list of (id, name). Exact variant beats substring; ties are ambiguous."""
+def match(noun, entities, owner_ok=False):
+    """entities: list of (id, name). Exact name beats a variant beats a word
+    inside the name; ties are ambiguous. A noun that only names an owner
+    ("catherine" in "catherine's sunglasses") never identifies the thing,
+    except for places when owner_ok: "go to catherine" can mean her house."""
     scored = []
+    word = r'(?<![a-z0-9])' + re.escape(noun) + r"(?![a-z0-9])"
     for ident, name in entities:
         lowered = name.lower().replace('’', "'")
         if noun in core_names(name):
             scored.append((3, ident, name))
         elif noun in variants(name):
             scored.append((2, ident, name))
-        elif re.search(r'(?<![a-z0-9])' + re.escape(noun) + r'(?![a-z0-9])', lowered):
+        elif re.search(word, thing_part(lowered)):
+            scored.append((1, ident, name))
+        elif owner_ok and re.search(word, lowered):
             scored.append((1, ident, name))
     if not scored:
         return []
@@ -450,7 +467,7 @@ def parse(world, state, command):
     noun = clean_noun(m.group(1) if m else clean)
     if here and noun in core_names(here[0][1]):
         return 'action', 'where'                                   # already in that room
-    found = match(noun, places)
+    found = container_of(world, match(noun, places, owner_ok=True))
     if len(found) == 1:
         return 'action', found[0][0]
     if found:
@@ -460,6 +477,18 @@ def parse(world, state, command):
     if m and match(noun, [(u, l['name']) for u, l in world['locations'].items()]):
         return 'absent', noun
     return 'unknown', None
+
+
+def container_of(world, found):
+    """If one candidate place contains all the others, it is the one meant:
+    "go to the farm" means the farm, not its yard."""
+    if len(found) < 2:
+        return found
+    for ident, name in found:
+        uuid = ident[3:]
+        if all(uuid in _chain(world, other[3:])[1:] for other, _ in found if other != ident):
+            return [(ident, name)]
+    return found
 
 
 def descriptor(world, action):
@@ -492,7 +521,8 @@ def candidates(world, state, command):
 
 def refusal(world, state, status, payload):
     if status == 'ambiguous':
-        return [block('Which do you mean: ' + ' or '.join(payload) + '?', 'system')]
+        shown = payload[:5] + ([f'{len(payload) - 5} more'] if len(payload) > 5 else [])
+        return [block('Which do you mean: ' + ' or '.join(shown) + '?', 'system')]
     if status == 'absent':
         return [block(f'“{payload}” is in the record, but not at this moment. Try the map, or continue.', 'system')]
     return [block('I cannot identify that here. Try naming someone or something present, a place from the map, or type look.', 'system'),
