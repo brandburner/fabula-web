@@ -61,13 +61,18 @@ LOGGING = {
     },
 }
 
-# Page cache shared across processes (lens review, Phase 3). cache_page
-# entries must be reachable by BOTH gunicorn workers and by management
-# commands (import_fabula clears the cache after every import) — the
-# default LocMemCache is per-process, so a CLI clear never reached the
-# serving workers and pages stayed stale for up to 24h. DatabaseCache
-# rides the existing PostgreSQL instance; the table is created by
-# `createcachetable` in the deploy startCommand (idempotent).
+# Cache shared across processes (lens review, Phase 3): sitemap cache_page
+# entries and the chat rate limiter must be reachable by BOTH gunicorn
+# workers and by management commands (import_fabula clears the cache after
+# every import) — the default LocMemCache is per-process, so a CLI clear
+# never reached the serving workers. DatabaseCache rides the existing
+# PostgreSQL instance; the table is created by `createcachetable` in the
+# deploy startCommand (idempotent).
+#
+# No longer a page cache for detail views (Oct 2026): with the default
+# MAX_ENTRIES of 300 against ~165k crawlable pages, every crawler miss
+# wrote a ~60-80 KB row that was culled almost at once (1.4M inserts and
+# 1.4M deletes for ~244 live rows) — DB write load with no hit rate.
 CACHES = {
     'default': {
         'BACKEND': 'django.core.cache.backends.db.DatabaseCache',

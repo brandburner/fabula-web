@@ -25,7 +25,7 @@ class ViewTestMixin:
     """Mixin to create test data for view tests."""
 
     def setUp(self):
-        # Some views (e.g. CharacterDetailView) are wrapped in cache_page;
+        # Some views (e.g. the sitemaps) are wrapped in cache_page;
         # LocMemCache survives across tests in-process, so a URL hit by an
         # earlier test would otherwise return a cached response with
         # response.context == None.

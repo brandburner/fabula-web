@@ -123,10 +123,10 @@ def _url(request, path):
     """Build an absolute URL from a path.
 
     The origin comes from WAGTAILADMIN_BASE_URL when it is set (the apex in
-    production), falling back to the request. Several detail views sit under a
-    24h cache_page keyed on path only, so a request-derived origin would bake
-    whichever alias host first missed the cache into every @id Google reads
-    (the ISS-030 failure class). get_host is a method — call it (ISS-026).
+    production), falling back to the request. A request-derived origin would
+    put whichever alias host the crawler used (www., the Railway domain) into
+    every @id Google reads — and into any cached copy of the page (the ISS-030
+    failure class). get_host is a method — call it (ISS-026).
     """
     base = (getattr(settings, 'WAGTAILADMIN_BASE_URL', '') or '').rstrip('/')
     if not base:

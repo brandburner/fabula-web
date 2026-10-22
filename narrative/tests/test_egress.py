@@ -3,7 +3,7 @@ Origin-egress and session-bloat fixes (Railway bill investigation, Oct 2026).
 
 - GZipMiddleware compresses HTML at the origin (Railway bills pre-edge bytes).
 - ?theme= toggles set a cookie and 302 instead of writing a DB session.
-- Cached pages are keyed per theme (theme_cache_page).
+- Detail pages render per theme from the cookie (no shared page cache).
 - robots.txt fences off per-entity graph views, theme toggles, SEO crawlers.
 - AgentMiss logging is capped per user agent per day.
 - prune_sessions deletes expired sessions in batches.
@@ -75,8 +75,8 @@ class ThemeCookieTest(ViewTestMixin, TestCase):
         self.assertNotIn('Cookie', response.get('Vary', ''))
 
 
-class ThemeCachePageTest(ViewTestMixin, TestCase):
-    """A cached page must not leak one theme's render to the other."""
+class ThemeRenderTest(ViewTestMixin, TestCase):
+    """One theme's render must never be served to the other."""
 
     def _theme_of(self, theme):
         self.client.cookies['fabula_theme'] = theme
@@ -88,7 +88,6 @@ class ThemeCachePageTest(ViewTestMixin, TestCase):
     def test_dark_render_is_not_served_to_writerly(self):
         self.assertIn('data-theme="dark"', self._theme_of('dark'))
         self.assertIn('data-theme="writerly"', self._theme_of('writerly'))
-        # and both variants are now served from cache, still per theme
         self.assertIn('data-theme="dark"', self._theme_of('dark'))
 
 
