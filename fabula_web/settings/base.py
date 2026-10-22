@@ -52,6 +52,12 @@ MIDDLEWARE = [
     'fabula_web.middleware.WwwRedirectMiddleware',
     'django.middleware.security.SecurityMiddleware',
     'whitenoise.middleware.WhiteNoiseMiddleware',
+    # Railway's edge gzips for clients, but billed egress (and httpLogs
+    # txBytes) tracked uncompressed page sizes — ~60 KB/page vs ~10 KB
+    # gzipped (Oct 2026 bill investigation). After WhiteNoise so
+    # static files (already precompressed at collectstatic, and streamed)
+    # bypass it. Django >= 4.2 includes the BREACH mitigation.
+    'django.middleware.gzip.GZipMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
