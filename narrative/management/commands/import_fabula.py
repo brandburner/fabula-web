@@ -291,8 +291,9 @@ class Command(BaseCommand):
                     data.arcs,
                 )
 
-            # Detail views are wrapped in cache_page(24h) on the premise
-            # that data only changes on import — so imports must clear it.
+            # The sitemaps are wrapped in cache_page(1h) on the premise
+            # that data only changes on import — so imports must clear it,
+            # or new and pruned pages lag the sitemap by up to an hour.
             # Reaches serving workers only on a shared backend (production
             # uses DatabaseCache); dev's LocMemCache is per-process, so a
             # separate runserver keeps its own cache until restarted.
