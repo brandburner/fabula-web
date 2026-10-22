@@ -24,13 +24,13 @@ import re
 from django.http import Http404, JsonResponse
 from django.shortcuts import render, get_object_or_404, redirect
 from django.utils.decorators import method_decorator
-from django.views.decorators.cache import cache_page
 from django.views.decorators.http import require_POST
 from django.views.generic import ListView, DetailView, TemplateView, View
 
 from django.db import models
 from django.db.models import Q, Count, F, Min, Max
 
+from .theme import theme_cache_page
 from .url_utils import canonical_path_for
 from .models import (
     NarrativeConnection, Theme, ConflictArc, Location,
@@ -573,7 +573,7 @@ class ThemeIndexView(SeriesScopedMixin, ListView):
         ).order_by('-event_count')
 
 
-@method_decorator(cache_page(60 * 60 * 24), name='dispatch')  # 24h cache; data changes only on import
+@method_decorator(theme_cache_page(60 * 60 * 24), name='dispatch')  # 24h cache; data changes only on import
 class ThemeDetailView(StorylineTimelineMixin, FlexibleIdentifierMixin,
                       CanonicalURLMixin, DetailView):
     """
@@ -629,7 +629,7 @@ class ArcIndexView(SeriesScopedMixin, ListView):
         ).order_by('-event_count')
 
 
-@method_decorator(cache_page(60 * 60 * 24), name='dispatch')  # 24h cache; data changes only on import
+@method_decorator(theme_cache_page(60 * 60 * 24), name='dispatch')  # 24h cache; data changes only on import
 class ArcDetailView(StorylineTimelineMixin, FlexibleIdentifierMixin,
                     CanonicalURLMixin, DetailView):
     """
@@ -662,7 +662,7 @@ class ArcDetailView(StorylineTimelineMixin, FlexibleIdentifierMixin,
 # STORYLINES INDEX (arcs + themes interleaved)
 # =============================================================================
 
-@method_decorator(cache_page(60 * 60 * 24), name='dispatch')  # 24h cache; data changes only on import
+@method_decorator(theme_cache_page(60 * 60 * 24), name='dispatch')  # 24h cache; data changes only on import
 class StorylineIndexView(SeriesScopedMixin, TemplateView):
     """
     /explore/<series>/storylines/ — conflict arcs and themes interleaved
@@ -887,7 +887,7 @@ class CharacterIndexView(SeasonFilterMixin, SeriesScopedMixin, ListView):
             ).order_by('tier_order', '-appearance_count', 'canonical_name')
 
 
-@method_decorator(cache_page(60 * 60 * 24), name='dispatch')  # 24h cache; data changes only on import
+@method_decorator(theme_cache_page(60 * 60 * 24), name='dispatch')  # 24h cache; data changes only on import
 class CharacterDetailView(FlexibleIdentifierMixin, CanonicalURLMixin, DetailView):
     """
     View a single character with their event participations and journey.

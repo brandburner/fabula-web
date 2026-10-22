@@ -58,6 +58,7 @@ MIDDLEWARE = [
     # static files (already precompressed at collectstatic, and streamed)
     # bypass it. Django >= 4.2 includes the BREACH mitigation.
     'django.middleware.gzip.GZipMiddleware',
+    'fabula_web.middleware.ThemeCookieMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
