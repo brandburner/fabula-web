@@ -433,10 +433,12 @@ class Command(BaseCommand):
     V24_CONNECTION_TYPES = frozenset(ConnectionType.values)
     # Canonical vocabulary (schema v1.2.0) plus legacy values that older
     # graphs carry and the model keeps readable (plan verification note 2;
-    # 'UNKNOWN' = deliberately unclassified on partial-enrichment graphs).
+    # 'UNKNOWN' = deliberately unclassified on partial-enrichment graphs;
+    # 'SUPERNATURAL' = emitted by the 2026-09 startrektng rebuild and
+    # already live on Dracula/Encanto rows — UP-011).
     V24_ARC_TYPES = frozenset({
         'INTERNAL', 'INTERPERSONAL', 'SOCIETAL',
-        'ENVIRONMENTAL', 'TECHNOLOGICAL', 'UNKNOWN',
+        'ENVIRONMENTAL', 'TECHNOLOGICAL', 'UNKNOWN', 'SUPERNATURAL',
     })
     V24_ARC_ROLES = frozenset({'START', 'CLIMAX', 'RESOLUTION'})
 
@@ -610,6 +612,7 @@ class Command(BaseCommand):
 
     def _validate_v24_connections(self, connections: List[Dict]) -> List[str]:
         errors: List[str] = []
+        missing_beat_gid = 0
         for i, conn in enumerate(connections):
             where = f"connections[{i}] ({conn.get('fabula_uuid') or conn.get('global_id') or '?'})"
             layer = conn.get('layer')
@@ -625,7 +628,11 @@ class Command(BaseCommand):
             if layer == 'event' and not conn.get('fabula_uuid'):
                 errors.append(f"{where}: event-layer row missing fabula_uuid (connection_uuid)")
             if layer == 'beat' and not conn.get('global_id'):
-                errors.append(f"{where}: beat-layer row missing global_id (URL continuity)")
+                # Not fatal: the import phase falls back to a
+                # (from, to, type) match and otherwise creates the row.
+                # Only a pre-existing row whose edge lost its id can lose
+                # URL continuity, so surface it as a warning (UP-010).
+                missing_beat_gid += 1
             from_ep, to_ep = conn.get('from_episode'), conn.get('to_episode')
             self._check_episode_block(from_ep, f"{where}.from_episode", errors)
             self._check_episode_block(to_ep, f"{where}.to_episode", errors)
@@ -637,6 +644,12 @@ class Command(BaseCommand):
                 f_ord, t_ord = from_ep.get('ordinal'), to_ep.get('ordinal')
                 if f_ord is not None and t_ord is not None and f_ord > t_ord:
                     errors.append(f"{where}: backwards edge ({f_ord} -> {t_ord})")
+        if missing_beat_gid:
+            self.stdout.write(self.style.WARNING(
+                f"  {missing_beat_gid} beat-layer connection row(s) carry no "
+                f"global_id (UP-010): matched by (from, to, type) or created "
+                f"fresh; no URL continuity for them"
+            ))
         return errors
 
     def _validate_v24_storylines(self, rows: List[Dict], label: str,
