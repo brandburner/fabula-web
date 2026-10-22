@@ -1650,11 +1650,16 @@ class ContractVersionGateTest(TestCase):
         errors = self.cmd.validate_v24_shapes(data)
         self.assertTrue(any('backwards' in e for e in errors))
 
-    def test_beat_row_requires_global_id(self):
+    def test_beat_row_missing_global_id_is_a_warning(self):
+        # UP-010: rebuilds mint new beat edges without GER ids. The import
+        # phase falls back to (from, to, type) and otherwise creates the
+        # row, so a missing id is reported, not fatal.
         data = self._v24_data()
         data.connections[1]['global_id'] = None
         errors = self.cmd.validate_v24_shapes(data)
-        self.assertTrue(any('global_id' in e for e in errors))
+        self.assertFalse(any('global_id' in e for e in errors))
+        self.assertIn('1 beat-layer connection row(s) carry no global_id',
+                      self.cmd.stdout.getvalue())
 
     def test_arc_missing_series_uuid_rejected(self):
         data = self._v24_data()
