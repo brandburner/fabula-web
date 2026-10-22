@@ -13,6 +13,7 @@ from django.views.decorators.cache import cache_page
 import logging
 import os
 import re
+from datetime import datetime, timezone
 from pathlib import Path
 
 from wagtail.admin import urls as wagtailadmin_urls
@@ -79,6 +80,25 @@ def robots_txt(request):
         "",
         "Disallow: /admin/",
         "Disallow: /django-admin/",
+        "",
+        # Per-entity graph views were ~35% of origin egress (Oct 2026): 78 KB
+        # JS visualisations under two URL schemes, not in the sitemap, with
+        # no text worth indexing. The series-level graph landing stays open
+        # (longest match wins, so the $-anchored Allow beats the Disallow).
+        "Allow: /explore/*/graph/$",
+        "Disallow: /explore/*/graph/",
+        "Disallow: /graph/",
+        # Theme toggles are a 302 to the same page — nothing to crawl.
+        "Disallow: /*?theme=",
+        "",
+        # SEO backlink crawlers: ~20% of origin egress, no referral traffic.
+        # Drop a line here if you run that tool's site audit on this domain.
+        "User-agent: SemrushBot",
+        "User-agent: AhrefsBot",
+        "User-agent: MJ12bot",
+        "User-agent: DotBot",
+        "User-agent: SERankingBacklinksBot",
+        "Disallow: /",
         "",
         f"Sitemap: {request.scheme}://{request.get_host()}/sitemap.xml",
     ]
@@ -192,6 +212,34 @@ JUNK_SCAN_PATTERNS = re.compile(
 )
 
 
+# Per-worker cap on AgentMiss rows per user agent per day. One crawler
+# replaying stale URLs (ShapBot, 7-8 Oct 2026) wrote 606k rows in two days;
+# the first few hundred misses of a UA's day carry the signal. Kept
+# in-process on purpose: a shared counter in the DatabaseCache would cost a
+# write per miss, which is what this is cutting. Sampling is biased to the
+# start of each UTC day, and each gunicorn worker counts separately.
+AGENT_MISS_DAILY_CAP = 200
+AGENT_MISS_MAX_TRACKED_UAS = 5000  # bounds memory against UA rotation
+_agent_miss_counts = {}
+_agent_miss_day = None
+
+
+def _agent_miss_allowed(ua):
+    """Return True if this UA is still under today's AgentMiss logging cap."""
+    global _agent_miss_day
+    today = datetime.now(timezone.utc).date()
+    if today != _agent_miss_day:
+        _agent_miss_counts.clear()
+        _agent_miss_day = today
+    count = _agent_miss_counts.get(ua)
+    if count is None and len(_agent_miss_counts) >= AGENT_MISS_MAX_TRACKED_UAS:
+        return False
+    if (count or 0) >= AGENT_MISS_DAILY_CAP:
+        return False
+    _agent_miss_counts[ua] = (count or 0) + 1
+    return True
+
+
 def _is_agent(request):
     """Return True if the request looks like an AI agent or bot."""
     ua = request.META.get('HTTP_USER_AGENT', '')
@@ -209,7 +257,8 @@ def agent_friendly_404(request, exception=None):
     Custom 404 handler that returns helpful markdown to AI agents
     and a normal HTML 404 to browsers.
 
-    Logs every agent miss to the AgentMiss model for later analysis.
+    Logs agent misses to the AgentMiss model for later analysis, capped
+    per user agent per day.
     """
     from narrative.models import AgentMiss
 
@@ -220,15 +269,16 @@ def agent_friendly_404(request, exception=None):
         if JUNK_SCAN_PATTERNS.search(request.path):
             return HttpResponse('Not Found', content_type='text/plain', status=404)
 
-        # Log the miss
+        # Log the miss (capped per UA per day — see AGENT_MISS_DAILY_CAP)
         ua = request.META.get('HTTP_USER_AGENT', '')[:2000]
         referer = request.META.get('HTTP_REFERER', '')[:2000]
-        AgentMiss.objects.create(
-            path=request.path[:2000],
-            user_agent=ua,
-            referer=referer,
-        )
-        logger.info("Agent 404: %s (UA: %s)", request.path, ua[:100])
+        if _agent_miss_allowed(ua):
+            AgentMiss.objects.create(
+                path=request.path[:2000],
+                user_agent=ua,
+                referer=referer,
+            )
+            logger.info("Agent 404: %s (UA: %s)", request.path, ua[:100])
 
         host = request.build_absolute_uri('/')[:-1]  # strip trailing /
         # MAINTENANCE: this URL-pattern table is hand-written and duplicated
