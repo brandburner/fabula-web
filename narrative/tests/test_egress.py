@@ -132,6 +132,38 @@ class AgentMissCapTest(TestCase):
         self.assertEqual(AgentMiss.objects.count(), 0)
 
 
+class PruneAgentMissesTest(TestCase):
+
+    def _make(self, n, age_days):
+        rows = AgentMiss.objects.bulk_create(
+            AgentMiss(path=f'/x-{age_days}-{i}/', user_agent='GPTBot/1.0')
+            for i in range(n)
+        )
+        # created_at is auto_now_add, so backdate after insert
+        AgentMiss.objects.filter(pk__in=[r.pk for r in rows]).update(
+            created_at=timezone.now() - timedelta(days=age_days))
+
+    def test_deletes_only_rows_older_than_window(self):
+        self._make(5, age_days=45)
+        self._make(3, age_days=2)
+        out = StringIO()
+        call_command('prune_agent_misses', '--batch-size', '2', stdout=out)
+        self.assertEqual(AgentMiss.objects.count(), 3)
+        self.assertIn('Deleted 5 agent misses older than 30 days', out.getvalue())
+
+    def test_days_option(self):
+        self._make(2, age_days=45)
+        call_command('prune_agent_misses', '--days', '60', stdout=StringIO())
+        self.assertEqual(AgentMiss.objects.count(), 2)
+
+    def test_dry_run_deletes_nothing(self):
+        self._make(4, age_days=45)
+        out = StringIO()
+        call_command('prune_agent_misses', '--dry-run', stdout=out)
+        self.assertEqual(AgentMiss.objects.count(), 4)
+        self.assertIn('4 of 4 agent misses are older than 30 days', out.getvalue())
+
+
 class PruneSessionsTest(TestCase):
 
     def _make(self, n, expire_date):
