@@ -5,7 +5,9 @@ AgentMiss logs every 404 an AI agent hits. Nothing ever expired it, and by
 Oct 2026 the table held 1.2M rows / 461 MB, 606k of them from one crawler
 over two days. Logging is now capped per user agent per day (see
 fabula_web/urls.py); this keeps a rolling window on top of that. Runs
-nightly from the `fabula-cron` Railway service (railway.cron.toml).
+nightly at 04:30 UTC from the `fabula-cron` Railway service, followed by
+prune_sessions. Its start command and cron schedule live in that service's
+Railway settings: new services can't use railway.toml (Config as Code).
 
 Usage:
     python manage.py prune_agent_misses --dry-run
