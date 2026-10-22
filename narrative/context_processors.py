@@ -1,28 +1,25 @@
 """
 Theme context processor for Fabula.
 
-Provides theme selection via session or query parameter.
-Switch themes by appending ?theme=writerly or ?theme=dark to any URL.
+Switch themes by appending ?theme=writerly or ?theme=dark to any URL;
+ThemeCookieMiddleware stores the choice in a cookie and redirects.
 """
 
 from django.conf import settings
+
+from .theme import get_theme
 
 
 def theme_context(request):
     """
     Add theme context to all templates.
 
-    Theme is determined by:
-    1. ?theme= query parameter (also saves to session)
-    2. Session value from previous selection
-    3. Default: 'writerly'
+    Theme comes from the ``fabula_theme`` cookie (see narrative/theme.py),
+    defaulting to 'writerly'. Deliberately never touches request.session:
+    reading it marks every response ``Vary: Cookie`` and writing it created
+    a DB row per crawler hit on a ?theme= link.
     """
-    # Check query param first (allows switching via URL)
-    theme = request.GET.get('theme')
-    if theme in ('dark', 'writerly'):
-        request.session['fabula_theme'] = theme
-    else:
-        theme = request.session.get('fabula_theme', 'writerly')
+    theme = get_theme(request)
 
     return {
         'fabula_theme': theme,
