@@ -1,0 +1,12 @@
+# Config for the `fabula-cron` Railway service: same repo and build as
+# fabula-web, but it runs the nightly table prunes and exits instead of
+# serving. Its service settings point here (railwayConfigFile) so it never
+# picks up railway.toml's migrate + gunicorn start command.
+
+[build]
+builder = "nixpacks"
+
+[deploy]
+startCommand = "python manage.py prune_agent_misses && python manage.py prune_sessions"
+cronSchedule = "30 4 * * *"
+restartPolicyType = "never"
